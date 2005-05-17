@@ -34,15 +34,15 @@ cd ~/parlparse/rawdata/chggpages
 svn -q add */*.html 2>&1 | grep -v "is already under version control"
 
 # Run scraper
-cd ~/fawkes/scripts
+cd ~/parlparse/scripts
 ./updatedaterange $DAILY_FROMDATE $DAILY_TODATE $1
 
 # Update division archive for Public Whip to feed from
-cd ~/fawkes/scripts
+cd ~/parlparse/scripts
 ./divisionextractor.pl
 # tell Public Whip to update
 PRODSCRIPT=twfy-morning-update-done
-fetch -q -o- http://www.publicwhip.org.uk/cgi-bin/$PRODSCRIPT > /dev/null &
+snarf -q http://www.publicwhip.org.uk/cgi-bin/$PRODSCRIPT - > /dev/null &
 
 #echo -n "Whole thing done time: "
 #date +"%Y-%m-%d %H:%M:%S"

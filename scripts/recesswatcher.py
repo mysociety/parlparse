@@ -17,7 +17,7 @@ import smtplib
 recess_file = os.path.expanduser('~/pwdata/parl-recesses.txt')
 recess_file_new = recess_file + ".new"
 
-toaddrs = [ "downingstreetsays@lists.unfortu.net", "fawkes@lists.isness.org" ]
+toaddrs = [ "parlparse" ]
 
 today = datetime.date.today().isoformat()
 
