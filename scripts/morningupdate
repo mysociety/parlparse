@@ -1,0 +1,49 @@
+#!/bin/bash
+#set -x  # for debugging, prints each line before executing it
+
+# Morning update.  Fresh with your coffee at 8am, Parliament online (usually)
+# update their site.  At 8:05, we update from them.
+
+# Can take one argument --patchtool.  This is for interactive use, it
+# will pass the switch on to lazyrunall.py, and you will be prompted
+# with an editor to pre-patch errors in Hansard.
+
+[ $# -gt 1 ] && { echo "Too many arguments"; exit 1; }
+[ $# -eq 1 -a "$1" != "--patchtool" ] && { echo "--patchtool is only valid argument"; exit 1; }
+
+source ~/parlparse/scripts/consts
+
+#echo -n "Start time: "
+#date +"%Y-%m-%d %H:%M:%S %Z"
+
+# Get updated members list all-members.xml, in case it changed
+cd ~/parlparse/members
+svn -q update
+# Add any Hansard patch files we've made
+cd ~/parlparse/pyscraper/patches
+svn -q add debates/*.patch 2>&1 | grep -v "is already under version control"
+svn -q add wrans/*.patch 2>&1 | grep -v "is already under version control"
+svn -q add westminhall/*.patch 2>&1 | grep -v "is already under version control"
+svn -q add wms/*.patch 2>&1 | grep -v "is already under version control"
+# Get any new Hansard patch files
+cd ~/parlparse/pyscraper/patches
+svn -q update
+
+# Add any new rawdata things
+cd ~/parlparse/rawdata/chggpages
+svn -q add */*.html 2>&1 | grep -v "is already under version control"
+
+# Run scraper
+cd ~/fawkes/scripts
+./updatedaterange $DAILY_FROMDATE $DAILY_TODATE $1
+
+# Update division archive for Public Whip to feed from
+cd ~/fawkes/scripts
+./divisionextractor.pl
+# tell Public Whip to update
+PRODSCRIPT=twfy-morning-update-done
+fetch -q -o- http://www.publicwhip.org.uk/cgi-bin/$PRODSCRIPT > /dev/null &
+
+#echo -n "Whole thing done time: "
+#date +"%Y-%m-%d %H:%M:%S"
+

@@ -1,0 +1,11 @@
+#!/bin/bash
+# Jobs that need running daily, that aren't with urgency dependent on new stuff
+# from Hansard
+
+source ~/fawkes/scripts/consts
+
+# Update register of members interests
+cd ~/parlparse/pyscraper
+./lazyrunall.py --from=2003-01-01 scrape regmem
+./lazyrunall.py --from=2003-01-01 parse regmem
+

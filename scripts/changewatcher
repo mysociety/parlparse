@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Change watcher, loads pages often and if they have changed either
+# emails someone, or keeps a copy of # each version.
+
+source ~/fawkes/scripts/consts
+
+# Check for new MP change info (deaths, byelections etc.)
+MP_MOVEMENTS_URL=http://www.election.demon.co.uk/strengths.html
+mkdir -p $PWDATA/watchpages
+cd $PWDATA/watchpages
+rm -fr strengths.html
+fetch -q $MP_MOVEMENTS_URL
+if ! diff --brief strengths.html strengths-last.html
+then
+	echo 
+	echo "An MP has probably left or entered the house."
+	echo "Instructions in section 2.3 'mp dies,resigns etc (bye election called)':"
+	echo "http://parl.stand.org.uk/cgi-bin/moin.cgi/ReshuffleOrElection"
+	echo
+	echo "The new data on MP movements is available at"
+	echo "$MP_MOVEMENTS_URL"
+	echo "Merge it into parlparse/members/all-members.xml"
+	echo
+	# Show differences, use text version to do this
+	lynx -dump strengths.html >strengths.txt
+	lynx -dump strengths-last.html >strengths-last.txt
+	diff -u strengths-last.txt strengths.txt
+	# Move new file as new last
+	mv strengths.html strengths-last.html
+fi
+
+# Check for updates to minister pages etc.
+cd ~/parlparse/pyscraper
+./lazyrunall.py scrape chgpages
+
+# Regenerate minister pages file
+./lazyrunall.py parse chgpages
+cd ../members
+./personsets.py
+svn -q update ministers.xml # merge any changes anyone else made
+svn -q update people.xml # merge any changes anyone else made
+svn -q commit -m "Auto ministers update commit by scripts/changewatcher" people.xml
+svn -q commit -m "Auto ministers update commit by scripts/changewatcher"  ministers.xml
+
