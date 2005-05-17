@@ -3,14 +3,14 @@
 # Change watcher, loads pages often and if they have changed either
 # emails someone, or keeps a copy of # each version.
 
-source ~/fawkes/scripts/consts
+source ~/parlparse/scripts/consts
 
 # Check for new MP change info (deaths, byelections etc.)
 MP_MOVEMENTS_URL=http://www.election.demon.co.uk/strengths.html
 mkdir -p $PWDATA/watchpages
 cd $PWDATA/watchpages
 rm -fr strengths.html
-fetch -q $MP_MOVEMENTS_URL
+snarf -q $MP_MOVEMENTS_URL
 if ! diff --brief strengths.html strengths-last.html
 then
 	echo 
