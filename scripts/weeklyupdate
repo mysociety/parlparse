@@ -5,14 +5,14 @@ source ~/parlparse/scripts/consts
 
 # Force reindex, to find URLs which have changed (updates to Hansard,
 # including the once-per-session grand URL-rename-and-break from cm to vo)
-cd ~/publicwhip/pyscraper
+cd ~/parlparse/pyscraper
 ./lazyrunall.py --from $WEEKLY_FROMDATE scrape debates wrans wms --force-index
 # Run scraper for all of parliament
 cd ~/parlparse/scripts
 ./updatedaterange $WEEKLY_FROMDATE $WEEKLY_TODATE $1
 
 # Zip up XML files for people
-cd ~/pwdata/scrapedxml
+cd ~/parldata/scrapedxml
 for X in regmem wrans debates
 do
 	zip -rq $X.xml.zip $X/
