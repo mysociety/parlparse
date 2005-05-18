@@ -7,11 +7,11 @@ import string
 import os
 
 # make the top path data directory value
-toppath = os.path.abspath(os.path.expanduser('~/pwdata/'))
+toppath = os.path.abspath(os.path.expanduser('~/parldata/'))
 if os.name == 'nt':  # the case of julian developing on a university machine.
-        toppath = os.path.abspath('../../pwdata')
+        toppath = os.path.abspath('../../parldata')
         if re.search('\.\.', toppath):
-                toppath = 'C:\\pwdata'
+                toppath = 'C:\\parldata'
 
 if (not os.path.isdir(toppath)):
         raise Exception, 'Data directory %s does not exist, please create' % (toppath)

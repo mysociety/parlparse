@@ -37,6 +37,10 @@ svn -q add */*.html 2>&1 | grep -v "is already under version control"
 cd ~/parlparse/scripts
 ./updatedaterange $DAILY_FROMDATE $DAILY_TODATE $1
 
+# Tell TheyWorkForYou to update
+PRODSCRIPT=ukparse-morning-update-done.cgi
+snarf -q http://very.unfortu.net/~fawkes/$PRODSCRIPT - > /dev/null &
+
 # Update division archive for Public Whip to feed from
 cd ~/parlparse/scripts
 ./divisionextractor.pl
