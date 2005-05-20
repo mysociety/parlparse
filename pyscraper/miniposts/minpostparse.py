@@ -213,7 +213,8 @@ class protooffice:
 		assert self.bopen
 
 		if (self.lasname == nextrec.lasname) and (self.froname == nextrec.froname) and (self.dept == nextrec.dept):
-			assert self.cons == nextrec.cons  # just to catch the rare matches are right
+                        if self.cons != nextrec.cons:
+                                raise Exception, "Mismatched cons name %s %s" % (self.cons, nextrec.cons)
 			(self.sdateend, self.stimeend) = nextrec.sdatet
 			self.fn = fn
 			return True
