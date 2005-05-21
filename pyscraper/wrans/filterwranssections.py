@@ -138,7 +138,7 @@ def StripWransHeadings(headspeak, sdate):
 		raise Exception, 'non-conforming Initial heading '
 	i += 1
 
-	if (not re.match('written answers to questions(?i)', headspeak[i][0])) or headspeak[i][2]:
+	if (not re.match('written answers? to questions?(?i)', headspeak[i][0])) or headspeak[i][2]:
 		if not re.match('The following answers were received.*', headspeak[i][0]):
 			print headspeak[i]
 			raise Exception, 'non-conforming Initial heading '
