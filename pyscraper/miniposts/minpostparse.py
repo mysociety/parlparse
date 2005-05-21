@@ -212,7 +212,7 @@ class protooffice:
                 assert (self.sdateend, self.stimeend) < nextrec.sdatet
 		assert self.bopen
 
-		if (self.lasname == nextrec.lasname) and (self.froname == nextrec.froname) and (self.dept == nextrec.dept):
+		if (self.lasname == nextrec.lasname) and (self.froname == nextrec.froname) and (self.dept == nextrec.dept) and (self.pos == nextrec.pos):
                         if self.cons != nextrec.cons:
                                 raise Exception, "Mismatched cons name %s %s" % (self.cons, nextrec.cons)
 			(self.sdateend, self.stimeend) = nextrec.sdatet
@@ -434,11 +434,22 @@ def ParseGovPosts():
 
 	# (this would be a good place for matching and gluing overlapping duplicates together)
 	rpcp.sort()
+        old = ''
+        for i in range(0, len(rpcp)):
+                new = rpcp[i][1]
+                if old and new.remadename==old.remadename and old.dept==new.dept and old.pos==new.pos and old.sdateend==new.sdatestart and old.stimeend==new.stimestart:
+			new.sdatestart = old.sdatestart
+                        new.stimestart = old.stimestart
+        		new.sourcedoc = old.sourcedoc + " " + new.sourcedoc
+			rpcp[i-1] = ()
+                old = new
 
 	# now we batch them up into the person groups
 	mofficegroups = [ ]
 	prevrpm = None
 	for rp in rpcp:
+                if rp == ():
+                        continue
 		if not prevrpm or prevrpm[0][0] != rp[0][0]:
 			mofficegroups.append([ ])
 		mofficegroups[-1].append(rp)
