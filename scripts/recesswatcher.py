@@ -41,11 +41,23 @@ def domail(subject, msg):
 #     <p><font size="2">18 December 2003</font></p>^M
 #     </td>^M
 
-cells = re.findall('<td class="editonprotabletext">\s*<p><font size="2">([^<]*?)</font></p>\s*</td>', co)
+cells = re.findall('<td class="editonprotabletext">\s*' +
+                   '<p>(?:<font size="2">)?' +
+                   '([^<]*?)' +
+                   '(?:</font>)?</p>' +
+                   '\s*</td>', co)
 
-assert re.search('has announced (provisional dates for )?the Commons calendar', cells.pop(0))
-assert len(cells) % 3 == 0
+# Strip everything up to this sentence
+while 1:
+    if re.search('has announced (provisional dates for )?the Commons calendar', cells.pop(0)):
+        break
 
+# Within table of dates, have 3 columns
+if len(cells) % 3 <> 0:
+    print cells
+    raise Exception, "Expect multiple of 3 table cells"
+
+# Load them in and match the dates
 dates = []
 last_finish = 1000-01-01
 while cells:
