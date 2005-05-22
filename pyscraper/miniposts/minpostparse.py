@@ -149,7 +149,10 @@ class protooffice:
 		self.fullname = "%s %s" % (self.froname, self.lasname)
 
 		# special Gareth Thomas match
-		if self.fullname == "Mr Gareth Thomas" and self.sdatet[0] >= '2004-04-16' and self.sdatet[0] <= '2004-09-20':
+		if self.fullname == "Mr Gareth Thomas" and (
+                (self.sdatet[0] >= '2004-04-16' and self.sdatet[0] <=
+                '2004-09-20') or (self.sdatet[0] >= '2005-05-17' and
+                self.sdatet[0] <= '2005-05-18')):
 			self.cons = "Harrow West"
 
 		pos = nampos.group(4)
@@ -159,7 +162,9 @@ class protooffice:
 		if dept == "Leader of the House of Commons":
 			dept = "House of Commons"
 
-		# separate out the departments if more than one
+                pos = re.sub(' \(Cabinet\)', '', pos)
+
+                # separate out the departments if more than one
 		if dept not in govdepts:
 			self.depts = None
 
