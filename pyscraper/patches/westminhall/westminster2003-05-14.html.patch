@@ -1,5 +1,5 @@
---- C:\publicwhip\pwdata\cmpages\westminhall\westminster2003-05-14.html	Wed Dec 22 15:12:33 2004
-+++ C:\publicwhip\pwdata\cmpages\westminhall\westminster2003-05-14-patchtmp.html	Thu Dec 23 02:04:10 2004
+--- /home/parlparse/parldata/cmpages/westminhall/westminster2003-05-14.html	2004-12-05 12:04:07.000000000 +0000
++++ /home/parlparse/parldata/cmpages/westminhall/westminster2003-05-14-patchtmp.html	2005-05-22 13:45:42.000634751 +0100
 @@ -15,7 +15,7 @@
  
  <H1><center>Westminster Hall</center></H1>
@@ -36,3 +36,67 @@
   (Mr. Edward O'Hara): Order. There is much interest in this debate. The first Front-Bench speaker must be called not later than 10.30. That may help those who are called to speak to gauge their contribution and thus enable as many to get in as possible.
  
  
+@@ -1034,7 +1034,8 @@
+ </P>
+ <P>
+ 
+-<a name="30514h02_para43"><i>Sitting suspended until Two o'clock.</i>
++<stamp parsemess-colnum="96"/>
++<a name="30514h02_para43"><p><i>Sitting suspended until Two o'clock.</i>
+ <P>
+ 
+ 
+@@ -1314,7 +1315,8 @@
+ </P>
+ <P>
+ 
+-<a name="30514h03_para47"><i>Sitting suspended for a Division in the House.</i>
++<stamp parsemess-colnum="109"/>
++<a name="30514h03_para47"><p><i>Sitting suspended for a Division in the House.</i>
+ 
+ 
+ <P>
+@@ -1327,6 +1329,7 @@
+ 
+ <P>
+ <P>
++<stamp parsemess-colnum="110"/>
+ <a name="30514h03_spnew4"><B> Mr. Deputy Speaker </B> 
+ : Fifteen minutes' injury time will be added on.
+ 
+@@ -1621,7 +1624,8 @@
+ </P>
+ <P>
+ 
+-<a name="30514h03_para95"><i>Sitting suspended for a Division in the House.</i>
++<stamp parsemess-colnum="118"/>
++<a name="30514h03_para95"><p><i>Sitting suspended for a Division in the House.</i>
+ 
+ <P>
+ 
+@@ -1629,6 +1633,7 @@
+ </P>
+ <P>
+ 
++<stamp parsemess-colnum="119"/>
+ <a name="30514h03_para96"><i>On resuming&#151;</i>
+ 
+ <P>
+@@ -2023,7 +2028,8 @@
+ </P>
+ <P>
+ 
+-<a name="30514h05_para8"><i>Sitting suspended for a Division in the House.
++<stamp parsemess-colnum="131"/>
++<a name="30514h05_para8"><p><i>Sitting suspended for a Division in the House.
+ </i>
+ <P>
+ 
+@@ -2035,6 +2041,7 @@
+ 
+ <P>
+ <P>
++<stamp parsemess-colnum="132"/>
+ <a name="30514h05_spnew1"><B> John McDonnell </B> 
+ : I was arguing that wages were a small percentage&#151;2 per cent. to 3 per cent. in our last cost analysis&#151;of operating costs for most shipowners, so increasing wages to fair levels would not be a disproportionate burden. Also, the increases would be offset by the fact that UK flagging, and the employment of seafarers, adds to the reputation of any company for safety and reliability. It may also lead to lower insurance premiums and savings as a result of increased efficiency and the skills of the British seafarers operating their ships.
+ <P>

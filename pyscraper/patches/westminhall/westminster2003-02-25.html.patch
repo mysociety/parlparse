@@ -1,5 +1,5 @@
---- C:\publicwhip\pwdata\cmpages\westminhall\westminster2003-02-25.html	Wed Dec 22 15:13:29 2004
-+++ C:\publicwhip\pwdata\cmpages\westminhall\westminster2003-02-25-patchtmp.html	Thu Dec 23 02:05:13 2004
+--- /home/parlparse/parldata/cmpages/westminhall/westminster2003-02-25.html	2004-12-05 12:04:25.000000000 +0000
++++ /home/parlparse/parldata/cmpages/westminhall/westminster2003-02-25-patchtmp.html	2005-05-22 13:51:48.000890335 +0100
 @@ -18,7 +18,7 @@
  
  <H1><center>Westminster Hall</center></H1>
@@ -25,5 +25,15 @@
 -<a name="30225h01_spnew19"><B> Mr. Deputy Speaker </B> 
 +<a name="30225h01_spnew19"><B> Mr. Deputy Speaker </B>
  : Two hon. Members have indicated that they want to contribute, and I remind them that there are three Front-Bench spokesmen and the winding-up speeches must start at 10.30.
+ 
+ 
+@@ -897,7 +897,8 @@
+ </P>
+ <P>
+ 
+-<a name="30225h02_para33"><i>Sitting suspended until Two o'clock.</i>
++<stamp parsemess-colnum="27"/>
++<a name="30225h02_para33"><p><i>Sitting suspended until Two o'clock.</i>
+ <P>
  
  

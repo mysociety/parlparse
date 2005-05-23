@@ -1,6 +1,22 @@
---- C:\publicwhip\pwdata\cmpages\westminhall\westminster2004-10-20.html	Thu Nov 18 12:31:24 2004
-+++ C:\publicwhip\pwdata\cmpages\westminhall\westminster2004-10-20-patchtmp.html	Sun Dec 05 10:46:56 2004
-@@ -2653,7 +2653,7 @@
+--- /home/parlparse/parldata/cmpages/westminhall/westminster2004-10-20.html	2004-12-05 12:02:26.000000000 +0000
++++ /home/parlparse/parldata/cmpages/westminhall/westminster2004-10-20-patchtmp.html	2005-05-22 11:54:28.000219514 +0100
+@@ -2163,6 +2163,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="281"/>
+ <p><i>Sitting suspended</i> <i>for a Division in the House.</i>
+ 
+ 
+@@ -2187,6 +2188,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="284"/>
+ <p><a name="41020h03_spnew8"><b> Joan Ruddock </b> : I was talking with some enthusiasm about how Zambian women are helping themselves and doing much for their communities.
+ 
+ </p>
+@@ -2653,7 +2655,7 @@
  
  
  <p>
@@ -9,11 +25,20 @@
  <br>
  &nbsp;<br>
  
-@@ -2722,7 +2722,7 @@
+@@ -2698,6 +2700,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="293"/>
+ <p><i>Sitting suspended for a Division in the House.</i>
+ 
+ 
+@@ -2722,7 +2725,8 @@
  
  
  
 -<p><a name="41020h03_spnew18"><b> Mr. Murphy </b> : I was about to compliment my hon. Friend the Member for Sheffield, Hillsborough (Helen Jackson) on her speech, but she has not yet returned to the Chamber.
++<stamp parsemess-colnum="294"/>
 +<p><a name="41020h03_spnew18"><b> Mr. Jim Murphy </b> : I was about to compliment my hon. Friend the Member for Sheffield, Hillsborough (Helen Jackson) on her speech, but she has not yet returned to the Chamber.
  
  </p>

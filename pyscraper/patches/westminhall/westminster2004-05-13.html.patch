@@ -1,5 +1,5 @@
---- C:\publicwhip\pwdata\cmpages\westminhall\westminster2004-05-13.html	Sun Dec 05 12:24:53 2004
-+++ C:\publicwhip\pwdata\cmpages\westminhall\westminster2004-05-13-patchtmp.html	Sun Dec 05 12:36:07 2004
+--- /home/parlparse/parldata/cmpages/westminhall/westminster2004-05-13.html	2004-12-05 12:02:55.000000000 +0000
++++ /home/parlparse/parldata/cmpages/westminhall/westminster2004-05-13-patchtmp.html	2005-05-22 11:57:51.000961515 +0100
 @@ -74,7 +74,7 @@
  
  
@@ -9,11 +9,20 @@
  <br>
  &nbsp;<br>
  
-@@ -177,7 +177,7 @@
+@@ -153,6 +153,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="137"/>
+ <p><i>Sitting suspended for a Division in the House.</i>
+ 
+ 
+@@ -177,7 +178,8 @@
  
  
  
 -<p><a name="40513h01_spnew0"><b> Mr. Thomas </b> : As I was saying, our strategy in Pakistan is to support the Government&#039;s poverty reduction strategy and provide support for basic education and basic health care. One aspect of our work programme is to provide support for the Government&#039;s plans to recruit some 100,000 lady health workers nationally to step up the quality of, and increase access to, health care for 100 million people in Pakistan.
++<stamp parsemess-colnum="139"/>
 +<p><a name="40513h01_spnew0"><b> Mr. Gareth Thomas (Harrow West)</b> : As I was saying, our strategy in Pakistan is to support the Government&#039;s poverty reduction strategy and provide support for basic education and basic health care. One aspect of our work programme is to provide support for the Government&#039;s plans to recruit some 100,000 lady health workers nationally to step up the quality of, and increase access to, health care for 100 million people in Pakistan.
  
  </p>
