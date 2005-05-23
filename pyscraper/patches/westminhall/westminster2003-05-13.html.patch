@@ -1,6 +1,16 @@
---- C:\publicwhip\pwdata\cmpages\westminhall\westminster2003-05-13.html	Thu Nov 18 12:37:52 2004
-+++ C:\publicwhip\pwdata\cmpages\westminhall\westminster2003-05-13-patchtmp.html	Sun Dec 05 11:03:17 2004
-@@ -2025,7 +2025,7 @@
+--- /home/parlparse/parldata/cmpages/westminhall/westminster2003-05-13.html	2004-12-05 12:04:09.000000000 +0000
++++ /home/parlparse/parldata/cmpages/westminhall/westminster2003-05-13-patchtmp.html	2005-05-22 13:45:56.000496916 +0100
+@@ -1082,7 +1082,8 @@
+ </P>
+ <P>
+ 
+-<a name="30513h02_para37"><i>Sitting suspended until Two o'clock.</i>
++<stamp parsemess-colnum="29"/>
++<a name="30513h02_para37"><p><i>Sitting suspended until Two o'clock.</i>
+ <P>
+ 
+ 
+@@ -2025,7 +2026,7 @@
  
  <P>
  <P>

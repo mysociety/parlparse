@@ -1,5 +1,5 @@
---- C:\publicwhip\pwdata\cmpages\westminhall\westminster2003-05-21.html	Thu Nov 18 12:37:41 2004
-+++ C:\publicwhip\pwdata\cmpages\westminhall\westminster2003-05-21-patchtmp.html	Sun Dec 05 11:02:49 2004
+--- /home/parlparse/parldata/cmpages/westminhall/westminster2003-05-21.html	2004-12-05 12:04:05.000000000 +0000
++++ /home/parlparse/parldata/cmpages/westminhall/westminster2003-05-21-patchtmp.html	2005-05-22 13:43:56.000977645 +0100
 @@ -867,8 +867,8 @@
  
  <P>
@@ -11,3 +11,22 @@
  </i>
  
  <P>
+@@ -1025,7 +1025,7 @@
+ </P>
+ <P>
+ 
+-<a name="30521h02_para31"><i>Sitting suspended until Two o'clock.
++<a name="30521h02_para31"><p><i>Sitting suspended until Two o'clock.
+ </i>
+ 
+ <P>
+@@ -1665,7 +1665,8 @@
+ </P>
+ <P>
+ 
+-<a name="30521h03_para111"><i>Sitting suspended.</i>
++<stamp parsemess-colnum="303"/>
++<a name="30521h03_para111"><p><i>Sitting suspended.</i>
+ 
+ <P>
+ <page url="http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030521/halltext/30521h04.htm"/>

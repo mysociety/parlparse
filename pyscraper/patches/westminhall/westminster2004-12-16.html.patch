@@ -1,5 +1,5 @@
---- C:\publicwhip\pwdata\cmpages\westminhall\westminster2004-12-16.html	Wed Dec 22 15:03:39 2004
-+++ C:\publicwhip\pwdata\cmpages\westminhall\westminster2004-12-16-patchtmp.html	Wed Dec 22 22:31:40 2004
+--- /home/parlparse/parldata/cmpages/westminhall/westminster2004-12-16.html	2004-12-23 02:12:27.000000000 +0000
++++ /home/parlparse/parldata/cmpages/westminhall/westminster2004-12-16-patchtmp.html	2005-05-22 11:27:46.000596996 +0100
 @@ -173,7 +173,7 @@
  
  
@@ -17,4 +17,36 @@
 +<p><a name="41216h01_spnew28"><b> Mr. John McWilliam: </b> : Order. Before I call the hon. Gentleman, I apologise to hon. Members. I have a terrible cold, so I am sorry if I keep exploding and spluttering. It is not in any way a response to anything that they might have said.
  </p>
  
+ 
+@@ -661,6 +661,7 @@
+ <a name="41216h01_time3"><h5></h5>
+ 
+ 
++<stamp parsemess-colnum="341"/>
+ <p><i>Sitting suspended for a Division in the House. </i>
+ </p>
+ 
+@@ -675,6 +676,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="342"/>
+ <p><a name="41216h01_spnew35"><b> Mr. Heald </b> : The Audit Committee is anxious to concentrate on risk management, value-for-money studies and core audit work. I pay tribute to the work undertaken by the Internal Review Service. In the past year, it has been thought right to introduce a new, independent, outside partner to strengthen the team and to give it a diversity of talents and skills. A new partner, PricewaterhouseCoopers, will be assisting us in the audit work that is necessary and the review work that the Internal Review Service undertakes.
+ </p>
+ 
+@@ -1483,6 +1485,7 @@
+ <a name="41216h01_time10"><h5></h5>
+ 
+ 
++<stamp parsemess-colnum="362"/>
+ <p><i>Sitting suspended for Divisions in the House.</i>
+ </p>
+ 
+@@ -1497,6 +1500,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="363"/>
+ <p><a name="41216h01_spnew51"><b> Janet Anderson  </b> (in the Chair): I remind hon. Members that the debate could, in theory, continue until 6.15 pm. However, Members may want to bear in mind that there is likely to be a Division at 6 o&#039;clock.
+ </p>
  

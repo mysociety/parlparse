@@ -1,5 +1,5 @@
---- C:\publicwhip\pwdata\cmpages\westminhall\westminster2003-11-04.html	Tue Jun 15 23:45:02 2004
-+++ C:\publicwhip\pwdata\cmpages\westminhall\westminster2003-11-04-patchtmp.html	Fri Jun 18 14:35:00 2004
+--- /home/parlparse/parldata/cmpages/westminhall/westminster2003-11-04.html	2004-12-05 12:03:39.000000000 +0000
++++ /home/parlparse/parldata/cmpages/westminhall/westminster2003-11-04-patchtmp.html	2005-05-22 13:42:39.000773428 +0100
 @@ -464,12 +464,12 @@
  
  <P>
@@ -15,3 +15,13 @@
  : Thank you, Mr. Stephenson.
  <P>
  
+@@ -909,7 +909,8 @@
+ </P>
+ <P>
+ 
+-<a name="31104h02_para38"><i>Sitting suspended until Two o'clock.</i>
++<stamp parsemess-colnum="219"/>
++<a name="31104h02_para38"><p><i>Sitting suspended until Two o'clock.</i>
+ <P>
+ 
+ <a name="31104h02_para39"><P>

@@ -1,5 +1,5 @@
---- /home/fawkes/pwdata/cmpages/westminhall/westminster2004-06-08.html	Sun Dec 26 12:53:43 2004
-+++ /home/fawkes/pwdata/cmpages/westminhall/westminster2004-06-08-patchtmp.html	Tue Jan  4 00:35:01 2005
+--- /home/parlparse/parldata/cmpages/westminhall/westminster2004-06-08.html	2004-12-26 12:53:43.000000000 +0000
++++ /home/parlparse/parldata/cmpages/westminhall/westminster2004-06-08-patchtmp.html	2005-05-22 11:57:32.000058360 +0100
 @@ -27,7 +27,7 @@
  
  
@@ -7,5 +7,21 @@
 -<a name="40608h01_head0"><h3 align=center>[Mr. Edward O&#039;hara in the Chair]</h3>
 +<a name="40608h01_head0"><h3 align=center>[Mr. Edward O'Hara in the Chair]</h3>
  
+ 
+ 
+@@ -1628,6 +1628,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="29"/>
+ <p><i>Sitting suspended until Two o&#039;clock.</i>
+ 
+ 
+@@ -2716,6 +2717,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="49"/>
+ <p><i>Sitting suspended.</i>
  
  

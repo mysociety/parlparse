@@ -1,5 +1,5 @@
---- C:\publicwhip\pwdata\cmpages\westminhall\westminster2004-03-16.html	Thu Nov 18 12:33:47 2004
-+++ C:\publicwhip\pwdata\cmpages\westminhall\westminster2004-03-16-patchtmp.html	Sun Dec 05 10:51:38 2004
+--- /home/parlparse/parldata/cmpages/westminhall/westminster2004-03-16.html	2004-12-05 12:03:11.000000000 +0000
++++ /home/parlparse/parldata/cmpages/westminhall/westminster2004-03-16-patchtmp.html	2005-05-22 13:38:01.000371237 +0100
 @@ -255,8 +255,8 @@
  
  <P>
@@ -11,7 +11,35 @@
  <P>
  
  <a name="40316h01_para43">One of the reasons why so many millions of people visit my constituency in the Peak district is to enjoy the beautiful countryside that generation after generation of farmers has bequeathed to us. That can be neither emphasised nor repeated often enough. Too often we take the countryside for granted and imagine that it is beautiful because nature has made it so. However, the countryside is as it is because it has been maintained and farmed. One need only look at barren land that has not been looked after for a few seasons to realise that if the countryside and our national parks were not cared for, they would not be the attractive places that millions upon millions of people from different parts of the country visit every weekend. That is why I should like to concentrate on the Government's proposals for the SDAs.
-@@ -1947,7 +1947,7 @@
+@@ -964,7 +964,8 @@
+ </P>
+ <P>
+ 
+-<a name="40316h02_para42"><i>Sitting suspended until Two o'clock.</i>
++<stamp parsemess-colnum="30"/>
++<a name="40316h02_para42"><p><i>Sitting suspended until Two o'clock.</i>
+ 
+ <P>
+ <page url="http://www.publications.parliament.uk/pa/cm200304/cmhansrd/vo040316/halltext/40316h03.htm"/>
+@@ -1863,7 +1864,8 @@
+ </P>
+ <P>
+ 
+-<a name="40316h04_para29"><i>Sitting suspended for a Division in the House.</i>
++<stamp parsemess-colnum="58"/>
++<a name="40316h04_para29"><p><i>Sitting suspended for a Division in the House.</i>
+ 
+ 
+ <P>
+@@ -1876,6 +1878,7 @@
+ 
+ <P>
+ <P>
++<stamp parsemess-colnum="59"/>
+ <a name="40316h04_spnew3"><B> Phil Hope </B> 
+ : Before I was interrupted, I was saying that my hon. Friend the Member for Tooting had his name at the head of an early-day motion that describes his very substantial concerns. I see the signatures of 53 other hon. Members who support him, and my hon. Friends the Members for Putney and for Battersea have supported him today in expressing concern about the decisions that Wandsworth council has taken about its council tax. Having grown up and gone to school in the area, as my hon. Friend the Member for Putney reminded us, I am sad that today's debate on Wandsworth should be about difficulties and negativity.
+ <P>
+@@ -1947,7 +1950,7 @@
  
  <P>
  <P>
@@ -20,7 +48,7 @@
   Order. We must now turn our attention to pigswill.
  
  <P>
-@@ -1974,7 +1974,7 @@
+@@ -1974,7 +1977,7 @@
  
  <P>
  <P>

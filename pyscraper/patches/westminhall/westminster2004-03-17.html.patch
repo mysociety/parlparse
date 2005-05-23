@@ -1,6 +1,16 @@
---- C:\publicwhip\pwdata\cmpages\westminhall\westminster2004-03-17.html	Thu Nov 18 12:33:44 2004
-+++ C:\publicwhip\pwdata\cmpages\westminhall\westminster2004-03-17-patchtmp.html	Sun Dec 05 10:50:58 2004
-@@ -2093,7 +2093,7 @@
+--- /home/parlparse/parldata/cmpages/westminhall/westminster2004-03-17.html	2004-12-05 12:03:11.000000000 +0000
++++ /home/parlparse/parldata/cmpages/westminhall/westminster2004-03-17-patchtmp.html	2005-05-22 13:36:20.000425514 +0100
+@@ -994,7 +994,8 @@
+ </P>
+ <P>
+ 
+-<a name="40317h02_para37"><i>Sitting suspended until Two o'clock.</i>
++<stamp parsemess-colnum="100"/>
++<a name="40317h02_para37"><p><i>Sitting suspended until Two o'clock.</i>
+ <P>
+ 
+ <a name="40317h02_para38"><P>
+@@ -2093,7 +2094,7 @@
  
  <P>
  <P>
@@ -9,7 +19,7 @@
   (Mr. Frank Cook): Order.
  <P>
  <UL><UL><UL>It being half-past Four o'clock, the motion for the Adjournment of the sitting lapsed, without Question put.
-@@ -2102,12 +2102,4 @@
+@@ -2102,12 +2103,4 @@
  
  
  

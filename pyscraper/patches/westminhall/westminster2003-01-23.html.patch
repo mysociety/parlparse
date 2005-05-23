@@ -1,6 +1,14 @@
---- C:\publicwhip\pwdata\cmpages\westminhall\westminster2003-01-23.html	Wed Dec 22 15:13:48 2004
-+++ C:\publicwhip\pwdata\cmpages\westminhall\westminster2003-01-23-patchtmp.html	Thu Dec 23 02:05:51 2004
-@@ -625,22 +625,22 @@
+--- /home/parlparse/parldata/cmpages/westminhall/westminster2003-01-23.html	2004-12-05 12:04:30.000000000 +0000
++++ /home/parlparse/parldata/cmpages/westminhall/westminster2003-01-23-patchtmp.html	2005-05-22 13:52:45.000048554 +0100
+@@ -618,29 +618,29 @@
+ </P>
+ <P>
+ 
+-<a name="30123h01_para48"><i>Sitting suspended for a Division in the House.
++<a name="30123h01_para48"><p><i>Sitting suspended for a Division in the House.
+ <P>
+ 
+ 
  
  
  <B>23 Jan 2003 : Column 159WH</B></P>
@@ -35,4 +43,31 @@
 +<a name="30123h01_spnew53"><B> Mrs. Clark </B>
  : I am grateful for that reply from the Under-Secretary, as well as for the reply by the Home Office Minister. Will they join me and, I am sure, hon. Members on all sides of the Chamber, in sending condolences to the family in Peterborough of Ross Parker, a 17-year-old killed about a year ago in an unprovoked attack by three young men older than him, who have now been convicted and sent to prison?
  <P>
+ 
+@@ -764,7 +764,7 @@
+ <a name="30123h01_para63">I propose suspending the sitting for two minutes to allow people who are not staying for the debate to leave.
+ <P>
+ 
+-<a name="30123h01_para64"><i>Sitting suspended.
++<a name="30123h01_para64"><p><i>Sitting suspended.
+ </i><P>
+ 
+ 
+@@ -1431,7 +1431,8 @@
+ </P>
+ <P>
+ 
+-<a name="30123h02_para109"><i>Sitting suspended for a Division in the House.
++<stamp parsemess-colnum="182"/>
++<a name="30123h02_para109"><p><i>Sitting suspended for a Division in the House.
+ </i>
+ 
+ 
+@@ -1445,6 +1446,7 @@
+ 
+ <P>
+ <P>
++<stamp parsemess-colnum="183"/>
+ <a name="30123h02_spnew24"><B> Paul Holmes </B> 
+ : A Department for Work and Pensions research report on the ONE service concluded that there was no evidence that participation in ONE had increased labour market activity among sick and disabled clients. A new study of the Government flagship disabled employment scheme showed that between July 2001 and September 2002, only 1,400 disabled people worked for longer than six months after getting help. Only 6,099 were helped into any kind of work at all, which is far short of the target of 90,000 people in jobs over a three-year period&#151;in fact, just 5 per cent. of those involved. Regrettably, due to a <P>
  

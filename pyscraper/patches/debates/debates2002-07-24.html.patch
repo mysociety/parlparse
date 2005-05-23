@@ -1,6 +1,14 @@
---- debates/debates2002-07-24.html	2004-02-12 13:05:08.000000000 +0000
-+++ debates/debates2002-07-24-patchtmp.html	2004-04-10 01:06:14.000000000 +0100
-@@ -5635,7 +5635,7 @@
+--- /home/parlparse/parldata/cmpages/debates/debates2002-07-24.html	2004-07-16 15:23:02.000000000 +0100
++++ /home/parlparse/parldata/cmpages/debates/debates2002-07-24-patchtmp.html	2005-05-22 14:28:55.000516459 +0100
+@@ -5471,6 +5471,7 @@
+ </P>
+ <P>
+ 
++<stamp parsemess-missgid="0"/>
+ <a name="20724-30_para6"><i>Sitting suspended pursuant to Order [1 July].</i>
+ <P>
+ 
+@@ -5635,7 +5636,7 @@
  
  <P>
  <P>

@@ -1,5 +1,5 @@
---- C:\publicwhip\pwdata\cmpages\debates\debates2003-11-20.html	Wed Jun 09 11:04:58 2004
-+++ C:\publicwhip\pwdata\cmpages\debates\debates2003-11-20-patchtmp.html	Fri Jun 18 01:10:34 2004
+--- /home/parlparse/parldata/cmpages/debates/debates2003-11-20.html	2004-07-16 15:03:49.000000000 +0100
++++ /home/parlparse/parldata/cmpages/debates/debates2003-11-20-patchtmp.html	2005-05-22 14:33:45.000646004 +0100
 @@ -780,7 +780,7 @@
   We obviously have a special responsibility for our diplomatic personnel overseas. Can my right hon. Friend say what the position is of our distinguished consul general, Roger Short, in Istanbul? As my right hon. Friend rightly said, we again have a terrorist outrage, almost certainly by Islamic militants, and the majority of the victims are Muslim. Surely the message is clear. We and the Muslim world share a common enemy and the intelligence should flow properly and co-operatively between us. Will the Secretary of State therefore encourage religious leaders in this country and abroad to take that message and to co-operate as fully and as widely as they can against that common scourge and enemy?
  <P>
@@ -207,7 +207,15 @@
   I say to the right hon. and learned Gentleman that it would not be appropriate to do so at this time. In order to help him, perhaps he should seek advice from the Clerk, who will be able to assist him on procedural matters.
  <P>
  <P>
-@@ -5455,7 +5455,7 @@
+@@ -5304,6 +5304,7 @@
+ <a name="31120-26_para1"><i>On resuming&#151;</i>
+ <P>
+ <P>
++<stamp parsemess-ignorenamemismatch="yes"/>
+ <a name="31120-26_spnew10"><B> Mr. Heald </B> 
+ : On a point of order, Mr. Deputy Speaker. I understand that the Government have now caved in and agreed to the position adopted by Opposition and other right hon. and hon. Members. How long does it take the Government to come to the House, say sorry and produce the amendments that we need to conclude our business?
+ <P>
+@@ -5455,7 +5456,7 @@
   Is the Home Secretary aware that the hon. and learned Member for Medway (Mr. Marshall-Andrews) is a dab hand at the monologue? He will be producing one at a concert in February. The Home Secretary had better look to his laurels.
  <P>
  <P>
@@ -216,7 +224,7 @@
   I have heard a few monologues in the House, never mind the poetry that always comes from the retiring Liberal Democrat spokesman, the hon. Member for Southwark, North and Bermondsey (Simon Hughes). I thought I had already said au revoir to him, but I say it with great spirit tonight because this is his swan song in the shadow Home Affairs brief.
  <P>
  
-@@ -5899,7 +5899,7 @@
+@@ -5899,7 +5900,7 @@
  <P>
  <P>
  <a name="31120-30_spnew5"><B> My Lords and Members of the House of Commons </B> 
@@ -225,7 +233,7 @@
  <P>
  
  <a name="31120-30_para39"><i>My Government continues to work closely with the political parties and the Irish Government to secure the full implementation of the Belfast Agreement. Legislation has been passed which establishes an Independent Monitoring Commission to report on the ongoing commitments connected with the implementation of the Belfast Agreement. An Act has also been passed amending legislation on policing in Northern Ireland.</i>
-@@ -5973,7 +5973,7 @@
+@@ -5973,7 +5974,7 @@
  <a name="31120-31_para9"><i>The Millennium Development Goals remained at the forefront of my Government's commitment to global poverty reduction. My Government has worked with partners in the UN, the G8 and other bodies to make progress towards these goals, particularly by ensuring support for developing countries' own plans such as the New Partnership for Africa's Development.</i>
  <P>
  <P>
@@ -234,7 +242,7 @@
   
  <P>
  
-@@ -5986,6 +5986,9 @@
+@@ -5986,6 +5987,9 @@
  <UL><FONT SIZE=-1>"My Lords and Members of the House of Commons: by virtue of Her Majesty's Commission which has now been read, we do, in Her Majesty's name, and in obedience to Her Majesty's Commands, prorogue this Parliament to Wednesday the twenty-sixth day of this instant November, to be then here holden, and this Parliament is accordingly prorogued to Wednesday the twenty-sixth day of this instant November."
  <P>
  </FONT></UL>

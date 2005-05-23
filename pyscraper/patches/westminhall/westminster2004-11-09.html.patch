@@ -1,5 +1,5 @@
---- C:\publicwhip\pwdata\cmpages\westminhall\westminster2004-11-09.html	Thu Nov 18 12:31:01 2004
-+++ C:\publicwhip\pwdata\cmpages\westminhall\westminster2004-11-09-patchtmp.html	Sun Dec 05 10:05:10 2004
+--- /home/parlparse/parldata/cmpages/westminhall/westminster2004-11-09.html	2004-12-05 12:02:18.000000000 +0000
++++ /home/parlparse/parldata/cmpages/westminhall/westminster2004-11-09-patchtmp.html	2005-05-22 11:31:54.000973980 +0100
 @@ -675,7 +675,7 @@
  <a name="41109h01_time4"><h5>10.35 am</h5>
  
@@ -9,7 +9,15 @@
  </p>
  
  
-@@ -2975,7 +2975,7 @@
+@@ -1418,6 +1418,7 @@
+ <a name="41109h02_time2"><h5>11.30 am</h5>
+ 
+ 
++<stamp parsemess-colnum="200"/>
+ <p><i>Sitting suspended until Two o&#039;clock.</i>
+ 
+ <br>
+@@ -2975,7 +2976,7 @@
  
  
  

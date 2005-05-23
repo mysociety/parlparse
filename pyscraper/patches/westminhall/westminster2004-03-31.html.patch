@@ -1,13 +1,28 @@
---- C:\publicwhip\pwdata\cmpages\westminhall\westminster2004-03-31.html	Thu Nov 18 12:33:24 2004
-+++ C:\publicwhip\pwdata\cmpages\westminhall\westminster2004-03-31-patchtmp.html	Sun Dec 05 10:50:28 2004
-@@ -2380,8 +2380,8 @@
+--- /home/parlparse/parldata/cmpages/westminhall/westminster2004-03-31.html	2004-12-05 12:03:07.000000000 +0000
++++ /home/parlparse/parldata/cmpages/westminhall/westminster2004-03-31-patchtmp.html	2005-05-22 13:35:36.000538784 +0100
+@@ -942,14 +942,14 @@
+ </P>
+ <P>
+ 
+-<a name="40331h02_para37"><i>Sitting suspended until Two o'clock.</i>
++<stamp parsemess-colnum="453"/>
++<a name="40331h02_para37"><p><i>Sitting suspended until Two o'clock.</i>
+ <P>
+ 
+ <a name="40331h02_para38"><P>
+ 
+ 
+ 
+-
+ <B>31 Mar 2004 : Column 454WH</B></P>
+ 
+ 
+@@ -2380,7 +2380,7 @@
  
  <P>
  <P>
 -<a name="40331h05_spmin0"><B>The Minister for Energy, E-Commerce and Postal Services   (Mr. Stephen Timms </B> 
--)<i> rose&#151;</i>
-+<a name="40331h05_spmin0"><B>The Minister for Energy, E-Commerce and Postal Services   (Mr. Stephen Timms) </B>
-+<i> rose&#151;</i>
++<a name="40331h05_spmin0"><B>The Minister for Energy, E-Commerce and Postal Services   (Mr. Stephen Timms) </B> 
+ )<i> rose&#151;</i>
  
- <P>
  <P>
