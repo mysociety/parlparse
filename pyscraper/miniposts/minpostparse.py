@@ -12,6 +12,7 @@ import re
 import sys
 import urllib
 import string
+import tempfile
 
 import miscfuncs
 import difflib
@@ -23,8 +24,7 @@ from xmlfilewrite import WriteXMLHeader
 toppath = miscfuncs.toppath
 rawdatapath = miscfuncs.rawdatapath
 chggdir = os.path.join(rawdatapath, "chggpages")
-chgtmp = os.path.join(toppath, "tempchgg.xml")
-
+chgtmp = tempfile.mktemp(".xml", "pw-chgtemp-", miscfuncs.tmppath)
 
 uniqgovposns = ["Prime Minister",
 				"Chancellor of the Exchequer",
