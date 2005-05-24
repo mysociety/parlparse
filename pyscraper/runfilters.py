@@ -7,6 +7,7 @@ import os
 import string
 import cStringIO
 import tempfile
+import time
 
 import xml.sax
 xmlvalidate = xml.sax.make_parser()
@@ -47,7 +48,7 @@ pwcmdirs = os.path.join(toppath, "cmpages")
 # outgoing directory of scaped pages directories
 pwxmldirs = os.path.join(toppath, "scrapedxml")
 # file to store list of newly done dates
-recentnewfile = "recentnew.txt"
+changedatesfile = "changedates.txt"
 
 tempfilename = tempfile.mktemp(".xml", "pw-filtertemp-", miscfuncs.tmppath)
 patchtempfilename = tempfile.mktemp("", "pw-applypatchtemp-", miscfuncs.tmppath)
@@ -88,7 +89,8 @@ def RunFiltersDir(filterfunction, dname, options, forcereparse):
 			continue
 
 		# create the output file name
-		jfout = os.path.join(pwxmldirout, re.sub('\.html$', '.xml', fin))
+                jfout_stub = re.sub('\.html$', '.xml', fin)
+		jfout = os.path.join(pwxmldirout, jfout_stub)
 
 		# skip already processed files, if date is earler
 		# (checking output date against input and patchfile, if there is one)
@@ -141,10 +143,10 @@ def RunFiltersDir(filterfunction, dname, options, forcereparse):
 				else:
 					os.rename(tempfilename, jfout)
 
-				# store
-				newlistf = os.path.join(pwxmldirout, recentnewfile)
+				# touch date on change dates file
+				newlistf = os.path.join(pwxmldirout, changedatesfile)
 				fil = open(newlistf,'a+')
-				fil.write(sdate + '\n')
+				fil.write('%d,%s\n' % (time.time(), jfout_stub))
 				fil.close()
 
 				# we leave the loop

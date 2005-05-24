@@ -318,6 +318,8 @@ different spellings of the offices -->
 <alias fullname="Liam Byrne" alternate="Liam Bryne" />
 <alias fullname="Kenneth Clarke" alternate="Ken Clarke" />
 
+<alias fullname="Robert Wilson" alternate="Rob Wilson" />
+
 <!-- Various harder aliases/typos to worry about later
 	 These came up during the old Public Whip division parsing.
     $firstname = "Gareth" if ($firstname eq "Gareth R" && $lastname eq "Thomas" && $constituency eq "Harrow West");
