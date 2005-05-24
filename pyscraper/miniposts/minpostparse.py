@@ -151,8 +151,7 @@ class protooffice:
 		# special Gareth Thomas match
 		if self.fullname == "Mr Gareth Thomas" and (
                 (self.sdatet[0] >= '2004-04-16' and self.sdatet[0] <=
-                '2004-09-20') or (self.sdatet[0] >= '2005-05-17' and
-                self.sdatet[0] <= '2005-05-18')):
+                '2004-09-20') or (self.sdatet[0] >= '2005-05-17')):
 			self.cons = "Harrow West"
 
 		pos = nampos.group(4)
