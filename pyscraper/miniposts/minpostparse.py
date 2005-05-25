@@ -439,14 +439,16 @@ def ParseGovPosts():
 	# (this would be a good place for matching and gluing overlapping duplicates together)
 	rpcp.sort()
         old = ''
-        for i in range(0, len(rpcp)):
-                new = rpcp[i][1]
-                if old and new.remadename==old.remadename and old.dept==new.dept and old.pos==new.pos and old.sdateend==new.sdatestart and old.stimeend==new.stimestart:
-			new.sdatestart = old.sdatestart
-                        new.stimestart = old.stimestart
-        		new.sourcedoc = old.sourcedoc + " " + new.sourcedoc
-			rpcp[i-1] = ()
-                old = new
+        for i in range(0, len(rpcp)-1):
+                for j in range(i+1, len(rpcp)):
+                        if not len(rpcp[i]) or not len(rpcp[j]): continue
+                        old = rpcp[i][1]
+                        new = rpcp[j][1]
+                        if new.remadename==old.remadename and old.dept==new.dept and old.pos==new.pos and old.sdateend==new.sdatestart and old.stimeend==new.stimestart:
+        			new.sdatestart = old.sdatestart
+                                new.stimestart = old.stimestart
+                		new.sourcedoc = old.sourcedoc + " " + new.sourcedoc
+        			rpcp[i] = ()
 
 	# now we batch them up into the person groups
 	mofficegroups = [ ]
