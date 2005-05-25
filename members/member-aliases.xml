@@ -62,11 +62,23 @@ different spellings of the offices -->
 <alias fullname="Martin McGuinness" alternate="Martin Mcguinness" />
 
 <!-- First added for 2005 parliament -->
+<alias fullname="Anne Picking" alternate="Anne Moffat" />
+<alias fullname="Mark Lancaster" alternate="John Lancaster" />
 <alias fullname="Daniel Rogerson" alternate="Dan Rogerson" />
 <alias fullname="David Davies" alternate="David T C Davies" />
 <alias fullname="Christopher Huhne" alternate="Chris Huhne" />
 <alias constituency="Sheffield, Hillsborough" alternate="Angela C Smith" />
 <alias constituency="Basildon" alternate="Angela E Smith" />
+<alias fullname="Nicholas Clegg" alternate="Nick Clegg" />
+<alias fullname="James McGovern" alternate="Jim McGovern" />
+<alias fullname="Michael Penning" alternate="Mike Penning" />
+<alias fullname="Jennifer Willott" alternate="Jenny Willott" />
+<alias fullname="Edward Balls" alternate="Ed Balls" />
+<alias fullname="Sian James" alternate="S-an James" />
+<alias fullname="Sian James" alternate="S-an C James" />
+<alias fullname="Patrick McFadden" alternate="Pat McFadden" />
+<alias fullname="Robert Wilson" alternate="Rob Wilson" />
+<alias fullname="Diana Johnson" alternate="Diana R Johnson" />
 
 <!-- First added for 2001 parliament -->
 <alias fullname="Parmjit Gill" alternate="Parmjit Singh Gill" />
@@ -317,8 +329,6 @@ different spellings of the offices -->
 <alias fullname="Jacqui Smith" alternate="Jacqueline Smith" />
 <alias fullname="Liam Byrne" alternate="Liam Bryne" />
 <alias fullname="Kenneth Clarke" alternate="Ken Clarke" />
-
-<alias fullname="Robert Wilson" alternate="Rob Wilson" />
 
 <!-- Various harder aliases/typos to worry about later
 	 These came up during the old Public Whip division parsing.
