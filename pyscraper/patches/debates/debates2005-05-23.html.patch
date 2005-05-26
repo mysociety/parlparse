@@ -1,0 +1,11 @@
+--- /home/parlparse/parldata/cmpages/debates/debates2005-05-23.html	2005-05-25 08:06:46.000334971 +0100
++++ /home/parlparse/parldata/cmpages/debates/debates2005-05-23-patchtmp.html	2005-05-25 09:09:30.000680717 +0100
+@@ -694,7 +694,7 @@
+ 
+ 
+ 
+-<p><a name="50523-03_spnew22"><b> Helen Jones  (Warrington, North)</b> 
++<stamp parsemess-ignorenamemismatch="yes"/><p><a name="50523-03_spnew22"><b> Helen Jones  (Warrington, North)</b> 
+  (Lab): My hon. Friend is quite right to say that tackling drug abuse is key to tackling crime, but will he go one step further and look at what happens to people after they have been through drug treatment programmes? Is now not the time to look at developing ways of supporting people after treatment by helping them to get jobs and proper housing, because sending them back to the same estates with the same drug dealer around the corner often leads them to go back to drugs and hence back to crime?
+ </p>
+ 
