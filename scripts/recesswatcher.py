@@ -13,19 +13,21 @@ import datetime
 import os
 import csv
 import smtplib
+import sys
 
 recess_file = os.path.expanduser('~/parldata/parl-recesses.txt')
 recess_file_new = recess_file + ".new"
 
-toaddrs = [ "parlparse" ]
+toaddrs = [ "parlparse@ukparse.kforge.net" ]
 
 today = datetime.date.today().isoformat()
 
-url = "http://www.parliament.uk/faq/business_faq_page.cfm"
+url = "http://www.parliament.uk/faq/recess.cfm"
 
 ur = urllib.urlopen(url)
 co = ur.read()
 ur.close()
+co = co.replace("Febraury", "February")
 
 def domail(subject, msg):
 	msg = "From: The Recess Gods <francis@flourish.org>\n" +  \
@@ -41,16 +43,11 @@ def domail(subject, msg):
 #     <p><font size="2">18 December 2003</font></p>^M
 #     </td>^M
 
-cells = re.findall('<td class="editonprotabletext">\s*' +
-                   '<p>(?:<font size="2">)?' +
+cells = re.findall('<td class="editonprotabletext"[^>]*>\s*' +
+                   '<p[^>]*>(?:<font size="2">)?' +
                    '([^<]*?)' +
                    '(?:</font>)?</p>' +
                    '\s*</td>', co)
-
-# Strip everything up to this sentence
-while 1:
-    if re.search('has announced (provisional dates for )?the Commons calendar', cells.pop(0)):
-        break
 
 # Within table of dates, have 3 columns
 if len(cells) % 3 <> 0:
@@ -62,6 +59,7 @@ dates = []
 last_finish = 1000-01-01
 while cells:
     (name, start, finish) = (cells.pop(0), cells.pop(0), cells.pop(0))
+    # print "%s: %s to %s" % (name, start, finish)
     start = (mx.DateTime.strptime(start, "%e %b %Y")+1).date
     finish = (mx.DateTime.strptime(finish, "%e %b %Y")-1).date
     assert start > last_finish
@@ -71,7 +69,6 @@ while cells:
 		domail(name + " starts", "%s of parliament starts today %s, ends %s\n" % (name, start, finish))
     if finish == today:
         domail(name + " ends", "%s of parliament ends today %s\n" % (name, finish))
-    # print "%s: %s to %s" % (name, start, finish)
 
 # "dates" now contains a list of all the periods of recess
 
