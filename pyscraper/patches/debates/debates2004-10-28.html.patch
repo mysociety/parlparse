@@ -1,20 +1,19 @@
---- /home/fawkes/pwdata/cmpages/debates/debates2004-10-28.html	Sat Oct 30 06:01:33 2004
-+++ /home/fawkes/pwdata/cmpages/debates/debates2004-10-28-patchtmp.html	Fri Dec 24 15:59:11 2004
-@@ -2780,7 +2780,7 @@
+--- /home/parlparse/parldata/cmpages/debates/debates2004-10-28.html	2005-05-26 21:22:16.000000000 +0100
++++ /home/parlparse/parldata/cmpages/debates/debates2004-10-28-patchtmp.html	2005-05-26 22:27:24.000245235 +0100
+@@ -1358,6 +1358,7 @@
+ <br>&nbsp;<br>
  
  
++<stamp parsemess-colnum="1578"/>
+ <a name="41028-06_head0"><h3 align=center>Reform of Laws on Murder</h3>
  
--<p><a name="41028-14_spmin0"><b>Madam Deputy Speaker:</b> 
-+<p><a name="41028-14_spmin0"><b>Mrs Sylvia Heal (Madam Deputy Speaker):</b> 
-  The hon. Gentleman is right to say that the Chair does not have responsibility for the answers that Ministers give. I suggest that he consult the staff in the Table Office, who may well be able to assist him.
- 
- 
-@@ -8069,6 +8069,8 @@
+ <a name="41028-06_time0"><h5>12.32 pm</h5>
+@@ -8096,7 +8097,7 @@
  
  
  <br>
-+<P>
-+<explicit-end-division>
- Question agreed to.</p>
+-Question agreed to.</p>
++Question accordingly agreed to.</p>
  
  </p>
+ 

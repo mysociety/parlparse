@@ -16,7 +16,7 @@ from miscfuncs import FixHTMLEntities
 
 sionsm = "Sio\(r\)n|Sio\[circ\]n|Si\&\#244\;n|Si\&\#246\;n"
 fullnm = "([ \w\-'#&;]*), ([ \w\-.#&;]*?|%s)(?:[ \.]rh)?" % sionsm
-constnm = "(?:(?:<i>|\()+([ \w&#;\d',.\-]*)(?:\)|</i>)+)"
+constnm = "(?:(?:,\s+)?(?:<i>|\()+([ \w&#;\d',.\-]*)(?:\)|</i>)+)"
 reflipname = re.compile("%s\s*%s?$" % (fullnm, constnm))
 reconstnm = re.compile("%s$" % constnm)
 
