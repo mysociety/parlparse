@@ -1,6 +1,23 @@
---- /home/fawkes/pwdata/cmpages/debates/debates2004-10-25.html	Tue Oct 26 08:06:57 2004
-+++ /home/fawkes/pwdata/cmpages/debates/debates2004-10-25-patchtmp.html	Wed Oct 27 12:25:53 2004
-@@ -6622,7 +6622,7 @@
+--- /home/parlparse/parldata/cmpages/debates/debates2004-10-25.html	2005-05-26 21:22:58.000000000 +0100
++++ /home/parlparse/parldata/cmpages/debates/debates2004-10-25-patchtmp.html	2005-05-26 22:43:17.000647058 +0100
+@@ -1197,7 +1197,7 @@
+ 
+ 
+ 
+-
++<parsemess-misspeech type="heading" redirect="nowhere"/>
+ 
+ <p>15. <a name="41025-05_wqn3"><b> Mr. Desmond Swayne  (New Forest, West)</b> 
+  (Con): What NATO&#039;s role is in Iraq.  [193218]
+@@ -1281,6 +1281,7 @@
+ 
+ <br>&nbsp;<br>
+ 
++<stamp parsemess-colnum="1144"/>
+ <h4 align=center>Opposition Day</h4>
+ <br>
+ <center> [20th Allotted Day]</center><br>
+@@ -6637,7 +6638,7 @@
  
  
  

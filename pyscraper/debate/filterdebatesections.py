@@ -265,7 +265,7 @@ def GrabWestminDivisionInterruptProced(qbp, rawtext):
 			assert False
 		iskip = -2
 
-	elif re.search("italic.*?>sitting suspended(?: for| until|\.)(?i)", qbp.stext[-1]):
+	elif re.search("italic.*?>sitting suspended(?: for| until| till|\.)(?i)", qbp.stext[-1]):
 		iskip = -1
 
 	# copy the lines into a non-speaking paragraph.
