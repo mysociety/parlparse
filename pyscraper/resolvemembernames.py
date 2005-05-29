@@ -100,6 +100,12 @@ class MemberList(xml.sax.handler.ContentHandler):
                     if consid:
                         raise Exception, "Two constituency ids %s %s overlap with MP %s" % (consid, consattr['id'], attr['id'])
                     consid = consattr['id']
+            if not consid:
+                raise Exception, "Constituency '%s' not found" % attr["constituency"]
+            # check name in members file is same as default in cons file
+            backformed_cons = self.considtonamemap[consid]
+            if backformed_cons != attr["constituency"]:
+                raise Exception, "Constituency '%s' in members file differs from first constituency '%s' listed in cons file" % (attr["constituency"], backformed_cons)
             # check first date ranges don't overlap
             for curattr in self.considtomembermap.get(consid, []):
                 if curattr['fromdate'] <= attr['fromdate'] <= curattr['todate'] \
