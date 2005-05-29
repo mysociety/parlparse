@@ -1479,8 +1479,8 @@ that loads in the original file before making modifications.
     <name text="Derbyshire North East"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/411" todate="2005-05-04">
-    <name text="North East Fife"/>
     <name text="Fife North East"/>
+    <name text="North East Fife"/>
     <name text="NE Fife"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/412" todate="9999-12-31">
@@ -2473,8 +2473,8 @@ that loads in the original file before making modifications.
     <name text="Falkirk"/>
   </constituency>
   <constituency fromdate="2005-05-05" id="uk.org.publicwhip/cons/689" todate="9999-12-31">
-    <name text="North East Fife"/>
     <name text="Fife North East"/>
+    <name text="North East Fife"/>
     <name text="NE Fife"/>
   </constituency>
   <constituency fromdate="2005-05-05" id="uk.org.publicwhip/cons/690" todate="9999-12-31">
