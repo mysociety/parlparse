@@ -482,6 +482,7 @@ that loads in the original file before making modifications.
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/130" todate="9999-12-31">
     <name text="Chester, City of"/>
     <name text="City of Chester"/>
+    <name text="Chester"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/131" todate="9999-12-31">
     <name text="Chesterfield"/>
@@ -666,6 +667,7 @@ that loads in the original file before making modifications.
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/187" todate="9999-12-31">
     <name text="Durham, City of"/>
     <name text="City of Durham"/>
+    <name text="Durham"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/188" todate="9999-12-31">
     <name text="Ealing North"/>
@@ -1631,6 +1633,7 @@ that loads in the original file before making modifications.
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/451" todate="9999-12-31">
     <name text="Penrith &amp; The Border"/>
     <name text="Penrith and The Border"/>
+    <name text="Penrith and the Border"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/452" todate="2005-05-04">
     <name text="Perth"/>
@@ -2424,12 +2427,12 @@ that loads in the original file before making modifications.
     <name text="Dumfriesshire, Clydesdale and Tweeddale"/>
   </constituency>
   <constituency fromdate="2005-05-05" id="uk.org.publicwhip/cons/676" todate="9999-12-31">
-    <name text="Dunbartonshire East"/>
     <name text="East Dunbartonshire"/>
+    <name text="Dunbartonshire East"/>
   </constituency>
   <constituency fromdate="2005-05-05" id="uk.org.publicwhip/cons/677" todate="9999-12-31">
-    <name text="Dunbartonshire West"/>
     <name text="West Dunbartonshire"/>
+    <name text="Dunbartonshire West"/>
   </constituency>
   <constituency fromdate="2005-05-05" id="uk.org.publicwhip/cons/678" todate="9999-12-31">
     <name text="Dundee East"/>
