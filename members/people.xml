@@ -1401,6 +1401,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/10247" latestname="Bruce Grocott">
     <office id="uk.org.publicwhip/member/247"/>
 </person>
+<person id="uk.org.publicwhip/person/11971" latestname="Jo Swinson">
+    <office id="uk.org.publicwhip/member/1971"/>
+</person>
 <person id="uk.org.publicwhip/person/10056" latestname="Tim Boswell">
     <office id="uk.org.publicwhip/member/1529"/>
     <office id="uk.org.publicwhip/member/56"/>
@@ -1423,13 +1426,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/1733"/>
     <office id="uk.org.publicwhip/member/203"/>
     <office id="uk.org.publicwhip/member/891"/>
-</person>
-<person id="uk.org.publicwhip/person/10384" latestname="John McFall">
-    <office id="uk.org.publicwhip/member/1069"/>
-    <office id="uk.org.publicwhip/member/1972"/>
-    <office id="uk.org.publicwhip/member/384"/>
-    <office id="uk.org.publicwhip/moffice/216"/>
-    <office id="uk.org.publicwhip/moffice/292"/>
 </person>
 <person id="uk.org.publicwhip/person/10613" latestname="Andrew Tyrie">
     <office id="uk.org.publicwhip/member/1299"/>
@@ -2198,6 +2194,11 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/11115" latestname="Andrew Mitchell">
     <office id="uk.org.publicwhip/member/1115"/>
     <office id="uk.org.publicwhip/member/1862"/>
+</person>
+<person id="uk.org.publicwhip/person/10537" latestname="Richard Shepherd">
+    <office id="uk.org.publicwhip/member/1220"/>
+    <office id="uk.org.publicwhip/member/1370"/>
+    <office id="uk.org.publicwhip/member/537"/>
 </person>
 <person id="uk.org.publicwhip/person/10478" latestname="Colin Pickthall">
     <office id="uk.org.publicwhip/member/1158"/>
@@ -3738,9 +3739,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/1350"/>
     <office id="uk.org.publicwhip/member/1445"/>
 </person>
-<person id="uk.org.publicwhip/person/11971" latestname="Jo Swinson">
-    <office id="uk.org.publicwhip/member/1971"/>
-</person>
 <person id="uk.org.publicwhip/person/10770" latestname="Alistair Burt">
     <office id="uk.org.publicwhip/member/1398"/>
     <office id="uk.org.publicwhip/member/770"/>
@@ -4265,10 +4263,12 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/1090"/>
     <office id="uk.org.publicwhip/moffice/82"/>
 </person>
-<person id="uk.org.publicwhip/person/10537" latestname="Richard Shepherd">
-    <office id="uk.org.publicwhip/member/1220"/>
-    <office id="uk.org.publicwhip/member/1370"/>
-    <office id="uk.org.publicwhip/member/537"/>
+<person id="uk.org.publicwhip/person/10384" latestname="John McFall">
+    <office id="uk.org.publicwhip/member/1069"/>
+    <office id="uk.org.publicwhip/member/1972"/>
+    <office id="uk.org.publicwhip/member/384"/>
+    <office id="uk.org.publicwhip/moffice/216"/>
+    <office id="uk.org.publicwhip/moffice/292"/>
 </person>
 <person id="uk.org.publicwhip/person/10968" latestname="Paul Holmes">
     <office id="uk.org.publicwhip/member/1497"/>
