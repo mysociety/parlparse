@@ -1,5 +1,5 @@
 --- /home/parlparse/parldata/cmpages/wrans/answers2002-11-07.html	2004-07-16 14:15:05.000000000 +0100
-+++ /home/parlparse/parldata/cmpages/wrans/answers2002-11-07-patchtmp.html	2005-05-26 22:19:50.000834616 +0100
++++ /home/parlparse/parldata/cmpages/wrans/answers2002-11-07-patchtmp.html	2005-05-31 00:28:19.000132556 +0100
 @@ -626,7 +626,7 @@
  
  <P>
@@ -9,7 +9,23 @@
  To ask the Secretary of State for Transport how many copies of the <i>(a)</i> main document and <i>(b)</i> summary of the consultation documents (i) Future Development of Air Transport in the United Kingdom: A National Consultation, (ii) Future Development of Air Transport in the United Kingdom: North of England, (iii) Future Development of Air Transport in the United Kingdom: South West, (iv) Future Development of Air Transport in the United Kingdom: Midlands, (v) Future Development of Air Transport in the United Kingdom: Wales and (vi) Future Development of Air Transport in the United Kingdom: South East have been <i>(A)</i> issued in hard copy and <i>(B)</i> downloaded from the website.  [78813]
  
  
-@@ -1306,7 +1306,7 @@
+@@ -1059,15 +1059,6 @@
+ <P>
+ <P><I>7 Nov 2002 : Column 466W</I><P>
+ 
+-<P>
+-<P>
+-<a name="21107w04.html_wqn9"><B> Joan Ruddock: </B> 
+-To ask the Secretary of State for Defence when he will answer the question of 22 July from the hon. Member for Lewisham, Deptford. [79868]<P>
+-<P>
+-<P>
+-<a name="21107w04.html_spnew9"><B> Mr. Ingram: </B> 
+- The information requested is still being collated. Once this is available, I will write to my hon. Friend and a copy of my letter will be placed in the Library of the House.
+-
+ <a name="21107w04.html_sbhd5"><H4><center>Gulf War</center></H4>
+ 
+ 
+@@ -1306,7 +1297,7 @@
   I will write to the hon. Member and a copy of my letter will be placed in the Library of the House.
  <P>
  <P>
@@ -18,7 +34,15 @@
  To ask the Secretary of State for Defence what plans he has to include medical staff in a call up of reservists in respect of planned military action against terrorism.  [78577]<P>
  <P>
  <P>
-@@ -1665,7 +1665,7 @@
+@@ -1506,6 +1497,7 @@
+ <P>
+ 
+ <a name="21107w05.html_para8">The latest survey was undertaken in March&#150;April 2002 and sent to a 4 per cent. random sample of the trained Army (excluding Gurkhas and Full Time Reserve Service); 3,978 questionnaires were sent out and 2,037 were returned.
++<P><I>[ TWFY editorial note: The same question is asked later the same day, and receives just the reply &quot;I will write to the hon. Member and a copy of my letter will be placed in the Library of the House.&quot; ]</I>
+ <P>
+ <page url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo021107/text/21107w06.htm"/>
+ 
+@@ -1665,7 +1657,7 @@
  
  <P>
  <P>
@@ -27,7 +51,7 @@
  To ask the Secretary of State for Defence if he will list the steps being taken by the Government to ensure that bids to build the replacement for the Invincible Class Carriers take account of UK dry dock facilities; and if he will make a statement.  [78989]<P>
  <P>
  <P>
-@@ -1689,7 +1689,7 @@
+@@ -1689,7 +1681,7 @@
  
  <P>
  <P>
@@ -36,7 +60,7 @@
  To ask the Secretary of State for Defence how many civilian aircraft landings and take-offs were recorded at RAF Machrihanish during each of the last five years.  [78734]<P>
  <P>
  <P>
-@@ -1847,6 +1847,8 @@
+@@ -1847,6 +1839,8 @@
  Professor D King CSA to the Government
  Dr. A Keddy Department of Trade & Industry
  
@@ -45,7 +69,7 @@
  
  <a name="21107w07.html_sbhd3"><H4><center>PFI Projects</center></H4>
  
-@@ -2077,10 +2079,7 @@
+@@ -2077,10 +2071,7 @@
  <P>
  <a name="21107w08.html_wqn2"><B> Llew Smith: </B> 
  To ask the Secretary of State for Defence if he will make a statement on the meaning of the phrase 
@@ -57,7 +81,93 @@
  in paragraph 27 of the Government response to the Defence Select Committee report on Defence and Security in the UK, HC 1230, Session 2001&#150;02, in respect of the vulnerability of nuclear installations to terrorist attack.  [80365]<P></UL>
  <P>
  <P>
-@@ -17062,8 +17061,7 @@
+@@ -3326,25 +3317,13 @@
+ <P><I>7 Nov 2002 : Column 496W</I><P>
+ enter service in July 2003. The company is making stringent efforts to recover up to seven weeks of that slippage.
+ 
+-<a name="21107w12.html_sbhd15"><H4><center>Bullying</center></H4>
+-
+-
+-<P>
+-<P>
+-<a name="21107w12.html_wqn15"><B> Mr. Keetch: </B> 
+-To ask the Secretary of State for Defence how many members of the Army indicated when last questioned that they believe that <i>(a)</i> harassment, <i>(b)</i> discrimination and <i>(c)</i> bullying are problems in (i) their immediate area of work and (ii) the Army as a whole; what percentage of those responding this represents; what percentage of actual strength this represents; and if he will make a statement.  [78634]<P>
+-<P>
+-<P>
+-<a name="21107w12.html_spnew15"><B> Mr. Ingram: </B> 
+- I will write to the hon. Member and a copy of my letter will be placed in the Library of the House.
+-
+ <a name="21107w12.html_sbhd16"><H4><center>Medical Specialists</center></H4>
+ 
+ 
+ <P>
+ <P>
+ <a name="21107w12.html_wqn16"><B> Mr. Keetch: </B> 
+-To ask the Secretary of State for Defence (1) how many medical specialists, and in which specialisations, there are in the Reserves;  [78319]
++To ask the Secretary of State for Defence (1) how many medical specialists, and in which specialisations, there are in the Reserves; [78319b]
+ <P>
+ <UL>
+ (2) what plans he has to <i>(a)</i> call up and <i>(b)</i> put on notice members of the defence medical services reserve forces; whether this will include former TA field hospitals; which specialities are being put on notice for call up in order to supplement regular defence medical services field hospitals and other facilities; and if he will make a statement.  [78638]<P></UL>
+@@ -3480,13 +3459,6 @@
+ 
+ 
+ <P>
+-<P>
+-<a name="21107w13.html_wqn2"><B> Mr. Gorden Marsden: </B> 
+-To ask the Secretary of State for Defence how many applications for war disablement pensions were made by <i>(a)</i> members of the Mercantile Marine and <i>(b)</i> other eligible branches of the armed forces in respect of skin cancer and other associated conditions have been (i) upheld and (ii) rejected by tribunals in each of the past 20 years, for which figures are available.  [79491]<P>
+-<P>
+-<P>
+-<a name="21107w13.html_spnew2"><B> Mr. Ingram: </B> 
+- The information requested is not held centrally and could be provided only at disproportionate cost.
+ 
+ <a name="21107w13.html_sbhd2"><H4><center>Unexploded Ordnance</center></H4>
+ 
+@@ -3570,13 +3542,6 @@
+  <i>[holding answer 24 October 2002]:</i> I will write to the hon. Member and a copy of my letter will be placed in the Library of the House.
+ <P>
+ <P>
+-<a name="21107w13.html_wqn10"><B> Mr. Andrew Turner: </B> 
+-To ask the Secretary of State for Defence what public consultations have been commenced by his Department in each month since 10 October; and what the <i>(a)</i> start date, <i>(b)</i> closing date and <i>(c)</i> website address of each were.  [80265]<P>
+-<P>
+-<P>
+-<a name="21107w13.html_spnew10"><B> Mr. Ingram: </B> 
+- None.
+-
+ <a name="21107w13.html_sbhd6"><H4><center>Eurofighter Typhoon</center></H4>
+ 
+ 
+@@ -10192,21 +10157,6 @@
+ 
+ <a name="21107w39.html_para6">To ensure their impartiality, independent members must have no direct connection with the agricultural industry or any connection with organisations representing employers of agricultural labour or representing the interests of agricultural workers. This excludes from consideration any member of the National Farmers' Union or the Transport and General Workers Union, the organisations that nominate the representative members of the Wages Board.
+ 
+-<a name="21107w39.html_sbhd3"><H4><center>Plastic Bags</center></H4>
+-
+-
+-<P>
+-<P>
+-<a name="21107w39.html_wqn4"><B> Jeremy Corbyn: </B> 
+-To ask the Secretary of State for Environment, Food and Rural Affairs, what consultation she is undertaking on the introduction of a charge for plastic bags given out in shops; and if she will make a statement.  [79638]<P>
+-<P>
+-<P>
+-<a name="21107w39.html_spnew4"><B> John Healey: </B> 
+- I have been asked to reply.
+-<P>
+-
+-<a name="21107w39.html_para7">Taxes are a matter for the Chancellor.
+-
+ <a name="21107w39.html_sbhd4"><H4><center>Earth Summit</center></H4>
+ 
+ 
+@@ -13936,7 +13886,7 @@
+ <P>
+ <P>
+ <a name="21107w51.html_wqn3"><B> Mr. Neil Turner: </B> 
+-To ask the Secretary of State for Foreign and Commonwealth Affairs if he will make a statement on the application for an export licence for the supply of two de-mining vests to the United Nations Office for Project Services in Sudan.<P>
++To ask the Secretary of State for Foreign and Commonwealth Affairs if he will make a statement on the application for an export licence for the supply of two de-mining vests to the United Nations Office for Project Services in Sudan. [80106]<P>
+ <P>
+ <P>
+ <a name="21107w51.html_spnew3"><B> Mr. Rammell: </B> 
+@@ -17062,8 +17012,7 @@
  <P>
  <a name="21107w60.html_wqn9"><B> Mrs. Iris Robinson: </B> 
  To ask the Secretary of State for Northern Ireland, how many <i>(a)</i> doctors and
@@ -67,7 +177,7 @@
  <P>
  <P>
  <a name="21107w60.html_spnew9"><B> Desmond Browne: </B> 
-@@ -23992,6 +23990,7 @@
+@@ -23992,6 +23941,7 @@
  <a name="21107w87.html_wqn3"><B> Mr. Simon: </B> 
  To ask the Chancellor of the Exchequer what proportion of the Royal Mint's fixed costs are covered by its Treasury contract for UK coin production in 2001&#150;2002.  [78345]
  <P>
@@ -75,7 +185,7 @@
  <UL>To ask the Chancellor of the Exchequer, whether the Royal Mint is benefiting from the contribution to overheads made on its monopoly circulating coin contract with the Treasury to price down overseas contracts in competition with the privately owned Birmingham Mint.  [78343]<P></UL>
  <P>
  <P>
-@@ -25040,7 +25039,7 @@
+@@ -25040,7 +24990,7 @@
  <P>
  <a name="21107w91.html_wqn1"><B> Vera Baird: </B> 
  To ask the Parliamentary Secretary, Lord Chancellor's Department (1) what training for trying cases of rape and sexual assault is given to High Court Judges (a) on appointment and (b) at a later date; and whether, in each case, this training is compulsory;[80246]
@@ -84,7 +194,16 @@
  <P>
  <P>
  <a name="21107w91.html_spnew1"><B> Yvette Cooper: </B> 
-@@ -25487,10 +25486,10 @@
+@@ -25079,6 +25029,8 @@
+ 
+ <a name="21107w91.html_para0">The centre has no residential facilities and appellants will attend, on a daily basis, only in connection with oral appeal hearings.
+ 
++<P><I>[ TWFY note: On the same day, the same question was asked and David Blunkett replied with &quot;I will write to the hon. Member and place a copy of my letter in the Library.&quot; ]</I>
++<P>
+ <a name="21107w91.html_sbhd3"><H4><center>Recruitment (Over-50s)</center></H4>
+ 
+ 
+@@ -25487,10 +25439,10 @@
  <P>
  <P>
  <a name="21107w92.html_wqn5"><B> Dr. Francis: </B> 
@@ -97,3 +216,22 @@
  <P>
  <P>
  <a name="21107w92.html_spnew5"><B> Hilary Benn: </B> 
+@@ -25991,18 +25943,6 @@
+ <a name="21107w94.html_spnew8"><B> Mr. Denham: </B> 
+  I will write to the hon. Member and place a copy of my letter in the Library.
+ 
+-<a name="21107w94.html_sbhd8"><H4><center>Columbus House</center></H4>
+-
+-
+-
+-<P>
+-<P>
+-<a name="21107w94.html_wqn9"><B> Mr. Evans </B> 
+-: To ask the Secretary of State for the Home Department what plans he has for the Home Office leased building at Columbus House on the Langstone Business Park in Newport, South Wales; and if it will be used for residential purposes.  [79704]<P>
+-<P>
+-<P>
+-<a name="21107w94.html_spnew9"><B> Mr. Blunkett: </B> 
+- I will write to the hon. Member and place a copy of my letter in the Library.
+ <P>
+ <page url="http://www.publications.parliament.uk/pa/cm200102/cmhansrd/vo021107/text/21107w95.htm"/>
+ 
