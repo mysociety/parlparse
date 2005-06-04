@@ -106,6 +106,8 @@ renampos = re.compile("""<td><b>
         (?:</td>)?\s*$(?i)""",
         re.X)
 
+bigarray = {}
+# bigarray2 = {}
 
 # do the xml thing
 def WriteXML(moffice, fout):
@@ -115,6 +117,8 @@ def WriteXML(moffice, fout):
         #fout.write("\n")
 
         fout.write(' dept="%s" position="%s"' % (re.sub("&", "&amp;", moffice.dept), moffice.pos))
+        if moffice.responsibility:
+                fout.write(' responsibility="%s"' % re.sub("&", "&amp;", moffice.responsibility))
 
         fout.write(' fromdate="%s"' % moffice.sdatestart)
         if moffice.stimestart:
@@ -131,6 +135,33 @@ def WriteXML(moffice, fout):
 
         fout.write(' source="%s">' % moffice.sourcedoc)
         fout.write('</moffice>\n')
+
+
+# NEW endeavour to get an id into all the names
+#def NewSetNameMatch(cp, cpsdate):
+#	cp.nmatchid = ""
+#        cp.npersonid = ""
+#
+#	# don't match names that are in the lords
+#        # (or Andrew Adonis, who at least briefly seems to be neither Lord or MP, but minister)
+#	if not re.search("Duke |Lord |Baroness |Andrew Adonis|Lynda Clark", cp.fullname):
+#		fullname = cp.fullname
+#		cons = cp.cons
+#
+#		cp.nmatchid, cp.nremadename, cp.nremadecons = memberList.matchfullnamecons(fullname, cons, cpsdate)
+#		if not cp.nmatchid:
+#			raise Exception, 'No match: ' + fullname + " : " + (cons or "[nocons]") + " " + cpsdate + "\nOrig:" + cp.fullname
+#               cp.npersonid = memberList.membertoperson(cp.nmatchid)
+#
+#	else:
+#		cp.nremadename = cp.fullname
+#		cp.nremadename = re.sub("^Rt Hon ", "", cp.nremadename)
+#		cp.nremadename = re.sub(" [CO]BE$", "", cp.nremadename)
+#		cp.nremadecons = ""
+#
+#
+#	# make the structure we will sort by.  Note the ((,),) structure
+#	cp.nsortobj = ((re.sub("(.*) (\S+)$", "\\2 \\1", cp.nremadename), cp.nremadecons), cpsdate)
 
 
 class protooffice:
@@ -154,8 +185,13 @@ class protooffice:
                 '2004-09-20') or (self.sdatet[0] >= '2005-05-17')):
 			self.cons = "Harrow West"
 
+#                NewSetNameMatch(self, self.sdatet[0])
+
 		pos = nampos.group(4)
 		dept = nampos.group(5) or "No Department"
+                responsibility = ""
+                if self.sdatet[0] in bigarray and self.fullname in bigarray[self.sdatet[0]]:
+                        responsibility = bigarray[self.sdatet[0]][self.fullname]
 
 		# change of wording in 2004-11
 		if dept == "Leader of the House of Commons":
@@ -192,6 +228,7 @@ class protooffice:
 
 		# map down to the department for this record
 		self.pos = self.depts[deptno][0]
+                self.responsibility = responsibility
 		self.dept = self.depts[deptno][1]
 
 
@@ -216,7 +253,7 @@ class protooffice:
                 assert (self.sdateend, self.stimeend) < nextrec.sdatet
 		assert self.bopen
 
-		if (self.lasname == nextrec.lasname) and (self.froname == nextrec.froname) and (self.dept == nextrec.dept) and (self.pos == nextrec.pos):
+		if (self.froname == nextrec.froname) and (self.lasname == nextrec.lasname) and (self.dept == nextrec.dept) and (self.pos == nextrec.pos):
                         if self.cons != nextrec.cons:
                                 raise Exception, "Mismatched cons name %s %s" % (self.cons, nextrec.cons)
 			(self.sdateend, self.stimeend) = nextrec.sdatet
@@ -224,6 +261,37 @@ class protooffice:
 			return True
 		return False
 
+pus = {'Culture':1, 'Media and Tourism':1}
+
+def p(a):
+        for i in a:
+                if i[0] in pus:
+                        print "PUS ", i
+                else:
+                        print "    ", i
+
+def SpecMins(regex, fr, sdate):
+        a = re.findall(regex, fr)
+        for i in a:
+                specpost = i[0]
+                specname = re.sub("^\s+", "", i[1])
+                specname = re.sub("\s+$", "", specname)
+	        if not re.search("Duke |Lord |Baroness ", specname):
+#		        nmatchid, nremadename, nremadecons = memberList.matchfullnamecons(specname, '', sdate)
+#		        if not nmatchid:
+#        			raise Exception, 'No match: ' + specname + " : " + specpost + " : " + sdate
+#                        npersonid = memberList.membertoperson(nmatchid)
+                        nremadename = specname
+                        nremadename = re.sub("\s+MP$", "", nremadename)
+                        bigarray.setdefault(sdate, {})
+                        bigarray[sdate][nremadename] = specpost
+	        else:
+        		nremadename = specname
+        		nremadename = re.sub("^Rt Hon ", "", nremadename)
+        		nremadename = re.sub(" [CO]BE$", "", nremadename)
+        		nremadecons = ""
+                        bigarray.setdefault(sdate, {})
+                        bigarray[sdate][nremadename] = specpost
 
 def ParsePage(fr):
 
@@ -243,6 +311,17 @@ def ParsePage(fr):
 
 	sdate = sudate
 	stime = sutime	# or midnight if not posted properly to match the msdate
+
+        # extract special Ministers of State and PUSes
+        namebit = "<td valign='TOP'>(.*?)(?:\s+\[.*?\])?</td>"
+        alsobit = "(?:\s+\(also .*?\))?"
+        SpecMins("<TR><td width='400'><b>Minister of State \((.*?)\)</b></td>%s" % namebit, fr, sdate)
+        SpecMins("<TR><td width='400'>- Mini?ster of State \((.*?)\)%s</TD>%s" % (alsobit, namebit), fr, sdate)
+        SpecMins("<tr><td>- Minister of State \((.*?)\)?%s</td>%s" % (alsobit, namebit), fr, sdate)
+        SpecMins("<TR><td width='400'>- Minister (?:of State )?for (.*?)%s</TD>%s" % (alsobit, namebit), fr, sdate)
+        SpecMins("<tr><td>- Minister for (.*?)</td>%s" % namebit, fr, sdate)
+        SpecMins("<TR><td width='400'><B>Minister of (.*?)</B>%s" % namebit, fr, sdate)
+        SpecMins("<TR><td width='400'>- Parliamentary Under-Secretary (?:of state )?(?:for )?\(?(.*?)\)?%s</TD>%s(?i)" % (alsobit, namebit), fr, sdate)
 
 	# extract the alphabetical list
 	alphl = re.search("ALPHABETICAL LIST OF HM GOVERNMENT([\s\S]*?)</table>", fr).group(1)
@@ -268,7 +347,7 @@ def ParsePage(fr):
 				if ec.pos in luniqgov:
 					luniqgov.remove(ec.pos)
 				else:
-					print "Unnaccounted govt position", ec.pos
+					print "Unaccounted govt position", ec.pos
 
 			res.append(ec)
 
@@ -329,6 +408,7 @@ def ParseGovPostsChggdir():
 # endeavour to get an id into all the names
 def SetNameMatch(cp, cpsdates):
 	cp.matchid = ""
+#        cp.personid = ""
 
 	# don't match names that are in the lords
         # (or Andrew Adonis, who at least briefly seems to be neither Lord or MP, but minister)
@@ -341,6 +421,7 @@ def SetNameMatch(cp, cpsdates):
 			cp.matchid, cp.remadename, cp.remadecons = memberList.matchfullnamecons(fullname, cons, cpsdates[1])
 		if not cp.matchid:
 			raise Exception, 'No match: ' + fullname + " : " + (cons or "[nocons]") + "\nOrig:" + cp.fullname
+#                cp.personid = memberList.membertoperson(cp.matchid)
 
 	else:
 		cp.remadename = cp.fullname
@@ -425,7 +506,6 @@ def ParseGovPosts():
 	assert moffidn < 1000
 	moffidn = 1000
 	for cp in cpres:
-
 		cpsdates = [cp.sdatestart, cp.sdateend]
 		if cpsdates[0] == opendate:
 			cpsdates[0] = sdatetlist[0][0]

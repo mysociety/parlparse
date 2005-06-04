@@ -946,7 +946,7 @@ def ParseOldRecords():
 			position = d
 			continue
 
-		decode = re.match("([^\d\(]*?)\s*(\([^\)]*\))?\s*(\d+\s+\w+\s+\d+)\s*-\s*(\d+\s+\w+\s+\d+)?\s*$", d)
+		decode = re.match("([^\d\(]*?)\s*(?:\(([^\)]*)\))?\s*(\d+\s+\w+\s+\d+)\s*-\s*(\d+\s+\w+\s+\d+)?\s*$", d)
 		if not decode:
 			print d
 
@@ -962,6 +962,8 @@ def ParseOldRecords():
 		minlabmin.dept = dept
 		minlabmin.pos = position
 		minlabmin.responsibility = decode.group(2)
+		if (minlabmin.responsibility):
+			minlabmin.responsibility = re.sub("^(?:Minister )?for ", "", minlabmin.responsibility)
 		minlabmin.sdatestart = mx.DateTime.DateTimeFrom(decode.group(3)).date
 
 		if decode.group(4):
