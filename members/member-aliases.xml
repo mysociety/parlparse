@@ -28,6 +28,7 @@ A date range can also be specified, for which the alias is valid.
 -->
 
 <!-- Offices (only those that are needed) -->
+<!-- TODO: Sould be able to use ministers.xml for these now -->
 
 <alias fullname="Tony Blair" alternate="The Prime Minister" from="1997-05-01" to="9999-31-01"/>
 
