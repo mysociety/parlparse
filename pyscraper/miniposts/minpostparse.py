@@ -306,7 +306,8 @@ def ParsePage(fr):
 	frdate = re.search(">Her Majesty's Government at\s+(.*?)\s*<", fr)
 	msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
 
-	if msdate != sudate and sudate != "2004-09-20" and sudate != '2005-03-10' and sudate != '2005-05-13':   # is it always posted up on the day it is announced?
+        # is it always posted up on the day it is announced?
+	if msdate != sudate and sudate != "2004-09-20" and sudate != '2005-03-10' and sudate != '2005-05-13' and sudate != '2005-06-06':
 		print "Updated date is %s, but date of change %s" % (sudate, msdate)
 
 	sdate = sudate
