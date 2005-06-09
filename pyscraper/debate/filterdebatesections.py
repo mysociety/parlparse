@@ -183,7 +183,7 @@ def StripWestminhallHeadings(headspeak, sdate):
 	for j in range(0, ih):
 		stampurl.UpdateStampUrl(headspeak[j][1])
 
-	if (not stampurl.stamp) or (not stampurl.pageurl):
+        if (not stampurl.stamp) or (not stampurl.pageurl):
 		raise Exception, ' missing stamp url at beginning of file '
 	return (ih, stampurl)
 
