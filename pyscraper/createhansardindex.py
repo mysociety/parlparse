@@ -253,37 +253,38 @@ def UpdateHansardIndex(force):
 	global reses
 	reses = {}
 
-        # get front page (which we will compare against)
+	# get front page (which we will compare against)
 	CmIndexFromPage(urlcmindex)
-        CmIndexFromPage(urlvotesindex)
-        urllisth = map(lambda r: r + (reses[r][0],), reses.keys())
+	CmIndexFromPage(urlvotesindex)
+	urllisth = map(lambda r: r + (reses[r][0],), reses.keys())
 	urllisth.sort()
 	urllisth.reverse()
+		
 
-        if not force:
-                # compare this leading term against the old index
-        	oldindex = LoadOldIndex(pwcmindex)
-	        if oldindex.CompareHeading(urllisth):
-        		#print ' Head appears the same, no new list '
-        		return
+	if not force:
+		# compare this leading term against the old index
+		oldindex = LoadOldIndex(pwcmindex)
+		if oldindex.CompareHeading(urllisth):
+			#print ' Head appears the same, no new list '
+			return
 
-                oindex = oldindex.res
-                oindex.extend(oldindex.resv)
-                for i in urllisth:
-                        if i not in oindex:
-                                oindex.append(i)
-                oindex.sort()
-                oindex.reverse()
-                urllisth = oindex
-        else:
-                # extend our list to all the pages
-        	cres = CmAllIndexPages(urlcmindex)
-        	cres += CmAllIndexPages(urlvotesindex)
-                for cr in cres:
-        		CmIndexFromPage(cr)
-                urllisth = map(lambda r: r + (reses[r][0],), reses.keys())
-        	urllisth.sort()
-        	urllisth.reverse()
+		oindex = oldindex.res
+		oindex.extend(oldindex.resv)
+		for i in urllisth:
+			if i not in oindex:
+				oindex.append(i)
+		oindex.sort()
+		oindex.reverse()
+		urllisth = oindex
+	else:
+		# extend our list to all the pages
+		cres = CmAllIndexPages(urlcmindex)
+		cres += CmAllIndexPages(urlvotesindex)
+		for cr in cres:
+			CmIndexFromPage(cr)
+		urllisth = map(lambda r: r + (reses[r][0],), reses.keys())
+		urllisth.sort()
+		urllisth.reverse()
 
 	fpwcmindex = open(pwcmindex, "w");
 	WriteXML(fpwcmindex, urllisth)
