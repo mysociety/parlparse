@@ -239,6 +239,7 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/60" todate="9999-12-31">
     <name text="Blackpool South"/>
+    <name text="Blackpool, South"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/61" todate="9999-12-31">
     <name text="Blaenau Gwent"/>
@@ -278,6 +279,7 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/72" todate="9999-12-31">
     <name text="Bournemouth East"/>
+    <name text="Bournemouth, East"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/73" todate="9999-12-31">
     <name text="Bournemouth West"/>
@@ -512,6 +514,7 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/139" todate="9999-12-31">
     <name text="Clwyd South"/>
+    <name text="Clwyd, South"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/140" todate="9999-12-31">
     <name text="Clwyd West"/>
@@ -552,12 +555,14 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/151" todate="9999-12-31">
     <name text="Coventry North East"/>
+    <name text="Coventry, North-East"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/152" todate="9999-12-31">
     <name text="Coventry North West"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/153" todate="9999-12-31">
     <name text="Coventry South"/>
+    <name text="Coventry, South"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/154" todate="9999-12-31">
     <name text="Crawley"/>
@@ -629,6 +634,7 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/175" todate="9999-12-31">
     <name text="Doncaster Central"/>
+    <name text="Doncaster, Central"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/176" todate="9999-12-31">
     <name text="Doncaster North"/>
@@ -1110,6 +1116,7 @@ that loads in the original file before making modifications.
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/310" todate="9999-12-31">
     <name text="Islington South &amp; Finsbury"/>
     <name text="Islington South and Finsbury"/>
+    <name text="Islington, South and Finsbury"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/311" todate="9999-12-31">
     <name text="Islwyn"/>
@@ -1141,6 +1148,7 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/319" todate="9999-12-31">
     <name text="Kingston upon Hull North"/>
+    <name text="Kingston upon Hull, North"/>
     <name text="Hull North"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/320" todate="9999-12-31">
@@ -1402,6 +1410,7 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/390" todate="9999-12-31">
     <name text="New Forest East"/>
+    <name text="New Forest, East"/>
     <name text="New Forest E"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/391" todate="9999-12-31">
@@ -1615,6 +1624,7 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/446" todate="9999-12-31">
     <name text="Oxford East"/>
+    <name text="Oxford, East"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/447" todate="9999-12-31">
     <name text="Oxford West &amp; Abingdon"/>
@@ -1688,6 +1698,7 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/467" todate="9999-12-31">
     <name text="Reading East"/>
+    <name text="Reading, East"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/468" todate="9999-12-31">
     <name text="Reading West"/>
@@ -1736,6 +1747,7 @@ that loads in the original file before making modifications.
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/481" todate="2005-05-04">
     <name text="Ross, Skye &amp; Inverness West"/>
     <name text="Ross, Skye and Inverness West"/>
+    <name text="Ross, Skye and Inverness, West"/>
     <name text="Ross Skye and Inverness West"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/482" todate="9999-12-31">
@@ -1994,6 +2006,7 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/551" todate="9999-12-31">
     <name text="Stockton South"/>
+    <name text="Stockton, South"/>
     <name text="Stockport South"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/552" todate="9999-12-31">
@@ -2553,6 +2566,7 @@ that loads in the original file before making modifications.
   <constituency fromdate="2005-05-05" id="uk.org.publicwhip/cons/711" todate="9999-12-31">
     <name text="Paisley &amp; Renfrewshire South"/>
     <name text="Paisley and Renfrewshire South"/>
+    <name text="Paisley and Renfrewshire, South"/>
   </constituency>
   <constituency fromdate="2005-05-05" id="uk.org.publicwhip/cons/712" todate="9999-12-31">
     <name text="Perth &amp; Perthshire North"/>
