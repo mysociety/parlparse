@@ -155,7 +155,7 @@ if options.scrape:
 	if options.lords:
 		UpdateLordsHansardIndex(options.forceindex)
 
-	# get the changing pages
+	# get the changing pages                                    
 	if options.chgpages:
 		GrabWatchCopies(datetime.date.today().isoformat())
 
