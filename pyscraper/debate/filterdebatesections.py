@@ -63,7 +63,8 @@ fixsubs = 	[
 #[Mr. Speaker in the Chair] 0
 def StripDebateHeading(hmatch, ih, headspeak, bopt=False):
         # print "StripDebateHeading", hmatch
-	if (not re.match(hmatch, headspeak[ih][0])) or headspeak[ih][2]:
+	reheadmatch = '(?:<stamp aname="[^"]*"/>)*' + hmatch
+	if (not re.match(reheadmatch, headspeak[ih][0])) or headspeak[ih][2]:
 		if bopt:
 			return ih
 		print "headspeak", headspeak[ih]
@@ -105,13 +106,13 @@ def StripDebateHeadings(headspeak, sdate):
         gstarttime = None
         if sdate != "2001-06-13":
                 #The House met at half-past Ten o'clock
-                gstarttime = re.match('the house (?:being |having )?met at (.*?)(?:, and the Speaker-Elect having taken the Chair;)?$(?i)', headspeak[ih][0])
+                gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*the house (?:being |having )?met at (.*?)(?:, and the Speaker-Elect having taken the Chair;)?$(?i)', headspeak[ih][0])
                 if (not gstarttime) or headspeak[ih][2]:
                         raise ContextException('non-conforming "the house met at" heading %s' % repr(headspeak[ih]), "")
                 ih = ih + 1
 
         # Start of a new parliament is special
-        if sdate != "2001-06-14" and sdate != "2001-06-13" and sdate != "2005-05-11" and sdate != "2005-05-12":
+        if sdate not in ["2001-06-14", "2001-06-13", "2005-05-11", "2005-05-12"]:
 
                 #PRAYERS
                 ih = StripDebateHeading('prayers(?i)', ih, headspeak)
@@ -120,7 +121,6 @@ def StripDebateHeadings(headspeak, sdate):
 
                 # in the chair
                 ih = StripDebateHeading('\[.*? in the chair\](?i)', ih, headspeak, True)
-
 
 	# find the url, colnum and time stamps that occur before anything else in the unspoken text
 	stampurl = StampUrl(sdate)
@@ -314,7 +314,7 @@ def FilterDebateSections(text, sdate, typ):
 	for sht in headspeak[ih:]:
 		try:
 			# triplet of ( heading, unspokentext, [(speaker, text)] )
-			headingtxt = string.strip(sht[0])
+			headingtxt = stampurl.UpdateStampUrl(string.strip(sht[0]))  # we're getting stamps inside the headings sometimes
 			unspoketxt = sht[1]
 			speechestxt = sht[2]
 

@@ -18,6 +18,7 @@ sionsm = "Sio\(r\)n|Sio\[circ\]n|Si\&\#244\;n|Si\&\#246\;n"
 fullnm = "([ \w\-'#&;]*), ([ \w\-.#&;]*?|%s)(?:[ \.]rh)?" % sionsm
 constnm = "(?:(?:,\s+)?(?:<i>|\()+([ \w&#;\d',.\-]*)(?:\)|</i>)+)"
 reflipname = re.compile("%s\s*%s?$" % (fullnm, constnm))
+renoflipname = re.compile("([^<]*)%s?$" % constnm)
 reconstnm = re.compile("%s$" % constnm)
 
 def MpList(fsm, vote, sdate):
@@ -65,9 +66,14 @@ def MpList(fsm, vote, sdate):
                                 #print "grps ", ginp.groups()
 				fnam = '%s %s' % (ginp.group(2), ginp.group(1))
 				cons = ginp.group(3)
+
+			# name not being flipped, is firstname lastname
 			else:
-				raise Exception, "No flipped name match (filterdivision): %s" % fssf
-				fnam = fssf;
+				ginp = renoflipname.match(fssf)
+				if not ginp:
+					raise Exception, "No flipped or non-flipped name match (filterdivision): %s" % fssf
+				fnam = ginp.group(1);
+				cons = ginp.group(2);
 
                         #print "fss ", fssf
 			(mpid, remadename, remadecons) = memberList.matchfullnamecons(fnam, cons, sdate, alwaysmatchcons = False)
