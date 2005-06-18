@@ -315,7 +315,7 @@ def ParsePage(fr):
 
         # extract special Ministers of State and PUSes
         namebit = "<td valign='TOP'>(.*?)(?:\s+\[.*?\])?</td>"
-        alsobit = "(?:\s+\(also .*?\))?"
+        alsobit = "(?:[-\s]+\(?also .*?\)?)?"
         SpecMins("<TR><td width='400'><b>Minister of State \((.*?)\)</b></td>%s" % namebit, fr, sdate)
         SpecMins("<TR><td width='400'>- Mini?ster of State \((.*?)\)%s</TD>%s" % (alsobit, namebit), fr, sdate)
         SpecMins("<tr><td>- Minister of State \((.*?)\)?%s</td>%s" % (alsobit, namebit), fr, sdate)
