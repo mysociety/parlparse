@@ -1,0 +1,48 @@
+--- /home/parlparse/parldata/cmpages/debates/debates2004-11-18.html	2005-06-26 04:50:05.000000000 +0100
++++ /home/parlparse/parldata/cmpages/debates/debates2004-11-18-patchtmp.html	2005-06-26 11:29:51.000912218 +0100
+@@ -196,7 +196,7 @@
+ 
+ 
+ 
+-
++<stamp parsemess-missgid="2"/>
+ 
+ <p><a name="st_11"><a name="41118-01_spnew9"><b> Mr. Morley: </b> 
+  We have set out precisely how we intend to meet the climate change programme. While I do not dispute that there are challenges, this country&#039;s record on climate change is the best of any of the G8 nations. The UK is rightly seen as a leader on this issue. We are expanding the percentage of energy from renewables, and we are making progress on the introduction of carbon trading, which we pioneered. I believe that the 2010 target is achievable.
+@@ -10451,7 +10451,7 @@
+ 
+ 
+ 
+-
++<stamp parsemess-missgid="1"/>
+ 
+ 
+ <p><a name="st_227"><i>Sitting suspended.</i>
+@@ -10618,7 +10618,7 @@
+ </p>
+ 
+ 
+-
++<stamp parsemess-missgid="4"/>
+ 
+ <h4 align=center><a name="hd_1">ROYAL ASSENT</h4>
+ 
+@@ -10868,7 +10868,9 @@
+ 
+ <b>18 Nov 2004 : Column 1520</b>
+ 
+-<br>&nbsp;<br><a name="41118-20_spnew6"><b> Members of the House of Commons </b> 
++<br>&nbsp;<br>
++<stamp parsemess-colnum="1521"/>
++<a name="41118-20_spnew6"><b> Members of the House of Commons </b> 
+  
+ </p>
+ 
+@@ -11010,6 +11012,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="1522"/>
+ <p><a name="st_265"><a name="41118-20_spnew8"><b> My Lords and Members of the House of Commons </b> 
+  
+ </p>

@@ -51,7 +51,6 @@ pwxmldirs = os.path.join(toppath, "scrapedxml")
 changedatesfile = "changedates.txt"
 
 tempfilename = tempfile.mktemp(".xml", "pw-filtertemp-", miscfuncs.tmppath)
-patchtempfilename = tempfile.mktemp("", "pw-applypatchtemp-", miscfuncs.tmppath)
 
 # create the output directory
 if not os.path.isdir(pwxmldirs):
@@ -106,6 +105,7 @@ def RunFiltersDir(filterfunction, dname, options, forcereparse):
 			if not forcereparse:
 				print "input modified since output reparsing ", fin
 
+		patchtempfilename = tempfile.mktemp("", "pw-applypatchtemp-", miscfuncs.tmppath)
 		# here we repeat the parsing and run the patchtool editor until this file goes through.
 		while True:
 			# apply patch filter

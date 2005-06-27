@@ -1,0 +1,237 @@
+--- /home/parlparse/parldata/cmpages/debates/debates2004-11-08.html	2005-06-26 04:52:44.000000000 +0100
++++ /home/parlparse/parldata/cmpages/debates/debates2004-11-08-patchtmp.html	2005-06-26 12:11:54.000709519 +0100
+@@ -1515,6 +1515,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="568"/>
+ 
+ 
+ <a name="topichd_0">
+@@ -3831,7 +3832,7 @@
+ 
+ 
+ 
+-<p><a name="st_122"><a name="41108-17_spnew4"><b> Mr. Redwood: </b> 
++<stamp parsemess-ignorenamemismatch="yes"/><p><a name="st_122"><a name="41108-17_spnew4"><b> Mr. Redwood: </b> 
+  Why?
+ </p>
+ 
+@@ -5671,7 +5672,8 @@
+ </p>
+ 
+ 
+-
++<stamp parsemess-missgid="3"/>
++<stamp parsemess-missgid="4"/>
+ 
+ <br>
+ <center><a name="amdthd_0">Improvements in Energy Efficiency</center><br>
+@@ -5814,6 +5816,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="613"/>
+ <p><a name="st_149"><a name="41108-19_spnew6"><b> Brian White: </b> 
+  In Committee, it was pointed out that there was a discrepancy in the way in which the figure of 4.2 megatonnes was calculated and the Minister who replied agreed to look at it again. What action has been taken to review the figure?
+ </p>
+@@ -5836,6 +5839,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="614"/>
+ <p><a name="st_151"><a name="41108-19_spnew8"><b> Mr. John Hayes  (South Holland and The Deepings) (Con):</b> 
+  The picture is indeed shifting, but it is important for the House to be clear about it. In the other place, Lord Bassam said that the decent homes programme would reduce carbon emissions by at least 2 megatonnes. The Government&#039;s energy efficiency plan for action, however, claims that the decent homes programme will be responsible for 0.05 megatonnes. The position has shifted, but has it really shifted that much?
+ 
+@@ -5960,6 +5964,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="615"/>
+ <p><a name="st_158"><a name="41108-20_spnew3"><b> Keith Hill: </b> 
+  But we are already almost at that 20 per cent. point&#151;achieved by mechanisms that may not have been anticipated even two years ago. When we are moving towards the target, with which my hon. Friend is properly concerned, it seems unnecessary to add this provision to the Bill and set a numerical target, which may be overshot or outdated but none the less adds a degree of inflexibility. Indeed, it might even encourage a degree of complacency. Let us have neither suspicion of the Government&#039;s intentions nor encouragement to complacency. Let us not make an unnecessary amendment to the Bill.
+ 
+@@ -5973,6 +5978,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="616"/>
+ <p><a name="st_159"><a name="41108-20_spnew4"><b> Mr. Robert Syms  (Poole) (Con):</b> 
+  It has been a fair time since we debated these issues in Committee, and one could have predicted that they would come back at this point. The upper House has done us a favour by bringing the matter back to our attention.
+ </p>
+@@ -6329,6 +6335,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="619"/>
+ <p><a name="st_163"><a name="41108-21_spnew2"><b> Dr. Brian Iddon  (Bolton, South-East) (Lab):</b> 
+  Does my hon. Friend accept that the all-party warm homes group has taken evidence showing that industry wants to invest in products that would lead to greater energy efficiency? That would create jobs, so there would be a win-win situation all round: we would not only reduce CO <sub>2</sub>  emissions and the utility bills of people in fuel poverty, but increase jobs in industry.
+ </p>
+@@ -6340,6 +6347,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="620"/>
+ <p><a name="st_164"><a name="41108-21_spnew3"><b> Brian White: </b> 
+  As I say, this should be a no-brainer. I ask the Minister to rethink his position and accept the Lords amendment. I do not understand why he wants to turn the win-win situation that my hon. Friend described into a no win situation in which we would be accused of reneging on commitments. The story that we have to tell is good, and we have made excellent achievements, so we need to seize the opportunity of achieving a long-held Labour aspiration. We should not give our political opponents a stick with which to beat us, or erect unnecessary barriers that would hinder next year&#039;s G8 negotiations.
+ </p>
+@@ -6668,6 +6676,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="624"/>
+ <p><a name="st_173"><a name="41108-23_spnew1"><b> Mr. McWalter </b> 
+ : I am sure that, like us, the Minister is strongly in favour of abolishing fuel poverty and meeting achievable targets on insulation with a hard-working programme. I do not believe that that is at issue. However, I would like to know why he believes that it is inappropriate and wrong to include the 20 per cent. target in primary legislation. Does he fear, for instance, that the Government could be taken to court gratuitously if the Lords amendment is accepted? Would a lot of legal time be taken up defending slow-burning Government programmes? Why does he agree with everything that has been said in favour of the target, but object to its inclusion in primary legislation?
+ 
+@@ -6682,6 +6691,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="625"/>
+ <p><a name="st_174"><a name="41108-23_spnew2"><b> Mr. Bill Tynan  (Hamilton, South) (Lab):</b> 
+  I will not delay the House long, as I merely seek clarification.
+ </p>
+@@ -6748,6 +6758,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="625"/>
+ <p><a name="st_176"><a name="41108-23_spnew4"><b> Mrs. Anne Campbell  (Cambridge) (Lab):</b> 
+  Will my right hon. Friend give way?
+ </p>
+@@ -6799,6 +6810,7 @@
+ 
+ </p>
+ 
++<stamp parsemess-colnum="626"/>
+ 
+ 
+ 
+@@ -8228,6 +8240,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="629"/>
+ 
+ 
+ 
+@@ -8307,6 +8320,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="630"/>
+ <p><a name="st_186"><a name="41108-24_spnew2"><b> Mr. David Kidney  (Stafford) (Lab):</b> 
+  Will my right hon. Friend give way?
+ </p>
+@@ -8511,6 +8525,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="632"/>
+ <p><a name="st_196"><a name="41108-25_spnew0"><b> Sir John Butterfill  (Bournemouth, West) (Con):</b> 
+  Will the Minister tell me what particular expertise Kate Barker has in the home buying and selling markets?
+ </p>
+@@ -8544,6 +8559,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="633"/>
+ <p><a name="st_199"><a name="41108-25_spnew3"><b> Keith Hill: </b> 
+  If the hon. Gentleman had read Kate Barker&#039;s report on housing&#151;he might well have done so&#151;which was commissioned jointly by my Department and the Treasury, he could not have helped being impressed by her deep understanding, the great extent of her expertise and the enormous trouble that she took to analyse the housing market and to get these things right. I do not know which authority the hon. Gentleman wants to promote in opposition to Kate Barker but, frankly, I am content to rest on her judgment that this system would not impact on house prices in any negative sense, and that it would make the housing market more efficient.
+ 
+@@ -8694,6 +8710,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="635"/>
+ <p><a name="st_205"><a name="41108-26_spnew0"><b> Keith Hill: </b> 
+  It is perfectly clear that the work that has to be carried out for the energy report and inspection is very much akin to that which needs to be carried out for a home condition report. It is, effectively, a medium-level survey. Quite frankly, it is a sight better than the drive-by survey that is so often done by those who carry out surveys and valuations. I accept, of course, that more detailed work is required in some circumstances, but I make the point that we already have a compulsory system of energy assessment, which will require little by way of add-on&#151;in terms of what needs to be looked at or time&#151;to produce a home condition report.
+ </p>
+@@ -8710,6 +8727,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="636"/>
+ <p><a name="st_206"><a name="41108-26_spnew1"><b> Mr. Edward Davey: </b> 
+  The Minister has spoken in some detail about what would be in such an energy audit, but will he go to the key point? The directive requires that to be done by the time the property is sold, not at the point of marketing. That is the difference between the parties, I believe. We have no objection to energy audit being compulsory and having to be done before sale&#151;that is what the directive requires&#151;but producing a system under which all has to be done before the house is marketed is the genuine big problem here. It will cause so many difficulties in the housing market.
+ </p>
+@@ -8910,6 +8928,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="639"/>
+ <p><a name="st_214"><a name="41108-27_spnew4"><b> Mr. Hayes: </b> 
+  The hon. Gentleman is right, and I shall return to his point if I have time.
+ </p>
+@@ -8932,6 +8951,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="640"/>
+ <p><a name="st_216"><a name="41108-27_spnew6"><b> Mr. Hayes: </b> 
+  That is a good point. As was mentioned in Committee, in other countries there are strict regulations&#151;indeed, laws&#151;preventing such a possible conflict of interests. In this country, that does not apply, and the Minister has given no guarantee that it is likely to. I think that there may well be real issues of probity. Such issues were raised in the other place, and they were raised by Conservative and Liberal Democrat spokesmen in Committee. Once again, however, we hear nothing from the Minister, despite the length of his speech.
+ </p>
+@@ -10704,6 +10724,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="647"/>
+ <p><a name="st_232"><a name="41108-29_spnew7"><b> Matthew Green: </b> 
+  Much of what the Minister is saying is welcome, but I am concerned about what happens when someone chooses to market their property without going through an estate agent, as they have the right to do. When they produce their pack, how will they check who has access to such information? Will a prospective buyer gain access to the register? If so, will they access such information only in respect of the property in question, or will they be able to peruse information on all properties online, simply because they have said that they are interested in buying a particular property? I am slightly confused as to how the process will work.
+ </p>
+@@ -10715,6 +10736,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="648"/>
+ <p><a name="st_233"><a name="41108-29_spnew8"><b> Keith Hill: </b> 
+  It will be for the seller or their agent to make the home condition report available to the potential purchaser. Provision will be made to ensure that access to the report is restricted to those potential buyers to whom the would-be seller wishes such information to be made available. If the hon. Gentleman will allow me, I shall spell the situation out in a little more detail in due course.
+ 
+@@ -10773,6 +10795,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="648"/>
+ <p><a name="st_236"><a name="41108-30_spnew2"><b> Mr. Kidney: </b> 
+  I hope that my right hon. Friend finds my intervention helpful. Is it the Government&#039;s intention to make it a criminal offence for people to disclose information from the register that should not be disclosed, and is that the purport of subsection (7) of amendment (c)? Moreover, is there a typographical error in that subsection? It states:
+ </p>
+@@ -10803,6 +10826,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="649"/>
+ <p><a name="st_237"><a name="41108-30_spnew3"><b> Keith Hill: </b> 
+  Can the House be surprised that I describe my hon. Friend as my guru in these matters? Not only has he anticipated exactly the point that I was about to make on disclosure, but he has also made a typically shrewd point about a typographical error in the amendment. I can confirm that there is indeed such an error, and it will of course be put right. I am most grateful to him for drawing the House&#039;s attention to it, and I am sure that he is grateful for my immediate and positive response. That certainly demonstrates the listening character of this Government and this Minister.
+ </p>
+@@ -10948,6 +10972,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="651"/>
+ <p><a name="st_242"><a name="41108-31_spnew0"><b> Mr. Clifton-Brown: </b> 
+  I shall take one minute to make a few key points and to enable the Minister to reply to the important points that have been made.
+ </p>
+@@ -10969,6 +10994,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="652"/>
+ <p><a name="st_243"><a name="41108-31_spnew1"><b> Keith Hill: </b> 
+  I shall take the issues raised in reverse order. The hon. Member for Cotswold (Mr. Clifton-Brown) asked about insurance against error in the reports. I may say that an indemnity scheme has always been part and parcel of the proposition. The indemnity scheme will apply to home inspectors as it already does to conveyancers, and we think that it is a good idea to extend it to estate agents, through the estate agents redress scheme, which has been approved by the other place and has received a general welcome for both particular and general reasons. The monitoring of home condition reports will also allow judgments to be made about the performance of individual inspectors.
+ </p>
+@@ -11662,6 +11688,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="661"/>
+ <p><a name="st_268"><a name="41108-34_spnew4"><b> Matthew Green: </b> 
+  I shall be brief, because I know that at least one other hon. Member would like to speak.
+ </p>
+@@ -11718,6 +11745,7 @@
+ 
+ 
+ 
++<stamp parsemess-colnum="662"/>
+ <p><a name="st_269"><a name="41108-34_spnew5"><b> Alan Simpson: </b> 
+  I have no doubt that both Opposition 
+ 

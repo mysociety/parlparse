@@ -1,5 +1,5 @@
 --- /home/parlparse/parldata/cmpages/debates/debates2004-10-11.html	2005-05-26 21:27:17.000000000 +0100
-+++ /home/parlparse/parldata/cmpages/debates/debates2004-10-11-patchtmp.html	2005-05-26 22:52:00.000687980 +0100
++++ /home/parlparse/parldata/cmpages/debates/debates2004-10-11-patchtmp.html	2005-06-26 12:20:49.000569783 +0100
 @@ -14,7 +14,7 @@
  <b>11 Oct 2004 : Column 1</b>
  
@@ -26,3 +26,21 @@
  <a name="41011-06_head0"><h3 align=center>Points of Order</h3>
  
  <a name="41011-06_time0"><h5>3.31 pm</h5>
+@@ -8268,7 +8271,7 @@
+ </p>
+ 
+ 
+-
++<stamp parsemess-missgid="6"/>
+ <h4 align=center>COMMITTEES</h4>
+ <br>
+ <center>Home Affairs</center><br>
+@@ -8294,6 +8297,8 @@
+ That Mr Andrew Lansley be discharged from the Trade and Industry Committee and Miss Julie Kirkbride be added.&#151;<i>[Mr. John McWilliam, on behalf of the Committee of Selection.]</i>
+ <br>
+ 
++<stamp parsemess-missgid="12"/>
++
+ <h4 align=center>PETITION</h4>
+ <br>
+ <center>Shop Workers</center><br>
