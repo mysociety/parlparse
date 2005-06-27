@@ -230,7 +230,7 @@ def NormalHeadingPart(headingtxt, stampurl):
 
 
 	# Other major headings, marked by _head in their anchor tag
-	elif re.search('_head', stampurl.aname):
+	elif re.search('^hd_|_head', stampurl.aname):
 		bmajorheading = True
 
 	# we're not writing a block for division headings
@@ -270,7 +270,7 @@ def GrabWestminDivisionInterruptProced(qbp, rawtext):
 
 	# copy the lines into a non-speaking paragraph.
 	if iskip:
-                dumtext = re.sub('<p><i>sitting suspended.*(?si)','',rawtext)
+                dumtext = re.sub('<p>(?:<stamp aname="[^"]*?"/>)?<i>sitting suspended.*(?si)','',rawtext)
                 s = copy.copy(qbp.sstampurl)
 		qbdp = qspeech('nospeaker="true"', dumtext, s)
                 qbdp = qspeech('nospeaker="true"', "", s)

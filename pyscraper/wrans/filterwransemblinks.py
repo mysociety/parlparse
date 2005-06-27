@@ -57,7 +57,7 @@ def ConstructHTTPlink(qstrdom, qstrmid, qstrtail):
 	if qstrmid:
 		qstrmid = re.sub(' ', '', qstrmid)
 		qstrmid = re.sub('&#15[01];', '-', qstrmid)
-		qstrmid = re.sub('&#95;', '_', qstrmid)
+		qstrmid = re.sub('&#0?95;', '_', qstrmid)
 		if re.search('&#\d+;', qstrmid):
 			print ' undemangled href symbol ' + qstrmid
 		qstrmid = re.sub('&', '&amp;', qstrmid)
@@ -68,7 +68,7 @@ def ConstructHTTPlink(qstrdom, qstrmid, qstrtail):
 	if qstrtail:
 		qstrtail = re.sub(' ', '', qstrtail)
 		qstrtail = re.sub('&#15[01];', '-', qstrtail)
-		qstrtail = re.sub('&#95;', '_', qstrtail)
+		qstrtail = re.sub('&#0?95;', '_', qstrtail)
 		if re.search('&#\d+;', qstrtail):
 			print ' undemangled href symbol ' + qstrtail
 		qstrtail = re.sub('&', '&amp;', qstrtail)

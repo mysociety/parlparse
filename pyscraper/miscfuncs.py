@@ -80,6 +80,8 @@ entitymap = {
         '&#189;':'&frac12;',   # this is one half symbol
         '&#190;':'&frac34;',   # this is three quarter symbol
 
+        '&#035;':'#',    # this is hash
+        '&#095;':'_',    # this is underscore symbol
         '&#95;':'_',    # this is underscore symbol
 
 		'&#039;':"'",   # posession apostrophe

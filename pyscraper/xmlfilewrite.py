@@ -86,6 +86,10 @@ class lqspeech:
 				pass
 			elif self.nametype == 'minor-heading' and qb.typ == 'speech' and re.search("Sitting suspended", qb.stext[0]):
 				pass
+			elif self.nametype == 'major-heading' and qb.typ == 'minor-heading' and re.search("Clause", qb.stext[0]):
+				pass
+			elif self.nametype == 'minor-heading' and qb.typ == 'major-heading' and re.search("Orders of the Day", qb.stext[0]):
+				pass
 			else:
 				return False
 
