@@ -62,6 +62,7 @@
 <chgpageupdates date="2005-06-06" time="12:17"/>
 <chgpageupdates date="2005-06-07" time="16:39"/>
 <chgpageupdates date="2005-06-17" time="14:29"/>
+<chgpageupdates date="2005-06-28" time="10:36"/>
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1000" name="Duke of Abercorn" dept="HM Household" position="Lord Steward" fromdate="2000-01-01" todate="9999-12-31" source="newlabministers2003-10-15 chgpages"></moffice>
@@ -283,6 +284,10 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/1240" name="Baroness Clark of Calton" dept="Department for Constitutional Affairs" position="Advocate General for Scotland" fromdate="2005-06-28" fromtime="10:36" todate="9999-12-31" source="chgpages"></moffice>
+</ministerofficegroup>
+
+<ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1151" name="Mr Alan Campbell" matchid="uk.org.publicwhip/member/1887" dept="HM Treasury" position="Assistant Whip" fromdate="2005-05-11" fromtime="17:24" todate="9999-12-31" source="chgpages"></moffice>
 </ministerofficegroup>
 
@@ -312,7 +317,7 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
-<moffice id="uk.org.publicwhip/moffice/1024" name="Dr Lynda Clark" matchid="uk.org.publicwhip/member/799" dept="Department for Constitutional Affairs" position="Advocate General for Scotland" fromdate="1999-05-20" todate="9999-12-31" source="newlabministers2003-10-15 chgpages"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1024" name="Dr Lynda Clark" matchid="uk.org.publicwhip/member/799" dept="Department for Constitutional Affairs" position="Advocate General for Scotland" fromdate="1999-05-20" todate="2005-06-28" totime="10:36" source="newlabministers2003-10-15 chgpages"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
