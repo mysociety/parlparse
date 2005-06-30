@@ -62,7 +62,7 @@ fixsubs = [
 
 # Q4.  [161707]<a name="40317-03_wqn5"><B> Mr. Andy Reed  (Loughborough)</B>
 
-parties = "|".join(map(string.lower, memberList.partylist())) + "|uup|ld|dup"
+parties = "|".join(map(string.lower, memberList.partylist())) + "|uup|ld|dup|in the chair"
 # Rough match:
 recomb = re.compile('((?:Q?\d+\.\s*)?(?:\[\d+\]\s*)?(?:<stamp aname="[^"]*?"/>)?<b>[^<]*</b>(?:\s*\((?:%s)\))?\s*:?)(?i)' % parties)
 # Specific match:
