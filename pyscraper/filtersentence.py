@@ -43,7 +43,7 @@ refqnum = re.compile("\s*\[(\d+)\]\s*")
 redatephraseval = re.compile('(?:(?:%s) )?(\d+ (?:%s)( \d+)?)' % (parlPhrases.daysofweek, parlPhrases.monthsofyear))
 def TokenDate(ldate, phrtok):
 	try:
-		lldate = mx.DateTime.DateTimeFrom(ldate).date
+		lldate = mx.DateTime.DateTimeFrom(ldate.group(0)).date
 		if lldate > mx.DateTime.now().date:
 			lldate = (mx.DateTime.DateTimeFrom(ldate) - mx.DateTime.RelativeDateTime(years=1)).date
 		ldate = lldate
