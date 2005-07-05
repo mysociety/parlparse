@@ -1,11 +1,4 @@
-<!-- 
-
-TODO on this page:
-
-Add websites.xml
-Add expenses*.xml
-
--->
+<!-- $Id$ -->
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -150,13 +143,16 @@ when they were in effect.
 </p>
 
 <p>
-<a href="/svn/parlparse/members/edm-links.xml">edm-links.xml</a>, 
+<a href="/svn/parlparse/members/websites.xml">websites.xml</a>,
 <a href="/svn/parlparse/members/guardian-links.xml">guardian-links.xml</a>,
-<a href="/svn/parlparse/members/bbc-links.xml">bbc-links.xml</a>
-- various links to external websites which have information about MPs.  Indexed
-by MP identifier.
+<a href="/svn/parlparse/members/bbc-links.xml">bbc-links.xml</a>,
+<a href="/svn/parlparse/members/edm-links.xml">edm-links.xml</a>
+- various links to external websites which have information about MPs, including
+each MPs own website.  Indexed by MP identifier.
 
-<p class="snippet acrosspage"><font color="#008b8b">&lt;</font><font color="#008b8b">personinfo</font><font color="#008b8b"> </font><font color="#2e8b57"><b>id</b></font>=<font color="#ff00ff">&quot;uk.org.publicwhip/person/10006&quot;</font><font color="#008b8b"> </font><font color="#2e8b57">
+<p class="snippet acrosspage"><font color="#008b8b">&lt;</font><font color="#008b8b">personinfo</font><font color="#008b8b"> </font><font color="#2e8b57"><b>id</b></font>=<font color="#ff00ff">&quot;uk.org.publicwhip/person/10197&quot;</font> <font color="#2e8b57"><b>mp_website</b></font>=<font color="#ff00ff">&quot;<A HREF="http://www.frankfield.com">http://www.frankfield.com</a>&quot;</font><font color="#008b8b"> /&gt;</font>
+
+<font color="#008b8b">&lt;</font><font color="#008b8b">personinfo</font><font color="#008b8b"> </font><font color="#2e8b57"><b>id</b></font>=<font color="#ff00ff">&quot;uk.org.publicwhip/person/10006&quot;</font><font color="#008b8b"> </font><font color="#2e8b57">
     <b>guardian_mp_summary</b></font>=<font color="#ff00ff">&quot;<A HREF="http://politics.guardian.co.uk/person/0,,-35,00.html">http://politics.guardian.co.uk/person/0,,-35,00.html</A>&quot;</font><font color="#008b8b"> /&gt;</font>
 <font color="#008b8b">&lt;</font><font color="#008b8b">consinfo</font><font color="#008b8b"> </font><font color="#2e8b57"><b>canonical</b></font>=<font color="#ff00ff">&quot;East Surrey&quot;</font><font color="#008b8b"> </font><font color="#2e8b57">
     <b>guardian_election_results</b></font>=<font color="#ff00ff">&quot;<A HREF="http://politics.guardian.co.uk/hoc/constituency/0,,-906,00.html">http://politics.guardian.co.uk/hoc/constituency/0,,-906,00.html</A>&quot;</font><font color="#008b8b"> /&gt;</font>
@@ -186,8 +182,13 @@ register.
 <font color="#008b8b">&lt;/regmem&gt;</font>
 </p>
 
-<p><strong>MP voting record</strong> - 
-attendance, rebellion rate and individual votes are <a
+<p><a href="/svn/parlparse/members/expenses200304.xml">expenses200304.xml</a>,
+<a href="/svn/parlparse/members/expenses200304.xml">expenses200203.xml</a>,
+<a href="/svn/parlparse/members/expenses200304.xml">expenses200102.xml</a>
+- how much each MP claimed as expenses from parliament for travel and so on.
+
+<p><strong>voting record</strong> - 
+attendance, rebellion rate and individual votes in divisions are <a
 href="http://publicwhip.owl/project/data.php">available from the Public Whip
 project</a>.
 
