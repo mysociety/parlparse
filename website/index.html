@@ -1,3 +1,12 @@
+<!-- 
+
+TODO on this page:
+
+Add websites.xml
+Add expenses*.xml
+
+-->
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -76,11 +85,10 @@ are comments with more information.  Data is for the 1997 and 2001 parliaments.
 
 <p class="description"><a href="/svn/parlparse/members/all-members.xml">all-members.xml</a> - list of all MPs.
 Includes their name, party and constituency.  There is a unique identifier for
-each entry, which is used by Public Whip.  Each entry is a continuous period of
-holding office, loyal to the same party.  An MP who was in both parliaments
-will appear twice.  An MP who also changed party will appear three times.
-Dates of deaths, byelections and party changes or whip revocations are
-recorded.</p>
+each entry.  Each entry is a continuous period of holding office, loyal to the
+same party.  An MP who was in both parliaments will appear twice.  An MP who
+also changed party will appear three times.  Dates of deaths, byelections and
+party changes or whip revocations are recorded.</p>
 
 <p class="snippet floatright"><font color="#008b8b">&lt;</font><font color="#008b8b">person</font><font color="#008b8b"> </font><font color="#2e8b57"><b>id</b></font>=<font color="#ff00ff">&quot;uk.org.publicwhip/person/10597&quot;</font><font color="#008b8b"> </font><font color="#2e8b57"><b>latestname</b></font>=<font color="#ff00ff">&quot;Paddy Tipping&quot;</font><font color="#008b8b">&gt;</font>
     <font color="#008b8b">&lt;</font><font color="#008b8b">office</font><font color="#008b8b"> </font><font color="#2e8b57"><b>id</b></font>=<font color="#ff00ff">&quot;uk.org.publicwhip/member/1282&quot;</font><font color="#008b8b">/&gt;</font>
@@ -250,9 +258,13 @@ These are a bit like press releases, but in parliamentary language.
 <h2>Getting the Data</h2>
 
 <p><strong>Web browser:</strong> 
-Either follow the links to the files above, or <a href="http://ukparse.kforge.net/parldata/">browse all
-the parlparse data</a>.  There's also a <a
-href="http://theyworkforyou.com/pwdata/">spare copy on TheyWorkForYou.com</a>.
+Follow the links to the files above.  Or <a
+href="http://ukparse.kforge.net/parldata/">browse all the parlparse data</a>.
+There's also a <a href="http://theyworkforyou.com/pwdata/">spare copy on
+TheyWorkForYou.com</a>.  
+Data about members of parliament is stored in source control, so you <a
+href="http://ukparse.kforge.net/svn/parlparse/members/"> browse it in a
+slightly different place</a>.
 
 <p><strong>Rsync:</strong> You can access all these files using 
 anonymous <a href="http://samba.anu.edu.au/rsync/">rsync</a>.
@@ -266,9 +278,12 @@ with a remote one.
 
 <h2>Parser Source Code</h2>
 
-<p>Available from <a href="http://kforge.net/scm/?group_id=11">ukparse's kforge project</a>.
+<p>Available from <a href="http://kforge.net/scm/?group_id=11">ukparse's kforge project</a>,
+or you can <a href="http://ukparse.kforge.net/svn/">browse a copy here</a>.
 Ask us for help or ideas if you're extending or improving the parser.  There's lots
-of stuff left to do.  Also by rsync like this:
+of stuff left to do.  Also available by rsync like this, particularly useful
+if you want to regularly grab the member data without installing a subversion
+client:
 
 <blockquote><tt>rsync ukparse.kforge.net::svn/</tt></blockquote>
 
