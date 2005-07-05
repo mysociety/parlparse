@@ -77,11 +77,9 @@ pcode = [ '', 'indent', 'italic', 'indentitalic' ]
 
 ###########################
 # this is the main function
-def FilterReply(text, stampurl):
-	qs = None # just to kill off use of this class
-
+def FilterReply(qs):
 	# split into paragraphs.  The second results is a parallel array of bools
-	(textp, textpindent) = SplitParaIndents(text, stampurl)
+	(textp, textpindent) = SplitParaIndents(qs.text, qs.sstampurl)
 	if not textp:
 		raise Exception, ' no paragraphs in result '
 
@@ -118,12 +116,12 @@ def FilterReply(text, stampurl):
 		# deal with tables
 		if re.match('<table(?i)', textp[i]):
 			if re.match('<table[^>]*>[\s\S]*?</table>$(?i)', textp[i]):
-				stext.extend(ParseTable(textp[i], stampurl))
+				stext.extend(ParseTable(textp[i], qs.sstampurl))
 				i += 1
 				continue
 			else:
 				print "textp[i]: ", textp[i]
-				raise ContextException("table start with no end", stamp=stampurl, fragment=textp[i])
+				raise ContextException("table start with no end", stamp=qs.sstampurl, fragment=textp[i])
 
 		qletterinlibrary = reletterinlibrary.match(textp[i])
 		if qletterinlibrary:

@@ -115,6 +115,8 @@ rehonfriendmarg = re.compile('the Member for [^(]{0,60}\(')
 def TokenHonFriend(mhonfriend, phrtok):
 	# will match for ids
 	#print mhonfriend.group(0)
+	#if (phrtok.sdate is None):
+	#	return ('', '')
 	res = memberList.matchfullnamecons(mhonfriend.group(5), mhonfriend.group(4), phrtok.sdate, alwaysmatchcons = False)
 	return ('phrase', ' class="honfriend" id="%s" name="%s"' % res[:2])
 	
@@ -153,10 +155,10 @@ class PhraseTokenize:
 			
 			# check for marginals 
 			if tokenchain[itc][2] and tokenchain[itc][2].search(headtex):
-				print "Marginal token match:", tokenchain[itc][0]
-				print tokenchain[itc][2].findall(headtex)
-				print headtex
-				sys.exit(0)
+				pass
+#				print "Marginal token match:", tokenchain[itc][0]
+#				print tokenchain[itc][2].findall(headtex)
+#				print headtex
 	
 			# send down the one or three pieces up the token chain
 			if headtex:

@@ -277,7 +277,7 @@ def FilterWransSections(text, sdate):
 							qb.text = qb.text.replace("<ok-extra-qnum>", "", 1)
 						else:
 							raise ContextException('unknown qnum %s present in answer, make it clear' % qn, stamp = qb.sstampurl, fragment = qb.text)
-				qb.stext = FilterReply(qb.text, qb.sstampurl)
+				qb.stext = FilterReply(qb)
 				flatb.append(qb)
 
 		if not bNextStartofQ:
