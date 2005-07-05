@@ -308,7 +308,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         if len(ids) == 0:
 	        return None, None, None
         if len(ids) > 1:
-            raise MultipleMatchException, 'Matched multiple times: ' + fullname + " : " + (cons or "[nocons]") + " : " + date + " : " + ids.__str__()
+            raise MultipleMatchException, 'Matched multiple times: ' + fullname + " : " + (cons or "[nocons]") + " : " + (date or "[nodate]") + " : " + ids.__str__()
 
         for lid in ids: # pop is no good as it changes the set
             pass
