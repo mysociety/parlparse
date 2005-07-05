@@ -277,16 +277,57 @@ the following to get a directory listing of the data:
 for more information on how to synchronise your local directory
 with a remote one.
 
-<h2>Parser Source Code</h2>
+<h2>Running the Parser</h2>
 
-<p>Available from <a href="http://kforge.net/scm/?group_id=11">ukparse's kforge project</a>,
-or you can <a href="http://ukparse.kforge.net/svn/">browse a copy here</a>.
-Ask us for help or ideas if you're extending or improving the parser.  There's lots
-of stuff left to do.  Also available by rsync like this, particularly useful
-if you want to regularly grab the member data without installing a subversion
+<p>Python code downloads data from the UK parliament website, stores it as an
+HTML file for each day, and parses those files into XML files.  To
+run this parser yourself, you'll need the following...
+
+<p><strong>Parser source code</strong> - Available from <a
+href="http://kforge.net/scm/?group_id=11">ukparse's kforge project</a>, or you
+can <a href="http://ukparse.kforge.net/svn/">browse a copy here</a>.  Ask us
+for help or ideas if you're extending or improving the parser.  There's lots of
+stuff left to do.  Also available by rsync like this, particularly useful if
+you want to regularly grab the member data without installing a subversion
 client:
 
 <blockquote><tt>rsync ukparse.kforge.net::svn/</tt></blockquote>
+
+<p><strong>Python</strong> - Under Windows download <a
+href="http://www.python.org/download/">Python 2.3</a>.  Unix-based operating
+systems probably have Python already installed, but you may need to
+upgrade to Python 2.3.  You also need the <a
+href="http://www.egenix.com/files/python/mxDateTime.html">mxDateTime</a> module
+by eGenix, go to downloads on that page.  Under Debian this is in the package
+python2.3-egenix-mxdatetime.
+
+<p><strong>Patch and Diff</strong> -
+The parser has a preprocessor which applies patches to Hansard to fix
+uncommon errors.  This is done using the tools "patch" and "diff",
+which will be installed by default if you are using Unix.  On Windows
+you can download them from
+<a href="http://unxutils.sourceforge.net/">GNU utilities for win32</a>.
+
+<p><strong>Instructions</strong> - Use the command line and change to the
+<i>pyscraper</i> directory.  The script called <i>lazyrunall.py</i> in there
+does all of the screen scraping from Hansard.  Run it with no parameters to
+find out its syntax.  Then do something like this, include a date limit as the
+parser gives errors if you go too far back.
+
+<p><tt>./lazyrunall.py --from 2001-06-01 scrape parse
+debates wrans</tt>
+
+<p>That will screen scrape back to the start of the 2001 parliament,
+writing the files in parldata/cmpages.  Then it will parse these
+files into XML files and put them in parldata/scrapedxml.  On Unix
+the parldata folder is in your home directory, on Windows it will
+be in the same folder as the publicwhip folder which contains
+the source code.
+
+<p>The command above will gather both debates and written answers (wrans).
+You can run a command again and it will lazily make only those files which
+weren't downloaded/parsed last time.  When you are done, you should have
+lots of XML files in the parldata/scrapedxml/debates folder.
 
 </div>
 
