@@ -39,28 +39,27 @@ earliestdate = '2001-11-25'
 #earliestdate = '1994-05-01'
 
 def LordsIndexFromAll(urlalldays):
-    urlinkpage = urllib.urlopen(urlalldays)
-    srlinkpage = urlinkpage.read()
-    urlinkpage.close()
+	urlinkpage = urllib.urlopen(urlalldays)
+	srlinkpage = urlinkpage.read()
+	urlinkpage.close()
 
-    # remove comments because they sometimes contain wrong links
-    srlinkpage = re.sub('<!--[\s\S]*?-->', ' ', srlinkpage)
+	# remove comments because they sometimes contain wrong links
+	srlinkpage = re.sub('<!--[\s\S]*?-->', ' ', srlinkpage)
 
-    # Find lines of the form:
-    # <p><a href="lds04/index/40129-x.htm">29 Jan 2004</a></p>
-    realldayslinks = re.compile('<p><a href="([^"]*)">([^<]*)</a></p>(?i)')
-    datelinks = realldayslinks.findall(srlinkpage)
+	# Find lines of the form:
+	# <p><a href="lds04/index/40129-x.htm">29 Jan 2004</a></p>
+	realldayslinks = re.compile('<p><a href="([^"]*)">([^<]*)</a></p>(?i)')
+	datelinks = realldayslinks.findall(srlinkpage)
 
-    res = []
-    for link in datelinks:
-        sdate = mx.DateTime.DateTimeFrom(link[1]).date
-        uind = urlparse.urljoin(urlalldays, re.sub('\s', '', link[0]))
-        res.append((sdate, '1', uind))
+	res = []
+	for link in datelinks:
+		sdate = mx.DateTime.DateTimeFrom(link[1]).date
+		uind = urlparse.urljoin(urlalldays, re.sub('\s', '', link[0]))
+		res.append((sdate, '1', uind))
 
-    return res
+	return res
 
 def LordsIndexFromVolMenu(urlbndvols):
-	print urlbndvols
 	urvipage = urllib.urlopen(urlbndvols)
 	srvipage = urvipage.read()
 	urvipage.close()
@@ -69,13 +68,12 @@ def LordsIndexFromVolMenu(urlbndvols):
 	volnos = [ ]
 
 	# <a href="/pa/ld/ldse0203.htm">Session 2002-03</a>
-	ursessh = re.findall('<a href="\s*([^"]*?)\s*">Session \d*-\d*</a>', srvipage)
+	ursessh = re.findall('<a href="\s*([^"]*?)\s*">Session \d+-\d+</a>', srvipage)
 	for ses in ursessh:
 		if not ses:
 			continue
 		uses = urlparse.urljoin(urlbndvols, ses)
 
-		print uses
 		ursepage = urllib.urlopen(uses)
 		srsepage = ursepage.read()
 		ursepage.close()
@@ -83,7 +81,7 @@ def LordsIndexFromVolMenu(urlbndvols):
 		#<A href="ldvol650.htm" TITLE="Link to Volume 650"><B>Volume 650</B></td><td width=70%><B><A href="ldvol650.htm" TITLE="Link to Volume 650">Monday 23 June 2003&nbsp;-
 		urse = re.findall('<a href="([^"]*)"[^>]*><b>volume (\d*)</b>(?i)', srsepage)
 		for u in urse:
-			volnos.append((-string.atoi(u[1]), urlparse.urljoin(uses, u[0])))
+			volnos.append((-int(u[1]), urlparse.urljoin(uses, u[0])))
 
 	res = []
 
@@ -93,7 +91,6 @@ def LordsIndexFromVolMenu(urlbndvols):
 	# go through each page of volumes and create the date and link
 	prevol = None
 	for vol in volnos:
-		print vol
 		if prevol and (prevol + 1 != vol[0]):
 			print "Mis-order on vol %d " % prevol
 		prevol = vol[0]
@@ -108,7 +105,6 @@ def LordsIndexFromVolMenu(urlbndvols):
 		#href="../ld200102/ldhansrd/vo021107/index/21107-
 		#x.htm">Debates</A></B></B>&nbsp;</TD><TD>&nbsp;&nbsp;&nbsp;</TD>
 		sdl = re.findall('<b>([^<]*)</b>(?:\s|<[^a][^>]*>|&nbsp;)*?<a\s*href="([^"]*)">([^<]*)</a>(?i)', srvopage)
-		#print "    ", sss
 
 		for sss in sdl:
 			if re.match("publications(?i)", sss[2]):
@@ -117,8 +113,8 @@ def LordsIndexFromVolMenu(urlbndvols):
 				print "awooga " + sss[2]
 				continue
 			sdate = mx.DateTime.DateTimeFrom(sss[0]).date
-	        uind = urlparse.urljoin(vol[1], re.sub('\s', '', sss[1]))
-	        res.append((sdate, '2', uind))
+			uind = urlparse.urljoin(vol[1], re.sub('\s', '', sss[1]))
+			res.append((sdate, '2', uind))
 
 	return res
 
