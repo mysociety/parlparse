@@ -39,9 +39,12 @@ class LoadLordsIndex(xml.sax.handler.ContentHandler):
 
 	def startElement(self, name, attr):
 		if name == "lordsdaydeb":
-			ddr = (attr["date"], attr["url"])
+			ddr = (attr["date"], attr["url"], int(attr["type"]))
+			if self.res and self.res[-1][0] == ddr[0]:
+				if self.res[-1][2] > ddr[2]:
+					return
+				self.res.pop()
 			self.res.append(ddr)
-
 
 # extract the table of contents from an index page
 def ExtractIndexContents(urlx):
@@ -171,9 +174,11 @@ def LordsPullGluePages(datefrom, dateto, deleteoutput):
 
 		# hansard index page
 		urlx = dnu[1]
+		shurlx = re.sub(".*?ldhansrd/", "", urlx)
 
 		# if we already have got the file, check the pagex link agrees in the first line
 		# no need to scrape it in again
+		print dnu[0]
 		if os.path.exists(dgf):
 			fpgx = open(dgf, "r")
 			pgx = fpgx.readline()
@@ -184,9 +189,9 @@ def LordsPullGluePages(datefrom, dateto, deleteoutput):
 					if pgx[0] == urlx:
 						#print 'skipping ' + urlx
 						continue
-			print 'RE-scraping ' + urlx
+			print 'RE-scraping ' + shurlx
 		else:
-			print 'scraping ' + urlx
+			print 'scraping ' + shurlx
 
 		# The different sections are often all run together
 		# with the title of written answers in the middle of a page.
