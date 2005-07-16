@@ -106,7 +106,7 @@ def StripDebateHeadings(headspeak, sdate):
         gstarttime = None
         if sdate != "2001-06-13":
                 #The House met at half-past Ten o'clock
-                gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*the house (?:being |having )?met at (.*?)(?:, and the Speaker-Elect having taken the Chair;)?$(?i)', headspeak[ih][0])
+                gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*the house (?:being |having )?met at? (.*?)(?:, and the Speaker-Elect having taken the Chair;)?$(?i)', headspeak[ih][0])
                 if (not gstarttime) or headspeak[ih][2]:
                         raise ContextException('non-conforming "the house met at" heading %s' % repr(headspeak[ih]), "")
                 ih = ih + 1

@@ -117,9 +117,12 @@ def TokenHonFriend(mhonfriend, phrtok):
 	#print mhonfriend.group(0)
 	#if (phrtok.sdate is None):
 	#	return ('', '')
-	res = memberList.matchfullnamecons(mhonfriend.group(5), mhonfriend.group(4), phrtok.sdate, alwaysmatchcons = False)
-	return ('phrase', ' class="honfriend" id="%s" name="%s"' % res[:2])
-	
+    try:
+        res = memberList.matchfullnamecons(mhonfriend.group(5), mhonfriend.group(4), phrtok.sdate, alwaysmatchcons = False)
+    except:
+        return ('', '')
+    return ('phrase', ' class="honfriend" id="%s" name="%s"' % res[:2])
+
 
 
 # the array of tokens which we will detect on the way through
