@@ -398,7 +398,7 @@ def WriteXMLspeechrecord(fout, qb, bMakeOldWransGidsToNew, bIsWrans):
 	# put out the paragraphs in body text
 	for lb in qb.stext:
 		fout.write('\t')
-		fout.write(lb)
+		fout.write(lb.encode("latin-1"))
 		fout.write('\n')
 
 	# end tag
