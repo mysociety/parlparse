@@ -5343,22 +5343,22 @@
 	comment=""
 />
 <lord
-	id="uk.org.publicwhip/lord/534"
-	house="lords"
-	title="Lord" lordname="Renton" lordofname=""
-	frontnames="David Lockhart-mure"
-	peeragetype="Life peer" affiliation="Conservative"
-	fromdate="1979-07-11"
-	source="Lords2004-02-09WithFromDate.html"
-	comment=""
-/>
-<lord
 	id="uk.org.publicwhip/lord/535"
 	house="lords"
 	title="Lord" lordname="Renton" lordofname="Mount Harry"
 	frontnames="Ronald Timothy"
 	peeragetype="Life peer" affiliation="Conservative"
 	fromdate="1997-06-09"
+	source="Lords2004-02-09WithFromDate.html"
+	comment=""
+/>
+<lord
+	id="uk.org.publicwhip/lord/534"
+	house="lords"
+	title="Lord" lordname="Renton" lordofname=""
+	frontnames="David Lockhart-mure"
+	peeragetype="Life peer" affiliation="Conservative"
+	fromdate="1979-07-11"
 	source="Lords2004-02-09WithFromDate.html"
 	comment=""
 />
