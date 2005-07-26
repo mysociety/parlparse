@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Commons update
+
 FROMDATE=$1
 TODATE=$2
 # $3 is extra flags to pass through

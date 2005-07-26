@@ -36,6 +36,7 @@ svn -q add */*.html 2>&1 | grep -v "is already under version control"
 # Run scraper
 cd ~/parlparse/scripts
 ./updatedaterange $DAILY_FROMDATE $DAILY_TODATE $1
+./lordsupdatedaterange $DAILY_FROMDATE $DAILY_TODATE $1
 
 # Tell TheyWorkForYou to update
 PRODSCRIPT=ukparse-morning-update-done.cgi
