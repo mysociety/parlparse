@@ -16,22 +16,29 @@ use File::Find;
 
 use vars qw($curdate);
 
-my $debatesdir = $config::pwdata . "scrapedxml/debates";
-find(\&debateswanted, $debatesdir);
-sub debateswanted
-{
+find(\&debateswanted, $config::pwdata . "scrapedxml/debates");
+sub debateswanted {
         if (m/^debates(.*).xml$/) {
-                extract_divisions_day($1);
+                extract_divisions_day($1, "", "debates");
         }
 }
 
+find(\&lordsdebateswanted, $config::pwdata . "scrapedxml/lordsdebates");
+sub lordsdebateswanted {
+        if (m/^lordsdebates(.*).xml$/) {
+                extract_divisions_day($1, "lords", "daylord");
+        }
+}
+
+
 sub extract_divisions_day
 {
-        my ($date) = @_;
+        my ($date, $chamber, $filestub) = @_;
         $curdate = $date;
 
-        my $fromfile = $config::pwdata . "scrapedxml/debates/debates" . $curdate. ".xml";
-        my $tofile = $config::pwdata . "scrapedxml/divisionsonly/divisions" . $curdate. ".xml";
+        my $fromfile = $config::pwdata . "scrapedxml/${chamber}debates/$filestub" . $curdate. ".xml";
+        my $tofile = $config::pwdata . "scrapedxml/${chamber}divisionsonly/${chamber}divisions" . $curdate. ".xml";
+
         my @fromstat = stat($fromfile);
         my @tostat = stat($tofile);
         die "from file $fromfile not there" if !@fromstat;
@@ -41,7 +48,7 @@ sub extract_divisions_day
                 return;
             }
         }
-        # print "divisionextractor $curdate\n";
+        #print "divisionextractor $curdate\n";
         #print "fromctime " . $fromstat[10]  . " toctime " . $tostat[10];
         
         my $twig = XML::Twig->new(twig_handlers => { 
