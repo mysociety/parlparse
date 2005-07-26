@@ -114,7 +114,7 @@ def DivisionParsingPart(divno, unspoketxt, stampurl, sdate):
 
 	# filtering divisions here because we may need more sophisticated detection
 	# of end of division than the "Question accordingly" marker.
-	qbd.stext = FilterDivision(qbd.text, sdate)
+	qbd.stext = FilterDivision(qbd.text, stampurl, sdate)
 
 	return (unspoketxt, qbd)
 

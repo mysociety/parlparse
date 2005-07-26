@@ -10,6 +10,8 @@ import mx.DateTime
 from resolvemembernames import memberList
 from parlphrases import parlPhrases
 from miscfuncs import FixHTMLEntities
+from contextexception import ContextException
+
 
 # it's possible we want to make this a class, like with speeches.
 # so that it sits in our list easily.
@@ -21,28 +23,30 @@ reflipname = re.compile("%s\s*%s?$" % (fullnm, constnm))
 renoflipname = re.compile("([^<\(]*)%s?$" % constnm)
 reconstnm = re.compile("%s$" % constnm)
 
-def MpList(fsm, vote, sdate):
-        # Merge constituencies alone onto end of previous line
-        newfsm = []
-        for fss in fsm:
-            if reconstnm.match(fss):
-                # print "constnm only %s appending to previous line %s" % (fss, newfsm[-1])
-                newfsm[-1] += " "
-                newfsm[-1] += fss
-            else:
-                newfsm.append(fss)
+def MpList(fsm, vote, stampurl, sdate):
+	# Merge lone listed constituencies onto end of previous line
+	newfsm = []
+	for fss in fsm:
+		if reconstnm.match(fss):
+			# print "constnm only %s appending to previous line %s" % (fss, newfsm[-1])
+			newfsm[-1] += " " + fss
+		else:
+			newfsm.append(fss)
 
 	res = [ ]
 	pfss = ''
+
+	multimatches = { }  # from tuple to number of matches accounted, and name
+
 	for fss in newfsm:
-                #print "fss ", fss
+		#print "fss ", fss
 
 		# break up concattenated lines
 		# Beresford, Sir PaulBlunt, Crispin
 
 		while re.search('\S', fss):
-                        # there was an & in [A-Z] on line below, but it broke up this incorrectly:
-                        # Simon, Si&#244;n <i>(B'ham Erdington)</i>
+			# there was an & in [A-Z] on line below, but it broke up this incorrectly:
+			# Simon, Si&#244;n <i>(B'ham Erdington)</i>
 			regsep = re.search('(.*?,.*?(?:[a-z]|</i>|\.|\)))([A-Z].*?,.*)$', fss)
 			if regsep:
 				fssf = regsep.group(1)
@@ -60,10 +64,10 @@ def MpList(fsm, vote, sdate):
 			# flipround the name
 			# Bradley, rh Keith <i>(Withington)</i>
 			# Simon, Sio(r)n <i>(Withington)</i>
-                        #print "fssf ", fssf
+			#print "fssf ", fssf
 			ginp = reflipname.match(fssf)
 			if ginp:
-                                #print "grps ", ginp.groups()
+				#print "grps ", ginp.groups()
 				fnam = '%s %s' % (ginp.group(2), ginp.group(1))
 				cons = ginp.group(3)
 
@@ -71,28 +75,43 @@ def MpList(fsm, vote, sdate):
 			else:
 				ginp = renoflipname.match(fssf)
 				if not ginp:
-					raise Exception, "No flipped or non-flipped name match (filterdivision): %s" % fssf
+					raise ContextException("No flipped or non-flipped name match (filterdivision)", stamp=stampurl, fragment=fssf)
 				fnam = ginp.group(1);
 				cons = ginp.group(2);
 
 			#print "fss ", fssf
 			(mpid, remadename, remadecons) = memberList.matchfullnamecons(fnam, cons, sdate, alwaysmatchcons = False)
-			if not mpid:
+			if not mpid and remadename == "MultipleMatch":
+				assert type(remadecons) == tuple  # actually the list of ids
+				i = len(multimatches.setdefault(remadecons, []))  # the index we work with
+				if i >= len(remadecons):
+					print "Name", fnam, "used too many times for list", remadecons, "where other instances are", multimatches[remadecons]
+					raise ContextException("Too many instances", stamp=stampurl, fragment=fnam)
+				mpid = remadecons[i]
+				multimatches[remadecons].append(fnam)
+				print "For name", fnam, "returning id", mpid, ";", i, " out of ", remadecons
+
+			elif not mpid and remadename == "MultipleMatch":
 				print "no match for", fnam, cons, sdate
-				raise Exception, "No match on name %s" % fnam
-                        #print fnam, " --> ", remadename.encode("latin-1")
+				raise ContextException("No match on name", stamp=stampurl, fragment=fnam)
+			#print fnam, " --> ", remadename.encode("latin-1")
 			res.append('\t<mpname id="%s" vote="%s">%s</mpname>' % (mpid, vote, FixHTMLEntities(fssf)))
 
+	# now we have to check if the multimatched names were all exhausted
+	for ids in multimatches:
+		if len(multimatches[ids]) != len(ids):
+			print "Insufficient vote matches on name", multimatches[ids], "ids taken to", ids
+			raise ContextException("Not enough vote match on ambiguous name", stamp=stampurl, fragment=multimatches[ids][0])
 	return res
 
 # this pulls out two tellers with the and between them.
-def MpTellerList(fsm, vote, sdate):
+def MpTellerList(fsm, vote, stampurl, sdate):
 	res = [ ]
 	for fss in fsm:
 		while fss: # split by lines, but linefeed sometimes missing
 			gftell = re.match('\s*(?:and )?([ \w.\-\'&#;]*?)(?:\(([ \w.\-\'&#;]*)\))?(?: and(.*))?\s*\.?\s*$', fss)
 			if not gftell:
-				raise Exception, "no match on teller line %s" % fss
+				raise ContextException("no match on teller line", stamp=stampurl, fragment=fss)
 
 			fssf = gftell.group(1)
 			fssfcons = gftell.group(2)
@@ -100,7 +119,7 @@ def MpTellerList(fsm, vote, sdate):
 
 			if len(res) >= 2:
 				print fsm
-				raise Exception, ' too many tellers '
+				raise ContextException(' too many tellers ', stamp=stampurl, fragment=fsm)
 
 			(mpid, remadename, remadecons) = memberList.matchfullnamecons(fssf.strip(), fssfcons, sdate)
                         #print fssf, " ++> ", remadename.encode("latin-1")
@@ -110,7 +129,7 @@ def MpTellerList(fsm, vote, sdate):
 
 
 # this splitting up isn't going to deal with some of the bad cases in 2003-09-10
-def FilterDivision(text, sdate):
+def FilterDivision(text, stampurl, sdate):
 
 	# the intention is to splice out the known parts of the division
 	fs = re.split('\s*(?:<br>|<p>|\n)\s*(?i)', text)
@@ -123,11 +142,13 @@ def FilterDivision(text, sdate):
 		for si in range(5):
 			if re.match(statem[si], fs[i]):
 				if istatem[si] != -1:
-					print '--------------- ' + fs[i]
-					raise Exception, ' already set '
-				istatem[si] = i
+					if not re.match("</p>", fs[i]):  # sometimes a double </p>
+						print '--------------- ' + fs[i]
+						raise ContextException(' already set ', stamp=stampurl, fragment=fs)
+				else:
+					istatem[si] = i
 
-	# protect against truncating before the question accordingly  
+	# protect against truncating before the question accordingly
 	if istatem[4] == -1:
 		istatem[4] = len(fs)
 
@@ -140,7 +161,7 @@ def FilterDivision(text, sdate):
 	for si in range(5):
 		if istatem[si] == -1:
 			print istatem
-			raise Exception, ' division delimeter not set '
+			raise ContextException(' division delimeter not set ', stamp=stampurl, fragment=fs)
 
 	mpayes = [ ]
 	mptayes = [ ]
@@ -148,14 +169,14 @@ def FilterDivision(text, sdate):
 	mptnoes = [ ]
 
 	if (istatem[0] < istatem[1]) and (istatem[0] != -1) and (istatem[1] != -1):
-		mpayes = MpList(fs[istatem[0]+1:istatem[1]], 'aye', sdate)
+		mpayes = MpList(fs[istatem[0]+1:istatem[1]], 'aye', stampurl, sdate)
 	if (istatem[2] < istatem[3]) and (istatem[2] != -1) and (istatem[3] != -1):
-		mpnoes = MpList(fs[istatem[2]+1:istatem[3]], 'no', sdate)
+		mpnoes = MpList(fs[istatem[2]+1:istatem[3]], 'no', stampurl, sdate)
 
 	if (istatem[1] < istatem[2]) and (istatem[1] != -1) and (istatem[2] != -1):
-		mptayes = MpTellerList(fs[istatem[1]+1:istatem[2]], 'aye', sdate)
+		mptayes = MpTellerList(fs[istatem[1]+1:istatem[2]], 'aye', stampurl, sdate)
 	if (istatem[3] < istatem[4]) and (istatem[3] != -1) and (istatem[4] != -1):
-		mptnoes = MpTellerList(fs[istatem[3]+1:istatem[4]], 'no', sdate)
+		mptnoes = MpTellerList(fs[istatem[3]+1:istatem[4]], 'no', stampurl, sdate)
 
 
 	stext = [ ]
