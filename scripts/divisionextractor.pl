@@ -25,7 +25,7 @@ sub debateswanted {
 
 find(\&lordsdebateswanted, $config::pwdata . "scrapedxml/lordsdebates");
 sub lordsdebateswanted {
-        if (m/^lordsdebates(.*).xml$/) {
+        if (m/^daylord(.*).xml$/) {
                 extract_divisions_day($1, "lords", "daylord");
         }
 }
@@ -58,7 +58,7 @@ sub extract_divisions_day
                 pretty_print => 'indented'
                 );
         $twig->parsefile($fromfile);
-        open(OUT, ">" . $tofile . ".tmp") or die "failed to reopen stdout";
+        open(OUT, ">" . $tofile . ".tmp") or die "failed to reopen stdout $tofile";
         print OUT $twig->sprint(1);
         close(OUT);
         rename $tofile . ".tmp", $tofile;

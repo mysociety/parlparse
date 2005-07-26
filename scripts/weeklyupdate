@@ -7,9 +7,11 @@ source ~/parlparse/scripts/consts
 # including the once-per-session grand URL-rename-and-break from cm to vo)
 cd ~/parlparse/pyscraper
 ./lazyrunall.py --from $WEEKLY_FROMDATE scrape debates wrans wms --force-index
+./lazyrunall.py --from $LORDS_WEEKLY_FROMDATE scrape lords --force-index
 # Run scraper for all of parliament
 cd ~/parlparse/scripts
 ./updatedaterange $WEEKLY_FROMDATE $WEEKLY_TODATE $1
+./lordsupdatedaterange $LORDS_WEEKLY_FROMDATE $LORDS_WEEKLY_TODATE $1
 
 # Zip up XML files for people
 cd ~/parldata/scrapedxml
