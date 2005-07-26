@@ -7,7 +7,6 @@ import string
 
 import mx.DateTime
 
-from miscfuncs import ApplyFixSubstitutions
 from contextexception import ContextException
 from splitheadingsspeakers import StampUrl
 
@@ -15,20 +14,6 @@ from splitheadingsspeakers import StampUrl
 #     <B>9 Dec 2003 : Column 893</B>
 # into xml form
 #     <stamp coldate="2003-12-09" colnum="893"/>
-
-# Legacy patch system, use patchfilter.py and patchtool now
-fixsubs = 	[
-( '<P>\s*</UL></UL></UL>', '</UL></UL></UL><P>', -1, 'all'),
-# to insert a break which is otherwise not detectable
-('<a name="column_15"></a>', '<a name="wms"></a>\\s', 1, '2004-01-12'),
-('<a name="column_5"></a>', '<a name="wms"></a>\\s', 1, '2004-01-06'),
-('(<a name="column_)=(\d+"></a>)', '\\1\\2', 21, '2003-06-19'),
-('(Column )=(\d+)', '\\1\\2', 21, '2003-06-19'),
-
-#('column_CWH', 'column_GC', 57, '2002-12-18'),
-
-		]
-
 
 
 
@@ -41,28 +26,30 @@ fixsubs = 	[
 # <P></UL><a name="column_1519"></a><B>1 Apr 2004 : Column 1519</B></P><UL><FONT SIZE=3>
 
 regcolmat = '\s*<a name="column_\d+"></a>\s*<b>[^:<]*:\s*column\s*\d+\s*</b>'
+regcolp = ['(?:<p>|<br>&nbsp;<br>)', '(?:</p>|<br>&nbsp;<br>)' ]
 regcolumnum11 = '<p>%s</p>\s*<font size=3>' % regcolmat
-regcolumnum1 = '<p>%s</p>' % regcolmat
+regcolumnum1 = '%s%s%s' % (regcolp[0], regcolmat, regcolp[1])
 regcolumnum2 = '<p>\s*<font size=3>%s</p>\s*<font size=2>' % regcolmat
-regcolumnum3 = '<p>\s*</ul>%s</p>\s*<ul><font size=3>' % regcolmat
+regcolumnum3 = '%s\s*</ul>%s%s\s*<ul>' % (regcolp[0], regcolmat, regcolp[1])
 regcolumnum4 = '<p>\s*</ul><font size=3>%s</p>\s*<ul><font size=2>' % regcolmat
-regcolumnum5 = '<p>\s*(?:<font size=3>\s*)?<a name="column_\d+"></a>\s*<b>[^:<]*:\s*column\s*\d+\s*</b></p>\s*<font size=[23]>'
-regcolumnum6 = '<p>\s*</ul>\s*<a name="column_\d+"></a>\s*<b>[^:<]*:\s*column\s*\d+\s*</b></p>\s*<ul><font size=3>'
-regcolumnum7 = '%s\s*<br>&nbsp;<br>' % regcolmat
+#regcolumnum5 = '<p>\s*(?:<font size=3>\s*)?%s</p>\s*<font size=[23]>' % regcolmat
+regcolumnum6 = '<p>\s*</ul>(?:</ul></ul>)?%s</p>\s*<ul>(?:<ul><ul>)?<font size=3>' % regcolmat
+
 
 recolumnumvals = re.compile('(?:<br>&nbsp;<br>|<p>|</ul>|<font size=\d>|\s|</?a[^>]*>)*?<b>([^:<]*)\s*:\s*column\s*(\D*?)(\d+)\s*</b>(?:<br>&nbsp;<br>|</p>|<ul>|<font size=\d>|\s)*$(?i)')
 
 # <H5>12.31 p.m.</H5>
 # the lords times put dots in "p.m."  but the commons never do.
-regtime1 = '(?:</?p>\s*|<h[45]>|\[|\n)(?:\d+(?:[:\.]\d+)?\.?\s*[ap]\.m\.\s*(?:</st>)?|12 noon)(?:\s*</?p>|\s*</h[45]>|\n)'
-regtime2 = '<H5>(?:Noon|Midnight)\s*</st></H5>'
-retimevals = re.compile('(?:</?p>\s*|<h\d>|\[|\n)\s*(\d+(?:[:\.]\d+)?\s*[apmnon\.]+|Noon|Midnight)(?i)')
+regtime1 = '(?:</?p>\s*|<h[45]>|\[|\n)(?:\d+(?:[:\.]\s?\d+)?\.?\s*[ap]\.?m\.?\s*(?:</st>)?|12 noon)(?:\s*</?p>|\s*</h[45]>|\n)'
+regtime2 = '<h5>(?:Noon|Midnight)?\s*(?:</st>)?</h5>' # accounts for blank <h5></h5>
+retimevals = re.compile('(?:</?p>\s*|<h\d>|\[|\n)\s*(\d+(?:[:\.]\s?\d+)?\.?\s*[ap][m\.]+|Noon|Midnight|</h5>|</st>)(?i)')
 
 # <a name="column_1099">
-reaname = '<a name\s*=\s*"[^"]*"></a>(?i)'
+reaname = '<a name\s*=\s*"[^"]*">\s*</a>(?i)'
 reanamevals = re.compile('<a name\s*=\s*"([^"]*)">(?i)')
 
-recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regcolumnum11, regcolumnum1, regcolumnum2, regcolumnum3, regcolumnum4, regcolumnum7, regtime1, regtime2, reaname))
+# match in right order so the longer ones get checked first.  (prob a good way to do r3 and r6 variants but don't know it
+recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regcolumnum11, regcolumnum1, regcolumnum2, regcolumnum6, regcolumnum4, regcolumnum3, regtime1, regtime2, reaname))
 
 remarginal = re.compile(':\s*column\s*\D*(\d+)(?i)')
 
@@ -112,9 +99,8 @@ def FilterLordsColtime(fout, text, sdate):
 		timeg = retimevals.match(fss)
 		if timeg:
 			time = timeg.group(1)
-			#print "time %s " % time
-
-			fout.write('<stamp time="%s"/>' % time)
+			if not re.match('(?:</h5>|</st>)(?i)', time):
+				fout.write('<stamp time="%s"/>' % time)
 			continue
 
 		# anchor names from HTML <a name="xxx">
@@ -129,7 +115,7 @@ def FilterLordsColtime(fout, text, sdate):
 		# check if we've missed anything obvious
 		if recomb.match(fss):
 			print fss
-			raise Exception, ' regexpvals not general enough '
+			raise Exception, ' regexpvals not general enough ' # a programming error between splitting and matching
 		if remarginal.search(fss):
 			print remarginal.search(fss).group(0)
 			lregcolumnum6 = '<p>\s*</ul>\s*<a name="column_\d+"></a>\s*<b>[^:<]*:\s*column\s*\d+\s*</b></p>\s*<ul><font size=3>(?i)'
@@ -143,29 +129,26 @@ def FilterLordsColtime(fout, text, sdate):
 
 ##############
 # lords filters stuff -- to be cleared up in a bit.
-##############
 
-# this is not working easily.
+# first split the text into the four categories: 
+# Main Debate, Grand Committee, Written Ministerial Statements, Written Answers
 
-# split the text into the four categories.
+# The parsing of each differs, which is why it is important to split this document 
+# into streams first, even though the boundaries are quite blurred and 
+# sometimes the column code numbering on either side is errant.  
 
-# the parsing for each is quite different, which is why this is done first.
-
-# against my instincts, I'm using the <a name> tags to break it up since
-# the column numbering can be errant and on either side of the title
-
-# this is not very elegant or orthogonal, but there are few enough cases
-# to do it brutally like this
 
 regacol = '<a name="column_([^\d>"]*)\d+"></a>'
 
 def SplitLordsText(text, sdate):
-	text = ApplyFixSubstitutions(text, sdate, fixsubs)
 	res = [ '', '', '', '' ]
 
-	wagc = re.search('<a name="(?:column_(?:GC|CWH)\d+|[0-9-]+_cmtee0)"></a>', text)
+	# Use a name tags
+	wagc = re.search('(?:<br>&nbsp;<br>\s*)?<a name="(?:column_(?:GC|CWH)\d+|[0-9-]+_cmtee0)"></a>', text)
 	wams = re.search('<a name="(?:wms|column_WS\d+)"></a>', text)
 	wama = re.search('<a name="(?:column_WA\d+|[\dw]*_writ0)"></a>', text)
+
+	# the sections are always in the same order, but sometimes there's one missing.
 
 	# set end of house of lords section and check order
 	if wagc:
@@ -211,29 +194,39 @@ def SplitLordsText(text, sdate):
 	if wama:
 		res[3] = text[msend:]
 
+	# lords splitting
+	print "Lords Splitting", map(len, res)
+
 	# check the wrong column numbering or wrong titles aren't found in the wrong place
+	assert res[0]  # there always is a main debate
 	chns = re.search('<a name="column_\D+\d+">', res[0])
 	if chns:
 		print chns.group(0)
 		raise ContextException("wrong column numbering in main debate", fragment=chns.group(0))
-	#assert re.search('House of Lords\s*(?:<FONT SIZE=3>)?</center>', res[0])
-	assert re.search('(?:<ul><ul>|</a>)\s*(?:Parliament was prorogued|House adjourned )(?i)', res[0])
+	# check that there is always an adjournment in the main debate, with some of the trash that gets put before it
+	# this kind of overguessing is to get a feel for the variation that is encountered.
+	if not re.search('(?:<ul><ul><p>|</a>\s*(?:<ul>|<p>)?|<p>\s*<ul><ul>(?:<ul>)?)\s*(?:Parliament was prorogued|House adjourned )(?i)', res[0]):
+		raise ContextException("house adjourned failure")
 
+	# check the title of the Grand Committee
 	if res[1]:
 		assert not re.search('<a name="column_(?!(?:GC|CWH))\D+\d+">', res[1])
-		assert re.search('<(?:h2 align=)?center>Official Report of the (?:Northern Ireland Orders )?Grand Committee', res[1])
+		assert re.search('<(?:h2 align=)?center>\s*(?:Official Report of the )?(?:(?:the)?Northern Ireland Orders )?Grand Committee', res[1])
 
+	# check the title is in the Written Statements section
 	if res[2]:
 		assert not re.search('<a name="column_(?!WS)\D+\d+">', res[2])
 		assert re.search('center>Written Statements', res[2])
 
+	# check the title and column numbering in the written answers
 	if res[3]:
 		assert not re.search('<a name="column_(?!WA)\D+\d+">', res[3])
 		assert re.search('<(?:h3 align=)?center>\s*Written Answers?', res[3]) # sometimes the s is missing
 
-# could grab leading url labels to put into each section.
+	# for sections that start in the middle of a page, we could grab the last url stamp 
+	# from the previous section and insert it at the top.  
+	# Since we are only parsing the main debate and divisions, this doesn't matter yet. 
 
-	print map(len, res)
 	return res
 
 

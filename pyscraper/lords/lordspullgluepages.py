@@ -75,10 +75,11 @@ def ExtractIndexContents(urlx):
 	# get the links
 	#<p><a href="../text/40129w01.htm#40129w01_sbhd7"><H3><center>Olympic Games 2012: London Bid</center></H3>
 	#</a></p>
-	relkex = re.compile('<p><a href="([^"]*?\.htm)#[^"]*"><h3><center>(.*?)(?:</center>|</h3>)+\s*</a></p>(?i)')
+	relkex = re.compile('<p><a href\s*=\s*"([^"]*?\.htm)#[^"]*"><h3><center>([^<]*)(?:</center>|</h3>)+\s*</a></p>(?i)')
 	res = relkex.findall(lktex)
 	if not res:
 		print "no links found from day index page"
+		raise Exception, "no links"
 	return res
 
 
@@ -178,7 +179,7 @@ def LordsPullGluePages(datefrom, dateto, deleteoutput):
 
 		# if we already have got the file, check the pagex link agrees in the first line
 		# no need to scrape it in again
-		print dnu[0]
+		# bail out using the continue command
 		if os.path.exists(dgf):
 			fpgx = open(dgf, "r")
 			pgx = fpgx.readline()
@@ -189,9 +190,9 @@ def LordsPullGluePages(datefrom, dateto, deleteoutput):
 					if pgx[0] == urlx:
 						#print 'skipping ' + urlx
 						continue
-			print 'RE-scraping ' + shurlx
+			print dnu[0], 'RE-scraping ' + shurlx
 		else:
-			print 'scraping ' + shurlx
+			print dnu[0], 'scraping ' + shurlx
 
 		# The different sections are often all run together
 		# with the title of written answers in the middle of a page.
