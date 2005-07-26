@@ -236,6 +236,7 @@ def RunWMSFilters(text, sdate):
 # before directly filtering to the real file.
 def RunLordsFilters(text, sdate):
 	fourstream = SplitLordsText(text, sdate)
+	#return ([], "lords")
 
 	# the debates section (only)
 	if fourstream[0]:

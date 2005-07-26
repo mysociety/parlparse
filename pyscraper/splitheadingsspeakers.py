@@ -32,14 +32,17 @@ class StampUrl:
 		# last <a name=""> html code, for identifying major headings
 		self.aname = ''
 
-        def __repr__(self):
+        def reps(self):
                 col = re.search('colnum="(.*?)"', self.stamp)
                 if col:
                         col = col.group(1)
                 anchor = re.search('aname="(.*?)"', self.aname)
                 if anchor:
                         anchor = anchor.group(1)
-                return "<< StampURL date:%s col:%s aname:%s >>" % (self.sdate, col or "[nocol]", anchor or "[noanchor]")
+                return "date:%s col:%s aname:%s" % (self.sdate, col or "[nocol]", anchor or "[noanchor]")
+
+        def __repr__(self):
+                return "<< StampURL %s >>" % self.reps()
 
 	# extract the stamp codes from the text, and return the glued together text.
 	def UpdateStampUrl(self, text):

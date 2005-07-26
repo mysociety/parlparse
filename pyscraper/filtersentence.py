@@ -20,7 +20,8 @@ from filterwransemblinks import ConstructHTTPlink
 
 from resolvemembernames import memberList
 
-# this code fits onto the paragraphs before the fixhtmlentities and 
+
+# this code fits onto the paragraphs before the fixhtmlentities and
 # performs difficult regular expression matching that can be 
 # used for embedded links.  
 
@@ -97,43 +98,41 @@ def TokenOffRep(qoffrep, phrtok):
 
 
 #my hon. Friend the Member for Regent's Park and Kensington, North (Ms Buck)
-# (sometimes there are spurious adjectives 
-rehonfriend = re.compile('''(?x)				
+# (sometimes there are spurious adjectives
+rehonfriend = re.compile('''(?x)
 				(?:[Mm]y|[Hh]er|[Hh]is|[Oo]ur)
 				(\sright)?               # group 1 (privy counsellors)
 				(.{0,26}?)               # group 2 sometimes an extra adjective eg "relentlyessly inclusive"
 				(?:\s|&nbsp;)*(?:hon\.)?
 				(\sand\slearned)?		 # group 3 used when MP is a barrister
+				(?:&.{4};and\sgallant&.{4};)?  # for such nonsense
 				(?:\s|&nbsp;)*(?:[Ff]riends?|Member)
-				(?:\s.{0,15})? 			 # superflous words
+				(?:,?\s.{0,16})? 		 # superflous words (eg ", in this context,")
 				\sthe\sMember\sfor\s
 				([^(]{3,60}?)			 # group 4 the name of the constituency
 				\s*
-				\(([^)]{5,60}?)\)		 # group 5 the name of the MP, inserted for clarity.  
+				\(([^)]{5,60}?)\)		 # group 5 the name of the MP, inserted for clarity.
 						''')
 rehonfriendmarg = re.compile('the Member for [^(]{0,60}\(')
 def TokenHonFriend(mhonfriend, phrtok):
 	# will match for ids
 	#print mhonfriend.group(0)
-	#if (phrtok.sdate is None):
-	#	return ('', '')
-    try:
-        res = memberList.matchfullnamecons(mhonfriend.group(5), mhonfriend.group(4), phrtok.sdate, alwaysmatchcons = False)
-    except:
-        return ('', '')
-    return ('phrase', ' class="honfriend" id="%s" name="%s"' % res[:2])
+	res = memberList.matchfullnamecons(mhonfriend.group(5), mhonfriend.group(4), phrtok.sdate, alwaysmatchcons = False)
+	if not res[0]:  # comes back as None
+		res = ("unknown", mhonfriend.group(5))
+	return ('phrase', ' class="honfriend" id="%s" name="%s"' % res[:2])
 
 
 
 # the array of tokens which we will detect on the way through
 tokenchain = [
 	( "date",			redatephraseval,None, 				TokenDate ),
-	( "offrep", 		reoffrepw, 		None, 				TokenOffRep ), 
-	( "standing order", restandingo, 	restandingomarg, 	TokenStandingOrder ), 
-	( "httplink", 		rehtlink, 		None, 				TokenHttpLink ), 
-	( "offrep", 		reoffrepw, 		None, 				TokenOffRep ), 
-	( "honfriend", 		rehonfriend, 	rehonfriendmarg, 	TokenHonFriend ), 
-			  ]	
+	( "offrep", 		reoffrepw, 		None, 				TokenOffRep ),
+	( "standing order", restandingo, 	restandingomarg, 	TokenStandingOrder ),
+	( "httplink", 		rehtlink, 		None, 				TokenHttpLink ),
+	( "offrep", 		reoffrepw, 		None, 				TokenOffRep ),
+	( "honfriend", 		rehonfriend, 	rehonfriendmarg, 	TokenHonFriend ),
+			  ]
 
 
 # this handles the chain of tokenization of a paragraph

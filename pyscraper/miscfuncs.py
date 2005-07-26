@@ -140,18 +140,22 @@ def ApplyFixSubstitutions(text, sdate, fixsubs):
 
 # this only accepts <sup> and <i> tags
 def StraightenHTMLrecurse(stex, stampurl):
-	# split the text into <i></i> and <sup></sup> and <sub></sub>
+	# split the text into <i></i> and <sup></sup> and <sub></sub> and <a href></a>
 	qisup = re.search('(<i>(.*?)</i>)(?i)', stex)
 	if qisup:
 		qtag = ('<i>', '</i>')
-	else:
+	if not qisup:
 		qisup = re.search('(<sup>(.*?)</sup>)(?i)', stex)
 		if qisup:
 			qtag = ('<sup>', '</sup>')
-                else:
-                        qisup = re.search('(<sub>(.*?)</sub>)(?i)', stex)
-                        if qisup:
-                                qtag = ('<sub>', '</sub>')
+	if not qisup:
+		qisup = re.search('(<sub>(.*?)</sub>)(?i)', stex)
+		if qisup:
+			qtag = ('<sub>', '</sub>')
+	if not qisup:
+		qisup = re.search('(<a href="([^"]*)">(.*?)</a>)(?i)', stex)
+		if qisup:
+			qtag = ('<a href="%s">' % qisup.group(2), '</a>')
 
 	if qisup:
 		sres = StraightenHTMLrecurse(stex[:qisup.span(1)[0]], stampurl)
@@ -245,13 +249,13 @@ def FixHTMLEntities(stex, signore='', stampurl=None):
 
 
 # The lookahead assertion (?=<table) stops matching tables when another begin table is reached
-restmatcher = '</?p(?: class[= ]"tabletext")?>|</?ul>|<br>|</?font[^>]*>(?i)'
+restmatcher = '</?p(?: class[= ]"tabletext")?>|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>(?i)'
 reparts = re.compile('(<table[\s\S]*?(?:</table>|(?=<table))|' + restmatcher + ')')
 reparts2 = re.compile('(<table[^>]*?>|' + restmatcher + ')')
 
 retable = re.compile('<table[\s\S]*?</table>(?i)')
 retablestart = re.compile('<table[\s\S]*?(?i)')
-reparaspace = re.compile('</?p(?: class[= ]"tabletext")?>|</?ul>|<br>|</?font[^>]*>|<table[^>].*>$(?i)')
+reparaspace = re.compile('</?p(?: class[= ]"tabletext")?>|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>|<table[^>].*>$(?i)')
 reparaempty = re.compile('\s*(?:<i>)?</i>\s*$|\s*$(?i)')
 reitalif = re.compile('\s*<i>\s*$(?i)')
 
@@ -371,12 +375,13 @@ def SplitParaIndents(text, stampurl):
 	for i in range(len(dell)):
 		if (i % 2) == 0:
 			for sp in dell[i]:
-				if re.match('<ul>(?i)', sp):
+				if re.match('(?:<ul><ul>)?<ul>(?i)', sp):
 					if bIndent:
 						print text
+						print dell
 						raise ContextException(' already indentented ', stamp=stampurl, fragment=sp)
 					bIndent = 1
-				elif re.match('</ul>(?i)', sp):
+				elif re.match('(?:</ul></ul>)?</ul>(?i)', sp):
 					# no error
 					#if not bIndent:
 					#	raise Exception, ' already not-indentented '
