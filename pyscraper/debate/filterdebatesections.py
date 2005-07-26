@@ -183,7 +183,7 @@ def StripWestminhallHeadings(headspeak, sdate):
 	for j in range(0, ih):
 		stampurl.UpdateStampUrl(headspeak[j][1])
 
-        if (not stampurl.stamp) or (not stampurl.pageurl):
+	if (not stampurl.stamp) or (not stampurl.pageurl):
 		raise Exception, ' missing stamp url at beginning of file '
 	return (ih, stampurl)
 
@@ -207,12 +207,12 @@ def NormalHeadingPart(headingtxt, stampurl):
 	if re.search('-- lost heading --(?i)', headingtxt):
 		binsertedheading = True
 
-        # Oral question are really a major heading
+	# Oral question are really a major heading
 	elif headingtxt == 'Oral Answers to Questions':
 		boralheading = True
 	# Check if there are any other spellings of "Oral Answers to Questions" with a loose match
 	elif re.search('oral(?i)', headingtxt) and re.search('ques(?i)', headingtxt) and (not re.search(" Not ", headingtxt)) and \
-                        stampurl.sdate != "2002-06-11": # has a genuine title with Oral in it
+			stampurl.sdate != "2002-06-11": # has a genuine title with Oral in it
 		raise Exception, 'Oral question match not precise enough: %s' % headingtxt
 
 	# All upper case headings
@@ -246,7 +246,7 @@ def NormalHeadingPart(headingtxt, stampurl):
 	else:
 		qb.typ = 'minor-heading'
 
-        # headings become one unmarked paragraph of text
+	# headings become one unmarked paragraph of text
 	qb.stext = [ headingtxtfx ]
 	return qb
 
@@ -270,10 +270,10 @@ def GrabWestminDivisionInterruptProced(qbp, rawtext):
 
 	# copy the lines into a non-speaking paragraph.
 	if iskip:
-                dumtext = re.sub('<p>(?:<stamp aname="[^"]*?"/>)?<i>sitting suspended.*(?si)','',rawtext)
-                s = copy.copy(qbp.sstampurl)
+		dumtext = re.sub('<p>(?:<stamp aname="[^"]*?"/>)?<i>sitting suspended.*(?si)','',rawtext)
+		s = copy.copy(qbp.sstampurl)
 		qbdp = qspeech('nospeaker="true"', dumtext, s)
-                qbdp = qspeech('nospeaker="true"', "", s)
+		qbdp = qspeech('nospeaker="true"', "", s)
 		qbdp.typ = 'speech'
 		qbdp.stext = qbp.stext[iskip:]
 		# trim back the given one by two lines
@@ -337,7 +337,7 @@ def FilterDebateSections(text, sdate, typ):
 					flatb[-1].stext.append(" &mdash; ")
 					flatb[-1].stext.extend(qbh.stext)
 
-                                elif (qbh.typ == 'minor-heading' or qbh.typ == 'major-heading') and len(flatb) > 0 and flatb[-1].typ == 'speech':
+				elif (qbh.typ == 'minor-heading' or qbh.typ == 'major-heading') and len(flatb) > 0 and flatb[-1].typ == 'speech':
                                         mmm = re.search('<p>((?:New )?Clause \d+)</p>', flatb[-1].stext[-1])
                                         if mmm:
                                                 qbh.stext.insert(0, " &mdash; ")
@@ -345,7 +345,7 @@ def FilterDebateSections(text, sdate, typ):
                                                 flatb[-1].stext = flatb[-1].stext[:-1]
                                         flatb.append(qbh)
 
-                                # otherwise put out this heading
+				# otherwise put out this heading
 				else:
 					flatb.append(qbh)
 
