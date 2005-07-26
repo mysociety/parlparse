@@ -12,6 +12,7 @@ import sys
 import datetime
 
 from parlphrases import parlPhrases
+from contextexception import ContextException
 
 
 
@@ -20,9 +21,6 @@ regnospeakers = "Hon\.? Members|Members of the House of Commons|" + \
         "Deputy? ?Speaker|Second Deputy Chairman(?i)|Speaker-Elect|" + \
         "The Chairman|First Deputy Chairman|Temporary Chairman"
 
-# Cases we want to specially match - add these in as we need them
-class MultipleMatchException(Exception):
-    pass
 
 class MemberList(xml.sax.handler.ContentHandler):
     def __init__(self):
@@ -294,7 +292,6 @@ class MemberList(xml.sax.handler.ContentHandler):
 
         if consids and (len(ids) > 1 or alwaysmatchcons):
             newids = sets.Set()
-
             for consattr in consids:
                 if consattr["fromdate"] <= date and date <= consattr["todate"]:
                     consid = consattr['id']
@@ -305,10 +302,16 @@ class MemberList(xml.sax.handler.ContentHandler):
                                 newids.add(attr["id"])
             ids = newids
 
+		# fail cases
         if len(ids) == 0:
-	        return None, None, None
+            return None, None, None
         if len(ids) > 1:
-            raise MultipleMatchException, 'Matched multiple times: ' + fullname + " : " + (cons or "[nocons]") + " : " + (date or "[nodate]") + " : " + ids.__str__()
+            print 'Matched multiple times: ' + fullname + " : " + (cons or "[nocons]") + " : " + date + " : " + ids.__str__()
+            if cons:
+                print 'perhaps constituency spelling is not known'
+            lids = list(ids)  # I really hate the Set type
+			lids.sort()
+            return None, "MultipleMatch", tuple(lids)
 
         for lid in ids: # pop is no good as it changes the set
             pass

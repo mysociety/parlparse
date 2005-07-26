@@ -7,8 +7,6 @@ import re
 import sys
 import shutil
 
-from resolvemembernames import memberList
-
 import miscfuncs
 toppath = miscfuncs.toppath
 
