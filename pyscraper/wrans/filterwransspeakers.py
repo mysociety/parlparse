@@ -7,7 +7,6 @@ import re
 import os
 import string
 from resolvemembernames import memberList
-from resolvemembernames import MultipleMatchException
 from splitheadingsspeakers import StampUrl
 
 from miscfuncs import ApplyFixSubstitutions
@@ -110,13 +109,13 @@ def FilterWransSpeakers(fout, text, sdate):
 			continue
 
 		# try to pull in the question number if preceeding
-                # These signify aborted oral questions, and are normally
-                # useless and at the start of the page.
+		# These signify aborted oral questions, and are normally
+		# useless and at the start of the page.
 		# 27. <B> Mr. Steen: </B>
 		if i > 0:
 			oqnsep = re.findall('^([\s\S]*?)Q?(\d+\.)(\s*?(?:<stamp aname=".*?"/>)?)$', fs[i-1])
 			if oqnsep:
-				fs[i-1] = oqnsep[0][0] + oqnsep[0][2] 
+				fs[i-1] = oqnsep[0][0] + oqnsep[0][2]
 				boldnamestring = oqnsep[0][1] + ' ' + boldnamestring
 
 		# take out the initial digits and a dot which we may have just put in
@@ -126,34 +125,33 @@ def FilterWransSpeakers(fout, text, sdate):
 		if robj:
 			(deci, boldnamestring) = robj.groups()
 
-                # TODO: do something with deci here (it is the "failed
-                # oral questions" signifier)
+			# TODO: do something with deci here (it is the "failed
+			# oral questions" signifier)
 
-                # see if it is an explicitly bad/ambiguous name which will never match
-                if boldnamestring.find('<broken-name>') >= 0:
-                    id = 'unknown'
-                    boldnamestring = boldnamestring.replace('<broken-name>', '')
-                    remadename = ' speakername="%s" error="Name ambiguous in Hansard"' % (boldnamestring)
-                else:
-                    try:
-                        # split bracketed cons out if present
-                        brakmatch = re.match("(.*)\s+\((.*)\)", boldnamestring)
-                        if brakmatch:
-                                (name, cons) = brakmatch.groups()
-                        else:
-                                (name, cons) = (boldnamestring, None)
+			# see if it is an explicitly bad/ambiguous name which will never match
+			if boldnamestring.find('<broken-name>') >= 0:
+				id = 'unknown'
+				boldnamestring = boldnamestring.replace('<broken-name>', '')
+				remadename = ' speakername="%s" error="Name ambiguous in Hansard"' % (boldnamestring)
+			else:
+				# split bracketed cons out if present
+				brakmatch = re.match("(.*)\s+\((.*)\)", boldnamestring)
+				if brakmatch:
+					(name, cons) = brakmatch.groups()
+				else:
+					(name, cons) = (boldnamestring, None)
 
-                        # match the member to a unique identifier
-                        try:
-                                (id, remadename, remadecons) = memberList.matchwransname(name, cons, sdate)
-                                if remadename:
-                                        remadename = ' speakername="%s"' % (remadename)
-                        except MultipleMatchException, mme:
-                                id = 'unknown'
-                                remadename = ' speakername="%s" error="%s"' % (boldnamestring, mme)
-                    except Exception, e:
-                        # add extra stamp info to the exception
-                        raise ContextException(str(e), stamp=stampurl, fragment=boldnamestring)
+				# match the member to a unique identifier
+				(id, remadename, remadecons) = memberList.matchwransname(name, cons, sdate)
+				if id and remadename:
+					remadename = ' speakername="%s"' % (remadename)
+				if not id:
+					if remadename == "MultipleMatch":
+						id = 'unknown'
+						remadename = ' speakername="%s" error="MultipleMatch"' % boldnamestring
+					else:
+						raise ContextException("No name match", stamp=stampurl, fragment=boldnamestring)
+
 
 		# put record in this place
 		fs[i] = '<speaker speakerid="%s"%s>%s</speaker>\n' % \
