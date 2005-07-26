@@ -9,7 +9,6 @@ import string
 import mx.DateTime
 
 
-from miscfuncs import ApplyFixSubstitutions
 
 from splitheadingsspeakers import SplitHeadingsSpeakers
 from splitheadingsspeakers import StampUrl
@@ -26,19 +25,14 @@ from filterdebatespeech import FilterDebateSpeech
 
 from contextexception import ContextException
 
-# Legacy patch system, use patchfilter.py and patchtool now
-fixsubs = 	[
-				( '<UL><UL><UL>(?i)', '<UL>', -1, 'all'),
-				( '</UL></UL></UL>(?i)', '</UL>', -1, 'all'),
-		]
-
 
 def StripDebateHeading(hmatch, ih, headspeak, bopt=False):
-	if (not re.match(hmatch, headspeak[ih][0])) or headspeak[ih][2]:
+	reheadmatch = '(?:<stamp aname="[^"]*"/>)*' + hmatch
+	if (not re.match(reheadmatch, headspeak[ih][0])) or headspeak[ih][2]:
 		if bopt:
 			return ih
 		print headspeak[ih]
-		raise Exception, 'non-conforming "%s" heading ' % hmatch
+		raise ContextException('non-conforming "%s" heading ' % hmatch)
 	return ih + 1
 
 def StripLordsDebateHeadings(headspeak, sdate):
@@ -51,28 +45,33 @@ def StripLordsDebateHeadings(headspeak, sdate):
 	ih = StripDebateHeading('house of lords(?i)', ih, headspeak, True)
 
 	# Thursday, 18th December 2003.
-	if not re.match('the house met at .*(?i)', headspeak[ih][0]):
-		if ((sdate != mx.DateTime.DateTimeFrom(headspeak[ih][0]).date)) or headspeak[ih][2]:
-			print headspeak[ih]
-			raise Exception, 'non-conforming date heading '
-		ih = ih + 1
-
-
-	if re.match("THE QUEEN'S SPEECH", headspeak[ih][0]):
-		print headspeak[ih][0]
-		print "*******  skipping entirely **********"
-		return (None, None)
-
-	# The House met at eleven of the clock (Prayers having been read earlier at the Judicial Sitting by the Lord Bishop of St Albans): The CHAIRMAN OF COMMITTEES on the Woolsack.
-	gstarttime = re.match('(?:reassembling.*?recess, )?the house met at (.*)(?i)', headspeak[ih][0])
-	if (not gstarttime) or headspeak[ih][2]:
+	mdateheading = re.match('(?:<stamp aname="[^"]*"/>)*([\w\s\d,]*)\.', headspeak[ih][0])
+	if not mdateheading or (sdate != mx.DateTime.DateTimeFrom(mdateheading.group(1)).date) or headspeak[ih][2]:
 		print headspeak[ih]
-		raise Exception, 'non-conforming "%s" heading ' % hmatch
+		ContextException('non-conforming date heading')
 	ih = ih + 1
 
 
-	# Prayers&#151;Read by the Lord Bishop of Southwell.
-	ih = StripDebateHeading('prayers(?i)', ih, headspeak, True)
+	if re.match("THE QUEEN(?:'|&....;)S SPEECH", headspeak[ih][0]):
+		print headspeak[ih][0]
+		print "QUEENS SPEECH"
+		# don't advance, because this is the heading (works for 2005-05-17)
+
+	elif re.match("Parliament", headspeak[ih][0]):
+		print "parliamentparliament"
+		# don't advance; this is a title (works for 2005-05-11)
+
+	else:
+		# The House met at eleven of the clock (Prayers having been read earlier at the Judicial Sitting by the Lord Bishop of St Albans): The CHAIRMAN OF COMMITTEES on the Woolsack.
+		gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*(?:reassembling.*?recess, )?the house met at ([^(]*)(?i)', headspeak[ih][0])
+		if (not gstarttime) or headspeak[ih][2]:
+			print "headspeakheadspeakih", headspeak[ih]
+			raise ContextException('non-conforming "house met at" heading ')
+		ih = ih + 1
+
+
+		# Prayers&#151;Read by the Lord Bishop of Southwell.
+		ih = StripDebateHeading('prayers(?i)', ih, headspeak, True)
 
 
 
@@ -106,13 +105,15 @@ def LordsHeadingPart(headingtxt, stampurl):
 
 
 # this function is taken from debdivisionsections
+def SubsPWtextsetS(st):
+	if re.search('pwmotiontext="yes"', st) or not re.match('<p', st):
+		return st
+	return re.sub('<p(.*?)>', '<p\\1 pwmotiontext="yes">', st)
+
+# this function is taken from debdivisionsections
+# to be inlined
 def SubsPWtextset(stext):
-	res = [ ]
-	for st in stext:
-		if re.search('pwmotiontext="yes"', st) or not re.match('<p', st):
-			res.append(st)
-		else:
-			res.append(re.sub('<p(.*?)>', '<p\\1 pwmotiontext="yes">', st))
+	res = map(SubsPWtextsetS, stext)
 	return res
 
 #	<p>On Question, Whether the said amendment (No. 2) shall be agreed to?</p>
@@ -158,60 +159,121 @@ def GrabLordDivisionProced(qbp, qbd):
 	return qbdp
 
 # separate out the making of motions and my lords speeches
+# the position of a colon gives it away
+# returns a pre and post speech accounting for unspoken junk before and after a block of spoken stuff
 def FilterLordsSpeech(qb):
-	recol = re.search('colon="(:?)"', qb.speaker)
-	if not recol: # no match cases
-		return None
 
-	# no colon, must be making a motion
-	if recol.group(1):
-		if re.search("<p>moved (?i)", qb.stext[0]):
+	# pull in the normal filtering that gets done on debate speeches
+	# does the paragraph indents and tables.  Maybe should be inlined for lords
+	FilterDebateSpeech(qb)
+
+	# no speaker case, no further processing
+	if re.match('nospeaker="true"', qb.speaker):
+		return [ qb ]
+
+	# the colon attr is blank or has a : depending on what was there after the name that was matched
+	ispeechstartp1 = 0 # plus 1
+
+	# no colonattr or colon, must be making a speech
+	recol = re.search('colon="(:?)"', qb.speaker)
+	if not recol or recol.group(1):
+		# text of this kind at the begining should not be spoken
+		if re.search("<p>(?:moved|asked) (?i)", qb.stext[0]):
 			print qb.speaker
 			print qb.stext[0]
-			raise ContextException("has moved amendment after colon", stamp=qb.sstampurl)
-		return None
+			raise ContextException("has moved amendment after colon (try taking : out)", stamp=qb.sstampurl)
+		ispeechstartp1 = 1  # 0th paragraph is speech text
 
-	# just a question
-	if re.match("<p>asked Her Majesty's Government|<p>rose to (?:ask|call|draw attention|consider)|<p>asked the|<p>&mdash;Took the Oath", qb.stext[0]):
-		return None
+	# just a question -- non-colon
+	res = [ ] # output list
+	if not ispeechstartp1:
+		if re.match("<p>asked Her Majesty's Government|<p>rose to (?:ask|call|draw attention|consider)|<p>asked the|<p>&mdash;Took the Oath", qb.stext[0]):
+			qb.stext[0] = re.sub('^<p>', '<p class="asked">', qb.stext[0])  # cludgy; already have the <p>-tag embedded in the string
+			ispeechstartp1 = 2  # 1st paragraph is speech text
 
-	# identify a moved amendment
-	if not re.match("<p>moved,? |<p>Amendments? |<p>had given notice|<p>rose to move", qb.stext[0]):
+		# identify a writ of summons (single line)
+		elif re.match("<p>[\s,]*having received a [Ww]rit of [Ss]ummons .*?took the [Oo]ath\.</p>$", qb.stext[0]):
+			assert len(qb.stext) == 1
+			qb.stext[0] = re.sub('^<p>', '<p class="summons">', qb.stext[0])  # cludgy; already have the <p>-tag embedded in the string
+			return [ qb ]
+
+		# identify a moved amendment
+		elif re.match("<p>moved,? |<p>Amendments? |<p>had given notice|<p>rose to move|<p>had given his intention", qb.stext[0]):
+
+			# find where the speech begins
+			ispeechstartp1 = len(qb.stext)
+			for i in range(len(qb.stext)):
+				rens = re.match("(<p>The noble \S* said:\s*)", qb.stext[i])
+				if rens:
+					qb.stext[i] = "<p>" +  qb.stext[i][rens.end(1):]
+					i = ispeechstartp1
+					break
+			# everything up to this point is non-speech
+			assert ispeechstartp1 > 0
+			qbprev = qspeech(qb.speaker, "", qb.sstampurl)
+			qbprev.typ = 'speech'
+			qbprev.stext = SubsPWtextset(qb.stext[:ispeechstartp1])
+			res.append(qbprev)
+
+			# upgrade the spoken part
+			if ispeechstartp1 != len(qb.stext):
+				qb.speaker = string.replace(qb.speaker, 'colon=""', 'colon=":"')
+				qb.stext = qb.stext[ispeechstartp1:]
+				ispeechstartp1 = 1 # the spoken text must reach here
+			else:
+				return res
+
+
+		# error, no moved amendment found
+		else:
+			print qb.stext
+			print "no moved amendment; is a colon missing after the name?"
+			raise ContextException("missing moved amendment", stamp=qb.sstampurl)
+
+	# advance to place where non-speeches happen
+	if ispeechstartp1 > len(qb.stext):
+		print "ispeechstartp1 problem; speeches running through", ispeechstartp1, len(qb.stext)
 		print qb.stext
-		print "no moved amendment"
-		raise ContextException("missing moved amendment", stamp=qb.sstampurl)
-		return None
+		raise ContextException("end of speech boundary unclear running through; need to separate paragraphs?", stamp=qb.sstampurl)
 
-	# separate out when he starts to speak about his motion
-	nstext = [ ]
-	for i in range(len(qb.stext)):
-		rens = re.match("(<p>The noble \S* said:\s*)", qb.stext[i])
-		if rens:
-			nstext = [ "<p>" +  qb.stext[i][rens.end(1):] ]
-			nstext.extend(qb.stext[i+1:])
-			qb.stext = qb.stext[:i]
+	# a common end of speech is to withdraw an amendment
+	bAmendWithdrawn = False
+	while ispeechstartp1 < len(qb.stext):
+		if re.match('<p>Amendment(?: No\. \d+[A-Z]+)?(?:, as an amendment)?(?: to(?: Commons)? Amendment No\. \d+[A-Z]*| to the Motion)?,? by leave,? withdrawn.</p>', qb.stext[ispeechstartp1]):
+			#print "withdrawnwithdrawn", qb.stext[ispeechstartp1]
+			bAmendWithdrawn = True
 			break
-	assert i > 0
-	qb.stext = SubsPWtextset(qb.stext)
-	qb.typ = 'motion'
+		if re.match('<p>(?:Amendment.{0,50}?|by leave, )withdrawn', qb.stext[ispeechstartp1]):
+			print "**********Marginal amendwith", qb.stext[ispeechstartp1]
+		ispeechstartp1 += 1
 
-	if not nstext:
-		return None
+	# the speech ran its proper course
+	if ispeechstartp1 == len(qb.stext):
+		res.append(qb)
+		assert not bAmendWithdrawn
+		return res
 
-	# build the speech part
-	qbres = qspeech(string.replace(qb.speaker, 'colon=""', 'colon=":"'), "", qb.sstampurl)
-	qbres.typ = 'speech'
-	qbres.stext = nstext
-	return qbres
+	# put in the withdrawn amendment into the current speech
+	if bAmendWithdrawn:
+		qb.stext[ispeechstartp1] = re.sub('<p(.*?)>', '<p\\1 pwmotiontext="yes" pwmotionwithdrawn="yes">', qb.stext[ispeechstartp1])
+		ispeechstartp1 += 1
 
+	# From amendment withdrawn onwards put in as unspoken text
+	res.append(qb)
+	if ispeechstartp1 < len(qb.stext):
+		qbunspo = qspeech('nospeaker="true"', "", qb.sstampurl)
+		qbunspo.typ = 'speech'
+		qbunspo.stext = SubsPWtextset(qb.stext[ispeechstartp1:])
+		del qb.stext[ispeechstartp1:]
+		res.append(qbunspo)
+
+	return res
 
 
 ################
 # main function
 ################
 def LordsFilterSections(text, sdate):
-	# make the corrections at this level which enables the headings to be resolved.
-	text = ApplyFixSubstitutions(text, sdate, fixsubs)
 
 	# split into list of triples of (heading, pre-first speech text, [ (speaker, text) ])
 	headspeak = SplitHeadingsSpeakers(text)
@@ -229,7 +291,7 @@ def LordsFilterSections(text, sdate):
 
 	for sht in headspeak[ih:]:
 		# triplet of ( heading, unspokentext, [(speaker, text)] )
-		headingtxt = string.strip(sht[0])
+		headingtxt = stampurl.UpdateStampUrl(string.strip(sht[0]))  # we're getting stamps inside the headings sometimes
 		unspoketxt = sht[1]
 		speechestxt = sht[2]
 
@@ -258,8 +320,7 @@ def LordsFilterSections(text, sdate):
 		if (not re.match('(?:<[^>]*>|\s)*$', unspoketxt)):
 			qb = qspeech('nospeaker="true"', unspoketxt, stampurl)
 			qb.typ = 'speech'
-			FilterDebateSpeech(qb)
-			flatb.append(qb)
+			flatb.extend(FilterLordsSpeech(qb))
 
 		# there is no text; update from stamps if there are any
 		else:
@@ -269,11 +330,7 @@ def LordsFilterSections(text, sdate):
 		for ss in speechestxt:
 			qb = qspeech(ss[0], ss[1], stampurl)
 			qb.typ = 'speech'
-			FilterDebateSpeech(qb)
-			qbsep = FilterLordsSpeech(qb)
-			flatb.append(qb)
-			if qbsep:
-				flatb.append(qbsep)
+			flatb.extend(FilterLordsSpeech(qb))
 
 
 	# we now have everything flattened out in a series of speeches

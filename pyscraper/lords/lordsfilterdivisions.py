@@ -27,11 +27,11 @@ from lordsfilterspeakers import lordlist
 
 recontma = re.compile('<center><b>(.*?)\s*</b></center>(?i)')
 retellma = re.compile('(.*?)\s*\[(Teller)\]$')
-reoffma = re.compile('(.*?)\s*\((.*?)\)$')
+reoffma = re.compile('(.*\S)\s*\((.*?)\)$')
 def LordsFilterDivision(text, stampurl, sdate):
 
 	# the intention is to splice out the known parts of the division
-	fs = re.split('\s*(?:<br>|<p>)\s*(?i)', text)
+	fs = re.split('\s*(?:<br>|</?p>)\s*(?i)', text)
 
 	contentlords = [ ]
 	notcontentlords = [ ]
@@ -51,6 +51,14 @@ def LordsFilterDivision(text, stampurl, sdate):
 			else:
 				print "$$$%s$$$" % cfs.group(1)
 				raise Exception, "unrecognized content state"
+
+		elif re.match("(?:\[\*|\*\[)[Ss]ee col\. \d+\]", fss):
+			print "Disregarding cross-reference in Division", fss
+		elif re.match("\[\*\s*The Tellers.*?[Tt]he Clerks.*?\]", fss):
+			print "Disregarding clerk comment on numbers", fss
+		elif re.match("\[\*\s*The name of a .*? removed from the voting lists\.\]", fss):
+			print "Disregarding removed from list comment", fss
+
 		else:
 			assert contstate != ''
 
@@ -66,7 +74,6 @@ def LordsFilterDivision(text, stampurl, sdate):
 			offm = reoffma.match(lfss)
 			if offm:
 				lfss = offm.group(1)
-
 			lordid = lordlist.MatchRevName(lfss, stampurl)
 			lordw = '\t<lord id="%s" vote="%s"%s>%s</lord>' % (lordid, contstate, tels, FixHTMLEntities(fss))
 
