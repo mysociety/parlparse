@@ -61,9 +61,11 @@ def RunFiltersDir(filterfunction, dname, options, forcereparse):
 	# the in and out directories for the type
 	if dname == 'lordspages':
 		pwcmdirin = os.path.join(toppath, dname)
+		# this is where we'll have to hack a tuple so we can output more than one dir for one input in the lords case
+		pwxmldirout = os.path.join(pwxmldirs, 'lordsdebates')
 	else:
 		pwcmdirin = os.path.join(pwcmdirs, dname)
-	pwxmldirout = os.path.join(pwxmldirs, dname)
+		pwxmldirout = os.path.join(pwxmldirs, dname)
 
 	# create output directory
 	if not os.path.isdir(pwxmldirout):
