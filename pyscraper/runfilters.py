@@ -39,14 +39,16 @@ from xmlfilewrite import WriteXMLFile
 from resolvemembernames import memberList
 
 import miscfuncs
+
 toppath = miscfuncs.toppath
+pwcmdirs = miscfuncs.pwcmdirs
+pwxmldirs = miscfuncs.pwxmldirs
+pwpatchesdirs = miscfuncs.pwpatchesdirs
+
 
 # master function which carries the glued pages into the xml filtered pages
 
-# incoming directory of glued pages directories
-pwcmdirs = os.path.join(toppath, "cmpages")
 # outgoing directory of scaped pages directories
-pwxmldirs = os.path.join(toppath, "scrapedxml")
 # file to store list of newly done dates
 changedatesfile = "changedates.txt"
 
@@ -56,16 +58,12 @@ tempfilename = tempfile.mktemp(".xml", "pw-filtertemp-", miscfuncs.tmppath)
 if not os.path.isdir(pwxmldirs):
 	os.mkdir(pwxmldirs)
 
-# this
+# this works on paris of directories
 def RunFiltersDir(filterfunction, dname, options, forcereparse):
 	# the in and out directories for the type
-	if dname == 'lordspages':
-		pwcmdirin = os.path.join(toppath, dname)
-		# this is where we'll have to hack a tuple so we can output more than one dir for one input in the lords case
-		pwxmldirout = os.path.join(pwxmldirs, 'lordsdebates')
-	else:
-		pwcmdirin = os.path.join(pwcmdirs, dname)
-		pwxmldirout = os.path.join(pwxmldirs, dname)
+	pwcmdirin = os.path.join(pwcmdirs, dname)
+	pwxmldirout = os.path.join(pwxmldirs, dname)
+	pwpatchesdir = os.path.join(pwpatchesdirs, dname)
 
 	# create output directory
 	if not os.path.isdir(pwxmldirout):
@@ -83,7 +81,9 @@ def RunFiltersDir(filterfunction, dname, options, forcereparse):
 			continue
 
 		# extract the date from the file name
-		sdate = re.search('\d{4}-\d{2}-\d{2}', fin).group(0)
+		msdate = re.search('(\d{4}-\d{2}-\d{2})([a-z]*)\.', fin)
+		sdate = msdate.group(1)
+		sdatver = msdate.group(2)
 
 		# skip dates outside the range specified on the command line
 		if sdate < options.datefrom or sdate > options.dateto:
@@ -98,7 +98,7 @@ def RunFiltersDir(filterfunction, dname, options, forcereparse):
 		if os.path.isfile(jfout):
 			out_modified = os.stat(jfout).st_mtime
 			in_modified = os.stat(jfin).st_mtime
-			patchfile = "patches/%s/%s.patch" % (dname,fin)
+			patchfile = os.path.join(pwpatchesdir, "%s.patch" % fin)
 			patch_modified = None
 			if os.path.isfile(patchfile):
 				patch_modified = os.stat(patchfile).st_mtime
@@ -125,13 +125,13 @@ def RunFiltersDir(filterfunction, dname, options, forcereparse):
 			# this avoids partially processed files getting into the output when you hit escape.
 			try:
 				# do the filtering, then write the result
-                                if dname == 'regmem':
-                                        regmemout = open(tempfilename, 'w')
-                                        filterfunction(regmemout, text, sdate)
-                                        regmemout.close()
-                                else:
-                                        (flatb, gidname) = filterfunction(text, sdate)
-                                        WriteXMLFile(gidname, tempfilename, jfout, flatb, sdate, options.quietc)
+				if dname == 'regmem':
+					regmemout = open(tempfilename, 'w')
+					filterfunction(regmemout, text, sdate)
+					regmemout.close()
+				else:
+					(flatb, gidname) = filterfunction(text, sdate)
+					WriteXMLFile(gidname, tempfilename, jfout, flatb, sdate, options.quietc)
 
 				if sys.platform != "win32":
 					# this function leaves the file open which can't be renamed in win32
@@ -157,7 +157,7 @@ def RunFiltersDir(filterfunction, dname, options, forcereparse):
 			except ContextException, ce:
 				if options.patchtool:
 					print "runfilters.py", ce
-					RunPatchTool(dname, sdate, ce)
+					RunPatchTool(dname, (sdate + sdatver), ce)
 					continue # emphasise that this is the repeat condition
 
 				elif options.quietc:

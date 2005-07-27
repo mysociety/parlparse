@@ -12,17 +12,24 @@ import tempfile
 
 import miscfuncs
 toppath = miscfuncs.toppath
+pwcmdirs = miscfuncs.pwcmdirs
+tempfilename = miscfuncs.tempfilename
+
+from miscfuncs import NextAlphaString, AlphaStringToOrder
 
 # Pulls in all the debates, written answers, etc, glues them together, removes comments,
 # and stores them on the disk
+
+# we should put lordspages into cmpages as another directory, and move
+# all patch files into a set of directories parallel to the html and xml containing directories
+
 
 # index file which is created
 pwlordsindex = os.path.join(toppath, "lordindex.xml")
 
 # output directories (everything of one day in one file).
-pwlordspages = os.path.join(toppath, "lordspages")
+pwlordspages = os.path.join(pwcmdirs, "lordspages")
 
-tempfilename = tempfile.mktemp("", "pw-gluetemp-", miscfuncs.tmppath)
 
 # this does the main loading and gluing of the initial day debate
 # files from which everything else feeds forward
@@ -148,16 +155,26 @@ def GlueByNext(fout, urla, urlx):
 	pass  #endwhile urla
 
 
+
 ###############
 # main function
 ###############
-def LordsPullGluePages(datefrom, dateto, deleteoutput):
+def LordsPullGluePages(datefrom, dateto, bforcescrape):
 	# make the output firectory
 	if not os.path.isdir(pwlordspages):
 		os.mkdir(pwlordspages)
 
 	# load the index file previously made by createhansardindex
 	clordsindex = LoadLordsIndex(pwlordsindex)
+
+	# scan through the directory and make a mapping of all the copies for each
+	lddaymap = { }
+	for ldfile in os.listdir(pwlordspages):
+		mnums = re.match("daylord(\d{4}-\d\d-\d\d)([a-z]*)\.html", ldfile)
+		if mnums:
+			lddaymap.setdefault(mnums.group(1), []).append((AlphaStringToOrder(mnums.group(2)), mnums.group(2), ldfile))
+		else:
+			print "not recognized file:", ldfile
 
 	# loop through the index of each lord line.
 	for dnu in clordsindex.res:
@@ -166,33 +183,35 @@ def LordsPullGluePages(datefrom, dateto, deleteoutput):
 			continue
 
 		# make the filename
-		dgf = os.path.join(pwlordspages, ('daylord%s.html' % dnu[0]))
+		dgflatestalpha, dgflatest = "", None
+		if dnu[0] in lddaymap:
+			ldgf = max(lddaymap[dnu[0]])
+			dgflatestalpha = ldgf[1]
+			dgflatest = os.path.join(pwlordspages, ldgf[2])
+		ldgfnext = 'daylord%s%s.html' % (dnu[0], NextAlphaString(dgflatestalpha))
+		dgfnext = os.path.join(pwlordspages, ldgfnext)
+		assert not dgflatest or os.path.isfile(dgflatest)
+		assert not os.path.isfile(dgfnext)
 
-		# implement the deleteoutput
-		if deleteoutput:
-			if os.path.isfile(dgf):
-				os.remove(dgf)
 
 		# hansard index page
 		urlx = dnu[1]
 		shurlx = re.sub(".*?ldhansrd/", "", urlx)
 
-		# if we already have got the file, check the pagex link agrees in the first line
-		# no need to scrape it in again
-		# bail out using the continue command
-		if os.path.exists(dgf):
-			fpgx = open(dgf, "r")
+		# if not force scrape then we may choose to scrape it anyway
+		# where the header doesn't match
+		if not bforcescrape and dgflatest:
+			fpgx = open(dgflatest, "r")
 			pgx = fpgx.readline()
 			fpgx.close()
 			if pgx:
 				pgx = re.findall('<pagex url="([^"]*)"[^/]*/>', pgx)
 				if pgx:
 					if pgx[0] == urlx:
-						#print 'skipping ' + urlx
 						continue
-			print dnu[0], 'RE-scraping ' + shurlx
-		else:
-			print dnu[0], 'scraping ' + shurlx
+
+		# make the message
+		print dnu[0], (dgflatest and 'RE-scraping' or 'scraping'), shurlx
 
 		# The different sections are often all run together
 		# with the title of written answers in the middle of a page.
@@ -208,12 +227,26 @@ def LordsPullGluePages(datefrom, dateto, deleteoutput):
 		# we could check that all our links above get cleared.
 		dtemp = open(tempfilename, "w")
 		GlueByNext(dtemp, urla, urlx)
-
-		# close and move
 		dtemp.close()
-		if os.path.isfile(dgf):
-			os.remove(dgf)
-		os.rename(tempfilename, dgf)
+
+		# now we have to decide whether it's actually new and should be copied onto dgfnext.
+		if dgflatest and os.path.getsize(tempfilename) == os.path.getsize(dgflatest):
+			# load in as strings and check matching
+			fdgflatest = open(dgflatest)
+			sdgflatest = fdgflatest.readlines()
+			fdgflatest.close()
+
+			fdgfnext = open(tempfilename)
+			sdgfnext = fdgfnext.readlines()
+			fdgfnext.close()
+
+			# first line contains the scrape date
+			if sdgflatest[1:] == sdgfnext[1:]:
+				print "  matched with:", dgflatest
+				continue
+
+		print "  writing:", dgfnext
+		os.rename(tempfilename, dgfnext)
 
 
 

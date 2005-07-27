@@ -5,6 +5,7 @@ import re
 import sys
 import string
 import os
+import tempfile
 
 # make the top path data directory value
 toppath = os.path.abspath(os.path.expanduser('~/parldata/'))
@@ -12,6 +13,11 @@ if os.name == 'nt':  # the case of julian developing on a university machine.
         toppath = os.path.abspath('../../parldata')
         if re.search('\.\.', toppath):
                 toppath = 'C:\\parldata'
+
+# output directories used for the scraper
+pwcmdirs = os.path.join(toppath, "cmpages")
+pwxmldirs = os.path.join(toppath, "scrapedxml")
+pwpatchesdirs = os.path.abspath("patches")  # made locally, relative to the lazyrunall.py module.  Should be relative to toppath eventually
 
 if (not os.path.isdir(toppath)):
         raise Exception, 'Data directory %s does not exist, please create' % (toppath)
@@ -21,6 +27,8 @@ if (not os.path.isdir(toppath)):
 tmppath = os.path.join(toppath, "tmp")
 if (not os.path.isdir(tmppath)):
         os.mkdir(tmppath)
+tempfilename = tempfile.mktemp("", "pw-gluetemp-", tmppath)
+
 
 # migrate names to forms without pw
 if os.path.exists(toppath + "/pwcmpages"):
@@ -33,6 +41,28 @@ if (not os.path.isdir(toppath)):
 
 # import lower down so we get the top-path into the contextexception file
 from contextexception import ContextException
+
+
+# use this to generate chronological scraped files of the same page
+def NextAlphaString(s):
+	assert re.match('[a-z]*$', s)
+	if not s:
+		return 'a'
+	i = string.find(string.lowercase, s[-1]) + 1
+	if i < len(string.lowercase):
+		return s[:-1] + string.lowercase[i]
+	return NextAlphaString(s[:-1]) + 'a'
+
+def AlphaStringToOrder(s):
+	assert re.match('[a-z]*$', s)
+	res = 0
+	while s:
+		i = string.find(string.lowercase, s[0]) + 1
+		res = res * 30 + i
+		s = s[1:]
+	return res
+
+
 
 # The names of entities and what they are are here:
 # http://www.bigbaer.com/reference/character_entity_reference.htm
