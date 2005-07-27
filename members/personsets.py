@@ -109,12 +109,17 @@ class MultipleMatchException(Exception):
 class PersonSets(xml.sax.handler.ContentHandler):
 
     def __init__(self):
+        self.oldids={}# Member ID --> Person ID in last version of file
+        self.oldlargest=None # largest person ID previously used
+        self.in_person=None
+
         self.fullnamescons={} # "Firstname Lastname Constituency" --> MPs
         self.fullnames={} # "Firstname Lastname" --> MPs
 		self.ministermap={}
 
         parser = xml.sax.make_parser()
         parser.setContentHandler(self)
+        parser.parse("people.xml")
         parser.parse("all-members.xml")
         parser.parse("ministers.xml")
 
@@ -122,22 +127,17 @@ class PersonSets(xml.sax.handler.ContentHandler):
         for personset in self.fullnamescons.values():
             # OK, we generate a person id based on the mp id.
 
-            # We pick one member id.  The lowest is picked as this is
-            # idempotent - we only add new member ids on at the end, with
-            # larger numbers.  Each time this script is run, even though a
-            # person may have more members associated with them, the same id
-            # will be selected.  i.e. the earliest by date added to our
-            # database
-            mpidtouse = None
+            # Find what person id we used for this set last time
+            personid = None
             for attr in personset:
-                mpidm = re.match("uk.org.publicwhip/member/(\d+)$", attr["id"])
-                if mpidm:
-                    mpnewid = int(mpidm.group(1))
-                    if not mpidtouse or mpnewid < mpidtouse:
-                        mpidtouse = mpnewid
-
-            # Now we add 10000 to the one MP id we chose, to make the person ID
-            personid = "uk.org.publicwhip/person/%d" % (mpidtouse + 10000)
+                newpersonid = self.oldids[attr["id"]]
+                if personid:
+                    if newpersonid <> personid:
+                        raise Exception, "Two members now same person, were different %s, %s" % (personid, newpersonid)
+                personid = newpersonid
+            if not personid:
+                self.oldlargest = self.oldlargest + 1
+                personid = "uk.org.publicwhip/person/%d" % self.oldlargest
 
             # Get their final name
             maxdate = "1000-01-01"
@@ -149,7 +149,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
             latestname = "%s %s" % (maxattr["firstname"], maxattr["lastname"])
 
             # Output the XML (sorted)
-            fout.write('<person id="%s" latestname="%s">\n' % (personid, latestname.encode("latin-1")))
+            fout.write('<person id="%s" latestname="%s">\n' % (personid.encode("latin-1"), latestname.encode("latin-1")))
 			ofidl = [ str(attr["id"])  for attr in personset ]
 			ofidl.sort()
             for ofid in ofidl:
@@ -177,8 +177,6 @@ class PersonSets(xml.sax.handler.ContentHandler):
 				memberid = a["id"]
 				for moff in self.ministermap.get(memberid, []):
 					pset.add(moff)
-
-
 
 
     def findotherpeoplewhoaresame(self):
@@ -248,7 +246,20 @@ class PersonSets(xml.sax.handler.ContentHandler):
         return goterror
 
     def startElement(self, name, attr):
-        if name == "member":
+        if name == "person":
+            assert not self.in_person
+            self.in_person = attr["id"]
+            numeric_id = int(re.match("uk.org.publicwhip/person/(\d+)$", attr["id"]).group(1))
+            if not self.oldlargest or self.oldlargest < numeric_id:
+                self.oldlargest = numeric_id
+        elif name == "office":
+            assert self.in_person
+            assert attr["id"] not in self.oldids
+            self.oldids[attr["id"]] = self.in_person
+
+        elif name == "member":
+            assert not self.in_person
+
             # index by "Firstname Lastname Constituency"
             cancons = memberList.canonicalcons(attr["constituency"], attr["fromdate"])
             cancons2 = memberList.canonicalcons(attr["constituency"], attr["todate"])
@@ -265,12 +276,16 @@ class PersonSets(xml.sax.handler.ContentHandler):
             fullnamekey = "%s %s" % (attr["firstname"], attr["lastname"])
             self.fullnames.setdefault(fullnamekey, sets.Set()).add(attr)
 
-		if name == "moffice":
+		elif name == "moffice":
+            assert not self.in_person
+
 			assert attr["id"] not in self.ministermap
 			if attr.has_key("matchid"):
 				self.ministermap.setdefault(attr["matchid"], sets.Set()).add(attr.copy())
-
+        
     def endElement(self, name):
+        if name == "person":
+            self.in_person = None
         pass
 
 # the main code
@@ -283,7 +298,6 @@ if personSets.findotherpeoplewhoaresame():
     print
     sys.exit(1)
 personSets.mergeministers()
-
 
 tempfile = "temppeople.xml"
 fout = open(tempfile, "w")
@@ -306,6 +320,6 @@ fout.write("</publicwhip>\n")
 fout.close()
 
 # overwrite people.xml
-os.rename("temppeople.xml", "people.xml")
+#os.rename("temppeople.xml", "people.xml")
 
 
