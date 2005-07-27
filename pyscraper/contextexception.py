@@ -7,12 +7,6 @@ import re
 import sys
 import shutil
 
-import miscfuncs
-toppath = miscfuncs.toppath
-
-
-
-
 class ContextException(Exception):
 
     def __init__(self, description, stamp = None, fragment = None):
