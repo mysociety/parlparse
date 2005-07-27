@@ -90,7 +90,7 @@ def RunFiltersDir(filterfunction, dname, options, forcereparse):
 			continue
 
 		# create the output file name
-                jfout_stub = re.sub('\.html$', '.xml', fin)
+		jfout_stub = re.sub('\.html$', '.xml', fin)
 		jfout = os.path.join(pwxmldirout, jfout_stub)
 
 		# skip already processed files, if date is earler
