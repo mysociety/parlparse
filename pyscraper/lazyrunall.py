@@ -28,6 +28,7 @@ from lordspullgluepages import LordsPullGluePages
 from runfilters import RunFiltersDir, RunDebateFilters, RunWransFilters, RunLordsFilters, RunWestminhallFilters, RunWMSFilters
 from regmemfilter import RunRegmemFilters
 from regmempullgluepages import RegmemPullGluePages
+from gidmatching import RunGidMatching
 
 # Parse the command line parameters
 
@@ -42,6 +43,7 @@ MPs and so on as it goes.
 Specify at least one of the following actions to take:
 scrape          update Hansard page index, and download new raw pages
 parse           process scraped HTML into tidy XML files
+gidmap          make associate sets of gids between versions of XML files
 
 And choose at least one of these sections to apply them to:
 wrans           Written Answers
@@ -94,6 +96,7 @@ if (options.date):
 # can't you do this with a dict mapping strings to bools?
 options.scrape = False
 options.parse = False
+options.gidmap = False
 options.wrans = False
 options.debates = False
 options.westminhall = False
@@ -107,6 +110,8 @@ for arg in args:
                 options.scrape = True
         elif arg == "parse":
                 options.parse = True
+        elif arg == "gidmap":
+                options.gidmap = True
         elif arg == "wrans":
                 options.wrans = True
         elif arg == "debates":
@@ -123,7 +128,6 @@ for arg in args:
                 options.chgpages = True
         elif arg == "votes":
                 options.votes = True
-
         else:
                 print >>sys.stderr, "error: no such option %s" % arg
                 parser.print_help()
@@ -131,8 +135,8 @@ for arg in args:
 if len(args) == 0:
         parser.print_help()
         sys.exit(1)
-if not options.scrape and not options.parse:
-        print >>sys.stderr, "error: choose what to do; scrape, parse or both of them"
+if not options.scrape and not options.parse and not options.gidmap:
+        print >>sys.stderr, "error: choose what to do; scrape, parse, gidmap or more than one of them"
         parser.print_help()
         sys.exit(1)
 if not options.debates and not options.westminhall and not options.wms and not options.wrans and not options.regmem and not options.lords and not options.chgpages and not options.votes:
@@ -155,7 +159,7 @@ if options.scrape:
 	if options.lords:
 		UpdateLordsHansardIndex(options.forceindex)
 
-	# get the changing pages                                    
+	# get the changing pages
 	if options.chgpages:
 		GrabWatchCopies(datetime.date.today().isoformat())
 
@@ -178,8 +182,8 @@ if options.scrape:
 		PullGluePages(options.datefrom, options.dateto, options.forcescrape, "wms", "ministerial")
 	if options.lords:
 		LordsPullGluePages(options.datefrom, options.dateto, options.forcescrape)
-        if options.votes:
-                PullGluePages(options.datefrom, options.dateto, options.forcescrape, "votes", "votes")
+	if options.votes:
+		PullGluePages(options.datefrom, options.dateto, options.forcescrape, "votes", "votes")
 	if options.regmem:
 		# TODO - date ranges when we do index page stuff for regmem
 		RegmemPullGluePages(options.forcescrape)
@@ -188,25 +192,23 @@ if options.scrape:
 # Parse it into XML
 #
 if options.parse:
-	# this was used to force parsing by deleting the old copies, now nearly redundant.
-	if options.forceparse:
-		if options.regmem:
-			RunFiltersDir(RunRegmemFilters, 'regmem', options, True)
-
 	if options.wrans:
 		RunFiltersDir(RunWransFilters, 'wrans', options, options.forceparse)
 	if options.debates:
 		RunFiltersDir(RunDebateFilters, 'debates', options, options.forceparse)
 	if options.westminhall:
 		RunFiltersDir(RunWestminhallFilters, 'westminhall', options, options.forceparse)
-        if options.wms:
-                RunFiltersDir(RunWMSFilters, 'wms', options, options.forceparse)
+	if options.wms:
+		RunFiltersDir(RunWMSFilters, 'wms', options, options.forceparse)
 	if options.lords:
 		RunFiltersDir(RunLordsFilters, 'lordspages', options, options.forceparse)
 	if options.regmem:
 		RunFiltersDir(RunRegmemFilters, 'regmem', options, options.forceparse)
-
 	if options.chgpages:
 		ParseGovPosts()
 
+
+if options.gidmap:
+	if options.lords:
+		RunGidMatching('lordspages')
 
