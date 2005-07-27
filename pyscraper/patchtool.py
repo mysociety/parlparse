@@ -7,6 +7,7 @@ import shutil
 import string
 import miscfuncs
 import re
+import tempfile
 from resolvemembernames import memberList
 toppath = miscfuncs.toppath
 
@@ -32,7 +33,7 @@ def GenPatchFileNames(typ, sdate):
 
 	patchfile = os.path.join(pdire, "%s%s.html.patch" % (stub, sdate))
 	orgfile = os.path.join(folder, "%s%s.html" % (stub, sdate))
-	tmpfile = os.path.join(folder, "%s%s-patchtmp.html" % (stub, sdate))
+	tmpfile = tempfile.mktemp(".html", "patchtmp-%s%s-" % (stub, sdate), miscfuncs.tmppath)
 	tmppatchfile = os.path.join(pdire, "%s%s.html.patch.new" % (stub, sdate))
 
         return patchfile, orgfile, tmpfile, tmppatchfile
