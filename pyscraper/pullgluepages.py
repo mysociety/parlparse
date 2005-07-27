@@ -12,21 +12,20 @@ import time
 import tempfile
 import string
 import miscfuncs
+
 toppath = miscfuncs.toppath
+pwcmdirs = miscfuncs.pwcmdirs
+tempfilename = miscfuncs.tempfilename
+
 
 # Pulls in all the debates, written answers, etc, glues them together, removes comments,
 # and stores them on the disk
 
-# index file which is created   
+# index file which is created
 pwcmindex = os.path.join(toppath, "cmindex.xml")
 
-# output directories
-pwcmdirs = os.path.join(toppath, "cmpages")
-
-tempfilename = tempfile.mktemp("", "pw-gluetemp-", miscfuncs.tmppath)
 
 # this does the main loading and gluing of the initial day debate files from which everything else feeds forward
-
 class DefaultErrorHandler(urllib2.HTTPDefaultErrorHandler):
         def http_error_default(self, req, fp, code, msg, headers):
                 result = urllib2.HTTPError(

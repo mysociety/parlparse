@@ -12,10 +12,10 @@ from resolvemembernames import memberList
 toppath = miscfuncs.toppath
 
 # File names of patch files
+# this is horid since it shadows stuff that's done distributively in the scrapers
 def GenPatchFileNames(typ, sdate):
 	qfolder = toppath
-	if typ != "lordspages":
-		qfolder = os.path.join(qfolder, "cmpages")
+	qfolder = os.path.join(qfolder, "cmpages")
 	folder = os.path.join(qfolder, typ)
 	stub = typ
 	if stub == "wrans":
@@ -24,8 +24,8 @@ def GenPatchFileNames(typ, sdate):
 		stub = "daylord"
 	elif stub == "westminhall":
 		stub = "westminster"
-        elif stub == "wms":
-                stub = "ministerial"
+	elif stub == "wms":
+		stub = "ministerial"
 
 	pdire = os.path.join("patches", typ)
 	if not os.path.isdir(pdire):
@@ -98,16 +98,16 @@ def RunPatchToolW(typ, sdate, stamp, frag):
 		print "Making patchfile ", patchfile
 
 
-def RunPatchTool(type, sdate, ce):
-        if not ce.stamp:
-                print "No stamp available, so won't move your cursor to right place"
-        else:
-                assert ce.stamp.sdate == sdate
+def RunPatchTool(typ, sdatext, ce):
+	if not ce.stamp:
+		print "No stamp available, so won't move your cursor to right place"
+	else:
+		assert ce.stamp.sdate[:10] == sdatext[:10]  # omitting the letter extension
 
-        print "\nHit RETURN to launch your editor to make patches "
-        sys.stdin.readline()
-        RunPatchToolW(type, sdate, ce.stamp, ce.fragment)
-        memberList.reloadXML()
+	print "\nHit RETURN to launch your editor to make patches "
+	sys.stdin.readline()
+	RunPatchToolW(typ, sdatext, ce.stamp, ce.fragment)
+	memberList.reloadXML()
 
 
 # So it works from the command line
