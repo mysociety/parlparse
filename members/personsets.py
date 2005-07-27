@@ -1,7 +1,11 @@
 #! /usr/bin/env python2.3
 # vim:sw=4:ts=4:et:nowrap
 
-# Converts names of MPs into unique identifiers
+# Groups sets of MPs and offices together into person sets.  Updates
+# people.xml to reflect the new sets.  Reuses person ids from people.xml,
+# or allocates new larger ones.
+
+# TODO: Check for
 
 import xml.sax
 import sets
@@ -13,8 +17,13 @@ import os
 sys.path.append("../pyscraper")
 from resolvemembernames import memberList
 
-# People who have been in two different constituencies.  The like of Michael
-# Portillo will eventually appear here.
+# People who have been both MPs and lords
+lordsmpmatches = {
+    "uk.org.publicwhip/lord/10094" : "Jenny Tonge [Richmond Park]",
+}
+
+# People who have been MPs for two different constituencies.  The like of
+# Michael Portillo will eventually appear here.
 manualmatches = {
     "Shaun Woodward [St Helens South]" : "Shaun Woodward [St Helens South / Witney]",
     "Shaun Woodward [Witney]" : "Shaun Woodward [St Helens South / Witney]",
@@ -109,47 +118,69 @@ class MultipleMatchException(Exception):
 class PersonSets(xml.sax.handler.ContentHandler):
 
     def __init__(self):
-        self.oldids={}# Member ID --> Person ID in last version of file
-        self.oldlargest=None # largest person ID previously used
-        self.in_person=None
-
-        self.fullnamescons={} # "Firstname Lastname Constituency" --> MPs
-        self.fullnames={} # "Firstname Lastname" --> MPs
+        self.personsets=[] # what we are building - array of (sets of ids belonging to one person)
+        
+        self.fullnamescons={} # MPs "Firstname Lastname Constituency" --> person set (link to entry in personsets)
+        self.fullnames={} # "Firstname Lastname" --> set of MPs (not link to entry in personsets)
+        self.lords={} # Lord ID -> Attr
 		self.ministermap={}
+
+        self.old_idtoperson={} # ID (member/lord/office) --> Person ID in last version of file
+        self.last_person_id=None # largest person ID previously used
+        self.in_person=None
 
         parser = xml.sax.make_parser()
         parser.setContentHandler(self)
         parser.parse("people.xml")
         parser.parse("all-members.xml")
+        parser.parse("all-lords.xml")
+        parser.parse("all-lords-extras.xml")
         parser.parse("ministers.xml")
 
     def outputxml(self, fout):
-        for personset in self.fullnamescons.values():
+        for personset in self.personsets:
             # OK, we generate a person id based on the mp id.
 
             # Find what person id we used for this set last time
             personid = None
             for attr in personset:
-                newpersonid = self.oldids[attr["id"]]
-                if personid:
-                    if newpersonid <> personid:
-                        raise Exception, "Two members now same person, were different %s, %s" % (personid, newpersonid)
-                personid = newpersonid
+                if attr["id"] in self.old_idtoperson:
+                    newpersonid = self.old_idtoperson[attr["id"]]
+                    if personid and newpersonid <> personid:
+                            raise Exception, "Two members now same person, were different %s, %s" % (personid, newpersonid)
+                    personid = newpersonid
             if not personid:
-                self.oldlargest = self.oldlargest + 1
-                personid = "uk.org.publicwhip/person/%d" % self.oldlargest
+                self.last_person_id = self.last_person_id + 1
+                personid = "uk.org.publicwhip/person/%d" % self.last_person_id
 
             # Get their final name
             maxdate = "1000-01-01"
             attr = None
+            maxname = None
             for attr in personset:
-                if attr["fromdate"] > maxdate and attr.has_key("firstname"):
-                    maxdate = attr["fromdate"]
-                    maxattr = attr
-            latestname = "%s %s" % (maxattr["firstname"], maxattr["lastname"])
+                if attr["fromdate"] >= maxdate:
+                    if attr.has_key("firstname"):
+                        # MPs
+                        maxdate = attr["fromdate"]
+                        maxname = "%s %s" % (attr["firstname"], attr["lastname"])
+                    elif attr.has_key("lordname") or attr.has_key("lordofname"):
+                        # Lords (this should be in function!)
+                        maxdate = attr["fromdate"]
+                        maxname = []
+                        if not attr["lordname"]:
+                            maxname.append("The")
+                        maxname.append(attr["title"])
+                        if attr["lordname"]:
+                            maxname.append(attr["lordname"])
+                        if attr["lordofname"]:
+                            maxname.append("of")
+                            maxname.append(attr["lordofname"])
+                        maxname = " ".join(maxname)
+            if not maxname:
+                raise Exception, "Unknown maxname %s" % attr['id']
 
             # Output the XML (sorted)
-            fout.write('<person id="%s" latestname="%s">\n' % (personid.encode("latin-1"), latestname.encode("latin-1")))
+            fout.write('<person id="%s" latestname="%s">\n' % (personid.encode("latin-1"), maxname.encode("latin-1")))
 			ofidl = [ str(attr["id"])  for attr in personset ]
 			ofidl.sort()
             for ofid in ofidl:
@@ -157,7 +188,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
             fout.write('</person>\n')
 
     def crosschecks(self):
-        # check date ranges don't overlap
+        # check MP date ranges don't overlap
         for personset in self.fullnamescons.values():
             dateset = map(lambda attr: (attr["fromdate"], attr["todate"]), personset)
             dateset.sort(lambda x, y: cmp(x[0], y[0]))
@@ -171,18 +202,28 @@ class PersonSets(xml.sax.handler.ContentHandler):
 	# put ministerialships into each of the sets, based on matching matchid values
 	# this works because the members code forms a basis to which ministerialships get attached
 	def mergeministers(self):
-        for p in self.fullnamescons:
-			pset = self.fullnamescons[p]
+        for pset in self.personsets:
 			for a in pset.copy():
 				memberid = a["id"]
 				for moff in self.ministermap.get(memberid, []):
 					pset.add(moff)
 
+	# put lords into each of the sets
+	def mergelords(self):
+        for lord_id, attr in self.lords.iteritems():
+            if lord_id in lordsmpmatches:
+                mp = lordsmpmatches[lord_id]
+                self.fullnamescons[mp].add(attr)
+            else:
+                newset = sets.Set()
+                newset.add(attr)
+                self.personsets.append(newset) # master copy of person sets
 
+
+    # Look for people of the same name, but their constituency differs
     def findotherpeoplewhoaresame(self):
         goterror = False
 
-        # Look for people of the same name, but their constituency differs
         for (name, nameset) in self.fullnames.iteritems():
             # Find out ids of MPs that we have
             ids = sets.Set(map(lambda attr: attr["id"], nameset))
@@ -250,12 +291,12 @@ class PersonSets(xml.sax.handler.ContentHandler):
             assert not self.in_person
             self.in_person = attr["id"]
             numeric_id = int(re.match("uk.org.publicwhip/person/(\d+)$", attr["id"]).group(1))
-            if not self.oldlargest or self.oldlargest < numeric_id:
-                self.oldlargest = numeric_id
+            if not self.last_person_id or self.last_person_id < numeric_id:
+                self.last_person_id = numeric_id
         elif name == "office":
             assert self.in_person
-            assert attr["id"] not in self.oldids
-            self.oldids[attr["id"]] = self.in_person
+            assert attr["id"] not in self.old_idtoperson
+            self.old_idtoperson[attr["id"]] = self.in_person
 
         elif name == "member":
             assert not self.in_person
@@ -265,16 +306,22 @@ class PersonSets(xml.sax.handler.ContentHandler):
             cancons2 = memberList.canonicalcons(attr["constituency"], attr["todate"])
             assert cancons == cancons2
 
-			# MAKE A COPY.  (The xml documentation warns that the attr object can be reused, so shouldn't be put into your structures if it's not a copy).
-			attr = attr.copy()
-
             fullnameconskey = "%s %s [%s]" % (attr["firstname"], attr["lastname"], cancons)
             if fullnameconskey in manualmatches:
                 fullnameconskey = manualmatches[fullnameconskey]
-            self.fullnamescons.setdefault(fullnameconskey, sets.Set()).add(attr)
+            if fullnameconskey not in self.fullnamescons:
+                newset = sets.Set()
+                self.personsets.append(newset) # master copy of person sets
+                self.fullnamescons[fullnameconskey] = newset # store link here
+			# MAKE A COPY.  (The xml documentation warns that the attr object can be reused, so shouldn't be put into your structures if it's not a copy).
+            self.fullnamescons[fullnameconskey].add(attr.copy())
 
             fullnamekey = "%s %s" % (attr["firstname"], attr["lastname"])
-            self.fullnames.setdefault(fullnamekey, sets.Set()).add(attr)
+            self.fullnames.setdefault(fullnamekey, sets.Set()).add(attr.copy())
+
+        elif name == "lord":
+            assert attr['id'] not in self.lords
+            self.lords[attr['id']] = attr.copy()
 
 		elif name == "moffice":
             assert not self.in_person
@@ -297,6 +344,7 @@ if personSets.findotherpeoplewhoaresame():
     print "Or add another array to show people who appear to be but are not"
     print
     sys.exit(1)
+personSets.mergelords()
 personSets.mergeministers()
 
 tempfile = "temppeople.xml"
@@ -320,6 +368,6 @@ fout.write("</publicwhip>\n")
 fout.close()
 
 # overwrite people.xml
-#os.rename("temppeople.xml", "people.xml")
+os.rename("temppeople.xml", "people.xml")
 
 
