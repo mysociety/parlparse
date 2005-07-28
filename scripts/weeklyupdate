@@ -6,8 +6,9 @@ source ~/parlparse/scripts/consts
 # Force reindex, to find URLs which have changed (updates to Hansard,
 # including the once-per-session grand URL-rename-and-break from cm to vo)
 cd ~/parlparse/pyscraper
-./lazyrunall.py --from $WEEKLY_FROMDATE scrape debates wrans wms --force-index
-./lazyrunall.py --from $LORDS_WEEKLY_FROMDATE scrape lords --force-index
+# Turn off scraping, FAI 2007-07-27
+#./lazyrunall.py --from $WEEKLY_FROMDATE scrape debates wrans wms --force-index
+#./lazyrunall.py --from $LORDS_WEEKLY_FROMDATE scrape lords --force-index
 # Run scraper for all of parliament
 cd ~/parlparse/scripts
 ./updatedaterange $WEEKLY_FROMDATE $WEEKLY_TODATE $1
