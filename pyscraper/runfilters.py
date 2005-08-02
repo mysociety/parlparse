@@ -34,11 +34,14 @@ from lordsfiltersections import LordsFilterSections
 from contextexception import ContextException
 from patchtool import RunPatchTool
 
-from xmlfilewrite import WriteXMLFile
+from xmlfilewrite import CreateGIDs, CreateWransGIDs, WriteXMLHeader, WriteXMLspeechrecord
+from gidmatching import FactorChanges
 
 from resolvemembernames import memberList
 
 import miscfuncs
+from miscfuncs import AlphaStringToOrder
+
 
 toppath = miscfuncs.toppath
 pwcmdirs = miscfuncs.pwcmdirs
@@ -58,8 +61,81 @@ tempfilename = tempfile.mktemp(".xml", "pw-filtertemp-", miscfuncs.tmppath)
 if not os.path.isdir(pwxmldirs):
 	os.mkdir(pwxmldirs)
 
-# this works on paris of directories
-def RunFiltersDir(filterfunction, dname, options, forcereparse):
+
+# the operation on a single file
+def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile, jfout, forcereparse, bquietc):
+
+	# now apply patches and parse
+	patchtempfilename = tempfile.mktemp("", "pw-applypatchtemp-", miscfuncs.tmppath)
+
+	print "reading " + jfin
+	# apply patch filter
+	kfin = jfin
+	if os.path.isfile(patchfile) and ApplyPatches(jfin, patchtempfilename, patchfile):
+		kfin = patchtempfilename
+
+	# read the text of the file
+	ofin = open(kfin)
+	text = ofin.read()
+	ofin.close()
+
+	# do the filtering according to the type.  Some stuff is being inlined here
+	if dname == 'regmem':
+		regmemout = open(tempfilename, 'w')
+		FILTERfunction(regmemout, text, sdate)  # totally different filter function format
+		regmemout.close()
+
+	# wrans case has very special numbering which is stable, so doesn't do backwards matching
+	elif dname == 'wrans':
+		(flatb, gidname) = FILTERfunction(text, sdate)  # gidname is prefix in the gid "debates", "lords", etc; should be a map or the same thing
+		CreateGIDs(gidname, sdate, sdatever, flatb)
+		majblocks = CreateWransGIDs(flatb, sdate)
+		bMakeOldWransGidsToNew = (sdate < "2005")
+
+		fout = open(tempfilename, "w")
+		WriteXMLHeader(fout);
+		fout.write("<publicwhip>\n")
+
+		# go through and output all the records into the file
+		for majblock in majblocks:
+			WriteXMLspeechrecord(fout, majblock[0], bMakeOldWransGidsToNew, True)
+			for qblock in majblock[1]:
+				qblock.WriteXMLrecords(fout, bMakeOldWransGidsToNew)
+
+		fout.write("</publicwhip>\n\n")
+		fout.close()
+
+	# all other hansard types
+	else:
+		(flatb, gidname) = FILTERfunction(text, sdate)
+		CreateGIDs(gidname, sdate, sdatever, flatb)
+
+		if xprev:
+			FactorChanges(flatb, xprev[0], xprev[1])
+
+		fout = open(tempfilename, "w")
+		WriteXMLHeader(fout);
+		fout.write("<publicwhip>\n")
+
+		# go through and output all the records into the file
+		for qb in flatb:
+			WriteXMLspeechrecord(fout, qb, False, False)
+
+		fout.write("</publicwhip>\n\n")
+		fout.close()
+
+	# in win32 this function leaves the file open and stops it being renamed
+	if sys.platform != "win32":
+		xmlvalidate.parse(tempfilename) # validate XML before renaming
+
+	# in case of error, an exception is thrown, so this line would not be reached
+	if os.path.isfile(jfout):
+		os.remove(jfout)
+	os.rename(tempfilename, jfout)
+
+
+# this works on triplets of directories all called dname
+def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 	# the in and out directories for the type
 	pwcmdirin = os.path.join(pwcmdirs, dname)
 	pwxmldirout = os.path.join(pwxmldirs, dname)
@@ -69,105 +145,87 @@ def RunFiltersDir(filterfunction, dname, options, forcereparse):
 	if not os.path.isdir(pwxmldirout):
 		os.mkdir(pwxmldirout)
 
-	# loop through file in input directory in reverse date order
-	fdirin = os.listdir(pwcmdirin)
-	fdirin.sort()
-	fdirin.reverse()
-	for fin in fdirin:
-		jfin = os.path.join(pwcmdirin, fin)
-		if not re.search('\.html$', fin): # avoid vim swap files etc.
-			continue
-		if re.search('patch', fin): # avoid patch files
-			continue
+	# build up the groups of html files per day
+	# scan through the directory and make a mapping of all the copies for each
+	daymap = { }
+	for ldfile in os.listdir(pwcmdirin):
+		mnums = re.match("[a-z]*(\d{4}-\d\d-\d\d)([a-z]*)\.html$", ldfile)
+		if mnums:
+			daymap.setdefault(mnums.group(1), []).append((AlphaStringToOrder(mnums.group(2)), mnums.group(2), ldfile))
+		else:
+			print "not recognized file:", ldfile
 
-		# extract the date from the file name
-		msdate = re.search('(\d{4}-\d{2}-\d{2})([a-z]*)\.', fin)
-		sdate = msdate.group(1)
-		sdatver = msdate.group(2)
+	# make the list of days which we will iterate through (in revers date order)
+	daydates = daymap.keys()
+	daydates.sort()
+	daydates.reverse()
 
+	# loop through file in input directory in reverse date order and build up the
+	for sdate in daydates:
 		# skip dates outside the range specified on the command line
 		if sdate < options.datefrom or sdate > options.dateto:
 			continue
 
-		# create the output file name
-		jfout_stub = re.sub('\.html$', '.xml', fin)
-		jfout = os.path.join(pwxmldirout, jfout_stub)
+		fdaycs = daymap[sdate]
+		fdaycs.sort()
 
-		# skip already processed files, if date is earler
-		# (checking output date against input and patchfile, if there is one)
-		if os.path.isfile(jfout):
-			out_modified = os.stat(jfout).st_mtime
-			in_modified = os.stat(jfin).st_mtime
+		# now we parse these files -- in order -- to accumulate their catalogue of diffs
+		xprev = None # previous xml file from which we check against diffs, and its version string
+		for fdayc in fdaycs:
+			fin = fdayc[2]
+			jfin = os.path.join(pwcmdirin, fin)
+			sdatever = fdayc[1]
+
+			# create the output file name
+			jfout = os.path.join(pwxmldirout, re.match('(.*\.)html$', fin).group(1) + '.xml')
 			patchfile = os.path.join(pwpatchesdir, "%s.patch" % fin)
-			patch_modified = None
-			if os.path.isfile(patchfile):
-				patch_modified = os.stat(patchfile).st_mtime
-			if (not forcereparse) and (in_modified < out_modified) and ((not patchfile) or patch_modified < out_modified):
-				continue
-			if not forcereparse:
-				print "input modified since output reparsing ", fin
 
-		patchtempfilename = tempfile.mktemp("", "pw-applypatchtemp-", miscfuncs.tmppath)
-		# here we repeat the parsing and run the patchtool editor until this file goes through.
-		while True:
-			# apply patch filter
-			kfin = jfin
-			if ApplyPatches(jfin, patchtempfilename):
-				kfin = patchtempfilename
+			# skip already processed files, if date is earler and it's not a forced reparse
+			# (checking output date against input and patchfile, if there is one)
+			if os.path.isfile(jfout):
+				out_modified = os.stat(jfout).st_mtime
+				in_modified = os.stat(jfin).st_mtime
+				patch_modified = None
+				if os.path.isfile(patchfile):
+					patch_modified = os.stat(patchfile).st_mtime
+				if (not forcereparse) and (in_modified < out_modified) and ((not patchfile) or patch_modified < out_modified):
+					continue   # bail out
+				if not forcereparse:
+					print "input modified since output reparsing ", fin
 
-			# read the text of the file
-			print "parsing " + fin
-			ofin = open(kfin)
-			text = ofin.read()
-			ofin.close()
 
-			# call the filter function and copy the temp file into the correct place.
-			# this avoids partially processed files getting into the output when you hit escape.
-			try:
-				# do the filtering, then write the result
-				if dname == 'regmem':
-					regmemout = open(tempfilename, 'w')
-					filterfunction(regmemout, text, sdate)
-					regmemout.close()
-				else:
-					(flatb, gidname) = filterfunction(text, sdate)
-					WriteXMLFile(gidname, tempfilename, jfout, flatb, sdate, options.quietc)
+			# here we repeat the parsing and run the patchtool editor until this file goes through.
+			while True:
+				try:
+					RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile, jfout, forcereparse, options.quietc)
 
-				if sys.platform != "win32":
-					# this function leaves the file open which can't be renamed in win32
-					xmlvalidate.parse(tempfilename) # validate XML before renaming
+					# update the list of files which have been changed
+					# (don't see why it can't be determined by the modification time on the file)
+					newlistf = os.path.join(pwxmldirout, changedatesfile)
+					fil = open(newlistf,'a+')
+					fil.write('%d,%s\n' % (time.time(), os.path.split(jfout)[1]))
+					fil.close()
+					break
 
-				# we will signal that it's safe by doing this in write function
-                                # file override can happen for regmem
-				if os.path.isfile(jfout) and dname != 'regmem':
-					assert False # shouldn't happen (we leave by an exception)
-					print "Leave for XML match testing: No over-write of file"
-				else:
-					os.rename(tempfilename, jfout)
+				# exception cases which cause the loop to continue
+				except ContextException, ce:
+					if options.patchtool:
+						print "runfilters.py", ce
+						RunPatchTool(dname, (sdate + sdatever), ce)
+						continue # emphasise that this is the repeat condition
 
-				# touch date on change dates file
-				newlistf = os.path.join(pwxmldirout, changedatesfile)
-				fil = open(newlistf,'a+')
-				fil.write('%d,%s\n' % (time.time(), jfout_stub))
-				fil.close()
+					elif options.quietc:
+						print ce.description
+						print "\tERROR! failed, quietly moving to next day"
+						# sys.exit(1) # remove this and it will continue past an exception (but then keep throwing the same tired errors)
+						break # leave the loop having not written the xml file; go onto the next day
 
-				# we leave the loop
-				break
+					# reraise case (used for parser development), so we can get a stackdump and end
+					else:
+						raise
 
-			except ContextException, ce:
-				if options.patchtool:
-					print "runfilters.py", ce
-					RunPatchTool(dname, (sdate + sdatver), ce)
-					continue # emphasise that this is the repeat condition
-
-				elif options.quietc:
-					print ce.description
-                                        print "\tERROR! failed, quietly moving to next day"
-					# sys.exit(1) # remove this and it will continue past an exception (but then keep throwing the same tired errors)
-					break # leave the loop having not written the xml file; go onto the next day
-
-				else:
-					raise
+			# endwhile
+			xprev = (jfout, sdatever)
 
 
 # These text filtering functions filter twice through stringfiles,

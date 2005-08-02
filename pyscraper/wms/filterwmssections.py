@@ -19,7 +19,6 @@ from clsinglespeech import qspeech
 from parlphrases import parlPhrases
 
 from miscfuncs import FixHTMLEntities
-from xmlfilewrite import WriteXMLFile
 
 from filterwmsspeech import FilterWMSSpeech
 

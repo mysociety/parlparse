@@ -272,7 +272,8 @@ def FixHTMLEntitiesL(stex, signore='', stampurl=None):
 	return StraightenHTMLrecurse(stex, stampurl)
 
 def FixHTMLEntities(stex, signore='', stampurl=None):
-	return string.join(FixHTMLEntitiesL(stex, signore, stampurl), '')
+	res = string.join(FixHTMLEntitiesL(stex, signore, stampurl), '')
+	return res.encode("latin-1")
 
 
 

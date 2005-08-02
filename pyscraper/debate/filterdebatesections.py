@@ -21,7 +21,6 @@ from clsinglespeech import qspeech
 from parlphrases import parlPhrases
 
 from miscfuncs import FixHTMLEntities
-from xmlfilewrite import WriteXMLFile
 
 from filterdivision import FilterDivision
 from filterdebatespeech import FilterDebateSpeech
