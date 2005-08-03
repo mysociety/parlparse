@@ -129,8 +129,11 @@ def CreateGIDs(gidpart, sdate, sdatever, flatb):
 		if bmissgid:
 			ncmissedgid += 1
 
-		# build the GIDs for the paragraphs (in preparation for an upgrade)
+		# build the parallel set of GIDs for the paragraphs (in preparation for an upgrade)
 		qb.stextptags = [ ' pid="%s/%d"' % (qb.shortGID, i+1)  for i in range(len(qb.stext)) ]
+
+		# make a place to record the gidredirects which we obtain on the way through
+		qb.gidredirect = [ ]
 
 
 def WriteXMLspeechrecord(fout, qb, bMakeOldWransGidsToNew, bIsWrans):
