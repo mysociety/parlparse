@@ -130,16 +130,36 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 		(flatb, gidname) = FILTERfunction(text, sdate)
 		CreateGIDs(gidname, sdate, sdatever, flatb)
 
-		if xprev:
-			FactorChanges(flatb, xprev[0], xprev[1])
-
 		fout = open(tempfilename, "w")
 		WriteXMLHeader(fout);
 		fout.write("<publicwhip>\n")
 
 		# go through and output all the records into the file
+		fout.write('<scrapeversion code="%s">\n' % sdatever)
 		for qb in flatb:
 			WriteXMLspeechrecord(fout, qb, False, False)
+		fout.write('</scrapeversion>\n')
+
+		# load in a previous file
+		if xprev:
+			xin = open(xprev[0], "r")
+			xprevs = xin.read()
+			xin.close()
+
+			# separate out the scrape versions
+			scrapeversions = re.findall('<scrapeversion code="([^"]*)">\n([\s\S]*?)</scrapeversion>', xprevs)
+			assert scrapeversions[0][0] == xprev[1]
+			xprevcompress = FactorChanges(flatb, scrapeversions[0][1])
+
+			fout.write('\n\n<scrapeversion code="%s">\n' % xprev[1])
+			fout.writelines(xprevcompress)
+			fout.write('</scrapeversion>\n')
+
+			# write out the earlier consolidated files
+			for scrapeversion in scrapeversions[1:]:
+				fout.write('\n\n<scrapeversion code="%s">\n' % scrapeversion[0])
+				fout.write(scrapeversion[1])
+				fout.write('</scrapeversion>\n')
 
 		fout.write("</publicwhip>\n\n")
 		fout.close()
