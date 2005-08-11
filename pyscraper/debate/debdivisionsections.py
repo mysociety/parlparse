@@ -27,7 +27,7 @@ toppath = miscfuncs.toppath
 housedivtxt = "The (?:House|Committee) (?:(?:having )?divided|proceeded to a Division)"
 rehousediv = re.compile('<p[^>]*>(?:<i>)?\s*%s(?:</i>|:|-)+ Ayes,? (\d+), Noes (\d+)\.</p>$' % housedivtxt)
 
-foutdivisionreports = open(os.path.join(toppath, "divreport.html"), "w")
+foutdivisionreports = open(os.path.join(miscfuncs.tmppath, "divreport.html"), "w")
 #foutdivisionreports = None
 
 def PreviewDivisionTextGuess(flatb):
