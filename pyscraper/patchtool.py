@@ -32,7 +32,7 @@ def GenPatchFileNames(typ, sdate):
 
 	# lords case where we use the new top level patch directory
 	if typ == "lordspages":
-		pdire = os.path.join(toppath, patches)
+		pdire = os.path.join(toppath, "patches")
 	else:
 		pdire = "patches"  # as local directory
 	pdire = os.path.join(pdire, typ)

@@ -19,24 +19,24 @@ use vars qw($curdate);
 find(\&debateswanted, $config::pwdata . "scrapedxml/debates");
 sub debateswanted {
         if (m/^debates(.*).xml$/) {
-                extract_divisions_day($1, "", "debates");
+                extract_divisions_day($1, "", "debates", "debates");
         }
 }
 
-find(\&lordsdebateswanted, $config::pwdata . "scrapedxml/lordsdebates");
-sub lordsdebateswanted {
+find(\&lordswanted, $config::pwdata . "scrapedxml/lordspages");
+sub lordswanted {
         if (m/^daylord(.*).xml$/) {
-                extract_divisions_day($1, "lords", "daylord");
+                extract_divisions_day($1, "lords", "daylord", "lordspages");
         }
 }
 
 
 sub extract_divisions_day
 {
-        my ($date, $chamber, $filestub) = @_;
+        my ($date, $chamber, $filestub, $folderbit) = @_;
         $curdate = $date;
 
-        my $fromfile = $config::pwdata . "scrapedxml/${chamber}debates/$filestub" . $curdate. ".xml";
+        my $fromfile = $config::pwdata . "scrapedxml/${folderbit}/$filestub" . $curdate. ".xml";
         my $tofile = $config::pwdata . "scrapedxml/${chamber}divisionsonly/${chamber}divisions" . $curdate. ".xml";
 
         my @fromstat = stat($fromfile);

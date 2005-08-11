@@ -1,4 +1,5 @@
 #! /usr/bin/python2.3
+# vim:sw=8:ts=8:et:nowrap
 # -*- coding: latin-1 -*-
 
 import sys
@@ -144,7 +145,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 	def GetLordIDfname(self, name, loffice, sdate, stampurl=None):
 		hom = honcompl.match(name)
 		if not hom:
-			print "format failure on " + name
+			print "format failure on '" + name + "'"
 			raise ContextException("lord name format failure", stamp=stampurl, fragment=name)
 
 		# now we have a speaker, try and break it up
@@ -167,7 +168,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 		lfn = re.match('(.*?)(?: of (.*?))?, ((?:L|B|Abp|Bp|V|E|D|M|C|Ly)\.)$', fss)
 		if not lfn:
 			print "$$$%s$$$" % fss
-			raise ContextException("No match of format", stamp=stampurl, fragment=fss)
+			raise ContextException("No match of format in MatchRevName", stamp=stampurl, fragment=fss)
 		ltitle = titleconv[lfn.group(3)]
 		llordname = string.replace(lfn.group(1), ".", "")
 		llordname = string.replace(llordname, "&#039;", "'")

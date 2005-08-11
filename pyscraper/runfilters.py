@@ -153,13 +153,21 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 		os.remove(jfout)
 	os.rename(tempfilename, jfout)
 
+# hunt the patchfile
+def findpatchfile(name, d1, d2):
+        patchfile = os.path.join(d1, "%s.patch" % name)
+        if not os.path.isfile(patchfile):
+                patchfile = os.path.join(d2, "%s.patch" % name)
+        return patchfile
 
 # this works on triplets of directories all called dname
 def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 	# the in and out directories for the type
 	pwcmdirin = os.path.join(pwcmdirs, dname)
 	pwxmldirout = os.path.join(pwxmldirs, dname)
+        # mirgating to patches files stored in parldata, rather than in parlparse
 	pwpatchesdir = os.path.join(pwpatchesdirs, dname)
+	newpwpatchesdir = os.path.join(toppath, "patches", dname)
 
 	# create output directory
 	if not os.path.isdir(pwxmldirout):
@@ -172,7 +180,7 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 		mnums = re.match("[a-z]*(\d{4}-\d\d-\d\d)([a-z]*)\.html$", ldfile)
 		if mnums:
 			daymap.setdefault(mnums.group(1), []).append((AlphaStringToOrder(mnums.group(2)), mnums.group(2), ldfile))
-		else:
+		elif ldfile != '.svn':
 			print "not recognized file:", ldfile
 
 	# make the list of days which we will iterate through (in revers date order)
@@ -196,25 +204,24 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 			jfin = os.path.join(pwcmdirin, fin)
 			sdatever = fdayc[1]
 
-			# create the output file name
-			jfout = os.path.join(pwxmldirout, re.match('(.*\.)html$', fin).group(1) + 'xml')
-			patchfile = os.path.join(pwpatchesdir, "%s.patch" % fin)
+       			# here we repeat the parsing and run the patchtool editor until this file goes through.
+                        # create the output file name
+                        jfout = os.path.join(pwxmldirout, re.match('(.*\.)html$', fin).group(1) + 'xml')
+                        patchfile = findpatchfile(fin, newpwpatchesdir, pwpatchesdir)
 
-			# skip already processed files, if date is earler and it's not a forced reparse
-			# (checking output date against input and patchfile, if there is one)
-			if os.path.isfile(jfout):
-				out_modified = os.stat(jfout).st_mtime
-				in_modified = os.stat(jfin).st_mtime
-				patch_modified = None
-				if os.path.isfile(patchfile):
-					patch_modified = os.stat(patchfile).st_mtime
-				if (not forcereparse) and (in_modified < out_modified) and ((not patchfile) or patch_modified < out_modified):
-					continue   # bail out
-				if not forcereparse:
-					print "input modified since output reparsing ", fin
+                        # skip already processed files, if date is earler and it's not a forced reparse
+                        # (checking output date against input and patchfile, if there is one)
+                        if os.path.isfile(jfout):
+                                out_modified = os.stat(jfout).st_mtime
+                                in_modified = os.stat(jfin).st_mtime
+                                patch_modified = None
+                                if os.path.isfile(patchfile):
+                                        patch_modified = os.stat(patchfile).st_mtime
+                                if (not forcereparse) and (in_modified < out_modified) and ((not patchfile) or patch_modified < out_modified):
+                                        continue   # bail out
+                                if not forcereparse:
+                                        print "input modified since output reparsing ", fin
 
-
-			# here we repeat the parsing and run the patchtool editor until this file goes through.
 			while True:
 				try:
 					RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile, jfout, forcereparse, options.quietc)
@@ -232,6 +239,8 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 					if options.patchtool:
 						print "runfilters.py", ce
 						RunPatchTool(dname, (sdate + sdatever), ce)
+                                                # find file again, in case new
+                                                patchfile = findpatchfile(fin, newpwpatchesdir, pwpatchesdir)
 						continue # emphasise that this is the repeat condition
 
 					elif options.quietc:
