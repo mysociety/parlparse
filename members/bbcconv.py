@@ -5,6 +5,8 @@
 # Makes file connecting MP ids to URL of their BBC political profile
 # http://news.bbc.co.uk/1/hi/uk_politics/2160988.stm
 
+# This is out of date.  Data is now static in bbc-links-200504.xml.
+
 # The Public Whip, Copyright (C) 2003 Francis Irving and Julian Todd
 # This is free software, and you are welcome to redistribute it under
 # certain conditions.  However, it comes with ABSOLUTELY NO WARRANTY.
