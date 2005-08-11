@@ -27,7 +27,7 @@ from resolvemembernames import memberList
 # curl http://edm.ais.co.uk/weblink/html/members.html/start=[a-z]/order=1/EDMI_SES=
 # is your friend.
 
-edm_index_url = "http://edm.ais.co.uk/cache/members/list.1.%s.html"
+edm_index_url = "http://edmi.parliament.uk/EDMi/MemberList.aspx"
 date_today = datetime.date.today().isoformat()
 
 aismembers  = sets.Set() # for storing who we have found links for
@@ -35,35 +35,41 @@ aismembers  = sets.Set() # for storing who we have found links for
 print '''<?xml version="1.0" encoding="ISO-8859-1"?>
 <publicwhip>'''
 
-for letter in [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
-    'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ]:
-    
-    # Construct URL
-    test_url = edm_index_url % (letter)
+# Find viewstate key
+mainpage = urllib.urlopen(edm_index_url).read()
+matches = re.search('''<input type="hidden" name="__VIEWSTATE" value="([^"]+)"''', mainpage)
+viewstate = matches.group(1)
 
+#for letter in [ 'd' ]:
+for letter in [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ]:
+    # Create forum parameters
+    params = {}
+    params["__EVENTTARGET"] = "_Alpha1:_%s" % letter
+    params["__EVENTARGUMENT"] = "_Alpha1$_%s" % letter
+    params["__VIEWSTATE"] = viewstate
+    params = urllib.urlencode(params)
+    
     # Grab page 
-    ur = urllib.urlopen(test_url)
+    ur = urllib.urlopen(edm_index_url, params)
     content = ur.read()
     ur.close()
 
-    if re.search("Not Found(?i)", content):
-        raise Exception, "Failed to get content in url %s" % test_url
-
-    matcher = '<TD ALIGN="LEFT" VALIGN="TOP"><A HREF="(/weblink/html/member.html/.*)/log=\d+/pos=\d+" TARGET="_parent"><font face="arial,helvetica" size=2>(.*)/(.*)</A></TD>\s*<TD ALIGN="LEFT" VALIGN="TOP"><font face="arial,helvetica" size=2>(.*)</TD>'
+    matcher = '''<td><a href='(EDMByMember.aspx\?MID=\d+)\s+&SESSION=875'>(.*)[,.](.*)</a></td>\s+<td>(.*)</td>\s+<td>(.*)</td>\s+<td>(\d+)</td>'''
     matches = re.findall(matcher, content)
-    for (url, last, first, cons) in matches:
-        print >>sys.stderr, last, first, url
-    
+    for (url, last, first, cons, party, count) in matches:
         first = re.sub(" \(.*\)", "", first)
-        id, name, cons =  memberList.matchfullnamecons(first + " " + last, cons, date_today)
-        url = urlparse.urljoin(test_url, url)
+        fullname = first.strip() + " " + last.strip()
+        id, name, cons =  memberList.matchfullnamecons(fullname, cons, date_today)
+        url = urlparse.urljoin(edm_index_url, url)
 
-        if id in aismembers:
-            print >>sys.stderr, "Ignored repeated entry for " , id
+        if id:
+            if id in aismembers:
+                print >>sys.stderr, "Ignored repeated entry for " , id
+            else:
+                print '<memberinfo id="%s" edm_ais_url="%s" />' % (id, url)
+            aismembers.add(id)
         else:
-            print '<memberinfo id="%s" edm_ais_url="%s" />' % (id, url)
-
-        aismembers.add(id)
+            print >>sys.stderr, "Failed to find '%s'" % (fullname)
 
     sys.stdout.flush()
 

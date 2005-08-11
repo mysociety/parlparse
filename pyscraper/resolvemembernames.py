@@ -95,7 +95,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                 if (consattr['fromdate'] <= attr['fromdate'] and
                     attr['fromdate'] <= attr['todate'] and
                     attr['todate'] <= consattr['todate']):
-                    if consid:
+                    if consid and consid != consattr['id']:
                         raise Exception, "Two constituency ids %s %s overlap with MP %s" % (consid, consattr['id'], attr['id'])
                     consid = consattr['id']
             if not consid:
@@ -170,6 +170,9 @@ class MemberList(xml.sax.handler.ContentHandler):
                 if not self.loadconsattr["id"] in self.considtonamemap:
                     self.considtonamemap[self.loadconsattr["id"]] = attr["text"] # preferred constituency name is first listed
                 self.constoidmap.setdefault(attr["text"], []).append(self.loadconsattr)
+                # without punctuation, spaces, in lower case
+                nopunc = self.strippunc(attr['text'])
+                self.constoidmap.setdefault(nopunc, []).append(self.loadconsattr)
             pass
 
         # people.xml loading
@@ -252,6 +255,10 @@ class MemberList(xml.sax.handler.ContentHandler):
 
 		return text.strip(), titletotal
 
+    def strippunc(self, cons):
+        nopunc = cons.replace(',','').replace('-','').replace(' ','').lower().strip()
+        return nopunc
+
     # date can be none, will give more matches
     def fullnametoids(self, tinput, date):
         text, titletotal = self.striptitles(tinput)
@@ -283,7 +290,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         fullname = self.basicsubs(fullname)
         fullname = fullname.strip()
         if cons:
-            cons = cons.strip()
+            cons = self.strippunc(cons)
         ids = self.fullnametoids(fullname, date)
 
         consids = self.constoidmap.get(cons, None)
