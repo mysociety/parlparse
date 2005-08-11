@@ -29,11 +29,6 @@ if (not os.path.isdir(tmppath)):
         os.mkdir(tmppath)
 tempfilename = tempfile.mktemp("", "pw-gluetemp-", tmppath)
 
-
-# migrate names to forms without pw
-if os.path.exists(toppath + "/pwcmpages"):
-        raise Exception, 'Folders have changed name, and you need to rescrape everything anyway.  Clear out %s and start again.' % (toppath)
-
 # find raw data path
 rawdatapath = os.path.join(os.getcwd(), "../rawdata")
 if (not os.path.isdir(toppath)):
