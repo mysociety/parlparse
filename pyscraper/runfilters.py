@@ -53,7 +53,6 @@ pwpatchesdirs = miscfuncs.pwpatchesdirs
 # outgoing directory of scaped pages directories
 # file to store list of newly done dates
 changedatesfile = "changedates.txt"
-
 tempfilename = tempfile.mktemp(".xml", "pw-filtertemp-", miscfuncs.tmppath)
 
 # create the output directory
@@ -99,6 +98,8 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 	text = ofin.read()
 	ofin.close()
 
+	tempfilenameoldxml = None
+
 	# do the filtering according to the type.  Some stuff is being inlined here
 	if dname == 'regmem':
 		regmemout = open(tempfilename, 'w')
@@ -132,37 +133,32 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 
 		fout = open(tempfilename, "w")
 		WriteXMLHeader(fout);
-		fout.write("<publicwhip>\n")
-
+		fout.write('<publicwhip scrapeversion="%s" latest="yes">\n' % sdatever)
 		# go through and output all the records into the file
-		fout.write('<scrapeversion code="%s">\n' % sdatever)
 		for qb in flatb:
 			WriteXMLspeechrecord(fout, qb, False, False)
-		fout.write('</scrapeversion>\n')
+		fout.write("</publicwhip>\n\n")
+		fout.close()
 
-		# load in a previous file
+		# load in a previous file and over-write it if necessary
 		if xprev:
 			xin = open(xprev[0], "r")
 			xprevs = xin.read()
 			xin.close()
 
 			# separate out the scrape versions
-			scrapeversions = re.findall('<scrapeversion code="([^"]*)">\n([\s\S]*?)</scrapeversion>', xprevs)
-			assert scrapeversions[0][0] == xprev[1]
-			xprevcompress = FactorChanges(flatb, scrapeversions[0][1])
+			mpw = re.search('<publicwhip scrapeversion="([^"]*)" latest="yes">\n([\s\S]*?)</publicwhip>', xprevs)
+			assert mpw.group(1) == xprev[1]
+			xprevcompress = FactorChanges(flatb, mpw.group(2))
 
-			fout.write('\n\n<scrapeversion code="%s">\n' % xprev[1])
-			fout.writelines(xprevcompress)
-			fout.write('</scrapeversion>\n')
+			tempfilenameoldxml = tempfile.mktemp(".xml", "pw-filtertempold-", miscfuncs.tmppath)
+			foout = open(tempfilenameoldxml, "w")
+			WriteXMLHeader(foout)
+			foout.write('<publicwhip scrapeversion="%s" latest="no">\n' % xprev[1])
+			foout.writelines(xprevcompress)
+			foout.write("</publicwhip>\n")
+			foout.close()
 
-			# write out the earlier consolidated files
-			for scrapeversion in scrapeversions[1:]:
-				fout.write('\n\n<scrapeversion code="%s">\n' % scrapeversion[0])
-				fout.write(scrapeversion[1])
-				fout.write('</scrapeversion>\n')
-
-		fout.write("</publicwhip>\n\n")
-		fout.close()
 
 	# in win32 this function leaves the file open and stops it being renamed
 	if sys.platform != "win32":
@@ -172,6 +168,15 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 	if os.path.isfile(jfout):
 		os.remove(jfout)
 	os.rename(tempfilename, jfout)
+
+	# copy over onto old xml file
+	if tempfilenameoldxml:
+		if sys.platform != "win32":
+			xmlvalidate.parse(tempfilenameoldxml) # validate XML before renaming
+		assert os.path.isfile(xprev[0])
+		os.remove(xprev[0])
+		os.rename(tempfilenameoldxml, xprev[0])
+
 
 # hunt the patchfile
 def findpatchfile(name, d1, d2):

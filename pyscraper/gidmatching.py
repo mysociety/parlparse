@@ -64,8 +64,7 @@ def FactorChanges(flatb, scrapeversion):
 				if m:
 					para = m.group(1)
 				else:
-					print "TABTABTABTAB", ps
-					assert re.match("\s*</?(?:table|tbody)", ps)
+					assert re.match("\s*</?(?:table|tbody|divisioncount|lordlist|lord)", ps)
 					para = ps
 				essxlist.extend(para.split())
 
@@ -93,7 +92,7 @@ def FactorChanges(flatb, scrapeversion):
 				if m:
 					para = m.group(1)
 				else:
-					assert re.match("\s*</?(?:table|tbody)", ps)
+					assert re.match("\s*</?(?:table|tbody|divisioncount|lordlist|lord)", ps)
 					para = ps
 				essflatblist.extend(para.split())
 
