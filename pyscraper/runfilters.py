@@ -197,7 +197,7 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 			sdatever = fdayc[1]
 
 			# create the output file name
-			jfout = os.path.join(pwxmldirout, re.match('(.*\.)html$', fin).group(1) + '.xml')
+			jfout = os.path.join(pwxmldirout, re.match('(.*\.)html$', fin).group(1) + 'xml')
 			patchfile = os.path.join(pwpatchesdir, "%s.patch" % fin)
 
 			# skip already processed files, if date is earler and it's not a forced reparse

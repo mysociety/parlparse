@@ -19,42 +19,6 @@ tempfilename = miscfuncs.tempfilename
 from miscfuncs import NextAlphaString, AlphaStringToOrder
 
 
-# handle mismatching sequences of speeches
-def MismatchingSequences(flatb, essflatb, seqf, xprevf, xprevver, essx, seqx):
-	if seqf[0] == seqf[1] and seqx[0] == seqx[1]:
-		return
-
-	# break this down into paragraphs and find the differences between those
-	essbp = [ ]
-	for essqb in essflatb[seqf[0]:seqf[1]]:
-		essbp.extend(essqb[2])
-	essxp = [ ]
-	for essqx in essx[seqx[0]:seqx[1]]:
-		essxp.extend(essqx[2])
-
-	# we may use a Differ object
-	print "Mismatch sequences", seqf, seqx
-	print "----------------Matching blocks"
-	d = difflib.Differ()
-	pprint(list(d.compare(essbp, essxp)))
-
-	# This gets the sequences together subject to
-	# inaccuracies.  Need to sequence the strings 
-	# according to <tag></tag>, and by word, and then 
-	# merge them together as <spans>
-	
-	# also read the gidredirects properly  
-	
-	# then extend to the parl debates
-
-
-def MatchingSpeech(qb, xb, chk, xprevver):
-	oldgid = re.search('id="([^"]*)"', chk[1]).group(1)
-	qb.gidredirect.append((oldgid, qb.GID))
-	# will be able to add in further redirects from chk[4] here
-
-
-	# will also copy over the speeches filtered through the <span> tags as well.
 
 # get the min index that matches this
 def GetMinIndex(indx, a):
@@ -152,6 +116,8 @@ def FactorChanges(flatb, xprevf, xprevver):
 
 	# we collect the range for the previous speeches and map it to a set of ranges
 	# in the next speeches
+#	assert len(chks) + 1 == len(essxindx)
+	xrefinfo = [ ]
 	for ix in range(len(chks)):
 		ixr = (essxindx[ix], essxindx[ix + 1])
 		nixrl = [ ]
@@ -168,18 +134,28 @@ def FactorChanges(flatb, xprevf, xprevver):
 				nixrlsz += ixit[1] - ixit[0]
 
 		assert nixrl # need to handle the empty case where no overlap found specially
-		nix = GetMinIndex(essflatbindx, nixrl[0][0])
-		if ix != nix:
-			print "mmmmmmmmmmmmmmmmmm"
+		# type would then be matchtype = "missing"
 
-	
-		# there's been a change
+
+		# go through the matchint cases
+		matchlist = [ GetMinIndex(essflatbindx, nixrl[0][0]) ]
 		if nixrlsz != ixr[1] - ixr[0]:
-			print nixrl, ixr
+			matchtype = "changes"
+			for ixit in nixrl:
+				ml = GetMinIndex(essflatbindx, ixit[0])
+				if matchlist[-1] != ml:
+					matchlist.append(ml)
+				ml = GetMinIndex(essflatbindx, ixit[1] - 1)
+				if matchlist[-1] != ml:
+					matchlist.append(ml)
+			if len(matchlist) != 1:
+				matchtype = "multiplecover"
 		else:
 			assert len(nixrl) == 1
+			matchtype = "perfectmatch"
 
-
+		xrefinfo.append((matchtype, matchlist))
+		assert len(xrefinfo) == ix
 
 #	mismatchstart = (0, 0)
 #	for smb in sm.get_matching_blocks():
