@@ -1,4 +1,5 @@
 #! /usr/bin/python2.3
+# vim:sw=8:ts=8:et:nowrap
 
 import sys
 import re
@@ -54,12 +55,11 @@ recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regcolumnum11, regcolu
 remarginal = re.compile(':\s*column\s*\D*(\d+)(?i)')
 
 def FilterLordsColtime(fout, text, sdate):
-	colnum = -1
-	time = ''
+    colnum = -1
+    time = ''
 
-	stampurl = StampUrl(sdate)
-	for fss in recomb.split(text):
-
+    stampurl = StampUrl(sdate)
+    for fss in recomb.split(text):
 		# column number type
 
 		# we need some very elaboirate checking to sort out the sections, by
