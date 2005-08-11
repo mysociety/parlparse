@@ -14,7 +14,7 @@ import miscfuncs
 import miscfuncs
 toppath = miscfuncs.toppath
 
-seelines = open(os.path.join(toppath, 'emblinks.txt'), "w")
+seelines = open(os.path.join(miscfuncs.tmppath, 'emblinks.txt'), "w")
 
 # this detects the domain
 reglinkdomt = '(?:\.or[gq]|\.com|[\.\s]uk|\.tv|\.net|\.gov|\.int|\.info|\.it|\.ch|\.es|\.mz|\.lu|\.fr|\.dk|\.mil)(?!\w)'
