@@ -54,7 +54,7 @@ def RunPatchToolW(typ, sdate, stamp, frag):
 	shutil.copyfile(orgfile, tmpfile)
 	if os.path.isfile(patchfile):
 		print "Patching ", patchfile
-		status = os.system("patch --quiet %s <%s" % (tmpfile, patchfile))
+		status = os.system("patch --quiet %s < %s" % (tmpfile, patchfile))
 
 	# run the editor (first finding the line number to be edited)
 	gp = 0
