@@ -17,17 +17,25 @@ def GenPatchFileNames(typ, sdate):
 	qfolder = toppath
 	qfolder = os.path.join(qfolder, "cmpages")
 	folder = os.path.join(qfolder, typ)
-	stub = typ
-	if stub == "wrans":
-		stub = "answers"
-	elif stub == "lordspages":
-		stub = "daylord"
-	elif stub == "westminhall":
-		stub = "westminster"
-	elif stub == "wms":
-		stub = "ministerial"
 
-	pdire = os.path.join("patches", typ)
+	# transform the typ into the file stub
+	if typ == "wrans":
+		stub = "answers"
+	elif typ == "lordspages":
+		stub = "daylord"
+	elif typ == "westminhall":
+		stub = "westminster"
+	elif typ == "wms":
+		stub = "ministerial"
+	else:
+		stub = typ
+
+	# lords case where we use the new top level patch directory
+	if typ == "lordspages":
+		pdire = os.path.join(toppath, patches)
+	else:
+		pdire = "patches"  # as local directory
+	pdire = os.path.join(pdire, typ)
 	if not os.path.isdir(pdire):
 		os.mkdir(pdire)
 
@@ -36,7 +44,7 @@ def GenPatchFileNames(typ, sdate):
 	tmpfile = tempfile.mktemp(".html", "patchtmp-%s%s-" % (stub, sdate), miscfuncs.tmppath)
 	tmppatchfile = os.path.join(pdire, "%s%s.html.patch.new" % (stub, sdate))
 
-        return patchfile, orgfile, tmpfile, tmppatchfile
+	return patchfile, orgfile, tmpfile, tmppatchfile
 
 # Launches editor on copy of file, and makes patch file of changes the user
 # makes interactively
