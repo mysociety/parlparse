@@ -322,8 +322,8 @@ class MemberList(xml.sax.handler.ContentHandler):
 
         for lid in ids: # pop is no good as it changes the set
             pass
-        remadename = self.members[lid]["firstname"] + " " + self.members[lid]["lastname"]
-        remadecons = self.members[lid]["constituency"]
+        remadename = u'%s %s' % (self.members[lid]["firstname"], self.members[lid]["lastname"])
+		remadecons = self.members[lid]["constituency"]
         return lid, remadename, remadecons
 
     # Exclusively for WMS
@@ -352,7 +352,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 
         remadename = self.members[id]["firstname"] + " " + self.members[id]["lastname"]
         return 'speakerid="%s" speakername="%s"%s' % (id, remadename, speakeroffice)
-    
+
     # Exclusively for wrans
     def matchwransname(self, fullname, cons, date):
         # Have got first instance like this:

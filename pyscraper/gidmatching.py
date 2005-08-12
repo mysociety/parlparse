@@ -55,8 +55,8 @@ def FactorChanges(flatb, scrapeversion):
 		speaker = re.search('nospeaker="true"|speakerid="[^"]*"', chk[1]).group(0)
 		essxlist.append(speaker)
 
-		if re.match("major-heading|minor-heading", chk[0]):
-			heading = re.match("\s*(.*?)\s*$", chk[2]).group(1)
+		if re.match("oral-heading|major-heading|minor-heading", chk[0]):
+			heading = re.match("\s*([^<>]*?)\s*$", chk[2]).group(1)
 			essxlist.extend(heading.split())
 		else:
 			for ps in chk[2].split('\n'):
@@ -80,9 +80,8 @@ def FactorChanges(flatb, scrapeversion):
 		essflatblist.append("HEADING-" + qb.typ)
 		essflatblist.append(re.search('nospeaker="true"|speakerid="[^"]*"', qb.speaker).group(0))
 
-		if re.match("major-heading|minor-heading", qb.typ):
-			assert len(qb.stext) == 1
-			heading = re.match("\s*(.*?)\s*$", qb.stext[0]).group(1)
+		if re.match("oral-heading|major-heading|minor-heading", qb.typ):
+			heading = re.match("\s*(.*?)\s*$", "".join(qb.stext)).group(1)
 			essflatblist.extend(heading.split())
 
 		# strip format labels out of paragraphs

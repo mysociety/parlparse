@@ -171,6 +171,7 @@ def WriteXMLspeechrecord(fout, qb, bMakeOldWransGidsToNew, bIsWrans):
 		fout.write('\t')
 		mp = re.match("\s*<(?:p|tr)", lb)
 		if qb.stextptags and mp:
+#			print "lblblblblb", lb
 			fout.write(lb[:mp.end(0)])
 			fout.write(qb.stextptags[i])  # the inserting of a tag (probably an id or something)
 			fout.write(lb[mp.end(0):])
