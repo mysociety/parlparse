@@ -17,6 +17,8 @@ toppath = miscfuncs.toppath
 pwcmdirs = miscfuncs.pwcmdirs
 tempfilename = miscfuncs.tempfilename
 
+from miscfuncs import NextAlphaString, AlphaStringToOrder
+
 
 # Pulls in all the debates, written answers, etc, glues them together, removes comments,
 # and stores them on the disk
@@ -37,7 +39,7 @@ class DefaultErrorHandler(urllib2.HTTPDefaultErrorHandler):
 class LoadCmIndex(xml.sax.handler.ContentHandler):
 	def __init__(self, lpwcmindex):
 		self.res = []
-                self.check = {}
+		self.check = {}
 		if not os.path.isfile(lpwcmindex):
 			return
 		parser = xml.sax.make_parser()
@@ -139,7 +141,7 @@ def GlueByNext(fout, url, urlx):
 # now we have the difficulty of pulling in the first link out of this silly index page
 def ExtractFirstLink(url, dgf, forcescrape):
         request = urllib2.Request(url)
-        if not forcescrape and os.path.exists(dgf):
+        if not forcescrape and dgf and os.path.exists(dgf):
                 mtime = os.path.getmtime(dgf)
                 mtime = time.gmtime(mtime)
                 mtime = time.strftime("%a, %d %b %Y %H:%M:%S GMT", mtime)
@@ -185,8 +187,6 @@ def getHTMLdiffname(jfout):
 
 # read through our index list of daydebates
 def GlueAllType(pcmdir, cmindex, nametype, fproto, forcescrape):
-	if not os.path.isdir(pcmdir):
-		os.mkdir(pcmdir)
 
 	for dnu in cmindex:
 		# pick only the right type
@@ -235,19 +235,78 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 	# make the output firectory
 	if not os.path.isdir(pwcmdirs):
 		os.mkdir(pwcmdirs)
+	pwcmfolder = os.path.join(pwcmdirs, folder)
+	if not os.path.isdir(pwcmfolder):
+		os.mkdir(pwcmfolder)
 
 	# load the index file previously made by createhansardindex
 	ccmindex = LoadCmIndex(pwcmindex)
 
-	# extract date range we want
-	def indaterange(x):
-		return x[0] >= datefrom and x[0] <= dateto
-	ccmindex.res = filter(indaterange,ccmindex.res)
+	# the following is code copied from the lordspullgluepages
 
-	# bring in and glue together parliamentary debates, and answers and put into their own directories.
-	# third parameter is a regexp, fourth is the filename (%s becomes the date).
-	# type is "answers" or "debates"
-	pwcmfolder = os.path.join(pwcmdirs, folder)
-	GlueAllType(pwcmfolder, ccmindex.res, typ + '(?i)', typ + '%s.html', forcescrape)
+	# scan through the directory and make a mapping of all the copies for each
+	lddaymap = { }
+	for ldfile in os.listdir(pwcmfolder):
+		mnums = re.match("%s(\d{4}-\d\d-\d\d)([a-z]*)\.html" % typ, ldfile)
+		if mnums:
+			lddaymap.setdefault(mnums.group(1), []).append((AlphaStringToOrder(mnums.group(2)), mnums.group(2), ldfile))
+		else:
+			print "not recognized file:", ldfile
+
+	# loop through the index of each lord line.
+	for dnu in ccmindex.res:
+		# implement date range
+		if not re.search(typ, dnu[1], re.I):
+			continue
+		if dnu[0] < datefrom or dnu[0] > dateto:
+			continue
+
+		# make the filename
+		dgflatestalpha, dgflatest = "", None
+		if dnu[0] in lddaymap:
+			ldgf = max(lddaymap[dnu[0]])
+			dgflatestalpha = ldgf[1]
+			dgflatest = os.path.join(pwcmfolder, ldgf[2])
+		ldgfnext = '%s%s%s.html' % (typ, dnu[0], NextAlphaString(dgflatestalpha))
+		dgfnext = os.path.join(pwcmfolder, ldgfnext)
+		assert not dgflatest or os.path.isfile(dgflatest)
+		assert not os.path.isfile(dgfnext)
+
+		# hansard index page
+		urlx = dnu[2]
+		if dnu[1] == 'Votes and Proceedings':
+			url0 = urlx
+		else:
+			url0 = ExtractFirstLink(urlx, dgflatest, forcescrape)  # this checks the url at start of file
+		if not url0:
+			continue
+
+		# make the message
+		print dnu[0], (dgflatest and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
+
+		# now we take out the local pointer and start the gluing
+		dtemp = open(tempfilename, "w")
+		GlueByNext(dtemp, url0, urlx)
+		dtemp.close()
+
+		# now we have to decide whether it's actually new and should be copied onto dgfnext.
+		if dgflatest and os.path.getsize(tempfilename) == os.path.getsize(dgflatest):
+			# load in as strings and check matching
+			fdgflatest = open(dgflatest)
+			sdgflatest = fdgflatest.readlines()
+			fdgflatest.close()
+
+			fdgfnext = open(tempfilename)
+			sdgfnext = fdgfnext.readlines()
+			fdgfnext.close()
+
+			# first line contains the scrape date
+			if sdgflatest[1:] == sdgfnext[1:]:
+				print "  matched with:", dgflatest
+				continue
+
+		print "  writing:", dgfnext
+		os.rename(tempfilename, dgfnext)
+
 
 

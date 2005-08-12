@@ -138,6 +138,7 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
 				raise ContextException(str(e), stamp=stampurl, fragment=fss)
 
 			# put record in this place
+			#print "ree", result.encode("latin-1")
 			spxm = '%s<speaker %s%s>%s</speaker>\n%s' % (anamestamp, result.encode("latin-1"), oqnum, spstr, sqbnum)
 			fout.write(spxm)
 			continue

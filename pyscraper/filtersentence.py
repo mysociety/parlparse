@@ -118,9 +118,11 @@ def TokenHonFriend(mhonfriend, phrtok):
 	# will match for ids
 	#print mhonfriend.group(0)
 	res = memberList.matchfullnamecons(mhonfriend.group(5), mhonfriend.group(4), phrtok.sdate, alwaysmatchcons = False)
+
 	if not res[0]:  # comes back as None
 		res = ("unknown", mhonfriend.group(5))
-	return ('phrase', ' class="honfriend" id="%s" name="%s"' % res[:2])
+	# if you put the .encode("latin-1") on the res[1] it doesn't work when there are strange characters.
+	return ('phrase', (' class="honfriend" id="%s" name="%s"' % (res[0], res[1])).encode("latin-1"))
 
 
 

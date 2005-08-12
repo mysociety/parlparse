@@ -31,10 +31,10 @@ def GenPatchFileNames(typ, sdate):
 		stub = typ
 
 	# lords case where we use the new top level patch directory
-	if typ == "lordspages":
-		pdire = os.path.join(toppath, "patches")
-	else:
-		pdire = "patches"  # as local directory
+	pdire = os.path.join(toppath, "patches")
+# all patches will be moved to where they belong
+#	if typ != "lordspages":
+#		pdire = "patches"  # as local directory
 	pdire = os.path.join(pdire, typ)
 	if not os.path.isdir(pdire):
 		os.mkdir(pdire)

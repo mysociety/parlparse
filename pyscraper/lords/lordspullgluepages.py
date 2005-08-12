@@ -197,7 +197,6 @@ def LordsPullGluePages(datefrom, dateto, bforcescrape):
 
 		# hansard index page
 		urlx = dnu[1]
-		shurlx = re.sub(".*?ldhansrd/", "", urlx)
 
 		# if not force scrape then we may choose to scrape it anyway
 		# where the header doesn't match
@@ -212,7 +211,7 @@ def LordsPullGluePages(datefrom, dateto, bforcescrape):
 						continue
 
 		# make the message
-		print dnu[0], (dgflatest and 'RE-scraping' or 'scraping'), shurlx
+		print dnu[0], (dgflatest and 'RE-scraping' or 'scraping'), re.sub(".*?ldhansrd/", "", urlx)
 
 		# The different sections are often all run together
 		# with the title of written answers in the middle of a page.
