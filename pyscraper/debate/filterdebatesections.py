@@ -387,8 +387,8 @@ def FilterDebateSections(text, sdate, typ):
 
 		except ContextException, e:
 			raise
+		# add extra stamp info to the exception
 		except Exception, e:
-			# add extra stamp info to the exception
 			raise ContextException(str(e), stamp=stampurl, fragment=unspoketxt)
 
 

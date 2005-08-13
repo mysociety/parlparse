@@ -190,7 +190,7 @@ def StraightenHTMLrecurse(stex, stampurl):
 		sres.extend(StraightenHTMLrecurse(stex[qisup.span(1)[1]:], stampurl))
 		return sres
 
-	sres = re.split('(&[a-z]*?;|&#\d+;|"|\xa3|&|\x01|\x0e|\x14|<[^>]*>|<|>)', stex)
+	sres = re.split('(&[a-z]*?;|&#\d+;|"|\xa3|&|\x01|\x0e|\x14|\x92|\xb0|\xab|\xe9|<[^>]*>|<|>)', stex)
 	for i in range(len(sres)):
                 #print "sresi ", sres[i], "\n"
                 #print "-----------------------------------------------\n"
@@ -198,10 +198,6 @@ def StraightenHTMLrecurse(stex, stampurl):
 		if not sres[i]:
 			pass
 		elif sres[i][0] == '&':
-
-                        # Put new entities in entitymap if you can, or special cases
-                        # in this if statement.
-
 			if sres[i] in entitymap:
 				sres[i] = entitymap[sres[i]]
 			elif sres[i] in entitymaprev:
@@ -227,16 +223,24 @@ def StraightenHTMLrecurse(stex, stampurl):
 		elif sres[i] == '"':
 			sres[i] = '&quot;'
 
-                # junk chars sometimes get in
+		# junk chars sometimes get in
+		# NB this only works if the characters are split in the regexp above
 		elif sres[i] == '\x01':
 			sres[i] = ''
 		elif sres[i] == '\x0e':
 			sres[i] = ' '
 		elif sres[i] == '\x14':
 			sres[i] = ' '
-
+		elif sres[i] == '\x92':
+			sres[i] = "'"
 		elif sres[i] == '\xa3':
 			sres[i] = '&pound;'
+		elif sres[i] == '\xb0':
+			sres[i] = '&deg;'
+		elif sres[i] == '\xab':
+			sres[i] = '&eacute;'
+		elif sres[i] == '\xe9':
+			sres[i] = '&eacute;'
 
 		elif sres[i] == '<i>':
 			sres[i] = '' # 'OPEN-i-TAG-OUT-OF-PLACE'
@@ -268,7 +272,11 @@ def FixHTMLEntitiesL(stex, signore='', stampurl=None):
 
 def FixHTMLEntities(stex, signore='', stampurl=None):
 	res = string.join(FixHTMLEntitiesL(stex, signore, stampurl), '')
-	return res.encode("latin-1")
+	try:
+		return res.encode("latin-1")
+	except Exception, e:
+		print "Encoding problem with:", res
+		raise ContextException(str(e), stamp=stampurl, fragment=res)
 
 
 
