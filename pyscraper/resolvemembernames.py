@@ -308,7 +308,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                             if attr["id"] in ids:
                                 newids.add(attr["id"])
             ids = newids
-
+						 
 		# fail cases
         if len(ids) == 0:
             return None, None, None
@@ -360,7 +360,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         # Just turning alwaysmatchcons off for now
         # Do something fancier if it happens a lot
         res = self.matchfullnamecons(fullname, cons, date, alwaysmatchcons = False)
-		if not res or not res[0] or not res[1] or not res[2]:
+		if not res or not res[1] or not res[2]:
 			raise Exception, 'No match: ' + fullname + " : " + (cons or "[nocons]")
 		return res
 

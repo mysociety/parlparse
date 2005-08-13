@@ -118,7 +118,6 @@ fixsubs = 	[
 	( 'www.btselem.orR', 'www.btselem.org', 1, '2003-04-14'),
 	( 'www.unicef-org', 'www.unicef.org', 1, '2003-02-28'),
 	( 'gov.ukyStatBase', 'gov.uk/StatBase', 1, '2003-05-22'),
-        ( 'defraweb', 'www.defra.gov.uk', 1, '2003-12-18'),
         ( 'sn99&#150;35\(s.htm\);', 'sn99-35s.htm;', 1, '2003-07-16'),
 
 ]
@@ -176,6 +175,7 @@ def FilterWransSections(text, sdate):
 	text = ApplyFixSubstitutions(text, sdate, fixsubs)
 	headspeak = SplitHeadingsSpeakers(text)
 
+
 	# break down into lists of headings and lists of speeches
 	(ih, stampurl) = StripWransHeadings(headspeak, sdate)
 
@@ -184,6 +184,7 @@ def FilterWransSections(text, sdate):
 	# We create a list of lists of speeches
 	flatb = [ ]
 	for sht in headspeak[ih:]:
+
 		# triplet of ( heading, unspokentext, [(speaker, text)] )
 		headingtxt = string.strip(sht[0])
 		unspoketxt = sht[1]

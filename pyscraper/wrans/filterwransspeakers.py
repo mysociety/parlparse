@@ -124,51 +124,39 @@ def FilterWransSpeakers(fout, text, sdate):
 		deci = None
 		if robj:
 			(deci, boldnamestring) = robj.groups()
-
 			# TODO: do something with deci here (it is the "failed
 			# oral questions" signifier)
 
-			# see if it is an explicitly bad/ambiguous name which will never match
-			if boldnamestring.find('<broken-name>') >= 0:
-				id = 'unknown'
-				boldnamestring = boldnamestring.replace('<broken-name>', '')
-				remadename = ' speakername="%s" error="Name ambiguous in Hansard"' % (boldnamestring)
+		# see if it is an explicitly bad/ambiguous name which will never match
+		if boldnamestring.find('<broken-name>') >= 0:
+			id = 'unknown'
+			boldnamestring = boldnamestring.replace('<broken-name>', '')
+			remadename = ' speakername="%s" error="Name ambiguous in Hansard"' % (boldnamestring)
+		else:
+			# split bracketed cons out if present
+			brakmatch = re.match("(.*)\s+\((.*)\)", boldnamestring)
+			if brakmatch:
+				(name, cons) = brakmatch.groups()
 			else:
-				# split bracketed cons out if present
-				brakmatch = re.match("(.*)\s+\((.*)\)", boldnamestring)
-				if brakmatch:
-					(name, cons) = brakmatch.groups()
+				(name, cons) = (boldnamestring, None)
+
+			# match the member to a unique identifier
+			(id, remadename, remadecons) = memberList.matchwransname(name, cons, sdate)
+			if id and remadename:
+				remadename = ' speakername="%s"' % (remadename)
+			if not id:
+				if remadename == "MultipleMatch":
+					id = 'unknown'
+					remadename = ' speakername="%s" error="MultipleMatch"' % boldnamestring
 				else:
-					(name, cons) = (boldnamestring, None)
-
-				# match the member to a unique identifier
-				(id, remadename, remadecons) = memberList.matchwransname(name, cons, sdate)
-				if id and remadename:
-					remadename = ' speakername="%s"' % (remadename)
-				if not id:
-					if remadename == "MultipleMatch":
-						id = 'unknown'
-						remadename = ' speakername="%s" error="MultipleMatch"' % boldnamestring
-					else:
-						raise ContextException("No name match", stamp=stampurl, fragment=boldnamestring)
+					raise ContextException("No name match", stamp=stampurl, fragment=boldnamestring)
 
 
-		# put record in this place
-		fs[i] = '<speaker speakerid="%s"%s>%s</speaker>\n' % \
-                                    (id.encode("latin-1"), remadename.encode("latin-1"), boldnamestring)
+			# put record in this place
+			fs[i] = '<speaker speakerid="%s"%s>%s</speaker>\n' % \
+					(id.encode("latin-1"), remadename.encode("latin-1"), boldnamestring)
+
 
 	# scan through everything and output it into the file
-	for fss in fs:
-                fout.write(fss) # For accent in "Siôn Simon"
-                continue
-                # OLD CODE - we now doing encodings above:
-		try:
-                    fout.write(fss.encode("latin-1")) # For accent in "Siôn Simon"
-		except:
-			print ' --- latin-1 encoding failed --- '
-
-			for c in fss:
-				print c,
-				c.encode("latin-1")
-			sys.exit()
+	fout.writelines(fs)
 
