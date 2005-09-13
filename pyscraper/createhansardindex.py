@@ -136,12 +136,20 @@ def CmIndexFromPage(urllinkpage):
 			if otheruind == uind:
 				continue
 
+			# get rid of this paragraph when they fix the link
+			if uind == "http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm050721/index/50725-x.htm" and \
+				otheruind == "http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm050721/index/50721-x.htm":
+				print "Fixing special link error case during summer 2005 of:", uind
+				uind = otheruind
+				continue
+
 			# sometimes they have old links to the cm edition as
 			# well as the vo edition, we pick the newer vo ones
+			# make sure that discrepancies are explainable
 			test1 = uind.replace('cmhansrd/cm', 'cmhansrd/vo')
 			test2 = otheruind.replace('cmhansrd/cm', 'cmhansrd/vo')
 			if test1 != test2:
-				raise Exception, 'Repeated link to %s %s differs:\nurl1: %s\nurl2: %s\nfrom index page1: %s\nindex2: %s' % (sdate, typ, uind, otheruind, urllinkpage, rc[1])
+				raise Exception, '------\nRepeated link to %s %s differs:\nurl1: %s\nurl2: %s\nfrom index page1: %s\nindex2: %s\n------' % (sdate, typ, uind, otheruind, urllinkpage, rc[1])
 
 			# case of two URLs the same only vo/cm differ like this:
 			# (which is a bug in Hansard, should never happen)

@@ -34,7 +34,7 @@ from contextexception import ContextException
 from patchtool import RunPatchTool
 
 from xmlfilewrite import CreateGIDs, CreateWransGIDs, WriteXMLHeader, WriteXMLspeechrecord
-from gidmatching import FactorChanges
+from gidmatching import FactorChanges, FactorChangesWrans
 
 from resolvemembernames import memberList
 
@@ -62,23 +62,23 @@ if not os.path.isdir(pwxmldirs):
 
 
 def ApplyPatches(filein, fileout, patchfile):
-        while True:
-                # Apply the patch
-                shutil.copyfile(filein, fileout)
+	while True:
+		# Apply the patch
+		shutil.copyfile(filein, fileout)
 
-                # delete temporary file that might have been created by a previous patch failure
-                filoutorg = fileout + ".orig"
-                if os.path.isfile(filoutorg):
-                    os.remove(filoutorg)
-                status = os.system("patch --quiet %s <%s" % (fileout, patchfile))
+		# delete temporary file that might have been created by a previous patch failure
+		filoutorg = fileout + ".orig"
+		if os.path.isfile(filoutorg):
+			os.remove(filoutorg)
+		status = os.system("patch --quiet %s <%s" % (fileout, patchfile))
 
-                if status == 0:
-                        return True
+		if status == 0:
+			return True
 
-                print "blanking out failed patch %s" % patchfile
-                os.rename(patchfile, patchfile + ".old~")
-                blankfile = open(patchfile, "w")
-                blankfile.close()
+		print "blanking out failed patch %s" % patchfile
+		os.rename(patchfile, patchfile + ".old~")
+		blankfile = open(patchfile, "w")
+		blankfile.close()
 
 
 # the operation on a single file
@@ -106,37 +106,32 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 		FILTERfunction(regmemout, text, sdate)  # totally different filter function format
 		regmemout.close()
 
-	# wrans case has very special numbering which is stable, so doesn't do backwards matching
-	elif dname == 'wrans':
-		(flatb, gidname) = FILTERfunction(text, sdate)  # gidname is prefix in the gid "debates", "lords", etc; should be a map or the same thing
-		CreateGIDs(gidname, sdate, sdatever, flatb)
-		majblocks = CreateWransGIDs(flatb, sdate)
-		bMakeOldWransGidsToNew = (sdate < "2005")
-
-		fout = open(tempfilename, "w")
-		WriteXMLHeader(fout);
-		fout.write("<publicwhip>\n")
-
-		# go through and output all the records into the file
-		for majblock in majblocks:
-			WriteXMLspeechrecord(fout, majblock[0], bMakeOldWransGidsToNew, True)
-			for qblock in majblock[1]:
-				qblock.WriteXMLrecords(fout, bMakeOldWransGidsToNew)
-
-		fout.write("</publicwhip>\n\n")
-		fout.close()
 
 	# all other hansard types
 	else:
+		assert dname in ('wrans', 'debates', 'wms', 'wesminhall', 'lords')
 		(flatb, gidname) = FILTERfunction(text, sdate)
 		CreateGIDs(gidname, sdate, sdatever, flatb)
+
+		# wrans case is special, with its question-id numbered gids
+		if dname == 'wrans':
+			majblocks = CreateWransGIDs(flatb, sdate)
+			bMakeOldWransGidsToNew = (sdate < "2005")
 
 		fout = open(tempfilename, "w")
 		WriteXMLHeader(fout);
 		fout.write('<publicwhip scrapeversion="%s" latest="yes">\n' % sdatever)
+
 		# go through and output all the records into the file
-		for qb in flatb:
-			WriteXMLspeechrecord(fout, qb, False, False)
+		if dname == 'wrans':
+			for majblock in majblocks:
+				WriteXMLspeechrecord(fout, majblock[0], bMakeOldWransGidsToNew, True)
+				for qblock in majblock[1]:
+					qblock.WriteXMLrecords(fout, bMakeOldWransGidsToNew)
+		else:
+			for qb in flatb:
+				WriteXMLspeechrecord(fout, qb, False, False)
+
 		fout.write("</publicwhip>\n\n")
 		fout.close()
 
@@ -148,8 +143,14 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 
 			# separate out the scrape versions
 			mpw = re.search('<publicwhip scrapeversion="([^"]*)" latest="yes">\n([\s\S]*?)</publicwhip>', xprevs)
+			if not mpw:
+				print "mismatch with pw header"
+				print re.search('<publicwhip[^>]*>', xprevs).group(0)
 			assert mpw.group(1) == xprev[1]
-			xprevcompress = FactorChanges(flatb, mpw.group(2))
+			if dname == 'wrans':
+				xprevcompress = FactorChangesWrans(majblocks, mpw.group(2))
+			else:
+				xprevcompress = FactorChanges(flatb, mpw.group(2))
 
 			tempfilenameoldxml = tempfile.mktemp(".xml", "pw-filtertempold-", miscfuncs.tmppath)
 			foout = open(tempfilenameoldxml, "w")
@@ -180,17 +181,17 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 
 # hunt the patchfile
 def findpatchfile(name, d1, d2):
-        patchfile = os.path.join(d1, "%s.patch" % name)
-        if not os.path.isfile(patchfile):
-                patchfile = os.path.join(d2, "%s.patch" % name)
-        return patchfile
+	patchfile = os.path.join(d1, "%s.patch" % name)
+	if not os.path.isfile(patchfile):
+		patchfile = os.path.join(d2, "%s.patch" % name)
+	return patchfile
 
 # this works on triplets of directories all called dname
 def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 	# the in and out directories for the type
 	pwcmdirin = os.path.join(pwcmdirs, dname)
 	pwxmldirout = os.path.join(pwxmldirs, dname)
-        # mirgating to patches files stored in parldata, rather than in parlparse
+	# migrating to patches files stored in parldata, rather than in parlparse
 	pwpatchesdir = os.path.join(pwpatchesdirs, dname)
 	newpwpatchesdir = os.path.join(toppath, "patches", dname)
 
@@ -205,8 +206,8 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 		mnums = re.match("[a-z]*(\d{4}-\d\d-\d\d)([a-z]*)\.html$", ldfile)
 		if mnums:
 			daymap.setdefault(mnums.group(1), []).append((AlphaStringToOrder(mnums.group(2)), mnums.group(2), ldfile))
-		elif ldfile != '.svn':
-			print "not recognized file:", ldfile
+		elif os.path.isfile(os.path.join(pwcmdirin, ldfile)):
+			print "not recognized file:", ldfile, " inn ", pwcmdirin
 
 	# make the list of days which we will iterate through (in revers date order)
 	daydates = daymap.keys()
@@ -229,25 +230,26 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 			jfin = os.path.join(pwcmdirin, fin)
 			sdatever = fdayc[1]
 
-       			# here we repeat the parsing and run the patchtool editor until this file goes through.
-                        # create the output file name
-                        jfout = os.path.join(pwxmldirout, re.match('(.*\.)html$', fin).group(1) + 'xml')
-                        patchfile = findpatchfile(fin, newpwpatchesdir, pwpatchesdir)
+			# here we repeat the parsing and run the patchtool editor until this file goes through.
+			# create the output file name
+			jfout = os.path.join(pwxmldirout, re.match('(.*\.)html$', fin).group(1) + 'xml')
+			patchfile = findpatchfile(fin, newpwpatchesdir, pwpatchesdir)
 
-                        # skip already processed files, if date is earler and it's not a forced reparse
-                        # (checking output date against input and patchfile, if there is one)
-                        if os.path.isfile(jfout):
-                                out_modified = os.stat(jfout).st_mtime
-                                in_modified = os.stat(jfin).st_mtime
-                                patch_modified = None
-                                if os.path.isfile(patchfile):
-                                        patch_modified = os.stat(patchfile).st_mtime
-                                if (not forcereparse) and (in_modified < out_modified) and ((not patchfile) or patch_modified < out_modified):
-                                        continue   # bail out
-                                if not forcereparse:
-                                        print "input modified since output reparsing ", fin
+			# skip already processed files, if date is earler and it's not a forced reparse
+			# (checking output date against input and patchfile, if there is one)
+			bparsefile = True
+			if os.path.isfile(jfout):
+				out_modified = os.stat(jfout).st_mtime
+				in_modified = os.stat(jfin).st_mtime
+				patch_modified = None
+				if os.path.isfile(patchfile):
+					patch_modified = os.stat(patchfile).st_mtime
+				if (not forcereparse) and (in_modified < out_modified) and ((not patchfile) or patch_modified < out_modified):
+					bparsefile = False   # bail out
+				elif not forcereparse:
+					print "input modified since output reparsing ", fin
 
-			while True:
+			while bparsefile:  # flag is being used acually as if bparsefile: while True:
 				try:
 					RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile, jfout, forcereparse, options.quietc)
 
@@ -264,8 +266,8 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 					if options.patchtool:
 						print "runfilters.py", ce
 						RunPatchTool(dname, (sdate + sdatever), ce)
-                                                # find file again, in case new
-                                                patchfile = findpatchfile(fin, newpwpatchesdir, pwpatchesdir)
+						# find file again, in case new
+						patchfile = findpatchfile(fin, newpwpatchesdir, pwpatchesdir)
 						continue # emphasise that this is the repeat condition
 
 					elif options.quietc:
@@ -333,18 +335,18 @@ def RunWestminhallFilters(text, sdate):
 	return (flatb, "westminhall")
 
 def RunWMSFilters(text, sdate):
-        si = cStringIO.StringIO()
-        FilterWMSColnum(si, text, sdate)
-        text = si.getvalue()
-        si.close()
+	si = cStringIO.StringIO()
+	FilterWMSColnum(si, text, sdate)
+	text = si.getvalue()
+	si.close()
 
-        si = cStringIO.StringIO()
-        FilterWMSSpeakers(si, text, sdate)
-        text = si.getvalue()
-        si.close()
+	si = cStringIO.StringIO()
+	FilterWMSSpeakers(si, text, sdate)
+	text = si.getvalue()
+	si.close()
 
-        flatb = FilterWMSSections(text, sdate)
-        return (flatb, "wms")
+	flatb = FilterWMSSections(text, sdate)
+	return (flatb, "wms")
 
 # These text filtering functions filter twice through stringfiles,
 # before directly filtering to the real file.
