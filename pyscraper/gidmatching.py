@@ -64,7 +64,7 @@ def FactorChanges(flatb, scrapeversion):
 				if m:
 					para = m.group(1)
 				else:
-					assert re.match("\s*</?(?:table|tbody|divisioncount|lordlist|lord)", ps)
+					assert re.match("\s*</?(?:table|tbody|thead|caption|divisioncount|mplist|mpname|lordlist|lord)", ps)
 					para = ps
 				essxlist.extend(para.split())
 
@@ -91,7 +91,7 @@ def FactorChanges(flatb, scrapeversion):
 				if m:
 					para = m.group(1)
 				else:
-					assert re.match("\s*</?(?:table|tbody|divisioncount|lordlist|lord)", ps)
+					assert re.match("\s*</?(?:table|tbody|thead|caption|divisioncount|mplist|mpname|lordlist|lord)", ps)
 					para = ps
 				essflatblist.extend(para.split())
 
@@ -106,6 +106,7 @@ def FactorChanges(flatb, scrapeversion):
 	# now apply the diffing function on this
 	sm = difflib.SequenceMatcher(None, essxlist, essflatblist)
 	smblocks = [ ((smb[0], smb[0] + smb[2]), (smb[1], smb[1] + smb[2]))  for smb in sm.get_matching_blocks()[:-1] ]
+	print smblocks
 
 	# we collect the range for the previous speeches and map it to a set of ranges
 	# in the next speeches
@@ -164,3 +165,39 @@ def FactorChanges(flatb, scrapeversion):
 	return res
 
 
+# special case because the questions can be re-ordered
+def FactorChangesWrans(majblocks, scrapeversion):
+	assert False
+
+	# quick break into the chunks
+	chks = re.findall("<(major-heading|minor-heading|speech|division)\s(.*?)>\n([\s\S]*?)\n</(major-heading|minor-heading|speech|division)>",
+					  scrapeversion)
+
+	# make identically structured huge string over the previous xml file with heading stuff stripped out
+	essxlist = [ ]
+	essxindx = [ ]
+	for chk in chks:
+		assert chk[0] == chk[3]  # chunk type
+		essxindx.append(len(essxlist))
+		essxlist.append("HEADING-" + chk[0])
+		speaker = re.search('nospeaker="true"|speakerid="[^"]*"', chk[1]).group(0)
+		essxlist.append(speaker)
+
+		if re.match("oral-heading|major-heading|minor-heading", chk[0]):
+			heading = re.match("\s*([^<>]*?)\s*$", chk[2]).group(1)
+			essxlist.extend(heading.split())
+		else:
+			for ps in chk[2].split('\n'):
+				m = re.match("\s*<(?:p|tr)[^>]*>\s*(.*?)\s*</(?:p|tr)>\s*$", ps)
+				if m:
+					para = m.group(1)
+				else:
+					assert re.match("\s*</?(?:table|tbody|thead|caption|divisioncount|lordlist|lord)", ps)
+					para = ps
+				essxlist.extend(para.split())
+
+	essxindx.append(len(essxlist))
+	assert len(chks) + 1 == len(essxindx)
+
+
+	return None

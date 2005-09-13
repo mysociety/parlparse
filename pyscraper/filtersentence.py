@@ -100,7 +100,7 @@ def TokenOffRep(qoffrep, phrtok):
 #my hon. Friend the Member for Regent's Park and Kensington, North (Ms Buck)
 # (sometimes there are spurious adjectives
 rehonfriend = re.compile('''(?x)
-				(?:[Mm]y|[Hh]er|[Hh]is|[Oo]ur)
+				(?:[Mm]y|[Hh]er|[Hh]is|[Oo]ur|[Tt]he)
 				(\sright)?               # group 1 (privy counsellors)
 				(.{0,26}?)               # group 2 sometimes an extra adjective eg "relentlyessly inclusive"
 				(?:\s|&nbsp;)*(?:hon\.)?
@@ -108,12 +108,13 @@ rehonfriend = re.compile('''(?x)
 				(?:&.{4};and\sgallant&.{4};)?  # for such nonsense
 				(?:\s|&nbsp;)*(?:[Ff]riends?|Member)
 				(?:,?\s.{0,16})? 		 # superflous words (eg ", in this context,")
-				\sthe\sMember\sfor\s
+				(?:\sthe\sMember\s)?	 # missing in the case where it's mere's "the hon. Member for"
+				for\s
 				([^(]{3,60}?)			 # group 4 the name of the constituency
 				\s*
 				\(([^)]{5,60}?)\)		 # group 5 the name of the MP, inserted for clarity.
 						''')
-rehonfriendmarg = re.compile('the Member for [^(]{0,60}\(')
+rehonfriendmarg = re.compile('the\s+(hon\.\s*)?member for [^(]{0,60}\((?i)')
 def TokenHonFriend(mhonfriend, phrtok):
 	# will match for ids
 	#print mhonfriend.group(0)
@@ -152,22 +153,22 @@ class PhraseTokenize:
 		while stex:
 			# attempt to split the token
 			mtoken = tokenchain[itc][1].search(stex)
-			if mtoken:   # the and/or method fails with this 
-				headtex = stex[:mtoken.span(0)[0]] 
+			if mtoken:   # the and/or method fails with this
+				headtex = stex[:mtoken.span(0)[0]]
 			else:
 				headtex = stex
-			
-			# check for marginals 
+
+			# check for marginals
 			if tokenchain[itc][2] and tokenchain[itc][2].search(headtex):
 				pass
-#				print "Marginal token match:", tokenchain[itc][0]
-#				print tokenchain[itc][2].findall(headtex)
-#				print headtex
-	
+				#print "Marginal token match:", tokenchain[itc][0]
+				#print tokenchain[itc][2].findall(headtex)
+				#print headtex
+
 			# send down the one or three pieces up the token chain
 			if headtex:
 				self.TokenizePhraseRecurse(qs, headtex, itc + 1)
-			
+
 			# no more left
 			if not mtoken:
 				break

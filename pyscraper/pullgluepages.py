@@ -140,17 +140,17 @@ def GlueByNext(fout, url, urlx):
 
 # now we have the difficulty of pulling in the first link out of this silly index page
 def ExtractFirstLink(url, dgf, forcescrape):
-        request = urllib2.Request(url)
-        if not forcescrape and dgf and os.path.exists(dgf):
-                mtime = os.path.getmtime(dgf)
-                mtime = time.gmtime(mtime)
-                mtime = time.strftime("%a, %d %b %Y %H:%M:%S GMT", mtime)
-                request.add_header('If-Modified-Since', mtime)
-        opener = urllib2.build_opener( DefaultErrorHandler() )
-        urx = opener.open(request)
-        if hasattr(urx, 'status'):
-                if urx.status == 304:
-                        return ''
+	request = urllib2.Request(url)
+	if not forcescrape and dgf and os.path.exists(dgf):
+		mtime = os.path.getmtime(dgf)
+		mtime = time.gmtime(mtime)
+		mtime = time.strftime("%a, %d %b %Y %H:%M:%S GMT", mtime)
+		request.add_header('If-Modified-Since', mtime)
+	opener = urllib2.build_opener( DefaultErrorHandler() )
+	urx = opener.open(request)
+	if hasattr(urx, 'status'):
+		if urx.status == 304:
+			return ''
 
 	while 1:
 		xline = urx.readline()
@@ -170,6 +170,7 @@ def ExtractFirstLink(url, dgf, forcescrape):
 
 	if not lk:
 		print urx
+		print url
 		raise Exception, "No link found!!!"
 	return urlparse.urljoin(url, re.sub('#.*$' , '', lk[0]))
 
@@ -250,8 +251,8 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 		mnums = re.match("%s(\d{4}-\d\d-\d\d)([a-z]*)\.html" % typ, ldfile)
 		if mnums:
 			lddaymap.setdefault(mnums.group(1), []).append((AlphaStringToOrder(mnums.group(2)), mnums.group(2), ldfile))
-		else:
-			print "not recognized file:", ldfile
+		elif os.path.isfile(os.path.join(pwcmfolder, ldfile)):
+			print "not recognized file:", ldfile, " in ", pwcmfolder
 
 	# loop through the index of each lord line.
 	for dnu in ccmindex.res:
@@ -290,7 +291,9 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 		dtemp.close()
 
 		# now we have to decide whether it's actually new and should be copied onto dgfnext.
-		if dgflatest and os.path.getsize(tempfilename) == os.path.getsize(dgflatest):
+		# "getsize" is unreliable because the readlines strips all the '\r's from the file 
+		# and can make two different sized files the same size
+		if dgflatest:    # and os.path.getsize(tempfilename) == os.path.getsize(dgflatest):
 			# load in as strings and check matching
 			fdgflatest = open(dgflatest)
 			sdgflatest = fdgflatest.readlines()

@@ -61,15 +61,17 @@ fixsubs = 	[
 # parse through the usual intro headings at the beginning of the file.
 #[Mr. Speaker in the Chair] 0
 def StripDebateHeading(hmatch, ih, headspeak, bopt=False):
-        # print "StripDebateHeading", hmatch
-	reheadmatch = '(?:<stamp aname="[^"]*"/>)*' + hmatch
+	# print "StripDebateHeading", hmatch
+	reheadmatch = '(?:<stamp aname="[^"]*"/>)*\s*' + hmatch
 	if (not re.match(reheadmatch, headspeak[ih][0])) or headspeak[ih][2]:
 		if bopt:
 			return ih
 		print "headspeak", headspeak[ih]
-                if headspeak[ih][2]:
-                        raise ContextException('non-conforming section after "%s" heading. e.g. "in the chair" missing <h4><center> ' % hmatch, fragment=headspeak[ih][2])
-                raise ContextException('non-conforming "%s" heading ' % hmatch, fragment=headspeak[ih][0])
+		if headspeak[ih][2]:
+			raise ContextException('non-conforming section after "%s" heading. e.g. "in the chair" missing <h4><center> ' % hmatch, fragment=headspeak[ih][2])
+		print reheadmatch
+		print headspeak[ih][2]
+		raise ContextException('non-conforming "%s" heading ' % hmatch, fragment=headspeak[ih][0])
 	return ih + 1
 
 def StripDebateHeadings(headspeak, sdate):
@@ -78,7 +80,7 @@ def StripDebateHeadings(headspeak, sdate):
 	ih = StripDebateHeading('Initial', ih, headspeak)
 
 	# volume type heading
-	if headspeak[ih][0] == 'THE PARLIAMENTARY DEBATES':
+	if re.search('THE PARLIAMENTARY DEBATES', headspeak[ih][0]):
 		ih = StripDebateHeading('THE PARLIAMENTARY DEBATES', ih, headspeak)
 		ih = StripDebateHeading('OFFICIAL REPORT', ih, headspeak)
 		ih = StripDebateHeading('IN THE .*? SESSION OF THE .*? PARLIAMENT OF THE', ih, headspeak, True)
