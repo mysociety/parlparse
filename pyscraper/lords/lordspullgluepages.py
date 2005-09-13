@@ -174,8 +174,8 @@ def LordsPullGluePages(datefrom, dateto, bforcescrape):
 		mnums = re.match("daylord(\d{4}-\d\d-\d\d)([a-z]*)\.html", ldfile)
 		if mnums:
 			lddaymap.setdefault(mnums.group(1), []).append((AlphaStringToOrder(mnums.group(2)), mnums.group(2), ldfile))
-		else:
-			print "not recognized file:", ldfile
+		elif os.path.isfile(os.path.join(pwlordspages, ldfile)):
+			print "not recognized file:", ldfile, " in ", pwlordspages
 
 	# loop through the index of each lord line.
 	for dnu in clordsindex.res:
@@ -230,7 +230,7 @@ def LordsPullGluePages(datefrom, dateto, bforcescrape):
 		dtemp.close()
 
 		# now we have to decide whether it's actually new and should be copied onto dgfnext.
-		if dgflatest and os.path.getsize(tempfilename) == os.path.getsize(dgflatest):
+		if dgflatest: # the removal of \r makes testing sizes unreliable -- : and os.path.getsize(tempfilename) == os.path.getsize(dgflatest):
 			# load in as strings and check matching
 			fdgflatest = open(dgflatest)
 			sdgflatest = fdgflatest.readlines()

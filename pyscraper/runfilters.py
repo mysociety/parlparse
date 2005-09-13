@@ -109,13 +109,13 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 
 	# all other hansard types
 	else:
-		assert dname in ('wrans', 'debates', 'wms', 'wesminhall', 'lords')
+		assert dname in ('wrans', 'debates', 'wms', 'wesminhall', 'lordspages')
 		(flatb, gidname) = FILTERfunction(text, sdate)
 		CreateGIDs(gidname, sdate, sdatever, flatb)
 
 		# wrans case is special, with its question-id numbered gids
 		if dname == 'wrans':
-			majblocks = CreateWransGIDs(flatb, sdate)
+			majblocks = CreateWransGIDs(flatb, (sdate + sdatever)) # combine the date and datever.  the old style gids stand on the paragraphs still
 			bMakeOldWransGidsToNew = (sdate < "2005")
 
 		fout = open(tempfilename, "w")
@@ -157,7 +157,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 			WriteXMLHeader(foout)
 			foout.write('<publicwhip scrapeversion="%s" latest="no">\n' % xprev[1])
 			foout.writelines(xprevcompress)
-			foout.write("</publicwhip>\n")
+			foout.write("</publicwhip>\n\n")
 			foout.close()
 
 
@@ -166,6 +166,8 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 		xmlvalidate.parse(tempfilename) # validate XML before renaming
 
 	# in case of error, an exception is thrown, so this line would not be reached
+	# we rename both files (the old and new xml) at once
+
 	if os.path.isfile(jfout):
 		os.remove(jfout)
 	os.rename(tempfilename, jfout)
