@@ -149,7 +149,7 @@ def WriteXMLspeechrecord(fout, qb, bMakeOldWransGidsToNew, bIsWrans):
 
 	if bMakeOldWransGidsToNew:
 		assert bIsWrans
-		fout.write('<gidredirect oldwranstype="yes" oldgid="%s" newgid="%s"/>\n' % (qb.GID, qb.qGID))
+		fout.write('<gidredirect oldgid="%s" newgid="%s" matchtype="oldwransgid"/>\n' % (qb.GID, qb.qGID))
 
 	# decompose so we can make the wrans types
 	if bIsWrans:
@@ -171,7 +171,6 @@ def WriteXMLspeechrecord(fout, qb, bMakeOldWransGidsToNew, bIsWrans):
 		fout.write('\t')
 		mp = re.match("\s*<(?:p|tr)", lb)
 		if qb.stextptags and mp:
-#			print "lblblblblb", lb
 			fout.write(lb[:mp.end(0)])
 			fout.write(qb.stextptags[i])  # the inserting of a tag (probably an id or something)
 			fout.write(lb[mp.end(0):])
@@ -183,6 +182,11 @@ def WriteXMLspeechrecord(fout, qb, bMakeOldWransGidsToNew, bIsWrans):
 	# end tag
 	fout.write('</%s>\n' % qb.typ)
 
+
+# these altheadinggids were really only necessary when we were over-writing the xml files each time 
+# and had to defend against questions getting merged into groups.  
+# possibly they could be taken out as the linkforward is actually done between xml files and 
+# you'd merely get two separate questions pointing to one batch in the next file.
 
 errco = 9900
 class wransblock:
@@ -250,7 +254,7 @@ class wransblock:
 		if self.altheadinggids:
 			fout.write('\n')
 		for ah in self.altheadinggids:
-			fout.write('<gidredirect oldgid="%s" newgid="%s"/>\n' % (ah, self.headingqb.qGID))
+			fout.write('<gidredirect oldgid="%s" newgid="%s" matchtype="altques"/>\n' % (ah, self.headingqb.qGID))
 
 		for qb in self.queses:
 			WriteXMLspeechrecord(fout, qb, bMakeOldWransGidsToNew, True)
