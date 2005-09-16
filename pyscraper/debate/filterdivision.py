@@ -89,7 +89,9 @@ def MpList(fsm, vote, stampurl, sdate):
 					raise ContextException("Too many instances", stamp=stampurl, fragment=fnam)
 				mpid = remadecons[i]
 				multimatches[remadecons].append(fnam)
-				print "For name", fnam, "returning id", mpid, ";", i, " out of ", remadecons
+
+				# appears with multiple matching which is ignorable when both ambiguous people vote on same side of a division
+				#print "For name", fnam, "returning id", mpid, ";", i, " out of ", remadecons
 
 			elif not mpid and remadename == "MultipleMatch":
 				print "no match for", fnam, cons, sdate

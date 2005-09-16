@@ -313,8 +313,8 @@ class MemberList(xml.sax.handler.ContentHandler):
         if len(ids) == 0:
             return None, None, None
         if len(ids) > 1:
-            print 'Matched multiple times: ' + fullname + " : " + (cons or "[nocons]") + " : " + date + " : " + ids.__str__()
             if cons:
+				print 'Matched multiple times: ' + fullname + " : " + (cons or "[nocons]") + " : " + date + " : " + ids.__str__()
                 print 'perhaps constituency spelling is not known'
             lids = list(ids)  # I really hate the Set type
 			lids.sort()
