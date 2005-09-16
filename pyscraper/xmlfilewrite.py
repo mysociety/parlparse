@@ -224,7 +224,7 @@ class wransblock:
 			assert False
 
 	# the function that does the business
-	def regidcodes(self, minhgid, sdate):
+	def regidcodes(self, minhgid, sdate, qnumsseen):
 		# find minimal qnum which will be used as the basis
 		self.qnums.sort()
 		if not self.qnums:
@@ -242,6 +242,13 @@ class wransblock:
 			self.queses[i].qGID = "%s.q%d" % (basegidq, i)
 		for i in range(len(self.replies)):
 			self.replies[i].qGID = "%s.r%d" % (basegidq, i)
+
+		# make sure all qnums are new
+		for qnum in self.qnums:
+			if qnum in qnumsseen:
+				print "repeated qnum:", qnum
+				raise ContextException('repeated qnum', None, qnum)
+			qnumsseen[qnum] = 1
 
 		# this value is used for labelling the major heading.
 		# high probability that the value is stable, but it won't be used for linking
@@ -276,10 +283,11 @@ def CreateWransGIDs(flatb, sdate):
 			majblocks[-1][1][-1].addqb(qb)
 
 	# now renumber the gids everywhere
+	qnumsseen = { }
 	for majblock in majblocks:
 		minqnum = ""
 		for qblock in majblock[1]:
-			minqnum = qblock.regidcodes(minqnum, sdate)
+			minqnum = qblock.regidcodes(minqnum, sdate, qnumsseen)
 		assert minqnum
 		majblock[0].qGID = minqnum + ".mh" # major heading
 	return majblocks
