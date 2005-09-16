@@ -34,7 +34,7 @@ from resolvemembernames import memberList
 # pattern itself however it likes, and sends the text after the match back to
 # itself as a kind of recursion.
 
-# in the future it should be possible to pick out direct references to 
+# in the future it should be possible to pick out direct references to
 # other members of the house in speeches.
 
 
@@ -61,7 +61,7 @@ restandingo = re.compile('''(?x)
 		 (?:\s*\([a-z]\))?		 # bracketted letter
 		)
 		(?:\s*
-		\(([^()]*(?:\([^()]*\))?)\) # inclusion of title for clarity 
+		\(([^()]*(?:\([^()]*\))?)\) # inclusion of title for clarity
 		)?
 ''')
 restandingomarg = re.compile("Standing Order No")
@@ -117,13 +117,21 @@ rehonfriend = re.compile('''(?x)
 rehonfriendmarg = re.compile('the\s+(hon\.\s*)?member for [^(]{0,60}\((?i)')
 def TokenHonFriend(mhonfriend, phrtok):
 	# will match for ids
-	#print mhonfriend.group(0)
-	res = memberList.matchfullnamecons(mhonfriend.group(5), mhonfriend.group(4), phrtok.sdate, alwaysmatchcons = False)
-
+	orgname = mhonfriend.group(5)
+	res = memberList.matchfullnamecons(orgname, mhonfriend.group(4), phrtok.sdate, alwaysmatchcons = False)
 	if not res[0]:  # comes back as None
-		res = ("unknown", mhonfriend.group(5))
+		nid = "unknown"
+		mname = orgname
+	else:
+		nid = res[0]
+		mname = res[1]
+	assert not re.search("&", mname)
+	
+	# remove any xml entities from the name
+	orgname = res[1]
+
 	# if you put the .encode("latin-1") on the res[1] it doesn't work when there are strange characters.
-	return ('phrase', (' class="honfriend" id="%s" name="%s"' % (res[0], res[1])).encode("latin-1"))
+	return ('phrase', (' class="honfriend" id="%s" name="%s"' % (nid, mname)).encode("latin-1"))
 
 
 
