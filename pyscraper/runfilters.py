@@ -256,6 +256,7 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 
 					# update the list of files which have been changed
 					# (don't see why it can't be determined by the modification time on the file)
+                                        # (because rsync is crap, and different computers have different clocks)
 					newlistf = os.path.join(pwxmldirout, changedatesfile)
 					fil = open(newlistf,'a+')
 					fil.write('%d,%s\n' % (time.time(), os.path.split(jfout)[1]))
