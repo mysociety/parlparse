@@ -113,6 +113,7 @@ entitymap = {
         "&#8364;":'&euro;', # this is euro currency
         '&lquo;':"'",
         '&rquo;':"'",
+        '&minus;':"-",
 }
 entitymaprev = entitymap.values()
 
