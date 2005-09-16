@@ -22,12 +22,12 @@ from resolvemembernames import memberList
 
 
 # this code fits onto the paragraphs before the fixhtmlentities and
-# performs difficult regular expression matching that can be 
-# used for embedded links.  
+# performs difficult regular expression matching that can be
+# used for embedded links.
 
 # this code detects square bracket qnums [12345], standing order quotes,
-# official report references (mostly in wranses), and hyperlinks (most of which 
-# are badly typed and full of spaces).  
+# official report references (mostly in wranses), and hyperlinks (most of which
+# are badly typed and full of spaces).
 
 # the structure of each function is to search for an occurrance of the pattern.
 # it sends the text before the match to the next function, it encodes the
@@ -51,7 +51,7 @@ def TokenDate(ldate, phrtok):
 		phrtok.lastdate = ldate
 	except:
 		phrtok.lastdate = ''
-	return ('phrase', ' class="date" code="%s"' % phrtok.lastdate)
+	return ('phrase', ' class="date" code="%s"' % FixHTMLEntities(phrtok.lastdate))
 
 restandingo = re.compile('''(?x)
 		Standing\sOrder\sNo\.\s*
@@ -67,7 +67,7 @@ restandingo = re.compile('''(?x)
 restandingomarg = re.compile("Standing Order No")
 def TokenStandingOrder(mstandingo, phrtok):
 	if mstandingo.group(2):
-		return ('phrase', ' class="standing-order" code="%s" title="%s"' % (mstandingo.group(1), mstandingo.group(2)))
+		return ('phrase', ' class="standing-order" code="%s" title="%s"' % (FixHTMLEntities(mstandingo.group(1)), FixHTMLEntities(mstandingo.group(2))))
 	return ('phrase', ' class="standing-order" code="%s"' % mstandingo.group(1))
 
 def TokenHttpLink(mhttp, phrtok):
