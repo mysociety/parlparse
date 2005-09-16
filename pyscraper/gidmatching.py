@@ -45,6 +45,7 @@ def FactorChanges(flatb, scrapeversion):
 	chks = re.findall("<(major-heading|minor-heading|oral-heading|speech|division)\s(.*?)>\n([\s\S]*?)\n</(major-heading|minor-heading|oral-heading|speech|division)>",
 					  scrapeversion)
 
+
 	# make identically structured huge string over the previous xml file with heading stuff stripped out
 	essxlist = [ ]
 	essxindx = [ ]
@@ -108,7 +109,6 @@ def FactorChanges(flatb, scrapeversion):
 	# now apply the diffing function on this
 	sm = difflib.SequenceMatcher(None, essxlist, essflatblist)
 	smblocks = [ ((smb[0], smb[0] + smb[2]), (smb[1], smb[1] + smb[2]))  for smb in sm.get_matching_blocks()[:-1] ]
-
 
 	# we collect the range for the previous speeches and map it to a set of ranges
 	# in the next speeches
