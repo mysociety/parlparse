@@ -128,19 +128,18 @@ def CmIndexFromPage(urllinkpage):
                         if typ == 'Recess Written Answers':
                                 typ = 'Written Answers'
 
+                # get rid of this paragraph when they fix the link
+                if uind == "http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm050721/index/50725-x.htm":
+                        print "Fixing special link error case during summer 2005 of:", uind
+                        print otheruind
+                        continue
+
 		# check for repeats where the URLs differ
 		if (sdate, typ) in reses:
 
 			rc = reses[(sdate, typ)]
 			otheruind = rc[0]
 			if otheruind == uind:
-				continue
-
-			# get rid of this paragraph when they fix the link
-			if uind == "http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm050721/index/50725-x.htm" and \
-				otheruind == "http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm050721/index/50721-x.htm":
-				print "Fixing special link error case during summer 2005 of:", uind
-				uind = otheruind
 				continue
 
 			# sometimes they have old links to the cm edition as
