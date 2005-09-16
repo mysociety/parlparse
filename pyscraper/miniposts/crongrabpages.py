@@ -12,7 +12,7 @@ import string
 import miscfuncs
 import difflib
 
-rawdatapath = miscfuncs.rawdatapath
+pwcmdirs = miscfuncs.pwcmdirs
 
 
 # This code is for grabbing pages of government and party positions off the hansard webpage,
@@ -37,7 +37,7 @@ watchpages = {  "govposts":"http://www.parliament.uk/directories/hciolists/hmg.c
 # This is general code that works for single pages at single urls only and doesn't strip any of the garbage.
 def GrabWatchCopies(sdate):
 	# make directories that don't exist
-	chggdir = os.path.join(rawdatapath, "chggpages")
+	chggdir = os.path.join(pwcmdirs, "chgpages")
 	if not os.path.isdir(chggdir):
             raise Exception, 'Data directory %s does not exist, you\'ve not got a proper checkout from CVS.' % (chggdir)
 

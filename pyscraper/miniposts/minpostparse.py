@@ -22,8 +22,8 @@ from resolvemembernames import memberList
 from xmlfilewrite import WriteXMLHeader
 
 toppath = miscfuncs.toppath
-rawdatapath = miscfuncs.rawdatapath
-chggdir = os.path.join(rawdatapath, "chggpages")
+pwcmdirs = miscfuncs.pwcmdirs
+chggdir = os.path.join(pwcmdirs, "chgpages")
 chgtmp = tempfile.mktemp(".xml", "pw-chgtemp-", miscfuncs.tmppath)
 
 uniqgovposns = ["Prime Minister",
