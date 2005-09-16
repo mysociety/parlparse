@@ -196,7 +196,7 @@ def FactorChangesWrans(majblocks, scrapeversion):
 	for majblock in majblocks:
 		for qblock in majblock[1]:
 			for qnum in qblock.qnums:
-				assert qnum not in qnummapq
+				assert qnum not in qnummapq  # failure means this qnum is found twice in the file.
 				qnummapq[qnum] = qblock
 
 	# for each block, find the map forward and check if we want to reprint it in full.
