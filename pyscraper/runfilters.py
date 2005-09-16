@@ -109,7 +109,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 
 	# all other hansard types
 	else:
-		assert dname in ('wrans', 'debates', 'wms', 'wesminhall', 'lordspages')
+		assert dname in ('wrans', 'debates', 'wms', 'westminhall', 'lordspages')
 		(flatb, gidname) = FILTERfunction(text, sdate)
 		CreateGIDs(gidname, sdate, sdatever, flatb)
 

@@ -10,8 +10,7 @@ TODATE=$2
 # Run XML-generating scraper from Public Whip, getting new files from network
 # and parsing the written answers and debates.
 cd ~/parlparse/pyscraper
-# Turn off scraping, FAI 2007-07-27
-# ./lazyrunall.py --from=$FROMDATE --to=$TODATE scrape debates wrans westminhall wms
+./lazyrunall.py --from=$FROMDATE --to=$TODATE scrape debates wrans westminhall wms
 # We do these on separate lines, so if one fails, others still run
 ./lazyrunall.py $3 --quietc --from=$FROMDATE --to=$TODATE parse debates
 ./lazyrunall.py $3 --quietc --from=$FROMDATE --to=$TODATE parse wrans
