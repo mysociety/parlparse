@@ -1,4 +1,6 @@
 #!/bin/bash
+#set -x  # for debugging, prints each line before executing it
+
 # Jobs that need running weekly
 
 source ~/parlparse/scripts/consts
