@@ -20,18 +20,13 @@ source ~/parlparse/scripts/consts
 cd ~/parlparse/members
 svn -q update
 # Add any Hansard patch files we've made
-cd ~/parlparse/pyscraper/patches
-svn -q add debates/*.patch 2>&1 | grep -v "is already under version control"
-svn -q add wrans/*.patch 2>&1 | grep -v "is already under version control"
-svn -q add westminhall/*.patch 2>&1 | grep -v "is already under version control"
-svn -q add wms/*.patch 2>&1 | grep -v "is already under version control"
-# Get any new Hansard patch files
-cd ~/parlparse/pyscraper/patches
+cd ~/parldata/patches
+svn -q add */*.patch 2>&1 | grep -v "is already under version control"
 svn -q update
-
-# Add any new rawdata things
-cd ~/parlparse/rawdata/chggpages
+# ... and any new cmpages
+cd ~/parldata/cmpages
 svn -q add */*.html 2>&1 | grep -v "is already under version control"
+svn -q update
 
 # Run scraper
 cd ~/parlparse/scripts
@@ -51,6 +46,8 @@ snarf -q http://www.publicwhip.org.uk/cgi-bin/$PRODSCRIPT - > /dev/null &
 
 # Commit changes
 cd ~/parlparse
+svn -q commit -m "Daily work autocommit"
+cd ~/parldata
 svn -q commit -m "Daily work autocommit"
 
 #echo -n "Whole thing done time: "
