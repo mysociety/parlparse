@@ -142,16 +142,14 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 			xin.close()
 
 			# separate out the scrape versions
-			mpw = re.search('<publicwhip scrapeversion="([^"]*)" latest="([^"]*)">\n([\s\S]*?)</publicwhip>', xprevs)
-			if not mpw:
-				print "mismatch with pw header"
-				print re.search('<publicwhip[^>]*>', xprevs).group(0)
-			assert mpw.group(1) == xprev[1]
-			assert mpw.group(2) == "yes"
+			mpw = re.search('<publicwhip([^>]*)>\n([\s\S]*?)</publicwhip>', xprevs)
+			if mpw.group(1):
+				re.match(' scrapeversion="([^"]*)" latest="yes"', mpw.group(1)).group(1) == xprev[1]
+			# else it's old style xml files that had no scrapeversion or latest attributes
 			if dname == 'wrans':
-				xprevcompress = FactorChangesWrans(majblocks, mpw.group(3))
+				xprevcompress = FactorChangesWrans(majblocks, mpw.group(2))
 			else:
-				xprevcompress = FactorChanges(flatb, mpw.group(3))
+				xprevcompress = FactorChanges(flatb, mpw.group(2))
 
 			tempfilenameoldxml = tempfile.mktemp(".xml", "pw-filtertempold-", miscfuncs.tmppath)
 			foout = open(tempfilenameoldxml, "w")
