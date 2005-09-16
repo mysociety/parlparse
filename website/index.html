@@ -273,8 +273,11 @@ This is useful if you want to update every day to have the latest files, but
 only want to download the new or changed ones.  Type
 the following to get a directory listing of the data:
 <blockquote><tt>rsync ukparse.kforge.net::parldata/</tt></blockquote>
-<p>You probably want the scrapedxml folder.  See the rsync documentation
-for more information on how to synchronise your local directory
+<p>You probably want the scrapedxml folder.  Specify the following
+switches, to avoid syncing Subversion control and temporary files
+files: <tt>--exclude '.svn' --exclude 'tmp/'</tt> (the former
+are very large). See the rsync documentation for more information on
+how to synchronise your local directory
 with a remote one.
 
 <h2>Running the Parser</h2>
