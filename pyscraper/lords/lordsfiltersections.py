@@ -42,7 +42,6 @@ def StripLordsDebateHeadings(headspeak, sdate):
 	ih = 0
 	ih = StripDebateHeading('Initial', ih, headspeak)
 
-
 	# House of Lords
 	ih = StripDebateHeading('house of lords(?i)', ih, headspeak, True)
 
@@ -50,9 +49,9 @@ def StripLordsDebateHeadings(headspeak, sdate):
 	mdateheading = re.match('(?:<stamp aname="[^"]*"/>)*([\w\s\d,]*)\.', headspeak[ih][0])
 	if not mdateheading or (sdate != mx.DateTime.DateTimeFrom(mdateheading.group(1)).date) or headspeak[ih][2]:
 		print headspeak[ih]
-		ContextException('non-conforming date heading')
-	ih = ih + 1
-
+		#raise ContextException('non-conforming date heading')  # recoverable?  
+	else:
+		ih = ih + 1
 
 	if re.match("THE QUEEN(?:'|&....;)S SPEECH", headspeak[ih][0]):
 		print headspeak[ih][0]
@@ -65,12 +64,11 @@ def StripLordsDebateHeadings(headspeak, sdate):
 
 	else:
 		# The House met at eleven of the clock (Prayers having been read earlier at the Judicial Sitting by the Lord Bishop of St Albans): The CHAIRMAN OF COMMITTEES on the Woolsack.
-		gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*(?:reassembling.*?recess, )?the house met at ([^(]*)(?i)', headspeak[ih][0])
+		gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*(?:reassembling.*?recess, )?the house (?:met|resumed) at ([^(]*)(?i)', headspeak[ih][0])
 		if (not gstarttime) or headspeak[ih][2]:
 			print "headspeakheadspeakih", headspeak[ih]
 			raise ContextException('non-conforming "house met at" heading ')
 		ih = ih + 1
-
 
 		# Prayers&#151;Read by the Lord Bishop of Southwell.
 		ih = StripDebateHeading('prayers(?i)', ih, headspeak, True)

@@ -112,6 +112,10 @@ def FactorChanges(flatb, scrapeversion):
 
 	# we collect the range for the previous speeches and map it to a set of ranges
 	# in the next speeches
+
+	# case of missing entries map to the last speech matched to.
+	# lastmatchg = 0 uncomment in case we miss the first entry
+
 	res = [ ]
 	for ix in range(len(chks)):
 		ixr = (essxindx[ix], essxindx[ix + 1])
@@ -129,34 +133,39 @@ def FactorChanges(flatb, scrapeversion):
 				nixrl.append(ixit)
 				nixrlsz += ixit[1] - ixit[0]
 
-		if not nixrl:
-			print chks[ix]
-		assert nixrl # need to handle the empty case where no overlap found specially
-		# type would then be matchtype = "missing"
+		# at least one word is overlapping
+		if nixrl:
+			# go through the matchint cases
+			matchlist = [ GetMinIndex(essflatbindx, nixrl[0][0]) ]
+			if nixrlsz != ixr[1] - ixr[0] or len(nixrl) > 1:
+				matchtype = "changes"
+				for ixit in nixrl:
+					ml = GetMinIndex(essflatbindx, ixit[0])
+					if matchlist[-1] != ml:
+						matchlist.append(ml)
+					ml = GetMinIndex(essflatbindx, ixit[1] - 1)
+					if matchlist[-1] != ml:
+						matchlist.append(ml)
+				if len(matchlist) != 1:
+					matchtype = "multiplecover"
+			else:
+				assert len(nixrl) == 1
+				matchtype = "perfectmatch"
 
-
-		# go through the matchint cases
-		matchlist = [ GetMinIndex(essflatbindx, nixrl[0][0]) ]
-		if nixrlsz != ixr[1] - ixr[0] or len(nixrl) > 1:
-			matchtype = "changes"
-			for ixit in nixrl:
-				ml = GetMinIndex(essflatbindx, ixit[0])
-				if matchlist[-1] != ml:
-					matchlist.append(ml)
-				ml = GetMinIndex(essflatbindx, ixit[1] - 1)
-				if matchlist[-1] != ml:
-					matchlist.append(ml)
-			if len(matchlist) != 1:
-				matchtype = "multiplecover"
+		# missing speech
 		else:
-			assert len(nixrl) == 1
-			matchtype = "perfectmatch"
+			print "Missing speech matched to last matched speech"
+			print chks[ix]
+			matchlist = [ lastmatchg ]
+			matchtype = "missing"
 
-		# output the pile of redirects of the right type
+		# output the (sometimes more than) one redirect of the right redirect type
 		chk = chks[ix]
 		oldgid = re.search('id="([\w\d\-\./]*)"', chk[1]).group(1)
 		for matchg in matchlist:
 			res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="%s"/>\n' % (oldgid, flatb[matchg].GID, matchtype))
+			lastmatchg = matchg
+
 		# output old version as well, if it's different
 		if matchtype != "perfectmatch":
 			res.append("<%s %s>\n" % (chk[0], chk[1]))

@@ -32,12 +32,13 @@ regcolumnum11 = '<p>%s</p>\s*<font size=3>' % regcolmat
 regcolumnum1 = '%s%s%s' % (regcolp[0], regcolmat, regcolp[1])
 regcolumnum2 = '<p>\s*<font size=3>%s</p>\s*<font size=2>' % regcolmat
 regcolumnum3 = '%s\s*</ul>%s%s\s*<ul>' % (regcolp[0], regcolmat, regcolp[1])
+regcolumnum3i = '%s\s*</i>%s%s\s*<i>' % (regcolp[0], regcolmat, regcolp[1])
 regcolumnum4 = '<p>\s*</ul><font size=3>%s</p>\s*<ul><font size=2>' % regcolmat
 #regcolumnum5 = '<p>\s*(?:<font size=3>\s*)?%s</p>\s*<font size=[23]>' % regcolmat
 regcolumnum6 = '<p>\s*</ul>(?:</ul></ul>)?%s</p>\s*<ul>(?:<ul><ul>)?<font size=3>' % regcolmat
 
 
-recolumnumvals = re.compile('(?:<br>&nbsp;<br>|<p>|</ul>|<font size=\d>|\s|</?a[^>]*>)*?<b>([^:<]*)\s*:\s*column\s*(\D*?)(\d+)\s*</b>(?:<br>&nbsp;<br>|</p>|<ul>|<font size=\d>|\s)*$(?i)')
+recolumnumvals = re.compile('(?:<br>&nbsp;<br>|<p>|</ul>|</i>|<font size=\d>|\s|</?a[^>]*>)*?<b>([^:<]*)\s*:\s*column\s*(\D*?)(\d+)\s*</b>(?:<br>&nbsp;<br>|</p>|<ul>|<i>|<font size=\d>|\s)*$(?i)')
 
 # <H5>12.31 p.m.</H5>
 # the lords times put dots in "p.m."  but the commons never do.
@@ -50,7 +51,7 @@ reaname = '<a name\s*=\s*"[^"]*">\s*</a>(?i)'
 reanamevals = re.compile('<a name\s*=\s*"([^"]*)">(?i)')
 
 # match in right order so the longer ones get checked first.  (prob a good way to do r3 and r6 variants but don't know it
-recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regcolumnum11, regcolumnum1, regcolumnum2, regcolumnum6, regcolumnum4, regcolumnum3, regtime1, regtime2, reaname))
+recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regcolumnum11, regcolumnum1, regcolumnum2, regcolumnum6, regcolumnum4, regcolumnum3, regcolumnum3i, regtime1, regtime2, reaname))
 
 remarginal = re.compile(':\s*column\s*\D*(\d+)(?i)')
 
@@ -84,7 +85,7 @@ def FilterLordsColtime(fout, text, sdate):
 			elif lcolnum == colnum:
 				pass	# spurious repeat of column number stamps
 			# good (we get skipped columns in divisions)
-			elif (colnum == -1) or (lcolnum == colnum + 1) or (lcolnum == colnum + 2):
+			elif (colnum == -1) or (colnum + 1 <= lcolnum <= colnum + 5):  # was 2 but this caused us to miss ones
 				colnum = lcolnum
 				fout.write('<stamp coldate="%s" colnum="%s"/>' % (sdate, colnum))
 
