@@ -197,6 +197,7 @@ def FactorChangesWrans(majblocks, scrapeversion):
 		res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="perfectmatch"/>\n' % (mhchks[i][0], majblocks[i][0].qGID))
 
 	# break into question blocks
+	# [0]=headingGID, [1]=further choss, [2]=headingtext, [3]=question+reply text
 	qebchks = re.findall('<minor-heading id="([^"]*)"([^>]*)>\n([\s\S]*?)</minor-heading>\n([\s\S]*?)\s*(?=<(?:major-heading|minor-heading|gidredirect[^>]*oldwranstype|/publicwhip))',
 						 scrapeversion)
 
@@ -224,11 +225,19 @@ def FactorChangesWrans(majblocks, scrapeversion):
 
 		# now have to check matching.
 		# convert both to strings and compare.
-		essxfq = [ ]
+		essxfq = [ ]   # this forms the string which we will be comparing against.
+		qebchkquesids = [ ] # expect only one of each
+		qebchkreplids = [ ]
 		for wd in re.findall("<[^>]*>|&\w+;|[^<>\s]+", qebchk[3]):
-			mwd = re.match("<(p|tr|reply|ques)[^>]*>", wd)
+			mwd = re.match('<(p|tr|reply|ques)\s*(?:p?id="([^"]*)")?[^>]*>', wd)
 			if mwd:
 				essxfq.append("<%s>" % mwd.group(1))
+				assert mwd.group(1) not in ("reply", "ques") or mwd.group(2)
+				if mwd.group(1) == "ques":
+					qebchkquesids.append(mwd.group(2))
+				elif mwd.group(1) == "reply":
+					qebchkreplids.append(mwd.group(2))
+
 			elif not re.match("<gidredirect", wd):
 				essxfq.append(wd)
 
@@ -251,6 +260,17 @@ def FactorChangesWrans(majblocks, scrapeversion):
 		if bchanges:
 			res.append("\n")
 		res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="%s"/>\n' % (qebchk[0], qblock.headingqb.qGID, matchtype))
+
+		# write the parallel redirects for the question and reply (both mapping to same parts of each)
+		# this may be more sophisticated once we see an example of failure
+		# ultimately this is a job for paragraph matching
+		assert len(qebchkquesids) == len(qblock.queses) == 1
+		assert len(qebchkreplids) == len(qblock.replies) == 1
+		for qebqr in qebchkquesids:
+			res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="%s"/>\n' % (qebqr, qblock.queses[0].qGID, matchtype))
+		for qebqr in qebchkreplids:
+			res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="%s"/>\n' % (qebqr, qblock.replies[0].qGID, matchtype))
+
 
 		# if changes write out the original, else just the gidmaps
 		if bchanges:
