@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Change watcher, loads pages often and if they have changed either
 # emails someone, or keeps a copy of # each version.
