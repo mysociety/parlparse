@@ -165,7 +165,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 
 	def MatchRevName(self, fss, stampurl):
 		assert fss
-		lfn = re.match('(.*?)(?: of (.*?))?, ((?:L|B|Abp|Bp|V|E|D|M|C|Ly)\.)$', fss)
+		lfn = re.match('(.*?)(?: of (.*?))?, ?((?:L|B|Abp|Bp|V|E|D|M|C|Ly)\.?)$', fss)
 		if not lfn:
 			print "$$$%s$$$" % fss
 			raise ContextException("No match of format in MatchRevName", stamp=stampurl, fragment=fss)
