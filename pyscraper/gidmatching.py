@@ -198,7 +198,8 @@ def FactorChangesWrans(majblocks, scrapeversion):
 
 	# break into question blocks
 	# [0]=headingGID, [1]=further choss, [2]=headingtext, [3]=question+reply text
-	qebchks = re.findall('<minor-heading id="([^"]*)"([^>]*)>\n([\s\S]*?)</minor-heading>\n([\s\S]*?)\s*(?=<(?:major-heading|minor-heading|gidredirect[^>]*oldwranstype|/publicwhip))',
+	# the "<publicwhip> tags have been removed, so split to end of document
+	qebchks = re.findall('<minor-heading id="([^"]*)"([^>]*)>\n([\s\S]*?)</minor-heading>\n([\s\S]*?)\s*(?=<(?:major-heading|minor-heading|gidredirect[^>]*oldwranstype)|$)',
 						 scrapeversion)
 
 	# make the map from qnums to blocks
