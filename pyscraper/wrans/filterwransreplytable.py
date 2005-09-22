@@ -84,7 +84,7 @@ def ParseTable(lstable, stampur):
 	if stitle:
 		ts = re.match('(?:\s|<b>|<center>)+([\s\S]*?)(?:</b>|</center>)+\s*([\s\S]*?)\s*$(?i)', stitle)
 		if not ts:
-			raise Exception, ' non-standard table title: %s ' % stitle
+			raise ContextException(' non-standard table title: %s ' % stitle, stamp=stampur, fragment=stitle)
 		Lstitle = [ '\t<caption>' ]
 		Lstitle.append(FixHTMLEntities(ts.group(1), '</?font[^>]*>|</?p>|\n(?i)', stampurl=stampur))
 		if ts.group(2):
