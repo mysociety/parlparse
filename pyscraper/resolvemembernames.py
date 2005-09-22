@@ -287,6 +287,7 @@ class MemberList(xml.sax.handler.ContentHandler):
     # (rather than just treating cons as None if the cons is unknown)
     # date or cons can be None
     def matchfullnamecons(self, fullname, cons, date, alwaysmatchcons = True):
+        origfullname = fullname
         fullname = self.basicsubs(fullname)
         fullname = fullname.strip()
         if cons:
@@ -313,9 +314,15 @@ class MemberList(xml.sax.handler.ContentHandler):
         if len(ids) == 0:
             return None, None, None
         if len(ids) > 1:
+            # only error for case where cons is present, others case happens too much
             if cons:
-				print 'Matched multiple times: ' + fullname + " : " + (cons or "[nocons]") + " : " + date + " : " + ids.__str__()
-                print 'perhaps constituency spelling is not known'
+                errstring = ('Matched multiple times: ' + fullname + " : " + 
+                    (cons or "[nocons]") + " : " + date + " : " + ids.__str__() + 
+                    ' - perhaps constituency spelling is not known')
+                # actually, even no-cons case happens too often
+                # (things like ministerships, with name in brackets after them)
+                print errstring
+                #raise ContextException(errstring, fragment=origfullname)
             lids = list(ids)  # I really hate the Set type
 			lids.sort()
             return None, "MultipleMatch", tuple(lids)
