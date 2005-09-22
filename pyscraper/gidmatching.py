@@ -265,10 +265,14 @@ def FactorChangesWrans(majblocks, scrapeversion):
 		# write the parallel redirects for the question and reply (both mapping to same parts of each)
 		# this may be more sophisticated once we see an example of failure
 		# ultimately this is a job for paragraph matching
-		assert len(qebchkquesids) == len(qblock.queses) == 1
+
+		# sometimes we get more than one question.  
+		# when we find a mismatch we'll deal with it as a special paragraph problem, or not bother.
+		assert len(qebchkquesids) == len(qblock.queses)
+		for i in range(len(qebchkquesids)):
+			res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="%s"/>\n' % (qebchkquesids[i], qblock.queses[i].qGID, matchtype))
+
 		assert len(qebchkreplids) == len(qblock.replies) == 1
-		for qebqr in qebchkquesids:
-			res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="%s"/>\n' % (qebqr, qblock.queses[0].qGID, matchtype))
 		for qebqr in qebchkreplids:
 			res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="%s"/>\n' % (qebqr, qblock.replies[0].qGID, matchtype))
 
