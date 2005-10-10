@@ -136,7 +136,7 @@ def FilterLordsColtime(fout, text, sdate):
 
 # The parsing of each differs, which is why it is important to split this document 
 # into streams first, even though the boundaries are quite blurred and 
-# sometimes the column code numbering on either side is errant.  
+# sometimes the column code numbering on either side is errant.
 
 
 regacol = '<a name="column_([^\d>"]*)\d+"></a>'
@@ -204,10 +204,11 @@ def SplitLordsText(text, sdate):
 	if chns:
 		print chns.group(0)
 		raise ContextException("wrong column numbering in main debate", fragment=chns.group(0))
+
 	# check that there is always an adjournment in the main debate, with some of the trash that gets put before it
 	# this kind of overguessing is to get a feel for the variation that is encountered.
 	if not re.search('(?:<ul><ul><p>|</a>\s*(?:<ul>|<p>)?|<p>\s*<ul><ul>(?:<ul>)?)\s*(?:Parliament was prorogued|House adjourned )(?i)', res[0]):
-		raise ContextException("house adjourned failure")
+		raise ContextException("house adjourned failure", stamp=None, fragment=res[0][-100:])
 
 	# check the title of the Grand Committee
 	if res[1]:
