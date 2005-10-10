@@ -33,7 +33,7 @@ def StripDebateHeading(hmatch, ih, headspeak, bopt=False):
 	if (not re.match(reheadmatch, headspeak[ih][0])) or headspeak[ih][2]:
 		if bopt:
 			return ih
-		print headspeak[ih]
+		print "\n", headspeak[ih]
 		raise ContextException('non-conforming "%s" heading ' % hmatch)
 	return ih + 1
 
@@ -49,7 +49,7 @@ def StripLordsDebateHeadings(headspeak, sdate):
 	mdateheading = re.match('(?:<stamp aname="[^"]*"/>)*([\w\s\d,]*)\.', headspeak[ih][0])
 	if not mdateheading or (sdate != mx.DateTime.DateTimeFrom(mdateheading.group(1)).date) or headspeak[ih][2]:
 		print headspeak[ih]
-		#raise ContextException('non-conforming date heading')  # recoverable?  
+		#raise ContextException('non-conforming date heading')  # recoverable?
 	else:
 		ih = ih + 1
 
@@ -67,7 +67,7 @@ def StripLordsDebateHeadings(headspeak, sdate):
 		gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*(?:reassembling.*?recess, )?the house (?:met|resumed) at ([^(]*)(?i)', headspeak[ih][0])
 		if (not gstarttime) or headspeak[ih][2]:
 			print "headspeakheadspeakih", headspeak[ih]
-			raise ContextException('non-conforming "house met at" heading ')
+			raise ContextException('non-conforming "house met at" heading ', fragment=headspeak[ih][-10:])
 		ih = ih + 1
 
 		# Prayers&#151;Read by the Lord Bishop of Southwell.
