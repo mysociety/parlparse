@@ -87,7 +87,9 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 	# now apply patches and parse
 	patchtempfilename = tempfile.mktemp("", "pw-applypatchtemp-", miscfuncs.tmppath)
 
-	print "reading " + jfin
+        if not bquietc:
+                print "reading " + jfin
+
 	# apply patch filter
 	kfin = jfin
 	if os.path.isfile(patchfile) and ApplyPatches(jfin, patchtempfilename, patchfile):

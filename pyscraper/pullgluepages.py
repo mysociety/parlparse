@@ -226,7 +226,7 @@ def GlueAllType(pcmdir, cmindex, nametype, fproto, forcescrape):
                                 os.remove(dgf)
 	        	        os.rename(tempfilename, dgf)
                 else:
-                        print 'scraping %s %s' % (dnu[0], dnu[1])
+                        # print 'scraping %s %s' % (dnu[0], dnu[1])
         		os.rename(tempfilename, dgf)
 
 ###############
@@ -308,7 +308,7 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 				print "  matched with:", dgflatest
 				continue
 
-		print "  writing:", dgfnext
+		# print "  writing:", dgfnext
 		os.rename(tempfilename, dgfnext)
 
 

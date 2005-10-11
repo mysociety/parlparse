@@ -57,7 +57,7 @@ def StripWransHeadings(headspeak, sdate):
 			(sdate != mx.DateTime.DateTimeFrom(string.replace(headspeak[i][0], "&nbsp;", " ")).date)) or headspeak[i][2]:
 		if (not parlPhrases.wransmajorheadings.has_key(headspeak[i][0])) or headspeak[i][2]:
 			print headspeak[i]
-			raise Exception, 'non-conforming second heading '
+			raise ContextException('non-conforming second heading', stamp=None, fragment=headspeak[i][0])
 	else:
 		i += 1
 
