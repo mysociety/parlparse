@@ -118,9 +118,10 @@ def GlueAllType(pcmdir, cmindex, fproto, deleteoutput):
                                             if pgx[0] == url:
                                                     #print 'skipping ' + url
                                                     continue
-                            print 'RE-scraping ' + url
+                            #print 'RE-scraping ' + url
                     else:
-                            print 'scraping ' + url
+                            pass
+                            #print 'scraping ' + url
 
                     # now we take out the local pointer and start the gluing
                     dtemp = open(tempfilename, "w")
