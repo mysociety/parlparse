@@ -188,13 +188,14 @@ def FactorChangesWrans(majblocks, scrapeversion):
 	# first extract all the oldtype gid-redirects that will have been put in here by the pre-2005 bMakeOldWransGidsToNew cases
 	res = re.findall('<gidredirect oldgid="[^"]*" newgid="[^"]*" matchtype="oldwransgid"/>\n', scrapeversion)
 
-	# extract major headings and match them exactly (till we find a failed example).
+	# extract major headings and match injectively exactly (till we find a failed example).
 	mhchks = re.findall('<major-heading id="([^"]*)"[^>]*>\n\s*([\s\S]*?)\s*?\n</major-heading>', scrapeversion)
-	assert len(majblocks) == len(mhchks)
-	for i in range(len(majblocks)):
-		heading = ("".join(majblocks[i][0].stext)).strip()
-		assert heading == mhchks[i][1]
-		res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="perfectmatch"/>\n' % (mhchks[i][0], majblocks[i][0].qGID))
+
+	majblocknames = [ "".join(majblock[0].stext).strip()  for majblock in majblocks ]
+	for mhchk in mhchks:
+		i = majblocknames.index(mhchk[1])  # if this throws an error we've got a heading in the old list that's not in the new -- redo this code
+		res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="perfectmatch"/>\n' % (mhchk[0], majblock[0].qGID))
+		majblocknames[i] = None # take it out of circulation
 
 	# break into question blocks
 	# [0]=headingGID, [1]=further choss, [2]=headingtext, [3]=question+reply text

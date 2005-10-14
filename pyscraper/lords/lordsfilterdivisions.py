@@ -27,7 +27,7 @@ from lordsfilterspeakers import lordlist
 
 recontma = re.compile('<center><b>(.*?)\s*</b></center>(?i)')
 retellma = re.compile('(.*?)\s*\[(Teller)\]$')
-reoffma = re.compile('(.*\S)\s*\((.*?)\)$')
+reoffma = re.compile('(.*\S)\s*[\[\(](.*?)[\)\]]$')
 def LordsFilterDivision(text, stampurl, sdate):
 
 	# the intention is to splice out the known parts of the division
