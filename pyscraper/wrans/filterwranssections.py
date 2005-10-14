@@ -41,19 +41,18 @@ def StripWransHeadings(headspeak, sdate):
 	i = 0
 	if (headspeak[i][0] != 'Initial') or headspeak[i][2]:
 		print headspeak[0]
-		raise Exception, 'non-conforming Initial heading '
+		raise ContextException('non-conforming Initial heading ')
 	i += 1
 
 	if (not re.match('written answers? to questions?(?i)', headspeak[i][0])) or headspeak[i][2]:
 		if not re.match('The following answers were received.*', headspeak[i][0]):
 			pass
                         # print headspeak[i]
-			# raise Exception, 'non-conforming Initial heading '
 	else:
 		i += 1
 
-	if (not re.match('The following answers were received.*', headspeak[i][0]) and
-            not re.match('The following question was answered on.*', headspeak[i][0]) and \
+	if (not re.match('(?:<stamp[^>]*>)?The following answers were received.*', headspeak[i][0]) and
+            not re.match('(?:<stamp[^>]*>)?The following question was answered on.*', headspeak[i][0]) and \
 			(sdate != mx.DateTime.DateTimeFrom(string.replace(headspeak[i][0], "&nbsp;", " ")).date)) or headspeak[i][2]:
 		if (not parlPhrases.wransmajorheadings.has_key(headspeak[i][0])) or headspeak[i][2]:
 			print headspeak[i]
