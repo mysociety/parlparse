@@ -12,12 +12,14 @@ import time
 import tempfile
 import string
 import miscfuncs
+import shutil
 
 toppath = miscfuncs.toppath
 pwcmdirs = miscfuncs.pwcmdirs
 tempfilename = miscfuncs.tempfilename
 
 from miscfuncs import NextAlphaString, AlphaStringToOrder
+from patchtool import GenPatchFileNames
 
 
 # Pulls in all the debates, written answers, etc, glues them together, removes comments,
@@ -174,60 +176,8 @@ def ExtractFirstLink(url, dgf, forcescrape):
 		raise Exception, "No link found!!!"
 	return urlparse.urljoin(url, re.sub('#.*$' , '', lk[0]))
 
-def getHTMLdiffname(jfout):
-        renn = re.compile("%s.diff(\d+)" % os.path.basename(jfout))
-        ipp = 1
-        for pp in os.listdir(os.path.dirname(jfout)):
-                regpp = renn.match(pp)
-                if regpp:
-                        ipp = string.atoi(regpp.group(1)) + 1
-        res = "%s.diff%d" % (jfout, ipp)
-        assert renn.match(os.path.basename(res))
-        assert not os.path.isfile(res)
-        return res
-
-# read through our index list of daydebates
-def GlueAllType(pcmdir, cmindex, nametype, fproto, forcescrape):
-
-	for dnu in cmindex:
-		# pick only the right type
-		if not re.search(nametype, dnu[1]):
-			continue
-
-		# make the filename
-		dgf = os.path.join(pcmdir, (fproto % dnu[0]))
-
-		# hansard index page
-		urlx = dnu[2]
 
 
-                if dnu[1] == 'Votes and Proceedings':
-                        url0 = urlx
-                else:
-                        url0 = ExtractFirstLink(urlx, dgf, forcescrape)
-                if not url0:
-                        continue
-
-		# now we take out the local pointer and start the gluing
-		dtemp = open(tempfilename, "w")
-		GlueByNext(dtemp, url0, urlx)
-		dtemp.close()
-
-                if os.path.exists(dgf):
-                        outpatch = getHTMLdiffname(dgf)
-                        ern = os.system('diff -u --ignore-matching-lines="<.*?url=[^>]*>" %s %s > %s' % (tempfilename, dgf, outpatch))
-                        if ern == 2:
-                                print "Error running diff"
-                                raise Exception, "Error running diff"
-                        if not os.path.getsize(outpatch):
-                                os.remove(outpatch)
-                        else:
-                                print "Hansard has changed, writing difffile %s" % outpatch
-                                os.remove(dgf)
-	        	        os.rename(tempfilename, dgf)
-                else:
-                        # print 'scraping %s %s' % (dnu[0], dnu[1])
-        		os.rename(tempfilename, dgf)
 
 ###############
 # main function
@@ -254,7 +204,7 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 		elif os.path.isfile(os.path.join(pwcmfolder, ldfile)):
 			print "not recognized file:", ldfile, " in ", pwcmfolder
 
-	# loop through the index of each lord line.
+	# loop through the index of day line.
 	for dnu in ccmindex.res:
 		# implement date range
 		if not re.search(typ, dnu[1], re.I):
@@ -263,13 +213,16 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 			continue
 
 		# make the filename
-		dgflatestalpha, dgflatest = "", None
+		dgflatestalpha, dgflatest, dgflatestdayalpha = "", None, None
 		if dnu[0] in lddaymap:
-			ldgf = max(lddaymap[dnu[0]])
+			ldgf = max(lddaymap[dnu[0]]) # uses alphastringtoorder
 			dgflatestalpha = ldgf[1]
 			dgflatest = os.path.join(pwcmfolder, ldgf[2])
-		ldgfnext = '%s%s%s.html' % (typ, dnu[0], NextAlphaString(dgflatestalpha))
+			dgflatestdayalpha = "%s%s" % (dnu[0], dgflatestalpha)
+		dgfnextalpha = NextAlphaString(dgflatestalpha)
+		ldgfnext = '%s%s%s.html' % (typ, dnu[0], dgfnextalpha)
 		dgfnext = os.path.join(pwcmfolder, ldgfnext)
+		dgfnextdayalpha = "%s%s" % (dnu[0], dgfnextalpha)
 		assert not dgflatest or os.path.isfile(dgflatest)
 		assert not os.path.isfile(dgfnext)
 
@@ -291,7 +244,7 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 		dtemp.close()
 
 		# now we have to decide whether it's actually new and should be copied onto dgfnext.
-		# "getsize" is unreliable because the readlines strips all the '\r's from the file 
+		# "getsize" is unreliable because the readlines strips all the '\r's from the file
 		# and can make two different sized files the same size
 		if dgflatest:    # and os.path.getsize(tempfilename) == os.path.getsize(dgflatest):
 			# load in as strings and check matching
@@ -303,13 +256,36 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 			sdgfnext = fdgfnext.readlines()
 			fdgfnext.close()
 
-			# first line contains the scrape date
+			# first line contains the scrape date, so we ignore it
 			if sdgflatest[1:] == sdgfnext[1:]:
 				print "  matched with:", dgflatest
 				continue
 
+
+		# before we copy over the file from tempfilename to dgfnext, copy over the patch if there is one.
+
+		# now find the patch file and copy it in, verifying we know what we're doing
+		lpatchfilenext, lorgfilenext = GenPatchFileNames(folder, dgfnextdayalpha)[:2]
+		assert lorgfilenext == dgfnext  # patchtool should give same name we are using
+		if os.path.isfile(lpatchfilenext):
+			print "    *****Warning: patchfile already present for newly scraped file:", lpatchfilenext
+			assert False  # patchfile already present for newly scraped file
+		if dgflatest:
+			lpatchfile, lorgfile, tmpfile = GenPatchFileNames(folder, dgflatestdayalpha)[:3]
+			assert lorgfile == dgflatest
+
+			# if there's an old patch, apply the patch to the old file
+			if os.path.isfile(lpatchfile):
+				shutil.copyfile(tempfilename, tmpfile)
+				status = os.system("patch --quiet %s < %s" % (tmpfile, lpatchfile))
+				if status == 0:
+					print "Patchfile still applies, copying over ", lpatchfile, "=>", lpatchfilenext
+					print "   There you go..."
+					shutil.copyfile(lpatchfile, lpatchfilenext)
+				else:
+					print "    Could not apply old patch file to this, status=", status
+
+		# now commit the file
 		# print "  writing:", dgfnext
 		os.rename(tempfilename, dgfnext)
-
-
 

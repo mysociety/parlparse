@@ -76,6 +76,8 @@ def ApplyPatches(filein, fileout, patchfile):
 			return True
 
 		print "blanking out failed patch %s" % patchfile
+		print "---- This should not happen, therefore assert!" 
+		assert False
 		os.rename(patchfile, patchfile + ".old~")
 		blankfile = open(patchfile, "w")
 		blankfile.close()
