@@ -141,7 +141,7 @@ def FilterWransSpeakers(fout, text, sdate):
 				(name, cons) = (boldnamestring, None)
 
 			# match the member to a unique identifier
-			(id, remadename, remadecons) = memberList.matchwransname(name, cons, sdate)
+			(id, remadename, remadecons) = memberList.matchfullnamecons(name, cons, sdate, alwaysmatchcons = False)
 			if id and remadename:
 				remadename = ' speakername="%s"' % (remadename)
 			if not id:
@@ -149,6 +149,7 @@ def FilterWransSpeakers(fout, text, sdate):
 					id = 'unknown'
 					remadename = ' speakername="%s" error="MultipleMatch"' % boldnamestring
 				else:
+					print "  No name,const match (%s,%s)" % (name, cons)
 					raise ContextException("No name match", stamp=stampurl, fragment=boldnamestring)
 
 

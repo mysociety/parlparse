@@ -360,16 +360,6 @@ class MemberList(xml.sax.handler.ContentHandler):
         remadename = self.members[id]["firstname"] + " " + self.members[id]["lastname"]
         return 'speakerid="%s" speakername="%s"%s' % (id, remadename, speakeroffice)
 
-    # Exclusively for wrans
-    def matchwransname(self, fullname, cons, date):
-        # Have got first instance like this:
-        # The Deputy Prime Minister and First Secretary of State   (Mr. Prescott)
-        # Just turning alwaysmatchcons off for now
-        # Do something fancier if it happens a lot
-        res = self.matchfullnamecons(fullname, cons, date, alwaysmatchcons = False)
-		if not res or not res[1] or not res[2]:
-			raise Exception, 'No match: ' + fullname + " : " + (cons or "[nocons]")
-		return res
 
     # Lowercases a surname, getting cases like these right:
     #     CLIFTON-BROWN to Clifton-Brown
@@ -594,7 +584,7 @@ class MemberList(xml.sax.handler.ContentHandler):
     def getmembersoneelection(self, memberid):
         personid = self.officetopersonmap[memberid]
         members = self.persontoofficemap[personid]
-   
+
         ids = [memberid, ]
         def scanoneway(whystr, datestr, delta, whystrrev, datestrrev):
             id = memberid
