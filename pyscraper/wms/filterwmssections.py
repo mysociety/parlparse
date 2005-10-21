@@ -65,6 +65,8 @@ def NormalHeadingPart(headingtxt, stampurl):
 		bmajorheading = True
 	elif re.search('_dpthd', stampurl.aname):
 		bmajorheading = True
+	if re.search('_sbhd', stampurl.aname):
+		bmajorheading = False
 
 	headingtxtfx = FixHTMLEntities(headingtxt)
 	qb = qspeech('nospeaker="true"', headingtxtfx, stampurl)
