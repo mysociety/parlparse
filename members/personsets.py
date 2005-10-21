@@ -31,6 +31,9 @@ manualmatches = {
     "George Galloway [Bethnal Green & Bow]" : "George Galloway [Bethnal Green & Bow / Glasgow, Kelvin]",
     "George Galloway [Glasgow, Kelvin]" : "George Galloway [Bethnal Green & Bow / Glasgow, Kelvin]",
 
+    # Returned to maiden name
+    "Anne Picking [East Lothian]" : "Anne Moffat [East Lothian]",
+
     # Scottish boundary changes 2005
     "Menzies Campbell [North East Fife]" : "Menzies Campbell [North East Fife / Fife North East]",
     "Menzies Campbell [Fife North East]" : "Menzies Campbell [North East Fife / Fife North East]",
