@@ -171,7 +171,7 @@ def LordsPullGluePages(datefrom, dateto, bforcescrape):
 	# scan through the directory and make a mapping of all the copies for each
 	lddaymap = { }
 	for ldfile in os.listdir(pwlordspages):
-		mnums = re.match("daylord(\d{4}-\d\d-\d\d)([a-z]*)\.html", ldfile)
+		mnums = re.match("daylord(\d{4}-\d\d-\d\d)([a-z]*)\.html$", ldfile)
 		if mnums:
 			lddaymap.setdefault(mnums.group(1), []).append((AlphaStringToOrder(mnums.group(2)), mnums.group(2), ldfile))
 		elif os.path.isfile(os.path.join(pwlordspages, ldfile)):

@@ -198,7 +198,7 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 	# scan through the directory and make a mapping of all the copies for each
 	lddaymap = { }
 	for ldfile in os.listdir(pwcmfolder):
-		mnums = re.match("%s(\d{4}-\d\d-\d\d)([a-z]*)\.html" % typ, ldfile)
+		mnums = re.match("%s(\d{4}-\d\d-\d\d)([a-z]*)\.html$" % typ, ldfile)
 		if mnums:
 			lddaymap.setdefault(mnums.group(1), []).append((AlphaStringToOrder(mnums.group(2)), mnums.group(2), ldfile))
 		elif os.path.isfile(os.path.join(pwcmfolder, ldfile)):
