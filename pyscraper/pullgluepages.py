@@ -101,7 +101,8 @@ def WriteCleanText(fout, text):
 		else:
 			fout.write(re.sub('>|\r', '', ab))
 
-def GlueByNext(fout, url, urlx):
+def GlueByNext(outputFileName, url, urlx):
+	fout = open(outputFileName, "w")
 	# put out the indexlink for comparison with the hansardindex file
 	lt = time.gmtime()
 	fout.write('<pagex url="%s" scrapedate="%s" scrapetime="%s"/>\n' % \
@@ -146,6 +147,8 @@ def GlueByNext(fout, url, urlx):
 		if len(nextsectionlink) > 1:
 			raise Exception, "More than one Next Section!!!"
 		url = urlparse.urljoin(url, nextsectionlink[0])
+		
+	fout.close()
 
 
 # now we have the difficulty of pulling in the first link out of this silly index page
@@ -251,11 +254,9 @@ def CompareScrapedFiles(prevfile, nextfile):
 ##############################
 def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 	daymap, scrapedDataOutputPath = MakeDayMap(folder, typ)
-	# load the index file previously made by createhansardindex
-	ccmindex = CommonsIndex()
 	
-	# loop through the index of day line.
-	for commonsIndexRecord in ccmindex.res:
+	# loop through the index file previously made by createhansardindex
+	for commonsIndexRecord in CommonsIndex().res:
 		# implement date range
 		if not re.search(typ, commonsIndexRecord.recordType, re.I):
 			continue
@@ -278,62 +279,42 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 		print commonsIndexRecord.date, (latestFilePath and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
 
 		# now we take out the local pointer and start the gluing
-		dtemp = open(tempfilename, "w")
-		GlueByNext(dtemp, url0, urlx)
-		dtemp.close()
+		GlueByNext(tempfilename, url0, urlx)
 
 		if CompareScrapedFiles(latestFilePath, tempfilename) == "SAME":
 			print "  matched with:", latestFilePath
 			continue
 
-
 		# before we copy over the file from tempfilename to nextFilePath, copy over the patch if there is one.
-
-		# now find the patch file and copy it in, verifying we know what we're doing
-		lpatchfilenext, lorgfilenext = GenPatchFileNames(folder, nextFileStem)[:2]
-		assert lorgfilenext == nextFilePath  # patchtool should give same name we are using
-		if os.path.isfile(lpatchfilenext):
-			print "    *****Warning: patchfile already present for newly scraped file:", lpatchfilenext
-			assert False  # patchfile already present for newly scraped file
-		if latestFilePath:
-			lpatchfile, lorgfile, tmpfile = GenPatchFileNames(folder, latestFileStem)[:3]
-			assert lorgfile == latestFilePath
-
-			# if there's an old patch, apply the patch to the old file
-			if os.path.isfile(lpatchfile):
-				shutil.copyfile(tempfilename, tmpfile)
-				status = os.system("patch --quiet %s < %s" % (tmpfile, lpatchfile))
-				if status == 0:
-					print "Patchfile still applies, copying over ", lpatchfile, "=>", lpatchfilenext
-					print "   There you go..."
-					shutil.copyfile(lpatchfile, lpatchfilenext)
-				else:
-					print "    Could not apply old patch file to this, status=", status
-
+		ReplicatePatchToNewScrapedVersion(folder, nextFileStem, nextFilePath, latestFileStem, latestFilePath)
+		
 		# now commit the file
 		os.rename(tempfilename, nextFilePath)
 
-def GeneratePatchFile(folderName, dgfnextdayalpha):
-	# now find the patch file and copy it in, verifying we know what we're doing
-	lpatchfilenext, lorgfilenext = GenPatchFileNames(folderName, dgfnextdayalpha)[:2]
-	assert lorgfilenext == dgfnext  # patchtool should give same name we are using
+def ReplicatePatchToNewScrapedVersion(folderName, nextFileStem, nextFilePath, latestFileStem, latestFilePath):
+	# check that the patch file for the 'next' version has not yet been created
+	lpatchfilenext, lorgfilenext = GenPatchFileNames(folderName, nextFileStem)[:2]
+	assert lorgfilenext == nextFilePath  # patchtool should give same name we are using
 	if os.path.isfile(lpatchfilenext):
 		print "    *****Warning: patchfile already present for newly scraped file:", lpatchfilenext
 		assert False  # patchfile already present for newly scraped file
-	if dgflatest:
-		lpatchfile, lorgfile, tmpfile = GenPatchFileNames(folderName, dgflatestdayalpha)[:3]
-		assert lorgfile == dgflatest
+	
+	# now find the patch file and copy it in, verifying we know what we're doing
+	assert latestFilePath
+	
+	lpatchfile, lorgfile, tmpfile = GenPatchFileNames(folderName, latestFileStem)[:3]
+	assert lorgfile == latestFilePath
 
-		# if there's an old patch, apply the patch to the old file
-		if os.path.isfile(lpatchfile):
-			shutil.copyfile(tempfilename, tmpfile)
-			status = os.system("patch --quiet %s < %s" % (tmpfile, lpatchfile))
-			if status == 0:
-				print "Patchfile still applies, copying over ", lpatchfile, "=>", lpatchfilenext
-				print "   There you go..."
-				shutil.copyfile(lpatchfile, lpatchfilenext)
-			else:
-				print "    Could not apply old patch file to this, status=", status
+	# if there's an old patch, apply the patch to the old file
+	if os.path.isfile(lpatchfile):
+		shutil.copyfile(tempfilename, tmpfile)
+		status = os.system("patch --quiet %s < %s" % (tmpfile, lpatchfile))
+		if status == 0:
+			print "Patchfile still applies, copying over ", lpatchfile, "=>", lpatchfilenext
+			print "   There you go..."
+			shutil.copyfile(lpatchfile, lpatchfilenext)
+		else:
+			print "    Could not apply old patch file to this, status=", status
 
 def PullGlueToday(forcescrape):
 	indexPageUrl = "http://www.publications.parliament.uk/pa/cm/cmtoday/home.htm"
