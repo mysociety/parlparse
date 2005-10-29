@@ -23,7 +23,7 @@ from minpostparse import ParseGovPosts
 from optparse import OptionParser
 from createhansardindex import UpdateHansardIndex
 from lordscreatehansardindex import UpdateLordsHansardIndex
-from pullgluepages import PullGluePages
+from pullgluepages import PullGluePages, PullGlueToday
 from lordspullgluepages import LordsPullGluePages
 from runfilters import RunFiltersDir, RunDebateFilters, RunWransFilters, RunLordsFilters, RunWestminhallFilters, RunWMSFilters
 from regmemfilter import RunRegmemFilters
@@ -52,6 +52,7 @@ lords           House of Lords
 regmem          Register of Members Interests
 chgpages        Special pages that change, like list of cabinet ministers
 votes           Votes and Proceedings
+today           Today in the Commons
 
 Example command line
         ./lazyrunall.py --date=2004-03-03 --force-scrape scrape parse wrans
@@ -102,6 +103,7 @@ options.lords = False
 options.regmem = False
 options.chgpages = False
 options.votes = False
+options.today = False
 for arg in args:
         if arg == "scrape":
                 options.scrape = True
@@ -123,6 +125,8 @@ for arg in args:
                 options.chgpages = True
         elif arg == "votes":
                 options.votes = True
+        elif arg == "today":
+                options.today = True
         else:
                 print >>sys.stderr, "error: no such option %s" % arg
                 parser.print_help()
@@ -134,8 +138,8 @@ if not options.scrape and not options.parse:
         print >>sys.stderr, "error: choose what to do; scrape, parse, or both"
         parser.print_help()
         sys.exit(1)
-if not options.debates and not options.westminhall and not options.wms and not options.wrans and not options.regmem and not options.lords and not options.chgpages and not options.votes:
-        print >>sys.stderr, "error: choose what work on; debates, wrans, regmem, wms, votes, chgpages or several of them"
+if not options.debates and not options.westminhall and not options.wms and not options.wrans and not options.regmem and not options.lords and not options.chgpages and not options.votes and not options.today:
+        print >>sys.stderr, "error: choose what work on; debates, wrans, regmem, wms, votes, chgpages, today or several of them"
         parser.print_help()
         sys.exit(1)
 
@@ -179,6 +183,8 @@ if options.scrape:
 		LordsPullGluePages(options.datefrom, options.dateto, options.forcescrape)
 	if options.votes:
 		PullGluePages(options.datefrom, options.dateto, options.forcescrape, "votes", "votes")
+	if options.today:
+		PullGlueToday(options.forcescrape)
 	if options.regmem:
 		# TODO - date ranges when we do index page stuff for regmem
 		RegmemPullGluePages(options.forcescrape)

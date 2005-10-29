@@ -13,6 +13,7 @@ import tempfile
 import string
 import miscfuncs
 import shutil
+import mx.DateTime
 
 toppath = miscfuncs.toppath
 pwcmdirs = miscfuncs.pwcmdirs
@@ -28,7 +29,6 @@ from patchtool import GenPatchFileNames
 # index file which is created
 pwcmindex = os.path.join(toppath, "cmindex.xml")
 
-
 # this does the main loading and gluing of the initial day debate files from which everything else feeds forward
 class DefaultErrorHandler(urllib2.HTTPDefaultErrorHandler):
         def http_error_default(self, req, fp, code, msg, headers):
@@ -38,30 +38,39 @@ class DefaultErrorHandler(urllib2.HTTPDefaultErrorHandler):
                 return result
 
 # gets the index file which we use to go through the pages
-class LoadCmIndex(xml.sax.handler.ContentHandler):
-	def __init__(self, lpwcmindex):
+class CommonsIndex(xml.sax.handler.ContentHandler):
+	def __init__(self):
 		self.res = []
 		self.check = {}
-		if not os.path.isfile(lpwcmindex):
+		
+		if not os.path.isfile(pwcmindex):
 			return
 		parser = xml.sax.make_parser()
 		parser.setContentHandler(self)
-		parser.parse(lpwcmindex)
+		parser.parse(pwcmindex)
 
 	def startElement(self, name, attr):
 		if name == "cmdaydeb":
-			ddr = (attr["date"], attr["type"], attr["url"])
-			self.res.append(ddr)
-
 			# check for repeats - error in input XML
 			key = (attr["date"], attr["type"])
 			if key in self.check:
 				raise Exception, "Same date/type twice %s %s\nurl1: %s\nurl2: %s" % (ddr + (self.check[key],))
-			if not re.search("answers|debates|westminster|ministerial|votes(?i)", attr["type"]):
-				raise Exception, "cmdaydeb of unrecognized type: %s" % attr["type"]
 			self.check[key] = attr["url"]
+			
+			self.res.append(CommonsIndexElement(attr["date"], attr["type"], attr["url"]))
 
-
+class CommonsIndexElement:
+	def __init__(self, date, recordType, url):
+		# sanity check the types
+		if not re.search("answers|debates|westminster|ministerial|votes(?i)", recordType):
+			raise Exception, "cmdaydeb of unrecognized type: %s" % recordType
+		
+		self.date = date
+		self.recordType = recordType
+		self.url = url
+		
+	def __repr__(self):
+		return "<%s, %s, %s>" % (self.date, self.recordType, self.url)
 
 def WriteCleanText(fout, text):
 	abf = re.split('(<[^>]*>)', text)
@@ -91,7 +100,6 @@ def WriteCleanText(fout, text):
 		# take out spurious > symbols and dos linefeeds
 		else:
 			fout.write(re.sub('>|\r', '', ab))
-
 
 def GlueByNext(fout, url, urlx):
 	# put out the indexlink for comparison with the hansardindex file
@@ -178,11 +186,7 @@ def ExtractFirstLink(url, dgf, forcescrape):
 
 
 
-
-###############
-# main function
-###############
-def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
+def MakeDayMap(folder, typ):
 	# make the output firectory
 	if not os.path.isdir(pwcmdirs):
 		os.mkdir(pwcmdirs)
@@ -190,8 +194,6 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 	if not os.path.isdir(pwcmfolder):
 		os.mkdir(pwcmfolder)
 
-	# load the index file previously made by createhansardindex
-	ccmindex = LoadCmIndex(pwcmindex)
 
 	# the following is code copied from the lordspullgluepages
 
@@ -203,76 +205,99 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 			lddaymap.setdefault(mnums.group(1), []).append((AlphaStringToOrder(mnums.group(2)), mnums.group(2), ldfile))
 		elif os.path.isfile(os.path.join(pwcmfolder, ldfile)):
 			print "not recognized file:", ldfile, " in ", pwcmfolder
+	
+	return lddaymap, pwcmfolder
+	
+	
+def GetFileDayVersions(day, lddaymap, pwcmfolder, typ):
+	# make the filename
+	dgflatestalpha, dgflatest, dgflatestdayalpha = "", None, None
+	if day in lddaymap:
+		ldgf = max(lddaymap[day]) # uses alphastringtoorder
+		dgflatestalpha = ldgf[1]
+		dgflatest = os.path.join(pwcmfolder, ldgf[2])
+		dgflatestdayalpha = "%s%s" % (day, dgflatestalpha)
+	dgfnextalpha = NextAlphaString(dgflatestalpha)
+	ldgfnext = '%s%s%s.html' % (typ, day, dgfnextalpha)
+	dgfnext = os.path.join(pwcmfolder, ldgfnext)
+	dgfnextdayalpha = "%s%s" % (day, dgfnextalpha)
+	assert not dgflatest or os.path.isfile(dgflatest)
+	assert not os.path.isfile(dgfnext)
+	return dgflatest, dgflatestdayalpha, dgfnext, dgfnextdayalpha
 
+
+def CompareScrapedFiles(prevfile, nextfile):
+	if not prevfile:
+		return "DIFFERENT"
+	
+	hprevfile = open(prevfile)
+	dprevfile = hprevfile.readlines()
+	hprevfile.close()
+		
+	hnextfile = open(nextfile)
+	dnextfile = hnextfile.readlines()
+	hnextfile.close()
+		
+	if len(dprevfile) == len(dnextfile) and dprevfile[1:] == dnextfile[1:]:
+		return "SAME"
+		
+	if len(dprevfile) < len(dnextfile) and dprevfile[1:] == dnextfile[1:len(dprevfile)]:
+		return "EXTENSION"
+	return "DIFFERENT"
+	
+				
+##############################
+# For gluing together debates
+##############################
+def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
+	daymap, scrapedDataOutputPath = MakeDayMap(folder, typ)
+	# load the index file previously made by createhansardindex
+	ccmindex = CommonsIndex()
+	
 	# loop through the index of day line.
-	for dnu in ccmindex.res:
+	for commonsIndexRecord in ccmindex.res:
 		# implement date range
-		if not re.search(typ, dnu[1], re.I):
+		if not re.search(typ, commonsIndexRecord.recordType, re.I):
 			continue
-		if dnu[0] < datefrom or dnu[0] > dateto:
+		if commonsIndexRecord.date < datefrom or commonsIndexRecord.date > dateto:
 			continue
 
-		# make the filename
-		dgflatestalpha, dgflatest, dgflatestdayalpha = "", None, None
-		if dnu[0] in lddaymap:
-			ldgf = max(lddaymap[dnu[0]]) # uses alphastringtoorder
-			dgflatestalpha = ldgf[1]
-			dgflatest = os.path.join(pwcmfolder, ldgf[2])
-			dgflatestdayalpha = "%s%s" % (dnu[0], dgflatestalpha)
-		dgfnextalpha = NextAlphaString(dgflatestalpha)
-		ldgfnext = '%s%s%s.html' % (typ, dnu[0], dgfnextalpha)
-		dgfnext = os.path.join(pwcmfolder, ldgfnext)
-		dgfnextdayalpha = "%s%s" % (dnu[0], dgfnextalpha)
-		assert not dgflatest or os.path.isfile(dgflatest)
-		assert not os.path.isfile(dgfnext)
+		latestFilePath, latestFileStem, nextFilePath, nextFileStem = \
+			GetFileDayVersions(commonsIndexRecord.date, daymap, scrapedDataOutputPath, typ)
 
 		# hansard index page
-		urlx = dnu[2]
-		if dnu[1] == 'Votes and Proceedings':
+		urlx = commonsIndexRecord.url
+		if commonsIndexRecord.recordType == 'Votes and Proceedings':
 			url0 = urlx
 		else:
-			url0 = ExtractFirstLink(urlx, dgflatest, forcescrape)  # this checks the url at start of file
+			url0 = ExtractFirstLink(urlx, latestFilePath, forcescrape)  # this checks the url at start of file
 		if not url0:
 			continue
 
 		# make the message
-		print dnu[0], (dgflatest and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
+		print commonsIndexRecord.date, (latestFilePath and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
 
 		# now we take out the local pointer and start the gluing
 		dtemp = open(tempfilename, "w")
 		GlueByNext(dtemp, url0, urlx)
 		dtemp.close()
 
-		# now we have to decide whether it's actually new and should be copied onto dgfnext.
-		# "getsize" is unreliable because the readlines strips all the '\r's from the file
-		# and can make two different sized files the same size
-		if dgflatest:    # and os.path.getsize(tempfilename) == os.path.getsize(dgflatest):
-			# load in as strings and check matching
-			fdgflatest = open(dgflatest)
-			sdgflatest = fdgflatest.readlines()
-			fdgflatest.close()
-
-			fdgfnext = open(tempfilename)
-			sdgfnext = fdgfnext.readlines()
-			fdgfnext.close()
-
-			# first line contains the scrape date, so we ignore it
-			if sdgflatest[1:] == sdgfnext[1:]:
-				print "  matched with:", dgflatest
-				continue
+		if CompareScrapedFiles(latestFilePath, tempfilename) == "SAME":
+			print "  matched with:", latestFilePath
+			continue
 
 
-		# before we copy over the file from tempfilename to dgfnext, copy over the patch if there is one.
+		# before we copy over the file from tempfilename to nextFilePath, copy over the patch if there is one.
 
 		# now find the patch file and copy it in, verifying we know what we're doing
-		lpatchfilenext, lorgfilenext = GenPatchFileNames(folder, dgfnextdayalpha)[:2]
-		assert lorgfilenext == dgfnext  # patchtool should give same name we are using
+		lpatchfilenext, lorgfilenext = GenPatchFileNames(folder, nextFileStem)[:2]
+		assert lorgfilenext == nextFilePath  # patchtool should give same name we are using
 		if os.path.isfile(lpatchfilenext):
 			print "    *****Warning: patchfile already present for newly scraped file:", lpatchfilenext
 			assert False  # patchfile already present for newly scraped file
-		if dgflatest:
-			lpatchfile, lorgfile, tmpfile = GenPatchFileNames(folder, dgflatestdayalpha)[:3]
-			assert lorgfile == dgflatest
+		if latestFilePath:
+			lpatchfile, lorgfile, tmpfile = GenPatchFileNames(folder, latestFileStem)[:3]
+			assert lorgfile == latestFilePath
 
 			# if there's an old patch, apply the patch to the old file
 			if os.path.isfile(lpatchfile):
@@ -286,6 +311,131 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 					print "    Could not apply old patch file to this, status=", status
 
 		# now commit the file
-		# print "  writing:", dgfnext
-		os.rename(tempfilename, dgfnext)
+		os.rename(tempfilename, nextFilePath)
 
+def GeneratePatchFile(folderName, dgfnextdayalpha):
+	# now find the patch file and copy it in, verifying we know what we're doing
+	lpatchfilenext, lorgfilenext = GenPatchFileNames(folderName, dgfnextdayalpha)[:2]
+	assert lorgfilenext == dgfnext  # patchtool should give same name we are using
+	if os.path.isfile(lpatchfilenext):
+		print "    *****Warning: patchfile already present for newly scraped file:", lpatchfilenext
+		assert False  # patchfile already present for newly scraped file
+	if dgflatest:
+		lpatchfile, lorgfile, tmpfile = GenPatchFileNames(folderName, dgflatestdayalpha)[:3]
+		assert lorgfile == dgflatest
+
+		# if there's an old patch, apply the patch to the old file
+		if os.path.isfile(lpatchfile):
+			shutil.copyfile(tempfilename, tmpfile)
+			status = os.system("patch --quiet %s < %s" % (tmpfile, lpatchfile))
+			if status == 0:
+				print "Patchfile still applies, copying over ", lpatchfile, "=>", lpatchfilenext
+				print "   There you go..."
+				shutil.copyfile(lpatchfile, lpatchfilenext)
+			else:
+				print "    Could not apply old patch file to this, status=", status
+
+def PullGlueToday(forcescrape):
+	indexPageUrl = "http://www.publications.parliament.uk/pa/cm/cmtoday/home.htm"
+	now = time.gmtime()
+	
+	
+	tempFileHandle = open(tempfilename, "w")
+	
+	frontpagedata = fetchTextFromUrl(indexPageUrl)
+	
+	pageurl = urlparse.urljoin(
+			indexPageUrl, 
+			re.search("<a href=\"(01\.htm)\">Go to Full Report</a>", frontpagedata).group(1)
+		)
+		
+	preparedDateMatch = re.search("<p class=\"prepared\">Prepared: <strong>(\d+:\d+) on (\d+ [a-zA-Z]+ \d+)</strong></p>", frontpagedata)
+	preparedDateTime = mx.DateTime.DateTimeFrom(preparedDateMatch.group(1) + " " + preparedDateMatch.group(2))
+	
+	# make files which we will copy into	
+	lddaymap, pwcmfolder = MakeDayMap("debates", "debates")
+	dgflatest, dgflatestdayalpha, dgfnext, dgfnextdayalpha = GetFileDayVersions(preparedDateTime.date, lddaymap, pwcmfolder, "debates")
+	print "GGGG", dgflatest, dgflatestdayalpha, dgfnext, dgfnextdayalpha
+	
+	
+	tempFileHandle.write('<pagex url="%s" scrapedate="%s" scrapetime="%s" prepareddatetime="%s" />\n' % (indexPageUrl, time.strftime('%Y-%m-%d', now), time.strftime('%X', now), preparedDateTime))
+	
+	GlueByToday(tempFileHandle, pageurl)
+	tempFileHandle.close()
+	print tempfilename, "tempfilenametempfilenametempfilename"
+	
+	comp = CompareScrapedFiles(dgflatest, tempfilename)
+
+	
+		
+def GlueByToday(outputFileHandle, pageurl):
+	
+	pagenumber=1
+	while pageurl:
+		assert pagenumber==int(re.search('(\d+)\.htm$', pageurl).group(1))
+		matches = re.search('''(?sx)
+		<body\sclass="commons".*
+		<p\sclass="preparedFullText">
+		Prepared:\s
+		<strong>
+		  (\d+:\d+)\son\s(\d+\s[a-zA-Z]+\s\d+)
+		</strong>
+		.*
+		(?:
+			<a\shref="(\d+\.htm)">Next</a>           # link to next page
+			|
+			<!--\sSPACE\sFOR\sNEXT\sLABEL\s-->
+		)
+		.*
+		<a\sname="toptop"></a>
+		(.*)  # main body text of page
+		<hr>\s*<ul\sclass="prevNext">
+		''', 
+		fetchTextFromUrl(pageurl)
+		)
+		
+		preparedDateTime = mx.DateTime.DateTimeFrom(matches.group(1) + " " + matches.group(2))
+		nextLink = matches.group(3)
+		body = matches.group(4)
+		
+		print "Processed [%s] which was prepared [%s]" % (pageurl, preparedDateTime)
+		now = time.gmtime()
+		outputFileHandle.write('<page url="%s" scrapedate="%s" scrapetime="%s" prepareddatetime="%s" />\n' % (pageurl, time.strftime('%Y-%m-%d', now), time.strftime('%X', now), preparedDateTime) )
+		outputFileHandle.write(body)
+		outputFileHandle.write('\n')
+		
+		if nextLink:
+			pageurl = urlparse.urljoin(pageurl, nextLink)
+		else:
+			pageurl = None
+		pagenumber += 1
+	
+
+
+def fetchTextFromUrl(url):
+	ur = urllib.urlopen(url)
+	frontpagedata = ur.read()
+	ur.close();
+	return frontpagedata	
+	
+	
+def nothing():
+		matches = re.search('''(?sx)
+		<body\sclass="commons".*
+		<p\sclass="preparedFullText">
+		Prepared:\s
+		<strong>
+		  (\d+:\d+)\son\s(\d+\s[a-zA-Z]+\s\d+)
+		</strong>
+		.*
+		(?:
+			<a\shref="(\d+\.htm)">Next</a>           # link to next page
+			|
+			<!--\sSPACE\sFOR\sNEXT\sLABEL\s-->
+		)
+		.*
+		(<a\sname="toptop"></a>.*)  # main body text of page
+		<hr>\s*<ul class="prevNext">
+		''', 
+		text
+		)
