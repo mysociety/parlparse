@@ -28,6 +28,14 @@ from patchtool import GenPatchFileNames
 
 # index file which is created
 pwcmindex = os.path.join(toppath, "cmindex.xml")
+TodayInTheCommonsIndexPageUrl = "http://www.publications.parliament.uk/pa/cm/cmtoday/home.htm"
+
+class ScraperException:
+	def __init__(self, message):
+		self.message = message
+	
+	def __str__(self):
+		return self.message
 
 # this does the main loading and gluing of the initial day debate files from which everything else feeds forward
 class DefaultErrorHandler(urllib2.HTTPDefaultErrorHandler):
@@ -105,7 +113,7 @@ def GlueByNext(outputFileName, url, urlx):
 	fout = open(outputFileName, "w")
 	# put out the indexlink for comparison with the hansardindex file
 	lt = time.gmtime()
-	fout.write('<pagex url="%s" scrapedate="%s" scrapetime="%s"/>\n' % \
+	fout.write('<pagex url="%s" scrapedate="%s" scrapetime="%s" type="printed" />\n' % \
 			(urlx, time.strftime('%Y-%m-%d', lt), time.strftime('%X', lt)))
 
 	# loop which scrapes through all the pages following the nextlinks
@@ -229,6 +237,17 @@ def GetFileDayVersions(day, lddaymap, pwcmfolder, typ):
 	return dgflatest, dgflatestdayalpha, dgfnext, dgfnextdayalpha
 
 
+def readPageX(filename):
+	hFile = open(filename)
+	line= hFile.readline()
+	hFile.close()
+	
+	map={}
+	attributes= re.search('<pagex(( +[^ =]+="[^"]+")+) */>', line).group(0)
+	for match in re.finditer('([^ =]+)="([^"]+)"', attributes):
+		map[match.group(1)] = match.group(2)
+	return map
+
 def CompareScrapedFiles(prevfile, nextfile):
 	if not prevfile:
 		return "DIFFERENT"
@@ -240,21 +259,20 @@ def CompareScrapedFiles(prevfile, nextfile):
 	hnextfile = open(nextfile)
 	dnextfile = hnextfile.readlines()
 	hnextfile.close()
-		
+	
 	if len(dprevfile) == len(dnextfile) and dprevfile[1:] == dnextfile[1:]:
 		return "SAME"
-		
 	if len(dprevfile) < len(dnextfile) and dprevfile[1:] == dnextfile[1:len(dprevfile)]:
 		return "EXTENSION"
 	return "DIFFERENT"
-	
-				
+
+
 ##############################
 # For gluing together debates
 ##############################
 def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 	daymap, scrapedDataOutputPath = MakeDayMap(folder, typ)
-	
+
 	# loop through the index file previously made by createhansardindex
 	for commonsIndexRecord in CommonsIndex().res:
 		# implement date range
@@ -286,12 +304,15 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 			continue
 
 		# before we copy over the file from tempfilename to nextFilePath, copy over the patch if there is one.
-		ReplicatePatchToNewScrapedVersion(folder, nextFileStem, nextFilePath, latestFileStem, latestFilePath)
+		ReplicatePatchToNewScrapedVersion(folder, latestFileStem, latestFilePath, nextFilePath, nextFileStem)
 		
 		# now commit the file
 		os.rename(tempfilename, nextFilePath)
 
-def ReplicatePatchToNewScrapedVersion(folderName, nextFileStem, nextFilePath, latestFileStem, latestFilePath):
+def ReplicatePatchToNewScrapedVersion(folderName, latestFileStem, latestFilePath, nextFilePath, nextFileStem):
+	if not latestFilePath:
+		return
+		
 	# check that the patch file for the 'next' version has not yet been created
 	lpatchfilenext, lorgfilenext = GenPatchFileNames(folderName, nextFileStem)[:2]
 	assert lorgfilenext == nextFilePath  # patchtool should give same name we are using
@@ -300,8 +321,6 @@ def ReplicatePatchToNewScrapedVersion(folderName, nextFileStem, nextFilePath, la
 		assert False  # patchfile already present for newly scraped file
 	
 	# now find the patch file and copy it in, verifying we know what we're doing
-	assert latestFilePath
-	
 	lpatchfile, lorgfile, tmpfile = GenPatchFileNames(folderName, latestFileStem)[:3]
 	assert lorgfile == latestFilePath
 
@@ -317,71 +336,52 @@ def ReplicatePatchToNewScrapedVersion(folderName, nextFileStem, nextFilePath, la
 			print "    Could not apply old patch file to this, status=", status
 
 def PullGlueToday(forcescrape):
-	indexPageUrl = "http://www.publications.parliament.uk/pa/cm/cmtoday/home.htm"
-	now = time.gmtime()
-	
-	
-	tempFileHandle = open(tempfilename, "w")
-	
-	frontpagedata = fetchTextFromUrl(indexPageUrl)
-	
+	# Fetch 'Today in the Commons' index page
+	frontpagedata = fetchTextFromUrl(TodayInTheCommonsIndexPageUrl)
 	pageurl = urlparse.urljoin(
-			indexPageUrl, 
+			TodayInTheCommonsIndexPageUrl, 
 			re.search("<a href=\"(01\.htm)\">Go to Full Report</a>", frontpagedata).group(1)
 		)
-		
+	
 	preparedDateMatch = re.search("<p class=\"prepared\">Prepared: <strong>(\d+:\d+) on (\d+ [a-zA-Z]+ \d+)</strong></p>", frontpagedata)
 	preparedDateTime = mx.DateTime.DateTimeFrom(preparedDateMatch.group(1) + " " + preparedDateMatch.group(2))
+	
 	
 	# make files which we will copy into	
 	lddaymap, pwcmfolder = MakeDayMap("debates", "debates")
 	dgflatest, dgflatestdayalpha, dgfnext, dgfnextdayalpha = GetFileDayVersions(preparedDateTime.date, lddaymap, pwcmfolder, "debates")
 	print "GGGG", dgflatest, dgflatestdayalpha, dgfnext, dgfnextdayalpha
 	
+	# See if we actually want to proceed with scraping, or if there already exists a 'printed' version
+	# in which case we avoid replacing it with the 'today' version
+	latestScrapedFileMetaData = readPageX(dgflatest)
+	if ('type' in latestScrapedFileMetaData and latestScrapedFileMetaData['type']=='printed'):
+		print "'Printed' version of hansard for today has already been scraped. Skipping scrape of 'Today' version"
+		return None
 	
-	tempFileHandle.write('<pagex url="%s" scrapedate="%s" scrapetime="%s" prepareddatetime="%s" />\n' % (indexPageUrl, time.strftime('%Y-%m-%d', now), time.strftime('%X', now), preparedDateTime))
+	tempFileHandle = open(tempfilename, "w")	
+	tempFileHandle.write('<pagex url="%s" scrapedate="%s" scrapetime="%s" prepareddatetime="%s" type="today" />\n' % (TodayInTheCommonsIndexPageUrl, time.strftime('%Y-%m-%d', time.gmtime()), time.strftime('%X', time.gmtime()), preparedDateTime))
 	
 	GlueByToday(tempFileHandle, pageurl)
 	tempFileHandle.close()
-	print tempfilename, "tempfilenametempfilenametempfilename"
 	
 	comp = CompareScrapedFiles(dgflatest, tempfilename)
+	
+	if comp == 'DIFFERENT' or comp == 'EXTENSION': 
+		# now commit the file
+		os.rename(tempfilename, dgfnext)
+	elif comp != 'SAME':
+		raise ScraperException("Unknown comparison type '%s'" % comp)
 
-	
-		
 def GlueByToday(outputFileHandle, pageurl):
-	
 	pagenumber=1
 	while pageurl:
 		assert pagenumber==int(re.search('(\d+)\.htm$', pageurl).group(1))
-		matches = re.search('''(?sx)
-		<body\sclass="commons".*
-		<p\sclass="preparedFullText">
-		Prepared:\s
-		<strong>
-		  (\d+:\d+)\son\s(\d+\s[a-zA-Z]+\s\d+)
-		</strong>
-		.*
-		(?:
-			<a\shref="(\d+\.htm)">Next</a>           # link to next page
-			|
-			<!--\sSPACE\sFOR\sNEXT\sLABEL\s-->
-		)
-		.*
-		<a\sname="toptop"></a>
-		(.*)  # main body text of page
-		<hr>\s*<ul\sclass="prevNext">
-		''', 
-		fetchTextFromUrl(pageurl)
-		)
-		
-		preparedDateTime = mx.DateTime.DateTimeFrom(matches.group(1) + " " + matches.group(2))
-		nextLink = matches.group(3)
-		body = matches.group(4)
+		preparedDateTime, nextLink, body = ScrapeTodayPage(pageurl)
 		
 		print "Processed [%s] which was prepared [%s]" % (pageurl, preparedDateTime)
 		now = time.gmtime()
-		outputFileHandle.write('<page url="%s" scrapedate="%s" scrapetime="%s" prepareddatetime="%s" />\n' % (pageurl, time.strftime('%Y-%m-%d', now), time.strftime('%X', now), preparedDateTime) )
+		outputFileHandle.write('<page url="%s" prepareddatetime="%s" />\n' % (pageurl, preparedDateTime) )
 		outputFileHandle.write(body)
 		outputFileHandle.write('\n')
 		
@@ -390,7 +390,34 @@ def GlueByToday(outputFileHandle, pageurl):
 		else:
 			pageurl = None
 		pagenumber += 1
+
+def ScrapeTodayPage(pageurl):
+	raw_html = fetchTextFromUrl(pageurl)
+	matches = re.search('''(?sx)
+	<body\sclass="commons".*
+	<p\sclass="preparedFullText">
+	Prepared:\s
+	<strong>
+		(\d+:\d+)\son\s(\d+\s[a-zA-Z]+\s\d+)
+	</strong>
+	.*
+	(?:
+		<a\shref="(\d+\.htm)">Next</a>           # link to next page
+		|
+		<!--\sSPACE\sFOR\sNEXT\sLABEL\s-->
+	)
+	.*
+	<a\sname="toptop"></a>
+	(.*)  # main body text of page
+	<hr>\s*<ul\sclass="prevNext">
+	''', raw_html
+	)
 	
+	preparedDateTime = mx.DateTime.DateTimeFrom(matches.group(1) + " " + matches.group(2))
+	nextLink = matches.group(3)
+	body = matches.group(4)
+	
+	return preparedDateTime, nextLink, body
 
 
 def fetchTextFromUrl(url):
