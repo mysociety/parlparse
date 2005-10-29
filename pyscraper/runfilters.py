@@ -147,6 +147,8 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 
 			# separate out the scrape versions
 			mpw = re.search('<publicwhip([^>]*)>\n([\s\S]*?)</publicwhip>', xprevs)
+                        if not mpw:
+                                print "failed to find <publicwhip> tags in %s" % xprev[0]
 			if mpw.group(1):
 				re.match(' scrapeversion="([^"]*)" latest="yes"', mpw.group(1)).group(1) == xprev[1]
 			# else it's old style xml files that had no scrapeversion or latest attributes
