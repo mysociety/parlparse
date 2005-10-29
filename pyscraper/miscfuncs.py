@@ -34,6 +34,10 @@ rawdatapath = os.path.join(os.getcwd(), "../rawdata")
 if (not os.path.isdir(toppath)):
         raise Exception, 'Raw data directory %s does not exist, you\'ve not got a proper checkout from CVS.' % (toppath)
 
+# quiet flag
+bNotQuiet = True
+
+
 # import lower down so we get the top-path into the contextexception file
 from contextexception import ContextException
 

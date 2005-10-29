@@ -67,7 +67,21 @@ parties = "|".join(map(string.lower, memberList.partylist())) + "|uup|ld|dup|in 
 recomb = re.compile('((?:Q?\d+\.\s*)?(?:\[\d+\]\s*)?(?:<stamp aname="[^"]*?"/>)?<b>[^<]*</b>(?:\s*\((?:%s)\))?(?:\s*\))?\s*:?)(?i)' % parties)
 # Specific match:
 # Notes - sometimes party appears inside bold tags, so we match and throw it away on either side
-respeakervals = re.compile('(?:Q?(\d+)\.\s*)?(\[\d+\]\s*)?(<stamp aname="[^"]*?"/>)?<b>\s*(?:Q?(\d+)\.)?([^:<(]*?):?\s*(?:\((.*?)\)?)?(?:\s*\((%s)\))?\s*:?\s*</b>(?:\s*\((%s)\))?(?:\s*\))?(?i)' % (parties, parties))
+respeakervals = re.compile('''(?ix)
+		(?:Q?(\d+)\.\s*)?			# oral question number (group1)
+		(\[\d+\]\s*)?				# written qnum (group2)
+		(<stamp\saname="[^"]*?"/>)? # a stamp (group3)
+		<b>\s*                      # start of bold
+		(?:Q?(\d+)\.)?				# second place of oral question number (group4)
+		([^:<(]*?):?\s*				# speaker (group5)
+		(?:\((.*?)\)?)?				# speaker bracket (group6)
+		(?:\s*\((%s)\))?\s*     	# parties list (group7)
+		:?\s*
+		</b>\s*\)?                	# end of bold (we can get brackets outside the bold tag (which should match the missing on on the inside
+		(?:\((%s)\))?			# parties on outside of bold (group8)
+		''' % (parties, parties))
+
+
 
 # <B>Division No. 322</B>
 redivno = re.compile('<b>division no\. \d+</b>$(?i)')
@@ -119,7 +133,7 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
 			# the preceding square bracket qnums
 			sqbnum = speakerg.group(2) or ""
 
-			party = speakerg.group(7)
+			party = speakerg.group(7) or speakerg.group(8)
 
 			spstr = string.strip(speakerg.group(5))
 			spstrbrack = speakerg.group(6) # the bracketted phrase
