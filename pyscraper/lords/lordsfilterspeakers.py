@@ -9,6 +9,7 @@ import string
 from resolvemembernames import memberList
 
 from miscfuncs import ApplyFixSubstitutions
+from miscfuncs import bNotQuiet
 from contextexception import ContextException
 
 from splitheadingsspeakers import StampUrl
@@ -79,12 +80,14 @@ class LordsList(xml.sax.handler.ContentHandler):
 	def DumpUnknownLord(self, ltitle, llordname, llordofname, stampurl):
 		assert self.newlordsdumpfname
 		if not self.newlordsdumpfile:
-			print "Opening", self.newlordsdumpfname
+			if bNotQuiet:
+				print "Opening", self.newlordsdumpfname
 			self.newlordsdumpfile = open(self.newlordsdumpfname, "w")
 
 		# dump new names to a file
 		if (ltitle, llordname, llordofname) not in self.newlordsdumped:
-			print "Dumping:", (ltitle, llordname, llordofname)
+			if bNotQuiet:
+				print "Dumping:", (ltitle, llordname, llordofname)
 			assert not re.search("^\s|\s$", llordname) and not re.search("^\s|\s$", llordofname)
 			self.newlordsdumpfile.write('<lord id="uk.org.publicwhip/lord/"\n\thouse="lords"\n\ttitle="%s" lordname="%s" lordofname="%s"\n\tsource="%s"\n/>\n' % \
 									    (ltitle, llordname, llordofname, stampurl.reps()))
