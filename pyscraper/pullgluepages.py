@@ -238,6 +238,8 @@ def GetFileDayVersions(day, lddaymap, pwcmfolder, typ):
 
 
 def readPageX(filename):
+	if not filename or not os.path.isfile(filename):
+		return {}
 	hFile = open(filename)
 	line= hFile.readline()
 	hFile.close()
