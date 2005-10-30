@@ -48,7 +48,7 @@ sub extract_divisions_day
                 return;
             }
         }
-        #print "divisionextractor $curdate\n";
+        # print "divisionextractor $curdate\n";
         #print "fromctime " . $fromstat[10]  . " toctime " . $tostat[10];
         
         my $twig = XML::Twig->new(twig_handlers => { 
