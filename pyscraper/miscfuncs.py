@@ -36,6 +36,11 @@ if (not os.path.isdir(toppath)):
 
 # quiet flag
 bNotQuiet = True
+def SetQuiet():
+	global bNotQuiet
+	bNotQuiet = False
+def IsNotQuiet():
+	return bNotQuiet
 
 
 # import lower down so we get the top-path into the contextexception file

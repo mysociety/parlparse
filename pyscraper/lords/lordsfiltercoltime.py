@@ -10,7 +10,7 @@ import mx.DateTime
 
 from contextexception import ContextException
 from splitheadingsspeakers import StampUrl
-from miscfuncs import bNotQuiet
+from miscfuncs import IsNotQuiet
 
 # this filter converts column number tags of form:
 #     <B>9 Dec 2003 : Column 893</B>
@@ -197,7 +197,7 @@ def SplitLordsText(text, sdate):
 		res[3] = text[msend:]
 
 	# lords splitting
-	if bNotQuiet:
+	if IsNotQuiet():
 		print "Lords Splitting", map(len, res)
 
 	# check the wrong column numbering or wrong titles aren't found in the wrong place
