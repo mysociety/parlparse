@@ -76,7 +76,7 @@ def ApplyPatches(filein, fileout, patchfile):
 			return True
 
 		print "blanking out failed patch %s" % patchfile
-		print "---- This should not happen, therefore assert!" 
+		print "---- This should not happen, therefore assert!"
 		assert False
 		os.rename(patchfile, patchfile + ".old~")
 		blankfile = open(patchfile, "w")
@@ -89,8 +89,8 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 	# now apply patches and parse
 	patchtempfilename = tempfile.mktemp("", "pw-applypatchtemp-", miscfuncs.tmppath)
 
-        if not bquietc:
-                print "reading " + jfin
+	if not bquietc:
+		print "reading " + jfin
 
 	# apply patch filter
 	kfin = jfin
