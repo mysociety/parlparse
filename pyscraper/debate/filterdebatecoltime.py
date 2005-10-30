@@ -75,11 +75,13 @@ regtime = '(?:</?p>\s*|<h[45]>|\[|\n)(?:\d+(?:[:\.]\d+)?(?:\s*|&nbsp;)[ap]\.?m\.
 retimevals = re.compile('(?:</?p>\s*|<h\d>|\[|\n)\s*(\d+(?:[:\.]\d+)?(?:\s*|&nbsp;)[apmnon.]+)(?i)')
 
 # <a name="column_1099">
-reaname = '<a name="\S*?">'
+reaname = '<a name="\S*?">(?:</a>)?'
 reanamevals = re.compile('<a name="(\S*?)">(?i)')
 
 
 recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regcolumnum1, regcolumnum2, regcolumnum3, regcolumnum4, regcolumnum5, regcolumnum6, regcolnumcont, regtime, reaname))
+
+# this covers all the different kinds of things we should have picked up
 remarginal = re.compile(':\s*column\s*(\d+)|\n(?:\d+[.:])?\d+\s*[ap]\.?m\.?[^,\w](?i)|</?a[\s>]')
 
 # This one used to break times into component parts: 7.10 pm
@@ -185,7 +187,7 @@ def FilterDebateColTime(fout, text, sdate, typ):
 			print "marginal found: ", remarginal.search(fss).groups()
 			print "zeroth: ", remarginal.search(fss).group(0)
 			print '--------------------------------\n'
-			raise ContextException('marginal coltime detection case', stamp=stamp, fragment=fss)
+			raise ContextException('marginal coltime/a detection case', stamp=stamp, fragment=fss)
 		fout.write(fss)
 
 

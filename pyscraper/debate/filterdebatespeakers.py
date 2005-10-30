@@ -63,8 +63,19 @@ fixsubs = [
 # Q4.  [161707]<a name="40317-03_wqn5"><B> Mr. Andy Reed  (Loughborough)</B>
 
 parties = "|".join(map(string.lower, memberList.partylist())) + "|uup|ld|dup|in the chair"
-# Rough match:
-recomb = re.compile('((?:Q?\d+\.\s*)?(?:\[\d+\]\s*)?(?:<stamp aname="[^"]*?"/>)?<b>[^<]*</b>(?:\s*\((?:%s)\))?(?:\s*\))?\s*:?)(?i)' % parties)
+
+# Splitting condition
+recomb = re.compile('''(?ix)((?:Q?\d+\.\s*)?(?:\[\d+\]\s*)?
+					(?:<stamp aname="[^"]*?"/>)?
+					<b>
+					[^<]*
+					</b>(?!</h3>)
+					\s*\)?
+					(?:\s*\([^)]*\))?
+					(?:\s*\((?:%s)\))?
+					\s*:?)''' % parties)
+
+
 # Specific match:
 # Notes - sometimes party appears inside bold tags, so we match and throw it away on either side
 respeakervals = re.compile('''(?ix)
@@ -77,16 +88,18 @@ respeakervals = re.compile('''(?ix)
 		(?:\((.*?)\)?)?				# speaker bracket (group6)
 		(?:\s*\((%s)\))?\s*     	# parties list (group7)
 		:?\s*
-		</b>\s*\)?                	# end of bold (we can get brackets outside the bold tag (which should match the missing on on the inside
-		(?:\((%s)\))?			# parties on outside of bold (group8)
+		</b>(?!</h3>)           # end bold tag, ensuring it's not in a heading
+		\s*\)?                	# end of bold (we can get brackets outside the bold tag (which should match the missing on on the inside
+		(?:\((.*?)\))?			# speaker bracket outside of bold (group8)
+		(?:\s*\((%s)\))?		# parties on outside of bold (group9)
 		''' % (parties, parties))
 
 
 
 # <B>Division No. 322</B>
-redivno = re.compile('<b>division no\. \d+</b>$(?i)')
+redivno = re.compile('<b>(?:division no\. \d+|AYES|NOES)</b>$(?i)')
 
-remarginal = re.compile('<b>[^<]*</b>(?i)')
+remarginal = re.compile('<b>[^<]*</b>(?!</h3>)(?i)')
 
 def FilterDebateSpeakers(fout, text, sdate, typ):
 
@@ -133,10 +146,10 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
 			# the preceding square bracket qnums
 			sqbnum = speakerg.group(2) or ""
 
-			party = speakerg.group(7) or speakerg.group(8)
+			party = speakerg.group(7) or speakerg.group(9)
 
 			spstr = string.strip(speakerg.group(5))
-			spstrbrack = speakerg.group(6) # the bracketted phrase
+			spstrbrack = speakerg.group(6) or speakerg.group(8) # the bracketted phrase (sometimes the constituency or name if it is a minister)
 
 			# do quick substitution for dep speakers in westminster hall
 			if typ == "westminhall" and re.search("deputy[ \-]speaker(?i)", spstr) and not spstrbrack:
@@ -145,7 +158,8 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
 
 			# match the member to a unique identifier and displayname
 			try:
-                                #print "spstr", spstr, ",", spstrbrack
+				#print "spstr", spstr, ",", spstrbrack
+				#print speakerg.groups()
 				result = memberList.matchdebatename(spstr, spstrbrack, sdate)
 			except Exception, e:
 				# add extra stamp info to the exception

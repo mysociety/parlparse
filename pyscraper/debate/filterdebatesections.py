@@ -68,7 +68,7 @@ def StripDebateHeading(hmatch, ih, headspeak, bopt=False):
 			return ih
 		print "headspeak", headspeak[ih]
 		if headspeak[ih][2]:
-			raise ContextException('non-conforming section after "%s" heading. e.g. "in the chair" missing <h4><center> ' % hmatch, fragment=headspeak[ih][2])
+			raise ContextException('non-conforming section after "%s" heading. FOR EXAMPLE: "in the chair" missing <h4><center> ' % hmatch, fragment=headspeak[ih][2])
 		print reheadmatch
 		print headspeak[ih][2]
 		raise ContextException('non-conforming "%s" heading ' % hmatch, fragment=headspeak[ih][0])
@@ -78,6 +78,7 @@ def StripDebateHeadings(headspeak, sdate):
 	# check and strip the first two headings in as much as they are there
 	ih = 0
 	ih = StripDebateHeading('Initial', ih, headspeak)
+
 
 	# volume type heading
 	if re.search('THE PARLIAMENTARY DEBATES', headspeak[ih][0]):
@@ -390,8 +391,8 @@ def FilterDebateSections(text, sdate, typ):
 		except ContextException, e:
 			raise
 		# add extra stamp info to the exception
-		except Exception, e:
-			raise ContextException(str(e), stamp=stampurl, fragment=unspoketxt)
+#		except Exception, e:
+#			raise ContextException(str(e), stamp=stampurl, fragment=unspoketxt)
 
 
 	# we now have everything flattened out in a series of speeches
