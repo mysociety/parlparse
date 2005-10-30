@@ -341,35 +341,34 @@ def PullGlueToday(forcescrape):
 	# Fetch 'Today in the Commons' index page
 	frontpagedata = fetchTextFromUrl(TodayInTheCommonsIndexPageUrl)
 	pageurl = urlparse.urljoin(
-			TodayInTheCommonsIndexPageUrl, 
+			TodayInTheCommonsIndexPageUrl,
 			re.search("<a href=\"(01\.htm)\">Go to Full Report</a>", frontpagedata).group(1)
 		)
-	
+
 	preparedDateMatch = re.search("<p class=\"prepared\">Prepared: <strong>(\d+:\d+) on (\d+ [a-zA-Z]+ \d+)</strong></p>", frontpagedata)
 	preparedDateTime = mx.DateTime.DateTimeFrom(preparedDateMatch.group(1) + " " + preparedDateMatch.group(2))
-	
-	
-	# make files which we will copy into	
+
+
+	# make files which we will copy into
 	lddaymap, pwcmfolder = MakeDayMap("debates", "debates")
 	dgflatest, dgflatestdayalpha, dgfnext, dgfnextdayalpha = GetFileDayVersions(preparedDateTime.date, lddaymap, pwcmfolder, "debates")
-	print "GGGG", dgflatest, dgflatestdayalpha, dgfnext, dgfnextdayalpha
-	
+
 	# See if we actually want to proceed with scraping, or if there already exists a 'printed' version
 	# in which case we avoid replacing it with the 'today' version
 	latestScrapedFileMetaData = readPageX(dgflatest)
 	if ('type' in latestScrapedFileMetaData and latestScrapedFileMetaData['type']=='printed'):
 		print "'Printed' version of hansard for today has already been scraped. Skipping scrape of 'Today' version"
 		return None
-	
-	tempFileHandle = open(tempfilename, "w")	
+
+	tempFileHandle = open(tempfilename, "w")
 	tempFileHandle.write('<pagex url="%s" scrapedate="%s" scrapetime="%s" prepareddatetime="%s" type="today" />\n' % (TodayInTheCommonsIndexPageUrl, time.strftime('%Y-%m-%d', time.gmtime()), time.strftime('%X', time.gmtime()), preparedDateTime))
-	
+
 	GlueByToday(tempFileHandle, pageurl)
 	tempFileHandle.close()
-	
+
 	comp = CompareScrapedFiles(dgflatest, tempfilename)
-	
-	if comp == 'DIFFERENT' or comp == 'EXTENSION': 
+
+	if comp == 'DIFFERENT' or comp == 'EXTENSION':
 		# now commit the file
 		os.rename(tempfilename, dgfnext)
 	elif comp != 'SAME':
@@ -380,13 +379,13 @@ def GlueByToday(outputFileHandle, pageurl):
 	while pageurl:
 		assert pagenumber==int(re.search('(\d+)\.htm$', pageurl).group(1))
 		preparedDateTime, nextLink, body = ScrapeTodayPage(pageurl)
-		
+
 		print "Processed [%s] which was prepared [%s]" % (pageurl, preparedDateTime)
 		now = time.gmtime()
 		outputFileHandle.write('<page url="%s" prepareddatetime="%s" />\n' % (pageurl, preparedDateTime) )
 		outputFileHandle.write(body)
 		outputFileHandle.write('\n')
-		
+
 		if nextLink:
 			pageurl = urlparse.urljoin(pageurl, nextLink)
 		else:
@@ -414,11 +413,14 @@ def ScrapeTodayPage(pageurl):
 	<hr>\s*<ul\sclass="prevNext">
 	''', raw_html
 	)
-	
+
 	preparedDateTime = mx.DateTime.DateTimeFrom(matches.group(1) + " " + matches.group(2))
 	nextLink = matches.group(3)
-	body = matches.group(4)
-	
+	sbody = matches.group(4)
+
+	# remove junk links inserted for left hand panel
+	body = re.sub('<span><a href="#toptop">Back to top</a></span>', '', sbody)
+
 	return preparedDateTime, nextLink, body
 
 
@@ -426,26 +428,7 @@ def fetchTextFromUrl(url):
 	ur = urllib.urlopen(url)
 	frontpagedata = ur.read()
 	ur.close();
-	return frontpagedata	
-	
-	
-def nothing():
-		matches = re.search('''(?sx)
-		<body\sclass="commons".*
-		<p\sclass="preparedFullText">
-		Prepared:\s
-		<strong>
-		  (\d+:\d+)\son\s(\d+\s[a-zA-Z]+\s\d+)
-		</strong>
-		.*
-		(?:
-			<a\shref="(\d+\.htm)">Next</a>           # link to next page
-			|
-			<!--\sSPACE\sFOR\sNEXT\sLABEL\s-->
-		)
-		.*
-		(<a\sname="toptop"></a>.*)  # main body text of page
-		<hr>\s*<ul class="prevNext">
-		''', 
-		text
-		)
+	return frontpagedata
+
+
+

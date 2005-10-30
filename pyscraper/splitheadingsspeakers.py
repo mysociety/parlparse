@@ -73,7 +73,7 @@ class StampUrl:
 
 	# extract a url and hash link to position in the web.
 	def GetUrl(self):
-		spurl = re.match('<page url="(.*?)"/>', self.pageurl).group(1)
+		spurl = re.match('<page url="(.*?)"', self.pageurl).group(1)
 		anamem = self.GetAName()
 		if anamem:
 			return '%s#%s' % (spurl, anamem)
@@ -102,11 +102,12 @@ regsection1 = '<h\d><center>.*?\s*</center></h\d>'
 regsection2 = '<h\d align=center>.*?</h\d>'
 regsection3 = '<center><b>.*?</b></center>'
 regsection4 = '<(?:p|br)>\s*<center>.*?</center><(?:p|br)>'
+regsection5 = '<h[34] align=left>.*?</h[34]>'
 regparsermessage = '<parsemess.*?>' #'<parsemess-speech redirect="+-1"/>'
 regspeaker = '<speaker [^>]*>.*?</speaker>'
 regtable = '<table[^>]*>[\s\S]*?</table>'	# these have centres, so must be separated out
 
-recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s)(?i)' % (regtable, regspeaker, regsection1, regsection2, regsection3, regsection4, regparsermessage))
+recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regtable, regspeaker, regsection1, regsection2, regsection3, regsection4, regsection5, regparsermessage))
 
 retableval = re.compile('(%s)(?i)' % regtable)
 respeakerval = re.compile('<speaker ([^>]*)>.*?</speaker>')
@@ -114,7 +115,12 @@ resectiont1val = re.compile('<h\d><center>\s*(.*?)\s*</center></h\d>(?i)')
 resectiont2val = re.compile('<h\d align=center>\s*(.*?)\s*</h\d>(?i)')
 resectiont3val = re.compile('<center><b>(.*?)</b></center>(?i)')
 resectiont4val = re.compile('<(?:p|br)>\s*<center>(.*?)</center><(?:p|br)>(?i)')
+
+# appears in today debates, and is getting a little too general (being able to mix/match b,i tags)
+resectiont5val = re.compile('<h[34] align=left>(?:<[bi]>)?\s*(.*?)\s*(?:</[bi]>)?</h\d>(?i)')
+
 reparsermessage = re.compile('<parsemess-misspeech type="(.*?)" redirect="(up|down|nowhere)"/>')
+
 
 # These aren't actually headings, even though they are <H4><center>
 renotheading = re.compile('>(?:\s*|(?:&nbsp;)*)(The .* (?:was|were) asked\s*(?:&#151;|--))\s*<')
@@ -226,6 +232,8 @@ class SepHeadText:
 				gheading = resectiont3val.match(fss)
 			if not gheading:
 				gheading = resectiont4val.match(fss)
+			if not gheading:
+				gheading = resectiont5val.match(fss)
 
 			# we have matched a heading thing
 			if gheading:

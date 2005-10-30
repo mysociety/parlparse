@@ -118,6 +118,12 @@ entitymap = {
         '&lquo;':"'",
         '&rquo;':"'",
         '&minus;':"-",
+
+		'&#145;':"'",
+		'&#146;':"'",
+		'&#147;':'&quot;',
+		'&#148;':'&quot;',
+		'&#133;':'...',
 }
 entitymaprev = entitymap.values()
 
@@ -286,15 +292,15 @@ def FixHTMLEntities(stex, signore='', stampurl=None):
 
 
 
-
 # The lookahead assertion (?=<table) stops matching tables when another begin table is reached
-restmatcher = '</?p(?: class[= ]"tabletext")?>|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>(?i)'
+paratag = '</?p(?: align=left)?(?: id="[^"]*" class="timestamp")?(?: class[= ]"tabletext")?>'
+restmatcher = paratag + '|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>(?i)'
 reparts = re.compile('(<table[\s\S]*?(?:</table>|(?=<table))|' + restmatcher + ')')
 reparts2 = re.compile('(<table[^>]*?>|' + restmatcher + ')')
 
 retable = re.compile('<table[\s\S]*?</table>(?i)')
 retablestart = re.compile('<table[\s\S]*?(?i)')
-reparaspace = re.compile('</?p(?: class[= ]"tabletext")?>|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>|<table[^>].*>$(?i)')
+reparaspace = re.compile(paratag + '|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>|<table[^>].*>$(?i)')
 reparaempty = re.compile('\s*(?:<i>)?</i>\s*$|\s*$(?i)')
 reitalif = re.compile('\s*<i>\s*$(?i)')
 

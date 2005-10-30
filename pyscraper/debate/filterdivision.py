@@ -134,10 +134,14 @@ def MpTellerList(fsm, vote, stampurl, sdate):
 def FilterDivision(text, stampurl, sdate):
 
 	# the intention is to splice out the known parts of the division
-	fs = re.split('\s*(?:<br>|<p>|\n)\s*(?i)', text)
+	fs = re.split('\s*(?:<br>|<p>|<p align=left class="tabletext">|\n)\s*(?i)', text)
 
 	# extract the positions of the key statements
-	statem = [ 'AYES', 'Tellers for the Ayes:', 'NOES', 'Tellers for the Noes:', 'Question accordingly.*|</FONT>|</p>' ]
+	statem = [ 	'AYES|<p align=left><b>AYES</b></p>',
+				'Tellers for the Ayes:',
+				'NOES|<p align=left><b>NOES</b></p>',
+				'Tellers for the Noes:',
+				'Question accordingly.*|</FONT>|</p>' ]
 	istatem = [ -1, -1, -1, -1, -1 ]
 
 	for i in range(len(fs)):

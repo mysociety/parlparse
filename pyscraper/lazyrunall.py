@@ -28,6 +28,7 @@ from lordspullgluepages import LordsPullGluePages
 from runfilters import RunFiltersDir, RunDebateFilters, RunWransFilters, RunLordsFilters, RunWestminhallFilters, RunWMSFilters
 from regmemfilter import RunRegmemFilters
 from regmempullgluepages import RegmemPullGluePages
+from miscfuncs import bNotQuiet
 
 # Parse the command line parameters
 
@@ -89,6 +90,9 @@ parser.add_option("--quietc",
 if (options.date):
         options.datefrom = options.date
         options.dateto = options.date
+if options.quietc:
+	print "QUIET"
+	bNotQuiet = False
 
 # See what commands there are
 
