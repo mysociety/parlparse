@@ -122,7 +122,7 @@ def StripDebateHeadings(headspeak, sdate):
                 ih = StripDebateHeading('pursuant to the Standing Order\.', ih, headspeak, True)
 
                 # in the chair
-                ih = StripDebateHeading('\[.*? in the chair\](?i)', ih, headspeak, True)
+                ih = StripDebateHeading('\[.*?[ >]in the chair[<>i/\.]*\](?i)', ih, headspeak, True)
 
 	# find the url, colnum and time stamps that occur before anything else in the unspoken text
 	stampurl = StampUrl(sdate)
@@ -200,6 +200,9 @@ def NormalHeadingPart(headingtxt, stampurl):
 	# prior major heading.  Also, Oral questions heading is a super-major heading,
 	# so doesn't fit into the scheme.
 
+	# remove junk italic settings that appear in the today pages
+	headingtxt = re.sub("</?i>(?i)", "", headingtxt)
+
 	# detect if this is a major heading and record it in the correct variable
 
 	bmajorheading = False
@@ -215,21 +218,22 @@ def NormalHeadingPart(headingtxt, stampurl):
 	# Check if there are any other spellings of "Oral Answers to Questions" with a loose match
 	elif re.search('oral(?i)', headingtxt) and re.search('ques(?i)', headingtxt) and (not re.search(" Not ", headingtxt)) and \
 			stampurl.sdate != "2002-06-11": # has a genuine title with Oral in it
-		raise Exception, 'Oral question match not precise enough: %s' % headingtxt
+		print headingtxt
+		raise ContextException('Oral question match not precise enough', stamp=stampurl, fragment=headingtxt)
 
 	# All upper case headings
 	elif not re.search('[a-z]', headingtxt):
 		bmajorheading = True
 
-        # If this is labeled major, then it gets concatenated with the
-        # subsequent major heading.  It's kind of a procedural info about the
-        # running of things, so fair to have it as a minor heading alone.
+	# If this is labeled major, then it gets concatenated with the
+	# subsequent major heading.  It's kind of a procedural info about the
+	# running of things, so fair to have it as a minor heading alone.
 	elif re.match("\[.*? in the Chair\.?\]$(?i)", headingtxt):
 		bmajorheading = False
 
-	elif re.search("in\s+the\s+chair(?i)", headingtxt):
-		raise Exception, 'in the chair match not precise enough: %s' % headingtxt
-
+	elif re.search("in\s*the\s*chair(?i)", headingtxt):
+		print headingtxt
+		raise ContextException('in the chair match not precise enough', stamp=stampurl, fragment=headingtxt)
 
 	# Other major headings, marked by _head in their anchor tag
 	elif re.search('^hd_|_head', stampurl.aname):
@@ -238,6 +242,7 @@ def NormalHeadingPart(headingtxt, stampurl):
 	# we're not writing a block for division headings
 	# write out block for headings
 	headingtxtfx = FixHTMLEntities(headingtxt)
+	assert not re.search("[<>]", headingtxtfx)  # an assertion in gidmatching
 	qb = qspeech('nospeaker="true"', headingtxtfx, stampurl)
 	if binsertedheading:
 		qb.typ = 'inserted-heading'
@@ -282,6 +287,8 @@ def GrabWestminDivisionInterruptProced(qbp, rawtext):
 		qbp.stext = qbp.stext[:iskip]
 		return qbdp
 	return None
+
+
 ################
 # main function
 ################

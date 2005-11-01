@@ -95,6 +95,9 @@ def FilterDebateColTime(fout, text, sdate, typ):
 		text = ApplyFixSubstitutions(text, sdate, fixsubs)
 
 	stamp = StampUrl(sdate) # for error messages
+	btodaytype = re.match('<pagex [^>]*type="today"', text)
+	if btodaytype:
+		fout.write('<stamp colnum="000"/>\n')
 
 	colnum = -1
 	time = ''	# need to use a proper timestamp code class
@@ -102,6 +105,8 @@ def FilterDebateColTime(fout, text, sdate, typ):
 		# column number type
 		columng = recolumnumvals.match(fss)
 		if columng:
+			assert not btodaytype  # no columns in today
+
 			# check date
 			ldate = mx.DateTime.DateTimeFrom(columng.group(1)).date
 			if sdate != ldate:

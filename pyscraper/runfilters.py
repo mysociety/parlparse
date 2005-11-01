@@ -228,6 +228,28 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 		fdaycs = daymap[sdate]
 		fdaycs.sort()
 
+		# detect if there is a change in date on any of them, which will
+		# require forcr reparse on whole day to keep the "latest" flag up to date.
+		# this is happening due to over-writes on the today pages
+		bmodifiedoutoforder = None
+		for fdayc in fdaycs:
+			fin = fdayc[2]
+			jfin = os.path.join(pwcmdirin, fdayc[2])
+			jfout = os.path.join(pwxmldirout, re.match('(.*\.)html$', fin).group(1) + 'xml')
+			patchfile = findpatchfile(fin, newpwpatchesdir, pwpatchesdir)
+			if os.path.isfile(jfout):
+				out_modified = os.stat(jfout).st_mtime
+				in_modified = os.stat(jfin).st_mtime
+				if in_modified > out_modified:
+					bmodifiedoutoforder = fin
+				if patchfile and os.path.isfile(patchfile):
+					patch_modified = os.stat(patchfile).st_mtime
+					if patch_modified > out_modified:
+						bmodifiedoutoforder = fin
+		if bmodifiedoutoforder:
+			print "input or patch modified since output reparsing ", bmodifiedoutoforder
+
+
 		# now we parse these files -- in order -- to accumulate their catalogue of diffs
 		xprev = None # previous xml file from which we check against diffs, and its version string
 		for fdayc in fdaycs:
@@ -242,25 +264,14 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 
 			# skip already processed files, if date is earler and it's not a forced reparse
 			# (checking output date against input and patchfile, if there is one)
-			bparsefile = True
-			if os.path.isfile(jfout):
-				out_modified = os.stat(jfout).st_mtime
-				in_modified = os.stat(jfin).st_mtime
-				patch_modified = None
-				if os.path.isfile(patchfile):
-					patch_modified = os.stat(patchfile).st_mtime
-				if (not forcereparse) and (in_modified < out_modified) and ((not patchfile) or patch_modified < out_modified):
-					bparsefile = False   # bail out
-				elif not forcereparse:
-					print "input modified since output reparsing ", fin
-
+			bparsefile = not os.path.isfile(jfout) or forcereparse or bmodifiedoutoforder
 			while bparsefile:  # flag is being used acually as if bparsefile: while True:
 				try:
 					RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile, jfout, forcereparse, options.quietc)
 
 					# update the list of files which have been changed
 					# (don't see why it can't be determined by the modification time on the file)
-                                        # (because rsync is crap, and different computers have different clocks)
+					# (-- because rsync is crap, and different computers have different clocks)
 					newlistf = os.path.join(pwxmldirout, changedatesfile)
 					fil = open(newlistf,'a+')
 					fil.write('%d,%s\n' % (time.time(), os.path.split(jfout)[1]))
