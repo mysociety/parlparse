@@ -69,7 +69,7 @@ recomb = re.compile('''(?ix)((?:Q?\d+\.\s*)?(?:\[\d+\]\s*)?
 					(?:<stamp aname="[^"]*?"/>)?
 					<b>
 					[^<]*
-					</b>(?!</h3>)
+					</b>(?!</h[34]>)
 					\s*\)?
 					(?:\s*\([^)]*\))?
 					(?:\s*\((?:%s)\))?
@@ -88,7 +88,7 @@ respeakervals = re.compile('''(?ix)
 		(?:\((.*?)\)?)?				# speaker bracket (group6)
 		(?:\s*\((%s)\))?\s*     	# parties list (group7)
 		:?\s*
-		</b>(?!</h3>)           # end bold tag, ensuring it's not in a heading
+		</b>(?!</h[34]>)        # end bold tag, ensuring it's not in a heading
 		\s*\)?                	# end of bold (we can get brackets outside the bold tag (which should match the missing on on the inside
 		(?:\((.*?)\))?			# speaker bracket outside of bold (group8)
 		(?:\s*\((%s)\))?		# parties on outside of bold (group9)
@@ -99,7 +99,7 @@ respeakervals = re.compile('''(?ix)
 # <B>Division No. 322</B>
 redivno = re.compile('<b>(?:division no\. \d+|AYES|NOES)</b>$(?i)')
 
-remarginal = re.compile('<b>[^<]*</b>(?!</h3>)(?i)')
+remarginal = re.compile('<b>[^<]*</b>(?!</h[34]>)(?i)')
 
 def FilterDebateSpeakers(fout, text, sdate, typ):
 

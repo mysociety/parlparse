@@ -243,25 +243,26 @@ def readPageX(filename):
 	hFile = open(filename)
 	line= hFile.readline()
 	hFile.close()
-	
-	map={}
+
+	lmap={}
 	attributes= re.search('<pagex(( +[^ =]+="[^"]+")+) */>', line).group(0)
 	for match in re.finditer('([^ =]+)="([^"]+)"', attributes):
-		map[match.group(1)] = match.group(2)
-	return map
+		lmap[match.group(1)] = match.group(2)
+	return lmap
+
 
 def CompareScrapedFiles(prevfile, nextfile):
 	if not prevfile:
 		return "DIFFERENT"
-	
+
 	hprevfile = open(prevfile)
 	dprevfile = hprevfile.readlines()
 	hprevfile.close()
-		
+
 	hnextfile = open(nextfile)
 	dnextfile = hnextfile.readlines()
 	hnextfile.close()
-	
+
 	if len(dprevfile) == len(dnextfile) and dprevfile[1:] == dnextfile[1:]:
 		return "SAME"
 	if len(dprevfile) < len(dnextfile) and dprevfile[1:] == dnextfile[1:len(dprevfile)]:
@@ -347,32 +348,42 @@ def PullGlueToday(forcescrape):
 
 	preparedDateMatch = re.search("<p class=\"prepared\">Prepared: <strong>(\d+:\d+) on (\d+ [a-zA-Z]+ \d+)</strong></p>", frontpagedata)
 	preparedDateTime = mx.DateTime.DateTimeFrom(preparedDateMatch.group(1) + " " + preparedDateMatch.group(2))
-
+	spreparedDateTime = "%s" % preparedDateTime  # convert to string (can't find the real way to do it)
+	sdate = preparedDateTime.date
 
 	# make files which we will copy into
 	lddaymap, pwcmfolder = MakeDayMap("debates", "debates")
-	dgflatest, dgflatestdayalpha, dgfnext, dgfnextdayalpha = GetFileDayVersions(preparedDateTime.date, lddaymap, pwcmfolder, "debates")
+	dgflatest, dgflatestdayalpha, dgfnext, dgfnextdayalpha = GetFileDayVersions(sdate, lddaymap, pwcmfolder, "debates")
 
 	# See if we actually want to proceed with scraping, or if there already exists a 'printed' version
 	# in which case we avoid replacing it with the 'today' version
 	latestScrapedFileMetaData = readPageX(dgflatest)
-	if ('type' in latestScrapedFileMetaData and latestScrapedFileMetaData['type']=='printed'):
+	if latestScrapedFileMetaData.get('type')=='printed':
 		print "'Printed' version of hansard for today has already been scraped. Skipping scrape of 'Today' version"
+		return None
+	if not forcescrape and latestScrapedFileMetaData.get('prepareddatetime') == spreparedDateTime:
+		print "Prepared datetime", spreparedDateTime, "already done"
 		return None
 
 	tempFileHandle = open(tempfilename, "w")
-	tempFileHandle.write('<pagex url="%s" scrapedate="%s" scrapetime="%s" prepareddatetime="%s" type="today" />\n' % (TodayInTheCommonsIndexPageUrl, time.strftime('%Y-%m-%d', time.gmtime()), time.strftime('%X', time.gmtime()), preparedDateTime))
+	tempFileHandle.write('<pagex url="%s" scrapedate="%s" scrapetime="%s" prepareddatetime="%s" type="today" />\n' % (TodayInTheCommonsIndexPageUrl, time.strftime('%Y-%m-%d', time.gmtime()), time.strftime('%X', time.gmtime()), spreparedDateTime))
 
 	GlueByToday(tempFileHandle, pageurl)
 	tempFileHandle.close()
 
 	comp = CompareScrapedFiles(dgflatest, tempfilename)
-
-	if comp == 'DIFFERENT' or comp == 'EXTENSION':
-		# now commit the file
+	# now commit the file
+	if comp == 'DIFFERENT':
+		print "writing: ", dgfnext
 		os.rename(tempfilename, dgfnext)
-	elif comp != 'SAME':
-		raise ScraperException("Unknown comparison type '%s'" % comp)
+	elif comp == 'EXTENSION':
+		print "OVER-writing: ", dgflatest
+		shutil.copyfile(tempfilename, dgflatest)
+		os.remove(tempfilename)
+	else:
+		assert comp == 'SAME'
+		print "download exactly the same: ", dgflatest
+
 
 def GlueByToday(outputFileHandle, pageurl):
 	pagenumber=1
@@ -409,10 +420,18 @@ def ScrapeTodayPage(pageurl):
 	)
 	.*
 	<a\sname="toptop"></a>
-	(.*)  # main body text of page
-	<hr>\s*<ul\sclass="prevNext">
+	(.*)  										 # main body text of page
+	<hr>\s*
+	(?:<ul\sclass="prevNext">|<!--\sSPACE\sFOR\sNEXT\sLABEL\s-->)
 	''', raw_html
 	)
+	if not matches:
+		print re.findall('<body\sclass="commons"', raw_html)
+		print re.findall('<p\sclass="preparedFullText">', raw_html)
+		print re.findall('<p\sclass="preparedFullText">', raw_html)
+		print re.findall('<strong>(\d+:\d+)\son\s(\d+\s[a-zA-Z]+\s\d+)</strong>', raw_html)
+		print re.findall('(?:<a\shref="(\d+\.htm)">Next</a>|<!--\sSPACE\sFOR\sNEXT\sLABEL\s-->)', raw_html)
+		print raw_html[:200]
 
 	preparedDateTime = mx.DateTime.DateTimeFrom(matches.group(1) + " " + matches.group(2))
 	nextLink = matches.group(3)
