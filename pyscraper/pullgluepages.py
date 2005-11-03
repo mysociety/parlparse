@@ -376,13 +376,16 @@ def PullGlueToday(forcescrape):
 	if comp == 'DIFFERENT':
 		print "writing: ", dgfnext
 		os.rename(tempfilename, dgfnext)
+		return sdate
 	elif comp == 'EXTENSION':
 		print "OVER-writing: ", dgflatest
 		shutil.copyfile(tempfilename, dgflatest)
 		os.remove(tempfilename)
+		return sdate
 	else:
 		assert comp == 'SAME'
 		print "download exactly the same: ", dgflatest
+		return None
 
 
 def GlueByToday(outputFileHandle, pageurl):
