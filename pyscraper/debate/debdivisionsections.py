@@ -103,7 +103,7 @@ def DivisionParsingPart(divno, unspoketxt, stampurl, sdate):
 			unspoketxt = unspoketxt[len(strexplicitenddiv):]
 	else:
 		divtext = unspoketxt
-                print unspoketxt
+		print unspoketxt
 		print "division missing %s" % regenddiv
 		unspoketxt = ''
 

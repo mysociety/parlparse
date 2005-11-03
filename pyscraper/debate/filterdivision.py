@@ -132,31 +132,31 @@ def MpTellerList(fsm, vote, stampurl, sdate):
 
 # this splitting up isn't going to deal with some of the bad cases in 2003-09-10
 def FilterDivision(text, stampurl, sdate):
+	# discard all italics
+	text = re.sub("</?i>(?i)", "", text)
 
 	# the intention is to splice out the known parts of the division
-	fs = re.split('\s*(?:<br>|<p>|<p align=left class="tabletext">|\n)\s*(?i)', text)
+	fs = re.split('\s*(?:<br>|</?p>|<p align=left(?: class="tabletext")?>|</font>|\n)\s*(?i)', text)
 
 	# extract the positions of the key statements
-	statem = [ 	'AYES|<p align=left><b>AYES</b></p>',
+	statem = [ 	'AYES|<b>AYES</b>',
 				'Tellers for the Ayes:',
-				'NOES|<p align=left><b>NOES</b></p>',
-				'Tellers for the Noes:',
-				'Question accordingly.*|</FONT>|</p>' ]
-	istatem = [ -1, -1, -1, -1, -1 ]
+				'NOES|<b>NOES</b>',
+				'Tellers for the Noes:', ]
+				#'Question accordingly.*|</FONT>|</p>' ]
+	istatem = [ -1, -1, -1, -1 ]
 
 	for i in range(len(fs)):
-		for si in range(5):
+		for si in range(4):
 			if re.match(statem[si], fs[i]):
 				if istatem[si] != -1:
-					if not re.match("</p>", fs[i]):  # sometimes a double </p>
-						print '--------------- ' + fs[i]
-						raise ContextException(' already set ', stamp=stampurl, fragment=fs)
+					print '--------------- ' + fs[i]
+					raise ContextException(' already set ', stamp=stampurl, fragment=fs)
 				else:
 					istatem[si] = i
 
-	# protect against truncating before the question accordingly
-	if istatem[4] == -1:
-		istatem[4] = len(fs)
+	# add fifth place (ending)
+	istatem.append(len(fs))
 
 	# deferred division, no tellers
 	if istatem[1] == -1 and istatem[3] == -1:

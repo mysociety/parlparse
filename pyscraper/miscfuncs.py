@@ -258,23 +258,25 @@ def StraightenHTMLrecurse(stex, stampurl):
 		elif sres[i] == '\xe9':
 			sres[i] = '&eacute;'
 
-		elif sres[i] == '<i>':
-			sres[i] = '' # 'OPEN-i-TAG-OUT-OF-PLACE'
-		elif sres[i] == '</i>':
-			sres[i] = '' # 'CLOSE-i-TAG-OUT-OF-PLACE'
+		elif re.match('</?i>$(?i)', sres[i]):
+			sres[i] = '' # 'OPEN-i-TAG-OUT-OF-PLACE' 'CLOSE-i-TAG-OUT-OF-PLACE'
 
-		elif re.match('<xref locref=\d+>', sres[i]): # what is this? wrans 2003-05-13 has one
+		elif re.match('<xref locref=\d+>$', sres[i]): # what is this? wrans 2003-05-13 has one
 			sres[i] = ''
 
 		# allow brs through
-		elif re.match('<br>(?i)', sres[i]):
+		elif re.match('<br>$(?i)', sres[i]):
 			sres[i] = '<br/>'
 
+		# discard garbage that appears in recent today postings
+		elif re.match('<jf\d+>$(?i)', sres[i]):
+			sres[i] = ''
+
 		elif sres[i][0] == '<' or sres[i][0] == '>':
-                        print "Part:", sres[i][0]
-                        print "All:",sres[i]
-                        print "stex:", stex
-                        print "raising"
+			print "Part:", sres[i][0]
+			print "All:",sres[i]
+			print "stex:", stex
+			print "raising"
 			raise ContextException('tag %s tag out of place in %s' % (sres[i], stex), stamp=stampurl, fragment=stex)
 
 	return sres
@@ -298,7 +300,7 @@ def FixHTMLEntities(stex, signore='', stampurl=None):
 
 
 # The lookahead assertion (?=<table) stops matching tables when another begin table is reached
-paratag = '</?p(?: align=left)?(?: id="[^"]*" class="timestamp")?(?: class[= ]"tabletext")?>'
+paratag = '</?p(?: align=left)?(?: id="[^"]*" class="timestamp")?(?: class[= ]"(?:tabletext|normaltext)")?>'
 restmatcher = paratag + '|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>(?i)'
 reparts = re.compile('(<table[\s\S]*?(?:</table>|(?=<table))|' + restmatcher + ')')
 reparts2 = re.compile('(<table[^>]*?>|' + restmatcher + ')')

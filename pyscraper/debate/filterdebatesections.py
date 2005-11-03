@@ -201,7 +201,7 @@ def NormalHeadingPart(headingtxt, stampurl):
 	# so doesn't fit into the scheme.
 
 	# remove junk italic settings that appear in the today pages
-	headingtxt = re.sub("</?i>(?i)", "", headingtxt)
+	headingtxt = re.sub("</?(?:i|sup)>(?i)", "", headingtxt)
 
 	# detect if this is a major heading and record it in the correct variable
 

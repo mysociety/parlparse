@@ -88,8 +88,8 @@ parser.add_option("--quietc",
 
 (options, args) = parser.parse_args()
 if (options.date):
-        options.datefrom = options.date
-        options.dateto = options.date
+	options.datefrom = options.date
+	options.dateto = options.date
 if options.quietc:
 	SetQuiet()
 
@@ -173,6 +173,7 @@ if options.scrape:
 #
 # Download/generate the new data
 #
+pullgluetodaydate = None
 if options.scrape:
 	if options.wrans:
 		PullGluePages(options.datefrom, options.dateto, options.forcescrape, "wrans", "answers")
@@ -187,7 +188,7 @@ if options.scrape:
 	if options.votes:
 		PullGluePages(options.datefrom, options.dateto, options.forcescrape, "votes", "votes")
 	if options.today:
-		PullGlueToday(options.forcescrape)
+		pullgluetodaydate = PullGlueToday(options.forcescrape)
 	if options.regmem:
 		# TODO - date ranges when we do index page stuff for regmem
 		RegmemPullGluePages(options.forcescrape)
@@ -210,5 +211,12 @@ if options.parse:
 		RunFiltersDir(RunRegmemFilters, 'regmem', options, options.forceparse)
 	if options.chgpages:
 		ParseGovPosts()
+
+	# special run-on case of same day
+	if options.today:
+		if pullgluetodaydate:
+			options.datefrom = pullgluetodaydate
+			options.dateto = pullgluetodaydate
+			RunFiltersDir(RunDebateFilters, 'debates', options, options.forceparse)
 
 
