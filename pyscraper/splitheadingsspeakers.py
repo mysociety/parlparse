@@ -146,6 +146,8 @@ class SepHeadText:
 		self.speaker = 'No one'
 		self.textl = [ ]
 
+	# the pulling of unspoketext from previous heading is done in another pass
+	# in filterdebatesections.py
 	def EndHeading(self, nextheading):
 		self.EndSpeech()
 
@@ -163,12 +165,11 @@ class SepHeadText:
 			if gho and not renotheadingmarg.search(self.unspoketext):
 				self.heading = self.heading + ' ' + gho.group(1)
 				self.heading = re.sub("\s+", " ", self.heading)
-				self.unspoketext = gho.group(2)
+				#self.unspoketext = gho.group(2)
 				# print "merged dangling heading %s" % (self.heading)
 				if len(self.heading) > 100:
 					raise ContextException("Suspiciously long merged heading part - is it OK? %s" % self.heading, stamp=None, fragment=self.heading)
 
-		# push block into list
 		self.shtext.append((self.heading, self.unspoketext, self.shspeak))
 
 		self.heading = nextheading

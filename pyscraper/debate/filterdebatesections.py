@@ -20,7 +20,7 @@ from splitheadingsspeakers import StampUrl
 from clsinglespeech import qspeech
 from parlphrases import parlPhrases
 
-from miscfuncs import FixHTMLEntities
+from miscfuncs import FixHTMLEntities, IsNotQuiet
 
 from filterdivision import FilterDivision
 from filterdebatespeech import FilterDebateSpeech
@@ -346,13 +346,28 @@ def FilterDebateSections(text, sdate, typ):
 					flatb[-1].stext.append(" &mdash; ")
 					flatb[-1].stext.extend(qbh.stext)
 
+				# this is where we suck in a trailing "Clause" part of the title that is mistakenly outside the heading.
 				elif (qbh.typ == 'minor-heading' or qbh.typ == 'major-heading') and len(flatb) > 0 and flatb[-1].typ == 'speech':
-                                        mmm = re.search('<p>((?:New )?Clause \d+)</p>', flatb[-1].stext[-1])
-                                        if mmm:
-                                                qbh.stext.insert(0, " &mdash; ")
-                                                qbh.stext.insert(0, mmm.group(1))
-                                                flatb[-1].stext = flatb[-1].stext[:-1]
-                                        flatb.append(qbh)
+					mmm = re.match('\s*<p>((?:New )?Clause \d+)</p>', flatb[-1].stext[-1])
+					if mmm:
+						if IsNotQuiet():
+							print "Clause moving", flatb[-1].stext[-1]
+						qbh.stext.insert(0, " &mdash; ")
+						qbh.stext.insert(0, mmm.group(1))
+						flatb[-1].stext = flatb[-1].stext[:-1]  # delete final value
+
+						# remove an empty speech
+						if not flatb[-1].stext:
+							if IsNotQuiet():
+								print "removing empty speech after moving 'clause' out"
+							assert flatb[-1].speaker == 'nospeaker="true"'
+							del flatb[-1]
+
+					# converting a search into a match, for safety, and double checking
+					else:
+						assert not re.search('\<p>\s*((?:New )?\s*Clause\s*\w+)\s*</p>(?i)', flatb[-1].stext[-1])
+
+					flatb.append(qbh)
 
 				# otherwise put out this heading
 				else:
