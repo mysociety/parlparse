@@ -65,8 +65,9 @@ fixsubs = [
 parties = "|".join(map(string.lower, memberList.partylist())) + "|uup|ld|dup|in the chair"
 
 # Splitting condition
+# this must be a generalization of the one below.  so changes need to be reflected in both.
 recomb = re.compile('''(?ix)((?:Q?\d+\.\s*)?(?:\[\d+\]\s*)?
-					(?:<stamp aname="[^"]*?"/>)?
+					(?:<stamp\saname="[^"]*"/>)?
 					<b>
 					[^<]*
 					</b>(?!</h[34]>)
@@ -88,7 +89,7 @@ respeakervals = re.compile('''(?ix)
 		(?:\((.*?)\)?)?				# speaker bracket (group6)
 		(?:\s*\((%s)\))?\s*     	# parties list (group7)
 		:?\s*
-		</b>(?!</h[34]>)        # end bold tag, ensuring it's not in a heading
+		</b>(?!</h[34]>) 		# end bold tag, ensuring it's not in a heading
 		\s*\)?                	# end of bold (we can get brackets outside the bold tag (which should match the missing on on the inside
 		(?:\((.*?)\))?			# speaker bracket outside of bold (group8)
 		(?:\s*\((%s)\))?		# parties on outside of bold (group9)
@@ -125,6 +126,11 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
 
 		# division number detection (these get through the speaker detection regexp)
 		if redivno.match(fss):
+			fout.write(fss.encode("latin-1"))
+			continue
+
+		# CORRECTION title (these also get through) -- both these are surrounded by <center> tags usually.
+		if fss == "<b>CORRECTION</b>":
 			fout.write(fss.encode("latin-1"))
 			continue
 
