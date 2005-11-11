@@ -22,7 +22,7 @@ my $dir=shift || die "usage: $0 <output dir>\n";
 {
 	&setup_cookies($index_url); # it'll get redirected to the front page anyway
 	open (OUT, ">$dir/people.txt") || die "can't open $dir/people.txt : $!";
-	print "Constituency\tPIMS_MP_ID\tName\n";
+	print "Constituency\tPIMS_MP_ID\tPublicWhipID\tName\n";
 	print &indexes_fetch($index_url, {});
 	close (OUT);
 }
@@ -66,7 +66,7 @@ sub mp_list_parse {
 	@parts = $page->content =~ m#<td><a href='EDMByMember\.aspx\?MID=(\d+).*?>([^>]+)</a></td>\s*<td>([^<]+)</td>#scg;
 
 	while (($mpid,$name,$constituency, @parts)= @parts) {
-		$lines.= "$constituency\t$mpid\t$name\n";
+		$lines.= "$constituency\t$mpid\t0\t$name\n";
 	}
 	return ($lines);
 }
