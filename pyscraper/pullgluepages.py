@@ -213,13 +213,15 @@ def MakeDayMap(folder, typ):
 	for ldfile in os.listdir(pwcmfolder):
 		mnums = re.match("%s(\d{4}-\d\d-\d\d)([a-z]*)\.html$" % typ, ldfile)
 		if mnums:
-			lddaymap.setdefault(mnums.group(1), []).append((AlphaStringToOrder(mnums.group(2)), mnums.group(2), ldfile))
+			sdate = mnums.group(1)
+			salpha = mnums.group(2)
+			lddaymap.setdefault(sdate, []).append((AlphaStringToOrder(salpha), salpha, ldfile))
 		elif os.path.isfile(os.path.join(pwcmfolder, ldfile)):
 			print "not recognized file:", ldfile, " in ", pwcmfolder
-	
+
 	return lddaymap, pwcmfolder
-	
-	
+
+
 def GetFileDayVersions(day, lddaymap, pwcmfolder, typ):
 	# make the filename
 	dgflatestalpha, dgflatest, dgflatestdayalpha = "", None, None
@@ -338,18 +340,28 @@ def ReplicatePatchToNewScrapedVersion(folderName, latestFileStem, latestFilePath
 		else:
 			print "    Could not apply old patch file to this, status=", status
 
+
+
+
 def PullGlueToday(forcescrape):
 	# Fetch 'Today in the Commons' index page
 	frontpagedata = fetchTextFromUrl(TodayInTheCommonsIndexPageUrl)
-	pageurl = urlparse.urljoin(
-			TodayInTheCommonsIndexPageUrl,
-			re.search("<a href=\"(01\.htm)\">Go to Full Report</a>", frontpagedata).group(1)
-		)
+	link01url = re.search("<a href=\"(01\.htm)\">Go to Full Report</a>", frontpagedata).group(1)
+	pageurl = urlparse.urljoin(TodayInTheCommonsIndexPageUrl, link01url)
 
 	preparedDateMatch = re.search("<p class=\"prepared\">Prepared: <strong>(\d+:\d+) on (\d+ [a-zA-Z]+ \d+)</strong></p>", frontpagedata)
 	preparedDateTime = mx.DateTime.DateTimeFrom(preparedDateMatch.group(1) + " " + preparedDateMatch.group(2))
 	spreparedDateTime = "%s" % preparedDateTime  # convert to string (can't find the real way to do it)
-	sdate = preparedDateTime.date
+
+	# extract the date from the browse links lower down
+	headingDateMatch = re.search('''(?x)<h2>Browse\sReport\sBy\sSection</h2>\s*
+										<ul>\s*
+										<p\sclass="indextext"\salign=left><a\shref="01.htm\#hddr_1"><b>House\sof\sCommons</b></a></p>\s*
+										<p\sclass="indextext"\salign=left><a\shref="01.htm\#hddr_2"><i>([^<]*)</i></a></p>''', frontpagedata)
+	headingDateTime = mx.DateTime.DateTimeFrom(headingDateMatch.group(1))
+	sdate = headingDateTime.date
+	assert sdate <= preparedDateTime.date # prepared date must come after date from heading
+
 
 	# make files which we will copy into
 	lddaymap, pwcmfolder = MakeDayMap("debates", "debates")
@@ -362,7 +374,8 @@ def PullGlueToday(forcescrape):
 		print "'Printed' version of hansard for today has already been scraped. Skipping scrape of 'Today' version"
 		return None
 	if not forcescrape and latestScrapedFileMetaData.get('prepareddatetime') == spreparedDateTime:
-		print "Prepared datetime", spreparedDateTime, "already done"
+		if miscfuncs.IsNotQuiet():
+			print "Prepared datetime", spreparedDateTime, "already done"
 		return None
 
 	tempFileHandle = open(tempfilename, "w")
@@ -394,7 +407,8 @@ def GlueByToday(outputFileHandle, pageurl):
 		assert pagenumber==int(re.search('(\d+)\.htm$', pageurl).group(1))
 		preparedDateTime, nextLink, body = ScrapeTodayPage(pageurl)
 
-		print "Processed [%s] which was prepared [%s]" % (pageurl, preparedDateTime)
+		if miscfuncs.IsNotQuiet():
+			print "Processed [%s] which was prepared [%s]" % (pageurl, preparedDateTime)
 		now = time.gmtime()
 		outputFileHandle.write('<page url="%s" prepareddatetime="%s" />\n' % (pageurl, preparedDateTime) )
 		outputFileHandle.write(body)
