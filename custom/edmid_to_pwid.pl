@@ -22,8 +22,8 @@ my $dir=shift || die "usage: $0 <output dir>\n";
 {
 	&setup_cookies($index_url); # it'll get redirected to the front page anyway
 	open (OUT, ">$dir/people.txt") || die "can't open $dir/people.txt : $!";
-	print "Constituency\tPIMS_MP_ID\tPublicWhipID\tName\n";
-	print &indexes_fetch($index_url, {});
+	print OUT "Constituency\tPIMS_MP_ID\tPublicWhipID\tName\n";
+	print OUT &indexes_fetch($index_url, {});
 	close (OUT);
 }
 
@@ -44,17 +44,18 @@ sub indexes_fetch {
 	$args->{'ddlSortedBy'} = 1;
 	$args->{'ddlStatus'} = 0;
 	if (defined $ENV{DEBUG}) {print STDERR "Fetching $url\n";}
+	my $return='';
 	my $response = $browser->post($url, $args); # args that don't change each time
 	if($response->code == 200) {
 		my $content= $response->{_content};
 		#if (defined $ENV{DEBUG}) {print STDERR "$content\n";}
 		foreach my $letter ('a' .. 'z') {
-			&mp_list_parse($letter);
+			$return.= &mp_list_parse($letter);
 		}
 	} else {
 		die "Hmm, couldn't access it: ", $response->status_line, "\n";
 	}
-	#foreach my $k (sort keys %args){ print "\n\n\n$k - $args{$k}\n"; }
+	return ($return);
 }
 
 sub mp_list_parse {
@@ -68,5 +69,5 @@ sub mp_list_parse {
 	while (($mpid,$name,$constituency, @parts)= @parts) {
 		$lines.= "$constituency\t$mpid\t0\t$name\n";
 	}
-	return ($lines);
+	return $lines;
 }
