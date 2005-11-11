@@ -18,8 +18,9 @@ my $index_url= $base_url . 'EDMList.aspx';
 my $Parl_Session= '875'; # hardcode to 05-06 for now
 my $Parl_Session_readable= '05-06'; # hardcode to 05-06 for now
 my $dir=shift || die "usage: $0 <output dir>\n";
-
+my $MPmap;
 {
+	&parse_mpid_table();
 	&setup_cookies($index_url); # it'll get redirected to the front page anyway
 	&indexes_fetch($index_url, {});
 
@@ -95,7 +96,7 @@ sub index_parse {
 		my $next_page= $1;
 		if ($2 !~ /disabled/) {
 			if ($html=~ m#name="(__VIEWSTATE)" value="([^"]+)"#i) {
-				&indexes_fetch($index_url, {"_MenuCtrl:hdSessionID"=>'', $next_page=> "", "$1" => "$2", "__EVENTTARGET"=> '', "__EVENTARGUMENT" => ''}); # args that could change each time
+				#			&indexes_fetch($index_url, {"_MenuCtrl:hdSessionID"=>'', $next_page=> "", "$1" => "$2", "__EVENTTARGET"=> '', "__EVENTARGUMENT" => ''}); # args that could change each time
 			}
 		}
 	}
@@ -114,18 +115,39 @@ sub parse_motion {
 	$content=~ m#<!--\s*Motion Text Display -->\s*<p><span class=".*?">(.*?)</span>#mcgi;
 	$info_ref->{motion}=$1;
 
-	my ($order, $name, @matches);
-	(@matches)= $content=~ m#<span id="Sigs__ctl(\d+)_lblMember"><i>(.*?)</i></span>#mcig;
-	while (($order, $name, @matches)= @matches) {
-		push @{$info_ref->{sponsored_by}},"$name";
+	my ($memberid, $order, $name, @matches);
+	my $pw_id;
+	(@matches)= $content=~ m#<a\s*href='EDMByMember\.aspx\?MID=(\d+)'>\s*<span id="Sigs__ctl(\d+)_lblMember"><i>(.*?)</i></span>#mcig;
+	while (($memberid, $order, $name, @matches)= @matches) {
+		$info_ref->{sponsored_by}->{$order}->{name}= $name;
+		#$info_ref->{sponsored_by}->{$order}->{position}= $order;
+		$info_ref->{sponsored_by}->{$order}->{edm_memberid}= $memberid;
+		$info_ref->{sponsored_by}->{$order}->{pw_memberid}= $MPmap{$memberid} || 'missing';
 	}
-	(@matches)= $content=~ m#<span id="Sigs__ctl(\d+)_lblMember">(.*?)</span>#mcig;
-	while (($order, $name, @matches)= @matches) {
+	(@matches)= $content=~ m#<a\s*href='EDMByMember\.aspx\?MID=(\d+)'>\s*<span id="Sigs__ctl(\d+)_lblMember">(.*?)</span>#mcig;
+	while (($memberid, $order, $name, @matches)= @matches) {
 		next if $name =~ /<[bi]>/;
-		push @{$info_ref->{supported_by}},"$name";
+		$info_ref->{supported_by}->{$order}->{name}= $name;
+		#$info_ref->{supported_by}->{$order}->{position}= $name;
+		$info_ref->{supported_by}->{$order}->{edm_memberid}= $memberid;
 		#$info_ref->{supported}->[$order -1]="$name";
+		$info_ref->{supported_by}->{$order}->{pw_memberid}= $MPmap{$memberid} || 'missing';
 	}
 	#print "$info_ref->{motion}\n";
 
 }
 
+
+
+sub parse_mpid_table  {
+
+	open (LIST, "$dir/people.txt") || die "can't open $dir/people.txt: $!";
+	while ($line = <LIST>) {
+		chomp($line);
+		#         "Constituency\tPIMS_MP_ID\tPublicWhipID\tName\n";
+		($constituency, $pims_id, $PW_id, $name) = split /\t/, $line;
+		$MPmap{$pims_id}=$PW_id;
+	}
+	close (LIST);
+
+}
