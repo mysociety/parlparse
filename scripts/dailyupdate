@@ -9,3 +9,7 @@ cd ~/parlparse/pyscraper
 ./lazyrunall.py --from=2003-01-01 scrape regmem
 ./lazyrunall.py --from=2003-01-01 parse regmem
 
+# Update svn checkout which is mapped to http://ukparse.kforge.net/svn/
+cd /data/vhost/ukparse.kforge.net/ukparse
+svn update -q
+
