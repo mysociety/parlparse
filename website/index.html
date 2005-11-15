@@ -1,4 +1,4 @@
-<!-- $Id:$ -->
+<!-- $Id$ -->
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -261,8 +261,6 @@ These are a bit like press releases, but in parliamentary language.
 <p><strong>Web browser:</strong> 
 Follow the links to the files above.  Or <a
 href="http://ukparse.kforge.net/parldata/">browse all the parlparse data</a>.
-There's also a <a href="http://theyworkforyou.com/pwdata/">spare copy on
-TheyWorkForYou.com</a>.  
 Data about members of parliament is stored in source control, so you <a
 href="http://ukparse.kforge.net/svn/parlparse/members/"> browse it in a
 slightly different place</a>.
@@ -286,13 +284,16 @@ with a remote one.
 HTML file for each day, and parses those files into XML files.  To
 run this parser yourself, you'll need the following...
 
-<p><strong>Parser source code</strong> - Available from <a
-href="http://kforge.net/scm/?group_id=11">ukparse's kforge project</a>, or you
-can <a href="http://ukparse.kforge.net/svn/">browse a copy here</a>.  Ask us
-for help or ideas if you're extending or improving the parser.  There's lots of
-stuff left to do.  Also available by rsync like this, particularly useful if
-you want to regularly grab the member data without installing a subversion
-client:
+<p><strong>Parser source code</strong> - Available by subversion from <a
+href="http://kforge.net/scm/?group_id=11">ukparse's kforge project</a> like
+this. 
+
+<blockquote><tt>svn co https://scm.kforge.net/svn/ukparse/trunk/parlparse</tt></blockquote>
+
+Or you can <a href="https://scm.kforge.net/svn/ukparse/trunk/parlparse">browse that URL</a>.
+
+Also available by rsync like this, particularly useful if you want to regularly
+grab the member data without installing a subversion client:
 
 <blockquote><tt>rsync ukparse.kforge.net::svn/</tt></blockquote>
 
@@ -331,6 +332,10 @@ the source code.
 You can run a command again and it will lazily make only those files which
 weren't downloaded/parsed last time.  When you are done, you should have
 lots of XML files in the parldata/scrapedxml/debates folder.
+
+<p><strong>What to fix</strong> - Ask us for help or ideas if you're extending or
+improving the parser. Send us patches for even tiny changes you make to get it
+running on your machine.  There's lots of stuff left to do.  
 
 </div>
 
