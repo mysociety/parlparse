@@ -278,24 +278,26 @@ are very large). See the rsync documentation for more information on
 how to synchronise your local directory
 with a remote one.
 
+<p>The member data is available by rsync here.
+
+<blockquote><tt>rsync ukparse.kforge.net::svn/members/</tt></blockquote>
+
+
 <h2>Running the Parser</h2>
 
 <p>Python code downloads data from the UK parliament website, stores it as an
 HTML file for each day, and parses those files into XML files.  To
 run this parser yourself, you'll need the following...
 
-<p><strong>Parser source code</strong> - Available by subversion from <a
+<p><strong>Parser source code</strong> - You can <a
+href="https://scm.kforge.net/svn/ukparse/trunk/parlparse">browse this URL</a>,
+if you're just curious.  Available by subversion from <a
 href="http://kforge.net/scm/?group_id=11">ukparse's kforge project</a> like
-this. 
+this from the command line.
 
 <blockquote><tt>svn co https://scm.kforge.net/svn/ukparse/trunk/parlparse</tt></blockquote>
 
-Or you can <a href="https://scm.kforge.net/svn/ukparse/trunk/parlparse">browse that URL</a>.
-
-Also available by rsync like this, particularly useful if you want to regularly
-grab the member data without installing a subversion client:
-
-<blockquote><tt>rsync ukparse.kforge.net::svn/</tt></blockquote>
+On Windows, use <a href="http://tortoisesvn.tigris.org/">TortoiseSVN</a> and the same URL.
 
 <p><strong>Python</strong> - Under Windows download <a
 href="http://www.python.org/download/">Python 2.3</a>.  Unix-based operating
