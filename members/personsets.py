@@ -150,7 +150,11 @@ class PersonSets(xml.sax.handler.ContentHandler):
                 if attr["id"] in self.old_idtoperson:
                     newpersonid = self.old_idtoperson[attr["id"]]
                     if personid and newpersonid <> personid:
-                            raise Exception, "Two members now same person, were different %s, %s" % (personid, newpersonid)
+                        print personset
+                        for lattr in personset:
+                            if lattr.has_key("firstname"):
+                                print "%s %s id=%s" % (lattr["firstname"], lattr["lastname"], lattr["id"])
+                        raise Exception, "Two members now same person, were different %s, %s" % (personid, newpersonid)
                     personid = newpersonid
             if not personid:
                 self.last_person_id = self.last_person_id + 1
@@ -371,6 +375,8 @@ fout.write("</publicwhip>\n")
 fout.close()
 
 # overwrite people.xml
+if os.path.exists("people.xml"):
+    os.remove("people.xml")
 os.rename("temppeople.xml", "people.xml")
 
 
