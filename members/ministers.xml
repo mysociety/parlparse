@@ -63,6 +63,7 @@
 <chgpageupdates date="2005-06-07" time="16:39"/>
 <chgpageupdates date="2005-06-17" time="14:29"/>
 <chgpageupdates date="2005-06-28" time="10:36"/>
+<chgpageupdates date="2005-11-03" time="14:19"/>
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1000" name="Duke of Abercorn" dept="HM Household" position="Lord Steward" fromdate="2000-01-01" todate="9999-12-31" source="newlabministers2003-10-15 chgpages"></moffice>
@@ -200,7 +201,7 @@
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/57" name="David Blunkett" matchid="uk.org.publicwhip/member/50" dept="Department for Education and Employment" position="Secretary of State" fromdate="1997-05-02" todate="2001-06-08" source="newlabministers2003-10-15"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1017" name="Rt Hon David Blunkett" matchid="uk.org.publicwhip/member/739" dept="Home Office" position="Secretary of State" fromdate="2001-06-08" todate="2004-12-16" totime="10:31" source="newlabministers2003-10-15 chgpages"></moffice>
-<moffice id="uk.org.publicwhip/moffice/1145" name="Rt Hon David Blunkett" matchid="uk.org.publicwhip/member/1810" dept="Department for Work and Pensions" position="Secretary of State" fromdate="2005-05-11" fromtime="17:24" todate="9999-12-31" source="chgpages"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1145" name="Rt Hon David Blunkett" matchid="uk.org.publicwhip/member/1810" dept="Department for Work and Pensions" position="Secretary of State" fromdate="2005-05-11" fromtime="17:24" todate="2005-11-03" totime="14:19" source="chgpages"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -646,7 +647,7 @@
 <moffice id="uk.org.publicwhip/moffice/390" name="Geoff Hoon" matchid="uk.org.publicwhip/member/286" dept="Lord Chancellor's Department" position="Minister of State" fromdate="1998-07-28" todate="1999-05-17" source="newlabministers2003-10-15"></moffice>
 <moffice id="uk.org.publicwhip/moffice/114" name="Geoff Hoon" matchid="uk.org.publicwhip/member/286" dept="Foreign &amp; Commonwealth Office" position="Minister of State" fromdate="1999-05-17" todate="1999-10-11" source="newlabministers2003-10-15"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1052" name="Rt Hon Geoff Hoon" matchid="uk.org.publicwhip/member/970" dept="Ministry of Defence" position="Secretary of State" fromdate="1999-10-11" todate="2005-05-11" totime="17:24" source="newlabministers2003-10-15 chgpages"></moffice>
-<moffice id="uk.org.publicwhip/moffice/1217" name="Rt Hon Geoffrey Hoon" matchid="uk.org.publicwhip/member/1378" dept="House of Commons" position="Lord Privy Seal" fromdate="2005-05-11" fromtime="17:24" todate="9999-12-31" source="chgpages chgpages"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1241" name="Rt Hon Geoff Hoon" matchid="uk.org.publicwhip/member/1378" dept="House of Commons" position="Lord Privy Seal" fromdate="2005-05-11" fromtime="17:24" todate="9999-12-31" source="chgpages chgpages chgpages"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -691,7 +692,8 @@
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/144" name="John Hutton" matchid="uk.org.publicwhip/member/303" dept="Department of Health" position="Parliamentary Under-Secretary" fromdate="1998-10-27" todate="1999-10-11" source="newlabministers2003-10-15"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1055" name="Rt Hon John Hutton" matchid="uk.org.publicwhip/member/987" dept="Department of Health" position="Minister of State" fromdate="1999-10-11" todate="2005-05-11" totime="17:24" source="newlabministers2003-10-15 chgpages"></moffice>
-<moffice id="uk.org.publicwhip/moffice/1174" name="Rt Hon John Hutton" matchid="uk.org.publicwhip/member/1387" dept="Cabinet Office" position="Chancellor of the Duchy of Lancaster" fromdate="2005-05-11" fromtime="17:24" todate="9999-12-31" source="chgpages"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1174" name="Rt Hon John Hutton" matchid="uk.org.publicwhip/member/1387" dept="Cabinet Office" position="Chancellor of the Duchy of Lancaster" fromdate="2005-05-11" fromtime="17:24" todate="2005-11-03" totime="14:19" source="chgpages"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1242" name="Rt Hon John Hutton" matchid="uk.org.publicwhip/member/1387" dept="Department for Work and Pensions" position="Secretary of State" fromdate="2005-11-03" fromtime="14:19" todate="9999-12-31" source="chgpages"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
