@@ -16,6 +16,7 @@ def WriteXMLHeader(fout):
 
 	# These entity definitions for latin-1 chars are from here:
 	# http://www.w3.org/TR/REC-html40/sgml/entities.html
+	# also available at: http://www.csparks.com/CharacterEntities.html
 	fout.write('''
 
 <!DOCTYPE publicwhip
@@ -38,6 +39,7 @@ def WriteXMLHeader(fout):
 <!ENTITY oacute "&#243;" >
 <!ENTITY iacute "&#237;" >
 <!ENTITY icirc  "&#238;" >
+<!ENTITY iuml	"&#239;" >
 <!ENTITY ccedil "&#231;" >
 <!ENTITY Ccedil "&#199;" >
 <!ENTITY uuml   "&#252;" >

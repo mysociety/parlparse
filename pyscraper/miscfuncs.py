@@ -99,6 +99,7 @@ entitymap = {
 
         '&#237;':'&iacute;', # this is i-acute
         '&#238;':'&icirc;', # this is i-circumflex
+        '&#239;':'&iuml;',  # this is i-double-dot, as in naive
 
         '&#231;':'&ccedil;',   # this is cedilla
         '&#199;':'&Ccedil;',   # this is capital C-cedilla

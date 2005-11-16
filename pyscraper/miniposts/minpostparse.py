@@ -90,9 +90,17 @@ govdepts = ["Department of Health",
                                 "No Department",
                                 ]
 
+
+ppsdepts = govdepts + [ "Minister Without Portfolio",
+				"Minister without Portfolio",
+				"Prime Minister",
+				"Prime Minister's Office",
+				"Leader of the House of Commons",
+				]
+ppsnondepts = [ "HM Official Opposition", "Leader of the Opposition" ]
+
 import newlabministers2003_10_15
 from newlabministers2003_10_15 import opendate
-
 
 renampos = re.compile("""<td><b>
         ([^,]*),	# last name
@@ -111,11 +119,12 @@ bigarray = {}
 
 # do the xml thing
 def WriteXML(moffice, fout):
-        fout.write('<moffice id="%s" name="%s"' % (moffice.moffid, moffice.fullname))
+        fout.write('<moffice id="%s" name="%s"' % (moffice.moffid, moffice.fullname))  # should be cleaning up here, but aren't
         if moffice.matchid:
                 fout.write(' matchid="%s"' % moffice.matchid)
         #fout.write("\n")
 
+        # more runtime cleaning up of the xml rather than using a proper function
         fout.write(' dept="%s" position="%s"' % (re.sub("&", "&amp;", moffice.dept), moffice.pos))
         if moffice.responsibility:
                 fout.write(' responsibility="%s"' % re.sub("&", "&amp;", moffice.responsibility))
@@ -137,42 +146,36 @@ def WriteXML(moffice, fout):
         fout.write('</moffice>\n')
 
 
-# NEW endeavour to get an id into all the names
-#def NewSetNameMatch(cp, cpsdate):
-#	cp.nmatchid = ""
-#        cp.npersonid = ""
-#
-#	# don't match names that are in the lords
-#        # (or Andrew Adonis, who at least briefly seems to be neither Lord or MP, but minister)
-#	if not re.search("Duke |Lord |Baroness |Andrew Adonis|Lynda Clark", cp.fullname):
-#		fullname = cp.fullname
-#		cons = cp.cons
-#
-#		cp.nmatchid, cp.nremadename, cp.nremadecons = memberList.matchfullnamecons(fullname, cons, cpsdate)
-#		if not cp.nmatchid:
-#			raise Exception, 'No match: ' + fullname + " : " + (cons or "[nocons]") + " " + cpsdate + "\nOrig:" + cp.fullname
-#               cp.npersonid = memberList.membertoperson(cp.nmatchid)
-#
-#	else:
-#		cp.nremadename = cp.fullname
-#		cp.nremadename = re.sub("^Rt Hon ", "", cp.nremadename)
-#		cp.nremadename = re.sub(" [CO]BE$", "", cp.nremadename)
-#		cp.nremadecons = ""
-#
-#
-#	# make the structure we will sort by.  Note the ((,),) structure
-#	cp.nsortobj = ((re.sub("(.*) (\S+)$", "\\2 \\1", cp.nremadename), cp.nremadecons), cpsdate)
 
 
 class protooffice:
-        def __init__(self, lsdatet, e, deptno):  # department number to extract multiple departments
-                self.sdatet = lsdatet
-                self.sourcedoc = "chgpages"
+	def __init__(self):
+		pass
 
-                nampos = renampos.match(e)
-                if not nampos:
-                        raise Exception, "renampos didn't match: '%s'" % e
-                self.lasname = nampos.group(1)
+	def PPSproto(self, lsdatet, name, master, dept):
+		self.sdatet = lsdatet
+		self.sourcedoc = "chgpages/privsec"
+
+		nameMatch = re.match('(.*?)\s*\(([^)]*)\)$', name)
+		self.fullname = nameMatch.group(1)
+		if re.match("Mr Si.n Simon$", self.fullname):
+			self.fullname = "Mr Sion Simon"
+		self.cons = nameMatch.group(2)
+
+		# map down to the department for this record
+		self.pos = "PPS"
+		self.responsibility = master
+		self.dept = dept
+
+
+	def GovPostproto(self, lsdatet, e, deptno):  # department number to extract multiple departments
+		self.sdatet = lsdatet
+		self.sourcedoc = "chgpages/govposts"
+
+		nampos = renampos.match(e)
+		if not nampos:
+			raise Exception, "renampos didn't match: '%s'" % e
+		self.lasname = nampos.group(1)
 		self.froname = nampos.group(2)
 		self.cons = nampos.group(3)
 
@@ -185,21 +188,23 @@ class protooffice:
                 '2004-09-20') or (self.sdatet[0] >= '2005-05-17')):
 			self.cons = "Harrow West"
 
-#                NewSetNameMatch(self, self.sdatet[0])
+		# special Andrew Adonis match
+		if self.fullname == "Andrew Adonis" and self.sdatet[0][:7] == "2005-05":
+			self.fullname = "Lord Adonis"
 
 		pos = nampos.group(4)
 		dept = nampos.group(5) or "No Department"
-                responsibility = ""
-                if self.sdatet[0] in bigarray and self.fullname in bigarray[self.sdatet[0]]:
-                        responsibility = bigarray[self.sdatet[0]][self.fullname]
+		responsibility = ""
+		if self.sdatet[0] in bigarray and self.fullname in bigarray[self.sdatet[0]]:
+			responsibility = bigarray[self.sdatet[0]][self.fullname]
 
 		# change of wording in 2004-11
 		if dept == "Leader of the House of Commons":
 			dept = "House of Commons"
 
-                pos = re.sub(' \(Cabinet\)', '', pos)
+		pos = re.sub(' \(Cabinet\)', '', pos)
 
-                # separate out the departments if more than one
+		# separate out the departments if more than one
 		if dept not in govdepts:
 			self.depts = None
 
@@ -220,7 +225,7 @@ class protooffice:
 					print "Attempted match on", dept0
 
 			if not self.depts:
-                                print "No match for department: ", dept
+				print "No match for department: ", dept
 
 		else:
 			self.depts = [ (pos, dept) ]
@@ -228,7 +233,7 @@ class protooffice:
 
 		# map down to the department for this record
 		self.pos = self.depts[deptno][0]
-                self.responsibility = responsibility
+		self.responsibility = responsibility
 		self.dept = self.depts[deptno][1]
 
 
@@ -250,25 +255,17 @@ class protooffice:
 
 	# this helps us chain the offices
 	def StickChain(self, nextrec, fn):
-                assert (self.sdateend, self.stimeend) < nextrec.sdatet
+		assert (self.sdateend, self.stimeend) < nextrec.sdatet
 		assert self.bopen
 
-		if (self.froname == nextrec.froname) and (self.lasname == nextrec.lasname) and (self.dept == nextrec.dept) and (self.pos == nextrec.pos):
-                        if self.cons != nextrec.cons:
-                                raise Exception, "Mismatched cons name %s %s" % (self.cons, nextrec.cons)
+		if (self.fullname, self.dept, self.pos, self.responsibility) == (nextrec.fullname, nextrec.dept, nextrec.pos, nextrec.responsibility):
+			if self.cons != nextrec.cons:
+				raise Exception, "Mismatched cons name %s %s" % (self.cons, nextrec.cons)
 			(self.sdateend, self.stimeend) = nextrec.sdatet
 			self.fn = fn
 			return True
 		return False
 
-pus = {'Culture':1, 'Media and Tourism':1}
-
-def p(a):
-        for i in a:
-                if i[0] in pus:
-                        print "PUS ", i
-                else:
-                        print "    ", i
 
 def SpecMins(regex, fr, sdate):
         a = re.findall(regex, fr)
@@ -276,29 +273,26 @@ def SpecMins(regex, fr, sdate):
                 specpost = i[0]
                 specname = re.sub("^\s+", "", i[1])
                 specname = re.sub("\s+$", "", specname)
-	        if not re.search("Duke |Lord |Baroness ", specname):
-#		        nmatchid, nremadename, nremadecons = memberList.matchfullnamecons(specname, '', sdate)
-#		        if not nmatchid:
-#        			raise Exception, 'No match: ' + specname + " : " + specpost + " : " + sdate
-#                        npersonid = memberList.membertoperson(nmatchid)
+                if not re.search("Duke |Lord |Baroness ", specname):
                         nremadename = specname
                         nremadename = re.sub("\s+MP$", "", nremadename)
                         bigarray.setdefault(sdate, {})
                         bigarray[sdate][nremadename] = specpost
-	        else:
-        		nremadename = specname
-        		nremadename = re.sub("^Rt Hon ", "", nremadename)
-        		nremadename = re.sub(" [CO]BE$", "", nremadename)
-        		nremadecons = ""
+                else:
+                        nremadename = specname
+                        nremadename = re.sub("^Rt Hon ", "", nremadename)
+                        nremadename = re.sub(" [CO]BE$", "", nremadename)
+                        nremadecons = ""
                         bigarray.setdefault(sdate, {})
                         bigarray[sdate][nremadename] = specpost
 
-def ParsePage(fr):
 
+
+def ParseGovPostsPage(fr):
 	# extract the updated date and time
 	frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)&nbsp;(.*?)\s*</td>', fr)
 	lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
-	y2k = int(lsudate.group(3)) < 50 and "20" or "19"
+	y2k = int(lsudate.group(3)) < 50 and "20" or "19"  # I don't think our records go back far enough to merit this!
 	sudate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
 	sutime = frupdated.group(2)
 
@@ -307,7 +301,7 @@ def ParsePage(fr):
 	msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
 
         # is it always posted up on the day it is announced?
-	if msdate != sudate and sudate != "2004-09-20" and sudate != '2005-03-10' and sudate != '2005-05-13' and sudate != '2005-06-06':
+	if msdate != sudate and sudate not in ["2004-09-20", '2005-03-10', '2005-05-13', '2005-06-06']:
 		print "Updated date is %s, but date of change %s" % (sudate, msdate)
 
 	sdate = sudate
@@ -341,7 +335,8 @@ def ParsePage(fr):
 
 		# multiple entry of departments (simple inefficient method)
 		for deptno in range(3):  # at most 3 offices at a time, we'll handle
-			ec = protooffice((sdate, stime), e, deptno)
+			ec = protooffice()
+			ec.GovPostproto((sdate, stime), e, deptno)
 
 			# prove we've got all the posts
 			if ec.pos not in govposns:
@@ -357,25 +352,76 @@ def ParsePage(fr):
 
 	return (sdate, stime), res
 
-# this goes through all the files and chains govt positions together
-def ParseGovPostsChggdir():
-	govpostdir = os.path.join(chggdir, "govposts")
+#	<td class="lastupdated">
+#		Updated 16/12/04&nbsp;16:31
+#	</td>
 
-	gps = os.listdir(govpostdir)
+def ParsePrivSecPage(fr):
+	# extract the updated date and time
+	frupdated = re.search('<td class="lastupdated">\s*Updated\s*([\d/]*)&nbsp;([\d:]*)\s*</td>', fr)
+	lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
+	y2k = int(lsudate.group(3)) < 50 and "20" or "19"
+	sudate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
+	sutime = frupdated.group(2)
+
+	sdate = sudate
+	stime = sutime	# or midnight if not posted properly to match the msdate
+
+	res = [ ]
+	ppstext = re.search('''(?x)<tr>\s*<td[^>]*>
+							<font[^>]*><b>Attorney-General.see.</b>\s*Law.Officers.Department</font>
+							</td>\s*</tr>
+							([\s\S]*?)</table>''', fr).group(1)
+	ppslst = re.split("</?tr>", ppstext)
+
+	# match the name form on each entry
+	#<TD><B>Abercorn, Duke of</B></TD><TD>Lord Steward, HM Household</TD>
+
+	luniqgov = uniqgovposns[:]
+	deptname = None
+	ministername = None
+	for e1 in ppslst:
+		e = e1.strip()
+		if re.match("(?:<[^<]*>|\s|&nbsp;)*$", e):
+			continue
+		deptMatch = re.match('<td[^>]*><font[^>]*><b>([^<]*)(?:</b></font></td>)?$', e1)
+		if deptMatch:
+			deptname = deptMatch.group(1)  # carry forward department name
+			continue
+		nameMatch = re.match("<td>([^<]*)</td><td>\s*([^<]*)(?:</td>)?$", e1)
+		if nameMatch.group(1):
+			ministername = nameMatch.group(1)  # carry forward minister name (when more than one PPS)
+
+		if deptname in ppsdepts:
+			ec = protooffice()
+			ec.PPSproto((sdate, stime), nameMatch.group(2), ministername, deptname)
+			res.append(ec)
+		else:
+			#print deptname
+			assert deptname in ppsnondepts
+
+	return (sdate, stime), res
+
+
+
+# this goes through all the files and chains positions together
+def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
+	fchgdir = os.path.join(chggdir, chgdirname)
+	privsecdir = os.path.join(chggdir, "privsec")
+
+	gps = os.listdir(fchgdir)
 	gps = [ x for x in gps if re.match(".*\.html$", x) ]
 	gps.sort() # important to do in order of date
 
 	chainprotos = [ ]
 	sdatetlist = [ ]
 	for gp in gps:
-		#print os.path.join(govpostdir, gp)
-		f = open(os.path.join(govpostdir, gp))
+		f = open(os.path.join(fchgdir, gp))
 		fr = f.read()
 		f.close()
 
 		# get the protooffices from this file
 		sdatet, proff = ParsePage(fr)
-
 
 		# stick any chains we can
 		proffnew = [ ]
@@ -396,12 +442,14 @@ def ParseGovPostsChggdir():
 				#print "closing", chainproto.lasname, chainproto.sdatet
 
 		# append on the new chains
-		bfrontopen = not chainprotos
+		bfrontopen = bfrontopenchains and not chainprotos
 		for prof in proffnew:
 			prof.SetChainFront(gp, bfrontopen)
 			chainprotos.append(prof)
 
-		sdatetlist.append(sdatet)
+		# list of all the times scraping has been made
+		sdatetlist.append((sdatet[0], sdatet[1], chgdirname))
+
 
 	# no need to close off the running cases with year 9999, because it's done in the writexml
 	return chainprotos, sdatetlist
@@ -409,20 +457,17 @@ def ParseGovPostsChggdir():
 # endeavour to get an id into all the names
 def SetNameMatch(cp, cpsdates):
 	cp.matchid = ""
-#        cp.personid = ""
 
 	# don't match names that are in the lords
-        # (or Andrew Adonis, who at least briefly seems to be neither Lord or MP, but minister)
-	if not re.search("Duke |Lord |Baroness |Andrew Adonis", cp.fullname):
+	if not re.search("Duke |Lord |Baroness ", cp.fullname):
 		fullname = cp.fullname
 		cons = cp.cons
 
 		cp.matchid, cp.remadename, cp.remadecons = memberList.matchfullnamecons(fullname, cons, cpsdates[0])
 		if not cp.matchid:
-			cp.matchid, cp.remadename, cp.remadecons = memberList.matchfullnamecons(fullname, cons, cpsdates[1])
+			print (cp.matchid, cp.remadename, cp.remadecons)
 		if not cp.matchid:
 			raise Exception, 'No match: ' + fullname + " : " + (cons or "[nocons]") + "\nOrig:" + cp.fullname
-#                cp.personid = memberList.membertoperson(cp.matchid)
 
 	else:
 		cp.remadename = cp.fullname
@@ -461,9 +506,9 @@ def GlueGapBetweenDataSets(mofficegroup):
 					mofficegroup[iopendateback][1].dept == mofficegroup[iopendatefront][1].dept):
 					iopendatefrontm = iopendatefront
 
-			#if iopendatefrontm == None:
-			#	rp = mofficegroup[iopendateback]
-			#	print "%s\tpos='%s'\tdept='%s'" % (rp[1].remadename, rp[1].pos, rp[1].dept)
+			if iopendatefrontm == None:
+				rp = mofficegroup[iopendateback]
+				print "%s\tpos='%s'\tdept='%s'" % (rp[1].remadename, rp[1].pos, rp[1].dept)
 			assert iopendatefrontm != None
 
 			# glue the two things together
@@ -472,20 +517,38 @@ def GlueGapBetweenDataSets(mofficegroup):
 			mofficegroup[iopendatefrontm][1].sourcedoc = mofficegroup[iopendateback][1].sourcedoc + " " + mofficegroup[iopendatefrontm][1].sourcedoc
 			del mofficegroup[iopendateback]
 
+	# check all linked up
 	for iopendatefront in range(len(mofficegroup)):
 		assert not (mofficegroup[iopendatefront][1].sdatestart == opendate)
 	#	rp = mofficegroup[iopendatefront]
 	#	print "\t%s\tpos='%s'\tdept='%s'" % (rp[1].remadename, rp[1].pos, rp[1].dept)
 
 
+	# now sneak in a test that MPs always get promoted from PPS to ministerialships
+	ppsdatesend = [ ]
+	ministerialdatesstart = [ ]
+	for rp in mofficegroup:
+		if rp[1].pos == "PPS":
+			ppsdatesend.append(rp[1].sdateend)
+		else:
+			ministerialdatesstart.append(rp[1].sdatestart)
+	if ppsdatesend and ministerialdatesstart:
+		#print ppsdatesend, ministerialdatesstart
+		if max(ppsdatesend) > min(ministerialdatesstart):
+			if mofficegroup[0][1].fullname not in ["Paul Clark", "Keith Hill"]:
+				print "New demotion to PPS for: ", mofficegroup[0][1].fullname
+
 
 # main function that sticks it together
 def ParseGovPosts():
 
+	# parliamentary private secs
+	cpressec, sdatelistsec = ParseChggdir("privsec", ParsePrivSecPage, False)
+
 	# get from our two sources (which unfortunately don't overlap, so they can't be merged)
-	# We have a gap from 2003-10-15 to 2004-06-06 which needs filling !!!
+	# We have a gap from 2003-10-15 to 2004-06-06 which needs filling !!! (I think it's done)
 	porres = newlabministers2003_10_15.ParseOldRecords()
-	cpres, sdatetlist = ParseGovPostsChggdir()
+	cpres, sdatetlist = ParseChggdir("govposts", ParseGovPostsPage, True)
 
 	# allocate ids and merge lists
 	rpcp = []
@@ -493,7 +556,6 @@ def ParseGovPosts():
 	# run through the office in the documented file
 	moffidn = 1;
 	for po in porres:
-
 		cpsdates = [po.sdatestart, po.sdateend]
 		if cpsdates[1] == opendate:
 			cpsdates[1] = newlabministers2003_10_15.dateofinfo
@@ -516,31 +578,31 @@ def ParseGovPosts():
 		rpcp.append((cp.sortobj, cp))
 		moffidn += 1
 
+	# private secretaries
+	for cp in cpressec:
+		cpsdates = [cp.sdatestart, cp.sdateend]
+		SetNameMatch(cp, cpsdates)
+		cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
+		rpcp.append((cp.sortobj, cp))
+		moffidn += 1
 
-	# (this would be a good place for matching and gluing overlapping duplicates together)
+	# bring same to same places
+	# the sort object is by name, constituency, dateobject
 	rpcp.sort()
-        old = ''
-        for i in range(0, len(rpcp)-1):
-                for j in range(i+1, len(rpcp)):
-                        if not len(rpcp[i]) or not len(rpcp[j]): continue
-                        old = rpcp[i][1]
-                        new = rpcp[j][1]
-                        if new.remadename==old.remadename and old.dept==new.dept and old.pos==new.pos and old.sdateend==new.sdatestart and old.stimeend==new.stimestart:
-        			new.sdatestart = old.sdatestart
-                                new.stimestart = old.stimestart
-                		new.sourcedoc = old.sourcedoc + " " + new.sourcedoc
-        			rpcp[i] = ()
+	# (there was a gluing loop here, but it was wrong thing to do, since it disrupted gluing of datasets-- failures shouldn't be happening to here)
 
-	# now we batch them up into the person groups
+	# now we batch them up into the person groups to make it visible
+	# and facilitate the once-only gluing of the two documents (newlabministers records and webpage scrapings) together
+	# this is a conservative grouping.  It may fail to group people which should be grouped, 
+	# but this gets sorted out in the personsets.py
 	mofficegroups = [ ]
 	prevrpm = None
 	for rp in rpcp:
-                if rp == ():
-                        continue
-		if not prevrpm or prevrpm[0][0] != rp[0][0]:
-			mofficegroups.append([ ])
-		mofficegroups[-1].append(rp)
-		prevrpm = rp
+		if rp:
+			if not prevrpm or prevrpm[0][0] != rp[0][0]:
+				mofficegroups.append([ ])
+			mofficegroups[-1].append(rp)
+			prevrpm = rp
 
 
 	# now look for open ends
@@ -550,16 +612,19 @@ def ParseGovPosts():
 
 	fout = open(chgtmp, "w")
 	WriteXMLHeader(fout)
+	fout.write("\n<!-- ministerofficegroup is just for readability.  Actual grouping is done in personsets.py -->\n\n")
 	fout.write("<publicwhip>\n")
 
 	fout.write("\n")
 	for lsdatet in sdatetlist:
-		fout.write('<chgpageupdates date="%s" time="%s"/>\n' % lsdatet)
+		fout.write('<chgpageupdates date="%s" time="%s" chgtype="%s"/>\n' % lsdatet)
+	for lsdatet in sdatelistsec:
+		fout.write('<chgpageupdates date="%s" time="%s" chgtype="%s"/>\n' % lsdatet)
 
 
 	# output the file, a tag round the groups of offices which form a single person
 	for mofficegroup in mofficegroups:
-		fout.write("\n<ministerofficegroup>\n")
+		fout.write('\n<ministerofficegroup>\n')
 		for rp in mofficegroup:
 			WriteXML(rp[1], fout)
 		fout.write("</ministerofficegroup>\n")
