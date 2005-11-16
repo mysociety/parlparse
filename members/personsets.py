@@ -1,5 +1,5 @@
 #! /usr/bin/env python2.3
-# vim:sw=4:ts=4:et:nowrap
+# vim:sw=4:ts=8:et:nowrap
 
 # Groups sets of MPs and offices together into person sets.  Updates
 # people.xml to reflect the new sets.  Reuses person ids from people.xml,
@@ -122,11 +122,11 @@ class PersonSets(xml.sax.handler.ContentHandler):
 
     def __init__(self):
         self.personsets=[] # what we are building - array of (sets of ids belonging to one person)
-        
+
         self.fullnamescons={} # MPs "Firstname Lastname Constituency" --> person set (link to entry in personsets)
         self.fullnames={} # "Firstname Lastname" --> set of MPs (not link to entry in personsets)
         self.lords={} # Lord ID -> Attr
-		self.ministermap={}
+        self.ministermap={}
 
         self.old_idtoperson={} # ID (member/lord/office) --> Person ID in last version of file
         self.last_person_id=None # largest person ID previously used
@@ -149,11 +149,14 @@ class PersonSets(xml.sax.handler.ContentHandler):
             for attr in personset:
                 if attr["id"] in self.old_idtoperson:
                     newpersonid = self.old_idtoperson[attr["id"]]
+                    print newpersonid, attr["id"]
                     if personid and newpersonid <> personid:
                         print personset
                         for lattr in personset:
                             if lattr.has_key("firstname"):
                                 print "%s %s id=%s" % (lattr["firstname"], lattr["lastname"], lattr["id"])
+                            elif lattr.has_key("name"):
+                                print "n;%s id=%s" % (lattr["name"], lattr["id"])
                         raise Exception, "Two members now same person, were different %s, %s" % (personid, newpersonid)
                     personid = newpersonid
             if not personid:
@@ -188,8 +191,8 @@ class PersonSets(xml.sax.handler.ContentHandler):
 
             # Output the XML (sorted)
             fout.write('<person id="%s" latestname="%s">\n' % (personid.encode("latin-1"), maxname.encode("latin-1")))
-			ofidl = [ str(attr["id"])  for attr in personset ]
-			ofidl.sort()
+            ofidl = [ str(attr["id"])  for attr in personset ]
+            ofidl.sort()
             for ofid in ofidl:
                 fout.write('    <office id="%s"/>\n' % (ofid))
             fout.write('</person>\n')
@@ -208,15 +211,15 @@ class PersonSets(xml.sax.handler.ContentHandler):
 
 	# put ministerialships into each of the sets, based on matching matchid values
 	# this works because the members code forms a basis to which ministerialships get attached
-	def mergeministers(self):
+    def mergeministers(self):
         for pset in self.personsets:
-			for a in pset.copy():
-				memberid = a["id"]
-				for moff in self.ministermap.get(memberid, []):
-					pset.add(moff)
+            for a in pset.copy():
+                memberid = a["id"]
+                for moff in self.ministermap.get(memberid, []):
+                    pset.add(moff)
 
 	# put lords into each of the sets
-	def mergelords(self):
+    def mergelords(self):
         for lord_id, attr in self.lords.iteritems():
             if lord_id in lordsmpmatches:
                 mp = lordsmpmatches[lord_id]
@@ -303,7 +306,9 @@ class PersonSets(xml.sax.handler.ContentHandler):
         elif name == "office":
             assert self.in_person
             assert attr["id"] not in self.old_idtoperson
-            self.old_idtoperson[attr["id"]] = self.in_person
+
+            # hide office matching for one iteration
+            #self.old_idtoperson[attr["id"]] = self.in_person
 
         elif name == "member":
             assert not self.in_person
@@ -330,13 +335,13 @@ class PersonSets(xml.sax.handler.ContentHandler):
             assert attr['id'] not in self.lords
             self.lords[attr['id']] = attr.copy()
 
-		elif name == "moffice":
+        elif name == "moffice":
             assert not self.in_person
 
-			assert attr["id"] not in self.ministermap
-			if attr.has_key("matchid"):
-				self.ministermap.setdefault(attr["matchid"], sets.Set()).add(attr.copy())
-        
+            assert attr["id"] not in self.ministermap
+            if attr.has_key("matchid"):
+                self.ministermap.setdefault(attr["matchid"], sets.Set()).add(attr.copy())
+
     def endElement(self, name):
         if name == "person":
             self.in_person = None
