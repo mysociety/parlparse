@@ -126,7 +126,10 @@ class MemberList(xml.sax.handler.ContentHandler):
             if attr.has_key("fullname"):
                 matches = self.fullnames.get(attr["fullname"], None)
                 if not matches:
-                    raise Exception, 'Canonical fullname not found ' + attr["fullname"]
+					print 'Canonical fullname not found ' + attr["fullname"]
+					print "  Why is this suddenly failing?"
+					return
+				#	raise Exception, 'Canonical fullname not found ' + attr["fullname"]
             elif attr.has_key("lastname"):
                 matches = self.lastnames.get(attr["lastname"], None)
                 alternateisfullname = False
@@ -309,28 +312,28 @@ class MemberList(xml.sax.handler.ContentHandler):
                             if attr["id"] in ids:
                                 newids.add(attr["id"])
             ids = newids
-						 
+
 		# fail cases
         if len(ids) == 0:
             return None, None, None
         if len(ids) > 1:
             # only error for case where cons is present, others case happens too much
             if cons:
-                errstring = ('Matched multiple times: ' + fullname + " : " + 
-                    (cons or "[nocons]") + " : " + date + " : " + ids.__str__() + 
+                errstring = ('Matched multiple times: ' + fullname + " : " +
+                    (cons or "[nocons]") + " : " + date + " : " + ids.__str__() +
                     ' - perhaps constituency spelling is not known')
                 # actually, even no-cons case happens too often
                 # (things like ministerships, with name in brackets after them)
                 print errstring
                 #raise ContextException(errstring, fragment=origfullname)
             lids = list(ids)  # I really hate the Set type
-			lids.sort()
+            lids.sort()
             return None, "MultipleMatch", tuple(lids)
 
         for lid in ids: # pop is no good as it changes the set
             pass
         remadename = u'%s %s' % (self.members[lid]["firstname"], self.members[lid]["lastname"])
-		remadecons = self.members[lid]["constituency"]
+        remadecons = self.members[lid]["constituency"]
         return lid, remadename, remadecons
 
     # Exclusively for WMS
