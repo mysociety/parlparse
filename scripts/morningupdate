@@ -41,8 +41,8 @@ snarf -q http://cake.ukcod.org.uk/~fawkes/$PRODSCRIPT - > /dev/null &
 cd ~/parlparse/scripts
 ./divisionextractor.pl
 # tell Public Whip to update
-PRODSCRIPT=twfy-morning-update-done
-snarf -q http://www.publicwhip.org.uk/cgi-bin/$PRODSCRIPT - > /dev/null &
+PRODSCRIPT=ukparse-morning-update-done.cgi
+snarf -q http://www.publicwhip.org.uk/$PRODSCRIPT - > /dev/null &
 
 # Commit changes
 cd ~/parlparse
