@@ -50,11 +50,12 @@ def RunRegmemFilters(fout, text, sdate):
                 if striprow.strip() == "":
                         # There is no text on the row, just tags
                         pass
-                elif len(row) == 1 and row[0] == "&nbsp;":
+                elif len(row) == 1 and re.match("(?i)(<i>)?(&nbsp;)+(</i>)?", row[0]):
                         # <TR><TD COLSPAN=4>&nbsp;</TD></TR>
                         pass
                 elif len(row) == 1:
                         # <TR><TD COLSPAN=4><B>JACKSON, Robert (Wantage)</B></TD></TR>
+                        print row[0]
                         (lastname, firstname, constituency) = re.search("^([^,]*), ([^(]*) \((.*)\)$", row[0]).groups()
                         (id, remadename, remadecons) = memberList.matchfullnamecons(firstname + " " + memberList.lowercaselastname(lastname), constituency, sdate)
                         if not id:
@@ -73,7 +74,7 @@ def RunRegmemFilters(fout, text, sdate):
                 elif len(row) == 2 and row[0] == '' and re.match('Nil\.\.?', row[1]):
                         # <TR><TD></TD><TD COLSPAN=3><B>Nil.</B></TD></TR> 
                         fout.write('Nil.\n')
-                elif len(row) == 2 and row[0] != '':
+                elif len(row) == 2 and row[0] != '' and row[0] != '&nbsp;':
                         # <TR><TD><B>1.</B></TD><TD COLSPAN=3><B>Remunerated directorships</B></TD></TR>
                         if category:
                                 fout.write('\t</category>\n')
@@ -82,7 +83,7 @@ def RunRegmemFilters(fout, text, sdate):
                         categoryname = row[1]
                         subcategory = None
                         fout.write('\t<category type="%s" name="%s">\n' % (category, categoryname))
-                elif len(row) == 2 and row[0] == '':
+                elif len(row) == 2 and (row[0] == '' or row[0] == '&nbsp;'):
                         # <TR><TD></TD><TD COLSPAN=3><B>Donations to the Office of the Leader of the Liberal Democrats received from:</B></TD></TR>
                         if subcategory:
                                 fout.write('\t\t<item subcategory="%s">%s</item>\n' % (subcategory, FixHTMLEntities(row[1])))
