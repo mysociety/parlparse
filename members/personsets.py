@@ -150,7 +150,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
                 if attr["id"] in self.old_idtoperson:
                     newpersonid = self.old_idtoperson[attr["id"]]
                     if personid and newpersonid <> personid:
-                            raise Exception, "Two members now same person, were different %s, %s" % (personid, newpersonid)
+                            raise Exception, "%s : Two members now same person, were different %s, %s" % (attr["id"], personid, newpersonid)
                     personid = newpersonid
             if not personid:
                 self.last_person_id = self.last_person_id + 1
