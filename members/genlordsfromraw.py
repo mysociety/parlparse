@@ -22,7 +22,7 @@ import mx.DateTime
 
 titleconv = {  'L.':'Lord',
 			   'B.':'Baroness',
-			   'Abp.':'Arch-bishop',
+			   'Abp.':'Archbishop',
 			   'Bp.':'Bishop',
 			   'V.':'Viscount',
 			   'E.':'Earl',
@@ -341,7 +341,10 @@ lid = 1000001
 for r in rr.lordrec:
 	r.lid = lid
 	r.OutRecord(lordsxml)
-	lid += 1
+	if lid == 1000101 or lid == 1000687: # Removal of duplicate archbishops, but keeping member IDs the same
+	    lid += 2
+	else:
+	    lid += 1
 
 lordsxml.write("\n</publicwhip>\n")
 lordsxml.close()
