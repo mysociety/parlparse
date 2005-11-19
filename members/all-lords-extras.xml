@@ -292,17 +292,6 @@ work. -->
 />
 
 <lord
-	id="uk.org.publicwhip/lord/10026"
-	house="lords"
-	title="Lord" lordname="Clark" lordofname="Hampstead"
-	frontnames=""
-	peeragetype="" affiliation=""
-	fromdate="1957-10-04"
-	source="appears in 2002-04-15"
-	comment=""
-/>
-
-<lord
 	id="uk.org.publicwhip/lord/10027"
 	house="lords"
 	title="Baroness" lordname="Castle" lordofname="Blackburn"
@@ -336,17 +325,6 @@ work. -->
 />
 
 <lord
-	id="uk.org.publicwhip/lord/10030"
-	house="lords"
-	title="Lord" lordname="De Mauley" lordofname=""
-	frontnames=""
-	peeragetype="" affiliation=""
-	fromdate="1957-10-04"
-	source="appears in division in 2005-06-28"
-	comment=""
-/>
-
-<lord
 	id="uk.org.publicwhip/lord/10031"
 	house="lords"
 	title="Baroness" lordname="Falkner" lordofname="Margravine"
@@ -366,12 +344,6 @@ work. -->
 	fromdate="1957-10-04"
 	source="appears in division in 2005-06-28"
 	comment=""
-/>
-<lord id="uk.org.publicwhip/lord/10033"
-	house="lords"
-	title="Lord" lordname="De Mauley," lordofname=""
-	source="date:2005-03-15 col:1199 aname:50315-01_spnew0"
-	fromdate="1900-10-04"
 />
 <lord id="uk.org.publicwhip/lord/10034"
 	house="lords"
@@ -625,12 +597,6 @@ work. -->
 	source="date:2005-03-10 col:900 aname:dec_4"
 	fromdate="1900-10-04"
 />
-<lord id="uk.org.publicwhip/lord/10079"
-	house="lords"
-	title="Lord" lordname="Carlile" lordofname="Bucklow"
-	source="date:2005-03-03 col:415 aname:50303-20_spnew9"
-	fromdate="1900-10-04"
-/>
 <lord id="uk.org.publicwhip/lord/10080"
 	house="lords"
 	title="Viscount" lordname="Trenchard" lordofname=""
@@ -653,12 +619,6 @@ work. -->
 	house="lords"
 	title="Lord" lordname="Kinnock" lordofname=""
 	source="date:2005-02-08 col:672 aname:dec_0"
-	fromdate="1900-10-04"
-/>
-<lord id="uk.org.publicwhip/lord/10084"
-	house="lords"
-	title="Earl" lordname="" lordofname="Glasgow,"
-	source="date:2005-01-25 col:1133 aname:50125-01_spnew0"
 	fromdate="1900-10-04"
 />
 <lord id="uk.org.publicwhip/lord/10085"
@@ -761,18 +721,6 @@ work. -->
 	source="date:2005-06-30 col:348 aname:50630-10_spnew10"
 	fromdate="1900-10-04"
 />
-<lord id="uk.org.publicwhip/lord/10100"
-	house="lords"
-	title="Lord" lordname="Wedderburn" lordofname=""
-	source="date:2005-06-28 col:159 aname:50628-12_spnew15"
-	fromdate="1900-10-04"
-/>
-<lord id="uk.org.publicwhip/lord/10101"
-	house="lords"
-	title="Lord" lordname="Phillips" lordofname=""
-	source="date:2005-06-28 col:236 aname:50628-33_spnew3"
-	fromdate="1900-10-04"
-/>
 <lord id="uk.org.publicwhip/lord/10102"
 	house="lords"
 	title="Lord" lordname="Foulkes" lordofname="Cumnock"
@@ -803,12 +751,6 @@ work. -->
 	source="date:2005-05-24 col:381 aname:50524-09_spnew3"
 	fromdate="1900-10-04"
 />
-<lord id="uk.org.publicwhip/lord/10107"
-	house="lords"
-	title="Lord" lordname="Wallace" lordofname="Saltier"
-	source="date:2005-04-05 col:575 aname:50405-05_spnew0"
-	fromdate="1900-10-04"
-/>
 
 <lord id="uk.org.publicwhip/lord/10108"
 	house="lords"
@@ -820,48 +762,6 @@ work. -->
 	house="lords"
 	title="Baroness" lordname="Thomas" lordofname="Wallisford"
 	source="date:2004-05-11 col:247 aname:40511-29_spnew0"
-	fromdate="1900-10-04"
-/>
-<lord id="uk.org.publicwhip/lord/10111"
-	house="lords"
-	title="Bishop" lordname="" lordofname="Edmundsbury and Ipswich"
-	source="date:2004-04-21 col:301 aname:40421-04_spnew11"
-	fromdate="1900-10-04"
-/>
-<lord id="uk.org.publicwhip/lord/10113"
-	house="lords"
-	title="Baroness" lordname="Symons" lordofname="Vernham"
-	source="date:2004-03-16 col:134 aname:40316-03_spnew12"
-	fromdate="1900-10-04"
-/>
-<lord id="uk.org.publicwhip/lord/10114"
-	house="lords"
-	title="Lord" lordname="Hannay" lordofname="Chiswck"
-	source="date:2003-12-15 col:1026 aname:31215-10_spnew1"
-	fromdate="1900-10-04"
-/>
-<lord id="uk.org.publicwhip/lord/10115"
-	house="lords"
-	title="Baroness" lordname="Pitkeathly" lordofname=""
-	source="date:2003-04-10 col:405 aname:30410-19_spmin0"
-	fromdate="1900-10-04"
-/>
-<lord id="uk.org.publicwhip/lord/10116"
-	house="lords"
-	title="Earl" lordname="" lordofname="Listowal"
-	source="date:2003-03-19 col:238 aname:30319-02_spnew15"
-	fromdate="1900-10-04"
-/>
-<lord id="uk.org.publicwhip/lord/10118"
-	house="lords"
-	title="Lord" lordname="Brooke" lordofname="Sutton-Mandeville"
-	source="date:2003-03-12 col:1332 aname:30312-07_spnew2"
-	fromdate="1900-10-04"
-/>
-<lord id="uk.org.publicwhip/lord/10119"
-	house="lords"
-	title="Lord" lordname="Livesey" lordofname="Talgarth"
-	source="date:2003-02-27 col:422 aname:30227-12_spnew4"
 	fromdate="1900-10-04"
 />
 
