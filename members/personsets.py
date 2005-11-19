@@ -161,7 +161,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
             attr = None
             maxname = None
             for attr in personset:
-                if attr["fromdate"] >= maxdate:
+                if attr["fromdate"]=='' or attr["fromdate"] >= maxdate:
                     if attr.has_key("firstname"):
                         # MPs
                         maxdate = attr["fromdate"]
