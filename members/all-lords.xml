@@ -1015,22 +1015,12 @@
 <lord
 	id="uk.org.publicwhip/lord/1000101"
 	house="lords"
-	title="Arch-bishop" lordname="" lordofname="Canterbury"
-	frontnames=""
+	title="Archbishop" lordname="" lordofname="Canterbury"
+	frontnames="Rowan Douglas"
 	peeragetype="Bishops and Archbishops" affiliation="Bishops"
 	fromdate="2003-02-03"
 	source="Lords2004-02-09WithFromDate.html"
 	comment=""
-/>
-<lord
-	id="uk.org.publicwhip/lord/1000102"
-	house="lords"
-	title="Archbishop" lordname="" lordofname="Canterbury"
-	frontnames="Rowan Douglas"
-	peeragetype="" affiliation=""
-	fromdate=""
-	source="Lords2003-11-26.html"
-	comment=" -- in extname, missing from mainlists"
 />
 <lord
 	id="uk.org.publicwhip/lord/1000103"
@@ -6875,22 +6865,12 @@
 <lord
 	id="uk.org.publicwhip/lord/1000687"
 	house="lords"
-	title="Arch-bishop" lordname="" lordofname="York"
-	frontnames=""
+	title="Archbishop" lordname="" lordofname="York"
+	frontnames="David Michael"
 	peeragetype="Bishops and Archbishops" affiliation="Bishops"
 	fromdate="1990-10-01"
 	source="Lords2004-02-09WithFromDate.html"
 	comment=""
-/>
-<lord
-	id="uk.org.publicwhip/lord/1000688"
-	house="lords"
-	title="Archbishop" lordname="" lordofname="York"
-	frontnames="David Michael"
-	peeragetype="" affiliation=""
-	fromdate=""
-	source="Lords2003-11-26.html"
-	comment=" -- in extname, missing from mainlists"
 />
 <lord
 	id="uk.org.publicwhip/lord/1000689"
@@ -6912,4 +6892,5 @@
 	source="Lords2004-02-09WithFromDate.html"
 	comment=""
 />
+
 </publicwhip>
