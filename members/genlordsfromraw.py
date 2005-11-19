@@ -238,7 +238,8 @@ def LoadTableWithFromDate(fpath, fname):
 def LdCap(nam):
 	res = re.split("(\s+|-|\.|')", nam)
 	for i in range(len(res)):
-		res[i] = string.capitalize(res[i])
+		if res[i][:2].isupper():
+		    res[i] = string.capitalize(res[i])
 		if (i != 0) and (i != len(res) - 1):
 			if re.match("And|De|Sub|Le", res[i]):
 				res[i] = string.lower(res[i])
@@ -296,7 +297,7 @@ def LoadExtendedNames(fpath, fname):
 
 rr1 = LoadTableWithFromDate('../rawdata/lords', 'Lords2004-02-09WithFromDate.html')
 rr2 = LoadTableWithFromDate('../rawdata/lords', 'LordsSince1997.html')
-rr3 = LoadLifePeers()
+# rr3 = LoadLifePeers()
 
 # combine the inputs (could then sort and check duplicates)
 rr = lordsrecords()
@@ -323,7 +324,7 @@ lordsxml.write("""<?xml version="1.0" encoding="ISO-8859-1"?>
 <publicwhip>
 
 <lord
-	id="uk.org.publicwhip/lord/0"
+	id="uk.org.publicwhip/lord/1000000"
 	house="lords"
 	title="Queen" lordname="Elizabeth" lordofname="Windsor"
 	frontnames=""
@@ -336,7 +337,7 @@ lordsxml.write("""<?xml version="1.0" encoding="ISO-8859-1"?>
 """)
 
 
-lid = 1
+lid = 1000001
 for r in rr.lordrec:
 	r.lid = lid
 	r.OutRecord(lordsxml)
