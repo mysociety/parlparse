@@ -25,7 +25,7 @@ svn -q add */*.patch 2>&1 | grep -v "is already under version control"
 svn -q update
 # ... and any new cmpages
 cd ~/parldata/cmpages
-svn -q add */*.html 2>&1 | grep -v "is already under version control"
+svn -q add */*2005*.html 2>&1 | grep -v "is already under version control"
 svn -q update
 
 # Run scraper

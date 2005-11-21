@@ -175,6 +175,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 		ltitle = titleconv[lfn.group(3)]
 		llordname = string.replace(lfn.group(1), ".", "")
 		llordname = string.replace(llordname, "&#039;", "'")
+		llordname = re.sub("^De ", "de ", llordname)
 		llordofname = ""
 		if lfn.group(2):
 			llordofname = string.replace(lfn.group(2), ".", "")
@@ -230,7 +231,7 @@ lordlist = LordsList()
 
 # marks out center types bold headings which are never speakers
 respeaker = re.compile('(<center><b>[^<]*</b></center>|<b>[^<]*</b>(?:\s*:)?)(?i)')
-respeakerb = re.compile('<b>\s*([^<]*?)\s*</b>(\s*:)?(?i)')
+respeakerb = re.compile('<b>\s*([^<]*?),?\s*</b>(\s*:)?(?i)')
 respeakervals = re.compile('([^:(]*?)\s*(?:\(([^:)]*)\))?(:)?$')
 
 renonspek = re.compile('division|contents|amendment(?i)')
