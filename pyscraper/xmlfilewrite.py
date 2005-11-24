@@ -185,9 +185,9 @@ def WriteXMLspeechrecord(fout, qb, bMakeOldWransGidsToNew, bIsWrans):
 	fout.write('</%s>\n' % qb.typ)
 
 
-# these altheadinggids were really only necessary when we were over-writing the xml files each time 
-# and had to defend against questions getting merged into groups.  
-# possibly they could be taken out as the linkforward is actually done between xml files and 
+# these altheadinggids were really only necessary when we were over-writing the xml files each time
+# and had to defend against questions getting merged into groups.
+# possibly they could be taken out as the linkforward is actually done between xml files and
 # you'd merely get two separate questions pointing to one batch in the next file.
 
 errco = 9900
@@ -216,7 +216,7 @@ class wransblock:
 						assert False
 
 				elif reqnm.group(1) == '0':
-					print "missing qnum in", lqb.GID   # as long as there is at least one, we are okay
+					print "missing qnum in", lqb.GID   # as long as there is at least one good number in the block of questions , we are okay
 				else:
 					self.qnums.append(reqnm.group(1))
 
@@ -270,10 +270,24 @@ class wransblock:
 		for qb in self.replies:
 			WriteXMLspeechrecord(fout, qb, bMakeOldWransGidsToNew, True)
 
+	def FlattenTextWords(self):
+		flatparas = [ ]
+		for qb in self.queses:
+			flatparas.extend(qb.stext)
+		for qb in self.replies:
+			flatparas.extend(qb.stext)
+
+		res = [ ]
+		for flatpara in flatparas:
+			res.extend(re.split("<[^>]*>|\s+", flatpara))
+		return res
+
 
 # this is the code for implementing the new gids code
 # keep your hacking to this area and things will be simple
 def CreateWransGIDs(flatb, sdate):
+	global errco
+	errco = 9900  # reset
 	# first divide into major blocks and wranswer pieces
 	majblocks = [ ]
 	for qb in flatb:

@@ -6,7 +6,7 @@ import string
 import cStringIO
 
 from miscfuncs import FixHTMLEntities
-from miscfuncs import SplitParaIndents
+from miscfuncs import SplitParaIndents, IsNotQuiet
 
 from contextexception import ContextException
 
@@ -21,8 +21,7 @@ from contextexception import ContextException
 def ExtractQnum(tex, stampurl):
 	qn = re.match('(.*?)\s*\[?(\d+R?)\]$', tex)
 	if not qn:
-		# print tex, 'qnum not at end of line'
-		return (tex, '0')
+		return (tex, '0')  # default when no qnum is found.  the 0 qnums are detected elswhere (should have used "0error") in MeasureBlockSimilarity for gidmatching
 
 	isqn = re.search('\[(\d+R?)\]', qn.group(1))
 	if isqn:
@@ -42,7 +41,7 @@ def FilterQuestion(text, sdate, stampurl):
 
 	textn = [ ]
 
-        # special case exceptions.  Indented text in questions nearly always marks numbered sections 
+        # special case exceptions.  Indented text in questions nearly always marks numbered sections
         # - rarely is it quoted text like this:
         # 2002-11-07 - happened again.  Did a patch.
         if sdate == '2004-01-05' and len(textp) > 1 and re.search('"Given that 98.5 per cent', text):
