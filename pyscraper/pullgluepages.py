@@ -298,8 +298,7 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 		if not url0:
 			continue
 
-		# make the message
-		print commonsIndexRecord.date, (latestFilePath and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
+		# print commonsIndexRecord.date, (latestFilePath and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
 
 		# now we take out the local pointer and start the gluing
 		GlueByNext(tempfilename, url0, urlx)
@@ -313,6 +312,9 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 		
 		# now commit the file
 		os.rename(tempfilename, nextFilePath)
+
+		# make the message
+		print commonsIndexRecord.date, (latestFilePath and 'RE-scraped' or 'scraped'), nextFilePath
 
 def ReplicatePatchToNewScrapedVersion(folderName, latestFileStem, latestFilePath, nextFilePath, nextFileStem):
 	if not latestFilePath:
