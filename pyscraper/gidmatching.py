@@ -176,6 +176,14 @@ def FactorChanges(flatb, scrapeversion):
 	return res
 
 
+def MeasureBlockSimilarity(oldtext, qblock):
+	flattenoldtext = re.split("<[^>]*>|\s+", oldtext)
+	flattennewtext = qblock.FlattenTextWords()
+
+	sm = difflib.SequenceMatcher(lambda x: x == "", flattenoldtext, flattennewtext)
+	return sm.ratio()
+
+
 # special case because the questions can be re-ordered
 def FactorChangesWrans(majblocks, scrapeversion):
 
@@ -204,12 +212,16 @@ def FactorChangesWrans(majblocks, scrapeversion):
 						 scrapeversion)
 
 	# make the map from qnums to blocks
+	qnummissings = [ ]
 	qnummapq = { }
 	for majblock in majblocks:
 		for qblock in majblock[1]:
 			for qnum in qblock.qnums:
-				assert qnum not in qnummapq  # failure means this qnum is found twice in the file.
+				assert qnum not in qnummapq  # failure means this qnum is found twice in the newly parsed file.
 				qnummapq[qnum] = qblock
+				if re.match("ZZZZerror", qnum):
+					qnummissings.append(qnum)
+
 
 	# for each block, find the map forward and check if we want to reprint it in full.
 	for qebchk in qebchks:
@@ -221,9 +233,25 @@ def FactorChangesWrans(majblocks, scrapeversion):
 		for qqnum in qqnums:
 			if qblock:
 				assert qblock.headingqb.qGID == qnummapq[qqnum].headingqb.qGID
-			else:
+			elif qqnum != '0':  # 0 is when there is a missing qnum
 				qblock = qnummapq[qqnum]
 
+		# in this case the qnums are fail for finding the match, so we either drop it, or find
+		# the match by closest in text.  Prefer to match blocks to
+		if not qblock:
+			# find the closest match for this block out of this missing qnum blocks on the new page
+			# (this will need to account for all blocks if in future the correction is to add in the qnum)
+			assert qnummissings
+			qmissblocksscore = [ ]
+			for qqnum in qnummissings:
+				similarity = MeasureBlockSimilarity(qebchk[3], qnummapq[qqnum])
+				qmissblocksscore.append((similarity, qqnum))
+			qmissblockscorebest = max(qmissblocksscore)
+			qblock = qnummapq[qmissblockscorebest[1]]
+			if miscfuncs.IsNotQuiet():
+				print "Missing qnum; mapping %s to %s with score %f" % (qebchk[0], qblock.headingqb.qGID, qmissblockscorebest[0])
+			assert qmissblockscorebest[0] > 0.8  # otherwise it's not really a match and we need to look harder.  
+												 # perhaps it's matched to a block in the new file which newly has a qnum, and we then have to scan against all of them.  
 
 		# now have to check matching.
 		# convert both to strings and compare.
