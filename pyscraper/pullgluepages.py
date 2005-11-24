@@ -305,7 +305,7 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 		GlueByNext(tempfilename, url0, urlx)
 
 		if CompareScrapedFiles(latestFilePath, tempfilename) == "SAME":
-			print "  matched with:", latestFilePath
+			# print "  matched with:", latestFilePath
 			continue
 
 		# before we copy over the file from tempfilename to nextFilePath, copy over the patch if there is one.
