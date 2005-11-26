@@ -314,7 +314,7 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 		os.rename(tempfilename, nextFilePath)
 
 		# make the message
-		print commonsIndexRecord.date, (latestFilePath and 'RE-scraped' or 'scraped'), nextFilePath
+		print commonsIndexRecord.date, (latestFilePath and 'RE-scraped' or 'scraped'), re.sub(".*?cmpages/", "", nextFilePath)
 
 def ReplicatePatchToNewScrapedVersion(folderName, latestFileStem, latestFilePath, nextFilePath, nextFileStem):
 	if not latestFilePath:
