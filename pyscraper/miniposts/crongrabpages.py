@@ -28,7 +28,14 @@ watchpages = {  "govposts":"http://www.parliament.uk/directories/hciolists/hmg.c
 				"plaidsnp":"http://www.parliament.uk/directories/hciolists/PCSNP.cfm",
 				"privsec":"http://www.parliament.uk/directories/hciolists/Pps.cfm",
 				"selctee":"http://www.parliament.uk/directories/hciolists/selmem.cfm",
-                                "clerks":"http://www.publications.parliament.uk/pa/cm/listgovt.htm",
+				"clerks":"http://www.publications.parliament.uk/pa/cm/listgovt.htm",
+
+				"bills":"http://www.publications.parliament.uk/pa/pabills.htm",
+				"privatebills":"http://www.publications.parliament.uk/pa/privbill.htm",
+
+				"hybridbillscfm":"http://www.parliament.uk/bills/hybrid_bills.cfm",
+				"draftbillscfm":"http://www.parliament.uk/bills/draftbills.cfm",
+				"billlist":"http://www.publications.parliament.uk/pa/cm/cmpblist/cmpblist.htm",
 			 }
 
 
@@ -39,7 +46,7 @@ def GrabWatchCopies(sdate):
 	# make directories that don't exist
 	chggdir = os.path.join(pwcmdirs, "chgpages")
 	if not os.path.isdir(chggdir):
-            raise Exception, 'Data directory %s does not exist, you\'ve not got a proper checkout from CVS.' % (chggdir)
+		raise Exception, 'Data directory %s does not exist, you\'ve not got a proper checkout from CVS.' % (chggdir)
 
 	for ww in watchpages:
 		watchdir = os.path.join(chggdir, ww)
