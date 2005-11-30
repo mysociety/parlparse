@@ -10,6 +10,7 @@ use warnings;
 use strict;
 use LWP::UserAgent;
 use XML::Simple;
+use Inline 'Python';
 my $browser = LWP::UserAgent->new;
 $browser->agent("www.TheyWorkForYou.com EDM fetcher - run by theyworkforyou\@msmith.net");
 my %EDM;
@@ -67,7 +68,24 @@ sub mp_list_parse {
 	@parts = $page->content =~ m#<td><a href='EDMByMember\.aspx\?MID=(\d+).*?>([^>]+)</a></td>\s*<td>([^<]+)</td>#scg;
 
 	while (($mpid,$name,$constituency, @parts)= @parts) {
-		$lines.= "$constituency\t$mpid\t0\t$name\n";
+        my ($pwid)=mfcl($name, $constituency);
+        $lines.= "$constituency\t$mpid\t$pwid\t$name\n";
 	}
 	return $lines;
 }
+
+__END__
+__Python__
+import datetime
+import sys
+import urllib
+import urlparse
+import re
+import sets
+
+sys.path.append("../pyscraper/")
+from resolvemembernames import memberList
+date_today= datetime.date.today().isoformat()
+def mfcl (name, cons):
+            a,b,c = memberList.matchfullnamecons(name, cons, date_today)
+            return a
