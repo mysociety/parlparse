@@ -18,7 +18,7 @@ my $index_url= $base_url . 'EDMList.aspx';
 my $Parl_Session= '875'; # hardcode to 05-06 for now
 my $Parl_Session_readable= '05-06'; # hardcode to 05-06 for now
 my $dir=shift || die "usage: $0 <output dir>\n";
-my $MPmap;
+my %MPmap;
 {
 	&parse_mpid_table();
 	&setup_cookies($index_url); # it'll get redirected to the front page anyway
@@ -140,12 +140,12 @@ sub parse_motion {
 
 
 sub parse_mpid_table  {
-
+    my $line;
 	open (LIST, "$dir/people.txt") || die "can't open $dir/people.txt: $!";
 	while ($line = <LIST>) {
 		chomp($line);
 		#         "Constituency\tPIMS_MP_ID\tPublicWhipID\tName\n";
-		($constituency, $pims_id, $PW_id, $name) = split /\t/, $line;
+		my ($constituency, $pims_id, $PW_id, $name) = split /\t/, $line;
 		$MPmap{$pims_id}=$PW_id;
 	}
 	close (LIST);
