@@ -68,7 +68,8 @@ sub mp_list_parse {
 	@parts = $page->content =~ m#<td><a href='EDMByMember\.aspx\?MID=(\d+).*?>([^>]+)</a></td>\s*<td>([^<]+)</td>#scg;
 
 	while (($mpid,$name,$constituency, @parts)= @parts) {
-        my ($pwid)=mfcl($name, $constituency);
+        my $pwid;
+        $pwid=mfcl($name, $constituency);
         $lines.= "$constituency\t$mpid\t$pwid\t$name\n";
 	}
 	return $lines;
@@ -86,6 +87,6 @@ import sets
 sys.path.append("../pyscraper/")
 from resolvemembernames import memberList
 date_today= datetime.date.today().isoformat()
-def mfcl (name, cons):
-            a,b,c = memberList.matchfullnamecons(name, cons, date_today)
-            return a
+def mfcl (name, cons): 
+    a,b,c = memberList.matchfullnamecons(name, cons, date_today)
+    return a
