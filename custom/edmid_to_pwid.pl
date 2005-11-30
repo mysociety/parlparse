@@ -69,7 +69,15 @@ sub mp_list_parse {
 
 	while (($mpid,$name,$constituency, @parts)= @parts) {
         my $pwid;
-        $pwid=mfcl($name, $constituency);
+        if ($name =~ m/^(.*),(.*)$/) {
+            print "foo $2 $1\n";
+            ($pwid)= mfcl("$2 $1", $constituency);
+            print "bar\n";
+        } else {
+            ($pwid)=mfcl($name, $constituency);
+        }
+        print $pwid;
+        die "Name match failed for $2 $1 ($constituency)" if !$pwid;
         $lines.= "$constituency\t$mpid\t$pwid\t$name\n";
 	}
 	return $lines;
@@ -88,5 +96,5 @@ sys.path.append("../pyscraper/")
 from resolvemembernames import memberList
 date_today= datetime.date.today().isoformat()
 def mfcl (name, cons): 
-    a,b,c = memberList.matchfullnamecons(name, cons, date_today)
-    return a
+    return memberList.matchfullnamecons(name, cons, date_today)
+
