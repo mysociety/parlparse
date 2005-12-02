@@ -10,8 +10,8 @@ use warnings;
 use strict;
 use LWP::UserAgent;
 use XML::Simple;
-use Inline 'Python';
 my $browser = LWP::UserAgent->new;
+my $date= '2005-12-01';
 $browser->agent("www.TheyWorkForYou.com EDM fetcher - run by theyworkforyou\@msmith.net");
 my %EDM;
 my $index_url= 'http://edmi.parliament.uk/EDMi/';
@@ -66,35 +66,32 @@ sub mp_list_parse {
 	#print $page->content;
 	my (@parts, $mpid, $name, $constituency);
 	@parts = $page->content =~ m#<td><a href='EDMByMember\.aspx\?MID=(\d+).*?>([^>]+)</a></td>\s*<td>([^<]+)</td>#scg;
+    my $args;
 
+    $args->{command}='mp-full-cons-match';
 	while (($mpid,$name,$constituency, @parts)= @parts) {
         my $pwid;
         if ($name =~ m/^(.*),(.*)$/) {
-            print "foo $2 $1\n";
-            ($pwid)= mfcl("$2 $1", $constituency);
-            print "bar\n";
+            $args->{name}="$2 $1";
         } else {
-            ($pwid)=mfcl($name, $constituency);
+            $args->{name}=$name;
         }
-        print $pwid;
-        die "Name match failed for $2 $1 ($constituency)" if !$pwid;
+        $args->{constituency}= $constituency;
+        $args->{date}=$date; 
+
+        my $response= $browser->post('http://ukparse.kforge.net/parlparse/rest.cgi', $args);
+
+		my @lines= split /\n/, $response->{_content};
+		#print $response->{_content};
+        if ($lines[1] eq 'OK') {
+            $lines[2]=~ m#member/(\d+)$#;
+            $pwid=$1;
+        } else {
+            warn "Name match failed for  $args->{name} $constituency for $date";
+            $pwid=0;
+        } 
         $lines.= "$constituency\t$mpid\t$pwid\t$name\n";
-	}
+    }
 	return $lines;
 }
-
-__END__
-__Python__
-import datetime
-import sys
-import urllib
-import urlparse
-import re
-import sets
-
-sys.path.append("../pyscraper/")
-from resolvemembernames import memberList
-date_today= datetime.date.today().isoformat()
-def mfcl (name, cons): 
-    return memberList.matchfullnamecons(name, cons, date_today)
 
