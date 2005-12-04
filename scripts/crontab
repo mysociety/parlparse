@@ -24,4 +24,7 @@
 # every week early Sunday grab weekly range of data
 23 4 * * Sun $HOME/parlparse/scripts/weeklyupdate
 
+# On the 6th Dec and June remind me to make source tarballs
+0 1 6 Dec,Jun * /bin/echo "Six monthly notice: Make source code backup tarballs of parlparse, theyworkforyou and publicwhip and put them on SourceForge"
+
 
