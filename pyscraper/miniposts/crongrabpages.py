@@ -36,6 +36,10 @@ watchpages = {  "govposts":"http://www.parliament.uk/directories/hciolists/hmg.c
 				"hybridbillscfm":"http://www.parliament.uk/bills/hybrid_bills.cfm",
 				"draftbillscfm":"http://www.parliament.uk/bills/draftbills.cfm",
 				"billlist":"http://www.publications.parliament.uk/pa/cm/cmpblist/cmpblist.htm",
+
+				"newlords":"http://www.parliament.uk/directories/house_of_lords_information_office/new_members.cfm", 
+				"deadlords":"http://www.parliament.uk/directories/house_of_lords_information_office/deceased_members.cfm",
+				"alphalistlords":"http://www.parliament.uk/directories/house_of_lords_information_office/alphabetical_list_of_members.cfm",
 			 }
 
 
