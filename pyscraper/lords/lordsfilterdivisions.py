@@ -74,7 +74,7 @@ def LordsFilterDivision(text, stampurl, sdate):
 			offm = reoffma.match(lfss)
 			if offm:
 				lfss = offm.group(1)
-			lordid = lordlist.MatchRevName(lfss, stampurl)
+			lordid = lordlist.MatchRevName(lfss, sdate, stampurl)
 			lordw = '\t<lord id="%s" vote="%s"%s>%s</lord>' % (lordid, contstate, tels, FixHTMLEntities(fss))
 
 			if contstate == 'content':
