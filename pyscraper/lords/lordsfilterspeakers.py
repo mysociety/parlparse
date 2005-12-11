@@ -44,13 +44,12 @@ class LordsList(xml.sax.handler.ContentHandler):
 		self.lordnames={} # "lordnames" --> lords
 		self.parties = {} # constituency --> MPs
 
-		self.aliasfulllordname = { }
-
 		parser = xml.sax.make_parser()
 		parser.setContentHandler(self)
-		parser.parse("../members/all-lords.xml")
-		parser.parse("../members/all-lords-extras.xml")
-		parser.parse("../members/lordaliases.xml")
+		#parser.parse("../members/all-lords.xml")
+		#parser.parse("../members/all-lords-extras.xml")
+		parser.parse("../members/peers-ucl.xml")
+
 
 		# set this to the file if we are to divert unmatched names into a file
 		# for collection
@@ -68,14 +67,10 @@ class LordsList(xml.sax.handler.ContentHandler):
 				raise Exception, "Repeated identifier %s in members XML file" % attr["id"]
 			self.lords[attr["id"]] = attr
 
-			lname = attr["lordname"]
-			if not lname:
-				lname = attr["lordofname"]
-			if lname:
-				self.lordnames.setdefault(lname, []).append(attr)
-
-		if name == "lordalias":
-			self.aliasfulllordname[attr["alternate"]] = attr["fullname"]
+			lname = attr["lordname"] or attr["lordofname"]
+			lname = re.sub("\.", "", lname)
+			assert lname
+			self.lordnames.setdefault(lname, []).append(attr.copy())
 
 	def DumpUnknownLord(self, ltitle, llordname, llordofname, stampurl):
 		assert self.newlordsdumpfname
@@ -93,57 +88,60 @@ class LordsList(xml.sax.handler.ContentHandler):
 									    (ltitle, llordname, llordofname, stampurl.reps()))
 			self.newlordsdumpfile.flush()
 			self.newlordsdumped.append((ltitle, llordname, llordofname))
+		assert False
 		return "notyetlisted"
 
 	# main matchinf function
-	def GetLordID(self, ltitle, llordname, llordofname, loffice, stampurl, sdate):
+	def GetLordID(self, ltitle, llordname, llordofname, loffice, stampurl, sdate, bDivision):
 		if ltitle == "Lord Bishop":
 			ltitle = "Bishop"
 		llordofname = string.replace(llordofname, ".", "")
 		llordname = string.replace(llordname, ".", "")
 		llordname = string.replace(llordname, "&#039;", "'")
 
-		lname = llordname
-		if not lname:
-			lname = llordofname
+		lname = llordname or llordofname
+		assert lname
 		lmatches = self.lordnames.get(lname, [])
 
+		# match to successive levels of precision for identification
 		res = [ ]
-		dres = [ ]
 		for lm in lmatches:
-			if (lm["title"] == ltitle) and (lm["lordname"] == llordname):
-				# in the list of lords it's important to put the ones with lordofnames before
-				# the one without in matching titles and lordnames so the detailed
-				# match happens first.  See case of Lord Renton
-				if (lm["lordofname"] == llordofname) or (not llordname and not res and not llordofname):
-					if (lm["fromdate"] <= sdate):
+			if lm["title"] != ltitle:  # mismatch title
+				continue
+			if llordname and llordofname: # two name case
+				if (lm["lordname"] == llordname) and (lm["lordofname"] == llordofname):
+					assert lm["fromdate"] <= sdate <= lm["todate"]
+					res.append(lm)
+				continue
+			if lm["lordname"] and lm["lordofname"]: # compare to double name
+				continue
+
+			# single name cases
+			lmlname = lm["lordname"] or lm["lordofname"]
+			if (llordname and lm["lordname"]) or (llordofname and lm["lordofname"]):
+				if lname == lmlname:
+					if lm["fromdate"] <= sdate <= lm["todate"]:
 						res.append(lm)
 					else:
-						dres.append(lm)
+						assert ltitle == "Bishop"
+				continue
 
-		# case of date range killing off an otherwise match
-		# (possibly a bishop changes, and keeps same location)
-		# need to include date ranges
-		if (len(res) == 0) and (len(dres) == 1):
-			print "suppressing date matching %s" % sdate
-			lm = dres[0]
-			print "%s [%s] [of %s] [from %s]" % (lm["title"], lm["lordname"], lm["lordofname"], lm["fromdate"])
-			res = dres
+			# cross-match
+			if lname == lmlname:
+				if lm["fromdate"] <= sdate <= lm["todate"]:
+					print "cm---", ltitle, lm["lordname"], lm["lordofname"], llordname, llordofname
+					res.append(lm)
+				else:
+					assert bDivision
 
-		if len(res) == 0:
-			if self.newlordsdumpfname:
-				return self.DumpUnknownLord(ltitle, llordname, llordofname, stampurl)
-			print "Not matched:", (ltitle, llordname, llordofname, len(res))
-			raise ContextException("no match of name", stamp=stampurl, fragment=(llordname or llordofname))
+		if not res:
+			print "Unknown Lord", (ltitle, llordname, llordofname, stampurl)
+			raise ContextException("unknown lord", stamp=stampurl, fragment=lname)
 
-		if len(res) != 1:
-			# bail out if we are not dumping new names to a file
-			print "Too many matches:", (ltitle, llordname, llordofname, len(res))
-			for lm in lmatches:
-				print "%s [%s] [of %s] [from %s]" % (lm["title"], lm["lordname"], lm["lordofname"], lm["fromdate"])
-			raise ContextException("too many matches of name", stamp=stampurl, fragment=(llordname or llordofname))
+		assert len(res) == 1
 
 		return res[0]["id"]
+
 
 	def GetLordIDfname(self, name, loffice, sdate, stampurl=None):
 		hom = honcompl.match(name)
@@ -163,10 +161,11 @@ class LordsList(xml.sax.handler.ContentHandler):
 		if hom.group(4):
 			lplace = re.sub("  ", " ", hom.group(4))
 
-		return lordlist.GetLordID(ltit, lname, lplace, loffice, stampurl, sdate)
+		lname = re.sub("^De ", "de ", lname)
+		return lordlist.GetLordID(ltit, lname, lplace, loffice, stampurl, sdate, False)
 
 
-	def MatchRevName(self, fss, stampurl):
+	def MatchRevName(self, fss, sdate, stampurl):
 		assert fss
 		lfn = re.match('(.*?)(?: of (.*?))?, ?((?:L|B|Abp|Bp|V|E|D|M|C|Ly)\.?)$', fss)
 		if not lfn:
@@ -180,39 +179,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 		if lfn.group(2):
 			llordofname = string.replace(lfn.group(2), ".", "")
 
-		# inline of the LordID stuff, but with more forgiving matches
-		# the The Bish of X is represented as X, Bp
-		lname = llordname
-		if not lname:
-			lname = llordofname
-		lmatches = self.lordnames.get(lname, [])
-
-		res = [ ]
-		for lm in lmatches:
-			if lm["title"] == ltitle:
-				if llordofname or lm["lordname"]:
-					if (lm["lordname"] == llordname) and (lm["lordofname"] == llordofname):
-						res.append(lm)
-				elif lm["lordofname"] == llordname:
-					res.append(lm)
-
-
-		# no matches
-		if len(res) == 0:
-			if self.newlordsdumpfname:
-				return self.DumpUnknownLord(ltitle, llordname, llordofname, stampurl)
-			print "No matches: ", fss
-			raise ContextException("no match of name", stamp=stampurl, fragment=(llordname or llordofname))
-
-		if len(res) != 1:
-			print fss
-			print "too many matches in "
-			for lm in lmatches:
-				print "%s [%s] [of %s]" % (lm["title"], lm["lordname"], lm["lordofname"])
-			raise ContextException("too many matches", stamp=stampurl, fragment=(llordname or llordofname))
-
-		return res[0]["id"]
-
+		return lordlist.GetLordID(ltitle, llordname, llordofname, "", stampurl, sdate, True)
 
 # class instantiation
 lordlist = LordsList()
@@ -303,9 +270,6 @@ def LordsFilterSpeakers(fout, text, sdate):
 		if regenericspeak.match(name):
 			fout.write('<speaker speakerid="%s">%s</speaker>' % ('no-match', name))
 			continue
-
-		# sort out any lords aliases
-		name = lordlist.aliasfulllordname.get(name, name)
 
 		lsid = lordlist.GetLordIDfname(name, loffice=loffice, sdate=sdate, stampurl=stampurl)
 
