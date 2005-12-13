@@ -9,8 +9,8 @@
 # certain conditions.  However, it comes with ABSOLUTELY NO WARRANTY.
 # For details see the file LICENSE.html in the top level of the source.
 
-input = '../rawdata/mpinfo/guardian-mpsurls.txt'
-date = '2004-02-25'
+input = '../rawdata/mpinfo/guardian-mpsurls2005.txt'
+date = '2005-12-13'
 
 import sys
 import string
@@ -29,8 +29,10 @@ c = 0
 for l in ih:
     c = c + 1
     origname, origcons, personurl, consurl = map(string.strip, l.split("\t"))
+    origname = re.sub("^(.*), (.*)$", '\\2 \\1', origname)
 
     # Match the name, and output basic URLs
+    print >>sys.stderr, "Working on %s %s" % (origname, origcons)
     id, name, cons =  memberList.matchfullnamecons(origname, origcons, date)
     personid = memberList.membertoperson(id)
     cons = cons.replace("&", "&amp;")
@@ -75,7 +77,7 @@ for l in ih:
 
     print ''
 
-assert c == 659, "Expected %d MPs" % c
+assert c == 646, "Expected %d MPs" % c
 
 ih.close()
 
