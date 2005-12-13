@@ -460,6 +460,7 @@ that loads in the original file before making modifications.
     <name text="Central Suffolk &amp; North Ipswich"/>
     <name text="Central Suffolk and North Ipswich"/>
     <name text="Suffolk Central and North Ipswich"/>
+    <name text="Suffolk Central and Ipswich North"/>
     <name text="Suffolk Central &amp; Ipswich North"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/124" todate="9999-12-31">
@@ -828,6 +829,7 @@ that loads in the original file before making modifications.
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/229" todate="9999-12-31">
     <name text="Faversham &amp; Mid Kent"/>
     <name text="Faversham and Mid Kent"/>
+    <name text="Faversham and Kent Mid"/>
     <name text="Faversham &amp; Kent Mid"/>
     <name text="Faversham and Mid-Kent"/>
   </constituency>
@@ -1371,6 +1373,7 @@ that loads in the original file before making modifications.
     <name text="Middlesbrough South &amp; East Cleveland"/>
     <name text="Middlesborough South and East Cleveland"/>
     <name text="Middlesbrough South and East Cleveland"/>
+    <name text="Middlesbrough South and Cleveland East"/>
     <name text="Middlesbrough South &amp; Cleveland East"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/379" todate="2005-05-04">
@@ -2562,6 +2565,7 @@ that loads in the original file before making modifications.
   <constituency fromdate="2005-05-05" id="uk.org.publicwhip/cons/709" todate="9999-12-31">
     <name text="Ochil &amp; Perthshire South"/>
     <name text="Ochil and South Perthshire"/>
+    <name text="Ochil and Perthshire South"/>
   </constituency>
   <constituency fromdate="2005-05-05" id="uk.org.publicwhip/cons/710" todate="9999-12-31">
     <name text="Paisley &amp; Renfrewshire North"/>
