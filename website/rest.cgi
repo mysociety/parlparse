@@ -24,6 +24,7 @@ def mp_full_cons_match(name, cons, date):
         print id
         print canon_name.encode("latin-1")
         print canon_cons.encode("latin-1")
+        print memberList.membertoperson(id)
 
 # Look up command
 form = cgi.FieldStorage()
@@ -54,8 +55,8 @@ mp-full-cons-match
 
 Finds MP identifier for a full name such as "Tony Blair", constituency name
 and date when the MP was mentioned.  Put the values in 'name', 'constituency'
-and 'date' URL parameters.  Returns value id, canonical name and canonical
-constituency on three lines.
+and 'date' URL parameters.  Returns value id, canonical name, canonical
+constituency and person id on four lines.
 
 http://ukparse.kforge.net/parlparse/rest.cgi?command=mp-full-cons-match&name=Tony%20Blair&constituency=Sedgefield&date=1997-09-01
 http://ukparse.kforge.net/parlparse/rest.cgi?command=mp-full-cons-match&name=Sion%20Simon&date=2005-01-01&constituency=Birmingham%20Erdington
