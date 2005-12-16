@@ -265,8 +265,10 @@ different spellings of the offices -->
 <alias fullname="Andrew Bennett" alternate="Andrew F Bennett" />
 <alias lastname="MacKay" alternate="Mackay" />
 <alias constituency="Worcester" alternate="Michael John Foster" />
-<alias fullname="Tony Wright" alternate="Anthony Wright" to="2006-01-01" />
-<alias fullname="Anthony D Wright" alternate="Tony Wright" to="2006-01-01" />
+<!-- The end dates here are because parliament starts referring to them consistently
+on that date, and we don't want ambiguos matches any more -->
+<alias fullname="Tony Wright" alternate="Anthony Wright" to="2005-06-10" />
+<alias fullname="Anthony D Wright" alternate="Tony Wright" to="2005-06-10" />
 <alias fullname="Phil Woolas" alternate="Philip Woolas" />
 <alias fullname="Pete Wishart" alternate="Peter Wishart" />
 <alias fullname="Alan Williams" alternate="Alan John Williams" />
