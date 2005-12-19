@@ -1,5 +1,33 @@
 import re
 
+
+lordnametoofnameids = re.findall('"uk.org.publicwhip/lord/(\d+)"', """
+<lordnametoofname id="uk.org.publicwhip/lord/100415" title="Earl" name="Mar and Kellie"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100465" title="Earl" name="Northesk"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100197" title="Earl" name="Erroll"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100473" title="Earl" name="Onslow"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100099" title="Earl" name="Caithness"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100375" title="Earl" name="Listowel"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100569" title="Earl" name="Sandwich"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100181" title="Earl" name="Dundee"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100377" title="Earl" name="Liverpool"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100578" title="Earl" name="Selborne"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100020" title="Earl" name="Arran"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100835" title="Earl" name="Glasgow"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100145" title="Earl" name="Courtown"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100591" title="Earl" name="Shrewsbury"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100551" title="Earl" name="Rosslyn"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100372" title="Earl" name="Lindsay"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100480" title="Viscount" name="Oxfuird"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100729" title="Earl" name="Longford"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100713" title="Earl" name="Carnarvon"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100604" title="Earl" name="Snowdon"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100300" title="Earl" name="Home"/>
+""")
+
+
+
+
 fin = open("peers-ucl-2005-12-03.txt", "r")
 lordlines = fin.readlines()
 fin.close()
@@ -53,10 +81,6 @@ for lordline in lordlines:
 	lordattr = {}
 	for (a, b) in zip(attrlist, s):
 		lordattr[a] = b
-
-	fout.write('<lord\n')
-	fout.write('\tid="uk.org.publicwhip/lord/%d"\n' % (100000 + int(lordattr['id'])))
-	fout.write('\thouse="lords"\n')
 
 	# try to decode the relationship between the hansard name
 	# (which is incomplete -- it's what appears in the divisions, but doesn't distinguish "Lord Arran" from "The Lord of Arran"
@@ -116,17 +140,41 @@ for lordline in lordlines:
 	else:
 		todate = '9999-12-31'
 
+
+	slordid = "%d" % (100000 + int(lordattr['id']))
+
+	# do some corrections we've pulled out of the data
+	if slordid in lordnametoofnameids:  # lordofname distinctions not in the data
+		assert not lordofname and lordname
+		lordofname = lordname
+		lordname = ""
+
+	# posssibly incorrect title
+	if (title, lordname, lordofname) == ("Baroness", "Young", "Dartington"):
+		title = "Lord"
+	if (title, lordname, lordofname) == ("Bishop", "", "Blackburn"): # possibly a previous bishop though
+		fromdate = "1999-11-11"
+	if (title, lordname, lordofname) == ("Bishop", "", "Wakefield"): # speaks on 2005-03-22
+		todate = "2005-03-22"
+	if (title, lordname, lordofname) == ("Bishop", "", "Newcastle"): # votes on 2002-11-05
+		fromdate = "2002-11-05"
+
+
 	assert fromdate < todate
+
 
 	#if not lordattr['d_o_b']:  # missing in a couple of cases
 	#	print lordline
-	#if lordattr['ex_MP'] == 'Y':
-	#	print lordline
 
+	fout.write('<lord\n')
+	fout.write('\tid="uk.org.publicwhip/lord/%s"\n' % slordid)
+	fout.write('\thouse="lords"\n')
 	fout.write('\tforenames="%s"\n' % lordattr['forename'])
 	fout.write('\ttitle="%s" lordname="%s" lordofname="%s"\n' % (title, lordname, lordofname))
 	fout.write('\tpeeragetype="%s" affiliation="%s"\n' % (ltype, party))
 	fout.write('\tfromdate="%s" todate="%s"\n' % (fromdate, todate))
+	if lordattr['ex_MP'] == 'Y':
+		fout.write('\tex_MP="yes"\n')
 
 	fout.write('/>\n')
 
