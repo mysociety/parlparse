@@ -48,7 +48,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 		parser.setContentHandler(self)
 
 		parser.parse("../members/peers-ucl.xml")
-		parser.parse("../members/lordnametoofname.xml")
+		#parser.parse("../members/lordnametoofname.xml")
 
 		# set this to the file if we are to divert unmatched names into a file
 		# for collection
@@ -167,8 +167,8 @@ class LordsList(xml.sax.handler.ContentHandler):
 			if lname == lmlname:
 				if lm["fromdate"] <= sdate <= lm["todate"]:
 					if lm["lordname"] and llordofname:
-						if not IsNotQuiet():
-							raise ContextException("lordofname matches lordname in lordlist", stamp=stampurl, fragment=lname)
+						#if not IsNotQuiet():
+						raise ContextException("lordofname matches lordname in lordlist", stamp=stampurl, fragment=lname)
 						print "cm---", ltitle, lm["lordname"], lm["lordofname"], llordname, llordofname
 						self.DumpCrossovername(lm, stampurl)  # save into file which we will use (when complete, this line will become an assert False)
 					else:
