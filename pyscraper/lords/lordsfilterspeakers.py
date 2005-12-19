@@ -123,6 +123,10 @@ class LordsList(xml.sax.handler.ContentHandler):
 		llordname = string.replace(llordname, ".", "")
 		llordname = string.replace(llordname, "&#039;", "'")
 
+		# got bored with fixing this example
+		if (llordname, llordofname) == ("Mackay", "Ardbrecknish"):
+			llordname = "MacKay"
+
 		lname = llordname or llordofname
 		assert lname
 		lmatches = self.lordnames.get(lname, [])
@@ -139,7 +143,6 @@ class LordsList(xml.sax.handler.ContentHandler):
 					else:
 						raise ContextException("lord not matching date range", stamp=stampurl, fragment=llordname)
 				continue
-
 
 			# skip onwards if we have a double name
 			if lm["lordname"] and lm["lordofname"]:
