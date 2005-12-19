@@ -239,12 +239,13 @@ def FilterLordsSpeech(qb):
 	# a common end of speech is to withdraw an amendment
 	bAmendWithdrawn = False
 	while ispeechstartp1 < len(qb.stext):
-		if re.match('<p>Amendment(?: No\. \d+[A-Z]+)?(?:, as an amendment)?(?: to(?: Commons)? Amendment No\. \d+[A-Z]*| to the Motion)?,? by leave,? withdrawn.</p>', qb.stext[ispeechstartp1]):
+		if re.match('<p>Amendment(?: No\. \d+[A-Z]*)?(?:, as an amendment)?(?: to(?: Commons)? Amendment No\. \d+[A-Z]*| to the Motion)?,? by leave,? withdrawn\.?</p>', qb.stext[ispeechstartp1]):
 			#print "withdrawnwithdrawn", qb.stext[ispeechstartp1]
 			bAmendWithdrawn = True
 			break
 		if re.match('<p>(?:Amendment.{0,50}?|by leave, )withdrawn', qb.stext[ispeechstartp1]):
 			print "**********Marginal amendwith", qb.stext[ispeechstartp1]
+			raise ContextException("Marginal amendwidth", stamp=qb.sstampurl, fragment=qb.stext[ispeechstartp1])
 		ispeechstartp1 += 1
 
 	# the speech ran its proper course

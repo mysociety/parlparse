@@ -115,6 +115,10 @@ def LordsIndexFromVolMenu(urlbndvols):
 				print "awooga " + sss[2]
 				continue
 			sdate = mx.DateTime.DateTimeFrom(sss[0]).date
+
+			if sdate == "2000-01-21":
+				sdate = "2000-02-21"
+				
 			uind = urlparse.urljoin(vol[1], re.sub('\s', '', sss[1]))
 			res.append((sdate, '2', uind))
 
