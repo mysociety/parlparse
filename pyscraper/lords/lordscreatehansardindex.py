@@ -116,9 +116,9 @@ def LordsIndexFromVolMenu(urlbndvols):
 				continue
 			sdate = mx.DateTime.DateTimeFrom(sss[0]).date
 
-			if sdate == "2000-01-21":
+			if sdate == "2000-01-21":  # there's an error in the listing on the page
 				sdate = "2000-02-21"
-				
+
 			uind = urlparse.urljoin(vol[1], re.sub('\s', '', sss[1]))
 			res.append((sdate, '2', uind))
 
