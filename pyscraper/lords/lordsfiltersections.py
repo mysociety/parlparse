@@ -66,8 +66,8 @@ def StripLordsDebateHeadings(headspeak, sdate):
 		# The House met at eleven of the clock (Prayers having been read earlier at the Judicial Sitting by the Lord Bishop of St Albans): The CHAIRMAN OF COMMITTEES on the Woolsack.
 		gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*(?:reassembling.*?recess, )?the house (?:met|resumed) at ([^(]*)(?i)', headspeak[ih][0])
 		if (not gstarttime) or headspeak[ih][2]:
-			print "headspeakheadspeakih", headspeak[ih]
-			raise ContextException('non-conforming "house met at" heading ', fragment=headspeak[ih][-10:])
+			print "headspeakheadspeakih", headspeak[ih][0]
+			raise ContextException('non-conforming "house met at" heading ', fragment=headspeak[ih][0])
 		ih = ih + 1
 
 		# Prayers&#151;Read by the Lord Bishop of Southwell.
@@ -123,7 +123,7 @@ resaidamend =  re.compile("<p[^>]*>On Question, (?:[Ww]hether|That) (?:the said 
 #	<p>On Question, Whether the said amendment (No. 2) shall be agreed to?</p>
 #	<p>Their Lordships divided: Contents, 133; Not-Contents, 118.</p>
 #housedivtxt = "The (?:House|Committee) (?:(?:having )?divided|proceeded to a Division)"
-relorddiv = re.compile('<p[^>]*>(?:\*\s*)?Their Lordships divided: Contents,? (\d+); Not-Contents, (\d+)\.?</p>$')
+relorddiv = re.compile('<p[^>]*>(?:\*\s*)?Their Lordships divided: Contents,? (\d+) ?; Not-Contents, (\d+)\.?</p>$')
 def GrabLordDivisionProced(qbp, qbd):
 	if not re.match("speech|motion", qbp.typ) or len(qbp.stext) < 1:
 		print qbp.stext
@@ -274,6 +274,16 @@ def FilterLordsSpeech(qb):
 # main function
 ################
 def LordsFilterSections(text, sdate):
+
+	# deal with one exceptional case of indenting
+	if sdate == "2005-10-26":
+		l = len(text)
+		text = re.sub("<ul><ul>(<ul>)?", "<ul>", text)
+		text = re.sub("</ul></ul>(</ul>)?", "</ul>", text)
+
+		# regsection1 = '<h\d><center>.*?\s*</center></h\d>' in splitheadingsspeakers.py
+		print "Duplicate <ul>s removed and <center> sorted on %s which shortened text by %d" % (sdate, l - len(text))
+
 
 	# split into list of triples of (heading, pre-first speech text, [ (speaker, text) ])
 	headspeak = SplitHeadingsSpeakers(text)
