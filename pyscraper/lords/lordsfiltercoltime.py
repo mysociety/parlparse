@@ -43,9 +43,9 @@ recolumnumvals = re.compile('(?:<br>&nbsp;<br>|<p>|</ul>|</i>|<font size=\d>|\s|
 
 # <H5>12.31 p.m.</H5>
 # the lords times put dots in "p.m."  but the commons never do.
-regtime1 = '(?:</?p>\s*|<h[45]>|\[|\n)(?:\d+(?:[:\.]\s?\d+)?\.?\s*[ap]\.?m\.?\s*(?:</st>)?|12 noon)(?:\s*</?p>|\s*</h[45]>|\n)'
+regtime1 = '(?:</?p>\s*|<h[45]>|\[|\n)(?:\d+(?:[:\.]\s?\d+)?\.?\s*[ap]\.?m\.?\s*|12 noon)(?:</st>)?(?:\s*</?p>|\s*</h[45]>|\n)'
 regtime2 = '<h5>(?:Noon|Midnight)?\s*(?:</st>)?</h5>' # accounts for blank <h5></h5>
-retimevals = re.compile('(?:</?p>\s*|<h\d>|\[|\n)\s*(\d+(?:[:\.]\s?\d+)?\.?\s*[ap][m\.]+|Noon|Midnight|</h5>|</st>)(?i)')
+retimevals = re.compile('(?:</?p>\s*|<h\d>|\[|\n)\s*(\d+(?:[:\.]\s?\d+)?\.?\s*[ap][m\.]+|(?:12 )?Noon|Midnight|</h5>|</st>)(?i)')
 
 # <a name="column_1099">
 reaname = '<a name\s*=\s*"[^"]*">\s*</a>(?i)'
@@ -77,7 +77,7 @@ def FilterLordsColtime(fout, text, sdate):
 			# check date
 			ldate = mx.DateTime.DateTimeFrom(columng.group(1)).date
 			if sdate != ldate:
-				raise Exception, "Column date disagrees %s -- %s" % (sdate, fss)
+				raise ContextException("Column date disagrees %s -- %s" % (sdate, fss), stamp=stampurl, fragment=fss)
 
 			# check number
 			lcolnum = string.atoi(columng.group(3))
@@ -136,7 +136,7 @@ def FilterLordsColtime(fout, text, sdate):
 # Main Debate, Grand Committee, Written Ministerial Statements, Written Answers
 
 # The parsing of each differs, which is why it is important to split this document 
-# into streams first, even though the boundaries are quite blurred and 
+# into streams first, even though the boundaries are quite blurred and
 # sometimes the column code numbering on either side is errant.
 
 
@@ -146,9 +146,9 @@ def SplitLordsText(text, sdate):
 	res = [ '', '', '', '' ]
 
 	# Use a name tags
-	wagc = re.search('(?:<br>&nbsp;<br>\s*)?<a name="(?:column_(?:GC|CWH)\d+|[0-9-]+_cmtee0)"></a>', text)
-	wams = re.search('<a name="(?:wms|column_WS\d+)"></a>', text)
-	wama = re.search('<a name="(?:column_WA\d+|[\dw]*_writ0)"></a>', text)
+	wagc = re.search('(?:<br>&nbsp;<br>\s*)?<a name\s*=\s*"(?:column_(?:GC|CWH)\d+|[0-9\-]+_cmtee0)"></a>(?i)', text)
+	wams = re.search('<a name="(?:wms|column_WS\d+)"></a>(?i)', text)
+	wama = re.search('<a name="(?:column_WA\d+|[\dw]*_writ0)"></a>(?i)', text)
 
 	# the sections are always in the same order, but sometimes there's one missing.
 
@@ -215,7 +215,8 @@ def SplitLordsText(text, sdate):
 	# check the title of the Grand Committee
 	if res[1]:
 		assert not re.search('<a name="column_(?!(?:GC|CWH))\D+\d+">', res[1])
-		assert re.search('<(?:h2 align=)?center>\s*(?:Official Report of the )?(?:(?:the)?Northern Ireland Orders )?Grand Committee', res[1])
+		if not re.search('<(?:h2 align=)?center>\s*(?:Official Report of the )?(?:(?:the)?Northern Ireland Orders )?Grand Committee', res[1]):
+			raise ContextException("grand committee title failure", stamp=None, fragment=res[1][:100])
 
 	# check the title is in the Written Statements section
 	if res[2]:

@@ -384,7 +384,8 @@ def SplitParaSpace(text, stampurl):
 		if re.match('(?:<[^>]*>|\s)*$', pstring):
 			print "\nspclist:", spclist
 			print "\npstring:", pstring
-			print "\nthe text:", text
+			print "\nthe text:", text[:100]
+			print "\nnf:", nf
 			raise ContextException('no text in paragraph', stamp=stampurl, fragment=pstring)
 
 		# check that paragraph spaces aren't only font text, and have something

@@ -64,7 +64,7 @@ def StripLordsDebateHeadings(headspeak, sdate):
 
 	else:
 		# The House met at eleven of the clock (Prayers having been read earlier at the Judicial Sitting by the Lord Bishop of St Albans): The CHAIRMAN OF COMMITTEES on the Woolsack.
-		gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*(?:reassembling.*?recess, )?the house (?:met|resumed) at ([^(]*)(?i)', headspeak[ih][0])
+		gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*(?:reassembling.*?recess, )?the house (?:met|resumed)(?: for Judicial Business)? at ([^(]*)(?i)', headspeak[ih][0])
 		if (not gstarttime) or headspeak[ih][2]:
 			print "headspeakheadspeakih", headspeak[ih][0]
 			raise ContextException('non-conforming "house met at" heading ', fragment=headspeak[ih][0])
@@ -123,7 +123,7 @@ resaidamend =  re.compile("<p[^>]*>On Question, (?:[Ww]hether|That) (?:the said 
 #	<p>On Question, Whether the said amendment (No. 2) shall be agreed to?</p>
 #	<p>Their Lordships divided: Contents, 133; Not-Contents, 118.</p>
 #housedivtxt = "The (?:House|Committee) (?:(?:having )?divided|proceeded to a Division)"
-relorddiv = re.compile('<p[^>]*>(?:\*\s*)?Their Lordships divided: Contents,? (\d+) ?; Not-Contents, (\d+)\.?</p>$')
+relorddiv = re.compile('<p[^>]*>(?:\*\s*)?Their Lordships divided: Contents,? (\d+) ?; Not-Contents,? (\d+)\.?</p>$')
 def GrabLordDivisionProced(qbp, qbd):
 	if not re.match("speech|motion", qbp.typ) or len(qbp.stext) < 1:
 		print qbp.stext
@@ -192,7 +192,7 @@ def FilterLordsSpeech(qb):
 			ispeechstartp1 = 2  # 1st paragraph is speech text
 
 		# identify a writ of summons (single line)
-		elif re.match("<p>[\s,]*having received a [Ww]rit of [Ss]ummons .*?took the [Oo]ath\.</p>$", qb.stext[0]):
+		elif re.match("<p>(?:[\s,]*having received a [Ww]rit of [Ss]ummons .*?)?[Tt]ook the [Oo]ath\.</p>$", qb.stext[0]):
 			assert len(qb.stext) == 1
 			qb.stext[0] = re.sub('^<p>', '<p class="summons">', qb.stext[0])  # cludgy; already have the <p>-tag embedded in the string
 			return [ qb ]
