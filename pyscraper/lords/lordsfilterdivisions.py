@@ -23,6 +23,7 @@ from filterdebatespeech import FilterDebateSpeech
 
 from lordsfilterspeakers import lordlist
 
+from contextexception import ContextException
 
 
 recontma = re.compile('<center><b>(.*?)\s*</b></center>(?i)')
@@ -50,7 +51,7 @@ def LordsFilterDivision(text, stampurl, sdate):
 				contstate = 'not-content'
 			else:
 				print "$$$%s$$$" % cfs.group(1)
-				raise Exception, "unrecognized content state"
+				raise ContextException("unrecognized content state", stamp=stampurl, fragment=fss)
 
 		elif re.match("(?:\[\*|\*\[)[Ss]ee col\. \d+\]", fss):
 			print "Disregarding cross-reference in Division", fss
@@ -60,9 +61,10 @@ def LordsFilterDivision(text, stampurl, sdate):
 			print "Disregarding removed from list comment", fss
 
 		else:
-			assert contstate != ''
+			if not contstate:
+				raise ContextException("empty contstate", stamp=stampurl, fragment=fss)
 
-            # split off teller case
+			# split off teller case
 			teller = retellma.match(fss)
 			tels = ''
 			lfss = fss
@@ -74,6 +76,8 @@ def LordsFilterDivision(text, stampurl, sdate):
 			offm = reoffma.match(lfss)
 			if offm:
 				lfss = offm.group(1)
+			if not lfss:
+				raise ContextException("no name on line", stamp=stampurl, fragment=fss)
 			lordid = lordlist.MatchRevName(lfss, sdate, stampurl)
 			lordw = '\t<lord id="%s" vote="%s"%s>%s</lord>' % (lordid, contstate, tels, FixHTMLEntities(fss))
 

@@ -110,6 +110,7 @@ entitymap = {
         '&#163;':'&pound;',   # UK currency
         '&#183;':'&middot;',   # middle dot
         '&#176;':'&deg;',   # this is the degrees
+		'&#182;':'&para;',  # end-paragraph (pi) symbol
 
         '&#188;':'&frac14;',   # this is one quarter symbol
         '&#189;':'&frac12;',   # this is one half symbol
@@ -430,8 +431,7 @@ def SplitParaIndents(text, stampurl):
 			for sp in dell[i]:
 				if re.match('(?:<ul><ul>)?<ul>(?i)', sp):
 					if bIndent:
-						print text
-						print dell
+						print dell[i - 1: i + 1]
 						raise ContextException(' already indentented ', stamp=stampurl, fragment=sp)
 					bIndent = 1
 				elif re.match('(?:</ul></ul>)?</ul>(?i)', sp):

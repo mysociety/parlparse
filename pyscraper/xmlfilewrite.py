@@ -49,6 +49,7 @@ def WriteXMLHeader(fout):
 <!ENTITY pound  "&#163;" >
 <!ENTITY middot "&#183;" >
 <!ENTITY deg    "&#176;" >
+<!ENTITY para   "&#182;" >
 
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >

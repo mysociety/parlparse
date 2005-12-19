@@ -225,11 +225,12 @@ def SplitLordsText(text, sdate):
 	# check the title and column numbering in the written answers
 	if res[3]:
 		assert not re.search('<a name="column_(?!WA)\D+\d+">', res[3])
-		assert re.search('<(?:h3 align=)?center>\s*Written Answers?', res[3]) # sometimes the s is missing
+		if not re.search('<(?:h3 align=)?center>\s*Written Answers?', res[3]): # sometimes the s is missing
+			raise ContextException("missing written answer title", fragment=res[3])
 
-	# for sections that start in the middle of a page, we could grab the last url stamp 
-	# from the previous section and insert it at the top.  
-	# Since we are only parsing the main debate and divisions, this doesn't matter yet. 
+	# for sections that start in the middle of a page, we could grab the last url stamp
+	# from the previous section and insert it at the top.
+	# Since we are only parsing the main debate and divisions, this doesn't matter yet.
 
 	return res
 
