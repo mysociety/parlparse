@@ -101,6 +101,7 @@
 	title="Lord" lordname="Alton" lordofname="Liverpool"
 	peeragetype="L" affiliation="XB"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100013"
@@ -141,6 +142,7 @@
 	title="Lord" lordname="Archer" lordofname="Sandwell"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100018"
@@ -149,6 +151,7 @@
 	title="Lord" lordname="Archer" lordofname="Weston-Super-Mare"
 	peeragetype="L" affiliation="Other"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100019"
@@ -162,7 +165,7 @@
 	id="uk.org.publicwhip/lord/100020"
 	house="lords"
 	forenames="Arthur"
-	title="Earl" lordname="Arran" lordofname=""
+	title="Earl" lordname="" lordofname="Arran"
 	peeragetype="HP" affiliation="Con"
 	fromdate="1983" todate="9999-12-31"
 />
@@ -181,6 +184,7 @@
 	title="Lord" lordname="Ashdown" lordofname="Norton-sub-Hamdon"
 	peeragetype="L" affiliation="Dem"
 	fromdate="2001-07-24" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100023"
@@ -189,6 +193,7 @@
 	title="Lord" lordname="Ashley" lordofname="Stoke"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100024"
@@ -237,6 +242,7 @@
 	title="Lord" lordname="Avebury" lordofname=""
 	peeragetype="HP" affiliation="Dem"
 	fromdate="1971" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100030"
@@ -261,6 +267,7 @@
 	title="Lord" lordname="Baker" lordofname="Dorking"
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100033"
@@ -277,6 +284,7 @@
 	title="Lord" lordname="Barber" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1974" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100035"
@@ -301,6 +309,7 @@
 	title="Lord" lordname="Barnett" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1983" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100038"
@@ -373,6 +382,7 @@
 	title="Lord" lordname="Biffen" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100047"
@@ -412,7 +422,7 @@
 	forenames="Alan Chesters"
 	title="Bishop" lordname="" lordofname="Blackburn"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2002" todate="2003-08-31"
+	fromdate="1999-11-11" todate="2003-08-31"
 />
 <lord
 	id="uk.org.publicwhip/lord/100052"
@@ -445,6 +455,7 @@
 	title="Lord" lordname="Blaker" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1994" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100056"
@@ -493,6 +504,7 @@
 	title="Lord" lordname="Boardman" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1980" todate="2003-03-10"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100062"
@@ -501,6 +513,7 @@
 	title="Baroness" lordname="Boothroyd" lordofname=""
 	peeragetype="L" affiliation="XB"
 	fromdate="2001-01-16" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100063"
@@ -517,6 +530,7 @@
 	title="Lord" lordname="Boston" lordofname="Faversham"
 	peeragetype="L" affiliation="XB"
 	fromdate="1976" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100065"
@@ -645,6 +659,7 @@
 	title="Lord" lordname="Brittan" lordofname="Spennithorne"
 	peeragetype="L" affiliation="Con"
 	fromdate="2000-02-29" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100081"
@@ -661,6 +676,7 @@
 	title="Lord" lordname="Brooke" lordofname="Sutton Mandeville"
 	peeragetype="L" affiliation="Con"
 	fromdate="2001-10-22" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100083"
@@ -717,6 +733,7 @@
 	title="Lord" lordname="Bruce" lordofname="Donington"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1974" todate="2005-04-18"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100090"
@@ -794,7 +811,7 @@
 	id="uk.org.publicwhip/lord/100099"
 	house="lords"
 	forenames="Malcolm"
-	title="Earl" lordname="Caithness" lordofname=""
+	title="Earl" lordname="" lordofname="Caithness"
 	peeragetype="HP" affiliation="Con"
 	fromdate="1965" todate="9999-12-31"
 />
@@ -805,6 +822,7 @@
 	title="Lord" lordname="Callaghan" lordofname="Cardiff"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1987" todate="2005-03-26"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100101"
@@ -829,6 +847,7 @@
 	title="Lord" lordname="Campbell" lordofname="Croy"
 	peeragetype="L" affiliation="Con"
 	fromdate="1974" todate="2005-04-26"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100104"
@@ -837,6 +856,7 @@
 	title="Lord" lordname="Campbell-Savours" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2001-07-19" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100105"
@@ -861,6 +881,7 @@
 	title="Lord" lordname="Carlile" lordofname="Berriew"
 	peeragetype="L" affiliation="Dem"
 	fromdate="1999" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100108"
@@ -869,6 +890,7 @@
 	title="Lord" lordname="Carlisle" lordofname="Bucklow"
 	peeragetype="L" affiliation="Con"
 	fromdate="1987" todate="2005-07-14"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100109"
@@ -885,6 +907,7 @@
 	title="Lord" lordname="Carr" lordofname="Hadley"
 	peeragetype="L" affiliation="Con"
 	fromdate="1976" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100111"
@@ -933,6 +956,7 @@
 	title="Baroness" lordname="Chalker" lordofname="Wallasey"
 	peeragetype="L" affiliation="Con"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100117"
@@ -1021,6 +1045,7 @@
 	title="Lord" lordname="Clark" lordofname="Kempston"
 	peeragetype="L" affiliation="Con"
 	fromdate="1992" todate="2004-10-06"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100128"
@@ -1029,6 +1054,7 @@
 	title="Lord" lordname="Clark" lordofname="Windermere"
 	peeragetype="L" affiliation="Lab"
 	fromdate="2001-07-02" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100129"
@@ -1053,6 +1079,7 @@
 	title="Lord" lordname="Clinton-Davis" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1990" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100132"
@@ -1085,6 +1112,7 @@
 	title="Lord" lordname="Coe" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="2000-06-05" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100136"
@@ -1149,6 +1177,7 @@
 	title="Lord" lordname="Cope" lordofname="Berkeley"
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100144"
@@ -1157,12 +1186,13 @@
 	title="Lord" lordname="Corbett" lordofname="Castle Vale"
 	peeragetype="L" affiliation="Lab"
 	fromdate="2001-07-17" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100145"
 	house="lords"
 	forenames="James"
-	title="Earl" lordname="Courtown" lordofname=""
+	title="Earl" lordname="" lordofname="Courtown"
 	peeragetype="HP" affiliation="Con"
 	fromdate="1975" todate="9999-12-31"
 />
@@ -1213,6 +1243,7 @@
 	title="Earl" lordname="Crawford and Balcarres" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1974" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100152"
@@ -1229,6 +1260,7 @@
 	title="Lord" lordname="Crickhowell" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1987" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100154"
@@ -1317,6 +1349,7 @@
 	title="Lord" lordname="Davies" lordofname="Oldham"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100165"
@@ -1325,6 +1358,7 @@
 	title="Lord" lordname="Dean" lordofname="Harptree"
 	peeragetype="L" affiliation="Con"
 	fromdate="1993" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100166"
@@ -1349,6 +1383,7 @@
 	title="Lord" lordname="Deedes" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1986" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100169"
@@ -1397,6 +1432,7 @@
 	title="Lord" lordname="Diamond" lordofname=""
 	peeragetype="L" affiliation="Other"
 	fromdate="1970" todate="2004-04-03"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100175"
@@ -1405,6 +1441,7 @@
 	title="Lord" lordname="Dixon" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100176"
@@ -1437,6 +1474,7 @@
 	title="Lord" lordname="Dormand" lordofname="Easington"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1987" todate="2003-12-18"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100180"
@@ -1445,12 +1483,13 @@
 	title="Lord" lordname="Dubs" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1994" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100181"
 	house="lords"
 	forenames="Alexander"
-	title="Earl" lordname="Dundee" lordofname=""
+	title="Earl" lordname="" lordofname="Dundee"
 	peeragetype="HP" affiliation="Con"
 	fromdate="1983" todate="9999-12-31"
 />
@@ -1509,6 +1548,7 @@
 	title="Lord" lordname="Eden" lordofname="Winton"
 	peeragetype="L" affiliation="Con"
 	fromdate="1983" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100189"
@@ -1525,6 +1565,7 @@
 	title="Lord" lordname="Elis-Thomas" lordofname=""
 	peeragetype="L" affiliation="XB"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100191"
@@ -1541,6 +1582,7 @@
 	title="Lord" lordname="Elliott" lordofname="Morpeth"
 	peeragetype="L" affiliation="Con"
 	fromdate="1985" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100193"
@@ -1557,6 +1599,7 @@
 	title="Lord" lordname="Elystan-Morgan" lordofname=""
 	peeragetype="L" affiliation="XB"
 	fromdate="1981" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100195"
@@ -1578,7 +1621,7 @@
 	id="uk.org.publicwhip/lord/100197"
 	house="lords"
 	forenames="Merlin"
-	title="Earl" lordname="Erroll" lordofname=""
+	title="Earl" lordname="" lordofname="Erroll"
 	peeragetype="HP" affiliation="XB"
 	fromdate="1985" todate="9999-12-31"
 />
@@ -1589,6 +1632,7 @@
 	title="Lord" lordname="Evans" lordofname="Parkside"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100199"
@@ -1613,6 +1657,7 @@
 	title="Lord" lordname="Ewing" lordofname="Kirkford"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100202"
@@ -1669,6 +1714,7 @@
 	title="Lord" lordname="Fearn" lordofname=""
 	peeragetype="L" affiliation="Dem"
 	fromdate="2001-10-15" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100209"
@@ -1717,6 +1763,7 @@
 	title="Baroness" lordname="Fisher" lordofname="Rednal"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1974" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100215"
@@ -1725,6 +1772,7 @@
 	title="Lord" lordname="Fitt" lordofname=""
 	peeragetype="L" affiliation="Other"
 	fromdate="1983" todate="2005-08-26"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100216"
@@ -1749,6 +1797,7 @@
 	title="Baroness" lordname="Fookes" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100219"
@@ -1757,6 +1806,7 @@
 	title="Lord" lordname="Forsyth" lordofname="Drumlean"
 	peeragetype="L" affiliation="Con"
 	fromdate="1999" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100220"
@@ -1781,6 +1831,7 @@
 	title="Lord" lordname="Fowler" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="2001-07-04" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100223"
@@ -1789,6 +1840,7 @@
 	title="Lord" lordname="Fraser" lordofname="Carmyllie"
 	peeragetype="L" affiliation="Con"
 	fromdate="1989" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100224"
@@ -1797,6 +1849,7 @@
 	title="Lord" lordname="Freeman" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100225"
@@ -1845,6 +1898,7 @@
 	title="Lord" lordname="Garel-Jones" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100231"
@@ -1893,6 +1947,7 @@
 	title="Lord" lordname="Gilbert" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100237"
@@ -1901,6 +1956,7 @@
 	title="Lord" lordname="Gilmour" lordofname="Craigmillar"
 	peeragetype="L" affiliation="Con"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100238"
@@ -1917,6 +1973,7 @@
 	title="Lord" lordname="Glenamara" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1977" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100240"
@@ -1957,6 +2014,7 @@
 	title="Baroness" lordname="Golding" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2001-10-22" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100245"
@@ -2021,6 +2079,7 @@
 	title="Lord" lordname="Graham" lordofname="Edmonton"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1983" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100253"
@@ -2037,6 +2096,7 @@
 	title="Lord" lordname="Gray" lordofname="Contin"
 	peeragetype="L" affiliation="Con"
 	fromdate="1983" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100255"
@@ -2117,6 +2177,7 @@
 	title="Lord" lordname="Grocott" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2001-07-03" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100265"
@@ -2197,6 +2258,7 @@
 	title="Lord" lordname="Hardy" lordofname="Wath"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="2003-12-16"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100275"
@@ -2261,6 +2323,7 @@
 	title="Lord" lordname="Hattersley" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100283"
@@ -2269,6 +2332,7 @@
 	title="Lord" lordname="Hayhoe" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100284"
@@ -2277,6 +2341,7 @@
 	title="Baroness" lordname="Hayman" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1996" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100285"
@@ -2285,6 +2350,7 @@
 	title="Lord" lordname="Healey" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100286"
@@ -2309,6 +2375,7 @@
 	title="Lord" lordname="Heseltine" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="2001-10-23" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100289"
@@ -2317,6 +2384,7 @@
 	title="Lord" lordname="Higgins" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100290"
@@ -2349,6 +2417,7 @@
 	title="Lord" lordname="Hodgson" lordofname="Astley Abbotts"
 	peeragetype="L" affiliation="Con"
 	fromdate="2000-06-28" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100294"
@@ -2373,6 +2442,7 @@
 	title="Lord" lordname="Hogg" lordofname="Cumbernauld"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100297"
@@ -2402,7 +2472,7 @@
 	id="uk.org.publicwhip/lord/100300"
 	house="lords"
 	forenames="David"
-	title="Earl" lordname="Home" lordofname=""
+	title="Earl" lordname="" lordofname="Home"
 	peeragetype="HP" affiliation="Con"
 	fromdate="1995" todate="9999-12-31"
 />
@@ -2421,6 +2491,7 @@
 	title="Lord" lordname="Hooson" lordofname=""
 	peeragetype="L" affiliation="Dem"
 	fromdate="1979" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100303"
@@ -2453,6 +2524,7 @@
 	title="Lord" lordname="Howe" lordofname="Aberavon"
 	peeragetype="L" affiliation="Con"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100307"
@@ -2469,6 +2541,7 @@
 	title="Lord" lordname="Howell" lordofname="Guildford"
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100309"
@@ -2485,6 +2558,7 @@
 	title="Lord" lordname="Howie" lordofname="Troon"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1978" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100311"
@@ -2493,6 +2567,7 @@
 	title="Lord" lordname="Hoyle" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100312"
@@ -2501,6 +2576,7 @@
 	title="Lord" lordname="Hughes" lordofname="Woodside"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100313"
@@ -2533,6 +2609,7 @@
 	title="Lord" lordname="Hunt" lordofname="Wirral"
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100317"
@@ -2541,6 +2618,7 @@
 	title="Lord" lordname="Hurd" lordofname="Westwell"
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100318"
@@ -2613,6 +2691,7 @@
 	title="Lord" lordname="Islwyn" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="2003-12-19"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100327"
@@ -2637,6 +2716,7 @@
 	title="Lord" lordname="Janner" lordofname="Braunstone"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100330"
@@ -2661,6 +2741,7 @@
 	title="Baroness" lordname="Jeger" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1979" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100333"
@@ -2677,6 +2758,7 @@
 	title="Lord" lordname="Jenkin" lordofname="Roding"
 	peeragetype="L" affiliation="Con"
 	fromdate="1987" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100335"
@@ -2685,6 +2767,7 @@
 	title="Lord" lordname="Jenkins" lordofname="Hillhead"
 	peeragetype="L" affiliation="Dem"
 	fromdate="1987" todate="2003-01-05"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100336"
@@ -2693,6 +2776,7 @@
 	title="Lord" lordname="Jenkins" lordofname="Putney"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1981" todate="2004-01-26"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100337"
@@ -2709,6 +2793,7 @@
 	title="Lord" lordname="Jones" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2001-07-19" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100339"
@@ -2717,6 +2802,7 @@
 	title="Lord" lordname="Jopling" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100340"
@@ -2733,6 +2819,7 @@
 	title="Lord" lordname="Judd" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1991" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100342"
@@ -2749,6 +2836,7 @@
 	title="Lord" lordname="Kelvedon" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100344"
@@ -2765,6 +2853,7 @@
 	title="Lord" lordname="Kilclooney" lordofname=""
 	peeragetype="L" affiliation="XB"
 	fromdate="2001-10-17" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100346"
@@ -2789,6 +2878,7 @@
 	title="Lord" lordname="King" lordofname="Bridgwater"
 	peeragetype="L" affiliation="Con"
 	fromdate="2001-10-17" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100349"
@@ -2845,6 +2935,7 @@
 	title="Baroness" lordname="Knight" lordofname="Collingtree"
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100356"
@@ -2869,6 +2960,7 @@
 	title="Lord" lordname="Laird" lordofname=""
 	peeragetype="L" affiliation="XB"
 	fromdate="1999" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100359"
@@ -2885,6 +2977,7 @@
 	title="Lord" lordname="Lamont" lordofname="Lerwick"
 	peeragetype="L" affiliation="Con"
 	fromdate="1998" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100361"
@@ -2909,6 +3002,7 @@
 	title="Lord" lordname="Lang" lordofname="Monkton"
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100364"
@@ -2917,6 +3011,7 @@
 	title="Lord" lordname="Lawson" lordofname="Blaby"
 	peeragetype="L" affiliation="Con"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100365"
@@ -2978,7 +3073,7 @@
 	id="uk.org.publicwhip/lord/100372"
 	house="lords"
 	forenames="James"
-	title="Earl" lordname="Lindsay" lordofname=""
+	title="Earl" lordname="" lordofname="Lindsay"
 	peeragetype="HP" affiliation="Con"
 	fromdate="1989" todate="9999-12-31"
 />
@@ -3002,7 +3097,7 @@
 	id="uk.org.publicwhip/lord/100375"
 	house="lords"
 	forenames="Francis"
-	title="Earl" lordname="Listowel" lordofname=""
+	title="Earl" lordname="" lordofname="Listowel"
 	peeragetype="HP" affiliation="XB"
 	fromdate="1997" todate="9999-12-31"
 />
@@ -3018,7 +3113,7 @@
 	id="uk.org.publicwhip/lord/100377"
 	house="lords"
 	forenames="Edward"
-	title="Earl" lordname="Liverpool" lordofname=""
+	title="Earl" lordname="" lordofname="Liverpool"
 	peeragetype="HP" affiliation="Con"
 	fromdate="1969" todate="9999-12-31"
 />
@@ -3029,6 +3124,7 @@
 	title="Lord" lordname="Livsey" lordofname="Talgarth"
 	peeragetype="L" affiliation="Dem"
 	fromdate="2001-10-16" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100379"
@@ -3069,6 +3165,7 @@
 	title="Lord" lordname="Lofthouse" lordofname="Pontefract"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100384"
@@ -3093,6 +3190,7 @@
 	title="Lord" lordname="Luce" lordofname=""
 	peeragetype="L" affiliation="XB"
 	fromdate="2000" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100387"
@@ -3189,6 +3287,7 @@
 	title="Lord" lordname="MacGregor" lordofname="Pulham Market"
 	peeragetype="L" affiliation="Con"
 	fromdate="2001-07-23" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100399"
@@ -3245,6 +3344,7 @@
 	title="Lord" lordname="Mackie" lordofname="Benshie"
 	peeragetype="L" affiliation="Dem"
 	fromdate="1974" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100406"
@@ -3261,6 +3361,7 @@
 	title="Lord" lordname="Maclennan" lordofname="Rogart"
 	peeragetype="L" affiliation="Dem"
 	fromdate="2001-10-16" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100408"
@@ -3269,6 +3370,7 @@
 	title="Lord" lordname="McNally" lordofname=""
 	peeragetype="L" affiliation="Dem"
 	fromdate="1995" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100409"
@@ -3277,6 +3379,7 @@
 	title="Baroness" lordname="Maddock" lordofname=""
 	peeragetype="L" affiliation="Dem"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100410"
@@ -3285,6 +3388,7 @@
 	title="Lord" lordname="Maginnis" lordofname="Drumglass"
 	peeragetype="L" affiliation="XB"
 	fromdate="2001-10-24" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100411"
@@ -3322,7 +3426,7 @@
 	id="uk.org.publicwhip/lord/100415"
 	house="lords"
 	forenames="James"
-	title="Earl" lordname="Mar and Kellie" lordofname=""
+	title="Earl" lordname="" lordofname="Mar and Kellie"
 	peeragetype="L" affiliation="Dem"
 	fromdate="2000-04-19" todate="9999-12-31"
 />
@@ -3341,6 +3445,7 @@
 	title="Lord" lordname="Marsh" lordofname=""
 	peeragetype="L" affiliation="XB"
 	fromdate="1981" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100418"
@@ -3365,6 +3470,7 @@
 	title="Lord" lordname="Mason" lordofname="Barnsley"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1987" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100421"
@@ -3389,6 +3495,7 @@
 	title="Lord" lordname="Mayhew" lordofname="Twysden"
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100424"
@@ -3397,6 +3504,7 @@
 	title="Lord" lordname="Merlyn-Rees" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100425"
@@ -3413,6 +3521,7 @@
 	title="Baroness" lordname="Michie" lordofname="Gallanach"
 	peeragetype="L" affiliation="Dem"
 	fromdate="2001-10-31" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100427"
@@ -3469,6 +3578,7 @@
 	title="Lord" lordname="Molyneaux" lordofname="Killead"
 	peeragetype="L" affiliation="XB"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100434"
@@ -3477,6 +3587,7 @@
 	title="Lord" lordname="Monro" lordofname="Langholm"
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100435"
@@ -3509,6 +3620,7 @@
 	title="Lord" lordname="Moore" lordofname="Lower Marsh"
 	peeragetype="L" affiliation="Con"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100439"
@@ -3541,6 +3653,7 @@
 	title="Baroness" lordname="Morgan" lordofname="Huyton"
 	peeragetype="L" affiliation="Lab"
 	fromdate="2001-06-21" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100443"
@@ -3549,6 +3662,7 @@
 	title="Lord" lordname="Morris" lordofname="Aberavon"
 	peeragetype="L" affiliation="Lab"
 	fromdate="2001-07-04" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100444"
@@ -3557,6 +3671,7 @@
 	title="Lord" lordname="Morris" lordofname="Manchester"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100445"
@@ -3581,6 +3696,7 @@
 	title="Lord" lordname="Moynihan" lordofname=""
 	peeragetype="HP" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100448"
@@ -3597,6 +3713,7 @@
 	title="Lord" lordname="Murton" lordofname="Lindisfarne"
 	peeragetype="L" affiliation="Con"
 	fromdate="1979" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100450"
@@ -3613,6 +3730,7 @@
 	title="Lord" lordname="Naseby" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100452"
@@ -3636,7 +3754,7 @@
 	forenames="John Martin Wharton"
 	title="Bishop" lordname="" lordofname="Newcastle"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2003-02-05" todate="9999-12-31"
+	fromdate="2002-11-05" todate="9999-12-31"
 />
 <lord
 	id="uk.org.publicwhip/lord/100455"
@@ -3645,6 +3763,7 @@
 	title="Lord" lordname="Newton" lordofname="Braintree"
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100456"
@@ -3661,6 +3780,7 @@
 	title="Baroness" lordname="Nicholson" lordofname="Winterbourne"
 	peeragetype="L" affiliation="Dem"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100458"
@@ -3722,7 +3842,7 @@
 	id="uk.org.publicwhip/lord/100465"
 	house="lords"
 	forenames="David"
-	title="Earl" lordname="Northesk" lordofname=""
+	title="Earl" lordname="" lordofname="Northesk"
 	peeragetype="HP" affiliation="Con"
 	fromdate="1994" todate="9999-12-31"
 />
@@ -3733,6 +3853,7 @@
 	title="Lord" lordname="Northfield" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1975" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100467"
@@ -3786,7 +3907,7 @@
 	id="uk.org.publicwhip/lord/100473"
 	house="lords"
 	forenames="William"
-	title="Earl" lordname="Onslow" lordofname=""
+	title="Earl" lordname="" lordofname="Onslow"
 	peeragetype="HP" affiliation="Con"
 	fromdate="1971" todate="9999-12-31"
 />
@@ -3797,6 +3918,7 @@
 	title="Baroness" lordname="Oppenheim-Barnes" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1989" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100475"
@@ -3805,6 +3927,7 @@
 	title="Lord" lordname="Orme" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="2005-04-28"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100476"
@@ -3821,6 +3944,7 @@
 	title="Lord" lordname="Owen" lordofname=""
 	peeragetype="L" affiliation="XB"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100478"
@@ -3842,7 +3966,7 @@
 	id="uk.org.publicwhip/lord/100480"
 	house="lords"
 	forenames="George"
-	title="Viscount" lordname="Oxfuird" lordofname=""
+	title="Viscount" lordname="" lordofname="Oxfuird"
 	peeragetype="HD" affiliation="Con"
 	fromdate="1986" todate="2003-01-03"
 />
@@ -3885,6 +4009,7 @@
 	title="Lord" lordname="Parkinson" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100486"
@@ -3917,6 +4042,7 @@
 	title="Lord" lordname="Patten" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100490"
@@ -3949,6 +4075,7 @@
 	title="Lord" lordname="Pendry" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2001-07-11" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100494"
@@ -3989,6 +4116,7 @@
 	title="Lord" lordname="Peyton" lordofname="Yeovil"
 	peeragetype="L" affiliation="Con"
 	fromdate="1983" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100499"
@@ -4013,6 +4141,7 @@
 	title="Baroness" lordname="Pike" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1974" todate="2004-01-11"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100502"
@@ -4101,6 +4230,7 @@
 	title="Lord" lordname="Prior" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1987" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100513"
@@ -4125,6 +4255,7 @@
 	title="Lord" lordname="Pym" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1987" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100516"
@@ -4149,6 +4280,7 @@
 	title="Lord" lordname="Radice" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2001-10-23" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100519"
@@ -4165,6 +4297,7 @@
 	title="Lord" lordname="Randall" lordofname="St Budeaux"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100521"
@@ -4181,6 +4314,7 @@
 	title="Lord" lordname="Rawlinson" lordofname="Ewell"
 	peeragetype="L" affiliation="Con"
 	fromdate="1978" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100523"
@@ -4229,6 +4363,7 @@
 	title="Lord" lordname="Rees" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1987" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100529"
@@ -4269,6 +4404,7 @@
 	title="Lord" lordname="Renton" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1979" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100534"
@@ -4277,6 +4413,7 @@
 	title="Lord" lordname="Renton" lordofname="Mount Harry"
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100535"
@@ -4293,6 +4430,7 @@
 	title="Lord" lordname="Richard" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1990" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100537"
@@ -4333,6 +4471,7 @@
 	title="Lord" lordname="Roberts" lordofname="Conwy"
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100542"
@@ -4341,6 +4480,7 @@
 	title="Lord" lordname="Robertson" lordofname="Port Ellen"
 	peeragetype="L" affiliation="XB"
 	fromdate="2000-02-03" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100543"
@@ -4365,6 +4505,7 @@
 	title="Lord" lordname="Rodgers" lordofname="Quarry Bank"
 	peeragetype="L" affiliation="Dem"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100546"
@@ -4397,6 +4538,7 @@
 	title="Lord" lordname="Rooker" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2001-06-21" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100550"
@@ -4405,12 +4547,13 @@
 	title="Lord" lordname="Roper" lordofname=""
 	peeragetype="L" affiliation="Dem"
 	fromdate="2000-05-17" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100551"
 	house="lords"
 	forenames="Peter"
-	title="Earl" lordname="Rosslyn" lordofname=""
+	title="Earl" lordname="" lordofname="Rosslyn"
 	peeragetype="HP" affiliation="XB"
 	fromdate="1977" todate="9999-12-31"
 />
@@ -4437,6 +4580,7 @@
 	title="Lord" lordname="Russell-Johnston" lordofname=""
 	peeragetype="L" affiliation="Dem"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100555"
@@ -4453,6 +4597,7 @@
 	title="Lord" lordname="Ryder" lordofname="Wensum"
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100557"
@@ -4509,6 +4654,7 @@
 	title="Lord" lordname="St John" lordofname="Fawsley"
 	peeragetype="L" affiliation="Con"
 	fromdate="1987" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100564"
@@ -4546,7 +4692,7 @@
 	id="uk.org.publicwhip/lord/100569"
 	house="lords"
 	forenames="John"
-	title="Earl" lordname="Sandwich" lordofname=""
+	title="Earl" lordname="" lordofname="Sandwich"
 	peeragetype="HP" affiliation="XB"
 	fromdate="1995" todate="9999-12-31"
 />
@@ -4618,7 +4764,7 @@
 	id="uk.org.publicwhip/lord/100578"
 	house="lords"
 	forenames="John"
-	title="Earl" lordname="Selborne" lordofname=""
+	title="Earl" lordname="" lordofname="Selborne"
 	peeragetype="HP" affiliation="Con"
 	fromdate="1971" todate="9999-12-31"
 />
@@ -4629,6 +4775,7 @@
 	title="Lord" lordname="Selkirk" lordofname="Douglas"
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100580"
@@ -4677,6 +4824,7 @@
 	title="Lord" lordname="Shaw" lordofname="Northstead"
 	peeragetype="L" affiliation="Con"
 	fromdate="1994" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100586"
@@ -4685,6 +4833,7 @@
 	title="Lord" lordname="Shawcross" lordofname=""
 	peeragetype="L" affiliation="XB"
 	fromdate="1959" todate="2003-07-10"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100587"
@@ -4701,6 +4850,7 @@
 	title="Lord" lordname="Sheldon" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2001-06-27" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100589"
@@ -4722,7 +4872,7 @@
 	id="uk.org.publicwhip/lord/100591"
 	house="lords"
 	forenames="Charles"
-	title="Earl" lordname="Shrewsbury" lordofname=""
+	title="Earl" lordname="" lordofname="Shrewsbury"
 	peeragetype="HP" affiliation="Con"
 	fromdate="1980" todate="9999-12-31"
 />
@@ -4749,6 +4899,7 @@
 	title="Lord" lordname="Simon" lordofname="Glaisdale"
 	peeragetype="L" affiliation="XB"
 	fromdate="1971" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100595"
@@ -4826,7 +4977,7 @@
 	id="uk.org.publicwhip/lord/100604"
 	house="lords"
 	forenames="Antony"
-	title="Earl" lordname="Snowdon" lordofname=""
+	title="Earl" lordname="" lordofname="Snowdon"
 	peeragetype="L" affiliation="XB"
 	fromdate="1999-11-25" todate="9999-12-31"
 />
@@ -4853,6 +5004,7 @@
 	title="Lord" lordname="Stallard" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1983" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100608"
@@ -4861,6 +5013,7 @@
 	title="Lord" lordname="Steel" lordofname="Aikwood"
 	peeragetype="L" affiliation="Dem"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100609"
@@ -4901,6 +5054,7 @@
 	title="Lord" lordname="Stewartby" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100614"
@@ -4917,6 +5071,7 @@
 	title="Lord" lordname="Stodart" lordofname="Leaston"
 	peeragetype="L" affiliation="Con"
 	fromdate="1981" todate="2003-05-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100616"
@@ -4925,6 +5080,7 @@
 	title="Lord" lordname="Stoddart" lordofname="Swindon"
 	peeragetype="L" affiliation="Other"
 	fromdate="1983" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100617"
@@ -5005,6 +5161,7 @@
 	title="Lord" lordname="Taverne" lordofname=""
 	peeragetype="L" affiliation="Dem"
 	fromdate="1996" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100627"
@@ -5029,6 +5186,7 @@
 	title="Lord" lordname="Tebbit" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100630"
@@ -5045,6 +5203,7 @@
 	title="Lord" lordname="Temple-Morris" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2001-07-03" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100632"
@@ -5061,6 +5220,7 @@
 	title="Baroness" lordname="Thatcher" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100634"
@@ -5077,6 +5237,7 @@
 	title="Lord" lordname="Thomas" lordofname="Gwydir"
 	peeragetype="L" affiliation="Con"
 	fromdate="1987" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100636"
@@ -5109,6 +5270,7 @@
 	title="Lord" lordname="Thomson" lordofname="Monifieth"
 	peeragetype="L" affiliation="Dem"
 	fromdate="1977" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100640"
@@ -5133,6 +5295,7 @@
 	title="Lord" lordname="Tomlinson" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1998" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100643"
@@ -5141,6 +5304,7 @@
 	title="Lord" lordname="Tope" lordofname=""
 	peeragetype="L" affiliation="Dem"
 	fromdate="1994" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100644"
@@ -5189,6 +5353,7 @@
 	title="Lord" lordname="Tugendhat" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1993" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100650"
@@ -5229,6 +5394,7 @@
 	title="Lord" lordname="Varley" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1990" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100655"
@@ -5261,6 +5427,7 @@
 	title="Lord" lordname="Waddington" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1990" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100659"
@@ -5277,6 +5444,7 @@
 	title="Lord" lordname="Wakeham" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100661"
@@ -5285,6 +5453,7 @@
 	title="Lord" lordname="Waldegrave" lordofname="North Hill"
 	peeragetype="L" affiliation="Con"
 	fromdate="1999" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100662"
@@ -5293,6 +5462,7 @@
 	title="Lord" lordname="Walker" lordofname="Doncaster"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="2003-11-11"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100663"
@@ -5309,6 +5479,7 @@
 	title="Lord" lordname="Walker" lordofname="Worcester"
 	peeragetype="L" affiliation="Con"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100665"
@@ -5317,6 +5488,7 @@
 	title="Lord" lordname="Wallace" lordofname="Coslany"
 	peeragetype="L" affiliation="Other"
 	fromdate="1974" todate="2003-11-11"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100666"
@@ -5381,6 +5553,7 @@
 	title="Lord" lordname="Watson" lordofname="Invergowrie"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100674"
@@ -5405,6 +5578,7 @@
 	title="Lord" lordname="Weatherill" lordofname=""
 	peeragetype="L" affiliation="XB"
 	fromdate="1992" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100677"
@@ -5429,6 +5603,7 @@
 	title="Lord" lordname="Whaddon" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1978" todate="2005-08-16"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100680"
@@ -5485,6 +5660,7 @@
 	title="Baroness" lordname="Williams" lordofname="Crosby"
 	peeragetype="L" affiliation="Dem"
 	fromdate="1993" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100687"
@@ -5589,6 +5765,7 @@
 	title="Lord" lordname="Woolmer" lordofname="Leeds"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1999" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100700"
@@ -5637,6 +5814,7 @@
 	title="Viscount" lordname="Younger" lordofname="Leckie"
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="2003-01-26"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100706"
@@ -5693,12 +5871,13 @@
 	title="Lord" lordname="Carmichael" lordofname="Kelvingrove"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1983" todate="2001-07-19"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100713"
 	house="lords"
 	forenames="Henry"
-	title="Earl" lordname="Carnarvon" lordofname=""
+	title="Earl" lordname="" lordofname="Carnarvon"
 	peeragetype="HP" affiliation="XB"
 	fromdate="1987" todate="2001-09-11"
 />
@@ -5717,6 +5896,7 @@
 	title="Baroness" lordname="Castle" lordofname="Blackburn"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1990" todate="2002-05-03"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100716"
@@ -5733,6 +5913,7 @@
 	title="Lord" lordname="Fanshawe" lordofname="Richmond"
 	peeragetype="L" affiliation="Con"
 	fromdate="1983" todate="2001-12-28"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100718"
@@ -5741,6 +5922,7 @@
 	title="Lord" lordname="Gibson-Watt" lordofname=""
 	peeragetype="L" affiliation="Other"
 	fromdate="1979" todate="2002-02-07"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100719"
@@ -5749,6 +5931,7 @@
 	title="Lord" lordname="Hailsham" lordofname="Saint Marylebone"
 	peeragetype="L" affiliation="Other"
 	fromdate="1970" todate="2001-10-12"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100720"
@@ -5781,6 +5964,7 @@
 	title="Lord" lordname="Holderness" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1979" todate="2002-08-11"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100724"
@@ -5826,7 +6010,7 @@
 	id="uk.org.publicwhip/lord/100729"
 	house="lords"
 	forenames="Francis"
-	title="Earl" lordname="Longford" lordofname=""
+	title="Earl" lordname="" lordofname="Longford"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1961" todate="2001-08-03"
 />
@@ -5837,6 +6021,7 @@
 	title="Lord" lordname="Moyola" lordofname=""
 	peeragetype="L" affiliation="Other"
 	fromdate="1971" todate="2002-05-17"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100731"
@@ -5869,6 +6054,7 @@
 	title="Lord" lordname="Shore" lordofname="Stepney"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1997" todate="2001-09-24"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100735"
@@ -5884,7 +6070,7 @@
 	forenames="Nigel McCulloch"
 	title="Bishop" lordname="" lordofname="Wakefield"
 	peeragetype="B" affiliation="Bp"
-	fromdate="1997" todate="2002-11-10"
+	fromdate="1997" todate="2005-03-22"
 />
 <lord
 	id="uk.org.publicwhip/lord/100737"
@@ -5906,7 +6092,7 @@
 	id="uk.org.publicwhip/lord/100739"
 	house="lords"
 	forenames="Michael"
-	title="Baroness" lordname="Young" lordofname="Dartington"
+	title="Lord" lordname="Young" lordofname="Dartington"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1978" todate="2002-01-14"
 />
@@ -5917,6 +6103,7 @@
 	title="Lord" lordname="Aldington" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1962" todate="2000-12-07"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100741"
@@ -5941,6 +6128,7 @@
 	title="Lord" lordname="Cledwyn" lordofname="Penrhos"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1979" todate="2001-02-22"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100744"
@@ -5949,6 +6137,7 @@
 	title="Lord" lordname="Cocks" lordofname="Hartcliffe"
 	peeragetype="L" affiliation="Lab"
 	fromdate="1987" todate="2001-03-26"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100745"
@@ -5989,6 +6178,7 @@
 	title="Lord" lordname="MacKay" lordofname="Ardbrecknish"
 	peeragetype="L" affiliation="XB"
 	fromdate="1991" todate="2001-02-21"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100750"
@@ -5997,6 +6187,7 @@
 	title="Lord" lordname="Molloy" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="1981" todate="2001-05-26"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100751"
@@ -6013,6 +6204,7 @@
 	title="Lord" lordname="Onslow" lordofname="Woking"
 	peeragetype="L" affiliation="Con"
 	fromdate="1997" todate="2001-03-13"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100753"
@@ -6029,6 +6221,7 @@
 	title="Lord" lordname="Prentice" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1992" todate="2001-01-18"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100755"
@@ -6061,6 +6254,7 @@
 	title="Lord" lordname="Braine" lordofname="Wheatley"
 	peeragetype="L" affiliation="Con"
 	fromdate="1992" todate="2000-01-05"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100759"
@@ -6117,6 +6311,7 @@
 	title="Lord" lordname="Erroll" lordofname="Hale"
 	peeragetype="L" affiliation="Con"
 	fromdate="1964" todate="2000-09-14"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100766"
@@ -6133,6 +6328,7 @@
 	title="Lord" lordname="Harmar-Nicholls" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="1974" todate="2000-09-15"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100768"
@@ -6181,6 +6377,7 @@
 	title="Lord" lordname="McConnell" lordofname=""
 	peeragetype="L" affiliation="XB"
 	fromdate="1995" todate="2000-10-25"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100774"
@@ -6341,6 +6538,7 @@
 	title="Lord" lordname="Snape" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2004-06-29" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100794"
@@ -6389,6 +6587,7 @@
 	title="Lord" lordname="Maxton" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2004-07-07" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100800"
@@ -6429,6 +6628,7 @@
 	title="Lord" lordname="Dykes" lordofname=""
 	peeragetype="L" affiliation="Dem"
 	fromdate="2004-07-14" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100805"
@@ -6469,6 +6669,7 @@
 	title="Lord" lordname="Rowlands" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2004-07-20" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100810"
@@ -6661,6 +6862,7 @@
 	title="Lord" lordname="Patten" lordofname="Barnes"
 	peeragetype="L" affiliation="Con"
 	fromdate="2005-01-19" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100834"
@@ -6669,12 +6871,13 @@
 	title="Lord" lordname="Kinnock" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-01-31" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100835"
 	house="lords"
 	forenames="Patrick"
-	title="Earl" lordname="Glasgow" lordofname=""
+	title="Earl" lordname="" lordofname="Glasgow"
 	peeragetype="HP" affiliation="Dem"
 	fromdate="2005-01-25" todate="9999-12-31"
 />
@@ -6741,6 +6944,7 @@
 	title="Lord" lordname="Kirkwood" lordofname="Kirkhope"
 	peeragetype="L" affiliation="Dem"
 	fromdate="2005-06-14" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100844"
@@ -6749,6 +6953,7 @@
 	title="Baroness" lordname="Taylor" lordofname="Bolton"
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-06-14" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100845"
@@ -6757,6 +6962,7 @@
 	title="Lord" lordname="O'Neill" lordofname="Clackmannan"
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-06-15" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100846"
@@ -6765,6 +6971,7 @@
 	title="Lord" lordname="Tyler" lordofname=""
 	peeragetype="L" affiliation="Dem"
 	fromdate="2005-06-15" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100847"
@@ -6773,6 +6980,7 @@
 	title="Baroness" lordname="Morris" lordofname="Yardley"
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-06-21" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100848"
@@ -6781,6 +6989,7 @@
 	title="Lord" lordname="Howarth" lordofname="Newport"
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-06-22" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100849"
@@ -6789,6 +6998,7 @@
 	title="Lord" lordname="Foster" lordofname="Bishop Auckland"
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-06-22" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100850"
@@ -6797,6 +7007,7 @@
 	title="Lord" lordname="Chidgey" lordofname=""
 	peeragetype="L" affiliation="Dem"
 	fromdate="2005-06-27" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100851"
@@ -6805,6 +7016,7 @@
 	title="Baroness" lordname="Tonge" lordofname=""
 	peeragetype="L" affiliation="Dem"
 	fromdate="2005-06-27" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100852"
@@ -6813,6 +7025,7 @@
 	title="Lord" lordname="Foulkes" lordofname="Cumnock"
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-06-28" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100853"
@@ -6821,6 +7034,7 @@
 	title="Lord" lordname="Hamilton" lordofname="Epsom"
 	peeragetype="L" affiliation="Con"
 	fromdate="2005-06-28" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100854"
@@ -6837,6 +7051,7 @@
 	title="Lord" lordname="Jones" lordofname="Cheltenham"
 	peeragetype="L" affiliation="Dem"
 	fromdate="2005-06-29" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100856"
@@ -6845,6 +7060,7 @@
 	title="Baroness" lordname="Shephard" lordofname="Northwold"
 	peeragetype="L" affiliation="Con"
 	fromdate="2005-06-29" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100857"
@@ -6853,6 +7069,7 @@
 	title="Lord" lordname="Stratford" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-07-04" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100858"
@@ -6861,6 +7078,7 @@
 	title="Lord" lordname="Lyell" lordofname="Markyate"
 	peeragetype="L" affiliation="Con"
 	fromdate="2005-07-04" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100859"
@@ -6877,6 +7095,7 @@
 	title="Lord" lordname="Bilston" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-07-05" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100861"
@@ -6885,6 +7104,7 @@
 	title="Lord" lordname="Moonie" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-07-05" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100862"
@@ -6893,6 +7113,7 @@
 	title="Baroness" lordname="Bottomley" lordofname="Nettlestone"
 	peeragetype="L" affiliation="Con"
 	fromdate="2005-07-06" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100863"
@@ -6901,6 +7122,7 @@
 	title="Lord" lordname="Mawhinney" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="2005-07-06" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100864"
@@ -6909,6 +7131,7 @@
 	title="Baroness" lordname="Clark" lordofname="Calton"
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-07-13" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100865"
@@ -6917,6 +7140,7 @@
 	title="Lord" lordname="Soley" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-07-13" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100866"
@@ -6925,6 +7149,7 @@
 	title="Lord" lordname="Smith" lordofname="Finsbury"
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-07-18" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100867"
@@ -6933,6 +7158,7 @@
 	title="Baroness" lordname="Adams" lordofname="Craigielea"
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-07-18" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100868"
@@ -6949,6 +7175,7 @@
 	title="Lord" lordname="Anderson" lordofname="Swansea"
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-07-19" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100870"
@@ -6957,6 +7184,7 @@
 	title="Baroness" lordname="Corston" lordofname=""
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-07-20" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100871"
@@ -6965,6 +7193,7 @@
 	title="Lord" lordname="Goodlad" lordofname=""
 	peeragetype="L" affiliation="Con"
 	fromdate="2005-07-20" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100872"
@@ -6981,6 +7210,7 @@
 	title="Lord" lordname="Cunningham" lordofname="Felling"
 	peeragetype="L" affiliation="Lab"
 	fromdate="2005-10-11" todate="9999-12-31"
+	ex_MP="yes"
 />
 <lord
 	id="uk.org.publicwhip/lord/100874"
