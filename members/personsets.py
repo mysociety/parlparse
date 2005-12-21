@@ -136,8 +136,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
         parser.setContentHandler(self)
         parser.parse("people.xml")
         parser.parse("all-members.xml")
-        parser.parse("all-lords.xml")
-        parser.parse("all-lords-extras.xml")
+        parser.parse("peers-ucl.xml")
         parser.parse("ministers.xml")
 
     def outputxml(self, fout):
