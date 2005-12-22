@@ -11,7 +11,6 @@ use strict;
 use LWP::UserAgent;
 use XML::Simple;
 my $browser = LWP::UserAgent->new;
-my $date= '2005-12-01';
 $browser->agent("www.TheyWorkForYou.com EDM fetcher - run by theyworkforyou\@msmith.net");
 my %EDM;
 my $index_url= 'http://edmi.parliament.uk/EDMi/';
