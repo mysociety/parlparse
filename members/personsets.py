@@ -146,11 +146,13 @@ class PersonSets(xml.sax.handler.ContentHandler):
             # Find what person id we used for this set last time
             personid = None
             for attr in personset:
-                if attr["id"] in self.old_idtoperson:
-                    newpersonid = self.old_idtoperson[attr["id"]]
-                    if personid and newpersonid <> personid:
-                            raise Exception, "%s : Two members now same person, were different %s, %s" % (attr["id"], personid, newpersonid)
-                    personid = newpersonid
+                # moffice ids are unstable in some cases, so we ignore
+                if not re.match("uk.org.publicwhip/moffice/", attr["id"]):
+                    if attr["id"] in self.old_idtoperson:
+                        newpersonid = self.old_idtoperson[attr["id"]]
+                        if personid and newpersonid <> personid:
+                                raise Exception, "%s : Two members now same person, were different %s, %s" % (attr["id"], personid, newpersonid)
+                        personid = newpersonid
             if not personid:
                 self.last_person_id = self.last_person_id + 1
                 personid = "uk.org.publicwhip/person/%d" % self.last_person_id
