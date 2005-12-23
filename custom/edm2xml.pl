@@ -146,6 +146,7 @@ sub parse_motion {
 		#$info_ref->{sponsored_by}->{$order}->{position}= $order;
 		$info_ref->{sponsored_by}->{$order}->{edm_memberid}= $memberid;
 		$info_ref->{sponsored_by}->{$order}->{pw_memberid}= $MPmap{$memberid}->{"signed_$info_ref->{parliament_edmid}"};
+        $info_ref->{sponsored_by}->{$order}->{date}= $MPmap{$memberid}->{"date_signed_$info_ref->{parliament_edmid}"};
 	}
 	(@matches)= $content=~ m#<a\s*href='EDMByMember\.aspx\?MID=(\d+)'>\s*<span id="Sigs__ctl(\d+)_lblMember">(.*?)</span>#mcig;
 	while (($memberid, $order, $name, @matches)= @matches) {
@@ -155,6 +156,7 @@ sub parse_motion {
 		$info_ref->{supported_by}->{$order}->{edm_memberid}= $memberid;
 		#$info_ref->{supported}->[$order -1]="$name";
 		$info_ref->{supported_by}->{$order}->{pw_memberid}= $MPmap{$memberid}->{"signed_$info_ref->{parliament_edmid}"};
+        $info_ref->{supported_by}->{$order}->{date}= $MPmap{$memberid}->{"date_signed_$info_ref->{parliament_edmid}"};
     } 
         #print "$info_ref->{motion}\n";
 
