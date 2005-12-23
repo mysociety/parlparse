@@ -9,6 +9,7 @@ use strict;
 
 my $base_url= 'http://edmi.parliament.uk/EDMi/';
 my $index_url= $base_url . 'EDMList.aspx';
+
 my $mplist_url= $base_url . 'MemberList.aspx?__EVENTTARGET=_alpha1:_';
 my $Parl_Session= '875'; # hardcode to 05-06 for now
 my $Parl_Session_readable= '05-06'; # hardcode to 05-06 for now
@@ -17,6 +18,7 @@ use LWP;
 my $browser = LWP::UserAgent->new;
 my $dir=shift || die "usage: $0 <output dir>\n";
 my %MPmap;
+my %MPdate; # cache of looked up ids.
 my %EDM;
 
 
@@ -143,7 +145,7 @@ sub parse_motion {
 		$info_ref->{sponsored_by}->{$order}->{name}= $name;
 		#$info_ref->{sponsored_by}->{$order}->{position}= $order;
 		$info_ref->{sponsored_by}->{$order}->{edm_memberid}= $memberid;
-		$info_ref->{sponsored_by}->{$order}->{pw_memberid}= $Dates{$memberid}->{"signed_$info_ref->{parliament_edmid}"};
+		$info_ref->{sponsored_by}->{$order}->{pw_memberid}= $MPmap{$memberid}->{"signed_$info_ref->{parliament_edmid}"};
 	}
 	(@matches)= $content=~ m#<a\s*href='EDMByMember\.aspx\?MID=(\d+)'>\s*<span id="Sigs__ctl(\d+)_lblMember">(.*?)</span>#mcig;
 	while (($memberid, $order, $name, @matches)= @matches) {
@@ -193,15 +195,19 @@ sub get_mp_page {
 
     my (@matches) = $page->content =~ m#<tr.*?EDMDetails\.aspx\?EDMID=(\d+).*?td align="left"><a[^>]+>(.*?)</a></td>.*?(\d{2}\.\d{2}\.\d{4})#msigc;
     if (defined $ENV{DEBUG}) {print STDERR "    matches count: $#matches\n";}
+
+    if ($#matches > 0) { #MPs who haven't taken the oath or who are ministers don't sign EDMs
+        &cache_dates($name, $constituency, $mpid, 0, $matches[2], $matches[-1]);
+    }
     while (($edmid, $edmname, $date, @matches)= @matches) {
-        #print "here\n";
         if (defined $ENV{DEBUG}) {print STDERR "    testing date $date for $mpid - edm ($edmid) $edmname\n";}
-        if (not defined $MPmap{$mpid}->{"signed_$date"}) {
-            my $pwid= &get_pwid_on_date($name, $constituency, $date,$mpid,$edmid);
-            $MPmap{$mpid}->{"signed_$edmid"}=$pwid;
-            $MPmap{$mpid}->{"date_signed_$edmid"}=$date;
-        if (defined $ENV{DEBUG}) {print STDERR "$name - $constituency - $date - $pwid\n";}
-        }
+
+
+        my $pwid= &get_pwid_on_date($name, $constituency, $date,$mpid,$edmid);
+        $MPmap{$mpid}->{"signed_$edmid"}=$pwid;
+        $MPmap{$mpid}->{"date_signed_$edmid"}=$date;
+
+        if (defined $ENV{DEBUG}) {print STDERR "\t$name - $constituency - $date - $pwid\n";}
     }
 }
 
@@ -209,19 +215,28 @@ sub get_mp_page {
 
 
 sub get_pwid_on_date {
-        my ($name, $constituency, $date, $mpid)=@_;
+        my ($name, $constituency, $date, $mpid, $edmid)=@_;
         my $args;
         my $pwid=0;
         my $date_send=$date;
+
         $name=~ s#\(.*?\)##;
         if ($name =~ m/^(.*),(.*)$/) {
             $args->{name}="$2 $1";
         } else {
             $args->{name}=$name;
-        }
-        if ($date =~ m#(\d{2})\.(\d{2})\.(\d{4})#) {
+        } if ($date =~ m#(\d{2})\.(\d{2})\.(\d{4})#) {
             $date_send="$3-$2-$1";
         }
+        if (defined $MPdate{$mpid}->{"all"}){
+            return $MPdate{$mpid}->{"all"};
+        }
+    
+        if (defined $MPdate{$mpid}->{$date}) {
+            return $MPdate{$mpid}->{$date};
+        }
+
+
         $args->{constituency}= $constituency;
         $args->{command}='mp-full-cons-match';
         $args->{date}=$date_send;
@@ -236,6 +251,18 @@ sub get_pwid_on_date {
         } else {
             warn "Name match failed for  $args->{name} $constituency for $date";
         } 
-        $Dates{$mpid}->{$date}=$pwid;
+        $MPmap{$mpid}->{"signed_$edmid"}=$pwid;
+        $MPdate{$mpid}->{$date}= $pwid;
         return ($pwid);
+}
+
+sub cache_dates {
+    my ($name, $constituency, $mpid,$edmid, $first_date, $second_date)=@_;
+        if (defined $ENV{DEBUG}) {print STDERR "\tcaching $name - $constituency - $mpid from $first_date to $second_date\n";}
+
+    if (&get_pwid_on_date($name, $constituency, $first_date, $mpid,$edmid) == 
+        &get_pwid_on_date($name, $constituency, $second_date, $mpid,$edmid)){
+            $MPdate{$mpid}->{"all"}=$MPdate{$mpid}->{$second_date};
+    }
+    
 }
