@@ -9,7 +9,6 @@ use strict;
 
 my $base_url= 'http://edmi.parliament.uk/EDMi/';
 my $index_url= $base_url . 'EDMList.aspx';
-
 my $mplist_url= $base_url . 'MemberList.aspx?__EVENTTARGET=_alpha1:_';
 my $Parl_Session= '875'; # hardcode to 05-06 for now
 my $Parl_Session_readable= '05-06'; # hardcode to 05-06 for now
@@ -144,7 +143,7 @@ sub parse_motion {
 		$info_ref->{sponsored_by}->{$order}->{name}= $name;
 		#$info_ref->{sponsored_by}->{$order}->{position}= $order;
 		$info_ref->{sponsored_by}->{$order}->{edm_memberid}= $memberid;
-		$info_ref->{sponsored_by}->{$order}->{pw_memberid}= $MPmap{$memberid}->{"signed_$info_ref->{parliament_edmid}"};
+		$info_ref->{sponsored_by}->{$order}->{pw_memberid}= $Dates{$memberid}->{"signed_$info_ref->{parliament_edmid}"};
 	}
 	(@matches)= $content=~ m#<a\s*href='EDMByMember\.aspx\?MID=(\d+)'>\s*<span id="Sigs__ctl(\d+)_lblMember">(.*?)</span>#mcig;
 	while (($memberid, $order, $name, @matches)= @matches) {
@@ -237,6 +236,6 @@ sub get_pwid_on_date {
         } else {
             warn "Name match failed for  $args->{name} $constituency for $date";
         } 
-        $MPmap{$mpid}->{"signed_$date"}=$pwid;
+        $Dates{$mpid}->{$date}=$pwid;
         return ($pwid);
 }
