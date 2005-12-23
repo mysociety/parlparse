@@ -198,7 +198,7 @@ def SplitLordsText(text, sdate):
 
 	# lords splitting
 	if IsNotQuiet():
-		print "Lords Splitting", map(len, res)
+		print "Lords splitting into parts of size: ", map(len, res)
 
 	# check the wrong column numbering or wrong titles aren't found in the wrong place
 	assert res[0]  # there always is a main debate
