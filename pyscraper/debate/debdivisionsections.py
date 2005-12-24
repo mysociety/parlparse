@@ -105,6 +105,7 @@ def DivisionParsingPart(divno, unspoketxt, stampurl, sdate):
 		divtext = unspoketxt
 		print unspoketxt
 		print "division missing %s" % regenddiv
+		print "try inserting <explicit-end-division>"
 		unspoketxt = ''
 
 	# Add a division object (will contain votes and motion text)

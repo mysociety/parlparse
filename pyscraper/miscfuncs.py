@@ -66,6 +66,71 @@ def AlphaStringToOrder(s):
 		s = s[1:]
 	return res
 
+# This one used to break times into component parts: 7.10 pm
+regparsetime = re.compile("^(\d+)[\.:](\d+)(?:\s?|&nbsp;)([\w\.]+)$")
+# 7 pm
+regparsetimeonhour = re.compile("^(\d+)()(?:\s?|&nbsp;)([\w\.]+)$")
+def TimeProcessing(time, previoustime, bIsDivisionTime, stampurl):
+	#print "time ", time
+
+	# This code lifted from fix_time PHP code from easyParliament
+	timeparts = regparsetime.match(time)
+	if not timeparts:
+		timeparts = regparsetimeonhour.match(time)
+	if timeparts:
+		hour = int(timeparts.group(1))
+		if (timeparts.group(2) != ""):
+			mins = int(timeparts.group(2))
+		else:
+			mins = 0
+		meridien = timeparts.group(3)
+		if (meridien == 'pm' or meridien == 'p.m.') and hour != 12:
+			hour += 12
+		if meridien == "midnight":
+			assert hour == 12
+			hour += 12
+
+	else:
+		return None
+
+	res = "%03d:%02d:00" % (hour, mins)
+
+	# day-rotate situation where they went on beyond midnight
+	# it's uncommon enough to handle by listing exceptional days
+	if previoustime and res < previoustime:
+		if stampurl.sdate in ["2005-03-10", "2003-11-19"]:
+			if previoustime < "024":
+				print "dayrotate on ", stampurl.sdate, (hour, mins), previoustime
+			hour += 24
+
+		# correction heading case -- a copy of some text that is to be inserted into a different day.
+		elif stampurl.sdate in ["2002-10-28"]:
+			return res
+
+		else:  #if stampurl.sdate in ["2005-02-28", "2003-09-17", "2003-06-16", "2003-05-06", "2002-10-31", "2002-10-29", "2002-07-22", "2002-07-03", "2002-02-06", "2001-12-13", "2001-12-12", "2001-12-04"]:
+			assert hour in [12, 1]
+			if hour == 12:
+				hour += 12
+			else:
+				hour += 24
+
+		res = "%03d:%02d:00" % (hour, mins)
+
+
+	# capture the case where we are out of order by more than a few minutes
+	# (divisions are often out of order slightly)
+
+	# out of order case
+	if previoustime and res < previoustime:
+		# if it's a division type, we can tolerate a few minutes
+		timeminutes = int(hour) * 60 + int(mins)
+		prevtimeMatch = re.match("(\d+):(\d+)", previoustime)
+		previoustimeminutes = int(prevtimeMatch.group(1)) * 60 + int(prevtimeMatch.group(2))
+		if timeminutes < previoustimeminutes:
+			if not bIsDivisionTime or (previoustimeminutes - timeminutes > 10):
+				print "previous time out of order", res, previoustime, bIsDivisionTime
+				raise ContextException('time out of order', stamp=stampurl)
+	return res
 
 
 # The names of entities and what they are are here:

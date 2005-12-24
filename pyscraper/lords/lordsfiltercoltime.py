@@ -10,7 +10,7 @@ import mx.DateTime
 
 from contextexception import ContextException
 from splitheadingsspeakers import StampUrl
-from miscfuncs import IsNotQuiet
+from miscfuncs import IsNotQuiet, TimeProcessing
 
 # this filter converts column number tags of form:
 #     <B>9 Dec 2003 : Column 893</B>
@@ -57,11 +57,12 @@ recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regcolumnum11, regc
 remarginal = re.compile(':\s*column\s*\D*(\d+)(?i)')
 
 def FilterLordsColtime(fout, text, sdate):
-    colnum = -1
-    time = ''
+	colnum = -1
+	time = ''
 
-    stampurl = StampUrl(sdate)
-    for fss in recomb.split(text):
+	stampurl = StampUrl(sdate)
+	previoustime = None
+	for fss in recomb.split(text):
 		# column number type
 
 		# we need some very elaboirate checking to sort out the sections, by
@@ -101,8 +102,10 @@ def FilterLordsColtime(fout, text, sdate):
 		timeg = retimevals.match(fss)
 		if timeg:
 			time = timeg.group(1)
-			if not re.match('(?:</h5>|</st>)(?i)', time):
+			if not re.match('(?:</h5>|</st>)(?i)', timeg.group(1)):
+				time = TimeProcessing(timeg.group(1), previoustime, False, stampurl)
 				fout.write('<stamp time="%s"/>' % time)
+				previoustime = time
 			continue
 
 		# anchor names from HTML <a name="xxx">
@@ -116,8 +119,8 @@ def FilterLordsColtime(fout, text, sdate):
 		# nothing detected
 		# check if we've missed anything obvious
 		if recomb.match(fss):
-			print fss
-			raise Exception, ' regexpvals not general enough ' # a programming error between splitting and matching
+			print "$$$", fss, "$$$"
+			raise ContextException(' regexpvals not general enough ', stamp=stampurl, fragment=fss) # a programming error between splitting and matching
 		if remarginal.search(fss):
 			print remarginal.search(fss).group(0)
 			lregcolumnum6 = '<p>\s*</ul>\s*<a name="column_\d+"></a>\s*<b>[^:<]*:\s*column\s*\d+\s*</b></p>\s*<ul><font size=3>(?i)'
@@ -132,10 +135,10 @@ def FilterLordsColtime(fout, text, sdate):
 ##############
 # lords filters stuff -- to be cleared up in a bit.
 
-# first split the text into the four categories: 
+# first split the text into the four categories:
 # Main Debate, Grand Committee, Written Ministerial Statements, Written Answers
 
-# The parsing of each differs, which is why it is important to split this document 
+# The parsing of each differs, which is why it is important to split this document
 # into streams first, even though the boundaries are quite blurred and
 # sometimes the column code numbering on either side is errant.
 

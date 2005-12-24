@@ -348,7 +348,7 @@ def FilterDebateSections(text, sdate, typ):
 
 				# this is where we suck in a trailing "Clause" part of the title that is mistakenly outside the heading.
 				elif (qbh.typ == 'minor-heading' or qbh.typ == 'major-heading') and len(flatb) > 0 and flatb[-1].typ == 'speech':
-					mmm = re.match('\s*<p>((?:New )?Clause \d+)</p>', flatb[-1].stext[-1])
+					mmm = re.match('\s*<p>((?:New )?[Cc]lause \d+\w?)</p>', flatb[-1].stext[-1])
 					if mmm:
 						if IsNotQuiet():
 							print "Clause moving", flatb[-1].stext[-1]
@@ -365,7 +365,9 @@ def FilterDebateSections(text, sdate, typ):
 
 					# converting a search into a match, for safety, and double checking
 					else:
-						assert not re.search('\<p>\s*((?:New )?\s*Clause\s*\w+)\s*</p>(?i)', flatb[-1].stext[-1])
+						if re.search('<p>\s*((?:New )?\s*Clause\s*\w+)\s*</p>(?i)', flatb[-1].stext[-1]):
+							print flatb[-1].stext[-1]
+							assert False
 
 					flatb.append(qbh)
 
