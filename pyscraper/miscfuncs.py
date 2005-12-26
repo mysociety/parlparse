@@ -73,6 +73,10 @@ regparsetimeonhour = re.compile("^(\d+)()(?:\s?|&nbsp;)([\w\.]+)$")
 def TimeProcessing(time, previoustime, bIsDivisionTime, stampurl):
 	#print "time ", time
 
+	if previoustime:
+		prevtimeMatch = re.match("(\d+):(\d+)", previoustime)
+		previoustimehour = int(prevtimeMatch.group(1))
+
 	# This code lifted from fix_time PHP code from easyParliament
 	timeparts = regparsetime.match(time)
 	if not timeparts:
@@ -84,21 +88,32 @@ def TimeProcessing(time, previoustime, bIsDivisionTime, stampurl):
 		else:
 			mins = 0
 		meridien = timeparts.group(3)
-		if (meridien == 'pm' or meridien == 'p.m.') and hour != 12:
-			hour += 12
-		if meridien == "midnight":
+		if re.match("p\.?m\.?", meridien):
+			if hour != 12:
+				hour += 12
+		elif meridien == "midnight":
 			assert hour == 12
 			hour += 12
+		elif meridien == "noon":
+			assert hour == 12
+		else:
+			if not re.match("a\.?m\.?", meridien):
+				raise ContextException('meridien wrong:' + meridien, stamp=stampurl)
+
+		# skipping forward by twelve hours is a good sign an am/pm has gotten mixed
+		if previoustime and previoustimehour + 12 <= hour:
+			raise ContextException('time shift by 12 -- should a p.m. be an a.m.?', stamp=stampurl)
 
 	else:
 		return None
 
 	res = "%03d:%02d:00" % (hour, mins)
 
+
 	# day-rotate situation where they went on beyond midnight
 	# it's uncommon enough to handle by listing exceptional days
-	if previoustime and res < previoustime:
-		if stampurl.sdate in ["2005-03-10", "2003-11-19"]:
+	if previoustime and res < previoustime and not bIsDivisionTime:
+		if stampurl.sdate in ["2005-03-10", "2003-11-19", "2003-03-24", "2002-05-28", "2001-02-20"]:
 			if previoustime < "024":
 				print "dayrotate on ", stampurl.sdate, (hour, mins), previoustime
 			hour += 24
@@ -108,7 +123,9 @@ def TimeProcessing(time, previoustime, bIsDivisionTime, stampurl):
 			return res
 
 		else:  #if stampurl.sdate in ["2005-02-28", "2003-09-17", "2003-06-16", "2003-05-06", "2002-10-31", "2002-10-29", "2002-07-22", "2002-07-03", "2002-02-06", "2001-12-13", "2001-12-12", "2001-12-04"]:
-			assert hour in [12, 1]
+			if hour not in [12, 1, 2] and stampurl.sdate not in ["2003-10-20", "2003-05-19", "2000-10-16", "2000-10-03", "2000-07-24"]:
+				print (hour, mins), "time=", time, "previoustime=", previoustime
+				raise ContextException('time rotation not close to midnight', stamp=stampurl)
 			if hour == 12:
 				hour += 12
 			else:
@@ -124,8 +141,7 @@ def TimeProcessing(time, previoustime, bIsDivisionTime, stampurl):
 	if previoustime and res < previoustime:
 		# if it's a division type, we can tolerate a few minutes
 		timeminutes = int(hour) * 60 + int(mins)
-		prevtimeMatch = re.match("(\d+):(\d+)", previoustime)
-		previoustimeminutes = int(prevtimeMatch.group(1)) * 60 + int(prevtimeMatch.group(2))
+		previoustimeminutes = previoustimehour * 60 + int(prevtimeMatch.group(2))
 		if timeminutes < previoustimeminutes:
 			if not bIsDivisionTime or (previoustimeminutes - timeminutes > 10):
 				print "previous time out of order", res, previoustime, bIsDivisionTime

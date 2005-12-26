@@ -36,9 +36,7 @@ class StampUrl:
                 col = re.search('colnum="(.*?)"', self.stamp)
                 if col:
                         col = col.group(1)
-                anchor = re.search('aname="(.*?)"', self.aname)
-                if anchor:
-                        anchor = anchor.group(1)
+                anchor = self.GetAName()
                 return "date:%s col:%s aname:%s" % (self.sdate, col or "[nocol]", anchor or "[noanchor]")
 
         def __repr__(self):
@@ -85,6 +83,8 @@ class StampUrl:
 		anamem = re.match('<stamp aname="(.*?)"/>', self.aname)
 		if anamem:
 			return anamem.group(1)
+		elif self.aname:  # seems to be two versions of it
+			return self.aname
 		else:
 			return None
 
