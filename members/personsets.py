@@ -19,7 +19,8 @@ from resolvemembernames import memberList
 
 # People who have been both MPs and lords
 lordsmpmatches = {
-    "uk.org.publicwhip/lord/10094" : "Jenny Tonge [Richmond Park]",
+    "uk.org.publicwhip/lord/100851" : "Jenny Tonge [Richmond Park]",
+    "uk.org.publicwhip/lord/100855" : "Nigel Jones [Cheltenham]",
 }
 
 # People who have been MPs for two different constituencies.  The like of
