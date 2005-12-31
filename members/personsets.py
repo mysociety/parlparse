@@ -21,6 +21,7 @@ from resolvemembernames import memberList
 lordsmpmatches = {
     "uk.org.publicwhip/lord/100851" : "Jenny Tonge [Richmond Park]",
     "uk.org.publicwhip/lord/100855" : "Nigel Jones [Cheltenham]",
+    "uk.org.publicwhip/lord/100866" : "Chris Smith [Islington South & Finsbury]",
 }
 
 # People who have been MPs for two different constituencies.  The like of
