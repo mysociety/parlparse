@@ -1720,7 +1720,8 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/1505"/>
     <office id="uk.org.publicwhip/member/324"/>
 </person>
-<person id="uk.org.publicwhip/person/10325" latestname="Nigel Jones">
+<person id="uk.org.publicwhip/person/10325" latestname="Lord Jones of Cheltenham">
+    <office id="uk.org.publicwhip/lord/100855"/>
     <office id="uk.org.publicwhip/member/1006"/>
     <office id="uk.org.publicwhip/member/325"/>
 </person>
@@ -3218,7 +3219,8 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/598"/>
     <office id="uk.org.publicwhip/moffice/1301"/>
 </person>
-<person id="uk.org.publicwhip/person/10599" latestname="Jenny Tonge">
+<person id="uk.org.publicwhip/person/10599" latestname="Baroness Tonge">
+    <office id="uk.org.publicwhip/lord/100851"/>
     <office id="uk.org.publicwhip/member/1284"/>
     <office id="uk.org.publicwhip/member/599"/>
 </person>
@@ -4756,9 +4758,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/12926" latestname="Baroness Shephard of Northwold">
     <office id="uk.org.publicwhip/lord/100856"/>
 </person>
-<person id="uk.org.publicwhip/person/10325" latestname="Lord Jones of Cheltenham">
-    <office id="uk.org.publicwhip/lord/100855"/>
-</person>
 <person id="uk.org.publicwhip/person/12928" latestname="Viscount Montgomery of Alamein">
     <office id="uk.org.publicwhip/lord/100854"/>
 </person>
@@ -4767,9 +4766,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/12930" latestname="Lord Foulkes of Cumnock">
     <office id="uk.org.publicwhip/lord/100852"/>
-</person>
-<person id="uk.org.publicwhip/person/10599" latestname="Baroness Tonge">
-    <office id="uk.org.publicwhip/lord/100851"/>
 </person>
 <person id="uk.org.publicwhip/person/12932" latestname="Lord Chidgey">
     <office id="uk.org.publicwhip/lord/100850"/>
