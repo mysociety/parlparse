@@ -34,7 +34,7 @@ def RunRegmemFilters(fout, text, sdate):
 	fout.write("<publicwhip>\n")
 
         rows = re.findall("<TR>(.*)</TR>", text)
-        rows = [ re.sub("(<B>)|(</B>)", "", row) for row in rows ]
+        rows = [ re.sub("<B>|</B>|<BR>", "", row) for row in rows ]
         rows = [ re.sub('<IMG SRC="3lev.gif">', "", row) for row in rows ]
         rows = [ re.sub("&#173;", "-", row) for row in rows ]
         rows = [ re.sub('\[<A NAME="n\d+"><A HREF="\#note\d+">\d+</A>\]', '', row) for row in rows ]
