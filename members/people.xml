@@ -2976,7 +2976,8 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/1208"/>
     <office id="uk.org.publicwhip/moffice/326"/>
 </person>
-<person id="uk.org.publicwhip/person/10547" latestname="Chris Smith">
+<person id="uk.org.publicwhip/person/10547" latestname="Lord Smith of Finsbury">
+    <office id="uk.org.publicwhip/lord/100866"/>
     <office id="uk.org.publicwhip/member/1232"/>
     <office id="uk.org.publicwhip/member/547"/>
     <office id="uk.org.publicwhip/moffice/22"/>
@@ -6637,9 +6638,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13583" latestname="Lord Moonie">
     <office id="uk.org.publicwhip/lord/100861"/>
-</person>
-<person id="uk.org.publicwhip/person/10547" latestname="Lord Smith of Finsbury">
-    <office id="uk.org.publicwhip/lord/100866"/>
 </person>
 <person id="uk.org.publicwhip/person/13585" latestname="The Bishop of Coventry">
     <office id="uk.org.publicwhip/lord/100146"/>
