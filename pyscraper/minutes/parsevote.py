@@ -16,7 +16,14 @@ def namepattern(label='name'):
 
 # Time handling
 
-archtime=pattern('(?P<archtime>half-past\s*(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\s*o\'clock)(?i)')
+
+
+engnumber60='(one|two|three|four|five|six(?!ty)|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|((twenty|thirty|forty|fifty)(-(one|two|three|four|five|six|seven|eight|nine))?))'
+
+archtime=SEQ(
+	pattern('\s*(?P<archtime>(a quarter past|half-past|a quarter to|'+engnumber60+' minutes to|)\s*(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)(\s*o\'clock)?)(?i)'),
+	OBJECT('time','','archtime')
+	)
 
 dayname=pattern('\s*(?P<dayname>(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday))\s*')
 
@@ -102,16 +109,23 @@ dateheading=SEQ(
 
 untagged_par=SEQ(
 	DEBUG('checking for untagged paragraph'),
-	parselib.TRACE(True),
-	pattern('\s*(?P<maintext>(?!\s*\[Adjourned)([^<]|<i>|</i>)+)'),
+	parselib.TRACE(False),
+	pattern('\s*(?P<maintext>(?![^<]*\[Adjourned)([^<]|<i>|</i>)+)'),
 	OBJECT('untagged_par','maintext')
+	)
+
+table=SEQ(
+	START('table'),
+	pattern('\s*(?P<table><table[\s\S]*?</table>)'),
+	OBJECT('table_markup','table'),
+	END('table')
 	)
 
 minute_plain=SEQ(
 	NPAR, 
 	START('minute','number'),
 	OBJECT('maintext', 'maintext'),
-	ANY(OR(IPAR,dateheading,untagged_par)),
+	ANY(OR(IPAR,dateheading,untagged_par,table)),
 	END('minute'))
 
 division=SEQ(
@@ -160,6 +174,12 @@ minute=OR(
 
 adjournment=SEQ(
 	DEBUG('attempting to match adjournment'),
+	POSSIBLY(SEQ(
+		pattern('\s*And accordingly, the House, having continued to sit till'),
+		parselib.TRACE(True),
+		archtime,
+		pattern('\s*(,)?\s*adjourned (till|until) to-morrow(\.)?')
+		)),
 	pattern('\s*(<p( align=right)?>)?\[Adjourned at (?P<time>\s*(\d+(\.\d+)?\s*(a\.m\.|p\.m\.)|12\s*midnight(\.)?))\s*(</p>)?'),
 	OBJECT('adjournment','','time')
 	)
@@ -322,7 +342,7 @@ westminsterhall=SEQ(
 	archtime,
 	OBJECT('commencement','','archtime'),
 	pattern('.</p>'),
-	ANY(SEQ(parselib.TRACE(True),
+	ANY(SEQ(parselib.TRACE(False),
 		OR(misc_par,untagged_par)), 
 		until=adjournment),
 	#adjournment,
