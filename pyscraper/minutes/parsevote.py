@@ -10,14 +10,11 @@ import re
 import parselib
 from parselib import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, FORCE, pattern, tagged
 
-
-def htmlpar(f):
-	return SEQ(pattern('\s*<p>'), f, pattern('</p>'))
-
-htmlul=lambda f:SEQ(pattern('<ul>'), f, pattern('</ul>'))
-
+# Names may have dots and hyphens in them.
 def namepattern(label='name'):
 	return '(?P<'+label+'>[-A-Za-z .]+)'
+
+# Time handling
 
 archtime=pattern('(?P<archtime>half-past\s*(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\s*o\'clock)(?i)')
 
@@ -30,6 +27,10 @@ year=pattern('(?P<year>\d{4})\s*')
 dayordinal=pattern('\s*(?P<day>\d+(st|nd|rd|th))\s*')
 
 futureday=SEQ(dayname,pattern('\s*next\s*'))
+
+plaindate=SEQ(POSSIBLY(dayname), dayordinal, monthname, POSSIBLY(year))
+
+# Dates with idiosyncratic italics
 
 idate=SEQ(
 	pattern('\s*<i>\s*'),
@@ -44,9 +45,7 @@ idate=SEQ(
 	year
 	)
 
-#idate=pattern('(?P<date>\s*<i>(?P<dayname>(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday))\s*</i>\s*(?P<day>\d+)\s*<i>(st|nd|rd|th)\s*(?P<monthname>(January|February|March|April|May|June|July|August|September|October|November|December))\s*</i>\s*(?P<year>\d{4}))')
 
-plaindate=SEQ(POSSIBLY(dayname), dayordinal, monthname, POSSIBLY(year))
 
 header=SEQ(
 	pattern('(?P<pagex><pagex [\s\S]*?/>)'),
@@ -54,7 +53,7 @@ header=SEQ(
 	pattern('\s*</td></tr>\s*</table>\s*<table width="90%"\s*cellspacing=6 cols=2 border=0>\s*<tr><td>\s*</font><p>\s*(?i)'))
 
 
-time=SEQ(
+meeting_time=SEQ(
 	pattern('\s*<p(?: align=center)?>The House met at (?P<texttime>[\s\S]*?).</p>'),
 	OBJECT('time','','texttime')
 	)
@@ -131,7 +130,10 @@ division=SEQ(
 	)
 
 programme_minute=SEQ(
-	pattern('\s*<p><ul>\d+\.\s*([^<]|<i>|</i>)*</ul></p>'),
+	OR(
+		pattern('\s*<p><ul>(\d+\.|\(\d+\))\s*([^<]|<i>|</i>)*</ul></p>'),
+		pattern('\s*<p><ul><ul>(\([a-z]\)|\d+)\s*([^<]|<i>|</i>)*</ul></ul></p>')
+	),
 	OBJECT('programme_minute','')
 	)
 
@@ -231,30 +233,12 @@ prorogation=SEQ(IF(
 	DEBUG('prorogation success')
 	)
 
-#speaker_signature=SEQ(
-#	OR(
-#		pattern('\s*<p align=right><b><i><font size=\+2>(?P<speaker>[\s\S]*?)</font></i></b></p>\s*<b><i><font size=\+1>(?P<title>(Deputy )?Speaker)\s*</font></i></b></p>'),
-#		pattern('\s*<p( align=right)?>(<font size=\+1>)?<i><b>(?P<speaker>[a-zA-Z. ]*?)(&nbsp;)*</i>(</font>)?(</b>)?</p>\s*(<p( align=right)?>)?\s*<i><b>\s*(?P<title>(Deputy )?Speaker)(&nbsp;|\s)*(</i></b>\s*</p>)?')
-#	),
-#	OBJECT('speaker_signature','','speaker')
-#	)
-#
-
 speaker_chair=SEQ(
 	pattern('\s*<p align=center>Mr Speaker will take the Chair at '),
 	archtime,
 	POSSIBLY(SEQ(pattern('\s*on\s*'),OR(plaindate,futureday))),
 	pattern('.</p>\s*')
 	)
-
-#appendix_title=pattern('(<p align=center>)?APPENDIX\s*(?P<appno>(|I|II|III))(</p>)?(?=</)')
-#	
-#
-#app_title=SEQ(
-#	htmlpar(OR(htmlul(appendix_title),appendix_title)),
-#	START('appendix','appno')
-#	)
-#
 
 app_title=SEQ(
 	DEBUG('checking for app_title'),
@@ -338,7 +322,9 @@ westminsterhall=SEQ(
 	archtime,
 	OBJECT('commencement','','archtime'),
 	pattern('.</p>'),
-	ANY(SEQ(parselib.TRACE(False),misc_par), until=adjournment),
+	ANY(SEQ(parselib.TRACE(True),
+		OR(misc_par,untagged_par)), 
+		until=adjournment),
 	#adjournment,
 	speaker_signature,
 	END('westminsterhall'))	
@@ -389,7 +375,7 @@ page=SEQ(
 	header, 
 	POSSIBLY(pattern('\s*<p><b>Votes and Proceedings</b></p>')),
 	POSSIBLY(O13notice), #O13notice,
-	time,
+	meeting_time,
 	prayers,
 ## prayers don't necessary come first (though they usually do)
 	ANY(
@@ -437,3 +423,4 @@ else:
 	print result.text()
 	print "----"
 	print s[:128]
+	sys.exit(1)
