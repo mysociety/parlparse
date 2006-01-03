@@ -42,14 +42,17 @@ plaindate=SEQ(POSSIBLY(dayname), dayordinal, monthname, POSSIBLY(year))
 idate=SEQ(
 	pattern('\s*<i>\s*'),
 	dayname,
-	pattern('\s*</i>\s*'),
+	POSSIBLY(pattern('\s*</i>\s*')),
 	OR(
-		pattern('(?P<day>\d+)<i>(st|nd|rd|th)\s*'),
-		pattern('(?P<day>\d+)(st|nd|rd|th)\s*<i>\s*')
+		pattern('\s*(?P<dayno>\d+)(<i>)?(st|nd|rd|th)\s*'),
+		pattern('\s*(?P<dayno>\d+)(st|nd|rd|th)\s*<i>\s*')
 	),
 	monthname,
-	pattern('\s*</i>\s*'),
-	year
+	OR(
+		SEQ(pattern('\s*</i>\s*'),year),
+		SEQ(year,pattern('\s*</i>\s*'))
+		),
+	OBJECT('date','','dayname','monthname','year','dayno')
 	)
 
 
@@ -96,14 +99,13 @@ IPAR=SEQ(
 	)
 
 dateheading=SEQ(
-	DEBUG('check date heading'),
-	pattern('\s*<p>'),
-	DEBUG('consumed p'),
+	START('dateheading'),
+	pattern('\s*<p( align=center)?>'),
+	DEBUG('dateheading consumed p'),
 	idate,
 	DEBUG('found idate'),
 	pattern('\s*</p>'),
-	DEBUG('dateheading matched'),
-	OBJECT('dateheading','dayname','day','monthname','year')
+	END('dateheading')
 	)
 
 
@@ -277,7 +279,6 @@ app_date=SEQ(
 	pattern('\s*<p align=center>'),
 	idate,
 	pattern('\s*</p>'),
-	OBJECT('date','','dayname','day','monthname','year')
 	)
 
 
@@ -349,7 +350,11 @@ westminsterhall=SEQ(
 	speaker_signature,
 	END('westminsterhall'))	
 
-certificate=NULL
+certificate=SEQ(
+	pattern('''\s*<p( align=center)?>THE SPEAKER'S CERTIFICATE</p>(?i)'''),
+	pattern('''\s*The Speaker certified that the (?P<billname>[-a-z.,A-Z0-9()\s]*?Bill) is a Money Bill within the meaning of the Parliament Act 1911(\.)?'''),
+	OBJECT('money_bill_certificate','','billname')
+	)
 
 endpattern=pattern('\s*</td></tr>\s*</table>\s*')
 
@@ -404,9 +409,8 @@ page=SEQ(
 		otherwise=SEQ(adjournment, speaker_signature, speaker_chair)), 
 	DEBUG('now check for appendices'),
 	ANY(appendix),
-	POSSIBLY(westminsterhall), 
-	#westminsterhall,
-	POSSIBLY(certificate),
+	POSSIBLY(certificate), #certificate,
+	POSSIBLY(westminsterhall), #westminsterhall,
 	POSSIBLY(corrigenda), #corrigenda,
 	POSSIBLY(footnote),
 	POSSIBLY(pattern('(\s|<p>|</p>)*(?i)')),
