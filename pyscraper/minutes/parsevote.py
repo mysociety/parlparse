@@ -8,7 +8,7 @@
 import sys
 import re
 import parselib
-from parselib import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, pattern
+from parselib import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, FORCE, pattern, tagged
 
 
 def htmlpar(f):
@@ -16,7 +16,10 @@ def htmlpar(f):
 
 htmlul=lambda f:SEQ(pattern('<ul>'), f, pattern('</ul>'))
 
-archtime=pattern('half-past\s*(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\s*o\'clock(?i)')
+def namepattern(label='name'):
+	return '(?P<'+label+'>[-A-Za-z .]+)'
+
+archtime=pattern('(?P<archtime>half-past\s*(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\s*o\'clock)(?i)')
 
 dayname=pattern('\s*(?P<dayname>(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday))\s*')
 
@@ -56,10 +59,28 @@ time=SEQ(
 	OBJECT('time','','texttime')
 	)
 
+
+speaker_signature=SEQ(
+	tagged(first='\s*',
+		tags=['p','b','i','font'],
+		p='(?P<speaker>[a-zA-Z. ]+)(&nbsp;)*',padding='\s'),
+	tagged(first='\s*',
+		tags=['p','b','i','font'],
+		p='(?P<title>(Deputy )?Speaker)(&nbsp;|\s)*',padding='\s'),
+	OBJECT('speaker_signature','','speaker')
+	)
+
 prayers=pattern('\s*(<p>)?PRAYERS.(</p>)?\s*')
 
+paragraph_number='\s*<p>(?P<number>\d+)(&nbsp;)*'
 
-NPAR=pattern('\s*<p>(?P<number>\d+)(&nbsp;)*(?P<maintext>[\s\S]*?)</p>')
+
+heading=SEQ(
+	pattern('\s*(<p><ul>|<p align=center>)<i>(?P<desc>[\s\S]*?)</i>(</ul>)?</p>'),
+	OBJECT('heading', 'desc')
+	)
+
+NPAR=pattern(paragraph_number+'(?P<maintext>[\s\S]*?)</p>')
 
 IPAR=SEQ(
 	pattern('\s*<p><ul>(?P<maintext>[\s\S]*?)</ul></p>'),
@@ -79,15 +100,61 @@ dateheading=SEQ(
 	OBJECT('dateheading','dayname','day','monthname','year')
 	)
 
-minute=SEQ(
-	DEBUG('minute'),
+
+untagged_par=SEQ(
+	DEBUG('checking for untagged paragraph'),
+	parselib.TRACE(True),
+	pattern('\s*(?P<maintext>(?!\s*\[Adjourned)([^<]|<i>|</i>)+)'),
+	OBJECT('untagged_par','maintext')
+	)
+
+minute_plain=SEQ(
 	NPAR, 
-	DEBUG('matched npar'),
 	START('minute','number'),
 	OBJECT('maintext', 'maintext'),
-	ANY(OR(IPAR,dateheading)),
-	#ANY(OR(IPAR)),
+	ANY(OR(IPAR,dateheading,untagged_par)),
 	END('minute'))
+
+division=SEQ(
+	parselib.TRACE(True),
+	pattern('\s*<p><ul>The House divided(\.)?</ul></p>'),
+	DEBUG('matched division'),
+	FORCE(SEQ(
+		parselib.TRACE(True),
+		pattern('\s*<p><ul><ul>Tellers for the Ayes, '+namepattern('ayeteller1')+', '+namepattern('ayeteller2')+': (?P<ayevote>\d+)(\.)?</ul></ul></p>'),
+		DEBUG('ayeteller1'),
+		pattern('\s*<p><ul><ul>Tellers for the Noes, '+namepattern('noteller1')+', '+namepattern('noteller2')+'(:)?\s*(?P<novote>\d+)(\.)?</ul></ul></p>'),
+		DEBUG('ayeteller2'),
+		pattern('\s*<p><ul>So the Question was agreed to\.</ul></p>')
+		)),
+	OBJECT('division','ayevote','novote','ayeteller1','ayeteller2','noteller1','noteller2')
+	)
+
+programme_minute=SEQ(
+	pattern('\s*<p><ul>\d+\.\s*([^<]|<i>|</i>)*</ul></p>'),
+	OBJECT('programme_minute','')
+	)
+
+minute_programme=SEQ(
+	pattern(paragraph_number+'(?P<maintext>[\s\S]*?the following provisions shall apply to (proceedings on )?the (?P<bill>[\s\S]*?Bill)( \[<i>Lords</i>\])?(-|:)?)</p>'),
+	parselib.TRACE(False),
+	START('bill_programme','bill'),
+	FORCE(SEQ(
+		DEBUG('matched the start of a Bill programme'),
+		ANY(OR(
+			heading,
+			programme_minute,
+			)),
+		POSSIBLY(division)
+		)),
+	END('bill_programme')
+	)
+
+minute=OR(
+	minute_programme,
+	minute_plain,
+	)
+
 
 adjournment=SEQ(
 	DEBUG('attempting to match adjournment'),
@@ -95,40 +162,59 @@ adjournment=SEQ(
 	OBJECT('adjournment','','time')
 	)
 
-print IF
+speaker_address=pattern('\s*(<p><ul>)?Mr Speaker(,|\.)(</ul></p>)?\s*<p><ul>The Lords, authorised by virtue of Her Majesty\'s Commission, for declaring Her Royal Assent to several Acts agreed upon by both Houses(, and under the Parliament Acts 1911 and 1949)? and for proroguing the present Parliament, desire the immediate attendance of this Honourable House in the House of Peers, to hear the Commission read.</ul></p>')
 
-speaker_address=pattern('\s*<p><ul>Mr Speaker,</ul></p>\s*<p><ul>The Lords, authorised by virtue of Her Majesty\'s Commission, for declaring Her Royal Assent to several Acts agreed upon by both Houses and for proroguing the present Parliament, desire the immediate attendance of this Honourable House in the House of Peers, to hear the Commission read.</ul></p>')
+actpattern=SEQ(
+	pattern('\s*<p><ul><ul>(?P<shorttitle>[-a-z.,A-Z0-9()\s]*?Act)\s*(?P<year>\d+)(\.)?</ul></ul></p>'),
+	OBJECT('act','','shorttitle','year')
+	)
 
 royal_assent=SEQ(
-	DEBUG('started royal assent parsing'),
-	pattern('\s*<p><ul>Accordingly the Speaker, with the House, went up to the House of Peers, where a Commission was read, giving, declaring and notifying the Royal Assent to several Acts, and for proroguing this present Parliament.</ul></p>\s*<p><ul>The Royal Assent was given to the following Acts:-</ul></p>'),
+	START('royal_assent'),
+	pattern('\s*<p><ul>Accordingly the Speaker, with the House, went up to the House of Peers, where a Commission was read(,)? giving, declaring and notifying the Royal Assent to several Acts, and for proroguing this present Parliament.</ul></p>'),
+	DEBUG('the royal assent...'),
+	pattern('\s*(<p><ul>)?The Royal Assent was given to the following Acts( agreed upon by both Houses)?:(-)?(</ul></p>)?'),
 	DEBUG('parsed "Accordingly the Speaker"'),
-	ANY(SEQ(
-		pattern('\s*<p><ul><ul>(?P<shorttitle>[-a-z.,A-Z()\s]*?Act)\s*(?P<year>\d+)(\.)?</ul></ul></p>'),
-		OBJECT('act','','shorttitle','year')
-		))
+	ANY(actpattern),
+	POSSIBLY(SEQ(
+		START('parlact'),
+		DEBUG('attempting to match parliament act'),
+		parselib.TRACE(False),
+		pattern('\s*The Royal Assent was given to the following Act, passed under the provisions of the Parliament Acts 1911 and 1949:'),
+		actpattern,
+		pattern('\s*\(The said Bill having been endorsed by the Speaker with the following Certificate:</p><p>'),
+		pattern('\s*I certify, in reference to this Bill, that the provisions of section two of the Parliament Act 1911, as amended by section one of the Parliament Act 1949, have been duly complied with.</p>'),
+		speaker_signature,
+		pattern('\.\)\s*</p>'),
+		END('parlact')
+		)),
+	END('royal_assent')
 	)
 
 royal_speech=SEQ(	
 	DEBUG('starting the royal speech'),
-	pattern('\s*<p><ul>And afterwards Her Majesty\'s Most Gracious Speech was delivered to both Houses of Parliament by the Lord High Chancellor \(in pursuance of Her Majesty\'s Command\), as follows:</ul></p>'),
+	pattern('\s*<p>\s*(<ul>)?And afterwards Her Majesty\'s Most Gracious Speech was delivered to both Houses of Parliament by the Lord High Chancellor \(in pursuance of Her Majesty\'s Command\), as follows:(</ul>)?</p>'),
 	DEBUG('royal speech: My Lords'),
-	parselib.TRACE(True),
-	pattern('\s*<p><ul>My Lords and Members of the House of Commons(,)?</ul></p>[\s\S]*?<p><ul>I pray that the blessing of Almighty God may attend you.\s*</ul></p>'),
-	parselib.TRACE(True),
-	DEBUG('finished the royal speech')
+	parselib.TRACE(False),
+	pattern('\s*<p>\s*(<ul>)?My Lords and Members of the House of Commons(,)?(</ul>)?</p>'),
+	pattern('(?P<royalspeech>[\s\S]*?)<p>\s*(<ul>)?I pray that the blessing of Almighty God may (attend you|rest upon your counsels)\.\s*(</ul>)?</p>'),
+	DEBUG('end of royal speech'),
+	parselib.TRACE(False),
+	DEBUG('finished the royal speech'),
+	OBJECT('royalspeech','royalspeech')
 	)
 
 words_of_prorogation=SEQ(
-	pattern('\s*<p><ul>After which the Lord Chancellor said:</ul></p>'),
-	pattern('\s*<p><ul>My Lords and Members of the House of Commons(,)?</ul></p>'),
+	pattern('\s*<p>\s*(<ul>)?After which the Lord Chancellor said:(</ul>)?</p>'),
+	pattern('\s*<p>\s*(<ul>)?My Lords and Members of the House of Commons(,|:)?(</ul>)?</p>'),
 	DEBUG('and now by virtue of...'),
-	pattern('\s*<p><ul>By virtue of Her Majesty\'s Commission which has now been read we do, in Her Majesty\'s name, and in obedience to Her Majesty\'s Commands, prorogue this Parliament to (?P<pdate1>[-a-zA-Z\s]*), to be then here holden, and this Parliament is accordingly prorogued to (?P<pdate2>[-a-zA-Z\s]*).</ul></p>')
+	pattern('\s*<p>\s*(<ul>)?By virtue of Her Majesty\'s Commission which has now been read(,)? we do, in Her Majesty\'s name, and in obedience to Her Majesty\'s Commands, prorogue this Parliament to (?P<pdate1>[-a-zA-Z\s]*)(,)? to be then here holden, and this Parliament is accordingly prorogued to (?P<pdate2>[-a-zA-Z\s]*)\.(</ul>)?</p>'),
+	DEBUG('parliament prorogued')
 	)
 
-prorogation=IF(
+prorogation=SEQ(IF(
 	pattern('\s*<p>\d+&nbsp;&nbsp;&nbsp;&nbsp;Message to attend the Lords Commissioners,-A Message from the Lords Commissioners was delivered by the Gentleman Usher of the Black Rod\.</p>'),
-	SEQ(
+	FORCE(SEQ(
 		DEBUG('start prorogation'),
 		START('prorogation'),
 		speaker_address,
@@ -138,17 +224,21 @@ prorogation=IF(
 		DEBUG('parsed royal speech'),
 		words_of_prorogation,
 		DEBUG('parsed words of prorogation'),
+		speaker_signature,
 		END('prorogation')
-		)
+		))
+	),
+	DEBUG('prorogation success')
 	)
 
-speaker_signature=SEQ(
-	OR(
-		pattern('\s*<p align=right><b><i><font size=\+2>(?P<speaker>[\s\S]*?)</font></i></b><br>\s*<b><i><font size=\+1>(?P<title>(Deputy )?Speaker)\s*</font></i></b></p>'),
-		pattern('\s*<p( align=right)?>(<font size=\+1>)?<i><b>(?P<speaker>[a-zA-Z. ]*?)(&nbsp;)*</i>(</font>)?(</b>)?(</p>\s*<p( align=right)?>|<br>\s*)<i><b>\s*(?P<title>(Deputy )?Speaker)(&nbsp;|\s)*(</i></b>\s*</p>)?')
-	),
-	OBJECT('speaker_signature','','speaker')
-	)
+#speaker_signature=SEQ(
+#	OR(
+#		pattern('\s*<p align=right><b><i><font size=\+2>(?P<speaker>[\s\S]*?)</font></i></b></p>\s*<b><i><font size=\+1>(?P<title>(Deputy )?Speaker)\s*</font></i></b></p>'),
+#		pattern('\s*<p( align=right)?>(<font size=\+1>)?<i><b>(?P<speaker>[a-zA-Z. ]*?)(&nbsp;)*</i>(</font>)?(</b>)?</p>\s*(<p( align=right)?>)?\s*<i><b>\s*(?P<title>(Deputy )?Speaker)(&nbsp;|\s)*(</i></b>\s*</p>)?')
+#	),
+#	OBJECT('speaker_signature','','speaker')
+#	)
+#
 
 speaker_chair=SEQ(
 	pattern('\s*<p align=center>Mr Speaker will take the Chair at '),
@@ -157,18 +247,27 @@ speaker_chair=SEQ(
 	pattern('.</p>\s*')
 	)
 
-appendix_title=pattern('(<p align=center>)?APPENDIX\s*(?P<appno>(|I|II|III))(</p>)?(?=</)')
-	
+#appendix_title=pattern('(<p align=center>)?APPENDIX\s*(?P<appno>(|I|II|III))(</p>)?(?=</)')
+#	
+#
+#app_title=SEQ(
+#	htmlpar(OR(htmlul(appendix_title),appendix_title)),
+#	START('appendix','appno')
+#	)
+#
 
 app_title=SEQ(
-	htmlpar(OR(htmlul(appendix_title),appendix_title)),
+	DEBUG('checking for app_title'),
+	parselib.TRACE(False),
+	tagged(first='\s*',
+		tags=['p','ul'],
+		p='(<p align=center>)?APPENDIX\s*(?P<appno>(|I|II|III))(</p>)?(?=</)'
+	),
+	DEBUG('starting object appendix'),
 	START('appendix','appno')
 	)
 
-app_heading=SEQ(
-	pattern('\s*<p><ul><i>(?P<desc>[\s\S]*?)</i></ul></p>'),
-	OBJECT('app_heading', 'desc')
-	)
+app_heading=heading
 
 app_date=SEQ(
 	pattern('\s*<p align=center>'),
@@ -179,19 +278,19 @@ app_date=SEQ(
 
 
 app_nopar=SEQ(
-	pattern('\s*<p><ul>(?P<no>\d+)&nbsp;&nbsp;&nbsp;&nbsp;(?P<maintext>[\s\S]*?)</ul></p>'),
+	pattern('\s*<p>(<ul>)?(?P<no>\d+)&nbsp;&nbsp;&nbsp;&nbsp;(?P<maintext>[\s\S]*?)(</ul>)?</p>'),
 	OBJECT('app_nopar','','no', 'maintext')
 	)
 
 misc_par=SEQ(
-	pattern('\s*<p><ul>(?P<maintext>[\s\S]*?)</ul></p>'),
+	pattern('\s*<p>\s*(<ul>)?(?P<maintext>(?!\[W\.H\.|\[Adjourned)([^<]|<i>|</i>)*)(</ul>)?(</p>)?'),
 	OBJECT('miscpar','maintext')
 	)
 
 app_par=misc_par
 
 app_subheading=SEQ(
-	pattern('\s*<p><i>(?P<maintext>[\s\S]*?)</i></p>'),
+	pattern('\s*<p( align=left)?><i>(?P<maintext>[\s\S]*?)</i></p>'),
 	OBJECT('app_subhead','','maintext')
 	)
 
@@ -208,7 +307,8 @@ attr_sep=pattern('\s*<p><ul>\[by Act\]\s*\[[\s\S]*?\].</ul></p>')
 emptypar=pattern('\s*<p>\s*</p>\s*(?i)')
 
 appendix=SEQ(
-	app_title, 
+	app_title,
+	DEBUG('after app_title'), 
 	ANY(OR(
 		app_nopar,
 		app_heading,
@@ -218,23 +318,30 @@ appendix=SEQ(
 		app_date_sep,
 		attr_sep,
 		app_par,
-		emptypar
+		emptypar,
+		untagged_par
 		)),
-	END('appendix')
+	END('appendix'),
+	DEBUG('ended appendix')
 	)
 
 westminsterhall=SEQ(
+	START('westminsterhall'),
 	pattern('\s*(<p>\s*<\p>|<p>\s*<p>)?\s*<p( align=center)?>\[W.H., No. (?P<no>\d+)\]</p>'),
-	pattern('\s*<p( align=center)?>(<font size=\+1>)?<b>Minutes of Proceedings of the Sitting in Westminster Hall(</font>)?</b>(</p>|<br>)'),
-	pattern('\s*(<p>)?<b>\[pursuant to the Order of '),
-	plaindate,
-	pattern('\]</b></p>'),
-	pattern('\s*<p( align=center)?>The sitting commenced at '),
+	pattern('\s*<p( align=center)?>(<font size=\+1>)?<b>Minutes of Proceedings of the Sitting in Westminster Hall(</font>)?</b></p>'),
+	POSSIBLY(SEQ(
+		pattern('\s*(<p>)?<b>\[pursuant to the Order of '),
+		plaindate,
+		pattern('\]</b></p>'),
+		)),
+	pattern('\s*<p( align=center)?>The sitting (commenced|began) at '),
 	archtime,
+	OBJECT('commencement','','archtime'),
 	pattern('.</p>'),
-	ANY(misc_par),
-	adjournment,
-	speaker_signature)	
+	ANY(SEQ(parselib.TRACE(False),misc_par), until=adjournment),
+	#adjournment,
+	speaker_signature,
+	END('westminsterhall'))	
 
 certificate=NULL
 
@@ -260,8 +367,15 @@ O13notice=SEQ(
 	)
 
 corrigenda=SEQ(
-	pattern('\s*<p>CORRIGENDA</p>\s*'),
-	ANY(pattern('\s*<p><ul>[\s\S]*?</ul></p>'))
+	pattern('\s*<p( align=center)?>CORRIGEND(A|UM)</p>\s*'),
+	START('corrigenda'),
+	ANY(
+		OR(
+			pattern('\s*<p><ul>[\s\S]*?</ul></p>'),
+			untagged_par
+			)
+	),
+	END('corrigenda')
 	)
 
 footnote=SEQ(
@@ -274,20 +388,20 @@ page=SEQ(
 	START('page'),
 	header, 
 	POSSIBLY(pattern('\s*<p><b>Votes and Proceedings</b></p>')),
-	POSSIBLY(O13notice),
-	#O13notice,
+	POSSIBLY(O13notice), #O13notice,
 	time,
 	prayers,
 ## prayers don't necessary come first (though they usually do)
-	ANY(OR(prayers,minute),
-		until=SEQ(prorogation, speaker_signature),
+	ANY(
+		SEQ(parselib.TRACE(False),OR(prayers,minute)),
+		until=prorogation, 
 		otherwise=SEQ(adjournment, speaker_signature, speaker_chair)), 
 	DEBUG('now check for appendices'),
 	ANY(appendix),
-	POSSIBLY(westminsterhall),
+	POSSIBLY(westminsterhall), 
 	#westminsterhall,
 	POSSIBLY(certificate),
-	POSSIBLY(corrigenda),
+	POSSIBLY(corrigenda), #corrigenda,
 	POSSIBLY(footnote),
 	POSSIBLY(pattern('(\s|<p>|</p>)*(?i)')),
 	DEBUG('endpattern'),
@@ -304,6 +418,9 @@ def parsevote(date):
 	# I am not sure what the <legal 1> tags are for. At present
 	# it seems safe to remove them.
 	s=s.replace('<legal 1>','<p><ul>')
+	s=s.replace('<br><br>','</p><p>')
+	s=s.replace('<br>','</p>')
+	s=s.replace('&#151;','-')
 	return page(s,{})
 
 date=sys.argv[1]

@@ -38,8 +38,9 @@ def str_flatten(l):
 # Result classes
 
 class Result:
-	def __init__(self,values=[]):
+	def __init__(self,values=[],force=False):
 		self.values=values
+		self.force=force
 
 	def text(self):
 		return str_flatten(self.values)
@@ -64,6 +65,7 @@ class SeqFailure(Failure):
 		self.pos=pos
 		self.result=result
 		self.length=length
+		self.force=result.force
 
 	def text(self):
 		return 'sequence(%s): position=%s(\n%s\n)' % (self.length, self.pos,self.result.text())
@@ -72,6 +74,7 @@ class OrFailure(Failure):
 	def __init__(self,failures):
 		Failure.__init__(self)
 		self.failures=failures
+		self.force=reduce(lambda a,b: a or b, [x.force for x in failures])
 
 	def text(self):
 		return 'or: %s ' % str_flatten([x.text() +'\n' for x in self.failures])
@@ -80,6 +83,7 @@ class IfFailure(Failure):
 	def __init__(self,failure):
 		Failure.__init__(self)
 		self.failure=failure
+		self.force=failure.force
 
 	def text(self):
 		return 'IF: %s\n' % self.failure.text()
@@ -97,6 +101,7 @@ class AnyFailure(Failure):
 		Failure.__init__(self)
 		self.failure=failure
 		self.untilfailure=untilfailure
+		self.force=failure.force or untilfailure.force
 
 	def text(self):
 		return 'any:\n(any)failure:\n%s\n(any)untilfailure:\n%s\n\n' % (self.failure.text(),self.untilfailure.text())
@@ -106,7 +111,26 @@ class Success(Result):
 		Result.__init__(self,values)
 		self.success=True
 
+class PossiblyFailure(Failure):
+	def __init__(self, result):
+		Failure.__init__(self)
+		self.force=True
+		self.result=result
+
+	def text(self):
+		return 'Possibly(forced):\n%s' % self.result.text()
+
 # pattern operators
+
+def FORCE(f):
+	def anon(s, env):
+		(s1,env1,result)=f(s,env)
+		if not result.success:
+			result.force=True
+
+		return (s1,env1,result)
+
+	return anon
 
 def ANY(f,until=None,otherwise=None):
 	'''repeatedly attemps f, until no more string is consumed, or f fails
@@ -119,14 +143,17 @@ def ANY(f,until=None,otherwise=None):
 		values=[]
 		untilresult=Success()
 
-
 		# Check until clause first, if it succeeds, then stop.
 
 		if until:
 			(s1,env1,untilresult)=until(s,env)
 			values.extend(untilresult.values)
 			if untilresult.success:
+				print "####(any)Any until success1"
 				return (s1,env1,Success(values))
+			elif untilresult.force:
+				print "####(any)Any until force failure1"
+				return (s1,env1,untilresult)
 
 		(s1,env1,result)=f(s,env)
 		while len(s1) < len(s) and result.success:
@@ -136,23 +163,28 @@ def ANY(f,until=None,otherwise=None):
 			env=env1
 			if until:
 				(s1,env1,untilresult)=until(s,env)
+				debug('(any) until result: %s' % untilresult.success)
 				if untilresult.success:
-					print "####Any until success"
+					print "####(any)Any until success2"
 					values.extend(untilresult.values)
 					return (s1,env1,Success(values))
+				elif untilresult.force:
+					print "####(any)Any until force failure2"
+					return (s1,env1,untilresult)
 
 			(s1,env1,result)=f(s,env)
 		
 		if otherwise:
 			(s2,env2,result)=otherwise(s1,env1)
 			if result.success:
-				print "####anyotherwise success"
+				print "####(any)anyotherwise success"
 				values.extend(result.values)
 				return(s2,env2,Success(values))
 			else:
-				print "####anyfailure#"
+				print "####(any)anyfailure#"
 				return(s1,env1,AnyFailure(result, untilresult))
 		else:
+			print "####(any)any plain success"
 			return (s1,env1,Success(values))	
 
 	return anon
@@ -169,6 +201,8 @@ def OR(*args):
 				return (s1,env1,result)
 			else:
 				failures.append(result)
+			if result.force:
+				break
 
 		return (s1,env1,OrFailure(failures))
 
@@ -208,6 +242,7 @@ def IF(condition, ifsuccess):
 			(s,env,result2)=ifsuccess(s1,env1)
 			values=result1.values+result2.values
 			if result2.success:
+				print "####(if): if success"
 				return (s,env,Success(values))
 			else:
 				return (s,env,IfFailure(result2))
@@ -218,12 +253,14 @@ def IF(condition, ifsuccess):
 
 
 def POSSIBLY(f):
-	'''POSSIBLY always succeeds'''
+	'''POSSIBLY always succeeds, unless f is forced'''
 
 	def anon(s,env):
 		(s1,env1,result)=f(s,env)
 		if result.success:
 			return (s1,env1,result)
+		elif result.force:
+			return (s1, env1, PossiblyFailure(result))
 		else:
 			return (s,env,Success())
 	return anon
@@ -243,6 +280,30 @@ def pattern(p):
 		return (s,env,result)
 	return anon
 
+# tagged doesn't get things right if tags is empty I think.
+
+def tagged(first='',tags=[],p='',padding=None):
+	s='('
+	e='('
+	if padding:
+		s=s+padding+'|'
+		e=e+padding+'|'
+	lt=len(tags)
+	for i in range(lt):
+		s='%s<%s[^>]*?>' % (s, tags[i])
+		e='%s</%s>' % (e, tags[i])
+		if i==lt-1:
+			s='%s)*' % s
+			e='%s)*' % e
+		else:
+			s='%s|' % s
+			e='%s|' % e
+	p=first+s+p+e
+
+	return pattern(p)
+		
+
+
 def NULL(s,env):
 	return(s,env,Success())
 
@@ -254,7 +315,7 @@ def OBJECT(name, body, *args):
 
 def START(name, *args, **keywords):
 	def anon(s,env):
-		debug('START name=%s' % name)
+		print "debug: starting object name=%s" % name
 		keyvaluelist=[(a, env[a]) for a in args] 
 		keyvaluelist.extend(keywords.iteritems())
 		attributes=['%s="%s" ' % (key, value) for (key, value) in keyvaluelist]
@@ -268,7 +329,7 @@ def START(name, *args, **keywords):
 
 def END(name):
 	def anon(s,env):
-		
+		print "debug: ending object name=%s" % name		
 		result=Success([clean('</%s>\n' % name)])
 
 		return (s,env,result)
@@ -307,10 +368,11 @@ def DEBUG(t):
 
 	return anon
 
-def TRACE(cond=False):
+def TRACE(cond=False, length=32):
 	def anon(s,env):
 		if cond:
-			print '--------\nTrace:\ns=%s\nenv=%s\n--------\n' % (s[:256],env)
+			print '--------\nTrace:\ns=%s\nenv=%s\n--------\n' % (s[:256],str(env)[:length])
+
 		return (s,env,Success())
 	return anon	
 
