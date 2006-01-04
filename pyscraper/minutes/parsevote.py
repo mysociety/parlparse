@@ -56,6 +56,11 @@ idate=SEQ(
 	)
 
 
+actpattern=SEQ(
+	pattern('\s*<p><ul><ul>(?P<shorttitle>[-a-z.,A-Z0-9()\s]*?Act)\s*(?P<year>\d+)(\.)?</ul></ul></p>'),
+	OBJECT('act','','shorttitle','year')
+	)
+
 
 header=SEQ(
 	pattern('(?P<pagex><pagex [\s\S]*?/>)'),
@@ -168,8 +173,21 @@ minute_programme=SEQ(
 	END('bill_programme')
 	)
 
+minute_ra=SEQ(
+	pattern(paragraph_number+'Royal Assent'),
+	FORCE(SEQ(
+		START('royal_assent'),
+		parselib.TRACE(True),
+		pattern('(,)?(-)?The (Deputy )?Speaker notified the House(,)? in accordance with the Royal Assent Act 1967(,)? That Her Majesty had signified her Royal Assent to the following Act(s)?(,)? agreed upon by both Houses(:)?</p>(?i)'),
+		parselib.TRACE(True),
+		ANY(actpattern),
+		END('royal_assent')
+		))
+	)
+
 minute=OR(
 	minute_programme,
+	minute_ra,
 	minute_plain,
 	)
 
@@ -187,11 +205,6 @@ adjournment=SEQ(
 	)
 
 speaker_address=pattern('\s*(<p><ul>)?Mr Speaker(,|\.)(</ul></p>)?\s*<p><ul>The Lords, authorised by virtue of Her Majesty\'s Commission, for declaring Her Royal Assent to several Acts agreed upon by both Houses(, and under the Parliament Acts 1911 and 1949)? and for proroguing the present Parliament, desire the immediate attendance of this Honourable House in the House of Peers, to hear the Commission read.</ul></p>')
-
-actpattern=SEQ(
-	pattern('\s*<p><ul><ul>(?P<shorttitle>[-a-z.,A-Z0-9()\s]*?Act)\s*(?P<year>\d+)(\.)?</ul></ul></p>'),
-	OBJECT('act','','shorttitle','year')
-	)
 
 royal_assent=SEQ(
 	START('royal_assent'),
