@@ -31,7 +31,10 @@ year=pattern('(?P<year>\d{4})\s*')
 
 dayordinal=pattern('\s*(?P<day>\d+(st|nd|rd|th))\s*')
 
-futureday=SEQ(dayname,pattern('\s*next\s*'))
+futureday=SEQ(OR(
+		SEQ(dayname,pattern('\s*next\s*')),
+		pattern('tomorrow')
+		))
 
 plaindate=SEQ(POSSIBLY(dayname), dayordinal, monthname, POSSIBLY(year))
 
@@ -80,10 +83,13 @@ meeting_time=SEQ(
 speaker_signature=SEQ(
 	tagged(first='\s*',
 		tags=['p','b','i','font'],
-		p='(?P<speaker>[a-zA-Z. ]+)(&nbsp;)*',padding='\s',last='(<font size=3></p>)?'),
+		p='(?P<speaker>[a-zA-Z. ]+)(&nbsp;)*',
+		padding='\s',
+		last='(<font size=3></p>)?'),
 	tagged(first='\s*',
 		tags=['p','b','i','font'],
-		p='(?P<title>(Deputy )?Speaker)(&nbsp;|\s)*',padding='\s'),
+		p='(?P<title>(Deputy )?Speaker)(&nbsp;|\s)*',
+		padding='\s'),
 	OBJECT('speaker_signature','','speaker')
 	)
 
@@ -100,11 +106,23 @@ heading=SEQ(
 NPAR=pattern(paragraph_number+'(?P<maintext>[\s\S]*?)</p>')
 
 maintext=SEQ(
-	pattern('(?P<maintext>([^<]|<i>|</i>))'),
+	pattern('(?P<maintext>([^<]|<i>|</i>)+)'),
 	OBJECT('maintext','maintext')
 	)
 
+minute_order=SEQ(
+	pattern('\s*<ul><i>Ordered</i>(,)?(?P<text>([^<])*)</ul></p>'),
+	OBJECT('order','','text')
+	)
+
+#redundant
+minute_resolution=SEQ(
+	pattern('\s*<ul><i>Resolved</i>(,)?(?P<text>([^<])*)</ul></p>'),
+	OBJECT('resolution','','text')
+	)
+
 minute_doubleindent=SEQ(
+	parselib.TRACE(True),
 	pattern('\s*<p><ul><ul>'),
 	START('doubleindent'),
 	OR(
@@ -117,12 +135,13 @@ minute_doubleindent=SEQ(
 			maintext
 			)
 		),
-	pattern('</p></ul></ul>'),
+	parselib.TRACE(True),
+	pattern('</ul></ul></p>'),
 	END('doubleindent')
 	)
 
 minute_indent=SEQ(
-	pattern('\s*<p><ul>(?P<maintext>[\s\S]*?)</ul></p>'),
+	pattern('\s*(<p>)?<ul>(?P<maintext>[\s\S]*?)</ul></p>'),
 	START('indent'),
 	OBJECT('maintext', 'maintext'),
 	END('indent')
@@ -158,6 +177,8 @@ minute_plain=SEQ(
 	START('minute','number'),
 	OBJECT('maintext', 'maintext'),
 	ANY(OR(
+		minute_order,
+		minute_doubleindent,
 		minute_indent,
 		dateheading,
 		untagged_par,
@@ -166,11 +187,11 @@ minute_plain=SEQ(
 	END('minute'))
 
 division=SEQ(
-	parselib.TRACE(True),
+	parselib.TRACE(False),
 	pattern('\s*<p><ul>The House divided(\.)?</ul></p>'),
 	DEBUG('matched division'),
 	FORCE(SEQ(
-		parselib.TRACE(True),
+		parselib.TRACE(False),
 		pattern('\s*<p><ul><ul>Tellers for the Ayes, '+namepattern('ayeteller1')+', '+namepattern('ayeteller2')+': (?P<ayevote>\d+)(\.)?</ul></ul></p>'),
 		DEBUG('ayeteller1'),
 		pattern('\s*<p><ul><ul>Tellers for the Noes, '+namepattern('noteller1')+', '+namepattern('noteller2')+'(:)?\s*(?P<novote>\d+)(\.)?</ul></ul></p>'),
@@ -207,9 +228,9 @@ minute_ra=SEQ(
 	pattern(paragraph_number+'Royal Assent'),
 	FORCE(SEQ(
 		START('royal_assent'),
-		parselib.TRACE(True),
+		parselib.TRACE(False),
 		pattern('(,)?(-)?The (Deputy )?Speaker notified the House(,)? in accordance with the Royal Assent Act 1967(,)? That Her Majesty had signified her Royal Assent to the following Act(s)?(,)? agreed upon by both Houses((,)? and to the following Measure(s)? passed under the provisions of the Church of England \((Assembly )?Powers\) Act 1919)?(:)?</p>(?i)'),
-		parselib.TRACE(True),
+		parselib.TRACE(False),
 		ANY(OR(
 			actpattern,
 			measurepattern,
@@ -228,12 +249,17 @@ minute=OR(
 
 adjournment=SEQ(
 	DEBUG('attempting to match adjournment'),
-	POSSIBLY(SEQ(
+	POSSIBLY(OR(
+		SEQ(
 		pattern('\s*And accordingly, the House, having continued to sit till'),
-		parselib.TRACE(True),
+		parselib.TRACE(False),
 		archtime,
 		pattern('\s*(,)?\s*adjourned (till|until) to-morrow(\.)?')
-		)),
+		),
+		tagged(
+			tags=['p','ul'],
+			p='And accordingly the sitting was adjourned till [^<]*(\.)?')			
+	)),
 	pattern('\s*(<p( align=right)?>)?\s*\[Adjourned at (?P<time>\s*(\d+(\.\d+)?\s*(a\.m\.|p\.m\.)|12\s*midnight(\.)?))\s*(</p>)?'),
 	OBJECT('adjournment','','time')
 	)
@@ -363,6 +389,7 @@ appendix=SEQ(
 	DEBUG('after app_title'), 
 	ANY(OR(
 		app_nopar,
+		minute_doubleindent,
 		app_heading,
 		app_date,
 		app_subheading,
@@ -381,9 +408,11 @@ westminsterhall=SEQ(
 	START('westminsterhall'),
 	POSSIBLY(pattern('\s*<hr width=90%>(?i)')),
 	pattern('\s*(<p>\s*<\p>|<p>\s*<p>)?\s*<p( align=center)?>\[W.H.,\s*No(\.)?\s*(?P<no>\d+)\s*\]</p>'),
-	OR(
-		pattern('\s*<p( align=center)?>(<font size=\+1>)?<b>Minutes of Proceedings of the Sitting in Westminster Hall(</font>)?</b></p>'),
-		pattern('\s*<p align=center><b><font size=\+1>Minutes of Proceedings of the Sitting in Westminster Hall</b><font size=3></p>')
+	tagged(
+		tags=['p','font','b'],
+		first='\s*',
+		p='Minutes of Proceedings of the Sitting in Westminster Hall',
+		last='(<font size=3>)?(</p>)?'
 		),
 	POSSIBLY(SEQ(
 		pattern('\s*(<p>)?<b>\[pursuant to the Order of '),
@@ -392,7 +421,7 @@ westminsterhall=SEQ(
 		)),
 	pattern('\s*(<p( align=center)?>)?The sitting (commenced|began) at '),
 	archtime,
-	pattern('.</p>'),
+	pattern('.(</b>)?</p>'),
 	ANY(SEQ(parselib.TRACE(False),
 		OR(
 			misc_par,
@@ -463,7 +492,8 @@ page=SEQ(
 	DEBUG('now check for appendices'),
 	ANY(appendix),
 	POSSIBLY(certificate), #certificate,
-	POSSIBLY(westminsterhall), #westminsterhall,
+	POSSIBLY(westminsterhall), 
+	#westminsterhall,
 	POSSIBLY(corrigenda), #corrigenda,
 	POSSIBLY(footnote),
 	POSSIBLY(pattern('(\s|<p>|</p>)*(?i)')),
