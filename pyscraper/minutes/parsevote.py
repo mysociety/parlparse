@@ -43,12 +43,19 @@ plaindate=SEQ(POSSIBLY(dayname), dayordinal, monthname, POSSIBLY(year))
 idate=SEQ(
 	pattern('\s*<i>\s*'),
 	dayname,
+	DEBUG('got dayname'),
+	parselib.TRACE(True),
 	POSSIBLY(pattern('\s*</i>\s*')),
+	parselib.TRACE(True),
 	OR(
-		pattern('\s*(?P<dayno>\d+)(<i>)?(st|nd|rd|th)\s*'),
-		pattern('\s*(?P<dayno>\d+)(st|nd|rd|th)\s*<i>\s*')
+		pattern('\s*(?P<dayno>\d+)(st|nd|rd|th)\s*<i>\s*'),
+		pattern('\s*(?P<dayno>\d+)(<i>)?(st|nd|rd|th)\s*')
 	),
+	parselib.TRACE(True),
+	DEBUG('got dayordinal'),
+	parselib.TRACE(True),
 	monthname,
+	DEBUG('got monthname'),
 	OR(
 		SEQ(pattern('\s*</i>\s*'),year),
 		SEQ(year,pattern('\s*</i>\s*'))
@@ -99,7 +106,7 @@ paragraph_number='\s*<p>(?P<number>\d+)(&nbsp;)*'
 
 
 heading=SEQ(
-	pattern('\s*(<p><ul>|<p align=center>)<i>(?P<desc>[\s\S]*?)</i>(</ul>)?</p>'),
+	pattern('\s*(<p><ul>|<p align=center>)<i>(?P<desc>[\s\S]*?</i>(\d|:|\.|,)*)(</ul>)?</p>'),
 	OBJECT('heading', 'desc')
 	)
 
@@ -349,9 +356,12 @@ app_title=SEQ(
 app_heading=heading
 
 app_date=SEQ(
-	pattern('\s*<p align=center>'),
+	parselib.TRACE(True),
+	pattern('\s*<p( align=center)?>'),
+	START('date_heading'),
 	idate,
 	pattern('\s*</p>'),
+	END('date_heading')
 	)
 
 
@@ -390,8 +400,8 @@ appendix=SEQ(
 	ANY(OR(
 		app_nopar,
 		minute_doubleindent,
-		app_heading,
 		app_date,
+		app_heading,
 		app_subheading,
 		app_nosubpar,
 		app_date_sep,
@@ -478,7 +488,7 @@ footnote=SEQ(
 	)
 
 page=SEQ(
-	START('page'),
+	START('page','date'),
 	header, 
 	POSSIBLY(pattern('\s*<p><b>Votes and Proceedings</b></p>')),
 	POSSIBLY(O13notice), #O13notice,
@@ -514,20 +524,22 @@ def parsevote(date):
 	s=s.replace('<br><br>','</p><p>')
 	s=s.replace('<br>','</p>')
 	s=s.replace('&#151;','-')
-	return page(s,{})
+	return page(s,{'date':date})
 
-date=sys.argv[1]
-(s,env,result)=parsevote(date)
+if __name__ == '__main__':
 
-
-if result.success:
-	print result.text()
-
-	fout=open('votes%s.xml' % date,'w')
-	fout.write(result.text())
-else:
-	print "failure"
-	print result.text()
-	print "----"
-	print s[:128]
-	sys.exit(1)
+	date=sys.argv[1]
+	(s,env,result)=parsevote(date)
+	
+	
+	if result.success:
+		print result.text()
+	
+		fout=open('votes%s.xml' % date,'w')
+		fout.write(result.text())
+	else:
+		print "failure"
+		print result.text()
+		print "----"
+		print s[:128]
+		sys.exit(1)
