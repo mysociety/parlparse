@@ -112,7 +112,9 @@ def TimeProcessing(time, previoustime, bIsDivisionTime, stampurl):
 
 	# day-rotate situation where they went on beyond midnight
 	# it's uncommon enough to handle by listing exceptional days
-	if previoustime and res < previoustime and not bIsDivisionTime:
+	# (sometimes the division time is out of order because that is where it is inserted in the record -- maybe should patch to handle)
+	#print previoustime, res, bIsDivisionTime, stampurl.sdate
+	if previoustime and res < previoustime:
 		if stampurl.sdate in ["2005-03-10", "2003-11-19", "2003-03-24", "2002-05-28", "2001-02-20"]:
 			if previoustime < "024":
 				print "dayrotate on ", stampurl.sdate, (hour, mins), previoustime
@@ -391,7 +393,7 @@ reparts2 = re.compile('(<table[^>]*?>|' + restmatcher + ')')
 retable = re.compile('<table[\s\S]*?</table>(?i)')
 retablestart = re.compile('<table[\s\S]*?(?i)')
 reparaspace = re.compile(paratag + '|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>|<table[^>].*>$(?i)')
-reparaempty = re.compile('\s*(?:<i>)?</i>\s*$|\s*$(?i)')
+reparaempty = re.compile('(?:\s|</?i>|&nbsp;)*$(?i)')
 reitalif = re.compile('\s*<i>\s*$(?i)')
 
 # Break text into paragraphs.
@@ -490,6 +492,7 @@ def SplitParaSpace(text, stampurl):
 		# put the preceding space, then the string into output list
 		res.append(spclist)
 		res.append(pstring)
+		#print "???%s???" % pstring
 
 		spclist = [ ]
 		pstring = ''
