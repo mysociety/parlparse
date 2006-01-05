@@ -16,8 +16,6 @@ def namepattern(label='name'):
 
 # Time handling
 
-
-
 engnumber60='(one|two|three|four|five|six(?!ty)|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|((twenty|thirty|forty|fifty)(-(one|two|three|four|five|six|seven|eight|nine))?))'
 
 archtime=SEQ(
