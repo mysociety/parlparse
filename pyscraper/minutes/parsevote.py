@@ -55,8 +55,13 @@ idate=SEQ(
 
 
 actpattern=SEQ(
-	pattern('\s*<p><ul><ul>(?P<shorttitle>[-a-z.,A-Z0-9()\s]*?Act)\s*(?P<year>\d+)(\.)?</ul></ul></p>'),
+	pattern('\s*<p><ul>(<ul>)?(?P<shorttitle>[-a-z.,A-Z0-9()\s]*?Act)\s*(?P<year>\d+)(\.)?(</ul>)?</ul></p>'),
 	OBJECT('act','','shorttitle','year')
+	)
+
+measurepattern=SEQ(
+	pattern('\s*<p><ul>(<ul>)?(?P<shorttitle>[-a-z.,A-Z0-9()\s]*?Measure)\s*(?P<year>\d+)(\.)?</ul>(</ul>)?</p>'),
+	OBJECT('measure','','shorttitle','year')
 	)
 
 
@@ -75,7 +80,7 @@ meeting_time=SEQ(
 speaker_signature=SEQ(
 	tagged(first='\s*',
 		tags=['p','b','i','font'],
-		p='(?P<speaker>[a-zA-Z. ]+)(&nbsp;)*',padding='\s'),
+		p='(?P<speaker>[a-zA-Z. ]+)(&nbsp;)*',padding='\s',last='(<font size=3></p>)?'),
 	tagged(first='\s*',
 		tags=['p','b','i','font'],
 		p='(?P<title>(Deputy )?Speaker)(&nbsp;|\s)*',padding='\s'),
@@ -94,7 +99,29 @@ heading=SEQ(
 
 NPAR=pattern(paragraph_number+'(?P<maintext>[\s\S]*?)</p>')
 
-IPAR=SEQ(
+maintext=SEQ(
+	pattern('(?P<maintext>([^<]|<i>|</i>))'),
+	OBJECT('maintext','maintext')
+	)
+
+minute_doubleindent=SEQ(
+	pattern('\s*<p><ul><ul>'),
+	START('doubleindent'),
+	OR(
+		SEQ(
+			pattern('\((?P<no>[ivxldcm]+)\)'),
+			OBJECT('number','','no'),
+			maintext
+			),
+		SEQ(
+			maintext
+			)
+		),
+	pattern('</p></ul></ul>'),
+	END('doubleindent')
+	)
+
+minute_indent=SEQ(
 	pattern('\s*<p><ul>(?P<maintext>[\s\S]*?)</ul></p>'),
 	START('indent'),
 	OBJECT('maintext', 'maintext'),
@@ -130,7 +157,12 @@ minute_plain=SEQ(
 	NPAR, 
 	START('minute','number'),
 	OBJECT('maintext', 'maintext'),
-	ANY(OR(IPAR,dateheading,untagged_par,table)),
+	ANY(OR(
+		minute_indent,
+		dateheading,
+		untagged_par,
+		table
+		)),
 	END('minute'))
 
 division=SEQ(
@@ -176,9 +208,13 @@ minute_ra=SEQ(
 	FORCE(SEQ(
 		START('royal_assent'),
 		parselib.TRACE(True),
-		pattern('(,)?(-)?The (Deputy )?Speaker notified the House(,)? in accordance with the Royal Assent Act 1967(,)? That Her Majesty had signified her Royal Assent to the following Act(s)?(,)? agreed upon by both Houses(:)?</p>(?i)'),
+		pattern('(,)?(-)?The (Deputy )?Speaker notified the House(,)? in accordance with the Royal Assent Act 1967(,)? That Her Majesty had signified her Royal Assent to the following Act(s)?(,)? agreed upon by both Houses((,)? and to the following Measure(s)? passed under the provisions of the Church of England \((Assembly )?Powers\) Act 1919)?(:)?</p>(?i)'),
 		parselib.TRACE(True),
-		ANY(actpattern),
+		ANY(OR(
+			actpattern,
+			measurepattern,
+			pattern('\s*<p><ul>(_)+</ul></p>')
+			)),
 		END('royal_assent')
 		))
 	)
@@ -198,7 +234,7 @@ adjournment=SEQ(
 		archtime,
 		pattern('\s*(,)?\s*adjourned (till|until) to-morrow(\.)?')
 		)),
-	pattern('\s*(<p( align=right)?>)?\[Adjourned at (?P<time>\s*(\d+(\.\d+)?\s*(a\.m\.|p\.m\.)|12\s*midnight(\.)?))\s*(</p>)?'),
+	pattern('\s*(<p( align=right)?>)?\s*\[Adjourned at (?P<time>\s*(\d+(\.\d+)?\s*(a\.m\.|p\.m\.)|12\s*midnight(\.)?))\s*(</p>)?'),
 	OBJECT('adjournment','','time')
 	)
 
@@ -343,19 +379,24 @@ appendix=SEQ(
 
 westminsterhall=SEQ(
 	START('westminsterhall'),
-	pattern('\s*(<p>\s*<\p>|<p>\s*<p>)?\s*<p( align=center)?>\[W.H., No. (?P<no>\d+)\]</p>'),
-	pattern('\s*<p( align=center)?>(<font size=\+1>)?<b>Minutes of Proceedings of the Sitting in Westminster Hall(</font>)?</b></p>'),
+	POSSIBLY(pattern('\s*<hr width=90%>(?i)')),
+	pattern('\s*(<p>\s*<\p>|<p>\s*<p>)?\s*<p( align=center)?>\[W.H.,\s*No(\.)?\s*(?P<no>\d+)\s*\]</p>'),
+	OR(
+		pattern('\s*<p( align=center)?>(<font size=\+1>)?<b>Minutes of Proceedings of the Sitting in Westminster Hall(</font>)?</b></p>'),
+		pattern('\s*<p align=center><b><font size=\+1>Minutes of Proceedings of the Sitting in Westminster Hall</b><font size=3></p>')
+		),
 	POSSIBLY(SEQ(
 		pattern('\s*(<p>)?<b>\[pursuant to the Order of '),
 		plaindate,
 		pattern('\]</b></p>'),
 		)),
-	pattern('\s*<p( align=center)?>The sitting (commenced|began) at '),
+	pattern('\s*(<p( align=center)?>)?The sitting (commenced|began) at '),
 	archtime,
-	OBJECT('commencement','','archtime'),
 	pattern('.</p>'),
 	ANY(SEQ(parselib.TRACE(False),
-		OR(misc_par,untagged_par)), 
+		OR(
+			misc_par,
+			untagged_par)), 
 		until=adjournment),
 	#adjournment,
 	speaker_signature,
@@ -389,6 +430,7 @@ O13notice=SEQ(
 	)
 
 corrigenda=SEQ(
+	POSSIBLY(pattern('\s*<hr[^>]*>')),
 	pattern('\s*<p( align=center)?>CORRIGEND(A|UM)</p>\s*'),
 	START('corrigenda'),
 	ANY(

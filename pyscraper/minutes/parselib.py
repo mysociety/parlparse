@@ -282,7 +282,7 @@ def pattern(p):
 
 # tagged doesn't get things right if tags is empty I think.
 
-def tagged(first='',tags=[],p='',padding=None):
+def tagged(first='',tags=[],p='',padding=None, last=''):
 	s='('
 	e='('
 	if padding:
@@ -298,7 +298,7 @@ def tagged(first='',tags=[],p='',padding=None):
 		else:
 			s='%s|' % s
 			e='%s|' % e
-	p=first+s+p+e
+	p=first+s+p+e+last
 
 	return pattern(p)
 		
