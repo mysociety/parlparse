@@ -18,6 +18,11 @@ def clean(s):
 	s=s.replace('<i>','')
 	s=s.replace('</i>','')
 	
+	s=s.replace('&nbsp;',' ')
+	s=s.replace('&','<amp />')
+
+	s=s.replace('\x99','&#214')
+
 	return s
 
 def debug(s):

@@ -134,7 +134,7 @@ minute_doubleindent=SEQ(
 	START('doubleindent'),
 	OR(
 		SEQ(
-			pattern('\((?P<no>[ivxldcm]+)\)'),
+			pattern('(\s|&nbsp;)*\((?P<no>[ivxldcm]+)\)(\s|&nbsp;)*'),
 			OBJECT('number','','no'),
 			maintext
 			),
@@ -147,8 +147,27 @@ minute_doubleindent=SEQ(
 	END('doubleindent')
 	)
 
+minute_tripleindent=SEQ(
+	parselib.TRACE(True),
+	pattern('\s*<p><ul><ul><ul>'),
+	START('tripleindent'),
+	OR(
+		SEQ(
+			pattern('(\s|&nbsp;)*\((?P<no>[ivxldcm]+)\)(\s|&nbsp;)*'),
+			OBJECT('number','','no'),
+			maintext
+			),
+		SEQ(
+			maintext
+			)
+		),
+	parselib.TRACE(True),
+	pattern('</ul></ul></ul></p>'),
+	END('tripleindent')
+	)
+
 minute_indent=SEQ(
-	pattern('\s*(<p>)?<ul>(?P<maintext>[\s\S]*?)</ul></p>'),
+	pattern('\s*(<p>)?<ul>(?P<maintext>[\s\S]*?)(</b>)?</ul></p>'),
 	START('indent'),
 	OBJECT('maintext', 'maintext'),
 	END('indent')
@@ -175,7 +194,8 @@ untagged_par=SEQ(
 table=SEQ(
 	START('table'),
 	pattern('\s*(?P<table><table[\s\S]*?</table>)'),
-	OBJECT('table_markup','table'),
+	#OBJECT('table_markup','table'),
+	OBJECT('table_markup',''),
 	END('table')
 	)
 
@@ -185,6 +205,7 @@ minute_plain=SEQ(
 	OBJECT('maintext', 'maintext'),
 	ANY(OR(
 		minute_order,
+		minute_tripleindent,
 		minute_doubleindent,
 		minute_indent,
 		dateheading,
@@ -366,8 +387,8 @@ app_date=SEQ(
 
 
 app_nopar=SEQ(
-	pattern('\s*<p>(<ul>)?(?P<no>\d+)&nbsp;&nbsp;&nbsp;&nbsp;(?P<maintext>[\s\S]*?)(</ul>)?</p>'),
-	OBJECT('app_nopar','','no', 'maintext')
+	pattern('\s*<p>(<ul>)?(<i>)?(?P<no>\d+)&nbsp;&nbsp;&nbsp;&nbsp;(</i>)?(?P<maintext>[\s\S]*?)(</ul>)?</p>'),
+	OBJECT('app_nopar','maintext','no')
 	)
 
 misc_par=SEQ(
@@ -524,6 +545,16 @@ def parsevote(date):
 	s=s.replace('<br><br>','</p><p>')
 	s=s.replace('<br>','</p>')
 	s=s.replace('&#151;','-')
+	s=s.replace('\x99','&#214;')
+
+	m=re.search('Lembit',s)
+	l=s[m.start():m.start()+20]
+	for i in l:
+		print i
+	print l,len(l)
+	
+	sys.exit()
+
 	return page(s,{'date':date})
 
 if __name__ == '__main__':
@@ -535,8 +566,10 @@ if __name__ == '__main__':
 	if result.success:
 		print result.text()
 	
+		output='''<?xml version="1.0" encoding="ISO-8859-1"?>'''+result.text()
+
 		fout=open('votes%s.xml' % date,'w')
-		fout.write(result.text())
+		fout.write(output)
 	else:
 		print "failure"
 		print result.text()
