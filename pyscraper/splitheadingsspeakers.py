@@ -100,7 +100,7 @@ class StampUrl:
 # we need to split off tables because they often contain a heading type in them.
 regsection1 = '<h\d><center>.*?\s*</center></h\d>'
 regsection2 = '<h\d align=center>.*?</h\d>'
-regsection3 = '<center><b>.*?</b></center>'
+regsection3 = '(?:<p class="tabletext">(?:<stamp[^>]*>)*)?<center><b>.*?</b></center>'  # this case of title is used when quoting inserted amendment text that has a title in it.  This is reaching the limit of this type of parsing
 regsection4 = '<(?:p|br)>\s*<center>.*?</center><(?:p|br)>'
 regsection5 = '<h[34] align=left>.*?</h[34]>'
 regparsermessage = '<parsemess.*?>' #'<parsemess-speech redirect="+-1"/>'
@@ -113,7 +113,7 @@ retableval = re.compile('(%s)(?i)' % regtable)
 respeakerval = re.compile('<speaker ([^>]*)>.*?</speaker>')
 resectiont1val = re.compile('<h\d><center>\s*(.*?)\s*</center></h\d>(?i)')
 resectiont2val = re.compile('<h\d align=center>\s*(.*?)\s*</h\d>(?i)')
-resectiont3val = re.compile('<center><b>(.*?)</b></center>(?i)')
+resectiont3val = re.compile('(<p class="tabletext">(?:<stamp[^>]*>)*)?<center><b>(.*?)</b></center>(?i)')
 resectiont4val = re.compile('<(?:p|br)>\s*<center>(.*?)</center><(?:p|br)>(?i)')
 
 # appears in today debates, and is getting a little too general (being able to mix/match b,i tags)
@@ -226,21 +226,37 @@ class SepHeadText:
 				continue
 
 			# recognize a heading instance from the four kinds
-			gheading = resectiont1val.match(fss)
-			if not gheading:
-				gheading = resectiont2val.match(fss)
-			if not gheading:
-				gheading = resectiont3val.match(fss)
-			if not gheading:
-				gheading = resectiont4val.match(fss)
-			if not gheading:
-				gheading = resectiont5val.match(fss)
+			gheading = None
+			gheadingMatch = resectiont1val.match(fss)
+			if gheadingMatch:
+				gheading = gheadingMatch.group(1)
+			if not gheadingMatch:
+				gheadingMatch = resectiont2val.match(fss)
+				if gheadingMatch:
+					gheading = gheadingMatch.group(1)
+			if not gheadingMatch:
+				gheadingMatch = resectiont3val.match(fss)
+				if gheadingMatch:
+					if gheadingMatch.group(1):
+						fss = gheadingMatch.group(1) + ":TITLE3:" + gheadingMatch.group(2) # leave a signal
+						gheadingMatch = None
+					else:
+						gheading = gheadingMatch.group(2)
+			if not gheadingMatch:
+				gheadingMatch = resectiont4val.match(fss)
+				if gheadingMatch:
+					gheading = gheadingMatch.group(1)
+			if not gheadingMatch:
+				gheadingMatch = resectiont5val.match(fss)
+				if gheadingMatch:
+					gheading = gheadingMatch.group(1)
+
+			# we have matched a heading thing
+			if gheadingMatch and not gheading:
+				continue
 
 			# we have matched a heading thing
 			if gheading:
-				if not gheading.group(1):
-					# print 'ignored heading tag containing no text following: ' + self.heading
-					continue
 
 				# there's a negative regexp match (for "The ... was asked - " which
 				# isn't a heading even though it looks like one).  Check we don't
@@ -251,7 +267,7 @@ class SepHeadText:
 						raise ContextException('"The ... was asked" match not broad enough: %s' % fss, stamp=None, fragment=fss)
 
 					# we are definitely a heading
-					self.EndHeading(gheading.group(1))
+					self.EndHeading(gheading)
 					continue
 
 				#print "renotheading matched ", fss

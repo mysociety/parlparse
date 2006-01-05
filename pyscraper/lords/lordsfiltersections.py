@@ -18,7 +18,7 @@ from splitheadingsspeakers import StampUrl
 from clsinglespeech import qspeech
 from parlphrases import parlPhrases
 
-from miscfuncs import FixHTMLEntities
+from miscfuncs import FixHTMLEntities, IsNotQuiet
 
 from filterdivision import FilterDivision
 from lordsfilterdivisions import LordsFilterDivision
@@ -158,6 +158,152 @@ def GrabLordDivisionProced(qbp, qbd):
 
 	return qbdp
 
+
+
+def MatchPWmotionStuff(qb, ispeechstartp1):
+	qpara = qb.stext[ispeechstartp1]
+
+	if re.match('<p>(?:\[|<i>)*(?:Amendments?|Motion),? .{0,60}?by leave,? withdrawn\.?(?:\]|</i>)*</p>', qpara):
+		return "withdrawn"
+
+	#[<i>Amendments Nos. 131 and 132 not moved.</i>]</p>
+	notmovedMatch = re.match('<p[^>]*>(?:\[|<i>)+Amendments? .{0,80}?(not moved|had been withdrawn from the Marshalled List|had been retabled as(?:Nos?\.|[^<\.\]]){0,60})(?:\.|</i>|\])+</p>', qpara)
+	if notmovedMatch:
+		return "notmoved"
+	if re.match('<p>\[(?:<i>)?The Sitting was suspended .{0,60}?(?:</i>)?\](?:</i>)?</p>', qpara):
+		return "suspended"
+	if re.match('<p>\[(?:<i>)?The House observed.{0,60}?(\]|\.|</i>)+</p>', qpara):
+		return "misc"
+	if re.match('<p>\[(?:<i>)?The page and line refer(?:ences are)? to .{0,160}?</p>', qpara):
+		return "misc"
+
+
+	if re.match('<p>.{0,10}?(?:Amendment.{0,50}?|by leave, )withdrawn', qpara):
+		print "**********Marginal amendwith", qpara
+		raise ContextException("Marginal withdrawn", stamp=qb.sstampurl, fragment=qpara)
+	if re.match('<p>\s*\[<i>', qpara):
+		print "**********Marginal notmoved", qpara
+		raise ContextException("Marginal notmoved", stamp=qb.sstampurl, fragment=qpara)
+
+	if re.match('<p>(?:Moved.? accordingly,? and,? )?(?:[Oo]n [Qq]uestion,? )?(?:Motion|[Aa]mendment)s?(?: No\. \d+| [A-Z])?(?:, as amended)?,? agreed to(?:\.|&mdash;)+</p>', qpara):
+		return "agreedto"
+	clauseAgreedMatch = re.match('<p>(?:(?:Clause|Schedule)s? \d+[A-Z]*(?: (?:and|to) \d+[A-Z]*)?|Title|Motion)(?:, as amended,?)? (agreed to|negatived)\.</p>', qpara)
+	if clauseAgreedMatch:
+		return clauseAgreedMatch.group(1) == "negatived" and "negatived" or "agreedto"
+	clauseResolvedMatch = re.match('<p>Resolved in the (negative|affirmative),? and (?:Motion|amendment|Clause \d+|Amendment .{5,60}?) (?:dis)?agreed to accordingly\.</p>', qpara)
+	if clauseResolvedMatch:
+		return clauseResolvedMatch.group(1) == "negative" and "disagreedto" or "agreedto"
+	if re.match('<p>Remaining clauses and schedules agreed to\.</p>', qpara):
+		return "agreedto"
+
+	if re.match('<p>Moved, That the .{0,60}? be agreed to\.', qpara):
+		return "considered"
+
+	if re.match('<p>(?:The )?Bill (?:was )?returned from the Commons .{0,260}?\.</p>', qpara):
+		return "bill"
+	if re.match('<p>The Commons (?:do not insist on .{0,160}? but propose|have made the following consequential|(?:dis)?agree (?:to|with)) .{0,260}?(?:\.|&mdash;)+</p>', qpara):
+		return "bill"
+
+	if re.match('<p>.{0,60}agreed to(?:\.| accordingly)', qpara):
+		print "**********Marginal agreedto", qpara
+		raise ContextException("Marginal agreed to", stamp=qb.sstampurl, fragment=qpara)
+
+	if re.match('<p[^>]*>House adjourned at .{0,60}?</p>', qpara):
+		return "adjourned"
+	if re.match('<p>(?:House|Second [Rr]eading debate|(?:Further )?[Cc]onsideration of amendments on Report) resumed\.</p>', qpara):
+		return "resumed"
+
+	if re.match('<p>\*?Their Lordships divided:', qpara):
+		return "divided"
+
+	# this is the tag that can be used to give better titles on the motion text.
+	if re.match('<p>(?:Clause|Schedule) (?:\d+[A-Z]* )?\[(?:<i>)?.*?(?:</i>)?\]:</p>', qpara):
+		return "considered"
+	if re.match('<p>On Question, Whether ', qpara):
+		return "considered"
+
+
+	if re.match('<p>Brought from the Commons', qpara):
+		return "misc"
+	if re.match('<p>House (?:again )?in Committee', qpara):
+		return "misc"
+	if re.match('<p>\[\s*The (?:deputy )?chairman (?i)', qpara):
+		#print "CHAIRMAN thing:", qpara
+		return "misc"
+	if re.match('<p>(?:Bill )?[Rr]ead a third time', qpara):
+		return "bill"
+	if re.match('<p>An amendment \(privilege\) made\.', qpara):
+		return "misc"
+	if re.match('<p>Report received\.', qpara):
+		return "misc"
+
+	if re.match('<p>Report received\.', qpara):
+		return "misc"
+
+	if re.match('<p>:TITLE3:', qpara):
+		return "title"
+
+	if re.match("<p>.{0,20}?The noble[^:]{0,60}? said:", qpara):
+		print "Unexpected Noble Lord Said; are we missing the start of his speech where he moves the amendment?"
+		raise ContextException("unexpected Noble Lord Said", stamp=qb.sstampurl, fragment=qpara)
+
+	return None
+
+def MatchKnownAsPWmotionStuff(qb, ispeechstartp1):
+	res = MatchPWmotionStuff(qb, ispeechstartp1)
+	if res:
+		return res
+	qpara = qb.stext[ispeechstartp1]
+	if re.match("<p>My Lords", qpara):
+		raise ContextException("My Lords in known amendment text", stamp=qb.sstampurl, fragment=qpara)
+
+	if re.match("<p>.{0,60}? Act,? .{0,60}?</p>", qpara):
+		return "act"
+	if re.match("<p[^>]*>\([d\w]+\) ", qpara):
+		return "lines"
+	if re.match("<p[^>]*>\( \) ", qpara):
+		return "lines"
+
+	if re.match("<p[^>]*>Sections? .{0,30}?</p>", qpara):
+		return "lines"
+	if re.match("<p[^>]*>(?:Schedule \S+?|The Schedule)(?:, paragraph.{0,60}?)?</p>", qpara):
+		return "lines"
+
+	if re.match("<p[^>]*>\d+[A-Z]? ", qpara):
+		return "lines"
+	if re.match("<p[^>]*>Page \d+, line \d+, ", qpara):
+		return "lines"
+	if re.match("<p[^>]*>&quot;", qpara):
+		return "quot"
+	if re.match("<p>[a-z]", qpara): # starting with lower case letter, some kind of continuation
+		return "quot"
+	if re.match("<p>A message was brought from the Commons", qpara):
+		return "message"
+
+	if re.match("<p>The noble .{0,30}?(?:Lord|Baroness|Earl|Viscount) said", qpara):
+		print "*****", qpara
+		raise ContextException("unexpected weak Noble Lord Said", stamp=qb.sstampurl, fragment=qpara)
+	if re.match("<p>The .{5,40}? \([^)]+\):", qpara):
+		raise ContextException("unexpected person with position Said", stamp=qb.sstampurl, fragment=qpara)
+	if re.match("<p>(?:Lord|Baroness|Earl|Viscount) [\w\s].{5,40}?:", qpara):
+		raise ContextException("unexpected person Said, (missing <b>?)", stamp=qb.sstampurl, fragment=qpara)
+	if re.match("<p>(?:Lord|Baroness|Earl|Viscount) [\w\s].{5,40}? moved ", qpara):
+		raise ContextException("unexpected person moved, (missing <b>?)", stamp=qb.sstampurl, fragment=qpara)
+
+	return None
+
+
+def SearchForNobleLordSaid(qb, pwmotionsig):
+	for i in range(len(qb.stext)):
+		rens = re.match("(<p>The (?:noble(?: and learned)?(?: and gallant)? (?:Lord|Baroness|Earl|Viscount)|right reverend Prelate) said:\s*)", qb.stext[i])
+		if rens:
+			qb.stext[i] = "<p>" +  qb.stext[i][rens.end(1):] # remove "the noble lord said"
+			return i
+		assert not re.match("the\s*noble(?i)", qb.stext[i])
+		qb.stext[i] = re.sub('^<p(.*?)>', '<p\\1 pwmotiontext="%s">' % pwmotionsig, qb.stext[i])
+	return len(qb.stext)
+
+
 # separate out the making of motions and my lords speeches
 # the position of a colon gives it away
 # returns a pre and post speech accounting for unspoken junk before and after a block of spoken stuff
@@ -167,16 +313,13 @@ def FilterLordsSpeech(qb):
 	# does the paragraph indents and tables.  Maybe should be inlined for lords
 	FilterDebateSpeech(qb)
 
-	# no speaker case, no further processing
-	if re.match('nospeaker="true"', qb.speaker):
-		return [ qb ]
-
 	# the colon attr is blank or has a : depending on what was there after the name that was matched
 	ispeechstartp1 = 0 # plus 1
 
 	# no colonattr or colon, must be making a speech
 	recol = re.search('colon="(:?)"', qb.speaker)
-	if not recol or recol.group(1):
+	bSpeakerExists = not re.match('nospeaker="true"', qb.speaker)
+	if bSpeakerExists and (not recol or recol.group(1)):
 		# text of this kind at the begining should not be spoken
 		if re.search("<p>(?:moved|asked) (?i)", qb.stext[0]):
 			print qb.speaker
@@ -184,45 +327,61 @@ def FilterLordsSpeech(qb):
 			raise ContextException("has moved amendment after colon (try taking : out)", stamp=qb.sstampurl)
 		ispeechstartp1 = 1  # 0th paragraph is speech text
 
-	# just a question -- non-colon
 	res = [ ] # output list
-	if not ispeechstartp1:
-		if re.match("<p>asked Her Majesty's Government|<p>rose to (?:ask|call|draw attention|consider)|<p>asked the|<p>&mdash;Took the Oath", qb.stext[0]):
-			qb.stext[0] = re.sub('^<p>', '<p class="asked">', qb.stext[0])  # cludgy; already have the <p>-tag embedded in the string
-			ispeechstartp1 = 2  # 1st paragraph is speech text
+	preparagraphtype = ""
+	if bSpeakerExists and (ispeechstartp1 == 0):
+		if re.match("<p>asked Her Majesty's Government|<p>asked the|<p>&mdash;Took the Oath", qb.stext[0]):
+			preparagraphtype = "asked"
+			qb.stext[0] = re.sub('^<p(.*?)>', '<p\\1 pwmotiontext="%s">' % preparagraphtype, qb.stext[0])
+			ispeechstartp1 = 1
+
+			# ensure that the noble lord said doesn't say an amendment withdrawn
+			assert not re.match("the\s*noble(?i)", qb.stext[ispeechstartp1])
+			assert not MatchPWmotionStuff(qb, ispeechstartp1)
+			# if we get "noble lord asked:" after this, insert the words "rose to ask" into the patched text
+
+		elif re.match("<p>rose to (?:ask|call|draw attention|consider)", qb.stext[0]):
+			preparagraphtype = "asked"
+			ispeechstartp1 = SearchForNobleLordSaid(qb, preparagraphtype)
+			if ispeechstartp1 not in [1, 2]:
+				print "Noble Lord Said on ", ispeechstartp1, "paragraph"
+				raise ContextException("Noble Lord Said missing in second paragraph", stamp=qb.sstampurl)
+
+			# ensure that the noble lord said doesn't say an amendment withdrawn
+			assert not MatchPWmotionStuff(qb, ispeechstartp1)
 
 		# identify a writ of summons (single line)
 		elif re.match("<p>(?:[\s,]*having received a [Ww]rit of [Ss]ummons .*?)?[Tt]ook the [Oo]ath\.</p>$", qb.stext[0]):
 			assert len(qb.stext) == 1
-			qb.stext[0] = re.sub('^<p>', '<p class="summons">', qb.stext[0])  # cludgy; already have the <p>-tag embedded in the string
-			return [ qb ]
+			qb.stext[0] = re.sub('^<p>', '<p pwmotiontext="summons">', qb.stext[0])  # cludgy; already have the <p>-tag embedded in the string
+			res.append(qb)
+			return res  # bail out
+
+		elif re.match("<p>&mdash;Took the Oath", qb.stext[0]):
+			assert False
 
 		# identify a moved amendment
 		elif re.match("<p>moved,? |<p>Amendments? |<p>had given notice|<p>rose to move|<p>had given his intention", qb.stext[0]):
 
-			# find where the speech begins
-			ispeechstartp1 = len(qb.stext)
-			for i in range(len(qb.stext)):
-				rens = re.match("(<p>The noble \S* said:\s*)", qb.stext[i])
-				if rens:
-					qb.stext[i] = "<p>" +  qb.stext[i][rens.end(1):]
-					i = ispeechstartp1
-					break
+			# find where the speech begins, and strip out "The noble lord said:"
+			preparagraphtype = "moved"
+			ispeechstartp1 = SearchForNobleLordSaid(qb, preparagraphtype)
+
 			# everything up to this point is non-speech
 			assert ispeechstartp1 > 0
 			qbprev = qspeech(qb.speaker, "", qb.sstampurl)
 			qbprev.typ = 'speech'
-			qbprev.stext = SubsPWtextset(qb.stext[:ispeechstartp1])
-			res.append(qbprev)
+			qbprev.stext = qb.stext[:ispeechstartp1]
 
-			# upgrade the spoken part
-			if ispeechstartp1 != len(qb.stext):
-				qb.speaker = string.replace(qb.speaker, 'colon=""', 'colon=":"')
-				qb.stext = qb.stext[ispeechstartp1:]
-				ispeechstartp1 = 1 # the spoken text must reach here
-			else:
+			res.append(qbprev)
+			if ispeechstartp1 == len(qb.stext):
 				return res
 
+			# upgrade the spoken part
+			qb.speaker = string.replace(qb.speaker, 'colon=""', 'colon=":"')
+			del qb.stext[:ispeechstartp1]
+			assert qb.stext
+			ispeechstartp1 = 1 # the spoken text must reach at least here (after the line, "The noble lord said:")
 
 		# error, no moved amendment found
 		else:
@@ -236,37 +395,45 @@ def FilterLordsSpeech(qb):
 		print qb.stext
 		raise ContextException("end of speech boundary unclear running through; need to separate paragraphs?", stamp=qb.sstampurl)
 
+
 	# a common end of speech is to withdraw an amendment
-	bAmendWithdrawn = False
-	while ispeechstartp1 < len(qb.stext):
-		if re.match('<p>Amendments?(?: No\. \d+[A-Z]*(?: to \d+[A-Z]*)?)?(?:, as an amendment)?(?: to(?: Commons)? Amendment No\. ?\d+[A-Z]*| to the Motion)?,? by leave,? withdrawn\.?</p>', qb.stext[ispeechstartp1]):
-			#print "withdrawnwithdrawn", qb.stext[ispeechstartp1]
-			bAmendWithdrawn = True
+	# we go through paragraphs until we match that or some other motion text type statement
+	sAmendmentStatement = None
+	while bSpeakerExists and (ispeechstartp1 < len(qb.stext)):
+		sAmendmentStatement = MatchPWmotionStuff(qb, ispeechstartp1)
+		if sAmendmentStatement:
 			break
-		if re.match('<p>(?:Amendment.{0,50}?|by leave, )withdrawn', qb.stext[ispeechstartp1]):
-			print "**********Marginal amendwith", qb.stext[ispeechstartp1]
-			raise ContextException("Marginal amendwidth", stamp=qb.sstampurl, fragment=qb.stext[ispeechstartp1])
+
 		ispeechstartp1 += 1
 
-	# the speech ran its proper course
+	# there are no further lines after the widthdrawal
 	if ispeechstartp1 == len(qb.stext):
+		assert not sAmendmentStatement
 		res.append(qb)
-		assert not bAmendWithdrawn
 		return res
 
-	# put in the withdrawn amendment into the current speech
-	if bAmendWithdrawn:
-		qb.stext[ispeechstartp1] = re.sub('<p(.*?)>', '<p\\1 pwmotiontext="yes" pwmotionwithdrawn="yes">', qb.stext[ispeechstartp1])
-		ispeechstartp1 += 1
+	# do the further lines after withdrawal
+	assert (not bSpeakerExists) or sAmendmentStatement
 
-	# From amendment withdrawn onwards put in as unspoken text
-	res.append(qb)
-	if ispeechstartp1 < len(qb.stext):
+	# splice off the unspoken text running off from the amendment statements
+	if ispeechstartp1 != 0:
 		qbunspo = qspeech('nospeaker="true"', "", qb.sstampurl)
 		qbunspo.typ = 'speech'
-		qbunspo.stext = SubsPWtextset(qb.stext[ispeechstartp1:])
+		qbunspo.stext = qb.stext[ispeechstartp1:]
 		del qb.stext[ispeechstartp1:]
+		res.append(qb)
 		res.append(qbunspo)
+	else:
+		res.append(qb)
+		qbunspo = qb
+
+	# check that once we begin pwmotion amendment statements, all statements are of this type
+	for i in range(len(qbunspo.stext)):
+		sAmendmentStatement = MatchKnownAsPWmotionStuff(qbunspo, i)
+		if not sAmendmentStatement:
+			print "UNRECOGNIZED-MOTION-TEXT:", qbunspo.stext[i]
+			sAmendmentStatement = "unrecognized"
+		qbunspo.stext[i] = re.sub('^<p(.*?)>', '<p\\1 pwmotiontext="%s">' % sAmendmentStatement, qbunspo.stext[i])
 
 	return res
 

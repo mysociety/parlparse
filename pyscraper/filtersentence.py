@@ -41,7 +41,7 @@ from resolvemembernames import memberList
 reqnum = re.compile("\s*\[(\d+)\]\s*$")
 refqnum = re.compile("\s*\[(\d+)\]\s*")
 
-redatephraseval = re.compile('(?:(?:%s) )?(\d+ (?:%s)( \d+)?)' % (parlPhrases.daysofweek, parlPhrases.monthsofyear))
+redatephraseval = re.compile('(?:(?:%s),? )?(\d+ (?:%s)( \d+)?)' % (parlPhrases.daysofweek, parlPhrases.monthsofyear))
 def TokenDate(ldate, phrtok):
 	try:
 		lldate = mx.DateTime.DateTimeFrom(ldate.group(0)).date

@@ -66,9 +66,9 @@ def StripDebateHeading(hmatch, ih, headspeak, bopt=False):
 	if (not re.match(reheadmatch, headspeak[ih][0])) or headspeak[ih][2]:
 		if bopt:
 			return ih
-		print "headspeak", headspeak[ih]
+		print "headspeak", headspeak[ih][:2]
 		if headspeak[ih][2]:
-			raise ContextException('non-conforming section after "%s" heading. FOR EXAMPLE: "in the chair" missing <h4><center> ' % hmatch, fragment=headspeak[ih][2])
+			raise ContextException('non-conforming section after "%s" heading. FOR EXAMPLE: "in the chair" missing <h4><center> ' % hmatch, fragment=headspeak[ih][0])
 		print reheadmatch
 		print headspeak[ih][2]
 		raise ContextException('non-conforming "%s" heading ' % hmatch, fragment=headspeak[ih][0])
@@ -77,8 +77,7 @@ def StripDebateHeading(hmatch, ih, headspeak, bopt=False):
 def StripDebateHeadings(headspeak, sdate):
 	# check and strip the first two headings in as much as they are there
 	ih = 0
-	ih = StripDebateHeading('Initial', ih, headspeak)
-
+	ih = StripDebateHeading('Initial', ih, headspeak)  # the 'Initial' is inserted by the splitheadingsspeakers function
 
 	# volume type heading
 	if re.search('THE PARLIAMENTARY DEBATES', headspeak[ih][0]):
