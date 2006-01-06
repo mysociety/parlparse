@@ -105,7 +105,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 	tempfilenameoldxml = None
 
 	# do the filtering according to the type.  Some stuff is being inlined here
-	if dname == 'regmem':
+	if dname == 'regmem' or dname == 'votes':
 		regmemout = open(tempfilename, 'w')
 		FILTERfunction(regmemout, text, sdate)  # totally different filter function format
 		regmemout.close()

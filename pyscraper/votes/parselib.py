@@ -1,3 +1,5 @@
+# vim:sw=8:ts=8:et:nowrap
+
 # This is an experimental library to try to assist parsing complicated and
 # untidy files. It could be done with a large regular expression, but
 # experience shows that it then becomes unmanageably difficult.
@@ -154,10 +156,10 @@ def ANY(f,until=None,otherwise=None):
 			(s1,env1,untilresult)=until(s,env)
 			values.extend(untilresult.values)
 			if untilresult.success:
-				print "####(any)Any until success1"
+				# print "####(any)Any until success1"
 				return (s1,env1,Success(values))
 			elif untilresult.force:
-				print "####(any)Any until force failure1"
+				# print "####(any)Any until force failure1"
 				return (s1,env1,untilresult)
 
 		(s1,env1,result)=f(s,env)
@@ -170,11 +172,11 @@ def ANY(f,until=None,otherwise=None):
 				(s1,env1,untilresult)=until(s,env)
 				debug('(any) until result: %s' % untilresult.success)
 				if untilresult.success:
-					print "####(any)Any until success2"
+					# print "####(any)Any until success2"
 					values.extend(untilresult.values)
 					return (s1,env1,Success(values))
 				elif untilresult.force:
-					print "####(any)Any until force failure2"
+					# print "####(any)Any until force failure2"
 					return (s1,env1,untilresult)
 
 			(s1,env1,result)=f(s,env)
@@ -182,14 +184,14 @@ def ANY(f,until=None,otherwise=None):
 		if otherwise:
 			(s2,env2,result)=otherwise(s1,env1)
 			if result.success:
-				print "####(any)anyotherwise success"
+				# print "####(any)anyotherwise success"
 				values.extend(result.values)
 				return(s2,env2,Success(values))
 			else:
-				print "####(any)anyfailure#"
+				# print "####(any)anyfailure#"
 				return(s1,env1,AnyFailure(result, untilresult))
 		else:
-			print "####(any)any plain success"
+			#print "####(any)any plain success"
 			return (s1,env1,Success(values))	
 
 	return anon
@@ -247,7 +249,7 @@ def IF(condition, ifsuccess):
 			(s,env,result2)=ifsuccess(s1,env1)
 			values=result1.values+result2.values
 			if result2.success:
-				print "####(if): if success"
+				# print "####(if): if success"
 				return (s,env,Success(values))
 			else:
 				return (s,env,IfFailure(result2))
@@ -325,7 +327,7 @@ def OBJECT(name, body, *args):
 
 def START(name, *args, **keywords):
 	def anon(s,env):
-		print "debug: starting object name=%s" % name
+		#print "debug: starting object name=%s" % name
 		keyvaluelist=[(a, env[a]) for a in args] 
 		keyvaluelist.extend(keywords.iteritems())
 		attributes=['%s="%s" ' % (key, value) for (key, value) in keyvaluelist]
@@ -339,7 +341,7 @@ def START(name, *args, **keywords):
 
 def END(name):
 	def anon(s,env):
-		print "debug: ending object name=%s" % name		
+		#print "debug: ending object name=%s" % name		
 		result=Success([clean('</%s>\n' % name)])
 
 		return (s,env,result)
@@ -372,7 +374,7 @@ def OUTPUT(t):
 def DEBUG(t):
 	def anon(s,env):
 		
-		print 'debug: %s' % t
+		#print 'debug: %s' % t
 
 		return (s,env,Success())
 

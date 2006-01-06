@@ -1,3 +1,5 @@
+# vim:sw=8:ts=8:et:nowrap
+
 import elementtree
 from elementtree.ElementTree import ElementTree, Element
 

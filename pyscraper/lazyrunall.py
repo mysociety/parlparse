@@ -16,6 +16,7 @@ sys.path.append('common')
 sys.path.append('lords')
 sys.path.append('miniposts')
 sys.path.append('wms')
+sys.path.append('votes')
 
 from crongrabpages import GrabWatchCopies
 from minpostparse import ParseGovPosts
@@ -27,6 +28,7 @@ from pullgluepages import PullGluePages, PullGlueToday
 from lordspullgluepages import LordsPullGluePages
 from runfilters import RunFiltersDir, RunDebateFilters, RunWransFilters, RunLordsFilters, RunWestminhallFilters, RunWMSFilters
 from regmemfilter import RunRegmemFilters
+from parsevote import RunVotesFilters
 from regmempullgluepages import RegmemPullGluePages
 from miscfuncs import SetQuiet, bNotQuiet, IsNotQuiet
 
@@ -209,6 +211,8 @@ if options.parse:
 		RunFiltersDir(RunLordsFilters, 'lordspages', options, options.forceparse)
 	if options.regmem:
 		RunFiltersDir(RunRegmemFilters, 'regmem', options, options.forceparse)
+	if options.votes:
+		RunFiltersDir(RunVotesFilters, 'votes', options, options.forceparse)
 	if options.chgpages:
 		ParseGovPosts()
 

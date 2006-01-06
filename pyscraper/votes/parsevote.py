@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim:sw=8:ts=8:et:nowrap
 
 # A very experimental program to parse votes and proceedings files.
 
@@ -11,6 +12,8 @@ import os.path
 import re
 import parselib
 from parselib import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, FORCE, pattern, tagged
+
+from xmlfilewrite import WriteXMLHeader
 
 # Names may have dots and hyphens in them.
 def namepattern(label='name'):
@@ -413,13 +416,13 @@ speaker_chair=SEQ(
 
 app_title=SEQ(
 	DEBUG('checking for app_title'),
-	parselib.TRACE(True),
+	parselib.TRACE(False),
 	tagged(first='\s*',
 		tags=['p','ul'],
 		padding='\s',
 		p='(<p align=center>)?APPENDIX\s*(?P<appno>(III|II|I|))(</p>)?(?=</)'
 	),
-	parselib.TRACE(True),
+	parselib.TRACE(False),
 	DEBUG('starting object appendix'),
 	START('appendix','appno')
 	)
@@ -466,7 +469,7 @@ attr_sep=pattern('\s*<p><ul>\[by Act\]\s*\[[\s\S]*?\].</ul></p>')
 appendix=SEQ(
 	app_title,
 	DEBUG('after app_title'),
-	parselib.TRACE(True), 
+	parselib.TRACE(False), 
 	ANY(OR(
 		app_nopar,
 		minute_doubleindent,
@@ -601,6 +604,9 @@ def parsevote(date):
 	name='votes%s.html' % date
 	f=open(votedir+'/'+name) # do not do this
 	s=f.read()
+        parsevotetext(s, date)
+
+def parsevotetext(s, date):
 	# I am not sure what the <legal 1> tags are for. At present
 	# it seems safe to remove them.
 	s=s.replace('<legal 1>','<p><ul>')
@@ -636,3 +642,17 @@ if __name__ == '__main__':
 		print "----"
 		print s[:128]
 		sys.exit(1)
+
+# For calling from lazyrunall.py
+def RunVotesFilters(fout, text, sdate):
+        (s,env,result)=parsevotetext(text, sdate)
+
+        if result.success:
+                WriteXMLHeader(fout)
+                fout.write(result.text())
+        else:
+                raise Exception, "Failed to parse vote\n%s\n%s" % (result.text(), s[:128])
+
+
+
+
