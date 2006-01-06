@@ -22,12 +22,12 @@ for bf in billsfiles:
 		date=billroot.get('date')
 
 		links=billtree.findall("//link")
-
+		links=filter(lambda e:e.get('type',default='unknown')=='unknown',links)
 		if len(links)>0:
 			for j in range(len(links)):
 				topelement.insert(j,links[j])
-			topelement.insert(i,assent)
 			i=i+1
+
 	except xml.parsers.expat.ExpatError, errorinst:
 		print errorinst
 		print "XML parsing error in %s" % vf, sys.exc_info()[0]
