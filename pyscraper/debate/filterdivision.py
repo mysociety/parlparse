@@ -93,8 +93,8 @@ def MpList(fsm, vote, stampurl, sdate):
 				# appears with multiple matching which is ignorable when both ambiguous people vote on same side of a division
 				#print "For name", fnam, "returning id", mpid, ";", i, " out of ", remadecons
 
-			elif not mpid and remadename == "MultipleMatch":
-				print "no match for", fnam, cons, sdate
+			elif not mpid and remadename != "MultipleMatch":
+				print "filterdivision.py: no match for", fnam, cons, sdate
 				raise ContextException("No match on name", stamp=stampurl, fragment=fnam)
 			#print fnam, " --> ", remadename.encode("latin-1")
 			res.append('\t<mpname id="%s" vote="%s">%s</mpname>' % (mpid, vote, FixHTMLEntities(fssf)))
