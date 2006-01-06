@@ -6,28 +6,24 @@ import sys
 import xml
 import re
 
-cwdfiles=os.listdir(os.getcwd())
-votesfiles=filter(lambda s:re.match('votes',s), cwdfiles)
-
+os.chdir('bills')
+billsfiles=os.listdir(os.getcwd())
 
 topelement=Element('top')
 i=1
 
-for vf in votesfiles:
-	print vf
+for bf in billsfiles:
+	print bf
 	try:
-		votetree=ElementTree(file=vf)
-		voteroot=votetree.getroot()
-		date=voteroot.get('date')
-		m=re.match('(?P<year>\d{4})-(?P<month>\d{2})-(?P<day>\d{2})',date)
-		if not m:
-			print "internal error in date format"
-			sys.exit()
-		acts=votetree.findall('//royal_assent/act')
-		if len(acts)>0:
-			assent=Element('assent',m.groupdict())
-			for j in range(len(acts)):
-				assent.insert(j,acts[j])
+		billtree=ElementTree(file=bf)
+		billroot=billtree.getroot()
+		date=billroot.get('date')
+
+		links=billtree.findall("//link")
+
+		if len(links)>0:
+			for j in range(len(links)):
+				topelement.insert(j,links[j])
 			topelement.insert(i,assent)
 			i=i+1
 	except xml.parsers.expat.ExpatError, errorinst:
@@ -35,9 +31,8 @@ for vf in votesfiles:
 		print "XML parsing error in %s" % vf, sys.exc_info()[0]
 	
 
-
 top=ElementTree(topelement)
 
-top.write('allvotes.xml')
+top.write('allbillinfo.xml')
 
 	
