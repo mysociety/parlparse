@@ -13,6 +13,7 @@ import re
 import parselib
 from parselib import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, FORCE, pattern, tagged
 
+sys.path.append("../")
 from xmlfilewrite import WriteXMLHeader
 
 # Names may have dots and hyphens in them.
