@@ -1,10 +1,14 @@
 # vim:sw=8:ts=8:et:nowrap
+# To do:
+# Make links absolute (against baselink) not relative
 
 import os
 import os.path
 import sys
 import re
 from elementtree.ElementTree import ElementTree,Element
+
+baselink="http://www.publications.parliament.uk"
 
 parldata='../../../parldata'
 billsdir='cmpages/chgpages/bills'
@@ -88,7 +92,7 @@ def makelement(gdict,context):
 
 	return elem
 		
-billpattern=re.compile('''<tr[^>]*>\s*<td[^>]*>\s*<img src="/pa/img/(?P<billtype>sqrgrn.gif|diamdrd.gif)"[^>]*></TD>\s*<TD><FONT size=\+1><A HREF="(?P<link>[^"]*)"\s*TITLE="Link to (?P<billname1>[-a-z.,A-Z0-9()\s]*?) Bill(\s*\[HL\]\s*)?"><B>(?P<billname2>[-a-z.,A-Z0-9()\s]*?) Bill(\s*\[HL\])?\s*\((?P<billno>\d+)\)\s*</B></A></FONT>(?P<rest>[\s\S]*?)</td></tr>(?i)''')
+billpattern=re.compile('''<tr[^>]*>\s*<td[^>]*>\s*<img src="/pa/img/(?P<currently_before>sqrgrn.gif|diamdrd.gif)"[^>]*></TD>\s*<TD><FONT size=\+1><A HREF="(?P<link>[^"]*)"\s*TITLE="Link to (?P<billname1>[-a-z.,A-Z0-9()\s]*?) Bill(\s*\[HL\]\s*)?"><B>(?P<billname2>[-a-z.,A-Z0-9()\s]*?) Bill(\s*\[HL\])?\s*\((?P<billno>\d+)\)\s*</B></A></FONT>(?P<rest>[\s\S]*?)</td></tr>(?i)''')
 
 mobj=re.search('bills\d{4}_(?P<date>\d{4}-\d{2}-\d{2})',sourcefilename)
 if not mobj:
@@ -104,11 +108,19 @@ while m:
 	#print i
 	#print m.groups()
 	gdict=m.groupdict()
-	if gdict['billtype']=='sqrgrn.gif':
-		billtype='commons'
-	elif gdict['billtype']=='diamdrd.gif':
-		billtype='lords'
-	gdict.update([('billtype',billtype)])
+	billname1=gdict.pop('billname1').strip()
+	billname2=gdict.pop('billname2').strip()
+	if billname1 != billname2:
+		raise Exception, "Two bill names differ (%s) and (%s)" % (billname1,billname2)
+
+	if gdict['currently_before']=='sqrgrn.gif':
+		currently_before='commons'
+	elif gdict['currently_before']=='diamdrd.gif':
+		currently_before='lords'
+	else:
+		raise Exception, "Unrecognised graphic -- I cannot tell which house the bill is currently before"
+
+	gdict.update([('currently_before',currently_before),('billname',billname1)])
 
 	elem=makelement(gdict,sourcefilename)
 	billtreeroot.insert(i,elem)
