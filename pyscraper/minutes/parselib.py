@@ -270,8 +270,8 @@ def POSSIBLY(f):
 			return (s,env,Success())
 	return anon
 
-def pattern(p):
-	prog = re.compile(p)
+def pattern(p, flags=re.IGNORECASE):
+	prog = re.compile(p,flags)
 	def anon(s,env):
 		mobj=prog.match(s)
 		debug('pattern p=(%s) s=(%s) mobj=(%s)\n' % (p, s[:128],  mobj))
@@ -287,7 +287,7 @@ def pattern(p):
 
 # tagged doesn't get things right if tags is empty I think.
 
-def tagged(first='',tags=[],p='',padding=None, last=''):
+def tagged(first='',tags=[],p='',padding=None, last='', fixpunctuation=False):
 	s='('
 	e='('
 	if padding:
@@ -303,6 +303,11 @@ def tagged(first='',tags=[],p='',padding=None, last=''):
 		else:
 			s='%s|' % s
 			e='%s|' % e
+	if fixpunctuation:
+		for punc in [''',:-;''']:
+			p=p.replace(punc,'('+punc+')?')
+		p=p.replace('.','(\.)?')
+
 	p=first+s+p+e+last
 
 	return pattern(p)
