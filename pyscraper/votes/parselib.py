@@ -374,7 +374,7 @@ def OUTPUT(t):
 def DEBUG(t):
 	def anon(s,env):
 		
-		#print 'debug: %s' % t
+		print 'debug: %s' % t
 
 		return (s,env,Success())
 
