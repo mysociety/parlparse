@@ -272,6 +272,18 @@ def POSSIBLY(f):
 			return (s,env,Success())
 	return anon
 
+def CALL(f, *args):
+
+	def anon(s,env):
+		print "Calling", env, "+++++++++"
+		substring=str_flatten(map(lambda a: env[a], args))
+		local_env=env.copy()
+		(s1, env1, result)=f(substring, local_env)
+
+		return (s, env, result)
+
+	return anon
+
 def pattern(p, flags=re.IGNORECASE):
 	prog = re.compile(p,flags)
 	def anon(s,env):
@@ -380,10 +392,16 @@ def DEBUG(t):
 
 	return anon
 
-def TRACE(cond=False, length=32):
+def TRACE(cond=False, length=32, vals=[]):
 	def anon(s,env):
 		if cond:
-			print '--------\nTrace:\ns=%s\nenv=%s\n--------\n' % (s[:256],str(env)[:length])
+			print '--------\nTrace:\ns=%s\nenv=%s\n' % (s[:256],str(env)[:length])
+			for v in vals:
+				if env.has_key(v):
+					print '%s=%s' % (v,env[v])
+				else:
+					print 'unknown key %s' % v
+			print '--------\n'
 
 		return (s,env,Success())
 	return anon	

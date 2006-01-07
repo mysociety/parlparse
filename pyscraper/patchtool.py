@@ -8,6 +8,7 @@ import string
 import miscfuncs
 import re
 import tempfile
+import optparse
 from resolvemembernames import memberList
 toppath = miscfuncs.toppath
 
@@ -84,11 +85,16 @@ def RunPatchToolW(typ, sdate, stamp, frag):
 	if gl:
 		gc = gp - string.rfind(rforlines, '\n', 0, gp)
 	#print "find loc codes ", gp, gl, gc
-        if sys.platform == "win32":
-            os.system('"C:\Program Files\ConTEXT\ConTEXT" %s /g%d:%d' % (tmpfile, gc + 1, gl + 1))
-        else:
-            # TODO add column support using gc + 1, if you can work out vim's syntax
-            os.system('vim %s +%d' % (tmpfile, gl + 1))
+
+	if options.emacs:
+		os.system('emacs %s +%d' % (tmpfile, gl+1))
+	else:
+
+ 	       if sys.platform == "win32":
+ 	           os.system('"C:\Program Files\ConTEXT\ConTEXT" %s /g%d:%d' % (tmpfile, gc + 1, gl + 1))
+ 	       else:
+ 	           # TODO add column support using gc + 1, if you can work out vim's syntax
+ 	           os.system('vim %s +%d' % (tmpfile, gl + 1))
 
 
 	# now create the diff file
@@ -120,7 +126,16 @@ def RunPatchTool(typ, sdatext, ce):
 
 # So it works from the command line
 if __name__ == '__main__':
-	if len(sys.argv) != 3:
+	parser=optparse.OptionParser()
+	
+	parser.add_option("--emacs",action="store_true",dest="emacs",default=False, help="forces the use of the emacs editor")
+	
+	(options,args)=parser.parse_args()
+
+	args=[sys.argv[0]]+args
+	print args
+
+	if len(args) != 3:
                 print """
 This generates files for the patchfilter.py filter.
 
@@ -136,5 +151,5 @@ in the patches folder underneath this folder.  The original file is
 untouched.  We consider the patches permanent data, so add them to CVS.
 """
  		sys.exit(1)
-	RunPatchToolW(sys.argv[1], sys.argv[2], None, "")
+	RunPatchToolW(args[1], args[2], None, "")
 

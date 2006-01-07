@@ -11,7 +11,10 @@ import os
 import os.path
 import re
 import parselib
-from parselib import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, FORCE, pattern, tagged
+import dates
+from dates import *
+
+from parselib import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, FORCE, CALL, pattern, tagged
 
 sys.path.append("../")
 from xmlfilewrite import WriteXMLHeader
@@ -20,64 +23,8 @@ from xmlfilewrite import WriteXMLHeader
 def namepattern(label='name'):
 	return '(?P<'+label+'>[-A-Za-z .]+)'
 
-# Time handling
-
-engnumber60='(one|two|three|four|five|six(?!ty)|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|((twenty|thirty|forty|fifty)(-(one|two|three|four|five|six|seven|eight|nine))?))'
-
-archtime=SEQ(
-	pattern('\s*(?P<archtime>(a quarter past|half-past|a quarter to|'+engnumber60+' minutes to|)\s*(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)(\s*o\'clock)?)(?i)'),
-	OBJECT('time','','archtime')
-	)
-
-dayname=pattern('\s*(?P<dayname>(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday))\s*')
-
-monthname=pattern('\s*(?P<monthname>(January|February|March|April|May|June|July|August|September|October|November|December))\s*')
-
-year=pattern('(?P<year>\d{4})\s*')
-
-dayordinal=pattern('\s*(?P<day>\d+(st|nd|rd|th))\s*')
-
-plaindate=SEQ(POSSIBLY(dayname), dayordinal, monthname, POSSIBLY(year))
-
-futureday=SEQ(OR(
-		SEQ(dayname,pattern('\s*next\s*')),
-		pattern('to(-)?morrow'),
-		SEQ(
-			pattern('on '),
-			plaindate
-			)
-		))
-
-# Dates with idiosyncratic italics
-
-idate=SEQ(
-	pattern('\s*<i>\s*'),
-	dayname,
-	DEBUG('got dayname'),
-	parselib.TRACE(False),
-	POSSIBLY(pattern('\s*</i>\s*')),
-	parselib.TRACE(False),
-	OR(
-		pattern('\s*(?P<dayno>\d+)(st|nd|rd|th)\s*<i>\s*'),
-		pattern('\s*(?P<dayno>\d+)(<i>)?(st|nd|rd|th)\s*')
-	),
-	parselib.TRACE(False),
-	DEBUG('got dayordinal'),
-	parselib.TRACE(False),
-	monthname,
-	DEBUG('got monthname'),
-	OR(
-		SEQ(pattern('\s*</i>\s*'),year),
-		SEQ(year,pattern('\s*</i>\s*'))
-		),
-	OBJECT('date','','dayname','monthname','year','dayno')
-	)
-
-
-
 emptypar=pattern('\s*<p>\s*</p>\s*(?i)')
 emptypar2=pattern('\s*<p><ul>\s*</ul></p>\s*')
-
 
 # characters that may be allowed in a bill or act
 actpattern='[-a-z.,A-Z0-9()\s]*?' 
@@ -128,7 +75,7 @@ heading=SEQ(
 	OBJECT('heading', 'desc')
 	)
 
-NPAR=pattern(paragraph_number+'(?P<maintext>[\s\S]*?)</p>')
+minute_main=pattern(paragraph_number+'(?P<minute_text>[\s\S]*?)</p>')
 
 maintext=SEQ(
 	pattern('(?P<maintext>([^<]|<i>|</i>)+)'),
@@ -247,12 +194,30 @@ table=SEQ(
 	END('table')
 	)
 
+
+speaker_absence=SEQ(
+	parselib.TRACE(False),
+	pattern('''\s*(The)? Speaker's Absence'''),
+	FORCE(SEQ(
+		pattern(',-The House being met, and the Speaker having leave of absence pursuant to paragraph \(3\) of Standing Order No\. 3 \(Deputy Speaker\)\, ' + namepattern('deputy')+', the (?P<position>((First|Second) Deputy |)Chairman of Ways and Means), proceeded to the Table\.'),
+	OBJECT('speaker_absence','','deputy','position')
+		))
+	)
+
+
 minute_plain=SEQ(
 	parselib.TRACE(False),
-	NPAR, 
-	parselib.TRACE(False),
+	minute_main, 
+	parselib.TRACE(True, length=64),
 	START('minute','number'),
-	OBJECT('maintext', 'maintext'),
+	POSSIBLY(
+		OR(
+			CALL(speaker_absence,'minute_text')
+			)
+		),
+	DEBUG('just completed speaker absence'),
+	parselib.TRACE(True, length=512),
+	OBJECT('maintext', 'minute_text'),
 	ANY(OR(
 		minute_order,
 		minute_tripleindent,
@@ -331,20 +296,9 @@ minute_ra=SEQ(
 		))
 	)
 
-speaker_absence=SEQ(
-	parselib.TRACE(False),
-	pattern(paragraph_number+'''\s*Speaker's Absence'''),
-	START('minute','','number'),
-	FORCE(SEQ(
-		pattern(',-The House being met, and the Speaker having leave of absence pursuant to paragraph \(3\) of Standing Order No\. 3 \(Deputy Speaker\)\, ' + namepattern('deputy')+', the (?P<position>((First|Second) Deputy |)Chairman of Ways and Means), proceeded to the Table\.'),
-		OBJECT('speaker_absence','maintext','deputy','position')
-		)),
-	END('minute')
-	)
 
 minute=OR(
 	minute_bill,
-	speaker_absence,
 	minute_programme,
 	minute_ra,
 	minute_plain,
