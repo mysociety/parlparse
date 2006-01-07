@@ -8,54 +8,23 @@ import sys
 import re
 from elementtree.ElementTree import ElementTree,Element
 
-baselink="http://www.publications.parliament.uk"
-
-parldata='../../../parldata'
-billsdir='cmpages/chgpages/bills'
-
-sourcedir=os.path.join(parldata,billsdir)
-
-sourcename=sys.argv[1]
-sourcefilename=os.path.join(sourcedir, sourcename)
-
-sourcefile=open(sourcefilename,'r')
-
-source=sourcefile.read()
-
-# Some files have commented out older entries, for the moment I think
-# it is best to ignore them -- FD
-
-xmlcommentreplace=re.compile('''<!--[\s\S]*?-->''')
-source=xmlcommentreplace.sub('',source)
-
-def linktype(desc):
-	if re.match('Explanatory Note(s)?', desc):
-		return 'explanatory note'
-	
-	if re.match('Amendment(s)?',desc):
-		return 'amendment'
-	
-	if re.match('Standing Committee Proceedings',desc):
-		return 'standing committee'
-
-	if re.match('Petitions against the(?P<billname>[-a-z.,A-Z0-9()\s]*?)Bill',desc):
-		return 'petitions'
-
-	if re.match('Report Stage Proceedings',desc):
-		return 'report'
-
-	if re.match('Committee of the Whole House Proceedings',desc):
-		return 'house committee'
-
-	return 'unknown'
-
-
+# Patterns
+billpattern=re.compile('''<tr[^>]*>\s*<td[^>]*>\s*<img src="/pa/img/(?P<house>sqrgrn.gif|diamdrd.gif)"[^>]*></TD>\s*<TD><FONT size=\+1><A HREF="(?P<link>[^"]*)"\s*TITLE="Link to (?P<billname1>[-a-z.,A-Z0-9()\s]*?) Bill(\s*\[HL\]\s*)?"><B>(?P<billname2>[-a-z.,A-Z0-9()\s]*?) Bill(\s*\[HL\])?\s*\((?P<billno>\d+)\)\s*</B></A></FONT>(?P<rest>[\s\S]*?)</td></tr>(?i)''')
 
 pat=re.compile('\s*(<br>)?(\s|&nbsp;)*<a\s*href="(?P<href>[^"]*?)"\s*title="(?P<title>[^"]*?)"\s*>\s*<b>\s*<i>(?P<desc>[^<]*?)(</i>\s*</b>\s*</a>|<br>)(?i)')
 
-def makelement(gdict,context):
+sessionpattern=re.compile('''<FONT size=\+3><B>Public Bills before Parliament (?P<session>\d{4}-\d{2})</B></FONT>(?i)''')
+
+#
+
+mandatory_attrs=['link','billname']
+
+# Setting up files (to be changed when integrated into whole system)
+
+def makeattrdict(gdict, context):
 	rest=gdict.pop('rest')
-	elem=Element('bill',gdict)		
+	attrdict={}
+	attrdict.update(gdict)
 
 	pos=0
 	#print rest
@@ -75,13 +44,10 @@ def makelement(gdict,context):
 			type=type+'-previous'
 			rest=rest[mobj2.end():]
 	
-		linkdict.update({'desc':desc, 'type':type})
-		link=Element('link',linkdict)
-		elem.insert(pos,link)
+		attrdict.update({type:linkdict['href']})
 
 		mobj=pat.match(rest)
 
-		#print elementtree.ElementTree.tostring(elem)
 
 	rest=re.sub('</TD>\s*</TR>\s*<tr><td>(&nbsp;|\s)*(?i)','',rest)
 	rest=re.sub('(<br>)?</TD>\s*</TR>\s*<TR valign=top>\s*<TD valign=top><a name="m"><FONT size=\+1><B>M</b></FONT></a><BR>(?i)','',rest)
@@ -90,45 +56,146 @@ def makelement(gdict,context):
 	if len(rest)>0:
 		raise Exception, "Additional material %s at bill %s:\n%s" % (context, gdict['billname1'], rest)
 
-	return elem
+	return attrdict
+
+def linktype(desc):
+	if re.match('Explanatory Note(s)?', desc):
+		return 'explanatory_note'
+	
+	if re.match('Amendment(s)?',desc):
+		return 'amendment'
+	
+	if re.match('Standing Committee Proceedings',desc):
+		return 'standing_committee'
+
+	if re.match('Petitions against the(?P<billname>[-a-z.,A-Z0-9()\s]*?)Bill',desc):
+		return 'petitions'
+
+	if re.match('Report Stage Proceedings',desc):
+		return 'report'
+
+	if re.match('Committee of the Whole House Proceedings',desc):
+		return 'house_committee'
+
+	return 'unknown'
+
+def addprint(billdict, session, no, house, attrdict, sourcefilename):
+	'''Adds a bill, to a dictionary of bills indexed by session, printno
+
+	Attrdict must contain the session and printno keys, and may have keys
+	for other attributes to be added to the final xml file.
+
+	If billdict already has an entry for (session, printno), it checks
+	that any attribute already present (including the link to the printing)
+	are identical, otherwise it throws an error.
+	'''
+
+	if billdict.has_key((session, no, house)):
+		billattrdict=billdict[(session, no, house)]
+		for attr in mandatory_attrs:
+			if billattrdict[attr]!=attrdict[attr]:
+				#raise Exception, "sourcefilename=%s session=%s no=%s house=%s attr=%s billattrdict[attr]=%s attrdict[attr]=%s\n\n billdict[attr]=%s\n attrdict=%s" %(sourcefilename, session, no, house, attr, billattrdict[attr], attrdict[attr], billdict, attrdict)
+				print Exception, "sourcefilename=%s session=%s no=%s house=%s attr=%s billattrdict[attr]=%s attrdict[attr]=%s\n" %(sourcefilename, session, no, house, attr, billattrdict[attr], attrdict[attr])
 		
-billpattern=re.compile('''<tr[^>]*>\s*<td[^>]*>\s*<img src="/pa/img/(?P<currently_before>sqrgrn.gif|diamdrd.gif)"[^>]*></TD>\s*<TD><FONT size=\+1><A HREF="(?P<link>[^"]*)"\s*TITLE="Link to (?P<billname1>[-a-z.,A-Z0-9()\s]*?) Bill(\s*\[HL\]\s*)?"><B>(?P<billname2>[-a-z.,A-Z0-9()\s]*?) Bill(\s*\[HL\])?\s*\((?P<billno>\d+)\)\s*</B></A></FONT>(?P<rest>[\s\S]*?)</td></tr>(?i)''')
-
-mobj=re.search('bills\d{4}_(?P<date>\d{4}-\d{2}-\d{2})',sourcefilename)
-if not mobj:
-	print "fail",sourcefilename
-	sys.exit()
-
-billtreeroot=Element('billstatus', mobj.groupdict())
-
-i=0
-m=billpattern.search(source)
-while m:
-	i=i+1
-	#print i
-	#print m.groups()
-	gdict=m.groupdict()
-	billname1=gdict.pop('billname1').strip()
-	billname2=gdict.pop('billname2').strip()
-	if billname1 != billname2:
-		raise Exception, "Two bill names differ (%s) and (%s)" % (billname1,billname2)
-
-	if gdict['currently_before']=='sqrgrn.gif':
-		currently_before='commons'
-	elif gdict['currently_before']=='diamdrd.gif':
-		currently_before='lords'
+		for attr in attrdict:
+			if billattrdict.has_key(attr):
+				if billattrdict[attr]!=attrdict[attr]:
+					#raise Exception, "sourcefilename=%s session=%s no=%s house=%s attr=%s billattrdict[attr]=%s attrdict[attr]=%s\n\n billdict[attr]=%s\n attrdict=%s" %(sourcefilename, session, no, house, attr, billattrdict[attr], attrdict[attr], billdict, attrdict)
+					print Exception, "sourcefilename=%s session=%s no=%s house=%s attr=%s billattrdict[attr]=%s attrdict[attr]=%s\n" %(sourcefilename, session, no, house, attr, billattrdict[attr], attrdict[attr])	
+			else:
+				billattrdict[attr]=attrdict[attr]			
 	else:
-		raise Exception, "Unrecognised graphic -- I cannot tell which house the bill is currently before"
+		billdict[(session, no, house)]=attrdict
+	
+def parsebillfile(sourcefilename, billdict):
 
-	gdict.update([('currently_before',currently_before),('billname',billname1)])
+	print "parsing %s" % sourcefilename
 
-	elem=makelement(gdict,sourcefilename)
-	billtreeroot.insert(i,elem)
+	sourcefile=open(sourcefilename,'r')
 
-	source=source[m.end():]
+	source=sourcefile.read()
+
+	# Some files have commented out older entries, for the moment I think
+	# it is best to ignore them -- FD
+
+	xmlcommentreplace=re.compile('''<!--[\s\S]*?-->''')
+	source=xmlcommentreplace.sub('',source)
+
+	mobj=sessionpattern.search(source)
+	if mobj:
+		session=mobj.groupdict()['session']
+	else:
+		raise Exception, "Cannot determine Parliamentary Session from sourcefile %s" % sourcefilename	
+
+	mobj=re.search('bills\d{4}_(?P<date>\d{4}-\d{2}-\d{2})',sourcefilename)
+	if not mobj:
+		print "fail",sourcefilename
+		sys.exit()
+
+	date=mobj.groupdict()['date']	
+	attrdict={}
+
 	m=billpattern.search(source)
+	while m:
+		gdict=m.groupdict()
 
-billtree=ElementTree(billtreeroot)
-sourcename=sourcename.replace('.html','.xml')
+		# check that billnames are identical, use one
+		billname1=gdict.pop('billname1').strip()
+		billname2=gdict.pop('billname2').strip()
+		if billname1 != billname2:
+			raise Exception, "Two bill names differ (%s) and (%s)" % (billname1,billname2)
+	
+		if gdict['house']=='sqrgrn.gif':
+			house='commons'
+		elif gdict['house']=='diamdrd.gif':
+			house='lords'
+		else:
+			raise Exception, "Unrecognised graphic -- I cannot tell which house the bill is currently before"
+	
+		gdict.update([('house',house),('billname',billname1),('session',session)])
+	
+		billno=gdict['billno']
 
-billtree.write('bills/%s' % sourcename)
+		printdict=makeattrdict(gdict,sourcefilename)
+		addprint(billdict, session, billno, house, printdict, sourcefilename)
+	
+		source=source[m.end():]
+		m=billpattern.search(source)
+
+
+def maketree(printdict):
+	root=Element('top')
+
+	i=0
+	for (session, no, house) in printdict.keys():
+		i=i+1
+		elem=Element('print',printdict[(session, no, house)])
+
+		root.insert(i, elem)	
+
+	billtree=ElementTree(root)
+
+	return billtree
+
+	
+
+baselink="http://www.publications.parliament.uk"
+
+parldata='../../../parldata'
+billsdir='cmpages/chgpages/bills'
+
+billsourcedir=os.path.join(parldata,billsdir)
+
+billsources=filter(lambda s:re.search('bills',s),os.listdir(billsourcedir))
+
+#print billsources
+
+billdict={}
+for sourcefilename in billsources:
+	parsebillfile(os.path.join(billsourcedir,sourcefilename), billdict)
+
+outtree=maketree(billdict)
+print outtree
+
+outtree.write('billprint.xml')
+

@@ -10,6 +10,7 @@ import re
 
 os.chdir('bills')
 billsfiles=os.listdir(os.getcwd())
+billsfiles=filter(lambda s:re.match('bills',s), billsfiles)
 
 topelement=Element('top')
 i=1
@@ -17,16 +18,49 @@ i=1
 for bf in billsfiles:
 	print bf
 	try:
-		billtree=ElementTree(file=bf)
-		billroot=billtree.getroot()
-		date=billroot.get('date')
+		billpage=ElementTree(file=bf)
+		print billpage
+		billpage=billpage.getroot()
 
-		links=billtree.findall("//link")
-		links=filter(lambda e:e.get('type',default='unknown')=='unknown',links)
+		# data common to all bills on a page
+		date=billroot.get('date')
+		session='2005-6'
+
+		bills=billpage.findall("//bill")
+		for bill in bills:
+
+			billname=bill.get('billname')
+			billnumber=bill.get('billno')
+			billlink=bill.get('link')
+
+
+			links=bill.findall("//link")
+
+			print links
+		
+			billinfo=Element('billprint',
+				{
+					'name' : billname,
+					'number' : billnumber,
+					'link' : billlink,
+					'date' : date,
+					'session': session
+					}	
+				)
+	
+			print billinfo,billname,billnumber,billlink,date,session
+		
 		if len(links)>0:
 			for j in range(len(links)):
-				topelement.insert(j,links[j])
-			i=i+1
+				link=links[j]
+				type=link.get('type')
+				href=link.get('link')
+				topelement.set(type,href)
+		print billinfo
+		elementtree.ElementTree.tostring(billinfo)
+
+		topelement.insert(i,billinfo)
+		i=i+1
 
 	except xml.parsers.expat.ExpatError, errorinst:
 		print errorinst

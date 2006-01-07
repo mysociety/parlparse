@@ -605,7 +605,7 @@ def parsevote(date):
 	name='votes%s.html' % date
 	f=open(votedir+'/'+name) # do not do this
 	s=f.read()
-        parsevotetext(s, date)
+        return parsevotetext(s, date)
 
 def parsevotetext(s, date):
 	# I am not sure what the <legal 1> tags are for. At present
