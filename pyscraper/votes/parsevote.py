@@ -37,12 +37,16 @@ year=pattern('(?P<year>\d{4})\s*')
 
 dayordinal=pattern('\s*(?P<day>\d+(st|nd|rd|th))\s*')
 
+plaindate=SEQ(POSSIBLY(dayname), dayordinal, monthname, POSSIBLY(year))
+
 futureday=SEQ(OR(
 		SEQ(dayname,pattern('\s*next\s*')),
-		pattern('tomorrow')
+		pattern('to(-)?morrow'),
+		SEQ(
+			pattern('on '),
+			plaindate
+			)
 		))
-
-plaindate=SEQ(POSSIBLY(dayname), dayordinal, monthname, POSSIBLY(year))
 
 # Dates with idiosyncratic italics
 
@@ -131,10 +135,39 @@ maintext=SEQ(
 	OBJECT('maintext','maintext')
 	)
 
+def process_minute():
+	def anon(s,env):
+
+		if len(env['second'])> 0:
+			print "second reading"
+		return (s,env,Success())
+	return anon
 minute_order=SEQ(
 	pattern('\s*<ul><i>Ordered</i>(,)?(?P<text>([^<])*)</ul></p>'),
 	OBJECT('order','','text')
 	)
+
+bill_second=SEQ(
+	pattern('; and ordered to be read a second time '),
+	futureday
+	) 
+
+minute_bill=SEQ(
+	parselib.TRACE(True),
+	pattern(paragraph_number+'(?P<billname>'+actpattern+' Bill),-(?P<sponsor>[-A-Za-z. ]*?)((,)? supported by (?P<supporters>[-A-Za-z., ]*?))?(,)? presented (a Bill to [\s\S]*?)(:)?\s*And the same was read the first time'),
+	DEBUG('matched bill'),
+	parselib.TRACE(True),
+	POSSIBLY(bill_second),
+	DEBUG('checked bill second'),
+	parselib.TRACE(True),
+	pattern('\s*and to be printed \[Bill (?P<billno>\d+)\]\.</p>'),
+	OBJECT('first_reading','','billname','sponsor','billno'), #process_minute(),
+	parselib.TRACE(True),
+	POSSIBLY(SEQ(
+		pattern('''\s*<p><ul><i>Ordered</i>, That the Explanatory Notes relating to the '''+actpattern+''' Bill be printed \[Bill \d+-EN\]\.\s*</ul></p>''')
+		))
+	)
+
 
 #redundant
 minute_resolution=SEQ(
@@ -201,7 +234,7 @@ dateheading=SEQ(
 untagged_par=SEQ(
 	DEBUG('checking for untagged paragraph'),
 	parselib.TRACE(False),
-	pattern('\s*(?P<maintext>(?![^<]*\[Adjourned)([^<]|<i>|</i>)+)'),
+	pattern('\s*(?P<maintext>(?![^<]*\[Adjourned)([^<]|<i>|</i>)+)\s*(</ul>|</p>)?'),
 	OBJECT('untagged_par','maintext')
 	)
 
@@ -249,7 +282,9 @@ division=SEQ(
 programme_minute=SEQ(
 	OR(
 		pattern('\s*<p><ul>(\d+\.|\(\d+\))\s*([^<]|<i>|</i>)*</ul></p>'),
-		pattern('\s*<p><ul><ul>(\([a-z]\)|\d+)\s*([^<]|<i>|</i>)*</ul></ul></p>')
+		pattern('\s*<p><ul><ul>(\([a-z]\)|\d+)\s*([^<]|<i>|</i>)*</ul></ul></p>'),
+		untagged_par,
+		table
 	),
 	OBJECT('programme_minute','')
 	)
@@ -264,7 +299,8 @@ next_committee=SEQ(
 	)
 
 minute_programme=SEQ(
-	pattern(paragraph_number+'(?P<maintext>[\s\S]*?the following provisions shall apply to (proceedings on )?the (?P<bill>[\s\S]*?Bill)( \[<i>Lords</i>\])?(-|:)?)</p>'),
+	parselib.TRACE(True),
+	pattern(paragraph_number+'(?P<maintext>[\s\S]*?the following (provisions|proceedings) shall apply to (proceedings on )?the (?P<bill>[\s\S]*?Bill)( \[<i>Lords</i>\])?(-|:|\s*for the purpose of[^<]*?)?)</p>'),
 	parselib.TRACE(False),
 	START('bill_programme','bill'),
 	FORCE(SEQ(
@@ -307,6 +343,7 @@ speaker_absence=SEQ(
 	)
 
 minute=OR(
+	minute_bill,
 	speaker_absence,
 	minute_programme,
 	minute_ra,
@@ -341,7 +378,7 @@ adjournment=SEQ(
 	pattern('\s*(<p( align=right)?>)?\s*\[Adjourned at (?P<time>\s*(\d+(\.\d+)?\s*(a\.m\.|p\.m\.)|12\s*midnight(\.)?))\s*(</p>)?'),
 	OBJECT('adjournment','','time'),
 	POSSIBLY(emptypar2),
-	parselib.TRACE(False)
+	parselib.TRACE(True)
 	)
 
 speaker_address=pattern('\s*(<p><ul>)?Mr Speaker(,|\.)(</ul></p>)?\s*<p><ul>The Lords, authorised by virtue of Her Majesty\'s Commission, for declaring Her Royal Assent to several Acts agreed upon by both Houses(, and under the Parliament Acts 1911 and 1949)? and for proroguing the present Parliament, desire the immediate attendance of this Honourable House in the House of Peers, to hear the Commission read.</ul></p>')
@@ -470,7 +507,7 @@ attr_sep=pattern('\s*<p><ul>\[by Act\]\s*\[[\s\S]*?\].</ul></p>')
 appendix=SEQ(
 	app_title,
 	DEBUG('after app_title'),
-	parselib.TRACE(False), 
+	parselib.TRACE(True), 
 	ANY(OR(
 		app_nopar,
 		minute_doubleindent,
@@ -491,7 +528,7 @@ appendix=SEQ(
 westminsterhall=SEQ(
 	START('westminsterhall'),
 	POSSIBLY(pattern('\s*<hr width=90%>')),
-	pattern('\s*(<p>\s*</p>|<p>\s*<p>)?\s*<p( align=center)?>\[W.H.,\s*No(\.)?\s*(?P<no>\d+)\s*\]</p>'),
+	pattern('\s*(<p>\s*</p>|<p>\s*<p>)?\s*<p( align=center)?>\s*\[\s*W.H.(,)?\s*No(\.)?\s*(?P<no>\d+)\s*\]\s*</p>'),
 	tagged(
 		tags=['p','font','b'],
 		first='\s*',
@@ -561,6 +598,7 @@ corrigenda=SEQ(
 	ANY(
 		OR(
 			pattern('\s*<p><ul>[\s\S]*?</ul></p>'),
+			pattern('\s*<ul>[\s\S]*?</ul>'),
 			untagged_par
 			)
 	),
@@ -650,7 +688,7 @@ def RunVotesFilters(fout, text, sdate):
 
         if result.success:
                 WriteXMLHeader(fout)
-                fout.write(result.text())
+                fout.write(result.text())  
         else:
                 raise Exception, "Failed to parse vote\n%s\n%s" % (result.text(), s[:128])
 
