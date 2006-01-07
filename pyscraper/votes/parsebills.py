@@ -100,12 +100,18 @@ def addprint(billdict, session, no, house, attrdict, sourcefilename):
 		for attr in attrdict:
 			if billattrdict.has_key(attr):
 				if billattrdict[attr]!=attrdict[attr]:
-					#raise Exception, "sourcefilename=%s session=%s no=%s house=%s attr=%s billattrdict[attr]=%s attrdict[attr]=%s\n\n billdict[attr]=%s\n attrdict=%s" %(sourcefilename, session, no, house, attr, billattrdict[attr], attrdict[attr], billdict, attrdict)
-					print Exception, "sourcefilename=%s session=%s no=%s house=%s attr=%s billattrdict[attr]=%s attrdict[attr]=%s\n" %(sourcefilename, session, no, house, attr, billattrdict[attr], attrdict[attr])	
+					
+					# horrid fix
+
+					if not (attr=='explanatory_note' and re.search('toc.htm$',attrdict[attr])):
+						#raise Exception, "sourcefilename=%s session=%s no=%s house=%s attr=%s billattrdict[attr]=%s attrdict[attr]=%s\n\n billdict[attr]=%s\n attrdict=%s" %(sourcefilename, session, no, house, attr, billattrdict[attr], attrdict[attr], billdict, attrdict)
+						print "sourcefilename=%s session=%s no=%s house=%s attr=%s billattrdict[attr]=%s attrdict[attr]=%s\n" %(sourcefilename, session, no, house, attr, billattrdict[attr], attrdict[attr])	
 			else:
-				billattrdict[attr]=attrdict[attr]			
+				billattrdict[attr]=attrdict[attr]
+				#print "(%s) adding to (%s, %s, %s) attrdict[%s]=%s" % (sourcefilename, session, no, house, attr, attrdict[attr])			
 	else:
 		billdict[(session, no, house)]=attrdict
+		#print "(%s) adding (%s, %s, %s)" % (sourcefilename, session, no, house)
 	
 def parsebillfile(sourcefilename, billdict):
 
@@ -188,14 +194,11 @@ billsourcedir=os.path.join(parldata,billsdir)
 
 billsources=filter(lambda s:re.search('bills',s),os.listdir(billsourcedir))
 
-#print billsources
-
 billdict={}
 for sourcefilename in billsources:
 	parsebillfile(os.path.join(billsourcedir,sourcefilename), billdict)
 
 outtree=maketree(billdict)
-print outtree
 
 outtree.write('billprint.xml')
 
