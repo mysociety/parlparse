@@ -21,7 +21,7 @@ def clean(s):
 	s=s.replace('</i>','')
 	
 	s=s.replace('&nbsp;',' ')
-	s=s.replace('&','<amp />')
+	s=s.replace('&','&amp;')
 
 	s=s.replace('\x99','&#214')
 
@@ -338,7 +338,7 @@ def OBJECT(name, body, *args):
 
 def START(name, *args, **keywords):
 	def anon(s,env):
-		#print "debug: starting object name=%s" % name
+		print "debug: starting object name=%s" % name
 		keyvaluelist=[(a, env[a]) for a in args] 
 		keyvaluelist.extend(keywords.iteritems())
 		attributes=['%s="%s" ' % (key, value) for (key, value) in keyvaluelist]
@@ -352,7 +352,7 @@ def START(name, *args, **keywords):
 
 def END(name):
 	def anon(s,env):
-		#print "debug: ending object name=%s" % name		
+		print "debug: ending object name=%s" % name		
 		result=Success([clean('</%s>\n' % name)])
 
 		return (s,env,result)
