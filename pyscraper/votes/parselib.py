@@ -275,7 +275,6 @@ def POSSIBLY(f):
 def CALL(f, *args):
 
 	def anon(s,env):
-		print "Calling", env, "+++++++++"
 		substring=str_flatten(map(lambda a: env[a], args))
 		local_env=env.copy()
 		(s1, env1, result)=f(substring, local_env)
