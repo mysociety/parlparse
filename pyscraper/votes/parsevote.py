@@ -18,10 +18,11 @@ from parselib import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT,
 
 sys.path.append("../")
 from xmlfilewrite import WriteXMLHeader
+from contextexception import ContextException
 
 # Names may have dots and hyphens in them.
 def namepattern(label='name'):
-	return '(?P<'+label+'>[-A-Za-z .]+)'
+	return "(?P<"+label+">[-A-Za-z .']+)"
 
 emptypar=pattern('\s*<p>\s*</p>\s*(?i)')
 emptypar2=pattern('\s*<p><ul>\s*</ul></p>\s*')
@@ -96,25 +97,52 @@ minute_order=SEQ(
 
 bill_second=SEQ(
 	pattern('; and ordered to be read a second time '),
-	futureday
+	futureday,
+	OBJECT('second_reading_scheduled','','billname')
 	) 
 
-minute_bill=SEQ(
-	parselib.TRACE(True),
-	pattern(paragraph_number+'(?P<billname>'+actpattern+' Bill),-(?P<sponsor>[-A-Za-z. ]*?)((,)? supported by (?P<supporters>[-A-Za-z., ]*?))?(,)? presented (a Bill to [\s\S]*?)(:)?\s*And the same was read the first time'),
+first_reading=SEQ(
+	DEBUG('checking minute bill'),
+	parselib.TRACE(True,vals=['minute_text']),
+	pattern('''(?P<billname>'''+actpattern+''' Bill),-(?P<sponsor>[-A-Za-z'. ]*?)((,)? supported by (?P<supporters>[-A-Za-z'., ]*?))?(,)? presented (\(under Standing Order No\. 50 \(Procedure upon bills whose main object is to create a charge upon the public revenue\)\) )?(a Bill to [\s\S]*?)(:)?\s*And the same was read the first time'''),
 	DEBUG('matched bill'),
 	parselib.TRACE(True),
 	POSSIBLY(bill_second),
 	DEBUG('checked bill second'),
-	parselib.TRACE(True),
-	pattern('\s*and to be printed \[Bill (?P<billno>\d+)\]\.</p>'),
+	parselib.TRACE(False),
+	pattern('\s*and to be printed \[\s*Bill\s*(?P<billno>\d+)\s*\](\.)?'),
 	OBJECT('first_reading','','billname','sponsor','billno'), #process_minute(),
-	parselib.TRACE(True),
-	POSSIBLY(SEQ(
-		pattern('''\s*<p><ul><i>Ordered</i>, That the Explanatory Notes relating to the '''+actpattern+''' Bill be printed \[Bill \d+-EN\]\.\s*</ul></p>''')
-		))
+	parselib.TRACE(False),
 	)
 
+second_reading=SEQ(
+	pattern('''(?P<billname>'''+actpattern+''') Bill,-The ''' + actpattern + ''' Bill was(,)? according to Order(,)? read a second time and stood committed to a Standing Committee(\.)?'''),
+	OBJECT('second_reading','','billname'),
+	OBJECT('commitalto_standing','','billname')
+	)
+
+bill_analysis=OR(
+	first_reading,
+	second_reading
+	)
+
+
+#minute_bill=SEQ(
+#	parselib.TRACE(False),
+#	pattern(paragraph_number+'(?P<billname>'+actpattern+' Bill),-(?P<sponsor>[-A-Za-z. ]*?)((,)? supported by (?P<supporters>[-A-Za-z., ]*?))?(,)? presented (a Bill to [\s\S]*?)(:)?\s*And the same was read the first time'),
+#	DEBUG('matched bill'),
+#	parselib.TRACE(False),
+#	POSSIBLY(bill_second),
+#	DEBUG('checked bill second'),
+#	parselib.TRACE(False),
+#	pattern('\s*and to be printed \[Bill (?P<billno>\d+)\]\.</p>'),
+#	OBJECT('first_reading','','billname','sponsor','billno'), #process_minute(),
+#	parselib.TRACE(False),
+#	POSSIBLY(SEQ(
+#		pattern('''\s*<p><ul><i>Ordered</i>, That the Explanatory Notes relating to the '''+actpattern+''' Bill be printed \[Bill \d+-EN\]\.\s*</ul></p>''')
+#		))
+#	)
+#
 
 #redundant
 minute_resolution=SEQ(
@@ -198,25 +226,35 @@ table=SEQ(
 speaker_absence=SEQ(
 	parselib.TRACE(False),
 	pattern('''\s*(The)? Speaker's Absence'''),
-	FORCE(SEQ(
-		pattern(',-The House being met, and the Speaker having leave of absence pursuant to paragraph \(3\) of Standing Order No\. 3 \(Deputy Speaker\)\, ' + namepattern('deputy')+', the (?P<position>((First|Second) Deputy |)Chairman of Ways and Means), proceeded to the Table\.'),
-	OBJECT('speaker_absence','','deputy','position')
-		))
+	OR(
+		SEQ(
+			pattern(',-The House being met, and the Speaker having leave of absence pursuant to paragraph \(3\) of Standing Order No\. 3 \(Deputy Speaker\)\, ' + namepattern('deputy')+', the (?P<position>((First|Second) Deputy |)Chairman of Ways and Means), proceeded to the Table\.'),
+			OBJECT('speaker_absence','','deputy','position')
+			),
+		SEQ(
+			pattern(',-<i>Resolved</i>, That the Speaker have leave of absence on '),
+			futureday,
+			pattern('[^<]*?\.-\(<i>'+namepattern('proposer')+'</i>\.'),
+			OBJECT('speaker_future_absence','','proposer')
+			)
+		)
 	)
 
 
 minute_plain=SEQ(
-	parselib.TRACE(False),
+	parselib.TRACE(True, length=512),
 	minute_main, 
-	parselib.TRACE(True, length=64),
+	parselib.TRACE(True, length=512),
 	START('minute','number'),
+	DEBUG('minute started'),
 	POSSIBLY(
 		OR(
-			CALL(speaker_absence,'minute_text')
+			CALL(speaker_absence,'minute_text'),
+			CALL(bill_analysis,'minute_text')
 			)
 		),
-	DEBUG('just completed speaker absence'),
-	parselib.TRACE(True, length=512),
+	DEBUG('just completed analyses'),
+	parselib.TRACE(False, length=512),
 	OBJECT('maintext', 'minute_text'),
 	ANY(OR(
 		minute_order,
@@ -264,7 +302,7 @@ next_committee=SEQ(
 	)
 
 minute_programme=SEQ(
-	parselib.TRACE(True),
+	parselib.TRACE(False),
 	pattern(paragraph_number+'(?P<maintext>[\s\S]*?the following (provisions|proceedings) shall apply to (proceedings on )?the (?P<bill>[\s\S]*?Bill)( \[<i>Lords</i>\])?(-|:|\s*for the purpose of[^<]*?)?)</p>'),
 	parselib.TRACE(False),
 	START('bill_programme','bill'),
@@ -298,7 +336,6 @@ minute_ra=SEQ(
 
 
 minute=OR(
-	minute_bill,
 	minute_programme,
 	minute_ra,
 	minute_plain,
@@ -332,7 +369,7 @@ adjournment=SEQ(
 	pattern('\s*(<p( align=right)?>)?\s*\[Adjourned at (?P<time>\s*(\d+(\.\d+)?\s*(a\.m\.|p\.m\.)|12\s*midnight(\.)?))\s*(</p>)?'),
 	OBJECT('adjournment','','time'),
 	POSSIBLY(emptypar2),
-	parselib.TRACE(True)
+	parselib.TRACE(False)
 	)
 
 speaker_address=pattern('\s*(<p><ul>)?Mr Speaker(,|\.)(</ul></p>)?\s*<p><ul>The Lords, authorised by virtue of Her Majesty\'s Commission, for declaring Her Royal Assent to several Acts agreed upon by both Houses(, and under the Parliament Acts 1911 and 1949)? and for proroguing the present Parliament, desire the immediate attendance of this Honourable House in the House of Peers, to hear the Commission read.</ul></p>')
@@ -461,7 +498,7 @@ attr_sep=pattern('\s*<p><ul>\[by Act\]\s*\[[\s\S]*?\].</ul></p>')
 appendix=SEQ(
 	app_title,
 	DEBUG('after app_title'),
-	parselib.TRACE(True), 
+	parselib.TRACE(False), 
 	ANY(OR(
 		app_nopar,
 		minute_doubleindent,
@@ -559,6 +596,27 @@ corrigenda=SEQ(
 	END('corrigenda')
 	)
 
+memorandum=SEQ(
+	pattern('\s*<p( align=center)?>MEMORANDUM</p>'),	
+	START('memorandum'),
+	POSSIBLY(
+		SEQ(
+			pattern('\s*<p align=center>(?P<text>[^<]*?)</p>'),
+			OBJECT('heading','','text')
+			)
+		),
+	POSSIBLY(
+		SEQ(
+			pattern('\s*<p>(?P<text>[^<]*?)</p>'),
+			OBJECT('paragraph','','text')
+			)
+		),	
+	END('memorandum')
+	)
+
+
+
+
 footnote=SEQ(
 	pattern('\s*Votes and Proceedings:'),
 	plaindate,
@@ -584,6 +642,7 @@ page=SEQ(
 	#westminsterhall,
 	POSSIBLY(corrigenda), 
 	#corrigenda,
+	POSSIBLY(memorandum),
 	POSSIBLY(footnote),
 	POSSIBLY(pattern('(\s|<p>|</p>)*')),
 	DEBUG('endpattern'),
@@ -644,7 +703,7 @@ def RunVotesFilters(fout, text, sdate):
                 WriteXMLHeader(fout)
                 fout.write(result.text())  
         else:
-                raise Exception, "Failed to parse vote\n%s\n%s" % (result.text(), s[:128])
+                raise ContextException("Failed to parse vote\n%s\n%s" % (result.text(), s[:128]))
 
 
 
