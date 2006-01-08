@@ -48,20 +48,29 @@ header=SEQ(
 
 
 meeting_time=SEQ(
-	pattern('\s*<p(?: align=center)?>The House met at (?P<texttime>[\s\S]*?).</p>'),
-	OBJECT('time','','texttime')
+	START('opening'),
+	pattern('\s*(<p>1&nbsp;&nbsp;&nbsp;&nbsp;|<p(?: align=center)?>)The House met at\s*'),
+	parselib.TRACE(True),
+	archtime,
+	parselib.TRACE(True),
+	OR(
+		pattern('\s*\.'),
+		pattern('; and the Speaker Elect having taken the Chair;')
+		),
+	pattern('</p>'),
+	END('opening')
 	)
 
 
 speaker_signature=SEQ(
 	tagged(first='\s*',
 		tags=['p','b','i','font'],
-		p='(?P<speaker>[a-zA-Z. ]+)',
+		p="(?P<speaker>[-a-zA-Z.' ]+)",
 		padding='\s|&nbsp;',
 		last='(<font size=3>|\s|</p>)*'),
 	tagged(first='\s*',
 		tags=['p','b','i','font'],
-		p='(?P<title>(Deputy )?Speaker)(&nbsp;|\s)*',
+		p='(?P<title>(Deputy )?Speaker(\s*Elect)?)(&nbsp;|\s)*',
 		padding='\s|&nbsp;'),
 	OBJECT('speaker_signature','','speaker')
 	)
@@ -72,7 +81,7 @@ paragraph_number='\s*<p>(?P<number>\d+)(&nbsp;)*'
 
 
 heading=SEQ(
-	pattern('\s*(<p><ul>|<p align=center>)<i>(?P<desc>[\s\S]*?</i>(\d|:|\.|,)*)(</ul>)?</p>'),
+	pattern('\s*(<p><ul>|<p align=center>)<i>(?P<desc>([^<]|<i>|</i>)*?)(</ul>)?</p>'),
 	OBJECT('heading', 'desc')
 	)
 
@@ -115,7 +124,13 @@ first_reading=SEQ(
 	parselib.TRACE(False),
 	)
 
-second_reading=SEQ(
+second_reading1=SEQ(
+	pattern('''(?P<billname>'''+actpattern+''') Bill,-The ''' + actpattern + ''' Bill was(,)? according to Order(,)? read a second time and stood committed to a Standing Committee(\.)?'''),
+	OBJECT('second_reading','','billname'),
+	OBJECT('commitalto_standing','','billname')
+	)
+
+second_reading2=SEQ(
 	pattern('''(?P<billname>'''+actpattern+''') Bill,-The ''' + actpattern + ''' Bill was(,)? according to Order(,)? read a second time and stood committed to a Standing Committee(\.)?'''),
 	OBJECT('second_reading','','billname'),
 	OBJECT('commitalto_standing','','billname')
@@ -123,7 +138,7 @@ second_reading=SEQ(
 
 bill_analysis=OR(
 	first_reading,
-	second_reading
+	second_reading1 #,	second_reading2
 	)
 
 
@@ -240,6 +255,30 @@ speaker_absence=SEQ(
 		)
 	)
 
+oathtaking=SEQ(
+	START('oathtaking'),
+	parselib.TRACE(True),
+	DEBUG('Members take the Oath'),
+	pattern('\s*Members take the Oath or make Affirmation,-(Then )?the following Members took and subscribed the Oath, or made and subscribed the Affirmation required by law:'),
+	DEBUG('...Members take the Oath'),
+	END('oathtaking')
+	)
+
+member_single_oath=SEQ(
+	pattern("\s*<p>\s*(?P<mp_name>[-A-Za-z'Ö, .]+)\s*</p>"),
+	DEBUG('got MP name'),
+	parselib.TRACE(True),
+	pattern("\s*<p>\s*(<i>for\s*</i>)?(?P<constituency>[-.A-Z',a-z&ô ]*?)</p>"),
+	OBJECT('oath','','mp_name','constituency')
+	) 
+
+member_oaths=ANY(
+	OR(
+		pattern('\s*<p><ul></ul></p>'),
+		member_single_oath
+		)
+	)
+	
 
 minute_plain=SEQ(
 	parselib.TRACE(True, length=512),
@@ -250,7 +289,11 @@ minute_plain=SEQ(
 	POSSIBLY(
 		OR(
 			CALL(speaker_absence,'minute_text'),
-			CALL(bill_analysis,'minute_text')
+			CALL(bill_analysis,'minute_text'),
+			SEQ(
+				CALL(oathtaking,'minute_text'),
+				member_oaths
+				)
 			)
 		),
 	DEBUG('just completed analyses'),
@@ -284,6 +327,7 @@ division=SEQ(
 
 programme_minute=SEQ(
 	OR(
+		pattern('\s*<p><i>([^<]|<i>|</i>)*?</p>'),
 		pattern('\s*<p><ul>(\d+\.|\(\d+\))\s*([^<]|<i>|</i>)*</ul></p>'),
 		pattern('\s*<p><ul><ul>(\([a-z]\)|\d+)\s*([^<]|<i>|</i>)*</ul></ul></p>'),
 		untagged_par,
@@ -437,10 +481,12 @@ prorogation=SEQ(IF(
 	)
 
 speaker_chair=SEQ(
-	pattern('\s*<p align=center>Mr Speaker will take the Chair at '),
+	POSSIBLY(pattern('\s*<TR><TD><HR size=1></TD></TR>')),
+	pattern('\s*(<tr><td><center>|<p align=center>)Mr Speaker (Elect )?will take the Chair at '),
 	archtime,
 	POSSIBLY(SEQ(pattern('\s*on\s*'),OR(plaindate,futureday))),
-	pattern('.</p>\s*')
+	pattern('.(</center></td></tr>|</p>)\s*'),
+	POSSIBLY(pattern('\s*<TR><TD><HR size=1></TD></TR>'))
 	)
 
 app_title=SEQ(
@@ -474,7 +520,7 @@ app_nopar=SEQ(
 	)
 
 misc_par=SEQ(
-	pattern('\s*<p( align=left)?>\s*(<ul>)?(?P<maintext>(?!\[W\.H\.|\[Adjourned)([^<]|<i>|</i>)*)(</ul>)?(</p>)?'),
+	pattern('\s*<p( align=left)?>\s*(<ul>)?(?P<maintext>(?!\[W\.H\.|\[Adjourned)([^<]|<i>|</i>)+)(</ul>)?(</p>)?'),
 	OBJECT('miscpar','maintext')
 	)
 
@@ -499,7 +545,7 @@ appendix=SEQ(
 	app_title,
 	DEBUG('after app_title'),
 	parselib.TRACE(False), 
-	ANY(OR(
+	ANY(SEQ(parselib.TRACE(True),OR(
 		app_nopar,
 		minute_doubleindent,
 		app_date,
@@ -511,7 +557,7 @@ appendix=SEQ(
 		app_par,
 		emptypar,
 		untagged_par
-		)),
+		))),
 	END('appendix'),
 	DEBUG('ended appendix')
 	)
@@ -528,14 +574,15 @@ westminsterhall=SEQ(
 		last='(<font size=3>)?(</p>)?'
 		),
 	POSSIBLY(SEQ(
-		pattern('\s*(<p>)?<b>\[pursuant to the Order of '),
+		pattern('(\s|<p>|<b>)*\[pursuant to the Order of '),
 		plaindate,
 		pattern('\]</b></p>'),
 		)),
 	pattern('\s*(<p( align=center)?>)?(<font size=3>)?The sitting (commenced|began) at (?i)'),
 	archtime,
 	pattern('.(</b>)?</p>'),
-	ANY(SEQ(parselib.TRACE(False),
+	DEBUG('remaining westminster hall'),
+	ANY(SEQ(parselib.TRACE(True),
 		OR(
 			adj_motion,
 			pattern('\s*<p><ul><ul>([^<])*?</ul></ul></p>'),
@@ -546,6 +593,14 @@ westminsterhall=SEQ(
 	parselib.TRACE(False),
 	speaker_signature,
 	END('westminsterhall'))	
+
+chairmens_panel=SEQ(
+	parselib.TRACE(True),
+	pattern('''\s*<p><b>CHAIRMEN'S PANEL</b></p>'''),
+	DEBUG('chairmen\'s panel...'),
+	pattern('''\s*<p>In pursuance of Standing Order No\. 4 \(Chairmen's Panel\), the Speaker nominated ([-A-Za-z Ö.']+?, )*?([-A-Za-z Ö.']+?) and ([-A-Za-z Ö.']+? )to be members of the Chairmen's Panel during this Session\.</p>'''),
+	OBJECT('chairmens_panel','')
+	)
 
 certificate=SEQ(
 	tagged(
@@ -637,6 +692,7 @@ page=SEQ(
 		otherwise=SEQ(adjournment, speaker_signature, speaker_chair)), 
 	DEBUG('now check for appendices'),
 	ANY(appendix),
+	POSSIBLY(chairmens_panel),
 	POSSIBLY(certificate), #certificate,
 	POSSIBLY(westminsterhall), 
 	#westminsterhall,
@@ -662,12 +718,13 @@ def parsevotetext(s, date):
 	# I am not sure what the <legal 1> tags are for. At present
 	# it seems safe to remove them.
 	s=s.replace('<legal 1>','<p><ul>')
-	s=s.replace('<br><br>','</p><p>')
-	s=s.replace('<br>','</p>')
+	s=re.sub('<br><br>(?i)','</p><p>',s)
+	s=re.sub('<br>(?i)','</p>',s)
 	s=s.replace('&#151;','-')
 	s=s.replace('\x99','&#214;')
 	s=s.replace('</i></b><b><i><i><b>','') # has no useful effect
 	s=s.replace('</i></b></i></b>','</i></b>')
+	s=re.sub('alaign=center(?i)','align=center',s)
 	s=re.sub('<i>\s*</i>','',s)
 	s=re.sub('</p>\s*</ul>','</p>\n',s)
 
