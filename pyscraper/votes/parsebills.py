@@ -6,7 +6,8 @@ import os
 import os.path
 import sys
 import re
-from elementtree.ElementTree import ElementTree,Element
+import elementtree.ElementTree
+from elementtree.ElementTree import ElementTree,Element,ProcessingInstruction
 
 # Patterns
 billpattern=re.compile('''<tr[^>]*>\s*<td[^>]*>\s*<img src="/pa/img/(?P<house>sqrgrn.gif|diamdrd.gif)"[^>]*></TD>\s*<TD><FONT size=\+1><A HREF="(?P<link>[^"]*)"\s*TITLE="Link to (?P<billname1>[-a-z.,A-Z0-9()\s]*?) Bill(\s*\[HL\]\s*)?"><B>(?P<billname2>[-a-z.,A-Z0-9()\s]*?) Bill(\s*\[HL\])?\s*\((?P<billno>\d+)\)\s*</B></A></FONT>(?P<rest>[\s\S]*?)</td></tr>(?i)''')
@@ -171,8 +172,9 @@ def parsebillfile(sourcefilename, billdict):
 
 def maketree(printdict):
 	root=Element('top')
-
+	
 	i=0
+
 	for (session, no, house) in printdict.keys():
 		i=i+1
 		elem=Element('print',printdict[(session, no, house)])
@@ -200,5 +202,10 @@ for sourcefilename in billsources:
 
 outtree=maketree(billdict)
 
-outtree.write('billprint.xml')
+#outtree.write('billprint-temp.xml')
+s=elementtree.ElementTree.tostring(outtree.getroot())
+s='<?xml version="1.0" ?>\n<?xml-stylesheet type="text/xsl" href="style/billprint.xsl"?>\n' + s
+
+fout=open('billprint.xml','w')
+fout.write(s)
 
