@@ -28,7 +28,10 @@ from pullgluepages import PullGluePages, PullGlueToday
 from lordspullgluepages import LordsPullGluePages
 from runfilters import RunFiltersDir, RunDebateFilters, RunWransFilters, RunLordsFilters, RunWestminhallFilters, RunWMSFilters
 from regmemfilter import RunRegmemFilters
-from parsevote import RunVotesFilters
+
+# commented out because Francis Davey hasn't checked in a module that he imports in the following file
+#from parsevote import RunVotesFilters
+
 from regmempullgluepages import RegmemPullGluePages
 from miscfuncs import SetQuiet, bNotQuiet, IsNotQuiet
 

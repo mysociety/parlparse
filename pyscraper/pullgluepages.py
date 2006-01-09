@@ -118,7 +118,7 @@ def GlueByNext(outputFileName, url, urlx):
 
 	# loop which scrapes through all the pages following the nextlinks
 	while 1:
-		# print " reading " + url
+		#print " reading " + url
 		ur = urllib.urlopen(url)
 		sr = ur.read()
 		ur.close();
@@ -298,18 +298,20 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 		if not url0:
 			continue
 
-		# print commonsIndexRecord.date, (latestFilePath and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
+		if miscfuncs.IsNotQuiet():
+			print commonsIndexRecord.date, (latestFilePath and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
 
 		# now we take out the local pointer and start the gluing
 		GlueByNext(tempfilename, url0, urlx)
 
 		if CompareScrapedFiles(latestFilePath, tempfilename) == "SAME":
-			# print "  matched with:", latestFilePath
+			if miscfuncs.IsNotQuiet():
+				print "  matched with:", latestFilePath
 			continue
 
 		# before we copy over the file from tempfilename to nextFilePath, copy over the patch if there is one.
 		ReplicatePatchToNewScrapedVersion(folder, latestFileStem, latestFilePath, nextFilePath, nextFileStem)
-		
+
 		# now commit the file
 		os.rename(tempfilename, nextFilePath)
 
@@ -326,7 +328,7 @@ def ReplicatePatchToNewScrapedVersion(folderName, latestFileStem, latestFilePath
 	if os.path.isfile(lpatchfilenext):
 		print "    *****Warning: patchfile already present for newly scraped file:", lpatchfilenext
 		assert False  # patchfile already present for newly scraped file
-	
+
 	# now find the patch file and copy it in, verifying we know what we're doing
 	lpatchfile, lorgfile, tmpfile = GenPatchFileNames(folderName, latestFileStem)[:3]
 	assert lorgfile == latestFilePath
