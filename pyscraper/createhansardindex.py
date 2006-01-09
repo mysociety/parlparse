@@ -42,7 +42,7 @@ daynames = '(?:Sun|Mon|Tues|Wednes|Thurs|Fri|Satur)day'
 # the chunk [A-Za-z<> ] catches the text "Questions tabled during the recess
 # and answered on" on http://www.publications.parliament.uk/pa/cm/cmvol390.htm
 redatename = '<b>[A-Za-z<> ]*?\s*(\S+\s+\d+\s+(?:%s)\s+\d+)\s*</b>' % monthnames
-revotelink = '<a\s+href="([^"]*)">(?:<b>)?((?:%s),(?:&nbsp;| )\d+\S*?(?:&nbsp;| )(?:%s)(?:&nbsp;| )\d+)\s*(?:</b>)?</(?:a|td)>(?i)' % (daynames, monthnames)
+revotelink = '<a\s+href="([^"]*)">(?:<b>\s*)?((?:%s),(?:&nbsp;| )\d+\S*?(?:&nbsp;| )(?:%s)(?:&nbsp;| )\d+)\s*(?:</b>)?</(?:a|td)>(?i)' % (daynames, monthnames)
 relink = '<a\s+href="([^"]*)">(?:<b>)?([^<]*)(?:</b>)?</(?:a|font)>(?i)'
 
 # we lack the patching system here to overcome these special cases
@@ -200,6 +200,24 @@ def CmAllIndexPages(urlindex):
 	return res
 
 
+def CmAllIndexPagesVotes(urlindex):
+
+	# all urls pages which have links into day debates are put into this list
+	# except the first one, which will have been looked at
+	res = [ ]
+
+	urindex = urllib.urlopen(urlindex)
+	srindex = urindex.read()
+	urindex.close()
+
+	# extract the per month volumes
+	# <a href="cmhn0310.htm"><b>October</b></a>
+	monthindexp = '<a href="([^"]*)"><b>(?:%s)(?: \d+)?</b>(?i)' %  monthnames
+	monthlinks = re.findall(monthindexp, srindex)
+	for monthl in monthlinks:
+		res.append(urlparse.urljoin(urlindex, re.sub('\s', '', monthl)))
+	return res
+
 def WriteXML(fout, urllist):
 	fout.write('<?xml version="1.0" encoding="ISO-8859-1"?>\n')
 	fout.write("<publicwhip>\n\n")
@@ -266,7 +284,7 @@ def UpdateHansardIndex(force):
 	urllisth = map(lambda r: r + (reses[r][0],), reses.keys())
 	urllisth.sort()
 	urllisth.reverse()
-		
+	#print urllisth
 
 	if not force:
 		# compare this leading term against the old index
@@ -286,7 +304,7 @@ def UpdateHansardIndex(force):
 	else:
 		# extend our list to all the pages
 		cres = CmAllIndexPages(urlcmindex)
-		cres += CmAllIndexPages(urlvotesindex)
+		cres += CmAllIndexPagesVotes(urlvotesindex)
 		for cr in cres:
 			CmIndexFromPage(cr)
 		urllisth = map(lambda r: r + (reses[r][0],), reses.keys())
