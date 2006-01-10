@@ -10,8 +10,8 @@ import sys
 import os
 import os.path
 import re
-import parselib
-import dates
+import fd-parse
+import fd-dates
 from dates import *
 
 from parselib import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, FORCE, CALL, pattern, tagged
@@ -345,6 +345,11 @@ next_committee=SEQ(
 	OBJECT('committee_to_morrow','')
 	)
 
+programme_order=SEQ(
+	pattern('''\s*<p><ul><i>Ordered(,)?\s*</i>That the following provisions shall apply to the '''+actpattern+''' Bill:</ul></p>'''),
+	ANY(programme_minute)
+	)	
+
 minute_programme=SEQ(
 	parselib.TRACE(False),
 	pattern(paragraph_number+'(?P<maintext>[\s\S]*?the following (provisions|proceedings) shall apply to (proceedings on )?the (?P<bill>[\s\S]*?Bill)( \[<i>Lords</i>\])?(-|:|\s*for the purpose of[^<]*?)?)</p>'),
@@ -357,6 +362,7 @@ minute_programme=SEQ(
 			programme_minute,
 			)),
 		POSSIBLY(division),
+		POSSIBLY(programme_order),
 		POSSIBLY(next_committee)
 		)),
 	END('bill_programme')
@@ -576,7 +582,7 @@ westminsterhall=SEQ(
 	POSSIBLY(SEQ(
 		pattern('(\s|<p>|<b>)*\[pursuant to the Order of '),
 		plaindate,
-		pattern('\]</b></p>'),
+		pattern('\](</font>)?</b></p>'),
 		)),
 	pattern('\s*(<p( align=center)?>)?(<font size=3>)?The sitting (commenced|began) at (?i)'),
 	archtime,
@@ -596,9 +602,17 @@ westminsterhall=SEQ(
 
 chairmens_panel=SEQ(
 	parselib.TRACE(True),
-	pattern('''\s*<p><b>CHAIRMEN'S PANEL</b></p>'''),
+	tagged(
+		first='\s*',
+		tags=['p','b'],
+		p='''CHAIRMEN'S PANEL'''
+		),
 	DEBUG('chairmen\'s panel...'),
-	pattern('''\s*<p>In pursuance of Standing Order No\. 4 \(Chairmen's Panel\), the Speaker nominated ([-A-Za-z Ö.']+?, )*?([-A-Za-z Ö.']+?) and ([-A-Za-z Ö.']+? )to be members of the Chairmen's Panel during this Session\.</p>'''),
+	pattern('''\s*<p>In pursuance of Standing Order No\. 4 \(Chairmen's Panel\), the Speaker (has )?nominated '''),
+	OR(
+		pattern('''([-A-Za-z Ö.']+?, )*?([-A-Za-z Ö.']+?) and ([-A-Za-z Ö.']+? )to be members of the Chairmen's Panel during this Session\.</p>'''),
+		pattern('''([-A-Za-z Ö.']+? )to be a member of the Chairmen's Panel during this Session( of Parliament)?\.</p>''')
+		),
 	OBJECT('chairmens_panel','')
 	)
 
@@ -693,6 +707,7 @@ page=SEQ(
 	DEBUG('now check for appendices'),
 	ANY(appendix),
 	POSSIBLY(chairmens_panel),
+	#chairmens_panel,
 	POSSIBLY(certificate), #certificate,
 	POSSIBLY(westminsterhall), 
 	#westminsterhall,
