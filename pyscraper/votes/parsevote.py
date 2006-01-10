@@ -10,8 +10,8 @@ import sys
 import os
 import os.path
 import re
-import fd-parse
-import fd-dates
+import fd_parse
+import fd_dates
 from dates import *
 
 from parselib import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, FORCE, CALL, pattern, tagged
