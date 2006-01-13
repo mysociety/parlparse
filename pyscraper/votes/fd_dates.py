@@ -1,5 +1,5 @@
-import parselib
-from parselib import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, FORCE, CALL, pattern, tagged
+import fd_parse
+from fd_parse import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, FORCE, CALL, pattern, tagged
 
 # Time handling
 
@@ -35,16 +35,16 @@ idate=SEQ(
 	pattern('\s*<i>\s*'),
 	dayname,
 	DEBUG('got dayname'),
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	POSSIBLY(pattern('\s*</i>\s*')),
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	OR(
 		pattern('\s*(?P<dayno>\d+)(st|nd|rd|th)\s*<i>\s*'),
 		pattern('\s*(?P<dayno>\d+)(<i>)?(st|nd|rd|th)\s*')
 	),
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	DEBUG('got dayordinal'),
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	monthname,
 	DEBUG('got monthname'),
 	OR(

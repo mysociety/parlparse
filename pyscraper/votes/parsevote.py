@@ -11,10 +11,9 @@ import os
 import os.path
 import re
 import fd_parse
-import fd_dates
-from dates import *
+from fd_dates import *
 
-from parselib import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, FORCE, CALL, pattern, tagged
+from fd_parse import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, FORCE, CALL, pattern, tagged
 
 sys.path.append("../")
 from xmlfilewrite import WriteXMLHeader
@@ -50,9 +49,9 @@ header=SEQ(
 meeting_time=SEQ(
 	START('opening'),
 	pattern('\s*(<p>1&nbsp;&nbsp;&nbsp;&nbsp;|<p(?: align=center)?>)The House met at\s*'),
-	parselib.TRACE(True),
+	fd_parse.TRACE(True),
 	archtime,
-	parselib.TRACE(True),
+	fd_parse.TRACE(True),
 	OR(
 		pattern('\s*\.'),
 		pattern('; and the Speaker Elect having taken the Chair;')
@@ -112,16 +111,16 @@ bill_second=SEQ(
 
 first_reading=SEQ(
 	DEBUG('checking minute bill'),
-	parselib.TRACE(True,vals=['minute_text']),
+	fd_parse.TRACE(True,vals=['minute_text']),
 	pattern('''(?P<billname>'''+actpattern+''' Bill),-(?P<sponsor>[-A-Za-z'. ]*?)((,)? supported by (?P<supporters>[-A-Za-z'., ]*?))?(,)? presented (\(under Standing Order No\. 50 \(Procedure upon bills whose main object is to create a charge upon the public revenue\)\) )?(a Bill to [\s\S]*?)(:)?\s*And the same was read the first time'''),
 	DEBUG('matched bill'),
-	parselib.TRACE(True),
+	fd_parse.TRACE(True),
 	POSSIBLY(bill_second),
 	DEBUG('checked bill second'),
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	pattern('\s*and to be printed \[\s*Bill\s*(?P<billno>\d+)\s*\](\.)?'),
 	OBJECT('first_reading','','billname','sponsor','billno'), #process_minute(),
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	)
 
 second_reading1=SEQ(
@@ -143,16 +142,16 @@ bill_analysis=OR(
 
 
 #minute_bill=SEQ(
-#	parselib.TRACE(False),
+#	fd_parse.TRACE(False),
 #	pattern(paragraph_number+'(?P<billname>'+actpattern+' Bill),-(?P<sponsor>[-A-Za-z. ]*?)((,)? supported by (?P<supporters>[-A-Za-z., ]*?))?(,)? presented (a Bill to [\s\S]*?)(:)?\s*And the same was read the first time'),
 #	DEBUG('matched bill'),
-#	parselib.TRACE(False),
+#	fd_parse.TRACE(False),
 #	POSSIBLY(bill_second),
 #	DEBUG('checked bill second'),
-#	parselib.TRACE(False),
+#	fd_parse.TRACE(False),
 #	pattern('\s*and to be printed \[Bill (?P<billno>\d+)\]\.</p>'),
 #	OBJECT('first_reading','','billname','sponsor','billno'), #process_minute(),
-#	parselib.TRACE(False),
+#	fd_parse.TRACE(False),
 #	POSSIBLY(SEQ(
 #		pattern('''\s*<p><ul><i>Ordered</i>, That the Explanatory Notes relating to the '''+actpattern+''' Bill be printed \[Bill \d+-EN\]\.\s*</ul></p>''')
 #		))
@@ -166,7 +165,7 @@ minute_resolution=SEQ(
 	)
 
 minute_doubleindent=SEQ(
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	pattern('\s*<p><ul><ul>'),
 	START('doubleindent'),
 	OR(
@@ -179,13 +178,13 @@ minute_doubleindent=SEQ(
 			maintext
 			)
 		),
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	pattern('</ul></ul></p>'),
 	END('doubleindent')
 	)
 
 minute_tripleindent=SEQ(
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	pattern('\s*<p><ul><ul><ul>'),
 	START('tripleindent'),
 	OR(
@@ -198,7 +197,7 @@ minute_tripleindent=SEQ(
 			maintext
 			)
 		),
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	pattern('</ul></ul></ul></p>'),
 	END('tripleindent')
 	)
@@ -223,7 +222,7 @@ dateheading=SEQ(
 
 untagged_par=SEQ(
 	DEBUG('checking for untagged paragraph'),
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	pattern('\s*(?P<maintext>(?![^<]*\[Adjourned)([^<]|<i>|</i>)+)\s*(</ul>|</p>)?'),
 	OBJECT('untagged_par','maintext')
 	)
@@ -239,7 +238,7 @@ table=SEQ(
 
 
 speaker_absence=SEQ(
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	pattern('''\s*(The)? Speaker's Absence'''),
 	OR(
 		SEQ(
@@ -257,7 +256,7 @@ speaker_absence=SEQ(
 
 oathtaking=SEQ(
 	START('oathtaking'),
-	parselib.TRACE(True),
+	fd_parse.TRACE(True),
 	DEBUG('Members take the Oath'),
 	pattern('\s*Members take the Oath or make Affirmation,-(Then )?the following Members took and subscribed the Oath, or made and subscribed the Affirmation required by law:'),
 	DEBUG('...Members take the Oath'),
@@ -267,7 +266,7 @@ oathtaking=SEQ(
 member_single_oath=SEQ(
 	pattern("\s*<p>\s*(?P<mp_name>[-A-Za-z'Ö, .]+)\s*</p>"),
 	DEBUG('got MP name'),
-	parselib.TRACE(True),
+	fd_parse.TRACE(True),
 	pattern("\s*<p>\s*(<i>for\s*</i>)?(?P<constituency>[-.A-Z',a-z&ô ]*?)</p>"),
 	OBJECT('oath','','mp_name','constituency')
 	) 
@@ -281,9 +280,9 @@ member_oaths=ANY(
 	
 
 minute_plain=SEQ(
-	parselib.TRACE(True, length=512),
+	fd_parse.TRACE(True, length=512),
 	minute_main, 
-	parselib.TRACE(True, length=512),
+	fd_parse.TRACE(True, length=512),
 	START('minute','number'),
 	DEBUG('minute started'),
 	POSSIBLY(
@@ -297,7 +296,7 @@ minute_plain=SEQ(
 			)
 		),
 	DEBUG('just completed analyses'),
-	parselib.TRACE(False, length=512),
+	fd_parse.TRACE(False, length=512),
 	OBJECT('maintext', 'minute_text'),
 	ANY(OR(
 		minute_order,
@@ -311,11 +310,11 @@ minute_plain=SEQ(
 	END('minute'))
 
 division=SEQ(
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	pattern('\s*<p><ul>The House divided(\.)?</ul></p>'),
 	DEBUG('matched division'),
 	FORCE(SEQ(
-		parselib.TRACE(False),
+		fd_parse.TRACE(False),
 		pattern('\s*<p><ul><ul>Tellers for the Ayes, '+namepattern('ayeteller1')+', '+namepattern('ayeteller2')+': (?P<ayevote>\d+)(\.)?</ul></ul></p>'),
 		DEBUG('ayeteller1'),
 		pattern('\s*<p><ul><ul>Tellers for the Noes, '+namepattern('noteller1')+', '+namepattern('noteller2')+'(:)?\s*(?P<novote>\d+)(\.)?</ul></ul></p>'),
@@ -351,9 +350,9 @@ programme_order=SEQ(
 	)	
 
 minute_programme=SEQ(
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	pattern(paragraph_number+'(?P<maintext>[\s\S]*?the following (provisions|proceedings) shall apply to (proceedings on )?the (?P<bill>[\s\S]*?Bill)( \[<i>Lords</i>\])?(-|:|\s*for the purpose of[^<]*?)?)</p>'),
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	START('bill_programme','bill'),
 	FORCE(SEQ(
 		DEBUG('matched the start of a Bill programme'),
@@ -372,9 +371,9 @@ minute_ra=SEQ(
 	pattern(paragraph_number+'Royal Assent'),
 	FORCE(SEQ(
 		START('royal_assent'),
-		parselib.TRACE(False),
+		fd_parse.TRACE(False),
 		pattern('(,)?(-)?The (Deputy )?Speaker notified the House(,)? in accordance with the Royal Assent Act 1967(,)? That Her Majesty had signified her Royal Assent to the following Act(s)?(,)? agreed upon by both Houses((,)? and to the following Measure(s)? passed under the provisions of the Church of England \((Assembly )?Powers\) Act 1919)?(:)?</p>(?i)'),
-		parselib.TRACE(False),
+		fd_parse.TRACE(False),
 		ANY(OR(
 			act,
 			measurepattern,
@@ -398,7 +397,7 @@ adj_motion=SEQ(
 		p='Adjournment,-<i>Resolved</i>, That the sitting be now adjourned.-',
 		fixpunctuation=True
 		),
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	pattern('\(<i>'+namepattern('proposer')+'</i>(\.)?\)(\s|</ul>|</p>)*'),
 	OBJECT('adj_motion','','proposer')
 	)
@@ -408,7 +407,7 @@ adjournment=SEQ(
 	POSSIBLY(OR(
 		SEQ(
 		pattern('\s*And accordingly, the House, having continued to sit till'),
-		parselib.TRACE(False),
+		fd_parse.TRACE(False),
 		archtime,
 		pattern('\s*(,)?\s*adjourned (till|until) to-morrow(\.)?')
 		),
@@ -419,7 +418,7 @@ adjournment=SEQ(
 	pattern('\s*(<p( align=right)?>)?\s*\[Adjourned at (?P<time>\s*(\d+(\.\d+)?\s*(a\.m\.|p\.m\.)|12\s*midnight(\.)?))\s*(</p>)?'),
 	OBJECT('adjournment','','time'),
 	POSSIBLY(emptypar2),
-	parselib.TRACE(False)
+	fd_parse.TRACE(False)
 	)
 
 speaker_address=pattern('\s*(<p><ul>)?Mr Speaker(,|\.)(</ul></p>)?\s*<p><ul>The Lords, authorised by virtue of Her Majesty\'s Commission, for declaring Her Royal Assent to several Acts agreed upon by both Houses(, and under the Parliament Acts 1911 and 1949)? and for proroguing the present Parliament, desire the immediate attendance of this Honourable House in the House of Peers, to hear the Commission read.</ul></p>')
@@ -434,7 +433,7 @@ royal_assent=SEQ(
 	POSSIBLY(SEQ(
 		START('parlact'),
 		DEBUG('attempting to match parliament act'),
-		parselib.TRACE(False),
+		fd_parse.TRACE(False),
 		pattern('\s*The Royal Assent was given to the following Act, passed under the provisions of the Parliament Acts 1911 and 1949:'),
 		act,
 		pattern('\s*\(The said Bill having been endorsed by the Speaker with the following Certificate:</p><p>'),
@@ -450,11 +449,11 @@ royal_speech=SEQ(
 	DEBUG('starting the royal speech'),
 	pattern('\s*<p>\s*(<ul>)?And afterwards Her Majesty\'s Most Gracious Speech was delivered to both Houses of Parliament by the Lord High Chancellor \(in pursuance of Her Majesty\'s Command\), as follows:(</ul>)?</p>'),
 	DEBUG('royal speech: My Lords'),
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	pattern('\s*<p>\s*(<ul>)?My Lords and Members of the House of Commons(,)?(</ul>)?</p>'),
 	pattern('(?P<royalspeech>[\s\S]*?)<p>\s*(<ul>)?I pray that the blessing of Almighty God may (attend you|rest upon your counsels)\.\s*(</ul>)?</p>'),
 	DEBUG('end of royal speech'),
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	DEBUG('finished the royal speech'),
 	OBJECT('royalspeech','royalspeech')
 	)
@@ -497,13 +496,13 @@ speaker_chair=SEQ(
 
 app_title=SEQ(
 	DEBUG('checking for app_title'),
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	tagged(first='\s*',
 		tags=['p','ul'],
 		padding='\s',
 		p='(<p align=center>)?APPENDIX\s*(?P<appno>(III|II|I|))(</p>)?(?=</)'
 	),
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	DEBUG('starting object appendix'),
 	START('appendix','appno')
 	)
@@ -511,7 +510,7 @@ app_title=SEQ(
 app_heading=heading
 
 app_date=SEQ(
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	pattern('\s*<p( align=center)?>'),
 	START('date_heading'),
 	idate,
@@ -550,8 +549,8 @@ attr_sep=pattern('\s*<p><ul>\[by Act\]\s*\[[\s\S]*?\].</ul></p>')
 appendix=SEQ(
 	app_title,
 	DEBUG('after app_title'),
-	parselib.TRACE(False), 
-	ANY(SEQ(parselib.TRACE(True),OR(
+	fd_parse.TRACE(False), 
+	ANY(SEQ(fd_parse.TRACE(True),OR(
 		app_nopar,
 		minute_doubleindent,
 		app_date,
@@ -588,7 +587,7 @@ westminsterhall=SEQ(
 	archtime,
 	pattern('.(</b>)?</p>'),
 	DEBUG('remaining westminster hall'),
-	ANY(SEQ(parselib.TRACE(True),
+	ANY(SEQ(fd_parse.TRACE(True),
 		OR(
 			adj_motion,
 			pattern('\s*<p><ul><ul>([^<])*?</ul></ul></p>'),
@@ -596,12 +595,12 @@ westminsterhall=SEQ(
 			untagged_par
 			)), 
 		until=adjournment),
-	parselib.TRACE(False),
+	fd_parse.TRACE(False),
 	speaker_signature,
 	END('westminsterhall'))	
 
 chairmens_panel=SEQ(
-	parselib.TRACE(True),
+	fd_parse.TRACE(True),
 	tagged(
 		first='\s*',
 		tags=['p','b'],
@@ -701,7 +700,7 @@ page=SEQ(
 	#prayers,
 ## prayers don't necessary come first (though they usually do)
 	ANY(
-		SEQ(parselib.TRACE(False),OR(prayers,minute)),
+		SEQ(fd_parse.TRACE(False),OR(prayers,minute)),
 		until=prorogation, 
 		otherwise=SEQ(adjournment, speaker_signature, speaker_chair)), 
 	DEBUG('now check for appendices'),
