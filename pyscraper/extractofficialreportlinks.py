@@ -1,4 +1,4 @@
-#! /usr/bin/python2.3
+#! /usr/bin/python2.4
 import sys
 import re
 import string

@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.3
+#!/usr/bin/env python2.4
 # vim:sw=4:ts=4:et:nowrap
 
 # Extact list of dates of recesses of parliament, and write a message out on
@@ -28,6 +28,7 @@ ur = urllib.urlopen(url)
 co = ur.read()
 ur.close()
 co = co.replace("Febraury", "February")
+co = co.replace("\xa0", "")
 
 def domail(subject, msg):
 	msg = "From: The Recess Gods <francis@flourish.org>\n" +  \

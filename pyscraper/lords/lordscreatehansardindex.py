@@ -1,4 +1,3 @@
-#! /usr/bin/python2.3
 # vim:sw=8:ts=8:et:nowrap
 
 import sys
@@ -9,7 +8,6 @@ import string
 import re
 import xml.sax
 
-# In Debian package python2.3-egenix-mxdatetime
 import mx.DateTime
 
 import miscfuncs

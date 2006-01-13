@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.3
+#!/usr/bin/env python2.4
 # -*- coding: latin-1 -*-
 # $Id: bbcconv.py,v 1.4 2005/03/25 23:33:35 theyworkforyou Exp $
 
