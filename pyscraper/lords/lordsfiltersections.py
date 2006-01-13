@@ -1,13 +1,9 @@
-#! /usr/bin/python2.3
-# vim:sw=8:ts=8:et:nowrap
-
 import sys
 import re
 import os
 import string
 
 
-# In Debian package python2.3-egenix-mxdatetime
 import mx.DateTime
 
 

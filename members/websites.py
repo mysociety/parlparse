@@ -1,4 +1,4 @@
-#!/usr/local/bin/python2.3
+#!/usr/local/bin/python2.4
 # -*- coding: latin-1 -*-
 
 # Makes file connecting MP ids to their homepages

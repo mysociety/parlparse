@@ -1,4 +1,4 @@
-#! /usr/bin/env python2.3
+#! /usr/bin/env python2.4
 
 # Renames a folder of MP photos from filenames containing their names to
 # filenames containing their member id

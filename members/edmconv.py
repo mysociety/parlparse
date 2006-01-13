@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.3
+#!/usr/bin/env python2.4
 # -*- coding: latin-1 -*-
 # $Id: edmconv.py,v 1.5 2004/12/17 11:06:19 theyworkforyou Exp $
 

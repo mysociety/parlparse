@@ -1,5 +1,3 @@
-#! /usr/bin/python2.3
-
 import sys
 import re
 import string

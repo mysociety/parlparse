@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.3
+#!/usr/bin/env python2.4
 # $Id: faxyourmpfinaladdup.py,v 1.1 2005/03/08 18:22:33 frabcus Exp $
 # vim:sw=4:ts=4:et:nowrap
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.3
+#!/usr/bin/env python2.4
 # $Id: guardianconv.py,v 1.10 2004/12/24 14:46:56 theyworkforyou Exp $
 
 # Converts tab file of Guardian URLs into XML.  Also extracts swing/majority

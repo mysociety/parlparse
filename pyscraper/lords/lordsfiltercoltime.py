@@ -1,4 +1,3 @@
-#! /usr/bin/python2.3
 # vim:sw=8:ts=8:et:nowrap
 
 import sys

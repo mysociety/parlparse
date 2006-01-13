@@ -1,4 +1,4 @@
-#! /usr/bin/python2.3
+#! /usr/bin/python2.4
 # vim:sw=8:ts=8:et:nowrap
 
 import cStringIO

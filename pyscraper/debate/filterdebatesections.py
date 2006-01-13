@@ -1,4 +1,3 @@
-#! /usr/bin/python2.3
 # vim:sw=8:ts=8:et:nowrap
 
 import sys
@@ -7,9 +6,7 @@ import os
 import string
 import copy
 
-# In Debian package python2.3-egenix-mxdatetime
 import mx.DateTime
-
 
 from miscfuncs import ApplyFixSubstitutions
 from contextexception import ContextException

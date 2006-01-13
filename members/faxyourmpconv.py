@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.3
+#!/usr/bin/env python2.4
 # $Id: faxyourmpconv.py,v 1.5 2004/12/18 18:11:57 theyworkforyou Exp $
 # vim:sw=4:ts=4:et:nowrap
 
