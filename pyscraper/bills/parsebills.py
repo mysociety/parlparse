@@ -1,6 +1,10 @@
+#!/usr/bin/python2.4
 # vim:sw=8:ts=8:et:nowrap
 # To do:
 # Make links absolute (against baselink) not relative
+
+# Converts all the daily parsed bill pages from chggpages
+# into one XML file containing all the data from it
 
 import os
 import os.path
@@ -8,6 +12,9 @@ import sys
 import re
 import elementtree.ElementTree
 from elementtree.ElementTree import ElementTree,Element,ProcessingInstruction
+
+sys.path.append("../")
+import miscfuncs
 
 # Patterns
 billpattern=re.compile('''<tr[^>]*>\s*<td[^>]*>\s*<img src="/pa/img/(?P<house>sqrgrn.gif|diamdrd.gif)"[^>]*></TD>\s*<TD><FONT size=\+1><A HREF="(?P<link>[^"]*)"\s*TITLE="Link to (?P<billname1>[-a-z.,A-Z0-9()\s]*?) Bill(\s*\[HL\]\s*)?"><B>(?P<billname2>[-a-z.,A-Z0-9()\s]*?) Bill(\s*\[HL\])?\s*\((?P<billno>\d+)\)\s*</B></A></FONT>(?P<rest>[\s\S]*?)</td></tr>(?i)''')
@@ -95,8 +102,7 @@ def addprint(billdict, session, no, house, attrdict, sourcefilename):
 		billattrdict=billdict[(session, no, house)]
 		for attr in mandatory_attrs:
 			if billattrdict[attr]!=attrdict[attr]:
-				#raise Exception, "sourcefilename=%s session=%s no=%s house=%s attr=%s billattrdict[attr]=%s attrdict[attr]=%s\n\n billdict[attr]=%s\n attrdict=%s" %(sourcefilename, session, no, house, attr, billattrdict[attr], attrdict[attr], billdict, attrdict)
-				print Exception, "sourcefilename=%s session=%s no=%s house=%s attr=%s billattrdict[attr]=%s attrdict[attr]=%s\n" %(sourcefilename, session, no, house, attr, billattrdict[attr], attrdict[attr])
+				print "Error: sourcefilename=%s session=%s no=%s house=%s attr=%s billattrdict[attr]=%s attrdict[attr]=%s\n" %(sourcefilename, session, no, house, attr, billattrdict[attr], attrdict[attr])
 		
 		for attr in attrdict:
 			if billattrdict.has_key(attr):
@@ -104,9 +110,9 @@ def addprint(billdict, session, no, house, attrdict, sourcefilename):
 					
 					# horrid fix
 
-					if not (attr=='explanatory_note' and re.search('toc.htm$',attrdict[attr])):
+					if not (attr=='explanatory_note' and re.search('toc.htm$',billattrdict[attr])):
 						#raise Exception, "sourcefilename=%s session=%s no=%s house=%s attr=%s billattrdict[attr]=%s attrdict[attr]=%s\n\n billdict[attr]=%s\n attrdict=%s" %(sourcefilename, session, no, house, attr, billattrdict[attr], attrdict[attr], billdict, attrdict)
-						print "sourcefilename=%s session=%s no=%s house=%s attr=%s billattrdict[attr]=%s attrdict[attr]=%s\n" %(sourcefilename, session, no, house, attr, billattrdict[attr], attrdict[attr])	
+						print "Attribute changed: sourcefilename=%s session=%s no=%s house=%s attr=%s billattrdict[attr]=%s attrdict[attr]=%s\n" %(sourcefilename, session, no, house, attr, billattrdict[attr], attrdict[attr])	
 			else:
 				billattrdict[attr]=attrdict[attr]
 				#print "(%s) adding to (%s, %s, %s) attrdict[%s]=%s" % (sourcefilename, session, no, house, attr, attrdict[attr])			
@@ -116,7 +122,7 @@ def addprint(billdict, session, no, house, attrdict, sourcefilename):
 	
 def parsebillfile(sourcefilename, billdict):
 
-	print "parsing %s" % sourcefilename
+	#print "parsing %s" % sourcefilename
 
 	sourcefile=open(sourcefilename,'r')
 
@@ -186,26 +192,32 @@ def maketree(printdict):
 	return billtree
 
 	
+def MakeBillPrint(billprint_file = os.path.join(miscfuncs.pwxmldirs, "chgpages/bills/billprint.xml")):
+        baselink="http://www.publications.parliament.uk"
 
-baselink="http://www.publications.parliament.uk"
+        billsdir='cmpages/chgpages/bills'
 
-parldata='../../../parldata'
-billsdir='cmpages/chgpages/bills'
+        billsourcedir=os.path.join(miscfuncs.toppath,billsdir)
 
-billsourcedir=os.path.join(parldata,billsdir)
+        billsources=filter(lambda s:re.search('bills',s),os.listdir(billsourcedir))
 
-billsources=filter(lambda s:re.search('bills',s),os.listdir(billsourcedir))
+        billdict={}
+        for sourcefilename in billsources:
+                parsebillfile(os.path.join(billsourcedir,sourcefilename), billdict)
 
-billdict={}
-for sourcefilename in billsources:
-	parsebillfile(os.path.join(billsourcedir,sourcefilename), billdict)
+        outtree=maketree(billdict)
 
-outtree=maketree(billdict)
+        #outtree.write('billprint-temp.xml')
+        s=elementtree.ElementTree.tostring(outtree.getroot())
+        s=s.replace("/><print", "/>\n<print")
+        s='<?xml version="1.0" ?>\n<?xml-stylesheet type="text/xsl" href="http://ukparse.kforge.net/svn/parlparse/pyscraper/bills/billprint.xsl"?>\n' + s
 
-#outtree.write('billprint-temp.xml')
-s=elementtree.ElementTree.tostring(outtree.getroot())
-s='<?xml version="1.0" ?>\n<?xml-stylesheet type="text/xsl" href="style/billprint.xsl"?>\n' + s
+        fout=open(billprint_file,'w')
+        fout.write(s)
+        fout.close()
 
-fout=open('billprint.xml','w')
-fout.write(s)
+if __name__ == '__main__':
+        MakeBillPrint('billprint.xml')
+
+
 
