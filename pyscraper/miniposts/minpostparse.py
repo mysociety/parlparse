@@ -178,7 +178,8 @@ class protooffice:
 		self.froname = nampos.group(2)
 		self.cons = nampos.group(3)
 
-		self.froname = re.sub(" (?:QC|MBE)?$", "", self.froname)
+                self.froname = re.sub("^Rt Hon ", "", self.froname)
+		self.froname = re.sub(" (?:QC|[COM]BE)?$", "", self.froname)
 		self.fullname = "%s %s" % (self.froname, self.lasname)
 
 		# special Gareth Thomas match
@@ -272,18 +273,13 @@ def SpecMins(regex, fr, sdate):
                 specpost = i[0]
                 specname = re.sub("^\s+", "", i[1])
                 specname = re.sub("\s+$", "", specname)
+                nremadename = specname
+                nremadename = re.sub("^Rt Hon ", "", nremadename)
                 if not re.search("Duke |Lord |Baroness ", specname):
-                        nremadename = specname
                         nremadename = re.sub("\s+MP$", "", nremadename)
-                        bigarray.setdefault(sdate, {})
-                        bigarray[sdate][nremadename] = specpost
-                else:
-                        nremadename = specname
-                        nremadename = re.sub("^Rt Hon ", "", nremadename)
-                        nremadename = re.sub(" [CO]BE$", "", nremadename)
-                        nremadecons = ""
-                        bigarray.setdefault(sdate, {})
-                        bigarray[sdate][nremadename] = specpost
+                        nremadename = re.sub(" [COM]BE$", "", nremadename)
+                bigarray.setdefault(sdate, {})
+                bigarray[sdate][nremadename] = specpost
 
 
 
@@ -387,7 +383,7 @@ def ParsePrivSecPage(fr):
 		if deptMatch:
 			deptname = deptMatch.group(1)  # carry forward department name
 			continue
-		nameMatch = re.match("<td>([^<]*)</td><td>\s*([^<]*)(?:</td>)?$", e1)
+		nameMatch = re.match("<td>\s*([^<]*)</td><td>\s*([^<]*)(?:</td>)?$", e1)
 		if nameMatch.group(1):
 			ministername = nameMatch.group(1)  # carry forward minister name (when more than one PPS)
 
@@ -471,7 +467,7 @@ def SetNameMatch(cp, cpsdates):
 	else:
 		cp.remadename = cp.fullname
 		cp.remadename = re.sub("^Rt Hon ", "", cp.remadename)
-		cp.remadename = re.sub(" [CO]BE$", "", cp.remadename)
+		cp.remadename = re.sub(" [COM]BE$", "", cp.remadename)
 		cp.remadecons = ""
 
 
