@@ -8,8 +8,16 @@ import sys
 import re
 
 
+standard_patterns={}
+
 # utility functions
 
+def sub(template, values):
+	s=re.sub('%\((?P<word>[a-zA-Z]*)(?P<no>\d*)\)',lambda s: values[s.groupdict()['word']](s.groupdict()['no']),template)
+	if re.search('%\(',s):
+		raise Exception, "Unbalanced %% ( expression in %s" % template
+	else:
+		return s
 
 def clean(s):
 	'''clean removes HTML tags etc from a string
@@ -130,14 +138,14 @@ class PossiblyFailure(Failure):
 # pattern operators
 
 def FORCE(f):
-	def anon(s, env):
+	def anonFORCE(s, env):
 		(s1,env1,result)=f(s,env)
 		if not result.success:
 			result.force=True
 
 		return (s1,env1,result)
 
-	return anon
+	return anonFORCE
 
 def ANY(f,until=None,otherwise=None):
 	'''repeatedly attemps f, until no more string is consumed, or f fails
@@ -145,7 +153,7 @@ def ANY(f,until=None,otherwise=None):
 	ANY always succeeds, unless there is an otherwise clause, which is tried
 	after ANY is attempted unless the until clause matches.'''
 
-	def anon(s,env):
+	def anonANY(s,env):
 		debug('ANY')
 		values=[]
 		untilresult=Success()
@@ -194,12 +202,12 @@ def ANY(f,until=None,otherwise=None):
 			#print "####(any)any plain success"
 			return (s1,env1,Success(values))	
 
-	return anon
+	return anonANY
 
 def OR(*args):
 	'''each argument is tried in order until one is found that succeeds.'''
 
-	def anon(s,env):
+	def anonOR(s,env):
 		debug('OR')
 		failures=[]
 		for f in args:
@@ -213,12 +221,12 @@ def OR(*args):
 
 		return (s1,env1,OrFailure(failures))
 
-	return anon
+	return anonOR
 
 def SEQ(*args):
 	'''each argument is tried in order, all must succeed for SEQ to succeed.'''
 
-	def anon(s,env):
+	def anonSEQ(s,env):
 		debug('SEQ (length=%s)' % len(args))
 		original_string=s
 		values=[]
@@ -238,12 +246,12 @@ def SEQ(*args):
 		else:
 			return (original_string, env, SeqFailure(len(args), pos,result))
 	
-	return anon
+	return anonSEQ
 
 def IF(condition, ifsuccess):
 	'''IF'''
 
-	def anon(s, env):
+	def anonIF(s, env):
 		(s1,env1,result1)=condition(s,env)
 		if result1.success:
 			(s,env,result2)=ifsuccess(s1,env1)
@@ -256,13 +264,13 @@ def IF(condition, ifsuccess):
 		else:
 			return (s,env,IfFailure(result1))
 
-	return anon		
+	return anonIF		
 
 
 def POSSIBLY(f):
 	'''POSSIBLY always succeeds, unless f is forced'''
 
-	def anon(s,env):
+	def anonPOSSIBLY(s,env):
 		(s1,env1,result)=f(s,env)
 		if result.success:
 			return (s1,env1,result)
@@ -270,24 +278,33 @@ def POSSIBLY(f):
 			return (s1, env1, PossiblyFailure(result))
 		else:
 			return (s,env,Success())
-	return anon
+	return anonPOSSIBLY
 
-def CALL(f, *args):
+def CALL(f, callstrings=[], passback={}):
 
-	def anon(s,env):
-		substring=str_flatten(map(lambda a: env[a], args))
+	def anonCALL(s,env):
+
+		substring=str_flatten(map(lambda a: env[a], callstrings))
 		local_env=env.copy()
 		(s1, env1, result)=f(substring, local_env)
 
+		#print "*CALL env:\n%s\n env1:\n%s\n\nlocal_env\n%s\n" % (env, env1, local_env)
+
+		if result.success:
+			for key, newkey in passback.iteritems():
+				#print key, newkey
+				env[newkey]=local_env[key]
 		return (s, env, result)
 
-	return anon
-
-def pattern(p, flags=re.IGNORECASE):
+	return anonCALL
+		
+def pattern(p, flags=re.IGNORECASE, debug=False):
 	prog = re.compile(p,flags)
-	def anon(s,env):
+	def anon_pattern(s,env):
 		mobj=prog.match(s)
-		debug('pattern p=(%s) s=(%s) mobj=(%s)\n' % (p, s[:128],  mobj))
+		if debug:
+			print 'pattern p=(%s) s=(%s)\n' % (p, s[:128])
+
 		if mobj:
 			result=Success()
 			s=s[mobj.end():]
@@ -296,11 +313,11 @@ def pattern(p, flags=re.IGNORECASE):
 			result=PatternFailure(s,env,p)
 		
 		return (s,env,result)
-	return anon
+	return anon_pattern
 
 # tagged doesn't get things right if tags is empty I think.
 
-def tagged(first='',tags=[],p='',padding=None, last='', fixpunctuation=False):
+def tagged(first='',tags=[],p='',padding=None, last='', strings={}, plaintext=False):
 	s='('
 	e='('
 	if padding:
@@ -316,15 +333,55 @@ def tagged(first='',tags=[],p='',padding=None, last='', fixpunctuation=False):
 		else:
 			s='%s|' % s
 			e='%s|' % e
-	if fixpunctuation:
-		for punc in [''',:-;''']:
-			p=p.replace(punc,'('+punc+')?')
-		p=p.replace('.','(\.)?')
 
-	p=first+s+p+e+last
+	if plaintext:
+		p=prep_plaintext(p, strings, punctuation=standard_punctuation)
+
+	if len(tags)>0:
+		p=first+s+p+e+last
+	else:
+		p=first + p + last
 
 	return pattern(p)
 		
+
+# Don't make [] optional because they are significant all too often.
+standard_punctuation=['.',';',',',':']
+
+def prep_plaintext(text,strings={},punctuation=standard_punctuation):
+	#print "pre_plaintext: text=%s, strings=%s" % (text, strings)
+
+	stringdict=dict([(v,lambda s:x) for (v,x) in strings.iteritems()])
+	stringdict.update(standard_patterns)
+	for punc in punctuation:
+		text=text.replace(punc,'('+punc+')?')
+
+	text=text.replace('.','\.')
+	text=text.replace(']','\]')
+	text=text.replace('[','\[')
+	
+	#print '### sub=%s stringdict=%s' % (text, stringdict)
+
+	text=sub(text, stringdict)
+
+	#print "prep_plaintext returned: %s" % text
+	return text
+
+def plaintext(text,strings={},punctuation=standard_punctuation, debug=False):
+
+	return pattern(prep_plaintext(text,strings,punctuation), debug=debug)
+
+def plaintextpar(text, strings={}, punctuation=standard_punctuation):
+	#print strings
+	return tagged(
+		first='\s*',
+		tags=['p','ul','br'],
+		p=text,
+		padding='\s',
+		last='',
+		strings=strings,
+		plaintext=True
+		)
 
 
 def NULL(s,env):
@@ -337,7 +394,7 @@ def OBJECT(name, body, *args):
 	return SEQ(DEBUG('object name=%s' % name),START(name,*args),OUT(body),END(name))
 
 def START(name, *args, **keywords):
-	def anon(s,env):
+	def anonSTART(s,env):
 		print "debug: starting object name=%s" % name
 		keyvaluelist=[(a, env[a]) for a in args] 
 		keyvaluelist.extend(keywords.iteritems())
@@ -347,21 +404,21 @@ def START(name, *args, **keywords):
 
 		return (s,env,result)
 
-	return anon
+	return anonSTART
 
 
 def END(name):
-	def anon(s,env):
+	def anonEND(s,env):
 		print "debug: ending object name=%s" % name		
 		result=Success([clean('</%s>\n' % name)])
 
 		return (s,env,result)
 
-	return anon
+	return anonEND
 
 
 def OUT(a):
-	def anon(s,env):
+	def anonOUT(s,env):
 		if len(a)==0:
 			value=''
 		else:
@@ -371,30 +428,33 @@ def OUT(a):
 
 		return (s,env,result)
 
-	return anon
+	return anonOUT
 
 def OUTPUT(t):
-	def anon(s,env):
+	def anonOUTPUT(s,env):
 		result=Success(t)
 
 		return (s,env,result)
 
-	return anon
+	return anonOUTPUT
 
 
-def DEBUG(t):
-	def anon(s,env):
+def DEBUG(t, fail=False):
+	def anonDEBUG(s,env):
 		
 		print 'debug: %s' % t
 
-		return (s,env,Success())
+		if fail:
+			return (s, env, Failure())
+		else:
+			return (s,env,Success())
 
-	return anon
+	return anonDEBUG
 
-def TRACE(cond=False, length=32, vals=[]):
-	def anon(s,env):
+def TRACE(cond=False, envlength=48, slength=256, vals=[], fail=False):
+	def anonTRACE(s,env):
 		if cond:
-			print '--------\nTrace:\ns=%s\nenv=%s\n' % (s[:256],str(env)[:length])
+			print '--------\nTrace:\ns=%s\nenv=%s\n' % (s[:slength],str(env)[:envlength])
 			for v in vals:
 				if env.has_key(v):
 					print '%s=%s' % (v,env[v])
@@ -402,11 +462,14 @@ def TRACE(cond=False, length=32, vals=[]):
 					print 'unknown key %s' % v
 			print '--------\n'
 
-		return (s,env,Success())
-	return anon	
+		if fail:
+			return (s, env, Failure())
+		else:
+			return (s,env,Success())
+	return anonTRACE	
 
 def STOP(t=''):
-	def anon(s,env):
+	def anonSTOP(s,env):
 		return (s,env,StopFailure(t))
 
-	return anon		
+	return anonSTOP		
