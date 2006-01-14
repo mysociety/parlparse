@@ -3,8 +3,12 @@
 
 # A very experimental program to parse votes and proceedings files.
 
-# At the moment this file contains absolute paths, until someone can show me
-# how to avoid them. Hence is unlikely to be unuseable.
+# To do:
+
+# House committees (notes below)
+# Second readings
+# detached [by Act] [name] paragraphs
+# eating of <p>'s when shouldn't (see 2003-03-03)
 
 import sys
 import os
@@ -13,21 +17,37 @@ import re
 import fd_parse
 from fd_dates import *
 
-from fd_parse import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, FORCE, CALL, pattern, tagged
+
+from fd_parse import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, FORCE, CALL, pattern, tagged, plaintextpar, plaintext
 
 sys.path.append("../")
 from xmlfilewrite import WriteXMLHeader
 from contextexception import ContextException
 
-# Names may have dots and hyphens in them.
+
 def namepattern(label='name'):
 	return "(?P<"+label+">[-A-Za-z .']+)"
+
+
+
+fd_parse.standard_patterns.update(
+		{
+		'mp'	: lambda n: namepattern('mp%s' % n),
+		'act'	: lambda n: '(?P<actname%s>[-a-z.,A-Z0-9()\s]*?)' % n 
+		}
+	)
+
+print fd_parse.standard_patterns
+print '##################'
+
+
+
+# Names may have dots and hyphens in them.
 
 emptypar=pattern('\s*<p>\s*</p>\s*(?i)')
 emptypar2=pattern('\s*<p><ul>\s*</ul></p>\s*')
 
-# characters that may be allowed in a bill or act
-actpattern='[-a-z.,A-Z0-9()\s]*?' 
+actpattern='(?P<actname>[-a-z.,A-Z0-9()\s]*?)' 
 
 act=SEQ(
 	pattern('\s*<p><ul>(<ul>)?(?P<shorttitle>'+actpattern+' Act)\s*(?P<year>\d+)(\.)?(</ul>)?</ul></p>'),
@@ -46,12 +66,21 @@ header=SEQ(
 	pattern('\s*</td></tr>\s*</table>\s*<table width="90%"\s*cellspacing=6 cols=2 border=0>\s*<tr><td>\s*</font><p>\s*(?i)'))
 
 
+# TODO -- meeting may be pursuant to an order see: 2002-03-26
+
 meeting_time=SEQ(
 	START('opening'),
 	pattern('\s*(<p>1&nbsp;&nbsp;&nbsp;&nbsp;|<p(?: align=center)?>)The House met at\s*'),
 	fd_parse.TRACE(True),
 	archtime,
 	fd_parse.TRACE(True),
+	POSSIBLY(
+		SEQ(
+			pattern('(,)? pursuant to Order \['),
+			plaindate,
+			pattern('\]')
+			)
+		),
 	OR(
 		pattern('\s*\.'),
 		pattern('; and the Speaker Elect having taken the Chair;')
@@ -98,9 +127,65 @@ def process_minute():
 			print "second reading"
 		return (s,env,Success())
 	return anon
+
+
+
 minute_order=SEQ(
 	pattern('\s*<ul><i>Ordered</i>(,)?(?P<text>([^<])*)</ul></p>'),
 	OBJECT('order','','text')
+	)
+
+# all p ul
+# clause, ((another)? amendment proposal, (question put, division) or (question proposed - amendment by leave withdrawn) or (question - put and negatived) or (question proposed, that the amendment be made) [? after a division / deferred divisions] 'and it being ? oclock on clauses A-B', (question - put and negatived), (question put, that clause A stand part of the bill, division), clauses C to B agreed to, chairmen left chair to report, hline, dep speaker resumes ..., comittee again to-morrow
+
+# clauses E to F agreed to, bill to be reported (dep speaker...), ord bill be read a third time ...
+
+# A clause (....) (Name) brought up and read the first time
+# Another clause
+
+#house_committee=SEQ(
+#	pattern("(?P<billname>"+actpattern+" Bill\s*\[" + ordinal(dayno) + "\s*\llotted day\],-"The House, according to Order, resolved itself into a Committee on the Bill\.</p>"),
+#	tagged(first="\s*", tags=['p'],p="\(In the Committee\)")
+
+# Note: text of the sub-paragraphs will need to be spat out.
+
+committee_reported=OR(
+	SEQ(
+		DEBUG('checking committee report'),
+		fd_parse.TRACE(True, envlength=512),
+		CALL(
+			SEQ(DEBUG('inside call'),
+			fd_parse.TRACE(True, envlength=512),
+			plaintext(
+
+'%(act1),-%(mp) reported from Standing Committee %(committee), That it had gone through the %(act2), and made Amendments thereunto.',
+
+				strings={ 'committee' : '(?P<sc>[A-B])' },
+				debug=True),
+			START('committee_reported','actname1','mp','sc'),
+			fd_parse.TRACE(True, envlength=512)),
+			callstrings=['minute_text'],
+			passback={
+				'actname1' : 'billname',
+				'sc' : 'sc'}), 
+		DEBUG('committee_reported found'),
+		fd_parse.TRACE(True),
+		SEQ(
+			plaintextpar(
+
+'Bill, as amended in the Standing Committee, to be considered to-morrow; and to be printed [Bill %(billno)].',
+				strings={ 'billno' : '(?P<billno>\d+)' }
+				),
+			OBJECT('billprint','','billno', 'billname'),
+			plaintextpar(
+
+'Minutes of Proceedings of the Committee to be printed [No. %(scprint)].',
+				strings={ 'scprint' : '(?P<scprint>\d+)'}
+				),
+			OBJECT('scminutesprint','','billname','billno','sc','scprint')
+			),
+		END('committee_reported')
+		)
 	)
 
 bill_second=SEQ(
@@ -120,24 +205,51 @@ first_reading=SEQ(
 	fd_parse.TRACE(False),
 	pattern('\s*and to be printed \[\s*Bill\s*(?P<billno>\d+)\s*\](\.)?'),
 	OBJECT('first_reading','','billname','sponsor','billno'), #process_minute(),
+	OBJECT('billprint','','billname','billno'),
 	fd_parse.TRACE(False),
 	)
 
 second_reading1=SEQ(
-	pattern('''(?P<billname>'''+actpattern+''') Bill,-The ''' + actpattern + ''' Bill was(,)? according to Order(,)? read a second time and stood committed to a Standing Committee(\.)?'''),
-	OBJECT('second_reading','','billname'),
-	OBJECT('commitalto_standing','','billname')
+	#pattern('''(?P<billname>'''+actpattern+''') Bill,-The ''' + actpattern + ''' Bill was(,)? according to Order(,)? read a second time and stood committed to a Standing Committee(\.)?'''),
+	plaintext('%(act1),-The %(act2) Bill was, according to Order, read a second time and stood committed to a Standing Committee.'),
+	OBJECT('second_reading','','actname1'),
+	OBJECT('commitalto_standing','','actname1')
 	)
 
 second_reading2=SEQ(
-	pattern('''(?P<billname>'''+actpattern+''') Bill,-The ''' + actpattern + ''' Bill was(,)? according to Order(,)? read a second time and stood committed to a Standing Committee(\.)?'''),
-	OBJECT('second_reading','','billname'),
-	OBJECT('commitalto_standing','','billname')
+#	pattern('''(?P<billname>'''+actpattern+''') Bill,-The ''' + actpattern + ''' Bill was(,)? according to Order(,)? read a second time and stood committed to a Standing Committee(\.)?'''),
+	plaintext('%(act1),-The %(act2) was, according to Order, read a second time and stood committed to a Standing Committee.'),
+	OBJECT('second_reading','','actname1'),
+	OBJECT('commitalto_standing','','actname1')
+	)
+
+third_reading=SEQ(
+	plaintext('%(act1) [%(ordinal) allotted day],-%(act2) was, according to Order, read the third time, and passed.',
+		strings={
+			'ordinal' : '\d+(st|nd|rd|th)'
+		}),
+	OBJECT('third_reading', '', 'actname1')
+	)
+
+explanatory_notes=SEQ(
+	DEBUG('explanatory notes'),
+	fd_parse.TRACE(True),
+	plaintext('%(act1),-<i>Ordered</i>, That the Explanatory Notes to the %(act2) be printed [Bill %(enprint)].',
+		debug=True,
+		strings={
+			'enprint' : '(?P<enprintno>\d+-EN)'
+			}
+		),
+	OBJECT('enprint','','enprintno', 'actname1')
 	)
 
 bill_analysis=OR(
 	first_reading,
-	second_reading1 #,	second_reading2
+	second_reading1,	
+	second_reading2,
+	third_reading,
+	explanatory_notes
+#	house_committee
 	)
 
 
@@ -229,7 +341,7 @@ untagged_par=SEQ(
 
 table=SEQ(
 	START('table'),
-	POSSIBLY(pattern('\s*<p align=center>Table</p>(\s|<ul>)*')),
+	POSSIBLY(pattern('\s*<p align=center>(<i>)?Table(</i>)?</p>(\s|<ul>)*')),
 	pattern('\s*(<center>)?\s*(?P<table><table[\s\S]*?</table>)\s*(</center>)?(\s|</ul>|</p>)*'),
 	#OBJECT('table_markup','table'),
 	OBJECT('table_markup',''),
@@ -280,23 +392,24 @@ member_oaths=ANY(
 	
 
 minute_plain=SEQ(
-	fd_parse.TRACE(True, length=512),
+	fd_parse.TRACE(True, slength=512),
 	minute_main, 
-	fd_parse.TRACE(True, length=512),
+	fd_parse.TRACE(True, slength=512),
 	START('minute','number'),
 	DEBUG('minute started'),
 	POSSIBLY(
 		OR(
-			CALL(speaker_absence,'minute_text'),
-			CALL(bill_analysis,'minute_text'),
+			CALL(speaker_absence,['minute_text']),
+			CALL(bill_analysis,['minute_text']),
 			SEQ(
-				CALL(oathtaking,'minute_text'),
+				CALL(oathtaking,['minute_text']),
 				member_oaths
-				)
+				),
+			committee_reported
 			)
 		),
 	DEBUG('just completed analyses'),
-	fd_parse.TRACE(False, length=512),
+	fd_parse.TRACE(False, slength=512),
 	OBJECT('maintext', 'minute_text'),
 	ANY(OR(
 		minute_order,
@@ -336,16 +449,22 @@ programme_minute=SEQ(
 	)
 
 next_committee=SEQ(
-	tagged(
-		first='\s*',
-		tags=['p','ul'],
-		p='Committee to-morrow.',
-		fixpunctuation=True),
+	DEBUG('next committee'),
+	fd_parse.TRACE(True),
+	plaintextpar('Committee to-morrow.'),
+	fd_parse.TRACE(True),
+#	tagged(
+#		first='\s*',
+#		tags=['p','ul'],
+#		p='Committee to-morrow.',
+#		fixpunctuation=True),
 	OBJECT('committee_to_morrow','')
 	)
 
 programme_order=SEQ(
-	pattern('''\s*<p><ul><i>Ordered(,)?\s*</i>That the following provisions shall apply to the '''+actpattern+''' Bill:</ul></p>'''),
+	DEBUG('programme_order'),
+	pattern('''\s*<p><ul><i>Ordered(,)?\s*</i>(,)?\s*That the following provisions shall apply to the '''+actpattern+''' Bill:</ul></p>'''),
+	DEBUG('found ordered'),
 	ANY(programme_minute)
 	)	
 
@@ -383,20 +502,25 @@ minute_ra=SEQ(
 		))
 	)
 
+detached_paragraph=SEQ(
+	STOP()
+	)
 
 minute=OR(
+	detached_paragraph,
 	minute_programme,
 	minute_ra,
 	minute_plain,
 	)
 
 adj_motion=SEQ(
-	tagged(
-		first='\s*',
-		tags=['p','ul'],
-		p='Adjournment,-<i>Resolved</i>, That the sitting be now adjourned.-',
-		fixpunctuation=True
-		),
+	plaintextpar('Adjournment,-<i>Resolved</i>, That the sitting be now adjourned.-'),
+#	tagged(
+#		first='\s*',
+#		tags=['p','ul'],
+#		p='Adjournment,-<i>Resolved</i>, That the sitting be now adjourned.-',
+#		fixpunctuation=True
+#		),
 	fd_parse.TRACE(False),
 	pattern('\(<i>'+namepattern('proposer')+'</i>(\.)?\)(\s|</ul>|</p>)*'),
 	OBJECT('adj_motion','','proposer')
@@ -560,8 +684,8 @@ appendix=SEQ(
 		app_date_sep,
 		attr_sep,
 		app_par,
-		emptypar,
-		untagged_par
+		OR(emptypar, emptypar2),
+		untagged_par,
 		))),
 	END('appendix'),
 	DEBUG('ended appendix')
@@ -581,7 +705,7 @@ westminsterhall=SEQ(
 	POSSIBLY(SEQ(
 		pattern('(\s|<p>|<b>)*\[pursuant to the Order of '),
 		plaindate,
-		pattern('\](</font>)?</b></p>'),
+		pattern('\](|</font>|</b>)*</p>'),
 		)),
 	pattern('\s*(<p( align=center)?>)?(<font size=3>)?The sitting (commenced|began) at (?i)'),
 	archtime,
@@ -600,24 +724,25 @@ westminsterhall=SEQ(
 	END('westminsterhall'))	
 
 chairmens_panel=SEQ(
-	fd_parse.TRACE(True),
 	tagged(
 		first='\s*',
 		tags=['p','b'],
 		p='''CHAIRMEN'S PANEL'''
 		),
 	DEBUG('chairmen\'s panel...'),
-	pattern('''\s*<p>In pursuance of Standing Order No\. 4 \(Chairmen's Panel\), the Speaker (has )?nominated '''),
+	pattern('''\s*<p>(<ul>)?In pursuance of Standing Order No\. 4 \(Chairmen's Panel\)(,)? the Speaker (has )?nominated '''),
 	OR(
-		pattern('''([-A-Za-z Ö.']+?, )*?([-A-Za-z Ö.']+?) and ([-A-Za-z Ö.']+? )to be members of the Chairmen's Panel during this Session\.</p>'''),
-		pattern('''([-A-Za-z Ö.']+? )to be a member of the Chairmen's Panel during this Session( of Parliament)?\.</p>''')
+		pattern('''([-A-Za-z Ö.']+?, )*?([-A-Za-z Ö.']+?) and ([-A-Za-z Ö.']+? )to be members of the Chairmen's Panel during this Session(\.)?</p>'''),
+		pattern('''([-A-Za-z Ö.']+? )to be a member of the Chairmen's Panel during this Session( of Parliament)?(\.)?(</ul>)?</p>''')
 		),
 	OBJECT('chairmens_panel','')
 	)
 
 certificate=SEQ(
+	POSSIBLY(pattern('\s*<p( align=center)?>_+</p>')),
 	tagged(
 		first='\s*',
+		padding='\s',
 		tags=['p','b','ul'],
 		p='''THE SPEAKER'S CERTIFICATE'''
 		),
@@ -626,7 +751,8 @@ certificate=SEQ(
 		tags=['p','ul'],
 		p='''\s*The Speaker certified that the (?P<billname>[-a-z.,A-Z0-9()\s]*?Bill) is a Money Bill within the meaning of the Parliament Act 1911(\.)?'''
 		),
-	OBJECT('money_bill_certificate','','billname')
+	OBJECT('money_bill_certificate','','billname'),
+	POSSIBLY(pattern('\s*<p( align=center)?>_+</p>')),
 	)
 
 endpattern=pattern('\s*</td></tr>\s*</table>\s*')
@@ -700,14 +826,15 @@ page=SEQ(
 	#prayers,
 ## prayers don't necessary come first (though they usually do)
 	ANY(
-		SEQ(fd_parse.TRACE(False),OR(prayers,minute)),
+		SEQ(fd_parse.TRACE(True),OR(prayers,minute)),
 		until=prorogation, 
 		otherwise=SEQ(adjournment, speaker_signature, speaker_chair)), 
 	DEBUG('now check for appendices'),
 	ANY(appendix),
 	POSSIBLY(chairmens_panel),
 	#chairmens_panel,
-	POSSIBLY(certificate), #certificate,
+	POSSIBLY(certificate), 
+	#certificate,
 	POSSIBLY(westminsterhall), 
 	#westminsterhall,
 	POSSIBLY(corrigenda), 
@@ -729,6 +856,8 @@ def parsevote(date):
         return parsevotetext(s, date)
 
 def parsevotetext(s, date):
+
+
 	# I am not sure what the <legal 1> tags are for. At present
 	# it seems safe to remove them.
 	s=s.replace('<legal 1>','<p><ul>')
