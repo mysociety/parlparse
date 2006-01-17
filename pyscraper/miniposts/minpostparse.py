@@ -283,7 +283,7 @@ def SpecMins(regex, fr, sdate):
 
 
 
-def ParseGovPostsPage(fr):
+def ParseGovPostsPage(fr, gp):
 	# extract the updated date and time
 	frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)&nbsp;(.*?)\s*</td>', fr)
 	lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
@@ -351,7 +351,7 @@ def ParseGovPostsPage(fr):
 #		Updated 16/12/04&nbsp;16:31
 #	</td>
 
-def ParsePrivSecPage(fr):
+def ParsePrivSecPage(fr, gp):
 	# extract the updated date and time
 	frupdated = re.search('<td class="lastupdated">\s*Updated\s*([\d/]*)&nbsp;([\d:]*)\s*</td>', fr)
 	lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
@@ -361,6 +361,10 @@ def ParsePrivSecPage(fr):
 
 	sdate = sudate
 	stime = sutime	# or midnight if not posted properly to match the msdate
+
+        if (gp == 'privsec0017_2006-01-13.html'):
+                sdate = '2006-01-13'
+                stime = '12:00'
 
 	res = [ ]
 	ppstext = re.search('''(?x)<tr>\s*<td[^>]*>
@@ -416,7 +420,7 @@ def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
 		f.close()
 
 		# get the protooffices from this file
-		sdatet, proff = ParsePage(fr)
+		sdatet, proff = ParsePage(fr, gp)
 
 		# stick any chains we can
 		proffnew = [ ]
