@@ -79,7 +79,7 @@
 <chgpageupdates date="2004-12-16" time="16:31" chgtype="privsec"/>
 <chgpageupdates date="2005-11-10" time="11:23" chgtype="privsec"/>
 <chgpageupdates date="2005-12-01" time="10:02" chgtype="privsec"/>
-<chgpageupdates date="2006-01-12" time="10:02" chgtype="privsec"/>
+<chgpageupdates date="2006-01-13" time="12:00" chgtype="privsec"/>
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1000" name="Duke of Abercorn" dept="HM Household" position="Lord Steward" fromdate="2000-01-01" todate="9999-12-31" source="newlabministers2003-10-15 chgpages/govposts"></moffice>
@@ -1034,8 +1034,8 @@
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1320" name="Martin Linton" matchid="uk.org.publicwhip/member/1051" dept="House of Commons" position="PPS" responsibility="Rt Hon Peter Hain, Lord Privy Seal" fromdate="2004-05-13" fromtime="12:50" todate="2004-12-16" totime="16:31" source="chgpages/privsec"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1369" name="Martin Linton" matchid="uk.org.publicwhip/member/1051" dept="Leader of the House of Commons" position="PPS" responsibility="Rt Hon Peter Hain, Lord Privy Seal" fromdate="2004-12-16" fromtime="16:31" todate="2005-11-10" totime="11:23" source="chgpages/privsec"></moffice>
-<moffice id="uk.org.publicwhip/moffice/1371" name="Martin Linton" matchid="uk.org.publicwhip/member/1393" dept="Department for Constitutional Affairs" position="PPS" responsibility="Rt Hon Harriet Harman QC, Minister of State" fromdate="2005-11-10" fromtime="11:23" todate="2006-01-12" totime="10:02" source="chgpages/privsec"></moffice>
-<moffice id="uk.org.publicwhip/moffice/1425" name="Martin Linton" matchid="uk.org.publicwhip/member/1393" dept="Department for Constitutional Affairs" position="PPS" responsibility="Team PPS" fromdate="2006-01-12" fromtime="10:02" todate="9999-12-31" source="chgpages/privsec"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1371" name="Martin Linton" matchid="uk.org.publicwhip/member/1393" dept="Department for Constitutional Affairs" position="PPS" responsibility="Rt Hon Harriet Harman QC, Minister of State" fromdate="2005-11-10" fromtime="11:23" todate="2006-01-13" totime="12:00" source="chgpages/privsec"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1425" name="Martin Linton" matchid="uk.org.publicwhip/member/1393" dept="Department for Constitutional Affairs" position="PPS" responsibility="Team PPS" fromdate="2006-01-13" fromtime="12:00" todate="9999-12-31" source="chgpages/privsec"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
