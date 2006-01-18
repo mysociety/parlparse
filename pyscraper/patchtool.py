@@ -86,16 +86,14 @@ def RunPatchToolW(typ, sdate, stamp, frag):
 		gc = gp - string.rfind(rforlines, '\n', 0, gp)
 	#print "find loc codes ", gp, gl, gc
 
-	os.system('vim %s +%d' % (tmpfile, gl + 1))
-#	if options.emacs:
-#		os.system('emacs %s +%d' % (tmpfile, gl+1))
-#	else:
-#
-# 	       if sys.platform == "win32":
-# 	           os.system('"C:\Program Files\ConTEXT\ConTEXT" %s /g%d:%d' % (tmpfile, gc + 1, gl + 1))
-# 	       else:
-# 	           # TODO add column support using gc + 1, if you can work out vim's syntax
-# 	           os.system('vim %s +%d' % (tmpfile, gl + 1))
+        if sys.platform == "win32":
+                os.system('"C:\Program Files\ConTEXT\ConTEXT" %s /g%d:%d' % (tmpfile, gc + 1, gl + 1))
+        else:
+                # TODO add column support using gc + 1, if you can work out vim's syntax
+                editor = os.getenv('EDITOR')
+                if not editor:
+                        editor = 'vim'
+                os.system('%s %s +%d' % (editor, tmpfile, gl + 1))
 
 
 	# now create the diff file
@@ -128,8 +126,6 @@ def RunPatchTool(typ, sdatext, ce):
 # So it works from the command line
 if __name__ == '__main__':
 	parser=optparse.OptionParser()
-	
-	parser.add_option("--emacs",action="store_true",dest="emacs",default=False, help="forces the use of the emacs editor")
 	
 	(options,args)=parser.parse_args()
 
