@@ -6,7 +6,7 @@
 
 import sys
 import re
-
+import xml.dom
 
 standard_patterns={}
 
@@ -53,16 +53,16 @@ def str_flatten(l):
 # Result classes
 
 class Result:
-	def __init__(self,values=[],force=False):
-		self.values=values
+	def __init__(self, force=False):
 		self.force=force
 
 	def text(self):
-		return str_flatten(self.values)
+		return "text no longer supported"
+		#str_flatten(self.values)
 
 class Failure(Result):
 	def __init__(self):
-		Result.__init__(self,[])
+		Result.__init__(self)
 		self.success=False
 
 class PatternFailure(Failure):
@@ -121,11 +121,6 @@ class AnyFailure(Failure):
 	def text(self):
 		return 'any:\n(any)failure:\n%s\n(any)untilfailure:\n%s\n\n' % (self.failure.text(),self.untilfailure.text())
 
-class Success(Result):
-	def __init__(self, values=[]):
-		Result.__init__(self,values)
-		self.success=True
-
 class PossiblyFailure(Failure):
 	def __init__(self, result):
 		Failure.__init__(self)
@@ -134,6 +129,136 @@ class PossiblyFailure(Failure):
 
 	def text(self):
 		return 'Possibly(forced):\n%s' % self.result.text()
+
+
+class Success(Result):
+	def __init__(self, delta):
+		Result.__init__(self)
+		self.success=True
+		self.delta=delta
+
+class Delta:
+	pass
+
+	def toplevel(self, toplevelname='toplevel'):
+		self.dom=xml.dom.getDOMImplementation()
+		self.document=self.dom.createDocument('http://www.publicwhip.org.uk/votes', toplevelname, None)
+		self.rootnode=self.document.firstChild
+		
+		return self.rootnode
+
+class NOP(Delta):
+	def __init(self):
+		pass
+
+	def apply(self,current):
+		return current
+
+class TopLevel(Delta):
+	def __init__(self, toplevelname):
+		self.dom=xml.dom.getDOMImplementation()
+		self.document=self.dom.createDocument('http://www.publicwhip.org.uk/votes', toplevelname, None)
+		self.rootnode=self.document.firstChild
+
+	def root(self):
+		return self.rootnode
+
+	def doc(self):
+		return self.document
+
+class DeltaList(Delta):
+	def __init__(self, deltalist):
+		self.type='list'
+		self.deltalist=deltalist
+
+	def apply(self, current):
+		for delta in self.deltalist:
+			current=delta.apply(current)
+		return current
+
+class StartElement(Delta):
+	'''Adds an element below the current element and moves to it'''
+	def __init__(self, name, attributes):
+		self.type='start'
+		self.name=name
+		self.attributes=attributes
+
+	def apply(self, current):
+		if not current:
+			current=self.toplevel(self.name)
+			newelement=current
+		else:
+			newelement=current.ownerDocument.createElement(self.name)
+			current.appendChild(newelement)
+
+		for name in self.attributes:
+			newelement.setAttribute(name, self.attributes[name])
+
+		return newelement
+
+class AddAttribute(Delta):
+	'''Adds an attribute to the current element'''
+
+	def __init__(self, name, value):
+		self.type='addattribute'
+		self.name=name
+		self.value=value
+
+	def apply(self, current):
+		if not current:
+			raise Exception, "No current node to which to add attribute (%s, %s)" % (self.name, self.value)
+		current.setAttribute(self.name, self.value)
+		return current
+
+class EndElement(Delta):
+	'''Moves up to the parent of the current element.'''
+
+	def __init__(self, name):
+		self.type='endelement'
+		self.name=name
+
+	def apply(self, current):
+		if not current:
+			raise Exception, "Attempted to end non-existant element %s" % self.name
+		if current.tagName==self.name:
+			return current.parentNode
+		else:
+			raise Exception, "Endelement %s used to close element %s" % (self.name, current.tagName)
+
+class Element(Delta):
+	'''Creates a new element below the current element.'''
+
+	def __init__(self, name, attributes={}):
+		self.type='element'
+		self.name=name
+		self.attributes=attributes
+		
+
+	def apply(self, current):
+		if not current:
+			current=self.toplevel(self.name)
+			newelement=current
+		else:
+			newelement=current.ownerDocument.createElement(self.name)
+			current.appendChild(newelement)
+
+		for name in self.attributes:
+			newelement.setAttribute(name, self.attributes[name])
+
+		return current
+
+
+class TextElement(Delta):
+	def __init__(self,text):
+		self.type='text'
+		self.text=text
+
+	def apply(self, current):
+		if not current:
+			raise Exception, "Cannot have text element as top level node"
+		newnode=current.ownerDocument.createTextNode(self.text)
+		current.appendChild(newnode)
+		return current
 
 # pattern operators
 
@@ -156,16 +281,16 @@ def ANY(f,until=None,otherwise=None):
 	def anonANY(s,env):
 		debug('ANY')
 		values=[]
-		untilresult=Success()
+		#untilresult=Success()
 
 		# Check until clause first, if it succeeds, then stop.
 
 		if until:
 			(s1,env1,untilresult)=until(s,env)
-			values.extend(untilresult.values)
 			if untilresult.success:
 				# print "####(any)Any until success1"
-				return (s1,env1,Success(values))
+				values.append(untilresult.delta)
+				return (s1,env1,Success(DeltaList(values)))
 			elif untilresult.force:
 				# print "####(any)Any until force failure1"
 				return (s1,env1,untilresult)
@@ -173,7 +298,7 @@ def ANY(f,until=None,otherwise=None):
 		(s1,env1,result)=f(s,env)
 		while len(s1) < len(s) and result.success:
 			debug('****(any):%s' % values)
-			values.extend(result.values)
+			values.append(result.delta)
 			s=s1
 			env=env1
 			if until:
@@ -181,8 +306,8 @@ def ANY(f,until=None,otherwise=None):
 				debug('(any) until result: %s' % untilresult.success)
 				if untilresult.success:
 					# print "####(any)Any until success2"
-					values.extend(untilresult.values)
-					return (s1,env1,Success(values))
+					values.append(untilresult.delta)
+					return (s1,env1,Success(DeltaList(values)))
 				elif untilresult.force:
 					# print "####(any)Any until force failure2"
 					return (s1,env1,untilresult)
@@ -193,14 +318,14 @@ def ANY(f,until=None,otherwise=None):
 			(s2,env2,result)=otherwise(s1,env1)
 			if result.success:
 				# print "####(any)anyotherwise success"
-				values.extend(result.values)
-				return(s2,env2,Success(values))
+				values.append(result.delta)
+				return(s2,env2,Success(DeltaList(values)))
 			else:
 				# print "####(any)anyfailure#"
 				return(s1,env1,AnyFailure(result, untilresult))
 		else:
 			#print "####(any)any plain success"
-			return (s1,env1,Success(values))	
+			return (s1,env1,Success(DeltaList(values)))	
 
 	return anonANY
 
@@ -236,13 +361,13 @@ def SEQ(*args):
 			(s,env,result)=l(s,env)
 			if not result.success:
 				break
-			values.extend(result.values)
+			values.append(result.delta)
 			pos=pos+1
 
 		debug('endSEQ success=%s value=%s\n========' % (result.success, values))
 
 		if result.success:
-			return (s, env, Success(values))
+			return (s, env, Success(DeltaList(values)))
 		else:
 			return (original_string, env, SeqFailure(len(args), pos,result))
 	
@@ -255,10 +380,10 @@ def IF(condition, ifsuccess):
 		(s1,env1,result1)=condition(s,env)
 		if result1.success:
 			(s,env,result2)=ifsuccess(s1,env1)
-			values=result1.values+result2.values
+			values=[result1.delta, result2.delta]
 			if result2.success:
 				# print "####(if): if success"
-				return (s,env,Success(values))
+				return (s,env,Success(DeltaList(values)))
 			else:
 				return (s,env,IfFailure(result2))
 		else:
@@ -277,7 +402,7 @@ def POSSIBLY(f):
 		elif result.force:
 			return (s1, env1, PossiblyFailure(result))
 		else:
-			return (s,env,Success())
+			return (s,env,Success(NOP()))
 	return anonPOSSIBLY
 
 def CALL(f, callstrings=[], passback={}):
@@ -306,7 +431,7 @@ def pattern(p, flags=re.IGNORECASE, debug=False):
 			print 'pattern p=(%s) s=(%s)\n' % (p, s[:128])
 
 		if mobj:
-			result=Success()
+			result=Success(NOP())
 			s=s[mobj.end():]
 			env.update(mobj.groupdict())
 		else:
@@ -385,24 +510,44 @@ def plaintextpar(text, strings={}, punctuation=standard_punctuation):
 
 
 def NULL(s,env):
-	return(s,env,Success())
+	return(s,env,Success(NOP))
 
 
 # Construction of objects.
 
 def OBJECT(name, body, *args):
-	return SEQ(DEBUG('object name=%s' % name),START(name,*args),OUT(body),END(name))
+	return SEQ(DEBUG('object name=%s' % name),START(name, args),OUT(body),END(name))
 
-def START(name, *args, **keywords):
+def ATTRIBUTES(names=None, map=None, groupstring=None):
+
+	def anonATTRIBUTES(s,env):
+		deltalist=[]
+		if names:
+			for name in names:
+				deltalist.append(AddAttribute(name, env[name]))
+		
+		if map:
+			for (name, value) in map.iteritems:
+				deltalist.append(AddAttribute(name, value))
+
+		if groupstring:
+			group=env[groupstring]
+			pairs=re.findall('\s*([^\s"]+)="([^"]*)"',group)
+			for (name, value) in pairs:
+				deltalist.append(AddAttribute(name, value))
+
+		return (s, env, Success(DeltaList(deltalist)))
+	
+	return anonATTRIBUTES
+
+def START(name, attribute_names=[], attributes={}):
 	def anonSTART(s,env):
 		print "debug: starting object name=%s" % name
-		keyvaluelist=[(a, env[a]) for a in args] 
-		keyvaluelist.extend(keywords.iteritems())
-		attributes=['%s="%s" ' % (key, value) for (key, value) in keyvaluelist]
+		attrdict={}
+		attrdict.update([(key, clean(env[key])) for key in attribute_names])
+		#attrdict=#some kind of filter expression# which uses clean
 
-		result=Success([clean('<%s %s>\n' % (name,str_flatten(attributes)))])
-
-		return (s,env,result)
+		return (s,env,Success(StartElement(name, attrdict)))
 
 	return anonSTART
 
@@ -410,9 +555,8 @@ def START(name, *args, **keywords):
 def END(name):
 	def anonEND(s,env):
 		print "debug: ending object name=%s" % name		
-		result=Success([clean('</%s>\n' % name)])
 
-		return (s,env,result)
+		return (s,env,Success(EndElement(name)))
 
 	return anonEND
 
@@ -424,7 +568,7 @@ def OUT(a):
 		else:
 			value=clean(env[a])
 		
-		result=Success([value])
+		result=Success(TextElement(value))
 
 		return (s,env,result)
 
@@ -432,7 +576,7 @@ def OUT(a):
 
 def OUTPUT(t):
 	def anonOUTPUT(s,env):
-		result=Success(t)
+		result=Success(TextElement(t))
 
 		return (s,env,result)
 
@@ -447,7 +591,7 @@ def DEBUG(t, fail=False):
 		if fail:
 			return (s, env, Failure())
 		else:
-			return (s,env,Success())
+			return (s,env,Success(NOP()))
 
 	return anonDEBUG
 
@@ -465,7 +609,7 @@ def TRACE(cond=False, envlength=48, slength=256, vals=[], fail=False):
 		if fail:
 			return (s, env, Failure())
 		else:
-			return (s,env,Success())
+			return (s,env,Success(NOP()))
 	return anonTRACE	
 
 def STOP(t=''):

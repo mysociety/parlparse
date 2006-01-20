@@ -18,12 +18,18 @@ import fd_parse
 from fd_dates import *
 
 
-from fd_parse import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, FORCE, CALL, pattern, tagged, plaintextpar, plaintext
+from fd_parse import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT, DEBUG, STOP, FORCE, CALL, ATTRIBUTES, pattern, tagged, plaintextpar, plaintext
 
 sys.path.append("../")
 from xmlfilewrite import WriteXMLHeader
 from contextexception import ContextException
 
+splitparagraphs=ANY(
+	SEQ(
+		pattern('\s*(<p([^>]*?)>(<ul>)?)(?P<partext>([^<]|<i>|</i>)*)(</ul>)?(</p>)?'),
+		OBJECT('paragraph','partext')
+		)
+	)
 
 def namepattern(label='name'):
 	return "(?P<"+label+">[-A-Za-z .']+)"
@@ -36,11 +42,6 @@ fd_parse.standard_patterns.update(
 		'act'	: lambda n: '(?P<actname%s>[-a-z.,A-Z0-9()\s]*?)' % n 
 		}
 	)
-
-print fd_parse.standard_patterns
-print '##################'
-
-
 
 # Names may have dots and hyphens in them.
 
@@ -61,8 +62,9 @@ measurepattern=SEQ(
 
 
 header=SEQ(
-	pattern('(?P<pagex><pagex [\s\S]*?/>)'),
-	OUT('pagex'),
+	pattern('<pagex (?P<pagex>[\s\S]*?)/>'),
+	#OUT('pagex'),
+	ATTRIBUTES(groupstring='pagex'),
 	pattern('\s*</td></tr>\s*</table>\s*<table width="90%"\s*cellspacing=6 cols=2 border=0>\s*<tr><td>\s*</font><p>\s*(?i)'))
 
 
@@ -162,7 +164,7 @@ committee_reported=OR(
 
 				strings={ 'committee' : '(?P<sc>[A-B])' },
 				debug=True),
-			START('committee_reported','actname1','mp','sc'),
+			START('committee_reported',['actname1','mp','sc']),
 			fd_parse.TRACE(True, envlength=512)),
 			callstrings=['minute_text'],
 			passback={
@@ -395,7 +397,7 @@ minute_plain=SEQ(
 	fd_parse.TRACE(True, slength=512),
 	minute_main, 
 	fd_parse.TRACE(True, slength=512),
-	START('minute','number'),
+	START('minute',['number']),
 	DEBUG('minute started'),
 	POSSIBLY(
 		OR(
@@ -472,7 +474,7 @@ minute_programme=SEQ(
 	fd_parse.TRACE(False),
 	pattern(paragraph_number+'(?P<maintext>[\s\S]*?the following (provisions|proceedings) shall apply to (proceedings on )?the (?P<bill>[\s\S]*?Bill)( \[<i>Lords</i>\])?(-|:|\s*for the purpose of[^<]*?)?)</p>'),
 	fd_parse.TRACE(False),
-	START('bill_programme','bill'),
+	START('bill_programme',['bill']),
 	FORCE(SEQ(
 		DEBUG('matched the start of a Bill programme'),
 		ANY(OR(
@@ -579,7 +581,10 @@ royal_speech=SEQ(
 	DEBUG('end of royal speech'),
 	fd_parse.TRACE(False),
 	DEBUG('finished the royal speech'),
-	OBJECT('royalspeech','royalspeech')
+	START('royalspeech'),
+	CALL(splitparagraphs, ['royalspeech']),
+	END('royalspeech'),
+#	OBJECT('royalspeech','royalspeech')
 	)
 
 words_of_prorogation=SEQ(
@@ -628,7 +633,7 @@ app_title=SEQ(
 	),
 	fd_parse.TRACE(False),
 	DEBUG('starting object appendix'),
-	START('appendix','appno')
+	START('appendix',['appno'])
 	)
 
 app_heading=heading
@@ -656,17 +661,17 @@ misc_par=SEQ(
 app_par=misc_par
 
 app_subheading=SEQ(
-	pattern('\s*<p( align=left)?><i>(?P<maintext>[\s\S]*?)</i></p>'),
+	pattern('\s*<p( align=left)?><i>(?P<maintext>([^<]|<i>|</i>)*)</p>'),
 	OBJECT('app_subhead','','maintext')
 	)
 
 app_nosubpar=SEQ(
-	pattern('\s*<p><ul>\(\d+\)[\s\S]*?</ul></p>')
+	pattern('\s*<p><ul>\(\d+\)([^<]|<i>|</i>)*</ul></p>')
 	)
 
 #date accidently put in a separate paragraph
 
-app_date_sep=pattern('\s*<p><ul>dated [\s\S]*?\[[a-zA-Z ]*\].</ul></p>')
+app_date_sep=pattern('\s*<p><ul>dated ([^<]|<i>|</i>)*?\[[a-zA-Z ]*\].</ul></p>')
 
 attr_sep=pattern('\s*<p><ul>\[by Act\]\s*\[[\s\S]*?\].</ul></p>')
 
@@ -818,7 +823,7 @@ footnote=SEQ(
 	)
 
 page=SEQ(
-	START('page','date'),
+	START('page',['date']),
 	header, 
 	POSSIBLY(pattern('\s*<p><b>Votes and Proceedings</b></p>')),
 	POSSIBLY(O13notice), #O13notice,
@@ -880,9 +885,11 @@ if __name__ == '__main__':
 	
 	
 	if result.success:
-		print result.text()
 	
-		output='''<?xml version="1.0" encoding="ISO-8859-1"?>'''+result.text()
+		#output='''<?xml version="1.0" encoding="ISO-8859-1"?>'''+result.text()
+		xml=result.delta.apply(None)
+		output=xml.toprettyxml(encoding="ISO-8859-1")
+		print output
 
 		outdir='votes'
 		outfile=os.path.join('votes','votes%s.xml' % date)
@@ -900,8 +907,9 @@ def RunVotesFilters(fout, text, sdate):
         (s,env,result)=parsevotetext(text, sdate)
 
         if result.success:
-                WriteXMLHeader(fout)
-                fout.write(result.text())  
+		result.delta.apply(None).writexml(fout, encoding="ISO-8859-1")
+#                WriteXMLHeader(fout)
+#                fout.write(result.text())  
         else:
                 raise ContextException("Failed to parse vote\n%s\n%s" % (result.text(), s[:128]))
 
