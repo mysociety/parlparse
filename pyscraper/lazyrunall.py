@@ -30,7 +30,9 @@ from lordspullgluepages import LordsPullGluePages
 from runfilters import RunFiltersDir, RunDebateFilters, RunWransFilters, RunLordsFilters, RunWestminhallFilters, RunWMSFilters
 from regmemfilter import RunRegmemFilters
 from parsevote import RunVotesFilters
-from parsebills import MakeBillPrint
+
+if sys.platform != "win32":  # just to get working again
+	from parsebills import MakeBillPrint
 
 from regmempullgluepages import RegmemPullGluePages
 from miscfuncs import SetQuiet, bNotQuiet, IsNotQuiet

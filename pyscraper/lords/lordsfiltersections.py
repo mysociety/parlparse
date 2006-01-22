@@ -181,32 +181,36 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		print "**********Marginal notmoved", qpara
 		raise ContextException("Marginal notmoved", stamp=qb.sstampurl, fragment=qpara)
 
-	if re.match('<p>(?:Moved.? accordingly,? and,? )?(?:[Oo]n [Qq]uestion,? )?(?:Motion|[Aa]mendment)s?(?: No\. \d+| [A-Z])?(?:, as amended)?,? agreed to(?:\.|&mdash;)+</p>', qpara):
+	if re.match('<p>(?:Moved.? accordingly,? and,? )?(?:[Oo]n [Qq]uestion,? )?(?:original )?(?:Motion|[Aa]mendment)s?(?: No\. \d+| [A-Z])?(?:, as amended)?,? agreed to(?:\.|&mdash;)+</p>', qpara):
 		return "agreedto"
-	clauseAgreedMatch = re.match('<p>(?:(?:Clause|Schedule)s? \d+[A-Z]*(?: (?:and|to) \d+[A-Z]*)?|Title|Motion)(?:, as amended,?)? (agreed to|negatived)\.</p>', qpara)
+	clauseAgreedMatch = re.match('<p>(?:(?:Clause|Schedule)s? \d+[A-Z]*(?:, \d+[A-Z]*)?(?: (?:and|to) \d+[A-Z]*)?|Title|Motion)(?:, as amended,?)? ((?:dis)?agreed to|negatived)\.</p>', qpara)
 	if clauseAgreedMatch:
-		return clauseAgreedMatch.group(1) == "negatived" and "negatived" or "agreedto"
-	clauseResolvedMatch = re.match('<p>Resolved in the (negative|affirmative),? and (?:Motion|amendment|Clause \d+|Amendment .{5,60}?) (?:dis)?agreed to accordingly\.</p>', qpara)
+		return clauseAgreedMatch.group(1) == "agreed to" and "agreedto" or "negatived"
+	clauseResolvedMatch = re.match('<p>Resolved in the (negative|affirmative),? and (?:Motion|amendment|Clause \d+|Amendment .{5,60}?)(?:, as amended,)? (?:dis)?agreed to accordingly(?:\.</p>|;)', qpara)
 	if clauseResolvedMatch:
 		return clauseResolvedMatch.group(1) == "negative" and "disagreedto" or "agreedto"
-	if re.match('<p>Remaining clauses and schedules agreed to\.</p>', qpara):
+	if re.match('<p>Remaining clauses? (?:and schedules? )?agreed to\.</p>', qpara):
+		return "agreedto"
+	if re.match('<p>(?:On Question, )(?:Commons )?Amendments? .{0,60} agreed to\.</p>', qpara):
+		return "agreedto"
+	if re.match('<p>On Motion, Question agreed to\.</p>', qpara):
+		return "agreedto"
+	if re.match('<p>Schedule agreed to\.</p>', qpara):
 		return "agreedto"
 
 	if re.match('<p>Moved, That the .{0,60}? be agreed to\.', qpara):
 		return "considered"
+	if re.match('<p>On Question, Whether .{0,60}? be agreed to\.', qpara):
+		return "considered"
 
-	if re.match('<p>(?:The )?Bill (?:was )?returned from the Commons .{0,260}?\.</p>', qpara):
+	if re.match('<p>(?:The )?Bill (?:was )?returned (?:earlier )?from the Commons .{0,260}?\.</p>', qpara):
 		return "bill"
 	if re.match('<p>The Commons (?:do not insist on .{0,160}? but propose|have made the following consequential|(?:dis)?agree (?:to|with)) .{0,260}?(?:\.|&mdash;)+</p>', qpara):
 		return "bill"
 
-	if re.match('<p>.{0,60}agreed to(?:\.| accordingly)', qpara):
-		print "**********Marginal agreedto", qpara
-		raise ContextException("Marginal agreed to", stamp=qb.sstampurl, fragment=qpara)
-
 	if re.match('<p[^>]*>House adjourned at .{0,60}?</p>', qpara):
 		return "adjourned"
-	if re.match('<p>(?:House|Second [Rr]eading debate|(?:Further )?[Cc]onsideration of amendments on Report) resumed\.</p>', qpara):
+	if re.match('<p>(?:House|Second [Rr]eading debate|(?:Further )?[Cc]onsideration of amendments on Report) resumed[\.:]', qpara):
 		return "resumed"
 
 	if re.match('<p>\*?Their Lordships divided:', qpara):
@@ -219,7 +223,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return "considered"
 
 
-	if re.match('<p>Brought from the Commons', qpara):
+	if re.match('<p>(?:Brought|Returned) from the Commons', qpara):
 		return "misc"
 	if re.match('<p>House (?:again )?in Committee', qpara):
 		return "misc"
@@ -242,6 +246,10 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 	if re.match("<p>.{0,20}?The noble[^:]{0,60}? said:", qpara):
 		print "Unexpected Noble Lord Said; are we missing the start of his speech where he moves the amendment?"
 		raise ContextException("unexpected Noble Lord Said", stamp=qb.sstampurl, fragment=qpara)
+
+	if re.match('<p>.{0,60}agreed to(?:\.| accordingly)', qpara):
+		print "**********Marginal agreedto", qpara
+		raise ContextException("Marginal agreed to", stamp=qb.sstampurl, fragment=qpara)
 
 	return None
 
@@ -291,7 +299,7 @@ def MatchKnownAsPWmotionStuff(qb, ispeechstartp1):
 
 def SearchForNobleLordSaid(qb, pwmotionsig):
 	for i in range(len(qb.stext)):
-		rens = re.match("(<p>The (?:noble(?: and learned)?(?: and gallant)? (?:Lord|Baroness|Earl|Viscount)|right reverend Prelate) said:\s*)", qb.stext[i])
+		rens = re.match("(<p>The (?:noble(?: and learned)?(?: and gallant)? (?:Lord|Baroness|Earl|Viscount|Countess)|right reverend Prelate|most reverend Primate) said:\s*)", qb.stext[i])
 		if rens:
 			qb.stext[i] = "<p>" +  qb.stext[i][rens.end(1):] # remove "the noble lord said"
 			return i
@@ -427,7 +435,7 @@ def FilterLordsSpeech(qb):
 	for i in range(len(qbunspo.stext)):
 		sAmendmentStatement = MatchKnownAsPWmotionStuff(qbunspo, i)
 		if not sAmendmentStatement:
-			print "UNRECOGNIZED-MOTION-TEXT:", qbunspo.stext[i]
+			print "UNRECOGNIZED-MOTION-TEXT%s: %s" % (bSpeakerExists and " " or "(*)", qbunspo.stext[i])
 			sAmendmentStatement = "unrecognized"
 		qbunspo.stext[i] = re.sub('^<p(.*?)>', '<p\\1 pwmotiontext="%s">' % sAmendmentStatement, qbunspo.stext[i])
 
