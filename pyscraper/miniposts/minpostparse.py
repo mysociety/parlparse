@@ -151,6 +151,13 @@ class protooffice:
 	def __init__(self):
 		pass
 
+        def SelCteeproto(self, lsdatet, name, master, dept):
+                self.sdatet = lsdatet
+                self.sourcedoc = "chgpages/selctee"
+                self.pos = "Hmm"
+                self.responsibility = "Foo"
+                self.dept = "Bar"
+
 	def PPSproto(self, lsdatet, name, master, dept):
 		self.sdatet = lsdatet
 		self.sourcedoc = "chgpages/privsec"
@@ -282,6 +289,19 @@ def SpecMins(regex, fr, sdate):
                 bigarray[sdate][nremadename] = specpost
 
 
+def ParseSelCteePage(fr, gp):
+        frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)&nbsp;(.*?)\s*</td>', fr)
+        lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
+        y2k = int(lsudate.group(3)) < 50 and "20" or "19"
+        sudate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
+        sutime = frupdated.group(2)
+        sdate = sudate
+        stime = sutime
+        res = [ ]
+
+
+
+        return (sdate, stime), res
 
 def ParseGovPostsPage(fr, gp):
 	# extract the updated date and time
@@ -406,7 +426,7 @@ def ParsePrivSecPage(fr, gp):
 # this goes through all the files and chains positions together
 def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
 	fchgdir = os.path.join(chggdir, chgdirname)
-	privsecdir = os.path.join(chggdir, "privsec")
+#	privsecdir = os.path.join(chggdir, "privsec")
 
 	gps = os.listdir(fchgdir)
 	gps = [ x for x in gps if re.match(".*\.html$", x) ]
@@ -543,6 +563,9 @@ def ParseGovPosts():
 
 	# parliamentary private secs
 	cpressec, sdatelistsec = ParseChggdir("privsec", ParsePrivSecPage, False)
+
+	# parliamentary Select Committees
+	cpresselctee, sdatelistselctee = ParseChggdir("selctee", ParseSelCteePage, False)
 
 	# get from our two sources (which unfortunately don't overlap, so they can't be merged)
 	# We have a gap from 2003-10-15 to 2004-06-06 which needs filling !!! (I think it's done)
