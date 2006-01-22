@@ -86,14 +86,14 @@ def RunPatchToolW(typ, sdate, stamp, frag):
 		gc = gp - string.rfind(rforlines, '\n', 0, gp)
 	#print "find loc codes ", gp, gl, gc
 
-        if sys.platform == "win32":
-                os.system('"C:\Program Files\ConTEXT\ConTEXT" %s /g%d:%d' % (tmpfile, gc + 1, gl + 1))
-        else:
-                # TODO add column support using gc + 1, if you can work out vim's syntax
-                editor = os.getenv('EDITOR')
-                if not editor:
-                        editor = 'vim'
-                os.system('%s %s +%d' % (editor, tmpfile, gl + 1))
+	if sys.platform == "win32":
+		os.system('"C:\Program Files\ConTEXT\ConTEXT" %s /g%d:%d' % (tmpfile, gc + 1, gl + 1))
+	else:
+		# TODO add column support using gc + 1, if you can work out vim's syntax
+		editor = os.getenv('EDITOR')
+		if not editor:
+			editor = 'vim'
+		os.system('%s %s +%d' % (editor, tmpfile, gl + 1))
 
 
 	# now create the diff file
