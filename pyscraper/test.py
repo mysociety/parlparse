@@ -3,6 +3,12 @@
 import sys
 from resolvemembernames import memberList
 
+print memberList.matchfullnamecons("Anne Moffat", "East Lothian", "2006-01-22")
+print memberList.matchfullnamecons("Anne Picking", "East Lothian", "2006-01-22")
+print memberList.matchfullnamecons("Anne Moffat", "East Lothian", "2004-01-22")
+print memberList.matchfullnamecons("Anne Picking", "East Lothian", "2004-01-22")
+sys.exit(0)
+
 print memberList.canonicalcons("Aberdeen North", "2001-01-01")
 print memberList.canonicalcons("Aberdeen North", "2005-05-06")
 
