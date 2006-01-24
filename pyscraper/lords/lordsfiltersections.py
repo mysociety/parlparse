@@ -175,11 +175,9 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 
 
 	if re.match('<p>.{0,10}?(?:Amendment.{0,50}?|by leave, )withdrawn', qpara):
-		print "**********Marginal amendwith", qpara
-		raise ContextException("Marginal withdrawn", stamp=qb.sstampurl, fragment=qpara)
+		raise ContextException("Marginal withdrawn (fragment looks like it might be a withdrawn amendment, \nbut earlier regexp didn't pick it up)", stamp=qb.sstampurl, fragment=qpara)
 	if re.match('<p>\s*\[<i>', qpara):
-		print "**********Marginal notmoved", qpara
-		raise ContextException("Marginal notmoved", stamp=qb.sstampurl, fragment=qpara)
+		raise ContextException("Marginal notmoved (fragment looks like it might be an amendment not moved, \nbut an earlier regexp didn't pick it up)", stamp=qb.sstampurl, fragment=qpara)
 
 	if re.match('<p>(?:Moved.? accordingly,? and,? )?(?:[Oo]n [Qq]uestion,? )?(?:original )?(?:Motion|[Aa]mendment)s?(?: No\. \d+| [A-Z])?(?:, as amended)?,? agreed to(?:\.|&mdash;)+</p>', qpara):
 		return "agreedto"
