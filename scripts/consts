@@ -9,7 +9,7 @@ WEEKLY_FROMDATE=2001-06-01
 WEEKLY_TODATE=`date +%Y-%m-%d`
 
 # Lords weekly, back as far as we've got lords stuff
-LORDS_WEEKLY_FROMDATE=2005-03-01
+LORDS_WEEKLY_FROMDATE=2003-01-01
 LORDS_WEEKLY_TODATE=`date +%Y-%m-%d`
 
 PWDATA=$HOME/parldata
