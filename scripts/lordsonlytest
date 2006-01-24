@@ -1,0 +1,21 @@
+#!/bin/bash
+set -x  # for debugging, prints each line before executing it
+
+# Lords update.  
+
+# Can take one argument --patchtool.  This is for interactive use, it
+# will pass the switch on to lazyrunall.py, and you will be prompted
+# with an editor to pre-patch errors in Hansard.
+
+[ $# -gt 1 ] && { echo "Too many arguments"; exit 1; }
+[ $# -eq 1 -a "$1" != "--patchtool" ] && { echo "--patchtool is only valid argument"; exit 1; }
+
+source ~/parlparse/scripts/consts
+
+cd ~/parlparse/pyscraper
+./lazyrunall.py --from=$DAILY_FROMDATE --to=$DAILY_TODATE scrape lords $1
+./lazyrunall.py --from=$DAILY_FROMDATE --to=$DAILY_TODATE parse lords $1
+./lazyrunall.py --quietc --from=$LORDS_WEEKLY_FROMDATE --to=$LORDS_WEEKLY_TODATE scrape lords $1
+./lazyrunall.py --quietc --from=$LORDS_WEEKLY_FROMDATE --to=$LORDS_WEEKLY_TODATE parse lords $1
+
+
