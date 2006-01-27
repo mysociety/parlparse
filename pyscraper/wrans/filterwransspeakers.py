@@ -62,6 +62,24 @@ fixsubs = 	[
 def FilterWransSpeakers(fout, text, sdate):
 	text = ApplyFixSubstitutions(text, sdate, fixsubs)
 
+        # Fix things like this, to put bold in. We use bold below to detect names, but
+        # occasionally the reporters miss it out, and we catch such cases here:
+        # <p><a name="qnpa_0">Caroline Flint: This information is not held centrally. </p>
+        # <p><a name="qnpa_15">Ms Harman: The information can be found in the following table. </p>
+        missingbolds = re.findall('(\n<p>(?:<stamp aname="[a-z_0-9+]+"/>)+)([A-Za-z.\-\s]+)(:\s)', text)
+        for p1,p2,p3 in missingbolds:
+                missingbold = "%s%s%s" % (p1,p2,p3)
+                bold = "%s<b>%s%s</b>" % (p1,p2,p3)
+                namematches = memberList.fullnametoids(p2, sdate)
+                # Only fix if we found a matching name in the middle (and do it even if ambiguous)
+                if namematches:
+                        print "Fixing missing bold, had name matches:\n\t%s\n\t%s" % (missingbold.strip(), bold.strip())
+                        if not missingbold in text:
+                                print "ERROR: missing bold text found, but then vanished when replacing"
+                        text = text.replace(missingbold, bold)
+                else:
+                        print "Plausible missing bold not fixed, as no name matches:\n\t%s\n\t%s" % (missingbold.strip(), bold.strip())
+
 	# <B> Mrs. Iris Robinson: </B>
 	lspeakerregexp = '<b>.*?</b>\s*?:|<b>.*?</b>'
 	ltableregexp = '<table[^>]*>[\s\S]*?</table>'	# these have bolds, so must be separated out
