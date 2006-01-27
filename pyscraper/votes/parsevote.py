@@ -378,10 +378,10 @@ oathtaking=SEQ(
 	)
 
 member_single_oath=SEQ(
-	pattern("\s*<p>\s*(?P<mp_name>[-A-Za-z'Ö, .]+)\s*</p>"),
+	pattern("\s*<p>\s*(?P<mp_name>[-A-Za-z'\xd6, .]+)\s*</p>"),
 	DEBUG('got MP name'),
 	fd_parse.TRACE(True),
-	pattern("\s*<p>\s*(<i>for\s*</i>)?(?P<constituency>[-.A-Z',a-z&ô ]*?)</p>"),
+	pattern("\s*<p>\s*(<i>for\s*</i>)?(?P<constituency>[-.A-Z',a-z&\xf4 ]*?)</p>"),
 	OBJECT('oath','','mp_name','constituency')
 	) 
 
@@ -737,8 +737,8 @@ chairmens_panel=SEQ(
 	DEBUG('chairmen\'s panel...'),
 	pattern('''\s*<p>(<ul>)?In pursuance of Standing Order No\. 4 \(Chairmen's Panel\)(,)? the Speaker (has )?nominated '''),
 	OR(
-		pattern('''([-A-Za-z Ö.']+?, )*?([-A-Za-z Ö.']+?) and ([-A-Za-z Ö.']+? )to be members of the Chairmen's Panel during this Session(\.)?</p>'''),
-		pattern('''([-A-Za-z Ö.']+? )to be a member of the Chairmen's Panel during this Session( of Parliament)?(\.)?(</ul>)?</p>''')
+		pattern('''([-A-Za-z \xd6.']+?, )*?([-A-Za-z \xd6.']+?) and ([-A-Za-z \xd6.']+? )to be members of the Chairmen's Panel during this Session(\.)?</p>'''),
+		pattern('''([-A-Za-z \xd6.']+? )to be a member of the Chairmen's Panel during this Session( of Parliament)?(\.)?(</ul>)?</p>''')
 		),
 	OBJECT('chairmens_panel','')
 	)
