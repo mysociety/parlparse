@@ -219,7 +219,7 @@ if options.parse:
 	if options.votes:
 		RunFiltersDir(RunVotesFilters, 'votes', options, options.forceparse)
 	if options.chgpages:
-                MakeBillPrint()
+                #MakeBillPrint()
 		ParseGovPosts()
 
 	# special run-on case of same day
