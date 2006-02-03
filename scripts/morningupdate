@@ -41,7 +41,7 @@ cd ~/parlparse/scripts
 
 # Tell TheyWorkForYou to update
 PRODSCRIPT=ukparse-morning-update-done.cgi
-# snarf -q http://cake.ukcod.org.uk/~fawkes/$PRODSCRIPT - > /dev/null &
+snarf -q http://cake.ukcod.org.uk/~fawkes/$PRODSCRIPT - > /dev/null &
 
 # Update division archive for Public Whip to feed from
 cd ~/parlparse/scripts
