@@ -517,7 +517,7 @@ def SplitParaIndents(text, stampurl):
 				if re.match('(?:<ul><ul>)?<ul>(?i)', sp):
 					if bIndent:
 						print dell[i - 1: i + 1]
-						raise ContextException(' already indentented ', stamp=stampurl, fragment=sp)
+						raise ContextException(' already indented ', stamp=stampurl, fragment=sp)
 					bIndent = 1
 				elif re.match('(?:</ul></ul>)?</ul>(?i)', sp):
 					# no error
