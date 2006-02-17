@@ -18,7 +18,7 @@ import sys
 recess_file = os.path.expanduser('~/parldata/parl-recesses.txt')
 recess_file_new = recess_file + ".new"
 
-toaddrs = [ "parlparse" ] # @seagrass
+toaddrs = [ "parlparse@seagrass.goatchurch.org.uk" ] # @seagrass
 
 today = datetime.date.today().isoformat()
 
