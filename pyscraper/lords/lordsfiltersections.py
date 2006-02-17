@@ -45,6 +45,8 @@ def StripLordsDebateHeadings(headspeak, sdate):
 
 	# Thursday, 18th December 2003.
 	mdateheading = re.match('(?:<stamp aname="[^"]*"/>)*([\w\s\d,]*)\.', headspeak[ih][0])
+	#time = TimeProcessing(timeg.group(1), previoustime, False, stampurl)
+	#fout.write('<stamp time="%s"/>' % time)
 	if not mdateheading or (sdate != mx.DateTime.DateTimeFrom(mdateheading.group(1)).date) or headspeak[ih][2]:
 		print headspeak[ih]
 		#raise ContextException('non-conforming date heading')  # recoverable?
@@ -66,6 +68,7 @@ def StripLordsDebateHeadings(headspeak, sdate):
 		if (not gstarttime) or headspeak[ih][2]:
 			print "headspeakheadspeakih", headspeak[ih][0]
 			raise ContextException('non-conforming "house met at" heading ', fragment=headspeak[ih][0])
+		#print starttime. (we should use the "Half past two" business in house met to set it, unfortunately the filtercoltime has already happened
 		ih = ih + 1
 
 		# Prayers&#151;Read by the Lord Bishop of Southwell.
@@ -75,6 +78,7 @@ def StripLordsDebateHeadings(headspeak, sdate):
 
 	# find the url, colnum and time stamps that occur before anything else in the unspoken text
 	stampurl = StampUrl(sdate)
+	#stampurl.timestamp = '<stamp( time="%s")/>', starttime)
 
 	# set the time from the wording 'house met at' thing.
 	for j in range(0, ih):
@@ -194,6 +198,8 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return "agreedto"
 	if re.match('<p>(?:On Question, )(?:Commons )?Amendments? .{0,60} agreed to\.</p>', qpara):
 		return "agreedto"
+	if re.match('<p>Amendment disagreed to accordingly\.</p>', qpara):
+		return "negatived"
 	if re.match('<p>On Motion, Question agreed to\.</p>', qpara):
 		return "agreedto"
 	if re.match('<p>Schedule agreed to\.</p>', qpara):

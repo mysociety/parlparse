@@ -22,7 +22,7 @@ import xml.sax
 
 titleconv = {  'L.':'Lord',
 			   'B.':'Baroness',
-			   'Abp.':'Arch-bishop',
+			   'Abp.':'Archbishop',
 			   'Bp.':'Bishop',
 			   'V.':'Viscount',
 			   'E.':'Earl',
@@ -176,7 +176,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 						if not bDivision:
 							raise ContextException("lordname matches lordofname in lordlist", stamp=stampurl, fragment=lname)
 					res.append(lm)
-				elif ltitle != "Bishop" and (ltitle, lname) != ("Duke", "Norfolk"):
+				elif ltitle != "Bishop" and ltitle != "Archbishop" and (ltitle, lname) != ("Duke", "Norfolk"):
 					print lm
 					raise ContextException("wrong dates on lords with same name", stamp=stampurl, fragment=lname)
 
