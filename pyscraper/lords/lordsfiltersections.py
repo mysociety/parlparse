@@ -1,3 +1,5 @@
+# vim:sw=8:ts=8:et:nowrap
+
 import sys
 import re
 import os
@@ -102,9 +104,10 @@ def LordsHeadingPart(headingtxt, stampurl):
 
 # this function is taken from debdivisionsections
 def SubsPWtextsetS(st):
-	if re.search('pwmotiontext="yes"', st) or not re.match('<p', st):
-		return st
-	return re.sub('<p(.*?)>', '<p\\1 pwmotiontext="yes">', st)
+        return st # this needs tidying up
+        if re.search('pwmotiontext="yes"', st) or not re.match('<p', st):
+                return st
+        return re.sub('<p(.*?)>', '<p\\1 pwmotiontext="yes">', st)
 
 # this function is taken from debdivisionsections
 # to be inlined
