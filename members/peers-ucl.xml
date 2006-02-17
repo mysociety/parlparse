@@ -7253,4 +7253,40 @@
 	fromdate="2005-10-25" todate="9999-12-31"
 />
 
+
+
+
+<lord
+	id="uk.org.publicwhip/lord/100900"
+	house="lords"
+	forenames="John Tucker"
+	title="Archbishop" lordname="" lordofname="York"
+	peeragetype="B" affiliation="Bp"
+	fromdate="2005-01-25" todate="9999-12-31"
+/>
+<lord
+	id="uk.org.publicwhip/lord/100901"
+	house="lords"
+	forenames=""
+	title="Bishop" lordname="" lordofname="Southwell and Nottingham"
+	peeragetype="B" affiliation="Bp"
+	fromdate="2005-01-01" todate="9999-12-31"
+/>
+<lord
+	id="uk.org.publicwhip/lord/100902"
+	house="lords"
+	forenames=""
+	title="Lord" lordname="Turnbull" lordofname=""
+	peeragetype="L" affiliation="XB"
+	fromdate="2005-01-01" todate="9999-12-31"
+/>
+<lord
+	id="uk.org.publicwhip/lord/100903"
+	house="lords"
+	forenames=""
+	title="Lord" lordname="ONeill" lordofname="Clackmannan"
+	peeragetype="L" affiliation="Lab"
+	fromdate="2005-01-01" todate="9999-12-31"
+/>
+
 </publicwhip>
