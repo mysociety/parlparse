@@ -82,7 +82,7 @@ def ExtractIndexContents(urlx):
 	# get the links
 	#<p><a href="../text/40129w01.htm#40129w01_sbhd7"><H3><center>Olympic Games 2012: London Bid</center></H3>
 	#</a></p>
-	relkex = re.compile('<p><a href\s*=\s*"([^"]*?\.htm)#[^"]*"><h3><center>([^<]*)(?:</center>|</h3>)+\s*</a></p>(?i)')
+	relkex = re.compile('<p><a href\s*=\s*"([^"]*?\.htm)#[^"]*"><h3><center>((?:<!|[^<])*)(?:</center>|</h3>)+\s*</a></p>(?i)')
 	res = relkex.findall(lktex)
 	if not res:
 		print "no links found from day index page"

@@ -115,6 +115,9 @@ def LordsDivisionParsingPart(divno, unspoketxt, stampurl, sdate):
 	qbd = qspeech(spattr, divtext, stampurl)
 	qbd.typ = 'division' # this type field seems easiest way
 
+	if not stampurl.timestamp:
+		raise ContextException("Division missing any timestamps; need to put one in to make it consistent.  like <h5>2.44 pm</h5>", stamp=stampurl, fragment="Division")
+
 	# filtering divisions here because we may need more sophisticated detection
 	# of end of division than the "Question accordingly" marker.
 	qbd.stext = LordsFilterDivision(qbd.text, stampurl, sdate)
