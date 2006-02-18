@@ -272,7 +272,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         if not matches and titletotal > 0:
             matches = self.lastnames.get(text, None)
 
-        # If a speaker, then match against the secial speaker parties
+        # If a speaker, then match against the special speaker parties
         if not matches and (text == "Speaker" or text == "The Speaker"):
             matches = self.parties.get("SPK", None)
         if not matches and (text == "Deputy Speaker" or text == "Deputy-Speaker" or text == "Madam Deputy Speaker"):
@@ -284,6 +284,45 @@ class MemberList(xml.sax.handler.ContentHandler):
                 if (date == None) or (date >= attr["fromdate"] and date <= attr["todate"]):
                     ids.add(attr["id"])
         return ids
+
+    # Returns id, name, corrected constituency
+    def matchcons(self, cons, date):
+        cons = self.strippunc(cons)
+        consids = self.constoidmap.get(cons, None)
+        if not consids:
+            raise Exception, "Unknown constituency %s" % cons
+
+        newids = sets.Set()
+        for consattr in consids:
+            if consattr["fromdate"] <= date and date <= consattr["todate"]:
+                consid = consattr['id']
+                matches = self.considtomembermap[consid]
+                for attr in matches:
+                    if (date == None) or (date >= attr["fromdate"] and date <= attr["todate"]):
+                        newids.add(attr["id"])
+        ids = newids
+
+		# fail cases
+        if len(ids) == 0:
+            return None, None, None
+        if len(ids) > 1:
+            # only error for case where cons is present, others case happens too much
+            errstring = ('Matched multiple times: ' + fullname + " : " +
+                (cons or "[nocons]") + " : " + date + " : " + ids.__str__() +
+                ' - perhaps constituency spelling is not known')
+            # actually, even no-cons case happens too often
+            # (things like ministerships, with name in brackets after them)
+            print errstring
+            #raise ContextException(errstring, fragment=origfullname)
+            lids = list(ids)  # I really hate the Set type
+            lids.sort()
+            return None, "MultipleMatch", tuple(lids)
+
+        for lid in ids: # pop is no good as it changes the set
+            pass
+        remadename = u'%s %s' % (self.members[lid]["firstname"], self.members[lid]["lastname"])
+        remadecons = self.members[lid]["constituency"]
+        return lid, remadename, remadecons
 
     # Returns id, corrected name, corrected constituency
     # alwaysmatchcons says it is an error to have an unknown/mismatching constituency
