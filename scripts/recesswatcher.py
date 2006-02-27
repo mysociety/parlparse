@@ -45,9 +45,9 @@ def domail(subject, msg):
 #     </td>^M
 
 cells = re.findall('<td class="editonprotabletext"[^>]*>\s*' +
-                   '<p[^>]*>(?:<font size="2">)?' +
+                   '<p[^>]*>(?:<font size="2">)?(?:<i>)?' +
                    '([^<]*?)' +
-                   '(?:</font>)?</p>' +
+                   '(?:</i>)?(?:</font>)?</p>' +
                    '\s*</td>', co)
 
 # Within table of dates, have 3 columns
