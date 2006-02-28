@@ -1,5 +1,5 @@
 #!/bin/bash
-#set -x  # for debugging, prints each line before executing it
+set -x  # for debugging, prints each line before executing it
 
 # Morning update.  Fresh with your coffee at 8am, Parliament online (usually)
 # update their site.  At 8:05, we update from them.
