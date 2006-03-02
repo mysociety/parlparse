@@ -274,6 +274,7 @@ def GrabWestminDivisionInterruptProced(qbp, rawtext):
 	# copy the lines into a non-speaking paragraph.
 	if iskip:
 		dumtext = re.sub('<p>(?:<stamp aname="[^"]*?"/>)?<i>sitting suspended.*(?si)','',rawtext)
+                # Why didn't I make a note of why I did the following lines? Must be something to do with the timestamps...
 		s = copy.copy(qbp.sstampurl)
 		qbdp = qspeech('nospeaker="true"', dumtext, s)
 		qbdp = qspeech('nospeaker="true"', "", s)
@@ -341,6 +342,13 @@ def FilterDebateSections(text, sdate, typ):
 				elif qbh.typ == 'major-heading' and len(flatb) > 0 and flatb[-1].typ == 'major-heading':
 					flatb[-1].stext.append(" &mdash; ")
 					flatb[-1].stext.extend(qbh.stext)
+
+                                elif re.search("sitting suspended(?: for| until| till|\.)(?i)", qbh.stext[0]):
+                                        if len(flatb) > 0 and flatb[-1].typ == 'speech':
+				                qb = qspeech('nospeaker="true"', qbh.stext[0], stampurl)
+                				qb.typ = 'speech'
+                				FilterDebateSpeech(qb)
+                				flatb.append(qb)
 
 				# this is where we suck in a trailing "Clause" part of the title that is mistakenly outside the heading.
 				elif (qbh.typ == 'minor-heading' or qbh.typ == 'major-heading') and len(flatb) > 0 and flatb[-1].typ == 'speech':
