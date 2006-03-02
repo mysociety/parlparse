@@ -343,7 +343,7 @@ def FilterDebateSections(text, sdate, typ):
 					flatb[-1].stext.append(" &mdash; ")
 					flatb[-1].stext.extend(qbh.stext)
 
-                                elif re.search("sitting suspended(?: for| until| till|\.)(?i)", qbh.stext[0]):
+                                elif re.search("(?:sitting suspended(?: for| until| till|\.))|(on resuming&)(?i)", qbh.stext[0]):
                                         if len(flatb) > 0 and flatb[-1].typ == 'speech':
 				                qb = qspeech('nospeaker="true"', qbh.stext[0], stampurl)
                 				qb.typ = 'speech'
