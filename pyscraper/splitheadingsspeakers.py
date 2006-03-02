@@ -257,7 +257,6 @@ class SepHeadText:
 
 			# we have matched a heading thing
 			if gheading:
-
 				# there's a negative regexp match (for "The ... was asked - " which
 				# isn't a heading even though it looks like one).  Check we don't
 				#  match it.

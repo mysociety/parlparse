@@ -143,7 +143,7 @@ def WriteXMLspeechrecord(fout, qb, bMakeOldWransGidsToNew, bIsWrans):
 	# Is this value needed?
 	colnum = re.search('colnum="([^"]*)"', qb.sstampurl.stamp).group(1)
 
-	# extract the time stamp (if there is one)
+	# extract the time stamp (if there is one, which is optional)
 	stime = ""
 	if qb.sstampurl.timestamp:
 		stime = re.match('<stamp( time=".*?")/>', qb.sstampurl.timestamp).group(1)

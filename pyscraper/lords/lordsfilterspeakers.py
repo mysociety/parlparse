@@ -257,13 +257,15 @@ respeakervals = re.compile('([^:(]*?)\s*(?:\(([^:)]*)\))?(:)?$')
 renonspek = re.compile('division|contents|amendment(?i)')
 reboldempty = re.compile('<b>\s*</b>(?i)')
 
-regenericspeak = re.compile('the (?:deputy )?chairman of committees|the deputy speaker|the clerk of the parliaments|the lord chancellor|several noble lords|the deputy chairman(?: of committees)?|the noble lord said(?i)')
+regenericspeak = re.compile('the (?:deputy )?chairman of committees|the deputy speaker|the clerk of the parliaments|several noble lords|the deputy chairman(?: of committees)?|the noble lord said(?i)')
 #retitlesep = re.compile('(Lord|Baroness|Viscount|Earl|The Earl of|The Lord Bishop of|The Duke of|The Countess of|Lady)\s*(.*)$')
 
 
 
 def LordsFilterSpeakers(fout, text, sdate):
 	stampurl = StampUrl(sdate)
+
+	officematches = {}
 
 	# setup for scanning through the file.
 	for fss in respeaker.split(text):
@@ -312,6 +314,7 @@ def LordsFilterSpeakers(fout, text, sdate):
 		else:
 			name = namec.group(1)
 			loffice = None
+
 		colon = namec.group(3)
 		if not colon:
 			colon = ""
@@ -320,11 +323,25 @@ def LordsFilterSpeakers(fout, text, sdate):
 		if re.match('noble lords|a noble lord|a noble baroness|the speaker(?i)', name):
 			fout.write('<speaker speakerid="%s">%s</speaker>' % ('no-match', name))
 			continue
+
+
+		# map through any office information
+		if loffice:
+			if (not re.match("The Deputy ", loffice)) and (loffice in officematches):
+				if officematches[loffice] != name:
+					print officematches[loffice], loffice,  name
+				assert officematches[loffice] == name
+			else:
+				officematches[loffice] = name
+		elif name in officematches:
+			loffice = name
+			name = officematches[loffice]
+
 		if regenericspeak.match(name):
 			fout.write('<speaker speakerid="%s">%s</speaker>' % ('no-match', name))
 			continue
 
-		lsid = lordlist.GetLordIDfname(name, loffice=loffice, sdate=sdate, stampurl=stampurl)
+		lsid = lordlist.GetLordIDfname(name, loffice=loffice, sdate=sdate, stampurl=stampurl)  # maybe throw the exception on the outside
 
 		fout.write('<speaker speakerid="%s" speakername="%s" colon="%s">%s</speaker>' % (lsid, name, colon, name))
 
