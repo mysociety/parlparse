@@ -8,7 +8,7 @@ import string
 
 import mx.DateTime
 
-
+unrecognizedmotiontextout = open("unrecognisedmotiontext.txt", "w")
 
 from splitheadingsspeakers import SplitHeadingsSpeakers
 from splitheadingsspeakers import StampUrl
@@ -63,6 +63,7 @@ def StripLordsDebateHeadings(headspeak, sdate):
 		# don't advance; this is a title (works for 2005-05-11)
 
 	else:
+		#<H4><center>Reassembling after the Christmas Recess, the House met at half-past two of the clock: The LORD CHANCELLOR on the Woolsack.</center></H4>
 		# The House met at eleven of the clock (Prayers having been read earlier at the Judicial Sitting by the Lord Bishop of St Albans): The CHAIRMAN OF COMMITTEES on the Woolsack.
 		gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*(?:reassembling.*?recess, )?the house (?:met|resumed)(?: for Judicial Business)? at ([^(]*)(?i)', headspeak[ih][0])
 		if (not gstarttime) or headspeak[ih][2]:
@@ -124,13 +125,13 @@ def SubsPWtextset(stext):
 resaidamend =  re.compile("<p[^>]*>On Question, (?:[Ww]hether|That) (?:the said amendment|the amendment|the House|Clause|Amendment|the Bill|the said [Mm]otion|Lord|the manuscript|the Motion)")
 
 #	<p>On Question, Whether the said amendment (No. 2) shall be agreed to?</p>
-#	<p>Their Lordships divided: Contents, 133; Not-Contents, 118.</p>
+#	<p>Their Lordships divided: , 133; Not-Contents, 118.</p>
 #housedivtxt = "The (?:House|Committee) (?:(?:having )?divided|proceeded to a Division)"
 relorddiv = re.compile('<p[^>]*>(?:\*\s*)?Their Lordships divided: Contents,? (\d+) ?; Not-Contents,? (\d+)\.?</p>$')
 def GrabLordDivisionProced(qbp, qbd):
 	if not re.match("speech|motion", qbp.typ) or len(qbp.stext) < 1:
 		print qbp.stext
-		raise Exception, "previous to division not speech"
+		raise ContextException("previous to division not speech", stamp=qbp.sstampurl)
 
 	hdg = relorddiv.match(qbp.stext[-1])
 	if not hdg:
@@ -173,6 +174,8 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 	notmovedMatch = re.match('<p[^>]*>(?:\[|<i>)+Amendments? .{0,80}?(not moved|had been withdrawn from the Marshalled List|had been retabled as(?:Nos?\.|[^<\.\]]){0,60})(?:\.|</i>|\])+</p>', qpara)
 	if notmovedMatch:
 		return "notmoved"
+	if re.match('<p>Motion not moved\.</p>', qpara):
+		return "notmoved"
 	if re.match('<p>\[(?:<i>)?The Sitting was suspended .{0,60}?(?:</i>)?\](?:</i>)?</p>', qpara):
 		return "suspended"
 	if re.match('<p>\[(?:<i>)?The House observed.{0,60}?(\]|\.|</i>)+</p>', qpara):
@@ -186,17 +189,19 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 	if re.match('<p>\s*\[<i>', qpara):
 		raise ContextException("Marginal notmoved (fragment looks like it might be an amendment not moved, \nbut an earlier regexp didn't pick it up)", stamp=qb.sstampurl, fragment=qpara)
 
-	if re.match('<p>(?:Moved.? accordingly,? and,? )?(?:[Oo]n [Qq]uestion,? )?(?:original )?(?:Motion|[Aa]mendment)s?(?: No\. \d+| [A-Z])?(?:, as amended)?,? agreed to(?:\.|&mdash;)+</p>', qpara):
+	if re.match('<p>(?:Moved.? accordingly,? and,? )?(?:[Oo]n [Qq]uestion,? )?(?:[Oo]riginal )?(?:[Mm]otion|[Aa]mendment)s?(?: No\. \d+| [A-Z])?(?:, as amended)?,? agreed to(?:\.|&mdash;)+</p>', qpara):
 		return "agreedto"
-	clauseAgreedMatch = re.match('<p>(?:(?:Clause|Schedule)s? \d+[A-Z]*(?:, \d+[A-Z]*)?(?: (?:and|to) \d+[A-Z]*)?|Title|Motion)(?:, as amended,?)? ((?:dis)?agreed to|negatived)\.</p>', qpara)
+	clauseAgreedMatch = re.match('<p>(?:(?:Clause|Schedule)s? \d+[A-Z]*,?(?:, \d+[A-Z]*)?(?: (?:and|to) \d+[A-Z]*)?|Title|Motion)(?:, as amended,?)? ((?:dis)?agreed to|negatived)\.</p>', qpara)
 	if clauseAgreedMatch:
 		return clauseAgreedMatch.group(1) == "agreed to" and "agreedto" or "negatived"
 	clauseResolvedMatch = re.match('<p>Resolved in the (negative|affirmative),? and (?:Motion|amendment|Clause \d+|Amendment .{5,60}?)(?:, as amended,)? (?:dis)?agreed to accordingly(?:\.</p>|;)', qpara)
 	if clauseResolvedMatch:
 		return clauseResolvedMatch.group(1) == "negative" and "disagreedto" or "agreedto"
-	if re.match('<p>Remaining clauses? (?:and schedules? )?agreed to\.</p>', qpara):
+	if re.match('<p>Remaining( clauses?| and| schedules?)+ agreed to\.</p>', qpara):
 		return "agreedto"
-	if re.match('<p>(?:On Question, )(?:Commons )?Amendments? .{0,60} agreed to\.</p>', qpara):
+	if re.match('<p>(?:On Question, )?(?:Commons )?Amendments? .{0,60}? agreed to\.</p>', qpara):
+		return "agreedto"
+	if re.match('<p>On Question, (?:Clause|Motion) .{0,16}? agreed to\.</p>', qpara):
 		return "agreedto"
 	if re.match('<p>Amendment disagreed to accordingly\.</p>', qpara):
 		return "negatived"
@@ -209,6 +214,9 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return "considered"
 	if re.match('<p>On Question, Whether .{0,60}? be agreed to\.', qpara):
 		return "considered"
+	if re.match('<p>The Commons amendments were considered and agreed to\.</p>', qpara):
+		return "agreeto"
+
 
 	if re.match('<p>(?:The )?Bill (?:was )?returned (?:earlier )?from the Commons .{0,260}?\.</p>', qpara):
 		return "bill"
@@ -217,8 +225,11 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 
 	if re.match('<p[^>]*>House adjourned at .{0,60}?</p>', qpara):
 		return "adjourned"
-	if re.match('<p>(?:House|Second [Rr]eading debate|(?:Further )?[Cc]onsideration of amendments on Report) resumed[\.:]', qpara):
+	if re.match('<p>(?:House|Debate|Second [Rr]eading debate|(?:Further )?[Cc]onsideration of amendments on Report) resumed[\.:]', qpara):
 		return "resumed"
+
+	if re.match("<p>A message was brought from the Commons", qpara):
+		return "message"
 
 	if re.match('<p>\*?Their Lordships divided:', qpara):
 		return "divided"
@@ -230,7 +241,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return "considered"
 
 
-	if re.match('<p>(?:Brought|Returned) from the Commons', qpara):
+	if re.match('<p>(?:Brought|Returned)(?: earlier)? from the Commons', qpara):
 		return "misc"
 	if re.match('<p>House (?:again )?in Committee', qpara):
 		return "misc"
@@ -248,10 +259,14 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return "misc"
 
 	if re.match('<p>:TITLE3:', qpara):
-		return "title"
+		return "title" # perhaps remove this keyword
 
 	if re.match("<p>.{0,20}?The noble[^:]{0,60}? said:", qpara):
+		print re.match("(<p>The (?:noble(?: and (?:learned|gallant|right reverend))? (?:Lord|Baroness|Earl|Viscount|Countess)|right reverend Prelate|most reverend Primate) said:\s*)", qpara)
+		#rens = re.match("(<p>The (?:noble(?: and (?:learned|gallant|right reverend))? (?:Lord|Baroness|Earl|Viscount|Countess)|right reverend Prelate|most reverend Primate) said:\s*)", qb.stext[i])
 		print "Unexpected Noble Lord Said; are we missing the start of his speech where he moves the amendment?"
+		print "False positives can be hidden by adding a space before the colon"
+		print 'You can kill erroneous titles that are amendments by using <p class="tabletext">'
 		raise ContextException("unexpected Noble Lord Said", stamp=qb.sstampurl, fragment=qpara)
 
 	if re.match('<p>.{0,60}agreed to(?:\.| accordingly)', qpara):
@@ -268,19 +283,21 @@ def MatchKnownAsPWmotionStuff(qb, ispeechstartp1):
 	if re.match("<p>My Lords", qpara):
 		raise ContextException("My Lords in known amendment text", stamp=qb.sstampurl, fragment=qpara)
 
-	if re.match("<p>.{0,60}? Act,? .{0,60}?</p>", qpara):
+	if re.match("<p>.{0,60}? Act[\.,]?</p>", qpara):
 		return "act"
 	if re.match("<p[^>]*>\([d\w]+\) ", qpara):
 		return "lines"
 	if re.match("<p[^>]*>\( \) ", qpara):
 		return "lines"
+	if re.match("<p><phrase class=\"date\".*</phrase>\.</p>", qpara):
+		return "date"
 
 	if re.match("<p[^>]*>Sections? .{0,30}?</p>", qpara):
 		return "lines"
 	if re.match("<p[^>]*>(?:Schedule \S+?|The Schedule)(?:, paragraph.{0,60}?)?</p>", qpara):
 		return "lines"
 
-	if re.match("<p[^>]*>\d+[A-Z]? ", qpara):
+	if re.match("<p[^>]*>\d+[A-Z]?\.? ", qpara):
 		return "lines"
 	if re.match("<p[^>]*>Page \d+, line \d+, ", qpara):
 		return "lines"
@@ -288,8 +305,14 @@ def MatchKnownAsPWmotionStuff(qb, ispeechstartp1):
 		return "quot"
 	if re.match("<p>[a-z]", qpara): # starting with lower case letter, some kind of continuation
 		return "quot"
-	if re.match("<p>A message was brought from the Commons", qpara):
-		return "message"
+	if re.match("<p[^>]*>&mdash;", qpara):
+		return "lines"
+
+	# insert an extra space because they tend to ram it together
+	clpmatch = re.match("(<p[^>]*>\d+[A-Z]?)((?:Clause|Line|Page|Schedule|Because|After|Insert) .*$)", qpara)
+	if clpmatch:
+		qb.stext[ispeechstartp1] = "%s %s" % (clpmatch.group(1), clpmatch.group(2))
+		return "lines"
 
 	if re.match("<p>The noble .{0,30}?(?:Lord|Baroness|Earl|Viscount) said", qpara):
 		print "*****", qpara
@@ -306,7 +329,7 @@ def MatchKnownAsPWmotionStuff(qb, ispeechstartp1):
 
 def SearchForNobleLordSaid(qb, pwmotionsig):
 	for i in range(len(qb.stext)):
-		rens = re.match("(<p>The (?:noble(?: and learned)?(?: and gallant)? (?:Lord|Baroness|Earl|Viscount|Countess)|right reverend Prelate|most reverend Primate) said:\s*)", qb.stext[i])
+		rens = re.match("(<p>The (?:noble(?: and (?:learned|gallant|right reverend))? (?:Lord|Baroness|Earl|Viscount|Countess)|right reverend Prelate|most reverend Primate) said:\s*)", qb.stext[i])
 		if rens:
 			qb.stext[i] = "<p>" +  qb.stext[i][rens.end(1):] # remove "the noble lord said"
 			return i
@@ -440,9 +463,16 @@ def FilterLordsSpeech(qb):
 
 	# check that once we begin pwmotion amendment statements, all statements are of this type
 	for i in range(len(qbunspo.stext)):
+		if not re.match('<p', qbunspo.stext[i]):
+			continue
 		sAmendmentStatement = MatchKnownAsPWmotionStuff(qbunspo, i)
 		if not sAmendmentStatement:
-			print "UNRECOGNIZED-MOTION-TEXT%s: %s" % (bSpeakerExists and " " or "(*)", qbunspo.stext[i])
+			if IsNotQuiet():
+				print "UNRECOGNIZED-MOTION-TEXT%s: %s" % (bSpeakerExists and " " or "(*)", qbunspo.stext[i])
+			if unrecognizedmotiontextout:
+				unrecognizedmotiontextout.write(qbunspo.stext[i])
+				unrecognizedmotiontextout.write("\n")
+				unrecognizedmotiontextout.flush()
 			sAmendmentStatement = "unrecognized"
 		qbunspo.stext[i] = re.sub('^<p(.*?)>', '<p\\1 pwmotiontext="%s">' % sAmendmentStatement, qbunspo.stext[i])
 
@@ -487,6 +517,7 @@ def LordsFilterSections(text, sdate):
 		# the heading detection, as a division or a heading speech object
 		# detect division headings
 		gdiv = re.match('Division No. (\d+)', headingtxt)
+		assert not re.match("(?:NOT-)?CONTENTS", headingtxt)
 
 		# heading type
 		if not gdiv:

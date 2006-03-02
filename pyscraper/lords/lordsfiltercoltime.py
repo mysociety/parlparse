@@ -44,14 +44,20 @@ recolumnumvals = re.compile('(?:<br>&nbsp;<br>|<p>|</ul>|</i>|<font size=\d>|\s|
 # the lords times put dots in "p.m."  but the commons never do.
 regtime1 = '(?:</?p>\s*|<h[45]>|\[|\n)(?:\d+(?:[:\.]\s?\d+)?\.?\s*[ap]\.?m\.?\s*|12 noon)(?:</st>)?(?:\s*</?p>|\s*</h[45]>|\n)'
 regtime2 = '<h5>(?:Noon|Midnight)?\s*(?:</st>)?</h5>' # accounts for blank <h5></h5>
+
+# we'll just lift out this special case to force a time onto it
+# We can't have '<h4 align=center>(?:<a name="[^"]*"></a>)?' at the front because the <a> tag won't get encoded
+regtime3 = 'The House met at .*? of the clock.*?</h4>'
+
 retimevals = re.compile('(?:</?p>\s*|<h\d>|\[|\n)\s*(\d+(?:[:\.]\s?\d+)?\.?\s*[ap][m\.]+|(?:12 )?Noon|Midnight|</h5>|</st>)(?i)')
+regtime3vals = re.compile('The House met at (.*?) of the clock(?i)')
 
 # <a name="column_1099">
 reaname = '<a name\s*=\s*"[^"]*">\s*</a>(?i)'
 reanamevals = re.compile('<a name\s*=\s*"([^"]*)">(?i)')
 
 # match in right order so the longer ones get checked first.  (prob a good way to do r3 and r6 variants but don't know it
-recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regcolumnum11, regcolumnum1, regcolumnum2, regcolumnum6, regcolumnum4, regcolumnum3, regcolumnum3i, regtime1, regtime2, reaname))
+recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regcolumnum11, regcolumnum1, regcolumnum2, regcolumnum6, regcolumnum4, regcolumnum3, regcolumnum3i, regtime1, regtime2, reaname, regtime3))
 
 remarginal = re.compile(':\s*column\s*\D*(\d+)(?i)')
 
@@ -107,6 +113,35 @@ def FilterLordsColtime(fout, text, sdate):
 				previoustime = time
 			continue
 
+		# special lift a time out of the heading
+		regtime3 = regtime3vals.match(fss)
+		if regtime3:
+			fout.write(fss) # put this heading back into the flow of text
+			assert not previoustime
+			lntimematch = re.match("(half[\- ]past )?(\w+)(-thirty)?$", regtime3.group(1))
+			lnhour = lntimematch and lntimematch.group(2)
+			# strange way to do it, but I'm keeping tab on examples, and the transition between am and pm
+			if lnhour == "two":
+				lntimep = "2:%s pm"
+			elif lnhour == "three":
+				lntimep = "3:%s pm"
+			elif lnhour == "six":
+				lntimep = "6:%s pm"
+			elif lnhour == "nine":
+				lntimep = "9:%s am"
+			elif lnhour == "eleven":
+				lntimep = "11:%s am"
+			elif lnhour == "ten":
+				lntimep = "10:%s am"
+			else:
+				print "-------------'%s'" % regtime3.group(1)
+				assert False
+			assert not lntimematch.group(1) or not lntimematch.group(3)
+			ntime = lntimep % ((lntimematch.group(1) or lntimematch.group(3)) and "30" or "00")
+			time = TimeProcessing(ntime, previoustime, False, stampurl)
+			fout.write('<stamp time="%s"/>' % time)
+			continue
+
 		# anchor names from HTML <a name="xxx">
 		anameg = reanamevals.match(fss)
 		if anameg:
@@ -118,7 +153,7 @@ def FilterLordsColtime(fout, text, sdate):
 		# nothing detected
 		# check if we've missed anything obvious
 		if recomb.match(fss):
-			print "$$$", fss, "$$$"
+			print "$$$", fss, "$$-$"
 			raise ContextException(' regexpvals not general enough ', stamp=stampurl, fragment=fss) # a programming error between splitting and matching
 		if remarginal.search(fss):
 			print remarginal.search(fss).group(0)

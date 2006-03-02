@@ -98,7 +98,7 @@ def LordsFilterDivision(text, stampurl, sdate):
 
 
 # handle a division case (resolved comes from the lords)
-regenddiv = '(Resolved in the)'
+regenddiv = '(Resolved in the|:ENDDIVISION:)'
 def LordsDivisionParsingPart(divno, unspoketxt, stampurl, sdate):
 	# find the ending of the division and split it off.
 	gquesacc = re.search(regenddiv, unspoketxt)
@@ -108,6 +108,9 @@ def LordsDivisionParsingPart(divno, unspoketxt, stampurl, sdate):
 	else:
 		divtext = unspoketxt
 		print "division missing %s" % regenddiv
+		print unspoketxt
+		print "is there a linefeed before the </center> on the CONTENTS?"
+		raise ContextException("Division missing resolved in the", stamp=stampurl, fragment="Division") # newly added
 		unspoketxt = ''
 
 	# Add a division object (will contain votes and motion text)
