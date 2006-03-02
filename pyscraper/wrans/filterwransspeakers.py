@@ -73,7 +73,7 @@ def FilterWransSpeakers(fout, text, sdate):
                 namematches = memberList.fullnametoids(p2, sdate)
                 # Only fix if we found a matching name in the middle (and do it even if ambiguous)
                 if namematches:
-                        print "Fixing missing bold, had name matches:\n\t%s\n\t%s" % (missingbold.strip(), bold.strip())
+                        #print "Fixing missing bold, had name matches:\n\t%s\n\t%s" % (missingbold.strip(), bold.strip())
                         if not missingbold in text:
                                 print "ERROR: missing bold text found, but then vanished when replacing"
                         text = text.replace(missingbold, bold)
