@@ -17,7 +17,7 @@ cd ~/parlparse/scripts
 
 # Zip up XML files for people
 cd ~/parldata/scrapedxml
-for X in regmem wrans debates
+for X in regmem wrans debates westminhall wms
 do
 	zip -rq $X.xml.zip $X/
 done
