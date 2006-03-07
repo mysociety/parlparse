@@ -89,7 +89,6 @@ def FilterWransSections(text, sdate):
 	# We create a list of lists of speeches
 	flatb = [ ]
 	for sht in headspeak[ih:]:
-
 		# triplet of ( heading, unspokentext, [(speaker, text)] )
 		headingtxt = string.strip(sht[0])
 		unspoketxt = sht[1]
@@ -112,6 +111,8 @@ def FilterWransSections(text, sdate):
 			qbH.stext = [ majheadingtxtfx ]
 			flatb.append(qbH)
 			continue
+                elif not speechestxt:
+                        raise ContextException('broken heading %s' % headingtxt, stamp=stampurl, fragment=headingtxt)
 
 
 		# non-major heading; to a question batch
