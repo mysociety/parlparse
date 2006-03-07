@@ -250,7 +250,7 @@ class SepHeadText:
 				gheadingMatch = resectiont5val.match(fss)
 				if gheadingMatch:
 					gheading = gheadingMatch.group(1)
-
+                        
 			# we have matched a heading thing
 			if gheadingMatch and not gheading:
 				continue
@@ -269,7 +269,6 @@ class SepHeadText:
 					self.EndHeading(gheading)
 					continue
 
-				#print "renotheading matched ", fss
 				fss = negativematch.group(1)
 
 
