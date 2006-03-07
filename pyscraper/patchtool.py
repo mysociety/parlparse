@@ -9,6 +9,10 @@ import miscfuncs
 import re
 import tempfile
 import optparse
+
+# change current directory to pyscraper folder script is in
+os.chdir(os.path.dirname(sys.argv[0]) or '.')
+
 from resolvemembernames import memberList
 toppath = miscfuncs.toppath
 
@@ -130,7 +134,7 @@ if __name__ == '__main__':
 	(options,args)=parser.parse_args()
 
 	args=[sys.argv[0]]+args
-	print args
+	#print args
 
 	if len(args) != 3:
                 print """
