@@ -23,9 +23,11 @@ reglinkdom = '(?:http ?:? ?/{1,3}(?:www)?|www)(?:(?:[^/:;,?=()<>"\'@](?!www\.))*
 reglinkmid = '(?:/(?:(?:[^/:;,?="<()]|&#\d+;)(?!www\.))+)*/'
 
 # this detects the tail section of a url trailing a slash
+# XXX: This seems very odd way of matching URIs
 #reglinktail = '[^./:;,]*(?:\.\s?(?:s?html?|pdf|xls|(?:asp|php|cfm(?:\?[^\s.]+)?)))|\w*'
-regasptype = '(?:asp|nsf|php|cfm|gif|jpg|jpeg|png)(?:\?\s?\w+=[\w/]+(?:&\w+=[\w/%]+)*)?'
-reglinktail = '(?:[^./:;,?=]|&#\d+;)*(?:\.\s?(?:s?html?|xls|doc|pdf(?:\?Open ?Element)?|%s))|(?:[\w-]|&#\d+;)*' % regasptype
+regqs = '(?:\?\s?\w+=[\w/]+(?:&\w+=[\w/%]*)*)'
+regasptype = '(?:asp|nsf|php|cfm|gif|jpg|jpeg|png)%s?' % regqs
+reglinktail = '(?:[^./:;,?=]|&#\d+;)*(?:\.?\s?(?:s?html?|xls|doc|pdf(?:\?Open ?Element)?|%s|%s))|(?:[\w-]|&#\d+;)*' % (regasptype, regqs)
 
 
 rreglink = '(?:(?:%s)(?:(?:%s)(?:%s)?)?)' % (reglinkdom, reglinkmid, reglinktail)
