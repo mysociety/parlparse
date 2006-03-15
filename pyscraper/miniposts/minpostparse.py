@@ -185,6 +185,7 @@ class protooffice:
 
 		# map down to the department for this record
 		self.pos = "PPS"
+                master = re.sub('\s+,', ',', master)
 		self.responsibility = master
 		self.dept = dept
 

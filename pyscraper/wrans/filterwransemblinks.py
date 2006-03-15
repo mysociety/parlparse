@@ -69,10 +69,11 @@ def ConstructHTTPlink(qstrdom, qstrmid, qstrtail):
 		qstrtail = re.sub(' ', '', qstrtail)
 		qstrtail = re.sub('&#15[01];', '-', qstrtail)
 		qstrtail = re.sub('&#0?95;', '_', qstrtail)
+		qstrtail = re.sub('&#0?35;', '#', qstrtail)
 		if re.search('&#\d+;', qstrtail):
 			print ' undemangled href symbol ' + qstrtail
 		qstrtail = re.sub('&', '&amp;', qstrtail)
-	if not re.match('[\w\-./\?&=%;~]*$', qstrtail):
+	if not re.match('[\w\-./\?&=%;~#]*$', qstrtail):
 		print ' bad tail -- ' + qstrtail
 
 
