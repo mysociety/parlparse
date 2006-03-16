@@ -185,10 +185,10 @@ class PhraseTokenize:
 			tokpair = tokenchain[itc][3](mtoken, self)
 			self.toklist.append( (tokpair[0], tokpair[1], FixHTMLEntities(mtoken.group(0), stampurl=(qs and qs.sstampurl))) )
 			#print "Token detected:", mtoken.group(0)
-										
+
 			# the tail part
 			stex = stex[mtoken.span(0)[1]:]
-				
+
 
 
 	def __init__(self, qs, stex):
