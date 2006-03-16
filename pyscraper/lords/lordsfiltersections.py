@@ -347,6 +347,7 @@ def FilterLordsSpeech(qb):
 	# does the paragraph indents and tables.  Maybe should be inlined for lords
 	FilterDebateSpeech(qb)
 
+
 	# the colon attr is blank or has a : depending on what was there after the name that was matched
 	ispeechstartp1 = 0 # plus 1
 
