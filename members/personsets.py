@@ -74,6 +74,11 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/100873" : "Jack Cunningham [Copeland]"
 }
 
+lordlordmatches = {
+	"uk.org.publicwhip/lord/100901":"uk.org.publicwhip/lord/100831",  # Bishop of Southwell becomes Bishop of Southwell and Nottingham
+	"uk.org.publicwhip/lord/100106":"uk.org.publicwhip/lord/100711",  # Archbishop Carey becomes XB Lord
+}
+
 # People who have been MPs for two different constituencies.  The like of
 # Michael Portillo will eventually appear here.
 manualmatches = {
@@ -174,10 +179,11 @@ class PersonSets(xml.sax.handler.ContentHandler):
 
     def __init__(self):
         self.personsets=[] # what we are building - array of (sets of ids belonging to one person)
-        
+
         self.fullnamescons={} # MPs "Firstname Lastname Constituency" --> person set (link to entry in personsets)
         self.fullnames={} # "Firstname Lastname" --> set of MPs (not link to entry in personsets)
         self.lords={} # Lord ID -> Attr
+		self.lordspersonset={} # Lord ID --> person set
 		self.ministermap={}
 
         self.old_idtoperson={} # ID (member/lord/office) --> Person ID in last version of file
@@ -270,11 +276,14 @@ class PersonSets(xml.sax.handler.ContentHandler):
             if lord_id in lordsmpmatches:
                 mp = lordsmpmatches[lord_id]
                 self.fullnamescons[mp].add(attr)
+			elif lord_id in lordlordmatches:
+				lordidold = lordlordmatches[lord_id]
+				self.lordspersonset[lordidold].add(attr)
             else:
                 newset = sets.Set()
                 newset.add(attr)
                 self.personsets.append(newset) # master copy of person sets
-
+				self.lordspersonset[lord_id] = newset
 
     # Look for people of the same name, but their constituency differs
     def findotherpeoplewhoaresame(self):
