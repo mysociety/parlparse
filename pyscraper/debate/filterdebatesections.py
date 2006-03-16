@@ -409,7 +409,7 @@ def FilterDebateSections(text, sdate, typ):
 			for ss in speechestxt:
 				qb = qspeech(ss[0], ss[1], stampurl)
 				qb.typ = 'speech'
-				FilterDebateSpeech(qb)
+				FilterDebateSpeech(qb, bDebateBegToMove=True)
 
 				qbdp = GrabWestminDivisionInterruptProced(qb,ss[1]) # captures tail off westminster hall speeches
 				flatb.append(qb)

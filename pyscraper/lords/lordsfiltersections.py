@@ -189,22 +189,23 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 	if re.match('<p>\s*\[<i>', qpara):
 		raise ContextException("Marginal notmoved (fragment looks like it might be an amendment not moved, \nbut an earlier regexp didn't pick it up)", stamp=qb.sstampurl, fragment=qpara)
 
-	if re.match('<p>(?:Moved.? accordingly,? and,? )?(?:[Oo]n [Qq]uestion,? )?(?:[Oo]riginal )?(?:[Mm]otion|[Aa]mendment)s?(?: No\. \d+| [A-Z])?(?:, as amended)?,? agreed to(?:\.|&mdash;)+</p>', qpara):
+	if re.match('<p>(?:Moved.? accordingly,? and,? )?(?:[Oo]n [Qq]uestion,? )?(?:[Oo]riginal )?(?:[Mm]otion|[Aa]mendment|[Ss]chedule)s?(?: No\. \d+| [A-Z])?(?:, as amended)?,? agreed to(?:\.|&mdash;)+</p>', qpara):
 		return "agreedto"
 	clauseAgreedMatch = re.match('<p>(?:(?:Clause|Schedule)s? \d+[A-Z]*,?(?:, \d+[A-Z]*)?(?: (?:and|to) \d+[A-Z]*)?|Title|Motion)(?:, as amended,?)? ((?:dis)?agreed to|negatived)\.</p>', qpara)
 	if clauseAgreedMatch:
 		return clauseAgreedMatch.group(1) == "agreed to" and "agreedto" or "negatived"
-	clauseResolvedMatch = re.match('<p>Resolved in the (negative|affirmative),? and (?:Motion|amendment|Clause \d+|Amendment .{5,60}?)(?:, as amended,)? (?:dis)?agreed to accordingly(?:\.</p>|;)', qpara)
+	clauseResolvedMatch = re.match('<p>Resolved in the (negative|affirmative),? and (?:Motion|amendment|the manuscript amendment|Clause \d+|Amendment .{5,60}?)(?:, as amended,)? (?:dis)?agreed to accordingly(?:\.</p>|;)', qpara)
 	if clauseResolvedMatch:
 		return clauseResolvedMatch.group(1) == "negative" and "disagreedto" or "agreedto"
 	if re.match('<p>Remaining( clauses?| and| schedules?)+ agreed to\.</p>', qpara):
 		return "agreedto"
-	if re.match('<p>(?:On Question, )?(?:Commons )?Amendments? .{0,60}? agreed to\.</p>', qpara):
-		return "agreedto"
+	commonsAmendMatch = re.match('<p>(?:On Question, )?(?:Commons )?Amendments? .{0,60}? (dis)?agreed to(?: accordingly)?\.</p>', qpara)
+	if commonsAmendMatch:
+		return commonsAmendMatch.group(1) and "disagreedtp" or "agreedto"
 	if re.match('<p>On Question, (?:Clause|Motion) .{0,16}? agreed to\.</p>', qpara):
 		return "agreedto"
 	if re.match('<p>Amendment disagreed to accordingly\.</p>', qpara):
-		return "negatived"
+		return "disagreedto"
 	if re.match('<p>On Motion, Question agreed to\.</p>', qpara):
 		return "agreedto"
 	if re.match('<p>Schedule agreed to\.</p>', qpara):
