@@ -6843,9 +6843,9 @@
 	id="uk.org.publicwhip/lord/100831"
 	house="lords"
 	forenames="George Henry Cassidy"
-	title="Bishop" lordname="" lordofname="Southwell and Nottingham"
+	title="Bishop" lordname="" lordofname="Southwell"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2004-01-21" todate="9999-12-31"
+	fromdate="2004-01-21" todate="2005-05-01"
 />
 <lord
 	id="uk.org.publicwhip/lord/100832"
@@ -7263,6 +7263,14 @@
 	title="Archbishop" lordname="" lordofname="York"
 	peeragetype="B" affiliation="Bp"
 	fromdate="2005-01-25" todate="9999-12-31"
+/>
+<lord
+	id="uk.org.publicwhip/lord/100901"
+	house="lords"
+	forenames=""
+	title="Bishop" lordname="" lordofname="Southwell and Nottingham"
+	peeragetype="B" affiliation="Bp"
+	fromdate="2005-05-01" todate="9999-12-31"
 />
 <lord
 	id="uk.org.publicwhip/lord/100902"
