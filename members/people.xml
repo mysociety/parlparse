@@ -5467,8 +5467,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13173" latestname="Lord de Mauley">
     <office id="uk.org.publicwhip/lord/100836"/>
 </person>
-<person id="uk.org.publicwhip/person/13174" latestname="The Bishop of Southwell">
+<person id="uk.org.publicwhip/person/13174" latestname="The Bishop of Southwell and Nottingham">
     <office id="uk.org.publicwhip/lord/100831"/>
+    <office id="uk.org.publicwhip/lord/100901"/>
 </person>
 <person id="uk.org.publicwhip/person/13175" latestname="The Bishop of Chelmsford">
     <office id="uk.org.publicwhip/lord/100830"/>
@@ -5928,9 +5929,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13336" latestname="Lord Roll of Ipsden">
     <office id="uk.org.publicwhip/lord/100548"/>
-</person>
-<person id="uk.org.publicwhip/person/13717" latestname="The Bishop of Southwell and Nottingham">
-    <office id="uk.org.publicwhip/lord/100901"/>
 </person>
 <person id="uk.org.publicwhip/person/13714" latestname="The Archbishop of York">
     <office id="uk.org.publicwhip/lord/100900"/>
@@ -6901,7 +6899,8 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13668" latestname="Lord Laming">
     <office id="uk.org.publicwhip/lord/100359"/>
 </person>
-<person id="uk.org.publicwhip/person/13669" latestname="The Archbishop of Canterbury">
+<person id="uk.org.publicwhip/person/13669" latestname="Lord Carey of Clifton">
+    <office id="uk.org.publicwhip/lord/100106"/>
     <office id="uk.org.publicwhip/lord/100711"/>
 </person>
 <person id="uk.org.publicwhip/person/13670" latestname="Baroness Carnegy of Lour">
@@ -6915,9 +6914,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13674" latestname="Lord Carlile of Berriew">
     <office id="uk.org.publicwhip/lord/100107"/>
-</person>
-<person id="uk.org.publicwhip/person/13675" latestname="Lord Carey of Clifton">
-    <office id="uk.org.publicwhip/lord/100106"/>
 </person>
 <person id="uk.org.publicwhip/person/13676" latestname="Lord Cameron of Lochbroom">
     <office id="uk.org.publicwhip/lord/100101"/>
