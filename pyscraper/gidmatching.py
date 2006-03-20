@@ -114,7 +114,7 @@ def FactorChanges(flatb, scrapeversion):
 	# in the next speeches
 
 	# case of missing entries map to the last speech matched to.
-	# lastmatchg = 0 uncomment in case we miss the first entry
+	lastmatchg = None
 
 	res = [ ]
 	for ix in range(len(chks)):
@@ -154,9 +154,13 @@ def FactorChanges(flatb, scrapeversion):
 
 		# missing speech
 		else:
-			print "Missing speech matched to last matched speech"
 			print chks[ix]
-			matchlist = [ lastmatchg ]
+			if lastmatchg:
+				print "Missing speech matched to last matched speech"
+				matchlist = [ lastmatchg ]
+			else:
+				print "No match on first speech problem."
+				matchlist = []
 			matchtype = "missing"
 
 		# output the (sometimes more than) one redirect of the right redirect type
