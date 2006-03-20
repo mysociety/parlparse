@@ -27,17 +27,21 @@ svn -q propset svn:eol-style native */*.patch
 svn -q update
 # Add and any new cmpages
 cd ~/parldata/cmpages
-svn -q add */*2006*.html 2>&1 | grep -v "is already under version control"
+for X in debates wrans westminhall wms regmem lordspages; do
+    svn -q add $X/*.html 2>&1 | grep -v "is already under version control"
+done
 svn -q update
 # Add and any new scrapedxml
 cd ~/parldata/scrapedxml
-svn -q add {debates,wrans,westminhall,wms,regmem}/*.xml 2>&1 | grep -v "is already under version control"
+for X in debates wrans westminhall wms regmem lordspages; do
+    svn -q add $X/*.xml 2>&1 | grep -v "is already under version control"
+done
 svn -q update
 
 # Run scraper
 cd ~/parlparse/scripts
 ./updatedaterange $DAILY_FROMDATE $DAILY_TODATE $1
-#./lordsupdatedaterange $DAILY_FROMDATE $DAILY_TODATE $1
+./lordsupdatedaterange $DAILY_FROMDATE $DAILY_TODATE $1
 
 # Tell TheyWorkForYou to update
 PRODSCRIPT=ukparse-morning-update-done.cgi
