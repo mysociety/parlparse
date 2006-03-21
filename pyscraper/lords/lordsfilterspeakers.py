@@ -126,6 +126,12 @@ class LordsList(xml.sax.handler.ContentHandler):
 		if (llordname, llordofname) == ("Mackay", "Ardbrecknish"):
 			llordname = "MacKay"
 
+                # TODO: Need a Lords version of member-aliases.xml I guess
+                if ltitle == "Bishop" and llordofname == "Southwell" and sdate>='2005-07-01':
+                        llordofname = "Southwell and Nottingham"
+                if ltitle == "Bishop" and llordname == "Southwell" and sdate>='2005-07-01':
+                        llordname = "Southwell and Nottingham"
+
 		lname = llordname or llordofname
 		assert lname
 		lmatches = self.lordnames.get(lname, [])
@@ -321,7 +327,7 @@ def LordsFilterSpeakers(fout, text, sdate):
 
 		# get rid of some standard ones
 		if re.match('noble lords|a noble lord|a noble baroness|the speaker(?i)', name):
-			fout.write('<speaker speakerid="%s">%s</speaker>' % ('no-match', name))
+			fout.write('<speaker speakerid="%s" speakername="%s">%s</speaker>' % ('unknown', name, name))
 			continue
 
 
@@ -338,7 +344,7 @@ def LordsFilterSpeakers(fout, text, sdate):
 			name = officematches[loffice]
 
 		if regenericspeak.match(name):
-			fout.write('<speaker speakerid="%s">%s</speaker>' % ('no-match', name))
+			fout.write('<speaker speakerid="%s" speakername="%s">%s</speaker>' % ('unknown', name, name))
 			continue
 
 		lsid = lordlist.GetLordIDfname(name, loffice=loffice, sdate=sdate, stampurl=stampurl)  # maybe throw the exception on the outside
