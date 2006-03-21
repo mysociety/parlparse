@@ -206,7 +206,7 @@ def FactorChangesWrans(majblocks, scrapeversion):
 	majblocknames = [ "".join(majblock[0].stext).strip()  for majblock in majblocks ]
 	for mhchk in mhchks:
 		i = majblocknames.index(mhchk[1])  # if this throws an error we've got a heading in the old list that's not in the new -- redo this code
-		res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="perfectmatch"/>\n' % (mhchk[0], majblock[0].qGID))
+		res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="perfectmatch"/>\n' % (mhchk[0], majblocks[i][0].qGID))
 		majblocknames[i] = None # take it out of circulation
 
 	# break into question blocks
