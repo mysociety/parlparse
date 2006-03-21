@@ -189,7 +189,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 	if re.match('<p>\s*\[<i>', qpara):
 		raise ContextException("Marginal notmoved (fragment looks like it might be an amendment not moved, \nbut an earlier regexp didn't pick it up)", stamp=qb.sstampurl, fragment=qpara)
 
-	if re.match('<p>(?:Moved.? accordingly,? and,? )?(?:[Oo]n [Qq]uestion,? )?(?:[Oo]riginal )?(?:[Mm]otion|[Aa]mendment|[Ss]chedule)s?(?: No\. \d+| [A-Z])?(?:, as amended)?,? agreed to(?:\.|&mdash;)+</p>', qpara):
+	if re.match('<p>(?:Moved.? accordingly,? and,? )?(?:[Oo]n [Qq]uestion,? )?(?:[Oo]riginal )?(?:[Mm]otion|[Aa]mendment|[Ss]chedule)s?(?: No\. \d+| [A-Z])?(?:, as amended)?,? agreed to(?:\.|&mdash;)+(?: Commons amendments?)?</p>', qpara):
 		return "agreedto"
 	clauseAgreedMatch = re.match('<p>(?:(?:Clause|Schedule)s? \d+[A-Z]*,?(?:, \d+[A-Z]*)?(?: (?:and|to) \d+[A-Z]*)?|Title|Motion)(?:, as amended,?)? ((?:dis)?agreed to|negatived)\.</p>', qpara)
 	if clauseAgreedMatch:
@@ -201,7 +201,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return "agreedto"
 	commonsAmendMatch = re.match('<p>(?:On Question, )?(?:Commons )?Amendments? .{0,60}? (dis)?agreed to(?: accordingly)?\.</p>', qpara)
 	if commonsAmendMatch:
-		return commonsAmendMatch.group(1) and "disagreedtp" or "agreedto"
+		return commonsAmendMatch.group(1) and "disagreedto" or "agreedto"
 	if re.match('<p>On Question, (?:Clause|Motion) .{0,16}? agreed to\.</p>', qpara):
 		return "agreedto"
 	if re.match('<p>Amendment disagreed to accordingly\.</p>', qpara):
@@ -219,9 +219,9 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return "agreeto"
 
 
-	if re.match('<p>(?:The )?Bill (?:was )?returned (?:earlier )?from the Commons .{0,260}?\.</p>', qpara):
+	if re.match('<p>(?:The )?Bill (?:was )?returned (?:earlier )?(?:from|to) the Commons .{0,260}?\.</p>', qpara):
 		return "bill"
-	if re.match('<p>The Commons (?:do not insist on .{0,160}? but propose|have made the following consequential|(?:dis)?agree (?:to|with)) .{0,260}?(?:\.|&mdash;)+</p>', qpara):
+	if re.match('<p[^>]*>The Commons (?:(?:do not )?insist on .{0,160}? but propose|have made the following consequential|(?:dis)?agree (?:to|with)) .{0,260}?(?:\.|&mdash;)+</p>', qpara):
 		return "bill"
 
 	if re.match('<p[^>]*>House adjourned at .{0,60}?</p>', qpara):
