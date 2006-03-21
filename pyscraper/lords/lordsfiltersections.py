@@ -219,14 +219,16 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return "agreeto"
 
 
-	if re.match('<p>(?:The )?Bill (?:was )?returned (?:earlier )?(?:from|to) the Commons .{0,260}?\.</p>', qpara):
+	if re.match('<p>(?:The )?Bill (?:was )?returned (?:earlier )?(?:from|to) the Commons .{0,350}?\.</p>', qpara):
 		return "bill"
-	if re.match('<p[^>]*>The Commons (?:(?:do not )?insist on .{0,160}? but propose|have made the following consequential|(?:dis)?agree (?:to|with)) .{0,260}?(?:\.|&mdash;)+</p>', qpara):
+	if re.match('<p[^>]*>The Commons (?:(?:do not )?insist on .{0,160}? but propose|have made the following consequential|(?:dis)?agree (?:to|with)) .{0,260}?(?:\.|&mdash;)*</p>', qpara):
+		return "bill"
+	if re.match('<p[^>]*>The Lords insist on .{0,160}? for the following reasons?(?:\.|&mdash;)+</p>', qpara):
 		return "bill"
 
 	if re.match('<p[^>]*>House adjourned at .{0,60}?</p>', qpara):
 		return "adjourned"
-	if re.match('<p>(?:House|Debate|Second [Rr]eading debate|(?:Further )?[Cc]onsideration of amendments on Report) resumed[\.:]', qpara):
+	if re.match('<p>(?:House|Debate|Second [Rr]eading debate|(?:Further )?[Cc]onsideration of amendments on Report) resumed(?: on Clause \d+)?[\.:]', qpara):
 		return "resumed"
 
 	if re.match("<p>A message was brought from the Commons", qpara):
