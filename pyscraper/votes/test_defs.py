@@ -28,9 +28,9 @@ p=plaindate()
 
 s1=SEQ(p1,p2)
 
-tenv={'today' : datetime.date(2006, 02, 25), 'test' : '"testvalue"', 'no' : 4}
+tenv={'today' : datetime.date.today(), 'test' : '"testvalue"', 'no' : 4}
 
-today=datetime.date(2006,02,26)
+today=datetime.date.today()
 
 ftests=[ 'Monday next', 'tomorrow', 'On 14th June 2005']
 

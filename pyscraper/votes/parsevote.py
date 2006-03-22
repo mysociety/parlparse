@@ -23,6 +23,7 @@ from fd_parse import SEQ, OR,  ANY, POSSIBLY, IF, START, END, OBJECT, NULL, OUT,
 sys.path.append("../")
 from xmlfilewrite import WriteXMLHeader
 from contextexception import ContextException
+from miscfuncs import toppath
 
 splitparagraphs=ANY(
 	SEQ(
@@ -143,7 +144,9 @@ heading=SEQ(
 	OBJECT('heading', desc='$desc')
 	)
 
-minute_main=pattern(paragraph_number+'(?P<minute_text>[\s\S]*?)</p>')
+minute_main=DEFINE('minute_main',
+        pattern(paragraph_number+'(?P<minute_text>[\s\S]*?)</p>')
+)
 
 DEFINE('enprint', pattern('\d+-EN'))
 
@@ -180,18 +183,20 @@ minute_indent=SEQ(
 	END('paragraph')
 	)
 
+# put back in no when you have thought about it
 def paragraph_text(partype='plain', no=None):
-	if no:
-		attrmap={'no' : no}
-	else:
-		attrmap=None
+#	if no:
+#		attrmap={'no' : no}
+#	else:
+#		attrmap=None
 
 	return SEQ(
 		pattern('(?P<paragraph_text>([^<]|<i>|</i>)+)'),
 		ELEMENT('paragraph',
 			body='$paragraph_text',
-			attrlit={'type' : partype},
-			attrmap=attrmap
+                        type='%s' % repr(partype)
+#			attrlit={'type' : partype},
+#			attrmap=attrmap
 			)
 		)
 
@@ -535,20 +540,24 @@ minute_plain=DEFINE('minute_plain', SEQ(
 	fd_parse.TRACE(False, slength=512),
 	ELEMENT('maintext', body='$minute_text'),
 #	SET('paragraph_text','""'),
-	ANY(OR(
-		minute_order,
-		minute_tripleindent,
-		minute_doubleindent,
-		minute_indent,
-		dateheading,
-		SEQ(untagged_par(), CALL('$paragraph_text', sub_paragraph),
-		table
-		)),
+	ANY(
+                OR(
+		        minute_order,
+		        minute_tripleindent,
+	        	minute_doubleindent,
+		        minute_indent,
+		        dateheading,
+		        SEQ(
+                                untagged_par(), 
+                                CALL('$paragraph_text', sub_paragraph),
+		                table
+        		)
+                )
+        ),
 #	fd_parse.TRACE(False, vals=['paragraph_text']),
 #	POSSIBLY(CALL('$paragraph_text', en_print)),
-	END('minute'))
-	)
-)
+        END('minute')
+))
 
 vote=SEQ(
 	fd_parse.TRACE(False),
@@ -795,7 +804,7 @@ app_title=SEQ(
 	),
 	fd_parse.TRACE(False),
 	DEBUG('starting object appendix'),
-	START('appendix',['appno'])
+	START('appendix', appno='$appno')
 	)
 
 app_heading=heading
@@ -1017,17 +1026,20 @@ page=SEQ(
 	END('page')
 	)
 
-votedir='/home/Francis/project/parldata/cmpages/votes'
+votedir=os.path.join(toppath, 'cmpages/votes')
 
-def parsevote(date):
+def getstring(date):
 	name='votes%s.html' % date
 	f=open(votedir+'/'+name) # do not do this
 	s=f.read()
+        return s
 
+def parsevote(date):
+        s=getstring(date)
         return parsevotetext(s, date)
 
-def parsevotetext(s, date):
-	s=s.replace('\x99','&#214;')
+def stringprep(s):
+        s=s.replace('\x99','&#214;')
 	s=s.decode('latin-1')
 
 	# I am not sure what the <legal 1> tags are for. At present
@@ -1043,8 +1055,11 @@ def parsevotetext(s, date):
 	s=re.sub('alaign=center(?i)','align=center',s)
 	s=re.sub('<i>\s*</i>','',s)
 	s=re.sub('</p>\s*</ul>','</p>\n',s)
+        return s
 
 #	return page(s,{'today': '"%s"' % date, 'date':date})
+def parsevotetext(s, date):
+        s=stringprep(s)
 	return page(s,{'today': fromiso(date), 'date':date})
 
 if __name__ == '__main__':

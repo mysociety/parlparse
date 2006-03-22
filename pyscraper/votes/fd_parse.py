@@ -1038,6 +1038,7 @@ class ANY(Compound):
 			(s1,env1,result)=f(s,env)
 			results.append(result)
 			while len(s1) < len(s) and result.success:
+                        # need to make sure there is consistency with use of s,s1
 				s=s1
 				env=env1
 				if until:
@@ -1045,7 +1046,7 @@ class ANY(Compound):
 					results.append(untilresult)
 
 					if untilresult.success or untilresult.force:
-						break
+						return (s1, env1, AnyResult(self, results))
 				else:
 					results.append(Success(NOP()))	
 
@@ -1056,7 +1057,7 @@ class ANY(Compound):
 			# results should now have a list of results in it.
 
 			if otherwise:
-				(s2,env2,result)=otherwise(s1,env1)
+				(s1, env1, result)=otherwise(s1,env1)
 				results.append(result)
 
 			return (s1, env1, AnyResult(self, results))
