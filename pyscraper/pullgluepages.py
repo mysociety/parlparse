@@ -338,8 +338,8 @@ def ReplicatePatchToNewScrapedVersion(folderName, latestFileStem, latestFilePath
 		shutil.copyfile(tempfilename, tmpfile)
 		status = os.system("patch --quiet %s < %s" % (tmpfile, lpatchfile))
 		if status == 0:
-			print "Patchfile still applies, copying over ", lpatchfile, "=>", lpatchfilenext
-			print "   There you go..."
+			#print "Patchfile still applies, copying over ", lpatchfile, "=>", lpatchfilenext
+			#print "   There you go..."
 			shutil.copyfile(lpatchfile, lpatchfilenext)
 		else:
 			print "    Could not apply old patch file to this, status=", status
