@@ -91,34 +91,6 @@ def evaluate(template, env):
 		raise Exception, "%s[%s] in %s (before substitution) %s (after substitution" % (sys.exc_info()[0], arg, template, repr(valstring))
 	return value
 
-#def envsub(template, env):
-#	#print "#(envsub)[template=%s, env=%s]" % (template, env)
-#	s=template
-#
-#	keys=re.findall('\$[a-zA-Z]+\d*',template)
-#
-#	#print "#(envsub)[keys=%s]" % keys
-#	for k in keys:
-#		varname=k[1:]
-#		if env.has_key(varname):
-#			value=env[varname]
-#			#print "#(envsub)(%s)(%s)" % (varname, repr(value))
-#			if len(unicode(value))==0:
-#				value="u''"
-#		else:
-#			value='None'
-#		#print "#(envsub)k=%s value=%s" % (k, repr(value))
-#		#print "#(envsub)", k[1:], env, repr(value)
-#		
-#		if type(value)==type('str'):
-#			s=s.replace(k, value)
-#		elif type(value)==type('str'):
-#			s=s.replace(k, value.encode('utf-8'))
-#		else:
-#			s=s.replace(k, repr(value))
-#	#print "#(envsub)[result=%s]" % repr(s)
-#	return s
-
 def clean(s):
 	'''clean removes certain HTML tags etc from a string
 
@@ -925,7 +897,7 @@ class Compound(ParseConstructor):
 		self._rebuild()
 
 		def fastcall(s, env):
-#			print "fastcall(%s): %s" % (self, self.match)
+
 			if self.match:
 				mobj=self.match.match(s)
 		
@@ -1126,7 +1098,7 @@ class SEQ(Compound):
 			results=[]
 			for l in self.children:
 				#debug("****(pos=%s)\n##string:\n%s\n##env:\n%s\n##values:\n%s" % (pos,s[:64],env,values))
-#				print l
+
 				(s,env,result)=l(s,env)
 				results.append(result)
 				if not result.success:
@@ -1180,7 +1152,6 @@ def IF(condition, ifsuccess):
 			(s,env,result2)=ifsuccess(s1,env1)
 			values=[result1.delta, result2.delta]
 			if result2.success:
-				# print "####(if): if success"
 				return (s,env,Success(DeltaList(values)))
 			else:
 				return (s,env,IfFailure(result2))
@@ -1247,11 +1218,9 @@ class CALL(ParseConstructor):
 			local_env=env.copy()
 			(s1, env1, result)=f(unicode(substring), local_env)
 	
-			#print "*CALL env:\n%s\n env1:\n%s\n\nlocal_env\n%s\n" % (env, env1, local_env)
-	
 			if result.success:
 				for key, newkey in passback.iteritems():
-					#print key, newkey
+
 ##change. Posibly need to change this to make sure all is OK.
 					env[newkey]=local_env[key]
 			return (s, env, result)
@@ -1267,28 +1236,6 @@ class pattern(Pattern):
 			Match(pattern, flags)
 			)
 		
-
-#def pattern(p, flags=re.IGNORECASE, debug=False):
-#	prog = re.compile(p,flags)
-#	def anon_pattern(s,env):
-#		mobj=prog.match(s)
-#		if debug:
-#			print ('pattern p=(%s) s=(%s)\n' % (p, s[:128])).encode('UTF-8')
-#
-#		if mobj:
-#			result=Success(NOP())
-#			s=s[mobj.end():]
-#			env.update(mobj.groupdict())
-#		else:
-#			result=PatternFailure(s,env,p)
-#		
-#		return (s,env,result)
-#	return anon_pattern
-#
-
-# tagged doesn't get things right if tags is empty I think.
-
-#def tagged(first='',tags=[],p='',padding=None, last='', strings={}, plaintext=False):
 
 def tagpatterns(first, tags, padding, last):
 	s='('
@@ -1322,7 +1269,6 @@ def tagged(first='',tags=[],p='',padding=None, last=''):
 standard_punctuation=['.',';',',',':']
 
 def prep_plaintext(text,strings={},punctuation=standard_punctuation, opttags=[]):
-	#print "pre_plaintext: text=%s, strings=%s" % (text, strings)
 
 #	stringdict=dict([(v,lambda s:x) for (v,x) in strings.iteritems()])
 #	stringdict.update(standard_patterns)
@@ -1337,11 +1283,8 @@ def prep_plaintext(text,strings={},punctuation=standard_punctuation, opttags=[])
 		text=text.replace('<%s>' % tag, '(<%s>)?' % tag)
 		text=text.replace('</%s>' % tag, '(</%s>)?' % tag)
 
-	#print '### sub=%s stringdict=%s' % (text, stringdict)
-
 	text=sub(text)
 
-	#print "prep_plaintext returned: %s" % text
 	return text
 
 def plaintext(text,strings={},punctuation=standard_punctuation, opttags=[], debug=False):
@@ -1350,7 +1293,6 @@ def plaintext(text,strings={},punctuation=standard_punctuation, opttags=[], debu
 
 
 def plaintextpar(text, strings={}, punctuation=standard_punctuation):
-	#print strings
 	(first, last)=tagpatterns(
 		first='\s*',
 		tags=['p','ul','br'],
@@ -1440,7 +1382,6 @@ class START(Parse):
 
 
 		def anonSTART(s,env):
-#			print "debug: starting object name=%s" % name
 			
 			deltalist=AttributesToDeltaList(env, attributes, groupstring)
 	
