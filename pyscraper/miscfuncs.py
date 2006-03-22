@@ -8,11 +8,13 @@ import os
 import tempfile
 
 # make the top path data directory value
-toppath = os.path.abspath(os.path.expanduser('~/parldata/'))
-if os.name == 'nt':  # the case of julian developing on a university machine.
-        toppath = os.path.abspath('../../parldata')
-        if re.search('\.\.', toppath):
-                toppath = 'C:\\parldata'
+toppath = os.path.abspath('../../parldata')
+if not os.path.exists(toppath):
+        toppath = os.path.abspath('../../../parldata')
+if not os.path.exists(toppath):
+        toppath = os.path.abspath(os.path.expanduser('~/parldata/'))
+if not os.path.exists(toppath):
+        toppath = 'C:\\parldata'
 
 # output directories used for the scraper
 pwcmdirs = os.path.join(toppath, "cmpages")
