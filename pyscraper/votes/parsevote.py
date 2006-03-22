@@ -199,7 +199,8 @@ def process_minute():
 	def anon(s,env):
 
 		if len(env['second'])> 0:
-			print "second reading"
+			pass
+#			print "second reading"
 		return (s,env,Success())
 	return anon
 
