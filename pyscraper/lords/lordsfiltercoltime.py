@@ -249,26 +249,29 @@ def SplitLordsText(text, sdate):
 	if not re.search('(?:<ul><ul><p>|</a>\s*(?:<ul>|<p>)?|<p>\s*<ul><ul>(?:<ul>)?)\s*(?:Parliament was prorogued|House adjourned )(?i)', res[0]):
 		raise ContextException("house adjourned failure", stamp=None, fragment=res[0][-100:])
 
+        page = re.findall('<page[^>]*>', res[0])[-1]
+
 	# check the title of the Grand Committee
 	if res[1]:
+                res[1] = page + res[1]
+                page = re.findall('<page[^>]*>', res[1])[-1]
 		assert not re.search('<a name="column_(?!(?:GC|CWH))\D+\d+">', res[1])
 		if not re.search('<(?:h2 align=)?center>\s*(?:Official Report of the )?(?:(?:the)?Northern Ireland Orders )?Grand Committee', res[1]):
 			raise ContextException("grand committee title failure", stamp=None, fragment=res[1][:100])
 
 	# check the title is in the Written Statements section
 	if res[2]:
+                res[2] = page + res[2]
+                page = re.findall('<page[^>]*>', res[2])[-1]
 		assert not re.search('<a name="column_(?!WS)\D+\d+">', res[2])
 		assert re.search('center>Written Statements', res[2])
 
 	# check the title and column numbering in the written answers
 	if res[3]:
+                res[3] = page + res[3]
 		assert not re.search('<a name="column_(?!WA)\D+\d+">', res[3])
 		if not re.search('<(?:h3 align=)?center>\s*Written Answers?', res[3]): # sometimes the s is missing
 			raise ContextException("missing written answer title", fragment=res[3])
-
-	# for sections that start in the middle of a page, we could grab the last url stamp
-	# from the previous section and insert it at the top.
-	# Since we are only parsing the main debate and divisions, this doesn't matter yet.
 
 	return res
 
