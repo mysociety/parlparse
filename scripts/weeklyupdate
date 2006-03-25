@@ -5,6 +5,12 @@
 
 source ~/parlparse/scripts/consts
 
+# Run member scrapers
+# TODO: add more
+cd ~/parlparse/members
+./bbcconv.py > bbc-links.xml 
+svn -q commit -m "Weekly members scrape commit"
+
 # Force reindex, to find URLs which have changed (updates to Hansard,
 # including the once-per-session grand URL-rename-and-break from cm to vo)
 cd ~/parlparse/pyscraper
