@@ -3,7 +3,7 @@
 # $Id: bbcconv.py,v 1.4 2005/03/25 23:33:35 theyworkforyou Exp $
 
 # Makes file connecting MP ids to URL of their BBC political profile
-# http://news.bbc.co.uk/1/hi/uk_politics/2160988.stm
+# http://news.bbc.co.uk/1/shared/mpdb/html/mpdb.stm
 
 # This is out of date.  Data is now static in bbc-links-200504.xml.
 
@@ -37,8 +37,7 @@ for i in range(12):
     content = ur.read()
     ur.close()
 
-#    content = content.replace("McGuire Anne", "McGuire, Anne")
-
+    print i + 1
     matcher = '<a\s*href="(/1/shared/mpdb/html/\d+.stm)" title="Profile of the MP for (.*?)(?: \(.*?\))?"><b>\s*([\s\S]*?)\s*</b></a></td>';
     matches = re.findall(matcher, content)
     for match in matches:
@@ -48,8 +47,14 @@ for i in range(12):
         match = map(lambda x: x.strip(), match)
         (url, cons, name) = match
 
-#        first = re.sub(" \(.*\)", "", first)
-        id, name, cons =  memberList.matchfullnamecons(name, cons, date_today)
+        # Not in aliases file - see comment there (it's to
+        # avoid ambiguity in debates parsing)
+        if cons == 'Great Yarmouth' and name == 'Tony Wright':
+            name = 'Anthony D Wright'
+
+        id, canonname, canoncons =  memberList.matchfullnamecons(name, cons, date_today)
+        if not id:
+            print >>sys.stderr, "Failed to match %s %s %s" % (name, cons, date_today)
         url = urlparse.urljoin(bbc_index_url, url)
 
         if id in bbcmembers:
