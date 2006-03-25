@@ -6,7 +6,7 @@
 source ~/parlparse/scripts/consts
 
 # Run member scrapers
-# TODO: add more
+# TODO: add more, write to temp file, check errors
 cd ~/parlparse/members
 ./bbcconv.py > bbc-links.xml 
 svn -q commit -m "Weekly members scrape commit"
