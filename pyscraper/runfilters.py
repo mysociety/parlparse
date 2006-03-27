@@ -118,7 +118,6 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 
         assert dname in ('wrans', 'debates', 'wms', 'westminhall', 'lordspages')
 	(flatb, gidname) = FILTERfunction(text, sdate)
-        majblocks = []
         for i in range(len(gidname)):
      		CreateGIDs(gidname[i], sdate, sdatever, flatb[i])
                 if gidname[i] != 'lords':
