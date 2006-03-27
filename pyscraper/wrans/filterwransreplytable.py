@@ -16,7 +16,7 @@ regtablejunk = '</?font[^>]*>|</?p>|\n(?i)'
 
 
 recolsplit = re.compile('(<t[dh][^>]*>[\s\S]*?(?:</t[dh]>|(?=<t[dh][^>]*>)))(?i)')
-recolmatch = re.compile('<t[dh](?: class[ =]"tabletext")?(?: colspan=\"?(\d+)\"?)?(?: align=(center))?(?: valign=top)?(?: NOWRAP)?>\s*([\s\S]*?)\s*(?:</t[dh]>)?$(?i)')
+recolmatch = re.compile('<t[dh](?: class[ =]"tabletext")?(?: colspan=\"?(\d+)\"?)?(?: align=(center|right))?(?: valign=top)?(?: NOWRAP)?>\s*([\s\S]*?)\s*(?:</t[dh]>)?$(?i)')
 def ParseRow(srow, hdcode, stampur):
 	# build up the list of entries for this row
 	Lscols = [ '\t\t<tr> ' ]
@@ -28,7 +28,7 @@ def ParseRow(srow, hdcode, stampur):
 				colspan = ' colspan="%s"' % col.group(1)
 			talign = ''
 			if col.group(2):
-				talign = ' align="center"'
+				talign = ' align="%s"' % col.group(2)
 			Lscols.append('<%s%s%s>' % (hdcode, tcolspan, talign))
 
 			coltext = re.sub('\n', ' ', col.group(3))

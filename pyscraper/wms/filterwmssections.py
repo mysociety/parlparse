@@ -35,7 +35,7 @@ def StripWMSHeadings(headspeak, sdate, lords):
 
 	if (not re.match('written (?:ministerial)? ?statements?(?i)', headspeak[i][0])) or headspeak[i][2]:
 		print headspeak[i]
-		raise ContextException, 'non-conforming Initial heading (looking for "written ministerial ?statements?")'
+		raise ContextException, 'non-conforming Initial heading (looking for "written (?:ministerial)? ?statements?")'
 	elif (not re.search('<date>', headspeak[i][0])):
 		i += 1
 
@@ -98,8 +98,9 @@ def FilterWMSSections(text, sdate, lords=False):
                         nflatb = []
                         stampurl.UpdateStampUrl(unspoketxt)
 			for ss in speechestxt:
-                                if lords and re.search('My (?:right )?honourable friend .*? has made the following (?:Written )?Ministerial Statement', ss[1]):
-                                        continue
+# Put everything in XML, de-dupe elsewhere
+#                                if lords and re.search('My (?:right )?honourable friend .*? has made the following (?:Written )?Ministerial Statement', ss[1]):
+#                                        continue
 				qb = qspeech(ss[0], ss[1], stampurl)
 				qb.typ = 'speech'
 				FilterWMSSpeech(qb)
