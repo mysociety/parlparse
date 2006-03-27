@@ -26,7 +26,7 @@ from miscfuncs import IsNotQuiet, TimeProcessing
 # <P><a name="column_1442"></a><B>1 Apr 2004 : Column 1442</B></P><FONT SIZE=3>
 # <P></UL><a name="column_1519"></a><B>1 Apr 2004 : Column 1519</B></P><UL><FONT SIZE=3>
 
-regcolmat = '\s*<a name="column_\d+"></a>\s*<b>[^:<]*:\s*column\s*\d+\s*</b>'
+regcolmat = '\s*<a name="column_(?:WS)?\d+"></a>\s*<b>[^:<]*:\s*column\s*(?:WS)?\d+\s*</b>'
 regcolp = ['(?:<p>|<br>&nbsp;<br>)', '(?:</p>|<br>&nbsp;<br>)' ]
 regcolumnum11 = '<p>%s</p>\s*<font size=3>' % regcolmat
 regcolumnum1 = '%s%s%s' % (regcolp[0], regcolmat, regcolp[1])

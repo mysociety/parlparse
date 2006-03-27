@@ -225,7 +225,7 @@ class SepHeadText:
 						self.textl = [ "NOTHING" ]
 				continue
 
-			# recognize a heading instance from the four kinds
+			# recognize a heading instance from the five kinds
 			gheading = None
 			gheadingMatch = resectiont1val.match(fss)
 			if gheadingMatch:
@@ -252,11 +252,11 @@ class SepHeadText:
 					gheading = gheadingMatch.group(1)
                         
 			# we have matched a heading thing
-			if gheadingMatch and not gheading:
+			if gheadingMatch and (not gheading or re.match('(?:<[^>]*?>|\s|&nbsp;)*$', gheading)):
 				continue
 
 			# we have matched a heading thing
-			if gheading:
+		        if gheading:
 				# there's a negative regexp match (for "The ... was asked - " which
 				# isn't a heading even though it looks like one).  Check we don't
 				#  match it.

@@ -82,9 +82,8 @@ def ApplyPatches(filein, fileout, patchfile):
 		blankfile = open(patchfile, "w")
 		blankfile.close()
 
-
 # the operation on a single file
-def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile, jfout, forcereparse, bquietc):
+def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile, jfout, bquietc):
 
 	# now apply patches and parse
 	patchtempfilename = tempfile.mktemp("", "pw-applypatchtemp-", miscfuncs.tmppath)
@@ -102,87 +101,95 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 	text = ofin.read()
 	ofin.close()
 
-	tempfilenameoldxml = None
+        tempfilenameoldxml = None
 
 	# do the filtering according to the type.  Some stuff is being inlined here
 	if dname == 'regmem' or dname == 'votes':
 		regmemout = open(tempfilename, 'w')
 		FILTERfunction(regmemout, text, sdate)  # totally different filter function format
 		regmemout.close()
+                # in win32 this function leaves the file open and stops it being renamed
+        	if sys.platform != "win32":
+        		xmlvalidate.parse(tempfilename) # validate XML before renaming
+	        if os.path.isfile(jfout):
+        		os.remove(jfout)
+        	os.rename(tempfilename, jfout)
+                return
 
+        assert dname in ('wrans', 'debates', 'wms', 'westminhall', 'lordspages')
+	(flatb, gidname) = FILTERfunction(text, sdate)
+        majblocks = []
+        for i in range(len(gidname)):
+     		CreateGIDs(gidname[i], sdate, sdatever, flatb[i])
+                if gidname[i] != 'lords':
+                        jfout = re.sub('(daylord|lordspages)', gidname[i], jfout)
 
-	# all other hansard types
-	else:
-		assert dname in ('wrans', 'debates', 'wms', 'westminhall', 'lordspages')
-		(flatb, gidname) = FILTERfunction(text, sdate)
-		CreateGIDs(gidname, sdate, sdatever, flatb)
+      		# wrans case is special, with its question-id numbered gids
+       		if dname == 'wrans':
+       			majblocks = CreateWransGIDs(flatb[i], (sdate + sdatever)) # combine the date and datever.  the old style gids stand on the paragraphs still
+       			bMakeOldWransGidsToNew = (sdate < "2005")
 
-		# wrans case is special, with its question-id numbered gids
-		if dname == 'wrans':
-			majblocks = CreateWransGIDs(flatb, (sdate + sdatever)) # combine the date and datever.  the old style gids stand on the paragraphs still
-			bMakeOldWransGidsToNew = (sdate < "2005")
+       		fout = open(tempfilename, "w")
+       		WriteXMLHeader(fout);
+       		fout.write('<publicwhip scrapeversion="%s" latest="yes">\n' % sdatever)
 
-		fout = open(tempfilename, "w")
-		WriteXMLHeader(fout);
-		fout.write('<publicwhip scrapeversion="%s" latest="yes">\n' % sdatever)
+        	# go through and output all the records into the file
+       		if dname == 'wrans':
+       			for majblock in majblocks:
+       				WriteXMLspeechrecord(fout, majblock[0], bMakeOldWransGidsToNew, True)
+       				for qblock in majblock[1]:
+       					qblock.WriteXMLrecords(fout, bMakeOldWransGidsToNew)
+       		else:
+       			for qb in flatb[i]:
+       				WriteXMLspeechrecord(fout, qb, False, False)
+       		fout.write("</publicwhip>\n\n")
+       		fout.close()
 
-		# go through and output all the records into the file
-		if dname == 'wrans':
-			for majblock in majblocks:
-				WriteXMLspeechrecord(fout, majblock[0], bMakeOldWransGidsToNew, True)
-				for qblock in majblock[1]:
-					qblock.WriteXMLrecords(fout, bMakeOldWransGidsToNew)
-		else:
-			for qb in flatb:
-				WriteXMLspeechrecord(fout, qb, False, False)
+                # load in a previous file and over-write it if necessary
+       		if xprev:
+                        xprevin = xprev[0]
+                        if gidname[i] != 'lords':
+                                xprevin = re.sub('(daylord|lordspages)', gidname[i], xprevin)
+                      	xin = open(xprevin, "r")
+                       	xprevs = xin.read()
+                       	xin.close()
 
-		fout.write("</publicwhip>\n\n")
-		fout.close()
+                       	# separate out the scrape versions
+                       	mpw = re.search('<publicwhip([^>]*)>\n([\s\S]*?)</publicwhip>', xprevs)
+                       	if mpw.group(1):
+                       		re.match(' scrapeversion="([^"]*)" latest="yes"', mpw.group(1)).group(1) == xprev[1]
+                       	# else it's old style xml files that had no scrapeversion or latest attributes
+                       	if dname == 'wrans':
+                       		xprevcompress = FactorChangesWrans(majblocks, mpw.group(2))
+                       	else:
+                       		xprevcompress = FactorChanges(flatb[i], mpw.group(2))
 
-		# load in a previous file and over-write it if necessary
-		if xprev:
-			xin = open(xprev[0], "r")
-			xprevs = xin.read()
-			xin.close()
+                       	tempfilenameoldxml = tempfile.mktemp(".xml", "pw-filtertempold-", miscfuncs.tmppath)
+                       	foout = open(tempfilenameoldxml, "w")
+                       	WriteXMLHeader(foout)
+                       	foout.write('<publicwhip scrapeversion="%s" latest="no">\n' % xprev[1])
+                       	foout.writelines(xprevcompress)
+                       	foout.write("</publicwhip>\n\n")
+                       	foout.close()
 
-			# separate out the scrape versions
-			mpw = re.search('<publicwhip([^>]*)>\n([\s\S]*?)</publicwhip>', xprevs)
-			if mpw.group(1):
-				re.match(' scrapeversion="([^"]*)" latest="yes"', mpw.group(1)).group(1) == xprev[1]
-			# else it's old style xml files that had no scrapeversion or latest attributes
-			if dname == 'wrans':
-				xprevcompress = FactorChangesWrans(majblocks, mpw.group(2))
-			else:
-				xprevcompress = FactorChanges(flatb, mpw.group(2))
+                # in win32 this function leaves the file open and stops it being renamed
+               	if sys.platform != "win32":
+               		xmlvalidate.parse(tempfilename) # validate XML before renaming
 
-			tempfilenameoldxml = tempfile.mktemp(".xml", "pw-filtertempold-", miscfuncs.tmppath)
-			foout = open(tempfilenameoldxml, "w")
-			WriteXMLHeader(foout)
-			foout.write('<publicwhip scrapeversion="%s" latest="no">\n' % xprev[1])
-			foout.writelines(xprevcompress)
-			foout.write("</publicwhip>\n\n")
-			foout.close()
+               	# in case of error, an exception is thrown, so this line would not be reached
+               	# we rename both files (the old and new xml) at once
 
+               	if os.path.isfile(jfout):
+               		os.remove(jfout)
+               	os.rename(tempfilename, jfout)
 
-	# in win32 this function leaves the file open and stops it being renamed
-	if sys.platform != "win32":
-		xmlvalidate.parse(tempfilename) # validate XML before renaming
-
-	# in case of error, an exception is thrown, so this line would not be reached
-	# we rename both files (the old and new xml) at once
-
-	if os.path.isfile(jfout):
-		os.remove(jfout)
-	os.rename(tempfilename, jfout)
-
-	# copy over onto old xml file
-	if tempfilenameoldxml:
-		if sys.platform != "win32":
-			xmlvalidate.parse(tempfilenameoldxml) # validate XML before renaming
-		assert os.path.isfile(xprev[0])
-		os.remove(xprev[0])
-		os.rename(tempfilenameoldxml, xprev[0])
-
+               	# copy over onto old xml file
+               	if tempfilenameoldxml:
+               		if sys.platform != "win32":
+               			xmlvalidate.parse(tempfilenameoldxml) # validate XML before renaming
+               		assert os.path.isfile(xprevin)
+               		os.remove(xprevin)
+               		os.rename(tempfilenameoldxml, xprevin)
 
 # hunt the patchfile
 def findpatchfile(name, d1, d2):
@@ -267,7 +274,7 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 			bparsefile = not os.path.isfile(jfout) or forcereparse or bmodifiedoutoforder
 			while bparsefile:  # flag is being used acually as if bparsefile: while True:
 				try:
-					RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile, jfout, forcereparse, options.quietc)
+					RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile, jfout, options.quietc)
 
 					# update the list of files which have been changed
 					# (don't see why it can't be determined by the modification time on the file)
@@ -315,7 +322,7 @@ def RunWransFilters(text, sdate):
 	si.close()
 
 	flatb = FilterWransSections(text, sdate)
-	return (flatb, "wrans")
+	return ([flatb], ["wrans"])
 
 
 def RunDebateFilters(text, sdate):
@@ -332,7 +339,7 @@ def RunDebateFilters(text, sdate):
 	si.close()
 
 	flatb = FilterDebateSections(text, sdate, "debate")
-	return (flatb, "debate")
+	return ([flatb], ["debate"])
 
 
 def RunWestminhallFilters(text, sdate):
@@ -349,7 +356,7 @@ def RunWestminhallFilters(text, sdate):
 	si.close()
 
 	flatb = FilterDebateSections(text, sdate, "westminhall")
-	return (flatb, "westminhall")
+	return ([flatb], ["westminhall"])
 
 def RunWMSFilters(text, sdate):
 	si = cStringIO.StringIO()
@@ -363,7 +370,7 @@ def RunWMSFilters(text, sdate):
 	si.close()
 
 	flatb = FilterWMSSections(text, sdate)
-	return (flatb, "wms")
+	return ([flatb], ["wms"])
 
 # These text filtering functions filter twice through stringfiles,
 # before directly filtering to the real file.
@@ -371,7 +378,10 @@ def RunLordsFilters(text, sdate):
 	fourstream = SplitLordsText(text, sdate)
 	#return ([], "lords")
 
-	# the debates section (only)
+        flatb = []
+        gidnames = []
+
+        # Debates section
 	if fourstream[0]:
 		si = cStringIO.StringIO()
 		FilterLordsColtime(si, fourstream[0], sdate)
@@ -383,12 +393,24 @@ def RunLordsFilters(text, sdate):
 	   	text = si.getvalue()
 		si.close()
 
-		flatb = LordsFilterSections(text, sdate)
-		return (flatb, "lords")
+		flatb.append(LordsFilterSections(text, sdate))
+                gidnames.append("lords")
 
-	# error for now
-	assert False
-	return None
+        # Written Ministerial Statements
+        if fourstream[2]:
+                text = fourstream[2]
+                si = cStringIO.StringIO()
+                FilterLordsColtime(si, text, sdate)
+                text = si.getvalue()
+                si.close()
+                si = cStringIO.StringIO()
+                LordsFilterSpeakers(si, text, sdate)
+                text = si.getvalue()
+                si.close()
+                wms = FilterWMSSections(text, sdate, True)
+                if wms:
+                        flatb.append(wms)
+                        gidnames.append("lordswms")
 
-
+	return (flatb, gidnames)
 
