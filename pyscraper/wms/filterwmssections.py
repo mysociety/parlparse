@@ -39,7 +39,7 @@ def StripWMSHeadings(headspeak, sdate, lords):
 	elif (not re.search('<date>', headspeak[i][0])):
 		i += 1
 
-	if (not lords) and (sdate != mx.DateTime.DateTimeFrom(string.replace(headspeak[i][0], "&nbsp;", " ")).date or headspeak[i][2]):
+	if (not lords) and ((sdate != mx.DateTime.DateTimeFrom(string.replace(headspeak[i][0], "&nbsp;", " ")).date) or headspeak[i][2]):
 #		if (not parlPhrases.wransmajorheadings.has_key(headspeak[i][0])) or headspeak[i][2]:
 		print headspeak[i]
 		print sdate
@@ -95,7 +95,7 @@ def FilterWMSSections(text, sdate, lords=False):
 				raise ContextException("unspoken text under heading in WMS", stamp=stampurl, fragment=unspoketxt)
 
 			qbh = NormalHeadingPart(headingtxt, stampurl)
-                        nflatb = []
+                        flatb.append(qbh)
                         stampurl.UpdateStampUrl(unspoketxt)
 			for ss in speechestxt:
 # Put everything in XML, de-dupe elsewhere
@@ -104,10 +104,7 @@ def FilterWMSSections(text, sdate, lords=False):
 				qb = qspeech(ss[0], ss[1], stampurl)
 				qb.typ = 'speech'
 				FilterWMSSpeech(qb)
-				nflatb.append(qb)
-			if len(nflatb):
-                                flatb.append(qbh)
-                                flatb.extend(nflatb)
+				flatb.append(qb)
 
 		except ContextException, e:
 			raise
