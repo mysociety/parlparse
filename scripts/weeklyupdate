@@ -25,6 +25,12 @@ cd ~/parlparse/scripts
 cd ~/parldata/scrapedxml
 for X in regmem wrans debates westminhall wms lordspages
 do
-	zip -rq $X.xml.zip $X/
+    rm -f ~/parldatazips/$X.xml.zip
+	zip -rq ~/parldatazips/$X.xml.zip $X/
 done
+
+cd ~
+rm -f ~/parldatazips/parldata.zip
+find parldata | egrep -v "tmp/|\.svn|\.zip" | zip -q ~/parldatazips/parldata.zip -@
+
 
