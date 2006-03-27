@@ -25,7 +25,7 @@ fixsubs = 	[
 ]
 
 # parse through the usual intro headings at the beginning of the file.
-def StripWMSHeadings(headspeak, sdate):
+def StripWMSHeadings(headspeak, sdate, lords):
 	# check and strip the first two headings in as much as they are there
 	i = 0
 	if (headspeak[i][0] != 'Initial') or headspeak[i][2]:
@@ -33,13 +33,13 @@ def StripWMSHeadings(headspeak, sdate):
 		raise ContextException, 'non-conforming Initial heading '
 	i += 1
 
-	if (not re.match('written ministerial ?statements?(?i)', headspeak[i][0])) or headspeak[i][2]:
+	if (not re.match('written (?:ministerial)? ?statements?(?i)', headspeak[i][0])) or headspeak[i][2]:
 		print headspeak[i]
 		raise ContextException, 'non-conforming Initial heading (looking for "written ministerial ?statements?")'
 	elif (not re.search('<date>', headspeak[i][0])):
 		i += 1
 
-	if (sdate != mx.DateTime.DateTimeFrom(string.replace(headspeak[i][0], "&nbsp;", " ")).date) or headspeak[i][2]:
+	if (not lords) and (sdate != mx.DateTime.DateTimeFrom(string.replace(headspeak[i][0], "&nbsp;", " ")).date or headspeak[i][2]):
 #		if (not parlPhrases.wransmajorheadings.has_key(headspeak[i][0])) or headspeak[i][2]:
 		print headspeak[i]
 		print sdate
@@ -61,7 +61,7 @@ def NormalHeadingPart(headingtxt, stampurl):
 
 	if not re.search('[a-z]', headingtxt):
 		bmajorheading = True
-	elif re.search('_dpthd', stampurl.aname):
+	elif re.search('_dpthd', stampurl.aname) or re.search('_head', stampurl.aname):
 		bmajorheading = True
 	if re.search('_sbhd', stampurl.aname):
 		bmajorheading = False
@@ -77,12 +77,12 @@ def NormalHeadingPart(headingtxt, stampurl):
 	qb.stext = [ headingtxtfx ]
 	return qb
 
-def FilterWMSSections(text, sdate):
+def FilterWMSSections(text, sdate, lords=False):
 	text = ApplyFixSubstitutions(text, sdate, fixsubs)
 	# split into list of triples of (heading, pre-first speech text, [ (speaker, text) ])
 	headspeak = SplitHeadingsSpeakers(text)
 
-	(ih, stampurl) = StripWMSHeadings(headspeak, sdate)
+	(ih, stampurl) = StripWMSHeadings(headspeak, sdate, lords)
 
 	flatb = [ ]
 	for sht in headspeak[ih:]:
@@ -91,43 +91,22 @@ def FilterWMSSections(text, sdate):
 			unspoketxt = sht[1]
 			speechestxt = sht[2]
 
-			if (not re.match('(?:<[^>]*>|\s)*$', unspoketxt)):
+			if (not re.match('(?:<[^>]*>|\s|&nbsp;)*$', unspoketxt)):
 				raise ContextException("unspoken text under heading in WMS", stamp=stampurl, fragment=unspoketxt)
-#				qb = qspeech('nospeaker="true"', unspoketxt, stampurl)
-#				qb.typ = 'speech'
-#				FilterDebateSpeech(qb)
-#				flatb.append(qb)
-#			else:
-#			stampurl.UpdateStampUrl(unspoketxt)
 
-# DEBATE
 			qbh = NormalHeadingPart(headingtxt, stampurl)
-			flatb.append(qbh)
-
+                        nflatb = []
                         stampurl.UpdateStampUrl(unspoketxt)
-# WRANS
-#			# detect if this is a major heading
-#			if not re.search('[a-z]', headingtxt) and not speechestxt:
-#				if not parlPhrases.wransmajorheadings.has_key(headingtxt):
-#					raise ContextException("unrecognized major heading, please add to parlPhrases.wransmajorheadings", fragment = headingtxt, stamp = stampurl)
-#				majheadingtxtfx = parlPhrases.wransmajorheadings[headingtxt] # no need to fix since text is from a map.
-#				qbH = qspeech('nospeaker="true"', majheadingtxtfx, stampurl)
-#				qbH.typ = 'major-heading'
-#				qbH.stext = [ majheadingtxtfx ]
-#				flatb.append(qbH)
-#				continue
-#			# non-major heading; to a question batch
-#			if parlPhrases.wransmajorheadings.has_key(headingtxt):
-#				raise Exception, ' speeches found in major heading %s' % headingtxt
-#			headingtxtfx = FixHTMLEntities(headingtxt)
-#			headingmark = 'nospeaker="True"'
-#			bNextStartofQ = True
-# DEBATES:
 			for ss in speechestxt:
+                                if lords and re.search('My (?:right )?honourable friend .*? has made the following (?:Written )?Ministerial Statement', ss[1]):
+                                        continue
 				qb = qspeech(ss[0], ss[1], stampurl)
 				qb.typ = 'speech'
 				FilterWMSSpeech(qb)
-				flatb.append(qb)
+				nflatb.append(qb)
+			if len(nflatb):
+                                flatb.append(qbh)
+                                flatb.extend(nflatb)
 
 		except ContextException, e:
 			raise

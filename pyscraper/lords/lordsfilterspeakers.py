@@ -315,10 +315,10 @@ def LordsFilterSpeakers(fout, text, sdate):
 			raise ContextException("bad format", stamp=stampurl, fragment=fssb)
 
 		if namec.group(2):
-			name = namec.group(2)
-			loffice = namec.group(1)
+			name = re.sub('\s+', ' ', namec.group(2))
+			loffice = re.sub('\s+', ' ', namec.group(1))
 		else:
-			name = namec.group(1)
+			name = re.sub('\s+', ' ', namec.group(1))
 			loffice = None
 
 		colon = namec.group(3)
