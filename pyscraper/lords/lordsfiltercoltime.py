@@ -86,6 +86,7 @@ def FilterLordsColtime(fout, text, sdate):
 				raise ContextException("Column date disagrees %s -- %s" % (sdate, fss), stamp=stampurl, fragment=fss)
 
 			# check number
+                        # ltype = columng.group(2)
 			lcolnum = string.atoi(columng.group(3))
 			if lcolnum == colnum - 1:
 				pass	# spurious decrementing of column number stamps
@@ -94,7 +95,7 @@ def FilterLordsColtime(fout, text, sdate):
 			# good (we get skipped columns in divisions)
 			elif (colnum == -1) or (colnum + 1 <= lcolnum <= colnum + 5):  # was 2 but this caused us to miss ones
 				colnum = lcolnum
-				fout.write('<stamp coldate="%s" colnum="%s"/>' % (sdate, colnum))
+				fout.write('<stamp coldate="%s" colnum="%s%s"/>' % (sdate, colnum, ""))
 
 			# column numbers do get skipped during division listings
 			else:

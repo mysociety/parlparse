@@ -101,8 +101,6 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 	text = ofin.read()
 	ofin.close()
 
-        tempfilenameoldxml = None
-
 	# do the filtering according to the type.  Some stuff is being inlined here
 	if dname == 'regmem' or dname == 'votes':
 		regmemout = open(tempfilename, 'w')
@@ -119,7 +117,12 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         assert dname in ('wrans', 'debates', 'wms', 'westminhall', 'lordspages')
 	(flatb, gidname) = FILTERfunction(text, sdate)
         for i in range(len(gidname)):
-     		CreateGIDs(gidname[i], sdate, sdatever, flatb[i])
+                tempfilenameoldxml = None
+
+                gidnam = gidname[i]
+                if gidname[i] == 'lordswms':
+                        gidnam = 'wms'
+     		CreateGIDs(gidnam, sdate, sdatever, flatb[i])
                 if gidname[i] != 'lords':
                         jfout = re.sub('(daylord|lordspages)', gidname[i], jfout)
 
@@ -149,27 +152,28 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                         xprevin = xprev[0]
                         if gidname[i] != 'lords':
                                 xprevin = re.sub('(daylord|lordspages)', gidname[i], xprevin)
-                      	xin = open(xprevin, "r")
-                       	xprevs = xin.read()
-                       	xin.close()
+                        if os.path.isfile(xprevin):
+                      	        xin = open(xprevin, "r")
+                               	xprevs = xin.read()
+                               	xin.close()
 
-                       	# separate out the scrape versions
-                       	mpw = re.search('<publicwhip([^>]*)>\n([\s\S]*?)</publicwhip>', xprevs)
-                       	if mpw.group(1):
-                       		re.match(' scrapeversion="([^"]*)" latest="yes"', mpw.group(1)).group(1) == xprev[1]
-                       	# else it's old style xml files that had no scrapeversion or latest attributes
-                       	if dname == 'wrans':
-                       		xprevcompress = FactorChangesWrans(majblocks, mpw.group(2))
-                       	else:
-                       		xprevcompress = FactorChanges(flatb[i], mpw.group(2))
+                               	# separate out the scrape versions
+                               	mpw = re.search('<publicwhip([^>]*)>\n([\s\S]*?)</publicwhip>', xprevs)
+                               	if mpw.group(1):
+                               		re.match(' scrapeversion="([^"]*)" latest="yes"', mpw.group(1)).group(1) == xprev[1]
+                               	# else it's old style xml files that had no scrapeversion or latest attributes
+                               	if dname == 'wrans':
+                               		xprevcompress = FactorChangesWrans(majblocks, mpw.group(2))
+                               	else:
+                               		xprevcompress = FactorChanges(flatb[i], mpw.group(2))
 
-                       	tempfilenameoldxml = tempfile.mktemp(".xml", "pw-filtertempold-", miscfuncs.tmppath)
-                       	foout = open(tempfilenameoldxml, "w")
-                       	WriteXMLHeader(foout)
-                       	foout.write('<publicwhip scrapeversion="%s" latest="no">\n' % xprev[1])
-                       	foout.writelines(xprevcompress)
-                       	foout.write("</publicwhip>\n\n")
-                       	foout.close()
+                               	tempfilenameoldxml = tempfile.mktemp(".xml", "pw-filtertempold-", miscfuncs.tmppath)
+                               	foout = open(tempfilenameoldxml, "w")
+                               	WriteXMLHeader(foout)
+                               	foout.write('<publicwhip scrapeversion="%s" latest="no">\n' % xprev[1])
+                               	foout.writelines(xprevcompress)
+                               	foout.write("</publicwhip>\n\n")
+                               	foout.close()
 
                 # in win32 this function leaves the file open and stops it being renamed
                	if sys.platform != "win32":
