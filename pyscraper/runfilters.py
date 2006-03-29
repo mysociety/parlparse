@@ -114,6 +114,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         	os.rename(tempfilename, jfout)
                 return
 
+        safejfout = jfout
         assert dname in ('wrans', 'debates', 'wms', 'westminhall', 'lordspages')
 	(flatb, gidname) = FILTERfunction(text, sdate)
         for i in range(len(gidname)):
@@ -122,7 +123,10 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 gidnam = gidname[i]
                 if gidname[i] == 'lordswms':
                         gidnam = 'wms'
+                if gidname[i] == 'lordswrans':
+                        gidnam = 'wrans'
      		CreateGIDs(gidnam, sdate, sdatever, flatb[i])
+                jfout = safejfout
                 if gidname[i] != 'lords':
                         jfout = re.sub('(daylord|lordspages)', gidname[i], jfout)
 
@@ -414,6 +418,22 @@ def RunLordsFilters(text, sdate):
                 if wms:
                         flatb.append(wms)
                         gidnames.append("lordswms")
+
+        # Written Answers
+        if fourstream[3]:
+                text = fourstream[3]
+                si = cStringIO.StringIO()
+                FilterLordsColtime(si, text, sdate)
+                text = si.getvalue()
+                si.close()
+                si = cStringIO.StringIO()
+                LordsFilterSpeakers(si, text, sdate)
+                text = si.getvalue()
+                si.close()
+                wrans = FilterWransSections(text, sdate)
+                if wrans:
+                        flatb.append(wrans)
+                        gidnames.append("lordswrans")
 
 	return (flatb, gidnames)
 
