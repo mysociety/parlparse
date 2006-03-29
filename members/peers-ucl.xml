@@ -7253,9 +7253,6 @@
 	fromdate="2005-10-25" todate="9999-12-31"
 />
 
-
-
-
 <lord
 	id="uk.org.publicwhip/lord/100900"
 	house="lords"
@@ -7280,13 +7277,23 @@
 	peeragetype="L" affiliation="XB"
 	fromdate="2005-01-01" todate="9999-12-31"
 />
+
 <lord
-	id="uk.org.publicwhip/lord/100903"
-	house="lords"
-	forenames=""
-	title="Lord" lordname="ONeill" lordofname="Clackmannan"
-	peeragetype="L" affiliation="Lab"
-	fromdate="2005-01-01" todate="9999-12-31"
+    id="uk.org.publicwhip/lord/100904"
+    house="lords"
+    forenames="Michael John"
+    title="Lord" lordname="Hastings" lordofname="Scarisbrick"
+    peeragetype="L" affiliation="XB"
+    fromdate="2005-12-06" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100905"
+    house="lords"
+    forenames="Neil Forbes"
+    title="Lord" lordname="Davidson" lordofname="Glen Clova"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2005-03-28" todate="9999-12-31"
 />
 
 </publicwhip>
