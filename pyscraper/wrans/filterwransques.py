@@ -17,11 +17,11 @@ from contextexception import ContextException
 # (3) if she will ... grants.  [138425]<P></UL>
 
 def ExtractQnum(tex, stampurl):
-	qn = re.match('(.*?)\s*\[?(\d+R?)\]$', tex)
+	qn = re.match('(.*?)\s*\[?((?:HL)?\d+R?)\]$', tex)
 	if not qn:
 		return (tex, '0')  # default when no qnum is found.  the 0 qnums are detected elswhere (should have used "0error") in MeasureBlockSimilarity for gidmatching
 
-	isqn = re.search('\[(\d+R?)\]', qn.group(1))
+	isqn = re.search('\[((?:HL)?\d+R?)\]', qn.group(1))
 	if isqn:
 		print tex
 		print 'A colnum may be removing a necessary <p> tag before the (2)'
@@ -46,6 +46,14 @@ def FilterQuestion(text, sdate, stampurl):
             # if this happens a lot - do this properly, so the indented bit gets its own paragraph
             textp = (string.join(textp, " "),)
             textpindent = (0,)
+
+	if re.match('asked Her Majesty&#039;s Government|asked the Chairman of Committees', textp[0]):
+		firstpara = FixHTMLEntities(textp[0])
+		stext = [ '<p>%s</p>' % firstpara ]
+		for i in range(1, len(textp)):
+			eqnum = ExtractQnum(textp[i], stampurl)
+			stext.append('<p qnum="%s">%s</p>' % (eqnum[1], FixHTMLEntities(eqnum[0])))
+		return stext
 
 	# multi-part type
 	if len(textp) > 1:

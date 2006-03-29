@@ -42,7 +42,7 @@ def StripWransHeadings(headspeak, sdate):
 		raise ContextException('non-conforming Initial heading ')
 	i += 1
 
-	if (not re.match('written answers? to questions?(?i)', headspeak[i][0])) or headspeak[i][2]:
+	if (not re.match('written answers?(?: to questions?)?(?i)', headspeak[i][0])) or headspeak[i][2]:
 		if not re.match('The following answers were received.*', headspeak[i][0]):
 			pass
                         # print headspeak[i]
@@ -120,7 +120,7 @@ def FilterWransSections(text, sdate):
 			raise Exception, ' speeches found in major heading %s' % headingtxt
 
 		headingtxtfx = FixHTMLEntities(headingtxt)
-		headingmark = 'nospeaker="True"'
+		headingmark = 'nospeaker="true"'
 		bNextStartofQ = True
 
 		# go through each of the speeches in a block and put it into our batch of speeches
@@ -128,10 +128,10 @@ def FilterWransSections(text, sdate):
 		for ss in speechestxt:
 			qb = qspeech(ss[0], ss[1], stampurl)
 			#print ss[0] + "  " + stampurl.stamp
-			lqnums = re.findall('\[(\d+)R?\]', ss[1])
+			lqnums = re.findall('\[(?:HL)?(\d+)R?\]', ss[1])
 
 			# question posed
-			if re.match('(?:<[^>]*?>|\s)*?(to ask)(?i)', qb.text) or \
+			if re.match('(?:<[^>]*?>|\s)*?(to ask|asked (Her Majesty&#039;s Government|the Chairman of Committees))(?i)', qb.text) or \
                            re.search('<wrans-question>', qb.text):
                                 qb.text = qb.text.replace('<wrans-question>', '')
 				qb.typ = 'ques'
@@ -150,7 +150,7 @@ def FilterWransSections(text, sdate):
 
 					# used to show that the subsequent headings in this block have been created,
 					# and weren't in the original text.
-					headingmark = 'nospeaker="True" inserted-heading="True"'
+					headingmark = 'nospeaker="true" inserted-heading="true"'
 					qnums = lqnums # reset the qnums count
 				else:
 					qnums.extend(lqnums)

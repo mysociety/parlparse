@@ -218,7 +218,7 @@ class SepHeadText:
 					self.EndSpeech()
 
 					# this fills in a new speech that will be a placeholder
-					self.speaker = 'nospeaker="True" redirect="%s"' % gparmess.group(2)
+					self.speaker = 'nospeaker="true" redirect="%s"' % gparmess.group(2)
 					if re.match('ques', gparmess.group(1)):
 						self.textl = [ "<wrans-question>NOTHING" ]
 					else:
