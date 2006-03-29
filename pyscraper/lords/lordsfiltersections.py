@@ -202,7 +202,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 	commonsAmendMatch = re.match('<p>(?:On Question, )?(?:Commons )?Amendments? .{0,60}? (dis)?agreed to(?: accordingly)?\.</p>', qpara)
 	if commonsAmendMatch:
 		return commonsAmendMatch.group(1) and "disagreedto" or "agreedto"
-	if re.match('<p>On Question, (?:Clause|Motion) .{0,16}? agreed to\.</p>', qpara):
+	if re.match('<p>On Question, (?:Clause|Motion) .{0,16}?agreed to\.</p>', qpara):
 		return "agreedto"
 	if re.match('<p>Amendment disagreed to accordingly\.</p>', qpara):
 		return "disagreedto"
@@ -211,7 +211,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 	if re.match('<p>Schedule agreed to\.</p>', qpara):
 		return "agreedto"
 
-	if re.match('<p>Moved, That the .{0,60}? be agreed to\.', qpara):
+	if re.match('<p>Moved, That the .{0,120}? be (agreed to|approved)\.', qpara):
 		return "considered"
 	if re.match('<p>On Question, Whether .{0,60}? be agreed to\.', qpara):
 		return "considered"
