@@ -131,7 +131,7 @@ def FilterWransSections(text, sdate):
 			lqnums = re.findall('\[(?:HL)?(\d+)R?\]', ss[1])
 
 			# question posed
-			if re.match('(?:<[^>]*?>|\s)*?(to ask|asked (Her Majesty&#039;s Government|the Chairman of Committees))(?i)', qb.text) or \
+			if re.match('(?:<[^>]*?>|\s)*?(to ask|asked (Her Majesty(&#039;|\')s Government|the ))(?i)', qb.text) or \
                            re.search('<wrans-question>', qb.text):
                                 qb.text = qb.text.replace('<wrans-question>', '')
 				qb.typ = 'ques'

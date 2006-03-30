@@ -16,6 +16,7 @@ pwcmdirs = miscfuncs.pwcmdirs
 tempfilename = miscfuncs.tempfilename
 
 from miscfuncs import NextAlphaString, AlphaStringToOrder
+from pullgluepages import ReplicatePatchToNewScrapedVersion
 
 # Pulls in all the debates, written answers, etc, glues them together, removes comments,
 # and stores them on the disk
@@ -188,11 +189,13 @@ def LordsPullGluePages(datefrom, dateto, bforcescrape):
 			ldgf = max(lddaymap[dnu[0]])
 			dgflatestalpha = ldgf[1]
 			dgflatest = os.path.join(pwlordspages, ldgf[2])
-		ldgfnext = 'daylord%s%s.html' % (dnu[0], NextAlphaString(dgflatestalpha))
+                dgfnextalpha = NextAlphaString(dgflatestalpha)
+		ldgfnext = 'daylord%s%s.html' % (dnu[0], dgfnextalpha)
 		dgfnext = os.path.join(pwlordspages, ldgfnext)
 		assert not dgflatest or os.path.isfile(dgflatest)
 		assert not os.path.isfile(dgfnext)
-
+                dgfnextstem = "%s%s" % (dnu[0], dgfnextalpha)
+                dgflateststem = "%s%s" % (dnu[0], dgflatestalpha)
 
 		# hansard index page
 		urlx = dnu[1]
@@ -244,7 +247,9 @@ def LordsPullGluePages(datefrom, dateto, bforcescrape):
 				print "  matched with:", dgflatest
 				continue
 
-		print "  writing:", dgfnext
+		ReplicatePatchToNewScrapedVersion('lordspages', dgflateststem, dgflatest, dgfnext, dgfnextstem)
+
+		print dnu[0], (dgflatest and 'RE-scraped' or 'scraped'), re.sub(".*?cmpages/", "", dgfnext)
 		os.rename(tempfilename, dgfnext)
 
 

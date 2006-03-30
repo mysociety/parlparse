@@ -47,7 +47,7 @@ def FilterQuestion(text, sdate, stampurl):
             textp = (string.join(textp, " "),)
             textpindent = (0,)
 
-	if re.match('asked Her Majesty&#039;s Government|asked the Chairman of Committees', textp[0]):
+	if re.match('asked Her Majesty(&#039;|\')s Government|asked the (?i)', textp[0]):
 		firstpara = FixHTMLEntities(textp[0])
 		stext = [ '<p>%s</p>' % firstpara ]
 		for i in range(1, len(textp)):

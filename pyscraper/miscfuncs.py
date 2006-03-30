@@ -197,6 +197,7 @@ entitymap = {
         '&#176;':'&deg;',   # this is the degrees
 		'&#182;':'&para;',  # end-paragraph (pi) symbol
 
+        '&#181;':'&micro;',   # this is one quarter symbol
         '&#188;':'&frac14;',   # this is one quarter symbol
         '&#189;':'&frac12;',   # this is one half symbol
         '&#190;':'&frac34;',   # this is three quarter symbol
