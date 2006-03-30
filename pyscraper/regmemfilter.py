@@ -34,10 +34,13 @@ def RunRegmemFilters(fout, text, sdate):
 	fout.write("<publicwhip>\n")
 
         rows = re.findall("<TR>(.*)</TR>", text)
+        rows = [ re.sub("&nbsp;", " ", row) for row in rows ]
         rows = [ re.sub("<B>|</B>|<BR>", "", row) for row in rows ]
         rows = [ re.sub('<IMG SRC="3lev.gif">', "", row) for row in rows ]
         rows = [ re.sub("&#173;", "-", row) for row in rows ]
         rows = [ re.sub('\[<A NAME="n\d+"><A HREF="\#note\d+">\d+</A>\]', '', row) for row in rows ]
+
+        # split into cells within a row
         rows = [ re.findall("<TD.*?>(.*?)</TD>", row) for row in rows ]
 
         memberset = sets.Set()
@@ -46,17 +49,20 @@ def RunRegmemFilters(fout, text, sdate):
         categoryname = None
         subcategory = None
         for row in rows:
+                row = [ column.strip() for column in row ]
                 (striprow, stripcount) = re.subn('</?[^>]+>', '', "".join(row))
                 if striprow.strip() == "":
                         # There is no text on the row, just tags
                         pass
-                elif len(row) == 1 and re.match("(?i)(<i>)?(&nbsp;)+(</i>)?", row[0]):
+                elif len(row) == 1 and re.match("(?i)(<i>)? +(</i>)?", row[0]):
                         # <TR><TD COLSPAN=4>&nbsp;</TD></TR>
                         pass
                 elif len(row) == 1:
                         # <TR><TD COLSPAN=4><B>JACKSON, Robert (Wantage)</B></TD></TR>
-                        print row[0]
                         (lastname, firstname, constituency) = re.search("^([^,]*), ([^(]*) \((.*)\)$", row[0]).groups()
+                        constituency = constituency.replace(')', '')
+                        constituency = constituency.replace('(', '')
+                        firstname = memberList.striptitles(firstname)[0]
                         (id, remadename, remadecons) = memberList.matchfullnamecons(firstname + " " + memberList.lowercaselastname(lastname), constituency, sdate)
                         if not id:
                                 raise Exception, "Failed to match name %s %s (%s) date %s" % (firstname, lastname, constituency, sdate)
@@ -74,16 +80,16 @@ def RunRegmemFilters(fout, text, sdate):
                 elif len(row) == 2 and row[0] == '' and re.match('Nil\.\.?', row[1]):
                         # <TR><TD></TD><TD COLSPAN=3><B>Nil.</B></TD></TR> 
                         fout.write('Nil.\n')
-                elif len(row) == 2 and row[0] != '' and row[0] != '&nbsp;':
+                elif len(row) == 2 and row[0] != '':
                         # <TR><TD><B>1.</B></TD><TD COLSPAN=3><B>Remunerated directorships</B></TD></TR>
                         if category:
                                 fout.write('\t</category>\n')
-                        digits = row[0].replace("&nbsp;", "")
+                        digits = row[0]
                         category = re.match("\s*(\d\d?)\.$", digits).group(1)
                         categoryname = row[1]
                         subcategory = None
                         fout.write('\t<category type="%s" name="%s">\n' % (category, categoryname))
-                elif len(row) == 2 and (row[0] == '' or row[0] == '&nbsp;'):
+                elif len(row) == 2 and row[0] == '':
                         # <TR><TD></TD><TD COLSPAN=3><B>Donations to the Office of the Leader of the Liberal Democrats received from:</B></TD></TR>
                         if subcategory:
                                 fout.write('\t\t<item subcategory="%s">%s</item>\n' % (subcategory, FixHTMLEntities(row[1])))
@@ -116,7 +122,7 @@ def RunRegmemFilters(fout, text, sdate):
                                 fout.write('\t\t<item subcategory="%s">%s</item>\n' % (subcategory, FixHTMLEntities(row[3])))
                 else:
                         print row
-                        raise Exception, "Unknown row type match"
+                        raise Exception, "Unknown row type match, length %d" % (len(row))
         if category:
                 fout.write('\t</category>\n')
         if needmemberend:
