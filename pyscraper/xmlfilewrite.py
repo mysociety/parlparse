@@ -54,6 +54,7 @@ def WriteXMLHeader(fout):
 <!ENTITY frac14 "&#188;" >
 <!ENTITY frac12 "&#189;" >
 <!ENTITY frac34 "&#190;" >
+<!ENTITY micro "&#181;" >
 
 <!ENTITY euro "&#8364;" >
 ]>

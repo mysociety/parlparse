@@ -27,7 +27,7 @@ from miscfuncs import IsNotQuiet, TimeProcessing
 # <P></UL><a name="column_1519"></a><B>1 Apr 2004 : Column 1519</B></P><UL><FONT SIZE=3>
 
 regcolmat = '\s*<a name="column_(?:WS|WA)?\d+"></a>\s*<b>[^:<]*:\s*column\s*(?:WS|WA)?\d+\s*</b>'
-regcolp = ['(?:<p>|<br>&nbsp;<br>)', '(?:</p>|<br>&nbsp;<br>)' ]
+regcolp = ['(?:<p>|<br>&nbsp;<br>|<br>)', '(?:</p>|<br>&nbsp;<br>|<br>)' ]
 regcolumnum11 = '<p>%s</p>\s*<font size=3>' % regcolmat
 regcolumnum1 = '%s%s%s' % (regcolp[0], regcolmat, regcolp[1])
 regcolumnum2 = '<p>\s*<font size=3>%s</p>\s*<font size=2>' % regcolmat
@@ -38,7 +38,7 @@ regcolumnum4 = '<p>\s*</ul><font size=3>%s</p>\s*<ul><font size=2>' % regcolmat
 regcolumnum6 = '<p>\s*</ul>(?:</ul></ul>)?%s</p>\s*<ul>(?:<ul><ul>)?<font size=3>' % regcolmat
 
 
-recolumnumvals = re.compile('(?:<br>&nbsp;<br>|<p>|</ul>|</i>|<font size=\d>|\s|</?a[^>]*>)*?<b>([^:<]*)\s*:\s*column\s*(\D*?)(\d+)\s*</b>(?:<br>&nbsp;<br>|</p>|<ul>|<i>|<font size=\d>|\s)*$(?i)')
+recolumnumvals = re.compile('(?:<br>&nbsp;<br>|<br>|<p>|</ul>|</i>|<font size=\d>|\s|</?a[^>]*>)*?<b>([^:<]*)\s*:\s*column\s*(\D*?)(\d+)\s*</b>(?:<br>&nbsp;<br>|<br>|</p>|<ul>|<i>|<font size=\d>|\s)*$(?i)')
 
 # <H5>12.31 p.m.</H5>
 # the lords times put dots in "p.m."  but the commons never do.
