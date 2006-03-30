@@ -16,24 +16,27 @@ regtablejunk = '</?font[^>]*>|</?p>|\n(?i)'
 
 
 recolsplit = re.compile('(<t[dh][^>]*>[\s\S]*?(?:</t[dh]>|(?=<t[dh][^>]*>)))(?i)')
-recolmatch = re.compile('<t[dh](?: class[ =]"tabletext")?(?: align=(center|right))?(?: colspan=\"?(\d+)\"?)?(?: align=(center|right))?(?: valign=top)?(?: NOWRAP)?>\s*([\s\S]*?)\s*(?:</t[dh]>)?$(?i)')
+recolmatch = re.compile('<t[dh](?: class[ =]"tabletext")?(?: align=(center|right))?(?: colspan=\"?(\d+)\"?)?(?: rowspan=\"?(\d+)\"?)?(?: align=(center|right))?(?: valign=top)?(?: NOWRAP)?>\s*([\s\S]*?)\s*(?:</t[dh]>)?$(?i)')
 def ParseRow(srow, hdcode, stampur):
 	# build up the list of entries for this row
 	Lscols = [ '\t\t<tr> ' ]
 	for spcol in recolsplit.split(srow):
 		col = recolmatch.match(spcol)
 		if col:
-			tcolspan = ''
+			colspan = ''
+                        rowspan = ''
 			if col.group(2):
-				colspan = ' colspan="%s"' % col.group(1)
+				colspan = ' colspan="%s"' % col.group(2)
+			if col.group(3):
+				rowspan = ' rowspan="%s"' % col.group(3)
 			talign = ''
 			if col.group(1):
 				talign = ' align="%s"' % col.group(1)
-			if col.group(3):
-				talign = ' align="%s"' % col.group(3)
-			Lscols.append('<%s%s%s>' % (hdcode, tcolspan, talign))
+			if col.group(4):
+				talign = ' align="%s"' % col.group(4)
+			Lscols.append('<%s%s%s%s>' % (hdcode, colspan, rowspan, talign))
 
-			coltext = re.sub('\n', ' ', col.group(4))
+			coltext = re.sub('\n', ' ', col.group(5))
 			coltext = re.sub('</?font[^>]*>|</?p>|</?center>|</?B>(?i)', '', coltext)
 			coltext = re.sub('^(?:<br>|\s)(?i)', '', coltext)
 			coltext = re.sub('(?:<br>|\s)$(?i)', '', coltext)
