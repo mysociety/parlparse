@@ -235,6 +235,7 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 
 	# loop through file in input directory in reverse date order and build up the
 	for sdate in daydates:
+                newday = 0
 		# skip dates outside the range specified on the command line
 		if sdate < options.datefrom or sdate > options.dateto:
 			continue
@@ -304,6 +305,7 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 					elif options.quietc:
 						print ce.description
 						print "\tERROR! %s failed on %s, quietly moving to next day" % (dname, sdate)
+                                                newday = 1
 						# sys.exit(1) # remove this and it will continue past an exception (but then keep throwing the same tired errors)
 						break # leave the loop having not written the xml file; go onto the next day
 
@@ -312,6 +314,8 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 						raise
 
 			# endwhile
+                        if newday:
+                                break
 			xprev = (jfout, sdatever)
 
 
@@ -389,35 +393,35 @@ def RunLordsFilters(text, sdate):
         gidnames = []
 
         # Debates section
-	if fourstream[0]:
-		si = cStringIO.StringIO()
-		FilterLordsColtime(si, fourstream[0], sdate)
-	   	text = si.getvalue()
-		si.close()
-
-		si = cStringIO.StringIO()
-		LordsFilterSpeakers(si, text, sdate)
-	   	text = si.getvalue()
-		si.close()
-
-		flatb.append(LordsFilterSections(text, sdate))
-                gidnames.append("lords")
+#	if fourstream[0]:
+#		si = cStringIO.StringIO()
+#		FilterLordsColtime(si, fourstream[0], sdate)
+#	   	text = si.getvalue()
+#		si.close()
+#
+#		si = cStringIO.StringIO()
+#		LordsFilterSpeakers(si, text, sdate)
+#	   	text = si.getvalue()
+#		si.close()
+#
+#		flatb.append(LordsFilterSections(text, sdate))
+#                gidnames.append("lords")
 
         # Written Ministerial Statements
-        if fourstream[2]:
-                text = fourstream[2]
-                si = cStringIO.StringIO()
-                FilterLordsColtime(si, text, sdate)
-                text = si.getvalue()
-                si.close()
-                si = cStringIO.StringIO()
-                LordsFilterSpeakers(si, text, sdate)
-                text = si.getvalue()
-                si.close()
-                wms = FilterWMSSections(text, sdate, True)
-                if wms:
-                        flatb.append(wms)
-                        gidnames.append("lordswms")
+#        if fourstream[2]:
+#                text = fourstream[2]
+#                si = cStringIO.StringIO()
+#                FilterLordsColtime(si, text, sdate)
+#                text = si.getvalue()
+#                si.close()
+#                si = cStringIO.StringIO()
+#                LordsFilterSpeakers(si, text, sdate)
+#                text = si.getvalue()
+#                si.close()
+#                wms = FilterWMSSections(text, sdate, True)
+#                if wms:
+#                        flatb.append(wms)
+#                        gidnames.append("lordswms")
 
         # Written Answers
         if fourstream[3]:
