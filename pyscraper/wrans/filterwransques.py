@@ -21,12 +21,17 @@ def ExtractQnum(tex, stampurl):
 	if not qn:
 		return (tex, '0')  # default when no qnum is found.  the 0 qnums are detected elswhere (should have used "0error") in MeasureBlockSimilarity for gidmatching
 
-	isqn = re.search('\[((?:HL)?\d+R?)\]', qn.group(1))
+	text = qn.group(1)
+	isqn = re.search('\[((?:HL)?(\d+)R?)\]', text)
 	if isqn:
-		print tex
-		print 'A colnum may be removing a necessary <p> tag before the (2)'
-		raise ContextException('qnum in middle of index block', stamp=stampurl, fragment=isqn.group(1))
-	return (qn.group(1), qn.group(2))
+		nqn = string.atoi(isqn.group(2))
+		if text.find("<ok-extra-qnum>") >= 0:
+			text = text.replace("<ok-extra-qnum>", "", 1)
+		else:
+			print tex
+			print 'A colnum may be removing a necessary <p> tag before the (2)'
+			raise ContextException('qnum in middle of index block', stamp=stampurl, fragment=isqn.group(1))
+	return (text, qn.group(2))
 
 
 # we break this into separate paragraphs and discover that the final ones are indentent.
