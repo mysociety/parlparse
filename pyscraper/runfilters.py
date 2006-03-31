@@ -406,36 +406,36 @@ def RunLordsFilters(text, sdate):
                 gidnames.append("lords")
 
         # Written Ministerial Statements
-        if fourstream[2]:
-                text = fourstream[2]
-                si = cStringIO.StringIO()
-                FilterLordsColtime(si, text, sdate)
-                text = si.getvalue()
-                si.close()
-                si = cStringIO.StringIO()
-                LordsFilterSpeakers(si, text, sdate)
-                text = si.getvalue()
-                si.close()
-                wms = FilterWMSSections(text, sdate, True)
-                if wms:
-                        flatb.append(wms)
-                        gidnames.append("lordswms")
+#        if fourstream[2]:
+#                text = fourstream[2]
+#                si = cStringIO.StringIO()
+#                FilterLordsColtime(si, text, sdate)
+#                text = si.getvalue()
+#                si.close()
+#                si = cStringIO.StringIO()
+#                LordsFilterSpeakers(si, text, sdate)
+#                text = si.getvalue()
+#                si.close()
+#                wms = FilterWMSSections(text, sdate, True)
+#                if wms:
+#                        flatb.append(wms)
+#                        gidnames.append("lordswms")
 
         # Written Answers
-        if fourstream[3]:
-                text = fourstream[3]
-                si = cStringIO.StringIO()
-                FilterLordsColtime(si, text, sdate)
-                text = si.getvalue()
-                si.close()
-                si = cStringIO.StringIO()
-                LordsFilterSpeakers(si, text, sdate)
-                text = si.getvalue()
-                si.close()
-                wrans = FilterWransSections(text, sdate)
-                if wrans:
-                        flatb.append(wrans)
-                        gidnames.append("lordswrans")
+#        if fourstream[3]:
+#                text = fourstream[3]
+#                si = cStringIO.StringIO()
+#                FilterLordsColtime(si, text, sdate)
+#                text = si.getvalue()
+#                si.close()
+#                si = cStringIO.StringIO()
+#                LordsFilterSpeakers(si, text, sdate)
+#                text = si.getvalue()
+#                si.close()
+#                wrans = FilterWransSections(text, sdate)
+#                if wrans:
+#                        flatb.append(wrans)
+#                        gidnames.append("lordswrans")
 
 	return (flatb, gidnames)
 
