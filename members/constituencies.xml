@@ -136,6 +136,7 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/34" todate="9999-12-31">
     <name text="Bedford"/>
+    <name text="Bedford and Kempton"/> <!-- in old register of members interests -->
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/35" todate="9999-12-31">
     <name text="Belfast East"/>
@@ -891,6 +892,7 @@ that loads in the original file before making modifications.
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/245" todate="2005-05-04">
     <name text="Glasgow, Govan"/>
     <name text="Glasgow Govan"/>
+    <name text="Govan"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/246" todate="2005-05-04">
     <name text="Glasgow, Kelvin"/>

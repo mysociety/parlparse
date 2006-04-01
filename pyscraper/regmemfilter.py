@@ -59,7 +59,10 @@ def RunRegmemFilters(fout, text, sdate):
                         pass
                 elif len(row) == 1:
                         # <TR><TD COLSPAN=4><B>JACKSON, Robert (Wantage)</B></TD></TR>
-                        (lastname, firstname, constituency) = re.search("^([^,]*), ([^(]*) \((.*)\)$", row[0]).groups()
+                        res = re.search("^([^,]*), ([^(]*) \((.*)\)$", row[0])
+                        if not res:
+                                raise Exception, "Failed to break up into first/last/cons: %s" % row[0]
+                        (lastname, firstname, constituency) = res.groups()
                         constituency = constituency.replace(')', '')
                         constituency = constituency.replace('(', '')
                         firstname = memberList.striptitles(firstname)[0]

@@ -166,6 +166,7 @@ different spellings of the offices -->
 <alias constituency="Worcester" alternate="John Foster" />
 <alias fullname="Michael Jabez Foster" alternate="Jabez Foster" />
 <alias fullname="Iain Duncan Smith" alternate="I Duncan Smith" />
+<alias fullname="Iain Duncan Smith" alternate="Iain Duncan-Smith" />
 <alias fullname="Jeffrey M Donaldson" alternate="Jeffery Donaldson" />
 <alias fullname="Claire Curtis-Thomas" alternate="C Curtis Thomas" />
 <alias fullname="Geoffrey Clifton-Brown" alternate="G Clifton Brown" />
@@ -300,6 +301,7 @@ on that date, and we don't want ambiguos matches any more -->
 <alias fullname="Michael Foster" alternate="Michael John Foster" /> <!-- maybe dodgy, confusion with the other Michael Foster? -->
 <alias fullname="Jeff Ennis" alternate="Jeffrey Ennis" />
 <alias fullname="Jim Cunningham" alternate="James Cunningham" />
+<alias fullname="Jack Cunningham" alternate="John Cunningham" />
 <alias fullname="Tim Boswell" alternate="Timothy Boswell" />
 <alias fullname="A J Beith" alternate="Alan Beith" />
 <alias fullname="A J Beith" alternate="AJ Beith" />
@@ -333,6 +335,13 @@ on that date, and we don't want ambiguos matches any more -->
 <alias fullname="Robert Wareing" alternate="Robert N Wareing" />
 
 <!-- First added for 1997 parliament -->
+<alias fullname="Phil Willis" alternate="Philip Willis" />
+<alias fullname="Alan Williams" alternate="Alan W Williams" />
+<alias fullname="Cecil Walker" alternate="A Cecil Walker" />
+<alias fullname="Mo Mowlam" alternate="Marjorie Mowlam" />
+<alias fullname="Robert Maclennan" alternate="Robert MacLennan" />
+<alias fullname="Nick Hawkins" alternate="Nicholas Hawkins" />
+<alias fullname="Norman Godman" alternate="Norman A Godman" />
 <alias fullname="Bob Ainsworth" alternate="Robert Ainsworth" />
 <alias fullname="Gerry Bermingham" alternate="Gerald Bermingham" />
 <alias fullname="Ray Whitney" alternate="Raymond Whitney" />
