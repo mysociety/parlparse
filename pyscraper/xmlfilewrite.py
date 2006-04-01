@@ -57,6 +57,7 @@ def WriteXMLHeader(fout):
 <!ENTITY micro "&#181;" >
 
 <!ENTITY euro "&#8364;" >
+<!ENTITY sup2 "&#178;" >
 ]>
 
 ''');
