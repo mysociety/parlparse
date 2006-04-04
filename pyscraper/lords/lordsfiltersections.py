@@ -265,8 +265,8 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return "title" # perhaps remove this keyword
 
 	if re.match("<p>.{0,20}?The noble[^:]{0,60}? said:", qpara):
-		print re.match("(<p>The (?:noble(?: and (?:learned|gallant|right reverend))? (?:Lord|Baroness|Earl|Viscount|Countess)|right reverend Prelate|most reverend Primate) said:\s*)", qpara)
-		#rens = re.match("(<p>The (?:noble(?: and (?:learned|gallant|right reverend))? (?:Lord|Baroness|Earl|Viscount|Countess)|right reverend Prelate|most reverend Primate) said:\s*)", qb.stext[i])
+		print re.match("(<p>The (?:noble(?: and (?:learned|gallant|right reverend))? (?:Lord|Baroness|Earl|Viscount|Countess|Duke)|right reverend Prelate|most reverend Primate) said:\s*)", qpara)
+		#rens = re.match("(<p>The (?:noble(?: and (?:learned|gallant|right reverend))? (?:Lord|Baroness|Earl|Viscount|Countess|Duke)|right reverend Prelate|most reverend Primate) said:\s*)", qb.stext[i])
 		print "Unexpected Noble Lord Said; are we missing the start of his speech where he moves the amendment?"
 		print "False positives can be hidden by adding a space before the colon"
 		print 'You can kill erroneous titles that are amendments by using <p class="tabletext">'
@@ -317,14 +317,14 @@ def MatchKnownAsPWmotionStuff(qb, ispeechstartp1):
 		qb.stext[ispeechstartp1] = "%s %s" % (clpmatch.group(1), clpmatch.group(2))
 		return "lines"
 
-	if re.match("<p>The noble .{0,30}?(?:Lord|Baroness|Earl|Viscount) said", qpara):
+	if re.match("<p>The noble .{0,30}?(?:Lord|Baroness|Earl|Viscount|Countess|Duke) said", qpara):
 		print "*****", qpara
 		raise ContextException("unexpected weak Noble Lord Said", stamp=qb.sstampurl, fragment=qpara)
 	if re.match("<p>The .{5,40}? \([^)]+\):", qpara):
 		raise ContextException("unexpected person with position Said", stamp=qb.sstampurl, fragment=qpara)
-	if re.match("<p>(?:Lord|Baroness|Earl|Viscount) [\w\s].{5,40}?:", qpara):
+	if re.match("<p>(?:Lord|Baroness|Earl|Viscount|Countess|Duke) [\w\s].{5,40}?:", qpara):
 		raise ContextException("unexpected person Said, (missing <b>?)", stamp=qb.sstampurl, fragment=qpara)
-	if re.match("<p>(?:Lord|Baroness|Earl|Viscount) [\w\s].{5,40}? moved ", qpara):
+	if re.match("<p>(?:Lord|Baroness|Earl|Viscount|Countess|Duke) [\w\s].{5,40}? moved ", qpara):
 		raise ContextException("unexpected person moved, (missing <b>?)", stamp=qb.sstampurl, fragment=qpara)
 
 	return None
@@ -332,7 +332,7 @@ def MatchKnownAsPWmotionStuff(qb, ispeechstartp1):
 
 def SearchForNobleLordSaid(qb, pwmotionsig):
 	for i in range(len(qb.stext)):
-		rens = re.match("(<p>The (?:noble(?: and (?:learned|gallant|right reverend))? (?:Lord|Baroness|Earl|Viscount|Countess)|right reverend Prelate|most reverend Primate) said:\s*)", qb.stext[i])
+		rens = re.match("(<p>The (?:noble(?: and (?:learned|gallant|right reverend))? (?:Lord|Baroness|Earl|Viscount|Countess|Duke)|right reverend Prelate|most reverend Primate) said:\s*)", qb.stext[i])
 		if rens:
 			qb.stext[i] = "<p>" +  qb.stext[i][rens.end(1):] # remove "the noble lord said"
 			return i
