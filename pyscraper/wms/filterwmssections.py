@@ -59,7 +59,7 @@ def StripWMSHeadings(headspeak, sdate, lords):
 def NormalHeadingPart(headingtxt, stampurl):
 	bmajorheading = False
 
-	if not re.search('[a-z]', headingtxt):
+	if not re.search('[a-z]', headingtxt) and headingtxt != 'BNFL':
 		bmajorheading = True
 	elif re.search('_dpthd', stampurl.aname) or re.search('_head', stampurl.aname):
 		bmajorheading = True
