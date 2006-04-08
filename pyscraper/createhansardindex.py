@@ -33,7 +33,7 @@ urlvotesindex = "http://www.publications.parliament.uk/pa/cm/cmvote/cmvote.htm"
 pwcmindex = os.path.join(toppath, "cmindex.xml")
 
 # scrape limit date
-earliestdate = '2001-06-01' # start of 2001 parliament
+earliestdate = '1997-05-01' # start of 1997 parliament
 #earliestdate = '1994-05-01'
 
 # regexps for decoding the data on an index page
@@ -99,6 +99,8 @@ def CmIndexFromPage(urllinkpage):
                         odate = re.sub('&nbsp;', ' ', link1[3])
                         if link1[3] == 'Friday, 6 February 2003':
                                 odate = '7 February 2003'
+                        if link1[3] == 'Thursday, 24th February 1999':
+                                odate = '25 February 1999'
                         sdate = mx.DateTime.DateTimeFrom(odate).date
                         if sdate < earliestdate:
                                 continue
