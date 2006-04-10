@@ -19,7 +19,7 @@ from miscfuncs import FixHTMLEntities
 from filterdivision import FilterDivision
 from filterdebatespeech import FilterDebateSpeech
 
-from lordsfilterspeakers import lordlist
+from resolvelordsnames import lordsList
 
 from contextexception import ContextException
 
@@ -76,7 +76,7 @@ def LordsFilterDivision(text, stampurl, sdate):
 				lfss = offm.group(1)
 			if not lfss:
 				raise ContextException("no name on line", stamp=stampurl, fragment=fss)
-			lordid = lordlist.MatchRevName(lfss, sdate, stampurl)
+			lordid = lordsList.MatchRevName(lfss, sdate, stampurl)
 			lordw = '\t<lord id="%s" vote="%s"%s>%s</lord>' % (lordid, contstate, tels, FixHTMLEntities(fss))
 
 			if contstate == 'content':
