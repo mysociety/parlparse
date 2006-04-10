@@ -1,13 +1,17 @@
 #! /usr/bin/python2.4
 
 import sys
+sys.path.append('lords/')
 from resolvemembernames import memberList
+from resolvelordsnames import lordsList
+
+print lordsList.GetLordIDfname('Baroness Thatcher', None, '2006-05-01')
+sys.exit(0)
 
 print memberList.matchfullnamecons("Anne Moffat", "East Lothian", "2006-01-22")
 print memberList.matchfullnamecons("Anne Picking", "East Lothian", "2006-01-22")
 print memberList.matchfullnamecons("Anne Moffat", "East Lothian", "2004-01-22")
 print memberList.matchfullnamecons("Anne Picking", "East Lothian", "2004-01-22")
-sys.exit(0)
 
 print memberList.canonicalcons("Aberdeen North", "2001-01-01")
 print memberList.canonicalcons("Aberdeen North", "2005-05-06")

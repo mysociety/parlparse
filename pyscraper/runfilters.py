@@ -84,7 +84,6 @@ def ApplyPatches(filein, fileout, patchfile):
 
 # the operation on a single file
 def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile, jfout, bquietc):
-
 	# now apply patches and parse
 	patchtempfilename = tempfile.mktemp("", "pw-applypatchtemp-", miscfuncs.tmppath)
 
@@ -188,6 +187,8 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 
                	if os.path.isfile(jfout):
                		os.remove(jfout)
+                if not os.path.isdir(os.path.dirname(jfout)):  # Lords output directories need making here
+                        os.mkdir(os.path.dirname(jfout))
                	os.rename(tempfilename, jfout)
 
                	# copy over onto old xml file
