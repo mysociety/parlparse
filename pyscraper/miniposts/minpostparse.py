@@ -17,6 +17,7 @@ import miscfuncs
 import difflib
 import mx.DateTime
 from resolvemembernames import memberList
+from resolvelordsnames import lordsList
 
 from xmlfilewrite import WriteXMLHeader
 
@@ -210,6 +211,9 @@ class protooffice:
                 (self.sdatet[0] >= '2004-04-16' and self.sdatet[0] <=
                 '2004-09-20') or (self.sdatet[0] >= '2005-05-17')):
 			self.cons = "Harrow West"
+
+		if self.fullname == "Lord Bach of Lutterworth":
+			self.fullname = "Lord Bach"
 
 		# special Andrew Adonis match
 		if self.fullname == "Andrew Adonis" and self.sdatet[0][:7] == "2005-05":
@@ -530,19 +534,29 @@ def SetNameMatch(cp, cpsdates):
 		if not cp.matchid:
                         print cpsdates[0]
 			print (cp.matchid, cp.remadename, cp.remadecons)
-		if not cp.matchid:
 			raise Exception, 'No match: ' + fullname + " : " + (cons or "[nocons]") + "\nOrig:" + cp.fullname
-
 	else:
 		cp.remadename = cp.fullname
 		cp.remadename = re.sub("^Rt Hon ", "", cp.remadename)
 		cp.remadename = re.sub(" [COM]BE$", "", cp.remadename)
 		cp.remadecons = ""
+		date = cpsdates[0]
 
+                # Manual fixes for old date stuff. Hmm.
+		if cp.remadename == 'Lord Adonis' and date<'2005-05-23':
+                        date = '2005-05-23'
+		if cp.remadename == 'Baroness Clark of Calton' and date=='2005-06-28':
+                        date = '2005-07-13'
+		if (cp.remadename == 'Baroness Morgan of Huyton' or cp.remadename == 'Lord Rooker') and date=='2001-06-11':
+                        date = '2001-06-21'
+		if cp.remadename == 'Lord Grocott' and date=='2001-06-12':
+                        date = '2001-07-03'
+		if cp.remadename != 'Duke of Abercorn' and cp.remadename != 'Lord Vestey':
+			fullname = cp.remadename
+			cp.matchid = lordsList.GetLordIDfname(fullname, None, date) # loffice isn't used?
 
 	# make the structure we will sort by.  Note the ((,),) structure
 	cp.sortobj = ((re.sub("(.*) (\S+)$", "\\2 \\1", cp.remadename), cp.remadecons), cp.sdatestart)
-
 
 # indentify open for gluing
 def GlueGapBetweenDataSets(mofficegroup):

@@ -4,6 +4,7 @@
 import string
 import re
 import xml.sax
+from contextexception import ContextException
 
 titleconv = {  'L.':'Lord',
 			   'B.':'Baroness',
@@ -119,6 +120,8 @@ class LordsList(xml.sax.handler.ContentHandler):
                         llordofname = "Southwell and Nottingham"
                 if ltitle == "Bishop" and llordname == "Southwell" and sdate>='2005-07-01':
                         llordname = "Southwell and Nottingham"
+                if llordname == "Hunt" and llordofname == "King's Heath":
+                        llordofname = "Kings Heath"
 
 		lname = llordname or llordofname
 		assert lname
@@ -134,6 +137,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 					if lm["fromdate"] <= sdate <= lm["todate"]:
 						res.append(lm)
 					else:
+						print lm["fromdate"], sdate, lm["todate"]
 						raise ContextException("lord not matching date range", stamp=stampurl, fragment=llordname)
 				continue
 
@@ -152,7 +156,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 					# the only case of repeated use of name for different people is with Bishops,
 					# and the date range will determin which person the bishop was
 					elif ltitle != "Bishop" and ltitle != "Archbishop" and (ltitle, lname) != ("Duke", "Norfolk"):
-						print "cm---", ltitle, llordname, llordofname, lm["fromdate"], lm["todate"]
+						print "cm---", ltitle, llordname, llordofname, lm["fromdate"], sdate, lm["todate"]
 						raise ContextException("lord not matching date range", stamp=stampurl, fragment=lname)
 				continue
 
