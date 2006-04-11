@@ -33,7 +33,7 @@ Minister of State
 Lord Falconer of Thoroton						28 July 1998 -  11 Jun 01
 Ian McCartney							28 July 1999 -  11 Jun 01
 Barbara Roche                             11 June 2001- 29 May 02
-Baroness Morgan                            11 June 2001- 9 Nov 01
+Baroness Morgan of Huyton                           11 June 2001- 9 Nov 01
 Douglas Alexander							29 May 2002- 13 June 03
 
 Parliamentary Secretary
@@ -111,7 +111,7 @@ Parliamentary Under-Secretary
 John Spellar								05 May 1997 - 28 July 99
 Peter Kilfoyle								28 July 1999 - 30 Jan 00
 Dr Lewis Moonie							31 Jan 2000  - 13 June 03
-Lord Bach of Lutterworth                11 June 2001 -
+Lord Bach                11 June 2001 -
 Ivor Caplin								13 June 2003-
 
 
@@ -202,7 +202,7 @@ Minister of State
 Gavin Strang  (Minister for Transport)				03 May 1997 - 28 July 98
 Dr John Reid (Minister for Transport)				28 July 1998 - 17 May 99
 Helen Liddell (Minister for Transport)				17 May 1999 - 28 July 99
-Lord MacDonald of Tradeston (Minister for Transport)		28 July 1999 -  11 June 01
+Lord Macdonald of Tradeston (Minister for Transport)		28 July 1999 -  11 June 01
 Michael Meacher (Minister for the Environment)			03 May 1997 - 11 June 01
 Hilary Armstrong (Minister for Local Government and Housing)	05 May 1997 - 11 June 01
 Richard Caborn (Minister for Regions, Regeneration and Planning)	05 May 1997 - 28 July 99
@@ -267,7 +267,7 @@ Mike O'Brien (Minister for Trade)							13 June 2003-
 
 Parliamentary Under-Secretary
 
-Baroness Symons of Verham Dean					05 May 1997 - 28 July 99
+Baroness Symons of Vernham Dean					05 May 1997 - 28 July 99
 Baroness Scotland of Asthal						28 July 1999 -  11 Jun 01
 Ben Bradshaw                                                                                     11 June 2001 -29 May 02
 Baroness Amos                                                                                   11 June 2001 -12 May 03
@@ -332,7 +332,7 @@ Barbara Roche								28 July 1999 -  11 Jun 01
 John Denham (Minister for Police, Courts and Drugs)                      11 June 2001 -18 Mar 03
 Keith Bradley (Minister for Prisons)                   11 June 2001- 29 May 02
 Lord Rooker (Minister for Asylum and Immigration)                       11 June 2001 -29 May 02
-Lord Falconer (Minister for Criminal Policy)			29 May 2002- 13 June 03
+Lord Falconer of Thoroton (Minister for Criminal Policy)			29 May 2002- 13 June 03
 Beverley Hughes (Minister for Citizenship and Immigration)	29 May 2002- 1 April 2004
 Hazel Blears								13 June 2003-
 Baroness Scotland of Asthal						13 June 2003-
@@ -517,7 +517,7 @@ Minister of State
 Gavin Strang								03 May 1997 - 27 July 98
 Dr John Reid								27 July 1998 - 17 May 99
 Helen Liddell								17 May 1999 - 28 July 99
-Lord MacDonald of Tradeston					28 July 1999 -  08 Jun 01
+Lord Macdonald of Tradeston					28 July 1999 -  08 Jun 01
 John Spellar (Minister for Transport)					08 June 2001-13 June 03
 Dr Kim Howells (Minister for Transport)				13 June 03-
 
