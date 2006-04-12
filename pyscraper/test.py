@@ -6,6 +6,8 @@ from resolvemembernames import memberList
 from resolvelordsnames import lordsList
 
 print lordsList.GetLordIDfname('Baroness Thatcher', None, '2006-05-01')
+print lordsList.GetLordIDfname('The Archbishop of York', None, '2006-05-01')
+print lordsList.GetLordIDfname('The Bishop of Southwell and Nottingham', None, '2006-05-01')
 sys.exit(0)
 
 print memberList.matchfullnamecons("Anne Moffat", "East Lothian", "2006-01-22")

@@ -6,6 +6,8 @@ import re
 import xml.sax
 from contextexception import ContextException
 
+from contextexception import ContextException
+
 titleconv = {  'L.':'Lord',
 			   'B.':'Baroness',
 			   'Abp.':'Archbishop',
@@ -20,7 +22,7 @@ titleconv = {  'L.':'Lord',
 
 # more tedious stuff to do: "earl of" and "sitting as" cases
 
-hontitles = [ 'Lord  ?Bishop', 'Lord', 'Baroness', 'Viscount', 'Earl', 'Countess', 'Archbishop', 'Duke', 'Lady' ]
+hontitles = [ 'Lord  ?Bishop', 'Bishop', 'Marquess', 'Lord', 'Baroness', 'Viscount', 'Earl', 'Countess', 'Archbishop', 'Duke', 'Lady' ]
 hontitleso = string.join(hontitles, '|')
 
 honcompl = re.compile('(?:The\s+(%s)|(%s) \s*(.*?))(?:\s+of\s+(.*))?$' % (hontitleso, hontitleso))
@@ -193,7 +195,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 		hom = honcompl.match(name)
 		if not hom:
 			print "format failure on '" + name + "'"
-			raise ContextException("lord name format failure", stamp=stampurl, fragment=name)
+			raise ContextException("lord name format failure on '%s'" % name, stamp=stampurl, fragment=name)
 
 		# now we have a speaker, try and break it up
 		ltit = hom.group(1)
