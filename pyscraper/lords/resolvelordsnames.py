@@ -22,10 +22,11 @@ titleconv = {  'L.':'Lord',
 
 # more tedious stuff to do: "earl of" and "sitting as" cases
 
-hontitles = [ 'Lord  ?Bishop', 'Bishop', 'Marquess', 'Lord', 'Baroness', 'Viscount', 'Earl', 'Countess', 'Archbishop', 'Duke', 'Lady' ]
+hontitles = [ 'Lord  ?Bishop', 'Bishop', 'Marquess', 'Lord', 'Baroness', 'Viscount', 'Earl', 'Countess', 
+              'Lord Archbishop', 'Archbishop', 'Duke', 'Lady' ]
 hontitleso = string.join(hontitles, '|')
 
-honcompl = re.compile('(?:The\s+(%s)|(%s) \s*(.*?))(?:\s+of\s+(.*))?$' % (hontitleso, hontitleso))
+honcompl = re.compile('(?:(%s)|(%s) \s*(.*?))(?:\s+of\s+(.*))?$' % (hontitleso, hontitleso))
 
 
 class LordsList(xml.sax.handler.ContentHandler):
@@ -108,6 +109,8 @@ class LordsList(xml.sax.handler.ContentHandler):
 	def GetLordID(self, ltitle, llordname, llordofname, loffice, stampurl, sdate, bDivision):
 		if ltitle == "Lord Bishop":
 			ltitle = "Bishop"
+		if ltitle == "Lord Archbishop":
+			ltitle = "Archbishop"
 
 		llordofname = string.replace(llordofname, ".", "")
 		llordname = string.replace(llordname, ".", "")
@@ -167,8 +170,8 @@ class LordsList(xml.sax.handler.ContentHandler):
 				if lm["fromdate"] <= sdate <= lm["todate"]:
 					if lm["lordname"] and llordofname:
 						#if not IsNotQuiet():
-						raise ContextException("lordofname matches lordname in lordlist", stamp=stampurl, fragment=lname)
 						print "cm---", ltitle, lm["lordname"], lm["lordofname"], llordname, llordofname
+						raise ContextException("lordofname matches lordname in lordlist", stamp=stampurl, fragment=lname)
 						self.DumpCrossovername(lm, stampurl)  # save into file which we will use (when complete, this line will become an assert False)
 					else:
 						assert lm["lordofname"] and llordname
@@ -189,12 +192,13 @@ class LordsList(xml.sax.handler.ContentHandler):
 
 
 	def GetLordIDfname(self, name, loffice, sdate, stampurl=None):
-		if re.match("Lord Bishop ", name):
-			name = "The " + name
+		name = re.sub("^The ", "", name)
+
+                if name == "Viscountess Hailsham":
+                        name = "Baroness Hogg"
 
 		hom = honcompl.match(name)
 		if not hom:
-			print "format failure on '" + name + "'"
 			raise ContextException("lord name format failure on '%s'" % name, stamp=stampurl, fragment=name)
 
 		# now we have a speaker, try and break it up
