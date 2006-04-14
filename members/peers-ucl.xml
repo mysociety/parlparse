@@ -1095,7 +1095,7 @@
 	forenames="David"
 	title="Lord" lordname="Cobbold" lordofname=""
 	peeragetype="HP" affiliation="XB"
-	fromdate="1960" todate="9999-12-31"
+	fromdate="1987" todate="9999-12-31"
 />
 <lord
 	id="uk.org.publicwhip/lord/100134"
@@ -1324,7 +1324,7 @@
 	forenames="Davina"
 	title="Baroness" lordname="Darcy de Knayth" lordofname=""
 	peeragetype="HP" affiliation="XB"
-	fromdate="1999" todate="9999-12-31"
+	fromdate="1943" todate="9999-12-31"
 />
 <lord
 	id="uk.org.publicwhip/lord/100162"
@@ -1623,7 +1623,7 @@
 	forenames="Merlin"
 	title="Earl" lordname="" lordofname="Erroll"
 	peeragetype="HP" affiliation="XB"
-	fromdate="1985" todate="9999-12-31"
+	fromdate="1978" todate="9999-12-31"
 />
 <lord
 	id="uk.org.publicwhip/lord/100198"
@@ -1687,7 +1687,7 @@
 	id="uk.org.publicwhip/lord/100205"
 	house="lords"
 	forenames="Lucius"
-	title="Viscount" lordname="Falkland" lordofname=""
+	title="Viscount" lordname="" lordofname="Falkland"
 	peeragetype="HD" affiliation="Dem"
 	fromdate="1984" todate="9999-12-31"
 />
@@ -2674,7 +2674,7 @@
 	forenames="Richard"
 	title="Lord" lordname="Inglewood" lordofname=""
 	peeragetype="HP" affiliation="Con"
-	fromdate="1964" todate="9999-12-31"
+	fromdate="1989" todate="9999-12-31"
 />
 <lord
 	id="uk.org.publicwhip/lord/100325"
@@ -3603,7 +3603,7 @@
 	forenames="Edward"
 	title="Lord" lordname="Montagu" lordofname="Beaulieu"
 	peeragetype="HP" affiliation="Con"
-	fromdate="1885" todate="9999-12-31"
+	fromdate="1929" todate="9999-12-31"
 />
 <lord
 	id="uk.org.publicwhip/lord/100437"
@@ -4563,7 +4563,7 @@
 	forenames="Robin"
 	title="Lord" lordname="Rotherwick" lordofname=""
 	peeragetype="HP" affiliation="Con"
-	fromdate="1977" todate="9999-12-31"
+	fromdate="1996" todate="9999-12-31"
 />
 <lord
 	id="uk.org.publicwhip/lord/100553"
@@ -6709,7 +6709,7 @@
 	forenames="Robert Douglas"
 	title="Lord" lordname="Carswell" lordofname="Killeen"
 	peeragetype="A" affiliation="XB"
-	fromdate="2004-01-12" todate="9999-12-31"
+	fromdate="2004-01-13" todate="9999-12-31"
 />
 <lord
 	id="uk.org.publicwhip/lord/100815"
@@ -7279,21 +7279,21 @@
 />
 
 <lord
-    id="uk.org.publicwhip/lord/100904"
-    house="lords"
-    forenames="Michael John"
-    title="Lord" lordname="Hastings" lordofname="Scarisbrick"
-    peeragetype="L" affiliation="XB"
-    fromdate="2005-12-06" todate="9999-12-31"
+	id="uk.org.publicwhip/lord/100904"
+	house="lords"
+	forenames="Michael John"
+	title="Lord" lordname="Hastings" lordofname="Scarisbrick"
+	peeragetype="L" affiliation="XB"
+	fromdate="2005-12-06" todate="9999-12-31"
 />
 
 <lord
-    id="uk.org.publicwhip/lord/100905"
-    house="lords"
-    forenames="Neil Forbes"
-    title="Lord" lordname="Davidson" lordofname="Glen Clova"
-    peeragetype="L" affiliation="Lab"
-    fromdate="2005-03-28" todate="9999-12-31"
+	id="uk.org.publicwhip/lord/100905"
+	house="lords"
+	forenames="Neil Forbes"
+	title="Lord" lordname="Davidson" lordofname="Glen Clova"
+	peeragetype="L" affiliation="Lab"
+	fromdate="2005-03-28" todate="9999-12-31"
 />
 
 </publicwhip>

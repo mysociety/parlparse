@@ -5,8 +5,7 @@ import string
 import re
 import xml.sax
 from contextexception import ContextException
-
-from contextexception import ContextException
+import mx.DateTime
 
 titleconv = {  'L.':'Lord',
 			   'B.':'Baroness',
@@ -142,8 +141,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 					if lm["fromdate"] <= sdate <= lm["todate"]:
 						res.append(lm)
 					else:
-						print lm["fromdate"], sdate, lm["todate"]
-						raise ContextException("lord not matching date range", stamp=stampurl, fragment=llordname)
+						raise ContextException("On %s, lord not matching date range %s-%s" % (sdate, lm["fromdate"], lm["todate"]), stamp=stampurl, fragment=llordname)
 				continue
 
 			# skip onwards if we have a double name
@@ -184,8 +182,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 					raise ContextException("wrong dates on lords with same name", stamp=stampurl, fragment=lname)
 
 		if not res:
-			print "Unknown Lord", (ltitle, llordname, llordofname, stampurl)
-			raise ContextException("unknown lord", stamp=stampurl, fragment=lname)
+			raise ContextException("unknown lord %s %s %s %s" % (ltitle, llordname, llordofname, stampurl), stamp=stampurl, fragment=lname)
 
 		assert len(res) == 1
 		return res[0]["id"]
