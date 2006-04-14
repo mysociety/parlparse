@@ -19,6 +19,7 @@ lordnametoofnameids = re.findall('"uk.org.publicwhip/lord/(\d+)"', """
 <lordnametoofname id="uk.org.publicwhip/lord/100551" title="Earl" name="Rosslyn"/>
 <lordnametoofname id="uk.org.publicwhip/lord/100372" title="Earl" name="Lindsay"/>
 <lordnametoofname id="uk.org.publicwhip/lord/100480" title="Viscount" name="Oxfuird"/>
+<lordnametoofname id="uk.org.publicwhip/lord/100205" title="Viscount" name="Falkland"/>
 <lordnametoofname id="uk.org.publicwhip/lord/100729" title="Earl" name="Longford"/>
 <lordnametoofname id="uk.org.publicwhip/lord/100713" title="Earl" name="Carnarvon"/>
 <lordnametoofname id="uk.org.publicwhip/lord/100604" title="Earl" name="Snowdon"/>
@@ -66,7 +67,7 @@ titleconv = {  'L.':'Lord',
 			   'Ly.':'Lady',
 			}
 
-parties = [ 'Con', 'Lab', 'Dem', 'XB', 'Other', 'Bp', 'None' ]
+parties = [ 'Con', 'Lab', 'Dem', 'XB', 'Other', 'Bp', 'None', 'Green' ]
 types = [ 'HD', 'A', 'L', 'HP', 'B', 'HO' ]
 
 #"id","title","forename","surname","region","party","type","oath_date","died_retired_date","year_created","d_o_b","Hansard_name","ex_MP"
@@ -91,7 +92,7 @@ for lordline in lordlines:
 	Hansard_nameMatch = re.match("([^,()]*?)(?:\sof\s([^,()]*?))?\s*(\(now [^)]*\))?, ([ALBVEDCMLybp]+\.)$", Hansard_name)
 
 	lordname = Hansard_nameMatch.group(1) or ""
-	hlordofname = Hansard_nameMatch.group(2) or ""
+	lordofname = Hansard_nameMatch.group(2) or ""
 
 	# predict the title from the hansard pattern
 	title = titleconv[Hansard_nameMatch.group(4)]
@@ -100,8 +101,8 @@ for lordline in lordlines:
 		predictedlordtitle += " of"
 
 		# migrate to the of-name
-		assert not hlordofname
-		hlordofname = lordname
+		assert not lordofname
+		lordofname = lordname
 		lordname = ""
 
 	assert lordattr['title'] == predictedlordtitle
@@ -111,12 +112,12 @@ for lordline in lordlines:
 		if lordofnameMatch.group(1) == "de":
 			pass # already ends with it lordname += " de " + lordofnameMatch.group(2)  # merge in de's with the main name
 		else:
-			hlordofname = lordofnameMatch.group(2)
+			lordofname = lordofnameMatch.group(2)
 
 	# remove dots
 	lordname = re.sub("\.", "", lordname)
 	lordname = re.sub("^De ", "de ", lordname)
-	hlordofname = re.sub("\.", "", hlordofname)
+	lordofname = re.sub("\.", "", lordofname)
 
 	party = lordattr['party']
 	if not party:
@@ -146,20 +147,22 @@ for lordline in lordlines:
 	slordid = "%d" % (100000 + int(lordattr['id']))
 
 	# do some corrections we've pulled out of the data
-	if slordid in lordnametoofnameids:  # hlordofname distinctions not in the data
-		assert not hlordofname and lordname
-		hlordofname = lordname
+	if slordid in lordnametoofnameids:  # lordofname distinctions not in the data
+		assert not lordofname and lordname
+		lordofname = lordname
 		lordname = ""
 
 	# posssibly incorrect title
-	if (title, lordname, hlordofname) == ("Baroness", "Young", "Dartington"):
+	if (title, lordname, lordofname) == ("Baroness", "Young", "Dartington"):
 		title = "Lord"
-	if (title, lordname, hlordofname) == ("Bishop", "", "Blackburn"): # possibly a previous bishop though
+	if (title, lordname, lordofname) == ("Bishop", "", "Blackburn"): # possibly a previous bishop though
 		fromdate = "1999-11-11"
-	if (title, lordname, hlordofname) == ("Bishop", "", "Wakefield"): # speaks on 2005-03-22
+	if (title, lordname, lordofname) == ("Bishop", "", "Wakefield"): # speaks on 2005-03-22
 		todate = "2005-03-22"
-	if (title, lordname, hlordofname) == ("Bishop", "", "Newcastle"): # votes on 2002-11-05
+	if (title, lordname, lordofname) == ("Bishop", "", "Newcastle"): # votes on 2002-11-05
 		fromdate = "2002-11-05"
+	if  lordofname == 'Weston-Super-Mare':
+		lordofname = 'Weston-super-Mare'
 
 
 	assert fromdate < todate
@@ -172,8 +175,7 @@ for lordline in lordlines:
 	fout.write('\tid="uk.org.publicwhip/lord/%s"\n' % slordid)
 	fout.write('\thouse="lords"\n')
 	fout.write('\tforenames="%s"\n' % lordattr['forename'])
-	fout.write('\ttitle="%s" lordname="%s"\n' % (title, lordname))
-	fout.write('\tlordofname="%s" hlordofname="%s"\n' % (lordattr['surname'], hlordofname))
+	fout.write('\ttitle="%s" lordname="%s" lordofname="%s"\n' % (title, lordname, lordofname))
 	fout.write('\tpeeragetype="%s" affiliation="%s"\n' % (ltype, party))
 	fout.write('\tfromdate="%s" todate="%s"\n' % (fromdate, todate))
 	if lordattr['ex_MP'] == 'Y':
