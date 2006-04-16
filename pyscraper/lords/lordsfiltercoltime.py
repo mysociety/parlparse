@@ -108,8 +108,8 @@ def FilterLordsColtime(fout, text, sdate):
 		timeg = retimevals.match(fss)
 		if timeg:
 			time = timeg.group(1)
-			if not re.match('(?:</h5>|</st>)(?i)', timeg.group(1)):
-				time = TimeProcessing(timeg.group(1), previoustime, False, stampurl)
+			if not re.match('(?:</h5>|</st>)(?i)', time):
+				time = TimeProcessing(time, previoustime, False, stampurl)
 				fout.write('<stamp time="%s"/>' % time)
 				previoustime = time
 			continue
