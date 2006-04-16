@@ -101,11 +101,19 @@ def TimeProcessing(time, previoustime, bIsDivisionTime, stampurl):
 		else:
 			if not re.match("a\.?m\.?", meridien):
 				raise ContextException('meridien wrong:' + meridien, stamp=stampurl)
+			if hour == 12:
+				hour -= 12
 
 		# skipping forward by twelve hours is a good sign an am/pm has gotten mixed
 		if previoustime and previoustimehour + 12 <= hour:
 			raise ContextException('time shift by 12 -- should a p.m. be an a.m.?', stamp=stampurl)
 
+	elif time == 'Midnight':
+                hour = 24
+                mins = 0
+	elif time == 'Noon':
+                hour = 12
+                mins = 0
 	else:
 		return None
 
@@ -117,7 +125,7 @@ def TimeProcessing(time, previoustime, bIsDivisionTime, stampurl):
 	# (sometimes the division time is out of order because that is where it is inserted in the record -- maybe should patch to handle)
 	#print previoustime, res, bIsDivisionTime, stampurl.sdate
 	if previoustime and res < previoustime:
-		if stampurl.sdate in ["2005-03-10", "2003-11-19", "2003-03-24", "2002-05-28", "2001-02-20"]:
+		if stampurl.sdate in ["2005-03-10"]:
 			if previoustime < "024":
 				print "dayrotate on ", stampurl.sdate, (hour, mins), previoustime
 			hour += 24
@@ -126,8 +134,8 @@ def TimeProcessing(time, previoustime, bIsDivisionTime, stampurl):
 		elif stampurl.sdate in ["2002-10-28"]:
 			return res
 
-		else:  #if stampurl.sdate in ["2005-02-28", "2003-09-17", "2003-06-16", "2003-05-06", "2002-10-31", "2002-10-29", "2002-07-22", "2002-07-03", "2002-02-06", "2001-12-13", "2001-12-12", "2001-12-04"]:
-			if hour not in [12, 1, 2] and stampurl.sdate not in ["2003-10-20", "2003-05-19", "2000-10-16", "2000-10-03", "2000-07-24"]:
+		else:
+			if hour not in [0, 1, 2, 3] and stampurl.sdate not in ["2003-10-20", "2000-10-03", "2000-07-24"]:
 				print (hour, mins), "time=", time, "previoustime=", previoustime
 				raise ContextException('time rotation not close to midnight', stamp=stampurl)
 			if hour == 12:
