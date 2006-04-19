@@ -64,7 +64,8 @@ questions.   Or join the <a href="https://lists.sourceforge.net/lists/listinfo/p
 
 <p>Structured data about Members of Parliament.  These are all XML files, open
 them in any text editor, XML viewer or some spreadsheets.  In the files there
-are comments with more information.  Data is for the 1997, 2001 and 2005 parliaments.
+are comments with more information.  Data for MPs is for the 1997, 2001 and 2005 parliaments.
+Data for Lords goes back to the major reform in 1999.
 
 <p class="snippet floatright"><font color="#008b8b">&lt;</font><font color="#008b8b">member</font>
 <font color="#008b8b">        </font><font color="#2e8b57"><b>id</b></font>=<font color="#ff00ff">&quot;uk.org.publicwhip/member/1656&quot;</font>
@@ -76,12 +77,30 @@ are comments with more information.  Data is for the 1997, 2001 and 2005 parliam
 <font color="#008b8b">    /&gt;</font>
 </p>
 
-<p class="description"><a href="/svn/parlparse/members/all-members.xml">all-members.xml</a> - list of all MPs.
-Includes their name, party and constituency.  There is a unique identifier for
-each entry.  Each entry is a continuous period of holding office, loyal to the
-same party.  An MP who was in both parliaments will appear twice.  An MP who
-also changed party will appear three times.  Dates of deaths, byelections and
-party changes or whip revocations are recorded.</p>
+<p class="snippet floatright"><font color="#008b8b">&lt;</font><font color="#008b8b">lord</font>
+<font color="#008b8b">    </font><font color="#2e8b57"><b>id</b></font>=<font color="#ff00ff">&quot;uk.org.publicwhip/lord/100633&quot;</font>
+<font color="#008b8b">    </font><font color="#2e8b57"><b>house</b></font>=<font color="#ff00ff">&quot;lords&quot;</font>
+<font color="#008b8b">    </font><font color="#2e8b57"><b>forenames</b></font>=<font color="#ff00ff">&quot;Margaret&quot;</font>
+<font color="#008b8b">    </font><font color="#2e8b57"><b>forenames_full</b></font>=<font color="#ff00ff">&quot;Margaret Hilda&quot;</font>
+<font color="#008b8b">    </font><font color="#2e8b57"><b>title</b></font>=<font color="#ff00ff">&quot;Baroness&quot;</font><font color="#008b8b"> </font><font color="#2e8b57"><b>lordname</b></font>=<font color="#ff00ff">&quot;Thatcher&quot;</font><font color="#008b8b"> </font><font color="#2e8b57"><b>lordofname</b></font>=<font color="#ff00ff">&quot;&quot;</font>
+<font color="#008b8b">    </font><font color="#2e8b57"><b>lordofname_full</b></font>=<font color="#ff00ff">&quot;Kesteven&quot;</font>
+<font color="#008b8b">    </font><font color="#2e8b57"><b>county</b></font>=<font color="#ff00ff">&quot;the County of Lincolnshire&quot;</font>
+<font color="#008b8b">    </font><font color="#2e8b57"><b>peeragetype</b></font>=<font color="#ff00ff">&quot;L&quot;</font><font color="#008b8b"> </font><font color="#2e8b57"><b>affiliation</b></font>=<font color="#ff00ff">&quot;Con&quot;</font>
+<font color="#008b8b">    </font><font color="#2e8b57"><b>fromdate</b></font>=<font color="#ff00ff">&quot;1992&quot;</font><font color="#008b8b"> </font><font color="#2e8b57"><b>todate</b></font>=<font color="#ff00ff">&quot;9999-12-31&quot;</font>
+<font color="#008b8b">    </font><font color="#2e8b57"><b>ex_MP</b></font>=<font color="#ff00ff">&quot;yes&quot;</font>
+<font color="#008b8b">/&gt;</font>
+</p>
+
+<p class="description"><a href="/svn/parlparse/members/all-members.xml">all-members.xml</a>,
+<a href="/svn/parlparse/members/peers-ucl.xml">peers-ucl.xml</a> 
+- list of all MPs and list of all Lords.
+Includes their name and party.  For MPs, also their constituency, and for
+Lords, also their peerage type and their county. There is a unique identifier
+for each entry.  Each entry is a continuous period of holding office, loyal to
+the same party.  An MP who was in two parliaments, or in one parliament then
+later became a Lord, will appear twice.  An MP who also changed party will
+appear three times.  Dates of deaths, byelections and party changes or whip
+revocations are recorded.</p>
 
 <p class="snippet floatright"><font color="#008b8b">&lt;</font><font color="#008b8b">person</font><font color="#008b8b"> </font><font color="#2e8b57"><b>id</b></font>=<font color="#ff00ff">&quot;uk.org.publicwhip/person/10597&quot;</font><font color="#008b8b"> </font><font color="#2e8b57"><b>latestname</b></font>=<font color="#ff00ff">&quot;Paddy Tipping&quot;</font><font color="#008b8b">&gt;</font>
     <font color="#008b8b">&lt;</font><font color="#008b8b">office</font><font color="#008b8b"> </font><font color="#2e8b57"><b>id</b></font>=<font color="#ff00ff">&quot;uk.org.publicwhip/member/1282&quot;</font><font color="#008b8b">/&gt;</font>
@@ -94,12 +113,12 @@ party changes or whip revocations are recorded.</p>
 <p class="description"><a href="rest.cgi">rest.cgi</a> - a programmer's interface for matching names. This uses the all-members.xml, member-aliases.xml and constituencies.xml to match MP names.
 
 <p class="description"><a href="/svn/parlparse/members/people.xml">people.xml</a> - 
-links together groups of MPs from all-members.xml who are the same real world
-person. Usually this is because they have the same name and are in the same
-constituency.  Sometimes someone changes constituency between two parliaments,
-such as Shaun Woodward (Witney) and Shaun Woodward (St Helens South).  This
-file records that they are the same person.  Also includes offices from
-ministers.xml which were held by that person.</p>
+links together groups of MPs from all-members.xml and Lords from peers-ucl.xml
+who are the same real world person. Usually this is because they have the same
+name and are in the same constituency.  Sometimes someone changes constituency
+between two parliaments, such as Shaun Woodward (Witney) and Shaun Woodward (St
+Helens South).  This file records that they are the same person.  Also includes
+offices from ministers.xml which were held by that person.</p>
 
 <p class="snippet floatright"><font color="#008b8b">&lt;</font><font color="#008b8b">moffice</font><font color="#008b8b"> </font><font color="#2e8b57"><b>id</b></font>=<font color="#ff00ff">&quot;uk.org.publicwhip/moffice/327&quot;</font><font color="#008b8b"> </font>
 <font color="#008b8b">    </font><font color="#2e8b57"><b>name</b></font>=<font color="#ff00ff">&quot;Ivor Caplin&quot;</font><font color="#008b8b"> </font>
@@ -112,9 +131,9 @@ ministers.xml which were held by that person.</p>
 
 <p><a href="/svn/parlparse/members/ministers.xml">ministers.xml</a> - contains ministerial 
 positions and the department they were in.  Each one has a date
-range, the MP became a minister at some time on the start day, and
+range, the MP or Lord became a minister at some time on the start day, and
 stopped being one at some time on the end day.  The matchid field is one
-sample MP office which that person also held.  Alternatively, use
+sample MP or Lord office which that person also held.  Alternatively, use
 the people.xml file to find out which person held the ministerial post.
 </p>
 
@@ -148,9 +167,11 @@ when they were in effect.
 <a href="/svn/parlparse/members/websites.xml">websites.xml</a>,
 <a href="/svn/parlparse/members/guardian-links.xml">guardian-links.xml</a>,
 <a href="/svn/parlparse/members/bbc-links.xml">bbc-links.xml</a>,
-<a href="/svn/parlparse/members/edm-links.xml">edm-links.xml</a>
-- various links to external websites which have information about MPs, including
-each MPs own website.  Indexed by MP identifier.
+<a href="/svn/parlparse/members/edm-links.xml">edm-links.xml</a>,
+<a href="/svn/parlparse/members/wikipedia-lords.xml">wikipedia-lords.xml</a>
+- various links to external websites which have information about MPs and
+Lords, including each MPs own website and each Lord's biography on Wikipedia.  
+Indexed by MP or Lord identifier.
 
 <p class="snippet acrosspage"><font color="#008b8b">&lt;</font><font color="#008b8b">personinfo</font><font color="#008b8b"> </font><font color="#2e8b57"><b>id</b></font>=<font color="#ff00ff">&quot;uk.org.publicwhip/person/10197&quot;</font> <font color="#2e8b57"><b>mp_website</b></font>=<font color="#ff00ff">&quot;<A HREF="http://www.frankfield.com">http://www.frankfield.com</a>&quot;</font><font color="#008b8b"> /&gt;</font>
 
@@ -166,6 +187,9 @@ each MPs own website.  Indexed by MP identifier.
 
 <font color="#008b8b">&lt;</font><font color="#008b8b">memberinfo</font><font color="#008b8b"> </font><font color="#2e8b57"><b>id</b></font>=<font color="#ff00ff">&quot;uk.org.publicwhip/member/687&quot;</font><font color="#008b8b"> </font><font color="#2e8b57">
     <b>edm_ais_url</b></font>=<font color="#ff00ff">&quot;<A HREF="http://edm.ais.co.uk/weblink/html/member.html/mem=AbbottSlAsHcOdEsTrInGDiane">http://edm.ais.co.uk/weblink/html/member.html/mem=AbbottSlAsHcOdEsTrInGDiane</a>&quot;</font><font color="#008b8b"> /&gt;</font>
+
+<font color="#008b8b">&lt;</font><font color="#008b8b">memberinfo</font><font color="#008b8b"> </font><font color="#2e8b57"><b>id</b></font>=<font color="#ff00ff">&quot;uk.org.publicwhip/lord/100007&quot;</font><font color="#008b8b"> </font><font color="#2e8b57">
+    <b>wikipedia_url</b></font>=<font color="#ff00ff">&quot;<A HREF="http://en.wikipedia.org/wiki/John_Alderdice%2C_Baron_Alderdice&quot;">http://en.wikipedia.org/wiki/John_Alderdice%2C_Baron_Alderdice&quot;</A></font><font color="#008b8b"> /&gt;</font>
 </p>
 
 <a href="http://ukparse.kforge.net/parldata/scrapedxml/regmem">Register of
@@ -196,11 +220,12 @@ project</a>.
 
 <h2>Hansard Reports</h2>
 
-<p><a href="http://ukparse.kforge.net/parldata/scrapedxml/debates">Debates</a>,
+<p><a href="http://ukparse.kforge.net/parldata/scrapedxml/debates">Debates (Commons)</a>,
+<a href="http://ukparse.kforge.net/parldata/scrapedxml/lordspages">Debates (Lords)</a>,
 <a href="http://ukparse.kforge.net/parldata/scrapedxml/westminhall">Westminster Hall</a> -
-XML files containing Debates in the main chamber and Westminster Hall from the
-start of the 2001 parliament.  Speeches and the speaker are labelled with
-unique identifiers, as are divisions and how each MP voted.  
+XML files containing Debates in the main chambers and in Westminster Hall from the
+start of the 2001 parliament (Commons) or 1999 reform (Lords).  Speeches and the speaker are labelled with
+unique identifiers, as are divisions and how each MP or Lord voted.  
 
 <p class="snippet acrosspage"><font color="#008b8b">&lt;</font><font color="#008b8b">speech</font><font color="#008b8b"> </font><font color="#2e8b57"><b>id</b></font>=<font color="#ff00ff">&quot;uk.org.publicwhip/debate/2003-06-26.1219.2&quot;</font>
 <font color="#008b8b">    </font><font color="#2e8b57"><b>speakerid</b></font>=<font color="#ff00ff">&quot;uk.org.publicwhip/member/931&quot;</font><font color="#008b8b"> </font><font color="#2e8b57"><b>speakername</b></font>=<font color="#ff00ff">&quot;Peter Hain&quot;</font><font color="#008b8b"> </font><font color="#2e8b57"><b>colnum</b></font>=<font color="#ff00ff">&quot;1219&quot;</font>
@@ -219,9 +244,11 @@ CAP Reform
 <font color="#008b8b">&lt;/major-heading&gt;</font>
 </p>
 
-<p><a href="http://ukparse.kforge.net/parldata/scrapedxml/wrans">Written Answers</a> -
-XML files containing Written Answers to questions MPs have asked ministers.
-Data from the start of the 2001 parliament.  Questions and replies are clearly
+<p>
+<a href="http://ukparse.kforge.net/parldata/scrapedxml/wrans">Written Answers (Commons)</a>,
+<a href="http://ukparse.kforge.net/parldata/scrapedxml/lordswrans">Written Answers (Lords)</a> -
+XML files containing Written Answers to questions MPs and Lords have asked ministers.
+Data from the start of the 2001 parliament (Commons) or 1999 reform (Lords).  Questions and replies are clearly
 distinguished, and speakers labelled with their unique identifier.
 
 <p class="snippet acrosspage"><font color="#008b8b">&lt;</font><font color="#008b8b">minor-heading</font><font color="#008b8b"> </font><font color="#2e8b57"><b>id</b></font>=<font color="#ff00ff">&quot;uk.org.publicwhip/wrans/2005-06-29.7913.h&quot;</font>
@@ -254,8 +281,10 @@ each of the last eight years are not held centrally.<font color="#008b8b">&lt;/p
 
 </p>
 
-<a href="http://ukparse.kforge.net/parldata/scrapedxml/wms">Written Ministerial Statements</a> - 
-XML files containing statements which ministers made to the house in writing.
+<p>
+<a href="http://ukparse.kforge.net/parldata/scrapedxml/wms">Written Ministerial Statements (Commons)</a>,
+<a href="http://ukparse.kforge.net/parldata/scrapedxml/lordswms">Written Ministerial Statements (Lords)</a> - 
+XML files containing statements which ministers made to the houses in writing.
 These are a bit like press releases, but in parliamentary language.
 
 <h2>Getting the Data</h2>
