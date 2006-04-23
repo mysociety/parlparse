@@ -160,7 +160,7 @@ class LoadOldLIndex(xml.sax.handler.ContentHandler):
 			if (i >= len(self.res)) or (self.res[i] != urllisthead[i]):
 				#print "failed match", i
 				if i < len(self.res):
-					print self.res[i], urllisthead[i]
+					print "i < len(self.res)", self.res[i], urllisthead[i]
 				return False
 		return True
 
