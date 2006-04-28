@@ -23,7 +23,7 @@
 	lordofname_full="Sutton"
 	county="the County of West Sussex"
 	peeragetype="A" affiliation="XB"
-	fromdate="1986" todate="2006-03-21"
+	fromdate="1986" todate="2006-03-21" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100003"
@@ -423,7 +423,7 @@
 	lordofname_full="Ipswich"
 	county="the County of Suffolk"
 	peeragetype="L" affiliation="Con"
-	fromdate="1958" todate="2005-12-03"
+	fromdate="1958" todate="2005-12-03" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100042"
@@ -613,7 +613,7 @@
 	title="Baroness" lordname="Blood" lordofname=""
 	lordofname_full="Blackwatertown"
 	county="the County of Armagh"
-	peeragetype="L" affiliation="XB"
+	peeragetype="L" affiliation="Lab"
 	fromdate="1999" todate="9999-12-31"
 />
 <lord
@@ -799,7 +799,7 @@
 	lordofname_full="Ibthorpe"
 	county="the County of Hampshire"
 	peeragetype="A" affiliation="XB"
-	fromdate="1982" todate="2006-02-06"
+	fromdate="1982" todate="2006-02-06" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100078"
@@ -1219,7 +1219,7 @@
 	lordofname_full="Oxton"
 	county="the County of Merseyside"
 	peeragetype="L" affiliation="XB"
-	fromdate="2001-07-02" todate="2006-01-21"
+	fromdate="2001-07-02" todate="2006-01-21" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100118"
@@ -2632,7 +2632,7 @@
 	title="Lord" lordname="Gray" lordofname="Contin"
 	county="the District of Ross and Cromarty"
 	peeragetype="L" affiliation="Con"
-	fromdate="1983" todate="2006-03-14"
+	fromdate="1983" todate="2006-03-14" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -3155,7 +3155,7 @@
 <lord
 	id="uk.org.publicwhip/lord/100304"
 	house="lords"
-	forenames="Valarie"
+	forenames="Valerie"
 	forenames_full="Valerie Georgina"
 	title="Baroness" lordname="Howarth" lordofname="Breckland"
 	lordofname_full="Parson Cross"
@@ -4412,7 +4412,7 @@
 	lordofname_full="Morley and South Leeds"
 	county="the County of West Yorkshire and of Cilfynydd in the County of Mid Glamorgan"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1992" todate="2006-01-05"
+	fromdate="1992" todate="2006-01-05" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -4482,7 +4482,7 @@
 	lordofname_full="Lambeth"
 	county="Greater London"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1978" todate="2006-01-27"
+	fromdate="1978" todate="2006-01-27" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100432"
@@ -8898,7 +8898,7 @@
 	lordofname_full="Stratford"
 	county="the London Borough of Newham"
 	peeragetype="L" affiliation="Lab"
-	fromdate="2005-07-04" todate="2006-01-08"
+	fromdate="2005-07-04" todate="2006-01-08" towhy="died"
 	ex_MP="yes"
 />
 <lord

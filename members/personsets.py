@@ -77,6 +77,8 @@ lordsmpmatches = {
 lordlordmatches = {
 	"uk.org.publicwhip/lord/100901":"uk.org.publicwhip/lord/100831",  # Bishop of Southwell becomes Bishop of Southwell and Nottingham
 	"uk.org.publicwhip/lord/100106":"uk.org.publicwhip/lord/100711",  # Archbishop Carey becomes XB Lord
+	"uk.org.publicwhip/lord/100265":"uk.org.publicwhip/lord/100830",  # Bishop of Guildford becomes of Chelmsford
+	"uk.org.publicwhip/lord/100736":"uk.org.publicwhip/lord/100872",  # Bishop of Wakefield becomes of Manchester
 }
 
 # People who have been MPs for two different constituencies.  The like of

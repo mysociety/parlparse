@@ -26,6 +26,8 @@ content = file.readlines()
 file.close()
 
 for line in content:
+	if line[0]=='#':
+		continue
 	cols = line.split("\t")
 	cons = cols[0]
 	first = cols[1]
@@ -34,7 +36,7 @@ for line in content:
 	website = cols[4].strip()
 	if not website:
 		continue
-	id, name, cons =  memberList.matchfullnamecons(first + " " + last, cons, '2005-02-17')
+	id, name, cons =  memberList.matchfullnamecons(first + " " + last, cons, '2005-12-17')
 	if not id:
 		print >>sys.stderr, "Failed to find MP %s %s" % (first, last)
 		continue
