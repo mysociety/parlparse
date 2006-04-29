@@ -2918,7 +2918,7 @@
 	lordofname_full="Skidby"
 	county="the County of the East Riding of Yorkshire"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1998" todate="9999-12-31"
+	fromdate="1998" todate="2005-09-23"
 />
 <lord
 	id="uk.org.publicwhip/lord/100282"
@@ -9174,6 +9174,19 @@
 	county="Angus"
 	peeragetype="L" affiliation="Lab"
 	fromdate="2006-03-28" todate="9999-12-31"
+/>
+
+<!-- http://news.bbc.co.uk/2/hi/uk_news/scotland/4275578.stm -->
+<lord
+	id="uk.org.publicwhip/lord/100906"
+	house="lords"
+	forenames="Christopher"
+	forenames_full="Christopher Robin"
+	title="Lord" lordname="Haskins" lordofname=""
+	lordofname_full="Skidby"
+	county="the County of the East Riding of Yorkshire"
+	peeragetype="L" affiliation="XB"
+	fromdate="2005-09-24" todate="9999-12-31"
 />
 
 </publicwhip>
