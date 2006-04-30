@@ -18,7 +18,7 @@ svn -q commit -m "Weekly members scrape commit"
 # Force reindex, to find URLs which have changed (updates to Hansard,
 # including the once-per-session grand URL-rename-and-break from cm to vo)
 cd ~/parlparse/pyscraper
-./lazyrunall.py --from $WEEKLY_FROMDATE scrape debates wrans westminhall wms --force-index
+./lazyrunall.py --from $WEEKLY_FROMDATE scrape debates wrans westminhall wms --force-index --quietc
 ./lazyrunall.py --from $LORDS_WEEKLY_FROMDATE scrape lords --force-index
 # Run scraper for all of parliament
 cd ~/parlparse/scripts
