@@ -38,15 +38,17 @@ ur.close()
 matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)" title="([^"]+)">([^<]+)</a></td>';
 matches = re.findall(matcher, content)
 for (url, title, name) in matches:
+    id = None
     try:
         id = lordsList.GetLordIDfname(name, None, date_today)
     except Exception, e:
         print >>sys.stderr, e
 
+    if not id:
+        continue
+
     url = urlparse.urljoin(wiki_index_url, url)
-
     print '<memberinfo id="%s" wikipedia_url="%s" />' % (id, url)
-
     wikimembers.add(id)
 
 print '</publicwhip>'
