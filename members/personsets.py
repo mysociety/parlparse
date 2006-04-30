@@ -75,7 +75,7 @@ lordsmpmatches = {
 }
 
 lordlordmatches = {
-	"uk.org.publicwhip/lord/100906":"uk.org.publicwhip/lord/100281",  # Lord Haskins changes party
+	"uk.org.publicwhip/lord/100281":"uk.org.publicwhip/lord/100906",  # Lord Haskins changes party
 	"uk.org.publicwhip/lord/100901":"uk.org.publicwhip/lord/100831",  # Bishop of Southwell becomes Bishop of Southwell and Nottingham
 	"uk.org.publicwhip/lord/100106":"uk.org.publicwhip/lord/100711",  # Archbishop Carey becomes XB Lord
 	"uk.org.publicwhip/lord/100265":"uk.org.publicwhip/lord/100830",  # Bishop of Guildford becomes of Chelmsford

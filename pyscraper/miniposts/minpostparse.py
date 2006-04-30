@@ -228,6 +228,9 @@ class protooffice:
 		# change of wording in 2004-11
 		if dept == "Leader of the House of Commons":
 			dept = "House of Commons"
+		# change of wording in 2006-04
+		if pos == "Lord Commissioner":
+			pos = "Lords Commissioner"
 
 		pos = re.sub(' \(Cabinet\)', '', pos)
 
