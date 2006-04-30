@@ -226,7 +226,8 @@ entitymap = {
         '&#148;':'&quot;',
         '&#133;':'...',
 
-        '&#178;':'&sup2;'
+        '&#178;':'&sup2;',
+        '&rsquo;':"'"
 }
 entitymaprev = entitymap.values()
 
