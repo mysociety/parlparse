@@ -151,11 +151,6 @@ class LordsList(xml.sax.handler.ContentHandler):
 				if lname == lmlname:
 					if lm["fromdate"] <= sdate <= lm["todate"]:
 						res.append(lm)
-
-					# the only case of repeated use of name for different people is with Bishops,
-					# and the date range will determin which person the bishop was
-					elif ltitle != "Bishop" and ltitle != "Archbishop" and (ltitle, lname) != ("Duke", "Norfolk"):
-						raise ContextException("lord not matching date range - %s %s %s %s %s %s" % (ltitle, llordname, llordofname, lm["fromdate"], sdate, lm["todate"]), stamp=stampurl, fragment=lname)
 				continue
 
 			# cross-match
