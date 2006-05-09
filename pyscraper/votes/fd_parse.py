@@ -111,21 +111,10 @@ def debug(s):
 	#print s
 	pass
 
-def str_concat_div(divider=''):
-	def str_concat_internal(a, b):
-		return a + divider + b
-	return str_concat_internal
-
-str_concat=str_concat_div('')
-
-
 def str_flatten(l, divider=''):
 	'''str_flatten concatenates a list of strings into a single string'''
 
-	if len(l)>0:
-		return reduce(str_concat_div(divider),l)
-	else:
-		return ''
+	return divider.join(l)
 
 # Result classes
 
