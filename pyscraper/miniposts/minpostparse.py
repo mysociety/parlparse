@@ -48,7 +48,7 @@ uniqgovposns = ["Prime Minister",
 				"Comptroller",
 				"Deputy Prime Minister",
 				"Paymaster General",
-				"Master of the Horse",
+				"Master of the Horse"
 				]
 
 govposns = ["Secretary of State",
@@ -86,7 +86,7 @@ govdepts = ["Department of Health",
                                 "Office of the Secretary of State for Wales",
                                 "Department for Productivity, Energy and Industry",
                                 "Scotland Office",
-
+                                "Department for Communities and Local Government",
                                 "No Department",
                                 ]
 
@@ -219,8 +219,8 @@ class protooffice:
 		if self.fullname == "Andrew Adonis" and self.sdatet[0][:7] == "2005-05":
 			self.fullname = "Lord Adonis"
 
-		pos = nampos.group(4)
-		dept = nampos.group(5) or "No Department"
+		pos = nampos.group(4).strip()
+		dept = (nampos.group(5) or "No Department").strip()
 		responsibility = ""
 		if self.sdatet[0] in bigarray and self.fullname in bigarray[self.sdatet[0]]:
 			responsibility = bigarray[self.sdatet[0]][self.fullname]
@@ -255,14 +255,14 @@ class protooffice:
 					print "Attempted match on", dept0
 
 			if not self.depts:
-				print "No match for department: ", dept
+				print "No match for department: '%s'" % dept
 
 		else:
 			self.depts = [ (pos, dept) ]
 
 
 		# map down to the department for this record
-		self.pos = self.depts[deptno][0]
+                self.pos = self.depts[deptno][0]
 		self.responsibility = responsibility
 		self.dept = self.depts[deptno][1]
 
@@ -287,7 +287,8 @@ class protooffice:
 	def StickChain(self, nextrec, fn):
                 if (self.sdateend, self.stimeend) >= nextrec.sdatet:
                         print self.sdateend, self.stimeend, nextrec.sdatet
-		assert (self.sdateend, self.stimeend) < nextrec.sdatet
+                        print fn
+                assert (self.sdateend, self.stimeend) < nextrec.sdatet
 		assert self.bopen
 
 #                if re.search("Crispin", self.fullname):
@@ -373,6 +374,16 @@ def ParseGovPostsPage(fr, gp):
 	sdate = sudate
 	stime = sutime	# or midnight if not posted properly to match the msdate
 
+        if gp == "govposts0036_2006-05-05.html":  # was an on-going update
+                return "SKIPTHIS", None
+        if gp == "govposts0037_2006-05-09.html":  # probably contained mistakes, corrected in next one
+                return "SKIPTHIS", None
+        if gp == "govposts0038_2006-05-09.html":
+                return "SKIPTHIS", None        
+        if gp == "govposts0039_2006-05-10.html":
+                print sdate, stime, "we could move this date back to the shuffle"
+
+
         # extract special Ministers of State and PUSes
         namebit = "<td valign='TOP'>(.*?)(?:\s+\[.*?\])?</td>"
         alsobit = "(?:[-\s]+\(?also .*?\)?)?"
@@ -385,7 +396,10 @@ def ParseGovPostsPage(fr, gp):
         SpecMins("<TR><td width='400'>- Parliamentary Under-Secretary (?:of state )?(?:for )?\(?(.*?)\)?%s</TD>%s(?i)" % (alsobit, namebit), fr, sdate)
 
 	# extract the alphabetical list
-	alphl = re.search("ALPHABETICAL LIST OF HM GOVERNMENT([\s\S]*?)</table>", fr).group(1)
+	Malphl = re.search("ALPHABETICAL LIST OF HM GOVERNMENT([\s\S]*?)</table>", fr)
+        if not Malphl:
+                print gp
+        alphl = Malphl.group(1)
 	lst = re.split("</?tr>(?i)", alphl)
 
 	# match the name form on each entry
@@ -438,10 +452,20 @@ def ParsePrivSecPage(fr, gp):
                 stime = '12:00'
 
 	res = [ ]
-	ppstext = re.search('''(?x)<tr>\s*<td[^>]*>
+        Mppstext = re.search('''(?x)<tr>\s*<td[^>]*>
 							<font[^>]*><b>Attorney-General.see.</b>\s*Law.Officers.Department</font>
 							</td>\s*</tr>
-							([\s\S]*?)</table>''', fr).group(1)
+							([\s\S]*?)</table>''', fr)
+        
+        # skip over a holding page that says the PPSs are not sorted out right after the reshuffle
+        if gp == 'privsec0018_2006-05-09.html':
+                assert not Mppstext
+                return "SKIPTHIS", None
+                
+        if not Mppstext:
+                print gp
+                #print fr
+        ppstext = Mppstext.group(1)
 	ppslst = re.split("</?tr>", ppstext)
 
 	# match the name form on each entry
@@ -492,7 +516,9 @@ def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
 
 		# get the protooffices from this file
 		sdatet, proff = ParsePage(fr, gp)
-
+                if sdatet == "SKIPTHIS":
+                        continue
+                        
 		# stick any chains we can
 		proffnew = [ ]
 		lsxfromincomplete = ((not chainprotos) and ' fromdateincomplete="yes"') or ''
@@ -532,6 +558,12 @@ def SetNameMatch(cp, cpsdates):
 	if not re.search("Duke |Lord |Baroness |Dame ", cp.fullname):
 		fullname = cp.fullname
 		cons = cp.cons
+                if fullname == "Mr Michael Foster" and not cons:
+                        if cpsdates[0] == "2006-05-09":
+                                cons = "Worcester"   # this Michael Foster had been a PPS
+                        else:
+                                assert False  # double check we still have the right Michael Foster
+
 
 		cp.matchid, cp.remadename, cp.remadecons = memberList.matchfullnamecons(fullname, cons, cpsdates[0])
 		if not cp.matchid:
@@ -554,7 +586,9 @@ def SetNameMatch(cp, cpsdates):
                         date = '2001-06-21'
 		if cp.remadename == 'Lord Grocott' and date=='2001-06-12':
                         date = '2001-07-03'
-		if cp.remadename != 'Duke of Abercorn' and cp.remadename != 'Lord Vestey':
+		if cp.remadename == 'Lord Davidson of Glen Cova':
+                        cp.remadename = 'Lord Davidson of Glen Clova'
+                if cp.remadename != 'Duke of Abercorn' and cp.remadename != 'Lord Vestey':
 			fullname = cp.remadename
 			cp.matchid = lordsList.GetLordIDfname(fullname, None, date) # loffice isn't used?
 
