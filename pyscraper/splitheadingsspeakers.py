@@ -99,7 +99,7 @@ class StampUrl:
 # the fixed strings for piecing apart the text
 # we need to split off tables because they often contain a heading type in them.
 regsection1 = '<h\d><center>.*?\s*</center></h\d>'
-regsection2 = '<h\d align=center>.*?</h\d>'
+regsection2 = '<h\d align="?center"?>.*?</h\d>'
 regsection3 = '(?:<p class="tabletext">(?:<stamp[^>]*>)*)?<center><b>.*?</b></center>'  # this case of title is used when quoting inserted amendment text that has a title in it.  This is reaching the limit of this type of parsing
 regsection4 = '<(?:p|br)>\s*<center>.*?</center><(?:p|br)>'
 regsection5 = '<h[34] align=left>.*?</h[34]>'
@@ -107,23 +107,23 @@ regparsermessage = '<parsemess.*?>' #'<parsemess-speech redirect="+-1"/>'
 regspeaker = '<speaker [^>]*>.*?</speaker>'
 regtable = '<table[^>]*>[\s\S]*?</table>'	# these have centres, so must be separated out
 
-recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regtable, regspeaker, regsection1, regsection2, regsection3, regsection4, regsection5, regparsermessage))
+recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s)(?is)' % (regtable, regspeaker, regsection1, regsection2, regsection3, regsection4, regsection5, regparsermessage))
 
-retableval = re.compile('(%s)(?i)' % regtable)
+retableval = re.compile('(%s)(?is)' % regtable)
 respeakerval = re.compile('<speaker ([^>]*)>.*?</speaker>')
-resectiont1val = re.compile('<h\d><center>\s*(.*?)\s*</center></h\d>(?i)')
-resectiont2val = re.compile('<h\d align=center>\s*(.*?)\s*</h\d>(?i)')
-resectiont3val = re.compile('(<p class="tabletext">(?:<stamp[^>]*>)*)?<center><b>(.*?)</b></center>(?i)')
-resectiont4val = re.compile('<(?:p|br)>\s*<center>(.*?)</center><(?:p|br)>(?i)')
+resectiont1val = re.compile('<h\d><center>\s*(.*?)\s*</center></h\d>(?is)')
+resectiont2val = re.compile('<h\d align="?center"?>\s*(.*?)\s*</h\d>(?is)')
+resectiont3val = re.compile('(<p class="tabletext">(?:<stamp[^>]*>)*)?<center><b>(.*?)</b></center>(?is)')
+resectiont4val = re.compile('<(?:p|br)>\s*<center>(.*?)</center><(?:p|br)>(?is)')
 
 # appears in today debates, and is getting a little too general (being able to mix/match b,i tags)
-resectiont5val = re.compile('<h[34] align=left>(?:<[bi]>)?\s*(.*?)\s*(?:</[bi]>)?</h\d>(?i)')
+resectiont5val = re.compile('<h[34] align=left>(?:<[bi]>)?\s*(.*?)\s*(?:</[bi]>)?</h\d>(?is)')
 
 reparsermessage = re.compile('<parsemess-misspeech type="(.*?)" redirect="(up|down|nowhere)"/>')
 
 
 # These aren't actually headings, even though they are <H4><center>
-renotheading = re.compile('>(?:\s*|(?:&nbsp;)*)(The .* (?:was|were) asked\s*(?:&#151;|--))\s*<')
+renotheading = re.compile('>(?:\s*|(?:&nbsp;)*)(The\s+.* (?:was|were)\s+asked\s*(?:&#151;|--))\s*<(?s)')
 # catch cases of the previous regexp not being broad enough
 renotheadingmarg = re.compile('asked')
 
