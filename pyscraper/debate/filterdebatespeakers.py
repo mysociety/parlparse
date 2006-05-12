@@ -68,6 +68,7 @@ parties = "|".join(map(string.lower, memberList.partylist())) + "|uup|ld|dup|in 
 recomb = re.compile('''(?ix)((?:Q?\d+\.\s*)?(?:\[\d+\]\s*)?
 					(?:<stamp\saname="[^"]*"/>)?
 					<b>
+					(?:<stamp\saname="[^"]*"/>)?
 					[^<]*
 					</b>(?!</h[34]>)
 					\s*\)?
@@ -78,26 +79,27 @@ recomb = re.compile('''(?ix)((?:Q?\d+\.\s*)?(?:\[\d+\]\s*)?
 
 # Specific match:
 # Notes - sometimes party appears inside bold tags, so we match and throw it away on either side
-respeakervals = re.compile('''(?ix)
+respeakervals = re.compile('''(?six)
 		(?:Q?(\d+)\.\s*)?			# oral question number (group1)
 		(\[\d+\]\s*)?				# written qnum (group2)
 		(<stamp\saname="[^"]*?"/>)? # a stamp (group3)
 		<b>\s*                      # start of bold
-		(?:Q?(\d+)\.)?				# second place of oral question number (group4)
-		([^:<(]*?):?\s*				# speaker (group5)
-		(?:\((.*?)\)?)?				# speaker bracket (group6)
-		(?:\s*\((%s)\))?\s*     	# parties list (group7)
+		(<stamp\saname="[^"]*?"/>)? # a stamp (group4)
+		(?:Q?(\d+)\.)?				# second place of oral question number (group5)
+		([^:<(]*?):?\s*				# speaker (group6)
+		(?:\((.*?)\)?)?				# speaker bracket (group7)
+		(?:\s*\((%s)\))?\s*     	# parties list (group8)
 		:?\s*
 		</b>(?!</h[34]>) 		# end bold tag, ensuring it's not in a heading
 		\s*\)?                	# end of bold (we can get brackets outside the bold tag (which should match the missing on on the inside
-		(?:\((.*?)\))?			# speaker bracket outside of bold (group8)
-		(?:\s*\((%s)\))?		# parties on outside of bold (group9)
+		(?:\((.*?)\))?			# speaker bracket outside of bold (group9)
+		(?:\s*\((%s)\))?		# parties on outside of bold (group10)
 		''' % (parties, parties))
 
 
 
 # <B>Division No. 322</B>
-redivno = re.compile('<b>(?:division no\. \d+|AYES|NOES)</b>$(?i)')
+redivno = re.compile('<b>(?:division\s+no\.\s+\d+\]?|AYES|NOES)</b>$(?i)')
 
 remarginal = re.compile('<b>[^<]*</b>(?!</h[34]>)(?i)')
 
@@ -138,11 +140,11 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
 		if speakerg:
 			# optional parts of the group
 			# we can use oqnum to detect oral questions
-			anamestamp = speakerg.group(3) or ""
+			anamestamp = speakerg.group(3) or speakerg.group(4) or ""
 			oqnum = speakerg.group(1)
-			if speakerg.group(4):
+			if speakerg.group(5):
 				assert not oqnum
-				oqnum = speakerg.group(4)
+				oqnum = speakerg.group(5)
 			if oqnum:
 				oqnum = ' oral-qnum="%s"' % oqnum
 			else:
@@ -151,10 +153,12 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
 			# the preceding square bracket qnums
 			sqbnum = speakerg.group(2) or ""
 
-			party = speakerg.group(7) or speakerg.group(9)
+			party = speakerg.group(8) or speakerg.group(10)
 
-			spstr = string.strip(speakerg.group(5))
-			spstrbrack = speakerg.group(6) or speakerg.group(8) # the bracketted phrase (sometimes the constituency or name if it is a minister)
+			spstr = re.sub("\n", ' ', string.strip(speakerg.group(6)))
+			spstrbrack = speakerg.group(7) or speakerg.group(9) # the bracketted phrase (sometimes the constituency or name if it is a minister)
+                        if spstrbrack:
+                                spstrbrack = re.sub("\n", ' ', spstrbrack)
 
 			# do quick substitution for dep speakers in westminster hall
 			if typ == "westminhall" and re.search("deputy[ \-]speaker(?i)", spstr) and not spstrbrack:

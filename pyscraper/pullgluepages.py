@@ -129,6 +129,9 @@ def GlueByNext(outputFileName, url, urlx):
 
                 sr = re.sub('<!-- end of variable data -->.*<hr>(?si)', '<hr>', sr)
 
+		# To cope with post 2006-05-08, turn <body> into <hr>
+                sr = re.sub('<body><br>', '<body><hr><br>', sr)
+                
 		# split by sections
                 hrsections = re.split('<hr(?: size=3)?>(?i)', sr)
 
@@ -149,7 +152,7 @@ def GlueByNext(outputFileName, url, urlx):
 		footer = hrsections[-1]
 
 		# the files are sectioned by the <hr> tag into header, body and footer.
-		nextsectionlink = re.findall('<\s*a\s+href\s*=\s*"?(.*?)"?\s*>next section</a>(?i)', footer)
+		nextsectionlink = re.findall('<\s*a\s+href\s*=\s*"?(.*?)"?\s*>next section</(?:a|td)>(?i)', footer)
 		if not nextsectionlink:
 			break
 		if len(nextsectionlink) > 1:
@@ -173,27 +176,15 @@ def ExtractFirstLink(url, dgf, forcescrape):
 		if urx.status == 304:
 			return ''
 
-	while 1:
-		xline = urx.readline()
-		if not xline:
-			break
-		if re.search('<hr>(?i)', xline):
-			break
-
-	lk = []
-	while xline:
-		# <a HREF =" ../debtext/31106-01.htm#31106-01_writ0">Oral Answers to Questions </a>
-		lk = re.findall('<a\s+href\s*=\s*"(.*?)">.*?\s*</a>(?i)', xline)
-		if lk:
-			break
-		xline = urx.readline()
-	urx.close()
-
+	xlines = ''.join(urx.readlines())
+        urx.close()
+        xlines = re.sub('^.*?<hr(?: /)?>(?is)', '', xlines)
+	lk = re.search('<a\s+href\s*=\s*"(.*?)">.*?\s*</a>(?is)', xlines)
 	if not lk:
 		print urx
 		print url
 		raise Exception, "No link found!!!"
-	return urlparse.urljoin(url, re.sub('#.*$' , '', lk[0]))
+	return urlparse.urljoin(url, re.sub('#.*$' , '', lk.group(1)))
 
 
 

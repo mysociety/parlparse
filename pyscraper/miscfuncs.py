@@ -407,7 +407,7 @@ reparts2 = re.compile('(<table[^>]*?>|' + restmatcher + ')')
 retable = re.compile('<table[\s\S]*?</table>(?i)')
 retablestart = re.compile('<table[\s\S]*?(?i)')
 reparaspace = re.compile(paratag + '|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>|<table[^>].*>$(?i)')
-reparaempty = re.compile('(?:\s|</?i>|&nbsp;)*$(?i)')
+reparaempty = re.compile('(?:\s|</?i>|&nbsp;|<notus-date[^>]*>)*$(?i)')
 reitalif = re.compile('\s*<i>\s*$(?i)')
 
 # Break text into paragraphs.
