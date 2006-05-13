@@ -123,6 +123,8 @@ def MpTellerList(fsm, vote, stampurl, sdate):
 
 			(mpid, remadename, remadecons) = memberList.matchfullnamecons(fssf.strip(), fssfcons, sdate)
                         #print fssf, " ++> ", remadename.encode("latin-1")
+			if not mpid:
+				raise ContextException("teller name bad match", stamp=stampurl, fragment=fssf)
 			res.append('\t<mpname id="%s" vote="%s" teller="yes">%s</mpname>' % (mpid, vote, FixHTMLEntities(fssf)))
 
 	return res
