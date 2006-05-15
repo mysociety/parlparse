@@ -92,15 +92,15 @@ def StripDebateHeadings(headspeak, sdate):
 
 
 	#House of Commons
-	ih = StripDebateHeading('house\s+of\s+commons(?i)', ih, headspeak)
+	ih = StripDebateHeading('house of commons(?i)', ih, headspeak)
 
 	# Tuesday 9 December 2003
 	if not re.match('the house met at .*(?i)', headspeak[ih][0]):
                 givendate = re.sub('&nbsp;',' ',headspeak[ih][0])
-                givendate = re.sub('\n',' ',headspeak[ih][0]) # XXX!!!
-                italicdate = re.search('<i>(.*)</i>(?s)', givendate)
-                if italicdate:
-                        givendate = re.sub('</?i>', '', italicdate.group(1))
+                givendate = re.sub('</?i>',' ', givendate)
+                gd = re.match('(?:<stamp aname="[^"]*"/>)*(.*)$(?i)', givendate)
+                if gd:
+                        givendate = gd.group(1)
 		if ((sdate != mx.DateTime.DateTimeFrom(givendate).date)) or headspeak[ih][2]:
 			raise Exception, 'date heading %s mismatches with date %s' % (repr(headspeak[ih]), sdate)
 		ih = ih + 1
@@ -108,7 +108,7 @@ def StripDebateHeadings(headspeak, sdate):
         gstarttime = None
         if sdate != "2001-06-13":
                 #The House met at half-past Ten o'clock
-                gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*(?:<i>)?the\s+house (?:being |having )?met at?\s+(?:</i><i>)?(.*?)(?:, and the Speaker-Elect having taken the Chair;)?(?:</i>)?$(?is)', headspeak[ih][0])
+                gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*(?:<i>)?the\s+house (?:being |having )?met at?\s+(?:</i><i>)?(.*?)(?:, and the Speaker-Elect having taken the Chair;)?(?:</i>)?$(?i)', headspeak[ih][0])
                 if (not gstarttime) or headspeak[ih][2]:
                         raise ContextException('non-conforming "the house met at" heading %s' % repr(headspeak[ih]), "")
                 ih = ih + 1
@@ -170,7 +170,11 @@ def StripWestminhallHeadings(headspeak, sdate):
 	ih = StripDebateHeading('westminster hall(?i)', ih, headspeak)
 
 	# date line
-	if ((sdate != mx.DateTime.DateTimeFrom(headspeak[ih][0]).date)) or headspeak[ih][2]:
+        givendate = re.sub('</?i>',' ', headspeak[ih][0])
+        gd = re.match('(?:<stamp aname="[^"]*"/>)*(.*)$(?i)', givendate)
+        if gd:
+                givendate = gd.group(1)
+	if ((sdate != mx.DateTime.DateTimeFrom(givendate).date)) or headspeak[ih][2]:
 		raise Exception, 'date heading %s mismatches with date %s' % (repr(headspeak[ih]), sdate)
 	ih = ih + 1
 
@@ -213,7 +217,7 @@ def NormalHeadingPart(headingtxt, stampurl):
 		binsertedheading = True
 
 	# Oral question are really a major heading
-	elif re.match("Oral\s+Answers\s+to\s+Questions", headingtxt):
+	elif re.match("Oral Answers to Questions", headingtxt):
 		boralheading = True
 	# Check if there are any other spellings of "Oral Answers to Questions" with a loose match
 	elif re.search('oral(?i)', headingtxt) and re.search('ques(?i)', headingtxt) and (not re.search(" Not ", headingtxt)) and \
@@ -228,7 +232,7 @@ def NormalHeadingPart(headingtxt, stampurl):
 	# If this is labeled major, then it gets concatenated with the
 	# subsequent major heading.  It's kind of a procedural info about the
 	# running of things, so fair to have it as a minor heading alone.
-	elif re.match("\[.*? in the\s+Chair\.?\]$(?is)", headingtxt):
+	elif re.match("\[.*? in the Chair\.?\]$(?i)", headingtxt):
 		bmajorheading = False
 
 	elif re.search("in\s*the\s*chair(?i)", headingtxt):
@@ -238,6 +242,10 @@ def NormalHeadingPart(headingtxt, stampurl):
 	# Other major headings, marked by _head in their anchor tag
 	elif re.search('^hd_|_head', stampurl.aname):
 		bmajorheading = True
+
+        elif stampurl.sdate > '2006-05-07':
+                if re.match("Private business(?i)", headingtxt):
+                        bmajorheading = True
 
 	# we're not writing a block for division headings
 	# write out block for headings

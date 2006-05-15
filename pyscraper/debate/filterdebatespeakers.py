@@ -79,7 +79,7 @@ recomb = re.compile('''(?ix)((?:Q?\d+\.\s*)?(?:\[\d+\]\s*)?
 
 # Specific match:
 # Notes - sometimes party appears inside bold tags, so we match and throw it away on either side
-respeakervals = re.compile('''(?six)
+respeakervals = re.compile('''(?ix)
 		(?:Q?(\d+)\.\s*)?			# oral question number (group1)
 		(\[\d+\]\s*)?				# written qnum (group2)
 		(<stamp\saname="[^"]*?"/>)? # a stamp (group3)
@@ -99,14 +99,14 @@ respeakervals = re.compile('''(?six)
 
 
 # <B>Division No. 322</B>
-redivno = re.compile('<b>(?:division\s+no\.\s+\d+\]?|AYES|NOES)</b>$(?i)')
+redivno = re.compile('<b>(?:division no\. \d+\]?|AYES|NOES)</b>$(?i)')
 
 remarginal = re.compile('<b>[^<]*</b>(?!</h[34]>)(?i)')
 
 def FilterDebateSpeakers(fout, text, sdate, typ):
 
 	if typ == "westminhall":
-		depspeakerrg = re.search("\[(.*?) in the Chair\]", text)
+		depspeakerrg = re.search("\[(.*?)(?:<i>)? in the Chair(?:</i>)?\]", text)
 		if not depspeakerrg:
 			print "can't find the [... in the Chair] phrase"
 		depspeaker = depspeakerrg.group(1)
@@ -155,7 +155,7 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
 
 			party = speakerg.group(8) or speakerg.group(10)
 
-			spstr = re.sub("\n", ' ', string.strip(speakerg.group(6)))
+			spstr = string.strip(speakerg.group(6))
 			spstrbrack = speakerg.group(7) or speakerg.group(9) # the bracketted phrase (sometimes the constituency or name if it is a minister)
                         if spstrbrack:
                                 spstrbrack = re.sub("\n", ' ', spstrbrack)

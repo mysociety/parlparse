@@ -56,23 +56,23 @@ regcolumnum3 = '<p>\s*</ul></font>\s*%s</p>\n<ul><font[^>]*>' % regcolcore
 regcolumnum4 = '<p>\s*</font>\s*%s</p>\n<font[^>]*>' % regcolcore
 regcolumnum5 = '\s<br>\s*&nbsp;<br>\s*%s\s*<br>&nbsp;<br>' % regcolcore
 regcolumnum6 = '\s<br>\s*&nbsp;<br>\s*</ul>\s*%s\s*<br>&nbsp;<br>\s*<ul>' % regcolcore
-regcolumnum7 = '</notus-date>\s*%s\s*' % regcolcore
-recolumnumvals = re.compile('(?:<p>|<a name=".*?">|</ul>|</font>|</notus-date>|<br>\s*&nbsp;<br>|\s)*<b>([^:<]*):\s*column\s*(\d+)(WH)?\s*</b>(?:</p>|<ul>|<font[^>]*>|<br>&nbsp;<br>|<br>|\s)*$(?i)')
+regcolumnum7 = '<br>(?:</br>)?%s<br>(?:</br>)?' % regcolcore
+recolumnumvals = re.compile('(?:<p>|<a name=".*?">|</ul>|</font>|<br>\s*&nbsp;<br>|<br>(?:</br>)?|\s)*<b>([^:<]*):\s*column\s*(\d+)(WH)?\s*</b>(?:</p>|<ul>|<font[^>]*>|<br>&nbsp;<br>|<br>(?:</br>)?|\s)*$(?i)')
 
 
 
 
 #<i>13 Nov 2003 : Column 431&#151;continued</i>
 # these occur infrequently
-regcolnumcont = '<i>[^:<]*:\s*column\s*\d+(?:WH)?&#151;continued</i>'
-recolnumcontvals = re.compile('<i>([^:<]*):\s*column\s*(\d+)(WH)?&#151;continued</i>(?i)')
+regcolnumcont = '<(?:i|b)>[^:<]*:\s*column\s*\d+(?:WH)?(?:</b>)?&#151;continued</(?:i|p)>'
+recolnumcontvals = re.compile('<(?:i|b)>([^:<]*):\s*column\s*(\d+)(WH)?(?:</b>)?&#151;continued</(?:i|p)>(?i)')
 
 
 # <H5>12.31 pm</H5>
 # <p>\n12.31 pm\n<p>
 # [3:31 pm<P>    -- at the beginning of divisions
-regtime = '(?:</?p>\s*|<h[45][^>]*>\s?|\[|\n)(?:\d+(?:[:\.]\d+)?(?:\s*|&nbsp;)[ap]\.?m\.?(?:</st>)?|12 noon)(?:\s*</?p>|\s*</h[45]>|\n)'
-retimevals = re.compile('(?:</?p>\s*|<h\d[^>]*>|\[|\n)\s*(\d+(?:[:\.]\d+)?(?:\s*|&nbsp;)(?:[apm.]+|noon|midnight))(?:\s*</?p>|\s*</h\d>|</st>|\n)*$(?i)')
+regtime = '(?:</?p>\s*|<h[45](?: align="left")?>\s?|\[|\n)(?:\d+(?:[:\.]\d+)?(?:\s*|&nbsp;)[ap]\.?m\.?(?:</st>)?|12 noon)(?:\s*</?p>|\s*</h[45]>|\n)'
+retimevals = re.compile('(?:</?p>\s*|<h\d(?: align="left")?>|\[|\n)\s*(\d+(?:[:\.]\d+)?(?:\s*|&nbsp;)(?:[apm.]+|noon|midnight))(?:\s*</?p>|\s*</h\d>|</st>|\n)*$(?i)')
 
 # <a name="column_1099">
 reaname = '<a name="\S*?">(?:</a>)?'

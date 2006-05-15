@@ -33,13 +33,18 @@ def StripWMSHeadings(headspeak, sdate, lords):
 		raise ContextException, 'non-conforming Initial heading '
 	i += 1
 
-	if (not re.match('written (?:ministerial)? ?statements?(?i)', headspeak[i][0])) or headspeak[i][2]:
+	if (not re.match('(?:<stamp aname="[^"]*"/>)?written (?:ministerial)? ?statements?(?i)', headspeak[i][0])) or headspeak[i][2]:
 		print headspeak[i]
 		raise ContextException, 'non-conforming Initial heading (looking for "written (?:ministerial)? ?statements?")'
 	elif (not re.search('<date>', headspeak[i][0])):
 		i += 1
 
-	if (not lords) and ((sdate != mx.DateTime.DateTimeFrom(string.replace(headspeak[i][0], "&nbsp;", " ")).date) or headspeak[i][2]):
+        givendate = string.replace(headspeak[i][0], "&nbsp;", " ")
+        givendate = re.sub("</?i>", "", givendate)
+        gd = re.match('<stamp aname="[^"]*"/>(.*)$', givendate)
+        if gd:
+                givendate = gd.group(1)
+	if (not lords) and ((sdate != mx.DateTime.DateTimeFrom(givendate).date) or headspeak[i][2]):
 #		if (not parlPhrases.wransmajorheadings.has_key(headspeak[i][0])) or headspeak[i][2]:
 		print headspeak[i]
 		print sdate
@@ -50,6 +55,7 @@ def StripWMSHeadings(headspeak, sdate, lords):
 	# find the url and colnum stamps that occur before anything else
 	stampurl = StampUrl(sdate)
 	for j in range(0, i):
+		stampurl.UpdateStampUrl(headspeak[j][0])
 		stampurl.UpdateStampUrl(headspeak[j][1])
 
 	if (not stampurl.stamp) or (not stampurl.pageurl) or (not stampurl.aname):
@@ -87,7 +93,7 @@ def FilterWMSSections(text, sdate, lords=False):
 	flatb = [ ]
 	for sht in headspeak[ih:]:
 		try:
-			headingtxt = string.strip(sht[0])
+			headingtxt = stampurl.UpdateStampUrl(string.strip(sht[0]))  # we're getting stamps inside the headings sometimes
 			unspoketxt = sht[1]
 			speechestxt = sht[2]
 
