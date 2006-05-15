@@ -15,8 +15,9 @@ regcolcore = '[^:<]*:\s*column\s*\d+(?:WS)?'
 regcolumnum1 = '<br>&nbsp;<br>\s*%s\s*<br>&nbsp;<br>' % regcolcore
 regcolumnum2 = '<p>\s*<p>%s<p>' % regcolcore
 regcolumnum3 = '<p>\s*</ul>(?:</font>)?<p>%s<p>\s*<ul>(?:<font[^>]*>)?' % regcolcore
+regcolumnum4 = '<br>(?:</br>)?<b>%s</b><br>(?:</br>)?' % regcolcore
 
-recolumnumvals = re.compile('(?:<br>&nbsp;<br>|</ul>|</font>|<p>|\s)*([^:<]*):\s*column\s*(\d+)(WS)?\s*(?:<br>&nbsp;<br>|<ul>|<font[^>]*>|<p>|\s)*$(?i)')
+recolumnumvals = re.compile('(?:<br>&nbsp;<br>|</ul>|</font>|<p>|<br>(?:</br>)?<b>|\s)*([^:<]*):\s*column\s*(\d+)(WS)?\s*(?:<br>&nbsp;<br>|<ul>|<font[^>]*>|<p>|</b><br>(?:</br>)?|\s)*$(?i)')
 
 regcolnumcont = '<i>[^:<]*:\s*column\s*\d+(?:WS)?&#151;continued\s*</i>(?i)'
 recolnumcontvals = re.compile('<i>([^:<]*):\s*column\s*(\d+)(WS)?&#151;continued</i>(?i)')
@@ -24,7 +25,7 @@ recolnumcontvals = re.compile('<i>([^:<]*):\s*column\s*(\d+)(WS)?&#151;continued
 reaname = '<a name="\S*?">(?i)'
 reanamevals = re.compile('<a name="(\S*?)">(?i)')
 
-recomb = re.compile('\s*(%s|%s|%s|%s|%s)\s*(?i)' % (regcolumnum1, regcolumnum2, regcolumnum3, regcolnumcont, reaname))
+recomb = re.compile('\s*(%s|%s|%s|%s|%s|%s)\s*(?i)' % (regcolumnum1, regcolumnum2, regcolumnum3, regcolumnum4, regcolnumcont, reaname))
 remarginal = re.compile(':\s*column\s*\d+(?i)|</?a[\s>]')
 
 def FilterWMSColnum(fout, text, sdate):

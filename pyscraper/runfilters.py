@@ -115,6 +115,20 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 
         safejfout = jfout
         assert dname in ('wrans', 'debates', 'wms', 'westminhall', 'lordspages')
+
+        if sdate > '2006-05-07' and re.search('<notus-date', text):
+                text = re.sub("\n", ' ', text)
+                text = re.sub("</?notus-date[^>]*>", "", text)
+                # Okay, they're outputting bastardised UTF-8 now, but can't be bothered to do it any way but manually for now
+                text = re.sub("\xe2\x82\xac", "&euro;", text)
+                text = re.sub("\xc3\xaf", "&iuml;", text)
+                text = re.sub("\xc2\xb0", "&deg;", text)
+                text = re.sub("\xc3\(c\)", "&eacute;", text) # Yes, really!
+                text = re.sub("\xc3\xa8", "&egrave;", text)
+                text = re.sub("\xc3 ", "&agrave;", text) # And this one!
+                text = re.sub('(<h5 align="left">)(<a name="(.*?)">)', r"\2\1", text) # If you can't beat them, ...
+                text = re.sub("(<br><b>[^:<]*:\s*column\s*\d+(?:WH)?\s*</b>)(\s+)(?i)", r"\1<br>\2", text)
+
 	(flatb, gidname) = FILTERfunction(text, sdate)
         for i in range(len(gidname)):
                 tempfilenameoldxml = None
