@@ -381,7 +381,7 @@ def ParseGovPostsPage(fr, gp):
         if gp == "govposts0038_2006-05-09.html":
                 return "SKIPTHIS", None        
         if gp == "govposts0039_2006-05-10.html":
-                print sdate, stime, "we could move this date back to the shuffle"
+                sdate, stime = "2006-05-08", "00:01" #  print sdate, stime, "we could move this date back to the shuffle"
 
 
         # extract special Ministers of State and PUSes
@@ -559,10 +559,10 @@ def SetNameMatch(cp, cpsdates):
 		fullname = cp.fullname
 		cons = cp.cons
                 if fullname == "Mr Michael Foster" and not cons:
-                        if cpsdates[0] == "2006-05-09":
+                        if cpsdates[0] in ["2006-05-08", "2006-05-09", "2006-05-10", "2006-05-11"]:
                                 cons = "Worcester"   # this Michael Foster had been a PPS
                         else:
-                                assert False  # double check we still have the right Michael Foster
+                                print cpsdates[0]; assert False  # double check we still have the right Michael Foster
 
 
 		cp.matchid, cp.remadename, cp.remadecons = memberList.matchfullnamecons(fullname, cons, cpsdates[0])
