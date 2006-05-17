@@ -107,9 +107,6 @@ def FilterWransColnum(fout, text, sdate):
 
         # Remove junk
         text = text.replace("{**con**}{**/con**}", "")
-        (text, c) = re.subn(".*Job No: .* Folios: .*", "", text)
-#        if c > 0:
-#                print "replaced %d Job No / Folios things" % c
 
         stamp = StampUrl(sdate) # for error messages
 
