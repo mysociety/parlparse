@@ -85,18 +85,19 @@ regcolumnum2 = '<p>\s</ul><p><i>[^:<]*:\s*column:?\s*\d+w?\s*</i><p>\s<ul>(?i)'
 regcolumnum3 = '<p>\s</ul>(?:</font>)+<p><i>[^:<]*:\s*column:?\s*\d+w?\s*</i><p>\s<ul>(?:<font[^>]*>)?(?i)'
 regcolumnum4 = '<br>(?:&nbsp;<br>|\s+)?<i>[^:<]*:\s*column:?\s*\d+w?\s*</i><br>&nbsp;<br>\s(?i)'
 regcolumnum5 = '<br>&nbsp;<br></ul><i>[^:<]*:\s*column:?\s*\d+w?\s*</i><br>&nbsp;<br>\s<ul>(?i)'
+regcolumnum6 = '<br><b>[^:<]*:\s*column:?\s*\d+w?\s*</b><br>(?i)'
 
-recolumnumvals = re.compile('(?:<p>|\s|</ul>|</font>|<br>&nbsp;<br>|<br>)*<i>([^:<]*):\s*column:?\s*(\d+)w?\s*</i>(?:<p>|\s|<ul>|<font[^>]*>|<br>&nbsp;<br>)*$(?i)')
+recolumnumvals = re.compile('(?:<p>|\s|</ul>|</font>|<br>&nbsp;<br>|<br>)*<(?:i|b)>([^:<]*):\s*column:?\s*(\d+)w?\s*</(?:i|b)>(?:<p>|\s|<ul>|<font[^>]*>|<br>&nbsp;<br>|<br>)*$(?i)')
 
 #<i>23 Oct 2003 : Column 640W&#151;continued</i>
-regcolnumcont = '<i>[^:<]*:\s*column\s*\d+w?&#151;continued\s*</i>|\[Continued from column \d+w?\](?i)'
-recolnumcontvals = re.compile('<i>([^:<]*):\s*column\s*(\d+)w?&#151;continued</i>|\[Continued from column (\d+)w?\](?i)')
+regcolnumcont = '<p><b>[^:<]*:\s*column\s*\d+w?</b>&#151;continued</p>|<i>[^:<]*:\s*column\s*\d+w?&#151;continued\s*</i>|\[Continued from column \d+w?\](?i)'
+recolnumcontvals = re.compile('<p><b>([^:<]*):\s*column\s*(\d+)w?</b>&#151;continued</p>|<i>([^:<]*):\s*column\s*(\d+)w?&#151;continued</i>|\[Continued from column (\d+)w?\](?i)')
 
 # <a name="column_1099">
 reaname = '<a name="\S*?">(?i)'
 reanamevals = re.compile('<a name="(\S*?)">(?i)')
 
-recomb = re.compile('\s*(%s|%s|%s|%s|%s|%s|%s)\s*' % (regcolumnum1, regcolumnum2, regcolumnum3, regcolumnum4, regcolumnum5, regcolnumcont, reaname))
+recomb = re.compile('\s*(%s|%s|%s|%s|%s|%s|%s|%s)\s*' % (regcolumnum1, regcolumnum2, regcolumnum3, regcolumnum4, regcolumnum5, regcolumnum6, regcolnumcont, reaname))
 remarginal = re.compile(':\s*column\s*\d+(?i)|</?a[\s>]')
 
 
@@ -133,18 +134,20 @@ def FilterWransColnum(fout, text, sdate):
 
 		columncontg = recolnumcontvals.match(fss)
                 if columncontg:
-                        if columncontg.group(1):
-        			ldate = mx.DateTime.DateTimeFrom(columncontg.group(1)).date
+                        ldate = columncontg.group(1) or columncontg.group(3) or None
+                        lcolnum = columncontg.group(2) or columncontg.group(4) or None
+                        if ldate:
+        			ldate = mx.DateTime.DateTimeFrom(ldate).date
         			if sdate != ldate:
 	        			raise ContextException("Cont column date disagrees %s -- %s" % (sdate, fss), fragment=fss, stamp=stamp)
-        			lcolnum = string.atoi(columncontg.group(2))
+        			lcolnum = string.atoi(lcolnum)
         			if colnum != lcolnum:
         				raise ContextException("Cont column number disagrees %d -- %s" % (colnum, fss), fragment=fss, stamp=stamp)
 
         			# no need to output anything
         			fout.write(' ')
         			continue
-                        if columncontg.group(3):
+                        if columncontg.group(5):
                                 lcolnum = string.atoi(columncontg.group(3))
                                 if colnum != lcolnum and colnum != lcolnum+1:
                                         raise ContextException("Cont column number disagrees %d -- %s" % (colnum, fss), fragment=fss, stamp=stamp)

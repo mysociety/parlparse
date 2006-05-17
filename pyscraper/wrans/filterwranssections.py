@@ -42,16 +42,21 @@ def StripWransHeadings(headspeak, sdate):
 		raise ContextException('non-conforming Initial heading ')
 	i += 1
 
-	if (not re.match('written answers?(?: to questions?)?(?i)', headspeak[i][0])) or headspeak[i][2]:
+	if (not re.match('(?:<stamp aname="[^"]*"/>)?written answers?(?: to questions?)?(?i)', headspeak[i][0])) or headspeak[i][2]:
 		if not re.match('The following answers were received.*', headspeak[i][0]):
 			pass
                         # print headspeak[i]
 	else:
 		i += 1
 
+        givendate = string.replace(headspeak[i][0], "&nbsp;", " ")
+        givendate = re.sub("</?i>", "", givendate)
+        gd = re.match('<stamp aname="[^"]*"/>(.*)$', givendate)
+        if gd:
+                givendate = gd.group(1)
 	if (not re.match('(?:<stamp[^>]*>)?The following answers were received.*', headspeak[i][0]) and
             not re.match('(?:<stamp[^>]*>)?The following question was answered on.*', headspeak[i][0]) and \
-			(sdate != mx.DateTime.DateTimeFrom(string.replace(headspeak[i][0], "&nbsp;", " ")).date)) or headspeak[i][2]:
+			(sdate != mx.DateTime.DateTimeFrom(givendate).date)) or headspeak[i][2]:
 		if (not parlPhrases.wransmajorheadings.has_key(headspeak[i][0])) or headspeak[i][2]:
 			print headspeak[i]
 			raise ContextException('non-conforming second heading', stamp=None, fragment=headspeak[i][0])
@@ -61,6 +66,7 @@ def StripWransHeadings(headspeak, sdate):
 	# find the url and colnum stamps that occur before anything else
 	stampurl = StampUrl(sdate)
 	for j in range(0, i):
+		stampurl.UpdateStampUrl(headspeak[j][0])
 		stampurl.UpdateStampUrl(headspeak[j][1])
 
 	if (not stampurl.stamp) or (not stampurl.pageurl) or (not stampurl.aname):
@@ -90,7 +96,7 @@ def FilterWransSections(text, sdate):
 	flatb = [ ]
 	for sht in headspeak[ih:]:
 		# triplet of ( heading, unspokentext, [(speaker, text)] )
-		headingtxt = string.strip(sht[0])
+		headingtxt = stampurl.UpdateStampUrl(string.strip(sht[0]))  # we're getting stamps inside the headings sometimes
 		unspoketxt = sht[1]
 		speechestxt = sht[2]
 
@@ -106,6 +112,15 @@ def FilterWransSections(text, sdate):
 			if not parlPhrases.wransmajorheadings.has_key(headingtxt):
 				raise ContextException("unrecognized major heading, please add to parlPhrases.wransmajorheadings", fragment = headingtxt, stamp = stampurl)
 			majheadingtxtfx = parlPhrases.wransmajorheadings[headingtxt] # no need to fix since text is from a map.
+			qbH = qspeech('nospeaker="true"', majheadingtxtfx, stampurl)
+			qbH.typ = 'major-heading'
+			qbH.stext = [ majheadingtxtfx ]
+			flatb.append(qbH)
+			continue
+                elif not speechestxt and sdate > '2006-05-07':
+			if not parlPhrases.wransmajorheadings.has_key(headingtxt.upper()):
+				raise ContextException("unrecognized major heading, please add to parlPhrases.wransmajorheadings", fragment = headingtxt, stamp = stampurl)
+			majheadingtxtfx = parlPhrases.wransmajorheadings[headingtxt.upper()] # no need to fix since text is from a map.
 			qbH = qspeech('nospeaker="true"', majheadingtxtfx, stampurl)
 			qbH.typ = 'major-heading'
 			qbH.stext = [ majheadingtxtfx ]

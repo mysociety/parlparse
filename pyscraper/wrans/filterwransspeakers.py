@@ -96,7 +96,7 @@ def FilterWransSpeakers(fout, text, sdate):
 
 	for i in range(len(fs)):
 		fss = fs[i]
-		stampurl.UpdateStampUrl(fss)
+		fss = stampurl.UpdateStampUrl(fss) # Speakers have new stamps in them
 
 		if re.match(tableregexp, fss):
 			continue
