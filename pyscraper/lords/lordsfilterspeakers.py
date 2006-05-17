@@ -21,7 +21,7 @@ respeakervals = re.compile('([^:(]*?)\s*(?:\(([^:)]*)\))?(:)?$')
 renonspek = re.compile('division|contents|amendment(?i)')
 reboldempty = re.compile('<b>\s*</b>(?i)')
 
-regenericspeak = re.compile('the (?:deputy )?chairman of committees|the deputy speaker|the clerk of the parliaments|several noble lords|the deputy chairman(?: of committees)?|the noble lord said(?i)')
+regenericspeak = re.compile('the (?:deputy )?chairman of committees|(?:the )?deputy speaker|the clerk of the parliaments|several noble lords|the deputy chairman(?: of committees)?|the noble lord said(?i)')
 #retitlesep = re.compile('(Lord|Baroness|Viscount|Earl|The Earl of|The Lord Bishop of|The Duke of|The Countess of|Lady)\s*(.*)$')
 
 

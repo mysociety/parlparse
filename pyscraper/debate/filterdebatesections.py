@@ -244,7 +244,7 @@ def NormalHeadingPart(headingtxt, stampurl):
 		bmajorheading = True
 
         elif stampurl.sdate > '2006-05-07':
-                if re.match("Private business(?i)", headingtxt):
+                if re.match("(Private business|Orders of the day)(?i)", headingtxt):
                         bmajorheading = True
 
 	# we're not writing a block for division headings
