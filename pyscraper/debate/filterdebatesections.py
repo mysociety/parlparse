@@ -53,8 +53,6 @@ fixsubs = 	[
 	( '</UL></UL></UL>(?i)', '</UL>', -1, 'all'),
 		]
 
-
-
 # parse through the usual intro headings at the beginning of the file.
 #[Mr. Speaker in the Chair] 0
 def StripDebateHeading(hmatch, ih, headspeak, bopt=False):
@@ -194,7 +192,6 @@ def StripWestminhallHeadings(headspeak, sdate):
 	return (ih, stampurl)
 
 
-
 # Handle normal type heading
 def NormalHeadingPart(headingtxt, stampurl):
 	# This is an attempt at major heading detection.
@@ -243,7 +240,7 @@ def NormalHeadingPart(headingtxt, stampurl):
 	elif re.search('^hd_|_head', stampurl.aname):
 		bmajorheading = True
 
-        elif stampurl.sdate > '2006-05-07':
+        if stampurl.sdate > '2006-05-07':
                 if re.match("(Private business|Orders of the day)(?i)", headingtxt):
                         bmajorheading = True
 
@@ -329,6 +326,7 @@ def FilterDebateSections(text, sdate, typ):
 	# this is a flat output of qspeeches, some encoding headings, and some divisions.
 	# see the typ variable for the type.
 	flatb = [ ]
+        lastheading = None
 	for sht in headspeak[ih:]:
 		try:
 			# triplet of ( heading, unspokentext, [(speaker, text)] )
@@ -341,58 +339,58 @@ def FilterDebateSections(text, sdate, typ):
 			gdiv = re.match('Division No. (\d+)', headingtxt)
 
 			# heading type
-			if not gdiv:
+			if not gdiv and lastheading != headingtxt:
 				qbh = NormalHeadingPart(headingtxt, stampurl)
-				# print "h ", qbh.typ, qbh.stext
+        			# print "h ", qbh.typ, qbh.stext
 
-				# ram together minor headings into previous ones which have no speeches
-				if qbh.typ == 'minor-heading' and len(flatb) > 0 and flatb[-1].typ == 'minor-heading':
-					flatb[-1].stext.append(" &mdash; ")
-					flatb[-1].stext.extend(qbh.stext)
+        			# ram together minor headings into previous ones which have no speeches
+        			if qbh.typ == 'minor-heading' and len(flatb) > 0 and flatb[-1].typ == 'minor-heading':
+        				flatb[-1].stext.append(" &mdash; ")
+        				flatb[-1].stext.extend(qbh.stext)
 
-				# ram together major headings into previous ones which have no speeches
-				elif qbh.typ == 'major-heading' and len(flatb) > 0 and flatb[-1].typ == 'major-heading':
-					flatb[-1].stext.append(" &mdash; ")
-					flatb[-1].stext.extend(qbh.stext)
+        			# ram together major headings into previous ones which have no speeches
+        			elif qbh.typ == 'major-heading' and len(flatb) > 0 and flatb[-1].typ == 'major-heading':
+        				flatb[-1].stext.append(" &mdash; ")
+	        			flatb[-1].stext.extend(qbh.stext)
 
                                 elif re.search("(?:sitting suspended(?: for| until| till|\.))|(on resuming&)(?i)", qbh.stext[0]):
                                         if len(flatb) > 0 and flatb[-1].typ == 'speech':
-				                qb = qspeech('nospeaker="true"', qbh.stext[0], stampurl)
-                				qb.typ = 'speech'
-                				FilterDebateSpeech(qb)
-                				flatb.append(qb)
+        			                qb = qspeech('nospeaker="true"', qbh.stext[0], stampurl)
+                        			qb.typ = 'speech'
+                        			FilterDebateSpeech(qb)
+                        			flatb.append(qb)
 
-				# this is where we suck in a trailing "Clause" part of the title that is mistakenly outside the heading.
-				elif (qbh.typ == 'minor-heading' or qbh.typ == 'major-heading') and len(flatb) > 0 and flatb[-1].typ == 'speech':
-					mmm = re.match('\s*<p>((?:New )?[Cc]lause \d+\w?)</p>', flatb[-1].stext[-1])
-					if mmm:
-						if IsNotQuiet():
-							print "Clause moving", flatb[-1].stext[-1]
-						qbh.stext.insert(0, " &mdash; ")
-						qbh.stext.insert(0, mmm.group(1))
-						flatb[-1].stext = flatb[-1].stext[:-1]  # delete final value
+	        		# this is where we suck in a trailing "Clause" part of the title that is mistakenly outside the heading.
+        			elif (qbh.typ == 'minor-heading' or qbh.typ == 'major-heading') and len(flatb) > 0 and flatb[-1].typ == 'speech':
+        				mmm = re.match('\s*<p>((?:New )?[Cc]lause \d+\w?)</p>', flatb[-1].stext[-1])
+        				if mmm:
+        					if IsNotQuiet():
+        						print "Clause moving", flatb[-1].stext[-1]
+        					qbh.stext.insert(0, " &mdash; ")
+        					qbh.stext.insert(0, mmm.group(1))
+        					flatb[-1].stext = flatb[-1].stext[:-1]  # delete final value
 
-						# remove an empty speech
-						if not flatb[-1].stext:
-							if IsNotQuiet():
-								print "removing empty speech after moving 'clause' out"
-							assert flatb[-1].speaker == 'nospeaker="true"'
-							del flatb[-1]
+        					# remove an empty speech
+        					if not flatb[-1].stext:
+        						if IsNotQuiet():
+        							print "removing empty speech after moving 'clause' out"
+        						assert flatb[-1].speaker == 'nospeaker="true"'
+        						del flatb[-1]
 
-					# converting a search into a match, for safety, and double checking
-					else:
-						if re.search('<p>\s*((?:New )?\s*Clause\s*\w+)\s*</p>(?i)', flatb[-1].stext[-1]):
-							print flatb[-1].stext[-1]
-							assert False
+        				# converting a search into a match, for safety, and double checking
+	        			else:
+		        			if re.search('<p>\s*((?:New )?\s*Clause\s*\w+)\s*</p>(?i)', flatb[-1].stext[-1]):
+			        			print flatb[-1].stext[-1]
+				       			assert False
 
-					flatb.append(qbh)
+				        flatb.append(qbh)
 
-				# otherwise put out this heading
-				else:
-					flatb.append(qbh)
+        			# otherwise put out this heading
+        			else:
+        				flatb.append(qbh)
 
 			# division case
-			else:
+			elif gdiv:
 				(unspoketxt, qbd) = DivisionParsingPart(string.atoi(gdiv.group(1)), unspoketxt, stampurl, sdate)
 
 				# grab some division text off the back end of the previous speech
@@ -404,6 +402,8 @@ def FilterDebateSections(text, sdate, typ):
 
 				# write out our file with the report of all divisions
 				PreviewDivisionTextGuess(flatb)
+
+                        lastheading = headingtxt
 
 			# continue and output unaccounted for unspoken text occuring after a
 			# division, or after a heading
