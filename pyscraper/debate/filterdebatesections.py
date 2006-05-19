@@ -106,7 +106,7 @@ def StripDebateHeadings(headspeak, sdate):
         gstarttime = None
         if sdate != "2001-06-13":
                 #The House met at half-past Ten o'clock
-                gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*(?:<i>)?the\s+house (?:being |having )?met at?\s+(?:</i><i>)?(.*?)(?:, and the Speaker-Elect having taken the Chair;)?(?:</i>)?$(?i)', headspeak[ih][0])
+                gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*(?:<i>)?\s*the\s+house (?:being |having )?met at?\s+(?:</i><i>\s*)?(.*?)(?:, and the Speaker-Elect having taken the Chair;)?(?:</i>)?$(?i)', headspeak[ih][0])
                 if (not gstarttime) or headspeak[ih][2]:
                         raise ContextException('non-conforming "the house met at" heading %s' % repr(headspeak[ih]), "")
                 ih = ih + 1
@@ -326,7 +326,7 @@ def FilterDebateSections(text, sdate, typ):
 	# this is a flat output of qspeeches, some encoding headings, and some divisions.
 	# see the typ variable for the type.
 	flatb = [ ]
-        lastheading = None
+        #lastheading = None
 	for sht in headspeak[ih:]:
 		try:
 			# triplet of ( heading, unspokentext, [(speaker, text)] )
@@ -339,7 +339,7 @@ def FilterDebateSections(text, sdate, typ):
 			gdiv = re.match('Division No. (\d+)', headingtxt)
 
 			# heading type
-			if not gdiv and lastheading != headingtxt:
+			if not gdiv: # and lastheading != headingtxt:
 				qbh = NormalHeadingPart(headingtxt, stampurl)
         			# print "h ", qbh.typ, qbh.stext
 
@@ -403,7 +403,7 @@ def FilterDebateSections(text, sdate, typ):
 				# write out our file with the report of all divisions
 				PreviewDivisionTextGuess(flatb)
 
-                        lastheading = headingtxt
+                        #lastheading = headingtxt
 
 			# continue and output unaccounted for unspoken text occuring after a
 			# division, or after a heading

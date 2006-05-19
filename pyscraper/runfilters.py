@@ -126,9 +126,12 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 text = re.sub("\xc3\(c\)", "&eacute;", text) # Yes, really!
                 text = re.sub("\xc21/2", "&frac12;", text)
                 text = re.sub("\xc3\xa8", "&egrave;", text)
+                text = re.sub("\xc3\xa1", "&aacute;", text)
+                text = re.sub("\xc3\xb3", "&oacute;", text)
                 text = re.sub("\xc3 ", "&agrave;", text) # And this one!
                 text = re.sub('(<h5 align="left">)(<a name="(.*?)">)', r"\2\1", text) # If you can't beat them, ...
                 text = re.sub("(<br><b>[^:<]*:\s*column\s*\d+(?:WH)?\s*</b>)(\s+)(?i)", r"\1<br>\2", text)
+                text = re.sub("(\s+)(<b>[^:<]*:\s*column\s*\d+(?:WH)?\s*</b><br>)(?i)", r"\1<br>\2", text)
 
 	(flatb, gidname) = FILTERfunction(text, sdate)
         for i in range(len(gidname)):

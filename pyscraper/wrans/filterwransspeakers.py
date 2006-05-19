@@ -163,8 +163,18 @@ def FilterWransSpeakers(fout, text, sdate):
 				remadename = ' speakername="%s"' % (remadename)
 			if not id:
 				if remadename == "MultipleMatch":
-					id = 'unknown'
-					remadename = ' speakername="%s" error="MultipleMatch"' % boldnamestring
+                                        if boldnamestring == 'Mr. Michael Foster':
+                                                if remadecons[1] == 'uk.org.publicwhip/member/1939':
+                                                        id = remadecons[1]
+                                                        remadename = ' speakername="Michael Foster"'
+                                                        remadecons = 'Worcester'
+                                                elif remadecons[0] == 'uk.org.publicwhip/member/896':
+                                                        id = remadecons[0]
+                                                        remadename = ' speakername="Michael Foster"'
+                                                        remadecons = 'Worcester'
+                                        else:
+        					id = 'unknown'
+        					remadename = ' speakername="%s" error="MultipleMatch"' % boldnamestring
 				else:
 					print "  No name,const match (%s,%s)" % (name, cons)
 					raise ContextException("No name match", stamp=stampurl, fragment=boldnamestring)

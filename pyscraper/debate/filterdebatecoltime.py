@@ -132,7 +132,7 @@ def FilterDebateColTime(fout, text, sdate, typ):
 				raise ContextException("Column date disagrees %s -- %s" % (sdate, fss), stamp=stamp, fragment=fss)
 
 			lcolnum = string.atoi(columncg.group(2))
-			if colnum != lcolnum:
+			if colnum != lcolnum and sdate<'2006-05-08':
 				raise ContextException("Cont column number disagrees %d -- %s" % (colnum, fss), stamp=stamp, fragment=fss)
 
 			continue
