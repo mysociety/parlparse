@@ -54,14 +54,14 @@ def StripWransHeadings(headspeak, sdate):
         gd = re.match('<stamp aname="[^"]*"/>(.*)$', givendate)
         if gd:
                 givendate = gd.group(1)
-	if (not re.match('(?:<stamp[^>]*>)?The following answers were received.*', headspeak[i][0]) and
-            not re.match('(?:<stamp[^>]*>)?The following question was answered on.*', headspeak[i][0]) and \
-			(sdate != mx.DateTime.DateTimeFrom(givendate).date)) or headspeak[i][2]:
-		if (not parlPhrases.wransmajorheadings.has_key(headspeak[i][0])) or headspeak[i][2]:
-			print headspeak[i]
-			raise ContextException('non-conforming second heading', stamp=None, fragment=headspeak[i][0])
-	else:
-		i += 1
+       	if (not re.match('(?:<stamp[^>]*>)?The following answers were received.*', headspeak[i][0]) and
+               not re.match('(?:<stamp[^>]*>)?The following question was answered on.*', headspeak[i][0]) and \
+      			(sdate != mx.DateTime.DateTimeFrom(givendate).date)) or headspeak[i][2]:
+       		if (not parlPhrases.wransmajorheadings.has_key(headspeak[i][0])) or headspeak[i][2]:
+       			print headspeak[i]
+       			raise ContextException('non-conforming second heading', stamp=None, fragment=headspeak[i][0])
+       	else:
+       		i += 1
 
 	# find the url and colnum stamps that occur before anything else
 	stampurl = StampUrl(sdate)
@@ -69,8 +69,8 @@ def StripWransHeadings(headspeak, sdate):
 		stampurl.UpdateStampUrl(headspeak[j][0])
 		stampurl.UpdateStampUrl(headspeak[j][1])
 
-	if (not stampurl.stamp) or (not stampurl.pageurl) or (not stampurl.aname):
-		raise ContextException('missing stamp url at beginning of file')
+        if not stampurl.stamp or not stampurl.pageurl or not stampurl.aname:
+	        	raise ContextException('missing stamp url at beginning of file')
 	return (i, stampurl)
 
 

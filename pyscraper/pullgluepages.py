@@ -184,7 +184,10 @@ def ExtractFirstLink(url, dgf, forcescrape):
 		print urx
 		print url
 		raise Exception, "No link found!!!"
-	return urlparse.urljoin(url, re.sub('#.*$' , '', lk.group(1)))
+        lk = re.sub('#.*$', '', lk.group(1))
+        if lk == '/pa/cm200506/cmhansrd/cm060517/text/60517w0386.htm':
+                lk = '/pa/cm200506/cmhansrd/cm060518/text/60518w0387.htm'
+	return urlparse.urljoin(url, lk)
 
 
 
