@@ -106,7 +106,7 @@ remarginal = re.compile('<b>[^<]*</b>(?!</h[34]>)(?i)')
 def FilterDebateSpeakers(fout, text, sdate, typ):
 
 	if typ == "westminhall":
-		depspeakerrg = re.search("\[(.*?)(?:<i>)? in the Chair(?:</i>)?\]", text)
+		depspeakerrg = re.search("\[(.*?)(?:<i>)? ?in the Chair(?:</i>)?\]", text)
 		if not depspeakerrg:
 			print "can't find the [... in the Chair] phrase"
 		depspeaker = depspeakerrg.group(1)
