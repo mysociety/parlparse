@@ -35,8 +35,15 @@
 			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
 			<div id="contentSub"></div>
 									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
-			<div class="messagebox cleanup metadata"><b>This article or section needs to be updated.</b><br />
-Parts of this article or section have been identified as no longer being up to date. Please update the article to reflect recent events, and remove this template when finished.</div>
+			<table class="messagebox current" style="width: auto;">
+<tr>
+<td><a href="/wiki/Image:Current_event_marker.png" class="image" title=" "><img src="http://upload.wikimedia.org/wikipedia/en/thumb/0/02/Current_event_marker.png/50px-Current_event_marker.png" alt=" " width="50" height="36" longdesc="/wiki/Image:Current_event_marker.png" /></a></td>
+<td><b>This article or section needs to be updated.</b><br />
+Parts of this article or section have been identified as no longer being up to date.
+<p>Please update the article to reflect recent events, and remove this template when finished.</p>
+</td>
+</tr>
+</table>
 <p>Members of the <a href="/wiki/House_of_Lords" title="House of Lords">House of Lords</a></p>
 <table id="toc" class="toc" summary="Contents">
 <tr>
@@ -4428,7 +4435,7 @@ Parts of this article or section have been identified as no longer being up to d
 </ul>
 
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!0!!en!2 and timestamp 20060514012432 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!0!!en!2 and timestamp 20060519091007 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/w/index.php?title=Special:Categories&amp;article=Members_of_the_House_of_Lords" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Wikipedia_articles_in_need_of_updating" title="Category:Wikipedia articles in need of updating">Wikipedia articles in need of updating</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:Politics_of_the_United_Kingdom" title="Category:Politics of the United Kingdom">Politics of the United Kingdom</a></span></p></div>			<!-- end content -->
@@ -4501,7 +4508,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-				<li id="lastmod"> This page was last modified 00:24, 12 May 2006.</li>
+				<li id="lastmod"> This page was last modified 01:24, 14 May 2006.</li>
 				<li id="copyright">All text is available under the terms of the <a class='internal' href="/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License">GNU Free Documentation License</a> (see <b><a class='internal' href="/wiki/Wikipedia:Copyrights">Copyrights</a></b> for details). <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
 				<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
 				<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
@@ -4510,5 +4517,5 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 		</div>
 	<script type="text/javascript"> if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv120 in 0.050 secs. -->
+<!-- Served by srv113 in 0.050 secs. -->
 </body></html>
