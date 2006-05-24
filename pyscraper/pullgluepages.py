@@ -80,7 +80,7 @@ class CommonsIndexElement:
 	def __repr__(self):
 		return "<%s, %s, %s>" % (self.date, self.recordType, self.url)
 
-def WriteCleanText(fout, text):
+def WriteCleanText(fout, text, url):
 	abf = re.split('(<[^>]*>)', text)
 	for ab in abf:
 		# delete comments and links
@@ -96,7 +96,7 @@ def WriteCleanText(fout, text):
                         else:
                                 # We should never find any other sort of <a> tag - such
                                 # as a link (as there aren't any on parliament.uk)
-                                print "Caught a link ", ab
+                                print "Caught a link ", ab, " in ", url
 
 		elif re.match('</a>(?i)', ab):
 			pass
@@ -146,13 +146,15 @@ def GlueByNext(outputFileName, url, urlx):
 
 		# write the body of the text
 		for i in range(1,len(hrsections) - 1):
-			WriteCleanText(fout, hrsections[i])
+			WriteCleanText(fout, hrsections[i], url)
 
 		# find the lead on with the footer
 		footer = hrsections[-1]
 
 		# the files are sectioned by the <hr> tag into header, body and footer.
-		nextsectionlink = re.findall('<\s*a\s+href\s*=\s*"?(.*?)"?\s*>next section</(?:a|td)>(?i)', footer)
+		nextsectionlink = re.findall('<\s*a\s+href\s*=\s*"?(.*?)"?\s*>next(?: section)?</(?:a|td)>(?i)', footer)
+                if url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060511/text/60511w0193.htm':
+                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060512/text/60512w0194.htm']
 		if not nextsectionlink:
 			break
 		if len(nextsectionlink) > 1:
@@ -187,6 +189,10 @@ def ExtractFirstLink(url, dgf, forcescrape):
         lk = re.sub('#.*$', '', lk.group(1))
         if lk == '/pa/cm200506/cmhansrd/cm060517/text/60517w0386.htm':
                 lk = '/pa/cm200506/cmhansrd/cm060518/text/60518w0387.htm'
+        elif lk == '/pa/cm200506/cmhansrd/cm060509/text/60510w0332.htm':
+                lk = '/pa/cm200506/cmhansrd/cm060510/text/60510w0332.htm'
+        elif lk == '/pa/cm200506/cmhansrd/cm060508/text/60508w0308.htm':
+                lk = '/pa/cm200506/cmhansrd/cm060509/text/60509w0309.htm'
 	return urlparse.urljoin(url, lk)
 
 

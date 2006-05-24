@@ -227,7 +227,8 @@ entitymap = {
         '&#133;':'...',
 
         '&#178;':'&sup2;',
-        '&rsquo;':"'"
+        '&rsquo;':"'",
+        '&#279;':'&#279;'
 }
 entitymaprev = entitymap.values()
 
@@ -406,7 +407,7 @@ reparts2 = re.compile('(<table[^>]*?>|' + restmatcher + ')')
 
 retable = re.compile('<table[\s\S]*?</table>(?i)')
 retablestart = re.compile('<table[\s\S]*?(?i)')
-reparaspace = re.compile(paratag + '|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>|<table[^>].*>$(?i)')
+reparaspace = re.compile(paratag + '|<ul><ul><ul>|</ul></ul></ul>|</?ul>|</?br>|</?font[^>]*>|<table[^>].*>$(?i)')
 reparaempty = re.compile('(?:\s|</?i>|&nbsp;)*$(?i)')
 reitalif = re.compile('\s*<i>\s*$(?i)')
 
