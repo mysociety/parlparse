@@ -460,7 +460,7 @@ def ParsePrivSecPage(fr, gp):
 							([\s\S]*?)</table>''', fr)
         
         # skip over a holding page that says the PPSs are not sorted out right after the reshuffle
-        if gp == 'privsec0018_2006-05-09.html' or gp == 'privsec0019_2006-05-16.html':
+        if re.search('Following the reshuffle', fr):
                 assert not Mppstext
                 return "SKIPTHIS", None
                 

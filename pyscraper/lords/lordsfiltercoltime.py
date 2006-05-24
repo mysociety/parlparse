@@ -184,7 +184,7 @@ def SplitLordsText(text, sdate):
 	res = [ '', '', '', '' ]
 
 	# Use a name tags
-	wagc = re.search('(?:<br>&nbsp;<br>\s*)?<a name\s*=\s*"(?:column_(?:GC|CWH)\d+|[0-9\-]+_cmtee0)"></a>(?i)', text)
+	wagc = re.search('(?:<br>&nbsp;<br>\s*)?<a name\s*=\s*"(?:gc|column_(?:GC|CWH)\d+|[0-9\-]+_cmtee0)"></a>(?i)', text)
 	wams = re.search('<a name="(?:wms|column_WS\d+)"></a>(?i)', text)
 	wama = re.search('<a name="(?:column_WA\d+|[\dw]*_writ0)"></a>(?i)', text)
 
