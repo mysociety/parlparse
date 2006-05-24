@@ -205,9 +205,12 @@ def FactorChangesWrans(majblocks, scrapeversion):
 
 	majblocknames = [ "".join(majblock[0].stext).strip()  for majblock in majblocks ]
 	for mhchk in mhchks:
-		i = majblocknames.index(mhchk[1])  # if this throws an error we've got a heading in the old list that's not in the new -- redo this code
-		res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="perfectmatch"/>\n' % (mhchk[0], majblocks[i][0].qGID))
-		majblocknames[i] = None # take it out of circulation
+		if mhchk[1] in majblocknames:
+			i = majblocknames.index(mhchk[1])
+			res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="perfectmatch"/>\n' % (mhchk[0], majblocks[i][0].qGID))
+			majblocknames[i] = None # take it out of circulation
+		else:
+			res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="removed"/>\n' % (mhchk[0], majblocks[0][0].qGID))
 
 	# break into question blocks
 	# [0]=headingGID, [1]=further choss, [2]=headingtext, [3]=question+reply text
@@ -237,7 +240,7 @@ def FactorChangesWrans(majblocks, scrapeversion):
 		for qqnum in qqnums:
 			if qblock:
 				assert qblock.headingqb.qGID == qnummapq[qqnum].headingqb.qGID
-			elif qqnum != '0':  # 0 is when there is a missing qnum
+			elif qqnum != '0' and qqnum in qnummapq:  # 0 is when there is a missing qnum
 				qblock = qnummapq[qqnum]
 
 		# in this case the qnums are fail for finding the match, so we either drop it, or find
@@ -245,17 +248,20 @@ def FactorChangesWrans(majblocks, scrapeversion):
 		if not qblock:
 			# find the closest match for this block out of this missing qnum blocks on the new page
 			# (this will need to account for all blocks if in future the correction is to add in the qnum)
-			assert qnummissings
-			qmissblocksscore = [ ]
-			for qqnum in qnummissings:
-				similarity = MeasureBlockSimilarity(qebchk[3], qnummapq[qqnum])
-				qmissblocksscore.append((similarity, qqnum))
-			qmissblockscorebest = max(qmissblocksscore)
-			qblock = qnummapq[qmissblockscorebest[1]]
-			if miscfuncs.IsNotQuiet():
-				print "Missing qnum; mapping %s to %s with score %f" % (qebchk[0], qblock.headingqb.qGID, qmissblockscorebest[0])
-			assert qmissblockscorebest[0] > 0.8  # otherwise it's not really a match and we need to look harder.  
-												 # perhaps it's matched to a block in the new file which newly has a qnum, and we then have to scan against all of them.  
+			if qnummissings:
+				qmissblocksscore = [ ]
+				for qqnum in qnummissings:
+					similarity = MeasureBlockSimilarity(qebchk[3], qnummapq[qqnum])
+					qmissblocksscore.append((similarity, qqnum))
+				qmissblockscorebest = max(qmissblocksscore)
+				qblock = qnummapq[qmissblockscorebest[1]]
+				if miscfuncs.IsNotQuiet():
+					print "Missing qnum; mapping %s to %s with score %f" % (qebchk[0], qblock.headingqb.qGID, qmissblockscorebest[0])
+				assert qmissblockscorebest[0] > 0.8  # otherwise it's not really a match and we need to look harder.  
+													 # perhaps it's matched to a block in the new file which newly has a qnum, and we then have to scan against all of them.  
+			else:
+				res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="removed"/>\n' % (qebchk[0], majblocks[0][0].qGID))
+				continue
 
 		# now have to check matching.
 		# convert both to strings and compare.
