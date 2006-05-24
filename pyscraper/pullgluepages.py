@@ -131,6 +131,8 @@ def GlueByNext(outputFileName, url, urlx):
 
 		# To cope with post 2006-05-08, turn <body> into <hr>
                 sr = re.sub('<body><br>', '<body><hr><br>', sr)
+                sr = re.sub('<body>\s+<notus', '<body><hr> <notus', sr)
+                sr = re.sub('<body><h3 align="center"', '<body><hr><h3 align="center"', sr)
                 
 		# split by sections
                 hrsections = re.split('<hr(?: size=3)?>(?i)', sr)

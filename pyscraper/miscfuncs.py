@@ -203,6 +203,7 @@ entitymap = {
         '&#163;':'&pound;',   # UK currency
         '&#183;':'&middot;',   # middle dot
         '&#176;':'&deg;',   # this is the degrees
+        '&#174;':'&reg;',   # this is the degrees
 		'&#182;':'&para;',  # end-paragraph (pi) symbol
 
         '&#181;':'&micro;',   # this is one quarter symbol
