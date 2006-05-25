@@ -37,7 +37,7 @@ def ParseRow(srow, hdcode, stampur):
 			Lscols.append('<%s%s%s%s>' % (hdcode, colspan, rowspan, talign))
 
 			coltext = re.sub('\n', ' ', col.group(5))
-			coltext = re.sub('</?font[^>]*>|</?p>|</?center>|</?B>(?i)', '', coltext)
+			coltext = re.sub('</?font[^>]*>|</?p[^>]*>|</?center>|</?B>|</?ul>(?i)', '', coltext)
 			coltext = re.sub('^(?:<br>|\s)(?i)', '', coltext)
 			coltext = re.sub('(?:<br>|\s)$(?i)', '', coltext)
 			content = FixHTMLEntitiesL(coltext, '', stampurl=stampur)
@@ -77,13 +77,13 @@ def ParseTable(lstable, stampur):
 		elif re.search('\S', sprow):
 			if (not srows) and (not stitle):
 				stitle = sprow
-			elif not re.match('(?:</t[dhr]>|</font>|\s)*$(?i)', sprow):
+			elif not re.match('(?:</t[dhr]>|</font>|</?tbody>|\s)*$(?i)', sprow):
 				raise ContextException("non-row text", stamp=stampur, fragment=sprow)
 
 
 	# take out tags round the title; they're always out of order
         #print "stitle ", stitle
-	stitle = string.strip(re.sub('</?font[^>]*>|</?p>|</?i>|<br>|&nbsp;(?i)', '', stitle))
+	stitle = string.strip(re.sub('</?font[^>]*>|</?p>|</?i>|<br>|<tbody>|&nbsp;(?i)', '', stitle))
 	ctitle = ''
 	if stitle:
 		ts = re.match('(?:\s|<b>|<center>)+([\s\S]*?)(?:</b>|</center>)+\s*([\s\S]*?)\s*$(?i)', stitle)

@@ -283,28 +283,21 @@ def ApplyFixSubstitutions(text, sdate, fixsubs):
 # this only accepts <sup> and <i> tags
 def StraightenHTMLrecurse(stex, stampurl):
 	# split the text into <i></i> and <sup></sup> and <sub></sub> and <a href></a>
-	qisup = re.search('(<i>(.*?)</i>)(?i)', stex)
-	if qisup:
-		qtag = ('<i>', '</i>')
-	if not qisup:
-		qisup = re.search('(<sup>(.*?)</sup>)(?i)', stex)
-		if qisup:
-			qtag = ('<sup>', '</sup>')
-	if not qisup:
-		qisup = re.search('(<sub>(.*?)</sub>)(?i)', stex)
-		if qisup:
-			qtag = ('<sub>', '</sub>')
+        qisup = re.search(r'(<(i|sup|sub)>(.*?)</\2>)(?i)', stex)
+        if qisup:
+                qtagtype = qisup.group(2)
+                qtag = ('<%s>' % qtagtype, '</%s>' % qtagtype)
 	if not qisup:
 		qisup = re.search('(<a href="([^"]*)">(.*?)</a>)(?i)', stex)
 		if qisup:
 			qtag = ('<a href="%s">' % qisup.group(2), '</a>')
 
 	if qisup:
-		sres = StraightenHTMLrecurse(stex[:qisup.span(1)[0]], stampurl)
+		sres = StraightenHTMLrecurse(stex[:qisup.start(1)], stampurl)
 		sres.append(qtag[0])
-		sres.extend(StraightenHTMLrecurse(qisup.group(2), stampurl))
+		sres.extend(StraightenHTMLrecurse(qisup.group(3), stampurl))
 		sres.append(qtag[1])
-		sres.extend(StraightenHTMLrecurse(stex[qisup.span(1)[1]:], stampurl))
+		sres.extend(StraightenHTMLrecurse(stex[qisup.end(1):], stampurl))
 		return sres
 
 	sres = re.split('(&[a-z]*?;|&#\d+;|"|\xa3|&|\x01|\x0e|\x14|\x92|\xb0|\xab|\xe9|<[^>]*>|<|>)', stex)
@@ -408,7 +401,7 @@ reparts2 = re.compile('(<table[^>]*?>|' + restmatcher + ')')
 
 retable = re.compile('<table[\s\S]*?</table>(?i)')
 retablestart = re.compile('<table[\s\S]*?(?i)')
-reparaspace = re.compile(paratag + '|<ul><ul><ul>|</ul></ul></ul>|</?ul>|</?br>|</?font[^>]*>|<table[^>].*>$(?i)')
+reparaspace = re.compile(paratag + '|<ul><ul><ul>|</ul></ul></ul>|</?ul>|</?br>|</?font[^>]*>|<table[^>]*>$(?i)')
 reparaempty = re.compile('(?:\s|</?i>|&nbsp;)*$(?i)')
 reitalif = re.compile('\s*<i>\s*$(?i)')
 
