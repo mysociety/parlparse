@@ -307,7 +307,9 @@ def FactorChangesWrans(majblocks, scrapeversion):
 
 		# sometimes we get more than one question.  
 		# when we find a mismatch we'll deal with it as a special paragraph problem, or not bother.
-		assert len(qebchkquesids) == len(qblock.queses)
+		if len(qebchkquesids) != len(qblock.queses):
+			print len(qebchkquesids), len(qblock.queses), qblock.queses[0].qGID
+			assert len(qebchkquesids) == len(qblock.queses)
 		for i in range(len(qebchkquesids)):
 			res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="%s"/>\n' % (qebchkquesids[i], qblock.queses[i].qGID, matchtype))
 
