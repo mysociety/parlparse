@@ -9189,6 +9189,7 @@
 	fromdate="2005-09-24" todate="9999-12-31"
 />
 
+<!-- 2006-06-05 -->
 <lord
 	id="uk.org.publicwhip/lord/100907"
 	house="lords"
@@ -9209,6 +9210,30 @@
 	county="the County of Lincolnshire"
 	peeragetype="L" affiliation="Con"
 	fromdate="2006-06-05" todate="9999-12-31"
+/>
+
+<!-- 2006-06-06 -->
+<lord
+	id="uk.org.publicwhip/lord/100909"
+	house="lords"
+	forenames="John"
+    forenames_full="John Patrick Aubone"
+	title="Lord" lordname="Burnett" lordofname=""
+	lordofname_full="Whitcurch"
+	county="the County of Devon"
+	peeragetype="L" affiliation="Dem"
+	fromdate="2006-06-06" todate="9999-12-31"
+/>
+<lord
+	id="uk.org.publicwhip/lord/100910"
+	house="lords"
+	forenames="William"
+    forenames_full="William David"
+	title="Lord" lordname="Trimble" lordofname=""
+	lordofname_full="Lisnagarvey"
+	county="the County of Antrim"
+	peeragetype="L" affiliation="XB"
+	fromdate="2006-06-06" todate="9999-12-31"
 />
 
 </publicwhip>
