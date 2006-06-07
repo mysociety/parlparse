@@ -197,6 +197,8 @@ def ExtractFirstLink(url, dgf, forcescrape):
                 lk = '/pa/cm200506/cmhansrd/cm060509/text/60509w0309.htm'
         elif lk == '/pa/cm200506/cmhansrd/cm060524/text/60524w0554.htm':
                 lk = '/pa/cm200506/cmhansrd/cm060525/text/60525w0555.htm'
+        elif lk == '/pa/cm200506/cmhansrd/cm060602/text/60602w0601.htm':
+                lk = '/pa/cm200506/cmhansrd/cm060605/text/60605w0602.htm'
 	return urlparse.urljoin(url, lk)
 
 

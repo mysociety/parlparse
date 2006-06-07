@@ -119,6 +119,10 @@ def CmIndexFromPage(urllinkpage):
         		if re.search('/indexes/', link1[4]):
 	        		continue
 
+                        if (re.search('Written Answers received between Friday 26 May and Thursday 1 June\s+2006', link1[5])):
+                                odate = '2 June 2006'
+                                sdate = mx.DateTime.DateTimeFrom(odate).date
+
         		if not sdate:
         			raise Exception, 'No date for link in: ' + urllinkpage
         		if sdate < earliestdate:
