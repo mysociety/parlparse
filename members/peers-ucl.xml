@@ -9189,4 +9189,26 @@
 	fromdate="2005-09-24" todate="9999-12-31"
 />
 
+<lord
+	id="uk.org.publicwhip/lord/100907"
+	house="lords"
+	forenames="Brian"
+	forenames_full="Brian Joseph Michael"
+	title="Lord" lordname="Cotter" lordofname=""
+	lordofname_full="Congresbury"
+	county="the County of Somerset"
+	peeragetype="L" affiliation="Dem"
+	fromdate="2006-06-05" todate="9999-12-31"
+/>
+<lord
+	id="uk.org.publicwhip/lord/100908"
+	house="lords"
+	forenames="John Derek"
+	title="Lord" lordname="Taylor" lordofname="Holbeach"
+	lordofname_full="South Holland"
+	county="the County of Lincolnshire"
+	peeragetype="L" affiliation="Con"
+	fromdate="2006-06-05" todate="9999-12-31"
+/>
+
 </publicwhip>
