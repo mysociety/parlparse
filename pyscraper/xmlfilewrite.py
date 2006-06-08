@@ -33,6 +33,7 @@ def WriteXMLHeader(fout):
 <!ENTITY agrave "&#224;" >
 <!ENTITY aacute "&#225;" >
 <!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
 <!ENTITY ocirc  "&#244;" >
 <!ENTITY ouml   "&#246;" >
 <!ENTITY Ouml   "&#214;" >
