@@ -157,6 +157,10 @@ def GlueByNext(outputFileName, url, urlx):
 		nextsectionlink = re.findall('<\s*a\s+href\s*=\s*"?(.*?)"?\s*>next(?: section)?</(?:a|td)>(?i)', footer)
                 if url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060511/text/60511w0193.htm':
                         nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060512/text/60512w0194.htm']
+                if url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0605.htm':
+                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0607.htm']
+                if url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0638.htm':
+                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0673.htm']
 		if not nextsectionlink:
 			break
 		if len(nextsectionlink) > 1:
@@ -199,6 +203,8 @@ def ExtractFirstLink(url, dgf, forcescrape):
                 lk = '/pa/cm200506/cmhansrd/cm060525/text/60525w0555.htm'
         elif lk == '/pa/cm200506/cmhansrd/cm060602/text/60602w0601.htm':
                 lk = '/pa/cm200506/cmhansrd/cm060605/text/60605w0602.htm'
+        elif lk == '/pa/cm200506/cmhansrd/cm060605/text/60605w0700.htm':
+                lk = '/pa/cm200506/cmhansrd/cm060606/text/60606w0701.htm'
 	return urlparse.urljoin(url, lk)
 
 

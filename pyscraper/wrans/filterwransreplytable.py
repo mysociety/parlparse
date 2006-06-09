@@ -57,7 +57,10 @@ def ParseRow(srow, hdcode, stampur):
 # replies can have tables
 def ParseTable(lstable, stampur):
 	# remove the table bracketing
-	stable = re.match('<table[^>]*>\s*([\s\S]*?)\s*</table>$(?i)', lstable).group(1)
+	stable = re.match('<table[^>]*>\s*([\s\S]*?)\s*</table>$(?i)', lstable)
+	if not stable:
+		raise ContextException('Missing </table> somewhere...', stamp=stampur, fragment=stable)
+	stable = stable.group(1)
 	if re.search('<table[^>]*>|</table>(?i)', stable):
 		print lstable
 		raise Exception, 'Double <table> start tag in table parse chunk'
