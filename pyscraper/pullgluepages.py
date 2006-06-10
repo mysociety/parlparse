@@ -109,7 +109,7 @@ def WriteCleanText(fout, text, url):
 		else:
 			fout.write(re.sub('>|\r', '', ab))
 
-def GlueByNext(outputFileName, url, urlx):
+def GlueByNext(outputFileName, url, urlx, sdate):
 	fout = open(outputFileName, "w")
 	# put out the indexlink for comparison with the hansardindex file
 	lt = time.gmtime()
@@ -155,12 +155,21 @@ def GlueByNext(outputFileName, url, urlx):
 
 		# the files are sectioned by the <hr> tag into header, body and footer.
 		nextsectionlink = re.findall('<\s*a\s+href\s*=\s*"?(.*?)"?\s*>next(?: section)?</(?:a|td)>(?i)', footer)
+
+                # MISSING NEXT SECTIONS. XXX Should add code to fetch all links from index page and check
+                # they're ALL visited!
                 if url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060511/text/60511w0193.htm':
                         nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060512/text/60512w0194.htm']
                 if url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0605.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0607.htm']
-                if url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0638.htm':
+                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0640.htm'] # XXX XXX XXX XXX
+                if url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0638.htm' or url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0671.htm':
                         nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0673.htm']
+                if url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060606/text/60606w0708.htm':
+                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060606/text/60606w0784.htm']
+                if sdate == '2006-06-07' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060606/text/60606w0795.htm':
+                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060607/text/60607w0796.htm']
+                if sdate == '2006-06-08' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060607/text/60607w0820.htm':
+                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060608/text/60608w0821.htm']
 		if not nextsectionlink:
 			break
 		if len(nextsectionlink) > 1:
@@ -205,6 +214,8 @@ def ExtractFirstLink(url, dgf, forcescrape):
                 lk = '/pa/cm200506/cmhansrd/cm060605/text/60605w0602.htm'
         elif lk == '/pa/cm200506/cmhansrd/cm060605/text/60605w0700.htm':
                 lk = '/pa/cm200506/cmhansrd/cm060606/text/60606w0701.htm'
+        elif lk == '/pa/cm200506/cmhansrd/cm060605/text/60605w0640.htm': 
+                lk = '/pa/cm200506/cmhansrd/cm060605/text/60605w0602.htm'
 	return urlparse.urljoin(url, lk)
 
 
@@ -314,7 +325,7 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 			print commonsIndexRecord.date, (latestFilePath and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
 
 		# now we take out the local pointer and start the gluing
-		GlueByNext(tempfilename, url0, urlx)
+		GlueByNext(tempfilename, url0, urlx, commonsIndexRecord.date)
 
 		if CompareScrapedFiles(latestFilePath, tempfilename) == "SAME":
 			if miscfuncs.IsNotQuiet():
