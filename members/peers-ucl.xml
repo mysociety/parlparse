@@ -9236,4 +9236,28 @@
 	fromdate="2006-06-06" todate="9999-12-31"
 />
 
+<!-- 2006-06-12 -->
+<lord
+    id="uk.org.publicwhip/lord/100911"
+    house="lords"
+    forenames="John"
+    forenames_full="John Robert Louis"
+    title="Lord" lordname="Lee" lordofname="Trafford"
+    lordofname_full="Bowdon"
+    county="the County of Cheshire"
+    peeragetype="L" affiliation="Dem"
+    fromdate="2006-06-12" todate="9999-12-31"
+/>
+<lord
+    id="uk.org.publicwhip/lord/100912"
+    house="lords"
+    forenames="Jonathan"
+    forenames_full="Jonathan Peter"
+    title="Lord" lordname="Marland" lordofname=""
+    lordofname_full="Odstock"
+    county="the County of Wiltshire"
+    peeragetype="L" affiliation="Con"
+    fromdate="2006-06-12" todate="9999-12-31"
+/>
+
 </publicwhip>
