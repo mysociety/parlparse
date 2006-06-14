@@ -105,6 +105,7 @@ def LordsDivisionParsingPart(divno, unspoketxt, stampurl, sdate):
 	if gquesacc:
 		divtext = unspoketxt[:gquesacc.start(1)]
 		unspoketxt = unspoketxt[gquesacc.start(1):]
+                unspoketxt = re.sub(':ENDDIVISION:', '', unspoketxt)
 	else:
 		divtext = unspoketxt
 		print "division missing %s" % regenddiv
