@@ -193,7 +193,7 @@ def StripWestminhallHeadings(headspeak, sdate):
 
 
 # Handle normal type heading
-def NormalHeadingPart(headingtxt, stampurl, headingmajor):
+def NormalHeadingPart(headingtxt, stampurl):
 	# This is an attempt at major heading detection.
 	# This theory is utterly flawed since you can only tell the major headings
 	# by context, for example, the title of the adjournment debate, which is a
@@ -222,9 +222,6 @@ def NormalHeadingPart(headingtxt, stampurl, headingmajor):
 		print headingtxt
 		raise ContextException('Oral question match not precise enough', stamp=stampurl, fragment=headingtxt)
 
-        elif headingmajor:
-                bmajorheading = True
-
 	# All upper case headings - UGH
 	elif not re.search('[a-z]', headingtxt):
 		bmajorheading = True
@@ -244,7 +241,7 @@ def NormalHeadingPart(headingtxt, stampurl, headingmajor):
 		bmajorheading = True
 
         if stampurl.sdate > '2006-05-07':
-                if re.match("(Private business|Orders of the day)(?i)", headingtxt):
+                if re.match("(Private business|Business of the House|Orders of the day|Points? of Order)(?i)", headingtxt):
                         bmajorheading = True
 
 	# we're not writing a block for division headings
@@ -335,16 +332,18 @@ def FilterDebateSections(text, sdate, typ):
 			# triplet of ( heading, unspokentext, [(speaker, text)], major? )
 			headingtxt = stampurl.UpdateStampUrl(string.strip(sht[0]))  # we're getting stamps inside the headings sometimes
                         headingmajor = sht[3]
+                        if headingmajor or sht == headspeak[-1]:
+                                headingtxt = headingtxt.upper()
 			unspoketxt = sht[1]
 			speechestxt = sht[2]
 
 			# the heading detection, as a division or a heading speech object
 			# detect division headings
-			gdiv = re.match('Division No. (\d+)', headingtxt)
+			gdiv = re.match('Division No. (\d+)(?i)', headingtxt)
 
 			# heading type
 			if not gdiv: # and lastheading != headingtxt:
-				qbh = NormalHeadingPart(headingtxt, stampurl, headingmajor)
+				qbh = NormalHeadingPart(headingtxt, stampurl)
         			# print "h ", qbh.typ, qbh.stext
 
         			# ram together minor headings into previous ones which have no speeches
