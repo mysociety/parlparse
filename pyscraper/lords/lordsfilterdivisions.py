@@ -8,7 +8,6 @@ import string
 
 import mx.DateTime
 
-from splitheadingsspeakers import SplitHeadingsSpeakers
 from splitheadingsspeakers import StampUrl
 
 from clsinglespeech import qspeech

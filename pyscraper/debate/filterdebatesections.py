@@ -193,7 +193,7 @@ def StripWestminhallHeadings(headspeak, sdate):
 
 
 # Handle normal type heading
-def NormalHeadingPart(headingtxt, stampurl):
+def NormalHeadingPart(headingtxt, stampurl, headingmajor):
 	# This is an attempt at major heading detection.
 	# This theory is utterly flawed since you can only tell the major headings
 	# by context, for example, the title of the adjournment debate, which is a
@@ -222,7 +222,10 @@ def NormalHeadingPart(headingtxt, stampurl):
 		print headingtxt
 		raise ContextException('Oral question match not precise enough', stamp=stampurl, fragment=headingtxt)
 
-	# All upper case headings
+        elif headingmajor:
+                bmajorheading = True
+
+	# All upper case headings - UGH
 	elif not re.search('[a-z]', headingtxt):
 		bmajorheading = True
 
@@ -329,8 +332,9 @@ def FilterDebateSections(text, sdate, typ):
         #lastheading = None
 	for sht in headspeak[ih:]:
 		try:
-			# triplet of ( heading, unspokentext, [(speaker, text)] )
+			# triplet of ( heading, unspokentext, [(speaker, text)], major? )
 			headingtxt = stampurl.UpdateStampUrl(string.strip(sht[0]))  # we're getting stamps inside the headings sometimes
+                        headingmajor = sht[3]
 			unspoketxt = sht[1]
 			speechestxt = sht[2]
 
@@ -340,7 +344,7 @@ def FilterDebateSections(text, sdate, typ):
 
 			# heading type
 			if not gdiv: # and lastheading != headingtxt:
-				qbh = NormalHeadingPart(headingtxt, stampurl)
+				qbh = NormalHeadingPart(headingtxt, stampurl, headingmajor)
         			# print "h ", qbh.typ, qbh.stext
 
         			# ram together minor headings into previous ones which have no speeches

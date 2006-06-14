@@ -126,6 +126,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 text = re.sub("\xc3\(c\)", "&eacute;", text) # Yes, really!
                 text = re.sub("\xc2\(r\)", "&reg;", text) # Yes, really!
                 text = re.sub("\xc21/2", "&frac12;", text)
+                text = re.sub("\xc23/4", "&frac34;", text)
                 text = re.sub("\xc3\xa8", "&egrave;", text)
                 text = re.sub("\xc3\xa1", "&aacute;", text)
                 text = re.sub("\xc3\xb3", "&oacute;", text)

@@ -112,7 +112,7 @@ recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regtable, regspeaker, reg
 retableval = re.compile('(%s)(?i)' % regtable)
 respeakerval = re.compile('<speaker ([^>]*)>.*?</speaker>')
 resectiont1val = re.compile('<h\d><center>\s*(.*?)\s*</center></h\d>(?i)')
-resectiont2val = re.compile('<h\d align="?center"?(?: style="text-transform:uppercase")?>\s*(.*?)\s*</h\d>(?i)')
+resectiont2val = re.compile('<h\d align="?center"?( style="text-transform:uppercase")?>\s*(.*?)\s*</h\d>(?i)')
 resectiont3val = re.compile('(<p class="tabletext">(?:<stamp[^>]*>)*)?<center>(?:<stamp[^>]*>)*<b>(.*?)</b></center>(?i)')
 resectiont4val = re.compile('<(?:p|br)>\s*<center>(.*?)</center><(?:p|br)>(?i)')
 
@@ -148,7 +148,7 @@ class SepHeadText:
 
 	# the pulling of unspoketext from previous heading is done in another pass
 	# in filterdebatesections.py
-	def EndHeading(self, nextheading):
+	def EndHeading(self, nextheading, nextmajor=None):
 		self.EndSpeech()
 
 		if (self.heading == 'Initial') and self.shspeak:
@@ -170,9 +170,10 @@ class SepHeadText:
 				if len(self.heading) > 100:
 					raise ContextException("Suspiciously long merged heading part - is it OK? %s" % self.heading, stamp=None, fragment=self.heading)
 
-		self.shtext.append((self.heading, self.unspoketext, self.shspeak))
+		self.shtext.append((self.heading, self.unspoketext, self.shspeak, self.major))
 
 		self.heading = nextheading
+                self.major = nextmajor
 		self.unspoketext = ''	# for holding colstamps
 		self.shspeak = [ ]
 
@@ -183,6 +184,7 @@ class SepHeadText:
 		self.shtext = [] # return value
 
 		self.heading = 'Initial'
+                self.major = None
 		self.shspeak = []
 		self.unspoketext = ''
 
@@ -227,13 +229,15 @@ class SepHeadText:
 
 			# recognize a heading instance from the five kinds
 			gheading = None
+                        gmajor = None
 			gheadingMatch = resectiont1val.match(fss)
 			if gheadingMatch:
 				gheading = gheadingMatch.group(1)
 			if not gheadingMatch:
 				gheadingMatch = resectiont2val.match(fss)
 				if gheadingMatch:
-					gheading = gheadingMatch.group(1)
+					gheading = gheadingMatch.group(2)
+					gmajor = gheadingMatch.group(1)
 			if not gheadingMatch:
 				gheadingMatch = resectiont3val.match(fss)
 				if gheadingMatch:
@@ -266,7 +270,7 @@ class SepHeadText:
 						raise ContextException('"The ... was asked" match not broad enough: %s' % fss, stamp=None, fragment=fss)
 
 					# we are definitely a heading
-					self.EndHeading(gheading)
+					self.EndHeading(gheading, gmajor)
 					continue
 
 				fss = negativematch.group(1)
