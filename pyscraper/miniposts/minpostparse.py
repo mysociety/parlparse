@@ -75,6 +75,7 @@ govdepts = ["Department of Health",
                                 "Department for Constitutional Affairs",
                                 "Department for Education and Skills",
                                 "Office of the Deputy Prime Minister",
+                                "Deputy Prime Minister",
                                 "Department for Transport",
                                 "Department for Work and Pensions",
                                 "Northern Ireland Office",
@@ -93,6 +94,7 @@ govdepts = ["Department of Health",
 
 ppsdepts = govdepts + [ "Minister Without Portfolio",
 				"Minister without Portfolio",
+				"Minister without Portfolio and Party Chair",
 				"Prime Minister",
 				"Prime Minister's Office",
 				"Leader of the House of Commons",
@@ -178,11 +180,11 @@ class protooffice:
 		self.sdatet = lsdatet
 		self.sourcedoc = "chgpages/privsec"
 
-		nameMatch = re.match('(.*?)\s*\(([^)]*)\)$', name)
+		nameMatch = re.match('(.*?)\s*\(([^)]*)\)\s*$', name)
 		self.fullname = nameMatch.group(1)
 		if re.match("Mr Si.n Simon$", self.fullname):
 			self.fullname = "Mr Sion Simon"
-		self.cons = nameMatch.group(2)
+		self.cons = re.sub("&amp;", "&", nameMatch.group(2))
 
 		# map down to the department for this record
 		self.pos = "PPS"
@@ -370,7 +372,7 @@ def ParseGovPostsPage(fr, gp):
 	msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
 
         # is it always posted up on the day it is announced?
-	if msdate != sudate and sudate not in ["2004-09-20", '2005-03-10', '2005-05-13', '2005-06-06', '2006-05-16', '2006-06-12']:
+	if msdate != sudate and sudate not in ["2004-09-20", '2005-03-10', '2005-05-13', '2005-06-06', '2006-05-16', '2006-06-12', '2006-06-13', '2006-06-14']:
 		print "Updated date is %s, but date of change %s" % (sudate, msdate)
 
 	sdate = sudate
@@ -454,8 +456,8 @@ def ParsePrivSecPage(fr, gp):
                 stime = '12:00'
 
 	res = [ ]
-        Mppstext = re.search('''(?x)<tr>\s*<td[^>]*>
-							<font[^>]*><b>Attorney-General.see.</b>\s*Law.Officers.Department</font>
+        Mppstext = re.search('''(?xi)<tr>\s*<td[^>]*>
+							<font[^>]*><b>Attorney-General.see.</b>\s*Law\s+Officers.Department</font>
 							</td>\s*</tr>
 							([\s\S]*?)</table>''', fr)
         
@@ -468,7 +470,7 @@ def ParsePrivSecPage(fr, gp):
                 print gp
                 #print fr
         ppstext = Mppstext.group(1)
-	ppslst = re.split("</?tr>", ppstext)
+	ppslst = re.split("</?tr>(?i)", ppstext)
 
 	# match the name form on each entry
 	#<TD><B>Abercorn, Duke of</B></TD><TD>Lord Steward, HM Household</TD>
@@ -480,11 +482,12 @@ def ParsePrivSecPage(fr, gp):
 		e = e1.strip()
 		if re.match("(?:<[^<]*>|\s|&nbsp;)*$", e):
 			continue
-		deptMatch = re.match('<td[^>]*><font[^>]*><b>([^<]*)(?:</b></font></td>)?$', e1)
+		deptMatch = re.match('\s*<td[^>]*>(?:<font[^>]*>|<b>){2,}([^<]*)(?:(?:</b>|</font>){2,}</td>)?\s*$(?i)', e1)
 		if deptMatch:
-			deptname = deptMatch.group(1)  # carry forward department name
+			deptname = re.sub("&amp;", "&", deptMatch.group(1))  # carry forward department name
+                        deptname = re.sub("\s+", " ", deptname)
 			continue
-		nameMatch = re.match("<td>\s*([^<]*)</td><td>\s*([^<]*)(?:</td>)?$", e1)
+		nameMatch = re.match("\s*<td>\s*([^<]*)</td>\s*<td>\s*([^<]*)(?:</td>)?\s*$(?i)", e1)
 		if nameMatch.group(1):
 			ministername = nameMatch.group(1)  # carry forward minister name (when more than one PPS)
 
