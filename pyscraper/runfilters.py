@@ -125,7 +125,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 text = text.replace("\xc2\xba", "&ordm;")
                 text = text.replace("\xc2\(r\)", "&reg;") # Yes, really!
                 text = text.replace("\xc21/2", "&frac12;")
-                text = text.replace("\xc23/4", "&frac34;"t)
+                text = text.replace("\xc23/4", "&frac34;")
                 text = text.replace("\xc3\"", "&#279;")
                 text = text.replace("\xc3 ", "&agrave;") # And this one!
                 text = text.replace("\xc3\xa1", "&aacute;")
