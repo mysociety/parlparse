@@ -336,7 +336,7 @@ def ParseSelCteePage(fr, gp):
         sudate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
         sutime = frupdated.group(2)
 	# extract the date on the document
-	frdate = re.search("Select Committee Membership at\s+(.*?)\s*<", fr)
+	frdate = re.search("Select Committee\s+Membership at\s+(.*?)\s*<(?i)", fr)
         if frdate:
         	msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
                 if sudate != msdate and sudate == '2006-05-19':
