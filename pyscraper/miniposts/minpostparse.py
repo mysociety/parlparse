@@ -169,9 +169,11 @@ class protooffice:
                 # Why doesn't this work with an accent?
 		if re.match("Mr Si.n Simon$", self.fullname):
 			self.fullname = "Mr Sion Simon"
+		if re.match("Mrs Si.n C\. James$", self.fullname):
+			self.fullname = "Mrs Sian C James"
 #		if re.match("Anne Picking$", self.fullname):
 #			self.fullname = "Anne Moffat"
-                self.cons = cons
+                self.cons = re.sub("&amp;", "&", cons)
                 # Or this?
                 if re.match("Ynys M.n", cons):
                         self.cons = "Ynys Mon"
@@ -298,7 +300,13 @@ class protooffice:
 #                if re.search("Crispin", self.fullname):
  #                       print fn, self.fullname, self.dept, self.pos, self.responsibility, nextrec.fullname, nextrec.dept, nextrec.pos, nextrec.responsibility
 		if (self.fullname, self.dept, self.pos, self.responsibility) == (nextrec.fullname, nextrec.dept, nextrec.pos, nextrec.responsibility):
-			if self.cons != nextrec.cons:
+                        consCheckA = self.cons
+                        if consCheckA:
+                                consCheckA = memberList.canonicalcons(consCheckA, self.sdateend)
+                        consCheckB = nextrec.cons
+                        if consCheckB:
+                                consCheckB = memberList.canonicalcons(consCheckB, nextrec.sdatet[0])
+			if consCheckA != consCheckB:
 				raise Exception, "Mismatched cons name %s %s" % (self.cons, nextrec.cons)
 			(self.sdateend, self.stimeend) = nextrec.sdatet
 			self.fn = fn
@@ -322,15 +330,18 @@ def SpecMins(regex, fr, sdate):
 
 
 def ParseSelCteePage(fr, gp):
-        print gp
         frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)&nbsp;(.*?)\s*</td>', fr)
         lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
         y2k = int(lsudate.group(3)) < 50 and "20" or "19"
         sudate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
         sutime = frupdated.group(2)
 	# extract the date on the document
-#	frdate = re.search("Select Committee Membership at\s+(.*?)\s*<", fr)
-#	msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
+	frdate = re.search("Select Committee Membership at\s+(.*?)\s*<", fr)
+        if frdate:
+        	msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
+                if sudate != msdate and sudate == '2006-05-19':
+                        sudate = msdate
+
         sdate = sudate
         stime = sutime
         res = [ ]
@@ -338,7 +349,7 @@ def ParseSelCteePage(fr, gp):
         committees = re.findall("<a href='#\d+'>(.*?)</a></I>", fr)
         found = { }
         
-        list = re.findall("<tr>\s*<td[^>]*?bgcolor[^>]*?>(?:<b>)?<font size=\+1>(?:<b>|<i>)*<A NAME='\d+'></a>([^<]*?)</font>.*?</tr>\s*((?:<tr>\s*<td>.*?</td>\s*<td>.*?</td>\s*<td>.*?</td>\s*</tr>\s*)+)<tr>\s*<td colspan='3'>&nbsp;?</td>\s*</tr>", fr, re.I | re.S)
+        list = re.findall("<tr>\s*<td colspan='3' bgcolor='#F1ECE4'(?: height=\"\d+\")?>(?:<b>)?<font size=\+1>(?:<b>)?(?:<I>)?<A NAME='\d+'></a>([^<]*?)(?:</b>)?</font>.*?</tr>\s*((?:<tr>\s*<td(?: height=\"19\")?>.*?</td>\s*<td(?: height=\"19\")?>.*?</td>\s*<td(?: height=\"19\")?>.*?</td>\s*</tr>\s*)+)<tr>\s*<td colspan='3'(?: height=\"19\")?>&nbsp;?</td>\s*</tr>", fr, re.I | re.S)
         for committee in list:
                 cteename = committee[0]
                 members = committee[1]
@@ -346,7 +357,7 @@ def ParseSelCteePage(fr, gp):
                         print "Committee title not in list: ", cteename
                 else:
                         found[cteename] = 1
-                for member in re.findall("<tr><td>(.*?)</td><td>(.*?)</td><td>(.*?)</td></tr>", members):
+                for member in re.findall("<tr>\s*<td(?: height=\"19\")?>\s*(.*?)\s*</td>\s*<td(?: height=\"19\")?>\s*(.*?)\s*</td>\s*<td(?: height=\"19\")?>\s*(.*?)\s*</td>\s*</tr>", members):
                         name = member[0]
                         const = member[1]
                         party = member[2]
@@ -372,7 +383,7 @@ def ParseGovPostsPage(fr, gp):
 	msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
 
         # is it always posted up on the day it is announced?
-	if msdate != sudate and sudate not in ["2004-09-20", '2005-03-10', '2005-05-13', '2005-06-06', '2006-05-16', '2006-06-12', '2006-06-13', '2006-06-14']:
+	if msdate != sudate and sudate not in ["2004-09-20", '2005-03-10', '2005-05-13', '2005-06-06', '2006-05-16', '2006-06-12', '2006-06-13', '2006-06-14', '2006-06-15']:
 		print "Updated date is %s, but date of change %s" % (sudate, msdate)
 
 	sdate = sudate
@@ -563,6 +574,8 @@ def SetNameMatch(cp, cpsdates):
 	cp.matchid = ""
 
 	# don't match names that are in the lords
+        if cp.fullname == 'Dame Marion Roe DBE':
+                cp.fullname = 'Marion Roe'
 	if not re.search("Duke |Lord |Baroness |Dame ", cp.fullname):
 		fullname = cp.fullname
 		cons = cp.cons
@@ -581,7 +594,7 @@ def SetNameMatch(cp, cpsdates):
 	else:
 		cp.remadename = cp.fullname
 		cp.remadename = re.sub("^Rt Hon ", "", cp.remadename)
-		cp.remadename = re.sub(" [COM]BE$", "", cp.remadename)
+		cp.remadename = re.sub(" [COMD]BE$", "", cp.remadename)
 		cp.remadecons = ""
 		date = cpsdates[0]
 
@@ -669,7 +682,7 @@ def ParseGovPosts():
 	cpressec, sdatelistsec = ParseChggdir("privsec", ParsePrivSecPage, False)
 
 	# parliamentary Select Committees
-#	cpresselctee, sdatelistselctee = ParseChggdir("selctee", ParseSelCteePage, False)
+	cpresselctee, sdatelistselctee = ParseChggdir("selctee", ParseSelCteePage, False)
 
 	# get from our two sources (which unfortunately don't overlap, so they can't be merged)
 	# We have a gap from 2003-10-15 to 2004-06-06 which needs filling !!! (I think it's done)
@@ -712,12 +725,12 @@ def ParseGovPosts():
 		rpcp.append((cp.sortobj, cp))
 		moffidn += 1
 
-#        for cp in cpresselctee:
-#                cpsdates = [cp.sdatestart, cp.sdateend]
-#                SetNameMatch(cp, cpsdates)
-#                cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
-#                rpcp.append((cp.sortobj, cp))
-#                moffidn += 1
+        for cp in cpresselctee:
+                cpsdates = [cp.sdatestart, cp.sdateend]
+                SetNameMatch(cp, cpsdates)
+                cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
+                rpcp.append((cp.sortobj, cp))
+                moffidn += 1
 
 	# bring same to same places
 	# the sort object is by name, constituency, dateobject
@@ -753,8 +766,8 @@ def ParseGovPosts():
 		fout.write('<chgpageupdates date="%s" time="%s" chgtype="%s"/>\n' % lsdatet)
 	for lsdatet in sdatelistsec:
 		fout.write('<chgpageupdates date="%s" time="%s" chgtype="%s"/>\n' % lsdatet)
-#	for lsdatet in sdatelistselctee:
-#		fout.write('<chgpageupdates date="%s" time="%s" chgtype="%s"/>\n' % lsdatet)
+	for lsdatet in sdatelistselctee:
+		fout.write('<chgpageupdates date="%s" time="%s" chgtype="%s"/>\n' % lsdatet)
 
 
 	# output the file, a tag round the groups of offices which form a single person
