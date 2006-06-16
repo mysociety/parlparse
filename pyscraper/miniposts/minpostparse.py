@@ -346,18 +346,20 @@ def ParseSelCteePage(fr, gp):
         stime = sutime
         res = [ ]
 
-        committees = re.findall("<a href='#\d+'>(.*?)</a></I>", fr)
+        committees = re.findall("<a\s+href=(?:'|\")(?:http://hcl2\.hclibrary/sections/hcio/mmc/selcom\.asp)?#\d+(?:'|\")>(.*?)</a></I>", fr, re.I | re.S)
+        committees = map(lambda x: re.sub("\s+", " ", x), committees)
         found = { }
         
-        list = re.findall("<tr>\s*<td colspan='3' bgcolor='#F1ECE4'(?: height=\"\d+\")?>(?:<b>)?<font size=\+1>(?:<b>)?(?:<I>)?<A NAME='\d+'></a>([^<]*?)(?:</b>)?</font>.*?</tr>\s*((?:<tr>\s*<td(?: height=\"19\")?>.*?</td>\s*<td(?: height=\"19\")?>.*?</td>\s*<td(?: height=\"19\")?>.*?</td>\s*</tr>\s*)+)<tr>\s*<td colspan='3'(?: height=\"19\")?>&nbsp;?</td>\s*</tr>", fr, re.I | re.S)
+        # XXX: This is slow, speed it up!
+        list = re.findall("<tr>\s*<td (?:colspan='3' bgcolor='#F1ECE4'|bgcolor=#f1ece4 colSpan=3)(?: height=\"\d+\")?>(?:<b>)?<font size=\+1>(?:<b>)?(?:<I>)?<A\s+NAME='?\d+'?></a>([^<]*?)(?:</b>)?</font>.*?</tr>\s*((?:<tr>\s*<td(?: height=\"19\")?>.*?</td>\s*<td(?: height=\"19\")?>.*?</td>\s*<td(?: height=\"19\")?>.*?</td>\s*</tr>\s*)+)<tr>\s*<td colspan='?3'?(?: height=\"19\")?>&nbsp;?</td>\s*</tr>", fr, re.I | re.S)
         for committee in list:
-                cteename = committee[0]
+                cteename = re.sub("\s+", " ", committee[0])
                 members = committee[1]
                 if cteename not in committees:
                         print "Committee title not in list: ", cteename
                 else:
                         found[cteename] = 1
-                for member in re.findall("<tr>\s*<td(?: height=\"19\")?>\s*(.*?)\s*</td>\s*<td(?: height=\"19\")?>\s*(.*?)\s*</td>\s*<td(?: height=\"19\")?>\s*(.*?)\s*</td>\s*</tr>", members):
+                for member in re.findall("<tr>\s*<td(?: height=\"19\")?>\s*(.*?)\s*</td>\s*<td(?: height=\"19\")?>\s*(.*?)\s*</td>\s*<td(?: height=\"19\")?>\s*(.*?)\s*</td>\s*</tr>(?i)", members):
                         name = member[0]
                         const = member[1]
                         party = member[2]
@@ -365,7 +367,7 @@ def ParseSelCteePage(fr, gp):
                         ec.SelCteeproto((sdate, stime), name, const, cteename)
                         res.append(ec)
         for i in committees:
-                if not found[i]:
+                if i not in found:
                         print "Argh:", i
 
         return (sdate, stime), res
