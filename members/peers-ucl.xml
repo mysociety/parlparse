@@ -9260,4 +9260,50 @@
     fromdate="2006-06-12" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/100913"
+    house="lords"
+    forenames="Joyce"
+    forenames_full="Joyce Gwendolen"
+    title="Baroness" lordname="Quin" lordofname=""
+    lordofname_full="Gateshead"
+    county="the County of Tyne and Wear"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2006-06-13" todate="9999-12-31"
+/>
+<lord
+    id="uk.org.publicwhip/lord/100914"
+    house="lords"
+    forenames="William"
+    forenames_full="William Manuel Morris"
+    title="Lord" lordname="Morris" lordofname="Handsworth"
+    lordofname_full="Handsworth"
+    county="the County of West Midlands"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2006-06-13" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100915"
+    house="lords"
+    forenames="Celia"
+    forenames_full="Celia Marjorie"
+    title="Baroness" lordname="Thomas" lordofname="Winchester"
+    lordofname_full="Winchester"
+    county="the County of Hampshire"
+    peeragetype="L" affiliation="Dem"
+    fromdate="2006-06-15" todate="9999-12-31"
+/>
+<lord
+    id="uk.org.publicwhip/lord/100916"
+    house="lords"
+    forenames="Denise"
+    forenames_full="Denise Patricia Byrne"
+    title="Baroness" lordname="Kingsmill" lordofname=""
+    lordofname_full="Holland Park"
+    county="the Royal Borough of Kensington and Chelsea"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2006-06-15" todate="9999-12-31"
+/>
+
 </publicwhip>
