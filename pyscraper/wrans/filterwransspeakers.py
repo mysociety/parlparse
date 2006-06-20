@@ -66,7 +66,7 @@ def FilterWransSpeakers(fout, text, sdate):
         # occasionally the reporters miss it out, and we catch such cases here:
         # <p><a name="qnpa_0">Caroline Flint: This information is not held centrally. </p>
         # <p><a name="qnpa_15">Ms Harman: The information can be found in the following table. </p>
-        missingbolds = re.findall('(\n<p>(?:<stamp aname="[a-z_0-9+]+"/>)+)([A-Za-z.\-\s]+)(:\s)', text)
+        missingbolds = re.findall('(\n?<p>(?:<stamp aname="[a-z_0-9+]+"/>)+)([A-Za-z.\-\s]+)(:\s)', text)
         for p1,p2,p3 in missingbolds:
                 missingbold = "%s%s%s" % (p1,p2,p3)
                 bold = "%s<b>%s%s</b>" % (p1,p2,p3)

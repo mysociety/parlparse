@@ -170,6 +170,10 @@ def GlueByNext(outputFileName, url, urlx, sdate):
                         nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060607/text/60607w0796.htm']
                 if sdate == '2006-06-08' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060607/text/60607w0820.htm':
                         nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060608/text/60608w0821.htm']
+                if sdate == '2006-06-16' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060616/text/60616w1017.htm':
+                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060616/text/60616w1019.htm']
+                if sdate == '2006-06-19' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060616/text/60616w1027.htm':
+                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060619/text/60619w1028.htm']
 		if not nextsectionlink:
 			break
 		if len(nextsectionlink) > 1:

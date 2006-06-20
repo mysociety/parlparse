@@ -123,7 +123,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 text = text.replace("\xe2\x82\xac", "&euro;")
                 text = text.replace("\xc2\xb0", "&deg;")
                 text = text.replace("\xc2\xba", "&ordm;")
-                text = text.replace("\xc2\(r\)", "&reg;") # Yes, really!
+                text = text.replace("\xc2(r)", "&reg;") # Yes, really!
                 text = text.replace("\xc21/2", "&frac12;")
                 text = text.replace("\xc23/4", "&frac34;")
                 text = text.replace("\xc3\"", "&#279;")
@@ -131,7 +131,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 text = text.replace("\xc3\xa1", "&aacute;")
                 text = text.replace("\xc3\xa3", "&atilde;")
                 text = text.replace("\xc3\xa8", "&egrave;")
-                text = text.replace("\xc3\(c\)", "&eacute;") # Yes, really!
+                text = text.replace("\xc3(c)", "&eacute;") # Yes, really!
                 text = text.replace("\xc3\xaa", "&ecirc;")
                 text = text.replace("\xc3\xaf", "&iuml;")
                 text = text.replace("\xc3\xb3", "&oacute;")
