@@ -2,7 +2,7 @@
 # -*- coding: latin-1 -*-
 # $Id: bbcconv.py,v 1.4 2005/03/25 23:33:35 theyworkforyou Exp $
 
-# 
+# Screen scrape list of links to Lords on Wikipedia, so we can link to the articles.
 
 # The Public Whip, Copyright (C) 2003 Francis Irving and Julian Todd
 # This is free software, and you are welcome to redistribute it under
