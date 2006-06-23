@@ -470,6 +470,9 @@ def ParsePrivSecPage(fr, gp):
         elif (gp == 'privsec0025_2006-06-14.html'):
                 sdate = '2006-05-08'
                 stime = '00:01'
+        elif (gp == 'privsec0030_2006-06-22.html'):
+                sdate = '2006-06-22'
+                stime = '12:00'
 
 	res = [ ]
         Mppstext = re.search('''(?xi)<tr>\s*<td[^>]*>
