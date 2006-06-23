@@ -427,6 +427,7 @@ class MemberList(xml.sax.handler.ContentHandler):
     def basicsubs(self, txt):
         txt = txt.replace("&#150;", "-")
         txt = txt.replace("&#039;", "'")
+        txt = txt.replace("&#146;", "'")
         txt = txt.replace("&nbsp;", " ")
         txt = re.sub("\s{2,10}", " ", txt)  # multiple spaces
         return txt

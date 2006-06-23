@@ -46,9 +46,13 @@ def MpList(fsm, vote, stampurl, sdate):
 			# there was an & in [A-Z] on line below, but it broke up this incorrectly:
 			# Simon, Si&#244;n <i>(B'ham Erdington)</i>
 			regsep = re.search('(.*?,.*?(?:[a-z]|</i>|\.|\)))([A-Z].*?,.*)$', fss)
+			regsep2 = re.match('(.*?,.*?)  ([A-Z].*?,.*)$', fss)
 			if regsep:
 				fssf = regsep.group(1)
 				fss = regsep.group(2)
+			elif regsep2:
+				fssf = regsep2.group(1)
+				fss = regsep2.group(2)
 			else:
 				fssf = fss
 				fss = ''
@@ -136,7 +140,7 @@ def FilterDivision(text, stampurl, sdate):
 	text = re.sub("</?i>(?i)", "", text)
 
 	# the intention is to splice out the known parts of the division
-	fs = re.split('\s*(?:<br>|</?p>|<p align=left(?: class="tabletext")?>|</font>|\n)\s*(?i)', text)
+	fs = re.split('\s*(?:</?br>|</?p>|<p align=left(?: class="tabletext")?>|</font>|\n)\s*(?i)', text)
 
 	# extract the positions of the key statements
 	statem = [ 	'AYES|<b>AYES</b>',
@@ -167,7 +171,7 @@ def FilterDivision(text, stampurl, sdate):
 	for si in range(5):
 		if istatem[si] == -1:
 			print istatem
-			raise ContextException(' division delimeter not set ', stamp=stampurl, fragment=fs)
+			raise ContextException(' division delimiter not set ', stamp=stampurl, fragment=fs)
 
 	mpayes = [ ]
 	mptayes = [ ]
