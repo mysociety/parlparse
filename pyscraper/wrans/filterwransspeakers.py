@@ -77,8 +77,8 @@ def FilterWransSpeakers(fout, text, sdate):
                         if not missingbold in text:
                                 print "ERROR: missing bold text found, but then vanished when replacing"
                         text = text.replace(missingbold, bold)
-                else:
-                        print "Plausible missing bold not fixed, as no name matches:\n\t%s\n\t%s" % (missingbold.strip(), bold.strip())
+                #else:
+                        #print "Plausible missing bold not fixed, as no name matches:\n\t%s\n\t%s" % (missingbold.strip(), bold.strip())
 
 	# <B> Mrs. Iris Robinson: </B>
 	lspeakerregexp = '<b>.*?</b>\s*?:|<b>.*?</b>'
