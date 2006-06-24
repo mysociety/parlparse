@@ -510,6 +510,9 @@ def ParsePrivSecPage(fr, gp):
 		if nameMatch.group(1):
 			ministername = nameMatch.group(1)  # carry forward minister name (when more than one PPS)
 
+                if re.search('vacant', nameMatch.group(2)):
+                        continue
+
 		if deptname in ppsdepts:
 			ec = protooffice()
 			ec.PPSproto((sdate, stime), nameMatch.group(2), ministername, deptname)
