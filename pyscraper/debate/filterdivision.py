@@ -138,6 +138,7 @@ def MpTellerList(fsm, vote, stampurl, sdate):
 def FilterDivision(text, stampurl, sdate):
 	# discard all italics
 	text = re.sub("</?i>(?i)", "", text)
+	text = re.sub(":", ":<br>", text)
 
 	# the intention is to splice out the known parts of the division
 	fs = re.split('\s*(?:</?br>|</?p>|<p align=left(?: class="tabletext")?>|</font>|\n)\s*(?i)', text)
