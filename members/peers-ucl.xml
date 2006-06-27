@@ -9306,4 +9306,50 @@
     fromdate="2006-06-15" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/100917"
+    house="lords"
+    forenames="Sandip"
+    title="Baroness" lordname="Verma" lordofname=""
+    lordofname_full="Leicester"
+    county="the County of Leicestershire"
+    peeragetype="L" affiliation="Con"
+    fromdate="2006-06-22" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100918"
+    house="lords"
+    forenames="Charles"
+    forenames_full="Charles Guy Rodney"
+    title="Lord" lordname="Leach" lordofname="Fairford"
+    lordofname_full="Fairford"
+    county="the County of Gloucestershire"
+    peeragetype="L" affiliation="Con"
+    fromdate="2006-06-22" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100919"
+    house="lords"
+    forenames="Edmund"
+    forenames_full="Edmund Nigel Ramsay"
+    title="Lord" lordname="Crisp" lordofname=""
+    lordofname_full="Eaglescliffe"
+    county="the County of Durham"
+    peeragetype="L" affiliation="XB"
+    fromdate="2006-06-26" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100920"
+    house="lords"
+    forenames="Robin"
+    title="Lord" lordname="Teverson" lordofname=""
+    lordofname_full="Tregony"
+    county="the County of Cornwall"
+    peeragetype="L" affiliation="Dem"
+    fromdate="2006-06-26" todate="9999-12-31"
+/>
+
 </publicwhip>
