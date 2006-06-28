@@ -1,14 +1,17 @@
 #! /usr/bin/python2.4
+# -*- coding: utf-8 -*-
 
 import sys
 sys.path.append('lords/')
 from resolvemembernames import memberList
 from resolvelordsnames import lordsList
 
+print memberList.matchfullnamecons(u"Si\xf4n Simon", "Birmingham Erdington", "2006-01-22")
+sys.exit(0)
+
 print lordsList.GetLordIDfname('Baroness Thatcher', None, '2006-05-01')
 print lordsList.GetLordIDfname('The Archbishop of York', None, '2006-05-01')
 print lordsList.GetLordIDfname('The Bishop of Southwell and Nottingham', None, '2006-05-01')
-sys.exit(0)
 
 print memberList.matchfullnamecons("Anne Moffat", "East Lothian", "2006-01-22")
 print memberList.matchfullnamecons("Anne Picking", "East Lothian", "2006-01-22")
