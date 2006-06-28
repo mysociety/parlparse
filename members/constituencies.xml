@@ -511,6 +511,7 @@ that loads in the original file before making modifications.
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/137" todate="9999-12-31">
     <name text="Cities of London &amp; Westminster"/>
     <name text="Cities of London and Westminster"/>
+    <name text="London and Westminster, Cities of"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/138" todate="9999-12-31">
     <name text="Cleethorpes"/>
@@ -1737,6 +1738,7 @@ that loads in the original file before making modifications.
     <name text="Richmond Yorks"/>
     <name text="Richmond (Yorkshire)"/>
     <name text="Richmond"/>
+    <name text="Richmond, North Yorkshire"/>
   </constituency>
   <constituency fromdate="1000-01-01" id="uk.org.publicwhip/cons/476" todate="9999-12-31">
     <name text="Richmond Park"/>

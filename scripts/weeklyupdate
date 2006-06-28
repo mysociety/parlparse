@@ -9,9 +9,12 @@ source ~/parlparse/scripts/consts
 # TODO: add more, write to temp file, check errors
 cd ~/parlparse/rawdata/lords
 lynx -source "http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords" > Members_of_the_House_of_Lords
+cd ..
+lynx -source "http://en.wikipedia.org/wiki/MPs_elected_in_the_UK_general_election,_2005" > Members_of_the_House_of_Commons
 svn -q commit -m "Weekly rawdata scrape commit"
 cd ~/parlparse/members
 ./wikipedia-lords.py > wikipedia-lords.xml
+./wikipedia-commons.py > wikipedia-commons.xml
 ./bbcconv.py > bbc-links.xml 
 svn -q commit -m "Weekly members scrape commit"
 
