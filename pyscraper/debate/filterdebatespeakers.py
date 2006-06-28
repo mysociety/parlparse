@@ -140,7 +140,7 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
 		if speakerg:
 			# optional parts of the group
 			# we can use oqnum to detect oral questions
-			anamestamp = speakerg.group(3) or speakerg.group(4) or ""
+			anamestamp = speakerg.group(4) or speakerg.group(3) or ""
 			oqnum = speakerg.group(1)
 			if speakerg.group(5):
 				assert not oqnum
