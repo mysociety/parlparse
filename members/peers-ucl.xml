@@ -9352,4 +9352,28 @@
     fromdate="2006-06-26" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/100921"
+    house="lords"
+    forenames="Mohamed"
+    forenames_full="Mohamed Iltaf"
+    title="Lord" lordname="Sheikh" lordofname=""
+    lordofname_full="Cornhill"
+    county="the City of London"
+    peeragetype="L" affiliation="Con"
+    fromdate="2006-06-27" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100922"
+    house="lords"
+    forenames="Maurice"
+    forenames_full="Maurice George"
+    title="Lord" lordname="Morrow" lordofname=""
+    lordofname_full="Clogher Valley"
+    county="the County of Tyrone"
+    peeragetype="L" affiliation="DUP"
+    fromdate="2006-06-27" todate="9999-12-31"
+/>
+
 </publicwhip>
