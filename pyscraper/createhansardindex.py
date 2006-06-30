@@ -29,6 +29,7 @@ toppath = miscfuncs.toppath
 # url for commons index
 urlcmindex = "http://www.publications.parliament.uk/pa/cm/cmhansrd.htm"
 urlvotesindex = "http://www.publications.parliament.uk/pa/cm/cmvote/cmvote.htm"
+urlqbookindex = "http://www.publications.parliament.uk/pa/cm/cmordbk.htm"
 # index file which is created
 pwcmindex = os.path.join(toppath, "cmindex.xml")
 
@@ -37,19 +38,20 @@ earliestdate = '1997-05-01' # start of 1997 parliament
 #earliestdate = '1994-05-01'
 
 # regexps for decoding the data on an index page
-monthnames = 'January|February|March|April|May|June|July|August|September|October|November|December'
+monthnames = 'January|Janaury|February|March|April|May|June|July|August|September|October|November|December'
 daynames = '(?:Sun|Mon|Tues|Wednes|Thurs|Fri|Satur)day'
 # the chunk [A-Za-z<> ] catches the text "Questions tabled during the recess
 # and answered on" on http://www.publications.parliament.uk/pa/cm/cmvol390.htm
 redatename = '<b>[A-Za-z<> ]*?\s*(\S+\s+\d+\s+(?:%s)\s+\d+)\s*</b>' % monthnames
-revotelink = '<a\s+href="([^"]*)">(?:<b>\s*)?((?:%s),(?:&nbsp;| )\d+\S*?(?:&nbsp;| )(?:%s)(?:&nbsp;| )\d+)\s*(?:</b>)?</(?:a|td)>(?i)' % (daynames, monthnames)
+revotelink  = '<a\s+href="([^"]*)">(?:<b>\s*)?((?:%s),(?:&nbsp;| )\d+\S*?(?:&nbsp;| )(?:%s)(?:&nbsp;| )\d+)\s*(?:</b>)?</(?:a|td)>(?i)' % (daynames, monthnames)
+reqbooklink = '<a\s+href="([^"]*)">(?:<b>\s*)?((?:%s)(?:&nbsp;| )\d+\S*?(?:&nbsp;|\s+)(?:%s)(?:&nbsp;| )\d+)</(?:b|)>(?i)' % (daynames, monthnames)
 relink = '<a\s+href="([^"]*)">(?:<b>)?([^<]*)(?:</b>)?</(?:a|font)>(?i)'
 
 # we lack the patching system here to overcome these special cases
 respecialdate1 = "<b>Friday 23 July 2004 to(?:<br>|\s*)Friday 27 August(?: 2004)?</b>"
 respecialdate2 = "<b>Friday 17 September 2004 to<br>Thursday 30 September 2004</b>"
 
-redateindexlinks = re.compile('%s|(%s|%s)|%s|%s' % (redatename, respecialdate1, respecialdate2, revotelink, relink))
+redateindexlinks = re.compile('%s|(%s|%s)|%s|%s|%s' % (redatename, respecialdate1, respecialdate2, revotelink, reqbooklink, relink))
 
 # map from (date, type) to (URL-first, URL-index)
 # e.g. ("2003-02-01", "wrans") to ("http://...", "http://...")
@@ -106,31 +108,40 @@ def CmIndexFromPage(urllinkpage):
                                 continue
                         uind = urlparse.urljoin(urllinkpage, re.sub('\s', '', link1[2]))
                         typ = "Votes and Proceedings"
+                elif link1[4]:
+                        odate = re.sub('\s+', ' ', link1[5].replace('&nbsp;', ' '))
+                        sdate = mx.DateTime.DateTimeFrom(odate).date
+                        if sdate < earliestdate:
+                                continue
+                        uind = urlparse.urljoin(urllinkpage, re.sub('\s', '', link1[4]))
+                        typ = "Question Book"
                 else:
+                        linkhref = link1[6]
+                        linktext = link1[7]
                 	# the link types by name
-		        if not re.search('debate|westminster|written(?i)', link1[5]):
+		        if not re.search('debate|westminster|written(?i)', linktext):
 			        continue
 
-               		if re.search('Chronology', link1[5]):
+               		if re.search('Chronology', linktext):
         			# print "Chronology:", link
 	        		continue
 
 		        # get rid of the new index pages
-        		if re.search('/indexes/', link1[4]):
+        		if re.search('/indexes/|cmordbk', linkhref):
 	        		continue
 
-                        if (re.search('Written Answers received between Friday 26 May and Thursday 1 June\s+2006', link1[5])):
+                        if (re.search('Written Answers received between Friday 26 May and Thursday 1 June\s+2006', linktext)):
                                 odate = '2 June 2006'
                                 sdate = mx.DateTime.DateTimeFrom(odate).date
 
         		if not sdate:
-        			raise Exception, 'No date for link in: ' + urllinkpage
+        			raise Exception, 'No date for link in: ' + urllinkpage + ' ' + ','.join(link1)
         		if sdate < earliestdate:
         			continue
 
         		# take out spaces and linefeeds we don't want
-        		uind = urlparse.urljoin(urllinkpage, re.sub('\s', '', link1[4]))
-        		typ = string.strip(re.sub('\s\s+', ' ', link1[5]))
+        		uind = urlparse.urljoin(urllinkpage, re.sub('\s', '', linkhref))
+        		typ = string.strip(re.sub('\s+', ' ', linktext))
                         if typ == 'Recess Written Answers':
                                 typ = 'Written Answers'
 
@@ -224,6 +235,24 @@ def CmAllIndexPagesVotes(urlindex):
 		res.append(urlparse.urljoin(urlindex, re.sub('\s', '', monthl)))
 	return res
 
+def CmAllIndexPagesQuestionBook(urlindex):
+
+	# all urls pages which have links into day debates are put into this list
+	# except the first one, which will have been looked at
+	res = [ ]
+
+	urindex = urllib.urlopen(urlindex)
+	srindex = urindex.read()
+	urindex.close()
+
+	# extract the per month volumes
+	# <a href="cmhn0310.htm"><b>October</b></a>
+	monthindexp = '<a href="([^"]*)"><b>(?:%s)(?: \d+)?</b>(?i)' %  monthnames
+	monthlinks = re.findall(monthindexp, srindex)
+	for monthl in monthlinks:
+		res.append(urlparse.urljoin(urlindex, re.sub('\s', '', monthl)))
+	return res
+
 def WriteXML(fout, urllist):
 	fout.write('<?xml version="1.0" encoding="ISO-8859-1"?>\n')
 	fout.write("<publicwhip>\n\n")
@@ -243,6 +272,7 @@ class LoadOldIndex(xml.sax.handler.ContentHandler):
 	def __init__(self, lpwcmindex):
 		self.res = []
                 self.resv = []
+                self.resq = []
 		if not os.path.isfile(lpwcmindex):
 			return
 		parser = xml.sax.make_parser()
@@ -253,6 +283,8 @@ class LoadOldIndex(xml.sax.handler.ContentHandler):
 		if name == "cmdaydeb":
                         if attr['type'] == 'Votes and Proceedings':
                                 self.resv.append( (attr['date'], attr['type'], attr['url']) )
+                        elif attr['type'] == 'Question Book':
+                                self.resq.append( (attr['date'], attr['type'], attr['url']) )
                         else:
         			ddr = (attr["date"], attr["type"], attr["url"])
         			self.res.append(ddr)
@@ -262,12 +294,18 @@ class LoadOldIndex(xml.sax.handler.ContentHandler):
 			return False
                 res = 0
                 resv = 0
+                resq = 0
 		for i in range(len(urllisthead)):
                         if urllisthead[i][1] == 'Votes and Proceedings':
                                 if i >= len(self.resv) or urllisthead[i] != self.resv[resv]:
                                         return False
                                 else:
                                         resv += 1
+                        elif urllisthead[i][1] == 'Question Book':
+                                if i >= len(self.resq) or urllisthead[i] != self.resq[resq]:
+                                        return False
+                                else:
+                                        resq += 1
                         else:
                                 if i >= len(self.res) or urllisthead[i] != self.res[res]:
         				return False
@@ -287,6 +325,7 @@ def UpdateHansardIndex(force):
 	# get front page (which we will compare against)
 	CmIndexFromPage(urlcmindex)
 	CmIndexFromPage(urlvotesindex)
+	CmIndexFromPage(urlqbookindex)
 	urllisth = map(lambda r: r + (reses[r][0],), reses.keys())
 	urllisth.sort()
 	urllisth.reverse()
@@ -301,6 +340,7 @@ def UpdateHansardIndex(force):
 
 		oindex = oldindex.res
 		oindex.extend(oldindex.resv)
+		oindex.extend(oldindex.resq)
 		for i in urllisth:
 			if i not in oindex:
 				oindex.append(i)
@@ -311,6 +351,7 @@ def UpdateHansardIndex(force):
 		# extend our list to all the pages
 		cres = CmAllIndexPages(urlcmindex)
 		cres += CmAllIndexPagesVotes(urlvotesindex)
+		cres += CmAllIndexPagesQuestionBook(urlqbookindex)
 		for cr in cres:
 			CmIndexFromPage(cr)
 		urllisth = map(lambda r: r + (reses[r][0],), reses.keys())

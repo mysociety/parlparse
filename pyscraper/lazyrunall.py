@@ -43,9 +43,9 @@ parser = OptionParser()
 
 parser.set_usage("""
 Crawls the website of the proceedings of the UK parliament, also known as
-Hansard.  Converts them into handy XML files, tidying up HTML errors,
-generating unique identifiers for speeches, reordering sections, name matching
-MPs and so on as it goes.
+Hansard, and more things under parliament.uk.  Converts them into handy XML
+files, tidying up HTML errors, generating unique identifiers for speeches,
+reordering sections, name matching MPs and so on as it goes.
 
 Specify at least one of the following actions to take:
 scrape          update Hansard page index, and download new raw pages
@@ -59,6 +59,7 @@ wms             Written Ministerial Statements
 lords           House of Lords
 regmem          Register of Members Interests
 chgpages        Special pages that change, like list of cabinet ministers
+questionbook    The Question Book (Questions for Oral/Written Answer)
 votes           Votes and Proceedings
 today           Today in the Commons
 
@@ -113,6 +114,7 @@ options.lords = False
 options.regmem = False
 options.chgpages = False
 options.votes = False
+options.qbook = False
 options.today = False
 for arg in args:
         if arg == "scrape":
@@ -133,6 +135,8 @@ for arg in args:
                 options.regmem = True
         elif arg == "chgpages":
                 options.chgpages = True
+        elif arg == "questionbook":
+                options.qbook = True
         elif arg == "votes":
                 options.votes = True
         elif arg == "today":
@@ -148,11 +152,10 @@ if not options.scrape and not options.parse:
         print >>sys.stderr, "error: choose what to do; scrape, parse, or both"
         parser.print_help()
         sys.exit(1)
-if not options.debates and not options.westminhall and not options.wms and not options.wrans and not options.regmem and not options.lords and not options.chgpages and not options.votes and not options.today:
-        print >>sys.stderr, "error: choose what work on; debates, wrans, regmem, wms, votes, chgpages, today or several of them"
+if not options.debates and not options.westminhall and not options.wms and not options.wrans and not options.regmem and not options.lords and not options.chgpages and not options.votes and not options.today and not options.qbook:
+        print >>sys.stderr, "error: choose what work on; debates, wrans, regmem, wms, votes, chgpages, questionbook, today or several of them"
         parser.print_help()
         sys.exit(1)
-
 
 
 # Do the work - all the conditions are so beautifully symmetrical, there
@@ -163,7 +166,7 @@ if not options.debates and not options.westminhall and not options.wms and not o
 #
 if options.scrape:
 	# get the indexes
-	if options.wrans or options.debates or options.westminhall or options.wms or options.votes:
+	if options.wrans or options.debates or options.westminhall or options.wms or options.votes or options.qbook:
 		UpdateHansardIndex(options.forceindex)
 	if options.lords:
 		UpdateLordsHansardIndex(options.forceindex)
@@ -194,6 +197,8 @@ if options.scrape:
 		LordsPullGluePages(options.datefrom, options.dateto, options.forcescrape)
 	if options.votes:
 		PullGluePages(options.datefrom, options.dateto, options.forcescrape, "votes", "votes")
+	if options.qbook:
+		PullGluePages(options.datefrom, options.dateto, options.forcescrape, "questionbook", "questionbook")
 	if options.today:
 		pullgluetodaydate = PullGlueToday(options.forcescrape)
 	if options.regmem:

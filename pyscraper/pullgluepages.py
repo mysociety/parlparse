@@ -70,8 +70,10 @@ class CommonsIndex(xml.sax.handler.ContentHandler):
 class CommonsIndexElement:
 	def __init__(self, date, recordType, url):
 		# sanity check the types
-		if not re.search("answers|debates|westminster|ministerial|votes(?i)", recordType):
+		if not re.search("answers|debates|westminster|ministerial|votes|question book(?i)", recordType):
 			raise Exception, "cmdaydeb of unrecognized type: %s" % recordType
+                if recordType == 'Question Book':
+                        recordType = 'questionbook'
 		
 		self.date = date
 		self.recordType = recordType
@@ -140,9 +142,7 @@ def GlueByNext(outputFileName, url, urlx, sdate):
 		# this is the case for debates on 2003-03-13 page 30
 		# http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030313/debtext/30313-32.htm
 		if len(hrsections) == 1:
-			print len(hrsections)
-			print ' page missing '
-			print url
+			print len(hrsections), 'page missing', url
 			fout.write('<UL><UL><UL></UL></UL></UL>\n')
 			break
 
@@ -322,7 +322,7 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 
 		# hansard index page
 		urlx = commonsIndexRecord.url
-		if commonsIndexRecord.recordType == 'Votes and Proceedings':
+		if commonsIndexRecord.recordType == 'Votes and Proceedings' or commonsIndexRecord.recordType == 'questionbook':
 			url0 = urlx
 		else:
 			url0 = ExtractFirstLink(urlx, latestFilePath, forcescrape)  # this checks the url at start of file
