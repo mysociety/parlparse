@@ -37,7 +37,6 @@ regcolumnum4 = '<p>\s*</ul><font size=3>%s</p>\s*<ul><font size=2>' % regcolmat
 #regcolumnum5 = '<p>\s*(?:<font size=3>\s*)?%s</p>\s*<font size=[23]>' % regcolmat
 regcolumnum6 = '<p>\s*</ul>(?:</ul></ul>)?%s</p>\s*<ul>(?:<ul><ul>)?<font size=3>' % regcolmat
 
-
 recolumnumvals = re.compile('(?:<br>&nbsp;<br>|<br>|<p>|</ul>|</i>|<font size=\d>|\s|</?a[^>]*>)*?<b>([^:<]*)\s*:\s*column\s*(\D*?)(\d+)\s*</b>(?:<br>&nbsp;<br>|<br>|</p>|<ul>|<i>|<font size=\d>|\s)*$(?i)')
 
 # <H5>12.31 p.m.</H5>
@@ -185,8 +184,8 @@ def SplitLordsText(text, sdate):
 
 	# Use a name tags
 	wagc = re.search('(?:<br>&nbsp;<br>\s*)?<a name\s*=\s*"(?:gc|column_(?:GC|CWH)\d+|[0-9\-]+_cmtee0)"></a>(?i)', text)
-	wams = re.search('<a name="(?:wms|column_WS\d+)"></a>(?i)', text)
-	wama = re.search('<a name="(?:column_WA\d+|[\dw]*_writ0)"></a>(?i)', text)
+	wams = re.search('(?:<br>&nbsp;<br>\s*)?<a name="(?:wms|column_WS\d+)"></a>(?i)', text)
+	wama = re.search('(?:<br>&nbsp;<br>\s*)?<a name="(?:column_WA\d+|[\dw]*_writ0)"></a>(?i)', text)
 
 	# the sections are always in the same order, but sometimes there's one missing.
 
@@ -247,7 +246,7 @@ def SplitLordsText(text, sdate):
 
 	# check that there is always an adjournment in the main debate, with some of the trash that gets put before it
 	# this kind of overguessing is to get a feel for the variation that is encountered.
-	if not re.search('(?:<ul><ul><p>|</a>\s*(?:<ul>|<p>)?|<p>\s*<ul><ul>(?:<ul>)?)\s*(?:Parliament was prorogued|House adjourned )(?i)', res[0]):
+	if not re.search('(?:<ul><ul><ul>|<ul><ul><p>|</a>\s*(?:<ul>|<p>)?|<p>\s*<ul><ul>(?:<ul>)?)\s*(?:Parliament was prorogued|House adjourned )(?i)', res[0]):
 		raise ContextException("house adjourned failure", stamp=None, fragment=res[0][-100:])
 
         page = re.findall('<page[^>]*>', res[0])[-1]
@@ -265,13 +264,13 @@ def SplitLordsText(text, sdate):
                 res[2] = page + res[2]
                 page = re.findall('<page[^>]*>', res[2])[-1]
 		assert not re.search('<a name="column_(?!WS)\D+\d+">', res[2])
-		assert re.search('center>Written Statements', res[2])
+		assert re.search('center"?>(?:<a name="[^"]*"></a>)?Written Statements', res[2])
 
 	# check the title and column numbering in the written answers
 	if res[3]:
                 res[3] = page + res[3]
 		assert not re.search('<a name="column_(?!WA)\D+\d+">', res[3])
-		if not re.search('<(?:h3 align=)?center>\s*Written Answers?', res[3]): # sometimes the s is missing
+		if not re.search('<(?:h3 align=)?"?center"?>(?:<a name="[^"]*"></a>)?\s*Written Answers?', res[3]): # sometimes the s is missing
 			raise ContextException("missing written answer title", fragment=res[3])
 
 	return res

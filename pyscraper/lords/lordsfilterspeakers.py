@@ -14,8 +14,8 @@ from contextexception import ContextException
 from splitheadingsspeakers import StampUrl
 
 # marks out center types bold headings which are never speakers
-respeaker = re.compile('(<center><b>[^<]*</b></center>|<b>[^<]*</b>(?:\s*:)?)(?i)')
-respeakerb = re.compile('<b>\s*([^<]*?),?\s*</b>(\s*:)?(?i)')
+respeaker = re.compile('(<center><b>[^<]*</b></center>|<b>(?:<stamp aname="[^"]*"/>)?[^<]*</b>(?:\s*:)?)(?i)')
+respeakerb = re.compile('<b>\s*(?:<stamp aname="[^"]*"/>)?\s*([^<]*?),?\s*</b>(\s*:)?(?i)')
 respeakervals = re.compile('([^:(]*?)\s*(?:\(([^:)]*)\))?(:)?$')
 
 renonspek = re.compile('division|contents|amendment(?i)')
@@ -41,6 +41,8 @@ def LordsFilterSpeakers(fout, text, sdate):
 			fout.write(fss)
 			stampurl.UpdateStampUrl(fss)
 			continue
+
+		stampurl.UpdateStampUrl(fss)
 
 		# grab a trailing colon if there is one
 		fssb = bffs.group(1)

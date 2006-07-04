@@ -141,6 +141,12 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 text = re.sub("(<br><b>[^:<]*:\s*column\s*\d+(?:WH)?\s*</b>)(\s+)(?i)", r"\1<br>\2", text)
                 text = re.sub("(\s+)(<b>[^:<]*:\s*column\s*\d+(?:WH)?\s*</b><br>)(?i)", r"\1<br>\2", text)
 
+                # Lords, big overall replacements
+                text = re.sub('(<h5>)(<a name="(.*?)"></a>)', r"\2\1", text) # If you can't beat them, ...
+                text = re.sub('<columnNum><br /> <br />', '<br>&nbsp;<br>', text)
+                text = re.sub('<br /> <br /></columnNum>', '<br>&nbsp;<br>', text)
+                text = re.sub('<b align="center">', '<b>', text)
+
 	(flatb, gidname) = FILTERfunction(text, sdate)
         for i in range(len(gidname)):
                 tempfilenameoldxml = None
