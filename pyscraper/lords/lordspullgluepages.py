@@ -55,35 +55,20 @@ class LoadLordsIndex(xml.sax.handler.ContentHandler):
 			self.res.append(ddr)
 
 # extract the table of contents from an index page
-def ExtractIndexContents(urlx):
+def ExtractIndexContents(urlx, sdate):
 	urx = urllib.urlopen(urlx)
-
-	# find the contents label which is a reliable way to get to the first link in after the stack of intro
-	stcont = '<a name="contents"></a>\s*$'
-	while True:
-		xline = urx.readline()
-		if not xline:
-			print '%s not found in %s' % (stcont, urlx)
-			raise Exception, "cannot index"
-		if re.match(stcont, xline):
-			break
-
-	# this gets all the lines down to the <hr> in the middle
-	lklins = []
-	while True:
-		xline = urx.readline()
-		if not xline:
-			print '<hr> not found in %s' % urlx
-			raise Exception, "cannot index"
-		if re.match('<hr>\s*$', xline):
-			break
-		lklins.append(xline)
-	lktex = string.join(lklins, '')
+        lktex = urx.read()
+        urx.close()
+        lktex = re.sub('^.*?<a name="contents"></a>\s*(?s)', '', lktex)
+        lktex = re.sub('^(.*?)<hr(?: /)?>.*$(?s)', r'\1', lktex)
 
 	# get the links
-	#<p><a href="../text/40129w01.htm#40129w01_sbhd7"><H3><center>Olympic Games 2012: London Bid</center></H3>
-	#</a></p>
-	relkex = re.compile('<p><a href\s*=\s*"([^"]*?\.htm)#[^"]*"><h3><center>((?:<!|[^<])*)(?:</center>|</h3>)+\s*</a></p>(?i)')
+        if sdate >= '2006-07-03':
+        	relkex = re.compile('<h[23] align="center"><a href="([^"]*?\.htm)#[^"]*">([^<]*)</a></h[23]>(?is)')
+        else:
+	        #<p><a href="../text/40129w01.htm#40129w01_sbhd7"><H3><center>Olympic Games 2012: London Bid</center></H3>
+        	#</a></p>
+        	relkex = re.compile('<p><a href\s*=\s*"([^"]*?\.htm)#[^"]*"><h3><center>((?:<!|[^<])*)(?:</center>|</h3>)+\s*</a></p>(?i)')
 	res = relkex.findall(lktex)
 	if not res:
 		print "no links found from day index page"
@@ -108,6 +93,8 @@ def GlueByNext(fout, urla, urlx):
 		# write the marker telling us which page this comes from
 		fout.write('<page url="' + url + '"/>\n')
 
+		# To cope with post 2006-07-03, turn <body> into <hr>
+                sr = re.sub('<body><notus', '<body><hr><notus', sr)
 
 		# split by sections
 		hrsections = re.split('<hr>(?i)', sr)
@@ -217,7 +204,7 @@ def LordsPullGluePages(datefrom, dateto, bforcescrape):
 
 		# The different sections are often all run together
 		# with the title of written answers in the middle of a page.
-		icont = ExtractIndexContents(urlx)
+		icont = ExtractIndexContents(urlx, dnu[0])
 		# this gets the first link (the second [0][1] would be it's title.)
 		urla = [ ]
 		for iconti in icont:

@@ -80,13 +80,13 @@ def ParseTable(lstable, stampur):
 		elif re.search('\S', sprow):
 			if (not srows) and (not stitle):
 				stitle = sprow
-			elif not re.match('(?:</t[dhr]>|</font>|</?tbody>|\s)*$(?i)', sprow):
+			elif not re.match('(?:</t[dhr]>|</font>|</?tbody>|</?thead>|\s)*$(?i)', sprow):
 				raise ContextException("non-row text", stamp=stampur, fragment=sprow)
 
 
 	# take out tags round the title; they're always out of order
         #print "stitle ", stitle
-	stitle = string.strip(re.sub('</?font[^>]*>|</?p>|</?i>|<br>|<tbody>|&nbsp;(?i)', '', stitle))
+	stitle = string.strip(re.sub('</?font[^>]*>|</?p>|</?i>|<br>|<tbody>|</?thead>|&nbsp;(?i)', '', stitle))
 	ctitle = ''
 	if stitle:
 		ts = re.match('(?:\s|<b>|<center>)+([\s\S]*?)(?:</b>|</center>)+\s*([\s\S]*?)\s*$(?i)', stitle)
