@@ -85,9 +85,9 @@ regcolumnum2 = '<p>\s</ul><p><i>[^:<]*:\s*column:?\s*\d+w?\s*</i><p>\s<ul>(?i)'
 regcolumnum3 = '<p>\s</ul>(?:</font>)+<p><i>[^:<]*:\s*column:?\s*\d+w?\s*</i><p>\s<ul>(?:<font[^>]*>)?(?i)'
 regcolumnum4 = '<br>(?:&nbsp;<br>|\s+)?<i>[^:<]*:\s*column:?\s*\d+w?\s*</i><br>&nbsp;<br>\s(?i)'
 regcolumnum5 = '<br>&nbsp;<br></ul><i>[^:<]*:\s*column:?\s*\d+w?\s*</i><br>&nbsp;<br>\s<ul>(?i)'
-regcolumnum6 = '<br><b>[^:<]*:\s*column:?\s*\d+w?\s*</b><br>(?i)'
+regcolumnum6 = '<br>(?:</br>)?<b>[^:<]*:\s*column:?\s*\d+w?\s*</b><br>(?:</br>)?(?i)'
 
-recolumnumvals = re.compile('(?:<p>|\s|</ul>|</font>|<br>&nbsp;<br>|<br>)*<(?:i|b)>([^:<]*):\s*column:?\s*(\d+)w?\s*</(?:i|b)>(?:<p>|\s|<ul>|<font[^>]*>|<br>&nbsp;<br>|<br>)*$(?i)')
+recolumnumvals = re.compile('(?:<p>|\s|</ul>|</font>|<br>&nbsp;<br>|<br>|</br>)*<(?:i|b)>([^:<]*):\s*column:?\s*(\d+)w?\s*</(?:i|b)>(?:<p>|\s|<ul>|<font[^>]*>|<br>&nbsp;<br>|<br>|</br>)*$(?i)')
 
 #<i>23 Oct 2003 : Column 640W&#151;continued</i>
 regcolnumcont = '<p><b>[^:<]*:\s*column\s*\d+w?</b>&#151;continued</p>|<i>[^:<]*:\s*column\s*\d+w?&#151;continued\s*</i>|\[Continued from column \d+w?\](?i)'

@@ -520,7 +520,7 @@ def LordsFilterSections(text, sdate):
 
 		# the heading detection, as a division or a heading speech object
 		# detect division headings
-		gdiv = re.match('Division No. (\d+)', headingtxt)
+		gdiv = re.search('Division No\.\s+(\d+)', headingtxt)
 		assert not re.match("(?:NOT-)?CONTENTS", headingtxt)
 
 		# heading type

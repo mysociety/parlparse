@@ -121,8 +121,11 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 text = re.sub("</?notus-date[^>]*>", "", text)
                 # Okay, they're outputting bastardised UTF-8 now, but can't be bothered to do it any way but manually for now
                 text = text.replace("\xe2\x82\xac", "&euro;")
+                text = text.replace("\xe2\x80\x9c", "'")
+                text = text.replace("\xe2\x80\x9d", "'")
                 text = text.replace("\xc2\xb0", "&deg;")
                 text = text.replace("\xc2\xba", "&ordm;")
+                text = text.replace("\xc2\xa3", "&pound;")
                 text = text.replace("\xc2(r)", "&reg;") # Yes, really!
                 text = text.replace("\xc21/2", "&frac12;")
                 text = text.replace("\xc23/4", "&frac34;")
@@ -142,10 +145,13 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 text = re.sub("(\s+)(<b>[^:<]*:\s*column\s*\d+(?:WH)?\s*</b><br>)(?i)", r"\1<br>\2", text)
 
                 # Lords, big overall replacements
-                text = re.sub('(<h5>)(<a name="(.*?)"></a>)', r"\2\1", text) # If you can't beat them, ...
-                text = re.sub('<columnNum><br /> <br />', '<br>&nbsp;<br>', text)
-                text = re.sub('<br /> <br /></columnNum>', '<br>&nbsp;<br>', text)
-                text = re.sub('<b align="center">', '<b>', text)
+                if dname == 'lordspages':
+                        text = re.sub('(<h5>)(<a name="(.*?)"></a>)', r"\2\1", text) # If you can't beat them, ...
+                        text = re.sub('<columnNum><br /> <br />', '<br>&nbsp;<br>', text)
+                        text = re.sub('<br /> <br /></columnNum>', '<br>&nbsp;<br>', text)
+                        text = re.sub('<b align="center">', '<b>', text)
+                        text = re.sub('<br />', '<br>', text)
+                        text = re.sub('CONTENTS', 'CONTENTS\n', text)
 
 	(flatb, gidname) = FILTERfunction(text, sdate)
         for i in range(len(gidname)):

@@ -256,8 +256,9 @@ def StripAnchorTags(text):
 
 
 def WriteCleanText(fout, text):
+        text = re.sub('<!--.*?-->', '', text)
     	abf = re.split('(<[^>]*>)', text)
-	for ab in abf:
+        for ab in abf:
 		# delete comments and links
 		if re.match('<!-[^>]*?->', ab):
 			pass
