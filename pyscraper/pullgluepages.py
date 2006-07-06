@@ -83,6 +83,7 @@ class CommonsIndexElement:
 		return "<%s, %s, %s>" % (self.date, self.recordType, self.url)
 
 def WriteCleanText(fout, text, url):
+        text = re.sub('<!--.*?-->', '', text)
 	abf = re.split('(<[^>]*>)', text)
 	for ab in abf:
 		# delete comments and links
@@ -135,6 +136,7 @@ def GlueByNext(outputFileName, url, urlx, sdate):
                 sr = re.sub('<body><br>', '<body><hr><br>', sr)
                 sr = re.sub('<body>\s+<notus', '<body><hr> <notus', sr)
                 sr = re.sub('<body><h3 align="center"', '<body><hr><h3 align="center"', sr)
+                sr = re.sub('<body><p>', '<body><hr><p>', sr)
                 
 		# split by sections
                 hrsections = re.split('<hr(?: size=3)?>(?i)', sr)
@@ -178,6 +180,9 @@ def GlueByNext(outputFileName, url, urlx, sdate):
                         nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060626/text/60626w1224.htm']
                 if sdate == '2006-06-27' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060626/text/60626w1227.htm':
                         nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060627/text/60627w1228.htm']
+                if sdate == '2006-07-04' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1408.htm':
+                        WriteCleanText(fout, hrsections[-1], url)
+                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060704/text/60704w1409.htm']
 		if not nextsectionlink:
 			break
 		if len(nextsectionlink) > 1:

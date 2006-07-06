@@ -9376,4 +9376,27 @@
     fromdate="2006-06-27" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/100923"
+    house="lords"
+    forenames="Eileen"
+    forenames_full="Eileen Emily"
+    title="Baroness" lordname="Paisley" lordofname="St George's"
+    county="the County of Antrim"
+    peeragetype="L" affiliation="DUP"
+    fromdate="2006-07-03" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100924"
+    house="lords"
+    forenames="Colin"
+    forenames_full="Colin David"
+    title="Lord" lordname="Boyd" lordofname="Duncansby"
+    county="Caithness"
+    peeragetype="L" affiliation="XB"
+    fromdate="2006-07-03" todate="9999-12-31"
+/>
+
+
 </publicwhip>

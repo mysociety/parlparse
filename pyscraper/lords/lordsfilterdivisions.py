@@ -24,8 +24,8 @@ from contextexception import ContextException
 
 
 recontma = re.compile('<center><b>(.*?)\s*</b></center>(?i)')
-retellma = re.compile('(.*?)\s*\[(Teller)\]$')
-reoffma = re.compile('(.*\S)\s*[\[\(](.*?)[\)\]]$')
+retellma = re.compile('(.*?)\s*(?:<I>)?\[(Teller)\](?:</I>)?$')
+reoffma = re.compile('(.*?\S)\s*(?:<I>)?[\[\(](.*?)[\)\]](?:</I>)?$')
 def LordsFilterDivision(text, stampurl, sdate):
 
 	# the intention is to splice out the known parts of the division
@@ -43,12 +43,12 @@ def LordsFilterDivision(text, stampurl, sdate):
 			if cfs.group(1) == "CONTENTS":
 				assert contstate == ''
 				contstate = 'content'
-			elif cfs.group(1) == 'NOT-CONTENTS':
+			elif cfs.group(1) == 'NOT-CONTENTS' or cfs.group(1) == 'NOT CONTENTS':
 				assert contstate == 'content'
 				contstate = 'not-content'
 			else:
 				print "$$$%s$$$" % cfs.group(1)
-				raise ContextException("unrecognized content state", stamp=stampurl, fragment=fss)
+				raise ContextException("unrecognised content state", stamp=stampurl, fragment=fss)
 
 		elif re.match("(?:\[\*|\*\[)[Ss]ee col\. \d+\]", fss):
 			print "Disregarding cross-reference in Division", fss

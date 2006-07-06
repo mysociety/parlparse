@@ -61,6 +61,7 @@ def ExtractIndexContents(urlx, sdate):
         urx.close()
         lktex = re.sub('^.*?<a name="contents"></a>\s*(?s)', '', lktex)
         lktex = re.sub('^(.*?)<hr(?: /)?>.*$(?s)', r'\1', lktex)
+        lktex = re.sub('<!--.*?-->(?s)', '', lktex)
 
 	# get the links
         if sdate >= '2006-07-03':
