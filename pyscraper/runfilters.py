@@ -121,12 +121,15 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 text = re.sub("</?notus-date[^>]*>", "", text)
                 # Okay, they're outputting bastardised UTF-8 now, but can't be bothered to do it any way but manually for now
                 text = text.replace("\xe2\x82\xac", "&euro;")
-                text = text.replace("\xe2\x80\x9c", "'")
-                text = text.replace("\xe2\x80\x9d", "'")
+                text = text.replace("\xe2\x80\x99", "&rsquo;")
+                text = text.replace("\xe2\x80\x9c", "&ldquo;")
+                text = text.replace("\xe2\x80\x9d", "&rdquo;")
+                text = text.replace("\xe2\x80\x94", "&mdash;")
                 text = text.replace("\xc2\xb0", "&deg;")
                 text = text.replace("\xc2\xba", "&ordm;")
                 text = text.replace("\xc2\xa3", "&pound;")
                 text = text.replace("\xc2(r)", "&reg;") # Yes, really!
+                text = text.replace("\xc21/4", "&frac14;")
                 text = text.replace("\xc21/2", "&frac12;")
                 text = text.replace("\xc23/4", "&frac34;")
                 text = text.replace("\xc3\"", "&#279;")
@@ -134,8 +137,10 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 text = text.replace("\xc3\xa1", "&aacute;")
                 text = text.replace("\xc3\xa3", "&atilde;")
                 text = text.replace("\xc3\xa8", "&egrave;")
+                text = text.replace("\xc3\xa9", "&eacute;")
                 text = text.replace("\xc3(c)", "&eacute;") # Yes, really!
                 text = text.replace("\xc3\xaa", "&ecirc;")
+                text = text.replace("\xc3\xad", "&iacute;")
                 text = text.replace("\xc3\xaf", "&iuml;")
                 text = text.replace("\xc3\xb3", "&oacute;")
                 text = text.replace("\xc3\xb6", "&ouml;")
@@ -147,8 +152,8 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 # Lords, big overall replacements
                 if dname == 'lordspages':
                         text = re.sub('(<h5>)(<a name="(.*?)"></a>)', r"\2\1", text) # If you can't beat them, ...
-                        text = re.sub('<columnNum><br /> <br />', '<br>&nbsp;<br>', text)
-                        text = re.sub('<br /> <br /></columnNum>', '<br>&nbsp;<br>', text)
+                        text = re.sub('<columnNum><br />( |\xc2\xa0)<br />', '<br>&nbsp;<br>', text)
+                        text = re.sub('<br />( |\xc2\xa0)<br /></columnNum>', '<br>&nbsp;<br>', text)
                         text = re.sub('<b align="center">', '<b>', text)
                         text = re.sub('<br />', '<br>', text)
                         text = re.sub('CONTENTS', 'CONTENTS\n', text)
