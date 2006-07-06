@@ -148,6 +148,10 @@ def GlueByNext(outputFileName, url, urlx, sdate):
 			fout.write('<UL><UL><UL></UL></UL></UL>\n')
 			break
 
+                # Grr, missing footers ALL OVER THE PLACE now
+                if len(hrsections) == 2:
+                        WriteCleanText(fout, hrsections[1], url)
+
 		# write the body of the text
 		for i in range(1,len(hrsections) - 1):
 			WriteCleanText(fout, hrsections[i], url)
@@ -180,9 +184,20 @@ def GlueByNext(outputFileName, url, urlx, sdate):
                         nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060626/text/60626w1224.htm']
                 if sdate == '2006-06-27' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060626/text/60626w1227.htm':
                         nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060627/text/60627w1228.htm']
+                if sdate == '2006-07-03' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1357.htm':
+                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1405.htm']
+                if sdate == '2006-07-03' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1405.htm':
+                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1406.htm']
+                if sdate == '2006-07-03' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1406.htm':
+                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1407.htm']
+                if sdate == '2006-07-03' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1407.htm':
+                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1408.htm']
                 if sdate == '2006-07-04' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1408.htm':
-                        WriteCleanText(fout, hrsections[-1], url)
                         nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060704/text/60704w1409.htm']
+                if sdate == '2006-07-04' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060704/text/60704w1426.htm':
+                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060704/text/60704w1428.htm']
+                if sdate == '2006-07-05' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060704/text/60704w1438.htm':
+                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060705/text/60705w1439.htm']
 		if not nextsectionlink:
 			break
 		if len(nextsectionlink) > 1:

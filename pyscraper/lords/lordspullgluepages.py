@@ -103,13 +103,16 @@ def GlueByNext(fout, urla, urlx):
 		# this is the case for debates on 2003-03-13 page 30
 		# http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030313/debtext/30313-32.htm
 		if len(hrsections) == 1:
-			print len(hrsections)
-			print ' page missing '
-			print url
-			fout.write('<UL><UL><UL></UL></UL></UL>\n')
-			break
+			# print len(hrsections), 'page missing', url
+			# fout.write('<UL><UL><UL></UL></UL></UL>\n')
+			urla = urla[1:]
+			print "Bridging the empty page at %s" % url
+			continue
 
-
+                # Lords Written Statements on 2006-07-05, for example, sadly
+                if len(hrsections) == 2:
+                        miscfuncs.WriteCleanText(fout, hrsections[1])
+                
 		# write the body of the text
 		for i in range(1, len(hrsections) - 1):
 			miscfuncs.WriteCleanText(fout, hrsections[i])
