@@ -171,7 +171,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return "withdrawn"
 
 	#[<i>Amendments Nos. 131 and 132 not moved.</i>]</p>
-	notmovedMatch = re.match('<p[^>]*>(?:\[|<i>)+Amendments? .{0,80}?(not moved|had been withdrawn from the Marshalled List|had been retabled as(?:Nos?\.|[^<\.\]]){0,60})(?:\.|</i>|\])+</p>', qpara)
+	notmovedMatch = re.match('<p[^>]*>(?:\[|<i>)+Amendments? .{0,80}?(not moved|had been withdrawn from the Marshalled List|had been retabled as(?:Nos?\.|[^<\.\]]){0,60})(?:\.|</i>|\])+</p>(?i)', qpara)
 	if notmovedMatch:
 		return "notmoved"
 	if re.match('<p>Motion not moved\.</p>', qpara):
