@@ -112,15 +112,22 @@ def WriteCleanText(fout, text, url):
 		else:
 			fout.write(re.sub('>|\r', '', ab))
 
-def GlueByNext(outputFileName, url, urlx, sdate):
+def GlueByNext(outputFileName, urla, urlx, sdate):
 	fout = open(outputFileName, "w")
 	# put out the indexlink for comparison with the hansardindex file
 	lt = time.gmtime()
 	fout.write('<pagex url="%s" scrapedate="%s" scrapetime="%s" type="printed" />\n' % \
 			(urlx, time.strftime('%Y-%m-%d', lt), time.strftime('%X', lt)))
 
+        # Patches
+        if sdate=='2006-05-10' or sdate=='2006-05-09':
+                urla = urla[1:]
+        if sdate=='2006-06-05':
+                urla = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060602/text/60602w0601.htm', 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0602.htm'] + urla
+
 	# loop which scrapes through all the pages following the nextlinks
-	while 1:
+	while urla:
+                url = urla[0]
 		#print " reading " + url
 		ur = urllib.urlopen(url)
 		sr = ur.read()
@@ -162,59 +169,31 @@ def GlueByNext(outputFileName, url, urlx, sdate):
 		# the files are sectioned by the <hr> tag into header, body and footer.
 		nextsectionlink = re.findall('<\s*a\s+href\s*=\s*"?(.*?)"?\s*>next(?: section)?</(?:a|td)>(?i)', footer)
 
-                # MISSING NEXT SECTIONS. XXX Should add code to fetch all links from index page and check
-                # they're ALL visited!
-                if url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060511/text/60511w0193.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060512/text/60512w0194.htm']
-                if url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0605.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0640.htm'] # XXX XXX XXX XXX
-                if url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0638.htm' or url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0671.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0673.htm']
-                if url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060606/text/60606w0708.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060606/text/60606w0784.htm']
-                if sdate == '2006-06-07' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060606/text/60606w0795.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060607/text/60607w0796.htm']
-                if sdate == '2006-06-08' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060607/text/60607w0820.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060608/text/60608w0821.htm']
-                if sdate == '2006-06-16' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060616/text/60616w1017.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060616/text/60616w1019.htm']
-                if sdate == '2006-06-19' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060616/text/60616w1027.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060619/text/60619w1028.htm']
-                if sdate == '2006-06-26' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060626/text/60626w1222.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060626/text/60626w1224.htm']
-                if sdate == '2006-06-27' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060626/text/60626w1227.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060627/text/60627w1228.htm']
-                if sdate == '2006-07-03' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1357.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1405.htm']
-                if sdate == '2006-07-03' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1405.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1406.htm']
-                if sdate == '2006-07-03' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1406.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1407.htm']
-                if sdate == '2006-07-03' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1407.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1408.htm']
-                if sdate == '2006-07-04' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060703/text/60703w1408.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060704/text/60704w1409.htm']
-                if sdate == '2006-07-04' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060704/text/60704w1426.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060704/text/60704w1428.htm']
-                if sdate == '2006-07-05' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060704/text/60704w1438.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060705/text/60705w1439.htm']
-                if sdate == '2006-07-05' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060705/text/60705w1445.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060705/text/60705w1466.htm']
-                if sdate == '2006-07-05' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060705/text/60705w1486.htm':
-                        nextsectionlink = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060706/text/60706w1487.htm']
-                if sdate == '2006-07-05' and url == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060706/text/60706w1487.htm':
-                        nextsectionlink = []
-		if not nextsectionlink:
-			break
 		if len(nextsectionlink) > 1:
 			raise Exception, "More than one Next Section!!!"
-		url = urlparse.urljoin(url, nextsectionlink[0])
+		if not nextsectionlink:
+                        urla = urla[1:]
+                        if urla:
+                                print "Bridging the missing next section link at %s" % url
+		else:
+                        url = urlparse.urljoin(url, nextsectionlink[0])
+                        if len(urla) > 1 and urla[1] == url:
+                                urla = urla[1:]
+                        else:
+                                for uo in urla:
+                                        if uo == url:
+                                                print string.join(urla, "\n")
+                                                print "\n\n"
+                                                print url
+                                                print "\n\n"
+                                                raise Exception, "Next Section misses out the urla list"
+                                urla[0] = url
 		
 	fout.close()
 
 
 # now we have the difficulty of pulling in the first link out of this silly index page
-def ExtractFirstLink(url, dgf, forcescrape):
+def ExtractAllLinks(url, dgf, forcescrape):
 	request = urllib2.Request(url)
 	if not forcescrape and dgf and os.path.exists(dgf):
 		mtime = os.path.getmtime(dgf)
@@ -225,34 +204,22 @@ def ExtractFirstLink(url, dgf, forcescrape):
 	urx = opener.open(request)
 	if hasattr(urx, 'status'):
 		if urx.status == 304:
-			return ''
+			return []
 
 	xlines = ''.join(urx.readlines())
         urx.close()
         xlines = re.sub('^.*?<hr(?: /)?>(?is)', '', xlines)
-	lk = re.search('<a\s+href\s*=\s*"(.*?)">.*?\s*</a>(?is)', xlines)
-	if not lk:
-		print urx
+        res = re.findall('<a\s+href\s*=\s*"(.*?)#.*?">(?is)', xlines)
+	if not res:
 		print url
 		raise Exception, "No link found!!!"
-        lk = re.sub('#.*$', '', lk.group(1))
-        if lk == '/pa/cm200506/cmhansrd/cm060517/text/60517w0386.htm':
-                lk = '/pa/cm200506/cmhansrd/cm060518/text/60518w0387.htm'
-        elif lk == '/pa/cm200506/cmhansrd/cm060509/text/60510w0332.htm':
-                lk = '/pa/cm200506/cmhansrd/cm060510/text/60510w0332.htm'
-        elif lk == '/pa/cm200506/cmhansrd/cm060508/text/60508w0308.htm':
-                lk = '/pa/cm200506/cmhansrd/cm060509/text/60509w0309.htm'
-        elif lk == '/pa/cm200506/cmhansrd/cm060524/text/60524w0554.htm':
-                lk = '/pa/cm200506/cmhansrd/cm060525/text/60525w0555.htm'
-        elif lk == '/pa/cm200506/cmhansrd/cm060602/text/60602w0601.htm':
-                lk = '/pa/cm200506/cmhansrd/cm060605/text/60605w0602.htm'
-        elif lk == '/pa/cm200506/cmhansrd/cm060605/text/60605w0700.htm':
-                lk = '/pa/cm200506/cmhansrd/cm060606/text/60606w0701.htm'
-        elif lk == '/pa/cm200506/cmhansrd/cm060605/text/60605w0640.htm': 
-                lk = '/pa/cm200506/cmhansrd/cm060605/text/60605w0602.htm'
-	return urlparse.urljoin(url, lk)
+        urla = []
+        for iconti in res:
+                uo = urlparse.urljoin(url, iconti)
+                if (not urla) or (urla[-1] != uo):
+                        urla.append(uo)
 
-
+	return urla
 
 def MakeDayMap(folder, typ):
 	# make the output firectory
@@ -349,17 +316,17 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 		# hansard index page
 		urlx = commonsIndexRecord.url
 		if commonsIndexRecord.recordType == 'Votes and Proceedings' or commonsIndexRecord.recordType == 'questionbook':
-			url0 = urlx
+			urla = [urlx]
 		else:
-			url0 = ExtractFirstLink(urlx, latestFilePath, forcescrape)  # this checks the url at start of file
-		if not url0:
+			urla = ExtractAllLinks(urlx, latestFilePath, forcescrape)  # this checks the url at start of file
+		if not urla:
 			continue
 
 		if miscfuncs.IsNotQuiet():
 			print commonsIndexRecord.date, (latestFilePath and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
 
 		# now we take out the local pointer and start the gluing
-		GlueByNext(tempfilename, url0, urlx, commonsIndexRecord.date)
+		GlueByNext(tempfilename, urla, urlx, commonsIndexRecord.date)
 
 		if CompareScrapedFiles(latestFilePath, tempfilename) == "SAME":
 			if miscfuncs.IsNotQuiet():
