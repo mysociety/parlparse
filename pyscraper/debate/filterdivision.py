@@ -47,7 +47,7 @@ def MpList(fsm, vote, stampurl, sdate):
 			# Simon, Si&#244;n <i>(B'ham Erdington)</i>
 			regsep = re.search('(.*?,.*?(?:[a-z]|</i>|\.|\)))([A-Z].*?,.*)$', fss)
 			regsep2 = re.match('(.*?,.*?)  ([A-Z].*?,.*)$', fss)
-			if regsep:
+			if regsep and not re.search('  Mc$', regsep.group(1)):
 				fssf = regsep.group(1)
 				fss = regsep.group(2)
 			elif regsep2:

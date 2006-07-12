@@ -9398,5 +9398,26 @@
     fromdate="2006-07-03" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/100925"
+    house="lords"
+    forenames="Margaret"
+    forenames_full="Margaret Anne"
+    title="Baroness" lordname="Ford" lordofname=""
+    lordofname_full="Cunninghame"
+    county="North Ayrshire"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2006-07-10" todate="9999-12-31"
+/>
+<lord
+    id="uk.org.publicwhip/lord/100926"
+    house="lords"
+    forenames="Kamlesh"
+    forenames_full="Kamlesh Kumar"
+    title="Lord" lordname="Patel" lordofname="Bradford"
+    county="the County of West Yorkshire"
+    peeragetype="L" affiliation="XB"
+    fromdate="2006-07-10" todate="9999-12-31"
+/>
 
 </publicwhip>

@@ -167,7 +167,7 @@ def GrabLordDivisionProced(qbp, qbd):
 def MatchPWmotionStuff(qb, ispeechstartp1):
 	qpara = qb.stext[ispeechstartp1]
 
-	if re.match('<p>(?:\[|<i>)*(?:Amendments?|Motion),? .{0,60}?by leave,? withdrawn\.?(?:\]|</i>)*</p>', qpara):
+	if re.match('<p>(?:\[|<i>)*(?:Amendments?|Motion),? .{0,60}?by leave,? withdrawn\.?(?:\]|</i>)*</p>(?i)', qpara):
 		return "withdrawn"
 
 	#[<i>Amendments Nos. 131 and 132 not moved.</i>]</p>
@@ -271,6 +271,9 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		print "False positives can be hidden by adding a space before the colon"
 		print 'You can kill erroneous titles that are amendments by using <p class="tabletext">'
 		raise ContextException("unexpected Noble Lord Said", stamp=qb.sstampurl, fragment=qpara)
+
+        if re.match('<p>Thirty-nine amendments were discussed, of which two were agreed to.', qpara):
+                return None
 
 	if re.match('<p>.{0,60}agreed to(?:\.| accordingly)', qpara):
 		print "**********Marginal agreedto", qpara
