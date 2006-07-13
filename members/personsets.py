@@ -71,7 +71,8 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/100869" : "Donald Anderson [Swansea East]",
     "uk.org.publicwhip/lord/100870" : "Jean Corston [Bristol East]",
     "uk.org.publicwhip/lord/100871" : "Alastair Goodlad [Eddisbury]",
-    "uk.org.publicwhip/lord/100873" : "Jack Cunningham [Copeland]"
+    "uk.org.publicwhip/lord/100873" : "Jack Cunningham [Copeland]",
+    "uk.org.publicwhip/lord/100910" : "David Trimble [Upper Bann]",
 }
 
 lordlordmatches = {
@@ -80,6 +81,19 @@ lordlordmatches = {
 	"uk.org.publicwhip/lord/100106":"uk.org.publicwhip/lord/100711",  # Archbishop Carey becomes XB Lord
 	"uk.org.publicwhip/lord/100265":"uk.org.publicwhip/lord/100830",  # Bishop of Guildford becomes of Chelmsford
 	"uk.org.publicwhip/lord/100736":"uk.org.publicwhip/lord/100872",  # Bishop of Wakefield becomes of Manchester
+}
+
+ni_mp_matches = {
+    "uk.org.publicwhip/member/90123":"Sammy Wilson [East Antrim]",
+    "uk.org.publicwhip/member/90074":"William McCrea [South Antrim]",
+    "uk.org.publicwhip/member/90198":"William McCrea [South Antrim]",
+}
+ni_lord_matches = {
+    "uk.org.publicwhip/member/90005":"uk.org.publicwhip/lord/100007",
+    "uk.org.publicwhip/member/90006":"uk.org.publicwhip/lord/100007",
+    "uk.org.publicwhip/member/90111":"uk.org.publicwhip/lord/100345",
+    "uk.org.publicwhip/member/90186":"uk.org.publicwhip/lord/100345",
+    "uk.org.publicwhip/member/90210":"uk.org.publicwhip/lord/100922",
 }
 
 # People who have been MPs for two different constituencies.  The like of
@@ -187,6 +201,8 @@ class PersonSets(xml.sax.handler.ContentHandler):
         self.fullnames={} # "Firstname Lastname" --> set of MPs (not link to entry in personsets)
         self.lords={} # Lord ID -> Attr
 		self.lordspersonset={} # Lord ID --> person set
+        self.member_ni={}
+		self.member_ni_personset={}
 		self.ministermap={}
 
         self.old_idtoperson={} # ID (member/lord/office) --> Person ID in last version of file
@@ -198,6 +214,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
         parser.parse("people.xml")
         parser.parse("all-members.xml")
         parser.parse("peers-ucl.xml")
+        parser.parse("ni-members.xml")
         parser.parse("ministers.xml")
 
     def outputxml(self, fout):
@@ -225,9 +242,11 @@ class PersonSets(xml.sax.handler.ContentHandler):
             for attr in personset:
                 if attr["fromdate"]=='' or attr["fromdate"] >= maxdate:
                     if attr.has_key("firstname"):
-                        # MPs
+                        # MPs or MLAs
                         maxdate = attr["fromdate"]
                         maxname = "%s %s" % (attr["firstname"], attr["lastname"])
+                        if attr['title'] == 'Lord':
+                            maxname = 'Lord' + maxname
                     elif attr.has_key("lordname") or attr.has_key("lordofname"):
                         # Lords (this should be in function!)
                         maxdate = attr["fromdate"]
@@ -274,7 +293,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
 					pset.add(moff)
 
 	# put lords into each of the sets
-	def mergelords(self):
+	def mergelordsandothers(self):
         for lord_id, attr in self.lords.iteritems():
             if lord_id in lordsmpmatches:
                 mp = lordsmpmatches[lord_id]
@@ -287,6 +306,27 @@ class PersonSets(xml.sax.handler.ContentHandler):
                 newset.add(attr)
                 self.personsets.append(newset) # master copy of person sets
 				self.lordspersonset[lord_id] = newset
+ 
+        items = self.member_ni.items()
+        items.sort(key=lambda x : x[1]['lastname'])
+        for member_id, attr in items:
+            cancons = memberList.canonicalcons(attr['constituency'], attr['fromdate'])
+            lookup = "%s %s [%s]" % (attr['firstname'], attr['lastname'], cancons)
+            if member_id in ni_mp_matches:
+                mp = ni_mp_matches[member_id]
+                self.fullnamescons[mp].add(attr)
+            elif member_id in ni_lord_matches:
+                lord = ni_lord_matches[member_id]
+                self.lordspersonset[lord].add(attr)
+            elif lookup in self.fullnamescons:
+                self.fullnamescons[lookup].add(attr)
+            elif lookup in self.member_ni_personset:
+                self.member_ni_personset[lookup].add(attr)
+            else:
+                newset = sets.Set()
+                newset.add(attr)
+                self.personsets.append(newset)
+                self.member_ni_personset[lookup] = newset
 
     # Look for people of the same name, but their constituency differs
     def findotherpeoplewhoaresame(self):
@@ -394,10 +434,14 @@ class PersonSets(xml.sax.handler.ContentHandler):
 		elif name == "moffice":
             assert not self.in_person
 
-			assert attr["id"] not in self.ministermap
+			#assert attr["id"] not in self.ministermap
 			if attr.has_key("matchid"):
 				self.ministermap.setdefault(attr["matchid"], sets.Set()).add(attr.copy())
-        
+        elif name == "member_ni":
+            assert not self.in_person
+            assert attr['id'] not in self.member_ni
+            self.member_ni[attr['id']] = attr.copy()
+
     def endElement(self, name):
         if name == "person":
             self.in_person = None
@@ -412,7 +456,7 @@ if personSets.findotherpeoplewhoaresame():
     print "Or add another array to show people who appear to be but are not"
     print
     sys.exit(1)
-personSets.mergelords()
+personSets.mergelordsandothers()
 personSets.mergeministers()
 
 tempfile = "temppeople.xml"
