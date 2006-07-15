@@ -9420,4 +9420,26 @@
     fromdate="2006-07-10" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/100927"
+    house="lords"
+    forenames="Alexander"
+    forenames_full="Alexander John"
+    title="Lord" lordname="Bruce-Lockhart" lordofname=""
+    lordofname_full="The Weald"
+    county="the County of Kent"
+    peeragetype="L" affiliation="Con"
+    fromdate="2006-07-11" todate="9999-12-31"
+/>
+<lord
+    id="uk.org.publicwhip/lord/100928"
+    house="lords"
+    forenames="Colin"
+    forenames_full="Colin MacKenzie"
+    title="Lord" lordname="Low" lordofname="Dalston"
+    county="the London Borough of Hackney"
+    peeragetype="L" affiliation="XB"
+    fromdate="2006-07-11" todate="9999-12-31"
+/>
+
 </publicwhip>
