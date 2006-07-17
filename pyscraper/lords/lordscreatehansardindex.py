@@ -68,7 +68,7 @@ def LordsIndexFromVolMenu(urlbndvols):
 	volnos = [ ]
 
 	# <a href="/pa/ld/ldse0203.htm">Session 2002-03</a>
-	ursessh = re.findall('<a href="\s*([^"]*?)\s*">Session \d+-\d+</a>', srvipage)
+	ursessh = re.findall('<a href="\s*([^"]*?)\s*">(?:<font size="2">)?Session \d+-\d+(?:</font>)?</a>', srvipage)
 	for ses in ursessh:
 		if not ses:
 			continue

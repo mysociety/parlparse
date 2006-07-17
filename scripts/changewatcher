@@ -44,6 +44,8 @@ cd ~/parlparse/pyscraper
 ./lazyrunall.py parse chgpages
 cd ../members
 svn -q update all-members.xml # Be sure to have latest list of all members!
+svn -q update peers-ucl.xml
+svn -q update ni-members.xml
 ./personsets.py
 svn -q update ministers.xml # merge any changes anyone else made
 svn -q update people.xml # merge any changes anyone else made
