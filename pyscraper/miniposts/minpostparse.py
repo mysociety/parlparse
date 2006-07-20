@@ -341,6 +341,8 @@ def ParseSelCteePage(fr, gp):
         	msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
                 if sudate != msdate and sudate == '2006-05-19':
                         sudate = msdate
+                if sudate != msdate and sudate == '2006-07-05':
+                        sudate = msdate
 
         sdate = sudate
         stime = sutime
