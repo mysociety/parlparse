@@ -120,6 +120,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 text = re.sub("\n", ' ', text)
                 text = re.sub("</?notus-date[^>]*>", "", text)
                 # Okay, they're outputting bastardised UTF-8 now, but can't be bothered to do it any way but manually for now
+                text = text.replace("\xe2\x22\xa2", "&trade;")
                 text = text.replace("\xe2\x82\xac", "&euro;")
                 text = text.replace("\xe2\x80\x99", "&rsquo;")
                 text = text.replace("\xe2\x80\x9c", "&ldquo;")
@@ -136,6 +137,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 text = text.replace("\xc3 ", "&agrave;") # And this one!
                 text = text.replace("\xc3\xa1", "&aacute;")
                 text = text.replace("\xc3\xa3", "&atilde;")
+                text = text.replace("\xc3\xa7", "&ccedil;")
                 text = text.replace("\xc3\xa8", "&egrave;")
                 text = text.replace("\xc3\xa9", "&eacute;")
                 text = text.replace("\xc3(c)", "&eacute;") # Yes, really!

@@ -9442,4 +9442,26 @@
     fromdate="2006-07-11" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/100929"
+    house="lords"
+    forenames="Margaret"
+    forenames_full="Margaret Beryl"
+    title="Baroness" lordname="Jones" lordofname="Whitchurch"
+    county="the County of South Glamorgan"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2006-07-18" todate="9999-12-31"
+/>
+<lord
+    id="uk.org.publicwhip/lord/100930"
+    house="lords"
+    forenames="Keith"
+    forenames_full="Keith John Charles"
+    title="Lord" lordname="Bradley" lordofname=""
+    lordofname_full="Withington"
+    county="the County of Greater Manchester"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2006-07-18" todate="9999-12-31"
+/>
+
 </publicwhip>

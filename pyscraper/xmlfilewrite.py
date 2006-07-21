@@ -26,6 +26,7 @@ def WriteXMLHeader(fout):
 <!ENTITY iexcl   "&#161;">
 <!ENTITY divide  "&#247;">
 <!ENTITY euro    "&#8364;" >
+<!ENTITY trade   "&#8482;">
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >

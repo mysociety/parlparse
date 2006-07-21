@@ -219,6 +219,7 @@ entitymap = {
 
 		'&#039;':"'",   # posession apostrophe
         "&#8364;":'&euro;', # this is euro currency
+        "&#8482;":'&trade;',
         '&lquo;':"'",
         '&rquo;':"'",
         '&minus;':"-",
