@@ -73,6 +73,7 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/100871" : "Alastair Goodlad [Eddisbury]",
     "uk.org.publicwhip/lord/100873" : "Jack Cunningham [Copeland]",
     "uk.org.publicwhip/lord/100910" : "David Trimble [Upper Bann]",
+    "uk.org.publicwhip/lord/100930" : "Keith Bradley [Manchester, Withington]",
 }
 
 lordlordmatches = {
