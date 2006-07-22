@@ -1654,7 +1654,7 @@
 	lordofname_full="Clare Market"
 	county="the City of Westminster"
 	peeragetype="L" affiliation="Dem"
-	fromdate="1993" todate="9999-12-31"
+	fromdate="1993" todate="2004-11-23"
 />
 <lord
 	id="uk.org.publicwhip/lord/100161"
@@ -9462,6 +9462,16 @@
     county="the County of Greater Manchester"
     peeragetype="L" affiliation="Lab"
     fromdate="2006-07-18" todate="9999-12-31"
+/>
+<lord
+	id="uk.org.publicwhip/lord/100931"
+	house="lords"
+	forenames="Ralf"
+	title="Lord" lordname="Dahrendorf" lordofname=""
+	lordofname_full="Clare Market"
+	county="the City of Westminster"
+	peeragetype="L" affiliation="XB"
+	fromdate="2004-11-24" todate="9999-12-31"
 />
 
 </publicwhip>
