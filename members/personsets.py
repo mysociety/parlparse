@@ -5,8 +5,6 @@
 # people.xml to reflect the new sets.  Reuses person ids from people.xml,
 # or allocates new larger ones.
 
-# TODO: Check for
-
 import xml.sax
 import sets
 import datetime
@@ -16,6 +14,8 @@ import os
 
 sys.path.append("../pyscraper")
 from resolvemembernames import memberList
+
+date_today = datetime.date.today().isoformat()
 
 # People who have been both MPs and lords
 lordsmpmatches = {
@@ -267,10 +267,16 @@ class PersonSets(xml.sax.handler.ContentHandler):
 
             # Output the XML (sorted)
             fout.write('<person id="%s" latestname="%s">\n' % (personid.encode("latin-1"), maxname.encode("latin-1")))
-			ofidl = [ str(attr["id"])  for attr in personset ]
+            current = {}
+            for attr in personset:
+                if attr["fromdate"] <= date_today <= attr["todate"]:
+                    current[attr["id"]] = ' current="yes"'
+                else:
+                    current[attr["id"]] = ''
+			ofidl = [ str(attr["id"]) for attr in personset ]
 			ofidl.sort()
             for ofid in ofidl:
-                fout.write('    <office id="%s"/>\n' % (ofid))
+                fout.write('    <office id="%s"%s/>\n' % (ofid, current[ofid]))
             fout.write('</person>\n')
 
     def crosschecks(self):
