@@ -137,6 +137,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 text = text.replace("\xc3 ", "&agrave;") # And this one!
                 text = text.replace("\xc3\xa1", "&aacute;")
                 text = text.replace("\xc3\xa3", "&atilde;")
+                text = text.replace("\xc3\xa4", "&auml;")
                 text = text.replace("\xc3\xa7", "&ccedil;")
                 text = text.replace("\xc3\xa8", "&egrave;")
                 text = text.replace("\xc3\xa9", "&eacute;")

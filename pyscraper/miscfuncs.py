@@ -185,6 +185,7 @@ entitymap = {
         '&#225;':'&aacute;',   # this is a-acute
         '&#226;':'&acirc;',   # this is a-hat as in debacle
         '&#227;':'&atilde;',   # this is a-hat as in debacle
+        '&#228;':'&auml;',
 
         '&#244;':'&ocirc;',   # this is o-hat
         '&#246;':'&ouml;',   # this is o-double-dot
