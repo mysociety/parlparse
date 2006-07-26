@@ -3962,7 +3962,7 @@
 	title="Baroness" lordname="Lloyd" lordofname="Highbury"
 	county="the London Borough of Islington"
 	peeragetype="L" affiliation="XB"
-	fromdate="1996" todate="9999-12-31"
+	fromdate="1996" todate="2006-06-28" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100381"
@@ -4970,7 +4970,7 @@
 	forenames="Richard Douglas Harries"
 	title="Bishop" lordname="" lordofname="Oxford"
 	peeragetype="B" affiliation="Bp"
-	fromdate="1993" todate="9999-12-31"
+	fromdate="1993" todate="2006-06-02"
 />
 <lord
 	id="uk.org.publicwhip/lord/100480"
@@ -5423,7 +5423,7 @@
 	title="Lord" lordname="Rawlinson" lordofname="Ewell"
 	county="the County of Surrey"
 	peeragetype="L" affiliation="Con"
-	fromdate="1978" todate="9999-12-31"
+	fromdate="1978" todate="2006-06-28" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -9463,6 +9463,7 @@
     peeragetype="L" affiliation="Lab"
     fromdate="2006-07-18" todate="9999-12-31"
 />
+
 <lord
 	id="uk.org.publicwhip/lord/100931"
 	house="lords"
@@ -9474,4 +9475,84 @@
 	fromdate="2004-11-24" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/100932"
+    house="lords"
+    forenames="David"
+    forenames_full="David Noel"
+    title="Lord" lordname="James" lordofname="Blackheath"
+    lordofname_full="Wild Brooks"
+    county="the County of West Sussex"
+    peeragetype="L" affiliation="Con"
+    fromdate="2006-07-20" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100933"
+    house="lords"
+    forenames="David"
+    forenames_full="David Sydney"
+    title="Lord" lordname="Rowe-Beddoe" lordofname=""
+    lordofname_full="Kilgetty"
+    county="the County of Dyfed"
+    peeragetype="L" affiliation="XB"
+    fromdate="2006-07-20" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100934"
+    house="lords"
+    forenames="Wallace"
+    forenames_full="Allace Hamilton"
+    title="Lord" lordname="Browne" lordofname="Belmont"
+    lordofname_full="Belmont"
+    county="the County of Antrim"
+    peeragetype="L" affiliation="DUP"
+    fromdate="2006-07-24" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100935"
+    house="lords"
+    forenames="Karan"
+    forenames_full="Karan Faridoon"
+    title="Lord" lordname="Bilimoria" lordofname=""
+    lordofname_full="Chelsea"
+    county="the Royal Borough of Kensington and Chelsea"
+    peeragetype="L" affiliation="XB"
+    fromdate="2006-07-24" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100936"
+    house="lords"
+    forenames="Ann"
+    forenames_full="Ann Elizabeth Oldfield"
+    title="Baroness" lordname="Butler-Sloss" lordofname=""
+    lordofname_full="Marsh Green"
+    county="the County of Devon"
+    peeragetype="L" affiliation="XB"
+    fromdate="2006-07-25" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100937"
+    house="lords"
+    forenames="Richard"
+    forenames_full="Richard Douglas"
+    title="Lord" lordname="Harries" lordofname="Pentregarth"
+    lordofname_full="Ceinewydd"
+    county="the County of Dyfed"
+    peeragetype="L" affiliation="XB"
+    fromdate="2006-07-25" todate="9999-12-31"
+/>
+
+<lord
+	id="uk.org.publicwhip/lord/100938"
+	house="lords"
+	forenames=""
+	title="Bishop" lordname="" lordofname="Ripon and Leeds"
+	peeragetype="B" affiliation="Bp"
+	fromdate="2006-06-23" todate="9999-12-31"
+/>
 </publicwhip>

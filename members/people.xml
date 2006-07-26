@@ -7094,8 +7094,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13167" latestname="Baroness O'Neill of Bengarve">
     <office id="uk.org.publicwhip/lord/100472" current="yes"/>
 </person>
-<person id="uk.org.publicwhip/person/13168" latestname="The Bishop of Oxford">
-    <office id="uk.org.publicwhip/lord/100479" current="yes"/>
+<person id="uk.org.publicwhip/person/13168" latestname="Lord Harries of Pentregarth">
+    <office id="uk.org.publicwhip/lord/100479"/>
+    <office id="uk.org.publicwhip/lord/100937" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13169" latestname="Lord Oxburgh">
     <office id="uk.org.publicwhip/lord/100478" current="yes"/>
@@ -7134,15 +7135,27 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13179" latestname="Lord Hope of Thornes">
     <office id="uk.org.publicwhip/lord/100838" current="yes"/>
 </person>
+<person id="uk.org.publicwhip/person/13883" latestname="The Bishop of Ripon and Leeds">
+    <office id="uk.org.publicwhip/lord/100938" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/13180" latestname="Lord Lane">
     <office id="uk.org.publicwhip/lord/100361"/>
+</person>
+<person id="uk.org.publicwhip/person/13878" latestname="Lord Browne of Belmont">
+    <office id="uk.org.publicwhip/lord/100934" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13181" latestname="The Earl of Selborne">
     <office id="uk.org.publicwhip/lord/100578" current="yes"/>
 </person>
+<person id="uk.org.publicwhip/person/13879" latestname="Baroness Butler-Sloss">
+    <office id="uk.org.publicwhip/lord/100936" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/13399" latestname="Lord Dahrendorf">
     <office id="uk.org.publicwhip/lord/100160"/>
     <office id="uk.org.publicwhip/lord/100931" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/13880" latestname="Lord James of Blackheath">
+    <office id="uk.org.publicwhip/lord/100932" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13182" latestname="Lord Selkirk of Douglas">
     <office id="uk.org.publicwhip/lord/100579" current="yes"/>
@@ -7347,7 +7360,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100775"/>
 </person>
 <person id="uk.org.publicwhip/person/13247" latestname="Lord Rawlinson of Ewell">
-    <office id="uk.org.publicwhip/lord/100522" current="yes"/>
+    <office id="uk.org.publicwhip/lord/100522"/>
 </person>
 <person id="uk.org.publicwhip/person/13248" latestname="Lord Clarke of Hampstead">
     <office id="uk.org.publicwhip/lord/100129" current="yes"/>
@@ -7523,7 +7536,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100381" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13306" latestname="Baroness Lloyd of Highbury">
-    <office id="uk.org.publicwhip/lord/100380" current="yes"/>
+    <office id="uk.org.publicwhip/lord/100380"/>
 </person>
 <person id="uk.org.publicwhip/person/13307" latestname="Lord Freeman">
     <office id="uk.org.publicwhip/lord/100224" current="yes"/>
@@ -7903,6 +7916,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13429" latestname="Lord Plumb">
     <office id="uk.org.publicwhip/lord/100506" current="yes"/>
 </person>
+<person id="uk.org.publicwhip/person/13881" latestname="Lord Bilimoria">
+    <office id="uk.org.publicwhip/lord/100935" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/13430" latestname="Lord Burns">
     <office id="uk.org.publicwhip/lord/100093" current="yes"/>
 </person>
@@ -7935,6 +7951,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13440" latestname="Lord Nolan">
     <office id="uk.org.publicwhip/lord/100461" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/13882" latestname="Lord Rowe-Beddoe">
+    <office id="uk.org.publicwhip/lord/100933" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13441" latestname="Lord Norton of Louth">
     <office id="uk.org.publicwhip/lord/100468" current="yes"/>
