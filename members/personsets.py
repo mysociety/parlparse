@@ -83,6 +83,7 @@ lordlordmatches = {
 	"uk.org.publicwhip/lord/100106":"uk.org.publicwhip/lord/100711",  # Archbishop Carey becomes XB Lord
 	"uk.org.publicwhip/lord/100265":"uk.org.publicwhip/lord/100830",  # Bishop of Guildford becomes of Chelmsford
 	"uk.org.publicwhip/lord/100736":"uk.org.publicwhip/lord/100872",  # Bishop of Wakefield becomes of Manchester
+    "uk.org.publicwhip/lord/100937":"uk.org.publicwhip/lord/100479",  # Bishop of Oxford becomes XB Lord
 }
 
 ni_mp_matches = {
