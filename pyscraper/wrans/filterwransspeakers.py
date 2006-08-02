@@ -180,9 +180,9 @@ def FilterWransSpeakers(fout, text, sdate):
 					raise ContextException("No name match", stamp=stampurl, fragment=boldnamestring)
 
 
-			# put record in this place
-			fs[i] = '<speaker speakerid="%s"%s>%s</speaker>\n' % \
-					(id.encode("latin-1"), remadename.encode("latin-1"), boldnamestring)
+		# put record in this place
+		fs[i] = '<speaker speakerid="%s"%s>%s</speaker>\n' % \
+				(id.encode("latin-1"), remadename.encode("latin-1"), boldnamestring)
 
 
 	# scan through everything and output it into the file
