@@ -388,7 +388,7 @@ def ParseGovPostsPage(fr, gp):
 
         # is it always posted up on the day it is announced?
 	if msdate != sudate and sudate not in ["2004-09-20", '2005-03-10', '2005-05-13', '2005-06-06', '2006-05-16', '2006-06-12', '2006-06-13', '2006-06-14', '2006-06-15']:
-		print "Updated date is %s, but date of change %s" % (sudate, msdate)
+		print "%s : Updated date is %s, but date of change %s" % (gp, sudate, msdate)
 
 	sdate = sudate
 	stime = sutime	# or midnight if not posted properly to match the msdate
