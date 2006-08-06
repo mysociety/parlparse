@@ -14,7 +14,25 @@
 		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
 		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
 		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
-		<script type="text/javascript">var skin = 'monobook';var stylepath = '/skins-1.5';</script>
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgPageName = "Members_of_the_House_of_Lords";
+			var wgTitle = "Members of the House of Lords";
+			var wgArticleId = 269064;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
 		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
 		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
 		<style type="text/css">/*<![CDATA[*/
@@ -2587,7 +2605,7 @@ Parts of this article or section have been identified as no longer being up to d
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Ralph_Matthew_Palmer%2C_11th_Baron_Lucas_of_Crudwell&amp;action=edit" class="new" title="Ralph Matthew Palmer, 11th Baron Lucas of Crudwell">The Lord Lucas</a></td>
+<td><a href="/wiki/Ralph_Matthew_Palmer%2C_11th_Baron_Lucas_of_Crudwell" title="Ralph Matthew Palmer, 11th Baron Lucas of Crudwell">The Lord Lucas</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -4806,7 +4824,7 @@ Parts of this article or section have been identified as no longer being up to d
 </ul>
 
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!0!!en!2 and timestamp 20060728160442 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20060805132021 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/w/index.php?title=Special:Categories&amp;article=Members_of_the_House_of_Lords" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Wikipedia_articles_in_need_of_updating" title="Category:Wikipedia articles in need of updating">Wikipedia articles in need of updating</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:Politics_of_the_United_Kingdom" title="Category:Politics of the United Kingdom">Politics of the United Kingdom</a></span></p></div>			<!-- end content -->
@@ -4886,7 +4904,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<li id="disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
 			</ul>
 		</div>
-	<script type="text/javascript"> if (window.runOnloadHook) runOnloadHook();</script>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv86 in 0.078 secs. -->
-</body></html>
+<!-- Served by srv61 in 0.079 secs. --></body></html>
