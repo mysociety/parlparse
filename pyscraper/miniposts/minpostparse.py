@@ -586,7 +586,7 @@ def SetNameMatch(cp, cpsdates):
 	# don't match names that are in the lords
         if cp.fullname == 'Dame Marion Roe DBE':
                 cp.fullname = 'Marion Roe'
-	if not re.search("Duke |Lord |Baroness |Dame ", cp.fullname):
+	if not re.search("Duke |Lord |Baroness |Dame |^Earl ", cp.fullname):
 		fullname = cp.fullname
 		cons = cp.cons
                 if fullname == "Mr Michael Foster" and not cons:
@@ -595,7 +595,8 @@ def SetNameMatch(cp, cpsdates):
                         else:
                                 print cpsdates[0]; assert False  # double check we still have the right Michael Foster
 
-
+                if fullname == "Rt Hon Michael Ancram, Earl of QC":
+                        fullname = "Michael Ancram"
 		cp.matchid, cp.remadename, cp.remadecons = memberList.matchfullnamecons(fullname, cons, cpsdates[0])
 		if not cp.matchid:
                         print cpsdates[0]
@@ -619,6 +620,8 @@ def SetNameMatch(cp, cpsdates):
                         date = '2001-07-03'
 		if cp.remadename == 'Lord Davidson of Glen Cova':
                         cp.remadename = 'Lord Davidson of Glen Clova'
+		if cp.remadename == 'Lord Rooker of Perry Bar':
+                        cp.remadename = 'Lord Rooker'
                 if cp.remadename != 'Duke of Abercorn' and cp.remadename != 'Lord Vestey':
 			fullname = cp.remadename
 			cp.matchid = lordsList.GetLordIDfname(fullname, None, date) # loffice isn't used?
