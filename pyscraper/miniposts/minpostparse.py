@@ -595,7 +595,7 @@ def SetNameMatch(cp, cpsdates):
                         else:
                                 print cpsdates[0]; assert False  # double check we still have the right Michael Foster
 
-                if fullname == "Rt Hon Michael Ancram, Earl of QC":
+                if fullname == "Rt Hon Michael Ancram, Earl of QC" or fullname == "Rt Hon Michael Ancram, Earl of, QC":
                         fullname = "Michael Ancram"
 		cp.matchid, cp.remadename, cp.remadecons = memberList.matchfullnamecons(fullname, cons, cpsdates[0])
 		if not cp.matchid:
