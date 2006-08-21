@@ -98,6 +98,7 @@ ppsdepts = govdepts + [ "Minister Without Portfolio",
 				"Prime Minister",
 				"Prime Minister's Office",
 				"Leader of the House of Commons",
+                                "Leader of the House of Lords",
 				]
 ppsnondepts = [ "HM Official Opposition", "Leader of the Opposition" ]
 
@@ -107,7 +108,7 @@ from newlabministers2003_10_15 import opendate
 renampos = re.compile("""<td><b>
         ([^,]*),	# last name
         \s*
-        ([^<(]*?)	# first name
+        ([^<\(]*?)	# first name
         \s*
         (?:\(([^)]*)\))? # constituency
         </b></td><td>
@@ -212,13 +213,23 @@ class protooffice:
 		self.froname = re.sub(" (?:QC|[COM]BE)?$", "", self.froname)
 		self.fullname = "%s %s" % (self.froname, self.lasname)
 
+                # sometimes a bracket of constituency gets through, when the name hasn't been reversed
+                mbrackinfullname = re.search("([^\(]*?)\s*\(([^\)]*)\)$", self.fullname)
+                if mbrackinfullname:
+                        self.fullname = mbrackinfullname.group(1)
+                        assert not self.cons
+                        self.cons = mbrackinfullname.group(2)
+
 		# special Gareth Thomas match
 		if self.fullname == "Mr Gareth Thomas" and (
                 (self.sdatet[0] >= '2004-04-16' and self.sdatet[0] <=
                 '2004-09-20') or (self.sdatet[0] >= '2005-05-17')):
 			self.cons = "Harrow West"
 
-		if self.fullname == "Lord Bach of Lutterworth":
+		if self.cons == "Worcs.":
+                        self.cons = None # helps make the stick-chain work
+                
+                if self.fullname == "Lord Bach of Lutterworth":
 			self.fullname = "Lord Bach"
 
 		# special Andrew Adonis match
@@ -520,8 +531,9 @@ def ParsePrivSecPage(fr, gp):
 			ec.PPSproto((sdate, stime), nameMatch.group(2), ministername, deptname)
 			res.append(ec)
 		else:
-			#print deptname
-			assert deptname in ppsnondepts
+			if deptname not in ppsnondepts:
+                                print "unknown department/post", deptname
+                                assert False
 
 	return (sdate, stime), res
 

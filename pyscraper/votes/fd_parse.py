@@ -651,7 +651,7 @@ class Match:
 	def match(self, s):
 		self.mobj=self.prog.match(s)
 		if self.mobj:
-			self.dict=dict((key, value) for (key, value) in self.mobj.groupdict().iteritems())
+			self.dict=dict([(key, value) for (key, value) in self.mobj.groupdict().iteritems()])
 			for t in self.mappings:
 				t(self)
 		else:
