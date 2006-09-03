@@ -39,12 +39,13 @@
 		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
 		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
 		<style type="text/css">/*<![CDATA[*/
-@import "/w/index.php?title=MediaWiki:Common.css&action=raw&ctype=text/css&smaxage=2678400";
-@import "/w/index.php?title=MediaWiki:Monobook.css&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
 @import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
 /*]]>*/</style>
 		<!-- Head Scripts -->
-			</head>
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
 <body  class="mediawiki ns-0 ltr">
 	<div id="globalWrapper">
 		<div id="column-content">
@@ -75,7 +76,7 @@
 <td>(est. 2009/10)</td>
 </tr>
 </table>
-<p>This is a list of <a href="/wiki/Member_of_Parliament" title="Member of Parliament">Members of Parliament</a> elected to the <a href="/wiki/United_Kingdom_House_of_Commons" title="United Kingdom House of Commons">House of Commons</a> for the Fifty-Fourth Parliament of the <a href="/wiki/United_Kingdom" title="United Kingdom">United Kingdom</a> at the <a href="/wiki/United_Kingdom_general_election%2C_2005" title="United Kingdom general election, 2005">2005 general election</a>, arranged by constituency. New MPs elected since the general election and changes in party allegiance are noted at the bottom of the page.</p>
+<p>This is a list of <a href="/wiki/Member_of_Parliament" title="Member of Parliament">Members of Parliament</a> (MPs) elected to the <a href="/wiki/British_House_of_Commons" title="British House of Commons">House of Commons</a> for the Fifty-Fourth Parliament of the <a href="/wiki/United_Kingdom" title="United Kingdom">United Kingdom</a> at the <a href="/wiki/United_Kingdom_general_election%2C_2005" title="United Kingdom general election, 2005">2005 general election</a>, arranged by constituency. New MPs elected since the general election and changes in party allegiance are noted at the bottom of the page.</p>
 <div class="editsection" style="float:right;margin-left:5px;">[<a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;action=edit&amp;section=1" title="Edit section: Current composition">edit</a>]</div>
 <p><a name="Current_composition" id="Current_composition"></a></p>
 <h2>Current composition</h2>
@@ -5110,12 +5111,12 @@
 
 <!-- 
 Pre-expand include size: 6072 bytes
-Post-expand include size: 4956 bytes
+Post-expand include size: 4976 bytes
 Template argument size: 138 bytes
 Maximum: 2048000 bytes
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:1735700-0!1!0!default!!en!2 and timestamp 20060827030152 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1735700-0!1!0!default!!en!2 and timestamp 20060903032305 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_2005">http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_2005</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/w/index.php?title=Special:Categories&amp;article=MPs_elected_in_the_United_Kingdom_general_election%2C_2005" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:United_Kingdom_general_election%2C_2005" title="Category:United Kingdom general election, 2005">United Kingdom general election, 2005</a></span> | <span dir='ltr'><a href="/wiki/Category:MPs_elected_in_UK_elections" title="Category:MPs elected in UK elections">MPs elected in UK elections</a></span> | <span dir='ltr'><a href="/wiki/Category:Current_British_MPs" title="Category:Current British MPs">Current British MPs</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_current_office-holders" title="Category:Lists of current office-holders">Lists of current office-holders</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_members_of_parliament" title="Category:Lists of members of parliament">Lists of members of parliament</a></span></p></div>			<!-- end content -->
@@ -5179,7 +5180,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 				<li id="t-recentchangeslinked"><a href="/w/index.php?title=Special:Recentchangeslinked&amp;target=MPs_elected_in_the_United_Kingdom_general_election%2C_2005">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Special:Upload">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:Specialpages">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;printable=yes">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;oldid=70925596">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;id=70925596">Cite this article</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;printable=yes">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;oldid=72491445">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=MPs_elected_in_the_United_Kingdom_general_election%2C_2005&amp;id=72491445">Cite this article</a></li>			</ul>
 		</div>
 	</div>
 		</div><!-- end of the left (by default at least) column -->
@@ -5188,7 +5189,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-				<li id="lastmod"> This page was last modified 09:01, 21 August 2006.</li>
+				<li id="lastmod"> This page was last modified 23:13, 28 August 2006.</li>
 				<li id="copyright">All text is available under the terms of the <a class='internal' href="/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
 				<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
 				<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
@@ -5199,4 +5200,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv111 in 0.085 secs. --></body></html>
+<!-- Served by srv79 in 1.474 secs. --></body></html>
