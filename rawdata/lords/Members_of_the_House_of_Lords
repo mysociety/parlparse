@@ -39,12 +39,13 @@
 		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
 		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
 		<style type="text/css">/*<![CDATA[*/
-@import "/w/index.php?title=MediaWiki:Common.css&action=raw&ctype=text/css&smaxage=2678400";
-@import "/w/index.php?title=MediaWiki:Monobook.css&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
 @import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
 /*]]>*/</style>
 		<!-- Head Scripts -->
-			</head>
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
 <body  class="mediawiki ns-0 ltr">
 	<div id="globalWrapper">
 		<div id="column-content">
@@ -1090,12 +1091,6 @@ Parts of this article or section have been identified as no longer being up to d
 <td><a href="/w/index.php?title=Lord_Cooke_of_Islandreagh&amp;action=edit" class="new" title="Lord Cooke of Islandreagh">The Lord Cooke of Islandreagh</a></td>
 <td>Cross Bench</td>
 <td>Life Peer</td>
-<td>&#160;</td>
-</tr>
-<tr>
-<td><a href="/wiki/Lord_Cooke_of_Thorndon" title="Lord Cooke of Thorndon">The Lord Cooke of Thorndon</a></td>
-<td>Cross Bench</td>
-<td>Life Peer, Lord of Appeal</td>
 <td>&#160;</td>
 </tr>
 <tr>
@@ -3969,7 +3964,7 @@ Parts of this article or section have been identified as no longer being up to d
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Steel_of_Aikwood" title="Lord Steel of Aikwood">The Lord Steel of Aikwood</a></td>
+<td><a href="/wiki/David_Steel" title="David Steel">The Lord Steel of Aikwood</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4041,7 +4036,7 @@ Parts of this article or section have been identified as no longer being up to d
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=David_Montague_de_Burgh_Kenworthy%2C_11th_Baron_Strabolgi&amp;action=edit" class="new" title="David Montague de Burgh Kenworthy, 11th Baron Strabolgi">The Lord Strabolgi</a></td>
+<td><a href="/wiki/David_Montague_de_Burgh_Kenworthy%2C_11th_Baron_Strabolgi" title="David Montague de Burgh Kenworthy, 11th Baron Strabolgi">The Lord Strabolgi</a></td>
 <td>Labour</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -4833,7 +4828,7 @@ Template argument size: 51 bytes
 Maximum: 2048000 bytes
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20060825154052 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20060902235958 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/w/index.php?title=Special:Categories&amp;article=Members_of_the_House_of_Lords" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Wikipedia_articles_in_need_of_updating" title="Category:Wikipedia articles in need of updating">Wikipedia articles in need of updating</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:Politics_of_the_United_Kingdom" title="Category:Politics of the United Kingdom">Politics of the United Kingdom</a></span></p></div>			<!-- end content -->
@@ -4897,7 +4892,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<li id="t-recentchangeslinked"><a href="/w/index.php?title=Special:Recentchangeslinked&amp;target=Members_of_the_House_of_Lords">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Special:Upload">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:Specialpages">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=68579903">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=68579903">Cite this article</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=73408243">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=73408243">Cite this article</a></li>			</ul>
 		</div>
 	</div>
 		</div><!-- end of the left (by default at least) column -->
@@ -4906,7 +4901,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-				<li id="lastmod"> This page was last modified 10:03, 9 August 2006.</li>
+				<li id="lastmod"> This page was last modified 15:23, 2 September 2006.</li>
 				<li id="copyright">All text is available under the terms of the <a class='internal' href="/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
 				<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
 				<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
@@ -4917,4 +4912,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv103 in 0.079 secs. --></body></html>
+<!-- Served by srv83 in 0.078 secs. --></body></html>
