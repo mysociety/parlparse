@@ -412,6 +412,8 @@ def ParseGovPostsPage(fr, gp):
                 return "SKIPTHIS", None        
         if gp == "govposts0039_2006-05-10.html":
                 sdate, stime = "2006-05-08", "00:01" #  print sdate, stime, "we could move this date back to the shuffle"
+        if gp == "govposts0069_2006-09-07.html":
+                sdate, stime = "2006-09-06", "12:00" #  Grr, they didn't update the date!
 
 
         # extract special Ministers of State and PUSes
@@ -486,6 +488,9 @@ def ParsePrivSecPage(fr, gp):
         elif (gp == 'privsec0030_2006-06-22.html'):
                 sdate = '2006-06-22'
                 stime = '12:00'
+        elif (gp == 'privsec0041_2006-09-07.html'):
+                sdate = '2006-09-06'
+                stime = '12:00'
 
 	res = [ ]
         Mppstext = re.search('''(?xi)<tr>\s*<td[^>]*>
@@ -523,7 +528,7 @@ def ParsePrivSecPage(fr, gp):
 		if nameMatch.group(1):
 			ministername = nameMatch.group(1)  # carry forward minister name (when more than one PPS)
 
-                if re.search('vacant', nameMatch.group(2)):
+                if re.search('vacant(?i)', nameMatch.group(2)):
                         continue
 
 		if deptname in ppsdepts:
