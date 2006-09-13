@@ -46,12 +46,13 @@ redatename = '<b>[A-Za-z<> ]*?\s*(\S+\s+\d+\s+(?:%s)\s+\d+)\s*</b>' % monthnames
 revotelink  = '<a\s+href="([^"]*)">(?:<b>\s*)?((?:%s),(?:&nbsp;| )\d+\S*?(?:&nbsp;| )(?:%s)(?:&nbsp;| )\d+)\s*(?:</b>)?</(?:a|td)>(?i)' % (daynames, monthnames)
 reqbooklink = '<a\s+href="([^"]*)">(?:<b>\s*)?((?:%s)(?:&nbsp;| )\d+\S*?(?:&nbsp;|\s+)(?:%s)(?:&nbsp;| )\d+)</(?:b|)>(?i)' % (daynames, monthnames)
 relink = '<a\s+href="([^"]*)">(?:<b>)?([^<]*)(?:</b>)?</(?:a|font)>(?i)'
+relink2 = '<a\s+href="([^"]*)">([^<]*<br>[^<]*)</a>(?i)'
 
 # we lack the patching system here to overcome these special cases
 respecialdate1 = "<b>Friday 23 July 2004 to(?:<br>|\s*)Friday 27 August(?: 2004)?</b>"
 respecialdate2 = "<b>Friday 17 September 2004 to<br>Thursday 30 September 2004</b>"
 
-redateindexlinks = re.compile('%s|(%s|%s)|%s|%s|%s' % (redatename, respecialdate1, respecialdate2, revotelink, reqbooklink, relink))
+redateindexlinks = re.compile('%s|(%s|%s)|%s|%s|%s|%s' % (redatename, respecialdate1, respecialdate2, revotelink, reqbooklink, relink, relink2))
 
 # map from (date, type) to (URL-first, URL-index)
 # e.g. ("2003-02-01", "wrans") to ("http://...", "http://...")
@@ -115,7 +116,7 @@ def CmIndexFromPage(urllinkpage):
                                 continue
                         uind = urlparse.urljoin(urllinkpage, re.sub('\s', '', link1[4]))
                         typ = "Question Book"
-                else:
+                elif link1[6]:
                         linkhref = link1[6]
                         linktext = link1[7]
                 	# the link types by name
@@ -144,6 +145,21 @@ def CmIndexFromPage(urllinkpage):
         		typ = string.strip(re.sub('\s+', ' ', linktext))
                         if typ == 'Recess Written Answers':
                                 typ = 'Written Answers'
+
+                elif link1[8]:
+                        linkhref = link1[8]
+                        linktext = link1[9]
+
+                        if re.match('Written Answers and Statements received between<br>Monday 4 September and Friday 8 September 2006', linktext):
+                                odate = '11 September 2006'
+                        elif re.match('Written Answers received between<br>Wednesday 26 July and Friday 1 September 2006', linktext):
+                                odate = '4 September 2006'
+                        else:
+        			raise Exception, 'No date for link in: ' + urllinkpage + ' ' + ','.join(link1)
+
+                        sdate = mx.DateTime.DateTimeFrom(odate).date
+        		uind = urlparse.urljoin(urllinkpage, re.sub('\s', '', linkhref))
+        		typ = 'Written Answers'
 
                 # get rid of this paragraph when they fix the link
                 if uind == "http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm050721/index/50725-x.htm":
