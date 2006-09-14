@@ -398,7 +398,7 @@ def ParseGovPostsPage(fr, gp):
 	msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
 
         # is it always posted up on the day it is announced?
-	if msdate != sudate and sudate not in ["2004-09-20", '2005-03-10', '2005-05-13', '2005-06-06', '2006-05-16', '2006-06-12', '2006-06-13', '2006-06-14', '2006-06-15', '2006-07-27']:
+	if msdate != sudate and sudate not in ["2004-09-20", '2005-03-10', '2005-05-13', '2005-06-06', '2006-05-16', '2006-06-12', '2006-06-13', '2006-06-14', '2006-06-15', '2006-07-27', '2006-08-17']:
 		print "%s : Updated date is %s, but date of change %s" % (gp, sudate, msdate)
 
 	sdate = sudate
