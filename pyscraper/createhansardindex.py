@@ -156,6 +156,8 @@ def CmIndexFromPage(urllinkpage):
                                 odate = '4 September 2006'
                         elif re.match('Written Answers and Statements received between<br>Monday 11 September and Wednesday 13 September 2006', linktext):
                                 odate = '13 September 2006'
+                        elif re.match('Written Answers and Statements received between<br>Thursday 14 September and Monday 18 September 2006', linktext):
+                                odate = '18 September 2006'
                         else:
         			raise Exception, 'No date for link in: ' + urllinkpage + ' ' + ','.join(link1)
 
