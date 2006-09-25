@@ -63,6 +63,7 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/100856" : "Gillian Shephard [South West Norfolk]",
     "uk.org.publicwhip/lord/100857" : "Tony Banks [West Ham]",
     "uk.org.publicwhip/lord/100858" : "Nicholas Lyell [North East Bedfordshire]",
+    "uk.org.publicwhip/lord/100860" : "Dennis Turner [Wolverhampton South East]",
     "uk.org.publicwhip/lord/100862" : "Virginia Bottomley [South West Surrey]",
     "uk.org.publicwhip/lord/100863" : "Brian Mawhinney [North West Cambridgeshire]",
     "uk.org.publicwhip/lord/100864" : "Lynda Clark [Edinburgh, Pentlands]",
