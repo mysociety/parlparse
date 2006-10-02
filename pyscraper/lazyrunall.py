@@ -18,6 +18,7 @@ sys.path.append('miniposts')
 sys.path.append('wms')
 sys.path.append('votes')
 sys.path.append('bills')
+sys.path.append('standing')
 
 from crongrabpages import GrabWatchCopies
 from minpostparse import ParseGovPosts
@@ -25,8 +26,10 @@ from minpostparse import ParseGovPosts
 from optparse import OptionParser
 from createhansardindex import UpdateHansardIndex
 from lordscreatehansardindex import UpdateLordsHansardIndex
+from standingcreatehansardindex import UpdateStandingHansardIndex
 from pullgluepages import PullGluePages, PullGlueToday
 from lordspullgluepages import LordsPullGluePages
+from standingpullgluepages import StandingPullGluePages
 from runfilters import RunFiltersDir, RunDebateFilters, RunWransFilters, RunLordsFilters, RunWestminhallFilters, RunWMSFilters
 from regmemfilter import RunRegmemFilters
 from parsevote import RunVotesFilters
@@ -62,6 +65,7 @@ chgpages        Special pages that change, like list of cabinet ministers
 questionbook    The Question Book (Questions for Oral/Written Answer)
 votes           Votes and Proceedings
 today           Today in the Commons
+standing        Standing Committees
 
 Example command line
         ./lazyrunall.py --date=2004-03-03 --force-scrape scrape parse wrans
@@ -116,6 +120,7 @@ options.chgpages = False
 options.votes = False
 options.qbook = False
 options.today = False
+options.standing = False
 for arg in args:
         if arg == "scrape":
                 options.scrape = True
@@ -141,6 +146,8 @@ for arg in args:
                 options.votes = True
         elif arg == "today":
                 options.today = True
+        elif arg == "standing":
+                options.standing = True
         else:
                 print >>sys.stderr, "error: no such option %s" % arg
                 parser.print_help()
@@ -152,7 +159,7 @@ if not options.scrape and not options.parse:
         print >>sys.stderr, "error: choose what to do; scrape, parse, or both"
         parser.print_help()
         sys.exit(1)
-if not options.debates and not options.westminhall and not options.wms and not options.wrans and not options.regmem and not options.lords and not options.chgpages and not options.votes and not options.today and not options.qbook:
+if not options.debates and not options.westminhall and not options.wms and not options.wrans and not options.regmem and not options.lords and not options.chgpages and not options.votes and not options.today and not options.qbook and not options.standing:
         print >>sys.stderr, "error: choose what work on; debates, wrans, regmem, wms, votes, chgpages, questionbook, today or several of them"
         parser.print_help()
         sys.exit(1)
@@ -170,6 +177,8 @@ if options.scrape:
 		UpdateHansardIndex(options.forceindex)
 	if options.lords:
 		UpdateLordsHansardIndex(options.forceindex)
+	if options.standing:
+		UpdateStandingHansardIndex(options.forceindex)
 
 	# get the changing pages
 	if options.chgpages:
@@ -195,6 +204,8 @@ if options.scrape:
 		PullGluePages(options.datefrom, options.dateto, options.forcescrape, "wms", "ministerial")
 	if options.lords:
 		LordsPullGluePages(options.datefrom, options.dateto, options.forcescrape)
+	if options.standing:
+		StandingPullGluePages(options.datefrom, options.dateto, options.forcescrape)
 	if options.votes:
 		PullGluePages(options.datefrom, options.dateto, options.forcescrape, "votes", "votes")
 	if options.qbook:
