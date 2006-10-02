@@ -82,6 +82,9 @@ def GlueByNext(fout, urlx, billtitle):
 	# loop which scrapes through all the pages following the nextlinks
 	# knocking off the known links as we go in case a "next page" is missing.
 	while True:
+		if re.search("/pa/cm199798/cmstand/b/st971106/am/71106s04.htm$", url):
+			url = re.sub("s04.htm", "s05.htm", url)  # skip over missing page
+
 		ur = urllib.urlopen(url)
 		sr = ur.read()
 		ur.close();
