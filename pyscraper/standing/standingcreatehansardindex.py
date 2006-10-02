@@ -168,7 +168,7 @@ def GetBillLinks(bforce):
 	billyears = GetLinksTitles(urlstandingbillsyears)
 	res = [ ]
 	if not bforce:
-		billyears = billyears[0:1]
+		billyears = billyears[0:1]   # if you don't do --force-index, you just get the current year
 		#billyears = billyears[8:9]
 	for billyear in billyears:
 		year = re.match("Session (\d\d\d\d)-\d\d(?:\d\d)?$", billyear[1]).group(1)

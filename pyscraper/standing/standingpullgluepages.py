@@ -67,7 +67,7 @@ def GlueByNext(fout, urlx, billtitle):
 
 	pageheader = '<img\s*src="/pa/img/portsgrn.gif"\s*alt="House\s*of\s*Commons\s*portcullis"><BR>'
 	# there are various green button gifs, including two which say "continue", but with different filenames
-	pagefooter = '<a href\s*=\s*"[^"]*">\s*<img border=0 align=top src="/pa/img/(?:ctntgrn|conugrn|prevgrn|contgrn).gif"'
+	pagefooter = '<a href\s*=\s*"[^"]*">\s*<img border=0(?: align=top)? src="/pa/img/(?:ctntgrn|conugrn|prevgrn|contgrn).gif"'
 
 	if re.search("/pa/cm200304/cmstand/c/st040428/pm/40428s01.htm$", urlx):
 		pageheader = "<!--end of UK Parliament banner for Publications-->"
