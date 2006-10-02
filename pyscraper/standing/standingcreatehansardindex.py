@@ -44,7 +44,7 @@ romanconvmap = { "I":1, "II":2, "III":3, "IV":4, "V":5, "VI":6, "VII":7, "1":1, 
 # res = [ (urllink, date, sitting number, sitting part, morning|afternoon) ]
 def GetReportProcedings(urlpage, year):
 	res = [ ]
-	lastdate = ""
+	firstdate = ""
 	uin = urllib.urlopen(urlpage)
 	s = uin.read()
 	uin.close()
@@ -108,9 +108,9 @@ def GetReportProcedings(urlpage, year):
 				sdate = re.sub("7 February 2000", "18 January 2000", sdate)
 			res[-1][1] = mx.DateTime.DateTimeFrom(sdate).date
 
-			# lastdate is used to label the committee
-			if not lastdate or lastdate < res[-1][1]:
-				lastdate = res[-1][1]
+			# firstdate is used to label the committee
+			if not firstdate or firstdate > res[-1][1]:
+				firstdate = res[-1][1]
 
 			if mdate.group(2): # morning|afternoon
 				assert not res[-1][4]
@@ -162,7 +162,7 @@ def GetReportProcedings(urlpage, year):
 					print vdat
 				assert p[0] == 1
 		prev = p
-	return res, lastdate
+	return res, firstdate
 
 def GetBillLinks(bforce):
 	billyears = GetLinksTitles(urlstandingbillsyears)
@@ -189,9 +189,9 @@ def GetBillLinks(bforce):
 			assert re.match(".*? Bill$", billtitle)
 			committee = mcttee.group(2)
 			#res.append((year, billtitle, committee, bnk[0]))
-			ps, lastdate = GetReportProcedings(bnk[0], year)
+			ps, committeedate = GetReportProcedings(bnk[0], year)
 			for p in ps:
-				res.append(((year, billtitle, committee, bnk[0], lastdate), p))
+				res.append(((year, billtitle, committee, bnk[0], committeedate), p))
 	return res
 
 def WriteXML(fout, billinks):
@@ -200,7 +200,7 @@ def WriteXML(fout, billinks):
 
 	for billink in billinks:
 		(h, p) = billink
-		(year, billtitle, committee, indexurl, lastdate) = h
+		(year, billtitle, committee, indexurl, committeedate) = h
 		(urllink, date, sittingnumber, sittingpart, daypart) = p
 
 		# construct short name to use for the pullglued file
@@ -214,7 +214,7 @@ def WriteXML(fout, billinks):
 		else:
 			print "Unrecognized committee for short name:", committee
 			assert False
-		shortname = "standing%s_%s_%02d-%d_%s" % (lastdate, shortcommitteeletter, sittingnumber, sittingpart, date)
+		shortname = "standing%s_%s_%02d-%d_%s" % (committeedate, shortcommitteeletter, sittingnumber, sittingpart, date)
 		fout.write('<standingcttee shortname="%s" session="%s" date="%s" sittingnumber="%d" sittingpart="%d" daypart="%s" committeename="%s" billtitle="%s" urlindex="%s" url="%s"/>\n' % (shortname, year, date, sittingnumber, sittingpart, daypart, committee, billtitle, indexurl, urllink))
 
 	fout.write("\n</publicwhip>\n")
