@@ -168,8 +168,8 @@ def GetBillLinks(bforce):
 	billyears = GetLinksTitles(urlstandingbillsyears)
 	res = [ ]
 	if not bforce:
-		#billyears = billyears[0:1]
-		billyears = billyears[8:9]
+		billyears = billyears[0:1]
+		#billyears = billyears[8:9]
 	for billyear in billyears:
 		year = re.match("Session (\d\d\d\d)-\d\d(?:\d\d)?$", billyear[1]).group(1)
 		if miscfuncs.IsNotQuiet():
@@ -224,7 +224,7 @@ def WriteXML(fout, billinks):
 # main function
 ###############
 def UpdateStandingHansardIndex(bforce):
-	print "not--UpdateStandingHansardIndex"
+	#print "not--UpdateStandingHansardIndex"
 	#return
 	billinks = GetBillLinks(bforce)
 
