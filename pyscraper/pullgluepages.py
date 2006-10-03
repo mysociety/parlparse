@@ -146,6 +146,9 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 sr = re.sub('<body><p>', '<body><hr><p>', sr)
                 sr = re.sub('<body>\s+<!--<hd>--><br>', '<body><hr><!--<hd>--><br>', sr)
                 
+                # To cope with post 2006-09...
+                sr = re.sub('<!--end of UK Parliament banner for Publications-->\s+<br>', '<hr><br>', sr)
+
 		# split by sections
                 hrsections = re.split('<hr(?: size=3)?>(?i)', sr)
 
