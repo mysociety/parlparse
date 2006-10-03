@@ -19,6 +19,7 @@ toppath = miscfuncs.toppath
 # output directories
 pwcmdirs = os.path.join(toppath, "cmpages")
 pwcmregmem = os.path.join(pwcmdirs, "regmem")
+pwldregmem = os.path.join(pwcmdirs, "ldregmem")
 
 tempfilename = tempfile.mktemp("", "pw-gluetemp-", miscfuncs.tmppath)
 
@@ -26,6 +27,8 @@ def GlueByNext(fout, url, regmemdate):
 	# loop which scrapes through all the pages following the nextlinks
         starttablewritten = False
         matcheddate = False
+        if re.search("ldreg", url):
+            matcheddate = True
         sections = 0
 	while 1:
 		#print " reading " + url
@@ -77,7 +80,7 @@ def GlueByNext(fout, url, regmemdate):
 		# find the lead on with the footer
 		footer = hrsections[3]
 
-                nextsectionlink = re.findall('<A href="([^>]*?)"><IMG border=0\s+align=top src="/pa/img/nextgrn.gif" ALT="next page"></A>', footer)
+                nextsectionlink = re.findall('<A href="([^>]*?)"><IMG border=0\s+align=top src="/pa/img/next(?:grn|drd).gif" ALT="next page"></A>', footer)
 		if not nextsectionlink:
 			break
 		if len(nextsectionlink) > 1:
@@ -173,6 +176,20 @@ def FindRegmemPages():
                         
         return urls
 
+def FindLordRegmemPages():
+        urls = [('2004-10-01', 'http://www.publications.parliament.uk/pa/ld200304/ldreg/reg01.htm')]
+        ixurl = 'http://www.publications.parliament.uk/pa/ld/ldreg.htm'
+        ur = urllib.urlopen(ixurl)
+        content = ur.read()
+        ur.close();
+
+        allurls = re.findall('<a href="([^>]*reg01[^>]*)">.*?position on (.*?)\)</a>(?i)', content)
+        for match in allurls:
+                url = urlparse.urljoin(ixurl, match[0])
+                date = mx.DateTime.DateTimeFrom(match[1]).date
+                urls.append((date, url))
+                        
+        return urls
 
 ###############
 # main function
@@ -194,6 +211,9 @@ def RegmemPullGluePages(deleteoutput):
 	# bring in and glue together parliamentary register of members interests and put into their own directories.
 	# third parameter is a regexp, fourth is the filename (%s becomes the date).
 	GlueAllType(pwcmregmem, urls, 'regmem%s.html', deleteoutput)
+
+        urls = FindLordRegmemPages()
+	GlueAllType(pwldregmem, urls, 'regmem%s.html', deleteoutput)
 
 if __name__ == '__main__':
         RegmemPullGluePages(False)
