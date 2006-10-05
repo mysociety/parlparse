@@ -65,7 +65,7 @@ def GlueByNext(fout, url, regmemdate):
 		# find the lead on with the footer
 		footer = hrsections[2]
 
-                nextsectionlink = re.findall('<a href="([^>]*?)"><img border=0\s+align=top src="/pa/img/conugrn.gif" alt="continue"></a>', footer)
+                nextsectionlink = re.findall('<a href="([^>]*?)"><img border=0\s+align=top src="/pa/img/conu(?:grn|drd).gif" alt="continue"></a>', footer)
 		if not nextsectionlink:
 			break
 		if len(nextsectionlink) > 1:
@@ -132,7 +132,9 @@ def BillPullGluePages(deleteoutput):
         # http://www.publications.parliament.uk/pa/cm/cmhocpap.htm#register
         urls = [ 
                 ('200506b111', 'http://www.publications.parliament.uk/pa/cm200506/cmbills/111/06111.1-4.html'),
-                ('200506b141', 'http://www.publications.parliament.uk/pa/cm200506/cmbills/141/06141.1-7.html')
+                ('200506b141', 'http://www.publications.parliament.uk/pa/cm200506/cmbills/141/06141.1-7.html'),
+                ('200506hl109', 'http://www.publications.parliament.uk/pa/ld200506/ldbills/109/06109.i-ii.html'),
+                ('200506hl146', 'http://www.publications.parliament.uk/pa/ld200506/ldbills/146/06146.i-ii.html'),
                 ]
         
 	# bring in and glue together parliamentary register of members interests and put into their own directories.
