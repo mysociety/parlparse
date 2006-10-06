@@ -344,10 +344,14 @@ def ParseSelCteePage(fr, gp):
         if gp == "selctee0100_2006-09-29.html":
                 return "SKIPTHIS", None
         else:
-                frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)&nbsp;(.*?)\s*</td>', fr)
-                lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
-                y2k = int(lsudate.group(3)) < 50 and "20" or "19"
-                sudate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
+                frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
+                lsudate = re.match("(\d\d)/(\d\d)/(\d\d\d\d)$", frupdated.group(1))
+                if lsudate:
+                    sudate = "%s-%s-%s" % (lsudate.group(3), lsudate.group(2), lsudate.group(1))
+                else:
+                    lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
+                    y2k = int(lsudate.group(3)) < 50 and "20" or "19"
+                    sudate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
                 sutime = frupdated.group(2)
 	# extract the date on the document
 	frdate = re.search("Select Committee\s+Membership at\s+(.*?)\s*<(?i)", fr)
@@ -367,7 +371,7 @@ def ParseSelCteePage(fr, gp):
         found = { }
 
         # XXX: This is slow, speed it up!
-        list = re.findall("<tr>\s*<td (?:colspan='3' bgcolor='#F1ECE4'|bgcolor=#f1ece4 colSpan=3)(?: height=\"\d+\")?>(?:<b>)?<font size=\+1>(?:<b>)?(?:<I>)?<A\s+NAME='?\d+'?></a>\s*([^<]*?)(?:</b>)?</font>.*?</tr>\s*((?:<tr>\s*<td(?: height=\"19\")?>.*?</td>\s*<td(?: height=\"19\")?>.*?</td>\s*<td(?: height=\"19\")?>.*?</td>\s*</tr>\s*)+)<tr>\s*<td colspan='?3'?(?: height=\"19\")?>&nbsp;?</td>\s*</tr>", fr, re.I | re.S)
+        list = re.findall("<tr>\s*<td (?:colspan='3' bgcolor='#F1ECE4'|bgcolor=#f1ece4 colSpan=3)(?: height=\"\d+\")?>(?:<b>)?<font size=\+1>(?:<b>)?(?:<I>)?<A\s+NAME='?\d+'?></a>\s*([^<]*?)\s*(?:</b>)?</font>.*?</tr>\s*((?:<tr>\s*<td(?: height=\"19\")?>.*?</td>\s*<td(?: height=\"19\")?>.*?</td>\s*<td(?: height=\"19\")?>.*?</td>\s*</tr>\s*)+)<tr>\s*<td colspan='?3'?(?: height=\"19\")?>&nbsp;?</td>\s*</tr>", fr, re.I | re.S)
         for committee in list:
                 cteename = re.sub("\s+", " ", committee[0]).replace("&amp;", "&")
                 members = committee[1]
