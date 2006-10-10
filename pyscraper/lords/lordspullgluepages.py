@@ -100,6 +100,9 @@ def GlueByNext(fout, urla, urlx):
                 sr = re.sub('<body><h3 align="center"', '<body><hr><h3 align="center"', sr)
                 sr = re.sub('<body><p>', '<body><hr><p>', sr)
 
+                # post 2006-09
+                sr = re.sub('<div id="maincontent1">\s+<notus', '<hr> <notus', sr)
+
 		# split by sections
 		hrsections = re.split('<hr>(?i)', sr)
 
