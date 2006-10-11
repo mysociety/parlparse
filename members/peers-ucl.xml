@@ -9555,4 +9555,26 @@
 	peeragetype="B" affiliation="Bp"
 	fromdate="2006-06-23" todate="9999-12-31"
 />
+
+<lord
+    id="uk.org.publicwhip/lord/100939"
+    house="lords"
+    forenames="Geoffrey" forenames_full="Geoffrey James"
+    title="Lord" lordname="Dear" lordofname=""
+    lordofname_full="Willersey"
+    county="the County of Gloucestershire"
+    peeragetype="L" affiliation="XB"
+    fromdate="2006-10-10" todate="9999-12-31"
+/>
+<lord
+    id="uk.org.publicwhip/lord/100940"
+    house="lords"
+    forenames="Molly" forenames_full="Molly Christine"
+    title="Baroness" lordname="Meacher" lordofname=""
+    lordofname_full="Spitalfields"
+    county="the London Borough of Tower Hamlets"
+    peeragetype="L" affiliation="XB"
+    fromdate="2006-10-10" todate="9999-12-31"
+/>
+
 </publicwhip>

@@ -119,6 +119,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         if sdate > '2006-05-07' and re.search('<notus-date', text):
                 text = re.sub("\n", ' ', text)
                 text = re.sub("</?notus-date[^>]*>", "", text)
+                text = re.sub("\s*<meta[^>]*>\s*", "", text)
                 # Okay, they're outputting bastardised UTF-8 now, but can't be bothered to do it any way but manually for now
                 text = text.replace("\xe2\x22\xa2", "&trade;")
                 text = text.replace("\xe2\x82\xac", "&euro;")
@@ -148,7 +149,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 text = text.replace("\xc3\xb3", "&oacute;")
                 text = text.replace("\xc3\xb6", "&ouml;")
                 text = text.replace("\xc31/4", "&uuml;")
-                text = re.sub('(<h5 align="left">)(<a name="(.*?)">)', r"\2\1", text) # If you can't beat them, ...
+                text = re.sub('(<h5 align="left">)((?:<a name="(.*?)">)*)', r"\2\1", text) # If you can't beat them, ...
                 text = re.sub("(<br><b>[^:<]*:\s*column\s*\d+(?:WH)?\s*</b>)(\s+)(?i)", r"\1<br>\2", text)
                 text = re.sub("(\s+)(<b>[^:<]*:\s*column\s*\d+(?:WH)?\s*</b><br>)(?i)", r"\1<br>\2", text)
 

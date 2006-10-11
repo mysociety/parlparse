@@ -11,8 +11,8 @@ from splitheadingsspeakers import StampUrl
 from miscfuncs import ApplyFixSubstitutions
 from contextexception import ContextException
 
-recomb = re.compile('((?:<stamp aname="[^"]*?"/>)?<b>(?:<stamp aname="[^"]*?"/>)?[^<]*</b>\s*:?)(?i)')
-respeakervals = re.compile('(<stamp aname="[^"]*?"/>)?<b>(<stamp aname="[^"]*?"/>)?\s*([^:<(]*?):?\s*(?:\((.*?)\)?)?\s*:?\s*</b>(?i)')
+recomb = re.compile('((?:<stamp aname="[^"]*?"/>)?<b>(?:<stamp aname="[^"]*?"/>)*[^<]*</b>\s*:?)(?i)')
+respeakervals = re.compile('(<stamp aname="[^"]*?"/>)?<b>(<stamp aname="[^"]*?"/>)*\s*([^:<(]*?):?\s*(?:\((.*?)\)?)?\s*:?\s*</b>(?i)')
 remarginal = re.compile('<b>[^<]*</b>(?i)')
 
 def FilterWMSSpeakers(fout, text, sdate):

@@ -85,7 +85,7 @@ regcolumnum2 = '<p>\s</ul><p><i>[^:<]*:\s*column:?\s*\d+w?\s*</i><p>\s<ul>(?i)'
 regcolumnum3 = '<p>\s</ul>(?:</font>)+<p><i>[^:<]*:\s*column:?\s*\d+w?\s*</i><p>\s<ul>(?:<font[^>]*>)?(?i)'
 regcolumnum4 = '<br>(?:&nbsp;<br>|\s+)?<i>[^:<]*:\s*column:?\s*\d+w?\s*</i><br>&nbsp;<br>\s(?i)'
 regcolumnum5 = '<br>&nbsp;<br></ul><i>[^:<]*:\s*column:?\s*\d+w?\s*</i><br>&nbsp;<br>\s<ul>(?i)'
-regcolumnum6 = '<br>(?:</br>)?<b>[^:<]*:\s*column:?\s*\d+w?\s*</b><br>(?:</br>)?(?i)'
+regcolumnum6 = '(?:<br>)?\s*(?:</br>)?<b>[^:<]*:\s*column:?\s*\d+w?\s*</b><br>(?:</br>)?(?i)'
 
 recolumnumvals = re.compile('(?:<p>|\s|</ul>|</font>|<br>&nbsp;<br>|<br>|</br>)*<(?:i|b)>([^:<]*):\s*column:?\s*(\d+)w?\s*</(?:i|b)>(?:<p>|\s|<ul>|<font[^>]*>|<br>&nbsp;<br>|<br>|</br>)*$(?i)')
 
