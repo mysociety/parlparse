@@ -33,7 +33,7 @@ def StripWMSHeadings(headspeak, sdate, lords):
 		raise ContextException, 'non-conforming Initial heading '
 	i += 1
 
-	if (not re.match('(?:<stamp aname="[^"]*"/>)?written (?:ministerial)? ?statements?(?i)', headspeak[i][0])) or headspeak[i][2]:
+	if (not re.match('(?:<stamp aname="[^"]*"/>)*written (?:ministerial)? ?statements?(?i)', headspeak[i][0])) or headspeak[i][2]:
 		print headspeak[i]
 		raise ContextException, 'non-conforming Initial heading (looking for "written (?:ministerial)? ?statements?")'
 	elif (not re.search('<date>', headspeak[i][0])):
@@ -41,7 +41,7 @@ def StripWMSHeadings(headspeak, sdate, lords):
 
         givendate = string.replace(headspeak[i][0], "&nbsp;", " ")
         givendate = re.sub("</?i>", "", givendate)
-        gd = re.match('<stamp aname="[^"]*"/>(.*)$', givendate)
+        gd = re.match('(?:<stamp aname="[^"]*"/>)*(.*)$', givendate)
         if gd:
                 givendate = gd.group(1)
 	if (not lords) and ((sdate != mx.DateTime.DateTimeFrom(givendate).date) or headspeak[i][2]):

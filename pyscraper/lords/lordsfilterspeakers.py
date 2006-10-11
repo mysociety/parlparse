@@ -14,8 +14,8 @@ from contextexception import ContextException
 from splitheadingsspeakers import StampUrl
 
 # marks out center types bold headings which are never speakers
-respeaker = re.compile('(<center><b>(?:<stamp aname="[^"]*"/>)?[^<]*</b></center>|<b>(?:<stamp aname="[^"]+"/>)?[^<]*</b>(?:\s*:)?)(?i)')
-respeakerb = re.compile('<b>\s*(?:<stamp aname="[^"]*"/>)?\s*([^<]*?),?\s*</b>(\s*:)?(?i)')
+respeaker = re.compile('(<center><b>(?:<stamp aname="[^"]*"/>)?[^<]*</b></center>|<b>(?:<stamp aname="[^"]+"/>)*[^<]*</b>(?:\s*:)?)(?i)')
+respeakerb = re.compile('<b>\s*(?:<stamp aname="[^"]*"/>)*\s*([^<]*?),?\s*</b>(\s*:)?(?i)')
 respeakervals = re.compile('([^:(]*?)\s*(?:\(([^:)]*)\))?(:)?$')
 
 renonspek = re.compile('division|contents|amendment(?i)')

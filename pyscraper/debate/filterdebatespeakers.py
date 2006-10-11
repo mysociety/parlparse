@@ -68,7 +68,7 @@ parties = "|".join(map(string.lower, memberList.partylist())) + "|uup|ld|dup|in 
 recomb = re.compile('''(?ix)((?:Q?\d+\.\s*)?(?:\[\d+\]\s*)?
 					(?:<stamp\saname="[^"]*"/>)?
 					<b>
-					(?:<stamp\saname="[^"]*"/>)?
+					(?:<stamp\saname="[^"]*"/>)*
 					[^<]*
 					</b>(?!</h[34]>)
 					\s*\)?
@@ -84,7 +84,7 @@ respeakervals = re.compile('''(?ix)
 		(\[\d+\]\s*)?				# written qnum (group2)
 		(<stamp\saname="[^"]*?"/>)? # a stamp (group3)
 		<b>\s*                      # start of bold
-		(<stamp\saname="[^"]*?"/>)? # a stamp (group4)
+		(<stamp\saname="[^"]*?"/>)* # a stamp (group4)
 		(?:Q?(\d+)\.)?				# second place of oral question number (group5)
 		([^:<(]*?):?\s*				# speaker (group6)
 		(?:\((.*?)\)?)?				# speaker bracket (group7)

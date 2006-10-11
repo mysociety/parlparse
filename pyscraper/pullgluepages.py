@@ -91,7 +91,7 @@ def WriteCleanText(fout, text, url):
 			pass
 
 		elif re.match('<a[^>]*>(?i)', ab):
-			anamem = re.match('<a name\s*?=\s*?"?(\S*?)"?\s*?>(?i)', ab)
+			anamem = re.match('<a name\s*?=\s*?"?(\S*?)"?\s*?/?>(?i)', ab)
                         if anamem:
                                 aname = anamem.group(1)
                                 if not re.search('column', aname): # these get in the way
@@ -148,6 +148,7 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 
                 # To cope with post 2006-09...
                 sr = re.sub('<div id="maincontent1">\s*<br>', '<hr><br>', sr)
+                sr = re.sub("</?mekonParaReplace[^>]*>", "", sr)
 
 		# split by sections
                 hrsections = re.split('<hr(?: size=3)?>(?i)', sr)
