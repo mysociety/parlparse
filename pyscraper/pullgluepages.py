@@ -90,7 +90,7 @@ def WriteCleanText(fout, text, url):
 		if re.match('<!-[^>]*?->', ab):
 			pass
 
-		elif re.match('<a[^>]*>(?i)', ab):
+		elif re.match('<a[^>]+>(?i)', ab):
 			anamem = re.match('<a name\s*?=\s*?"?(\S*?)"?\s*?/?>(?i)', ab)
                         if anamem:
                                 aname = anamem.group(1)
@@ -101,7 +101,7 @@ def WriteCleanText(fout, text, url):
                                 # as a link (as there aren't any on parliament.uk)
                                 print "Caught a link ", ab, " in ", url
 
-		elif re.match('</a>(?i)', ab):
+		elif re.match('</?a>(?i)', ab):
 			pass
 
 		# spaces only inside tags
