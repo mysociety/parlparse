@@ -7019,7 +7019,7 @@
 	lordofname_full="Highgate"
 	county="Greater London"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1977" todate="2006-07-24"
+	fromdate="1977" todate="2006-07-24" towhy="changed_party"
 />
 <lord
 	id="uk.org.publicwhip/lord/100678"
@@ -9395,7 +9395,7 @@
     title="Lord" lordname="Boyd" lordofname="Duncansby"
     county="Caithness"
     peeragetype="L" affiliation="XB"
-    fromdate="2006-07-03" todate="2006-10-09"
+    fromdate="2006-07-03" todate="2006-10-09" towhy="changed_party"
 />
 
 <lord
