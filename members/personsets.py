@@ -85,6 +85,8 @@ lordlordmatches = {
 	"uk.org.publicwhip/lord/100265":"uk.org.publicwhip/lord/100830",  # Bishop of Guildford becomes of Chelmsford
 	"uk.org.publicwhip/lord/100736":"uk.org.publicwhip/lord/100872",  # Bishop of Wakefield becomes of Manchester
     "uk.org.publicwhip/lord/100937":"uk.org.publicwhip/lord/100479",  # Bishop of Oxford becomes XB Lord
+    "uk.org.publicwhip/lord/100942":"uk.org.publicwhip/lord/100677",  # Lord Wedderburn changes party
+    "uk.org.publicwhip/lord/100943":"uk.org.publicwhip/lord/100924",  # As does Lord Boyd...
 }
 
 ni_mp_matches = {
