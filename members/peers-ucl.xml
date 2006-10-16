@@ -7019,7 +7019,7 @@
 	lordofname_full="Highgate"
 	county="Greater London"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1977" todate="9999-12-31"
+	fromdate="1977" todate="2006-07-24"
 />
 <lord
 	id="uk.org.publicwhip/lord/100678"
@@ -9395,7 +9395,7 @@
     title="Lord" lordname="Boyd" lordofname="Duncansby"
     county="Caithness"
     peeragetype="L" affiliation="XB"
-    fromdate="2006-07-03" todate="9999-12-31"
+    fromdate="2006-07-03" todate="2006-10-09"
 />
 
 <lord
@@ -9587,4 +9587,28 @@
     peeragetype="L" affiliation="XB"
     fromdate="2006-10-12" todate="9999-12-31"
 />
+
+<lord
+	id="uk.org.publicwhip/lord/100942"
+	house="lords"
+	forenames="Bill"
+	forenames_full="Kenneth William"
+	title="Lord" lordname="Wedderburn" lordofname="Charlton"
+	lordofname_full="Highgate"
+	county="Greater London"
+	peeragetype="L" affiliation="XB"
+	fromdate="2006-07-24" todate="9999-12-31"
+/>
+<lord
+    id="uk.org.publicwhip/lord/100943"
+    house="lords"
+    forenames="Colin"
+    forenames_full="Colin David"
+    title="Lord" lordname="Boyd" lordofname="Duncansby"
+    county="Caithness"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2006-10-09" todate="9999-12-31"
+/>
+
+
 </publicwhip>
