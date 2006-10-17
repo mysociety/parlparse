@@ -181,6 +181,7 @@
 <chgpageupdates date="2006-08-15" time="11:46" chgtype="selctee"/>
 <chgpageupdates date="2006-10-04" time="15:23" chgtype="selctee"/>
 <chgpageupdates date="2006-10-12" time="12:41" chgtype="selctee"/>
+<chgpageupdates date="2006-10-17" time="09:42" chgtype="selctee"/>
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1000" name="Duke of Abercorn" dept="HM Household" position="Lord Steward" fromdate="2000-01-01" todate="9999-12-31" source="newlabministers2003-10-15 chgpages/govposts"></moffice>
@@ -242,8 +243,8 @@
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1225" name="Mr Douglas Alexander" matchid="uk.org.publicwhip/member/2008" dept="Foreign &amp; Commonwealth Office" position="Minister of State" responsibility="Europe" fromdate="2005-05-16" fromtime="11:24" todate="2005-12-19" totime="11:41" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1279" name="Douglas Alexander" matchid="uk.org.publicwhip/member/2008" dept="Foreign &amp; Commonwealth Office" position="Minister of State" responsibility="Europe" fromdate="2005-12-19" fromtime="11:41" todate="2006-05-08" totime="00:01" source="chgpages/govposts"></moffice>
-<moffice id="uk.org.publicwhip/moffice/1287" name="Douglas Alexander" matchid="uk.org.publicwhip/member/2008" dept="Scotland Office" position="Secretary of State" fromdate="2006-05-08" fromtime="00:01" todate="9999-12-31" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1286" name="Douglas Alexander" matchid="uk.org.publicwhip/member/2008" dept="Department for Transport" position="Secretary of State" fromdate="2006-05-08" fromtime="00:01" todate="9999-12-31" source="chgpages/govposts"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1287" name="Douglas Alexander" matchid="uk.org.publicwhip/member/2008" dept="Scotland Office" position="Secretary of State" fromdate="2006-05-08" fromtime="00:01" todate="9999-12-31" source="chgpages/govposts"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -408,7 +409,7 @@
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/2525" name="Gordon Banks" matchid="uk.org.publicwhip/member/2005" dept="Regulatory Reform Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2540" name="Gordon Banks" matchid="uk.org.publicwhip/member/2005" dept="Scottish Affairs Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="2006-07-18" totime="12:05" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/2464" name="Gordon Banks" matchid="uk.org.publicwhip/member/2005" dept="Northern Ireland Affairs Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2464" name="Gordon Banks" matchid="uk.org.publicwhip/member/2005" dept="Northern Ireland Affairs Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="2006-10-17" totime="09:42" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2766" name="Gordon Banks" matchid="uk.org.publicwhip/member/2005" dept="Unopposed Bills (Panel) Committee" position="" fromdate="2005-11-01" fromtime="14:48" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1553" name="Gordon Banks" matchid="uk.org.publicwhip/member/2005" dept="Department for Work and Pensions" position="PPS" responsibility="James Purnell, Minister of State" fromdate="2006-05-08" fromtime="00:01" todate="9999-12-31" source="chgpages/privsec"></moffice>
 </ministerofficegroup>
@@ -450,6 +451,7 @@
 <moffice id="uk.org.publicwhip/moffice/116" name="John Battle" matchid="uk.org.publicwhip/member/28" dept="Foreign &amp; Commonwealth Office" position="Minister of State" fromdate="1999-07-28" todate="2001-06-11" source="newlabministers2003-10-15"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1862" name="Rt Hon John Battle" matchid="uk.org.publicwhip/member/718" dept="International Development Committee" position="" fromdate="2004-05-28" fromtime="10:00" todate="2005-05-11" totime="14:37" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2438" name="Rt Hon John Battle" matchid="uk.org.publicwhip/member/1673" dept="International Development Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2990" name="Rt Hon John Battle" matchid="uk.org.publicwhip/member/1673" dept="Northern Ireland Affairs Committee" position="" fromdate="2006-10-17" fromtime="09:42" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -497,6 +499,7 @@
 <moffice id="uk.org.publicwhip/moffice/2901" name="Rt Hon Alan Beith" matchid="uk.org.publicwhip/member/1404" dept="Constitutional Affairs Committee" position="Chairman" fromdate="2006-06-13" fromtime="10:48" todate="2006-06-14" totime="10:48" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2920" name="Rt Hon Alan Beith " matchid="uk.org.publicwhip/member/1404" dept="Constitutional Affairs Committee" position="Chairman" fromdate="2006-06-14" fromtime="10:48" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2982" name="Rt Hon Alan Beith" matchid="uk.org.publicwhip/member/1404" dept="Speaker's Committee" position="" fromdate="2006-10-04" fromtime="15:23" todate="2006-10-12" totime="12:41" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2992" name="Rt Hon Alan Beith" matchid="uk.org.publicwhip/member/1404" dept="Speaker's Committee" position="" fromdate="2006-10-17" fromtime="09:42" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -676,8 +679,8 @@
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/125" name="Ben Bradshaw" matchid="uk.org.publicwhip/member/748" dept="Foreign &amp; Commonwealth Office" position="Parliamentary Under-Secretary" fromdate="2001-06-11" todate="2002-05-29" source="newlabministers2003-10-15"></moffice>
-<moffice id="uk.org.publicwhip/moffice/228" name="Ben Bradshaw" matchid="uk.org.publicwhip/member/748" dept="Privy Council Office" position="Parliamentary Secretary" fromdate="2002-05-29" todate="2003-06-13" source="newlabministers2003-10-15"></moffice>
 <moffice id="uk.org.publicwhip/moffice/188" name="Ben Bradshaw" matchid="uk.org.publicwhip/member/748" dept="House of Commons" position="Parliamentary Secretary" fromdate="2002-05-29" todate="2003-06-13" source="newlabministers2003-10-15"></moffice>
+<moffice id="uk.org.publicwhip/moffice/228" name="Ben Bradshaw" matchid="uk.org.publicwhip/member/748" dept="Privy Council Office" position="Parliamentary Secretary" fromdate="2002-05-29" todate="2003-06-13" source="newlabministers2003-10-15"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1019" name="Mr Ben Bradshaw" matchid="uk.org.publicwhip/member/748" dept="Department for Environment, Food and Rural Affairs" position="Parliamentary Under-Secretary" responsibility="Nature Conservation and Fisheries" fromdate="2003-06-13" todate="2005-06-17" totime="14:29" source="newlabministers2003-10-15 chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1253" name="Mr Ben Bradshaw" matchid="uk.org.publicwhip/member/1580" dept="Department for Environment, Food and Rural Affairs" position="Parliamentary Under-Secretary" responsibility="Local Environment, Marine and Animal Welfare" fromdate="2005-06-17" fromtime="14:29" todate="9999-12-31" source="chgpages/govposts"></moffice>
 </ministerofficegroup>
@@ -766,7 +769,7 @@
 <moffice id="uk.org.publicwhip/moffice/2551" name="Angela Browning" matchid="uk.org.publicwhip/member/1876" dept="Standards and Privileges Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="2006-02-01" totime="13:15" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2501" name="Angela Browning" matchid="uk.org.publicwhip/member/1876" dept="Public Accounts Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="2006-07-26" totime="16:06" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2797" name="Angela Browning" matchid="uk.org.publicwhip/member/1876" dept="Speaker's Committee on the Electoral Commission" position="" fromdate="2005-11-01" fromtime="14:48" todate="2006-10-04" totime="15:23" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/2989" name="Angela Browning" matchid="uk.org.publicwhip/member/1876" dept="Speaker's Committee" position="" fromdate="2006-10-12" fromtime="12:41" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2989" name="Angela Browning" matchid="uk.org.publicwhip/member/1876" dept="Speaker's Committee" position="" fromdate="2006-10-12" fromtime="12:41" todate="2006-10-17" totime="09:42" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -892,8 +895,8 @@
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1223" name="David Cairns" matchid="uk.org.publicwhip/member/1994" dept="Scotland Office" position="Parliamentary Under-Secretary" fromdate="2005-05-13" fromtime="13:21" todate="2005-05-16" totime="11:24" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1236" name="David Cairns" matchid="uk.org.publicwhip/member/1994" dept="Scotland Office" position="Parliamentary Under-Secretary" fromdate="2005-05-17" fromtime="11:48" todate="2006-05-10" totime="17:13" source="chgpages/govposts"></moffice>
-<moffice id="uk.org.publicwhip/moffice/1347" name="David Cairns" matchid="uk.org.publicwhip/member/1994" dept="Northern Ireland Office" position="Parliamentary Under-Secretary" responsibility="also Scotland Office" fromdate="2006-05-10" fromtime="17:13" todate="9999-12-31" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1346" name="David Cairns" matchid="uk.org.publicwhip/member/1994" dept="Scotland Office" position="Parliamentary Under-Secretary" responsibility="also Scotland Office" fromdate="2006-05-10" fromtime="17:13" todate="9999-12-31" source="chgpages/govposts"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1347" name="David Cairns" matchid="uk.org.publicwhip/member/1994" dept="Northern Ireland Office" position="Parliamentary Under-Secretary" responsibility="also Scotland Office" fromdate="2006-05-10" fromtime="17:13" todate="9999-12-31" source="chgpages/govposts"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -2136,7 +2139,7 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
-<moffice id="uk.org.publicwhip/moffice/2472" name="Meg Hillier" matchid="uk.org.publicwhip/member/1605" dept="Northern Ireland Affairs Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2472" name="Meg Hillier" matchid="uk.org.publicwhip/member/1605" dept="Northern Ireland Affairs Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="2006-10-17" totime="09:42" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1525" name="Meg Hillier" matchid="uk.org.publicwhip/member/1605" dept="Department for Communities and Local Government" position="PPS" responsibility="Rt Hon Ruth Kelly, Secretary of State" fromdate="2006-05-08" fromtime="00:01" todate="9999-12-31" source="chgpages/privsec"></moffice>
 </ministerofficegroup>
 
@@ -2730,8 +2733,8 @@
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/279" name="Helen Liddell" matchid="uk.org.publicwhip/member/360" dept="HM Treasury" position="Economic Secretary" fromdate="1997-05-05" todate="1998-07-28" source="newlabministers2003-10-15"></moffice>
 <moffice id="uk.org.publicwhip/moffice/405" name="Helen Liddell" matchid="uk.org.publicwhip/member/360" dept="Scottish Office" position="Minister for Education and Industry" fromdate="1998-07-28" todate="1999-05-17" source="newlabministers2003-10-15"></moffice>
-<moffice id="uk.org.publicwhip/moffice/261" name="Helen Liddell" matchid="uk.org.publicwhip/member/360" dept="Department for Transport" position="Minister of State" fromdate="1999-05-17" todate="1999-07-28" source="newlabministers2003-10-15"></moffice>
 <moffice id="uk.org.publicwhip/moffice/85" name="Helen Liddell" matchid="uk.org.publicwhip/member/360" dept="Department of the Environment, Transport and the Regions" position="Minister of State" responsibility="Transport" fromdate="1999-05-17" todate="1999-07-28" source="newlabministers2003-10-15"></moffice>
+<moffice id="uk.org.publicwhip/moffice/261" name="Helen Liddell" matchid="uk.org.publicwhip/member/360" dept="Department for Transport" position="Minister of State" fromdate="1999-05-17" todate="1999-07-28" source="newlabministers2003-10-15"></moffice>
 <moffice id="uk.org.publicwhip/moffice/237" name="Helen Liddell" matchid="uk.org.publicwhip/member/360" dept="Department of Trade and Industry" position="Minister of State" responsibility="Science, Energy and Industry" fromdate="1999-07-28" todate="2001-01-24" source="newlabministers2003-10-15"></moffice>
 <moffice id="uk.org.publicwhip/moffice/402" name="Helen Liddell" matchid="uk.org.publicwhip/member/360" dept="Scottish Office" position="Secretary of State" fromdate="2001-01-24" todate="2003-06-13" source="newlabministers2003-10-15"></moffice>
 </ministerofficegroup>
@@ -3011,10 +3014,10 @@
 <moffice id="uk.org.publicwhip/moffice/1120" name="Ian McCartney" matchid="uk.org.publicwhip/member/1064" dept="Cabinet Office" position="Minister without Portfolio" fromdate="2004-09-09" fromtime="14:26" todate="2004-11-04" totime="12:04" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1140" name="Ian McCartney" matchid="uk.org.publicwhip/member/1064" dept="No Department" position="Minister without Portfolio" fromdate="2004-11-04" fromtime="12:04" todate="2006-01-09" totime="14:45" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1283" name="Ian McCartney" matchid="uk.org.publicwhip/member/1702" dept="Cabinet Office" position="Minister without Portfolio" fromdate="2006-01-09" fromtime="14:45" todate="2006-05-08" totime="00:01" source="chgpages/govposts"></moffice>
-<moffice id="uk.org.publicwhip/moffice/1321" name="Ian McCartney" matchid="uk.org.publicwhip/member/1702" dept="Foreign &amp; Commonwealth Office" position="Minister of State" responsibility="Trade" fromdate="2006-05-08" fromtime="00:01" todate="2006-08-03" totime="11:41" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1322" name="Ian McCartney" matchid="uk.org.publicwhip/member/1702" dept="Department of Trade and Industry" position="Minister of State" responsibility="Trade" fromdate="2006-05-08" fromtime="00:01" todate="2006-08-03" totime="11:41" source="chgpages/govposts"></moffice>
-<moffice id="uk.org.publicwhip/moffice/1373" name="Ian McCartney" matchid="uk.org.publicwhip/member/1702" dept="Foreign &amp; Commonwealth Office" position="Minister of State" responsibility="Trade &amp; Investment" fromdate="2006-08-03" fromtime="11:41" todate="9999-12-31" source="chgpages/govposts"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1321" name="Ian McCartney" matchid="uk.org.publicwhip/member/1702" dept="Foreign &amp; Commonwealth Office" position="Minister of State" responsibility="Trade" fromdate="2006-05-08" fromtime="00:01" todate="2006-08-03" totime="11:41" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1372" name="Ian McCartney" matchid="uk.org.publicwhip/member/1702" dept="Department of Trade and Industry" position="Minister of State" responsibility="Trade &amp; Investment" fromdate="2006-08-03" fromtime="11:41" todate="9999-12-31" source="chgpages/govposts"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1373" name="Ian McCartney" matchid="uk.org.publicwhip/member/1702" dept="Foreign &amp; Commonwealth Office" position="Minister of State" responsibility="Trade &amp; Investment" fromdate="2006-08-03" fromtime="11:41" todate="9999-12-31" source="chgpages/govposts"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -3363,6 +3366,7 @@
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/2005" name="Mr Denis Murphy" matchid="uk.org.publicwhip/member/1129" dept="Regulatory Reform Committee" position="" fromdate="2004-05-28" fromtime="10:00" todate="2005-05-11" totime="14:37" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2991" name="Mr Denis Murphy" matchid="uk.org.publicwhip/member/1903" dept="Northern Ireland Affairs Committee" position="" fromdate="2006-10-17" fromtime="09:42" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -4191,6 +4195,7 @@
 <moffice id="uk.org.publicwhip/moffice/1954" name="Mr Gary Streeter" matchid="uk.org.publicwhip/member/1259" dept="Urban Affairs Sub-committee Committee" position="" fromdate="2004-05-28" fromtime="10:00" todate="2004-06-11" totime="10:08" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2430" name="Mr Gary Streeter" matchid="uk.org.publicwhip/member/1540" dept="Home Affairs Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2987" name="Mr Gary Streeter" matchid="uk.org.publicwhip/member/1540" dept="Speaker's Committee" position="" fromdate="2006-10-04" fromtime="15:23" todate="2006-10-12" totime="12:41" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2993" name="Mr Gary Streeter" matchid="uk.org.publicwhip/member/1540" dept="Speaker's Committee" position="" fromdate="2006-10-17" fromtime="09:42" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -4355,8 +4360,8 @@
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/412" name="Lord Macdonald of Tradeston" matchid="uk.org.publicwhip/lord/100395" dept="Scottish Office" position="Parliamentary Under-Secretary" responsibility="Business and Industry" fromdate="1998-08-03" todate="1999-07-28" source="newlabministers2003-10-15"></moffice>
-<moffice id="uk.org.publicwhip/moffice/262" name="Lord Macdonald of Tradeston" matchid="uk.org.publicwhip/lord/100395" dept="Department for Transport" position="Minister of State" fromdate="1999-07-28" todate="2001-06-08" source="newlabministers2003-10-15"></moffice>
 <moffice id="uk.org.publicwhip/moffice/86" name="Lord Macdonald of Tradeston" matchid="uk.org.publicwhip/lord/100395" dept="Department of the Environment, Transport and the Regions" position="Minister of State" responsibility="Transport" fromdate="1999-07-28" todate="2001-06-11" source="newlabministers2003-10-15"></moffice>
+<moffice id="uk.org.publicwhip/moffice/262" name="Lord Macdonald of Tradeston" matchid="uk.org.publicwhip/lord/100395" dept="Department for Transport" position="Minister of State" fromdate="1999-07-28" todate="2001-06-08" source="newlabministers2003-10-15"></moffice>
 <moffice id="uk.org.publicwhip/moffice/4" name="Lord Macdonald of Tradeston" matchid="uk.org.publicwhip/lord/100395" dept="Cabinet Office" position="Chancellor of the Duchy of Lancaster" fromdate="2001-06-11" todate="2003-06-13" source="newlabministers2003-10-15"></moffice>
 </ministerofficegroup>
 
@@ -4447,8 +4452,8 @@
 <moffice id="uk.org.publicwhip/moffice/1008" name="Baroness Ashton of Upholland" matchid="uk.org.publicwhip/lord/100024" dept="Department for Work and Pensions" position="Parliamentary Under-Secretary" responsibility="Sure Start, Early Years and Childcare" fromdate="2002-07-01" todate="2004-09-10" totime="13:53" source="newlabministers2003-10-15 chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1007" name="Baroness Ashton of Upholland" matchid="uk.org.publicwhip/lord/100024" dept="Department for Education and Skills" position="Parliamentary Under-Secretary" responsibility="Sure Start, Early Years and Childcare" fromdate="2001-06-11" todate="2004-09-10" totime="13:53" source="newlabministers2003-10-15 chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1124" name="Baroness Ashton of Upholland" matchid="uk.org.publicwhip/lord/100024" dept="Department for Constitutional Affairs" position="Parliamentary Under-Secretary" fromdate="2004-09-10" fromtime="13:53" todate="2006-05-08" totime="00:01" source="chgpages/govposts"></moffice>
-<moffice id="uk.org.publicwhip/moffice/1291" name="Baroness Ashton of Upholland" matchid="uk.org.publicwhip/lord/100024" dept="Department for Constitutional Affairs" position="Parliamentary Under-Secretary" responsibility="also Department for Constitutional Affairs" fromdate="2006-05-08" fromtime="00:01" todate="2006-05-10" totime="17:13" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1290" name="Baroness Ashton of Upholland" matchid="uk.org.publicwhip/lord/100024" dept="Department for Environment, Food and Rural Affairs" position="Parliamentary Under-Secretary" responsibility="also Department for Constitutional Affairs" fromdate="2006-05-08" fromtime="00:01" todate="2006-05-10" totime="17:13" source="chgpages/govposts"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1291" name="Baroness Ashton of Upholland" matchid="uk.org.publicwhip/lord/100024" dept="Department for Constitutional Affairs" position="Parliamentary Under-Secretary" responsibility="also Department for Constitutional Affairs" fromdate="2006-05-08" fromtime="00:01" todate="2006-05-10" totime="17:13" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1345" name="Baroness Ashton of Upholland" matchid="uk.org.publicwhip/lord/100024" dept="Department for Constitutional Affairs" position="Parliamentary Under-Secretary" fromdate="2006-05-10" fromtime="17:13" todate="9999-12-31" source="chgpages/govposts"></moffice>
 </ministerofficegroup>
 
@@ -4731,6 +4736,7 @@
 <moffice id="uk.org.publicwhip/moffice/1274" name="Mr Phil Woolas" matchid="uk.org.publicwhip/member/1752" dept="Office of the Deputy Prime Minister" position="Minister of State" responsibility="Local Government" fromdate="2005-06-17" fromtime="14:29" todate="2006-05-08" totime="00:01" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1344" name="Mr Phil Woolas" matchid="uk.org.publicwhip/member/1752" dept="Department for Communities and Local Government" position="Minister of State" responsibility="Local Government" fromdate="2006-05-08" fromtime="00:01" todate="2006-08-03" totime="11:41" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1381" name="Mr Phil Woolas" matchid="uk.org.publicwhip/member/1752" dept="Department for Communities and Local Government" position="Minister of State" responsibility="Local Government &amp; Community Cohesion" fromdate="2006-08-03" fromtime="11:41" todate="9999-12-31" source="chgpages/govposts"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2994" name="Mr Phil Woolas" matchid="uk.org.publicwhip/member/1752" dept="Speaker's Committee" position="" fromdate="2006-10-17" fromtime="09:42" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
