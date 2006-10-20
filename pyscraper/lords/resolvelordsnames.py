@@ -136,8 +136,6 @@ class LordsList(xml.sax.handler.ContentHandler):
 				if (lm["lordname"] == llordname) and (lm["lordofname"] == llordofname):
 					if lm["fromdate"] <= sdate <= lm["todate"]:
 						res.append(lm)
-					else:
-						raise ContextException("On %s, lord not matching date range %s-%s" % (sdate, lm["fromdate"], lm["todate"]), stamp=stampurl, fragment=llordname)
 				continue
 
 			# skip onwards if we have a double name
