@@ -39,6 +39,8 @@ watchpages = {  "govposts":"http://www.parliament.uk/directories/hciolists/hmg.c
 				"newlords":"http://www.parliament.uk/directories/house_of_lords_information_office/new_members.cfm", 
 				"deadlords":"http://www.parliament.uk/directories/house_of_lords_information_office/deceased_members.cfm",
 				"alphalistlords":"http://www.parliament.uk/directories/house_of_lords_information_office/alphabetical_list_of_members.cfm",
+
+				"financialsanctions":"http://www.bankofengland.co.uk/publications/financialsanctions/sanctionsconlist.htm",
 			 }
 
 
