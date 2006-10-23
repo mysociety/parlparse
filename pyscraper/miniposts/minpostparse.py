@@ -4,7 +4,6 @@
 # Fill in the 2003-2004 gap
 
 
-
 import os
 import datetime
 import re
@@ -12,6 +11,7 @@ import sys
 import urllib
 import string
 import tempfile
+import xml.sax
 
 import miscfuncs
 import difflib
@@ -25,6 +25,12 @@ toppath = miscfuncs.toppath
 pwcmdirs = miscfuncs.pwcmdirs
 chggdir = os.path.join(pwcmdirs, "chgpages")
 chgtmp = tempfile.mktemp(".xml", "pw-chgtemp-", miscfuncs.tmppath)
+
+membersdir = os.path.normpath(os.path.abspath(os.path.join("..", "members")))
+ministersxml = os.path.join(membersdir, "ministers.xml")
+peoplexml = os.path.join(membersdir, "people.xml") # generated from ministers.xml by personsets.py
+   # used in
+
 
 uniqgovposns = ["Prime Minister",
 				"Chancellor of the Exchequer",
@@ -155,23 +161,25 @@ class protooffice:
 	def __init__(self):
 		pass
 
-        def SelCteeproto(self, lsdatet, name, cons, committee):
-                self.sdatet = lsdatet
-                self.sourcedoc = "chgpages/selctee"
-                self.dept = committee
-                if not re.search("Committee", committee):
-                        self.dept += " Committee"
-                self.pos = ""
+	def SelCteeproto(self, lsdatet, name, cons, committee):
+		self.sdatet = lsdatet
+		self.sourcedoc = "chgpages/selctee"
+		self.dept = committee
+		if not re.search("Committee", committee):
+			self.dept += " Committee"
+		self.pos = ""
 		self.responsibility = ""
-                if re.search("\(Chairman\)", name):
-                        self.pos = "Chairman"
-                name = re.sub(" \(Chairman\)?$", "", name)
-                self.fullname = name
-                # Why doesn't this work with an accent?
-		if re.match("Mr Si.n Simon$", self.fullname):
-			self.fullname = "Mr Sion Simon"
-		if re.match("Mrs Si.n C\. James$", self.fullname):
-			self.fullname = "Mrs Sian C James"
+		if re.search("\(Chairman\)", name):
+			self.pos = "Chairman"
+		name = re.sub(" \(Chairman\)?$", "", name)
+
+		self.fullname = re.sub("^Mrs? ", "", name).strip()
+		# Why doesn't this work with an accent?
+
+		if re.match("Si.n Simon$", self.fullname):
+			self.fullname = "Sion Simon"
+		if re.match("Si.n C\. James$", self.fullname):
+			self.fullname = "Sian C James"
 #		if re.match("Anne Picking$", self.fullname):
 #			self.fullname = "Anne Moffat"
                 self.cons = re.sub("&amp;", "&", cons)
@@ -184,15 +192,18 @@ class protooffice:
 		self.sourcedoc = "chgpages/privsec"
 
 		nameMatch = re.match('(.*?)\s*\(([^)]*)\)\s*$', name)
-		self.fullname = nameMatch.group(1)
-		if re.match("Mr Si.n Simon$", self.fullname):
-			self.fullname = "Mr Sion Simon"
+		self.fullname = nameMatch.group(1).strip()
+		self.fullname = re.sub("^Mrs? ", "", self.fullname)
+		if re.match("Si.n Simon$", self.fullname):
+			self.fullname = "Sion Simon"
 		self.cons = re.sub("&amp;", "&", nameMatch.group(2))
 
 		# map down to the department for this record
 		self.pos = "PPS"
-                master = re.sub('\s+,', ',', master)
+		master = re.sub('\s+,', ',', master)
 		self.responsibility = master
+		if dept == "Prime Minister":
+			dept = "Prime Minister's Office"
 		self.dept = dept
 
 
@@ -206,30 +217,30 @@ class protooffice:
 		self.lasname = nampos.group(1)
 		self.froname = nampos.group(2)
 		self.cons = nampos.group(3)
-                if self.cons == 'MP for Worcester':
-                        self.cons = None # Can only be one
+		if self.cons == 'MP for Worcester':
+			self.cons = None # Can only be one
 
-                self.froname = re.sub("^Rt Hon ", "", self.froname)
-		self.froname = re.sub(" (?:QC|[COM]BE)?$", "", self.froname)
+		self.froname = re.sub("^Rt Hon\s+|^Mrs?\s+", "", self.froname)
+		self.froname = re.sub("\s+(?:QC|[COM]BE)?$", "", self.froname)
 		self.fullname = "%s %s" % (self.froname, self.lasname)
 
-                # sometimes a bracket of constituency gets through, when the name hasn't been reversed
-                mbrackinfullname = re.search("([^\(]*?)\s*\(([^\)]*)\)$", self.fullname)
-                if mbrackinfullname:
-                        self.fullname = mbrackinfullname.group(1)
-                        assert not self.cons
-                        self.cons = mbrackinfullname.group(2)
+		# sometimes a bracket of constituency gets through, when the name hasn't been reversed
+		mbrackinfullname = re.search("([^\(]*?)\s*\(([^\)]*)\)$", self.fullname)
+		if mbrackinfullname:
+			self.fullname = mbrackinfullname.group(1)
+			assert not self.cons
+			self.cons = mbrackinfullname.group(2)
 
 		# special Gareth Thomas match
-		if self.fullname == "Mr Gareth Thomas" and (
+		if self.fullname == "Gareth Thomas" and (
                 (self.sdatet[0] >= '2004-04-16' and self.sdatet[0] <=
                 '2004-09-20') or (self.sdatet[0] >= '2005-05-17')):
 			self.cons = "Harrow West"
 
 		if self.cons == "Worcs.":
                         self.cons = None # helps make the stick-chain work
-                
-                if self.fullname == "Lord Bach of Lutterworth":
+
+		if self.fullname == "Lord Bach of Lutterworth":
 			self.fullname = "Lord Bach"
 
 		# special Andrew Adonis match
@@ -302,21 +313,19 @@ class protooffice:
 
 	# this helps us chain the offices
 	def StickChain(self, nextrec, fn):
-                if (self.sdateend, self.stimeend) >= nextrec.sdatet:
-                        print self.sdateend, self.stimeend, nextrec.sdatet
-                        print fn
-                assert (self.sdateend, self.stimeend) < nextrec.sdatet
+		if (self.sdateend, self.stimeend) >= nextrec.sdatet:
+			print self.sdateend, self.stimeend, nextrec.sdatet
+			print fn
+		assert (self.sdateend, self.stimeend) < nextrec.sdatet
 		assert self.bopen
 
-#                if re.search("Crispin", self.fullname):
- #                       print fn, self.fullname, self.dept, self.pos, self.responsibility, nextrec.fullname, nextrec.dept, nextrec.pos, nextrec.responsibility
 		if (self.fullname, self.dept, self.pos, self.responsibility) == (nextrec.fullname, nextrec.dept, nextrec.pos, nextrec.responsibility):
-                        consCheckA = self.cons
-                        if consCheckA:
-                                consCheckA = memberList.canonicalcons(consCheckA, self.sdateend)
-                        consCheckB = nextrec.cons
-                        if consCheckB:
-                                consCheckB = memberList.canonicalcons(consCheckB, nextrec.sdatet[0])
+			consCheckA = self.cons
+			if consCheckA:
+				consCheckA = memberList.canonicalcons(consCheckA, self.sdateend)
+			consCheckB = nextrec.cons
+			if consCheckB:
+				consCheckB = memberList.canonicalcons(consCheckB, nextrec.sdatet[0])
 			if consCheckA != consCheckB:
 				raise Exception, "Mismatched cons name %s %s" % (self.cons, nextrec.cons)
 			(self.sdateend, self.stimeend) = nextrec.sdatet
@@ -337,6 +346,8 @@ def SpecMins(regex, fr, sdate):
                         nremadename = re.sub("\s+MP$", "", nremadename)
                         nremadename = re.sub(" [COM]BE$", "", nremadename)
                 bigarray.setdefault(sdate, {})
+                if specpost == "Universitites":
+                        specpost = "Universities"
                 bigarray[sdate][nremadename] = specpost
 
 
@@ -410,6 +421,8 @@ def ParseGovPostsPage(fr, gp):
                 #sutime = "12:00"
         else:
                 frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)&nbsp;(.*?)\s*</td>', fr)
+                if not frupdated:
+                    print "Failed to find lastupdated on:", gp
                 lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
                 y2k = int(lsudate.group(3)) < 50 and "20" or "19"  # I don't think our records go back far enough to merit this!
                 sudate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
@@ -492,7 +505,7 @@ def ParsePrivSecPage(fr, gp):
                 sdate = '2006-09-06'
                 stime = '12:00'
 	elif gp == "privsec0043_2006-09-29.html":
-                return "SKIPTHIS", None        
+                return "SKIPTHIS", None
         else:
                 frupdated = re.search('<td class="lastupdated">\s*Updated\s*([\d/]*)&nbsp;([\d:]*)\s*</td>', fr)
 	        if not frupdated:
@@ -511,12 +524,12 @@ def ParsePrivSecPage(fr, gp):
 							<font[^>]*><b>Attorney-General.see.</b>\s*Law\s+Officers.Department</font>
 							</td>\s*</tr>
 							([\s\S]*?)</table>''', fr)
-        
+
         # skip over a holding page that says the PPSs are not sorted out right after the reshuffle
         if re.search('Following the reshuffle', fr):
                 assert not Mppstext
                 return "SKIPTHIS", None
-                
+
         if not Mppstext:
                 print gp
                 #print fr
@@ -536,16 +549,16 @@ def ParsePrivSecPage(fr, gp):
 		deptMatch = re.match('\s*<td[^>]*>(?:<font[^>]*>|<b>){2,}([^<]*)(?:(?:</b>|</font>){2,}</td>)?\s*$(?i)', e1)
 		if deptMatch:
 			deptname = re.sub("&amp;", "&", deptMatch.group(1))  # carry forward department name
-                        deptname = re.sub("\s+", " ", deptname)
+			deptname = re.sub("\s+", " ", deptname)
 			continue
 		nameMatch = re.match("\s*<td>\s*([^<]*)</td>\s*<td>\s*([^<]*)(?:</td>)?\s*$(?i)", e1)
 		if nameMatch.group(1):
 			ministername = nameMatch.group(1)  # carry forward minister name (when more than one PPS)
-                        if ministername == 'Rt Hon Lord Rooker , Minister of State':
-                                ministername = 'Rt Hon Lord Rooker of Perry Bar , Minister of State'
+			if ministername == 'Rt Hon Lord Rooker , Minister of State':
+				ministername = 'Rt Hon Lord Rooker of Perry Bar , Minister of State'
 
-                if re.search('vacant(?i)', nameMatch.group(2)):
-                        continue
+		if re.search('vacant(?i)', nameMatch.group(2)):
+			continue
 
 		if deptname in ppsdepts:
 			ec = protooffice()
@@ -553,8 +566,8 @@ def ParsePrivSecPage(fr, gp):
 			res.append(ec)
 		else:
 			if deptname not in ppsnondepts:
-                                print "unknown department/post", deptname
-                                assert False
+				print "unknown department/post", deptname
+				assert False
 
 	return (sdate, stime), res
 
@@ -563,7 +576,6 @@ def ParsePrivSecPage(fr, gp):
 # this goes through all the files and chains positions together
 def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
 	fchgdir = os.path.join(chggdir, chgdirname)
-#	privsecdir = os.path.join(chggdir, "privsec")
 
 	gps = os.listdir(fchgdir)
 	gps = [ x for x in gps if re.match(".*\.html$", x) ]
@@ -571,6 +583,7 @@ def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
 
 	chainprotos = [ ]
 	sdatetlist = [ ]
+	sdatetprev = ("1997-05-01", "")
 	for gp in gps:
 		f = open(os.path.join(fchgdir, gp))
 		fr = f.read()
@@ -578,9 +591,20 @@ def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
 
 		# get the protooffices from this file
 		sdatet, proff = ParsePage(fr, gp)
-                if sdatet == "SKIPTHIS":
-                        continue
-                        
+		if sdatet == "SKIPTHIS":
+			continue
+
+		# all PPSs and committee memberships get cancelled when cross the general election.
+		if chgdirname != "govposts" and sdatet[0] > "2005-05-01" and sdatetprev[0] < "2005-05-01":
+			genelectioncuttoff = ("2005-04-11", "00:01")
+			#print "genelectioncuttoffgenelectioncuttoff", chgdirname
+
+			# close the chains that have not been stuck
+			for chainproto in chainprotos:
+				if chainproto.bopen:
+					chainproto.SetChainBack(genelectioncuttoff)
+
+
 		# stick any chains we can
 		proffnew = [ ]
 		lsxfromincomplete = ((not chainprotos) and ' fromdateincomplete="yes"') or ''
@@ -608,12 +632,13 @@ def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
 		# list of all the times scraping has been made
 		sdatetlist.append((sdatet[0], sdatet[1], chgdirname))
 
+		sdatetprev = sdatet
 
 	# no need to close off the running cases with year 9999, because it's done in the writexml
 	return chainprotos, sdatetlist
 
 # endeavour to get an id into all the names
-def SetNameMatch(cp, cpsdates):
+def SetNameMatch(cp, cpsdates, mpidmap):
 	cp.matchid = ""
 
 	# don't match names that are in the lords
@@ -622,7 +647,7 @@ def SetNameMatch(cp, cpsdates):
 	if not re.search("Duke |Lord |Baroness |Dame |^Earl ", cp.fullname):
 		fullname = cp.fullname
 		cons = cp.cons
-                if fullname == "Mr Michael Foster" and not cons:
+                if fullname == "Michael Foster" and not cons:
                         if cpsdates[0] in ["2006-05-08", "2006-05-09", "2006-05-10", "2006-05-11"]:
                                 cons = "Worcester"   # this Michael Foster had been a PPS
                         else:
@@ -642,28 +667,37 @@ def SetNameMatch(cp, cpsdates):
 		cp.remadecons = ""
 		date = cpsdates[0]
 
-                # Manual fixes for old date stuff. Hmm.
+		# Manual fixes for old date stuff. Hmm.
 		if cp.remadename == 'Lord Adonis' and date<'2005-05-23':
-                        date = '2005-05-23'
+			date = '2005-05-23'
 		if cp.remadename == 'Baroness Clark of Calton' and date=='2005-06-28':
-                        date = '2005-07-13'
+			date = '2005-07-13'
 		if (cp.remadename == 'Baroness Morgan of Huyton' or cp.remadename == 'Lord Rooker') and date=='2001-06-11':
-                        date = '2001-06-21'
+			date = '2001-06-21'
 		if cp.remadename == 'Lord Grocott' and date=='2001-06-12':
-                        date = '2001-07-03'
+			date = '2001-07-03'
 		if cp.remadename == 'Lord Davidson of Glen Cova':
-                        cp.remadename = 'Lord Davidson of Glen Clova'
+			cp.remadename = 'Lord Davidson of Glen Clova'
 		if cp.remadename == 'Lord Rooker of Perry Bar':
-                        cp.remadename = 'Lord Rooker'
-                if cp.remadename != 'Duke of Abercorn' and cp.remadename != 'Lord Vestey':
-			fullname = cp.remadename
-			cp.matchid = lordsList.GetLordIDfname(fullname, None, date) # loffice isn't used?
+			cp.remadename = 'Lord Rooker'
 
-	# make the structure we will sort by.  Note the ((,),) structure
-	cp.sortobj = ((re.sub("(.*) (\S+)$", "\\2 \\1", cp.remadename), cp.remadecons), cp.sdatestart)
+		bnonlords = cp.remadename in ['Duke of Abercorn', 'Lord Vestey']
+		if not bnonlords:
+			fullname = cp.remadename
+			cp.matchid = lordsList.GetLordIDfname(cp.remadename, None, date) # loffice isn't used?
+
+	# make the structure we will sort by.  Now uses the personids from people.xml (slightly backward.  It means for running from scratch you should execute personsets.py, this operation, and personsets.py again)
+	if cp.matchid in mpidmap:
+		cp.sortobj = mpidmap[cp.matchid]
+	else:
+		if not bnonlords:
+			print "mpid of", cp.remadename, "not found in people.xml; please run personsets.py and this command again"
+		cp.sortobj = (re.sub("(.*) (\S+)$", "\\2 \\1", cp.remadename), cp.remadecons)
+
+
 
 # indentify open for gluing
-def GlueGapBetweenDataSets(mofficegroup):
+def GlueGapDataSetGaptonewlabministers2003(mofficegroup):
 	# find the open dates at the two ends
 	opendatefront = [ ]
 	opendateback = [ ]
@@ -706,23 +740,73 @@ def GlueGapBetweenDataSets(mofficegroup):
 	#	print "\t%s\tpos='%s'\tdept='%s'" % (rp[1].remadename, rp[1].pos, rp[1].dept)
 
 
+
+def CheckPPStoMinisterpromotions(mofficegroup):
 	# now sneak in a test that MPs always get promoted from PPS to ministerialships
 	ppsdatesend = [ ]
 	ministerialdatesstart = [ ]
+	committeegovlist = [ ]
 	for rp in mofficegroup:
 		if rp[1].pos == "PPS":
-			ppsdatesend.append(rp[1].sdateend)
-		else:
-			ministerialdatesstart.append(rp[1].sdatestart)
+			committeegovlist.append((rp[1].sdatestart, "govpost", rp[1]))
+			if rp[1].dept != "Prime Minister's Office":
+				ppsdatesend.append(rp[1].sdateend)
+		elif rp[1].pos == "Chairman":
+			if rp[1].dept != "Modernisation of the House of Commons Committee":
+				committeegovlist.append((rp[1].sdatestart, "committee", rp[1]))
+		elif rp[1].pos == "":
+			pass # okay to be an ordinary member and a gov position
+			#committeegovlist.append((rp[1].sdatestart, "committee", rp[1]))
+		else:  # ministerial position
+			if rp[1].pos != "Second Church Estates Commissioner":
+				committeegovlist.append((rp[1].sdatestart, "govpost", rp[1]))
+			if rp[1].pos != "Assistant Whip":
+				ministerialdatesstart.append(rp[1].sdatestart)
+
+	# check we always go from PPS to ministerial position
 	if ppsdatesend and ministerialdatesstart:
-		#print ppsdatesend, ministerialdatesstart
 		if max(ppsdatesend) > min(ministerialdatesstart):
-			if mofficegroup[0][1].fullname not in ["Paul Clark", "Keith Hill"]:
+			if mofficegroup[0][1].fullname not in ["Paddy Tipping"]:
 				print "New demotion to PPS for: ", mofficegroup[0][1].fullname
+
+	# check that goverment positions don't overlap committee positions
+	committeegovlist.sort()
+	ioverlaps = 0
+	for i in range(len(committeegovlist)):
+		j = i + 1
+		while j < len(committeegovlist) and committeegovlist[i][2].sdateend > committeegovlist[j][2].sdatestart:
+			if (committeegovlist[i][1] == "govpost") != (committeegovlist[j][1] == "govpost"):
+				ioverlaps += 1
+			j += 1
+	if ioverlaps:
+		print "Overlapping government and committee posts for: ", mofficegroup[0][1].fullname
+
+class LoadMPIDmapping(xml.sax.handler.ContentHandler):
+	def __init__(self):
+		self.mpidmap = {}
+		self.in_person = None
+		parser = xml.sax.make_parser()
+		parser.setContentHandler(self)
+		parser.parse(peoplexml)
+	def startElement(self, name, attr):
+		if name == "person":
+			assert not self.in_person
+			self.in_person = attr["id"]
+		elif name == "office":
+			assert attr["id"] not in self.mpidmap
+			self.mpidmap[attr["id"]] = self.in_person
+	def endElement(self, name):
+		if name == "person":
+			self.in_person = None
 
 
 # main function that sticks it together
 def ParseGovPosts():
+
+	# get from our two sources (which unfortunately don't overlap, so they can't be merged)
+	# I believe our gap from 2003-10-15 to 2004-06-06 is complete, though there is a terrible gap in the PPSs
+	porres = newlabministers2003_10_15.ParseOldRecords()
+	cpres, sdatetlist = ParseChggdir("govposts", ParseGovPostsPage, True)
 
 	# parliamentary private secs
 	cpressec, sdatelistsec = ParseChggdir("privsec", ParsePrivSecPage, False)
@@ -730,10 +814,8 @@ def ParseGovPosts():
 	# parliamentary Select Committees
 	cpresselctee, sdatelistselctee = ParseChggdir("selctee", ParseSelCteePage, False)
 
-	# get from our two sources (which unfortunately don't overlap, so they can't be merged)
-	# We have a gap from 2003-10-15 to 2004-06-06 which needs filling !!! (I think it's done)
-	porres = newlabministers2003_10_15.ParseOldRecords()
-	cpres, sdatetlist = ParseChggdir("govposts", ParseGovPostsPage, True)
+
+	mpidmap = LoadMPIDmapping().mpidmap
 
 	# allocate ids and merge lists
 	rpcp = []
@@ -745,7 +827,7 @@ def ParseGovPosts():
 		if cpsdates[1] == opendate:
 			cpsdates[1] = newlabministers2003_10_15.dateofinfo
 
-		SetNameMatch(po, cpsdates)
+		SetNameMatch(po, cpsdates, mpidmap)
 		po.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
 		rpcp.append((po.sortobj, po))
 		moffidn += 1
@@ -758,7 +840,7 @@ def ParseGovPosts():
 		if cpsdates[0] == opendate:
 			cpsdates[0] = sdatetlist[0][0]
 
-		SetNameMatch(cp, cpsdates)
+		SetNameMatch(cp, cpsdates, mpidmap)
 		cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
 		rpcp.append((cp.sortobj, cp))
 		moffidn += 1
@@ -766,17 +848,17 @@ def ParseGovPosts():
 	# private secretaries
 	for cp in cpressec:
 		cpsdates = [cp.sdatestart, cp.sdateend]
-		SetNameMatch(cp, cpsdates)
+		SetNameMatch(cp, cpsdates, mpidmap)
 		cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
 		rpcp.append((cp.sortobj, cp))
 		moffidn += 1
 
-        for cp in cpresselctee:
-                cpsdates = [cp.sdatestart, cp.sdateend]
-                SetNameMatch(cp, cpsdates)
-                cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
-                rpcp.append((cp.sortobj, cp))
-                moffidn += 1
+	for cp in cpresselctee:
+		cpsdates = [cp.sdatestart, cp.sdateend]
+		SetNameMatch(cp, cpsdates, mpidmap)
+		cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
+		rpcp.append((cp.sortobj, cp))
+		moffidn += 1
 
 	# bring same to same places
 	# the sort object is by name, constituency, dateobject
@@ -785,13 +867,13 @@ def ParseGovPosts():
 
 	# now we batch them up into the person groups to make it visible
 	# and facilitate the once-only gluing of the two documents (newlabministers records and webpage scrapings) together
-	# this is a conservative grouping.  It may fail to group people which should be grouped, 
+	# this is a conservative grouping.  It may fail to group people which should be grouped,
 	# but this gets sorted out in the personsets.py
 	mofficegroups = [ ]
 	prevrpm = None
 	for rp in rpcp:
 		if rp:
-			if not prevrpm or prevrpm[0][0] != rp[0][0]:
+			if not prevrpm or prevrpm[0] != rp[0]:
 				mofficegroups.append([ ])
 			mofficegroups[-1].append(rp)
 			prevrpm = rp
@@ -799,8 +881,8 @@ def ParseGovPosts():
 
 	# now look for open ends
 	for mofficegroup in mofficegroups:
-		GlueGapBetweenDataSets(mofficegroup)
-
+		GlueGapDataSetGaptonewlabministers2003(mofficegroup)
+		CheckPPStoMinisterpromotions(mofficegroup)
 
 	fout = open(chgtmp, "w")
 	WriteXMLHeader(fout)
@@ -817,6 +899,7 @@ def ParseGovPosts():
 
 
 	# output the file, a tag round the groups of offices which form a single person
+	# (could sort them by last name as well)
 	for mofficegroup in mofficegroups:
 		fout.write('\n<ministerofficegroup>\n')
 		for rp in mofficegroup:
@@ -826,13 +909,8 @@ def ParseGovPosts():
 	fout.write("</publicwhip>\n\n")
 	fout.close();
 
-	# copy file over to its place
-	# ...
-
 	# we get the members directory and overwrite the file that's there
 	# (in future we'll have to load and check match it)
-	membersdir = os.path.normpath(os.path.abspath(os.path.join("..", "members")))
-	ministersxml = os.path.join(membersdir, "ministers.xml")
 
 	#print "Over-writing %s;\nDon't forget to check it in" % ministersxml
 	if os.path.isfile(ministersxml):
