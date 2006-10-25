@@ -102,6 +102,7 @@ def GlueByNext(fout, urla, urlx):
 
                 # post 2006-09
                 sr = re.sub("</?mekonParaReplace[^>]*>", "", sr)
+                sr = re.sub("</?mekonHrefReplace[^>]*>", "", sr)
                 sr = re.sub("<meta[^>]*>", "", sr)
                 sr = re.sub('<a name="([^"]*)" />', r'<a name="\1"></a>', sr) # Should be WriteCleanText like for Commons?
                 sr = re.sub('<div id="maincontent1">\s+<notus', '<hr> <notus', sr)
