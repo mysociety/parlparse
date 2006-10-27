@@ -216,7 +216,7 @@ def ExtractAllLinks(url, dgf, forcescrape):
 	xlines = ''.join(urx.readlines())
         urx.close()
         xlines = re.sub('^.*?<hr(?: /)?>(?is)', '', xlines)
-        res = re.findall('<a\s+href\s*=\s*"(.*?)#.*?">(?is)', xlines)
+        res = re.findall('<a\s+href\s*=\s*"([^"]+?)#.*?">(?is)', xlines)
 	if not res:
 		print url
 		raise Exception, "No link found!!!"
