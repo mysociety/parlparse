@@ -343,7 +343,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         if consids and (len(ids) > 1 or alwaysmatchcons):
             newids = sets.Set()
             for consattr in consids:
-                if consattr["fromdate"] <= date and date <= consattr["todate"]:
+                if date == None or (consattr["fromdate"] <= date and date <= consattr["todate"]):
                     consid = consattr['id']
                     matches = self.considtomembermap[consid]
                     for attr in matches:
@@ -358,9 +358,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         if len(ids) > 1:
             # only error for case where cons is present, others case happens too much
             if cons:
-                errstring = ('Matched multiple times: ' + fullname + " : " +
-                    (cons or "[nocons]") + " : " + date + " : " + ids.__str__() +
-                    ' - perhaps constituency spelling is not known')
+                errstring = 'Matched multiple times: %s : %s : %s : %s - perhaps constituency spelling is not known' % (fullname, cons or "[nocons]", date, ids.__str__())
                 # actually, even no-cons case happens too often
                 # (things like ministerships, with name in brackets after them)
                 print errstring

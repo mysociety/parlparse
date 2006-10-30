@@ -36,12 +36,19 @@ for line in content:
 	website = cols[4].strip()
 	if not website:
 		continue
-	id, name, cons =  memberList.matchfullnamecons(first + " " + last, cons, '2005-12-17')
-	if not id:
-		print >>sys.stderr, "Failed to find MP %s %s" % (first, last)
-		continue
-
-	pid = memberList.membertoperson(id)
+	id, name, cons =  memberList.matchfullnamecons(first + " " + last, cons, None)
+	if name == 'MultipleMatch':
+		oldpid = None
+		for match in cons:
+			pid = memberList.membertoperson(match)
+			if oldpid and oldpid != pid:
+				print >>sys.stderr, "More than one memberID %s %s" % (oldpid, pid)
+				sys.exit()
+	else:
+		if not id:
+			print >>sys.stderr, "Failed to find MP %s %s" % (first, last)
+			continue
+		pid = memberList.membertoperson(id)
 #	print >>sys.stderr, last, first, money
 	if pid in expmembers:
 		print >>sys.stderr, "Ignored repeated entry for " , pid
