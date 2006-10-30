@@ -50,15 +50,11 @@ for file in ('', 'former'):
 		id, newname, newcons =  memberList.matchfullnamecons(name, cons, yeardate)
 		if not id:
 			id, newname, newcons =  memberList.matchfullnamecons(name, cons, otheryeardate)
-		#id, newname, newcons =  memberList.matchcons(cons, yeardate)
-		#if not id:
-		#	id, newname, newcons = memberList.matchcons(cons, otheryeardate)
 		if not id:
 			raise Exception, "Failed to find MP in line %s" % line
 		name = newname
 		cons = newcons
 		pid = memberList.membertoperson(id)
-#		print >>sys.stderr, last, first, money
 		if id in expmembers:
 			print >>sys.stderr, "Ignored repeated entry for " , id
 		else:
