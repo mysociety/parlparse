@@ -90,8 +90,8 @@ regcolumnum6 = '(?:<br>)?\s*(?:</br>)?<b>[^:<]*:\s*column:?\s*\d+w?\s*</b><br>(?
 recolumnumvals = re.compile('(?:<p>|\s|</ul>|</font>|<br>&nbsp;<br>|<br>|</br>)*<(?:i|b)>([^:<]*):\s*column:?\s*(\d+)w?\s*</(?:i|b)>(?:<p>|\s|<ul>|<font[^>]*>|<br>&nbsp;<br>|<br>|</br>)*$(?i)')
 
 #<i>23 Oct 2003 : Column 640W&#151;continued</i>
-regcolnumcont = '<p><b>[^:<]*:\s*column\s*\d+w?</b>&#151;continued</p>|<i>[^:<]*:\s*column\s*\d+w?&#151;continued\s*</i>|\[Continued from column \d+w?\](?i)'
-recolnumcontvals = re.compile('<p><b>([^:<]*):\s*column\s*(\d+)w?</b>&#151;continued</p>|<i>([^:<]*):\s*column\s*(\d+)w?&#151;continued</i>|\[Continued from column (\d+)w?\](?i)')
+regcolnumcont = '<p><b>[^:<]*:\s*column\s*\d+w?</b>&#151;continued</p>|<i>[^:<]*:\s*column\s*\d+w?&#151;continued\s*</i>|\[Continued from column \d+w?\]|\[Continued in Column \d+W\](?i)'
+recolnumcontvals = re.compile('<p><b>([^:<]*):\s*column\s*(\d+)w?</b>&#151;continued</p>|<i>([^:<]*):\s*column\s*(\d+)w?&#151;continued</i>|\[Continued from column (\d+)w?\]|\[Continued in Column (\d+)W\](?i)')
 
 # <a name="column_1099">
 reaname = '<a name="\S*?">(?i)'
@@ -153,6 +153,15 @@ def FilterWransColnum(fout, text, sdate):
                                         raise ContextException("Cont column number disagrees %d -- %s" % (colnum, fss), fragment=fss, stamp=stamp)
                                 fout.write(' ')
                                 continue
+                        if columncontg.group(6):
+                                lcolnum = string.atoi(columncontg.group(6))
+                                if colnum+1 != lcolnum:
+                                        raise ContextException("Cont column number disagrees %d -- %s" % (colnum, fss), fragment=fss, stamp=stamp)
+			        colnum = lcolnum
+                                stamp.stamp = '<stamp coldate="%s" colnum="%sW"/>' % (sdate, lcolnum)
+        			fout.write(' ')
+                                fout.write(stamp.stamp)
+        			continue
 
 		# anchor names from HTML <a name="xxx">
 		anameg = reanamevals.match(fss)
