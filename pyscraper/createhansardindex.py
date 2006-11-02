@@ -214,7 +214,7 @@ def CmAllIndexPages(urlindex):
 
 	# extract the per month volumes
 	# <a href="cmhn0310.htm"><b>October</b></a>
-	monthindexp = '<a href="([^"]*)"><b>(?:%s)</b>(?i)' %  monthnames
+	monthindexp = '<a href="([^"]*)"[^>]*>(?:%s)</a>(?i)' %  monthnames
 	monthlinks = re.findall(monthindexp, srindex)
 	for monthl in monthlinks:
 		res.append(urlparse.urljoin(urlindex, re.sub('\s', '', monthl)))
