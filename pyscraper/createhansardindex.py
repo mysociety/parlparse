@@ -42,7 +42,7 @@ monthnames = 'January|Janaury|February|March|April|May|June|July|August|Septembe
 daynames = '(?:Sun|Mon|Tues|Wednes|Thurs|Fri|Satur)day'
 # the chunk [A-Za-z<> ] catches the text "Questions tabled during the recess
 # and answered on" on http://www.publications.parliament.uk/pa/cm/cmvol390.htm
-redatename = '<b>[A-Za-z<> ]*?\s*(\S+\s+\d+\s+(?:%s)\s+\d+)\s*</b>' % monthnames
+redatename = '<b>[A-Za-z<> ]*?\s*(\S+\s+\d+\s+(?:%s)(?:\s+\d+)?)\s*</b>' % monthnames
 revotelink  = '<a\s+href="([^"]*)">(?:<b>\s*)?((?:%s),(?:&nbsp;| )\d+\S*?(?:&nbsp;| )(?:%s)(?:&nbsp;| )\d+)\s*(?:</b>)?</(?:a|td)>(?i)' % (daynames, monthnames)
 reqbooklink = '<a\s+href="([^"]*)">(?:<b>\s*)?((?:%s)(?:&nbsp;| )\d+\S*?(?:&nbsp;|\s+)(?:%s)(?:&nbsp;| )\d+)</(?:b|)>(?i)' % (daynames, monthnames)
 relink = '<a\s+href="([^"]*)">(?:<b>)?([^<]*)(?:</b>)?</(?:a|font)>(?i)'
