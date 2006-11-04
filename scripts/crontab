@@ -28,5 +28,5 @@
 0 1 6 Dec,Jun * /bin/echo "Six monthly notice: Make source code backup tarballs of parlparse, theyworkforyou and publicwhip and put them on SourceForge"
 
 # Test of new stuff, to Julian only
-MAILTO=julian@goatchurch.org.uk
-5 8 * * * $HOME/parlparse/scripts/lordsonlytest
+#MAILTO=julian@goatchurch.org.uk
+#5 8 * * * $HOME/parlparse/scripts/lordsonlytest

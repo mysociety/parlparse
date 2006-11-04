@@ -420,12 +420,16 @@ def ParseGovPostsPage(fr, gp):
                 #sudate = "2006-09-25"
                 #sutime = "12:00"
         else:
-                frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)&nbsp;(.*?)\s*</td>', fr)
+                frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
                 if not frupdated:
                     print "Failed to find lastupdated on:", gp
-                lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
-                y2k = int(lsudate.group(3)) < 50 and "20" or "19"  # I don't think our records go back far enough to merit this!
-                sudate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
+                lsudate = re.match("(\d\d)/(\d\d)/(\d\d\d\d)$", frupdated.group(1))
+                if lsudate:
+                    sudate = "%s-%s-%s" % (lsudate.group(3), lsudate.group(2), lsudate.group(1))
+                else:
+                    lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
+                    y2k = int(lsudate.group(3)) < 50 and "20" or "19"  # I don't think our records go back far enough to merit this!
+                    sudate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
                 sutime = frupdated.group(2)
                 # extract the date on the document
                 frdate = re.search(">Her Majesty's Government at\s+(.*?)\s*<", fr)
@@ -504,15 +508,19 @@ def ParsePrivSecPage(fr, gp):
         elif (gp == 'privsec0041_2006-09-07.html'):
                 sdate = '2006-09-06'
                 stime = '12:00'
-	elif gp == "privsec0043_2006-09-29.html":
+	elif gp == "privsec0043_2006-09-29.html" or gp == "privsec0044_2006-10-26.html":
                 return "SKIPTHIS", None
         else:
-                frupdated = re.search('<td class="lastupdated">\s*Updated\s*([\d/]*)&nbsp;([\d:]*)\s*</td>', fr)
+                frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
 	        if not frupdated:
                         print "failed to find lastupdated in", gp
-                lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
-	        y2k = int(lsudate.group(3)) < 50 and "20" or "19"
-	        sudate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
+                lsudate = re.match("(\d\d)/(\d\d)/(\d\d\d\d)$", frupdated.group(1))
+                if lsudate:
+                    sudate = "%s-%s-%s" % (lsudate.group(3), lsudate.group(2), lsudate.group(1))
+                else:
+                    lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
+	            y2k = int(lsudate.group(3)) < 50 and "20" or "19"
+	            sudate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
 	        sutime = frupdated.group(2)
 
 	        sdate = sudate
