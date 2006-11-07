@@ -62,7 +62,7 @@ class CommonsIndex(xml.sax.handler.ContentHandler):
 			# check for repeats - error in input XML
 			key = (attr["date"], attr["type"])
 			if key in self.check:
-				raise Exception, "Same date/type twice %s %s\nurl1: %s\nurl2: %s" % (ddr + (self.check[key],))
+				raise Exception, "Same date/type twice %s %s\nurl1: %s\nurl2: %s" % (attr["date"], attr["type"], attr["url"], self.check[key])
 			self.check[key] = attr["url"]
 			
 			self.res.append(CommonsIndexElement(attr["date"], attr["type"], attr["url"]))
