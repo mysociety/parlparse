@@ -190,6 +190,7 @@
 <chgpageupdates date="2006-10-24" time="10:01" chgtype="selctee"/>
 <chgpageupdates date="2006-10-31" time="13:08" chgtype="selctee"/>
 <chgpageupdates date="2006-11-01" time="10:49" chgtype="selctee"/>
+<chgpageupdates date="2006-11-16" time="09:50" chgtype="selctee"/>
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1000" name="Duke of Abercorn" dept="HM Household" position="Lord Steward" fromdate="2000-01-01" todate="9999-12-31" source="newlabministers2003-10-15 chgpages/govposts"></moffice>
@@ -621,6 +622,7 @@
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1797" name="Simon Burns" matchid="uk.org.publicwhip/member/767" dept="Health Committee" position="" fromdate="2004-05-28" fromtime="10:00" todate="2005-04-11" totime="00:01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2813" name="Simon Burns" matchid="uk.org.publicwhip/member/1493" dept="Armed Forces Bill Committee" position="" fromdate="2005-12-20" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2961" name="Simon Burns" matchid="uk.org.publicwhip/member/1493" dept="Administration Committee" position="" fromdate="2006-11-16" fromtime="09:50" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -735,6 +737,7 @@
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/2639" name="Christopher Chope" matchid="uk.org.publicwhip/member/1502" dept="Chairmen's Panel Committee" position="" fromdate="2005-11-01" fromtime="14:48" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2811" name="Christopher Chope" matchid="uk.org.publicwhip/member/1502" dept="Procedure Committee" position="" fromdate="2005-12-13" fromtime="15:15" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2962" name="Christopher Chope" matchid="uk.org.publicwhip/member/1502" dept="Administration Committee" position="" fromdate="2006-11-16" fromtime="09:50" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -926,7 +929,7 @@
 <moffice id="uk.org.publicwhip/moffice/1477" name="Jim Cunningham" matchid="uk.org.publicwhip/member/1518" dept="Law Officers' Department" position="PPS" responsibility="Mr Mike O'Brien, Solicitor General" fromdate="2005-11-10" fromtime="11:23" todate="9999-12-31" source="chgpages/privsec"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1636" name="Jim Cunningham" matchid="uk.org.publicwhip/member/833" dept="Constitutional Affairs Committee" position="" fromdate="2004-05-28" fromtime="10:00" todate="2005-04-11" totime="00:01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2453" name="Jim Cunningham" matchid="uk.org.publicwhip/member/1518" dept="Office of the Deputy Prime Minister: Housing, Planning, Local Government and the Regions Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="2005-12-06" totime="12:19" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/2465" name="Jim Cunningham" matchid="uk.org.publicwhip/member/1518" dept="Procedure Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2465" name="Jim Cunningham" matchid="uk.org.publicwhip/member/1518" dept="Procedure Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="2006-11-16" totime="09:50" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -4046,7 +4049,7 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
-<moffice id="uk.org.publicwhip/moffice/2285" name="Mark Harper" matchid="uk.org.publicwhip/member/1588" dept="Administration Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2285" name="Mark Harper" matchid="uk.org.publicwhip/member/1588" dept="Administration Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="2006-11-16" totime="09:50" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -4071,6 +4074,7 @@
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/2800" name="Linda Riordan" matchid="uk.org.publicwhip/member/1607" dept="Crossrail Bill Committee" position="" fromdate="2005-12-06" fromtime="12:19" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2789" name="Linda Riordan" matchid="uk.org.publicwhip/member/1607" dept="Environmental Audit Committee" position="" fromdate="2005-11-22" fromtime="13:20" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2963" name="Linda Riordan" matchid="uk.org.publicwhip/member/1607" dept="Procedure Committee" position="" fromdate="2006-11-16" fromtime="09:50" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
