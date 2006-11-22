@@ -264,7 +264,7 @@ def SplitLordsText(text, sdate):
                 res[2] = page + res[2]
                 page = re.findall('<page[^>]*>', res[2])[-1]
 		assert not re.search('<a name="column_(?!WS)\D+\d+">', res[2])
-		assert re.search('center"?>(?:<a name="[^"]*"></a>)?Written Statements', res[2])
+		assert re.search('center"?>(?:<a name="[^"]*"></a>)?Written Statements?', res[2])
 
 	# check the title and column numbering in the written answers
 	if res[3]:
