@@ -53,7 +53,7 @@ def StripLordsDebateHeadings(headspeak, sdate):
 	else:
 		ih = ih + 1
 
-	if re.match("THE QUEEN(?:'|&....;)S SPEECH", headspeak[ih][0]):
+	if re.match('(?:<stamp aname="[^"]*"/>)*(?:THE )?(?i)QUEEN(?:\'|&....;)S SPEECH', headspeak[ih][0]):
 		print headspeak[ih][0]
 		print "QUEENS SPEECH"
 		# don't advance, because this is the heading (works for 2005-05-17)

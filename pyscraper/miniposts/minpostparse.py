@@ -111,7 +111,7 @@ ppsnondepts = [ "HM Official Opposition", "Leader of the Opposition" ]
 import newlabministers2003_10_15
 from newlabministers2003_10_15 import opendate
 
-renampos = re.compile("""<td><b>
+renampos = re.compile("""<td>\s*<b>
         ([^,]*),	# last name
         \s*
         ([^<\(]*?)	# first name
@@ -249,6 +249,7 @@ class protooffice:
 
 		pos = nampos.group(4).strip()
 		dept = (nampos.group(5) or "No Department").strip()
+                dept = re.sub("\s+", " ", dept)
 		responsibility = ""
 		if self.sdatet[0] in bigarray and self.fullname in bigarray[self.sdatet[0]]:
 			responsibility = bigarray[self.sdatet[0]][self.fullname]
