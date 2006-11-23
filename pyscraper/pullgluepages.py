@@ -120,13 +120,17 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
 			(urlx, time.strftime('%Y-%m-%d', lt), time.strftime('%X', lt)))
 
         # Patches
-        if sdate=='2006-05-10' or sdate=='2006-05-09':
+        if sdate=='2006-05-09' and urla[0]=='http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060508/text/60508w0308.htm':
                 urla = urla[1:]
-        if sdate=='2006-06-05':
+        if sdate=='2006-05-10' and urla[0]=='http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060509/text/60510w0332.htm':
+                urla = urla[1:]
+        if sdate=='2006-06-05' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0640.htm':
                 urla = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060602/text/60602w0601.htm', 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0602.htm'] + urla
         if sdate=='2006-10-11' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061011/debtext/61011-0001.htm':
                 urla = [urla[0], urla[1], urla[3], urla[4]] # Incorrect link in middle of index
-        if sdate=='2006-10-30':
+        if sdate=='2006-10-30' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061030/text/61030w0001.htm':
+                urla = [urla[0]]
+        if sdate=='2006-11-22' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061122/debtext/61122-0001.htm':
                 urla = [urla[0]]
 
 	# loop which scrapes through all the pages following the nextlinks
@@ -151,7 +155,11 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 sr = re.sub('<body>\s+<!--<hd>--><br>', '<body><hr><!--<hd>--><br>', sr)
                 
                 # To cope with post 2006-09...
+                sr = re.sub('<div id="maincontent1">\s*<p>', '<hr><p>', sr)
                 sr = re.sub('<div id="maincontent1">\s*<br>', '<hr><br>', sr)
+                sr = re.sub('<div id="maincontent1">\s*<h3', '<hr><h3', sr)
+                sr = re.sub('<div id="maincontent1">\s*<!--<hd>-->', '<hr>', sr)
+                sr = re.sub('<div id="maincontent1">\s*<notus', '<hr> <notus', sr) # 2006-05-09
                 if sdate=='2006-11-07' or sdate=='2006-11-08':
                         sr = re.sub('<!--end of UK Parliament banner for Publications-->\s*<h2', '<hr> <h2', sr)
                 sr = re.sub("</?mekonParaReplace[^>]*>", "", sr)
