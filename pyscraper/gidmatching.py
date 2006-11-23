@@ -42,7 +42,7 @@ def GetMinIndex(indx, a):
 # We make great use of the indices of the different lists
 def FactorChanges(flatb, scrapeversion):
 	# quick break into the chunks
-	chks = re.findall("<(major-heading|minor-heading|oral-heading|speech|division)\s(.*?)>\n([\s\S]*?)\n</(major-heading|minor-heading|oral-heading|speech|division)>",
+	chks = re.findall("<(major-heading|minor-heading|oral-heading|speech|division|ques|reply)\s(.*?)>\n([\s\S]*?)\n</(major-heading|minor-heading|oral-heading|speech|division|ques|reply)>",
 					  scrapeversion)
 
 
