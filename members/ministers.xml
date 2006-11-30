@@ -197,6 +197,7 @@
 <chgpageupdates date="2006-11-01" time="10:49" chgtype="selctee"/>
 <chgpageupdates date="2006-11-16" time="09:50" chgtype="selctee"/>
 <chgpageupdates date="2006-11-17" time="10:22" chgtype="selctee"/>
+<chgpageupdates date="2006-11-29" time="10:22" chgtype="selctee"/>
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1000" name="Duke of Abercorn" dept="HM Household" position="Lord Steward" fromdate="2000-01-01" todate="9999-12-31" source="newlabministers2003-10-15 chgpages/govposts"></moffice>
@@ -1662,6 +1663,10 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/2988" name="Bernard Jenkin" matchid="uk.org.publicwhip/member/1579" dept="Defence Committee" position="" fromdate="2006-11-29" fromtime="10:22" todate="9999-12-31" source="chgpages/selctee"></moffice>
+</ministerofficegroup>
+
+<ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1980" name="Brian Jenkins" matchid="uk.org.publicwhip/member/997" dept="Public Accounts Committee" position="" fromdate="2004-05-28" fromtime="10:00" todate="2005-04-11" totime="00:01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2056" name="Brian Jenkins" matchid="uk.org.publicwhip/member/997" dept="Standing Orders Committee" position="" fromdate="2004-05-28" fromtime="10:00" todate="2005-04-11" totime="00:01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2132" name="Brian Jenkins" matchid="uk.org.publicwhip/member/997" dept="Unopposed Bills (Panel) Committee" position="" fromdate="2004-05-28" fromtime="10:00" todate="2005-04-11" totime="00:01" source="chgpages/selctee"></moffice>
@@ -2135,7 +2140,7 @@
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1811" name="John Maples" matchid="uk.org.publicwhip/member/1094" dept="Foreign Affairs Committee" position="" fromdate="2004-05-28" fromtime="10:00" todate="2005-04-11" totime="00:01" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/2399" name="John Maples" matchid="uk.org.publicwhip/member/1847" dept="Foreign Affairs Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2399" name="John Maples" matchid="uk.org.publicwhip/member/1847" dept="Foreign Affairs Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="2006-11-29" totime="10:22" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -2245,7 +2250,7 @@
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1079" name="Margaret Moran" matchid="uk.org.publicwhip/member/1120" dept="HM Treasury" position="Assistant Whip" fromdate="2003-06-13" todate="2005-05-11" totime="17:24" source="newlabministers2003-10-15 chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1860" name="Margaret Moran" matchid="uk.org.publicwhip/member/1120" dept="Information Committee" position="" fromdate="2004-05-28" fromtime="10:00" todate="2005-04-11" totime="00:01" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/2636" name="Margaret Moran" matchid="uk.org.publicwhip/member/1698" dept="Science and Technology Committee" position="" fromdate="2005-07-20" fromtime="14:36" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2636" name="Margaret Moran" matchid="uk.org.publicwhip/member/1698" dept="Science and Technology Committee" position="" fromdate="2005-07-20" fromtime="14:36" todate="2006-11-29" totime="10:22" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2910" name="Margaret Moran" matchid="uk.org.publicwhip/member/1698" dept="Home Affairs Committee" position="" fromdate="2006-06-14" fromtime="10:48" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
@@ -2273,6 +2278,10 @@
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/199" name="John Morris" matchid="uk.org.publicwhip/member/446" dept="Law Officers' Department" position="Attorney General" fromdate="1997-05-05" todate="1999-07-28" source="newlabministers2003-10-15"></moffice>
+</ministerofficegroup>
+
+<ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/2989" name="Malcolm Moss" matchid="uk.org.publicwhip/member/1474" dept="Foreign Affairs Committee" position="" fromdate="2006-11-29" fromtime="10:22" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -2899,6 +2908,7 @@
 <moffice id="uk.org.publicwhip/moffice/2103" name="Graham Stringer" matchid="uk.org.publicwhip/member/1260" dept="Transport Committee" position="" fromdate="2004-05-28" fromtime="10:00" todate="2005-04-11" totime="00:01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2581" name="Graham Stringer" matchid="uk.org.publicwhip/member/1704" dept="Transport Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2855" name="Graham Stringer" matchid="uk.org.publicwhip/member/1704" dept="Modernisation of the House of Commons Committee" position="" fromdate="2006-01-18" fromtime="10:32" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2990" name="Graham Stringer" matchid="uk.org.publicwhip/member/1704" dept="Science and Technology Committee" position="" fromdate="2006-11-29" fromtime="10:22" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -4197,7 +4207,7 @@
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/2478" name="Mark Lancaster" matchid="uk.org.publicwhip/member/1715" dept="Office of the Deputy Prime Minister: Housing, Planning, Local Government and the Regions Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="2006-01-18" totime="10:32" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/2850" name="Mark Lancaster" matchid="uk.org.publicwhip/member/1715" dept="Defence Committee" position="" fromdate="2006-01-18" fromtime="10:32" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2850" name="Mark Lancaster" matchid="uk.org.publicwhip/member/1715" dept="Defence Committee" position="" fromdate="2006-01-18" fromtime="10:32" todate="2006-11-29" totime="10:22" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
