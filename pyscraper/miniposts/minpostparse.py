@@ -373,6 +373,8 @@ def ParseSelCteePage(fr, gp):
                         sudate = msdate
                 if sudate != msdate and sudate == '2006-07-05':
                         sudate = msdate
+                if sudate != msdate and sudate == '2006-11-17':
+                        sudate = msdate
 
         sdate = sudate
         stime = sutime
