@@ -198,6 +198,7 @@
 <chgpageupdates date="2006-11-16" time="09:50" chgtype="selctee"/>
 <chgpageupdates date="2006-11-17" time="10:22" chgtype="selctee"/>
 <chgpageupdates date="2006-11-29" time="10:22" chgtype="selctee"/>
+<chgpageupdates date="2006-12-01" time="10:22" chgtype="selctee"/>
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1000" name="Duke of Abercorn" dept="HM Household" position="Lord Steward" fromdate="2000-01-01" todate="9999-12-31" source="newlabministers2003-10-15 chgpages/govposts"></moffice>
@@ -463,8 +464,8 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
-<moffice id="uk.org.publicwhip/moffice/1277" name="Liz Blackman" matchid="uk.org.publicwhip/member/1576" dept="HM Treasury" position="Assistant Whip" fromdate="2006-05-08" fromtime="00:01" todate="9999-12-31" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1489" name="Liz Blackman" matchid="uk.org.publicwhip/member/1576" dept="Leader of the House of Commons" position="PPS" responsibility="Rt Hon Geoff Hoon, Lord Privy Seal" fromdate="2005-11-10" fromtime="11:23" todate="2006-05-08" totime="00:01" source="chgpages/privsec"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1277" name="Liz Blackman" matchid="uk.org.publicwhip/member/1576" dept="HM Treasury" position="Assistant Whip" fromdate="2006-05-08" fromtime="00:01" todate="9999-12-31" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1369" name="Liz Blackman" matchid="uk.org.publicwhip/member/735" dept="Ministry of Defence" position="PPS" responsibility="Rt Hon Geoff Hoon, Secretary of State" fromdate="2004-05-13" fromtime="12:50" todate="2005-04-11" totime="00:01" source="chgpages/privsec"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2446" name="Liz Blackman" matchid="uk.org.publicwhip/member/1576" dept="Modernisation of the House of Commons Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="2006-05-16" totime="17:36" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
@@ -568,9 +569,9 @@
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1537" name="Russell Brown" matchid="uk.org.publicwhip/member/1969" dept="Scotland Office" position="PPS" responsibility="Rt Hon Douglas Alexander, Secretary of State" fromdate="2006-05-08" fromtime="00:01" todate="9999-12-31" source="chgpages/privsec"></moffice>
-<moffice id="uk.org.publicwhip/moffice/1554" name="Russell Brown" matchid="uk.org.publicwhip/member/1969" dept="Department for Transport" position="PPS" responsibility="Rt Hon Douglas Alexander, Secretary of State" fromdate="2006-06-27" fromtime="17:06" todate="9999-12-31" source="chgpages/privsec"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1496" name="Russell Brown" matchid="uk.org.publicwhip/member/1969" dept="Scotland Office" position="PPS" responsibility="Rt Hon Alistair Darling, Secretary of State" fromdate="2005-11-10" fromtime="11:23" todate="2006-05-08" totime="00:01" source="chgpages/privsec"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1502" name="Russell Brown" matchid="uk.org.publicwhip/member/1969" dept="Department for Transport" position="PPS" responsibility="Rt Hon Alistair Darling, Secretary of State" fromdate="2005-11-10" fromtime="11:23" todate="2006-05-08" totime="00:01" source="chgpages/privsec"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1554" name="Russell Brown" matchid="uk.org.publicwhip/member/1969" dept="Department for Transport" position="PPS" responsibility="Rt Hon Douglas Alexander, Secretary of State" fromdate="2006-06-27" fromtime="17:06" todate="9999-12-31" source="chgpages/privsec"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1999" name="Russell Brown" matchid="uk.org.publicwhip/member/757" dept="Regulatory Reform Committee" position="" fromdate="2004-05-28" fromtime="10:00" todate="2005-04-11" totime="00:01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2897" name="Russell Brown" matchid="uk.org.publicwhip/member/1969" dept="Conventions (Joint Committee)" position="" fromdate="2006-06-13" fromtime="10:48" todate="2006-06-14" totime="10:48" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2800" name="Russell Brown" matchid="uk.org.publicwhip/member/1969" dept="Consolidation etc. Bills (Joint Committee)" position="" fromdate="2005-11-15" fromtime="14:25" todate="9999-12-31" source="chgpages/selctee"></moffice>
@@ -1456,8 +1457,8 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
-<moffice id="uk.org.publicwhip/moffice/1561" name="Stephen Hesford" matchid="uk.org.publicwhip/member/1931" dept="Leader of the House of Lords" position="PPS" responsibility="Rt Hon Baroness Amos" fromdate="2006-08-17" fromtime="18:17" todate="2006-09-06" totime="12:00" source="chgpages/privsec"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1495" name="Stephen Hesford" matchid="uk.org.publicwhip/member/1931" dept="Privy Council Office" position="PPS" responsibility="Rt Hon Baroness Amos, President of the Council" fromdate="2005-11-10" fromtime="11:23" todate="9999-12-31" source="chgpages/privsec"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1561" name="Stephen Hesford" matchid="uk.org.publicwhip/member/1931" dept="Leader of the House of Lords" position="PPS" responsibility="Rt Hon Baroness Amos" fromdate="2006-08-17" fromtime="18:17" todate="2006-09-06" totime="12:00" source="chgpages/privsec"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1730" name="Stephen Hesford" matchid="uk.org.publicwhip/member/959" dept="Draft Mental Incapacity Bill (Joint Committee)" position="" fromdate="2004-05-28" fromtime="10:00" todate="2004-06-11" totime="10:08" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2947" name="Stephen Hesford" matchid="uk.org.publicwhip/member/1931" dept="Draft Legal ServicesBill (Joint Committee)" position="" fromdate="2006-08-03" fromtime="15:53" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
@@ -2419,10 +2420,10 @@
 <moffice id="uk.org.publicwhip/moffice/1194" name="Ian Pearson" matchid="uk.org.publicwhip/member/1554" dept="Foreign &amp; Commonwealth Office" position="Minister of State" fromdate="2005-05-11" fromtime="17:24" todate="2005-05-16" totime="11:24" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1193" name="Ian Pearson" matchid="uk.org.publicwhip/member/1554" dept="Department for Productivity, Energy and Industry" position="Minister of State" fromdate="2005-05-11" fromtime="17:24" todate="2005-05-16" totime="11:24" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1311" name="Ian Pearson" matchid="uk.org.publicwhip/member/1554" dept="Department for Environment, Food and Rural Affairs" position="Minister of State" fromdate="2006-05-08" fromtime="00:01" todate="2006-06-06" totime="14:55" source="chgpages/govposts"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1338" name="Ian Pearson" matchid="uk.org.publicwhip/member/1554" dept="Department for Environment, Food and Rural Affairs" position="Minister of State" responsibility="Climate Change and the Environment" fromdate="2006-06-06" fromtime="14:55" todate="9999-12-31" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1223" name="Ian Pearson" matchid="uk.org.publicwhip/member/1554" dept="Foreign &amp; Commonwealth Office" position="Minister of State" responsibility="Trade" fromdate="2005-05-16" fromtime="11:24" todate="2006-05-08" totime="00:01" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1224" name="Ian Pearson" matchid="uk.org.publicwhip/member/1554" dept="Department for Productivity, Energy and Industry" position="Minister of State" responsibility="Trade" fromdate="2005-05-16" fromtime="11:24" todate="2005-05-18" totime="16:36" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1234" name="Ian Pearson" matchid="uk.org.publicwhip/member/1554" dept="Department of Trade and Industry" position="Minister of State" responsibility="Trade" fromdate="2005-05-18" fromtime="16:36" todate="2006-05-08" totime="00:01" source="chgpages/govposts"></moffice>
-<moffice id="uk.org.publicwhip/moffice/1338" name="Ian Pearson" matchid="uk.org.publicwhip/member/1554" dept="Department for Environment, Food and Rural Affairs" position="Minister of State" responsibility="Climate Change and the Environment" fromdate="2006-06-06" fromtime="14:55" todate="9999-12-31" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2913" name="Ian Pearson" matchid="uk.org.publicwhip/member/1554" dept="Environmental Audit Committee" position="" fromdate="2006-06-27" fromtime="10:48" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
@@ -2704,8 +2705,8 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
-<moffice id="uk.org.publicwhip/moffice/1317" name="Jonathan Shaw" matchid="uk.org.publicwhip/member/1491" dept="HM Treasury" position="Assistant Whip" fromdate="2006-05-08" fromtime="00:01" todate="9999-12-31" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1468" name="Jonathan Shaw" matchid="uk.org.publicwhip/member/1491" dept="Department for Education and Skills" position="PPS" responsibility="Rt Hon Ruth Kelly, Secretary of State" fromdate="2005-11-10" fromtime="11:23" todate="2006-05-08" totime="00:01" source="chgpages/privsec"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1317" name="Jonathan Shaw" matchid="uk.org.publicwhip/member/1491" dept="HM Treasury" position="Assistant Whip" fromdate="2006-05-08" fromtime="00:01" todate="9999-12-31" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1743" name="Jonathan R. Shaw" matchid="uk.org.publicwhip/member/1217" dept="Education &amp; Skills Committee" position="" fromdate="2004-05-28" fromtime="10:00" todate="2005-04-11" totime="00:01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2274" name="Jonathan R. Shaw" matchid="uk.org.publicwhip/member/1217" dept="Draft Children (Contact) and Adoption Bill (Joint Committee)" position="" fromdate="2005-02-10" fromtime="15:52" todate="2005-04-11" totime="00:01" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
@@ -3396,8 +3397,8 @@
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1151" name="Kevin Brennan" matchid="uk.org.publicwhip/member/1483" dept="HM Treasury" position="Assistant Whip" fromdate="2005-05-11" fromtime="17:24" todate="2006-05-08" totime="00:01" source="chgpages/govposts"></moffice>
-<moffice id="uk.org.publicwhip/moffice/1279" name="Kevin Brennan" matchid="uk.org.publicwhip/member/1483" dept="HM Treasury" position="Lords Commissioner" fromdate="2006-05-08" fromtime="00:01" todate="9999-12-31" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1427" name="Kevin Brennan" matchid="uk.org.publicwhip/member/753" dept="Cabinet Office" position="PPS" responsibility="Rt Hon Alan Milburn, Chancellor of the Duchy of Lancaster" fromdate="2004-11-02" fromtime="11:59" todate="2005-04-11" totime="00:01" source="chgpages/privsec"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1279" name="Kevin Brennan" matchid="uk.org.publicwhip/member/1483" dept="HM Treasury" position="Lords Commissioner" fromdate="2006-05-08" fromtime="00:01" todate="9999-12-31" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1988" name="Kevin Brennan" matchid="uk.org.publicwhip/member/753" dept="Public Administration Committee" position="" fromdate="2004-05-28" fromtime="10:00" todate="2005-01-20" totime="16:04" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
@@ -3614,8 +3615,8 @@
 <moffice id="uk.org.publicwhip/moffice/1391" name="Jim Knight" matchid="uk.org.publicwhip/member/1027" dept="Department of Health" position="PPS" responsibility="Ms Rosie Winterton, Minister of State" fromdate="2004-05-13" fromtime="12:50" todate="2005-04-10" totime="12:00" source="chgpages/privsec"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1347" name="Jim Knight" matchid="uk.org.publicwhip/member/1548" dept="Department for Education and Skills" position="Minister of State" responsibility="Schools and 14-19 Learners" fromdate="2006-08-03" fromtime="11:41" todate="9999-12-31" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1451" name="Jim Knight" matchid="uk.org.publicwhip/member/1027" dept="Department of Health" position="PPS" responsibility="Team PPS" fromdate="2005-04-10" fromtime="12:00" todate="2005-04-11" totime="00:01" source="chgpages/privsec"></moffice>
-<moffice id="uk.org.publicwhip/moffice/1250" name="Jim Knight" matchid="uk.org.publicwhip/member/1548" dept="Department for Environment, Food and Rural Affairs" position="Parliamentary Under-Secretary" responsibility="Rural Affairs, Landscape and Biodiversity" fromdate="2005-06-17" fromtime="14:29" todate="2006-05-08" totime="00:01" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1337" name="Jim Knight" matchid="uk.org.publicwhip/member/1548" dept="Department for Education and Skills" position="Minister of State" responsibility="Schools" fromdate="2006-06-06" fromtime="14:55" todate="2006-08-03" totime="11:41" source="chgpages/govposts"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1250" name="Jim Knight" matchid="uk.org.publicwhip/member/1548" dept="Department for Environment, Food and Rural Affairs" position="Parliamentary Under-Secretary" responsibility="Rural Affairs, Landscape and Biodiversity" fromdate="2005-06-17" fromtime="14:29" todate="2006-05-08" totime="00:01" source="chgpages/govposts"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -3715,8 +3716,8 @@
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1309" name="Meg Munn" matchid="uk.org.publicwhip/member/1813" dept="Department for Communities and Local Government" position="Parliamentary Under-Secretary" responsibility="Women and Equality" fromdate="2006-05-08" fromtime="00:01" todate="9999-12-31" source="chgpages/govposts"></moffice>
-<moffice id="uk.org.publicwhip/moffice/1233" name="Meg Munn" matchid="uk.org.publicwhip/member/1813" dept="Department of Trade and Industry" position="Parliamentary Under-Secretary" fromdate="2005-05-18" fromtime="16:36" todate="2006-05-08" totime="00:01" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1425" name="Ms Meg Munn" matchid="uk.org.publicwhip/member/1128" dept="Department for Education and Skills" position="PPS" responsibility="Rt Hon Margaret Hodge MBE, Minister of State" fromdate="2004-09-07" fromtime="11:04" todate="2005-04-11" totime="00:01" source="chgpages/privsec"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1233" name="Meg Munn" matchid="uk.org.publicwhip/member/1813" dept="Department of Trade and Industry" position="Parliamentary Under-Secretary" fromdate="2005-05-18" fromtime="16:36" todate="2006-05-08" totime="00:01" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1376" name="Ms Meg Munn" matchid="uk.org.publicwhip/member/1128" dept="Department for Education and Skills" position="PPS" responsibility="Rt Hon Margaret Hodge, Minister of State" fromdate="2004-05-13" fromtime="12:50" todate="2004-09-07" totime="11:04" source="chgpages/privsec"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2236" name="Ms Meg Munn" matchid="uk.org.publicwhip/member/1128" dept="Draft Mental Health Bill (Joint Committee)" position="" fromdate="2004-07-22" fromtime="15:11" todate="2005-04-11" totime="00:01" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
@@ -3842,8 +3843,8 @@
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1212" name="Tom Watson" matchid="uk.org.publicwhip/member/1919" dept="HM Treasury" position="Lords Commissioner" fromdate="2005-05-11" fromtime="17:24" todate="2006-05-08" totime="00:01" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1131" name="Tom Watson" matchid="uk.org.publicwhip/member/1309" dept="HM Treasury" position="Assistant Whip" fromdate="2004-09-10" fromtime="13:53" todate="2005-05-11" totime="17:24" source="chgpages/govposts"></moffice>
-<moffice id="uk.org.publicwhip/moffice/1324" name="Tom Watson" matchid="uk.org.publicwhip/member/1919" dept="Ministry of Defence" position="Parliamentary Under-Secretary" fromdate="2006-05-08" fromtime="00:01" todate="2006-09-06" totime="12:00" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1418" name="Tom Watson" matchid="uk.org.publicwhip/member/1309" dept="HM Treasury" position="PPS" responsibility="Rt Hon Dawn Primarolo, Paymaster General" fromdate="2004-05-13" fromtime="12:50" todate="2004-11-02" totime="11:59" source="chgpages/privsec"></moffice>
+<moffice id="uk.org.publicwhip/moffice/1324" name="Tom Watson" matchid="uk.org.publicwhip/member/1919" dept="Ministry of Defence" position="Parliamentary Under-Secretary" fromdate="2006-05-08" fromtime="00:01" todate="2006-09-06" totime="12:00" source="chgpages/govposts"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
