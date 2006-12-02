@@ -83,6 +83,9 @@ def GlueByNext(fout, urla, urlx):
 	fout.write('<pagex url="%s" scrapedate="%s" scrapetime="%s"/>\n' % \
 			(urlx, time.strftime('%Y-%m-%d', lt), time.strftime('%X', lt)))
 
+        if urla[0] == 'http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61130-0001.htm':
+                urla = [urla[0]]
+
 	# loop which scrapes through all the pages following the nextlinks
 	# knocking off the known links as we go in case a "next page" is missing.
 	while urla:
