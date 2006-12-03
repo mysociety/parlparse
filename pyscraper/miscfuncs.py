@@ -208,7 +208,7 @@ entitymap = {
         '&#176;':'&deg;',   # this is the degrees
         '&#186;':'&ordm;',   # this is the M ordinal
         '&#174;':'&reg;',   # this is the degrees
-		'&#182;':'&para;',  # end-paragraph (pi) symbol
+        '&#182;':'&para;',  # end-paragraph (pi) symbol
 
         '&#181;':'&micro;',   # this is one quarter symbol
         '&#188;':'&frac14;',   # this is one quarter symbol
@@ -222,6 +222,7 @@ entitymap = {
 		'&#039;':"'",   # posession apostrophe
         "&#8364;":'&euro;', # this is euro currency
         "&#8482;":'&trade;',
+        "&#8226;":'&bull;',
         '&lquo;':"'",
         '&rquo;':"'",
         '&minus;':"-",
