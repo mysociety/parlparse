@@ -200,6 +200,7 @@
 <chgpageupdates date="2006-11-17" time="10:22" chgtype="selctee"/>
 <chgpageupdates date="2006-11-29" time="10:22" chgtype="selctee"/>
 <chgpageupdates date="2006-12-01" time="10:22" chgtype="selctee"/>
+<chgpageupdates date="2006-12-08" time="10:22" chgtype="selctee"/>
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1000" name="Duke of Abercorn" dept="HM Household" position="Lord Steward" fromdate="2000-01-01" todate="9999-12-31" source="newlabministers2003-10-15 chgpages/govposts"></moffice>
@@ -2909,7 +2910,7 @@
 <moffice id="uk.org.publicwhip/moffice/302" name="Graham Stringer" matchid="uk.org.publicwhip/member/1260" dept="HM Treasury" position="Lords Commissioner" fromdate="2001-06-12" todate="2002-05-29" source="newlabministers2003-10-15"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2103" name="Graham Stringer" matchid="uk.org.publicwhip/member/1260" dept="Transport Committee" position="" fromdate="2004-05-28" fromtime="10:00" todate="2005-04-11" totime="00:01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2581" name="Graham Stringer" matchid="uk.org.publicwhip/member/1704" dept="Transport Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/2855" name="Graham Stringer" matchid="uk.org.publicwhip/member/1704" dept="Modernisation of the House of Commons Committee" position="" fromdate="2006-01-18" fromtime="10:32" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2855" name="Graham Stringer" matchid="uk.org.publicwhip/member/1704" dept="Modernisation of the House of Commons Committee" position="" fromdate="2006-01-18" fromtime="10:32" todate="2006-12-08" totime="10:22" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2990" name="Graham Stringer" matchid="uk.org.publicwhip/member/1704" dept="Science and Technology Committee" position="" fromdate="2006-11-29" fromtime="10:22" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
@@ -3920,6 +3921,7 @@
 <moffice id="uk.org.publicwhip/moffice/1481" name="Iain Wright" matchid="uk.org.publicwhip/member/1620" dept="Department of Health" position="PPS" responsibility="Ms Rosie Winterton, Minister of State" fromdate="2005-11-10" fromtime="11:23" todate="2006-06-27" totime="17:06" source="chgpages/privsec"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1551" name="Iain Wright" matchid="uk.org.publicwhip/member/1620" dept="Department of Health" position="PPS" responsibility="Rt Hon Rosie Winterton, Minister of State" fromdate="2006-06-27" fromtime="17:06" todate="2006-09-06" totime="12:00" source="chgpages/privsec"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2266" name="Iain Wright" matchid="uk.org.publicwhip/member/1362" dept="Public Administration Committee" position="" fromdate="2005-01-20" fromtime="16:04" todate="2005-04-11" totime="00:01" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2991" name="Iain Wright" matchid="uk.org.publicwhip/member/1620" dept="Modernisation of the House of Commons Committee" position="" fromdate="2006-12-08" fromtime="10:22" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
