@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <publicwhip>
+
 <member_ni
 	id="uk.org.publicwhip/member/90001"
 	url="http://www.niassembly.gov.uk/members/biogs/gadams.htm"
 	title="Mr" firstname="Gerry" lastname="Adams"
-	constituency="West Belfast" party="Sinn Féin"
+	constituency="Belfast West" party="Sinn Féin"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -11,7 +13,7 @@
 	id="uk.org.publicwhip/member/90002"
 	url="http://www.niassembly.gov.uk/members/biogs/iadamson.htm"
 	title="Dr" firstname="Ian" lastname="Adamson"
-	constituency="East Belfast" party="UUP"
+	constituency="Belfast East" party="UUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -19,7 +21,7 @@
 	id="uk.org.publicwhip/member/90003"
 	url="http://www.niassembly.gov.uk/members/biogs/fagnew.htm"
 	title="Mr" firstname="Fraser" lastname="Agnew"
-	constituency="North Belfast" party="Independent"
+	constituency="Belfast North" party="Independent"
 	fromdate="1998-06-25" todate="1998-09-21"
 	fromwhy="general_election" towhy="changed_party"
 />
@@ -27,7 +29,7 @@
 	id="uk.org.publicwhip/member/90004"
 	url="http://www.niassembly.gov.uk/members/biogs/fagnew.htm"
 	title="Mr" firstname="Fraser" lastname="Agnew"
-	constituency="North Belfast" party="UUAP"
+	constituency="Belfast North" party="UUAP"
 	fromdate="1998-09-21" todate="2003-04-28"
 	fromwhy="changed_party" towhy="general_election"
 />
@@ -35,17 +37,17 @@
 	id="uk.org.publicwhip/member/90005"
 	url="http://www.niassembly.gov.uk/members/biogs/lordalderdice.htm"
 	title="Lord" firstname="" lastname="Alderdice"
-	constituency="East Belfast" party="Alliance"
-	fromdate="1998-06-25" todate="1998-07-01"
+	constituency="Belfast East" party="Alliance"
+	fromdate="1998-06-25" todate="1998-06-30"
 	fromwhy="general_election" towhy="changed_party"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90006"
 	url="http://www.niassembly.gov.uk/members/biogs/lordalderdice.htm"
 	title="Lord" firstname="" lastname="Alderdice"
-	constituency="East Belfast" party="Speaker"
-	fromdate="1998-07-01" todate="2003-04-28"
-	fromwhy="changed_party" towhy="general_election"
+	constituency="Belfast East" party="Initial Presiding Officer"
+	fromdate="1998-07-01" todate="1999-11-30"
+	fromwhy="changed_party" towhy="devolution"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90007"
@@ -75,14 +77,14 @@
 	id="uk.org.publicwhip/member/90010"
 	url="http://www.niassembly.gov.uk/members/biogs/aattwood.htm"
 	title="Mr" firstname="Alex" lastname="Attwood"
-	constituency="West Belfast" party="SDLP"
+	constituency="Belfast West" party="SDLP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90011"
 	url="http://www.niassembly.gov.uk/members/biogs/rbeggs.htm"
-	title="Mr" firstname="Roy" lastname="Beggs Jnr"
+	title="Mr" firstname="Roy" lastname="Beggs"
 	constituency="East Antrim" party="UUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
@@ -115,7 +117,7 @@
 	id="uk.org.publicwhip/member/90015"
 	url="http://www.niassembly.gov.uk/members/biogs/ebirnie.htm"
 	title="Dr" firstname="Esmond" lastname="Birnie"
-	constituency="South Belfast" party="UUP"
+	constituency="Belfast South" party="UUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -171,7 +173,7 @@
 	id="uk.org.publicwhip/member/90022"
 	url="http://www.niassembly.gov.uk/members/biogs/jcarson.htm"
 	title="Mrs" firstname="Joan" lastname="Carson"
-	constituency="Fermanagh and South Tyrone" party="UUP"
+	constituency="Fermanagh &amp; South Tyrone" party="UUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -195,7 +197,7 @@
 	id="uk.org.publicwhip/member/90025"
 	url="http://www.niassembly.gov.uk/members/biogs/fcobain.htm"
 	title="Mr" firstname="Fred" lastname="Cobain"
-	constituency="North Belfast" party="UUP"
+	constituency="Belfast North" party="UUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -258,7 +260,7 @@
 <member_ni
 	id="uk.org.publicwhip/member/90033"
 	url="http://www.niassembly.gov.uk/members/biogs/dshipleydalton.htm"
-	title="Mr" firstname="Duncan" lastname="Shipley-Dalton"
+	title="Mr" firstname="Duncan" lastname="Dalton"
 	constituency="South Antrim" party="UUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
@@ -274,8 +276,8 @@
 <member_ni
 	id="uk.org.publicwhip/member/90035"
 	url="http://www.niassembly.gov.uk/members/biogs/bdebrun.htm"
-	title="Ms" firstname="Bairbre" lastname="de Brun"
-	constituency="West Belfast" party="Sinn Féin"
+	title="Ms" firstname="Bairbre" lastname="de Brún"
+	constituency="Belfast West" party="Sinn Féin"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -283,7 +285,7 @@
 	id="uk.org.publicwhip/member/90036"
 	url="http://www.niassembly.gov.uk/members/biogs/ndodds.htm"
 	title="Mr" firstname="Nigel" lastname="Dodds"
-	constituency="North Belfast" party="DUP"
+	constituency="Belfast North" party="DUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -323,7 +325,7 @@
 	id="uk.org.publicwhip/member/90041"
 	url="http://www.niassembly.gov.uk/members/biogs/rempey.htm"
 	title="Sir" firstname="Reg" lastname="Empey"
-	constituency="East Belfast" party="UUP"
+	constituency="Belfast East" party="UUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -331,7 +333,7 @@
 	id="uk.org.publicwhip/member/90042"
 	url="http://www.niassembly.gov.uk/members/biogs/dervine.htm"
 	title="Mr" firstname="David" lastname="Ervine"
-	constituency="East Belfast" party="PUP"
+	constituency="Belfast East" party="PUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -363,7 +365,7 @@
 	id="uk.org.publicwhip/member/90046"
 	url="http://www.niassembly.gov.uk/members/biogs/sfoster.htm"
 	title="Mr" firstname="Sam" lastname="Foster"
-	constituency="Fermanagh and South Tyrone" party="UUP"
+	constituency="Fermanagh &amp; South Tyrone" party="UUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -371,7 +373,7 @@
 	id="uk.org.publicwhip/member/90047"
 	url="http://www.niassembly.gov.uk/members/biogs/tgallagher.htm"
 	title="Mr" firstname="Tommy" lastname="Gallagher"
-	constituency="Fermanagh and South Tyrone" party="SDLP"
+	constituency="Fermanagh &amp; South Tyrone" party="SDLP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -387,7 +389,7 @@
 	id="uk.org.publicwhip/member/90049"
 	url="http://www.niassembly.gov.uk/members/biogs/mgildernew.htm"
 	title="Ms" firstname="Michelle" lastname="Gildernew"
-	constituency="Fermanagh and South Tyrone" party="Sinn Féin"
+	constituency="Fermanagh &amp; South Tyrone" party="Sinn Féin"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -419,7 +421,7 @@
 	id="uk.org.publicwhip/member/90053"
 	url="http://www.niassembly.gov.uk/members/biogs/channa.htm"
 	title="Ms" firstname="Carmel" lastname="Hanna"
-	constituency="South Belfast" party="SDLP"
+	constituency="Belfast South" party="SDLP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -443,7 +445,7 @@
 	id="uk.org.publicwhip/member/90056"
 	url="http://www.niassembly.gov.uk/members/biogs/jhendron.htm"
 	title="Dr" firstname="Joe" lastname="Hendron"
-	constituency="West Belfast" party="SDLP"
+	constituency="Belfast West" party="SDLP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -467,7 +469,7 @@
 	id="uk.org.publicwhip/member/90059"
 	url="http://www.niassembly.gov.uk/members/biogs/bhutchinson.htm"
 	title="Mr" firstname="Billy" lastname="Hutchinson"
-	constituency="North Belfast" party="PUP"
+	constituency="Belfast North" party="PUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -499,7 +501,7 @@
 	id="uk.org.publicwhip/member/90063"
 	url="http://www.niassembly.gov.uk/members/biogs/gkelly.htm"
 	title="Mr" firstname="Gerry" lastname="Kelly"
-	constituency="North Belfast" party="Sinn Féin"
+	constituency="Belfast North" party="Sinn Féin"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -539,7 +541,7 @@
 	id="uk.org.publicwhip/member/90068"
 	url="http://www.niassembly.gov.uk/members/biogs/amaginness.htm"
 	title="Mr" firstname="Alban" lastname="Maginness"
-	constituency="North Belfast" party="SDLP"
+	constituency="Belfast North" party="SDLP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -547,7 +549,7 @@
 	id="uk.org.publicwhip/member/90069"
 	url="http://www.niassembly.gov.uk/members/biogs/smallon.htm"
 	title="Mr" firstname="Seamus" lastname="Mallon"
-	constituency="Newry and Armagh" party="SDLP"
+	constituency="Newry &amp; Armagh" party="SDLP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -555,7 +557,7 @@
 	id="uk.org.publicwhip/member/90070"
 	url="http://www.niassembly.gov.uk/members/biogs/amaskey.htm"
 	title="Mr" firstname="Alex" lastname="Maskey"
-	constituency="West Belfast" party="Sinn Féin"
+	constituency="Belfast West" party="Sinn Féin"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -603,7 +605,7 @@
 	id="uk.org.publicwhip/member/90076"
 	url="http://www.niassembly.gov.uk/members/biogs/amcdonnell.htm"
 	title="Dr" firstname="Alasdair" lastname="McDonnell"
-	constituency="South Belfast" party="SDLP"
+	constituency="Belfast South" party="SDLP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -627,7 +629,7 @@
 	id="uk.org.publicwhip/member/90079"
 	url="http://www.niassembly.gov.uk/members/biogs/mmcgimpsey.htm"
 	title="Mr" firstname="Michael" lastname="McGimpsey"
-	constituency="South Belfast" party="UUP"
+	constituency="Belfast South" party="UUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -651,7 +653,7 @@
 	id="uk.org.publicwhip/member/90082"
 	url="http://www.niassembly.gov.uk/members/biogs/gmchugh.htm"
 	title="Mr" firstname="Gerry" lastname="McHugh"
-	constituency="Fermanagh and South Tyrone" party="Sinn Féin"
+	constituency="Fermanagh &amp; South Tyrone" party="Sinn Féin"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -683,7 +685,7 @@
 	id="uk.org.publicwhip/member/90086"
 	url="http://www.niassembly.gov.uk/members/biogs/mmcwilliams.htm"
 	title="Prof" firstname="Monica" lastname="McWilliams"
-	constituency="South Belfast" party="NIWC"
+	constituency="Belfast South" party="NIWC"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -723,7 +725,7 @@
 	id="uk.org.publicwhip/member/90091"
 	url="http://www.niassembly.gov.uk/members/biogs/mmorrow.htm"
 	title="Mr" firstname="Maurice" lastname="Morrow"
-	constituency="Fermanagh and South Tyrone" party="DUP"
+	constituency="Fermanagh &amp; South Tyrone" party="DUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -770,7 +772,7 @@
 <member_ni
 	id="uk.org.publicwhip/member/90097"
 	url="http://www.niassembly.gov.uk/members/biogs/eoneill.htm"
-	title="Mr" firstname="Eamonn" lastname="Oneill"
+	title="Mr" firstname="Eamonn" lastname="ONeill"
 	constituency="South Down" party="SDLP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
@@ -803,7 +805,7 @@
 	id="uk.org.publicwhip/member/90101"
 	url="http://www.niassembly.gov.uk/members/biogs/sramsey.htm"
 	title="Ms" firstname="Sue" lastname="Ramsey"
-	constituency="West Belfast" party="Sinn Féin"
+	constituency="Belfast West" party="Sinn Féin"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -827,7 +829,7 @@
 	id="uk.org.publicwhip/member/90104"
 	url="http://www.niassembly.gov.uk/members/biogs/mrobinson.htm"
 	title="Mr" firstname="Mark" lastname="Robinson"
-	constituency="South Belfast" party="DUP"
+	constituency="Belfast South" party="DUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -835,7 +837,7 @@
 	id="uk.org.publicwhip/member/90105"
 	url="http://www.niassembly.gov.uk/members/biogs/probinson.htm"
 	title="Mr" firstname="Peter" lastname="Robinson"
-	constituency="East Belfast" party="DUP"
+	constituency="Belfast East" party="DUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -882,7 +884,7 @@
 <member_ni
 	id="uk.org.publicwhip/member/90111"
 	url="http://www.niassembly.gov.uk/members/biogs/jtaylor.htm"
-	title="Lord" firstname="" lastname="Kilclooney"
+	title="" firstname="John" lastname="Taylor"
 	constituency="Strangford" party="UUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
@@ -979,7 +981,7 @@
 	id="uk.org.publicwhip/member/90123"
 	url="http://www.niassembly.gov.uk/members/biogs/swilson.htm"
 	title="Mr" firstname="Sammy" lastname="Wilson"
-	constituency="East Belfast" party="DUP"
+	constituency="Belfast East" party="DUP"
 	fromdate="1998-06-25" todate="2003-04-28"
 	fromwhy="general_election" towhy="general_election"
 />
@@ -1032,7 +1034,7 @@
 <member_ni
 	id="uk.org.publicwhip/member/90130"
 	url="http://www.niassembly.gov.uk/members/biogs_03/beggs_r.htm"
-	title="" firstname="Roy" lastname="Beggs Jnr"
+	title="" firstname="Roy" lastname="Beggs"
 	constituency="East Antrim" party="UUP"
 	fromdate="2003-11-26" todate="9999-12-31"
 	fromwhy="general_election" towhy="still_in_office"
@@ -1049,20 +1051,20 @@
 	id="uk.org.publicwhip/member/90132"
 	title="" firstname="Eileen" lastname="Bell"
 	constituency="North Down" party="Alliance"
-	fromdate="2003-11-26" todate="9999-12-31"
-	fromwhy="general_election" towhy="still_in_office"
+	fromdate="2003-11-26" todate="2006-05-09"
+	fromwhy="general_election" towhy="changed_party"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90133"
 	title="" firstname="Paul" lastname="Berry"
-	constituency="Newry and Armagh" party="DUP"
+	constituency="Newry &amp; Armagh" party="DUP"
 	fromdate="2003-11-26" todate="2006-02-20"
 	fromwhy="general_election" towhy="changed_party"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90134"
 	title="" firstname="Paul" lastname="Berry"
-	constituency="Newry and Armagh" party="Independent"
+	constituency="Newry &amp; Armagh" party="Independent"
 	fromdate="2006-02-21" todate="9999-12-31"
 	fromwhy="changed_party" towhy="still_in_office"
 />
@@ -1077,7 +1079,7 @@
 <member_ni
 	id="uk.org.publicwhip/member/90136"
 	title="" firstname="Dominic" lastname="Bradley"
-	constituency="Newry and Armagh" party="SDLP"
+	constituency="Newry &amp; Armagh" party="SDLP"
 	fromdate="2003-11-26" todate="9999-12-31"
 	fromwhy="general_election" towhy="still_in_office"
 />
@@ -1284,7 +1286,7 @@
 	id="uk.org.publicwhip/member/90163"
 	url="http://www.niassembly.gov.uk/members/biogs_03/elliot_t.htm"
 	title="" firstname="Tom" lastname="Elliott"
-	constituency="Fermanagh and South Tyrone" party="UUP"
+	constituency="Fermanagh &amp; South Tyrone" party="UUP"
 	fromdate="2003-11-26" todate="9999-12-31"
 	fromwhy="general_election" towhy="still_in_office"
 />
@@ -1323,8 +1325,8 @@
 	id="uk.org.publicwhip/member/90168"
 	title="" firstname="Michael" lastname="Ferguson"
 	constituency="Belfast West" party="Sinn Féin"
-	fromdate="2003-11-26" todate="9999-12-31"
-	fromwhy="general_election" towhy="still_in_office"
+	fromdate="2003-11-26" todate="2006-09-25"
+	fromwhy="general_election" towhy="died"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90169"
@@ -1337,21 +1339,21 @@
 <member_ni
 	id="uk.org.publicwhip/member/90170"
 	title="" firstname="Arlene" lastname="Foster"
-	constituency="Fermanagh and South Tyrone" party="UUP"
+	constituency="Fermanagh &amp; South Tyrone" party="UUP"
 	fromdate="2003-11-26" todate="2003-12-18"
 	fromwhy="general_election" towhy="changed_party"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90171"
 	title="" firstname="Arlene" lastname="Foster"
-	constituency="Fermanagh and South Tyrone" party="Independent Unionist"
+	constituency="Fermanagh &amp; South Tyrone" party="Independent Unionist"
 	fromdate="2003-12-18" todate="2004-01-15"
 	fromwhy="changed_party" towhy="changed_party"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90172"
 	title="" firstname="Arlene" lastname="Foster"
-	constituency="Fermanagh and South Tyrone" party="DUP"
+	constituency="Fermanagh &amp; South Tyrone" party="DUP"
 	fromdate="2004-01-15" todate="9999-12-31"
 	fromwhy="changed_party" towhy="still_in_office"
 />
@@ -1359,7 +1361,7 @@
 	id="uk.org.publicwhip/member/90173"
 	url="http://www.niassembly.gov.uk/members/biogs_03/gallagher_t.htm"
 	title="" firstname="Tommy" lastname="Gallagher"
-	constituency="Fermanagh and South Tyrone" party="SDLP"
+	constituency="Fermanagh &amp; South Tyrone" party="SDLP"
 	fromdate="2003-11-26" todate="9999-12-31"
 	fromwhy="general_election" towhy="still_in_office"
 />
@@ -1374,7 +1376,7 @@
 <member_ni
 	id="uk.org.publicwhip/member/90175"
 	title="" firstname="Michelle" lastname="Gildernew"
-	constituency="Fermanagh and South Tyrone" party="Sinn Féin"
+	constituency="Fermanagh &amp; South Tyrone" party="Sinn Féin"
 	fromdate="2003-11-26" todate="9999-12-31"
 	fromwhy="general_election" towhy="still_in_office"
 />
@@ -1427,7 +1429,7 @@
 	id="uk.org.publicwhip/member/90182"
 	url="http://www.niassembly.gov.uk/members/biogs_03/hyland_d.htm"
 	title="" firstname="Davy" lastname="Hyland"
-	constituency="Newry and Armagh" party="Sinn Féin"
+	constituency="Newry &amp; Armagh" party="Sinn Féin"
 	fromdate="2003-11-26" todate="9999-12-31"
 	fromwhy="general_election" towhy="still_in_office"
 />
@@ -1443,7 +1445,7 @@
 	id="uk.org.publicwhip/member/90184"
 	url="http://www.niassembly.gov.uk/members/biogs_03/kelly_g.htm"
 	title="" firstname="Gerry" lastname="Kelly"
-	constituency="North Belfast" party="Sinn Féin"
+	constituency="Belfast North" party="Sinn Féin"
 	fromdate="2003-11-26" todate="9999-12-31"
 	fromwhy="general_election" towhy="still_in_office"
 />
@@ -1451,13 +1453,13 @@
 	id="uk.org.publicwhip/member/90185"
 	url="http://www.niassembly.gov.uk/members/biogs_03/kennedy_d.htm"
 	title="" firstname="Danny" lastname="Kennedy"
-	constituency="Newry and Armagh" party="UUP"
+	constituency="Newry &amp; Armagh" party="UUP"
 	fromdate="2003-11-26" todate="9999-12-31"
 	fromwhy="general_election" towhy="still_in_office"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90186"
-	title="Lord" firstname="" lastname="Kilclooney"
+	title="" firstname="John" lastname="Taylor"
 	constituency="Strangford" party="UUP"
 	fromdate="2003-11-26" todate="9999-12-31"
 	fromwhy="general_election" towhy="still_in_office"
@@ -1638,7 +1640,7 @@
 <member_ni
 	id="uk.org.publicwhip/member/90210"
 	title="Lord" firstname="" lastname="Morrow"
-	constituency="Fermanagh and South Tyrone" party="DUP"
+	constituency="Fermanagh &amp; South Tyrone" party="DUP"
 	fromdate="2003-11-26" todate="9999-12-31"
 	fromwhy="general_election" towhy="still_in_office"
 />
@@ -1654,7 +1656,7 @@
 	id="uk.org.publicwhip/member/90212"
 	url="http://www.niassembly.gov.uk/members/biogs_03/murphy_c.htm"
 	title="" firstname="Conor" lastname="Murphy"
-	constituency="Newry and Armagh" party="Sinn Féin"
+	constituency="Newry &amp; Armagh" party="Sinn Féin"
 	fromdate="2003-11-26" todate="9999-12-31"
 	fromwhy="general_election" towhy="still_in_office"
 />
@@ -1691,14 +1693,14 @@
 <member_ni
 	id="uk.org.publicwhip/member/90217"
 	title="" firstname="Patricia" lastname="O'Rawe"
-	constituency="Newry and Armagh" party="Sinn Féin"
+	constituency="Newry &amp; Armagh" party="Sinn Féin"
 	fromdate="2003-11-26" todate="9999-12-31"
 	fromwhy="general_election" towhy="still_in_office"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90218"
 	title="" firstname="Tom" lastname="O'Reilly"
-	constituency="Fermanagh and South Tyrone" party="Sinn Féin"
+	constituency="Fermanagh &amp; South Tyrone" party="Sinn Féin"
 	fromdate="2003-11-26" todate="9999-12-31"
 	fromwhy="general_election" towhy="still_in_office"
 />
@@ -1735,7 +1737,7 @@
 />
 <member_ni
 	id="uk.org.publicwhip/member/90223"
-	title="" firstname="Bairbre" lastname="de Brun"
+	title="" firstname="Bairbre" lastname="de Brún"
 	constituency="Belfast West" party="Sinn Féin"
 	fromdate="2003-11-26" todate="2004-10-27"
 	fromwhy="general_election" towhy="resigned"
@@ -1782,14 +1784,14 @@
 <member_ni
 	id="uk.org.publicwhip/member/90229"
 	title="" firstname="Mark" lastname="Robinson"
-	constituency="South Belfast" party="DUP"
+	constituency="Belfast South" party="DUP"
 	fromdate="2003-11-26" todate="9999-12-31"
 	fromwhy="general_election" towhy="still_in_office"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90230"
 	title="" firstname="Peter" lastname="Robinson"
-	constituency="East Belfast" party="DUP"
+	constituency="Belfast East" party="DUP"
 	fromdate="2003-11-26" todate="9999-12-31"
 	fromwhy="general_election" towhy="still_in_office"
 />
@@ -1870,5 +1872,20 @@
 	constituency="East Antrim" party="DUP"
 	fromdate="2003-11-26" todate="9999-12-31"
 	fromwhy="general_election" towhy="still_in_office"
+/>
+<member_ni
+	id="uk.org.publicwhip/member/90241"
+	title="" firstname="Eileen" lastname="Bell"
+	constituency="North Down" party="Speaker"
+	fromdate="2006-05-09" todate="9999-12-31"
+	fromwhy="changed_party" towhy="still_in_office"
+/>
+<member_ni
+	id="uk.org.publicwhip/member/90242"
+	url="http://www.niassembly.gov.uk/members/biogs/lordalderdice.htm"
+	title="Lord" firstname="" lastname="Alderdice"
+	constituency="Belfast East" party="Speaker"
+	fromdate="1999-12-01" todate="2003-04-28"
+	fromwhy="devolution" towhy="general_election"
 />
 </publicwhip>

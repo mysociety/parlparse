@@ -75,6 +75,7 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/100873" : "Jack Cunningham [Copeland]",
     "uk.org.publicwhip/lord/100910" : "David Trimble [Upper Bann]",
     "uk.org.publicwhip/lord/100930" : "Keith Bradley [Manchester, Withington]",
+    "uk.org.publicwhip/lord/100345" : "John D Taylor [Strangford]",
 }
 
 lordlordmatches = {
@@ -93,10 +94,13 @@ ni_mp_matches = {
     "uk.org.publicwhip/member/90123":"Sammy Wilson [East Antrim]",
     "uk.org.publicwhip/member/90074":"William McCrea [South Antrim]",
     "uk.org.publicwhip/member/90198":"William McCrea [South Antrim]",
+    "uk.org.publicwhip/member/90111":"John D Taylor [Strangford]",
+    "uk.org.publicwhip/member/90186":"John D Taylor [Strangford]",
 }
 ni_lord_matches = {
     "uk.org.publicwhip/member/90005":"uk.org.publicwhip/lord/100007",
     "uk.org.publicwhip/member/90006":"uk.org.publicwhip/lord/100007",
+    "uk.org.publicwhip/member/90242":"uk.org.publicwhip/lord/100007",
     "uk.org.publicwhip/member/90111":"uk.org.publicwhip/lord/100345",
     "uk.org.publicwhip/member/90186":"uk.org.publicwhip/lord/100345",
     "uk.org.publicwhip/member/90210":"uk.org.publicwhip/lord/100922",

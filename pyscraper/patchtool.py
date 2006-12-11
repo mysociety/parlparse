@@ -59,7 +59,7 @@ def RunPatchToolW(typ, sdate, stamp, frag):
 	shutil.copyfile(orgfile, tmpfile)
 	if os.path.isfile(patchfile):
 		print "Patching ", patchfile
-		status = os.system("patch --quiet %s < %s" % (tmpfile, patchfile))
+		status = os.system('patch --quiet "%s" < "%s"' % (tmpfile, patchfile))
 
 	# run the editor (first finding the line number to be edited)
 	gp = 0
@@ -90,20 +90,20 @@ def RunPatchToolW(typ, sdate, stamp, frag):
 		gc = gp - string.rfind(rforlines, '\n', 0, gp)
 	#print "find loc codes ", gp, gl, gc
 
-	if sys.platform == "win32":
+	if 1==0 and sys.platform == "win32":
 		os.system('"C:\Program Files\ConTEXT\ConTEXT" %s /g%d:%d' % (tmpfile, gc + 1, gl + 1))
 	else:
 		# TODO add column support using gc + 1, if you can work out vim's syntax
 		editor = os.getenv('EDITOR')
 		if not editor:
 			editor = 'vim'
-		os.system('%s %s +%d' % (editor, tmpfile, gl + 1))
+		os.system('%s "%s" +%d' % (editor, tmpfile, gl + 1))
 
 
 	# now create the diff file
 	if os.path.isfile(tmppatchfile):
 		os.remove(tmppatchfile)
-	ern = os.system("diff -u %s %s > %s" % (orgfile, tmpfile, tmppatchfile))
+	ern = os.system('diff -u "%s" "%s" > "%s"' % (orgfile, tmpfile, tmppatchfile))
 	if ern == 2:
 		print "Error running diff"
 		sys.exit(1)
