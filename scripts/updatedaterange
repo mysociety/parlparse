@@ -17,3 +17,7 @@ cd ~/parlparse/pyscraper
 ./lazyrunall.py $3 --quietc --from=$FROMDATE --to=$TODATE parse westminhall
 ./lazyrunall.py $3 --quietc --from=$FROMDATE --to=$TODATE parse wms
 
+# Yeah, it's not as fully featured as the UK Parliament one. But it should work :)
+cd ~/parlparse/pyscraper/ni
+./scrape.py
+./parse.py

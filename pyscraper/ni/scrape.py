@@ -1,4 +1,4 @@
-#!/usr/local/bin/python2.4
+#! /usr/bin/env python2.4
 
 import urllib
 import urlparse
