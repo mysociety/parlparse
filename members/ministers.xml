@@ -201,6 +201,7 @@
 <chgpageupdates date="2006-11-29" time="10:22" chgtype="selctee"/>
 <chgpageupdates date="2006-12-01" time="10:22" chgtype="selctee"/>
 <chgpageupdates date="2006-12-08" time="10:22" chgtype="selctee"/>
+<chgpageupdates date="2006-12-12" time="10:22" chgtype="selctee"/>
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1000" name="Duke of Abercorn" dept="HM Household" position="Lord Steward" fromdate="2000-01-01" todate="9999-12-31" source="newlabministers2003-10-15 chgpages/govposts"></moffice>
@@ -3937,7 +3938,7 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
-<moffice id="uk.org.publicwhip/moffice/2355" name="Nadine Dorries" matchid="uk.org.publicwhip/member/1397" dept="Education &amp; Skills Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2355" name="Nadine Dorries" matchid="uk.org.publicwhip/member/1397" dept="Education &amp; Skills Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="2006-12-12" totime="10:22" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -4011,7 +4012,7 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
-<moffice id="uk.org.publicwhip/moffice/2374" name="Shailesh Vara" matchid="uk.org.publicwhip/member/1475" dept="Environment, Food and Rural Affairs Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2374" name="Shailesh Vara" matchid="uk.org.publicwhip/member/1475" dept="Environment, Food and Rural Affairs Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="2006-12-12" totime="10:22" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -4047,6 +4048,10 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/2993" name="Andrew Pelling" matchid="uk.org.publicwhip/member/1522" dept="Education &amp; Skills Committee" position="" fromdate="2006-12-12" fromtime="10:22" todate="9999-12-31" source="chgpages/selctee"></moffice>
+</ministerofficegroup>
+
+<ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1557" name="Andrew Gwynne" matchid="uk.org.publicwhip/member/1531" dept="Home Office" position="PPS" responsibility="Rt Hon Baroness Scotland of Asthal QC, Minister of State" fromdate="2006-08-14" fromtime="12:25" todate="9999-12-31" source="chgpages/privsec"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1485" name="Andrew Gwynne" matchid="uk.org.publicwhip/member/1531" dept="Home Office" position="PPS" responsibility="Rt Hon Baroness Scotland of Asthal, Minister of State" fromdate="2005-11-10" fromtime="11:23" todate="2006-08-14" totime="12:25" source="chgpages/privsec"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2490" name="Andrew Gwynne" matchid="uk.org.publicwhip/member/1531" dept="Procedure Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
@@ -4054,6 +4059,10 @@
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/2600" name="Natascha Engel" matchid="uk.org.publicwhip/member/1534" dept="Work and Pensions Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
+</ministerofficegroup>
+
+<ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/2994" name="Geoffrey Cox" matchid="uk.org.publicwhip/member/1541" dept="Environment, Food and Rural Affairs Committee" position="" fromdate="2006-12-12" fromtime="10:22" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -4104,7 +4113,7 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
-<moffice id="uk.org.publicwhip/moffice/2412" name="Anne Milton" matchid="uk.org.publicwhip/member/1603" dept="Health Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2412" name="Anne Milton" matchid="uk.org.publicwhip/member/1603" dept="Health Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="2006-12-12" totime="10:22" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -4138,7 +4147,7 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
-<moffice id="uk.org.publicwhip/moffice/2317" name="James Brokenshire" matchid="uk.org.publicwhip/member/1640" dept="Constitutional Affairs Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2317" name="James Brokenshire" matchid="uk.org.publicwhip/member/1640" dept="Constitutional Affairs Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="2006-12-12" totime="10:22" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -4173,6 +4182,7 @@
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/2817" name="Philip Hollobone" matchid="uk.org.publicwhip/member/1661" dept="Crossrail Bill Committee" position="" fromdate="2005-12-06" fromtime="12:19" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2996" name="Philip Hollobone" matchid="uk.org.publicwhip/member/1661" dept="Transport Committee" position="" fromdate="2006-12-12" fromtime="10:22" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -4240,6 +4250,7 @@
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/2528" name="Stewart Jackson" matchid="uk.org.publicwhip/member/1759" dept="Regulatory Reform Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2995" name="Stewart Jackson" matchid="uk.org.publicwhip/member/1759" dept="Health Committee" position="" fromdate="2006-12-12" fromtime="10:22" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -4297,7 +4308,7 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
-<moffice id="uk.org.publicwhip/moffice/2577" name="Robert Goodwill" matchid="uk.org.publicwhip/member/1804" dept="Transport Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2577" name="Robert Goodwill" matchid="uk.org.publicwhip/member/1804" dept="Transport Committee" position="" fromdate="2005-07-14" fromtime="14:29" todate="2006-12-12" totime="10:22" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -4745,6 +4756,10 @@
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1287" name="Lord Davidson of Glen Cova" matchid="uk.org.publicwhip/lord/100905" dept="Law Officers' Department" position="Advocate General for Scotland" fromdate="2006-05-08" fromtime="00:01" todate="2006-08-03" totime="11:41" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1345" name="Lord Davidson of Glen Clova" matchid="uk.org.publicwhip/lord/100905" dept="Law Officers' Department" position="Advocate General for Scotland" fromdate="2006-08-03" fromtime="11:41" todate="9999-12-31" source="chgpages/govposts"></moffice>
+</ministerofficegroup>
+
+<ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/2992" name="Bob Neill" matchid="uk.org.publicwhip/member/2023" dept="Constitutional Affairs Committee" position="" fromdate="2006-12-12" fromtime="10:22" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 </publicwhip>
 
