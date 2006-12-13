@@ -254,7 +254,7 @@ class ParseDay:
 		for p in body:
 			ptext = re.sub("\s+", " ", ''.join(p(text=True)))
 			phtml = re.sub("\s+", " ", p.renderContents()).decode('utf-8')
-			#print phtml
+			#print p, "\n---------------------\n"
 			if (p.a and re.match('[^h/]', p.a.get('href', ''))):
 				continue
 			cl = p['class']
