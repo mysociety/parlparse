@@ -20,7 +20,7 @@ for url in root:
 		date = time.strptime(day[2], "%y%m%d")
 		filename = '../../../parldata/cmpages/ni/ni%d-%02d-%02d%s%s.html' % (date[0], date[1], date[2], day[1], day[3])
 		if not os.path.isfile(filename):
-			print "Scraping %s" % url_day
+			print "NI scraping %s" % url_day
 			ur = urllib.urlopen(url_day)
 			fp = open(filename, 'w')
 			fp.write(ur.read())

@@ -169,7 +169,7 @@ class ParseDay:
 				#	self.speaker = (None, timestamp)
 				match = re.search('(?:\(|\[)(?:Mr|Madam) Deputy Speaker (?:\[|\()(.*?)(?:\]|\))', phtml)
 				if match:
-					print "Setting deputy to %s" % match.group(1)
+					#print "Setting deputy to %s" % match.group(1)
 					memberList.setDeputy(match.group(1))
 				match = re.match('The Assembly met at (\d\d\.\d\d|noon)', phtml)
 				if match:
@@ -327,7 +327,7 @@ for file in g:
 	parsefile = not os.path.isfile(outfile) or force
 	while parsefile:
 		try:
-			print "Parsing %s..." % date
+			print "NI parsing %s..." % date
 			parser.parse_day(date)
 			break
 		except ContextException, ce:

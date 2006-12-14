@@ -134,6 +134,8 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = [urla[0]]
         if sdate=='2006-11-29' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061129/debtext/61129-0001.htm':
                 urla = [urla[0]]
+        if sdate=='2006-11-21' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061121/debtext/61121-0001.htm':
+                urla = urla[0:11] + urla[12:] # Incorrect link in middle of index
 
 	# loop which scrapes through all the pages following the nextlinks
 	while urla:
@@ -204,10 +206,11 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                         else:
                                 for uo in urla:
                                         if uo == url:
+                                                print "previous URLs:\n"
                                                 print string.join(urla, "\n")
-                                                print "\n\n"
+                                                print "\nbad next url:\n"
                                                 print url
-                                                print "\n\n"
+                                                print "\n"
                                                 raise Exception, "Next Section misses out the urla list"
                                 urla[0] = url
 		
@@ -216,6 +219,7 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
 
 # now we have the difficulty of pulling in the first link out of this silly index page
 def ExtractAllLinks(url, dgf, forcescrape):
+        print "ExtractAllLinks from", url
 	request = urllib2.Request(url)
 	if not forcescrape and dgf and os.path.exists(dgf):
 		mtime = os.path.getmtime(dgf)
@@ -233,8 +237,7 @@ def ExtractAllLinks(url, dgf, forcescrape):
         xlines = re.sub('^.*?<hr(?: /)?>(?is)', '', xlines)
         res = re.findall('<a\s+href\s*=\s*"([^"]+?)#.*?">(?is)', xlines)
 	if not res:
-		print url
-		raise Exception, "No link found!!!"
+		raise Exception, "No link found!!! %s" % url
         urla = []
         for iconti in res:
                 uo = urlparse.urljoin(url, iconti)
