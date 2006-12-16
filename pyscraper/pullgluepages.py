@@ -219,7 +219,7 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
 
 # now we have the difficulty of pulling in the first link out of this silly index page
 def ExtractAllLinks(url, dgf, forcescrape):
-        print "ExtractAllLinks from", url
+        #print "ExtractAllLinks from", url
 	request = urllib2.Request(url)
 	if not forcescrape and dgf and os.path.exists(dgf):
 		mtime = os.path.getmtime(dgf)
