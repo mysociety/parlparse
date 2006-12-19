@@ -334,7 +334,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
             elif member_id in ni_lord_matches:
                 lord = ni_lord_matches[member_id]
                 self.lordspersonset[lord].add(attr)
-            elif lookup in self.fullnamescons:
+            elif lookup in self.fullnamescons and lookup != 'Roy Beggs [East Antrim]':
                 self.fullnamescons[lookup].add(attr)
             elif lookup in self.member_ni_personset:
                 self.member_ni_personset[lookup].add(attr)

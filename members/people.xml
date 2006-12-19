@@ -271,8 +271,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/10033" latestname="Roy Beggs">
     <office id="uk.org.publicwhip/member/33"/>
     <office id="uk.org.publicwhip/member/723"/>
-    <office id="uk.org.publicwhip/member/90011"/>
-    <office id="uk.org.publicwhip/member/90130" current="yes"/>
     <office id="uk.org.publicwhip/moffice/1926"/>
 </person>
 <person id="uk.org.publicwhip/person/10034" latestname="A J Beith">
@@ -8869,6 +8867,10 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/90127"/>
     <office id="uk.org.publicwhip/member/90128"/>
     <office id="uk.org.publicwhip/member/90129" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/13887" latestname="Roy Beggs">
+    <office id="uk.org.publicwhip/member/90011"/>
+    <office id="uk.org.publicwhip/member/90130" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13748" latestname="Eileen Bell">
     <office id="uk.org.publicwhip/member/90013"/>
