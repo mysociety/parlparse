@@ -308,6 +308,8 @@ class ParseDay:
 				if hour<12 and match.group(3) == 'pm':
 					hour += 12
 				timestamp = "%s:%s" % (hour, match.group(2))
+			elif cl == 'MsoNormal':
+				continue
 			else:
 				raise ContextException, 'Uncaught paragraph! %s' % cl
 		self.display_speech()
@@ -316,7 +318,9 @@ class ParseDay:
 # Main function
 quiet = False
 force = False
-patchtool = True
+patchtool = False
+if len(sys.argv)==2 and sys.argv[1] == '--patchtool':
+    patchtool = True
 g = glob.glob('%scmpages/ni/ni*.html' % parldata)
 g.sort()
 parser = ParseDay()
