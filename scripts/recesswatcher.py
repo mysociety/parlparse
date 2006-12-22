@@ -22,7 +22,8 @@ toaddrs = [ "parlparse@seagrass.goatchurch.org.uk" ] # @seagrass
 
 today = datetime.date.today().isoformat()
 
-url = "http://www.parliament.uk/faq/recess.cfm"
+# This is the new location, but the script is currently broken, and unneeded, aww
+url = "http://www.parliament.uk/what_s_on/recess.cfm"
 
 ur = urllib.urlopen(url)
 co = ur.read()
