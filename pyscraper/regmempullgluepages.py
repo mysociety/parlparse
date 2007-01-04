@@ -31,7 +31,7 @@ def GlueByNext(fout, url, regmemdate):
             matcheddate = True
         sections = 0
 	while 1:
-		print " reading " + url
+		#print " reading " + url
 		ur = urllib.urlopen(url)
 		sr = ur.read()
 		ur.close();
