@@ -104,7 +104,7 @@ class ParseDay:
 <publicwhip>
 ''')
 		body = soup('p')
-		if re.match('2006', date):
+		if re.match('200(6|7)', date):
 			self.parse_day_new(body)
 		else:
 			self.parse_day_old(body)

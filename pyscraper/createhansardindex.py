@@ -83,6 +83,8 @@ def CmIndexFromPage(urllinkpage):
 	for link1 in datelinks:
 		if link1[0]:
 			odate = re.sub('\s', ' ', link1[0])
+                        if odate == 'Wednesday 1 November' and urllinkpage == 'http://www.publications.parliament.uk/pa/cm/cmhn0611.htm':
+                                odate = 'Wednesday 1 November 2006'
 			sdate = mx.DateTime.DateTimeFrom(odate).date
 			continue
 
@@ -160,6 +162,8 @@ def CmIndexFromPage(urllinkpage):
                                 odate = '18 September 2006'
                         elif re.match('Written Answers received between<br>\s*Tuesday 19 September and Friday 29 September 2006', linktext):
                                 odate = '2 October 2006'
+                        elif re.match('Written Answers received between<br>\s*Wednesday 20 December 2006 and Friday 5 January 2007', linktext):
+                                odate = '8 January 2007'
                         else:
         			raise Exception, 'No date for link in: ' + urllinkpage + ' ' + ','.join(link1)
 

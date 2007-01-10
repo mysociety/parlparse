@@ -23,14 +23,14 @@ toppath = miscfuncs.toppath
 
 
 # url with the alldays thing on it.
-urlalldays = 'http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/allddays.htm'
+urlalldays = 'http://www.publications.parliament.uk/pa/ld/lords_past_editions.htm'
 
 # url with bound volumes
 # we don't yet scrape across these, as it will be complex.
 # deep in here are days which overlap the ones listed in urlalldays,
 # but they have different urls even though appearing to be the same text.
 # Probably, vols should over-ride the days one.
-urlbndvols = 'http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/home.htm'
+urlbndvols = 'http://www.publications.parliament.uk/pa/ld/lords_hansard_by_date.htm'
 
 pwlordindex = os.path.join(toppath, "lordindex.xml")
 
@@ -48,7 +48,7 @@ def LordsIndexFromAll(urlalldays):
 
 	# Find lines of the form:
 	# <p><a href="lds04/index/40129-x.htm">29 Jan 2004</a></p>
-	realldayslinks = re.compile('<p><a href="([^"]*)">([^<]*)</a></p>(?i)')
+	realldayslinks = re.compile('<a href="([^"]*)#start_written">([^<]*)</a>(?i)')
 	datelinks = realldayslinks.findall(srlinkpage)
 
 	res = []
