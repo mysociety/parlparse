@@ -1162,7 +1162,7 @@
 	lordofname_full="Devizes"
 	county="the County of Wiltshire"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1987" todate="9999-12-31"
+	fromdate="1987" todate="2006-12-18" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100113"
@@ -1470,7 +1470,7 @@
 	lordofname_full="Wellington"
 	county="New Zealand and of Cambridge in the County of Cambridgeshire"
 	peeragetype="L" affiliation="XB"
-	fromdate="1996" todate="9999-12-31"
+	fromdate="1996" todate="2006-08-30" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100143"
@@ -2866,7 +2866,7 @@
 	lordofname_full="Tottenham"
 	county="Greater London"
 	peeragetype="L" affiliation="XB"
-	fromdate="1979" todate="9999-12-31"
+	fromdate="1979" todate="2006-10-19" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100277"
@@ -3311,7 +3311,7 @@
 	title="Lord" lordname="Hussey" lordofname="North Bradley"
 	county="the County of Wiltshire"
 	peeragetype="L" affiliation="XB"
-	fromdate="1996" todate="9999-12-31"
+	fromdate="1996" todate="2006-12-27" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100319"
@@ -4515,7 +4515,7 @@
 	lordofname_full="Westerkirk"
 	county="Dumfries and Galloway"
 	peeragetype="L" affiliation="Con"
-	fromdate="1997" todate="9999-12-31"
+	fromdate="1997" todate="2006-08-30" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -4630,7 +4630,7 @@
 	forenames="Charles"
 	title="Lord" lordname="Mowbray and Stourton" lordofname=""
 	peeragetype="HP" affiliation="Con"
-	fromdate="1965" todate="9999-12-31"
+	fromdate="1965" todate="2006-11-12" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100447"
@@ -5165,7 +5165,7 @@
 	title="Lord" lordname="Peyton" lordofname="Yeovil"
 	county="the County of Somerset"
 	peeragetype="L" affiliation="Con"
-	fromdate="1983" todate="9999-12-31"
+	fromdate="1983" todate="2006-11-22" towhy="died"
 	ex_MP="yes"
 />
 <lord
