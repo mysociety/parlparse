@@ -14,21 +14,18 @@ cd ~/parlparse/members
 svn -q update
 
 # Add any Hansard patch files we've made
-date +"%Y-%m-%d %H:%M:%S %Z"
 cd ~/parldata/patches
 svn -q add */*.patch 2>&1 | grep -v "is already under version control"
 # (we need native line feeds to apply the patches on Windows)
 svn -q propset svn:eol-style native */*.patch
 svn -q update
 # Add and any new cmpages
-date +"%Y-%m-%d %H:%M:%S %Z"
 cd ~/parldata/cmpages
 for X in debates wrans westminhall wms regmem lordspages; do
     svn -q add $X/*.html 2>&1 | grep -v "is already under version control"
 done
 svn -q update
 # Add and any new scrapedxml
-date +"%Y-%m-%d %H:%M:%S %Z"
 cd ~/parldata/scrapedxml
 for X in debates wrans westminhall wms regmem lordspages; do
     svn -q add $X/*.xml 2>&1 | grep -v "is already under version control"
