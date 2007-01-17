@@ -23,7 +23,7 @@ from pullgluepages import ReplicatePatchToNewScrapedVersion
 pwstandingindex = os.path.join(toppath, "standingindex.xml")
 
 # output directories (everything of one day in one file).
-pwstandingpages = os.path.join(pwcmdirs, "standingpages")
+pwstandingpages = os.path.join(pwcmdirs, "standing")
 
 
 # this does the main loading and gluing of the initial day debate
@@ -207,7 +207,7 @@ def StandingPullGluePages(datefrom, dateto, bforcescrape):
 					print "  matched with:", dgflatest
 				continue
 
-		ReplicatePatchToNewScrapedVersion('standingpages', dgflateststem, dgflatest, dgfnext, dgfnextstem)
+		ReplicatePatchToNewScrapedVersion('standing', dgflateststem, dgflatest, dgfnext, dgfnextstem)
 		if miscfuncs.IsNotQuiet():
 			print dnu[0], (dgflatest and 'RE-scraped' or 'scraped'), re.sub(".*?cmpages[/\\\\]", "", dgfnext)
 		os.rename(tempfilename, dgfnext)
