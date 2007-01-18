@@ -1264,8 +1264,8 @@
 	id="uk.org.publicwhip/member/90160"
 	title="" firstname="Geraldine" lastname="Dougan"
 	constituency="Mid Ulster" party="Sinn Féin"
-	fromdate="2003-11-26" todate="9999-12-31"
-	fromwhy="general_election" towhy="still_in_office"
+	fromdate="2003-11-26" todate="2007-01-14"
+	fromwhy="general_election" towhy="changed_party"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90161"
@@ -1887,5 +1887,19 @@
 	constituency="Belfast East" party="Speaker"
 	fromdate="1999-12-01" todate="2003-04-28"
 	fromwhy="devolution" towhy="general_election"
+/>
+<member_ni
+    id="uk.org.publicwhip/member/90243"
+    title="" firstname="Marietta" lastname="Farrell"
+    constituency="Lagan Valley" party="SDLP"
+    fromdate="2007-01-09" todate="9999-12-31"
+    fromwhy="appointed" towhy="still_in_office"
+/>
+<member_ni
+	id="uk.org.publicwhip/member/90244"
+	title="" firstname="Geraldine" lastname="Dougan"
+	constituency="Mid Ulster" party="Independent"
+	fromdate="2007-01-15" todate="9999-12-31"
+	fromwhy="changed_party" towhy="still_in_office"
 />
 </publicwhip>
