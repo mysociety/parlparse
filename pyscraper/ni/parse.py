@@ -244,7 +244,7 @@ class ParseDay:
 	def parse_day_new(self, body):
 		self.url = ''
 
-		if not re.match('THE\s+(transitional\s+)?ASSEMBLY(?i)', body[0].find(text=True)):
+		if not re.match('THE\s+(transitional(<br>)?\s+)?ASSEMBLY(?i)', ''.join(body[0](text=True))):
 			raise ContextException, 'Missing NIA heading!'
 		date_head = body[1].find(text=True)
 		body = body[2:]
