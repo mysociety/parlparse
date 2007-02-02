@@ -1902,4 +1902,11 @@
 	fromdate="2007-01-15" todate="9999-12-31"
 	fromwhy="changed_party" towhy="still_in_office"
 />
+<member_ni
+    id="uk.org.publicwhip/member/90245"
+    title="Ms" firstname="Dawn" lastname="Purvis"
+    constituency="Belfast East" party="PUP"
+    fromdate="2007-01-29" todate="9999-12-31"
+    fromwhy="appointed" towhy="still_in_office"
+/>
 </publicwhip>

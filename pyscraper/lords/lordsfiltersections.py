@@ -199,7 +199,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return clauseResolvedMatch.group(1) == "negative" and "disagreedto" or "agreedto"
 	if re.match('<p>Remaining( clauses?| and| schedules?)+ agreed to\.</p>', qpara):
 		return "agreedto"
-	commonsAmendMatch = re.match('<p>(?:On Question, )?(?:Commons )?Amendments? .{0,60}? (dis)?agreed to(?: accordingly)?\.</p>', qpara)
+	commonsAmendMatch = re.match('<p>(?:On Question, )?(?:manuscript )?(?:Commons )?Amendments? .{0,60}?(dis)?agreed to(?: accordingly)?\.</p>(?i)', qpara)
 	if commonsAmendMatch:
 		return commonsAmendMatch.group(1) and "disagreedto" or "agreedto"
 	if re.match('<p>On Question, (?:Clause|Motion) .{0,16}?agreed to\.</p>', qpara):
