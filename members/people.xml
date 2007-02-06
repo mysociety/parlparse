@@ -6879,7 +6879,8 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100511" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13072" latestname="Lord Willoughby de Broke">
-    <office id="uk.org.publicwhip/lord/100690" current="yes"/>
+    <office id="uk.org.publicwhip/lord/100690"/>
+    <office id="uk.org.publicwhip/lord/100945" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13073" latestname="Baroness Howells of St Davids">
     <office id="uk.org.publicwhip/lord/100309" current="yes"/>
@@ -7066,6 +7067,10 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13132" latestname="Baroness Lockwood">
     <office id="uk.org.publicwhip/lord/100382" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/13602" latestname="Lord Pearson of Rannoch">
+    <office id="uk.org.publicwhip/lord/100491"/>
+    <office id="uk.org.publicwhip/lord/100944" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13133" latestname="Lord Harris of Peckham">
     <office id="uk.org.publicwhip/lord/100277" current="yes"/>
@@ -8512,9 +8517,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100492" current="yes"/>
     <office id="uk.org.publicwhip/moffice/1350" current="yes"/>
 </person>
-<person id="uk.org.publicwhip/person/13602" latestname="Lord Pearson of Rannoch">
-    <office id="uk.org.publicwhip/lord/100491" current="yes"/>
-</person>
 <person id="uk.org.publicwhip/person/13603" latestname="Lord Paul">
     <office id="uk.org.publicwhip/lord/100490" current="yes"/>
 </person>
@@ -9239,6 +9241,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13853" latestname="Edwin Poots">
     <office id="uk.org.publicwhip/member/90100"/>
     <office id="uk.org.publicwhip/member/90221" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/13889" latestname="Dawn Purvis">
+    <office id="uk.org.publicwhip/member/90245" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13854" latestname="Sue Ramsey">
     <office id="uk.org.publicwhip/member/90101"/>
