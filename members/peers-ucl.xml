@@ -5096,7 +5096,7 @@
 	lordofname_full="Bridge of Gaur"
 	county="the District of Perth and Kinross"
 	peeragetype="L" affiliation="Con"
-	fromdate="1990" todate="9999-12-31"
+	fromdate="1990" todate="2007-01-07" towhy="changed_party"
 />
 <lord
 	id="uk.org.publicwhip/lord/100492"
@@ -7161,7 +7161,7 @@
 	forenames="Leopold"
 	title="Lord" lordname="Willoughby de Broke" lordofname=""
 	peeragetype="HP" affiliation="Con"
-	fromdate="1986" todate="9999-12-31"
+	fromdate="1986" todate="2007-01-07" towhy="changed_party"
 />
 <lord
 	id="uk.org.publicwhip/lord/100691"
@@ -9608,6 +9608,28 @@
     county="Caithness"
     peeragetype="L" affiliation="Lab"
     fromdate="2006-10-09" todate="9999-12-31"
+/>
+
+<lord
+	id="uk.org.publicwhip/lord/100944"
+	house="lords"
+	forenames="Malcolm"
+	forenames_full="Malcolm Everard MacLaren"
+	title="Lord" lordname="Pearson" lordofname="Rannoch"
+	lordofname_full="Bridge of Gaur"
+	county="the District of Perth and Kinross"
+	peeragetype="L" affiliation="UKIP"
+	fromdate="2007-01-09" todate="9999-12-31"
+	fromwhy="changed_party"
+/>
+<lord
+	id="uk.org.publicwhip/lord/100945"
+	house="lords"
+	forenames="Leopold"
+	title="Lord" lordname="Willoughby de Broke" lordofname=""
+	peeragetype="HP" affiliation="UKIP"
+	fromdate="2007-01-09" todate="9999-12-31"
+	fromwhy="changed_party"
 />
 
 

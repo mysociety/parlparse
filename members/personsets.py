@@ -88,6 +88,10 @@ lordlordmatches = {
     "uk.org.publicwhip/lord/100937":"uk.org.publicwhip/lord/100479",  # Bishop of Oxford becomes XB Lord
     "uk.org.publicwhip/lord/100942":"uk.org.publicwhip/lord/100677",  # Lord Wedderburn changes party
     "uk.org.publicwhip/lord/100943":"uk.org.publicwhip/lord/100924",  # As does Lord Boyd...
+    "uk.org.publicwhip/lord/100491":"uk.org.publicwhip/lord/100944",  # And Perason
+    "uk.org.publicwhip/lord/100945":"uk.org.publicwhip/lord/100690",  # And Willoughby.
+    # XXX: Must be a way to do party changes automatically!
+    # XXX: And the key:value ordering here is very suspect
 }
 
 ni_mp_matches = {
