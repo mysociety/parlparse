@@ -136,6 +136,8 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = [urla[0]]
         if sdate=='2006-11-21' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061121/debtext/61121-0001.htm':
                 urla = urla[0:11] + urla[12:] # Incorrect link in middle of index
+        if sdate=='2007-02-05' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070205/debtext/70205-0001.htm':
+                urla = [urla[0]]
 
 	# loop which scrapes through all the pages following the nextlinks
 	while urla:
