@@ -315,10 +315,11 @@ class protooffice:
 	# this helps us chain the offices
 	def StickChain(self, nextrec, fn):
 		if (self.sdateend, self.stimeend) >= nextrec.sdatet:
-			print self.sdateend, self.stimeend, nextrec.sdatet
+			print "datetime not incementing"
+                        print self.sdateend, self.stimeend, nextrec.sdatet
 			print fn
-		assert (self.sdateend, self.stimeend) < nextrec.sdatet
-		assert self.bopen
+                        assert False
+                assert self.bopen
 
 		if (self.fullname, self.dept, self.pos, self.responsibility) == (nextrec.fullname, nextrec.dept, nextrec.pos, nextrec.responsibility):
 			consCheckA = self.cons
