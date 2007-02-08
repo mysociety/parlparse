@@ -444,6 +444,7 @@ def ParseGovPostsPage(fr, gp):
                 if msdate != sudate and sudate not in ["2004-09-20", '2005-03-10', '2005-05-13', '2005-06-06', '2006-05-16', '2006-06-12', '2006-06-13', '2006-06-14', '2006-06-15', '2006-07-27', '2006-08-17']:
                         print "%s : Updated date is %s, but date of change %s" % (gp, sudate, msdate)
 
+
                 sdate = sudate
                 stime = sutime	# or midnight if not posted properly to match the msdate
 
@@ -500,6 +501,7 @@ def ParseGovPostsPage(fr, gp):
 #	</td>
 
 def ParsePrivSecPage(fr, gp):
+	# problem here is there's no date on the page to compare with the lastupdated
 	# extract the updated date and time
         if (gp == 'privsec0017_2006-01-13.html'):
                 sdate = '2006-01-13'
@@ -513,11 +515,15 @@ def ParsePrivSecPage(fr, gp):
         elif (gp == 'privsec0041_2006-09-07.html'):
                 sdate = '2006-09-06'
                 stime = '12:00'
-	elif gp == "privsec0043_2006-09-29.html" or gp == "privsec0044_2006-10-26.html":
+        elif (gp == 'privsec0052_2007-02-08.html'):
+                sdate = '2007-02-08'
+                stime = '12:00'
+        elif gp == "privsec0043_2006-09-29.html" or gp == "privsec0044_2006-10-26.html":
                 return "SKIPTHIS", None
+
         else:
                 frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
-	        if not frupdated:
+                if not frupdated:
                         print "failed to find lastupdated in", gp
                 lsudate = re.match("(\d\d)/(\d\d)/(\d\d\d\d)$", frupdated.group(1))
                 if lsudate:

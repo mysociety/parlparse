@@ -64,7 +64,7 @@ def GrabWatchCopies(sdate):
 		lastnum = 0
 		if wl:
 			lin = open(os.path.join(watchdir, wl[-1]), "r")
-			lastval = lin.read()
+			lastval = lin.read().strip()
 			lin.close()
 			numg = re.match("\D*(\d+)_", wl[-1])
 			assert numg
@@ -73,12 +73,19 @@ def GrabWatchCopies(sdate):
 		# get copy from web
 		#print "urling", watchpages[ww]
 		ur = urllib.urlopen(watchpages[ww])
-		currval = ur.read()
+		currval = ur.read().strip()  # sometimes there are trailing spaces
 		ur.close()
 
 		# comparison with previous page
 		# we use 4 digit numbering at the front to ensure that cases are separate and ordered
-		if currval != lastval:
+
+		spcurrval = re.sub("\s+", "", currval)
+		splastval = re.sub("\s+", "", lastval)
+
+		# this is the comparison between the two pages with the spaces removed!
+		if spcurrval != splastval:
+			#print len(currval), len(lastval)
+			#print len(spcurrval), len(splastval), (spcurrval == splastval)
 
 			# build the name for this page and make sure it follows, even when we have the same date
 			wwn = "%s%04d_%s.html" % (ww, lastnum + 1, sdate)
