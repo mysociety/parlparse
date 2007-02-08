@@ -370,13 +370,14 @@ def ParseSelCteePage(fr, gp):
 	# extract the date on the document
 	frdate = re.search("Select Committee\s+Membership at\s+(.*?)\s*<(?i)", fr)
         if frdate:
-        	msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
-                if sudate != msdate and sudate == '2006-05-19':
-                        sudate = msdate
-                if sudate != msdate and sudate == '2006-07-05':
-                        sudate = msdate
-                if sudate != msdate and sudate == '2006-11-17':
-                        sudate = msdate
+                msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
+                if sudate != msdate:
+                        if sudate in ['2006-05-19', '2006-07-05', '2006-11-17']:
+                                sudate = msdate
+                        elif msdate in ['2007-02-08']:
+                                sudate = msdate
+                        elif sudate > '2007-01-26':
+                                print "mismatch of dates;", msdate, "updated:", sudate
 
         sdate = sudate
         stime = sutime
