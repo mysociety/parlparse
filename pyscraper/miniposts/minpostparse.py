@@ -93,6 +93,7 @@ govdepts = ["Department of Health",
                                 "Office of the Secretary of State for Wales",
                                 "Department for Productivity, Energy and Industry",
                                 "Scotland Office",
+                                "Wales Office",
                                 "Department for Communities and Local Government",
                                 "No Department",
                                 ]
@@ -284,14 +285,14 @@ class protooffice:
 					print "Attempted match on", dept0
 
 			if not self.depts:
-				print "No match for department: '%s'" % dept
+				print "\n***No match for department: '%s'\n" % dept
 
 		else:
 			self.depts = [ (pos, dept) ]
 
 
 		# map down to the department for this record
-                self.pos = self.depts[deptno][0]
+		self.pos = self.depts[deptno][0]
 		self.responsibility = responsibility
 		self.dept = self.depts[deptno][1]
 
@@ -315,11 +316,11 @@ class protooffice:
 	# this helps us chain the offices
 	def StickChain(self, nextrec, fn):
 		if (self.sdateend, self.stimeend) >= nextrec.sdatet:
-			print "datetime not incementing"
-                        print self.sdateend, self.stimeend, nextrec.sdatet
+			print "\n\n *** datetime not incementing\n\n"
+			print self.sdateend, self.stimeend, nextrec.sdatet
 			print fn
-                        assert False
-                assert self.bopen
+			assert False
+		assert self.bopen
 
 		if (self.fullname, self.dept, self.pos, self.responsibility) == (nextrec.fullname, nextrec.dept, nextrec.pos, nextrec.responsibility):
 			consCheckA = self.cons
@@ -667,10 +668,13 @@ def SetNameMatch(cp, cpsdates, mpidmap):
 
                 if fullname == "Rt Hon Michael Ancram, Earl of QC" or fullname == "Rt Hon Michael Ancram, Earl of, QC":
                         fullname = "Michael Ancram"
+                if fullname == "Hon Nicholas Nicholas Soames":
+                        fullname = "Nicholas Soames"
 		cp.matchid, cp.remadename, cp.remadecons = memberList.matchfullnamecons(fullname, cons, cpsdates[0])
 		if not cp.matchid:
                         print cpsdates[0]
 			print (cp.matchid, cp.remadename, cp.remadecons)
+			print cpsdates
 			raise Exception, 'No match: ' + fullname + " : " + (cons or "[nocons]") + "\nOrig:" + cp.fullname
 	else:
 		cp.remadename = cp.fullname
