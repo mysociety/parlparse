@@ -60,13 +60,18 @@ class StandingSoup(BeautifulSoup):
         (re.compile('<<(\d+)>'), lambda match: "<b>Column Number: %s</b></p>" % match.group(1)),
         
         # <UL> tags are abused 
+        (re.compile('(<P>\s*</UL></FONT>)'), '</font></p><p>'),
+        (re.compile('</UL></UL></UL>The following Members attended the Committee:'), '<p>The following Members attended the Committee:'),
+        
         (re.compile('(<UL>)'), '<p>'),
         (re.compile('(</UL>)'), '</p>'),
     
         # get rid of raw ampersands in the text
         (re.compile(' & '), ' &amp; '),
+        (re.compile('([A-Z])&([A-Z])'),lambda match: match.group(1) + '&amp;' + match.group(2) ),
  
         # Swap elements that are clearly the wrong way round
+        (re.compile('(<b>Column Number: \d*?</b></p>)'), lambda match: match.group(1)+ '<p>'), 
         (re.compile('(<p>)\s*(<h4 align=center>)'), lambda match: match.group(2)),
         (re.compile('(<p[^>]*>)\s*((</(font|i|b|ul)>)+)'), lambda match: match.group(2) + match.group(1)),
         (re.compile('(<p[^>]*>)\s*(<b>)'), lambda match: match.group(2) + match.group(1)),
@@ -105,14 +110,30 @@ class ParseCommittee:
     def display_para(self, tag, indent=False, amendmentText=False):
         """Output a paragraph of text. 
         """ 
-        ptext = re.sub("\s+", " ", ''.join(tag(text=True))).strip()
+        # deal with the column numbers
+        for col in tag.findAll('div', {'class':'Column'}):
+            self.parse_column(''.join(col(text=True)))
+            col.replaceWith("&nbsp;")
+
+        for col in tag.findAll(text=re.compile('Column Number:\s*?(\d+)')):
+            self.parse_column(col)
+            col.replaceWith("&nbsp;")
+          
+        # timelines
+        for time in tag.findAll('h5', {'class': None}):
+            self.parse_timeline(time)  
+            time.replaceWith(" ")  
+        
+        # don't include any h4 content - it will be handled
+        # directly in the main parse_xxx_sitting_part function
+        ptext = ''.join([node for node in tag(text=True) if getattr(node.parent, 'name', 'None') != 'h4'])
+        
+        ptext = re.sub("\s+", " ", ptext).strip()
         if not ptext: return 
       
         indent_str = ''
         if indent: indent_str = ' class="indent"'
         
-        #if tag.parent.name == 'ul' or tag.ul: amendmentText = True
-            
         if amendmentText:
             level = "unknown"
             if tag.get('class', None):
@@ -131,6 +152,7 @@ class ParseCommittee:
 
         # get rid of empty nodes
         contents = [node for node in tag if ((not node.string) or node.string.strip())]    
+        
         if len(contents) == 0: return 
         firstNode = contents[0]
         if getattr(firstNode, 'name', None) in ['a','b'] and ptext.find(':') != -1 and len(ptext.strip()) -1 > ptext.find(':') and len(contents)>1:
@@ -158,6 +180,8 @@ class ParseCommittee:
         
         # display the contents of the tag as a para
         text = self.render_node_list(contents)
+        if not self.in_speech:
+            self.display_speech_tag()
         if text: self.out.write('<p%s%s>%s</p>\n' % (indent_str, amendment_str, text))    
                 
     def display_heading(self, text, type):
@@ -222,23 +246,28 @@ class ParseCommittee:
         self.out.write( '</divisioncount>\n' )
             
     def render_table(self, table):
+        """Use some heuristics to figure out if a table is genuine data or just bad HTML
+        and ignore or diaply it accordingly""" 
         tabletext = []
         prev = table.previous
         if getattr(prev, 'name', None) == 'a' and prev.get('name', None) == 'end':
-             print "IGNORING table"
-        elif getattr(table.next, 'name', None) != 'tr':
-             print "IGNORING table"
+             pass
+        elif not table(text=re.compile('[a-z]')):
+             pass
+        elif table('font', {'size': '+3'} ):
+             pass
+        elif table('h1', {'align': 'left'} ):
+             pass
         elif re.search('attended the Committee', (table.findPrevious(text=re.compile('[a-z]')) or '').strip()):
-             print "IGNORING table"
+             pass
         elif len(table.findAllPrevious(text=re.compile('[a-z]'))) < 6:
-             print "IGNORING table"
+             pass
         else: 
-             print "PRINTING table"
              tabletext.append('<data>')
              tabletext.append(str(table))
              tabletext.append('</data>')
              table.contents = []
-        print str(table)[0:200]
+             
         return ''.join(tabletext)  
         
     def render_committee_member(self, match_text, orig_text, attending):
@@ -479,7 +508,8 @@ class ParseCommittee:
         elif re.match('12\s*?midnight', text):
             self.timestamp = "00:00"
         else:
-            raise ContextException, "Content other than timeline in h5 tag: %s" % tag.renderContents() 
+            raise ContextException, "Content other than timeline in expected timeline tag: %s" % tag.renderContents() 
+        
              
     def parse_old_committee(self, tag):
         """Parse the old-style committee membership listing"""
@@ -557,13 +587,15 @@ class ParseCommittee:
         got_members = False
         # try using tags to break out  members
         candidates = tag.findAllNext({'p':True, 'h4':True}) 
-        filtered_candidates = []
         
+        filtered_candidates = []
         # search until we find the end (markup is too variable)
         for candidate in candidates: 
+            
             text = ''.join(candidate(text=True))
             if re.search('(A|a)ttended the Committee', text):
                 got_members = True
+                candidate.contents = []
                 break
             filtered_candidates.append(candidate)
         
@@ -575,6 +607,7 @@ class ParseCommittee:
             while not re.search('(A|a)ttended the Committe(e)?', str(tag)):
                 if str(tag).strip(): filtered_candidates.append(tag)
                 tag = tag.nextSibling
+            tag.extract()
             # reassemble text and split on the only delimiters - <br /> tags
             long = ''.join([str(x) for x in filtered_candidates])    
             long = re.sub('.*?</p>', '', long)    
@@ -716,6 +749,7 @@ class ParseCommittee:
         # open the xml file
         self.out = open( os.path.join(pwxmldirs,'standing','%s.xml.new' % sitting_part), 'w')
         self.out = streamWriter(self.out)
+        
         WriteXMLHeader(self.out)
         self.out.write('<publicwhip>')
         
@@ -731,7 +765,7 @@ class ParseCommittee:
         self.close_speech()
         self.out.write('</publicwhip>\n')
         self.out.close()
-        
+  
         newfile = os.path.join(pwxmldirs,'standing','%s.xml' % sitting_part)
         if os.path.exists(newfile):
             os.unlink(newfile)
@@ -757,7 +791,7 @@ class ParseCommittee:
         bill_link.extract()
         
         if url: url_str = 'url="%s%s"' %  (self.baseurl, url)
-        self.out.write('<bill %s title="%s">%s</bill>' % (url_str, plaintitle, title))
+        self.out.write('<bill %s title="%s">%s</bill>\n' % (url_str, plaintitle, title))
         
         self.parse_new_committee(soup)
                 
@@ -827,7 +861,7 @@ class ParseCommittee:
             elif tag.name == 'p':
                 if tag.get('class', None):                        
                     if tag['class'] == 'smallcaps':
-                        self.display_heading(tag.string, "minor")
+                        self.display_heading(text, "minor")
                     elif tag['class'] == 'class':
                         self.display_para(tag, indent=False, amendmentText=True)
                 elif re.match("The Committee consisted of the following Members:\s*?$", text):
@@ -838,9 +872,9 @@ class ParseCommittee:
                     self.parse_column(text)
                 elif re.match('Examination of Witnesses', text):
                     self.external_speakers = True
-                    self.display_heading(tag.string, "minor")
+                    self.display_heading(text, "minor")
                 elif tag.get('align', None) and tag['align'] == 'center':
-                    self.display_heading(tag.string, "minor")
+                    self.display_heading(text, "minor")
                 else:
                     self.display_para(tag)
             if tag.name == 'h1':
@@ -858,20 +892,20 @@ class ParseCommittee:
                 elif re.search('in\s+the\s+Chair', text):
                     self.display_chair(tag)
                 elif re.match('\s*\[?(New)?\s*(c|C)lause', text):
-                    self.display_heading(tag.string, "minor")
+                    self.display_heading(text, "minor")
                 elif re.match('\[?(New)?\s*Schedule', text):
-                    self.display_heading(tag.string, "minor")
+                    self.display_heading(text, "minor")
                 elif re.match('\[?Part', text):
-                    self.display_heading(tag.string, "minor")
+                    self.display_heading(text, "minor")
                 elif re.match('(\d\d?)\.?(\d\d)?\s*?(a|p)m', text) or re.match ('12\s*?noon|12\s*?midnight', text):
                     self.parse_timeline(tag)
                 elif re.match('The Committee consisted of the following Members:', text):
                     self.parse_committee(tag)
                 elif re.match('Examination of Witnesses', text):
                     self.external_speakers = True
-                    self.display_heading(tag.string, "minor")
+                    self.display_heading(text, "minor")
                 else:
-                    self.display_heading(tag.string, "minor")
+                    self.display_heading(text, "minor")
             elif tag.name == 'h5':
                 self.parse_timeline(tag)                
             elif tag.name == 'page':   
@@ -943,9 +977,7 @@ standing_dir = os.path.join(toppath, 'cmpages', 'standing')
 if len(sys.argv)==2 and sys.argv[1] == '--patchtool':
     patchtool = True
 
-g = glob.glob(os.path.join(standing_dir, 'standing*.html'))
-#g = glob.glob(os.path.join(standing_dir, 'standing2001-12-06_F_03-0_2001-12-11a.html'))
-#g = glob.glob(os.path.join(standing_dir, 'standing2007*.html'))
+g = glob.glob(os.path.join(standing_dir, 'standing200*.html'))
 
 g.sort()
 parser = ParseCommittee()
