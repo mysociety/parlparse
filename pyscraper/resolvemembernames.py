@@ -19,8 +19,10 @@ from contextexception import ContextException
 # These we don't necessarily match to a speaker id, deliberately
 regnospeakers = "Hon\.? Members|Members of the House of Commons|" + \
         "Deputy? ?Speaker|Second Deputy Chairman(?i)|Speaker-Elect|" + \
-        "The Chairman|First Deputy Chairman|Temporary Chairman"
+        "The Chairman|First Deputy Chairman|Temporary Chairman|" + \
+        "An hon. Member"
 
+reChairman = "The Chairman|Chairman|The Chair"
 
 class MemberList(xml.sax.handler.ContentHandler):
     def __init__(self):
@@ -39,9 +41,11 @@ class MemberList(xml.sax.handler.ContentHandler):
         self.parties = {} # party --> MPs
         self.officetopersonmap = {} # member ID --> person ID
         self.persontoofficemap = {} # person ID --> office
+        # keep track of the chairman in committees
+        self.chairman = None
 
         # "rah" here is a typo in division 64 on 13 Jan 2003 "Ancram, rah Michael"
-        self.titles = "Dr |Hon |hon |rah |rh |Mrs |Ms |Mr |Miss |Rt Hon |Reverend |The Rev |The Reverend |Sir |Dame |Rev |Prof "
+        self.titles = "Dr |Hon |hon |rah |rh |right hon |Mrs |Ms |Mr |Miss |Rt Hon |Reverend |The Rev |The Reverend |Sir |Dame |Rev |Prof "
         self.retitles = re.compile('^(?:%s)' % self.titles)
         self.rejobs = re.compile('^%s$' % parlPhrases.regexpjobs)
 
@@ -66,7 +70,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         if name == "member":
 
 			# MAKE A COPY.  (The xml documentation warns that the attr object can be reused, so shouldn't be put into your structures if it's not a copy).
-			attr = attr.copy()
+            attr = attr.copy()
 
             if self.members.get(attr["id"]):
                 raise Exception, "Repeated identifier %s in members XML file" % attr["id"]
@@ -235,7 +239,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         return ids
 
 	# useful to have this function out there
-	def striptitles(self, text):
+    def striptitles(self, text):
         # Remove dots, but leave a space between them
         text = text.replace(".", " ")
         text = text.replace("&nbsp;", " ")
@@ -256,7 +260,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             (text, honourgot) = self.rehonourifics.subn("", text)
             honourtotal = honourtotal + honourgot
 
-		return text.strip(), titletotal
+        return text.strip(), titletotal
 
     def strippunc(self, cons):
         nopunc = cons.replace(',','').replace('-','').replace(' ','').lower().strip()
@@ -427,6 +431,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         txt = txt.replace("&#039;", "'")
         txt = txt.replace("&#146;", "'")
         txt = txt.replace("&nbsp;", " ")
+        txt = txt.replace("&rsquo;", "'")
         txt = re.sub("\s{2,10}", " ", txt)  # multiple spaces
         return txt
 
@@ -449,18 +454,15 @@ class MemberList(xml.sax.handler.ContentHandler):
         input = self.basicsubs(input)
 
         # Clear name history if date change
-        if self.debatedate != date:
-            self.debatedate = date
-            self.cleardebatehistory()
-
-
+        self.date_setup(date)
+  
         # Sometimes no bracketed component: Mr. Prisk
         ids = self.fullnametoids(input, date)
         # Different types of brackets...
         if bracket:
             # Sometimes name in brackets:
             # The Minister for Industry and the Regions (Jacqui Smith)
-	        bracket = self.basicsubs(bracket)
+            bracket = self.basicsubs(bracket)
             brackids = self.fullnametoids(bracket, date)
             if brackids:
                 speakeroffice = ' speakeroffice="%s" ' % input
@@ -497,8 +499,8 @@ class MemberList(xml.sax.handler.ContentHandler):
 
             # search through history, starting at the end
 
-			# old wasteful way of coding it
-			#history = copy.copy(self.debatenamehistory)
+            # old wasteful way of coding it
+            #history = copy.copy(self.debatenamehistory)
             #history.reverse()
 
             # [1:] here we misses the first entry, i.e. it misses the previous
@@ -511,12 +513,12 @@ class MemberList(xml.sax.handler.ContentHandler):
             # trouble.
 
 
-			# this looking back two can sometimes fail if a speaker is interrupted
-			# by something procedural, and then picks up his thread straight after himself
-			# (eg in westminsterhall if there is a suspension to go vote in a division in the main chamber on something about which they haven't heard the debate)
+            # this looking back two can sometimes fail if a speaker is interrupted
+            # by something procedural, and then picks up his thread straight after himself
+            # (eg in westminsterhall if there is a suspension to go vote in a division in the main chamber on something about which they haven't heard the debate)
             ix = len(self.debatenamehistory) - 2
-			while ix >= 0:
-			    x = self.debatenamehistory[ix]
+            while ix >= 0:
+                x = self.debatenamehistory[ix]
                 if x in ids:
                     # first match, use it and exit
                     ids = sets.Set([x,])
@@ -601,6 +603,211 @@ class MemberList(xml.sax.handler.ContentHandler):
             return True
         return False
 
+    def date_setup(self, date):
+        """Clears the debate history if a new date is supplied"""
+        if self.debatedate != date:
+            self.debatedate = date
+            self.cleardebatehistory()
+            
+    def intersect_constituency(self, text, ids, date):
+        """Return the intersection of a set of ids with any
+        constituency matches for a text fragment
+        """
+        
+        consids = self.constoidmap.get(text, None)
+        if consids:
+            # Search for constituency matches, and intersect results with them
+            newids = sets.Set()
+            for consattr in consids:
+                if consattr["fromdate"] <= date and date <= consattr["todate"]:
+                    consid = consattr['id']
+                    # get any mps
+                    matches = self.considtomembermap.get(consid, None)
+                        
+                    if matches:
+                        for attr in matches:
+                            if date >= attr["fromdate"] and date <= attr["todate"]:
+                                if attr["id"] in ids:
+                                    newids.add(attr["id"])
+            ids = newids
+        
+        return ids    
+            
+    def make_ctte_name(self, id):
+        # form canonical name
+        remadename = self.members[id]["lastname"]
+        if self.members[id]["firstname"]:
+            remadename = '%s' % (self.members[id]["firstname"] + " " + remadename)
+        if self.members[id]["title"]:
+            remadename = '%s' % (self.members[id]["title"] + " " + remadename)    
+        
+        return remadename
+    
+    def disambiguate_from_history(self, ids):
+        # search through history, starting at the end
+
+        # [1:] here we miss the first entry, i.e. it misses the previous
+        # speaker.  This is necessary for example here:
+        #     http://www.publications.parliament.uk/pa/cm200304/cmhansrd/cm040127/debtext/40127-08.htm#40127-08_spnew13
+        # Mr. Clarke refers to Charles Clarke, even though it immediately
+        # follows a Mr. Clarke in the form of Kenneth Clarke.  By ignoring
+        # the previous speaker, we correctly match the one before.  As the
+        # same person never speaks twice in a row, this shouldn't cause
+        # trouble.
+        # this looking back two can sometimes fail if a speaker is interrupted
+        # by something procedural, and then picks up his thread straight after himself
+        # (eg in westminsterhall if there is a suspension to go vote in a division in the main chamber on something about which they haven't heard the debate)
+        
+        ix = len(self.debatenamehistory) - 2
+        while ix >= 0:
+            x = self.debatenamehistory[ix]
+            
+            if x in ids:
+                # first match, use it and exit
+                ids = sets.Set([x,])
+                break
+            ix -= 1
+        return ids
+        
+    def set_chairman(self, chairman):
+        chairman = self.basicsubs(chairman)
+        chairman = self.fixnamecase(chairman)
+        chairman = chairman.strip()
+        self.chairman = chairman
+        
+    def get_chairman(self):
+        return self.chairman
+    
+    def matchcttename(self, input, bracket, date):
+        """Generates an XML fragment for use in describing a committee member
+        in Public Bill Committee Debates. 
+        input: A string extracted from a committee member list, expected to be a name
+        bracket: A string extracted from a bracket directly following input in the 
+            original document
+        date: The date of the debate - used to narrow name matches 
+        """
+        self.date_setup(date)
+        input = self.basicsubs(input)
+        ids = self.fullnametoids(input, date)
+        
+        # Bracket should be constituency
+        if bracket: ids = self.intersect_constituency(bracket, ids, date)
+        
+        # If ambiguous (either form "Mr. O'Brien" or full name, ambiguous due
+        # to missing constituency) look in recent name match history
+        if len(ids) > 1: ids = self.disambiguate_from_history(ids)    
+
+        if len(ids) == 0 and re.search(reChairman, input) and self.chairman:
+            ids =  self.fullnametoids(self.chairman, date)
+            if len(ids) == 0:
+                raise ContextException, "Couldn't match Committee Chairman %s" % self.chairman
+            
+        if len(ids) == 0:
+            if not re.search(regnospeakers, input):
+                raise ContextException, "No matches %s" % (input)
+            return ' memberid="unknown" error="No match" '
+        if len(ids) > 1:
+            names = ""
+            for id in ids:
+                names += id + " " + self.members[id]["firstname"] + " " + self.members[id]["lastname"] + " (" + self.members[id]["constituency"] + ") "
+            raise ContextException, "Multiple matches %s, possibles are %s" % (input, names)
+            return ' memberid="unknown" error="Matched multiple times" '
+
+        for id in ids:
+            pass
+    
+        # we can use the committee member names to help resolve ambiguities 
+        # in the following debate
+        self.debatenamehistory.append(id)
+        remadename = self.make_ctte_name(id)
+        ret = """ memberid="%s" membername="%s" """ % (id, remadename)
+        return ret.encode('ascii', 'xmlcharrefreplace')
+    
+    def matchcttedebatename(self, input, bracket, date, external_speakers=False):
+        """Match a name from a Public Bill Committee debate and generate an XML 
+        fragment for use in a speech tag
+        input - name text to be matched
+        bracket - extra text extracted from a bracket following the name
+        date - date of document input comes from 
+        external_speakers - flag indicating that we are expecting external speakers,
+        if true, ContextExceptions are not thrown for no matches"""
+        
+        speakeroffice = ""
+        input = self.basicsubs(input)
+        # clear debate history if name change
+        self.date_setup(date)
+        # Sometimes no bracketed component: Mr. Prisk
+        ids = self.fullnametoids(input, date)
+        
+        # Different types of brackets...
+        if bracket:
+            # Sometimes name in brackets:
+            # The Minister for Industry and the Regions (Jacqui Smith)
+            bracket = self.basicsubs(bracket)
+            brackids = self.fullnametoids(bracket, date)
+            if brackids:
+                speakeroffice = ' speakeroffice="%s" ' % input.strip()
+
+                # If so, intersect those matches with ones from the first part
+                # (some offices get matched in first part - like Mr. Speaker)
+                if len(ids) == 0:
+                    ids = brackids
+                else:
+                    ids = ids.intersection(brackids)
+
+            # Sometimes constituency in brackets: Malcolm Bruce (Gordon)
+            ids = self.intersect_constituency(bracket, ids, date)
+           
+        # If ambiguous (either form "Mr. O'Brien" or full name, ambiguous due
+        # to missing constituency) look in recent name match history
+        if len(ids) > 1: ids = self.disambiguate_from_history(ids)
+
+        # Office name history ("The Deputy Prime Minster (John Prescott)" is later
+        # referred to in the same day as just "The Deputy Prime Minister")
+        officeids = self.debateofficehistory.get(input, None)
+        if officeids and len(ids) == 0:
+             ids = officeids
+
+        # Match between office and name - store for later use in the same days text
+        if speakeroffice <> "":
+            self.debateofficehistory.setdefault(input, sets.Set()).union_update(ids)
+
+        # Chairman
+        if len(ids) == 0 and re.search(reChairman, input) and self.chairman:
+            #print "trying %s chair: %s" % (input, self.chairman)
+            ids =  self.fullnametoids(self.chairman, date)
+            if len(ids) == 0:
+                raise ContextException, "Couldn't match Committee Chairman %s" % self.chairman
+                
+        # Put together original in case we need it
+        rebracket = input
+        if bracket: rebracket += " (" + bracket + ")"
+
+        # Return errors
+        if len(ids) == 0:
+            if not re.search(regnospeakers, input) and not external_speakers:
+                raise ContextException, "No matches %s" % (rebracket)
+            self.debatenamehistory.append(None) # see below
+            return 'speakerid="unknown" error="No match" speakername="%s"' % (rebracket)
+        if len(ids) > 1:
+            names = ""
+            for id in ids:
+                names += self.members[id]["firstname"] + " " + self.members[id]["lastname"] + " (" + self.members[id]["constituency"] + ") "
+            if not re.search(regnospeakers, input):
+                raise ContextException, "Multiple matches %s, possibles are %s" % (rebracket, names)
+            self.debatenamehistory.append(None) # see below
+            return 'speakerid="unknown" error="Matched multiple times" speakername="%s"' % (rebracket)
+
+        # Extract the one id remaining
+        for id in ids:
+            pass
+
+        # Store id in history for this day
+        self.debatenamehistory.append(id)
+        remadename = self.make_ctte_name(id)
+        ret = 'speakerid="%s" speakername="%s"%s' % (id, remadename, speakeroffice)
+        return ret.encode('ascii', 'xmlcharrefreplace')
+    
     def canonicalcons(self, cons, date):
         consids = self.constoidmap.get(cons, None)
         if not consids:
