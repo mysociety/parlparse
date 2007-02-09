@@ -134,7 +134,6 @@ different spellings of the offices -->
 <alias fullname="Alan Williams" alternate="J William Alan" />
 <alias fullname="David Willetts" alternate="David Willets" />
 <alias fullname="Alan Whitehead" alternate="Alan Whirehead" />
-<alias fullname="Gareth Thomas" alternate="R Thomas Gareth" />
 <alias fullname="Sarah Teather" alternate="Sarah Teathers" />
 <alias fullname="Richard Shepherd" alternate="Richard Shephard" />
 <alias fullname="Lawrie Quinn" alternate="Lawrence Quinn" />
@@ -282,9 +281,7 @@ on that date, and we don't want ambiguos matches any more -->
 <alias fullname="Pete Wishart" alternate="Peter Wishart" />
 <alias fullname="Alan Williams" alternate="Alan John Williams" />
 <alias fullname="Desmond Turner" alternate="Des Turner" />
-<alias fullname="Jenny Tonge" alternate="Jennifer Tonge" />
-<alias fullname="Gareth Thomas" alternate="Gareth Richard Thomas" /> <!-- from Guardian - supposedly Harrow West, can check and change this to a constituency= field if needed -->
-<alias fullname="Gareth Thomas" alternate="Gareth R Thomas" /> 
+<alias fullname="Jenny Tonge" alternate="Jennifer Tonge" /> 
 <alias fullname="John Taylor" alternate="John M Taylor" />
 <alias fullname="Llew Smith" alternate="Llewellyn Smith" />
 <alias fullname="John Smith" alternate="John P Smith" />
@@ -327,7 +324,7 @@ on that date, and we don't want ambiguos matches any more -->
 <alias fullname="Siôn Simon" alternate="Sion Simon" />
 <alias fullname="Raymond Powell" alternate="Ray Powell" />
 <alias fullname="Helen Clark" alternate="Helen Clarke" />
-<alias lastname="Clark" alternate="Brinton" /> <!-- marriage - Brinton is her previous name -->
+<alias fullname="Helen Clark" alternate="Brinton" /> <!-- marriage - Brinton is her previous name -->
 <alias fullname="Helen Clark" alternate="Helen Brinton" /> <!-- marriage - Brinton is her previous name -->
 <alias fullname="Gregory Barker" alternate="Greg Barker" />
 <alias fullname="Bob Spink" alternate="Robert Spink" />
@@ -338,7 +335,6 @@ on that date, and we don't want ambiguos matches any more -->
 
 <!-- First added for 1997 parliament -->
 <alias fullname="Phil Willis" alternate="Philip Willis" />
-<alias fullname="Alan Williams" alternate="Alan W Williams" />
 <alias fullname="Cecil Walker" alternate="A Cecil Walker" />
 <alias fullname="Mo Mowlam" alternate="Marjorie Mowlam" />
 <alias fullname="Robert Maclennan" alternate="Robert MacLennan" />
@@ -404,6 +400,23 @@ on that date, and we don't want ambiguos matches any more -->
     $firstname = "Robert" if ($firstname eq "Robert W" && $lastname eq "Smith" && $constituency eq "West Aberdeenshire & Kincardine");
     if ($firstname eq "Nick St" && $lastname eq "Aubyn") { $firstname = "Nick"; $lastname = "St Aubyn"; }
 -->
-
+<!-- First added for Public Bill Committees -->
+<alias fullname="Lembit Öpik" alternate="Lembit &amp;Ouml;pik" />
+<alias lastname="Öpik" alternate="&amp;#214;pik" />
+<alias lastname="Öpik" alternate="O¨pik" />
+<alias fullname="Lembit Öpik" alternate="Lembit O¨pik" />
+<alias fullname="Debra Shipley" alternate="Deborah Shipley" />
+<alias constituency="Harrow West" alternate="Gareth Richard Thomas" from="1997-05-01" to="2001-05-14"/> 
+<alias constituency="Harrow West" alternate="Gareth R Thomas" from="1997-05-01" to="2001-05-14"/>
+<alias constituency="Harrow West" alternate="Gareth R Thomas" from="2001-06-07" to="2005-04-11"/>
+<alias constituency="Carmarthen East &amp; Dinefwr" alternate="Alan W Williams" from="1997-05-01" to="2001-05-14"/> 
+<alias fullname="Laura Moffatt" alternate="Laura Moffat" />
+<alias constituency="Solihull" alternate="John M Taylor" from="1997-05-01" to="2001-05-14" />
+<alias lastname="Ottaway" alternate="Ottway" />
+<alias lastname="Ottaway" alternate="Ottoway" />
+<alias lastname="Brooke" alternate="Brooks" />
+<alias lastname="Armstrong" alternate="Armstong" />
+<alias lastname="Curry" alternate="Currey" />
+<alias lastname="Kirkbride" alternate="Kirkbridge" />
 </publicwhip>
 
