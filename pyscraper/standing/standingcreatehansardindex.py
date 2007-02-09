@@ -11,7 +11,7 @@ import xml.sax
 import mx.DateTime
 
 import miscfuncs
-from standingutils import construct_shortname
+from standingutils import construct_shortname, create_committee_letters
 
 toppath = miscfuncs.toppath
 
@@ -211,9 +211,7 @@ def WriteXML(fout, billinks):
 		(year, billtitle, committee, indexurl, committeedate) = h
 		(urllink, date, sittingnumber, sittingpart, daypart) = p
 
-		# construct short name to use for the pullglued file
-		# "P" = Public Bill Committee
-		shortcommitteeletter = "P"
+		# construct short name to use for the pullglued file	
 		if committee:
 			mstandc = re.match("\(?Standing Committee ([aA-Z])\)?", committee)
 			if mstandc:
@@ -225,6 +223,9 @@ def WriteXML(fout, billinks):
 			else:
 				print "Unrecognized committee for short name:", committee
 				assert False
+		else: 
+			shortcommitteeletter =  create_committee_letters(indexurl)
+	
 		shortname = construct_shortname(committeedate, shortcommitteeletter, sittingnumber, sittingpart, date)
 		fout.write('<standingcttee shortname="%s" session="%s" date="%s" sittingnumber="%d" sittingpart="%d" daypart="%s" committeename="%s" billtitle="%s" urlindex="%s" url="%s"/>\n' % (shortname, year, date, sittingnumber, sittingpart, daypart, committee, billtitle, indexurl, urllink))
 
