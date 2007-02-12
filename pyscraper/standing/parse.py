@@ -968,7 +968,7 @@ class ParseCommittee:
         
 # Main function
 quiet = False
-force = True
+force = False
 patchtool = False
 # verbose output
 debug_flag = False
@@ -977,12 +977,13 @@ standing_dir = os.path.join(toppath, 'cmpages', 'standing')
 if len(sys.argv)==2 and sys.argv[1] == '--patchtool':
     patchtool = True
 
+# this code only works for transcripts from 2001 onwards
 g = glob.glob(os.path.join(standing_dir, 'standing200*.html'))
-
+g = [file for file in g if re.search('standing20(0[1-9]|[1-9][0-9])', file)]
 g.sort()
 parser = ParseCommittee()
 for file in g:
-    
+
     mnums = re.match(".*(standing)(.*?)([a-z]*)\.html$", file)
     sitting_part = mnums.group(1) + mnums.group(2) + mnums.group(3)
     patch_part = mnums.group(2) + mnums.group(3)
