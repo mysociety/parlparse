@@ -987,8 +987,9 @@ for file in g:
     mnums = re.match(".*(standing)(.*?)([a-z]*)\.html$", file)
     sitting_part = mnums.group(1) + mnums.group(2) + mnums.group(3)
     patch_part = mnums.group(2) + mnums.group(3)
-    outfile = os.path.join(toppath, 'scrapedxml', 'standing', 'standing%s.xml' % sitting_part)
-    parsefile = not os.path.isfile(outfile) or force
+    outfile = os.path.join(toppath, 'scrapedxml', 'standing', '%s.xml' % sitting_part)
+    parsefile = ((not os.path.isfile(outfile)) or force or os.path.getmtime(file) > os.path.getmtime(outfile))
+    
     while parsefile:
         try:
             print("Standing committees parsing %s..." % sitting_part)
