@@ -11,8 +11,8 @@ from contextexception import ContextException
 import miscfuncs
 toppath = miscfuncs.toppath
 
-def WriteXMLHeader(fout):
-	fout.write('<?xml version="1.0" encoding="ISO-8859-1"?>\n')
+def WriteXMLHeader(fout, encoding="ISO-8859-1"):
+	fout.write('<?xml version="1.0" encoding="%s"?>\n' % encoding)
 
 	# These entity definitions for latin-1 chars are from here:
 	# http://www.w3.org/TR/REC-html40/sgml/entities.html
