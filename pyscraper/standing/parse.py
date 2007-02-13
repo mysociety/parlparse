@@ -8,7 +8,7 @@ import tempfile
 import shutil
 import sets
 
-sys.path.append('../')
+sys.path.append(os.path.join(sys.path[0], '..'))
 from resolvemembernames import memberList
 from contextexception import ContextException
 from BeautifulSoup import BeautifulSoup
