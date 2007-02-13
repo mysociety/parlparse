@@ -750,7 +750,7 @@ class ParseCommittee:
         self.out = open( os.path.join(pwxmldirs,'standing','%s.xml.new' % sitting_part), 'w')
         self.out = streamWriter(self.out)
         
-        WriteXMLHeader(self.out)
+        WriteXMLHeader(self.out, 'utf-8')
         self.out.write('<publicwhip>')
         
         # url that the content came from
