@@ -8,7 +8,9 @@ import tempfile
 import shutil
 import sets
 
-sys.path.append(os.path.join(sys.path[0], '..'))
+pardir = os.path.abspath(os.path.join(sys.path[0], '..'))
+sys.path.append(pardir)
+os.chdir(pardir)
 from resolvemembernames import memberList
 from contextexception import ContextException
 from BeautifulSoup import BeautifulSoup
