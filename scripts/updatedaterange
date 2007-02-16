@@ -10,7 +10,7 @@ TODATE=$2
 # Run XML-generating scraper from Public Whip, getting new files from network
 # and parsing the written answers and debates.
 cd ~/parlparse/pyscraper
-./lazyrunall.py --quietc --from=$FROMDATE --to=$TODATE scrape debates wrans westminhall wms
+./lazyrunall.py --quietc --from=$FROMDATE --to=$TODATE scrape debates wrans westminhall wms standing
 # We do these on separate lines, so if one fails, others still run
 ./lazyrunall.py $3 --quietc --from=$FROMDATE --to=$TODATE parse debates
 ./lazyrunall.py $3 --quietc --from=$FROMDATE --to=$TODATE parse wrans
@@ -20,4 +20,8 @@ cd ~/parlparse/pyscraper
 # Yeah, it's not as fully featured as the UK Parliament one. But it should work :)
 cd ~/parlparse/pyscraper/ni
 ./scrape.py
+./parse.py
+
+# Public Bill Committee transcripts
+cd ~/parlparse/pyscraper/standing
 ./parse.py
