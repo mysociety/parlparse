@@ -49,9 +49,12 @@ def GetReportProcedings(urlpage, year):
 	uin = urllib.urlopen(urlpage)
 	s = uin.read()
 	uin.close()
-	vdat = re.search("(?s)Report of proceedings(.*?)(Associated Memoranda|start of footer|$)", s).group(1)
-	vdat = re.sub("(?s)<!--.*?-->", "", vdat)
-
+	s = re.sub("(?s)<!--.*?-->", "", s)
+        vdat = re.search("(?s)Report of proceedings(.*?)(Associated Memoranda|start of footer|$)", s)
+	if not vdat:
+		return res, None
+	else: 
+		vdat = vdat.group(1)
 	# correct a few typos
 	if year == "2005":
 		vdat = re.sub('(/pa/cm200506/cmstand/e/st050705/am/50705s01.htm">1st  sitting</A></FONT></TD><TD><FONT size=\+1><A\s*href="/pa/cm200506/cmstand/)b/st050621(/am/50705s01.htm">5 July 2005)', '\g<1>e/st050705\g<2>', vdat)
@@ -137,6 +140,7 @@ def GetReportProcedings(urlpage, year):
 
 	# single sitting, set it up
 	if len(res) == 1:
+		#print res
 		assert (res[0][2] == 0 or res[0][2] == 1) and res[0][3] == 0
 		res[0][2] = 1
 
