@@ -230,6 +230,14 @@ class ParseCommittee:
         ctte_tag.append('</committee>\n')
         self.out.write(''.join(ctte_tag))
       
+    def display_witnesses(self, witnesslist):
+        """Output a list of witnesses"""
+        
+	self.out.write('<witnesses>\n')
+	for witness in witnesslist:
+            self.out.write('<witness>%s</witness>\n'%(witness))
+	self.out.write('</witnesses>\n')
+
     def display_division(self, num, counts):
         """Output a division tag with aye and no counts
         """
@@ -697,6 +705,14 @@ class ParseCommittee:
         
         self.display_committee(chairlist, memberlist, clerks)
 
+        #find any witnesses
+        ctteWitnessTag = committee.findNext("h4", {"class" : "hs_CLHeading"})
+        if ctteWitnessTag and ''.join(ctteWitnessTag(text=True)).strip() == "Witnesses":
+            ctteWitnesses = soup.findAll("div",{"class" : "hs_CLPara"})
+	    witnesslist = [''.join(witnessTag(text=True)).strip() for witnessTag in ctteWitnesses]
+            self.display_witnesses(witnesslist)
+            self.external_speakers = True
+
     def parse_speaker(self, text):
         """Parse the speaker name from the beginning of a speech"""
         speaker, text = text.split(':', 1)
@@ -707,7 +723,16 @@ class ParseCommittee:
             speaker = mSpeaker.group(1)
             bracket = mSpeaker.group(2)
             bracket = self.split_on_caps(bracket)
-        speaker = self.split_on_caps(speaker)
+        
+	# questions are now part of the para
+        mQuestion = re.match('(Q\s*?\d+)\s*(.*)', speaker)
+        if mQuestion:
+            question = mQuestion.group(1)
+            speaker = mQuestion.group(2)
+            self.close_speech()
+            self.display_speech_tag()
+            self.out.write('<p>%s</p>\n' % (question))
+	speaker = self.split_on_caps(speaker)
         return (speaker, bracket,text)
     
     def parse_sitting_part(self, sitting_part):
@@ -836,7 +861,7 @@ class ParseCommittee:
                 elif (cssClass == 'hs_brev'):
                     self.display_para(tag, indent=True)   
                 #dealt with already
-                elif (cssClass in ['hs_CLHeading', 'hs_CLChairman', 'hs_CLMember', 'hs_CLMember', 'hs_CLClerks', 'hs_CLAttended']):
+                elif (cssClass in ['hs_CLHeading', 'hs_CLHeading', 'hs_CLChairman', 'hs_CLMember', 'hs_CLMember', 'hs_CLClerks', 'hs_CLAttended']):
                     pass  
                 #ignored
                 elif (cssClass in ['hs_6fDate']):
