@@ -35,7 +35,7 @@ var wgUserGroups = null;
 var wgUserLanguage = "en";
 var wgContentLanguage = "en";
 var wgBreakFrames = false;
-var wgCurRevisionId = "107361854";
+var wgCurRevisionId = "112079529";
 /*]]>*/</script>
                 
 		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?59"><!-- wikibits js --></script>
@@ -1152,7 +1152,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Lord_Croham&amp;action=edit" class="new" title="Lord Croham">The Lord Croham</a></td>
+<td><a href="/wiki/Lord_Croham" title="Lord Croham">The Lord Croham</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2240,12 +2240,6 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
-</tr>
-<tr>
-<td><a href="/wiki/George_Patrick_John_Rushworth_Jellicoe%2C_2nd_Earl_Jellicoe" title="George Patrick John Rushworth Jellicoe, 2nd Earl Jellicoe">The Earl Jellicoe</a></td>
-<td>Conservative</td>
-<td>Hereditary Peer given Life Peerage</td>
-<td>Sits as Baron Jellicoe of Southampton</td>
 </tr>
 <tr>
 <td><a href="/wiki/Lord_Jenkin_of_Roding" title="Lord Jenkin of Roding">The Lord Jenkin of Roding</a></td>
@@ -4056,7 +4050,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=William_Lloyd_George%2C_3rd_Viscount_Tenby&amp;action=edit" class="new" title="William Lloyd George, 3rd Viscount Tenby">The Viscount Tenby</a></td>
+<td><a href="/wiki/William_Lloyd_George%2C_3rd_Viscount_Tenby" title="William Lloyd George, 3rd Viscount Tenby">The Viscount Tenby</a></td>
 <td>Cross Bench</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -4158,7 +4152,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Hugh_Trenchard%2C_3rd_Viscount_Trenchard&amp;action=edit" class="new" title="Hugh Trenchard, 3rd Viscount Trenchard">The Viscount Trenchard</a></td>
+<td><a href="/wiki/Hugh_Trenchard%2C_3rd_Viscount_Trenchard" title="Hugh Trenchard, 3rd Viscount Trenchard">The Viscount Trenchard</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -4194,7 +4188,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Denis_Tunnicliffe&amp;action=edit" class="new" title="Denis Tunnicliffe">The Lord Tunnicliffe</a></td>
+<td><a href="/wiki/Denis_Tunnicliffe" title="Denis Tunnicliffe">The Lord Tunnicliffe</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4561,7 +4555,13 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td><a href="/wiki/Robin_Cooke%2C_Baron_Cooke_of_Thorndon" title="Robin Cooke, Baron Cooke of Thorndon">The Lord Cooke of Thorndon</a> (<a href="/wiki/August_30" title="August 30">August 30</a>, <a href="/wiki/2006" title="2006">2006</a>)</td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
-<td></td>
+<td>&#160;</td>
+</tr>
+<tr>
+<td><a href="/wiki/Baron_Forte" title="Baron Forte">The Lord Forte</a> (<a href="/wiki/February_28" title="February 28">February 28</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td>Conservative</td>
+<td>&#160;</td>
+<td>&#160;</td>
 </tr>
 <tr>
 <td><a href="/wiki/Hamish_Gray%2C_Baron_Gray_of_Contin" title="Hamish Gray, Baron Gray of Contin">The Lord Gray of Contin</a> (<a href="/wiki/March_14" title="March 14">March 14</a>, <a href="/wiki/2006" title="2006">2006</a>)</td>
@@ -4580,6 +4580,18 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
+</tr>
+<tr>
+<td><a href="/wiki/Baroness_Jeger" title="Baroness Jeger">The Baroness Jeger</a> (<a href="/wiki/February_26" title="February 26">26 February</a> <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td>Labour</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr>
+<td><a href="/wiki/George_Patrick_John_Rushworth_Jellicoe%2C_2nd_Earl_Jellicoe" title="George Patrick John Rushworth Jellicoe, 2nd Earl Jellicoe">The Earl Jellicoe</a> (<a href="/wiki/February_22" title="February 22">February 22</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td>Conservative</td>
+<td>Hereditary Peer given Life Peerage</td>
+<td>Sat as Baron Jellicoe of Southampton</td>
 </tr>
 <tr>
 <td><a href="/wiki/Lord_Kelvedon" title="Lord Kelvedon">The Lord Kelvedon</a> (<a href="/wiki/January_27" title="January 27">January 27</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
@@ -4649,10 +4661,8 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <li><a href="/wiki/Baron_Buxton_of_Alsa" title="Baron Buxton of Alsa">The Lord Buxton of Alsa</a>, Conservative</li>
 <li><a href="/wiki/Baroness_Delacourt-Smith_of_Alteryn" title="Baroness Delacourt-Smith of Alteryn">The Baroness Delacourt-Smith of Alteryn</a>, Labour</li>
 <li><a href="/wiki/Baron_Ewing_of_Kirkford" title="Baron Ewing of Kirkford">The Lord Ewing of Kirkford</a>, Labour</li>
-<li><a href="/wiki/Baron_Forte" title="Baron Forte">The Lord Forte</a>, Conservative</li>
 <li><a href="/wiki/Baron_Hunt_of_Tanworth" title="Baron Hunt of Tanworth">The Lord Hunt of Tanworth</a>, Crossbencher</li>
 <li><a href="/wiki/Lord_Hutchinson_of_Lullington" title="Lord Hutchinson of Lullington">The Lord Hutchinson of Lullington</a>, Liberal Democrat</li>
-<li><a href="/wiki/Baroness_Jeger" title="Baroness Jeger">The Baroness Jeger</a>, Labour</li>
 <li><a href="/wiki/Baron_Phillips_of_Sudbury" title="Baron Phillips of Sudbury">The Lord Phillips of Sudbury</a>, Liberal Democrat</li>
 <li><a href="/wiki/Baron_Pym" title="Baron Pym">The Lord Pym</a>, Conservative</li>
 <li><a href="/wiki/Robert_Gascoyne-Cecil%2C_7th_Marquess_of_Salisbury" title="Robert Gascoyne-Cecil, 7th Marquess of Salisbury">The Marquess of Salisbury</a>, Conservative</li>
@@ -4673,7 +4683,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 </ul>
 
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20070222104714 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20070303094602 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:Politics_of_the_United_Kingdom" title="Category:Politics of the United Kingdom">Politics of the United Kingdom</a></span></p></div>			<!-- end content -->
@@ -4740,7 +4750,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:Recentchangeslinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Special:Upload" title="Upload images or media files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:Specialpages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=107361854">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=107361854">Cite this article</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=112079529">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=112079529">Cite this article</a></li>			</ul>
 		</div>
 	</div>
 		</div><!-- end of the left (by default at least) column -->
@@ -4749,7 +4759,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-				<li id="lastmod"> This page was last modified 18:28, 11 February 2007.</li>
+				<li id="lastmod"> This page was last modified 14:55, 2 March 2007.</li>
 				<li id="copyright">All text is available under the terms of the <a class='internal' href="/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc</a>., a US-registered <a class='internal' href="/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>
 				<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
 				<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
@@ -4760,4 +4770,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv91 in 0.106 secs. --></body></html>
+<!-- Served by srv67 in 0.105 secs. --></body></html>
