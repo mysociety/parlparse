@@ -107,7 +107,13 @@ ni_lord_matches = {
     "uk.org.publicwhip/member/90242":"uk.org.publicwhip/lord/100007",
     "uk.org.publicwhip/member/90111":"uk.org.publicwhip/lord/100345",
     "uk.org.publicwhip/member/90186":"uk.org.publicwhip/lord/100345",
+    "uk.org.publicwhip/member/90091":"uk.org.publicwhip/lord/100922",
     "uk.org.publicwhip/member/90210":"uk.org.publicwhip/lord/100922",
+    "uk.org.publicwhip/member/90322":"uk.org.publicwhip/lord/100922",
+}
+# XXX: Should be possible to adapt manualmatches to do this sort of thing...
+ni_ni_matches = {
+    "Mitchel McLaughlin [Foyle]":"Mitchel McLaughlin [South Antrim]",
 }
 
 # People who have been MPs for two different constituencies.  The like of
@@ -335,6 +341,9 @@ class PersonSets(xml.sax.handler.ContentHandler):
             if member_id in ni_mp_matches:
                 mp = ni_mp_matches[member_id]
                 self.fullnamescons[mp].add(attr)
+            elif lookup in ni_ni_matches:
+                ni = ni_ni_matches[lookup]
+                self.member_ni_personset[ni].add(attr)
             elif member_id in ni_lord_matches:
                 lord = ni_lord_matches[member_id]
                 self.lordspersonset[lord].add(attr)
