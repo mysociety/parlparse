@@ -32,6 +32,8 @@ def GenPatchFileNames(typ, sdate):
 		stub = "westminster"
 	elif typ == "wms":
 		stub = "ministerial"
+        elif typ[0:9] == 'chgpages/':
+                stub = re.sub('chgpages/', '', typ)
 	else:
 		stub = typ
 
