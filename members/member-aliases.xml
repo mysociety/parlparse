@@ -134,6 +134,7 @@ different spellings of the offices -->
 <alias fullname="Alan Williams" alternate="J William Alan" />
 <alias fullname="David Willetts" alternate="David Willets" />
 <alias fullname="Alan Whitehead" alternate="Alan Whirehead" />
+<alias fullname="Gareth Thomas" alternate="R Thomas Gareth" />
 <alias fullname="Sarah Teather" alternate="Sarah Teathers" />
 <alias fullname="Richard Shepherd" alternate="Richard Shephard" />
 <alias fullname="Lawrie Quinn" alternate="Lawrence Quinn" />
@@ -406,9 +407,8 @@ on that date, and we don't want ambiguos matches any more -->
 <alias lastname="Öpik" alternate="O¨pik" />
 <alias fullname="Lembit Öpik" alternate="Lembit O¨pik" />
 <alias fullname="Debra Shipley" alternate="Deborah Shipley" />
-<alias constituency="Harrow West" alternate="Gareth Richard Thomas" from="1997-05-01" to="2001-05-14"/> 
-<alias constituency="Harrow West" alternate="Gareth R Thomas" from="1997-05-01" to="2001-05-14"/>
-<alias constituency="Harrow West" alternate="Gareth R Thomas" from="2001-06-07" to="2005-04-11"/>
+<alias constituency="Harrow West" alternate="Gareth Richard Thomas" />
+<alias constituency="Harrow West" alternate="Gareth R Thomas" />
 <alias constituency="Carmarthen East &amp; Dinefwr" alternate="Alan W Williams" from="1997-05-01" to="2001-05-14"/> 
 <alias fullname="Laura Moffatt" alternate="Laura Moffat" />
 <alias constituency="Solihull" alternate="John M Taylor" from="1997-05-01" to="2001-05-14" />
