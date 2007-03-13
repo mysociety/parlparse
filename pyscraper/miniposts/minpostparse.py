@@ -12,6 +12,7 @@ import urllib
 import string
 import tempfile
 import xml.sax
+import shutil
 
 import miscfuncs
 import difflib
@@ -126,6 +127,15 @@ renampos = re.compile("""<td>\s*<b>
 
 bigarray = {}
 # bigarray2 = {}
+
+def ApplyPatches(filein, fileout, patchfile):
+	shutil.copyfile(filein, fileout)
+	status = os.system("patch --quiet %s <%s" % (fileout, patchfile))
+	if status == 0:
+		return True
+	print "blanking out failed patch %s" % patchfile
+	print "---- This should not happen, therefore assert!"
+	assert False
 
 # do the xml thing
 def WriteXML(moffice, fout):
@@ -316,7 +326,7 @@ class protooffice:
 	# this helps us chain the offices
 	def StickChain(self, nextrec, fn):
 		if (self.sdateend, self.stimeend) >= nextrec.sdatet:
-			print "\n\n *** datetime not incementing\n\n"
+			print "\n\n *** datetime not incrementing\n\n"
 			print self.sdateend, self.stimeend, nextrec.sdatet
 			print fn
 			assert False
@@ -605,7 +615,13 @@ def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
 	sdatetlist = [ ]
 	sdatetprev = ("1997-05-01", "")
 	for gp in gps:
-		f = open(os.path.join(fchgdir, gp))
+                filename = gp
+		patchfile = '%s/patches/chgpages/%s/%s.patch' % (toppath, chgdirname, gp)
+		if os.path.isfile(patchfile):
+			patchtempfilename = tempfile.mktemp("", "min-applypatchtemp-", '%s/tmp/' % toppath)
+			ApplyPatches(os.path.join(fchgdir, filename), patchtempfilename, patchfile)
+			filename = patchtempfilename
+		f = open(os.path.join(fchgdir, filename))
 		fr = f.read()
 		f.close()
 
