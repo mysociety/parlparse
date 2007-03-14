@@ -818,8 +818,8 @@ def CheckPPStoMinisterpromotions(mofficegroup):
 			if (committeegovlist[i][1] == "govpost") != (committeegovlist[j][1] == "govpost"):
 				ioverlaps += 1
 			j += 1
-	if ioverlaps:
-		print "Overlapping government and committee posts for: ", mofficegroup[0][1].fullname
+	#if ioverlaps:
+	#	print "Overlapping government and committee posts for: ", mofficegroup[0][1].fullname
 
 class LoadMPIDmapping(xml.sax.handler.ContentHandler):
 	def __init__(self):
