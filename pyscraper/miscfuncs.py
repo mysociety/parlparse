@@ -69,13 +69,15 @@ def AlphaStringToOrder(s):
 	return res
 
 # This one used to break times into component parts: 7.10 pm
-regparsetime = re.compile("^(\d+)[\.:](\d+)(?:\s?|&nbsp;)([\w\.]+)$")
+regparsetime = re.compile("^(\d+)[\.:]\s*(\d+)(?:\s?|&nbsp;)([\w\.]+)$")
 # 7 pm
 regparsetimeonhour = re.compile("^(\d+)()(?:\s?|&nbsp;)([\w\.]+)$")
-def TimeProcessing(time, previoustime, bIsDivisionTime, stampurl):
+def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):
 	#print "time ", time
 
-	if previoustime:
+        previoustime = None
+	if previoustimearr:
+                previoustime = previoustimearr[-1]
 		prevtimeMatch = re.match("(\d+):(\d+)", previoustime)
 		previoustimehour = int(prevtimeMatch.group(1))
 
@@ -105,6 +107,10 @@ def TimeProcessing(time, previoustime, bIsDivisionTime, stampurl):
 				hour -= 12
 
 		# skipping forward by twelve hours is a good sign an am/pm has gotten mixed
+                # Assume it's that if it's exactly 12 hours, alert otherwise
+		if previoustime and previoustimehour + 12 == hour:
+                        hour -= 12
+
 		if previoustime and previoustimehour + 12 <= hour:
 			raise ContextException('time shift by 12 -- should a p.m. be an a.m.?', stamp=stampurl)
 
@@ -133,6 +139,9 @@ def TimeProcessing(time, previoustime, bIsDivisionTime, stampurl):
 		# correction heading case -- a copy of some text that is to be inserted into a different day.
 		elif stampurl.sdate in ["2002-10-28"]:
 			return res
+
+                elif previoustimehour == hour + 1: # assume just a typo if we've gone back an hour
+                        hour += 1
 
 		else:
 			if hour not in [0, 1, 2, 3] and stampurl.sdate not in ["2003-10-20", "2000-10-03", "2000-07-24"]:
@@ -163,8 +172,7 @@ def TimeProcessing(time, previoustime, bIsDivisionTime, stampurl):
 
 # The names of entities and what they are are here:
 # http://www.bigbaer.com/reference/character_entity_reference.htm
-# Make sure you update WriteXMLHeader below also!
-# And update website/proto decode.inc
+# Make sure you update WriteXMLHeader in xmlfilewrite.py also!
 entitymap = {
         '&nbsp;':' ',
         '&':'&amp;',
@@ -191,6 +199,7 @@ entitymap = {
         '&#246;':'&ouml;',   # this is o-double-dot
         '&#214;':'&Ouml;',   # this is capital o-double-dot
         '&#243;':'&oacute;',   # this is o-acute
+        '&#248;':'&oslash;',   # this is o-slash
 
         '&#237;':'&iacute;', # this is i-acute
         '&#238;':'&icirc;', # this is i-circumflex
@@ -198,12 +207,15 @@ entitymap = {
 
         '&#231;':'&ccedil;',   # this is cedilla
         '&#199;':'&Ccedil;',   # this is capital C-cedilla
+        '&#250;':'&uacute;',
         '&#252;':'&uuml;',   # this is u-double-dot
         '&#241;':'&ntilde;',   # spanish n as in Senor
+        '&#254;':'&thorn;',
 
         '&#177;':'&plusmn;',   # this is +/- symbol
         '&#163;':'&pound;',   # UK currency
         '&#167;':'&sect;',   # UK currency
+        '&#169;':'&copy;',
         '&#183;':'&middot;',   # middle dot
         '&#176;':'&deg;',   # this is the degrees
         '&#186;':'&ordm;',   # this is the M ordinal
@@ -237,7 +249,9 @@ entitymap = {
         '&rsquo;':"'",
         '&#279;':'&#279;',
         '&#352;':'&#352;',
-        '&#353;':'&#353;'
+        '&#353;':'&#353;',
+        '&oelig;':'&#339;',
+        '&#230;':'&aelig;',
 }
 entitymaprev = entitymap.values()
 
@@ -309,7 +323,7 @@ def StraightenHTMLrecurse(stex, stampurl):
 		sres.extend(StraightenHTMLrecurse(stex[qisup.end(1):], stampurl))
 		return sres
 
-	sres = re.split('(&[a-z]*?;|&#\d+;|"|\xa3|&|\x01|\x0e|\x14|\x92|\xb0|\xab|\xe9|<[^>]*>|<|>)', stex)
+	sres = re.split('(&[a-z]*?;|&#\d+;|"|\xa3|&|\x01|\x0e|\x14|\x92|\xb0|\xab|\xe9|\xc3\xb8|\xc3\xb1|<[^>]*>|<|>)', stex)
 	for i in range(len(sres)):
                 #print "sresi ", sres[i], "\n"
                 #print "-----------------------------------------------\n"
@@ -360,6 +374,10 @@ def StraightenHTMLrecurse(stex, stampurl):
 			sres[i] = '&eacute;'
 		elif sres[i] == '\xe9':
 			sres[i] = '&eacute;'
+                elif sres[i] == '\xc3\xb8':
+			sres[i] = '&oslash;'
+                elif sres[i] == '\xc3\xb1':
+                        sres[i] = '&ntilde;'
 
 		elif re.match('</?i>$(?i)', sres[i]):
 			sres[i] = '' # 'OPEN-i-TAG-OUT-OF-PLACE' 'CLOSE-i-TAG-OUT-OF-PLACE'

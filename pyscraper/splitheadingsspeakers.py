@@ -101,7 +101,7 @@ class StampUrl:
 regsection1 = '<h\d><center>.*?\s*</center></h\d>'
 regsection2 = '<h\d align="?center"?(?: style="text-transform:uppercase")?>.*?</h\d>'
 regsection3 = '(?:<p class="tabletext">(?:<stamp[^>]*>)*)?<center>(?:<stamp[^>]*>)*<b>.*?</b></center>'  # this case of title is used when quoting inserted amendment text that has a title in it.  This is reaching the limit of this type of parsing
-regsection4 = '<(?:p|br)>\s*<center(?: style="text-transform:uppercase")?>.*?</center><(?:p|br)>'
+regsection4 = '<(?:p|br)>\s*<center(?: style="text-transform:uppercase")?>.*?</center>\s*<(?:p|br|page[^>]*)>'
 regsection5 = '<h[34] align=left>.*?</h[34]>'
 regparsermessage = '<parsemess.*?>' #'<parsemess-speech redirect="+-1"/>'
 regspeaker = '<speaker [^>]*>.*?</speaker>'
@@ -114,7 +114,7 @@ respeakerval = re.compile('<speaker ([^>]*)>.*?</speaker>')
 resectiont1val = re.compile('<h\d><center>\s*(.*?)\s*</center></h\d>(?i)')
 resectiont2val = re.compile('<h\d align="?center"?( style="text-transform:uppercase")?>\s*(.*?)\s*</h\d>(?i)')
 resectiont3val = re.compile('(<p class="tabletext">(?:<stamp[^>]*>)*)?<center>(?:<stamp[^>]*>)*<b>(.*?)</b></center>(?i)')
-resectiont4val = re.compile('<(?:p|br)>\s*<center(?: style="text-transform:uppercase")?>(.*?)</center><(?:p|br)>(?i)')
+resectiont4val = re.compile('<(?:p|br)>\s*<center(?: style="text-transform:uppercase")?>(.*?)</center>\s*<(?:p|br|page[^>]*)>(?i)')
 
 # appears in today debates, and is getting a little too general (being able to mix/match b,i tags)
 resectiont5val = re.compile('<h[34] align=left>(?:<[bi]>)?\s*(.*?)\s*(?:</[bi]>)?</h\d>(?i)')
@@ -123,7 +123,7 @@ reparsermessage = re.compile('<parsemess-misspeech type="(.*?)" redirect="(up|do
 
 
 # These aren't actually headings, even though they are <H4><center>
-renotheading = re.compile('>(?:\s*|(?:&nbsp;)*)(The .* (?:was|were) asked\s*(?:&#151;|--))\s*<')
+renotheading = re.compile('>(?:\s*|(?:&nbsp;)*)(The .* (?:was|were) asked\s*(?:</i>)?(?:&#151;|--))\s*<')
 # catch cases of the previous regexp not being broad enough
 renotheadingmarg = re.compile('asked')
 

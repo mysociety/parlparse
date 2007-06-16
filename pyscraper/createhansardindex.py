@@ -138,7 +138,7 @@ def CmIndexFromPage(urllinkpage):
                                 sdate = mx.DateTime.DateTimeFrom(odate).date
 
         		if not sdate:
-        			raise Exception, 'No date for link in: ' + urllinkpage + ' ' + ','.join(link1)
+        			raise Exception, 'No date for link 1 in: ' + urllinkpage + ' ' + ','.join(link1)
         		if sdate < earliestdate:
         			continue
 
@@ -166,18 +166,24 @@ def CmIndexFromPage(urllinkpage):
                                 odate = '5 January 2007'
                         elif re.match('Written Answers received between<br>\s*Monday 12 February 2007 and Friday 16 February 2007', linktext):
                                 odate = '16 February 2007'
+                        elif re.match('Written Answers received between<br>\s*Wednesday 12 February 2007 and Friday 16 February 2007', linktext):
+                                odate = '16 February 2007'
                         else:
-        			raise Exception, 'No date for link in: ' + urllinkpage + ' ' + ','.join(link1)
+        			raise Exception, 'No date for link 2 in: ' + urllinkpage + ' ' + ','.join(link1)
 
                         sdate = mx.DateTime.DateTimeFrom(odate).date
         		uind = urlparse.urljoin(urllinkpage, re.sub('\s', '', linkhref))
         		typ = 'Written Answers'
 
-                # get rid of this paragraph when they fix the link
-                if uind == "http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm050721/index/50725-x.htm":
-                        print "Fixing special link error case during summer 2005 of:", uind
-                        print otheruind
+                # 21st July 2005 has a link, but there was none
+                if uind == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo050721/hallindx/50721-x.htm':
                         continue
+                # 21st June 2005 WHall links to 22nd June
+                if sdate=='2005-06-21' and uind=='http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo050622/hallindx/50622-x.htm':
+                        uind = 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo050621/hallindx/50621-x.htm'
+                # 25th May 2006 WMS links to 4th May
+                if sdate=='2006-05-25' and uind=='http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060504/wmsindx/60504-x.htm':
+                        uind = 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060525/wmsindx/60525-x.htm'
 
 		# check for repeats where the URLs differ
 		if (sdate, typ) in reses:

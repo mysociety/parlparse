@@ -10,6 +10,9 @@ import urlparse
 import re
 import sets
 
+print "No longer used, edit websites.xml directly"
+sys.exit(1)
+
 sys.path.append("../pyscraper/")
 import re
 from resolvemembernames import memberList

@@ -124,6 +124,8 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = urla[1:]
         if sdate=='2006-05-10' and urla[0]=='http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060509/text/60510w0332.htm':
                 urla = urla[1:]
+        if urla[0]=='http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060524/debtext/60524-0001.htm':
+                urla = [urla[0]]
         if sdate=='2006-06-05' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0640.htm':
                 urla = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060602/text/60602w0601.htm', 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0602.htm'] + urla
         if sdate=='2006-10-11' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061011/debtext/61011-0001.htm':
@@ -138,6 +140,20 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = urla[0:11] + urla[12:] # Incorrect link in middle of index
         if sdate=='2007-02-05' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070205/debtext/70205-0001.htm':
                 urla = [urla[0]]
+        if sdate=='2007-03-26' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070326/debtext/70326-0001.htm':
+                urla = [urla[0]]
+        if sdate=='2007-03-28' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070328/halltext/70328h0001.htm':
+                urla = [urla[0]]
+        if sdate=='2007-04-24' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070424/debtext/70424-0001.htm':
+                urla = urla[0:14] + urla[16:]
+        if sdate=='2007-05-15' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070515/halltext/70515h0001.htm':
+                urla = urla[0:4] + urla[6:]
+        if urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060614/halltext/60614h0178.htm':
+                urla = [urla[0]]
+        #print "urla"
+        #for aaa in urla:
+        #        print aaa
+        #sys.exit(1)
 
 	# loop which scrapes through all the pages following the nextlinks
 	while urla:
@@ -168,7 +184,7 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 sr = re.sub('<div id="maincontent1">\s*<notus', '<hr> <notus', sr) # 2006-05-09
                 sr = re.sub('<div id="maincontent1">\s*<a', '<hr> <a', sr)
                 if sdate=='2006-11-07' or sdate=='2006-11-08':
-                        sr = re.sub('<!--end of UK Parliament banner for Publications-->\s*<h2', '<hr> <h2', sr)
+                        sr = re.sub('<!--end of UK Parliament banner for Publications -->\s*<div class="breadcrumb">.*?</div>\s*<h2(?s)', '<hr> <h2', sr)
                 sr = re.sub("</?mekonParaReplace[^>]*>", "", sr)
 
 		# split by sections
@@ -179,7 +195,8 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
 		if len(hrsections) == 1:
 			print len(hrsections), 'page missing', url
 			fout.write('<UL><UL><UL></UL></UL></UL>\n')
-			break
+                        urla = urla[1:]
+			continue
 
                 # Grr, missing footers ALL OVER THE PLACE now
                 if len(hrsections) == 2:
@@ -202,6 +219,7 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                         if urla:
                                 print "Bridging the missing next section link at %s" % url
 		else:
+                        currenturl = url
                         url = urlparse.urljoin(url, nextsectionlink[0])
                         if len(urla) > 1 and urla[1] == url:
                                 urla = urla[1:]
@@ -212,7 +230,8 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                                                 print string.join(urla, "\n")
                                                 print "\nbad next url:\n"
                                                 print url
-                                                print "\n"
+                                                print "\ncurrent url:\n"
+                                                print currenturl
                                                 raise Exception, "Next Section misses out the urla list"
                                 urla[0] = url
 		

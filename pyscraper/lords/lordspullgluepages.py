@@ -64,13 +64,9 @@ def ExtractIndexContents(urlx, sdate):
         lktex = re.sub('<!--.*?-->(?s)', '', lktex)
 
 	# get the links
-        if sdate >= '2006-07-03':
-        	relkex = re.compile('<h[23] align="center"><a href="([^"]*?\.htm)#[^"]*">([^<]*)</a></h[23]>(?is)')
-        else:
-	        #<p><a href="../text/40129w01.htm#40129w01_sbhd7"><H3><center>Olympic Games 2012: London Bid</center></H3>
-        	#</a></p>
-        	relkex = re.compile('<p><a href\s*=\s*"([^"]*?\.htm)#[^"]*"><h3><center>((?:<!|[^<])*)(?:</center>|</h3>)+\s*</a></p>(?i)')
-	res = relkex.findall(lktex)
+        res = re.findall('<h[23] align="?center"?><a href="([^"]*?\.htm)#[^"]*">([^<]*)</a></h[23]>(?is)', lktex)
+        if not res:
+                res = re.findall('<p><a href\s*=\s*"([^"]*?\.htm)#[^"]*"><h3><center>((?:<!|[^<])*)(?:</center>|</h3>)+\s*</a></p>(?i)', lktex)
 	if not res:
 		print "no links found from day index page"
 		raise Exception, "no links"
@@ -83,7 +79,7 @@ def GlueByNext(fout, urla, urlx):
 	fout.write('<pagex url="%s" scrapedate="%s" scrapetime="%s"/>\n' % \
 			(urlx, time.strftime('%Y-%m-%d', lt), time.strftime('%X', lt)))
 
-        if urla[0] == 'http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/lds06/text/61130-0001.htm':
+        if urla[0] == 'http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/61130-0001.htm':
                 urla = [urla[0]]
         if urla[0] == 'http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/70125-0001.htm':
                 urla = urla[2:]
@@ -111,6 +107,7 @@ def GlueByNext(fout, urla, urlx):
                 sr = re.sub("<meta[^>]*>", "", sr)
                 sr = re.sub('<a name="([^"]*)" />', r'<a name="\1"></a>', sr) # Should be WriteCleanText like for Commons?
                 sr = re.sub('<div id="maincontent1">\s+<notus', '<hr> <notus', sr)
+                sr = re.sub('<div id="maincontent">(?:\s*<table.*?</table>)?(?s)', '', sr)
 
 		# split by sections
 		hrsections = re.split('<hr>(?i)', sr)
@@ -233,9 +230,13 @@ def LordsPullGluePages(datefrom, dateto, bforcescrape):
 
 		# now we take out the local pointer and start the gluing
 		# we could check that all our links above get cleared.
-		dtemp = open(tempfilename, "w")
-		GlueByNext(dtemp, urla, urlx)
-		dtemp.close()
+                try:
+                        dtemp = open(tempfilename, "w")
+		        GlueByNext(dtemp, urla, urlx)
+		        dtemp.close()
+	        except Exception, e:
+		        print "Problem with %s, moving on" % dnu[0]
+		        continue
 
 		# now we have to decide whether it's actually new and should be copied onto dgfnext.
 		if dgflatest: # the removal of \r makes testing sizes unreliable -- : and os.path.getsize(tempfilename) == os.path.getsize(dgflatest):

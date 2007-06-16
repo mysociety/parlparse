@@ -1,5 +1,9 @@
 # Constants for bash scripts
 
+# Immediate, do just last 1 week
+NOW_FROMDATE=`perl -MPOSIX -e 'print strftime("%Y-%m-%d",localtime(time() - (7 * 24 * 60 * 60)));'`
+NOW_TODATE=`date +%Y-%m-%d`
+
 # Daily, do just last 4 weeks
 DAILY_FROMDATE=`perl -MPOSIX -e 'print strftime("%Y-%m-%d",localtime(time() - (28 * 24 * 60 * 60)));'`
 DAILY_TODATE=`date +%Y-%m-%d`
@@ -10,7 +14,6 @@ WEEKLY_TODATE=`date +%Y-%m-%d`
 
 # Lords weekly, back as far as we've got lords stuff
 LORDS_WEEKLY_FROMDATE=1999-11-12
-LORDS_WEEKLY_TODATE=`date +%Y-%m-%d`
 
 PWDATA=$HOME/parldata
 

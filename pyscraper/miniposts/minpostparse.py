@@ -96,6 +96,7 @@ govdepts = ["Department of Health",
                                 "Scotland Office",
                                 "Wales Office",
                                 "Department for Communities and Local Government",
+                                "Ministry of Justice",
                                 "No Department",
                                 ]
 
@@ -142,7 +143,6 @@ def WriteXML(moffice, fout):
         fout.write('<moffice id="%s" name="%s"' % (moffice.moffid, moffice.fullname))  # should be cleaning up here, but aren't
         if moffice.matchid:
                 fout.write(' matchid="%s"' % moffice.matchid)
-        #fout.write("\n")
 
         # more runtime cleaning up of the xml rather than using a proper function
         fout.write(' dept="%s" position="%s"' % (re.sub("&", "&amp;", moffice.dept), moffice.pos))
@@ -150,17 +150,11 @@ def WriteXML(moffice, fout):
                 fout.write(' responsibility="%s"' % re.sub("&", "&amp;", moffice.responsibility))
 
         fout.write(' fromdate="%s"' % moffice.sdatestart)
-        if moffice.stimestart:
-                fout.write(' fromtime="%s"' % moffice.stimestart)
-        #fout.write("\n")
 
         if moffice.bopen:
                 fout.write(' todate="%s"' % "9999-12-31")
         else:
                 fout.write(' todate="%s"' % moffice.sdateend)
-                if moffice.stimeend:
-                        fout.write(' totime="%s"' % moffice.stimeend)
-        #fout.write("\n")
 
         fout.write(' source="%s">' % moffice.sourcedoc)
         fout.write('</moffice>\n')
@@ -365,9 +359,13 @@ def SpecMins(regex, fr, sdate):
 
 
 def ParseSelCteePage(fr, gp):
-        if gp == "selctee0100_2006-09-29.html":
-                return "SKIPTHIS", None
-        else:
+        m = re.search('selctee(\d+)_(.*?)\.html', gp)
+        (num, filedate) = m.groups()
+        num = int(num)
+
+        stime = '%02d:%02d' % (num/60, num%60) # Will break at 86,400 :)
+
+        if num <=76:
                 frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
                 lsudate = re.match("(\d\d)/(\d\d)/(\d\d\d\d)$", frupdated.group(1))
                 if lsudate:
@@ -376,21 +374,14 @@ def ParseSelCteePage(fr, gp):
                     lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
                     y2k = int(lsudate.group(3)) < 50 and "20" or "19"
                     sudate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
-                sutime = frupdated.group(2)
-	# extract the date on the document
-	frdate = re.search("Select Committee\s+Membership at\s+(.*?)\s*<(?i)", fr)
-        if frdate:
-                msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
-                if sudate != msdate:
-                        if sudate in ['2006-05-19', '2006-07-05', '2006-11-17']:
-                                sudate = msdate
-                        elif msdate in ['2007-02-08']:
-                                sudate = msdate
-                        elif sudate > '2007-01-26':
-                                print "mismatch of dates;", msdate, "updated:", sudate
+        elif num <= 133:
+        	frdate = re.search("Select Committee\s+Membership at\s+(.*?)\s*<(?i)", fr)
+                sudate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
+        else:
+                frdate = re.search(">This list was last updated on\s+<b>\s+(.*?)\s+<", fr)
+                sudate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
 
         sdate = sudate
-        stime = sutime
         res = [ ]
 
         committees = re.findall("<a\s+href=(?:'|\")(?:http://hcl2\.hclibrary/sections/hcio/mmc/selcom\.asp)?#\d+(?:'|\")>(.*?)</a></I>", fr, re.I | re.S)
@@ -421,44 +412,33 @@ def ParseSelCteePage(fr, gp):
         return (sdate, stime), res
 
 def ParseGovPostsPage(fr, gp):
-	# extract the updated date and time
-        if gp == "govposts0036_2006-05-05.html":  # was an on-going update
-                return "SKIPTHIS", None
-        if gp == "govposts0037_2006-05-09.html":  # probably contained mistakes, corrected in next one
-                return "SKIPTHIS", None
-        if gp == "govposts0038_2006-05-09.html":
-                return "SKIPTHIS", None
-        if gp == "govposts0039_2006-05-10.html":
-                sdate, stime = "2006-05-08", "00:01" #  print sdate, stime, "we could move this date back to the shuffle"
-        elif gp == "govposts0069_2006-09-07.html":
-                sdate, stime = "2006-09-06", "12:00" #  Grr, they didn't update the date!
-        elif gp == "govposts0071_2006-09-29.html":
-                return "SKIPTHIS", None
-                #sudate = "2006-09-25"
-                #sutime = "12:00"
-        else:
+        m = re.search('govposts(\d+)_(\d+-\d+-\d+)', gp)
+        (num, filedate) = m.groups()
+        num = int(num)
+
+        stime = '%02d:%02d' % (num/60, num%60) # Will break at 86,400 :)
+
+        if num >= 36 and num <= 38:
+                return "SKIPTHIS", None # Reshuffling
+        elif num == 39:
+                sdate = "2006-05-08" # Moved back to date of reshuffle
+        elif num <= 67:
                 frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
                 if not frupdated:
                     print "Failed to find lastupdated on:", gp
                 lsudate = re.match("(\d\d)/(\d\d)/(\d\d\d\d)$", frupdated.group(1))
                 if lsudate:
-                    sudate = "%s-%s-%s" % (lsudate.group(3), lsudate.group(2), lsudate.group(1))
+                    sdate = "%s-%s-%s" % (lsudate.group(3), lsudate.group(2), lsudate.group(1))
                 else:
                     lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
                     y2k = int(lsudate.group(3)) < 50 and "20" or "19"  # I don't think our records go back far enough to merit this!
-                    sudate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
-                sutime = frupdated.group(2)
-                # extract the date on the document
+                    sdate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
+        elif num <= 97:
                 frdate = re.search(">Her Majesty's Government at\s+(.*?)\s*<", fr)
-                msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
-
-                # is it always posted up on the day it is announced?
-                if msdate != sudate and sudate not in ["2004-09-20", '2005-03-10', '2005-05-13', '2005-06-06', '2006-05-16', '2006-06-12', '2006-06-13', '2006-06-14', '2006-06-15', '2006-07-27', '2006-08-17']:
-                        print "%s : Updated date is %s, but date of change %s" % (gp, sudate, msdate)
-
-
-                sdate = sudate
-                stime = sutime	# or midnight if not posted properly to match the msdate
+                sdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
+        else:
+                frdate = re.search(">This list was last updated on\s+<b>\s*(.*?)\s+<", fr)
+                sdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
 
         # extract special Ministers of State and PUSes
         namebit = "<td valign='TOP'>(.*?)(?:\s+\[.*?\])?</td>"
@@ -513,27 +493,23 @@ def ParseGovPostsPage(fr, gp):
 #	</td>
 
 def ParsePrivSecPage(fr, gp):
-	# problem here is there's no date on the page to compare with the lastupdated
-	# extract the updated date and time
-        if (gp == 'privsec0017_2006-01-13.html'):
-                sdate = '2006-01-13'
-                stime = '12:00'
-        elif (gp == 'privsec0025_2006-06-14.html'):
-                sdate = '2006-05-08'
-                stime = '00:01'
-        elif (gp == 'privsec0030_2006-06-22.html'):
-                sdate = '2006-06-22'
-                stime = '12:00'
-        elif (gp == 'privsec0041_2006-09-07.html'):
-                sdate = '2006-09-06'
-                stime = '12:00'
-        elif (gp == 'privsec0052_2007-02-08.html'):
-                sdate = '2007-02-08'
-                stime = '12:00'
-        elif gp == "privsec0043_2006-09-29.html" or gp == "privsec0044_2006-10-26.html":
-                return "SKIPTHIS", None
+        m = re.search('privsec(\d+)_(.*?)\.html', gp)
+        (num, filedate) = m.groups()
+        num = int(num)
 
-        else:
+        stime = '%02d:%02d' % (num/60, num%60) # Will break at 86,400 :)
+
+        if num == 17:
+                sdate = '2006-01-13'
+        elif num == 25:
+                sdate = '2006-05-08' # Reshuffle
+        elif num == 30:
+                sdate = '2006-06-22'
+        elif num == 41:
+                sdate = '2006-09-06'
+        elif num == 43 or num == 44:
+                return "SKIPTHIS", None
+        elif num <= 48:
                 frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
                 if not frupdated:
                         print "failed to find lastupdated in", gp
@@ -544,11 +520,14 @@ def ParsePrivSecPage(fr, gp):
                     lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
 	            y2k = int(lsudate.group(3)) < 50 and "20" or "19"
 	            sudate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
-	        sutime = frupdated.group(2)
 
 	        sdate = sudate
-	        stime = sutime	# or midnight if not posted properly to match the msdate
-
+        elif num <= 57:
+	        sdate = filedate
+        else:
+                frdate = re.search(">This list was last updated on\s+<b>\s*(.*?)\s*<(?i)", fr)
+                msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
+                sdate = msdate
 
 	res = [ ]
         Mppstext = re.search('''(?xi)<tr>\s*<td[^>]*>
@@ -627,7 +606,7 @@ def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
 		f.close()
 
 		# get the protooffices from this file
-		sdatet, proff = ParsePage(fr, gp)
+		sdatet, proff = ParsePage(fr, os.path.join(fchgdir, gp))
 		if sdatet == "SKIPTHIS":
 			continue
 
@@ -667,7 +646,7 @@ def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
 			chainprotos.append(prof)
 
 		# list of all the times scraping has been made
-		sdatetlist.append((sdatet[0], sdatet[1], chgdirname))
+		sdatetlist.append((sdatet[0], chgdirname))
 
 		sdatetprev = sdatet
 
@@ -931,11 +910,11 @@ def ParseGovPosts():
 
 	fout.write("\n")
 	for lsdatet in sdatetlist:
-		fout.write('<chgpageupdates date="%s" time="%s" chgtype="%s"/>\n' % lsdatet)
+		fout.write('<chgpageupdates date="%s" chgtype="%s"/>\n' % lsdatet)
 	for lsdatet in sdatelistsec:
-		fout.write('<chgpageupdates date="%s" time="%s" chgtype="%s"/>\n' % lsdatet)
+		fout.write('<chgpageupdates date="%s" chgtype="%s"/>\n' % lsdatet)
 	for lsdatet in sdatelistselctee:
-		fout.write('<chgpageupdates date="%s" time="%s" chgtype="%s"/>\n' % lsdatet)
+		fout.write('<chgpageupdates date="%s" chgtype="%s"/>\n' % lsdatet)
 
 
 	# output the file, a tag round the groups of offices which form a single person

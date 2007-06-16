@@ -42,7 +42,7 @@ for (url, title, name) in matches:
     try:
         id = lordsList.GetLordIDfname(name, None, date_today)
     except Exception, e:
-        print >>sys.stderr, e
+        continue
 
     if not id:
         continue

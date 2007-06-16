@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Commons update
+
+FROMDATE=$1
+TODATE=$2
+RET=0
+# $3 is extra flags to pass through
+# echo "updatedaterange from $1 to $2"
+
+# Run XML-generating scraper from Public Whip, getting new files from network
+# and parsing the written answers and debates.
+cd ~/parlparse/pyscraper
+./lazyrunall.py $3 --quietc --from=$FROMDATE --to=$TODATE scrape debates wrans westminhall wms standing || RET=1
+
+# Yeah, it's not as fully featured as the UK Parliament one. But it should work :)
+cd ~/parlparse/pyscraper/ni
+./scrape.py
+
+# Return error code
+exit $RET

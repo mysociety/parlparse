@@ -8,6 +8,7 @@ import string
 import mx.DateTime
 
 from splitheadingsspeakers import StampUrl
+from contextexception import ContextException
 
 from clsinglespeech import qspeech
 from parlphrases import parlPhrases
@@ -161,7 +162,7 @@ def GrabDivisionProced(qbp, qbd):
 	if not hdg:
 		# another correction one
 		if qbp.sstampurl.sdate != '2003-09-16':
-			raise Exception, "no house divided before division: %s" % qbp.stext[-1]
+			raise ContextException, "no house divided before division: %s" % qbp.stext[-1]
 		return None
 
 	# if previous thing is already a no-speaker, we don't need to break it out

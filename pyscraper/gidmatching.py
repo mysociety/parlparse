@@ -50,6 +50,7 @@ def FactorChanges(flatb, scrapeversion):
 	essxlist = [ ]
 	essxindx = [ ]
 	for chk in chks:
+		# print chk
 		assert chk[0] == chk[3]  # chunk type (this can fail if due to the lack of two \n's between the two labels, and thus detects an empty speech, which should not be there.  
 		essxindx.append(len(essxlist))
 		essxlist.append("HEADING-" + chk[0])

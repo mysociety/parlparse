@@ -168,6 +168,8 @@ if not options.debates and not options.westminhall and not options.wms and not o
 # Do the work - all the conditions are so beautifully symmetrical, there
 # must be a nicer way of doing it all...
 
+options.anyerrors = False
+
 #
 # First do indexes
 #
@@ -244,5 +246,12 @@ if options.parse:
 			options.datefrom = pullgluetodaydate
 			options.dateto = pullgluetodaydate
 			RunFiltersDir(RunDebateFilters, 'debates', options, options.forceparse)
+
+# Error reporting
+if options.anyerrors:
+        sys.exit(1)
+else:
+        sys.exit(0)
+
 
 
