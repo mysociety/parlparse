@@ -16,7 +16,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 	def reloadXML(self):
 		self.members = {
 			"uk.org.publicwhip/member/454" : { 'firstname':'Paul', 'lastname':'Murphy', 'title':'', 'party':'Labour' },
-    			"uk.org.publicwhip/member/384" : { 'firstname':'John', 'lastname':'McFall', 'title':'', 'party':'Labour' },
+			"uk.org.publicwhip/member/384" : { 'firstname':'John', 'lastname':'McFall', 'title':'', 'party':'Labour' },
 		} # ID --> MLAs
 		self.fullnames={} # "Firstname Lastname" --> MLAs
 		self.lastnames={} # Surname --> MLAs
@@ -33,7 +33,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 		self.membertopersonmap = {} # member ID --> person ID
 		self.persontomembermap = {} # person ID --> office
 
-		self.retitles = re.compile('^(?:Rev |Dr |Mr |Mrs |Ms |Sir |Lord )+')
+		self.retitles = re.compile('^(?:Rev |Dr |Mr |Mrs |Ms |Miss |Sir |Lord )+')
 		self.rehonorifics = re.compile('(?: OBE| CBE| MP)+$')
 
 		parser = xml.sax.make_parser()
@@ -108,9 +108,9 @@ class MemberList(xml.sax.handler.ContentHandler):
 			alternateisfullname = True
 			if attr.has_key("fullname"):
 				matches = self.fullnames.get(attr["fullname"], None)
-            		elif attr.has_key("lastname"):
-		                matches = self.lastnames.get(attr["lastname"], None)
-		                alternateisfullname = False
+			elif attr.has_key("lastname"):
+				matches = self.lastnames.get(attr["lastname"], None)
+				alternateisfullname = False
 			# append every canonical match to the alternates
 			for m in matches:
 				newattr = {}
@@ -163,7 +163,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 		matches = self.members.values()
 		ids = []
 		for attr in matches:
-			if date >= attr["fromdate"] and date <= attr["todate"]:
+			if 'fromdate' in attr and date >= attr["fromdate"] and date <= attr["todate"]:
 				ids.append(attr["id"])
 		return ids
 
@@ -208,7 +208,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 					ids.add(attr["id"])
 		return ids
 
-        def setDeputy(self, deputy):
+	def setDeputy(self, deputy):
 		if deputy == 'Mr Wilson':
 			deputy = 'Mr J Wilson'
 		self.deputy_speaker = deputy
@@ -242,13 +242,21 @@ class MemberList(xml.sax.handler.ContentHandler):
 		if len(ids) == 0:
 			if not re.search('Some Members|A Member|Several Members|Members', input):
 				raise ContextException, "No matches %s" % (input)
-			return 'speakerid="unknown" error="No match" speakername="%s"' % (input)
-		if len(ids) > 1:
+			return None, 'speakerid="unknown" error="No match" speakername="%s"' % (input)
+		if len(ids) > 1 and 'uk.org.publicwhip/member/90355' in ids:
+			# Special case for 8th May, when Mr Hay becomes Speaker
+			if input == 'Mr Hay':
+				ids.remove('uk.org.publicwhip/member/90355')
+			elif input == 'Mr Speaker':
+				ids.remove('uk.org.publicwhip/member/90287')
+			else:
+				raise ContextException, 'Problem with Mr Hay!'
+		elif len(ids) > 1:
 			names = ""
 			for id in ids:
 				names += id + " " + self.members[id]["firstname"] + " " + self.members[id]["lastname"] + " (" + self.members[id]["constituency"] + ") "
 			raise ContextException, "Multiple matches %s, possibles are %s" % (input, names)
-			return 'speakerid="unknown" error="Matched multiple times" speakername="%s"' % (input)
+			return None, 'speakerid="unknown" error="Matched multiple times" speakername="%s"' % (input)
 		for id in ids:
 			pass
 		remadename = self.members[id]["lastname"]
@@ -258,7 +266,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 			remadename = self.members[id]["title"] + " " + remadename
 		if self.members[id]["party"] == "Speaker" and re.search("Speaker", input):
 			remadename = input
-		return 'speakerid="%s" speakername="%s"%s' % (id, remadename, speakeroffice)
+		return id, 'speakerid="%s" speakername="%s"%s' % (id, remadename, speakeroffice)
 
 	def cleardebatehistory(self):
 		self.debatenamehistory = []

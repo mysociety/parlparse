@@ -66,11 +66,11 @@ def FilterWransSpeakers(fout, text, sdate):
         # occasionally the reporters miss it out, and we catch such cases here:
         # <p><a name="qnpa_0">Caroline Flint: This information is not held centrally. </p>
         # <p><a name="qnpa_15">Ms Harman: The information can be found in the following table. </p>
-        missingbolds = re.findall('(\n?<p>(?:<stamp aname="[a-z_0-9+]+"/>)+)([A-Za-z.\-\s]+)(:\s)', text)
-        for p1,p2,p3 in missingbolds:
-                missingbold = "%s%s%s" % (p1,p2,p3)
-                bold = "%s<b>%s%s</b>" % (p1,p2,p3)
-                namematches = memberList.fullnametoids(p2, sdate)
+        missingbolds = re.findall('(\n?<p>(?:<stamp aname="[^"]+"/>)+)((?:<b></b>)?\s*)([A-Za-z.\-\s]+)(:\s)', text)
+        for p1,p2,p3,p4 in missingbolds:
+                missingbold = "%s%s%s%s" % (p1,p2,p3,p4)
+                bold = "%s<b>%s%s</b>" % (p1,p3,p4)
+                namematches = memberList.fullnametoids(p3, sdate)
                 # Only fix if we found a matching name in the middle (and do it even if ambiguous)
                 if namematches:
                         #print "Fixing missing bold, had name matches:\n\t%s\n\t%s" % (missingbold.strip(), bold.strip())

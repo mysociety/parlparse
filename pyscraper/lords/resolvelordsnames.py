@@ -181,6 +181,11 @@ class LordsList(xml.sax.handler.ContentHandler):
 
                 if name == "Viscountess Hailsham":
                         name = "Baroness Hogg"
+                        
+                # XXX "Lord Speaker" is new April 2007
+                # should match this to the person, but how do we keep up to date who is the speaker? for now just keep it blank
+                if name == "Lord Speaker":
+                        return None
 
 		hom = honcompl.match(name)
 		if not hom:
@@ -206,7 +211,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 
 	def MatchRevName(self, fss, sdate, stampurl):
 		assert fss
-		lfn = re.match('(.*?)(?: of (.*?))?, ?((?:L|B|Abp|Bp|V|E|D|M|C|Ly)\.?)$', fss)
+		lfn = re.match('(.*?)(?: of (.*?))?, ? ?((?:L|B|Abp|Bp|V|E|D|M|C|Ly)\.?)$', fss)
 		if not lfn:
 			print "$$$%s$$$" % fss
 			raise ContextException("No match of format in MatchRevName", stamp=stampurl, fragment=fss)

@@ -72,7 +72,7 @@ recolnumcontvals = re.compile('<(?:i|b)>([^:<]*):\s*column\s*(\d+)(WH)?(?:</b>)?
 # <p>\n12.31 pm\n<p>
 # [3:31 pm<P>    -- at the beginning of divisions
 regtime = '(?:</?p>\s*|<h[45](?: align="left")?>\s?|\[|\n)(?:\d+(?:[:\.]\d+)?(?:\s*|&nbsp;)[ap]\.?m\.?(?:</st>)?|12 noon)(?:\s*</?p>|\s*</h[45]>|\n)'
-retimevals = re.compile('(?:</?p>\s*|<h\d(?: align="left")?>|\[|\n)\s*(\d+(?:[:\.]\d+)?(?:\s*|&nbsp;)(?:[apm.]+|noon|midnight))(?:\s*</?p>|\s*</h\d>|</st>|\n)*$(?i)')
+retimevals = re.compile('(?:</?p>\s*|<h\d(?: align="left")?>|\[|\n)\s*(\d+(?:[:\.]\s*\d+)?(?:\s*|&nbsp;)(?:[apm.]+|noon|midnight))(?:\s*</?p>|\s*</h\d>|</st>|\n)*$(?i)')
 
 # <a name="column_1099">
 reaname = '<a name="\S*?">(?:</a>)?'
@@ -96,7 +96,7 @@ def FilterDebateColTime(fout, text, sdate, typ):
 		fout.write('<stamp colnum="000"/>\n')
 
 	colnum = -1
-	previoustime = None
+	previoustime = []
 	for fss in recomb.split(text):
 		# column number type
 		columng = recolumnumvals.match(fss)
@@ -144,7 +144,7 @@ def FilterDebateColTime(fout, text, sdate, typ):
 				raise ContextException("Time not matched: " + timeg.group(1), stamp=stamp, fragment=fss)
 
 			fout.write('<stamp time="%s"/>' % time)
-			previoustime = time
+			previoustime.append(time)
 			continue
 
 		# anchor names from HTML <a name="xxx">

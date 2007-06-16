@@ -68,7 +68,7 @@ def LordsIndexFromVolMenu(urlbndvols):
 	volnos = [ ]
 
 	# <a href="/pa/ld/ldse0203.htm">Session 2002-03</a>
-	ursessh = re.findall('<a href="\s*([^"]*?)\s*">(?:<font size="2">)?Session \d+-\d+(?:</font>)?</a>', srvipage)
+	ursessh = re.findall('<a\s+href="\s*([^"]*?)\s*">(?:<font size="2">)?Session\s+\d+-\d+(?:</font>)?</(?:a|td)>', srvipage)
 	for ses in ursessh:
 		if not ses:
 			continue
@@ -104,20 +104,32 @@ def LordsIndexFromVolMenu(urlbndvols):
 		#<TR valign=top><TD>&nbsp;</TD><TD></TD><TD><B><A
 		#href="../ld200102/ldhansrd/vo021107/index/21107-
 		#x.htm">Debates</A></B></B>&nbsp;</TD><TD>&nbsp;&nbsp;&nbsp;</TD>
+                newstyle = False
 		sdl = re.findall('<b>([^<]*)</b>(?:\s|<[^a][^>]*>|&nbsp;)*?<a\s*href="([^"]*)">([^<]*)</a>(?i)', srvopage)
+                if len(sdl) <= 1:
+                        newstyle = True
+		        sdl = re.findall('<td class="style1" valign="top">\s*<a href="([^"]*)">\s*(\d+ \w+ \d+)</a>(?i)', srvopage)
 
 		for sss in sdl:
-			if re.match("publications(?i)", sss[2]):
+                        if newstyle:
+                                url = sss[0]
+                                date = sss[1]
+                                text = ''
+                        else:
+                                url = sss[1]
+                                date = sss[0]
+                                text = sss[2]
+			if not newstyle and re.match("publications(?i)", text):
 				continue
-			if not (sss[2] == "Debates"):
-				print "awooga " + sss[2]
+			if not newstyle and text != "Debates":
+				print "awooga " + text
 				continue
-			sdate = mx.DateTime.DateTimeFrom(sss[0]).date
+			sdate = mx.DateTime.DateTimeFrom(date).date
 
 			if sdate == "2000-01-21":  # there's an error in the listing on the page
 				sdate = "2000-02-21"
 
-			uind = urlparse.urljoin(vol[1], re.sub('\s', '', sss[1]))
+			uind = urlparse.urljoin(vol[1], re.sub('\s', '', url))
 			res.append((sdate, '2', uind))
 
 	return res
@@ -159,8 +171,8 @@ class LoadOldLIndex(xml.sax.handler.ContentHandler):
 		for i in range(min(20, len(urllisthead))):
 			if (i >= len(self.res)) or (self.res[i] != urllisthead[i]):
 				#print "failed match", i
-				if i < len(self.res):
-					print "i < len(self.res)", self.res[i], urllisthead[i]
+				#if i < len(self.res):
+				#	print "i < len(self.res)", self.res[i], urllisthead[i]
 				return False
 		return True
 

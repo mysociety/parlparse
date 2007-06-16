@@ -77,6 +77,7 @@ class ParseDay:
 
 <!ENTITY agrave  "&#224;">
 <!ENTITY aacute  "&#225;">
+<!ENTITY egrave  "&#232;">
 <!ENTITY eacute  "&#233;">
 <!ENTITY ecirc   "&#234;">
 <!ENTITY iacute  "&#237;">
@@ -87,11 +88,15 @@ class ParseDay:
 <!ENTITY Iacute  "&#205;">
 <!ENTITY Oacute  "&#211;">
 <!ENTITY Uacute  "&#218;">
+<!ENTITY euml    "&#235;">
+<!ENTITY ouml    "&#246;">
+<!ENTITY uuml    "&#252;">
 <!ENTITY fnof    "&#402;">
 
 <!ENTITY nbsp    "&#160;">
 <!ENTITY shy     "&#173;">
 <!ENTITY middot  "&#183;">
+<!ENTITY ordm    "&#186;">
 <!ENTITY ndash   "&#8211;">
 <!ENTITY mdash   "&#8212;">
 <!ENTITY lsquo   "&#8216;">
@@ -99,6 +104,7 @@ class ParseDay:
 <!ENTITY ldquo   "&#8220;">
 <!ENTITY rdquo   "&#8221;">
 <!ENTITY hellip  "&#8230;">
+<!ENTITY bull    "&#8226;">
 ]>
 
 <publicwhip>
@@ -218,7 +224,8 @@ class ParseDay:
 					self.display_speech()
 					speaker = re.sub("\s+", " ", new_speaker).strip()
 					speaker = re.sub(':', '', speaker)
-					self.speaker = (memberList.match(speaker, date), timestamp)
+					id, str = memberList.match(speaker, date)
+					self.speaker = (str, timestamp)
 				if p.b and p.b.nextSibling:
 					p.b.extract()
 					phtml = re.sub("\s+", " ", p.renderContents()).decode('utf-8')
@@ -244,7 +251,7 @@ class ParseDay:
 	def parse_day_new(self, body):
 		self.url = ''
 
-		if not re.match('THE\s+(transitional(<br>)?\s+)?ASSEMBLY(?i)', ''.join(body[0](text=True))):
+		if not re.match('(THE\s+)?(transitional(<br>)?\s+)?(Northern\s+Ireland\s+)?ASSEMBLY(?i)', ''.join(body[0](text=True))):
 			raise ContextException, 'Missing NIA heading!'
 		date_head = body[1].find(text=True)
 		body = body[2:]
@@ -255,16 +262,21 @@ class ParseDay:
 			ptext = re.sub("\s+", " ", ''.join(p(text=True)))
 			phtml = re.sub("\s+", " ", p.renderContents()).decode('utf-8')
 			#print p, "\n---------------------\n"
-			if (p.a and re.match('[^h/]', p.a.get('href', ''))):
+			if p.a and re.match('[^h/]', p.a.get('href', '')):
+				continue
+			if ptext == '&nbsp;':
 				continue
 			cl = p['class']
+			cl = re.sub(' style\d', '', cl)
+			if cl == 'B3BodyText' and (phtml[0:8] == '<strong>' or re.match('\d+\.( |&nbsp;)+<strong>', phtml)):
+				cl = 'B1SpeakersName'
 			if cl == 'H3SectionHeading':
 				self.display_speech()
 				self.speaker = (None, timestamp)
 				self.idA += 1
 				self.idB = 0
 				self.display_heading(ptext, timestamp, 'major')
-			elif cl == 'H4StageHeading':
+			elif cl == 'H4StageHeading' or cl == 'H5StageHeading':
 				self.display_speech()
 				self.speaker = (None, timestamp)
 				self.idB += 1
@@ -274,7 +286,8 @@ class ParseDay:
 				speaker = p.strong.find(text=True)
 				speaker = re.sub("\s+", " ", speaker).strip()
 				speaker = re.sub(':', '', speaker)
-				self.speaker = (memberList.match(speaker, date), timestamp)
+				id, str = memberList.match(speaker, date)
+				self.speaker = (str, timestamp)
 				p.strong.extract()
 				phtml = p.renderContents()
 				phtml = re.sub('^:\s*', '', phtml)
@@ -291,16 +304,18 @@ class ParseDay:
 							hour += 12
 						timestamp = "%s:%s" % (hour, match.group(3))
 					self.speaker = (self.speaker[0], timestamp)
-				match = re.search('\((Madam Speaker)', ptext)
+				match = re.search('\(((?:Mr|Madam) Speaker)', ptext)
 				if not match:
 					match = re.search('\(Mr Deputy Speaker \[(.*?)\]', ptext)
 				if match:
 					print "Setting deputy to %s" % match.group(1)
 					memberList.setDeputy(match.group(1))
 				self.text += '<p class="italic">%s</p>\n' % phtml
+			elif cl == 'Q3MotionBullet':
+				self.text += '<p class="indentitalic">%s</p>\n' % phtml
 			elif cl == 'B3BodyText' or cl == 'B3BodyTextnoindent' or cl == 'RollofMembersList':
 				self.text += '<p>%s</p>\n' % phtml
-			elif cl == 'Q1QuoteIndented':
+			elif cl == 'Q1QuoteIndented' or cl == 'Q1Quote':
 				self.text += '<p class="indent">%s</p>\n' % phtml
 			elif cl == 'TimePeriod':
 				match = re.match('(\d\d?)\.(\d\d) ?(am|pm|noon)', ptext)
@@ -320,7 +335,7 @@ quiet = False
 force = False
 patchtool = False
 if len(sys.argv)==2 and sys.argv[1] == '--patchtool':
-    patchtool = True
+	patchtool = True
 g = glob.glob('%scmpages/ni/ni*.html' % parldata)
 g.sort()
 parser = ParseDay()

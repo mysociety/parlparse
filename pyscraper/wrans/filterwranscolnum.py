@@ -175,10 +175,11 @@ def FilterWransColnum(fout, text, sdate):
 		# check if we've missed anything obvious
 		if recomb.match(fss):
 			raise ContextException('regexpvals not general enough', fragment=fss, stamp=stamp)
-		if remarginal.search(fss):
-			raise ContextException('marginal colnum detection case',
-			        fragment=remarginal.search(fss).group(0),
-                                stamp=stamp)
+                # Removed FAI 2007-05-25, I really don't care!
+		#if remarginal.search(fss):
+		#	raise ContextException('marginal colnum detection case',
+		#	        fragment=remarginal.search(fss).group(0),
+                #                stamp=stamp)
 
 		fout.write(fss)
 

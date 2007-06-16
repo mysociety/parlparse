@@ -75,8 +75,12 @@ def StripDebateHeadings(headspeak, sdate):
 	ih = StripDebateHeading('Initial', ih, headspeak)  # the 'Initial' is inserted by the splitheadingsspeakers function
 
 	# volume type heading
-	if re.search('THE PARLIAMENTARY DEBATES', headspeak[ih][0]):
+	if re.search('THE$', headspeak[ih][0]):
+		ih = StripDebateHeading('THE', ih, headspeak)
+		ih = StripDebateHeading('PARLIAMENTARY(?:&nbsp;)+DEBATES', ih, headspeak)
+	elif re.search('THE PARLIAMENTARY DEBATES', headspeak[ih][0]):
 		ih = StripDebateHeading('THE PARLIAMENTARY DEBATES', ih, headspeak)
+	if re.search('OFFICIAL REPORT', headspeak[ih][0]):
 		ih = StripDebateHeading('OFFICIAL REPORT', ih, headspeak)
 		ih = StripDebateHeading('IN THE .*? SESSION OF THE .*? PARLIAMENT OF THE', ih, headspeak, True)
 		ih = StripDebateHeading('UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND', ih, headspeak, True)
@@ -218,12 +222,13 @@ def NormalHeadingPart(headingtxt, stampurl):
 		boralheading = True
 	# Check if there are any other spellings of "Oral Answers to Questions" with a loose match
 	elif re.search('oral(?i)', headingtxt) and re.search('ques(?i)', headingtxt) and (not re.search(" Not ", headingtxt)) and \
+                        (not re.search("electoral", headingtxt)) and \
 			stampurl.sdate != "2002-06-11": # has a genuine title with Oral in it
 		print headingtxt
 		raise ContextException('Oral question match not precise enough', stamp=stampurl, fragment=headingtxt)
 
 	# All upper case headings - UGH
-	elif not re.search('[a-z]', headingtxt):
+	elif not re.search('[a-z]', headingtxt) and not re.match('[A-Z\d/]+[\d/][A-Z\d/]+$', headingtxt):
 		bmajorheading = True
 
 	# If this is labeled major, then it gets concatenated with the
@@ -240,8 +245,9 @@ def NormalHeadingPart(headingtxt, stampurl):
 	elif re.search('^hd_|_head', stampurl.aname):
 		bmajorheading = True
 
+        # Wah
         if stampurl.sdate > '2006-05-07':
-                if re.match("(Private business|Business of the House|Orders of the day|Points? of Order)(?i)", headingtxt):
+                if re.match("(Private business|Business of the House|Orders of the day|Points? of Order|Opposition Day)(?i)", headingtxt):
                         bmajorheading = True
 
 	# we're not writing a block for division headings
@@ -332,7 +338,7 @@ def FilterDebateSections(text, sdate, typ):
 			# triplet of ( heading, unspokentext, [(speaker, text)], major? )
 			headingtxt = stampurl.UpdateStampUrl(string.strip(sht[0]))  # we're getting stamps inside the headings sometimes
                         headingmajor = sht[3]
-                        if headingmajor or sht == headspeak[-1]:
+                        if typ == 'debate' and (headingmajor or sht == headspeak[-1]): # UGH again
                                 headingtxt = headingtxt.upper()
 			unspoketxt = sht[1]
 			speechestxt = sht[2]
@@ -355,6 +361,10 @@ def FilterDebateSections(text, sdate, typ):
         			elif qbh.typ == 'major-heading' and len(flatb) > 0 and flatb[-1].typ == 'major-heading':
         				flatb[-1].stext.append(" &mdash; ")
 	        			flatb[-1].stext.extend(qbh.stext)
+
+                                elif qbh.typ == 'minor-heading' and len(flatb) > 0 and flatb[-1].typ == 'major-heading' and re.search('Allotted Day(?i)', qbh.stext[-1]):
+                                        flatb[-1].stext.append(" &mdash; ")
+                                        flatb[-1].stext.extend(qbh.stext)
 
                                 elif re.search("(?:sitting suspended(?: for| until| till|\.))|(on resuming&)(?i)", qbh.stext[0]):
                                         if len(flatb) > 0 and flatb[-1].typ == 'speech':

@@ -10,23 +10,28 @@ source ~/parlparse/scripts/consts
 cd ~/parlparse/rawdata/lords
 lynx -source "http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords" > Members_of_the_House_of_Lords
 cd ..
-lynx -source "http://en.wikipedia.org/wiki/MPs_elected_in_the_UK_general_election,_2005" > Members_of_the_House_of_Commons
+lynx -source "http://en.wikipedia.org/wiki/MPs_elected_in_the_UK_general_election,_2005" > Members_of_the_House_of_Commons_2005
+lynx -source "http://en.wikipedia.org/wiki/MPs_elected_in_the_UK_general_election,_2001" > Members_of_the_House_of_Commons_2001
+lynx -source "http://en.wikipedia.org/wiki/MPs_elected_in_the_UK_general_election,_1997" > Members_of_the_House_of_Commons_1997
+lynx -source "http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007" > Members_of_the_NIA_2007
 svn -q commit -m "Weekly rawdata scrape commit"
 cd ~/parlparse/members
 ./wikipedia-lords.py > wikipedia-lords.xml
 ./wikipedia-commons.py > wikipedia-commons.xml
 ./bbcconv.py > bbc-links.xml 
+cd ~/parlparse/pyscraper/ni
+./wikipedia-mla.py > ../../members/wikipedia-mla.xml
+cd ~/parlparse/members
 svn -q commit -m "Weekly members scrape commit"
 
 # Force reindex, to find URLs which have changed (updates to Hansard,
 # including the once-per-session grand URL-rename-and-break from cm to vo)
-cd ~/parlparse/pyscraper
-./lazyrunall.py --from $WEEKLY_FROMDATE scrape debates wrans westminhall wms --force-index --quietc
-./lazyrunall.py --from $LORDS_WEEKLY_FROMDATE scrape lords --force-index
 # Run scraper for all of parliament
 cd ~/parlparse/scripts
-./updatedaterange $WEEKLY_FROMDATE $WEEKLY_TODATE $1
-./lordsupdatedaterange $LORDS_WEEKLY_FROMDATE $LORDS_WEEKLY_TODATE $1
+./updatedaterange-scrape $WEEKLY_FROMDATE $WEEKLY_TODATE --force-index
+./updatedaterange-parse $WEEKLY_FROMDATE $WEEKLY_TODATE
+./lordsupdatedaterange-scrape $LORDS_WEEKLY_FROMDATE $WEEKLY_TODATE --force-index
+./lordsupdatedaterange-parse $LORDS_WEEKLY_FROMDATE $WEEKLY_TODATE
 
 # Zip up XML files for people
 cd ~/parldata/scrapedxml

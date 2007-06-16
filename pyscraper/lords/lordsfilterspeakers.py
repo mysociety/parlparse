@@ -16,7 +16,7 @@ from splitheadingsspeakers import StampUrl
 # marks out center types bold headings which are never speakers
 respeaker = re.compile('(<center><b>(?:<stamp aname="[^"]*"/>)?[^<]*</b></center>|<b>(?:<stamp aname="[^"]+"/>)*[^<]*</b>(?:\s*:)?)(?i)')
 respeakerb = re.compile('<b>\s*(?:<stamp aname="[^"]*"/>)*\s*([^<]*?),?\s*</b>(\s*:)?(?i)')
-respeakervals = re.compile('([^:(]*?)\s*(?:\(([^:)]*)\))?(:)?$')
+respeakervals = re.compile('([^:(]*?)\s*(?:\(([^:)]*)\))?(:)?:*$')
 
 renonspek = re.compile('division|contents|amendment(?i)')
 reboldempty = re.compile('<b>\s*</b>(?i)')
@@ -96,7 +96,8 @@ def LordsFilterSpeakers(fout, text, sdate):
 			if (not re.match("The Deputy ", loffice)) and (loffice in officematches):
 				if officematches[loffice] != name:
 					print officematches[loffice], loffice,  name
-				assert officematches[loffice] == name
+                                if officematches[loffice] <> name: 
+                                        raise ContextException("office inconsistency, loffice: %s name: %s officematches: %s" % (loffice, name, officematches[loffice]), stamp=stampurl, fragment=fssb)
 			else:
 				officematches[loffice] = name
 		elif name in officematches:
@@ -109,7 +110,10 @@ def LordsFilterSpeakers(fout, text, sdate):
 
 		lsid = lordsList.GetLordIDfname(name, loffice=loffice, sdate=sdate, stampurl=stampurl)  # maybe throw the exception on the outside
 
-		fout.write('<speaker speakerid="%s" speakername="%s" colon="%s">%s</speaker>' % (lsid, name, colon, name))
+                if not lsid:
+                        fout.write('<speaker speakerid="unknown" error="No match" speakername="%s" colon="%s">%s</speaker>' % (name, colon, name))
+                else:
+                        fout.write('<speaker speakerid="%s" speakername="%s" colon="%s">%s</speaker>' % (lsid, name, colon, name))
 
 
 

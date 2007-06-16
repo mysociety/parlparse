@@ -6,15 +6,15 @@ import re
 import time
 import os
 
-root = ['http://www.niassembly.gov.uk/theassembly/hansard.htm', 'http://www.niassembly.gov.uk/transitional/plenary/hansard.htm']
-for i in range(1,19):
+root = ['http://www.niassembly.gov.uk/record/hansard.htm', 'http://www.niassembly.gov.uk/transitional/plenary/hansard.htm']
+for i in range(1,20):
 	root.append('http://www.niassembly.gov.uk/record/vol%dcontents.htm' % i)
 
 for url in root:
 	ur = urllib.urlopen(url)
 	page = ur.read()
 	ur.close()
-	match = re.findall('"((?:Plenary/|minutes_of_proceedings_|reports/)?(p?)(\d{6})(i?)\.htm)"', page)
+	match = re.findall('"((?:Plenary/|minutes_of_proceedings_|reports/|reports2007/)?(p?)(\d{6})(i?)\.htm)"', page)
 	for day in match:
 		url_day = urlparse.urljoin(url, day[0])
 		date = time.strptime(day[2], "%y%m%d")

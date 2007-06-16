@@ -130,7 +130,7 @@ def GetReportProcedings(urlpage, year):
 				assert res[-1][3] == 0
 				res[-1][3] = romanconvmap[mdate.group(3).upper()]
 		elif mprevdebates:
-			print "skipping  ****%s*" % lkname
+			pass
 		elif lkname:
 			print "  ****%s*" % lkname
 
@@ -168,11 +168,10 @@ def GetReportProcedings(urlpage, year):
 				assert p[0] == 2  # 1st meeting held in private
 			elif year == "1999" and re.match(".*?/pa/cm199900/cmstand/a/cmserv.htm$", urlpage):
 				assert p[0] == 25  # 1st 24 meeting ommitted
+			elif year == "2006" and re.match(".*/pa/cm/cmpbwelf.htm", urlpage):
+				assert p[0] == 13 # 1st 12 meetings in previous year
 			else:
-				if p[0] != 1:
-					print "starting at %s" % p[0]
-				#	print vdat
-				#assert p[0] == 1
+				assert p[0] == 1
 		prev = p
 	return res, firstdate
 

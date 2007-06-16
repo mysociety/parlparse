@@ -242,6 +242,7 @@ class MemberList(xml.sax.handler.ContentHandler):
     def striptitles(self, text):
         # Remove dots, but leave a space between them
         text = text.replace(".", " ")
+        text = text.replace(",", " ")
         text = text.replace("&nbsp;", " ")
         text = text.replace("  ", " ")
 

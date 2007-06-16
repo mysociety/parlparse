@@ -1,0 +1,23 @@
+#!/bin/bash
+#set -x  # for debugging, prints each line before executing it
+
+# Manual morning update.  Only scrapes/parses last week, and
+# patchtool is always on. For Francis.
+
+source ~/parlparse/scripts/consts
+
+# Run scraper
+cd ~/parlparse/scripts
+RET=0
+echo "Scraping commons"
+./updatedaterange-scrape $NOW_FROMDATE $NOW_TODATE || RET=1
+echo "Parsing commons"
+./updatedaterange-parse $NOW_FROMDATE $NOW_TODATE --patchtool || RET=1
+echo "Scraping lords"
+./lordsupdatedaterange-scrape $NOW_FROMDATE $NOW_TODATE || RET=1
+echo "Parsing lords"
+./lordsupdatedaterange-parse $NOW_FROMDATE $NOW_TODATE --patchtool || RET=1
+echo "FAI final error is $RET"
+
+echo "Calling update of other sites"
+./other-sites-update $RET

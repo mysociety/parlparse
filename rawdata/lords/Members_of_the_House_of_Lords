@@ -7,14 +7,14 @@
 		<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (English)" />
 		<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
 		<title>Members of the House of Lords - Wikipedia, the free encyclopedia</title>
-		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?61"; /*]]>*/</style>
-		<link rel="stylesheet" type="text/css" media="print" href="/skins-1.5/common/commonPrint.css?61" />
-		<link rel="stylesheet" type="text/css" media="handheld" href="/skins-1.5/monobook/handheld.css?61" />
-		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css?61";</style><![endif]-->
-		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css?61";</style><![endif]-->
-		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css?61";</style><![endif]-->
-		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?61";</style><![endif]-->
-		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?61"></script>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?73"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins-1.5/common/commonPrint.css?73" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins-1.5/monobook/handheld.css?73" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css?73";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css?73";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css?73";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?73";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?73"></script>
 		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
 		
 		<script type= "text/javascript">/*<![CDATA[*/
@@ -28,6 +28,9 @@ var wgCanonicalSpecialPageName = false;
 var wgNamespaceNumber = 0;
 var wgPageName = "Members_of_the_House_of_Lords";
 var wgTitle = "Members of the House of Lords";
+var wgAction = "view";
+var wgRestrictionEdit = [];
+var wgRestrictionMove = [];
 var wgArticleId = "269064";
 var wgIsArticle = true;
 var wgUserName = null;
@@ -35,10 +38,10 @@ var wgUserGroups = null;
 var wgUserLanguage = "en";
 var wgContentLanguage = "en";
 var wgBreakFrames = false;
-var wgCurRevisionId = "113431575";
+var wgCurRevisionId = "133421375";
 /*]]>*/</script>
                 
-		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?61"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?73"><!-- wikibits js --></script>
 		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
 		<style type="text/css">/*<![CDATA[*/
 @import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
@@ -46,7 +49,7 @@ var wgCurRevisionId = "113431575";
 @import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
 /*]]>*/</style>
 		<!-- Head Scripts -->
-		<script type="text/javascript" src="/skins-1.5/common/ajax.js?61"></script>
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js?73"></script>
 	</head>
 <body  class="mediawiki ns-0 ltr page-Members_of_the_House_of_Lords">
 	<div id="globalWrapper">
@@ -55,7 +58,7 @@ var wgCurRevisionId = "113431575";
 		<a name="top" id="top"></a>
 		<div id="siteNotice"><script type="text/javascript" language="JavaScript">
 <!--
-document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3cb\x3e\x3ca href=\"http://wikimediafoundation.org/wiki/Fundraising\" class=\"extiw\" title=\"wikimedia:Fundraising\"\x3econtinued donations\x3c/a\x3e\x3c/b\x3e keep Wikipedia running!\x26nbsp;\x26nbsp;\x26nbsp;\x26nbsp;\x3c/div\x3e\n");
+document.writeln("\x3cdiv style=\"position:absolute; z-index:100; right:100px; top:-0px;\" class=\"metadata\" id=\"donate\"\x3e\n\x3cdiv style=\"text-align:right; font-size:80%\"\x3e\x3ci\x3eYour \x3cb\x3e\x3ca href=\"http://wikimediafoundation.org/wiki/Fundraising\" class=\"extiw\" title=\"wikimedia:Fundraising\"\x3econtinued donations\x3c/a\x3e\x3c/b\x3e keep Wikipedia running!\x3c/i\x3e\n\x3c/div\x3e\x3c/div\x3e\n");
 -->
 </script></div>		<h1 class="firstHeading">Members of the House of Lords</h1>
 		<div id="bodyContent">
@@ -83,11 +86,12 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 </td>
 </tr>
 </table>
-<p><script type="text/javascript">
+<script type="text/javascript">
 //<![CDATA[
  if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
 //]]>
-</script><a name="Bishops" id="Bishops"></a></p>
+</script>
+<p><a name="Bishops" id="Bishops"></a></p>
 <h3><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=1" title="Edit section: Bishops">edit</a>]</span> <span class="mw-headline">Bishops</span></h3>
 <table class="wikitable">
 <tr>
@@ -527,6 +531,12 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
+<td><a href="/wiki/Paul_Bew%2C_Baron_Bew" title="Paul Bew, Baron Bew">The Lord Bew</a></td>
+<td>Cross Bench</td>
+<td>Life Peer</td>
+<td>&#160;</td>
+</tr>
+<tr>
 <td><a href="/wiki/Amirali_Bhatia%2C_Baron_Bhatia" title="Amirali Bhatia, Baron Bhatia">The Lord Bhatia</a></td>
 <td>Cross Bench</td>
 <td>Life Peer</td>
@@ -768,7 +778,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=John_Brooks%2C_Baron_Brooks_of_Tremorfa&amp;action=edit" class="new" title="John Brooks, Baron Brooks of Tremorfa">The Lord Brooks of Tremorfa</a></td>
+<td><a href="/wiki/John_Brooks%2C_Baron_Brooks_of_Tremorfa" title="John Brooks, Baron Brooks of Tremorfa">The Lord Brooks of Tremorfa</a></td>
 <td>Labour</td>
 <td>Life Peer</td>
 <td>&#160;</td>
@@ -822,7 +832,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Terence_Burns%2C_Baron_Burns&amp;action=edit" class="new" title="Terence Burns, Baron Burns">The Lord Burns</a></td>
+<td><a href="/wiki/Terence_Burns%2C_Baron_Burns" title="Terence Burns, Baron Burns">The Lord Burns</a></td>
 <td>Cross Bench</td>
 <td>Life Peer</td>
 <td>&#160;</td>
@@ -876,6 +886,12 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
+<td><a href="/wiki/Jane_Campbell%2C_Baroness_Campbell_of_Surbiton" title="Jane Campbell, Baroness Campbell of Surbiton">The Baroness Campbell of Surbiton</a></td>
+<td>Cross Bench</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr>
 <td><a href="/wiki/Lord_Campbell-Savours" title="Lord Campbell-Savours">The Lord Campbell-Savours</a></td>
 <td>Labour</td>
 <td>&#160;</td>
@@ -894,7 +910,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Baroness_Carnegy_of_Lour&amp;action=edit" class="new" title="Baroness Carnegy of Lour">The Baroness Carnegy of Lour</a></td>
+<td><a href="/wiki/Baroness_Carnegy_of_Lour" title="Baroness Carnegy of Lour">The Baroness Carnegy of Lour</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -978,7 +994,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Lord_Chitnis&amp;action=edit" class="new" title="Lord Chitnis">The Lord Chitnis</a></td>
+<td><a href="/wiki/Lord_Chitnis" title="Lord Chitnis">The Lord Chitnis</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -996,7 +1012,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Lord_Christopher&amp;action=edit" class="new" title="Lord Christopher">The Lord Christopher</a></td>
+<td><a href="/wiki/Lord_Christopher" title="Lord Christopher">The Lord Christopher</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1110,6 +1126,12 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>Sits as Baron Saltersford</td>
 </tr>
 <tr>
+<td><a href="/wiki/Jean_Coussins%2C_Baroness_Coussins" title="Jean Coussins, Baroness Coussins">The Baroness Coussins</a></td>
+<td>Cross Bench</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr>
 <td><a href="/wiki/Baroness_Cox" title="Baroness Cox">The Baroness Cox</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
@@ -1128,7 +1150,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Charles_Dugdale%2C_2nd_Baron_Crathorne&amp;action=edit" class="new" title="Charles Dugdale, 2nd Baron Crathorne">The Lord Crathorne</a></td>
+<td><a href="/wiki/Charles_Dugdale%2C_2nd_Baron_Crathorne" title="Charles Dugdale, 2nd Baron Crathorne">The Lord Crathorne</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -1188,7 +1210,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Lord_Currie_of_Marylebone&amp;action=edit" class="new" title="Lord Currie of Marylebone">The Lord Currie of Marylebone</a></td>
+<td><a href="/wiki/Lord_Currie_of_Marylebone" title="Lord Currie of Marylebone">The Lord Currie of Marylebone</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1386,7 +1408,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Baroness_Elles&amp;action=edit" class="new" title="Baroness Elles">The Baroness Elles</a></td>
+<td><a href="/wiki/Baroness_Elles" title="Baroness Elles">The Baroness Elles</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1434,7 +1456,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Lord_Evans_of_Watford&amp;action=edit" class="new" title="Lord Evans of Watford">The Lord Evans of Watford</a></td>
+<td><a href="/wiki/Lord_Evans_of_Watford" title="Lord Evans of Watford">The Lord Evans of Watford</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1654,7 +1676,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Baroness_Gibson_of_Market_Rasen&amp;action=edit" class="new" title="Baroness Gibson of Market Rasen">The Baroness Gibson of Market Rasen</a></td>
+<td><a href="/wiki/Baroness_Gibson_of_Market_Rasen" title="Baroness Gibson of Market Rasen">The Baroness Gibson of Market Rasen</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1732,7 +1754,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Lord_Gordon_of_Strathblane&amp;action=edit" class="new" title="Lord Gordon of Strathblane">The Lord Gordon of Strathblane</a></td>
+<td><a href="/wiki/Lord_Gordon_of_Strathblane" title="Lord Gordon of Strathblane">The Lord Gordon of Strathblane</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1756,7 +1778,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Baroness_Gould_of_Potternewton&amp;action=edit" class="new" title="Baroness Gould of Potternewton">The Baroness Gould of Potternewton</a></td>
+<td><a href="/wiki/Baroness_Gould_of_Potternewton" title="Baroness Gould of Potternewton">The Baroness Gould of Potternewton</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1798,7 +1820,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Ambrose_Greenway%2C_4th_Baron_Greenway&amp;action=edit" class="new" title="Ambrose Greenway, 4th Baron Greenway">The Lord Greenway</a></td>
+<td><a href="/wiki/Ambrose_Greenway%2C_4th_Baron_Greenway" title="Ambrose Greenway, 4th Baron Greenway">The Lord Greenway</a></td>
 <td>Cross Bench</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -1855,6 +1877,12 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td><a href="/wiki/Brenda_Hale%2C_Baroness_Hale_of_Richmond" title="Brenda Hale, Baroness Hale of Richmond">The Baroness Hale of Richmond</a></td>
 <td>Cross Bench</td>
 <td>Lord of Appeal in Ordinary</td>
+<td>&#160;</td>
+</tr>
+<tr>
+<td><a href="/wiki/Khalid_Hameed%2C_Baron_Hameed" title="Khalid Hameed, Baron Hameed">The Lord Hameed</a></td>
+<td>Cross Bench</td>
+<td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
@@ -2056,7 +2084,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Baroness_Hooper&amp;action=edit" class="new" title="Baroness Hooper">The Baroness Hooper</a></td>
+<td><a href="/wiki/Baroness_Hooper" title="Baroness Hooper">The Baroness Hooper</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2176,7 +2204,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Raymond_Jolliffe%2C_5th_Baron_Hylton&amp;action=edit" class="new" title="Raymond Jolliffe, 5th Baron Hylton">The Lord Hylton</a></td>
+<td><a href="/wiki/Raymond_Jolliffe%2C_5th_Baron_Hylton" title="Raymond Jolliffe, 5th Baron Hylton">The Lord Hylton</a></td>
 <td>Cross Bench</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -2398,8 +2426,8 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Irvine_Laidlaw" title="Irvine Laidlaw">The Lord Laidlaw</a></td>
-<td>Conservative</td>
+<td><a href="/wiki/John_Krebs%2C_Baron_Krebs" title="John Krebs, Baron Krebs">The Lord Krebs</a></td>
+<td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
@@ -2452,7 +2480,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Lord_Lea_of_Crondall&amp;action=edit" class="new" title="Lord Lea of Crondall">The Lord Lea of Crondall</a></td>
+<td><a href="/wiki/Lord_Lea_of_Crondall" title="Lord Lea of Crondall">The Lord Lea of Crondall</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2500,7 +2528,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=James_Lindsay%2C_16th_Earl_of_Lindsay&amp;action=edit" class="new" title="James Lindsay, 16th Earl of Lindsay">The Earl of Lindsay</a></td>
+<td><a href="/wiki/James_Lindsay%2C_16th_Earl_of_Lindsay" title="James Lindsay, 16th Earl of Lindsay">The Earl of Lindsay</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -2818,6 +2846,12 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
+<td><a href="/wiki/Andrew_Mawson%2C_Baron_Mawson" title="Andrew Mawson, Baron Mawson">The Lord Mawson</a></td>
+<td>Cross Bench</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr>
 <td><a href="/wiki/John_Maxton" title="John Maxton">The Lord Maxton</a></td>
 <td>Labour</td>
 <td>&#160;</td>
@@ -2884,7 +2918,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=John_Monson%2C_11th_Baron_Monson&amp;action=edit" class="new" title="John Monson, 11th Baron Monson">The Lord Monson</a></td>
+<td><a href="/wiki/John_Monson%2C_11th_Baron_Monson" title="John Monson, 11th Baron Monson">The Lord Monson</a></td>
 <td>Cross Bench</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -3098,7 +3132,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Christopher_James%2C_5th_Baron_Northbourne&amp;action=edit" class="new" title="Christopher James, 5th Baron Northbourne">The Lord Northbourne</a></td>
+<td><a href="/wiki/Christopher_James%2C_5th_Baron_Northbourne" title="Christopher James, 5th Baron Northbourne">The Lord Northbourne</a></td>
 <td>Cross Bench</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -3494,12 +3528,6 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/David_Renton" title="David Renton">The Lord Renton</a></td>
-<td>Conservative</td>
-<td>&#160;</td>
-<td>&#160;</td>
-</tr>
-<tr>
 <td><a href="/wiki/Timothy_Renton" title="Timothy Renton">The Lord Renton of Mount Harry</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
@@ -3602,7 +3630,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Robin_Cayzer%2C_3rd_Baron_Rotherwick&amp;action=edit" class="new" title="Robin Cayzer, 3rd Baron Rotherwick">The Lord Rotherwick</a></td>
+<td><a href="/wiki/Robin_Cayzer%2C_3rd_Baron_Rotherwick" title="Robin Cayzer, 3rd Baron Rotherwick">The Lord Rotherwick</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -3716,7 +3744,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Baroness_Scott_of_Needham_Market&amp;action=edit" class="new" title="Baroness Scott of Needham Market">The Baroness Scott of Needham Market</a></td>
+<td><a href="/wiki/Baroness_Scott_of_Needham_Market" title="Baroness Scott of Needham Market">The Baroness Scott of Needham Market</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3884,7 +3912,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Lord_Soulsby_of_Swaffham_Prior&amp;action=edit" class="new" title="Lord Soulsby of Swaffham Prior">The Lord Soulsby of Swaffham Prior</a></td>
+<td><a href="/wiki/Lord_Soulsby_of_Swaffham_Prior" title="Lord Soulsby of Swaffham Prior">The Lord Soulsby of Swaffham Prior</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3902,7 +3930,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Lord_Sterling_of_Plaistow&amp;action=edit" class="new" title="Lord Sterling of Plaistow">The Lord Sterling of Plaistow</a></td>
+<td><a href="/wiki/Jeffrey_Sterling%2C_Baron_Sterling_of_Plaistow" title="Jeffrey Sterling, Baron Sterling of Plaistow">The Lord Sterling of Plaistow</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3980,7 +4008,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Roger_Mynors_Swinfen_Eady%2C_3rd_Baron_Swinfen&amp;action=edit" class="new" title="Roger Mynors Swinfen Eady, 3rd Baron Swinfen">The Lord Swinfen</a></td>
+<td><a href="/wiki/Roger_Mynors_Swinfen_Eady%2C_3rd_Baron_Swinfen" title="Roger Mynors Swinfen Eady, 3rd Baron Swinfen">The Lord Swinfen</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -4320,7 +4348,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Margaret_Wall&amp;action=edit" class="new" title="Margaret Wall">The Baroness Wall of New Barnet</a></td>
+<td><a href="/wiki/Margaret_Wall" title="Margaret Wall">The Baroness Wall of New Barnet</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4434,7 +4462,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Lord_Williams_of_Elvel&amp;action=edit" class="new" title="Lord Williams of Elvel">The Lord Williams of Elvel</a></td>
+<td><a href="/wiki/Lord_Williams_of_Elvel" title="Lord Williams of Elvel">The Lord Williams of Elvel</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4446,7 +4474,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Leopold_Verney%2C_21st_Baron_Willoughby_de_Broke&amp;action=edit" class="new" title="Leopold Verney, 21st Baron Willoughby de Broke">The Lord Willoughby de Broke</a></td>
+<td><a href="/wiki/Leopold_Verney%2C_21st_Baron_Willoughby_de_Broke" title="Leopold Verney, 21st Baron Willoughby de Broke">The Lord Willoughby de Broke</a></td>
 <td>Non affiliated</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -4648,6 +4676,12 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td>&#160;</td>
 </tr>
 <tr>
+<td><a href="/wiki/David_Renton" title="David Renton">The Lord Renton</a> (<a href="/wiki/May_24" title="May 24">May 24</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td>Conservative</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr>
 <td><a href="/wiki/Lord_Simon_of_Glaisdale" title="Lord Simon of Glaisdale">The Lord Simon of Glaisdale</a> (<a href="/wiki/May_7" title="May 7">May 7</a>, <a href="/wiki/2006" title="2006">2006</a>)</td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
@@ -4657,6 +4691,12 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <td><a href="/wiki/Tony_Banks%2C_Baron_Stratford" title="Tony Banks, Baron Stratford">The Lord Stratford</a> (<a href="/wiki/January_8" title="January 8">January 8</a>, <a href="/wiki/2006" title="2006">2006</a>)</td>
 <td>Labour</td>
 <td></td>
+<td>&#160;</td>
+</tr>
+<tr>
+<td><a href="/wiki/Lord_Weatherill" title="Lord Weatherill">The Lord Weatherill</a> (<a href="/wiki/May_6" title="May 6">May 6</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td>Cross Bench</td>
+<td>&#160;</td>
 <td>&#160;</td>
 </tr>
 </table>
@@ -4669,6 +4709,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <li><a href="/wiki/Baron_Ewing_of_Kirkford" title="Baron Ewing of Kirkford">The Lord Ewing of Kirkford</a>, Labour</li>
 <li><a href="/wiki/Baron_Hunt_of_Tanworth" title="Baron Hunt of Tanworth">The Lord Hunt of Tanworth</a>, Crossbencher</li>
 <li><a href="/wiki/Lord_Hutchinson_of_Lullington" title="Lord Hutchinson of Lullington">The Lord Hutchinson of Lullington</a>, Liberal Democrat</li>
+<li><a href="/wiki/Irvine_Laidlaw" title="Irvine Laidlaw">The Lord Laidlaw</a>, Conservative</li>
 <li><a href="/wiki/Baron_Phillips_of_Sudbury" title="Baron Phillips of Sudbury">The Lord Phillips of Sudbury</a>, Liberal Democrat</li>
 <li><a href="/wiki/Baron_Pym" title="Baron Pym">The Lord Pym</a>, Conservative</li>
 <li><a href="/wiki/Robert_Gascoyne-Cecil%2C_7th_Marquess_of_Salisbury" title="Robert Gascoyne-Cecil, 7th Marquess of Salisbury">The Marquess of Salisbury</a>, Conservative</li>
@@ -4689,7 +4730,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 </ul>
 
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20070310183633 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20070610030123 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:Politics_of_the_United_Kingdom" title="Category:Politics of the United Kingdom">Politics of the United Kingdom</a></span></p></div>			<!-- end content -->
@@ -4726,12 +4767,21 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 		<div class='pBody'>
 			<ul>
 				<li id="n-Main-page"><a href="/wiki/Main_Page">Main page</a></li>
-				<li id="n-portal"><a href="/wiki/Wikipedia:Community_Portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-Contents"><a href="/wiki/Wikipedia:Contents">Contents</a></li>
 				<li id="n-Featured-content"><a href="/wiki/Wikipedia:Featured_content">Featured content</a></li>
 				<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
-				<li id="n-recentchanges"><a href="/wiki/Special:Recentchanges" title="The list of recent changes in the wiki. [r]" accesskey="r">Recent changes</a></li>
 				<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random page [x]" accesskey="x">Random article</a></li>
+			</ul>
+		</div>
+	</div>
+		<div class='portlet' id='p-interaction'>
+		<h5>interaction</h5>
+		<div class='pBody'>
+			<ul>
 				<li id="n-About-Wikipedia"><a href="/wiki/Wikipedia:About">About Wikipedia</a></li>
+				<li id="n-portal"><a href="/wiki/Wikipedia:Community_Portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-recentchanges"><a href="/wiki/Special:Recentchanges" title="The list of recent changes in the wiki. [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-uploadwizard"><a href="/wiki/Wikipedia:Upload">File upload wizard</a></li>
 				<li id="n-contact"><a href="/wiki/Wikipedia:Contact_us">Contact us</a></li>
 				<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Fundraising" title="Support us">Make a donation</a></li>
 				<li id="n-help"><a href="/wiki/Help:Contents" title="The place to find out.">Help</a></li>
@@ -4756,7 +4806,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:Recentchangeslinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Special:Upload" title="Upload images or media files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:Specialpages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=113431575">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=113431575">Cite this article</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=133421375" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=133421375">Cite this article</a></li>			</ul>
 		</div>
 	</div>
 		</div><!-- end of the left (by default at least) column -->
@@ -4765,7 +4815,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-				<li id="lastmod"> This page was last modified 22:58, 7 March 2007.</li>
+				<li id="lastmod"> This page was last modified 14:22, 25 May 2007.</li>
 				<li id="copyright">All text is available under the terms of the <a class='internal' href="/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc</a>., a US-registered <a class='internal' href="/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>
 				<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
 				<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
@@ -4776,4 +4826,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv94 in 0.075 secs. --></body></html>
+<!-- Served by srv112 in 0.091 secs. --></body></html>

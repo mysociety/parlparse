@@ -305,7 +305,7 @@ class ParseCommittee:
                     textlist.append('<span class="italic">')
                     textlist = self.render_tree(node.contents, textlist)
                     textlist.append('</span>')
-                elif getattr(node, 'name', None) == 'font' and node['size'] == '-1' :
+                elif getattr(node, 'name', None) == 'font' and getattr(node, 'size', None) == '-1' :
                     textlist.append('<span class="indent">')
                     textlist = self.render_tree(node.contents, textlist)
                     textlist.append('</span>')

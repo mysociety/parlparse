@@ -176,7 +176,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return "notmoved"
 	if re.match('<p>Motion not moved\.</p>', qpara):
 		return "notmoved"
-	if re.match('<p>\[(?:<i>)?The Sitting was suspended .{0,60}?(?:</i>)?\](?:</i>)?</p>', qpara):
+	if re.match('<p>\[(?:<i>)?The Sitting was suspended .{0,60}?(?:</i>)?\](?:</i>)?</p>(?i)', qpara):
 		return "suspended"
 	if re.match('<p>\[(?:<i>)?The House observed.{0,60}?(\]|\.|</i>)+</p>', qpara):
 		return "misc"
@@ -219,7 +219,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return "agreeto"
 
 
-	if re.match('<p>(?:The )?Bill (?:was )?returned (?:earlier )?(?:from|to) the Commons .{0,350}?\.</p>', qpara):
+	if re.match('<p>(?:The )?Bill (?:was )?returned (?:earlier )?(?:from|to) the Commons.{0,350}?\.</p>', qpara):
 		return "bill"
 	if re.match('<p[^>]*>The Commons (?:(?:do not )?insist on .{0,160}? but propose|have made the following consequential|(?:dis)?agree (?:to|with)) .{0,260}?(?:\.|&mdash;)*</p>', qpara):
 		return "bill"
@@ -361,12 +361,9 @@ def FilterLordsSpeech(qb):
 	recol = re.search('colon="(:?)"', qb.speaker)
 	bSpeakerExists = not re.match('nospeaker="true"', qb.speaker)
 	if bSpeakerExists and (not recol or recol.group(1)):
-		# text of this kind at the begining should not be spoken
-		if re.search("<p>(?:moved|asked) (?i)", qb.stext[0]):
-			print qb.speaker
-			print qb.stext[0]
-			raise ContextException("has moved amendment after colon (try taking : out)", stamp=qb.sstampurl)
-		ispeechstartp1 = 1  # 0th paragraph is speech text
+		# text of this kind at the begining should not be spoken, assume there wasn't a colon
+		if not re.search("<p>(?:moved|asked) (?i)", qb.stext[0]):
+		        ispeechstartp1 = 1  # 0th paragraph is speech text
 
 	res = [ ] # output list
 	preparagraphtype = ""

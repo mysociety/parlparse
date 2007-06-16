@@ -5,6 +5,7 @@ import cStringIO
 
 from miscfuncs import FixHTMLEntities
 from miscfuncs import SplitParaIndents, IsNotQuiet
+from parlphrases import parlPhrases
 
 from contextexception import ContextException
 
@@ -65,7 +66,11 @@ def FilterQuestion(text, sdate, stampurl):
 		# find the first (1)
 		gbone = re.search('\(1\)', textp[0])
 		if not gbone:
-			raise ContextException('no (1) in first multipart para', fragment=text, stamp=stampurl)
+			m = re.match('To ask the ((Secretary|Minister) of State,? (Ministry of|for( the)?) )?(%s),? (?i)' % '|'.join(parlPhrases.wransmajorheadings.keys()), textp[0])
+			if not m:
+				raise ContextException('no (1) in first multipart para', fragment=text, stamp=stampurl)
+			textp[0] = textp[0][:m.end()] + '(1) ' + textp[0][m.end():]
+			gbone = re.search('\(1\)', textp[0])
 		textn.append( (textp[0][:gbone.span(0)[0]], '') )
 		eqnum = ExtractQnum(textp[0][gbone.span(0)[1]:], stampurl)
 		textn.append(eqnum)
