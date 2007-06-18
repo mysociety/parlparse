@@ -838,11 +838,15 @@ class ParseCommittee:
                     self.parse_timeline(tag)
                 elif (cssClass == 'hs_Para'):
                     self.display_para(tag) 
+                elif (cssClass == 'hs_ParaIndent'):
+                    self.display_para(tag, indent=True)
                 elif (cssClass == 'hs_8Clause'):
                     self.display_heading(tag.string, "minor")
                 elif (cssClass == 'hs_8ClauseQn'):
                     self.display_heading(tag.string, "minor")
                 elif (cssClass == 'hs_8Question'):
+                    self.display_heading(tag.string, "minor")
+                elif (cssClass == 'hs_2BillTitle' or cssClass == 'hs_2DebBill'):
                     self.display_heading(tag.string, "minor")
                 elif (cssClass == 'hs_76fChair'):
                     self.display_chair(tag)
