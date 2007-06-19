@@ -67,7 +67,7 @@ restandingo = re.compile('''(?x)
 restandingomarg = re.compile("Standing Order No")
 def TokenStandingOrder(mstandingo, phrtok):
 	if mstandingo.group(2):
-		return ('phrase', ' class="standing-order" code="%s" title="%s"' % (FixHTMLEntities(mstandingo.group(1)), FixHTMLEntities(mstandingo.group(2))))
+		return ('phrase', ' class="standing-order" code="%s" title="%s"' % (FixHTMLEntities(mstandingo.group(1)), re.sub('<[^>]*>', '', mstandingo.group(2))))
 	return ('phrase', ' class="standing-order" code="%s"' % mstandingo.group(1))
 
 def TokenHttpLink(mhttp, phrtok):

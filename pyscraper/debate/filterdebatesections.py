@@ -119,7 +119,7 @@ def StripDebateHeadings(headspeak, sdate):
         if sdate not in ["2001-06-14", "2001-06-13", "2005-05-11", "2005-05-12"]:
 
                 #PRAYERS
-                ih = StripDebateHeading('prayers(?i)', ih, headspeak)
+                ih = StripDebateHeading('prayers(?i)', ih, headspeak, True)
 
                 ih = StripDebateHeading('pursuant to the Standing Order\.', ih, headspeak, True)
 

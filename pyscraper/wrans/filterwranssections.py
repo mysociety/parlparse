@@ -94,6 +94,7 @@ def FilterWransSections(text, sdate):
 	# full list of question batches
 	# We create a list of lists of speeches
 	flatb = [ ]
+        justhadnewtitle = False # For when they put another "Written Answers to Questions" and date
 	for sht in headspeak[ih:]:
 		# triplet of ( heading, unspokentext, [(speaker, text)] )
 		headingtxt = stampurl.UpdateStampUrl(string.strip(sht[0]))  # we're getting stamps inside the headings sometimes
@@ -118,13 +119,20 @@ def FilterWransSections(text, sdate):
 			flatb.append(qbH)
 			continue
                 elif not speechestxt and sdate > '2006-05-07':
+                        if headingtxt == 'Written Answers to Questions':
+                                justhadnewtitle = True
+                                continue
 			if not parlPhrases.wransmajorheadings.has_key(headingtxt.upper()):
+                                if justhadnewtitle:
+                                        justhadnewtitle = False
+                                        continue
 				raise ContextException("unrecognized major heading, please add to parlPhrases.wransmajorheadings", fragment = headingtxt, stamp = stampurl)
 			majheadingtxtfx = parlPhrases.wransmajorheadings[headingtxt.upper()] # no need to fix since text is from a map.
 			qbH = qspeech('nospeaker="true"', majheadingtxtfx, stampurl)
 			qbH.typ = 'major-heading'
 			qbH.stext = [ majheadingtxtfx ]
 			flatb.append(qbH)
+                        justhadnewtitle = False
 			continue
                 elif not speechestxt:
                         raise ContextException('broken heading %s' % headingtxt, stamp=stampurl, fragment=headingtxt)
