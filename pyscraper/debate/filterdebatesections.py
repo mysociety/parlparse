@@ -197,12 +197,10 @@ def StripWestminhallHeadings(headspeak, sdate):
 
 
 # Handle normal type heading
-def NormalHeadingPart(headingtxt, stampurl):
+def NormalHeadingPart(headingtxt, stampurl, state):
 	# This is an attempt at major heading detection.
-	# This theory is utterly flawed since you can only tell the major headings
-	# by context, for example, the title of the adjournment debate, which is a
-	# separate entity from whatever came before, and so should not be within that
-	# prior major heading.  Also, Oral questions heading is a super-major heading,
+        # The main wrap code spots adjournment debates, and does its best with some procedural things
+        # But it's pretty flawed Also, Oral questions heading is a super-major heading,
 	# so doesn't fit into the scheme.
 
 	# remove junk italic settings that appear in the today pages
@@ -228,7 +226,8 @@ def NormalHeadingPart(headingtxt, stampurl):
 		raise ContextException('Oral question match not precise enough', stamp=stampurl, fragment=headingtxt)
 
 	# All upper case headings - UGH
-	elif not re.search('[a-z]', headingtxt) and not re.match('[A-Z\d/]+[\d/][A-Z\d/]+$', headingtxt):
+	elif not re.search('[a-z]', headingtxt) and not re.match('[A-Z\d/]+[\d/][A-Z\d/]+$', headingtxt) and not \
+            ('remaining_private_bills' in state and re.search(' Bill$(?i)', headingtxt)):
 		bmajorheading = True
 
 	# If this is labeled major, then it gets concatenated with the
@@ -249,6 +248,9 @@ def NormalHeadingPart(headingtxt, stampurl):
         if stampurl.sdate > '2006-05-07':
                 if re.match("(Private business|Business of the House|Orders of the day|Points? of Order|Opposition Day)(?i)", headingtxt):
                         bmajorheading = True
+                if re.match("Remaining Private Members[^ ]* Bills(?i)", headingtxt):
+                        bmajorheading = True
+                        state['remaining_private_bills'] = True
 
 	# we're not writing a block for division headings
 	# write out block for headings
@@ -332,6 +334,7 @@ def FilterDebateSections(text, sdate, typ):
 	# this is a flat output of qspeeches, some encoding headings, and some divisions.
 	# see the typ variable for the type.
 	flatb = [ ]
+        state = {}
         #lastheading = None
 	for sht in headspeak[ih:]:
 		try:
@@ -349,7 +352,7 @@ def FilterDebateSections(text, sdate, typ):
 
 			# heading type
 			if not gdiv: # and lastheading != headingtxt:
-				qbh = NormalHeadingPart(headingtxt, stampurl)
+				qbh = NormalHeadingPart(headingtxt, stampurl, state)
         			# print "h ", qbh.typ, qbh.stext
 
         			# ram together minor headings into previous ones which have no speeches
