@@ -119,6 +119,24 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
         # for error messages
 	stampurl = StampUrl(sdate)
 
+        # Fix missing bold tags around names
+        missingbolds = re.findall('(\n?<p>(?:<stamp aname="[^"]+"/>)+)((?:<b></b>)?\s*)([A-Za-z.\-\s]+)(:\s)', text)
+        for p1,p2,p3,p4 in missingbolds:
+                missingbold = "%s%s%s%s" % (p1,p2,p3,p4)
+                bold = "%s<b>%s%s</b>" % (p1,p3,p4)
+                namematches = memberList.fullnametoids(p3, sdate)
+                if namematches:
+                        if not missingbold in text:
+                                print "ERROR: missing bold text found, but then vanished when replacing"
+                        text = text.replace(missingbold, bold)
+
+        # Move Urgent Question out of speaker name
+        urgentqns = re.findall('(<p>(?:<stamp aname="[^"]+"/>)+)(<b>[^<]*?)(\s*<i>\s*\(Urgent Question\)</i>)(:</b>)', text)
+        for p1,p2,p3,p4 in urgentqns:
+                urgentqn = "%s%s%s%s" % (p1,p2,p3,p4)
+                correction = "%s%s%s%s" % (p1,p2,p4,p3)
+                text = text.replace(urgentqn, correction)
+
 	# setup for scanning through the file.
 	for fss in recomb.split(text):
 		stampurl.UpdateStampUrl(fss)
