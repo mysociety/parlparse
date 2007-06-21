@@ -9,7 +9,7 @@ import shutil
 sys.path.append('../')
 from resolvemembernames import memberList
 from contextexception import ContextException
-from BeautifulSoup import BeautifulSoup
+from BeautifulSoup import BeautifulSoup, Tag
 from patchtool import RunPatchTool
 
 import codecs
@@ -109,9 +109,8 @@ class ParseDay:
 
 <publicwhip>
 ''')
-		body = soup('p')
 		if re.match('200(6|7)', date):
-			self.parse_day_new(body)
+			self.parse_day_new(soup)
 		else:
 			self.parse_day_old(body)
 		self.out.write('</publicwhip>\n')
@@ -248,7 +247,8 @@ class ParseDay:
 			self.out.write('</oral-heading>\n')
 			in_oral_answers = False
 
-	def parse_day_new(self, body):
+	def parse_day_new(self, soup):
+		body = soup('p')
 		self.url = ''
 
 		if not re.match('(THE\s+)?(transitional(<br>)?\s+)?(Northern\s+Ireland\s+)?ASSEMBLY(?i)', ''.join(body[0](text=True))):
@@ -268,6 +268,8 @@ class ParseDay:
 				continue
 			cl = p['class']
 			cl = re.sub(' style\d', '', cl)
+			if cl == 'OralWrittenQuestion':
+				cl = 'B1SpeakersName'
 			if cl == 'B3BodyText' and (phtml[0:8] == '<strong>' or re.match('\d+\.( |&nbsp;)+<strong>', phtml)):
 				cl = 'B1SpeakersName'
 			if cl == 'H3SectionHeading':
@@ -283,6 +285,14 @@ class ParseDay:
 				self.display_heading(ptext, timestamp, 'minor')
 			elif cl == 'B1SpeakersName':
 				self.display_speech()
+				m = re.match('.*?:', phtml)
+				if not p.strong and m:
+					newp = Tag(soup, 'p', [('class', 'B1SpeakersName')])
+					newspeaker = Tag(soup, 'strong')
+					newspeaker.insert(0, m.group())
+					newp.insert(0, p.string.replace(m.group(), ''))
+					newp.insert(0, newspeaker)
+					p = newp
 				speaker = p.strong.find(text=True)
 				speaker = re.sub("\s+", " ", speaker).strip()
 				speaker = re.sub(':', '', speaker)

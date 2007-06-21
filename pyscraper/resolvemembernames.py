@@ -45,7 +45,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         self.chairman = None
 
         # "rah" here is a typo in division 64 on 13 Jan 2003 "Ancram, rah Michael"
-        self.titles = "Dr |Hon |hon |rah |rh |right hon |Mrs |Ms |Mr |Miss |Rt Hon |Reverend |The Rev |The Reverend |Sir |Dame |Rev |Prof "
+        self.titles = "Dr |Hon |hon |rah |rh |right hon |Mrs |Ms |Mr |Miss |Mis |Rt Hon |Reverend |The Rev |The Reverend |Sir |Dame |Rev |Prof "
         self.retitles = re.compile('^(?:%s)' % self.titles)
         self.rejobs = re.compile('^%s$' % parlPhrases.regexpjobs)
 
