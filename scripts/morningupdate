@@ -22,8 +22,8 @@ source ~/parlparse/scripts/consts
 cd ~/parlparse/scripts
 RET=0
 ./updatedaterange-scrape $DAILY_FROMDATE $DAILY_TODATE $1 || RET=1
-./updatedaterange-parse $DAILY_FROMDATE $DAILY_TODATE $1 || RET=1
 ./lordsupdatedaterange-scrape $DAILY_FROMDATE $DAILY_TODATE $1 || RET=1
+./updatedaterange-parse $DAILY_FROMDATE $DAILY_TODATE $1 || RET=1
 ./lordsupdatedaterange-parse $DAILY_FROMDATE $DAILY_TODATE $1 || RET=1
 echo "FAI final error is $RET"
 
