@@ -248,6 +248,9 @@ class ParseDay:
 			in_oral_answers = False
 
 	def parse_day_new(self, soup):
+		for s in soup.findAll(lambda tag: tag.name=='strong' and tag.contents == []):
+			s.extract()
+
 		body = soup('p')
 		self.url = ''
 
@@ -290,7 +293,7 @@ class ParseDay:
 					newp = Tag(soup, 'p', [('class', 'B1SpeakersName')])
 					newspeaker = Tag(soup, 'strong')
 					newspeaker.insert(0, m.group())
-					newp.insert(0, p.string.replace(m.group(), ''))
+					newp.insert(0, phtml.replace(m.group(), ''))
 					newp.insert(0, newspeaker)
 					p = newp
 				speaker = p.strong.find(text=True)
