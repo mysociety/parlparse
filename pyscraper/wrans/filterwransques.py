@@ -81,8 +81,9 @@ def FilterQuestion(text, sdate, stampurl):
 			if not gbnum:
 				raise ContextException('no number match in paragraph', fragment=textp[i], stamp=stampurl)
 			gbnumseq = string.atoi(gbnum.group(1))
-			if gbnumseq != i + 1:
-				raise ContextException('paragraph numbers not consecutive', fragment=textp[i], stamp=stampurl)
+            # MPS 2007-06-22 Don't care
+			#if gbnumseq != i + 1:
+			#	raise ContextException('paragraph numbers not consecutive', fragment=textp[i], stamp=stampurl)
 			eqnum = ExtractQnum(textp[i][gbnum.span(0)[1]:], stampurl)
 			textn.append(eqnum)
 
