@@ -370,13 +370,14 @@ def FilterLordsSpeech(qb):
 	if bSpeakerExists and (ispeechstartp1 == 0):
 		if re.match("<p>asked Her Majesty's Government|<p>asked the|<p>&mdash;Took the Oath", qb.stext[0]):
 			preparagraphtype = "asked"
-			qb.stext[0] = re.sub('^<p(.*?)>', '<p\\1 pwmotiontext="%s">' % preparagraphtype, qb.stext[0])
-			ispeechstartp1 = 1
-
+			ispeechstartp1 = SearchForNobleLordSaid(qb, preparagraphtype)
+                        if ispeechstartp1 == len(qb.stext): # No Noble Lord said, the usual
+                                ispeechstartp1 = 1
+                        if ispeechstartp1 != 1:
+				print "Noble Lord Said on ", ispeechstartp1, "paragraph"
+				raise ContextException("Noble Lord Said missing in second paragraph", stamp=qb.sstampurl)
 			# ensure that the noble lord said doesn't say an amendment withdrawn
-			assert not re.match("the\s*noble(?i)", qb.stext[ispeechstartp1])
 			assert not MatchPWmotionStuff(qb, ispeechstartp1)
-			# if we get "noble lord asked:" after this, insert the words "rose to ask" into the patched text
 
 		elif re.match("<p>rose to (?:ask|call|draw attention|consider)", qb.stext[0]):
 			preparagraphtype = "asked"
