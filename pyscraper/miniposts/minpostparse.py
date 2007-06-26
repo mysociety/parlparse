@@ -564,8 +564,9 @@ def ParsePrivSecPage(fr, gp):
 		nameMatch = re.match("\s*<td>\s*([^<]*)</td>\s*<td>\s*([^<]*)(?:</td>)?\s*$(?i)", e1)
 		if nameMatch.group(1):
 			ministername = nameMatch.group(1)  # carry forward minister name (when more than one PPS)
-			if ministername == 'Rt Hon Lord Rooker , Minister of State':
-				ministername = 'Rt Hon Lord Rooker of Perry Bar , Minister of State'
+			if ministername == 'Rt Hon Lord Rooker , Minister of State' or \
+			    ministername == 'Rt Hon Lord Rooker of Perry Bar , Minister of State':
+                                ministername = 'Rt Hon Lord Rooker, Minister of State'
 
 		if re.search('vacant(?i)', nameMatch.group(2)):
 			continue
