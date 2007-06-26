@@ -120,10 +120,10 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
 	stampurl = StampUrl(sdate)
 
         # Fix missing bold tags around names
-        missingbolds = re.findall('(\n?<p>(?:<stamp aname="[^"]+"/>)+)((?:<b></b>)?\s*)([A-Za-z.\-\s]+)(:\s)', text)
-        for p1,p2,p3,p4 in missingbolds:
-                missingbold = "%s%s%s%s" % (p1,p2,p3,p4)
-                bold = "%s<b>%s%s</b>" % (p1,p3,p4)
+        missingbolds = re.findall('(\n?<p>(?:<stamp aname="[^"]+"/>)+)((?:<b></b>)?\s*)([A-Za-z.\-\s]+)((?:\([^)]*\)\s*)*)(:\s)', text)
+        for p1,p2,p3,p4,p5 in missingbolds:
+                missingbold = "%s%s%s%s%s" % (p1,p2,p3,p4,p5)
+                bold = "%s<b>%s%s%s</b>" % (p1,p3,p4,p5)
                 namematches = memberList.fullnametoids(p3, sdate)
                 if namematches:
                         if not missingbold in text:

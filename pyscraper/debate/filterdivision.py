@@ -125,6 +125,10 @@ def MpTellerList(fsm, vote, stampurl, sdate):
 				print fsm
 				raise ContextException(' too many tellers ', stamp=stampurl, fragment=fsm)
 
+			# It always is
+			if fssf == 'Mr. Michael Foster':
+				fssfcons = 'Worcester'
+
 			(mpid, remadename, remadecons) = memberList.matchfullnamecons(fssf.strip(), fssfcons, sdate)
                         #print fssf, " ++> ", remadename.encode("latin-1")
 			if not mpid:
