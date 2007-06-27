@@ -388,10 +388,10 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/2500"/>
 </person>
 <person id="uk.org.publicwhip/person/10047" latestname="Tony Blair">
-    <office id="uk.org.publicwhip/member/1806" current="yes"/>
+    <office id="uk.org.publicwhip/member/1806"/>
     <office id="uk.org.publicwhip/member/47"/>
     <office id="uk.org.publicwhip/member/736"/>
-    <office id="uk.org.publicwhip/moffice/1015" current="yes"/>
+    <office id="uk.org.publicwhip/moffice/1015"/>
 </person>
 <person id="uk.org.publicwhip/person/10048" latestname="Hazel Blears">
     <office id="uk.org.publicwhip/member/1802" current="yes"/>
@@ -533,7 +533,8 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/1997" current="yes"/>
     <office id="uk.org.publicwhip/member/68"/>
     <office id="uk.org.publicwhip/member/755"/>
-    <office id="uk.org.publicwhip/moffice/1020" current="yes"/>
+    <office id="uk.org.publicwhip/moffice/1020"/>
+    <office id="uk.org.publicwhip/moffice/9999" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/10069" latestname="Nick Brown">
     <office id="uk.org.publicwhip/member/1730" current="yes"/>
@@ -1167,8 +1168,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/1386"/>
 </person>
 <person id="uk.org.publicwhip/person/10160" latestname="Quentin Davies">
-    <office id="uk.org.publicwhip/member/1598" current="yes"/>
+    <office id="uk.org.publicwhip/member/1598"/>
     <office id="uk.org.publicwhip/member/160"/>
+    <office id="uk.org.publicwhip/member/2025" current="yes"/>
     <office id="uk.org.publicwhip/member/846"/>
     <office id="uk.org.publicwhip/moffice/1917"/>
     <office id="uk.org.publicwhip/moffice/2495" current="yes"/>
@@ -2447,7 +2449,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/10337" latestname="Piara S Khabra">
     <office id="uk.org.publicwhip/member/1019"/>
-    <office id="uk.org.publicwhip/member/1561" current="yes"/>
+    <office id="uk.org.publicwhip/member/1561"/>
     <office id="uk.org.publicwhip/member/337"/>
     <office id="uk.org.publicwhip/moffice/1918"/>
     <office id="uk.org.publicwhip/moffice/2373"/>
