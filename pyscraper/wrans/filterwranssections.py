@@ -69,6 +69,15 @@ def StripWransHeadings(headspeak, sdate):
 		stampurl.UpdateStampUrl(headspeak[j][0])
 		stampurl.UpdateStampUrl(headspeak[j][1])
 
+        # Later editions seem to miss first column number, sigh
+        if not stampurl.stamp:
+                for speeches in headspeak:
+                        text = ''.join([ speech[1] for speech in speeches[2] ])
+                        m = re.search('colnum="(\d+)W"', text)
+                        if m:
+                                stampurl.UpdateStampUrl('<stamp coldate="%s" colnum="%dW"/>' % (sdate, int(m.group(1))-1))
+                                break
+
         if not stampurl.stamp or not stampurl.pageurl or not stampurl.aname:
 	        	raise ContextException('missing stamp url at beginning of file')
 	return (i, stampurl)

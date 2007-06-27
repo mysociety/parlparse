@@ -271,10 +271,14 @@ class ParseDay:
 				continue
 			cl = p['class']
 			cl = re.sub(' style\d', '', cl)
+
 			if cl == 'OralWrittenQuestion':
 				cl = 'B1SpeakersName'
 			if cl == 'B3BodyText' and (phtml[0:8] == '<strong>' or re.match('\d+\.( |&nbsp;)+<strong>', phtml)):
 				cl = 'B1SpeakersName'
+			if cl == 'TimePeriod' and re.search('in the chair(?i)', phtml):
+				cl = 'B3SpeakerinChair'
+
 			if cl == 'H3SectionHeading':
 				self.display_speech()
 				self.speaker = (None, timestamp)
