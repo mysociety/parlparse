@@ -412,6 +412,7 @@ def FixHTMLEntitiesL(stex, signore='', stampurl=None):
 def FixHTMLEntities(stex, signore='', stampurl=None):
 	res = string.join(FixHTMLEntitiesL(stex, signore, stampurl), '')
 	try:
+		res = res.decode('utf-8')
 		return res.encode("latin-1")
 	except Exception, e:
 		print "Encoding problem with:", res

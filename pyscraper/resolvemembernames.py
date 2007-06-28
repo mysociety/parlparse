@@ -450,7 +450,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         self.debateofficehistory = {}
 
     # Matches names - exclusively for debates pages
-    def matchdebatename(self, input, bracket, date):
+    def matchdebatename(self, input, bracket, date, typ):
         speakeroffice = ""
         input = self.basicsubs(input)
 
@@ -517,7 +517,11 @@ class MemberList(xml.sax.handler.ContentHandler):
             # this looking back two can sometimes fail if a speaker is interrupted
             # by something procedural, and then picks up his thread straight after himself
             # (eg in westminsterhall if there is a suspension to go vote in a division in the main chamber on something about which they haven't heard the debate)
-            ix = len(self.debatenamehistory) - 2
+            # Assume this can happen in Westminster Hall quite a bit - MPS 2007-06-28
+            if typ == 'westminhall':
+                ix = len(self.debatenamehistory) - 1
+            else:
+                ix = len(self.debatenamehistory) - 2
             while ix >= 0:
                 x = self.debatenamehistory[ix]
                 if x in ids:

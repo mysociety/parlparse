@@ -187,7 +187,7 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
 			try:
 				#print "spstr", spstr, ",", spstrbrack
 				#print speakerg.groups()
-				result = memberList.matchdebatename(spstr, spstrbrack, sdate)
+				result = memberList.matchdebatename(spstr, spstrbrack, sdate, typ)
 			except Exception, e:
 				# add extra stamp info to the exception
 				raise ContextException(str(e), stamp=stampurl, fragment=fss)
