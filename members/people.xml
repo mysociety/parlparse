@@ -391,7 +391,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/1806"/>
     <office id="uk.org.publicwhip/member/47"/>
     <office id="uk.org.publicwhip/member/736"/>
-    <office id="uk.org.publicwhip/moffice/1015"/>
+    <office id="uk.org.publicwhip/moffice/1015" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/10048" latestname="Hazel Blears">
     <office id="uk.org.publicwhip/member/1802" current="yes"/>
@@ -533,8 +533,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/1997" current="yes"/>
     <office id="uk.org.publicwhip/member/68"/>
     <office id="uk.org.publicwhip/member/755"/>
-    <office id="uk.org.publicwhip/moffice/1020"/>
-    <office id="uk.org.publicwhip/moffice/9999" current="yes"/>
+    <office id="uk.org.publicwhip/moffice/1020" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/10069" latestname="Nick Brown">
     <office id="uk.org.publicwhip/member/1730" current="yes"/>
