@@ -19,7 +19,6 @@ from parlphrases import parlPhrases
 
 from miscfuncs import FixHTMLEntities, IsNotQuiet
 
-from filterdivision import FilterDivision
 from filterdebatespeech import FilterDebateSpeech
 
 from debdivisionsections import PreviewDivisionTextGuess
