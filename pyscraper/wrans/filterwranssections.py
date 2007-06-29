@@ -207,14 +207,15 @@ def FilterWransSections(text, sdate):
 					bNextStartofQ = True
 
 				# check against qnums which are sometimes repeated in the answer code
-				for qn in lqnums:
-					# sometimes [n] is an enumeration or part of a title
-					nqn = string.atoi(qn)
-					if (not qnums.count(qn)) and (nqn > 100) and ((nqn < 1900) or (nqn > 2010)):
-						if qb.text.find("<ok-extra-qnum>") >= 0:
-							qb.text = qb.text.replace("<ok-extra-qnum>", "", 1)
-						else:
-							raise ContextException('unknown qnum %s present in answer, make it clear' % qn, stamp = qb.sstampurl, fragment = qb.text)
+                                # Don't care if qnum is given in an answer!
+				#for qn in lqnums:
+				#	# sometimes [n] is an enumeration or part of a title
+				#	nqn = string.atoi(qn)
+				#	if (not qnums.count(qn)) and (nqn > 100) and ((nqn < 1900) or (nqn > 2010)):
+				#		if qb.text.find("<ok-extra-qnum>") >= 0:
+				#			qb.text = qb.text.replace("<ok-extra-qnum>", "", 1)
+				#		else:
+				#			raise ContextException('unknown qnum %s present in answer, make it clear' % qn, stamp = qb.sstampurl, fragment = qb.text)
 				qb.stext = FilterReply(qb)
 				flatb.append(qb)
 
