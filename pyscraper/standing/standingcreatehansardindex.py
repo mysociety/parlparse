@@ -66,6 +66,8 @@ def GetReportProcedings(urlpage, year):
 		vdat = re.sub('(st011127/)a(m/11127s01.htm">6th sitting</A></FONT></TD>\s*<TD nowrap><FONT size=\+1><A href="st011127/pm/11127s01.htm">27th November 2001 \(afternoon\))', '\g<1>p\g<2>', vdat)
 	if year == "1997":
 		vdat = re.sub('(st980512/pm/pt)1(/80512s01.htm">3rd sitting </A></FONT></TD>\s*<TD><FONT size=\+1><A href="st980512/pm/pt2/80512s01.htm">12 May 1998)', '\g<1>2\g<2>', vdat)
+	if year == "2006":
+		vdat = re.sub('(3rd sitting</A></TD><TD class="style1" valign="top"><A href="/pa/cm200607/cmpublic/serious/07062)6(/am/7062)6(s01.htm">28 June 2007 \(morning\))', '\g<1>8\g<2>8\g<3>', vdat)
 
 	lks = re.findall('(?si)<a\s+href\s*=\s*"([^"]*)">(.*?)(?:</a>|<tr>)(?i)', vdat)
 	for lk in lks:
@@ -78,7 +80,6 @@ def GetReportProcedings(urlpage, year):
 
 		if (not res or res[-1][0] != lklk) and not mprevdebates:
 			 res.append([lklk, "", 0, 0, ""])  # urllink, date, sitting number, sitting part, morning|afternoon
-
 		msecreading = re.match("Second Reading Committee$|Standing Committee B$", lkname)
 		mothmem = re.match("Other Memorand(?:ums|a) and Letters [Ss]ubmitted to the Committee$", lkname)
 		msitting = re.match("(\d+)(?:st|nd|rd|th)\s+[Ss]itting(?: \((cont)'d\))?(?: \(Part ([I]*)\))?$", lkname)
