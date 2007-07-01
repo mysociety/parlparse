@@ -8,16 +8,16 @@
 		<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
 		<title>Members of the House of Lords - Wikipedia, the free encyclopedia</title>
 		<style type="text/css" media="screen,projection">/*<![CDATA[*/
-			@import "/skins-1.5/common/shared.css?76";
-			@import "/skins-1.5/monobook/main.css?76";
+			@import "/skins-1.5/common/shared.css?80";
+			@import "/skins-1.5/monobook/main.css?80";
 		/*]]>*/</style>
-		<link rel="stylesheet" type="text/css" media="print" href="/skins-1.5/common/commonPrint.css?76" />
-		<link rel="stylesheet" type="text/css" media="handheld" href="/skins-1.5/monobook/handheld.css?76" />
-		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css?76";</style><![endif]-->
-		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css?76";</style><![endif]-->
-		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css?76";</style><![endif]-->
-		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?76";</style><![endif]-->
-		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?76"></script>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins-1.5/common/commonPrint.css?80" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins-1.5/monobook/handheld.css?80" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css?80";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css?80";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css?80";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?80";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?80"></script>
 		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
 		
 		<script type= "text/javascript">/*<![CDATA[*/
@@ -25,6 +25,7 @@ var skin = "monobook";
 var stylepath = "/skins-1.5";
 var wgArticlePath = "/wiki/$1";
 var wgScriptPath = "/w";
+var wgScript = "/w/index.php";
 var wgServer = "http://en.wikipedia.org";
 var wgCanonicalNamespace = "";
 var wgCanonicalSpecialPageName = false;
@@ -41,10 +42,10 @@ var wgUserGroups = null;
 var wgUserLanguage = "en";
 var wgContentLanguage = "en";
 var wgBreakFrames = false;
-var wgCurRevisionId = "138792462";
+var wgCurRevisionId = "140551100";
 /*]]>*/</script>
                 
-		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?76"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?80"><!-- wikibits js --></script>
 		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
 		<style type="text/css">/*<![CDATA[*/
 @import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
@@ -52,7 +53,7 @@ var wgCurRevisionId = "138792462";
 @import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
 /*]]>*/</style>
 		<!-- Head Scripts -->
-		<script type="text/javascript" src="/skins-1.5/common/ajax.js?76"></script>
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js?80"></script>
 	</head>
 <body  class="mediawiki ns-0 ltr page-Members_of_the_House_of_Lords">
 	<div id="globalWrapper">
@@ -61,7 +62,7 @@ var wgCurRevisionId = "138792462";
 		<a name="top" id="top"></a>
 		<div id="siteNotice"><script type="text/javascript" language="JavaScript">
 <!--
-document.writeln("\x3cdiv style=\"position:absolute; z-index:100; right:100px; top:-0px;\" class=\"metadata\" id=\"donate\"\x3e\n\x3cdiv style=\"text-align:right; font-size:80%\"\x3e\x3ci\x3eYour \x3cb\x3e\x3ca href=\"http://wikimediafoundation.org/wiki/Fundraising\" class=\"extiw\" title=\"wikimedia:Fundraising\"\x3econtinued donations\x3c/a\x3e\x3c/b\x3e keep Wikipedia running!\x3c/i\x3e\n\x3c/div\x3e\x3c/div\x3e\n");
+document.writeln("\x3cdiv style=\"position:absolute; z-index:100; right:100px; top:-0px;\" class=\"metadata\" id=\"donate\"\x3e\n\x3cdiv style=\"text-align:right; font-size:80%\"\x3e\x3ci\x3eYour \x3cb\x3e\x3ca href=\"http://wikimediafoundation.org/wiki/Fundraising\" class=\"extiw\" title=\"wikimedia:Fundraising\"\x3econtinued donations\x3c/a\x3e\x3c/b\x3e keep Wikipedia running!\x3c/i\x3e\n\x3c/div\x3e\x3c/div\x3e\n\x3cdiv class=\"plainlinks\" id=\"wm07cfp\" style=\"width:98%; margin:5px auto 0; background:transparent; text-align:left; font-size:80%\"\x3e\x3ci\x3eAll \x3ca href=\"http://meta.wikimedia.org/wiki/Board_elections/2007/en#Voters\" class=\"extiw\" title=\"m:Board_elections/2007/en\"\x3eeligible\x3c/a\x3e community members are invited to \x3ca href=\"/wiki/Special:Boardvote\" title=\"Special:Boardvote\"\x3e\x3cb\x3evote\x3c/b\x3e\x3c/a\x3e in the \x3ca href=\"http://meta.wikimedia.org/wiki/Board_elections/2007/Candidates\" class=\"extiw\" title=\"m:Board_elections/2007/Candidates\"\x3eWikimedia Board Election\x3c/a\x3e.\x3c/i\x3e\x3c/div\x3e\n");
 -->
 </script></div>		<h1 class="firstHeading">Members of the House of Lords</h1>
 		<div id="bodyContent">
@@ -476,8 +477,8 @@ document.writeln("\x3cdiv style=\"position:absolute; z-index:100; right:100px; t
 <tr>
 <td><a href="/wiki/Edward_Haughey%2C_Baron_Ballyedmond" title="Edward Haughey, Baron Ballyedmond">The Lord Ballyedmond</a></td>
 <td>Cross Bench</td>
-<td></td>
-<td></td>
+<td>Life Peer</td>
+<td>&#160;</td>
 </tr>
 <tr>
 <td><a href="/wiki/Derek_Barber%2C_Baron_Barber_of_Tewkesbury" title="Derek Barber, Baron Barber of Tewkesbury">The Lord Barber of Tewkesbury</a></td>
@@ -548,8 +549,8 @@ document.writeln("\x3cdiv style=\"position:absolute; z-index:100; right:100px; t
 <tr>
 <td><a href="/wiki/Kumar_Bhattacharyya%2C_Baron_Bhattacharyya" title="Kumar Bhattacharyya, Baron Bhattacharyya">The Lord Bhattacharyya</a></td>
 <td>Labour</td>
-<td></td>
-<td></td>
+<td>Life Peer</td>
+<td>&#160;</td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Biffen%2C_Baron_Biffen" title="John Biffen, Baron Biffen">The Lord Biffen</a></td>
@@ -632,8 +633,8 @@ document.writeln("\x3cdiv style=\"position:absolute; z-index:100; right:100px; t
 <tr>
 <td><a href="/wiki/Baroness_Bonham-Carter_of_Yarnbury" title="Baroness Bonham-Carter of Yarnbury">The Baroness Bonham-Carter of Yarnbury</a></td>
 <td>Liberal Democrats</td>
-<td></td>
-<td></td>
+<td>Life Peer</td>
+<td>&#160;</td>
 </tr>
 <tr>
 <td><a href="/wiki/Betty_Boothroyd%2C_Baroness_Boothroyd" title="Betty Boothroyd, Baroness Boothroyd">The Baroness Boothroyd</a></td>
@@ -753,8 +754,8 @@ document.writeln("\x3cdiv style=\"position:absolute; z-index:100; right:100px; t
 <tr>
 <td><a href="/wiki/Lord_Broers" title="Lord Broers">The Lord Broers</a></td>
 <td>Cross Bench</td>
-<td></td>
-<td></td>
+<td>Life Peer</td>
+<td>&#160;</td>
 </tr>
 <tr>
 <td><a href="/wiki/Clive_Brooke%2C_Baron_Brooke_of_Alverthorpe" title="Clive Brooke, Baron Brooke of Alverthorpe">The Lord Brooke of Alverthorpe</a></td>
@@ -795,8 +796,8 @@ document.writeln("\x3cdiv style=\"position:absolute; z-index:100; right:100px; t
 <tr>
 <td><a href="/wiki/Baron_Brown_of_Eaton-under-Heywood" title="Baron Brown of Eaton-under-Heywood">The Lord Brown of Eaton-under-Heywood</a></td>
 <td>Crossbench</td>
-<td></td>
-<td></td>
+<td><a href="/wiki/Lord_of_Appeal_in_Ordinary" title="Lord of Appeal in Ordinary">Lord of Appeal in Ordinary</a></td>
+<td>&#160;</td>
 </tr>
 <tr>
 <td><a href="/wiki/Wallace_Browne%2C_Baron_Browne_of_Belmont" title="Wallace Browne, Baron Browne of Belmont">The Lord Browne of Belmont</a></td>
@@ -813,7 +814,7 @@ document.writeln("\x3cdiv style=\"position:absolute; z-index:100; right:100px; t
 <tr>
 <td><a href="/wiki/Nicholas_Browne-Wilkinson%2C_Baron_Browne-Wilkinson" title="Nicholas Browne-Wilkinson, Baron Browne-Wilkinson">The Lord Browne-Wilkinson</a></td>
 <td>Cross Bench</td>
-<td>Lord of Appeal</td>
+<td><a href="/wiki/Lord_of_Appeal_in_Ordinary" title="Lord of Appeal in Ordinary">Lord of Appeal in Ordinary</a></td>
 <td>&#160;</td>
 </tr>
 <tr>
@@ -831,7 +832,7 @@ document.writeln("\x3cdiv style=\"position:absolute; z-index:100; right:100px; t
 <tr>
 <td><a href="/wiki/John_Burnett%2C_Baron_Burnett" title="John Burnett, Baron Burnett">The Lord Burnett</a></td>
 <td>Liberal Democrat</td>
-<td>&#160;</td>
+<td>Life Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
@@ -3933,7 +3934,7 @@ document.writeln("\x3cdiv style=\"position:absolute; z-index:100; right:100px; t
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Leonard_Steinberg&amp;action=edit" class="new" title="Leonard Steinberg">The Lord Steinberg</a></td>
+<td><a href="/wiki/Leonard_Steinberg" title="Leonard Steinberg">The Lord Steinberg</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4744,7 +4745,7 @@ document.writeln("\x3cdiv style=\"position:absolute; z-index:100; right:100px; t
 </ul>
 
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20070624022706 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20070630195822 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:Politics_of_the_United_Kingdom" title="Category:Politics of the United Kingdom">Politics of the United Kingdom</a></span></p></div>			<!-- end content -->
@@ -4820,7 +4821,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:Recentchangeslinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Special:Upload" title="Upload images or media files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:Specialpages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=138792462" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=138792462">Cite this article</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=140551100" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=140551100">Cite this article</a></li>			</ul>
 		</div>
 	</div>
 		</div><!-- end of the left (by default at least) column -->
@@ -4829,7 +4830,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-				<li id="lastmod"> This page was last modified 16:47, 17 June 2007.</li>
+				<li id="lastmod"> This page was last modified 16:42, 25 June 2007.</li>
 				<li id="copyright">All text is available under the terms of the <a class='internal' href="/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc</a>., a US-registered <a class='internal' href="/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>
 				<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
 				<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
@@ -4840,4 +4841,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv13 in 0.071 secs. --></body></html>
+<!-- Served by srv48 in 0.067 secs. --></body></html>
