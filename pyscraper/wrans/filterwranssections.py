@@ -120,7 +120,7 @@ def FilterWransSections(text, sdate):
 		# detect if this is a major heading
 		if not re.search('[a-z]', headingtxt) and not speechestxt:
 			if not parlPhrases.wransmajorheadings.has_key(headingtxt):
-				raise ContextException("unrecognized major heading, please add to parlPhrases.wransmajorheadings", fragment = headingtxt, stamp = stampurl)
+				raise ContextException("unrecognized major heading, please add to parlPhrases.wransmajorheadings (a)", fragment = headingtxt, stamp = stampurl)
 			majheadingtxtfx = parlPhrases.wransmajorheadings[headingtxt] # no need to fix since text is from a map.
 			qbH = qspeech('nospeaker="true"', majheadingtxtfx, stampurl)
 			qbH.typ = 'major-heading'
@@ -135,7 +135,7 @@ def FilterWransSections(text, sdate):
                                 if justhadnewtitle:
                                         justhadnewtitle = False
                                         continue
-				raise ContextException("unrecognized major heading, please add to parlPhrases.wransmajorheadings", fragment = headingtxt, stamp = stampurl)
+				raise ContextException("unrecognized major heading, please add to parlPhrases.wransmajorheadings (b)", fragment = headingtxt, stamp = stampurl)
 			majheadingtxtfx = parlPhrases.wransmajorheadings[headingtxt.upper()] # no need to fix since text is from a map.
 			qbH = qspeech('nospeaker="true"', majheadingtxtfx, stampurl)
 			qbH.typ = 'major-heading'
