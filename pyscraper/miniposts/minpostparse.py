@@ -454,7 +454,7 @@ def ParseGovPostsPage(fr, gp):
 	# extract the alphabetical list
         Malphl = re.search("ALPHABETICAL LIST OF HM GOVERNMENT([\s\S]*?)</table>", fr)
         if not Malphl:
-                print gp
+                print "ALPHABETICAL LIST not found in file:" , gp
         alphl = Malphl.group(1)
 	lst = re.split("</?tr>(?i)", alphl)
 
