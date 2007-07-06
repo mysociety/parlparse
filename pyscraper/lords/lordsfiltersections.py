@@ -264,13 +264,14 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 	if re.match('<p>:TITLE3:', qpara):
 		return "title" # perhaps remove this keyword
 
-	if re.match("<p>.{0,20}?The noble[^:]{0,60}? said:", qpara):
-		print re.match("(<p>The (?:noble(?: and (?:learned|gallant|right reverend))? (?:Lord|Baroness|Earl|Viscount|Countess|Duke)|right reverend Prelate|most reverend Primate) said:\s*)", qpara)
-		#rens = re.match("(<p>The (?:noble(?: and (?:learned|gallant|right reverend))? (?:Lord|Baroness|Earl|Viscount|Countess|Duke)|right reverend Prelate|most reverend Primate) said:\s*)", qb.stext[i])
-		print "Unexpected Noble Lord Said; are we missing the start of his speech where he moves the amendment?"
-		print "False positives can be hidden by adding a space before the colon"
-		print 'You can kill erroneous titles that are amendments by using <p class="tabletext">'
-		raise ContextException("unexpected Noble Lord Said", stamp=qb.sstampurl, fragment=qpara)
+        # XXX MPS 2007-07-05 Don't care about this
+	#if re.match("<p>.{0,20}?The noble[^:]{0,60}? said:", qpara):
+	#	print re.match("(<p>The (?:noble(?: and (?:learned|gallant|right reverend))? (?:Lord|Baroness|Earl|Viscount|Countess|Duke)|right reverend Prelate|most reverend Primate) said:\s*)", qpara)
+	#	#rens = re.match("(<p>The (?:noble(?: and (?:learned|gallant|right reverend))? (?:Lord|Baroness|Earl|Viscount|Countess|Duke)|right reverend Prelate|most reverend Primate) said:\s*)", qb.stext[i])
+	#	print "Unexpected Noble Lord Said; are we missing the start of his speech where he moves the amendment?"
+	#	print "False positives can be hidden by adding a space before the colon"
+	#	print 'You can kill erroneous titles that are amendments by using <p class="tabletext">'
+	#	raise ContextException("unexpected Noble Lord Said", stamp=qb.sstampurl, fragment=qpara)
 
         if re.match('<p>Thirty-nine amendments were discussed, of which two were agreed to.', qpara):
                 return None

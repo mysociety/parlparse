@@ -55,7 +55,8 @@ uniqgovposns = ["Prime Minister",
 				"Comptroller",
 				"Deputy Prime Minister",
 				"Paymaster General",
-				"Master of the Horse"
+				"Master of the Horse",
+                                "Lord Chancellor"
 				]
 
 govposns = ["Secretary of State",
@@ -81,6 +82,8 @@ govdepts = ["Department of Health",
                                 "Department for Culture, Media & Sport",
                                 "Department for Constitutional Affairs",
                                 "Department for Education and Skills",
+                                        "Department for Children, Schools and Families",
+                                        "Department for Innovation, Universities and Skills",
                                 "Office of the Deputy Prime Minister",
                                 "Deputy Prime Minister",
                                 "Department for Transport",
@@ -88,6 +91,7 @@ govdepts = ["Department of Health",
                                 "Northern Ireland Office",
                                 "Law Officers' Department",
                                 "Department of Trade and Industry",
+                                        "Department for Business, Enterprise & Regulatory Reform",
                                 "House of Commons",
                                 "Foreign & Commonwealth Office",
 
@@ -418,10 +422,12 @@ def ParseGovPostsPage(fr, gp):
 
         stime = '%02d:%02d' % (num/60, num%60) # Will break at 86,400 :)
 
-        if num >= 36 and num <= 38:
+        if (num >= 36 and num <= 38) or (num >= 106 and num <= 110):
                 return "SKIPTHIS", None # Reshuffling
         elif num == 39:
                 sdate = "2006-05-08" # Moved back to date of reshuffle
+        elif num == 111:
+                sdate = '2007-06-28' # Moved back to date of reshuffle
         elif num <= 67:
                 frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
                 if not frupdated:
@@ -509,6 +515,8 @@ def ParsePrivSecPage(fr, gp):
                 sdate = '2006-09-06'
         elif num == 43 or num == 44:
                 return "SKIPTHIS", None
+        elif num == 63:
+                return "SKIPTHIS", None # Brown shuffle
         elif num <= 48:
                 frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
                 if not frupdated:
@@ -856,6 +864,9 @@ def ParseGovPosts():
 	assert moffidn < 1000
 	moffidn = 1000
 	for cp in cpres:
+                if cp.fullname in ['Professor Sir Ara Darzi', 'Sir Digby Jones', 'Admiral Sir Alan West', 'Sir Mark Malloch Brown', 'Shriti Vadera']:
+                        continue
+
 		cpsdates = [cp.sdatestart, cp.sdateend]
 		if cpsdates[0] == opendate:
 			cpsdates[0] = sdatetlist[0][0]
