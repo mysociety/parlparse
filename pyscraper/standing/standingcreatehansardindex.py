@@ -17,9 +17,6 @@ toppath = miscfuncs.toppath
 
 # Creates an xml with the links into the index files for the Standing Committees.
 
-# url with the alldays thing on it.
-urlalldays = 'http://www.publications.parliament.uk/pa/ld199900/ldhansrd/pdvn/allddays.htm'
-
 urlstandingbillsyears = "http://www.publications.parliament.uk/pa/cm/stand.htm"
 urlstandingothersyears = "http://www.publications.parliament.uk/pa/cm/othstn.htm"
 pwsdantingindex = os.path.join(toppath, "standingindex.xml")
@@ -31,7 +28,7 @@ def GetLinksTitles(urlpage):
 	uin.close()
 	vdat = re.search("(?s)page title and static information follows(.*?)(end of variable data|$)", s).group(1)
 	vdat = re.sub("(?s)<!--.*?-->", "", vdat)
-	for lk in re.findall('<a href\s*=\s*"([^"]*)">([^<]*)</a>(?i)', vdat):
+	for lk in re.findall('<a href\s*=\s*"([^"]*)">(.*?)</a>(?i)', vdat):
 		lklk = re.sub('\s', '', lk[0])
 		lkname = re.sub("(?:\s|&nbsp;)+", " ", lk[1]).strip()
 		res.append((urlparse.urljoin(urlpage, lklk), lkname))
@@ -51,7 +48,9 @@ def GetReportProcedings(urlpage, year):
 	uin.close()
 	s = re.sub("(?s)<!--.*?-->", "", s)
         vdat = re.search("(?s)Report of proceedings(.*?)(Associated Memoranda|start of footer|$)", s)
-	if not vdat:
+        if urlpage == 'http://www.publications.parliament.uk/pa/cm/cmpbparliament.htm': # XXX
+                vdat = re.sub('(?s)^.*(<A href=".*?">2nd)', '\1', s)
+	elif not vdat:
 		return res, None
 	else: 
 		vdat = vdat.group(1)
@@ -188,7 +187,7 @@ def GetBillLinks(bforce):
 			print "year=", year
 		bnks = GetLinksTitles(billyear[0])
 		for bnk in bnks:
-			mcttee = re.match("(.*? (?:Bill|Dogs|Names))(?:\s?\[Lords\])?\s?(?:\(except clauses.*?\) )?(\((Standing Committee [aA-Z]|Special Standing Committee|Second Reading Committee)\)\s?)?$", bnk[1])
+			mcttee = re.match("(.*? (?:Bill|Dogs|Names))(?:\s?\[(?:<i>)?Lords(?:</i>)?\])?(?:\s|</i>)*(?:\(except clauses.*?\) )?(\((Standing Committee [aA-Z]|Special Standing Committee|Second Reading Committee)\)\s?)?$", bnk[1])
 			if not mcttee:
 				print "Unrecognized committee or bill name:", bnk
 			billtitle = mcttee.group(1)
