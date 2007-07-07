@@ -167,7 +167,7 @@ def GrabLordDivisionProced(qbp, qbd):
 def MatchPWmotionStuff(qb, ispeechstartp1):
 	qpara = qb.stext[ispeechstartp1]
 
-	if re.match('<p>(?:\[|<i>)*(?:Amendments?|Motion),? .{0,60}?by leave,? withdrawn\.?(?:\]|</i>)*</p>(?i)', qpara):
+	if re.match('<p>(?:\[|<i>)*(?:Amendments?|Motion),? .{0,60}?by leave,? withdrawn\.?,?(?:\]|</i>)*</p>(?i)', qpara):
 		return "withdrawn"
 
 	#[<i>Amendments Nos. 131 and 132 not moved.</i>]</p>
@@ -287,8 +287,8 @@ def MatchKnownAsPWmotionStuff(qb, ispeechstartp1):
 	if res:
 		return res
 	qpara = qb.stext[ispeechstartp1]
-	if re.match("<p>My Lords", qpara):
-		raise ContextException("My Lords in known amendment text", stamp=qb.sstampurl, fragment=qpara)
+	#if re.match("<p>My Lords", qpara):
+	#	raise ContextException("My Lords in known amendment text", stamp=qb.sstampurl, fragment=qpara)
 
 	if re.match("<p>.{0,60}? Act[\.,]?</p>", qpara):
 		return "act"
