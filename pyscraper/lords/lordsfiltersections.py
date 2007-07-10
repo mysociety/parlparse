@@ -44,7 +44,7 @@ def StripLordsDebateHeadings(headspeak, sdate):
 	ih = StripDebateHeading('house of lords(?i)', ih, headspeak, True)
 
 	# Thursday, 18th December 2003.
-	mdateheading = re.match('(?:<stamp aname="[^"]*"/>)*([\w\s\d,]*)\.', headspeak[ih][0])
+	mdateheading = re.match('(?:<stamp aname="[^"]*"/>)*([\w\s\d,]*)\.?', headspeak[ih][0])
 	#time = TimeProcessing(timeg.group(1), previoustime, False, stampurl)
 	#fout.write('<stamp time="%s"/>' % time)
 	if not mdateheading or (sdate != mx.DateTime.DateTimeFrom(mdateheading.group(1)).date) or headspeak[ih][2]:
@@ -194,7 +194,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 	clauseAgreedMatch = re.match('<p>(?:(?:Clause|Schedule)s? \d+[A-Z]*,?(?:, \d+[A-Z]*)?(?: (?:and|to) \d+[A-Z]*)?|Title|Motion)(?:, as amended,?)? ((?:dis)?agreed to|negatived)\.</p>', qpara)
 	if clauseAgreedMatch:
 		return clauseAgreedMatch.group(1) == "agreed to" and "agreedto" or "negatived"
-	clauseResolvedMatch = re.match('<p>Resolved in the (negative|affirmative),? and (?:Motion(?: \w)?|amendment|the manuscript amendment|Clause \d+|Amendment .{5,60}?)(?:, as amended,)? (?:dis)?agreed to accordingly(?:\.?</p>|;)', qpara)
+	clauseResolvedMatch = re.match('<p>Resolved in the (negative|affirmative),? and (?:Motion(?: \w+)?|amendment|the manuscript amendment|Clause \d+|Amendment .{5,60}?)(?:, as amended,)? (?:dis)?agreed to accordingly(?:\.?</p>|;)', qpara)
 	if clauseResolvedMatch:
 		return clauseResolvedMatch.group(1) == "negative" and "disagreedto" or "agreedto"
 	if re.match('<p>Remaining( clauses?| and| schedules?)+ agreed to\.</p>', qpara):
@@ -396,6 +396,15 @@ def FilterLordsSpeech(qb):
 			qb.stext[0] = re.sub('^<p>', '<p pwmotiontext="summons">', qb.stext[0])  # cludgy; already have the <p>-tag embedded in the string
 			res.append(qb)
 			return res  # bail out
+
+                elif re.search("having been created.*?Was, in his robes, introduced", qb.stext[0]):
+			assert len(qb.stext) == 1
+		        qbunspo = qspeech('nospeaker="true"', "", qb.sstampurl)
+        		qbunspo.typ = 'speech'
+                        qbunspo.stext = qb.stext
+                        qbunspo.stext[0] = re.sub('^<p>', '<p pwmotiontext="introduced">', qbunspo.stext[0])
+        		res.append(qbunspo)
+                        return res
 
 		elif re.match("<p>&mdash;Took the Oath", qb.stext[0]):
 			assert False

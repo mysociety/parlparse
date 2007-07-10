@@ -9746,7 +9746,28 @@ B - bishop
     fromdate="2007-05-15" todate="9999-12-31"
 />
 
-<!-- 6 new non party political peers: 
-    http://www.nriinternet.com/NRIappointments/UK/Politics/A_Z/H/Khalid_Hameed/index.htm -->
+<lord
+    id="uk.org.publicwhip/lord/100955"
+    house="lords"
+    forenames="Mark"
+    forenames_full="George Mark"
+    title="Lord" lordname="Malloch-Brown" lordofname=""
+    lordofname_full="St Leonard's Forest"
+    county="the County of West Sussex"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2007-05-15" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100956"
+    house="lords"
+    forenames="Alan"
+    forenames_full="Alan William John"
+    title="Lord" lordname="West" lordofname="Spithead"
+    lordofname_full="Seaview"
+    county="the County of Isle of Wight"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2007-05-15" todate="9999-12-31"
+/>
 
 </publicwhip>
