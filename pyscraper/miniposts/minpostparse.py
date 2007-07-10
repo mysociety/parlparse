@@ -256,6 +256,11 @@ class protooffice:
 		if self.fullname == "Andrew Adonis" and self.sdatet[0][:7] == "2005-05":
 			self.fullname = "Lord Adonis"
 
+                if self.fullname == 'Admiral Sir Alan West':
+                        self.fullname = 'Lord West of Spithead'
+                if self.fullname == 'Sir Mark Malloch Brown':
+                        self.fullname = 'Lord Malloch-Brown'
+
 		pos = nampos.group(4).strip()
 		dept = (nampos.group(5) or "No Department").strip()
                 dept = re.sub("\s+", " ", dept)
@@ -864,7 +869,7 @@ def ParseGovPosts():
 	assert moffidn < 1000
 	moffidn = 1000
 	for cp in cpres:
-                if cp.fullname in ['Professor Sir Ara Darzi', 'Sir Digby Jones', 'Admiral Sir Alan West', 'Sir Mark Malloch Brown', 'Shriti Vadera']:
+                if cp.fullname in ['Professor Sir Ara Darzi', 'Sir Digby Jones', 'Shriti Vadera']:
                         continue
 
 		cpsdates = [cp.sdatestart, cp.sdateend]
