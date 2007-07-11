@@ -9755,7 +9755,7 @@ B - bishop
     lordofname_full="St Leonard's Forest"
     county="the County of West Sussex"
     peeragetype="L" affiliation="Lab"
-    fromdate="2007-05-15" todate="9999-12-31"
+    fromdate="2007-07-09" todate="9999-12-31"
 />
 
 <lord
@@ -9767,7 +9767,19 @@ B - bishop
     lordofname_full="Seaview"
     county="the County of Isle of Wight"
     peeragetype="L" affiliation="Lab"
-    fromdate="2007-05-15" todate="9999-12-31"
+    fromdate="2007-07-09" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100957"
+    house="lords"
+    forenames="Digby"
+    forenames_full="Digby Marritt Jones"
+    title="Lord" lordname="Jones" lordofname="Birmingham"
+    lordofname_full="Alvechurch and of Bromsgrove"
+    county="the County of Worcestershire"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2007-07-10" todate="9999-12-31"
 />
 
 </publicwhip>
