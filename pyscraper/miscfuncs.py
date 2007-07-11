@@ -69,7 +69,7 @@ def AlphaStringToOrder(s):
 	return res
 
 # This one used to break times into component parts: 7.10 pm
-regparsetime = re.compile("^(\d+)[\.:]\s*(\d+)(?:\s?|&nbsp;)([\w\.]+)$")
+regparsetime = re.compile("^(\d+)[\.:]\s*(\d+)(?:\s?|&nbsp;)([\w\.]*)$")
 # 7 pm
 regparsetimeonhour = re.compile("^(\d+)()(?:\s?|&nbsp;)([\w\.]+)$")
 def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):
@@ -101,10 +101,11 @@ def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):
 		elif meridien == "noon":
 			assert hour == 12
 		else:
-			if not re.match("a\.?m\.?", meridien):
-				raise ContextException('meridien wrong:' + meridien, stamp=stampurl)
 			if hour == 12:
 				hour -= 12
+			if not re.match("a\.?m\.?", meridien):
+                                if previoustime and previoustimehour > hour:
+                                        hour += 12
 
 		# skipping forward by twelve hours is a good sign an am/pm has gotten mixed
                 # Assume it's that if it's exactly 12 hours, alert otherwise

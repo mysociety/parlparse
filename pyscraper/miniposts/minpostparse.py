@@ -260,6 +260,8 @@ class protooffice:
                         self.fullname = 'Lord West of Spithead'
                 if self.fullname == 'Sir Mark Malloch Brown':
                         self.fullname = 'Lord Malloch-Brown'
+                if self.fullname == 'Sir Digby Jones':
+                        self.fullname = 'Lord Jones of Birmingham'
 
 		pos = nampos.group(4).strip()
 		dept = (nampos.group(5) or "No Department").strip()
@@ -700,7 +702,14 @@ def SetNameMatch(cp, cpsdates, mpidmap):
 		cp.remadecons = ""
 		date = cpsdates[0]
 
+                # People being made ministers before they're Lorded. Tsch.
 		# Manual fixes for old date stuff. Hmm.
+                if cp.remadename == 'Lord Malloch-Brown' and date<'2007-07-09':
+                        date = '2007-07-09'
+                if cp.remadename == 'Lord West of Spithead' and date<='2007-07-09':
+                        date = '2007-07-09'
+                if cp.remadename == 'Lord Jones of Birmingham' and date<='2007-07-10':
+                        date = '2007-07-10'
 		if cp.remadename == 'Lord Adonis' and date<'2005-05-23':
 			date = '2005-05-23'
 		if cp.remadename == 'Baroness Clark of Calton' and date=='2005-06-28':
@@ -869,7 +878,7 @@ def ParseGovPosts():
 	assert moffidn < 1000
 	moffidn = 1000
 	for cp in cpres:
-                if cp.fullname in ['Professor Sir Ara Darzi', 'Sir Digby Jones', 'Shriti Vadera']:
+                if cp.fullname in ['Professor Sir Ara Darzi', 'Shriti Vadera']:
                         continue
 
 		cpsdates = [cp.sdatestart, cp.sdateend]
