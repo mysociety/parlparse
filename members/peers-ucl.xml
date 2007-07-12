@@ -9757,7 +9757,6 @@ B - bishop
     peeragetype="L" affiliation="Lab"
     fromdate="2007-07-09" todate="9999-12-31"
 />
-
 <lord
     id="uk.org.publicwhip/lord/100956"
     house="lords"
@@ -9769,17 +9768,26 @@ B - bishop
     peeragetype="L" affiliation="Lab"
     fromdate="2007-07-09" todate="9999-12-31"
 />
-
 <lord
     id="uk.org.publicwhip/lord/100957"
     house="lords"
     forenames="Digby"
-    forenames_full="Digby Marritt Jones"
+    forenames_full="Digby Marritt"
     title="Lord" lordname="Jones" lordofname="Birmingham"
     lordofname_full="Alvechurch and of Bromsgrove"
     county="the County of Worcestershire"
     peeragetype="L" affiliation="Lab"
     fromdate="2007-07-10" todate="9999-12-31"
+/>
+<lord
+    id="uk.org.publicwhip/lord/100958"
+    house="lords"
+    forenames="Shriti"
+    title="Baroness" lordname="Vadera" lordofname=""
+    lordofname_full="Holland Park"
+    county="the Royal Borough of Kensington and Chelsea"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2007-07-11" todate="9999-12-31"
 />
 
 </publicwhip>
