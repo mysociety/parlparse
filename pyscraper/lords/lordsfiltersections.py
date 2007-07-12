@@ -397,7 +397,7 @@ def FilterLordsSpeech(qb):
 			res.append(qb)
 			return res  # bail out
 
-                elif re.search("having been created.*?Was, in his robes, introduced", qb.stext[0]):
+                elif re.search("having been created.*?Was, in (his|her) robes, introduced", qb.stext[0]):
 			assert len(qb.stext) == 1
 		        qbunspo = qspeech('nospeaker="true"', "", qb.sstampurl)
         		qbunspo.typ = 'speech'

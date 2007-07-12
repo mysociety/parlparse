@@ -68,6 +68,9 @@ def AlphaStringToOrder(s):
 		s = s[1:]
 	return res
 
+# Impossible to do 6pm, 7.15pm, 6.30pm, 6.45pm, 7pm without future timestamps
+# So not caring any more about timestamp errors
+
 # This one used to break times into component parts: 7.10 pm
 regparsetime = re.compile("^(\d+)[\.:]\s*(\d+)(?:\s?|&nbsp;)([\w\.]*)$")
 # 7 pm
@@ -112,8 +115,8 @@ def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):
 		if previoustime and previoustimehour + 12 == hour:
                         hour -= 12
 
-		if previoustime and previoustimehour + 12 <= hour:
-			raise ContextException('time shift by 12 -- should a p.m. be an a.m.?', stamp=stampurl)
+		#if previoustime and previoustimehour + 12 <= hour:
+		#	raise ContextException('time shift by 12 -- should a p.m. be an a.m.?', stamp=stampurl)
 
 	elif time == 'Midnight':
                 hour = 24
@@ -141,17 +144,11 @@ def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):
 		elif stampurl.sdate in ["2002-10-28"]:
 			return res
 
-                elif previoustimehour == hour + 1: # assume just a typo if we've gone back an hour
-                        hour += 1
-
-		else:
-			if hour not in [0, 1, 2, 3] and stampurl.sdate not in ["2003-10-20", "2000-10-03", "2000-07-24"]:
-				print (hour, mins), "time=", time, "previoustime=", previoustime
-				raise ContextException('time rotation not close to midnight', stamp=stampurl)
-			if hour == 12:
-				hour += 12
-			else:
-				hour += 24
+                elif hour in [0, 1, 2, 3] or stampurl.sdate in ["2003-10-20", "2000-10-03", "2000-07-24"]:
+                        hour += 24
+		#else:
+		#	print (hour, mins), "time=", time, "previoustime=", previoustime
+		#	raise ContextException('time rotation not close to midnight', stamp=stampurl)
 
 		res = "%03d:%02d:00" % (hour, mins)
 
@@ -160,14 +157,14 @@ def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):
 	# (divisions are often out of order slightly)
 
 	# out of order case
-	if previoustime and res < previoustime:
-		# if it's a division type, we can tolerate a few minutes
-		timeminutes = int(hour) * 60 + int(mins)
-		previoustimeminutes = previoustimehour * 60 + int(prevtimeMatch.group(2))
-		if timeminutes < previoustimeminutes:
-			if not bIsDivisionTime or (previoustimeminutes - timeminutes > 10):
-				print "previous time out of order", res, previoustime, bIsDivisionTime
-				raise ContextException('time out of order', stamp=stampurl)
+	#if previoustime and res < previoustime:
+	#	# if it's a division type, we can tolerate a few minutes
+	#	timeminutes = int(hour) * 60 + int(mins)
+	#	previoustimeminutes = previoustimehour * 60 + int(prevtimeMatch.group(2))
+	#	if timeminutes < previoustimeminutes:
+	#		if not bIsDivisionTime or (previoustimeminutes - timeminutes > 10):
+	#			print "previous time out of order", res, previoustime, bIsDivisionTime
+	#			raise ContextException('time out of order', stamp=stampurl)
 	return res
 
 
