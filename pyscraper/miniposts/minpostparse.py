@@ -575,6 +575,7 @@ def ParsePrivSecPage(fr, gp):
 		if deptMatch:
 			deptname = re.sub("&amp;", "&", deptMatch.group(1))  # carry forward department name
 			deptname = re.sub("\s+", " ", deptname)
+                        deptname = re.sub(" \(Team PPSs\)", "", deptname)
 			continue
 		nameMatch = re.match("\s*<td>\s*([^<]*)</td>\s*<td>\s*([^<]*)(?:</td>)?\s*$(?i)", e1)
 		if nameMatch.group(1):
@@ -583,7 +584,7 @@ def ParsePrivSecPage(fr, gp):
 			    ministername == 'Rt Hon Lord Rooker of Perry Bar , Minister of State':
                                 ministername = 'Rt Hon Lord Rooker, Minister of State'
 
-		if re.search('vacant(?i)', nameMatch.group(2)):
+		if re.search('vacant(?i)', nameMatch.group(2)) or re.match('&nbsp;$', nameMatch.group(2)):
 			continue
 
 		if deptname in ppsdepts:
