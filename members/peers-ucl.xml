@@ -1531,7 +1531,7 @@ B - bishop
 	lordofname_full="Queensbury"
 	county="Greater London"
 	peeragetype="L" affiliation="Con"
-	fromdate="1983" todate="9999-12-31"
+	fromdate="1983" todate="2004-05-28" towhy="changed_party"
 />
 <lord
 	id="uk.org.publicwhip/lord/100148"
@@ -9790,4 +9790,15 @@ B - bishop
     fromdate="2007-07-11" todate="9999-12-31"
 />
 
+<lord
+	id="uk.org.publicwhip/lord/100959"
+	house="lords"
+	forenames="Caroline"
+	forenames_full="Caroline Anne"
+	title="Baroness" lordname="Cox" lordofname=""
+	lordofname_full="Queensbury"
+	county="Greater London"
+	peeragetype="L" affiliation="XB"
+	fromdate="2004-05-28" todate="9999-12-31" fromwhy="changed_party"
+/>
 </publicwhip>

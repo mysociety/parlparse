@@ -6458,6 +6458,10 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13931" latestname="Baroness Vadera">
     <office id="uk.org.publicwhip/lord/100958" current="yes"/>
 </person>
+<person id="uk.org.publicwhip/person/13559" latestname="Baroness Cox">
+    <office id="uk.org.publicwhip/lord/100147"/>
+    <office id="uk.org.publicwhip/lord/100959" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/12845" latestname="Lord Truscott">
     <office id="uk.org.publicwhip/lord/100788" current="yes"/>
     <office id="uk.org.publicwhip/moffice/1361"/>
@@ -8722,9 +8726,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13558" latestname="Baroness Wall of New Barnet">
     <office id="uk.org.publicwhip/lord/100789" current="yes"/>
-</person>
-<person id="uk.org.publicwhip/person/13559" latestname="Baroness Cox">
-    <office id="uk.org.publicwhip/lord/100147" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13560" latestname="Lord Greenway">
     <office id="uk.org.publicwhip/lord/100259" current="yes"/>
