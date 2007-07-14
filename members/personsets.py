@@ -90,6 +90,7 @@ lordlordmatches = {
     "uk.org.publicwhip/lord/100943":"uk.org.publicwhip/lord/100924",  # As does Lord Boyd...
     "uk.org.publicwhip/lord/100491":"uk.org.publicwhip/lord/100944",  # And Perason
     "uk.org.publicwhip/lord/100945":"uk.org.publicwhip/lord/100690",  # And Willoughby.
+    "uk.org.publicwhip/lord/100147":"uk.org.publicwhip/lord/100959",  # And Cox
     # XXX: Must be a way to do party changes automatically!
     # XXX: And the key:value ordering here is very suspect
 }
