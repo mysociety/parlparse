@@ -7548,8 +7548,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13180" latestname="Lord Lane">
     <office id="uk.org.publicwhip/lord/100361"/>
 </person>
-<person id="uk.org.publicwhip/person/13878" latestname="Lord Browne of Belmont">
+<person id="uk.org.publicwhip/person/13878" latestname="Wallace Browne">
     <office id="uk.org.publicwhip/lord/100934" current="yes"/>
+    <office id="uk.org.publicwhip/member/90257" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13181" latestname="The Earl of Selborne">
     <office id="uk.org.publicwhip/lord/100578" current="yes"/>
@@ -9274,9 +9275,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13918" latestname="Francie Brolly">
     <office id="uk.org.publicwhip/member/90139"/>
     <office id="uk.org.publicwhip/member/90256" current="yes"/>
-</person>
-<person id="uk.org.publicwhip/person/13895" latestname="Wallace Browne">
-    <office id="uk.org.publicwhip/member/90257" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13758" latestname="Thomas Buchanan">
     <office id="uk.org.publicwhip/member/90140"/>
