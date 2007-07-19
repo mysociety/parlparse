@@ -410,7 +410,7 @@ def FilterLordsSpeech(qb):
 			assert False
 
 		# identify a moved amendment
-		elif re.match("<p>moved,? |<p>Amendments? |<p>had given notice|<p>rose to move|<p>had given his intention", qb.stext[0]):
+		elif re.match("<p>moved,? |<p>Amendments? |<p>had given notice|<p>(?:rose )?to move|<p>had given his intention", qb.stext[0]):
 
 			# find where the speech begins, and strip out "The noble lord said:"
 			preparagraphtype = "moved"
