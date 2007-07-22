@@ -46,23 +46,25 @@ def GetReportProcedings(urlpage, year):
 	uin = urllib.urlopen(urlpage)
 	s = uin.read()
 	uin.close()
-	s = re.sub("(?s)<!--.*?-->", "", s)
-        vdat = re.search("(?s)Report of proceedings(.*?)(Associated Memoranda|start of footer|$)", s)
-        if urlpage == 'http://www.publications.parliament.uk/pa/cm/cmpbparliament.htm': # XXX
-                vdat = re.sub('(?s)^.*(<A href=".*?">2nd)', '\1', s)
+	vdat = re.search("(?s)Report of proceedings(.*?)(Associated Memoranda|start of footer|$)", s)
+	if urlpage == 'http://www.publications.parliament.uk/pa/cm/cmpbparliament.htm': # XXX
+		vdat = re.sub('(?s)^.*(<A href=".*?">2nd)', '\1', s)
 	elif not vdat:
 		return res, None
 	else: 
 		vdat = vdat.group(1)
+	vdat = re.sub("(?s)<!--.*?-->", "", vdat)
 	# correct a few typos
 	if year == "2005":
 		vdat = re.sub('(/pa/cm200506/cmstand/e/st050705/am/50705s01.htm">1st  sitting</A></FONT></TD><TD><FONT size=\+1><A\s*href="/pa/cm200506/cmstand/)b/st050621(/am/50705s01.htm">5 July 2005)', '\g<1>e/st050705\g<2>', vdat)
 		vdat = re.sub('(/pa/cm200506/cmstand/b/st060713/am/60713s01.htm">3rd sitting</A></FONT></TD><TD><FONT size=\+1><A href="/pa/cm200506/cmstand/b/st06071)1(/am/60713s01.htm">13 July 2006)', '\g<1>3\g<2>', vdat)
 	if year == "2002":
+		vdat = re.sub('(<A href="st030204/)a(m/30204s01.htm">20th sitting</A></FONT></TD><TD><FONT size=\+1><A href="st030204/pm/30204s01.htm">4 February 2003  \(afternoon\))', '\g<1>p\g<2>', vdat)
 		vdat = re.sub('(<A href="st030225/)a(m/30225s01.htm">10th sitting</A></FONT></TD><TD><FONT size=\+1><A href="st030225/pm/30225s01.htm">25th February 2003 \(afternoon\))', '\g<1>p\g<2>', vdat)
 		vdat = re.sub('(st03061)7/30618(s01.htm">2nd\s*sitting</A></FONT></TD>\s*<TD><FONT size=\+1><A href="st030618/30618s01.htm">18th June 2003)', '\g<1>8/30618\g<2>', vdat)
 	if year == "2001":
 		vdat = re.sub('(st011127/)a(m/11127s01.htm">6th sitting</A></FONT></TD>\s*<TD nowrap><FONT size=\+1><A href="st011127/pm/11127s01.htm">27th November 2001 \(afternoon\))', '\g<1>p\g<2>', vdat)
+		vdat = re.sub('(st011122/)p(m/11122s01.htm">2nd sitting</A></FONT></TD>\s*<TD nowrap><FONT size=\+1><A href="st011122/am/11122s01.htm">22nd November 2001  \(morning\))', '\g<1>a\g<2>', vdat)
 	if year == "1997":
 		vdat = re.sub('(st980512/pm/pt)1(/80512s01.htm">3rd sitting </A></FONT></TD>\s*<TD><FONT size=\+1><A href="st980512/pm/pt2/80512s01.htm">12 May 1998)', '\g<1>2\g<2>', vdat)
 	if year == "2006":
@@ -73,10 +75,9 @@ def GetReportProcedings(urlpage, year):
 		lklk = re.sub("\s", "", lk[0])
 		lklk = re.sub("/+", "/", lklk)
 		lklk = urlparse.urljoin(urlpage, lklk)
-
+		
 		lkname = re.sub("(?:\s|&nbsp;|<br>|</?[iI]>)+", " ", lk[1]).strip()
 		mprevdebates = re.match("Debates on.*?Bill in Session \d\d\d\d-\d\d", lkname)
-
 		if (not res or res[-1][0] != lklk) and not mprevdebates:
 			 res.append([lklk, "", 0, 0, ""])  # urllink, date, sitting number, sitting part, morning|afternoon
 		msecreading = re.match("Second Reading Committee$|Standing Committee B$", lkname)
@@ -187,7 +188,7 @@ def GetBillLinks(bforce):
 			print "year=", year
 		bnks = GetLinksTitles(billyear[0])
 		for bnk in bnks:
-			mcttee = re.match("(.*? (?:Bill|Dogs|Names))(?:\s?\[(?:<i>)?Lords(?:</i>)?\])?(?:\s|</i>)*(?:\(except clauses.*?\) )?(\((Standing Committee [aA-Z]|Special Standing Committee|Second Reading Committee)\)\s?)?$", bnk[1])
+			mcttee = re.match("(.*? (?:Bill|Dogs|Names))(?:\s?\[(?:<i>)?Lords(?:</i>)?\])?(?:\s?(?:<i>)?\[Lords\](?:</i>)?)?(?:\s*\[(?:<i>)?<FONT size=\-1>LORDS</FONT>(?:</i>)?\])?(?:\s*Bill)?(?:</i>)*(?:\s)*(?:\(except clauses.*?\) )?(\((Standing Committee [a-zA-Z]|Special Standing Committee|Second Reading Committee)\)\s?)?$", bnk[1])
 			if not mcttee:
 				print "Unrecognized committee or bill name:", bnk
 			billtitle = mcttee.group(1)
@@ -216,7 +217,7 @@ def WriteXML(fout, billinks):
 
 		# construct short name to use for the pullglued file	
 		if committee:
-			mstandc = re.match("\(?Standing Committee ([aA-Z])\)?", committee)
+			mstandc = re.match("\(?Standing Committee ([a-zA-Z])\)?", committee)
 			if mstandc:
 				shortcommitteeletter = mstandc.group(1).upper()
 			elif re.match("\(?Special Standing Committee\)?", committee):
