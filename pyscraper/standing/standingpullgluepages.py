@@ -68,7 +68,10 @@ def GlueByNext(fout, urlx, billtitle):
 	pageheader = '<img\s*src="/pa/img/portsgrn.gif"\s*alt="House\s*of\s*Commons\s*portcullis"><BR>'
 	# there are various green button gifs, including two which say "continue", but with different filenames
 	pagefooter = '<a href\s*=\s*"[^"]*">\s*<img border=0(?: align=top)? src="/pa/img/(?:ctntgrn|conugrn|prevgrn|contgrn).gif"'
-
+	if re.search("/pa/cm200203/cmstand/d/st030401/am/30401s01.htm$", urlx):
+		pageheader = "<!--end of UK Parliament banner for Publications -->" 
+	if re.search("/pa/cm200102/cmstand/d/st020115/am/20115s01.htm$", urlx):
+		pageheader = "<!--end of UK Parliament banner for Publications -->"		  
 	if re.search("/pa/cm200304/cmstand/c/st040428/pm/40428s01.htm$", urlx):
 		pageheader = "<!--end of UK Parliament banner for Publications-->"
 	if re.search("/pa/cm200203/cmstand/c/st030402/30402s01.htm$", urlx):
@@ -91,13 +94,15 @@ def GlueByNext(fout, urlx, billtitle):
 
 		# write the marker telling us which page this comes from
 		fout.write('<page url="' + url + '"/>\n')
-
+		
 		repagebody = '(?si).*?%s(.*?)%s' % (pageheader, pagefooter)
 		mbody = re.match(repagebody, sr)
 		if not mbody:
 			if re.search("/pa/cm199899/cmstand/e/st990429/am/90429s03.htm$", url):  # continuation does not exist
 				break
 			if re.search("/pa/cm199899/cmstand/special/st990420/pm/pt3/90420s12.htm$", url):  # continuation does not exist
+				break
+			if re.search("/pa/cm200203/cmstand/d/st031016/pm/31016s06.htm$", url): # continuation does not exist
 				break
 
 			print "\n", pageheader, "\n\n", pagefooter, "\n\n"
