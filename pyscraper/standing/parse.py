@@ -357,13 +357,14 @@ class ParseCommittee:
         noes = ayes.findNextSibling('p')
         ayelist = ayes(text=True)  
         nolist = noes(text=True)
+        ayevote = ''
+        novote = ''
         # vote headers
         if ayelist: ayevote = ayelist[0].strip().lower()
         if nolist: novote = nolist[0].strip().lower()
         
         # Sometimes they have some arbitary mix of <p> tags and linebreaks
         if len(ayelist) == 1 and (len(nolist) in [0,1] or novote != 'noes'):
-            
             ayelist = []
             nolist = []
             counter = ayes(text=True)[0]
@@ -372,9 +373,14 @@ class ParseCommittee:
             noes = counter
             (counter, nolist) = self.add_text_to_votelist(counter, nolist, 'Question (accordingly|put)')
             # vote headers
-            ayevote = ayelist[0].lower()
-            novote = nolist[0].lower()    
-            
+            if len(ayelist) > 0:
+                ayevote = ayelist[0].lower()
+            else:
+                ayevote = ''
+            if len(nolist) > 0:
+                novote = nolist[0].lower()    
+            else:
+                novote = ''        
         debug("AYES", ayelist)
         debug("NOES", nolist)  
         
@@ -388,7 +394,7 @@ class ParseCommittee:
             self.add_member_to_votecount(votecounts, ayevote, aye)
         # process the noes, filtering out abstensions    
         for no in nolist[1:]:  
-            mAbstain = 'did not vote|NO VOTE'
+            mAbstain = 'did not vote|NO VOTE|DID NOT VOTE'
             if re.search(mAbstain, no):
                 self.add_member_to_votecount(votecounts, 'abstains', re.sub(mAbstain, '', no))
             else:
@@ -1024,7 +1030,7 @@ for file in g:
     while parsefile:
         try:
             print("Standing committees parsing %s..." % sitting_part)
-            #raise ContextException, "One off"
+           # raise ContextException, "One off"
             parser.parse_sitting_part(sitting_part)
             break
         except ContextException, ce:
