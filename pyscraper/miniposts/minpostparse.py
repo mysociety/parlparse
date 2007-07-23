@@ -230,7 +230,8 @@ class protooffice:
 			self.cons = None # Can only be one
 
 		self.froname = re.sub("^Rt Hon\s+|^Mrs?\s+", "", self.froname)
-		self.froname = re.sub("\s+(?:QC|[COM]BE)?$", "", self.froname)
+		self.froname = re.sub("\s+(?:QC|[GKDCOM]BE)?$", "", self.froname)
+		self.lasname = re.sub("\s+(?:QC|[GKDCOM]BE)?$", "", self.lasname)
 		self.fullname = "%s %s" % (self.froname, self.lasname)
 
 		# sometimes a bracket of constituency gets through, when the name hasn't been reversed
@@ -260,7 +261,7 @@ class protooffice:
                         self.fullname = 'Lord West of Spithead'
                 if self.fullname == 'Sir Mark Malloch Brown':
                         self.fullname = 'Lord Malloch-Brown'
-                if self.fullname == 'Sir Digby Jones':
+                if self.fullname == 'Sir Digby Jones' or self.fullname == 'Digby, Lord Jones of Birmingham':
                         self.fullname = 'Lord Jones of Birmingham'
                 if self.fullname == 'Professor Sir Ara Darzi':
                         self.fullname = 'Lord Darzi of Denham'
@@ -364,7 +365,7 @@ def SpecMins(regex, fr, sdate):
                 nremadename = re.sub("^Rt Hon ", "", nremadename)
                 if not re.search("Duke |Lord |Baroness ", specname):
                         nremadename = re.sub("\s+MP$", "", nremadename)
-                        nremadename = re.sub(" [COM]BE$", "", nremadename)
+                        nremadename = re.sub(" [GKDCOM]BE$", "", nremadename)
                 bigarray.setdefault(sdate, {})
                 if specpost == "Universitites":
                         specpost = "Universities"
@@ -703,7 +704,7 @@ def SetNameMatch(cp, cpsdates, mpidmap):
 	else:
 		cp.remadename = cp.fullname
 		cp.remadename = re.sub("^Rt Hon ", "", cp.remadename)
-		cp.remadename = re.sub(" [COMD]BE$", "", cp.remadename)
+		cp.remadename = re.sub(" [GKDCOM]BE$", "", cp.remadename)
 		cp.remadecons = ""
 		date = cpsdates[0]
 
