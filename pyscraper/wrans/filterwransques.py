@@ -28,6 +28,8 @@ def ExtractQnum(tex, stampurl):
 		nqn = string.atoi(isqn.group(2))
 		if text.find("<ok-extra-qnum>") >= 0:
 			text = text.replace("<ok-extra-qnum>", "", 1)
+		elif nqn >= 1980 and nqn <= 2020:
+			pass
 		else:
 			print tex
 			print 'A colnum may be removing a necessary <p> tag before the (2)'

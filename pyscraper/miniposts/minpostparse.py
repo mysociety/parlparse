@@ -200,12 +200,15 @@ class protooffice:
 		self.sdatet = lsdatet
 		self.sourcedoc = "chgpages/privsec"
 
-		nameMatch = re.match('(.*?)\s*\(([^)]*)\)\s*$', name)
+                name = re.sub('\s+', ' ', name)
+		nameMatch = re.match('(.*?)(?:\s*\(([^)]*)\))?\s*$', name)
 		self.fullname = nameMatch.group(1).strip()
 		self.fullname = re.sub("^Mrs? ", "", self.fullname)
 		if re.match("Si.n Simon$", self.fullname):
 			self.fullname = "Sion Simon"
-		self.cons = re.sub("&amp;", "&", nameMatch.group(2))
+                self.cons = None
+                if nameMatch.group(2):
+		        self.cons = re.sub("&amp;", "&", nameMatch.group(2))
 
 		# map down to the department for this record
 		self.pos = "PPS"
@@ -580,9 +583,9 @@ def ParsePrivSecPage(fr, gp):
 		if deptMatch:
 			deptname = re.sub("&amp;", "&", deptMatch.group(1))  # carry forward department name
 			deptname = re.sub("\s+", " ", deptname)
-                        deptname = re.sub(" \(Team PPSs\)", "", deptname)
+                        deptname = re.sub(" \(Team PPSs?\)", "", deptname)
 			continue
-		nameMatch = re.match("\s*<td>\s*([^<]*)</td>\s*<td>\s*([^<]*)(?:</td>)?\s*$(?i)", e1)
+		nameMatch = re.match("\s*<td[^>]*>\s*([^<]*)</td>\s*<td[^>]*>\s*([^<]*)(?:</td>)?\s*$(?i)", e1)
 		if nameMatch.group(1):
 			ministername = nameMatch.group(1)  # carry forward minister name (when more than one PPS)
 			if ministername == 'Rt Hon Lord Rooker , Minister of State' or \
