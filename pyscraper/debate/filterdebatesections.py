@@ -131,6 +131,8 @@ def StripDebateHeadings(headspeak, sdate):
 	# set the time from the wording 'house met at' thing.
         if gstarttime:
                 time = gstarttime.group(1)
+                time = re.sub('</?i>',' ', time)
+                time = re.sub('\s+',' ', time)
                 if re.match("^half-past Nine(?i)", time):
                         newtime = '09:30:00'
                 elif re.match("^half-past Ten(?i)", time):
