@@ -49,6 +49,7 @@ def RunRegmemFilters(fout, text, sdate):
         categoryname = None
         subcategory = None
         for row in rows:
+                print row
                 row = [ column.strip() for column in row ]
                 (striprow, stripcount) = re.subn('</?[^>]+>', '', "".join(row))
                 if striprow.strip() == "":
@@ -61,6 +62,7 @@ def RunRegmemFilters(fout, text, sdate):
                         # <TR><TD COLSPAN=4><B>JACKSON, Robert (Wantage)</B></TD></TR>
                         res = re.search("^([^,]*), ([^(]*) \((.*)\)$", row[0])
                         if not res:
+                                print row
                                 raise Exception, "Failed to break up into first/last/cons: %s" % row[0]
                         (lastname, firstname, constituency) = res.groups()
                         constituency = constituency.replace(')', '')
