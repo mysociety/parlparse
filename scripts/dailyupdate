@@ -21,13 +21,13 @@ svn -q propset svn:eol-style native */*.patch
 svn -q update
 # Add and any new cmpages
 cd ~/parldata/cmpages
-for X in debates wrans westminhall wms regmem lordspages; do
+for X in debates wrans westminhall wms regmem ldregmem lordspages standing votes bills; do
     svn -q add $X/*.html 2>&1 | grep -v "is already under version control"
 done
 svn -q update
 # Add and any new scrapedxml
 cd ~/parldata/scrapedxml
-for X in debates wrans westminhall wms regmem lordspages; do
+for X in debates wrans westminhall wms regmem lordspages lordswms lordswrans standing; do
     svn -q add $X/*.xml 2>&1 | grep -v "is already under version control"
 done
 svn -q update
