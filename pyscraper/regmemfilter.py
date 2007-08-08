@@ -49,7 +49,6 @@ def RunRegmemFilters(fout, text, sdate):
         categoryname = None
         subcategory = None
         for row in rows:
-                print row
                 row = [ column.strip() for column in row ]
                 (striprow, stripcount) = re.subn('</?[^>]+>', '', "".join(row))
                 if striprow.strip() == "":
