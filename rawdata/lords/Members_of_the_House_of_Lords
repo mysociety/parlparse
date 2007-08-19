@@ -41,7 +41,7 @@ var wgUserGroups = null;
 var wgUserLanguage = "en";
 var wgContentLanguage = "en";
 var wgBreakFrames = false;
-var wgCurRevisionId = "146866586";
+var wgCurRevisionId = "151897969";
 /*]]>*/</script>
                 
 		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?90"><!-- wikibits js --></script>
@@ -548,12 +548,6 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <tr>
 <td><a href="/wiki/Kumar_Bhattacharyya%2C_Baron_Bhattacharyya" title="Kumar Bhattacharyya, Baron Bhattacharyya">The Lord Bhattacharyya</a></td>
 <td>Labour</td>
-<td>Life Peer</td>
-<td>&#160;</td>
-</tr>
-<tr>
-<td><a href="/wiki/John_Biffen%2C_Baron_Biffen" title="John Biffen, Baron Biffen">The Lord Biffen</a></td>
-<td>Conservative</td>
 <td>Life Peer</td>
 <td>&#160;</td>
 </tr>
@@ -1651,12 +1645,6 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <tr>
 <td><a href="/wiki/Anita_Gale%2C_Baroness_Gale" title="Anita Gale, Baroness Gale">The Baroness Gale</a></td>
 <td>Labour</td>
-<td>&#160;</td>
-<td>&#160;</td>
-</tr>
-<tr>
-<td><a href="/wiki/Timothy_Garden" title="Timothy Garden">The Lord Garden</a></td>
-<td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
@@ -4595,6 +4583,12 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=6" title="Edit section: Recently deceased">edit</a>]</span> <span class="mw-headline">Recently deceased</span></h2>
 <table class="wikitable">
 <tr>
+<td><a href="/wiki/John_Biffen%2C_Baron_Biffen" title="John Biffen, Baron Biffen">The Lord Biffen</a> (<a href="/wiki/August_14" title="August 14">August 14</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td>Conservative</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr>
 <td><a href="/wiki/John_Brightman%2C_Baron_Brightman" title="John Brightman, Baron Brightman">The Lord Brightman</a> (<a href="/wiki/February_6" title="February 6">February 6</a>, <a href="/wiki/2006" title="2006">2006</a>)</td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
@@ -4633,6 +4627,12 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <tr>
 <td><a href="/wiki/Baron_Forte" title="Baron Forte">The Lord Forte</a> (<a href="/wiki/February_28" title="February 28">February 28</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
 <td>Conservative</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr>
+<td><a href="/wiki/Timothy_Garden%2C_Baron_Garden" title="Timothy Garden, Baron Garden">The Lord Garden</a> (<a href="/wiki/August_9" title="August 9">August 9</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
@@ -4767,6 +4767,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <li><a href="/wiki/List_of_hereditary_peers_elected_to_sit_in_the_House_of_Lords_under_the_House_of_Lords_Act_1999" title="List of hereditary peers elected to sit in the House of Lords under the House of Lords Act 1999">List of hereditary peers elected to sit in the House of Lords under the House of Lords Act 1999</a></li>
 <li><a href="/wiki/Peerage" title="Peerage">Peerage</a></li>
 </ul>
+<p>lord waqas hmad</p>
 <p><a name="External_links_and_references" id="External_links_and_references"></a></p>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=9" title="Edit section: External links and references">edit</a>]</span> <span class="mw-headline">External links and references</span></h2>
 <ul>
@@ -4774,7 +4775,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 </ul>
 
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20070812032303 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20070818144710 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:Politics_of_the_United_Kingdom" title="Category:Politics of the United Kingdom">Politics of the United Kingdom</a></span></p></div>			<!-- end content -->
@@ -4849,7 +4850,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:Recentchangeslinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload images or media files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:Specialpages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=146866586" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=146866586">Cite this article</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=151897969" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=151897969">Cite this article</a></li>			</ul>
 		</div>
 	</div>
 		</div><!-- end of the left (by default at least) column -->
@@ -4858,7 +4859,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-				<li id="lastmod"> This page was last modified 23:01, 24 July 2007.</li>
+				<li id="lastmod"> This page was last modified 20:29, 17 August 2007.</li>
 				<li id="copyright">All text is available under the terms of the <a class='internal' href="/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc</a>., a US-registered <a class='internal' href="/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>
 				<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
 				<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
@@ -4869,4 +4870,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv39 in 1.011 secs. --></body></html>
+<!-- Served by srv34 in 1.090 secs. --></body></html>
