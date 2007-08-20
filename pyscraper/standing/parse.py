@@ -242,7 +242,7 @@ class ParseCommittee:
         """Output a division tag with aye and no counts
         """
         self.close_speech()
-        self.out.write( '<divisioncount id="%s" ayes="%d" noes="%d">\n' % ( num, counts['ayes']['count'], counts['noes']['count'] ) )
+        self.out.write( '<divisioncount id="%s" divnumber="%s" ayes="%d" noes="%d" url="%s">\n' % ( self.id(), num, counts['ayes']['count'], counts['noes']['count'], self.url ) )
         self.out.write( '<mplist vote="aye">\n' )
         self.out.write( counts['ayes']['names'] )
         self.out.write( '</mplist>\n' )
@@ -315,7 +315,7 @@ class ParseCommittee:
             elif (getattr(node, 'name', None)):
                 pass
             else: 
-                 textlist.append(self.clean_text(node))
+                 textlist.append(re.sub('\s+', ' ', node)) # not clean_text as we don't want to strip spaces next to tags
         return textlist
         
     def add_text_to_votelist(self, node, votelist, stop_pattern):
