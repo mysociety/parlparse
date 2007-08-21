@@ -32,6 +32,7 @@ def WriteXMLHeader(fout, encoding="ISO-8859-1"):
 <!ENTITY rsquo   "&#8217;" >
 <!ENTITY ldquo   "&#8220;" >
 <!ENTITY rdquo   "&#8221;" >
+<!ENTITY bdquo   "&#8222;" >
 
 <!ENTITY Ouml   "&#214;" >
 <!ENTITY agrave "&#224;" >
