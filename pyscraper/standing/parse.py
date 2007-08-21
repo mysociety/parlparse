@@ -70,16 +70,20 @@ class StandingSoup(BeautifulSoup):
     
         # get rid of raw ampersands in the text
         (re.compile(' & '), ' &amp; '),
-        (re.compile('([A-Z])&([A-Z])'),lambda match: match.group(1) + '&amp;' + match.group(2) ),
+        (re.compile(' &c\.'), ' &amp;c.'),
+        (re.compile('p&p'), 'p&amp;p'), # XXX!
+        (re.compile('([A-Z0-9])&([A-Z0-9])'),lambda match: match.group(1) + '&amp;' + match.group(2) ),
  
         # Swap elements that are clearly the wrong way round
         (re.compile('(<b>Column Number: \d*?</b></p>)'), lambda match: match.group(1)+ '<p>'), 
-        (re.compile('(<p>)\s*(<h4 align=center>)'), lambda match: match.group(2)),
+        (re.compile('<p>\s*(<h\d[^>]*>)(?i)'), lambda match: match.group(1)),
         (re.compile('(<p[^>]*>)\s*((</(font|i|b|ul)>)+)'), lambda match: match.group(2) + match.group(1)),
         (re.compile('(<p[^>]*>)\s*(<b>)'), lambda match: match.group(2) + match.group(1)),
         (re.compile('((<(font|i|b)>)+)\s*(</p[^>]*>)'), lambda match: match.group(3) + match.group(1)),
         (re.compile('(<b>)\s*(<p[^>]*>)([^<]*?</b>)'), lambda match: match.group(2) + match.group(1) + match.group(3)),
         #(re.compile('(<P>)\s*(</UL></UL></UL>)'), lambda match: match.group(2) + match.group(1)),
+
+        (re.compile('(<p[^>]*>[^<]*)<h4>(?i)'), lambda match: match.group(1) + '</p> <h4>'),
     ]    
     
 class ParseCommittee:
@@ -87,7 +91,7 @@ class ParseCommittee:
     def id(self):
         """Return the current id counter for use in uniquely tagging speeches
         """
-        return '%s.%s.%s' % (self.sitting_part, self.idA, self.idB)
+        return 'uk.org.publicwhip/standing/%s.%s.%s' % (self.sitting_part, self.idA, self.idB)
 
     def display_speech_tag(self):
         """Display a speech tag with the current speaker, timestamp and 
@@ -99,14 +103,14 @@ class ParseCommittee:
         col_str = ''
         if self.speaker: speaker_str = self.speaker     
         if self.timestamp: timestamp_str = ' time="%s"' % self.timestamp
-        if self.column_number:  col_str = 'colnum="%d"' % self.column_number
+        if self.column_number:  col_str = ' colnum="%d"' % self.column_number
             
         # increment the id
         self.idB += 1
                         
         # end any existing speech
         self.close_speech()     
-        self.out.write('<speech id="uk.org.publicwhip/standing/%s" %s%s url="%s" %s>\n' % (self.id(), speaker_str, timestamp_str, self.url, col_str))
+        self.out.write('<speech id="%s" %s%s url="%s"%s>\n' % (self.id(), speaker_str, timestamp_str, self.url, col_str))
         self.in_speech= True
         
     def display_para(self, tag, indent=False, amendmentText=False):
@@ -128,7 +132,8 @@ class ParseCommittee:
         
         # don't include any h4 content - it will be handled
         # directly in the main parse_xxx_sitting_part function
-        ptext = ''.join([node for node in tag(text=True) if getattr(node.parent, 'name', 'None') != 'h4'])
+        # XXX - nope, as this then loses e.g. in the Chair headings which call here
+        ptext = ''.join(tag(text=True)) # [node for node in tag(text=True) if getattr(node.parent, 'name', 'None') != 'h4'])
         
         ptext = re.sub("\s+", " ", ptext).strip()
         if not ptext: return 
@@ -189,14 +194,18 @@ class ParseCommittee:
     def display_heading(self, text, type):
         """Output a major or minor heading
         """
-        self.close_speech()    
+        self.close_speech(type)
         # increment the section ID
         self.idA += 1
         # restart the speech counter
         self.idB = 0
-        timestamp_str = ''
-        if self.timestamp: timestamp_str = ' time="%s"' % self.timestamp        
-        self.out.write('<%s-heading id="uk.org.publicwhip/standing/%s"%s nospeaker="true" url="%s" >%s</%s-heading>\n' % (type, self.id(), timestamp_str, self.url, text, type))
+        if not self.in_heading:
+            timestamp_str = ''
+            if self.timestamp: timestamp_str = ' time="%s"' % self.timestamp        
+            self.out.write('<%s-heading id="%s"%s nospeaker="true" url="%s">%s' % (type, self.id(), timestamp_str, self.url, text))
+            self.in_heading = type
+        else:
+            self.out.write(' - %s' % text)
     
     def display_chair(self, tag):
         """Output the text saying who's chairing - also set the 
@@ -242,6 +251,7 @@ class ParseCommittee:
         """Output a division tag with aye and no counts
         """
         self.close_speech()
+        self.idB += 1
         self.out.write( '<divisioncount id="%s" divnumber="%s" ayes="%d" noes="%d" url="%s">\n' % ( self.id(), num, counts['ayes']['count'], counts['noes']['count'], self.url ) )
         self.out.write( '<mplist vote="aye">\n' )
         self.out.write( counts['ayes']['names'] )
@@ -298,14 +308,14 @@ class ParseCommittee:
         """Produce text for displaying a tree of nodes by 
         recursing over the elements"""
         for node in nodelist:
-            if getattr(node, 'contents', None):
-                if getattr(node, 'name', None) == 'table':
+            if getattr(node, 'contents', None): # Tag, not String
+                if node.name == 'table':
                     textlist.append(self.render_table(node))
-                elif getattr(node, 'name', None) == 'i':
+                elif node.name == 'i':
                     textlist.append('<span class="italic">')
                     textlist = self.render_tree(node.contents, textlist)
                     textlist.append('</span>')
-                elif getattr(node, 'name', None) == 'font' and getattr(node, 'size', None) == '-1' :
+                elif node.name == 'font' and node.get('size') == '-1' :
                     textlist.append('<span class="indent">')
                     textlist = self.render_tree(node.contents, textlist)
                     textlist.append('</span>')
@@ -759,6 +769,7 @@ class ParseCommittee:
         self.column_number =  ''
         self.timestamp =      ''
         self.in_speech =      False
+        self.in_heading =     False
         self.speaker =        None
         self.baseurl = 'http://www.publications.parliament.uk'
         self.external_speakers = False
@@ -823,8 +834,8 @@ class ParseCommittee:
         bill_title.extract()
         bill_link.extract()
         
-        if url: url_str = 'url="%s%s"' %  (self.baseurl, url)
-        self.out.write('<bill %s title="%s">%s</bill>\n' % (url_str, plaintitle, title))
+        if url: url_str = ' url="%s%s"' %  (self.baseurl, url)
+        self.out.write('<bill%s title="%s">%s</bill>\n' % (url_str, plaintitle, title))
         
         self.parse_new_committee(soup)
                 
@@ -882,7 +893,7 @@ class ParseCommittee:
     
     
     def parse_old_sitting_part(self, soup):
-        """Parse and convert a new-style (1/2001-3/2006) Standing Committee transcript to XML"""     
+        """Parse and convert an older-style (1/2001-3/2006) Standing Committee transcript to XML"""     
         
         #Tuesday 16 January 2001|Tuesday 16 January 2001(Afternoon)
         pDate = '\S*?\s+\d\d?\s+\S*?\s+\d\d\d\d(\(\S*?\))?'
@@ -904,7 +915,7 @@ class ParseCommittee:
                 elif re.match("The Committee consisted of the following Members:\s*?$", text):
                     self.parse_committee(tag)
                 elif re.match("The following (M|m)embers attended the Committ?ee:?", text):
-                   self.parse_old_committee(tag)
+                    self.parse_old_committee(tag)
                 elif  re.match('Column (N|n)umber:? (\d+)', text):
                     self.parse_column(text)
                 elif re.match('Examination of Witnesses', text):
@@ -965,13 +976,16 @@ class ParseCommittee:
                              'count': 0,
                              'names': ''}}
     
-    def close_speech(self):
-        """Close any open speech, set speaker to none"""
+    def close_speech(self, type=''):
+        """Close any open speech or heading, set speaker to none"""
         if self.in_speech:
             self.out.write('</speech>\n')
             self.in_speech = False
+        if self.in_heading and (type=='' or type!=self.in_heading):
+            self.out.write('</%s-heading>\n' % self.in_heading)
+            self.in_heading = False
         self.speaker = None
-            
+
     def non_speech_text(self):
         """Close any open speech, set speaker to none, start a new speech tag"""
         self.close_speech()
