@@ -932,6 +932,8 @@ class ParseCommittee:
             elif tag.name == 'h3':
                 if re.match(pDate, text) or re.match(pTimeOfDay, text):
                     pass
+                elif re.search('in\s+the\s+Chair', text):
+                    self.display_chair(tag)
                 else:
                     self.display_heading(text, "major")
             elif tag.name == 'h4':
