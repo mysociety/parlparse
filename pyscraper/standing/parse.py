@@ -706,6 +706,7 @@ class ParseCommittee:
         chairlist = []    
         for tag in chairTags:
             (chairname, attending) = self.parse_chair_tag(tag)
+            if len(chairTags)==1: attending = True # They don't bother with a dagger if there's only one chairman
             matchtext = memberList.matchcttename(chairname, None, self.date)
             chairlist.append( self.render_committee_member(matchtext, chairname, attending))
                  
@@ -895,6 +896,14 @@ class ParseCommittee:
     def parse_old_sitting_part(self, soup):
         """Parse and convert an older-style (1/2001-3/2006) Standing Committee transcript to XML"""     
         
+        # Extract the bill title (first major heading) and the url for the bill
+        urlnode = soup.find('a', href=re.compile('/cmbills/'))
+        if urlnode:
+            url = urlnode.get('href')
+            title = self.render_node_list(urlnode)
+            plaintitle = ''.join(urlnode(text=True))
+            self.out.write('<bill url="%s%s" title="%s">%s</bill>\n' % (self.baseurl, url, plaintitle, title))
+
         #Tuesday 16 January 2001|Tuesday 16 January 2001(Afternoon)
         pDate = '\S*?\s+\d\d?\s+\S*?\s+\d\d\d\d(\(\S*?\))?'
         pTimeOfDay = '(\(Morning\)|\(Afternoon\))'
