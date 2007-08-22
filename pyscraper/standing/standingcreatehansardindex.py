@@ -40,7 +40,7 @@ romanconvmap = { "I":1, "II":2, "III":3, "IV":4, "V":5, "VI":6, "VII":7, "1":1, 
 
 # get the standing committee parsing to work, output XML
 # res = [ (urllink, date, sitting number, sitting part, morning|afternoon) ]
-def GetReportProcedings(urlpage, year):
+def GetReportProceedings(urlpage, year):
 	res = [ ]
 	firstdate = ""
 	uin = urllib.urlopen(urlpage)
@@ -58,6 +58,9 @@ def GetReportProcedings(urlpage, year):
 	if year == "2005":
 		vdat = re.sub('(/pa/cm200506/cmstand/e/st050705/am/50705s01.htm">1st  sitting</A></FONT></TD><TD><FONT size=\+1><A\s*href="/pa/cm200506/cmstand/)b/st050621(/am/50705s01.htm">5 July 2005)', '\g<1>e/st050705\g<2>', vdat)
 		vdat = re.sub('(/pa/cm200506/cmstand/b/st060713/am/60713s01.htm">3rd sitting</A></FONT></TD><TD><FONT size=\+1><A href="/pa/cm200506/cmstand/b/st06071)1(/am/60713s01.htm">13 July 2006)', '\g<1>3\g<2>', vdat)
+                if urlpage=='http://www.publications.parliament.uk/pa/cm200506/cmstand/cmscright.htm':
+                        vdat = re.sub('<A href="/pa/cm200506/cmstand/a/st051213/am/51213s01\.htm">', '', vdat)
+                        vdat = re.sub('2nd  sitting', '1st  sitting', vdat)
 	if year == "2002":
 		vdat = re.sub('(<A href="st030204/)a(m/30204s01.htm">20th sitting</A></FONT></TD><TD><FONT size=\+1><A href="st030204/pm/30204s01.htm">4 February 2003  \(afternoon\))', '\g<1>p\g<2>', vdat)
 		vdat = re.sub('(<A href="st030225/)a(m/30225s01.htm">10th sitting</A></FONT></TD><TD><FONT size=\+1><A href="st030225/pm/30225s01.htm">25th February 2003 \(afternoon\))', '\g<1>p\g<2>', vdat)
@@ -201,7 +204,7 @@ def GetBillLinks(bforce):
 			assert re.match(".*? Bill$", billtitle)
 			committee = mcttee.group(2)
 			#res.append((year, billtitle, committee, bnk[0]))
-			ps, committeedate = GetReportProcedings(bnk[0], year)
+			ps, committeedate = GetReportProceedings(bnk[0], year)
 			for p in ps:
 				res.append(((year, billtitle, committee, bnk[0], committeedate), p))
 	return res
