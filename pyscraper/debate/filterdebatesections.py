@@ -247,7 +247,7 @@ def NormalHeadingPart(headingtxt, stampurl, state):
 
         # Wah
         if stampurl.sdate > '2006-05-07':
-                if re.match("(Private business|Business of the House|Orders of the day|Points? of Order|Opposition Day)(?i)", headingtxt):
+                if re.match("(Private business|Business of the House|Orders of the day|Points? of Order|Opposition Day|Deferred Division)(?i)", headingtxt):
                         bmajorheading = True
                 if re.match("Remaining Private Members[^ ]* Bills(?i)", headingtxt):
                         bmajorheading = True
