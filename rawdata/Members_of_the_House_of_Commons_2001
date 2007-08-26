@@ -8,15 +8,15 @@
 		<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
 		<title>MPs elected in the United Kingdom general election, 2001 - Wikipedia, the free encyclopedia</title>
 		<style type="text/css" media="screen, projection">/*<![CDATA[*/
-			@import "/skins-1.5/common/shared.css?90";
-			@import "/skins-1.5/monobook/main.css?90";
+			@import "/skins-1.5/common/shared.css?97";
+			@import "/skins-1.5/monobook/main.css?97";
 		/*]]>*/</style>
-		<link rel="stylesheet" type="text/css" media="print" href="/skins-1.5/common/commonPrint.css?90" />
-		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css?90";</style><![endif]-->
-		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css?90";</style><![endif]-->
-		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css?90";</style><![endif]-->
-		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?90";</style><![endif]-->
-		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?90"></script>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins-1.5/common/commonPrint.css?97" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css?97";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css?97";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css?97";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?97";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?97"></script>
 		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
 		
 		<script type= "text/javascript">/*<![CDATA[*/
@@ -44,7 +44,7 @@ var wgBreakFrames = false;
 var wgCurRevisionId = "150379797";
 /*]]>*/</script>
                 
-		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?90"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?97"><!-- wikibits js --></script>
 		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
 		<style type="text/css">/*<![CDATA[*/
 @import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
@@ -52,7 +52,7 @@ var wgCurRevisionId = "150379797";
 @import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
 /*]]>*/</style>
 		<!-- Head Scripts -->
-		<script type="text/javascript" src="/skins-1.5/common/ajax.js?90"></script>
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js?97"></script>
 	</head>
 <body  class="mediawiki ns-0 ltr page-MPs_elected_in_the_United_Kingdom_general_election_2001">
 	<div id="globalWrapper">
@@ -61,7 +61,7 @@ var wgCurRevisionId = "150379797";
 		<a name="top" id="top"></a>
 		<div id="siteNotice"><script type="text/javascript" language="JavaScript">
 <!--
-document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3cb\x3e\x3ca href=\"http://wikimediafoundation.org/wiki/Fundraising\" class=\"extiw\" title=\"wikimedia:Fundraising\"\x3econtinued donations\x3c/a\x3e\x3c/b\x3e keep Wikipedia running!     \x3c/div\x3e\n");
+document.writeln("\x3cdiv style=\"position:absolute; z-index:100; right:100px; top:0px;\" class=\"metadata\" id=\"anontip\"\x3e\n\x3cdiv style=\"text-align:right; font-size:80%\"\x3e•\x3ci\x3e\x3ca href=\"/wiki/Wikipedia:10_things_you_did_not_know_about_Wikipedia\" title=\"Wikipedia:10 things you did not know about Wikipedia\"\x3eTen things you didn\'t know about Wikipedia\x3c/a\x3e\x3c/i\x3e •\n\x3c/div\x3e\x3c/div\x3e\n");
 -->
 </script></div>		<h1 class="firstHeading">MPs elected in the United Kingdom general election, 2001</h1>
 		<div id="bodyContent">
@@ -3637,7 +3637,7 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 <li><a href="/wiki/Howard_Flight" title="Howard Flight">Howard Flight</a> (<a href="/wiki/Arundel" title="Arundel">Arundel</a> and <a href="/wiki/South_Downs" title="South Downs">South Downs</a>) - Conservative whip was withdrawn on <a href="/wiki/March_25" title="March 25">March 25</a>.</li>
 <li>Paul Marsden (Shrewsbury and Atcham) - Resigned from the Liberal Democrats and declared his support for Labour on <a href="/wiki/April_5" title="April 5">April 5</a>.</li>
 </ul>
-<table class="navbox collapsible" style="margin:auto; text-align:left;">
+<table class="navbox collapsible nowraplinks" style="margin:auto; text-align:left;">
 <tr>
 <th colspan="2" style="text-align:center;width:100%;">
 <div style="float:left; width:6em; text-align:left;">
@@ -3668,13 +3668,13 @@ document.writeln("\x3cdiv style=\"text-align:right; font-size:80%\"\x3eYour \x3c
 </ul>
 
 <!-- 
-Pre-expand include size: 42066 bytes
-Post-expand include size: 34318 bytes
+Pre-expand include size: 42105 bytes
+Post-expand include size: 34342 bytes
 Template argument size: 26810 bytes
 Maximum: 2048000 bytes
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!2 and timestamp 20070818231924 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!2 and timestamp 20070826003406 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_2001">http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_2001</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:MPs_elected_in_UK_elections" title="Category:MPs elected in UK elections">MPs elected in UK elections</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:2001_elections_in_the_United_Kingdom" title="Category:2001 elections in the United Kingdom">2001 elections in the United Kingdom</a></span></p></div>			<!-- end content -->
@@ -3726,7 +3726,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 				<li id="n-portal"><a href="/wiki/Wikipedia:Community_Portal" title="About the project, what you can do, where to find things">Community portal</a></li>
 				<li id="n-recentchanges"><a href="/wiki/Special:Recentchanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
 				<li id="n-contact"><a href="/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
-				<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Fundraising" title="Support us">Make a donation</a></li>
+				<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Fundraising" title="Support us">Donate to Wikipedia</a></li>
 				<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
 			</ul>
 		</div>
@@ -3777,4 +3777,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv44 in 0.121 secs. --></body></html>
+<!-- Served by srv93 in 0.137 secs. --></body></html>
