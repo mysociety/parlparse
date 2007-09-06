@@ -238,6 +238,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
         parser.parse("peers-ucl.xml")
         parser.parse("ni-members.xml")
         parser.parse("ministers.xml")
+        parser.parse("royals.xml")
 
     def outputxml(self, fout):
         for personset in self.personsets:
@@ -461,6 +462,11 @@ class PersonSets(xml.sax.handler.ContentHandler):
         elif name == "lord":
             assert attr['id'] not in self.lords
             self.lords[attr['id']] = attr.copy()
+
+        elif name == "royal":
+            newset = sets.Set()
+            newset.add(attr)
+            self.personsets.append(newset)
 
 		elif name == "moffice":
             assert not self.in_person
