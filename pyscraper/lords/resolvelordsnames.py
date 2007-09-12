@@ -187,6 +187,9 @@ class LordsList(xml.sax.handler.ContentHandler):
                 if name == "Lord Speaker":
                         return None
 
+                if name == "Queen":
+                        return "uk.org.publicwhip/royal/-1"
+
 		hom = honcompl.match(name)
 		if not hom:
 			raise ContextException("lord name format failure on '%s'" % name, stamp=stampurl, fragment=name)

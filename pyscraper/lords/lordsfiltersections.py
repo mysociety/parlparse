@@ -226,7 +226,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 	if re.match('<p[^>]*>The Lords insist on .{0,160}? for the following reasons?(?:\.|&mdash;)+</p>', qpara):
 		return "bill"
 
-	if re.match('<p[^>]*>House adjourned at .{0,60}?</p>', qpara):
+	if re.match('<p[^>]*>(?:<i>)?House adjourned (?:at|during) .{0,60}?(?:</i>)?</p>(?i)', qpara):
 		return "adjourned"
 	if re.match('<p>(?:House|Debate|Second [Rr]eading debate|(?:Further )?[Cc]onsideration of amendments on Report) resumed(?: on Clause \d+)?[\.:]', qpara):
 		return "resumed"
