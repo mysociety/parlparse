@@ -2092,7 +2092,7 @@ B - bishop
 	lordofname_full="Cowdenbeath"
 	county="the District of Dunfermline"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1992" todate="9999-12-31"
+	fromdate="1992" todate="2007-06-09" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -2470,7 +2470,7 @@ B - bishop
 	title="Lord" lordname="Gilmour" lordofname="Craigmillar"
 	county="the District of the City of Edinburgh"
 	peeragetype="L" affiliation="Con"
-	fromdate="1992" todate="9999-12-31"
+	fromdate="1992" todate="2007-09-21" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -3450,7 +3450,7 @@ B - bishop
 	lordofname_full="Comrie"
 	county="the District of Perth and Kinross"
 	peeragetype="A" affiliation="XB"
-	fromdate="1988" todate="9999-12-31"
+	fromdate="1988" todate="2007-07-18" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100331"
@@ -5551,7 +5551,7 @@ B - bishop
 	lordofname_full="Huntingdon"
 	county="the County of Cambridgeshire"
 	peeragetype="L" affiliation="Con"
-	fromdate="1979" todate="9999-12-31"
+	fromdate="1979" todate="2007-05-24" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -5838,7 +5838,7 @@ B - bishop
 	forenames="John Hubert Richard Lewis"
 	title="Bishop" lordname="" lordofname="St Edmundsbury and Ipswich"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2002-01-23" todate="9999-12-31"
+	fromdate="2002-01-23" todate="2007-07-31" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100562"
@@ -7019,7 +7019,7 @@ B - bishop
 	lordofname_full="North East Croydon"
 	county="the London Borough of Croydon"
 	peeragetype="L" affiliation="XB"
-	fromdate="1992" todate="9999-12-31"
+	fromdate="1992" todate="2007-05-06" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -8094,7 +8094,7 @@ B - bishop
 	lordofname_full="Hampstead"
 	county="the London Borough of Camden"
 	peeragetype="L" affiliation="Dem"
-	fromdate="2004-06-08" todate="9999-12-31"
+	fromdate="2004-06-08" todate="2007-08-09" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100779"
@@ -9812,5 +9812,16 @@ B - bishop
     peeragetype="L" affiliation="Lab"
     fromdate="2007-07-19" todate="9999-12-31"
 />
+
+<!-- 
+<lord
+    id="uk.org.publicwhip/lord/100961"
+    house="lords"
+    forenames="William Nigel Stock"
+    title="Bishop" lordname="" lordofname="Ely"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2007-?????" todate="9999-12-31"
+/>
+-->
 
 </publicwhip>
