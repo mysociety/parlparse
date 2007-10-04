@@ -246,10 +246,12 @@ def SplitLordsText(text, sdate):
 
 	# check that there is always an adjournment in the main debate, with some of the trash that gets put before it
 	# this kind of overguessing is to get a feel for the variation that is encountered.
-	if not re.search('(?:<ul><ul><ul>|<ul><ul><p>|</a>\s*(?:<ul>|<p>)?|<p>\s*<ul><ul>(?:<ul>)?)\s*(?:Parliament was prorogued|House adjourned )(?i)', res[0]):
+	if sdate != '2007-10-01' and not re.search('(?:<ul><ul><ul>|<ul><ul><p>|</a>\s*(?:<ul>|<p>)?|<p>\s*<ul><ul>(?:<ul>)?)\s*(?:Parliament was prorogued|House adjourned )(?i)', res[0]):
 		raise ContextException("house adjourned failure", stamp=None, fragment=res[0][-100:])
 
         page = re.findall('<page[^>]*>', res[0])[-1]
+        if (re.match('(<page[^>]*>\s*)+$', res[0])):
+                res[0] = ''
 
 	# check the title of the Grand Committee
 	if res[1]:
