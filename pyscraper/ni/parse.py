@@ -96,6 +96,7 @@ class ParseDay:
 
 <!ENTITY nbsp    "&#160;">
 <!ENTITY shy     "&#173;">
+<!ENTITY deg     "&#176;">
 <!ENTITY middot  "&#183;">
 <!ENTITY ordm    "&#186;">
 <!ENTITY ndash   "&#8211;">
