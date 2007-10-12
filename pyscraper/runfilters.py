@@ -131,6 +131,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                 text = text.replace("\xc2\xb0", "&deg;")
                 text = text.replace("\xc2\xba", "&ordm;")
                 text = text.replace("\xc2\xa3", "&pound;")
+                text = text.replace("\xc2(c)", "&copy;")
                 text = text.replace("\xc2(r)", "&reg;") # Yes, really!
                 text = text.replace("\xc21/4", "&frac14;")
                 text = text.replace("\xc21/2", "&frac12;")
