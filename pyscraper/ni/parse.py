@@ -88,6 +88,7 @@ class ParseDay:
 <!ENTITY Iacute  "&#205;">
 <!ENTITY Oacute  "&#211;">
 <!ENTITY Uacute  "&#218;">
+<!ENTITY auml    "&#228;">
 <!ENTITY euml    "&#235;">
 <!ENTITY iuml    "&#239;">
 <!ENTITY ouml    "&#246;">
@@ -282,6 +283,8 @@ class ParseDay:
 				cl = 'B1SpeakersName'
 			if cl == 'TimePeriod' and re.search('in the chair(?i)', phtml):
 				cl = 'B3SpeakerinChair'
+			if p.em and len(p.contents) == 1:
+				cl = 'B3BodyTextItalic'
 
 			if cl == 'H3SectionHeading':
 				self.display_speech()
@@ -314,7 +317,7 @@ class ParseDay:
 				phtml = re.sub('^:\s*', '', phtml)
 				phtml = re.sub("\s+", " ", phtml).decode('utf-8')
 				self.text += "<p>%s</p>\n" % phtml
-			elif cl == 'B3BodyTextItalic' or cl == 'Q3Motion' or cl == 'AyesNoes' or cl == 'D3PartyMembers' or cl == 'B3SpeakerinChair':
+			elif cl == 'B3BodyTextItalic' or cl == 'Q3Motion' or cl == 'AyesNoes' or cl == 'AyesNoesParties' or cl == 'AyesNoesVotes' or cl == 'D3PartyMembers' or cl == 'B3SpeakerinChair':
 				match = re.match('The Assembly met at ((\d\d?)\.(\d\d) (am|pm)|noon)', phtml)
 				if match:
 					if match.group(1) == 'noon':
