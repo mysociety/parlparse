@@ -194,7 +194,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 	clauseAgreedMatch = re.match('<p>(?:(?:Clause|Schedule)s? \d+[A-Z]*,?(?:, \d+[A-Z]*)?(?: (?:and|to) \d+[A-Z]*)?|Title|Motion)(?:, as amended,?)? ((?:dis)?agreed to|negatived)\.</p>', qpara)
 	if clauseAgreedMatch:
 		return clauseAgreedMatch.group(1) == "agreed to" and "agreedto" or "negatived"
-	clauseResolvedMatch = re.match('<p>Resolved in the (negative|affirmative),? and (?:Motion(?: \w+)?|amendment|the manuscript amendment|Clause \d+|Amendment .{5,60}?)(?:, as amended,)? (?:dis)?agreed to accordingly(?:\.?</p>|;)', qpara)
+	clauseResolvedMatch = re.match('<p>Resolved in the (negative|affirmative),? and (?:Motion(?: \w+)?|amendments?|the manuscript amendment|Clause \d+|Amendment .{5,60}?)(?:, as amended,)? (?:dis)?agreed to accordingly(?:\.?</p>|;)', qpara)
 	if clauseResolvedMatch:
 		return clauseResolvedMatch.group(1) == "negative" and "disagreedto" or "agreedto"
 	if re.match('<p>Remaining( clauses?| and| schedules?)+ agreed to\.</p>', qpara):
