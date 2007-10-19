@@ -96,10 +96,11 @@ def WriteCleanText(fout, text, url):
                                 aname = anamem.group(1)
                                 if not re.search('column', aname): # these get in the way
                                         fout.write('<a name="%s">' % aname)
-                        else:
+                        #else:
                                 # We should never find any other sort of <a> tag - such
                                 # as a link (as there aren't any on parliament.uk)
-                                print "Caught a link ", ab, " in ", url
+                                # XXX They have started this week, 2007-10-15
+                                #print "Caught a link ", ab, " in ", url
 
 		elif re.match('</?a>(?i)', ab):
 			pass

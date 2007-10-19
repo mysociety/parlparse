@@ -420,7 +420,7 @@ def FixHTMLEntities(stex, signore='', stampurl=None):
 
 
 # The lookahead assertion (?=<table) stops matching tables when another begin table is reached
-paratag = '</?p(?: align=left)?(?: id="[^"]*" class="timestamp")?(?: class[= ]"(?:tabletext|normaltext)")?>'
+paratag = '</?p(?: align=(?:left|"center"))?(?: id="[^"]*" class="timestamp")?(?: class[= ]"(?:tabletext|normaltext)")?>'
 restmatcher = paratag + '|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>(?i)'
 reparts = re.compile('(<table[\s\S]*?(?:</table>|(?=<table))|' + restmatcher + ')')
 reparts2 = re.compile('(<table[^>]*?>|' + restmatcher + ')')
