@@ -58,7 +58,7 @@ def FactorChanges(flatb, scrapeversion):
 		essxlist.append(speaker)
 
 		if re.match("oral-heading|major-heading|minor-heading", chk[0]):
-			assert not re.search("[<>]", chk[2])
+			#assert not re.search("[<>]", chk[2])
 			heading = chk[2].strip()
 			essxlist.extend(heading.split())
 		else:
