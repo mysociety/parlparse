@@ -127,7 +127,7 @@ resaidamend =  re.compile("<p[^>]*>On Question, (?:[Ww]hether|That) (?:the said 
 #	<p>On Question, Whether the said amendment (No. 2) shall be agreed to?</p>
 #	<p>Their Lordships divided: , 133; Not-Contents, 118.</p>
 #housedivtxt = "The (?:House|Committee) (?:(?:having )?divided|proceeded to a Division)"
-relorddiv = re.compile('<p[^>]*>(?:\*\s*)?Their Lordships divided: Contents,? (\d+)\*? ?; Not-Contents,? (\d+)\.?</p>$')
+relorddiv = re.compile('<p[^>]*>(?:\*\s*)?Their Lordships divided: Contents,? (\d+)\*? ?; Not-Contents,? (\d+)\*?\.?</p>$')
 def GrabLordDivisionProced(qbp, qbd):
 	if not re.match("speech|motion", qbp.typ) or len(qbp.stext) < 1:
 		print qbp.stext

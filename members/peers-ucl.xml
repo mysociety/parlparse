@@ -9835,6 +9835,27 @@ B - bishop
     fromdate="2007-10-15" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/100963"
+    house="lords"
+    forenames="Robin Berry"
+    title="Lord" lordname="Janvrin" lordofname=""
+    lordofname_full="Chalford Hill"
+    county="the County of Gloucestershire"
+    peeragetype="L" affiliation="XB"
+    fromdate="2007-10-18" todate="9999-12-31"
+/>
+<lord
+    id="uk.org.publicwhip/lord/100964"
+    house="lords"
+    forenames="Susan Elizabeth Lady"
+    title="Baroness" lordname="Garden" lordofname="Frognal"
+    lordofname_full="Hampstead"
+    county="the London Borough Camden"
+    peeragetype="L" affiliation="Dem"
+    fromdate="2007-10-18" todate="9999-12-31"
+/>
+
 <!-- 
 <lord
     id="uk.org.publicwhip/lord/100961"
