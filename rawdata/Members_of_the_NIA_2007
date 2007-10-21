@@ -43,7 +43,7 @@ var wgUserGroups = null;
 var wgUserLanguage = "en";
 var wgContentLanguage = "en";
 var wgBreakFrames = false;
-var wgCurRevisionId = "149608583";
+var wgCurRevisionId = "164714721";
 /*]]>*/</script>
                 
 		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?100"><!-- wikibits js --></script>
@@ -61,7 +61,17 @@ var wgCurRevisionId = "149608583";
 		<div id="column-content">
 	<div id="content">
 		<a name="top" id="top"></a>
-				<h1 class="firstHeading">Members of the Northern Ireland Assembly elected in 2007</h1>
+		<div id="siteNotice"><script type="text/javascript">
+var wgNotice = "";
+var wgNoticeLang = "en";
+var wgNoticeProject = "wikipedia";
+</script>
+<script type="text/javascript" src="http://meta.wikimedia.org/w/index.php?title=Special:NoticeLoader&amp;action=raw"></script>
+<script type="text/javascript">
+if (wgNotice != "") {
+  document.writeln(wgNotice);
+}
+</script></div>		<h1 class="firstHeading">Members of the Northern Ireland Assembly elected in 2007</h1>
 		<div id="bodyContent">
 			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
 			<div id="contentSub"></div>
@@ -133,7 +143,7 @@ Elections: <a href="/wiki/United_Kingdom_general_election%2C_2005#The_election_i
 <td>
 <p><a href="/wiki/Belfast_Agreement" title="Belfast Agreement">Belfast Agreement</a> (1998)<br />
 <a href="/wiki/St_Andrews_Agreement" title="St Andrews Agreement">St Andrews Agreement</a> (2006)</p>
-<p><a href="/wiki/Elections_in_Northern_Ireland" title="Elections in Northern Ireland">Elections in Northern Ireland</a></p>
+<p><a href="/wiki/Segregation_in_Northern_Ireland" title="Segregation in Northern Ireland">Segregation in Northern Ireland</a> <a href="/wiki/Elections_in_Northern_Ireland" title="Elections in Northern Ireland">Elections in Northern Ireland</a></p>
 <p><a href="/wiki/List_of_Parliamentary_constituencies_in_Northern_Ireland" title="List of Parliamentary constituencies in Northern Ireland">Constituencies</a> • <a href="/wiki/List_of_political_parties_in_Northern_Ireland" title="List of political parties in Northern Ireland">Political parties</a></p>
 </td>
 </tr>
@@ -960,16 +970,16 @@ Elections: <a href="/wiki/United_Kingdom_general_election%2C_2005#The_election_i
 </center>
 
 <!-- 
-Pre-expand include size: 30321 bytes
-Post-expand include size: 24493 bytes
+Pre-expand include size: 30357 bytes
+Post-expand include size: 24529 bytes
 Template argument size: 14039 bytes
 Maximum: 2048000 bytes
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!2 and timestamp 20071013121658 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!2 and timestamp 20071021032307 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007">http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007</a>"</div>
-			<div id="catlinks"><p class='catlinks'><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Northern_Ireland_MLAs_2007-" title="Category:Northern Ireland MLAs 2007-">Northern Ireland MLAs 2007-</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_members_of_parliament" title="Category:Lists of members of parliament">Lists of members of parliament</a></span> | <span dir='ltr'><a href="/wiki/Category:Northern_Ireland-related_lists" title="Category:Northern Ireland-related lists">Northern Ireland-related lists</a></span></p></div>			<!-- end content -->
+			<div id="catlinks"><p class='catlinks'><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Northern_Ireland_MLAs_2007-" title="Category:Northern Ireland MLAs 2007-">Northern Ireland MLAs 2007-</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Northern_Irish_parliamentarians" title="Category:Lists of Northern Irish parliamentarians">Lists of Northern Irish parliamentarians</a></span> | <span dir='ltr'><a href="/wiki/Category:Northern_Ireland-related_lists" title="Category:Northern Ireland-related lists">Northern Ireland-related lists</a></span></p></div>			<!-- end content -->
 			<div class="visualClear"></div>
 		</div>
 	</div>
@@ -1002,9 +1012,9 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 		<h5>Navigation</h5>
 		<div class='pBody'>
 			<ul>
-				<li id="n-Main-page"><a href="/wiki/Main_Page">Main page</a></li>
-				<li id="n-Contents"><a href="/wiki/Wikipedia:Contents">Contents</a></li>
-				<li id="n-Featured-content"><a href="/wiki/Wikipedia:Featured_content">Featured content</a></li>
+				<li id="n-Main-page"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-Contents"><a href="/wiki/Wikipedia:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+				<li id="n-Featured-content"><a href="/wiki/Wikipedia:Featured_content" title="Featured content — the best of Wikipedia">Featured content</a></li>
 				<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
 				<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random page [x]" accesskey="x">Random article</a></li>
 			</ul>
@@ -1017,7 +1027,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 				<li id="n-About-Wikipedia"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
 				<li id="n-portal"><a href="/wiki/Wikipedia:Community_Portal" title="About the project, what you can do, where to find things">Community portal</a></li>
 				<li id="n-recentchanges"><a href="/wiki/Special:Recentchanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
-				<li id="n-contact"><a href="/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+				<li id="n-contact"><a href="/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
 				<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Fundraising" title="Support us">Donate to Wikipedia</a></li>
 				<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
 			</ul>
@@ -1041,7 +1051,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:Recentchangeslinked/Members_of_the_Northern_Ireland_Assembly_elected_in_2007" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload images or media files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:Specialpages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=149608583" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;id=149608583">Cite this article</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=164714721" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;id=164714721">Cite this article</a></li>			</ul>
 		</div>
 	</div>
 		</div><!-- end of the left (by default at least) column -->
@@ -1050,7 +1060,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-				<li id="lastmod"> This page was last modified 20:06, 6 August 2007.</li>
+				<li id="lastmod"> This page was last modified 14:09, 15 October 2007.</li>
 				<li id="copyright">All text is available under the terms of the <a class='internal' href="/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc</a>., a U.S. registered <a class='internal' href="/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>
 				<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
 				<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
@@ -1061,4 +1071,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv188 in 0.060 secs. --></body></html>
+<!-- Served by srv101 in 0.904 secs. --></body></html>
