@@ -332,6 +332,9 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 			# skip already processed files, if date is earler and it's not a forced reparse
 			# (checking output date against input and patchfile, if there is one)
 			bparsefile = not os.path.isfile(jfout) or forcereparse or bmodifiedoutoforder
+                        if dname == 'lordspages' and sdate == '2007-10-01' and not bmodifiedoutoforder and not forcereparse:
+                            bparsefile = False # No debates on 2007-10-01 lords
+
 			while bparsefile:  # flag is being used acually as if bparsefile: while True:
 				try:
 					RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile, jfout, options.quietc)
