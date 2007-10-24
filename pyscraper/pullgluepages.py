@@ -129,6 +129,10 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = [urla[0]]
         if sdate=='2006-06-05' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0640.htm':
                 urla = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060602/text/60602w0601.htm', 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0602.htm'] + urla
+        if sdate=='2006-06-07' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060607/text/60607w0001.htm':
+                urla = urla[0:2] + ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060607/text/60607w0003.htm'] + urla[2:]
+        if sdate=='2006-07-17' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060717/text/60717w0001.htm':
+                urla = [urla[0]]
         if sdate=='2006-10-11' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061011/debtext/61011-0001.htm':
                 urla = [urla[0], urla[1], urla[3], urla[4]] # Incorrect link in middle of index
         if sdate=='2006-10-30' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061030/text/61030w0001.htm':
@@ -190,13 +194,17 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                         sr = re.sub('<!--end of UK Parliament banner for Publications -->\s*<div class="breadcrumb">.*?</div>\s*<h2(?s)', '<hr> <h2', sr)
                 sr = re.sub("</?mekonParaReplace[^>]*>", "", sr)
 
+                if sdate=='2006-06-07':
+                        sr = re.sub('<body>(?!<hr>)', '<body><hr>', sr)
+
 		# split by sections
                 hrsections = re.split('<hr(?: size=3)?>(?i)', sr)
 
 		# this is the case for debates on 2003-03-13 page 30
 		# http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030313/debtext/30313-32.htm
 		if len(hrsections) == 1:
-			print len(hrsections), 'page missing', url
+                        if miscfuncs.IsNotQuiet():
+			        print len(hrsections), 'page missing', url
 			fout.write('<UL><UL><UL></UL></UL></UL>\n')
                         urla = urla[1:]
 			continue
@@ -219,7 +227,7 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
 			raise Exception, "More than one Next Section!!!"
 		if not nextsectionlink:
                         urla = urla[1:]
-                        if urla:
+                        if urla and miscfuncs.IsNotQuiet():
                                 print "Bridging the missing next section link at %s" % url
 		else:
                         currenturl = url
