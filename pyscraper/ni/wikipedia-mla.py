@@ -29,6 +29,7 @@ ur.close()
 
 matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)" title="[^"]+">([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a></td>';
 matches = re.findall(matcher, content)
+matches.append(('/wiki/Alastair_Ian_Ross', 'Alastair Ian Ross', 'East Antrim'))
 for (url, name, cons) in matches:
     id = None
     #cons = cons.decode('utf-8')
