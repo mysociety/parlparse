@@ -190,6 +190,8 @@ def CmIndexFromPage(urllinkpage):
                         uind = 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070226/index/70226-x.htm'
                 if sdate=='2007-01-19' and uind=='http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070126/index/70126-x.htm':
                         uind = 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070119/index/70119-x.htm'
+                if sdate=='2007-10-23' and uind=='http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm071016/debindx/71023-x.htm':
+                        uind = 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm071023/debindx/71023-x.htm'
 
 		# check for repeats where the URLs differ
 		if (sdate, typ) in reses:
