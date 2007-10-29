@@ -131,6 +131,10 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060602/text/60602w0601.htm', 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0602.htm'] + urla
         if sdate=='2006-06-07' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060607/text/60607w0001.htm':
                 urla = urla[0:2] + ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060607/text/60607w0003.htm'] + urla[2:]
+        if sdate=='2006-06-14' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060614/halltext/60614h0001.htm':
+                urla = [urla[0]]
+        if sdate=='2006-06-13' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060613/halltext/60613h0001.htm':
+                urla = [urla[0]]
         if sdate=='2006-07-17' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060717/text/60717w0001.htm':
                 urla = [urla[0]]
         if sdate=='2006-10-11' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061011/debtext/61011-0001.htm':
@@ -142,7 +146,9 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
         if sdate=='2006-11-29' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061129/debtext/61129-0001.htm':
                 urla = [urla[0]]
         if sdate=='2006-11-21' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061121/debtext/61121-0001.htm':
-                urla = urla[0:11] + urla[12:] # Incorrect link in middle of index
+                urla = urla[0:11] + urla[13:] # Incorrect link in middle of index
+        if sdate=='2007-01-15' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070115/debtext/70115-0001.htm':
+                urla = [urla[0]]
         if sdate=='2007-02-05' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070205/debtext/70205-0001.htm':
                 urla = [urla[0]]
         if sdate=='2007-03-26' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070326/debtext/70326-0001.htm':
@@ -189,12 +195,13 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 sr = re.sub('<div id="maincontent1">\s*<h3', '<hr><h3', sr)
                 sr = re.sub('<div id="maincontent1">\s*<!--<hd>-->', '<hr>', sr)
                 sr = re.sub('<div id="maincontent1">\s*<notus', '<hr> <notus', sr) # 2006-05-09
+                sr = re.sub('<div id="maincontent1">\s*<meta', '<hr> <meta', sr) # 2006-10-20
                 sr = re.sub('<div id="maincontent1">\s*<a', '<hr> <a', sr)
                 if sdate=='2006-11-07' or sdate=='2006-11-08':
                         sr = re.sub('<!--end of UK Parliament banner for Publications -->\s*<div class="breadcrumb">.*?</div>\s*<h2(?s)', '<hr> <h2', sr)
                 sr = re.sub("</?mekonParaReplace[^>]*>", "", sr)
 
-                if sdate=='2006-06-07':
+                if sdate=='2006-06-07' and re.match('/text/', url):
                         sr = re.sub('<body>(?!<hr>)', '<body><hr>', sr)
 
 		# split by sections

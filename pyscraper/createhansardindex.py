@@ -186,12 +186,25 @@ def CmIndexFromPage(urllinkpage):
                         uind = 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060525/wmsindx/60525-x.htm'
                 if sdate=='2007-06-28' and uind=='http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070627/wmsindx/70628-x.htm':
                         uind = 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070628/wmsindx/70628-x.htm'
+
                 if sdate=='2007-02-26' and uind=='http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/index/70129-x.htm':
                         uind = 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070226/index/70226-x.htm'
+                if sdate=='2007-02-26' and uind=='http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/wmsindx/70129-x.htm':
+                        uind = 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070226/wmsindx/70226-x.htm'
+                if sdate=='2007-02-26' and uind=='http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070129/debindx/70129-x.htm':
+                        uind = 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070226/debindx/70226-x.htm'
+
                 if sdate=='2007-01-19' and uind=='http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070126/index/70126-x.htm':
                         uind = 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070119/index/70119-x.htm'
+                if sdate=='2007-01-19' and uind=='http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070126/wmsindx/70126-x.htm':
+                        uind = 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070119/wmsindx/70119-x.htm'
+                if sdate=='2007-01-19' and uind=='http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070126/debindx/70126-x.htm':
+                        uind = 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070119/debindx/70119-x.htm'
+
                 if sdate=='2007-10-23' and uind=='http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm071016/debindx/71023-x.htm':
                         uind = 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm071023/debindx/71023-x.htm'
+                if sdate>='2006-12-05' and sdate<='2006-12-14' and typ=='Westminster Hall':
+                        uind = uind.replace('200506', '200607')
 
 		# check for repeats where the URLs differ
 		if (sdate, typ) in reses:
