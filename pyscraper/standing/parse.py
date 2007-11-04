@@ -169,6 +169,8 @@ class ParseCommittee:
             # a vote
             elif re.match('The Committee divided.*?', ptext):
                 self.non_speech_text()
+            elif re.match('Question put,.*?', ptext):
+                self.non_speech_text()
             # new question heading for oral evidence
             elif re.match('Q\d+', ptext):
                 self.non_speech_text()
@@ -638,6 +640,9 @@ class ParseCommittee:
             long = ''.join([str(x) for x in filtered_candidates])    
             long = re.sub('.*?</p>', '', long)    
             long = re.sub('</?i>|</?b>', '', long)    
+            long = re.sub('<a name=".*?">', '', long)
+            long = re.sub('</a>', '<br />', long)
+            long = re.sub('</div>', '', long)
             elements = long.split('<br />')
             for element in elements:    
                 if re.search('Committee Clerk', element):
@@ -656,6 +661,7 @@ class ParseCommittee:
                         members.append(candidate)
             chairTag = members[0].findNext(text=re.compile('[a-z]'))  
             members = [''.join(member(text=True)).strip() for member in members[1:] if ''.join(member(text=True)).strip()]
+           
         if not members: raise ContextException, "Can't find committee members"
      
         #chairman
@@ -675,7 +681,6 @@ class ParseCommittee:
         #If there's only one chair, their attendance is not 
         # marked with the usual dagger 
         if len(chairlist) == 1: override_chair_attendance = True
-        
         for chair in chairlist:
             (chairname, attending) = self.parse_chair_string(chair)
             matchtext = memberList.matchcttename(chairname, None, self.date)
@@ -1055,7 +1060,7 @@ for file in g:
     while parsefile:
         try:
             print("Standing committees parsing %s..." % sitting_part)
-           # raise ContextException, "One off"
+            # raise ContextException, "One off"
             parser.parse_sitting_part(sitting_part)
             break
         except ContextException, ce:
