@@ -424,7 +424,7 @@ def ParseSelCteePage(fr, gp):
                         res.append(ec)
         for i in committees:
                 if i not in found:
-                        print "Argh:", i
+                        print "Argh:", gp, i
 
         return (sdate, stime), res
 
