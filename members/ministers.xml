@@ -312,6 +312,7 @@
 <chgpageupdates date="2007-11-07" chgtype="selctee"/>
 <chgpageupdates date="2007-11-09" chgtype="selctee"/>
 <chgpageupdates date="2007-11-09" chgtype="selctee"/>
+<chgpageupdates date="2007-11-14" chgtype="selctee"/>
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1000" name="Duke of Abercorn" dept="HM Household" position="Lord Steward" fromdate="2000-01-01" todate="2007-06-28" source="newlabministers2003-10-15 chgpages/govposts"></moffice>
@@ -406,10 +407,11 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3483" name="Rt Hon James Arbuthnot" matchid="uk.org.publicwhip/member/1612" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2995" name="Rt Hon James Arbuthnot" matchid="uk.org.publicwhip/member/1612" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2635" name="Rt Hon James Arbuthnot" matchid="uk.org.publicwhip/member/1612" dept="Defence Committee" position="" fromdate="2005-07-14" todate="2005-11-01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3083" name="Rt Hon James Arbuthnot" matchid="uk.org.publicwhip/member/1612" dept="Intelligence and Security (Cabinet Office) Committee" position="" fromdate="2005-11-01" todate="2006-08-03" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3436" name="Rt Hon James Arbuthnot" matchid="uk.org.publicwhip/member/1612" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3436" name="Rt Hon James Arbuthnot" matchid="uk.org.publicwhip/member/1612" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2485" name="Rt Hon James Arbuthnot" matchid="uk.org.publicwhip/member/700" dept="Intelligence and Security (Cabinet Office) Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2985" name="Rt Hon James Arbuthnot" matchid="uk.org.publicwhip/member/1612" dept="Defence Committee" position="Chairman" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2130" name="Rt Hon James Arbuthnot" matchid="uk.org.publicwhip/member/700" dept="House of Lords Reform (Joint Committee)" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
@@ -461,9 +463,10 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3484" name="Rt Hon Kevin Barron" matchid="uk.org.publicwhip/member/1789" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2996" name="Rt Hon Kevin Barron" matchid="uk.org.publicwhip/member/1789" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2706" name="Rt Hon Kevin Barron" matchid="uk.org.publicwhip/member/1789" dept="Health Committee" position="" fromdate="2005-07-14" todate="2005-07-20" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3437" name="Rt Hon Kevin Barron" matchid="uk.org.publicwhip/member/1789" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3437" name="Rt Hon Kevin Barron" matchid="uk.org.publicwhip/member/1789" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2486" name="Rt Hon Kevin Barron" matchid="uk.org.publicwhip/member/717" dept="Intelligence and Security (Cabinet Office) Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3043" name="Rt Hon Kevin Barron" matchid="uk.org.publicwhip/member/1789" dept="Standards and Privileges Committee" position="" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2846" name="Kevin Barron" matchid="uk.org.publicwhip/member/1789" dept="Standards and Privileges Committee" position="" fromdate="2005-07-14" todate="2005-11-01" source="chgpages/selctee"></moffice>
@@ -513,6 +516,7 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3485" name="Rt Hon Alan Beith" matchid="uk.org.publicwhip/member/1404" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3263" name="Rt Hon Alan Beith" matchid="uk.org.publicwhip/member/1404" dept="Speaker's Committee" position="" fromdate="2006-10-04" todate="2006-10-12" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3273" name="Rt Hon Alan Beith" matchid="uk.org.publicwhip/member/1404" dept="Speaker's Committee" position="" fromdate="2006-10-17" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2997" name="Rt Hon Alan Beith" matchid="uk.org.publicwhip/member/1404" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
@@ -527,9 +531,10 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3486" name="Sir Stuart Bell" matchid="uk.org.publicwhip/member/1713" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3308" name="Sir Stuart Bell" matchid="uk.org.publicwhip/member/1713" dept="Members Estimates Committee" position="" fromdate="2007-03-20" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2998" name="Sir Stuart Bell" matchid="uk.org.publicwhip/member/1713" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3438" name="Sir Stuart Bell" matchid="uk.org.publicwhip/member/1713" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3438" name="Sir Stuart Bell" matchid="uk.org.publicwhip/member/1713" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2469" name="Sir Stuart Bell" matchid="uk.org.publicwhip/member/725" dept="Ecclesiastical Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2988" name="Sir Stuart Bell" matchid="uk.org.publicwhip/member/1713" dept="Finance &amp; Services Committee" position="Chairman" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2910" name="Sir Stuart Bell" matchid="uk.org.publicwhip/member/1713" dept="Finance &amp; Services Committee" position="" fromdate="2005-07-20" todate="2005-11-01" source="chgpages/selctee"></moffice>
@@ -746,12 +751,13 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3487" name="Rt Hon Malcolm Bruce" matchid="uk.org.publicwhip/member/1993" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2992" name="Malcolm Bruce" matchid="uk.org.publicwhip/member/1993" dept="International Development Committee" position="Chairman" fromdate="2005-11-01" todate="2006-07-05" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2999" name="Malcolm Bruce" matchid="uk.org.publicwhip/member/1993" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2006-07-05" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2737" name="Malcolm Bruce" matchid="uk.org.publicwhip/member/1993" dept="International Development Committee" position="" fromdate="2005-07-14" todate="2005-11-01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3223" name="Rt Hon Malcolm Bruce" matchid="uk.org.publicwhip/member/1993" dept="International Development Committee" position="Chairman" fromdate="2006-07-05" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3224" name="Rt Hon Malcolm Bruce" matchid="uk.org.publicwhip/member/1993" dept="Liaison Committee" position="" fromdate="2006-07-05" todate="2007-11-09" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3439" name="Rt Hon Malcolm Bruce" matchid="uk.org.publicwhip/member/1993" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3439" name="Rt Hon Malcolm Bruce" matchid="uk.org.publicwhip/member/1993" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -1036,10 +1042,11 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3488" name="Sir Patrick Cormack" matchid="uk.org.publicwhip/member/2015" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2763" name="Sir Patrick Cormack" matchid="uk.org.publicwhip/member/2015" dept="Northern Ireland Affairs Committee" position="" fromdate="2005-07-14" todate="2005-07-20" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3000" name="Sir Patrick Cormack" matchid="uk.org.publicwhip/member/2015" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2924" name="Sir Patrick Cormack" matchid="uk.org.publicwhip/member/2015" dept="Northern Ireland Affairs Committee" position="Chairman" fromdate="2005-07-20" todate="9999-12-31" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3440" name="Sir Patrick Cormack" matchid="uk.org.publicwhip/member/2015" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3440" name="Sir Patrick Cormack" matchid="uk.org.publicwhip/member/2015" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2472" name="Sir Patrick Cormack" matchid="uk.org.publicwhip/member/820" dept="Ecclesiastical Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1931" name="Sir Patrick Cormack" matchid="uk.org.publicwhip/member/820" dept="Consolidation etc. Bills (Joint Committee)" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2347" name="Sir Patrick Cormack" matchid="uk.org.publicwhip/member/820" dept="Standing Orders Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
@@ -1142,6 +1149,7 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3513" name="Quentin Davies" matchid="uk.org.publicwhip/member/2025" dept="Regulatory Reform Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3430" name="Quentin Davies" matchid="uk.org.publicwhip/member/2025" dept="Tax Law Rewrite Bills (Joint Committee)" position="" fromdate="2007-11-07" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2739" name="Quentin Davies" matchid="uk.org.publicwhip/member/1598" dept="International Development Committee" position="" fromdate="2005-07-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3426" name="Quentin Davies" matchid="uk.org.publicwhip/member/2025" dept="Regulatory Reform Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
@@ -1168,9 +1176,10 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3489" name="Rt Hon John Denham" matchid="uk.org.publicwhip/member/1827" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2991" name="Rt Hon John Denham" matchid="uk.org.publicwhip/member/1827" dept="Home Affairs Committee" position="Chairman" fromdate="2005-11-01" todate="2007-07-20" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3001" name="Rt Hon John Denham" matchid="uk.org.publicwhip/member/1827" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3441" name="Rt Hon John Denham" matchid="uk.org.publicwhip/member/1827" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3441" name="Rt Hon John Denham" matchid="uk.org.publicwhip/member/1827" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2117" name="Rt Hon John Denham" matchid="uk.org.publicwhip/member/851" dept="Home Affairs Committee" position="Chairman" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2177" name="Rt Hon John Denham" matchid="uk.org.publicwhip/member/851" dept="Liaison Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1405" name="John Denham" matchid="uk.org.publicwhip/member/1827" dept="Department for Innovation, Universities and Skills" position="Secretary of State" fromdate="2007-06-28" todate="9999-12-31" source="chgpages/govposts"></moffice>
@@ -1185,9 +1194,10 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3490" name="Andrew Dismore" matchid="uk.org.publicwhip/member/1628" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3002" name="Andrew Dismore" matchid="uk.org.publicwhip/member/1628" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2729" name="Andrew Dismore" matchid="uk.org.publicwhip/member/1628" dept="Human Rights (Joint Committee)" position="" fromdate="2005-07-14" todate="2005-07-20" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3442" name="Andrew Dismore" matchid="uk.org.publicwhip/member/1628" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3442" name="Andrew Dismore" matchid="uk.org.publicwhip/member/1628" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2451" name="Andrew Dismore" matchid="uk.org.publicwhip/member/853" dept="Work and Pensions Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2849" name="Andrew Dismore" matchid="uk.org.publicwhip/member/1628" dept="Standards and Privileges Committee" position="" fromdate="2005-07-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2923" name="Andrew Dismore" matchid="uk.org.publicwhip/member/1628" dept="Human Rights (Joint Committee)" position="Chairman" fromdate="2005-07-20" todate="9999-12-31" source="chgpages/selctee"></moffice>
@@ -1224,11 +1234,12 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3491" name="Frank Doran" matchid="uk.org.publicwhip/member/1955" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3003" name="Frank Doran" matchid="uk.org.publicwhip/member/1955" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2602" name="Frank Doran" matchid="uk.org.publicwhip/member/1955" dept="Administration Committee" position="" fromdate="2005-07-14" todate="2005-07-20" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2906" name="Frank Doran" matchid="uk.org.publicwhip/member/1955" dept="Administration Committee" position="Chairman" fromdate="2005-07-20" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3077" name="Frank Doran" matchid="uk.org.publicwhip/member/1955" dept="Advisory Committee on Works of Art" position="" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3443" name="Frank Doran" matchid="uk.org.publicwhip/member/1955" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3443" name="Frank Doran" matchid="uk.org.publicwhip/member/1955" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2915" name="Frank Doran" matchid="uk.org.publicwhip/member/1955" dept="Finance &amp; Services Committee" position="" fromdate="2005-07-20" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1958" name="Frank Doran" matchid="uk.org.publicwhip/member/861" dept="Culture, Media &amp; Sport Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
@@ -1251,8 +1262,9 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3492" name="Gwyneth Dunwoody" matchid="uk.org.publicwhip/member/1520" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3004" name="Gwyneth Dunwoody" matchid="uk.org.publicwhip/member/1520" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3444" name="Gwyneth Dunwoody" matchid="uk.org.publicwhip/member/1520" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3444" name="Gwyneth Dunwoody" matchid="uk.org.publicwhip/member/1520" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2474" name="Gwyneth Dunwoody" matchid="uk.org.publicwhip/member/870" dept="Ecclesiastical Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3055" name="Gwyneth Dunwoody" matchid="uk.org.publicwhip/member/1520" dept="Transport Committee" position="Chairman" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2178" name="Gwyneth Dunwoody" matchid="uk.org.publicwhip/member/870" dept="Liaison Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
@@ -1427,9 +1439,10 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3494" name="Mike Gapes" matchid="uk.org.publicwhip/member/1652" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3007" name="Mike Gapes" matchid="uk.org.publicwhip/member/1652" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2689" name="Mike Gapes" matchid="uk.org.publicwhip/member/1652" dept="Foreign Affairs Committee" position="" fromdate="2005-07-14" todate="2005-07-20" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3446" name="Mike Gapes" matchid="uk.org.publicwhip/member/1652" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3446" name="Mike Gapes" matchid="uk.org.publicwhip/member/1652" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2921" name="Mike Gapes" matchid="uk.org.publicwhip/member/1652" dept="Foreign Affairs Committee" position="Chairman" fromdate="2005-07-20" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1971" name="Mike Gapes" matchid="uk.org.publicwhip/member/904" dept="Defence Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
@@ -1657,6 +1670,7 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3514" name="Stephen Hesford" matchid="uk.org.publicwhip/member/1931" dept="Regulatory Reform Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3244" name="Stephen Hesford" matchid="uk.org.publicwhip/member/1931" dept="Draft Legal ServicesBill (Joint Committee)" position="" fromdate="2006-08-03" todate="2007-04-27" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3427" name="Stephen Hesford" matchid="uk.org.publicwhip/member/1931" dept="Regulatory Reform Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2020" name="Stephen Hesford" matchid="uk.org.publicwhip/member/959" dept="Draft Mental Incapacity Bill (Joint Committee)" position="" fromdate="2004-05-28" todate="2004-06-11" source="chgpages/selctee"></moffice>
@@ -1707,10 +1721,11 @@
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/3345" name="Jim Hood" matchid="uk.org.publicwhip/member/1998" dept="Liaison Committee" position="" fromdate="2007-05-23" todate="2007-11-09" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3495" name="Jim Hood" matchid="uk.org.publicwhip/member/1998" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3008" name="Jimmy Hood" matchid="uk.org.publicwhip/member/1998" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-05-23" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2574" name="Jimmy Hood" matchid="uk.org.publicwhip/member/1998" dept="European Scrutiny Committee" position="" fromdate="2005-06-29" todate="2005-07-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2688" name="Jimmy Hood" matchid="uk.org.publicwhip/member/1998" dept="European Scrutiny Committee" position="Chairman" fromdate="2005-07-14" todate="2006-10-19" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3447" name="Jim Hood" matchid="uk.org.publicwhip/member/1998" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3447" name="Jim Hood" matchid="uk.org.publicwhip/member/1998" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3344" name="Jim Hood" matchid="uk.org.publicwhip/member/1998" dept="Chairmen's Panel Committee" position="" fromdate="2007-05-23" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3277" name="Jimmy Hood" matchid="uk.org.publicwhip/member/1998" dept="European Scrutiny Committee" position="" fromdate="2006-10-19" todate="2007-04-26" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2968" name="Jimmy Hood" matchid="uk.org.publicwhip/member/1998" dept="Chairmen's Panel Committee" position="" fromdate="2005-11-01" todate="2007-05-23" source="chgpages/selctee"></moffice>
@@ -1858,8 +1873,9 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3496" name="Rt Hon Michael Jack" matchid="uk.org.publicwhip/member/1590" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3009" name="Rt Hon Michael Jack" matchid="uk.org.publicwhip/member/1590" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3448" name="Rt Hon Michael Jack" matchid="uk.org.publicwhip/member/1590" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3448" name="Rt Hon Michael Jack" matchid="uk.org.publicwhip/member/1590" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2986" name="Rt Hon Michael Jack" matchid="uk.org.publicwhip/member/1590" dept="Environment, Food and Rural Affairs Committee" position="Chairman" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2035" name="Rt Hon Michael Jack" matchid="uk.org.publicwhip/member/991" dept="Environment, Food and Rural Affairs Committee" position="Chairman" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2183" name="Rt Hon Michael Jack" matchid="uk.org.publicwhip/member/991" dept="Liaison Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
@@ -1891,7 +1907,7 @@
 <moffice id="uk.org.publicwhip/moffice/2644" name="Brian Jenkins" matchid="uk.org.publicwhip/member/1867" dept="Defence Committee" position="" fromdate="2005-07-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3065" name="Brian Jenkins" matchid="uk.org.publicwhip/member/1867" dept="Unopposed Bills (Panel) Committee" position="" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2426" name="Brian Jenkins" matchid="uk.org.publicwhip/member/997" dept="Unopposed Bills (Panel) Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/2851" name="Brian Jenkins" matchid="uk.org.publicwhip/member/1867" dept="Standards and Privileges Committee" position="" fromdate="2005-07-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2851" name="Brian Jenkins" matchid="uk.org.publicwhip/member/1867" dept="Standards and Privileges Committee" position="" fromdate="2005-07-14" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2272" name="Brian Jenkins" matchid="uk.org.publicwhip/member/997" dept="Public Accounts Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2348" name="Brian Jenkins" matchid="uk.org.publicwhip/member/997" dept="Standing Orders Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
@@ -2108,10 +2124,11 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3498" name="Edward Leigh" matchid="uk.org.publicwhip/member/1591" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3029" name="Edward Leigh" matchid="uk.org.publicwhip/member/1591" dept="Public Accounts Committee" position="Chairman" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2795" name="Edward Leigh" matchid="uk.org.publicwhip/member/1591" dept="Public Accounts Committee" position="" fromdate="2005-07-14" todate="2005-11-01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3010" name="Edward Leigh" matchid="uk.org.publicwhip/member/1591" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3450" name="Edward Leigh" matchid="uk.org.publicwhip/member/1591" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3450" name="Edward Leigh" matchid="uk.org.publicwhip/member/1591" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2187" name="Edward Leigh" matchid="uk.org.publicwhip/member/1039" dept="Liaison Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2263" name="Edward Leigh" matchid="uk.org.publicwhip/member/1039" dept="Public Accounts Committee" position="Chairman" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
@@ -2194,11 +2211,13 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3499" name="Peter Luff" matchid="uk.org.publicwhip/member/1940" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3011" name="Peter Luff" matchid="uk.org.publicwhip/member/1940" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2609" name="Peter Luff" matchid="uk.org.publicwhip/member/1940" dept="Administration Committee" position="" fromdate="2005-07-14" todate="2006-05-16" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3451" name="Peter Luff" matchid="uk.org.publicwhip/member/1940" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3451" name="Peter Luff" matchid="uk.org.publicwhip/member/1940" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3467" name="Peter Luff" matchid="uk.org.publicwhip/member/1940" dept="Business, Enterprise and Regulatory Reform Committee" position="Chairman" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3053" name="Peter Luff" matchid="uk.org.publicwhip/member/1940" dept="Trade &amp; Industry Committee" position="Chairman" fromdate="2005-11-01" todate="2007-11-07" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3366" name="Peter Luff" matchid="uk.org.publicwhip/member/1940" dept="Business, Enterprise and Regulatory Reform Committee" position="" fromdate="2007-11-07" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3366" name="Peter Luff" matchid="uk.org.publicwhip/member/1940" dept="Business, Enterprise and Regulatory Reform Committee" position="" fromdate="2007-11-07" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2862" name="Peter Luff" matchid="uk.org.publicwhip/member/1940" dept="Trade &amp; Industry Committee" position="" fromdate="2005-07-14" todate="2005-11-01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2149" name="Peter Luff" matchid="uk.org.publicwhip/member/1058" dept="Information Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2332" name="Peter Luff" matchid="uk.org.publicwhip/member/1058" dept="Selection Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
@@ -2257,11 +2276,12 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3500" name="Rt Hon John McFall" matchid="uk.org.publicwhip/member/1972" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3012" name="Rt Hon John McFall" matchid="uk.org.publicwhip/member/1972" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2519" name="Rt Hon John McFall" matchid="uk.org.publicwhip/member/1069" dept="Liaison Committee" position="" fromdate="2004-06-14" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2521" name="Rt Hon John McFall" matchid="uk.org.publicwhip/member/1069" dept="Treasury Committee" position="Chairman" fromdate="2004-06-14" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2522" name="Rt Hon John McFall" matchid="uk.org.publicwhip/member/1069" dept="Treasury Sub-committee Committee" position="" fromdate="2004-06-14" todate="2005-04-11" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3452" name="Rt Hon John McFall" matchid="uk.org.publicwhip/member/1972" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3452" name="Rt Hon John McFall" matchid="uk.org.publicwhip/member/1972" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2414" name="John McFall" matchid="uk.org.publicwhip/member/1069" dept="Treasury Sub-committee Committee" position="" fromdate="2004-05-28" todate="2004-06-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3056" name="Rt Hon John McFall" matchid="uk.org.publicwhip/member/1972" dept="Treasury Committee" position="Chairman" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2881" name="Rt Hon John McFall" matchid="uk.org.publicwhip/member/1972" dept="Treasury Committee" position="" fromdate="2005-07-14" todate="2005-11-01" source="chgpages/selctee"></moffice>
@@ -2306,10 +2326,11 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3501" name="Rosemary McKenna" matchid="uk.org.publicwhip/member/1968" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2792" name="Rosemary McKenna" matchid="uk.org.publicwhip/member/1968" dept="Procedure Committee" position="" fromdate="2005-07-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3013" name="Rosemary McKenna" matchid="uk.org.publicwhip/member/1968" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2629" name="Rosemary McKenna" matchid="uk.org.publicwhip/member/1968" dept="Culture, Media &amp; Sport Committee" position="" fromdate="2005-07-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3453" name="Rosemary McKenna" matchid="uk.org.publicwhip/member/1968" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3453" name="Rosemary McKenna" matchid="uk.org.publicwhip/member/1968" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3033" name="Rosemary McKenna" matchid="uk.org.publicwhip/member/1968" dept="Selection Committee" position="Chairman" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2258" name="Rosemary McKenna" matchid="uk.org.publicwhip/member/1077" dept="Procedure Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1963" name="Rosemary McKenna" matchid="uk.org.publicwhip/member/1077" dept="Culture, Media &amp; Sport Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
@@ -2322,12 +2343,13 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3502" name="Rt Hon David Maclean" matchid="uk.org.publicwhip/member/1758" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3236" name="Rt Hon David Maclean" matchid="uk.org.publicwhip/member/1758" dept="Statutory Instruments (Joint Committee)" position="Chairman" fromdate="2006-07-26" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3208" name="Rt Hon David Maclean" matchid="uk.org.publicwhip/member/1758" dept="Statutory Instruments (Joint Committee)" position="" fromdate="2006-06-14" todate="2006-07-26" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3257" name="Rt Hon David Maclean" matchid="uk.org.publicwhip/member/1758" dept="Statutory Instruments (Select Committee)" position="Chairman" fromdate="2006-08-03" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3310" name="Rt Hon David Maclean" matchid="uk.org.publicwhip/member/1758" dept="Members Estimates Committee" position="" fromdate="2007-03-20" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3249" name="Rt Hon David Maclean" matchid="uk.org.publicwhip/member/1758" dept="Liaison Committee" position="" fromdate="2006-08-03" todate="2007-11-09" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3454" name="Rt Hon David Maclean" matchid="uk.org.publicwhip/member/1758" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3454" name="Rt Hon David Maclean" matchid="uk.org.publicwhip/member/1758" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -2382,6 +2404,7 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3473" name="Humfrey Malins" matchid="uk.org.publicwhip/member/1933" dept="Justice Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3267" name="Humfrey Malins" matchid="uk.org.publicwhip/member/1933" dept="Speaker's Committee" position="" fromdate="2006-10-04" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3094" name="Humfrey Malins" matchid="uk.org.publicwhip/member/1933" dept="Speaker's Committee on the Electoral Commission" position="" fromdate="2005-11-01" todate="2006-10-04" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3412" name="Humfrey Malins" matchid="uk.org.publicwhip/member/1933" dept="Justice Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
@@ -2482,6 +2505,7 @@ and Leader of the House of Lords" fromdate="2007-06-28" todate="2007-07-16" sour
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3474" name="Rt Hon Alun Michael" matchid="uk.org.publicwhip/member/1482" dept="Justice Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3433" name="Rt Hon Alun Michael" matchid="uk.org.publicwhip/member/1482" dept="Welsh Affairs Committee" position="" fromdate="2007-11-07" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3413" name="Rt Hon Alun Michael" matchid="uk.org.publicwhip/member/1482" dept="Justice Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/436" name="Alun Michael" matchid="uk.org.publicwhip/member/431" dept="Welsh Office" position="Secretary of State" fromdate="1998-10-27" todate="1999-07-28" source="newlabministers2003-10-15"></moffice>
@@ -2501,9 +2525,10 @@ and Leader of the House of Lords" fromdate="2007-06-28" todate="2007-07-16" sour
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3503" name="Andrew Miller" matchid="uk.org.publicwhip/member/1569" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3014" name="Andrew Miller" matchid="uk.org.publicwhip/member/1569" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3201" name="Andrew Miller" matchid="uk.org.publicwhip/member/1569" dept="Conventions (Joint Committee)" position="" fromdate="2006-06-13" todate="9999-12-31" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3455" name="Andrew Miller" matchid="uk.org.publicwhip/member/1569" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3455" name="Andrew Miller" matchid="uk.org.publicwhip/member/1569" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2827" name="Andrew Miller" matchid="uk.org.publicwhip/member/1569" dept="Regulatory Reform Committee" position="" fromdate="2005-07-14" todate="2005-07-20" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2928" name="Andrew Miller" matchid="uk.org.publicwhip/member/1569" dept="Regulatory Reform Committee" position="Chairman" fromdate="2005-07-20" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1550" name="Andrew Miller" matchid="uk.org.publicwhip/member/1114" dept="Department of Trade and Industry" position="PPS" responsibility="Team PPS" fromdate="2004-05-13" todate="2005-04-11" source="chgpages/privsec"></moffice>
@@ -2541,6 +2566,7 @@ and Leader of the House of Lords" fromdate="2007-06-28" todate="2007-07-16" sour
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3476" name="Julie Morgan" matchid="uk.org.publicwhip/member/1481" dept="Justice Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2619" name="Julie Morgan" matchid="uk.org.publicwhip/member/1481" dept="Constitutional Affairs Committee" position="" fromdate="2005-07-14" todate="2007-11-07" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3415" name="Julie Morgan" matchid="uk.org.publicwhip/member/1481" dept="Justice Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2441" name="Julie Morgan" matchid="uk.org.publicwhip/member/1121" dept="Welsh Affairs Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
@@ -2700,6 +2726,7 @@ and Leader of the House of Lords" fromdate="2007-06-28" todate="2007-07-16" sour
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3478" name="Dr Nick Palmer" matchid="uk.org.publicwhip/member/1462" dept="Justice Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3417" name="Dr Nick Palmer" matchid="uk.org.publicwhip/member/1462" dept="Justice Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1640" name="Dr Nick Palmer" matchid="uk.org.publicwhip/member/1462" dept="Department of Trade and Industry" position="PPS" responsibility="Malcolm Wicks, Minister of State" fromdate="2005-11-10" todate="2007-06-28" source="chgpages/privsec"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1735" name="Dr Nick Palmer" matchid="uk.org.publicwhip/member/1462" dept="Department for Business, Enterprise &amp; Regulatory Reform" position="PPS" responsibility="Malcolm Wicks, Minister of State" fromdate="2007-06-28" todate="9999-12-31" source="chgpages/privsec"></moffice>
@@ -2921,8 +2948,9 @@ and Leader of the House of Lords" fromdate="2007-06-28" todate="2007-07-16" sour
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3504" name="Terry Rooney" matchid="uk.org.publicwhip/member/1440" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3015" name="Terry Rooney" matchid="uk.org.publicwhip/member/1440" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3456" name="Terry Rooney" matchid="uk.org.publicwhip/member/1440" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3456" name="Terry Rooney" matchid="uk.org.publicwhip/member/1440" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2951" name="Terry Rooney" matchid="uk.org.publicwhip/member/1440" dept="Work and Pensions Committee" position="Chairman" fromdate="2005-07-20" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2904" name="Terry Rooney" matchid="uk.org.publicwhip/member/1440" dept="Work and Pensions Committee" position="" fromdate="2005-07-14" todate="2005-11-01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2136" name="Terry Rooney" matchid="uk.org.publicwhip/member/1198" dept="House of Lords Reform (Joint Committee)" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
@@ -3001,8 +3029,9 @@ and Leader of the House of Lords" fromdate="2007-06-28" todate="2007-07-16" sour
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3505" name="Mohammad Sarwar" matchid="uk.org.publicwhip/member/1985" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3016" name="Mohammad Sarwar" matchid="uk.org.publicwhip/member/1985" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3457" name="Mohammad Sarwar" matchid="uk.org.publicwhip/member/1985" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3457" name="Mohammad Sarwar" matchid="uk.org.publicwhip/member/1985" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2843" name="Mohammad Sarwar" matchid="uk.org.publicwhip/member/1985" dept="Scottish Affairs Committee" position="" fromdate="2005-07-14" todate="2005-11-01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3032" name="Mohammad Sarwar" matchid="uk.org.publicwhip/member/1985" dept="Scottish Affairs Committee" position="Chairman" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2326" name="Mohammad Sarwar" matchid="uk.org.publicwhip/member/1211" dept="Scottish Affairs Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
@@ -3026,10 +3055,12 @@ and Leader of the House of Lords" fromdate="2007-06-28" todate="2007-07-16" sour
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3506" name="Barry Sheerman" matchid="uk.org.publicwhip/member/1645" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3017" name="Barry Sheerman" matchid="uk.org.publicwhip/member/1645" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2649" name="Barry Sheerman" matchid="uk.org.publicwhip/member/1645" dept="Education &amp; Skills Committee" position="" fromdate="2005-07-14" todate="2005-07-20" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3458" name="Barry Sheerman" matchid="uk.org.publicwhip/member/1645" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3379" name="Barry Sheerman" matchid="uk.org.publicwhip/member/1645" dept="Children, Schools and Families Committee" position="" fromdate="2007-11-07" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3458" name="Barry Sheerman" matchid="uk.org.publicwhip/member/1645" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3379" name="Barry Sheerman" matchid="uk.org.publicwhip/member/1645" dept="Children, Schools and Families Committee" position="" fromdate="2007-11-07" todate="2007-11-14" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3468" name="Barry Sheerman" matchid="uk.org.publicwhip/member/1645" dept="Children, Schools and Families Committee" position="Chairman" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2908" name="Barry Sheerman" matchid="uk.org.publicwhip/member/1645" dept="Education &amp; Skills Committee" position="Chairman" fromdate="2005-07-20" todate="2007-11-07" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2024" name="Barry Sheerman" matchid="uk.org.publicwhip/member/1218" dept="Education &amp; Skills Committee" position="Chairman" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2195" name="Barry Sheerman" matchid="uk.org.publicwhip/member/1218" dept="Liaison Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
@@ -3162,11 +3193,12 @@ and Leader of the House of Lords" fromdate="2007-06-28" todate="2007-07-16" sour
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3507" name="Dr Phyllis Starkey" matchid="uk.org.publicwhip/member/1716" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2781" name="Dr Phyllis Starkey" matchid="uk.org.publicwhip/member/1716" dept="Office of the Deputy Prime Minister: Housing, Planning, Local Government and the Regions Committee" position="" fromdate="2005-07-14" todate="2005-07-20" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3210" name="Dr Phyllis Starkey" matchid="uk.org.publicwhip/member/1716" dept="Communities and Local Government Committee" position="Chairman" fromdate="2006-06-28" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3018" name="Dr Phyllis Starkey" matchid="uk.org.publicwhip/member/1716" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2925" name="Dr Phyllis Starkey" matchid="uk.org.publicwhip/member/1716" dept="Office of the Deputy Prime Minister: Housing, Planning, Local Government and the Regions Committee" position="Chairman" fromdate="2005-07-20" todate="2006-06-28" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3459" name="Dr Phyllis Starkey" matchid="uk.org.publicwhip/member/1716" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3459" name="Dr Phyllis Starkey" matchid="uk.org.publicwhip/member/1716" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1524" name="Dr Phyllis Starkey" matchid="uk.org.publicwhip/member/1249" dept="Foreign &amp; Commonwealth Office" position="PPS" responsibility="Dr Denis MacShane, Minister of State" fromdate="2004-05-13" todate="2005-04-11" source="chgpages/privsec"></moffice>
 </ministerofficegroup>
 
@@ -3332,6 +3364,7 @@ and Leader of the House of Lords" fromdate="2007-06-28" todate="2007-07-16" sour
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/3386" name="Paddy Tipping" matchid="uk.org.publicwhip/member/1815" dept="Environment, Food and Rural Affairs Committee" position="" fromdate="2007-11-07" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3516" name="Paddy Tipping" matchid="uk.org.publicwhip/member/1815" dept="Standards and Privileges Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3187" name="Paddy Tipping" matchid="uk.org.publicwhip/member/1815" dept="Modernisation of the House of Commons Committee" position="" fromdate="2006-05-16" todate="2007-07-27" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2051" name="Paddy Tipping" matchid="uk.org.publicwhip/member/1282" dept="Environment, Food and Rural Affairs Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1613" name="Paddy Tipping" matchid="uk.org.publicwhip/member/1815" dept="Foreign &amp; Commonwealth Office" position="PPS" responsibility="Rt Hon Jack Straw, Secretary of State" fromdate="2005-11-10" todate="2006-05-08" source="chgpages/privsec"></moffice>
@@ -3412,6 +3445,7 @@ and Leader of the House of Lords" fromdate="2007-06-28" todate="2007-07-16" sour
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3480" name="Andrew Tyrie" matchid="uk.org.publicwhip/member/1498" dept="Justice Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3204" name="Andrew Tyrie" matchid="uk.org.publicwhip/member/1498" dept="Conventions (Joint Committee)" position="" fromdate="2006-06-13" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2620" name="Andrew Tyrie" matchid="uk.org.publicwhip/member/1498" dept="Constitutional Affairs Committee" position="" fromdate="2005-07-14" todate="2007-11-07" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3419" name="Andrew Tyrie" matchid="uk.org.publicwhip/member/1498" dept="Justice Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
@@ -3475,6 +3509,7 @@ and Leader of the House of Lords" fromdate="2007-06-28" todate="2007-07-16" sour
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3481" name="Dr Alan Whitehead" matchid="uk.org.publicwhip/member/1828" dept="Justice Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2622" name="Dr Alan Whitehead" matchid="uk.org.publicwhip/member/1828" dept="Constitutional Affairs Committee" position="" fromdate="2005-07-14" todate="2007-11-07" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3420" name="Dr Alan Whitehead" matchid="uk.org.publicwhip/member/1828" dept="Justice Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3331" name="Dr Alan Whitehead" matchid="uk.org.publicwhip/member/1828" dept="Draft Climate Change Bill (Joint Committee)" position="" fromdate="2007-04-27" todate="9999-12-31" source="chgpages/selctee"></moffice>
@@ -3484,9 +3519,10 @@ and Leader of the House of Lords" fromdate="2007-06-28" todate="2007-07-16" sour
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3508" name="John Whittingdale" matchid="uk.org.publicwhip/member/1703" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3019" name="John Whittingdale" matchid="uk.org.publicwhip/member/1703" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2633" name="John Whittingdale" matchid="uk.org.publicwhip/member/1703" dept="Culture, Media &amp; Sport Committee" position="" fromdate="2005-07-14" todate="2005-11-01" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3460" name="John Whittingdale" matchid="uk.org.publicwhip/member/1703" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3460" name="John Whittingdale" matchid="uk.org.publicwhip/member/1703" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2984" name="John Whittingdale" matchid="uk.org.publicwhip/member/1703" dept="Culture, Media &amp; Sport Committee" position="Chairman" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
@@ -3508,8 +3544,9 @@ and Leader of the House of Lords" fromdate="2007-06-28" todate="2007-07-16" sour
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3482" name="Rt Hon Alan Williams" matchid="uk.org.publicwhip/member/1864" dept="Liaison Committee" position="Chairman" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2993" name="Rt Hon Alan Williams" matchid="uk.org.publicwhip/member/1864" dept="Liaison Committee" position="Chairman" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3435" name="Rt Hon Alan Williams" matchid="uk.org.publicwhip/member/1864" dept="Justice Committee" position="Chairman" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3435" name="Rt Hon Alan Williams" matchid="uk.org.publicwhip/member/1864" dept="Justice Committee" position="Chairman" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2808" name="Rt Hon Alan Williams" matchid="uk.org.publicwhip/member/1864" dept="Public Accounts Committee" position="" fromdate="2005-07-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2166" name="Rt Hon Alan Williams" matchid="uk.org.publicwhip/member/1321" dept="Liaison Committee" position="Chairman" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2278" name="Rt Hon Alan Williams" matchid="uk.org.publicwhip/member/1321" dept="Public Accounts Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
@@ -3521,10 +3558,11 @@ and Leader of the House of Lords" fromdate="2007-06-28" todate="2007-07-16" sour
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3509" name="Phil Willis" matchid="uk.org.publicwhip/member/1617" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3343" name="Phil Willis" matchid="uk.org.publicwhip/member/1617" dept="Draft Human Tissue and Embryos Bill (Joint Committee)" position="Chairman" fromdate="2007-05-18" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3020" name="Phil Willis" matchid="uk.org.publicwhip/member/1617" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3404" name="Phil Willis" matchid="uk.org.publicwhip/member/1617" dept="Innovation, Universities and Skills Committee" position="" fromdate="2007-11-07" todate="9999-12-31" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3461" name="Phil Willis" matchid="uk.org.publicwhip/member/1617" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3461" name="Phil Willis" matchid="uk.org.publicwhip/member/1617" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2939" name="Phil Willis" matchid="uk.org.publicwhip/member/1617" dept="Science and Technology Committee" position="" fromdate="2005-07-20" todate="2005-11-01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3342" name="Phil Willis" matchid="uk.org.publicwhip/member/1617" dept="Draft Human Tissue and Embryos Bill (Joint Committee)" position="" fromdate="2007-05-14" todate="2007-05-18" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3031" name="Phil Willis" matchid="uk.org.publicwhip/member/1617" dept="Science and Technology Committee" position="Chairman" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
@@ -3616,9 +3654,10 @@ and Leader of the House of Lords" fromdate="2007-06-28" todate="2007-07-16" sour
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3510" name="Dr Tony Wright" matchid="uk.org.publicwhip/member/1478" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3030" name="Dr Tony Wright" matchid="uk.org.publicwhip/member/1478" dept="Public Administration Committee" position="Chairman" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3022" name="Dr Tony Wright" matchid="uk.org.publicwhip/member/1478" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3462" name="Dr Tony Wright" matchid="uk.org.publicwhip/member/1478" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3462" name="Dr Tony Wright" matchid="uk.org.publicwhip/member/1478" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2810" name="Dr Tony Wright" matchid="uk.org.publicwhip/member/1478" dept="Public Administration Committee" position="" fromdate="2005-07-14" todate="2005-11-01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2199" name="Dr Tony Wright" matchid="uk.org.publicwhip/member/1341" dept="Liaison Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2279" name="Dr Tony Wright" matchid="uk.org.publicwhip/member/1341" dept="Public Administration Committee" position="Chairman" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
@@ -3634,16 +3673,18 @@ and Leader of the House of Lords" fromdate="2007-06-28" todate="2007-07-16" sour
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3511" name="Tim Yeo" matchid="uk.org.publicwhip/member/1853" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2634" name="Tim Yeo" matchid="uk.org.publicwhip/member/1853" dept="Culture, Media &amp; Sport Committee" position="" fromdate="2005-07-14" todate="2006-03-03" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3250" name="Tim Yeo" matchid="uk.org.publicwhip/member/1853" dept="Liaison Committee" position="" fromdate="2006-08-03" todate="2007-11-09" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3463" name="Tim Yeo" matchid="uk.org.publicwhip/member/1853" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3463" name="Tim Yeo" matchid="uk.org.publicwhip/member/1853" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3247" name="Tim Yeo" matchid="uk.org.publicwhip/member/1853" dept="Environmental Audit Committee" position="Chairman" fromdate="2006-08-03" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3332" name="Tim Yeo" matchid="uk.org.publicwhip/member/1853" dept="Draft Climate Change Bill (Joint Committee)" position="" fromdate="2007-04-27" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3512" name="Rt Hon Sir George Young" matchid="uk.org.publicwhip/member/1613" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3023" name="Rt Hon Sir George Young" matchid="uk.org.publicwhip/member/1613" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3464" name="Rt Hon Sir George Young" matchid="uk.org.publicwhip/member/1613" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3464" name="Rt Hon Sir George Young" matchid="uk.org.publicwhip/member/1613" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3042" name="Rt Hon Sir George Young" matchid="uk.org.publicwhip/member/1613" dept="Standards and Privileges Committee" position="Chairman" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2855" name="Sir George Young" matchid="uk.org.publicwhip/member/1613" dept="Standards and Privileges Committee" position="" fromdate="2005-07-14" todate="2005-11-01" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3041" name="Rt Hon Sir George Young" matchid="uk.org.publicwhip/member/1613" dept="Selection Committee" position="" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
@@ -3934,9 +3975,10 @@ Hon Harriet Harman QC (as Leader of the Commons)" fromdate="2007-06-28" todate="
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3493" name="Dr Hywel Francis" matchid="uk.org.publicwhip/member/1368" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3006" name="Dr Hywel Francis" matchid="uk.org.publicwhip/member/1368" dept="Liaison Committee" position="" fromdate="2005-11-01" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3074" name="Dr Hywel Francis" matchid="uk.org.publicwhip/member/1368" dept="Welsh Affairs Committee" position="Chairman" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3445" name="Dr Hywel Francis" matchid="uk.org.publicwhip/member/1368" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3445" name="Dr Hywel Francis" matchid="uk.org.publicwhip/member/1368" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2440" name="Dr Hywel Francis" matchid="uk.org.publicwhip/member/900" dept="Welsh Affairs Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2943" name="Dr Hywel Francis" matchid="uk.org.publicwhip/member/1368" dept="Welsh Affairs Committee" position="" fromdate="2005-07-20" todate="2005-11-01" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
@@ -4008,11 +4050,12 @@ Hon Harriet Harman QC (as Leader of the Commons)" fromdate="2007-06-28" todate="
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3497" name="Rt Hon Greg Knight" matchid="uk.org.publicwhip/member/1954" dept="Liaison Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2751" name="Rt Hon Greg Knight" matchid="uk.org.publicwhip/member/1954" dept="Modernisation of the House of Commons Committee" position="" fromdate="2005-07-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2791" name="Rt Hon Greg Knight" matchid="uk.org.publicwhip/member/1954" dept="Procedure Committee" position="" fromdate="2005-07-14" todate="2006-08-03" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3251" name="Rt Hon Greg Knight" matchid="uk.org.publicwhip/member/1954" dept="Procedure Committee" position="Chairman" fromdate="2006-08-03" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3248" name="Rt Hon Greg Knight" matchid="uk.org.publicwhip/member/1954" dept="Liaison Committee" position="" fromdate="2006-08-03" todate="2007-11-09" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3449" name="Rt Hon Greg Knight" matchid="uk.org.publicwhip/member/1954" dept="Justice Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3449" name="Rt Hon Greg Knight" matchid="uk.org.publicwhip/member/1954" dept="Justice Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3185" name="Rt Hon Greg Knight" matchid="uk.org.publicwhip/member/1954" dept="Administration Committee" position="" fromdate="2006-05-16" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
@@ -4453,6 +4496,7 @@ Hon Harriet Harman QC (as Leader of the Commons)" fromdate="2007-06-28" todate="
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3470" name="David Howarth" matchid="uk.org.publicwhip/member/1473" dept="Justice Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2615" name="David Howarth" matchid="uk.org.publicwhip/member/1473" dept="Constitutional Affairs Committee" position="" fromdate="2005-07-14" todate="2007-11-07" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2680" name="David Howarth" matchid="uk.org.publicwhip/member/1473" dept="Environmental Audit Committee" position="" fromdate="2005-07-14" todate="2007-07-13" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3409" name="David Howarth" matchid="uk.org.publicwhip/member/1473" dept="Justice Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
@@ -4678,6 +4722,7 @@ Hon Harriet Harman QC (as Leader of the Commons)" fromdate="2007-06-28" todate="
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3469" name="Rosie Cooper" matchid="uk.org.publicwhip/member/1667" dept="Justice Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2762" name="Rosie Cooper" matchid="uk.org.publicwhip/member/1667" dept="Northern Ireland Affairs Committee" position="" fromdate="2005-07-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2579" name="Rosie Cooper" matchid="uk.org.publicwhip/member/1667" dept="European Scrutiny Committee" position="" fromdate="2005-06-29" todate="2005-12-13" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3408" name="Rosie Cooper" matchid="uk.org.publicwhip/member/1667" dept="Justice Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
@@ -4738,6 +4783,7 @@ Hon Harriet Harman QC (as Leader of the Commons)" fromdate="2007-06-28" todate="
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/3113" name="Jessica Morden" matchid="uk.org.publicwhip/member/1732" dept="Welsh Affairs Committee" position="" fromdate="2005-11-22" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3475" name="Jessica Morden" matchid="uk.org.publicwhip/member/1732" dept="Justice Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2753" name="Jessica Morden" matchid="uk.org.publicwhip/member/1732" dept="Modernisation of the House of Commons Committee" position="" fromdate="2005-07-14" todate="2006-01-18" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2618" name="Jessica Morden" matchid="uk.org.publicwhip/member/1732" dept="Constitutional Affairs Committee" position="" fromdate="2005-07-14" todate="2007-11-07" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3414" name="Jessica Morden" matchid="uk.org.publicwhip/member/1732" dept="Justice Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
@@ -4766,7 +4812,7 @@ Hon Harriet Harman QC (as Leader of the Commons)" fromdate="2007-06-28" todate="
 </ministerofficegroup>
 
 <ministerofficegroup>
-<moffice id="uk.org.publicwhip/moffice/3465" name="Alison Seabeck" matchid="uk.org.publicwhip/member/1760" dept="Regulatory Reform Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3465" name="Alison Seabeck" matchid="uk.org.publicwhip/member/1760" dept="Regulatory Reform Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2780" name="Alison Seabeck" matchid="uk.org.publicwhip/member/1760" dept="Office of the Deputy Prime Minister: Housing, Planning, Local Government and the Regions Committee" position="" fromdate="2005-07-14" todate="2006-06-28" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3220" name="Alison Seabeck" matchid="uk.org.publicwhip/member/1760" dept="Communities and Local Government Committee" position="" fromdate="2006-06-28" todate="2006-10-24" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2831" name="Alison Seabeck" matchid="uk.org.publicwhip/member/1760" dept="Regulatory Reform Committee" position="" fromdate="2005-07-14" todate="2007-11-07" source="chgpages/selctee"></moffice>
@@ -4845,7 +4891,7 @@ and Chief Whip" fromdate="2007-06-28" todate="2007-07-16" source="chgpages/privs
 </ministerofficegroup>
 
 <ministerofficegroup>
-<moffice id="uk.org.publicwhip/moffice/3466" name="Ms Angela Smith" matchid="uk.org.publicwhip/member/1814" dept="Regulatory Reform Committee" position="" fromdate="2007-11-09" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3466" name="Ms Angela Smith" matchid="uk.org.publicwhip/member/1814" dept="Regulatory Reform Committee" position="" fromdate="2007-11-09" todate="2007-11-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2833" name="Ms Angela C. Smith" matchid="uk.org.publicwhip/member/1814" dept="Regulatory Reform Committee" position="" fromdate="2005-07-14" todate="2007-11-07" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1605" name="Ms Angela C. Smith" matchid="uk.org.publicwhip/member/1814" dept="Office of the Deputy Prime Minister" position="PPS" responsibility="Yvette Cooper, Minister of State" fromdate="2005-11-10" todate="2006-05-08" source="chgpages/privsec"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1657" name="Ms Angela C. Smith" matchid="uk.org.publicwhip/member/1814" dept="Department for Communities and Local Government" position="PPS" responsibility="Yvette Cooper, Minister of State" fromdate="2006-05-08" todate="2007-10-11" source="chgpages/privsec"></moffice>
@@ -4858,6 +4904,7 @@ and Chief Whip" fromdate="2007-06-28" todate="2007-07-16" source="chgpages/privs
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3472" name="Daniel Kawczynski" matchid="uk.org.publicwhip/member/1817" dept="Justice Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2664" name="Daniel Kawczynski" matchid="uk.org.publicwhip/member/1817" dept="Environment, Food and Rural Affairs Committee" position="" fromdate="2005-07-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3411" name="Daniel Kawczynski" matchid="uk.org.publicwhip/member/1817" dept="Justice Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
@@ -4894,6 +4941,7 @@ and Chief Whip" fromdate="2007-06-28" todate="2007-07-16" source="chgpages/privs
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3471" name="Sian C James" matchid="uk.org.publicwhip/member/1863" dept="Justice Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2790" name="Sian C James" matchid="uk.org.publicwhip/member/1863" dept="Procedure Committee" position="" fromdate="2005-07-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3410" name="Sian C James" matchid="uk.org.publicwhip/member/1863" dept="Justice Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3118" name="Sian C James" matchid="uk.org.publicwhip/member/1863" dept="Crossrail Bill Committee" position="" fromdate="2005-12-06" todate="9999-12-31" source="chgpages/selctee"></moffice>
@@ -5352,6 +5400,7 @@ and Chief Whip" fromdate="2007-06-28" todate="2007-07-16" source="chgpages/privs
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3477" name="Bob Neill" matchid="uk.org.publicwhip/member/2023" dept="Justice Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3416" name="Bob Neill" matchid="uk.org.publicwhip/member/2023" dept="Justice Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3289" name="Bob Neill" matchid="uk.org.publicwhip/member/2023" dept="Constitutional Affairs Committee" position="" fromdate="2006-12-12" todate="2007-11-07" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
@@ -5382,11 +5431,13 @@ and Chief Whip" fromdate="2007-06-28" todate="2007-07-16" source="chgpages/privs
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3515" name="Phil Wilson" matchid="uk.org.publicwhip/member/2026" dept="Regulatory Reform Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3425" name="Phil Wilson" matchid="uk.org.publicwhip/member/2026" dept="Public Accounts Committee" position="" fromdate="2007-11-07" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3428" name="Phil Wilson" matchid="uk.org.publicwhip/member/2026" dept="Regulatory Reform Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3479" name="Virendra Sharma" matchid="uk.org.publicwhip/member/2027" dept="Justice Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3418" name="Virendra Sharma" matchid="uk.org.publicwhip/member/2027" dept="Justice Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3391" name="Virendra Sharma" matchid="uk.org.publicwhip/member/2027" dept="Human Rights (Joint Committee)" position="" fromdate="2007-11-07" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
