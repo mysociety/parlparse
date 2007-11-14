@@ -7328,6 +7328,12 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13725" latestname="Baroness Quin">
     <office id="uk.org.publicwhip/lord/100913" current="yes"/>
 </person>
+<person id="uk.org.publicwhip/person/13940" latestname="Lord Wallace of Tankerness">
+    <office id="uk.org.publicwhip/lord/100966" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/13941" latestname="The Bishop of Carlisle">
+    <office id="uk.org.publicwhip/lord/100965" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/13938" latestname="Baroness Garden of Frognal">
     <office id="uk.org.publicwhip/lord/100964" current="yes"/>
 </person>
@@ -7685,7 +7691,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100476" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13164" latestname="Lord Oliver of Aylmerton">
-    <office id="uk.org.publicwhip/lord/100471" current="yes"/>
+    <office id="uk.org.publicwhip/lord/100471"/>
 </person>
 <person id="uk.org.publicwhip/person/13165" latestname="Baroness O'Cathain">
     <office id="uk.org.publicwhip/lord/100470" current="yes"/>
