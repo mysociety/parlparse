@@ -4899,7 +4899,7 @@ B - bishop
 	title="Lord" lordname="Oliver" lordofname="Aylmerton"
 	county="the County of Norfolk"
 	peeragetype="A" affiliation="XB"
-	fromdate="1986" todate="9999-12-31"
+	fromdate="1986" todate="2007-10-17" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100472"
@@ -9867,6 +9867,22 @@ B - bishop
 />
 -->
 
-<!-- LORD BISHOP OF CARLISLE 2007-11-09 -->
+<lord
+    id="uk.org.publicwhip/lord/100965"
+    house="lords"
+    forenames="Geoffrey Graham"
+    title="Bishop" lordname="" lordofname="Carlisle"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2007-11-08" todate="9999-12-31"
+/>
 
+<lord
+    id="uk.org.publicwhip/lord/100966"
+    house="lords"
+    forenames="James Robert"
+    title="Lord" lordname="Wallace" lordofname="Tankerness"
+    county="Orkney"
+    peeragetype="L" affiliation="Dem"
+    fromdate="2007-11-13" todate="9999-12-31"
+/>
 </publicwhip>
