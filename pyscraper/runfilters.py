@@ -159,7 +159,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 
                 # Lords, big overall replacements
                 if dname == 'lordspages':
-                        text = re.sub('(<h5>)((?:<a name="(.*?)"></a>)*)', r"\2\1", text) # If you can't beat them, ...
+                        text = re.sub('(<h5>)((?:<a name="(.*?)">(?:</a>)?)*)', r"\2\1", text) # If you can't beat them, ...
                         text = re.sub('<columnNum><br />( |\xc2\xa0)<br />', '<br>&nbsp;<br>', text)
                         text = re.sub('<br />( |\xc2\xa0)<br /></columnNum>', '<br>&nbsp;<br>', text)
                         text = re.sub('<b align="center">', '<b>', text)

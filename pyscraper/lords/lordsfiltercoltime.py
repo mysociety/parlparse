@@ -23,10 +23,10 @@ from miscfuncs import IsNotQuiet, TimeProcessing
 # <p></UL>\n<B>29 Jan 2004 : Column 321</B></P>\n<UL>
 # <P>\n</UL><FONT SIZE=3>\n<B>29 Jan 2004 : Column 369</B></P>\n<UL><FONT SIZE=2>
 # <P>\n<FONT SIZE=3>\n<B>29 Jan 2004 : Column 430</B></P>\n<FONT SIZE=2>
-# <P><a name="column_1442"></a><B>1 Apr 2004 : Column 1442</B></P><FONT SIZE=3>
-# <P></UL><a name="column_1519"></a><B>1 Apr 2004 : Column 1519</B></P><UL><FONT SIZE=3>
+# <P><a name="column_1442"><B>1 Apr 2004 : Column 1442</B></P><FONT SIZE=3>
+# <P></UL><a name="column_1519"><B>1 Apr 2004 : Column 1519</B></P><UL><FONT SIZE=3>
 
-regcolmat = '\s*<a name="column_(?:WS|WA)?\d+"></a>\s*<b>[^:<]*:\s*column\s*(?:WS|WA)?\d+\s*</b>'
+regcolmat = '\s*<a name="column_(?:WS|WA)?\d+">(?:</a>)?\s*<b>[^:<]*:\s*column\s*(?:WS|WA)?\d+\s*</b>'
 regcolp = ['(?:<p>|<br>&nbsp;<br>|<br>)', '(?:</p>|<br>&nbsp;<br>|<br>)' ]
 regcolumnum11 = '<p>%s</p>\s*<font size=3>' % regcolmat
 regcolumnum1 = '%s%s%s' % (regcolp[0], regcolmat, regcolp[1])
@@ -45,14 +45,14 @@ regtime1 = '(?:</?p>\s*|<h[45]>|\[|\n)(?:\d+(?:[:\.]\s?\d+)?\.?\s*[ap]\.?m\.?\s*
 regtime2 = '<h5>(?:Noon|Midnight)?\s*(?:</st>)?</h5>' # accounts for blank <h5></h5>
 
 # we'll just lift out this special case to force a time onto it
-# We can't have '<h4 align=center>(?:<a name="[^"]*"></a>)?' at the front because the <a> tag won't get encoded
+# We can't have '<h4 align=center>(?:<a name="[^"]*">)?' at the front because the <a> tag won't get encoded
 regtime3 = 'The House met at .*? of the clock.*?</h4>'
 
 retimevals = re.compile('(?:</?p>\s*|<h\d>|\[|\n)\s*(\d+(?:[:\.]\s?\d+)?\.?\s*[ap][m\.]+|(?:12 )?Noon|Midnight|</h5>|</st>)(?i)')
 regtime3vals = re.compile('The House met at (.*?) of the clock(?i)')
 
 # <a name="column_1099">
-reaname = '<a name\s*=\s*"[^"]*">\s*</a>(?i)'
+reaname = '<a name\s*=\s*"[^"]*">\s*(?:</a>)?(?i)'
 reanamevals = re.compile('<a name\s*=\s*"([^"]*)">(?i)')
 
 # match in right order so the longer ones get checked first.  (prob a good way to do r3 and r6 variants but don't know it
@@ -157,7 +157,7 @@ def FilterLordsColtime(fout, text, sdate):
 			raise ContextException(' regexpvals not general enough ', stamp=stampurl, fragment=fss) # a programming error between splitting and matching
 		if remarginal.search(fss):
 			print remarginal.search(fss).group(0)
-			lregcolumnum6 = '<p>\s*</ul>\s*<a name="column_\d+"></a>\s*<b>[^:<]*:\s*column\s*\d+\s*</b></p>\s*<ul><font size=3>(?i)'
+			lregcolumnum6 = '<p>\s*</ul>\s*<a name="column_\d+">(?:</a>)?\s*<b>[^:<]*:\s*column\s*\d+\s*</b></p>\s*<ul><font size=3>(?i)'
 			print re.findall(lregcolumnum6, fss)
 			#print fss
 			raise ContextException(' marginal coltime detection case ', stamp=stampurl, fragment=fss)
@@ -177,15 +177,15 @@ def FilterLordsColtime(fout, text, sdate):
 # sometimes the column code numbering on either side is errant.
 
 
-regacol = '<a name="column_([^\d>"]*)\d+"></a>'
+regacol = '<a name="column_([^\d>"]*)\d+">(?:</a>)?'
 
 def SplitLordsText(text, sdate):
 	res = [ '', '', '', '' ]
 
 	# Use a name tags
-	wagc = re.search('(?:<br>&nbsp;<br>\s*)?<a name\s*=\s*"(?:gc|column_(?:GC|CWH)\d+|[0-9\-]+_cmtee0)"></a>(?i)', text)
-	wams = re.search('(?:<br>&nbsp;<br>\s*)?<a name="(?:wms|column_WS\d+)"></a>(?i)', text)
-	wama = re.search('(?:<br>&nbsp;<br>\s*)?<a name="(?:column_WA\d+|[\dw]*_writ0)"></a>(?i)', text)
+	wagc = re.search('(?:<br>&nbsp;<br>\s*)?<a name\s*=\s*"(?:gc|column_(?:GC|CWH)\d+|[0-9\-]+_cmtee0)">(?:</a>)?(?i)', text)
+	wams = re.search('(?:<br>&nbsp;<br>\s*)?<a name="(?:wms|column_WS\d+)">(?:</a>)?(?i)', text)
+	wama = re.search('(?:<br>&nbsp;<br>\s*)?<a name="(?:column_WA\d+|[\dw]*_writ0)">(?:</a>)?(?i)', text)
 
 	# the sections are always in the same order, but sometimes there's one missing.
 
@@ -246,7 +246,7 @@ def SplitLordsText(text, sdate):
 
 	# check that there is always an adjournment in the main debate, with some of the trash that gets put before it
 	# this kind of overguessing is to get a feel for the variation that is encountered.
-	if sdate != '2007-10-01' and not re.search('(?:<ul><ul><ul>|<ul><ul><p>|</a>\s*(?:<ul>|<p>)?|<p>\s*<ul><ul>(?:<ul>)?)\s*(?:Parliament was prorogued|House adjourned )(?i)', res[0]):
+	if sdate != '2007-10-01' and not re.search('(?:<ul><ul><ul>|<ul><ul><p>|\s*(?:<ul>|<p>)?|<p>\s*<ul><ul>(?:<ul>)?)\s*(?:Parliament was prorogued|House adjourned )(?i)', res[0]):
 		raise ContextException("house adjourned failure", stamp=None, fragment=res[0][-100:])
 
         page = re.findall('<page[^>]*>', res[0])[-1]
@@ -258,7 +258,7 @@ def SplitLordsText(text, sdate):
                 res[1] = page + res[1]
                 page = re.findall('<page[^>]*>', res[1])[-1]
 		assert not re.search('<a name="column_(?!(?:GC|CWH))\D+\d+">', res[1])
-		if not re.search('<(?:h[23] align=)?"?center"?>(?:<a name="[^"]*"></a>)?\s*(?:Official Report of the )?(?:(?:the)?Northern Ireland Orders )?Grand Committee', res[1]):
+		if not re.search('<(?:h[23] align=)?"?center"?>(?:<a name="[^"]*">(?:</a>)?)?\s*(?:Official Report of the )?(?:(?:the)?Northern Ireland Orders )?Grand Committee', res[1]):
 			raise ContextException("grand committee title failure", stamp=None, fragment=res[1][:100])
 
 	# check the title is in the Written Statements section
@@ -266,13 +266,13 @@ def SplitLordsText(text, sdate):
                 res[2] = page + res[2]
                 page = re.findall('<page[^>]*>', res[2])[-1]
 		assert not re.search('<a name="column_(?!WS)\D+\d+">', res[2])
-		assert re.search('center"?>(?:<a name="[^"]*"></a>)?Written Statements?', res[2])
+		assert re.search('center"?>(?:<a name="[^"]*">(?:</a>)?)?Written Statements?', res[2])
 
 	# check the title and column numbering in the written answers
 	if res[3]:
                 res[3] = page + res[3]
 		assert not re.search('<a name="column_(?!WA)\D+\d+">', res[3])
-		if not re.search('<(?:h3 align=)?"?center"?>(?:<a name="[^"]*"></a>)?\s*Written Answers?', res[3]): # sometimes the s is missing
+		if not re.search('<(?:h3 align=)?"?center"?>(?:<a name="[^"]*">(?:</a>)?)?\s*Written Answers?', res[3]): # sometimes the s is missing
 			raise ContextException("missing written answer title", fragment=res[3])
 
 	return res

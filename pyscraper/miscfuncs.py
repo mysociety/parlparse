@@ -281,6 +281,15 @@ def WriteCleanText(fout, text):
 		if re.match('<!-[^>]*?->', ab):
 			pass
 
+                # XXX Differs from pullgluepages version
+		elif re.match('<a[^>]+>(?i)', ab):
+			anamem = re.match('<a name\s*?=(?i)', ab)
+                        if anamem:
+                                fout.write(re.sub('\s', ' ', ab))
+
+		elif re.match('</?a>(?i)', ab):
+			pass
+
 		# spaces only inside tags
 		elif re.match('<[^>]*>', ab):
 			fout.write(re.sub('\s', ' ', ab))
