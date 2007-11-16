@@ -250,6 +250,7 @@ entitymap = {
         '&#353;':'&#353;',
         '&oelig;':'&#339;',
         '&#230;':'&aelig;',
+        '&dagger;':'&dagger;',
 }
 entitymaprev = entitymap.values()
 

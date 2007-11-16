@@ -4,6 +4,7 @@ import re
 import os
 import glob
 import sys
+import time
 import tempfile
 import shutil
 sys.path.append('../')
@@ -372,6 +373,9 @@ for file in g:
 		try:
 			print "NI parsing %s..." % date
 			parser.parse_day(date)
+			fil = open('%sscrapedxml/ni/changedates.txt' % parldata, 'a+')
+			fil.write('%d,ni%s.xml\n' % (time.time(), date))
+			fil.close()
 			break
 		except ContextException, ce:
 			if patchtool:
