@@ -10,15 +10,15 @@
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="http://en.wikipedia.org/w/index.php?title=Special:Recentchanges&amp;feed=atom" />
 		<title>Members of the House of Lords - Wikipedia, the free encyclopedia</title>
 		<style type="text/css" media="screen, projection">/*<![CDATA[*/
-			@import "/skins-1.5/common/shared.css?100";
-			@import "/skins-1.5/monobook/main.css?100";
+			@import "/skins-1.5/common/shared.css?101";
+			@import "/skins-1.5/monobook/main.css?101";
 		/*]]>*/</style>
-		<link rel="stylesheet" type="text/css" media="print" href="/skins-1.5/common/commonPrint.css?100" />
-		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css?100";</style><![endif]-->
-		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css?100";</style><![endif]-->
-		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css?100";</style><![endif]-->
-		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?100";</style><![endif]-->
-		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?100"></script>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins-1.5/common/commonPrint.css?101" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css?101";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css?101";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css?101";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?101";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?101"></script>
 		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
 		
 		<script type= "text/javascript">/*<![CDATA[*/
@@ -43,10 +43,10 @@ var wgUserGroups = null;
 var wgUserLanguage = "en";
 var wgContentLanguage = "en";
 var wgBreakFrames = false;
-var wgCurRevisionId = "166740601";
+var wgCurRevisionId = "172063694";
 /*]]>*/</script>
                 
-		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?100"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?101"><!-- wikibits js --></script>
 		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
 		<style type="text/css">/*<![CDATA[*/
 @import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
@@ -54,7 +54,7 @@ var wgCurRevisionId = "166740601";
 @import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
 /*]]>*/</style>
 		<!-- Head Scripts -->
-		<script type="text/javascript" src="/skins-1.5/common/ajax.js?100"></script>
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js?101"></script>
 	</head>
 <body  class="mediawiki ns-0 ltr page-Members_of_the_House_of_Lords">
 	<div id="globalWrapper">
@@ -63,13 +63,18 @@ var wgCurRevisionId = "166740601";
 		<a name="top" id="top"></a>
 		<div id="siteNotice"><script type="text/javascript">
 var wgNotice = "";
+var wgNoticeLocal = "";
 var wgNoticeLang = "en";
 var wgNoticeProject = "wikipedia";
 </script>
 <script type="text/javascript" src="http://meta.wikimedia.org/w/index.php?title=Special:NoticeLoader&amp;action=raw"></script>
+<script type="text/javascript" src="/w/index.php?title=Special:NoticeLocal/anon&amp;action=raw"></script>
 <script type="text/javascript">
 if (wgNotice != "") {
   document.writeln(wgNotice);
+}
+if (wgNoticeLocal != "") {
+  document.writeln(wgNoticeLocal);
 }
 </script></div>		<h1 class="firstHeading">Members of the House of Lords</h1>
 		<div id="bodyContent">
@@ -1086,12 +1091,6 @@ if (wgNotice != "") {
 <td><a href="/wiki/Lord_Condon" title="Lord Condon">The Lord Condon</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
-<td>&#160;</td>
-</tr>
-<tr>
-<td><a href="/wiki/Lord_Cooke_of_Islandreagh" title="Lord Cooke of Islandreagh">The Lord Cooke of Islandreagh</a></td>
-<td>Cross Bench</td>
-<td>Life Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
@@ -4621,6 +4620,12 @@ if (wgNotice != "") {
 <td>&#160;</td>
 </tr>
 <tr>
+<td><a href="/wiki/Lord_Cooke_of_Islandreagh" title="Lord Cooke of Islandreagh">The Lord Cooke of Islandreagh</a> (<a href="/wiki/November_13" title="November 13">November 13</a>, <a href="/wiki/2007" title="2007">2007</a>)</td>
+<td>Cross Bench</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr>
 <td><a href="/wiki/Robin_Cooke%2C_Baron_Cooke_of_Thorndon" title="Robin Cooke, Baron Cooke of Thorndon">The Lord Cooke of Thorndon</a> (<a href="/wiki/August_30" title="August 30">August 30</a>, <a href="/wiki/2006" title="2006">2006</a>)</td>
 <td>Cross Bench</td>
 <td>Lord of Appeal</td>
@@ -4801,7 +4806,7 @@ if (wgNotice != "") {
 </ul>
 
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20071110214619 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20071118024800 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:Politics_of_the_United_Kingdom" title="Category:Politics of the United Kingdom">Politics of the United Kingdom</a></span></p></div>			<!-- end content -->
@@ -4863,8 +4868,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 		<div id="searchBody" class="pBody">
 			<form action="/wiki/Special:Search" id="searchform"><div>
 				<input id="searchInput" name="search" type="text" title="Search Wikipedia [f]" accesskey="f" value="" />
-				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
-				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
 			</div></form>
 		</div>
 	</div>
@@ -4876,7 +4881,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:Recentchangeslinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload images or media files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:Specialpages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=166740601" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=166740601">Cite this article</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=172063694" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=172063694">Cite this article</a></li>			</ul>
 		</div>
 	</div>
 		</div><!-- end of the left (by default at least) column -->
@@ -4885,7 +4890,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-				<li id="lastmod"> This page was last modified 13:31, 24 October 2007.</li>
+				<li id="lastmod"> This page was last modified 10:17, 17 November 2007.</li>
 				<li id="copyright">All text is available under the terms of the <a class='internal' href="/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc</a>., a U.S. registered <a class='internal' href="/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>
 				<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
 				<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
@@ -4896,4 +4901,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv19 in 0.170 secs. --></body></html>
+<!-- Served by srv184 in 0.061 secs. --></body></html>
