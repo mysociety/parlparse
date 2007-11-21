@@ -315,6 +315,7 @@
 <chgpageupdates date="2007-11-09" chgtype="selctee"/>
 <chgpageupdates date="2007-11-14" chgtype="selctee"/>
 <chgpageupdates date="2007-11-15" chgtype="selctee"/>
+<chgpageupdates date="2007-11-20" chgtype="selctee"/>
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1000" name="Duke of Abercorn" dept="HM Household" position="Lord Steward" fromdate="2000-01-01" todate="2007-06-28" source="newlabministers2003-10-15 chgpages/govposts"></moffice>
@@ -1158,7 +1159,7 @@
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/3513" name="Quentin Davies" matchid="uk.org.publicwhip/member/2025" dept="Regulatory Reform Committee" position="" fromdate="2007-11-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3430" name="Quentin Davies" matchid="uk.org.publicwhip/member/2025" dept="Tax Law Rewrite Bills (Joint Committee)" position="" fromdate="2007-11-07" todate="9999-12-31" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/2739" name="Quentin Davies" matchid="uk.org.publicwhip/member/1598" dept="International Development Committee" position="" fromdate="2005-07-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2739" name="Quentin Davies" matchid="uk.org.publicwhip/member/1598" dept="International Development Committee" position="" fromdate="2005-07-14" todate="2007-11-20" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3426" name="Quentin Davies" matchid="uk.org.publicwhip/member/2025" dept="Regulatory Reform Committee" position="" fromdate="2007-11-07" todate="2007-11-09" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2161" name="Quentin Davies" matchid="uk.org.publicwhip/member/846" dept="International Development Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
@@ -1280,6 +1281,7 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3537" name="Angela Eagle" matchid="uk.org.publicwhip/member/1899" dept="Public Accounts Committee" position="" fromdate="2007-11-20" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2412" name="Angela Eagle" matchid="uk.org.publicwhip/member/871" dept="Treasury Sub-committee Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2884" name="Angela Eagle" matchid="uk.org.publicwhip/member/1899" dept="Treasury Committee" position="" fromdate="2005-07-14" todate="2007-11-07" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2270" name="Angela Eagle" matchid="uk.org.publicwhip/member/871" dept="Public Accounts Committee" position="" fromdate="2004-05-28" todate="2004-06-11" source="chgpages/selctee"></moffice>
@@ -1468,6 +1470,10 @@
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3535" name="Andrew George" matchid="uk.org.publicwhip/member/1801" dept="Communities and Local Government Committee" position="" fromdate="2007-11-20" todate="9999-12-31" source="chgpages/selctee"></moffice>
+</ministerofficegroup>
+
+<ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1967" name="Rt Hon Bruce George" matchid="uk.org.publicwhip/member/908" dept="Defence Committee" position="Chairman" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2179" name="Rt Hon Bruce George" matchid="uk.org.publicwhip/member/908" dept="Liaison Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
@@ -1631,7 +1637,7 @@
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/2550" name="John Healey" matchid="uk.org.publicwhip/member/949" dept="Tax Law Rewrite Bills (Joint Committee)" position="" fromdate="2004-12-21" todate="2005-04-11" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3128" name="John Healey" matchid="uk.org.publicwhip/member/1918" dept="Tax Law Rewrite Bills (Joint Committee)" position="" fromdate="2005-12-06" todate="9999-12-31" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/2927" name="John Healey" matchid="uk.org.publicwhip/member/1918" dept="Public Accounts Committee" position="" fromdate="2005-07-20" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/2927" name="John Healey" matchid="uk.org.publicwhip/member/1918" dept="Public Accounts Committee" position="" fromdate="2005-07-20" todate="2007-11-20" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1417" name="John Healey" matchid="uk.org.publicwhip/member/1918" dept="Department for Communities and Local Government" position="Minister of State" fromdate="2007-06-28" todate="2007-10-19" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1495" name="John Healey" matchid="uk.org.publicwhip/member/1918" dept="Department for Communities and Local Government" position="Minister of State" responsibility="Local Government" fromdate="2007-10-19" todate="9999-12-31" source="chgpages/govposts"></moffice>
 <moffice id="uk.org.publicwhip/moffice/1046" name="John Healey" matchid="uk.org.publicwhip/member/949" dept="HM Treasury" position="Economic Secretary" fromdate="2002-05-29" todate="2005-05-11" source="newlabministers2003-10-15 chgpages/govposts"></moffice>
@@ -4271,6 +4277,7 @@ Hon Harriet Harman QC (Leader of the House of Commons)" fromdate="2007-10-25" to
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3536" name="Jim Sheridan" matchid="uk.org.publicwhip/member/2007" dept="International Development Committee" position="" fromdate="2007-11-20" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3147" name="Jim Sheridan" matchid="uk.org.publicwhip/member/2007" dept="Armed Forces Bill Committee" position="" fromdate="2005-12-20" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2154" name="Jim Sheridan" matchid="uk.org.publicwhip/member/1221" dept="Information Committee" position="" fromdate="2004-05-28" todate="2004-12-14" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2275" name="Jim Sheridan" matchid="uk.org.publicwhip/member/1221" dept="Public Accounts Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
@@ -4332,6 +4339,7 @@ Hon Harriet Harman QC (Leader of the House of Commons)" fromdate="2007-10-25" to
 </ministerofficegroup>
 
 <ministerofficegroup>
+<moffice id="uk.org.publicwhip/moffice/3534" name="Mike Weir" matchid="uk.org.publicwhip/member/1959" dept="Business, Enterprise and Regulatory Reform Committee" position="" fromdate="2007-11-20" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2978" name="Mike Weir" matchid="uk.org.publicwhip/member/1959" dept="Chairmen's Panel Committee" position="" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2868" name="Mike Weir" matchid="uk.org.publicwhip/member/1959" dept="Trade &amp; Industry Committee" position="" fromdate="2005-07-14" todate="2007-11-07" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2327" name="Michael Weir" matchid="uk.org.publicwhip/member/1312" dept="Scottish Affairs Committee" position="" fromdate="2004-05-28" todate="2005-04-11" source="chgpages/selctee"></moffice>
@@ -4371,7 +4379,7 @@ Hon Harriet Harman QC (Leader of the House of Commons)" fromdate="2007-10-25" to
 </ministerofficegroup>
 
 <ministerofficegroup>
-<moffice id="uk.org.publicwhip/moffice/3369" name="Richard Younger-Ross" matchid="uk.org.publicwhip/member/1870" dept="Business, Enterprise and Regulatory Reform Committee" position="" fromdate="2007-11-07" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3369" name="Richard Younger-Ross" matchid="uk.org.publicwhip/member/1870" dept="Business, Enterprise and Regulatory Reform Committee" position="" fromdate="2007-11-07" todate="2007-11-20" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2702" name="Richard Younger-Ross" matchid="uk.org.publicwhip/member/1870" dept="Foreign Affairs Committee" position="" fromdate="2005-07-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2596" name="Richard Younger-Ross" matchid="uk.org.publicwhip/member/1870" dept="European Scrutiny Committee" position="" fromdate="2005-06-30" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
@@ -4536,7 +4544,7 @@ Hon Harriet Harman QC (Leader of the House of Commons)" fromdate="2007-10-25" to
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/3349" name="Martin Horwood" matchid="uk.org.publicwhip/member/1494" dept="Environmental Audit Committee" position="" fromdate="2007-07-13" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/2775" name="Martin Horwood" matchid="uk.org.publicwhip/member/1494" dept="Office of the Deputy Prime Minister: Housing, Planning, Local Government and the Regions Committee" position="" fromdate="2005-07-14" todate="2006-06-28" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/3216" name="Martin Horwood" matchid="uk.org.publicwhip/member/1494" dept="Communities and Local Government Committee" position="" fromdate="2006-06-28" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/3216" name="Martin Horwood" matchid="uk.org.publicwhip/member/1494" dept="Communities and Local Government Committee" position="" fromdate="2006-06-28" todate="2007-11-20" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
