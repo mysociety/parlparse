@@ -74,10 +74,12 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/100871" : "Alastair Goodlad [Eddisbury]",
     "uk.org.publicwhip/lord/100873" : "Jack Cunningham [Copeland]",
     "uk.org.publicwhip/lord/100910" : "David Trimble [Upper Bann]",
+    "uk.org.publicwhip/lord/100967" : "David Trimble [Upper Bann]", # changed party
     "uk.org.publicwhip/lord/100930" : "Keith Bradley [Manchester, Withington]",
     "uk.org.publicwhip/lord/100345" : "John D Taylor [Strangford]",
 }
 
+# Put people who change party AND were MPs multple times in table above e.g. David Trimble
 lordlordmatches = {
 	"uk.org.publicwhip/lord/100160":"uk.org.publicwhip/lord/100931",  # Lord Dahrendorf changes party
 	"uk.org.publicwhip/lord/100281":"uk.org.publicwhip/lord/100906",  # Lord Haskins changes party
