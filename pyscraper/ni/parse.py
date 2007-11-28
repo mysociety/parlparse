@@ -7,6 +7,9 @@ import sys
 import time
 import tempfile
 import shutil
+import xml.sax
+xmlvalidate = xml.sax.make_parser()
+
 sys.path.append('../')
 from resolvemembernames import memberList
 from contextexception import ContextException
@@ -67,7 +70,8 @@ class ParseDay:
 		fp.close()
 		#print soup.prettify().decode('utf-8')
 		#sys.exit()
-		self.out = open('%sscrapedxml/ni/ni%s.xml.new' % (parldata, date), 'w')
+		tempfilename = '%sscrapedxml/ni/ni%s.xml.new' % (parldata, date)
+		self.out = open(tempfilename, 'w')
 		self.out = streamWriter(self.out)
 		self.out.write('<?xml version="1.0" encoding="utf-8"?>\n')
 		self.out.write('''
@@ -82,6 +86,7 @@ class ParseDay:
 <!ENTITY eacute  "&#233;">
 <!ENTITY ecirc   "&#234;">
 <!ENTITY iacute  "&#237;">
+<!ENTITY ograve  "&#242;">
 <!ENTITY oacute  "&#243;">
 <!ENTITY uacute  "&#250;">
 <!ENTITY Aacute  "&#193;">
@@ -89,6 +94,7 @@ class ParseDay:
 <!ENTITY Iacute  "&#205;">
 <!ENTITY Oacute  "&#211;">
 <!ENTITY Uacute  "&#218;">
+<!ENTITY Uuml    "&#220;">
 <!ENTITY auml    "&#228;">
 <!ENTITY euml    "&#235;">
 <!ENTITY iuml    "&#239;">
@@ -119,7 +125,11 @@ class ParseDay:
 			self.parse_day_old(body)
 		self.out.write('</publicwhip>\n')
 		self.out.close()
-		os.rename('%sscrapedxml/ni/ni%s.xml.new' % (parldata, date), '%sscrapedxml/ni/ni%s.xml' % (parldata, date))
+
+		# Check the XML; in win32 this function leaves the file open and stops it being renamed
+		if sys.platform != "win32":
+			xmlvalidate.parse(tempfilename) # validate XML before renaming
+		os.rename(tempfilename, '%sscrapedxml/ni/ni%s.xml' % (parldata, date))
 
 	def display_speech(self):
 		if self.text:
