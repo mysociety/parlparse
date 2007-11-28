@@ -4,7 +4,8 @@
 
 # update latest stuff from parliament.uk at 8:05 in the morning.  
 # parliament.uk is meant to update at 8am
-5 8 * * * $HOME/parlparse/scripts/morningupdate
+# It doesn't, try 8:35.
+35 8 * * * $HOME/parlparse/scripts/morningupdate
 
 # daily update at night for MP data (regmem, data from Public Whip etc.)
 37 1 * * * $HOME/parlparse/scripts/dailyupdate
