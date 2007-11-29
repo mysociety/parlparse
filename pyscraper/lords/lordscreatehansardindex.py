@@ -46,6 +46,12 @@ def LordsIndexFromAll(urlalldays):
 	# remove comments because they sometimes contain wrong links
 	srlinkpage = re.sub('<!--[\s\S]*?-->', ' ', srlinkpage)
 
+        # this error was in the index page
+        srlinkpage = srlinkpage.replace(
+                """<a href="/pa/ld200708/ldhansrd/index/071127.html">28 November 2007</a>""",
+                """<a href="/pa/ld200708/ldhansrd/index/071128.html">28 November 2007</a>"""
+        );
+
 	# Find lines of the form:
 	# <p><a href="lds04/index/40129-x.htm">29 Jan 2004</a></p>
 	realldayslinks = re.compile('<a href="(/[^"#]*)">([^<]*)</a>(?i)')
