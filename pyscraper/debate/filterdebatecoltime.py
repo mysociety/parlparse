@@ -116,7 +116,7 @@ def FilterDebateColTime(fout, text, sdate, typ):
 				pass  # good
 			# column numbers do get skipped during division listings
 			elif lcolnum < colnum:
-				raise ContextException("Colnum not incrementing %d -- %s" % (lcolnum, fss), stamp=stamp, fragment=fss)
+				raise ContextException("Colnum not incrementing %d smaller than %d -- %s" % (lcolnum, colnum, fss), stamp=stamp, fragment=fss)
 
 			# write a column number stamp (has to increase no matter what)
 			if lcolnum > colnum:
