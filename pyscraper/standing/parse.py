@@ -67,6 +67,9 @@ class StandingSoup(BeautifulSoup):
         
         (re.compile('(<UL>)'), '<p>'),
         (re.compile('(</UL>)'), '</p>'),
+        
+        # Sometimes <a name=blah> tags are not getting closed
+        (re.compile('(<a name="\d+">)(?!</a>)'), lambda match: match.group(1)+ '</a>'),
     
         # get rid of raw ampersands in the text
         (re.compile(' & '), ' &amp; '),
@@ -436,7 +439,7 @@ class ParseCommittee:
              if getattr(node,'name', None) == 'div' and node.get('class', None) == 'hs_Para' :
                 ptext = re.sub("\s+", " ", ''.join(node(text=True))).strip()
                 self.add_member_to_votecount(votecounts, firstvote, ptext)
-                node.contents = []
+                node.contents = []  
              node = node.next
         
         # noes header    
