@@ -81,7 +81,7 @@ def FilterWransSpeakers(fout, text, sdate):
                         #print "Plausible missing bold not fixed, as no name matches:\n\t%s\n\t%s" % (missingbold.strip(), bold.strip())
 
 	# <B> Mrs. Iris Robinson: </B>
-	lspeakerregexp = '<b>.*?</b>\s*?:|<b>.*?</b>'
+	lspeakerregexp = '<b>.*?</b>(?:\s*:)?'
 	ltableregexp = '<table[^>]*>[\s\S]*?</table>'	# these have bolds, so must be separated out
 	tableregexp = ltableregexp + '(?i)'
 
