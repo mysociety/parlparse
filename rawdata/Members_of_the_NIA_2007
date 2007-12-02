@@ -179,11 +179,12 @@ Elections: <a href="/wiki/United_Kingdom_general_election%2C_2005#The_election_i
 </td>
 </tr>
 </table>
-<p><script type="text/javascript">
+<script type="text/javascript">
 //<![CDATA[
  if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
 //]]>
-</script><a name="Results" id="Results"></a></p>
+</script>
+<p><a name="Results" id="Results"></a></p>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;action=edit&amp;section=1" title="Edit section: Results">edit</a>]</span> <span class="mw-headline">Results</span></h2>
 <table cellpadding="2" cellspacing="2" border="0">
 <tr>
@@ -976,13 +977,13 @@ Elections: <a href="/wiki/United_Kingdom_general_election%2C_2005#The_election_i
 </center>
 
 <!-- 
-Pre-expand include size: 28918 bytes
-Post-expand include size: 25059 bytes
-Template argument size: 13856 bytes
-Maximum: 2048000 bytes
+Pre-expand include size: 28918/2048000 bytes
+Post-expand include size: 25067/2048000 bytes
+Template argument size: 13856/2048000 bytes
+#ifexist count: 0/2000
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!2 and timestamp 20071125042309 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!2 and timestamp 20071201222234 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007">http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Northern_Ireland_MLAs_2007-" title="Category:Northern Ireland MLAs 2007-">Northern Ireland MLAs 2007-</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Northern_Irish_parliamentarians" title="Category:Lists of Northern Irish parliamentarians">Lists of Northern Irish parliamentarians</a></span> | <span dir='ltr'><a href="/wiki/Category:Northern_Ireland-related_lists" title="Category:Northern Ireland-related lists">Northern Ireland-related lists</a></span></p></div>			<!-- end content -->
@@ -1019,7 +1020,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 		<div class='pBody'>
 			<ul>
 				<li id="n-Main-page"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-				<li id="n-Contents"><a href="/wiki/Wikipedia:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+				<li id="n-Contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
 				<li id="n-Featured-content"><a href="/wiki/Wikipedia:Featured_content" title="Featured content — the best of Wikipedia">Featured content</a></li>
 				<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
 				<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random page [x]" accesskey="x">Random article</a></li>
@@ -1077,4 +1078,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv91 in 0.900 secs. --></body></html>
+<!-- Served by srv168 in 0.063 secs. --></body></html>
