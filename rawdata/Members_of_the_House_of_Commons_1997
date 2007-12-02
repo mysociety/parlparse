@@ -3643,13 +3643,13 @@ if (wgNoticeLocal != "") {
 </table>
 
 <!-- 
-Pre-expand include size: 44369 bytes
-Post-expand include size: 44633 bytes
-Template argument size: 42103 bytes
-Maximum: 2048000 bytes
+Pre-expand include size: 44369/2048000 bytes
+Post-expand include size: 44633/2048000 bytes
+Template argument size: 42103/2048000 bytes
+#ifexist count: 0/2000
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:415690-0!1!0!default!!en!2 and timestamp 20071125030213 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:415690-0!1!0!default!!en!2 and timestamp 20071202042307 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1997">http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1997</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:MPs_elected_in_UK_elections" title="Category:MPs elected in UK elections">MPs elected in UK elections</a></span> | <span dir='ltr'><a href="/wiki/Category:1997_elections_in_the_United_Kingdom" title="Category:1997 elections in the United Kingdom">1997 elections in the United Kingdom</a></span></p></div>			<!-- end content -->
@@ -3686,7 +3686,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 		<div class='pBody'>
 			<ul>
 				<li id="n-Main-page"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
-				<li id="n-Contents"><a href="/wiki/Wikipedia:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+				<li id="n-Contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
 				<li id="n-Featured-content"><a href="/wiki/Wikipedia:Featured_content" title="Featured content — the best of Wikipedia">Featured content</a></li>
 				<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
 				<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random page [x]" accesskey="x">Random article</a></li>
@@ -3744,4 +3744,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv18 in 0.654 secs. --></body></html>
+<!-- Served by srv165 in 1.696 secs. --></body></html>
