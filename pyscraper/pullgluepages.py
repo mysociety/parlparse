@@ -141,6 +141,8 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = [urla[0], urla[1], urla[3], urla[4]] # Incorrect link in middle of index
         if sdate=='2006-10-30' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061030/text/61030w0001.htm':
                 urla = [urla[0]]
+        if sdate=='2006-10-26' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061026/debtext/61026-0001.htm':
+                urla = [urla[0]]
         if sdate=='2006-11-22' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061122/debtext/61122-0001.htm':
                 urla = [urla[0]]
         if sdate=='2006-11-29' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061129/debtext/61129-0001.htm':
@@ -201,7 +203,7 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                         sr = re.sub('<!--end of UK Parliament banner for Publications -->\s*<div class="breadcrumb">.*?</div>\s*<h2(?s)', '<hr> <h2', sr)
                 sr = re.sub("</?mekonParaReplace[^>]*>", "", sr)
 
-                if sdate=='2006-06-07' and re.match('/text/', url):
+                if sdate=='2006-06-07' and re.search('/text/', url):
                         sr = re.sub('<body>(?!<hr>)', '<body><hr>', sr)
 
 		# split by sections
