@@ -94,6 +94,7 @@ govdepts = ["Department of Health",
                                         "Department for Business, Enterprise & Regulatory Reform",
                                 "House of Commons",
                                 "Foreign & Commonwealth Office",
+                                "Government Equalities Office",
 
                                 "Office of the Secretary of State for Wales",
                                 "Department for Productivity, Energy and Industry",
@@ -269,6 +270,8 @@ class protooffice:
                 if self.fullname == 'Professor Sir Ara Darzi':
                         self.fullname = 'Lord Darzi of Denham'
 
+                # Okay, name done, let's move on to position
+
 		pos = nampos.group(4).strip()
 		dept = (nampos.group(5) or "No Department").strip()
                 dept = re.sub("\s+", " ", dept)
@@ -277,8 +280,8 @@ class protooffice:
 			responsibility = bigarray[self.sdatet[0]][self.fullname]
 
 		# change of wording in 2004-11
-		if dept == "Leader of the House of Commons":
-			dept = "House of Commons"
+		if re.match("Leader of the House of Commons", dept):
+			dept = dept.replace("Leader of the House of Commons", "House of Commons")
 		# change of wording in 2006-04
 		if pos == "Lord Commissioner":
 			pos = "Lords Commissioner"
