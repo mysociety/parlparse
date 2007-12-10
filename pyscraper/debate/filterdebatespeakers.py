@@ -80,12 +80,12 @@ recomb = re.compile('''(?ix)((?:Q?\d+\.\s*)?(?:\[\d+\]\s*)?
 # Specific match:
 # Notes - sometimes party appears inside bold tags, so we match and throw it away on either side
 respeakervals = re.compile('''(?ix)
-		(?:Q?(\d+)\.\s*)?			# oral question number (group1)
+		(?:[QT]?(\d+)\.\s*)?			# oral question number (group1)
 		(\[\d+\]\s*)?				# written qnum (group2)
-		(<stamp\saname="[^"]*?"/>)? # a stamp (group3)
-		<b>\s*                      # start of bold
-		(<stamp\saname="[^"]*?"/>)* # a stamp (group4)
-		(?:Q?(\d+)\.)?				# second place of oral question number (group5)
+		(<stamp\saname="[^"]*?"/>)?             # a stamp (group3)
+		<b>\s*                                  # start of bold
+		(<stamp\saname="[^"]*?"/>)*             # a stamp (group4)
+		(?:[QT]?(\d+)\.)?			# second place of oral question number (group5)
 		([^:<(]*?):?\s*				# speaker (group6)
 		(?:\((.*?)\)?)?				# speaker bracket (group7)
 		(?:\s*\((%s)\))?\s*     	# parties list (group8)
@@ -131,7 +131,7 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
                         text = text.replace(missingbold, bold)
 
         # Move Urgent Question out of speaker name
-        urgentqns = re.findall('(<p>(?:<stamp aname="[^"]+"/>)+)(<b>[^<]*?)(\s*<i>\s*\(Urgent Question\)</i>)(:</b>)', text)
+        urgentqns = re.findall('(<p>(?:<stamp aname="[^"]+"/>)+)(<b>[^<]*?)(\s*<i>\s*\(Urgent Question\)</i>)(:</b>)(?i)', text)
         for p1,p2,p3,p4 in urgentqns:
                 urgentqn = "%s%s%s%s" % (p1,p2,p3,p4)
                 correction = "%s%s%s%s" % (p1,p2,p4,p3)
