@@ -65,7 +65,7 @@ parties = "|".join(map(string.lower, memberList.partylist())) + "|uup|ld|dup|in 
 
 # Splitting condition
 # this must be a generalization of the one below.  so changes need to be reflected in both.
-recomb = re.compile('''(?ix)((?:Q?\d+\.\s*)?(?:\[\d+\]\s*)?
+recomb = re.compile('''(?ix)((?:[QT]?\d+\.\s*)?(?:\[\d+\]\s*)?
 					(?:<stamp\saname="[^"]*"/>)?
 					<b>
 					(?:<stamp\saname="[^"]*"/>)*
