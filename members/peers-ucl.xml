@@ -9857,17 +9857,6 @@ B - bishop
     fromdate="2007-10-18" todate="9999-12-31"
 />
 
-<!-- 
-<lord
-    id="uk.org.publicwhip/lord/100961"
-    house="lords"
-    forenames="William Nigel Stock"
-    title="Bishop" lordname="" lordofname="Ely"
-    peeragetype="B" affiliation="Bp"
-    fromdate="2007-?????" todate="9999-12-31"
-/>
--->
-
 <lord
     id="uk.org.publicwhip/lord/100965"
     house="lords"
@@ -9900,5 +9889,13 @@ B - bishop
 	fromwhy="changed_party"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/100968"
+    house="lords"
+    forenames="Anthony Russell"
+    title="Bishop" lordname="" lordofname="Ely"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2007-12-10" todate="9999-12-31"
+/>
 
 </publicwhip>
