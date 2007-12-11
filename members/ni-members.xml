@@ -2398,8 +2398,8 @@
 	id="uk.org.publicwhip/member/90315"
 	title="" firstname="Gerry" lastname="McHugh"
 	constituency="Fermanagh &amp; South Tyrone" party="Sinn Féin"
-	fromdate="2007-03-09" todate="9999-12-31"
-	fromwhy="election" towhy="still_in_office"
+	fromdate="2007-03-09" todate="2007-12-03"
+	fromwhy="election" towhy="changed_party"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90316"
@@ -2691,5 +2691,12 @@
 	fromwhy="appointed" towhy="still_in_office"
 />
 
+<member_ni
+	id="uk.org.publicwhip/member/90357"
+	title="" firstname="Gerry" lastname="McHugh"
+	constituency="Fermanagh &amp; South Tyrone" party="Independent"
+	fromdate="2007-12-03" todate="9999-12-31"
+	fromwhy="changed_party" towhy="still_in_office"
+/>
 </publicwhip>
 

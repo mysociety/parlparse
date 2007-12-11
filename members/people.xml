@@ -8304,6 +8304,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13333" latestname="The Bishop of Rochester">
     <office id="uk.org.publicwhip/lord/100543" current="yes"/>
 </person>
+<person id="uk.org.publicwhip/person/13942" latestname="The Bishop of Ely">
+    <office id="uk.org.publicwhip/lord/100968" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/13336" latestname="Lord Roll of Ipsden">
     <office id="uk.org.publicwhip/lord/100548"/>
 </person>
@@ -9900,7 +9903,8 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13830" latestname="Gerry McHugh">
     <office id="uk.org.publicwhip/member/90082"/>
-    <office id="uk.org.publicwhip/member/90315" current="yes"/>
+    <office id="uk.org.publicwhip/member/90315"/>
+    <office id="uk.org.publicwhip/member/90357" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13910" latestname="Michelle McIlveen">
     <office id="uk.org.publicwhip/member/90316" current="yes"/>
