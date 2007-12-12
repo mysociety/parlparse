@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<publicwhip>
+
+<!-- a case difference or two: -->
+
+<alias lastname="Macdonald" alternate="MacDonald"/>
+<alias fullname="Lewis Macdonald" alternate="Lewis MacDonald"/>
+
+<alias lastname="Maclean" alternate="MacLean"/>
+<alias fullname="Kate Maclean" alternate="Kate MacLean"/>
+
+<!-- mispellings: -->
+
+<alias fullname="Patricia Ferguson" alternate="Patricia Fergusson"/>
+
+<!-- the presiding and deputy presiding officers
+     There is some ambiguity here, in that sometimes the deputy
+     is not qualified with their full name and on certain days
+     there are two presiding officers.  We need to keep track
+     of the last such mentioned when parsing... -->
+
+<alias fullname="George Reid" alternate="The Deputy Presiding Officer" from="1999-05-12" to="2003-05-06"/>
+<alias fullname="Patricia Ferguson" alternate="The Deputy Presiding Officer" from="1999-05-12" to="2003-05-06"/>
+<alias fullname="David Steel" alternate="The Presiding Officer" from="1999-05-12" to="2003-05-03"/>
+
+<alias fullname="Trish Godman" alternate="The Deputy Presiding Officer" from="2003-05-07" to="2007-05-13"/>
+<alias fullname="Murray Tosh" alternate="The Deputy Presiding Officer" from="2003-05-07" to="2007-05-13"/>
+<alias fullname="George Reid" alternate="The Presiding Officer" from="2003-05-07" to="2007-05-14"/>
+
+<alias fullname="Trish Godman" alternate="The Deputy Presiding Officer" from="2007-05-14" to="9999-12-31"/>
+<alias fullname="Alasdair Morgan" alternate="The Deputy Presiding Officer" from="2007-05-14" to="9999-12-31"/>
+<alias fullname="Alex Fergusson" alternate="The Presiding Officer" from="2007-05-14" to="9999-12-31"/>
+
+</publicwhip>
