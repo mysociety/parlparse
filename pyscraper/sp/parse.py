@@ -29,7 +29,7 @@ import glob
 # If verbose is True then you'll get about a gigabyte of nonsense on
 # standard output.
 
-verbose = True
+verbose = False
 
 # Up to and including 2003-05-29 is the old format of the official
 # reports, and 2003-06-03 and after is the new format.  There's one
@@ -1203,6 +1203,8 @@ def compare_filename(a,b):
         raise Exception, "Couldn't match filenames: "+a+" and "+B
 
 force = False
+
+last_column_number = 0
     
 for d in dates:
 
@@ -1228,6 +1230,8 @@ for d in dates:
 
     parser = Parser()
 
+    parser.current_column = last_column_number
+
     parser.major_regexp = major_regexp
     parser.minor_regexp = minor_regexp
 
@@ -1243,11 +1247,12 @@ for d in dates:
             original_urls.append(url)
     fp.close()
 
-    for o in original_urls:
-        print "original url was: "+o
+    if verbose:
+        for o in original_urls:
+            print "original url was: "+o
 
-    for f in filenames:
-        print "filename was: "+f
+        for f in filenames:
+            print "filename was: "+f
 
     detail_filenames = filenames[1:]
 
@@ -1276,7 +1281,7 @@ for d in dates:
             continue # More lists of names...
         elif re.search('2000-07-06_[23]',detail_filename):
             continue # Those are two annexes which are contained in main report anyway
-        elif re.search('2003-05-15_1',detail_filename):
+        elif re.search('2003-05-15',detail_filename):
             continue # That's 404
 
         fp = open(detail_filename)
@@ -1373,6 +1378,8 @@ for d in dates:
             parser.parse_early_format( body, d, original_url )
 
         elements_added = len(parser.all_stuff) - elements_before
+
+        last_column_number = parser.current_column
 
         if elements_added < 3 and not re.search('1999-07-02_1',detail_filename):
             raise Exception, "Very suspicious: only "+str(elements_added)+" added by parsing: "+detail_filename
