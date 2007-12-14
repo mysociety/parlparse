@@ -120,6 +120,111 @@ ni_ni_matches = {
     "Mitchel McLaughlin [Foyle]":"Mitchel McLaughlin [South Antrim]",
 }
 
+sp_lord_matches = {
+    # Lord James Douglas-Hamilton
+    "uk.org.publicwhip/member/80026": "uk.org.publicwhip/lord/100564",
+    "uk.org.publicwhip/member/80261": "uk.org.publicwhip/lord/100564",
+    # Sir David Steel
+    "uk.org.publicwhip/member/80242": "uk.org.publicwhip/lord/100597",
+    "uk.org.publicwhip/member/80277": "uk.org.publicwhip/lord/100597",
+}
+
+# Include in here changes of constituency, so those people are
+# recognized as the same...  Annoyingly the order is important here.
+
+sp_sp_matches = {
+    "Alasdair Morgan [sp: Galloway and Upper Nithsdale]" : "Alasdair Morgan [sp: South of Scotland]",
+    "Jim Mather [sp: Argyll and Bute]" : "Jim Mather [sp: Highlands and Islands]",
+    "Michael Matheson [sp: Falkirk West]" : "Michael Matheson [sp: Central Scotland]",
+    "Richard Lochhead [sp: North East Scotland]" : "Richard Lochhead [sp: Moray]",
+    "Alex Fergusson [sp: South of Scotland]" : "Alex Fergusson [sp: Galloway and Upper Nithsdale]",
+    "Gil Paterson [sp: Central Scotland]" : "Gil Paterson [sp: West of Scotland]",
+    "Bruce Crawford [sp: Stirling]" : "Bruce Crawford [sp: Mid Scotland and Fife]",
+    "Iain Gray [sp: Edinburgh Pentlands]" : "Iain Gray [sp: East Lothian]",
+    "David McLetchie [sp: Edinburgh Pentlands]" : "David McLetchie [sp: Lothians]",
+    "Tricia Marwick [sp: Central Fife]" : "Tricia Marwick [sp: Mid Scotland and Fife]",
+    "Nicola Sturgeon [sp: Glasgow Govan]" : "Nicola Sturgeon [sp: Glasgow]",
+    "Alex Salmond [sp: Gordon]" : "Alex Salmond [sp: Banff and Buchan]",
+    "Murray Tosh [sp: West of Scotland]" : "Murray Tosh [sp: South of Scotland]",
+    "Richard Simpson [sp: Ochil]" : "Richard Simpson [sp: Mid Scotland and Fife]",
+    "Kenny MacAskill [sp: Lothians]" : "Kenny MacAskill [sp: Edinburgh East and Musselburgh]",
+    "Shona Robison [sp: North East Scotland]" : "Shona Robison [sp: Dundee East]",
+    "George Reid [sp: Mid Scotland and Fife]" : "George Reid [sp: Ochil]",
+    "Brian Adam [sp: North East Scotland]" : "Brian Adam [sp: Aberdeen North]",
+    "Kenneth Gibson [sp: Glasgow]" : "Kenneth Gibson [sp: Cunninghame North]"
+    }
+
+sp_mp_matches = {
+    # Alasdair Morgan
+    "uk.org.publicwhip/member/80089": "Alasdair Morgan [Galloway & Upper Nithsdale]",
+    "uk.org.publicwhip/member/80213": "Alasdair Morgan [Galloway & Upper Nithsdale]",
+    "uk.org.publicwhip/member/80366": "Alasdair Morgan [Galloway & Upper Nithsdale]",
+    # Alex Salmond
+    "uk.org.publicwhip/member/80233": "Alex Salmond [Banff & Buchan]",
+    "uk.org.publicwhip/member/80382": "Alex Salmond [Banff & Buchan]",
+    # Andrew Welsh
+    "uk.org.publicwhip/member/80125": "Andrew Welsh [Angus]",
+    "uk.org.publicwhip/member/80255": "Andrew Welsh [Angus]",
+    "uk.org.publicwhip/member/80401": "Andrew Welsh [Angus]",
+    # Ben Wallace
+    "uk.org.publicwhip/member/80251": "Ben Wallace [Lancaster & Wyre]",
+    # David Mundell
+    "uk.org.publicwhip/member/80217": "David Mundell [Dumfriesshire, Clydesdale & Tweeddale]",
+    "uk.org.publicwhip/member/80265": "David Mundell [Dumfriesshire, Clydesdale & Tweeddale]",
+    # Dennis Canavan
+    "uk.org.publicwhip/member/80017": "Dennis Canavan [Falkirk West]",
+    "uk.org.publicwhip/member/80139": "Dennis Canavan [Falkirk West]",
+    # Donald Dewar
+    "uk.org.publicwhip/member/80147": "Donald Dewar [Glasgow, Anniesland]",
+    # Donald Gorrie
+    "uk.org.publicwhip/member/80042": "Donald Gorrie [Edinburgh West]",
+    "uk.org.publicwhip/member/80164": "Donald Gorrie [Edinburgh West]",
+    # Henry McLeish
+    "uk.org.publicwhip/member/80205": "Henry McLeish [Central Fife]",
+    # Jim Wallace
+    "uk.org.publicwhip/member/80123": "Jim Wallace [Orkney & Shetland]",
+    "uk.org.publicwhip/member/80252": "Jim Wallace [Orkney & Shetland]",
+    # John Home Robertson
+    "uk.org.publicwhip/member/80047": "John Home Robertson [East Lothian]",
+    "uk.org.publicwhip/member/80172": "John Home Robertson [East Lothian]",
+    # John McAllion
+    "uk.org.publicwhip/member/80198": "John McAllion [Dundee East]",
+    # John Swinney
+    "uk.org.publicwhip/member/80120": "John Swinney [North Tayside]",
+    "uk.org.publicwhip/member/80247": "John Swinney [North Tayside]",
+    "uk.org.publicwhip/member/80397": "John Swinney [North Tayside]",
+    # Malcolm Chisholm
+    "uk.org.publicwhip/member/80018": "Malcolm Chisholm [Edinburgh North & Leith]",
+    "uk.org.publicwhip/member/80140": "Malcolm Chisholm [Edinburgh North & Leith]",
+    "uk.org.publicwhip/member/80296": "Malcolm Chisholm [Edinburgh North & Leith]",
+    # Margaret Ewing
+    "uk.org.publicwhip/member/80151": "Margaret Ewing [Moray]",
+    "uk.org.publicwhip/member/80263": "Margaret Ewing [Moray]",
+    # Roseanna Cunningham
+    "uk.org.publicwhip/member/80021": "Roseanna Cunningham [Perth]",
+    "uk.org.publicwhip/member/80143": "Roseanna Cunningham [Perth]",
+    "uk.org.publicwhip/member/80301": "Roseanna Cunningham [Perth]",
+    # Sam Galbraith
+    "uk.org.publicwhip/member/80158": "Sam Galbraith [Strathkelvin & Bearsden]",
+
+    # Lord James Douglas-Hamilton
+    # Not in the database of MPs, only Lords [Lord James Douglas-Hamilton Edinburgh West]
+    # Only an MP until 1997 (?)
+    # "uk.org.publicwhip/member/80026" : ""
+    # "uk.org.publicwhip/member/80261" : ""
+
+    # Phil Gallie
+    # Not in the database (lost seat in 1997)
+    # "uk.org.publicwhip/member/80035": "Phil Gallie [Ayr]",
+    # "uk.org.publicwhip/member/80159": "Phil Gallie [Ayr]",
+    
+    # George Reid lost his seat in 1979
+    # "uk.org.publicwhip/member/80103": "George Reid [Clackmannan & East Stirlingshire]",
+    # "uk.org.publicwhip/member/80228": "George Reid [Clackmannan & East Stirlingshire]",
+    # "uk.org.publicwhip/member/80272": "George Reid [Clackmannan & East Stirlingshire]",
+    
+}
+
 # People who have been MPs for two different constituencies.  The like of
 # Michael Portillo will eventually appear here.
 manualmatches = {
@@ -227,6 +332,8 @@ class PersonSets(xml.sax.handler.ContentHandler):
 		self.lordspersonset={} # Lord ID --> person set
         self.member_ni={}
 		self.member_ni_personset={}
+        self.member_sp={}
+		self.member_sp_personset={}
 		self.ministermap={}
 
         self.old_idtoperson={} # ID (member/lord/office) --> Person ID in last version of file
@@ -239,6 +346,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
         parser.parse("all-members.xml")
         parser.parse("peers-ucl.xml")
         parser.parse("ni-members.xml")
+        parser.parse("sp-members.xml")
         parser.parse("ministers.xml")
         parser.parse("royals.xml")
 
@@ -362,6 +470,36 @@ class PersonSets(xml.sax.handler.ContentHandler):
                 self.personsets.append(newset)
                 self.member_ni_personset[lookup] = newset
 
+        items = self.member_sp.items()
+        items.sort(key=lambda x : x[1]['lastname'])
+        for member_id, attr in items:
+
+            # Since some Westminster constituencies have the same
+            # names as Scottish Parliament constituencies, we may get
+            # some clashes unless we mangle the SP name a bit.  I
+            # don't think this breaks anything else, but ICBW.
+            
+            cancons = memberList.canonicalcons("sp: "+attr['constituency'], attr['fromdate'])
+            lookup = "%s %s [%s]" % (attr['firstname'], attr['lastname'], cancons)
+            if member_id in sp_mp_matches:
+                mp = sp_mp_matches[member_id]
+                self.fullnamescons[mp].add(attr)
+            elif lookup in sp_sp_matches:
+                sp = sp_sp_matches[lookup]
+                self.member_sp_personset[sp].add(attr)
+            elif member_id in sp_lord_matches:
+                lord = sp_lord_matches[member_id]
+                self.lordspersonset[lord].add(attr)
+            elif lookup in self.fullnamescons
+                self.fullnamescons[lookup].add(attr)
+            elif lookup in self.member_sp_personset:
+                self.member_sp_personset[lookup].add(attr)
+            else:
+                newset = sets.Set()
+                newset.add(attr)
+                self.personsets.append(newset)
+                self.member_sp_personset[lookup] = newset
+
     # Look for people of the same name, but their constituency differs
     def findotherpeoplewhoaresame(self):
         goterror = False
@@ -476,10 +614,16 @@ class PersonSets(xml.sax.handler.ContentHandler):
 			#assert attr["id"] not in self.ministermap
 			if attr.has_key("matchid"):
 				self.ministermap.setdefault(attr["matchid"], sets.Set()).add(attr.copy())
+
         elif name == "member_ni":
             assert not self.in_person
             assert attr['id'] not in self.member_ni
             self.member_ni[attr['id']] = attr.copy()
+
+        elif name == "member_sp":
+            assert not self.in_person
+            assert attr['id'] not in self.member_sp
+            self.member_sp[attr['id']] = attr.copy()
 
     def endElement(self, name):
         if name == "person":
@@ -519,6 +663,6 @@ fout.write("</publicwhip>\n")
 fout.close()
 
 # overwrite people.xml
-os.rename("temppeople.xml", "people.xml")
+# os.rename("temppeople.xml", "people.xml")
 
 
