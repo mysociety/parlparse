@@ -56,6 +56,8 @@ class MemberList(xml.sax.handler.ContentHandler):
         parser.setContentHandler(self)
         self.loadconsattr = None
         parser.parse("../members/constituencies.xml")
+        self.loadspconsattr = None
+        parser.parse("../members/sp-constituencies.xml")
         parser.parse("../members/all-members.xml")
         self.loadperson = None
         parser.parse("../members/people.xml")
@@ -168,9 +170,13 @@ class MemberList(xml.sax.handler.ContentHandler):
                     else:
                         self.lastnames.setdefault(attr["alternate"], []).append(newattr)
 
-        # constituencies.xml loading
+        # constituencies.xml and sp-constituencies.xml loading
         elif name == "constituency":
-            self.loadconsattr = attr
+            if attr.has_key('parliament') and attr['parliament'] == "edinburgh":
+                # Then this is a Scottish Parliament constituency...
+                self.loadspconsattr = attr
+            else:
+                self.loadconsattr = attr
             pass
         elif name == "name":
             if self.loadconsattr: # name tag within constituency tag
@@ -180,6 +186,17 @@ class MemberList(xml.sax.handler.ContentHandler):
                 # without punctuation, spaces, in lower case
                 nopunc = self.strippunc(attr['text'])
                 self.constoidmap.setdefault(nopunc, []).append(self.loadconsattr)
+            elif self.loadspconsattr: # name tag within constituency tag from the scottish parliament
+                # We need to distinguish the Scottish Parliament
+                # constituencies from Westminster constituencies with
+                # the same names, so prefix the name with "sp: "
+                altered_name = "sp: "+attr["text"]
+                if not self.loadspconsattr["id"] in self.considtonamemap:
+                    self.considtonamemap[self.loadspconsattr["id"]] = altered_name # preferred constituency name is first listed
+                self.constoidmap.setdefault(altered_name, []).append(self.loadspconsattr)
+                # without punctuation, spaces, in lower case
+                nopunc = self.strippunc(altered_name)
+                self.constoidmap.setdefault(nopunc, []).append(self.loadspconsattr)
             pass
 
         # people.xml loading
@@ -222,6 +239,7 @@ class MemberList(xml.sax.handler.ContentHandler):
     def endElement(self, name):
         if name == "constituency":
             self.loadconsattr = None
+            self.loadspconsattr = None
 
     def partylist(self):
         return self.parties.keys()
