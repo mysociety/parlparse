@@ -29,7 +29,6 @@ class MemberList(xml.sax.handler.ContentHandler):
 
     def match_whole_speaker(self,speaker_name,speaker_date):
 
-        print "Trying to match speaker name: "+speaker_name
         # if speaker_date:
         #     print speaker_name+" [on date "+speaker_date + "]"
         # else:
