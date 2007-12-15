@@ -100,7 +100,8 @@
              Just empty or "from_sp_website" at the moment,
              although I put this in in case someone wants to
              acquire images from public domain sources of one
-             kind or another.
+             kind or another.  (In fact, I've added
+             "from_wikipedia" for Sir David Steel.)
 
        constituency:
 
@@ -3170,8 +3171,8 @@
              title=""
              suffix=""
              spurl="http://www.scottish.parliament.uk/msp/membersPages/historic/s1/donald_dewar/index.htm"
-             haveimage="false"
-             imagesource=""
+             haveimage="true"
+             imagesource="from_sp_website"
              webcategory="historic_s1"
              fromdate="1999-05-06"
              fromwhy="regional_election"
@@ -5412,8 +5413,8 @@
              title="Sir"
              suffix=""
              spurl="http://www.scottish.parliament.uk/msp/membersPages/historic/s1/sir_david_steel/index.htm"
-             haveimage="false"
-             imagesource=""
+             haveimage="true"
+             imagesource="from_wikipedia"
              webcategory="historic_s1"
              fromdate="1999-05-12"
              fromwhy="became_presiding_officer"
