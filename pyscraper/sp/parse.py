@@ -297,6 +297,10 @@ class Division:
         self.abstentions_votes = list()
         self.spoiled_votes_votes = list()
         self.id = 'uk.org.publicwhip/spdivision/'+str(date)+'.'+str(colnum)+'.'+str(divnumber)
+        self.candidate = None
+
+    def set_candidate(self,candidate):
+        self.candidate = candidate
 
     def add_votes(self, which_way, name):
         if which_way == 'FOR':
@@ -315,11 +319,18 @@ class Division:
             raise Exception, "add_votes for unknown way: " + which_way
 
     def to_xml(self):
-        result = '<division id="%s" nospeaker="True" divdate="%s" divnumber="%s" colnum="%d" time="%s" url="%s">' % ( self.id, self.date, self.divnumber, self.colnum, self.time, self.url )
+        candidate_info = ''
+        if self.candidate:
+            candidate_info = ' candidate="'+self.candidate+'"'
+        result = '<division id="%s"%s nospeaker="True" divdate="%s" divnumber="%s" colnum="%d" time="%s" url="%s">' % ( self.id, candidate_info, self.date, self.divnumber, self.colnum, self.time, self.url )
         result += "\n"
         result += '  <divisioncount for="%d" against="%d" abstentions="%d" spoiledvotes="%d"/>' % ( len(self.for_votes), len(self.against_votes), len(self.abstentions_votes), len(self.spoiled_votes_votes) )
         result += "\n"
-        for way in ( "for", "against", "abstentions", "spoiled votes" ):
+        if self.candidate:
+            ways_to_list = [ "for" ]
+        else:
+            ways_to_list = [ "for", "against", "abstentions", "spoiled votes" ]
+        for way in ways_to_list:
             votes = None
             if way == "for":
                 votes = self.for_votes
@@ -1013,10 +1024,27 @@ class Parser:
 
                 # When voting for particular candidates the results
                 # come up like this; maybe we should treat them as a
-                # division...
+                # division...  These come up in:
+                #    sp1999-05-13.xml
+                #    sp1999-05-19.xml
+                #    sp2000-10-26.xml
+                #    sp2001-11-22.xml
+                #    sp2003-05-21.xml
+                #    sp2006-01-12.xml
+                #    sp2007-05-16.xml
 
-                if re.search('VOTES? FOR',speaker):
+                mcandidate = re.search('VOTES? FOR (.*)',speaker)
+                if mcandidate:
                     self.current_speech.add_paragraph("<b>"+speaker.strip()+"</b>")
+                    if verbose: "Found votes for a candiate: "+speaker
+                    division_report = True
+                    self.results_expected = 'FOR'
+                    if verbose: print '- Creating new division for candidate: ' + so_far
+                    self.complete_current()
+                    self.current_division = Division(self.current_id_within_column,self.current_column,self.current_time,self.make_url(url),report_date,self.division_number)
+                    self.current_division.set_candidate(mcandidate.group(1))
+                    self.division_number += 1
+                    continue
                 elif not added_to_name:
                     self.current_speech.set_speaker(speaker)
 
