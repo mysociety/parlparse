@@ -122,8 +122,8 @@ ni_ni_matches = {
 
 sp_lord_matches = {
     # Lord James Douglas-Hamilton
-    "uk.org.publicwhip/member/80026": "uk.org.publicwhip/lord/100564",
-    "uk.org.publicwhip/member/80261": "uk.org.publicwhip/lord/100564",
+    "uk.org.publicwhip/member/80026": "uk.org.publicwhip/lord/100579",
+    "uk.org.publicwhip/member/80261": "uk.org.publicwhip/lord/100579",
     # Sir David Steel
     "uk.org.publicwhip/member/80242": "uk.org.publicwhip/lord/100597",
     "uk.org.publicwhip/member/80277": "uk.org.publicwhip/lord/100597",
@@ -490,7 +490,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
             elif member_id in sp_lord_matches:
                 lord = sp_lord_matches[member_id]
                 self.lordspersonset[lord].add(attr)
-            elif lookup in self.fullnamescons
+            elif lookup in self.fullnamescons:
                 self.fullnamescons[lookup].add(attr)
             elif lookup in self.member_sp_personset:
                 self.member_sp_personset[lookup].add(attr)
@@ -663,6 +663,6 @@ fout.write("</publicwhip>\n")
 fout.close()
 
 # overwrite people.xml
-# os.rename("temppeople.xml", "people.xml")
+os.rename("temppeople.xml", "people.xml")
 
 
