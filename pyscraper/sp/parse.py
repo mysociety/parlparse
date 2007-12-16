@@ -29,7 +29,7 @@ import glob
 # If verbose is True then you'll get about a gigabyte of nonsense on
 # standard output.
 
-verbose = False
+verbose = True
 
 # Up to and including 2003-05-29 is the old format of the official
 # reports, and 2003-06-03 and after is the new format.  There's one
@@ -91,8 +91,21 @@ verbose = False
 
 # And some section headings...
 
+
+cases = { }
+
+def count_case( name ):
+    cases.setdefault(name,0)
+    cases[name] += 1
+
+def report_cases():
+    keys = cases.keys()
+    keys.sort()
+    for k in keys:
+        print "%9d hits on %s" % ( cases[k], k )
+
 def log_speaker(speaker,date,message):
-    if False:
+    if True:
         out_file = open("speakers.txt", "a")
         out_file.write(str(date)+": ["+message+"] "+speaker+"\n")
         out_file.close()
@@ -148,6 +161,7 @@ class Speech:
 
     def add_paragraph(self,paragraph):
         # if verbose: print "- in add_paragraph, self.paragraphs was: "+str(self.paragraphs)
+        if verbose: print "adding paragraph: "+re.sub('(?ims)\s+',' ',paragraph)
         if not paragraph:
             raise Exception, "Trying to add null paragraph..."
         self.paragraphs.append(paragraph)
@@ -158,7 +172,7 @@ class Speech:
             # if verbose: print "- last ["+str(last.__class__)+"] was: "+str(last)
             # if verbose: print "- text ["+str(text.__class__)+"] was: "+str(text)
             # if verbose: print "- self.paragraphs ["+str(self.paragraphs.__class__)+"] was: "+str(self.paragraphs)
-            self.paragraphs.append(last+text)
+            self.paragraphs.append(last+" "+text)
         else:
             self.paragraphs = [ text ]
 
@@ -268,17 +282,9 @@ class Speech:
         html = ''
 
         for p in self.paragraphs:
-            html += "\n<p>" + p + "</p>\n"
-
-        # Try to turn these paragraphs into more XHTML-like closed <p>
-        # tags...
-
-        real_paragraphs = re.split("(?ims)\s*</?p[^>]*>\s*",html)
-        real_paragraphs = filter( lambda x: not re.match( "(?ims)^\s*$", x ), real_paragraphs )
-        real_paragraphs = map( lambda x: x.strip(), real_paragraphs )
-
-        for p in real_paragraphs:
-            result += "\n<p>" + p + "</p>\n"
+            real_paragraph = re.sub('(?ims)(\s*)</?p[^>]*>(\s*)',r'\1\2',p)
+            real_paragraph = re.sub('(?ims)\s+',' ',real_paragraph)
+            result += "\n<p>" + real_paragraph + "</p>\n"
 
         result += '</speech>'
         return result
@@ -417,17 +423,21 @@ def just_time( non_tag_text ):
         return None
 
 def full_date( s ):
-    stripped = s.strip()
-    try:
-        return time.strptime(stripped,'%A %d %B %Y')
-    except:
+    if re.search('(?ims)^\s*\w+\s+\d+\s+\w+\s+\d+\s*$',s):
+        try:
+            return time.strptime(s.strip(),'%A %d %B %Y')
+        except:
+            return None
+    else:
         return None
 
 def full_date_without_weekday( s ):
-    stripped = s.strip()
-    try:
-        return time.strptime(stripped,'%d %B %Y')
-    except:
+    if re.search('(?ims)^\s*\d+\s+\w+\s+\d+\s*$',s):
+        try:
+            return time.strptime(s.strip(),'%d %B %Y')
+        except:
+            return None
+    else:
         return None
 
 def find_opening_paragraphs( body ):
@@ -435,12 +445,6 @@ def find_opening_paragraphs( body ):
     t = body.find( lambda x: x.name == 'p' and re.search('(?ims)(opened|recommenced).*at\s+([0-9]?[0-9]):([0-9][0-9])',non_tag_data_in(x)) )
     if t:
 
-        if verbose: print "parent is: "+t.parent.name
-        if t.parent and t.parent.parent and t.parent.parent.parent:
-            if verbose: print "great-grandparent is: " + t.parent.parent.parent.name
-            pass
-        if verbose: print " siblings: "+str(len(t.parent.contents))
-        
         previous_paragraphs = []
         next_paragraphs = []
         previous = t.previousSibling
@@ -494,6 +498,8 @@ class Parser:
         self.all_stuff = []
         self.speakers_so_far = []
 
+        self.report_date = None
+
     def parse_column(self,tag):
         a_name_tag = tag.find('a')
         if a_name_tag:
@@ -516,6 +522,9 @@ class Parser:
             self.current_id_within_column = 0
 
     def parse_weird_day( self, body, report_date, url ):
+
+        self.report_date = report_date
+        self.url = url
 
         self.started = False
 
@@ -541,6 +550,9 @@ class Parser:
 
     def parse_early_format( self, body, report_date, url ):
 
+        self.report_date = report_date
+        self.url = url
+
         opening_paragraphs = find_opening_paragraphs(body)
         
         opening_table = None
@@ -563,7 +575,6 @@ class Parser:
 
         for table in body.findAll('table'):
             plausible_rows = two_cell_rows(table)
-            if verbose: print "considering table with: "+str(plausible_rows)+" plausible rows"
             if plausible_rows > max_two_cell_rows:
                 main_table = table
                 max_two_cell_rows = plausible_rows
@@ -584,8 +595,6 @@ class Parser:
         date = None
 
         for row in all_rows:
-
-            # if verbose: print "========= row is: "+row.prettify()
 
             cells = row.findAll('td',recursive=False)
 
@@ -637,6 +646,9 @@ class Parser:
 
     def parse_late_format( self, body, report_date, url ):
 
+        self.report_date = report_date
+        self.url = url
+
         self.started = False
 
         max_divs = -1
@@ -668,9 +680,7 @@ class Parser:
                 self.parse_substance(m,report_date,url)
             elif m.__class__ == Tag:
                 if m.name == 'span' and m['class'] and m['class'].lower() == 'largeheading':
-                    self.complete_current()
-                    self.current_heading = Heading(self.current_id_within_column,self.current_column,self.current_time,self.make_url(url),report_date,non_tag_data_in(m),True)
-                    self.current_id_within_column += 1
+                    self.add_heading(non_tag_data_in(m),True)
                     continue
                 if m.name == 'span' and m['class'] and m['class'].lower() == 'orcolno':
                     self.parse_column(m)
@@ -699,11 +709,26 @@ class Parser:
             self.all_stuff.append(self.current_heading)
             self.current_heading = None
 
-    def make_url(self,url_without_anchor):
+    def make_url(self):
+        url_without_anchor = self.url
         if self.current_anchor:
             return url_without_anchor + "#" + self.current_anchor
         else:
             return url_without_anchor
+
+    def add_to_speech_or_make_new_one(self,s):
+        if self.current_speech:
+            self.current_speech.add_paragraph( s )
+        else:
+            self.complete_current()
+            self.current_speech = Speech(self.current_id_within_column,self.current_column,self.current_time,self.make_url(),self.report_date,self)
+            self.current_id_within_column += 1
+            self.current_speech.add_paragraph( s )
+
+    def add_heading(self,text,major):
+        self.complete_current()
+        self.current_heading = Heading(self.current_id_within_column,self.current_column,self.current_time,self.make_url(),self.report_date,text,major)
+        self.current_id_within_column += 1        
 
     def parse_substance(self,contents,report_date,url):
 
@@ -726,7 +751,7 @@ class Parser:
 
             non_tag_text = non_tag_data_in(s)
 
-            # In the one weird day, this might be a column number
+            # In the one Weird Day, this might be a column number
             # paragraph, so check for that:
 
             if re.match( '\s*Col\s*[0-9]+\s', non_tag_text ):
@@ -758,50 +783,38 @@ class Parser:
                 minor_heading_match = True
 
             if major_heading_match or minor_heading_match:
-                if verbose: print "WOOHOO! Found an actual heading ("+for_matching+")"
-                self.complete_current()
-                self.current_heading = Heading(self.current_id_within_column,self.current_column,self.current_time,self.make_url(url),report_date,for_matching,major_heading_match)
-                self.current_id_within_column += 1
+                count_case("heading-from-regexp")
+                self.add_heading(for_matching,major_heading_match)
                 continue
 
             # It's sometimes hard to detect the headings at the
-            # beginning of the page, so look out for them in particular...
+            # beginning of the page, so look out for them in
+            # particular...
 
             if not self.started:
 
                 non_tag_text = re.sub('(?ms)\s+',' ',non_tag_text)
                 if verbose: print "Not started, and looking at '" + non_tag_text + "'"
 
-                if re.match('(?ims)\s*Scottish Parliament\s*',non_tag_text):
-                    self.complete_current()
-                    self.current_heading = Heading(self.current_id_within_column,self.current_column,self.current_time,self.make_url(url),report_date,s.prettify(),True)
-                    self.current_id_within_column += 1
-                    continue
-
-                if full_date(non_tag_text):
-                    self.complete_current()
-                    self.current_heading = Heading(self.current_id_within_column,self.current_column,self.current_time,self.make_url(url),report_date,s.prettify(),False)
-                    self.current_id_within_column += 1
-                    continue
-
-                if full_date_without_weekday(non_tag_text):
-                    self.complete_current()
-                    self.current_heading = Heading(self.current_id_within_column,self.current_column,self.current_time,self.make_url(url),report_date,s.prettify(),False)
-                    self.current_id_within_column += 1
-                    continue
-
-                if re.match('^[\s\(]*(Afternoon|Morning)[\s\)]*$',non_tag_text):
-                    self.complete_current()
-                    self.current_heading = Heading(self.current_id_within_column,self.current_column,self.current_time,self.make_url(url),report_date,s.prettify(),False)
-                    self.current_id_within_column += 1
-                    continue
+                major_heading = False
+                minor_heading = False
 
                 m = re.search('(?ims)(opened|recommenced).*at\s+([0-9]?[0-9]):([0-9][0-9])',non_tag_text)
-                if m:
-                    self.current_time = datetime.time(int(m.group(2),10),int(m.group(3),10))                    
-                    self.complete_current()
-                    self.current_heading = Heading(self.current_id_within_column,self.current_column,self.current_time,self.make_url(url),report_date,s.prettify(),False)
-                    self.current_id_within_column += 1
+
+                if re.match('(?ims)\s*Scottish Parliament\s*',non_tag_text):
+                    major_heading = True
+                elif full_date(non_tag_text):
+                    minor_heading = True
+                elif full_date_without_weekday(non_tag_text):
+                    minor_heading = True
+                elif re.match('^[\s\(]*(Afternoon|Morning)[\s\)]*$',non_tag_text):
+                    minor_heading = True
+                elif m:
+                    self.current_time = datetime.time(int(m.group(2),10),int(m.group(3),10))
+                    minor_heading = True
+
+                if major_heading or minor_heading:
+                    self.add_heading(s.prettify(),major_heading)
                     continue
 
             if NavigableString == s.__class__ or s.name == 'sup' or s.name == 'sub' or s.name == 'br':
@@ -818,12 +831,8 @@ class Parser:
                         # the names in the list of votes.
                         continue
                 self.results_expected = None
-                if NavigableString == s.__class__:
-                    text_to_add = s
-                else:
-                    text_to_add = str(s)
                 if self.current_speech:
-                    self.current_speech.add_text_to_last_paragraph(text_to_add)
+                    self.current_speech.add_text_to_last_paragraph(str(s))
                 else:
                     # If it's just a break, it's safe to ignore it in this situation:
                     if not (s.__class__ == Tag and s.name == 'br'):
@@ -839,13 +848,12 @@ class Parser:
             # however....
 
             if centred(s):
+                count_case("centred")
                 self.results_expected = None
                 if verbose: print "- Centred, so a heading or something:\n" + s.prettify()
                 non_tag_data = non_tag_data_in(s)
                 if not re.match('(?ims)^\s*$',non_tag_data):
-                    self.complete_current()
-                    self.current_heading = Heading(self.current_id_within_column,self.current_column,self.current_time,self.make_url(url),report_date,s.prettify(),False)
-                    self.current_id_within_column += 1
+                    self.add_heading(s.prettify(),False)
                 continue
 
             if len(s.contents) == 0:
@@ -857,29 +865,20 @@ class Parser:
             s_contents = filter(lambda x: x.__class__ != Comment and (x.__class__ != NavigableString or not re.match('^\s*$',x)), s.contents)
 
             if s.name == 'p' and len(s_contents) == 1 and s_contents[0].__class__ == Tag and (s_contents[0].name == 'em' or s_contents[0].name == 'i'):
+                count_case("narrative")
                 if verbose: print "Got what looks like some narrative..."
-                # Then this is probably some narrative, so create
-                # a speech but don't set a speaker.
-                self.results_expected = None
-                self.complete_current()
-                self.current_speech = Speech(self.current_id_within_column,self.current_column,self.current_time,self.make_url(url),report_date,self)
-                self.started = True
-                self.current_id_within_column += 1
-                self.current_speech.add_paragraph(s.contents[0].prettify())
+                # Then this is probably some narrative, just added
+                # into the current speech.
+                self.add_to_speech_or_make_new_one(str(s_contents[0]))        
                 continue
 
             # Sometimes we get lists or audience reaction in the
             # speech, so just add them.
 
             if s.name == 'ol' or s.name == 'i' or s.name == 'ul' or s.name == 'table':
+                count_case("reaction-or-something")
                 self.results_expected = None
-                if self.current_speech:
-                    self.current_speech.add_text_to_last_paragraph( s.prettify() )
-                else:
-                    self.complete_current()
-                    self.current_speech = Speech(self.current_id_within_column,self.current_column,self.current_time,self.make_url(url),report_date,self)
-                    self.current_id_within_column += 1
-                    self.current_speech.add_text_to_last_paragraph( s.prettify() )
+                self.add_to_speech_or_make_new_one(s.prettify())
                 continue
 
             if s.name != 'p':
@@ -888,23 +887,29 @@ class Parser:
                 just_text = non_tag_data_in(s)
                 if re.match('^\s*$',just_text):
                     continue
-                if re.match('^\s*(Access Keys|Accessibility|Sitemap)\s*$',just_text):
-                    continue
-                if re.match('^\s*\s*$',just_text):
-                    continue
-                if full_date_without_weekday:
+                # We sometimes wrap awkward to parse thing in DIVs:
+                if s.name == 'div':
+                    self.add_to_speech_or_make_new_one(s.prettify())
                     continue
                 else:
-                    raise Exception, "There was an unexpected s, which was: "+s.name+" with content: "+s.prettify()
+                    if s.name == 'strong':
+                        count_case("strong-in-place-of-p")
+                        # We only hit this twice; they're both headings...
+                        self.add_heading(str(s),False)
+                        continue                        
+                    else:                    
+                        raise Exception, "There was an unexpected s, which was: "+s.name+" with content: "+s.prettify()
 
             # So now this must be a paragraph...
 
             # Sometimes there's a pointless <br/> at the start of the <p>.
             if len(s_contents) > 0 and s_contents[0].__class__ == Tag and s_contents[0].name == 'br':
+                count_case("leading-br-in-paragraph")
                 if verbose: print "- removing leading <br> from contents..."
                 s_contents = s_contents[1:]
 
             if len(s_contents) == 0:
+                count_case("tag-now-empty")
                 if verbose: print "- tag is now empty, so continuing"
                 continue
 
@@ -943,19 +948,15 @@ class Parser:
                 division_report = False
 
                 if re.match('(?ms)^\s*F\s*OR[:\s]*$',so_far):
-                    if verbose: print "Got FOR"
                     division_report = True
                     self.results_expected = 'FOR'
                 elif re.match('(?ms)^\s*A\s*GAINST[:\s]*$',so_far):
-                    if verbose: print "Got AGAINST"
                     division_report = True
                     self.results_expected = 'AGAINST'
                 elif re.match('(?ms)^\s*A\s*BST?ENTIONS?[:\s]*$',so_far):
-                    if verbose: print "Got ABSTENTIONS"
                     division_report = True
                     self.results_expected = 'ABSTENTIONS'
                 elif re.match('(?ms)^\s*S\s*POILED\s+VOTES?[:\s]*$',so_far):
-                    if verbose: print "Got SPOILED VOTES"
                     division_report = True
                     self.results_expected = 'SPOILED VOTES'
                 else:
@@ -964,11 +965,13 @@ class Parser:
                     if not self.current_division:
                         if verbose: print '- Creating new division: ' + so_far
                         self.complete_current()
-                        self.current_division = Division(self.current_id_within_column,self.current_column,self.current_time,self.make_url(url),report_date,self.division_number)
+                        self.current_division = Division(self.current_id_within_column,self.current_column,self.current_time,self.make_url(),report_date,self.division_number)
                         self.division_number += 1
                     continue
 
             if first.__class__ == Tag and (first.name == 'strong' or first.name == 'b'):
+
+                count_case("new-speaker")
 
                 # Now we know it's probably a new speaker...
 
@@ -983,13 +986,11 @@ class Parser:
                 # boundary...
 
                 speaker = non_tag_data_in(first)
-                if verbose: print "first use of speaker: '" + speaker + "'"
 
                 while len(rest) > 0 and rest[0].__class__ == Tag and (rest[0].name == 'strong' or rest[0].name == 'b'):
+                    count_case("extending-speaker-name-from-rest")
                     # In any case, sometimes there are two <strong>s
                     # next to each other that make up the name...
-                    if verbose: print "rest is: " + str(rest)
-                    if verbose: print "speaker is: "+ str(speaker)
                     speaker = speaker + non_tag_data_in(rest[0])
                     rest = rest[1:]
 
@@ -1001,20 +1002,21 @@ class Parser:
                     # Then this is probably a numbered question...
                     number = re.sub('(?ms)\s','',m.group(1))
                     if len(number) > 0:
-                        if verbose: print '- MATCHED! (question number was "' + number + "'"
+                        count_case("numbered-question")
                         question_number = int(number)
                         speaker = m.group(2)
 
                 added_to_name = False
 
                 if self.current_speech and self.current_speech.no_text_yet():
+                    count_case("adding-to-current-name")
                     if verbose: print "- No text in current speech yet, so add to the name."
                     self.current_speech.set_speaker(self.current_speech.name+speaker)
                     added_to_name = True
                 else:
                     if verbose: print "- Either there wasn't a current speech ("+str(self.current_speech)+") or there was text in it."
                     self.complete_current()
-                    self.current_speech = Speech(self.current_id_within_column,self.current_column,self.current_time,self.make_url(url),report_date,self)
+                    self.current_speech = Speech(self.current_id_within_column,self.current_column,self.current_time,self.make_url(),report_date,self)
                     self.current_id_within_column += 1
 
                 self.started = True
@@ -1023,25 +1025,18 @@ class Parser:
                     self.current_speech.set_question_number(question_number)
 
                 # When voting for particular candidates the results
-                # come up like this; maybe we should treat them as a
-                # division...  These come up in:
-                #    sp1999-05-13.xml
-                #    sp1999-05-19.xml
-                #    sp2000-10-26.xml
-                #    sp2001-11-22.xml
-                #    sp2003-05-21.xml
-                #    sp2006-01-12.xml
-                #    sp2007-05-16.xml
+                # come up like this; we treat these as a division...
 
                 mcandidate = re.search('VOTES? FOR (.*)',speaker)
                 if mcandidate:
+                    count_case("votes-for-candidate")
                     self.current_speech.add_paragraph("<b>"+speaker.strip()+"</b>")
                     if verbose: "Found votes for a candiate: "+speaker
                     division_report = True
                     self.results_expected = 'FOR'
                     if verbose: print '- Creating new division for candidate: ' + so_far
                     self.complete_current()
-                    self.current_division = Division(self.current_id_within_column,self.current_column,self.current_time,self.make_url(url),report_date,self.division_number)
+                    self.current_division = Division(self.current_id_within_column,self.current_column,self.current_time,self.make_url(),report_date,self.division_number)
                     self.current_division.set_candidate(mcandidate.group(1))
                     self.division_number += 1
                     continue
@@ -1061,50 +1056,17 @@ class Parser:
                         else:
                             self.current_speech.add_paragraph(r)
                         add_to_last = True
-                    elif r.name == 'strong':
-                        if len(r.contents) == 1:
-                            s = r.string or non_tag_data_in(r)
-                            if verbose: print "- r.string is: "+str(s)
-                            # if verbose: print "- r prettified is: "+r.prettify()
-                            if not re.match('^\s*$',s):
-                                # My best guess is that this is just emphasis within the paragraph...
-                                self.current_speech.add_text_to_last_paragraph('<strong>'+s+'</strong>')
-                                add_to_last = True
-                                if verbose: print "- WARNING: Non-empty <strong> in rest " + str(r.__class__) + " in " + r.prettify()
-                        else:
-                            raise Exception, "len(tag.contents) > 1 in " + r.prettify()
-                    elif r.name == 'sup':
-                        self.current_speech.add_text_to_last_paragraph('<sup>'+str(r)+'</sup>')
-                        add_to_last = True
-                    elif r.name == 'sub':
-                        self.current_speech.add_text_to_last_paragraph('<sub>'+str(r)+'</sub>')
-                        add_to_last = True
-                    elif r.name == 'ol' or r.name == 'ul' or r.name == 'table':
-                        self.current_speech.add_paragraph('<div>'+str(r)+'</div>')
-                    elif r.name == 'br':
-                        self.current_speech.add_text_to_last_paragraph('<br/>')
-                        add_to_last = True
-                    elif r.name == 'b':
-                        self.current_speech.add_text_to_last_paragraph('<b>'+r.string+'</b>')
-                        add_to_last = True
-                    elif r.name == 'em':
-                        self.current_speech.add_text_to_last_paragraph('<em>'+r.string+'</em>')
-                        add_to_last = True
-                    elif r.name == 'i':
-                        self.current_speech.add_text_to_last_paragraph('<i>'+r.string+'</i>')
-                        add_to_last = True
-                    elif r.name == 'a':
-                        # These are just <A NAME="MakeMarkAuto_11"></A>
-                        pass
                     elif r.name == 'p':
                         if verbose: print "- Adding paragraph."
                         self.current_speech.add_paragraph( r.prettify() )
+                    elif r.name == 'ol' or r.name == 'ul' or r.name == 'table':
+                        self.current_speech.add_paragraph('<div>'+str(r)+'</div>')
                     else:
-                        raise Exception, "Strange, item in rest is of class " + str(r.__class__) + " is " + r.prettify() +" from "+s.prettify()
-
+                        self.current_speech.add_text_to_last_paragraph(str(r))
                 continue
 
             if s.name == 'p' and self.results_expected:
+                count_case("more-results")
                 if verbose: print "- We were expecting results and found: " + s.prettify()
                 for v in s.contents:
                     if v.__class__ == NavigableString:
@@ -1118,23 +1080,16 @@ class Parser:
                 continue
 
             if s.__class__ == Tag and s.name == 'p':
-                if self.started:
-                    if self.current_speech:
-                        self.current_speech.add_paragraph( s.string or s.prettify() )
-                    else:
-                        if verbose:
-                            print "- No current speech (and we'd started) but got a bare paragraph!"
-                            print s.prettify()
-                else:
-                    self.complete_current()
-                    self.current_heading = Heading(self.current_id_within_column,self.current_column,self.current_time,self.make_url(url),report_date,s.prettify(),False)
-                    self.current_id_within_column += 1
+                count_case("some-other-p")
+                self.add_to_speech_or_make_new_one(str(s))
 
+
+
+# Open the contents page, grab the debate headings and build regular
+# expressions to match them.  This probably isn't strictly necessary,
+# but might help.
 
 def get_heading_regexps(contents_filename):
-
-    # Open the contents page and grab the debate headings.  This
-    # probably isn't strictly necessary, but might help:
 
     fp = open(contents_filename)
     html = fp.read()
@@ -1201,18 +1156,9 @@ def get_heading_regexps(contents_filename):
     
     return ( major_regexp, minor_regexp )
 
-# --------------------------------------------------------------------------
-# End of function and class definitions...
-
 class ScottishParliamentSoup(BeautifulSoup):
-
-    # None of these seem to work in the way that I expect from the
-    # documentation, so just use the default parser..
-
-    # BeautifulSoup.NESTABLE_TAGS['p'] = [ 'center', 'td'  ]
-    # BeautifulSoup.NESTABLE_TAGS['td'].append( 'center' )
-    # BeautifulSoup.NESTABLE_TAGS['center'].append( 'td' )
-    # BeautifulSoup.NESTABLE_TAGS['center'].append( 'p' )
+    # Changing NESTABLE_TAGS doesn't seem to work in the way that I
+    # expect from the documentation, so just use the default parser..
     pass
 
 def compare_filename(a,b):
@@ -1229,6 +1175,9 @@ def compare_filename(a,b):
             return 0
     else:
         raise Exception, "Couldn't match filenames: "+a+" and "+B
+
+# --------------------------------------------------------------------------
+# End of function and class definitions...
 
 force = False
 
@@ -1284,18 +1233,6 @@ for d in dates:
 
     detail_filenames = filenames[1:]
 
-    #        # There are a few odd files:
-    # 
-    #        # 2001-09-26 <-- excellent example with lots of different languages :)
-    # 
-    #        if str(d) == '1999-05-12' or str(d) == '1999-06-02' or str(d) == '1999-09-01':
-    #            # Those just have lists of names...
-    #            continue
-    # 
-    #        if str(d) == '2003-05-15':
-    #            # That page is 404, apparently
-    #            continue
-
     for i in range(0,len(detail_filenames)):
 
         detail_filename = detail_filenames[i]
@@ -1339,7 +1276,7 @@ for d in dates:
 
         # The square brackets around things like 'Laughter' and 'Applause'
         # tend to come outside the <i></i>, which is rather inconvenient.
-        html = re.sub('(?ims)\[\s*<i>([^<]*)</i>[\s\.]*\]',r'<i>[\1]</i>',html)
+        html = re.sub('(?ims)\[\s*<i>([^<]*)</i>([\s\.]*)\]',r' <i>[\1\2]</i>',html)
 
         # Similarly, swap <em><p></p></em> for <p><em></em></p>
         html = re.sub('(?ims)<em>\s*<p>([^<]*)</p>\s*</em>',r'<p><em>[\1]</em></i>',html)
@@ -1374,16 +1311,6 @@ for d in dates:
         # solve these problems anyway (FIXME)...
 
         soup = ScottishParliamentSoup( html, fromEncoding='iso-8859-15' )
-
-        #    nestable_keys = soup.NESTABLE_TAGS.keys()
-        #    nestable_keys.sort()
-        #
-        #    for i in nestable_keys:
-        #        l = soup.NESTABLE_TAGS[i]
-        #        if verbose: print str(i) + " can nest in [ " + ', '.join(l) + " ]"
-        #
-        #    for i in soup.RESET_NESTING_TAGS:
-        #        if verbose: print "soup.RESET_NESTING_TAGS has: "+str(i)
 
         body = soup.find('body')
 
@@ -1500,3 +1427,6 @@ for d in dates:
     retcode = call( [ "xmlstarlet", "val", output_filename ] )
     if retcode != 0:
         raise Exception, "Validating "+output_filename+" for well-formedness failed."
+
+if verbose:
+    report_cases()
