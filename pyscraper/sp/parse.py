@@ -29,7 +29,7 @@ import glob
 # If verbose is True then you'll get about a gigabyte of nonsense on
 # standard output.
 
-verbose = True
+verbose = False
 
 # Up to and including 2003-05-29 is the old format of the official
 # reports, and 2003-06-03 and after is the new format.  There's one
@@ -416,7 +416,7 @@ def non_tag_data_in( o ):
         return ''
 
 def just_time( non_tag_text ):
-    m = re.match( '^\s*(\d?\d):(\d\d)\s*$', non_tag_text )
+    m = re.match( '^\s*(\d?\d)[:\.](\d\d)\s*$', non_tag_text )
     if m:
         return datetime.time(int(m.group(1),10),int(m.group(2),10))
     else:
@@ -1260,6 +1260,7 @@ for d in dates:
         html = re.sub('\xA3','&#163;', html) # iso-8859 pound (currency) sign
         html = re.sub('\xB0','&#176;', html) # iso-8859 degree sign
         html = re.sub('\x97','&#8212;', html) # windows-1252 euro
+        html = re.sub('&#151;','&mdash;', html) # windows-1252 mdash
 
         # Remove all the font tags...
         html = re.sub('(?i)</?font[^>]*>','', html)
