@@ -9898,4 +9898,26 @@ B - bishop
     fromdate="2007-12-10" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/100969"
+    house="lords"
+    forenames="Haleh"
+    title="Baroness" lordname="Afshar" lordofname=""
+    lordofname_full="Heslington"
+    county="the County of North Yorkshire"
+    peeragetype="L" affiliation="XB"
+    fromdate="2007-12-13" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100970"
+    house="lords"
+    forenames="Nicholas Herbert"
+    title="Lord" lordname="Stern" lordofname="Brentford"
+    lordofname_full="Elsted"
+    county="the County of West Sussex and of Wimbledon in the London Borough of Merton"
+    peeragetype="L" affiliation="XB"
+    fromdate="2007-12-17" todate="9999-12-31"
+/>
+
 </publicwhip>
