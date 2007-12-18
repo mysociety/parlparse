@@ -155,6 +155,10 @@ class Speech:
         self.name = None
         self.question_number = None
         self.parser = parser
+        self.open_quote = False
+        self.close_quote = True
+        self.opened_and_closed_quote = False
+        self.after_open_quote = False
 
     def no_text_yet(self):
         return len(self.paragraphs) == 0
@@ -263,7 +267,7 @@ class Speech:
             if self.speakerid:
                 speaker_info = 'speakerid="%s" speakername="%s"' % ( self.speakerid, self.name )
             else:
-                speaker_info = 'speakername="%s"' % ( self.name )
+                speaker_info = 'speakerid="unknown" speakername="%s"' % ( self.name )
         else:
             speaker_info = 'nospeaker="true"'
 
@@ -284,7 +288,33 @@ class Speech:
         for p in self.paragraphs:
             real_paragraph = re.sub('(?ims)(\s*)</?p[^>]*>(\s*)',r'\1\2',p)
             real_paragraph = re.sub('(?ims)\s+',' ',real_paragraph)
-            result += "\n<p>" + real_paragraph + "</p>\n"
+            indent_text = ''
+
+            m_start_and_end = re.match( '^\s*(&quot;)(.*)&quot;(.?&mdash;\[[^\]]*\])?\s*$', real_paragraph )
+            m_start         = re.match( '^\s*(&quot;)(.*)', real_paragraph )
+            m_end           = re.match( '^\s*(.*)&quot;(.?&mdash;\[[^\]]*\])?\s*$', real_paragraph )
+
+            indent = False
+
+            if m_start_and_end:
+                self.opened_and_closed_quote = True
+                if not re.search('&quot;',m_start_and_end.group(2)):
+                    indent = True
+            elif m_start:
+                self.open_quote = True
+                if not re.search('&quot;',m_start.group(2)):
+                    indent = True
+            elif m_end:
+                self.close_quote = True
+                if not re.search('&quot;',m_end.group(1)):
+                    indent = True
+            elif self.after_open_quote:
+                indent = True
+
+            if indent:
+                    indent_text = ' class="indent"'
+                    
+            result += "\n<p%s>%s</p>\n" % ( indent_text, real_paragraph )
 
         result += '</speech>'
         return result
@@ -521,10 +551,7 @@ class Parser:
             self.current_column = int(m.group(1))
             self.current_id_within_column = 0
 
-    def parse_weird_day( self, body, report_date, url ):
-
-        self.report_date = report_date
-        self.url = url
+    def parse_weird_day( self, body ):
 
         self.started = False
 
@@ -546,12 +573,9 @@ class Parser:
         # Now go through each of the contents of that <td>, which
         # should be either column indicators or paragraphs with "substance"
 
-        self.parse_substance(main_cell,report_date,url)
+        self.parse_substance(main_cell)
 
-    def parse_early_format( self, body, report_date, url ):
-
-        self.report_date = report_date
-        self.url = url
+    def parse_early_format( self, body ):
 
         opening_paragraphs = find_opening_paragraphs(body)
         
@@ -642,12 +666,9 @@ class Parser:
 
             # Now deal with the cell with substance.  This is quite a bit trickier...
 
-            self.parse_substance(substance_cell.contents,report_date,url)
+            self.parse_substance(substance_cell.contents)
 
-    def parse_late_format( self, body, report_date, url ):
-
-        self.report_date = report_date
-        self.url = url
+    def parse_late_format( self, body ):
 
         self.started = False
 
@@ -677,7 +698,7 @@ class Parser:
                     continue
                 self.parse_column(m)
             elif m.__class__ == Tag and m.name == 'div':
-                self.parse_substance(m,report_date,url)
+                self.parse_substance(m)
             elif m.__class__ == Tag:
                 if m.name == 'span' and m['class'] and m['class'].lower() == 'largeheading':
                     self.add_heading(non_tag_data_in(m),True)
@@ -727,10 +748,20 @@ class Parser:
 
     def add_heading(self,text,major):
         self.complete_current()
+        if len(self.all_stuff) > 1:
+            # It's not just the introduction heading...
+            last = self.all_stuff[len(self.all_stuff) - 1]
+            if last.__class__ == Heading and (last.major == major):
+                # Then just append this to the last heading with an em-dash:
+                last.heading_text += ' &mdash; ' + text
+                return
         self.current_heading = Heading(self.current_id_within_column,self.current_column,self.current_time,self.make_url(),self.report_date,text,major)
         self.current_id_within_column += 1        
 
-    def parse_substance(self,contents,report_date,url):
+    def parse_substance(self,contents):
+
+        if len(self.all_stuff) < 1:
+            self.add_heading("Introduction",True)
 
         non_empty_contents = filter(lambda x: x.__class__ != NavigableString or not re.match('^\s*$',x), contents)
 
@@ -796,25 +827,27 @@ class Parser:
                 non_tag_text = re.sub('(?ms)\s+',' ',non_tag_text)
                 if verbose: print "Not started, and looking at '" + non_tag_text + "'"
 
-                major_heading = False
-                minor_heading = False
+                got_preamble = False
 
                 m = re.search('(?ims)(opened|recommenced).*at\s+([0-9]?[0-9]):([0-9][0-9])',non_tag_text)
 
                 if re.match('(?ims)\s*Scottish Parliament\s*',non_tag_text):
-                    major_heading = True
+                    got_preamble = True
                 elif full_date(non_tag_text):
-                    minor_heading = True
+                    got_preamble = True
                 elif full_date_without_weekday(non_tag_text):
-                    minor_heading = True
+                    got_preamble = True
                 elif re.match('^[\s\(]*(Afternoon|Morning)[\s\)]*$',non_tag_text):
-                    minor_heading = True
+                    got_preamble = True
                 elif m:
                     self.current_time = datetime.time(int(m.group(2),10),int(m.group(3),10))
-                    minor_heading = True
+                    got_preamble = True
 
-                if major_heading or minor_heading:
-                    self.add_heading(s.prettify(),major_heading)
+                if got_preamble:
+                    t = str(s)
+                    t = re.sub('(?ims)^\s*<p[^>]*>(.*)(</p>\s*$)',r'\1',t)
+                    t = t.strip()
+                    self.add_to_speech_or_make_new_one(t)
                     continue
 
             if NavigableString == s.__class__ or s.name == 'sup' or s.name == 'sub' or s.name == 'br':
@@ -965,7 +998,7 @@ class Parser:
                     if not self.current_division:
                         if verbose: print '- Creating new division: ' + so_far
                         self.complete_current()
-                        self.current_division = Division(self.current_id_within_column,self.current_column,self.current_time,self.make_url(),report_date,self.division_number)
+                        self.current_division = Division(self.current_id_within_column,self.current_column,self.current_time,self.make_url(),self.report_date,self.division_number)
                         self.division_number += 1
                     continue
 
@@ -1016,7 +1049,7 @@ class Parser:
                 else:
                     if verbose: print "- Either there wasn't a current speech ("+str(self.current_speech)+") or there was text in it."
                     self.complete_current()
-                    self.current_speech = Speech(self.current_id_within_column,self.current_column,self.current_time,self.make_url(),report_date,self)
+                    self.current_speech = Speech(self.current_id_within_column,self.current_column,self.current_time,self.make_url(),self.report_date,self)
                     self.current_id_within_column += 1
 
                 self.started = True
@@ -1036,7 +1069,7 @@ class Parser:
                     self.results_expected = 'FOR'
                     if verbose: print '- Creating new division for candidate: ' + so_far
                     self.complete_current()
-                    self.current_division = Division(self.current_id_within_column,self.current_column,self.current_time,self.make_url(),report_date,self.division_number)
+                    self.current_division = Division(self.current_id_within_column,self.current_column,self.current_time,self.make_url(),self.report_date,self.division_number)
                     self.current_division.set_candidate(mcandidate.group(1))
                     self.division_number += 1
                     continue
@@ -1207,6 +1240,7 @@ for d in dates:
 
     parser = Parser()
 
+    parser.report_date = d
     parser.current_column = last_column_number
 
     parser.major_regexp = major_regexp
@@ -1238,6 +1272,10 @@ for d in dates:
         detail_filename = detail_filenames[i]
         original_url = original_urls[i+1]
 
+        parser.url = original_url
+
+        if verbose: print "Considering skipping: "+detail_filename
+
         if re.search('1999-05-12_[12]',detail_filename):
             continue # It's just a table of names...
         elif re.search('1999-06-02_[12]',detail_filename):
@@ -1245,9 +1283,12 @@ for d in dates:
         elif re.search('1999-09-01_[12]',detail_filename):
             continue # More lists of names...
         elif re.search('2000-07-06_[23]',detail_filename):
+            if verbose: print "Matched the annexes"
             continue # Those are two annexes which are contained in main report anyway
         elif re.search('2003-05-15',detail_filename):
             continue # That's 404
+
+        if verbose: print "Parsing: "+detail_filename
 
         fp = open(detail_filename)
         html = fp.read()
@@ -1327,11 +1368,11 @@ for d in dates:
         elements_before = len(parser.all_stuff)
 
         if str(d) == '2004-06-30':
-            parser.parse_weird_day( body, d, original_url )
+            parser.parse_weird_day( body )
         elif d >= cutoff_date:
-            parser.parse_late_format( body, d, original_url )
+            parser.parse_late_format( body )
         else:
-            parser.parse_early_format( body, d, original_url )
+            parser.parse_early_format( body )
 
         elements_added = len(parser.all_stuff) - elements_before
 
@@ -1339,10 +1380,6 @@ for d in dates:
 
         if elements_added < 3 and not re.search('1999-07-02_1',detail_filename):
             raise Exception, "Very suspicious: only "+str(elements_added)+" added by parsing: "+detail_filename
-
-        if verbose:
-            print "=== Displaying results from " + detail_filename
-            print "=== " + original_url
 
     parser.complete_current()
 
@@ -1418,10 +1455,22 @@ for d in dates:
 <publicwhip>
 
 ''')
+
+    still_in_quote = False
     
     for i in parser.all_stuff:
-        if i.__class__ == Speech or i.__class__ == Heading or i.__class__ == Division:
+        if i.__class__ == Speech:
+            if still_in_quote:
+                i.still_in_quote = True
             o.write( "\n" + i.to_xml() + "\n" )
+            if i.open_quote:
+                still_in_quote = True
+            elif i.close_quote or i.opened_and_closed_quote:
+                still_in_quote = False                
+        elif i.__class__ == Heading or i.__class__ == Division:
+            still_in_quote = False
+            o.write( "\n" + i.to_xml() + "\n" )
+            
     o.write("\n\n</publicwhip>\n")
     o.close()
 
