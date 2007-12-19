@@ -62,7 +62,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 
         all_matching_ids = ()
 
-        ids_from_first_part = memberList.match_string_somehow(first_part,speaker_date,party)
+        ids_from_first_part = memberList.match_string_somehow(first_part,speaker_date,party,False)
         if ids_from_first_part == None:
             return None
         else:
@@ -77,7 +77,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                 break
             bracketed_part = m.group(1).strip()
             # print "   Got bracketed part: "+bracketed_part
-            ids_from_bracketed_part = memberList.match_string_somehow(bracketed_part,speaker_date,party)
+            ids_from_bracketed_part = memberList.match_string_somehow(bracketed_part,speaker_date,party,False)
             if ids_from_bracketed_part != None:
                 if len(ids_from_bracketed_part) == 1:
                     return ids_from_bracketed_part
@@ -91,7 +91,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                             return ids_so_far
                     else:
                         ids_so_far = ids_from_bracketed_part
-                # Otherwise, we try to refine this...            
+                # Otherwise, we try to refine this...
             else:
                 return None
 
@@ -99,7 +99,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                 bracketed_parts = m.group(3).strip()
             else:
                 bracketed_parts = ''
-        
+
         return ids_so_far
 
     # This will return a list of member ID strings or None.  If there
@@ -113,7 +113,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 
     # FIXME: use Set instead of lists
 
-    def match_string_somehow(self,s,date,party):
+    def match_string_somehow(self,s,date,party,just_name):
 
         member_ids = []
 
@@ -123,7 +123,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         comma_match = re.match('^([^,]*), (.*)',s)
         if comma_match:
             rearranged = comma_match.group(2) + " " + comma_match.group(1)
-            rearranged_result = self.match_string_somehow(rearranged,date,party)
+            rearranged_result = self.match_string_somehow(rearranged,date,party,just_name)
             if rearranged_result != None:
                 if len(rearranged_result) > 0:
                     return rearranged_result
@@ -132,18 +132,20 @@ class MemberList(xml.sax.handler.ContentHandler):
 
         # ... otherwise just carry on without any rearragement.
 
-        office_matches = self.officeslowered.get(s.lower())
-        if office_matches:
-            for o in office_matches:
-                if date and date < o['fromdate'] or date > o['todate']:
-                    continue
-                for m in o['members']:
-                    if date and date < m['fromdate'] or date > m['todate']:
+        if not just_name:
+
+            office_matches = self.officeslowered.get(s.lower())
+            if office_matches:
+                for o in office_matches:
+                    if date and date < o['fromdate'] or date > o['todate']:
                         continue
-                    if m['id'] not in member_ids:
-                        member_ids.append(m['id'])
-            if len(member_ids) == 1:
-                return member_ids
+                    for m in o['members']:
+                        if date and date < m['fromdate'] or date > m['todate']:
+                            continue
+                        if m['id'] not in member_ids:
+                            member_ids.append(m['id'])
+                if len(member_ids) == 1:
+                    return member_ids
 
         fullname_matches = self.fullnames.get(s)
         if fullname_matches:
@@ -191,7 +193,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                         member_ids.append(m['id'])
                 if len(member_ids) == 1:
                     return member_ids
-            
+
             # Or if there's a single word, then this is probably just
             # a last name:
 
@@ -206,22 +208,24 @@ class MemberList(xml.sax.handler.ContentHandler):
                     if len(member_ids) == 1:
                         return member_ids
 
-        constituency_matches = self.constoidmap.get(s)
-        if constituency_matches:
-            for c in constituency_matches:
-                # print "       Got consituency id: "+c['id']
-                members = self.considtomembermap.get(c['id'])
-                for m in members:
-                    if date and date < m['fromdate'] or date > m['todate']:
-                        continue
-                    if m['id'] not in member_ids:
-                        member_ids.append(m['id'])
-                if len(member_ids) == 1:
-                    return member_ids
+        if not just_name:
+
+            constituency_matches = self.constoidmap.get(s)
+            if constituency_matches:
+                for c in constituency_matches:
+                    # print "       Got consituency id: "+c['id']
+                    members = self.considtomembermap.get(c['id'])
+                    for m in members:
+                        if date and date < m['fromdate'] or date > m['todate']:
+                            continue
+                        if m['id'] not in member_ids:
+                            member_ids.append(m['id'])
+                    if len(member_ids) == 1:
+                        return member_ids
 
         # Just return the string for people that aren't members, but
         # we know are ones we understand.
-        
+
         if re.search('(Some [mM]embers|A [mM]ember|Several [mM]embers|Members)',s):
             # print "Got some general group of people..."
             return None
@@ -263,6 +267,9 @@ class MemberList(xml.sax.handler.ContentHandler):
         parser.parse("../../members/sp-members.xml")
         parser.parse("../../members/sp-aliases.xml")
 
+        self.loadperson = None
+        parser.parse("../../members/people.xml")
+
         fromdate = None
         todate = None
 
@@ -270,11 +277,11 @@ class MemberList(xml.sax.handler.ContentHandler):
         # documents from the Scottish Parliament website after having
         # been converted to text.  This is pretty horrible, and we
         # should really keep track of these offices properly...
-        
+
         #   MinistersandLawOfficersbycabinet-Session1.pdf
         #   MinistersLawOfficersMinisterialParliamentaryAidesbyCabinet-Session2.pdf
         #   ScottishMinistersandLawOfficersSession3.pdf
-        
+
 
         posts_files = [ 'ministers-law-officers-aides-session1.txt',
                         'ministers-law-officers-aides-session2.txt',
@@ -311,12 +318,12 @@ class MemberList(xml.sax.handler.ContentHandler):
                     name = re.sub(' MSP$','',name)
                     cabinet = False
                     # A theta in the post indicates it's a cabinet post.
-                    # Filter that out 
+                    # Filter that out
                     m = re.match(u"^(.*) \u0398(.*)$",post)
                     if m:
                         cabinet = True
                         # print "### Cabinet post! ###"
-                        post = m.group(1) + m.group(2)                    
+                        post = m.group(1) + m.group(2)
                     matches = self.fullnames[name]
                     if not matches:
                         raise "Couldn't find member: "+name
@@ -474,5 +481,25 @@ class MemberList(xml.sax.handler.ContentHandler):
     def __strippunc(self, cons):
         nopunc = cons.replace(',','').replace('-','').replace(' ','').lower().strip()
         return nopunc
+
+    def membertoperson(self, memberid):
+        return self.membertopersonmap[memberid]
+
+    def list(self, date=None):
+        if not date:
+            date = datetime.date.today().isoformat()
+        matches = self.members.values()
+        ids = []
+        for attr in matches:
+            if 'fromdate' in attr and date >= attr["fromdate"] and date <= attr["todate"]:
+                ids.append(attr["id"])
+        return ids
+
+    def list_all_dates(self):
+        matches = self.members.values()
+        ids = []
+        for attr in matches:
+            ids.append(attr["id"])
+        return ids
 
 memberList = MemberList()
