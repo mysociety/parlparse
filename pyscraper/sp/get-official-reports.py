@@ -165,8 +165,9 @@ for year in range(1999,currentyear+1):
                     
             # Write out the URLs of the contents and detail pages:
             urls_filename = official_report_urls_template % str(d)
-            fp = open(urls_filename,"w")
-            for u in all_urls:
-                fp.write(u)
-                fp.write("\n")
-            fp.close()
+            if not os.path.exists(urls_filename):
+                fp = open(urls_filename,"w")
+                for u in all_urls:
+                    fp.write(u)
+                    fp.write("\n")
+                fp.close()
