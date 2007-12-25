@@ -178,6 +178,8 @@ def CmIndexFromPage(urllinkpage):
                 # 21st July 2005 has a link, but there was none
                 if uind == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo050721/hallindx/50721-x.htm':
                         continue
+                if uind == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm071203/hallindx/71203-x.htm':
+                        continue
                 # 21st June 2005 WHall links to 22nd June
                 if sdate=='2005-06-21' and uind=='http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo050622/hallindx/50622-x.htm':
                         uind = 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo050621/hallindx/50621-x.htm'
