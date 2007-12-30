@@ -10,15 +10,15 @@
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="http://en.wikipedia.org/w/index.php?title=Special:Recentchanges&amp;feed=atom" />
 		<title>Members of the Northern Ireland Assembly elected in 2007 - Wikipedia, the free encyclopedia</title>
 		<style type="text/css" media="screen, projection">/*<![CDATA[*/
-			@import "/skins-1.5/common/shared.css?102";
-			@import "/skins-1.5/monobook/main.css?102";
+			@import "/skins-1.5/common/shared.css?104";
+			@import "/skins-1.5/monobook/main.css?104";
 		/*]]>*/</style>
-		<link rel="stylesheet" type="text/css" media="print" href="/skins-1.5/common/commonPrint.css?102" />
-		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css?102";</style><![endif]-->
-		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css?102";</style><![endif]-->
-		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css?102";</style><![endif]-->
-		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?102";</style><![endif]-->
-		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?102"></script>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins-1.5/common/commonPrint.css?104" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css?104";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css?104";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css?104";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?104";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?104"></script>
 		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
 		
 		<script type= "text/javascript">/*<![CDATA[*/
@@ -46,17 +46,17 @@ var wgBreakFrames = false;
 var wgCurRevisionId = "175511621";
 /*]]>*/</script>
                 
-		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?102"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?104"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js?104"></script>
 		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
 		<style type="text/css">/*<![CDATA[*/
 @import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
 @import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
 @import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
 /*]]>*/</style>
-		<!-- Head Scripts -->
-		<script type="text/javascript" src="/skins-1.5/common/ajax.js?102"></script>
 	</head>
-<body  class="mediawiki ns-0 ltr page-Members_of_the_Northern_Ireland_Assembly_elected_in_2007">
+<body class="mediawiki ns-0 ltr page-Members_of_the_Northern_Ireland_Assembly_elected_in_2007">
 	<div id="globalWrapper">
 		<div id="column-content">
 	<div id="content">
@@ -988,12 +988,12 @@ Elections: <a href="/wiki/United_Kingdom_general_election%2C_2005#The_election_i
 
 <!-- 
 Pre-expand include size: 29335/2048000 bytes
-Post-expand include size: 25169/2048000 bytes
+Post-expand include size: 25178/2048000 bytes
 Template argument size: 13931/2048000 bytes
 #ifexist count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!2 and timestamp 20071223042309 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!2 and timestamp 20071230042306 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007">http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Northern_Ireland_MLAs_2007-" title="Category:Northern Ireland MLAs 2007-">Northern Ireland MLAs 2007-</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Northern_Irish_parliamentarians" title="Category:Lists of Northern Irish parliamentarians">Lists of Northern Irish parliamentarians</a></span> | <span dir='ltr'><a href="/wiki/Category:Northern_Ireland-related_lists" title="Category:Northern Ireland-related lists">Northern Ireland-related lists</a></span></p></div>			<!-- end content -->
@@ -1055,8 +1055,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 		<div id="searchBody" class="pBody">
 			<form action="/wiki/Special:Search" id="searchform"><div>
 				<input id="searchInput" name="search" type="text" title="Search Wikipedia [f]" accesskey="f" value="" />
-				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
-				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if one exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the wiki for this text" />
 			</div></form>
 		</div>
 	</div>
@@ -1068,7 +1068,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:Recentchangeslinked/Members_of_the_Northern_Ireland_Assembly_elected_in_2007" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload images or media files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:Specialpages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=175511621" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;id=175511621">Cite this article</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=175511621" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;id=175511621">Cite this page</a></li>			</ul>
 		</div>
 	</div>
 		</div><!-- end of the left (by default at least) column -->
@@ -1088,4 +1088,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv108 in 0.865 secs. --></body></html>
+<!-- Served by srv187 in 0.736 secs. --></body></html>
