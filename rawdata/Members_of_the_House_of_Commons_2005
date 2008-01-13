@@ -61,22 +61,7 @@ var wgCurRevisionId = "181249497";
 		<div id="column-content">
 	<div id="content">
 		<a name="top" id="top"></a>
-		<div id="siteNotice"><script type="text/javascript">
-var wgNotice = "";
-var wgNoticeLocal = "";
-var wgNoticeLang = "en";
-var wgNoticeProject = "wikipedia";
-</script>
-<script type="text/javascript" src="http://meta.wikimedia.org/w/index.php?title=Special:NoticeLoader&amp;action=raw"></script>
-<script type="text/javascript" src="/w/index.php?title=Special:NoticeLocal/anon&amp;action=raw"></script>
-<script type="text/javascript">
-if (wgNotice != "") {
-  document.writeln(wgNotice);
-}
-if (wgNoticeLocal != "") {
-  document.writeln(wgNoticeLocal);
-}
-</script></div>		<h1 class="firstHeading">MPs elected in the United Kingdom general election, 2005</h1>
+				<h1 class="firstHeading">MPs elected in the United Kingdom general election, 2005</h1>
 		<div id="bodyContent">
 			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
 			<div id="contentSub">(Redirected from <a href="/w/index.php?title=MPs_elected_in_the_UK_general_election%2C_2005&amp;redirect=no" title="MPs elected in the UK general election, 2005">MPs elected in the UK general election, 2005</a>)</div>
@@ -5107,12 +5092,12 @@ if (wgNoticeLocal != "") {
 
 <!-- 
 Pre-expand include size: 44836/2048000 bytes
-Post-expand include size: 45087/2048000 bytes
+Post-expand include size: 45098/2048000 bytes
 Template argument size: 42241/2048000 bytes
 #ifexist count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:1735700-0!1!0!default!!en!2 and timestamp 20080106042307 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1735700-0!1!0!default!!en!2 and timestamp 20080109222600 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_2005">http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_2005</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:United_Kingdom_general_election%2C_2005" title="Category:United Kingdom general election, 2005">United Kingdom general election, 2005</a></span> | <span dir='ltr'><a href="/wiki/Category:MPs_elected_in_UK_elections" title="Category:MPs elected in UK elections">MPs elected in UK elections</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_current_office-holders" title="Category:Lists of current office-holders">Lists of current office-holders</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_UK_MPs_2005-" title="Category:Lists of UK MPs 2005-">Lists of UK MPs 2005-</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Scottish_MPs" title="Category:Lists of Scottish MPs">Lists of Scottish MPs</a></span></p></div>			<!-- end content -->
@@ -5207,4 +5192,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv183 in 1.672 secs. --></body></html>
+<!-- Served by srv65 in 0.113 secs. --></body></html>

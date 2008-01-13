@@ -43,7 +43,7 @@ var wgUserGroups = null;
 var wgUserLanguage = "en";
 var wgContentLanguage = "en";
 var wgBreakFrames = false;
-var wgCurRevisionId = "180606012";
+var wgCurRevisionId = "183553258";
 /*]]>*/</script>
                 
 		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?104"><!-- wikibits js --></script>
@@ -61,22 +61,7 @@ var wgCurRevisionId = "180606012";
 		<div id="column-content">
 	<div id="content">
 		<a name="top" id="top"></a>
-		<div id="siteNotice"><script type="text/javascript">
-var wgNotice = "";
-var wgNoticeLocal = "";
-var wgNoticeLang = "en";
-var wgNoticeProject = "wikipedia";
-</script>
-<script type="text/javascript" src="http://meta.wikimedia.org/w/index.php?title=Special:NoticeLoader&amp;action=raw"></script>
-<script type="text/javascript" src="/w/index.php?title=Special:NoticeLocal/anon&amp;action=raw"></script>
-<script type="text/javascript">
-if (wgNotice != "") {
-  document.writeln(wgNotice);
-}
-if (wgNoticeLocal != "") {
-  document.writeln(wgNoticeLocal);
-}
-</script></div>		<h1 class="firstHeading">MPs elected in the United Kingdom general election, 1997</h1>
+				<h1 class="firstHeading">MPs elected in the United Kingdom general election, 1997</h1>
 		<div id="bodyContent">
 			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
 			<div id="contentSub">(Redirected from <a href="/w/index.php?title=MPs_elected_in_the_UK_general_election%2C_1997&amp;redirect=no" title="MPs elected in the UK general election, 1997">MPs elected in the UK general election, 1997</a>)</div>
@@ -1226,7 +1211,7 @@ if (wgNoticeLocal != "") {
 </tr>
 <tr>
 <td><a href="/wiki/North_Down_%28UK_Parliament_constituency%29" title="North Down (UK Parliament constituency)">North Down</a></td>
-<td><a href="/wiki/Robert_McCartney" title="Robert McCartney">Robert McCartney</a></td>
+<td><a href="/wiki/Robert_McCartney_%28politician%29" title="Robert McCartney (politician)">Robert McCartney</a></td>
 <td>United Kingdom Unionist</td>
 </tr>
 <tr>
@@ -3649,7 +3634,7 @@ Template argument size: 42103/2048000 bytes
 #ifexist count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:415690-0!1!0!default!!en!2 and timestamp 20080105082625 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:415690-0!1!0!default!!en!2 and timestamp 20080111031918 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1997">http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election%2C_1997</a>"</div>
 			<div id="catlinks"><p class='catlinks'><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:MPs_elected_in_UK_elections" title="Category:MPs elected in UK elections">MPs elected in UK elections</a></span> | <span dir='ltr'><a href="/wiki/Category:1997_elections_in_the_United_Kingdom" title="Category:1997 elections in the United Kingdom">1997 elections in the United Kingdom</a></span></p></div>			<!-- end content -->
@@ -3724,7 +3709,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:Recentchangeslinked/MPs_elected_in_the_United_Kingdom_general_election%2C_1997" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload images or media files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:Specialpages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1997&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1997&amp;oldid=180606012" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=MPs_elected_in_the_United_Kingdom_general_election%2C_1997&amp;id=180606012">Cite this page</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1997&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election%2C_1997&amp;oldid=183553258" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=MPs_elected_in_the_United_Kingdom_general_election%2C_1997&amp;id=183553258">Cite this page</a></li>			</ul>
 		</div>
 	</div>
 		</div><!-- end of the left (by default at least) column -->
@@ -3744,4 +3729,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv138 in 0.124 secs. --></body></html>
+<!-- Served by srv177 in 0.072 secs. --></body></html>
