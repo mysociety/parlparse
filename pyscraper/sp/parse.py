@@ -1478,5 +1478,9 @@ for d in dates:
     if retcode != 0:
         raise Exception, "Validating "+output_filename+" for well-formedness failed."
 
+    fil = open('%schangedates.txt' % xml_output_directory, 'a+')
+    fil.write('%d,sp%s.xml\n' % (time.time(), str(d)))
+    fil.close()
+
 if verbose:
     report_cases()

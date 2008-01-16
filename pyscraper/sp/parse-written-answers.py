@@ -690,6 +690,10 @@ class Parser:
         if retcode != 0:
             raise Exception, "Validating "+output_filename+" for well-formedness failed."
 
+        fil = open('%schangedates.txt' % xml_output_directory, 'a+')
+        fil.write('%d,spwa%s.xml\n' % (time.time(), self.date))
+        fil.close()
+
 files_and_exceptions = []
 
 for filename in filenames:
