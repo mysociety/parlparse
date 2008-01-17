@@ -119,9 +119,10 @@ class ParseDay:
 
 <publicwhip>
 ''')
-		if re.match('200(6|7)', date):
+		if re.match('200[6789]', date):
 			self.parse_day_new(soup)
 		else:
+			body = soup('p')
 			self.parse_day_old(body)
 		self.out.write('</publicwhip>\n')
 		self.out.close()
@@ -319,6 +320,7 @@ class ParseDay:
 					newp.insert(0, newspeaker)
 					p = newp
 				speaker = p.strong.find(text=True)
+				speaker = re.sub('&nbsp;', '', speaker)
 				speaker = re.sub("\s+", " ", speaker).strip()
 				speaker = re.sub(':', '', speaker)
 				id, str = memberList.match(speaker, date)
