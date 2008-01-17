@@ -636,6 +636,7 @@ class Parser:
         #             questions and "r0", "r1", etc. for the answers
 
         x = -1
+        last_heading = None
 
         index = 0
 
@@ -658,20 +659,38 @@ class Parser:
                 else:
                     subtype = "h"
                 self.ofp.write(a.to_xml(self.get_id(x,subtype)))
+                last_heading = a
             elif a.__class__ == QuestionOrReply:
                 # Occasionally we think questions are actually
                 # answers, so check the beginning of the first
                 # paragraph:
-                if not a.is_question and len(a.paragraphs) > 0 and re.search('^(?ims)\s*To ask',a.paragraphs[0]):
+                if not a.is_question and len(a.paragraphs) > 0 and re.search('^(?ims)\s*To\s+ask',a.paragraphs[0]):
                     a.is_question = True
                 # If we're suddenly in an answer, reset index.
-                # If we're suddenly in a question, reset index and increment x unless the previous is a heading
                 if (not a.is_question) and previous and not (previous.__class__ == QuestionOrReply and not previous.is_question):
                     index = 0
-                elif a.is_question and previous and not (previous.__class__ == QuestionOrReply and previous.is_question):
-                    index = 0
-                    if not (previous and previous.__class__ == Heading):
-                        x += 1
+                # If we're suddenly in a question, reset index and increment x unless the previous is a heading
+                elif a.is_question:
+                    if previous:
+                        if previous.__class__ == QuestionOrReply:
+                            if previous.is_question:
+                                # If the one before is a question, that's fine.
+                                pass
+                            else:
+                                # If the previous one was an answer
+                                # then we need to replay the last
+                                # heading:
+                                if not last_heading:
+                                    raise Exception, "Somehow there's been no heading so far."
+                                last_heading.sp_name = a.sp_name
+                                x += 1
+                                self.ofp.write(last_heading.to_xml(self.get_id(x,"h")))
+                                self.ofp.write("\n\n")
+                                index = 0
+                        else:
+                            index = 0
+                    else:
+                        raise Exception, "Nothing before the first question (no heading)"
                 if a.is_question:
                     subtype = "q" + str(index)
                 else:
