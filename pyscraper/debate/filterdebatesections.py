@@ -217,7 +217,7 @@ def NormalHeadingPart(headingtxt, stampurl, state):
 		binsertedheading = True
 
 	# Oral question are really a major heading
-	elif re.match("Oral Answers to Questions", headingtxt):
+	elif re.match("Oral Answers to Questions(?i)", headingtxt):
 		boralheading = True
 	# Check if there are any other spellings of "Oral Answers to Questions" with a loose match
 	elif re.search('oral(?i)', headingtxt) and re.search('ques(?i)', headingtxt) and (not re.search(" Not ", headingtxt)) and \
@@ -234,7 +234,7 @@ def NormalHeadingPart(headingtxt, stampurl, state):
 	# If this is labeled major, then it gets concatenated with the
 	# subsequent major heading.  It's kind of a procedural info about the
 	# running of things, so fair to have it as a minor heading alone.
-	elif re.match("\[.*? in the Chair\.?\]$(?i)", headingtxt):
+	elif re.match("\[.*? in\s*the\s*Chair\.?\]$(?i)", headingtxt):
 		bmajorheading = False
 
 	elif re.search("in\s*the\s*chair(?i)", headingtxt):
@@ -379,10 +379,10 @@ def FilterDebateSections(text, sdate, typ):
 
 	        		# this is where we suck in a trailing "Clause" part of the title that is mistakenly outside the heading.
         			elif (qbh.typ == 'minor-heading' or qbh.typ == 'major-heading') and len(flatb) > 0 and flatb[-1].typ == 'speech':
-        				mmm = re.match('\s*<p>((?:New )?[Cc]lause \d+\w?)</p>', flatb[-1].stext[-1])
+        				mmm = re.match('\s*<p>((?:New )?(?:clause|schedule) \d+\w?)</p>(?i)', flatb[-1].stext[-1])
         				if mmm:
         					if IsNotQuiet():
-        						print "Clause moving", flatb[-1].stext[-1]
+        						print "Clause/schedule moving", flatb[-1].stext[-1]
         					qbh.stext.insert(0, " &mdash; ")
         					qbh.stext.insert(0, mmm.group(1))
         					flatb[-1].stext = flatb[-1].stext[:-1]  # delete final value
@@ -390,13 +390,13 @@ def FilterDebateSections(text, sdate, typ):
         					# remove an empty speech
         					if not flatb[-1].stext:
         						if IsNotQuiet():
-        							print "removing empty speech after moving 'clause' out"
+        							print "removing empty speech after moving 'clause/schedule' out"
         						assert flatb[-1].speaker == 'nospeaker="true"'
         						del flatb[-1]
 
         				# converting a search into a match, for safety, and double checking
 	        			else:
-		        			if re.search('<p>\s*((?:New )?\s*Clause\s*\w+)\s*</p>(?i)', flatb[-1].stext[-1]):
+		        			if re.search('<p>\s*((?:New )?\s*(?:clause|schedule)\s*\w+)\s*</p>(?i)', flatb[-1].stext[-1]):
 			        			print flatb[-1].stext[-1]
 				       			assert False
 

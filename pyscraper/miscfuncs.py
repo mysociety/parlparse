@@ -70,6 +70,7 @@ def AlphaStringToOrder(s):
 
 # Impossible to do 6pm, 7.15pm, 6.30pm, 6.45pm, 7pm without future timestamps
 # So not caring any more about timestamp errors
+# Need good timestamps for video ;-) So turning back on, might try different tack at some point
 
 # This one used to break times into component parts: 7.10 pm
 regparsetime = re.compile("^(\d+)[\.:]\s*(\d+)(?:\s?|&nbsp;)([\w\.]*)$")
@@ -115,8 +116,8 @@ def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):
 		if previoustime and previoustimehour + 12 == hour:
                         hour -= 12
 
-		#if previoustime and previoustimehour + 12 <= hour:
-		#	raise ContextException('time shift by 12 -- should a p.m. be an a.m.?', stamp=stampurl)
+		if previoustime and previoustimehour + 12 <= hour:
+			raise ContextException('time shift by 12 -- should a p.m. be an a.m.?', stamp=stampurl)
 
 	elif time == 'Midnight':
                 hour = 24
@@ -146,9 +147,9 @@ def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):
 
                 elif hour in [0, 1, 2, 3] or stampurl.sdate in ["2003-10-20", "2000-10-03", "2000-07-24"]:
                         hour += 24
-		#else:
-		#	print (hour, mins), "time=", time, "previoustime=", previoustime
-		#	raise ContextException('time rotation not close to midnight', stamp=stampurl)
+		else:
+			print (hour, mins), "time=", time, "previoustime=", previoustime
+			raise ContextException('time rotation not close to midnight', stamp=stampurl)
 
 		res = "%03d:%02d:00" % (hour, mins)
 
@@ -157,14 +158,14 @@ def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):
 	# (divisions are often out of order slightly)
 
 	# out of order case
-	#if previoustime and res < previoustime:
-	#	# if it's a division type, we can tolerate a few minutes
-	#	timeminutes = int(hour) * 60 + int(mins)
-	#	previoustimeminutes = previoustimehour * 60 + int(prevtimeMatch.group(2))
-	#	if timeminutes < previoustimeminutes:
-	#		if not bIsDivisionTime or (previoustimeminutes - timeminutes > 10):
-	#			print "previous time out of order", res, previoustime, bIsDivisionTime
-	#			raise ContextException('time out of order', stamp=stampurl)
+	if previoustime and res < previoustime:
+		# if it's a division type, we can tolerate a few minutes
+		timeminutes = int(hour) * 60 + int(mins)
+		previoustimeminutes = previoustimehour * 60 + int(prevtimeMatch.group(2))
+		if timeminutes < previoustimeminutes:
+			if not bIsDivisionTime or (previoustimeminutes - timeminutes > 10):
+				print "previous time out of order", res, previoustime, bIsDivisionTime
+				raise ContextException('time out of order', stamp=stampurl)
 	return res
 
 
@@ -198,13 +199,14 @@ entitymap = {
         '&#214;':'&Ouml;',   # this is capital o-double-dot
         '&#243;':'&oacute;',   # this is o-acute
         '&#248;':'&oslash;',   # this is o-slash
+        '&#245;':'&otilde;', # this is o-tilde
 
         '&#237;':'&iacute;', # this is i-acute
         '&#238;':'&icirc;', # this is i-circumflex
         '&#239;':'&iuml;',  # this is i-double-dot, as in naive
 
         '&#231;':'&ccedil;',   # this is cedilla
-        '&#199;':'&Ccedil;',   # this is capital C-cedilla
+        '&#199;':'&#199;',   # this is capital C-cedilla
         '&#250;':'&uacute;',
         '&#252;':'&uuml;',   # this is u-double-dot
         '&#241;':'&ntilde;',   # spanish n as in Senor
@@ -242,6 +244,7 @@ entitymap = {
         '&#147;':'&quot;',
         '&#148;':'&quot;',
         '&#133;':'...',
+        '&#134;':'&dagger;',
 
         '&#178;':'&sup2;',
         '&rsquo;':"'",
@@ -274,7 +277,7 @@ def StripAnchorTags(text):
         return ret
 
 
-def WriteCleanText(fout, text):
+def WriteCleanText(fout, text, striphref=True):
         text = re.sub('<!--.*?-->', '', text)
     	abf = re.split('(<[^>]*>)', text)
         for ab in abf:
@@ -283,12 +286,12 @@ def WriteCleanText(fout, text):
 			pass
 
                 # XXX Differs from pullgluepages version
-		elif re.match('<a[^>]+>(?i)', ab):
+		elif striphref and re.match('<a[^>]+>(?i)', ab):
 			anamem = re.match('<a name\s*?=(?i)', ab)
                         if anamem:
                                 fout.write(re.sub('\s', ' ', ab))
 
-		elif re.match('</?a>(?i)', ab):
+		elif striphref and re.match('</?a>(?i)', ab):
 			pass
 
 		# spaces only inside tags
@@ -314,24 +317,25 @@ def ApplyFixSubstitutions(text, sdate, fixsubs):
 # this only accepts <sup> and <i> tags
 def StraightenHTMLrecurse(stex, stampurl):
 	# split the text into <i></i> and <sup></sup> and <sub></sub> and <a href></a>
-        qisup = re.search(r'(<(i|sup|sub)>(.*?)</\2>)(?i)', stex)
+        qisup = re.search(r'(<(a|i|small|sup|sub)( href="[^"]*")?>(.*?)</\2>)(?i)', stex)
         if qisup:
                 qtagtype = qisup.group(2)
-                qtag = ('<%s>' % qtagtype, '</%s>' % qtagtype)
+                qhref = qisup.group(3) or ''
+                qtag = ('<%s%s>' % (qtagtype, qhref), '</%s>' % qtagtype)
 	if not qisup:
-		qisup = re.search('(<a href="([^"]*)">(.*?)</a>)(?i)', stex)
+		qisup = re.search('(<(a) href="([^"]*)">(.*?)</a>)(?i)', stex)
 		if qisup:
-			qtag = ('<a href="%s">' % qisup.group(2), '</a>')
+			qtag = ('<a href="%s">' % qisup.group(3), '</a>')
 
 	if qisup:
 		sres = StraightenHTMLrecurse(stex[:qisup.start(1)], stampurl)
 		sres.append(qtag[0])
-		sres.extend(StraightenHTMLrecurse(qisup.group(3), stampurl))
+		sres.extend(StraightenHTMLrecurse(qisup.group(4), stampurl))
 		sres.append(qtag[1])
 		sres.extend(StraightenHTMLrecurse(stex[qisup.end(1):], stampurl))
 		return sres
 
-	sres = re.split('(&[a-z]*?;|&#\d+;|"|\xa3|&|\x01|\x0e|\x14|\x92|\xb0|\xab|\xe9|\xc3\xb8|\xc3\xb1|<[^>]*>|<|>)', stex)
+	sres = re.split('(&[a-z0-9]*?;|&#\d+;|"|\xa3|&|\x01|\x0e|\x14|\x92|\xb0|\xab|\xe9|\xc3\xb8|\xc3\xb1|<[^>]*>|<|>)', stex)
 	for i in range(len(sres)):
                 #print "sresi ", sres[i], "\n"
                 #print "-----------------------------------------------\n"
@@ -430,7 +434,7 @@ def FixHTMLEntities(stex, signore='', stampurl=None):
 
 
 # The lookahead assertion (?=<table) stops matching tables when another begin table is reached
-paratag = '</?p(?: align=(?:left|"center"))?(?: id="[^"]*" class="timestamp")?(?: class[= ]"(?:tabletext|normaltext)")?>'
+paratag = '</?p(?: style="margin-left: 20px;")?(?: align=(?:left|"center"))?(?: id="[^"]*" class="timestamp")?(?: class[= ]"(?:tabletext|normaltext)")?>'
 restmatcher = paratag + '|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>(?i)'
 reparts = re.compile('(<table[\s\S]*?(?:</table>|(?=<table))|' + restmatcher + ')')
 reparts2 = re.compile('(<table[^>]*?>|' + restmatcher + ')')
@@ -560,7 +564,7 @@ def SplitParaIndents(text, stampurl):
 		if (i % 2) == 0:
 			for sp in dell[i]:
 				if re.match('(?:<ul><ul>)?<ul>(?i)', sp):
-					if bIndent:
+					if bIndent==1:
 						print dell[i - 1: i + 1]
 						raise ContextException(' already indented ', stamp=stampurl, fragment=sp)
 					bIndent = 1
@@ -569,6 +573,10 @@ def SplitParaIndents(text, stampurl):
 					#if not bIndent:
 					#	raise Exception, ' already not-indentented '
 					bIndent = 0
+                                elif re.match('<p style="margin-left: 20px;">', sp):
+                                        bIndent = 2
+                                elif bIndent == 2 and re.match('</p>', sp):
+                                        bIndent = 0
 			continue
 
 		# we have the actual text between the spaces
@@ -577,7 +585,7 @@ def SplitParaIndents(text, stampurl):
 
 		# separate out italics type paragraphs
 		tex = dell[i]
-		cindent = bIndent
+		cindent = bIndent > 0 and 1 or 0
 
 		qitbod = re.match('<i>([\s\S]*?)</i>[.:]?$', tex)
 		if qitbod:

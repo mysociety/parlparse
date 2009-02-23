@@ -22,7 +22,7 @@ for member in allmembers:
         params = {}
         params['name'] = fullname
         params = urllib.urlencode(params)
-        ur = urllib.urlopen("http://www.journa-list.com/list", params)
+        ur = urllib.urlopen("http://www.journalisted.com/list", params)
         content = ur.read()
         ur.close()
 

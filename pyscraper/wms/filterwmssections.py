@@ -62,10 +62,12 @@ def StripWMSHeadings(headspeak, sdate, lords):
 		raise ContextException('missing stamp url at beginning of file')
 	return (i, stampurl)
 
-def NormalHeadingPart(headingtxt, stampurl, sdate, speechestxt):
+def NormalHeadingPart(headingtxt, stampurl, sdate, speechestxt, lords):
 	bmajorheading = False
 
-	if not re.search('[a-z]', headingtxt) and headingtxt != 'BNFL':
+	if lords:
+		bmajorheading = False
+	elif not re.search('[a-z]', headingtxt) and headingtxt != 'BNFL':
 		bmajorheading = True
 	elif re.search('_dpthd', stampurl.aname) or re.search('_head', stampurl.aname):
 		bmajorheading = True
@@ -73,6 +75,11 @@ def NormalHeadingPart(headingtxt, stampurl, sdate, speechestxt):
 		bmajorheading = False
         if sdate>'2006-05-07': # Assume major heading if no speeches in new style
                 bmajorheading = not speechestxt
+
+	if bmajorheading:
+                if not parlPhrases.wransmajorheadings.has_key(headingtxt.upper()):
+		        raise ContextException("unrecognized major heading, please add to parlPhrases.wransmajorheadings (a)", fragment = headingtxt, stamp = stampurl)
+		headingtxt = parlPhrases.wransmajorheadings[headingtxt.upper()] # no need to fix since text is from a map.
 
 	headingtxtfx = FixHTMLEntities(headingtxt)
 	qb = qspeech('nospeaker="true"', headingtxtfx, stampurl)
@@ -102,7 +109,7 @@ def FilterWMSSections(text, sdate, lords=False):
 			if (not re.match('(?:<[^>]*>|\s|&nbsp;)*$', unspoketxt)):
 				raise ContextException("unspoken text under heading in WMS", stamp=stampurl, fragment=unspoketxt)
 
-			qbh = NormalHeadingPart(headingtxt, stampurl, sdate, speechestxt)
+			qbh = NormalHeadingPart(headingtxt, stampurl, sdate, speechestxt, lords)
                         flatb.append(qbh)
                         stampurl.UpdateStampUrl(unspoketxt)
 			for ss in speechestxt:

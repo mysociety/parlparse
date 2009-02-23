@@ -27,17 +27,20 @@ hontitleso = string.join(hontitles, '|')
 
 honcompl = re.compile('(?:(%s)|(%s) \s*(.*?))(?:\s+of\s+(.*))?$' % (hontitleso, hontitleso))
 
+rehonorifics = re.compile('(?: [CKO]BE| DL| TD| QC| KCMG| KCB)+$')
 
 class LordsList(xml.sax.handler.ContentHandler):
 	def __init__(self):
 		self.lords={} # ID --> MPs
 		self.lordnames={} # "lordnames" --> lords
+                self.aliases={} # Corrections to full names
 		self.parties = {} # constituency --> MPs
 
 		parser = xml.sax.make_parser()
 		parser.setContentHandler(self)
 
 		parser.parse("../members/peers-ucl.xml")
+		parser.parse("../members/peers-aliases.xml")
 		#parser.parse("../members/lordnametoofname.xml")
 
 		# set this to the file if we are to divert unmatched names into a file
@@ -82,6 +85,9 @@ class LordsList(xml.sax.handler.ContentHandler):
 			lm["lordofname"] = lm["lordname"]
 			lm["lordname"] = ""
 
+                elif name == 'alias':
+                        self.aliases[attr['alternate']] = attr['fullname']
+
 		else:
 			assert name == "publicwhip"
 
@@ -104,7 +110,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 			self.newlordsdumped.append(lm["id"])
 
 
-	# main matchinf function
+	# main matching function
 	def GetLordID(self, ltitle, llordname, llordofname, loffice, stampurl, sdate, bDivision):
 		if ltitle == "Lord Bishop":
 			ltitle = "Bishop"
@@ -120,8 +126,6 @@ class LordsList(xml.sax.handler.ContentHandler):
                         llordofname = "Southwell and Nottingham"
                 if ltitle == "Bishop" and llordname == "Southwell" and sdate>='2005-07-01':
                         llordname = "Southwell and Nottingham"
-                if llordname == "Hunt" and llordofname == "King's Heath":
-                        llordofname = "Kings Heath"
 
 		lname = llordname or llordofname
 		assert lname
@@ -178,14 +182,10 @@ class LordsList(xml.sax.handler.ContentHandler):
 
 	def GetLordIDfname(self, name, loffice, sdate, stampurl=None):
 		name = re.sub("^The ", "", name)
+                name = name.replace(' Of ', ' of ')
 
-                if name == "Viscountess Hailsham":
-                        name = "Baroness Hogg"
-                        
-                # XXX "Lord Speaker" is new April 2007
-                # should match this to the person, but how do we keep up to date who is the speaker? for now just keep it blank
-                if name == "Lord Speaker":
-                        return None
+                if name in self.aliases:
+                        name = self.aliases[name]
 
                 if name == "Queen":
                         return "uk.org.publicwhip/royal/-1"
@@ -206,8 +206,10 @@ class LordsList(xml.sax.handler.ContentHandler):
 		lplace = ""
 		if hom.group(4):
 			lplace = re.sub("  ", " ", hom.group(4))
+                        lplace = rehonorifics.sub("", lplace)
 
 		lname = re.sub("^De ", "de ", lname)
+                lname = rehonorifics.sub("", lname)
 
 		return self.GetLordID(ltit, lname, lplace, loffice, stampurl, sdate, False)
 

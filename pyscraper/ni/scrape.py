@@ -14,7 +14,7 @@ for url in root:
 	ur = urllib.urlopen(url)
 	page = ur.read()
 	ur.close()
-	match = re.findall('"((?:Plenary/|minutes_of_proceedings_|reports/|reports2007/)?(p?)(\d{6})(i?)\.htm)"', page)
+	match = re.findall('"((?:Plenary/|minutes_of_proceedings_|reports/|reports200[789]/)?(p?)(\d{6})(i?)\.htm)"', page)
 	for day in match:
 		url_day = urlparse.urljoin(url, day[0])
 		date = time.strptime(day[2], "%y%m%d")

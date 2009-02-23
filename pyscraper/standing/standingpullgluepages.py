@@ -112,7 +112,7 @@ def GlueByNext(fout, urlx, billtitle):
 			print sr[:2000]
 			assert False
 
-		miscfuncs.WriteCleanText(fout, mbody.group(1))
+		miscfuncs.WriteCleanText(fout, mbody.group(1), False)
 		# the files are sectioned by the <hr> tag into header, body and footer.
 		mnextsectionlink = re.search('(?si)<\s*a\s+href\s*=\s*"?([^"]*?)"?\s*>\s*<img border=0 align=top src="/pa/img/conugrn.gif"', sr[mbody.end(1):])
 		#print "   nextsectionlink", mnextsectionlink

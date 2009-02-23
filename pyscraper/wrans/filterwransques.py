@@ -39,7 +39,7 @@ def ExtractQnum(tex, stampurl):
 
 # we break this into separate paragraphs and discover that the final ones are indentent.
 # the other question form is as a single paragraph
-def FilterQuestion(text, sdate, stampurl):
+def FilterQuestion(text, sdate, stampurl, lords):
 	# split into paragraphs.  The second results is a parallel array of bools
 	(textp, textpindent) = SplitParaIndents(text, stampurl)
 	if not textp:
@@ -47,18 +47,22 @@ def FilterQuestion(text, sdate, stampurl):
 
 	textn = [ ]
 
-        # special case exceptions.  Indented text in questions nearly always marks numbered sections
-        # - rarely is it quoted text like this:
-        # 2002-11-07 - happened again.  Did a patch.
-        if sdate == '2004-01-05' and len(textp) > 1 and re.search('"Given that 98.5 per cent', text):
-            # if this happens a lot - do this properly, so the indented bit gets its own paragraph
-            textp = (string.join(textp, " "),)
-            textpindent = (0,)
+	# special case exceptions.  Indented text in questions nearly always marks numbered sections
+	# - rarely is it quoted text like this:
+	# 2002-11-07 - happened again.  Did a patch.
+	if sdate == '2004-01-05' and len(textp) > 1 and re.search('"Given that 98.5 per cent', text):
+		# if this happens a lot - do this properly, so the indented bit gets its own paragraph
+		textp = (string.join(textp, " "),)
+		textpindent = (0,)
 
-	if re.match('asked Her Majesty(&#039;|&#146;|\')s Government|asked the (?i)', textp[0]):
-		firstpara = FixHTMLEntities(textp[0])
-		stext = [ '<p>%s</p>' % firstpara ]
-		for i in range(1, len(textp)):
+	# I /think/ this is to match Lords written answers
+	if lords:
+		stext = [ ]
+		start = 0
+		if re.match('asked Her Majesty(&#039;|&#146;|\')s Government|asked the (?i)', textp[0]):
+			stext.append('<p>%s</p>' % FixHTMLEntities(textp[0]))
+			start = 1
+		for i in range(start, len(textp)):
 			eqnum = ExtractQnum(textp[i], stampurl)
 			stext.append('<p qnum="%s">%s</p>' % (eqnum[1], FixHTMLEntities(eqnum[0])))
 		return stext
@@ -83,7 +87,7 @@ def FilterQuestion(text, sdate, stampurl):
 			if not gbnum:
 				raise ContextException('no number match in paragraph', fragment=textp[i], stamp=stampurl)
 			gbnumseq = string.atoi(gbnum.group(1))
-            # MPS 2007-06-22 Don't care
+			# MPS 2007-06-22 Don't care
 			#if gbnumseq != i + 1:
 			#	raise ContextException('paragraph numbers not consecutive', fragment=textp[i], stamp=stampurl)
 			eqnum = ExtractQnum(textp[i][gbnum.span(0)[1]:], stampurl)

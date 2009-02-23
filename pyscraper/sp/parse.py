@@ -5,6 +5,11 @@ import os
 import random
 import datetime
 import time
+from optparse import OptionParser
+
+sys.path.append('../')
+import xml.sax
+xmlvalidate = xml.sax.make_parser()
 
 from BeautifulSoup import BeautifulSoup
 from BeautifulSoup import NavigableString
@@ -18,6 +23,12 @@ from resolvemembernames import memberList
 import re
 import glob
 
+from findquotation import ScrapedXMLParser
+from findquotation import find_quotation_from_text
+
+from common import month_name_to_int
+from common import non_tag_data_in
+
 # ------------------------------------------------------------------------
 # 
 # This script is quite horrendous, in my opinion - I'm sure it could
@@ -29,7 +40,13 @@ import glob
 # If verbose is True then you'll get about a gigabyte of nonsense on
 # standard output.
 
-verbose = False
+parser = OptionParser()
+parser.add_option('-q', "--quiet", dest="quiet", action="store_true",
+                  default=False, help="don't print status messages")
+parser.add_option('-f', '--force', dest='force', action="store_true",
+                  help='force reparse of everything')
+(options, args) = parser.parse_args()
+verbose = False # XXX Very verbose, needs command line option
 
 # Up to and including 2003-05-29 is the old format of the official
 # reports, and 2003-06-03 and after is the new format.  There's one
@@ -241,6 +258,17 @@ class Speech:
         for p in self.paragraphs:
             if verbose: print '   [paragraph] ' + p
 
+    def find_quotation(self,content,citation):
+        m = re.search(' (\d+) ([a-zA-Z]+) (\d{4})[^0-9]',citation)
+        if not m:
+            return None
+        if verbose: print "year: "+m.group(3)+", month: "+m.group(2)+", day: "+m.group(1)
+        d = datetime.date(int(m.group(3),10),month_name_to_int(m.group(2)),int(m.group(1),10))
+        m = re.search('Written Answers.*(S\d[A-Z]-\d+)',citation)
+        if m:
+            return "uk.org.publicwhip/spwa/%s.%s.h" % ( str(d), m.group(1) )
+        return find_quotation_from_text(self.parser.sxp,d,content)
+
     def to_xml(self):
 
         # Those awkward alphabetical lists.
@@ -290,9 +318,9 @@ class Speech:
             real_paragraph = re.sub('(?ims)\s+',' ',real_paragraph)
             indent_text = ''
 
-            m_start_and_end = re.match( '^\s*(&quot;)(.*)&quot;(.?&mdash;\[[^\]]*\])?\s*$', real_paragraph )
+            m_start_and_end = re.match( '^\s*(&quot;)(.*)(&quot;.?)(&mdash;)?(\[[^\]]*\])?\s*$', real_paragraph )
             m_start         = re.match( '^\s*(&quot;)(.*)', real_paragraph )
-            m_end           = re.match( '^\s*(.*)&quot;(.?&mdash;\[[^\]]*\])?\s*$', real_paragraph )
+            m_end           = re.match( '^\s*(.*)(&quot;.?)(&mdash;)?(\[[^\]]*\])?\s*$', real_paragraph )
 
             indent = False
 
@@ -300,6 +328,14 @@ class Speech:
                 self.opened_and_closed_quote = True
                 if not re.search('&quot;',m_start_and_end.group(2)):
                     indent = True
+                if m_start_and_end.group(5):
+                    gid = self.find_quotation(m_start_and_end.group(2),m_start_and_end.group(5))
+                    if gid:
+                        m = m_start_and_end
+                        before = m.group(1)+m.group(2)+m.group(3)
+                        if m.group(4):
+                            before += m.group(4)
+                        real_paragraph = before+('<citation id="%s">%s</citation>'%(gid,m.group(5)))
             elif m_start:
                 self.open_quote = True
                 if not re.search('&quot;',m_start.group(2)):
@@ -308,6 +344,14 @@ class Speech:
                 self.close_quote = True
                 if not re.search('&quot;',m_end.group(1)):
                     indent = True
+                if m_end.group(4):
+                    gid = self.find_quotation(m_end.group(1),m_end.group(4))
+                    if gid:
+                        m = m_end
+                        before = m.group(1)+m.group(2)
+                        if m.group(3):
+                            before += m.group(3)
+                        real_paragraph = before+('<citation id="%s">%s</citation>'%(gid,m.group(4)))
             elif self.after_open_quote:
                 indent = True
 
@@ -437,14 +481,6 @@ def centred( t ):
     else:
         raise Exception, "Unknown class: "+str(t.__class__)
 
-def non_tag_data_in( o ):
-    if o.__class__ == NavigableString:
-        return re.sub('(?ms)[\r\n]',' ',o)
-    elif o.__class__ == Tag:
-        return ''.join( map( lambda x: non_tag_data_in(x) , o.contents ) )
-    elif o.__class__ == Comment:
-        return ''
-
 def just_time( non_tag_text ):
     m = re.match( '^\s*(\d?\d)[:\.](\d\d)\s*$', non_tag_text )
     if m:
@@ -529,6 +565,8 @@ class Parser:
         self.speakers_so_far = []
 
         self.report_date = None
+
+        self.sxp = ScrapedXMLParser() 
 
     def parse_column(self,tag):
         a_name_tag = tag.find('a')
@@ -1198,8 +1236,8 @@ def compare_filename(a,b):
     ma = re.search('_(\d+)\.html',a)
     mb = re.search('_(\d+)\.html',b)
     if ma and mb:
-        mai = int(ma.group(1))
-        mbi = int(mb.group(1))
+        mai = int(ma.group(1),10)
+        mbi = int(mb.group(1),10)
         if mai < mbi:
             return -1
         if mai > mbi:
@@ -1207,12 +1245,10 @@ def compare_filename(a,b):
         else:
             return 0
     else:
-        raise Exception, "Couldn't match filenames: "+a+" and "+B
+        raise Exception, "Couldn't match filenames: "+a+" and "+b
 
 # --------------------------------------------------------------------------
 # End of function and class definitions...
-
-force = False
 
 last_column_number = 0
     
@@ -1221,10 +1257,14 @@ for d in dates:
     xml_output_directory = "../../../parldata/scrapedxml/sp/"
     output_filename = xml_output_directory + "sp" + str(d) + ".xml"
 
-    if (not force) and os.path.exists(output_filename):
+    if verbose: print "Examining %s %s" % (d, output_filename)
+
+    if (not options.force) and os.path.exists(output_filename):
         continue
 
     contents_filename = or_prefix + "or" +str(d) + "_0.html"
+    if not os.path.exists(contents_filename):
+        continue
 
     filenames = glob.glob( or_prefix + "or" + str(d) + "_*.html" )
     filenames.sort(compare_filename)
@@ -1253,7 +1293,9 @@ for d in dates:
     urls_filename = or_prefix + "or" + str(d) + ".urls"
     fp = open(urls_filename)
     for line in fp.readlines():
-        url = line.rstrip()
+        line = line.rstrip()
+        fields = line.split("\0")
+        url = fields[0]
         if len(url) > 0:
             original_urls.append(url)
     fp.close()
@@ -1288,7 +1330,7 @@ for d in dates:
         elif re.search('2003-05-15',detail_filename):
             continue # That's 404
 
-        if verbose: print "Parsing: "+detail_filename
+        if not options.quiet: print "Parsing: "+detail_filename
 
         fp = open(detail_filename)
         html = fp.read()
@@ -1357,9 +1399,8 @@ for d in dates:
         body = soup.find('body')
 
         if body == None:
-            print "body was None for: "+str(d)
-            continue
-
+            raise Exception, "body was None for: "+str(d)
+        
         if verbose:
             print "----- " + detail_filename
             print soup.prettify()
@@ -1383,7 +1424,8 @@ for d in dates:
 
     parser.complete_current()
 
-    o = open(output_filename,"w")
+    temp_output_filename = xml_output_directory + "tmp.xml"
+    o = open(temp_output_filename,"w")
 
     o.write('''<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE publicwhip [
@@ -1391,6 +1433,7 @@ for d in dates:
 <!ENTITY pound   "&#163;">
 <!ENTITY euro    "&#8364;">
 
+<!ENTITY szlig   "&#223;">
 <!ENTITY agrave  "&#224;">
 <!ENTITY aacute  "&#225;">
 <!ENTITY egrave  "&#232;">
@@ -1442,6 +1485,7 @@ for d in dates:
 <!ENTITY ntilde  "&#241;">
 <!ENTITY ocirc   "&#244;">
 <!ENTITY oelig   "&#339;">
+<!ENTITY otilde  "&#245;">
 <!ENTITY Ograve  "&#210;">
 <!ENTITY Oslash  "&#216;">
 <!ENTITY oslash  "&#248;">
@@ -1474,9 +1518,14 @@ for d in dates:
     o.write("\n\n</publicwhip>\n")
     o.close()
 
-    retcode = call( [ "xmlstarlet", "val", output_filename ] )
+    retcode = call( [ "mv", temp_output_filename, output_filename ] )
     if retcode != 0:
-        raise Exception, "Validating "+output_filename+" for well-formedness failed."
+        raise Exception, "Moving "+temp_output_filename+" to "+output_filename+" failed."
+
+    xmlvalidate.parse(output_filename)
+    #retcode = call( [ "xmlstarlet", "val", output_filename ] )
+    #if retcode != 0:
+    #    raise Exception, "Validating "+output_filename+" for well-formedness failed."
 
     fil = open('%schangedates.txt' % xml_output_directory, 'a+')
     fil.write('%d,sp%s.xml\n' % (time.time(), str(d)))

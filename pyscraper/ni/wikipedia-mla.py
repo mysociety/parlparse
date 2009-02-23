@@ -27,7 +27,7 @@ ur = open('../../rawdata/Members_of_the_NIA_2007')
 content = ur.read()
 ur.close()
 
-matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)" title="[^"]+">([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a></td>';
+matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*? title="[^"]+"[^>]*>([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a></td>';
 matches = re.findall(matcher, content)
 matches.append(('/wiki/Alastair_Ian_Ross', 'Alastair Ian Ross', 'East Antrim'))
 for (url, name, cons) in matches:

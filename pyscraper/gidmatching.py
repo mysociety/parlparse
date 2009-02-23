@@ -240,7 +240,9 @@ def FactorChangesWrans(majblocks, scrapeversion):
 		qblock = None
 		for qqnum in qqnums:
 			if qblock:
-				assert qblock.headingqb.qGID == qnummapq[qqnum].headingqb.qGID
+				if qblock.headingqb.qGID != qnummapq[qqnum].headingqb.qGID:
+				    print qblock.headingqb.qGID, qnummapq[qqnum].headingqb.qGID
+				    assert qblock.headingqb.qGID == qnummapq[qqnum].headingqb.qGID
 			elif qqnum != '0' and qqnum in qnummapq:  # 0 is when there is a missing qnum
 				qblock = qnummapq[qqnum]
 
@@ -260,9 +262,6 @@ def FactorChangesWrans(majblocks, scrapeversion):
 					print "Missing qnum; mapping %s to %s with score %f" % (qebchk[0], qblock.headingqb.qGID, qmissblockscorebest[0])
 				assert qmissblockscorebest[0] > 0.8  # otherwise it's not really a match and we need to look harder.  
 													 # perhaps it's matched to a block in the new file which newly has a qnum, and we then have to scan against all of them.  
-			else:
-				res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="removed"/>\n' % (qebchk[0], majblocks[0][0].qGID))
-				continue
 
 		# now have to check matching.
 		# convert both to strings and compare.
@@ -281,6 +280,15 @@ def FactorChangesWrans(majblocks, scrapeversion):
 
 			elif not re.match("<gidredirect", wd):
 				essxfq.append(wd)
+
+		if not qblock and not qnummissings:
+			res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="removed"/>\n' % (qebchk[0], majblocks[0][0].qGID))
+			for qebq in qebchkquesids:
+				res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="removed"/>\n' % (qebq, majblocks[0][0].qGID))
+			for qebqr in qebchkreplids:
+				res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="removed"/>\n' % (qebqr, majblocks[0][0].qGID))
+			# Is the lred current-gidredirects bit needed here too? Don't think so, but not sure
+			continue
 
 		# build up the same summary from the question block
 		essbkfq = [ ]

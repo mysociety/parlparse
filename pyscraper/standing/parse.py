@@ -7,6 +7,7 @@ import sys
 import tempfile
 import shutil
 import sets
+import time
 
 pardir = os.path.abspath(os.path.join(sys.path[0], '..'))
 sys.path.append(pardir)
@@ -479,14 +480,14 @@ class ParseCommittee:
         chairname = self.clean_text(chairname)
         # strip anything following a comma
         chairname = re.sub(",.*", "", chairname)
-        if re.search("&dagger;", tag.previousSibling.string): attending = True
+        if re.search("&(dagger|#134);", tag.previousSibling.string): attending = True
         return (chairname, attending)
 
     def parse_chair_string(self, text):
         """Parse the old-style committee chairman text. Return the member's
         name and whether or not they're in attendence"""
         attending = False
-        newtext = re.sub('&dagger;', '', text)
+        newtext = re.sub('&(dagger|#134);', '', text)
         if newtext != text: attending = True
         return (self.clean_text(newtext), attending)
         
@@ -498,7 +499,7 @@ class ParseCommittee:
         memberparty - second bracketed text if present 
         attending - bookean indicating if the member is attending"""
         attending = False
-        newtext = re.sub('&dagger;', '', text)
+        newtext = re.sub('&(dagger|#134);', '', text)
         if newtext != text: attending = True
         mMember = re.match('([^(]*?)\s*?(\([^)]*?\))?\s*?(\([^)]*?\))?\s*$', newtext)
         if not mMember: raise ContextException, "Couldn't parse committee member %s" % newtext 
@@ -676,7 +677,7 @@ class ParseCommittee:
         else:
             chairtext = re.sub(chairRe, "", chairTag)
             
-        while re.search("(&dagger;|,|and)\s*?$",chairtext):
+        while re.search("(&dagger;|&#134;|,|and)\s*?$",chairtext):
             chairTag = chairTag.findNext(text=re.compile("[a-z]"))
             chairtext += chairTag  
         chairs = []
@@ -838,12 +839,15 @@ class ParseCommittee:
         plaintitle = ''.join(node(text=True))
         bill_link = soup.h3
       
-        if bill_link and bill_link.a: url = bill_link.a.get('href', None)
+        if bill_link and bill_link.a:
+            url = bill_link.a.get('href', None)
+            url = re.sub('\s+', '', url)
    
         bill_title.extract()
         bill_link.extract()
         
-        if url: url_str = ' url="%s%s"' %  (self.baseurl, url)
+        if url:
+            url_str = ' url="%s%s"' % (url[0:7] != 'http://' and self.baseurl or '', url)
         self.out.write('<bill%s title="%s">%s</bill>\n' % (url_str, plaintitle, title))
         
         self.parse_new_committee(soup)
@@ -1044,6 +1048,7 @@ patchtool = False
 debug_flag = False
 
 standing_dir = os.path.join(toppath, 'cmpages', 'standing')
+standing_xml_dir = os.path.join(toppath, 'scrapedxml', 'standing')
 if len(sys.argv)==2 and sys.argv[1] == '--patchtool':
     patchtool = True
 
@@ -1057,7 +1062,7 @@ for file in g:
     mnums = re.match(".*(standing)(.*?)([a-z]*)\.html$", file)
     sitting_part = mnums.group(1) + mnums.group(2) + mnums.group(3)
     patch_part = mnums.group(2) + mnums.group(3)
-    outfile = os.path.join(toppath, 'scrapedxml', 'standing', '%s.xml' % sitting_part)
+    outfile = os.path.join(standing_xml_dir, '%s.xml' % sitting_part)
     parsefile = ((not os.path.isfile(outfile)) or force or os.path.getmtime(file) > os.path.getmtime(outfile))
     
     while parsefile:
@@ -1065,6 +1070,9 @@ for file in g:
             print("Standing committees parsing %s..." % sitting_part)
             # raise ContextException, "One off"
             parser.parse_sitting_part(sitting_part)
+            fil = open('%s/changedates.txt' % standing_xml_dir, 'a+')
+            fil.write('%d,%s.xml\n' % (time.time(), sitting_part))
+            fil.close()
             break
         except ContextException, ce:
             if patchtool:

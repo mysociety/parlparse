@@ -32,7 +32,7 @@ for u in wiki_index_urls:
     content += ur.read()
     ur.close()
 
-matcher = '(?ims)<a href="(/wiki/[^"]+)" title="[^"]+">([^<]+)</a>'
+matcher = '(?ims)<a href="(/wiki/[^"]+)" [^>]*?title="[^"]+">([^<]+)</a>'
 matches = re.findall(matcher, content)
 
 matches.append(('/wiki/Dorothy_Grace_Elder','Dorothy-Grace Elder'))

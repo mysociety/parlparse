@@ -6,6 +6,11 @@ import random
 import datetime
 import time
 import traceback
+from optparse import OptionParser
+
+sys.path.append('../')
+import xml.sax
+xmlvalidate = xml.sax.make_parser()
 
 from BeautifulSoup import BeautifulSoup
 from BeautifulSoup import NavigableString
@@ -16,15 +21,26 @@ from subprocess import call
 
 from resolvemembernames import memberList
 
+from common import month_name_to_int
+from common import non_tag_data_in
+from common import tidy_string
+
 from time import strptime
 
 import re
 import glob
 
-verbose = False
+parser = OptionParser()
+parser.add_option('-q', "--quiet", dest="quiet", action="store_true",
+                  help="don't print status messages")
+(options, args) = parser.parse_args()
+verbose = False # XXX This is /very/ verbose, add command line option for it
 
 wa_prefix = "../../../parldata/cmpages/sp/written-answers/"
 xml_output_directory = "../../../parldata/scrapedxml/sp-written/"
+
+# ------------------------------------------------------------------------
+# Keep a dictionary on disk that maps files to dates:
 
 file_to_date = None
 date_to_file = { }
@@ -54,51 +70,13 @@ def add_file_to_date_mapping(filename,date_string):
     fp.write( "\n}\n" )
     fp.close()
 
-filenames = glob.glob( wa_prefix + "day-*.htm" )
+# ------------------------------------------------------------------------
+
+filenames = glob.glob( wa_prefix + "day-*.htm*" )
 
 def paragraphs_in_tag(t):
     paragraphs = t.findAll('p',recursive=False)
     return len(paragraphs)
-
-def non_tag_data_in(o):
-    if o.__class__ == NavigableString:
-        return re.sub('(?ms)[\r\n]',' ',o)
-    elif o.__class__ == Tag:
-        return ''.join( map( lambda x: non_tag_data_in(x) , o.contents ) )
-    elif o.__class__ == Comment:
-        return ''
-    else:
-        # Hope it's a string or something else concatenatable...
-        return o
-
-def tidy_string(s):
-    result = re.sub('(?ims)\s+',' ',s)
-    return result.strip()
-
-def month_name_to_int( name ):
-
-    months = [ None,
-               "january",
-               "february",
-               "march",
-               "april",
-               "may",
-               "june",
-               "july",
-               "august",
-               "september",
-               "october",
-               "november",
-               "december" ]
-
-    result = 0
-
-    for i in range(1,13):
-        if name.lower() == months[i]:
-            result = i
-            break
-
-    return result
 
 class QuestionOrReply:
     def __init__(self,sp_id,sp_name,parser):
@@ -186,6 +164,7 @@ class Parser:
                               "Right Hon Elish Angiolini QC" : True,
                               "Rt hon Elish Angiolini QC" : True,
                               "Elish Angiolini QC" : True,
+                              "Eilish Angiolini QC": True,
                               "Mrs Elish Angiolini" : True,
                               "Mrs Elish Angiolini QC" : True,
                               "Frank Mulholland QC": True,
@@ -276,7 +255,7 @@ class Parser:
         if rest:
             s = rest            
         if len(s) > 0:
-            m = re.search('\(([A-Z0-9]+\-) ?([A-Z0-9]+)\)',s)
+            m = re.search('\((S[0-9][A-Z0-9]+\-) ?([0-9]+)\)',s)
             if m:
                 sp_id = m.group(1) + m.group(2)
                 self.set_id(sp_id)
@@ -291,7 +270,7 @@ class Parser:
             return holding_match.group(1) + holding_match.group(5)
 
     def get_id(self,index,type):
-        return "uk.org.publicwhip/spwa/"+str(self.date)+".%d.%s" % ( index, type )
+        return "uk.org.publicwhip/spwa/"+str(self.date)+".%s.%s" % ( index, type )
 
     def valid_speaker(self,speaker_name):
         tidied_speaker = speaker_name
@@ -299,6 +278,7 @@ class Parser:
             return None
         if self.odd_unknowns.has_key(speaker_name):
             return "unknown"
+        tidied_speaker = re.sub("((on behalf of the )?Scottish Parliamentary Corporate Body)",'',tidied_speaker)
         ids = memberList.match_whole_speaker(tidied_speaker,str(parser.date))
         if ids == None:
             return "unknown"
@@ -325,6 +305,7 @@ class Parser:
 
         html = re.sub('&nbsp;', ' ', html)
         html = re.sub('&#9;', ' ', html)
+        html = re.sub('&#160;', ' ', html)
 
         # Annoyingly, in the phrase "Sportscotland", the Sport is bold and
         # sometimes runs on from speaker names:
@@ -332,6 +313,8 @@ class Parser:
         html = re.sub('([Ss])port</strong>([Ss])',r'</strong>\1port\2',html)
 
         html = re.sub('(?ims)<a name="se_Minister">\s*</a>','',html)
+
+        html = re.sub('&rsquo;Donnell',"'Donnell",html)
     
         # Swap the windows-1252 euro and iso-8859-1 pound signs for the
         # equivalent entities...
@@ -362,7 +345,12 @@ class Parser:
         # iso-8859-1.  The decoding you set here doesn't actually seem to
         # solve these problems anyway (FIXME)...
 
-        self.soup = BeautifulSoup( html, fromEncoding='windows-1252' )            
+        self.soup = BeautifulSoup( html, fromEncoding='windows-1252' )
+
+        # Test trying to find the body tag; if we can't, then the
+        # parsing failed horribly:
+        if not self.soup.find('body'):
+            raise Exception, "Couldn't find body in souped "+filename
 
     def parse(self,filename):
 
@@ -398,7 +386,7 @@ class Parser:
                     else:
                         year = '20' + m.group(1)
                 self.date = datetime.date( int(year,10), month, int(day,10) )
-                if verbose: "Adding file to date mapping to cache."
+                if not options.quiet: "Adding file to date mapping to cache."
                 add_file_to_date_mapping(filename_leaf,str(self.date))
             else:
                 raise Exception, "No date found in file: "+filename
@@ -407,10 +395,12 @@ class Parser:
         output_filename = xml_output_directory + "spwa" + str(self.date) + ".xml"
 
         if os.path.exists(output_filename):
-            error = "The output file "+output_filename+" already exists - skipping "+re.sub('^.*/','',filename)
+            #error = "The output file "+output_filename+" already exists - skipping "+re.sub('^.*/','',filename)
             # raise Exception, error
-            if verbose: print error
+            #if not options.quiet: print error
             return
+
+        if not options.quiet: print "Parsing %s" % filename
 
         self.make_soup(filename)
 
@@ -637,6 +627,7 @@ class Parser:
 
         x = -1
         last_heading = None
+        current_sp_id = None
 
         index = 0
 
@@ -646,19 +637,28 @@ class Parser:
                 previous = self.all_stuff[i-1]
             else:
                 previous = None
+
+            if i < (len(self.all_stuff) - 1):
+                next = self.all_stuff[i+1]
+            else:
+                next = None
                 
             a = self.all_stuff[i]
 
             self.ofp.write('\n\n')
 
             if a.__class__ == Heading:
-                x += 1
                 last_was_answer = True
                 if a.major:
                     subtype = "mh"
                 else:
                     subtype = "h"
-                self.ofp.write(a.to_xml(self.get_id(x,subtype)))
+                if next and next.__class__ == QuestionOrReply and next.sp_id:
+                    # Then use the question's sp_id:
+                    self.ofp.write(a.to_xml(self.get_id(next.sp_id,subtype)))
+                else:
+                    x += 1
+                    self.ofp.write(a.to_xml(self.get_id(str(x),subtype)))
                 last_heading = a
             elif a.__class__ == QuestionOrReply:
                 # Occasionally we think questions are actually
@@ -675,19 +675,25 @@ class Parser:
                         if previous.__class__ == QuestionOrReply:
                             if previous.is_question:
                                 # If the one before is a question, that's fine.
-                                pass
+                                current_sp_id = a.sp_id
                             else:
+                                current_sp_id = a.sp_id
                                 # If the previous one was an answer
                                 # then we need to replay the last
                                 # heading:
                                 if not last_heading:
                                     raise Exception, "Somehow there's been no heading so far."
                                 last_heading.sp_name = a.sp_name
-                                x += 1
-                                self.ofp.write(last_heading.to_xml(self.get_id(x,"h")))
+                                if current_sp_id:
+                                    self.ofp.write(last_heading.to_xml(self.get_id(current_sp_id,"h")))
+                                else:
+                                    x += 1
+                                    self.ofp.write(last_heading.to_xml(self.get_id(str(x),"h")))
                                 self.ofp.write("\n\n")
                                 index = 0
                         else:
+                            # i.e. this is the normal case, a question after a heading:
+                            current_sp_id = a.sp_id
                             index = 0
                     else:
                         raise Exception, "Nothing before the first question (no heading)"
@@ -695,7 +701,10 @@ class Parser:
                     subtype = "q" + str(index)
                 else:
                     subtype = "r" + str(index)
-                self.ofp.write(a.to_xml(self.get_id(x,subtype)))
+                if current_sp_id:
+                    self.ofp.write(a.to_xml(self.get_id(current_sp_id,subtype)))
+                else:
+                    self.ofp.write(a.to_xml(self.get_id(str(x),subtype)))
                 index += 1
 
         self.ofp.write("</publicwhip>")
@@ -705,9 +714,10 @@ class Parser:
         if retcode != 0:
             raise Exception, "Moving "+temp_output_filename+" to "+output_filename+" failed."
 
-        retcode = call( [ "xmlstarlet", "val", output_filename ] )
-        if retcode != 0:
-            raise Exception, "Validating "+output_filename+" for well-formedness failed."
+        xmlvalidate.parse(output_filename)
+        #retcode = call( [ "xmlstarlet", "val", output_filename ] )
+        #if retcode != 0:
+        #    raise Exception, "Validating "+output_filename+" for well-formedness failed."
 
         fil = open('%schangedates.txt' % xml_output_directory, 'a+')
         fil.write('%d,spwa%s.xml\n' % (time.time(), self.date))

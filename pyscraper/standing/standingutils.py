@@ -18,5 +18,5 @@ def shortname_atts(shortname):
 def create_committee_letters(indexurl):
     """Create a set of letters for the shortname for a committee based on the Bill title"""
     #get the name of the index file for the committee
-    pBill = 'http://www.publications.parliament.uk/pa/cm/cmpb(.*?).htm'
+    pBill = 'http://www.publications.parliament.uk/pa/cm(?:\d*)/(?:cmpublic/)?cmpb(.*?).htm'
     return re.match(pBill, indexurl).group(1).upper()

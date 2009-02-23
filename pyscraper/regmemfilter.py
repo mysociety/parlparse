@@ -33,12 +33,14 @@ def RunRegmemFilters(fout, text, sdate):
         WriteXMLHeader(fout)
 	fout.write("<publicwhip>\n")
 
+        text = re.sub('Rt Shaun', 'Shaun', text) # Always get his name wrong
         rows = re.findall("<TR>(.*)</TR>", text)
         rows = [ re.sub("&nbsp;", " ", row) for row in rows ]
         rows = [ re.sub("<B>|</B>|<BR>", "", row) for row in rows ]
         rows = [ re.sub('<IMG SRC="3lev.gif">', "", row) for row in rows ]
         rows = [ re.sub("&#173;", "-", row) for row in rows ]
         rows = [ re.sub('\[<A NAME="n\d+"><A HREF="\#note\d+">\d+</A>\]', '', row) for row in rows ]
+        rows = [ re.sub('\[<A NAME="n\d+">\d+\]', '', row) for row in rows ]
 
         # split into cells within a row
         rows = [ re.findall("<TD.*?>(.*?)</TD>", row) for row in rows ]

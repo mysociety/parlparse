@@ -78,6 +78,7 @@ govdepts = ["Department of Health",
 			"Privy Council Office",
                                 "Ministry of Defence",
                                 "Department for Environment, Food and Rural Affairs",
+                                "Department for Energy and Climate Change", # DEFECATE
                                 "Department for International Development",
                                 "Department for Culture, Media & Sport",
                                 "Department for Constitutional Affairs",
@@ -90,6 +91,9 @@ govdepts = ["Department of Health",
                                 "Department for Work and Pensions",
                                 "Northern Ireland Office",
                                 "Law Officers' Department",
+                                "Law Officers",
+                                "Attorney General's Office",
+                                "Office of the Advocate General for Scotland",
                                 "Department of Trade and Industry",
                                         "Department for Business, Enterprise & Regulatory Reform",
                                 "House of Commons",
@@ -190,6 +194,8 @@ class protooffice:
 			self.fullname = "Sion Simon"
 		if re.match("Si.n C\. James$", self.fullname):
 			self.fullname = "Sian C James"
+		if re.match("Lembit .pik$", self.fullname):
+			self.fullname = "Lembit Opik"
 #		if re.match("Anne Picking$", self.fullname):
 #			self.fullname = "Anne Moffat"
                 self.cons = re.sub("&amp;", "&", cons)
@@ -204,12 +210,16 @@ class protooffice:
                 name = re.sub('\s+', ' ', name)
 		nameMatch = re.match('(.*?)(?:\s*\(([^)]*)\))?\s*$', name)
 		self.fullname = nameMatch.group(1).strip()
-		self.fullname = re.sub("^Mrs? ", "", self.fullname)
+		self.fullname = re.sub("^Mr?s? ", "", self.fullname)
 		if re.match("Si.n Simon$", self.fullname):
 			self.fullname = "Sion Simon"
+		if re.match("Si.n C\. ?James$", self.fullname):
+			self.fullname = "Sian C James"
                 self.cons = None
                 if nameMatch.group(2):
 		        self.cons = re.sub("&amp;", "&", nameMatch.group(2))
+                if self.fullname == 'Angela E. Smith':
+                        self.cons = 'Basildon'
 
 		# map down to the department for this record
 		self.pos = "PPS"
@@ -245,6 +255,9 @@ class protooffice:
 			assert not self.cons
 			self.cons = mbrackinfullname.group(2)
 
+		if re.match("Si.n Simon$", self.fullname):
+			self.fullname = "Sion Simon"
+
 		# special Gareth Thomas match
 		if self.fullname == "Gareth Thomas" and (
                 (self.sdatet[0] >= '2004-04-16' and self.sdatet[0] <=
@@ -257,9 +270,15 @@ class protooffice:
 		if self.fullname == "Lord Bach of Lutterworth":
 			self.fullname = "Lord Bach"
 
-		# special Andrew Adonis match
+		# special matches for people who were listed before they became Lords
 		if self.fullname == "Andrew Adonis" and self.sdatet[0][:7] == "2005-05":
 			self.fullname = "Lord Adonis"
+                if self.fullname == 'Stephen Carter':
+                        self.fullname = 'Lord Carter of Barnes'
+                if self.fullname == 'Peter Mandelson':
+                        self.fullname = 'Lord Mandelson'
+                if self.fullname == 'Paul Myners':
+                        self.fullname = 'Lord Myners'
 
                 if self.fullname == 'Admiral Sir Alan West':
                         self.fullname = 'Lord West of Spithead'
@@ -269,6 +288,8 @@ class protooffice:
                         self.fullname = 'Lord Jones of Birmingham'
                 if self.fullname == 'Professor Sir Ara Darzi':
                         self.fullname = 'Lord Darzi of Denham'
+                if self.fullname == 'Shriti Vadera':
+                        self.fullname = 'Baroness Vadera'
 
                 # Okay, name done, let's move on to position
 
@@ -321,6 +342,18 @@ class protooffice:
 		self.dept = self.depts[deptno][1]
 
 
+	def OffOppproto(self, lsdatet, name, pos, dept, responsibility, sourcedoc):
+		self.sdatet = lsdatet
+		self.sourcedoc = sourcedoc
+		name = re.sub("^Rt Hon\s+|^Mrs?\s+", "", name)
+		name = re.sub("\s+(?:QC|[GKDCOM]BE)?$", "", name)
+		self.fullname = name
+                self.cons = None
+		self.depts = [ (pos, dept) ]
+		self.pos = pos
+		self.dept = dept.replace('&amp;', '&') # XXX
+		self.responsibility = responsibility.replace('&amp;', '&')
+
 	# turns the protooffice into a part of a chain
 	def SetChainFront(self, fn, bfrontopen):
 		if bfrontopen:
@@ -365,12 +398,19 @@ def SpecMins(regex, fr, sdate):
         a = re.findall(regex, fr)
         for i in a:
                 specpost = i[0]
-                specname = re.sub("^\s+", "", i[1])
+                if len(i)==3:
+                        specname = i[2]
+                        if i[1]:
+                                specpost = "%s; %s" % (specpost, i[1])
+                else:
+                        specname = i[1]
+                specname = re.sub("^\s+", "", specname)
                 specname = re.sub("\s+$", "", specname)
                 nremadename = specname
                 nremadename = re.sub("^Rt Hon ", "", nremadename)
                 if not re.search("Duke |Lord |Baroness ", specname):
                         nremadename = re.sub("\s+MP$", "", nremadename)
+                        nremadename = re.sub("^Mrs?\s+", "", nremadename)
                         nremadename = re.sub(" [GKDCOM]BE$", "", nremadename)
                 bigarray.setdefault(sdate, {})
                 if specpost == "Universitites":
@@ -398,7 +438,7 @@ def ParseSelCteePage(fr, gp):
         	frdate = re.search("Select Committee\s+Membership at\s+(.*?)\s*<(?i)", fr)
                 sudate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
         else:
-                frdate = re.search(">This list was last updated on\s+<b>\s+(.*?)\s+<", fr)
+                frdate = re.search(">This list was last updated on\s+<(?:b|strong)>\s+(.*?)\s+<", fr)
                 sudate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
 
         sdate = sudate
@@ -407,6 +447,9 @@ def ParseSelCteePage(fr, gp):
         committees = re.findall("<a\s+href=(?:'|\")(?:http://hcl2\.hclibrary/sections/hcio/mmc/selcom\.asp)?#\d+(?:'|\")>(.*?)</a></I>", fr, re.I | re.S)
         committees = map(lambda x: re.sub("\s+", " ", x).replace("&amp;", "&"), committees)
         found = { }
+
+        # Dupe causes issues
+        fr = re.sub('(<tr><td>Martin Salter</td><td>Reading West</td><td>Labour</td></tr>){2}', r'\1', fr)
 
         fr = re.sub('</tr>\s*<td', '</tr><tr><td', fr)
         # XXX: This is slow, speed it up!
@@ -425,6 +468,10 @@ def ParseSelCteePage(fr, gp):
                         ec = protooffice()
                         ec.SelCteeproto((sdate, stime), name, const, cteename)
                         res.append(ec)
+                if num>=181 and num<=185 and cteename=='Communities and Local Government':
+                        ec = protooffice()
+                        ec.SelCteeproto((sdate, stime), 'Mr Greg Hands', 'Hammersmith & Fulham', 'Communities and Local Government')
+                        res.append(ec)
         for i in committees:
                 if i not in found:
                         print "Argh:", gp, i
@@ -438,7 +485,7 @@ def ParseGovPostsPage(fr, gp):
 
         stime = '%02d:%02d' % (num/60, num%60) # Will break at 86,400 :)
 
-        if (num >= 36 and num <= 38) or (num >= 106 and num <= 110):
+        if (num >= 36 and num <= 38) or (num >= 106 and num <= 110) or num == 141:
                 return "SKIPTHIS", None # Reshuffling
         elif num == 39:
                 sdate = "2006-05-08" # Moved back to date of reshuffle
@@ -459,19 +506,23 @@ def ParseGovPostsPage(fr, gp):
                 frdate = re.search(">Her Majesty's Government at\s+(.*?)\s*<", fr)
                 sdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
         else:
-                frdate = re.search(">This list was last updated on\s+<b>\s*(.*?)\s+<", fr)
+                frdate = re.search(">This list was last updated on\s+<(?:b|strong)>\s*(.*?)\s+<", fr)
                 sdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
 
         # extract special Ministers of State and PUSes
         namebit = "<td valign='TOP'>(.*?)(?:\s+\[.*?\])?</td>"
-        alsobit = "(?:[-\s]+\(?also .*?\)?)?"
+        alsobit = "(?:[-\s]+\(?also .*?\)?|[;:] (Minister for .*?))?"
         SpecMins("<TR><td width='400'><b>Minister of State \((.*?)\)</b></td>%s" % namebit, fr, sdate)
-        SpecMins("<TR><td width='400'>- Mini?ster of State \((.*?)\)%s</TD>%s" % (alsobit, namebit), fr, sdate)
+        SpecMins("<TR><td width='400'>- Mini?ster of State \(([^)]*?)\)%s</TD>%s" % (alsobit, namebit), fr, sdate)
         SpecMins("<tr><td>- Minister of State \((.*?)\)?%s</td>%s" % (alsobit, namebit), fr, sdate)
         SpecMins("<TR><td width='400'>- Minister (?:of State )?for (.*?)%s</TD>%s" % (alsobit, namebit), fr, sdate)
         SpecMins("<tr><td>- Minister for (.*?)</td>%s" % namebit, fr, sdate)
         SpecMins("<TR><td width='400'><B>Minister of (.*?)</B>%s" % namebit, fr, sdate)
         SpecMins("<TR><td width='400'>- Parliamentary Under-Secretary (?:of state )?(?:for )?\(?(.*?)\)?%s</TD>%s(?i)" % (alsobit, namebit), fr, sdate)
+
+        # Fix
+        if num>=169:
+                fr = re.sub('Parliamentary Under-Secretary and Department for Culture, Media & Sport', 'Parliamentary Under-Secretary, Department for Culture, Media & Sport', fr)
 
 	# extract the alphabetical list
         Malphl = re.search("ALPHABETICAL LIST OF HM GOVERNMENT([\s\S]*?)</table>", fr)
@@ -535,6 +586,8 @@ def ParsePrivSecPage(fr, gp):
                 return "SKIPTHIS", None # Brown shuffle
         elif num == 64:
                 sdate = '2007-06-28' # Brown shuffle
+        elif num >= 102:
+                return "SKIPTHIS", None # Unknown reason, all gone
         elif num <= 48:
                 frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
                 if not frupdated:
@@ -551,15 +604,16 @@ def ParsePrivSecPage(fr, gp):
         elif num <= 57:
 	        sdate = filedate
         else:
-                frdate = re.search(">This list was last updated on\s+<b>\s*(.*?)\s*<(?i)", fr)
+                frdate = re.search(">This list was last updated on\s+<(?:b|strong)>\s*(.*?)\s*<(?i)", fr)
                 msdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
                 sdate = msdate
 
 	res = [ ]
-        Mppstext = re.search('''(?xi)<tr>\s*<td[^>]*>
-							<font[^>]*><b>Attorney-General.see.</b>\s*Law\s+Officers.Department</font>
-							</td>\s*</tr>
-							([\s\S]*?)</table>''', fr)
+        if num < 96:
+            start = '<font[^>]*><b>Attorney-General see </b>\s*Law\s+Officers Department</font>'
+        else:
+            start = '<b>(?:<font[^>]*>)?(?:<a name="Department"></a>)?HM Government(?:</font>)?</b>'
+        Mppstext = re.search('(?i)<tr>\s*<td[^>]*>%s</td>\s*</tr>([\s\S]*?)</table>' % start, fr)
 
         # skip over a holding page that says the PPSs are not sorted out right after the reshuffle
         if re.search('Following the reshuffle', fr):
@@ -585,11 +639,11 @@ def ParsePrivSecPage(fr, gp):
 		deptMatch = re.match('\s*<td[^>]*>(?:<font[^>]*>|<b>){2,}([^<]*)(?:(?:</b>|</font>){2,}</td>)?\s*$(?i)', e1)
 		if deptMatch:
 			deptname = re.sub("&amp;", "&", deptMatch.group(1))  # carry forward department name
-			deptname = re.sub("\s+", " ", deptname)
+			deptname = re.sub("\s+", " ", deptname).strip()
                         deptname = re.sub(" \(Team PPSs?\)", "", deptname)
 			continue
 		nameMatch = re.match("\s*<td[^>]*>\s*([^<]*)</td>\s*<td[^>]*>\s*([^<]*)(?:</td>)?\s*$(?i)", e1)
-		if nameMatch.group(1):
+		if nameMatch.group(1) and nameMatch.group(1) != '&nbsp;': 
 			ministername = nameMatch.group(1)  # carry forward minister name (when more than one PPS)
 			if ministername == 'Rt Hon Lord Rooker , Minister of State' or \
 			    ministername == 'Rt Hon Lord Rooker of Perry Bar , Minister of State':
@@ -597,6 +651,13 @@ def ParsePrivSecPage(fr, gp):
 
 		if re.search('vacant(?i)', nameMatch.group(2)) or re.match('&nbsp;$', nameMatch.group(2)):
 			continue
+
+                # Special case, though presumably lots of other PPSs are wrong too :-/
+                if re.match('Ms Barbara Keeley', nameMatch.group(2)) and num>=87:
+                        continue
+
+		if deptname == "Law Officers Department":
+			deptname = "Law Officers' Department"
 
 		if deptname in ppsdepts:
 			ec = protooffice()
@@ -610,6 +671,322 @@ def ParsePrivSecPage(fr, gp):
 	return (sdate, stime), res
 
 
+def titleish(s):
+        s = s.title().replace('&Amp;', '&amp;').replace(' And ',' and ').replace(' Of ', ' of ').replace(' The ',' the ').replace('Pps','PPS').replace(' For ',' for ').replace("'S", "'s").strip()
+        return s
+
+def ParseOffOppPage(fr, gp):
+        m = re.search('offoppose(\d+)_(\d+-\d+-\d+)', gp)
+        (num, filedate) = m.groups()
+        num = int(num)
+
+        stime = '%02d:%02d' % (num/60, num%60) # Will break at 86,400 :)
+
+        if num == 37 or num == 79:
+                return "SKIPTHIS", None # Reshuffling
+        #elif num == 38:
+        #        sdate = "2005-12-09" # Moved back to date of reshuffle
+        #elif num == 80:
+        #        sdate = "2007-07-03" # Moved back to date of reshuffle
+        elif num <= 64:
+                frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
+                if not frupdated:
+                    print "Failed to find lastupdated on:", gp
+                lsudate = re.match("(\d\d)/(\d\d)/(\d\d\d\d)$", frupdated.group(1))
+                if lsudate:
+                    sdate = "%s-%s-%s" % (lsudate.group(3), lsudate.group(2), lsudate.group(1))
+                else:
+                    lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
+                    y2k = int(lsudate.group(3)) < 50 and "20" or "19"  # I don't think our records go back far enough to merit this!
+                    sdate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
+        elif num <= 75:
+                sdate = filedate
+        else:
+                frdate = re.search(">This list was last updated on\s+<(?:b|strong)>\s*(.*?)\s+<", fr)
+                if not frdate:
+                        print num, filedate
+                        sys.exit()
+                sdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
+
+	# extract the alphabetical list
+        if num <= 97:
+                table = re.search("(?s)>HER MAJESTY&#39;S OFFICIAL OPPOSITION<(.*?)</table>", fr)
+        else:
+                table = re.search("(?s)>Her Majesty's Official Opposition<(.*?)</table>", fr)
+	list = re.split("</?tr>(?i)", table.group(1))
+
+	res = [ ]
+        pos = ''
+        dept = ''
+        inothermins = False
+	for row in list:
+                cells = re.search('<td[^>]*>\s*(.*?)\s*</td>\s*(?:<td[^>]*>\s*(.*?)\s*</td>\s*)?<td[^>]*>\s*(.*?)\s*</td>(?si)', row)
+                if not cells:
+                        continue
+                j = cells.group(1)
+                name = cells.group(3)
+
+                responsibility = ''
+
+                if j and j != '&nbsp;':
+                        if re.match('\(Also in', j):
+                                continue
+                        j = re.sub('(?i) \((Lords|Commons)\)', '', j)
+                        if (not name or name == '&nbsp;') and not re.search('Shadow Ministers', j):
+                                dept = titleish(re.sub('</?(font|b)[^>]*>', '', j))
+                                if re.match('Opposition Whip', dept):
+                                        dept = 'Whips'
+                                inothermins = False
+                                continue
+                        j = re.sub('<br>', ' ', j)
+                        j = re.sub('</?font[^>]*>', '', j)
+                        j = re.sub('&nbsp;|\s+', ' ', j)
+                        j = titleish(re.sub('</?b>', '', j))
+                        if j=='Whips': j = 'Whip'
+                        resp = re.match('Shadow Minister for (.*)', j)
+                        if resp and inothermins:
+                                responsibility = resp.group(1)
+                        elif re.match('(Other)?\s*Shadow Ministers?\s*(\(|$)', j):
+                                pos = 'Shadow Minister'
+                                inothermins = True
+                        else:
+                                pos = j
+                                inothermins = False
+
+                if not name or name == '&nbsp;' or re.search('vacant(?i)', name):
+                        continue
+
+                name = re.sub("\s+\((until|also|as from) .*?\)", '', name)
+                name = re.sub('\s+', ' ', re.sub('</?b>', '', name.replace('&nbsp;', ' ')))
+                name = re.sub('</?font[^>]*>\s*', '', name)
+                name = re.sub('Rt Hon the |Professor the |The ', '', name)
+
+                # Don't care about non MP/Lord
+                if name == 'Michael Bates' or re.search('Kulveer Ranger', name):
+                        continue
+
+                names = re.split('\s*<br>\s*(?i)', name)
+                names = [ re.sub('\s*(\*|\*\*|#)$', '', n) for n in names ]
+
+                for name in names:
+                        # Done here instead of alias because two Baroness Morrises
+                        if name == 'Baroness Morris':
+                                name = 'Baroness Morris of Bolton'
+		        if re.search('Sayeeda Warsi', name):
+                                name = 'Baroness Warsi'
+        
+		        ec = protooffice()
+        		ec.OffOppproto((sdate, stime), name, pos, dept, responsibility, "chgpages/offoppose")
+        		res.append(ec)
+
+	return (sdate, stime), res
+
+def ParseNewLibDemPage(fr, gp):
+        m = re.search('libdem(\d+)_(\d+-\d+-\d+)', gp)
+        (num, filedate) = m.groups()
+        num = int(num)
+        sdate = filedate
+        stime = '%02d:%02d' % (num/60, num%60) # Will break at 86,400 :)
+
+	# extract the alphabetical list
+        name = None
+        pos = None
+        res = []
+        rows = re.split('<br/>\s*', fr)
+        for row in rows:
+                m = re.match('Name: (.*)', row)
+                if m:
+                        if name and pos:
+		                ec = protooffice()
+        		        ec.OffOppproto((sdate, stime), name, pos, '', '', "chgpages/libdem") # Just pos should be enough
+        		        res.append(ec)
+                        name = m.group(1)
+                        pos = ''
+                        continue
+                m = re.match('Role: (.*)', row)
+                if m:
+                        pos = m.group(1)
+        if name and pos:
+	        ec = protooffice()
+                ec.OffOppproto((sdate, stime), name, pos, '', '', "chgpages/libdem") # Just pos should be enough
+                res.append(ec)
+	return (sdate, stime), res
+
+def ParseLibDemPage(fr, gp):
+        m = re.search('libdem(\d+)_(\d+-\d+-\d+)', gp)
+        (num, filedate) = m.groups()
+        num = int(num)
+
+        stime = '%02d:%02d' % (num/60, num%60) # Will break at 86,400 :)
+
+        if num <= 45 or num == 58 or num == 59:
+                frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
+                if not frupdated:
+                    print "Failed to find lastupdated on:", gp
+                lsudate = re.match("(\d\d)/(\d\d)/(\d\d\d\d)$", frupdated.group(1))
+                if lsudate:
+                    sdate = "%s-%s-%s" % (lsudate.group(3), lsudate.group(2), lsudate.group(1))
+                else:
+                    lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
+                    y2k = int(lsudate.group(3)) < 50 and "20" or "19"  # I don't think our records go back far enough to merit this!
+                    sdate = "%s%s-%s-%s" % (y2k, lsudate.group(3), lsudate.group(2), lsudate.group(1))
+        elif num <= 54:
+                sdate = filedate
+        elif num > 82:
+                return ParseNewLibDemPage(fr, gp)
+        else:
+                frdate = re.search(">Th(is|e) list (below )?was last updated\s+on\s+<b>\s*(.*?)\s+<", fr)
+                if not frdate:
+                        print "A problem was found with", num, filedate
+                        sys.exit()
+                sdate = mx.DateTime.DateTimeFrom(frdate.group(3)).date
+
+	# extract the alphabetical list
+        table = re.search("(?s)>LIBERAL DEMOCRAT PARLIAMENTARY\s+SPOKES(?:MEN|PERSONS)<(.*?)</table>", fr)
+	list = re.split("</?tr>(?i)", table.group(1))
+
+	res = [ ]
+        pos = ''
+        dept = ''
+        inothermins = False
+	for row in list:
+                cells = re.search('<td[^>]*>\s*(.*?)\s*</td>\s*(?:<td[^>]*>\s*(.*?)\s*</td>\s*)?<td[^>]*>\s*(.*?)\s*</td>(?si)', row)
+                if not cells:
+                        continue
+                j = cells.group(1)
+                name = cells.group(3)
+
+                responsibility = ''
+
+                if j and j != '&nbsp;':
+                        if re.match('\(Also in', j):
+                                continue
+                        j = re.sub('<br>|&nbsp;', ' ', j)
+                        j = re.sub('\s+', ' ', j)
+                        j = re.sub('</?(font|em|span)[^>]*>', '', j)
+                        boldhead = False
+                        if re.search('<b>', j):
+                                boldhead = True
+                        j = titleish(re.sub('</?b>', '', j))
+
+                        # Department headings in a line on their own, couple of exceptions
+                        if (not name or name == '&nbsp;') and not re.search('Shadow Ministers', j) \
+                            and not re.search('Spokespersons? In the Lords', j):
+                                dept = j
+                                inothermins = False
+                                continue
+                        resp = re.match('Shadow Minister for (.*)', j)
+                        if resp:
+                                responsibility = resp.group(1)
+                                pos = 'Shadow Minister'
+                        elif re.match('\s*Shadow Ministers?\s*(\(|$)', j):
+                                pos = 'Shadow Minister'
+                                inothermins = True
+                        elif re.match('\s*Spokespersons? In the Lords$', j):
+                                pos = 'Spokesperson in the Lords'
+                                inothermins = True
+                        elif inothermins and not boldhead:
+                                responsibility = j
+                        else:
+                                pos = j
+                                inothermins = False
+
+                if not name or name == '&nbsp;' or re.search('vacant(?i)', name) or re.search('to be confirmed(?i)', name):
+                        continue
+
+                name = re.sub("\s*\((until|also|as from) .*?\)", '', name)
+                name = re.sub('\s+', ' ', re.sub('</?(b|font|span)[^>]*>', '', name.replace('&nbsp;', ' '))).strip()
+                name = re.sub('Rt Hon the |Professor the |The ', '', name)
+
+                if name == 'Lord Garden KCB' and num>67: # He died
+                        continue
+
+                if re.match('Lord Dholakia &amp;\s+Lord Wallace of Saltaire \(shared position\)', name):
+                        name = 'Lord Dholakia<br>Lord Wallace of Saltaire'
+                names = re.split('\s*<br>\s*(?i)', name)
+                names = [ re.sub('^#', '', re.sub('\s*(\*|\*\*|#)+$', '', n)) for n in names ]
+
+                for name in names:
+                        # Done here instead of alias because two Baroness Morrises
+                        if name == 'Baroness Morris':
+                                name = 'Baroness Morris of Bolton'
+		        if re.search('Sayeeda Warsi', name):
+                                name = 'Baroness Warsi'
+        
+		        ec = protooffice()
+        		ec.OffOppproto((sdate, stime), name, pos, dept, responsibility, "chgpages/libdem")
+        		res.append(ec)
+
+	return (sdate, stime), res
+
+
+def ParsePlaidSNPPage(fr, gp):
+        m = re.search('plaidsnp(\d+)_(\d+-\d+-\d+)', gp)
+        (num, filedate) = m.groups()
+        num = int(num)
+
+        stime = '%02d:%02d' % (num/60, num%60) # Will break at 86,400 :)
+
+        if num == 8:
+                return "SKIPTHIS", None # Just shows constituencies
+        elif num <= 28:
+                frupdated = re.search('<td class="lastupdated">\s*Updated (.*?)(?:&nbsp;| )(.*?)\s*</td>', fr)
+                if not frupdated:
+                    print "Failed to find lastupdated on:", gp
+                lsudate = re.match("(\d\d)/(\d\d)/(\d\d\d\d)$", frupdated.group(1))
+                if lsudate:
+                    sdate = "%s-%s-%s" % (lsudate.group(3), lsudate.group(2), lsudate.group(1))
+                else:
+                    lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
+                    sdate = "20%s-%s-%s" % (lsudate.group(3), lsudate.group(2), lsudate.group(1))
+        else:
+                frdate = re.search(">This list was last updated on\s+<(?:b|strong)>\s*(.*?)\s+<", fr)
+                if not frdate:
+                        print "A problem was found with", num, filedate
+                        sys.exit()
+                sdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
+
+	# extract the alphabetical list
+        table = re.search('(?is)<b>Plaid Cymru</b>(.*?)</table>', fr).group(1)
+	res = [ ]
+
+        whips = re.findall('Joint Chief Whips are\s+(.*?) and (.*?)\.?\s*<', table)
+        for entry in whips:
+                for name in entry[0], entry[1]:
+        	        ec = protooffice()
+                        ec.OffOppproto((sdate, stime), name, 'Chief Whip', '', '', "chgpages/plaidsnp")
+                        res.append(ec)
+
+        list = re.findall('<tr><td>([^<]*?)(?:</td>)?<td>([^<]*?)(?:</td></tr>|(?=<tr>))', table)
+        for row in list:
+                resps = re.sub('\s+', ' ', re.sub('&nbsp;', ' ', row[0])).strip()
+                name = row[1].strip()
+                if not name or name == '&nbsp;':
+                        continue
+                ec = protooffice()
+                if re.match('Parliamentary Leader', resps):
+                        ec.OffOppproto((sdate, stime), name, resps, '', '', 'chgpages/plaidsnp')
+                else:
+                        ec.OffOppproto((sdate, stime), name, 'Spokesperson', '', resps, 'chgpages/plaidsnp')
+                res.append(ec)
+
+	return (sdate, stime), res
+
+def ParseDUPPage(fr, gp):
+        fp = open(membersdir + '../rawdata/dup_parl.bsv')
+        stime = 0
+        res = []
+        for line in fp:
+                if re.match('\d{4}-\d\d-\d\d', line):
+                        sdate = line.strip()
+                        stime = stime + 1
+                        continue
+                position, name = line.split('|')
+                ec = protooffice()
+                ec.OffOppproto((sdate, stime), name, position, '', '', 'chgpages/dup')
+                res.append(ec)
+        fp.close()
+        return (sdate, stime), res
 
 # this goes through all the files and chains positions together
 def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
@@ -639,7 +1016,7 @@ def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
 			continue
 
 		# all PPSs and committee memberships get cancelled when cross the general election.
-		if chgdirname != "govposts" and sdatet[0] > "2005-05-01" and sdatetprev[0] < "2005-05-01":
+		if (chgdirname == 'privsec' or chgdirname == 'selctee') and sdatet[0] > "2005-05-01" and sdatetprev[0] < "2005-05-01":
 			genelectioncuttoff = ("2005-04-11", "00:01")
 			#print "genelectioncuttoffgenelectioncuttoff", chgdirname
 
@@ -688,11 +1065,13 @@ def SetNameMatch(cp, cpsdates, mpidmap):
 	# don't match names that are in the lords
         if cp.fullname == 'Dame Marion Roe DBE':
                 cp.fullname = 'Marion Roe'
-	if not re.search("Duke |Lord |Baroness |Dame |^Earl ", cp.fullname):
+        if cp.fullname == 'Jamie, Earl of Mar and Kellie':
+                cp.fullname = 'Earl of Mar and Kellie'
+	if not re.search("Duke |Lord |Baroness |Dame |^Earl |Viscount ", cp.fullname):
 		fullname = cp.fullname
 		cons = cp.cons
                 if fullname == "Michael Foster" and not cons:
-                        if cpsdates[0] in ["2006-05-08", "2006-05-09", "2006-05-10", "2006-05-11"]:
+                        if cpsdates[0] in ["2006-05-08", "2006-05-09", "2006-05-10", "2006-05-11", "2008-10-06"]:
                                 cons = "Worcester"   # this Michael Foster had been a PPS
                         else:
                                 print cpsdates[0]; assert False  # double check we still have the right Michael Foster
@@ -709,13 +1088,20 @@ def SetNameMatch(cp, cpsdates, mpidmap):
 			raise Exception, 'No match: ' + fullname + " : " + (cons or "[nocons]") + "\nOrig:" + cp.fullname
 	else:
 		cp.remadename = cp.fullname
-		cp.remadename = re.sub("^Rt Hon ", "", cp.remadename)
+		cp.remadename = re.sub("^Rt Hon ", "", cp.remadename) # XXX Think this gets removed in about 3 places now!
+		cp.remadename = re.sub(" Kt ", " ", cp.remadename)
 		cp.remadename = re.sub(" [GKDCOM]BE$", "", cp.remadename)
 		cp.remadecons = ""
 		date = cpsdates[0]
 
                 # People being made ministers before they're Lorded. Tsch.
 		# Manual fixes for old date stuff. Hmm.
+                if cp.remadename == 'Lord Myners' and date < '2008-10-21':
+                        date = '2008-10-21'
+                if cp.remadename == 'Lord Mandelson' and date<'2008-10-13':
+                        date = '2008-10-13'
+                if cp.remadename == 'Lord Carter of Barnes' and date<'2008-10-16':
+                        date = '2008-10-16'
                 if cp.remadename == 'Lord Darzi of Denham' and date<'2007-07-19':
                         date = '2007-07-19'
                 if cp.remadename == 'Lord Malloch-Brown' and date<'2007-07-09':
@@ -732,6 +1118,11 @@ def SetNameMatch(cp, cpsdates, mpidmap):
 			date = '2001-06-21'
 		if cp.remadename == 'Lord Grocott' and date=='2001-06-12':
 			date = '2001-07-03'
+                if (re.match('Baroness Warsi', cp.remadename) or cp.remadename == 'Dame Pauline Neville-Jones') and date < '2007-10-15':
+                        date = '2007-10-15'
+                if cp.remadename == 'Baroness Vadera' and date<'2007-07-11':
+                        date = '2007-07-11'
+
 		if cp.remadename == 'Lord Davidson of Glen Cova':
 			cp.remadename = 'Lord Davidson of Glen Clova'
 		if cp.remadename == 'Lord Rooker of Perry Bar':
@@ -744,11 +1135,13 @@ def SetNameMatch(cp, cpsdates, mpidmap):
 
 	# make the structure we will sort by.  Now uses the personids from people.xml (slightly backward.  It means for running from scratch you should execute personsets.py, this operation, and personsets.py again)
 	if cp.matchid in mpidmap:
-		cp.sortobj = mpidmap[cp.matchid]
+		cp.sortobj = (mpidmap[cp.matchid], cpsdates[0])
+                cp.cmpobj = mpidmap[cp.matchid]
 	else:
 		if not bnonlords:
 			print "mpid of", cp.remadename, "not found in people.xml; please run personsets.py and this command again"
-		cp.sortobj = (re.sub("(.*) (\S+)$", "\\2 \\1", cp.remadename), cp.remadecons)
+		cp.sortobj = (re.sub("(.*) (\S+)$", "\\2 \\1", cp.remadename), cp.remadecons, cpsdates[0])
+		cp.cmpobj = (re.sub("(.*) (\S+)$", "\\2 \\1", cp.remadename), cp.remadecons)
 
 
 
@@ -820,10 +1213,10 @@ def CheckPPStoMinisterpromotions(mofficegroup):
 				ministerialdatesstart.append(rp[1].sdatestart)
 
 	# check we always go from PPS to ministerial position
-	if ppsdatesend and ministerialdatesstart:
-		if max(ppsdatesend) > min(ministerialdatesstart):
-			if mofficegroup[0][1].fullname not in ["Paddy Tipping"]:
-				print "New demotion to PPS for: ", mofficegroup[0][1].fullname
+	#if ppsdatesend and ministerialdatesstart:
+	#	if max(ppsdatesend) > min(ministerialdatesstart):
+	#		if mofficegroup[0][1].fullname not in ["Paddy Tipping"]:
+	#			print "New demotion to PPS for: ", mofficegroup[0][1].fullname
 
 	# check that goverment positions don't overlap committee positions
 	committeegovlist.sort()
@@ -865,11 +1258,17 @@ def ParseGovPosts():
 	cpres, sdatetlist = ParseChggdir("govposts", ParseGovPostsPage, True)
 
 	# parliamentary private secs
-	cpressec, sdatelistsec = ParseChggdir("privsec", ParsePrivSecPage, False)
+        cpressec, sdatelistsec = ParseChggdir("privsec", ParsePrivSecPage, False)
 
 	# parliamentary Select Committees
 	cpresselctee, sdatelistselctee = ParseChggdir("selctee", ParseSelCteePage, False)
 
+        # Official Oppositions
+        cpresopp, sdatelistoff = ParseChggdir('offoppose', ParseOffOppPage, False)
+        cpreslibdem, sdatelistlibdem = ParseChggdir('libdem', ParseLibDemPage, False)
+        cpresplaidsnp, sdatelistplaidsnp = ParseChggdir('plaidsnp', ParsePlaidSNPPage, False)
+        cpresdup, sdatelistdup = [], []
+        #cpresdup, sdatelistdup = ParseChggdir('dup', ParseDUPPage, False)
 
 	mpidmap = LoadMPIDmapping().mpidmap
 
@@ -885,14 +1284,15 @@ def ParseGovPosts():
 
 		SetNameMatch(po, cpsdates, mpidmap)
 		po.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
-		rpcp.append((po.sortobj, po))
+                po.sortobj = (po.sortobj, po.moffid)
+		rpcp.append((po.sortobj, po, po.cmpobj))
 		moffidn += 1
 
 	# run through the offices in the new code
 	assert moffidn < 1000
 	moffidn = 1000
 	for cp in cpres:
-                if cp.fullname in ['Shriti Vadera']:
+                if cp.fullname in []: # ignore until they're introduced as Lords
                         continue
 
 		cpsdates = [cp.sdatestart, cp.sdateend]
@@ -901,23 +1301,19 @@ def ParseGovPosts():
 
 		SetNameMatch(cp, cpsdates, mpidmap)
 		cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
-		rpcp.append((cp.sortobj, cp))
+                cp.sortobj = (cp.sortobj, cp.moffid)
+		rpcp.append((cp.sortobj, cp, cp.cmpobj))
 		moffidn += 1
 
-	# private secretaries
-	for cp in cpressec:
-		cpsdates = [cp.sdatestart, cp.sdateend]
-		SetNameMatch(cp, cpsdates, mpidmap)
-		cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
-		rpcp.append((cp.sortobj, cp))
-		moffidn += 1
-
-	for cp in cpresselctee:
-		cpsdates = [cp.sdatestart, cp.sdateend]
-		SetNameMatch(cp, cpsdates, mpidmap)
-		cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
-		rpcp.append((cp.sortobj, cp))
-		moffidn += 1
+	# private secretaries, select committees, official opposition
+	for cpm in cpressec, cpresselctee, cpresopp, cpreslibdem, cpresplaidsnp, cpresdup:
+                for cp in cpm:
+	        	cpsdates = [cp.sdatestart, cp.sdateend]
+		        SetNameMatch(cp, cpsdates, mpidmap)
+        		cp.moffid = "uk.org.publicwhip/moffice/%d" % moffidn
+                        cp.sortobj = (cp.sortobj, cp.moffid)
+        		rpcp.append((cp.sortobj, cp, cp.cmpobj))
+        		moffidn += 1
 
 	# bring same to same places
 	# the sort object is by name, constituency, dateobject
@@ -932,7 +1328,7 @@ def ParseGovPosts():
 	prevrpm = None
 	for rp in rpcp:
 		if rp:
-			if not prevrpm or prevrpm[0] != rp[0]:
+			if not prevrpm or prevrpm[2] != rp[2]:
 				mofficegroups.append([ ])
 			mofficegroups[-1].append(rp)
 			prevrpm = rp
@@ -949,12 +1345,9 @@ def ParseGovPosts():
 	fout.write("<publicwhip>\n")
 
 	fout.write("\n")
-	for lsdatet in sdatetlist:
-		fout.write('<chgpageupdates date="%s" chgtype="%s"/>\n' % lsdatet)
-	for lsdatet in sdatelistsec:
-		fout.write('<chgpageupdates date="%s" chgtype="%s"/>\n' % lsdatet)
-	for lsdatet in sdatelistselctee:
-		fout.write('<chgpageupdates date="%s" chgtype="%s"/>\n' % lsdatet)
+	for listofdates in sdatetlist, sdatelistsec, sdatelistselctee, sdatelistoff, sdatelistlibdem, sdatelistplaidsnp, sdatelistdup:
+                for lsdatet in listofdates:
+		        fout.write('<chgpageupdates date="%s" chgtype="%s"/>\n' % lsdatet)
 
 
 	# output the file, a tag round the groups of offices which form a single person

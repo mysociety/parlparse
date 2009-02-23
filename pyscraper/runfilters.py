@@ -166,6 +166,12 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                         text = re.sub('<br />', '<br>', text)
                         text = re.sub('CONTENTS', 'CONTENTS\n', text)
 
+        # Changes in 2008-09 session
+        if sdate>'2008-12-01' and dname=='lordspages':
+                text = re.sub('(?i)Asked By (<b>.*?)</b>', r'\1:</b>', text)
+                text = re.sub('(?i)(Moved By (?:<a name="[^"]*"></a>)*)<b>(.*?)</b>', r'\1\2', text)
+                text = re.sub('(?i)(Moved on .*? by )<b>(.*?)</b>', r'\1\2', text)
+
 	(flatb, gidname) = FILTERfunction(text, sdate)
         for i in range(len(gidname)):
                 tempfilenameoldxml = None
@@ -466,6 +472,8 @@ def RunLordsFilters(text, sdate):
         # Written Ministerial Statements
         if fourstream[2]:
                 text = fourstream[2]
+                if sdate > '2008-12-01': # Can't see a better place for this...
+                        text = re.sub('<h3[^>]*><i>(?:<a name="[^"]*"></a>)*Statements?</i></h3>', '', text)
                 si = cStringIO.StringIO()
                 FilterLordsColtime(si, text, sdate)
                 text = si.getvalue()
@@ -482,6 +490,8 @@ def RunLordsFilters(text, sdate):
         # Written Answers
         if fourstream[3]:
                 text = fourstream[3]
+                if sdate > '2008-12-01': # Can't see a better place for this...
+                        text = re.sub('<h3[^>]*><i>(?:<a name="[^"]*"></a>)*Questions?</i></h3>', '', text)
                 si = cStringIO.StringIO()
                 FilterLordsColtime(si, text, sdate)
                 text = si.getvalue()
@@ -490,7 +500,7 @@ def RunLordsFilters(text, sdate):
                 LordsFilterSpeakers(si, text, sdate)
                 text = si.getvalue()
                 si.close()
-                wrans = FilterWransSections(text, sdate)
+                wrans = FilterWransSections(text, sdate, lords=True)
                 if wrans:
                         flatb.append(wrans)
                         gidnames.append("lordswrans")

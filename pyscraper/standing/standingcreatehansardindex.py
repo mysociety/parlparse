@@ -73,7 +73,7 @@ def GetReportProceedings(urlpage, year):
 	if year == "2006":
 		vdat = re.sub('(3rd sitting</A></TD><TD class="style1" valign="top"><A href="/pa/cm200607/cmpublic/serious/07062)6(/am/7062)6(s01.htm">28 June 2007 \(morning\))', '\g<1>8\g<2>8\g<3>', vdat)
 
-	lks = re.findall('(?si)<a\s+href\s*=\s*"([^"]*)">(.*?)(?:</a>|<tr>)(?i)', vdat)
+	lks = re.findall('(?si)<a\s+href\s*=\s*"([^"]*)">(.*?)(?:</a>|<tr>|</table>)(?i)', vdat)
 	for lk in lks:
 		lklk = re.sub("\s", "", lk[0])
 		lklk = re.sub("/+", "/", lklk)
@@ -83,7 +83,7 @@ def GetReportProceedings(urlpage, year):
 		mprevdebates = re.match("Debates on.*?Bill in Session \d\d\d\d-\d\d", lkname)
 		if (not res or res[-1][0] != lklk) and not mprevdebates:
 			 res.append([lklk, "", 0, 0, ""])  # urllink, date, sitting number, sitting part, morning|afternoon
-		msecreading = re.match("Second Reading Committee$|Standing Committee B$", lkname)
+		msecreading = re.match("(Second|2nd) Reading Committee$|Standing Committee B$", lkname)
 		mothmem = re.match("Other Memorand(?:ums|a) and Letters [Ss]ubmitted to the Committee$", lkname)
 		msitting = re.match("(\d+)(?:st|nd|rd|th)\s+[Ss]itting(?: \((cont)'d\))?(?: \(Part ([I]*)\))?$", lkname)
 		mdate = re.match("(?:<b>)?(\d+(?:st|nd|rd|th)? (?:January|February|March|April|May|June|July|August|September|October|November|December)(?: \d\d\d\d)?)(?:</b>)?(?: ?\(([Mm]orning|[Aa]fternoon|evening)\)?)?(?: [\[\(\-]?\s*[Pp]art ([IViv\d]*)\s*[\]\)]?)?(?: ?\((morning|[Aa]fternoon)\)?)?$", lkname)
@@ -119,6 +119,8 @@ def GetReportProceedings(urlpage, year):
 				sdate = re.sub("7 February 2000", "18 January 2000", sdate)
 			if year == "2005" and re.match(".*?6062\ds01.htm$", res[-1][0]):
 				sdate = re.sub("2005", "2006", sdate)
+                        if re.search("080304", res[-1][0]):
+                                sdate = re.sub("February", "March", sdate)
 			res[-1][1] = mx.DateTime.DateTimeFrom(sdate).date
 			# firstdate is used to label the committee
 			if not firstdate or firstdate > res[-1][1]:
@@ -166,13 +168,13 @@ def GetReportProceedings(urlpage, year):
 
 			assert prev[2] <= p[2] # date
 		else:
-			if year == "2001" and re.match(".*?/pa/cm200102/cmstand/special/cmadopt.htm$", urlpage):
+			if year == "2001" and re.search("/pa/cm200102/cmstand/special/cmadopt.htm$", urlpage):
 				assert p[0] == 2  # 1st meeting held in private
-			elif year == "1998" and re.match(".*?/pa/cm199899/cmstand/special/special.htm$", urlpage):
+			elif year == "1998" and re.search("/pa/cm199899/cmstand/special/special.htm$", urlpage):
 				assert p[0] == 2  # 1st meeting held in private
-			elif year == "1999" and re.match(".*?/pa/cm199900/cmstand/a/cmserv.htm$", urlpage):
+			elif year == "1999" and re.search("/pa/cm199900/cmstand/a/cmserv.htm$", urlpage):
 				assert p[0] == 25  # 1st 24 meeting ommitted
-			elif year == "2006" and re.match(".*/pa/cm/cmpbwelf.htm", urlpage):
+			elif year == "2006" and re.search("/pa/cm200607/cmpublic/cmpbwelf.htm", urlpage):
 				assert p[0] == 13 # 1st 12 meetings in previous year
 			else:
 				assert p[0] == 1
@@ -186,12 +188,18 @@ def GetBillLinks(bforce):
 		billyears = billyears[0:1]   # if you don't do --force-index, you just get the current year
 		
 	for billyear in billyears:
-		year = re.match("Session (\d\d\d\d)-\d\d(?:\d\d)?$", billyear[1]).group(1)
+		match = re.match("Session (\d\d\d\d)-\d\d(?:\d\d)?$", billyear[1])
+                if not match:
+                        if billyear[1] == 'General Committee debates':
+                               continue
+                        else:
+                               raise
+		year = match.group(1)
 		if miscfuncs.IsNotQuiet():
 			print "year=", year
 		bnks = GetLinksTitles(billyear[0])
 		for bnk in bnks:
-			mcttee = re.match("(.*? (?:Bill|Dogs|Names))(?:\s?\[(?:<i>)?Lords(?:</i>)?\])?(?:\s?(?:<i>)?\[Lords\](?:</i>)?)?(?:\s*\[(?:<i>)?<FONT size=\-1>LORDS</FONT>(?:</i>)?\])?(?:\s*Bill)?(?:</i>)*(?:\s)*(?:\(except clauses.*?\) )?(\((Standing Committee [a-zA-Z]|Special Standing Committee|Second Reading Committee)\)\s?)?$", bnk[1])
+			mcttee = re.match("(.*? (?:Bill|Dogs|Names))(?:\s?\[(?:<i>)?Lords(?:</i>)?\])?(?:\s?(?:<i>)?\[Lords\](?:</i>)?)?(?:\s*\[(?:<i>)?<FONT size=\-1>LORDS</FONT>(?:</i>)?\])?(?:\s*Bill)?(?:</i>)*(?:\s)*(?:\(except clauses.*?\) )?(\((Standing Committee [a-zA-Z]|Special Standing Committee|(Second|2nd) Reading Committee)\)\s?)?$", bnk[1])
 			if not mcttee:
 				print "Unrecognized committee or bill name:", bnk
 			billtitle = mcttee.group(1)
@@ -225,7 +233,7 @@ def WriteXML(fout, billinks):
 				shortcommitteeletter = mstandc.group(1).upper()
 			elif re.match("\(?Special Standing Committee\)?", committee):
 				shortcommitteeletter = "S"
-			elif re.match("\(?Second Reading Committee\)?", committee):
+			elif re.match("\(?(Second|2nd) Reading Committee\)?", committee):
 				shortcommitteeletter = "2"
 			else:
 				print "Unrecognized committee for short name:", committee

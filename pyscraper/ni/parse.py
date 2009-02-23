@@ -82,6 +82,7 @@ class ParseDay:
 
 <!ENTITY agrave  "&#224;">
 <!ENTITY aacute  "&#225;">
+<!ENTITY ccedil  "&#231;">
 <!ENTITY egrave  "&#232;">
 <!ENTITY eacute  "&#233;">
 <!ENTITY ecirc   "&#234;">
@@ -98,6 +99,7 @@ class ParseDay:
 <!ENTITY auml    "&#228;">
 <!ENTITY euml    "&#235;">
 <!ENTITY iuml    "&#239;">
+<!ENTITY ntilde  "&#241;">
 <!ENTITY ouml    "&#246;">
 <!ENTITY uuml    "&#252;">
 <!ENTITY fnof    "&#402;">
@@ -105,8 +107,12 @@ class ParseDay:
 <!ENTITY nbsp    "&#160;">
 <!ENTITY shy     "&#173;">
 <!ENTITY deg     "&#176;">
+<!ENTITY sup2    "&#178;">
 <!ENTITY middot  "&#183;">
 <!ENTITY ordm    "&#186;">
+<!ENTITY frac14  "&#188;">
+<!ENTITY frac12  "&#189;">
+<!ENTITY frac34  "&#190;">
 <!ENTITY ndash   "&#8211;">
 <!ENTITY mdash   "&#8212;">
 <!ENTITY lsquo   "&#8216;">
@@ -319,6 +325,8 @@ class ParseDay:
 					newp.insert(0, phtml.replace(m.group(), ''))
 					newp.insert(0, newspeaker)
 					p = newp
+                                if not p.strong:
+                                        raise ContextException, 'No strong in p! %s' % p
 				speaker = p.strong.find(text=True)
 				speaker = re.sub('&nbsp;', '', speaker)
 				speaker = re.sub("\s+", " ", speaker).strip()
@@ -336,7 +344,7 @@ class ParseDay:
 					if match.group(1) == 'noon':
 						timestamp = '12:00'
 					else:
-						hour = match.group(2)
+						hour = int(match.group(2))
 						if hour<12 and match.group(4) == 'pm':
 							hour += 12
 						timestamp = "%s:%s" % (hour, match.group(3))
@@ -356,7 +364,7 @@ class ParseDay:
 				self.text += '<p class="indent">%s</p>\n' % phtml
 			elif cl == 'TimePeriod':
 				match = re.search('(\d\d?)\.\s*(\d\d) ?(am|pm|noon)', ptext)
-				hour = match.group(1)
+				hour = int(match.group(1))
 				if hour<12 and match.group(3) == 'pm':
 					hour += 12
 				timestamp = "%s:%s" % (hour, match.group(2))

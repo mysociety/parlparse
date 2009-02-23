@@ -110,7 +110,8 @@ def FilterLordsColtime(fout, text, sdate):
 			if not re.match('(?:</h5>|</st>)(?i)', time):
 				time = TimeProcessing(time, previoustime, False, stampurl)
 				fout.write('<stamp time="%s"/>' % time)
-				previoustime.append(time)
+				if time:
+                                        previoustime.append(time)
 			continue
 
 		# special lift a time out of the heading
@@ -246,7 +247,7 @@ def SplitLordsText(text, sdate):
 
 	# check that there is always an adjournment in the main debate, with some of the trash that gets put before it
 	# this kind of overguessing is to get a feel for the variation that is encountered.
-	if sdate != '2007-10-01' and not re.search('(?:<ul><ul><ul>|<ul><ul><p>|\s*(?:<ul>|<p>)?|<p>\s*<ul><ul>(?:<ul>)?)\s*(?:Parliament was prorogued|House adjourned )(?i)', res[0]):
+	if sdate != '2007-10-01' and sdate != '2008-09-29' and not re.search('(?:<ul><ul><ul>|<ul><ul><p>|\s*(?:<ul>|<p>)?|<p>\s*<ul><ul>(?:<ul>)?)\s*(?:Parliament was prorogued|House adjourned )(?i)', res[0]):
 		raise ContextException("house adjourned failure", stamp=None, fragment=res[0][-100:])
 
         page = re.findall('<page[^>]*>', res[0])[-1]

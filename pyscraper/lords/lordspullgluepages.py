@@ -73,7 +73,7 @@ def ExtractIndexContents(urlx, sdate):
 	return res
 
 
-def GlueByNext(fout, urla, urlx):
+def GlueByNext(fout, urla, urlx, sdate):
 	# put out the indexlink for comparison with the hansardindex file
 	lt = time.gmtime()
 	fout.write('<pagex url="%s" scrapedate="%s" scrapetime="%s"/>\n' % \
@@ -87,6 +87,10 @@ def GlueByNext(fout, urla, urlx):
                 urla.insert(0, 'http://www.publications.parliament.uk/pa/ld200506/ldhansrd/vo050517/text/50517-01.htm')
         if urla[0] == 'http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo041123/text/41123-02.htm':
                 urla.insert(0, 'http://www.publications.parliament.uk/pa/ld200405/ldhansrd/vo041123/text/41123-01.htm')
+        if urla[0] == 'http://www.publications.parliament.uk/pa/ld200708/ldhansrd/text/80722-0001.htm':
+                urla = [urla[0]]
+        if urla[0] == 'http://www.publications.parliament.uk/pa/ld200708/ldhansrd/text/81104-0001.htm':
+                urla = [urla[0]]
 	# loop which scrapes through all the pages following the nextlinks
 	# knocking off the known links as we go in case a "next page" is missing.
 	while urla:
@@ -109,10 +113,16 @@ def GlueByNext(fout, urla, urlx):
                 sr = re.sub("</?mekonHrefReplace[^>]*>", "", sr)
                 sr = re.sub("<meta[^>]*>", "", sr)
                 sr = re.sub('<a name="([^"]*)" />', r'<a name="\1"></a>', sr) # Should be WriteCleanText like for Commons?
+                sr = re.sub('(<a href="[^"]*&amp)(">.*?)(</a>)(;.*?)([ .,<])', r'\1\4\2\4\3\5', sr)
                 sr = re.sub('<div id="maincontent1">\s+<notus', '<hr> <notus', sr)
+                sr = re.sub('<div id="maincontent1">\s*<link[^>]*>\s*<notus', '<hr> <notus', sr) # New 2008-10...
                 sr = re.sub('<div id="maincontent">(?:\s*<table.*?</table>)?(?s)', '', sr)
                 if url == 'http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/71001w0001.htm':
                         sr = re.sub('Daily Hansard</span></div>', 'Daily Hansard</span></div> <hr>', sr)
+
+                # post 2008-03, stupid duplication of <b>s
+                sr = re.sub('<b>((?:<a name="[^"]*"></a>)*)<b>', '\\1<b>', sr)
+                sr = re.sub('</b><!--[^>]*--></b>', '</b>', sr)
 
 		# split by sections
 		hrsections = re.split('<hr>(?i)', sr)
@@ -128,11 +138,11 @@ def GlueByNext(fout, urla, urlx):
 
                 # Lords Written Statements on 2006-07-05, for example, sadly
                 if len(hrsections) == 2:
-                        miscfuncs.WriteCleanText(fout, hrsections[1])
+                        miscfuncs.WriteCleanText(fout, hrsections[1], False)
                 
 		# write the body of the text
 		for i in range(1, len(hrsections) - 1):
-			miscfuncs.WriteCleanText(fout, hrsections[i])
+			miscfuncs.WriteCleanText(fout, hrsections[i], False)
 
 		# find the lead on with the footer
 		footer = hrsections[-1]
@@ -237,7 +247,7 @@ def LordsPullGluePages(datefrom, dateto, bforcescrape):
 		# we could check that all our links above get cleared.
                 try:
                         dtemp = open(tempfilename, "w")
-		        GlueByNext(dtemp, urla, urlx)
+		        GlueByNext(dtemp, urla, urlx, dnu[0])
 		        dtemp.close()
 	        except Exception, e:
 		        print "Problem with %s, moving on" % dnu[0]
