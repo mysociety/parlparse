@@ -77,6 +77,8 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/100967" : "David Trimble [Upper Bann]", # changed party
     "uk.org.publicwhip/lord/100930" : "Keith Bradley [Manchester, Withington]",
     "uk.org.publicwhip/lord/100345" : "John D Taylor [Strangford]",
+    "uk.org.publicwhip/lord/100907" : "Brian Cotter [Weston-Super-Mare]",
+    "uk.org.publicwhip/lord/100981" : "Peter Mandelson [Hartlepool]",
 }
 
 # Put people who change party AND were MPs multple times in table above e.g. David Trimble
@@ -93,6 +95,7 @@ lordlordmatches = {
     "uk.org.publicwhip/lord/100491":"uk.org.publicwhip/lord/100944",  # And Perason
     "uk.org.publicwhip/lord/100945":"uk.org.publicwhip/lord/100690",  # And Willoughby.
     "uk.org.publicwhip/lord/100147":"uk.org.publicwhip/lord/100959",  # And Cox
+    "uk.org.publicwhip/lord/100716":"uk.org.publicwhip/lord/100978",  # Viscoutn Cranborne inherits Marquess of Salisbury
     # XXX: Must be a way to do party changes automatically!
     # XXX: And the key:value ordering here is very suspect
 }
@@ -118,6 +121,7 @@ ni_lord_matches = {
 # XXX: Should be possible to adapt manualmatches to do this sort of thing...
 ni_ni_matches = {
     "Mitchel McLaughlin [Foyle]":"Mitchel McLaughlin [South Antrim]",
+    "Alex Maskey [Belfast West]":"Alex Maskey [Belfast South]",
 }
 
 sp_lord_matches = {
@@ -125,8 +129,8 @@ sp_lord_matches = {
     "uk.org.publicwhip/member/80026": "uk.org.publicwhip/lord/100579",
     "uk.org.publicwhip/member/80261": "uk.org.publicwhip/lord/100579",
     # Sir David Steel
-    "uk.org.publicwhip/member/80242": "uk.org.publicwhip/lord/100597",
-    "uk.org.publicwhip/member/80277": "uk.org.publicwhip/lord/100597",
+    "uk.org.publicwhip/member/80242": "uk.org.publicwhip/lord/100608",
+    "uk.org.publicwhip/member/80277": "uk.org.publicwhip/lord/100608",
 }
 
 # Include in here changes of constituency, so those people are

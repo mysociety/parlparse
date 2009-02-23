@@ -55,6 +55,7 @@ scrape          update Hansard page index, and download new raw pages
 parse           process scraped HTML into tidy XML files
 
 And choose at least one of these sections to apply them to:
+all             All normal daily things
 wrans           Written Answers
 debates         Debates
 westminhall     Westminster Hall
@@ -148,6 +149,13 @@ for arg in args:
                 options.today = True
         elif arg == "standing":
                 options.standing = True
+        elif arg == 'all':
+                options.wrans = True
+                options.debates = True
+                options.westminhall = True
+                options.wms = True
+                options.lords = True
+                options.standing = True
         else:
                 print >>sys.stderr, "error: no such option %s" % arg
                 parser.print_help()
@@ -197,21 +205,21 @@ if options.scrape:
 pullgluetodaydate = None
 if options.scrape:
 	if options.wrans:
-		PullGluePages(options.datefrom, options.dateto, options.forcescrape, "wrans", "answers")
+		PullGluePages(options, "wrans", "answers")
 	if options.debates:
-		PullGluePages(options.datefrom, options.dateto, options.forcescrape, "debates", "debates")
+		PullGluePages(options, "debates", "debates")
 	if options.westminhall:
-		PullGluePages(options.datefrom, options.dateto, options.forcescrape, "westminhall", "westminster")
+		PullGluePages(options, "westminhall", "westminster")
 	if options.wms:
-		PullGluePages(options.datefrom, options.dateto, options.forcescrape, "wms", "ministerial")
+		PullGluePages(options, "wms", "ministerial")
 	if options.lords:
 		LordsPullGluePages(options.datefrom, options.dateto, options.forcescrape)
 	if options.standing:
 		StandingPullGluePages(options.datefrom, options.dateto, options.forcescrape)
 	if options.votes:
-		PullGluePages(options.datefrom, options.dateto, options.forcescrape, "votes", "votes")
+		PullGluePages(options, "votes", "votes")
 	if options.qbook:
-		PullGluePages(options.datefrom, options.dateto, options.forcescrape, "questionbook", "questionbook")
+		PullGluePages(options, "questionbook", "questionbook")
 	if options.today:
 		pullgluetodaydate = PullGlueToday(options.forcescrape)
 	if options.regmem:

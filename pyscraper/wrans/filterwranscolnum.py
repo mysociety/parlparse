@@ -18,8 +18,6 @@ from contextexception import ContextException
 
 # Legacy patch system, use patchfilter.py and patchtool now
 fixsubs = 	[
-	( '<P><I>8 Mar 2004 : Column 1346W</I>', '\\1<P>', 1, '2004-03-08'), 
-
         ( '(<TABLE BORDER=1>)(\s*?<a name="30613w06.html_sbhd5">)', '\\2', 1, '2003-06-13'),
         ( '(</FONT>\s*?)<TABLE BORDER=1>(\s*?<P>\s*?<P>)', '\\1\\2', 1, '2003-06-13'),
         ( '(<TABLE BORDER=1>\s*?)<TABLE BORDER=1>', '\\1', 1, '2003-06-13'),
@@ -47,8 +45,6 @@ fixsubs = 	[
         ( '<TABLE BORDER=1>(\s*?The Northern Ireland)', '\\1', 1, '2003-06-11'),
 
         ( '\x01', '', 1, '2003-06-11'),
-        ( '\x01', '', 1, '2004-03-08'),
-
 
         # weird fragment
         ('(<P><I>10 Jun 2003 : Column 764W</I><P>)\s*?<P>\s*?<UL>We have a duty to provide our troops with the best available equipment with which to protect themselves and succeed in conflict. Depleted Uranium munitions provide a unique anti-armour capability. Therefore, British Forces deployed to the Gulf have DU munitions available as part of their armoury, and<P></UL>', '\\1', 1, '2003-06-10'),

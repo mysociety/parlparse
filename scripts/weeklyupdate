@@ -28,10 +28,8 @@ svn -q commit -m "Weekly members scrape commit"
 # including the once-per-session grand URL-rename-and-break from cm to vo)
 # Run scraper for all of parliament
 cd ~/parlparse/scripts
-./updatedaterange-scrape $WEEKLY_FROMDATE $WEEKLY_TODATE --force-index
-./updatedaterange-parse $WEEKLY_FROMDATE $WEEKLY_TODATE
-./lordsupdatedaterange-scrape $LORDS_WEEKLY_FROMDATE $WEEKLY_TODATE --force-index
-./lordsupdatedaterange-parse $LORDS_WEEKLY_FROMDATE $WEEKLY_TODATE
+./updatedaterange-scrape $WEEKLY_FROMDATE $LORDS_WEEKLY_FROMDATE $WEEKLY_TODATE --force-index
+./updatedaterange-parse $WEEKLY_FROMDATE $LORDS_WEEKLY_FROMDATE $WEEKLY_TODATE
 
 # Zip up XML files for people
 cd ~/parldata/scrapedxml
@@ -41,8 +39,8 @@ do
 	zip -rq ~/parldatazips/$X.xml.zip $X/
 done
 
-cd ~
-rm -f ~/parldatazips/parldata.zip
-find parldata | egrep -v "tmp/|\.svn|\.zip" | zip -q ~/parldatazips/parldata.zip -@
+#cd ~
+#rm -f ~/parldatazips/parldata.zip
+#find parldata | egrep -v "tmp/|\.svn|\.zip" | zip -q ~/parldatazips/parldata.zip -@
 
 

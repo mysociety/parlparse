@@ -40,10 +40,14 @@ for year in (1997, 2001, 2005):
 #<td><a href="/wiki/West_Ham_%28UK_Parliament_constituency%29" title="West Ham (UK Parliament constituency)">West Ham</a></td>
 #<td><a href="/wiki/Lyn_Brown" title="Lyn Brown">Lyn Brown</a></td>
 #<td>Labour</td>
-    matcher = '<tr>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a>(?:<br />\s+<small>.*?</small>)?</td>\s+<td>(?:Dr |Sir |The Rev\. )?<a href="(/wiki/[^"]+)" title="[^"]+">([^<]+)</a></td>';
+    matcher = '<tr>\s+<td><a href="/wiki/[^"]+" [^>]*?title="[^"]+">([^<]+)</a>(?:<br />\s+<small>.*?</small>)?</td>\s+<td>(?:Dr |Sir |The Rev\. )?<a href="(/wiki/[^"]+)" [^>]*?title="[^"]+">([^<]+)</a></td>|by-election,[^"]+">([^<]+)</a> [^ ]{1,3} <a href="(/wiki/[^"]+)" title="[^"]+">([^<]+)</a>';
     matches = re.findall(matcher, content)
-    for (cons, url, name) in matches:
+    for (cons, url, name, cons2, url2, name2) in matches:
         id = None
+        if cons2:
+            cons = cons2
+            name = name2
+            url = url2
         cons = cons.decode('utf-8')
         cons = cons.replace('&amp;', '&')
         name = name.decode('utf-8')

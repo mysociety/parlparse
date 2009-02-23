@@ -65,12 +65,8 @@ def StripLordsDebateHeadings(headspeak, sdate):
 	else:
 		#<H4><center>Reassembling after the Christmas Recess, the House met at half-past two of the clock: The LORD CHANCELLOR on the Woolsack.</center></H4>
 		# The House met at eleven of the clock (Prayers having been read earlier at the Judicial Sitting by the Lord Bishop of St Albans): The CHAIRMAN OF COMMITTEES on the Woolsack.
-		gstarttime = re.match('(?:<stamp aname="[^"]*"/>)*(?:reassembling.*?recess, )?the house (?:met|resumed)(?: for Judicial Business)? at ([^(]*)(?i)', headspeak[ih][0])
-		if (not gstarttime) or headspeak[ih][2]:
-			print "headspeakheadspeakih", headspeak[ih][0]
-			raise ContextException('non-conforming "house met at" heading ', fragment=headspeak[ih][0])
+                ih = StripDebateHeading('(?:reassembling.*?recess, )?the house (?:met|resumed)(?: for Judicial Business)? at ([^(]*)(?i)', ih, headspeak, True)
 		#print starttime. (we should use the "Half past two" business in house met to set it, unfortunately the filtercoltime has already happened
-		ih = ih + 1
 
 		# Prayers&#151;Read by the Lord Bishop of Southwell.
 		ih = StripDebateHeading('prayers(?i)', ih, headspeak, True)
@@ -92,12 +88,11 @@ def StripLordsDebateHeadings(headspeak, sdate):
 
 
 # Handle normal type heading
-def LordsHeadingPart(headingtxt, stampurl):
-	bmajorheading = False
+def LordsHeadingPart(headingtxt, stampurl, major):
 
 	headingtxtfx = FixHTMLEntities(headingtxt)
 	qb = qspeech('nospeaker="true"', headingtxtfx, stampurl)
-	if bmajorheading:
+        if major and stampurl.sdate > '2008-12-01':
 		qb.typ = 'major-heading'
 	else:
 		qb.typ = 'minor-heading'
@@ -167,7 +162,7 @@ def GrabLordDivisionProced(qbp, qbd):
 def MatchPWmotionStuff(qb, ispeechstartp1):
 	qpara = qb.stext[ispeechstartp1]
 
-	if re.match('<p>(?:\[|<i>)*(?:Amendments?|Motion),? .{0,60}?by leave,? withdrawn\.?,?(?:\]|</i>)*</p>(?i)', qpara):
+	if re.match('<p>(?:\[|<i>)*(?:Amendments?|Motion),? ?.{0,60}?(?:by leave)?,? withdrawn\.?,?(?:\]|</i>)*</p>(?i)', qpara):
 		return "withdrawn"
 
 	#[<i>Amendments Nos. 131 and 132 not moved.</i>]</p>
@@ -208,7 +203,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 		return "disagreedto"
 	if re.match('<p>On Motion, Question agreed to\.</p>', qpara):
 		return "agreedto"
-	if re.match('<p>Schedule agreed to\.</p>', qpara):
+	if re.match('<p>(The )?Schedule agreed to\.</p>', qpara):
 		return "agreedto"
 
 	if re.match('<p>Moved, That the .{0,120}? be (agreed to|approved)\.', qpara):
@@ -528,6 +523,7 @@ def LordsFilterSections(text, sdate):
 		headingtxt = stampurl.UpdateStampUrl(string.strip(sht[0]))  # we're getting stamps inside the headings sometimes
 		unspoketxt = sht[1]
 		speechestxt = sht[2]
+                headingmajor = sht[3]
 
 		# the heading detection, as a division or a heading speech object
 		# detect division headings
@@ -536,8 +532,21 @@ def LordsFilterSections(text, sdate):
 
 		# heading type
 		if not gdiv:
-			qbh = LordsHeadingPart(headingtxt, stampurl)
-			flatb.append(qbh)
+			qbh = LordsHeadingPart(headingtxt, stampurl, headingmajor)
+
+        		# ram together minor headings into previous ones which have no speeches
+        		if qbh.typ == 'minor-heading' and len(flatb) > 0 and flatb[-1].typ == 'minor-heading':
+        			flatb[-1].stext.append(" &mdash; ")
+        			flatb[-1].stext.extend(qbh.stext)
+
+        		# ram together minor headings into previous ones which have no speeches
+        		elif sdate>'2008-12-01' and qbh.typ == 'minor-heading' and len(flatb) > 0 and flatb[-1].typ == 'major-heading':
+        			flatb[-1].stext.append(" &mdash; ")
+        			flatb[-1].stext.extend(qbh.stext)
+
+        		# otherwise put out this heading
+        		else:
+        			flatb.append(qbh)
 
 		# division type
 		else:

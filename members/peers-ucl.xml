@@ -54,7 +54,7 @@ B - bishop
 	house="lords"
 	forenames="Dominic"
 	title="Lord" lordname="Addington" lordofname=""
-	peeragetype="HP" affiliation="Dem"
+	peeragetype="HP" affiliation="LDem"
 	fromdate="1982" todate="9999-12-31"
 />
 <lord
@@ -85,7 +85,7 @@ B - bishop
 	title="Lord" lordname="Alderdice" lordofname=""
 	lordofname_full="Knock"
 	county="the City of Belfast"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1996" todate="9999-12-31"
 />
 <lord
@@ -236,7 +236,7 @@ B - bishop
 	forenames_full="Jeremy John Durham"
 	title="Lord" lordname="Ashdown" lordofname="Norton-sub-Hamdon"
 	county="the County of Somerset"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2001-07-24" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -302,7 +302,7 @@ B - bishop
 	house="lords"
 	forenames="Eric"
 	title="Lord" lordname="Avebury" lordofname=""
-	peeragetype="HP" affiliation="Dem"
+	peeragetype="HP" affiliation="LDem"
 	fromdate="1971" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -379,7 +379,7 @@ B - bishop
 	title="Baroness" lordname="Barker" lordofname=""
 	lordofname_full="Anagach"
 	county="Highland"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1999" todate="9999-12-31"
 />
 <lord
@@ -412,7 +412,7 @@ B - bishop
 	lordofname_full="Child's Hill"
 	county="Greater London"
 	peeragetype="L" affiliation="Green"
-	fromdate="1967" todate="9999-12-31"
+	fromdate="1967" todate="2008-04-08" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100040"
@@ -608,7 +608,7 @@ B - bishop
 	lordofname_full="Cromac"
 	county="the City of Belfast"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1978" todate="9999-12-31"
+	fromdate="1978" todate="2008-05-16" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100058"
@@ -720,7 +720,7 @@ B - bishop
 	title="Lord" lordname="Bradshaw" lordofname=""
 	lordofname_full="Wallingford"
 	county="the County of Oxfordshire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1999" todate="9999-12-31"
 />
 <lord
@@ -774,7 +774,7 @@ B - bishop
 	title="Lord" lordname="Bridge" lordofname="Harwich"
 	county="the County of Essex"
 	peeragetype="A" affiliation="XB"
-	fromdate="1980" todate="9999-12-31"
+	fromdate="1980" todate="2007-11-20" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100074"
@@ -953,7 +953,7 @@ B - bishop
 	lordofname_full="Rowlands Gill"
 	county="the County of Tyne and Wear"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1997" todate="9999-12-31"
+	fromdate="1997" todate="2008-05-20" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100092"
@@ -1116,7 +1116,7 @@ B - bishop
 	forenames_full="Alexander Charles"
 	title="Lord" lordname="Carlile" lordofname="Berriew"
 	county="the County of Powys"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1999" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -1267,7 +1267,7 @@ B - bishop
 <lord
 	id="uk.org.publicwhip/lord/100121"
 	house="lords"
-	forenames="Peter Robert"
+	forenames="Peter Robert Forster"
 	title="Bishop" lordname="" lordofname="Chester"
 	peeragetype="B" affiliation="Bp"
 	fromdate="2001-11-14" todate="9999-12-31"
@@ -1361,7 +1361,7 @@ B - bishop
 	title="Lord" lordname="Clement-Jones" lordofname=""
 	lordofname_full="Clapham"
 	county="the London Borough of Lambeth"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1998" todate="9999-12-31"
 />
 <lord
@@ -1471,7 +1471,7 @@ B - bishop
 	title="Lord" lordname="Cooke" lordofname="Islandreagh"
 	county="the County of Antrim"
 	peeragetype="L" affiliation="XB"
-	fromdate="1992" todate="9999-12-31"
+	fromdate="1992" todate="2007-11-13" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100142"
@@ -1520,7 +1520,7 @@ B - bishop
 	forenames="Colin James Bennetts"
 	title="Bishop" lordname="" lordofname="Coventry"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2003-07-09" todate="9999-12-31"
+	fromdate="2003-07-09" todate="2008-01-31"
 />
 <lord
 	id="uk.org.publicwhip/lord/100147"
@@ -1614,7 +1614,7 @@ B - bishop
 	lordofname_full="Millbank"
 	county="the City of Westminster"
 	peeragetype="L" affiliation="Con"
-	fromdate="1995" todate="9999-12-31"
+	fromdate="1995" todate="2008-10-30" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100156"
@@ -1665,7 +1665,7 @@ B - bishop
 	title="Lord" lordname="Dahrendorf" lordofname=""
 	lordofname_full="Clare Market"
 	county="the City of Westminster"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1993" todate="2004-11-23"
 />
 <lord
@@ -1674,7 +1674,7 @@ B - bishop
 	forenames="Davina"
 	title="Baroness" lordname="Darcy de Knayth" lordofname=""
 	peeragetype="HP" affiliation="XB"
-	fromdate="1943" todate="9999-12-31"
+	fromdate="1943" todate="2008-02-24" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100162"
@@ -1798,7 +1798,7 @@ B - bishop
 	title="Lord" lordname="Dholakia" lordofname=""
 	lordofname_full="Waltham Brooks"
 	county="the County of West Sussex"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1997" todate="9999-12-31"
 />
 <lord
@@ -2102,7 +2102,7 @@ B - bishop
 	title="Lord" lordname="Ezra" lordofname=""
 	lordofname_full="Horsham"
 	county="the County of West Sussex"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1983" todate="9999-12-31"
 />
 <lord
@@ -2132,7 +2132,7 @@ B - bishop
 	house="lords"
 	forenames="Lucius"
 	title="Viscount" lordname="Falkland" lordofname=""
-	peeragetype="HD" affiliation="Dem"
+	peeragetype="HD" affiliation="LDem"
 	fromdate="1984" todate="9999-12-31"
 />
 <lord
@@ -2165,7 +2165,7 @@ B - bishop
 	title="Lord" lordname="Fearn" lordofname=""
 	lordofname_full="Southport"
 	county="the County of Merseyside"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2001-10-15" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -2427,7 +2427,7 @@ B - bishop
 	title="Lord" lordname="Geraint" lordofname=""
 	lordofname_full="Ponterwyd"
 	county="the County of Dyfed"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1992" todate="2004-04-17"
 />
 <lord
@@ -2562,7 +2562,7 @@ B - bishop
 	title="Lord" lordname="Goodhart" lordofname=""
 	lordofname_full="Youlbury"
 	county="the County of Oxfordshire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1997" todate="9999-12-31"
 />
 <lord
@@ -2655,7 +2655,7 @@ B - bishop
 	title="Lord" lordname="Greaves" lordofname=""
 	lordofname_full="Pendle"
 	county="the County of Lancashire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2000-05-08" todate="9999-12-31"
 />
 <lord
@@ -2789,7 +2789,7 @@ B - bishop
 	title="Baroness" lordname="Hamwee" lordofname=""
 	lordofname_full="Richmond upon Thames"
 	county="the London Borough of Richmond upon Thames"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1991" todate="9999-12-31"
 />
 <lord
@@ -2897,7 +2897,7 @@ B - bishop
 	forenames_full="Angela Felicity"
 	title="Baroness" lordname="Harris" lordofname="Richmond"
 	county="the County of North Yorkshire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1999" todate="9999-12-31"
 />
 <lord
@@ -3092,7 +3092,7 @@ B - bishop
 	title="Lord" lordname="Hogg" lordofname="Cumbernauld"
 	county="North Lanarkshire"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1997" todate="9999-12-31"
+	fromdate="1997" todate="2008-10-08" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -3123,8 +3123,8 @@ B - bishop
 	forenames_full="Richard Gordon"
 	title="Lord" lordname="Holme" lordofname="Cheltenham"
 	county="the County of Gloucestershire"
-	peeragetype="L" affiliation="Dem"
-	fromdate="1990" todate="9999-12-31"
+	peeragetype="L" affiliation="LDem"
+	fromdate="1990" todate="2008-05-04" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100300"
@@ -3152,7 +3152,7 @@ B - bishop
 	title="Lord" lordname="Hooson" lordofname=""
 	lordofname_full="Montgomery"
 	county="the County of Powys and of Colomendy in the County of Clwyd"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1979" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -3291,7 +3291,7 @@ B - bishop
 	lordofname_full="Stratford-upon-Avon"
 	county="the County of Warwickshire"
 	peeragetype="L" affiliation="XB"
-	fromdate="1980" todate="9999-12-31"
+	fromdate="1980" todate="2008-07-17" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100316"
@@ -3332,7 +3332,7 @@ B - bishop
 	forenames_full="Jeremy Nicolas"
 	title="Lord" lordname="Hutchinson" lordofname="Lullington"
 	county="the County of East Sussex"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1978" todate="9999-12-31"
 />
 <lord
@@ -3415,7 +3415,7 @@ B - bishop
 	title="Lord" lordname="Jacobs" lordofname=""
 	lordofname_full="Belgravia"
 	county="the City of Westminster"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1997" todate="9999-12-31"
 />
 <lord
@@ -3499,7 +3499,7 @@ B - bishop
 	house="lords"
 	forenames="Roy"
 	title="Lord" lordname="Jenkins" lordofname="Hillhead"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1987" todate="2003-01-05"
 	ex_MP="yes"
 />
@@ -3799,7 +3799,7 @@ B - bishop
 	lordofname_full="Woking"
 	county="the County of Surrey"
 	peeragetype="L" affiliation="Con"
-	fromdate="1990" todate="9999-12-31"
+	fromdate="1990" todate="2009-01-09" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100363"
@@ -3852,7 +3852,7 @@ B - bishop
 	forenames_full="Anthony Paul"
 	title="Lord" lordname="Lester" lordofname="Herne Hill"
 	county="the London Borough of Southwark"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1993" todate="9999-12-31"
 />
 <lord
@@ -3906,7 +3906,7 @@ B - bishop
 	house="lords"
 	forenames="Veronica"
 	title="Baroness" lordname="Linklater" lordofname="Butterstone"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1997" todate="9999-12-31"
 />
 <lord
@@ -3951,7 +3951,7 @@ B - bishop
 	forenames_full="Richard Arthur Lloyd"
 	title="Lord" lordname="Livsey" lordofname="Talgarth"
 	county="the County of Powys"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2001-10-16" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -4043,7 +4043,7 @@ B - bishop
 	title="Baroness" lordname="Ludford" lordofname=""
 	lordofname_full="Clerkenwell"
 	county="the London Borough of Islington"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1997" todate="9999-12-31"
 />
 <lord
@@ -4223,7 +4223,7 @@ B - bishop
 	title="Lord" lordname="Mackie" lordofname="Benshie"
 	lordofname_full="Kirriemuir"
 	county="the County of Angus"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1974" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -4244,7 +4244,7 @@ B - bishop
 	forenames_full="Robert Adam Ross"
 	title="Lord" lordname="Maclennan" lordofname="Rogart"
 	county="Sutherland"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2001-10-16" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -4255,7 +4255,7 @@ B - bishop
 	title="Lord" lordname="McNally" lordofname=""
 	lordofname_full="Blackpool"
 	county="the County of Lancashire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1995" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -4267,7 +4267,7 @@ B - bishop
 	title="Baroness" lordname="Maddock" lordofname=""
 	lordofname_full="Christchurch"
 	county="the County of Dorset"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1997" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -4325,7 +4325,7 @@ B - bishop
 	surname="Erskine"
 	title="Earl" lordname="" lordofname="Mar and Kellie"
 	county="Clackmannanshire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2000-04-19" todate="9999-12-31"
 />
 <lord
@@ -4432,7 +4432,7 @@ B - bishop
 	house="lords"
 	forenames="Robert"
 	title="Lord" lordname="Methuen" lordofname=""
-	peeragetype="HD" affiliation="Dem"
+	peeragetype="HD" affiliation="LDem"
 	fromdate="1994" todate="9999-12-31"
 />
 <lord
@@ -4443,8 +4443,8 @@ B - bishop
 	title="Baroness" lordname="Michie" lordofname="Gallanach"
 	lordofname_full="Oban"
 	county="Argyll and Bute"
-	peeragetype="L" affiliation="Dem"
-	fromdate="2001-10-31" todate="9999-12-31"
+	peeragetype="L" affiliation="LDem"
+	fromdate="2001-10-31" todate="2008-05-06" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -4454,7 +4454,7 @@ B - bishop
 	forenames_full="Susan Elizabeth"
 	title="Baroness" lordname="Miller" lordofname="Chilthorne Domer"
 	county="the County of Somerset"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1998" todate="9999-12-31"
 />
 <lord
@@ -4718,7 +4718,7 @@ B - bishop
 	title="Lord" lordname="Newby" lordofname=""
 	lordofname_full="Rothwell"
 	county="the County of West Yorkshire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1997" todate="9999-12-31"
 />
 <lord
@@ -4756,7 +4756,7 @@ B - bishop
 	forenames_full="Emma Harriet"
 	title="Baroness" lordname="Nicholson" lordofname="Winterbourne"
 	county="the Royal County of Berkshire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1997" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -4859,7 +4859,7 @@ B - bishop
 	title="Baroness" lordname="Northover" lordofname=""
 	lordofname_full="Cissbury"
 	county="the County of West Sussex"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2000-05-10" todate="9999-12-31"
 />
 <lord
@@ -4878,7 +4878,7 @@ B - bishop
 	forenames_full="Matthew Alan"
 	title="Lord" lordname="Oakeshott" lordofname="Seagrove Bay"
 	county="the County of Isle of Wight"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2000-05-08" todate="9999-12-31"
 />
 <lord
@@ -5147,7 +5147,7 @@ B - bishop
 	forenames_full="Walter Laing Macdonald"
 	title="Lord" lordname="Perry" lordofname="Walton"
 	county="the County of Buckinghamshire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1979" todate="2003-07-17"
 />
 <lord
@@ -5187,7 +5187,7 @@ B - bishop
 	forenames_full="Andrew Wyndham"
 	title="Lord" lordname="Phillips" lordofname="Sudbury"
 	county="the County of Suffolk"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1998" todate="9999-12-31"
 />
 <lord
@@ -5360,7 +5360,7 @@ B - bishop
 	lordofname_full="Sandy"
 	county="the County of Bedfordshire"
 	peeragetype="L" affiliation="Con"
-	fromdate="1987" todate="9999-12-31"
+	fromdate="1987" todate="2008-03-07" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -5456,7 +5456,7 @@ B - bishop
 	title="Lord" lordname="Razzall" lordofname=""
 	lordofname_full="Mortlake"
 	county="the London Borough of Richmond"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1997" todate="9999-12-31"
 />
 <lord
@@ -5484,7 +5484,7 @@ B - bishop
 	title="Lord" lordname="Redesdale" lordofname=""
 	lordofname_full="Redesdale"
 	county="the County of Northumberland"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2000-04-18" todate="9999-12-31"
 />
 <lord
@@ -5496,7 +5496,7 @@ B - bishop
 	lordofname_full="Goytre"
 	county="the County of Gwent"
 	peeragetype="L" affiliation="Con"
-	fromdate="1987" todate="9999-12-31"
+	fromdate="1987" todate="2008-11-30" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -5539,7 +5539,7 @@ B - bishop
 	title="Lord" lordname="Rennard" lordofname=""
 	lordofname_full="Wavertree"
 	county="the County of Merseyside"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1999" todate="9999-12-31"
 />
 <lord
@@ -5655,7 +5655,7 @@ B - bishop
 <lord
 	id="uk.org.publicwhip/lord/100543"
 	house="lords"
-	forenames="Kenneth William Stevenson"
+	forenames="Michael James Nazir-Ali"
 	title="Bishop" lordname="" lordofname="Rochester"
 	peeragetype="B" affiliation="Bp"
 	fromdate="1999" todate="9999-12-31"
@@ -5678,7 +5678,7 @@ B - bishop
 	title="Lord" lordname="Rodgers" lordofname="Quarry Bank"
 	lordofname_full="Kentish Town"
 	county="the London Borough of Camden"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1992" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -5733,7 +5733,7 @@ B - bishop
 	title="Lord" lordname="Roper" lordofname=""
 	lordofname_full="Thorney Island"
 	county="the City of Westminster"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2000-05-17" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -5758,7 +5758,7 @@ B - bishop
 	house="lords"
 	forenames="Conrad"
 	title="Earl" lordname="Russell" lordofname=""
-	peeragetype="HP" affiliation="Dem"
+	peeragetype="HP" affiliation="LDem"
 	fromdate="1987" todate="2004-10-14"
 />
 <lord
@@ -5769,8 +5769,8 @@ B - bishop
 	title="Lord" lordname="Russell-Johnston" lordofname=""
 	lordofname_full="Minginish"
 	county="Highland"
-	peeragetype="L" affiliation="Dem"
-	fromdate="1997" todate="9999-12-31"
+	peeragetype="L" affiliation="LDem"
+	fromdate="1997" todate="2008-07-27" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -5830,7 +5830,7 @@ B - bishop
 	forenames="Christopher William Herbert"
 	title="Bishop" lordname="" lordofname="St Albans"
 	peeragetype="B" affiliation="Bp"
-	fromdate="1999-12-08" todate="9999-12-31"
+	fromdate="1999-12-08" todate="2009-01-07" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100561"
@@ -5885,7 +5885,7 @@ B - bishop
 	title="Lord" lordname="Sandberg" lordofname=""
 	lordofname_full="Passfield"
 	county="the County of Hampshire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1997" todate="9999-12-31"
 />
 <lord
@@ -5977,7 +5977,7 @@ B - bishop
 	forenames_full="Rosalind Carol"
 	title="Baroness" lordname="Scott" lordofname="Needham Market"
 	county="the County of Suffolk"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2000-05-15" todate="9999-12-31"
 />
 <lord
@@ -6039,7 +6039,7 @@ B - bishop
 	title="Lord" lordname="Sharman" lordofname=""
 	lordofname_full="Redlynch"
 	county="the County of Wiltshire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1999" todate="9999-12-31"
 />
 <lord
@@ -6049,7 +6049,7 @@ B - bishop
 	forenames_full="Margaret Lucy"
 	title="Baroness" lordname="Sharp" lordofname="Guildford"
 	county="the County of Surrey"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1998" todate="9999-12-31"
 />
 <lord
@@ -6092,7 +6092,7 @@ B - bishop
 	forenames="John Nicholls"
 	title="Bishop" lordname="" lordofname="Sheffield"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2003-03-04" todate="9999-12-31"
+	fromdate="2003-03-04" todate="2008-07-15" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100588"
@@ -6144,7 +6144,7 @@ B - bishop
 	title="Lord" lordname="Shutt" lordofname="Greetland"
 	lordofname_full="Greetland and Stainland"
 	county="the County of West Yorkshire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2000-05-16" todate="9999-12-31"
 />
 <lord
@@ -6231,7 +6231,7 @@ B - bishop
 	title="Lord" lordname="Smith" lordofname="Clifton"
 	lordofname_full="Mountsandel"
 	county="the County of Londonderry"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1997" todate="9999-12-31"
 />
 <lord
@@ -6293,7 +6293,7 @@ B - bishop
 	lordofname_full="St Pancras"
 	county="the London Borough of Camden"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1983" todate="9999-12-31"
+	fromdate="1983" todate="2008-03-29" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -6304,7 +6304,7 @@ B - bishop
 	title="Lord" lordname="Steel" lordofname="Aikwood"
 	lordofname_full="Ettrick Forest"
 	county="The Scottish Borders"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1997" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -6407,7 +6407,7 @@ B - bishop
 	lordofname_full="Leyland"
 	county="the County Palatine of Lancaster"
 	peeragetype="L" affiliation="XB"
-	fromdate="1969" todate="9999-12-31"
+	fromdate="1969" todate="2008-07-21" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100618"
@@ -6490,7 +6490,7 @@ B - bishop
 	title="Lord" lordname="Taverne" lordofname=""
 	lordofname_full="Pimlico"
 	county="the City of Westminster"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1996" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -6575,7 +6575,7 @@ B - bishop
 	forenames_full="Donald Martin"
 	title="Lord" lordname="Thomas" lordofname="Gresford"
 	county="the County Borough of Wrexham"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1996" todate="9999-12-31"
 />
 <lord
@@ -6587,7 +6587,7 @@ B - bishop
 	lordofname_full="Llanrwst"
 	county="the County of Gwynedd"
 	peeragetype="L" affiliation="Con"
-	fromdate="1987" todate="9999-12-31"
+	fromdate="1987" todate="2008-02-04" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -6620,7 +6620,7 @@ B - bishop
 	title="Baroness" lordname="Thomas" lordofname="Walliswood"
 	lordofname_full="Dorking"
 	county="the County of Surrey"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1994" todate="9999-12-31"
 />
 <lord
@@ -6630,8 +6630,8 @@ B - bishop
 	forenames_full="George Morgan"
 	title="Lord" lordname="Thomson" lordofname="Monifieth"
 	county="the District of the City of Dundee"
-	peeragetype="L" affiliation="Dem"
-	fromdate="1977" todate="9999-12-31"
+	peeragetype="L" affiliation="LDem"
+	fromdate="1977" todate="2008-10-03" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -6676,7 +6676,7 @@ B - bishop
 	title="Lord" lordname="Tope" lordofname=""
 	lordofname_full="Sutton"
 	county="the London Borough of Sutton"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1994" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -6688,7 +6688,7 @@ B - bishop
 	title="Lord" lordname="Tordoff" lordofname=""
 	lordofname_full="Knutsford"
 	county="the County of Cheshire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1981" todate="9999-12-31"
 />
 <lord
@@ -6728,7 +6728,7 @@ B - bishop
 	forenames="Bill Ind"
 	title="Bishop" lordname="" lordofname="Truro"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2001-10-16" todate="9999-12-31"
+	fromdate="2001-10-16" todate="2008-04-30"
 />
 <lord
 	id="uk.org.publicwhip/lord/100649"
@@ -6788,7 +6788,7 @@ B - bishop
 	lordofname_full="Chesterfield"
 	county="the County of Derbyshire"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1990" todate="9999-12-31"
+	fromdate="1990" todate="2008-07-29" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -6917,7 +6917,7 @@ B - bishop
 	title="Lord" lordname="Wallace" lordofname="Saltaire"
 	lordofname_full="Shipley"
 	county="the County of West Yorkshire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1995" todate="9999-12-31"
 />
 <lord
@@ -6928,7 +6928,7 @@ B - bishop
 	title="Baroness" lordname="Walmsley" lordofname=""
 	lordofname_full="West Derby"
 	county="the County of Merseyside"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2000-05-23" todate="9999-12-31"
 />
 <lord
@@ -6999,7 +6999,7 @@ B - bishop
 	forenames_full="Alan John"
 	title="Lord" lordname="Watson" lordofname="Richmond"
 	county="the London Borough of Richmond upon Thames"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1999" todate="9999-12-31"
 />
 <lord
@@ -7087,7 +7087,7 @@ B - bishop
 	title="Lord" lordname="Wigoder" lordofname=""
 	lordofname_full="Cheetham"
 	county="the City of Manchester"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1974" todate="2004-08-12"
 />
 <lord
@@ -7131,7 +7131,7 @@ B - bishop
 	title="Baroness" lordname="Williams" lordofname="Crosby"
 	lordofname_full="Stevenage"
 	county="the County of Hertfordshire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1993" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -7276,7 +7276,7 @@ B - bishop
 	forenames="Peter Stephen Maurice Selby"
 	title="Bishop" lordname="" lordofname="Worcester"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2002-11-05" todate="9999-12-31"
+	fromdate="2002-11-05" todate="2007-09-30"
 />
 <lord
 	id="uk.org.publicwhip/lord/100701"
@@ -7429,7 +7429,7 @@ B - bishop
 	forenames="Robert"
 	title="Viscount" lordname="Cranborne" lordofname=""
 	peeragetype="L" affiliation="Other"
-	fromdate="1992" todate="9999-12-31"
+	fromdate="1992" todate="2003-07-11"
 />
 <lord
 	id="uk.org.publicwhip/lord/100717"
@@ -7748,7 +7748,7 @@ B - bishop
 	forenames_full="John Henry"
 	title="Lord" lordname="Harris" lordofname="Greenwich"
 	county="Greater London"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="1974" todate="2001-04-11"
 />
 <lord
@@ -8093,7 +8093,7 @@ B - bishop
 	title="Lord" lordname="Garden" lordofname=""
 	lordofname_full="Hampstead"
 	county="the London Borough of Camden"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2004-06-08" todate="2007-08-09" towhy="died"
 />
 <lord
@@ -8136,7 +8136,7 @@ B - bishop
 	title="Baroness" lordname="Falkner" lordofname="Margravine"
 	lordofname_full="Barons Court"
 	county="the London Borough of Hammersmith and Fulham"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2004-06-15" todate="9999-12-31"
 />
 <lord
@@ -8262,7 +8262,7 @@ B - bishop
 	forenames_full="John Roger"
 	title="Lord" lordname="Roberts" lordofname="Llandudno"
 	county="the County of Gwynedd"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2004-06-30" todate="9999-12-31"
 />
 <lord
@@ -8328,7 +8328,7 @@ B - bishop
 	title="Baroness" lordname="Neuberger" lordofname=""
 	lordofname_full="Primrose Hill"
 	county="the London Borough of Camden"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2004-07-12" todate="9999-12-31"
 />
 <lord
@@ -8372,7 +8372,7 @@ B - bishop
 	title="Lord" lordname="Dykes" lordofname=""
 	lordofname_full="Harrow Weald"
 	county="the London Borough of Harrow"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2004-07-14" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -8436,7 +8436,7 @@ B - bishop
 	surname="Bonham Carter"
 	title="Baroness" lordname="Bonham-Carter" lordofname="Yarnbury"
 	county="the County of Wiltshire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2004-07-21" todate="9999-12-31"
 />
 <lord
@@ -8527,7 +8527,7 @@ B - bishop
 	forenames_full="Iain David Thomas"
 	title="Lord" lordname="Vallance" lordofname="Tummel"
 	county="Perth and Kinross"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2004-09-08" todate="9999-12-31"
 />
 <lord
@@ -8578,7 +8578,7 @@ B - bishop
 	title="Lord" lordname="Alliance" lordofname=""
 	lordofname_full="Manchester"
 	county="the County of Greater Manchester"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2004-09-13" todate="9999-12-31"
 />
 <lord
@@ -8683,7 +8683,7 @@ B - bishop
 	house="lords"
 	forenames="Patrick"
 	title="Earl" lordname="" lordofname="Glasgow"
-	peeragetype="HP" affiliation="Dem"
+	peeragetype="HP" affiliation="LDem"
 	fromdate="2005-01-25" todate="9999-12-31"
 />
 <lord
@@ -8758,7 +8758,7 @@ B - bishop
 	forenames_full="Archibald Johnstone"
 	title="Lord" lordname="Kirkwood" lordofname="Kirkhope"
 	county="Scottish Borders"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2005-06-14" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -8789,7 +8789,7 @@ B - bishop
 	house="lords"
 	forenames="Paul"
 	title="Lord" lordname="Tyler" lordofname=""
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2005-06-15" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -8832,7 +8832,7 @@ B - bishop
 	title="Lord" lordname="Chidgey" lordofname=""
 	lordofname_full="Hamble-le-Rice"
 	county="the County of Hampshire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2005-06-27" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -8844,7 +8844,7 @@ B - bishop
 	title="Baroness" lordname="Tonge" lordofname=""
 	lordofname_full="Kew"
 	county="the London Borough of Richmond upon Thames"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2005-06-27" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -8885,7 +8885,7 @@ B - bishop
 	forenames_full="Nigel David"
 	title="Lord" lordname="Jones" lordofname="Cheltenham"
 	county="the County of Gloucestershire"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2005-06-29" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -9153,7 +9153,7 @@ B - bishop
 <lord
 	id="uk.org.publicwhip/lord/100901"
 	house="lords"
-	forenames=""
+	forenames="George Henry Cassidy"
 	title="Bishop" lordname="" lordofname="Southwell and Nottingham"
 	peeragetype="B" affiliation="Bp"
 	fromdate="2005-07-01" todate="9999-12-31"
@@ -9210,7 +9210,7 @@ B - bishop
 	title="Lord" lordname="Cotter" lordofname=""
 	lordofname_full="Congresbury"
 	county="the County of Somerset"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2006-06-05" todate="9999-12-31"
 />
 <lord
@@ -9233,7 +9233,7 @@ B - bishop
 	title="Lord" lordname="Burnett" lordofname=""
 	lordofname_full="Whitcurch"
 	county="the County of Devon"
-	peeragetype="L" affiliation="Dem"
+	peeragetype="L" affiliation="LDem"
 	fromdate="2006-06-06" todate="9999-12-31"
 />
 <lord
@@ -9258,7 +9258,7 @@ B - bishop
     title="Lord" lordname="Lee" lordofname="Trafford"
     lordofname_full="Bowdon"
     county="the County of Cheshire"
-    peeragetype="L" affiliation="Dem"
+    peeragetype="L" affiliation="LDem"
     fromdate="2006-06-12" todate="9999-12-31"
 />
 <lord
@@ -9304,7 +9304,7 @@ B - bishop
     title="Baroness" lordname="Thomas" lordofname="Winchester"
     lordofname_full="Winchester"
     county="the County of Hampshire"
-    peeragetype="L" affiliation="Dem"
+    peeragetype="L" affiliation="LDem"
     fromdate="2006-06-15" todate="9999-12-31"
 />
 <lord
@@ -9361,7 +9361,7 @@ B - bishop
     title="Lord" lordname="Teverson" lordofname=""
     lordofname_full="Tregony"
     county="the County of Cornwall"
-    peeragetype="L" affiliation="Dem"
+    peeragetype="L" affiliation="LDem"
     fromdate="2006-06-26" todate="9999-12-31"
 />
 
@@ -9442,7 +9442,7 @@ B - bishop
     lordofname_full="The Weald"
     county="the County of Kent"
     peeragetype="L" affiliation="Con"
-    fromdate="2006-07-11" todate="9999-12-31"
+    fromdate="2006-07-11" todate="2008-08-14" towhy="died"
 />
 <lord
     id="uk.org.publicwhip/lord/100928"
@@ -9563,7 +9563,7 @@ B - bishop
 <lord
 	id="uk.org.publicwhip/lord/100938"
 	house="lords"
-	forenames=""
+	forenames="John Packer"
 	title="Bishop" lordname="" lordofname="Ripon and Leeds"
 	peeragetype="B" affiliation="Bp"
 	fromdate="2006-06-23" todate="9999-12-31"
@@ -9853,14 +9853,14 @@ B - bishop
     title="Baroness" lordname="Garden" lordofname="Frognal"
     lordofname_full="Hampstead"
     county="the London Borough Camden"
-    peeragetype="L" affiliation="Dem"
+    peeragetype="L" affiliation="LDem"
     fromdate="2007-10-18" todate="9999-12-31"
 />
 
 <lord
     id="uk.org.publicwhip/lord/100965"
     house="lords"
-    forenames="Geoffrey Graham"
+    forenames="Geoffrey Graham Dow"
     title="Bishop" lordname="" lordofname="Carlisle"
     peeragetype="B" affiliation="Bp"
     fromdate="2007-11-08" todate="9999-12-31"
@@ -9872,7 +9872,7 @@ B - bishop
     forenames="James Robert"
     title="Lord" lordname="Wallace" lordofname="Tankerness"
     county="Orkney"
-    peeragetype="L" affiliation="Dem"
+    peeragetype="L" affiliation="LDem"
     fromdate="2007-11-13" todate="9999-12-31"
 />
 
@@ -9920,4 +9920,167 @@ B - bishop
     fromdate="2007-12-17" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/100971"
+    house="lords"
+    forenames="John William Hind"
+    title="Bishop" lordname="" lordofname="Chichester"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2008-03-13" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100972"
+    house="lords"
+    forenames="John David James"
+    surname="Dalrymple"
+    title="Earl" lordname="" lordofname="Stair"
+    peeragetype="HP" affiliation="XB"
+    fromdate="2008-05-22" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100973"
+    house="lords"
+    prefix="Sir"
+    forenames="John Frederick"
+    suffix="KCMG"
+    title="Lord" lordname="Mogg" lordofname=""
+    lordofname_full="Queen's Park"
+    county="the County of East Sussex"
+    peeragetype="L" affiliation="XB"
+    fromdate="2008-06-03" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100974"
+    house="lords"
+    forenames="John Charles Saxbee"
+    title="Bishop" lordname="" lordofname="Lincoln"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2008-07-01" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100975"
+    house="lords"
+    forenames="Elizabeth Lydia"
+    title="Baroness" lordname="Manningham-Buller" lordofname=""
+    lordofname_full="Northampton"
+    county="the County of Northamptonshire"
+    peeragetype="L" affiliation="XB"
+    fromdate="2008-07-01" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100976"
+    house="lords"
+    forenames="Michael Walton"
+    title="Lord" lordname="Bates" lordofname=""
+    lordofname_full="Langbaurgh"
+    county="the County of North Yorkshire"
+    peeragetype="L" affiliation="Con"
+    fromdate="2008-07-07" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100977"
+    house="lords"
+    forenames="Peter Price"
+    title="Bishop" lordname="" lordofname="Bath and Wells"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2008-07-21" todate="9999-12-31"
+/>
+
+<lord
+	id="uk.org.publicwhip/lord/100978"
+	house="lords"
+	forenames="Robert"
+	title="Marquess" lordname="" lordofname="Salisbury"
+	peeragetype="L" affiliation="Other"
+	fromdate="2003-07-11" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100979"
+    house="lords"
+    forenames="Robert Haldane"
+    title="Lord" lordname="Smith" lordofname="Kelvin"
+    county="the City of Glasgow"
+    peeragetype="L" affiliation="XB"
+    fromdate="2008-07-14" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100980"
+    house="lords"
+    forenames="Igor"
+    title="Lord" lordname="Judge" lordofname=""
+    lordofname_full="Draycote"
+    county="the County of Warwickshire"
+    peeragetype="A" affiliation="XB"
+    fromdate="2008-10-06" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100981"
+    house="lords"
+    forenames="Peter"
+    title="Lord" lordname="Mandelson" lordofname=""
+    lordofname_full="Foy"
+    county="the County of Herefordshire and of Hartlepool in the County of Durham"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2008-10-13" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100982"
+    house="lords"
+    forenames="Stephen Andrew"
+    title="Lord" lordname="Carter" lordofname="Barnes"
+    county="the London Borough of Richmond upon Thames"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2008-10-16" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100983"
+    house="lords"
+    forenames="Paul"
+    title="Lord" lordname="Myners" lordofname=""
+    lordofname_full="Truro"
+    couty="the County of Cornwall"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2008-10-21" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100984"
+    house="lords"
+    forenames="David Phillip"
+    title="Lord" lordname="Pannick" lordofname=""
+    lordofname_full="Radlett"
+    couty="the County of Hertfordshire"
+    peeragetype="L" affiliation="XB"
+    fromdate="2008-11-03" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100985"
+    house="lords"
+    forenames="David Charles James"
+    title="Bishop" lordname="" lordofname="Bradford"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2009-01-26" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100986"
+    house="lords"
+    forenames="Evan Mervyn"
+    title="Lord" lordname="Davies" lordofname="Abersoch"
+    county="the County of Gwynedd"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2009-02-02" todate="9999-12-31"
+/>
 </publicwhip>

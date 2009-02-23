@@ -155,7 +155,8 @@ def GrabDivisionProced(qbp, qbd):
 		print qbp.stext
 		raise Exception, "previous to division not speech"
 
-
+        qbp.stext[-1] = re.sub(' </i><i> ', ' ', qbp.stext[-1])
+        qbp.stext[-1] = re.sub('</i><i> ', ' ', qbp.stext[-1])
 	hdg = rehousediv.match(qbp.stext[-1])
 	if not hdg:
 		hdg = redivshouldappear.match(qbp.stext[-1])

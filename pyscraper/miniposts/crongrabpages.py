@@ -21,7 +21,7 @@ pwcmdirs = miscfuncs.pwcmdirs
 
 watchpages = {  "govposts":"http://www.parliament.uk/directories/hciolists/hmg.cfm",
 				"offoppose":"http://www.parliament.uk/directories/hciolists/opp.cfm",
-				"libdem":"http://www.parliament.uk/directories/hciolists/libdems.cfm",
+				"libdem":"http://www.libdems.org.uk/mysociety.php",
 				"dup":"http://www.parliament.uk/directories/hciolists/dup.cfm",
 				"ulsterun":"http://www.parliament.uk/directories/hciolists/ulster.cfm",
 				"plaidsnp":"http://www.parliament.uk/directories/hciolists/PCSNP.cfm",

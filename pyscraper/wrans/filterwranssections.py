@@ -91,7 +91,7 @@ def StripWransHeadings(headspeak, sdate):
 ################
 # main function
 ################
-def FilterWransSections(text, sdate):
+def FilterWransSections(text, sdate, lords=False):
 	text = ApplyFixSubstitutions(text, sdate, fixsubs)
 	headspeak = SplitHeadingsSpeakers(text)
 
@@ -187,7 +187,7 @@ def FilterWransSections(text, sdate):
 				else:
 					qnums.extend(lqnums)
 
-				qb.stext = FilterQuestion(qb.text, sdate, qb.sstampurl)
+				qb.stext = FilterQuestion(qb.text, sdate, qb.sstampurl, lords)
 				if not lqnums:
 					errmess = ' <p class="error">Question number missing in Hansard, possibly truncated question.</p> '
 					qb.stext.append(errmess)

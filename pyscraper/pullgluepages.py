@@ -82,9 +82,10 @@ class CommonsIndexElement:
 	def __repr__(self):
 		return "<%s, %s, %s>" % (self.date, self.recordType, self.url)
 
-def WriteCleanText(fout, text, url):
+def WriteCleanText(fout, text, url, date):
         text = re.sub('<!--.*?-->', '', text)
 	abf = re.split('(<[^>]*>)', text)
+        inlink = False
 	for ab in abf:
 		# delete comments and links
 		if re.match('<!-[^>]*?->', ab):
@@ -96,11 +97,18 @@ def WriteCleanText(fout, text, url):
                                 aname = anamem.group(1)
                                 if not re.search('column', aname): # these get in the way
                                         fout.write('<a name="%s">' % aname)
+                        elif re.match('<a href.*?corrtext', ab):
+                                fout.write(ab)
+                                inlink = True
                         #else:
                                 # We should never find any other sort of <a> tag - such
                                 # as a link (as there aren't any on parliament.uk)
                                 # XXX They have started this week, 2007-10-15
                                 #print "Caught a link ", ab, " in ", url
+
+		elif inlink and re.match('</?a>(?i)', ab):
+			fout.write(ab)
+			inlink = False
 
 		elif re.match('</?a>(?i)', ab):
 			pass
@@ -125,36 +133,25 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = urla[1:]
         if sdate=='2006-05-10' and urla[0]=='http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060509/text/60510w0332.htm':
                 urla = urla[1:]
-        if urla[0]=='http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060524/debtext/60524-0001.htm':
+        if urla[0]=='http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo060524/debtext/60524-0001.htm':
                 urla = [urla[0]]
         if sdate=='2006-06-05' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0640.htm':
                 urla = ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060602/text/60602w0601.htm', 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060605/text/60605w0602.htm'] + urla
         if sdate=='2006-06-07' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060607/text/60607w0001.htm':
                 urla = urla[0:2] + ['http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060607/text/60607w0003.htm'] + urla[2:]
-        if sdate=='2006-06-14' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060614/halltext/60614h0001.htm':
+        if sdate=='2006-06-14' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo060614/halltext/60614h0001.htm':
                 urla = [urla[0]]
-        if sdate=='2006-06-13' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060613/halltext/60613h0001.htm':
+        if sdate=='2006-06-13' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo060613/halltext/60613h0001.htm':
                 urla = [urla[0]]
-        if sdate=='2006-07-17' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060717/text/60717w0001.htm':
+        if sdate=='2006-07-17' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo060717/text/60717w0001.htm':
                 urla = [urla[0]]
-        if sdate=='2006-10-11' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061011/debtext/61011-0001.htm':
-                urla = [urla[0], urla[1], urla[3], urla[4]] # Incorrect link in middle of index
         if sdate=='2006-10-30' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061030/text/61030w0001.htm':
                 urla = [urla[0]]
-        if sdate=='2006-10-26' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm061026/debtext/61026-0001.htm':
-                urla = [urla[0]]
-        if sdate=='2006-11-22' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061122/debtext/61122-0001.htm':
-                urla = [urla[0]]
-        if sdate=='2006-11-29' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061129/debtext/61129-0001.htm':
+        if re.match(r'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/vo0(\d{5})/debtext/\1-0001.htm', urla[0]) and \
+            (sdate=='2006-10-17' or sdate=='2006-10-26' or sdate=='2006-10-11' or sdate=='2006-07-12'):
                 urla = [urla[0]]
         if sdate=='2006-11-21' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm061121/debtext/61121-0001.htm':
                 urla = urla[0:11] + urla[13:] # Incorrect link in middle of index
-        if sdate=='2007-01-15' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070115/debtext/70115-0001.htm':
-                urla = [urla[0]]
-        if sdate=='2007-02-05' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070205/debtext/70205-0001.htm':
-                urla = [urla[0]]
-        if sdate=='2007-03-26' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070326/debtext/70326-0001.htm':
-                urla = [urla[0]]
         if sdate=='2007-03-28' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070328/halltext/70328h0001.htm':
                 urla = [urla[0]]
         if sdate=='2007-04-24' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070424/debtext/70424-0001.htm':
@@ -163,7 +160,36 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 urla = urla[0:4] + urla[6:]
         if urla[0] == 'http://www.publications.parliament.uk/pa/cm200506/cmhansrd/cm060614/halltext/60614h0178.htm':
                 urla = [urla[0]]
-        if sdate=='2007-10-09' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm071009/debtext/71009-0001.htm':
+        if re.match(r'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm0(\d{5})/debtext/\1-0001.htm', urla[0]) and \
+            (sdate=='2007-10-15' or sdate=='2007-10-23' or sdate=='2007-10-09' or sdate=='2007-02-05' or sdate=='2007-03-26' or \
+             sdate=='2007-01-15' or sdate=='2006-11-29' or sdate=='2006-11-22' or sdate=='2007-07-11' or sdate=='2007-07-05'):
+                urla = [urla[0]]
+        if sdate=='2007-10-01' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm071001/text/71001w0001.htm':
+                urla = [urla[0]]
+        if sdate=='2007-07-19' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200607/cmhansrd/cm070719/wmstext/70719m0001.htm':
+                urla = [urla[0]]
+        if sdate=='2007-11-28' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm071128/text/71128w0001.htm':
+                urla = [urla[0]]
+        if sdate=='2008-01-14' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080114/text/80114w0001.htm':
+                urla = [urla[0]]
+        if sdate=='2008-01-16' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080116/text/80116w0001.htm':
+                urla = [urla[0]]
+        if sdate=='2008-01-24' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080124/halltext/80124h0001.htm':
+                urla = [urla[0]]
+        if sdate=='2009-02-12' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200809/cmhansrd/cm090212/halltext/90212h0001.htm':
+                urla = [urla[0]]
+        if sdate=='2009-02-12' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200809/cmhansrd/cm090212/wmstext/90212m0001.htm':
+                urla = [urla[0]]
+        if sdate=='2008-01-28' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080128/text/80128w0001.htm':
+                urla = [urla[0]]
+        if sdate=='2008-03-13' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080313/text/80313w0001.htm':
+                urla = [urla[0]]
+        if sdate=='2008-04-21' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm080421/text/80421w0001.htm':
+                urla = [urla[0]]
+        if sdate=='2009-02-09' and urla[0] == 'http://www.publications.parliament.uk/pa/cm200809/cmhansrd/cm090209/text/90209w0001.htm':
+                urla = [urla[0]]
+        if re.match(r'http://www.publications.parliament.uk/pa/cm200708/cmhansrd/cm0(\d{5})/debtext/\1-0001.htm', urla[0]) and \
+            (sdate=='2008-06-17' or sdate=='2008-07-07' or sdate=='2008-03-06' or sdate=='2008-01-14' or sdate=='2008-06-30'):
                 urla = [urla[0]]
         #print "urla"
         #for aaa in urla:
@@ -192,19 +218,21 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 sr = re.sub('<body>\s+<!--<hd>--><br>', '<body><hr><!--<hd>--><br>', sr)
                 
                 # To cope with post 2006-09; need a better way of doing this!
-                sr = re.sub('<div id="maincontent1">\s*<p>', '<hr><p>', sr)
-                sr = re.sub('<div id="maincontent1">\s*<br>', '<hr><br>', sr)
+                sr = re.sub('<div id="maincontent1">\s*<(p|br)>', r'<hr><\1>', sr)
                 sr = re.sub('<div id="maincontent1">\s*<h3', '<hr><h3', sr)
                 sr = re.sub('<div id="maincontent1">\s*<!--<hd>-->', '<hr>', sr)
-                sr = re.sub('<div id="maincontent1">\s*<notus', '<hr> <notus', sr) # 2006-05-09
-                sr = re.sub('<div id="maincontent1">\s*<meta', '<hr> <meta', sr) # 2006-10-20
-                sr = re.sub('<div id="maincontent1">\s*<a', '<hr> <a', sr)
+                sr = re.sub('<div id="maincontent1">\s*<(notus|meta|a)', r'<hr> <\1', sr) # 2006-05-09 / 2006-10-20
+                sr = re.sub('<div id="maincontent1">\s*<link[^>]*>\s*<(br|p|h3|notus|meta|a)', r'<hr><\1', sr) # 2008-06-17 / 2008-10...
                 if sdate=='2006-11-07' or sdate=='2006-11-08':
                         sr = re.sub('<!--end of UK Parliament banner for Publications -->\s*<div class="breadcrumb">.*?</div>\s*<h2(?s)', '<hr> <h2', sr)
-                sr = re.sub("</?mekonParaReplace[^>]*>", "", sr)
+                sr = re.sub("</?mekon[^>]*>", "", sr)
+                sr = re.sub("</?vbcrlf>", "", sr)
 
                 if sdate=='2006-06-07' and re.search('/text/', url):
                         sr = re.sub('<body>(?!<hr>)', '<body><hr>', sr)
+
+                # Make sure correction is before written answer question number - XXX right place?
+                sr = re.sub('(\[\d+\])\s*((?:</p>)?)\s*(<a href="[^"]*corrtext[^"]*">.*?</a>)', r'\3 \1\2', sr)
 
 		# split by sections
                 hrsections = re.split('<hr(?: size=3)?>(?i)', sr)
@@ -220,11 +248,11 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
 
                 # Grr, missing footers ALL OVER THE PLACE now
                 if len(hrsections) == 2:
-                        WriteCleanText(fout, hrsections[1], url)
+                        WriteCleanText(fout, hrsections[1], url, sdate)
 
 		# write the body of the text
 		for i in range(1,len(hrsections) - 1):
-			WriteCleanText(fout, hrsections[i], url)
+			WriteCleanText(fout, hrsections[i], url, sdate)
 
 		# find the lead on with the footer
 		footer = hrsections[-1]
@@ -278,7 +306,7 @@ def ExtractAllLinks(url, dgf, forcescrape):
         xlines = re.sub('^.*?<hr(?: /)?>(?is)', '', xlines)
         res = re.findall('<a\s+href\s*=\s*"([^"]+?)#.*?">(?is)', xlines)
 	if not res:
-		raise Exception, "No link found!!! %s" % url
+		raise Exception, "No link found!!! %s\nURL: %s" % (xlines, url)
         urla = []
         for iconti in res:
                 uo = urlparse.urljoin(url, iconti)
@@ -365,7 +393,7 @@ def CompareScrapedFiles(prevfile, nextfile):
 ##############################
 # For gluing together debates
 ##############################
-def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
+def PullGluePages(options, folder, typ):
 	daymap, scrapedDataOutputPath = MakeDayMap(folder, typ)
 
 	# loop through the index file previously made by createhansardindex
@@ -373,26 +401,36 @@ def PullGluePages(datefrom, dateto, forcescrape, folder, typ):
 		# implement date range
 		if not re.search(typ, commonsIndexRecord.recordType, re.I):
 			continue
-		if commonsIndexRecord.date < datefrom or commonsIndexRecord.date > dateto:
+		if commonsIndexRecord.date < options.datefrom or commonsIndexRecord.date > options.dateto:
 			continue
 
 		latestFilePath, latestFileStem, nextFilePath, nextFileStem = \
 			GetFileDayVersions(commonsIndexRecord.date, daymap, scrapedDataOutputPath, typ)
 
-		# hansard index page
-		urlx = commonsIndexRecord.url
-		if commonsIndexRecord.recordType == 'Votes and Proceedings' or commonsIndexRecord.recordType == 'questionbook':
-			urla = [urlx]
-		else:
-			urla = ExtractAllLinks(urlx, latestFilePath, forcescrape)  # this checks the url at start of file
-		if not urla:
-			continue
+		try:
+			# hansard index page
+			urlx = commonsIndexRecord.url
+			if commonsIndexRecord.recordType == 'Votes and Proceedings' or commonsIndexRecord.recordType == 'questionbook':
+				urla = [urlx]
+			else:
+				urla = ExtractAllLinks(urlx, latestFilePath, options.forcescrape)  # this checks the url at start of file
+			if not urla:
+				continue
 
-		if miscfuncs.IsNotQuiet():
-			print commonsIndexRecord.date, (latestFilePath and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
+			if miscfuncs.IsNotQuiet():
+				print commonsIndexRecord.date, (latestFilePath and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
 
-		# now we take out the local pointer and start the gluing
-		GlueByNext(tempfilename, urla, urlx, commonsIndexRecord.date)
+			# now we take out the local pointer and start the gluing
+			GlueByNext(tempfilename, urla, urlx, commonsIndexRecord.date)
+
+		except Exception, e:
+			options.anyerrors = True
+			if options.quietc:
+				print e
+				print "\tERROR! %s failed to scrape on %s, quietly moving to next day" % (typ, commonsIndexRecord.date)
+				continue
+			else:
+				raise
 
 		if CompareScrapedFiles(latestFilePath, tempfilename) == "SAME":
 			if miscfuncs.IsNotQuiet():

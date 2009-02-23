@@ -6,11 +6,17 @@ import random
 import datetime
 import time
 import urllib
+import glob
+from optparse import OptionParser
 
+sys.path.append('../')
 from BeautifulSoup import BeautifulSoup
 from BeautifulSoup import NavigableString
 from BeautifulSoup import Tag
 from BeautifulSoup import Comment
+
+from common import month_name_to_int
+from common import non_tag_data_in
 
 agent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"
 
@@ -21,6 +27,14 @@ urllib._urlopener = MyURLopener()
 
 import re
 
+parser = OptionParser()
+parser.add_option('-y', "--year", dest="year", default=1999,
+                  help="year from which to fetch")
+parser.add_option('-q', "--quiet", dest="verbose", action="store_false",
+                  default=True, help="don't print status messages")
+(options, args) = parser.parse_args()
+options.year = int(options.year)
+
 currentdate = datetime.date.today()
 currentyear = datetime.date.today().year
 
@@ -28,56 +42,32 @@ output_directory = "../../../parldata/cmpages/sp/written-answers/"
 written_answers_template = output_directory + "wa%s_%d.html"
 written_answers_urls_template = output_directory + "wa%s.urls"
 
+# Figure out which contents pages we already have, excluding those in
+# the 90s:
+
+existing_contents_pages = glob.glob( output_directory + "contents-wa-[0-8]*" )
+existing_contents_pages.sort()
+
+contents_pages_fetched = { }
+
 # Fetch the year indices that we either don't have
 # or is the current year's...
 
 written_answers_prefix = "http://www.scottish.parliament.uk/business/pqa/"
 written_answers_year_template = written_answers_prefix + "%d.htm"
 
-for year in range(1999,currentyear+1):
+for year in range(options.year, currentyear+1):
     index_page_url = written_answers_year_template % year
     output_filename = output_directory + str(year) + ".html"
     if (not os.path.exists(output_filename)) or (year == currentyear):
+        if options.verbose: print "Fetching %s" % index_page_url
         ur = urllib.urlopen(index_page_url)
         fp = open(output_filename, 'w')
         fp.write(ur.read())
         fp.close()
         ur.close()
 
-def month_name_to_int( name ):
-
-    months = [ None,
-               "january",
-               "february",
-               "march",
-               "april",
-               "may",
-               "june",
-               "july",
-               "august",
-               "september",
-               "october",
-               "november",
-               "december" ]
-
-    result = 0
-
-    for i in range(1,13):
-        if name.lower() == months[i]:
-            result = i
-            break
-
-    return result
-
-def non_tag_data_in( o ):
-    if o.__class__ == NavigableString:
-        return re.sub('(?ms)[\r\n]',' ',o)
-    elif o.__class__ == Tag:
-        return ''.join( map( lambda x: non_tag_data_in(x) , o.contents ) )
-    elif o.__class__ == Comment:
-        return ''
-
-for year in range(1999,currentyear+1):
+for year in range(options.year, currentyear+1):
 
     year_index_filename = output_directory  + str(year) + ".html"
     if not os.path.exists(year_index_filename):
@@ -147,18 +137,26 @@ for year in range(1999,currentyear+1):
         contents_filename = output_directory + "contents-"+subdir+"_"+leaf
         contents_url = written_answers_prefix + subdir + "/" + leaf
 
-        if not os.path.exists(contents_filename) or (currentdate - end_date).days < 4:
+        # Fetch the contents page if we don't already have it, or if
+        # it was the last one fetched:
+
+        if not os.path.exists(contents_filename) or (len(existing_contents_pages) > 0 and existing_contents_pages[-1] == contents_filename):
+            if options.verbose: print "Fetching %s" % contents_url
             ur = urllib.urlopen(contents_url)
             fp = open(contents_filename, 'w')
             fp.write(ur.read())
             fp.close()
             ur.close()
+            contents_pages_fetched[contents_filename] = True
                 
     # Now find all the daily pages from the contents pages...
 
     for (subdir,leaf,start_date,end_date) in contents_pages:
 
         contents_filename = output_directory + "contents-"+subdir+"_"+leaf
+
+        if not contents_filename in contents_pages_fetched:
+            continue
 
         fp = open(contents_filename)
         contents_html = fp.read()
@@ -183,5 +181,6 @@ for year in range(1999,currentyear+1):
                 fp.write(ur.read())
                 fp.close()
                 ur.close()
+                print alternative_leaf, 'scraped SP written answers'
                 amount_to_sleep = int( 20 * random.random() )
-                time.sleep( amount_to_sleep )
+                # time.sleep( amount_to_sleep )

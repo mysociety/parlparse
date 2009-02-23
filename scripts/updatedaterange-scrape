@@ -1,21 +1,29 @@
 #!/bin/bash
 
-# Commons update
+# Scraping between two dates
 
 FROMDATE=$1
-TODATE=$2
+LORDFROMDATE=$2
+TODATE=$3
 RET=0
-# $3 is extra flags to pass through
-# echo "updatedaterange from $1 to $2"
+# $4 is extra flags to pass through
+# echo "updatedaterange from $1/$2 to $3"
 
 # Run XML-generating scraper from Public Whip, getting new files from network
-# and parsing the written answers and debates.
 cd ~/parlparse/pyscraper
-./lazyrunall.py $3 --quietc --from=$FROMDATE --to=$TODATE scrape debates wrans westminhall wms standing || RET=1
+./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE scrape debates wrans westminhall wms || RET=1
+./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE scrape standing || RET=1
+./lazyrunall.py $4 --from=$LORDFROMDATE --to=$TODATE scrape lords || RET=1
 
 # Yeah, it's not as fully featured as the UK Parliament one. But it should work :)
 cd ~/parlparse/pyscraper/ni
 ./scrape.py
+
+# XXX Should vary based upon weekly/daily-ness; and be more attuned than a year
+cd ~/parlparse/pyscraper/sp
+./get-official-reports.py --quiet
+./get-written-answers.py --quiet
+./get-business-bulletins.py --quiet
 
 # Return error code
 exit $RET

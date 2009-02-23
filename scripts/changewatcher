@@ -17,8 +17,8 @@ if ! diff --brief strengths.html strengths-last.html
 then
 	echo 
 	echo "An MP has probably left or entered the house."
-	echo "Instructions in section 2.3 'mp dies,resigns etc (bye election called)':"
-	echo "http://parl.stand.org.uk/cgi-bin/moin.cgi/ReshuffleOrElection"
+	echo "Instructions in section 2.3 'mp dies,resigns etc (byelection called)':"
+	echo "http://wiki.theyworkforyou.com/cgi-bin/moin.cgi/ReshuffleOrElection"
 	echo
 	echo "The new data on MP movements is available at"
 	echo "$MP_MOVEMENTS_URL"

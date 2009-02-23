@@ -14,8 +14,8 @@ from contextexception import ContextException
 from splitheadingsspeakers import StampUrl
 
 # marks out center types bold headings which are never speakers
-respeaker = re.compile('(<center><b>(?:<stamp aname="[^"]*"/>)?[^<]*</b></center>|<b>(?:<stamp aname="[^"]+"/>)*[^<]*</b>(?:\s*:)?)(?i)')
-respeakerb = re.compile('<b>\s*(?:<stamp aname="[^"]*"/>)*\s*([^<]*?),?\s*</b>(\s*:)?(?i)')
+respeaker = re.compile('(<center><b>(?:<stamp aname="[^"]*"/>)?[^<]*</b></center>|<b>(?:<stamp aname="[^"]+"/>|</b><b>|[^<]+)*</b>(?:\s*:)?)(?i)')
+respeakerb = re.compile('<b>\s*((?:<stamp aname="[^"]*"/>|</b><b>|[^<]+)*),?\s*</b>(\s*:)?(?i)')
 respeakervals = re.compile('([^:(]*?)\s*(?:\(([^:)]*)\)?)?(:)?:*$')
 
 renonspek = re.compile('division|contents|amendment(?i)')
@@ -32,6 +32,7 @@ def LordsFilterSpeakers(fout, text, sdate):
 	officematches = {}
 
 	# setup for scanning through the file.
+        print text
 	for fss in respeaker.split(text):
 
 		# strip off the bolds tags
@@ -48,6 +49,10 @@ def LordsFilterSpeakers(fout, text, sdate):
 		fssb = bffs.group(1)
 		if bffs.group(2):
 			fssb = fssb + ":"
+
+                # Remove the cruft
+                fssb = re.sub('<stamp aname="[^"]*"/>', '', fssb)
+                fssb = re.sub('</b><b>', '', fssb)
 
 		# empty bold phrase
 		if not re.search('\S', fssb):
