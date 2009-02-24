@@ -157,7 +157,39 @@ def GrabLordDivisionProced(qbp, qbd):
 
 	return qbdp
 
+renewlorddiv = re.compile('<p[^>]*>(?:\*\s*)?Contents,? (\d+)\*? ?; Not-Contents,? (\d+)\*?\.?</p>$')
+redivisionon = re.compile('<p[^>]*>Division on Amendment [A-Za-z0-9]+</p>')
+def NewGrabLordDivisionProced(qbp, qbd):
+	if not re.match("speech|motion", qbp.typ) or len(qbp.stext) < 1:
+		print qbp.stext
+		raise ContextException("previous to division not speech", stamp=qbp.sstampurl)
 
+        iskim = 1
+        while not redivisionon.match(qbp.stext[-iskim]) and iskim < len(qbp.stext):
+                iskim = iskim + 1
+        if iskim == len(qbp.stext):
+                raise ContextException("Could not find Division 'title'", stamp=qbp.sstampurl)
+
+	hdg = renewlorddiv.match(qbp.stext[-iskim+1])
+	if not hdg:
+		print qbp.stext[-iskim+1]
+		raise ContextException("no totals before division", stamp=qbp.sstampurl)
+
+	# if previous thing is already a no-speaker, we don't need to break it out
+	# (the coding on the question put is complex and multilined)
+	if re.search('nospeaker="true"', qbp.speaker):
+		qbp.stext = SubsPWtextset(qbp.stext)
+		return None
+
+	# copy the two lines into a non-speaking paragraph.
+	qbdp = qspeech('nospeaker="true"', "", qbp.sstampurl)
+	qbdp.typ = 'speech'
+	qbdp.stext = SubsPWtextset(qbp.stext[-iskim:])
+
+	# trim back the given one by two lines
+	qbp.stext = qbp.stext[:-iskim]
+
+	return qbdp
 
 def MatchPWmotionStuff(qb, ispeechstartp1):
 	qpara = qb.stext[ispeechstartp1]
@@ -554,7 +586,10 @@ def LordsFilterSections(text, sdate):
 
 			# grab some division text off the back end of the previous speech
 			# and wrap into a new no-speaker speech
-			qbdp = GrabLordDivisionProced(flatb[-1], qbd)
+			if sdate >= '2008-12-01':
+                                qbdp = NewGrabLordDivisionProced(flatb[-1], qbd)
+                        else:
+			        qbdp = GrabLordDivisionProced(flatb[-1], qbd)
 			if qbdp:
 				flatb.append(qbdp)
 			flatb.append(qbd)

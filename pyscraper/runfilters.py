@@ -162,9 +162,12 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
                         text = re.sub('(<h5>)((?:<a name="(.*?)">(?:</a>)?)*)', r"\2\1", text) # If you can't beat them, ...
                         text = re.sub('<columnNum><br />( |\xc2\xa0)<br />', '<br>&nbsp;<br>', text)
                         text = re.sub('<br />( |\xc2\xa0)<br /></columnNum>', '<br>&nbsp;<br>', text)
-                        text = re.sub('<b align="center">', '<b>', text)
-                        text = re.sub('<br />', '<br>', text)
-                        text = re.sub('CONTENTS', 'CONTENTS\n', text)
+                        text = text.replace('<b align="center">', '<b>')
+                        text = text.replace('<br />', '<br>')
+                        text = text.replace('CONTENTS', 'CONTENTS\n')
+                        text = re.sub('</?small>', '', text)
+                        text = re.sub('<div class="amendment(?:_heading)?">', '', text)
+                        text = re.sub('</?div>', '', text)
 
         # Changes in 2008-09 session
         if sdate>'2008-12-01' and dname=='lordspages':

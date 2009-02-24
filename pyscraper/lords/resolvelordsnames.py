@@ -119,7 +119,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 
 		llordofname = string.replace(llordofname, ".", "")
 		llordname = string.replace(llordname, ".", "")
-		llordname = string.replace(llordname, "&#039;", "'")
+		llordname = llordname.replace("&#039;", "'").replace('&#146;', "'")
 
                 # TODO: Need a Lords version of member-aliases.xml I guess
                 if ltitle == "Bishop" and llordofname == "Southwell" and sdate>='2005-07-01':
