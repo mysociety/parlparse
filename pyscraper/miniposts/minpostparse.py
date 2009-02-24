@@ -190,17 +190,17 @@ class protooffice:
 		self.fullname = re.sub("^Mrs? ", "", name).strip()
 		# Why doesn't this work with an accent?
 
-		if re.match("Si.n Simon$", self.fullname):
+		if re.match("Si..?n Simon$", self.fullname):
 			self.fullname = "Sion Simon"
-		if re.match("Si.n C\. James$", self.fullname):
+		if re.match("Si..?n C\. James$", self.fullname):
 			self.fullname = "Sian C James"
-		if re.match("Lembit .pik$", self.fullname):
+		if re.match("Lembit ..?pik$", self.fullname):
 			self.fullname = "Lembit Opik"
 #		if re.match("Anne Picking$", self.fullname):
 #			self.fullname = "Anne Moffat"
                 self.cons = re.sub("&amp;", "&", cons)
                 # Or this?
-                if re.match("Ynys M.n", cons):
+                if re.match("Ynys M..?n", cons):
                         self.cons = "Ynys Mon"
 
 	def PPSproto(self, lsdatet, name, master, dept):
@@ -211,9 +211,9 @@ class protooffice:
 		nameMatch = re.match('(.*?)(?:\s*\(([^)]*)\))?\s*$', name)
 		self.fullname = nameMatch.group(1).strip()
 		self.fullname = re.sub("^Mr?s? ", "", self.fullname)
-		if re.match("Si.n Simon$", self.fullname):
+		if re.match("Si..?n Simon$", self.fullname):
 			self.fullname = "Sion Simon"
-		if re.match("Si.n C\. ?James$", self.fullname):
+		if re.match("Si..?n C\. ?James$", self.fullname):
 			self.fullname = "Sian C James"
                 self.cons = None
                 if nameMatch.group(2):
@@ -255,7 +255,7 @@ class protooffice:
 			assert not self.cons
 			self.cons = mbrackinfullname.group(2)
 
-		if re.match("Si.n Simon$", self.fullname):
+		if re.match("Si..?n Simon$", self.fullname):
 			self.fullname = "Sion Simon"
 
 		# special Gareth Thomas match

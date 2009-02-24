@@ -317,7 +317,7 @@ def ApplyFixSubstitutions(text, sdate, fixsubs):
 # this only accepts <sup> and <i> tags
 def StraightenHTMLrecurse(stex, stampurl):
 	# split the text into <i></i> and <sup></sup> and <sub></sub> and <a href></a>
-        qisup = re.search(r'(<(a|i|small|sup|sub)( href="[^"]*")?>(.*?)</\2>)(?i)', stex)
+        qisup = re.search(r'(<(a|i|b|small|sup|sub)( href="[^"]*")?>(.*?)</\2>)(?i)', stex)
         if qisup:
                 qtagtype = qisup.group(2)
                 qhref = qisup.group(3) or ''
@@ -434,7 +434,7 @@ def FixHTMLEntities(stex, signore='', stampurl=None):
 
 
 # The lookahead assertion (?=<table) stops matching tables when another begin table is reached
-paratag = '</?p(?: style="margin-left: 20px;")?(?: align=(?:left|"center"))?(?: id="[^"]*" class="timestamp")?(?: class[= ]"(?:tabletext|normaltext)")?>'
+paratag = '</?p(?: style="margin-left: 20px;")?(?: align=(?:left|"center"))?(?: id="[^"]*" class="timestamp")?(?: class[= ]"(?:tabletext|normaltext|amendment_hs_quote|amendment_indentone|amendment_indenttwo|clause_heading)")?>'
 restmatcher = paratag + '|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>(?i)'
 reparts = re.compile('(<table[\s\S]*?(?:</table>|(?=<table))|' + restmatcher + ')')
 reparts2 = re.compile('(<table[^>]*?>|' + restmatcher + ')')
