@@ -439,8 +439,9 @@ class ParseCommittee:
         while getattr(node, 'name', None) != 'h5':
              if getattr(node,'name', None) == 'div' and node.get('class', None) == 'hs_Para' :
                 ptext = re.sub("\s+", " ", ''.join(node(text=True))).strip()
-                self.add_member_to_votecount(votecounts, firstvote, ptext)
-                node.contents = []  
+                if ptext:
+                    self.add_member_to_votecount(votecounts, firstvote, ptext)
+                    node.contents = []  
              node = node.next
         
         # noes header    
@@ -452,6 +453,9 @@ class ParseCommittee:
         while(node):
             if getattr(node,'name', None) == 'div' and node.get('class', None) == 'hs_Para' and getattr(node, 'contents', None):
                 contents = [subnode for subnode in node.contents if not subnode.string or subnode.string.strip()]
+                if not contents:
+                    node = node.next
+                    continue
                 if getattr( contents[0], 'name', None ) == 'i':
                     self.display_division(divisionNum, votecounts)  
                     return 
