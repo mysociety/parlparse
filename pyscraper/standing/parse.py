@@ -829,7 +829,6 @@ class ParseCommittee:
         """Parse and convert a new-style (post 3/2006) Public Bill Committee transcript to XML"""                
         # Extract the bill title (first major heading) and the url for the bill
         url = None
-        url_str = ""
         bill_title = soup.h1
         if bill_title.b:
             node = bill_title.b
@@ -838,17 +837,21 @@ class ParseCommittee:
         title = self.render_node_list(node.contents)
         plaintitle = ''.join(node(text=True))
         bill_link = soup.h3
-      
-        if bill_link and bill_link.a:
-            url = bill_link.a.get('href', None)
-            url = re.sub('\s+', '', url)
+        if bill_link:
+            if bill_link.a:
+                url = bill_link.a.get('href', None)
+                url = re.sub('\s+', '', url)
+            elif bill_link.parent.name == 'a':
+                url = bill_link.parent.get('href', None)
+                url = re.sub('\s+', '', url)
    
         bill_title.extract()
         bill_link.extract()
         
-        if url:
-            url_str = ' url="%s%s"' % (url[0:7] != 'http://' and self.baseurl or '', url)
-        self.out.write('<bill%s title="%s">%s</bill>\n' % (url_str, plaintitle, title))
+        if not url:
+            raise ContextException, "No URL for bill found"
+        url_str = '%s%s' % (url[0:7] != 'http://' and self.baseurl or '', url)
+        self.out.write('<bill url="%s" title="%s">%s</bill>\n' % (url_str, plaintitle, title))
         
         self.parse_new_committee(soup)
                 
