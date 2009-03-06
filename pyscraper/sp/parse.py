@@ -1493,6 +1493,7 @@ for d in dates:
 <!ENTITY scaron  "&#353;">
 <!ENTITY sup3    "&#179;">
 <!ENTITY ugrave  "&#249;">
+<!ENTITY ucirc   "&#251;">
 <!ENTITY yacute  "&#253;">
 ]>
 

@@ -200,7 +200,7 @@ class protooffice:
 #			self.fullname = "Anne Moffat"
                 self.cons = re.sub("&amp;", "&", cons)
                 # Or this?
-                if re.match("Ynys M..?n", cons):
+                if re.match("Ynys M(..?|&#244;)n", cons):
                         self.cons = "Ynys Mon"
 
 	def PPSproto(self, lsdatet, name, master, dept):
