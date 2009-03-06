@@ -474,6 +474,7 @@ class Parser:
 <!ENTITY sup2    "&#178;">
 <!ENTITY sup3    "&#179;">
 <!ENTITY ugrave  "&#249;">
+<!ENTITY ucirc   "&#251;">
 <!ENTITY Ugrave  "&#217;">
 <!ENTITY yacute  "&#253;">
 <!ENTITY frac12  "&#189;">
