@@ -1740,7 +1740,7 @@ B - bishop
 	lordofname_full="Kingston upon Hull"
 	county="the County of the East Riding of Yorkshire"
 	peeragetype="L" affiliation="Other"
-	fromdate="1998" todate="9999-12-31"
+	fromdate="1998" todate="2009-02-19" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100168"
@@ -10083,4 +10083,15 @@ B - bishop
     peeragetype="L" affiliation="Lab"
     fromdate="2009-02-02" todate="9999-12-31"
 />
+
+<lord
+    id="uk.org.publicwhip/lord/100987"
+    house="lords"
+    forenames="Susan Catherine"
+    title="Baroness" lordname="Campbell" lordofname="Loughborough"
+    county="the County of Leicestershire"
+    peeragetype="L" affiliation="XB"
+    fromdate="2008-12-11" todate="9999-12-31"
+/>
+
 </publicwhip>
