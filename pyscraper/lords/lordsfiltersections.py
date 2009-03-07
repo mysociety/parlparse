@@ -158,7 +158,7 @@ def GrabLordDivisionProced(qbp, qbd):
 	return qbdp
 
 renewlorddiv = re.compile('<p[^>]*>(?:\*\s*)?Contents,? (\d+)\*? ?; Not-Contents,? (\d+)\*?\.?</p>$')
-redivisionon = re.compile('<p[^>]*>Division on Amendment [A-Za-z0-9]+</p>')
+redivisionon = re.compile('<p[^>]*>Division on Amendment ([A-Za-z0-9]+|to the Motion\.)</p>')
 def NewGrabLordDivisionProced(qbp, qbd):
 	if not re.match("speech|motion", qbp.typ) or len(qbp.stext) < 1:
 		print qbp.stext
