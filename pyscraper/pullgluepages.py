@@ -200,15 +200,17 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
 
 	# loop which scrapes through all the pages following the nextlinks
 	while urla:
-                url = urla[0]
+                url2 = url = urla[0]
+                if sdate=='2009-02-27':
+                        url2 = re.sub('\s+', '', url2)
 		#print " reading " + url
-		ur = urllib.urlopen(url)
+		ur = urllib.urlopen(url2)
 		sr = ur.read()
 		ur.close();
 
 		# write the marker telling us which page this comes from
-                if (url != urlx):
-                        fout.write('<page url="' + url + '"/>\n')
+                if (url2 != urlx):
+                        fout.write('<page url="' + url2 + '"/>\n')
 
                 sr = re.sub('<!-- end of variable data -->.*<hr>(?si)', '<hr>', sr)
 

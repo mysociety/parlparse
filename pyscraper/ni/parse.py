@@ -310,7 +310,7 @@ class ParseDay:
 				self.idA += 1
 				self.idB = 0
 				self.display_heading(ptext, timestamp, 'major')
-			elif cl == 'H4StageHeading' or cl == 'H5StageHeading':
+			elif cl == 'H4StageHeading' or cl == 'H5StageHeading' or cl == 'B3BodyTextClause':
 				self.display_speech()
 				self.speaker = (None, timestamp)
 				self.idB += 1
