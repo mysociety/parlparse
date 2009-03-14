@@ -158,7 +158,7 @@ for year in range(1999,currentyear+1):
             page = m.group(1)
             section = m.group(2)
 
-            if section not in ( 'a', 'd', 'e', 'f' )
+            if section not in ( 'a', 'd', 'e', 'f' ):
                 continue
 
             day_filename = output_directory + "day-" + subdir + "_" + page
