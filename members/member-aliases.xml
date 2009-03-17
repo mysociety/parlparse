@@ -57,6 +57,10 @@ http://www.dfid.gov.uk/News/PressReleases/files/pr_gareththomas_13june03.html
     alternate="The Parliamentary Under-Secretary of State for International Development"
     from="2008-10-03" to="2010-05-05" />
 
+<alias constituency="Bury South"
+    alternate="The Parliamentary Under-Secretary of State for International Development"
+    from="2008-10-03" to="2010-05-05" />
+
 <!-- Sometimes these appear instead of fullnames.  resolvemembernames.py
 also loads in ministers.xml to match these to people.  Here we just have
 different spellings of the offices -->
