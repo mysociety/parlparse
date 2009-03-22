@@ -237,7 +237,7 @@ var wgNotice='';var wgNoticeLocal='';
 <p><a name="Graphical_representation_of_the_House_of_Commons" id="Graphical_representation_of_the_House_of_Commons"></a></p>
 <h2><span class="editsection">[<a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election,_2005&amp;action=edit&amp;section=2" title="Edit section: Graphical representation of the House of Commons">edit</a>]</span> <span class="mw-headline">Graphical representation of the House of Commons</span></h2>
 <p>This is a comparison of the party strengths in the British House of Commons (as of 6 November 2008):</p>
-<div style="height: 286px; width: 661px; "><map name="ImageMap_1_189192634" id="ImageMap_1_189192634">
+<div style="height: 286px; width: 661px; "><map name="ImageMap_1_260804560" id="ImageMap_1_260804560">
 <area href="/wiki/Labour_Party_(UK)" shape="poly" coords="1,166,629,166,629,181,659,181,659,284,1,284" alt="Labour Party (350)" title="Labour Party (350)" />
 <area href="/wiki/Speaker_of_the_House_of_Commons_(UK)" shape="poly" coords="1,121,14,121,14,136,29,136,29,150,14,150,14,165,1,165" alt="Speaker and Deputies (4)" title="Speaker and Deputies (4)" />
 <area href="/wiki/Conservative_Party_(UK)" shape="poly" coords="1,1,359,1,359,106,374,106,374,119,1,119" alt="Conservative Party (193)" title="Conservative Party (193)" />
@@ -255,7 +255,7 @@ var wgNotice='';var wgNoticeLocal='';
 <area href="/wiki/Clare_Short" shape="poly" coords="541,1,554,1,554,14,541,14" alt="Clare Short (Independent Labour)" title="Clare Short (Independent Labour)" />
 <area href="/wiki/Richard_Taylor_(UK_politician)" shape="poly" coords="541,16,554,16,554,29,541,29" alt="Richard Taylor (Independent Health Concern)" title="Richard Taylor (Independent Health Concern)" />
 <area href="/wiki/Dai_Davies_(politician)" shape="poly" coords="541,31,554,31,554,44,541,44" alt="Dai Davies (Independent)" title="Dai Davies (Independent)" />
-<area href="/wiki/Bob_Wareing" shape="poly" coords="541,46,554,46,554,59,541,59" alt="Bob Wareing (Independent)" title="Bob Wareing (Independent)" /></map><img alt="" src="http://upload.wikimedia.org/wikipedia/en/0/08/Parliament-54.png" width="661" height="286" border="0" usemap="#ImageMap_1_189192634" />
+<area href="/wiki/Bob_Wareing" shape="poly" coords="541,46,554,46,554,59,541,59" alt="Bob Wareing (Independent)" title="Bob Wareing (Independent)" /></map><img alt="" src="http://upload.wikimedia.org/wikipedia/en/0/08/Parliament-54.png" width="661" height="286" border="0" usemap="#ImageMap_1_260804560" />
 <div style="margin-left: 641px; margin-top: -285px; text-align: left;"><a href="/wiki/File:Parliament-54.png" title="About this image"><img alt="About this image" src="/w/extensions/ImageMap/desc-20.png" style="border: none;" /></a></div>
 </div>
 <p><b>Note:</b> The Scottish National Party and Plaid Cymru sit together as a party group, while Sinn Féin has not taken its seats. This is not the official seating plan of the House of Commons which actually has five rows of benches on each side, with the government party to the right of the Speaker and opposition parties to the left, but with room for only around two-thirds of MPs to sit at any one time.</p>
@@ -5221,13 +5221,13 @@ var wgNotice='';var wgNoticeLocal='';
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 1028/1000000
-Post-expand include size: 35085/2048000 bytes
-Template argument size: 40162/2048000 bytes
+Preprocessor node count: 1019/1000000
+Post-expand include size: 44682/2048000 bytes
+Template argument size: 30565/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:1735700-0!1!0!default!!en!2 and timestamp 20090218231246 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1735700-0!1!0!default!!en!2 and timestamp 20090311171540 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election,_2005">http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election,_2005</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>:&#32;<span dir='ltr'><a href="/wiki/Category:United_Kingdom_general_election,_2005" title="Category:United Kingdom general election, 2005">United Kingdom general election, 2005</a></span> | <span dir='ltr'><a href="/wiki/Category:MPs_elected_in_UK_elections" title="Category:MPs elected in UK elections">MPs elected in UK elections</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_current_office-holders" title="Category:Lists of current office-holders">Lists of current office-holders</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_UK_MPs_2005-" title="Category:Lists of UK MPs 2005-">Lists of UK MPs 2005-</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Scottish_MPs" title="Category:Lists of Scottish MPs">Lists of Scottish MPs</a></span> | <span dir='ltr'><a href="/wiki/Category:Legislative_sessions" title="Category:Legislative sessions">Legislative sessions</a></span></div></div>			<!-- end content -->
@@ -5329,4 +5329,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 </div>
 
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv201 in 0.080 secs. --></body></html>
+<!-- Served by srv86 in 0.097 secs. --></body></html>
