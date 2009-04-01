@@ -56,6 +56,7 @@ for line in content:
 	money = cols[2:28]
 	money = map(lambda x: re.sub("\xa3","", x), money)
 	money = map(lambda x: re.sub(",","", x), money)
+	money = map(lambda x: re.sub(".00$","", x), money)
 	id = None
 	cons = None
 	# other Michael Foster is Michael Jabez Foster
