@@ -295,8 +295,10 @@ class ParseDay:
 
 			if cl == 'OralWrittenQuestion':
 				cl = 'B1SpeakersName'
-			if cl == 'OralWrittenAnswersHeading':
+			if cl == 'OralWrittenAnswersHeading' or cl == 'WrittenStatement-Heading':
 				cl = 'H3SectionHeading'
+			if cl == 'WrittenStatement-Content':
+				cl = 'B3BodyText'
 			if cl == 'B3BodyText' and (phtml[0:8] == '<strong>' or re.match('\d+\.( |&nbsp;)+<strong>', phtml)):
 				cl = 'B1SpeakersName'
 			if cl == 'TimePeriod' and re.search('in the chair(?i)', phtml):
