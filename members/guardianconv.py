@@ -10,7 +10,7 @@
 # For details see the file LICENSE.html in the top level of the source.
 
 input = '../rawdata/mpinfo/guardian-mpsurls2005.txt'
-date = '2005-12-13'
+date = '2009-04-16'
 
 import sys
 import string
