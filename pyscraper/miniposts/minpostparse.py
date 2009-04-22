@@ -712,7 +712,7 @@ def ParseOffOppPage(fr, gp):
         if num <= 97:
                 table = re.search("(?s)>HER MAJESTY&#39;S OFFICIAL OPPOSITION<(.*?)</table>", fr)
         else:
-                table = re.search("(?s)>Her Majesty's Official Opposition<(.*?)</table>", fr)
+                table = re.search("(?si)>Her Majesty's Official Opposition<(.*?)</table>", fr)
 	list = re.split("</?tr>(?i)", table.group(1))
 
 	res = [ ]
@@ -1305,6 +1305,7 @@ def ParseGovPosts():
 		rpcp.append((cp.sortobj, cp, cp.cmpobj))
 		moffidn += 1
 
+        print "Matching committee/other names"
 	# private secretaries, select committees, official opposition
 	for cpm in cpressec, cpresselctee, cpresopp, cpreslibdem, cpresplaidsnp, cpresdup:
                 for cp in cpm:
@@ -1335,6 +1336,7 @@ def ParseGovPosts():
 
 
 	# now look for open ends
+        print "Glueing"
 	for mofficegroup in mofficegroups:
 		GlueGapDataSetGaptonewlabministers2003(mofficegroup)
 		CheckPPStoMinisterpromotions(mofficegroup)

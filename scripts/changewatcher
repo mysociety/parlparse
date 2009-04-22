@@ -7,31 +7,6 @@ set -e
 
 source ~/parlparse/scripts/consts
 
-# Check for new MP change info (deaths, byelections etc.)
-MP_MOVEMENTS_URL=http://www.election.demon.co.uk/strengths.html
-mkdir -p $PWDATA/watchpages
-cd $PWDATA/watchpages
-rm -fr strengths.html
-snarf -q $MP_MOVEMENTS_URL
-if ! diff --brief strengths.html strengths-last.html
-then
-	echo 
-	echo "An MP has probably left or entered the house."
-	echo "Instructions in section 2.3 'mp dies,resigns etc (byelection called)':"
-	echo "http://wiki.theyworkforyou.com/cgi-bin/moin.cgi/ReshuffleOrElection"
-	echo
-	echo "The new data on MP movements is available at"
-	echo "$MP_MOVEMENTS_URL"
-	echo "Merge it into parlparse/members/all-members.xml"
-	echo
-	# Show differences, use text version to do this
-	lynx -dump strengths.html >strengths.txt
-	lynx -dump strengths-last.html >strengths-last.txt
-	diff -u strengths-last.txt strengths.txt && echo -n # echo to stop "set -e" causing it to exit
-fi
-# Move new file as new last
-mv strengths.html strengths-last.html
-
 # Add any new files
 cd ~/parldata/cmpages/chgpages
 svn -q add */*.html 2>&1 | grep -v "is already under version control" && echo -n
