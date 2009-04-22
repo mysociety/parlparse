@@ -79,10 +79,13 @@ def GrabWatchCopies(sdate):
 		# comparison with previous page
 		# we use 4 digit numbering at the front to ensure that cases are separate and ordered
 
-		spcurrval = re.sub("\s+", "", currval)
-		splastval = re.sub("\s+", "", lastval)
+		# Strip current date, used for pointless Big Ben flash animation
+		spcurrval = re.sub('<div id="banner_time">\s*<div id="bigben">\s*</div>.*?</div>', '', currval)
+		splastval = re.sub('<div id="banner_time">\s*<div id="bigben">\s*</div>.*?</div>', '', lastval)
 
-		# this is the comparison between the two pages with the spaces removed!
+		# Compare the two pages with the spaces removed
+		spcurrval = re.sub("\s+", "", spcurrval)
+		splastval = re.sub("\s+", "", splastval)
 		if spcurrval != splastval:
 			#print len(currval), len(lastval)
 			#print len(spcurrval), len(splastval), (spcurrval == splastval)
