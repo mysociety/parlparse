@@ -52,7 +52,7 @@
 		var wgUserLanguage = "en";
 		var wgContentLanguage = "en";
 		var wgBreakFrames = false;
-		var wgCurRevisionId = 285423452;
+		var wgCurRevisionId = 286825671;
 		var wgVersion = "1.15alpha";
 		var wgEnableAPI = true;
 		var wgEnableWriteAPI = true;
@@ -94,15 +94,19 @@ var wgNotice='';var wgNoticeLocal='';
 </div>
 <ul>
 <li class="toclevel-1"><a href="#Bishops"><span class="tocnumber">1</span> <span class="toctext">Bishops</span></a></li>
-<li class="toclevel-1"><a href="#A-F"><span class="tocnumber">2</span> <span class="toctext">A-F</span></a></li>
-<li class="toclevel-1"><a href="#G-M"><span class="tocnumber">3</span> <span class="toctext">G-M</span></a></li>
-<li class="toclevel-1"><a href="#N-S"><span class="tocnumber">4</span> <span class="toctext">N-S</span></a></li>
-<li class="toclevel-1"><a href="#T-Z"><span class="tocnumber">5</span> <span class="toctext">T-Z</span></a></li>
-<li class="toclevel-1"><a href="#Recently_deceased"><span class="tocnumber">6</span> <span class="toctext">Recently deceased</span></a></li>
-<li class="toclevel-1"><a href="#Peers_on_leave_of_absence"><span class="tocnumber">7</span> <span class="toctext">Peers on leave of absence</span></a></li>
-<li class="toclevel-1"><a href="#See_also"><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
-<li class="toclevel-1"><a href="#References"><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
-<li class="toclevel-1"><a href="#External_links"><span class="tocnumber">10</span> <span class="toctext">External links</span></a></li>
+<li class="toclevel-1"><a href="#Lords_Temporal"><span class="tocnumber">2</span> <span class="toctext">Lords Temporal</span></a>
+<ul>
+<li class="toclevel-2"><a href="#A-F"><span class="tocnumber">2.1</span> <span class="toctext">A-F</span></a></li>
+<li class="toclevel-2"><a href="#G-M"><span class="tocnumber">2.2</span> <span class="toctext">G-M</span></a></li>
+<li class="toclevel-2"><a href="#N-S"><span class="tocnumber">2.3</span> <span class="toctext">N-S</span></a></li>
+<li class="toclevel-2"><a href="#T-Z"><span class="tocnumber">2.4</span> <span class="toctext">T-Z</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Recently_deceased"><span class="tocnumber">3</span> <span class="toctext">Recently deceased</span></a></li>
+<li class="toclevel-1"><a href="#Peers_on_leave_of_absence"><span class="tocnumber">4</span> <span class="toctext">Peers on leave of absence</span></a></li>
+<li class="toclevel-1"><a href="#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a href="#External_links"><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
 </ul>
 </td>
 </tr>
@@ -113,7 +117,7 @@ var wgNotice='';var wgNoticeLocal='';
 //]]>
 </script>
 <p><a name="Bishops" id="Bishops"></a></p>
-<h3><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=1" title="Edit section: Bishops">edit</a>]</span> <span class="mw-headline">Bishops</span></h3>
+<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=1" title="Edit section: Bishops">edit</a>]</span> <span class="mw-headline">Bishops</span></h2>
 <table class="wikitable">
 <tr>
 <th>Bishopric</th>
@@ -278,8 +282,10 @@ var wgNotice='';var wgNoticeLocal='';
 <td>1999</td>
 </tr>
 </table>
+<p><a name="Lords_Temporal" id="Lords_Temporal"></a></p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=2" title="Edit section: Lords Temporal">edit</a>]</span> <span class="mw-headline">Lords Temporal</span></h2>
 <p><a name="A-F" id="A-F"></a></p>
-<h3><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=2" title="Edit section: A-F">edit</a>]</span> <span class="mw-headline">A-F</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=3" title="Edit section: A-F">edit</a>]</span> <span class="mw-headline">A-F</span></h3>
 <table class="wikitable">
 <tr>
 <th>Lord</th>
@@ -991,7 +997,7 @@ var wgNotice='';var wgNoticeLocal='';
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Chilver" title="Lord Chilver">The Lord Chilver</a></td>
+<td><a href="/wiki/Lord_Chilver" title="Lord Chilver" class="mw-redirect">The Lord Chilver</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1069,7 +1075,7 @@ var wgNotice='';var wgNoticeLocal='';
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lawrence_Collins" title="Lawrence Collins">The Lord Collins of Mapesbury</a></td>
+<td><a href="/wiki/Lawrence_Collins" title="Lawrence Collins" class="mw-redirect">The Lord Collins of Mapesbury</a></td>
 <td>Cross Bench</td>
 <td>Lord of Appeal in Ordinary</td>
 <td>&#160;</td>
@@ -1610,7 +1616,7 @@ var wgNotice='';var wgNoticeLocal='';
 </tr>
 </table>
 <p><a name="G-M" id="G-M"></a></p>
-<h3><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=3" title="Edit section: G-M">edit</a>]</span> <span class="mw-headline">G-M</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=4" title="Edit section: G-M">edit</a>]</span> <span class="mw-headline">G-M</span></h3>
 <table class="wikitable">
 <tr>
 <th>Lord</th>
@@ -2555,7 +2561,7 @@ var wgNotice='';var wgNoticeLocal='';
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Ralph_Palmer,_12th_Baron_Lucas_of_Crudwell" title="Ralph Palmer, 12th Baron Lucas of Crudwell">The Lord Lucas</a></td>
+<td><a href="/wiki/Ralph_Palmer,_12th_Baron_Lucas_of_Crudwell" title="Ralph Palmer, 12th Baron Lucas of Crudwell" class="mw-redirect">The Lord Lucas</a></td>
 <td>Conservative</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -3030,7 +3036,7 @@ var wgNotice='';var wgNoticeLocal='';
 </tr>
 </table>
 <p><a name="N-S" id="N-S"></a></p>
-<h3><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=4" title="Edit section: N-S">edit</a>]</span> <span class="mw-headline">N-S</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=5" title="Edit section: N-S">edit</a>]</span> <span class="mw-headline">N-S</span></h3>
 <table class="wikitable">
 <tr>
 <th>Lord</th>
@@ -4000,7 +4006,7 @@ var wgNotice='';var wgNoticeLocal='';
 </tr>
 </table>
 <p><a name="T-Z" id="T-Z"></a></p>
-<h3><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=5" title="Edit section: T-Z">edit</a>]</span> <span class="mw-headline">T-Z</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=6" title="Edit section: T-Z">edit</a>]</span> <span class="mw-headline">T-Z</span></h3>
 <table class="wikitable">
 <tr>
 <th>Lord</th>
@@ -4532,7 +4538,7 @@ var wgNotice='';var wgNoticeLocal='';
 </tr>
 </table>
 <p><a name="Recently_deceased" id="Recently_deceased"></a></p>
-<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=6" title="Edit section: Recently deceased">edit</a>]</span> <span class="mw-headline">Recently deceased</span></h2>
+<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=7" title="Edit section: Recently deceased">edit</a>]</span> <span class="mw-headline">Recently deceased</span></h2>
 <table class="wikitable sortable">
 <tr>
 <th>Name</th>
@@ -4678,7 +4684,7 @@ var wgNotice='';var wgNoticeLocal='';
 </tr>
 </table>
 <p><a name="Peers_on_leave_of_absence" id="Peers_on_leave_of_absence"></a></p>
-<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=7" title="Edit section: Peers on leave of absence">edit</a>]</span> <span class="mw-headline">Peers on leave of absence</span></h2>
+<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=8" title="Edit section: Peers on leave of absence">edit</a>]</span> <span class="mw-headline">Peers on leave of absence</span></h2>
 <ul>
 <li><a href="/wiki/Catherine_Ashton,_Baroness_Ashton_of_Upholland" title="Catherine Ashton, Baroness Ashton of Upholland">The Baroness Ashton of Upholland</a>, Labour</li>
 <li><a href="/wiki/Baron_Buxton_of_Alsa" title="Baron Buxton of Alsa" class="mw-redirect">The Lord Buxton of Alsa</a>, Conservative</li>
@@ -4693,13 +4699,13 @@ var wgNotice='';var wgNoticeLocal='';
 <li><a href="/wiki/Leonard_Wolfson,_Baron_Wolfson" title="Leonard Wolfson, Baron Wolfson">The Lord Wolfson</a>, Conservative</li>
 </ul>
 <p><a name="See_also" id="See_also"></a></p>
-<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=8" title="Edit section: See also">edit</a>]</span> <span class="mw-headline">See also</span></h2>
+<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=9" title="Edit section: See also">edit</a>]</span> <span class="mw-headline">See also</span></h2>
 <ul>
 <li><a href="/wiki/List_of_hereditary_peers_elected_to_sit_in_the_House_of_Lords_under_the_House_of_Lords_Act_1999" title="List of hereditary peers elected to sit in the House of Lords under the House of Lords Act 1999">List of hereditary peers elected to sit in the House of Lords under the House of Lords Act 1999</a></li>
 <li><a href="/wiki/Peerage" title="Peerage">Peerage</a></li>
 </ul>
 <p><a name="References" id="References"></a></p>
-<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=9" title="Edit section: References">edit</a>]</span> <span class="mw-headline">References</span></h2>
+<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=10" title="Edit section: References">edit</a>]</span> <span class="mw-headline">References</span></h2>
 <div class="references-small">
 <ol class="references">
 <li id="cite_note-0"><b><a href="#cite_ref-0" title="">^</a></b> "<a href="http://www.legacy.com/timesonline-uk/Obituaries.asp?Page=Lifestory&amp;PersonId=125026611" class="external autonumber" title="http://www.legacy.com/timesonline-uk/Obituaries.asp?Page=Lifestory&amp;PersonId=125026611" rel="nofollow">[1]</a>", The Times, accessed 12 March 2009.</li>
@@ -4716,7 +4722,7 @@ var wgNotice='';var wgNoticeLocal='';
 </ol>
 </div>
 <p><a name="External_links" id="External_links"></a></p>
-<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=10" title="Edit section: External links">edit</a>]</span> <span class="mw-headline">External links</span></h2>
+<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=11" title="Edit section: External links">edit</a>]</span> <span class="mw-headline">External links</span></h2>
 <ul>
 <li><a href="http://www.publications.parliament.uk/pa/ld/ldinfo/a-z.htm" class="external text" title="http://www.publications.parliament.uk/pa/ld/ldinfo/a-z.htm" rel="nofollow">United Kingdom Parliament Alphabetical List of Members of the House of Lords</a></li>
 </ul>
@@ -4724,13 +4730,13 @@ var wgNotice='';var wgNoticeLocal='';
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 3652/1000000
+Preprocessor node count: 3653/1000000
 Post-expand include size: 25937/2048000 bytes
 Template argument size: 9249/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20090422110122 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20090501004709 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>:&#32;<span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:House_of_Lords" title="Category:House of Lords">House of Lords</a></span></div></div>			<!-- end content -->
@@ -4806,7 +4812,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=285423452" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=285423452">Cite this page</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=286825671" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=286825671">Cite this page</a></li>			</ul>
 		</div>
 	</div>
 		</div><!-- end of the left (by default at least) column -->
@@ -4815,7 +4821,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-					<li id="lastmod"> This page was last modified on 22 April 2009, at 11:01 (UTC).</li>
+					<li id="lastmod"> This page was last modified on 29 April 2009, at 10:35 (UTC).</li>
 					<li id="copyright">All text is available under the terms of the <a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc.</a>, a U.S. registered <a class='internal' href="http://en.wikipedia.org/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="http://en.wikipedia.org/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="http://en.wikipedia.org/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>
 					<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
 					<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
@@ -4825,4 +4831,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 </div>
 
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv204 in 0.043 secs. --></body></html>
+<!-- Served by srv97 in 0.110 secs. --></body></html>
