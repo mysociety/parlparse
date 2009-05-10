@@ -961,7 +961,7 @@ var wgNotice='';var wgNoticeLocal='';
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Lord_Chadlington" title="Lord Chadlington">The Lord Chadlington</a></td>
+<td><a href="/wiki/Lord_Chadlington" title="Lord Chadlington" class="mw-redirect">The Lord Chadlington</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -1165,7 +1165,7 @@ var wgNotice='';var wgNoticeLocal='';
 <td>Hereditary but sits as Baron Balniel (life peer)</td>
 </tr>
 <tr>
-<td><a href="/wiki/Baroness_Crawley" title="Baroness Crawley">The Baroness Crawley</a></td>
+<td><a href="/wiki/Baroness_Crawley" title="Baroness Crawley" class="mw-redirect">The Baroness Crawley</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4730,13 +4730,13 @@ var wgNotice='';var wgNoticeLocal='';
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 3653/1000000
-Post-expand include size: 25937/2048000 bytes
+Preprocessor node count: 3665/1000000
+Post-expand include size: 26292/2048000 bytes
 Template argument size: 9249/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20090501004709 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20090508122413 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>:&#32;<span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:House_of_Lords" title="Category:House of Lords">House of Lords</a></span></div></div>			<!-- end content -->
@@ -4831,4 +4831,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 </div>
 
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv97 in 0.110 secs. --></body></html>
+<!-- Served by srv205 in 0.045 secs. --></body></html>
