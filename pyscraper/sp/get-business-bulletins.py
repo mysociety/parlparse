@@ -27,6 +27,8 @@ urllib._urlopener = MyURLopener()
 parser = OptionParser()
 parser.add_option('-q', "--quiet", dest="verbose", action="store_false",
                   default=True, help="don't print status messages")
+parser.add_option('-a', "--all", dest="all", action="store_true",
+                  help="go right back to the beginning of the history")
 (options, args) = parser.parse_args()
 
 currentdate = datetime.date.today()
@@ -111,7 +113,7 @@ for year in range(1999,currentyear+1):
 
         contents_filename = output_directory + "contents-"+subdir+"_"+leaf
 
-        if not contents_filename in contents_pages_fetched:
+        if (not options.all) and (not contents_filename in contents_pages_fetched):
             continue
 
         fp = open(contents_filename)
