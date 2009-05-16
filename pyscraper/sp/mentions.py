@@ -4,6 +4,7 @@ import re
 import datetime
 import time
 import glob
+from common import compare_spids
 
 def add_mention_to_dictionary(key,mention,dictionary):
     dictionary.setdefault(key,[])
@@ -95,28 +96,6 @@ class MentionsParser(xml.sax.handler.ContentHandler):
 def load_question_mentions():
     mentions_parser = MentionsParser()
     return mentions_parser.get_mentions_hash()
-
-def compare_spids(a,b):
-    ma = re.search('S(\d+\w+)-(\d+)',a)
-    mb = re.search('S(\d+\w+)-(\d+)',b)
-    if ma and mb:
-        mas = ma.group(1)
-        mbs = mb.group(1)
-        mai = int(ma.group(2),10)
-        mbi = int(mb.group(2),10)
-        if mas < mbs:
-            return -1
-        elif mas > mbs:
-            return 1
-        else:
-            if mai < mbi:
-                return -1
-            if mai > mbi:
-                return 1
-            else:
-                return 0
-    else:
-        raise Exception, "Couldn't match spids: "+a+" and "+b
 
 def save_question_mentions(id_to_mentions):
     xml_output_directory = "../../../parldata/scrapedxml/sp-questions/";

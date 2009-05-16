@@ -62,3 +62,46 @@ def non_tag_data_in(o):
 def tidy_string(s):
     result = re.sub('(?ims)\s+',' ',s)
     return result.strip()
+
+# These two methods from:
+#
+#  http://snippets.dzone.com/posts/show/4569
+
+from htmlentitydefs import name2codepoint
+
+def substitute_entity(match):
+    ent = match.group(2)
+    if match.group(1) == "#":
+        return unichr(int(ent))
+    else:
+        cp = name2codepoint.get(ent)
+        if cp:
+            return unichr(cp)
+        else:
+            return match.group()
+
+def decode_htmlentities(string):
+    entity_re = re.compile("&(#?)(\d{1,5}|\w{1,8});")
+    return entity_re.subn(substitute_entity, string)[0]
+
+def compare_spids(a,b):
+    ma = re.search('S(\d+\w+)-(\d+)',a)
+    mb = re.search('S(\d+\w+)-(\d+)',b)
+    if ma and mb:
+        mas = ma.group(1)
+        mbs = mb.group(1)
+        mai = int(ma.group(2),10)
+        mbi = int(mb.group(2),10)
+        if mas < mbs:
+            return -1
+        elif mas > mbs:
+            return 1
+        else:
+            if mai < mbi:
+                return -1
+            if mai > mbi:
+                return 1
+            else:
+                return 0
+    else:
+        raise Exception, "Couldn't match spids: "+a+" and "+b
