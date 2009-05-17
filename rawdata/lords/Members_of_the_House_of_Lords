@@ -52,7 +52,7 @@
 		var wgUserLanguage = "en";
 		var wgContentLanguage = "en";
 		var wgBreakFrames = false;
-		var wgCurRevisionId = 286825671;
+		var wgCurRevisionId = 290189679;
 		var wgVersion = "1.15alpha";
 		var wgEnableAPI = true;
 		var wgEnableWriteAPI = true;
@@ -93,7 +93,7 @@ var wgNotice='';var wgNoticeLocal='';
 <h2>Contents</h2>
 </div>
 <ul>
-<li class="toclevel-1"><a href="#Bishops"><span class="tocnumber">1</span> <span class="toctext">Bishops</span></a></li>
+<li class="toclevel-1"><a href="#Lords_Spiritual"><span class="tocnumber">1</span> <span class="toctext">Lords Spiritual</span></a></li>
 <li class="toclevel-1"><a href="#Lords_Temporal"><span class="tocnumber">2</span> <span class="toctext">Lords Temporal</span></a>
 <ul>
 <li class="toclevel-2"><a href="#A-F"><span class="tocnumber">2.1</span> <span class="toctext">A-F</span></a></li>
@@ -116,8 +116,8 @@ var wgNotice='';var wgNoticeLocal='';
  if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
 //]]>
 </script>
-<p><a name="Bishops" id="Bishops"></a></p>
-<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=1" title="Edit section: Bishops">edit</a>]</span> <span class="mw-headline">Bishops</span></h2>
+<p><a name="Lords_Spiritual" id="Lords_Spiritual"></a></p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=1" title="Edit section: Lords Spiritual">edit</a>]</span> <span class="mw-headline">Lords Spiritual</span></h2>
 <table class="wikitable">
 <tr>
 <th>Bishopric</th>
@@ -240,12 +240,6 @@ var wgNotice='';var wgNoticeLocal='';
 <td>1999</td>
 </tr>
 <tr>
-<td><a href="/wiki/Bishop_of_Peterborough" title="Bishop of Peterborough">The Lord Bishop of Peterborough</a></td>
-<td><a href="/wiki/Ian_Cundy" title="Ian Cundy">Ian Cundy</a></td>
-<td>2001</td>
-<td>1996</td>
-</tr>
-<tr>
 <td><a href="/wiki/Bishop_of_Portsmouth_(Anglican)" title="Bishop of Portsmouth (Anglican)">The Lord Bishop of Portsmouth</a></td>
 <td><a href="/wiki/Kenneth_William_Stevenson" title="Kenneth William Stevenson">Kenneth Stevenson</a></td>
 <td>2000</td>
@@ -280,6 +274,12 @@ var wgNotice='';var wgNoticeLocal='';
 <td><a href="/wiki/George_Henry_Cassidy" title="George Henry Cassidy">George Cassidy</a></td>
 <td>2004</td>
 <td>1999</td>
+</tr>
+<tr>
+<td><a href="/wiki/Bishop_of_Wakefield" title="Bishop of Wakefield">The Lord Bishop of Wakefield</a></td>
+<td><a href="/wiki/Stephen_George_Platten" title="Stephen George Platten">Stephen Platten</a></td>
+<td>2009</td>
+<td>2003</td>
 </tr>
 </table>
 <p><a name="Lords_Temporal" id="Lords_Temporal"></a></p>
@@ -621,12 +621,6 @@ var wgNotice='';var wgNoticeLocal='';
 <td><a href="/wiki/Peter_Blaker,_Baron_Blaker" title="Peter Blaker, Baron Blaker">The Lord Blaker</a></td>
 <td>Conservative</td>
 <td>Life Peer</td>
-<td>&#160;</td>
-</tr>
-<tr>
-<td><a href="/wiki/Christopher_Bathurst,_3rd_Viscount_Bledisloe" title="Christopher Bathurst, 3rd Viscount Bledisloe">The Viscount Bledisloe</a></td>
-<td>Cross Bench</td>
-<td>Elected Hereditary Peer</td>
 <td>&#160;</td>
 </tr>
 <tr>
@@ -4548,6 +4542,18 @@ var wgNotice='';var wgNoticeLocal='';
 <th>Ref</th>
 </tr>
 <tr>
+<td><a href="/wiki/Christopher_Bathurst,_3rd_Viscount_Bledisloe" title="Christopher Bathurst, 3rd Viscount Bledisloe">The Viscount Bledisloe</a></td>
+<td>Cross Bench</td>
+<td>Elected Hereditary Peer</td>
+<td><span class="mw-formatted-date" title="2009-05-12"><a href="/wiki/May_12" title="May 12">12 May</a> <a href="/wiki/2009" title="2009">2009</a></span></td>
+</tr>
+<tr>
+<td><a href="/wiki/Ian_Cundy" title="Ian Cundy">The Lord Bishop of Peterborough</a></td>
+<td>Bishop</td>
+<td></td>
+<td><span class="mw-formatted-date" title="2009-05-07"><a href="/wiki/May_7" title="May 7">7 May</a> <a href="/wiki/2009" title="2009">2009</a></span></td>
+</tr>
+<tr>
 <td><a href="/wiki/Edward_George,_Baron_George" title="Edward George, Baron George">The Lord George</a></td>
 <td>Cross Bench</td>
 <td>Former <a href="/wiki/Governor_of_the_Bank_of_England" title="Governor of the Bank of England">Governor of the Bank of England</a></td>
@@ -4668,20 +4674,6 @@ var wgNotice='';var wgNoticeLocal='';
 <td><span class="mw-formatted-date" title="2008-05-16"><a href="/wiki/May_16" title="May 16">16 May</a> <a href="/wiki/2008" title="2008">2008</a></span></td>
 <td></td>
 </tr>
-<tr>
-<td><a href="/wiki/Baroness_Michie_of_Gallanach" title="Baroness Michie of Gallanach" class="mw-redirect">The Baroness Michie of Gallanach</a></td>
-<td>Liberal Democrat</td>
-<td></td>
-<td><span class="mw-formatted-date" title="2008-05-06"><a href="/wiki/May_6" title="May 6">6 May</a> <a href="/wiki/2008" title="2008">2008</a></span></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/Lord_Holme_of_Cheltenham" title="Lord Holme of Cheltenham" class="mw-redirect">The Lord Holme of Cheltenham</a></td>
-<td>Liberal Democrat</td>
-<td></td>
-<td><span class="mw-formatted-date" title="2008-05-04"><a href="/wiki/May_4" title="May 4">4 May</a> <a href="/wiki/2008" title="2008">2008</a></span></td>
-<td></td>
-</tr>
 </table>
 <p><a name="Peers_on_leave_of_absence" id="Peers_on_leave_of_absence"></a></p>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=8" title="Edit section: Peers on leave of absence">edit</a>]</span> <span class="mw-headline">Peers on leave of absence</span></h2>
@@ -4730,13 +4722,13 @@ var wgNotice='';var wgNoticeLocal='';
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 3665/1000000
+Preprocessor node count: 3683/1000000
 Post-expand include size: 26292/2048000 bytes
 Template argument size: 9249/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20090508122413 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20090515225246 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>:&#32;<span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:House_of_Lords" title="Category:House of Lords">House of Lords</a></span></div></div>			<!-- end content -->
@@ -4799,7 +4791,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
 				<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
 				<li id="n-contact"><a href="/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
-				<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Donate" title="Support us">Donate to Wikipedia</a></li>
+				<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Donate/Now/en?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=spontaneous_donation" title="Support us">Donate to Wikipedia</a></li>
 				<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
 			</ul>
 		</div>
@@ -4812,7 +4804,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=286825671" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=286825671">Cite this page</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=290189679" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=290189679">Cite this page</a></li>			</ul>
 		</div>
 	</div>
 		</div><!-- end of the left (by default at least) column -->
@@ -4821,7 +4813,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-					<li id="lastmod"> This page was last modified on 29 April 2009, at 10:35 (UTC).</li>
+					<li id="lastmod"> This page was last modified on 15 May 2009, at 22:52 (UTC).</li>
 					<li id="copyright">All text is available under the terms of the <a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc.</a>, a U.S. registered <a class='internal' href="http://en.wikipedia.org/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="http://en.wikipedia.org/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="http://en.wikipedia.org/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>
 					<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
 					<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
@@ -4831,4 +4823,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 </div>
 
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv205 in 0.045 secs. --></body></html>
+<!-- Served by srv205 in 0.052 secs. --></body></html>
