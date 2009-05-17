@@ -10,4 +10,4 @@ set -e
 ./parse-written-answers.py
 ./parse.py
 ./parse-question-mentions.py
-
+./parse-motions.py
