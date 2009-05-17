@@ -81,14 +81,16 @@ for year in range(1999,currentyear+1):
 
     for t in link_tags:
 
-        if t.has_key('href') and re.match('^bb-',t['href']):
+        if t.has_key('href'):
+            m = re.search('(^|/)(bb-[0-9]+/.*)$',t['href'])
+            if m:
+                page = m.group(2)
 
-            page = t['href']
+                subdir, leaf = page.split("/")
+                if options.verbose: print "  == %s / %s ==" % (subdir,leaf)
 
-            subdir, leaf = page.split("/")
-
-            contents_pages.add( (subdir,leaf) )
-            contents_hash[subdir+"_"+leaf] = True
+                contents_pages.add( (subdir,leaf) )
+                contents_hash[subdir+"_"+leaf] = True
 
     # Fetch all the contents pages:
 
