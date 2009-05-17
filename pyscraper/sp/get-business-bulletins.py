@@ -101,7 +101,7 @@ for year in range(1999,currentyear+1):
 
         # Make sure we refetch the latest one, since it might have been updated.
         if not os.path.exists(contents_filename) or (len(existing_contents_pages) > 0 and existing_contents_pages[-1] == contents_filename):
-            if options.verbose: print "Fetching %s" % contents_url
+            if options.verbose: print "  Fetching %s" % contents_url
             ur = urllib.urlopen(contents_url)
             fp = open(contents_filename, 'w')
             fp.write(ur.read())
@@ -114,6 +114,7 @@ for year in range(1999,currentyear+1):
     for (subdir,leaf) in contents_pages:
 
         contents_filename = output_directory + "contents-"+subdir+"_"+leaf
+        if options.verbose: print "  Contents page: " + contents_filename
 
         if (not options.all) and (not contents_filename in contents_pages_fetched):
             continue
@@ -169,7 +170,7 @@ for year in range(1999,currentyear+1):
             day_url = bulletin_prefix + subdir + "/" + page
 
             if not os.path.exists(day_filename):
-                if options.verbose: print "Fetching %s" % day_url
+                if options.verbose: print "    Fetching %s" % day_url
                 ur = urllib.urlopen(day_url)
                 fp = open(day_filename, 'w')
                 fp.write(ur.read())
