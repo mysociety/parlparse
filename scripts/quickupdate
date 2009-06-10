@@ -1,19 +1,54 @@
-#!/bin/bash
-#set -x  # for debugging, prints each line before executing it
+#!/usr/bin/python
+#
+# Thrown together
+# Currently only rescrapes/parses missing UK and NI from preivous day
 
-# Manual morning update.  Only scrapes/parses last week, and
-# patchtool is always on. For Francis.
+import datetime, os, commands
 
-source ~/parlparse/scripts/consts
+base = '/home/parlparse/'
+base_html = base + 'parldata/cmpages/'
+base_scraper = base + 'parlparse/pyscraper/'
 
-# Run scraper
-cd ~/parlparse/scripts
-RET=0
-echo "Scraping"
-./updatedaterange-scrape $NOW_FROMDATE $NOW_FROMDATE $NOW_TODATE || RET=1
-echo "Parsing"
-./updatedaterange-parse $NOW_FROMDATE $NOW_FROMDATE $NOW_TODATE --patchtool || RET=1
-echo "FAI final error is $RET"
+mon_dirs = { 'debates': 'debates/debates', 'wms': 'wms/ministerial', 'wrans': 'wrans/answers', 'lords': 'lordspages/daylord' }
+tue_dirs = mon_dirs.copy()
+tue_dirs['westminhall'] = 'westminhall/westminster'
 
-echo "Calling update of other sites"
-./other-sites-update $RET
+def run_command(dir, cmd):
+    #print 'Running', cmd
+    print 'cd %s%s' % (base_scraper, dir)
+    #os.chdir(base_scraper + dir)
+    print cmd
+    #status, output = commands.getstatusoutput(cmd)
+    #print 'Exit status =', status
+    #print 'Output', output
+
+today = datetime.date.today()
+wday = today.weekday()
+
+if wday == 0: # Monday
+    dirs = mon_dirs
+    yesterday = (today - datetime.timedelta(days=3)).isoformat()
+elif wday == 1: # Tuesday
+    dirs = mon_dirs
+    yesterday = (today - datetime.timedelta(days=1)).isoformat()
+elif wday == 2 or wday == 3 or wday == 4: # Wednesday to Friday
+    dirs = tue_dirs
+    yesterday = (today - datetime.timedelta(days=1)).isoformat()
+
+rescrape = []
+for type, dir in dirs.items():
+    file = base_html + dir + yesterday + 'a.html'
+    if not os.path.exists(file):
+        rescrape.append(type)
+
+# Scrape
+if rescrape:
+    run_command('', 'lazyrunall.py --date=' + yesterday + ' scrape ' + ' '.join(rescrape))
+run_command('ni/', './scrape.py')
+
+# Parse
+run_command('', 'lazyrunall.py --date=' + yesterday + ' parse debates wrans westminhall wms lords --patchtool')
+run_command('ni/', './parse.py --patchtool')
+run_command('standing/', './parse.py --patchtool')
+
+run_command('../scripts/', './other-sites-update 0')

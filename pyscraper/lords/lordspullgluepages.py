@@ -68,7 +68,7 @@ def ExtractIndexContents(urlx, sdate):
         if not res:
                 res = re.findall('<p><a href\s*=\s*"([^"]*?\.htm)#[^"]*"><h3><center>((?:<!|[^<])*)(?:</center>|</h3>)+\s*</a></p>(?i)', lktex)
 	if not res:
-		print "no links found from day index page"
+		print "no links found from day index page", urlx
 		raise Exception, "no links"
 	return res
 
