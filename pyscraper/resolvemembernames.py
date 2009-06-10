@@ -38,6 +38,8 @@ class MemberList(xml.sax.handler.ContentHandler):
         self.constoidmap = {} # constituency name --> cons attributes (with date and ID)
         self.considtomembermap = {} # cons ID --> MPs
         self.considtonamemap = {} # cons ID --> name
+        self.conshansardtoid = {} # Historic Hansard cons ID -> our cons ID
+        self.historichansard = {} # Historic Hansard commons membership ID -> MPs
         self.parties = {} # party --> MPs
         self.officetopersonmap = {} # member ID --> person ID
         self.persontoofficemap = {} # person ID --> office
@@ -45,7 +47,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         self.chairman = None
 
         # "rah" here is a typo in division 64 on 13 Jan 2003 "Ancram, rah Michael"
-        self.titles = "Dr |Hon |hon |rah |rh |right hon |Mrs |Ms |Mr |Miss |Mis |Rt Hon |Reverend |The Rev |The Reverend |Sir |Dame |Rev |Prof "
+        self.titles = "Dr |Hon |hon |rah |rh |right hon |Mrs |Ms |Mr |Miss |Mis |Rt Hon |Reverend |The Rev |The Reverend |Sir |Dame |Rev |Prof |Professor |Earl of "
         self.retitles = re.compile('^(?:%s)' % self.titles)
         self.rejobs = re.compile('^%s$' % parlPhrases.regexpjobs)
 
@@ -71,7 +73,9 @@ class MemberList(xml.sax.handler.ContentHandler):
         # all-members.xml loading
         if name == "member":
 
-			# MAKE A COPY.  (The xml documentation warns that the attr object can be reused, so shouldn't be put into your structures if it's not a copy).
+            # MAKE A COPY.  (The xml documentation warns that the attr object
+            # can be reused, so shouldn't be put into your structures if it's
+            # not a copy).
             attr = attr.copy()
 
             if self.members.get(attr["id"]):
@@ -98,9 +102,11 @@ class MemberList(xml.sax.handler.ContentHandler):
             consid = None
             # find the constituency id for this MP
             for consattr in consids:
-                if (consattr['fromdate'] <= attr['fromdate'] and
-                    attr['fromdate'] <= attr['todate'] and
-                    attr['todate'] <= consattr['todate']):
+                attr_fromdate = len(attr['fromdate'])==4 and ('%s-01-01' % attr['fromdate']) or attr['fromdate']
+                attr_todate = len(attr['todate'])==4 and ('%s-12-31' % attr['todate']) or attr['todate']
+                if (consattr['fromdate'] <= attr_fromdate and
+                    attr_fromdate <= attr_todate and
+                    attr_todate <= consattr['todate']):
                     if consid and consid != consattr['id']:
                         raise Exception, "Two constituency ids %s %s overlap with MP %s" % (consid, consattr['id'], attr['id'])
                     consid = consattr['id']
@@ -112,6 +118,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                 raise Exception, "Constituency '%s' in members file differs from first constituency '%s' listed in cons file" % (attr["constituency"], backformed_cons)
             # check first date ranges don't overlap
             for curattr in self.considtomembermap.get(consid, []):
+                if curattr['todate'] < '1997-05-01': continue
                 if curattr['fromdate'] <= attr['fromdate'] <= curattr['todate'] \
                     or curattr['fromdate'] <= attr['todate'] <= curattr['todate'] \
                     or attr['fromdate'] <= curattr['fromdate'] <= attr['todate'] \
@@ -123,6 +130,9 @@ class MemberList(xml.sax.handler.ContentHandler):
             # ... and by party
             party = attr["party"]
             self.parties.setdefault(party, []).append(attr)
+
+            if attr.has_key("hansard_id"):
+                self.historichansard.setdefault(int(attr['hansard_id']), []).append(attr)
 
         # member-aliases.xml loading
         elif name == "alias":
@@ -174,9 +184,18 @@ class MemberList(xml.sax.handler.ContentHandler):
         elif name == "constituency":
             if attr.has_key('parliament') and attr['parliament'] == "edinburgh":
                 # Then this is a Scottish Parliament constituency...
-                self.loadspconsattr = attr
+                self.loadspconsattr = attr.copy()
             else:
-                self.loadconsattr = attr
+                self.loadconsattr = {
+                    'hansard_id': attr['hansard_id'],
+                    'id': attr['id'],
+                    'fromdate': attr['fromdate'],
+                    'todate': attr['todate'],
+                }
+                if len(self.loadconsattr['fromdate']) == 4:
+                    self.loadconsattr['fromdate'] = '%s-01-01' % self.loadconsattr['fromdate']
+                if len(self.loadconsattr['todate']) == 4:
+                    self.loadconsattr['todate'] = '%s-12-31' % self.loadconsattr['todate']
             pass
         elif name == "name":
             if self.loadconsattr: # name tag within constituency tag
@@ -186,6 +205,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                 # without punctuation, spaces, in lower case
                 nopunc = self.strippunc(attr['text'])
                 self.constoidmap.setdefault(nopunc, []).append(self.loadconsattr)
+                self.conshansardtoid[self.loadconsattr['hansard_id']] = self.loadconsattr['id']
             elif self.loadspconsattr: # name tag within constituency tag from the scottish parliament
                 # We need to distinguish the Scottish Parliament
                 # constituencies from Westminster constituencies with
@@ -841,7 +861,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             raise Exception, "Unknown constituency %s" % cons
         consid = None
         for consattr in consids:
-            if consattr["fromdate"] <= date and date <= consattr["todate"]:
+            if consattr['fromdate'] <= date and date <= consattr['todate']:
                 if consid:
                     raise Exception, "Two like-named constituency ids %s %s overlap with date %s" % (consid, consattr['id'], date)
                 consid = consattr['id']
@@ -888,6 +908,18 @@ class MemberList(xml.sax.handler.ContentHandler):
     def membertoperson(self, memberid):
         return self.officetopersonmap[memberid]
 
+    # Historic ID -> ID
+    def matchhistoric(self, hansard_id, date):
+        ids = []
+        for attr in self.historichansard[hansard_id]:
+            if attr["fromdate"] <= date and date <= attr["todate"]:
+                ids.append(attr["id"])
+
+        if len(ids) == 0:
+            raise Exception, 'Could not find ID for Historic ID %s, date %s' % (hansard_id, date)
+        if len(ids) > 1:
+            raise Exception, 'Multiple results for Historic ID %s, date %s: %s' % (hansard_id, date, ','.join(ids))
+        return ids[0]
 
 # Construct the global singleton of class which people will actually use
 memberList = MemberList()

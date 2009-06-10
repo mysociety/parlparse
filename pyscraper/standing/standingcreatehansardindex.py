@@ -199,6 +199,8 @@ def GetBillLinks(bforce):
 			print "year=", year
 		bnks = GetLinksTitles(billyear[0])
 		for bnk in bnks:
+                        if re.match('House of Lords Special Public Bill Committees', bnk[1]):
+                                continue
 			mcttee = re.match("(.*? (?:Bill|Dogs|Names))(?:\s?\[(?:<i>)?Lords(?:</i>)?\])?(?:\s?(?:<i>)?\[Lords\](?:</i>)?)?(?:\s*\[(?:<i>)?<FONT size=\-1>LORDS</FONT>(?:</i>)?\])?(?:\s*Bill)?(?:</i>)*(?:\s)*(?:\(except clauses.*?\) )?(\((Standing Committee [a-zA-Z]|Special Standing Committee|(Second|2nd) Reading Committee)\)\s?)?$", bnk[1])
 			if not mcttee:
 				print "Unrecognized committee or bill name:", bnk
@@ -207,9 +209,7 @@ def GetBillLinks(bforce):
 				billtitle = "Company and Business Names (Chamber of Commerce, Etc.) Bill"
 			if billtitle == "Breeding and Sale of Dogs":
 				billtitle = "Breeding and Sale of Dogs Bill"
-			if not re.match(".*? Bill$", billtitle):
-				print "Does not end in Bill", billtitle
-			assert re.match(".*? Bill$", billtitle)
+			assert re.match(".*? Bill$", billtitle), 'Does not end in Bill : %s' % billtitle
 			committee = mcttee.group(2)
 			#res.append((year, billtitle, committee, bnk[0]))
 			ps, committeedate = GetReportProceedings(bnk[0], year)

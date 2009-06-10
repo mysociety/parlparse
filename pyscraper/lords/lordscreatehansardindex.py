@@ -66,8 +66,8 @@ def LordsIndexFromAll(urlalldays):
         srlinkpage = srlinkpage.replace('ld200708/ldhansrd/index/081203', 'ld200809/ldhansrd/index/081203')
 
 	# Find lines of the form:
-	# <p><a href="lds04/index/40129-x.htm">29 Jan 2004</a></p>
-	realldayslinks = re.compile('<a href="(/[^"#]*)">([^<]*)</a>(?i)')
+	# <p><a href="lds04/index/40129-x.html">29 Jan 2004</a></p>
+	realldayslinks = re.compile('<a href="(/[^"#]*\.html)">([^<]*)</a>(?i)')
 	datelinks = realldayslinks.findall(srlinkpage)
 
 	res = []

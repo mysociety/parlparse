@@ -15,20 +15,20 @@
 		<link rel="alternate" type="application/rss+xml" title="Wikipedia RSS Feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=rss" />
 		<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
 		<title>MPs elected in the United Kingdom general election, 2001 - Wikipedia, the free encyclopedia</title>
-		<link rel="stylesheet" href="/skins-1.5/common/shared.css?207xx" type="text/css" media="screen" />
-		<link rel="stylesheet" href="/skins-1.5/common/commonPrint.css?207xx" type="text/css" media="print" />
-		<link rel="stylesheet" href="/skins-1.5/monobook/main.css?207xx" type="text/css" media="screen" />
-		<link rel="stylesheet" href="/skins-1.5/chick/main.css?207xx" type="text/css" media="handheld" />
-		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?207xx" type="text/css" media="screen" /><![endif]-->
-		<!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?207xx" type="text/css" media="screen" /><![endif]-->
-		<!--[if IE 6]><link rel="stylesheet" href="/skins-1.5/monobook/IE60Fixes.css?207xx" type="text/css" media="screen" /><![endif]-->
-		<!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?207xx" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="/skins-1.5/common/shared.css?207" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/skins-1.5/common/commonPrint.css?207" type="text/css" media="print" />
+		<link rel="stylesheet" href="/skins-1.5/monobook/main.css?207" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/skins-1.5/chick/main.css?207" type="text/css" media="handheld" />
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/skins-1.5/monobook/IE60Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?207" type="text/css" media="screen" /><![endif]-->
 		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" />
 		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
 		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
 		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" />
 		<link rel="stylesheet" href="/w/index.php?title=-&amp;action=raw&amp;maxage=2678400&amp;gen=css" type="text/css" />
-		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?207xx"></script>
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?207"></script>
 		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
 
 		<script type= "text/javascript">/*<![CDATA[*/
@@ -53,7 +53,7 @@
 		var wgUserLanguage = "en";
 		var wgContentLanguage = "en";
 		var wgBreakFrames = false;
-		var wgCurRevisionId = 287814634;
+		var wgCurRevisionId = 294505797;
 		var wgVersion = "1.15alpha";
 		var wgEnableAPI = true;
 		var wgEnableWriteAPI = true;
@@ -67,13 +67,13 @@
 		var wgRestrictionMove = [];
 		/*]]>*/</script>
 
-		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?207xx"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?207"><!-- wikibits js --></script>
 		<!-- Head Scripts -->
-		<script type="text/javascript" src="/skins-1.5/common/ajax.js?207xx"></script>
-		<script type="text/javascript" src="/skins-1.5/common/mwsuggest.js?207xx"></script>
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js?207"></script>
+		<script type="text/javascript" src="/skins-1.5/common/mwsuggest.js?207"></script>
 <script type="text/javascript">/*<![CDATA[*/
 var wgNotice='';var wgNoticeLocal='';
-/*]]>*/</script>		<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?207xx"></script>
+/*]]>*/</script>		<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?207"></script>
 		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
 	</head>
 <body class="mediawiki ltr ns-0 ns-subject page-MPs_elected_in_the_United_Kingdom_general_election_2001 skin-monobook">
@@ -88,27 +88,27 @@ var wgNotice='';var wgNoticeLocal='';
 									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
 			<table id="toc" style="float:right">
 <tr>
-<td><a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election,_1992" title="MPs elected in the United Kingdom general election, 1992">51st Parliament</a></td>
-<td>(<a href="/wiki/United_Kingdom_general_election,_1992" title="United Kingdom general election, 1992">1992</a>)</td>
+<td><a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election,_1992" title="MPs elected in the United Kingdom general election, 1992">1992–1997 Parliament</a></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election,_1997" title="MPs elected in the United Kingdom general election, 1997">52nd Parliament</a></td>
-<td>(<a href="/wiki/United_Kingdom_general_election,_1997" title="United Kingdom general election, 1997">1997</a>)</td>
+<td><a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election,_1997" title="MPs elected in the United Kingdom general election, 1997">1997–2001 Parliament</a></td>
+<td></td>
 </tr>
 <tr>
-<td><b>53rd Parliament</b></td>
-<td>(<a href="/wiki/United_Kingdom_general_election,_2001" title="United Kingdom general election, 2001">2001</a>)</td>
+<td><b>2001–2005 Parliament</b></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election,_2005" title="MPs elected in the United Kingdom general election, 2005">54th Parliament</a></td>
+<td><a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election,_2005" title="MPs elected in the United Kingdom general election, 2005">Present Parliament</a></td>
 <td>(<a href="/wiki/United_Kingdom_general_election,_2005" title="United Kingdom general election, 2005">2005</a>)</td>
 </tr>
 <tr>
-<td><a href="/wiki/United_Kingdom_general_election,_2009/10" title="United Kingdom general election, 2009/10" class="mw-redirect">55th Parliament</a></td>
+<td><a href="/wiki/United_Kingdom_general_election,_2009/10" title="United Kingdom general election, 2009/10" class="mw-redirect">Next Parliament</a></td>
 <td>(est. 2009/10)</td>
 </tr>
 </table>
-<p>This is a list of <a href="/wiki/Member_of_Parliament" title="Member of Parliament">Members of Parliament</a> (MPs) elected to the <a href="/wiki/British_House_of_Commons" title="British House of Commons" class="mw-redirect">House of Commons</a> for the Fifty-Third Parliament of the United Kingdom at the <a href="/wiki/United_Kingdom_general_election,_2001" title="United Kingdom general election, 2001">2001 general election</a>, held on 7 June 2001.</p>
+<p>This is a list of <a href="/wiki/Member_of_Parliament" title="Member of Parliament">Members of Parliament</a> (MPs) elected to the <a href="/wiki/British_House_of_Commons" title="British House of Commons" class="mw-redirect">House of Commons</a> at the <a href="/wiki/United_Kingdom_general_election,_2001" title="United Kingdom general election, 2001">2001 general election</a>, held on 7 June.</p>
 <p>The list is arranged by constituency. New MPs elected since the general election and changes in party allegiance are noted at the bottom of the page. The Parliament was dissolved on 11 April 2005 preparatory to the <a href="/wiki/United_Kingdom_general_election,_2005" title="United Kingdom general election, 2005">2005 general election</a>.</p>
 <p>Notable newcomers to the <a href="/wiki/British_House_of_Commons" title="British House of Commons" class="mw-redirect">House of Commons</a> included <a href="/wiki/David_Cameron" title="David Cameron">David Cameron</a>, <a href="/wiki/David_Miliband" title="David Miliband">David Miliband</a>, <a href="/wiki/Boris_Johnson" title="Boris Johnson">Boris Johnson</a> and <a href="/wiki/George_Osborne" title="George Osborne">George Osborne</a>.</p>
 <p><a name="Composition" id="Composition"></a></p>
@@ -506,7 +506,7 @@ var wgNotice='';var wgNoticeLocal='';
 </tr>
 <tr>
 <td><a href="/wiki/Blackburn_(UK_Parliament_constituency)" title="Blackburn (UK Parliament constituency)">Blackburn</a></td>
-<td><a href="/wiki/Jack_Straw_(politician)" title="Jack Straw (politician)" class="mw-redirect">Jack Straw</a></td>
+<td><a href="/wiki/Jack_Straw" title="Jack Straw">Jack Straw</a></td>
 <td>Labour</td>
 </tr>
 <tr>
@@ -3720,7 +3720,7 @@ Template argument size: 30103/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!2 and timestamp 20090510032305 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!2 and timestamp 20090605025244 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election,_2001">http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election,_2001</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>:&#32;<span dir='ltr'><a href="/wiki/Category:MPs_elected_in_UK_elections" title="Category:MPs elected in UK elections">MPs elected in UK elections</a></span> | <span dir='ltr'><a href="/wiki/Category:2001_elections_in_the_United_Kingdom" title="Category:2001 elections in the United Kingdom">2001 elections in the United Kingdom</a></span></div></div>			<!-- end content -->
@@ -3796,7 +3796,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/MPs_elected_in_the_United_Kingdom_general_election,_2001" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;oldid=287814634" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;id=287814634">Cite this page</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;oldid=294505797" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;id=294505797">Cite this page</a></li>			</ul>
 		</div>
 	</div>
 	<div id="p-lang" class="portlet">
@@ -3813,7 +3813,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-					<li id="lastmod"> This page was last modified on 4 May 2009, at 09:50 (UTC).</li>
+					<li id="lastmod"> This page was last modified on 5 June 2009 at 02:51.</li>
 					<li id="copyright">All text is available under the terms of the <a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Copyrights" title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc.</a>, a U.S. registered <a class='internal' href="http://en.wikipedia.org/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="http://en.wikipedia.org/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="http://en.wikipedia.org/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>
 					<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
 					<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
@@ -3823,4 +3823,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 </div>
 
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv216 in 0.071 secs. --></body></html>
+<!-- Served by srv209 in 0.086 secs. --></body></html>

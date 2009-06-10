@@ -95,7 +95,7 @@ lordlordmatches = {
     "uk.org.publicwhip/lord/100491":"uk.org.publicwhip/lord/100944",  # And Perason
     "uk.org.publicwhip/lord/100945":"uk.org.publicwhip/lord/100690",  # And Willoughby.
     "uk.org.publicwhip/lord/100147":"uk.org.publicwhip/lord/100959",  # And Cox
-    "uk.org.publicwhip/lord/100716":"uk.org.publicwhip/lord/100978",  # Viscoutn Cranborne inherits Marquess of Salisbury
+    "uk.org.publicwhip/lord/100716":"uk.org.publicwhip/lord/100978",  # Viscount Cranborne inherits Marquess of Salisbury
     # XXX: Must be a way to do party changes automatically!
     # XXX: And the key:value ordering here is very suspect
 }
@@ -340,6 +340,8 @@ class PersonSets(xml.sax.handler.ContentHandler):
 		self.member_sp_personset={}
 		self.ministermap={}
 
+        self.historichansardtoid = {} # Historic Hansard Person ID -> MPs
+
         self.old_idtoperson={} # ID (member/lord/office) --> Person ID in last version of file
         self.last_person_id=None # largest person ID previously used
         self.in_person=None
@@ -414,17 +416,19 @@ class PersonSets(xml.sax.handler.ContentHandler):
                 fout.write('    <office id="%s"%s/>\n' % (ofid, current[ofid]))
             fout.write('</person>\n')
 
-    def crosschecks(self):
-        # check MP date ranges don't overlap
-        for personset in self.fullnamescons.values():
-            dateset = map(lambda attr: (attr["fromdate"], attr["todate"]), personset)
-            dateset.sort(lambda x, y: cmp(x[0], y[0]))
-            prevtodate = None
-            for fromdate, todate in dateset:
-                assert fromdate < todate, "date ranges bad"
-                if prevtodate:
-                    assert prevtodate < fromdate, "date ranges overlap"
-                prevtodate = todate
+    #def crosschecks(self):
+    #    # check MP date ranges don't overlap
+    #    for personset in self.fullnamescons.values():
+    #        dateset = map(lambda attr: (attr["fromdate"], attr["todate"]), personset)
+    #        dateset.sort(lambda x, y: cmp(x[0], y[0]))
+    #        prevtodate = None
+    #        for fromdate, todate in dateset:
+    #            if len(fromdate) == 4: fromdate = '%s-01-01' % fromdate
+    #            if len(todate) == 4: todate = '%s-12-31' % todate
+    #            assert fromdate < todate, "date ranges bad %s %s" % (fromdate, todate)
+    #            if prevtodate:
+    #                assert prevtodate < fromdate, "date ranges overlap %s %s %s" % (prevtodate, fromdate, todate)
+    #            prevtodate = todate
 
 	# put ministerialships into each of the sets, based on matching matchid values
 	# this works because the members code forms a basis to which ministerialships get attached
@@ -505,70 +509,70 @@ class PersonSets(xml.sax.handler.ContentHandler):
                 self.member_sp_personset[lookup] = newset
 
     # Look for people of the same name, but their constituency differs
-    def findotherpeoplewhoaresame(self):
-        goterror = False
-
-        for (name, nameset) in self.fullnames.iteritems():
-            # Find out ids of MPs that we have
-            ids = sets.Set(map(lambda attr: attr["id"], nameset))
-
-            # This name matcher includes fuzzier alias matches (e.g. Michael Foster ones)...
-            fuzzierids =  memberList.fullnametoids(name, None)
-
-            # ... so it should be a superset of the ones we have that just match canonical name
-            assert fuzzierids.issuperset(ids)
-            fuzzierids = list(fuzzierids)
-
-            # hunt for pairs whose constituencies differ, and don't overlap in time
-            # (as one person can't hold office twice at once)
-            for id1 in range(len(fuzzierids)):
-                attr1 = memberList.getmember(fuzzierids[id1])
-                cancons1 = memberList.canonicalcons(attr1["constituency"], attr1["fromdate"])
-                for id2 in range(id1 + 1, len(fuzzierids)):
-                    attr2 = memberList.getmember(fuzzierids[id2])
-                    cancons2 = memberList.canonicalcons(attr2["constituency"], attr2["fromdate"])
-                    # check constituencies differ
-                    if cancons1 != cancons2:
-
-                        # Check that there is no MP with the same name/constituency
-                        # as one of the two, and who overlaps in date with the other.
-                        # That would mean they can't be the same person, as nobody
-                        # can be MP twice at once (and I think the media would
-                        # notice that!)
-                        match = False
-                        for id3 in range(len(fuzzierids)):
-                            attr3 = memberList.getmember(fuzzierids[id3])
-                            cancons3 = memberList.canonicalcons(attr3["constituency"], attr3["fromdate"])
-
-                            if cancons2 == cancons3 and \
-                                ((attr1["fromdate"] <= attr3["fromdate"] <= attr1["todate"])
-                                or (attr3["fromdate"] <= attr1["fromdate"] <= attr3["todate"])):
-                                #print "matcha %s %s %s (%s) %s to %s" % (attr3["id"], attr3["firstname"], attr3["lastname"], attr3["constituency"], attr3["fromdate"], attr3["todate"])
-                                match = True
-                            if cancons1 == cancons3 and \
-                                ((attr2["fromdate"] <= attr3["fromdate"] <= attr2["todate"])
-                                or (attr3["fromdate"] <= attr2["fromdate"] <= attr3["todate"])):
-                                #print "matchb %s %s %s (%s) %s to %s" % (attr3["id"], attr3["firstname"], attr3["lastname"], attr3["constituency"], attr3["fromdate"], attr3["todate"])
-                                match = True
-
-                        if not match:
-                            # we have a differing cons, but similar name name
-                            # check not in manual match overload
-                            fullnameconskey1 = "%s %s [%s]" % (attr1["firstname"], attr1["lastname"], cancons1)
-                            fullnameconskey2 = "%s %s [%s]" % (attr2["firstname"], attr2["lastname"], cancons2)
-                            if fullnameconskey1 in manualmatches and fullnameconskey2 in manualmatches \
-                                and manualmatches[fullnameconskey1] == manualmatches[fullnameconskey2]:
-                                pass
-                            else:
-                                goterror = True
-                                print "these are possibly the same person: "
-                                print " %s %s %s (%s) %s to %s" % (attr1["id"], attr1["firstname"], attr1["lastname"], attr1["constituency"], attr1["fromdate"], attr1["todate"])
-                                print " %s %s %s (%s) %s to %s" % (attr2["id"], attr2["firstname"], attr2["lastname"], attr2["constituency"], attr2["fromdate"], attr2["todate"])
-                                #  print in this form for handiness "Shaun Woodward [St Helens South]" : "Shaun Woodward [St Helens South / Witney]",
-                                print '"%s %s [%s]" : "%s %s [%s / %s]",' % (attr1["firstname"], attr1["lastname"], attr1["constituency"], attr1["firstname"], attr1["lastname"], attr1["constituency"], attr2["constituency"])
-                                print '"%s %s [%s]" : "%s %s [%s / %s]",' % (attr2["firstname"], attr2["lastname"], attr2["constituency"], attr1["firstname"], attr1["lastname"], attr1["constituency"], attr2["constituency"])
-
-        return goterror
+#    def findotherpeoplewhoaresame(self):
+#        goterror = False
+#
+#        for (name, nameset) in self.fullnames.iteritems():
+#            # Find out ids of MPs that we have
+#            ids = sets.Set(map(lambda attr: attr["id"], nameset))
+#
+#            # This name matcher includes fuzzier alias matches (e.g. Michael Foster ones)...
+#            fuzzierids =  memberList.fullnametoids(name, None)
+#
+#            # ... so it should be a superset of the ones we have that just match canonical name
+#            assert fuzzierids.issuperset(ids), "Not a superset %s %s" % (ids, fuzzierids)
+#            fuzzierids = list(fuzzierids)
+#
+#            # hunt for pairs whose constituencies differ, and don't overlap in time
+#            # (as one person can't hold office twice at once)
+#            for id1 in range(len(fuzzierids)):
+#                attr1 = memberList.getmember(fuzzierids[id1])
+#                cancons1 = memberList.canonicalcons(attr1["constituency"], attr1["fromdate"])
+#                for id2 in range(id1 + 1, len(fuzzierids)):
+#                    attr2 = memberList.getmember(fuzzierids[id2])
+#                    cancons2 = memberList.canonicalcons(attr2["constituency"], attr2["fromdate"])
+#                    # check constituencies differ
+#                    if cancons1 != cancons2:
+#
+#                        # Check that there is no MP with the same name/constituency
+#                        # as one of the two, and who overlaps in date with the other.
+#                        # That would mean they can't be the same person, as nobody
+#                        # can be MP twice at once (and I think the media would
+#                        # notice that!)
+#                        match = False
+#                        for id3 in range(len(fuzzierids)):
+#                            attr3 = memberList.getmember(fuzzierids[id3])
+#                            cancons3 = memberList.canonicalcons(attr3["constituency"], attr3["fromdate"])
+#
+#                            if cancons2 == cancons3 and \
+#                                ((attr1["fromdate"] <= attr3["fromdate"] <= attr1["todate"])
+#                                or (attr3["fromdate"] <= attr1["fromdate"] <= attr3["todate"])):
+#                                #print "matcha %s %s %s (%s) %s to %s" % (attr3["id"], attr3["firstname"], attr3["lastname"], attr3["constituency"], attr3["fromdate"], attr3["todate"])
+#                                match = True
+#                            if cancons1 == cancons3 and \
+#                                ((attr2["fromdate"] <= attr3["fromdate"] <= attr2["todate"])
+#                                or (attr3["fromdate"] <= attr2["fromdate"] <= attr3["todate"])):
+#                                #print "matchb %s %s %s (%s) %s to %s" % (attr3["id"], attr3["firstname"], attr3["lastname"], attr3["constituency"], attr3["fromdate"], attr3["todate"])
+#                                match = True
+#
+#                        if not match:
+#                            # we have a differing cons, but similar name name
+#                            # check not in manual match overload
+#                            fullnameconskey1 = "%s %s [%s]" % (attr1["firstname"], attr1["lastname"], cancons1)
+#                            fullnameconskey2 = "%s %s [%s]" % (attr2["firstname"], attr2["lastname"], cancons2)
+#                            if fullnameconskey1 in manualmatches and fullnameconskey2 in manualmatches \
+#                                and manualmatches[fullnameconskey1] == manualmatches[fullnameconskey2]:
+#                                pass
+#                            else:
+#                                goterror = True
+#                                print "these are possibly the same person: "
+#                                print " %s %s %s (%s) %s to %s" % (attr1["id"], attr1["firstname"], attr1["lastname"], attr1["constituency"], attr1["fromdate"], attr1["todate"])
+#                                print " %s %s %s (%s) %s to %s" % (attr2["id"], attr2["firstname"], attr2["lastname"], attr2["constituency"], attr2["fromdate"], attr2["todate"])
+#                                #  print in this form for handiness "Shaun Woodward [St Helens South]" : "Shaun Woodward [St Helens South / Witney]",
+#                                print '"%s %s [%s]" : "%s %s [%s / %s]",' % (attr1["firstname"], attr1["lastname"], attr1["constituency"], attr1["firstname"], attr1["lastname"], attr1["constituency"], attr2["constituency"])
+#                                print '"%s %s [%s]" : "%s %s [%s / %s]",' % (attr2["firstname"], attr2["lastname"], attr2["constituency"], attr1["firstname"], attr1["lastname"], attr1["constituency"], attr2["constituency"])
+#
+#        return goterror
 
     def startElement(self, name, attr):
         if name == "person":
@@ -585,20 +589,35 @@ class PersonSets(xml.sax.handler.ContentHandler):
         elif name == "member":
             assert not self.in_person
 
-            # index by "Firstname Lastname Constituency"
-            cancons = memberList.canonicalcons(attr["constituency"], attr["fromdate"])
-            cancons2 = memberList.canonicalcons(attr["constituency"], attr["todate"])
-            assert cancons == cancons2
+            if 'hansard_cons_id' in attr:
+                cancons = memberList.conshansardtoid[attr['hansard_cons_id']]
+                cancons = memberList.considtonamemap[cancons]
+            else:
+                cancons = memberList.canonicalcons(attr["constituency"], attr["fromdate"])
+                cancons2 = memberList.canonicalcons(attr["constituency"], attr["todate"])
+                assert cancons == cancons2
 
+            # index by "Firstname Lastname Constituency"
             fullnameconskey = "%s %s [%s]" % (attr["firstname"], attr["lastname"], cancons)
             if fullnameconskey in manualmatches:
                 fullnameconskey = manualmatches[fullnameconskey]
-            if fullnameconskey not in self.fullnamescons:
-                newset = sets.Set()
-                self.personsets.append(newset) # master copy of person sets
-                self.fullnamescons[fullnameconskey] = newset # store link here
-			# MAKE A COPY.  (The xml documentation warns that the attr object can be reused, so shouldn't be put into your structures if it's not a copy).
-            self.fullnamescons[fullnameconskey].add(attr.copy())
+
+            if 'hansard_person_id' in attr:
+                hansard_person_id = attr['hansard_person_id']
+                if hansard_person_id not in self.historichansardtoid:
+                    newset = sets.Set()
+                    self.personsets.append(newset)
+                    self.historichansardtoid[hansard_person_id] = newset
+                self.historichansardtoid[hansard_person_id].add(attr.copy())
+                if fullnameconskey not in self.fullnamescons:
+                    self.fullnamescons[fullnameconskey] = self.historichansardtoid[hansard_person_id]
+            else:
+                if fullnameconskey not in self.fullnamescons:
+                    newset = sets.Set()
+                    self.personsets.append(newset) # master copy of person sets
+                    self.fullnamescons[fullnameconskey] = newset # store link here
+			    # MAKE A COPY.  (The xml documentation warns that the attr object can be reused, so shouldn't be put into your structures if it's not a copy).
+                self.fullnamescons[fullnameconskey].add(attr.copy())
 
             fullnamekey = "%s %s" % (attr["firstname"], attr["lastname"])
             self.fullnames.setdefault(fullnamekey, sets.Set()).add(attr.copy())
@@ -636,13 +655,13 @@ class PersonSets(xml.sax.handler.ContentHandler):
 
 # the main code
 personSets = PersonSets()
-personSets.crosschecks()
-if personSets.findotherpeoplewhoaresame():
-    print
-    print "If they are, correct it with the manualmatches array"
-    print "Or add another array to show people who appear to be but are not"
-    print
-    sys.exit(1)
+#personSets.crosschecks()
+#if personSets.findotherpeoplewhoaresame():
+#    print
+#    print "If they are, correct it with the manualmatches array"
+#    print "Or add another array to show people who appear to be but are not"
+#    print
+#    sys.exit(1)
 personSets.mergelordsandothers()
 personSets.mergeministers()
 
