@@ -22,6 +22,7 @@ from resolvemembernames import memberList
 
 import re
 import glob
+import libxml2
 
 from findquotation import ScrapedXMLParser
 from findquotation import find_quotation_from_text
@@ -126,6 +127,21 @@ def log_speaker(speaker,date,message):
         out_file = open("speakers.txt", "a")
         out_file.write(str(date)+": ["+message+"] "+speaker+"\n")
         out_file.close()
+
+# We add a PlaceHolder whenever the column number or time has
+# changed since the last object that was added to all_stuff:
+class PlaceHolder:
+    def __init__(self,colnum,time):
+        self.colnum = colnum
+        self.time = time
+    def to_xml(self):
+        colnum_attribute = ""
+        time_attribute = ""
+        if self.colnum:
+            colnum_attribute = ' colnum="%s"' % (self.colnum)
+        if self.time:
+            time_attribute = ' time="%s"' % (self.time)
+        return '<place-holder%s%s/>' % (colnum_attribute,time_attribute)
 
 class Heading:
 
@@ -262,12 +278,16 @@ class Speech:
         m = re.search(' (\d+) ([a-zA-Z]+) (\d{4})[^0-9]',citation)
         if not m:
             return None
+        column_numbers_strings = None
+        m_columns = re.search('c ([0-9 ,]+)',citation)
+        if m_columns:
+            column_numbers_strings = re.findall('\d+',m_columns.group(1))
         if verbose: print "year: "+m.group(3)+", month: "+m.group(2)+", day: "+m.group(1)
         d = datetime.date(int(m.group(3),10),month_name_to_int(m.group(2)),int(m.group(1),10))
         m = re.search('Written Answers.*(S\d[A-Z]-\d+)',citation)
         if m:
             return "uk.org.publicwhip/spwa/%s.%s.h" % ( str(d), m.group(1) )
-        return find_quotation_from_text(self.parser.sxp,d,content)
+        return find_quotation_from_text(self.parser.sxp,d,content,column_numbers_strings)
 
     def to_xml(self):
 
@@ -563,6 +583,7 @@ class Parser:
 
         self.all_stuff = []
         self.speakers_so_far = []
+        self.added_non_placeholder = False
 
         self.report_date = None
 
@@ -756,17 +777,35 @@ class Parser:
                 if not re.match('(?ims)^\s*$',str(m)):
                     raise Exception, "Unknown non-empty navigable string in contents of main cell: "+str(m)
 
+    def add_placeholder(self):
+        return # Disable for the moment...
+        p = PlaceHolder(self.current_column,self.current_time)
+        self.all_stuff.append(p)
+
     def complete_current(self):
         if self.current_speech:
             self.current_speech.complete()
             self.all_stuff.append(self.current_speech)
+            self.added_non_placeholder = True
             self.current_speech = None
         if self.current_division:
             self.all_stuff.append(self.current_division)
+            self.added_non_placeholder = True
             self.current_division = None
         if self.current_heading:
             self.all_stuff.append(self.current_heading)
+            self.added_non_placeholder = True
             self.current_heading = None
+        # If it looks as if adding a placeholder would be useful
+        # (i.e. the previous element's time is no longer accurate,
+        # add that here.
+        if len(self.all_stuff) > 0:
+            last = self.all_stuff[-1]
+            if self.current_time != last.time or self.current_column != last.colnum:
+                self.add_placeholder()
+        else:
+            if self.current_time or self.current_column:
+                self.add_placeholder()
 
     def make_url(self):
         url_without_anchor = self.url
@@ -784,21 +823,31 @@ class Parser:
             self.current_id_within_column += 1
             self.current_speech.add_paragraph( s )
 
+    def all_stuff_without_placeholders(self):
+        return filter( lambda x: x.__class__ != PlaceHolder, self.all_stuff )
+
     def add_heading(self,text,major):
         self.complete_current()
-        if len(self.all_stuff) > 1:
+        non_placeholders = self.all_stuff_without_placeholders()
+        if len(non_placeholders) > 1:
+            last = non_placeholders[-1]
             # It's not just the introduction heading...
-            last = self.all_stuff[len(self.all_stuff) - 1]
             if last.__class__ == Heading and (last.major == major):
                 # Then just append this to the last heading with an em-dash:
                 last.heading_text += ' &mdash; ' + text
                 return
         self.current_heading = Heading(self.current_id_within_column,self.current_column,self.current_time,self.make_url(),self.report_date,text,major)
-        self.current_id_within_column += 1        
+        self.current_id_within_column += 1
 
     def parse_substance(self,contents):
 
-        if len(self.all_stuff) < 1:
+        # This is actually a bit broken, because self.current_heading
+        # might already have the first heading in it.  However,
+        # preserve this behaviour so that we don't alter the
+        # current_id_within_column needlessly :(
+
+        non_placeholders = self.all_stuff_without_placeholders()
+        if len(non_placeholders) < 1:
             self.add_heading("Introduction",True)
 
         non_empty_contents = filter(lambda x: x.__class__ != NavigableString or not re.match('^\s*$',x), contents)
@@ -1247,11 +1296,26 @@ def compare_filename(a,b):
     else:
         raise Exception, "Couldn't match filenames: "+a+" and "+b
 
+def get_last_column(previous_xml_filename):
+    print "Going to load '%s'" % (previous_xml_filename)
+    doc = libxml2.parseFile(previous_xml_filename)
+    a = doc.xpathEval('//@colnum')
+    last_column = None
+    for e in a:
+        c = e.content
+        if c and re.match('^\d+$',c):
+            last_column = c
+    if last_column:
+        return int(last_column,10)
+    else:
+        return None
+
 # --------------------------------------------------------------------------
 # End of function and class definitions...
 
 last_column_number = 0
-    
+last_skipped_file = None
+
 for d in dates:
 
     xml_output_directory = "../../../parldata/scrapedxml/sp/"
@@ -1260,6 +1324,7 @@ for d in dates:
     if verbose: print "Examining %s %s" % (d, output_filename)
 
     if (not options.force) and os.path.exists(output_filename):
+        last_skipped_file = output_filename
         continue
 
     contents_filename = or_prefix + "or" +str(d) + "_0.html"
@@ -1271,6 +1336,12 @@ for d in dates:
 
     if len(filenames) == 0:
         continue
+
+    if last_skipped_file:
+        last_column_from_skipped_file = get_last_column(last_skipped_file)
+        if last_column_from_skipped_file:
+            last_column_number = last_column_from_skipped_file
+    last_skipped_file = None
 
     contents_filename = filenames[0]
 
@@ -1515,6 +1586,8 @@ for d in dates:
                 still_in_quote = False                
         elif i.__class__ == Heading or i.__class__ == Division:
             still_in_quote = False
+            o.write( "\n" + i.to_xml() + "\n" )
+        elif i.__class__ == PlaceHolder:
             o.write( "\n" + i.to_xml() + "\n" )
             
     o.write("\n\n</publicwhip>\n")

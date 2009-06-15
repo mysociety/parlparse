@@ -29,6 +29,10 @@ class MemberList(xml.sax.handler.ContentHandler):
 
     def match_whole_speaker(self,speaker_name,speaker_date):
 
+        #lfp = codecs.open("/var/tmp/all-names",'a','utf-8')
+        #lfp.write("%s\t%s\n"%(speaker_date,speaker_name))
+        #lfp.close()
+
         # if speaker_date:
         #     print speaker_name+" [on date "+speaker_date + "]"
         # else:

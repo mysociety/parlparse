@@ -7,11 +7,11 @@ import os
 from mtimes import get_file_mtime
 from mtimes import filenames_modified_after
 
-def find_quotation_from_text(sxp,date,text,minimum_substring_length=20):
+def find_quotation_from_text(sxp,date,text,column_numbers_strings,minimum_substring_length=20):
     substrings = re.split('\s*[,\.\[\]:]+\s*',text)
     long_enough_substrings = filter( lambda e: len(e) > minimum_substring_length, substrings )
-    regular_expressions = map( lambda e: re.compile(re.escape(e)), long_enough_substrings )
-    return sxp.find_id_for_quotation( str(date), regular_expressions )
+    regular_expressions = map( lambda e: re.compile(re.escape(e),re.IGNORECASE), long_enough_substrings )
+    return sxp.find_id_for_quotation( str(date), regular_expressions, column_numbers_strings )
 
 def find_speech_with_trailing_spid(sxp,date,spid):
     return sxp.find_id_for_quotation( str(date), [ re.compile('\(\s*'+spid+'\s*\)\s*$') ] )
@@ -19,6 +19,9 @@ def find_speech_with_trailing_spid(sxp,date,spid):
 class ScrapedXMLParser(xml.sax.handler.ContentHandler):
 
     def __init__(self,file_template=None):
+        self.useful_elements = ( "ques", "repl", "speech", "major-heading", "minor-heading", "reply" )
+        self.in_useful_element = False
+        self.characters_so_far = ""
         self.parser = xml.sax.make_parser()
         self.parser.setContentHandler(self)
         if not file_template:
@@ -51,7 +54,7 @@ class ScrapedXMLParser(xml.sax.handler.ContentHandler):
         else:
             return self.ids_with_matches
 
-    def find_id_for_quotation(self,date_string,regexp_list):
+    def find_id_for_quotation(self,date_string,regexp_list,column_numbers_strings):
         self.regexp_list = regexp_list
         self.ids_with_quote = { }
         self.ids_with_matches = []
@@ -62,6 +65,21 @@ class ScrapedXMLParser(xml.sax.handler.ContentHandler):
         # Find the ID that most of the regexps match:
         max_occurences = 0
         id_to_return = None
+        found_ids = self.ids_with_quote.keys()
+        found_ids_with_correct_column = {}
+        if column_numbers_strings:
+            pattern = '\.(' + "|".join(column_numbers_strings) + ')\.[0-9]+$'
+            for found_id in found_ids:
+                if re.search(pattern,found_id):
+                    found_ids_with_correct_column[found_id] = True
+        # If we found any IDs that matched one of the listed columns
+        # exactly, only consider those:
+        if len(found_ids_with_correct_column) > 0:
+            # Then remove all the keys from self.ids_with_quote
+            # which aren't in found_ids_with_correct_column
+            for k in self.ids_with_quote.keys():
+                if k not in found_ids_with_correct_column:
+                    del self.ids_with_quote[k]
         for k in self.ids_with_quote:
             occurences = self.ids_with_quote[k]
             if occurences > max_occurences:
@@ -70,16 +88,26 @@ class ScrapedXMLParser(xml.sax.handler.ContentHandler):
         return id_to_return
             
     def startElement(self,name,attr):
-        if name == "ques" or name == "repl" or name == "speech":
+        if name in self.useful_elements:
+            self.in_useful_element = True
             self.element_id = attr["id"]
+            self.characters_so_far = ""
 
+    def endElement(self,name):
+        if name in self.useful_elements:
+            self.in_useful_element = False
+            for r in self.regexp_list:
+                m = re.search(r,self.characters_so_far)
+                if m:
+                    self.ids_with_quote.setdefault(self.element_id,0)
+                    self.ids_with_quote[self.element_id] += 1
+                    self.ids_with_matches.append( (self.element_id,m) )
+
+    # characters() may not return all contiguous charater data, so
+    # append it to any previous data...
     def characters(self,c):
-        for r in self.regexp_list:
-            m = re.search(r,c)
-            if m:                
-                self.ids_with_quote.setdefault(self.element_id,0)
-                self.ids_with_quote[self.element_id] += 1
-                self.ids_with_matches.append( (self.element_id,m) )
+        if self.in_useful_element:
+            self.characters_so_far += c
 
 # sxp = ScrapedXMLParser()
 # sxp.find_id_for_quotation( "2004-02-25", [ re.compile("given that justice must be not only swift"),
