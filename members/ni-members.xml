@@ -2013,8 +2013,8 @@
 	id="uk.org.publicwhip/member/90260"
 	title="" firstname="David" lastname="Burnside"
 	constituency="South Antrim" party="UUP"
-	fromdate="2007-03-09" todate="9999-12-31"
-	fromwhy="election" towhy="still_in_office"
+	fromdate="2007-03-09" todate="2009-06-01"
+	fromwhy="election" towhy="resigned"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90261"
@@ -2698,5 +2698,14 @@
 	fromdate="2007-12-03" todate="9999-12-31"
 	fromwhy="changed_party" towhy="still_in_office"
 />
+
+<member_ni
+	id="uk.org.publicwhip/member/90358"
+	title="" firstname="Danny" lastname="Kinahan"
+	constituency="South Antrim" party="UUP"
+	fromdate="2009-06-09" todate="9999-12-31"
+	fromwhy="appointed" towhy="still_in_office"
+/>
+
 </publicwhip>
 
