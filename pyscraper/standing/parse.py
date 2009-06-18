@@ -851,9 +851,15 @@ class ParseCommittee:
    
         bill_title.extract()
         bill_link.extract()
-        
+        # fall back to getting the title from the link
         if not plaintitle or not title:
-            raise ContextException, "PBC part is missing title"
+            link_title = self.render_node_list(bill_link.contents)
+            link_plain_title = ''.join(bill_link(text=True))
+            if not link_title or not link_plain_title:
+                raise ContextException, "PBC part is missing title"
+            else: 
+                title =  re.sub('\s*Committee\s*$', '', link_title)
+                plaintitle = re.sub('\s*Committee\s*$', '', link_plain_title)
         if not url:
             raise ContextException, "No URL for bill found"
         url_str = '%s%s' % (url[0:7] != 'http://' and self.baseurl or '', url)
