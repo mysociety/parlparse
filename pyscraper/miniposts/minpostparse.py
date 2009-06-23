@@ -96,7 +96,9 @@ govdepts = ["Department of Health",
                                 "Office of the Advocate General for Scotland",
                                 "Department of Trade and Industry",
                                         "Department for Business, Enterprise & Regulatory Reform",
+                                        "Department for Business, Innovation & Skills",
                                 "House of Commons",
+                                "House of Lords",
                                 "Foreign & Commonwealth Office",
                                 "Government Equalities Office",
 
@@ -107,6 +109,7 @@ govdepts = ["Department of Health",
                                 "Department for Communities and Local Government",
                                 "Ministry of Justice",
                                 "No Department",
+                                "Regional Affairs",
                                 ]
 
 
@@ -123,13 +126,13 @@ ppsnondepts = [ "HM Official Opposition", "Leader of the Opposition" ]
 import newlabministers2003_10_15
 from newlabministers2003_10_15 import opendate
 
-renampos = re.compile("""<td>\s*<b>
+renampos = re.compile("""<td>\s*<(?:b|strong)>
         ([^,]*),	# last name
         \s*
         ([^<\(]*?)	# first name
         \s*
         (?:\(([^)]*)\))? # constituency
-        </b></td><td>
+        </(?:b|strong)></td><td>
         ([^,<]*)	# position
         (?:,\s*([^<]*))? # department
         (?:</td>)?\s*$(?i)""",
@@ -296,6 +299,7 @@ class protooffice:
 		pos = nampos.group(4).strip()
 		dept = (nampos.group(5) or "No Department").strip()
                 dept = re.sub("\s+", " ", dept)
+                dept = dept.replace('&amp;', '&')
 		responsibility = ""
 		if self.sdatet[0] in bigarray and self.fullname in bigarray[self.sdatet[0]]:
 			responsibility = bigarray[self.sdatet[0]][self.fullname]
@@ -326,6 +330,10 @@ class protooffice:
 					pd1 = re.match("([^,]+),\s*(.+)$", dept1)
 					if pd1 and pd1.group(2) in govdepts:
 						self.depts = [ (pos, dept0), (pd1.group(1), pd1.group(2)) ]
+						break
+					pd1 = re.match("([^,]+) and (.+)$", dept1)
+					if pd1 and pd1.group(2) in govdepts:
+						self.depts = [ (pos, dept0), (pos, pd1.group(1)), (pos, pd1.group(2)) ]
 						break
 					print "Attempted match on", dept0
 
@@ -453,7 +461,7 @@ def ParseSelCteePage(fr, gp):
 
         fr = re.sub('</tr>\s*<td', '</tr><tr><td', fr)
         # XXX: This is slow, speed it up!
-        list = re.findall("<tr>\s*<td (?:colspan='3' bgcolor='#F1ECE4'|bgcolor=#f1ece4 colSpan=3)(?: height=\"\d+\")?>(?:<b>)?<font size=\+1>(?:<b>)?(?:<I>)?<A\s+NAME='?\d+'?></a>\s*([^<]*?)\s*(?:</b>)?</font>.*?</tr>\s*((?:<tr>\s*<td(?: height=\"19\")?>.*?</td>\s*<td(?: height=\"19\")?>.*?</td>\s*<td(?: height=\"19\")?>.*?</td>\s*</tr>\s*|<tr><td colspan='3'><b>Appointed[^<]*?</b></td></tr>\s*|<tr><td colspan=2>.*?</td><td>.*?</td></tr>\s*)+)<tr>\s*<td colspan='?3'?(?: height=\"19\")?>&nbsp;?</td>\s*</tr>", fr, re.I | re.S)
+        list = re.findall("<tr>\s*<td (?:colspan='3' bgcolor='#F1ECE4'|bgcolor=#f1ece4 colSpan=3)(?: height=\"\d+\")?>(?:<b>)?<font size=\+1>(?:<b>)?(?:<I>)?<A\s+NAME='?\d+'?></a>\s*([^<]*?)\s*(?:</b>)?</font>.*?</tr>\s*((?:<tr>\s*<td(?: height=\"19\")?>.*?</td>\s*<td(?: height=\"19\")?>.*?</td>\s*<td(?: height=\"19\")?>.*?</td>\s*</tr>\s*|<tr><td colspan='3'><b>Appointed[^<]*?</b></td></tr>\s*|<tr><td colspan=2>.*?</td><td>.*?</td></tr>\s*)+)<tr>\s*<td colspan='?3'?(?: height=\"19\")?>(?:&nbsp;?|\xc2\xa0)</td>\s*</tr>", fr, re.I | re.S)
         for committee in list:
                 cteename = re.sub("\s+", " ", committee[0]).replace("&amp;", "&")
                 members = committee[1]
@@ -485,7 +493,7 @@ def ParseGovPostsPage(fr, gp):
 
         stime = '%02d:%02d' % (num/60, num%60) # Will break at 86,400 :)
 
-        if (num >= 36 and num <= 38) or (num >= 106 and num <= 110) or num == 141:
+        if (num >= 36 and num <= 38) or (num >= 106 and num <= 110) or num == 141 or num == 176:
                 return "SKIPTHIS", None # Reshuffling
         elif num == 39:
                 sdate = "2006-05-08" # Moved back to date of reshuffle
@@ -523,6 +531,9 @@ def ParseGovPostsPage(fr, gp):
         # Fix
         if num>=169:
                 fr = re.sub('Parliamentary Under-Secretary and Department for Culture, Media & Sport', 'Parliamentary Under-Secretary, Department for Culture, Media & Sport', fr)
+        # Fix
+        if num>=177:
+                fr = re.sub('Foreign, Foreign', 'Foreign', fr)
 
 	# extract the alphabetical list
         Malphl = re.search("ALPHABETICAL LIST OF HM GOVERNMENT([\s\S]*?)</table>", fr)
@@ -712,7 +723,7 @@ def ParseOffOppPage(fr, gp):
         if num <= 97:
                 table = re.search("(?s)>HER MAJESTY&#39;S OFFICIAL OPPOSITION<(.*?)</table>", fr)
         else:
-                table = re.search("(?si)>Her Majesty's Official Opposition<(.*?)</table>", fr)
+                table = re.search("(?si)>Her Majesty's\s+Official Opposition<(.*?)</table>", fr)
 	list = re.split("</?tr>(?i)", table.group(1))
 
 	res = [ ]
@@ -940,14 +951,14 @@ def ParsePlaidSNPPage(fr, gp):
                     lsudate = re.match("(\d\d)/(\d\d)/(\d\d)$", frupdated.group(1))
                     sdate = "20%s-%s-%s" % (lsudate.group(3), lsudate.group(2), lsudate.group(1))
         else:
-                frdate = re.search(">This list was last updated on\s+<(?:b|strong)>\s*(.*?)\s+<", fr)
+                frdate = re.search(">This list was last updated on\s+<(?:b|strong)>\s*(.*?)\s+<(?i)", fr)
                 if not frdate:
                         print "A problem was found with", num, filedate
                         sys.exit()
                 sdate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
 
 	# extract the alphabetical list
-        table = re.search('(?is)<b>Plaid Cymru</b>(.*?)</table>', fr).group(1)
+        table = re.search('(?is)<(?:b|strong)>Plaid Cymru</(?:b|strong)>(.*?)</table>', fr).group(1)
 	res = [ ]
 
         whips = re.findall('Joint Chief Whips are\s+(.*?) and (.*?)\.?\s*<', table)
@@ -1011,6 +1022,7 @@ def ParseChggdir(chgdirname, ParsePage, bfrontopenchains):
 		f.close()
 
 		# get the protooffices from this file
+                fr = fr.replace('\xc2\xa0', '&nbsp;')
 		sdatet, proff = ParsePage(fr, os.path.join(fchgdir, gp))
 		if sdatet == "SKIPTHIS":
 			continue
@@ -1292,7 +1304,7 @@ def ParseGovPosts():
 	assert moffidn < 1000
 	moffidn = 1000
 	for cp in cpres:
-                if cp.fullname in []: # ignore until they're introduced as Lords
+                if cp.fullname in ['Glenys Kinnock']: # ignore until they're introduced as Lords
                         continue
 
 		cpsdates = [cp.sdatestart, cp.sdateend]
@@ -1305,7 +1317,6 @@ def ParseGovPosts():
 		rpcp.append((cp.sortobj, cp, cp.cmpobj))
 		moffidn += 1
 
-        print "Matching committee/other names"
 	# private secretaries, select committees, official opposition
 	for cpm in cpressec, cpresselctee, cpresopp, cpreslibdem, cpresplaidsnp, cpresdup:
                 for cp in cpm:
@@ -1336,7 +1347,6 @@ def ParseGovPosts():
 
 
 	# now look for open ends
-        print "Glueing"
 	for mofficegroup in mofficegroups:
 		GlueGapDataSetGaptonewlabministers2003(mofficegroup)
 		CheckPPStoMinisterpromotions(mofficegroup)
