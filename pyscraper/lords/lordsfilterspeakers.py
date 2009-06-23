@@ -90,7 +90,7 @@ def LordsFilterSpeakers(fout, text, sdate):
 			colon = ""
 
 		# get rid of some standard ones
-		if re.match('noble lords|a noble lord|a noble baroness|the speaker(?i)', name):
+		if re.match('the lord chancellor|noble lords|a noble lord|a noble baroness|the speaker(?i)', name):
 			fout.write('<speaker speakerid="%s" speakername="%s">%s</speaker>' % ('unknown', name, name))
 			continue
 
