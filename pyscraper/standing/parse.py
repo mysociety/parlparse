@@ -848,9 +848,9 @@ class ParseCommittee:
             elif bill_link.parent.name == 'a':
                 url = bill_link.parent.get('href', None)
                 url = re.sub('\s+', '', url)
+            bill_link.extract()
    
         bill_title.extract()
-        bill_link.extract()
         # fall back to getting the title from the link
         if not plaintitle or not title:
             link_title = self.render_node_list(bill_link.contents)

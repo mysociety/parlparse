@@ -25,8 +25,7 @@ RET=0
 ./updatedaterange-parse $DAILY_FROMDATE $DAILY_FROMDATE $DAILY_TODATE $1 || RET=1
 # echo "FAI final error is $RET"
 
-# TEMP MPS SWITCH OFF 2009-06-21 AS SO MUCH HISTORIC LOADING ON SUNDAY
-# ./other-sites-update $RET
+./other-sites-update $RET
 
 # Commit changes
 cd ~/parlparse
