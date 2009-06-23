@@ -157,7 +157,7 @@ def WriteXML(moffice, fout):
                 fout.write(' matchid="%s"' % moffice.matchid)
 
         # more runtime cleaning up of the xml rather than using a proper function
-        fout.write(' dept="%s" position="%s"' % (re.sub("&", "&amp;", moffice.dept), moffice.pos))
+        fout.write(' dept="%s" position="%s"' % (moffice.dept.replace("&", "&amp;"), moffice.pos.replace('&', '&amp;')))
         if moffice.responsibility:
                 fout.write(' responsibility="%s"' % re.sub("&", "&amp;", moffice.responsibility))
 
@@ -358,7 +358,7 @@ class protooffice:
 		self.fullname = name
                 self.cons = None
 		self.depts = [ (pos, dept) ]
-		self.pos = pos
+		self.pos = pos.replace('&amp;', '&')
 		self.dept = dept.replace('&amp;', '&') # XXX
 		self.responsibility = responsibility.replace('&amp;', '&')
 
@@ -744,7 +744,7 @@ def ParseOffOppPage(fr, gp):
                                 continue
                         j = re.sub('(?i) \((Lords|Commons)\)', '', j)
                         if (not name or name == '&nbsp;') and not re.search('Shadow Ministers', j):
-                                dept = titleish(re.sub('</?(font|b)[^>]*>', '', j))
+                                dept = titleish(re.sub('</?(font|b|strong)[^>]*>(?i)', '', j))
                                 if re.match('Opposition Whip', dept):
                                         dept = 'Whips'
                                 inothermins = False
@@ -752,7 +752,7 @@ def ParseOffOppPage(fr, gp):
                         j = re.sub('<br>', ' ', j)
                         j = re.sub('</?font[^>]*>', '', j)
                         j = re.sub('&nbsp;|\s+', ' ', j)
-                        j = titleish(re.sub('</?b>', '', j))
+                        j = titleish(re.sub('</?(b|strong)>(?i)', '', j))
                         if j=='Whips': j = 'Whip'
                         resp = re.match('Shadow Minister for (.*)', j)
                         if resp and inothermins:
