@@ -912,7 +912,10 @@ class MemberList(xml.sax.handler.ContentHandler):
     def matchhistoric(self, hansard_id, date):
         ids = []
         for attr in self.historichansard[hansard_id]:
-            if attr["fromdate"] <= date and date <= attr["todate"]:
+            attr_fromdate = len(attr['fromdate'])==4 and ('%s-01-01' % attr['fromdate']) or attr['fromdate']
+            attr_todate = len(attr['todate'])==4 and ('%s-12-31' % attr['todate']) or attr['todate']
+            #print hansard_id, attr_fromdate, date, attr_todate
+            if attr_fromdate <= date and date <= attr_todate:
                 ids.append(attr["id"])
 
         if len(ids) == 0:
