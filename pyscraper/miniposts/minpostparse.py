@@ -884,8 +884,11 @@ def ParseLibDemPage(fr, gp):
                         if (not name or name == '&nbsp;') and not re.search('Shadow Ministers', j) \
                             and not re.search('Spokespersons? In the Lords', j):
                                 dept = j
+                                if re.match('Whips \((Commons|Lords)\)', dept):
+                                        dept = ''
                                 inothermins = False
                                 continue
+                        j = j.replace('Whips', 'Whip')
                         resp = re.match('Shadow Minister for (.*)', j)
                         if resp:
                                 responsibility = resp.group(1)
@@ -961,7 +964,7 @@ def ParsePlaidSNPPage(fr, gp):
         table = re.search('(?is)<(?:b|strong)>Plaid Cymru</(?:b|strong)>(.*?)</table>', fr).group(1)
 	res = [ ]
 
-        whips = re.findall('Joint Chief Whips are\s+(.*?) and (.*?)\.?\s*<', table)
+        whips = re.findall('(?s)Joint Chief Whips are\s+(.*?) and (.*?)\.?\s*<', table)
         for entry in whips:
                 for name in entry[0], entry[1]:
         	        ec = protooffice()
