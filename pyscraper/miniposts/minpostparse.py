@@ -967,14 +967,16 @@ def ParsePlaidSNPPage(fr, gp):
         whips = re.findall('(?s)Joint Chief Whips are\s+(.*?) and (.*?)\.?\s*<', table)
         for entry in whips:
                 for name in entry[0], entry[1]:
+        	        name = re.sub(' MP$', '', re.sub('\s+', ' ', name))
         	        ec = protooffice()
                         ec.OffOppproto((sdate, stime), name, 'Chief Whip', '', '', "chgpages/plaidsnp")
                         res.append(ec)
 
-        list = re.findall('<tr><td>([^<]*?)(?:</td>)?<td>([^<]*?)(?:</td></tr>|(?=<tr>))', table)
+        list = re.findall('(?i)<tr>\s*<td>([^<]*?)(?:</td>)?\s*<td>([^<]*?)(?:</td></tr>|(?=<tr>))', table)
         for row in list:
                 resps = re.sub('\s+', ' ', re.sub('&nbsp;', ' ', row[0])).strip()
                 name = row[1].strip()
+                name = re.sub(' MP$', '', re.sub('\s+', ' ', name))
                 if not name or name == '&nbsp;':
                         continue
                 ec = protooffice()
