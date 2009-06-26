@@ -69,7 +69,14 @@ def RunRegmemFilters(fout, text, sdate):
                         constituency = constituency.replace(')', '')
                         constituency = constituency.replace('(', '')
                         firstname = memberList.striptitles(firstname)[0]
-                        (id, remadename, remadecons) = memberList.matchfullnamecons(firstname + " " + memberList.lowercaselastname(lastname), constituency, sdate)
+
+                        # Register came out after they stood down
+                        if (firstname == 'Ian' and lastname == 'GIBSON' and sdate > '2009-06-08') \
+                            or (firstname == 'Michael' and lastname == 'MARTIN' and sdate > '2009-06-22'):
+                                check_date = '2009-06-08'
+                        else:
+                                check_date = sdate
+                        (id, remadename, remadecons) = memberList.matchfullnamecons(firstname + " " + memberList.lowercaselastname(lastname), constituency, check_date)
                         if not id:
                                 raise Exception, "Failed to match name %s %s (%s) date %s" % (firstname, lastname, constituency, sdate)
                         if category:

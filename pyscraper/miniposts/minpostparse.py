@@ -723,7 +723,7 @@ def ParseOffOppPage(fr, gp):
         if num <= 97:
                 table = re.search("(?s)>HER MAJESTY&#39;S OFFICIAL OPPOSITION<(.*?)</table>", fr)
         else:
-                table = re.search("(?si)>Her Majesty's\s+Official Opposition<(.*?)</table>", fr)
+                table = re.search("(?si)<(?:font|strong)[^>]*>\s*Her Majesty's\s+Official Opposition<(.*?)</table>", fr)
 	list = re.split("</?tr>(?i)", table.group(1))
 
 	res = [ ]
