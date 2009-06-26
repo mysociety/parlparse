@@ -7,6 +7,7 @@ import datetime, os, commands
 
 base = '/home/parlparse/'
 base_html = base + 'parldata/cmpages/'
+base_xml = base + 'parldata/scrapedxml/'
 base_scraper = base + 'parlparse/pyscraper/'
 
 mon_dirs = { 'debates': 'debates/debates', 'wms': 'wms/ministerial', 'wrans': 'wrans/answers', 'lords': 'lordspages/daylord' }
@@ -41,13 +42,19 @@ for type, dir in dirs.items():
     if not os.path.exists(file):
         rescrape.append(type)
 
+reparse = []
+for type, dir in dirs.items():
+    file = base_xml + dir + yesterday + 'a.xml'
+    if not os.path.exists(file):
+        reparse.append(type)
+
 # Scrape
 if rescrape:
     run_command('', 'lazyrunall.py --date=' + yesterday + ' scrape ' + ' '.join(rescrape))
 run_command('ni/', './scrape.py')
 
 # Parse
-run_command('', 'lazyrunall.py --date=' + yesterday + ' parse debates wrans westminhall wms lords --patchtool')
+run_command('', 'lazyrunall.py --date=' + yesterday + ' parse ' + ' '.join(reparse) + ' --patchtool')
 run_command('ni/', './parse.py --patchtool')
 run_command('standing/', './parse.py --patchtool')
 
