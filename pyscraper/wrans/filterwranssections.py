@@ -187,7 +187,7 @@ def FilterWransSections(text, sdate, lords=False):
 				else:
 					qnums.extend(lqnums)
 
-				qb.stext = FilterQuestion(qb.text, sdate, qb.sstampurl, lords)
+				qb.stext = FilterQuestion(qb, sdate, lords)
 				if not lqnums:
 					errmess = ' <p class="error">Question number missing in Hansard, possibly truncated question.</p> '
 					qb.stext.append(errmess)
