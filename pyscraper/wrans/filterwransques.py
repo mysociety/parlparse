@@ -6,6 +6,7 @@ import cStringIO
 from miscfuncs import FixHTMLEntities
 from miscfuncs import SplitParaIndents, IsNotQuiet
 from parlphrases import parlPhrases
+from filtersentence import PhraseTokenize
 
 from contextexception import ContextException
 
@@ -39,7 +40,10 @@ def ExtractQnum(tex, stampurl):
 
 # we break this into separate paragraphs and discover that the final ones are indentent.
 # the other question form is as a single paragraph
-def FilterQuestion(text, sdate, stampurl, lords):
+def FilterQuestion(qs, sdate, lords):
+	text = qs.text
+	stampurl = qs.sstampurl
+
 	# split into paragraphs.  The second results is a parallel array of bools
 	(textp, textpindent) = SplitParaIndents(text, stampurl)
 	if not textp:
@@ -102,13 +106,14 @@ def FilterQuestion(text, sdate, stampurl, lords):
 
 	# put the paragraphs back in together, with their numbering
 	# should do some blocking out of this, especially the "to ask" phrase.
-	firstpara = FixHTMLEntities(textn[0][0])
+	pht = PhraseTokenize(qs, textn[0][0])
+	firstpara = re.sub('</?p>', '', pht.GetPara(''))
 
 	if len(textn) > 1:
 		stext = [ '<p>%s</p>' % firstpara ]
 		for i in range(1, len(textn)):
-			tpara = FixHTMLEntities(textn[i][0])
-			stext.append('<p class="numindent" qnum="%s">(%d) %s</p>' % (textn[i][1], i, tpara))
+			pht = PhraseTokenize(qs, textn[i][0])
+			stext.append('<p class="numindent" qnum="%s">(%d) %s</p>' % (textn[i][1], i, re.sub('</?p>', '', pht.GetPara(''))))
 
 	else:
 		stext = [ '<p qnum="%s">%s</p>' % (textn[0][1], firstpara) ]
