@@ -9778,7 +9778,7 @@ B - bishop
     lordofname_full="Alvechurch and of Bromsgrove"
     county="the County of Worcestershire"
     peeragetype="L" affiliation="Lab"
-    fromdate="2007-07-10" todate="9999-12-31"
+    fromdate="2007-07-10" todate="2008-10-03" towhy="changed_party"
 />
 <lord
     id="uk.org.publicwhip/lord/100958"
@@ -10143,6 +10143,18 @@ B - bishop
     county="the County of Kent"
     peeragetype="L" affiliation="Con"
     fromdate="2009-06-29" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100993"
+    house="lords"
+    forenames="Digby"
+    forenames_full="Digby Marritt"
+    title="Lord" lordname="Jones" lordofname="Birmingham"
+    lordofname_full="Alvechurch and of Bromsgrove"
+    county="the County of Worcestershire"
+    peeragetype="L" affiliation="XB"
+    fromdate="2008-10-03" todate="9999-12-31" fromwhy="changed_party"
 />
 
 </publicwhip>

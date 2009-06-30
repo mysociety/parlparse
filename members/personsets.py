@@ -96,6 +96,7 @@ lordlordmatches = {
     "uk.org.publicwhip/lord/100945":"uk.org.publicwhip/lord/100690",  # And Willoughby.
     "uk.org.publicwhip/lord/100147":"uk.org.publicwhip/lord/100959",  # And Cox
     "uk.org.publicwhip/lord/100716":"uk.org.publicwhip/lord/100978",  # Viscount Cranborne inherits Marquess of Salisbury
+    "uk.org.publicwhip/lord/100993":"uk.org.publicwhip/lord/100957",  # Lord Jones of Brum
     # XXX: Must be a way to do party changes automatically!
     # XXX: And the key:value ordering here is very suspect
 }
