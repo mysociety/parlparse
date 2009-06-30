@@ -1385,7 +1385,7 @@ B - bishop
 	lordofname_full="Briglands"
 	county="Perthshire and Kinross"
 	peeragetype="A" affiliation="XB"
-	fromdate="1996" todate="9999-12-31"
+	fromdate="1996" todate="2009-03-06" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100133"
@@ -1718,7 +1718,7 @@ B - bishop
 	lordofname_full="Wedmore"
 	county="the County of Somerset"
 	peeragetype="L" affiliation="Con"
-	fromdate="1993" todate="9999-12-31"
+	fromdate="1993" todate="2009-04-01" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -5167,7 +5167,7 @@ B - bishop
 	forenames="Ian Patrick Martyn Cundy"
 	title="Bishop" lordname="" lordofname="Peterborough"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2001-03-28" todate="9999-12-31"
+	fromdate="2001-03-28" todate="2009-05-07" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100498"
@@ -9485,7 +9485,7 @@ B - bishop
 	lordofname_full="Clare Market"
 	county="the City of Westminster"
 	peeragetype="L" affiliation="XB"
-	fromdate="2004-11-24" todate="9999-12-31"
+	fromdate="2004-11-24" todate="2009-06-17" towhy="died"
 />
 
 <lord
@@ -10049,7 +10049,7 @@ B - bishop
     forenames="Paul"
     title="Lord" lordname="Myners" lordofname=""
     lordofname_full="Truro"
-    couty="the County of Cornwall"
+    county="the County of Cornwall"
     peeragetype="L" affiliation="Lab"
     fromdate="2008-10-21" todate="9999-12-31"
 />
@@ -10060,7 +10060,7 @@ B - bishop
     forenames="David Phillip"
     title="Lord" lordname="Pannick" lordofname=""
     lordofname_full="Radlett"
-    couty="the County of Hertfordshire"
+    county="the County of Hertfordshire"
     peeragetype="L" affiliation="XB"
     fromdate="2008-11-03" todate="9999-12-31"
 />
@@ -10071,7 +10071,7 @@ B - bishop
     forenames="David Charles James"
     title="Bishop" lordname="" lordofname="Bradford"
     peeragetype="B" affiliation="Bp"
-    fromdate="2009-01-26" todate="9999-12-31"
+    fromdate="2009-03-23" todate="9999-12-31"
 />
 
 <lord
@@ -10092,6 +10092,36 @@ B - bishop
     county="the County of Leicestershire"
     peeragetype="L" affiliation="XB"
     fromdate="2008-12-11" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100988"
+    house="lords"
+    forenames="Lawrence Antony"
+    title="Lord" lordname="Collins" lordofname="Mapesbury"
+    lordofname_full="Hampstead Town"
+    county="the London Borough of Camden"
+    peeragetype="A" affiliation="XB"
+    fromdate="2009-04-28" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100989"
+    house="lords"
+    forenames="Anthony Peter"
+    title="Lord" lordname="Clarke" lordofname="Stone-cum-Ebony"
+    county="the County of Kent"
+    peeragetype="L" affiliation="XB"
+    fromdate="2009-06-01" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100990"
+    house="lords"
+    forenames="Stephen George Platten"
+    title="Bishop" lordname="" lordofname="Wakefield"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2009-06-22" todate="9999-12-31"
 />
 
 </publicwhip>
