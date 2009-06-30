@@ -10124,4 +10124,25 @@ B - bishop
     fromdate="2009-06-22" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/100991"
+    house="lords"
+    forenames="Brian Francis"
+    title="Lord" lordname="Kerr" lordofname="Tonaghmore"
+    county="the County of Down"
+    peeragetype="A" affiliation="XP"
+    fromdate="2009-06-29" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100992"
+    house="lords"
+    forenames="David Anthony"
+    title="Lord" lordname="Freud" lordofname=""
+    lordofname_full="Eastry"
+    county="the County of Kent"
+    peeragetype="L" affiliation="Con"
+    fromdate="2009-06-29" todate="9999-12-31"
+/>
+
 </publicwhip>
