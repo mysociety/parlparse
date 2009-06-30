@@ -48,7 +48,7 @@ regtime2 = '<h5>(?:Noon|Midnight)?\s*(?:</st>)?</h5>' # accounts for blank <h5><
 # We can't have '<h4 align=center>(?:<a name="[^"]*">)?' at the front because the <a> tag won't get encoded
 regtime3 = 'The House met at .*? of the clock.*?</h4>'
 
-retimevals = re.compile('(?:</?p>\s*|<h\d>|\[|\n)\s*(\d+(?:[:\.]\s?\d+)?\.?\s*[ap][m\.]+|(?:12 )?Noon|Midnight|</h5>|</st>)(?i)')
+retimevals = re.compile('(?:</?p>\s*|<h\d>|\[|\n)\s*(?:<I>)?(\d+(?:[:\.]\s?\d+)?\.?\s*[ap][m\.]+|(?:12 )?Noon|Midnight|</h5>|</st>)(?i)')
 regtime3vals = re.compile('The House met at (.*?) of the clock(?i)')
 
 # <a name="column_1099">
