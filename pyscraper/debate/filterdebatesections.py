@@ -231,6 +231,10 @@ def NormalHeadingPart(headingtxt, stampurl, state):
             ('remaining_private_bills' in state and re.search(' Bill$(?i)', headingtxt)):
 		bmajorheading = True
 
+	elif 'just_had_points_of_order' in state:
+		bmajorheading = True
+		del state['just_had_points_of_order']
+
 	# If this is labeled major, then it gets concatenated with the
 	# subsequent major heading.  It's kind of a procedural info about the
 	# running of things, so fair to have it as a minor heading alone.
@@ -247,8 +251,11 @@ def NormalHeadingPart(headingtxt, stampurl, state):
 
         # Wah
         if stampurl.sdate > '2006-05-07':
-                if re.match("(Private business|Business of the House|Orders of the day|Points? of Order|Opposition Day|Deferred Division)(?i)", headingtxt):
+                if re.match("(Private business|Business of the House|Orders of the day|Opposition Day|Deferred Division|Petition)(?i)", headingtxt):
                         bmajorheading = True
+                if re.match("Points? of Order(?i)", headingtxt):
+                        bmajorheading = True
+                        state['just_had_points_of_order'] = True
                 if re.match("Remaining Private Members[^ ]* Bills(?i)", headingtxt):
                         bmajorheading = True
                         state['remaining_private_bills'] = True
@@ -366,7 +373,8 @@ def FilterDebateSections(text, sdate, typ):
         				flatb[-1].stext.append(" &mdash; ")
 	        			flatb[-1].stext.extend(qbh.stext)
 
-                                elif qbh.typ == 'minor-heading' and len(flatb) > 0 and flatb[-1].typ == 'major-heading' and re.search('Allotted Day(?i)', qbh.stext[-1]):
+                                elif qbh.typ == 'minor-heading' and len(flatb) > 0 and flatb[-1].typ == 'major-heading' and \
+                                    ( re.search('Allotted Day(?i)', qbh.stext[-1]) or re.search('^Petition$(?i)', flatb[-1].stext[-1]) ):
                                         flatb[-1].stext.append(" &mdash; ")
                                         flatb[-1].stext.extend(qbh.stext)
 
