@@ -39,6 +39,7 @@ uniqgovposns = ["Prime Minister",
 				"Treasurer of Her Majesty's Household",
 				"Chancellor of the Duchy of Lancaster",
 				"President of the Council",
+                                "Lord President of the Council",
 				"Parliamentary Secretary to the Treasury",
 				"Second Church Estates Commissioner",
 				"Chief Secretary",
@@ -56,7 +57,8 @@ uniqgovposns = ["Prime Minister",
 				"Deputy Prime Minister",
 				"Paymaster General",
 				"Master of the Horse",
-                                "Lord Chancellor"
+                                "Lord Chancellor",
+                                "Deputy Leader of the House of Lords",
 				]
 
 govposns = ["Secretary of State",
@@ -293,6 +295,8 @@ class protooffice:
                         self.fullname = 'Lord Darzi of Denham'
                 if self.fullname == 'Shriti Vadera':
                         self.fullname = 'Baroness Vadera'
+                if self.fullname == 'Glenys Kinnock':
+                        self.fullname = 'Baroness Kinnock of Holyhead'
 
                 # Okay, name done, let's move on to position
 
@@ -326,6 +330,10 @@ class protooffice:
 					# we're trying to split these strings up, but it's pretty rigid
 					if dept1 in govdepts:
 						self.depts = [ (pos, dept0), (pos, dept1) ]
+						break
+                                        # The below is only for Deputy Leader of the House of Lords currently, as they're also MoS in DefECate
+					if dept1 in uniqgovposns and dept1 == 'Deputy Leader of the House of Lords':
+						self.depts = [ (pos, dept0), (dept1, 'House of Lords') ]
 						break
 					pd1 = re.match("([^,]+),\s*(.+)$", dept1)
 					if pd1 and pd1.group(2) in govdepts:
@@ -1139,6 +1147,8 @@ def SetNameMatch(cp, cpsdates, mpidmap):
                         date = '2007-10-15'
                 if cp.remadename == 'Baroness Vadera' and date<'2007-07-11':
                         date = '2007-07-11'
+                if cp.remadename == 'Baroness Kinnock of Holyhead' and date<'2009-06-30':
+                        date = '2009-06-30'
 
 		if cp.remadename == 'Lord Davidson of Glen Cova':
 			cp.remadename = 'Lord Davidson of Glen Clova'
@@ -1309,7 +1319,7 @@ def ParseGovPosts():
 	assert moffidn < 1000
 	moffidn = 1000
 	for cp in cpres:
-                if cp.fullname in ['Glenys Kinnock']: # ignore until they're introduced as Lords
+                if cp.fullname in []: # ignore until they're introduced as Lords
                         continue
 
 		cpsdates = [cp.sdatestart, cp.sdateend]
