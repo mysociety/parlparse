@@ -297,7 +297,7 @@ class ParseDay:
 				cl = 'B1SpeakersName'
 			if cl == 'OralWrittenAnswersHeading' or cl == 'WrittenStatement-Heading':
 				cl = 'H3SectionHeading'
-			if cl == 'WrittenStatement-Content':
+			if cl == 'WrittenStatement-Content' or cl == 'B1BodyText-NumberedList' or cl == 'B2BodyTextBullet1':
 				cl = 'B3BodyText'
 			if cl == 'B3BodyText' and (phtml[0:8] == '<strong>' or re.match('\d+\.( |&nbsp;)+<strong>', phtml)):
 				cl = 'B1SpeakersName'
@@ -324,6 +324,13 @@ class ParseDay:
 					newp = Tag(soup, 'p', [('class', 'B1SpeakersName')])
 					newspeaker = Tag(soup, 'strong')
 					newspeaker.insert(0, m.group())
+					newp.insert(0, phtml.replace(m.group(), ''))
+					newp.insert(0, newspeaker)
+					p = newp
+                                if re.search("<strong>O(&rsquo;|')Neill\)?</strong>", phtml):
+					newp = Tag(soup, 'p', [('class', 'B1SpeakersName')])
+					newspeaker = Tag(soup, 'strong')
+					newspeaker.insert(0, re.sub('</?strong>', '', m.group()))
 					newp.insert(0, phtml.replace(m.group(), ''))
 					newp.insert(0, newspeaker)
 					p = newp
