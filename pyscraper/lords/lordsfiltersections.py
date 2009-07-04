@@ -300,10 +300,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 	#	print 'You can kill erroneous titles that are amendments by using <p class="tabletext">'
 	#	raise ContextException("unexpected Noble Lord Said", stamp=qb.sstampurl, fragment=qpara)
 
-        if re.match('<p>Thirty-nine amendments were discussed, of which two were agreed to.', qpara):
-                return None
-
-	if re.match('<p>.{0,60}agreed to(?:\.| accordingly)', qpara):
+	if re.match('<p>.{0,55}agreed to(?:\.| accordingly)', qpara):
 		print "**********Marginal agreedto", qpara
 		raise ContextException("Marginal agreed to", stamp=qb.sstampurl, fragment=qpara)
 
