@@ -20,7 +20,7 @@ reglinkdomf = 'http://(?:(?:www.)?defraweb|nswebcopy|\d+\.\d+\.\d+\.\d+)|www.def
 reglinkdom = '(?:http ?:? ?/{1,3}(?:www)?|www)(?:(?:[^/:;,?=()<>"\'@](?!www\.))*?(?:%s))+|%s' % (reglinkdomt, reglinkdomf)
 
 # this detects the middle section of a url between the slashes.
-reglinkmid = '(?:/(?:(?:[^/:;,?="<()]|&#\d+;)(?!www\.))+)*/'
+reglinkmid = '(?:/(?:(?:[^/:;,?="<()]|&#\d+;|&amp;)(?!www\.))+)*/'
 
 # this detects the tail section of a url trailing a slash
 # XXX: This seems very odd way of matching URIs
@@ -60,6 +60,7 @@ def ConstructHTTPlink(qstrdom, qstrmid, qstrtail):
 		qstrmid = re.sub('&#0?95;', '_', qstrmid)
 		if re.search('&#\d+;', qstrmid):
 			print ' undemangled href symbol ' + qstrmid
+		qstrmid = qstrmid.replace('&amp;', '&') # XXX
 		qstrmid = re.sub('&', '&amp;', qstrmid)
 	if not re.match('[\w\-/.+;&%]*$', qstrmid):
 		#print ' bad midd -- ' + qstrmid
