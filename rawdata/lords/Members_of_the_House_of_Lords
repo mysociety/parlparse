@@ -14,20 +14,20 @@
 		<link rel="alternate" type="application/rss+xml" title="Wikipedia RSS Feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=rss" />
 		<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
 		<title>Members of the House of Lords - Wikipedia, the free encyclopedia</title>
-		<link rel="stylesheet" href="/skins-1.5/common/shared.css?227" type="text/css" media="screen" />
-		<link rel="stylesheet" href="/skins-1.5/common/commonPrint.css?227" type="text/css" media="print" />
-		<link rel="stylesheet" href="/skins-1.5/monobook/main.css?227" type="text/css" media="screen" />
-		<link rel="stylesheet" href="/skins-1.5/chick/main.css?227" type="text/css" media="handheld" />
-		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?227" type="text/css" media="screen" /><![endif]-->
-		<!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?227" type="text/css" media="screen" /><![endif]-->
-		<!--[if IE 6]><link rel="stylesheet" href="/skins-1.5/monobook/IE60Fixes.css?227" type="text/css" media="screen" /><![endif]-->
-		<!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?227" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="/skins-1.5/common/shared.css?227x" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/skins-1.5/common/commonPrint.css?227x" type="text/css" media="print" />
+		<link rel="stylesheet" href="/skins-1.5/monobook/main.css?227x" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/skins-1.5/chick/main.css?227x" type="text/css" media="handheld" />
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?227x" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?227x" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/skins-1.5/monobook/IE60Fixes.css?227x" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?227x" type="text/css" media="screen" /><![endif]-->
 		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" />
 		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
 		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
 		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" />
 		<link rel="stylesheet" href="/w/index.php?title=-&amp;action=raw&amp;maxage=2678400&amp;gen=css" type="text/css" />
-		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?227"></script>
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?227x"></script>
 		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
 
 		<script type="text/javascript">/*<![CDATA[*/
@@ -52,7 +52,7 @@
 		var wgUserLanguage = "en";
 		var wgContentLanguage = "en";
 		var wgBreakFrames = false;
-		var wgCurRevisionId = 297147081;
+		var wgCurRevisionId = 299644006;
 		var wgVersion = "1.16alpha";
 		var wgEnableAPI = true;
 		var wgEnableWriteAPI = true;
@@ -66,14 +66,21 @@
 		var wgRestrictionMove = [];
 		/*]]>*/</script>
 
-		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?227"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?227x"><!-- wikibits js --></script>
 		<!-- Head Scripts -->
-		<script type="text/javascript" src="/skins-1.5/common/ajax.js?227"></script>
-		<script type="text/javascript" src="/skins-1.5/common/mwsuggest.js?227"></script>
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js?227x"></script>
+		<script type="text/javascript" src="/w/extensions/UsabilityInitiative/Resources/jquery.js?1"></script>
+		<script type="text/javascript" src="/w/extensions/UsabilityInitiative/Resources/messages.js?1"></script>
+		<script type="text/javascript" src="/w/extensions/UsabilityInitiative/Resources/jquery.textSelection.js?1"></script>
+		<script type="text/javascript" src="/w/extensions/UsabilityInitiative/Resources/jquery.cookie.js?1"></script>
+		<script type="text/javascript" src="/w/extensions/UsabilityInitiative/Resources/jquery.async.js?1"></script>
+		<script type="text/javascript" src="/w/extensions/UsabilityInitiative/Resources/jquery.browser.js?1"></script>
+		<script type="text/javascript">loadGM({});</script>
+		<script type="text/javascript" src="/skins-1.5/common/mwsuggest.js?227x"></script>
 		<script type="text/javascript">/*<![CDATA[*/
 		var wgNotice='';var wgNoticeLocal='';
 		/*]]>*/</script>
-		<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?227"></script>
+		<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?227x"></script>
 
 		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
 	</head>
@@ -929,7 +936,7 @@
 <tr>
 <td><a href="/wiki/Baron_Carswell" title="Baron Carswell" class="mw-redirect">The Lord Carswell</a></td>
 <td>Crossbench</td>
-<td>Lord of Appeal in Ordinary</td>
+<td>&#160;</td>
 <td>&#160;</td>
 </tr>
 <tr>
@@ -1588,6 +1595,12 @@
 </tr>
 <tr>
 <td><a href="/wiki/Lord_Freeman" title="Lord Freeman" class="mw-redirect">The Lord Freeman</a></td>
+<td>Conservative</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr>
+<td><a href="/wiki/David_Freud" title="David Freud" class="mw-redirect">The Lord Freud</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2311,6 +2324,12 @@
 <td>&#160;</td>
 </tr>
 <tr>
+<td><a href="/wiki/Brian_Kerr,_Baron_Kerr_of_Tonaghmore" title="Brian Kerr, Baron Kerr of Tonaghmore">The Lord Kerr of Tonaghmore</a></td>
+<td>Cross Bench</td>
+<td>Lord of Appeal in Ordinary</td>
+<td>&#160;</td>
+</tr>
+<tr>
 <td><a href="/wiki/Lord_Kilclooney" title="Lord Kilclooney" class="mw-redirect">The Lord Kilclooney</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
@@ -2360,6 +2379,12 @@
 </tr>
 <tr>
 <td><a href="/wiki/Neil_Kinnock" title="Neil Kinnock">The Lord Kinnock</a></td>
+<td>Labour</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr>
+<td><a href="/wiki/Glenys_Kinnock" title="Glenys Kinnock">The Baroness Kinnock of Holyhead</a></td>
 <td>Labour</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -2767,7 +2792,7 @@
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Margaret_of_Mar,_30th_Countess_of_Mar" title="Margaret of Mar, 30th Countess of Mar">The Countess of Mar</a></td>
+<td><a href="/wiki/Margaret_of_Mar,_30th_Countess_of_Mar" title="Margaret of Mar, 30th Countess of Mar" class="mw-redirect">The Countess of Mar</a></td>
 <td>Cross Bench</td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
@@ -4699,12 +4724,12 @@
 <li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> "<a href="http://www.guardian.co.uk/education/2009/feb/21/lord-dearing-education-dies" class="external autonumber" title="http://www.guardian.co.uk/education/2009/feb/21/lord-dearing-education-dies" rel="nofollow">[2]</a>", The Guardian, accessed 21 February 2009.</li>
 <li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> <cite style="font-style:normal" class="news">"<a href="http://www.telegraph.co.uk/news/obituaries/3543440/Lord-Rees.html" class="external text" title="http://www.telegraph.co.uk/news/obituaries/3543440/Lord-Rees.html" rel="nofollow">Lord Rees; Obituary</a>". <i><a href="/wiki/Telegraph.co.uk" title="Telegraph.co.uk" class="mw-redirect">Telegraph.co.uk</a></i> (<a href="/wiki/Telegraph_Media_Group" title="Telegraph Media Group" class="mw-redirect">Telegraph Media Group</a>). 2 December 2008<span class="printonly">. <a href="http://www.telegraph.co.uk/news/obituaries/3543440/Lord-Rees.html" class="external free" title="http://www.telegraph.co.uk/news/obituaries/3543440/Lord-Rees.html" rel="nofollow">http://www.telegraph.co.uk/news/obituaries/3543440/Lord-Rees.html</a></span><span class="reference-accessdate">. Retrieved on 2008-12-02</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Lord+Rees%3B+Obituary&amp;rft.jtitle=%5B%5BTelegraph.co.uk%5D%5D&amp;rft.date=2+December+2008&amp;rft.pub=%5B%5BTelegraph+Media+Group%5D%5D&amp;rft_id=http%3A%2F%2Fwww.telegraph.co.uk%2Fnews%2Fobituaries%2F3543440%2FLord-Rees.html&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
 <li id="cite_note-3"><b><a href="#cite_ref-3">^</a></b> <cite style="font-style:normal" class="news">"<a href="http://www.telegraph.co.uk/news/obituaries/3332038/Lord-Cuckney.html" class="external text" title="http://www.telegraph.co.uk/news/obituaries/3332038/Lord-Cuckney.html" rel="nofollow">Lord Cuckney</a>". <i><a href="/wiki/Telegraph.co.uk" title="Telegraph.co.uk" class="mw-redirect">Telegraph.co.uk</a></i> (<a href="/wiki/Telegraph_Media_Group" title="Telegraph Media Group" class="mw-redirect">Telegraph Media Group</a>). 31 October 2008<span class="printonly">. <a href="http://www.telegraph.co.uk/news/obituaries/3332038/Lord-Cuckney.html" class="external free" title="http://www.telegraph.co.uk/news/obituaries/3332038/Lord-Cuckney.html" rel="nofollow">http://www.telegraph.co.uk/news/obituaries/3332038/Lord-Cuckney.html</a></span><span class="reference-accessdate">. Retrieved on 2008-11-01</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Lord+Cuckney&amp;rft.jtitle=%5B%5BTelegraph.co.uk%5D%5D&amp;rft.date=31+October+2008&amp;rft.pub=%5B%5BTelegraph+Media+Group%5D%5D&amp;rft_id=http%3A%2F%2Fwww.telegraph.co.uk%2Fnews%2Fobituaries%2F3332038%2FLord-Cuckney.html&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
-<li id="cite_note-4"><b><a href="#cite_ref-4">^</a></b> <cite style="font-style:normal" class="news"><a href="http://news.bbc.co.uk/1/hi/scotland/glasgow_and_west/7659745.stm" class="external text" title="http://news.bbc.co.uk/1/hi/scotland/glasgow_and_west/7659745.stm" rel="nofollow">"Death of Labour peer from cancer"</a>. BBC News. 2008-10-08<span class="printonly">. <a href="http://news.bbc.co.uk/1/hi/scotland/glasgow_and_west/7659745.stm" class="external free" title="http://news.bbc.co.uk/1/hi/scotland/glasgow_and_west/7659745.stm" rel="nofollow">http://news.bbc.co.uk/1/hi/scotland/glasgow_and_west/7659745.stm</a></span><span class="reference-accessdate">. Retrieved on 2008-10-08</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Death+of+Labour+peer+from+cancer&amp;rft.atitle=&amp;rft.date=2008-10-08&amp;rft.pub=BBC+News&amp;rft_id=http%3A%2F%2Fnews.bbc.co.uk%2F1%2Fhi%2Fscotland%2Fglasgow_and_west%2F7659745.stm&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
-<li id="cite_note-5"><b><a href="#cite_ref-5">^</a></b> <cite style="font-style:normal" class="news"><a href="http://news.bbc.co.uk/1/hi/scotland/7652321.stm" class="external text" title="http://news.bbc.co.uk/1/hi/scotland/7652321.stm" rel="nofollow">"Former minister Lord Thomson dies"</a>. BBC News. 2008-10-04<span class="printonly">. <a href="http://news.bbc.co.uk/1/hi/scotland/7652321.stm" class="external free" title="http://news.bbc.co.uk/1/hi/scotland/7652321.stm" rel="nofollow">http://news.bbc.co.uk/1/hi/scotland/7652321.stm</a></span><span class="reference-accessdate">. Retrieved on 2008-10-04</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Former+minister+Lord+Thomson+dies&amp;rft.atitle=&amp;rft.date=2008-10-04&amp;rft.pub=BBC+News&amp;rft_id=http%3A%2F%2Fnews.bbc.co.uk%2F1%2Fhi%2Fscotland%2F7652321.stm&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-4"><b><a href="#cite_ref-4">^</a></b> <cite style="font-style:normal" class="news">"<a href="http://news.bbc.co.uk/1/hi/scotland/glasgow_and_west/7659745.stm" class="external text" title="http://news.bbc.co.uk/1/hi/scotland/glasgow_and_west/7659745.stm" rel="nofollow">Death of Labour peer from cancer</a>". BBC News. 2008-10-08<span class="printonly">. <a href="http://news.bbc.co.uk/1/hi/scotland/glasgow_and_west/7659745.stm" class="external free" title="http://news.bbc.co.uk/1/hi/scotland/glasgow_and_west/7659745.stm" rel="nofollow">http://news.bbc.co.uk/1/hi/scotland/glasgow_and_west/7659745.stm</a></span><span class="reference-accessdate">. Retrieved on 2008-10-08</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Death+of+Labour+peer+from+cancer&amp;rft.atitle=&amp;rft.date=2008-10-08&amp;rft.pub=BBC+News&amp;rft_id=http%3A%2F%2Fnews.bbc.co.uk%2F1%2Fhi%2Fscotland%2Fglasgow_and_west%2F7659745.stm&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-5"><b><a href="#cite_ref-5">^</a></b> <cite style="font-style:normal" class="news">"<a href="http://news.bbc.co.uk/1/hi/scotland/7652321.stm" class="external text" title="http://news.bbc.co.uk/1/hi/scotland/7652321.stm" rel="nofollow">Former minister Lord Thomson dies</a>". BBC News. 2008-10-04<span class="printonly">. <a href="http://news.bbc.co.uk/1/hi/scotland/7652321.stm" class="external free" title="http://news.bbc.co.uk/1/hi/scotland/7652321.stm" rel="nofollow">http://news.bbc.co.uk/1/hi/scotland/7652321.stm</a></span><span class="reference-accessdate">. Retrieved on 2008-10-04</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Former+minister+Lord+Thomson+dies&amp;rft.atitle=&amp;rft.date=2008-10-04&amp;rft.pub=BBC+News&amp;rft_id=http%3A%2F%2Fnews.bbc.co.uk%2F1%2Fhi%2Fscotland%2F7652321.stm&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
 <li id="cite_note-6"><b><a href="#cite_ref-6">^</a></b> "<a href="http://www.kentnews.co.uk/kent-news/Former-KCC-leader-Sandy-Bruce__Lockhart-dies-newsinkent15368.aspx" class="external text" title="http://www.kentnews.co.uk/kent-news/Former-KCC-leader-Sandy-Bruce__Lockhart-dies-newsinkent15368.aspx" rel="nofollow">Former KCC leader Sandy Bruce-Lockhart dies</a>", Kent News, accessed 14 August 2008.</li>
-<li id="cite_note-7"><b><a href="#cite_ref-7">^</a></b> <cite style="font-style:normal" class="web"><a href="http://www.guardian.co.uk/politics/2008/jul/29/lords.labour" class="external text" title="http://www.guardian.co.uk/politics/2008/jul/29/lords.labour" rel="nofollow">"Labour peer Lord Varley dies at 75"</a>. Guardian Unlimited. 2008-07-29<span class="printonly">. <a href="http://www.guardian.co.uk/politics/2008/jul/29/lords.labour" class="external free" title="http://www.guardian.co.uk/politics/2008/jul/29/lords.labour" rel="nofollow">http://www.guardian.co.uk/politics/2008/jul/29/lords.labour</a></span><span class="reference-accessdate">. Retrieved on 2008-07-30</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Labour+peer+Lord+Varley+dies+at+75&amp;rft.atitle=&amp;rft.date=2008-07-29&amp;rft.pub=Guardian+Unlimited&amp;rft_id=http%3A%2F%2Fwww.guardian.co.uk%2Fpolitics%2F2008%2Fjul%2F29%2Flords.labour&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-7"><b><a href="#cite_ref-7">^</a></b> <cite style="font-style:normal" class="web">"<a href="http://www.guardian.co.uk/politics/2008/jul/29/lords.labour" class="external text" title="http://www.guardian.co.uk/politics/2008/jul/29/lords.labour" rel="nofollow">Labour peer Lord Varley dies at 75</a>". Guardian Unlimited. 2008-07-29<span class="printonly">. <a href="http://www.guardian.co.uk/politics/2008/jul/29/lords.labour" class="external free" title="http://www.guardian.co.uk/politics/2008/jul/29/lords.labour" rel="nofollow">http://www.guardian.co.uk/politics/2008/jul/29/lords.labour</a></span><span class="reference-accessdate">. Retrieved on 2008-07-30</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Labour+peer+Lord+Varley+dies+at+75&amp;rft.atitle=&amp;rft.date=2008-07-29&amp;rft.pub=Guardian+Unlimited&amp;rft_id=http%3A%2F%2Fwww.guardian.co.uk%2Fpolitics%2F2008%2Fjul%2F29%2Flords.labour&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
 <li id="cite_note-8"><b><a href="#cite_ref-8">^</a></b> <cite style="font-style:normal" class="news">"<a href="http://news.bbc.co.uk/1/hi/uk/7528017.stm" class="external text" title="http://news.bbc.co.uk/1/hi/uk/7528017.stm" rel="nofollow">Former Scots Liberal leader dies</a>". <i><a href="/wiki/BBC_News" title="BBC News">BBC News</a></i> (<a href="/wiki/British_Broadcasting_Corporation" title="British Broadcasting Corporation" class="mw-redirect">British Broadcasting Corporation</a>). 2008-07-27<span class="printonly">. <a href="http://news.bbc.co.uk/1/hi/uk/7528017.stm" class="external free" title="http://news.bbc.co.uk/1/hi/uk/7528017.stm" rel="nofollow">http://news.bbc.co.uk/1/hi/uk/7528017.stm</a></span><span class="reference-accessdate">. Retrieved on 2008-07-27</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Former+Scots+Liberal+leader+dies&amp;rft.jtitle=%5B%5BBBC+News%5D%5D&amp;rft.date=2008-07-27&amp;rft.pub=%5B%5BBritish+Broadcasting+Corporation%5D%5D&amp;rft_id=http%3A%2F%2Fnews.bbc.co.uk%2F1%2Fhi%2Fuk%2F7528017.stm&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
-<li id="cite_note-9"><b><a href="#cite_ref-9">^</a></b> <cite style="font-style:normal" class="web"><a href="http://www.publications.parliament.uk/pa/ld200708/ldhansrd/text/80721-0001.htm" class="external text" title="http://www.publications.parliament.uk/pa/ld200708/ldhansrd/text/80721-0001.htm" rel="nofollow">"House of Lords Hansard, Vol 703, No. 103, Col 1501"</a>. <i><span><a href="/wiki/Hansard" title="Hansard">Hansard</a></span></i>. <a href="/wiki/Parliament_of_the_United_Kingdom" title="Parliament of the United Kingdom">Parliament of the United Kingdom</a>. 2008-07-21<span class="printonly">. <a href="http://www.publications.parliament.uk/pa/ld200708/ldhansrd/text/80721-0001.htm" class="external free" title="http://www.publications.parliament.uk/pa/ld200708/ldhansrd/text/80721-0001.htm" rel="nofollow">http://www.publications.parliament.uk/pa/ld200708/ldhansrd/text/80721-0001.htm</a></span><span class="reference-accessdate">. Retrieved on 2008-07-28</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=House+of+Lords+Hansard%2C+Vol+703%2C+No.+103%2C+Col+1501&amp;rft.atitle=%5B%5BHansard%5D%5D&amp;rft.date=2008-07-21&amp;rft.pub=%5B%5BParliament+of+the+United+Kingdom%5D%5D&amp;rft_id=http%3A%2F%2Fwww.publications.parliament.uk%2Fpa%2Fld200708%2Fldhansrd%2Ftext%2F80721-0001.htm&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-9"><b><a href="#cite_ref-9">^</a></b> <cite style="font-style:normal" class="web">"<a href="http://www.publications.parliament.uk/pa/ld200708/ldhansrd/text/80721-0001.htm" class="external text" title="http://www.publications.parliament.uk/pa/ld200708/ldhansrd/text/80721-0001.htm" rel="nofollow">House of Lords Hansard, Vol 703, No. 103, Col 1501</a>". <i><span><a href="/wiki/Hansard" title="Hansard">Hansard</a></span></i>. <a href="/wiki/Parliament_of_the_United_Kingdom" title="Parliament of the United Kingdom">Parliament of the United Kingdom</a>. 2008-07-21<span class="printonly">. <a href="http://www.publications.parliament.uk/pa/ld200708/ldhansrd/text/80721-0001.htm" class="external free" title="http://www.publications.parliament.uk/pa/ld200708/ldhansrd/text/80721-0001.htm" rel="nofollow">http://www.publications.parliament.uk/pa/ld200708/ldhansrd/text/80721-0001.htm</a></span><span class="reference-accessdate">. Retrieved on 2008-07-28</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=House+of+Lords+Hansard%2C+Vol+703%2C+No.+103%2C+Col+1501&amp;rft.atitle=%5B%5BHansard%5D%5D&amp;rft.date=2008-07-21&amp;rft.pub=%5B%5BParliament+of+the+United+Kingdom%5D%5D&amp;rft_id=http%3A%2F%2Fwww.publications.parliament.uk%2Fpa%2Fld200708%2Fldhansrd%2Ftext%2F80721-0001.htm&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
 <li id="cite_note-10"><b><a href="#cite_ref-10">^</a></b> <cite style="font-style:normal" class="news">"<a href="http://www.timesonline.co.uk/tol/comment/obituaries/article4352659.ece" class="external text" title="http://www.timesonline.co.uk/tol/comment/obituaries/article4352659.ece" rel="nofollow">Lord Hunt of Tanworth: Secretary of the Cabinet</a>". <i><a href="/wiki/The_Times" title="The Times">The Times</a></i> (<a href="/wiki/Times_Newspapers_Ltd" title="Times Newspapers Ltd" class="mw-redirect">Times Newspapers Ltd</a>). 2008-07-17<span class="printonly">. <a href="http://www.timesonline.co.uk/tol/comment/obituaries/article4352659.ece" class="external free" title="http://www.timesonline.co.uk/tol/comment/obituaries/article4352659.ece" rel="nofollow">http://www.timesonline.co.uk/tol/comment/obituaries/article4352659.ece</a></span><span class="reference-accessdate">. Retrieved on 2008-07-17</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Lord+Hunt+of+Tanworth%3A+Secretary+of+the+Cabinet&amp;rft.jtitle=%5B%5BThe+Times%5D%5D&amp;rft.date=2008-07-17&amp;rft.pub=%5B%5BTimes+Newspapers+Ltd%5D%5D&amp;rft_id=http%3A%2F%2Fwww.timesonline.co.uk%2Ftol%2Fcomment%2Fobituaries%2Farticle4352659.ece&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
 </ol>
 </div>
@@ -4717,13 +4742,13 @@
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 3839/1000000
-Post-expand include size: 26380/2048000 bytes
-Template argument size: 9312/2048000 bytes
+Preprocessor node count: 3863/1000000
+Post-expand include size: 26366/2048000 bytes
+Template argument size: 9304/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20090627211135 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20090703191143 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:House_of_Lords" title="Category:House of Lords">House of Lords</a></span></div></div>			<!-- end content -->
@@ -4799,7 +4824,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=297147081" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=297147081">Cite this page</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=299644006" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=299644006">Cite this page</a></li>			</ul>
 		</div>
 	</div>
 		</div><!-- end of the left (by default at least) column -->
@@ -4808,8 +4833,11 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-					<li id="lastmod"> This page was last modified on 18 June 2009 at 12:09.</li>
-					<li id="copyright">Text is available under the <a href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution/Share-Alike License</a>; additional terms may apply. See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details. <br /> Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org">Wikimedia Foundation, Inc.</a>, a U.S. registered <a class='internal' href="http://en.wikipedia.org/wiki/501%28c%29#501.28c.29.283.29" title="501(c)(3)">501(c)(3)</a> <a href="http://wikimediafoundation.org/wiki/Deductibility_of_donations">tax-deductible</a> <a class='internal' href="http://en.wikipedia.org/wiki/Non-profit_organization" title="Non-profit organization">nonprofit</a> <a href="http://en.wikipedia.org/wiki/Charitable_organization" title="Charitable organization">charity</a>.<br /></li>
+					<li id="lastmod"> This page was last modified on 1 July 2009 at 06:08.</li>
+					<li id="copyright">Text is available under the <a href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution/Share-Alike License</a>;
+additional terms may apply.
+See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
+Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
 					<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" class="extiw" title="wikimedia:Privacy policy">Privacy policy</a></li>
 					<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
 					<li id="disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
@@ -4818,4 +4846,4 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 </div>
 
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv205 in 0.047 secs. --></body></html>
+<!-- Served by srv34 in 0.074 secs. --></body></html>
