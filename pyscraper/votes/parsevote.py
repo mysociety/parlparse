@@ -1086,7 +1086,7 @@ if __name__ == '__main__':
 		sys.exit(1)
 
 # For calling from lazyrunall.py
-def RunVotesFilters(fout, text, sdate):
+def RunVotesFilters(fout, text, sdate, sdatever):
         (s,env,result)=parsevotetext(text, sdate)
 
         if result.success:

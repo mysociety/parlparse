@@ -39,11 +39,11 @@ class MemberList(xml.sax.handler.ContentHandler):
 		parser = xml.sax.make_parser()
 		parser.setContentHandler(self)
 		self.loadconsattr = None
-		parser.parse("../../members/constituencies.xml")
-		parser.parse("../../members/ni-members.xml")
+		parser.parse("../members/constituencies.xml")
+		parser.parse("../members/ni-members.xml")
 		self.loadperson = None
-		parser.parse("../../members/people.xml")
-		parser.parse("../../members/ni-aliases.xml")
+		parser.parse("../members/people.xml")
+		parser.parse("../members/ni-aliases.xml")
 
 	def startElement(self, name, attr):
 		# all-members.xml loading
@@ -192,13 +192,14 @@ class MemberList(xml.sax.handler.ContentHandler):
 
 		# Find unique identifier for member
 		ids = sets.Set()
-		matches = self.fullnames.get(text, None)
+		matches = []
+		matches.extend(self.fullnames.get(text, []))
 		if not matches and titletotal > 0:
 			matches = self.lastnames.get(text, None)
 
 		# If a speaker, then match against the special speaker parties
-		if not matches and (text == "Speaker" or text == "The Speaker"):
-			matches = self.parties.get("Speaker", None)
+		if text == "Speaker" or text == "The Speaker":
+			matches.extend(self.parties.get("Speaker", []))
 		if not matches and (text == 'Deputy Speaker' or text == 'Madam Deputy Speaker' or text =='The Deputy Speaker') and self.deputy_speaker:
 			return self.fullnametoids(self.deputy_speaker, date)
 

@@ -55,7 +55,7 @@ run_command('ni/', './scrape.py')
 
 # Parse
 run_command('', 'lazyrunall.py --date=' + yesterday + ' parse ' + ' '.join(reparse) + ' --patchtool')
-run_command('ni/', './parse.py --patchtool')
+run_command('', 'lazyrunall.py parse ni --patchtool')
 run_command('standing/', './parse.py --patchtool')
 
 run_command('../scripts/', './other-sites-update 0')

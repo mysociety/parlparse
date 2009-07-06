@@ -11,10 +11,9 @@ import xml.sax
 xmlvalidate = xml.sax.make_parser()
 
 sys.path.append('../')
-from resolvemembernames import memberList
+from resolveninames import memberList
 from contextexception import ContextException
 from BeautifulSoup import BeautifulSoup, Tag
-from patchtool import RunPatchTool
 
 import codecs
 streamWriter = codecs.lookup('utf-8')[-1]
@@ -38,40 +37,23 @@ class NISoup(BeautifulSoup):
 		(re.compile('(<b>)\s*(<p[^>]*>)([^<]*?</b>)'), lambda match: match.group(2) + match.group(1) + match.group(3)),
 	]
 
-def ApplyPatches(filein, fileout, patchfile):
-	shutil.copyfile(filein, fileout)
-	status = os.system("patch --quiet %s <%s" % (fileout, patchfile))
-	if status == 0:
-		return True
-	print "blanking out failed patch %s" % patchfile
-	print "---- This should not happen, therefore assert!"
-	assert False
-
 class ParseDay:
 	def id(self):
 		return '%s.%s.%s' % (self.date, self.idA, self.idB)
 
-	def parse_day(self, date):
+	def parse_day(self, fp, text, date):
 		self.date = date
 
 		# Special case for 2002-10-08
-		if not re.search('i$', date):
+		if re.search('i$', date):
+			self.idA = 9
+			self.idB = 17
+		else:
 			self.idA = 0
 			self.idB = 0
 
-		filename = '%scmpages/ni/ni%s.html' % (parldata, date)
-		patchfile = '%spatches/ni/ni%s.html.patch' % (parldata, date)
-		if os.path.isfile(patchfile):
-			patchtempfilename = tempfile.mktemp("", "ni-applypatchtemp-", '%stmp/' % parldata)
-			ApplyPatches(filename, patchtempfilename, patchfile)
-			filename = patchtempfilename
-		fp = open(filename)
-		soup = NISoup(fp, markupMassage=NISoup.myMassage)
-		fp.close()
-		#print soup.prettify().decode('utf-8')
-		#sys.exit()
-		tempfilename = '%sscrapedxml/ni/ni%s.xml.new' % (parldata, date)
-		self.out = open(tempfilename, 'w')
+		soup = NISoup(text, markupMassage=NISoup.myMassage)
+		self.out = fp
 		self.out = streamWriter(self.out)
 		self.out.write('<?xml version="1.0" encoding="utf-8"?>\n')
 		self.out.write('''
@@ -131,12 +113,6 @@ class ParseDay:
 			body = soup('p')
 			self.parse_day_old(body)
 		self.out.write('</publicwhip>\n')
-		self.out.close()
-
-		# Check the XML; in win32 this function leaves the file open and stops it being renamed
-		if sys.platform != "win32":
-			xmlvalidate.parse(tempfilename) # validate XML before renaming
-		os.rename(tempfilename, '%sscrapedxml/ni/ni%s.xml' % (parldata, date))
 
 	def display_speech(self):
 		if self.text:
@@ -244,7 +220,7 @@ class ParseDay:
 					self.display_speech()
 					speaker = re.sub("\s+", " ", new_speaker).strip()
 					speaker = re.sub(':', '', speaker)
-					id, str = memberList.match(speaker, date)
+					id, str = memberList.match(speaker, self.date)
 					self.speaker = (str, timestamp)
 				if p.b and p.b.nextSibling:
 					p.b.extract()
@@ -340,7 +316,7 @@ class ParseDay:
 				speaker = re.sub('&nbsp;', '', speaker)
 				speaker = re.sub("\s+", " ", speaker).strip()
 				speaker = re.sub(':', '', speaker)
-				id, str = memberList.match(speaker, date)
+				id, str = memberList.match(speaker, self.date)
 				self.speaker = (str, timestamp)
 				p.strong.extract()
 				phtml = p.renderContents()
@@ -383,37 +359,3 @@ class ParseDay:
 				raise ContextException, 'Uncaught paragraph! %s' % cl
 		self.display_speech()
 
-
-# Main function
-quiet = False
-force = False
-patchtool = False
-if len(sys.argv)==2 and sys.argv[1] == '--patchtool':
-	patchtool = True
-g = glob.glob('%scmpages/ni/ni*.html' % parldata)
-g.sort()
-parser = ParseDay()
-for file in g:
-	m = re.match('%scmpages/ni/ni(.*?).html' % parldata, file)
-	date = m.group(1)
-	outfile = '%sscrapedxml/ni/ni%s.xml' % (parldata, date)
-	parsefile = not os.path.isfile(outfile) or force
-	while parsefile:
-		try:
-			print "NI parsing %s..." % date
-			parser.parse_day(date)
-			fil = open('%sscrapedxml/ni/changedates.txt' % parldata, 'a+')
-			fil.write('%d,ni%s.xml\n' % (time.time(), date))
-			fil.close()
-			break
-		except ContextException, ce:
-			if patchtool:
-				print "Problem parsing...", ce
-				RunPatchTool('ni', date, ce)
-				continue
-			elif quiet:
-				print ce.description
-				print "\tERROR! Failed on %s, quietly moving to next day" % (date)
-				break
-			else:
-				raise
