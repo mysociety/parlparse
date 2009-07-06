@@ -30,7 +30,7 @@ from standingcreatehansardindex import UpdateStandingHansardIndex
 from pullgluepages import PullGluePages, PullGlueToday
 from lordspullgluepages import LordsPullGluePages
 from standingpullgluepages import StandingPullGluePages
-from runfilters import RunFiltersDir, RunDebateFilters, RunWransFilters, RunLordsFilters, RunWestminhallFilters, RunWMSFilters
+from runfilters import RunFiltersDir, RunDebateFilters, RunWransFilters, RunLordsFilters, RunWestminhallFilters, RunWMSFilters, RunNIFilters
 from regmemfilter import RunRegmemFilters
 from parsevote import RunVotesFilters
 
@@ -66,7 +66,8 @@ chgpages        Special pages that change, like list of cabinet ministers
 questionbook    The Question Book (Questions for Oral/Written Answer)
 votes           Votes and Proceedings
 today           Today in the Commons
-standing        Standing Committees
+standing        Public Bill (Standing) Committees
+ni              Northern Ireland Assembly
 
 Example command line
         ./lazyrunall.py --date=2004-03-03 --force-scrape scrape parse wrans
@@ -122,6 +123,7 @@ options.votes = False
 options.qbook = False
 options.today = False
 options.standing = False
+options.ni = False
 for arg in args:
         if arg == "scrape":
                 options.scrape = True
@@ -149,6 +151,8 @@ for arg in args:
                 options.today = True
         elif arg == "standing":
                 options.standing = True
+        elif arg == "ni":
+                options.ni = True
         elif arg == 'all':
                 options.wrans = True
                 options.debates = True
@@ -156,6 +160,7 @@ for arg in args:
                 options.wms = True
                 options.lords = True
                 options.standing = True
+                options.ni = True
         else:
                 print >>sys.stderr, "error: no such option %s" % arg
                 parser.print_help()
@@ -167,7 +172,7 @@ if not options.scrape and not options.parse:
         print >>sys.stderr, "error: choose what to do; scrape, parse, or both"
         parser.print_help()
         sys.exit(1)
-if not options.debates and not options.westminhall and not options.wms and not options.wrans and not options.regmem and not options.lords and not options.chgpages and not options.votes and not options.today and not options.qbook and not options.standing:
+if not options.debates and not options.westminhall and not options.wms and not options.wrans and not options.regmem and not options.lords and not options.chgpages and not options.votes and not options.today and not options.qbook and not options.standing and not options.ni:
         print >>sys.stderr, "error: choose what work on; debates, wrans, regmem, wms, votes, chgpages, questionbook, today or several of them"
         parser.print_help()
         sys.exit(1)
@@ -240,6 +245,8 @@ if options.parse:
 		RunFiltersDir(RunWMSFilters, 'wms', options, options.forceparse)
 	if options.lords:
 		RunFiltersDir(RunLordsFilters, 'lordspages', options, options.forceparse)
+	if options.ni:
+		RunFiltersDir(RunNIFilters, 'ni', options, options.forceparse)
 	if options.regmem:
 		RunFiltersDir(RunRegmemFilters, 'regmem', options, options.forceparse)
 	if options.votes:

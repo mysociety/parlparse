@@ -30,6 +30,8 @@ from lordsfiltercoltime import FilterLordsColtime
 from lordsfilterspeakers import LordsFilterSpeakers
 from lordsfiltersections import LordsFilterSections
 
+from ni.parse import ParseDay as ParseNIDay
+
 from contextexception import ContextException
 from patchtool import RunPatchTool
 
@@ -60,27 +62,15 @@ if not os.path.isdir(pwxmldirs):
 	os.mkdir(pwxmldirs)
 
 
-
 def ApplyPatches(filein, fileout, patchfile):
-	while True:
-		# Apply the patch
-		shutil.copyfile(filein, fileout)
-
-		# delete temporary file that might have been created by a previous patch failure
-		filoutorg = fileout + ".orig"
-		if os.path.isfile(filoutorg):
-			os.remove(filoutorg)
-		status = os.system("patch --quiet %s <%s" % (fileout, patchfile))
-
-		if status == 0:
-			return True
-
-		print "blanking out failed patch %s" % patchfile
-		print "---- This should not happen, therefore assert!"
-		assert False
-		os.rename(patchfile, patchfile + ".old~")
-		blankfile = open(patchfile, "w")
-		blankfile.close()
+	# Apply the patch
+	shutil.copyfile(filein, fileout)
+	status = os.system("patch --quiet %s <%s" % (fileout, patchfile))
+        if status == 0:
+		return True
+	print "blanking out failed patch %s" % patchfile
+	print "---- This should not happen, therefore assert!"
+	assert False
 
 # the operation on a single file
 def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile, jfout, bquietc):
@@ -101,9 +91,9 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 	ofin.close()
 
 	# do the filtering according to the type.  Some stuff is being inlined here
-	if dname == 'regmem' or dname == 'votes':
+	if dname == 'regmem' or dname == 'votes' or dname == 'ni':
 		regmemout = open(tempfilename, 'w')
-		FILTERfunction(regmemout, text, sdate)  # totally different filter function format
+		FILTERfunction(regmemout, text, sdate, sdatever)  # totally different filter function format
 		regmemout.close()
                 # in win32 this function leaves the file open and stops it being renamed
         	if sys.platform != "win32":
@@ -511,4 +501,9 @@ def RunLordsFilters(text, sdate):
                         gidnames.append("lordswrans")
 
 	return (flatb, gidnames)
+
+def RunNIFilters(fp, text, sdate, sdatever):
+    parser = ParseNIDay()
+    print "NI parsing %s..." % sdate
+    parser.parse_day(fp, text, sdate + sdatever)
 

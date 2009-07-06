@@ -17,10 +17,7 @@ cd ~/parlparse/pyscraper
 ./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE parse westminhall || RET=1
 ./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE parse wms || RET=1
 ./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE parse lords || RET=1
-
-# Yeah, it's not as fully featured as the UK Parliament one. But it should work :)
-cd ~/parlparse/pyscraper/ni
-./parse.py $4
+./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE parse ni || RET=1
 
 # Public Bill Committee transcripts
 cd ~/parlparse/pyscraper/standing
