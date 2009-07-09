@@ -290,7 +290,7 @@ def CmAllIndexPages(urlindex):
 		uryearvol.close()
 
 		# <a href="cmvol352.htm"><b>Volume 352</b>
-		vollinks = re.findall('<a href="([^"]*)"><b>volume[^<]*</b>(?i)', sryearvol)
+		vollinks = re.findall('<a href="([^"]*)">(?:<p class="style1">)?<b>volume[^<]*</b>(?i)', sryearvol)
 		for vol in vollinks:
 			res.append(urlparse.urljoin(urlyearvol, re.sub('\s', '', vol)))
 	return res
