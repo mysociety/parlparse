@@ -51,8 +51,9 @@ def RunRegmemFilters(fout, text, sdate, sdatever):
         categoryname = None
         subcategory = None
         for row in rows:
-                row = [ column.strip() for column in row ]
-                (striprow, stripcount) = re.subn('</?[^>]+>', '', "".join(row))
+                row = [ re.sub('<span style="background-color: #FFFF00">|</span>', '', column.strip())
+                        for column in row ]
+                striprow = re.sub('</?[^>]+>', '', "".join(row))
                 if striprow.strip() == "":
                         # There is no text on the row, just tags
                         pass
@@ -150,7 +151,7 @@ def RunRegmemFilters(fout, text, sdate, sdatever):
                 print "Missing %d MP entries:\n" % len(missing), missing
         extra = memberset.difference(membersetexpect)
         if len(extra) > 0:
-                print "Extra %d MP entries:\n" % len(missing), extra
+                print "Extra %d MP entries:\n" % len(extra), extra
 
 	fout.write("</publicwhip>\n")
 
