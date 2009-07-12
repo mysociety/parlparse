@@ -69,19 +69,7 @@
 		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?227x"><!-- wikibits js --></script>
 		<!-- Head Scripts -->
 		<script type="text/javascript" src="/skins-1.5/common/ajax.js?227x"></script>
-		<script type="text/javascript" src="/w/extensions/UsabilityInitiative/Resources/jquery.js?1"></script>
-		<script type="text/javascript" src="/w/extensions/UsabilityInitiative/Resources/messages.js?1"></script>
-		<script type="text/javascript" src="/w/extensions/UsabilityInitiative/Resources/jquery.textSelection.js?1"></script>
-		<script type="text/javascript" src="/w/extensions/UsabilityInitiative/Resources/jquery.cookie.js?1"></script>
-		<script type="text/javascript" src="/w/extensions/UsabilityInitiative/Resources/jquery.async.js?1"></script>
-		<script type="text/javascript" src="/w/extensions/UsabilityInitiative/Resources/jquery.browser.js?1"></script>
-		<script type="text/javascript">loadGM({});</script>
 		<script type="text/javascript" src="/skins-1.5/common/mwsuggest.js?227x"></script>
-		<script type="text/javascript">/*<![CDATA[*/
-		var wgNotice='';var wgNoticeLocal='';
-		/*]]>*/</script>
-		<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?227x"></script>
-
 		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
 	</head>
 <body class="mediawiki ltr ns-0 ns-subject page-Members_of_the_Northern_Ireland_Assembly_elected_in_2007 skin-monobook">
@@ -89,7 +77,7 @@
 		<div id="column-content">
 	<div id="content">
 		<a name="top" id="top"></a>
-		<div id="siteNotice"><script type='text/javascript'>if (wgNotice != '') document.writeln(wgNotice);</script></div>		<h1 id="firstHeading" class="firstHeading">Members of the Northern Ireland Assembly elected in 2007</h1>
+				<h1 id="firstHeading" class="firstHeading">Members of the Northern Ireland Assembly elected in 2007</h1>
 		<div id="bodyContent">
 			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
 			<div id="contentSub"></div>
@@ -1184,12 +1172,12 @@ Northern Ireland</a></b></p>
 <!-- 
 NewPP limit report
 Preprocessor node count: 1582/1000000
-Post-expand include size: 62320/2048000 bytes
+Post-expand include size: 62309/2048000 bytes
 Template argument size: 29451/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!2 and timestamp 20090702004015 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!2 and timestamp 20090709141938 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007">http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Northern_Ireland_MLAs_2007-" title="Category:Northern Ireland MLAs 2007-">Northern Ireland MLAs 2007-</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Northern_Irish_parliamentarians" title="Category:Lists of Northern Irish parliamentarians">Lists of Northern Irish parliamentarians</a></span> | <span dir='ltr'><a href="/wiki/Category:Northern_Ireland-related_lists" title="Category:Northern Ireland-related lists">Northern Ireland-related lists</a></span></div></div>			<!-- end content -->
@@ -1272,7 +1260,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 			<div class="visualClear"></div>
 			<div id="footer">
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
-				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
 					<li id="lastmod"> This page was last modified on 1 May 2009 at 13:26.</li>
 					<li id="copyright">Text is available under the <a href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution/Share-Alike License</a>;
@@ -1287,4 +1275,4 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </div>
 
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv174 in 0.068 secs. --></body></html>
+<!-- Served by srv173 in 0.076 secs. --></body></html>
