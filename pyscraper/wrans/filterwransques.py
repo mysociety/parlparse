@@ -107,13 +107,13 @@ def FilterQuestion(qs, sdate, lords):
 	# put the paragraphs back in together, with their numbering
 	# should do some blocking out of this, especially the "to ask" phrase.
 	pht = PhraseTokenize(qs, textn[0][0])
-	firstpara = re.sub('</?p>', '', pht.GetPara(''))
+	firstpara = re.sub('</?p[^>]*>', '', pht.GetPara(''))
 
 	if len(textn) > 1:
 		stext = [ '<p>%s</p>' % firstpara ]
 		for i in range(1, len(textn)):
 			pht = PhraseTokenize(qs, textn[i][0])
-			stext.append('<p class="numindent" qnum="%s">(%d) %s</p>' % (textn[i][1], i, re.sub('</?p>', '', pht.GetPara(''))))
+			stext.append('<p class="numindent" qnum="%s">(%d) %s</p>' % (textn[i][1], i, re.sub('</?p[^>]*>', '', pht.GetPara(''))))
 
 	else:
 		stext = [ '<p qnum="%s">%s</p>' % (textn[0][1], firstpara) ]
