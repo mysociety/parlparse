@@ -14,8 +14,8 @@ import urlparse
 import re
 import sets
 
-sys.path.append("..")
-from resolvemembernames import memberList
+sys.path.extend((".", ".."))
+from resolveninames import memberList
 date_today = datetime.date.today().isoformat()
 
 # Get region pages
@@ -23,7 +23,7 @@ wiki_index_url = "http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_A
 wikimembers  = {}
 
 # Grab page 
-ur = open('../../rawdata/Members_of_the_NIA_2007')
+ur = open('../rawdata/Members_of_the_NIA_2007')
 content = ur.read()
 ur.close()
 
