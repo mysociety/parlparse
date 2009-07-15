@@ -213,6 +213,7 @@
 <chgpageupdates date="2009-06-18" chgtype="govposts"/>
 <chgpageupdates date="2009-07-13" chgtype="govposts"/>
 <chgpageupdates date="2009-07-13" chgtype="govposts"/>
+<chgpageupdates date="2009-07-15" chgtype="govposts"/>
 <chgpageupdates date="2004-05-13" chgtype="privsec"/>
 <chgpageupdates date="2004-09-07" chgtype="privsec"/>
 <chgpageupdates date="2004-09-09" chgtype="privsec"/>
@@ -659,6 +660,7 @@
 <chgpageupdates date="2009-01-07" chgtype="plaidsnp"/>
 <chgpageupdates date="2009-01-07" chgtype="plaidsnp"/>
 <chgpageupdates date="2009-01-07" chgtype="plaidsnp"/>
+<chgpageupdates date="2009-07-13" chgtype="plaidsnp"/>
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/1000" name="Duke of Abercorn" dept="HM Household" position="Lord Steward" fromdate="2000-01-01" todate="2007-06-28" source="newlabministers2003-10-15 chgpages/govposts"></moffice>
@@ -5821,7 +5823,8 @@ Hon Harriet Harman QC (Leader of the House of Commons)" fromdate="2007-11-07" to
 <moffice id="uk.org.publicwhip/moffice/5711" name="Angus Robertson" matchid="uk.org.publicwhip/member/2002" dept="" position="Spokesperson" responsibility="Defence; International Development" fromdate="2006-08-02" todate="2006-10-20" source="chgpages/plaidsnp"></moffice>
 <moffice id="uk.org.publicwhip/moffice/5717" name="Angus Robertson" matchid="uk.org.publicwhip/member/2002" dept="" position="Spokesperson" responsibility="Europe; Defence; International Development" fromdate="2006-10-20" todate="2007-08-29" source="chgpages/plaidsnp"></moffice>
 <moffice id="uk.org.publicwhip/moffice/5722" name="Angus Robertson" matchid="uk.org.publicwhip/member/2002" dept="" position="Parliamentary Leader (Westminster Group)" fromdate="2007-08-29" todate="9999-12-31" source="chgpages/plaidsnp"></moffice>
-<moffice id="uk.org.publicwhip/moffice/5723" name="Angus Robertson" matchid="uk.org.publicwhip/member/2002" dept="" position="Spokesperson" responsibility="Communities and Local Government; Europe; Foreign Affairs; Defence" fromdate="2007-08-29" todate="9999-12-31" source="chgpages/plaidsnp"></moffice>
+<moffice id="uk.org.publicwhip/moffice/5723" name="Angus Robertson" matchid="uk.org.publicwhip/member/2002" dept="" position="Spokesperson" responsibility="Communities and Local Government; Europe; Foreign Affairs; Defence" fromdate="2007-08-29" todate="2009-07-13" source="chgpages/plaidsnp"></moffice>
+<moffice id="uk.org.publicwhip/moffice/5731" name="Angus Robertson" matchid="uk.org.publicwhip/member/2002" dept="" position="Spokesperson" responsibility="Foreign Affairs; Defence" fromdate="2009-07-13" todate="9999-12-31" source="chgpages/plaidsnp"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -5963,7 +5966,7 @@ Hon Harriet Harman QC (Leader of the House of Commons)" fromdate="2007-11-07" to
 <moffice id="uk.org.publicwhip/moffice/3369" name="Mike Weir" matchid="uk.org.publicwhip/member/1959" dept="Chairmen's Panel Committee" position="" fromdate="2005-11-01" todate="9999-12-31" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/5702" name="Mike Weir" matchid="uk.org.publicwhip/member/1959" dept="" position="Spokesperson" responsibility="Work &amp; Pensions; Trade &amp; Industry" fromdate="2006-01-16" todate="2006-08-02" source="chgpages/plaidsnp"></moffice>
 <moffice id="uk.org.publicwhip/moffice/5712" name="Mike Weir" matchid="uk.org.publicwhip/member/1959" dept="" position="Spokesperson" responsibility="Energy; Work and Pensions; Trade &amp; Industry" fromdate="2006-08-02" todate="2007-08-29" source="chgpages/plaidsnp"></moffice>
-<moffice id="uk.org.publicwhip/moffice/5724" name="Mike Weir" matchid="uk.org.publicwhip/member/1959" dept="" position="Spokesperson" responsibility="Business, Enterprise and Regulatory Reform; Energy; Work and Pensions" fromdate="2007-08-29" todate="9999-12-31" source="chgpages/plaidsnp"></moffice>
+<moffice id="uk.org.publicwhip/moffice/5724" name="Mike Weir" matchid="uk.org.publicwhip/member/1959" dept="" position="Spokesperson" responsibility="Business, Enterprise and Regulatory Reform; Energy; Work and Pensions" fromdate="2007-08-29" todate="2009-07-13" source="chgpages/plaidsnp"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3851" name="Mike Weir" matchid="uk.org.publicwhip/member/1959" dept="Business, Enterprise and Regulatory Reform Committee" position="" fromdate="2007-11-20" todate="2008-04-18" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/3891" name="Mike Weir" matchid="uk.org.publicwhip/member/1959" dept="Business and Enterprise Committee" position="" fromdate="2008-04-18" todate="2009-01-20" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/4051" name="Mike Weir" matchid="uk.org.publicwhip/member/1959" dept="Energy and Climate Change Committee" position="" fromdate="2009-01-20" todate="9999-12-31" source="chgpages/selctee"></moffice>
@@ -6012,7 +6015,7 @@ Hon Harriet Harman QC (Leader of the House of Commons)" fromdate="2007-11-07" to
 <moffice id="uk.org.publicwhip/moffice/5713" name="Pete Wishart" matchid="uk.org.publicwhip/member/2009" dept="" position="Spokesperson" responsibility="Constitutional Affairs; Overseas Aid; Culture, Media &amp; Sport" fromdate="2006-08-02" todate="2007-08-29" source="chgpages/plaidsnp"></moffice>
 <moffice id="uk.org.publicwhip/moffice/5725" name="Pete Wishart" matchid="uk.org.publicwhip/member/2009" dept="" position="Spokesperson" responsibility="Overseas Aid; Culture, Media &amp; Sport; Ministry of Justice" fromdate="2007-08-29" todate="2009-01-07" source="chgpages/plaidsnp"></moffice>
 <moffice id="uk.org.publicwhip/moffice/4008" name="Pete Wishart" matchid="uk.org.publicwhip/member/2009" dept="Scottish Affairs Committee" position="" fromdate="2008-11-25" todate="9999-12-31" source="chgpages/selctee"></moffice>
-<moffice id="uk.org.publicwhip/moffice/5727" name="Pete Wishart" matchid="uk.org.publicwhip/member/2009" dept="" position="Spokesperson" responsibility="Overseas Aid; Culture, Media &amp; Sport" fromdate="2009-01-07" todate="9999-12-31" source="chgpages/plaidsnp"></moffice>
+<moffice id="uk.org.publicwhip/moffice/5727" name="Pete Wishart" matchid="uk.org.publicwhip/member/2009" dept="" position="Spokesperson" responsibility="Overseas Aid; Culture, Media &amp; Sport" fromdate="2009-01-07" todate="2009-07-13" source="chgpages/plaidsnp"></moffice>
 <moffice id="uk.org.publicwhip/moffice/4031" name="Pete Wishart" matchid="uk.org.publicwhip/member/2009" dept="Advisory Committee on Works of Art" position="" fromdate="2009-01-14" todate="9999-12-31" source="chgpages/selctee"></moffice>
 </ministerofficegroup>
 
@@ -7084,8 +7087,9 @@ and Chief Whip" fromdate="2007-06-28" todate="2007-07-16" source="chgpages/privs
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/5703" name="Stewart Hosie" matchid="uk.org.publicwhip/member/1973" dept="" position="Spokesperson" responsibility="Chancellor of the Exchequer; Home Secretary" fromdate="2006-01-16" todate="2006-08-02" source="chgpages/plaidsnp"></moffice>
-<moffice id="uk.org.publicwhip/moffice/5709" name="Stewart Hosie" matchid="uk.org.publicwhip/member/1973" dept="" position="Spokesperson" responsibility="Economy; Home Affairs; Treasury; Women" fromdate="2006-08-02" todate="9999-12-31" source="chgpages/plaidsnp"></moffice>
+<moffice id="uk.org.publicwhip/moffice/5709" name="Stewart Hosie" matchid="uk.org.publicwhip/member/1973" dept="" position="Spokesperson" responsibility="Economy; Home Affairs; Treasury; Women" fromdate="2006-08-02" todate="2009-07-13" source="chgpages/plaidsnp"></moffice>
 <moffice id="uk.org.publicwhip/moffice/5718" name="Stewart Hosie" matchid="uk.org.publicwhip/member/1973" dept="" position="Chief Whip" fromdate="2007-08-29" todate="9999-12-31" source="chgpages/plaidsnp"></moffice>
+<moffice id="uk.org.publicwhip/moffice/5728" name="Stewart Hosie" matchid="uk.org.publicwhip/member/1973" dept="" position="Spokesperson" responsibility="Chief Whip; Treasury" fromdate="2009-07-13" todate="9999-12-31" source="chgpages/plaidsnp"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -7111,7 +7115,8 @@ and Chief Whip" fromdate="2007-06-28" todate="2007-07-16" source="chgpages/privs
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/3232" name="Angus MacNeil" matchid="uk.org.publicwhip/member/2004" dept="Scottish Affairs Committee" position="" fromdate="2005-07-14" todate="2008-11-25" source="chgpages/selctee"></moffice>
 <moffice id="uk.org.publicwhip/moffice/5704" name="Angus MacNeil" matchid="uk.org.publicwhip/member/2004" dept="" position="Spokesperson" responsibility="Environment, Food &amp; Rural Affairs; Transport" fromdate="2006-01-16" todate="2006-08-02" source="chgpages/plaidsnp"></moffice>
-<moffice id="uk.org.publicwhip/moffice/5710" name="Angus MacNeil" matchid="uk.org.publicwhip/member/2004" dept="" position="Spokesperson" responsibility="Environment, Food and Rural Affairs; Fishing and Tourism; Transport" fromdate="2006-08-02" todate="9999-12-31" source="chgpages/plaidsnp"></moffice>
+<moffice id="uk.org.publicwhip/moffice/5710" name="Angus MacNeil" matchid="uk.org.publicwhip/member/2004" dept="" position="Spokesperson" responsibility="Environment, Food and Rural Affairs; Fishing and Tourism; Transport" fromdate="2006-08-02" todate="2009-07-13" source="chgpages/plaidsnp"></moffice>
+<moffice id="uk.org.publicwhip/moffice/5730" name="Angus MacNeil" matchid="uk.org.publicwhip/member/2004" dept="" position="Spokesperson" responsibility="Transport; Rural Affairs; Scotland Office" fromdate="2009-07-13" todate="9999-12-31" source="chgpages/plaidsnp"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
@@ -8504,6 +8509,7 @@ and Chief Whip" fromdate="2007-06-28" todate="2007-07-16" source="chgpages/privs
 
 <ministerofficegroup>
 <moffice id="uk.org.publicwhip/moffice/4007" name="John Mason" matchid="uk.org.publicwhip/member/2035" dept="Administration Committee" position="" fromdate="2008-11-25" todate="9999-12-31" source="chgpages/selctee"></moffice>
+<moffice id="uk.org.publicwhip/moffice/5729" name="John Mason" matchid="uk.org.publicwhip/member/2035" dept="" position="Spokesperson" responsibility="Work and Pensions" fromdate="2009-07-13" todate="9999-12-31" source="chgpages/plaidsnp"></moffice>
 </ministerofficegroup>
 
 <ministerofficegroup>
