@@ -71,6 +71,11 @@
 		<!-- Head Scripts -->
 		<script type="text/javascript" src="/skins-1.5/common/ajax.js?230"></script>
 		<script type="text/javascript" src="/skins-1.5/common/mwsuggest.js?230"></script>
+		<script type="text/javascript">/*<![CDATA[*/
+		var wgNotice='';var wgNoticeLocal='';
+		/*]]>*/</script>
+		<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?230"></script>
+
 		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
 	</head>
 <body class="mediawiki ltr ns-0 ns-subject page-MPs_elected_in_the_United_Kingdom_general_election_1997 skin-monobook">
@@ -78,7 +83,7 @@
 		<div id="column-content">
 	<div id="content">
 		<a name="top" id="top"></a>
-				<h1 id="firstHeading" class="firstHeading">MPs elected in the United Kingdom general election, 1997</h1>
+		<div id="siteNotice"><script type='text/javascript'>if (wgNotice != '') document.writeln(wgNotice);</script></div>		<h1 id="firstHeading" class="firstHeading">MPs elected in the United Kingdom general election, 1997</h1>
 		<div id="bodyContent">
 			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
 			<div id="contentSub">  (Redirected from <a href="/w/index.php?title=MPs_elected_in_the_UK_general_election,_1997&amp;redirect=no" title="MPs elected in the UK general election, 1997">MPs elected in the UK general election, 1997</a>)</div>
@@ -3773,4 +3778,4 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </div>
 
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv203 in 0.113 secs. --></body></html>
+<!-- Served by srv190 in 0.076 secs. --></body></html>
