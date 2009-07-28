@@ -227,9 +227,6 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 sr = re.sub("</?mekon[^>]*>", "", sr)
                 sr = re.sub("</?vbcrlf>", "", sr)
 
-                if sdate=='2006-06-07' and re.search('/text/', url):
-                        sr = re.sub('<body>(?!<hr>)', '<body><hr>', sr)
-
                 # Make sure correction is before written answer question number - XXX right place?
                 sr = re.sub('(\[\d+\])\s*((?:</p>)?)\s*(<a href="[^"]*corrtext[^"]*">.*?</a>)', r'\3 \1\2', sr)
 
