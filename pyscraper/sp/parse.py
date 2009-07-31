@@ -29,13 +29,16 @@ from findquotation import find_quotation_from_text
 
 from common import month_name_to_int
 from common import non_tag_data_in
+from common import tidy_string
+
+import traceback
 
 # ------------------------------------------------------------------------
-# 
+#
 # This script is quite horrendous, in my opinion - I'm sure it could
 # be written much more simply by someone with better intuition for
-# this type of webscraping.  (Or by me if I started again.)  
-# 
+# this type of webscraping.  (Or by me if I started again.)
+#
 # ------------------------------------------------------------------------
 
 # If verbose is True then you'll get about a gigabyte of nonsense on
@@ -143,17 +146,23 @@ class PlaceHolder:
             time_attribute = ' time="%s"' % (self.time)
         return '<place-holder%s%s/>' % (colnum_attribute,time_attribute)
 
+def all_objects_except_placeholders(sequence):
+    return filter( lambda x: x.__class__ != PlaceHolder, sequence )
+
 class Heading:
 
     def __init__(self,id_within_column,colnum,time,url,date,heading_text,major):
         self.id_within_column = id_within_column
-        self.colnum = colnum
         self.time = time
         self.url = url
         self.date = date
         self.major = major
-        self.id = 'uk.org.publicwhip/spor/'+str(date)+'.'+str(colnum)+'.'+str(id_within_column)
+        self.set_colnum(colnum)
         self.heading_text = heading_text
+
+    def set_colnum(self,column):
+        self.colnum = column
+        self.id = 'uk.org.publicwhip/spor/'+str(self.date)+'.'+str(self.colnum)+'.'+str(self.id_within_column)
 
     def to_xml(self):
         if self.major:
@@ -165,7 +174,7 @@ class Heading:
         text_to_display = re.sub('(?ims)<[^>]+>','',self.heading_text)
         text_to_display = re.sub('(?ims)\s+',' ',text_to_display)
         text_to_display = re.sub('"','&quot;',text_to_display)
-        text_to_display.strip()
+        text_to_display = text_to_display.strip()
         time_info = ''
         if self.time:
             time_info = ' time="' + str(self.time) + '"'
@@ -177,13 +186,11 @@ class Speech:
     def __init__(self,id_within_column,colnum,time,url,date,parser):
         if verbose: print "- Creating Speech..."
         self.id_within_column = id_within_column
-        self.colnum = colnum
         self.time = time
         self.url = url
         self.date = date
-        self.id = 'uk.org.publicwhip/spor/'+str(date)+'.'+str(colnum)+'.'+str(id_within_column)
+        self.set_colnum(colnum)
         self.paragraphs = [ ]
-        if verbose: print "- self.paragraphs was: "+str(self.paragraphs)
         self.speakerid = None
         self.name = None
         self.question_number = None
@@ -193,8 +200,12 @@ class Speech:
         self.opened_and_closed_quote = False
         self.after_open_quote = False
 
+    def set_colnum(self,column):
+        self.colnum = column
+        self.id = 'uk.org.publicwhip/spor/'+str(self.date)+'.'+str(self.colnum)+'.'+str(self.id_within_column)
+
     def no_text_yet(self):
-        return len(self.paragraphs) == 0
+        return len(all_objects_except_placeholders(self.paragraphs)) == 0
 
     def add_paragraph(self,paragraph):
         # if verbose: print "- in add_paragraph, self.paragraphs was: "+str(self.paragraphs)
@@ -203,13 +214,19 @@ class Speech:
             raise Exception, "Trying to add null paragraph..."
         self.paragraphs.append(paragraph)
 
+    def add_placeholder_in_speech(self,placeholder):
+        self.paragraphs.append(placeholder)
+
     def add_text_to_last_paragraph(self,text):
         if self.paragraphs:
-            last = self.paragraphs.pop()
-            # if verbose: print "- last ["+str(last.__class__)+"] was: "+str(last)
-            # if verbose: print "- text ["+str(text.__class__)+"] was: "+str(text)
-            # if verbose: print "- self.paragraphs ["+str(self.paragraphs.__class__)+"] was: "+str(self.paragraphs)
-            self.paragraphs.append(last+" "+text)
+            if self.paragraphs[-1].__class__ == PlaceHolder:
+                self.paragraphs.append(text)
+            else:
+                last = self.paragraphs.pop()
+                # if verbose: print "- last ["+str(last.__class__)+"] was: "+str(last)
+                # if verbose: print "- text ["+str(text.__class__)+"] was: "+str(text)
+                # if verbose: print "- self.paragraphs ["+str(self.paragraphs.__class__)+"] was: "+str(self.paragraphs)
+                self.paragraphs.append(last+" "+text)
         else:
             self.paragraphs = [ text ]
 
@@ -289,6 +306,57 @@ class Speech:
             return "uk.org.publicwhip/spwa/%s.%s.h" % ( str(d), m.group(1) )
         return find_quotation_from_text(self.parser.sxp,d,content,column_numbers_strings)
 
+    def remove_trailing_placeholders(self):
+        result = []
+        i = len(self.paragraphs) - 1
+        while i >= 0 and self.paragraphs[i].__class__ == PlaceHolder:
+            result.insert(0,self.paragraphs[i])
+            del self.paragraphs[i]
+            i -= 1
+        return result
+
+    def tidy_paragraph_text(self,untidy_text):
+        real_paragraph = re.sub('(?ims)(\s*)</?p[^>]*>(\s*)',r'\1\2',untidy_text)
+        real_paragraph = re.sub('(?ims)\s+',' ',real_paragraph)
+
+        m_start_and_end = re.match( '^\s*(&quot;)(.*)(&quot;.?)(&mdash;)?(\[[^\]]*\])?\s*$', real_paragraph )
+        m_start         = re.match( '^\s*(&quot;)(.*)', real_paragraph )
+        m_end           = re.match( '^\s*(.*)(&quot;.?)(&mdash;)?(\[[^\]]*\])?\s*$', real_paragraph )
+
+        indent = False
+
+        if m_start_and_end:
+            self.opened_and_closed_quote = True
+            if not re.search('&quot;',m_start_and_end.group(2)):
+                indent = True
+            if m_start_and_end.group(5):
+                gid = self.find_quotation(m_start_and_end.group(2),m_start_and_end.group(5))
+                if gid:
+                    m = m_start_and_end
+                    before = m.group(1)+m.group(2)+m.group(3)
+                    if m.group(4):
+                        before += m.group(4)
+                    real_paragraph = before+('<citation id="%s">%s</citation>'%(gid,m.group(5)))
+        elif m_start:
+            self.open_quote = True
+            if not re.search('&quot;',m_start.group(2)):
+                indent = True
+        elif m_end:
+            self.close_quote = True
+            if not re.search('&quot;',m_end.group(1)):
+                indent = True
+            if m_end.group(4):
+                gid = self.find_quotation(m_end.group(1),m_end.group(4))
+                if gid:
+                    m = m_end
+                    before = m.group(1)+m.group(2)
+                    if m.group(3):
+                        before += m.group(3)
+                    real_paragraph = before+('<citation id="%s">%s</citation>'%(gid,m.group(4)))
+        elif self.after_open_quote:
+            indent = True
+        return real_paragraph, indent
+
     def to_xml(self):
 
         # Those awkward alphabetical lists.
@@ -333,53 +401,47 @@ class Speech:
         result = '<speech id="%s" %s %scolnum="%s" url="%s"%s>' % ( self.id, speaker_info, question_info, self.colnum, self.url, time_info )
         html = ''
 
+        paragraph_open = False
+
+        last_real_paragraph = None
+        last_indent = False
         for p in self.paragraphs:
-            real_paragraph = re.sub('(?ims)(\s*)</?p[^>]*>(\s*)',r'\1\2',p)
-            real_paragraph = re.sub('(?ims)\s+',' ',real_paragraph)
-            indent_text = ''
-
-            m_start_and_end = re.match( '^\s*(&quot;)(.*)(&quot;.?)(&mdash;)?(\[[^\]]*\])?\s*$', real_paragraph )
-            m_start         = re.match( '^\s*(&quot;)(.*)', real_paragraph )
-            m_end           = re.match( '^\s*(.*)(&quot;.?)(&mdash;)?(\[[^\]]*\])?\s*$', real_paragraph )
-
-            indent = False
-
-            if m_start_and_end:
-                self.opened_and_closed_quote = True
-                if not re.search('&quot;',m_start_and_end.group(2)):
-                    indent = True
-                if m_start_and_end.group(5):
-                    gid = self.find_quotation(m_start_and_end.group(2),m_start_and_end.group(5))
-                    if gid:
-                        m = m_start_and_end
-                        before = m.group(1)+m.group(2)+m.group(3)
-                        if m.group(4):
-                            before += m.group(4)
-                        real_paragraph = before+('<citation id="%s">%s</citation>'%(gid,m.group(5)))
-            elif m_start:
-                self.open_quote = True
-                if not re.search('&quot;',m_start.group(2)):
-                    indent = True
-            elif m_end:
-                self.close_quote = True
-                if not re.search('&quot;',m_end.group(1)):
-                    indent = True
-                if m_end.group(4):
-                    gid = self.find_quotation(m_end.group(1),m_end.group(4))
-                    if gid:
-                        m = m_end
-                        before = m.group(1)+m.group(2)
-                        if m.group(3):
-                            before += m.group(3)
-                        real_paragraph = before+('<citation id="%s">%s</citation>'%(gid,m.group(4)))
-            elif self.after_open_quote:
-                indent = True
-
-            if indent:
-                    indent_text = ' class="indent"'
-                    
-            result += "\n<p%s>%s</p>\n" % ( indent_text, real_paragraph )
-
+            if p.__class__ == PlaceHolder:
+                if not paragraph_open:
+                    result += "\n<p>"
+                    paragraph_open = True
+                result += p.to_xml()
+            else:
+                real_paragraph, indent = self.tidy_paragraph_text(p)
+                looks_like_continuation = re.search('^\s*[a-z]',real_paragraph)
+                last_paragraph_unfinished = last_real_paragraph and re.search('[a-z0-9;,] *$',last_real_paragraph)
+                # However, if it looks like someone's just said: "I
+                # move," and the start of the next paragraph doesn't
+                # look like a continuation then it *should* be a new
+                # paragraph...
+                move_match = last_real_paragraph and re.search('I move, *$',last_real_paragraph)
+                # Sometimes the start of a paragraph is a list entry -
+                # it looks less confusing if these are in a new
+                # paragraph:
+                looks_like_list_entry_next = re.search('^\s*(\([a-z]+\)|[0-9]+\.)',real_paragraph)
+                if (move_match or looks_like_list_entry_next) and not looks_like_continuation:
+                    last_paragraph_unfinished = False
+                if paragraph_open and ((last_indent != indent) or not (last_paragraph_unfinished or looks_like_continuation)):
+                    result += "</p>\n"
+                    paragraph_open = False
+                indent_text = ''
+                if indent:
+                        indent_text = ' class="indent"'
+                if paragraph_open:
+                    result += " "
+                else:
+                    result += "\n<p%s>" % (indent_text,)
+                    paragraph_open = True
+                result += "%s" % (real_paragraph,)
+                last_real_paragraph = real_paragraph
+                last_indent = indent
+        if paragraph_open:
+            result += "</p>\n"
         result += '</speech>'
         return result
 
@@ -387,7 +449,6 @@ class Division:
 
     def __init__(self,id_within_column,colnum,time,url,date,divnumber):
         self.id_within_column = id_within_column
-        self.colnum = colnum
         self.time = time
         self.url = url
         self.date = date
@@ -396,8 +457,12 @@ class Division:
         self.against_votes = list()
         self.abstentions_votes = list()
         self.spoiled_votes_votes = list()
-        self.id = 'uk.org.publicwhip/spdivision/'+str(date)+'.'+str(colnum)+'.'+str(divnumber)
+        self.set_colnum(colnum)
         self.candidate = None
+
+    def set_colnum(self,column):
+        self.colnum = column
+        self.id = 'uk.org.publicwhip/spdivision/'+str(self.date)+'.'+str(self.colnum)+'.'+str(self.divnumber)
 
     def set_candidate(self,candidate):
         self.candidate = candidate
@@ -505,8 +570,21 @@ def just_time( non_tag_text ):
     m = re.match( '^\s*(\d?\d)[:\.](\d\d)\s*$', non_tag_text )
     if m:
         return datetime.time(int(m.group(1),10),int(m.group(2),10))
+
+def meeting_closed( non_tag_text ):
+    m = re.match( '(?ims)^\s*Meeting\s+closed\s+at\s+(\d?\d)[:\.](\d\d)\s*\.?\s*$', non_tag_text )
+    if m:
+        return datetime.time(int(m.group(1),10),int(m.group(2),10))
     else:
         return None
+
+def meeting_suspended( non_tag_text ):
+    m = re.match( '(?ims)^\s*Meeting\s+suspended(\s+until\s+(\d?\d)[:\.](\d\d)\s*\.?\s*|\s*\.?\s*)$', non_tag_text )
+    if m:
+        if verbose: print "Got meeting suspended!"
+        return True
+    else:
+        return False
 
 def full_date( s ):
     if re.search('(?ims)^\s*\w+\s+\d+\s+\w+\s+\d+\s*$',s):
@@ -575,6 +653,8 @@ class Parser:
         self.current_division = None
         self.current_heading = None
 
+        self.for_after_division = []
+
         self.results_expected = None
 
         self.started = False
@@ -583,12 +663,12 @@ class Parser:
 
         self.all_stuff = []
         self.speakers_so_far = []
-        self.added_non_placeholder = False
 
         self.report_date = None
 
-        self.sxp = ScrapedXMLParser() 
+        self.sxp = ScrapedXMLParser()
 
+    # Returns True if a column could be parsed out, and returns False otherwise
     def parse_column(self,tag):
         a_name_tag = tag.find('a')
         if a_name_tag:
@@ -600,21 +680,22 @@ class Parser:
         text_in_tag = non_tag_data_in(tag)
 
         m = re.search('Col\s*([0-9]+)',text_in_tag)
-        if not m:
+        if m:
+            self.current_column = int(m.group(1))
+            self.current_id_within_column = 0
+            return True
+        else:
             # It's probably the last row, with a "Scottish Parliament
             # 2000" notice, or empty for padding at the end...
             if not (re.search('Scottish Parliament',text_in_tag) or re.match('(?ims)^\s*$',text_in_tag)):
                 raise Exception, "Couldn't find column from: "+text_in_tag+" prettified, was: "+tag.prettify()
-
-        if m:
-            self.current_column = int(m.group(1))
-            self.current_id_within_column = 0
+            return False
 
     def parse_weird_day( self, body ):
 
         self.started = False
 
-        # For some reason, this day has a different format from all the rest.
+        # For some reason, one day (2004-06-30) has a different format from all the rest :(
 
         max_paragraphs = -1
         main_cell = None
@@ -684,7 +765,6 @@ class Parser:
             col_cell = None
             substance_cell = None
 
-            if verbose: print 'cells in row: ' + str(len(cells))
             if len(cells) == 1:
                 # This is probably the 'presiding officer opened' bit, or
                 # one of the <hr>s at the top.
@@ -721,7 +801,9 @@ class Parser:
                     continue
 
             if col_cell:
-                self.parse_column(col_cell)
+                if self.parse_column(col_cell):
+                    # AARGH: second duplicate is from here
+                    self.add_placeholder_column()
 
             # Now deal with the cell with substance.  This is quite a bit trickier...
 
@@ -755,7 +837,8 @@ class Parser:
                     continue
                 if full_date_without_weekday(non_tag_data):
                     continue
-                self.parse_column(m)
+                if self.parse_column(m):
+                    self.add_placeholder_column()
             elif m.__class__ == Tag and m.name == 'div':
                 self.parse_substance(m)
             elif m.__class__ == Tag:
@@ -763,7 +846,8 @@ class Parser:
                     self.add_heading(non_tag_data_in(m),True)
                     continue
                 if m.name == 'span' and m['class'] and m['class'].lower() == 'orcolno':
-                    self.parse_column(m)
+                    if self.parse_column(m):
+                        self.add_placeholder_column()
                     continue
                 if m.name == 'br':
                     continue
@@ -777,35 +861,45 @@ class Parser:
                 if not re.match('(?ims)^\s*$',str(m)):
                     raise Exception, "Unknown non-empty navigable string in contents of main cell: "+str(m)
 
-    def add_placeholder(self):
-        return # Disable for the moment...
-        p = PlaceHolder(self.current_column,self.current_time)
-        self.all_stuff.append(p)
+    def add_placeholder_time(self):
+        self.add_placeholder_real(None,self.current_time)
+
+    def add_placeholder_column(self):
+        self.add_placeholder_real(self.current_column,None)
+
+    def add_placeholder_real(self,column,time):
+        p = PlaceHolder(column,time)
+        if self.current_speech:
+            self.current_speech.add_placeholder_in_speech(p)
+        elif self.current_heading:
+            self.complete_current()
+            #if time:
+            #    self.current_heading.time = time
+            #if column:
+            #    self.current_heading.id_within_column = 0
+            #    self.current_heading.set_colnum(column)
+            #    self.current_id_within_column += 1
+            self.all_stuff.append(p)
+        elif self.current_division:
+            # We want to keep the divisions all together, so add any
+            # column number or time place-holder after the division:
+            self.for_after_division.append(p)
+        else:
+            self.all_stuff.append(p)
 
     def complete_current(self):
+        if self.current_heading:
+            self.all_stuff.append(self.current_heading)
+            self.current_heading = None
         if self.current_speech:
             self.current_speech.complete()
             self.all_stuff.append(self.current_speech)
-            self.added_non_placeholder = True
             self.current_speech = None
         if self.current_division:
             self.all_stuff.append(self.current_division)
-            self.added_non_placeholder = True
             self.current_division = None
-        if self.current_heading:
-            self.all_stuff.append(self.current_heading)
-            self.added_non_placeholder = True
-            self.current_heading = None
-        # If it looks as if adding a placeholder would be useful
-        # (i.e. the previous element's time is no longer accurate,
-        # add that here.
-        if len(self.all_stuff) > 0:
-            last = self.all_stuff[-1]
-            if self.current_time != last.time or self.current_column != last.colnum:
-                self.add_placeholder()
-        else:
-            if self.current_time or self.current_column:
-                self.add_placeholder()
+            self.all_stuff += self.for_after_division
+            self.for_after_division = []
 
     def make_url(self):
         url_without_anchor = self.url
@@ -819,16 +913,14 @@ class Parser:
             self.current_speech.add_paragraph( s )
         else:
             self.complete_current()
+            self.ensure_heading_exists()
             self.current_speech = Speech(self.current_id_within_column,self.current_column,self.current_time,self.make_url(),self.report_date,self)
             self.current_id_within_column += 1
             self.current_speech.add_paragraph( s )
 
-    def all_stuff_without_placeholders(self):
-        return filter( lambda x: x.__class__ != PlaceHolder, self.all_stuff )
-
     def add_heading(self,text,major):
         self.complete_current()
-        non_placeholders = self.all_stuff_without_placeholders()
+        non_placeholders = all_objects_except_placeholders(self.all_stuff)
         if len(non_placeholders) > 1:
             last = non_placeholders[-1]
             # It's not just the introduction heading...
@@ -839,16 +931,12 @@ class Parser:
         self.current_heading = Heading(self.current_id_within_column,self.current_column,self.current_time,self.make_url(),self.report_date,text,major)
         self.current_id_within_column += 1
 
-    def parse_substance(self,contents):
-
-        # This is actually a bit broken, because self.current_heading
-        # might already have the first heading in it.  However,
-        # preserve this behaviour so that we don't alter the
-        # current_id_within_column needlessly :(
-
-        non_placeholders = self.all_stuff_without_placeholders()
-        if len(non_placeholders) < 1:
+    def ensure_heading_exists(self):
+        non_placeholders = all_objects_except_placeholders(self.all_stuff)
+        if len(non_placeholders) < 1 and not self.current_heading:
             self.add_heading("Introduction",True)
+
+    def parse_substance(self,contents):
 
         non_empty_contents = filter(lambda x: x.__class__ != NavigableString or not re.match('^\s*$',x), contents)
 
@@ -872,15 +960,31 @@ class Parser:
             # In the one Weird Day, this might be a column number
             # paragraph, so check for that:
 
-            if re.match( '\s*Col\s*[0-9]+\s', non_tag_text ):
-                self.parse_column(s)
+            if re.match( '^\s*Col\s*[0-9]+\s*$', non_tag_text ):
+                if self.parse_column(s):
+                    # AARGH: one duplicate from here
+                    self.add_placeholder_column()
+                continue
+            # So that we don't match a gigantic main column - FIXME: temporary
+            elif re.match( '^\s*Col\s*[0-9]+\s', non_tag_text ):
                 continue
 
             # This might just be the time:
             maybe_time = just_time(non_tag_text)
             if maybe_time:
                 self.current_time = maybe_time
+                self.add_placeholder_time()
                 continue
+
+            # It might be the "Meeting closed at" message:
+            maybe_time = meeting_closed(non_tag_text)
+            if maybe_time:
+                self.current_time = maybe_time
+                self.add_placeholder_time()
+            # But carry on, because we still want to include the text...
+
+            if meeting_suspended(non_tag_text):
+                self.complete_current()
 
             # I don't think we ever care if there's no displayable text:
 
@@ -928,6 +1032,7 @@ class Parser:
                     got_preamble = True
                 elif m:
                     self.current_time = datetime.time(int(m.group(2),10),int(m.group(3),10))
+                    self.add_placeholder_time()
                     got_preamble = True
 
                 if got_preamble:
@@ -989,7 +1094,7 @@ class Parser:
                 if verbose: print "Got what looks like some narrative..."
                 # Then this is probably some narrative, just added
                 # into the current speech.
-                self.add_to_speech_or_make_new_one(str(s_contents[0]))        
+                self.add_to_speech_or_make_new_one(str(s_contents[0]))
                 continue
 
             # Sometimes we get lists or audience reaction in the
@@ -1016,8 +1121,8 @@ class Parser:
                         count_case("strong-in-place-of-p")
                         # We only hit this twice; they're both headings...
                         self.add_heading(str(s),False)
-                        continue                        
-                    else:                    
+                        continue
+                    else:
                         raise Exception, "There was an unexpected s, which was: "+s.name+" with content: "+s.prettify()
 
             # So now this must be a paragraph...
@@ -1136,6 +1241,7 @@ class Parser:
                 else:
                     if verbose: print "- Either there wasn't a current speech ("+str(self.current_speech)+") or there was text in it."
                     self.complete_current()
+                    self.ensure_heading_exists()
                     self.current_speech = Speech(self.current_id_within_column,self.current_column,self.current_time,self.make_url(),self.report_date,self)
                     self.current_id_within_column += 1
 
@@ -1169,6 +1275,7 @@ class Parser:
                     maybe_time = just_time(non_tag_data_in(r))
                     if maybe_time:
                         self.current_time = maybe_time
+                        self.add_placeholder_time()
                         continue
                     if r.__class__ == NavigableString:
                         if add_to_last:
@@ -1242,12 +1349,15 @@ def get_heading_regexps(contents_filename):
             text = re.sub('(?ims)\s+',' ',text)
             if re.match('^\s*$',text):
                 continue
+            text = tidy_string(text)
             # Just ignore the listed MSP names, we only care about
             # the headings...
             msp_names = memberList.match_whole_speaker(text,str(d))
             if msp_names != None and len(msp_names) > 0:
                 continue
-            if text.upper() == text:
+            # The latter part of the condition is because sometimes
+            # the titles of questions are just road names, e.g. A76
+            if text.upper() == text and not re.match('^[A-Z]+[0-9]+$',text):
                 major_headings.append(text.strip())
             else:
                 minor_headings.append(text.strip())
@@ -1296,17 +1406,33 @@ def compare_filename(a,b):
     else:
         raise Exception, "Couldn't match filenames: "+a+" and "+b
 
-def get_last_column(previous_xml_filename):
-    print "Going to load '%s'" % (previous_xml_filename)
+def get_last_column_and_id_in_column(previous_xml_filename):
+    if verbose: print "Going to load '%s'" % (previous_xml_filename)
     doc = libxml2.parseFile(previous_xml_filename)
     a = doc.xpathEval('//@colnum')
     last_column = None
     for e in a:
         c = e.content
         if c and re.match('^\d+$',c):
-            last_column = c
-    if last_column:
-        return int(last_column,10)
+            last_column = int(c,10)
+    a = doc.xpathEval('//@id')
+    last_id_in_column = None
+    for e in a:
+        c = e.content
+        if c:
+            m = re.search('\.(\d+)\.(\d+)$',c)
+            if m:
+                last_column_in_id = int(m.group(1),10)
+                last_id_in_column_in_id = int(m.group(2),10)
+    # The column number can advance without us hitting a new ID, in
+    # which case last_column will be greater than last_column_in_id.
+    # Reset the last_id_in_column_in_id in that case...
+    if last_column > last_column_in_id:
+        last_id_in_column_in_id = 0
+    elif last_column_in_id != last_column:
+        raise Exception, "The last colnum found anywhere was %d, but the last column number in an id was %d" % (last_column_in_id,last_column)
+    if last_column != None and last_id_in_column_in_id != None:
+        return (last_column,last_id_in_column_in_id)
     else:
         return None
 
@@ -1314,6 +1440,7 @@ def get_last_column(previous_xml_filename):
 # End of function and class definitions...
 
 last_column_number = 0
+last_id_in_column = 0
 last_skipped_file = None
 
 for d in dates:
@@ -1338,9 +1465,11 @@ for d in dates:
         continue
 
     if last_skipped_file:
-        last_column_from_skipped_file = get_last_column(last_skipped_file)
+        last_column_from_skipped_file, last_id_in_column_from_skipped_file = get_last_column_and_id_in_column(last_skipped_file)
         if last_column_from_skipped_file:
             last_column_number = last_column_from_skipped_file
+        if last_id_in_column_from_skipped_file:
+            last_id_in_column = last_id_in_column_from_skipped_file
     last_skipped_file = None
 
     contents_filename = filenames[0]
@@ -1353,6 +1482,7 @@ for d in dates:
 
     parser.report_date = d
     parser.current_column = last_column_number
+    parser.current_id_within_column = last_id_in_column
 
     parser.major_regexp = major_regexp
     parser.minor_regexp = minor_regexp
@@ -1485,15 +1615,16 @@ for d in dates:
             parser.parse_late_format( body )
         else:
             parser.parse_early_format( body )
-
+ 
         elements_added = len(parser.all_stuff) - elements_before
-
-        last_column_number = parser.current_column
 
         if elements_added < 3 and not re.search('1999-07-02_1',detail_filename):
             raise Exception, "Very suspicious: only "+str(elements_added)+" added by parsing: "+detail_filename
 
     parser.complete_current()
+
+    last_column_number = parser.current_column
+    last_id_in_column = parser.current_id_within_column
 
     temp_output_filename = xml_output_directory + "tmp.xml"
     o = open(temp_output_filename,"w")
@@ -1574,8 +1705,19 @@ for d in dates:
 ''')
 
     still_in_quote = False
-    
+
+    # When we have placeholders at the end of a speech it's more
+    # natural to have them as separate top-level elements:
+    expanded_all_stuff = []
     for i in parser.all_stuff:
+        if i.__class__ == Speech:
+            trailing_placeholders = i.remove_trailing_placeholders()
+            expanded_all_stuff.append(i)
+            expanded_all_stuff += trailing_placeholders
+        else:
+            expanded_all_stuff.append(i)
+
+    for i in expanded_all_stuff:
         if i.__class__ == Speech:
             if still_in_quote:
                 i.still_in_quote = True
@@ -1583,15 +1725,23 @@ for d in dates:
             if i.open_quote:
                 still_in_quote = True
             elif i.close_quote or i.opened_and_closed_quote:
-                still_in_quote = False                
+                still_in_quote = False
         elif i.__class__ == Heading or i.__class__ == Division:
             still_in_quote = False
             o.write( "\n" + i.to_xml() + "\n" )
         elif i.__class__ == PlaceHolder:
+            # FIXME: should this reset still_in_quote to False as well?
+            # Test that out...
             o.write( "\n" + i.to_xml() + "\n" )
             
     o.write("\n\n</publicwhip>\n")
     o.close()
+
+    changed_output = True
+    if os.path.exists(output_filename):
+        result = os.system("diff %s %s > /dev/null" % (temp_output_filename,output_filename))
+        if 0 == result:
+            changed_output = False
 
     retcode = call( [ "mv", temp_output_filename, output_filename ] )
     if retcode != 0:
@@ -1602,9 +1752,10 @@ for d in dates:
     #if retcode != 0:
     #    raise Exception, "Validating "+output_filename+" for well-formedness failed."
 
-    fil = open('%schangedates.txt' % xml_output_directory, 'a+')
-    fil.write('%d,sp%s.xml\n' % (time.time(), str(d)))
-    fil.close()
+    if changed_output:
+        fil = open('%schangedates.txt' % xml_output_directory, 'a+')
+        fil.write('%d,sp%s.xml\n' % (time.time(), str(d)))
+        fil.close()
 
 if verbose:
     report_cases()
