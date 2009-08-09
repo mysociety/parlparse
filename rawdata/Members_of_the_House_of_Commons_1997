@@ -15,20 +15,20 @@
 		<link rel="alternate" type="application/rss+xml" title="Wikipedia RSS Feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=rss" />
 		<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
 		<title>MPs elected in the United Kingdom general election, 1997 - Wikipedia, the free encyclopedia</title>
-		<link rel="stylesheet" href="/skins-1.5/common/shared.css?230" type="text/css" media="screen" />
-		<link rel="stylesheet" href="/skins-1.5/common/commonPrint.css?230" type="text/css" media="print" />
-		<link rel="stylesheet" href="/skins-1.5/monobook/main.css?230" type="text/css" media="screen" />
-		<link rel="stylesheet" href="/skins-1.5/chick/main.css?230" type="text/css" media="handheld" />
-		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?230" type="text/css" media="screen" /><![endif]-->
-		<!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?230" type="text/css" media="screen" /><![endif]-->
-		<!--[if IE 6]><link rel="stylesheet" href="/skins-1.5/monobook/IE60Fixes.css?230" type="text/css" media="screen" /><![endif]-->
-		<!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?230" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="/skins-1.5/common/shared.css?233xz" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/skins-1.5/common/commonPrint.css?233xz" type="text/css" media="print" />
+		<link rel="stylesheet" href="/skins-1.5/monobook/main.css?233xz" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/skins-1.5/chick/main.css?233xz" type="text/css" media="handheld" />
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE50Fixes.css?233xz" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/skins-1.5/monobook/IE55Fixes.css?233xz" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/skins-1.5/monobook/IE60Fixes.css?233xz" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/skins-1.5/monobook/IE70Fixes.css?233xz" type="text/css" media="screen" /><![endif]-->
 		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" />
 		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
 		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
 		<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" />
 		<link rel="stylesheet" href="/w/index.php?title=-&amp;action=raw&amp;maxage=2678400&amp;gen=css" type="text/css" />
-		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?230"></script>
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?233xz"></script>
 		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
 
 		<script type="text/javascript">/*<![CDATA[*/
@@ -59,6 +59,7 @@
 		var wgEnableWriteAPI = true;
 		var wgSeparatorTransformTable = ["", ""];
 		var wgDigitTransformTable = ["", ""];
+		var wgMainPageTitle = "Main Page";
 		var wgMWSuggestTemplate = "http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest";
 		var wgDBname = "enwiki";
 		var wgSearchNamespaces = [0];
@@ -67,14 +68,14 @@
 		var wgRestrictionMove = [];
 		/*]]>*/</script>
 
-		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?230"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?233xz"><!-- wikibits js --></script>
 		<!-- Head Scripts -->
-		<script type="text/javascript" src="/skins-1.5/common/ajax.js?230"></script>
-		<script type="text/javascript" src="/skins-1.5/common/mwsuggest.js?230"></script>
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js?233xz"></script>
+		<script type="text/javascript" src="/skins-1.5/common/mwsuggest.js?233xz"></script>
 		<script type="text/javascript">/*<![CDATA[*/
 		var wgNotice='';var wgNoticeLocal='';
 		/*]]>*/</script>
-		<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?230"></script>
+		<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?233xz"></script>
 
 		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
 	</head>
@@ -3683,12 +3684,12 @@
 <!-- 
 NewPP limit report
 Preprocessor node count: 777/1000000
-Post-expand include size: 45496/2048000 bytes
+Post-expand include size: 45506/2048000 bytes
 Template argument size: 31346/2048000 bytes
 Expensive parser function count: 1/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:415690-0!1!0!default!!en!2 and timestamp 20090730195207 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:415690-0!1!0!default!!en!2 and timestamp 20090803003305 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election,_1997">http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election,_1997</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:MPs_elected_in_UK_elections" title="Category:MPs elected in UK elections">MPs elected in UK elections</a></span> | <span dir='ltr'><a href="/wiki/Category:1997_elections_in_the_United_Kingdom" title="Category:1997 elections in the United Kingdom">1997 elections in the United Kingdom</a></span></div><div id="mw-hidden-catlinks" class="mw-hidden-cats-hidden">Hidden categories: <span dir='ltr'><a href="/wiki/Category:Articles_lacking_sources_from_July_2009" title="Category:Articles lacking sources from July 2009">Articles lacking sources from July 2009</a></span> | <span dir='ltr'><a href="/wiki/Category:All_articles_lacking_sources" title="Category:All articles lacking sources">All articles lacking sources</a></span></div></div>			<!-- end content -->
@@ -3712,6 +3713,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 		<h5>Personal tools</h5>
 		<div class="pBody">
 			<ul lang="en" xml:lang="en">
+				<li id="pt-acaibeta"><a href="http://en.wikipedia.org/w/index.php?title=Special:UsabilityInitiativeOptIn&amp;from=MPs_elected_in_the_United_Kingdom_general_election%2C_1997" class="no-text-transform">Try Beta</a></li>
 				<li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=MPs_elected_in_the_United_Kingdom_general_election,_1997" title="You are encouraged to log in; however, it is not mandatory. [o]" accesskey="o">Log in / create account</a></li>
 			</ul>
 		</div>
@@ -3786,4 +3788,4 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </div>
 
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv198 in 0.111 secs. --></body></html>
+<!-- Served by srv195 in 0.072 secs. --></body></html>
