@@ -99,6 +99,7 @@ govdepts = ["Department of Health",
                                 "Department of Trade and Industry",
                                         "Department for Business, Enterprise & Regulatory Reform",
                                         "Department for Business, Innovation & Skills",
+                                        "Department for Business, Innovation and Skills",
                                 "House of Commons",
                                 "House of Lords",
                                 "Foreign & Commonwealth Office",
@@ -335,7 +336,7 @@ class protooffice:
 					if dept1 in uniqgovposns and dept1 == 'Deputy Leader of the House of Lords':
 						self.depts = [ (pos, dept0), (dept1, 'House of Lords') ]
 						break
-					pd1 = re.match("([^,]+),\s*(.+)$", dept1)
+					pd1 = re.match("([^,]+)(?:,| in the)\s*(.+)$", dept1)
 					if pd1 and pd1.group(2) in govdepts:
 						self.depts = [ (pos, dept0), (pd1.group(1), pd1.group(2)) ]
 						break
@@ -369,6 +370,13 @@ class protooffice:
 		self.pos = pos.replace('&amp;', '&')
 		self.dept = dept.replace('&amp;', '&') # XXX
 		self.responsibility = responsibility.replace('&amp;', '&')
+
+        def __str__(self):
+                return '%s, %s, %s, %s, %s, %s, %s, %s, %s' % (
+                        self.fullname, self.pos, self.dept, self.responsibility, self.sdatet, self.sourcedoc,
+                        hasattr(self, 'sdateend') and self.sdateend or '', hasattr(self, 'stimeend') and self.stimeend or '',
+                        hasattr(self, 'bopen') and self.bopen or ''
+                )
 
 	# turns the protooffice into a part of a chain
 	def SetChainFront(self, fn, bfrontopen):
@@ -739,6 +747,12 @@ def ParseOffOppPage(fr, gp):
         dept = ''
         inothermins = False
 	for row in list:
+                cells = re.search('<td colspan="2" bgcolor="#F1ECE4"><strong>(.*?)</strong></td>(?i)', row)
+                if cells:
+                        dept = cells.group(1)
+                        inothermins = False
+                        continue
+
                 cells = re.search('<td[^>]*>\s*(.*?)\s*</td>\s*(?:<td[^>]*>\s*(.*?)\s*</td>\s*)?<td[^>]*>\s*(.*?)\s*</td>(?si)', row)
                 if not cells:
                         continue
@@ -762,9 +776,9 @@ def ParseOffOppPage(fr, gp):
                         j = re.sub('&nbsp;|\s+', ' ', j)
                         j = titleish(re.sub('</?(b|strong)>(?i)', '', j))
                         if j=='Whips': j = 'Whip'
-                        resp = re.match('Shadow Minister for (.*)', j)
+                        resp = re.match('(?:- )?Shadow Minister (?:for |\()(.*)', j)
                         if resp and inothermins:
-                                responsibility = resp.group(1)
+                                responsibility = re.sub('\)$', '', resp.group(1))
                         elif re.match('(Other)?\s*Shadow Ministers?\s*(\(|$)', j):
                                 pos = 'Shadow Minister'
                                 inothermins = True
