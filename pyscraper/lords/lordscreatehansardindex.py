@@ -98,7 +98,7 @@ def LordsIndexFromVolMenu(urlbndvols):
 		ursepage.close()
 
 		#<A href="ldvol650.htm" TITLE="Link to Volume 650"><B>Volume 650</B></td><td width=70%><B><A href="ldvol650.htm" TITLE="Link to Volume 650">Monday 23 June 2003&nbsp;-
-		urse = re.findall('<a href="([^"]*)"[^>]*><b>volume (\d*)</b>(?i)', srsepage)
+		urse = re.findall('<a href="([^"]*)"[^>]*>(?:<span[^>]*>)?<b>volume (\d*)</b>(?i)', srsepage)
 		for u in urse:
 			volnos.append((-int(u[1]), urlparse.urljoin(uses, u[0])))
 
@@ -127,7 +127,7 @@ def LordsIndexFromVolMenu(urlbndvols):
 		sdl = re.findall('<b>([^<]*)</b>(?:\s|<[^a][^>]*>|&nbsp;)*?<a\s*href="([^"]*)">([^<]*)</a>(?i)', srvopage)
                 if len(sdl) <= 1:
                         newstyle = True
-		        sdl = re.findall('<td class="style1" valign="top">\s*<a href="([^"]*)">\s*(\d+ \w+ \d+)</a>(?i)', srvopage)
+		        sdl = re.findall('<td class="style1" valign="top">\s*<a href="([^"]*)">\s*(\d+ +\w+ +\d+)</a>(?i)', srvopage)
 
 		for sss in sdl:
                         if newstyle:
@@ -145,8 +145,11 @@ def LordsIndexFromVolMenu(urlbndvols):
 				continue
 			sdate = mx.DateTime.DateTimeFrom(date).date
 
-			if sdate == "2000-01-21":  # there's an error in the listing on the page
+                        # there's an error in the listing on the page
+			if sdate == "2000-01-21":
 				sdate = "2000-02-21"
+			elif sdate == "2009-02-27" and re.search('090212', url):
+				url = url.replace('090212', '090227')
 
 			uind = urlparse.urljoin(vol[1], re.sub('\s', '', url))
 			res.append((sdate, '2', uind))
