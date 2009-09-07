@@ -24,7 +24,7 @@ B - bishop
 	forenames="Morys"
 	title="Lord" lordname="Aberdare" lordofname=""
 	peeragetype="HD" affiliation="Con"
-	fromdate="1957" todate="2005-01-23"
+	fromdate="1957" todate="2005-01-23" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100002"
@@ -585,7 +585,7 @@ B - bishop
 	lordofname_full="Blackpool"
 	county="the County of Lancashire and of Lindfield in the County of West Sussex"
 	peeragetype="L" affiliation="Con"
-	fromdate="1994" todate="9999-12-31"
+	fromdate="1994" todate="2009-07-05" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -2707,7 +2707,7 @@ B - bishop
 	lordofname_full="Stockport"
 	county="Greater Manchester"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1975" todate="9999-12-31"
+	fromdate="1975" todate="2009-08-12" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100261"
@@ -4672,7 +4672,7 @@ B - bishop
 	lordofname_full="Hexham"
 	county="the County of Northumberland"
 	peeragetype="L" affiliation="Con"
-	fromdate="1979" todate="9999-12-31"
+	fromdate="1979" todate="2009-07-05" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -9863,7 +9863,7 @@ B - bishop
     forenames="Geoffrey Graham Dow"
     title="Bishop" lordname="" lordofname="Carlisle"
     peeragetype="B" affiliation="Bp"
-    fromdate="2007-11-08" todate="9999-12-31"
+    fromdate="2007-11-08" todate="2009-04-30" towhy="retired"
 />
 
 <lord
@@ -10165,6 +10165,26 @@ B - bishop
     county="the County of Ynys M&#244;n"
     peeragetype="L" affiliation="Lab"
     fromdate="2009-06-30" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100995"
+    house="lords"
+    forenames="Michael Arthur Hill"
+    title="Bishop" lordname="" lordofname="Bristol"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2009-07-16" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100996"
+    house="lords"
+    forenames="Alan Michael"
+    title="Lord" lordname="Sugar" lordofname=""
+    lordofname_full="Clapton"
+    county="the London Borough of Hackney"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2009-07-20" todate="9999-12-31"
 />
 
 </publicwhip>
