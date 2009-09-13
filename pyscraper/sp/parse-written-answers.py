@@ -482,6 +482,7 @@ class Parser:
 <!ENTITY sbquo   "&#8218;">
 <!ENTITY trade   "&#8482;">
 <!ENTITY Dagger  "&#8225;">
+<!ENTITY radic   "&#8730;">
 ]>
 
 <publicwhip>
