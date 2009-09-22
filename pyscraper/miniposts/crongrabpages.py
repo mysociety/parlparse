@@ -26,7 +26,7 @@ watchpages = {  "govposts":"http://www.parliament.uk/mpslordsandoffices/governme
 				"ulsterun":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/ulster.cfm",
 				"plaidsnp":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/PCSNP.cfm",
 				"privsec":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/Pps.cfm",
-				"selctee":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/selcom.cfm",
+				"selctee":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/selmem.cfm",
 				"clerks":"http://www.publications.parliament.uk/pa/cm/listgovt.htm",
 
 				"bills":"http://www.publications.parliament.uk/pa/pabills.htm",
