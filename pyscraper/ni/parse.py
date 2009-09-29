@@ -348,10 +348,12 @@ class ParseDay:
 			elif cl == 'Q1QuoteIndented' or cl == 'Q1Quote':
 				self.text += '<p class="indent">%s</p>\n' % phtml
 			elif cl == 'TimePeriod':
-				match = re.search('(\d\d?)\.\s*(\d\d) ?(am|pm|noon)', ptext)
+				match = re.search('(\d\d?)\.\s*(\d\d) ?(am|pm|noon|midnight)', ptext)
 				hour = int(match.group(1))
 				if hour<12 and match.group(3) == 'pm':
 					hour += 12
+				if hour==12 and match.group(3) in ('midnight', 'am'):
+					hour = 0
 				timestamp = "%s:%s" % (hour, match.group(2))
 			elif cl == 'MsoNormal':
 				continue
