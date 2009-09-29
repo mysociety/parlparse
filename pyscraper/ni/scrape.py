@@ -15,7 +15,7 @@ for i in range(1997,2003):
 for i in range(2005,2007):
 	root.append('http://www.niassembly.gov.uk/record/hansard_session%d_A.htm' % i)
 root.append('http://www.niassembly.gov.uk/record/hansard_session%d_TA.htm' % i)
-for i in range(2006,2009):
+for i in range(2006,2010):
 	root.append('http://www.niassembly.gov.uk/record/hansard_session%d.htm' % i)
 
 for url in root:
@@ -27,7 +27,7 @@ for url in root:
 	page = page.replace('990315', '990715').replace('000617', '000619').replace('060706', '060606')
 	page = page.replace('060919', '060919p').replace('071101', '071001').replace('071102', '071002')
 
-	match = re.findall('<a href="([^"]*(p?)(\d{6})(i?)\.htm)">View as HTML *</a>', page)
+	match = re.findall('<a href="([^"]*(p?)(\d{6})(i?)\.htm)">View (?:as|in) HTML *</a>', page)
 	for day in match:
 		url_day = urlparse.urljoin(url, day[0])
 		date = time.strptime(day[2], "%y%m%d")
