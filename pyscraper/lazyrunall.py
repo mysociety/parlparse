@@ -33,6 +33,7 @@ from standingpullgluepages import StandingPullGluePages
 from runfilters import RunFiltersDir, RunDebateFilters, RunWransFilters, RunLordsFilters, RunWestminhallFilters, RunWMSFilters, RunNIFilters
 from regmemfilter import RunRegmemFilters
 from parsevote import RunVotesFilters
+import ni.scrape
 
 if sys.platform != "win32":  # just to get working again
 	from parsebills import MakeBillPrint
@@ -221,6 +222,8 @@ if options.scrape:
 		LordsPullGluePages(options.datefrom, options.dateto, options.forcescrape)
 	if options.standing:
 		StandingPullGluePages(options.datefrom, options.dateto, options.forcescrape)
+        if options.ni:
+                ni.scrape.scrape_new_ni() # forcescrape not used, only scrapes new, checks all.
 	if options.votes:
 		PullGluePages(options, "votes", "votes")
 	if options.qbook:
