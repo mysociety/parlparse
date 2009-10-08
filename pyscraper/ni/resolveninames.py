@@ -10,6 +10,8 @@ import datetime
 from contextexception import ContextException
 
 class MemberList(xml.sax.handler.ContentHandler):
+	deputy_speaker = None
+
 	def __init__(self):
 		self.reloadXML()
 
@@ -200,7 +202,9 @@ class MemberList(xml.sax.handler.ContentHandler):
 		# If a speaker, then match against the special speaker parties
 		if text == "Speaker" or text == "The Speaker":
 			matches.extend(self.parties.get("Speaker", []))
-		if not matches and (text == 'Deputy Speaker' or text == 'Madam Deputy Speaker' or text =='The Deputy Speaker') and self.deputy_speaker:
+		if not matches and (text == 'Deputy Speaker' or text == 'Madam Deputy Speaker' or text =='The Deputy Speaker'):
+			if not self.deputy_speaker:
+				raise ContextException, 'Deputy speaker speaking, but do not know who it is'
 			return self.fullnametoids(self.deputy_speaker, date)
 
 		if matches:
