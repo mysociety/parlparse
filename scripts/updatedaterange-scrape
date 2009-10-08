@@ -11,13 +11,9 @@ RET=0
 
 # Run XML-generating scraper from Public Whip, getting new files from network
 cd ~/parlparse/pyscraper
-./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE scrape debates wrans westminhall wms || RET=1
+./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE scrape debates wrans westminhall wms ni || RET=1
 ./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE scrape standing || RET=1
 ./lazyrunall.py $4 --from=$LORDFROMDATE --to=$TODATE scrape lords || RET=1
-
-# Yeah, it's not as fully featured as the UK Parliament one. But it should work :)
-cd ~/parlparse/pyscraper/ni
-./scrape.py
 
 # XXX Should vary based upon weekly/daily-ness; and be more attuned than a year
 cd ~/parlparse/pyscraper/sp
