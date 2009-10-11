@@ -32,6 +32,7 @@ var skin="monobook",
 stylepath="/skins-1.5",
 wgArticlePath="/wiki/$1",
 wgScriptPath="/w",
+wgScriptExtension=".php",
 wgScript="/w/index.php",
 wgVariantArticlePath=false,
 wgActionPaths={},
@@ -86,12 +87,12 @@ wgNoticeLocal="";
 			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
 			<div id="contentSub"></div>
 									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
-			<table class="vcard vertical-navbox" style="text-align:center; font-size:88%; background:#F9F9F9; border:1px solid #AAA; color:black; clear:right; float:right; margin:0.5em 0 0.5em 1em; padding:0.2em;">
+			<table class="vcard vertical-navbox" style="text-align:center; font-size:88%; background:#F9F9F9; border:1px solid #AAA; color:#000; clear:right; float:right; margin:0.5em 0 0.5em 1em; padding:0.2em;">
 <tr>
-<td class="adr" style="text-align: center;"><b><span class="fn org country-name"><a href="/wiki/Northern_Ireland" title="Northern Ireland">Northern Ireland</a></span></b></td>
+<td class="adr"><b><span class="fn org country-name"><a href="/wiki/Northern_Ireland" title="Northern Ireland">Northern Ireland</a></span></b></td>
 </tr>
 <tr>
-<td style="text-align: center;"><a href="/wiki/File:Politicsofnorthernirelandlogo.svg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Politicsofnorthernirelandlogo.svg/165px-Politicsofnorthernirelandlogo.svg.png" width="165" height="132" /></a><br />
+<td><a href="/wiki/File:Politicsofnorthernirelandlogo.svg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Politicsofnorthernirelandlogo.svg/165px-Politicsofnorthernirelandlogo.svg.png" width="165" height="132" /></a><br />
 <p><small>This article is part of the series:</small><br />
 <b><a href="/wiki/Politics_of_Northern_Ireland" title="Politics of Northern Ireland" class="mw-redirect">Politics and government of<br />
 Northern Ireland</a></b></p>
@@ -245,10 +246,10 @@ Northern Ireland</a></b></p>
 </td>
 </tr>
 <tr>
-<td style="font-size:95%; padding: 0 5px 0 5px;" align="right">
+<td style="text-align:right; padding:0 5px;">
 <hr />
 <small><a href="/wiki/Politics_of_present-day_nations_and_states" title="Politics of present-day nations and states" class="mw-redirect">Other countries</a></small><span style="font-weight:bold;">&#160;·</span> <small><a href="http://commons.wikimedia.org/wiki/Atlas_of_Northern_Ireland" class="extiw" title="commons:Atlas of Northern Ireland">Atlas</a></small><br />
-&#160;<b><a href="/wiki/Portal:Politics" title="Portal:Politics">Politics&#160;portal</a></b><br />
+<b><a href="/wiki/Portal:Politics" title="Portal:Politics">Politics portal</a></b><br />
 <div class="noprint plainlinks navbar" style="background:none; padding:0; font-weight:normal;; font-size:xx-small;"><a href="/wiki/Template:Politics_of_Northern_Ireland" title="Template:Politics of Northern Ireland"><span title="View this template" style="">view</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="/wiki/Template_talk:Politics_of_Northern_Ireland" title="Template talk:Politics of Northern Ireland"><span title="Discuss this template" style="">talk</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="http://en.wikipedia.org/w/index.php?title=Template:Politics_of_Northern_Ireland&amp;action=edit" class="external text" rel="nofollow"><span title="Edit this template" style=";">edit</span></a></div>
 </td>
 </tr>
@@ -1184,13 +1185,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 1574/1000000
-Post-expand include size: 61773/2048000 bytes
+Preprocessor node count: 1576/1000000
+Post-expand include size: 61599/2048000 bytes
 Template argument size: 29425/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!2 and timestamp 20091001045520 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!2 and timestamp 20091006143802 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007">http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Northern_Ireland_MLAs_2007-" title="Category:Northern Ireland MLAs 2007-">Northern Ireland MLAs 2007-</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Northern_Irish_parliamentarians" title="Category:Lists of Northern Irish parliamentarians">Lists of Northern Irish parliamentarians</a></span> | <span dir='ltr'><a href="/wiki/Category:Northern_Ireland-related_lists" title="Category:Northern Ireland-related lists">Northern Ireland-related lists</a></span></div></div>			<!-- end content -->
@@ -1289,4 +1290,4 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </div>
 
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv195 in 0.042 secs. --></body></html>
+<!-- Served by srv192 in 0.885 secs. --></body></html>
