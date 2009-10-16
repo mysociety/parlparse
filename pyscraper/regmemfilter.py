@@ -54,6 +54,7 @@ def RunRegmemFilters(fout, text, sdate, sdatever):
                 row = [ re.sub('<span style="background-color: #FFFF00">|</span>', '', column.strip())
                         for column in row ]
                 striprow = re.sub('</?[^>]+>', '', "".join(row))
+                #print row
                 if striprow.strip() == "":
                         # There is no text on the row, just tags
                         pass
