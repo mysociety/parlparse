@@ -64,7 +64,7 @@ def ExtractIndexContents(urlx, sdate):
         lktex = re.sub('<!--.*?-->(?s)', '', lktex)
 
 	# get the links
-        res = re.findall('<h[23] align="?center"?><a href="([^"]*?\.htm)#[^"]*">([^<]*)</a></h[23]>(?is)', lktex)
+        res = re.findall('<h[23] align="?center"?><a href="([^"]*?\.htm)#[^"]*">([^<]*)</a>\s*</h[23]>(?is)', lktex)
         if not res:
                 res = re.findall('<p><a href\s*=\s*"([^"]*?\.htm)#[^"]*"><h3><center>((?:<!|[^<])*)(?:</center>|</h3>)+\s*</a></p>(?i)', lktex)
 	if not res:
