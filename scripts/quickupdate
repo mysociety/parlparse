@@ -40,14 +40,14 @@ elif wday == 1 or wday == 2 or wday == 3 or wday == 4: # Tuesday to Friday
 
 rescrape = []
 for type, dir in dirs.items():
-    suffix = type in suffixes and suffixes[type] or 'a'
+    suffix = suffixes[type] if type in suffixes else 'a'
     file = base_html + dir + yesterday + suffix + '.html'
     if not os.path.exists(file):
         rescrape.append(type)
 
 reparse = []
 for type, dir in dirs.items():
-    suffix = type in suffixes and suffixes[type] or 'a'
+    suffix = suffixes[type] if type in suffixes else 'a'
     file = base_xml + dir + yesterday + suffix + '.xml'
     if not os.path.exists(file):
         reparse.append(type)
