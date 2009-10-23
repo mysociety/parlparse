@@ -75,6 +75,7 @@ def GetReportProceedings(urlpage, year):
 	if year == "2008":
 		vdat = re.sub('090609(/pm/90602s01.htm">6th sitting)', r'090602\1', vdat)
 		vdat = re.sub('1 July 209', '1 July 2009', vdat)
+		vdat = re.sub('(<A href="[^"]+")(20 October)', r'\1>\2', vdat)
 
 	lks = re.findall('(?si)<a\s+href\s*=\s*"([^"]*)">(.*?)(?:</a>|<tr>|</table>)(?i)', vdat)
 	for lk in lks:
