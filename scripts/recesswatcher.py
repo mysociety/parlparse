@@ -28,8 +28,6 @@ url = "http://www.parliament.uk/what_s_on/recess.cfm"
 ur = urllib.urlopen(url)
 co = ur.read()
 ur.close()
-co = co.replace("Febraury", "February")
-co = co.replace("\xa0", "")
 
 def domail(subject, msg):
 	msg = "From: The Recess Gods <francis@flourish.org>\n" +  \
@@ -59,8 +57,11 @@ if len(cells) % 3 <> 0:
 # Load them in and match the dates
 dates = []
 last_finish = 1000-01-01
+cells = [ x.decode('utf-8').strip() for x in cells ]
 while cells:
-    (name, start, finish) = (cells.pop(0), cells.pop(0), cells.pop(0))
+    (name, start, finish) = cells[0:3]
+    del cells[0:3]
+    if not name or start == 'to be confirmed': continue
     # print "%s: %s to %s" % (name, start, finish)
     start = (mx.DateTime.strptime(start, "%e %b %Y")+1).date
     finish = (mx.DateTime.strptime(finish, "%e %b %Y")-1).date
