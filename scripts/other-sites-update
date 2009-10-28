@@ -18,7 +18,7 @@ PRODSCRIPT=ukparse-morning-update-done.cgi
 snarf -q http://sponge.theyworkforyou.com/internal/$PRODSCRIPT/$RET - > /dev/null &
 
 # Update division archive for Public Whip to feed from
-./divisionextractor.pl
+`dirname $0`/divisionextractor.pl
 
 # tell Public Whip to update
 PRODSCRIPT=ukparse-morning-update-done.cgi
