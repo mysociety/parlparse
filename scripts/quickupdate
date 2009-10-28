@@ -21,7 +21,7 @@ suffixes = { 'ni': '' }
 
 def run_command(dir, cmd):
     #print 'Running', cmd
-    print 'cd %s%s' % (base_scraper, dir)
+    if dir: print 'cd %s%s' % (base_scraper, dir)
     #os.chdir(base_scraper + dir)
     print cmd
     #status, output = commands.getstatusoutput(cmd)
@@ -60,4 +60,4 @@ if rescrape:
 run_command('', 'lazyrunall.py --date=' + yesterday + ' parse ' + ' '.join(reparse) + ' --patchtool')
 run_command('standing/', './parse.py --patchtool')
 
-run_command('../scripts/', './other-sites-update 0')
+run_command('', 'other-sites-update 0')
