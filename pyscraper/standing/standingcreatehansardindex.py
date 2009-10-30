@@ -88,6 +88,7 @@ def GetReportProceedings(urlpage, year):
 		if (not res or res[-1][0] != lklk) and not mprevdebates:
 			 res.append([lklk, "", 0, 0, ""])  # urllink, date, sitting number, sitting part, morning|afternoon
 		msecreading = re.match("(Second|2nd) Reading Committee$|Standing Committee B$", lkname)
+		monlysitting = re.match("Public Bill Committee$", lkname)
 		mothmem = re.match("Other Memorand(?:ums|a) and Letters [Ss]ubmitted to the Committee$", lkname)
 		msitting = re.match("(\d+)(?:st|nd|rd|th)\s+[Ss]itting(?: \((cont)'d\))?(?: \(Part ([I]*)\))?$", lkname)
 		mdate = re.match("(?:<b>)?(\d+(?:st|nd|rd|th)? (?:January|February|March|April|May|June|July|August|September|October|November|December)(?: \d\d\d\d)?)(?:</b>)?(?: ?\(([Mm]orning|[Aa]fternoon|evening)\)?)?(?: [\[\(\-]?\s*[Pp]art ([IViv\d]*)\s*[\]\)]?)?(?: ?\((morning|[Aa]fternoon)\)?)?$", lkname)
@@ -97,7 +98,7 @@ def GetReportProceedings(urlpage, year):
 			assert not res[-1][1]
 			assert res[-1][3] == 0
 			res[-1][3] = 99999
-		elif msecreading:
+		elif monlysitting or msecreading:
 			pass # print lkname
 		elif msitting:
 			assert res[-1][2] == 0 or res[-1][2] == int(msitting.group(1))
@@ -154,6 +155,11 @@ def GetReportProceedings(urlpage, year):
 		assert (res[0][2] == 0 or res[0][2] == 1) and res[0][3] == 0
 		res[0][2] = 1
 
+	# two sittings, both without sitting numbers
+	if len(res) == 2 and res[0][2] == 0 and res[1][2] == 0 and res[0][3] == 0 and res[1][3] == 0:
+		res[0][2] = 2
+		res[1][2] = 1
+
 	# now check the numbering of the parts is consistent (requires sorting them)
 	parts = [ [r[2], r[3], r[1], r]  for r in res  if r[3] != 99999 ]  # sitting, part, date, whole
 	parts.sort()
@@ -181,7 +187,7 @@ def GetReportProceedings(urlpage, year):
 			elif year == "2006" and re.search("/pa/cm200607/cmpublic/cmpbwelf.htm", urlpage):
 				assert p[0] == 13 # 1st 12 meetings in previous year
 			else:
-				assert p[0] == 1
+				assert p[0] == 1, "%s first sitting not found" % urlpage
 		prev = p
 	return res, firstdate
 
