@@ -82,8 +82,10 @@ govdepts = ["Department of Health",
                                 "Ministry of Defence",
                                 "Department for Environment, Food and Rural Affairs",
                                 "Department for Energy and Climate Change", # DEFECATE
+                                        "Department of Energy and Climate Change",
                                 "Department for International Development",
                                 "Department for Culture, Media & Sport",
+                                        "Department for Culture, Media and Sport",
                                 "Department for Constitutional Affairs",
                                 "Department for Education and Skills",
                                         "Department for Children, Schools and Families",
@@ -104,6 +106,7 @@ govdepts = ["Department of Health",
                                 "House of Commons",
                                 "House of Lords",
                                 "Foreign & Commonwealth Office",
+                                        "Foreign and Commonwealth Office",
                                 "Government Equalities Office",
 
                                 "Office of the Secretary of State for Wales",
@@ -463,7 +466,7 @@ def ParseSelCteePage(fr, gp):
         	frdate = re.search("Select Committee\s+Membership at\s+(.*?)\s*<(?i)", fr)
                 sudate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
         else:
-                frdate = re.search(">This list was last updated on\s+<(?:b|strong)>\s+(.*?)\s+<", fr)
+                frdate = re.search(">This list was last updated on\s+<(?:b|strong)>\s*(.*?)\s*<", fr)
                 sudate = mx.DateTime.DateTimeFrom(frdate.group(1)).date
 
         sdate = sudate
