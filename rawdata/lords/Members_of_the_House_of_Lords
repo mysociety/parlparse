@@ -49,7 +49,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=321359526,
+wgCurRevisionId=322750392,
 wgVersion="1.16alpha-wmf",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -198,6 +198,12 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td>2000</td>
 </tr>
 <tr>
+<td><a href="/wiki/Bishop_of_Gloucester" title="Bishop of Gloucester">The Lord Bishop of Gloucester</a></td>
+<td><a href="/wiki/Michael_Francis_Perham" title="Michael Francis Perham">Michael Francis Perham</a></td>
+<td>2009</td>
+<td>2004</td>
+</tr>
+<tr>
 <td><a href="/wiki/Bishop_of_Hereford" title="Bishop of Hereford">The Lord Bishop of Hereford</a></td>
 <td><a href="/wiki/Anthony_Priddis" title="Anthony Priddis">Anthony Priddis</a></td>
 <td>2009</td>
@@ -271,6 +277,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 </tr>
 </table>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=2" title="Edit section: Lords Temporal">edit</a>]</span> <span class="mw-headline" id="Lords_Temporal">Lords Temporal</span></h2>
+<p>LORD grahame james alfred parkhouse of caithness and arbroth</p>
 <table class="wikitable sortable">
 <tr>
 <th>Lord</th>
@@ -353,12 +360,6 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/David_Alton" title="David Alton" class="mw-redirect">The Lord Alton of Liverpool</a></td>
 <td>Cross Bench</td>
-<td>Life Peer</td>
-<td>&#160;</td>
-</tr>
-<tr>
-<td><a href="/wiki/Valerie_Amos" title="Valerie Amos" class="mw-redirect">The Baroness Amos</a></td>
-<td>Labour</td>
 <td>Life Peer</td>
 <td>&#160;</td>
 </tr>
@@ -780,7 +781,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Brown_of_Eaton-under-Heywood" title="Baron Brown of Eaton-under-Heywood" class="mw-redirect">The Lord Brown of Eaton-under-Heywood</a></td>
 <td>Crossbench</td>
-<td><a href="/wiki/Lord_of_Appeal_in_Ordinary" title="Lord of Appeal in Ordinary">Lord of Appeal in Ordinary</a></td>
+<td><a href="/wiki/Lord_of_Appeal_in_Ordinary" title="Lord of Appeal in Ordinary" class="mw-redirect">Lord of Appeal in Ordinary</a></td>
 <td>&#160;</td>
 </tr>
 <tr>
@@ -798,7 +799,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Nicholas_Browne-Wilkinson,_Baron_Browne-Wilkinson" title="Nicholas Browne-Wilkinson, Baron Browne-Wilkinson" class="mw-redirect">The Lord Browne-Wilkinson</a></td>
 <td>Cross Bench</td>
-<td><a href="/wiki/Lord_of_Appeal_in_Ordinary" title="Lord of Appeal in Ordinary">Lord of Appeal in Ordinary</a></td>
+<td><a href="/wiki/Lord_of_Appeal_in_Ordinary" title="Lord of Appeal in Ordinary" class="mw-redirect">Lord of Appeal in Ordinary</a></td>
 <td>&#160;</td>
 </tr>
 <tr>
@@ -2758,7 +2759,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Michael_Martin,_Baron_Martin_of_Springburn" title="Michael Martin, Baron Martin of Springburn">The Lord Martin of Springburn</a></td>
+<td><a href="/wiki/Michael_Martin,_Baron_Martin_of_Springburn" title="Michael Martin, Baron Martin of Springburn" class="mw-redirect">The Lord Martin of Springburn</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3270,7 +3271,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Lord_Phillips_of_Worth_Matravers" title="Lord Phillips of Worth Matravers" class="mw-redirect">The Lord Phillips of Worth Matravers</a></td>
 <td>Cross Bench</td>
-<td>Senior <a href="/wiki/Lord_of_Appeal_in_Ordinary" title="Lord of Appeal in Ordinary">Lord of Appeal in Ordinary</a></td>
+<td>Senior <a href="/wiki/Lord_of_Appeal_in_Ordinary" title="Lord of Appeal in Ordinary" class="mw-redirect">Lord of Appeal in Ordinary</a></td>
 <td>&#160;</td>
 </tr>
 <tr>
@@ -3589,7 +3590,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Jonathan_Sacks" title="Jonathan Sacks">The Lord Sacks</a></td>
 <td>Cross Bench</td>
 <td>&#160;</td>
-<td>&#160;</td>
+<td>Cheif Rabbi of the Commonwealth</td>
 </tr>
 <tr>
 <td><a href="/wiki/Lord_Sainsbury_of_Preston_Candover" title="Lord Sainsbury of Preston Candover" class="mw-redirect">The Lord Sainsbury of Preston Candover</a></td>
@@ -4617,6 +4618,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=4" title="Edit section: Peers on leave of absence">edit</a>]</span> <span class="mw-headline" id="Peers_on_leave_of_absence">Peers on leave of absence</span></h2>
 <p>Per § 23 <a href="/w/index.php?title=Standing_Orders_of_the_House_of_Lords&amp;action=edit&amp;redlink=1" class="new" title="Standing Orders of the House of Lords (page does not exist)">Standing Orders of the House of Lords</a>,<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>5<span>]</span></a></sup> the following peers were granted a <a href="/wiki/House_of_Lords#Leave_of_Absence" title="House of Lords">Leave of Absence</a> for the remainder of the session or the parliament.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>6<span>]</span></a></sup></p>
 <ul>
+<li><a href="/wiki/Valerie_Amos" title="Valerie Amos" class="mw-redirect">The Baroness Amos</a>, Labour</li>
 <li><a href="/wiki/Catherine_Ashton,_Baroness_Ashton_of_Upholland" title="Catherine Ashton, Baroness Ashton of Upholland">The Baroness Ashton of Upholland</a>, Labour</li>
 <li><a href="/wiki/Baroness_Carnegy_of_Lour" title="Baroness Carnegy of Lour" class="mw-redirect">The Baroness Carnegy of Lour</a>, Conservative</li>
 <li><a href="/wiki/Baroness_Delacourt-Smith_of_Alteryn" title="Baroness Delacourt-Smith of Alteryn" class="mw-redirect">The Baroness Delacourt-Smith of Alteryn</a>, Labour</li>
@@ -4660,7 +4662,7 @@ Template argument size: 4544/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20091024173426 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20091031192802 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:House_of_Lords" title="Category:House of Lords">House of Lords</a></span></div></div>			<!-- end content -->
@@ -4737,7 +4739,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=321359526" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=321359526" title="Information on how to cite this page">Cite this page</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=322750392" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=322750392" title="Information on how to cite this page">Cite this page</a></li>			</ul>
 		</div>
 	</div>
 	<div id="p-lang" class="portlet">
@@ -4754,7 +4756,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-					<li id="lastmod"> This page was last modified on 22 October 2009 at 10:51.</li>
+					<li id="lastmod"> This page was last modified on 29 October 2009 at 16:01.</li>
 					<li id="copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -4767,4 +4769,4 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </div>
 
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv235 in 1.040 secs. --></body></html>
+<!-- Served by srv212 in 0.036 secs. --></body></html>
