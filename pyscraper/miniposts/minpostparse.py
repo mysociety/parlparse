@@ -486,7 +486,7 @@ def ParseSelCteePage(fr, gp):
                 cteename = re.sub("\s+", " ", committee[0]).replace("&amp;", "&")
                 members = committee[1]
                 if cteename not in committees:
-                        print "Committee title not in list: ", cteename
+                        pass # print "Committee title not in list: ", cteename
                 else:
                         found[cteename] = 1
                 for member in re.findall("<tr>\s*<td(?: height=\"19\")?>\s*(.*?)\s*</td>\s*<td(?: height=\"19\")?>\s*(.*?)\s*</td>\s*<td(?: height=\"19\")?>\s*(.*?)\s*</td>\s*</tr>(?i)", members):
