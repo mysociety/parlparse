@@ -60,4 +60,6 @@ if rescrape:
 run_command('', 'lazyrunall.py --date=' + yesterday + ' parse ' + ' '.join(reparse) + ' --patchtool')
 run_command('standing/', './parse.py --patchtool')
 
+print '# Parse/fix any older things from the cron email now'
+
 run_command('', 'other-sites-update 0')
