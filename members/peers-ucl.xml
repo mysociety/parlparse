@@ -10198,4 +10198,26 @@ B - bishop
     fromdate="2009-10-13" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/100998"
+    house="lords"
+    forenames="Nuala Patricia"
+    title="Baroness" lordname="O'Loan" lordofname=""
+    lordofname_full="Kirkinriola"
+    county="the County of Antrimsgow"
+    peeragetype="L" affiliation="XB"
+    fromdate="2009-10-27" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/100999"
+    house="lords"
+    forenames="Jonathan Henry"
+    title="Lord" lordname="Sacks" lordofname=""
+    lordofname_full="Aldgate"
+    county="the City of London"
+    peeragetype="L" affiliation="XB"
+    fromdate="2009-10-27" todate="9999-12-31"
+/>
+
 </publicwhip>
