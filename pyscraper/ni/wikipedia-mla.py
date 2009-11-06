@@ -32,6 +32,7 @@ matches = re.findall(matcher, content)
 matches.append(('/wiki/Alastair_Ian_Ross', 'Alastair Ian Ross', 'East Antrim'))
 matches.append(('/wiki/Danny_Kinahan', 'Danny Kinahan', 'South Antrim'))
 for (url, name, cons) in matches:
+    if name == 'David Burnside': continue # He's left
     id = None
     #cons = cons.decode('utf-8')
     #cons = cons.replace('&amp;', '&')
