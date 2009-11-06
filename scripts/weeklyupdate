@@ -18,7 +18,7 @@ svn -q commit -m "Weekly rawdata scrape commit"
 cd ~/parlparse/members
 ./wikipedia-lords.py > wikipedia-lords.xml
 ./wikipedia-commons.py > wikipedia-commons.xml
-./bbcconv.py > bbc-links.xml 
+# ./bbcconv.py > bbc-links.xml 
 cd ~/parlparse/pyscraper
 ni/wikipedia-mla.py > ../members/wikipedia-mla.xml
 cd ~/parlparse/members
