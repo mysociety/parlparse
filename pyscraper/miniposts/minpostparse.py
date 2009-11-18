@@ -306,6 +306,7 @@ class protooffice:
                 # Okay, name done, let's move on to position
 
 		pos = nampos.group(4).strip()
+                pos = re.sub("\s+", " ", pos)
 		dept = (nampos.group(5) or "No Department").strip()
                 dept = re.sub("\s+", " ", dept)
                 dept = dept.replace('&amp;', '&')
