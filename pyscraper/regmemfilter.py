@@ -6,6 +6,7 @@ import os
 import string
 import sets
 
+from contextexception import ContextException
 from resolvemembernames import memberList
 from miscfuncs import FixHTMLEntities
 from miscfuncs import ApplyFixSubstitutions
@@ -36,7 +37,7 @@ def RunRegmemFilters(fout, text, sdate, sdatever):
         text = re.sub('Rt Shaun', 'Shaun', text) # Always get his name wrong
         rows = re.findall("<TR>(.*)</TR>", text)
         rows = [ re.sub("&nbsp;", " ", row) for row in rows ]
-        rows = [ re.sub("<B>|</B>|<BR>", "", row) for row in rows ]
+        rows = [ re.sub("<B>|</B>|<BR>|`", "", row) for row in rows ]
         rows = [ re.sub('<IMG SRC="3lev.gif">', "", row) for row in rows ]
         rows = [ re.sub("&#173;", "-", row) for row in rows ]
         rows = [ re.sub('\[<A NAME="n\d+"><A HREF="\#note\d+">\d+</A>\]', '', row) for row in rows ]
@@ -66,7 +67,7 @@ def RunRegmemFilters(fout, text, sdate, sdatever):
                         res = re.search("^([^,]*), ([^(]*) \((.*)\)$", row[0])
                         if not res:
                                 print row
-                                raise Exception, "Failed to break up into first/last/cons: %s" % row[0]
+                                raise ContextException, "Failed to break up into first/last/cons: %s" % row[0]
                         (lastname, firstname, constituency) = res.groups()
                         constituency = constituency.replace(')', '')
                         constituency = constituency.replace('(', '')
@@ -80,7 +81,7 @@ def RunRegmemFilters(fout, text, sdate, sdatever):
                                 check_date = sdate
                         (id, remadename, remadecons) = memberList.matchfullnamecons(firstname + " " + memberList.lowercaselastname(lastname), constituency, check_date)
                         if not id:
-                                raise Exception, "Failed to match name %s %s (%s) date %s" % (firstname, lastname, constituency, sdate)
+                                raise ContextException, "Failed to match name %s %s (%s) date %s" % (firstname, lastname, constituency, sdate)
                         if category:
                                 fout.write('\t</category>\n')
                         if needmemberend:
@@ -137,7 +138,7 @@ def RunRegmemFilters(fout, text, sdate, sdatever):
                                 fout.write('\t\t<item subcategory="%s">%s</item>\n' % (subcategory, FixHTMLEntities(row[3])))
                 else:
                         print row
-                        raise Exception, "Unknown row type match, length %d" % (len(row))
+                        raise ContextException, "Unknown row type match, length %d" % (len(row))
         if category:
                 fout.write('\t</category>\n')
         if needmemberend:
