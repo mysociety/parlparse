@@ -349,8 +349,8 @@ def GetFileDayVersions(day, lddaymap, pwcmfolder, typ):
 	ldgfnext = '%s%s%s.html' % (typ, day, dgfnextalpha)
 	dgfnext = os.path.join(pwcmfolder, ldgfnext)
 	dgfnextdayalpha = "%s%s" % (day, dgfnextalpha)
-	assert not dgflatest or os.path.isfile(dgflatest)
-	assert not os.path.isfile(dgfnext)
+	assert not dgflatest or os.path.isfile(dgflatest), '%s exists and is not a file?' % dgflatest
+	assert not os.path.isfile(dgfnext), '%s already exists?' % dgfnext
 	return dgflatest, dgflatestdayalpha, dgfnext, dgfnextdayalpha
 
 
