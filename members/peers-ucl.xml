@@ -5292,7 +5292,7 @@ B - bishop
 	forenames="Kenneth Stevenson"
 	title="Bishop" lordname="" lordofname="Portsmouth"
 	peeragetype="B" affiliation="Bp"
-	fromdate="1999-11-30" todate="9999-12-31"
+	fromdate="1999-11-30" todate="2009-09-30" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100510"
@@ -5658,7 +5658,7 @@ B - bishop
 	forenames="Michael James Nazir-Ali"
 	title="Bishop" lordname="" lordofname="Rochester"
 	peeragetype="B" affiliation="Bp"
-	fromdate="1999" todate="9999-12-31"
+	fromdate="1999" todate="2009-09-01" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100544"
@@ -8637,7 +8637,7 @@ B - bishop
 	forenames="John Warren Gladwin"
 	title="Bishop" lordname="" lordofname="Chelmsford"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2003-12-16" todate="9999-12-31"
+	fromdate="2003-12-16" todate="2009-08-31" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100831"
@@ -9156,7 +9156,7 @@ B - bishop
 	forenames="George Henry Cassidy"
 	title="Bishop" lordname="" lordofname="Southwell and Nottingham"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2005-07-01" todate="9999-12-31"
+	fromdate="2005-07-01" todate="2009-07-31" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100902"
@@ -10229,5 +10229,32 @@ B - bishop
     peeragetype="HP" affiliation="XB"
     fromdate="2009-07-20" todate="9999-12-31"
  />
+
+<lord
+    id="uk.org.publicwhip/lord/101001"
+    house="lords"
+    forenames="Nicholas Stewart Reade"
+    title="Bishop" lordname="" lordofname="Blackburn"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2009-10-22" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101002"
+    house="lords"
+    forenames="Jonathan Michael Gledhill"
+    title="Bishop" lordname="" lordofname="Lichfield"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2009-11-03" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101003"
+    house="lords"
+    forenames="Anthony Martin Priddis"
+    title="Bishop" lordname="" lordofname="Hereford"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2009-11-24" todate="9999-12-31"
+/>
 
 </publicwhip>
