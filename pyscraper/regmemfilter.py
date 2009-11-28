@@ -35,6 +35,7 @@ def RunRegmemFilters(fout, text, sdate, sdatever):
 	fout.write("<publicwhip>\n")
 
         text = re.sub('Rt Shaun', 'Shaun', text) # Always get his name wrong
+        text = re.sub('&#128;', '&#163;', text) # Always get some pound signs wrong
         rows = re.findall("<TR>(.*)</TR>", text)
         rows = [ re.sub("&nbsp;", " ", row) for row in rows ]
         rows = [ re.sub("<B>|</B>|<BR>|`", "", row) for row in rows ]
