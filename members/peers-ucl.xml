@@ -1015,7 +1015,7 @@ B - bishop
 	lordofname_full="Stiffkey"
 	county="the County of Norfolk"
 	peeragetype="L" affiliation="Con"
-	fromdate="1978" todate="9999-12-31"
+	fromdate="1978" todate="2009-09-01" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100098"
@@ -1685,7 +1685,7 @@ B - bishop
 	lordofname_full="Romsey"
 	county="the City of Cambridge"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1978" todate="9999-12-31"
+	fromdate="1978" todate="2009-11-29" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100163"
@@ -1989,7 +1989,7 @@ B - bishop
 	lordofname_full="the City of Westminster"
 	county=""
 	peeragetype="L" affiliation="Con"
-	fromdate="1972" todate="9999-12-31"
+	fromdate="1972" todate="2009-10-17" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100192"
@@ -5274,7 +5274,7 @@ B - bishop
 	lordofname_full="the City of Westminster"
 	county=""
 	peeragetype="L" affiliation="Con"
-	fromdate="1981" todate="9999-12-31"
+	fromdate="1981" todate="2009-10-02" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100508"
@@ -8569,7 +8569,7 @@ B - bishop
 	lordofname_full="Belfast"
 	county="the County of Antrim"
 	peeragetype="L" affiliation="Con"
-	fromdate="2004-09-13" todate="9999-12-31"
+	fromdate="2004-09-13" todate="2009-11-02" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100824"
