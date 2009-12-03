@@ -18,7 +18,6 @@ import sets
 
 sys.path.append("../pyscraper")
 sys.path.append("../pyscraper/lords")
-import re
 from resolvelordsnames import lordsList
 
 # Get region pages
