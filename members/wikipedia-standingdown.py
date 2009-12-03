@@ -37,6 +37,6 @@ for row in m:
     url, name = row
     id, canonname, canoncons = memberList.matchfullnamecons(name.decode('utf-8'), None, today) 
     pid = memberList.membertoperson(id)
-    print '  <personinfo id="%s" standing_down="1">' % pid
+    print '  <personinfo id="%s" standing_down="1" />' % pid
 print '</publicwhip>'
 
