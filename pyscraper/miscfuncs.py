@@ -206,7 +206,6 @@ entitymap = {
         '&#239;':'&iuml;',  # this is i-double-dot, as in naive
 
         '&#231;':'&ccedil;',   # this is cedilla
-        '&#199;':'&#199;',   # this is capital C-cedilla
         '&#250;':'&uacute;',
         '&#252;':'&uuml;',   # this is u-double-dot
         '&#241;':'&ntilde;',   # spanish n as in Senor
@@ -248,9 +247,6 @@ entitymap = {
 
         '&#178;':'&sup2;',
         '&rsquo;':"'",
-        '&#279;':'&#279;',
-        '&#352;':'&#352;',
-        '&#353;':'&#353;',
         '&oelig;':'&#339;',
         '&#230;':'&aelig;',
         '&dagger;':'&dagger;',
@@ -342,6 +338,8 @@ def StraightenHTMLrecurse(stex, stampurl):
 
 		if not sres[i]:
 			pass
+		elif re.match('&#[0-9]+;', sres[i]):
+                        pass
 		elif sres[i][0] == '&':
 			if sres[i] in entitymap:
 				sres[i] = entitymap[sres[i]]
@@ -349,17 +347,9 @@ def StraightenHTMLrecurse(stex, stampurl):
 				pass
 			elif sres[i] == '&mdash;': # special case as entitymap maps it with spaces
 				pass
-			elif sres[i] == '&quot;':
+			elif sres[i] in ('&quot;', '&amp;', '&lt;', '&gt;'):
 				pass
-			elif sres[i] == '&amp;':
-				pass
-			elif sres[i] == '&lt;':
-				pass
-			elif sres[i] == '&gt;':
-				pass
-			elif sres[i] == '&ldquo;':
-				sres[i] = '&quot;'
-			elif sres[i] == '&rdquo;':
+			elif sres[i] in ('&ldquo;', '&rdquo;'):
 				sres[i] = '&quot;'
 			else:
 				raise Exception, sres[i] + ' unknown ent'
