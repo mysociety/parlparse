@@ -259,7 +259,7 @@ def SplitLordsText(text, sdate):
                 res[1] = page + res[1]
                 page = re.findall('<page[^>]*>', res[1])[-1]
 		assert not re.search('<a name="column_(?!(?:GC|CWH))\D+\d+">', res[1])
-		if not re.search('<(?:h[23] align=)?"?center"?>(?:<a name="[^"]*">(?:</a>)?)?\s*(?:Official Report of the )?(?:(?:the)?Northern Ireland Orders )?Grand Committee', res[1]):
+		if not re.search('<(?:h[23] align=)?"?center"?>(?:<a name="[^"]*">(?:</a>)?)?\s*(?:(?:Official Report of the )?(?:(?:the)?Northern Ireland Orders )?Grand Committee|Second Reading Committee)', res[1]):
 			raise ContextException("grand committee title failure", stamp=None, fragment=res[1][:100])
 
 	# check the title is in the Written Statements section
