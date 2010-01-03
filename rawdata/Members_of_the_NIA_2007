@@ -58,15 +58,15 @@ wgEnableWriteAPI=true,
 wgSeparatorTransformTable=["", ""],
 wgDigitTransformTable=["", ""],
 wgMainPageTitle="Main Page",
-wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Wikipedia", "5": "Wikipedia talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "100": "Portal", "101": "Portal talk"},
-wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "wikipedia": 4, "wikipedia_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "portal": 100, "portal_talk": 101, "wp": 4, "wt": 5, "image": 6, "image_talk": 7},
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Wikipedia", "5": "Wikipedia talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "100": "Portal", "101": "Portal talk", "108": "Book", "109": "Book talk"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "wikipedia": 4, "wikipedia_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "portal": 100, "portal_talk": 101, "book": 108, "book_talk": 109, "wp": 4, "wt": 5, "image": 6, "image_talk": 7},
 wgMWSuggestTemplate="http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest",
 wgDBname="enwiki",
 wgSearchNamespaces=[0],
 wgMWSuggestMessages=["with suggestions", "no suggestions"],
 wgRestrictionEdit=[],
 wgRestrictionMove=[],
-wgTrackingToken="6c83cdc13de10df3fe598dcef3218f7c",
+wgTrackingToken="a3583893aa3a347bf03ef7cac19069de",
 wgClickTrackingIsThrottled=true,
 wgNotice="",
 wgNoticeLocal="";
@@ -1200,7 +1200,7 @@ Template argument size: 29425/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!2 and timestamp 20091223150737 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!2 and timestamp 20091231014025 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007">http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Northern_Ireland_MLAs_2007-" title="Category:Northern Ireland MLAs 2007-">Northern Ireland MLAs 2007-</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Northern_Irish_parliamentarians" title="Category:Lists of Northern Irish parliamentarians">Lists of Northern Irish parliamentarians</a></span> | <span dir='ltr'><a href="/wiki/Category:Northern_Ireland-related_lists" title="Category:Northern Ireland-related lists">Northern Ireland-related lists</a></span></div></div>			<!-- end content -->
@@ -1299,4 +1299,4 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </div>
 
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv134 in 0.042 secs. --></body></html>
+<!-- Served by srv145 in 0.075 secs. --></body></html>
