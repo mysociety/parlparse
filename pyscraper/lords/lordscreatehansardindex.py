@@ -63,6 +63,10 @@ def LordsIndexFromAll(urlalldays):
                 """<a href="/pa/ld200809/ldhansrd/index/090212.html">27 February 2009</a>""",
                 """<a href="/pa/ld200809/ldhansrd/index/090227.html">27 February 2009</a>"""
         );
+        srlinkpage = srlinkpage.replace(
+                """<a href="/pa/ld200910/ldhansrd/index/100105.html">6 January 2010</a>""",
+                """<a href="/pa/ld200910/ldhansrd/index/100106.html">6 January 2010</a>"""
+        );
         srlinkpage = srlinkpage.replace('ld200708/ldhansrd/index/081203', 'ld200809/ldhansrd/index/081203')
 
 	# Find lines of the form:
