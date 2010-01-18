@@ -35,6 +35,7 @@ print '''<?xml version="1.0" encoding="ISO-8859-1"?>
 m = re.findall('<li><a href="([^"]*)"[^>]*>([^<]*)</a>', section)
 for row in m:
     url, name = row
+    if name == 'Iris Robinson': continue
     id, canonname, canoncons = memberList.matchfullnamecons(name.decode('utf-8'), None, today) 
     pid = memberList.membertoperson(id)
     print '  <personinfo id="%s" standing_down="1" />' % pid
