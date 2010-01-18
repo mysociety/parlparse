@@ -67518,12 +67518,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100147"/>
     <office id="uk.org.publicwhip/lord/100959" current="yes"/>
 </person>
-<person id="uk.org.publicwhip/person/12845" latestname="Lord Truscott">
-    <office id="uk.org.publicwhip/lord/100788" current="yes"/>
-    <office id="uk.org.publicwhip/moffice/1379"/>
-    <office id="uk.org.publicwhip/moffice/1382"/>
-    <office id="uk.org.publicwhip/moffice/1488"/>
-</person>
 <person id="uk.org.publicwhip/person/13924" latestname="Lord Krebs">
     <office id="uk.org.publicwhip/lord/100952" current="yes"/>
 </person>
@@ -67636,6 +67630,12 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/12868" latestname="Lord Macaulay of Bragar">
     <office id="uk.org.publicwhip/lord/100391" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/12845" latestname="Lord Truscott">
+    <office id="uk.org.publicwhip/lord/100788" current="yes"/>
+    <office id="uk.org.publicwhip/moffice/1379"/>
+    <office id="uk.org.publicwhip/moffice/1382"/>
+    <office id="uk.org.publicwhip/moffice/1488"/>
 </person>
 <person id="uk.org.publicwhip/person/12869" latestname="Lord Cooke of Islandreagh">
     <office id="uk.org.publicwhip/lord/100141"/>
@@ -71207,7 +71207,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13918" latestname="Francie Brolly">
     <office id="uk.org.publicwhip/member/90139"/>
-    <office id="uk.org.publicwhip/member/90256" current="yes"/>
+    <office id="uk.org.publicwhip/member/90256"/>
 </person>
 <person id="uk.org.publicwhip/person/13758" latestname="Thomas Buchanan">
     <office id="uk.org.publicwhip/member/90140"/>
@@ -71443,6 +71443,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/24684" latestname="Danny Kinahan">
     <office id="uk.org.publicwhip/member/90358" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/24701" latestname="Billy Leonard">
+    <office id="uk.org.publicwhip/member/90359" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13812" latestname="James Leslie">
     <office id="uk.org.publicwhip/member/90066"/>
