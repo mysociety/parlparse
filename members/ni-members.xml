@@ -2195,8 +2195,8 @@
 	id="uk.org.publicwhip/member/90286"
 	title="" firstname="Carmel" lastname="Hanna"
 	constituency="Belfast South" party="SDLP"
-	fromdate="2007-03-09" todate="9999-12-31"
-	fromwhy="election" towhy="still_in_office"
+	fromdate="2007-03-09" todate="2010-01-18"
+	fromwhy="election" towhy="resigned"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90287"
@@ -2714,6 +2714,13 @@
 	fromdate="2010-01-07" todate="9999-12-31"
 	fromwhy="appointed" towhy="still_in_office"
 />
-</publicwhip>
+<member_ni
+	id="uk.org.publicwhip/member/90360"
+	title="" firstname="Conall" lastname="McDevitt"
+	constituency="Belfast South" party="SDLP"
+	fromdate="2010-01-21" todate="9999-12-31"
+	fromwhy="appointed" towhy="still_in_office"
+/>
 
+</publicwhip>
 
