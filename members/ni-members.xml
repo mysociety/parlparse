@@ -2559,8 +2559,8 @@
 	id="uk.org.publicwhip/member/90338"
 	title="" firstname="Iris" lastname="Robinson"
 	constituency="Strangford" party="DUP"
-	fromdate="2007-03-09" todate="9999-12-31"
-	fromwhy="election" towhy="still_in_office"
+	fromdate="2007-03-09" todate="2010-01-12"
+	fromwhy="election" towhy="resigned"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90339"
@@ -2719,6 +2719,13 @@
 	title="" firstname="Conall" lastname="McDevitt"
 	constituency="Belfast South" party="SDLP"
 	fromdate="2010-01-21" todate="9999-12-31"
+	fromwhy="appointed" towhy="still_in_office"
+/>
+<member_ni
+	id="uk.org.publicwhip/member/90361"
+	title="" firstname="Jonathan" lastname="Bell"
+	constituency="Strangford" party="DUP"
+	fromdate="2010-01-25" todate="9999-12-31"
 	fromwhy="appointed" towhy="still_in_office"
 />
 
