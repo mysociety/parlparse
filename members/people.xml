@@ -8296,7 +8296,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/1846"/>
     <office id="uk.org.publicwhip/member/90102"/>
     <office id="uk.org.publicwhip/member/90227"/>
-    <office id="uk.org.publicwhip/member/90338" current="yes"/>
+    <office id="uk.org.publicwhip/member/90338"/>
     <office id="uk.org.publicwhip/moffice/4030"/>
 </person>
 <person id="uk.org.publicwhip/person/11199" latestname="Andrew Rosindell">
@@ -67521,12 +67521,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100147"/>
     <office id="uk.org.publicwhip/lord/100959" current="yes"/>
 </person>
-<person id="uk.org.publicwhip/person/12845" latestname="Lord Truscott">
-    <office id="uk.org.publicwhip/lord/100788" current="yes"/>
-    <office id="uk.org.publicwhip/moffice/1379"/>
-    <office id="uk.org.publicwhip/moffice/1382"/>
-    <office id="uk.org.publicwhip/moffice/1488"/>
-</person>
 <person id="uk.org.publicwhip/person/13924" latestname="Lord Krebs">
     <office id="uk.org.publicwhip/lord/100952" current="yes"/>
 </person>
@@ -67639,6 +67633,12 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/12868" latestname="Lord Macaulay of Bragar">
     <office id="uk.org.publicwhip/lord/100391" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/12845" latestname="Lord Truscott">
+    <office id="uk.org.publicwhip/lord/100788" current="yes"/>
+    <office id="uk.org.publicwhip/moffice/1379"/>
+    <office id="uk.org.publicwhip/moffice/1382"/>
+    <office id="uk.org.publicwhip/moffice/1488"/>
 </person>
 <person id="uk.org.publicwhip/person/12869" latestname="Lord Cooke of Islandreagh">
     <office id="uk.org.publicwhip/lord/100141"/>
@@ -71164,6 +71164,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13749" latestname="Billy Bell">
     <office id="uk.org.publicwhip/member/90012"/>
     <office id="uk.org.publicwhip/member/90131"/>
+</person>
+<person id="uk.org.publicwhip/person/24703" latestname="Jonathan Bell">
+    <office id="uk.org.publicwhip/member/90361" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13748" latestname="Eileen Bell">
     <office id="uk.org.publicwhip/member/90013"/>
