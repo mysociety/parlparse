@@ -49,7 +49,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=339578677,
+wgCurRevisionId=340390361,
 wgVersion="1.16alpha-wmf",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -64,7 +64,7 @@ wgSearchNamespaces=[0],
 wgMWSuggestMessages=["with suggestions", "no suggestions"],
 wgRestrictionEdit=[],
 wgRestrictionMove=[],
-wgTrackingToken="396502ee61756ae5e2da9a220d59509b",
+wgTrackingToken="a3b8ede8693e1eb0e6df3eada2498512",
 wgClickTrackingIsThrottled=true,
 wgNotice="",
 wgNoticeLocal="";
@@ -414,7 +414,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td>Sits as Baron Sudley</td>
 </tr>
 <tr>
-<td><a href="/wiki/Michael_Ashcroft" title="Michael Ashcroft" class="mw-redirect">The Lord Ashcroft</a></td>
+<td><a href="/wiki/Michael_Ashcroft,_Baron_Ashcroft" title="Michael Ashcroft, Baron Ashcroft">The Lord Ashcroft</a></td>
 <td>Conservative</td>
 <td>Life Peer</td>
 <td>&#160;</td>
@@ -4593,12 +4593,12 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <!-- 
 NewPP limit report
 Preprocessor node count: 1979/1000000
-Post-expand include size: 13764/2048000 bytes
+Post-expand include size: 13736/2048000 bytes
 Template argument size: 4771/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20100123191244 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20100129002510 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:House_of_Lords" title="Category:House of Lords">House of Lords</a></span></div></div>			<!-- end content -->
@@ -4675,7 +4675,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=339578677" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=339578677" title="Information on how to cite this page">Cite this page</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=340390361" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=340390361" title="Information on how to cite this page">Cite this page</a></li>			</ul>
 		</div>
 	</div>
 	<div id="p-lang" class="portlet">
@@ -4692,7 +4692,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/skins-1.5/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-					<li id="lastmod"> This page was last modified on 23 January 2010 at 19:12.</li>
+					<li id="lastmod"> This page was last modified on 27 January 2010 at 19:59.</li>
 					<li id="copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -4705,4 +4705,4 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </div>
 
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv176 in 0.058 secs. --></body></html>
+<!-- Served by srv89 in 0.055 secs. --></body></html>
