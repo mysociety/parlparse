@@ -264,7 +264,7 @@ class ParseDay:
 			#print p, "\n---------------------\n"
 			if p.a and re.match('[^h/]', p.a.get('href', '')):
 				continue
-			if ptext == '&nbsp;':
+			if ptext == '&nbsp;' or ptext == '':
 				continue
 			cl = p['class']
 			cl = re.sub(' style\d', '', cl)
