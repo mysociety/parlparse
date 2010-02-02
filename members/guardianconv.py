@@ -10,7 +10,7 @@
 # For details see the file LICENSE.html in the top level of the source.
 
 input = '../rawdata/mpinfo/guardian-mpsurls2005.txt'
-date = '2009-04-16'
+date = '2010-02-01'
 
 import sys
 import string
@@ -18,6 +18,7 @@ import urllib
 import re
 sys.path.append("../pyscraper")
 from resolvemembernames import memberList
+from BeautifulSoup import BeautifulSoup
 
 print '''<?xml version="1.0" encoding="ISO-8859-1"?>
 <publicwhip>
@@ -34,8 +35,10 @@ for l in ih:
     # Match the name, and output basic URLs
     print >>sys.stderr, "Working on %s %s" % (origname, origcons)
     id, name, cons =  memberList.matchfullnamecons(origname, origcons, date)
+    print  >>sys.stderr, "ID %s name %s cons %s" % (id, name, cons)
     personid = memberList.membertoperson(id)
     cons = cons.replace("&", "&amp;")
+
     print '<personinfo id="%s" guardian_mp_summary="%s" />' % (personid, personurl)
     print '<consinfo canonical="%s" guardian_election_results="%s" />' % (cons.encode("latin-1"), consurl)
 
@@ -58,26 +61,30 @@ for l in ih:
             again = 1
     content = ur.read()
     ur.close()
-
-    m = re.search('<td align="right" valign="top"><b><font size="2" face="Geneva,Arial,sans-serif">(\d{1,2}\.\d)</font></b></td>.*?<tr.*?<td align="right" valign="top"><font size="2" face="Geneva,Arial,sans-serif">(\d{1,2}\.\d)</font></td>(?s)', content)
-    if m:
-        swing = round( ( float(m.group(1)) - float(m.group(2)) ) / 2 , 2)
-#    m = re.search("requires a (\d+\.\d+) \&\#037\; swing to gain seat", content)
+    soup = BeautifulSoup(content)
+    vote_cells = soup.findAll('td', attrs={"class": "last"})
+    # Assumes most recent vote will be at top
+    if vote_cells:
+        vote_percent_pattern = re.compile('(\d{1,2}\.\d)%')
+        top_vote_match = re.search(vote_percent_pattern, vote_cells[0].string)
+        second_vote_match = re.search(vote_percent_pattern, vote_cells[1].string)
+        swing = round( ( float(top_vote_match.group(1)) - float(second_vote_match.group(1)) ) / 2 , 2)
         for id in setsameelection:
             print '<memberinfo id="%s" swing_to_lose_seat="%s" />' % (id, swing)
     else:
         print >>sys.stderr, "no match for swing at url %s" % consurl
 
-    m = re.search("majority: ([\d,]+)", content)
-    if m:
+    majority_div = soup.find('div', attrs={"class": "figures", "id": "majority"})
+    if majority_div:
+        majority = majority_div.p.span.string.strip()
         for id in setsameelection:
-            print '<memberinfo id="%s" majority_in_seat="%s" />' % (id, m.group(1).replace(",", ""))
+            print '<memberinfo id="%s" majority_in_seat="%s" />' % (id, majority.replace(",", ""))
     else:
         print >>sys.stderr, "no match for majority at url %s" % consurl
 
     print ''
 
-assert c == 646, "Expected %d MPs" % c
+assert c == 646, "Expected 646 MPs, got %d MPs" % c
 
 ih.close()
 
