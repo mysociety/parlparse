@@ -33,7 +33,7 @@ for cols in content:
         raise Exception, "Failed to find MP %s" % name
     pid = memberList.membertoperson(id)
     fout.write('<personinfo id="%s" ' % pid)
-    expense_cols = [ '1', '2', '3', '4', 'travel', 'stationery', '9', 'comms_allowance', 'total' ]
+    expense_cols = [ '1', '2', '3', '4', 'total_travel', 'stationery', '9', 'comms_allowance', 'total_inc_travel' ]
     for i in range(9):
         col = expense_cols[i]
         if col != '':
@@ -63,7 +63,7 @@ for cols in content:
 		'family_travel_a', 'family_travel_b',
 		'employee_travel_a', 'employee_travel_b'
     ]
-    for i in range(9):
+    for i in range(14):
         col = expense_cols[i]
         if col != '':
             fout.write('expenses2009_col%s="%s" ' % (col, money[i].strip()))
