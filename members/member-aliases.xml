@@ -314,7 +314,6 @@ on that date, and we don't want ambiguos matches any more -->
 <alias fullname="Lady Hermon" alternate="Sylvia Hermon" />
 <alias fullname="Lady Hermon" alternate="Lady Sylvia Hermon" />
 <alias fullname="Mike Hancock" alternate="Michael Hancock" />
-<alias fullname="Michael Foster" alternate="Michael John Foster" /> <!-- maybe dodgy, confusion with the other Michael Foster? -->
 <alias fullname="Jeff Ennis" alternate="Jeffrey Ennis" />
 <alias fullname="Jim Cunningham" alternate="James Cunningham" />
 <alias fullname="Jack Cunningham" alternate="John Cunningham" />
@@ -470,6 +469,12 @@ on that date, and we don't want ambiguos matches any more -->
 <alias fullname="John Austin" alternate="John Austin-Walker" />
 <alias fullname="John Thurso" alternate="Viscount Thurso" />
 <alias fullname="Alan Williams" alternate="Alan J Williams" />
+
+<!-- Expenses -->
+<alias fullname="Frank Cook" alternate="Francis Cook" />
+<alias fullname="Philip Davies" alternate="Phillip Davies" />
+<alias fullname="Philip Hollobone" alternate="Phillip Hollobone" />
+<alias fullname="Elfyn Llwyd" alternate="Elfin Llwyd" />
 
 </publicwhip>
 
