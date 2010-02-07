@@ -14,14 +14,14 @@
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/rss+xml" title="Wikipedia RSS Feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=rss" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?257z2" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?257z2" type="text/css" media="print" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/main.css?257z2" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/chick/main.css?257z2" type="text/css" media="handheld" />
-<!--[if lt IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE50Fixes.css?257z2" type="text/css" media="screen" /><![endif]-->
-<!--[if IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE55Fixes.css?257z2" type="text/css" media="screen" /><![endif]-->
-<!--[if IE 6]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE60Fixes.css?257z2" type="text/css" media="screen" /><![endif]-->
-<!--[if IE 7]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE70Fixes.css?257z2" type="text/css" media="screen" /><![endif]-->
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?257z3" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?257z3" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/main.css?257z3" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/chick/main.css?257z3" type="text/css" media="handheld" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE50Fixes.css?257z3" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE55Fixes.css?257z3" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE60Fixes.css?257z3" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE70Fixes.css?257z3" type="text/css" media="screen" /><![endif]-->
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
@@ -30,6 +30,7 @@
 <script type="text/javascript">
 var skin="monobook",
 stylepath="http://bits.wikimedia.org/skins-1.5",
+wgUrlProtocols="http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
 wgArticlePath="/wiki/$1",
 wgScriptPath="/w",
 wgScriptExtension=".php",
@@ -65,19 +66,19 @@ wgSearchNamespaces=[0],
 wgMWSuggestMessages=["with suggestions", "no suggestions"],
 wgRestrictionEdit=[],
 wgRestrictionMove=[],
-wgTrackingToken="c12d8427660360f29bfee73b5a10424e",
+wgTrackingToken="4217878e9e1e56cb9cedc51614101255",
 wgClickTrackingIsThrottled=true,
 wgNotice="",
 wgNoticeLocal="";
 </script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?urid=257z2_1254880607" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?urid=257z2" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?urid=257z2" type="text/javascript"></script>
-<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?257z2"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?urid=257z3_1264870003" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?urid=257z3" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?urid=257z3" type="text/javascript"></script>
+<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?257z3"></script>
 
-<!--[if lt IE 7]><script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/IEFixes.js?257z2"></script>
+<!--[if lt IE 7]><script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/IEFixes.js?257z3"></script>
 	<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook&amp;urid=257z2_336800052" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook&amp;urid=257z3_336800052" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-MPs_elected_in_the_United_Kingdom_general_election_2005 skin-monobook">
@@ -5319,11 +5320,11 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/skins-1.5/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-					<li id="lastmod"> This page was last modified on 17 January 2010 at 01:09.</li>
+					<li id="lastmod"> This page was last modified on 17 January 2010 at 01:09.<br /></li>
 					<li id="copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
-Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li><li class="noprint"><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact us</a></li>
+Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.<br /></li><li class="noprint"><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact us</a></li>
 					<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
 					<li id="about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
 					<li id="disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
@@ -5332,4 +5333,4 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </div>
 
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv228 in 0.067 secs. --></body></html>
+<!-- Served by srv226 in 0.057 secs. --></body></html>
