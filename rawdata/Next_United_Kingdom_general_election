@@ -13,14 +13,14 @@
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/rss+xml" title="Wikipedia RSS Feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=rss" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?257z3" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?257z3" type="text/css" media="print" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/main.css?257z3" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/chick/main.css?257z3" type="text/css" media="handheld" />
-<!--[if lt IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE50Fixes.css?257z3" type="text/css" media="screen" /><![endif]-->
-<!--[if IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE55Fixes.css?257z3" type="text/css" media="screen" /><![endif]-->
-<!--[if IE 6]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE60Fixes.css?257z3" type="text/css" media="screen" /><![endif]-->
-<!--[if IE 7]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE70Fixes.css?257z3" type="text/css" media="screen" /><![endif]-->
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?257z6" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?257z6" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/main.css?257z6" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/chick/main.css?257z6" type="text/css" media="handheld" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE50Fixes.css?257z6" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE55Fixes.css?257z6" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE60Fixes.css?257z6" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE70Fixes.css?257z6" type="text/css" media="screen" /><![endif]-->
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
@@ -50,7 +50,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=341648845,
+wgCurRevisionId=341749961,
 wgVersion="1.16alpha-wmf",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -65,19 +65,19 @@ wgSearchNamespaces=[0],
 wgMWSuggestMessages=["with suggestions", "no suggestions"],
 wgRestrictionEdit=[],
 wgRestrictionMove=["sysop"],
-wgTrackingToken="3bafb7480beed6cbd1ac9f44b63d913d",
+wgTrackingToken="9eae7b841e61ede08f28a676d8e41d31",
 wgClickTrackingIsThrottled=true,
 wgNotice="",
 wgNoticeLocal="";
 </script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?urid=257z3_1264870003" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?urid=257z3" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?urid=257z3" type="text/javascript"></script>
-<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?257z3"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?urid=257z6_1264870003" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?urid=257z6" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?urid=257z6" type="text/javascript"></script>
+<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?257z6"></script>
 
-<!--[if lt IE 7]><script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/IEFixes.js?257z3"></script>
+<!--[if lt IE 7]><script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/IEFixes.js?257z6"></script>
 	<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook&amp;urid=257z3_336800052" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook&amp;urid=257z6_336800052" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-United_Kingdom_general_election_2010 skin-monobook">
@@ -152,9 +152,9 @@ wgNoticeLocal="";
 <td style="text-align: center">+264</td>
 </tr>
 <tr>
-<td style="text-align: center; border-bottom: 6px solid &lt;!{{Template: {{{party4}}}/meta/color}}"></td>
-<td style="text-align: center; border-bottom: 6px solid &lt;!{{Template: {{{party5}}}/meta/color}}"></td>
-<td style="text-align: center; border-bottom: 6px solid &lt;!{{Template: {{{party6}}}/meta/color}}"></td>
+<td style="text-align: center; border-bottom: 6px solid white">
+<p><br /></p>
+</td>
 </tr>
 <tr>
 <td colspan="5"></td>
@@ -300,7 +300,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <p>On 21 December 2009, it was announced that there would be three leaders debate, each in primetime. They would be hosted by <a href="/wiki/ITV_News" title="ITV News">ITV's</a> <a href="/wiki/Alastair_Stewart" title="Alastair Stewart">Alastair Stewart</a>, <a href="/wiki/Adam_Boulton" title="Adam Boulton">Adam Boulton</a> from <a href="/wiki/Sky_News" title="Sky News">Sky News</a> and <a href="/wiki/Question_Time_(TV_series)" title="Question Time (TV series)">Question Time's</a> <a href="/wiki/David_Dimbleby" title="David Dimbleby">David Dimbleby</a>.<sup id="cite_ref-30" class="reference"><a href="#cite_note-30"><span>[</span>31<span>]</span></a></sup> However, the <a href="/wiki/Scottish_National_Party" title="Scottish National Party">SNP</a> has insisted that as the leading political party in Scotland in the latest opinion poll, it should be included in any debate broadcast in Scotland, adding "The broadcasters would do well to recall the debacle experienced by the BBC’s Panorama programme in 1995, when they were forced not to broadcast an interview with the Prime Minister in Scotland because it breached the rules of impartiality during a Scottish local election."<sup id="cite_ref-31" class="reference"><a href="#cite_note-31"><span>[</span>32<span>]</span></a></sup></p>
 <p>On the 22nd of December 2009, the <a href="/wiki/United_Kingdom_Independence_Party" title="United Kingdom Independence Party">United Kingdom Independence Party</a> (UKIP) leader, <a href="/wiki/Lord_Pearson" title="Lord Pearson">Lord Pearson</a> stated that his party should be included because it "would be wrong for UKIP, which came second in the last test of national political opinion, to be excluded from these debates."<sup id="cite_ref-32" class="reference"><a href="#cite_note-32"><span>[</span>33<span>]</span></a></sup></p>
 <h2><span class="editsection">[<a href="/w/index.php?title=United_Kingdom_general_election,_2010&amp;action=edit&amp;section=8" title="Edit section: MPs not seeking re-election">edit</a>]</span> <span class="mw-headline" id="MPs_not_seeking_re-election">MPs not seeking re-election</span></h2>
-<p>This general election has an unusually high number of MPs choosing not to seek re-election. There are more MPs standing down at the next general election than did at the <a href="/wiki/1945_United_Kingdom_general_election" title="1945 United Kingdom general election" class="mw-redirect">1945 election</a> (which on account of the extraordinary <a href="/wiki/Second_World_War" title="Second World War" class="mw-redirect">wartime</a> circumstances came ten years after the preceding election).<sup id="cite_ref-33" class="reference"><a href="#cite_note-33"><span>[</span>34<span>]</span></a></sup> This has been blamed on the <a href="/wiki/United_Kingdom_Parliamentary_expenses_scandal" title="United Kingdom Parliamentary expenses scandal">expenses scandal</a> and the fact that redundancy-style payments for departing MPs will be scrapped after the election.<sup id="cite_ref-34" class="reference"><a href="#cite_note-34"><span>[</span>35<span>]</span></a></sup></p>
+<p>This general election has an unusually high number of MPs choosing not to seek re-election. There are more MPs standing down at the next general election than did at the <a href="/wiki/1945_United_Kingdom_general_election" title="1945 United Kingdom general election" class="mw-redirect">1945 election</a> (which on account of the extraordinary <a href="/wiki/Second_World_War" title="Second World War" class="mw-redirect">wartime</a> circumstances came ten years after the preceding election).<sup id="cite_ref-33" class="reference"><a href="#cite_note-33"><span>[</span>34<span>]</span></a></sup> This has been blamed on the <a href="/wiki/United_Kingdom_Parliamentary_expenses_scandal" title="United Kingdom Parliamentary expenses scandal">expenses scandal</a> and the fact that redundancy-style payments for departing MPs may be scrapped after the election.<sup id="cite_ref-34" class="reference"><a href="#cite_note-34"><span>[</span>35<span>]</span></a></sup></p>
 <p>In all, 86 Labour MPs, 35 Conservatives, 7 Liberal Democrats, 2 independents, 1 Independent Conservative and 1 member each from Plaid Cymru, Scottish National Party and the Democratic Unionist Party have announced that they will not be contesting the next election.</p>
 <h3><span class="editsection">[<a href="/w/index.php?title=United_Kingdom_general_election,_2010&amp;action=edit&amp;section=9" title="Edit section: Labour">edit</a>]</span> <span class="mw-headline" id="Labour">Labour</span></h3>
 <ol>
@@ -1154,13 +1154,13 @@ the <a href="/wiki/House_of_Commons_of_the_United_Kingdom" title="House of Commo
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 87458/1000000
-Post-expand include size: 716989/2048000 bytes
-Template argument size: 311770/2048000 bytes
-Expensive parser function count: 0/500
+Preprocessor node count: 87570/1000000
+Post-expand include size: 717261/2048000 bytes
+Template argument size: 311810/2048000 bytes
+Expensive parser function count: 4/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:1855482-0!1!0!default!!en!2 and timestamp 20100203084716 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1855482-0!1!0!default!!en!2 and timestamp 20100206093954 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/United_Kingdom_general_election,_2010">http://en.wikipedia.org/wiki/United_Kingdom_general_election,_2010</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:General_elections_in_the_United_Kingdom" title="Category:General elections in the United Kingdom">General elections in the United Kingdom</a></span> | <span dir='ltr'><a href="/wiki/Category:2010_elections_in_the_United_Kingdom" title="Category:2010 elections in the United Kingdom">2010 elections in the United Kingdom</a></span></div></div>			<!-- end content -->
@@ -1237,7 +1237,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/United_Kingdom_general_ele
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/United_Kingdom_general_election,_2010" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=United_Kingdom_general_election,_2010&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=United_Kingdom_general_election,_2010&amp;oldid=341648845" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=United_Kingdom_general_election,_2010&amp;id=341648845" title="Information on how to cite this page">Cite this page</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=United_Kingdom_general_election,_2010&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=United_Kingdom_general_election,_2010&amp;oldid=341749961" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=United_Kingdom_general_election,_2010&amp;id=341749961" title="Information on how to cite this page">Cite this page</a></li>			</ul>
 		</div>
 	</div>
 		</div><!-- end of the left (by default at least) column -->
@@ -1246,7 +1246,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/United_Kingdom_general_ele
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/skins-1.5/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-					<li id="lastmod"> This page was last modified on 3 February 2010 at 08:45.<br /></li>
+					<li id="lastmod"> This page was last modified on 3 February 2010 at 20:47.<br /></li>
 					<li id="copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -1259,4 +1259,4 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </div>
 
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv245 in 0.041 secs. --></body></html>
+<!-- Served by srv205 in 0.040 secs. --></body></html>
