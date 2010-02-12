@@ -35,10 +35,13 @@ for cols in content:
     pid = memberList.membertoperson(id)
     fout.write('<personinfo id="%s" ' % pid)
     expense_cols = [ '1', '2', '3', '4', 'total_travel', 'stationery', '9', 'comms_allowance' ]
+    total = 0
     for i in range(8):
         col = expense_cols[i]
+        total += float(money[i].strip())
         if col != '':
             fout.write('expenses2009_col%s="%s" ' % (col, money[i].strip()))
+    fout.write('expenses2009_coltotal_inc_travel="%s" ' % (total))
     fout.write('/>\n')
 
 content = csv.reader(open('../rawdata/mpsexpenses200809travel.csv'))
