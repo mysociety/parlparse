@@ -15,26 +15,27 @@ fout = open('expenses200809.xml', 'w')
 fout.write('''<?xml version="1.0" encoding="ISO-8859-1"?>
 <publicwhip>\n''')
 
-content = csv.reader(open('../rawdata/mpsexpenses200809.csv'))
+content = csv.reader(open('../rawdata/mpsexpenses200809.txt'))
 for cols in content:
     if cols[0] == 'ID': continue # Header
-    if cols[1] == 'TOTALS': continue # Footer
-    name = cols[1].decode('utf-8')
-    party = cols[2]
-    cons = cols[3].decode('utf-8')
-    money = cols[4:]
+    #if cols[1] == 'TOTALS': continue # Footer
+    name = cols[0].decode('utf-8')
+    #party = cols[2]
+    #cons = cols[3].decode('utf-8')
+    money = cols[1:]
     money = map(lambda x: re.sub("\xa3","", x), money)
     money = map(lambda x: re.sub(",","", x), money)
     id = None
-    id, found_name, cons =  memberList.matchfullnamecons(name, cons, '2008-05-01')
+    cons = None
+    id, found_name, newcons =  memberList.matchfullnamecons(name, cons, '2008-05-01')
     if not id:
         id, found_name, newcons =  memberList.matchfullnamecons(name, cons, '2008-12-01')
     if not id:
         raise Exception, "Failed to find MP %s" % name
     pid = memberList.membertoperson(id)
     fout.write('<personinfo id="%s" ' % pid)
-    expense_cols = [ '1', '2', '3', '4', 'total_travel', 'stationery', '9', 'comms_allowance', 'total_inc_travel' ]
-    for i in range(9):
+    expense_cols = [ '1', '2', '3', '4', 'total_travel', 'stationery', '9', 'comms_allowance' ]
+    for i in range(8):
         col = expense_cols[i]
         if col != '':
             fout.write('expenses2009_col%s="%s" ' % (col, money[i].strip()))
