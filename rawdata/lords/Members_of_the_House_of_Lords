@@ -13,14 +13,14 @@
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/rss+xml" title="Wikipedia RSS Feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=rss" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?257z6" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?257z6" type="text/css" media="print" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/main.css?257z6" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/chick/main.css?257z6" type="text/css" media="handheld" />
-<!--[if lt IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE50Fixes.css?257z6" type="text/css" media="screen" /><![endif]-->
-<!--[if IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE55Fixes.css?257z6" type="text/css" media="screen" /><![endif]-->
-<!--[if IE 6]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE60Fixes.css?257z6" type="text/css" media="screen" /><![endif]-->
-<!--[if IE 7]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE70Fixes.css?257z6" type="text/css" media="screen" /><![endif]-->
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?257z22" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?257z22" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/main.css?257z22" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/chick/main.css?257z22" type="text/css" media="handheld" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE50Fixes.css?257z22" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE55Fixes.css?257z22" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE60Fixes.css?257z22" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE70Fixes.css?257z22" type="text/css" media="screen" /><![endif]-->
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
@@ -65,19 +65,19 @@ wgSearchNamespaces=[0],
 wgMWSuggestMessages=["with suggestions", "no suggestions"],
 wgRestrictionEdit=[],
 wgRestrictionMove=[],
-wgTrackingToken="a456e8d778fdfff9f75928bf98ddb4fc",
+wgTrackingToken="9d3574078b29ec67d7d7daaa311e1ddb",
 wgClickTrackingIsThrottled=true,
 wgNotice="",
 wgNoticeLocal="";
 </script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?urid=257z6_1264870003" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?urid=257z6" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?urid=257z6" type="text/javascript"></script>
-<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?257z6"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?urid=257z22_1264870003" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?urid=257z22" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?urid=257z22" type="text/javascript"></script>
+<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?257z22"></script>
 
-<!--[if lt IE 7]><script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/IEFixes.js?257z6"></script>
+<!--[if lt IE 7]><script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/IEFixes.js?257z22"></script>
 	<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook&amp;urid=257z6_336800052" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook&amp;urid=257z22_336800052" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-Members_of_the_House_of_Lords skin-monobook">
@@ -161,7 +161,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Blackburn" title="Bishop of Blackburn">The Lord Bishop of Blackburn</a></td>
-<td><a href="/w/index.php?title=Nicholas_Reade&amp;action=edit&amp;redlink=1" class="new" title="Nicholas Reade (page does not exist)">Nicholas Reade</a></td>
+<td><a href="/wiki/Nicholas_Reade" title="Nicholas Reade" class="mw-redirect">Nicholas Reade</a></td>
 <td>2009</td>
 <td>2004</td>
 </tr>
@@ -4599,7 +4599,7 @@ Template argument size: 4771/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20100205140304 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!2 and timestamp 20100213103337 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:House_of_Lords" title="Category:House of Lords">House of Lords</a></span></div></div>			<!-- end content -->
@@ -4706,4 +4706,4 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </div>
 
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv212 in 0.040 secs. --></body></html>
+<!-- Served by srv165 in 0.074 secs. --></body></html>
