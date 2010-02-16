@@ -137,43 +137,38 @@ def GlueAllType(pcmdir, cmindex, fproto, deleteoutput):
 # Get index of all regmem pages from the index
 def FindRegmemPages():
         urls = []
-        # Meta index is here: 'http://www.publications.parliament.uk/pa/cm/cmhocpap.htm'
-        # We just grab some specific session index pages as it is too hard otherwise.
-        # The first URL /pa/cm/cmregmem/memi02.htm should get all new regmems as they
-        # arrive anyway.
-        for ixurl in (
-                      'http://www.publications.parliament.uk/pa/cm/cmregmem/memi02.htm',
-                      'http://www.publications.parliament.uk/pa/cm200304/cmregmem/memi02.htm'
-                      ):
-                # print "IXURL", ixurl
-                ur = urllib.urlopen(ixurl)
-                content = ur.read()
-                ur.close();
+        # Meta index is here: 'http://www.publications.parliament.uk/pa/cm/cmregmem.htm'
+        ixurl = 'http://www.publications.parliament.uk/pa/cm/cmregmem/memi02.htm'
+        # print "IXURL", ixurl
+        ur = urllib.urlopen(ixurl)
+        content = ur.read()
+        ur.close();
 
-                # <A HREF="/pa/cm199900/cmregmem/memi02.htm">Register 
-                #              of Members' Interests November 2000</A>
-                allurls = re.findall('<a href="([^>]*)">(?i)', content)
-                for url in allurls:
-                        #print url
-                        if url.find("memi02") >= 0:
-                                url = urlparse.urljoin(ixurl, url)
-                                
-                                # find date
-                                ur = urllib.urlopen(url)
-                                content = ur.read()
-                                ur.close();
-                                # <B>14&nbsp;May&nbsp;2001&nbsp;(Dissolution)</B>
-                                content = content.replace("&nbsp;", " ")
-                                alldates = re.findall('<[Bb]>(\d+ [A-Z][a-z]* \d\d\d\d)', content)
-                                if len(alldates) != 1:
-                                        print alldates
-                                        raise Exception, 'Date match failed, expected one got %d\n%s' % (len(alldates), url)
-                                  
-                                date = mx.DateTime.DateTimeFrom(alldates[0]).date
+        # <A HREF="/pa/cm199900/cmregmem/memi02.htm">Register 
+        #              of Members' Interests November 2000</A>
+        allurls = re.findall('<a href="([^>]*)">(?i)', content)
+        for url in allurls:
+                #print url
+                if url.find("100203/") >= 0: continue # Temporary until they fix issue with different dupes
+                if url.find("memi02") >= 0:
+                        url = urlparse.urljoin(ixurl, url)
 
-                                #print date, url
-                                urls.append((date, url))
-                        
+                        # find date
+                        ur = urllib.urlopen(url)
+                        content = ur.read()
+                        ur.close();
+                        # <B>14&nbsp;May&nbsp;2001&nbsp;(Dissolution)</B>
+                        content = content.replace("&nbsp;", " ")
+                        alldates = re.findall('<[Bb]>(\d+ [A-Z][a-z]* \d\d\d\d)', content)
+                        if len(alldates) != 1:
+                                print alldates
+                                raise Exception, 'Date match failed, expected one got %d\n%s' % (len(alldates), url)
+
+                        date = mx.DateTime.DateTimeFrom(alldates[0]).date
+
+                        #print date, url
+                        urls.append((date, url))
+
         return urls
 
 def FindLordRegmemPages():
@@ -188,7 +183,7 @@ def FindLordRegmemPages():
                 url = urlparse.urljoin(ixurl, match[0])
                 date = mx.DateTime.DateTimeFrom(match[1]).date
                 urls.append((date, url))
-                        
+
         return urls
 
 ###############
