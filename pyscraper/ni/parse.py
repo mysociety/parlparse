@@ -269,10 +269,14 @@ class ParseDay:
 			cl = p['class']
 			cl = re.sub(' style\d', '', cl)
 
-			if cl == 'OralWrittenQuestion':
+			if cl == 'OralWrittenQuestion' or cl == 'OralAnswers-Question':
 				cl = 'B1SpeakersName'
-			if cl == 'OralWrittenAnswersHeading' or cl == 'WrittenStatement-Heading':
+			if cl in ('H1DocumentHeading', 'OralWrittenAnswersHeading', 'OralAnswers-H1Heading', 'WrittenStatement-Heading', 'H3SubHeading', 'OralAnswers-H2DepartmentHeading'):
 				cl = 'H3SectionHeading'
+			if cl in ('H4StageHeadingCxSpFirst', 'H4StageHeadingCxSpLast', 'OralAnswers-H3SubjectHeading'):
+				cl = 'H4StageHeading'
+			if cl in ('H4StageHeadingCxSpFirst', 'H4StageHeadingCxSpLast', 'OralAnswers-H3SubjectHeading'):
+				cl = 'H4StageHeading'
 			if cl == 'WrittenStatement-Content' or cl == 'B1BodyText-NumberedList' or cl == 'B2BodyTextBullet1':
 				cl = 'B3BodyText'
 			if cl == 'B3BodyText' and (phtml[0:8] == '<strong>' or re.match('\d+\.( |&nbsp;)+<strong>', phtml)):
@@ -303,15 +307,24 @@ class ParseDay:
 					newp.insert(0, phtml.replace(m.group(), ''))
 					newp.insert(0, newspeaker)
 					p = newp
-                                if re.search("<strong>O(&rsquo;|')Neill\)?</strong>", phtml):
+				m = re.match('([0-9]+\. )(.*?) asked', phtml)
+				if not p.strong and m:
+					newp = Tag(soup, 'p', [('class', 'B1SpeakersName')])
+					newspeaker = Tag(soup, 'strong')
+					newspeaker.insert(0, m.group(2))
+					newp.insert(0, phtml.replace(m.group(), ' asked'))
+					newp.insert(0, newspeaker)
+					newp.insert(0, m.group(1))
+					p = newp
+				if re.search("<strong>O(&rsquo;|')Neill\)?</strong>", phtml):
 					newp = Tag(soup, 'p', [('class', 'B1SpeakersName')])
 					newspeaker = Tag(soup, 'strong')
 					newspeaker.insert(0, re.sub('</?strong>', '', m.group()))
 					newp.insert(0, phtml.replace(m.group(), ''))
 					newp.insert(0, newspeaker)
 					p = newp
-                                if not p.strong:
-                                        raise ContextException, 'No strong in p! %s' % p
+				if not p.strong:
+					raise ContextException, 'No strong in p! %s' % p
 				speaker = p.strong.find(text=True)
 				speaker = re.sub('&nbsp;', '', speaker)
 				speaker = re.sub("\s+", " ", speaker).strip()
@@ -323,7 +336,7 @@ class ParseDay:
 				phtml = re.sub('^:\s*', '', phtml)
 				phtml = re.sub("\s+", " ", phtml).decode('utf-8')
 				self.text += "<p>%s</p>\n" % phtml
-			elif cl == 'B3BodyTextItalic' or cl == 'Q3Motion' or cl == 'AyesNoes' or cl == 'AyesNoesParties' or cl == 'AyesNoesVotes' or cl == 'D3PartyMembers' or cl == 'B3SpeakerinChair':
+			elif cl in ('B3BodyTextItalic', 'Q3Motion', 'BillAmend-AmendedText', 'BillAmend-ClauseHeading', 'AyesNoes', 'AyesNoesParties', 'AyesNoesVotes', 'D3PartyMembers', 'B3SpeakerinChair'):
 				match = re.match('The Assembly met at ((\d\d?)\.(\d\d) (am|pm)|noon)', phtml)
 				if match:
 					if match.group(1) == 'noon':
