@@ -35,11 +35,14 @@ for l in ih:
     # Match the name, and output basic URLs
     print >>sys.stderr, "Working on %s %s" % (origname, origcons)
     id, name, cons =  memberList.matchfullnamecons(origname, origcons, date)
-    print  >>sys.stderr, "ID %s name %s cons %s" % (id, name, cons)
+    #print  >>sys.stderr, "ID %s name %s cons %s" % (id, name, cons)
     personid = memberList.membertoperson(id)
     cons = cons.replace("&", "&amp;")
 
     print '<personinfo id="%s" guardian_mp_summary="%s" />' % (personid, personurl)
+    url_match = re.search('^http://www.guardian.co.uk/politics/person/(\d+)/(.*)$', personurl)
+    guardian_aristotle_id = url_match.group(1)
+    print '<personinfo id="%s" guardian_aristotle_id="%s" />' % (personid, guardian_aristotle_id)
     print '<consinfo canonical="%s" guardian_election_results="%s" />' % (cons.encode("latin-1"), consurl)
 
     # Majority
@@ -74,7 +77,7 @@ for l in ih:
     else:
         print >>sys.stderr, "no match for swing at url %s" % consurl
 
-    majority_div = soup.find('div', attrs={"class": "figures", "id": "majority"})
+    majority_div = soup.find('div', attrs={"id": "majority"})
     if majority_div:
         majority = majority_div.p.span.string.strip()
         for id in setsameelection:
