@@ -336,7 +336,7 @@ class ParseDay:
 				phtml = re.sub('^:\s*', '', phtml)
 				phtml = re.sub("\s+", " ", phtml).decode('utf-8')
 				self.text += "<p>%s</p>\n" % phtml
-			elif cl in ('B3BodyTextItalic', 'Q3Motion', 'BillAmend-AmendedText', 'BillAmend-withMinister', 'BillAmend-AmendMade', 'BillAmend-ClauseHeading', 'AyesNoes', 'AyesNoesParties', 'AyesNoesVotes', 'D3PartyMembers', 'B3SpeakerinChair', 'H2DocumentStartTime', 'AyesNoesDivisionTellers', 'CommunityVoteTable'):
+			elif cl in ('B3BodyTextItalic', 'Q3Motion', 'BillAmend-AmendedText', 'BillAmend-Moved', 'BillAmend-withMinister', 'BillAmend-AmendMade', 'BillAmend-ClauseHeading', 'AyesNoes', 'AyesNoesParties', 'AyesNoesVotes', 'D3PartyMembers', 'B3SpeakerinChair', 'H2DocumentStartTime', 'AyesNoesDivisionTellers', 'CommunityVoteTable'):
 				match = re.match('The Assembly met at ((\d\d?)\.(\d\d) (am|pm)|noon)', phtml)
 				if match:
 					if match.group(1) == 'noon':
