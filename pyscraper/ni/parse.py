@@ -35,6 +35,7 @@ class NISoup(BeautifulSoup):
 		(re.compile('(<p[^>]*>)\s*(<b>)'), lambda match: match.group(2) + match.group(1)),
 		(re.compile('((<(font|i|b)>)+)\s*(</p[^>]*>)'), lambda match: match.group(3) + match.group(1)),
 		(re.compile('(<b>)\s*(<p[^>]*>)([^<]*?</b>)'), lambda match: match.group(2) + match.group(1) + match.group(3)),
+		(re.compile('<span class="BoldText">(.*?)</span>'), lambda match: '<strong>' + match.group(1) + '</strong>'),
 	]
 
 class ParseDay:
