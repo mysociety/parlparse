@@ -108,6 +108,7 @@ class ParseDay:
 
 <publicwhip>
 ''')
+		memberList.cleardebatehistory() # Don't want to keep it between days, or reruns of same day
 		if int(date[0:4]) >= 2006:
 			self.parse_day_new(soup)
 		else:
