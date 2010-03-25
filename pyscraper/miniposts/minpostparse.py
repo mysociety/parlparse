@@ -557,6 +557,8 @@ def ParseGovPostsPage(fr, gp):
         if num>=197:
                 fr = re.sub('Parliamentary Under Secretary', 'Parliamentary Under-Secretary', fr)
                 fr = re.sub('Culture,\s+Media and Sports', 'Culture, Media & Sport', fr)
+        if num>=212:
+                fr = re.sub('No rank, House of Lords', 'Deputy Leader of the House of Lords', fr)
 
 	# extract the alphabetical list
         Malphl = re.search("ALPHABETICAL LIST OF HM GOVERNMENT([\s\S]*?)</table>", fr)
