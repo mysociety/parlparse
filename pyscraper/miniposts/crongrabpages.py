@@ -21,7 +21,7 @@ pwcmdirs = miscfuncs.pwcmdirs
 
 watchpages = {  "govposts":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/hmg.cfm",
 				"offoppose":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/opp.cfm",
-				"libdem":"http://letters.libdems.org.uk/mysociety.php",
+				#"libdem":"http://letters.libdems.org.uk/mysociety.php",
 				"dup":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/dup.cfm",
 				"ulsterun":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/ulster.cfm",
 				"plaidsnp":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/PCSNP.cfm",
@@ -40,7 +40,7 @@ watchpages = {  "govposts":"http://www.parliament.uk/mpslordsandoffices/governme
 				"deadlords":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/deceased_members.cfm",
 				"alphalistlords":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/alphabetical_list_of_members.cfm",
 
-				"financialsanctions":"http://www.bankofengland.co.uk/publications/financialsanctions/sanctionsconlist.htm",
+				#"financialsanctions":"http://www.bankofengland.co.uk/publications/financialsanctions/sanctionsconlist.htm",
 			 }
 
 
