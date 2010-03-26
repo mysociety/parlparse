@@ -5030,7 +5030,7 @@ B - bishop
 	lordofname_full="Broadway"
 	county="the County of Hereford and Worcester"
 	peeragetype="L" affiliation="Con"
-	fromdate="1990" todate="9999-12-31"
+	fromdate="1990" todate="2010-03-24" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100485"
@@ -5618,7 +5618,7 @@ B - bishop
 	title="Lord" lordname="Richardson" lordofname="Duntisbourne"
 	county="the County of Gloucestershire"
 	peeragetype="L" affiliation="XB"
-	fromdate="1983" todate="9999-12-31"
+	fromdate="1983" todate="2010-01-22" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100540"
@@ -6282,7 +6282,7 @@ B - bishop
 	forenames="Thomas Frederick Butler"
 	title="Bishop" lordname="" lordofname="Southwark"
 	peeragetype="B" affiliation="Bp"
-	fromdate="1996" todate="9999-12-31"
+	fromdate="1996" todate="2010-03-05" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100607"
@@ -9145,7 +9145,7 @@ B - bishop
 <lord
 	id="uk.org.publicwhip/lord/100900"
 	house="lords"
-	forenames="John Tucker"
+	forenames="John Tucker Mugabi Sentamu"
 	title="Archbishop" lordname="" lordofname="York"
 	peeragetype="B" affiliation="Bp"
 	fromdate="2005-01-25" todate="9999-12-31"
@@ -9895,7 +9895,7 @@ B - bishop
     forenames="Anthony Russell"
     title="Bishop" lordname="" lordofname="Ely"
     peeragetype="B" affiliation="Bp"
-    fromdate="2007-12-10" todate="9999-12-31"
+    fromdate="2007-12-10" todate="2010-02-28" towhy="retired"
 />
 
 <lord
@@ -10255,6 +10255,36 @@ B - bishop
     title="Bishop" lordname="" lordofname="Hereford"
     peeragetype="B" affiliation="Bp"
     fromdate="2009-11-24" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101004"
+    house="lords"
+    forenames="Michael Francis Perham"
+    title="Bishop" lordname="" lordofname="Gloucester"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2009-12-01" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101005"
+    house="lords"
+    forenames="Anthony William"
+    title="Lord" lordname="Hall" lordofname="Birkenhead"
+    county="the County of Cheshire"
+    peeragetype="L" affiliation="XB"
+    fromdate="2010-03-22" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101006"
+    house="lords"
+    forenames="Ajay Kumar"
+    title="Lord" lordname="Kakkar" lordofname=""
+    lordofname_full="Loxbeare"
+    county="the County of Devon"
+    peeragetype="L" affiliation="XB"
+    fromdate="2010-03-22" todate="9999-12-31"
 />
 
 </publicwhip>

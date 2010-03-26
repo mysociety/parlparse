@@ -39,13 +39,16 @@ def RunRegmemFilters(fout, text, sdate, sdatever):
         rows = re.findall("<TR>(.*)</TR>", text)
         rows = [ re.sub("&nbsp;", " ", row) for row in rows ]
         rows = [ re.sub("<B>|</B>|<BR>|`", "", row) for row in rows ]
+        rows = [ re.sub('<span style="background-color: #FFFF00">|</span>', '', row) for row in rows ]
         rows = [ re.sub('<IMG SRC="3lev.gif">', "", row) for row in rows ]
         rows = [ re.sub("&#173;", "-", row) for row in rows ]
         rows = [ re.sub('\[<A NAME="n\d+"><A HREF="\#note\d+">\d+</A>\]', '', row) for row in rows ]
         rows = [ re.sub('\[<A NAME="n\d+">\d+\]', '', row) for row in rows ]
 
+        # Fix incorrect tabling of categories when highlighting is in play
+        rows = [ re.sub('<TD COLSPAN=4>(\d\.) ([^<]*?)</TD>', r'<TD>\1</TD><TD COLSPAN=3>\2</TD>', row) for row in rows ]
         # split into cells within a row
-        rows = [ re.findall("<TD.*?>(.*?)</TD>", row) for row in rows ]
+        rows = [ re.findall("<TD.*?>\s*(.*?)\s*</TD>", row) for row in rows ]
 
         memberset = sets.Set()
         needmemberend = False
@@ -53,8 +56,6 @@ def RunRegmemFilters(fout, text, sdate, sdatever):
         categoryname = None
         subcategory = None
         for row in rows:
-                row = [ re.sub('<span style="background-color: #FFFF00">|</span>', '', column.strip())
-                        for column in row ]
                 striprow = re.sub('</?[^>]+>', '', "".join(row))
                 #print row
                 if striprow.strip() == "":
