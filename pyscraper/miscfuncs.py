@@ -314,7 +314,7 @@ def ApplyFixSubstitutions(text, sdate, fixsubs):
 # this only accepts <sup> and <i> tags
 def StraightenHTMLrecurse(stex, stampurl):
 	# split the text into <i></i> and <sup></sup> and <sub></sub> and <a href></a>
-        qisup = re.search(r'(<(a|i|b|small|sup|sub)( href="[^"]*")?>(.*?)</\2>)(?i)', stex)
+        qisup = re.search(r'(<(a|i|b|s|small|sup|sub)( href="[^"]*")?>(.*?)</\2>)(?i)', stex)
         if qisup:
                 qtagtype = qisup.group(2)
                 qhref = qisup.group(3) or ''
