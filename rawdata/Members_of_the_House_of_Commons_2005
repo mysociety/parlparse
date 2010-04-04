@@ -14,14 +14,14 @@
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/rss+xml" title="Wikipedia RSS Feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=rss" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom Feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?257z43" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?257z43" type="text/css" media="print" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/main.css?257z43" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/chick/main.css?257z43" type="text/css" media="handheld" />
-<!--[if lt IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE50Fixes.css?257z43" type="text/css" media="screen" /><![endif]-->
-<!--[if IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE55Fixes.css?257z43" type="text/css" media="screen" /><![endif]-->
-<!--[if IE 6]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE60Fixes.css?257z43" type="text/css" media="screen" /><![endif]-->
-<!--[if IE 7]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE70Fixes.css?257z43" type="text/css" media="screen" /><![endif]-->
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?257z47" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?257z47" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/main.css?257z47" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/chick/main.css?257z47" type="text/css" media="handheld" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE50Fixes.css?257z47" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE55Fixes.css?257z47" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE60Fixes.css?257z47" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE70Fixes.css?257z47" type="text/css" media="screen" /><![endif]-->
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
@@ -51,7 +51,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=351954225,
+wgCurRevisionId=353795243,
 wgVersion="1.16alpha-wmf",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -66,19 +66,19 @@ wgSearchNamespaces=[0],
 wgMWSuggestMessages=["with suggestions", "no suggestions"],
 wgRestrictionEdit=[],
 wgRestrictionMove=[],
-wgTrackingToken="84f274f11c13d2aea4c7a3101606ac56",
+wgTrackingToken="3f83188134feb01c73f13880fec8d417",
 wgClickTrackingIsThrottled=true,
 wgNotice="",
 wgNoticeLocal="";
 </script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?urid=257z43_1264870003" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?urid=257z43" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?urid=257z43" type="text/javascript"></script>
-<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?257z43"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?urid=257z47_1264870003" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?urid=257z47" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?urid=257z47" type="text/javascript"></script>
+<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?257z47"></script>
 
-<!--[if lt IE 7]><script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/IEFixes.js?257z43"></script>
+<!--[if lt IE 7]><script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/IEFixes.js?257z47"></script>
 	<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook&amp;urid=257z43_348605770" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook&amp;urid=257z47_348605770" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-MPs_elected_in_the_United_Kingdom_general_election_2005 skin-monobook">
@@ -236,7 +236,7 @@ wgNoticeLocal="";
 <p><b>Note:</b> The effective Government majority is higher than the notional majority, because Sinn Féin's MPs do not take their seats due to their policy of <a href="/wiki/Abstentionism#Sinn_F.C3.A9in" title="Abstentionism">abstentionism</a> and vacant seats have no vote. Technically, the speakers belong to parties in a notional majority, though they do not usually vote and therefore don't figure in an effective majority.</p>
 <h2><span class="editsection">[<a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election,_2005&amp;action=edit&amp;section=2" title="Edit section: Graphical representation of the House of Commons">edit</a>]</span> <span class="mw-headline" id="Graphical_representation_of_the_House_of_Commons">Graphical representation of the House of Commons</span></h2>
 <p>This is a comparison of the party strengths in the British House of Commons (as of 15 December 2009):</p>
-<div style="height: 286px; width: 661px; "><map name="ImageMap_1_1083409560" id="ImageMap_1_1083409560">
+<div style="height: 286px; width: 661px; "><map name="ImageMap_1_1601988004" id="ImageMap_1_1601988004">
 <area href="/wiki/Labour_Party_(UK)" shape="poly" coords="1,166,644,166,644,196,659,196,659,284,1,284" alt="Labour Party (350)" title="Labour Party (350)" />
 <area href="/wiki/Speaker_of_the_House_of_Commons_(UK)" shape="poly" coords="1,121,14,121,14,136,29,136,29,150,14,150,14,165,1,165" alt="Speaker and Deputies (4)" title="Speaker and Deputies (4)" />
 <area href="/wiki/Conservative_Party_(UK)" shape="poly" coords="1,1,359,1,350,106,374,106,374,119,1,119" alt="Conservative Party (193)" title="Conservative Party (193)" />
@@ -254,7 +254,7 @@ wgNoticeLocal="";
 <area href="/wiki/Dai_Davies_(politician)" shape="poly" coords="541,1,554,1,554,14,541,14" alt="Dai Davies (Independent)" title="Dai Davies (Independent)" />
 <area href="/wiki/Andrew_Pelling" shape="poly" coords="541,16,554,16,554,29,541,29" alt="Andrew Pelling (Independent)" title="Andrew Pelling (Independent)" />
 <area href="/wiki/Bob_Spink" shape="poly" coords="541,31,554,31,554,44,541,44" alt="Bob Spink (Independent)" title="Bob Spink (Independent)" />
-<area href="/wiki/Bob_Wareing" shape="poly" coords="541,46,554,46,554,59,541,59" alt="Bob Wareing (Independent)" title="Bob Wareing (Independent)" /></map><img alt="Parliament-54.png" src="http://upload.wikimedia.org/wikipedia/en/0/08/Parliament-54.png" width="661" height="286" usemap="#ImageMap_1_1083409560" />
+<area href="/wiki/Bob_Wareing" shape="poly" coords="541,46,554,46,554,59,541,59" alt="Bob Wareing (Independent)" title="Bob Wareing (Independent)" /></map><img alt="Parliament-54.png" src="http://upload.wikimedia.org/wikipedia/en/0/08/Parliament-54.png" width="661" height="286" usemap="#ImageMap_1_1601988004" />
 <div style="margin-left: 641px; margin-top: -285px; text-align: left;"><a href="/wiki/File:Parliament-54.png" title="About this image"><img alt="About this image" src="/w/extensions/ImageMap/desc-20.png" style="border: none;" /></a></div>
 </div>
 <p><b>Note:</b> The Scottish National Party and Plaid Cymru sit together as a party group, while Sinn Féin has not taken its seats. This is not the official seating plan of the House of Commons, which actually has five rows of benches on each side, with the government party to the right of the Speaker and opposition parties to the left, but with room for only around two-thirds of MPs to sit at any one time.</p>
@@ -3263,7 +3263,7 @@ wgNoticeLocal="";
 <td>Conservative</td>
 </tr>
 <tr>
-<td><a href="/wiki/Derbyshire_North_East_(UK_Parliament_constituency)" title="Derbyshire North East (UK Parliament constituency)">North East Derbyshire</a></td>
+<td><a href="/wiki/Derbyshire_North_East_(UK_Parliament_constituency)" title="Derbyshire North East (UK Parliament constituency)" class="mw-redirect">North East Derbyshire</a></td>
 <td><a href="/wiki/Natascha_Engel" title="Natascha Engel">Natascha Engel</a></td>
 <td>Labour</td>
 <td><a href="/wiki/Harry_Barnes_(Labour_politician)" title="Harry Barnes (Labour politician)">Harry Barnes</a></td>
@@ -3554,7 +3554,7 @@ wgNoticeLocal="";
 </tr>
 <tr>
 <td><a href="/wiki/Perth_and_North_Perthshire_(UK_Parliament_constituency)" title="Perth and North Perthshire (UK Parliament constituency)">Perth and North Perthshire</a></td>
-<td><a href="/wiki/Peter_Wishart" title="Peter Wishart">Peter Wishart</a></td>
+<td><a href="/wiki/Peter_Wishart" title="Peter Wishart" class="mw-redirect">Peter Wishart</a></td>
 <td>Scottish National Party</td>
 <td><i>(boundary changes)</i></td>
 <td><i>Scottish National Party</i></td>
@@ -5116,7 +5116,7 @@ wgNoticeLocal="";
 <li>22 May: <a href="/wiki/Crewe_and_Nantwich_by-election,_2008" title="Crewe and Nantwich by-election, 2008">Crewe and Nantwich</a> — <a href="/wiki/Edward_Timpson" title="Edward Timpson">Edward Timpson</a> (Con) to replace <a href="/wiki/Gwyneth_Dunwoody" title="Gwyneth Dunwoody">Gwyneth Dunwoody</a> (Lab) who died on 17 April</li>
 <li>26 June: <a href="/wiki/Henley_by-election,_2008" title="Henley by-election, 2008">Henley</a> — <a href="/wiki/John_Howell_(politician)" title="John Howell (politician)">John Howell</a> (Con) to replace <a href="/wiki/Boris_Johnson" title="Boris Johnson">Boris Johnson</a> (Con), who resigned after being elected <a href="/wiki/Mayor_of_London" title="Mayor of London">Mayor of London</a>.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup></li>
 <li>10 July: <a href="/wiki/Haltemprice_and_Howden_by-election,_2008" title="Haltemprice and Howden by-election, 2008">Haltemprice and Howden</a> — <a href="/wiki/David_Davis_(British_politician)" title="David Davis (British politician)">David Davis</a> (Con) resigned to stand for re-election, in protest over the Government's policy of detaining terror suspects for up to 42 days without charge</li>
-<li>24 July: <a href="/wiki/Glasgow_East_by-election,_2008" title="Glasgow East by-election, 2008">Glasgow East</a> — <a href="/wiki/John_Mason_(Scottish_politician)" title="John Mason (Scottish politician)" class="mw-redirect">John Mason</a> (SNP) to replace <a href="/wiki/David_Marshall_(UK_politician)" title="David Marshall (UK politician)">David Marshall</a> (Lab) who resigned due to ill health</li>
+<li>24 July: <a href="/wiki/Glasgow_East_by-election,_2008" title="Glasgow East by-election, 2008">Glasgow East</a> — <a href="/wiki/John_Mason_(Scottish_politician)" title="John Mason (Scottish politician)">John Mason</a> (SNP) to replace <a href="/wiki/David_Marshall_(UK_politician)" title="David Marshall (UK politician)">David Marshall</a> (Lab) who resigned due to ill health</li>
 <li>6 November: <a href="/wiki/Glenrothes_by-election,_2008" title="Glenrothes by-election, 2008">Glenrothes</a> — <a href="/wiki/Lindsay_Roy" title="Lindsay Roy">Lindsay Roy</a> (Lab) to replace <a href="/wiki/John_MacDougall_(UK_politician)" title="John MacDougall (UK politician)">John MacDougall</a> (Lab), who died on 13 August</li>
 </ul>
 <h3><span class="editsection">[<a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election,_2005&amp;action=edit&amp;section=33" title="Edit section: 2009">edit</a>]</span> <span class="mw-headline" id="2009">2009</span></h3>
@@ -5161,7 +5161,7 @@ wgNoticeLocal="";
 <li><a href="/wiki/List_of_MPs_for_Scotland" title="List of MPs for Scotland" class="mw-redirect">List of MPs for Scotland</a></li>
 <li><a href="/wiki/List_of_MPs_for_England" title="List of MPs for England" class="mw-redirect">List of MPs for England</a></li>
 <li><a href="/wiki/List_of_MPs_for_Wales" title="List of MPs for Wales" class="mw-redirect">List of MPs for Wales</a></li>
-<li><a href="/wiki/Category:UK_MPs_2005-" title="Category:UK MPs 2005-">Category:UK MPs 2005-</a></li>
+<li><a href="/wiki/Category:UK_MPs_2005-2010" title="Category:UK MPs 2005-2010">Category:UK MPs 2005-2010</a></li>
 </ul>
 <table class="navbox" cellspacing="0" style=";">
 <tr>
@@ -5237,10 +5237,10 @@ Template argument size: 32209/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:1735700-0!1!0!default!!en!4 and timestamp 20100325121432 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1735700-0!1!0!default!!en!4 and timestamp 20100403214256 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election,_2005">http://en.wikipedia.org/wiki/MPs_elected_in_the_United_Kingdom_general_election,_2005</a>"</div>
-			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:United_Kingdom_general_election,_2005" title="Category:United Kingdom general election, 2005">United Kingdom general election, 2005</a></span> | <span dir='ltr'><a href="/wiki/Category:MPs_elected_in_UK_elections" title="Category:MPs elected in UK elections">MPs elected in UK elections</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_current_office-holders" title="Category:Lists of current office-holders">Lists of current office-holders</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_UK_MPs_2005-" title="Category:Lists of UK MPs 2005-">Lists of UK MPs 2005-</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Scottish_MPs" title="Category:Lists of Scottish MPs">Lists of Scottish MPs</a></span> | <span dir='ltr'><a href="/wiki/Category:Legislative_sessions" title="Category:Legislative sessions">Legislative sessions</a></span></div></div>			<!-- end content -->
+			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:United_Kingdom_general_election,_2005" title="Category:United Kingdom general election, 2005">United Kingdom general election, 2005</a></span> | <span dir='ltr'><a href="/wiki/Category:MPs_elected_in_UK_elections" title="Category:MPs elected in UK elections">MPs elected in UK elections</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_current_office-holders" title="Category:Lists of current office-holders">Lists of current office-holders</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_UK_MPs_2005-2010" title="Category:Lists of UK MPs 2005-2010">Lists of UK MPs 2005-2010</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Scottish_MPs" title="Category:Lists of Scottish MPs">Lists of Scottish MPs</a></span> | <span dir='ltr'><a href="/wiki/Category:Legislative_sessions" title="Category:Legislative sessions">Legislative sessions</a></span></div></div>			<!-- end content -->
 						<div class="visualClear"></div>
 		</div>
 	</div>
@@ -5253,7 +5253,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 	
 				 <li id="ca-nstab-main" class="selected"><a href="/wiki/MPs_elected_in_the_United_Kingdom_general_election,_2005" title="View the content page [c]" accesskey="c">Article</a></li>
 				 <li id="ca-talk"><a href="/wiki/Talk:MPs_elected_in_the_United_Kingdom_general_election,_2005" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
-				 <li id="ca-edit"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election,_2005&amp;action=edit" title="You can edit this page. &#10;Please use the preview button before saving. [e]" accesskey="e">Edit this page</a></li>
+				 <li id="ca-edit"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election,_2005&amp;action=edit" title="You can edit this page.&#10;Please use the preview button before saving [e]" accesskey="e">Edit this page</a></li>
 				 <li id="ca-history"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election,_2005&amp;action=history" title="Past versions of this page [h]" accesskey="h">History</a></li>			</ul>
 		</div>
 	</div>
@@ -5314,7 +5314,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/MPs_elected_in_the_United_Kingdom_general_election,_2005" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election,_2005&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election,_2005&amp;oldid=351954225" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=MPs_elected_in_the_United_Kingdom_general_election,_2005&amp;id=351954225" title="Information on how to cite this page">Cite this page</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election,_2005&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=MPs_elected_in_the_United_Kingdom_general_election,_2005&amp;oldid=353795243" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=MPs_elected_in_the_United_Kingdom_general_election,_2005&amp;id=353795243" title="Information on how to cite this page">Cite this page</a></li>			</ul>
 		</div>
 	</div>
 	<div id="p-lang" class="portlet">
@@ -5331,7 +5331,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/MPs_elected_in_the_United_
 				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/skins-1.5/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>
 				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a></div>
 			<ul id="f-list">
-					<li id="lastmod"> This page was last modified on 25 March 2010 at 12:13.<br /></li>
+					<li id="lastmod"> This page was last modified on 3 April 2010 at 21:42.<br /></li>
 					<li id="copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -5344,4 +5344,4 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </div>
 
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv238 in 0.068 secs. --></body></html>
+<!-- Served by srv207 in 0.075 secs. --></body></html>
