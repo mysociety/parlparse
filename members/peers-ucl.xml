@@ -10287,4 +10287,26 @@ B - bishop
     fromdate="2010-03-22" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101007"
+    house="lords"
+    forenames="Carys Davina"
+    title="Baroness" lordname="Grey-Thompson" lordofname=""
+    lordofname_full="Eaglescliffe"
+    county="the County of Durham"
+    peeragetype="L" affiliation="XB"
+    fromdate="2010-03-29" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101008"
+    house="lords"
+    forenames="Michael George"
+    title="Lord" lordname="Bichard" lordofname=""
+    lordofname_full="Nailsworth"
+    county="the County of Gloucestershire"
+    peeragetype="L" affiliation="XB"
+    fromdate="2010-03-29" todate="9999-12-31"
+/>
+
 </publicwhip>
