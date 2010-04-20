@@ -12,6 +12,7 @@ CALENDAR_SECTIONS = { "commons-main-chamber" : "http://services.parliament.uk/ca
 
 # The directory in which to store our own copies of the page.
 PAGE_STORE = '../../../parldata/cmpages/future'
+OUTPUT_DIRECTORY = '../../../parldata/scrapedxml/future'
 
 # The format of the filenames in the PAGE_STORE directory.  The first
 # %s will be replaced by the section, the second by the timestamp from
