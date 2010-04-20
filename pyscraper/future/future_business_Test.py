@@ -8,6 +8,12 @@ import unittest
 
 import BeautifulSoup
 import dateutil.parser
+import datetime
+import tempfile
+import os
+import codecs
+
+from subprocess import call
 
 from parse_future_business_and_calendar import \
     FutureBusinessListItem, \
@@ -25,6 +31,20 @@ from future_business import \
 import xml.dom.minidom
 dom_impl = xml.dom.minidom.getDOMImplementation()
 
+def show_colordiff_files(a,b):
+    call(["colordiff","-u",a,b])
+
+def show_colordiff_strings(a,b):
+    fd_a, fa_name = tempfile.mkstemp()
+    fa = codecs.open(fa_name,"w")
+    fa.write(a)
+    fa.close()
+    fd_b, fb_name = tempfile.mkstemp()
+    fb = codecs.open(fb_name,"w")
+    fb.write(b)
+    fb.close()
+    show_colordiff_files(fa_name,fb_name)
+
 def compare_doms(dom1, dom2):
     """
     A utility function for comparing two DOMs.
@@ -35,7 +55,10 @@ def compare_doms(dom1, dom2):
     toxml, but I could be wrong!
     """
 
-    debug_on_failure = True
+    debug_on_failure = False
+
+    show_colordiff_strings(dom1.toprettyxml(indent="  ",encoding='utf-8'),
+                           dom2.toprettyxml(indent="  ",encoding='utf-8'))
 
     try:
         assert dom1.toxml(encoding='utf-8') == dom2.toxml(encoding='utf-8')
@@ -56,17 +79,21 @@ class TestFutureBusinessPages(unittest.TestCase):
         fep = FutureEventsPage(source_html)
         received_dom = fep.get_dom()
 
-        fp = open("/tmp/"+basename+"-parsed","w")
-        fp.write(received_dom.toprettyxml(indent="  ",encoding='utf-8'))
-        fp.close()
+        parsed_temporary_fd, parsed_temporary_name = tempfile.mkstemp(prefix=basename+"-parsed-")
+        parsed_temporary = os.fdopen(parsed_temporary_fd,"w")
+        parsed_temporary.write(received_dom.toprettyxml(indent="  ",encoding='utf-8'))
+        parsed_temporary.close()
 
         fpx = open(expected_xml)
         expected_dom = xml.dom.minidom.parse(fpx)
         fpx.close()
 
-        fp = open("/tmp/"+basename+"-expected","w")
-        fp.write(expected_dom.toprettyxml(indent="  ",encoding='utf-8'))
-        fp.close()
+        expected_temporary_fd, expected_temporary_name = tempfile.mkstemp(prefix=basename+"-expected-")
+        expected_temporary = os.fdopen(expected_temporary_fd,"w")
+        expected_temporary.write(expected_dom.toprettyxml(indent="  ",encoding='utf-8'))
+        expected_temporary.close()
+
+        show_colordiff_files(parsed_temporary_name,expected_temporary_name)
 
         compare_doms(received_dom, expected_dom)
 
@@ -169,7 +196,7 @@ class TestFutureBusinessListItem(unittest.TestCase):
 </div>"""
         expected_xml = u"<business-item id='test_1'><title>Questions to the Secretary of State for Health, including Topical Questions.</title></business-item>"
 
-        check_html_to_xml(html_input, expected_xml, FutureBusinessListItem, 'test_1')
+        check_html_to_xml(html_input, expected_xml, FutureBusinessListItem, 'test_1', datetime.date(2009,10,13))
 
     def test_with_lords(self):
         """Try instantianting a FutureBusinessListItem with something initiated
@@ -182,7 +209,7 @@ class TestFutureBusinessListItem(unittest.TestCase):
 
         expected_xml = u"<business-item id='test_1' lords='yes'><title>Remaining Stages of the Local Democracy, Economic Development and Construction Bill [Lords].</title></business-item>"
 
-        check_html_to_xml(html_input, expected_xml, FutureBusinessListItem, 'test_1')
+        check_html_to_xml(html_input, expected_xml, FutureBusinessListItem, 'test_1', datetime.date(2009,10,13))
 
     def test_ten_minute_rule_re(self):
         """Check the operation of the Ten Minute Rule Motion regular expression
@@ -209,10 +236,9 @@ class TestFutureBusinessListItem(unittest.TestCase):
 
 </div>"""
 
-        expected_xml = u"<business-item id='test_1' ten_minute_rule='yes' member='Mr Douglas Carswell'><motion>Parliamentary Elections (Recall and Primaries): That leave be given to bring in a Bill to make provision for the recall of Members of the House of Commons in specified circumstances; to provide for the holding of primary elections in such circumstances; and for connected purposes.</motion></business-item>"
+        expected_xml = u"<business-item id='test_1' ten_minute_rule='yes' speakerid='uk.org.publicwhip/member/1621' speakername='Mr Douglas Carswell'><motion>Parliamentary Elections (Recall and Primaries): That leave be given to bring in a Bill to make provision for the recall of Members of the House of Commons in specified circumstances; to provide for the holding of primary elections in such circumstances; and for connected purposes.</motion></business-item>"
 
-        check_html_to_xml(html_input, expected_xml, FutureBusinessListItem, 'test_1')
-
+        check_html_to_xml(html_input, expected_xml, FutureBusinessListItem, 'test_1', datetime.date(2009,10,13))
 
 class TestPrivateMembersBill(unittest.TestCase):
     """Tests for the PrivateMembersBill object."""
@@ -248,13 +274,13 @@ class TestPrivateMembersBill(unittest.TestCase):
                      </tr>"""
 
 
-        expected_xml = u'<private-members-bill id="test.3" member="Mr Andrew Dismore"><item-heading id="test.3.1">CROWN EMPLOYMENT (NATIONALITY) BILL: As amended in the Public Bill Committee, to be considered.</item-heading><motion-member id="test.3.2">Mr Andrew Dismore</motion-member></private-members-bill>'
+        expected_xml = u'<private-members-bill id="test.3" speakerid="uk.org.publicwhip/member/1628" speakername="Mr Andrew Dismore"><item-heading id="test.3.1">CROWN EMPLOYMENT (NATIONALITY) BILL: As amended in the Public Bill Committee, to be considered.</item-heading><motion-member id="test.3.2">Mr Andrew Dismore</motion-member></private-members-bill>'
 
         soup = BeautifulSoup.BeautifulSoup(html_input)
 
         trs = soup.findAll('tr', recursive=False)
 
-        bill_item = PrivateMembersBill(trs[0], container_id='test')
+        bill_item = PrivateMembersBill(trs[0], 'test', datetime.date(2009,10,16))
 
         assert bill_item.id == 'test.3'
 
@@ -304,13 +330,13 @@ class TestPrivateMembersBill(unittest.TestCase):
                         </td>
                      </tr>"""
 
-        expected_xml = '<private-members-bill id="test.2" lords="yes" member="Emily Thornberry"><item-heading id="test.2.1">LAW COMMISSION BILL [LORDS]: As amended in the Public Bill Committee, to be considered.</item-heading><motion-member id="test.2.2">Emily Thornberry</motion-member></private-members-bill>'
+        expected_xml = '<private-members-bill id="test.2" lords="yes" speakerid="uk.org.publicwhip/member/1656" speakername="Emily Thornberry"><item-heading id="test.2.1">LAW COMMISSION BILL [LORDS]: As amended in the Public Bill Committee, to be considered.</item-heading><motion-member id="test.2.2">Emily Thornberry</motion-member></private-members-bill>'
 
         soup = BeautifulSoup.BeautifulSoup(html_input)
 
         trs = soup.findAll('tr', recursive=False)
 
-        bill_item = PrivateMembersBill(trs[0], container_id='test')
+        bill_item = PrivateMembersBill(trs[0], 'test', datetime.date(2009,10,16))
 
         assert bill_item.id == 'test.2'
 
@@ -402,7 +428,7 @@ class TestBusinessItemTable(unittest.TestCase):
 
         soup = BeautifulSoup.BeautifulSoup(text).table
 
-        business_item_table = BusinessItemTable(soup, 'test')
+        business_item_table = BusinessItemTable(soup, 'test', datetime.date(2009,10,16))
 
         # This test used to check some XML generation, but this class doesn't do that any more.
         # I guess it's worth leaving it here just instantiating the class with some HTML
@@ -460,7 +486,7 @@ class TestBusinessItemTable(unittest.TestCase):
 
         soup = BeautifulSoup.BeautifulSoup(input_html).table
 
-        business_item_table = BusinessItemTable(soup, 'test')
+        business_item_table = BusinessItemTable(soup, 'test', datetime.date(2009,10,16))
 
         # This test used to check some XML generation, but this class doesn't do that any more.
         # I guess it's worth leaving it here just instantiating the class with some HTML
@@ -497,9 +523,9 @@ class TestFutureBusinessDay(unittest.TestCase):
 
 </div>"""
 
-        expected_xml = u"<business-day id='test/2009-10-13' date='2009-10-13'><business-item id='test/2009-10-13.1'><title>Questions to the Secretary of State for Health, including Topical Questions.</title></business-item><business-item id='test/2009-10-13.2' ten_minute_rule='yes' member='Mr Douglas Carswell'><motion>Parliamentary Elections (Recall and Primaries): That leave be given to bring in a Bill to make provision for the recall of Members of the House of Commons in specified circumstances; to provide for the holding of primary elections in such circumstances; and for connected purposes.</motion></business-item><business-item id='test/2009-10-13.3' lords='yes'><title>Remaining Stages of the Local Democracy, Economic Development and Construction Bill [Lords].</title></business-item><business-item id='test/2009-10-13.4'><title>At the end of the sitting: Adjournment: Subject to be announced.</title></business-item></business-day>"
+        expected_xml = u"<business-day id='test/2009-10-13' date='2009-10-13'><business-item id='test/2009-10-13.1'><title>Questions to the Secretary of State for Health, including Topical Questions.</title></business-item><business-item id='test/2009-10-13.2' ten_minute_rule='yes' speakerid='uk.org.publicwhip/member/1621' speakername='Mr Douglas Carswell'><motion>Parliamentary Elections (Recall and Primaries): That leave be given to bring in a Bill to make provision for the recall of Members of the House of Commons in specified circumstances; to provide for the holding of primary elections in such circumstances; and for connected purposes.</motion></business-item><business-item id='test/2009-10-13.3' lords='yes'><title>Remaining Stages of the Local Democracy, Economic Development and Construction Bill [Lords].</title></business-item><business-item id='test/2009-10-13.4'><title>At the end of the sitting: Adjournment: Subject to be announced.</title></business-item></business-day>"
 
-        check_html_to_xml(html_input, expected_xml, FutureBusinessDay, 'test', dateutil.parser.parse('20090825T111922'))
+        check_html_to_xml(html_input, expected_xml, FutureBusinessDay, 'test', dateutil.parser.parse('20090825T111922'), datetime.date(2009,10,13))
 
     def test_with_pmbs(self):
         """Instantiate FutureBusinessDay with html for a day including PMBs."""
@@ -572,9 +598,9 @@ class TestFutureBusinessDay(unittest.TestCase):
 </div>
 </div>
 """
-        expected_xml = u'<business-day date="2009-10-16" id="test/2009-10-16"><business-item id="test/2009-10-16.1"><title>Private Members\' Bills</title><private-members-bill id="test/2009-10-16.1.1" member="Mr Andrew Dismore"><item-heading id="test/2009-10-16.1.1.1">DAMAGES (ASBESTOS-RELATED CONDITIONS) BILL: Not amended in the Public Bill Committee, to be considered.</item-heading><motion-member id="test/2009-10-16.1.1.2">Mr Andrew Dismore</motion-member></private-members-bill><private-members-bill id="test/2009-10-16.1.3" member="Mr Andrew Dismore"><item-heading id="test/2009-10-16.1.3.1">CROWN EMPLOYMENT (NATIONALITY) BILL: As amended in the Public Bill Committee, to be considered.</item-heading><motion-member id="test/2009-10-16.1.3.2">Mr Andrew Dismore</motion-member></private-members-bill></business-item><business-item id="test/2009-10-16.2"><title>At the end of the sitting: Adjournment: Subject to be announced.</title></business-item></business-day>'
+        expected_xml = u'<business-day date="2009-10-16" id="test/2009-10-16"><business-item id="test/2009-10-16.1"><title>Private Members\' Bills</title><private-members-bill id="test/2009-10-16.1.1" speakerid="uk.org.publicwhip/member/1628" speakername="Mr Andrew Dismore"><item-heading id="test/2009-10-16.1.1.1">DAMAGES (ASBESTOS-RELATED CONDITIONS) BILL: Not amended in the Public Bill Committee, to be considered.</item-heading><motion-member id="test/2009-10-16.1.1.2">Mr Andrew Dismore</motion-member></private-members-bill><private-members-bill id="test/2009-10-16.1.3" speakerid="uk.org.publicwhip/member/1628" speakername="Mr Andrew Dismore"><item-heading id="test/2009-10-16.1.3.1">CROWN EMPLOYMENT (NATIONALITY) BILL: As amended in the Public Bill Committee, to be considered.</item-heading><motion-member id="test/2009-10-16.1.3.2">Mr Andrew Dismore</motion-member></private-members-bill></business-item><business-item id="test/2009-10-16.2"><title>At the end of the sitting: Adjournment: Subject to be announced.</title></business-item></business-day>'
 
-        check_html_to_xml(html_input, expected_xml, FutureBusinessDay, 'test', dateutil.parser.parse('20090825T111922'))
+        check_html_to_xml(html_input, expected_xml, FutureBusinessDay, 'test', dateutil.parser.parse('20090825T111922'),  datetime.date(2009,10,16))
 
     def test_with_end_rubbish(self):
         """The final day in the page has some extra tags at the end.
@@ -613,7 +639,7 @@ class TestFutureBusinessDay(unittest.TestCase):
 
         expected_xml = u'<business-day date="2009-10-22" id="test/2009-10-22"><business-item id="test/2009-10-22.1"><title>Questions to the Secretary of State for Transport, including Topical Questions, and to the Minister for Women and Equality.</title></business-item><business-item id="test/2009-10-22.2"><title>Topical debate: Subject to be announced.</title></business-item><business-item id="test/2009-10-22.3"><title>Motion to take note of the outstanding reports of the Public Accounts Committee to which the Government has replied. Details to be given in the Official Report.</title></business-item><business-item id="test/2009-10-22.4"><title>At the end of the sitting: Adjournment: Subject to be announced.</title></business-item></business-day>'
 
-        check_html_to_xml(html_input, expected_xml, FutureBusinessDay, 'test', dateutil.parser.parse('20090825T111922'))
+        check_html_to_xml(html_input, expected_xml, FutureBusinessDay, 'test', dateutil.parser.parse('20090825T111922'),  datetime.date(2009,10,22))
 
 if __name__ == '__main__':
     unittest.main()
