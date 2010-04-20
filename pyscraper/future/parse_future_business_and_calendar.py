@@ -1,7 +1,6 @@
 #!/usr/bin/python2.5
 
 import re
-from BeautifulSoup import BeautifulSoup, NavigableString, Comment, Tag
 import xml.dom.minidom
 import time
 import datetime
@@ -9,6 +8,12 @@ from dateutil.relativedelta import relativedelta
 import dateutil.parser
 import sys
 import os
+
+sys.path.append('../')
+from resolvemembernames import memberList
+from contextexception import ContextException
+from BeautifulSoup import BeautifulSoup, NavigableString, Comment, Tag
+
 from future_business import *
 
 dom_impl = xml.dom.minidom.getDOMImplementation()
@@ -27,6 +32,43 @@ business - the committee pages have a slightly different format from
 the other ones.
 
 """
+
+current_file_scraped_date = None
+
+def add_member_id_attribute(item,speakername,date):
+    """'item' should be an XML DOM element.  'speakername' should be
+    the full name of a representative, e.g. "Mr Andrew Dismore".
+    'date' may be None, but for better results should be an ISO-6301
+    date string, e.g. "2010-01-01".  If 'speakername' and 'date'
+    resolve to a unique member ID, this will be set as an attribute in
+    'item' with name 'speakerid'.  If there are no matches, the
+    'speakerid' attribute will be set to be 'unknown'.  If there are
+    multiple matches, a ContentException will be thrown."""
+
+    speakername = re.sub('^Secretary *','',speakername)
+
+    used_scraped_date = ""
+
+    string_date = None
+    if date:
+        string_date = str(date)
+    else:
+        # If we don't have a date specified, use the date on which the
+        # page was scraped, since not specifying a date is very likely
+        # to produce an ambiguous answer:
+        string_date = current_file_scraped_date
+        used_scraped_date = " (used date of scraping)"
+
+    id_set = memberList.fullnametoids(speakername,string_date)
+    if len(id_set) == 1:
+        item.setAttribute('speakerid',list(id_set)[0])
+    elif len(id_set) == 0:
+        print >> sys.stderr, (u"Warning: No match for '%s' on date '%s' %s" % (speakername,string_date,used_scraped_date)).encode("utf-8")
+        item.setAttribute('speakerid','unknown')
+    else:
+        # raise Exception, "Got multiple IDs for '%s' on date '%s'%s; they were: %s" % (speakername,string_date,used_scraped_date,str(id_set))
+        # In fact, this is rare - just output speakerid="ambiguous":
+        item.setAttribute('speakerid','ambiguous')
 
 # FIXME: use the common version of this eventually:
 def non_tag_data_in(o):
@@ -130,13 +172,14 @@ class FutureBusinessListItem(object):
     # Notes whether or not the item was introduced in the lords.
     lords = False
 
-    def __init__(self, soup, id):
+    def __init__(self, soup, id, date):
         """Instantiate this object by passing in a soup item of a business
         item, and an id which will be used as the 'id' attribute in the
         xml version.
         Sets the title of the item, and whether the item was introduced in the lords.
         """
         self.id = id
+        self.date = date
         self.diamond = False
 
         self.business_item_title = None
@@ -158,7 +201,7 @@ class FutureBusinessListItem(object):
         """This is used if a collection of private members' bills is associated
         with this item. Pass in the soup item of the pmb table, and it will be
         parsed and added to this business item object."""
-        self.business_item_table = BusinessItemTable(pmb_soup, self.id)
+        self.business_item_table = BusinessItemTable(pmb_soup, self.id, self.date)
 
     def get_dom(self, document):
         item = document.createElement('business-item')
@@ -171,7 +214,8 @@ class FutureBusinessListItem(object):
             item.setAttribute('ten_minute_rule', 'yes')
 
             groups = self.tmr_match.groups()
-            item.setAttribute('member', groups[0])
+            item.setAttribute('speakername', groups[0])
+            add_member_id_attribute(item,groups[0],self.date)
 
             motion = document.createElement('motion')
             motion.appendChild(document.createTextNode(groups[1]))
@@ -224,12 +268,14 @@ class AdjourmentDebate(object):
 class FutureBusinessNote(object):
     """A class that represents a note in a FutureBusinessSection -
     typically to say 'No outstanding debates.' or something similar."""
-    def __init__(self,soup,id):
+    def __init__(self,soup,id,date):
         self.text = tidied_non_tag_data_in(soup)
         self.id = id
+        self.date = date
 
     def get_dom(self,document):
         item = document.createElement('future-business-note')
+        item.setAttribute('id', self.id)
         item.appendChild(document.createTextNode(self.text))
         return item
 
@@ -386,7 +432,7 @@ class PrivateMembersBill(Motion):
     # attribute will be overridden to contain that text
     motion_text = None
 
-    def __init__(self, soup, container_id):
+    def __init__(self, soup, container_id, date):
         """This method is expecting to be passed soup of the first tr from a
         private member's bill. From this we can find the id and the title.
         The container_id parameter should contain the id of the business item
@@ -404,6 +450,7 @@ class PrivateMembersBill(Motion):
         item_number = item_span.string
 
         self.id = "%s.%s" %(container_id, item_number)
+        self.date = date
 
         # The actual text of the bill (and whether it was introduced in the lords,
         # is in a div with class paraFBPrivateMembersBillItemHeading.
@@ -419,7 +466,8 @@ class PrivateMembersBill(Motion):
         item.setAttribute('id', self.id)
         unique_member = self.get_unique_member()
         if unique_member:
-            item.setAttribute('member', unique_member)
+            item.setAttribute('speakername', unique_member)
+            add_member_id_attribute(item,unique_member,self.date)
 
         if self.lords:
             item.setAttribute('lords', 'yes')
@@ -462,7 +510,11 @@ class EuropeanCommitteeEvent(Motion):
 
         unique_member = self.get_unique_member()
         if unique_member:
-            item.setAttribute('member', unique_member)
+            item.setAttribute('speakername', unique_member)
+            if self.start_datetime:
+                add_member_id_attribute(item,unique_member,self.start_datetime.date())
+            else:
+                add_member_id_attribute(item,unique_member,None)
 
         for sub_item in self.all_items:
             item.appendChild(sub_item.get_dom(document))
@@ -476,7 +528,7 @@ class BusinessItemTable(object):
     a collection of private members' bills which come in that business item.
     """
 
-    def __init__(self, soup, container_id):
+    def __init__(self, soup, container_id, date):
         """Initialize this table with soup representing the table, and
         container_id, which will be used as the base for making ids of
         the PMBs in the table.
@@ -484,6 +536,7 @@ class BusinessItemTable(object):
 
         self.container_id = container_id
         self.soup = soup
+        self.date = date
 
         self.all_items = []
 
@@ -498,7 +551,7 @@ class BusinessItemTable(object):
             if tr.find('div', {'class': 'paraFBPrivateMembersBillItemHeading'}):
                 if current_item:
                     self.all_items.append(current_item)
-                current_item = PrivateMembersBill(tr, self.container_id)
+                current_item = PrivateMembersBill(tr, self.container_id, self.date)
             # European Committee events have a slightly different heading:
             elif tr.find('div', {'class': 'paraBusinessItemHeading'}):
                 # At the start of the BusinessItem div, we sometimes
@@ -523,16 +576,17 @@ class BusinessItemTable(object):
                 current_item.feed_note(tr)
             # We've found something I've not seen here before.
             else:
-                print >> sys.stderr, "Unknown row is:\n"+tr.prettify()
+                print >> sys.stderr, (u"Unknown row is:\n"+tr.prettify()).encode('utf-8')
                 raise ValueError("What are we doing here?")
         if current_item:
             self.all_items.append(current_item)
 
 class WestminsterHallAdjournmentIntroduction(object):
 
-    def __init__(self, soup, id):
+    def __init__(self, soup, id, date):
         self.id = id
         self.text = tidied_non_tag_data_in(soup)
+        self.date = date
 
     def get_dom(self, document):
         item = document.createElement('whall-adjournment-debates-introduction')
@@ -542,8 +596,9 @@ class WestminsterHallAdjournmentIntroduction(object):
 
 class MinisterialStatement(object):
 
-    def __init__(self, soup, id):
+    def __init__(self, soup, id, date):
         self.id = id
+        self.date = date
         self.statement_tuples = []
         for tr in soup.findAll('tr'):
             # Only consider the innermost <tr> here, otherwise we end
@@ -587,7 +642,7 @@ class MinisterialStatement(object):
 class FutureBusinessDay(object):
     """Class representing a a day from the future business page."""
 
-    def __init__(self, soup, parent_id, scraped_timestamp):
+    def __init__(self, soup, parent_id, scraped_timestamp, date):
         """Start with the soup of the day, and an id, which
         we'll then use as the base for the ids of the items on that day.
 
@@ -609,7 +664,9 @@ class FutureBusinessDay(object):
 
         m_european_committee = re.search('(?ims)European\s+Committee\s+(\S+)',date_string)
 
-        self.date = None
+        # We may have better information about the date, if this isn't
+        # a European committee:
+        self.date = date
         self.european_committee = None
 
         if m_european_committee:
@@ -618,7 +675,7 @@ class FutureBusinessDay(object):
         else:
             self.date = dateutil.parser.parse(date_string,fuzzy=True).date()
             if self.date == datetime.date.today():
-                print >> sys.stderr, "Warning: fuzzy date parsing of '%s' returned today's date" % (date_string.strip(),)
+                print >> sys.stderr, (u"Warning: fuzzy date parsing of '%s' returned today's date" % (date_string.strip(),)).encode('utf-8')
             self.date = adjust_year_with_timestamp(self.date,self.scraped_timestamp)
             self.id = parent_id + "/" + str(self.date)
 
@@ -658,18 +715,18 @@ class FutureBusinessDay(object):
                     # print >> sys.stderr, "Skipping the div '"+tidied_non_tag_data_in(c)+"'"
                     continue
 
-                elif c['class'] == 'paraFutureBusinessDateNote':
-                    item = FutureBusinessNote(c,'%s.%s'%(self.id,counter))
+                elif c['class'] == 'paraFutureBusinessDateNote' or c['class'] == 'paraBusinessItemNote':
+                    item = FutureBusinessNote(c,'%s.%s'%(self.id,counter),self.date)
 
                 elif c['class'] == 'paraAdjournmentProposedSubject':
-                    item = WestminsterHallAdjournmentIntroduction(c,'%s.%s'%(self.id,counter))
+                    item = WestminsterHallAdjournmentIntroduction(c,'%s.%s'%(self.id,counter),self.date)
 
                 # This is a new business item:
                 elif c.name == 'div' and c['class'] == 'paraFutureBusinessListItem':
-                    item = FutureBusinessListItem(c,'%s.%s'%(self.id, counter))
+                    item = FutureBusinessListItem(c,'%s.%s'%(self.id, counter),self.date)
 
                 elif c.name == 'table' and c['class'] == 'MinisterialStatement':
-                    item = MinisterialStatement(c,'%s.%s'%(self.id, counter))
+                    item = MinisterialStatement(c,'%s.%s'%(self.id, counter),self.date)
 
                 # We've found a table of private members bills, which we add to the current
                 # business item.
@@ -677,7 +734,7 @@ class FutureBusinessDay(object):
                     # In section D you don't necessarily get a
                     # paraFutureBusinessListItem beforehand:
                     if not item:
-                        item = FutureBusinessListItem(None,'%s.%s'%(self.id, counter))
+                        item = FutureBusinessListItem(None,'%s.%s'%(self.id, counter),self.date)
                     # But in either case, feed the private members bills:
                     item.feed_pmbs(c)
                     self.all_items.append(item)
@@ -697,6 +754,11 @@ class FutureBusinessDay(object):
                 # next sibling is something other than a table, then there isn't anything
                 # left of this business item, and we can yield it and increment the counter.
                 next_item = c.findNextSibling()
+
+                if c['class'] in ('paraFutureBusinessDateNote', 'paraBusinessItemNote'):
+                    self.all_items.append(item)
+                    item = None
+                    counter += 1                    
 
                 if (not next_item or not (next_item.name == 'table' and next_item['class'] == 'BusinessItem')) and item:
                     self.all_items.append(item)
@@ -728,9 +790,10 @@ class BusinessDivisionHeading(object):
     """Class to represent a business division heading. There seems to be just the one
     of these at the start of the page.
     """
-    def __init__(self, soup, id, scraped_timestamp):
+    def __init__(self, soup, id, scraped_timestamp, date):
         """Initialize with the soup and an id."""
         self.id = id
+        self.date = date
 
         # Contents is just the join of the strings immediately under the heading.
         self.contents = get_string_contents(soup, recursive=False)
@@ -756,15 +819,17 @@ class BusinessDivisionHeading(object):
         return item
 
 class MotionSponsor(object):
-    def __init__(self,id,name,group,amendment):
+    def __init__(self,id,name,group,amendment,date):
         self.group = group
         self.amendment = amendment
         self.id = id
         self.name = name
+        self.date = date
     def get_dom(self,document):
         item = document.createElement('motion-sponsor')
         item.setAttribute('id',self.id)
-        item.setAttribute('name',self.name)
+        item.setAttribute('speakername',self.name)
+        add_member_id_attribute(item,self.name,self.date)
         item.setAttribute('group',str(self.group))
         item.setAttribute('amendment',str(self.amendment))
         return item
@@ -787,8 +852,9 @@ class MotionParagraph(object):
         return m
 
 class RemainingBusinessItem(object):
-    def __init__(self,id):
+    def __init__(self,id,date):
         self.id = id
+        self.date = date
         self.sponsors = []
         self.paragraphs = []
         self.paragraph_number = 1
@@ -811,7 +877,8 @@ class RemainingBusinessItem(object):
         sponsor = MotionSponsor(None, # Set the ID to none initially - in the case of amendments, we may not have the amendment number until later
                                 sponsor_name,
                                 group,
-                                amendment)
+                                amendment,
+                                self.date)
         self.sponsors.append(sponsor)
     def add_paragraph(self,soup):
         new_paragraph = MotionParagraph('%s.p%d'%(self.id,self.paragraph_number),soup)
@@ -843,8 +910,9 @@ class RemainingBusinessItem(object):
         return item
 
 class Remaining(object):
-    def __init__(self, soup, id, scraped_timestamp):
+    def __init__(self, soup, id, scraped_timestamp, date):
         self.id = id
+        self.date = date
         self.scraped_timestamp = scraped_timestamp
         tbody = soup.find('tbody')
         if not tbody:
@@ -864,7 +932,7 @@ class Remaining(object):
                     if current_item:
                         self.all_items.append(current_item)
                         current_item_number += 1
-                    current_item = RemainingBusinessItem('%s.%s'%(self.id,current_item_number))
+                    current_item = RemainingBusinessItem('%s.%s'%(self.id,current_item_number),self.date)
                     parsed_item_number = int(non_tag_data_in(span_in_div).strip())
                     if parsed_item_number != current_item_number:
                         raise Exception("parsed_item_number ("+str(parsed_item_number)+") didn't match counted item number ("+current_item_number+")")
@@ -875,14 +943,14 @@ class Remaining(object):
                     # Don't increment the number, though - this is an
                     # amendment that will contain an amendment number
                     # - we will change the ID on setting that:
-                    current_item = RemainingBusinessItem('%s.%s'%(self.id,current_item_number))
+                    current_item = RemainingBusinessItem('%s.%s'%(self.id,current_item_number),self.date)
                     current_item.set_is_amendment(True)
                 elif div['class'] == 'paraAmendmentNumber':
                     if not current_item:
                         raise Exception, "We should never find paraAmendmentNumber with no current item - what would it be amending?"
                     if current_item.amendment_number:
                         self.all_items.append(current_item)
-                        current_item = RemainingBusinessItem('%s.%s'%(self.id,current_item_number))
+                        current_item = RemainingBusinessItem('%s.%s'%(self.id,current_item_number),self.date)
                         current_item.set_is_amendment(True)
                         current_item.set_amendement_number(tidied_non_tag_data_in(div))
                     else:
@@ -904,6 +972,7 @@ class Remaining(object):
                                    "paraMotionNumberedParagraph-continued",
                                    "paraMotionCross-Heading-leftregular",
                                    "paraMotionText",
+                                   "paraMotionText-continued",
                                    "paraMotionNote-centred",
                                    "paraMotionNumberedParagraph-hanging",
                                    "paraMotionNumberedParagraph-indented",
@@ -911,7 +980,7 @@ class Remaining(object):
                                    "paraDefinitionList" ):
                 current_item.add_paragraph(div)
             else:
-                raise Exception, "Unhandled div class: "+div['class']
+                raise Exception, "Unhandled div class: "+div['class']+", which prettified is: "+div.prettify()
         if current_item:
             self.all_items.append(current_item)
             current_item_number += 1
@@ -947,9 +1016,10 @@ class ForthcomingDebatesItem(object):
 
 class ForthcomingDebates(object):
     """Class to represent the notice about ForthcomingDebates"""
-    def __init__(self, soup, id, scraped_timestamp):
+    def __init__(self, soup, id, scraped_timestamp, date):
         """Initialize with the soup and an id."""
         self.id = id
+        self.date = date
         self.contents = ''
         self.heading = None
         self.all_items = []
@@ -964,6 +1034,9 @@ class ForthcomingDebates(object):
                         item = ForthcomingDebatesItem("%s.%d"%(self.id,counter),None,'forthcoming-debates-heading',tidied_non_tag_data_in(c))
                         counter += 1
                         self.all_items.append(item)
+            elif div['class'] == 'paraEndRule-padding':
+                # That's empty...
+                continue
             else:
                 item = ForthcomingDebatesItem("%s.%d"%(self.id,counter),div)
                 counter += 1
@@ -984,9 +1057,10 @@ class BusinessDivisionNote(object):
     """Class to represent a business division note. There seems to be just one of
     these in the page, at the start."""
 
-    def __init__(self, soup, id, scraped_timestamp):
+    def __init__(self, soup, id, scraped_timestamp, date):
         """Initialize with the soup of the note, and an id."""
         self.id = id
+        self.date = date
         # The note should just contain a string. There might be some funny whitespace,
         # so we strip that out and replace with spaces.
         self.contents = tidied_non_tag_data_in(soup)
@@ -1102,8 +1176,9 @@ class BasicEventSection(object):
 class SimpleItem(object):
     """ Class to represent a single event, e.g. a question from someone """
 
-    def __init__(self,id,text):
+    def __init__(self,id,date,text):
         self.id = id
+        self.date = date
         m = re.search('^(.*)\s+-\s+([^-]+)\s*$',text)
         self.member = None
         self.text = None
@@ -1122,7 +1197,8 @@ class SimpleItem(object):
         item = document.createElement('calendar-item')
         item.setAttribute('id', self.id)
         if self.member:
-            item.setAttribute('member', self.member)
+            item.setAttribute('speakername', self.member)
+            add_member_id_attribute(item,self.member,self.date)
         contents = document.createTextNode(self.text)
         item.appendChild(contents)
         return item
@@ -1164,6 +1240,8 @@ class FutureEventsPage(object):
             raise Exception, "Failed to find the timestamp in filename: "+filename
         scraped_timestamp_str = timestamp_match.group(1)
         self.scraped_timestamp = dateutil.parser.parse(scraped_timestamp_str)
+        global current_file_scraped_date
+        current_file_scraped_date = str(self.scraped_timestamp.date())
 
         fp = open(filename)
         html = fp.read()
@@ -1178,6 +1256,7 @@ class FutureEventsPage(object):
         calendar_daily_summary = soup.find('div', {'class':'calendar-daily-summary'})
 
         self.id = "uk.org.publicwhip"
+        self.date = None
 
         if calendar_daily_summary:
             # Then this is a page from the calendar, not future business.
@@ -1186,7 +1265,6 @@ class FutureEventsPage(object):
             # and section this is, let's determine it from the the
             # page content - hopefully that's more robust.
 
-            self.date = None
             selected_date = soup.find('div',{'id':'selected-date'})
             date_text = tidied_non_tag_data_in(selected_date)
             datetime_parsed = dateutil.parser.parse(date_text, fuzzy=True)
@@ -1330,6 +1408,7 @@ class FutureEventsPage(object):
                             remaining_text = tidied_non_tag_data_in(c)
                             if remaining_text:
                                 simple_item = SimpleItem(self.id+str(timespan_counter)+"."+str(section_counter)+"."+str(item_counter),
+                                                         self.date,
                                                          remaining_text)
                                 if not current_section:
                                     current_section = BasicEventSection(self.id+str(timespan_counter)+"."+str(section_counter),
@@ -1416,10 +1495,13 @@ class FutureEventsPage(object):
                               'paraOrderofBusinessItemSeparator' )
 
             for div_item in div_items:
+                if not has_class_attribute(div_item):
+                    print >> sys.stderr, (u"Warning: Skipping this div because it has no 'class' attribute: "+unicode(div_item)).encode('utf-8')
+                    continue
                 if div_item['class'] in empty_classes:
                     assert_empty(div_item)
                     continue
-                o = self.class_map[div_item['class']](div_item, '%s%s' %(self.id, counter), self.scraped_timestamp)
+                o = self.class_map[div_item['class']](div_item, '%s%s' %(self.id, counter), self.scraped_timestamp, self.date)
                 counter += 1
                 self.all_items.append( o )
 
@@ -1473,5 +1555,6 @@ if __name__ == '__main__':
             print xml_output
         except BaseException, e:
             print >> sys.stderr, "Failed for filename: "+filename
-            raise
-
+            print >> sys.stderr, "Exception was of type: "+str(type(e))
+            print >> sys.stderr, "Exception was: "+unicode(e.message).encode("utf-8")
+            continue
