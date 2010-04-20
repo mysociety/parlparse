@@ -10,6 +10,7 @@ import copy
 import sets
 import sys
 import datetime
+import os
 
 from parlphrases import parlPhrases
 from contextexception import ContextException
@@ -23,6 +24,11 @@ regnospeakers = "Hon\.? Members|Members of the House of Commons|" + \
         "An hon. Member"
 
 reChairman = "The Chairman|Chairman|The Chair"
+
+# Work out the absolute path of the 'members' directory from
+# '__file__', so that we can import this module from any current
+# directory:
+members_path = os.path.abspath(os.path.join(os.path.split(__file__)[0],'..','members'))
 
 class MemberList(xml.sax.handler.ContentHandler):
     def __init__(self):
@@ -57,17 +63,17 @@ class MemberList(xml.sax.handler.ContentHandler):
         parser = xml.sax.make_parser()
         parser.setContentHandler(self)
         self.loadconsattr = None
-        parser.parse("../members/constituencies.xml")
+        parser.parse(os.path.join(members_path,"constituencies.xml"))
         self.loadspconsattr = None
-        parser.parse("../members/sp-constituencies.xml")
-        parser.parse("../members/all-members.xml")
+        parser.parse(os.path.join(members_path,"sp-constituencies.xml"))
+        parser.parse(os.path.join(members_path,"all-members.xml"))
         self.loadperson = None
-        parser.parse("../members/people.xml")
-        parser.parse("../members/ministers.xml")
+        parser.parse(os.path.join(members_path,"people.xml"))
+        parser.parse(os.path.join(members_path,"ministers.xml"))
         # member-aliases has to be loaded after ministers, as we alias
         # to ministerial positions sometimes (e.g. Solicitor-General) in
         # member-aliases.xml
-        parser.parse("../members/member-aliases.xml")
+        parser.parse(os.path.join(members_path,"member-aliases.xml"))
 
     def startElement(self, name, attr):
         # all-members.xml loading
