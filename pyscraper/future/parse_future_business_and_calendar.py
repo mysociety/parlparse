@@ -1585,7 +1585,13 @@ if __name__ == '__main__':
                     print >> sys.stderr, new_basename + " already exists, and --force not specified, so skipping..."
                 continue
 
-            print >> sys.stderr, "Parsing "+filename
+            if verbose:
+                print >> sys.stderr, "Parsing "+filename
+
+            if (not parse_to_stdout) and old_basename in ( 'future-business-c-20100411T162434.html', ):
+                    if verbose:
+                        print >> sys.stderr, "FIXME: Skipping the file "+old_basename+": currently misparses"
+                    continue
 
             fep = FutureEventsPage(filename)
             xml_output = fep.get_dom().toprettyxml(indent="  ",encoding='utf-8')
