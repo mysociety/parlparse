@@ -8,6 +8,10 @@ from dateutil.relativedelta import relativedelta
 import dateutil.parser
 import sys
 import os
+import glob
+from optparse import OptionParser
+from subprocess import call
+import codecs
 
 sys.path.append('../')
 from resolvemembernames import memberList
@@ -34,6 +38,7 @@ the other ones.
 """
 
 current_file_scraped_date = None
+verbose = False
 
 def add_member_id_attribute(item,speakername,date):
     """'item' should be an XML DOM element.  'speakername' should be
@@ -1542,19 +1547,62 @@ class FutureEventsPage(object):
 
 if __name__ == '__main__':
 
-    if len(sys.argv) < 2:
-        print >> sys.stderr, "Usage: parse_future_business_and_calendar.py [FILENAME]..."
-        sys.exit(1)
+    parser = OptionParser()
+    parser.add_option('-v', "--verbose", dest="verbose", action="store_true",
+                      default=False, help="verbose output, otherwise quiet apart from errors")
+    parser.add_option('-f', '--force', dest='force', action="store_true",
+                      help='force reparse of everything')
+    (options, args) = parser.parse_args()
+    verbose = options.verbose
 
-    filenames = sys.argv[1:]
+    parse_to_stdout = True
+    filenames = args
+    # If there are no filenames explicitly passed in on the command
+    # line, parse everything from PAGE_STORE with the default rules.
+    if not args:
+        filenames = sorted(glob.glob(os.path.join(PAGE_STORE,'*.html')))
+        parse_to_stdout = False
+        if 0 != call(["mkdir","-p",OUTPUT_DIRECTORY]):
+            raise Exception, "Failed to create the directory: "+OUTPUT_DIRECTORY
 
     for filename in filenames:
         try:
+            old_basename = os.path.basename(filename)
+            new_basename = re.sub('\.html','.xml',old_basename)
+            output_filename = os.path.join(OUTPUT_DIRECTORY,new_basename)
+            tmp_output_filename = output_filename + ".tmp"
+
+            if (not parse_to_stdout) and (not options.force) and os.path.exists(output_filename):
+                if verbose:
+                    print >> sys.stderr, new_basename + " already exists, and --force not specified, so skipping..."
+                continue
+
+            print >> sys.stderr, "Parsing "+filename
+
             fep = FutureEventsPage(filename)
             xml_output = fep.get_dom().toprettyxml(indent="  ",encoding='utf-8')
-            print xml_output
+            if parse_to_stdout:
+                print xml_output
+            else:
+                fp = open(tmp_output_filename,"w")
+                fp.write(xml_output)
+                fp.close()
+
+                changed_output = True
+                if os.path.exists(output_filename):
+                    result = os.system("diff %s %s > /dev/null" % (tmp_output_filename,output_filename))
+                    if 0 == result:
+                        changed_output = False
+
+                retcode = call( [ "mv", tmp_output_filename, output_filename ] )
+                if retcode != 0:
+                    raise Exception, "Moving "+tmp_output_filename+" to "+output_filename+" failed."
+
+                if changed_output:
+                    fil = open(os.path.join(OUTPUT_DIRECTORY,'changedates.txt'), 'a+')
+                    fil.write('%d,%s\n' % (time.time(), new_basename))
+                    fil.close()
+
         except BaseException, e:
             print >> sys.stderr, "Failed for filename: "+filename
-            print >> sys.stderr, "Exception was of type: "+str(type(e))
-            print >> sys.stderr, "Exception was: "+unicode(e.message).encode("utf-8")
-            continue
+            raise
