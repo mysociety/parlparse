@@ -19,7 +19,8 @@ from parse_future_business_and_calendar import \
     ten_minute_rule_re
 
 from future_business import \
-    adjust_year_with_timestamp
+    adjust_year_with_timestamp, \
+    PAGE_STORE
 
 import xml.dom.minidom
 dom_impl = xml.dom.minidom.getDOMImplementation()
@@ -49,7 +50,7 @@ class TestFutureBusinessPages(unittest.TestCase):
     """Tests which instantiate a FutureBusinessPage object with HTML."""
 
     def compare_against_expected(self,basename):
-        source_html = "page_store/%s.html" % (basename,)
+        source_html = PAGE_STORE + "/%s.html" % (basename,)
         expected_xml = "expected-results/%s.xml" % (basename,)
 
         fep = FutureEventsPage(source_html)
