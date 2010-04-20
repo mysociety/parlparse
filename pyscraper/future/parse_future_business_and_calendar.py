@@ -40,7 +40,7 @@ the other ones.
 current_file_scraped_date = None
 verbose = False
 
-def add_member_id_attribute(item,speakername,date):
+def add_member_id_attribute(item,speakername,date,id_attribute='speakerid'):
     """'item' should be an XML DOM element.  'speakername' should be
     the full name of a representative, e.g. "Mr Andrew Dismore".
     'date' may be None, but for better results should be an ISO-6301
@@ -66,14 +66,14 @@ def add_member_id_attribute(item,speakername,date):
 
     id_set = memberList.fullnametoids(speakername,string_date)
     if len(id_set) == 1:
-        item.setAttribute('speakerid',list(id_set)[0])
+        item.setAttribute(id_attribute,list(id_set)[0])
     elif len(id_set) == 0:
-        print >> sys.stderr, (u"Warning: No match for '%s' on date '%s' %s" % (speakername,string_date,used_scraped_date)).encode("utf-8")
-        item.setAttribute('speakerid','unknown')
+        if verbose: print >> sys.stderr, (u"Warning: No match for '%s' on date '%s' %s" % (speakername,string_date,used_scraped_date)).encode("utf-8")
+        item.setAttribute(id_attribute,'unknown')
     else:
-        # raise Exception, "Got multiple IDs for '%s' on date '%s'%s; they were: %s" % (speakername,string_date,used_scraped_date,str(id_set))
-        # In fact, this is rare - just output speakerid="ambiguous":
-        item.setAttribute('speakerid','ambiguous')
+        # This is rare - warn and output speakerid="ambiguous":
+        if verbose: print >> sys.stderr, (u"Got multiple IDs for '%s' on date '%s'%s; they were: %s" % (speakername,string_date,used_scraped_date,str(id_set)))
+        item.setAttribute(id_attribute,'ambiguous')
 
 # FIXME: use the common version of this eventually:
 def non_tag_data_in(o):
@@ -140,6 +140,7 @@ def get_contents_and_lords(soup_item):
     # We're going to assume there are no tags in there except the one span, and allow
     # things to go wrong otherwise.
     lords = False
+    petitioner = None
     span_tag = soup_item.find('span')
     if span_tag:
         if span_tag.string.strip().upper() == u'LORDS':
@@ -148,6 +149,8 @@ def get_contents_and_lords(soup_item):
         elif ('class','charQueensConsent') in span_tag.attrs:
             # FIXME: just ignoring this for the moment, but maybe shouldn't...
             pass
+        elif ('class','Italic') in span_tag.attrs:
+            petitioner = tidied_non_tag_data_in(span_tag)
         else:
             raise ValueError('What are we doing here? span found with the following contents: %s' %soup_item.span)
 
@@ -155,7 +158,7 @@ def get_contents_and_lords(soup_item):
     # It doesn't look useful, so let's replace it with spaces.
     text = tidied_non_tag_data_in(soup_item)
 
-    return (text, lords)
+    return (text, lords, petitioner)
 
 # Regex for dealing with Ten minute Rule Motions. We'll make it ignore case,
 # in case the parliament site aren't consistent on the first bit.
@@ -189,12 +192,13 @@ class FutureBusinessListItem(object):
 
         self.business_item_title = None
         self.lords = None
+        self.petitioner = None
         self.tmr_match = None
 
         if soup:
             if soup.find('img',{'class':'diamond'}):
                 self.diamond = True
-            self.business_item_title, self.lords = get_contents_and_lords(soup)
+            self.business_item_title, self.lords, self.petitioner = get_contents_and_lords(soup)
 
             # Is this a ten minute rule bill? If so, let's split out the member
             # and the motion. Otherwise, we just want to have a text element
@@ -214,6 +218,10 @@ class FutureBusinessListItem(object):
 
         if self.lords:
             item.setAttribute('lords', 'yes')
+
+        if self.petitioner:
+            item.setAttribute('petitionername',self.petitioner)
+            add_member_id_attribute(item,self.petitioner,self.date,id_attribute='petitionerid')
 
         if self.tmr_match:
             item.setAttribute('ten_minute_rule', 'yes')
@@ -462,7 +470,7 @@ class PrivateMembersBill(Motion):
         heading_div = item_span.findNext('div', {'class': "paraFBPrivateMembersBillItemHeading"})
 
         # Get a text representation of the bill, and whether it is a lords one.
-        self.heading_text, self.lords = get_contents_and_lords(heading_div)
+        self.heading_text, self.lords, self.petitioner = get_contents_and_lords(heading_div)
 
         self.add_heading(self.heading_text)
 
@@ -680,7 +688,7 @@ class FutureBusinessDay(object):
         else:
             self.date = dateutil.parser.parse(date_string,fuzzy=True).date()
             if self.date == datetime.date.today():
-                print >> sys.stderr, (u"Warning: fuzzy date parsing of '%s' returned today's date" % (date_string.strip(),)).encode('utf-8')
+                if verbose: print >> sys.stderr, (u"Warning: fuzzy date parsing of '%s' returned today's date" % (date_string.strip(),)).encode('utf-8')
             self.date = adjust_year_with_timestamp(self.date,self.scraped_timestamp)
             self.id = parent_id + "/" + str(self.date)
 
@@ -1501,7 +1509,7 @@ class FutureEventsPage(object):
 
             for div_item in div_items:
                 if not has_class_attribute(div_item):
-                    print >> sys.stderr, (u"Warning: Skipping this div because it has no 'class' attribute: "+unicode(div_item)).encode('utf-8')
+                    if verbose: print >> sys.stderr, (u"Warning: Skipping this div because it has no 'class' attribute: "+unicode(div_item)).encode('utf-8')
                     continue
                 if div_item['class'] in empty_classes:
                     assert_empty(div_item)
