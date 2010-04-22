@@ -15,7 +15,7 @@ import re
 sys.path.append("../pyscraper")
 from resolvemembernames import memberList
 
-today = datetime.date.today().isoformat()
+today = '2010-04-12'
 
 page = open('../rawdata/MPs_standing_down_in_2010').read()
 
