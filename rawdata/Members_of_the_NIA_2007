@@ -66,7 +66,7 @@ wgSearchNamespaces=[0],
 wgMWSuggestMessages=["with suggestions", "no suggestions"],
 wgRestrictionEdit=[],
 wgRestrictionMove=[],
-wgTrackingToken="d9b1bd8cbb01bec5f9a4ed8aea287c55",
+wgTrackingToken="5321912132b1920cc7a3eb92de9a45b7",
 wgClickTrackingIsThrottled=true,
 wgNotice="",
 wgNoticeLocal="";
@@ -1215,12 +1215,12 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <!-- 
 NewPP limit report
 Preprocessor node count: 1670/1000000
-Post-expand include size: 63892/2048000 bytes
+Post-expand include size: 63904/2048000 bytes
 Template argument size: 30301/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!4 and timestamp 20100424194950 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!4 and timestamp 20100425124229 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007">http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007</a>"</div>
 		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Northern_Ireland_MLAs_2007-" title="Category:Northern Ireland MLAs 2007-">Northern Ireland MLAs 2007-</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Northern_Irish_parliamentarians" title="Category:Lists of Northern Irish parliamentarians">Lists of Northern Irish parliamentarians</a></span> | <span dir='ltr'><a href="/wiki/Category:Northern_Ireland-related_lists" title="Category:Northern Ireland-related lists">Northern Ireland-related lists</a></span></div></div>		<!-- end content -->
@@ -1318,4 +1318,4 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </div>
 
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv226 in 0.045 secs. --></body></html>
+<!-- Served by srv176 in 0.053 secs. --></body></html>
