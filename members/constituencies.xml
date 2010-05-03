@@ -51,8 +51,8 @@ that loads in the original file before making modifications.
     <name text="Altrincham and Sale West"/>
   </constituency>
   <constituency hansard_id="14" id="uk.org.publicwhip/cons/9" fromdate="1983" todate="9999-12-31">
-    <name text="Alyn &amp; Deeside"/>
     <name text="Alyn and Deeside"/>
+    <name text="Alyn &amp; Deeside"/>
   </constituency>
   <constituency hansard_id="15" id="uk.org.publicwhip/cons/10" fromdate="1983" todate="9999-12-31">
     <name text="Amber Valley"/>
@@ -302,8 +302,8 @@ that loads in the original file before making modifications.
     <name text="Braintree"/>
   </constituency>
   <constituency hansard_id="90" id="uk.org.publicwhip/cons/79" fromdate="1997-05-01" todate="9999-12-31">
-    <name text="Brecon &amp; Radnorshire"/>
     <name text="Brecon and Radnorshire"/>
+    <name text="Brecon &amp; Radnorshire"/>
   </constituency>
   <constituency hansard_id="91" id="uk.org.publicwhip/cons/80" fromdate="1974" todate="9999-12-31">
     <name text="Brent East"/>
@@ -384,7 +384,7 @@ that loads in the original file before making modifications.
     <name text="Bury St Edmunds"/>
     <name text="Bury St. Edmunds"/>
   </constituency>
-  <constituency hansard_id="115" id="uk.org.publicwhip/cons/104" fromdate="1983" todate="9999-12-31">
+  <constituency hansard_id="115" id="uk.org.publicwhip/cons/104" fromdate="1983" todate="2010-05-05">
     <name text="Caernarfon"/>
   </constituency>
   <constituency hansard_id="116" id="uk.org.publicwhip/cons/105" fromdate="1918" todate="9999-12-31">
@@ -421,8 +421,8 @@ that loads in the original file before making modifications.
     <name text="Cardiff North"/>
   </constituency>
   <constituency hansard_id="129" id="uk.org.publicwhip/cons/114" fromdate="1983" todate="9999-12-31">
-    <name text="Cardiff South &amp; Penarth"/>
     <name text="Cardiff South and Penarth"/>
+    <name text="Cardiff South &amp; Penarth"/>
   </constituency>
   <constituency hansard_id="130" id="uk.org.publicwhip/cons/115" fromdate="1950" todate="9999-12-31">
     <name text="Cardiff West"/>
@@ -431,12 +431,12 @@ that loads in the original file before making modifications.
     <name text="Carlisle"/>
   </constituency>
   <constituency hansard_id="132" id="uk.org.publicwhip/cons/117" fromdate="1997-05-01" todate="9999-12-31">
-    <name text="Carmarthen East &amp; Dinefwr"/>
     <name text="Carmarthen East and Dinefwr"/>
+    <name text="Carmarthen East &amp; Dinefwr"/>
   </constituency>
   <constituency hansard_id="133" id="uk.org.publicwhip/cons/118" fromdate="1997-05-01" todate="9999-12-31">
-    <name text="Carmarthen West &amp; South Pembrokeshire"/>
     <name text="Carmarthen West and South Pembrokeshire"/>
+    <name text="Carmarthen West &amp; South Pembrokeshire"/>
     <name text="Carmarthen West and Pembrokeshire South"/>
     <name text="Carmarthen West &amp; Pembrokeshire South"/>
   </constituency>
@@ -545,7 +545,7 @@ that loads in the original file before making modifications.
   <constituency hansard_id="159" id="uk.org.publicwhip/cons/146" fromdate="1983" todate="9999-12-31">
     <name text="Congleton"/>
   </constituency>
-  <constituency hansard_id="160" id="uk.org.publicwhip/cons/147" fromdate="1983" todate="9999-12-31">
+  <constituency hansard_id="160" id="uk.org.publicwhip/cons/147" fromdate="1983" todate="2010-05-05">
     <name text="Conwy"/>
   </constituency>
   <constituency hansard_id="161" id="uk.org.publicwhip/cons/148" fromdate="1983" todate="9999-12-31">
@@ -1326,7 +1326,7 @@ that loads in the original file before making modifications.
   <constituency hansard_id="399" id="uk.org.publicwhip/cons/367" fromdate="1885" todate="9999-12-31">
     <name text="Medway"/>
   </constituency>
-  <constituency hansard_id="400" id="uk.org.publicwhip/cons/368" fromdate="1983" todate="9999-12-31">
+  <constituency hansard_id="400" id="uk.org.publicwhip/cons/368" fromdate="1983" todate="2010-05-05">
     <name text="Meirionnydd Nant Conwy"/>
     <name text="Meirionydd Nant Conwy"/>
   </constituency>
@@ -1334,8 +1334,8 @@ that loads in the original file before making modifications.
     <name text="Meriden"/>
   </constituency>
   <constituency hansard_id="402" id="uk.org.publicwhip/cons/370" fromdate="1983" todate="9999-12-31">
-    <name text="Merthyr Tydfil &amp; Rhymney"/>
     <name text="Merthyr Tydfil and Rhymney"/>
+    <name text="Merthyr Tydfil &amp; Rhymney"/>
   </constituency>
   <constituency hansard_id="43" id="uk.org.publicwhip/cons/371" fromdate="1918" todate="9999-12-31">
     <name text="Mid Bedfordshire"/>
@@ -6872,4 +6872,17 @@ that loads in the original file before making modifications.
   <constituency hansard_id="2145" id="uk.org.publicwhip/cons/2165" fromdate="1660" todate="1832">
     <name text="Yarmouth"/>
   </constituency>
+
+  <!-- 2010 general election -->
+  <!-- Wales -->
+  <constituency id="uk.org.publicwhip/cons/2166" fromdate="2010-05-06" todate="9999-12-31">
+    <name text="Aberconwy"/>
+  </constituency>
+  <constituency id="uk.org.publicwhip/cons/2167" fromdate="2010-05-06" todate="9999-12-31">
+    <name text="Arfon"/>
+  </constituency>
+  <constituency id="uk.org.publicwhip/cons/2168" fromdate="2010-05-06" todate="9999-12-31">
+    <name text="Dwyfor Meirionnydd"/>
+  </constituency>
+
 </publicwhip>
