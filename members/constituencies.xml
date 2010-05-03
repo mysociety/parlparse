@@ -5,8 +5,8 @@
 <!--
 
 Unique identifiers and alternative names for UK parliamentary constituencies.
-Currently as they are in 2001 and 2005, with date ranges for validity.
-A constituency is given a new id whenever its boundaries change.
+A constituency keeps its ID whilst it has the same name for a continuous period
+of time (so one that is abolished and brought back will have >1 ID).
 
 Currently has the name forms from:
 - the list of MPs on the Parliament website
@@ -29,15 +29,15 @@ that loads in the original file before making modifications.
   <constituency hansard_id="6" id="uk.org.publicwhip/cons/2" fromdate="1997-05-01" todate="2005-05-04">
     <name text="Aberdeen Central"/>
   </constituency>
-  <constituency hansard_id="7" id="uk.org.publicwhip/cons/3" fromdate="1885" todate="2005-05-04">
+  <constituency hansard_id="7" id="uk.org.publicwhip/cons/3" fromdate="1885" todate="9999-12-31">
     <name text="Aberdeen North"/>
   </constituency>
-  <constituency hansard_id="8" id="uk.org.publicwhip/cons/4" fromdate="1885" todate="2005-05-04">
+  <constituency hansard_id="8" id="uk.org.publicwhip/cons/4" fromdate="1885" todate="9999-12-31">
     <name text="Aberdeen South"/>
   </constituency>
-  <constituency hansard_id="10" id="uk.org.publicwhip/cons/5" fromdate="1997-05-01" todate="2005-05-04">
-    <name text="Airdrie &amp; Shotts"/>
+  <constituency hansard_id="10" id="uk.org.publicwhip/cons/5" fromdate="1997-05-01" todate="9999-12-31">
     <name text="Airdrie and Shotts"/>
+    <name text="Airdrie &amp; Shotts"/>
   </constituency>
   <constituency hansard_id="11" id="uk.org.publicwhip/cons/6" fromdate="1918" todate="9999-12-31">
     <name text="Aldershot"/>
@@ -57,12 +57,12 @@ that loads in the original file before making modifications.
   <constituency hansard_id="15" id="uk.org.publicwhip/cons/10" fromdate="1983" todate="9999-12-31">
     <name text="Amber Valley"/>
   </constituency>
-  <constituency hansard_id="16" id="uk.org.publicwhip/cons/11" fromdate="1997-05-01" todate="2005-05-04">
+  <constituency hansard_id="16" id="uk.org.publicwhip/cons/11" fromdate="1997-05-01" todate="9999-12-31">
     <name text="Angus"/>
   </constituency>
-  <constituency hansard_id="20" id="uk.org.publicwhip/cons/12" fromdate="1983" todate="2005-05-04">
-    <name text="Argyll &amp; Bute"/>
+  <constituency hansard_id="20" id="uk.org.publicwhip/cons/12" fromdate="1983" todate="9999-12-31">
     <name text="Argyll and Bute"/>
+    <name text="Argyll &amp; Bute"/>
   </constituency>
   <constituency hansard_id="21" id="uk.org.publicwhip/cons/13" fromdate="1997-05-01" todate="9999-12-31">
     <name text="Arundel &amp; South Downs"/>
@@ -87,9 +87,9 @@ that loads in the original file before making modifications.
   <constituency hansard_id="27" id="uk.org.publicwhip/cons/19" fromdate="1660" todate="9999-12-31">
     <name text="Banbury"/>
   </constituency>
-  <constituency hansard_id="28" id="uk.org.publicwhip/cons/20" fromdate="1983" todate="2005-05-04">
-    <name text="Banff &amp; Buchan"/>
+  <constituency hansard_id="28" id="uk.org.publicwhip/cons/20" fromdate="1983" todate="9999-12-31">
     <name text="Banff and Buchan"/>
+    <name text="Banff &amp; Buchan"/>
   </constituency>
   <constituency hansard_id="29" id="uk.org.publicwhip/cons/21" fromdate="1918" todate="9999-12-31">
     <name text="Barking"/>
@@ -390,9 +390,9 @@ that loads in the original file before making modifications.
   <constituency hansard_id="116" id="uk.org.publicwhip/cons/105" fromdate="1918" todate="9999-12-31">
     <name text="Caerphilly"/>
   </constituency>
-  <constituency hansard_id="117" id="uk.org.publicwhip/cons/106" fromdate="1997-05-01" todate="2005-05-04">
-    <name text="Caithness, Sutherland &amp; Easter Ross"/>
+  <constituency hansard_id="117" id="uk.org.publicwhip/cons/106" fromdate="1997-05-01" todate="9999-12-31">
     <name text="Caithness, Sutherland and Easter Ross"/>
+    <name text="Caithness, Sutherland &amp; Easter Ross"/>
     <name text="Caithness Sutherland and Easter Ross"/>
     <name text="Caithness Sutherland &amp; Easter Ross"/>
   </constituency>
@@ -441,8 +441,8 @@ that loads in the original file before making modifications.
     <name text="Carmarthen West &amp; Pembrokeshire South"/>
   </constituency>
   <constituency hansard_id="134" id="uk.org.publicwhip/cons/119" fromdate="1983" todate="2005-05-04">
-    <name text="Carrick, Cumnock &amp; Doon Valley"/>
     <name text="Carrick, Cumnock and Doon Valley"/>
+    <name text="Carrick, Cumnock &amp; Doon Valley"/>
     <name text="Carrick Cumnock and Doon Valley"/>
     <name text="Carrick Cumnock &amp; Doon Valley"/>
   </constituency>
@@ -526,15 +526,15 @@ that loads in the original file before making modifications.
     <name text="Clwyd W"/>
   </constituency>
   <constituency hansard_id="154" id="uk.org.publicwhip/cons/141" fromdate="1983" todate="2005-05-04">
-    <name text="Clydebank &amp; Milngavie"/>
     <name text="Clydebank and Milngavie"/>
+    <name text="Clydebank &amp; Milngavie"/>
   </constituency>
   <constituency hansard_id="155" id="uk.org.publicwhip/cons/142" fromdate="1983" todate="2005-05-04">
     <name text="Clydesdale"/>
   </constituency>
   <constituency hansard_id="156" id="uk.org.publicwhip/cons/143" fromdate="1997-05-01" todate="2005-05-04">
-    <name text="Coatbridge &amp; Chryston"/>
     <name text="Coatbridge and Chryston"/>
+    <name text="Coatbridge &amp; Chryston"/>
   </constituency>
   <constituency hansard_id="2007" id="uk.org.publicwhip/cons/144" fromdate="1997-05-01" todate="9999-12-31">
     <name text="Colchester"/>
@@ -588,8 +588,8 @@ that loads in the original file before making modifications.
     <name text="Croydon South"/>
   </constituency>
   <constituency hansard_id="175" id="uk.org.publicwhip/cons/160" fromdate="1983" todate="2005-05-04">
-    <name text="Cumbernauld &amp; Kilsyth"/>
     <name text="Cumbernauld and Kilsyth"/>
+    <name text="Cumbernauld &amp; Kilsyth"/>
   </constituency>
   <constituency hansard_id="176" id="uk.org.publicwhip/cons/161" fromdate="1983" todate="2005-05-04">
     <name text="Cunninghame North"/>
@@ -662,10 +662,10 @@ that loads in the original file before making modifications.
   <constituency hansard_id="209" id="uk.org.publicwhip/cons/182" fromdate="1974" todate="2005-05-04">
     <name text="Dumfries"/>
   </constituency>
-  <constituency hansard_id="210" id="uk.org.publicwhip/cons/183" fromdate="1950" todate="2005-05-04">
+  <constituency hansard_id="210" id="uk.org.publicwhip/cons/183" fromdate="1950" todate="9999-12-31">
     <name text="Dundee East"/>
   </constituency>
-  <constituency hansard_id="211" id="uk.org.publicwhip/cons/184" fromdate="1950" todate="2005-05-04">
+  <constituency hansard_id="211" id="uk.org.publicwhip/cons/184" fromdate="1950" todate="9999-12-31">
     <name text="Dundee West"/>
   </constituency>
   <constituency hansard_id="212" id="uk.org.publicwhip/cons/185" fromdate="1983" todate="2005-05-04">
@@ -717,7 +717,7 @@ that loads in the original file before making modifications.
     <name text="East Londonderry"/>
     <name text="Londonderry East"/>
   </constituency>
-  <constituency hansard_id="223" id="uk.org.publicwhip/cons/198" fromdate="1983" todate="2005-05-04">
+  <constituency hansard_id="223" id="uk.org.publicwhip/cons/198" fromdate="1983" todate="9999-12-31">
     <name text="East Lothian"/>
   </constituency>
   <constituency hansard_id="559" id="uk.org.publicwhip/cons/199" fromdate="1950" todate="9999-12-31">
@@ -742,8 +742,8 @@ that loads in the original file before making modifications.
     <name text="Eastleigh"/>
   </constituency>
   <constituency hansard_id="226" id="uk.org.publicwhip/cons/204" fromdate="1983" todate="9999-12-31">
-    <name text="Renfrewshire East"/>
     <name text="East Renfrewshire"/>
+    <name text="Renfrewshire East"/>
     <name text="Eastwood"/>
   </constituency>
   <constituency hansard_id="227" id="uk.org.publicwhip/cons/205" fromdate="1885" todate="9999-12-31">
@@ -756,22 +756,22 @@ that loads in the original file before making modifications.
     <name text="Edinburgh Central"/>
   </constituency>
   <constituency hansard_id="230" id="uk.org.publicwhip/cons/208" fromdate="1997-05-01" todate="2005-05-04">
-    <name text="Edinburgh East &amp; Musselburgh"/>
     <name text="Edinburgh East and Musselburgh"/>
+    <name text="Edinburgh East &amp; Musselburgh"/>
   </constituency>
-  <constituency hansard_id="231" id="uk.org.publicwhip/cons/209" fromdate="1997-05-01" todate="2005-05-04">
-    <name text="Edinburgh North &amp; Leith"/>
+  <constituency hansard_id="231" id="uk.org.publicwhip/cons/209" fromdate="1997-05-01" todate="9999-12-31">
     <name text="Edinburgh North and Leith"/>
+    <name text="Edinburgh North &amp; Leith"/>
   </constituency>
-  <constituency hansard_id="233" id="uk.org.publicwhip/cons/210" fromdate="1885" todate="2005-05-04">
+  <constituency hansard_id="233" id="uk.org.publicwhip/cons/210" fromdate="1885" todate="9999-12-31">
     <name text="Edinburgh South"/>
   </constituency>
-  <constituency hansard_id="234" id="uk.org.publicwhip/cons/211" fromdate="1885" todate="2005-05-04">
+  <constituency hansard_id="234" id="uk.org.publicwhip/cons/211" fromdate="1885" todate="9999-12-31">
     <name text="Edinburgh West"/>
   </constituency>
   <constituency hansard_id="232" id="uk.org.publicwhip/cons/212" fromdate="1950" todate="2005-05-04">
-    <name text="Edinburgh, Pentlands"/>
     <name text="Edinburgh Pentlands"/>
+    <name text="Edinburgh, Pentlands"/>
   </constituency>
   <constituency hansard_id="235" id="uk.org.publicwhip/cons/213" fromdate="1918" todate="9999-12-31">
     <name text="Edmonton"/>
@@ -864,8 +864,8 @@ that loads in the original file before making modifications.
     <name text="Gainsborough"/>
   </constituency>
   <constituency hansard_id="263" id="uk.org.publicwhip/cons/238" fromdate="1983" todate="2005-05-04">
-    <name text="Galloway &amp; Upper Nithsdale"/>
     <name text="Galloway and Upper Nithsdale"/>
+    <name text="Galloway &amp; Upper Nithsdale"/>
   </constituency>
   <constituency hansard_id="264" id="uk.org.publicwhip/cons/239" fromdate="1997-05-01" todate="9999-12-31">
     <name text="Gateshead East &amp; Washington West"/>
@@ -878,51 +878,51 @@ that loads in the original file before making modifications.
     <name text="Gillingham"/>
   </constituency>
   <constituency hansard_id="267" id="uk.org.publicwhip/cons/242" fromdate="1997-05-01" todate="2005-05-04">
-    <name text="Glasgow, Anniesland"/>
     <name text="Glasgow Anniesland"/>
+    <name text="Glasgow, Anniesland"/>
     <name text="Glasgow Aniesland"/>
   </constituency>
   <constituency hansard_id="268" id="uk.org.publicwhip/cons/243" fromdate="1997-05-01" todate="2005-05-04">
-    <name text="Glasgow, Baillieston"/>
     <name text="Glasgow Baillieston"/>
+    <name text="Glasgow, Baillieston"/>
   </constituency>
   <constituency hansard_id="269" id="uk.org.publicwhip/cons/244" fromdate="1918" todate="2005-05-04">
-    <name text="Glasgow, Cathcart"/>
     <name text="Glasgow Cathcart"/>
+    <name text="Glasgow, Cathcart"/>
   </constituency>
   <constituency hansard_id="270" id="uk.org.publicwhip/cons/245" fromdate="1918" todate="2005-05-04">
-    <name text="Glasgow, Govan"/>
     <name text="Glasgow Govan"/>
+    <name text="Glasgow, Govan"/>
     <name text="Govan"/>
   </constituency>
   <constituency hansard_id="271" id="uk.org.publicwhip/cons/246" fromdate="1997-05-01" todate="2005-05-04">
-    <name text="Glasgow, Kelvin"/>
     <name text="Glasgow Kelvin"/>
+    <name text="Glasgow, Kelvin"/>
   </constituency>
   <constituency hansard_id="272" id="uk.org.publicwhip/cons/247" fromdate="1918" todate="2005-05-04">
-    <name text="Glasgow, Maryhill"/>
     <name text="Glasgow Maryhill"/>
+    <name text="Glasgow, Maryhill"/>
   </constituency>
   <constituency hansard_id="273" id="uk.org.publicwhip/cons/248" fromdate="1918" todate="2005-05-04">
-    <name text="Glasgow, Pollok"/>
     <name text="Glasgow Pollok"/>
+    <name text="Glasgow, Pollok"/>
   </constituency>
   <constituency hansard_id="274" id="uk.org.publicwhip/cons/249" fromdate="1983" todate="2005-05-04">
-    <name text="Glasgow, Rutherglen"/>
     <name text="Glasgow Rutherglen"/>
+    <name text="Glasgow, Rutherglen"/>
   </constituency>
   <constituency hansard_id="275" id="uk.org.publicwhip/cons/250" fromdate="1918" todate="2005-05-04">
-    <name text="Glasgow, Shettleston"/>
     <name text="Glasgow Shettleston"/>
+    <name text="Glasgow, Shettleston"/>
   </constituency>
   <constituency hansard_id="276" id="uk.org.publicwhip/cons/251" fromdate="1918" todate="2005-05-04">
-    <name text="Glasgow, Springburn"/>
     <name text="Glasgow Springburn"/>
+    <name text="Glasgow, Springburn"/>
   </constituency>
   <constituency hansard_id="277" id="uk.org.publicwhip/cons/252" fromdate="1660" todate="9999-12-31">
     <name text="Gloucester"/>
   </constituency>
-  <constituency hansard_id="278" id="uk.org.publicwhip/cons/253" fromdate="1983" todate="2005-05-04">
+  <constituency hansard_id="278" id="uk.org.publicwhip/cons/253" fromdate="1983" todate="9999-12-31">
     <name text="Gordon"/>
   </constituency>
   <constituency hansard_id="279" id="uk.org.publicwhip/cons/254" fromdate="1974" todate="9999-12-31">
@@ -945,8 +945,8 @@ that loads in the original file before making modifications.
     <name text="Great Yarmouth"/>
   </constituency>
   <constituency hansard_id="285" id="uk.org.publicwhip/cons/260" fromdate="1997-05-01" todate="2005-05-04">
-    <name text="Greenock &amp; Inverclyde"/>
     <name text="Greenock and Inverclyde"/>
+    <name text="Greenock &amp; Inverclyde"/>
   </constituency>
   <constituency hansard_id="286" id="uk.org.publicwhip/cons/261" fromdate="1997-05-01" todate="9999-12-31">
     <name text="Greenwich &amp; Woolwich"/>
@@ -978,8 +978,8 @@ that loads in the original file before making modifications.
     <name text="Halton"/>
   </constituency>
   <constituency hansard_id="294" id="uk.org.publicwhip/cons/269" fromdate="1997-05-01" todate="2005-05-04">
-    <name text="Hamilton North &amp; Bellshill"/>
     <name text="Hamilton North and Bellshill"/>
+    <name text="Hamilton North &amp; Bellshill"/>
   </constituency>
   <constituency hansard_id="295" id="uk.org.publicwhip/cons/270" fromdate="1997-05-01" todate="2005-05-04">
     <name text="Hamilton South"/>
@@ -1105,8 +1105,8 @@ that loads in the original file before making modifications.
     <name text="Ilford South"/>
   </constituency>
   <constituency hansard_id="335" id="uk.org.publicwhip/cons/306" fromdate="1997-05-01" todate="2005-05-04">
-    <name text="Inverness East, Nairn &amp; Lochaber"/>
     <name text="Inverness East, Nairn and Lochaber"/>
+    <name text="Inverness East, Nairn &amp; Lochaber"/>
     <name text="Inverness East Nairn and Lochaber"/>
     <name text="Inverness East Nairn &amp; Lochaber"/>
   </constituency>
@@ -1141,9 +1141,9 @@ that loads in the original file before making modifications.
   <constituency hansard_id="344" id="uk.org.publicwhip/cons/315" fromdate="1918" todate="9999-12-31">
     <name text="Kettering"/>
   </constituency>
-  <constituency hansard_id="345" id="uk.org.publicwhip/cons/316" fromdate="1983" todate="2005-05-04">
-    <name text="Kilmarnock &amp; Loudoun"/>
+  <constituency hansard_id="345" id="uk.org.publicwhip/cons/316" fromdate="1983" todate="9999-12-31">
     <name text="Kilmarnock and Loudoun"/>
+    <name text="Kilmarnock &amp; Loudoun"/>
   </constituency>
   <constituency hansard_id="346" id="uk.org.publicwhip/cons/317" fromdate="1997-05-01" todate="9999-12-31">
     <name text="Kingston &amp; Surbiton"/>
@@ -1262,7 +1262,7 @@ that loads in the original file before making modifications.
     <name text="Liverpool, West Derby"/>
     <name text="Liverpool West Derby"/>
   </constituency>
-  <constituency hansard_id="381" id="uk.org.publicwhip/cons/350" fromdate="1983" todate="2005-05-04">
+  <constituency hansard_id="381" id="uk.org.publicwhip/cons/350" fromdate="1983" todate="9999-12-31">
     <name text="Livingston"/>
   </constituency>
   <constituency hansard_id="382" id="uk.org.publicwhip/cons/351" fromdate="1950" todate="9999-12-31">
@@ -1379,7 +1379,7 @@ that loads in the original file before making modifications.
     <name text="Middlesbrough South and Cleveland East"/>
     <name text="Middlesbrough South &amp; Cleveland East"/>
   </constituency>
-  <constituency hansard_id="404" id="uk.org.publicwhip/cons/379" fromdate="1955" todate="2005-05-04">
+  <constituency hansard_id="404" id="uk.org.publicwhip/cons/379" fromdate="1955" todate="9999-12-31">
     <name text="Midlothian"/>
   </constituency>
   <constituency hansard_id="406" id="uk.org.publicwhip/cons/380" fromdate="1992" todate="9999-12-31">
@@ -1398,7 +1398,7 @@ that loads in the original file before making modifications.
   <constituency hansard_id="1975" id="uk.org.publicwhip/cons/384" fromdate="1997-05-01" todate="9999-12-31">
     <name text="Montgomeryshire"/>
   </constituency>
-  <constituency hansard_id="411" id="uk.org.publicwhip/cons/385" fromdate="1983" todate="2005-05-04">
+  <constituency hansard_id="411" id="uk.org.publicwhip/cons/385" fromdate="1983" todate="9999-12-31">
     <name text="Moray"/>
   </constituency>
   <constituency hansard_id="412" id="uk.org.publicwhip/cons/386" fromdate="1983" todate="9999-12-31">
@@ -1410,9 +1410,9 @@ that loads in the original file before making modifications.
     <name text="Morley &amp; Rothwell"/>
     <name text="Morley and Rothwell"/>
   </constituency>
-  <constituency hansard_id="414" id="uk.org.publicwhip/cons/388" fromdate="1974" todate="2005-05-04">
-    <name text="Motherwell &amp; Wishaw"/>
+  <constituency hansard_id="414" id="uk.org.publicwhip/cons/388" fromdate="1974" todate="9999-12-31">
     <name text="Motherwell and Wishaw"/>
+    <name text="Motherwell &amp; Wishaw"/>
   </constituency>
   <constituency hansard_id="415" id="uk.org.publicwhip/cons/389" fromdate="1918" todate="9999-12-31">
     <name text="Neath"/>
@@ -1497,9 +1497,9 @@ that loads in the original file before making modifications.
     <name text="North East Derbyshire"/>
     <name text="Derbyshire North East"/>
   </constituency>
-  <constituency hansard_id="256" id="uk.org.publicwhip/cons/411" fromdate="1983" todate="2005-05-04">
-    <name text="Fife North East"/>
+  <constituency hansard_id="256" id="uk.org.publicwhip/cons/411" fromdate="1983" todate="9999-12-31">
     <name text="North East Fife"/>
+    <name text="Fife North East"/>
     <name text="NE Fife"/>
   </constituency>
   <constituency hansard_id="298" id="uk.org.publicwhip/cons/412" fromdate="1997-05-01" todate="9999-12-31">
@@ -1626,8 +1626,8 @@ that loads in the original file before making modifications.
     <name text="Oldham West and Royton"/>
   </constituency>
   <constituency hansard_id="447" id="uk.org.publicwhip/cons/444" fromdate="1708" todate="9999-12-31">
-    <name text="Orkney &amp; Shetland"/>
     <name text="Orkney and Shetland"/>
+    <name text="Orkney &amp; Shetland"/>
   </constituency>
   <constituency hansard_id="2011" id="uk.org.publicwhip/cons/445" fromdate="1983" todate="9999-12-31">
     <name text="Orpington"/>
@@ -1758,8 +1758,8 @@ that loads in the original file before making modifications.
     <name text="Romsey"/>
   </constituency>
   <constituency hansard_id="486" id="uk.org.publicwhip/cons/481" fromdate="1997-05-01" todate="2005-05-04">
-    <name text="Ross, Skye &amp; Inverness West"/>
     <name text="Ross, Skye and Inverness West"/>
+    <name text="Ross, Skye &amp; Inverness West"/>
     <name text="Ross, Skye and Inverness, West"/>
     <name text="Ross Skye and Inverness West"/>
   </constituency>
@@ -1774,8 +1774,8 @@ that loads in the original file before making modifications.
     <name text="Rotherham"/>
   </constituency>
   <constituency hansard_id="490" id="uk.org.publicwhip/cons/485" fromdate="1983" todate="2005-05-04">
-    <name text="Roxburgh &amp; Berwickshire"/>
     <name text="Roxburgh and Berwickshire"/>
+    <name text="Roxburgh &amp; Berwickshire"/>
   </constituency>
   <constituency hansard_id="491" id="uk.org.publicwhip/cons/486" fromdate="1983" todate="9999-12-31">
     <name text="Rugby &amp; Kenilworth"/>
@@ -2008,7 +2008,7 @@ that loads in the original file before making modifications.
   <constituency hansard_id="537" id="uk.org.publicwhip/cons/547" fromdate="1983" todate="9999-12-31">
     <name text="Stevenage"/>
   </constituency>
-  <constituency hansard_id="538" id="uk.org.publicwhip/cons/548" fromdate="1983" todate="2005-05-04">
+  <constituency hansard_id="538" id="uk.org.publicwhip/cons/548" fromdate="1983" todate="9999-12-31">
     <name text="Stirling"/>
   </constituency>
   <constituency hansard_id="1959" id="uk.org.publicwhip/cons/549" fromdate="1983" todate="9999-12-31">
@@ -2047,8 +2047,8 @@ that loads in the original file before making modifications.
     <name text="Stratford on Avon"/>
   </constituency>
   <constituency hansard_id="549" id="uk.org.publicwhip/cons/559" fromdate="1983" todate="2005-05-04">
-    <name text="Strathkelvin &amp; Bearsden"/>
     <name text="Strathkelvin and Bearsden"/>
+    <name text="Strathkelvin &amp; Bearsden"/>
   </constituency>
   <constituency hansard_id="550" id="uk.org.publicwhip/cons/560" fromdate="1983" todate="9999-12-31">
     <name text="Streatham"/>
@@ -2144,8 +2144,8 @@ that loads in the original file before making modifications.
     <name text="Tunbridge Wells"/>
   </constituency>
   <constituency hansard_id="587" id="uk.org.publicwhip/cons/588" fromdate="1983" todate="2005-05-04">
-    <name text="Tweeddale, Ettrick &amp; Lauderdale"/>
     <name text="Tweeddale, Ettrick and Lauderdale"/>
+    <name text="Tweeddale, Ettrick &amp; Lauderdale"/>
     <name text="Tweeddale Ettrick and Lauderdale"/>
   </constituency>
   <constituency hansard_id="588" id="uk.org.publicwhip/cons/589" fromdate="1918" todate="9999-12-31">
@@ -2240,12 +2240,12 @@ that loads in the original file before making modifications.
   <constituency hansard_id="621" id="uk.org.publicwhip/cons/618" fromdate="1918" todate="9999-12-31">
     <name text="Wentworth"/>
   </constituency>
-  <constituency hansard_id="9" id="uk.org.publicwhip/cons/619" fromdate="1997-05-01" todate="2005-05-04">
-    <name text="West Aberdeenshire &amp; Kincardine"/>
+  <constituency hansard_id="9" id="uk.org.publicwhip/cons/619" fromdate="1997-05-01" todate="9999-12-31">
     <name text="West Aberdeenshire and Kincardine"/>
-    <name text="Aberdeenshire W &amp; Kincardine"/>
-    <name text="Aberdeenshire West &amp; Kincardine"/>
+    <name text="West Aberdeenshire &amp; Kincardine"/>
     <name text="Aberdeenshire West and Kincardine"/>
+    <name text="Aberdeenshire West &amp; Kincardine"/>
+    <name text="Aberdeenshire W &amp; Kincardine"/>
   </constituency>
   <constituency hansard_id="622" id="uk.org.publicwhip/cons/620" fromdate="1974" todate="9999-12-31">
     <name text="West Bromwich East"/>
@@ -2387,71 +2387,39 @@ that loads in the original file before making modifications.
     <name text="City of York"/>
     <name text="York"/>
   </constituency>
-  <constituency hansard_id="7" id="uk.org.publicwhip/cons/660" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Aberdeen North"/>
-  </constituency>
-  <constituency hansard_id="8" id="uk.org.publicwhip/cons/661" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Aberdeen South"/>
-  </constituency>
-  <constituency hansard_id="9" id="uk.org.publicwhip/cons/662" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Aberdeenshire West &amp; Kincardine"/>
-    <name text="Aberdeenshire West and Kincardine"/>
-    <name text="West Aberdeenshire &amp; Kincardine"/>
-    <name text="West Aberdeenshire and Kincardine"/>
-    <name text="Aberdeenshire W &amp; Kincardine"/>
-  </constituency>
-  <constituency hansard_id="10" id="uk.org.publicwhip/cons/663" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Airdrie &amp; Shotts"/>
-    <name text="Airdrie and Shotts"/>
-  </constituency>
-  <constituency hansard_id="16" id="uk.org.publicwhip/cons/664" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Angus"/>
-  </constituency>
-  <constituency hansard_id="20" id="uk.org.publicwhip/cons/665" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Argyll &amp; Bute"/>
-    <name text="Argyll and Bute"/>
-  </constituency>
   <constituency hansard_id="2014" id="uk.org.publicwhip/cons/666" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Ayr, Carrick &amp; Cumnock"/>
     <name text="Ayr, Carrick and Cumnock"/>
+    <name text="Ayr, Carrick &amp; Cumnock"/>
   </constituency>
   <constituency hansard_id="2015" id="uk.org.publicwhip/cons/667" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Ayrshire Central"/>
     <name text="Central Ayrshire"/>
+    <name text="Ayrshire Central"/>
   </constituency>
   <constituency hansard_id="2016" id="uk.org.publicwhip/cons/668" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Ayrshire North &amp; Arran"/>
-    <name text="Ayrshire North and Arran"/>
-    <name text="North Ayrshire &amp; Arran"/>
     <name text="North Ayrshire and Arran"/>
-  </constituency>
-  <constituency hansard_id="28" id="uk.org.publicwhip/cons/669" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Banff &amp; Buchan"/>
-    <name text="Banff and Buchan"/>
+    <name text="North Ayrshire &amp; Arran"/>
+    <name text="Ayrshire North and Arran"/>
+    <name text="Ayrshire North &amp; Arran"/>
   </constituency>
   <constituency hansard_id="2017" id="uk.org.publicwhip/cons/670" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Berwickshire, Roxburgh &amp; Selkirk"/>
     <name text="Berwickshire, Roxburgh and Selkirk"/>
-  </constituency>
-  <constituency hansard_id="117" id="uk.org.publicwhip/cons/671" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Caithness, Sutherland &amp; Easter Ross"/>
-    <name text="Caithness, Sutherland and Easter Ross"/>
+    <name text="Berwickshire, Roxburgh &amp; Selkirk"/>
   </constituency>
   <constituency hansard_id="2018" id="uk.org.publicwhip/cons/672" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Coatbridge, Chryston &amp; Bellshill"/>
     <name text="Coatbridge, Chryston and Bellshill"/>
+    <name text="Coatbridge, Chryston &amp; Bellshill"/>
   </constituency>
   <constituency hansard_id="2019" id="uk.org.publicwhip/cons/673" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Cumbernauld, Kilsyth &amp; Kirkintilloch East"/>
     <name text="Cumbernauld, Kilsyth and Kirkintilloch East"/>
+    <name text="Cumbernauld, Kilsyth &amp; Kirkintilloch East"/>
   </constituency>
   <constituency hansard_id="2020" id="uk.org.publicwhip/cons/674" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Dumfries &amp; Galloway"/>
     <name text="Dumfries and Galloway"/>
+    <name text="Dumfries &amp; Galloway"/>
   </constituency>
   <constituency hansard_id="2021" id="uk.org.publicwhip/cons/675" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Dumfriesshire, Clydesdale &amp; Tweeddale"/>
     <name text="Dumfriesshire, Clydesdale and Tweeddale"/>
+    <name text="Dumfriesshire, Clydesdale &amp; Tweeddale"/>
   </constituency>
   <constituency hansard_id="2022" id="uk.org.publicwhip/cons/676" fromdate="2005-05-05" todate="9999-12-31">
     <name text="East Dunbartonshire"/>
@@ -2461,48 +2429,24 @@ that loads in the original file before making modifications.
     <name text="West Dunbartonshire"/>
     <name text="Dunbartonshire West"/>
   </constituency>
-  <constituency hansard_id="210" id="uk.org.publicwhip/cons/678" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Dundee East"/>
-  </constituency>
-  <constituency hansard_id="211" id="uk.org.publicwhip/cons/679" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Dundee West"/>
-  </constituency>
   <constituency hansard_id="2024" id="uk.org.publicwhip/cons/680" fromdate="2005-05-05" todate="9999-12-31">
+    <name text="Dunfermline and West Fife"/>
+    <name text="Dunfermline and Fife West"/>
     <name text="Dunfermline &amp; Fife West"/>
     <name text="Dunfermline &amp; West Fife"/>
-    <name text="Dunfermline and Fife West"/>
-    <name text="Dunfermline and West Fife"/>
   </constituency>
   <constituency hansard_id="2025" id="uk.org.publicwhip/cons/681" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="East Kilbride, Strathaven &amp; Lesmahagow"/>
     <name text="East Kilbride, Strathaven and Lesmahagow"/>
-  </constituency>
-  <constituency hansard_id="223" id="uk.org.publicwhip/cons/682" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="East Lothian"/>
+    <name text="East Kilbride, Strathaven &amp; Lesmahagow"/>
   </constituency>
   <constituency hansard_id="2026" id="uk.org.publicwhip/cons/683" fromdate="2005-05-05" todate="9999-12-31">
     <name text="Edinburgh East"/>
   </constituency>
-  <constituency hansard_id="231" id="uk.org.publicwhip/cons/684" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Edinburgh North &amp; Leith"/>
-    <name text="Edinburgh North and Leith"/>
-  </constituency>
-  <constituency hansard_id="233" id="uk.org.publicwhip/cons/685" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Edinburgh South"/>
-  </constituency>
   <constituency hansard_id="2027" id="uk.org.publicwhip/cons/686" fromdate="2005-05-05" todate="9999-12-31">
     <name text="Edinburgh South West"/>
   </constituency>
-  <constituency hansard_id="234" id="uk.org.publicwhip/cons/687" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Edinburgh West"/>
-  </constituency>
   <constituency hansard_id="2028" id="uk.org.publicwhip/cons/688" fromdate="2005-05-05" todate="9999-12-31">
     <name text="Falkirk"/>
-  </constituency>
-  <constituency hansard_id="256" id="uk.org.publicwhip/cons/689" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Fife North East"/>
-    <name text="North East Fife"/>
-    <name text="NE Fife"/>
   </constituency>
   <constituency hansard_id="2029" id="uk.org.publicwhip/cons/690" fromdate="2005-05-05" todate="9999-12-31">
     <name text="Glasgow Central"/>
@@ -2528,78 +2472,55 @@ that loads in the original file before making modifications.
   <constituency hansard_id="2036" id="uk.org.publicwhip/cons/697" fromdate="2005-05-05" todate="9999-12-31">
     <name text="Glenrothes"/>
   </constituency>
-  <constituency hansard_id="278" id="uk.org.publicwhip/cons/698" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Gordon"/>
-  </constituency>
   <constituency hansard_id="2037" id="uk.org.publicwhip/cons/699" fromdate="2005-05-05" todate="9999-12-31">
     <name text="Inverclyde"/>
   </constituency>
   <constituency hansard_id="2038" id="uk.org.publicwhip/cons/700" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Inverness, Nairn, Badenoch &amp; Strathspey"/>
     <name text="Inverness, Nairn, Badenoch and Strathspey"/>
-  </constituency>
-  <constituency hansard_id="345" id="uk.org.publicwhip/cons/701" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Kilmarnock &amp; Loudoun"/>
-    <name text="Kilmarnock and Loudoun"/>
+    <name text="Inverness, Nairn, Badenoch &amp; Strathspey"/>
   </constituency>
   <constituency hansard_id="2039" id="uk.org.publicwhip/cons/702" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Kirkcaldy &amp; Cowdenbeath"/>
     <name text="Kirkcaldy and Cowdenbeath"/>
+    <name text="Kirkcaldy &amp; Cowdenbeath"/>
   </constituency>
   <constituency hansard_id="2040" id="uk.org.publicwhip/cons/703" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Lanark &amp; Hamilton East"/>
     <name text="Lanark and Hamilton East"/>
+    <name text="Lanark &amp; Hamilton East"/>
   </constituency>
   <constituency hansard_id="2041" id="uk.org.publicwhip/cons/704" fromdate="2005-05-05" todate="9999-12-31">
+    <name text="Linlithgow and East Falkirk"/>
+    <name text="Linlithgow &amp; East Falkirk"/>
     <name text="Linlithgow &amp; Falkirk East"/>
     <name text="Linlithgow and Falkirk East"/>
-    <name text="Linlithgow &amp; East Falkirk"/>
-    <name text="Linlithgow and East Falkirk"/>
-  </constituency>
-  <constituency hansard_id="381" id="uk.org.publicwhip/cons/705" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Livingston"/>
-  </constituency>
-  <constituency hansard_id="404" id="uk.org.publicwhip/cons/706" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Midlothian"/>
-  </constituency>
-  <constituency hansard_id="411" id="uk.org.publicwhip/cons/707" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Moray"/>
-  </constituency>
-  <constituency hansard_id="414" id="uk.org.publicwhip/cons/708" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Motherwell &amp; Wishaw"/>
-    <name text="Motherwell and Wishaw"/>
   </constituency>
   <constituency hansard_id="2043" id="uk.org.publicwhip/cons/709" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Ochil &amp; Perthshire South"/>
-    <name text="Ochil &amp; South Perthshire"/>
     <name text="Ochil and South Perthshire"/>
+    <name text="Ochil &amp; South Perthshire"/>
     <name text="Ochil and Perthshire South"/>
+    <name text="Ochil &amp; Perthshire South"/>
   </constituency>
   <constituency hansard_id="2044" id="uk.org.publicwhip/cons/710" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Paisley &amp; Renfrewshire North"/>
     <name text="Paisley and Renfrewshire North"/>
+    <name text="Paisley &amp; Renfrewshire North"/>
   </constituency>
   <constituency hansard_id="2045" id="uk.org.publicwhip/cons/711" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Paisley &amp; Renfrewshire South"/>
     <name text="Paisley and Renfrewshire South"/>
+    <name text="Paisley &amp; Renfrewshire South"/>
     <name text="Paisley and Renfrewshire, South"/>
   </constituency>
   <constituency hansard_id="2046" id="uk.org.publicwhip/cons/712" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Perth &amp; Perthshire North"/>
+    <name text="Perth and North Perthshire"/>
     <name text="Perth &amp; North Perthshire"/>
     <name text="Perth and Perthshire North"/>
-    <name text="Perth and North Perthshire"/>
+    <name text="Perth &amp; Perthshire North"/>
   </constituency>
   <constituency hansard_id="2048" id="uk.org.publicwhip/cons/713" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Ross, Skye &amp; Lochaber"/>
     <name text="Ross, Skye and Lochaber"/>
+    <name text="Ross, Skye &amp; Lochaber"/>
   </constituency>
   <constituency hansard_id="2049" id="uk.org.publicwhip/cons/714" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Rutherglen &amp; Hamilton West"/>
     <name text="Rutherglen and Hamilton West"/>
-  </constituency>
-  <constituency hansard_id="538" id="uk.org.publicwhip/cons/715" fromdate="2005-05-05" todate="9999-12-31">
-    <name text="Stirling"/>
+    <name text="Rutherglen &amp; Hamilton West"/>
   </constituency>
   <constituency hansard_id="1" id="uk.org.publicwhip/cons/716" fromdate="1974" todate="1983">
     <name text="Islington Central"/>
