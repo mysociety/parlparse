@@ -797,9 +797,9 @@ that loads in the original file before making modifications.
     <name text="Epping Forest"/>
   </constituency>
   <constituency hansard_id="242" id="uk.org.publicwhip/cons/220" fromdate="1974" todate="9999-12-31">
+    <name text="Epsom and Ewell"/>
     <name text="Epsom &amp; Ewell"/>
     <name text="Epson and Ewell"/>
-    <name text="Epsom and Ewell"/>
   </constituency>
   <constituency hansard_id="243" id="uk.org.publicwhip/cons/221" fromdate="1983" todate="9999-12-31">
     <name text="Erewash"/>
@@ -1373,9 +1373,9 @@ that loads in the original file before making modifications.
     <name text="Middlesborough"/>
   </constituency>
   <constituency hansard_id="403" id="uk.org.publicwhip/cons/378" fromdate="1997-05-01" todate="9999-12-31">
+    <name text="Middlesbrough South and East Cleveland"/>
     <name text="Middlesbrough South &amp; East Cleveland"/>
     <name text="Middlesborough South and East Cleveland"/>
-    <name text="Middlesbrough South and East Cleveland"/>
     <name text="Middlesbrough South and Cleveland East"/>
     <name text="Middlesbrough South &amp; Cleveland East"/>
   </constituency>
@@ -1637,9 +1637,9 @@ that loads in the original file before making modifications.
     <name text="Oxford, East"/>
   </constituency>
   <constituency hansard_id="450" id="uk.org.publicwhip/cons/447" fromdate="1983" todate="9999-12-31">
+    <name text="Oxford West and Abingdon"/>
     <name text="Oxford West &amp; Abingdon"/>
     <name text="Oxford, West and Abingdon"/>
-    <name text="Oxford West and Abingdon"/>
     <name text="Oxford W &amp; Abingdon"/>
   </constituency>
   <constituency hansard_id="451" id="uk.org.publicwhip/cons/448" fromdate="1983" todate="2005-05-04">
@@ -2356,7 +2356,7 @@ that loads in the original file before making modifications.
     <name text="Worthing West"/>
     <name text="Worthing W"/>
   </constituency>
-  <constituency hansard_id="577" id="uk.org.publicwhip/cons/652" fromdate="1918" todate="2010-05-05">
+  <constituency hansard_id="577" id="uk.org.publicwhip/cons/652" fromdate="1918" todate="9999-12-31">
     <name text="The Wrekin"/>
     <name text="Wrekin, The"/>
   </constituency>
@@ -6630,6 +6630,7 @@ that loads in the original file before making modifications.
     <name text="Bramber"/>
   </constituency>
   <constituency hansard_id="2065" id="uk.org.publicwhip/cons/2085" fromdate="1708" todate="1832">
+    <name text="Buteshire and Caithness"/>
     <name text="Buteshire &amp; Caithness"/>
   </constituency>
   <constituency hansard_id="2066" id="uk.org.publicwhip/cons/2086" fromdate="1660" todate="1832">
@@ -6654,6 +6655,7 @@ that loads in the original file before making modifications.
     <name text="Cumberland"/>
   </constituency>
   <constituency hansard_id="2073" id="uk.org.publicwhip/cons/2093" fromdate="1708" todate="1832">
+    <name text="Cromartyshire and Nairnshire"/>
     <name text="Cromartyshire &amp; Nairnshire"/>
   </constituency>
   <constituency hansard_id="2074" id="uk.org.publicwhip/cons/2094" fromdate="1660" todate="1832">
@@ -7089,9 +7091,6 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2236" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Taunton Deane"/>
-  </constituency>
-  <constituency id="uk.org.publicwhip/cons/2237" fromdate="2010-05-06" todate="9999-12-31">
-    <name text="The Wrekin"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2238" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Thirsk and Malton"/>
