@@ -1,0 +1,1954 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<publicwhip>
+<consinfo canonical="Aberavon" guardian_id="664"/>
+<consinfo canonical="Aberavon" guardian_name="Aberavon"/>
+<consinfo canonical="Aberavon" pa_id="1"/>
+<consinfo canonical="Aberconwy" guardian_id="1471"/>
+<consinfo canonical="Aberconwy" guardian_name="Aberconwy"/>
+<consinfo canonical="Aberconwy" pa_id="2"/>
+<consinfo canonical="Aberdeen North" guardian_id="666"/>
+<consinfo canonical="Aberdeen North" guardian_name="Aberdeen North"/>
+<consinfo canonical="Aberdeen North" pa_id="3"/>
+<consinfo canonical="Aberdeen South" guardian_id="667"/>
+<consinfo canonical="Aberdeen South" guardian_name="Aberdeen South"/>
+<consinfo canonical="Aberdeen South" pa_id="4"/>
+<consinfo canonical="West Aberdeenshire and Kincardine" guardian_id="1417"/>
+<consinfo canonical="West Aberdeenshire and Kincardine" guardian_name="Aberdeenshire West and Kincardine"/>
+<consinfo canonical="West Aberdeenshire and Kincardine" pa_id="5"/>
+<consinfo canonical="Airdrie and Shotts" guardian_id="668"/>
+<consinfo canonical="Airdrie and Shotts" guardian_name="Airdrie and Shotts"/>
+<consinfo canonical="Airdrie and Shotts" pa_id="6"/>
+<consinfo canonical="Aldershot" guardian_id="669"/>
+<consinfo canonical="Aldershot" guardian_name="Aldershot"/>
+<consinfo canonical="Aldershot" pa_id="7"/>
+<consinfo canonical="Aldridge-Brownhills" guardian_id="670"/>
+<consinfo canonical="Aldridge-Brownhills" guardian_name="Aldridge-Brownhills"/>
+<consinfo canonical="Aldridge-Brownhills" pa_id="8"/>
+<consinfo canonical="Altrincham and Sale West" guardian_id="671"/>
+<consinfo canonical="Altrincham and Sale West" guardian_name="Altrincham and Sale West"/>
+<consinfo canonical="Altrincham and Sale West" pa_id="9"/>
+<consinfo canonical="Alyn and Deeside" guardian_id="672"/>
+<consinfo canonical="Alyn and Deeside" guardian_name="Alyn and Deeside"/>
+<consinfo canonical="Alyn and Deeside" pa_id="10"/>
+<consinfo canonical="Amber Valley" guardian_id="673"/>
+<consinfo canonical="Amber Valley" guardian_name="Amber Valley"/>
+<consinfo canonical="Amber Valley" pa_id="11"/>
+<consinfo canonical="Angus" guardian_id="674"/>
+<consinfo canonical="Angus" guardian_name="Angus"/>
+<consinfo canonical="Angus" pa_id="12"/>
+<consinfo canonical="East Antrim" guardian_id="898"/>
+<consinfo canonical="East Antrim" guardian_name="Antrim East"/>
+<consinfo canonical="East Antrim" pa_id="13"/>
+<consinfo canonical="North Antrim" guardian_id="1164"/>
+<consinfo canonical="North Antrim" guardian_name="Antrim North"/>
+<consinfo canonical="North Antrim" pa_id="14"/>
+<consinfo canonical="South Antrim" guardian_id="1293"/>
+<consinfo canonical="South Antrim" guardian_name="Antrim South"/>
+<consinfo canonical="South Antrim" pa_id="15"/>
+<consinfo canonical="Arfon" guardian_id="1472"/>
+<consinfo canonical="Arfon" guardian_name="Arfon"/>
+<consinfo canonical="Arfon" pa_id="16"/>
+<consinfo canonical="Argyll and Bute" guardian_id="675"/>
+<consinfo canonical="Argyll and Bute" guardian_name="Argyll and Bute"/>
+<consinfo canonical="Argyll and Bute" pa_id="17"/>
+<consinfo canonical="Arundel and South Downs" guardian_id="677"/>
+<consinfo canonical="Arundel and South Downs" guardian_name="Arundel and South Downs"/>
+<consinfo canonical="Arundel and South Downs" pa_id="18"/>
+<consinfo canonical="Ashfield" guardian_id="678"/>
+<consinfo canonical="Ashfield" guardian_name="Ashfield"/>
+<consinfo canonical="Ashfield" pa_id="19"/>
+<consinfo canonical="Ashford" guardian_id="679"/>
+<consinfo canonical="Ashford" guardian_name="Ashford"/>
+<consinfo canonical="Ashford" pa_id="20"/>
+<consinfo canonical="Ashton-under-Lyne" guardian_id="680"/>
+<consinfo canonical="Ashton-under-Lyne" guardian_name="Ashton under Lyne"/>
+<consinfo canonical="Ashton-under-Lyne" pa_id="21"/>
+<consinfo canonical="Aylesbury" guardian_id="681"/>
+<consinfo canonical="Aylesbury" guardian_name="Aylesbury"/>
+<consinfo canonical="Aylesbury" pa_id="22"/>
+<consinfo canonical="Ayr, Carrick and Cumnock" guardian_id="797"/>
+<consinfo canonical="Ayr, Carrick and Cumnock" guardian_name="Ayr, Carrick and Cumnock"/>
+<consinfo canonical="Ayr, Carrick and Cumnock" pa_id="23"/>
+<consinfo canonical="Central Ayrshire" guardian_id="682"/>
+<consinfo canonical="Central Ayrshire" guardian_name="Ayrshire Central"/>
+<consinfo canonical="Central Ayrshire" pa_id="24"/>
+<consinfo canonical="North Ayrshire and Arran" guardian_id="860"/>
+<consinfo canonical="North Ayrshire and Arran" guardian_name="Ayrshire North and Arran"/>
+<consinfo canonical="North Ayrshire and Arran" pa_id="25"/>
+<consinfo canonical="Banbury" guardian_id="683"/>
+<consinfo canonical="Banbury" guardian_name="Banbury"/>
+<consinfo canonical="Banbury" pa_id="26"/>
+<consinfo canonical="Banff and Buchan" guardian_id="684"/>
+<consinfo canonical="Banff and Buchan" guardian_name="Banff and Buchan"/>
+<consinfo canonical="Banff and Buchan" pa_id="27"/>
+<consinfo canonical="Barking" guardian_id="685"/>
+<consinfo canonical="Barking" guardian_name="Barking"/>
+<consinfo canonical="Barking" pa_id="28"/>
+<consinfo canonical="Barnsley Central" guardian_id="686"/>
+<consinfo canonical="Barnsley Central" guardian_name="Barnsley Central"/>
+<consinfo canonical="Barnsley Central" pa_id="29"/>
+<consinfo canonical="Barnsley East" guardian_id="687"/>
+<consinfo canonical="Barnsley East" guardian_name="Barnsley East"/>
+<consinfo canonical="Barnsley East" pa_id="30"/>
+<consinfo canonical="Barrow and Furness" guardian_id="690"/>
+<consinfo canonical="Barrow and Furness" guardian_name="Barrow and Furness"/>
+<consinfo canonical="Barrow and Furness" pa_id="31"/>
+<consinfo canonical="South Basildon and East Thurrock" guardian_id="1473"/>
+<consinfo canonical="South Basildon and East Thurrock" guardian_name="Basildon South and Thurrock East"/>
+<consinfo canonical="South Basildon and East Thurrock" pa_id="33"/>
+<consinfo canonical="Basildon and Billericay" guardian_id="1474"/>
+<consinfo canonical="Basildon and Billericay" guardian_name="Basildon and Billericay"/>
+<consinfo canonical="Basildon and Billericay" pa_id="32"/>
+<consinfo canonical="Basingstoke" guardian_id="692"/>
+<consinfo canonical="Basingstoke" guardian_name="Basingstoke"/>
+<consinfo canonical="Basingstoke" pa_id="34"/>
+<consinfo canonical="Bassetlaw" guardian_id="693"/>
+<consinfo canonical="Bassetlaw" guardian_name="Bassetlaw"/>
+<consinfo canonical="Bassetlaw" pa_id="35"/>
+<consinfo canonical="Bath" guardian_id="694"/>
+<consinfo canonical="Bath" guardian_name="Bath"/>
+<consinfo canonical="Bath" pa_id="36"/>
+<consinfo canonical="Batley and Spen" guardian_id="695"/>
+<consinfo canonical="Batley and Spen" guardian_name="Batley and Spen"/>
+<consinfo canonical="Batley and Spen" pa_id="37"/>
+<consinfo canonical="Battersea" guardian_id="696"/>
+<consinfo canonical="Battersea" guardian_name="Battersea"/>
+<consinfo canonical="Battersea" pa_id="38"/>
+<consinfo canonical="Beaconsfield" guardian_id="697"/>
+<consinfo canonical="Beaconsfield" guardian_name="Beaconsfield"/>
+<consinfo canonical="Beaconsfield" pa_id="39"/>
+<consinfo canonical="Beckenham" guardian_id="698"/>
+<consinfo canonical="Beckenham" guardian_name="Beckenham"/>
+<consinfo canonical="Beckenham" pa_id="40"/>
+<consinfo canonical="Bedford" guardian_id="699"/>
+<consinfo canonical="Bedford" guardian_name="Bedford"/>
+<consinfo canonical="Bedford" pa_id="41"/>
+<consinfo canonical="Mid Bedfordshire" guardian_id="1120"/>
+<consinfo canonical="Mid Bedfordshire" guardian_name="Bedfordshire Mid"/>
+<consinfo canonical="Mid Bedfordshire" pa_id="42"/>
+<consinfo canonical="North East Bedfordshire" guardian_id="1170"/>
+<consinfo canonical="North East Bedfordshire" guardian_name="Bedfordshire North East"/>
+<consinfo canonical="North East Bedfordshire" pa_id="43"/>
+<consinfo canonical="South West Bedfordshire" guardian_id="1310"/>
+<consinfo canonical="South West Bedfordshire" guardian_name="Bedfordshire South West"/>
+<consinfo canonical="South West Bedfordshire" pa_id="44"/>
+<consinfo canonical="Belfast East" guardian_id="700"/>
+<consinfo canonical="Belfast East" guardian_name="Belfast East"/>
+<consinfo canonical="Belfast East" pa_id="45"/>
+<consinfo canonical="Belfast North" guardian_id="701"/>
+<consinfo canonical="Belfast North" guardian_name="Belfast North"/>
+<consinfo canonical="Belfast North" pa_id="46"/>
+<consinfo canonical="Belfast South" guardian_id="702"/>
+<consinfo canonical="Belfast South" guardian_name="Belfast South"/>
+<consinfo canonical="Belfast South" pa_id="47"/>
+<consinfo canonical="Belfast West" guardian_id="703"/>
+<consinfo canonical="Belfast West" guardian_name="Belfast West"/>
+<consinfo canonical="Belfast West" pa_id="48"/>
+<consinfo canonical="Bermondsey and Old Southwark" guardian_id="1475"/>
+<consinfo canonical="Bermondsey and Old Southwark" guardian_name="Bermondsey and Old Southwark"/>
+<consinfo canonical="Bermondsey and Old Southwark" pa_id="49"/>
+<consinfo canonical="Berwick-upon-Tweed" guardian_id="704"/>
+<consinfo canonical="Berwick-upon-Tweed" guardian_name="Berwick-upon-Tweed"/>
+<consinfo canonical="Berwick-upon-Tweed" pa_id="50"/>
+<consinfo canonical="Berwickshire, Roxburgh and Selkirk" guardian_id="1260"/>
+<consinfo canonical="Berwickshire, Roxburgh and Selkirk" guardian_name="Berwickshire, Roxburgh and Selkirk"/>
+<consinfo canonical="Berwickshire, Roxburgh and Selkirk" pa_id="51"/>
+<consinfo canonical="Bethnal Green and Bow" guardian_id="705"/>
+<consinfo canonical="Bethnal Green and Bow" guardian_name="Bethnal Green and Bow"/>
+<consinfo canonical="Bethnal Green and Bow" pa_id="52"/>
+<consinfo canonical="Beverley and Holderness" guardian_id="708"/>
+<consinfo canonical="Beverley and Holderness" guardian_name="Beverley and Holderness"/>
+<consinfo canonical="Beverley and Holderness" pa_id="53"/>
+<consinfo canonical="Bexhill and Battle" guardian_id="709"/>
+<consinfo canonical="Bexhill and Battle" guardian_name="Bexhill and Battle"/>
+<consinfo canonical="Bexhill and Battle" pa_id="54"/>
+<consinfo canonical="Bexleyheath and Crayford" guardian_id="711"/>
+<consinfo canonical="Bexleyheath and Crayford" guardian_name="Bexleyheath and Crayford"/>
+<consinfo canonical="Bexleyheath and Crayford" pa_id="55"/>
+<consinfo canonical="Birkenhead" guardian_id="713"/>
+<consinfo canonical="Birkenhead" guardian_name="Birkenhead"/>
+<consinfo canonical="Birkenhead" pa_id="56"/>
+<consinfo canonical="Birmingham, Edgbaston" guardian_id="714"/>
+<consinfo canonical="Birmingham, Edgbaston" guardian_name="Birmingham Edgbaston"/>
+<consinfo canonical="Birmingham, Edgbaston" pa_id="57"/>
+<consinfo canonical="Birmingham, Erdington" guardian_id="715"/>
+<consinfo canonical="Birmingham, Erdington" guardian_name="Birmingham Erdington"/>
+<consinfo canonical="Birmingham, Erdington" pa_id="58"/>
+<consinfo canonical="Birmingham, Hall Green" guardian_id="716"/>
+<consinfo canonical="Birmingham, Hall Green" guardian_name="Birmingham Hall Green"/>
+<consinfo canonical="Birmingham, Hall Green" pa_id="59"/>
+<consinfo canonical="Birmingham, Hodge Hill" guardian_id="717"/>
+<consinfo canonical="Birmingham, Hodge Hill" guardian_name="Birmingham Hodge Hill"/>
+<consinfo canonical="Birmingham, Hodge Hill" pa_id="60"/>
+<consinfo canonical="Birmingham, Ladywood" guardian_id="718"/>
+<consinfo canonical="Birmingham, Ladywood" guardian_name="Birmingham Ladywood"/>
+<consinfo canonical="Birmingham, Ladywood" pa_id="61"/>
+<consinfo canonical="Birmingham, Northfield" guardian_id="719"/>
+<consinfo canonical="Birmingham, Northfield" guardian_name="Birmingham Northfield"/>
+<consinfo canonical="Birmingham, Northfield" pa_id="62"/>
+<consinfo canonical="Birmingham, Perry Barr" guardian_id="720"/>
+<consinfo canonical="Birmingham, Perry Barr" guardian_name="Birmingham Perry Barr"/>
+<consinfo canonical="Birmingham, Perry Barr" pa_id="63"/>
+<consinfo canonical="Birmingham, Selly Oak" guardian_id="721"/>
+<consinfo canonical="Birmingham, Selly Oak" guardian_name="Birmingham Selly Oak"/>
+<consinfo canonical="Birmingham, Selly Oak" pa_id="64"/>
+<consinfo canonical="Birmingham, Yardley" guardian_id="725"/>
+<consinfo canonical="Birmingham, Yardley" guardian_name="Birmingham Yardley"/>
+<consinfo canonical="Birmingham, Yardley" pa_id="65"/>
+<consinfo canonical="Bishop Auckland" guardian_id="726"/>
+<consinfo canonical="Bishop Auckland" guardian_name="Bishop Auckland"/>
+<consinfo canonical="Bishop Auckland" pa_id="66"/>
+<consinfo canonical="Blackburn" guardian_id="728"/>
+<consinfo canonical="Blackburn" guardian_name="Blackburn"/>
+<consinfo canonical="Blackburn" pa_id="67"/>
+<consinfo canonical="Blackley and Broughton" guardian_id="1476"/>
+<consinfo canonical="Blackley and Broughton" guardian_name="Blackley and Broughton"/>
+<consinfo canonical="Blackley and Broughton" pa_id="68"/>
+<consinfo canonical="Blackpool North and Cleveleys" guardian_id="1477"/>
+<consinfo canonical="Blackpool North and Cleveleys" guardian_name="Blackpool North and Cleveleys"/>
+<consinfo canonical="Blackpool North and Cleveleys" pa_id="69"/>
+<consinfo canonical="Blackpool South" guardian_id="731"/>
+<consinfo canonical="Blackpool South" guardian_name="Blackpool South"/>
+<consinfo canonical="Blackpool South" pa_id="70"/>
+<consinfo canonical="Blaenau Gwent" guardian_id="732"/>
+<consinfo canonical="Blaenau Gwent" guardian_name="Blaenau Gwent"/>
+<consinfo canonical="Blaenau Gwent" pa_id="71"/>
+<consinfo canonical="Blaydon" guardian_id="733"/>
+<consinfo canonical="Blaydon" guardian_name="Blaydon"/>
+<consinfo canonical="Blaydon" pa_id="72"/>
+<consinfo canonical="Blyth Valley" guardian_id="734"/>
+<consinfo canonical="Blyth Valley" guardian_name="Blyth Valley"/>
+<consinfo canonical="Blyth Valley" pa_id="73"/>
+<consinfo canonical="Bognor Regis and Littlehampton" guardian_id="735"/>
+<consinfo canonical="Bognor Regis and Littlehampton" guardian_name="Bognor Regis and Littlehampton"/>
+<consinfo canonical="Bognor Regis and Littlehampton" pa_id="74"/>
+<consinfo canonical="Bolsover" guardian_id="736"/>
+<consinfo canonical="Bolsover" guardian_name="Bolsover"/>
+<consinfo canonical="Bolsover" pa_id="75"/>
+<consinfo canonical="Bolton North East" guardian_id="737"/>
+<consinfo canonical="Bolton North East" guardian_name="Bolton North East"/>
+<consinfo canonical="Bolton North East" pa_id="76"/>
+<consinfo canonical="Bolton South East" guardian_id="738"/>
+<consinfo canonical="Bolton South East" guardian_name="Bolton South East"/>
+<consinfo canonical="Bolton South East" pa_id="77"/>
+<consinfo canonical="Bolton West" guardian_id="739"/>
+<consinfo canonical="Bolton West" guardian_name="Bolton West"/>
+<consinfo canonical="Bolton West" pa_id="78"/>
+<consinfo canonical="Bootle" guardian_id="741"/>
+<consinfo canonical="Bootle" guardian_name="Bootle"/>
+<consinfo canonical="Bootle" pa_id="79"/>
+<consinfo canonical="Boston and Skegness" guardian_id="742"/>
+<consinfo canonical="Boston and Skegness" guardian_name="Boston and Skegness"/>
+<consinfo canonical="Boston and Skegness" pa_id="80"/>
+<consinfo canonical="Bosworth" guardian_id="743"/>
+<consinfo canonical="Bosworth" guardian_name="Bosworth"/>
+<consinfo canonical="Bosworth" pa_id="81"/>
+<consinfo canonical="Bournemouth East" guardian_id="744"/>
+<consinfo canonical="Bournemouth East" guardian_name="Bournemouth East"/>
+<consinfo canonical="Bournemouth East" pa_id="82"/>
+<consinfo canonical="Bournemouth West" guardian_id="745"/>
+<consinfo canonical="Bournemouth West" guardian_name="Bournemouth West"/>
+<consinfo canonical="Bournemouth West" pa_id="83"/>
+<consinfo canonical="Bracknell" guardian_id="747"/>
+<consinfo canonical="Bracknell" guardian_name="Bracknell"/>
+<consinfo canonical="Bracknell" pa_id="84"/>
+<consinfo canonical="Bradford East" guardian_id="1478"/>
+<consinfo canonical="Bradford East" guardian_name="Bradford East"/>
+<consinfo canonical="Bradford East" pa_id="85"/>
+<consinfo canonical="Bradford South" guardian_id="749"/>
+<consinfo canonical="Bradford South" guardian_name="Bradford South"/>
+<consinfo canonical="Bradford South" pa_id="86"/>
+<consinfo canonical="Bradford West" guardian_id="750"/>
+<consinfo canonical="Bradford West" guardian_name="Bradford West"/>
+<consinfo canonical="Bradford West" pa_id="87"/>
+<consinfo canonical="Braintree" guardian_id="751"/>
+<consinfo canonical="Braintree" guardian_name="Braintree"/>
+<consinfo canonical="Braintree" pa_id="88"/>
+<consinfo canonical="Brecon and Radnorshire" guardian_id="752"/>
+<consinfo canonical="Brecon and Radnorshire" guardian_name="Brecon and Radnorshire"/>
+<consinfo canonical="Brecon and Radnorshire" pa_id="89"/>
+<consinfo canonical="Brent Central" guardian_id="1479"/>
+<consinfo canonical="Brent Central" guardian_name="Brent Central"/>
+<consinfo canonical="Brent Central" pa_id="90"/>
+<consinfo canonical="Brent North" guardian_id="754"/>
+<consinfo canonical="Brent North" guardian_name="Brent North"/>
+<consinfo canonical="Brent North" pa_id="91"/>
+<consinfo canonical="Brentford and Isleworth" guardian_id="756"/>
+<consinfo canonical="Brentford and Isleworth" guardian_name="Brentford and Isleworth"/>
+<consinfo canonical="Brentford and Isleworth" pa_id="92"/>
+<consinfo canonical="Brentwood and Ongar" guardian_id="757"/>
+<consinfo canonical="Brentwood and Ongar" guardian_name="Brentwood and Ongar"/>
+<consinfo canonical="Brentwood and Ongar" pa_id="93"/>
+<consinfo canonical="Bridgend" guardian_id="758"/>
+<consinfo canonical="Bridgend" guardian_name="Bridgend"/>
+<consinfo canonical="Bridgend" pa_id="94"/>
+<consinfo canonical="Bridgwater and West Somerset" guardian_id="1480"/>
+<consinfo canonical="Bridgwater and West Somerset" guardian_name="Bridgwater and Somerset West"/>
+<consinfo canonical="Bridgwater and West Somerset" pa_id="95"/>
+<consinfo canonical="Brigg and Goole" guardian_id="762"/>
+<consinfo canonical="Brigg and Goole" guardian_name="Brigg and Goole"/>
+<consinfo canonical="Brigg and Goole" pa_id="96"/>
+<consinfo canonical="Brighton, Kemptown" guardian_id="763"/>
+<consinfo canonical="Brighton, Kemptown" guardian_name="Brighton Kemptown"/>
+<consinfo canonical="Brighton, Kemptown" pa_id="97"/>
+<consinfo canonical="Brighton, Pavilion" guardian_id="764"/>
+<consinfo canonical="Brighton, Pavilion" guardian_name="Brighton Pavilion"/>
+<consinfo canonical="Brighton, Pavilion" pa_id="98"/>
+<consinfo canonical="Bristol East" guardian_id="765"/>
+<consinfo canonical="Bristol East" guardian_name="Bristol East"/>
+<consinfo canonical="Bristol East" pa_id="99"/>
+<consinfo canonical="Bristol North West" guardian_id="766"/>
+<consinfo canonical="Bristol North West" guardian_name="Bristol North West"/>
+<consinfo canonical="Bristol North West" pa_id="100"/>
+<consinfo canonical="Bristol South" guardian_id="767"/>
+<consinfo canonical="Bristol South" guardian_name="Bristol South"/>
+<consinfo canonical="Bristol South" pa_id="101"/>
+<consinfo canonical="Bristol West" guardian_id="768"/>
+<consinfo canonical="Bristol West" guardian_name="Bristol West"/>
+<consinfo canonical="Bristol West" pa_id="102"/>
+<consinfo canonical="Broadland" guardian_id="1481"/>
+<consinfo canonical="Broadland" guardian_name="Broadland"/>
+<consinfo canonical="Broadland" pa_id="103"/>
+<consinfo canonical="Bromley and Chislehurst" guardian_id="769"/>
+<consinfo canonical="Bromley and Chislehurst" guardian_name="Bromley and Chislehurst"/>
+<consinfo canonical="Bromley and Chislehurst" pa_id="104"/>
+<consinfo canonical="Bromsgrove" guardian_id="770"/>
+<consinfo canonical="Bromsgrove" guardian_name="Bromsgrove"/>
+<consinfo canonical="Bromsgrove" pa_id="105"/>
+<consinfo canonical="Broxbourne" guardian_id="771"/>
+<consinfo canonical="Broxbourne" guardian_name="Broxbourne"/>
+<consinfo canonical="Broxbourne" pa_id="106"/>
+<consinfo canonical="Broxtowe" guardian_id="772"/>
+<consinfo canonical="Broxtowe" guardian_name="Broxtowe"/>
+<consinfo canonical="Broxtowe" pa_id="107"/>
+<consinfo canonical="Buckingham" guardian_id="773"/>
+<consinfo canonical="Buckingham" guardian_name="Buckingham"/>
+<consinfo canonical="Buckingham" pa_id="108"/>
+<consinfo canonical="Burnley" guardian_id="774"/>
+<consinfo canonical="Burnley" guardian_name="Burnley"/>
+<consinfo canonical="Burnley" pa_id="109"/>
+<consinfo canonical="Burton" guardian_id="775"/>
+<consinfo canonical="Burton" guardian_name="Burton"/>
+<consinfo canonical="Burton" pa_id="110"/>
+<consinfo canonical="Bury North" guardian_id="776"/>
+<consinfo canonical="Bury North" guardian_name="Bury North"/>
+<consinfo canonical="Bury North" pa_id="111"/>
+<consinfo canonical="Bury South" guardian_id="777"/>
+<consinfo canonical="Bury South" guardian_name="Bury South"/>
+<consinfo canonical="Bury South" pa_id="112"/>
+<consinfo canonical="Bury St Edmunds" guardian_id="778"/>
+<consinfo canonical="Bury St Edmunds" guardian_name="Bury St Edmunds"/>
+<consinfo canonical="Bury St Edmunds" pa_id="113"/>
+<consinfo canonical="Caerphilly" guardian_id="780"/>
+<consinfo canonical="Caerphilly" guardian_name="Caerphilly"/>
+<consinfo canonical="Caerphilly" pa_id="114"/>
+<consinfo canonical="Caithness, Sutherland and Easter Ross" guardian_id="782"/>
+<consinfo canonical="Caithness, Sutherland and Easter Ross" guardian_name="Caithness, Sutherland and Easter Ross"/>
+<consinfo canonical="Caithness, Sutherland and Easter Ross" pa_id="115"/>
+<consinfo canonical="Calder Valley" guardian_id="783"/>
+<consinfo canonical="Calder Valley" guardian_name="Calder Valley"/>
+<consinfo canonical="Calder Valley" pa_id="116"/>
+<consinfo canonical="Camberwell and Peckham" guardian_id="784"/>
+<consinfo canonical="Camberwell and Peckham" guardian_name="Camberwell and Peckham"/>
+<consinfo canonical="Camberwell and Peckham" pa_id="117"/>
+<consinfo canonical="Camborne and Redruth" guardian_id="1482"/>
+<consinfo canonical="Camborne and Redruth" guardian_name="Camborne and Redruth"/>
+<consinfo canonical="Camborne and Redruth" pa_id="118"/>
+<consinfo canonical="Cambridge" guardian_id="785"/>
+<consinfo canonical="Cambridge" guardian_name="Cambridge"/>
+<consinfo canonical="Cambridge" pa_id="119"/>
+<consinfo canonical="North East Cambridgeshire" guardian_id="1171"/>
+<consinfo canonical="North East Cambridgeshire" guardian_name="Cambridgeshire North East"/>
+<consinfo canonical="North East Cambridgeshire" pa_id="120"/>
+<consinfo canonical="North West Cambridgeshire" guardian_id="1186"/>
+<consinfo canonical="North West Cambridgeshire" guardian_name="Cambridgeshire North West"/>
+<consinfo canonical="North West Cambridgeshire" pa_id="121"/>
+<consinfo canonical="South Cambridgeshire" guardian_id="1294"/>
+<consinfo canonical="South Cambridgeshire" guardian_name="Cambridgeshire South"/>
+<consinfo canonical="South Cambridgeshire" pa_id="122"/>
+<consinfo canonical="South East Cambridgeshire" guardian_id="1298"/>
+<consinfo canonical="South East Cambridgeshire" guardian_name="Cambridgeshire South East"/>
+<consinfo canonical="South East Cambridgeshire" pa_id="123"/>
+<consinfo canonical="Cannock Chase" guardian_id="786"/>
+<consinfo canonical="Cannock Chase" guardian_name="Cannock Chase"/>
+<consinfo canonical="Cannock Chase" pa_id="124"/>
+<consinfo canonical="Canterbury" guardian_id="788"/>
+<consinfo canonical="Canterbury" guardian_name="Canterbury"/>
+<consinfo canonical="Canterbury" pa_id="125"/>
+<consinfo canonical="Cardiff Central" guardian_id="789"/>
+<consinfo canonical="Cardiff Central" guardian_name="Cardiff Central"/>
+<consinfo canonical="Cardiff Central" pa_id="126"/>
+<consinfo canonical="Cardiff North" guardian_id="790"/>
+<consinfo canonical="Cardiff North" guardian_name="Cardiff North"/>
+<consinfo canonical="Cardiff North" pa_id="127"/>
+<consinfo canonical="Cardiff South and Penarth" guardian_id="791"/>
+<consinfo canonical="Cardiff South and Penarth" guardian_name="Cardiff South and Penarth"/>
+<consinfo canonical="Cardiff South and Penarth" pa_id="128"/>
+<consinfo canonical="Cardiff West" guardian_id="792"/>
+<consinfo canonical="Cardiff West" guardian_name="Cardiff West"/>
+<consinfo canonical="Cardiff West" pa_id="129"/>
+<consinfo canonical="Carlisle" guardian_id="793"/>
+<consinfo canonical="Carlisle" guardian_name="Carlisle"/>
+<consinfo canonical="Carlisle" pa_id="130"/>
+<consinfo canonical="Carmarthen East and Dinefwr" guardian_id="795"/>
+<consinfo canonical="Carmarthen East and Dinefwr" guardian_name="Carmarthen East and Dinefwr"/>
+<consinfo canonical="Carmarthen East and Dinefwr" pa_id="131"/>
+<consinfo canonical="Carmarthen West and South Pembrokeshire" guardian_id="796"/>
+<consinfo canonical="Carmarthen West and South Pembrokeshire" guardian_name="Carmarthen West and Pembrokeshire South"/>
+<consinfo canonical="Carmarthen West and South Pembrokeshire" pa_id="132"/>
+<consinfo canonical="Carshalton and Wallington" guardian_id="798"/>
+<consinfo canonical="Carshalton and Wallington" guardian_name="Carshalton and Wallington"/>
+<consinfo canonical="Carshalton and Wallington" pa_id="133"/>
+<consinfo canonical="Castle Point" guardian_id="799"/>
+<consinfo canonical="Castle Point" guardian_name="Castle Point"/>
+<consinfo canonical="Castle Point" pa_id="134"/>
+<consinfo canonical="Ceredigion" guardian_id="803"/>
+<consinfo canonical="Ceredigion" guardian_name="Ceredigion"/>
+<consinfo canonical="Ceredigion" pa_id="135"/>
+<consinfo canonical="Charnwood" guardian_id="805"/>
+<consinfo canonical="Charnwood" guardian_name="Charnwood"/>
+<consinfo canonical="Charnwood" pa_id="136"/>
+<consinfo canonical="Chatham and Aylesford" guardian_id="806"/>
+<consinfo canonical="Chatham and Aylesford" guardian_name="Chatham and Aylesford"/>
+<consinfo canonical="Chatham and Aylesford" pa_id="137"/>
+<consinfo canonical="Cheadle" guardian_id="807"/>
+<consinfo canonical="Cheadle" guardian_name="Cheadle"/>
+<consinfo canonical="Cheadle" pa_id="138"/>
+<consinfo canonical="Chelmsford" guardian_id="808"/>
+<consinfo canonical="Chelmsford" guardian_name="Chelmsford"/>
+<consinfo canonical="Chelmsford" pa_id="139"/>
+<consinfo canonical="Chelsea and Fulham" guardian_id="1483"/>
+<consinfo canonical="Chelsea and Fulham" guardian_name="Chelsea and Fulham"/>
+<consinfo canonical="Chelsea and Fulham" pa_id="140"/>
+<consinfo canonical="Cheltenham" guardian_id="811"/>
+<consinfo canonical="Cheltenham" guardian_name="Cheltenham"/>
+<consinfo canonical="Cheltenham" pa_id="141"/>
+<consinfo canonical="Chesham and Amersham" guardian_id="813"/>
+<consinfo canonical="Chesham and Amersham" guardian_name="Chesham and Amersham"/>
+<consinfo canonical="Chesham and Amersham" pa_id="142"/>
+<consinfo canonical="Chesterfield" guardian_id="814"/>
+<consinfo canonical="Chesterfield" guardian_name="Chesterfield"/>
+<consinfo canonical="Chesterfield" pa_id="144"/>
+<consinfo canonical="Chichester" guardian_id="815"/>
+<consinfo canonical="Chichester" guardian_name="Chichester"/>
+<consinfo canonical="Chichester" pa_id="145"/>
+<consinfo canonical="Chingford and Woodford Green" guardian_id="817"/>
+<consinfo canonical="Chingford and Woodford Green" guardian_name="Chingford and Woodford Green"/>
+<consinfo canonical="Chingford and Woodford Green" pa_id="146"/>
+<consinfo canonical="Chippenham" guardian_id="1484"/>
+<consinfo canonical="Chippenham" guardian_name="Chippenham"/>
+<consinfo canonical="Chippenham" pa_id="147"/>
+<consinfo canonical="Chipping Barnet" guardian_id="818"/>
+<consinfo canonical="Chipping Barnet" guardian_name="Chipping Barnet"/>
+<consinfo canonical="Chipping Barnet" pa_id="148"/>
+<consinfo canonical="Chorley" guardian_id="820"/>
+<consinfo canonical="Chorley" guardian_name="Chorley"/>
+<consinfo canonical="Chorley" pa_id="149"/>
+<consinfo canonical="Christchurch" guardian_id="821"/>
+<consinfo canonical="Christchurch" guardian_name="Christchurch"/>
+<consinfo canonical="Christchurch" pa_id="150"/>
+<consinfo canonical="Cities of London and Westminster" guardian_id="823"/>
+<consinfo canonical="Cities of London and Westminster" guardian_name="Cities of London and Westminster"/>
+<consinfo canonical="Cities of London and Westminster" pa_id="151"/>
+<consinfo canonical="City of Chester" guardian_id="824"/>
+<consinfo canonical="City of Chester" guardian_name="City of Chester"/>
+<consinfo canonical="City of Chester" pa_id="143"/>
+<consinfo canonical="City of Durham" guardian_id="825"/>
+<consinfo canonical="City of Durham" guardian_name="City of Durham"/>
+<consinfo canonical="City of Durham" pa_id="214"/>
+<consinfo canonical="Clacton" guardian_id="1485"/>
+<consinfo canonical="Clacton" guardian_name="Clacton"/>
+<consinfo canonical="Clacton" pa_id="152"/>
+<consinfo canonical="Cleethorpes" guardian_id="829"/>
+<consinfo canonical="Cleethorpes" guardian_name="Cleethorpes"/>
+<consinfo canonical="Cleethorpes" pa_id="153"/>
+<consinfo canonical="Clwyd South" guardian_id="831"/>
+<consinfo canonical="Clwyd South" guardian_name="Clwyd South"/>
+<consinfo canonical="Clwyd South" pa_id="154"/>
+<consinfo canonical="Clwyd West" guardian_id="833"/>
+<consinfo canonical="Clwyd West" guardian_name="Clwyd West"/>
+<consinfo canonical="Clwyd West" pa_id="155"/>
+<consinfo canonical="Coatbridge, Chryston and Bellshill" guardian_id="836"/>
+<consinfo canonical="Coatbridge, Chryston and Bellshill" guardian_name="Coatbridge, Chryston and Bellshill"/>
+<consinfo canonical="Coatbridge, Chryston and Bellshill" pa_id="156"/>
+<consinfo canonical="Colchester" guardian_id="837"/>
+<consinfo canonical="Colchester" guardian_name="Colchester"/>
+<consinfo canonical="Colchester" pa_id="157"/>
+<consinfo canonical="Colne Valley" guardian_id="840"/>
+<consinfo canonical="Colne Valley" guardian_name="Colne Valley"/>
+<consinfo canonical="Colne Valley" pa_id="158"/>
+<consinfo canonical="Congleton" guardian_id="841"/>
+<consinfo canonical="Congleton" guardian_name="Congleton"/>
+<consinfo canonical="Congleton" pa_id="159"/>
+<consinfo canonical="Copeland" guardian_id="843"/>
+<consinfo canonical="Copeland" guardian_name="Copeland"/>
+<consinfo canonical="Copeland" pa_id="160"/>
+<consinfo canonical="Corby" guardian_id="844"/>
+<consinfo canonical="Corby" guardian_name="Corby"/>
+<consinfo canonical="Corby" pa_id="161"/>
+<consinfo canonical="North Cornwall" guardian_id="1166"/>
+<consinfo canonical="North Cornwall" guardian_name="Cornwall North"/>
+<consinfo canonical="North Cornwall" pa_id="162"/>
+<consinfo canonical="South East Cornwall" guardian_id="1299"/>
+<consinfo canonical="South East Cornwall" guardian_name="Cornwall South East"/>
+<consinfo canonical="South East Cornwall" pa_id="163"/>
+<consinfo canonical="The Cotswolds" guardian_id="845"/>
+<consinfo canonical="The Cotswolds" guardian_name="Cotswold"/>
+<consinfo canonical="The Cotswolds" pa_id="164"/>
+<consinfo canonical="Coventry North East" guardian_id="846"/>
+<consinfo canonical="Coventry North East" guardian_name="Coventry North East"/>
+<consinfo canonical="Coventry North East" pa_id="165"/>
+<consinfo canonical="Coventry North West" guardian_id="847"/>
+<consinfo canonical="Coventry North West" guardian_name="Coventry North West"/>
+<consinfo canonical="Coventry North West" pa_id="166"/>
+<consinfo canonical="Coventry South" guardian_id="848"/>
+<consinfo canonical="Coventry South" guardian_name="Coventry South"/>
+<consinfo canonical="Coventry South" pa_id="167"/>
+<consinfo canonical="Crawley" guardian_id="851"/>
+<consinfo canonical="Crawley" guardian_name="Crawley"/>
+<consinfo canonical="Crawley" pa_id="168"/>
+<consinfo canonical="Crewe and Nantwich" guardian_id="852"/>
+<consinfo canonical="Crewe and Nantwich" guardian_name="Crewe and Nantwich"/>
+<consinfo canonical="Crewe and Nantwich" pa_id="169"/>
+<consinfo canonical="Croydon Central" guardian_id="854"/>
+<consinfo canonical="Croydon Central" guardian_name="Croydon Central"/>
+<consinfo canonical="Croydon Central" pa_id="170"/>
+<consinfo canonical="Croydon North" guardian_id="855"/>
+<consinfo canonical="Croydon North" guardian_name="Croydon North"/>
+<consinfo canonical="Croydon North" pa_id="171"/>
+<consinfo canonical="Croydon South" guardian_id="858"/>
+<consinfo canonical="Croydon South" guardian_name="Croydon South"/>
+<consinfo canonical="Croydon South" pa_id="172"/>
+<consinfo canonical="Cumbernauld, Kilsyth and Kirkintilloch East" guardian_id="859"/>
+<consinfo canonical="Cumbernauld, Kilsyth and Kirkintilloch East" guardian_name="Cumbernauld, Kilsyth and Kirkintilloch East"/>
+<consinfo canonical="Cumbernauld, Kilsyth and Kirkintilloch East" pa_id="173"/>
+<consinfo canonical="Cynon Valley" guardian_id="862"/>
+<consinfo canonical="Cynon Valley" guardian_name="Cynon Valley"/>
+<consinfo canonical="Cynon Valley" pa_id="174"/>
+<consinfo canonical="Dagenham and Rainham" guardian_id="1486"/>
+<consinfo canonical="Dagenham and Rainham" guardian_name="Dagenham and Rainham"/>
+<consinfo canonical="Dagenham and Rainham" pa_id="175"/>
+<consinfo canonical="Darlington" guardian_id="864"/>
+<consinfo canonical="Darlington" guardian_name="Darlington"/>
+<consinfo canonical="Darlington" pa_id="176"/>
+<consinfo canonical="Dartford" guardian_id="865"/>
+<consinfo canonical="Dartford" guardian_name="Dartford"/>
+<consinfo canonical="Dartford" pa_id="177"/>
+<consinfo canonical="Daventry" guardian_id="866"/>
+<consinfo canonical="Daventry" guardian_name="Daventry"/>
+<consinfo canonical="Daventry" pa_id="178"/>
+<consinfo canonical="Delyn" guardian_id="868"/>
+<consinfo canonical="Delyn" guardian_name="Delyn"/>
+<consinfo canonical="Delyn" pa_id="179"/>
+<consinfo canonical="Denton and Reddish" guardian_id="869"/>
+<consinfo canonical="Denton and Reddish" guardian_name="Denton and Reddish"/>
+<consinfo canonical="Denton and Reddish" pa_id="180"/>
+<consinfo canonical="Derby North" guardian_id="870"/>
+<consinfo canonical="Derby North" guardian_name="Derby North"/>
+<consinfo canonical="Derby North" pa_id="181"/>
+<consinfo canonical="Derby South" guardian_id="871"/>
+<consinfo canonical="Derby South" guardian_name="Derby South"/>
+<consinfo canonical="Derby South" pa_id="182"/>
+<consinfo canonical="Derbyshire Dales" guardian_id="1487"/>
+<consinfo canonical="Derbyshire Dales" guardian_name="Derbyshire Dales"/>
+<consinfo canonical="Derbyshire Dales" pa_id="183"/>
+<consinfo canonical="Mid Derbyshire" guardian_id="1488"/>
+<consinfo canonical="Mid Derbyshire" guardian_name="Derbyshire Mid"/>
+<consinfo canonical="Mid Derbyshire" pa_id="184"/>
+<consinfo canonical="North East Derbyshire" guardian_id="1172"/>
+<consinfo canonical="North East Derbyshire" guardian_name="Derbyshire North East"/>
+<consinfo canonical="North East Derbyshire" pa_id="185"/>
+<consinfo canonical="South Derbyshire" guardian_id="1295"/>
+<consinfo canonical="South Derbyshire" guardian_name="Derbyshire South"/>
+<consinfo canonical="South Derbyshire" pa_id="186"/>
+<consinfo canonical="Devizes" guardian_id="872"/>
+<consinfo canonical="Devizes" guardian_name="Devizes"/>
+<consinfo canonical="Devizes" pa_id="187"/>
+<consinfo canonical="Central Devon" guardian_id="1489"/>
+<consinfo canonical="Central Devon" guardian_name="Devon Central"/>
+<consinfo canonical="Central Devon" pa_id="188"/>
+<consinfo canonical="East Devon" guardian_id="900"/>
+<consinfo canonical="East Devon" guardian_name="Devon East"/>
+<consinfo canonical="East Devon" pa_id="189"/>
+<consinfo canonical="North Devon" guardian_id="1167"/>
+<consinfo canonical="North Devon" guardian_name="Devon North"/>
+<consinfo canonical="North Devon" pa_id="190"/>
+<consinfo canonical="South West Devon" guardian_id="1312"/>
+<consinfo canonical="South West Devon" guardian_name="Devon South West"/>
+<consinfo canonical="South West Devon" pa_id="191"/>
+<consinfo canonical="Torridge and West Devon" guardian_id="1376"/>
+<consinfo canonical="Torridge and West Devon" guardian_name="Devon West and Torridge"/>
+<consinfo canonical="Torridge and West Devon" pa_id="192"/>
+<consinfo canonical="Dewsbury" guardian_id="873"/>
+<consinfo canonical="Dewsbury" guardian_name="Dewsbury"/>
+<consinfo canonical="Dewsbury" pa_id="193"/>
+<consinfo canonical="Don Valley" guardian_id="874"/>
+<consinfo canonical="Don Valley" guardian_name="Don Valley"/>
+<consinfo canonical="Don Valley" pa_id="194"/>
+<consinfo canonical="Doncaster Central" guardian_id="875"/>
+<consinfo canonical="Doncaster Central" guardian_name="Doncaster Central"/>
+<consinfo canonical="Doncaster Central" pa_id="195"/>
+<consinfo canonical="Doncaster North" guardian_id="876"/>
+<consinfo canonical="Doncaster North" guardian_name="Doncaster North"/>
+<consinfo canonical="Doncaster North" pa_id="196"/>
+<consinfo canonical="Mid Dorset and North Poole" guardian_id="1121"/>
+<consinfo canonical="Mid Dorset and North Poole" guardian_name="Dorset Mid and Poole North"/>
+<consinfo canonical="Mid Dorset and North Poole" pa_id="197"/>
+<consinfo canonical="North Dorset" guardian_id="1168"/>
+<consinfo canonical="North Dorset" guardian_name="Dorset North"/>
+<consinfo canonical="North Dorset" pa_id="198"/>
+<consinfo canonical="South Dorset" guardian_id="1296"/>
+<consinfo canonical="South Dorset" guardian_name="Dorset South"/>
+<consinfo canonical="South Dorset" pa_id="199"/>
+<consinfo canonical="West Dorset" guardian_id="1422"/>
+<consinfo canonical="West Dorset" guardian_name="Dorset West"/>
+<consinfo canonical="West Dorset" pa_id="200"/>
+<consinfo canonical="Dover" guardian_id="877"/>
+<consinfo canonical="Dover" guardian_name="Dover"/>
+<consinfo canonical="Dover" pa_id="201"/>
+<consinfo canonical="North Down" guardian_id="1169"/>
+<consinfo canonical="North Down" guardian_name="Down North"/>
+<consinfo canonical="North Down" pa_id="202"/>
+<consinfo canonical="South Down" guardian_id="1297"/>
+<consinfo canonical="South Down" guardian_name="Down South"/>
+<consinfo canonical="South Down" pa_id="203"/>
+<consinfo canonical="Dudley North" guardian_id="879"/>
+<consinfo canonical="Dudley North" guardian_name="Dudley North"/>
+<consinfo canonical="Dudley North" pa_id="204"/>
+<consinfo canonical="Dudley South" guardian_id="880"/>
+<consinfo canonical="Dudley South" guardian_name="Dudley South"/>
+<consinfo canonical="Dudley South" pa_id="205"/>
+<consinfo canonical="Dulwich and West Norwood" guardian_id="883"/>
+<consinfo canonical="Dulwich and West Norwood" guardian_name="Dulwich and West Norwood"/>
+<consinfo canonical="Dulwich and West Norwood" pa_id="206"/>
+<consinfo canonical="Dumfries and Galloway" guardian_id="952"/>
+<consinfo canonical="Dumfries and Galloway" guardian_name="Dumfries and Galloway"/>
+<consinfo canonical="Dumfries and Galloway" pa_id="207"/>
+<consinfo canonical="Dumfriesshire, Clydesdale and Tweeddale" guardian_id="885"/>
+<consinfo canonical="Dumfriesshire, Clydesdale and Tweeddale" guardian_name="Dumfriesshire, Clydesdale and Tweeddale"/>
+<consinfo canonical="Dumfriesshire, Clydesdale and Tweeddale" pa_id="208"/>
+<consinfo canonical="East Dunbartonshire" guardian_id="1344"/>
+<consinfo canonical="East Dunbartonshire" guardian_name="Dunbartonshire East"/>
+<consinfo canonical="East Dunbartonshire" pa_id="209"/>
+<consinfo canonical="West Dunbartonshire" guardian_id="884"/>
+<consinfo canonical="West Dunbartonshire" guardian_name="Dunbartonshire West"/>
+<consinfo canonical="West Dunbartonshire" pa_id="210"/>
+<consinfo canonical="Dundee East" guardian_id="886"/>
+<consinfo canonical="Dundee East" guardian_name="Dundee East"/>
+<consinfo canonical="Dundee East" pa_id="211"/>
+<consinfo canonical="Dundee West" guardian_id="887"/>
+<consinfo canonical="Dundee West" guardian_name="Dundee West"/>
+<consinfo canonical="Dundee West" pa_id="212"/>
+<consinfo canonical="Dunfermline and West Fife" guardian_id="889"/>
+<consinfo canonical="Dunfermline and West Fife" guardian_name="Dunfermline and Fife West"/>
+<consinfo canonical="Dunfermline and West Fife" pa_id="213"/>
+<consinfo canonical="North Durham" guardian_id="890"/>
+<consinfo canonical="North Durham" guardian_name="Durham North"/>
+<consinfo canonical="North Durham" pa_id="215"/>
+<consinfo canonical="North West Durham" guardian_id="891"/>
+<consinfo canonical="North West Durham" guardian_name="Durham North West"/>
+<consinfo canonical="North West Durham" pa_id="216"/>
+<consinfo canonical="Dwyfor Meirionnydd" guardian_id="1490"/>
+<consinfo canonical="Dwyfor Meirionnydd" guardian_name="Dwyfor Meirionnydd"/>
+<consinfo canonical="Dwyfor Meirionnydd" pa_id="217"/>
+<consinfo canonical="Ealing Central and Acton" guardian_id="1491"/>
+<consinfo canonical="Ealing Central and Acton" guardian_name="Ealing Central and Acton"/>
+<consinfo canonical="Ealing Central and Acton" pa_id="218"/>
+<consinfo canonical="Ealing North" guardian_id="894"/>
+<consinfo canonical="Ealing North" guardian_name="Ealing North"/>
+<consinfo canonical="Ealing North" pa_id="219"/>
+<consinfo canonical="Ealing, Southall" guardian_id="895"/>
+<consinfo canonical="Ealing, Southall" guardian_name="Ealing Southall"/>
+<consinfo canonical="Ealing, Southall" pa_id="220"/>
+<consinfo canonical="Easington" guardian_id="897"/>
+<consinfo canonical="Easington" guardian_name="Easington"/>
+<consinfo canonical="Easington" pa_id="221"/>
+<consinfo canonical="East Ham" guardian_id="901"/>
+<consinfo canonical="East Ham" guardian_name="East Ham"/>
+<consinfo canonical="East Ham" pa_id="222"/>
+<consinfo canonical="East Kilbride, Strathaven and Lesmahagow" guardian_id="903"/>
+<consinfo canonical="East Kilbride, Strathaven and Lesmahagow" guardian_name="East Kilbride, Strathaven and Lesmahagow"/>
+<consinfo canonical="East Kilbride, Strathaven and Lesmahagow" pa_id="223"/>
+<consinfo canonical="East Lothian" guardian_id="905"/>
+<consinfo canonical="East Lothian" guardian_name="East Lothian"/>
+<consinfo canonical="East Lothian" pa_id="224"/>
+<consinfo canonical="Eastbourne" guardian_id="908"/>
+<consinfo canonical="Eastbourne" guardian_name="Eastbourne"/>
+<consinfo canonical="Eastbourne" pa_id="225"/>
+<consinfo canonical="Eastleigh" guardian_id="909"/>
+<consinfo canonical="Eastleigh" guardian_name="Eastleigh"/>
+<consinfo canonical="Eastleigh" pa_id="226"/>
+<consinfo canonical="Eddisbury" guardian_id="912"/>
+<consinfo canonical="Eddisbury" guardian_name="Eddisbury"/>
+<consinfo canonical="Eddisbury" pa_id="227"/>
+<consinfo canonical="Edinburgh East" guardian_id="915"/>
+<consinfo canonical="Edinburgh East" guardian_name="Edinburgh East"/>
+<consinfo canonical="Edinburgh East" pa_id="228"/>
+<consinfo canonical="Edinburgh North and Leith" guardian_id="917"/>
+<consinfo canonical="Edinburgh North and Leith" guardian_name="Edinburgh North and Leith"/>
+<consinfo canonical="Edinburgh North and Leith" pa_id="229"/>
+<consinfo canonical="Edinburgh South" guardian_id="919"/>
+<consinfo canonical="Edinburgh South" guardian_name="Edinburgh South"/>
+<consinfo canonical="Edinburgh South" pa_id="230"/>
+<consinfo canonical="Edinburgh South West" guardian_id="918"/>
+<consinfo canonical="Edinburgh South West" guardian_name="Edinburgh South West"/>
+<consinfo canonical="Edinburgh South West" pa_id="231"/>
+<consinfo canonical="Edinburgh West" guardian_id="920"/>
+<consinfo canonical="Edinburgh West" guardian_name="Edinburgh West"/>
+<consinfo canonical="Edinburgh West" pa_id="232"/>
+<consinfo canonical="Edmonton" guardian_id="921"/>
+<consinfo canonical="Edmonton" guardian_name="Edmonton"/>
+<consinfo canonical="Edmonton" pa_id="233"/>
+<consinfo canonical="Ellesmere Port and Neston" guardian_id="922"/>
+<consinfo canonical="Ellesmere Port and Neston" guardian_name="Ellesmere Port and Neston"/>
+<consinfo canonical="Ellesmere Port and Neston" pa_id="234"/>
+<consinfo canonical="Elmet and Rothwell" guardian_id="1492"/>
+<consinfo canonical="Elmet and Rothwell" guardian_name="Elmet and Rothwell"/>
+<consinfo canonical="Elmet and Rothwell" pa_id="235"/>
+<consinfo canonical="Eltham" guardian_id="924"/>
+<consinfo canonical="Eltham" guardian_name="Eltham"/>
+<consinfo canonical="Eltham" pa_id="236"/>
+<consinfo canonical="Enfield North" guardian_id="925"/>
+<consinfo canonical="Enfield North" guardian_name="Enfield North"/>
+<consinfo canonical="Enfield North" pa_id="237"/>
+<consinfo canonical="Enfield, Southgate" guardian_id="926"/>
+<consinfo canonical="Enfield, Southgate" guardian_name="Enfield Southgate"/>
+<consinfo canonical="Enfield, Southgate" pa_id="238"/>
+<consinfo canonical="Epping Forest" guardian_id="927"/>
+<consinfo canonical="Epping Forest" guardian_name="Epping Forest"/>
+<consinfo canonical="Epping Forest" pa_id="239"/>
+<consinfo canonical="Epsom and Ewell" guardian_id="928"/>
+<consinfo canonical="Epsom and Ewell" guardian_name="Epsom and Ewell"/>
+<consinfo canonical="Epsom and Ewell" pa_id="240"/>
+<consinfo canonical="Erewash" guardian_id="929"/>
+<consinfo canonical="Erewash" guardian_name="Erewash"/>
+<consinfo canonical="Erewash" pa_id="241"/>
+<consinfo canonical="Erith and Thamesmead" guardian_id="931"/>
+<consinfo canonical="Erith and Thamesmead" guardian_name="Erith and Thamesmead"/>
+<consinfo canonical="Erith and Thamesmead" pa_id="242"/>
+<consinfo canonical="Esher and Walton" guardian_id="933"/>
+<consinfo canonical="Esher and Walton" guardian_name="Esher and Walton"/>
+<consinfo canonical="Esher and Walton" pa_id="243"/>
+<consinfo canonical="Exeter" guardian_id="934"/>
+<consinfo canonical="Exeter" guardian_name="Exeter"/>
+<consinfo canonical="Exeter" pa_id="244"/>
+<consinfo canonical="Falkirk" guardian_id="936"/>
+<consinfo canonical="Falkirk" guardian_name="Falkirk"/>
+<consinfo canonical="Falkirk" pa_id="245"/>
+<consinfo canonical="Fareham" guardian_id="938"/>
+<consinfo canonical="Fareham" guardian_name="Fareham"/>
+<consinfo canonical="Fareham" pa_id="246"/>
+<consinfo canonical="Faversham and Mid Kent" guardian_id="940"/>
+<consinfo canonical="Faversham and Mid Kent" guardian_name="Faversham and Kent Mid"/>
+<consinfo canonical="Faversham and Mid Kent" pa_id="247"/>
+<consinfo canonical="Feltham and Heston" guardian_id="941"/>
+<consinfo canonical="Feltham and Heston" guardian_name="Feltham and Heston"/>
+<consinfo canonical="Feltham and Heston" pa_id="248"/>
+<consinfo canonical="Fermanagh and South Tyrone" guardian_id="942"/>
+<consinfo canonical="Fermanagh and South Tyrone" guardian_name="Fermanagh and South Tyrone"/>
+<consinfo canonical="Fermanagh and South Tyrone" pa_id="249"/>
+<consinfo canonical="North East Fife" guardian_id="1173"/>
+<consinfo canonical="North East Fife" guardian_name="Fife North East"/>
+<consinfo canonical="North East Fife" pa_id="250"/>
+<consinfo canonical="Filton and Bradley Stoke" guardian_id="1493"/>
+<consinfo canonical="Filton and Bradley Stoke" guardian_name="Filton and Bradley Stoke"/>
+<consinfo canonical="Filton and Bradley Stoke" pa_id="251"/>
+<consinfo canonical="Finchley and Golders Green" guardian_id="944"/>
+<consinfo canonical="Finchley and Golders Green" guardian_name="Finchley and Golders Green"/>
+<consinfo canonical="Finchley and Golders Green" pa_id="252"/>
+<consinfo canonical="Folkestone and Hythe" guardian_id="945"/>
+<consinfo canonical="Folkestone and Hythe" guardian_name="Folkestone and Hythe"/>
+<consinfo canonical="Folkestone and Hythe" pa_id="253"/>
+<consinfo canonical="Forest of Dean" guardian_id="946"/>
+<consinfo canonical="Forest of Dean" guardian_name="Forest of Dean"/>
+<consinfo canonical="Forest of Dean" pa_id="254"/>
+<consinfo canonical="Foyle" guardian_id="947"/>
+<consinfo canonical="Foyle" guardian_name="Foyle"/>
+<consinfo canonical="Foyle" pa_id="255"/>
+<consinfo canonical="Fylde" guardian_id="949"/>
+<consinfo canonical="Fylde" guardian_name="Fylde"/>
+<consinfo canonical="Fylde" pa_id="256"/>
+<consinfo canonical="Gainsborough" guardian_id="950"/>
+<consinfo canonical="Gainsborough" guardian_name="Gainsborough"/>
+<consinfo canonical="Gainsborough" pa_id="257"/>
+<consinfo canonical="Garston and Halewood" guardian_id="1494"/>
+<consinfo canonical="Garston and Halewood" guardian_name="Garston and Halewood"/>
+<consinfo canonical="Garston and Halewood" pa_id="258"/>
+<consinfo canonical="Gateshead" guardian_id="1495"/>
+<consinfo canonical="Gateshead" guardian_name="Gateshead"/>
+<consinfo canonical="Gateshead" pa_id="259"/>
+<consinfo canonical="Gedling" guardian_id="955"/>
+<consinfo canonical="Gedling" guardian_name="Gedling"/>
+<consinfo canonical="Gedling" pa_id="260"/>
+<consinfo canonical="Gillingham and Rainham" guardian_id="1496"/>
+<consinfo canonical="Gillingham and Rainham" guardian_name="Gillingham and Rainham"/>
+<consinfo canonical="Gillingham and Rainham" pa_id="261"/>
+<consinfo canonical="Glasgow Central" guardian_id="970"/>
+<consinfo canonical="Glasgow Central" guardian_name="Glasgow Central"/>
+<consinfo canonical="Glasgow Central" pa_id="262"/>
+<consinfo canonical="Glasgow East" guardian_id="959"/>
+<consinfo canonical="Glasgow East" guardian_name="Glasgow East"/>
+<consinfo canonical="Glasgow East" pa_id="263"/>
+<consinfo canonical="Glasgow North" guardian_id="966"/>
+<consinfo canonical="Glasgow North" guardian_name="Glasgow North"/>
+<consinfo canonical="Glasgow North" pa_id="264"/>
+<consinfo canonical="Glasgow North East" guardian_id="971"/>
+<consinfo canonical="Glasgow North East" guardian_name="Glasgow North East"/>
+<consinfo canonical="Glasgow North East" pa_id="265"/>
+<consinfo canonical="Glasgow North West" guardian_id="958"/>
+<consinfo canonical="Glasgow North West" guardian_name="Glasgow North West"/>
+<consinfo canonical="Glasgow North West" pa_id="266"/>
+<consinfo canonical="Glasgow South" guardian_id="960"/>
+<consinfo canonical="Glasgow South" guardian_name="Glasgow South"/>
+<consinfo canonical="Glasgow South" pa_id="267"/>
+<consinfo canonical="Glasgow South West" guardian_id="967"/>
+<consinfo canonical="Glasgow South West" guardian_name="Glasgow South West"/>
+<consinfo canonical="Glasgow South West" pa_id="268"/>
+<consinfo canonical="Glenrothes" guardian_id="800"/>
+<consinfo canonical="Glenrothes" guardian_name="Glenrothes"/>
+<consinfo canonical="Glenrothes" pa_id="269"/>
+<consinfo canonical="Gloucester" guardian_id="972"/>
+<consinfo canonical="Gloucester" guardian_name="Gloucester"/>
+<consinfo canonical="Gloucester" pa_id="270"/>
+<consinfo canonical="Gordon" guardian_id="973"/>
+<consinfo canonical="Gordon" guardian_name="Gordon"/>
+<consinfo canonical="Gordon" pa_id="271"/>
+<consinfo canonical="Gosport" guardian_id="974"/>
+<consinfo canonical="Gosport" guardian_name="Gosport"/>
+<consinfo canonical="Gosport" pa_id="272"/>
+<consinfo canonical="Gower" guardian_id="975"/>
+<consinfo canonical="Gower" guardian_name="Gower"/>
+<consinfo canonical="Gower" pa_id="273"/>
+<consinfo canonical="Grantham and Stamford" guardian_id="977"/>
+<consinfo canonical="Grantham and Stamford" guardian_name="Grantham and Stamford"/>
+<consinfo canonical="Grantham and Stamford" pa_id="274"/>
+<consinfo canonical="Gravesham" guardian_id="978"/>
+<consinfo canonical="Gravesham" guardian_name="Gravesham"/>
+<consinfo canonical="Gravesham" pa_id="275"/>
+<consinfo canonical="Great Grimsby" guardian_id="979"/>
+<consinfo canonical="Great Grimsby" guardian_name="Great Grimsby"/>
+<consinfo canonical="Great Grimsby" pa_id="276"/>
+<consinfo canonical="Great Yarmouth" guardian_id="980"/>
+<consinfo canonical="Great Yarmouth" guardian_name="Great Yarmouth"/>
+<consinfo canonical="Great Yarmouth" pa_id="277"/>
+<consinfo canonical="Greenwich and Woolwich" guardian_id="984"/>
+<consinfo canonical="Greenwich and Woolwich" guardian_name="Greenwich and Woolwich"/>
+<consinfo canonical="Greenwich and Woolwich" pa_id="278"/>
+<consinfo canonical="Guildford" guardian_id="985"/>
+<consinfo canonical="Guildford" guardian_name="Guildford"/>
+<consinfo canonical="Guildford" pa_id="279"/>
+<consinfo canonical="Hackney North and Stoke Newington" guardian_id="986"/>
+<consinfo canonical="Hackney North and Stoke Newington" guardian_name="Hackney North and Stoke Newington"/>
+<consinfo canonical="Hackney North and Stoke Newington" pa_id="280"/>
+<consinfo canonical="Hackney South and Shoreditch" guardian_id="987"/>
+<consinfo canonical="Hackney South and Shoreditch" guardian_name="Hackney South and Shoreditch"/>
+<consinfo canonical="Hackney South and Shoreditch" pa_id="281"/>
+<consinfo canonical="Halesowen and Rowley Regis" guardian_id="988"/>
+<consinfo canonical="Halesowen and Rowley Regis" guardian_name="Halesowen and Rowley Regis"/>
+<consinfo canonical="Halesowen and Rowley Regis" pa_id="282"/>
+<consinfo canonical="Halifax" guardian_id="990"/>
+<consinfo canonical="Halifax" guardian_name="Halifax"/>
+<consinfo canonical="Halifax" pa_id="283"/>
+<consinfo canonical="Haltemprice and Howden" guardian_id="991"/>
+<consinfo canonical="Haltemprice and Howden" guardian_name="Haltemprice and Howden"/>
+<consinfo canonical="Haltemprice and Howden" pa_id="284"/>
+<consinfo canonical="Halton" guardian_id="992"/>
+<consinfo canonical="Halton" guardian_name="Halton"/>
+<consinfo canonical="Halton" pa_id="285"/>
+<consinfo canonical="Hammersmith" guardian_id="996"/>
+<consinfo canonical="Hammersmith" guardian_name="Hammersmith"/>
+<consinfo canonical="Hammersmith" pa_id="286"/>
+<consinfo canonical="East Hampshire" guardian_id="902"/>
+<consinfo canonical="East Hampshire" guardian_name="Hampshire East"/>
+<consinfo canonical="East Hampshire" pa_id="287"/>
+<consinfo canonical="North East Hampshire" guardian_id="1174"/>
+<consinfo canonical="North East Hampshire" guardian_name="Hampshire North East"/>
+<consinfo canonical="North East Hampshire" pa_id="288"/>
+<consinfo canonical="North West Hampshire" guardian_id="1187"/>
+<consinfo canonical="North West Hampshire" guardian_name="Hampshire North West"/>
+<consinfo canonical="North West Hampshire" pa_id="289"/>
+<consinfo canonical="Hampstead and Kilburn" guardian_id="1497"/>
+<consinfo canonical="Hampstead and Kilburn" guardian_name="Hampstead and Kilburn"/>
+<consinfo canonical="Hampstead and Kilburn" pa_id="290"/>
+<consinfo canonical="Harborough" guardian_id="999"/>
+<consinfo canonical="Harborough" guardian_name="Harborough"/>
+<consinfo canonical="Harborough" pa_id="291"/>
+<consinfo canonical="Harlow" guardian_id="1000"/>
+<consinfo canonical="Harlow" guardian_name="Harlow"/>
+<consinfo canonical="Harlow" pa_id="292"/>
+<consinfo canonical="Harrogate and Knaresborough" guardian_id="1002"/>
+<consinfo canonical="Harrogate and Knaresborough" guardian_name="Harrogate and Knaresborough"/>
+<consinfo canonical="Harrogate and Knaresborough" pa_id="293"/>
+<consinfo canonical="Harrow East" guardian_id="1003"/>
+<consinfo canonical="Harrow East" guardian_name="Harrow East"/>
+<consinfo canonical="Harrow East" pa_id="294"/>
+<consinfo canonical="Harrow West" guardian_id="1004"/>
+<consinfo canonical="Harrow West" guardian_name="Harrow West"/>
+<consinfo canonical="Harrow West" pa_id="295"/>
+<consinfo canonical="Hartlepool" guardian_id="1005"/>
+<consinfo canonical="Hartlepool" guardian_name="Hartlepool"/>
+<consinfo canonical="Hartlepool" pa_id="296"/>
+<consinfo canonical="Harwich and North Essex" guardian_id="1498"/>
+<consinfo canonical="Harwich and North Essex" guardian_name="Harwich and Essex North"/>
+<consinfo canonical="Harwich and North Essex" pa_id="297"/>
+<consinfo canonical="Hastings and Rye" guardian_id="1007"/>
+<consinfo canonical="Hastings and Rye" guardian_name="Hastings and Rye"/>
+<consinfo canonical="Hastings and Rye" pa_id="298"/>
+<consinfo canonical="Havant" guardian_id="1008"/>
+<consinfo canonical="Havant" guardian_name="Havant"/>
+<consinfo canonical="Havant" pa_id="299"/>
+<consinfo canonical="Hayes and Harlington" guardian_id="1009"/>
+<consinfo canonical="Hayes and Harlington" guardian_name="Hayes and Harlington"/>
+<consinfo canonical="Hayes and Harlington" pa_id="300"/>
+<consinfo canonical="Hazel Grove" guardian_id="1010"/>
+<consinfo canonical="Hazel Grove" guardian_name="Hazel Grove"/>
+<consinfo canonical="Hazel Grove" pa_id="301"/>
+<consinfo canonical="Hemel Hempstead" guardian_id="1011"/>
+<consinfo canonical="Hemel Hempstead" guardian_name="Hemel Hempstead"/>
+<consinfo canonical="Hemel Hempstead" pa_id="302"/>
+<consinfo canonical="Hemsworth" guardian_id="1012"/>
+<consinfo canonical="Hemsworth" guardian_name="Hemsworth"/>
+<consinfo canonical="Hemsworth" pa_id="303"/>
+<consinfo canonical="Hendon" guardian_id="1013"/>
+<consinfo canonical="Hendon" guardian_name="Hendon"/>
+<consinfo canonical="Hendon" pa_id="304"/>
+<consinfo canonical="Henley" guardian_id="1016"/>
+<consinfo canonical="Henley" guardian_name="Henley"/>
+<consinfo canonical="Henley" pa_id="305"/>
+<consinfo canonical="Hereford and South Herefordshire" guardian_id="1499"/>
+<consinfo canonical="Hereford and South Herefordshire" guardian_name="Hereford and Herefordshire South"/>
+<consinfo canonical="Hereford and South Herefordshire" pa_id="306"/>
+<consinfo canonical="North Herefordshire" guardian_id="1500"/>
+<consinfo canonical="North Herefordshire" guardian_name="Herefordshire North"/>
+<consinfo canonical="North Herefordshire" pa_id="307"/>
+<consinfo canonical="Hertford and Stortford" guardian_id="1018"/>
+<consinfo canonical="Hertford and Stortford" guardian_name="Hertford and Stortford"/>
+<consinfo canonical="Hertford and Stortford" pa_id="308"/>
+<consinfo canonical="North East Hertfordshire" guardian_id="1175"/>
+<consinfo canonical="North East Hertfordshire" guardian_name="Hertfordshire North East"/>
+<consinfo canonical="North East Hertfordshire" pa_id="309"/>
+<consinfo canonical="South West Hertfordshire" guardian_id="1313"/>
+<consinfo canonical="South West Hertfordshire" guardian_name="Hertfordshire South West"/>
+<consinfo canonical="South West Hertfordshire" pa_id="310"/>
+<consinfo canonical="Hertsmere" guardian_id="1019"/>
+<consinfo canonical="Hertsmere" guardian_name="Hertsmere"/>
+<consinfo canonical="Hertsmere" pa_id="311"/>
+<consinfo canonical="Hexham" guardian_id="1020"/>
+<consinfo canonical="Hexham" guardian_name="Hexham"/>
+<consinfo canonical="Hexham" pa_id="312"/>
+<consinfo canonical="Heywood and Middleton" guardian_id="1021"/>
+<consinfo canonical="Heywood and Middleton" guardian_name="Heywood and Middleton"/>
+<consinfo canonical="Heywood and Middleton" pa_id="313"/>
+<consinfo canonical="High Peak" guardian_id="1022"/>
+<consinfo canonical="High Peak" guardian_name="High Peak"/>
+<consinfo canonical="High Peak" pa_id="314"/>
+<consinfo canonical="Hitchin and Harpenden" guardian_id="1023"/>
+<consinfo canonical="Hitchin and Harpenden" guardian_name="Hitchin and Harpenden"/>
+<consinfo canonical="Hitchin and Harpenden" pa_id="315"/>
+<consinfo canonical="Holborn and St Pancras" guardian_id="1024"/>
+<consinfo canonical="Holborn and St Pancras" guardian_name="Holborn and St Pancras"/>
+<consinfo canonical="Holborn and St Pancras" pa_id="316"/>
+<consinfo canonical="Hornchurch and Upminster" guardian_id="1501"/>
+<consinfo canonical="Hornchurch and Upminster" guardian_name="Hornchurch and Upminster"/>
+<consinfo canonical="Hornchurch and Upminster" pa_id="317"/>
+<consinfo canonical="Hornsey and Wood Green" guardian_id="1028"/>
+<consinfo canonical="Hornsey and Wood Green" guardian_name="Hornsey and Wood Green"/>
+<consinfo canonical="Hornsey and Wood Green" pa_id="318"/>
+<consinfo canonical="Horsham" guardian_id="1029"/>
+<consinfo canonical="Horsham" guardian_name="Horsham"/>
+<consinfo canonical="Horsham" pa_id="319"/>
+<consinfo canonical="Houghton and Sunderland South" guardian_id="1502"/>
+<consinfo canonical="Houghton and Sunderland South" guardian_name="Houghton and Sunderland South"/>
+<consinfo canonical="Houghton and Sunderland South" pa_id="320"/>
+<consinfo canonical="Hove" guardian_id="1032"/>
+<consinfo canonical="Hove" guardian_name="Hove"/>
+<consinfo canonical="Hove" pa_id="321"/>
+<consinfo canonical="Huddersfield" guardian_id="1033"/>
+<consinfo canonical="Huddersfield" guardian_name="Huddersfield"/>
+<consinfo canonical="Huddersfield" pa_id="322"/>
+<consinfo canonical="Kingston upon Hull East" guardian_id="1034"/>
+<consinfo canonical="Kingston upon Hull East" guardian_name="Hull East"/>
+<consinfo canonical="Kingston upon Hull East" pa_id="323"/>
+<consinfo canonical="Kingston upon Hull North" guardian_id="1035"/>
+<consinfo canonical="Kingston upon Hull North" guardian_name="Hull North"/>
+<consinfo canonical="Kingston upon Hull North" pa_id="324"/>
+<consinfo canonical="Kingston upon Hull West and Hessle" guardian_id="1037"/>
+<consinfo canonical="Kingston upon Hull West and Hessle" guardian_name="Hull West and Hessle"/>
+<consinfo canonical="Kingston upon Hull West and Hessle" pa_id="325"/>
+<consinfo canonical="Huntingdon" guardian_id="1038"/>
+<consinfo canonical="Huntingdon" guardian_name="Huntingdon"/>
+<consinfo canonical="Huntingdon" pa_id="326"/>
+<consinfo canonical="Hyndburn" guardian_id="1039"/>
+<consinfo canonical="Hyndburn" guardian_name="Hyndburn"/>
+<consinfo canonical="Hyndburn" pa_id="327"/>
+<consinfo canonical="Ilford North" guardian_id="1040"/>
+<consinfo canonical="Ilford North" guardian_name="Ilford North"/>
+<consinfo canonical="Ilford North" pa_id="328"/>
+<consinfo canonical="Ilford South" guardian_id="1041"/>
+<consinfo canonical="Ilford South" guardian_name="Ilford South"/>
+<consinfo canonical="Ilford South" pa_id="329"/>
+<consinfo canonical="Inverclyde" guardian_id="981"/>
+<consinfo canonical="Inverclyde" guardian_name="Inverclyde"/>
+<consinfo canonical="Inverclyde" pa_id="330"/>
+<consinfo canonical="Inverness, Nairn, Badenoch and Strathspey" guardian_id="1042"/>
+<consinfo canonical="Inverness, Nairn, Badenoch and Strathspey" guardian_name="Inverness, Nairn, Badenoch and Strathspey"/>
+<consinfo canonical="Inverness, Nairn, Badenoch and Strathspey" pa_id="331"/>
+<consinfo canonical="Ipswich" guardian_id="1044"/>
+<consinfo canonical="Ipswich" guardian_name="Ipswich"/>
+<consinfo canonical="Ipswich" pa_id="332"/>
+<consinfo canonical="Isle of Wight" guardian_id="1045"/>
+<consinfo canonical="Isle of Wight" guardian_name="Isle of Wight"/>
+<consinfo canonical="Isle of Wight" pa_id="333"/>
+<consinfo canonical="Islington North" guardian_id="1046"/>
+<consinfo canonical="Islington North" guardian_name="Islington North"/>
+<consinfo canonical="Islington North" pa_id="334"/>
+<consinfo canonical="Islington South and Finsbury" guardian_id="1047"/>
+<consinfo canonical="Islington South and Finsbury" guardian_name="Islington South and Finsbury"/>
+<consinfo canonical="Islington South and Finsbury" pa_id="335"/>
+<consinfo canonical="Islwyn" guardian_id="1048"/>
+<consinfo canonical="Islwyn" guardian_name="Islwyn"/>
+<consinfo canonical="Islwyn" pa_id="336"/>
+<consinfo canonical="Jarrow" guardian_id="1049"/>
+<consinfo canonical="Jarrow" guardian_name="Jarrow"/>
+<consinfo canonical="Jarrow" pa_id="337"/>
+<consinfo canonical="Keighley" guardian_id="1050"/>
+<consinfo canonical="Keighley" guardian_name="Keighley"/>
+<consinfo canonical="Keighley" pa_id="338"/>
+<consinfo canonical="Kenilworth and Southam" guardian_id="1503"/>
+<consinfo canonical="Kenilworth and Southam" guardian_name="Kenilworth and Southam"/>
+<consinfo canonical="Kenilworth and Southam" pa_id="339"/>
+<consinfo canonical="Kensington" guardian_id="1051"/>
+<consinfo canonical="Kensington" guardian_name="Kensington"/>
+<consinfo canonical="Kensington" pa_id="340"/>
+<consinfo canonical="Kettering" guardian_id="1053"/>
+<consinfo canonical="Kettering" guardian_name="Kettering"/>
+<consinfo canonical="Kettering" pa_id="341"/>
+<consinfo canonical="Kilmarnock and Loudoun" guardian_id="1054"/>
+<consinfo canonical="Kilmarnock and Loudoun" guardian_name="Kilmarnock and Loudoun"/>
+<consinfo canonical="Kilmarnock and Loudoun" pa_id="342"/>
+<consinfo canonical="Kingston and Surbiton" guardian_id="1056"/>
+<consinfo canonical="Kingston and Surbiton" guardian_name="Kingston and Surbiton"/>
+<consinfo canonical="Kingston and Surbiton" pa_id="343"/>
+<consinfo canonical="Kingswood" guardian_id="1058"/>
+<consinfo canonical="Kingswood" guardian_name="Kingswood"/>
+<consinfo canonical="Kingswood" pa_id="344"/>
+<consinfo canonical="Kirkcaldy and Cowdenbeath" guardian_id="1059"/>
+<consinfo canonical="Kirkcaldy and Cowdenbeath" guardian_name="Kirkcaldy and Cowdenbeath"/>
+<consinfo canonical="Kirkcaldy and Cowdenbeath" pa_id="345"/>
+<consinfo canonical="Knowsley" guardian_id="1504"/>
+<consinfo canonical="Knowsley" guardian_name="Knowsley"/>
+<consinfo canonical="Knowsley" pa_id="346"/>
+<consinfo canonical="Lagan Valley" guardian_id="1063"/>
+<consinfo canonical="Lagan Valley" guardian_name="Lagan Valley"/>
+<consinfo canonical="Lagan Valley" pa_id="347"/>
+<consinfo canonical="Lanark and Hamilton East" guardian_id="835"/>
+<consinfo canonical="Lanark and Hamilton East" guardian_name="Lanark and Hamilton East"/>
+<consinfo canonical="Lanark and Hamilton East" pa_id="348"/>
+<consinfo canonical="West Lancashire" guardian_id="1426"/>
+<consinfo canonical="West Lancashire" guardian_name="Lancashire West"/>
+<consinfo canonical="West Lancashire" pa_id="349"/>
+<consinfo canonical="Lancaster and Fleetwood" guardian_id="1505"/>
+<consinfo canonical="Lancaster and Fleetwood" guardian_name="Lancaster and Fleetwood"/>
+<consinfo canonical="Lancaster and Fleetwood" pa_id="350"/>
+<consinfo canonical="Leeds Central" guardian_id="1067"/>
+<consinfo canonical="Leeds Central" guardian_name="Leeds Central"/>
+<consinfo canonical="Leeds Central" pa_id="351"/>
+<consinfo canonical="Leeds East" guardian_id="1068"/>
+<consinfo canonical="Leeds East" guardian_name="Leeds East"/>
+<consinfo canonical="Leeds East" pa_id="352"/>
+<consinfo canonical="Leeds North East" guardian_id="1069"/>
+<consinfo canonical="Leeds North East" guardian_name="Leeds North East"/>
+<consinfo canonical="Leeds North East" pa_id="353"/>
+<consinfo canonical="Leeds North West" guardian_id="1070"/>
+<consinfo canonical="Leeds North West" guardian_name="Leeds North West"/>
+<consinfo canonical="Leeds North West" pa_id="354"/>
+<consinfo canonical="Leeds West" guardian_id="1072"/>
+<consinfo canonical="Leeds West" guardian_name="Leeds West"/>
+<consinfo canonical="Leeds West" pa_id="355"/>
+<consinfo canonical="Leicester East" guardian_id="1073"/>
+<consinfo canonical="Leicester East" guardian_name="Leicester East"/>
+<consinfo canonical="Leicester East" pa_id="356"/>
+<consinfo canonical="Leicester South" guardian_id="1074"/>
+<consinfo canonical="Leicester South" guardian_name="Leicester South"/>
+<consinfo canonical="Leicester South" pa_id="357"/>
+<consinfo canonical="Leicester West" guardian_id="1075"/>
+<consinfo canonical="Leicester West" guardian_name="Leicester West"/>
+<consinfo canonical="Leicester West" pa_id="358"/>
+<consinfo canonical="North West Leicestershire" guardian_id="1188"/>
+<consinfo canonical="North West Leicestershire" guardian_name="Leicestershire North West"/>
+<consinfo canonical="North West Leicestershire" pa_id="359"/>
+<consinfo canonical="South Leicestershire" guardian_id="1506"/>
+<consinfo canonical="South Leicestershire" guardian_name="Leicestershire South"/>
+<consinfo canonical="South Leicestershire" pa_id="360"/>
+<consinfo canonical="Leigh" guardian_id="1076"/>
+<consinfo canonical="Leigh" guardian_name="Leigh"/>
+<consinfo canonical="Leigh" pa_id="361"/>
+<consinfo canonical="Lewes" guardian_id="1078"/>
+<consinfo canonical="Lewes" guardian_name="Lewes"/>
+<consinfo canonical="Lewes" pa_id="362"/>
+<consinfo canonical="Lewisham, Deptford" guardian_id="1082"/>
+<consinfo canonical="Lewisham, Deptford" guardian_name="Lewisham Deptford"/>
+<consinfo canonical="Lewisham, Deptford" pa_id="363"/>
+<consinfo canonical="Lewisham East" guardian_id="1080"/>
+<consinfo canonical="Lewisham East" guardian_name="Lewisham East"/>
+<consinfo canonical="Lewisham East" pa_id="364"/>
+<consinfo canonical="Lewisham West and Penge" guardian_id="1507"/>
+<consinfo canonical="Lewisham West and Penge" guardian_name="Lewisham West and Penge"/>
+<consinfo canonical="Lewisham West and Penge" pa_id="365"/>
+<consinfo canonical="Leyton and Wanstead" guardian_id="1084"/>
+<consinfo canonical="Leyton and Wanstead" guardian_name="Leyton and Wanstead"/>
+<consinfo canonical="Leyton and Wanstead" pa_id="366"/>
+<consinfo canonical="Lichfield" guardian_id="1085"/>
+<consinfo canonical="Lichfield" guardian_name="Lichfield"/>
+<consinfo canonical="Lichfield" pa_id="367"/>
+<consinfo canonical="Lincoln" guardian_id="1086"/>
+<consinfo canonical="Lincoln" guardian_name="Lincoln"/>
+<consinfo canonical="Lincoln" pa_id="368"/>
+<consinfo canonical="Linlithgow and East Falkirk" guardian_id="1088"/>
+<consinfo canonical="Linlithgow and East Falkirk" guardian_name="Linlithgow and Falkirk East"/>
+<consinfo canonical="Linlithgow and East Falkirk" pa_id="369"/>
+<consinfo canonical="Liverpool, Riverside" guardian_id="1093"/>
+<consinfo canonical="Liverpool, Riverside" guardian_name="Liverpool Riverside"/>
+<consinfo canonical="Liverpool, Riverside" pa_id="370"/>
+<consinfo canonical="Liverpool, Walton" guardian_id="1094"/>
+<consinfo canonical="Liverpool, Walton" guardian_name="Liverpool Walton"/>
+<consinfo canonical="Liverpool, Walton" pa_id="371"/>
+<consinfo canonical="Liverpool, Wavertree" guardian_id="1095"/>
+<consinfo canonical="Liverpool, Wavertree" guardian_name="Liverpool Wavertree"/>
+<consinfo canonical="Liverpool, Wavertree" pa_id="372"/>
+<consinfo canonical="Liverpool, West Derby" guardian_id="1096"/>
+<consinfo canonical="Liverpool, West Derby" guardian_name="Liverpool West Derby"/>
+<consinfo canonical="Liverpool, West Derby" pa_id="373"/>
+<consinfo canonical="Livingston" guardian_id="1097"/>
+<consinfo canonical="Livingston" guardian_name="Livingston"/>
+<consinfo canonical="Livingston" pa_id="374"/>
+<consinfo canonical="Llanelli" guardian_id="1098"/>
+<consinfo canonical="Llanelli" guardian_name="Llanelli"/>
+<consinfo canonical="Llanelli" pa_id="375"/>
+<consinfo canonical="East Londonderry" guardian_id="904"/>
+<consinfo canonical="East Londonderry" guardian_name="Londonderry East"/>
+<consinfo canonical="East Londonderry" pa_id="376"/>
+<consinfo canonical="Loughborough" guardian_id="1099"/>
+<consinfo canonical="Loughborough" guardian_name="Loughborough"/>
+<consinfo canonical="Loughborough" pa_id="377"/>
+<consinfo canonical="Louth and Horncastle" guardian_id="1100"/>
+<consinfo canonical="Louth and Horncastle" guardian_name="Louth and Horncastle"/>
+<consinfo canonical="Louth and Horncastle" pa_id="378"/>
+<consinfo canonical="Ludlow" guardian_id="1101"/>
+<consinfo canonical="Ludlow" guardian_name="Ludlow"/>
+<consinfo canonical="Ludlow" pa_id="379"/>
+<consinfo canonical="Luton North" guardian_id="1102"/>
+<consinfo canonical="Luton North" guardian_name="Luton North"/>
+<consinfo canonical="Luton North" pa_id="380"/>
+<consinfo canonical="Luton South" guardian_id="1103"/>
+<consinfo canonical="Luton South" guardian_name="Luton South"/>
+<consinfo canonical="Luton South" pa_id="381"/>
+<consinfo canonical="Macclesfield" guardian_id="1104"/>
+<consinfo canonical="Macclesfield" guardian_name="Macclesfield"/>
+<consinfo canonical="Macclesfield" pa_id="382"/>
+<consinfo canonical="Maidenhead" guardian_id="1105"/>
+<consinfo canonical="Maidenhead" guardian_name="Maidenhead"/>
+<consinfo canonical="Maidenhead" pa_id="383"/>
+<consinfo canonical="Maidstone and The Weald" guardian_id="1107"/>
+<consinfo canonical="Maidstone and The Weald" guardian_name="Maidstone and The Weald"/>
+<consinfo canonical="Maidstone and The Weald" pa_id="384"/>
+<consinfo canonical="Makerfield" guardian_id="1108"/>
+<consinfo canonical="Makerfield" guardian_name="Makerfield"/>
+<consinfo canonical="Makerfield" pa_id="385"/>
+<consinfo canonical="Maldon" guardian_id="1508"/>
+<consinfo canonical="Maldon" guardian_name="Maldon"/>
+<consinfo canonical="Maldon" pa_id="386"/>
+<consinfo canonical="Manchester Central" guardian_id="1111"/>
+<consinfo canonical="Manchester Central" guardian_name="Manchester Central"/>
+<consinfo canonical="Manchester Central" pa_id="387"/>
+<consinfo canonical="Manchester, Gorton" guardian_id="1112"/>
+<consinfo canonical="Manchester, Gorton" guardian_name="Manchester Gorton"/>
+<consinfo canonical="Manchester, Gorton" pa_id="388"/>
+<consinfo canonical="Manchester, Withington" guardian_id="1113"/>
+<consinfo canonical="Manchester, Withington" guardian_name="Manchester Withington"/>
+<consinfo canonical="Manchester, Withington" pa_id="389"/>
+<consinfo canonical="Mansfield" guardian_id="1115"/>
+<consinfo canonical="Mansfield" guardian_name="Mansfield"/>
+<consinfo canonical="Mansfield" pa_id="390"/>
+<consinfo canonical="Meon Valley" guardian_id="1509"/>
+<consinfo canonical="Meon Valley" guardian_name="Meon Valley"/>
+<consinfo canonical="Meon Valley" pa_id="391"/>
+<consinfo canonical="Meriden" guardian_id="1118"/>
+<consinfo canonical="Meriden" guardian_name="Meriden"/>
+<consinfo canonical="Meriden" pa_id="392"/>
+<consinfo canonical="Merthyr Tydfil and Rhymney" guardian_id="1119"/>
+<consinfo canonical="Merthyr Tydfil and Rhymney" guardian_name="Merthyr Tydfil and Rhymney"/>
+<consinfo canonical="Merthyr Tydfil and Rhymney" pa_id="393"/>
+<consinfo canonical="Middlesbrough" guardian_id="1128"/>
+<consinfo canonical="Middlesbrough" guardian_name="Middlesbrough"/>
+<consinfo canonical="Middlesbrough" pa_id="394"/>
+<consinfo canonical="Middlesbrough South and East Cleveland" guardian_id="1129"/>
+<consinfo canonical="Middlesbrough South and East Cleveland" guardian_name="Middlesbrough South and Cleveland East"/>
+<consinfo canonical="Middlesbrough South and East Cleveland" pa_id="395"/>
+<consinfo canonical="Midlothian" guardian_id="1130"/>
+<consinfo canonical="Midlothian" guardian_name="Midlothian"/>
+<consinfo canonical="Midlothian" pa_id="396"/>
+<consinfo canonical="Milton Keynes North" guardian_id="1510"/>
+<consinfo canonical="Milton Keynes North" guardian_name="Milton Keynes North"/>
+<consinfo canonical="Milton Keynes North" pa_id="397"/>
+<consinfo canonical="Milton Keynes South" guardian_id="1511"/>
+<consinfo canonical="Milton Keynes South" guardian_name="Milton Keynes South"/>
+<consinfo canonical="Milton Keynes South" pa_id="398"/>
+<consinfo canonical="Mitcham and Morden" guardian_id="1133"/>
+<consinfo canonical="Mitcham and Morden" guardian_name="Mitcham and Morden"/>
+<consinfo canonical="Mitcham and Morden" pa_id="399"/>
+<consinfo canonical="Mole Valley" guardian_id="1134"/>
+<consinfo canonical="Mole Valley" guardian_name="Mole Valley"/>
+<consinfo canonical="Mole Valley" pa_id="400"/>
+<consinfo canonical="Monmouth" guardian_id="1137"/>
+<consinfo canonical="Monmouth" guardian_name="Monmouth"/>
+<consinfo canonical="Monmouth" pa_id="401"/>
+<consinfo canonical="Montgomeryshire" guardian_id="1139"/>
+<consinfo canonical="Montgomeryshire" guardian_name="Montgomeryshire"/>
+<consinfo canonical="Montgomeryshire" pa_id="402"/>
+<consinfo canonical="Moray" guardian_id="1140"/>
+<consinfo canonical="Moray" guardian_name="Moray"/>
+<consinfo canonical="Moray" pa_id="403"/>
+<consinfo canonical="Morecambe and Lunesdale" guardian_id="1141"/>
+<consinfo canonical="Morecambe and Lunesdale" guardian_name="Morecambe and Lunesdale"/>
+<consinfo canonical="Morecambe and Lunesdale" pa_id="404"/>
+<consinfo canonical="Morley and Outwood" guardian_id="1512"/>
+<consinfo canonical="Morley and Outwood" guardian_name="Morley and Outwood"/>
+<consinfo canonical="Morley and Outwood" pa_id="405"/>
+<consinfo canonical="Motherwell and Wishaw" guardian_id="1145"/>
+<consinfo canonical="Motherwell and Wishaw" guardian_name="Motherwell and Wishaw"/>
+<consinfo canonical="Motherwell and Wishaw" pa_id="406"/>
+<consinfo canonical="Na h-Eileanan an Iar" guardian_id="1433"/>
+<consinfo canonical="Na h-Eileanan an Iar" guardian_name="Na h-Eileanan an Iar"/>
+<consinfo canonical="Na h-Eileanan an Iar" pa_id="407"/>
+<consinfo canonical="Neath" guardian_id="1146"/>
+<consinfo canonical="Neath" guardian_name="Neath"/>
+<consinfo canonical="Neath" pa_id="408"/>
+<consinfo canonical="New Forest East" guardian_id="1148"/>
+<consinfo canonical="New Forest East" guardian_name="New Forest East"/>
+<consinfo canonical="New Forest East" pa_id="409"/>
+<consinfo canonical="New Forest West" guardian_id="1149"/>
+<consinfo canonical="New Forest West" guardian_name="New Forest West"/>
+<consinfo canonical="New Forest West" pa_id="410"/>
+<consinfo canonical="Newark" guardian_id="1150"/>
+<consinfo canonical="Newark" guardian_name="Newark"/>
+<consinfo canonical="Newark" pa_id="411"/>
+<consinfo canonical="Newbury" guardian_id="1151"/>
+<consinfo canonical="Newbury" guardian_name="Newbury"/>
+<consinfo canonical="Newbury" pa_id="412"/>
+<consinfo canonical="Newcastle upon Tyne Central" guardian_id="1152"/>
+<consinfo canonical="Newcastle upon Tyne Central" guardian_name="Newcastle upon Tyne Central"/>
+<consinfo canonical="Newcastle upon Tyne Central" pa_id="414"/>
+<consinfo canonical="Newcastle upon Tyne East" guardian_id="1153"/>
+<consinfo canonical="Newcastle upon Tyne East" guardian_name="Newcastle upon Tyne East"/>
+<consinfo canonical="Newcastle upon Tyne East" pa_id="415"/>
+<consinfo canonical="Newcastle upon Tyne North" guardian_id="1155"/>
+<consinfo canonical="Newcastle upon Tyne North" guardian_name="Newcastle upon Tyne North"/>
+<consinfo canonical="Newcastle upon Tyne North" pa_id="416"/>
+<consinfo canonical="Newcastle-under-Lyme" guardian_id="1156"/>
+<consinfo canonical="Newcastle-under-Lyme" guardian_name="Newcastle-under-Lyme"/>
+<consinfo canonical="Newcastle-under-Lyme" pa_id="413"/>
+<consinfo canonical="Newport East" guardian_id="1160"/>
+<consinfo canonical="Newport East" guardian_name="Newport East"/>
+<consinfo canonical="Newport East" pa_id="417"/>
+<consinfo canonical="Newport West" guardian_id="1161"/>
+<consinfo canonical="Newport West" guardian_name="Newport West"/>
+<consinfo canonical="Newport West" pa_id="418"/>
+<consinfo canonical="Newry and Armagh" guardian_id="1162"/>
+<consinfo canonical="Newry and Armagh" guardian_name="Newry and Armagh"/>
+<consinfo canonical="Newry and Armagh" pa_id="419"/>
+<consinfo canonical="Newton Abbot" guardian_id="1513"/>
+<consinfo canonical="Newton Abbot" guardian_name="Newton Abbot"/>
+<consinfo canonical="Newton Abbot" pa_id="420"/>
+<consinfo canonical="Mid Norfolk" guardian_id="1123"/>
+<consinfo canonical="Mid Norfolk" guardian_name="Norfolk Mid"/>
+<consinfo canonical="Mid Norfolk" pa_id="421"/>
+<consinfo canonical="North Norfolk" guardian_id="1178"/>
+<consinfo canonical="North Norfolk" guardian_name="Norfolk North"/>
+<consinfo canonical="North Norfolk" pa_id="422"/>
+<consinfo canonical="North West Norfolk" guardian_id="1189"/>
+<consinfo canonical="North West Norfolk" guardian_name="Norfolk North West"/>
+<consinfo canonical="North West Norfolk" pa_id="423"/>
+<consinfo canonical="South Norfolk" guardian_id="1303"/>
+<consinfo canonical="South Norfolk" guardian_name="Norfolk South"/>
+<consinfo canonical="South Norfolk" pa_id="424"/>
+<consinfo canonical="South West Norfolk" guardian_id="1314"/>
+<consinfo canonical="South West Norfolk" guardian_name="Norfolk South West"/>
+<consinfo canonical="South West Norfolk" pa_id="425"/>
+<consinfo canonical="Normanton, Pontefract and Castleford" guardian_id="1514"/>
+<consinfo canonical="Normanton, Pontefract and Castleford" guardian_name="Normanton, Pontefract and Castleford"/>
+<consinfo canonical="Normanton, Pontefract and Castleford" pa_id="426"/>
+<consinfo canonical="Northampton North" guardian_id="1192"/>
+<consinfo canonical="Northampton North" guardian_name="Northampton North"/>
+<consinfo canonical="Northampton North" pa_id="427"/>
+<consinfo canonical="Northampton South" guardian_id="1193"/>
+<consinfo canonical="Northampton South" guardian_name="Northampton South"/>
+<consinfo canonical="Northampton South" pa_id="428"/>
+<consinfo canonical="South Northamptonshire" guardian_id="1515"/>
+<consinfo canonical="South Northamptonshire" guardian_name="Northamptonshire South"/>
+<consinfo canonical="South Northamptonshire" pa_id="429"/>
+<consinfo canonical="Norwich North" guardian_id="1195"/>
+<consinfo canonical="Norwich North" guardian_name="Norwich North"/>
+<consinfo canonical="Norwich North" pa_id="430"/>
+<consinfo canonical="Norwich South" guardian_id="1196"/>
+<consinfo canonical="Norwich South" guardian_name="Norwich South"/>
+<consinfo canonical="Norwich South" pa_id="431"/>
+<consinfo canonical="Nottingham East" guardian_id="1198"/>
+<consinfo canonical="Nottingham East" guardian_name="Nottingham East"/>
+<consinfo canonical="Nottingham East" pa_id="432"/>
+<consinfo canonical="Nottingham North" guardian_id="1199"/>
+<consinfo canonical="Nottingham North" guardian_name="Nottingham North"/>
+<consinfo canonical="Nottingham North" pa_id="433"/>
+<consinfo canonical="Nottingham South" guardian_id="1200"/>
+<consinfo canonical="Nottingham South" guardian_name="Nottingham South"/>
+<consinfo canonical="Nottingham South" pa_id="434"/>
+<consinfo canonical="Nuneaton" guardian_id="1201"/>
+<consinfo canonical="Nuneaton" guardian_name="Nuneaton"/>
+<consinfo canonical="Nuneaton" pa_id="435"/>
+<consinfo canonical="Ochil and South Perthshire" guardian_id="1202"/>
+<consinfo canonical="Ochil and South Perthshire" guardian_name="Ochil and Perthshire South"/>
+<consinfo canonical="Ochil and South Perthshire" pa_id="436"/>
+<consinfo canonical="Ogmore" guardian_id="1203"/>
+<consinfo canonical="Ogmore" guardian_name="Ogmore"/>
+<consinfo canonical="Ogmore" pa_id="437"/>
+<consinfo canonical="Old Bexley and Sidcup" guardian_id="1204"/>
+<consinfo canonical="Old Bexley and Sidcup" guardian_name="Old Bexley and Sidcup"/>
+<consinfo canonical="Old Bexley and Sidcup" pa_id="438"/>
+<consinfo canonical="Oldham East and Saddleworth" guardian_id="1206"/>
+<consinfo canonical="Oldham East and Saddleworth" guardian_name="Oldham East and Saddleworth"/>
+<consinfo canonical="Oldham East and Saddleworth" pa_id="439"/>
+<consinfo canonical="Oldham West and Royton" guardian_id="1208"/>
+<consinfo canonical="Oldham West and Royton" guardian_name="Oldham West and Royton"/>
+<consinfo canonical="Oldham West and Royton" pa_id="440"/>
+<consinfo canonical="Orkney and Shetland" guardian_id="1209"/>
+<consinfo canonical="Orkney and Shetland" guardian_name="Orkney and Shetland"/>
+<consinfo canonical="Orkney and Shetland" pa_id="441"/>
+<consinfo canonical="Orpington" guardian_id="1210"/>
+<consinfo canonical="Orpington" guardian_name="Orpington"/>
+<consinfo canonical="Orpington" pa_id="442"/>
+<consinfo canonical="Oxford East" guardian_id="1211"/>
+<consinfo canonical="Oxford East" guardian_name="Oxford East"/>
+<consinfo canonical="Oxford East" pa_id="443"/>
+<consinfo canonical="Oxford West and Abingdon" guardian_id="1212"/>
+<consinfo canonical="Oxford West and Abingdon" guardian_name="Oxford West and Abingdon"/>
+<consinfo canonical="Oxford West and Abingdon" pa_id="444"/>
+<consinfo canonical="Paisley and Renfrewshire North" guardian_id="1213"/>
+<consinfo canonical="Paisley and Renfrewshire North" guardian_name="Paisley and Renfrewshire North"/>
+<consinfo canonical="Paisley and Renfrewshire North" pa_id="445"/>
+<consinfo canonical="Paisley and Renfrewshire South" guardian_id="1214"/>
+<consinfo canonical="Paisley and Renfrewshire South" guardian_name="Paisley and Renfrewshire South"/>
+<consinfo canonical="Paisley and Renfrewshire South" pa_id="446"/>
+<consinfo canonical="Pendle" guardian_id="1217"/>
+<consinfo canonical="Pendle" guardian_name="Pendle"/>
+<consinfo canonical="Pendle" pa_id="447"/>
+<consinfo canonical="Penistone and Stocksbridge" guardian_id="1516"/>
+<consinfo canonical="Penistone and Stocksbridge" guardian_name="Penistone and Stocksbridge"/>
+<consinfo canonical="Penistone and Stocksbridge" pa_id="448"/>
+<consinfo canonical="Penrith and The Border" guardian_id="1218"/>
+<consinfo canonical="Penrith and The Border" guardian_name="Penrith and The Border"/>
+<consinfo canonical="Penrith and The Border" pa_id="449"/>
+<consinfo canonical="Perth and North Perthshire" guardian_id="1219"/>
+<consinfo canonical="Perth and North Perthshire" guardian_name="Perth and Perthshire North"/>
+<consinfo canonical="Perth and North Perthshire" pa_id="450"/>
+<consinfo canonical="Peterborough" guardian_id="1221"/>
+<consinfo canonical="Peterborough" guardian_name="Peterborough"/>
+<consinfo canonical="Peterborough" pa_id="451"/>
+<consinfo canonical="Plymouth, Moor View" guardian_id="1517"/>
+<consinfo canonical="Plymouth, Moor View" guardian_name="Plymouth Moor View"/>
+<consinfo canonical="Plymouth, Moor View" pa_id="452"/>
+<consinfo canonical="Plymouth, Sutton and Devonport" guardian_id="1518"/>
+<consinfo canonical="Plymouth, Sutton and Devonport" guardian_name="Plymouth Sutton and Devonport"/>
+<consinfo canonical="Plymouth, Sutton and Devonport" pa_id="453"/>
+<consinfo canonical="Pontypridd" guardian_id="1226"/>
+<consinfo canonical="Pontypridd" guardian_name="Pontypridd"/>
+<consinfo canonical="Pontypridd" pa_id="454"/>
+<consinfo canonical="Poole" guardian_id="1227"/>
+<consinfo canonical="Poole" guardian_name="Poole"/>
+<consinfo canonical="Poole" pa_id="455"/>
+<consinfo canonical="Poplar and Limehouse" guardian_id="1519"/>
+<consinfo canonical="Poplar and Limehouse" guardian_name="Poplar and Limehouse"/>
+<consinfo canonical="Poplar and Limehouse" pa_id="456"/>
+<consinfo canonical="Portsmouth North" guardian_id="1229"/>
+<consinfo canonical="Portsmouth North" guardian_name="Portsmouth North"/>
+<consinfo canonical="Portsmouth North" pa_id="457"/>
+<consinfo canonical="Portsmouth South" guardian_id="1230"/>
+<consinfo canonical="Portsmouth South" guardian_name="Portsmouth South"/>
+<consinfo canonical="Portsmouth South" pa_id="458"/>
+<consinfo canonical="Preseli Pembrokeshire" guardian_id="1231"/>
+<consinfo canonical="Preseli Pembrokeshire" guardian_name="Preseli Pembrokeshire"/>
+<consinfo canonical="Preseli Pembrokeshire" pa_id="459"/>
+<consinfo canonical="Preston" guardian_id="1232"/>
+<consinfo canonical="Preston" guardian_name="Preston"/>
+<consinfo canonical="Preston" pa_id="460"/>
+<consinfo canonical="Pudsey" guardian_id="1233"/>
+<consinfo canonical="Pudsey" guardian_name="Pudsey"/>
+<consinfo canonical="Pudsey" pa_id="461"/>
+<consinfo canonical="Putney" guardian_id="1234"/>
+<consinfo canonical="Putney" guardian_name="Putney"/>
+<consinfo canonical="Putney" pa_id="462"/>
+<consinfo canonical="Rayleigh and Wickford" guardian_id="1520"/>
+<consinfo canonical="Rayleigh and Wickford" guardian_name="Rayleigh and Wickford"/>
+<consinfo canonical="Rayleigh and Wickford" pa_id="463"/>
+<consinfo canonical="Reading East" guardian_id="1237"/>
+<consinfo canonical="Reading East" guardian_name="Reading East"/>
+<consinfo canonical="Reading East" pa_id="464"/>
+<consinfo canonical="Reading West" guardian_id="1238"/>
+<consinfo canonical="Reading West" guardian_name="Reading West"/>
+<consinfo canonical="Reading West" pa_id="465"/>
+<consinfo canonical="Redcar" guardian_id="1239"/>
+<consinfo canonical="Redcar" guardian_name="Redcar"/>
+<consinfo canonical="Redcar" pa_id="466"/>
+<consinfo canonical="Redditch" guardian_id="1240"/>
+<consinfo canonical="Redditch" guardian_name="Redditch"/>
+<consinfo canonical="Redditch" pa_id="467"/>
+<consinfo canonical="Reigate" guardian_id="1242"/>
+<consinfo canonical="Reigate" guardian_name="Reigate"/>
+<consinfo canonical="Reigate" pa_id="468"/>
+<consinfo canonical="East Renfrewshire" guardian_id="910"/>
+<consinfo canonical="East Renfrewshire" guardian_name="Renfrewshire East"/>
+<consinfo canonical="East Renfrewshire" pa_id="469"/>
+<consinfo canonical="Rhondda" guardian_id="1243"/>
+<consinfo canonical="Rhondda" guardian_name="Rhondda"/>
+<consinfo canonical="Rhondda" pa_id="470"/>
+<consinfo canonical="South Ribble" guardian_id="1304"/>
+<consinfo canonical="South Ribble" guardian_name="Ribble South (South Ribble)"/>
+<consinfo canonical="South Ribble" pa_id="521"/>
+<consinfo canonical="Ribble Valley" guardian_id="1244"/>
+<consinfo canonical="Ribble Valley" guardian_name="Ribble Valley"/>
+<consinfo canonical="Ribble Valley" pa_id="471"/>
+<consinfo canonical="Richmond (Yorks)" guardian_id="1245"/>
+<consinfo canonical="Richmond (Yorks)" guardian_name="Richmond (Yorks)"/>
+<consinfo canonical="Richmond (Yorks)" pa_id="472"/>
+<consinfo canonical="Richmond Park" guardian_id="1246"/>
+<consinfo canonical="Richmond Park" guardian_name="Richmond Park"/>
+<consinfo canonical="Richmond Park" pa_id="473"/>
+<consinfo canonical="Rochdale" guardian_id="1249"/>
+<consinfo canonical="Rochdale" guardian_name="Rochdale"/>
+<consinfo canonical="Rochdale" pa_id="474"/>
+<consinfo canonical="Rochester and Strood" guardian_id="1521"/>
+<consinfo canonical="Rochester and Strood" guardian_name="Rochester and Strood"/>
+<consinfo canonical="Rochester and Strood" pa_id="475"/>
+<consinfo canonical="Rochford and Southend East" guardian_id="1251"/>
+<consinfo canonical="Rochford and Southend East" guardian_name="Rochford and Southend East"/>
+<consinfo canonical="Rochford and Southend East" pa_id="476"/>
+<consinfo canonical="Romford" guardian_id="1252"/>
+<consinfo canonical="Romford" guardian_name="Romford"/>
+<consinfo canonical="Romford" pa_id="477"/>
+<consinfo canonical="Romsey and Southampton North" guardian_id="1522"/>
+<consinfo canonical="Romsey and Southampton North" guardian_name="Romsey and Southampton North"/>
+<consinfo canonical="Romsey and Southampton North" pa_id="478"/>
+<consinfo canonical="Ross, Skye and Lochaber" guardian_id="1256"/>
+<consinfo canonical="Ross, Skye and Lochaber" guardian_name="Ross, Skye and Lochaber"/>
+<consinfo canonical="Ross, Skye and Lochaber" pa_id="479"/>
+<consinfo canonical="Rossendale and Darwen" guardian_id="1257"/>
+<consinfo canonical="Rossendale and Darwen" guardian_name="Rossendale and Darwen"/>
+<consinfo canonical="Rossendale and Darwen" pa_id="480"/>
+<consinfo canonical="Rother Valley" guardian_id="1258"/>
+<consinfo canonical="Rother Valley" guardian_name="Rother Valley"/>
+<consinfo canonical="Rother Valley" pa_id="481"/>
+<consinfo canonical="Rotherham" guardian_id="1259"/>
+<consinfo canonical="Rotherham" guardian_name="Rotherham"/>
+<consinfo canonical="Rotherham" pa_id="482"/>
+<consinfo canonical="Rugby" guardian_id="1523"/>
+<consinfo canonical="Rugby" guardian_name="Rugby"/>
+<consinfo canonical="Rugby" pa_id="483"/>
+<consinfo canonical="Ruislip, Northwood and Pinner" guardian_id="1524"/>
+<consinfo canonical="Ruislip, Northwood and Pinner" guardian_name="Ruislip, Northwood and Pinner"/>
+<consinfo canonical="Ruislip, Northwood and Pinner" pa_id="484"/>
+<consinfo canonical="Runnymede and Weybridge" guardian_id="1263"/>
+<consinfo canonical="Runnymede and Weybridge" guardian_name="Runnymede and Weybridge"/>
+<consinfo canonical="Runnymede and Weybridge" pa_id="485"/>
+<consinfo canonical="Rushcliffe" guardian_id="1264"/>
+<consinfo canonical="Rushcliffe" guardian_name="Rushcliffe"/>
+<consinfo canonical="Rushcliffe" pa_id="486"/>
+<consinfo canonical="Rutherglen and Hamilton West" guardian_id="969"/>
+<consinfo canonical="Rutherglen and Hamilton West" guardian_name="Rutherglen and Hamilton West"/>
+<consinfo canonical="Rutherglen and Hamilton West" pa_id="487"/>
+<consinfo canonical="Rutland and Melton" guardian_id="1265"/>
+<consinfo canonical="Rutland and Melton" guardian_name="Rutland and Melton"/>
+<consinfo canonical="Rutland and Melton" pa_id="488"/>
+<consinfo canonical="Saffron Walden" guardian_id="1267"/>
+<consinfo canonical="Saffron Walden" guardian_name="Saffron Walden"/>
+<consinfo canonical="Saffron Walden" pa_id="489"/>
+<consinfo canonical="Salford and Eccles" guardian_id="1525"/>
+<consinfo canonical="Salford and Eccles" guardian_name="Salford and Eccles"/>
+<consinfo canonical="Salford and Eccles" pa_id="495"/>
+<consinfo canonical="Salisbury" guardian_id="1270"/>
+<consinfo canonical="Salisbury" guardian_name="Salisbury"/>
+<consinfo canonical="Salisbury" pa_id="496"/>
+<consinfo canonical="Scarborough and Whitby" guardian_id="1272"/>
+<consinfo canonical="Scarborough and Whitby" guardian_name="Scarborough and Whitby"/>
+<consinfo canonical="Scarborough and Whitby" pa_id="497"/>
+<consinfo canonical="Scunthorpe" guardian_id="1273"/>
+<consinfo canonical="Scunthorpe" guardian_name="Scunthorpe"/>
+<consinfo canonical="Scunthorpe" pa_id="498"/>
+<consinfo canonical="Sedgefield" guardian_id="1274"/>
+<consinfo canonical="Sedgefield" guardian_name="Sedgefield"/>
+<consinfo canonical="Sedgefield" pa_id="499"/>
+<consinfo canonical="Sefton Central" guardian_id="1526"/>
+<consinfo canonical="Sefton Central" guardian_name="Sefton Central"/>
+<consinfo canonical="Sefton Central" pa_id="500"/>
+<consinfo canonical="Selby and Ainsty" guardian_id="1527"/>
+<consinfo canonical="Selby and Ainsty" guardian_name="Selby and Ainsty"/>
+<consinfo canonical="Selby and Ainsty" pa_id="501"/>
+<consinfo canonical="Sevenoaks" guardian_id="1276"/>
+<consinfo canonical="Sevenoaks" guardian_name="Sevenoaks"/>
+<consinfo canonical="Sevenoaks" pa_id="502"/>
+<consinfo canonical="Sheffield, Brightside and Hillsborough" guardian_id="1528"/>
+<consinfo canonical="Sheffield, Brightside and Hillsborough" guardian_name="Sheffield Brightside and Hillsborough"/>
+<consinfo canonical="Sheffield, Brightside and Hillsborough" pa_id="503"/>
+<consinfo canonical="Sheffield Central" guardian_id="1279"/>
+<consinfo canonical="Sheffield Central" guardian_name="Sheffield Central"/>
+<consinfo canonical="Sheffield Central" pa_id="504"/>
+<consinfo canonical="Sheffield, Hallam" guardian_id="1280"/>
+<consinfo canonical="Sheffield, Hallam" guardian_name="Sheffield Hallam"/>
+<consinfo canonical="Sheffield, Hallam" pa_id="505"/>
+<consinfo canonical="Sheffield, Heeley" guardian_id="1281"/>
+<consinfo canonical="Sheffield, Heeley" guardian_name="Sheffield Heeley"/>
+<consinfo canonical="Sheffield, Heeley" pa_id="506"/>
+<consinfo canonical="Sheffield South East" guardian_id="1529"/>
+<consinfo canonical="Sheffield South East" guardian_name="Sheffield South East"/>
+<consinfo canonical="Sheffield South East" pa_id="507"/>
+<consinfo canonical="Sherwood" guardian_id="1283"/>
+<consinfo canonical="Sherwood" guardian_name="Sherwood"/>
+<consinfo canonical="Sherwood" pa_id="508"/>
+<consinfo canonical="Shipley" guardian_id="1284"/>
+<consinfo canonical="Shipley" guardian_name="Shipley"/>
+<consinfo canonical="Shipley" pa_id="509"/>
+<consinfo canonical="Shrewsbury and Atcham" guardian_id="1286"/>
+<consinfo canonical="Shrewsbury and Atcham" guardian_name="Shrewsbury and Atcham"/>
+<consinfo canonical="Shrewsbury and Atcham" pa_id="510"/>
+<consinfo canonical="North Shropshire" guardian_id="1179"/>
+<consinfo canonical="North Shropshire" guardian_name="Shropshire North"/>
+<consinfo canonical="North Shropshire" pa_id="511"/>
+<consinfo canonical="Sittingbourne and Sheppey" guardian_id="1287"/>
+<consinfo canonical="Sittingbourne and Sheppey" guardian_name="Sittingbourne and Sheppey"/>
+<consinfo canonical="Sittingbourne and Sheppey" pa_id="512"/>
+<consinfo canonical="Skipton and Ripon" guardian_id="1288"/>
+<consinfo canonical="Skipton and Ripon" guardian_name="Skipton and Ripon"/>
+<consinfo canonical="Skipton and Ripon" pa_id="513"/>
+<consinfo canonical="Sleaford and North Hykeham" guardian_id="1289"/>
+<consinfo canonical="Sleaford and North Hykeham" guardian_name="Sleaford and North Hykeham"/>
+<consinfo canonical="Sleaford and North Hykeham" pa_id="514"/>
+<consinfo canonical="Slough" guardian_id="1290"/>
+<consinfo canonical="Slough" guardian_name="Slough"/>
+<consinfo canonical="Slough" pa_id="515"/>
+<consinfo canonical="Solihull" guardian_id="1291"/>
+<consinfo canonical="Solihull" guardian_name="Solihull"/>
+<consinfo canonical="Solihull" pa_id="516"/>
+<consinfo canonical="North Somerset" guardian_id="1530"/>
+<consinfo canonical="North Somerset" guardian_name="Somerset North"/>
+<consinfo canonical="North Somerset" pa_id="517"/>
+<consinfo canonical="North East Somerset" guardian_id="1531"/>
+<consinfo canonical="North East Somerset" guardian_name="Somerset North East"/>
+<consinfo canonical="North East Somerset" pa_id="518"/>
+<consinfo canonical="Somerton and Frome" guardian_id="1292"/>
+<consinfo canonical="Somerton and Frome" guardian_name="Somerton and Frome"/>
+<consinfo canonical="Somerton and Frome" pa_id="519"/>
+<consinfo canonical="South Holland and The Deepings" guardian_id="1302"/>
+<consinfo canonical="South Holland and The Deepings" guardian_name="South Holland and The Deepings"/>
+<consinfo canonical="South Holland and The Deepings" pa_id="520"/>
+<consinfo canonical="South Shields" guardian_id="1305"/>
+<consinfo canonical="South Shields" guardian_name="South Shields"/>
+<consinfo canonical="South Shields" pa_id="522"/>
+<consinfo canonical="Southampton, Itchen" guardian_id="1317"/>
+<consinfo canonical="Southampton, Itchen" guardian_name="Southampton Itchen"/>
+<consinfo canonical="Southampton, Itchen" pa_id="523"/>
+<consinfo canonical="Southampton, Test" guardian_id="1318"/>
+<consinfo canonical="Southampton, Test" guardian_name="Southampton Test"/>
+<consinfo canonical="Southampton, Test" pa_id="524"/>
+<consinfo canonical="Southend West" guardian_id="1320"/>
+<consinfo canonical="Southend West" guardian_name="Southend West"/>
+<consinfo canonical="Southend West" pa_id="525"/>
+<consinfo canonical="Southport" guardian_id="1321"/>
+<consinfo canonical="Southport" guardian_name="Southport"/>
+<consinfo canonical="Southport" pa_id="526"/>
+<consinfo canonical="Spelthorne" guardian_id="1323"/>
+<consinfo canonical="Spelthorne" guardian_name="Spelthorne"/>
+<consinfo canonical="Spelthorne" pa_id="527"/>
+<consinfo canonical="St Albans" guardian_id="1324"/>
+<consinfo canonical="St Albans" guardian_name="St Albans"/>
+<consinfo canonical="St Albans" pa_id="490"/>
+<consinfo canonical="St Austell and Newquay" guardian_id="1532"/>
+<consinfo canonical="St Austell and Newquay" guardian_name="St Austell and Newquay"/>
+<consinfo canonical="St Austell and Newquay" pa_id="491"/>
+<consinfo canonical="St Helens North" guardian_id="1325"/>
+<consinfo canonical="St Helens North" guardian_name="St Helens North"/>
+<consinfo canonical="St Helens North" pa_id="492"/>
+<consinfo canonical="St Helens South and Whiston" guardian_id="1533"/>
+<consinfo canonical="St Helens South and Whiston" guardian_name="St Helens South and Whiston"/>
+<consinfo canonical="St Helens South and Whiston" pa_id="493"/>
+<consinfo canonical="St Ives" guardian_id="1327"/>
+<consinfo canonical="St Ives" guardian_name="St Ives"/>
+<consinfo canonical="St Ives" pa_id="494"/>
+<consinfo canonical="Stafford" guardian_id="1328"/>
+<consinfo canonical="Stafford" guardian_name="Stafford"/>
+<consinfo canonical="Stafford" pa_id="528"/>
+<consinfo canonical="Staffordshire Moorlands" guardian_id="1329"/>
+<consinfo canonical="Staffordshire Moorlands" guardian_name="Staffordshire Moorlands"/>
+<consinfo canonical="Staffordshire Moorlands" pa_id="529"/>
+<consinfo canonical="South Staffordshire" guardian_id="1306"/>
+<consinfo canonical="South Staffordshire" guardian_name="Staffordshire South"/>
+<consinfo canonical="South Staffordshire" pa_id="530"/>
+<consinfo canonical="Stalybridge and Hyde" guardian_id="1330"/>
+<consinfo canonical="Stalybridge and Hyde" guardian_name="Stalybridge and Hyde"/>
+<consinfo canonical="Stalybridge and Hyde" pa_id="531"/>
+<consinfo canonical="Stevenage" guardian_id="1332"/>
+<consinfo canonical="Stevenage" guardian_name="Stevenage"/>
+<consinfo canonical="Stevenage" pa_id="532"/>
+<consinfo canonical="Stirling" guardian_id="1333"/>
+<consinfo canonical="Stirling" guardian_name="Stirling"/>
+<consinfo canonical="Stirling" pa_id="533"/>
+<consinfo canonical="Stockport" guardian_id="1334"/>
+<consinfo canonical="Stockport" guardian_name="Stockport"/>
+<consinfo canonical="Stockport" pa_id="534"/>
+<consinfo canonical="Stockton North" guardian_id="1335"/>
+<consinfo canonical="Stockton North" guardian_name="Stockton North"/>
+<consinfo canonical="Stockton North" pa_id="535"/>
+<consinfo canonical="Stockton South" guardian_id="1336"/>
+<consinfo canonical="Stockton South" guardian_name="Stockton South"/>
+<consinfo canonical="Stockton South" pa_id="536"/>
+<consinfo canonical="Stoke-on-Trent Central" guardian_id="1337"/>
+<consinfo canonical="Stoke-on-Trent Central" guardian_name="Stoke-on-Trent Central"/>
+<consinfo canonical="Stoke-on-Trent Central" pa_id="537"/>
+<consinfo canonical="Stoke-on-Trent North" guardian_id="1338"/>
+<consinfo canonical="Stoke-on-Trent North" guardian_name="Stoke-on-Trent North"/>
+<consinfo canonical="Stoke-on-Trent North" pa_id="538"/>
+<consinfo canonical="Stoke-on-Trent South" guardian_id="1339"/>
+<consinfo canonical="Stoke-on-Trent South" guardian_name="Stoke-on-Trent South"/>
+<consinfo canonical="Stoke-on-Trent South" pa_id="539"/>
+<consinfo canonical="Stone" guardian_id="1340"/>
+<consinfo canonical="Stone" guardian_name="Stone"/>
+<consinfo canonical="Stone" pa_id="540"/>
+<consinfo canonical="Stourbridge" guardian_id="1341"/>
+<consinfo canonical="Stourbridge" guardian_name="Stourbridge"/>
+<consinfo canonical="Stourbridge" pa_id="541"/>
+<consinfo canonical="Strangford" guardian_id="1342"/>
+<consinfo canonical="Strangford" guardian_name="Strangford"/>
+<consinfo canonical="Strangford" pa_id="542"/>
+<consinfo canonical="Stratford-on-Avon" guardian_id="1343"/>
+<consinfo canonical="Stratford-on-Avon" guardian_name="Stratford-on-Avon"/>
+<consinfo canonical="Stratford-on-Avon" pa_id="543"/>
+<consinfo canonical="Streatham" guardian_id="1345"/>
+<consinfo canonical="Streatham" guardian_name="Streatham"/>
+<consinfo canonical="Streatham" pa_id="544"/>
+<consinfo canonical="Stretford and Urmston" guardian_id="1347"/>
+<consinfo canonical="Stretford and Urmston" guardian_name="Stretford and Urmston"/>
+<consinfo canonical="Stretford and Urmston" pa_id="545"/>
+<consinfo canonical="Stroud" guardian_id="1348"/>
+<consinfo canonical="Stroud" guardian_name="Stroud"/>
+<consinfo canonical="Stroud" pa_id="546"/>
+<consinfo canonical="Central Suffolk and North Ipswich" guardian_id="802"/>
+<consinfo canonical="Central Suffolk and North Ipswich" guardian_name="Suffolk Central and Ipswich North"/>
+<consinfo canonical="Central Suffolk and North Ipswich" pa_id="547"/>
+<consinfo canonical="Suffolk Coastal" guardian_id="1349"/>
+<consinfo canonical="Suffolk Coastal" guardian_name="Suffolk Coastal"/>
+<consinfo canonical="Suffolk Coastal" pa_id="548"/>
+<consinfo canonical="South Suffolk" guardian_id="1307"/>
+<consinfo canonical="South Suffolk" guardian_name="Suffolk South"/>
+<consinfo canonical="South Suffolk" pa_id="549"/>
+<consinfo canonical="West Suffolk" guardian_id="1429"/>
+<consinfo canonical="West Suffolk" guardian_name="Suffolk West"/>
+<consinfo canonical="West Suffolk" pa_id="550"/>
+<consinfo canonical="Sunderland Central" guardian_id="1534"/>
+<consinfo canonical="Sunderland Central" guardian_name="Sunderland Central"/>
+<consinfo canonical="Sunderland Central" pa_id="551"/>
+<consinfo canonical="East Surrey" guardian_id="906"/>
+<consinfo canonical="East Surrey" guardian_name="Surrey East"/>
+<consinfo canonical="East Surrey" pa_id="552"/>
+<consinfo canonical="Surrey Heath" guardian_id="1353"/>
+<consinfo canonical="Surrey Heath" guardian_name="Surrey Heath"/>
+<consinfo canonical="Surrey Heath" pa_id="553"/>
+<consinfo canonical="South West Surrey" guardian_id="1315"/>
+<consinfo canonical="South West Surrey" guardian_name="Surrey South West"/>
+<consinfo canonical="South West Surrey" pa_id="554"/>
+<consinfo canonical="Mid Sussex" guardian_id="1125"/>
+<consinfo canonical="Mid Sussex" guardian_name="Sussex Mid"/>
+<consinfo canonical="Mid Sussex" pa_id="555"/>
+<consinfo canonical="Sutton Coldfield" guardian_id="1354"/>
+<consinfo canonical="Sutton Coldfield" guardian_name="Sutton Coldfield"/>
+<consinfo canonical="Sutton Coldfield" pa_id="557"/>
+<consinfo canonical="Sutton and Cheam" guardian_id="1355"/>
+<consinfo canonical="Sutton and Cheam" guardian_name="Sutton and Cheam"/>
+<consinfo canonical="Sutton and Cheam" pa_id="556"/>
+<consinfo canonical="Swansea East" guardian_id="1356"/>
+<consinfo canonical="Swansea East" guardian_name="Swansea East"/>
+<consinfo canonical="Swansea East" pa_id="558"/>
+<consinfo canonical="Swansea West" guardian_id="1357"/>
+<consinfo canonical="Swansea West" guardian_name="Swansea West"/>
+<consinfo canonical="Swansea West" pa_id="559"/>
+<consinfo canonical="North Swindon" guardian_id="1181"/>
+<consinfo canonical="North Swindon" guardian_name="Swindon North"/>
+<consinfo canonical="North Swindon" pa_id="560"/>
+<consinfo canonical="South Swindon" guardian_id="1308"/>
+<consinfo canonical="South Swindon" guardian_name="Swindon South"/>
+<consinfo canonical="South Swindon" pa_id="561"/>
+<consinfo canonical="Tamworth" guardian_id="1359"/>
+<consinfo canonical="Tamworth" guardian_name="Tamworth"/>
+<consinfo canonical="Tamworth" pa_id="562"/>
+<consinfo canonical="Tatton" guardian_id="1360"/>
+<consinfo canonical="Tatton" guardian_name="Tatton"/>
+<consinfo canonical="Tatton" pa_id="563"/>
+<consinfo canonical="Taunton Deane" guardian_id="1535"/>
+<consinfo canonical="Taunton Deane" guardian_name="Taunton Deane"/>
+<consinfo canonical="Taunton Deane" pa_id="564"/>
+<consinfo canonical="Telford" guardian_id="1364"/>
+<consinfo canonical="Telford" guardian_name="Telford"/>
+<consinfo canonical="Telford" pa_id="565"/>
+<consinfo canonical="Tewkesbury" guardian_id="1365"/>
+<consinfo canonical="Tewkesbury" guardian_name="Tewkesbury"/>
+<consinfo canonical="Tewkesbury" pa_id="566"/>
+<consinfo canonical="North Thanet" guardian_id="1183"/>
+<consinfo canonical="North Thanet" guardian_name="Thanet North"/>
+<consinfo canonical="North Thanet" pa_id="567"/>
+<consinfo canonical="South Thanet" guardian_id="1309"/>
+<consinfo canonical="South Thanet" guardian_name="Thanet South"/>
+<consinfo canonical="South Thanet" pa_id="568"/>
+<consinfo canonical="The Wrekin" guardian_id="1368"/>
+<consinfo canonical="The Wrekin" guardian_name="The Wrekin"/>
+<consinfo canonical="The Wrekin" pa_id="640"/>
+<consinfo canonical="Thirsk and Malton" guardian_id="1536"/>
+<consinfo canonical="Thirsk and Malton" guardian_name="Thirsk and Malton"/>
+<consinfo canonical="Thirsk and Malton" pa_id="569"/>
+<consinfo canonical="Thornbury and Yate" guardian_id="1537"/>
+<consinfo canonical="Thornbury and Yate" guardian_name="Thornbury and Yate"/>
+<consinfo canonical="Thornbury and Yate" pa_id="570"/>
+<consinfo canonical="Thurrock" guardian_id="1369"/>
+<consinfo canonical="Thurrock" guardian_name="Thurrock"/>
+<consinfo canonical="Thurrock" pa_id="571"/>
+<consinfo canonical="Tiverton and Honiton" guardian_id="1371"/>
+<consinfo canonical="Tiverton and Honiton" guardian_name="Tiverton and Honiton"/>
+<consinfo canonical="Tiverton and Honiton" pa_id="572"/>
+<consinfo canonical="Tonbridge and Malling" guardian_id="1372"/>
+<consinfo canonical="Tonbridge and Malling" guardian_name="Tonbridge and Malling"/>
+<consinfo canonical="Tonbridge and Malling" pa_id="573"/>
+<consinfo canonical="Tooting" guardian_id="1373"/>
+<consinfo canonical="Tooting" guardian_name="Tooting"/>
+<consinfo canonical="Tooting" pa_id="574"/>
+<consinfo canonical="Torbay" guardian_id="1374"/>
+<consinfo canonical="Torbay" guardian_name="Torbay"/>
+<consinfo canonical="Torbay" pa_id="575"/>
+<consinfo canonical="Torfaen" guardian_id="1375"/>
+<consinfo canonical="Torfaen" guardian_name="Torfaen"/>
+<consinfo canonical="Torfaen" pa_id="576"/>
+<consinfo canonical="Totnes" guardian_id="1377"/>
+<consinfo canonical="Totnes" guardian_name="Totnes"/>
+<consinfo canonical="Totnes" pa_id="577"/>
+<consinfo canonical="Tottenham" guardian_id="1378"/>
+<consinfo canonical="Tottenham" guardian_name="Tottenham"/>
+<consinfo canonical="Tottenham" pa_id="578"/>
+<consinfo canonical="Truro and Falmouth" guardian_id="1538"/>
+<consinfo canonical="Truro and Falmouth" guardian_name="Truro and Falmouth"/>
+<consinfo canonical="Truro and Falmouth" pa_id="579"/>
+<consinfo canonical="Tunbridge Wells" guardian_id="1381"/>
+<consinfo canonical="Tunbridge Wells" guardian_name="Tunbridge Wells"/>
+<consinfo canonical="Tunbridge Wells" pa_id="580"/>
+<consinfo canonical="Twickenham" guardian_id="1383"/>
+<consinfo canonical="Twickenham" guardian_name="Twickenham"/>
+<consinfo canonical="Twickenham" pa_id="581"/>
+<consinfo canonical="Tynemouth" guardian_id="1385"/>
+<consinfo canonical="Tynemouth" guardian_name="Tynemouth"/>
+<consinfo canonical="Tynemouth" pa_id="582"/>
+<consinfo canonical="North Tyneside" guardian_id="1184"/>
+<consinfo canonical="North Tyneside" guardian_name="Tyneside North"/>
+<consinfo canonical="North Tyneside" pa_id="583"/>
+<consinfo canonical="West Tyrone" guardian_id="1430"/>
+<consinfo canonical="West Tyrone" guardian_name="Tyrone West"/>
+<consinfo canonical="West Tyrone" pa_id="584"/>
+<consinfo canonical="Mid Ulster" guardian_id="1126"/>
+<consinfo canonical="Mid Ulster" guardian_name="Ulster Mid"/>
+<consinfo canonical="Mid Ulster" pa_id="585"/>
+<consinfo canonical="Upper Bann" guardian_id="1387"/>
+<consinfo canonical="Upper Bann" guardian_name="Upper Bann"/>
+<consinfo canonical="Upper Bann" pa_id="586"/>
+<consinfo canonical="Uxbridge and South Ruislip" guardian_id="1539"/>
+<consinfo canonical="Uxbridge and South Ruislip" guardian_name="Uxbridge and Ruislip South"/>
+<consinfo canonical="Uxbridge and South Ruislip" pa_id="587"/>
+<consinfo canonical="Vale of Clwyd" guardian_id="1389"/>
+<consinfo canonical="Vale of Clwyd" guardian_name="Vale of Clwyd"/>
+<consinfo canonical="Vale of Clwyd" pa_id="588"/>
+<consinfo canonical="Vale of Glamorgan" guardian_id="1390"/>
+<consinfo canonical="Vale of Glamorgan" guardian_name="Vale of Glamorgan"/>
+<consinfo canonical="Vale of Glamorgan" pa_id="589"/>
+<consinfo canonical="Vauxhall" guardian_id="1392"/>
+<consinfo canonical="Vauxhall" guardian_name="Vauxhall"/>
+<consinfo canonical="Vauxhall" pa_id="590"/>
+<consinfo canonical="Wakefield" guardian_id="1393"/>
+<consinfo canonical="Wakefield" guardian_name="Wakefield"/>
+<consinfo canonical="Wakefield" pa_id="591"/>
+<consinfo canonical="Wallasey" guardian_id="1394"/>
+<consinfo canonical="Wallasey" guardian_name="Wallasey"/>
+<consinfo canonical="Wallasey" pa_id="592"/>
+<consinfo canonical="Walsall North" guardian_id="1396"/>
+<consinfo canonical="Walsall North" guardian_name="Walsall North"/>
+<consinfo canonical="Walsall North" pa_id="593"/>
+<consinfo canonical="Walsall South" guardian_id="1397"/>
+<consinfo canonical="Walsall South" guardian_name="Walsall South"/>
+<consinfo canonical="Walsall South" pa_id="594"/>
+<consinfo canonical="Walthamstow" guardian_id="1398"/>
+<consinfo canonical="Walthamstow" guardian_name="Walthamstow"/>
+<consinfo canonical="Walthamstow" pa_id="595"/>
+<consinfo canonical="Wansbeck" guardian_id="1399"/>
+<consinfo canonical="Wansbeck" guardian_name="Wansbeck"/>
+<consinfo canonical="Wansbeck" pa_id="596"/>
+<consinfo canonical="Wantage" guardian_id="1402"/>
+<consinfo canonical="Wantage" guardian_name="Wantage"/>
+<consinfo canonical="Wantage" pa_id="597"/>
+<consinfo canonical="Warley" guardian_id="1403"/>
+<consinfo canonical="Warley" guardian_name="Warley"/>
+<consinfo canonical="Warley" pa_id="598"/>
+<consinfo canonical="Warrington North" guardian_id="1406"/>
+<consinfo canonical="Warrington North" guardian_name="Warrington North"/>
+<consinfo canonical="Warrington North" pa_id="599"/>
+<consinfo canonical="Warrington South" guardian_id="1407"/>
+<consinfo canonical="Warrington South" guardian_name="Warrington South"/>
+<consinfo canonical="Warrington South" pa_id="600"/>
+<consinfo canonical="Warwick and Leamington" guardian_id="1408"/>
+<consinfo canonical="Warwick and Leamington" guardian_name="Warwick and Leamington"/>
+<consinfo canonical="Warwick and Leamington" pa_id="601"/>
+<consinfo canonical="North Warwickshire" guardian_id="1185"/>
+<consinfo canonical="North Warwickshire" guardian_name="Warwickshire North"/>
+<consinfo canonical="North Warwickshire" pa_id="602"/>
+<consinfo canonical="Washington and Sunderland West" guardian_id="1540"/>
+<consinfo canonical="Washington and Sunderland West" guardian_name="Washington and Sunderland West"/>
+<consinfo canonical="Washington and Sunderland West" pa_id="603"/>
+<consinfo canonical="Watford" guardian_id="1409"/>
+<consinfo canonical="Watford" guardian_name="Watford"/>
+<consinfo canonical="Watford" pa_id="604"/>
+<consinfo canonical="Waveney" guardian_id="1410"/>
+<consinfo canonical="Waveney" guardian_name="Waveney"/>
+<consinfo canonical="Waveney" pa_id="605"/>
+<consinfo canonical="Wealden" guardian_id="1411"/>
+<consinfo canonical="Wealden" guardian_name="Wealden"/>
+<consinfo canonical="Wealden" pa_id="606"/>
+<consinfo canonical="Weaver Vale" guardian_id="1412"/>
+<consinfo canonical="Weaver Vale" guardian_name="Weaver Vale"/>
+<consinfo canonical="Weaver Vale" pa_id="607"/>
+<consinfo canonical="Wellingborough" guardian_id="1413"/>
+<consinfo canonical="Wellingborough" guardian_name="Wellingborough"/>
+<consinfo canonical="Wellingborough" pa_id="608"/>
+<consinfo canonical="Wells" guardian_id="1414"/>
+<consinfo canonical="Wells" guardian_name="Wells"/>
+<consinfo canonical="Wells" pa_id="609"/>
+<consinfo canonical="Welwyn Hatfield" guardian_id="1415"/>
+<consinfo canonical="Welwyn Hatfield" guardian_name="Welwyn Hatfield"/>
+<consinfo canonical="Welwyn Hatfield" pa_id="610"/>
+<consinfo canonical="Wentworth and Dearne" guardian_id="1541"/>
+<consinfo canonical="Wentworth and Dearne" guardian_name="Wentworth and Dearne"/>
+<consinfo canonical="Wentworth and Dearne" pa_id="611"/>
+<consinfo canonical="West Bromwich East" guardian_id="1418"/>
+<consinfo canonical="West Bromwich East" guardian_name="West Bromwich East"/>
+<consinfo canonical="West Bromwich East" pa_id="612"/>
+<consinfo canonical="West Bromwich West" guardian_id="1419"/>
+<consinfo canonical="West Bromwich West" guardian_name="West Bromwich West"/>
+<consinfo canonical="West Bromwich West" pa_id="613"/>
+<consinfo canonical="West Ham" guardian_id="1424"/>
+<consinfo canonical="West Ham" guardian_name="West Ham"/>
+<consinfo canonical="West Ham" pa_id="614"/>
+<consinfo canonical="Westminster North" guardian_id="1434"/>
+<consinfo canonical="Westminster North" guardian_name="Westminster North"/>
+<consinfo canonical="Westminster North" pa_id="615"/>
+<consinfo canonical="Westmorland and Lonsdale" guardian_id="1435"/>
+<consinfo canonical="Westmorland and Lonsdale" guardian_name="Westmorland and Lonsdale"/>
+<consinfo canonical="Westmorland and Lonsdale" pa_id="616"/>
+<consinfo canonical="Weston-Super-Mare" guardian_id="1436"/>
+<consinfo canonical="Weston-Super-Mare" guardian_name="Weston-Super-Mare"/>
+<consinfo canonical="Weston-Super-Mare" pa_id="617"/>
+<consinfo canonical="Wigan" guardian_id="1437"/>
+<consinfo canonical="Wigan" guardian_name="Wigan"/>
+<consinfo canonical="Wigan" pa_id="618"/>
+<consinfo canonical="North Wiltshire" guardian_id="1191"/>
+<consinfo canonical="North Wiltshire" guardian_name="Wiltshire North"/>
+<consinfo canonical="North Wiltshire" pa_id="619"/>
+<consinfo canonical="South West Wiltshire" guardian_id="1542"/>
+<consinfo canonical="South West Wiltshire" guardian_name="Wiltshire South West"/>
+<consinfo canonical="South West Wiltshire" pa_id="620"/>
+<consinfo canonical="Wimbledon" guardian_id="1438"/>
+<consinfo canonical="Wimbledon" guardian_name="Wimbledon"/>
+<consinfo canonical="Wimbledon" pa_id="621"/>
+<consinfo canonical="Winchester" guardian_id="1439"/>
+<consinfo canonical="Winchester" guardian_name="Winchester"/>
+<consinfo canonical="Winchester" pa_id="622"/>
+<consinfo canonical="Windsor" guardian_id="1440"/>
+<consinfo canonical="Windsor" guardian_name="Windsor"/>
+<consinfo canonical="Windsor" pa_id="623"/>
+<consinfo canonical="Wirral South" guardian_id="1442"/>
+<consinfo canonical="Wirral South" guardian_name="Wirral South"/>
+<consinfo canonical="Wirral South" pa_id="624"/>
+<consinfo canonical="Wirral West" guardian_id="1443"/>
+<consinfo canonical="Wirral West" guardian_name="Wirral West"/>
+<consinfo canonical="Wirral West" pa_id="625"/>
+<consinfo canonical="Witham" guardian_id="1543"/>
+<consinfo canonical="Witham" guardian_name="Witham"/>
+<consinfo canonical="Witham" pa_id="626"/>
+<consinfo canonical="Witney" guardian_id="1444"/>
+<consinfo canonical="Witney" guardian_name="Witney"/>
+<consinfo canonical="Witney" pa_id="627"/>
+<consinfo canonical="Woking" guardian_id="1445"/>
+<consinfo canonical="Woking" guardian_name="Woking"/>
+<consinfo canonical="Woking" pa_id="628"/>
+<consinfo canonical="Wokingham" guardian_id="1446"/>
+<consinfo canonical="Wokingham" guardian_name="Wokingham"/>
+<consinfo canonical="Wokingham" pa_id="629"/>
+<consinfo canonical="Wolverhampton North East" guardian_id="1447"/>
+<consinfo canonical="Wolverhampton North East" guardian_name="Wolverhampton North East"/>
+<consinfo canonical="Wolverhampton North East" pa_id="630"/>
+<consinfo canonical="Wolverhampton South East" guardian_id="1448"/>
+<consinfo canonical="Wolverhampton South East" guardian_name="Wolverhampton South East"/>
+<consinfo canonical="Wolverhampton South East" pa_id="631"/>
+<consinfo canonical="Wolverhampton South West" guardian_id="1449"/>
+<consinfo canonical="Wolverhampton South West" guardian_name="Wolverhampton South West"/>
+<consinfo canonical="Wolverhampton South West" pa_id="632"/>
+<consinfo canonical="Worcester" guardian_id="1452"/>
+<consinfo canonical="Worcester" guardian_name="Worcester"/>
+<consinfo canonical="Worcester" pa_id="633"/>
+<consinfo canonical="Mid Worcestershire" guardian_id="1127"/>
+<consinfo canonical="Mid Worcestershire" guardian_name="Worcestershire Mid"/>
+<consinfo canonical="Mid Worcestershire" pa_id="634"/>
+<consinfo canonical="West Worcestershire" guardian_id="1431"/>
+<consinfo canonical="West Worcestershire" guardian_name="Worcestershire West"/>
+<consinfo canonical="West Worcestershire" pa_id="635"/>
+<consinfo canonical="Workington" guardian_id="1453"/>
+<consinfo canonical="Workington" guardian_name="Workington"/>
+<consinfo canonical="Workington" pa_id="636"/>
+<consinfo canonical="Worsley and Eccles South" guardian_id="1544"/>
+<consinfo canonical="Worsley and Eccles South" guardian_name="Worsley and Eccles South"/>
+<consinfo canonical="Worsley and Eccles South" pa_id="637"/>
+<consinfo canonical="East Worthing and Shoreham" guardian_id="907"/>
+<consinfo canonical="East Worthing and Shoreham" guardian_name="Worthing East and Shoreham"/>
+<consinfo canonical="East Worthing and Shoreham" pa_id="638"/>
+<consinfo canonical="Worthing West" guardian_id="1456"/>
+<consinfo canonical="Worthing West" guardian_name="Worthing West"/>
+<consinfo canonical="Worthing West" pa_id="639"/>
+<consinfo canonical="Wrexham" guardian_id="1457"/>
+<consinfo canonical="Wrexham" guardian_name="Wrexham"/>
+<consinfo canonical="Wrexham" pa_id="641"/>
+<consinfo canonical="Wycombe" guardian_id="1458"/>
+<consinfo canonical="Wycombe" guardian_name="Wycombe"/>
+<consinfo canonical="Wycombe" pa_id="642"/>
+<consinfo canonical="Wyre Forest" guardian_id="1460"/>
+<consinfo canonical="Wyre Forest" guardian_name="Wyre Forest"/>
+<consinfo canonical="Wyre Forest" pa_id="644"/>
+<consinfo canonical="Wyre and Preston North" guardian_id="1545"/>
+<consinfo canonical="Wyre and Preston North" guardian_name="Wyre and Preston North"/>
+<consinfo canonical="Wyre and Preston North" pa_id="643"/>
+<consinfo canonical="Wythenshawe and Sale East" guardian_id="1461"/>
+<consinfo canonical="Wythenshawe and Sale East" guardian_name="Wythenshawe and Sale East"/>
+<consinfo canonical="Wythenshawe and Sale East" pa_id="645"/>
+<consinfo canonical="Yeovil" guardian_id="1462"/>
+<consinfo canonical="Yeovil" guardian_name="Yeovil"/>
+<consinfo canonical="Yeovil" pa_id="646"/>
+<consinfo canonical="Ynys Môn" guardian_id="1463"/>
+<consinfo canonical="Ynys Môn" guardian_name="Ynys Mon"/>
+<consinfo canonical="Ynys Môn" pa_id="647"/>
+<consinfo canonical="York Central" guardian_id="1546"/>
+<consinfo canonical="York Central" guardian_name="York Central"/>
+<consinfo canonical="York Central" pa_id="648"/>
+<consinfo canonical="York Outer" guardian_id="1547"/>
+<consinfo canonical="York Outer" guardian_name="York Outer"/>
+<consinfo canonical="York Outer" pa_id="649"/>
+<consinfo canonical="East Yorkshire" guardian_id="1465"/>
+<consinfo canonical="East Yorkshire" guardian_name="Yorkshire East"/>
+<consinfo canonical="East Yorkshire" pa_id="650"/>
+</publicwhip>
+
