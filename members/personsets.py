@@ -344,6 +344,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
         parser.setContentHandler(self)
         parser.parse("people.xml")
         parser.parse("all-members.xml")
+        parser.parse("all-members-2010.xml")
         parser.parse("peers-ucl.xml")
         parser.parse("ni-members.xml")
         parser.parse("sp-members.xml")
