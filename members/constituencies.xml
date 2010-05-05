@@ -6893,15 +6893,19 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2170" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Basildon and Billericay"/>
+    <name text="Basildon &amp; Billericay"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2171" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Bermondsey and Old Southwark"/>
+    <name text="Bermondsey &amp; Old Southwark"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2172" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Blackley and Broughton"/>
+    <name text="Blackley &amp; Broughton"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2173" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Blackpool North and Cleveleys"/>
+    <name text="Blackpool North &amp; Cleveleys"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2174" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Bradford East"/>
@@ -6911,21 +6915,27 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2176" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Bridgwater and West Somerset"/>
+    <name text="Bridgwater &amp; West Somerset"/>
+    <name text="Bridgwater and Somerset West"/>
+    <name text="Bridgwater &amp; Somerset West"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2177" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Broadland"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2178" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Camborne and Redruth"/>
+    <name text="Camborne &amp; Redruth"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2179" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Central Devon"/>
+    <name text="Devon Central"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2180" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Chelmsford"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2181" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Chelsea and Fulham"/>
+    <name text="Chelsea &amp; Fulham"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2182" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Chippenham"/>
@@ -6935,48 +6945,64 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2184" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Dagenham and Rainham"/>
+    <name text="Dagenham &amp; Rainham"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2185" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Derbyshire Dales"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2186" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Ealing Central and Acton"/>
+    <name text="Ealing Central &amp; Acton"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2187" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Elmet and Rothwell"/>
+    <name text="Elmet &amp; Rothwell"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2188" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Filton and Bradley Stoke"/>
+    <name text="Filton &amp; Bradley Stoke"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2189" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Garston and Halewood"/>
+    <name text="Garston &amp; Halewood"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2190" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Gateshead"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2191" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Gillingham and Rainham"/>
+    <name text="Gillingham &amp; Rainham"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2192" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Hammersmith"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2193" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Hampstead and Kilburn"/>
+    <name text="Hampstead &amp; Kilburn"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2194" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Harwich and North Essex"/>
+    <name text="Harwich &amp; North Essex"/>
+    <name text="Harwich and Essex North"/>
+    <name text="Harwich &amp; Essex North"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2195" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Hereford and South Herefordshire"/>
+    <name text="Hereford &amp; South Herefordshire"/>
+    <name text="Hereford and Herefordshire South"/>
+    <name text="Hereford &amp; Herefordshire South"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2196" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Hornchurch and Upminster"/>
+    <name text="Hornchurch &amp; Upminster"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2197" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Houghton and Sunderland South"/>
+    <name text="Houghton &amp; Sunderland South"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2198" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Kenilworth and Southam"/>
+    <name text="Kenilworth &amp; Southam"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2199" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Kensington"/>
@@ -6986,9 +7012,10 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2201" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Lancaster and Fleetwood"/>
+    <name text="Lancaster &amp; Fleetwood"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2202" fromdate="2010-05-06" todate="9999-12-31">
-    <name text="Lewisham West and Penge"/>
+    <name text="Lewisham West &amp; Penge"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2203" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Maldon"/>
@@ -6998,6 +7025,7 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2205" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Mid Derbyshire"/>
+    <name text="Derbyshire Mid"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2206" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Milton Keynes North"/>
@@ -7007,6 +7035,7 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2208" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Morley and Outwood"/>
+    <name text="Morley &amp; Outwood"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2209" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Newcastle upon Tyne East"/>
@@ -7016,75 +7045,97 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2211" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Normanton, Pontefract and Castleford"/>
+    <name text="Normanton, Pontefract &amp; Castleford"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2212" fromdate="2010-05-06" todate="9999-12-31">
     <name text="North East Somerset"/>
+    <name text="Somerset North East"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2213" fromdate="2010-05-06" todate="9999-12-31">
     <name text="North Herefordshire"/>
+    <name text="Herefordshire North"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2214" fromdate="2010-05-06" todate="9999-12-31">
     <name text="North Somerset"/>
+    <name text="Somerset North"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2215" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Penistone and Stocksbridge"/>
+    <name text="Penistone &amp; Stocksbridge"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2216" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Plymouth, Moor View"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2217" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Plymouth, Sutton and Devonport"/>
+    <name text="Plymouth, Sutton &amp; Devonport"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2218" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Poplar and Limehouse"/>
+    <name text="Poplar &amp; Limehouse"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2219" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Rayleigh and Wickford"/>
+    <name text="Rayleigh &amp; Wickford"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2220" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Rochester and Strood"/>
+    <name text="Rochester &amp; Strood"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2221" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Romsey and Southampton North"/>
+    <name text="Romsey &amp; Southampton North"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2222" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Rugby"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2223" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Ruislip, Northwood and Pinner"/>
+    <name text="Ruislip, Northwood &amp; Pinner"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2224" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Salford and Eccles"/>
+    <name text="Salford &amp; Eccles"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2225" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Sefton Central"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2226" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Selby and Ainsty"/>
+    <Name text="Selby &amp; Ainsty"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2227" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Sheffield South East"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2228" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Sheffield, Brightside and Hillsborough"/>
+    <name text="Sheffield, Brightside &amp; Hillsborough"/>
+    <name text="Sheffield Brightside and Hillsborough"/>
+    <name text="Sheffield Brightside &amp; Hillsborough"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2229" fromdate="2010-05-06" todate="9999-12-31">
     <name text="South Basildon and East Thurrock"/>
+    <name text="Basildon South and Thurrock East"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2230" fromdate="2010-05-06" todate="9999-12-31">
     <name text="South Leicestershire"/>
+    <name text="Leicestershire South"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2231" fromdate="2010-05-06" todate="9999-12-31">
     <name text="South Northamptonshire"/>
+    <name text="Northamptonshire South"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2232" fromdate="2010-05-06" todate="9999-12-31">
     <name text="South West Wiltshire"/>
+    <name text="Wiltshire South West"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2233" fromdate="2010-05-06" todate="9999-12-31">
     <name text="St Austell and Newquay"/>
+    <name text="St Austell &amp; Newquay"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2234" fromdate="2010-05-06" todate="9999-12-31">
     <name text="St Helens South and Whiston"/>
+    <name text="St Helens South &amp; Whiston"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2235" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Sunderland Central"/>
@@ -7094,21 +7145,29 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2238" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Thirsk and Malton"/>
+    <name text="Thirsk &amp; Malton"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2239" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Thornbury and Yate"/>
+    <name text="Thornbury &amp; Yate"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2240" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Truro and Falmouth"/>
+    <name text="Truro &amp; Falmouth"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2241" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Uxbridge and South Ruislip"/>
+    <name text="Uxbridge &amp; South Ruislip"/>
+    <name text="Uxbridge and Ruislip South"/>
+    <name text="Uxbridge &amp; Ruislip South"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2242" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Washington and Sunderland West"/>
+    <name text="Washington &amp; Sunderland West"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2243" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Wentworth and Dearne"/>
+    <name text="Wentworth &amp; Dearne"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2244" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Westminster North"/>
@@ -7118,9 +7177,11 @@ that loads in the original file before making modifications.
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2246" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Worsley and Eccles South"/>
+    <name text="Worsley &amp; Eccles South"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2247" fromdate="2010-05-06" todate="9999-12-31">
     <name text="Wyre and Preston North"/>
+    <name text="Wyre &amp; Preston North"/>
   </constituency>
   <constituency id="uk.org.publicwhip/cons/2248" fromdate="2010-05-06" todate="9999-12-31">
     <name text="York Central"/>
