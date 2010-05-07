@@ -67,6 +67,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         self.loadspconsattr = None
         parser.parse(os.path.join(members_path,"sp-constituencies.xml"))
         parser.parse(os.path.join(members_path,"all-members.xml"))
+        parser.parse(os.path.join(members_path,"all-members-2010.xml"))
         self.loadperson = None
         parser.parse(os.path.join(members_path,"people.xml"))
         parser.parse(os.path.join(members_path,"ministers.xml"))
@@ -193,11 +194,12 @@ class MemberList(xml.sax.handler.ContentHandler):
                 self.loadspconsattr = attr.copy()
             else:
                 self.loadconsattr = {
-                    'hansard_id': attr['hansard_id'],
                     'id': attr['id'],
                     'fromdate': attr['fromdate'],
                     'todate': attr['todate'],
                 }
+                if attr.has_key("hansard_id"):
+                    self.loadconsattr['hansard_id'] = attr['hansard_id']
                 if len(self.loadconsattr['fromdate']) == 4:
                     self.loadconsattr['fromdate'] = '%s-01-01' % self.loadconsattr['fromdate']
                 if len(self.loadconsattr['todate']) == 4:
@@ -211,7 +213,8 @@ class MemberList(xml.sax.handler.ContentHandler):
                 # without punctuation, spaces, in lower case
                 nopunc = self.strippunc(attr['text'])
                 self.constoidmap.setdefault(nopunc, []).append(self.loadconsattr)
-                self.conshansardtoid[self.loadconsattr['hansard_id']] = self.loadconsattr['id']
+                if self.loadconsattr.has_key('hansard_id'):
+                    self.conshansardtoid[self.loadconsattr['hansard_id']] = self.loadconsattr['id']
             elif self.loadspconsattr: # name tag within constituency tag from the scottish parliament
                 # We need to distinguish the Scottish Parliament
                 # constituencies from Westminster constituencies with
