@@ -427,6 +427,8 @@ manualmatches = {
     "Geoffrey Clifton-Brown [The Cotswolds]" : "Geoffrey Clifton-Brown [Cotswold / The Cotswolds]",
     "Stephen Twigg [Enfield, Southgate]" : "Stephen Twigg [Enfield, Southgate / Liverpool, West Derby]",
     "Stephen Twigg [Liverpool, West Derby]" : "Stephen Twigg [Enfield, Southgate / Liverpool, West Derby]",
+    "Geraint Davies [Croydon Central]" : "Geraint Davies [Croydon Central / Swansea West]",
+    "Geraint Davies [Swansea West]" : "Geraint Davies [Croydon Central / Swansea West]",
 
 
     }
