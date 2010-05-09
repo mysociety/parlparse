@@ -49,7 +49,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=356272508,
+wgCurRevisionId=359640994,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -66,7 +66,7 @@ wgSearchNamespaces=[0],
 wgMWSuggestMessages=["with suggestions", "no suggestions"],
 wgRestrictionEdit=[],
 wgRestrictionMove=[],
-wgTrackingToken="8acc7ea92dc0b44fb9add93dbfdcbc83",
+wgTrackingToken="da24ca04280d6a59780edb567177b714",
 wgClickTrackingIsThrottled=true,
 wgNotice="",
 wgNoticeLocal="";
@@ -751,7 +751,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Peter_Brooke,_Baron_Brooke_of_Sutton_Mandeville" title="Peter Brooke, Baron Brooke of Sutton Mandeville" class="mw-redirect">The Lord Brooke of Sutton Mandeville</a></td>
+<td><a href="/wiki/Peter_Brooke,_Baron_Brooke_of_Sutton_Mandeville" title="Peter Brooke, Baron Brooke of Sutton Mandeville">The Lord Brooke of Sutton Mandeville</a></td>
 <td>Conservative</td>
 <td>Life Peer</td>
 <td>&#160;</td>
@@ -2731,7 +2731,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Brian_Mawhinney" title="Brian Mawhinney">The Lord Mawhinney</a></td>
+<td><a href="/wiki/Brian_Mawhinney" title="Brian Mawhinney" class="mw-redirect">The Lord Mawhinney</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3157,7 +3157,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Chris_Patten" title="Chris Patten">The Lord Patten of Barnes</a></td>
+<td><a href="/wiki/Chris_Patten" title="Chris Patten" class="mw-redirect">The Lord Patten of Barnes</a></td>
 <td>Conservative</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -3170,7 +3170,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 </tr>
 <tr>
 <td><a href="/wiki/Lord_Pearson_of_Rannoch" title="Lord Pearson of Rannoch" class="mw-redirect">The Lord Pearson of Rannoch</a></td>
-<td><a href="/wiki/United_Kingdom_Independence_Party" title="United Kingdom Independence Party">UKIP</a></td>
+<td><a href="/wiki/United_Kingdom_Independence_Party" title="United Kingdom Independence Party" class="mw-redirect">UKIP</a></td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
@@ -3991,7 +3991,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td>&#160;</td>
 </tr>
 <tr>
-<td><a href="/wiki/Jenny_Tonge" title="Jenny Tonge">The Baroness Tonge</a></td>
+<td><a href="/wiki/Jenny_Tonge" title="Jenny Tonge" class="mw-redirect">The Baroness Tonge</a></td>
 <td>Liberal Democrat</td>
 <td>&#160;</td>
 <td>&#160;</td>
@@ -4310,7 +4310,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 </tr>
 <tr>
 <td><a href="/wiki/Leopold_Verney,_21st_Baron_Willoughby_de_Broke" title="Leopold Verney, 21st Baron Willoughby de Broke" class="mw-redirect">The Lord Willoughby de Broke</a></td>
-<td><a href="/wiki/United_Kingdom_Independence_Party" title="United Kingdom Independence Party">UKIP</a></td>
+<td><a href="/wiki/United_Kingdom_Independence_Party" title="United Kingdom Independence Party" class="mw-redirect">UKIP</a></td>
 <td>Elected Hereditary Peer</td>
 <td>&#160;</td>
 </tr>
@@ -4596,7 +4596,7 @@ Template argument size: 6537/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!4 and timestamp 20100425203433 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!4 and timestamp 20100504042710 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Lists_of_British_people" title="Category:Lists of British people">Lists of British people</a></span> | <span dir='ltr'><a href="/wiki/Category:House_of_Lords" title="Category:House of Lords">House of Lords</a></span></div></div>		<!-- end content -->
@@ -4672,7 +4672,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 				<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 <li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=356272508" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=356272508" title="Information on how to cite this page">Cite this page</a></li>			</ul>
+				<li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=359640994" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=359640994" title="Information on how to cite this page">Cite this page</a></li>			</ul>
 		</div>
 	</div>
 	<div id="p-lang" class="portlet">
@@ -4689,7 +4689,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 	<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/skins-1.5/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>
 	<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a></div>
 	<ul id="f-list">
-		<li id="lastmod"> This page was last modified on 15 April 2010 at 23:20.<br /></li>
+		<li id="lastmod"> This page was last modified on 2 May 2010 at 14:08.<br /></li>
 		<li id="copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -4702,4 +4702,4 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </div>
 
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<!-- Served by srv164 in 0.059 secs. --></body></html>
+<!-- Served by srv160 in 0.052 secs. --></body></html>
