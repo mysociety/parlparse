@@ -25,12 +25,13 @@ wiki_index_url = "http://en.wikipedia.org/wiki/MPs_elected_in_the_UK_general_ele
 date_parl = {
     1997: '1999-01-01',
     2001: '2003-01-01',
-    2005: datetime.date.today().isoformat()
+    2005: '2007-08-01',
+    2010: datetime.date.today().isoformat()
 }
 wikimembers  = {}
 
 # Grab page 
-for year in (1997, 2001, 2005):
+for year in (1997, 2001, 2005, 2010):
     ur = open('../rawdata/Members_of_the_House_of_Commons_%d' % year)
     content = ur.read()
     ur.close()
