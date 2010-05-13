@@ -1,0 +1,25 @@
+#!/usr/bin/python
+
+import sys
+sys.path.append("../pyscraper/")
+sys.path.append("../pyscraper/lords/")
+from resolvemembernames import memberList
+from resolvelordsnames import lordsList
+
+id = 10000
+
+fp = open('ministers-2010-source')
+for line in fp:
+    line = line.strip()
+    if not line or line[0] == '#': continue
+    date_from, date_to, responsibility, position, department, name = line.split("\t")
+    if not date_to: date_to = '9999-12-31'
+    if responsibility: responsibility = ' responsibility="%s"' % responsibility
+    member_id, remadename, constituency = memberList.matchfullnamecons(name, None, date_from)
+    if not member_id:
+        member_id = lordsList.GetLordIDfname(name, None, date_from)
+    print '<moffice id="uk.org.publicwhip/moffice/%d" name="%s" matchid="%s" dept="%s" position="%s"%s fromdate="%s" todate="%s" source="manual"/>' % (
+        id, name, member_id, department, position, responsibility, date_from, date_to
+    )
+    id += 1
+

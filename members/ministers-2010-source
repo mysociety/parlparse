@@ -1,0 +1,49 @@
+# Reading from official websites that aren't in structured data format, that change regularly	
+# is just not worth it any more. Cabinet changes infrequently enough that it should be done
+# manually and can then be up to date (complaints already arriving that we don't yet have
+# David Cameron as PM, and it's impossible to override ministers.xml from the TheyWorkForYou
+# end). So this simple file is to be manually updated (or web interface written), and will
+# then become ministers-2010.xml with a script.
+
+# From	To	Responsibility	Position	Department	Name
+
+# Con/Lib coalition
+2010-05-11			Prime Minister		David Cameron
+2010-05-11			Deputy Prime Minister		Nick Clegg
+2010-05-11			Secretary of State	Foreign and Commonwealth Affairs	William Hague
+2010-05-12			Chancellor of the Exchequer	HM Treasury	George Osborne
+2010-05-12			Secretary of State	Justice	Kenneth Clarke
+2010-05-12			Secretary of State	Home Office	Theresa May
+2010-05-12			Minister for Women and Equality	Home Office	Theresa May
+2010-05-12			Secretary of State	Defence	Liam Fox
+2010-05-12			Secretary of State	Business, Innovation and Skills	Vince Cable
+2010-05-12			Secretary of State	Work and Pensions	Iain Duncan Smith
+2010-05-12			Secretary of State	Energy and Climate Change	Chris Huhne
+2010-05-12			Secretary of State	Health	Andrew Lansley
+2010-05-12			Secretary of State	Education	Michael Gove
+2010-05-12			Secretary of State	Communities and Local Government	Eric Pickles
+2010-05-12			Secretary of State	Transport	Philip Hammond
+2010-05-12			Secretary of State	Environment, Food and Rural Affairs	Caroline Spelman
+2010-05-12			Secretary of State	International Development	Andrew Mitchell
+2010-05-12			Secretary of State	Northern Ireland	Owen Paterson
+2010-05-12			Secretary of State	Scotland	Danny Alexander
+2010-05-12			Secretary of State	Wales	Cheryl Gillan
+2010-05-12			Secretary of State	Culture, Olympics, Media and Sport	Jeremy Hunt
+2010-05-12			Chief Secretary	HM Treasury	David Laws
+2010-05-12			Leader of the House of Lords	House of Lords	Lord Strathclyde
+2010-05-12			Chancellor of the Duchy of Lancaster		Lord Strathclyde
+2010-05-12			Minister without Portfolio		Baroness Warsi
+2010-05-12			Minister for the Cabinet Office		Francis Maude
+2010-05-12			Paymaster General		Francis Maude
+2010-05-12			Minister of State	Cabinet Office	Oliver Letwin
+2010-05-12			Minister of State	Universities and Science	David Willetts
+2010-05-12			Leader of the House of Commons	House of Commons	George Young
+2010-05-12			Lord Privy Seal		George Young
+2010-05-12			Parliamentary Secretary to the Treasury	HM Treasury	Patrick McLoughlin
+2010-05-12			Chief Whip	House of Commons	Patrick McLoughlin
+2010-05-12			Attorney General		Dominic Grieve
+
+# Labour
+2010-05-11			Leader of the Opposition		Harriet Harman
+
+# Others
