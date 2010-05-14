@@ -19,26 +19,26 @@ pwcmdirs = miscfuncs.pwcmdirs
 
 # These links come from the page "http://www.parliament.uk/directories/directories.cfm"
 
-watchpages = {  "govposts":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/hmg.cfm",
-				"offoppose":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/opp.cfm",
-				#"libdem":"http://letters.libdems.org.uk/mysociety.php",
-				"dup":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/dup.cfm",
-				"ulsterun":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/ulster.cfm",
-				"plaidsnp":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/PCSNP.cfm",
-				"privsec":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/Pps.cfm",
-				"selctee":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/selmem.cfm",
+watchpages = {  #"govposts":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/hmg.cfm",
+		#		"offoppose":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/opp.cfm",
+		#		#"libdem":"http://letters.libdems.org.uk/mysociety.php",
+		#		"dup":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/dup.cfm",
+		#		"ulsterun":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/ulster.cfm",
+		#		"plaidsnp":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/PCSNP.cfm",
+		#		"privsec":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/Pps.cfm",
+		#		"selctee":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/selmem.cfm",
 				"clerks":"http://www.publications.parliament.uk/pa/cm/listgovt.htm",
 
 				"bills":"http://www.publications.parliament.uk/pa/pabills.htm",
 				"privatebills":"http://www.publications.parliament.uk/pa/privbill.htm",
 
 				"hybridbillscfm":"http://www.parliament.uk/bills/hybrid_bills.cfm",
-				"draftbillscfm":"http://www.parliament.uk/bills/draftbills.cfm",
+		#		"draftbillscfm":"http://www.parliament.uk/bills/draftbills.cfm",
 				"billlist":"http://www.publications.parliament.uk/pa/cm/cmpblist/cmpblist.htm",
 
-				"newlords":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/new_members.cfm",
-				"deadlords":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/deceased_members.cfm",
-				"alphalistlords":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/alphabetical_list_of_members.cfm",
+		#		"newlords":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/new_members.cfm",
+		#		"deadlords":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/deceased_members.cfm",
+		#		"alphalistlords":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/alphabetical_list_of_members.cfm",
 
 				#"financialsanctions":"http://www.bankofengland.co.uk/publications/financialsanctions/sanctionsconlist.htm",
 			 }
