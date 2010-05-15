@@ -9,6 +9,7 @@ from resolvelordsnames import lordsList
 id = 10000
 
 fp = open('ministers-2010-source')
+print '<publicwhip>'
 for line in fp:
     line = line.strip()
     if not line or line[0] == '#': continue
@@ -22,4 +23,5 @@ for line in fp:
         id, name, member_id, department, position, responsibility, date_from, date_to
     )
     id += 1
+print '</publicwhip>'
 
