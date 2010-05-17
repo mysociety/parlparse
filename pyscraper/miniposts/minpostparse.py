@@ -171,7 +171,7 @@ def WriteXML(moffice, fout):
         fout.write(' fromdate="%s"' % moffice.sdatestart)
 
         if moffice.bopen:
-                fout.write(' todate="%s"' % "9999-12-31")
+                fout.write(' todate="%s"' % "2010-05-11")
         else:
                 fout.write(' todate="%s"' % moffice.sdateend)
 
