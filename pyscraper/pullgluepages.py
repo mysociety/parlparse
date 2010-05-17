@@ -189,7 +189,7 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
             (sdate=='2008-06-17' or sdate=='2008-07-07' or sdate=='2008-03-06' or sdate=='2008-01-14' or sdate=='2008-06-30' or sdate=='2008-11-20'):
                 urla = [urla[0]]
         if re.match(r'http://www.publications.parliament.uk/pa/cm200809/cmhansrd/cm0(\d{5})/debtext/\1-0001.htm', urla[0]) and \
-            (sdate=='2009-03-24' or sdate=='2009-06-30'):
+            (sdate=='2009-03-24' or sdate=='2009-06-30' or sdate=='2009-10-19' or sdate=='2009-07-20'):
                 urla = [urla[0]]
         #print "urla"
         #for aaa in urla:
