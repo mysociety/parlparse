@@ -15,8 +15,10 @@ def shortname_atts(shortname):
         raise Exception, "Attributes cannot be extracted from shortname %s" % shortname
     return m.groupdict()
 
-def create_committee_letters(indexurl):
+def create_committee_letters(indexurl, linkurl):
     """Create a set of letters for the shortname for a committee based on the Bill title"""
     #get the name of the index file for the committee
-    pBill = 'http://www.publications.parliament.uk/pa/cm(?:\d*)/(?:cmpublic/)?cmpb(.*?).htm'
-    return re.match(pBill, indexurl).group(1).upper()
+    m = re.match('http://www.publications.parliament.uk/pa/cm(?:\d*)/(?:cmpublic/)?cmpb(.*?).htm', indexurl)
+    if not m:
+        m = re.match('http://www.publications.parliament.uk/pa/cm(?:\d*)/(?:cmpublic/)?([^/]*)/', linkurl)
+    return m.group(1).upper()
