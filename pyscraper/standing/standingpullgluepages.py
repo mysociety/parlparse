@@ -81,6 +81,18 @@ def GlueByNext(fout, urlx, billtitle):
 	if re.search("/pa/cm199900/cmstand/f/st000525/00525s10.htm#pm$", urlx):
 		pageheader = "<a name=pm>"
 		url = re.sub("#pm", "", url)
+        if re.search("/pa/cm200910/cmpublic/bribery/100323/am", urlx):
+                pageheader = '<div id="maincontent">'
+                pagefooter = '<a name="end"/>'
+        if re.search("/pa/cm200910/cmpublic/cooperativeandcommunity/100303/am", urlx):
+                pagefooter = '<a name="end">'
+        if re.search("/pa/cm200910/cmpublic/marriagewales/100224/pm", urlx):
+                pagefooter = '<a name="end">'
+        if re.search('/pa/cm200910/cmpublic/thirdparties/100316/am', urlx):
+                pagefooter = '<a name="end">'
+        if re.search("/pa/cm200910/cmpublic/gromarket/100330/am", urlx):
+                pageheader = '<div id="maincontent">'
+                pagefooter = '<a name="end"/>'
 
 	# loop which scrapes through all the pages following the nextlinks
 	# knocking off the known links as we go in case a "next page" is missing.

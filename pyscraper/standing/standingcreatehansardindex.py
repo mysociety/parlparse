@@ -28,8 +28,9 @@ def GetLinksTitles(urlpage):
 	uin.close()
 	vdat = re.search("(?s)page title and static information follows(.*?)(end of variable data|$)", s).group(1)
 	vdat = re.sub("(?s)<!--.*?-->", "", vdat)
-	for lk in re.findall('<a href\s*=\s*"([^"]*)">(.*?)</a>(?i)', vdat):
+	for lk in re.findall('<a href\s*=\s*"([^"]*)">(.*?)</a>(?is)', vdat):
 		lklk = re.sub('\s', '', lk[0])
+                if re.match('http://www.parliament.uk', lklk): continue
 		lkname = re.sub("(?:\s|&nbsp;)+", " ", lk[1]).strip()
 		res.append((urlparse.urljoin(urlpage, lklk), lkname))
 		#print res[-1]
@@ -46,7 +47,7 @@ def GetReportProceedings(urlpage, year):
 	uin = urllib.urlopen(urlpage)
 	s = uin.read()
 	uin.close()
-	vdat = re.search("(?s)Report of proceedings(.*?)(Associated Memoranda|start of footer|$)", s)
+	vdat = re.search("(?is)Reports? of proceedings(.*?)(Associated Memoranda|start of footer|$)", s)
 	if urlpage == 'http://www.publications.parliament.uk/pa/cm/cmpbparliament.htm': # XXX
 		vdat = re.sub('(?s)^.*(<A href=".*?">2nd)', '\1', s)
 	elif not vdat:
@@ -68,6 +69,7 @@ def GetReportProceedings(urlpage, year):
 	if year == "2001":
 		vdat = re.sub('(st011127/)a(m/11127s01.htm">6th sitting</A></FONT></TD>\s*<TD nowrap><FONT size=\+1><A href="st011127/pm/11127s01.htm">27th November 2001 \(afternoon\))', '\g<1>p\g<2>', vdat)
 		vdat = re.sub('(st011122/)p(m/11122s01.htm">2nd sitting</A></FONT></TD>\s*<TD nowrap><FONT size=\+1><A href="st011122/am/11122s01.htm">22nd November 2001  \(morning\))', '\g<1>a\g<2>', vdat)
+                vdat = re.sub('partII//', 'partII/', vdat)
 	if year == "1997":
 		vdat = re.sub('(st980512/pm/pt)1(/80512s01.htm">3rd sitting </A></FONT></TD>\s*<TD><FONT size=\+1><A href="st980512/pm/pt2/80512s01.htm">12 May 1998)', '\g<1>2\g<2>', vdat)
 	if year == "2006":
@@ -80,10 +82,29 @@ def GetReportProceedings(urlpage, year):
 	lks = re.findall('(?si)<a\s+href\s*=\s*"([^"]*)">(.*?)(?:</a>|<tr>|</table>)(?i)', vdat)
 	for lk in lks:
 		lklk = re.sub("\s", "", lk[0])
-		lklk = re.sub("/+", "/", lklk)
 		lklk = urlparse.urljoin(urlpage, lklk)
-		
 		lkname = re.sub("(?:\s|&nbsp;|<br>|</?[iI]>)+", " ", lk[1]).strip()
+
+                if re.match('http://(www|services).parliament.uk', lklk): continue
+
+                # They've done them under bills now...
+                if int(year) >= 2009:
+                        msitting = re.match('Committee?(?: Stage| debate)*(?: -|:)? (\d+)(?:st|nd|rd|th) sitting(?i)', lkname)
+                        sitting = int(msitting.group(1))
+                        mdate = re.search('cmpublic/(.*?)/(\d\d)(\d\d)(\d\d)/(am|pm)/\d+s\d+\.htm', lklk)
+                        sdate = mx.DateTime.DateTimeFrom(
+                                year=2000+int(mdate.group(2)),
+                                month=int(mdate.group(3)),
+                                day=int(mdate.group(4))
+                        ).date
+                        if mdate.group(5) == 'am': time = 'morning'
+                        elif mdate.group(5) == 'pm': time = 'afternoon'
+                        if res and res[-1] == [ lklk, sdate, sitting, 0, time ]: continue
+			res.append([ lklk, sdate, sitting, 0, time ])
+			if not firstdate or firstdate > sdate:
+				firstdate = sdate
+                        continue
+
 		mprevdebates = re.match("Debates on.*?Bill in Session \d\d\d\d-\d\d", lkname)
 		if (not res or res[-1][0] != lklk) and not mprevdebates:
 			 res.append([lklk, "", 0, 0, ""])  # urllink, date, sitting number, sitting part, morning|afternoon
@@ -209,22 +230,42 @@ def GetBillLinks(bforce):
 			print "year=", year
 		bnks = GetLinksTitles(billyear[0])
 		for bnk in bnks:
+                        index_url = bnk[0]
+                        if index_url == 'http://services.parliament.uk/bills/2009-10/thirdpartiesrightsagainstinsurers.html':
+                                index_url = 'http://services.parliament.uk/bills/2009-10/thirdpartiesrightsagainstinsurers/committees/houseofcommonspublicbillcommitteeonthethirdpartiesrightsagainstinsurersbillhl200910.html'
                         if re.match('House of Lords Special Public Bill Committees', bnk[1]):
                                 continue
-			mcttee = re.match("(.*? (?:Bill|Dogs|Names))(?:\s?\[(?:<i>)?Lords(?:</i>)?\])?(?:\s?(?:<i>)?\[Lords\](?:</i>)?)?(?:\s*\[(?:<i>)?<FONT size=\-1>LORDS</FONT>(?:</i>)?\])?(?:\s*Bill)?(?:</i>)*(?:\s)*(?:\(except clauses.*?\) )?(\((Standing Committee [a-zA-Z]|Special Standing Committee|(Second|2nd) Reading Committee)\)\s?)?$", bnk[1])
-			if not mcttee:
-				print "Unrecognized committee or bill name:", bnk
+                        # The following two had their meetings in 2008-09 and are linked from there also
+                        if year == '2009' and bnk[1] in ('Child Poverty Bill', 'Equality Bill'):
+                                continue
+			mcttee = re.match("""
+        # The name of the Bill (occasionally they forget to put 'Bill')
+        (.*?[ ](?:Bill|Dogs|Schools[ ]and[ ]Families|Names))
+        # Some way of saying it's a Bill that started in the Lords
+        (?:\s?\[(?:<i>)?(?:Lords|HL)(?:</i>)?\])?
+        (?:\s?(?:<i>)?\[Lords\](?:</i>)?)?
+        (?:\s*\[(?:<i>)?<FONT[ ]size=\-1>LORDS</FONT>(?:</i>)?\])?
+        # Occasionally PBC doesn't look at all clauses
+        (?:\s*Bill)?(?:</i>)*(?:\s)*(?:\(except[ ]clauses.*?\)[ ])?
+        # And they used to say which Standing Committee was looking at it
+        (\((Standing[ ]Committee[ ][a-zA-Z]|Special[ ]Standing[ ]Committee|(Second|2nd)[ ]Reading[ ]Committee)\)\s?)?
+        # They occasionally repeat the session for no reason
+        (?:\d\d\d\d-\d\d)?
+        $(?ix)""", bnk[1])
+			assert mcttee, "Unrecognized committee or bill name: %s" % bnk
 			billtitle = mcttee.group(1)
 			if billtitle == "Company & Business Names":
 				billtitle = "Company and Business Names (Chamber of Commerce, Etc.) Bill"
 			if billtitle == "Breeding and Sale of Dogs":
 				billtitle = "Breeding and Sale of Dogs Bill"
+			if billtitle == "Children, Schools and Families":
+				billtitle = "Children, Schools and Families Bill"
 			assert re.match(".*? Bill$", billtitle), 'Does not end in Bill : %s' % billtitle
 			committee = mcttee.group(2)
-			#res.append((year, billtitle, committee, bnk[0]))
-			ps, committeedate = GetReportProceedings(bnk[0], year)
+			#res.append((year, billtitle, committee, index_url))
+			ps, committeedate = GetReportProceedings(index_url, year)
 			for p in ps:
-				res.append(((year, billtitle, committee, bnk[0], committeedate), p))
+				res.append(((year, billtitle, committee, index_url, committeedate), p))
 	return res
 
 def WriteXML(fout, billinks):
@@ -249,7 +290,7 @@ def WriteXML(fout, billinks):
 				print "Unrecognized committee for short name:", committee
 				assert False
 		else: 
-			shortcommitteeletter =  create_committee_letters(indexurl)
+			shortcommitteeletter =  create_committee_letters(indexurl, urllink)
 	
 		shortname = construct_shortname(committeedate, shortcommitteeletter, sittingnumber, sittingpart, date)
 		fout.write('<standingcttee shortname="%s" session="%s" date="%s" sittingnumber="%d" sittingpart="%d" daypart="%s" committeename="%s" billtitle="%s" urlindex="%s" url="%s"/>\n' % (shortname, year, date, sittingnumber, sittingpart, daypart, committee, billtitle, indexurl, urllink))
