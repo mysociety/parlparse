@@ -525,7 +525,7 @@ class ParseCommittee:
     
     def parse_column(self, text):
         """Extract a column number"""
-        mNum = re.match('Column (N|n)umber: (\d+)', text)
+        mNum = re.match(' *Column (N|n)umber: ?(\d+)', text)
         if not mNum: raise ContextException, "Couldn't set column number %s" % text
         self.column_number = int(mNum.group(2))
         debug("Column:", self.column_number)
@@ -1068,7 +1068,7 @@ if len(sys.argv)==2 and sys.argv[1] == '--patchtool':
     patchtool = True
 
 # this code only works for transcripts from 2001 onwards
-g = glob.glob(os.path.join(standing_dir, 'standing200*.html'))
+g = glob.glob(os.path.join(standing_dir, 'standing20*.html'))
 g = [file for file in g if re.search('standing20(0[1-9]|[1-9][0-9])', file)]
 g.sort()
 parser = ParseCommittee()
