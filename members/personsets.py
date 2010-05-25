@@ -430,6 +430,10 @@ manualmatches = {
     "Stephen Twigg [Liverpool, West Derby]" : "Stephen Twigg [Enfield, Southgate / Liverpool, West Derby]",
     "Geraint Davies [Croydon Central]" : "Geraint Davies [Croydon Central / Swansea West]",
     "Geraint Davies [Swansea West]" : "Geraint Davies [Croydon Central / Swansea West]",
+    "Jonathan Evans [Brecon and Radnor]" : "Jonathan Evans [Brecon and Radnor / Cardiff North]",
+    "Jonathan Evans [Cardiff North]" : "Jonathan Evans [Brecon and Radnor / Cardiff North]",
+    "Christopher Leslie [Shipley]": "Christopher Leslie [Shipley / Nottingham East]",
+    "Christopher Leslie [Nottingham East]": "Christopher Leslie [Shipley / Nottingham East]",
 
 
     }
