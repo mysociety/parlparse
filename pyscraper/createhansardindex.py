@@ -136,7 +136,7 @@ def CmIndexFromPage(urllinkpage):
 	        		continue
 
 		        # get rid of the new index pages
-        		if re.search('/indexes/|cmordbk', linkhref):
+        		if re.search('/indexes/|cmordbk|/business/', linkhref):
 	        		continue
 
                         if (re.search('Written Answers received between Friday 26 May and Thursday 1 June\s+2006', linktext)):
