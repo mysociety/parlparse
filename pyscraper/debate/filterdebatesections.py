@@ -139,6 +139,8 @@ def StripDebateHeadings(headspeak, sdate):
                         newtime = '10:30:00'
                 elif re.match("Eleven o&#039;clock(?i)", time):
                         newtime = '11:00:00'
+                elif re.match("^10 minutes past Three(?i)", time):
+                        newtime = '15:10:00'
                 elif re.match("^twenty-five minutes past\s*Eleven(?i)", time):
                         newtime = '11:25:00'
                 elif re.match("^twenty-six minutes past\s*Eleven(?i)", time):

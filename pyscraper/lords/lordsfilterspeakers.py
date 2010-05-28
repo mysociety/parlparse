@@ -16,7 +16,7 @@ from splitheadingsspeakers import StampUrl
 # marks out center types bold headings which are never speakers
 respeaker = re.compile('(<center><b>(?:<stamp aname="[^"]*"/>)?[^<]*</b></center>|<b>(?:<stamp aname="[^"]+"/>|</b><b>|[^<]+)*</b>(?:\s*:)?)(?i)')
 respeakerb = re.compile('<b>\s*((?:<stamp aname="[^"]*"/>|</b><b>|[^<]+)*),?\s*</b>(\s*:)?(?i)')
-respeakervals = re.compile('([^:(]*?)\s*(?:\(([^:)]*)\)?)?(:)?:*$')
+respeakervals = re.compile('([^:(]*?)\s*(?:\(([^:)]*)\)?)?(:)?:*\s*$')
 
 renonspek = re.compile('division|contents|amendment(?i)')
 reboldempty = re.compile('<b>\s*</b>(?i)')
