@@ -30,6 +30,10 @@ from patchtool import GenPatchFileNames
 pwcmindex = os.path.join(toppath, "cmindex.xml")
 TodayInTheCommonsIndexPageUrl = "http://www.publications.parliament.uk/pa/cm/cmtoday/home.htm"
 
+# Since 2010 election, we scrape directly, no index
+url_bydate_index = "http://www.parliament.uk/business/publications/hansard/commons/by-date/"
+url_bydate_index_lords = "http://www.parliament.uk/business/publications/hansard/lords/by-date/"
+
 class ScraperException:
 	def __init__(self, message):
 		self.message = message
@@ -388,12 +392,47 @@ def CompareScrapedFiles(prevfile, nextfile):
 		return "EXTENSION"
 	return "DIFFERENT"
 
+def CmIndexFromNewPage(date, type='commons'):
+        if type=='lords':
+                urllinkpage = '%s?d=%d&m=%d&y=%d' % (url_bydate_index_lords, date.day, date.month, date.year)
+        else:
+                urllinkpage = '%s?d=%d&m=%d&y=%d' % (url_bydate_index, date.day, date.month, date.year)
+        urlinkpage = urllib.urlopen(urllinkpage)
+	srlinkpage = urlinkpage.read()
+	urlinkpage.close()
+
+        entries = []
+	for link1 in re.findall('<a href="(http://www\.publications\.[^"#]+)(?:#[^"]*)?">([^<]*)</a>(?i)', srlinkpage):
+                linkhref = link1[0]
+                linktext = link1[1]
+		if not re.search('debate|westminster|written(?i)', linktext):
+		        continue
+        	uind = re.sub('\s', '', linkhref)
+        	typ = string.strip(re.sub('\s+', ' ', linktext))
+                if entries and entries[-1][1] == uind:
+                        continue
+	        entries.append((typ, uind))
+
+        return entries
 
 ##############################
 # For gluing together debates
 ##############################
 def PullGluePages(options, folder, typ):
 	daymap, scrapedDataOutputPath = MakeDayMap(folder, typ)
+
+        scrape = []
+
+        # Post 2010 election scraping done directly, not via index
+        if options.dateto >= '2010-05-18':
+                date = mx.DateTime.DateTimeFrom('2010-05-18')
+                while date.date < options.dateto and date < mx.DateTime.today():
+                        for recordType, link in CmIndexFromNewPage(date):
+                                if recordType == 'Written Statements': recordType = 'Written Ministerial Statements'
+                                if recordType == 'Debates and Oral Answers': recordType = 'Debates'
+		                if re.search(typ, recordType, re.I):
+                                        scrape.append(CommonsIndexElement(date.date, recordType, link))
+                        date += mx.DateTime.DateTimeDelta(1)
 
 	# loop through the index file previously made by createhansardindex
 	for commonsIndexRecord in CommonsIndex().res:
@@ -402,7 +441,10 @@ def PullGluePages(options, folder, typ):
 			continue
 		if commonsIndexRecord.date < options.datefrom or commonsIndexRecord.date > options.dateto:
 			continue
+                scrape.append(commonsIndexRecord)
 
+
+        for commonsIndexRecord in scrape:
 		latestFilePath, latestFileStem, nextFilePath, nextFileStem = \
 			GetFileDayVersions(commonsIndexRecord.date, daymap, scrapedDataOutputPath, typ)
 

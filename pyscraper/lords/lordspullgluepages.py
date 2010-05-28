@@ -9,6 +9,7 @@ import xml.sax
 import time
 import string
 import tempfile
+import mx.DateTime
 
 import miscfuncs
 toppath = miscfuncs.toppath
@@ -16,7 +17,7 @@ pwcmdirs = miscfuncs.pwcmdirs
 tempfilename = miscfuncs.tempfilename
 
 from miscfuncs import NextAlphaString, AlphaStringToOrder
-from pullgluepages import ReplicatePatchToNewScrapedVersion
+from pullgluepages import ReplicatePatchToNewScrapedVersion, CmIndexFromNewPage
 
 # Pulls in all the debates, written answers, etc, glues them together, removes comments,
 # and stores them on the disk
@@ -195,12 +196,24 @@ def LordsPullGluePages(datefrom, dateto, bforcescrape):
 		elif os.path.isfile(os.path.join(pwlordspages, ldfile)):
 			print "not recognized file:", ldfile, " in ", pwlordspages
 
+        scrape = []
+
+        # Post 2010 election scraping done directly, not via index
+        if dateto >= '2010-05-18':
+                date = mx.DateTime.DateTimeFrom('2010-05-18')
+                while date.date < dateto and date < mx.DateTime.today():
+                        for recordType, link in CmIndexFromNewPage(date, 'lords'):
+                                scrape.append((date.date, link, recordType))
+                        date += mx.DateTime.DateTimeDelta(1)
+
 	# loop through the index of each lord line.
 	for dnu in clordsindex.res:
 		# implement date range
 		if dnu[0] < datefrom or dnu[0] > dateto:
 			continue
+                scrape.append(dnu)
 
+        for dnu in scrape:
 		# make the filename
 		dgflatestalpha, dgflatest = "", None
 		if dnu[0] in lddaymap:
