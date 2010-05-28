@@ -3431,14 +3431,12 @@ Members of the UK Parliament, House of Commons, 2010-
     constituency="The Wrekin" party="Con"
     fromdate="2010-05-06" todate="9999-12-31" fromwhy="general_election" towhy="still_in_office"
 />
-<!--
 <member
     id="uk.org.publicwhip/member/40605" house="commons"
-    title="" firstname="" lastname=""
-    constituency="Thirsk and Malton" party=""
-    fromdate="2010-05-06" todate="9999-12-31" fromwhy="general_election" towhy="still_in_office"
+    title="" firstname="Anne" lastname="McIntosh"
+    constituency="Thirsk and Malton" party="Con"
+    fromdate="2010-05-27" todate="9999-12-31" fromwhy="general_election" towhy="still_in_office"
 />
--->
 <member
     id="uk.org.publicwhip/member/40606" house="commons"
     title="" firstname="Steve" lastname="Webb"
