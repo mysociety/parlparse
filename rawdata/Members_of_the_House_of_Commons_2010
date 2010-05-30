@@ -15,9 +15,9 @@
 <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?281z67" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?281z67" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?281z67" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?281a" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?281a" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?281a" type="text/css" media="print" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
@@ -47,7 +47,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=363532483,
+wgCurRevisionId=364647574,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -57,21 +57,21 @@ wgMainPageTitle="Main Page",
 wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Wikipedia", "5": "Wikipedia talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "100": "Portal", "101": "Portal talk", "108": "Book", "109": "Book talk"},
 wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "wikipedia": 4, "wikipedia_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "portal": 100, "portal_talk": 101, "book": 108, "book_talk": 109, "wp": 4, "wt": 5, "image": 6, "image_talk": 7},
 wgSiteName="Wikipedia",
-wgCategories=["All articles with unsourced statements", "Articles with unsourced statements", "House of Commons of the United Kingdom", "Articles containing potentially dated statements from May 2010", "All articles containing potentially dated statements", "United Kingdom general election, 2010", "MPs elected in UK elections", "Lists of current office-holders", "Lists of UK MPs 2010–", "Lists of Scottish MPs", "Legislative sessions", "Lists of Northern Irish MPs"],
+wgCategories=["House of Commons of the United Kingdom", "Articles containing potentially dated statements from May 2010", "All articles containing potentially dated statements", "United Kingdom general election, 2010", "Lists of MPs elected in UK general elections", "Lists of current office-holders", "Lists of UK MPs 2010–", "Lists of Scottish MPs", "Legislative sessions", "Lists of Northern Irish MPs"],
 wgMWSuggestTemplate="http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest",
 wgDBname="enwiki",
 wgSearchNamespaces=[0],
 wgMWSuggestMessages=["with suggestions", "no suggestions"],
 wgRestrictionEdit=[],
 wgRestrictionMove=[],
-wgTrackingToken="96c238fdafc83b2230ddb923aae445d7",
+wgTrackingToken="c91613e520f36919e0827afa2af880f9",
 wgClickTrackingIsThrottled=true,
 wgNotice="",
 wgNoticeLocal="";
-</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?281z67" type="text/javascript"></script>
-<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?281z67"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?281z67" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?281z67" type="text/javascript"></script>
+</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?281a" type="text/javascript"></script>
+<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?281a"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?281a" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?281a" type="text/javascript"></script>
 <script type="text/javascript">var wgVectorPreferences = {
 	"collapsiblenav": {
 		"enable": 1
@@ -87,14 +87,14 @@ var wgVectorEnabledModules = {
 	"footercleanup": false,
 	"simplesearch": true
 };</script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?281z67" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/ClickTracking/ClickTracking.js?281z67" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?281z67" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?281a" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/ClickTracking/ClickTracking.js?281a" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?281a" type="text/javascript"></script>
 <script type="text/javascript">mw.usability.addMessages({'vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
-<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?281z67"></script>
+<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?281a"></script>
 
 <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;281z67" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;281a" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-List_of_MPs_elected_in_the_United_Kingdom_general_election_2010 skin-vector">
@@ -150,7 +150,7 @@ var wgVectorEnabledModules = {
 <tr>
 <td style="width: 4px" bgcolor="#0087DC"></td>
 <td style="text-align: left;" scope="row"><b><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></b></td>
-<td>305</td>
+<td>306</td>
 </tr>
 <tr>
 <td style="width: 4px" bgcolor="#DC241F"></td>
@@ -208,28 +208,21 @@ var wgVectorEnabledModules = {
 <td>1 <sup class="reference plainlinks nourlexpansion" id="ref_c3"><a href="#endnote_c3">3</a></sup></td>
 </tr>
 <tr>
-<td>&#160;</td>
-<td><i>Vacant</i><br /></td>
-<td>1 <sup class="reference plainlinks nourlexpansion" id="ref_c4"><a href="#endnote_c4">4</a></sup></td>
-</tr>
-<tr>
 <th colspan="2" rowspan="1">&#160;Total<br /></th>
 <th>650</th>
 </tr>
 <tr>
-<th colspan="2" rowspan="1">&#160;Actual government majority<sup class="reference plainlinks nourlexpansion" id="ref_AWM"><a href="#endnote_AWM">[a]</a></sup><br /></th>
-<th>80</th>
+<th colspan="2" rowspan="1">&#160;Actual government majority<sup class="reference plainlinks nourlexpansion" id="ref_c4"><a href="#endnote_c4">4</a></sup><br /></th>
+<th>81</th>
 </tr>
 </table>
 <ul>
-<li><span class="citation wikicite" id="endnote_AWM"><b><a href="#ref_AWM">^a</a></b></span> Actual government majority includes the Conservative–Liberal Democrat coalition, and excludes members that do not vote (Sinn Féin, and the Speaker and his Deputies) and vacant seats.</li>
 <li><span class="citation wikicite" id="endnote_c1"><b><a href="#ref_c1">^1</a></b></span> <a href="/wiki/Eric_Illsley" title="Eric Illsley">Eric Illsley</a> was suspended from the party and had the whip withdrawn on 19 May 2010 after he was charged with <a href="/wiki/False_accounting" title="False accounting" class="mw-redirect">false accounting</a> over the <a href="/wiki/United_Kingdom_Parliamentary_expenses_scandal" title="United Kingdom Parliamentary expenses scandal">United Kingdom Parliamentary expenses scandal</a>,<sup id="cite_ref-illsley1_0-0" class="reference"><a href="#cite_note-illsley1-0"><span>[</span>1<span>]</span></a></sup> notionally decreasing the number of Labour seats to 257.</li>
-<li><span class="citation wikicite" id="endnote_c2"><b><a href="#ref_c2">^2</a></b></span> Although Sinn Féin maintains offices at Westminster, the party's policy of <a href="/wiki/Abstentionism" title="Abstentionism">abstaining</a> from participation in the House of Commons (on account of disputing the UK parliament's claim to jurisdiction in Northern Ireland<sup class="Template-Fact" title="This claim needs references to reliable sources" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed">citation needed</a></i>]</sup>) precludes its MPs from taking their seats.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup></li>
+<li><span class="citation wikicite" id="endnote_c2"><b><a href="#ref_c2">^2</a></b></span> Although Sinn Féin maintains offices at Westminster, the party's policy of <a href="/wiki/Abstentionism" title="Abstentionism">abstaining</a> from participation in the House of Commons (on account of disputing the UK parliament's claim to jurisdiction in Northern Ireland) precludes its MPs from taking their seats.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup></li>
 <li><span class="citation wikicite" id="endnote_c3"><b><a href="#ref_c3">^3</a></b></span> <a href="/wiki/John_Bercow" title="John Bercow">John Bercow</a> was re-elected for his <a href="/wiki/Buckingham_(UK_Parliament_constituency)" title="Buckingham (UK Parliament constituency)">Buckingham</a> constituency as <i>Speaker seeking re-election</i>.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>3<span>]</span></a></sup> Three <a href="/wiki/Chairman_of_Ways_and_Means" title="Chairman of Ways and Means">Deputy Speakers</a> will be elected when Parliament meets, one from the Government side and two from the Opposition side.</li>
-<li><span class="citation wikicite" id="endnote_c4"><b><a href="#ref_c4">^4</a></b></span> The election in the constituency of <a href="/wiki/Thirsk_and_Malton_(UK_Parliament_constituency)" title="Thirsk and Malton (UK Parliament constituency)">Thirsk and Malton</a> was postponed until 27 May 2010 due to the death of the <a href="/wiki/UKIP" title="UKIP" class="mw-redirect">UKIP</a> candidate, John Boakes.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span>[</span>4<span>]</span></a></sup></li>
-<li><sup class="reference plainlinks nourlexpansion" id="ref_c4"><a href="#endnote_c4">4</a></sup></li>
+<li><span class="citation wikicite" id="endnote_c4"><b><a href="#ref_c4">^4</a></b></span> Actual government majority includes the Conservative–Liberal Democrat coalition, and excludes members that do not vote (Sinn Féin, and the Speaker and his Deputies) and vacant seats.</li>
 </ul>
-<h3><span class="editsection">[<a href="/w/index.php?title=Template:British_House_of_Commons_composition&amp;action=edit&amp;section=T-1" title="Template:British House of Commons composition">edit</a>]</span> <span class="mw-headline" id="Representation">Representation</span></h3>
+<h2><span class="editsection">[<a href="/w/index.php?title=Template:British_House_of_Commons_composition&amp;action=edit&amp;section=T-1" title="Template:British House of Commons composition">edit</a>]</span> <span class="mw-headline" id="Representation">Representation</span></h2>
 <p><a href="/wiki/File:Parliament2010UK.svg" class="image"><img alt="Parliament2010UK.svg" src="http://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Parliament2010UK.svg/739px-Parliament2010UK.svg.png" width="739" height="391" /></a><br />
 &#160;<br />
 <a href="/wiki/File:UK_Parlaiment_2010_Key.png" class="image"><img alt="UK Parlaiment 2010 Key.png" src="http://upload.wikimedia.org/wikipedia/en/b/b7/UK_Parlaiment_2010_Key.png" width="236" height="235" /></a></p>
@@ -1969,7 +1962,7 @@ Seat held</td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td style="background-color: #DC241f"></td>
 <td><a href="/wiki/Ian_Murray_(Scottish_politician)" title="Ian Murray (Scottish politician)">Ian Murray</a>&#160;(<a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">L</a>)</td>
-<td>Seat held</td>
+<td>Incumbant MP Nigel Griffiths stood down.</td>
 </tr>
 <tr>
 <td><a href="/wiki/Edinburgh_South_West_(UK_Parliament_constituency)" title="Edinburgh South West (UK Parliament constituency)">Edinburgh South West</a></td>
@@ -2981,7 +2974,7 @@ Seat held</td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td style="background-color: #DC241f"></td>
 <td><a href="/wiki/Rachel_Reeves" title="Rachel Reeves">Rachel Reeves</a>&#160;(<a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">L</a>)</td>
-<td>Incumbent <a href="/wiki/John_Battle" title="John Battle">John Battle</a> stood down</td>
+<td>Incumbent <a href="/wiki/John_Battle_(politician)" title="John Battle (politician)">John Battle</a> stood down</td>
 </tr>
 <tr>
 <td><a href="/wiki/Leicester_East_(UK_Parliament_constituency)" title="Leicester East (UK Parliament constituency)">Leicester East</a></td>
@@ -3006,15 +2999,6 @@ Seat held</td>
 <td style="background-color: #DC241f"></td>
 <td><a href="/wiki/Elizabeth_Kendall" title="Elizabeth Kendall">Elizabeth Kendall</a>&#160;(<a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">L</a>)</td>
 <td>Incumbent MP <a href="/wiki/Patricia_Hewitt" title="Patricia Hewitt">Patricia Hewitt</a> stood down</td>
-</tr>
-<tr>
-<td><a href="/wiki/South_Leicestershire_(UK_Parliament_constituency)" title="South Leicestershire (UK Parliament constituency)">Leicestershire South</a></td>
-<td style="background-color: #0087DC"></td>
-<td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td style="background-color: #0087DC"></td>
-<td><a href="/wiki/Andrew_Robathan" title="Andrew Robathan">Andrew Robathan</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
-<td><small>Seat previously named <a href="/wiki/Blaby_(UK_Parliament_constituency)" title="Blaby (UK Parliament constituency)">Blaby</a></small><br />
-Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Leigh_(UK_Parliament_constituency)" title="Leigh (UK Parliament constituency)">Leigh</a></td>
@@ -4176,7 +4160,7 @@ Seat held</td>
 <td>Seat held</td>
 </tr>
 <tr>
-<td><a href="/wiki/Richmond_(Yorks)_(UK_Parliament_constituency)" title="Richmond (Yorks) (UK Parliament constituency)">Richmond</a></td>
+<td><a href="/wiki/Richmond_(Yorks)_(UK_Parliament_constituency)" title="Richmond (Yorks) (UK Parliament constituency)">Richmond (Yorks)</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td style="background-color: #0087DC"></td>
@@ -4580,6 +4564,15 @@ Incumbent MP <a href="/wiki/Angela_Evans_Smith" title="Angela Evans Smith">Angel
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/John_Henry_Hayes" title="John Henry Hayes">John Hayes</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
 <td>Seat held</td>
+</tr>
+<tr>
+<td><a href="/wiki/South_Leicestershire_(UK_Parliament_constituency)" title="South Leicestershire (UK Parliament constituency)">South Leicestershire</a></td>
+<td style="background-color: #0087DC"></td>
+<td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
+<td style="background-color: #0087DC"></td>
+<td><a href="/wiki/Andrew_Robathan" title="Andrew Robathan">Andrew Robathan</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
+<td><small>Seat previously named <a href="/wiki/Blaby_(UK_Parliament_constituency)" title="Blaby (UK Parliament constituency)">Blaby</a></small><br />
+Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/South_Norfolk_(UK_Parliament_constituency)" title="South Norfolk (UK Parliament constituency)">South Norfolk</a></td>
@@ -5029,9 +5022,9 @@ Seat held</td>
 <td><a href="/wiki/Thirsk_and_Malton_(UK_Parliament_constituency)" title="Thirsk and Malton (UK Parliament constituency)">Thirsk and Malton</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
-<td></td>
-<td>Poll postponed until 27 May due to death of <a href="/wiki/UK_Independence_Party" title="UK Independence Party">UKIP</a> candidate</td>
+<td style="background-color: #0087DC"></td>
+<td><a href="/wiki/Anne_McIntosh" title="Anne McIntosh">Anne McIntosh</a></td>
+<td>New constituency; previously MP for <a href="/wiki/Vale_of_York_(UK_Parliament_constituency)" title="Vale of York (UK Parliament constituency)">Vale of York</a>. The poll had been postponed to 27 May 2010 due to the death of the <a href="/wiki/UK_Independence_Party" title="UK Independence Party">UKIP</a> candidate.</td>
 </tr>
 <tr>
 <td><a href="/wiki/Thornbury_and_Yate_(UK_Parliament_constituency)" title="Thornbury and Yate (UK Parliament constituency)">Thornbury and Yate</a></td>
@@ -5641,7 +5634,7 @@ Seat held</td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td style="background-color: #0087DC"></td>
-<td><a href="/wiki/Steve_Baker_(UK_politician)" title="Steve Baker (UK politician)" class="mw-redirect">Steven Baker</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
+<td><a href="/wiki/Steve_Baker_(UK_politician)" title="Steve Baker (UK politician)">Steven Baker</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
 <td>Incumbent MP <a href="/wiki/Paul_Goodman_(politician)" title="Paul Goodman (politician)">Paul Goodman</a> stood down</td>
 </tr>
 <tr>
@@ -5780,9 +5773,8 @@ Seat held</td>
 <div class="references-small">
 <ol class="references">
 <li id="cite_note-illsley1-0">^ <a href="#cite_ref-illsley1_0-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-illsley1_0-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-illsley1_0-2"><sup><i><b>c</b></i></sup></a> <span class="citation web"><a href="http://news.bbc.co.uk/1/hi/uk_politics/8691861.stm" class="external text" rel="nofollow">"Labour MP charged over expenses"</a>. BBC<span class="printonly">. <a href="http://news.bbc.co.uk/1/hi/uk_politics/8691861.stm" class="external free" rel="nofollow">http://news.bbc.co.uk/1/hi/uk_politics/8691861.stm</a></span><span class="reference-accessdate">. Retrieved 19 May 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Labour+MP+charged+over+expenses&amp;rft.atitle=&amp;rft.pub=BBC&amp;rft_id=http%3A%2F%2Fnews.bbc.co.uk%2F1%2Fhi%2Fuk_politics%2F8691861.stm&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
-<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <a href="http://www.parliament.uk/commons/lib/research/rp2000/rp00-017.pdf" class="external free" rel="nofollow">http://www.parliament.uk/commons/lib/research/rp2000/rp00-017.pdf</a></li>
-<li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> <span class="citation news"><a href="http://news.bbc.co.uk/2/shared/election2010/results/constituency/a79.stm" class="external text" rel="nofollow">"BBC NEWS - Election 2010 - Buckingham"</a>. BBC News. 7 May 2010<span class="printonly">. <a href="http://news.bbc.co.uk/2/shared/election2010/results/constituency/a79.stm" class="external free" rel="nofollow">http://news.bbc.co.uk/2/shared/election2010/results/constituency/a79.stm</a></span><span class="reference-accessdate">. Retrieved 9 May 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=BBC+NEWS+-+Election+2010+-+Buckingham&amp;rft.atitle=&amp;rft.date=7+May+2010&amp;rft.pub=BBC+News&amp;rft_id=http%3A%2F%2Fnews.bbc.co.uk%2F2%2Fshared%2Felection2010%2Fresults%2Fconstituency%2Fa79.stm&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
-<li id="cite_note-3"><b><a href="#cite_ref-3">^</a></b> <span class="citation news"><a href="http://www.maltonmercury.co.uk/news/Election-delayed-after-the-death.6260395.jp" class="external text" rel="nofollow">"Election delayed after the death of candidate"</a>. <i>Malton &amp; Pickering Mercury</i>. 28 April 2010<span class="printonly">. <a href="http://www.maltonmercury.co.uk/news/Election-delayed-after-the-death.6260395.jp" class="external free" rel="nofollow">http://www.maltonmercury.co.uk/news/Election-delayed-after-the-death.6260395.jp</a></span><span class="reference-accessdate">. Retrieved 29 April 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Election+delayed+after+the+death+of+candidate&amp;rft.jtitle=Malton+%26+Pickering+Mercury&amp;rft.date=28+April+2010&amp;rft_id=http%3A%2F%2Fwww.maltonmercury.co.uk%2Fnews%2FElection-delayed-after-the-death.6260395.jp&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <span class="citation web">Aileen Walker; Ellen Wood (14 February 2000). <a href="http://www.parliament.uk/commons/lib/research/rp2000/rp00-017.pdf" class="external text" rel="nofollow">"The Parliamentary Oath"</a> (PDF). House of Commons Library<span class="printonly">. <a href="http://www.parliament.uk/commons/lib/research/rp2000/rp00-017.pdf" class="external free" rel="nofollow">http://www.parliament.uk/commons/lib/research/rp2000/rp00-017.pdf</a></span><span class="reference-accessdate">. Retrieved 24 May 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=The+Parliamentary+Oath&amp;rft.atitle=&amp;rft.aulast=Aileen+Walker&amp;rft.au=Aileen+Walker&amp;rft.au=Ellen+Wood&amp;rft.date=14+February+2000&amp;rft.pub=House+of+Commons+Library&amp;rft_id=http%3A%2F%2Fwww.parliament.uk%2Fcommons%2Flib%2Fresearch%2Frp2000%2Frp00-017.pdf&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> <span class="citation news"><a href="http://news.bbc.co.uk/2/shared/election2010/results/constituency/a79.stm" class="external text" rel="nofollow">"BBC NEWS - Election 2010 - Buckingham"</a>. BBC News. 7 May 2010. p.&#160;29<span class="printonly">. <a href="http://news.bbc.co.uk/2/shared/election2010/results/constituency/a79.stm" class="external free" rel="nofollow">http://news.bbc.co.uk/2/shared/election2010/results/constituency/a79.stm</a></span><span class="reference-accessdate">. Retrieved 9 May 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=BBC+NEWS+-+Election+2010+-+Buckingham&amp;rft.atitle=&amp;rft.date=7+May+2010&amp;rft.pages=p.%26nbsp%3B29&amp;rft.pub=BBC+News&amp;rft_id=http%3A%2F%2Fnews.bbc.co.uk%2F2%2Fshared%2Felection2010%2Fresults%2Fconstituency%2Fa79.stm&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
 </ol>
 </div>
 <ul>
@@ -5793,18 +5785,18 @@ Seat held</td>
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 6855/1000000
-Post-expand include size: 120320/2048000 bytes
-Template argument size: 37136/2048000 bytes
+Preprocessor node count: 6768/1000000
+Post-expand include size: 119621/2048000 bytes
+Template argument size: 36749/2048000 bytes
 Expensive parser function count: 1/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:26491796-0!1!0!default!!en!4 and timestamp 20100522102650 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:26491796-0!1!0!default!!en!4 and timestamp 20100528111252 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:House_of_Commons_of_the_United_Kingdom" title="Category:House of Commons of the United Kingdom">House of Commons of the United Kingdom</a></span> | <span dir='ltr'><a href="/wiki/Category:United_Kingdom_general_election,_2010" title="Category:United Kingdom general election, 2010">United Kingdom general election, 2010</a></span> | <span dir='ltr'><a href="/wiki/Category:MPs_elected_in_UK_elections" title="Category:MPs elected in UK elections">MPs elected in UK elections</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_current_office-holders" title="Category:Lists of current office-holders">Lists of current office-holders</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_UK_MPs_2010%E2%80%93" title="Category:Lists of UK MPs 2010–">Lists of UK MPs 2010–</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Scottish_MPs" title="Category:Lists of Scottish MPs">Lists of Scottish MPs</a></span> | <span dir='ltr'><a href="/wiki/Category:Legislative_sessions" title="Category:Legislative sessions">Legislative sessions</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Northern_Irish_MPs" title="Category:Lists of Northern Irish MPs">Lists of Northern Irish MPs</a></span></div><div id="mw-hidden-catlinks" class="mw-hidden-cats-hidden">Hidden categories: <span dir='ltr'><a href="/wiki/Category:All_articles_with_unsourced_statements" title="Category:All articles with unsourced statements">All articles with unsourced statements</a></span> | <span dir='ltr'><a href="/wiki/Category:Articles_with_unsourced_statements" title="Category:Articles with unsourced statements">Articles with unsourced statements</a></span> | <span dir='ltr'><a href="/wiki/Category:Articles_containing_potentially_dated_statements_from_May_2010" title="Category:Articles containing potentially dated statements from May 2010">Articles containing potentially dated statements from May 2010</a></span> | <span dir='ltr'><a href="/wiki/Category:All_articles_containing_potentially_dated_statements" title="Category:All articles containing potentially dated statements">All articles containing potentially dated statements</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:House_of_Commons_of_the_United_Kingdom" title="Category:House of Commons of the United Kingdom">House of Commons of the United Kingdom</a></span> | <span dir='ltr'><a href="/wiki/Category:United_Kingdom_general_election,_2010" title="Category:United Kingdom general election, 2010">United Kingdom general election, 2010</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_MPs_elected_in_UK_general_elections" title="Category:Lists of MPs elected in UK general elections">Lists of MPs elected in UK general elections</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_current_office-holders" title="Category:Lists of current office-holders">Lists of current office-holders</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_UK_MPs_2010%E2%80%93" title="Category:Lists of UK MPs 2010–">Lists of UK MPs 2010–</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Scottish_MPs" title="Category:Lists of Scottish MPs">Lists of Scottish MPs</a></span> | <span dir='ltr'><a href="/wiki/Category:Legislative_sessions" title="Category:Legislative sessions">Legislative sessions</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Northern_Irish_MPs" title="Category:Lists of Northern Irish MPs">Lists of Northern Irish MPs</a></span></div><div id="mw-hidden-catlinks" class="mw-hidden-cats-hidden">Hidden categories: <span dir='ltr'><a href="/wiki/Category:Articles_containing_potentially_dated_statements_from_May_2010" title="Category:Articles containing potentially dated statements from May 2010">Articles containing potentially dated statements from May 2010</a></span> | <span dir='ltr'><a href="/wiki/Category:All_articles_containing_potentially_dated_statements" title="Category:All articles containing potentially dated statements">All articles containing potentially dated statements</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -5940,8 +5932,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;oldid=363532483" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;id=363532483" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;oldid=364647574" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;id=364647574" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -5951,7 +5943,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2010" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2010&amp;oldid=363532483&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2010" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2010&amp;oldid=364647574&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -5964,7 +5956,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 22 May 2010 at 10:26.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 28 May 2010 at 11:10.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -5987,5 +5979,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-		<!-- Served by srv198 in 0.069 secs. -->			</body>
+		<!-- Served by srv210 in 0.064 secs. -->			</body>
 </html>
