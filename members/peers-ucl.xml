@@ -457,7 +457,7 @@ B - bishop
 	title="Lord" lordname="Bernstein" lordofname="Craigweil"
 	county="the County of West Sussex"
 	peeragetype="L" affiliation="Lab"
-	fromdate="2000-05-22" todate="9999-12-31"
+	fromdate="2000-05-22" todate="2010-04-13" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100044"
@@ -1433,7 +1433,7 @@ B - bishop
 	forenames="John"
 	title="Viscount" lordname="Colville" lordofname="Culross"
 	peeragetype="HP" affiliation="XB"
-	fromdate="1945" todate="9999-12-31"
+	fromdate="1945" todate="2010-04-08" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100138"
@@ -7236,7 +7236,7 @@ B - bishop
 	lordofname_full="Marylebone"
 	county="the City of Westminster"
 	peeragetype="L" affiliation="Con"
-	fromdate="1985" todate="9999-12-31"
+	fromdate="1985" todate="2010-05-20" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100697"
@@ -10307,6 +10307,25 @@ B - bishop
     county="the County of Gloucestershire"
     peeragetype="L" affiliation="XB"
     fromdate="2010-03-29" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101009"
+    house="lords"
+    forenames="Christopher John Hill"
+    title="Bishop" lordname="" lordofname="Guildford"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2010-05-27" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101010"
+    house="lords"
+    forenames="Jonathan Hopkin"
+    title="Lord" lordname="Hill" lordofname="Oareford"
+    county="the County of Somerset"
+    peeragetype="L" affiliation="Con"
+    fromdate="2010-05-27" todate="9999-12-31"
 />
 
 </publicwhip>
