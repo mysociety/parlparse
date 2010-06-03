@@ -14,11 +14,16 @@ import errno
 import re
 import sys
 import glob
-
+from optparse import OptionParser
 import datetime
 import dateutil.parser
 
 import time
+
+parser = OptionParser()
+parser.add_option('-q', "--quiet", dest="quiet", action="store_true",
+                  default=False, help="suppress the usual output of what's been done with each page")
+(options, args) = parser.parse_args()
 
 # Trying out httplib2. This hasn't reached 1.0 yet, but I think it's worth
 # giving it a go to avoid having to think about caching, downloading headers,
@@ -69,10 +74,12 @@ def write_if_changed(directory_name,
             fp.close()
             if latest_file_content == content:
                 # It's just the same as the last version, don't bother saving it...
-                print "   Not writing "+filename+", the content is the same as "+earlier_files[-1]
+                if not options.quiet:
+                    print "   Not writing "+filename+", the content is the same as "+earlier_files[-1]
                 return False
 
-        print "Writing a file with updated contents: "+filename
+        if not options.quiet:
+            print "Writing a file with updated contents: "+filename
 
         # Otherwise we should just write the file:
         fp = open(filename, 'w')
