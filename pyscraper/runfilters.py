@@ -127,6 +127,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
             text = re.sub('<div class="amendment(?:_heading)?">', '', text)
             text = re.sub('</?div>', '', text)
             text = re.sub('</b></b>', '</b>', text)
+            text = re.sub('<I></I>', '', text)
 
     # Changes in 2008-09 session
     if sdate>'2008-12-01' and dname=='lordspages':
