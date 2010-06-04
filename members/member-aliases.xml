@@ -65,6 +65,7 @@ http://www.dfid.gov.uk/News/PressReleases/files/pr_gareththomas_13june03.html
 <!-- Sometimes these appear instead of fullnames.  resolvemembernames.py
 also loads in ministers.xml to match these to people.  Here we just have
 different spellings of the offices -->
+<alias fullname="Attorney General" alternate="The Attorney-General" />
 <alias fullname="Solicitor General" alternate="Solicitor-General" />
 <alias fullname="Solicitor General" alternate="The Solicitor-General" />
 <alias fullname="Solicitor General" alternate="The Solicitor General" />
@@ -82,6 +83,8 @@ different spellings of the offices -->
 <alias fullname="Ian Paisley Jnr" alternate="Ian Paisley" from="2010-05-06" />
 <alias fullname="Angus MacNeil" alternate="Angus Brendan MacNeil" />
 <alias fullname="Chi Onwurah" alternate="Chinyelu Onwurah" />
+<alias fullname="Nicholas Dakin" alternate="Nic Dakin" />
+<alias fullname="Michael Weatherley" alternate="Mike Weatherley" />
 
 <!-- First added for 2005 parliament -->
 <alias fullname="Jimmy Hood" alternate="Jim Hood" />

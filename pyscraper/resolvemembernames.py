@@ -71,6 +71,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         self.loadperson = None
         parser.parse(os.path.join(members_path,"people.xml"))
         parser.parse(os.path.join(members_path,"ministers.xml"))
+        parser.parse(os.path.join(members_path,"ministers-2010.xml"))
         # member-aliases has to be loaded after ministers, as we alias
         # to ministerial positions sometimes (e.g. Solicitor-General) in
         # member-aliases.xml
@@ -243,7 +244,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             # we load these two positions and alias them into fullnames,
             # as they are often used in wrans instead of fullnames, with
             # no way of telling.
-            if attr["position"] == "Solicitor General" or attr["position"] == "Advocate General for Scotland":
+            if attr["position"] in ("Solicitor General", "Advocate General for Scotland", "Attorney General"):
                 if self.officetopersonmap.has_key(attr["id"]):
                     # find all the office ids for this person
                     person = self.officetopersonmap[attr["id"]]
