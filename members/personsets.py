@@ -472,6 +472,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
         parser.parse("ni-members.xml")
         parser.parse("sp-members.xml")
         parser.parse("ministers.xml")
+        parser.parse("ministers-2010.xml")
         parser.parse("royals.xml")
 
     def outputxml(self, fout):
