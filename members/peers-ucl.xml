@@ -10328,4 +10328,26 @@ B - bishop
     fromdate="2010-05-27" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101011"
+    house="lords"
+    forenames="Nathanael Ming-Yan"
+    title="Lord" lordname="Wei" lordofname=""
+    lordofname_full="Shoreditch"
+    county="the London Borough of Hackney"
+    peeragetype="L" affiliation="Con"
+    fromdate="2010-06-03" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101012"
+    house="lords"
+    forenames="James Meyer"
+    title="Lord" lordname="Sassoon" lordofname=""
+    lordofname_full="Ashley Park"
+    county="the County of Surrey"
+    peeragetype="L" affiliation="Con"
+    fromdate="2010-06-03" todate="9999-12-31"
+/>
+
 </publicwhip>
