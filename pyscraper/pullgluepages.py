@@ -425,8 +425,11 @@ def PullGluePages(options, folder, typ):
 
         # Post 2010 election scraping done directly, not via index
         if options.dateto >= '2010-05-18':
-                date = mx.DateTime.DateTimeFrom('2010-05-18')
-                while date.date < options.dateto and date < mx.DateTime.today():
+                if options.datefrom > '2010-05-18':
+                        date = mx.DateTime.DateTimeFrom(options.datefrom)
+                else:
+                        date = mx.DateTime.DateTimeFrom('2010-05-18')
+                while date.date <= options.dateto and date < mx.DateTime.today():
                         for recordType, link in CmIndexFromNewPage(date):
                                 if recordType == 'Written Statements': recordType = 'Written Ministerial Statements'
                                 if recordType == 'Debates and Oral Answers': recordType = 'Debates'
