@@ -9,7 +9,8 @@ from resolvelordsnames import lordsList
 id = 10000
 
 fp = open('ministers-2010-source')
-print '<publicwhip>'
+out = open('ministers-2010.xml.new', 'w')
+out.write('<publicwhip>\n')
 for line in fp:
     line = line.strip()
     if not line or line[0] == '#': continue
@@ -19,9 +20,8 @@ for line in fp:
     member_id, remadename, constituency = memberList.matchfullnamecons(name, None, date_from)
     if not member_id:
         member_id = lordsList.GetLordIDfname(name, None, date_from)
-    print '<moffice id="uk.org.publicwhip/moffice/%d" name="%s" matchid="%s" dept="%s" position="%s"%s fromdate="%s" todate="%s" source="manual"/>' % (
+    out.write('<moffice id="uk.org.publicwhip/moffice/%d" name="%s" matchid="%s" dept="%s" position="%s"%s fromdate="%s" todate="%s" source="manual"/>\n' % (
         id, name, member_id, department, position, responsibility, date_from, date_to
-    )
+    ))
     id += 1
-print '</publicwhip>'
-
+out.write('</publicwhip>\n')
