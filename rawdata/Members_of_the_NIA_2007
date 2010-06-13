@@ -7,16 +7,16 @@
 <meta name="generator" content="MediaWiki 1.16wmf4" />
 <link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;action=edit" />
 <link rel="edit" title="Edit this page" href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;action=edit" />
-<link rel="stylesheet" type="text/css" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?94" />
-<link rel="stylesheet" type="text/css" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" />
 <link rel="apple-touch-icon" href="http://en.wikipedia.org/apple-touch-icon.png" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?281a" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?281a" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?281a" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?281d" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?281d" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?281d" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?101" type="text/css" media="all" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
@@ -46,7 +46,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=365885025,
+wgCurRevisionId=367581379,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -63,39 +63,30 @@ wgSearchNamespaces=[0],
 wgMWSuggestMessages=["with suggestions", "no suggestions"],
 wgRestrictionEdit=[],
 wgRestrictionMove=[],
+wgWikimediaMobileUrl="http://en.m.wikipedia.org/wiki",
+wgCollapsibleNavBucketTest=false,
+wgCollapsibleNavForceNewVersion=false,
+wgVectorPreferences={"collapsiblenav": {"enable": 1}, "editwarning": {"enable": 1}},
+wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "simplesearch": true},
 wgNotice="",
 wgNoticeLocal="";
-</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?281a" type="text/javascript"></script>
-<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?281a"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?281a" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?281a" type="text/javascript"></script>
-<script type="text/javascript">var wgVectorPreferences = {
-	"collapsiblenav": {
-		"enable": 1
-	},
-	"editwarning": {
-		"enable": 1
-	}
-};
-var wgVectorEnabledModules = {
-	"collapsiblenav": true,
-	"collapsibletabs": true,
-	"editwarning": true,
-	"footercleanup": false,
-	"simplesearch": true
-};</script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?281a" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?281a" type="text/javascript"></script>
-<script type="text/javascript">mw.usability.addMessages({'vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
-<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?281a"></script>
+</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?281d" type="text/javascript"></script>
+<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?281d"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?281d" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?281d" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?1" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?281d" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?281d" type="text/javascript"></script>
+<script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
+<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?281d"></script>
 
 <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;281a" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;281d" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-Members_of_the_Northern_Ireland_Assembly_elected_in_2007 skin-vector">
-		<div id="page-base" class="noprint"></div>
-		<div id="head-base" class="noprint"></div>
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
 		<!-- content -->
 		<div id="content">
 			<a id="top"></a>
@@ -116,7 +107,7 @@ var wgVectorEnabledModules = {
 				<!-- /subtitle -->
 																<!-- jumpto -->
 				<div id="jump-to-nav">
-					Jump to:<a href="#head">navigation</a>,
+					Jump to: <a href="#head">navigation</a>,
 					<a href="#p-search">search</a>
 				</div>
 				<!-- /jumpto -->
@@ -1098,15 +1089,15 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;action=edit&amp;section=4" title="Edit section: Changes since the election">edit</a>]</span> <span class="mw-headline" id="Changes_since_the_election">Changes since the election</span></h2>
 <ul>
 <li><a href="/wiki/William_Hay_(Northern_Ireland_politician)" title="William Hay (Northern Ireland politician)">William Hay</a> was elected Speaker of the Assembly at its first sitting.</li>
-<li><a href="/wiki/George_Dawson_(politician)" title="George Dawson (politician)">George Dawson</a> (<a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">DUP</a>, <a href="/wiki/East_Antrim_(Assembly_constituency)" title="East Antrim (Assembly constituency)">East Antrim</a>) died on 7 May 2007<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup> and was replaced by <a href="/wiki/Alastair_Ian_Ross" title="Alastair Ian Ross" class="mw-redirect">Alastair Ian Ross</a>.</li>
-<li><a href="/wiki/Gerry_McHugh" title="Gerry McHugh">Gerry McHugh</a> resigned from <a href="/wiki/Sinn_Fein" title="Sinn Fein" class="mw-redirect">Sinn Fein</a> and became an <a href="/wiki/Independent_(politician)" title="Independent (politician)">independent</a> on 2007-12-03;<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup> on 2009-11-30 he announced that he had joined <a href="/wiki/Fianna_F%C3%A1il" title="Fianna Fáil">Fianna Fáil</a>.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>3<span>]</span></a></sup> On December 3, 2009, it was reported that even though he was now a member of Fianna Fáil, he would remain an independent member of the Assembly.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span>[</span>4<span>]</span></a></sup></li>
-<li><a href="/wiki/Danny_Kinahan" title="Danny Kinahan">Danny Kinahan</a> replaced <a href="/wiki/David_Burnside" title="David Burnside">David Burnside</a> on 1 June 2009.</li>
-<li><a href="/wiki/Billy_Leonard" title="Billy Leonard">Billy Leonard</a> replaced <a href="/wiki/Francie_Brolly" title="Francie Brolly" class="mw-redirect">Francie Brolly</a> (who had resigned) on 23 December 2009.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>5<span>]</span></a></sup></li>
-<li><a href="/wiki/Iris_Robinson" title="Iris Robinson">Iris Robinson</a>'s membership in the DUP was terminated around 9 January 2010, she resigned as an MLA on 18 January 2010, and was replaced by <a href="/wiki/Jonathan_Bell_(UK_politician)" title="Jonathan Bell (UK politician)">Jonathan Bell</a> on 22 January 2010.</li>
-<li><a href="/wiki/Carmel_Hanna" title="Carmel Hanna">Carmel Hanna</a> resigned on the same date; <a href="/wiki/Conall_McDevitt" title="Conall McDevitt">Conall McDevitt</a> was sworn in as her replacement on 19 January 2010.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>6<span>]</span></a></sup></li>
-<li><a href="/wiki/Alan_McFarland" title="Alan McFarland">Alan McFarland</a> resigned from the <a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a> on 30 March 2010.</li>
+<li><a href="/wiki/George_Dawson_(politician)" title="George Dawson (politician)">George Dawson</a> (<a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">DUP</a>, <a href="/wiki/East_Antrim_(Assembly_constituency)" title="East Antrim (Assembly constituency)">East Antrim</a>) died on 7 May 2007<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup> and was replaced by <a href="/wiki/Alastair_Ian_Ross" title="Alastair Ian Ross" class="mw-redirect">Alastair Ian Ross</a> on 14 May 2007.</li>
+<li><a href="/wiki/Gerry_McHugh" title="Gerry McHugh">Gerry McHugh</a> resigned from <a href="/wiki/Sinn_Fein" title="Sinn Fein" class="mw-redirect">Sinn Fein</a> and became an <a href="/wiki/Independent_(politician)" title="Independent (politician)">independent</a> on 29 November 2007;<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup> on 30 November 2009 he announced that he had joined <a href="/wiki/Fianna_F%C3%A1il" title="Fianna Fáil">Fianna Fáil</a>.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>3<span>]</span></a></sup> On 3 December 2009, it was reported that even though he was now a member of Fianna Fáil, he would remain an independent member of the Assembly.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span>[</span>4<span>]</span></a></sup></li>
+<li><a href="/wiki/Danny_Kinahan" title="Danny Kinahan">Danny Kinahan</a> replaced <a href="/wiki/David_Burnside" title="David Burnside">David Burnside</a> (who had resigned on 1 June 2009) on 9 June 2009.</li>
+<li><a href="/wiki/Billy_Leonard" title="Billy Leonard">Billy Leonard</a> replaced <a href="/wiki/Francie_Brolly" title="Francie Brolly" class="mw-redirect">Francie Brolly</a> (who had resigned on 11 December 2009) on 7 January 2010.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>5<span>]</span></a></sup></li>
+<li><a href="/wiki/Iris_Robinson" title="Iris Robinson">Iris Robinson</a>'s membership in the DUP was terminated around 9 January 2010, she resigned as an MLA on 12 January 2010, and was replaced by <a href="/wiki/Jonathan_Bell_(UK_politician)" title="Jonathan Bell (UK politician)">Jonathan Bell</a> on 25 January 2010.</li>
+<li><a href="/wiki/Carmel_Hanna" title="Carmel Hanna">Carmel Hanna</a> resigned on 15 January 2010; <a href="/wiki/Conall_McDevitt" title="Conall McDevitt">Conall McDevitt</a> was sworn in as her replacement on 21 January 2010.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>6<span>]</span></a></sup></li>
+<li><a href="/wiki/Alan_McFarland" title="Alan McFarland">Alan McFarland</a> resigned from the <a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a> on 31 March 2010.</li>
+<li><a href="/wiki/Dawn_Purvis" title="Dawn Purvis">Dawn Purvis</a> resigned from the <a href="/wiki/Progressive_Unionist_Party" title="Progressive Unionist Party">Progressive Unionist Party</a> on 3 June 2010.</li>
 <li><a href="/wiki/Naomi_Long" title="Naomi Long">Naomi Long</a> was elected to the <a href="/wiki/Belfast_East_(UK_Parliament_constituency)" title="Belfast East (UK Parliament constituency)">Belfast East</a> parliamentary constituency, and <a href="/wiki/Ian_Paisley,_Jr." title="Ian Paisley, Jr.">Ian Paisley, Jr.</a> to the <a href="/wiki/North_Antrim_(UK_Parliament_constituency)" title="North Antrim (UK Parliament constituency)">North Antrim</a> parliamentary constituency on 6 May 2010. Both will be replaced as MLAs; Paisley intends to resign on 11 June 2010 and will be replaced by <a href="/w/index.php?title=Paul_Frew&amp;action=edit&amp;redlink=1" class="new" title="Paul Frew (page does not exist)">Paul Frew</a>.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>7<span>]</span></a></sup><sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>8<span>]</span></a></sup></li>
-<li><a href="/wiki/Dawn_Purvis" title="Dawn Purvis">Dawn Purvis</a> resigned from the <a href="/wiki/Progressive_Unionist_Party" title="Progressive Unionist Party">Progressive Unionist Party</a> on 2 June 2010.</li>
 </ul>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;action=edit&amp;section=5" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
 <div class="references-small">
@@ -1257,7 +1248,7 @@ Template argument size: 30514/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!4 and timestamp 20100603193126 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!4 and timestamp 20100612093525 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007">http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007</a>"</div>
 				<!-- /bodytext -->
@@ -1269,7 +1260,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 		</div>
 		<!-- /content -->
 		<!-- header -->
-		<div id="head" class="noprint">
+		<div id="mw-head" class="noprint">
 			
 <!-- 0 -->
 <div id="p-personal" class="">
@@ -1347,7 +1338,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 		</div>
 		<!-- /header -->
 		<!-- panel -->
-			<div id="panel" class="noprint">
+			<div id="mw-panel" class="noprint">
 				<!-- logo -->
 					<div id="p-logo"><a style="background-image: url(http://upload.wikimedia.org/wikipedia/commons/d/d6/Wikipedia-logo-v2-en.png);" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
@@ -1398,8 +1389,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_Northern_Ireland_Assembly_elected_in_2007" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=365885025" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;id=365885025" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=367581379" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;id=367581379" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -1409,7 +1400,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+Northern+Ireland+Assembly+elected+in+2007" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+Northern+Ireland+Assembly+elected+in+2007&amp;oldid=365885025&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+Northern+Ireland+Assembly+elected+in+2007" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+Northern+Ireland+Assembly+elected+in+2007&amp;oldid=367581379&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -1422,7 +1413,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 3 June 2010 at 19:30.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 12 June 2010 at 09:34.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -1445,5 +1436,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-		<!-- Served by srv184 in 0.063 secs. -->			</body>
+		<!-- Served by srv280 in 0.042 secs. -->			</body>
 </html>

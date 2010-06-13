@@ -8,16 +8,16 @@
 <link rel="canonical" href="/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001" />
 <link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;action=edit" />
 <link rel="edit" title="Edit this page" href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;action=edit" />
-<link rel="stylesheet" type="text/css" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?94" />
-<link rel="stylesheet" type="text/css" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" />
 <link rel="apple-touch-icon" href="http://en.wikipedia.org/apple-touch-icon.png" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?281a" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?281a" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?281a" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?281d" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?281d" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?281d" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?101" type="text/css" media="all" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
@@ -64,42 +64,30 @@ wgSearchNamespaces=[0],
 wgMWSuggestMessages=["with suggestions", "no suggestions"],
 wgRestrictionEdit=[],
 wgRestrictionMove=[],
-wgTrackingToken="666cca5e05fff3135120169f506f15c1",
-wgClickTrackingIsThrottled=true,
+wgWikimediaMobileUrl="http://en.m.wikipedia.org/wiki",
+wgCollapsibleNavBucketTest=false,
+wgCollapsibleNavForceNewVersion=false,
+wgVectorPreferences={"collapsiblenav": {"enable": 1}, "editwarning": {"enable": 1}},
+wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "simplesearch": true},
 wgNotice="",
 wgNoticeLocal="";
-</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?281a" type="text/javascript"></script>
-<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?281a"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?281a" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?281a" type="text/javascript"></script>
-<script type="text/javascript">var wgVectorPreferences = {
-	"collapsiblenav": {
-		"enable": 1
-	},
-	"editwarning": {
-		"enable": 1
-	}
-};
-var wgVectorEnabledModules = {
-	"collapsiblenav": true,
-	"collapsibletabs": true,
-	"editwarning": true,
-	"footercleanup": false,
-	"simplesearch": true
-};</script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?281a" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/ClickTracking/ClickTracking.js?281a" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?281a" type="text/javascript"></script>
-<script type="text/javascript">mw.usability.addMessages({'vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
-<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?281a"></script>
+</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?281d" type="text/javascript"></script>
+<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?281d"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?281d" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?281d" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?1" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?281d" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?281d" type="text/javascript"></script>
+<script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
+<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?281d"></script>
 
 <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;281a" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;281d" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-List_of_MPs_elected_in_the_United_Kingdom_general_election_2001 skin-vector">
-		<div id="page-base" class="noprint"></div>
-		<div id="head-base" class="noprint"></div>
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
 		<!-- content -->
 		<div id="content">
 			<a id="top"></a>
@@ -120,7 +108,7 @@ var wgVectorEnabledModules = {
 				<!-- /subtitle -->
 																<!-- jumpto -->
 				<div id="jump-to-nav">
-					Jump to:<a href="#head">navigation</a>,
+					Jump to: <a href="#head">navigation</a>,
 					<a href="#p-search">search</a>
 				</div>
 				<!-- /jumpto -->
@@ -2192,7 +2180,7 @@ var wgVectorEnabledModules = {
 </tr>
 <tr>
 <td><a href="/wiki/Leigh_(UK_Parliament_constituency)" title="Leigh (UK Parliament constituency)">Leigh</a></td>
-<td><a href="/wiki/Andrew_Burnham" title="Andrew Burnham">Andrew Burnham</a></td>
+<td><a href="/wiki/Andrew_Burnham" title="Andrew Burnham" class="mw-redirect">Andrew Burnham</a></td>
 <td>Labour</td>
 </tr>
 <tr>
@@ -3483,7 +3471,7 @@ var wgVectorEnabledModules = {
 </tr>
 <tr>
 <td><a href="/wiki/Truro_and_St_Austell_(UK_Parliament_constituency)" title="Truro and St Austell (UK Parliament constituency)">Truro and St Austell</a></td>
-<td><a href="/wiki/Matthew_Taylor_(Liberal_politician)" title="Matthew Taylor (Liberal politician)">Matthew Taylor</a></td>
+<td><a href="/wiki/Matthew_Taylor_(Liberal_politician)" title="Matthew Taylor (Liberal politician)" class="mw-redirect">Matthew Taylor</a></td>
 <td>Liberal Democrat</td>
 </tr>
 <tr>
@@ -3945,7 +3933,7 @@ var wgVectorEnabledModules = {
 <td></td>
 </tr>
 <tr>
-<td class="navbox-group" style=";text-align:right;;"><a href="/wiki/List_of_current_United_Kingdom_MPs_by_party" title="List of current United Kingdom MPs by party" class="mw-redirect">By party</a></td>
+<td class="navbox-group" style=";text-align:right;;"><a href="/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010" title="List of MPs elected in the United Kingdom general election, 2010">By party</a></td>
 <td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;font-size:0.95em;;;" class="navbox-list navbox-odd">
 <div style="padding:0em 0.25em"><a href="/wiki/List_of_Conservative_Party_(UK)_MPs" title="List of Conservative Party (UK) MPs">Conservative</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/List_of_Democratic_Unionist_Party_MPs" title="List of Democratic Unionist Party MPs">Democratic Unionist</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/List_of_Labour_Party_(UK)_MPs" title="List of Labour Party (UK) MPs">Labour</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/List_of_Labour_Co-operative_Members_of_Parliament" title="List of Labour Co-operative Members of Parliament">Labour Co-op</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/List_of_Liberal_Party_(UK)_MPs" title="List of Liberal Party (UK) MPs">Liberal</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/List_of_Liberal_Democrat_MPs" title="List of Liberal Democrat MPs">Liberal Democrat</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/List_of_National_Labour_MPs" title="List of National Labour MPs">National Labour</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/List_of_National_Liberal_Party_(UK)_MPs" title="List of National Liberal Party (UK) MPs">National Liberal</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/List_of_Nationalist_Party_(Ireland)_MPs" title="List of Nationalist Party (Ireland) MPs">Nationalist (Ireland)</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/List_of_Plaid_Cymru_MPs" title="List of Plaid Cymru MPs">Plaid Cymru</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/List_of_Scottish_National_Party_MPs" title="List of Scottish National Party MPs">Scottish National</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/List_of_Sinn_F%C3%A9in_MPs" title="List of Sinn Féin MPs">Sinn Féin</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/List_of_Social_Democratic_Party_(UK)_MPs" title="List of Social Democratic Party (UK) MPs">Social Democratic</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/List_of_Social_Democratic_and_Labour_Party_MPs" title="List of Social Democratic and Labour Party MPs">Social Democratic and Labour</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/List_of_Ulster_Unionist_Party_MPs" title="List of Ulster Unionist Party MPs">Ulster Unionist</a><br />
 <i><a href="/wiki/List_of_UK_minor_party_and_independent_MPs_elected" title="List of UK minor party and independent MPs elected">Independents and minor parties</a></i></div>
@@ -3964,12 +3952,12 @@ var wgVectorEnabledModules = {
 <!-- 
 NewPP limit report
 Preprocessor node count: 829/1000000
-Post-expand include size: 43701/2048000 bytes
-Template argument size: 31541/2048000 bytes
+Post-expand include size: 43785/2048000 bytes
+Template argument size: 31583/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!4 and timestamp 20100528163022 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!4 and timestamp 20100610235201 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001</a>"</div>
 				<!-- /bodytext -->
@@ -3981,7 +3969,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 		</div>
 		<!-- /content -->
 		<!-- header -->
-		<div id="head" class="noprint">
+		<div id="mw-head" class="noprint">
 			
 <!-- 0 -->
 <div id="p-personal" class="">
@@ -4059,7 +4047,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 		</div>
 		<!-- /header -->
 		<!-- panel -->
-			<div id="panel" class="noprint">
+			<div id="mw-panel" class="noprint">
 				<!-- logo -->
 					<div id="p-logo"><a style="background-image: url(http://upload.wikimedia.org/wikipedia/commons/d/d6/Wikipedia-logo-v2-en.png);" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
@@ -4089,7 +4077,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 	<h5>Interaction</h5>
 	<div class="body">
 				<ul>
-					<li id="n-aboutsite"><a href="/wiki/Help:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+					<li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
 					<li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
 					<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
 					<li id="n-contact"><a href="/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
@@ -4165,5 +4153,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-		<!-- Served by srv204 in 0.063 secs. -->			</body>
+		<!-- Served by srv135 in 0.067 secs. -->			</body>
 </html>
