@@ -22,7 +22,7 @@ cd ~/parlparse/pyscraper/sp
 ./get-business-bulletins.py --quiet
 
 cd ~/parlparse/pyscraper/future
-./get_future_business_and_calendar.py
+./get_future_business_and_calendar.py --quiet
 
 # Return error code
 exit $RET
