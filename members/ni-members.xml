@@ -2111,8 +2111,8 @@
 	id="uk.org.publicwhip/member/90274"
 	title="" firstname="Jeffrey M" lastname="Donaldson"
 	constituency="Lagan Valley" party="DUP"
-	fromdate="2007-03-09" todate="9999-12-31"
-	fromwhy="election" towhy="still_in_office"
+	fromdate="2007-03-09" todate="2010-06-09"
+	fromwhy="election" towhy="resigned"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90275"
@@ -2363,8 +2363,8 @@
 	id="uk.org.publicwhip/member/90310"
 	title="" firstname="Alan" lastname="McFarland"
 	constituency="North Down" party="UUP"
-	fromdate="2007-03-09" todate="9999-12-31"
-	fromwhy="election" towhy="still_in_office"
+	fromdate="2007-03-09" todate="2010-03-30"
+	fromwhy="election" towhy="changed_party"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90311"
@@ -2531,8 +2531,8 @@
 	id="uk.org.publicwhip/member/90334"
 	title="" firstname="Dawn" lastname="Purvis"
 	constituency="Belfast East" party="PUP"
-	fromdate="2007-03-09" todate="9999-12-31"
-	fromwhy="election" towhy="still_in_office"
+	fromdate="2007-03-09" todate="2010-06-02"
+	fromwhy="election" towhy="changed_party"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90335"
@@ -2726,6 +2726,27 @@
 	title="" firstname="Jonathan" lastname="Bell"
 	constituency="Strangford" party="DUP"
 	fromdate="2010-01-25" todate="9999-12-31"
+	fromwhy="appointed" towhy="still_in_office"
+/>
+<member_ni
+	id="uk.org.publicwhip/member/90362"
+	title="" firstname="Alan" lastname="McFarland"
+	constituency="North Down" party="Independent"
+	fromdate="2010-03-31" todate="9999-12-31"
+	fromwhy="changed_party" towhy="still_in_office"
+/>
+<member_ni
+	id="uk.org.publicwhip/member/90363"
+	title="" firstname="Dawn" lastname="Purvis"
+	constituency="Belfast East" party="Independent"
+	fromdate="2010-06-03" todate="9999-12-31"
+	fromwhy="changed_party" towhy="still_in_office"
+/>
+<member_ni
+	id="uk.org.publicwhip/member/90364"
+	title="" firstname="Paul" lastname="Givan"
+	constituency="Lagan Valley" party="DUP"
+	fromdate="2010-06-11" todate="9999-12-31"
 	fromwhy="appointed" towhy="still_in_office"
 />
 
