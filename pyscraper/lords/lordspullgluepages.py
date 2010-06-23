@@ -200,8 +200,11 @@ def LordsPullGluePages(datefrom, dateto, bforcescrape):
 
         # Post 2010 election scraping done directly, not via index
         if dateto >= '2010-05-18':
-                date = mx.DateTime.DateTimeFrom('2010-05-18')
-                while date.date < dateto and date < mx.DateTime.today():
+                if datefrom > '2010-05-18':
+                        date = mx.DateTime.DateTimeFrom(datefrom)
+                else:
+                        date = mx.DateTime.DateTimeFrom('2010-05-18')
+                while date.date <= dateto and date < mx.DateTime.today():
                         for recordType, link in CmIndexFromNewPage(date, 'lords'):
                                 scrape.append((date.date, link, recordType))
                         date += mx.DateTime.DateTimeDelta(1)
