@@ -65,6 +65,7 @@ class ParseDay:
 
 <!ENTITY agrave  "&#224;">
 <!ENTITY aacute  "&#225;">
+<!ENTITY acirc   "&#226;">
 <!ENTITY ccedil  "&#231;">
 <!ENTITY egrave  "&#232;">
 <!ENTITY eacute  "&#233;">
@@ -358,7 +359,7 @@ class ParseDay:
 				self.text += '<p class="italic">%s</p>\n' % phtml
 			elif cl in ('Q3MotionBullet', 'BillAmend-AmendedTextIndent', 'BillAmend-AmendedTextIndent2', 'BillAmend-AmendedTextIndent3', 'BillAmend-QuotewithMinister'):
 				self.text += '<p class="indentitalic">%s</p>\n' % phtml
-			elif cl == 'B3BodyText' or cl == 'B3BodyTextnoindent' or cl == 'RollofMembersList':
+			elif cl in ('B3BodyText', 'B3BodyTextnoindent', 'RollofMembersList', 'TableText'):
 				self.text += '<p>%s</p>\n' % phtml
 			elif cl == 'Q1QuoteIndented' or cl == 'Q1Quote':
 				self.text += '<p class="indent">%s</p>\n' % phtml
