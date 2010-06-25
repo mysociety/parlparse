@@ -10413,4 +10413,25 @@ B - bishop
     fromdate="2010-06-23" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101019"
+    house="lords"
+    forenames="John Eric"
+    title="Lord" lordname="Gardiner" lordofname="Kimble"
+    county="the County of Buckinghamshire"
+    peeragetype="L" affiliation="Con"
+    fromdate="2010-06-24" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101020"
+    house="lords"
+    forenames="John Cradock"
+    title="Lord" lordname="Maples" lordofname=""
+    lordofname_full="Stratford-upon-Avon"
+    county="the County of Warwickshire"
+    peeragetype="L" affiliation="Con"
+    fromdate="2010-06-24" todate="9999-12-31"
+/>
+
 </publicwhip>
