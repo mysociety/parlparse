@@ -5372,7 +5372,7 @@ B - bishop
 	lordofname_full="Holywell"
 	county="the City of Oxford and County of Oxfordshire"
 	peeragetype="L" affiliation="Con"
-	fromdate="1983" todate="9999-12-31"
+	fromdate="1983" todate="2010-06-19" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100517"
@@ -10348,6 +10348,69 @@ B - bishop
     county="the County of Surrey"
     peeragetype="L" affiliation="Con"
     fromdate="2010-06-03" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101013"
+    house="lords"
+    forenames="Alastair Llewellyn John"
+    title="Bishop" lordname="" lordofname="Derby"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2010-06-15" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101014"
+    house="lords"
+    forenames="Roger John"
+    title="Lord" lordname="Liddle" lordofname=""
+    lorofname_full="Carlisle"
+    county="the County of Cumbria"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2010-06-21" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101015"
+    house="lords"
+    forenames="John Selwyn"
+	surname="Gummer"
+    title="Lord" lordname="Deben" lordofname=""
+    lorofname_full="Winston"
+    county="the County of Suffolk"
+    peeragetype="L" affiliation="Con"
+    fromdate="2010-06-21" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101016"
+    house="lords"
+    forenames="Dianne"
+    title="Baroness" lordname="Hayter" lordofname="Kentish Town"
+    county="the London Borough of Camden"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2010-06-22" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101017"
+    house="lords"
+    forenames="Thomas McLaughlin"
+    title="Lord" lordname="McAvoy" lordofname=""
+    lorofname_full="Rutherglen"
+    county="Lanarkshire"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2010-06-22" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101018"
+    house="lords"
+    forenames="James Philip"
+    title="Lord" lordname="Knight" lordofname="Weymouth"
+    county="the County of Dorset"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2010-06-23" todate="9999-12-31"
 />
 
 </publicwhip>
