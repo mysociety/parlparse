@@ -2517,8 +2517,8 @@
 	id="uk.org.publicwhip/member/90332"
 	title="" firstname="Ian" lastname="Paisley Jnr"
 	constituency="North Antrim" party="DUP"
-	fromdate="2007-03-09" todate="9999-12-31"
-	fromwhy="election" towhy="still_in_office"
+	fromdate="2007-03-09" todate="2010-06-20"
+	fromwhy="election" towhy="resigned"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90333"
@@ -2747,6 +2747,13 @@
 	title="" firstname="Paul" lastname="Givan"
 	constituency="Lagan Valley" party="DUP"
 	fromdate="2010-06-11" todate="9999-12-31"
+	fromwhy="appointed" towhy="still_in_office"
+/>
+<member_ni
+	id="uk.org.publicwhip/member/90365"
+	title="" firstname="Paul" lastname="Frew"
+	constituency="North Antrim" party="DUP"
+	fromdate="2010-06-21" todate="9999-12-31"
 	fromwhy="appointed" towhy="still_in_office"
 />
 
