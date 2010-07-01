@@ -135,6 +135,7 @@ class ParseDay:
 			timestamp = ' time="%s"' % timestamp
 		self.out.write('<%s-heading id="uk.org.publicwhip/ni/%s"%s url="%s">%s</%s-heading>\n' % (type, self.id(), timestamp, self.url, text, type))
 
+
 	def parse_day_old(self, body):
 		match = re.match('\d\d(\d\d)-(\d\d)-(\d\d)(i?)$', self.date)
 		urldate = '%s%s%s%s' % match.groups()
@@ -254,7 +255,20 @@ class ParseDay:
 		body = soup('p')
 		self.url = ''
 
-		if not re.match('(THE\s+)?(transitional(<br>)?\s+)?(Northern\s+Ireland\s+)?ASSEMBLY(?i)', ''.join(body[0](text=True))):
+                nia_heading_re = re.compile(
+                        r'''
+                        (the)?(\s|&nbsp;|<br>)*
+                        (transitional)?(\s|&nbsp;|<br>)*
+                        (
+                          northern(\s|&nbsp;|<br>)*
+                          ireland(\s|&nbsp;|<br>)*
+                        )?
+                        assembly
+                        ''',
+                        re.IGNORECASE | re.VERBOSE
+                        )
+
+		if not nia_heading_re.match(''.join(body[0](text=True))):
 			raise ContextException, 'Missing NIA heading!'
 		date_head = body[1].find(text=True)
 		body = body[2:]
