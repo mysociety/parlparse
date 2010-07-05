@@ -181,6 +181,6 @@ for year in range(options.year, currentyear+1):
                 fp.write(ur.read())
                 fp.close()
                 ur.close()
-                if options.verbose: print alternative_leaf, 'scraped SP written answers'
+                print alternative_leaf, 'scraped SP written answers'
                 amount_to_sleep = int( 20 * random.random() )
                 # time.sleep( amount_to_sleep )
