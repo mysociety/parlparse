@@ -1895,7 +1895,7 @@ B - bishop
 	lordofname_full="Hong Kong Island"
 	county="Hong Kong and of Knightsbridge in the Royal Borough of Kensington and Chelsea"
 	peeragetype="L" affiliation="XB"
-	fromdate="1990" todate="9999-12-31"
+	fromdate="1990" todate="2010-06-30" towhy="resigned"
 />
 <lord
 	id="uk.org.publicwhip/lord/100183"
@@ -4070,7 +4070,7 @@ B - bishop
 	title="Lord" lordname="McAlpine" lordofname="West Green"
 	county="the County of Hampshire"
 	peeragetype="L" affiliation="Other"
-	fromdate="1984" todate="9999-12-31"
+	fromdate="1984" todate="2010-05-21" towhy="resigned"
 />
 <lord
 	id="uk.org.publicwhip/lord/100391"
@@ -8469,7 +8469,7 @@ B - bishop
 	lordofname_full="Rothiemay"
 	county="Banffshire"
 	peeragetype="L" affiliation="Con"
-	fromdate="2004-06-21" todate="9999-12-31"
+	fromdate="2004-06-21" todate="2010-04-15" towhy="resigned"
 />
 <lord
 	id="uk.org.publicwhip/lord/100814"
