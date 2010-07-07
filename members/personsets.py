@@ -81,6 +81,16 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/100981" : "Peter Mandelson [Hartlepool]",
     "uk.org.publicwhip/lord/100997" : "Michael Martin [Glasgow Springburn / Glasgow North East]",
     "uk.org.publicwhip/lord/100861" : "Lewis Moonie [Kirkcaldy]",
+    "uk.org.publicwhip/lord/101015" : "John Gummer [Suffolk Coastal]",
+    "uk.org.publicwhip/lord/101017" : "Thomas McAvoy [Glasgow Rutherglen / Rutherglen and Hamilton West]",
+    "uk.org.publicwhip/lord/101018" : "Jim Knight [South Dorset]",
+    "uk.org.publicwhip/lord/101020" : "John Maples [Stratford-on-Avon]",
+    "uk.org.publicwhip/lord/101027" : "Don Touhig [Islwyn]",
+    "uk.org.publicwhip/lord/101029" : "John Hutton [Barrow and Furness]",
+    "uk.org.publicwhip/lord/101030" : "Paul Boateng [Brent South]",
+    "uk.org.publicwhip/lord/101032" : "Ian Paisley [North Antrim]",
+    "uk.org.publicwhip/lord/101034" : "John McFall [Dumbarton / West Dunbartonshire]",
+    "uk.org.publicwhip/lord/101036" : "Hilary Armstrong [North West Durham]",
 }
 
 # Put people who change party AND were MPs multple times in table above e.g. David Trimble
@@ -134,6 +144,10 @@ sp_lord_matches = {
     # Sir David Steel
     "uk.org.publicwhip/member/80242": "uk.org.publicwhip/lord/100608",
     "uk.org.publicwhip/member/80277": "uk.org.publicwhip/lord/100608",
+    # Lord Jack McConnell
+    "uk.org.publicwhip/member/80078": "uk.org.publicwhip/lord/101023",
+    "uk.org.publicwhip/member/80201": "uk.org.publicwhip/lord/101023",
+    "uk.org.publicwhip/member/80353": "uk.org.publicwhip/lord/101023",
 }
 
 # Include in here changes of constituency, so those people are
