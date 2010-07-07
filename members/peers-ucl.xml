@@ -10609,6 +10609,23 @@ B - bishop
     fromdate="2010-07-06" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101037"
+    house="lords"
+    forenames="James"
+    title="Viscount" lordname="Younger" lordofname="Leckie"
+    peeragetype="HP" affiliation="Con"
+    fromdate="2010-06-23" todate="9999-12-31"
+/>
+<lord
+    id="uk.org.publicwhip/lord/101038"
+    house="lords"
+    forenames="Nicholas Le Poer Trench"
+    title="Viscount" lordname="Clancarty" lordofname=""
+    peeragetype="HP" affiliation="XB"
+    fromdate="2010-06-23" todate="9999-12-31"
+/>
+
 <!--
 <lord
     id="uk.org.publicwhip/lord/1010.."
