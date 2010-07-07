@@ -326,7 +326,7 @@ B - bishop
 	lordofname_full="Regent's Park"
 	county="the City of Westminster"
 	peeragetype="L" affiliation="Con"
-	fromdate="1997" todate="9999-12-31"
+	fromdate="1997" todate="2010-07-06" towhy="resigned"
 />
 <lord
 	id="uk.org.publicwhip/lord/100032"
@@ -2301,7 +2301,7 @@ B - bishop
 	lordofname_full="Reddish"
 	county="the County of Greater Manchester"
 	peeragetype="L" affiliation="XB"
-	fromdate="1999" todate="9999-12-31"
+	fromdate="1999" todate="2010-07-06" towhy="resigned"
 />
 <lord
 	id="uk.org.publicwhip/lord/100222"
