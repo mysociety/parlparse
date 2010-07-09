@@ -19,12 +19,14 @@ pwcmdirs = miscfuncs.pwcmdirs
 
 # These links come from the page "http://www.parliament.uk/directories/directories.cfm"
 
-watchpages = {  #"govposts":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/hmg.cfm",
-		#		"offoppose":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/opp.cfm",
+watchpages = {  "govposts":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/her-majestys-government/",
+				"offoppose":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/opposition-holding/",
 		#		#"libdem":"http://letters.libdems.org.uk/mysociety.php",
-		#		"dup":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/dup.cfm",
+				"dup":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/democratic-unionist-party/",
 		#		"ulsterun":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/ulster.cfm",
 		#		"plaidsnp":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/PCSNP.cfm",
+                                "plaid":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/plaid-cymru/",
+                                "snp":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/scottish-national-party/",
 		#		"privsec":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/Pps.cfm",
 		#		"selctee":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/selmem.cfm",
 				"clerks":"http://www.publications.parliament.uk/pa/cm/listgovt.htm",
