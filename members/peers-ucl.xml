@@ -10626,6 +10626,48 @@ B - bishop
     fromdate="2010-06-23" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101039"
+    house="lords"
+    forenames="George Philip"
+    title="Lord" lordname="Willis" lordofname="Knaresborough"
+    lordofname_full="Harrogate"
+    county="the County of North Yorkshire"
+    peeragetype="L" affiliation="LDem"
+    fromdate="2010-07-07" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101040"
+    house="lords"
+    forenames="John Quentin"
+    title="Lord" lordname="Davies" lordofname="Stamford"
+    county="the County of Lincolnshire"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2010-07-08" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101041"
+    house="lords"
+    forenames="Angela Evans"
+    title="Baroness" lordname="Smith" lordofname="Basildon"
+    county="the County of Essex"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2010-07-08" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101042"
+    house="lords"
+    forenames="John Leslie"
+    title="Lord" lordname="Prescott" lordofname=""
+    lordofname_full="Kingston-upon-Hull"
+    county="the County of East Yorkshire"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2010-07-08" todate="9999-12-31"
+/>
+
 <!--
 <lord
     id="uk.org.publicwhip/lord/1010.."

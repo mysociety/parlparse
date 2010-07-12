@@ -91,6 +91,10 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/101032" : "Ian Paisley [North Antrim]",
     "uk.org.publicwhip/lord/101034" : "John McFall [Dumbarton / West Dunbartonshire]",
     "uk.org.publicwhip/lord/101036" : "Hilary Armstrong [North West Durham]",
+    "uk.org.publicwhip/lord/101039" : "Phil Willis [Harrogate and Knaresborough]",
+    "uk.org.publicwhip/lord/101040" : "Quentin Davies [Grantham and Stamford]",
+    "uk.org.publicwhip/lord/101041" : "Angela Smith [Basildon]",
+    "uk.org.publicwhip/lord/101042" : "John Prescott [Kingston upon Hull East]",
 }
 
 # Put people who change party AND were MPs multple times in table above e.g. David Trimble
