@@ -7706,7 +7706,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/679"/>
     <office id="uk.org.publicwhip/member/90074"/>
     <office id="uk.org.publicwhip/member/90198"/>
-    <office id="uk.org.publicwhip/member/90307" current="yes"/>
+    <office id="uk.org.publicwhip/member/90307"/>
     <office id="uk.org.publicwhip/moffice/3732"/>
     <office id="uk.org.publicwhip/moffice/4076"/>
     <office id="uk.org.publicwhip/moffice/4077"/>
@@ -10039,7 +10039,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/1892"/>
     <office id="uk.org.publicwhip/member/40620" current="yes"/>
     <office id="uk.org.publicwhip/member/90233"/>
-    <office id="uk.org.publicwhip/member/90343" current="yes"/>
+    <office id="uk.org.publicwhip/member/90343"/>
     <office id="uk.org.publicwhip/moffice/3493"/>
     <office id="uk.org.publicwhip/moffice/3706"/>
     <office id="uk.org.publicwhip/moffice/3799"/>
@@ -68075,7 +68075,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13814" latestname="Naomi Long">
     <office id="uk.org.publicwhip/member/40068" current="yes"/>
     <office id="uk.org.publicwhip/member/90188"/>
-    <office id="uk.org.publicwhip/member/90294" current="yes"/>
+    <office id="uk.org.publicwhip/member/90294"/>
 </person>
 <person id="uk.org.publicwhip/person/24958" latestname="Rushanara Ali">
     <office id="uk.org.publicwhip/member/40075" current="yes"/>
@@ -72514,6 +72514,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/90003"/>
     <office id="uk.org.publicwhip/member/90004"/>
 </person>
+<person id="uk.org.publicwhip/person/24993" latestname="Sydney Anderson">
+    <office id="uk.org.publicwhip/member/90367" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/13891" latestname="Martina Anderson">
     <office id="uk.org.publicwhip/member/90248" current="yes"/>
 </person>
@@ -72757,6 +72760,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13794" latestname="Paul Girvan">
     <office id="uk.org.publicwhip/member/90176"/>
+    <office id="uk.org.publicwhip/member/90366" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/24972" latestname="Paul Givan">
     <office id="uk.org.publicwhip/member/90364" current="yes"/>
@@ -72851,6 +72855,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13903" latestname="Trevor Lunn">
     <office id="uk.org.publicwhip/member/90295" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/24994" latestname="Chris Lyttle">
+    <office id="uk.org.publicwhip/member/90368" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13815" latestname="Alban Maginness">
     <office id="uk.org.publicwhip/member/90068"/>

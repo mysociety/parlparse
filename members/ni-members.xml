@@ -2251,8 +2251,8 @@
 	id="uk.org.publicwhip/member/90294"
 	title="" firstname="Naomi" lastname="Long"
 	constituency="Belfast East" party="Alliance"
-	fromdate="2007-03-09" todate="9999-12-31"
-	fromwhy="election" towhy="still_in_office"
+	fromdate="2007-03-09" todate="2010-07-05"
+	fromwhy="election" towhy="resigned"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90295"
@@ -2342,8 +2342,8 @@
 	id="uk.org.publicwhip/member/90307"
 	title="" firstname="William" lastname="McCrea"
 	constituency="South Antrim" party="DUP"
-	fromdate="2007-03-09" todate="9999-12-31"
-	fromwhy="election" towhy="still_in_office"
+	fromdate="2007-03-09" todate="2010-07-01"
+	fromwhy="election" towhy="resigned"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90308"
@@ -2594,8 +2594,8 @@
 	id="uk.org.publicwhip/member/90343"
 	title="" firstname="David" lastname="Simpson"
 	constituency="Upper Bann" party="DUP"
-	fromdate="2007-03-09" todate="9999-12-31"
-	fromwhy="election" towhy="still_in_office"
+	fromdate="2007-03-09" todate="2010-07-01"
+	fromwhy="election" towhy="resigned"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90344"
@@ -2754,6 +2754,28 @@
 	title="" firstname="Paul" lastname="Frew"
 	constituency="North Antrim" party="DUP"
 	fromdate="2010-06-21" todate="9999-12-31"
+	fromwhy="appointed" towhy="still_in_office"
+/>
+
+<member_ni
+	id="uk.org.publicwhip/member/90366"
+	title="" firstname="Paul" lastname="Girvan"
+	constituency="South Antrim" party="DUP"
+	fromdate="2010-07-01" todate="9999-12-31"
+	fromwhy="appointed" towhy="still_in_office"
+/>
+<member_ni
+	id="uk.org.publicwhip/member/90367"
+	title="" firstname="Sydney" lastname="Anderson"
+	constituency="Upper Bann" party="DUP"
+	fromdate="2010-07-01" todate="9999-12-31"
+	fromwhy="appointed" towhy="still_in_office"
+/>
+<member_ni
+	id="uk.org.publicwhip/member/90368"
+	title="" firstname="Chris" lastname="Lyttle"
+	constituency="Belfast East" party="Alliance"
+	fromdate="2010-07-05" todate="9999-12-31"
 	fromwhy="appointed" towhy="still_in_office"
 />
 
