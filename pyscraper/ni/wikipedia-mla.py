@@ -21,6 +21,7 @@ date_today = datetime.date.today().isoformat()
 # Get region pages
 wiki_index_url = "http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007"
 wikimembers  = {}
+current_members = []
 
 # Grab page 
 ur = open('../rawdata/Members_of_the_NIA_2007')
@@ -29,20 +30,19 @@ ur.close()
 
 matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*? title="[^"]+"[^>]*>([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a></td>';
 matches = re.findall(matcher, content)
-matches.append(('/wiki/Alastair_Ian_Ross', 'Alastair Ian Ross', 'East Antrim'))
-matches.append(('/wiki/Danny_Kinahan', 'Danny Kinahan', 'South Antrim'))
+matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*? title="[^"]+"[^>]*>([^<]+)</a> \((?:resigned|deceased)\), replaced by <a href="/wiki/[^"]+"[^>]*? title="[^"]+"[^>]*>[^<]+</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a></td>';
+matches.extend( re.findall(matcher, content) )
+matcher = '<tr>\s+<td><a href="/wiki/[^"]+"[^>]*? title="[^"]+"[^>]*>[^<]+</a> \((?:resigned|deceased)\), replaced by <a href="(/wiki/[^"]+)"[^>]*? title="[^"]+"[^>]*>([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a></td>';
+matches.extend( re.findall(matcher, content) )
 for (url, name, cons) in matches:
-    if name == 'David Burnside': continue # He's left
-    id = None
-    #cons = cons.decode('utf-8')
-    #cons = cons.replace('&amp;', '&')
     name = name.decode('utf-8')
     try:
         id, str = memberList.match(name, date_today)
+        current_members.append(id)
     except Exception, e:
-        print >>sys.stderr, e
-    if not id:
-        continue
+        # For the resigned/died MLAs, use an earlier date
+        id, str = memberList.match(name, '2007-01-01')
+        #print >>sys.stderr, e
     pid = memberList.membertoperson(id)
     wikimembers[pid] = url
 
@@ -55,8 +55,8 @@ for id in k:
     print '<personinfo id="%s" wikipedia_url="%s" />' % (id, url)
 print '</publicwhip>'
 
-wikimembers = sets.Set(wikimembers.keys())
-allmembers = sets.Set([ memberList.membertoperson(id) for id in memberList.list() ])
+wikimembers = sets.Set(current_members)
+allmembers = sets.Set( memberList.list() )
 symdiff = allmembers.symmetric_difference(wikimembers)
 if len(symdiff) > 0:
     print >>sys.stderr, "Failed to get all MLAs, these ones in symmetric difference"
