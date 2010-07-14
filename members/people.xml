@@ -905,7 +905,8 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/4331"/>
     <office id="uk.org.publicwhip/moffice/4346"/>
 </person>
-<person id="uk.org.publicwhip/person/10072" latestname="Angela Browning">
+<person id="uk.org.publicwhip/person/10072" latestname="Baroness Browning">
+    <office id="uk.org.publicwhip/lord/101048" current="yes"/>
     <office id="uk.org.publicwhip/member/1876"/>
     <office id="uk.org.publicwhip/member/2480"/>
     <office id="uk.org.publicwhip/member/72"/>
@@ -4093,7 +4094,8 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/2947"/>
     <office id="uk.org.publicwhip/member/359"/>
 </person>
-<person id="uk.org.publicwhip/person/10360" latestname="Helen Liddell">
+<person id="uk.org.publicwhip/person/10360" latestname="Baroness Liddell of Coatdyke">
+    <office id="uk.org.publicwhip/lord/101046" current="yes"/>
     <office id="uk.org.publicwhip/member/1047"/>
     <office id="uk.org.publicwhip/member/2948"/>
     <office id="uk.org.publicwhip/member/360"/>
@@ -6376,7 +6378,8 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/5094"/>
     <office id="uk.org.publicwhip/moffice/5186"/>
 </person>
-<person id="uk.org.publicwhip/person/10560" latestname="Michael Spicer">
+<person id="uk.org.publicwhip/person/10560" latestname="Lord Spicer">
+    <office id="uk.org.publicwhip/lord/101043" current="yes"/>
     <office id="uk.org.publicwhip/member/1244"/>
     <office id="uk.org.publicwhip/member/1941"/>
     <office id="uk.org.publicwhip/member/3330"/>
@@ -7324,7 +7327,8 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/4255"/>
     <office id="uk.org.publicwhip/moffice/5418"/>
 </person>
-<person id="uk.org.publicwhip/person/10642" latestname="Michael Wills">
+<person id="uk.org.publicwhip/person/10642" latestname="Lord Wills">
+    <office id="uk.org.publicwhip/lord/101044" current="yes"/>
     <office id="uk.org.publicwhip/member/1326"/>
     <office id="uk.org.publicwhip/member/1865"/>
     <office id="uk.org.publicwhip/member/642"/>
@@ -70428,6 +70432,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/24976" latestname="The Bishop of Derby">
     <office id="uk.org.publicwhip/lord/101013" current="yes"/>
 </person>
+<person id="uk.org.publicwhip/person/24995" latestname="Lord Popat">
+    <office id="uk.org.publicwhip/lord/101045" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/13194" latestname="Lord Taylor of Warwick">
     <office id="uk.org.publicwhip/lord/100628" current="yes"/>
 </person>
@@ -71023,6 +71030,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/5107"/>
     <office id="uk.org.publicwhip/moffice/5215"/>
     <office id="uk.org.publicwhip/moffice/5313"/>
+</person>
+<person id="uk.org.publicwhip/person/24996" latestname="Lord Black of Brentwood">
+    <office id="uk.org.publicwhip/lord/101047" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13337" latestname="David Steel">
     <office id="uk.org.publicwhip/lord/100608" current="yes"/>

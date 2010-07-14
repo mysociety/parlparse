@@ -95,6 +95,10 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/101040" : "Quentin Davies [Grantham and Stamford]",
     "uk.org.publicwhip/lord/101041" : "Angela Smith [Basildon]",
     "uk.org.publicwhip/lord/101042" : "John Prescott [Kingston upon Hull East]",
+    "uk.org.publicwhip/lord/101043" : "Michael Spicer [West Worcestershire]",
+    "uk.org.publicwhip/lord/101044" : "Michael Wills [North Swindon]",
+    "uk.org.publicwhip/lord/101046" : "Helen Liddell [Airdrie and Shotts]",
+    "uk.org.publicwhip/lord/101048" : "Angela Browning [Tiverton and Honiton]",
 }
 
 # Put people who change party AND were MPs multple times in table above e.g. David Trimble
