@@ -693,7 +693,8 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/3953"/>
     <office id="uk.org.publicwhip/moffice/4243"/>
 </person>
-<person id="uk.org.publicwhip/person/10056" latestname="Tim Boswell">
+<person id="uk.org.publicwhip/person/10056" latestname="Lord Boswell of Aynho">
+    <office id="uk.org.publicwhip/lord/101053" current="yes"/>
     <office id="uk.org.publicwhip/member/1529"/>
     <office id="uk.org.publicwhip/member/2455"/>
     <office id="uk.org.publicwhip/member/2456"/>
@@ -69371,6 +69372,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/12964" latestname="Lord Gibson-Watt">
     <office id="uk.org.publicwhip/lord/100718"/>
 </person>
+<person id="uk.org.publicwhip/person/24997" latestname="Baroness Newlove">
+    <office id="uk.org.publicwhip/lord/101052" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/12965" latestname="Lord Hailsham of Saint Marylebone">
     <office id="uk.org.publicwhip/lord/100719"/>
 </person>
@@ -70247,6 +70251,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/5303"/>
     <office id="uk.org.publicwhip/moffice/5375"/>
     <office id="uk.org.publicwhip/moffice/5378"/>
+</person>
+<person id="uk.org.publicwhip/person/24998" latestname="Baroness Wheeler">
+    <office id="uk.org.publicwhip/lord/101049" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14127" latestname="The Bishop of Chichester">
     <office id="uk.org.publicwhip/lord/100971" current="yes"/>
@@ -71385,6 +71392,12 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13429" latestname="Lord Plumb">
     <office id="uk.org.publicwhip/lord/100506" current="yes"/>
 </person>
+<person id="uk.org.publicwhip/person/24999" latestname="Lord Stevenson of Balmacara">
+    <office id="uk.org.publicwhip/lord/101050" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25000" latestname="Lord Shipley">
+    <office id="uk.org.publicwhip/lord/101051" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/24690" latestname="Baroness Kinnock of Holyhead">
     <office id="uk.org.publicwhip/lord/100994" current="yes"/>
     <office id="uk.org.publicwhip/moffice/1750"/>
@@ -71393,6 +71406,12 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/24696" latestname="Lord Aberdare">
     <office id="uk.org.publicwhip/lord/101000" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25001" latestname="Baroness Stedman-Scott">
+    <office id="uk.org.publicwhip/lord/101054" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25002" latestname="Baroness Parminter">
+    <office id="uk.org.publicwhip/lord/101055" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13881" latestname="Lord Bilimoria">
     <office id="uk.org.publicwhip/lord/100935" current="yes"/>
