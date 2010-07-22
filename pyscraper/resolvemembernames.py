@@ -7,7 +7,6 @@ import xml.sax
 import re
 import string
 import copy
-import sets
 import sys
 import datetime
 import os
@@ -320,7 +319,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         text, titletotal = self.striptitles(tinput)
 
         # Find unique identifier for member
-        ids = sets.Set()
+        ids = set()
         matches = self.fullnames.get(text, None)
         if not matches and titletotal > 0:
             matches = self.lastnames.get(text, None)
@@ -348,7 +347,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         if not consids:
             raise Exception, "Unknown constituency %s" % cons
 
-        newids = sets.Set()
+        newids = set()
         for consattr in consids:
             if consattr["fromdate"] <= date and date <= consattr["todate"]:
                 consid = consattr['id']
@@ -397,7 +396,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             raise Exception, "Unknown constituency %s" % cons
 
         if consids and (len(ids) > 1 or alwaysmatchcons):
-            newids = sets.Set()
+            newids = set()
             for consattr in consids:
                 if date == None or (consattr["fromdate"] <= date and date <= consattr["todate"]):
                     consid = consattr['id']
@@ -531,7 +530,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             consids = self.constoidmap.get(bracket, None)
             if consids:
                 # Search for constituency matches, and intersect results with them
-                newids = sets.Set()
+                newids = set()
                 for consattr in consids:
                     if consattr["fromdate"] <= date and date <= consattr["todate"]:
                         consid = consattr['id']
@@ -578,7 +577,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                 x = self.debatenamehistory[ix]
                 if x in ids:
                     # first match, use it and exit
-                    ids = sets.Set([x,])
+                    ids = set([x,])
                     break
                 ix -= 1
 
@@ -597,7 +596,10 @@ class MemberList(xml.sax.handler.ContentHandler):
 
         # Match between office and name - store for later use in the same days text
         if speakeroffice <> "":
-            self.debateofficehistory.setdefault(input, sets.Set()).union_update(ids)
+            if input == 'The Temporary Chair':
+                self.debateofficehistory[input] = set(ids)
+            else:
+                self.debateofficehistory.setdefault(input, set()).update(ids)
 
         # Put together original in case we need it
         rebracket = input
@@ -674,7 +676,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         consids = self.constoidmap.get(text, None)
         if consids:
             # Search for constituency matches, and intersect results with them
-            newids = sets.Set()
+            newids = set()
             for consattr in consids:
                 if consattr["fromdate"] <= date and date <= consattr["todate"]:
                     consid = consattr['id']
@@ -721,7 +723,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             
             if x in ids:
                 # first match, use it and exit
-                ids = sets.Set([x,])
+                ids = set([x,])
                 break
             ix -= 1
         return ids
@@ -827,7 +829,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 
         # Match between office and name - store for later use in the same days text
         if speakeroffice <> "":
-            self.debateofficehistory.setdefault(input, sets.Set()).union_update(ids)
+            self.debateofficehistory.setdefault(input, set()).update(ids)
 
         # Chairman
         if len(ids) == 0 and re.search(reChairman, input) and self.chairman:
