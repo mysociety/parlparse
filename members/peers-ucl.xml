@@ -1762,7 +1762,7 @@ B - bishop
 	title="Baroness" lordname="Delacourt-Smith" lordofname="Alteryn"
 	county="the County of Gwent"
 	peeragetype="L" affiliation="Other"
-	fromdate="1974" todate="9999-12-31"
+	fromdate="1974" todate="2010-06-08" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100170"
@@ -2257,7 +2257,7 @@ B - bishop
 	lordofname_full="Queen's Gate"
 	county="the City of Westminster"
 	peeragetype="L" affiliation="XB"
-	fromdate="1979" todate="9999-12-31"
+	fromdate="1979" todate="2010-06-25" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100218"
@@ -3746,7 +3746,7 @@ B - bishop
 	title="Lord" lordname="Laing" lordofname="Dunphail"
 	county="the District of Moray"
 	peeragetype="L" affiliation="Con"
-	fromdate="1991" todate="9999-12-31"
+	fromdate="1991" todate="2010-06-21" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100358"
@@ -6895,7 +6895,7 @@ B - bishop
 	lordofname_full="Abbots Morton"
 	county="the County of Hereford and Worcester"
 	peeragetype="L" affiliation="Con"
-	fromdate="1992" todate="9999-12-31"
+	fromdate="1992" todate="2010-06-22" towhy="died"
 	ex_MP="yes"
 />
 <lord
