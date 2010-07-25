@@ -1247,12 +1247,12 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <!-- 
 NewPP limit report
 Preprocessor node count: 1758/1000000
-Post-expand include size: 64197/2048000 bytes
+Post-expand include size: 64185/2048000 bytes
 Template argument size: 30514/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!4 and timestamp 20100712140719 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!4 and timestamp 20100718225332 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007">http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007</a>"</div>
 				<!-- /bodytext -->
@@ -1440,5 +1440,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-		<!-- Served by srv235 in 0.045 secs. -->			</body>
+		<!-- Served by srv181 in 0.056 secs. -->			</body>
 </html>
