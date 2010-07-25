@@ -46,7 +46,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=373998756,
+wgCurRevisionId=374557097,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -1927,7 +1927,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Lord_Speaker" title="Lord Speaker">Lord Speaker</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Dianne_Hayter,_Baroness_Hayter_of_Kentish_Town" title="Dianne Hayter, Baroness Hayter of Kentish Town">The Baroness Hayter of Kentish Town</a></td>
+<td><a href="/wiki/Dianne_Hayter,_Baroness_Hayter_of_Kentish_Town" title="Dianne Hayter, Baroness Hayter of Kentish Town" class="mw-redirect">The Baroness Hayter of Kentish Town</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -2281,7 +2281,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Roy_Kennedy,_Baron_Kennedy_of_Southwark&amp;action=edit&amp;redlink=1" class="new" title="Roy Kennedy, Baron Kennedy of Southwark (page does not exist)">The Lord Kennedy of Southwark</a></td>
+<td><a href="/wiki/Roy_Kennedy,_Baron_Kennedy_of_Southwark" title="Roy Kennedy, Baron Kennedy of Southwark">The Lord Kennedy of Southwark</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_Peer" title="Life Peer" class="mw-redirect">Life Peer</a></td>
 <td></td>
@@ -2587,7 +2587,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Tommy_McAvoy" title="Tommy McAvoy" class="mw-redirect">The Lord McAvoy</a></td>
+<td><a href="/wiki/Tommy_McAvoy" title="Tommy McAvoy">The Lord McAvoy</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">life peer</a></td>
 <td></td>
@@ -4668,22 +4668,22 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=5" title="Edit section: Peers disqualified as senior members of the judiciary">edit</a>]</span> <span class="mw-headline" id="Peers_disqualified_as_senior_members_of_the_judiciary">Peers disqualified as senior members of the judiciary</span></h2>
 <p>Per section 137 (3) of the <a href="/wiki/Constitutional_Reform_Act_2005" title="Constitutional Reform Act 2005">Constitutional Reform Act 2005</a>, certain members of the judiciary are disqualified from sitting and voting in the House of Lords while in office. These are:</p>
 <ul>
-<li><a href="/wiki/Baron_Brown_of_Eaton-under-Heywood" title="Baron Brown of Eaton-under-Heywood" class="mw-redirect">The Lord Brown of Eaton-under-Heywood</a>, Justice of the <a href="/wiki/Supreme_Court_of_the_United_Kingdom" title="Supreme Court of the United Kingdom">Supreme Court of the United Kingdom</a></li>
+<li><a href="/wiki/Baron_Brown_of_Eaton-under-Heywood" title="Baron Brown of Eaton-under-Heywood" class="mw-redirect">The Lord Brown of Eaton-under-Heywood</a>, <a href="/wiki/Justice_of_the_Supreme_Court_of_the_United_Kingdom" title="Justice of the Supreme Court of the United Kingdom">Justice of the Supreme Court of the United Kingdom</a></li>
 <li><a href="/wiki/Lynda_Clark" title="Lynda Clark" class="mw-redirect">The Baroness Clark of Calton</a>, Judge of the <a href="/wiki/Court_of_Session" title="Court of Session">Court of Session</a></li>
-<li><a href="/wiki/Anthony_Clarke,_Baron_Clarke_of_Stone-cum-Ebony" title="Anthony Clarke, Baron Clarke of Stone-cum-Ebony">The Lord Clarke of Stone-cum-Ebony</a>, Justice of the <a href="/wiki/Supreme_Court_of_the_United_Kingdom" title="Supreme Court of the United Kingdom">Supreme Court of the United Kingdom</a></li>
-<li><a href="/wiki/Lawrence_Collins,_Baron_Collins_of_Mapesbury" title="Lawrence Collins, Baron Collins of Mapesbury">The Lord Collins of Mapesbury</a>, Justice of the <a href="/wiki/Supreme_Court_of_the_United_Kingdom" title="Supreme Court of the United Kingdom">Supreme Court of the United Kingdom</a></li>
-<li><a href="/wiki/Brenda_Hale,_Baroness_Hale_of_Richmond" title="Brenda Hale, Baroness Hale of Richmond">The Baroness Hale of Richmond</a>, Justice of the <a href="/wiki/Supreme_Court_of_the_United_Kingdom" title="Supreme Court of the United Kingdom">Supreme Court of the United Kingdom</a></li>
+<li><a href="/wiki/Anthony_Clarke,_Baron_Clarke_of_Stone-cum-Ebony" title="Anthony Clarke, Baron Clarke of Stone-cum-Ebony">The Lord Clarke of Stone-cum-Ebony</a>, <a href="/wiki/Justice_of_the_Supreme_Court_of_the_United_Kingdom" title="Justice of the Supreme Court of the United Kingdom">Justice of the Supreme Court of the United Kingdom</a></li>
+<li><a href="/wiki/Lawrence_Collins,_Baron_Collins_of_Mapesbury" title="Lawrence Collins, Baron Collins of Mapesbury">The Lord Collins of Mapesbury</a>, <a href="/wiki/Justice_of_the_Supreme_Court_of_the_United_Kingdom" title="Justice of the Supreme Court of the United Kingdom">Justice of the Supreme Court of the United Kingdom</a></li>
+<li><a href="/wiki/Brenda_Hale,_Baroness_Hale_of_Richmond" title="Brenda Hale, Baroness Hale of Richmond">The Baroness Hale of Richmond</a>, <a href="/wiki/Justice_of_the_Supreme_Court_of_the_United_Kingdom" title="Justice of the Supreme Court of the United Kingdom">Justice of the Supreme Court of the United Kingdom</a></li>
 <li><a href="/wiki/Andrew_Hardie,_Baron_Hardie" title="Andrew Hardie, Baron Hardie">The Lord Hardie</a>, Judge of the <a href="/wiki/Court_of_Session" title="Court of Session">Court of Session</a></li>
 <li><a href="/wiki/Igor_Judge,_Baron_Judge" title="Igor Judge, Baron Judge">The Lord Judge</a>, <a href="/wiki/Lord_Chief_Justice_of_England_and_Wales" title="Lord Chief Justice of England and Wales">Lord Chief Justice of England and Wales</a></li>
-<li><a href="/wiki/David_Hope,_Baron_Hope_of_Craighead" title="David Hope, Baron Hope of Craighead">The Lord Hope of Craighead</a>, Deputy President of the <a href="/wiki/Supreme_Court_of_the_United_Kingdom" title="Supreme Court of the United Kingdom">Supreme Court of the United Kingdom</a></li>
-<li><a href="/wiki/Brian_Kerr,_Baron_Kerr_of_Tonaghmore" title="Brian Kerr, Baron Kerr of Tonaghmore">The Lord Kerr of Tonaghmore</a>, Justice of the <a href="/wiki/Supreme_Court_of_the_United_Kingdom" title="Supreme Court of the United Kingdom">Supreme Court of the United Kingdom</a></li>
+<li><a href="/wiki/David_Hope,_Baron_Hope_of_Craighead" title="David Hope, Baron Hope of Craighead">The Lord Hope of Craighead</a>, <a href="/wiki/Deputy_President_of_the_Supreme_Court_of_the_United_Kingdom" title="Deputy President of the Supreme Court of the United Kingdom">Deputy President of the Supreme Court of the United Kingdom</a></li>
+<li><a href="/wiki/Brian_Kerr,_Baron_Kerr_of_Tonaghmore" title="Brian Kerr, Baron Kerr of Tonaghmore">The Lord Kerr of Tonaghmore</a>, <a href="/wiki/Justice_of_the_Supreme_Court_of_the_United_Kingdom" title="Justice of the Supreme Court of the United Kingdom">Justice of the Supreme Court of the United Kingdom</a></li>
 <li><a href="/wiki/Donald_Mackay,_Baron_Mackay_of_Drumadoon" title="Donald Mackay, Baron Mackay of Drumadoon">The Lord Mackay of Drumadoon</a>, Judge of the <a href="/wiki/Court_of_Session" title="Court of Session">Court of Session</a></li>
-<li><a href="/wiki/Jonathan_Mance,_Baron_Mance" title="Jonathan Mance, Baron Mance">The Lord Mance</a>, Justice of the <a href="/wiki/Supreme_Court_of_the_United_Kingdom" title="Supreme Court of the United Kingdom">Supreme Court of the United Kingdom</a></li>
+<li><a href="/wiki/Jonathan_Mance,_Baron_Mance" title="Jonathan Mance, Baron Mance">The Lord Mance</a>, <a href="/wiki/Justice_of_the_Supreme_Court_of_the_United_Kingdom" title="Justice of the Supreme Court of the United Kingdom">Justice of the Supreme Court of the United Kingdom</a></li>
 <li><a href="/wiki/David_Neuberger,_Baron_Neuberger_of_Abbotsbury" title="David Neuberger, Baron Neuberger of Abbotsbury">The Lord Neuberger of Abbotsbury</a>, <a href="/wiki/Master_of_the_Rolls" title="Master of the Rolls">Master of the Rolls</a></li>
-<li><a href="/wiki/Nicholas_Phillips,_Baron_Phillips_of_Worth_Matravers" title="Nicholas Phillips, Baron Phillips of Worth Matravers">The Lord Phillips of Worth Matravers</a>, President of the <a href="/wiki/Supreme_Court_of_the_United_Kingdom" title="Supreme Court of the United Kingdom">Supreme Court of the United Kingdom</a></li>
-<li><a href="/wiki/Alan_Rodger,_Baron_Rodger_of_Earlsferry" title="Alan Rodger, Baron Rodger of Earlsferry">The Lord Rodger of Earlsferry</a>, Justice of the <a href="/wiki/Supreme_Court_of_the_United_Kingdom" title="Supreme Court of the United Kingdom">Supreme Court of the United Kingdom</a></li>
-<li><a href="/wiki/Mark_Saville,_Baron_Saville_of_Newdigate" title="Mark Saville, Baron Saville of Newdigate">The Lord Saville of Newdigate</a>, Justice of the <a href="/wiki/Supreme_Court_of_the_United_Kingdom" title="Supreme Court of the United Kingdom">Supreme Court of the United Kingdom</a></li>
-<li><a href="/wiki/Baron_Walker_of_Gestingthorpe" title="Baron Walker of Gestingthorpe" class="mw-redirect">The Lord Walker of Gestingthorpe</a>, Justice of the <a href="/wiki/Supreme_Court_of_the_United_Kingdom" title="Supreme Court of the United Kingdom">Supreme Court of the United Kingdom</a></li>
+<li><a href="/wiki/Nicholas_Phillips,_Baron_Phillips_of_Worth_Matravers" title="Nicholas Phillips, Baron Phillips of Worth Matravers">The Lord Phillips of Worth Matravers</a>, <a href="/wiki/President_of_the_Supreme_Court_of_the_United_Kingdom" title="President of the Supreme Court of the United Kingdom">President of the Supreme Court of the United Kingdom</a></li>
+<li><a href="/wiki/Alan_Rodger,_Baron_Rodger_of_Earlsferry" title="Alan Rodger, Baron Rodger of Earlsferry">The Lord Rodger of Earlsferry</a>, <a href="/wiki/Justice_of_the_Supreme_Court_of_the_United_Kingdom" title="Justice of the Supreme Court of the United Kingdom">Justice of the Supreme Court of the United Kingdom</a></li>
+<li><a href="/wiki/Mark_Saville,_Baron_Saville_of_Newdigate" title="Mark Saville, Baron Saville of Newdigate">The Lord Saville of Newdigate</a>, <a href="/wiki/Justice_of_the_Supreme_Court_of_the_United_Kingdom" title="Justice of the Supreme Court of the United Kingdom">Justice of the Supreme Court of the United Kingdom</a></li>
+<li><a href="/wiki/Baron_Walker_of_Gestingthorpe" title="Baron Walker of Gestingthorpe" class="mw-redirect">The Lord Walker of Gestingthorpe</a>, <a href="/wiki/Justice_of_the_Supreme_Court_of_the_United_Kingdom" title="Justice of the Supreme Court of the United Kingdom">Justice of the Supreme Court of the United Kingdom</a></li>
 </ul>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=6" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h2>
 <ul>
@@ -4713,7 +4713,7 @@ Template argument size: 3404/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!4 and timestamp 20100717170042 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!4 and timestamp 20100722092935 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 				<!-- /bodytext -->
@@ -4854,8 +4854,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=373998756" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=373998756" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=374557097" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=374557097" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -4865,7 +4865,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=373998756&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=374557097&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -4886,7 +4886,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 17 July 2010 at 17:00.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 20 July 2010 at 20:46.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -4909,5 +4909,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-		<!-- Served by srv207 in 0.045 secs. -->			</body>
+		<!-- Served by srv209 in 0.057 secs. -->			</body>
 </html>
