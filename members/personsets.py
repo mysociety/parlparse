@@ -100,6 +100,11 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/101046" : "Helen Liddell [Airdrie and Shotts]",
     "uk.org.publicwhip/lord/101048" : "Angela Browning [Tiverton and Honiton]",
     "uk.org.publicwhip/lord/101053" : "Tim Boswell [Daventry]",
+    "uk.org.publicwhip/lord/101057" : "Michael Howard [Folkestone and Hythe]",
+    "uk.org.publicwhip/lord/101060" : "Matthew Taylor [Truro and St Austell]",
+    "uk.org.publicwhip/lord/101061" : "John Reid [Hamilton North and Bellshill / Airdrie and Shotts]",
+    "uk.org.publicwhip/lord/101063" : "Beverley Hughes [Stretford and Urmston]",
+    "uk.org.publicwhip/lord/101065" : "Richard Allan [Sheffield, Hallam]",
 }
 
 # Put people who change party AND were MPs multple times in table above e.g. David Trimble
