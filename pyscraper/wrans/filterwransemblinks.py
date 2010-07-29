@@ -26,7 +26,7 @@ reglinkmid = '(?:/(?:(?:[^/:;,?="<()]|&#\d+;|&amp;)(?!www\.))+)*/'
 # XXX: This seems very odd way of matching URIs
 #reglinktail = '[^./:;,]*(?:\.\s?(?:s?html?|pdf|xls|(?:asp|php|cfm(?:\?[^\s.]+)?)))|\w*'
 regqs = '(?:\?\s?\w+=[\w/]+(?:&\w+=[\w/%]*)*)'
-regasptype = '(?:asp|nsf|php|cfm|gif|jpg|jpeg|png)%s?' % regqs
+regasptype = '(?:aspx?|nsf|php|cfm|gif|jpg|jpeg|png)%s?' % regqs
 reglinktail = '(?:[^./:;,?=]|&#\d+;)*(?:\.?\s?(?:s?html?|xls|doc|pdf(?:\?Open ?Element)?|%s|%s))|(?:[\w-]|&#\d+;)*' % (regasptype, regqs)
 
 
