@@ -105,6 +105,8 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/101061" : "John Reid [Hamilton North and Bellshill / Airdrie and Shotts]",
     "uk.org.publicwhip/lord/101063" : "Beverley Hughes [Stretford and Urmston]",
     "uk.org.publicwhip/lord/101065" : "Richard Allan [Sheffield, Hallam]",
+    "uk.org.publicwhip/lord/101067" : "Des Browne [Kilmarnock and Loudoun]",
+
 }
 
 # Put people who change party AND were MPs multple times in table above e.g. David Trimble
