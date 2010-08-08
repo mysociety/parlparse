@@ -12,10 +12,10 @@
 <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283l" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283l" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283l" type="text/css" media="print" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?112" type="text/css" media="all" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283n" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283n" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283n" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?117" type="text/css" media="all" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
@@ -46,7 +46,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=374557097,
+wgCurRevisionId=376616644,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -72,18 +72,18 @@ wgVectorPreferences={"collapsiblenav": {"enable": 1}, "editwarning": {"enable": 
 wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "simplesearch": true},
 wgNotice="",
 wgNoticeLocal="";
-</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283l" type="text/javascript"></script>
-<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283l"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283l" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283l" type="text/javascript"></script>
+</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283n" type="text/javascript"></script>
+<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283n"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283n" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283n" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283l" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283l" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283n" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283n" type="text/javascript"></script>
 <script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
-<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?283l"></script>
+<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?283n"></script>
 
 <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283l" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283n" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-Members_of_the_House_of_Lords skin-vector">
@@ -102,7 +102,7 @@ wgNoticeLocal="";
 			<!-- bodyContent -->
 			<div id="bodyContent">
 				<!-- tagline -->
-				<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+				<div id="siteSub">From Wikipedia, the free encyclopedia</div>
 				<!-- /tagline -->
 				<!-- subtitle -->
 				<div id="contentSub"></div>
@@ -691,7 +691,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Virginia_Bottomley" title="Virginia Bottomley">The Baroness Bottomley of Nettlestone</a></td>
+<td><a href="/wiki/Virginia_Bottomley" title="Virginia Bottomley" class="mw-redirect">The Baroness Bottomley of Nettlestone</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -885,7 +885,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Ewen_Cameron,_Baron_Cameron_of_Dillington" title="Ewen Cameron, Baron Cameron of Dillington">The Lord Cameron of Dillington</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -897,43 +897,43 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Alan_Campbell,_Baron_Campbell_of_Alloway" title="Alan Campbell, Baron Campbell of Alloway">The Lord Campbell of Alloway</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Sue_Campbell,_Baroness_Campbell_of_Loughborough" title="Sue Campbell, Baroness Campbell of Loughborough">The Baroness Campbell of Loughborough</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jane_Campbell,_Baroness_Campbell_of_Surbiton" title="Jane Campbell, Baroness Campbell of Surbiton">The Baroness Campbell of Surbiton</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Dale_Campbell-Savours,_Baron_Campbell-Savours" title="Dale Campbell-Savours, Baron Campbell-Savours">The Lord Campbell-Savours</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/George_Carey" title="George Carey">The Lord Carey of Clifton</a></td>
-<td></td>
-<td></td>
+<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Alex_Carlile,_Baron_Carlile_of_Berriew" title="Alex Carlile, Baron Carlile of Berriew">The Lord Carlile of Berriew</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Leonard_Carr,_Baron_Carr_of_Hadley" title="Leonard Carr, Baron Carr of Hadley" class="mw-redirect">The Lord Carr of Hadley</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -957,7 +957,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Patrick_Carter,_Baron_Carter_of_Coles" title="Patrick Carter, Baron Carter of Coles">The Lord Carter of Coles</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -969,19 +969,19 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Hugh_Cavendish,_Baron_Cavendish_of_Furness" title="Hugh Cavendish, Baron Cavendish of Furness">The Lord Cavendish of Furness</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Peter_Gummer,_Baron_Chadlington" title="Peter Gummer, Baron Chadlington">The Lord Chadlington</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Lynda_Chalker,_Baroness_Chalker_of_Wallasey" title="Lynda Chalker, Baroness Chalker of Wallasey">The Baroness Chalker of Wallasey</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -993,19 +993,19 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/David_Chidgey,_Baron_Chidgey" title="David Chidgey, Baron Chidgey">The Lord Chidgey</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Henry_Chilver,_Baron_Chilver" title="Henry Chilver, Baron Chilver">The Lord Chilver</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Pratap_Chitnis,_Baron_Chitnis" title="Pratap Chitnis, Baron Chitnis">The Lord Chitnis</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1017,7 +1017,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Tony_Christopher,_Baron_Christopher" title="Tony Christopher, Baron Christopher">The Lord Christopher</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1029,25 +1029,25 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/David_Clark,_Baron_Clark_of_Windermere" title="David Clark, Baron Clark of Windermere">The Lord Clark of Windermere</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Anthony_Clarke,_Baron_Clarke_of_Hampstead" title="Anthony Clarke, Baron Clarke of Hampstead">The Lord Clarke of Hampstead</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Timothy_Clement-Jones,_Baron_Clement-Jones" title="Timothy Clement-Jones, Baron Clement-Jones" class="mw-redirect">The Lord Clement-Jones</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Stanley_Clinton_Davis,_Baron_Clinton-Davis" title="Stanley Clinton Davis, Baron Clinton-Davis">The Lord Clinton-Davis</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1059,13 +1059,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Sebastian_Coe" title="Sebastian Coe">The Lord Coe</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Janet_Neel_Cohen,_Baroness_Cohen_of_Pimlico" title="Janet Neel Cohen, Baroness Cohen of Pimlico">The Baroness Cohen of Pimlico</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1077,31 +1077,31 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Paul_Condon,_Baron_Condon" title="Paul Condon, Baron Condon">The Lord Condon</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Cope,_Baron_Cope_of_Berkeley" title="John Cope, Baron Cope of Berkeley">The Lord Cope of Berkeley</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Robin_Corbett,_Baron_Corbett_of_Castle_Vale" title="Robin Corbett, Baron Corbett of Castle Vale">The Lord Corbett of Castle Vale</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jean_Corston,_Baroness_Corston" title="Jean Corston, Baroness Corston">The Baroness Corston</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Brian_Cotter,_Baron_Cotter" title="Brian Cotter, Baron Cotter">The Lord Cotter</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1113,19 +1113,19 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Jean_Coussins,_Baroness_Coussins" title="Jean Coussins, Baroness Coussins">The Baroness Coussins</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Caroline_Cox,_Baroness_Cox" title="Caroline Cox, Baroness Cox">The Baroness Cox</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Craig,_Baron_Craig_of_Radley" title="David Craig, Baron Craig of Radley">The Lord Craig of Radley</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1149,25 +1149,25 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Christine_Crawley,_Baroness_Crawley" title="Christine Crawley, Baroness Crawley">The Baroness Crawley</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Nicholas_Edwards,_Baron_Crickhowell" title="Nicholas Edwards, Baron Crickhowell">The Lord Crickhowell</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Edmund_Crisp,_Baron_Crisp" title="Edmund Crisp, Baron Crisp" class="mw-redirect">The Lord Crisp</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Douglas_Allen,_Baron_Croham" title="Douglas Allen, Baron Croham">The Lord Croham</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1179,85 +1179,85 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Julia_Cumberlege,_Baroness_Cumberlege" title="Julia Cumberlege, Baroness Cumberlege">The Baroness Cumberlege</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jack_Cunningham,_Baron_Cunningham_of_Felling" title="Jack Cunningham, Baron Cunningham of Felling">The Lord Cunningham of Felling</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Currie,_Lord_Currie_of_Marylebone" title="David Currie, Lord Currie of Marylebone" class="mw-redirect">The Lord Currie of Marylebone</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Frances_D%27Souza,_Baroness_D%27Souza" title="Frances D'Souza, Baroness D'Souza">The Baroness D'Souza</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ara_Darzi,_Baron_Darzi_of_Denham" title="Ara Darzi, Baron Darzi of Denham">The Lord Darzi of Denham</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Neil_Davidson,_Baron_Davidson_of_Glen_Clova" title="Neil Davidson, Baron Davidson of Glen Clova">The Lord Davidson of Glen Clova</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Evan_Mervyn_Davies" title="Evan Mervyn Davies" class="mw-redirect">The Lord Davies of Abersoch</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Garfield_Davies,_Baron_Davies_of_Coity" title="Garfield Davies, Baron Davies of Coity">The Lord Davies of Coity</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Bryan_Davies,_Baron_Davies_of_Oldham" title="Bryan Davies, Baron Davies of Oldham">The Lord Davies of Oldham</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Rupert_Ponsonby,_7th_Baron_de_Mauley" title="Rupert Ponsonby, 7th Baron de Mauley">The Lord De Mauley</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Brenda_Dean,_Baroness_Dean_of_Thornton-le-Fylde" title="Brenda Dean, Baroness Dean of Thornton-le-Fylde">The Baroness Dean of Thornton-le-Fylde</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Geoffrey_Dear,_Baron_Dear" title="Geoffrey Dear, Baron Dear">The Lord Dear</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Gummer" title="John Gummer" class="mw-redirect">The Lord Deben</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ruth_Deech,_Baroness_Deech" title="Ruth Deech, Baroness Deech">The Baroness Deech</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1269,25 +1269,25 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Meghnad_Desai,_Baron_Desai" title="Meghnad Desai, Baron Desai">The Lord Desai</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Navnit_Dholakia,_Baron_Dholakia" title="Navnit Dholakia, Baron Dholakia">The Lord Dholakia</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Donald_Dixon,_Baron_Dixon" title="Donald Dixon, Baron Dixon">The Lord Dixon</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Robert_Dixon-Smith,_Baron_Dixon-Smith" title="Robert Dixon-Smith, Baron Dixon-Smith">The Lord Dixon-Smith</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1299,7 +1299,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Bernard_Donoughue,_Baron_Donoughue" title="Bernard Donoughue, Baron Donoughue">The Lord Donoughue</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1311,13 +1311,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Paul_Drayson" title="Paul Drayson" class="mw-redirect">The Lord Drayson</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Alf_Dubs" title="Alf Dubs" class="mw-redirect">The Lord Dubs</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1329,19 +1329,19 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Hugh_Dykes,_Baron_Dykes" title="Hugh Dykes, Baron Dykes">The Lord Dykes</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Robin_Eames,_Baron_Eames" title="Robin Eames, Baron Eames">The Lord Eames</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Eatwell,_Baron_Eatwell" title="John Eatwell, Baron Eatwell">The Lord Eatwell</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1359,25 +1359,25 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/John_Eden,_Baron_Eden_of_Winton" title="John Eden, Baron Eden of Winton">The Lord Eden of Winton</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Murray_Elder,_Baron_Elder" title="Murray Elder, Baron Elder">The Lord Elder</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Dafydd_Elis-Thomas" title="Dafydd Elis-Thomas">The Lord Elis-Thomas</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/William_Elliott,_Baron_Elliott_of_Morpeth" title="William Elliott, Baron Elliott of Morpeth">The Lord Elliott of Morpeth</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1389,13 +1389,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Elystan_Morgan,_Baron_Elystan-Morgan" title="Elystan Morgan, Baron Elystan-Morgan">The Lord Elystan-Morgan</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Audrey_Emerton,_Baroness_Emerton" title="Audrey Emerton, Baroness Emerton">The Baroness Emerton</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1407,37 +1407,37 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/John_Evans,_Baron_Evans_of_Parkside" title="John Evans, Baron Evans of Parkside">The Lord Evans of Parkside</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Matthew_Evans,_Baron_Evans_of_Temple_Guiting" title="Matthew Evans, Baron Evans of Temple Guiting">The Lord Evans of Temple Guiting</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Evans,_Baron_Evans_of_Watford" title="David Evans, Baron Evans of Watford">The Lord Evans of Watford</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Derek_Ezra,_Baron_Ezra" title="Derek Ezra, Baron Ezra">The Lord Ezra</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Charles_Falconer,_Baron_Falconer_of_Thoroton" title="Charles Falconer, Baron Falconer of Thoroton">The Lord Falconer of Thoroton</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td>Formerly <a href="/wiki/Lord_Chancellor" title="Lord Chancellor">Lord Chancellor</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Marcia_Falkender,_Baroness_Falkender" title="Marcia Falkender, Baroness Falkender">The Baroness Falkender</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1449,37 +1449,37 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Kishwer_Falkner,_Baroness_Falkner_of_Margravine" title="Kishwer Falkner, Baroness Falkner of Margravine">The Baroness Falkner of Margravine</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Josephine_Farrington,_Baroness_Farrington_of_Ribbleton" title="Josephine Farrington, Baroness Farrington of Ribbleton">The Baroness Farrington of Ribbleton</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Richard_Faulkner,_Baron_Faulkner_of_Worcester" title="Richard Faulkner, Baron Faulkner of Worcester">The Lord Faulkner of Worcester</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ronnie_Fearn,_Baron_Fearn" title="Ronnie Fearn, Baron Fearn">The Lord Fearn</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Basil_Feldman,_Baron_Feldman" title="Basil Feldman, Baron Feldman">The Lord Feldman</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Robert_Fellowes,_Baron_Fellowes" title="Robert Fellowes, Baron Fellowes">The Lord Fellowes</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1491,73 +1491,73 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Geoffrey_Filkin,_Baron_Filkin" title="Geoffrey Filkin, Baron Filkin">The Lord Filkin</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ilora_Finlay,_Baroness_Finlay_of_Llandaff" title="Ilora Finlay, Baroness Finlay of Llandaff">The Baroness Finlay of Llandaff</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Shreela_Flather,_Baroness_Flather" title="Shreela Flather, Baroness Flather">The Baroness Flather</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Janet_Fookes,_Baroness_Fookes" title="Janet Fookes, Baroness Fookes">The Baroness Fookes</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Margaret_Ford,_Baroness_Ford" title="Margaret Ford, Baroness Ford">The Baroness Ford</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Michael_Forsyth,_Baron_Forsyth_of_Drumlean" title="Michael Forsyth, Baron Forsyth of Drumlean">The Lord Forsyth of Drumlean</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Derek_Foster,_Baron_Foster_of_Bishop_Auckland" title="Derek Foster, Baron Foster of Bishop Auckland">The Lord Foster of Bishop Auckland</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/George_Foulkes,_Baron_Foulkes_of_Cumnock" title="George Foulkes, Baron Foulkes of Cumnock">The Lord Foulkes of Cumnock</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Norman_Fowler" title="Norman Fowler">The Lord Fowler</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Peter_Lovat_Fraser" title="Peter Lovat Fraser" class="mw-redirect">The Lord Fraser of Carmyllie</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Roger_Freeman,_Baron_Freeman" title="Roger Freeman, Baron Freeman">The Lord Freeman</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Freud,_Baron_Freud" title="David Freud, Baron Freud">The Lord Freud</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1569,25 +1569,25 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Rennie_Fritchie,_Baroness_Fritchie" title="Rennie Fritchie, Baroness Fritchie">The Baroness Fritchie</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/George_Fyfe,_Baron_Fyfe_of_Fairfield" title="George Fyfe, Baron Fyfe of Fairfield">The Lord Fyfe of Fairfield</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Anita_Gale,_Baroness_Gale" title="Anita Gale, Baroness Gale">The Baroness Gale</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Susan_Garden,_Baroness_Garden_of_Frognal" title="Susan Garden, Baroness Garden of Frognal">The Baroness Garden of Frognal</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1599,19 +1599,19 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Trixie_Gardner,_Baroness_Gardner_of_Parkes" title="Trixie Gardner, Baroness Gardner of Parkes">The Baroness Gardner of Parkes</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Tristan_Garel-Jones,_Baron_Garel_Jones" title="Tristan Garel-Jones, Baron Garel Jones">The Lord Garel-Jones</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Robert_Gavron,_Baron_Gavron" title="Robert Gavron, Baron Gavron">The Lord Gavron</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1629,19 +1629,19 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Anne_Gibson,_Baroness_Gibson_of_Market_Rasen" title="Anne Gibson, Baroness Gibson of Market Rasen">The Baroness Gibson of Market Rasen</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Anthony_Giddens" title="Anthony Giddens">The Lord Giddens</a></td>
+<td><a href="/wiki/Anthony_Giddens" title="Anthony Giddens" class="mw-redirect">The Lord Giddens</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Gilbert,_Baron_Gilbert" title="John Gilbert, Baron Gilbert">The Lord Gilbert</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1653,7 +1653,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Edward_Short,_Baron_Glenamara" title="Edward Short, Baron Glenamara">The Lord Glenamara</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td>Oldest member of Parliament in either the House of Commons or the House of Lords</td>
 </tr>
 <tr>
@@ -1671,31 +1671,31 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Llin_Golding,_Baroness_Golding" title="Llin Golding, Baroness Golding">The Baroness Golding</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Peter_Goldsmith,_Baron_Goldsmith" title="Peter Goldsmith, Baron Goldsmith">The Lord Goldsmith</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/William_Goodhart,_Baron_Goodhart" title="William Goodhart, Baron Goodhart">The Lord Goodhart</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Alastair_Goodlad,_Baron_Goodlad" title="Alastair Goodlad, Baron Goodlad">The Lord Goodlad</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/James_Gordon,_Baron_Gordon_of_Strathblane" title="James Gordon, Baron Gordon of Strathblane">The Lord Gordon of Strathblane</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1707,31 +1707,31 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Mary_Goudie,_Baroness_Goudie" title="Mary Goudie, Baroness Goudie">The Baroness Goudie</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Philip_Gould,_Baron_Gould_of_Brookwood" title="Philip Gould, Baron Gould of Brookwood">The Lord Gould of Brookwood</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Joyce_Gould,_Baroness_Gould_of_Potternewton" title="Joyce Gould, Baroness Gould of Potternewton">The Baroness Gould of Potternewton</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Anthony_Grabiner,_Baron_Grabiner" title="Anthony Grabiner, Baron Grabiner">The Lord Grabiner</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Edward_Graham,_Baron_Graham_of_Edmonton" title="Edward Graham, Baron Graham of Edmonton">The Lord Graham of Edmonton</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1743,19 +1743,19 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Tony_Greaves,_Baron_Greaves" title="Tony Greaves, Baron Greaves">The Lord Greaves</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Susan_Greenfield,_Baroness_Greenfield" title="Susan Greenfield, Baroness Greenfield">The Baroness Greenfield</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Sally_Greengross,_Baroness_Greengross" title="Sally Greengross, Baroness Greengross">The Baroness Greengross</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1773,7 +1773,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Tanni_Grey-Thompson,_Baroness_Grey-Thompson" title="Tanni Grey-Thompson, Baroness Grey-Thompson">The Baroness Grey-Thompson</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1791,133 +1791,133 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Brian_Griffiths,_Baron_Griffiths_of_Fforestfach" title="Brian Griffiths, Baron Griffiths of Fforestfach">The Lord Griffiths of Fforestfach</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td><a href="/wiki/List_of_law_life_peerages" title="List of law life peerages">Law life peer</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Bruce_Grocott,_Baron_Grocott" title="Bruce Grocott, Baron Grocott">The Lord Grocott</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Charles_Guthrie,_Baron_Guthrie_of_Craigiebank" title="Charles Guthrie, Baron Guthrie of Craigiebank">The Lord Guthrie of Craigiebank</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Tony_Hall,_Baron_Hall_of_Birkenhead" title="Tony Hall, Baron Hall of Birkenhead">The Lord Hall of Birkenhead</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Khalid_Hameed,_Baron_Hameed" title="Khalid Hameed, Baron Hameed">The Lord Hameed</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Archie_Hamilton" title="Archie Hamilton" class="mw-redirect">The Lord Hamilton of Epsom</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Sally_Hamwee,_Baroness_Hamwee" title="Sally Hamwee, Baroness Hamwee">The Baroness Hamwee</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Joan_Hanham,_Baroness_Hanham" title="Joan Hanham, Baroness Hanham">The Baroness Hanham</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Hannay,_Baron_Hannay_of_Chiswick" title="David Hannay, Baron Hannay of Chiswick">The Lord Hannay of Chiswick</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Paul_White,_Baron_Hanningfield" title="Paul White, Baron Hanningfield">The Lord Hanningfield</a></td>
 <td>Other</td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Richard_Harries,_Baron_Harries_of_Pentregarth" title="Richard Harries, Baron Harries of Pentregarth">The Lord Harries of Pentregarth</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Toby_Harris,_Baron_Harris_of_Haringey" title="Toby Harris, Baron Harris of Haringey">The Lord Harris of Haringey</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Philip_Harris,_Baron_Harris_of_Peckham" title="Philip Harris, Baron Harris of Peckham">The Lord Harris of Peckham</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Angela_Harris,_Baroness_Harris_of_Richmond" title="Angela Harris, Baroness Harris of Richmond">The Baroness Harris of Richmond</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Lyndon_Harrison,_Baron_Harrison" title="Lyndon Harrison, Baron Harrison">The Lord Harrison</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Garry_Hart,_Baron_Hart_of_Chilton" title="Garry Hart, Baron Hart of Chilton">The Lord Hart of Chilton</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Simon_Haskel,_Baron_Haskel" title="Simon Haskel, Baron Haskel">The Lord Haskel</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Christopher_Haskins,_Baron_Haskins" title="Christopher Haskins, Baron Haskins">The Lord Haskins</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Michael_Hastings,_Baron_Hastings_of_Scarisbrick" title="Michael Hastings, Baron Hastings of Scarisbrick">The Lord Hastings of Scarisbrick</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Roy_Hattersley" title="Roy Hattersley">The Lord Hattersley</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Alan_Haworth,_Baron_Haworth" title="Alan Haworth, Baron Haworth">The Lord Haworth</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Barney_Hayhoe,_Baron_Hayhoe" title="Barney Hayhoe, Baron Hayhoe">The Lord Hayhoe</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1935,13 +1935,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Denis_Healey" title="Denis Healey">The Lord Healey</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ruth_Henig,_Baroness_Henig" title="Ruth Henig, Baroness Henig">The Baroness Henig</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1953,13 +1953,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Michael_Heseltine" title="Michael Heseltine">The Lord Heseltine</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Terence_Higgins,_Baron_Higgins" title="Terence Higgins, Baron Higgins">The Lord Higgins</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1971,13 +1971,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td nowrap="nowrap"><a href="/wiki/Jennifer_Hilton,_Baroness_Hilton_of_Eggardon" title="Jennifer Hilton, Baroness Hilton of Eggardon">The Baroness Hilton of Eggardon</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Robin_Hodgson,_Baron_Hodgson_of_Astley_Abbotts" title="Robin Hodgson, Baron Hodgson of Astley Abbotts">The Lord Hodgson of Astley Abbotts</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1995,13 +1995,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Clive_Hollick,_Baron_Hollick" title="Clive Hollick, Baron Hollick">The Lord Hollick</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Patricia_Hollis,_Baroness_Hollis_of_Heigham" title="Patricia Hollis, Baroness Hollis of Heigham">The Baroness Hollis of Heigham</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2013,37 +2013,37 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Gloria_Hooper,_Baroness_Hooper" title="Gloria Hooper, Baroness Hooper">The Baroness Hooper</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Emlyn_Hooson,_Baron_Hooson" title="Emlyn Hooson, Baron Hooson">The Lord Hooson</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Hope,_Baron_Hope_of_Thornes" title="David Hope, Baron Hope of Thornes">The Lord Hope of Thornes</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Greville_Howard,_Baron_Howard_of_Rising" title="Greville Howard, Baron Howard of Rising">The Lord Howard of Rising</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Valerie_Howarth,_Baroness_Howarth_of_Breckland" title="Valerie Howarth, Baroness Howarth of Breckland">The Baroness Howarth of Breckland</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Alan_Howarth,_Baron_Howarth_of_Newport" title="Alan Howarth, Baron Howarth of Newport">The Lord Howarth of Newport</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2055,31 +2055,31 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Geoffrey_Howe" title="Geoffrey Howe">The Lord Howe of Aberavon</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Elspeth_Howe,_Baroness_Howe_of_Idlicote" title="Elspeth Howe, Baroness Howe of Idlicote">The Baroness Howe of Idlicote</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Howell,_Baron_Howell_of_Guildford" title="David Howell, Baron Howell of Guildford">The Lord Howell of Guildford</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Rosalind_Howells,_Baroness_Howells_of_St_Davids" title="Rosalind Howells, Baroness Howells of St Davids">The Baroness Howells of St Davids</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/William_Howie,_Baron_Howie_of_Troon" title="William Howie, Baron Howie of Troon">The Lord Howie of Troon</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2091,31 +2091,31 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Robert_Hughes,_Baron_Hughes_of_Woodside" title="Robert Hughes, Baron Hughes of Woodside">The Lord Hughes of Woodside</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Julian_Hunt,_Baron_Hunt_of_Chesterton" title="Julian Hunt, Baron Hunt of Chesterton">The Lord Hunt of Chesterton</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Philip_Hunt,_Baron_Hunt_of_Kings_Heath" title="Philip Hunt, Baron Hunt of Kings Heath">The Lord Hunt of Kings Heath</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Hunt,_Baron_Hunt_of_Wirral" title="David Hunt, Baron Hunt of Wirral">The Lord Hunt of Wirral</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Douglas_Hurd" title="Douglas Hurd">The Lord Hurd of Westwell</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2127,7 +2127,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Jeremy_Hutchinson,_Baron_Hutchinson_of_Lullington" title="Jeremy Hutchinson, Baron Hutchinson of Lullington">The Lord Hutchinson of Lullington</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2151,13 +2151,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Peter_Imbert,_Baron_Imbert" title="Peter Imbert, Baron Imbert">The Lord Imbert</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Peter_Inge,_Baron_Inge" title="Peter Inge, Baron Inge">The Lord Inge</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2175,109 +2175,109 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Anthony_Jacobs,_Baron_Jacobs" title="Anthony Jacobs, Baron Jacobs">The Lord Jacobs</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_James,_Baron_James_of_Blackheath" title="David James, Baron James of Blackheath">The Lord James of Blackheath</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td nowrap="nowrap"><a href="/wiki/P._D._James" title="P. D. James">The Baroness James of Holland Park</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Greville_Janner,_Baron_Janner_of_Braunstone" title="Greville Janner, Baron Janner of Braunstone">The Lord Janner of Braunstone</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Robin_Janvrin,_Baron_Janvrin" title="Robin Janvrin, Baron Janvrin">The Lord Janvrin</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td>Permanent <a href="/wiki/Lord-in-Waiting" title="Lord-in-Waiting">Lord-in-Waiting</a></td>
-<td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Michael_Jay,_Baron_Jay_of_Ewelme" title="Michael Jay, Baron Jay of Ewelme">The Lord Jay of Ewelme</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Margaret_Jay,_Baroness_Jay_of_Paddington" title="Margaret Jay, Baroness Jay of Paddington">The Baroness Jay of Paddington</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Patrick_Jenkin,_Baron_Jenkin_of_Roding" title="Patrick Jenkin, Baron Jenkin of Roding">The Lord Jenkin of Roding</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Joel_Joffe,_Baron_Joffe" title="Joel Joffe, Baron Joffe">The Lord Joffe</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Barry_Jones,_Baron_Jones" title="Barry Jones, Baron Jones">The Lord Jones</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Digby_Jones,_Baron_Jones_of_Birmingham" title="Digby Jones, Baron Jones of Birmingham">The Lord Jones of Birmingham</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Nigel_Jones,_Baron_Jones_of_Cheltenham" title="Nigel Jones, Baron Jones of Cheltenham">The Lord Jones of Cheltenham</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Maggie_Jones,_Baroness_Jones_of_Whitchurch" title="Maggie Jones, Baroness Jones of Whitchurch">The Baroness Jones of Whitchurch</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Michael_Jopling,_Baron_Jopling" title="Michael Jopling, Baron Jopling">The Lord Jopling</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/William_Jordan,_Baron_Jordan" title="William Jordan, Baron Jordan">The Lord Jordan</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Frank_Judd,_Baron_Judd" title="Frank Judd, Baron Judd">The Lord Judd</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ajay_Kakkar,_Baron_Kakkar" title="Ajay Kakkar, Baron Kakkar">The Lord Kakkar</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Stanley_Kalms,_Baron_Kalms" title="Stanley Kalms, Baron Kalms">The Lord Kalms</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2289,193 +2289,193 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Helena_Kennedy,_Baroness_Kennedy_of_The_Shaws" title="Helena Kennedy, Baroness Kennedy of The Shaws">The Baroness Kennedy of The Shaws</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Kerr,_Baron_Kerr_of_Kinlochard" title="John Kerr, Baron Kerr of Kinlochard">The Lord Kerr of Kinlochard</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Taylor,_Baron_Kilclooney" title="John Taylor, Baron Kilclooney">The Lord Kilclooney</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Marcus_Kimball,_Baron_Kimball" title="Marcus Kimball, Baron Kimball">The Lord Kimball</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Tom_King,_Baron_King_of_Bridgwater" title="Tom King, Baron King of Bridgwater">The Lord King of Bridgwater</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Tarsem_King,_Baron_King_of_West_Bromwich" title="Tarsem King, Baron King of West Bromwich">The Lord King of West Bromwich</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Robin_Leigh-Pemberton,_Baron_Kingsdown" title="Robin Leigh-Pemberton, Baron Kingsdown">The Lord Kingsdown</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Denise_Kingsmill,_Baroness_Kingsmill" title="Denise Kingsmill, Baroness Kingsmill">The Baroness Kingsmill</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Neil_Kinnock" title="Neil Kinnock">The Lord Kinnock</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Glenys_Kinnock" title="Glenys Kinnock">The Baroness Kinnock of Holyhead</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Graham_Kirkham,_Baron_Kirkham" title="Graham Kirkham, Baron Kirkham">The Lord Kirkham</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Smith,_Baron_Kirkhill" title="John Smith, Baron Kirkhill">The Lord Kirkhill</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Archy_Kirkwood,_Baron_Kirkwood_of_Kirkhope" title="Archy Kirkwood, Baron Kirkwood of Kirkhope">The Lord Kirkwood of Kirkhope</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jill_Knight,_Baroness_Knight_of_Collingtree" title="Jill Knight, Baroness Knight of Collingtree">The Baroness Knight of Collingtree</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Greg_Knight,_Baron_Knight_of_Weymouth" title="Greg Knight, Baron Knight of Weymouth" class="mw-redirect">The Lord Knight of Weymouth</a></td>
+<td><a href="/wiki/Jim_Knight,_Baron_Knight_of_Weymouth" title="Jim Knight, Baron Knight of Weymouth">The Lord Knight of Weymouth</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Philip_Knights,_Baron_Knights" title="Philip Knights, Baron Knights">The Lord Knights</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Krebs,_Baron_Krebs" title="John Krebs, Baron Krebs">The Lord Krebs</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Laird,_Baron_Laird" title="John Laird, Baron Laird">The Lord Laird</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Herbert_Laming,_Baron_Laming" title="Herbert Laming, Baron Laming">The Lord Laming</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Norman_Lamont,_Baron_Lamont_of_Lerwick" title="Norman Lamont, Baron Lamont of Lerwick">The Lord Lamont of Lerwick</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ian_Lang,_Baron_Lang_of_Monkton" title="Ian Lang, Baron Lang of Monkton">The Lord Lang of Monkton</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Nigel_Lawson" title="Nigel Lawson">The Lord Lawson of Blaby</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Richard_Layard,_Baron_Layard" title="Richard Layard, Baron Layard">The Lord Layard</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Lea,_Baron_Lea_of_Crondall" title="David Lea, Baron Lea of Crondall">The Lord Lea of Crondall</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Charles_Leach,_Baron_Leach_of_Fairford" title="Charles Leach, Baron Leach of Fairford" class="mw-redirect">The Lord Leach of Fairford</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Lee,_Baron_Lee_of_Trafford" title="John Lee, Baron Lee of Trafford">The Lord Lee of Trafford</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Alexander_Leitch,_Baron_Leitch" title="Alexander Leitch, Baron Leitch">The Lord Leitch</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Anthony_Lester,_Baron_Lester_of_Herne_Hill" title="Anthony Lester, Baron Lester of Herne Hill">The Lord Lester of Herne Hill</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Peter_Levene,_Baron_Levene_of_Portsoken" title="Peter Levene, Baron Levene of Portsoken">The Lord Levene of Portsoken</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Michael_Levy,_Baron_Levy" title="Michael Levy, Baron Levy">The Lord Levy</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jack_Lewis,_Baron_Lewis_of_Newnham" title="Jack Lewis, Baron Lewis of Newnham">The Lord Lewis of Newnham</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Roger_Liddle,_Baron_Liddle" title="Roger Liddle, Baron Liddle">The Lord Liddle</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2487,13 +2487,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Veronica_Linklater" title="Veronica Linklater">The Baroness Linklater of Butterstone</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Lipsey,_Baron_Lipsey" title="David Lipsey, Baron Lipsey">The Lord Lipsey</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2511,7 +2511,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Richard_Livsey,_Baron_Livsey_of_Talgarth" title="Richard Livsey, Baron Livsey of Talgarth">The Lord Livsey of Talgarth</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2523,25 +2523,25 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Andrew_Lloyd_Webber" title="Andrew Lloyd Webber">The Lord Lloyd-Webber</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Betty_Lockwood,_Baroness_Lockwood" title="Betty Lockwood, Baroness Lockwood">The Baroness Lockwood</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Geoffrey_Lofthouse,_Baron_Lofthouse_of_Pontefract" title="Geoffrey Lofthouse, Baron Lofthouse of Pontefract">The Lord Lofthouse of Pontefract</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Colin_Low,_Baron_Low_of_Dalston" title="Colin Low, Baron Low of Dalston">The Lord Low of Dalston</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2553,13 +2553,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Richard_Luce,_Baron_Luce" title="Richard Luce, Baron Luce">The Lord Luce</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Sarah_Ludford,_Baroness_Ludford" title="Sarah Ludford, Baroness Ludford">The Baroness Ludford</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2577,13 +2577,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Nicholas_Lyell" title="Nicholas Lyell">The Lord Lyell of Markyate</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Donald_Macauly,_Baron_Macaulay_of_Bragar" title="Donald Macauly, Baron Macaulay of Bragar" class="mw-redirect">The Lord Macaulay of Bragar</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2595,7 +2595,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/William_McCarthy,_Baron_McCarthy" title="William McCarthy, Baron McCarthy">The Lord McCarthy</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2607,7 +2607,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Ian_McColl,_Baron_McColl_of_Dulwich" title="Ian McColl, Baron McColl of Dulwich">The Lord McColl of Dulwich</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2619,49 +2619,49 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Gus_Macdonald,_Baron_Macdonald_of_Tradeston" title="Gus Macdonald, Baron Macdonald of Tradeston" class="mw-redirect">The Lord Macdonald of Tradeston</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Margaret_McDonagh,_Baroness_McDonagh" title="Margaret McDonagh, Baroness McDonagh">The Baroness McDonagh</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_McFall" title="John McFall">The Baron McFall of Alcuith</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">life peer</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Norman_Macfarlane,_Baron_Macfarlane_of_Bearsden" title="Norman Macfarlane, Baron Macfarlane of Bearsden">The Lord Macfarlane of Bearsden</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jean_McFarlane,_Baroness_McFarlane_of_Llandaff" title="Jean McFarlane, Baroness McFarlane of Llandaff">The Baroness McFarlane of Llandaff</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_MacGregor,_Baron_MacGregor_of_Pulham_Market" title="John MacGregor, Baron MacGregor of Pulham Market">The Lord MacGregor of Pulham Market</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Andrew_McIntosh,_Baron_McIntosh_of_Haringey" title="Andrew McIntosh, Baron McIntosh of Haringey">The Lord McIntosh of Haringey</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Genista_McIntosh,_Baroness_McIntosh_of_Hudnall" title="Genista McIntosh, Baroness McIntosh of Hudnall">The Baroness McIntosh of Hudnall</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2673,61 +2673,61 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Hector_MacKenzie,_Baron_MacKenzie_of_Culkein" title="Hector MacKenzie, Baron MacKenzie of Culkein">The Lord MacKenzie of Culkein</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/William_McKenzie" title="William McKenzie" class="mw-redirect">The Lord McKenzie of Luton</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Brian_Mackenzie,_Baron_Mackenzie_of_Framwellgate" title="Brian Mackenzie, Baron Mackenzie of Framwellgate">The Lord Mackenzie of Framwellgate</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ian_MacLaurin,_Baron_MacLaurin_of_Knebworth" title="Ian MacLaurin, Baron MacLaurin of Knebworth">The Lord MacLaurin of Knebworth</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Robert_Maclennan,_Baron_Maclennan_of_Rogart" title="Robert Maclennan, Baron Maclennan of Rogart">The Lord Maclennan of Rogart</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Thomas_McNally,_Baron_McNally" title="Thomas McNally, Baron McNally" class="mw-redirect">The Lord McNally</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Diana_Maddock,_Baroness_Maddock" title="Diana Maddock, Baroness Maddock">The Baroness Maddock</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ken_Maginnis,_Baron_Maginnis_of_Drumglass" title="Ken Maginnis, Baron Maginnis of Drumglass">The Lord Maginnis of Drumglass</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ann_Mallalieu,_Baroness_Mallalieu" title="Ann Mallalieu, Baroness Mallalieu">The Baroness Mallalieu</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Mark_Malloch_Brown,_Baron_Malloch-Brown" title="Mark Malloch Brown, Baron Malloch-Brown">The Lord Malloch-Brown</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2739,13 +2739,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Peter_Mandelson" title="Peter Mandelson">The Lord Mandelson</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Eliza_Manningham-Buller,_Baroness_Manningham-Buller" title="Eliza Manningham-Buller, Baroness Manningham-Buller">The Baroness Manningham-Buller</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2775,79 +2775,79 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Mark_Schreiber,_Baron_Marlesford" title="Mark Schreiber, Baron Marlesford">The Lord Marlesford</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Richard_Marsh,_Baron_Marsh" title="Richard Marsh, Baron Marsh">The Lord Marsh</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Colin_Marshall,_Baron_Marshall_of_Knightsbridge" title="Colin Marshall, Baron Marshall of Knightsbridge">The Lord Marshall of Knightsbridge</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Michael_Martin,_Baron_Martin_of_Springburn" title="Michael Martin, Baron Martin of Springburn">The Lord Martin of Springburn</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Susan_Cunliffe-Lister,_Countess_of_Swinton" title="Susan Cunliffe-Lister, Countess of Swinton">The Baroness Masham of Ilton</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Roy_Mason,_Baron_Mason" title="Roy Mason, Baron Mason">The Lord Mason of Barnsley</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Doreen_Massey,_Baroness_Massey_of_Darwen" title="Doreen Massey, Baroness Massey of Darwen">The Baroness Massey of Darwen</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Brian_Mawhinney,_Baron_Mawhinney" title="Brian Mawhinney, Baron Mawhinney">The Lord Mawhinney</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Andrew_Mawson,_Baron_Mawson" title="Andrew Mawson, Baron Mawson">The Lord Mawson</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Maxton" title="John Maxton" class="mw-redirect">The Lord Maxton</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Robert_May,_Baron_May_of_Oxford" title="Robert May, Baron May of Oxford">The Lord May of Oxford</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Patrick_Mayhew" title="Patrick Mayhew" class="mw-redirect">The Lord Mayhew of Twysden</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Molly_Meacher,_Baroness_Meacher" title="Molly Meacher, Baroness Meacher">The Baroness Meacher</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2859,13 +2859,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Susan_Miller,_Baroness_Miller_of_Chilthorne_Domer" title="Susan Miller, Baroness Miller of Chilthorne Domer">The Baroness Miller of Chilthorne Domer</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Doreen_Miller,_Baroness_Miller_of_Hendon" title="Doreen Miller, Baroness Miller of Hendon">The Baroness Miller of Hendon</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2877,19 +2877,19 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Parry_Mitchell,_Baron_Mitchell" title="Parry Mitchell, Baron Mitchell">The Lord Mitchell</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Frederick_Mogg,_Baron_Mogg" title="John Frederick Mogg, Baron Mogg" class="mw-redirect">The Lord Mogg</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/James_Molyneaux,_Baron_Molyneaux_of_Killead" title="James Molyneaux, Baron Molyneaux of Killead">The Lord Molyneaux of Killead</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2919,13 +2919,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Lewis_Moonie,_Baron_Moonie" title="Lewis Moonie, Baron Moonie">The Lord Moonie</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Moore,_Baron_Moore_of_Lower_Marsh" title="John Moore, Baron Moore of Lower Marsh">The Lord Moore of Lower Marsh</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2937,61 +2937,61 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Kenneth_O._Morgan" title="Kenneth O. Morgan">The Lord Morgan</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Delyth_Morgan,_Baroness_Morgan_of_Drefelin" title="Delyth Morgan, Baroness Morgan of Drefelin">The Baroness Morgan of Drefelin</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Sally_Morgan,_Baroness_Morgan_of_Huyton" title="Sally Morgan, Baroness Morgan of Huyton">The Baroness Morgan of Huyton</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Morris,_Baron_Morris_of_Aberavon" title="John Morris, Baron Morris of Aberavon">The Lord Morris of Aberavon</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Patricia_Morris,_Baroness_Morris_of_Bolton" title="Patricia Morris, Baroness Morris of Bolton">The Baroness Morris of Bolton</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Bill_Morris" title="Bill Morris" class="mw-redirect">The Lord Morris of Handsworth</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Alf_Morris" title="Alf Morris">The Lord Morris of Manchester</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Estelle_Morris" title="Estelle Morris">The Baroness Morris of Yardley</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Maurice_Morrow,_Baron_Morrow" title="Maurice Morrow, Baron Morrow">The Lord Morrow</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Claus_Moser,_Baron_Moser" title="Claus Moser, Baron Moser">The Lord Moser</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3003,7 +3003,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Elaine_Murphy,_Baroness_Murphy" title="Elaine Murphy, Baroness Murphy">The Baroness Murphy</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3015,37 +3015,37 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Paul_Myners,_Baron_Myners" title="Paul Myners, Baron Myners">The Lord Myners</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Michael_Morris,_Baron_Naseby" title="Michael Morris, Baron Naseby">The Lord Naseby</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Patrick_Neill,_Baron_Neill_of_Bladen" title="Patrick Neill, Baron Neill of Bladen">The Lord Neill of Bladen</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Julia_Neuberger,_Baroness_Neuberger" title="Julia Neuberger, Baroness Neuberger">The Baroness Neuberger</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Pauline_Neville-Jones,_Baroness_Neville-Jones" title="Pauline Neville-Jones, Baroness Neville-Jones">The Baroness Neville-Jones</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Richard_Newby,_Baron_Newby" title="Richard Newby, Baron Newby">The Lord Newby</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3081,14 +3081,14 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Sheila_Noakes,_Baroness_Noakes" title="Sheila Noakes, Baroness Noakes">The Baroness Noakes</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Edward_Fitzalan-Howard,_18th_Duke_of_Norfolk" title="Edward Fitzalan-Howard, 18th Duke of Norfolk">The Duke of Norfolk</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
+<td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
 <td><a href="/wiki/Earl_Marshal" title="Earl Marshal">Earl Marshal</a></td>
-<td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Christopher_James,_5th_Baron_Northbourne" title="Christopher James, 5th Baron Northbourne">The Lord Northbourne</a></td>
@@ -3105,43 +3105,43 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Lindsay_Northover,_Baroness_Northover" title="Lindsay Northover, Baroness Northover">The Baroness Northover</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Philip_Norton,_Baron_Norton_of_Louth" title="Philip Norton, Baron Norton of Louth">The Lord Norton of Louth</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Matthew_Oakeshott,_Baron_Oakeshott_of_Seagrove_Bay" title="Matthew Oakeshott, Baron Oakeshott of Seagrove Bay">The Lord Oakeshott of Seagrove Bay</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Detta_O%27Cathain,_Baroness_O%27Cathain" title="Detta O'Cathain, Baroness O'Cathain">The Baroness O'Cathain</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Nuala_O%27Loan" title="Nuala O'Loan">The Baroness O'Loan</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Onora_O%27Neill,_Baroness_O%27Neill_of_Bengarve" title="Onora O'Neill, Baroness O'Neill of Bengarve">The Baroness O'Neill of Bengarve</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Martin_O%27Neill,_Baron_O%27Neill_of_Clackmannan" title="Martin O'Neill, Baron O'Neill of Clackmannan">The Lord O'Neill of Clackmannan</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3153,31 +3153,31 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Sally_Oppenheim-Barnes,_Baroness_Oppenheim-Barnes" title="Sally Oppenheim-Barnes, Baroness Oppenheim-Barnes">The Baroness Oppenheim-Barnes</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Herman_Ouseley,_Baron_Ouseley" title="Herman Ouseley, Baron Ouseley">The Lord Ouseley</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Owen,_Baron_Owen" title="David Owen, Baron Owen" class="mw-redirect">The Lord Owen</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ronald_Oxburgh,_Baron_Oxburgh" title="Ronald Oxburgh, Baron Oxburgh">The Lord Oxburgh</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Eileen_Paisley,_Baroness_Paisley_of_St_George%27s" title="Eileen Paisley, Baroness Paisley of St George's">The Baroness Paisley of St George's</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3189,67 +3189,67 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Peter_Palumbo,_Baron_Palumbo" title="Peter Palumbo, Baron Palumbo">The Lord Palumbo</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Pannick,_Baron_Pannick" title="David Pannick, Baron Pannick">The Lord Pannick</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Bhikhu_Parekh,_Baron_Parekh" title="Bhikhu Parekh, Baron Parekh">The Lord Parekh</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Cecil_Parkinson" title="Cecil Parkinson">The Lord Parkinson</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Narendra_Patel,_Baron_Patel" title="Narendra Patel, Baron Patel">The Lord Patel</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Adam_Patel,_Baron_Patel_of_Blackburn" title="Adam Patel, Baron Patel of Blackburn">The Lord Patel of Blackburn</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Kamlesh_Patel,_Baron_Patel_of_Bradford" title="Kamlesh Patel, Baron Patel of Bradford">The Lord Patel of Bradford</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Patten,_Baron_Patten" title="John Patten, Baron Patten">The Lord Patten</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Chris_Patten,_Baron_Patten_of_Barnes" title="Chris Patten, Baron Patten of Barnes">The Lord Patten of Barnes</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Swraj_Paul" title="Swraj Paul">The Lord Paul</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Malcolm_Pearson,_Baron_Pearson_of_Rannoch" title="Malcolm Pearson, Baron Pearson of Rannoch">The Lord Pearson of Rannoch</a></td>
 <td><a href="/wiki/United_Kingdom_Independence_Party" title="United Kingdom Independence Party" class="mw-redirect">UKIP</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3261,55 +3261,55 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Tom_Pendry,_Baron_Pendry" title="Tom Pendry, Baron Pendry">The Lord Pendry</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Pauline_Perry,_Baroness_Perry_of_Southwark" title="Pauline Perry, Baroness Perry of Southwark">The Baroness Perry of Southwark</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Maurice_Peston,_Baron_Peston" title="Maurice Peston, Baron Peston">The Lord Peston</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Andrew_Phillips,_Baron_Phillips_of_Sudbury" title="Andrew Phillips, Baron Phillips of Sudbury">The Lord Phillips of Sudbury</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Peter_Pilkington,_Baron_Pilkington_of_Oxenford" title="Peter Pilkington, Baron Pilkington of Oxenford">The Lord Pilkington of Oxenford</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jill_Pitkeathley,_Baroness_Pitkeathley" title="Jill Pitkeathley, Baroness Pitkeathley">The Baroness Pitkeathley</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Raymond_Plant,_Baron_Plant_of_Highfield" title="Raymond Plant, Baron Plant of Highfield">The Lord Plant of Highfield</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Beryl_Platt,_Baroness_Platt_of_Writtle" title="Beryl Platt, Baroness Platt of Writtle">The Baroness Platt of Writtle</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Henry_Plumb,_Baron_Plumb" title="Henry Plumb, Baron Plumb">The Lord Plumb</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3321,79 +3321,79 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Charles_Powell,_Baron_Powell_of_Bayswater" title="Charles Powell, Baron Powell of Bayswater">The Lord Powell of Bayswater</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Usha_Prashar,_Baroness_Prashar" title="Usha Prashar, Baroness Prashar">The Baroness Prashar</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Margaret_Prosser,_Baroness_Prosser" title="Margaret Prosser, Baroness Prosser">The Baroness Prosser</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Gwilym_Prys_Prys-Davies,_Baron_Prys-Davies" title="Gwilym Prys Prys-Davies, Baron Prys-Davies">The Lord Prys-Davies</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Puttnam" title="David Puttnam">The Lord Puttnam</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Joyce_Quin,_Baroness_Quin" title="Joyce Quin, Baroness Quin">The Baroness Quin</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Randolph_Quirk" title="Randolph Quirk">The Lord Quirk</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Radice" title="Baron Radice" class="mw-redirect">The Lord Radice</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baroness_Ramsay_of_Cartvale" title="Baroness Ramsay of Cartvale" class="mw-redirect">The Baroness Ramsay of Cartvale</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Ramsbotham" title="David Ramsbotham" class="mw-redirect">The Lord Ramsbotham</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Diljit_Rana" title="Diljit Rana" class="mw-redirect">The Lord Rana</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baroness_Rawlings" title="Baroness Rawlings" class="mw-redirect">The Baroness Rawlings</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Razzall" title="Baron Razzall" class="mw-redirect">The Lord Razzall</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3417,55 +3417,55 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Martin_Rees" title="Martin Rees" class="mw-redirect">The Lord Rees of Ludlow</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Rees-Mogg" title="Baron Rees-Mogg" class="mw-redirect">The Lord Rees-Mogg</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ruth_Rendell" title="Ruth Rendell">The Baroness Rendell of Babergh</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Renfrew_of_Kaimsthorn" title="Baron Renfrew of Kaimsthorn" class="mw-redirect">The Lord Renfrew of Kaimsthorn</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Rennard" title="Baron Rennard" class="mw-redirect">The Lord Rennard</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Timothy_Renton" title="Timothy Renton" class="mw-redirect">The Lord Renton of Mount Harry</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Renwick_of_Clifton" title="Baron Renwick of Clifton" class="mw-redirect">The Lord Renwick of Clifton</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Richard" title="Baron Richard" class="mw-redirect">The Lord Richard</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baroness_Richardson_of_Calow" title="Baroness Richardson of Calow" class="mw-redirect">The Baroness Richardson of Calow</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3477,61 +3477,61 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Rix" title="Baron Rix" class="mw-redirect">The Lord Rix</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Wyn_Roberts,_Baron_Roberts_of_Conwy" title="Wyn Roberts, Baron Roberts of Conwy">The Lord Roberts of Conwy</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Roberts_of_Llandudno" title="Baron Roberts of Llandudno" class="mw-redirect">The Lord Roberts of Llandudno</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Robertson_of_Port_Ellen" title="Baron Robertson of Port Ellen" class="mw-redirect">The Lord Robertson of Port Ellen</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Rodgers_of_Quarry_Bank" title="Baron Rodgers of Quarry Bank" class="mw-redirect">The Lord Rodgers of Quarry Bank</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Rogan" title="Baron Rogan" class="mw-redirect">The Lord Rogan</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Rogers_of_Riverside" title="Baron Rogers of Riverside" class="mw-redirect">The Lord Rogers of Riverside</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Rooker" title="Baron Rooker" class="mw-redirect">The Lord Rooker</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Roper" title="Baron Roper" class="mw-redirect">The Lord Roper</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Richard_Rosser" title="Richard Rosser" class="mw-redirect">The Lord Rosser</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3549,49 +3549,49 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/David_Rowe-Beddoe,_Baron_Rowe-Beddoe" title="David Rowe-Beddoe, Baron Rowe-Beddoe">The Lord Rowe-Beddoe</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Edward_Rowlands" title="Edward Rowlands" class="mw-redirect">The Lord Rowlands</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Janet_Royall" title="Janet Royall" class="mw-redirect">The Baroness Royall of Blaisdon</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Richard_Andrew_Ryder" title="Richard Andrew Ryder" class="mw-redirect">The Lord Ryder of Wensum</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Maurice_Saatchi" title="Maurice Saatchi" class="mw-redirect">The Lord Saatchi</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jonathan_Sacks" title="Jonathan Sacks">The Lord Sacks</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td>Chief Rabbi of the Commonwealth</td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Sainsbury_of_Turville" title="Baron Sainsbury of Turville" class="mw-redirect">The Lord Sainsbury of Turville</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_St_John_of_Fawsley" title="Baron St John of Fawsley" class="mw-redirect">The Lord St John of Fawsley</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3609,13 +3609,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Sandberg" title="Baron Sandberg" class="mw-redirect">The Lord Sandberg</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Charles_Sanderson,_Baron_Sanderson_of_Bowden" title="Charles Sanderson, Baron Sanderson of Bowden">The Lord Sanderson of Bowden</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3633,13 +3633,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Sawyer" title="Baron Sawyer" class="mw-redirect">The Lord Sawyer</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baroness_Scotland_of_Asthal" title="Baroness Scotland of Asthal" class="mw-redirect">The Baroness Scotland of Asthal</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3651,13 +3651,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baroness_Scott_of_Needham_Market" title="Baroness Scott of Needham Market" class="mw-redirect">The Baroness Scott of Needham Market</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baroness_Seccombe" title="Baroness Seccombe" class="mw-redirect">The Baroness Seccombe</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3669,7 +3669,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Selkirk_of_Douglas" title="Baron Selkirk of Douglas" class="mw-redirect">The Lord Selkirk of Douglas</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3681,55 +3681,55 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Sewel" title="Baron Sewel" class="mw-redirect">The Lord Sewel</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Sharman" title="Baron Sharman" class="mw-redirect">The Lord Sharman</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baroness_Sharp_of_Guildford" title="Baroness Sharp of Guildford" class="mw-redirect">The Baroness Sharp of Guildford</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baroness_Sharples" title="Baroness Sharples" class="mw-redirect">The Baroness Sharples</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Shaw_of_Northstead" title="Baron Shaw of Northstead" class="mw-redirect">The Lord Shaw of Northstead</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Mohamed_Sheikh,_Baron_Sheikh" title="Mohamed Sheikh, Baron Sheikh">The Lord Sheikh</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Sheldon" title="Baron Sheldon" class="mw-redirect">The Lord Sheldon</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Gillian_Shepherd" title="Gillian Shepherd" class="mw-redirect">The Baroness Shephard of Northwold</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Sheppard_of_Didgemere" title="Baron Sheppard of Didgemere" class="mw-redirect">The Lord Sheppard of Didgemere</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3747,7 +3747,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Shutt_of_Greetland" title="Baron Shutt of Greetland" class="mw-redirect">The Lord Shutt of Greetland</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3759,7 +3759,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Simpson_of_Dunkeld" title="Baron Simpson of Dunkeld" class="mw-redirect">The Lord Simpson of Dunkeld</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3771,7 +3771,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Skidelsky" title="Baron Skidelsky" class="mw-redirect">The Lord Skidelsky</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3783,37 +3783,37 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Trevor_Arthur_Smith,_Baron_Smith_of_Clifton" title="Trevor Arthur Smith, Baron Smith of Clifton">The Lord Smith of Clifton</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Chris_Smith,_Baron_Smith_of_Finsbury" title="Chris Smith, Baron Smith of Finsbury">The Lord Smith of Finsbury</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Elizabeth_Smith,_Baroness_Smith_of_Gilmorehill" title="Elizabeth Smith, Baroness Smith of Gilmorehill">The Baroness Smith of Gilmorehill</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Robert_Smith,_Baron_Smith_of_Kelvin" title="Robert Smith, Baron Smith of Kelvin">The Lord Smith of Kelvin</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Peter_Smith,_Baron_Smith_of_Leigh" title="Peter Smith, Baron Smith of Leigh">The Lord Smith of Leigh</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Peter_Snape,_Baron_Snape" title="Peter Snape, Baron Snape">The Lord Snape</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3825,19 +3825,19 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Clive_Soley" title="Clive Soley" class="mw-redirect">The Lord Soley</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Soulsby_of_Swaffham_Prior" title="Baron Soulsby of Swaffham Prior" class="mw-redirect">The Lord Soulsby of Swaffham Prior</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Dalrymple,_14th_Earl_of_Stair" title="John Dalrymple, 14th Earl of Stair">The Earl of Stair</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
 <td>Sits as Baron Oxenfoord, in the Peerage of the United Kingdom; his other titles are in the peerage of Scotland</td>
 </tr>
 <tr>
@@ -3849,7 +3849,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Jeffrey_Sterling,_Baron_Sterling_of_Plaistow" title="Jeffrey Sterling, Baron Sterling of Plaistow">The Lord Sterling of Plaistow</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3861,13 +3861,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Nicholas_Stern,_Baron_Stern_of_Brentford" title="Nicholas Stern, Baron Stern of Brentford">The Lord Stern of Brentford</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Stevens,_Baron_Stevens_of_Kirkwhelpington" title="John Stevens, Baron Stevens of Kirkwhelpington">The Lord Stevens of Kirkwhelpington</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3879,13 +3879,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Stevenson_of_Coddenham" title="Baron Stevenson of Coddenham" class="mw-redirect">The Lord Stevenson of Coddenham</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Stewartby" title="Baron Stewartby" class="mw-redirect">The Lord Stewartby</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3897,13 +3897,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/David_Stoddart,_Baron_Stoddart_of_Swindon" title="David Stoddart, Baron Stoddart of Swindon">The Lord Stoddart of Swindon</a></td>
 <td>Independent Labour</td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Andrew_Stone,_Baron_Stone_of_Blackheath" title="Andrew Stone, Baron Stone of Blackheath">The Lord Stone of Blackheath</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3921,13 +3921,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Alan_Sugar" title="Alan Sugar">The Lord Sugar</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Stewart_Ross_Sutherland" title="Stewart Ross Sutherland" class="mw-redirect">The Lord Sutherland of Houndwood</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3939,49 +3939,49 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baroness_Symons_of_Vernham_Dean" title="Baroness Symons of Vernham Dean" class="mw-redirect">The Baroness Symons of Vernham Dean</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Simon_Brooke_Mackay,_Baron_Tanlaw" title="Simon Brooke Mackay, Baron Tanlaw" class="mw-redirect">The Lord Tanlaw</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Dick_Taverne,_Baron_Taverne" title="Dick Taverne, Baron Taverne">The Lord Taverne</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Thomas_Taylor,_Baron_Taylor_of_Blackburn" title="Thomas Taylor, Baron Taylor of Blackburn">The Lord Taylor of Blackburn</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ann_Taylor,_Baroness_Taylor_of_Bolton" title="Ann Taylor, Baroness Taylor of Bolton">The Baroness Taylor of Bolton</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Taylor,_Baron_Taylor_of_Holbeach" title="John Taylor, Baron Taylor of Holbeach">The Lord Taylor of Holbeach</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Taylor_of_Warwick" title="Baron Taylor of Warwick" class="mw-redirect">The Lord Taylor of Warwick</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Tebbit" title="Baron Tebbit" class="mw-redirect">The Lord Tebbit</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3993,7 +3993,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Temple-Morris" title="Baron Temple-Morris" class="mw-redirect">The Lord Temple-Morris</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -4005,79 +4005,79 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Robin_Teverson,_Baron_Teverson" title="Robin Teverson, Baron Teverson">The Lord Teverson</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Margaret_Thatcher" title="Margaret Thatcher">The Baroness Thatcher of Kesteven</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Thomas_of_Gresford" title="Baron Thomas of Gresford" class="mw-redirect">The Lord Thomas of Gresford</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Thomas_of_Macclesfield" title="Baron Thomas of Macclesfield" class="mw-redirect">The Lord Thomas of Macclesfield</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Thomas_of_Swynnerton" title="Baron Thomas of Swynnerton" class="mw-redirect">The Lord Thomas of Swynnerton</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baroness_Thomas_of_Walliswood" title="Baroness Thomas of Walliswood" class="mw-redirect">The Baroness Thomas of Walliswood</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Celia_Thomas,_Baroness_Thomas_of_Winchester" title="Celia Thomas, Baroness Thomas of Winchester">The Baroness Thomas of Winchester</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baroness_Thornton" title="Baroness Thornton" class="mw-redirect">The Baroness Thornton</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Tombs" title="Baron Tombs" class="mw-redirect">The Lord Tombs</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Tomlinson,_Baron_Tomlinson" title="John Tomlinson, Baron Tomlinson">The Lord Tomlinson</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jenny_Tonge" title="Jenny Tonge" class="mw-redirect">The Baroness Tonge</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Tope" title="Baron Tope" class="mw-redirect">The Lord Tope</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Tordoff" title="Baron Tordoff" class="mw-redirect">The Lord Tordoff</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -4101,73 +4101,73 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Triesman" title="Baron Triesman" class="mw-redirect">The Lord Triesman</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Trimble" title="David Trimble">The Lord Trimble</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baroness_Trumpington" title="Baroness Trumpington" class="mw-redirect">The Baroness Trumpington</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Peter_Truscott,_Baron_Truscott" title="Peter Truscott, Baron Truscott">The Lord Truscott</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Tugendhat" title="Baron Tugendhat" class="mw-redirect">The Lord Tugendhat</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Denis_Tunnicliffe" title="Denis Tunnicliffe" class="mw-redirect">The Lord Tunnicliffe</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Turnberg" title="Baron Turnberg" class="mw-redirect">The Lord Turnberg</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Andrew_Turnbull,_Baron_Turnbull" title="Andrew Turnbull, Baron Turnbull">The Lord Turnbull</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baroness_Turner_of_Camden" title="Baroness Turner of Camden" class="mw-redirect">The Baroness Turner of Camden</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Adair_Turner" title="Adair Turner" class="mw-redirect">The Lord Turner of Ecchinswell</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Paul_Tyler,_Baron_Tyler" title="Paul Tyler, Baron Tyler">The Lord Tyler</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Pola_Uddin,_Baroness_Uddin" title="Pola Uddin, Baroness Uddin">The Baroness Uddin</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -4179,91 +4179,91 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Shriti_Vadera,_Baroness_Vadera" title="Shriti Vadera, Baroness Vadera">The Baroness Vadera</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jo_Valentine,_Baroness_Valentine" title="Jo Valentine, Baroness Valentine">The Baroness Valentine</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Iain_Vallance,_Baron_Vallance_of_Tummel" title="Iain Vallance, Baron Vallance of Tummel">The Lord Vallance of Tummel</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Sandip_Verma,_Baroness_Verma" title="Sandip Verma, Baroness Verma">The Baroness Verma</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Richard_Vincent,_Baron_Vincent_of_Coleshill" title="Richard Vincent, Baron Vincent of Coleshill">The Lord Vincent of Coleshill</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Nigel_Vinson,_Baron_Vinson" title="Nigel Vinson, Baron Vinson">The Lord Vinson</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Waddington" title="Baron Waddington" class="mw-redirect">The Lord Waddington</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Wade_of_Chorlton" title="Baron Wade of Chorlton" class="mw-redirect">The Lord Wade of Chorlton</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Wakeham" title="Baron Wakeham" class="mw-redirect">The Lord Wakeham</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Waldegrave_of_North_Hill" title="Baron Waldegrave of North Hill" class="mw-redirect">The Lord Waldegrave of North Hill</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Michael_Walker,_Baron_Walker_of_Aldringham" title="Michael Walker, Baron Walker of Aldringham">The Lord Walker of Aldringham</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Margaret_Wall" title="Margaret Wall" class="mw-redirect">The Baroness Wall of New Barnet</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Wallace_of_Saltaire" title="Baron Wallace of Saltaire" class="mw-redirect">The Lord Wallace of Saltaire</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jim_Wallace,_Baron_Wallace_of_Tankerness" title="Jim Wallace, Baron Wallace of Tankerness">The Lord Wallace of Tankerness</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baroness_Walmsley" title="Baroness Walmsley" class="mw-redirect">The Baroness Walmsley</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -4275,43 +4275,43 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Walton_of_Detchant" title="Baron Walton of Detchant">The Lord Walton of Detchant</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Warner" title="Baron Warner" class="mw-redirect">The Lord Warner</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Mary_Warnock,_Baroness_Warnock" title="Mary Warnock, Baroness Warnock">The Baroness Warnock</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Sayeeda_Warsi,_Baroness_Warsi" title="Sayeeda Warsi, Baroness Warsi">The Baroness Warsi</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baroness_Warwick_of_Undercliffe" title="Baroness Warwick of Undercliffe" class="mw-redirect">The Baroness Warwick of Undercliffe</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Mike_Watson" title="Mike Watson" class="mw-redirect">The Lord Watson of Invergowrie</a></td>
 <td>Non affiliated</td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Watson_of_Richmond" title="Baron Watson of Richmond" class="mw-redirect">The Lord Watson of Richmond</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -4323,7 +4323,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Wedderburn_of_Charlton" title="Baron Wedderburn of Charlton" class="mw-redirect">The Lord Wedderburn of Charlton</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -4335,13 +4335,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Weidenfeld" title="Baron Weidenfeld" class="mw-redirect">The Lord Weidenfeld</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Alan_West,_Baron_West_of_Spithead" title="Alan West, Baron West of Spithead">The Lord West of Spithead</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -4353,43 +4353,43 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baroness_Whitaker" title="Baroness Whitaker" class="mw-redirect">The Baroness Whitaker</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Whitty" title="Baron Whitty" class="mw-redirect">The Lord Whitty</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baroness_Wilcox" title="Baroness Wilcox" class="mw-redirect">The Baroness Wilcox</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baroness_Wilkins" title="Baroness Wilkins" class="mw-redirect">The Baroness Wilkins</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baroness_Williams_of_Crosby" title="Baroness Williams of Crosby" class="mw-redirect">The Baroness Williams of Crosby</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Williams_of_Elvel" title="Baron Williams of Elvel" class="mw-redirect">The Lord Williams of Elvel</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Williamson_of_Horton" title="Baron Williamson of Horton" class="mw-redirect">The Lord Williamson of Horton</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -4407,13 +4407,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Wilson_of_Dinton" title="Baron Wilson of Dinton" class="mw-redirect">The Lord Wilson of Dinton</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Wilson_of_Tillyorn" title="Baron Wilson of Tillyorn" class="mw-redirect">The Lord Wilson of Tillyorn</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -4425,7 +4425,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Winston" title="Baron Winston" class="mw-redirect">The Lord Winston</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -4437,7 +4437,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/David_Wolfson,_Baron_Wolfson_of_Sunningdale" title="David Wolfson, Baron Wolfson of Sunningdale">The Lord Wolfson of Sunningdale</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -4449,37 +4449,37 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Baron_Woolmer_of_Leeds" title="Baron Woolmer of Leeds" class="mw-redirect">The Lord Woolmer of Leeds</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Wright_of_Richmond" title="Baron Wright of Richmond" class="mw-redirect">The Lord Wright of Richmond</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Young,_Baron_Young_of_Graffham" title="David Young, Baron Young of Graffham">The Lord Young of Graffham</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Lola_Young,_Baroness_Young_of_Hornsey" title="Lola Young, Baroness Young of Hornsey">The Baroness Young of Hornsey</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Anthony_Young,_Baron_Young_of_Norwood_Green" title="Anthony Young, Baron Young of Norwood Green">The Lord Young of Norwood Green</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Barbara_Young,_Baroness_Young_of_Old_Scone" title="Barbara Young, Baroness Young of Old Scone">The Baroness Young of Old Scone</a></td>
 <td>Non affiliated</td>
-<td></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -4701,7 +4701,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 </div>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=8" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span></h2>
 <ul>
-<li><a href="http://www.publications.parliament.uk/pa/ld/ldinfo/a-z.htm" class="external text" rel="nofollow">United Kingdom Parliament Alphabetical List of Members of the House of Lords</a></li>
+<li><a href="http://www.parliament.uk/mps-lords-and-offices/lords/" class="external text" rel="nofollow">United Kingdom Parliament Alphabetical List of Members of the House of Lords</a></li>
 </ul>
 
 
@@ -4713,7 +4713,7 @@ Template argument size: 3404/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!4 and timestamp 20100722092935 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!4 and timestamp 20100801172007 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 				<!-- /bodytext -->
@@ -4793,7 +4793,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
 			<input id="searchInput" name="search" type="text"  title="Search Wikipedia [f]" accesskey="f"  value="" />
-			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text">&nbsp;</button>
+			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283n" alt="Search" /></button>
 		</div>
 			</form>
 </div>
@@ -4854,8 +4854,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=374557097" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=374557097" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=376616644" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=376616644" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -4865,7 +4865,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=374557097&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=376616644&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -4886,7 +4886,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 20 July 2010 at 20:46.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 1 August 2010 at 17:20.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -4909,5 +4909,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-		<!-- Served by srv209 in 0.057 secs. -->			</body>
+		<!-- Served by srv212 in 0.053 secs. -->			</body>
 </html>
