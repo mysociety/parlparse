@@ -12,9 +12,9 @@
 <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283o" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283o" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283o" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283p" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283p" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283p" type="text/css" media="print" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?117" type="text/css" media="all" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
@@ -46,7 +46,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=377514749,
+wgCurRevisionId=377981252,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -72,18 +72,18 @@ wgVectorPreferences={"collapsiblenav": {"enable": 1}, "editwarning": {"enable": 
 wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "simplesearch": true},
 wgNotice="",
 wgNoticeLocal="";
-</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283o" type="text/javascript"></script>
-<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283o"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283o" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283o" type="text/javascript"></script>
+</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283p" type="text/javascript"></script>
+<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283p"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283p" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283p" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283o" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283o" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283p" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283p" type="text/javascript"></script>
 <script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
-<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?283o"></script>
+<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?283p"></script>
 
 <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283o" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283p" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-Members_of_the_Northern_Ireland_Assembly_elected_in_2007 skin-vector">
@@ -689,12 +689,12 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Jim_Shannon" title="Jim Shannon">Jim Shannon</a> (resigned), replaced by <a href="/w/index.php?title=Simpson_Gibson&amp;action=edit&amp;redlink=1" class="new" title="Simpson Gibson (page does not exist)">Simpson Gibson</a></td>
+<td><a href="/wiki/Jim_Shannon" title="Jim Shannon">Jim Shannon</a> (resigned), replaced by <a href="/wiki/Simpson_Gibson" title="Simpson Gibson">Simpson Gibson</a></td>
 <td><a href="/wiki/Strangford_(Assembly_constituency)" title="Strangford (Assembly constituency)">Strangford</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/David_Simpson_(UK_politician)" title="David Simpson (UK politician)">David Simpson</a> (resigned), replaced by <a href="/wiki/Sydney_Anderson" title="Sydney Anderson">Sydney Anderson</a></td>
+<td><a href="/wiki/David_Simpson_(UK_politician)" title="David Simpson (UK politician)">David Simpson</a> (resigned), replaced by <a href="/wiki/Sydney_Anderson_(politician)" title="Sydney Anderson (politician)">Sydney Anderson</a></td>
 <td><a href="/wiki/Upper_Bann_(Assembly_constituency)" title="Upper Bann (Assembly constituency)">Upper Bann</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
@@ -1100,7 +1100,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <li><a href="/wiki/Carmel_Hanna" title="Carmel Hanna">Carmel Hanna</a> resigned on 15 January 2010; <a href="/wiki/Conall_McDevitt" title="Conall McDevitt">Conall McDevitt</a> was sworn in as her replacement on 21 January 2010.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>6<span>]</span></a></sup></li>
 <li><a href="/wiki/Alan_McFarland" title="Alan McFarland">Alan McFarland</a> resigned from the <a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a> on 31 March 2010.</li>
 <li><a href="/wiki/Dawn_Purvis" title="Dawn Purvis">Dawn Purvis</a> resigned from the <a href="/wiki/Progressive_Unionist_Party" title="Progressive Unionist Party">Progressive Unionist Party</a> on 3 June 2010.</li>
-<li><a href="/wiki/Naomi_Long" title="Naomi Long">Naomi Long</a> was elected to the <a href="/wiki/Belfast_East_(UK_Parliament_constituency)" title="Belfast East (UK Parliament constituency)">Belfast East</a> parliamentary constituency, and <a href="/wiki/Ian_Paisley,_Jr." title="Ian Paisley, Jr.">Ian Paisley, Jr.</a> to the <a href="/wiki/North_Antrim_(UK_Parliament_constituency)" title="North Antrim (UK Parliament constituency)">North Antrim</a> parliamentary constituency on 6 May 2010. Both will be replaced as MLAs; <a href="/wiki/Ian_Paisley_Jr" title="Ian Paisley Jr" class="mw-redirect">Ian Paisley Jr</a> resigned on 21 June 2010 and was replaced by <a href="/wiki/Paul_Frew" title="Paul Frew">Paul Frew</a>,<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>7<span>]</span></a></sup><sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>8<span>]</span></a></sup> <a href="/wiki/Chris_Lyttle" title="Chris Lyttle">Chris Lyttle</a> replaced Naomi Long on 5 July.<sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span>[</span>9<span>]</span></a></sup> <a href="/wiki/Jeffrey_Donaldson" title="Jeffrey Donaldson">Jeffrey Donaldson</a> resigned on 10 June 2010 and was replaced by <a href="/wiki/Paul_Givan" title="Paul Givan">Paul Givan</a>; <a href="/wiki/David_Simpson_(UK_politician)" title="David Simpson (UK politician)">David Simpson</a> and <a href="/wiki/William_McCrea" title="William McCrea">William McCrea</a> were replaced by <a href="/w/index.php?title=Sydney_Anderson_(UK_politician)&amp;action=edit&amp;redlink=1" class="new" title="Sydney Anderson (UK politician) (page does not exist)">Sydney Anderson</a> and <a href="/wiki/Paul_Girvan" title="Paul Girvan">Paul Girvan</a> on 1 July 2010, <a href="/wiki/Jim_Shannon" title="Jim Shannon">Jim Shannon</a> resigned on 1 August 2010 and was replaced by <a href="/w/index.php?title=Simpson_Gibson&amp;action=edit&amp;redlink=1" class="new" title="Simpson Gibson (page does not exist)">Simpson Gibson</a> on 2 August 2010, and the three remaining DUP MPs/MLAs (<a href="/wiki/Gregory_Campbell_(politician)" title="Gregory Campbell (politician)">Gregory Campbell</a>, <a href="/wiki/Nigel_Dodds" title="Nigel Dodds">Nigel Dodds</a> and <a href="/wiki/Sammy_Wilson" title="Sammy Wilson">Sammy Wilson</a>) are expected to follow.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>10<span>]</span></a></sup><sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>11<span>]</span></a></sup></li>
+<li><a href="/wiki/Naomi_Long" title="Naomi Long">Naomi Long</a> was elected to the <a href="/wiki/Belfast_East_(UK_Parliament_constituency)" title="Belfast East (UK Parliament constituency)">Belfast East</a> parliamentary constituency, and <a href="/wiki/Ian_Paisley,_Jr." title="Ian Paisley, Jr.">Ian Paisley, Jr.</a> to the <a href="/wiki/North_Antrim_(UK_Parliament_constituency)" title="North Antrim (UK Parliament constituency)">North Antrim</a> parliamentary constituency on 6 May 2010. Both will be replaced as MLAs; <a href="/wiki/Ian_Paisley_Jr" title="Ian Paisley Jr" class="mw-redirect">Ian Paisley Jr</a> resigned on 21 June 2010 and was replaced by <a href="/wiki/Paul_Frew" title="Paul Frew">Paul Frew</a>,<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>7<span>]</span></a></sup><sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>8<span>]</span></a></sup> <a href="/wiki/Chris_Lyttle" title="Chris Lyttle">Chris Lyttle</a> replaced Naomi Long on 5 July.<sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span>[</span>9<span>]</span></a></sup> <a href="/wiki/Jeffrey_Donaldson" title="Jeffrey Donaldson">Jeffrey Donaldson</a> resigned on 10 June 2010 and was replaced by <a href="/wiki/Paul_Givan" title="Paul Givan">Paul Givan</a>; <a href="/wiki/David_Simpson_(UK_politician)" title="David Simpson (UK politician)">David Simpson</a> and <a href="/wiki/William_McCrea" title="William McCrea">William McCrea</a> were replaced by <a href="/w/index.php?title=Sydney_Anderson_(UK_politician)&amp;action=edit&amp;redlink=1" class="new" title="Sydney Anderson (UK politician) (page does not exist)">Sydney Anderson</a> and <a href="/wiki/Paul_Girvan" title="Paul Girvan">Paul Girvan</a> on 1 July 2010, <a href="/wiki/Jim_Shannon" title="Jim Shannon">Jim Shannon</a> resigned on 1 August 2010 and was replaced by <a href="/wiki/Simpson_Gibson" title="Simpson Gibson">Simpson Gibson</a> on 2 August 2010, and the three remaining DUP MPs/MLAs (<a href="/wiki/Gregory_Campbell_(politician)" title="Gregory Campbell (politician)">Gregory Campbell</a>, <a href="/wiki/Nigel_Dodds" title="Nigel Dodds">Nigel Dodds</a> and <a href="/wiki/Sammy_Wilson" title="Sammy Wilson">Sammy Wilson</a>) are expected to follow.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>10<span>]</span></a></sup><sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>11<span>]</span></a></sup></li>
 </ul>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;action=edit&amp;section=5" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
 <div class="references-small">
@@ -1140,16 +1140,16 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td class="navbox-group" style=";background:#BFD7FF;;"><a href="/wiki/Parliament_of_Northern_Ireland" title="Parliament of Northern Ireland">Parliament of Northern Ireland</a></td>
 <td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
-<div style="padding:0em 0.25em"><a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1921" title="MPs elected in the Northern Ireland general election, 1921" class="mw-redirect">1921</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1925" title="MPs elected in the Northern Ireland general election, 1925" class="mw-redirect">1925</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1929" title="MPs elected in the Northern Ireland general election, 1929" class="mw-redirect">1929</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1933" title="MPs elected in the Northern Ireland general election, 1933" class="mw-redirect">1933</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1938" title="MPs elected in the Northern Ireland general election, 1938" class="mw-redirect">1938</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1945" title="MPs elected in the Northern Ireland general election, 1945" class="mw-redirect">1945</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1949" title="MPs elected in the Northern Ireland general election, 1949" class="mw-redirect">1949</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1953" title="MPs elected in the Northern Ireland general election, 1953" class="mw-redirect">1953</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1958" title="MPs elected in the Northern Ireland general election, 1958" class="mw-redirect">1958</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1962" title="MPs elected in the Northern Ireland general election, 1962" class="mw-redirect">1962</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1965" title="MPs elected in the Northern Ireland general election, 1965" class="mw-redirect">1965</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1969" title="MPs elected in the Northern Ireland general election, 1969" class="mw-redirect">1969</a></div>
+<div style="padding:0em 0.25em"><a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1921" title="MPs elected in the Northern Ireland general election, 1921" class="mw-redirect">1921</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1925" title="MPs elected in the Northern Ireland general election, 1925" class="mw-redirect">1925</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1929" title="MPs elected in the Northern Ireland general election, 1929" class="mw-redirect">1929</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1933" title="MPs elected in the Northern Ireland general election, 1933" class="mw-redirect">1933</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1938" title="MPs elected in the Northern Ireland general election, 1938" class="mw-redirect">1938</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1945" title="MPs elected in the Northern Ireland general election, 1945" class="mw-redirect">1945</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1949" title="MPs elected in the Northern Ireland general election, 1949" class="mw-redirect">1949</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1953" title="MPs elected in the Northern Ireland general election, 1953" class="mw-redirect">1953</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1958" title="MPs elected in the Northern Ireland general election, 1958" class="mw-redirect">1958</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1962" title="MPs elected in the Northern Ireland general election, 1962" class="mw-redirect">1962</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1965" title="MPs elected in the Northern Ireland general election, 1965" class="mw-redirect">1965</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/MPs_elected_in_the_Northern_Ireland_general_election,_1969" title="MPs elected in the Northern Ireland general election, 1969" class="mw-redirect">1969</a></div>
 </td>
 </tr>
 <tr style="height:2px">
 <td></td>
 </tr>
 <tr>
-<td class="navbox-group" style=";background:#BFD7FF;;">Ad-hoc elections 1973-1996</td>
+<td class="navbox-group" style=";background:#BFD7FF;;">Ad-hoc elections 1973–1996</td>
 <td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
-<div style="padding:0em 0.25em"><a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_1973" title="Members of the Northern Ireland Assembly elected in 1973">1973</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Members_of_the_Northern_Ireland_Constitutional_Convention" title="Members of the Northern Ireland Constitutional Convention">1975</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_1982" title="Members of the Northern Ireland Assembly elected in 1982">1982</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Members_of_the_Northern_Ireland_Forum" title="Members of the Northern Ireland Forum">1996</a></div>
+<div style="padding:0em 0.25em"><a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_1973" title="Members of the Northern Ireland Assembly elected in 1973">1973</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Members_of_the_Northern_Ireland_Constitutional_Convention" title="Members of the Northern Ireland Constitutional Convention">1975</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_1982" title="Members of the Northern Ireland Assembly elected in 1982">1982</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Members_of_the_Northern_Ireland_Forum" title="Members of the Northern Ireland Forum">1996</a></div>
 </td>
 </tr>
 <tr style="height:2px">
@@ -1158,7 +1158,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td class="navbox-group" style=";background:#BFD7FF;;"><a href="/wiki/Northern_Ireland_Assembly" title="Northern Ireland Assembly">Northern Ireland Assembly</a></td>
 <td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
-<div style="padding:0em 0.25em"><a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_1998" title="Members of the Northern Ireland Assembly elected in 1998">1998</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2003" title="Members of the Northern Ireland Assembly elected in 2003">2003</a> <span style="font-weight:bold;">&#160;·</span>  <strong class="selflink">2007</strong></div>
+<div style="padding:0em 0.25em"><a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_1998" title="Members of the Northern Ireland Assembly elected in 1998">1998</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2003" title="Members of the Northern Ireland Assembly elected in 2003">2003</a><span style="font-weight:bold;">&#160;·</span>  <strong class="selflink">2007</strong></div>
 </td>
 </tr>
 </table>
@@ -1252,12 +1252,12 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <!-- 
 NewPP limit report
 Preprocessor node count: 1764/1000000
-Post-expand include size: 64197/2048000 bytes
-Template argument size: 30514/2048000 bytes
+Post-expand include size: 64157/2048000 bytes
+Template argument size: 30461/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!4 and timestamp 20100806175918 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!4 and timestamp 20100812095713 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007">http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007</a>"</div>
 				<!-- /bodytext -->
@@ -1337,7 +1337,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
 			<input id="searchInput" name="search" type="text"  title="Search Wikipedia [f]" accesskey="f"  value="" />
-			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283o" alt="Search" /></button>
+			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283p" alt="Search" /></button>
 		</div>
 			</form>
 </div>
@@ -1398,8 +1398,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_Northern_Ireland_Assembly_elected_in_2007" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=377514749" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;id=377514749" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=377981252" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;id=377981252" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -1409,7 +1409,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+Northern+Ireland+Assembly+elected+in+2007" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+Northern+Ireland+Assembly+elected+in+2007&amp;oldid=377514749&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+Northern+Ireland+Assembly+elected+in+2007" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+Northern+Ireland+Assembly+elected+in+2007&amp;oldid=377981252&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -1422,7 +1422,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 6 August 2010 at 17:58.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 9 August 2010 at 11:36.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -1445,5 +1445,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-		<!-- Served by srv241 in 0.047 secs. -->			</body>
+		<!-- Served by srv112 in 1.312 secs. -->			</body>
 </html>
