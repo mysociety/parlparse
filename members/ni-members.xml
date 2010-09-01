@@ -2587,8 +2587,8 @@
 	id="uk.org.publicwhip/member/90342"
 	title="" firstname="Jim" lastname="Shannon"
 	constituency="Strangford" party="DUP"
-	fromdate="2007-03-09" todate="9999-12-31"
-	fromwhy="election" towhy="still_in_office"
+	fromdate="2007-03-09" todate="2010-08-01"
+	fromwhy="election" towhy="resigned"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90343"
@@ -2776,6 +2776,14 @@
 	title="" firstname="Chris" lastname="Lyttle"
 	constituency="Belfast East" party="Alliance"
 	fromdate="2010-07-05" todate="9999-12-31"
+	fromwhy="appointed" towhy="still_in_office"
+/>
+
+<member_ni
+	id="uk.org.publicwhip/member/90369"
+	title="" firstname="Simpson" lastname="Gibson"
+	constituency="Strangford" party="DUP"
+	fromdate="2010-08-02" todate="9999-12-31"
 	fromwhy="appointed" towhy="still_in_office"
 />
 
