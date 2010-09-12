@@ -76,7 +76,7 @@ wgNotice="";
 <script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283r"></script>
 <script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283r" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283r" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2.2" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283r" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283r" type="text/javascript"></script>
 <script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
@@ -5499,5 +5499,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-		<!-- Served by srv272 in 0.057 secs. -->			</body>
+		<!-- Served by srv183 in 0.109 secs. -->			</body>
 </html>
