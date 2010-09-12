@@ -75,7 +75,7 @@ wgNotice="";
 <script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283r"></script>
 <script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283r" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283r" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2.2" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283r" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283r" type="text/javascript"></script>
 <script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
@@ -1249,13 +1249,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 1764/1000000
-Post-expand include size: 64157/2048000 bytes
+Preprocessor node count: 1814/1000000
+Post-expand include size: 64267/2048000 bytes
 Template argument size: 30461/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!4 and timestamp 20100827094633 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!4 and timestamp 20100902031157 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007">http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007</a>"</div>
 				<!-- /bodytext -->
@@ -1443,5 +1443,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-		<!-- Served by srv261 in 0.044 secs. -->			</body>
+		<!-- Served by srv195 in 0.862 secs. -->			</body>
 </html>

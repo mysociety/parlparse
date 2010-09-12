@@ -2353,7 +2353,7 @@ wgNotice="";
 </tr>
 <tr>
 <td><a href="/wiki/North_East_Bedfordshire_(UK_Parliament_constituency)" title="North East Bedfordshire (UK Parliament constituency)">North East Bedfordshire</a></td>
-<td><a href="/wiki/Nicholas_Lyell" title="Nicholas Lyell">Sir Nicholas Lyell</a></td>
+<td><a href="/wiki/Nicholas_Lyell" title="Nicholas Lyell" class="mw-redirect">Sir Nicholas Lyell</a></td>
 <td>Conservative</td>
 </tr>
 <tr>
@@ -3708,13 +3708,13 @@ wgNotice="";
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 914/1000000
-Post-expand include size: 50195/2048000 bytes
+Preprocessor node count: 929/1000000
+Post-expand include size: 50228/2048000 bytes
 Template argument size: 34764/2048000 bytes
 Expensive parser function count: 1/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:415690-0!1!0!default!!en!4 and timestamp 20100830214206 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:415690-0!1!0!default!!en!4 and timestamp 20100908214318 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_1997">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_1997</a>"</div>
 				<!-- /bodytext -->
@@ -3902,5 +3902,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-		<!-- Served by srv192 in 0.074 secs. -->			</body>
+		<!-- Served by srv170 in 0.099 secs. -->			</body>
 </html>
