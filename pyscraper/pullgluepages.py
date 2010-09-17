@@ -399,10 +399,12 @@ def CompareScrapedFiles(prevfile, nextfile):
 	return "DIFFERENT"
 
 def CmIndexFromNewPage(date, type='commons'):
+        if date.date == '2010-09-15': day = 16
+        else: day = 15
         if type=='lords':
-                urllinkpage = '%s?d=%d&m=%d&y=%d' % (url_bydate_index_lords, date.day, date.month, date.year)
+                urllinkpage = '%s?d=%d&m=%d&y=%d' % (url_bydate_index_lords, day, date.month, date.year)
         else:
-                urllinkpage = '%s?d=%d&m=%d&y=%d' % (url_bydate_index, date.day, date.month, date.year)
+                urllinkpage = '%s?d=%d&m=%d&y=%d' % (url_bydate_index, day, date.month, date.year)
         urlinkpage = urllib.urlopen(urllinkpage)
 	srlinkpage = urlinkpage.read()
 	urlinkpage.close()
