@@ -8112,7 +8112,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/857"/>
     <office id="uk.org.publicwhip/member/90036"/>
     <office id="uk.org.publicwhip/member/90155"/>
-    <office id="uk.org.publicwhip/member/90272" current="yes"/>
+    <office id="uk.org.publicwhip/member/90272"/>
     <office id="uk.org.publicwhip/moffice/4119"/>
     <office id="uk.org.publicwhip/moffice/4298"/>
     <office id="uk.org.publicwhip/moffice/4299"/>
@@ -72857,6 +72857,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13802" latestname="Norman Hillis">
     <office id="uk.org.publicwhip/member/90180"/>
+</person>
+<person id="uk.org.publicwhip/person/25011" latestname="William Humphrey">
+    <office id="uk.org.publicwhip/member/90370" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13803" latestname="Derek Hussey">
     <office id="uk.org.publicwhip/member/90058"/>
