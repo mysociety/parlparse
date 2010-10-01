@@ -2097,8 +2097,8 @@
 	id="uk.org.publicwhip/member/90272"
 	title="" firstname="Nigel" lastname="Dodds"
 	constituency="Belfast North" party="DUP"
-	fromdate="2007-03-09" todate="9999-12-31"
-	fromwhy="election" towhy="still_in_office"
+	fromdate="2007-03-09" todate="2010-09-10"
+	fromwhy="election" towhy="resigned"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90273"
@@ -2784,6 +2784,14 @@
 	title="" firstname="Simpson" lastname="Gibson"
 	constituency="Strangford" party="DUP"
 	fromdate="2010-08-02" todate="9999-12-31"
+	fromwhy="appointed" towhy="still_in_office"
+/>
+
+<member_ni
+	id="uk.org.publicwhip/member/90370"
+	title="" firstname="William" lastname="Humphrey"
+	constituency="Belfast North" party="DUP"
+	fromdate="2010-09-13" todate="9999-12-31"
 	fromwhy="appointed" towhy="still_in_office"
 />
 
