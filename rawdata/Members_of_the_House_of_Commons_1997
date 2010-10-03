@@ -13,9 +13,9 @@
 <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283s" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283s" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283s" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283u" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283u" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283u" type="text/css" media="print" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?117" type="text/css" media="all" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
@@ -58,8 +58,8 @@ wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2"
 wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "wikipedia": 4, "wikipedia_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "portal": 100, "portal_talk": 101, "book": 108, "book_talk": 109, "wp": 4, "wt": 5, "image": 6, "image_talk": 7},
 wgSiteName="Wikipedia",
 wgCategories=["Articles lacking sources from July 2009", "All articles lacking sources", "Lists of MPs elected in United Kingdom general elections", "1997 elections in the United Kingdom", "UK MPs 1997–2001"],
-wgMWSuggestTemplate="http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest",
 wgDBname="enwiki",
+wgMWSuggestTemplate="http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest",
 wgSearchNamespaces=[0],
 wgMWSuggestMessages=["with suggestions", "no suggestions"],
 wgRestrictionEdit=[],
@@ -71,18 +71,20 @@ wgCollapsibleNavBucketTest=false,
 wgCollapsibleNavForceNewVersion=false,
 wgVectorPreferences={"collapsiblenav": {"enable": 1}, "editwarning": {"enable": 1}, "simplesearch": {"enable": 1, "disablesuggest": 0}},
 wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "simplesearch": true},
-wgNotice="";
-</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283s" type="text/javascript"></script>
-<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283s"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283s" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283s" type="text/javascript"></script>
+wgArticleAssessmentJUIPath="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/js2stopgap/jui.combined.min.js",
+Geo={"city": "", "country": ""},
+wgNoticeProject="wikipedia";
+</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283u" type="text/javascript"></script>
+<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283u"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283u" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283u" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2.2" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283s" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283s" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283u" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283u" type="text/javascript"></script>
 <script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
-<script src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?283s" type="text/javascript"></script>
+<script src="/wiki/Special:BannerController?283u" type="text/javascript"></script>
 <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283s" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283u" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-List_of_MPs_elected_in_the_United_Kingdom_general_election_1997 skin-vector">
@@ -93,7 +95,7 @@ wgNotice="";
 			<a id="top"></a>
 			<div id="mw-js-message" style="display:none;"></div>
 						<!-- sitenotice -->
-			<div id="siteNotice"><script type="text/javascript">if (wgNotice != '') document.writeln(wgNotice);</script></div>
+			<div id="siteNotice"><!-- centralNotice loads here --></div>
 			<!-- /sitenotice -->
 						<!-- firstHeading -->
 			<h1 id="firstHeading" class="firstHeading">List of MPs elected in the United Kingdom general election, 1997</h1>
@@ -119,7 +121,7 @@ wgNotice="";
 <div style="width: 52px;"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/50px-Question_book-new.svg.png" width="50" height="39" /></div>
 </td>
 <td class="mbox-text" style="">This article <b>does not <a href="/wiki/Wikipedia:Citing_sources" title="Wikipedia:Citing sources">cite</a> any <a href="/wiki/Wikipedia:Verifiability" title="Wikipedia:Verifiability">references or sources</a></b>.<br />
-<small>Please help <a href="http://en.wikipedia.org/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_1997&amp;action=edit" class="external text" rel="nofollow">improve this article</a> by adding citations to <a href="/wiki/Wikipedia:Reliable_sources" title="Wikipedia:Reliable sources" class="mw-redirect">reliable sources</a>. Unsourced material may be <a href="/wiki/Template:Citation_needed" title="Template:Citation needed">challenged</a> and <a href="/wiki/Wikipedia:Verifiability#Burden_of_evidence" title="Wikipedia:Verifiability">removed</a>. <i>(July 2009)</i></small></td>
+<small>Please help <a href="http://en.wikipedia.org/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_1997&amp;action=edit" class="external text" rel="nofollow">improve this article</a> by adding citations to <a href="/wiki/Wikipedia:Identifying_reliable_sources" title="Wikipedia:Identifying reliable sources">reliable sources</a>. Unsourced material may be <a href="/wiki/Template:Citation_needed" title="Template:Citation needed">challenged</a> and <a href="/wiki/Wikipedia:Verifiability#Burden_of_evidence" title="Wikipedia:Verifiability">removed</a>. <i>(July 2009)</i></small> <small>(<i>Find sources:</i> <span class="plainlinks"><a href="http://www.google.com/search?&amp;as_eq=wikipedia&amp;as_epq=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+1997" class="external text" rel="nofollow">List of MPs elected in the United Kingdom general election, 1997</a></span> – <span class="plainlinks"><a href="http://news.google.com/archivesearch?&amp;as_src=-newswire+-wire+-presswire+-PR+-press+-release&amp;as_epq=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+1997" class="external text" rel="nofollow">news</a>, <a href="http://books.google.com/books?&amp;as_brr=0&amp;as_epq=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+1997" class="external text" rel="nofollow">books</a>, <a href="http://scholar.google.com/scholar?q=%22List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+1997%22" class="external text" rel="nofollow">scholar</a></span>)</small></td>
 </tr>
 </table>
 <table id="toc" style="float:right">
@@ -2438,7 +2440,7 @@ wgNotice="";
 </tr>
 <tr>
 <td><a href="/wiki/North_West_Durham_(UK_Parliament_constituency)" title="North West Durham (UK Parliament constituency)">North West Durham</a></td>
-<td><a href="/wiki/Hilary_Armstrong" title="Hilary Armstrong" class="mw-redirect">Hilary Armstrong</a></td>
+<td><a href="/wiki/Hilary_Armstrong" title="Hilary Armstrong">Hilary Armstrong</a></td>
 <td>Labour</td>
 </tr>
 <tr>
@@ -3708,13 +3710,13 @@ wgNotice="";
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 929/1000000
-Post-expand include size: 50228/2048000 bytes
-Template argument size: 34764/2048000 bytes
+Preprocessor node count: 940/1000000
+Post-expand include size: 54408/2048000 bytes
+Template argument size: 36200/2048000 bytes
 Expensive parser function count: 1/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:415690-0!1!0!default!!en!4 and timestamp 20100917221807 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:415690-0!1!0!default!!en!4 and timestamp 20101002175733 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_1997">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_1997</a>"</div>
 				<!-- /bodytext -->
@@ -3794,7 +3796,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
 			<input id="searchInput" name="search" type="text"  title="Search Wikipedia [f]" accesskey="f"  value="" />
-			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283s" alt="Search" /></button>
+			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283u" alt="Search" /></button>
 		</div>
 			</form>
 </div>
@@ -3819,6 +3821,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 					<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content — the best of Wikipedia">Featured content</a></li>
 					<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
 					<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+					<li id="n-variablepage" class="active" ><a href="/w/index.php?title=Special:VariablePage&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=spontaneous_donation">Donate</a></li>
 				</ul>
 			</div>
 </div>
@@ -3838,7 +3841,6 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 					<li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
 					<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
 					<li id="n-contact"><a href="/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
-					<li id="n-Donate-to-Wikipedia"><a href="/wiki/Special:VariablePage">Donate to Wikipedia</a></li>
 					<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
 				</ul>
 			</div>
@@ -3902,5 +3904,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-		<!-- Served by srv167 in 0.108 secs. -->			</body>
+		<!-- Served by srv177 in 0.111 secs. -->			</body>
 </html>
