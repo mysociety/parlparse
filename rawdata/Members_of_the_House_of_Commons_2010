@@ -47,7 +47,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=386794731,
+wgCurRevisionId=387637396,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -72,7 +72,8 @@ wgCollapsibleNavForceNewVersion=false,
 wgVectorPreferences={"collapsiblenav": {"enable": 1}, "editwarning": {"enable": 1}, "simplesearch": {"enable": 1, "disablesuggest": 0}},
 wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "simplesearch": true},
 wgArticleAssessmentJUIPath="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/js2stopgap/jui.combined.min.js",
-wgNotice="";
+Geo={"city": "", "country": ""},
+wgNoticeProject="wikipedia";
 </script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283u" type="text/javascript"></script>
 <script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283u"></script>
 <script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283u" type="text/javascript"></script>
@@ -81,7 +82,8 @@ wgNotice="";
 <script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283u" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283u" type="text/javascript"></script>
 <script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
-<script src="http://upload.wikimedia.org/centralnotice/wikipedia/en/centralnotice.js?283u" type="text/javascript"></script>
+<script src="http://geoiplookup.wikimedia.org/?283u" type="text/javascript"></script>
+<script src="/wiki/Special:BannerController?283u" type="text/javascript"></script>
 <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
 <script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283u" type="text/javascript"></script>
 
@@ -94,7 +96,7 @@ wgNotice="";
 			<a id="top"></a>
 			<div id="mw-js-message" style="display:none;"></div>
 						<!-- sitenotice -->
-			<div id="siteNotice"><script type="text/javascript">if (wgNotice != '') document.writeln(wgNotice);</script></div>
+			<div id="siteNotice"><!-- centralNotice loads here --></div>
 			<!-- /sitenotice -->
 						<!-- firstHeading -->
 			<h1 id="firstHeading" class="firstHeading">List of MPs elected in the United Kingdom general election, 2010</h1>
@@ -210,7 +212,7 @@ wgNotice="";
 <li><span class="citation wikicite" id="endnote_c2"><b><a href="#ref_c2">^2</a></b></span> Although Sinn Féin maintains offices at Westminster, the party's policy of <a href="/wiki/Abstentionism" title="Abstentionism">abstaining</a> from participation in the House of Commons (on account of disputing the UK parliament's claim to jurisdiction in Northern Ireland) precludes its MPs from taking their seats.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup></li>
 <li><span class="citation wikicite" id="endnote_c3"><b><a href="#ref_c3">^3</a></b></span> <a href="/wiki/John_Bercow" title="John Bercow">John Bercow</a> was re-elected for his <a href="/wiki/Buckingham_(UK_Parliament_constituency)" title="Buckingham (UK Parliament constituency)">Buckingham</a> constituency as <i>Speaker seeking re-election</i>.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>3<span>]</span></a></sup></li>
 <li><span class="citation wikicite" id="endnote_c4"><b><a href="#ref_c4">^4</a></b></span> Actual government majority includes the Conservative–Liberal Democrat coalition, and excludes members that do not vote (Sinn Féin, and the Speaker and his Deputies) and vacant seats.</li>
-<li><span class="citation wikicite" id="endnote_c5"><b><a href="#ref_c5">^5</a></b></span> <a href="/wiki/Lindsay_Hoyle" title="Lindsay Hoyle">Lindsay Hoyle</a> elected <a href="/wiki/Chairman_of_Ways_and_Means" title="Chairman of Ways and Means">Chairman of Ways and Means</a>, <a href="/wiki/Nigel_Evans" title="Nigel Evans">Nigel Evans</a> elected first deputy Chairman of Ways and Means, <a href="/wiki/Dawn_Primarolo" title="Dawn Primarolo">Dawn Primarolo</a> elected second Deputy Chairman of Ways and Means.</li>
+<li><span class="citation wikicite" id="endnote_c5"><b><a href="#ref_c5">^5</a></b></span> <a href="/wiki/Lindsay_Hoyle" title="Lindsay Hoyle">Lindsay Hoyle</a> elected <a href="/wiki/Chairman_of_Ways_and_Means" title="Chairman of Ways and Means">Chairman of Ways and Means</a>, <a href="/wiki/Nigel_Evans" title="Nigel Evans">Nigel Evans</a> elected first Deputy Chairman of Ways and Means, <a href="/wiki/Dawn_Primarolo" title="Dawn Primarolo">Dawn Primarolo</a> elected second Deputy Chairman of Ways and Means.</li>
 </ul>
 <h2><span class="editsection">[<a href="/w/index.php?title=Template:British_House_of_Commons_composition&amp;action=edit&amp;section=T-1" title="Template:British House of Commons composition">edit</a>]</span> <span class="mw-headline" id="Representation">Representation</span></h2>
 <p><a href="/wiki/File:Parliament2010UK.svg" class="image"><img alt="Parliament2010UK.svg" src="http://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Parliament2010UK.svg/739px-Parliament2010UK.svg.png" width="739" height="391" /></a><br />
@@ -5776,12 +5778,12 @@ Seat held</td>
 <!-- 
 NewPP limit report
 Preprocessor node count: 6714/1000000
-Post-expand include size: 119914/2048000 bytes
+Post-expand include size: 121245/2048000 bytes
 Template argument size: 38074/2048000 bytes
 Expensive parser function count: 1/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:26491796-0!1!0!default!!en!4 and timestamp 20100924185336 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:26491796-0!1!0!default!!en!4 and timestamp 20100929004254 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010</a>"</div>
 				<!-- /bodytext -->
@@ -5922,8 +5924,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;oldid=386794731" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;id=386794731" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;oldid=387637396" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;id=387637396" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -5933,7 +5935,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2010" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2010&amp;oldid=386794731&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2010" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2010&amp;oldid=387637396&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -5946,7 +5948,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 24 September 2010 at 18:52.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 29 September 2010 at 00:42.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -5969,5 +5971,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-		<!-- Served by srv203 in 0.066 secs. -->			</body>
+		<!-- Served by srv199 in 0.065 secs. -->			</body>
 </html>
