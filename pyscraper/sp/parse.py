@@ -1061,7 +1061,7 @@ class Parser:
                 else:
                     # If it's just a break, it's safe to ignore it in this situation:
                     if not (s.__class__ == Tag and s.name == 'br'):
-                        raise Exception, "Wanted to add '"+text_to_add+"' to the current speech, but there wasn't a current speech."
+                        raise Exception, "Wanted to add '"+s+"' to the current speech, but there wasn't a current speech."
                 continue
 
             if verbose: print '- '+s.name+" <-- got a tag with this name"
