@@ -123,7 +123,7 @@ def MpTellerList(fsm, vote, stampurl, sdate):
 
 			if len(res) >= 2:
 				print fsm
-				raise ContextException(' too many tellers ', stamp=stampurl, fragment=fsm)
+				raise ContextException(' too many tellers ', stamp=stampurl, fragment=fss)
 
 			# It always is
 			if fssf == 'Mr. Michael Foster':
