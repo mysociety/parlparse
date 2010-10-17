@@ -12,9 +12,9 @@
 <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283v" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283v" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283v" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283-1" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283-1" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283-1" type="text/css" media="print" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?117" type="text/css" media="all" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
@@ -73,17 +73,17 @@ wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwa
 wgArticleAssessmentJUIPath="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/js2stopgap/jui.combined.min.js",
 Geo={"city": "", "country": ""},
 wgNoticeProject="wikipedia";
-</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283v" type="text/javascript"></script>
-<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283v"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283v" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283v" type="text/javascript"></script>
+</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283-1" type="text/javascript"></script>
+<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283-1"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283-1" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283-1" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2.2" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283v" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283v" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-1" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-1" type="text/javascript"></script>
 <script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
-<script src="/wiki/Special:BannerController?283v" type="text/javascript"></script>
+<script src="/wiki/Special:BannerController?283-1" type="text/javascript"></script>
 <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283v" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-1" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-Members_of_the_Northern_Ireland_Assembly_elected_in_2007 skin-vector">
@@ -487,7 +487,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td align="right"><b>16</b></td>
 </tr>
 <tr>
-<th style="background-color: gold"></th>
+<th style="background-color: #FFD700"></th>
 <td><a href="/wiki/Alliance_Party_of_Northern_Ireland" title="Alliance Party of Northern Ireland">Alliance Party of Northern Ireland</a></td>
 <td>Other</td>
 <td align="right">7</td>
@@ -1103,7 +1103,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <li><a href="/wiki/Naomi_Long" title="Naomi Long">Naomi Long</a> was elected to the <a href="/wiki/Belfast_East_(UK_Parliament_constituency)" title="Belfast East (UK Parliament constituency)">Belfast East</a> parliamentary constituency, and <a href="/wiki/Ian_Paisley,_Jr." title="Ian Paisley, Jr.">Ian Paisley, Jr.</a> to the <a href="/wiki/North_Antrim_(UK_Parliament_constituency)" title="North Antrim (UK Parliament constituency)">North Antrim</a> parliamentary constituency on 6 May 2010. Both will be replaced as MLAs; <a href="/wiki/Ian_Paisley_Jr" title="Ian Paisley Jr" class="mw-redirect">Ian Paisley Jr</a> resigned on 21 June 2010 and was replaced by <a href="/wiki/Paul_Frew" title="Paul Frew">Paul Frew</a>,<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>7<span>]</span></a></sup><sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>8<span>]</span></a></sup> <a href="/wiki/Chris_Lyttle" title="Chris Lyttle">Chris Lyttle</a> replaced Naomi Long on 5 July.<sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span>[</span>9<span>]</span></a></sup> <a href="/wiki/Jeffrey_Donaldson" title="Jeffrey Donaldson">Jeffrey Donaldson</a> resigned on 10 June 2010 and was replaced by <a href="/wiki/Paul_Givan" title="Paul Givan">Paul Givan</a>; <a href="/wiki/David_Simpson_(UK_politician)" title="David Simpson (UK politician)">David Simpson</a> and <a href="/wiki/William_McCrea" title="William McCrea">William McCrea</a> were replaced by <a href="/wiki/Sydney_Anderson_(UK_politician)" title="Sydney Anderson (UK politician)" class="mw-redirect">Sydney Anderson</a> and <a href="/wiki/Paul_Girvan" title="Paul Girvan">Paul Girvan</a> on 1 July 2010, <a href="/wiki/Jim_Shannon" title="Jim Shannon">Jim Shannon</a> resigned on 1 August 2010 and was replaced by <a href="/wiki/Simpson_Gibson" title="Simpson Gibson">Simpson Gibson</a> on 2 August 2010, <a href="/wiki/Nigel_Dodds" title="Nigel Dodds">Nigel Dodds</a> resigned on 10 September 2010 and was replaced by <a href="/wiki/William_Humphrey_(UK_politician)" title="William Humphrey (UK politician)">William Humphrey</a> on 13 September 2010, and the two remaining DUP MPs/MLAs (<a href="/wiki/Gregory_Campbell_(politician)" title="Gregory Campbell (politician)">Gregory Campbell</a> and <a href="/wiki/Sammy_Wilson" title="Sammy Wilson">Sammy Wilson</a>) as well as <a href="/wiki/Mark_Durkan" title="Mark Durkan">Mark Durkan</a> are expected to follow.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>10<span>]</span></a></sup><sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>11<span>]</span></a></sup></li>
 </ul>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;action=edit&amp;section=5" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
-<div class="references-small">
+<div class="references-small" style="">
 <ol class="references">
 <li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> <a href="http://news.bbc.co.uk/1/hi/northern_ireland/6633433.stm" class="external text" rel="nofollow">BBC NEWS | Northern Ireland | DUP assembly member Dawson dies</a></li>
 <li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <a href="http://news.bbc.co.uk/2/hi/uk_news/northern_ireland/7125105.stm" class="external text" rel="nofollow">BBC NEWS | UK | Northern Ireland | 'Disillusioned' SF man resigns</a></li>
@@ -1251,13 +1251,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 1814/1000000
-Post-expand include size: 64267/2048000 bytes
+Preprocessor node count: 1817/1000000
+Post-expand include size: 64314/2048000 bytes
 Template argument size: 30461/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!4 and timestamp 20101004115426 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!4 and timestamp 20101012112922 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007">http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007</a>"</div>
 				<!-- /bodytext -->
@@ -1337,7 +1337,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
 			<input id="searchInput" name="search" type="text"  title="Search Wikipedia [f]" accesskey="f"  value="" />
-			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283v" alt="Search" /></button>
+			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283-1" alt="Search" /></button>
 		</div>
 			</form>
 </div>
@@ -1445,5 +1445,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-		<!-- Served by srv286 in 0.826 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv271 in 0.040 secs. -->			</body>
 </html>
