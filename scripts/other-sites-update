@@ -15,7 +15,7 @@ PRODSCRIPT=ukparse-morning-update-done.cgi
 # snarf -q http://cake.ukcod.org.uk/~fawkes/$PRODSCRIPT/$RET - > /dev/null &
 
 # And new TheyWorkForYou
-snarf -q http://sponge.theyworkforyou.com/internal/$PRODSCRIPT/$RET - > /dev/null &
+snarf -q http://www.theyworkforyou.com/internal/$PRODSCRIPT/$RET - > /dev/null &
 
 # Update division archive for Public Whip to feed from
 `dirname $0`/divisionextractor.pl
