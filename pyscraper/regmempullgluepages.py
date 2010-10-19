@@ -9,6 +9,7 @@ import os.path
 import time
 import mx.DateTime
 import tempfile
+import BeautifulSoup
 
 import miscfuncs
 toppath = miscfuncs.toppath
@@ -22,6 +23,31 @@ pwcmregmem = os.path.join(pwcmdirs, "regmem")
 pwldregmem = os.path.join(pwcmdirs, "ldregmem")
 
 tempfilename = tempfile.mktemp("", "pw-gluetemp-", miscfuncs.tmppath)
+
+# Scrape everything from the contents page
+def GlueByContents(fout, url, regmemdate):
+	ur = urllib.urlopen(url)
+	sr = ur.read()
+	ur.close()
+
+        soup = BeautifulSoup.BeautifulSoup(sr)
+        mps = soup.find('a', attrs={'name':'A'}).parent.findNextSiblings('p')
+        for p in mps:
+		ur = urlparse.urljoin(url, p.a['href'])
+                print " reading " + ur
+	        ur = urllib.urlopen(ur)
+	        sr = ur.read()
+	        ur.close()
+
+		# write the marker telling us which page this comes from
+                lt = time.gmtime()
+                fout.write('<page url="%s" scrapedate="%s" scrapetime="%s"/>\n' % \
+			(url, time.strftime('%Y-%m-%d', lt), time.strftime('%X', lt)))
+
+                soup_mp = BeautifulSoup.BeautifulSoup(sr)
+                page = soup_mp.find('h1').findNextSiblings(lambda t: t.name != 'div')
+                page = '\n'.join([ str(p) for p in page ]) + '\n'
+                miscfuncs.WriteCleanText(fout, page)
 
 def GlueByNext(fout, url, regmemdate):
 	# loop which scrapes through all the pages following the nextlinks
@@ -128,7 +154,10 @@ def GlueAllType(pcmdir, cmindex, fproto, deleteoutput):
 
                     # now we take out the local pointer and start the gluing
                     dtemp = open(tempfilename, "w")
-                    GlueByNext(dtemp, url, dnu[0])
+                    if dnu[0] > '2010-09-01':
+                        GlueByContents(dtemp, url, dnu[0])
+                    else:
+                        GlueByNext(dtemp, url, dnu[0])
 
                     # close and move
                     dtemp.close()
@@ -144,13 +173,15 @@ def FindRegmemPages():
         content = ur.read()
         ur.close();
 
+        # Remove comments
+        content = re.sub('<!--.*?-->(?s)', '', content)
+
         # <A HREF="/pa/cm199900/cmregmem/memi02.htm">Register 
         #              of Members' Interests November 2000</A>
         allurls = re.findall('<a href="([^>]*)">(?i)', content)
         for url in allurls:
                 #print url
-                if url.find("100203/") >= 0: continue # Temporary until they fix issue with different dupes
-                if url.find("memi02") >= 0:
+                if url.find("memi02") >= 0 or url.find("part1contents") >= 0:
                         url = urlparse.urljoin(ixurl, url)
 
                         # find date
@@ -159,7 +190,7 @@ def FindRegmemPages():
                         ur.close();
                         # <B>14&nbsp;May&nbsp;2001&nbsp;(Dissolution)</B>
                         content = content.replace("&nbsp;", " ")
-                        alldates = re.findall('<[Bb]>(\d+ [A-Z][a-z]* \d\d\d\d)', content)
+                        alldates = re.findall('(?i)<(?:b|strong)>(\d+[a-z]* [A-Z][a-z]* \d\d\d\d)', content)
                         if len(alldates) != 1:
                                 print alldates
                                 raise Exception, 'Date match failed, expected one got %d\n%s' % (len(alldates), url)
