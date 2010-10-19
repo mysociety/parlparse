@@ -25,17 +25,17 @@ pwldregmem = os.path.join(pwcmdirs, "ldregmem")
 tempfilename = tempfile.mktemp("", "pw-gluetemp-", miscfuncs.tmppath)
 
 # Scrape everything from the contents page
-def GlueByContents(fout, url, regmemdate):
-	ur = urllib.urlopen(url)
+def GlueByContents(fout, url_contents, regmemdate):
+	ur = urllib.urlopen(url_contents)
 	sr = ur.read()
 	ur.close()
 
         soup = BeautifulSoup.BeautifulSoup(sr)
         mps = soup.find('a', attrs={'name':'A'}).parent.findNextSiblings('p')
         for p in mps:
-		ur = urlparse.urljoin(url, p.a['href'])
-                print " reading " + ur
-	        ur = urllib.urlopen(ur)
+		url = urlparse.urljoin(url_contents, p.a['href'])
+                print " reading " + url
+	        ur = urllib.urlopen(url)
 	        sr = ur.read()
 	        ur.close()
 
