@@ -16,7 +16,7 @@ cd ~/parlparse/pyscraper
 ./lazyrunall.py scrape chgpages
 
 # Regenerate minister pages file
-./lazyrunall.py parse chgpages
+#./lazyrunall.py parse chgpages
 cd ../members
 svn -q update all-members.xml # Be sure to have latest list of all members!
 svn -q update peers-ucl.xml
