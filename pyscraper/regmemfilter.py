@@ -6,6 +6,7 @@ import os
 import string
 import sets
 
+from BeautifulSoup import BeautifulStoneSoup
 from contextexception import ContextException
 from resolvemembernames import memberList
 from miscfuncs import FixHTMLEntities
@@ -20,12 +21,84 @@ pwxmldirs = os.path.join(toppath, "scrapedxml")
 if not os.path.isdir(pwxmldirs):
 	os.mkdir(pwxmldirs)
 
+def RunRegmemFilters2010(fout, text, sdate, sdatever):
+        print "2010-? new register of members interests!  Check it is working properly (via mpinfoin.pl) - %s" % sdate
+
+        WriteXMLHeader(fout)
+	fout.write("<publicwhip>\n")
+        
+        memberset = sets.Set()
+        t = BeautifulStoneSoup(text)
+        for page in t('page'):
+                title = page.h2.renderContents()
+                res = re.search("^([^,]*), ([^(]*) \((.*)\)$", title)
+                if not res:
+                        raise ContextException, "Failed to break up into first/last/cons: %s" % title
+                (lastname, firstname, constituency) = res.groups()
+                firstname = memberList.striptitles(firstname)[0].decode('utf-8')
+                lastname = memberList.lowercaselastname(lastname).decode('utf-8')
+                constituency = constituency.decode('utf-8')
+                lastname = lastname.replace(u'O\u2019brien', "O'Brien") # Hmm
+                (id, remadename, remadecons) = memberList.matchfullnamecons(firstname + " " + lastname, constituency, sdate)
+                if not id:
+                        raise ContextException, "Failed to match name %s %s (%s) date %s\n" % (firstname, lastname, constituency, sdate)
+                fout.write(('<regmem personid="%s" memberid="%s" membername="%s" date="%s">\n' % (memberList.membertoperson(id), id, remadename, sdate)).encode("latin-1"))
+                memberset.add(id)
+                category = None
+                categoryname = None
+                subcategory = None
+                for row in page.h2.findNextSiblings():
+                        text = row.renderContents().decode('utf-8').encode('iso-8859-1', 'xmlcharrefreplace')
+                        if not text or re.match('\s*\.\s*$', text): continue
+                        if re.match('\s*Nil\.?\s*$', text):
+                                fout.write('Nil.\n')
+                                continue
+                        if row.name == 'h3':
+                                if re.match('\s*$', text): continue
+                                m = re.match("\s*(\d\d?)\.\s*(.*)$", text)
+                                if m:
+                                        if category:
+                                                fout.write('\t</category>\n')
+                                        category, categoryname = m.groups()
+                                        subcategory = None
+                                        fout.write('\t<category type="%s" name="%s">\n' % (category, categoryname))
+                                        continue
+                        if row.get('class') == 'spacer': continue
+                        subcategorymatch = re.match("\s*\(([ab])\)\s*(.*)$", text)
+                        if subcategorymatch:
+                                subcategory = subcategorymatch.group(1)
+                                fout.write('\t\t(%s)\n' % subcategory)
+                                fout.write('\t\t<item subcategory="%s">%s</item>\n' % (subcategory, subcategorymatch.group(2)))
+                                continue
+                        if subcategory:
+                                fout.write('\t\t<item subcategory="%s">%s</item>\n' % (subcategory, text))
+                        else:
+                                fout.write('\t\t<item>%s</item>\n' % text)
+                if category:
+                        fout.write('\t</category>\n')
+                fout.write('</regmem>\n')                                
+
+        membersetexpect = sets.Set(memberList.mpslistondate(sdate))
+        
+        # check for missing/extra entries
+        missing = membersetexpect.difference(memberset)
+        if len(missing) > 0:
+                print "Missing %d MP entries:\n" % len(missing), missing
+        extra = memberset.difference(membersetexpect)
+        if len(extra) > 0:
+                print "Extra %d MP entries:\n" % len(extra), extra
+
+	fout.write("</publicwhip>\n")
+
 # Legacy patch system, use patchfilter.py and patchtool now
 fixsubs = 	[
 	( 'Nestle&#171;', 'Nestle', 1, '2004-01-31' ),
 ]
 
 def RunRegmemFilters(fout, text, sdate, sdatever):
+        if sdate >= '2010-09-01':
+                return RunRegmemFilters2010(fout, text, sdate, sdatever)
+
         # message for cron so I check I'm using this
         print "New register of members interests!  Check it is working properly (via mpinfoin.pl) - %s" % sdate
 
