@@ -13,9 +13,9 @@
 <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283y" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283y" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283y" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283-5" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283-5" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283-5" type="text/css" media="print" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?117" type="text/css" media="all" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
@@ -47,7 +47,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=385149458,
+wgCurRevisionId=391917545,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -74,17 +74,17 @@ wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwa
 wgArticleAssessmentJUIPath="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/js2stopgap/jui.combined.min.js",
 Geo={"city": "", "country": ""},
 wgNoticeProject="wikipedia";
-</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283y" type="text/javascript"></script>
-<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283y"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283y" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283y" type="text/javascript"></script>
+</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283-5" type="text/javascript"></script>
+<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283-5"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283-5" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283-5" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2.2" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283y" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283y" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-5" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-5" type="text/javascript"></script>
 <script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
-<script src="/wiki/Special:BannerController?283y" type="text/javascript"></script>
+<script src="/wiki/Special:BannerController?283-5" type="text/javascript"></script>
 <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283y" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-5" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-List_of_MPs_elected_in_the_United_Kingdom_general_election_2001 skin-vector">
@@ -681,7 +681,7 @@ wgNoticeProject="wikipedia";
 </tr>
 <tr>
 <td><a href="/wiki/Blaydon_(UK_Parliament_constituency)" title="Blaydon (UK Parliament constituency)">Blaydon</a></td>
-<td><a href="/wiki/John_David_McWilliam" title="John David McWilliam">John David McWilliam</a></td>
+<td><a href="/wiki/John_David_McWilliam" title="John David McWilliam" class="mw-redirect">John David McWilliam</a></td>
 <td>Labour</td>
 <td>John David McWilliam</td>
 <td>Labour</td>
@@ -2272,7 +2272,7 @@ wgNoticeProject="wikipedia";
 </tr>
 <tr>
 <td><a href="/wiki/Louth_and_Horncastle_(UK_Parliament_constituency)" title="Louth and Horncastle (UK Parliament constituency)">Louth and Horncastle</a></td>
-<td>Sir <a href="/wiki/Peter_Tapsell_(UK_politician)" title="Peter Tapsell (UK politician)">Peter Tapsell</a></td>
+<td>Sir <a href="/wiki/Peter_Tapsell_(UK_politician)" title="Peter Tapsell (UK politician)" class="mw-redirect">Peter Tapsell</a></td>
 <td>Conservative</td>
 </tr>
 <tr>
@@ -3223,7 +3223,7 @@ wgNoticeProject="wikipedia";
 </tr>
 <tr>
 <td><a href="/wiki/South_West_Norfolk_(UK_Parliament_constituency)" title="South West Norfolk (UK Parliament constituency)">South West Norfolk</a></td>
-<td><a href="/wiki/Gillian_Shephard" title="Gillian Shephard" class="mw-redirect">Gillian Shephard</a></td>
+<td><a href="/wiki/Gillian_Shephard" title="Gillian Shephard">Gillian Shephard</a></td>
 <td>Conservative</td>
 </tr>
 <tr>
@@ -3708,7 +3708,7 @@ wgNoticeProject="wikipedia";
 </tr>
 <tr>
 <td><a href="/wiki/West_Worcestershire_(UK_Parliament_constituency)" title="West Worcestershire (UK Parliament constituency)">West Worcestershire</a></td>
-<td>Sir <a href="/wiki/Michael_Spicer" title="Michael Spicer" class="mw-redirect">Michael Spicer</a></td>
+<td><a href="/wiki/Michael_Spicer,_Baron_Spicer" title="Michael Spicer, Baron Spicer">Sir Michael Spicer</a></td>
 <td>Conservative</td>
 </tr>
 <tr>
@@ -3959,7 +3959,7 @@ Template argument size: 33251/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!4 and timestamp 20101008102709 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!4 and timestamp 20101022124954 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001</a>"</div>
 				<!-- /bodytext -->
@@ -4039,7 +4039,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
 			<input id="searchInput" name="search" type="text"  title="Search Wikipedia [f]" accesskey="f"  value="" />
-			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283y" alt="Search" /></button>
+			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283-5" alt="Search" /></button>
 		</div>
 			</form>
 </div>
@@ -4100,8 +4100,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;oldid=385149458" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;id=385149458" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;oldid=391917545" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;id=391917545" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -4111,7 +4111,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2001" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2001&amp;oldid=385149458&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2001" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2001&amp;oldid=391917545&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -4132,7 +4132,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 16 September 2010 at 11:04.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 20 October 2010 at 21:53.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -4155,5 +4155,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv229 in 0.061 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv246 in 0.079 secs. -->			</body>
 </html>
