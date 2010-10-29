@@ -135,7 +135,10 @@ class WrittenAnswerParser(xml.sax.handler.ContentHandler):
 
     def startElement(self,name,attr):
         if name == "ques":
-            spid = attr["spid"]
+            try:
+                spid = attr["spid"]
+            except:
+                import pdb;pdb.set_trace()
             gid = attr["id"]
             holding_date_string = None
             if attr.has_key("holdingdate"):
