@@ -46,7 +46,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=392443769,
+wgCurRevisionId=393839528,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -211,7 +211,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Bishop_of_Chichester" title="Bishop of Chichester">The Lord Bishop of Chichester</a></td>
 <td><a href="/wiki/John_William_Hind" title="John William Hind" class="mw-redirect">John William Hind</a></td>
 <td>2008</td>
-<td>1993</td>
+<td>2001</td>
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Derby" title="Bishop of Derby">The Lord Bishop of Derby</a></td>
@@ -718,7 +718,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Michael_Boyce,_Baron_Boyce" title="Michael Boyce, Baron Boyce">The Lord Boyce</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former <a href="/wiki/Chief_of_the_Defence_Staff_(United_Kingdom)" title="Chief of the Defence Staff (United Kingdom)">Chief of the Defence Staff</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Colin_Boyd,_Baron_Boyd_of_Duncansby" title="Colin Boyd, Baron Boyd of Duncansby">The Lord Boyd of Duncansby</a></td>
@@ -754,7 +754,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Edwin_Bramall,_Baron_Bramall" title="Edwin Bramall, Baron Bramall">The Lord Bramall</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former <a href="/wiki/Chief_of_the_Defence_Staff_(United_Kingdom)" title="Chief of the Defence Staff (United Kingdom)">Chief of the Defence Staff</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Daniel_Brennan,_Baron_Brennan" title="Daniel Brennan, Baron Brennan">The Lord Brennan</a></td>
@@ -1150,7 +1150,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/David_Craig,_Baron_Craig_of_Radley" title="David Craig, Baron Craig of Radley">The Lord Craig of Radley</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former <a href="/wiki/Chief_of_the_Defence_Staff_(United_Kingdom)" title="Chief of the Defence Staff (United Kingdom)">Chief of the Defence Staff</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Janric_Craig,_3rd_Viscount_Craigavon" title="Janric Craig, 3rd Viscount Craigavon">The Viscount Craigavon</a></td>
@@ -1840,7 +1840,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Charles_Guthrie,_Baron_Guthrie_of_Craigiebank" title="Charles Guthrie, Baron Guthrie of Craigiebank">The Lord Guthrie of Craigiebank</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former <a href="/wiki/Chief_of_the_Defence_Staff_(United_Kingdom)" title="Chief of the Defence Staff (United Kingdom)">Chief of the Defence Staff</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Tony_Hall,_Baron_Hall_of_Birkenhead" title="Tony Hall, Baron Hall of Birkenhead">The Lord Hall of Birkenhead</a></td>
@@ -2212,7 +2212,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Peter_Inge,_Baron_Inge" title="Peter Inge, Baron Inge">The Lord Inge</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former <a href="/wiki/Chief_of_the_Defence_Staff_(United_Kingdom)" title="Chief of the Defence Staff (United Kingdom)">Chief of the Defence Staff</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Richard_Vane,_2nd_Baron_Inglewood" title="Richard Vane, 2nd Baron Inglewood" class="mw-redirect">The Lord Inglewood</a></td>
@@ -3913,7 +3913,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Antony_Armstrong-Jones,_1st_Earl_of_Snowdon" title="Antony Armstrong-Jones, 1st Earl of Snowdon">The Earl of Snowdon</a></td>
+<td><a href="/wiki/Antony_Armstrong-Jones,_1st_Earl_of_Snowdon" title="Antony Armstrong-Jones, 1st Earl of Snowdon" class="mw-redirect">The Earl of Snowdon</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td>Hereditary peer who sits by virtue of a life peerage, Baron Armstrong-Jones</td>
@@ -4324,7 +4324,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Richard_Vincent,_Baron_Vincent_of_Coleshill" title="Richard Vincent, Baron Vincent of Coleshill">The Lord Vincent of Coleshill</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former <a href="/wiki/Chief_of_the_Defence_Staff_(United_Kingdom)" title="Chief of the Defence Staff (United Kingdom)">Chief of the Defence Staff</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Nigel_Vinson,_Baron_Vinson" title="Nigel Vinson, Baron Vinson">The Lord Vinson</a></td>
@@ -4360,7 +4360,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Michael_Walker,_Baron_Walker_of_Aldringham" title="Michael Walker, Baron Walker of Aldringham">The Lord Walker of Aldringham</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former <a href="/wiki/Chief_of_the_Defence_Staff_(United_Kingdom)" title="Chief of the Defence Staff (United Kingdom)">Chief of the Defence Staff</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Margaret_Wall" title="Margaret Wall" class="mw-redirect">The Baroness Wall of New Barnet</a></td>
@@ -4495,12 +4495,6 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Michael_C._Williams_(United_Nations)" title="Michael C. Williams (United Nations)">The Lord Williams of Baglan</a></td>
-<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="/wiki/Baroness_Williams_of_Crosby" title="Baroness Williams of Crosby" class="mw-redirect">The Baroness Williams of Crosby</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
@@ -4619,8 +4613,8 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
 <td></td>
-<td><a href="/w/index.php?title=Robert_Saint-John,_Baron_Saint-John_of_York&amp;action=edit&amp;redlink=1" class="new" title="Robert Saint-John, Baron Saint-John of York (page does not exist)">The Baron Saint-John of York</a></td>
-<td><a href="/wiki/Cross_Bench" title="Cross Bench" class="mw-redirect">Cross Bench</a>
+</tr>
+</table>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=3" title="Edit section: Recently deceased">edit</a>]</span> <span class="mw-headline" id="Recently_deceased">Recently deceased</span></h2>
 <p>The following peers have died since 1 January 2010:<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup></p>
 <table class="wikitable sortable">
@@ -4838,6 +4832,12 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
+<tr>
+<td><a href="/wiki/Michael_C._Williams_(United_Nations)" title="Michael C. Williams (United Nations)">The Lord Williams of Baglan</a></td>
+<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
 </table>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=5" title="Edit section: Peers disqualified as senior members of the judiciary">edit</a>]</span> <span class="mw-headline" id="Peers_disqualified_as_senior_members_of_the_judiciary">Peers disqualified as senior members of the judiciary</span></h2>
 <p>Per section 137 (3) of the <a href="/wiki/Constitutional_Reform_Act_2005" title="Constitutional Reform Act 2005">Constitutional Reform Act 2005</a>, holders of certain judicial offices who are peers are disqualified from sitting and voting in the House of Lords while in office.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span>[</span>4<span>]</span></a></sup> The following peers are currently subject to this provison:</p>
@@ -4878,9 +4878,6 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <ul>
 <li><a href="http://www.parliament.uk/mps-lords-and-offices/lords/" class="external text" rel="nofollow">United Kingdom Parliament Alphabetical List of Members of the House of Lords</a></li>
 </ul>
-</td>
-</tr>
-</table>
 
 
 <!-- 
@@ -4891,7 +4888,7 @@ Template argument size: 5407/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!4 and timestamp 20101023180148 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!4 and timestamp 20101030192128 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 				<!-- /bodytext -->
@@ -5032,8 +5029,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=392443769" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=392443769" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=393839528" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=393839528" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -5043,7 +5040,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=392443769&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=393839528&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -5064,7 +5061,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 23 October 2010 at 18:01.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 30 October 2010 at 19:20.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -5087,5 +5084,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv280 in 0.067 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv153 in 0.066 secs. -->			</body>
 </html>
