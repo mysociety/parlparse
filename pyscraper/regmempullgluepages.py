@@ -44,6 +44,7 @@ def GlueByContents(fout, url_contents, regmemdate):
                 fout.write('<page url="%s" scrapedate="%s" scrapetime="%s"/>\n' % \
 			(url, time.strftime('%Y-%m-%d', lt), time.strftime('%X', lt)))
 
+                sr = re.sub('<p([^>]*)/>', r'<p\1></p>', sr)
                 soup_mp = BeautifulSoup.BeautifulSoup(sr)
                 page = soup_mp.find('h1').findNextSiblings(lambda t: t.name != 'div')
                 page = '\n'.join([ str(p) for p in page ]) + '\n'
@@ -135,6 +136,9 @@ def GlueAllType(pcmdir, cmindex, fproto, deleteoutput):
                     # hansard index page
                     url = dnu[1]
 
+                    # If already got file and it's recent, skip
+                    if os.path.exists(dgf) and dnu[0] > '2010-09-01':
+                        continue
                     # if we already have got the file, check the pagex link agrees in the first line
                     # no need to scrape it in again
                     if os.path.exists(dgf):
@@ -167,7 +171,7 @@ def GlueAllType(pcmdir, cmindex, fproto, deleteoutput):
 def FindRegmemPages():
         urls = []
         # Meta index is here: 'http://www.publications.parliament.uk/pa/cm/cmregmem.htm'
-        ixurl = 'http://www.publications.parliament.uk/pa/cm/cmregmem/memi02.htm'
+        ixurl = 'http://www.publications.parliament.uk/pa/cm/cmregmem/contents.htm'
         # print "IXURL", ixurl
         ur = urllib.urlopen(ixurl)
         content = ur.read()
