@@ -46,7 +46,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=393839528,
+wgCurRevisionId=394544088,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -81,7 +81,7 @@ wgNoticeProject="wikipedia";
 <script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-5" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-5" type="text/javascript"></script>
 <script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
-<script src="/wiki/Special:BannerController?283-5" type="text/javascript"></script>
+<script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;283-5" type="text/javascript"></script>
 <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
 <script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-5" type="text/javascript"></script>
 
@@ -123,13 +123,16 @@ wgNoticeProject="wikipedia";
 </div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="#Lords_Spiritual"><span class="tocnumber">1</span> <span class="toctext">Lords Spiritual</span></a></li>
-<li class="toclevel-1 tocsection-2"><a href="#Lords_Temporal"><span class="tocnumber">2</span> <span class="toctext">Lords Temporal</span></a></li>
-<li class="toclevel-1 tocsection-3"><a href="#Recently_deceased"><span class="tocnumber">3</span> <span class="toctext">Recently deceased</span></a></li>
-<li class="toclevel-1 tocsection-4"><a href="#Peers_on_leave_of_absence"><span class="tocnumber">4</span> <span class="toctext">Peers on leave of absence</span></a></li>
-<li class="toclevel-1 tocsection-5"><a href="#Peers_disqualified_as_senior_members_of_the_judiciary"><span class="tocnumber">5</span> <span class="toctext">Peers disqualified as senior members of the judiciary</span></a></li>
-<li class="toclevel-1 tocsection-6"><a href="#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
-<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
-<li class="toclevel-1 tocsection-8"><a href="#External_links"><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Lords_Temporal"><span class="tocnumber">2</span> <span class="toctext">Lords Temporal</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Peers_on_leave_of_absence"><span class="tocnumber">2.1</span> <span class="toctext">Peers on leave of absence</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Recently_deceased"><span class="tocnumber">3</span> <span class="toctext">Recently deceased</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Peers_disqualified_as_senior_members_of_the_judiciary"><span class="tocnumber">4</span> <span class="toctext">Peers disqualified as senior members of the judiciary</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#External_links"><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
 </ul>
 </td>
 </tr>
@@ -2377,12 +2380,6 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Robin_Leigh-Pemberton,_Baron_Kingsdown" title="Robin Leigh-Pemberton, Baron Kingsdown">The Lord Kingsdown</a></td>
-<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="/wiki/Denise_Kingsmill,_Baroness_Kingsmill" title="Denise Kingsmill, Baroness Kingsmill">The Baroness Kingsmill</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
@@ -4615,8 +4612,132 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 </table>
-<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=3" title="Edit section: Recently deceased">edit</a>]</span> <span class="mw-headline" id="Recently_deceased">Recently deceased</span></h2>
-<p>The following peers have died since 1 January 2010:<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup></p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=3" title="Edit section: Peers on leave of absence">edit</a>]</span> <span class="mw-headline" id="Peers_on_leave_of_absence">Peers on leave of absence</span></h3>
+<p>The following peers were granted a <a href="/wiki/House_of_Lords#Leave_of_Absence" title="House of Lords">Leave of Absence</a> for the remainder of the session or the current parliament<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup> under section 23 of the Standing Orders of the House of Lords<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup>:</p>
+<table class="wikitable sortable">
+<tr>
+<th>Lord</th>
+<th>Party</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+<tr>
+<td><a href="/wiki/Valerie_Amos" title="Valerie Amos" class="mw-redirect">The Baroness Amos</a></td>
+<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/Catherine_Ashton,_Baroness_Ashton_of_Upholland" title="Catherine Ashton, Baroness Ashton of Upholland" class="mw-redirect">The Baroness Ashton of Upholland</a></td>
+<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/Elizabeth_Carnegy,_Baroness_Carnegy_of_Lour" title="Elizabeth Carnegy, Baroness Carnegy of Lour">The Baroness Carnegy of Lour</a></td>
+<td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/Alun_Gwynne_Jones,_Baron_Chalfont" title="Alun Gwynne Jones, Baron Chalfont">The Lord Chalfont</a></td>
+<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/David_Cholmondeley,_7th_Marquess_of_Cholmondeley" title="David Cholmondeley, 7th Marquess of Cholmondeley">The Marquess of Cholmondeley</a></td>
+<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
+<td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
+<td><a href="/wiki/Lord_Great_Chamberlain" title="Lord Great Chamberlain">Lord Great Chamberlain</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Robert_Goff,_Baron_Goff_of_Chieveley" title="Robert Goff, Baron Goff of Chieveley">The Lord Goff of Chieveley</a></td>
+<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
+<td><a href="/wiki/List_of_law_life_peerages" title="List of law life peerages">Law life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/Baron_Habgood" title="Baron Habgood" class="mw-redirect">The Lord Habgood</a></td>
+<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/Jeremy_Hutchinson,_Baron_Hutchinson_of_Lullington" title="Jeremy Hutchinson, Baron Hutchinson of Lullington">The Lord Hutchinson of Lullington</a></td>
+<td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/Robert_Kilpatrick,_Lord_Kilpatrick_of_Kincraig" title="Robert Kilpatrick, Lord Kilpatrick of Kincraig">The Lord Kilpatrick of Kincraig</a></td>
+<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/Robin_Leigh-Pemberton,_Baron_Kingsdown" title="Robin Leigh-Pemberton, Baron Kingsdown">The Lord Kingsdown</a></td>
+<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/George_Mackie,_Baron_Mackie_of_Benshie" title="George Mackie, Baron Mackie of Benshie">The Lord Mackie of Benshie</a></td>
+<td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/William_McCarthy,_Baron_McCarthy" title="William McCarthy, Baron McCarthy">The Lord McCarthy</a></td>
+<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/Donald_Chapman,_Baron_Northfield" title="Donald Chapman, Baron Northfield">The Lord Northfield</a></td>
+<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/James_Prior,_Baron_Prior" title="James Prior, Baron Prior">The Lord Prior</a></td>
+<td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/Baron_Randall_of_St_Budeaux" title="Baron Randall of St Budeaux" class="mw-redirect">The Lord Randall of St Budeaux</a></td>
+<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/Baron_Sainsbury_of_Preston_Candover" title="Baron Sainsbury of Preston Candover" class="mw-redirect">The Lord Sainsbury of Preston Candover</a></td>
+<td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/Robert_Gascoyne-Cecil,_7th_Marquess_of_Salisbury" title="Robert Gascoyne-Cecil, 7th Marquess of Salisbury">The Marquess of Salisbury</a></td>
+<td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td>Hereditary peer who sits by virtue of a life peerage, Baron Gascoyne-Cecil</td>
+</tr>
+<tr>
+<td><a href="/wiki/Baron_Simon_of_Highbury" title="Baron Simon of Highbury" class="mw-redirect">The Lord Simon of Highbury</a></td>
+<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/Michael_C._Williams_(United_Nations)" title="Michael C. Williams (United Nations)">The Lord Williams of Baglan</a></td>
+<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+</table>
+<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=4" title="Edit section: Recently deceased">edit</a>]</span> <span class="mw-headline" id="Recently_deceased">Recently deceased</span></h2>
+<p>The following peers have died since 1 January 2010<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>3<span>]</span></a></sup>:</p>
 <table class="wikitable sortable">
 <tr>
 <th>Name</th>
@@ -4721,124 +4842,6 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 </tr>
 </table>
-<h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=4" title="Edit section: Peers on leave of absence">edit</a>]</span> <span class="mw-headline" id="Peers_on_leave_of_absence">Peers on leave of absence</span></h2>
-<p>Per § 23 Standing Orders of the House of Lords,<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup> the following peers were granted a <a href="/wiki/House_of_Lords#Leave_of_Absence" title="House of Lords">Leave of Absence</a> for the remainder of the session or the parliament.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>3<span>]</span></a></sup></p>
-<table class="wikitable sortable">
-<tr>
-<th>Lord</th>
-<th>Party</th>
-<th>Type</th>
-<th>Notes</th>
-</tr>
-<tr>
-<td><a href="/wiki/Valerie_Amos" title="Valerie Amos" class="mw-redirect">The Baroness Amos</a></td>
-<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/Catherine_Ashton,_Baroness_Ashton_of_Upholland" title="Catherine Ashton, Baroness Ashton of Upholland" class="mw-redirect">The Baroness Ashton of Upholland</a></td>
-<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/Elizabeth_Carnegy,_Baroness_Carnegy_of_Lour" title="Elizabeth Carnegy, Baroness Carnegy of Lour">The Baroness Carnegy of Lour</a></td>
-<td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/Alun_Gwynne_Jones,_Baron_Chalfont" title="Alun Gwynne Jones, Baron Chalfont">The Lord Chalfont</a></td>
-<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/David_Cholmondeley,_7th_Marquess_of_Cholmondeley" title="David Cholmondeley, 7th Marquess of Cholmondeley">The Marquess of Cholmondeley</a></td>
-<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
-<td><a href="/wiki/Lord_Great_Chamberlain" title="Lord Great Chamberlain">Lord Great Chamberlain</a></td>
-</tr>
-<tr>
-<td><a href="/wiki/Robert_Goff,_Baron_Goff_of_Chieveley" title="Robert Goff, Baron Goff of Chieveley">The Lord Goff of Chieveley</a></td>
-<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td><a href="/wiki/List_of_law_life_peerages" title="List of law life peerages">Law life peer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/Baron_Habgood" title="Baron Habgood" class="mw-redirect">The Lord Habgood</a></td>
-<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/Jeremy_Hutchinson,_Baron_Hutchinson_of_Lullington" title="Jeremy Hutchinson, Baron Hutchinson of Lullington">The Lord Hutchinson of Lullington</a></td>
-<td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/Robert_Kilpatrick,_Lord_Kilpatrick_of_Kincraig" title="Robert Kilpatrick, Lord Kilpatrick of Kincraig">The Lord Kilpatrick of Kincraig</a></td>
-<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/George_Mackie,_Baron_Mackie_of_Benshie" title="George Mackie, Baron Mackie of Benshie">The Lord Mackie of Benshie</a></td>
-<td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/William_McCarthy,_Baron_McCarthy" title="William McCarthy, Baron McCarthy">The Lord McCarthy</a></td>
-<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/Donald_Chapman,_Baron_Northfield" title="Donald Chapman, Baron Northfield">The Lord Northfield</a></td>
-<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/James_Prior,_Baron_Prior" title="James Prior, Baron Prior">The Lord Prior</a></td>
-<td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/Baron_Randall_of_St_Budeaux" title="Baron Randall of St Budeaux" class="mw-redirect">The Lord Randall of St Budeaux</a></td>
-<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/Baron_Sainsbury_of_Preston_Candover" title="Baron Sainsbury of Preston Candover" class="mw-redirect">The Lord Sainsbury of Preston Candover</a></td>
-<td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/Robert_Gascoyne-Cecil,_7th_Marquess_of_Salisbury" title="Robert Gascoyne-Cecil, 7th Marquess of Salisbury">The Marquess of Salisbury</a></td>
-<td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td>Hereditary peer who sits by virtue of a life peerage, Baron Gascoyne-Cecil</td>
-</tr>
-<tr>
-<td><a href="/wiki/Baron_Simon_of_Highbury" title="Baron Simon of Highbury" class="mw-redirect">The Lord Simon of Highbury</a></td>
-<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/Michael_C._Williams_(United_Nations)" title="Michael C. Williams (United Nations)">The Lord Williams of Baglan</a></td>
-<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-</table>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=5" title="Edit section: Peers disqualified as senior members of the judiciary">edit</a>]</span> <span class="mw-headline" id="Peers_disqualified_as_senior_members_of_the_judiciary">Peers disqualified as senior members of the judiciary</span></h2>
 <p>Per section 137 (3) of the <a href="/wiki/Constitutional_Reform_Act_2005" title="Constitutional Reform Act 2005">Constitutional Reform Act 2005</a>, holders of certain judicial offices who are peers are disqualified from sitting and voting in the House of Lords while in office.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span>[</span>4<span>]</span></a></sup> The following peers are currently subject to this provison:</p>
 <ul>
@@ -4868,9 +4871,9 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=7" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
 <div class="references-small" style="">
 <ol class="references">
-<li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> <span class="citation web"><a href="http://www.parliament.uk/mps-lords-and-offices/lords/lords-who-have-died/" class="external text" rel="nofollow">"House of Lords, Official Website - Deceased Lords"</a><span class="printonly">. <a href="http://www.parliament.uk/mps-lords-and-offices/lords/lords-who-have-died/" class="external free" rel="nofollow">http://www.parliament.uk/mps-lords-and-offices/lords/lords-who-have-died/</a></span><span class="reference-accessdate">. Retrieved 7 October 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=House+of+Lords%2C+Official+Website+-+Deceased+Lords&amp;rft.atitle=&amp;rft_id=http%3A%2F%2Fwww.parliament.uk%2Fmps-lords-and-offices%2Flords%2Flords-who-have-died%2F&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
-<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <span class="citation web"><a href="http://www.publications.parliament.uk/pa/ld/ldstords/147/14702.htm#a28" class="external text" rel="nofollow">"House of Lords, Official Website - Standing Orders"</a><span class="printonly">. <a href="http://www.publications.parliament.uk/pa/ld/ldstords/147/14702.htm#a28" class="external free" rel="nofollow">http://www.publications.parliament.uk/pa/ld/ldstords/147/14702.htm#a28</a></span><span class="reference-accessdate">. Retrieved 7 October 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=House+of+Lords%2C+Official+Website+-+Standing+Orders&amp;rft.atitle=&amp;rft_id=http%3A%2F%2Fwww.publications.parliament.uk%2Fpa%2Fld%2Fldstords%2F147%2F14702.htm%23a28&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
-<li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> <span class="citation web"><a href="http://www.parliament.uk/about/faqs/house-of-lords-faqs/lords-leave-of-absence/" class="external text" rel="nofollow">"House of Lords, Official Website - Members of the House of Lords granted leave of absence"</a><span class="printonly">. <a href="http://www.parliament.uk/about/faqs/house-of-lords-faqs/lords-leave-of-absence/" class="external free" rel="nofollow">http://www.parliament.uk/about/faqs/house-of-lords-faqs/lords-leave-of-absence/</a></span><span class="reference-accessdate">. Retrieved 7 October 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=House+of+Lords%2C+Official+Website+-+Members+of+the+House+of+Lords+granted+leave+of+absence&amp;rft.atitle=&amp;rft_id=http%3A%2F%2Fwww.parliament.uk%2Fabout%2Ffaqs%2Fhouse-of-lords-faqs%2Flords-leave-of-absence%2F&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> <span class="citation web"><a href="http://www.parliament.uk/about/faqs/house-of-lords-faqs/lords-leave-of-absence/" class="external text" rel="nofollow">"House of Lords, Official Website - Members of the House of Lords granted leave of absence"</a><span class="printonly">. <a href="http://www.parliament.uk/about/faqs/house-of-lords-faqs/lords-leave-of-absence/" class="external free" rel="nofollow">http://www.parliament.uk/about/faqs/house-of-lords-faqs/lords-leave-of-absence/</a></span><span class="reference-accessdate">. Retrieved 7 October 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=House+of+Lords%2C+Official+Website+-+Members+of+the+House+of+Lords+granted+leave+of+absence&amp;rft.atitle=&amp;rft_id=http%3A%2F%2Fwww.parliament.uk%2Fabout%2Ffaqs%2Fhouse-of-lords-faqs%2Flords-leave-of-absence%2F&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <span class="citation web"><a href="http://www.publications.parliament.uk/pa/ld/ldstords/147/14702.htm#a28" class="external text" rel="nofollow">"Standing Orders of the House of Lords"</a><span class="printonly">. <a href="http://www.publications.parliament.uk/pa/ld/ldstords/147/14702.htm#a28" class="external free" rel="nofollow">http://www.publications.parliament.uk/pa/ld/ldstords/147/14702.htm#a28</a></span><span class="reference-accessdate">. Retrieved 7 October 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Standing+Orders+of+the+House+of+Lords&amp;rft.atitle=&amp;rft_id=http%3A%2F%2Fwww.publications.parliament.uk%2Fpa%2Fld%2Fldstords%2F147%2F14702.htm%23a28&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> <span class="citation web"><a href="http://www.parliament.uk/mps-lords-and-offices/lords/lords-who-have-died/" class="external text" rel="nofollow">"House of Lords, Official Website - Deceased Lords"</a><span class="printonly">. <a href="http://www.parliament.uk/mps-lords-and-offices/lords/lords-who-have-died/" class="external free" rel="nofollow">http://www.parliament.uk/mps-lords-and-offices/lords/lords-who-have-died/</a></span><span class="reference-accessdate">. Retrieved 7 October 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=House+of+Lords%2C+Official+Website+-+Deceased+Lords&amp;rft.atitle=&amp;rft_id=http%3A%2F%2Fwww.parliament.uk%2Fmps-lords-and-offices%2Flords%2Flords-who-have-died%2F&amp;rfr_id=info:sid/en.wikipedia.org:Members_of_the_House_of_Lords"><span style="display: none;">&#160;</span></span></li>
 <li id="cite_note-3"><b><a href="#cite_ref-3">^</a></b> <a href="http://www.legislation.gov.uk/ukpga/2005/4/section/137#section-137-3" class="external text" rel="nofollow">Constitutional Reform Act 2005, Section 137 (3)</a> at legislation.gov.uk</li>
 </ol>
 </div>
@@ -4883,12 +4886,12 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <!-- 
 NewPP limit report
 Preprocessor node count: 2159/1000000
-Post-expand include size: 19026/2048000 bytes
-Template argument size: 5407/2048000 bytes
+Post-expand include size: 18860/2048000 bytes
+Template argument size: 5303/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!4 and timestamp 20101030192128 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!4 and timestamp 20101103083559 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 				<!-- /bodytext -->
@@ -5029,8 +5032,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=393839528" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=393839528" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=394544088" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=394544088" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -5040,7 +5043,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=393839528&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=394544088&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -5061,7 +5064,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 30 October 2010 at 19:20.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 3 November 2010 at 08:34.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -5084,5 +5087,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv153 in 0.066 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv203 in 0.062 secs. -->			</body>
 </html>

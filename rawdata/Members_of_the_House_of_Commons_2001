@@ -82,7 +82,7 @@ wgNoticeProject="wikipedia";
 <script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-5" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-5" type="text/javascript"></script>
 <script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
-<script src="/wiki/Special:BannerController?283-5" type="text/javascript"></script>
+<script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;283-5" type="text/javascript"></script>
 <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
 <script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-5" type="text/javascript"></script>
 
@@ -1671,7 +1671,7 @@ wgNoticeProject="wikipedia";
 </tr>
 <tr>
 <td><a href="/wiki/Galloway_and_Upper_Nithsdale_(UK_Parliament_constituency)" title="Galloway and Upper Nithsdale (UK Parliament constituency)">Galloway and Upper Nithsdale</a></td>
-<td><a href="/wiki/Peter_Duncan_(politician)" title="Peter Duncan (politician)">Peter Duncan</a></td>
+<td><a href="/wiki/Peter_Duncan_(politician)" title="Peter Duncan (politician)" class="mw-redirect">Peter Duncan</a></td>
 <td>Conservative</td>
 </tr>
 <tr>
@@ -3954,12 +3954,12 @@ wgNoticeProject="wikipedia";
 <!-- 
 NewPP limit report
 Preprocessor node count: 846/1000000
-Post-expand include size: 45546/2048000 bytes
+Post-expand include size: 45534/2048000 bytes
 Template argument size: 33251/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!4 and timestamp 20101031011511 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!4 and timestamp 20101106200248 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001</a>"</div>
 				<!-- /bodytext -->
@@ -4155,5 +4155,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv265 in 0.098 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv288 in 0.136 secs. -->			</body>
 </html>
