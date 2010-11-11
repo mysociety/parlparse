@@ -227,9 +227,16 @@ class LordsList(xml.sax.handler.ContentHandler):
 		llordname = string.replace(lfn.group(1), ".", "")
 		llordname = string.replace(llordname, "&#039;", "'")
 		llordname = re.sub("^De ", "de ", llordname)
+		fullname = '%s %s' % (ltitle, llordname)
 		llordofname = ""
 		if lfn.group(2):
 			llordofname = string.replace(lfn.group(2), ".", "")
+			fullname = '%s of %s' % (fullname, llordofname)
+
+		if fullname in self.aliases:
+			fullname = self.aliases[fullname]
+			m = re.match('(.*?) (.*)$', fullname)
+			ltitle, llordname = m.groups()
 
 		return self.GetLordID(ltitle, llordname, llordofname, "", stampurl, sdate, True)
 
