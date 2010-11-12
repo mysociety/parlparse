@@ -1911,7 +1911,7 @@ B - bishop
 	forenames="Tom Wright"
 	title="Bishop" lordname="" lordofname="Durham"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2003-11-05" todate="9999-12-31"
+	fromdate="2003-11-05" todate="2010-08-31" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100185"
@@ -5867,7 +5867,7 @@ B - bishop
 	forenames="David Staffurth Stancliffe"
 	title="Bishop" lordname="" lordofname="Salisbury"
 	peeragetype="B" affiliation="Bp"
-	fromdate="1998" todate="9999-12-31"
+	fromdate="1998" todate="2010-07-13" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100566"
@@ -10071,7 +10071,7 @@ B - bishop
     forenames="David Charles James"
     title="Bishop" lordname="" lordofname="Bradford"
     peeragetype="B" affiliation="Bp"
-    fromdate="2009-03-23" todate="9999-12-31"
+    fromdate="2009-03-23" todate="2010-07-14" towhy="retired"
 />
 
 <lord
@@ -10926,6 +10926,37 @@ B - bishop
     county="the Royal County of Berkshire"
     peeragetype="L" affiliation="Con"
     fromdate="2010-07-28" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101069"
+    house="lords"
+    forenames="John Stephen"
+    title="Lord" lordname="Monks" lordofname=""
+    lordofname_full="Blackley"
+    county="the County of Greater Manchester"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2010-10-11" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101070"
+    house="lords"
+    forenames="Michael Charles"
+    title="Lord" lordname="Williams" lordofname="Baglan"
+    lordofname_full="Neath Port Talbot"
+    county="Glamorgan"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2010-10-18" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101071"
+    house="lords"
+    forenames="David Andrew Urquhart"
+    title="Bishop" lordname="" lordofname="Birmingham"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2010-10-26" todate="9999-12-31"
 />
 
 <!--

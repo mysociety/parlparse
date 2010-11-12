@@ -69210,6 +69210,12 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/12928" latestname="Viscount Montgomery of Alamein">
     <office id="uk.org.publicwhip/lord/100854" current="yes"/>
 </person>
+<person id="uk.org.publicwhip/person/25012" latestname="Lord Williams of Baglan">
+    <office id="uk.org.publicwhip/lord/101070" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25013" latestname="The Bishop of Birmingham">
+    <office id="uk.org.publicwhip/lord/101071" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/12933" latestname="The Bishop of Exeter">
     <office id="uk.org.publicwhip/lord/100859" current="yes"/>
 </person>
@@ -69488,7 +69494,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100185" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/12996" latestname="The Bishop of Durham">
-    <office id="uk.org.publicwhip/lord/100184" current="yes"/>
+    <office id="uk.org.publicwhip/lord/100184"/>
 </person>
 <person id="uk.org.publicwhip/person/12997" latestname="Baroness Eccles of Moulton">
     <office id="uk.org.publicwhip/lord/100187" current="yes"/>
@@ -70036,7 +70042,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100663" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14144" latestname="The Bishop of Bradford">
-    <office id="uk.org.publicwhip/lord/100985" current="yes"/>
+    <office id="uk.org.publicwhip/lord/100985"/>
 </person>
 <person id="uk.org.publicwhip/person/14143" latestname="Lord Pannick">
     <office id="uk.org.publicwhip/lord/100984" current="yes"/>
@@ -72084,6 +72090,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13575" latestname="Lord Greene of Harrow Weald">
     <office id="uk.org.publicwhip/lord/100256"/>
 </person>
+<person id="uk.org.publicwhip/person/25014" latestname="Lord Monks">
+    <office id="uk.org.publicwhip/lord/101069" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/13576" latestname="Lord Hughes">
     <office id="uk.org.publicwhip/lord/100769"/>
 </person>
@@ -72265,7 +72274,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100617"/>
 </person>
 <person id="uk.org.publicwhip/person/13628" latestname="The Bishop of Salisbury">
-    <office id="uk.org.publicwhip/lord/100564" current="yes"/>
+    <office id="uk.org.publicwhip/lord/100564"/>
 </person>
 <person id="uk.org.publicwhip/person/13629" latestname="Lord Strabolgi">
     <office id="uk.org.publicwhip/lord/100619" current="yes"/>
