@@ -2118,8 +2118,8 @@
 	id="uk.org.publicwhip/member/90275"
 	title="" firstname="Mark" lastname="Durkan"
 	constituency="Foyle" party="SDLP"
-	fromdate="2007-03-09" todate="9999-12-31"
-	fromwhy="election" towhy="still_in_office"
+	fromdate="2007-03-09" todate="2010-11-09"
+	fromwhy="election" towhy="resigned"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90276"
@@ -2792,6 +2792,14 @@
 	title="" firstname="William" lastname="Humphrey"
 	constituency="Belfast North" party="DUP"
 	fromdate="2010-09-13" todate="9999-12-31"
+	fromwhy="appointed" towhy="still_in_office"
+/>
+
+<member_ni
+	id="uk.org.publicwhip/member/90371"
+	title="" firstname="Pól" lastname="Callaghan"
+	constituency="Foyle" party="SDLP"
+	fromdate="2010-11-15" todate="9999-12-31"
 	fromwhy="appointed" towhy="still_in_office"
 />
 
