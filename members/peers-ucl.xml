@@ -47,7 +47,7 @@ B - bishop
 	lordofname_full="Aldenham"
 	county="the County of Shropshire"
 	peeragetype="L" affiliation="Lab"
-	fromdate="2000-04-17" todate="9999-12-31"
+	fromdate="2000-04-17" todate="2010-10-10" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100004"
@@ -513,7 +513,7 @@ B - bishop
 	lordofname_full="Boughrood"
 	county="the County of Powys"
 	peeragetype="L" affiliation="XB"
-	fromdate="1996" todate="9999-12-31"
+	fromdate="1996" todate="2010-09-11" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100049"
@@ -3952,7 +3952,7 @@ B - bishop
 	title="Lord" lordname="Livsey" lordofname="Talgarth"
 	county="the County of Powys"
 	peeragetype="L" affiliation="LDem"
-	fromdate="2001-10-16" todate="9999-12-31"
+	fromdate="2001-10-16" todate="2010-09-15" towhy="died"
 	ex_MP="yes"
 />
 <lord
