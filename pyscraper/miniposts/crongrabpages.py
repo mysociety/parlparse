@@ -40,7 +40,7 @@ watchpages = {  "govposts":"http://www.parliament.uk/mps-lords-and-offices/gover
 
 		#		"newlords":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/new_members.cfm",
 		#		"deadlords":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/deceased_members.cfm",
-		#		"alphalistlords":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/alphabetical_list_of_members.cfm",
+				"alphalistlords":"http://www.parliament.uk/mps-lords-and-offices/lords/",
 
 				#"financialsanctions":"http://www.bankofengland.co.uk/publications/financialsanctions/sanctionsconlist.htm",
 			 }
