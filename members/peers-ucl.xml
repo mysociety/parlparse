@@ -2845,7 +2845,7 @@ B - bishop
 	title="Lord" lordname="Hardie" lordofname=""
 	lordofname_full="Blackford"
 	county="the City of Edinburgh"
-	peeragetype="L" affiliation="XB"
+	peeragetype="L" affiliation="Judge"
 	fromdate="1997" todate="9999-12-31"
 />
 <lord
@@ -3161,7 +3161,7 @@ B - bishop
 	house="lords"
 	forenames="James"
 	title="Lord" lordname="Hope" lordofname="Craighead"
-	peeragetype="L" affiliation="XB"
+	peeragetype="L" affiliation="Judge"
 	fromdate="1995" todate="9999-12-31"
 />
 <lord
@@ -4191,7 +4191,7 @@ B - bishop
 	title="Lord" lordname="Mackay" lordofname="Drumadoon"
 	lordofname_full="Blackwaterfoot"
 	county="the District of Cunninghame"
-	peeragetype="L" affiliation="XB"
+	peeragetype="L" affiliation="Judge"
 	fromdate="1995" todate="9999-12-31"
 />
 <lord
@@ -5198,7 +5198,7 @@ B - bishop
 	title="Lord" lordname="Phillips" lordofname="Worth Matravers"
 	lordofname_full="Belsize Park"
 	county="the London Borough of Camden"
-	peeragetype="A" affiliation="XB"
+	peeragetype="A" affiliation="Judge"
 	fromdate="1999" todate="9999-12-31"
 />
 <lord
@@ -5667,7 +5667,7 @@ B - bishop
 	forenames_full="Alan Ferguson"
 	title="Lord" lordname="Rodger" lordofname="Earlsferry"
 	county="the District of North East Fife"
-	peeragetype="L" affiliation="XB"
+	peeragetype="L" affiliation="Judge"
 	fromdate="1992" todate="9999-12-31"
 />
 <lord
@@ -6883,7 +6883,7 @@ B - bishop
 	forenames="Robert"
 	title="Lord" lordname="Walker" lordofname="Gestingthorpe"
 	county="the County of Essex"
-	peeragetype="A" affiliation="XB"
+	peeragetype="A" affiliation="Judge"
 	fromdate="2002-10-08" todate="9999-12-31"
 />
 <lord
@@ -8487,7 +8487,7 @@ B - bishop
 	forenames="Simon Denis"
 	title="Lord" lordname="Brown" lordofname="Eaton-under-Heywood"
 	county="the County of Shropshire"
-	peeragetype="A" affiliation="XB"
+	peeragetype="A" affiliation="Judge"
 	fromdate="2004-01-13" todate="9999-12-31"
 />
 <lord
@@ -8498,7 +8498,7 @@ B - bishop
 	title="Baroness" lordname="Hale" lordofname="Richmond"
 	lordofname_full="Easby"
 	county="the County of North Yorkshire"
-	peeragetype="A" affiliation="XB"
+	peeragetype="A" affiliation="Judge"
 	fromdate="2004-01-12" todate="9999-12-31"
 />
 <lord
@@ -8987,7 +8987,7 @@ B - bishop
 	forenames_full="Lynda Margaret"
 	title="Baroness" lordname="Clark" lordofname="Calton"
 	county="the City of Edinburgh"
-	peeragetype="L" affiliation="Lab"
+	peeragetype="L" affiliation="Judge"
 	fromdate="2005-07-13" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -9097,7 +9097,7 @@ B - bishop
 	title="Lord" lordname="Mance" lordofname=""
 	lordofname_full="Frognal"
 	county="the London Borough of Camden"
-	peeragetype="A" affiliation="XB"
+	peeragetype="A" affiliation="Judge"
 	fromdate="2005-10-12" todate="9999-12-31"
 />
 <lord
@@ -9663,7 +9663,7 @@ B - bishop
     forenames_full="David Edmond"
     title="Lord" lordname="Neuberger" lordofname="Abbotsbury"
     county="the County of Dorset"
-    peeragetype="A" affiliation="XB"
+    peeragetype="A" affiliation="Judge"
     fromdate="2007-01-15" todate="9999-12-31"
 />
 <lord
@@ -10018,7 +10018,7 @@ B - bishop
     title="Lord" lordname="Judge" lordofname=""
     lordofname_full="Draycote"
     county="the County of Warwickshire"
-    peeragetype="A" affiliation="XB"
+    peeragetype="L" affiliation="Judge"
     fromdate="2008-10-06" todate="9999-12-31"
 />
 
@@ -10101,7 +10101,7 @@ B - bishop
     title="Lord" lordname="Collins" lordofname="Mapesbury"
     lordofname_full="Hampstead Town"
     county="the London Borough of Camden"
-    peeragetype="A" affiliation="XB"
+    peeragetype="A" affiliation="Judge"
     fromdate="2009-04-28" todate="9999-12-31"
 />
 
@@ -10111,7 +10111,7 @@ B - bishop
     forenames="Anthony Peter"
     title="Lord" lordname="Clarke" lordofname="Stone-cum-Ebony"
     county="the County of Kent"
-    peeragetype="L" affiliation="XB"
+    peeragetype="L" affiliation="Judge"
     fromdate="2009-06-01" todate="9999-12-31"
 />
 
@@ -10130,7 +10130,7 @@ B - bishop
     forenames="Brian Francis"
     title="Lord" lordname="Kerr" lordofname="Tonaghmore"
     county="the County of Down"
-    peeragetype="A" affiliation="XB"
+    peeragetype="A" affiliation="Judge"
     fromdate="2009-06-29" todate="9999-12-31"
 />
 
