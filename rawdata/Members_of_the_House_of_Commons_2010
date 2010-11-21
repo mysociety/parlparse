@@ -13,9 +13,9 @@
 <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283-6" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283-6" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283-6" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283-12" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283-12" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283-12" type="text/css" media="print" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?117" type="text/css" media="all" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
@@ -47,7 +47,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=395527732,
+wgCurRevisionId=397226139,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -74,17 +74,17 @@ wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwa
 wgArticleAssessmentJUIPath="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/js2stopgap/jui.combined.min.js",
 Geo={"city": "", "country": ""},
 wgNoticeProject="wikipedia";
-</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283-6" type="text/javascript"></script>
-<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283-6"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283-6" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283-6" type="text/javascript"></script>
+</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283-12" type="text/javascript"></script>
+<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283-12"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283-12" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283-12" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2.2" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-6" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-6" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-12" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-12" type="text/javascript"></script>
 <script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
-<script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;283-6" type="text/javascript"></script>
+<script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;283-12" type="text/javascript"></script>
 <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-6" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-12" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-List_of_MPs_elected_in_the_United_Kingdom_general_election_2010 skin-vector">
@@ -148,7 +148,7 @@ wgNoticeProject="wikipedia";
 <td>253<sup class="reference plainlinks nourlexpansion" id="ref_c1"><a href="#endnote_c1">1</a></sup><sup>,</sup><sup class="reference plainlinks nourlexpansion" id="ref_c5"><a href="#endnote_c5">5</a></sup><sup>,</sup><sup class="reference plainlinks nourlexpansion" id="ref_c6"><a href="#endnote_c6">6</a></sup><sup>,</sup><sup class="reference plainlinks nourlexpansion" id="ref_c7"><a href="#endnote_c7">7</a></sup></td>
 </tr>
 <tr>
-<td style="width: 4px" bgcolor="#FFD700"></td>
+<td style="width: 4px" bgcolor="#FDBB30"></td>
 <td style="text-align: left;" scope="row"><b><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></b></td>
 <td>57</td>
 </tr>
@@ -347,9 +347,9 @@ wgNoticeProject="wikipedia";
 </tr>
 <tr>
 <td><a href="/wiki/Argyll_and_Bute_(UK_Parliament_constituency)" title="Argyll and Bute (UK Parliament constituency)">Argyll and Bute</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Alan_Reid" title="Alan Reid">Alan Reid</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -487,9 +487,9 @@ Incumbent MP <a href="/wiki/Jeffrey_Ennis" title="Jeffrey Ennis">Jeffrey Ennis</
 </tr>
 <tr>
 <td><a href="/wiki/Bath_(UK_Parliament_constituency)" title="Bath (UK Parliament constituency)">Bath</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Don_Foster_(politician)" title="Don Foster (politician)">Don Foster</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -567,26 +567,26 @@ Incumbent MP <a href="/wiki/Jeffrey_Ennis" title="Jeffrey Ennis">Jeffrey Ennis</
 </tr>
 <tr>
 <td><a href="/wiki/Bermondsey_and_Old_Southwark_(UK_Parliament_constituency)" title="Bermondsey and Old Southwark (UK Parliament constituency)">Bermondsey and Old Southwark</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Simon_Hughes" title="Simon Hughes">Simon Hughes</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td><small>Seat previously named <a href="/wiki/North_Southwark_and_Bermondsey_(UK_Parliament_constituency)" title="North Southwark and Bermondsey (UK Parliament constituency)">North Southwark and Bermondsey</a></small><br />
 Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Berwick-upon-Tweed_(UK_Parliament_constituency)" title="Berwick-upon-Tweed (UK Parliament constituency)">Berwick-upon-Tweed</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Alan_Beith" title="Alan Beith">Alan Beith</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Berwickshire,_Roxburgh_and_Selkirk_(UK_Parliament_constituency)" title="Berwickshire, Roxburgh and Selkirk (UK Parliament constituency)">Berwickshire, Roxburgh and Selkirk</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Michael_Moore_(UK_politician)" title="Michael Moore (UK politician)">Michael Moore</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -696,9 +696,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Birmingham,_Yardley_(UK_Parliament_constituency)" title="Birmingham, Yardley (UK Parliament constituency)" class="mw-redirect">Birmingham, Yardley</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/John_Hemming_(politician)" title="John Hemming (politician)">John Hemming</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -859,7 +859,7 @@ Seat held</td>
 <td><a href="/wiki/Bradford_East_(UK_Parliament_constituency)" title="Bradford East (UK Parliament constituency)">Bradford East</a></td>
 <td style="background-color: #DC241f"></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/David_Ward_(politician)" title="David Ward (politician)">David Ward</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td></td>
 </tr>
@@ -889,9 +889,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Brecon_and_Radnorshire_(UK_Parliament_constituency)" title="Brecon and Radnorshire (UK Parliament constituency)">Brecon and Radnorshire</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Roger_Williams_(UK_politician)" title="Roger Williams (UK politician)">Roger Williams</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -899,7 +899,7 @@ Seat held</td>
 <td><a href="/wiki/Brent_Central_(UK_Parliament_constituency)" title="Brent Central (UK Parliament constituency)">Brent Central</a></td>
 <td style="background-color: #DC241f"></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Sarah_Teather" title="Sarah Teather">Sarah Teather</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>New constituency; previously MP for defunct <a href="/wiki/Brent_East_(UK_Parliament_constituency)" title="Brent East (UK Parliament constituency)">Brent East</a>;<br />
 <a href="/wiki/Dawn_Butler" title="Dawn Butler">Dawn Butler</a>&#160;(<a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">L</a>) MP for defunct <a href="/wiki/Brent_South_(UK_Parliament_constituency)" title="Brent South (UK Parliament constituency)">Brent South</a>, also stood</td>
@@ -994,9 +994,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Bristol_West_(UK_Parliament_constituency)" title="Bristol West (UK Parliament constituency)">Bristol West</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Stephen_Williams_(politician)" title="Stephen Williams (politician)">Stephen Williams</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -1053,7 +1053,7 @@ Seat held</td>
 <td><a href="/wiki/Burnley_(UK_Parliament_constituency)" title="Burnley (UK Parliament constituency)">Burnley</a></td>
 <td style="background-color: #DC241f"></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Gordon_Birtwistle" title="Gordon Birtwistle">Gordon Birtwistle</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Lib Dem gain</td>
 </tr>
@@ -1110,9 +1110,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Caithness,_Sutherland_and_Easter_Ross_(UK_Parliament_constituency)" title="Caithness, Sutherland and Easter Ross (UK Parliament constituency)">Caithness, Sutherland and Easter Ross</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/John_Thurso" title="John Thurso" class="mw-redirect">John Thurso</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -1134,7 +1134,7 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Camborne_and_Redruth_(UK_Parliament_constituency)" title="Camborne and Redruth (UK Parliament constituency)">Camborne and Redruth</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/George_Eustice" title="George Eustice">George Eustice</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
@@ -1142,9 +1142,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Cambridge_(UK_Parliament_constituency)" title="Cambridge (UK Parliament constituency)">Cambridge</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Julian_Huppert" title="Julian Huppert">Julian Huppert</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Incumbent MP <a href="/wiki/David_Howarth" title="David Howarth">David Howarth</a> stood down</td>
 </tr>
@@ -1166,9 +1166,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Cardiff_Central_(UK_Parliament_constituency)" title="Cardiff Central (UK Parliament constituency)">Cardiff Central</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Jenny_Willott" title="Jenny Willott">Jenny Willott</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td></td>
 </tr>
@@ -1222,9 +1222,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Carshalton_and_Wallington_(UK_Parliament_constituency)" title="Carshalton and Wallington (UK Parliament constituency)">Carshalton and Wallington</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Tom_Brake" title="Tom Brake">Tom Brake</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -1262,9 +1262,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Ceredigion_(UK_Parliament_constituency)" title="Ceredigion (UK Parliament constituency)">Ceredigion</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Mark_Williams_(politician)" title="Mark Williams (politician)">Mark Williams</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td></td>
 </tr>
@@ -1286,9 +1286,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Cheadle_(UK_Parliament_constituency)" title="Cheadle (UK Parliament constituency)">Cheadle</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Mark_Hunter_(politician)" title="Mark Hunter (politician)">Mark Hunter</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td></td>
 </tr>
@@ -1310,9 +1310,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Cheltenham_(UK_Parliament_constituency)" title="Cheltenham (UK Parliament constituency)">Cheltenham</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Martin_Horwood" title="Martin Horwood">Martin Horwood</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td></td>
 </tr>
@@ -1334,7 +1334,7 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Chesterfield_(UK_Parliament_constituency)" title="Chesterfield (UK Parliament constituency)">Chesterfield</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
 <td style="background-color: #DC241f"></td>
 <td><a href="/wiki/Toby_Perkins" title="Toby Perkins">Toby Perkins</a>&#160;(<a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">L</a>)</td>
@@ -1358,9 +1358,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Chippenham_(UK_Parliament_constituency)" title="Chippenham (UK Parliament constituency)">Chippenham</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Duncan_Hames" title="Duncan Hames">Duncan Hames</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -1438,9 +1438,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Colchester_(UK_Parliament_constituency)" title="Colchester (UK Parliament constituency)">Colchester</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Bob_Russell_(politician)" title="Bob Russell (politician)">Bob Russell</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -1837,9 +1837,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/East_Dunbartonshire_(UK_Parliament_constituency)" title="East Dunbartonshire (UK Parliament constituency)">East Dunbartonshire</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Jo_Swinson" title="Jo Swinson">Jo Swinson</a>&#160;(<a href="/wiki/Liberal_Democrats_(UK)" title="Liberal Democrats (UK)" class="mw-redirect">LD</a>)</td>
 <td></td>
 </tr>
@@ -1919,15 +1919,15 @@ Seat held</td>
 <td><a href="/wiki/Eastbourne_(UK_Parliament_constituency)" title="Eastbourne (UK Parliament constituency)">Eastbourne</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Stephen_Lloyd" title="Stephen Lloyd">Stephen Lloyd</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td></td>
 </tr>
 <tr>
 <td><a href="/wiki/Eastleigh_(UK_Parliament_constituency)" title="Eastleigh (UK Parliament constituency)">Eastleigh</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Chris_Huhne" title="Chris Huhne">Chris Huhne</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td></td>
 </tr>
@@ -1973,9 +1973,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Edinburgh_West_(UK_Parliament_constituency)" title="Edinburgh West (UK Parliament constituency)">Edinburgh West</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Michael_Crockart" title="Michael Crockart">Michael Crockart</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -2298,9 +2298,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Gordon_(UK_Parliament_constituency)" title="Gordon (UK Parliament constituency)">Gordon</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Malcolm_Bruce" title="Malcolm Bruce">Malcolm Bruce</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -2461,7 +2461,7 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Harrogate_and_Knaresborough_(UK_Parliament_constituency)" title="Harrogate and Knaresborough (UK Parliament constituency)">Harrogate and Knaresborough</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Andrew_Jones_(politician)" title="Andrew Jones (politician)">Andrew Jones</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
@@ -2525,9 +2525,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Hazel_Grove_(UK_Parliament_constituency)" title="Hazel Grove (UK Parliament constituency)">Hazel Grove</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Andrew_Stunell" title="Andrew Stunell">Andrew Stunell</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -2565,7 +2565,7 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Hereford_and_South_Herefordshire_(UK_Parliament_constituency)" title="Hereford and South Herefordshire (UK Parliament constituency)">Hereford and South Herefordshire</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Jesse_Norman" title="Jesse Norman">Jesse Norman</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
@@ -2637,9 +2637,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Hornsey_and_Wood_Green_(UK_Parliament_constituency)" title="Hornsey and Wood Green (UK Parliament constituency)">Hornsey and Wood Green</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Lynne_Featherstone" title="Lynne Featherstone">Lynne Featherstone</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -2728,9 +2728,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Inverness,_Nairn,_Badenoch_and_Strathspey_(UK_Parliament_constituency)" title="Inverness, Nairn, Badenoch and Strathspey (UK Parliament constituency)">Inverness, Nairn, Badenoch and Strathspey</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Danny_Alexander" title="Danny Alexander">Danny Alexander</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -2846,9 +2846,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Kingston_and_Surbiton_(UK_Parliament_constituency)" title="Kingston and Surbiton (UK Parliament constituency)">Kingston and Surbiton</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Ed_Davey" title="Ed Davey" class="mw-redirect">Ed Davey</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -2961,9 +2961,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Leeds_North_West_(UK_Parliament_constituency)" title="Leeds North West (UK Parliament constituency)">Leeds North West</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Greg_Mulholland" title="Greg Mulholland">Greg Mulholland</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -3009,9 +3009,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Lewes_(UK_Parliament_constituency)" title="Lewes (UK Parliament constituency)">Lewes</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Norman_Baker" title="Norman Baker">Norman Baker</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -3228,9 +3228,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Manchester,_Withington_(UK_Parliament_constituency)" title="Manchester, Withington (UK Parliament constituency)" class="mw-redirect">Manchester, Withington</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/John_Leech_(politician)" title="John Leech (politician)">John Leech</a>&#160;(<a href="/wiki/Liberal_Democrats_(UK)" title="Liberal Democrats (UK)" class="mw-redirect">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -3284,9 +3284,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Mid_Dorset_and_North_Poole_(UK_Parliament_constituency)" title="Mid Dorset and North Poole (UK Parliament constituency)">Mid Dorset and North Poole</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Annette_Brooke" title="Annette Brooke">Annette Brooke</a>&#160;(<a href="/wiki/Liberal_Democrats_(UK)" title="Liberal Democrats (UK)" class="mw-redirect">LD</a>)</td>
 <td>Seat held, with majority reduced to 296</td>
 </tr>
@@ -3388,7 +3388,7 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Montgomeryshire_(UK_Parliament_constituency)" title="Montgomeryshire (UK Parliament constituency)">Montgomeryshire</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Glyn_Davies_(Welsh_politician)" title="Glyn Davies (Welsh politician)">Glyn Davies</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
@@ -3543,7 +3543,7 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Newton_Abbot_(UK_Parliament_constituency)" title="Newton Abbot (UK Parliament constituency)">Newton Abbot</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Anne-Marie_Morris" title="Anne-Marie Morris">Anne-Marie Morris</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
@@ -3575,17 +3575,17 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/North_Cornwall_(UK_Parliament_constituency)" title="North Cornwall (UK Parliament constituency)">North Cornwall</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Dan_Rogerson" title="Dan Rogerson">Dan Rogerson</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/North_Devon_(UK_Parliament_constituency)" title="North Devon (UK Parliament constituency)">North Devon</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Nick_Harvey" title="Nick Harvey">Nick Harvey</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -3639,9 +3639,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/North_East_Fife_(UK_Parliament_constituency)" title="North East Fife (UK Parliament constituency)">North East Fife</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td>Sir <a href="/wiki/Menzies_Campbell" title="Menzies Campbell">Menzies Campbell</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -3679,9 +3679,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/North_Norfolk_(UK_Parliament_constituency)" title="North Norfolk (UK Parliament constituency)">North Norfolk</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Norman_Lamb" title="Norman Lamb">Norman Lamb</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -3809,7 +3809,7 @@ Seat held</td>
 <td><a href="/wiki/Norwich_South_(UK_Parliament_constituency)" title="Norwich South (UK Parliament constituency)">Norwich South</a></td>
 <td style="background-color: #DC241f"></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Simon_Wright_(politician)" title="Simon Wright (politician)">Simon Wright</a> (<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Incumbent MP <a href="/wiki/Charles_Clarke" title="Charles Clarke">Charles Clarke</a>&#160;(<a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">L</a>) defeated</td>
 </tr>
@@ -3898,9 +3898,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Orkney_and_Shetland_(UK_Parliament_constituency)" title="Orkney and Shetland (UK Parliament constituency)">Orkney and Shetland</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Alistair_Carmichael" title="Alistair Carmichael">Alistair Carmichael</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -3922,7 +3922,7 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Oxford_West_and_Abingdon_(UK_Parliament_constituency)" title="Oxford West and Abingdon (UK Parliament constituency)">Oxford West and Abingdon</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Nicola_Blackwood" title="Nicola Blackwood">Nicola Blackwood</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
@@ -4045,9 +4045,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Portsmouth_South_(UK_Parliament_constituency)" title="Portsmouth South (UK Parliament constituency)">Portsmouth South</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Mike_Hancock_(UK_politician)" title="Mike Hancock (UK politician)">Mike Hancock</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -4122,7 +4122,7 @@ Seat held</td>
 <td><a href="/wiki/Redcar_(UK_Parliament_constituency)" title="Redcar (UK Parliament constituency)">Redcar</a></td>
 <td style="background-color: #DC241f"></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Ian_Swales" title="Ian Swales">Ian Swales</a> (<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Incumbent MP <a href="/wiki/Vera_Baird" title="Vera Baird">Vera Baird</a>&#160;(<a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">L</a>) defeated</td>
 </tr>
@@ -4168,7 +4168,7 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Richmond_Park_(UK_Parliament_constituency)" title="Richmond Park (UK Parliament constituency)">Richmond Park</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Zac_Goldsmith" title="Zac Goldsmith">Zac Goldsmith</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
@@ -4209,7 +4209,7 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Romsey_and_Southampton_North_(UK_Parliament_constituency)" title="Romsey and Southampton North (UK Parliament constituency)">Romsey and Southampton North</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Caroline_Nokes" title="Caroline Nokes">Caroline Nokes</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
@@ -4218,9 +4218,9 @@ Incumbent MP <a href="/wiki/Sandra_Gidley" title="Sandra Gidley">Sandra Gidley</
 </tr>
 <tr>
 <td><a href="/wiki/Ross,_Skye_and_Lochaber_(UK_Parliament_constituency)" title="Ross, Skye and Lochaber (UK Parliament constituency)">Ross, Skye and Lochaber</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Charles_Kennedy" title="Charles Kennedy">Charles Kennedy</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -4405,9 +4405,9 @@ Incumbent MP <a href="/wiki/Sandra_Gidley" title="Sandra Gidley">Sandra Gidley</
 </tr>
 <tr>
 <td><a href="/wiki/Sheffield,_Hallam_(UK_Parliament_constituency)" title="Sheffield, Hallam (UK Parliament constituency)" class="mw-redirect">Sheffield, Hallam</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Nick_Clegg" title="Nick Clegg">Nick Clegg</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held; party leader, appointed Deputy Prime Minister on 12 May</td>
 </tr>
@@ -4479,15 +4479,15 @@ Incumbent MP <a href="/wiki/Sandra_Gidley" title="Sandra Gidley">Sandra Gidley</
 <td><a href="/wiki/Solihull_(UK_Parliament_constituency)" title="Solihull (UK Parliament constituency)">Solihull</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Lorely_Burt" title="Lorely Burt">Lorely Burt</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held; notional gain based on boundary change</td>
 </tr>
 <tr>
 <td><a href="/wiki/Somerton_and_Frome_(UK_Parliament_constituency)" title="Somerton and Frome (UK Parliament constituency)">Somerton and Frome</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/David_Heath_(politician)" title="David Heath (politician)">David Heath</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -4550,7 +4550,7 @@ Incumbent MP <a href="/wiki/Angela_Evans_Smith" title="Angela Evans Smith" class
 </tr>
 <tr>
 <td><a href="/wiki/South_East_Cornwall_(UK_Parliament_constituency)" title="South East Cornwall (UK Parliament constituency)">South East Cornwall</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Sheryll_Murray" title="Sheryll Murray">Sheryll Murray</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
@@ -4711,9 +4711,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Southport_(UK_Parliament_constituency)" title="Southport (UK Parliament constituency)">Southport</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/John_Pugh" title="John Pugh">John Pugh</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -4735,9 +4735,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/St_Austell_and_Newquay_(UK_Parliament_constituency)" title="St Austell and Newquay (UK Parliament constituency)">St Austell and Newquay</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Stephen_Gilbert_(UK_politician)" title="Stephen Gilbert (UK politician)">Stephen Gilbert</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -4759,9 +4759,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/St_Ives_(UK_Parliament_constituency)" title="St Ives (UK Parliament constituency)">St Ives</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Andrew_George_(politician)" title="Andrew George (politician)">Andrew George</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -4935,9 +4935,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Sutton_and_Cheam_(UK_Parliament_constituency)" title="Sutton and Cheam (UK Parliament constituency)">Sutton and Cheam</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Paul_Burstow" title="Paul Burstow">Paul Burstow</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td></td>
 </tr>
@@ -4994,9 +4994,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Taunton_Deane_(UK_Parliament_constituency)" title="Taunton Deane (UK Parliament constituency)">Taunton Deane</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Jeremy_Browne" title="Jeremy Browne">Jeremy Browne</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td><small>Seat previously named <a href="/wiki/Taunton_(UK_Parliament_constituency)" title="Taunton (UK Parliament constituency)">Taunton</a></small><br />
 Seat held</td>
@@ -5027,9 +5027,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Thornbury_and_Yate_(UK_Parliament_constituency)" title="Thornbury and Yate (UK Parliament constituency)">Thornbury and Yate</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Steve_Webb" title="Steve Webb">Steve Webb</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>New constituency; previously MP for <a href="/wiki/Northavon_(UK_Parliament_constituency)" title="Northavon (UK Parliament constituency)">Northavon</a></td>
 </tr>
@@ -5067,9 +5067,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Torbay_(UK_Parliament_constituency)" title="Torbay (UK Parliament constituency)">Torbay</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Adrian_Sanders" title="Adrian Sanders">Adrian Sanders</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -5107,7 +5107,7 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Truro_and_Falmouth_(UK_Parliament_constituency)" title="Truro and Falmouth (UK Parliament constituency)">Truro and Falmouth</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Sarah_Newton" title="Sarah Newton">Sarah Newton</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
@@ -5123,9 +5123,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Twickenham_(UK_Parliament_constituency)" title="Twickenham (UK Parliament constituency)">Twickenham</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Vince_Cable" title="Vince Cable">Vince Cable</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -5351,7 +5351,7 @@ Seat held</td>
 <td><a href="/wiki/Wells_(UK_Parliament_constituency)" title="Wells (UK Parliament constituency)">Wells</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Tessa_Munt" title="Tessa Munt">Tessa Munt</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Incumbent MP <a href="/wiki/David_Heathcoat-Amory" title="David Heathcoat-Amory">David Heathcoat-Amory</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>) defeated</td>
 </tr>
@@ -5373,9 +5373,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/West_Aberdeenshire_and_Kincardine_(UK_Parliament_constituency)" title="West Aberdeenshire and Kincardine (UK Parliament constituency)">West Aberdeenshire and Kincardine</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Sir_Robert_Smith,_3rd_Baronet" title="Sir Robert Smith, 3rd Baronet">Robert Smith</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td></td>
 </tr>
@@ -5461,9 +5461,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Westmorland_and_Lonsdale_(UK_Parliament_constituency)" title="Westmorland and Lonsdale (UK Parliament constituency)">Westmorland and Lonsdale</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Tim_Farron" title="Tim Farron">Tim Farron</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -5493,7 +5493,7 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Winchester_(UK_Parliament_constituency)" title="Winchester (UK Parliament constituency)">Winchester</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Steve_Brine" title="Steve Brine">Steve Brine</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
@@ -5673,9 +5673,9 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/Yeovil_(UK_Parliament_constituency)" title="Yeovil (UK Parliament constituency)">Yeovil</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/David_Laws" title="David Laws">David Laws</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>)</td>
 <td>Seat held</td>
 </tr>
@@ -5698,7 +5698,7 @@ Seat held</td>
 </tr>
 <tr>
 <td><a href="/wiki/York_Outer_(UK_Parliament_constituency)" title="York Outer (UK Parliament constituency)">York Outer</a></td>
-<td style="background-color: #ffd700"></td>
+<td style="background-color: #FDBB30"></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Julian_Sturdy" title="Julian Sturdy">Julian Sturdy</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
@@ -5787,18 +5787,19 @@ Seat held</td>
 <h2><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=29" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span></h2>
 <ul>
 <li><a href="http://www.parliament.uk/mps-lords-and-offices/mps/state-of-the-parties/" class="external text" rel="nofollow">Current state of the parties</a> - <a href="/wiki/Parliament_of_the_United_Kingdom" title="Parliament of the United Kingdom">UK Parliament</a></li>
+<li><a href="http://www.guardian.co.uk/news/datablog/2010/may/07/uk-election-results-data-candidates-seats" class="external text" rel="nofollow">Full election data</a> as a spreadsheet, <a href="/wiki/The_Guardian" title="The Guardian">The Guardian</a></li>
 </ul>
 
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 8967/1000000
-Post-expand include size: 140723/2048000 bytes
-Template argument size: 44636/2048000 bytes
+Preprocessor node count: 8974/1000000
+Post-expand include size: 142092/2048000 bytes
+Template argument size: 44638/2048000 bytes
 Expensive parser function count: 1/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:26491796-0!1!0!default!!en!4 and timestamp 20101109165417 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:26491796-0!1!0!default!!en!4 and timestamp 20101117022642 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010</a>"</div>
 				<!-- /bodytext -->
@@ -5878,7 +5879,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
 			<input id="searchInput" name="search" type="text"  title="Search Wikipedia [f]" accesskey="f"  value="" />
-			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283-6" alt="Search" /></button>
+			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283-12" alt="Search" /></button>
 		</div>
 			</form>
 </div>
@@ -5939,8 +5940,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;oldid=395527732" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;id=395527732" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;oldid=397226139" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;id=397226139" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -5950,7 +5951,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2010" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2010&amp;oldid=395527732&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2010" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2010&amp;oldid=397226139&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -5963,7 +5964,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 8 November 2010 at 11:41.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 17 November 2010 at 02:21.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -5986,5 +5987,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv204 in 0.073 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv269 in 0.061 secs. -->			</body>
 </html>
