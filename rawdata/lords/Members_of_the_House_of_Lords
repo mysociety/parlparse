@@ -46,7 +46,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=396315699,
+wgCurRevisionId=397904718,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -550,7 +550,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Jeremy_Beecham" title="Jeremy Beecham">The Lord Beecham</a></td>
+<td><a href="/wiki/Jeremy_Beecham" title="Jeremy Beecham" class="mw-redirect">The Lord Beecham</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -1783,6 +1783,11 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Tony_Greaves,_Baron_Greaves" title="Tony Greaves, Baron Greaves">The Lord Greaves</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Stephen_Green_(banker)" title="Stephen Green (banker)">The Lord Green of Hurstpierpoint</a></td>
+<td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2045,6 +2050,12 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <tr>
 <td><a href="/wiki/Clive_Hollick,_Baron_Hollick" title="Clive Hollick, Baron Hollick">The Lord Hollick</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/w/index.php?title=Sheila_Hollins,_Baroness_Hollins&amp;action=edit&amp;redlink=1" class="new" title="Sheila Hollins, Baroness Hollins (page does not exist)">The Baroness Hollins</a></td>
+<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
@@ -2428,7 +2439,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 </tr>
 <tr>
 <td><a href="/wiki/Jim_Knight" title="Jim Knight">The Lord Knight of Weymouth</a></td>
-<td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
+<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
@@ -2943,7 +2954,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/John_Monks" title="John Monks">The Lord Monks</a></td>
+<td><a href="/wiki/John_Monks" title="John Monks" class="mw-redirect">The Lord Monks</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -4467,7 +4478,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Margaret_Wheeler&amp;action=edit&amp;redlink=1" class="new" title="Margaret Wheeler (page does not exist)">The Baroness Wheeler</a></td>
+<td><a href="/wiki/Margaret_Wheeler" title="Margaret Wheeler" class="mw-redirect">The Baroness Wheeler</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_Peer" title="Life Peer" class="mw-redirect">Life Peer</a></td>
 <td></td>
@@ -4891,12 +4902,12 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <!-- 
 NewPP limit report
 Preprocessor node count: 2218/1000000
-Post-expand include size: 19440/2048000 bytes
+Post-expand include size: 19438/2048000 bytes
 Template argument size: 5408/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!4 and timestamp 20101112134454 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!4 and timestamp 20101120182916 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 				<!-- /bodytext -->
@@ -4914,7 +4925,6 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 <div id="p-personal" class="">
 	<h5>Personal tools</h5>
 	<ul>
-					<li  id="pt-prefswitch-link-anon"><a href="http://en.wikipedia.org/w/index.php?title=Special:UsabilityInitiativePrefSwitch&amp;from=Members_of_the_House_of_Lords" title="Learn about new features" class="no-text-transform">New features</a></li>
 					<li  id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Members_of_the_House_of_Lords" title="You are encouraged to log in; however, it is not mandatory. [o]" accesskey="o">Log in / create account</a></li>
 			</ul>
 </div>
@@ -5037,8 +5047,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=396315699" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=396315699" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=397904718" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=397904718" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -5048,7 +5058,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=396315699&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=397904718&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -5069,7 +5079,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 12 November 2010 at 13:44.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 20 November 2010 at 18:29.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -5092,5 +5102,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv244 in 0.050 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv226 in 0.053 secs. -->			</body>
 </html>
