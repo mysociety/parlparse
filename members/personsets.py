@@ -106,6 +106,7 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/101063" : "Beverley Hughes [Stretford and Urmston]",
     "uk.org.publicwhip/lord/101065" : "Richard Allan [Sheffield, Hallam]",
     "uk.org.publicwhip/lord/101067" : "Des Browne [Kilmarnock and Loudoun]",
+    "uk.org.publicwhip/lord/101074" : "Michael Ancram [Devizes]",
 
 }
 

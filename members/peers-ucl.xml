@@ -10970,6 +10970,25 @@ B - bishop
     fromdate="2010-11-15" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101073"
+    house="lords"
+    forenames="Stephen Keith"
+    title="Lord" lordname="Green" lordofname="Hurstpierpoint"
+    county="the County of West Sussex"
+    peeragetype="L" affiliation="Con"
+    fromdate="2010-11-22" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101074"
+    house="lords"
+    forenames="Michael Andrew Foster Jude Kerr"
+    title="Marquess" lordname="" lordofname="Lothian"
+    peeragetype="L" affiliation="Con"
+    fromdate="2010-11-22" todate="9999-12-31"
+/>
+
 <!--
 <lord
     id="uk.org.publicwhip/lord/1010.."
