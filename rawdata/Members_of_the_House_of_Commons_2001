@@ -13,9 +13,9 @@
 <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283-12" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283-12" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283-12" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283-13" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283-13" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283-13" type="text/css" media="print" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?117" type="text/css" media="all" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
@@ -65,7 +65,8 @@ wgMWSuggestMessages=["with suggestions", "no suggestions"],
 wgRestrictionEdit=[],
 wgRestrictionMove=[],
 wgFlaggedRevsParams={"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}},
-wgStableRevisionId=0,
+wgStableRevisionId=null,
+wgRevContents={"error": "Unable to get content.", "waiting": "Waiting for content"},
 wgWikimediaMobileUrl="http://en.m.wikipedia.org/wiki",
 wgCollapsibleNavBucketTest=false,
 wgCollapsibleNavForceNewVersion=false,
@@ -74,17 +75,17 @@ wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwa
 wgArticleAssessmentJUIPath="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/js2stopgap/jui.combined.min.js",
 Geo={"city": "", "country": ""},
 wgNoticeProject="wikipedia";
-</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283-12" type="text/javascript"></script>
-<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283-12"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283-12" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283-12" type="text/javascript"></script>
+</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283-13" type="text/javascript"></script>
+<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283-13"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283-13" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283-13" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2.2" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-12" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-12" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-13" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-13" type="text/javascript"></script>
 <script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
-<script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;283-12" type="text/javascript"></script>
+<script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;283-13" type="text/javascript"></script>
 <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-12" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-13" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-List_of_MPs_elected_in_the_United_Kingdom_general_election_2001 skin-vector">
@@ -590,7 +591,7 @@ wgNoticeProject="wikipedia";
 </tr>
 <tr>
 <td><a href="/wiki/Birmingham_Hodge_Hill_(UK_Parliament_constituency)" title="Birmingham Hodge Hill (UK Parliament constituency)">Birmingham, Hodge Hill</a></td>
-<td><a href="/wiki/Terry_Davis_(politician)" title="Terry Davis (politician)">Terry Davis</a> (<a href="/wiki/Resignation_from_the_British_House_of_Commons" title="Resignation from the British House of Commons" class="mw-redirect">resigned</a>)</td>
+<td><a href="/wiki/Terry_Davis_(politician)" title="Terry Davis (politician)">Terry Davis</a> (<a href="/wiki/Resignation_from_the_British_House_of_Commons" title="Resignation from the British House of Commons">resigned</a>)</td>
 <td>Labour</td>
 <td>Terry Davis</td>
 <td>Labour</td>
@@ -1877,7 +1878,7 @@ wgNoticeProject="wikipedia";
 </tr>
 <tr>
 <td><a href="/wiki/Hartlepool_(UK_Parliament_constituency)" title="Hartlepool (UK Parliament constituency)">Hartlepool</a></td>
-<td><a href="/wiki/Peter_Mandelson" title="Peter Mandelson">Peter Mandelson</a> (<a href="/wiki/Resignation_from_the_British_House_of_Commons" title="Resignation from the British House of Commons" class="mw-redirect">resigned</a>)</td>
+<td><a href="/wiki/Peter_Mandelson" title="Peter Mandelson">Peter Mandelson</a> (<a href="/wiki/Resignation_from_the_British_House_of_Commons" title="Resignation from the British House of Commons">resigned</a>)</td>
 <td>Labour</td>
 </tr>
 <tr>
@@ -2647,7 +2648,7 @@ wgNoticeProject="wikipedia";
 </tr>
 <tr>
 <td><a href="/wiki/North_West_Hampshire_(UK_Parliament_constituency)" title="North West Hampshire (UK Parliament constituency)">North West Hampshire</a></td>
-<td><a href="/wiki/Sir_George_Young,_6th_Baronet" title="Sir George Young, 6th Baronet">Sir George Young, 6th Baronet</a></td>
+<td><a href="/wiki/Sir_George_Young,_6th_Baronet" title="Sir George Young, 6th Baronet" class="mw-redirect">Sir George Young, 6th Baronet</a></td>
 <td>Conservative</td>
 </tr>
 <tr>
@@ -3959,7 +3960,7 @@ Template argument size: 33251/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!4 and timestamp 20101120010954 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!4 and timestamp 20101127011438 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001</a>"</div>
 				<!-- /bodytext -->
@@ -4038,7 +4039,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
 			<input id="searchInput" name="search" type="text"  title="Search Wikipedia [f]" accesskey="f"  value="" />
-			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283-12" alt="Search" /></button>
+			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283-13" alt="Search" /></button>
 		</div>
 			</form>
 </div>
@@ -4154,5 +4155,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv279 in 0.062 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv199 in 1.422 secs. -->			</body>
 </html>
