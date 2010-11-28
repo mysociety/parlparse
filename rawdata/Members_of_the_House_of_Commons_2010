@@ -47,7 +47,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=397226139,
+wgCurRevisionId=398619796,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -57,7 +57,7 @@ wgMainPageTitle="Main Page",
 wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Wikipedia", "5": "Wikipedia talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "100": "Portal", "101": "Portal talk", "108": "Book", "109": "Book talk"},
 wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "wikipedia": 4, "wikipedia_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "portal": 100, "portal_talk": 101, "book": 108, "book_talk": 109, "wp": 4, "wt": 5, "image": 6, "image_talk": 7},
 wgSiteName="Wikipedia",
-wgCategories=["House of Commons of the United Kingdom", "Articles containing potentially dated statements from November 2010", "All articles containing potentially dated statements", "United Kingdom general election, 2010", "Lists of MPs elected in United Kingdom general elections", "Lists of current office-holders", "Lists of UK MPs 2010–", "Lists of Scottish MPs", "Legislative sessions", "Lists of Northern Irish MPs"],
+wgCategories=["Articles containing potentially dated statements from November 2010", "All articles containing potentially dated statements", "United Kingdom general election, 2010", "Lists of MPs elected in United Kingdom general elections", "Lists of current office-holders", "Lists of UK MPs 2010–", "Lists of Scottish MPs", "Legislative sessions", "Lists of Northern Irish MPs"],
 wgDBname="enwiki",
 wgMWSuggestTemplate="http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest",
 wgSearchNamespaces=[0],
@@ -65,7 +65,8 @@ wgMWSuggestMessages=["with suggestions", "no suggestions"],
 wgRestrictionEdit=[],
 wgRestrictionMove=[],
 wgFlaggedRevsParams={"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}},
-wgStableRevisionId=0,
+wgStableRevisionId=null,
+wgRevContents={"error": "Unable to get content.", "waiting": "Waiting for content"},
 wgWikimediaMobileUrl="http://en.m.wikipedia.org/wiki",
 wgCollapsibleNavBucketTest=false,
 wgCollapsibleNavForceNewVersion=false,
@@ -130,117 +131,21 @@ wgNoticeProject="wikipedia";
 </tr>
 </table>
 <p>This is a list of <a href="/wiki/Member_of_Parliament" title="Member of Parliament">Members of Parliament</a> (MPs) elected to the <a href="/wiki/House_of_Commons_of_the_United_Kingdom" title="House of Commons of the United Kingdom">House of Commons</a> for the 55th Parliament of the United Kingdom at the <a href="/wiki/United_Kingdom_general_election,_2010" title="United Kingdom general election, 2010">2010 general election</a>.</p>
-<p>The list is arranged by constituency. New MPs elected since the general election and changes in party allegiance are noted at the <a href="#By-elections">bottom of the page</a>.</p>
-<h2><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=1" title="Edit section: Composition">edit</a>]</span> <span class="mw-headline" id="Composition">Composition</span></h2>
-<table class="wikitable" border="1">
-<tr>
-<th colspan="2" rowspan="1" align="center" valign="top"><b>Affiliation</b></th>
-<th valign="top"><b>Members</b><br /></th>
-</tr>
-<tr>
-<td style="width: 4px" bgcolor="#0087DC"></td>
-<td style="text-align: left;" scope="row"><b><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></b></td>
-<td>305<sup class="reference plainlinks nourlexpansion" id="ref_c5"><a href="#endnote_c5">5</a></sup></td>
-</tr>
-<tr>
-<td style="width: 4px" bgcolor="#DC241F"></td>
-<td style="text-align: left;" scope="row"><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td>253<sup class="reference plainlinks nourlexpansion" id="ref_c1"><a href="#endnote_c1">1</a></sup><sup>,</sup><sup class="reference plainlinks nourlexpansion" id="ref_c5"><a href="#endnote_c5">5</a></sup><sup>,</sup><sup class="reference plainlinks nourlexpansion" id="ref_c6"><a href="#endnote_c6">6</a></sup><sup>,</sup><sup class="reference plainlinks nourlexpansion" id="ref_c7"><a href="#endnote_c7">7</a></sup></td>
-</tr>
-<tr>
-<td style="width: 4px" bgcolor="#FDBB30"></td>
-<td style="text-align: left;" scope="row"><b><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></b></td>
-<td>57</td>
-</tr>
-<tr>
-<td style="width: 4px" bgcolor="#D46A4C"></td>
-<td style="text-align: left;" scope="row"><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist</a></td>
-<td>8</td>
-</tr>
-<tr>
-<td style="width: 4px" bgcolor="#FFFF00"></td>
-<td style="text-align: left;" scope="row"><a href="/wiki/Scottish_National_Party" title="Scottish National Party">SNP</a></td>
-<td>6</td>
-</tr>
-<tr>
-<td style="width: 4px" bgcolor="#008800"></td>
-<td style="text-align: left;" scope="row"><a href="/wiki/Sinn_F%C3%A9in" title="Sinn Féin">Sinn Féin</a></td>
-<td>5 <sup class="reference plainlinks nourlexpansion" id="ref_c2"><a href="#endnote_c2">2</a></sup></td>
-</tr>
-<tr>
-<td style="width: 4px" bgcolor="#008142"></td>
-<td style="text-align: left;" scope="row"><a href="/wiki/Plaid_Cymru" title="Plaid Cymru">Plaid Cymru</a></td>
-<td>3</td>
-</tr>
-<tr>
-<td style="width: 4px" bgcolor="#99FF66"></td>
-<td style="text-align: left;" scope="row"><a href="/wiki/Social_Democratic_and_Labour_Party" title="Social Democratic and Labour Party">SDLP</a></td>
-<td>3</td>
-</tr>
-<tr>
-<td style="width: 4px" bgcolor="#FFD700"></td>
-<td style="text-align: left;" scope="row"><a href="/wiki/Alliance_Party_of_Northern_Ireland" title="Alliance Party of Northern Ireland">Alliance</a></td>
-<td>1</td>
-</tr>
-<tr>
-<td style="width: 4px" bgcolor="#99CC33"></td>
-<td style="text-align: left;" scope="row"><a href="/wiki/Green_Party_of_England_and_Wales" title="Green Party of England and Wales">Green</a></td>
-<td>1</td>
-</tr>
-<tr>
-<td style="background-color:#DDDDDD">&#160;</td>
-<td><a href="/wiki/Independent_(politician)" title="Independent (politician)">Independent</a><br /></td>
-<td>3</td>
-</tr>
-<tr>
-<td style="background-color:black">&#160;</td>
-<td><a href="/wiki/Speaker_of_the_House_of_Commons_(United_Kingdom)" title="Speaker of the House of Commons (United Kingdom)">Speakers and Deputy Speakers</a><br /></td>
-<td>4 <sup class="reference plainlinks nourlexpansion" id="ref_c3"><a href="#endnote_c3">3</a></sup><sup>,</sup><sup class="reference plainlinks nourlexpansion" id="ref_c5"><a href="#endnote_c5">5</a></sup></td>
-</tr>
-<tr>
-<td style="background-color:grey">&#160;</td>
-<td>Vacant</td>
-<td>1 <sup class="reference plainlinks nourlexpansion" id="ref_c7"><a href="#endnote_c7">7</a></sup></td>
-</tr>
-<tr>
-<th colspan="2" rowspan="1">&#160;Total<br /></th>
-<th>650</th>
-</tr>
-<tr>
-<th colspan="2" rowspan="1">&#160;Actual government majority<sup class="reference plainlinks nourlexpansion" id="ref_c4"><a href="#endnote_c4">4</a></sup><br /></th>
-<th>83</th>
-</tr>
-</table>
-<ul>
-<li><span class="citation wikicite" id="endnote_c1"><b><a href="#ref_c1">^1</a></b></span> <a href="/wiki/Eric_Illsley" title="Eric Illsley">Eric Illsley</a> was suspended from the party and had the whip withdrawn on 19 May 2010 after he was charged with <a href="/wiki/False_accounting" title="False accounting" class="mw-redirect">false accounting</a> over the <a href="/wiki/United_Kingdom_Parliamentary_expenses_scandal" title="United Kingdom Parliamentary expenses scandal">United Kingdom Parliamentary expenses scandal</a>,<sup id="cite_ref-illsley1_0-0" class="reference"><a href="#cite_note-illsley1-0"><span>[</span>1<span>]</span></a></sup> decreasing the number of Labour seats to 255. He now sits as an independent.</li>
-<li><span class="citation wikicite" id="endnote_c2"><b><a href="#ref_c2">^2</a></b></span> Although Sinn Féin maintains offices at Westminster, the party's policy of <a href="/wiki/Abstentionism" title="Abstentionism">abstaining</a> from participation in the House of Commons (on account of disputing the UK parliament's claim to jurisdiction in Northern Ireland) precludes its MPs from taking their seats.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup></li>
-<li><span class="citation wikicite" id="endnote_c3"><b><a href="#ref_c3">^3</a></b></span> <a href="/wiki/John_Bercow" title="John Bercow">John Bercow</a> was re-elected for his <a href="/wiki/Buckingham_(UK_Parliament_constituency)" title="Buckingham (UK Parliament constituency)">Buckingham</a> constituency as <i>Speaker seeking re-election</i>.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>3<span>]</span></a></sup></li>
-<li><span class="citation wikicite" id="endnote_c4"><b><a href="#ref_c4">^4</a></b></span> Actual government majority includes the Conservative–Liberal Democrat coalition, and excludes members that do not vote (Sinn Féin, and the Speaker and his Deputies) and vacant seats.</li>
-<li><span class="citation wikicite" id="endnote_c5"><b><a href="#ref_c5">^5</a></b></span> <a href="/wiki/Lindsay_Hoyle" title="Lindsay Hoyle">Lindsay Hoyle</a> elected <a href="/wiki/Chairman_of_Ways_and_Means" title="Chairman of Ways and Means">Chairman of Ways and Means</a>, <a href="/wiki/Nigel_Evans" title="Nigel Evans">Nigel Evans</a> elected first Deputy Chairman of Ways and Means, <a href="/wiki/Dawn_Primarolo" title="Dawn Primarolo">Dawn Primarolo</a> elected second Deputy Chairman of Ways and Means. Although these Deputy Speakers do not resign from their parties, they cease to vote (except to break ties) and do not participate in party political activity until the next election.</li>
-<li><span class="citation wikicite" id="endnote_c6"><b><a href="#ref_c6">^6</a></b></span> <a href="/wiki/Denis_MacShane" title="Denis MacShane">Denis MacShane</a> was suspended from the party and had the whip withdrawn on 14 October 2010 after the <a href="/wiki/Metropolitan_Police" title="Metropolitan Police" class="mw-redirect">Metropolitan Police</a> began an investigation into his conduct following a referral from the <a href="/wiki/Parliamentary_Commissioner_for_Standards" title="Parliamentary Commissioner for Standards">Parliamentary Commissioner for Standards</a>, decreasing the number of Labour seats to 254. He now sits as an independent.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span>[</span>4<span>]</span></a></sup></li>
-<li><span class="citation wikicite" id="endnote_c7"><b><a href="#ref_c7">^7</a></b></span> <a href="/wiki/Phil_Woolas" title="Phil Woolas">Phil Woolas</a>' election for the <a href="/wiki/Oldham_East_and_Saddleworth_(UK_Parliament_constituency)" title="Oldham East and Saddleworth (UK Parliament constituency)">Oldham East and Saddleworth</a> constituency was declared void on 5 November 2010 after he was found guilty of knowingly making false statements in campaign literature,<sup id="cite_ref-Guardian_5.2F11_4-0" class="reference"><a href="#cite_note-Guardian_5.2F11-4"><span>[</span>5<span>]</span></a></sup> meaning that his seat was vacated with effect from that date.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>6<span>]</span></a></sup> He was later suspended from the Labour Party and a <a href="/wiki/Oldham_East_and_Saddleworth_re-run_election,_2010" title="Oldham East and Saddleworth re-run election, 2010" class="mw-redirect">fresh election</a> is pending.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>7<span>]</span></a></sup></li>
-</ul>
-<p><br /></p>
-<h2><span class="editsection">[<a href="/w/index.php?title=Template:British_House_of_Commons_composition&amp;action=edit&amp;section=T-1" title="Template:British House of Commons composition">edit</a>]</span> <span class="mw-headline" id="Representation">Representation</span></h2>
-<p><a href="/wiki/File:Parliament2010UK.svg" class="image"><img alt="Parliament2010UK.svg" src="http://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Parliament2010UK.svg/739px-Parliament2010UK.svg.png" width="739" height="391" /></a><br />
-&#160;<br />
-<a href="/wiki/File:UK_Parlaiment_2010_Key.png" class="image"><img alt="UK Parlaiment 2010 Key.png" src="http://upload.wikimedia.org/wikipedia/en/b/b7/UK_Parlaiment_2010_Key.png" width="236" height="235" /></a></p>
-<p><br /></p>
-<p><br /></p>
-<h2><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=2" title="Edit section: List of MPs elected in the general election">edit</a>]</span> <span class="mw-headline" id="List_of_MPs_elected_in_the_general_election">List of MPs elected in the general election</span></h2>
+<p>The list is arranged by constituency. New MPs elected since the general election and changes in party allegiance are noted at the <a href="#Changes_.26_by-elections">bottom of the page</a>. The current status of the House of Commons can be seen at <a href="/wiki/Template:British_House_of_Commons_composition" title="Template:British House of Commons composition">Template:British House of Commons composition</a>.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=1" title="Edit section: List of MPs elected in the general election">edit</a>]</span> <span class="mw-headline" id="List_of_MPs_elected_in_the_general_election">List of MPs elected in the general election</span></h2>
 <p>The following table is a list of MPs elected, ordered by constituency. As the <a href="/wiki/Boundary_changes_for_the_United_Kingdom_general_election,_2010" title="Boundary changes for the United Kingdom general election, 2010">constituency boundaries have changed</a>, the "notional incumbent" column lists the party estimated to have won the seat at the <a href="/wiki/United_Kingdom_general_election,_2005" title="United Kingdom general election, 2005">2005 election</a> had that election been conducted under the new boundaries, rather than the member that actually held the seat.</p>
 <p><br /></p>
 <table border="0" id="toc" style="margin: 0 auto;" align="center">
 <tr>
 <td><b>Table of contents:</b>
-<p><a href="#A">A</a> <a href="#B">B</a> <a href="#C">C</a> <a href="#D">D</a> <a href="#E">E</a> <a href="#F">F</a> <a href="#G">G</a> <a href="#H">H</a> <a href="#I">I</a> <a href="#J">J</a> <a href="#K">K</a> <a href="#L">L</a> <a href="#M">M</a> <a href="#N">N</a> <a href="#O">O</a> <a href="#P">P</a> Q <a href="#R">R</a> <a href="#S">S</a> <a href="#T">T</a> <a href="#U">U</a> <a href="#V">V</a> <a href="#W">W</a> X <a href="#Y">Y</a> Z <a href="#By-elections">Changes</a></p>
+<p><a href="#A">A</a> <a href="#B">B</a> <a href="#C">C</a> <a href="#D">D</a> <a href="#E">E</a> <a href="#F">F</a> <a href="#G">G</a> <a href="#H">H</a> <a href="#I">I</a> <a href="#J">J</a> <a href="#K">K</a> <a href="#L">L</a> <a href="#M">M</a> <a href="#N">N</a> <a href="#O">O</a> <a href="#P">P</a> Q <a href="#R">R</a> <a href="#S">S</a> <a href="#T">T</a> <a href="#U">U</a> <a href="#V">V</a> <a href="#W">W</a> X <a href="#Y">Y</a> Z <a href="#Changes_.26_by-elections">Changes</a></p>
 </td>
 </tr>
 </table>
 <table class="wikitable">
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=3" title="Edit section: A">edit</a>]</span> <span class="mw-headline" id="A">A</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=2" title="Edit section: A">edit</a>]</span> <span class="mw-headline" id="A">A</span></h3>
 </td>
 </tr>
 <tr>
@@ -403,7 +308,7 @@ wgNoticeProject="wikipedia";
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=4" title="Edit section: B">edit</a>]</span> <span class="mw-headline" id="B">B</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=3" title="Edit section: B">edit</a>]</span> <span class="mw-headline" id="B">B</span></h3>
 </td>
 </tr>
 <tr>
@@ -442,7 +347,7 @@ wgNoticeProject="wikipedia";
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td style="background-color: #DC241f"></td>
 <td><a href="/wiki/Eric_Illsley" title="Eric Illsley">Eric Illsley</a>&#160;(<a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">L</a>)</td>
-<td>Seat held. Illsley was suspended from the Labour Party and had the whip withdrawn on May 19 after he was charged with <a href="/wiki/False_accounting" title="False accounting" class="mw-redirect">false accounting</a> over the <a href="/wiki/United_Kingdom_Parliamentary_expenses_scandal" title="United Kingdom Parliamentary expenses scandal">United Kingdom Parliamentary expenses scandal</a>.<sup id="cite_ref-illsley1_0-1" class="reference"><a href="#cite_note-illsley1-0"><span>[</span>1<span>]</span></a></sup></td>
+<td>Seat held. Illsley was suspended from the Labour Party and had the whip withdrawn on May 19 after he was charged with <a href="/wiki/False_accounting" title="False accounting" class="mw-redirect">false accounting</a> over the <a href="/wiki/United_Kingdom_Parliamentary_expenses_scandal" title="United Kingdom Parliamentary expenses scandal">United Kingdom Parliamentary expenses scandal</a>.<sup id="cite_ref-illsley1_0-0" class="reference"><a href="#cite_note-illsley1-0"><span>[</span>1<span>]</span></a></sup></td>
 </tr>
 <tr>
 <td><a href="/wiki/Barnsley_East_(UK_Parliament_constituency)" title="Barnsley East (UK Parliament constituency)">Barnsley East</a></td>
@@ -603,7 +508,7 @@ Seat held</td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td style="background-color: #0087DC"></td>
-<td><a href="/wiki/Graham_Stuart_(UK_politician)" title="Graham Stuart (UK politician)">Graham Stuart</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
+<td><a href="/wiki/Graham_Stuart_(UK_politician)" title="Graham Stuart (UK politician)" class="mw-redirect">Graham Stuart</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
 <td>Seat held</td>
 </tr>
 <tr>
@@ -1091,7 +996,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=5" title="Edit section: C">edit</a>]</span> <span class="mw-headline" id="C">C</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=4" title="Edit section: C">edit</a>]</span> <span class="mw-headline" id="C">C</span></h3>
 </td>
 </tr>
 <tr>
@@ -1567,7 +1472,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=6" title="Edit section: D">edit</a>]</span> <span class="mw-headline" id="D">D</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=5" title="Edit section: D">edit</a>]</span> <span class="mw-headline" id="D">D</span></h3>
 </td>
 </tr>
 <tr>
@@ -1778,7 +1683,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=7" title="Edit section: E">edit</a>]</span> <span class="mw-headline" id="E">E</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=6" title="Edit section: E">edit</a>]</span> <span class="mw-headline" id="E">E</span></h3>
 </td>
 </tr>
 <tr>
@@ -2076,7 +1981,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=8" title="Edit section: F">edit</a>]</span> <span class="mw-headline" id="F">F</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=7" title="Edit section: F">edit</a>]</span> <span class="mw-headline" id="F">F</span></h3>
 </td>
 </tr>
 <tr>
@@ -2175,7 +2080,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=9" title="Edit section: G">edit</a>]</span> <span class="mw-headline" id="G">G</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=8" title="Edit section: G">edit</a>]</span> <span class="mw-headline" id="G">G</span></h3>
 </td>
 </tr>
 <tr>
@@ -2370,7 +2275,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=10" title="Edit section: H">edit</a>]</span> <span class="mw-headline" id="H">H</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=9" title="Edit section: H">edit</a>]</span> <span class="mw-headline" id="H">H</span></h3>
 </td>
 </tr>
 <tr>
@@ -2693,7 +2598,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=11" title="Edit section: I">edit</a>]</span> <span class="mw-headline" id="I">I</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=10" title="Edit section: I">edit</a>]</span> <span class="mw-headline" id="I">I</span></h3>
 </td>
 </tr>
 <tr>
@@ -2776,7 +2681,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=12" title="Edit section: J">edit</a>]</span> <span class="mw-headline" id="J">J</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=11" title="Edit section: J">edit</a>]</span> <span class="mw-headline" id="J">J</span></h3>
 </td>
 </tr>
 <tr>
@@ -2795,7 +2700,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=13" title="Edit section: K">edit</a>]</span> <span class="mw-headline" id="K">K</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=12" title="Edit section: K">edit</a>]</span> <span class="mw-headline" id="K">K</span></h3>
 </td>
 </tr>
 <tr>
@@ -2902,7 +2807,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=14" title="Edit section: L">edit</a>]</span> <span class="mw-headline" id="L">L</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=13" title="Edit section: L">edit</a>]</span> <span class="mw-headline" id="L">L</span></h3>
 </td>
 </tr>
 <tr>
@@ -3161,7 +3066,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=15" title="Edit section: M">edit</a>]</span> <span class="mw-headline" id="M">M</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=14" title="Edit section: M">edit</a>]</span> <span class="mw-headline" id="M">M</span></h3>
 </td>
 </tr>
 <tr>
@@ -3428,7 +3333,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=16" title="Edit section: N">edit</a>]</span> <span class="mw-headline" id="N">N</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=15" title="Edit section: N">edit</a>]</span> <span class="mw-headline" id="N">N</span></h3>
 </td>
 </tr>
 <tr>
@@ -3754,7 +3659,7 @@ Seat held</td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td style="background-color: #0087DC"></td>
-<td>Sir <a href="/wiki/Sir_George_Young,_6th_Baronet" title="Sir George Young, 6th Baronet">George Young</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
+<td>Sir <a href="/wiki/Sir_George_Young,_6th_Baronet" title="Sir George Young, 6th Baronet" class="mw-redirect">George Young</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
 <td>Seat held</td>
 </tr>
 <tr>
@@ -3847,7 +3752,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=17" title="Edit section: O">edit</a>]</span> <span class="mw-headline" id="O">O</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=16" title="Edit section: O">edit</a>]</span> <span class="mw-headline" id="O">O</span></h3>
 </td>
 </tr>
 <tr>
@@ -3930,7 +3835,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=18" title="Edit section: P">edit</a>]</span> <span class="mw-headline" id="P">P</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=17" title="Edit section: P">edit</a>]</span> <span class="mw-headline" id="P">P</span></h3>
 </td>
 </tr>
 <tr>
@@ -4085,7 +3990,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=19" title="Edit section: R">edit</a>]</span> <span class="mw-headline" id="R">R</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=18" title="Edit section: R">edit</a>]</span> <span class="mw-headline" id="R">R</span></h3>
 </td>
 </tr>
 <tr>
@@ -4246,7 +4151,7 @@ Incumbent MP <a href="/wiki/Sandra_Gidley" title="Sandra Gidley">Sandra Gidley</
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td style="background-color: #DC241f"></td>
 <td><a href="/wiki/Denis_MacShane" title="Denis MacShane">Denis MacShane</a>&#160;(<a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">L</a>)</td>
-<td>Seat held. MacShane was suspended from the party and had the whip withdrawn on 14 October 2010 after the <a href="/wiki/Metropolitan_Police" title="Metropolitan Police" class="mw-redirect">Metropolitan Police</a> began an investigation into his conduct following a referral from the <a href="/wiki/Parliamentary_Commissioner_for_Standards" title="Parliamentary Commissioner for Standards">Parliamentary Commissioner for Standards</a>. He now sits as an independent.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>8<span>]</span></a></sup></td>
+<td>Seat held. MacShane was suspended from the party and had the whip withdrawn on 14 October 2010 after the <a href="/wiki/Metropolitan_Police" title="Metropolitan Police" class="mw-redirect">Metropolitan Police</a> began an investigation into his conduct following a referral from the <a href="/wiki/Parliamentary_Commissioner_for_Standards" title="Parliamentary Commissioner for Standards">Parliamentary Commissioner for Standards</a>. He now sits as an independent.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup></td>
 </tr>
 <tr>
 <td><a href="/wiki/Rugby_(UK_Parliament_constituency)" title="Rugby (UK Parliament constituency)">Rugby</a></td>
@@ -4298,7 +4203,7 @@ Incumbent MP <a href="/wiki/Sandra_Gidley" title="Sandra Gidley">Sandra Gidley</
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=20" title="Edit section: S">edit</a>]</span> <span class="mw-headline" id="S">S</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=19" title="Edit section: S">edit</a>]</span> <span class="mw-headline" id="S">S</span></h3>
 </td>
 </tr>
 <tr>
@@ -4967,7 +4872,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=21" title="Edit section: T">edit</a>]</span> <span class="mw-headline" id="T">T</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=20" title="Edit section: T">edit</a>]</span> <span class="mw-headline" id="T">T</span></h3>
 </td>
 </tr>
 <tr>
@@ -5139,7 +5044,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=22" title="Edit section: U">edit</a>]</span> <span class="mw-headline" id="U">U</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=21" title="Edit section: U">edit</a>]</span> <span class="mw-headline" id="U">U</span></h3>
 </td>
 </tr>
 <tr>
@@ -5167,7 +5072,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=23" title="Edit section: V">edit</a>]</span> <span class="mw-headline" id="V">V</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=22" title="Edit section: V">edit</a>]</span> <span class="mw-headline" id="V">V</span></h3>
 </td>
 </tr>
 <tr>
@@ -5202,7 +5107,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=24" title="Edit section: W">edit</a>]</span> <span class="mw-headline" id="W">W</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=23" title="Edit section: W">edit</a>]</span> <span class="mw-headline" id="W">W</span></h3>
 </td>
 </tr>
 <tr>
@@ -5662,7 +5567,7 @@ Seat held</td>
 </tr>
 <tr>
 <td colspan="6" bgcolor="#CCCCFF">
-<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=25" title="Edit section: Y">edit</a>]</span> <span class="mw-headline" id="Y">Y</span></h3>
+<h3><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=24" title="Edit section: Y">edit</a>]</span> <span class="mw-headline" id="Y">Y</span></h3>
 </td>
 </tr>
 <tr>
@@ -5705,9 +5610,15 @@ Seat held</td>
 <td>New constituency; first-time MP</td>
 </tr>
 </table>
-<h2><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=26" title="Edit section: By-elections">edit</a>]</span> <span class="mw-headline" id="By-elections">By-elections</span></h2>
-<p>As of November 2010<sup class="plainlinks noprint asof-tag update" style="display:none;"><a href="http://en.wikipedia.org/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit" class="external text" rel="nofollow">[update]</a></sup>, no by-elections have taken place during the 2010 Parliament. <a href="/wiki/Barnsley_Central_(UK_Parliament_constituency)" title="Barnsley Central (UK Parliament constituency)">Barnsley Central</a> MP <a href="/wiki/Eric_Illsley" title="Eric Illsley">Eric Illsley</a> was suspended from the <a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour Party</a> and had the whip withdrawn on May 19 after he was charged with <a href="/wiki/False_accounting" title="False accounting" class="mw-redirect">false accounting</a> over the <a href="/wiki/United_Kingdom_Parliamentary_expenses_scandal" title="United Kingdom Parliamentary expenses scandal">United Kingdom Parliamentary expenses scandal</a>,<sup id="cite_ref-illsley1_0-2" class="reference"><a href="#cite_note-illsley1-0"><span>[</span>1<span>]</span></a></sup> notionally decreasing the number of Labour seats to 257.</p>
-<h2><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=27" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h2>
+<h2><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=25" title="Edit section: Changes &amp; by-elections">edit</a>]</span> <span class="mw-headline" id="Changes_.26_by-elections">Changes &amp; by-elections</span></h2>
+<p>As of November 2010<sup class="plainlinks noprint asof-tag update" style="display:none;"><a href="http://en.wikipedia.org/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit" class="external text" rel="nofollow">[update]</a></sup>, no by-elections have taken place during the 2010 Parliament.</p>
+<ul>
+<li><a href="/wiki/Eric_Illsley" title="Eric Illsley">Eric Illsley</a> was suspended from the Labour Party and had the whip withdrawn on 19 May 2010 after he was charged with <a href="/wiki/False_accounting" title="False accounting" class="mw-redirect">false accounting</a> over the <a href="/wiki/United_Kingdom_Parliamentary_expenses_scandal" title="United Kingdom Parliamentary expenses scandal">United Kingdom Parliamentary expenses scandal</a><sup id="cite_ref-illsley1_0-1" class="reference"><a href="#cite_note-illsley1-0"><span>[</span>1<span>]</span></a></sup>. He now sits as an independent.</li>
+<li><a href="/wiki/Lindsay_Hoyle" title="Lindsay Hoyle">Lindsay Hoyle</a> (Lab) was elected <a href="/wiki/Chairman_of_Ways_and_Means" title="Chairman of Ways and Means">Chairman of Ways and Means</a>, <a href="/wiki/Nigel_Evans" title="Nigel Evans">Nigel Evans</a> (Con) was elected first Deputy Chairman of Ways and Means and <a href="/wiki/Dawn_Primarolo" title="Dawn Primarolo">Dawn Primarolo</a> (Lab) was elected second Deputy Chairman of Ways and Means. Although these Deputy Speakers do not resign from their parties, they cease to vote (except to break ties) and do not participate in party political activity until the next election.</li>
+<li><a href="/wiki/Denis_MacShane" title="Denis MacShane">Denis MacShane</a> was suspended from the Labour Party and had the whip withdrawn on 14 October 2010 after the <a href="/wiki/Metropolitan_Police" title="Metropolitan Police" class="mw-redirect">Metropolitan Police</a> began an investigation into his conduct following a referral from the <a href="/wiki/Parliamentary_Commissioner_for_Standards" title="Parliamentary Commissioner for Standards">Parliamentary Commissioner for Standards</a>. He now sits as an independent.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>3<span>]</span></a></sup></li>
+<li><a href="/wiki/Phil_Woolas" title="Phil Woolas">Phil Woolas</a>' election for the <a href="/wiki/Oldham_East_and_Saddleworth_(UK_Parliament_constituency)" title="Oldham East and Saddleworth (UK Parliament constituency)">Oldham East and Saddleworth</a> constituency was declared void on 5 November 2010 after he was reported personally guilty of knowingly making false statements of fact about the personal character of another candidate in campaign literature,<sup id="cite_ref-Guardian_5.2F11_3-0" class="reference"><a href="#cite_note-Guardian_5.2F11-3"><span>[</span>4<span>]</span></a></sup> meaning that his seat was vacated with effect from that date.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>5<span>]</span></a></sup> He was later suspended from the Labour Party and a <a href="/wiki/Oldham_East_and_Saddleworth_re-run_election,_2010" title="Oldham East and Saddleworth re-run election, 2010" class="mw-redirect">fresh election</a> is pending.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>6<span>]</span></a></sup></li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=26" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h2>
 <table class="metadata mbox-small plainlinks" style="border:1px solid #aaa; background-color:#f9f9f9;">
 <tr>
 <td class="mbox-image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Wikinews-logo.svg/40px-Wikinews-logo.svg.png" width="40" height="23" /></td>
@@ -5768,23 +5679,21 @@ Seat held</td>
 </td>
 </tr>
 </table>
-<h2><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=28" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
+<h2><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=27" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
 <div class="references-small" style="">
 <ol class="references">
-<li id="cite_note-illsley1-0">^ <a href="#cite_ref-illsley1_0-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-illsley1_0-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-illsley1_0-2"><sup><i><b>c</b></i></sup></a> <span class="citation web"><a href="http://news.bbc.co.uk/1/hi/uk_politics/8691861.stm" class="external text" rel="nofollow">"Labour MP charged over expenses"</a>. BBC<span class="printonly">. <a href="http://news.bbc.co.uk/1/hi/uk_politics/8691861.stm" class="external free" rel="nofollow">http://news.bbc.co.uk/1/hi/uk_politics/8691861.stm</a></span><span class="reference-accessdate">. Retrieved 19 May 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Labour+MP+charged+over+expenses&amp;rft.atitle=&amp;rft.pub=BBC&amp;rft_id=http%3A%2F%2Fnews.bbc.co.uk%2F1%2Fhi%2Fuk_politics%2F8691861.stm&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
-<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <span class="citation web">Aileen Walker; Ellen Wood (14 February 2000). <a href="http://www.parliament.uk/documents/commons/lib/research/rp2000/rp00-017.pdf" class="external text" rel="nofollow">"The Parliamentary Oath"</a>. House of Commons Library<span class="printonly">. <a href="http://www.parliament.uk/documents/commons/lib/research/rp2000/rp00-017.pdf" class="external free" rel="nofollow">http://www.parliament.uk/documents/commons/lib/research/rp2000/rp00-017.pdf</a></span><span class="reference-accessdate">. Retrieved 6 November 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=The+Parliamentary+Oath&amp;rft.atitle=&amp;rft.aulast=Aileen+Walker&amp;rft.au=Aileen+Walker&amp;rft.au=Ellen+Wood&amp;rft.date=14+February+2000&amp;rft.pub=House+of+Commons+Library&amp;rft_id=http%3A%2F%2Fwww.parliament.uk%2Fdocuments%2Fcommons%2Flib%2Fresearch%2Frp2000%2Frp00-017.pdf&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
-<li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> <span class="citation news"><a href="http://news.bbc.co.uk/2/shared/election2010/results/constituency/a79.stm" class="external text" rel="nofollow">"BBC NEWS - Election 2010 - Buckingham"</a>. BBC News. 7 May 2010. p.&#160;29<span class="printonly">. <a href="http://news.bbc.co.uk/2/shared/election2010/results/constituency/a79.stm" class="external free" rel="nofollow">http://news.bbc.co.uk/2/shared/election2010/results/constituency/a79.stm</a></span><span class="reference-accessdate">. Retrieved 9 May 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=BBC+NEWS+-+Election+2010+-+Buckingham&amp;rft.atitle=&amp;rft.date=7+May+2010&amp;rft.pages=p.%26nbsp%3B29&amp;rft.pub=BBC+News&amp;rft_id=http%3A%2F%2Fnews.bbc.co.uk%2F2%2Fshared%2Felection2010%2Fresults%2Fconstituency%2Fa79.stm&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
-<li id="cite_note-3"><b><a href="#cite_ref-3">^</a></b> <span class="citation news">Siddique, Haroon (14 October 2010). <a href="http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police" class="external text" rel="nofollow">"Labour withdraws whip from former minister facing police inquiry"</a>. <i><a href="/wiki/The_Guardian" title="The Guardian">The Guardian</a></i><span class="printonly">. <a href="http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police" class="external free" rel="nofollow">http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police</a></span><span class="reference-accessdate">. Retrieved 23 October 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Labour+withdraws+whip+from+former+minister+facing+police+inquiry&amp;rft.jtitle=%5B%5BThe+Guardian%5D%5D&amp;rft.aulast=Siddique&amp;rft.aufirst=Haroon&amp;rft.au=Siddique%2C%26%2332%3BHaroon&amp;rft.date=14+October+2010&amp;rft_id=http%3A%2F%2Fwww.guardian.co.uk%2Fpolitics%2F2010%2Foct%2F14%2Flabour-whip-former-minister-police&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
-<li id="cite_note-Guardian_5.2F11-4"><b><a href="#cite_ref-Guardian_5.2F11_4-0">^</a></b> <span class="citation news">Curtis, Polly. <a href="http://www.guardian.co.uk/politics/2010/nov/05/phil-woolas-immigration-leaflets-oldham-east-rerun" class="external text" rel="nofollow">"Phil Woolas immigration leaflets case: high court orders election rerun in Oldham East"</a>. <i><a href="/wiki/The_Guardian" title="The Guardian">The Guardian</a></i><span class="printonly">. <a href="http://www.guardian.co.uk/politics/2010/nov/05/phil-woolas-immigration-leaflets-oldham-east-rerun" class="external free" rel="nofollow">http://www.guardian.co.uk/politics/2010/nov/05/phil-woolas-immigration-leaflets-oldham-east-rerun</a></span><span class="reference-accessdate">. Retrieved 5 November 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Phil+Woolas+immigration+leaflets+case%3A+high+court+orders+election+rerun+in+Oldham+East&amp;rft.jtitle=%5B%5BThe+Guardian%5D%5D&amp;rft.aulast=Curtis&amp;rft.aufirst=Polly&amp;rft.au=Curtis%2C%26%2332%3BPolly&amp;rft_id=http%3A%2F%2Fwww.guardian.co.uk%2Fpolitics%2F2010%2Fnov%2F05%2Fphil-woolas-immigration-leaflets-oldham-east-rerun&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
-<li id="cite_note-5"><b><a href="#cite_ref-5">^</a></b> <a href="http://www.publications.parliament.uk/pa/cm201011/cmhansrd/cm101108/debtext/101108-0001.htm#10110810000004" class="external text" rel="nofollow">House of Commons Hansard, 8 November 2010&#160;: Column 1</a></li>
-<li id="cite_note-6"><b><a href="#cite_ref-6">^</a></b> <span class="citation web"><a href="http://www.bbc.co.uk/news/uk-politics-11699888" class="external text" rel="nofollow">"Judges order election re-run in ex-minister's seat"</a>. <i><a href="/wiki/BBC_News" title="BBC News">BBC News</a></i>. 5 November 2010<span class="printonly">. <a href="http://www.bbc.co.uk/news/uk-politics-11699888" class="external free" rel="nofollow">http://www.bbc.co.uk/news/uk-politics-11699888</a></span><span class="reference-accessdate">. Retrieved 5 November 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Judges+order+election+re-run+in+ex-minister%27s+seat&amp;rft.atitle=%5B%5BBBC+News%5D%5D&amp;rft.date=5+November+2010&amp;rft_id=http%3A%2F%2Fwww.bbc.co.uk%2Fnews%2Fuk-politics-11699888&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
-<li id="cite_note-7"><b><a href="#cite_ref-7">^</a></b> <span class="citation news">Siddique, Haroon (14 October 2010). <a href="http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police" class="external text" rel="nofollow">"Labour withdraws whip from former minister facing police inquiry"</a>. <i><a href="/wiki/The_Guardian" title="The Guardian">The Guardian</a></i><span class="printonly">. <a href="http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police" class="external free" rel="nofollow">http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police</a></span><span class="reference-accessdate">. Retrieved 23 October 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Labour+withdraws+whip+from+former+minister+facing+police+inquiry&amp;rft.jtitle=%5B%5BThe+Guardian%5D%5D&amp;rft.aulast=Siddique&amp;rft.aufirst=Haroon&amp;rft.au=Siddique%2C%26%2332%3BHaroon&amp;rft.date=14+October+2010&amp;rft_id=http%3A%2F%2Fwww.guardian.co.uk%2Fpolitics%2F2010%2Foct%2F14%2Flabour-whip-former-minister-police&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-illsley1-0">^ <a href="#cite_ref-illsley1_0-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-illsley1_0-1"><sup><i><b>b</b></i></sup></a> <span class="citation news"><a href="http://news.bbc.co.uk/1/hi/uk_politics/8691861.stm" class="external text" rel="nofollow">"Labour MP charged over expenses"</a>. BBC. 19 May 2010<span class="printonly">. <a href="http://news.bbc.co.uk/1/hi/uk_politics/8691861.stm" class="external free" rel="nofollow">http://news.bbc.co.uk/1/hi/uk_politics/8691861.stm</a></span><span class="reference-accessdate">. Retrieved 19 May 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Labour+MP+charged+over+expenses&amp;rft.atitle=&amp;rft.date=19+May+2010&amp;rft.pub=BBC&amp;rft_id=http%3A%2F%2Fnews.bbc.co.uk%2F1%2Fhi%2Fuk_politics%2F8691861.stm&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <span class="citation news">Siddique, Haroon (14 October 2010). <a href="http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police" class="external text" rel="nofollow">"Labour withdraws whip from former minister facing police inquiry"</a>. <i><a href="/wiki/The_Guardian" title="The Guardian">The Guardian</a></i><span class="printonly">. <a href="http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police" class="external free" rel="nofollow">http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police</a></span><span class="reference-accessdate">. Retrieved 23 October 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Labour+withdraws+whip+from+former+minister+facing+police+inquiry&amp;rft.jtitle=%5B%5BThe+Guardian%5D%5D&amp;rft.aulast=Siddique&amp;rft.aufirst=Haroon&amp;rft.au=Siddique%2C%26%2332%3BHaroon&amp;rft.date=14+October+2010&amp;rft_id=http%3A%2F%2Fwww.guardian.co.uk%2Fpolitics%2F2010%2Foct%2F14%2Flabour-whip-former-minister-police&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> <span class="citation news">Siddique, Haroon (14 October 2010). <a href="http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police" class="external text" rel="nofollow">"Labour withdraws whip from former minister facing police inquiry"</a>. <i><a href="/wiki/The_Guardian" title="The Guardian">The Guardian</a></i><span class="printonly">. <a href="http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police" class="external free" rel="nofollow">http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police</a></span><span class="reference-accessdate">. Retrieved 23 October 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Labour+withdraws+whip+from+former+minister+facing+police+inquiry&amp;rft.jtitle=%5B%5BThe+Guardian%5D%5D&amp;rft.aulast=Siddique&amp;rft.aufirst=Haroon&amp;rft.au=Siddique%2C%26%2332%3BHaroon&amp;rft.date=14+October+2010&amp;rft_id=http%3A%2F%2Fwww.guardian.co.uk%2Fpolitics%2F2010%2Foct%2F14%2Flabour-whip-former-minister-police&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-Guardian_5.2F11-3"><b><a href="#cite_ref-Guardian_5.2F11_3-0">^</a></b> <span class="citation news">Curtis, Polly. <a href="http://www.guardian.co.uk/politics/2010/nov/05/phil-woolas-immigration-leaflets-oldham-east-rerun" class="external text" rel="nofollow">"Phil Woolas immigration leaflets case: high court orders election rerun in Oldham East"</a>. <i><a href="/wiki/The_Guardian" title="The Guardian">The Guardian</a></i><span class="printonly">. <a href="http://www.guardian.co.uk/politics/2010/nov/05/phil-woolas-immigration-leaflets-oldham-east-rerun" class="external free" rel="nofollow">http://www.guardian.co.uk/politics/2010/nov/05/phil-woolas-immigration-leaflets-oldham-east-rerun</a></span><span class="reference-accessdate">. Retrieved 5 November 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Phil+Woolas+immigration+leaflets+case%3A+high+court+orders+election+rerun+in+Oldham+East&amp;rft.jtitle=%5B%5BThe+Guardian%5D%5D&amp;rft.aulast=Curtis&amp;rft.aufirst=Polly&amp;rft.au=Curtis%2C%26%2332%3BPolly&amp;rft_id=http%3A%2F%2Fwww.guardian.co.uk%2Fpolitics%2F2010%2Fnov%2F05%2Fphil-woolas-immigration-leaflets-oldham-east-rerun&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-4"><b><a href="#cite_ref-4">^</a></b> <a href="http://www.publications.parliament.uk/pa/cm201011/cmhansrd/cm101108/debtext/101108-0001.htm#10110810000004" class="external text" rel="nofollow">House of Commons Hansard, 8 November 2010&#160;: Column 1</a></li>
+<li id="cite_note-5"><b><a href="#cite_ref-5">^</a></b> <span class="citation web"><a href="http://www.bbc.co.uk/news/uk-politics-11699888" class="external text" rel="nofollow">"Judges order election re-run in ex-minister's seat"</a>. <i><a href="/wiki/BBC_News" title="BBC News">BBC News</a></i>. 5 November 2010<span class="printonly">. <a href="http://www.bbc.co.uk/news/uk-politics-11699888" class="external free" rel="nofollow">http://www.bbc.co.uk/news/uk-politics-11699888</a></span><span class="reference-accessdate">. Retrieved 5 November 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Judges+order+election+re-run+in+ex-minister%27s+seat&amp;rft.atitle=%5B%5BBBC+News%5D%5D&amp;rft.date=5+November+2010&amp;rft_id=http%3A%2F%2Fwww.bbc.co.uk%2Fnews%2Fuk-politics-11699888&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
 </ol>
 </div>
 <ul>
 <li><a href="http://news.bbc.co.uk/1/shared/election2010/results/" class="external text" rel="nofollow">General Election 2010 - Results</a> BBC News</li>
 </ul>
-<h2><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=29" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span></h2>
+<h2><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=28" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span></h2>
 <ul>
 <li><a href="http://www.parliament.uk/mps-lords-and-offices/mps/state-of-the-parties/" class="external text" rel="nofollow">Current state of the parties</a> - <a href="/wiki/Parliament_of_the_United_Kingdom" title="Parliament of the United Kingdom">UK Parliament</a></li>
 <li><a href="http://www.guardian.co.uk/news/datablog/2010/may/07/uk-election-results-data-candidates-seats" class="external text" rel="nofollow">Full election data</a> as a spreadsheet, <a href="/wiki/The_Guardian" title="The Guardian">The Guardian</a></li>
@@ -5793,18 +5702,18 @@ Seat held</td>
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 8974/1000000
-Post-expand include size: 142092/2048000 bytes
-Template argument size: 44638/2048000 bytes
+Preprocessor node count: 7742/1000000
+Post-expand include size: 125205/2048000 bytes
+Template argument size: 41490/2048000 bytes
 Expensive parser function count: 1/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:26491796-0!1!0!default!!en!4 and timestamp 20101117022642 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:26491796-0!1!0!default!!en!4 and timestamp 20101124121200 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010</a>"</div>
 				<!-- /bodytext -->
 								<!-- catlinks -->
-				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:House_of_Commons_of_the_United_Kingdom" title="Category:House of Commons of the United Kingdom">House of Commons of the United Kingdom</a></span> | <span dir='ltr'><a href="/wiki/Category:United_Kingdom_general_election,_2010" title="Category:United Kingdom general election, 2010">United Kingdom general election, 2010</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_MPs_elected_in_United_Kingdom_general_elections" title="Category:Lists of MPs elected in United Kingdom general elections">Lists of MPs elected in United Kingdom general elections</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_current_office-holders" title="Category:Lists of current office-holders">Lists of current office-holders</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_UK_MPs_2010%E2%80%93" title="Category:Lists of UK MPs 2010–">Lists of UK MPs 2010–</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Scottish_MPs" title="Category:Lists of Scottish MPs">Lists of Scottish MPs</a></span> | <span dir='ltr'><a href="/wiki/Category:Legislative_sessions" title="Category:Legislative sessions">Legislative sessions</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Northern_Irish_MPs" title="Category:Lists of Northern Irish MPs">Lists of Northern Irish MPs</a></span></div><div id="mw-hidden-catlinks" class="mw-hidden-cats-hidden">Hidden categories: <span dir='ltr'><a href="/wiki/Category:Articles_containing_potentially_dated_statements_from_November_2010" title="Category:Articles containing potentially dated statements from November 2010">Articles containing potentially dated statements from November 2010</a></span> | <span dir='ltr'><a href="/wiki/Category:All_articles_containing_potentially_dated_statements" title="Category:All articles containing potentially dated statements">All articles containing potentially dated statements</a></span></div></div>				<!-- /catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:United_Kingdom_general_election,_2010" title="Category:United Kingdom general election, 2010">United Kingdom general election, 2010</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_MPs_elected_in_United_Kingdom_general_elections" title="Category:Lists of MPs elected in United Kingdom general elections">Lists of MPs elected in United Kingdom general elections</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_current_office-holders" title="Category:Lists of current office-holders">Lists of current office-holders</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_UK_MPs_2010%E2%80%93" title="Category:Lists of UK MPs 2010–">Lists of UK MPs 2010–</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Scottish_MPs" title="Category:Lists of Scottish MPs">Lists of Scottish MPs</a></span> | <span dir='ltr'><a href="/wiki/Category:Legislative_sessions" title="Category:Legislative sessions">Legislative sessions</a></span> | <span dir='ltr'><a href="/wiki/Category:Lists_of_Northern_Irish_MPs" title="Category:Lists of Northern Irish MPs">Lists of Northern Irish MPs</a></span></div><div id="mw-hidden-catlinks" class="mw-hidden-cats-hidden">Hidden categories: <span dir='ltr'><a href="/wiki/Category:Articles_containing_potentially_dated_statements_from_November_2010" title="Category:Articles containing potentially dated statements from November 2010">Articles containing potentially dated statements from November 2010</a></span> | <span dir='ltr'><a href="/wiki/Category:All_articles_containing_potentially_dated_statements" title="Category:All articles containing potentially dated statements">All articles containing potentially dated statements</a></span></div></div>				<!-- /catlinks -->
 												<div class="visualClear"></div>
 			</div>
 			<!-- /bodyContent -->
@@ -5817,7 +5726,6 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 <div id="p-personal" class="">
 	<h5>Personal tools</h5>
 	<ul>
-					<li  id="pt-prefswitch-link-anon"><a href="http://en.wikipedia.org/w/index.php?title=Special:UsabilityInitiativePrefSwitch&amp;from=List_of_MPs_elected_in_the_United_Kingdom_general_election%2C_2010" title="Learn about new features" class="no-text-transform">New features</a></li>
 					<li  id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010" title="You are encouraged to log in; however, it is not mandatory. [o]" accesskey="o">Log in / create account</a></li>
 			</ul>
 </div>
@@ -5940,8 +5848,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;oldid=397226139" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;id=397226139" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;oldid=398619796" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;id=398619796" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -5951,7 +5859,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2010" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2010&amp;oldid=397226139&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2010" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2010&amp;oldid=398619796&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -5964,7 +5872,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 17 November 2010 at 02:21.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 24 November 2010 at 12:12.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -5987,5 +5895,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv269 in 0.061 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv249 in 0.083 secs. -->			</body>
 </html>
