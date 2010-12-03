@@ -10989,6 +10989,25 @@ B - bishop
     fromdate="2010-11-22" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101075"
+    house="lords"
+    forenames="John Lawrence Pritchard"
+    title="Bishop" lordname="" lordofname="Oxford"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2010-11-25" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101076"
+    house="lords"
+    forenames="Peter John"
+    title="Lord" lordname="Hennessy" lordofname="Nympsfield"
+    county="the County of Gloucestershire"
+    peeragetype="L" affiliation="XB"
+    fromdate="2010-11-25" todate="9999-12-31"
+/>
+
 <!--
 <lord
     id="uk.org.publicwhip/lord/1010.."
