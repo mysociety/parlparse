@@ -46,7 +46,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=399534330,
+wgCurRevisionId=401422520,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -350,7 +350,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Nazir_Ahmed,_Baron_Ahmed" title="Nazir Ahmed, Baron Ahmed">The Lord Ahmed</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Expelled from Party after being jailed for dangerous driving</td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Alderdice,_Baron_Alderdice" title="John Alderdice, Baron Alderdice">The Lord Alderdice</a></td>
@@ -491,7 +491,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/William_Bach,_Baron_Bach" title="William Bach, Baron Bach">The Lord Bach</a></td>
+<td><a href="/wiki/William_Bach,_Baron_Bach" title="William Bach, Baron Bach" class="mw-redirect">The Lord Bach</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -510,7 +510,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 </tr>
 <tr>
 <td><a href="/wiki/Edward_Haughey,_Baron_Ballyedmond" title="Edward Haughey, Baron Ballyedmond">The Lord Ballyedmond</a></td>
-<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
+<td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
@@ -551,7 +551,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Jeremy_Beecham" title="Jeremy Beecham" class="mw-redirect">The Lord Beecham</a></td>
+<td><a href="/wiki/Jeremy_Beecham" title="Jeremy Beecham">The Lord Beecham</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -588,9 +588,9 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 </tr>
 <tr>
 <td><a href="/wiki/Amirali_Bhatia,_Baron_Bhatia" title="Amirali Bhatia, Baron Bhatia" class="mw-redirect">The Lord Bhatia</a></td>
-<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
+<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>18th of October 2010 was suspended from the House of Lords for eight months and told to repay £27,446 due to the <a href="/wiki/United_Kingdom_Parliamentary_expenses_scandal" title="United Kingdom Parliamentary expenses scandal">United Kingdom Parliamentary expenses scandal</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Kumar_Bhattacharyya,_Baron_Bhattacharyya" title="Kumar Bhattacharyya, Baron Bhattacharyya">The Lord Bhattacharyya</a></td>
@@ -767,7 +767,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/William_Brett,_Baron_Brett" title="William Brett, Baron Brett">The Lord Brett</a></td>
+<td><a href="/wiki/William_Brett,_Baron_Brett" title="William Brett, Baron Brett" class="mw-redirect">The Lord Brett</a></td>
 <td>Independent</td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -1235,7 +1235,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Neil_Davidson,_Baron_Davidson_of_Glen_Clova" title="Neil Davidson, Baron Davidson of Glen Clova">The Lord Davidson of Glen Clova</a></td>
+<td><a href="/wiki/Neil_Davidson,_Baron_Davidson_of_Glen_Clova" title="Neil Davidson, Baron Davidson of Glen Clova" class="mw-redirect">The Lord Davidson of Glen Clova</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -1253,7 +1253,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Bryan_Davies,_Baron_Davies_of_Oldham" title="Bryan Davies, Baron Davies of Oldham">The Lord Davies of Oldham</a></td>
+<td><a href="/wiki/Bryan_Davies,_Baron_Davies_of_Oldham" title="Bryan Davies, Baron Davies of Oldham" class="mw-redirect">The Lord Davies of Oldham</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -1379,7 +1379,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/John_Eatwell,_Baron_Eatwell" title="John Eatwell, Baron Eatwell">The Lord Eatwell</a></td>
+<td><a href="/wiki/John_Eatwell,_Baron_Eatwell" title="John Eatwell, Baron Eatwell" class="mw-redirect">The Lord Eatwell</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -1445,7 +1445,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Matthew_Evans,_Baron_Evans_of_Temple_Guiting" title="Matthew Evans, Baron Evans of Temple Guiting">The Lord Evans of Temple Guiting</a></td>
+<td><a href="/wiki/Matthew_Evans,_Baron_Evans_of_Temple_Guiting" title="Matthew Evans, Baron Evans of Temple Guiting" class="mw-redirect">The Lord Evans of Temple Guiting</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -2175,7 +2175,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Philip_Hunt,_Baron_Hunt_of_Kings_Heath" title="Philip Hunt, Baron Hunt of Kings Heath" class="mw-redirect">The Lord Hunt of Kings Heath</a></td>
+<td><a href="/wiki/Philip_Hunt,_Baron_Hunt_of_Kings_Heath" title="Philip Hunt, Baron Hunt of Kings Heath">The Lord Hunt of Kings Heath</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -2319,7 +2319,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Maggie_Jones,_Baroness_Jones_of_Whitchurch" title="Maggie Jones, Baroness Jones of Whitchurch">The Baroness Jones of Whitchurch</a></td>
+<td><a href="/wiki/Maggie_Jones,_Baroness_Jones_of_Whitchurch" title="Maggie Jones, Baroness Jones of Whitchurch" class="mw-redirect">The Baroness Jones of Whitchurch</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -3015,7 +3015,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Delyth_Morgan,_Baroness_Morgan_of_Drefelin" title="Delyth Morgan, Baroness Morgan of Drefelin">The Baroness Morgan of Drefelin</a></td>
+<td><a href="/wiki/Delyth_Morgan,_Baroness_Morgan_of_Drefelin" title="Delyth Morgan, Baroness Morgan of Drefelin" class="mw-redirect">The Baroness Morgan of Drefelin</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -3315,7 +3315,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Kamlesh_Patel,_Baron_Patel_of_Bradford" title="Kamlesh Patel, Baron Patel of Bradford">The Lord Patel of Bradford</a></td>
+<td><a href="/wiki/Kamlesh_Patel,_Baron_Patel_of_Bradford" title="Kamlesh Patel, Baron Patel of Bradford" class="mw-redirect">The Lord Patel of Bradford</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -3447,7 +3447,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Joyce_Quin,_Baroness_Quin" title="Joyce Quin, Baroness Quin">The Baroness Quin</a></td>
+<td><a href="/wiki/Joyce_Quin,_Baroness_Quin" title="Joyce Quin, Baroness Quin" class="mw-redirect">The Baroness Quin</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -3663,7 +3663,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Janet_Royall" title="Janet Royall">The Baroness Royall of Blaisdon</a></td>
+<td><a href="/wiki/Janet_Royall" title="Janet Royall" class="mw-redirect">The Baroness Royall of Blaisdon</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -3741,7 +3741,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Patricia_Scotland,_Baroness_Scotland_of_Asthal" title="Patricia Scotland, Baroness Scotland of Asthal">The Baroness Scotland of Asthal</a></td>
+<td><a href="/wiki/Patricia_Scotland,_Baroness_Scotland_of_Asthal" title="Patricia Scotland, Baroness Scotland of Asthal" class="mw-redirect">The Baroness Scotland of Asthal</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -3891,7 +3891,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Angela_Smith,_Baroness_Smith_of_Basildon" title="Angela Smith, Baroness Smith of Basildon">The Baroness Smith of Basildon</a></td>
+<td><a href="/wiki/Angela_Smith,_Baroness_Smith_of_Basildon" title="Angela Smith, Baroness Smith of Basildon" class="mw-redirect">The Baroness Smith of Basildon</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -4047,7 +4047,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Thomas_Galbraith,_2nd_Baron_Strathclyde" title="Thomas Galbraith, 2nd Baron Strathclyde" class="mw-redirect">The Lord Strathclyde</a></td>
+<td><a href="/wiki/Thomas_Galbraith,_2nd_Baron_Strathclyde" title="Thomas Galbraith, 2nd Baron Strathclyde">The Lord Strathclyde</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
 <td></td>
@@ -4269,7 +4269,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Denis_Tunnicliffe" title="Denis Tunnicliffe" class="mw-redirect">The Lord Tunnicliffe</a></td>
+<td><a href="/wiki/Denis_Tunnicliffe" title="Denis Tunnicliffe">The Lord Tunnicliffe</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -4617,7 +4617,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Anthony_Young,_Baron_Young_of_Norwood_Green" title="Anthony Young, Baron Young of Norwood Green">The Lord Young of Norwood Green</a></td>
+<td><a href="/wiki/Anthony_Young,_Baron_Young_of_Norwood_Green" title="Anthony Young, Baron Young of Norwood Green" class="mw-redirect">The Lord Young of Norwood Green</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -4914,7 +4914,7 @@ Template argument size: 5408/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!4 and timestamp 20101201215553 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!4 and timestamp 20101211055922 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 				<!-- /bodytext -->
@@ -5018,7 +5018,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 					<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content — the best of Wikipedia">Featured content</a></li>
 					<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
 					<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
-					<li id="n-variablepage" class="active" ><a href="/w/index.php?title=Special:VariablePage&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=spontaneous_donation">Donate</a></li>
+					<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Special:Landingcheck?landing_page=WMFJA1&amp;language=en&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20101204SB001" title="Support us">Donate to Wikipedia</a></li>
 				</ul>
 			</div>
 </div>
@@ -5054,8 +5054,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=399534330" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=399534330" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=401422520" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=401422520" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -5065,7 +5065,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=399534330&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=401422520&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -5086,7 +5086,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 29 November 2010 at 16:00.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 9 December 2010 at 09:53.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -5109,5 +5109,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv196 in 0.050 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv180 in 0.066 secs. -->			</body>
 </html>
