@@ -1922,8 +1922,8 @@
 	id="uk.org.publicwhip/member/90247"
 	title="" firstname="Gerry" lastname="Adams"
 	constituency="Belfast West" party="Sinn Féin"
-	fromdate="2007-03-09" todate="9999-12-31"
-	fromwhy="election" towhy="still_in_office"
+	fromdate="2007-03-09" todate="2010-12-07"
+	fromwhy="election" towhy="resigned"
 />
 <member_ni
 	id="uk.org.publicwhip/member/90248"
@@ -2800,6 +2800,14 @@
 	title="" firstname="Pól" lastname="Callaghan"
 	constituency="Foyle" party="SDLP"
 	fromdate="2010-11-15" todate="9999-12-31"
+	fromwhy="appointed" towhy="still_in_office"
+/>
+
+<member_ni
+	id="uk.org.publicwhip/member/90372"
+	title="" firstname="Pat" lastname="Sheehan"
+	constituency="Belfast West" party="Sinn Féin"
+	fromdate="2010-12-07" todate="9999-12-31"
 	fromwhy="appointed" towhy="still_in_office"
 />
 
