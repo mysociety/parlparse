@@ -17,11 +17,12 @@ toppath = miscfuncs.toppath
 
 # Creates an xml with the links into the index files for the Standing Committees.
 
-urlstandingbillsyears = "http://www.publications.parliament.uk/pa/cm/stand.htm"
-urlstandingothersyears = "http://www.publications.parliament.uk/pa/cm/othstn.htm"
+url_pbc_current = "http://www.parliament.uk/business/publications/hansard/commons/bill-committee-debates/"
+url_pbc_previous = "http://www.parliament.uk/business/publications/hansard/commons/bill-committee-debates/previous-sessions/"
+
 pwsdantingindex = os.path.join(toppath, "standingindex.xml")
 
-def GetLinksTitles(urlpage):
+def get_oldstyle_bill_links(urlpage):
 	res = [ ]
 	uin = urllib.urlopen(urlpage)
 	s = uin.read()
@@ -85,12 +86,17 @@ def GetReportProceedings(urlpage, year):
 		lklk = urlparse.urljoin(urlpage, lklk)
 		lkname = re.sub("(?:\s|&nbsp;|<br>|</?[iI]>)+", " ", lk[1]).strip()
 
-                if re.match('http://(www|services).parliament.uk', lklk): continue
+                if re.match('https?://(www|services|subscriptions).parliament.uk', lklk): continue
 
                 # They've done them under bills now...
                 if int(year) >= 2009:
+                        if 'PDF' in lkname: continue # We don't care about the pretty PDFs
+
                         msitting = re.match('Committee?(?: Stage| debate)*(?: -|:)? (\d+)(?:st|nd|rd|th) sitting(?i)', lkname)
-                        sitting = int(msitting.group(1))
+                        try:
+                                sitting = int(msitting.group(1))
+                        except:
+                                raise Exception, "Could not find sitting in %s for %s" % (lkname, urlpage)
                         mdate = re.search('cmpublic/(.*?)/(\d\d)(\d\d)(\d\d)/(am|pm)/\d+s\d+\.htm', lklk)
                         sdate = mx.DateTime.DateTimeFrom(
                                 year=2000+int(mdate.group(2)),
@@ -212,33 +218,17 @@ def GetReportProceedings(urlpage, year):
 		prev = p
 	return res, firstdate
 
-def GetBillLinks(bforce):
-	billyears = GetLinksTitles(urlstandingbillsyears)
+def get_committee_attributes(committees):
 	res = [ ]
-	if not bforce:
-		billyears = billyears[1:2]   # if you don't do --force-index, you just get the current year
-		
-	for billyear in billyears:
-		match = re.match("Session (\d\d\d\d)-\d\d(?:\d\d)?$", billyear[1])
-                if not match:
-                        if billyear[1] == 'General Committee debates':
-                               continue
-                        else:
-                               raise
-		year = match.group(1)
-		if miscfuncs.IsNotQuiet():
-			print "year=", year
-		bnks = GetLinksTitles(billyear[0])
-		for bnk in bnks:
-                        index_url = bnk[0]
-                        if index_url == 'http://services.parliament.uk/bills/2009-10/thirdpartiesrightsagainstinsurers.html':
-                                index_url = 'http://services.parliament.uk/bills/2009-10/thirdpartiesrightsagainstinsurers/committees/houseofcommonspublicbillcommitteeonthethirdpartiesrightsagainstinsurersbillhl200910.html'
-                        if re.match('House of Lords Special Public Bill Committees', bnk[1]):
-                                continue
-                        # The following two had their meetings in 2008-09 and are linked from there also
-                        if year == '2009' and bnk[1] in ('Child Poverty Bill', 'Equality Bill'):
-                                continue
-			mcttee = re.match("""
+        for year, index_url, index_text in committees:
+                if index_url == 'http://services.parliament.uk/bills/2009-10/thirdpartiesrightsagainstinsurers.html':
+                        index_url = 'http://services.parliament.uk/bills/2009-10/thirdpartiesrightsagainstinsurers/committees/houseofcommonspublicbillcommitteeonthethirdpartiesrightsagainstinsurersbillhl200910.html'
+                if re.match('House of Lords Special Public Bill Committees', index_text):
+                        continue
+                # The following two had their meetings in 2008-09 and are linked from there also
+                if year == '2009' and index_text in ('Child Poverty Bill', 'Equality Bill'):
+                        continue
+                mcttee = re.match("""
         # The name of the Bill (occasionally they forget to put 'Bill')
         (.*?[ ](?:Bill|Dogs|Schools[ ]and[ ]Families|Names))
         # Some way of saying it's a Bill that started in the Lords
@@ -251,22 +241,52 @@ def GetBillLinks(bforce):
         (\((Standing[ ]Committee[ ][a-zA-Z]|Special[ ]Standing[ ]Committee|(Second|2nd)[ ]Reading[ ]Committee)\)\s?)?
         # They occasionally repeat the session for no reason
         (?:\d\d\d\d-\d\d)?
-        $(?ix)""", bnk[1])
-			assert mcttee, "Unrecognized committee or bill name: %s" % bnk
-			billtitle = mcttee.group(1)
-			if billtitle == "Company & Business Names":
-				billtitle = "Company and Business Names (Chamber of Commerce, Etc.) Bill"
-			if billtitle == "Breeding and Sale of Dogs":
-				billtitle = "Breeding and Sale of Dogs Bill"
-			if billtitle == "Children, Schools and Families":
-				billtitle = "Children, Schools and Families Bill"
-			assert re.match(".*? Bill$", billtitle), 'Does not end in Bill : %s' % billtitle
-			committee = mcttee.group(2)
-			#res.append((year, billtitle, committee, index_url))
-			ps, committeedate = GetReportProceedings(index_url, year)
-			for p in ps:
-				res.append(((year, billtitle, committee, index_url, committeedate), p))
+        # New ones since 2010-11 sometimes put "Committee" at the end
+        (?:[ ]Committee)?
+        $(?ix)""", index_text)
+                assert mcttee, "Unrecognized committee or bill name: %s" % index_text
+                billtitle = mcttee.group(1)
+                if billtitle == "Company & Business Names":
+                        billtitle = "Company and Business Names (Chamber of Commerce, Etc.) Bill"
+                if billtitle == "Breeding and Sale of Dogs":
+                        billtitle = "Breeding and Sale of Dogs Bill"
+                if billtitle == "Children, Schools and Families":
+                        billtitle = "Children, Schools and Families Bill"
+                assert re.match(".*? Bill$", billtitle), 'Does not end in Bill : %s' % billtitle
+                committee = mcttee.group(2)
+                #res.append((year, billtitle, committee, index_url))
+                ps, committeedate = GetReportProceedings(index_url, year)
+                for p in ps:
+                        res.append(((year, billtitle, committee, index_url, committeedate), p))
 	return res
+
+def GetBillLinks(bforce):
+	uin = urllib.urlopen(url_pbc_current)
+	s = uin.read()
+	uin.close()
+	current_committees = re.findall('<a href="(http://services.parliament.uk/bills/[^"]*)">(.*?)</a>(?is)', s)
+        current_session = re.search('<strong>Session (\d{4})-\d+</strong>', s).group(1)
+        committees = [ (current_session, link, text) for link, text in current_committees ]
+
+	# if you don't do --force-index, you just get the current year
+	if bforce:
+                billyears = [ ]
+                uin = urllib.urlopen(url_pbc_previous)
+                s = uin.read()
+                uin.close()
+                billyears = re.findall('<a href="([^"]*)"[^>]*>(Session .*?)</a>(?is)', s)
+
+                for billyear in billyears:
+                        match = re.match("Session (\d\d\d\d)-\d\d(?:\d\d)?", billyear[1])
+                        if not match:
+                                raise Exception, "Did not find session dates in %s" % billyear[1]
+                        year = match.group(1)
+                        if miscfuncs.IsNotQuiet():
+                                print "year=", year
+                        for link, text in get_oldstyle_bill_links(billyear[0]):
+                                committees.append( (year, link, text) )
+
+        return get_committee_attributes(committees)
 
 def WriteXML(fout, billinks):
 	fout.write('<?xml version="1.0" encoding="ISO-8859-1"?>\n')
