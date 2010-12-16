@@ -65,9 +65,14 @@ def GlueByNext(fout, urlx, billtitle):
 			(urlx, time.strftime('%Y-%m-%d', lt), time.strftime('%X', lt), billtitle))
 	url = urlx
 
-	pageheader = '<img\s*src="/pa/img/portsgrn.gif"\s*alt="House\s*of\s*Commons\s*portcullis"><BR>'
-	# there are various green button gifs, including two which say "continue", but with different filenames
-	pagefooter = '<a href\s*=\s*"[^"]*">\s*<img border=0(?: align=top)? src="/pa/img/(?:ctntgrn|conugrn|prevgrn|contgrn).gif"'
+        year = int(re.search('cm(\d{4})', urlx).group(1))
+        if year >= 2010:
+                pageheader = '<div id="content"'
+                pagefooter = '<a name="end"/>'
+        else:
+	        pageheader = '<img\s*src="/pa/img/portsgrn.gif"\s*alt="House\s*of\s*Commons\s*portcullis"><BR>'
+	        # there are various green button gifs, including two which say "continue", but with different filenames
+	        pagefooter = '<a href\s*=\s*"[^"]*">\s*<img border=0(?: align=top)? src="/pa/img/(?:ctntgrn|conugrn|prevgrn|contgrn).gif"'
 	if re.search("/pa/cm200203/cmstand/d/st030401/am/30401s01.htm$", urlx):
 		pageheader = "<!--end of UK Parliament banner for Publications -->" 
 	if re.search("/pa/cm200102/cmstand/d/st020115/am/20115s01.htm$", urlx):
