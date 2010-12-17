@@ -1,4 +1,4 @@
-#! /usr/bin/env python2.4
+#! /usr/bin/env python2.5
 
 import re
 import os
@@ -55,7 +55,7 @@ class StandingSoup(BeautifulSoup):
         
         # Remove gumph
         (re.compile('</?center>'), lambda match: ''),
-        (re.compile('&nbsp;'), lambda match: ''),
+        (re.compile('&(nbsp|#160);'), lambda match: ''),
         (re.compile('<(B|b)>House of Commons</(B|b)>.*?<(BODY|body)>'),  lambda match: ''),
         
         # Unconverted formatting from the document's previous encoding
@@ -117,11 +117,14 @@ class ParseCommittee:
         self.out.write('<speech id="%s" %s%s url="%s"%s>\n' % (self.id(), speaker_str, timestamp_str, self.url, col_str))
         self.in_speech= True
         
-    def display_para(self, tag, indent=False, amendmentText=False):
+    def display_para(self, tag, indent=False, amendmentText=False, new_new=False):
         """Output a paragraph of text. 
         """ 
         # deal with the column numbers
         for col in tag.findAll('div', {'class':'Column'}):
+            self.parse_column(''.join(col(text=True)))
+            col.replaceWith("&nbsp;")
+        for col in tag.findAll('div', {'class':'columnNumber'}):
             self.parse_column(''.join(col(text=True)))
             col.replaceWith("&nbsp;")
 
@@ -158,7 +161,7 @@ class ParseCommittee:
         if mDivision: 
             divNum = "unknown"
             if mDivision.group(1): divNum =  int(mDivision.group(1))
-            self.parse_division(tag, divNum)
+            self.parse_division(tag, divNum, new_new)
             return
 
         # get rid of empty nodes
@@ -166,7 +169,7 @@ class ParseCommittee:
         
         if len(contents) == 0: return 
         firstNode = contents[0]
-        if getattr(firstNode, 'name', None) in ['a','b'] and ptext.find(':') != -1 and len(ptext.strip()) -1 > ptext.find(':') and len(contents)>1:
+        if getattr(firstNode, 'name', None) in ['a', 'b', 'strong'] and ptext.find(':') != -1 and len(ptext.strip()) -1 > ptext.find(':') and len(contents)>1:
             # an amendment
             if re.match('Amendment proposed.*?', ptext):
                 self.non_speech_text()
@@ -188,7 +191,7 @@ class ParseCommittee:
                 return 
         
         # italicised text means no-one's speaking    
-        elif getattr(firstNode, 'name', None) == 'i': 
+        elif getattr(firstNode, 'name', None) in ('i', 'em'):
             self.non_speech_text()
         
         # display the contents of the tag as a para
@@ -228,7 +231,7 @@ class ParseCommittee:
 
     def display_committee(self, chairlist, memberlist, clerknames, all_attending=False):
         """Output a committee tag with chairs, members, clerks etc. The all_attending
-        flag indicates that all members are in attendence"""  
+        flag indicates that all members are in attendance"""  
         ctte_tag = []
         clerks = [self.clean_text(name) for name in clerknames.split(',') if name.strip()] 
         ctte_tag.append('<committee>\n')
@@ -236,6 +239,7 @@ class ParseCommittee:
         for chairman in chairlist: ctte_tag.append(chairman)
         ctte_tag.append('</chairmen>\n')
         for member in memberlist:
+            print member
             (orig_name, membername, bracket, party, attending) = self.parse_member_tag(member)
             matchtext = memberList.matchcttename(membername, bracket, self.date)
             if bracket: orig_name = '%s <span class="italic">(%s)</span>' % (orig_name, bracket)
@@ -248,10 +252,10 @@ class ParseCommittee:
     def display_witnesses(self, witnesslist):
         """Output a list of witnesses"""
         
-	self.out.write('<witnesses>\n')
-	for witness in witnesslist:
+        self.out.write('<witnesses>\n')
+        for witness in witnesslist:
             self.out.write('<witness>%s</witness>\n'%(witness))
-	self.out.write('</witnesses>\n')
+        self.out.write('</witnesses>\n')
 
     def display_division(self, num, counts):
         """Output a division tag with aye and no counts
@@ -420,14 +424,14 @@ class ParseCommittee:
         ayes.contents = []
         noes.contents = []
     
-    def parse_division(self, tag, divisionNum):      
+    def parse_division(self, tag, divisionNum, new_new):
         """Parse a new style division listing"""
         
         votecounts = self.vote_dict()
         debug("division %s" % divisionNum)
         
         divisionHeader = tag.findNextSibling('h5', {'class' : "hs_DivListHeader" })
-        if not divisionHeader: return self.parse_old_division(tag, divisionNum)
+        if not divisionHeader and not new_new: return self.parse_old_division(tag, divisionNum)
         
         # ayes header
         firstvote = ''.join(divisionHeader(text=True)).strip().lower()
@@ -477,7 +481,7 @@ class ParseCommittee:
             
     def parse_chair_tag(self, tag):
         """Parse the new-style committee chair tag. Return the member's
-        name and whether or not they're in attendence"""
+        name and whether or not they're in attendance"""
         attending = False
         chairname = tag.findNext(text=re.compile('[a-z]'))
         chairname = self.split_on_caps(chairname)
@@ -489,7 +493,7 @@ class ParseCommittee:
 
     def parse_chair_string(self, text):
         """Parse the old-style committee chairman text. Return the member's
-        name and whether or not they're in attendence"""
+        name and whether or not they're in attendance"""
         attending = False
         newtext = re.sub('&(dagger|#134);', '', text)
         if newtext != text: attending = True
@@ -503,7 +507,7 @@ class ParseCommittee:
         memberparty - second bracketed text if present 
         attending - bookean indicating if the member is attending"""
         attending = False
-        newtext = re.sub('&(dagger|#134);', '', text)
+        newtext = re.sub(u'\u2020|&dagger;|&#134;', '', text)
         if newtext != text: attending = True
         mMember = re.match('([^(]*?)\s*?(\([^)]*?\))?\s*?(\([^)]*?\))?\s*$', newtext)
         if not mMember: raise ContextException, "Couldn't parse committee member %s" % newtext 
@@ -704,44 +708,62 @@ class ParseCommittee:
         # get rid of the contents
         for element in filtered_candidates: element.contents = [] 
     
-    def parse_new_committee(self, soup):
+    def parse_new_committee(self, soup, new_new):
         """Parse new-style committee member list""" 
+
+        element = 'p' if new_new else 'div'
+
         # Committee description
         committee = soup.find("h4", { "class" : "hs_CLHeading" })
         if not committee: raise ContextException, "Couldn't find committee description"
 
         # find the chairmen
-        chairmen = soup.find("div", { "class" : "hs_CLChairman" })
+        chairmen = soup.find(element, { "class" : "hs_CLChairman" })
         if not chairmen: raise ContextException, "Couldn't find chairmen"    
-        chairTags = chairmen.findAll('a')        
-        if not chairTags:raise ContextException, "Couldn't populate chairmen"
 
         chairlist = []    
+        if new_new:
+            chairTags = chairmen.findAll('span', 'hs_CLMember') 
+        else:
+            chairTags = chairmen.findAll('a')        
+        if not chairTags: raise ContextException, "Couldn't populate chairmen"
+
         for tag in chairTags:
-            (chairname, attending) = self.parse_chair_tag(tag)
+            if new_new:
+                attending = u'\u2020' in tag.previous
+                chairname = self.clean_text(tag.next)
+            else:
+                (chairname, attending) = self.parse_chair_tag(tag)
             if len(chairTags)==1: attending = True # They don't bother with a dagger if there's only one chairman
             matchtext = memberList.matchcttename(chairname, None, self.date)
             chairlist.append( self.render_committee_member(matchtext, chairname, attending))
-                 
+
+        # Find any witnesses. Do this hear because we have to take them out
+        # to stop them being matched as members
+        ctteWitnessTag = committee.findNext("h4", {"class" : "hs_CLHeading"})
+        if ctteWitnessTag and ''.join(ctteWitnessTag(text=True)).strip() == "Witnesses":
+            if new_new:
+                ctteWitnesses = ctteWitnessTag.findNextSiblings('p', {"class" : "hs_CLMember"})
+            else:
+                ctteWitnesses = soup.findAll("div", {"class" : "hs_CLPara"})
+            witnesslist = [''.join(witnessTag(text=True)).strip() for witnessTag in ctteWitnesses]
+            self.external_speakers = True
+            [ witness.extract() for witness in ctteWitnesses ]
+
         # find the members
-        cttememberTags = soup.findAll("div", { "class" : "hs_CLMember" })
+        cttememberTags = soup.findAll(element, { "class" : "hs_CLMember" })
         if not cttememberTags: raise ContextException, "Couldn't find committee members"
         memberlist = [''.join(memberTag(text=True)).strip() for memberTag in cttememberTags] 
 
         #find the clerks
-        ctteclerkTags = soup.findAll("div", { "class" : "hs_CLClerks" })
+        ctteclerkTags = soup.findAll(element, { "class" : "hs_CLClerks" })
         clerks = ''
         for clerkTag in ctteclerkTags: clerks += clerkTag.contents[0]
         
         self.display_committee(chairlist, memberlist, clerks)
 
-        #find any witnesses
-        ctteWitnessTag = committee.findNext("h4", {"class" : "hs_CLHeading"})
         if ctteWitnessTag and ''.join(ctteWitnessTag(text=True)).strip() == "Witnesses":
-            ctteWitnesses = soup.findAll("div",{"class" : "hs_CLPara"})
-	    witnesslist = [''.join(witnessTag(text=True)).strip() for witnessTag in ctteWitnesses]
             self.display_witnesses(witnesslist)
-            self.external_speakers = True
 
     def parse_speaker(self, text):
         """Parse the speaker name from the beginning of a speech"""
@@ -754,7 +776,7 @@ class ParseCommittee:
             bracket = mSpeaker.group(2)
             bracket = self.split_on_caps(bracket)
         
-	# questions are now part of the para
+        # questions are now part of the para
         mQuestion = re.match('(Q\s*?\d+)\s*(.*)', speaker)
         if mQuestion:
             question = mQuestion.group(1)
@@ -762,7 +784,7 @@ class ParseCommittee:
             self.close_speech()
             self.display_speech_tag()
             self.out.write('<p>%s</p>\n' % (question))
-	speaker = self.split_on_caps(speaker)
+        speaker = self.split_on_caps(speaker)
         return (speaker, bracket,text)
     
     def parse_sitting_part(self, sitting_part):
@@ -797,7 +819,7 @@ class ParseCommittee:
         text = fp.read()
         # pre-massage massage. Pull out the divisions and replace linebreaks 
         # with <br /> tags so that we can actually distinguish names
-        if not re.search("hs_Para", text):
+        if not re.search("hs_CLMember", text):
             patt = re.compile("((Committee (having )?divided|Question put(?! and agreed)).*?(Question|Amendment) (accordingly|put))", re.DOTALL)   
             text = re.sub(patt, self.replace_linebreaks, text)
         text = re.sub("\s+", " ", text)
@@ -813,8 +835,8 @@ class ParseCommittee:
         
         # url that the content came from
         self.url = soup.pagex['url']        
-        paras =  soup.findAll('div', {"class" :"hs_Para"})
-        if paras:            
+        new_things = soup.findAll(attrs="hs_CLMember")
+        if new_things:            
             self.parse_new_sitting_part(soup)
         else:
             self.parse_old_sitting_part(soup)
@@ -831,6 +853,10 @@ class ParseCommittee:
         
     def parse_new_sitting_part(self, soup):
         """Parse and convert a new-style (post 3/2006) Public Bill Committee transcript to XML"""                
+
+        # hs_Para appeared from 3/2006 to 3/2010. Post that they've tweaked things a bit, so:
+        new_new = False if soup.findAll('div', {"class" :"hs_Para"}) else True
+
         # Extract the bill title (first major heading) and the url for the bill
         url = None
         bill_title = soup.h1
@@ -840,7 +866,12 @@ class ParseCommittee:
             node = bill_title
         title = self.render_node_list(node.contents)
         plaintitle = ''.join(node(text=True))
-        bill_link = soup.h3
+
+        if new_new:
+            bill_link = soup.find('h3', 'hs_2BillTitle')
+        else:
+            bill_link = soup.h3
+            
         if bill_link:
             if bill_link.a:
                 url = bill_link.a.get('href', None)
@@ -865,10 +896,10 @@ class ParseCommittee:
         url_str = '%s%s' % (url[0:7] != 'http://' and self.baseurl or '', url)
         self.out.write('<bill url="%s" title="%s">%s</bill>\n' % (url_str, plaintitle, title))
         
-        self.parse_new_committee(soup)
+        self.parse_new_committee(soup, new_new)
                 
-        for tag in soup({'h1':True, 'h3':True, 'h4':True, 'div':True, 'page':True, 'a':True}):
-            if tag.name == 'h1': 
+        for tag in soup({'h1':True, 'h2':True, 'h3':True, 'h4':True, 'p':True, 'div':True, 'page':True, 'a':True}):
+            if tag.name in ('h1', 'h2'):
                 self.parse_h1_tag(tag)
             elif tag.name == 'page':
                 self.url = tag['url']
@@ -877,12 +908,12 @@ class ParseCommittee:
                 self.url = self.url + "#" + tag['name']
             else:  
                 cssClass = tag.get('class', '')
-                if (cssClass == 'Column'):
+                if cssClass in ('Column', 'columnNumber'):
                     self.parse_column(''.join(tag(text=True)))
                 elif (cssClass == 'hs_Timeline'):
                     self.parse_timeline(tag)
-                elif (cssClass == 'hs_Para'):
-                    self.display_para(tag) 
+                elif cssClass in ('hs_Para', 'tabbed') or (cssClass=='' and tag.name=='p'):
+                    self.display_para(tag, new_new=new_new) 
                 elif (cssClass == 'hs_ParaIndent'):
                     self.display_para(tag, indent=True)
                 elif (cssClass == 'hs_8Clause'):
@@ -915,11 +946,12 @@ class ParseCommittee:
                 #ignored
                 elif (cssClass in ['hs_6fDate']):
                     pass
-                else :
-                    #print "NAME %s CLASS %s" % (tag.name, cssClass)
+                elif tag.name == 'div' and tag.get('id', '') in ('content-small', 'maincontent1'):
                     pass
-    
-    
+                else:
+                    print "NAME %s CLASS %s" % (tag.name, cssClass)
+                    pass
+
     def parse_old_sitting_part(self, soup):
         """Parse and convert an older-style (1/2001-3/2006) Standing Committee transcript to XML"""     
         

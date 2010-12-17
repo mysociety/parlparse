@@ -10,7 +10,7 @@ def construct_shortname(committeedate, letter, sittingnumber, sittingpart, date)
 
 def shortname_atts(shortname):  
     """Get a tuples of committee attributes from shortname string"""
-    m = re.match("standing(?P<committeedate>.*?)_(?P<letter>[A-Z]*?|2)_(?P<sittingnumber>\d\d)-(?P<sittingpart>\d)_(?P<date>.*?)(?P<version>[a-z])$", shortname)
+    m = re.match("standing(?P<committeedate>.*?)_(?P<letter>[A-Z0-9]*?|2)_(?P<sittingnumber>\d\d)-(?P<sittingpart>\d)_(?P<date>.*?)(?P<version>[a-z])$", shortname)
     if not m:
         raise Exception, "Attributes cannot be extracted from shortname %s" % shortname
     return m.groupdict()
