@@ -107,6 +107,7 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/101065" : "Richard Allan [Sheffield, Hallam]",
     "uk.org.publicwhip/lord/101067" : "Des Browne [Kilmarnock and Loudoun]",
     "uk.org.publicwhip/lord/101074" : "Michael Ancram [Devizes]",
+    "uk.org.publicwhip/lord/101080" : "Patrick Cormack [South Staffordshire]",
 
 }
 
