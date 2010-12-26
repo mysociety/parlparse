@@ -96,7 +96,11 @@ wgNoticeProject="wikipedia";
 			<a id="top"></a>
 			<div id="mw-js-message" style="display:none;"></div>
 						<!-- sitenotice -->
-			<div id="siteNotice"><!-- centralNotice loads here --></div>
+			<div id="siteNotice"><!-- centralNotice loads here --><script type="text/javascript" language="JavaScript">
+/* <![CDATA[ */
+document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3e");
+/* ]]> */
+</script></div>
 			<!-- /sitenotice -->
 						<!-- firstHeading -->
 			<h1 id="firstHeading" class="firstHeading">List of MPs elected in the United Kingdom general election, 2010</h1>
@@ -5680,8 +5684,9 @@ Seat held</td>
 </tr>
 </table>
 <h2><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010&amp;action=edit&amp;section=27" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
-<div class="references-small" style="">
-<ol class="references">
+<div class="reflist references-small" style="">
+<div class="references">
+<ol>
 <li id="cite_note-illsley1-0">^ <a href="#cite_ref-illsley1_0-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-illsley1_0-1"><sup><i><b>b</b></i></sup></a> <span class="citation news"><a href="http://news.bbc.co.uk/1/hi/uk_politics/8691861.stm" class="external text" rel="nofollow">"Labour MP charged over expenses"</a>. BBC. 19 May 2010<span class="printonly">. <a href="http://news.bbc.co.uk/1/hi/uk_politics/8691861.stm" class="external free" rel="nofollow">http://news.bbc.co.uk/1/hi/uk_politics/8691861.stm</a></span><span class="reference-accessdate">. Retrieved 19 May 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Labour+MP+charged+over+expenses&amp;rft.atitle=&amp;rft.date=19+May+2010&amp;rft.pub=BBC&amp;rft_id=http%3A%2F%2Fnews.bbc.co.uk%2F1%2Fhi%2Fuk_politics%2F8691861.stm&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
 <li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <span class="citation news">Siddique, Haroon (14 October 2010). <a href="http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police" class="external text" rel="nofollow">"Labour withdraws whip from former minister facing police inquiry"</a>. <i><a href="/wiki/The_Guardian" title="The Guardian">The Guardian</a></i><span class="printonly">. <a href="http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police" class="external free" rel="nofollow">http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police</a></span><span class="reference-accessdate">. Retrieved 23 October 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Labour+withdraws+whip+from+former+minister+facing+police+inquiry&amp;rft.jtitle=%5B%5BThe+Guardian%5D%5D&amp;rft.aulast=Siddique&amp;rft.aufirst=Haroon&amp;rft.au=Siddique%2C%26%2332%3BHaroon&amp;rft.date=14+October+2010&amp;rft_id=http%3A%2F%2Fwww.guardian.co.uk%2Fpolitics%2F2010%2Foct%2F14%2Flabour-whip-former-minister-police&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
 <li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> <span class="citation news">Siddique, Haroon (14 October 2010). <a href="http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police" class="external text" rel="nofollow">"Labour withdraws whip from former minister facing police inquiry"</a>. <i><a href="/wiki/The_Guardian" title="The Guardian">The Guardian</a></i><span class="printonly">. <a href="http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police" class="external free" rel="nofollow">http://www.guardian.co.uk/politics/2010/oct/14/labour-whip-former-minister-police</a></span><span class="reference-accessdate">. Retrieved 23 October 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Labour+withdraws+whip+from+former+minister+facing+police+inquiry&amp;rft.jtitle=%5B%5BThe+Guardian%5D%5D&amp;rft.aulast=Siddique&amp;rft.aufirst=Haroon&amp;rft.au=Siddique%2C%26%2332%3BHaroon&amp;rft.date=14+October+2010&amp;rft_id=http%3A%2F%2Fwww.guardian.co.uk%2Fpolitics%2F2010%2Foct%2F14%2Flabour-whip-former-minister-police&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
@@ -5689,6 +5694,7 @@ Seat held</td>
 <li id="cite_note-4"><b><a href="#cite_ref-4">^</a></b> <a href="http://www.publications.parliament.uk/pa/cm201011/cmhansrd/cm101108/debtext/101108-0001.htm#10110810000004" class="external text" rel="nofollow">House of Commons Hansard, 8 November 2010&#160;: Column 1</a></li>
 <li id="cite_note-5"><b><a href="#cite_ref-5">^</a></b> <span class="citation web"><a href="http://www.bbc.co.uk/news/uk-politics-11699888" class="external text" rel="nofollow">"Judges order election re-run in ex-minister's seat"</a>. <i><a href="/wiki/BBC_News" title="BBC News">BBC News</a></i>. 5 November 2010<span class="printonly">. <a href="http://www.bbc.co.uk/news/uk-politics-11699888" class="external free" rel="nofollow">http://www.bbc.co.uk/news/uk-politics-11699888</a></span><span class="reference-accessdate">. Retrieved 5 November 2010</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Judges+order+election+re-run+in+ex-minister%27s+seat&amp;rft.atitle=%5B%5BBBC+News%5D%5D&amp;rft.date=5+November+2010&amp;rft_id=http%3A%2F%2Fwww.bbc.co.uk%2Fnews%2Fuk-politics-11699888&amp;rfr_id=info:sid/en.wikipedia.org:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010"><span style="display: none;">&#160;</span></span></li>
 </ol>
+</div>
 </div>
 <ul>
 <li><a href="http://news.bbc.co.uk/1/shared/election2010/results/" class="external text" rel="nofollow">General Election 2010 - Results</a> BBC News</li>
@@ -5702,13 +5708,13 @@ Seat held</td>
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 7740/1000000
-Post-expand include size: 125169/2048000 bytes
-Template argument size: 41454/2048000 bytes
+Preprocessor node count: 7739/1000000
+Post-expand include size: 123846/2048000 bytes
+Template argument size: 41452/2048000 bytes
 Expensive parser function count: 1/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:26491796-0!1!0!default!!en!4 and timestamp 20101212205132 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:26491796-0!1!0!default!!en!4 and timestamp 20101221235356 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010</a>"</div>
 				<!-- /bodytext -->
@@ -5895,5 +5901,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv249 in 0.081 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv172 in 0.088 secs. -->			</body>
 </html>

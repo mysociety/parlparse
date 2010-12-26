@@ -46,7 +46,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=402534955,
+wgCurRevisionId=403650785,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -95,7 +95,11 @@ wgNoticeProject="wikipedia";
 			<a id="top"></a>
 			<div id="mw-js-message" style="display:none;"></div>
 						<!-- sitenotice -->
-			<div id="siteNotice"><!-- centralNotice loads here --></div>
+			<div id="siteNotice"><!-- centralNotice loads here --><script type="text/javascript" language="JavaScript">
+/* <![CDATA[ */
+document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3e");
+/* ]]> */
+</script></div>
 			<!-- /sitenotice -->
 						<!-- firstHeading -->
 			<h1 id="firstHeading" class="firstHeading">Members of the Northern Ireland Assembly elected in 2007</h1>
@@ -1104,15 +1108,16 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <li><a href="/wiki/Naomi_Long" title="Naomi Long">Naomi Long</a> was elected to the <a href="/wiki/Belfast_East_(UK_Parliament_constituency)" title="Belfast East (UK Parliament constituency)">Belfast East</a> parliamentary constituency on 6 May 2010 and was replaced by <a href="/wiki/Chris_Lyttle" title="Chris Lyttle">Chris Lyttle</a> on 5 July.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>7<span>]</span></a></sup></li>
 <li><a href="/wiki/Ian_Paisley,_Jr." title="Ian Paisley, Jr.">Ian Paisley, Jr.</a> was elected to the <a href="/wiki/North_Antrim_(UK_Parliament_constituency)" title="North Antrim (UK Parliament constituency)">North Antrim</a> parliamentary constituency on 6 May 2010. He resigned on 21 June 2010 and was replaced by <a href="/wiki/Paul_Frew" title="Paul Frew">Paul Frew</a>.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>8<span>]</span></a></sup><sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span>[</span>9<span>]</span></a></sup></li>
 <li><a href="/wiki/Jeffrey_Donaldson" title="Jeffrey Donaldson">Jeffrey Donaldson</a> resigned on 10 June 2010 and was replaced by <a href="/wiki/Paul_Givan" title="Paul Givan">Paul Givan</a>.</li>
-<li><a href="/wiki/David_Simpson_(UK_politician)" title="David Simpson (UK politician)">David Simpson</a> and <a href="/wiki/William_McCrea" title="William McCrea">William McCrea</a> were replaced by <a href="/wiki/Sydney_Anderson_(UK_politician)" title="Sydney Anderson (UK politician)" class="mw-redirect">Sydney Anderson</a> and <a href="/wiki/Paul_Girvan" title="Paul Girvan">Paul Girvan</a> on 1 July 2010.</li>
+<li><a href="/wiki/David_Simpson_(UK_politician)" title="David Simpson (UK politician)">David Simpson</a> and <a href="/wiki/William_McCrea_(politician)" title="William McCrea (politician)">William McCrea</a> were replaced by <a href="/wiki/Sydney_Anderson_(UK_politician)" title="Sydney Anderson (UK politician)" class="mw-redirect">Sydney Anderson</a> and <a href="/wiki/Paul_Girvan" title="Paul Girvan">Paul Girvan</a> on 1 July 2010.</li>
 <li><a href="/wiki/Jim_Shannon" title="Jim Shannon">Jim Shannon</a> resigned on 1 August 2010 and was replaced by <a href="/wiki/Simpson_Gibson" title="Simpson Gibson">Simpson Gibson</a> on 2 August 2010.</li>
 <li><a href="/wiki/Nigel_Dodds" title="Nigel Dodds">Nigel Dodds</a> resigned on 10 September 2010 and was replaced by <a href="/wiki/William_Humphrey_(UK_politician)" title="William Humphrey (UK politician)">William Humphrey</a> on 13 September 2010.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>10<span>]</span></a></sup><sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>11<span>]</span></a></sup></li>
 <li><a href="/wiki/Mark_Durkan" title="Mark Durkan">Mark Durkan</a> resigned on 9 November 2010 and was replacd by <a href="/wiki/P%C3%B3l_Callaghan" title="Pól Callaghan">Pól Callaghan</a> on 15 November 2010.</li>
 <li><a href="/wiki/Gerry_Adams" title="Gerry Adams">Gerry Adams</a> resigned on 7 December 2010 and was replaced by <a href="/wiki/Pat_Sheehan_(Irish_republican)" title="Pat Sheehan (Irish republican)">Pat Sheehan</a> on the same date.</li>
 </ul>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;action=edit&amp;section=5" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
-<div class="references-small" style="">
-<ol class="references">
+<div class="reflist references-small" style="">
+<div class="references">
+<ol>
 <li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> <a href="http://news.bbc.co.uk/1/hi/northern_ireland/6633433.stm" class="external text" rel="nofollow">BBC NEWS | Northern Ireland | DUP assembly member Dawson dies</a></li>
 <li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <a href="http://news.bbc.co.uk/2/hi/uk_news/northern_ireland/7125105.stm" class="external text" rel="nofollow">BBC NEWS | UK | Northern Ireland | 'Disillusioned' SF man resigns</a></li>
 <li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> <a href="http://www.nwipp-newspapers.com/FH/free/341629456001438.php" class="external autonumber" rel="nofollow">[1]</a> <a href="/wiki/Fermanagh_Herald" title="Fermanagh Herald">Fermanagh Herald</a> 2009-12-02</li>
@@ -1125,6 +1130,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <li id="cite_note-9"><b><a href="#cite_ref-9">^</a></b> <a href="http://www.u.tv/News/Paisley-Jr-to-stand-down-from-assembly/5582c6c6-f648-40a9-943e-0a6959958f66" class="external free" rel="nofollow">http://www.u.tv/News/Paisley-Jr-to-stand-down-from-assembly/5582c6c6-f648-40a9-943e-0a6959958f66</a></li>
 <li id="cite_note-10"><b><a href="#cite_ref-10">^</a></b> <a href="http://www.niassembly.gov.uk/members/membership07.htm" class="external free" rel="nofollow">http://www.niassembly.gov.uk/members/membership07.htm</a></li>
 </ol>
+</div>
 </div>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;action=edit&amp;section=6" title="Edit section: External link">edit</a>]</span> <span class="mw-headline" id="External_link">External link</span></h2>
 <ul>
@@ -1260,12 +1266,12 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <!-- 
 NewPP limit report
 Preprocessor node count: 1816/1000000
-Post-expand include size: 64301/2048000 bytes
+Post-expand include size: 64322/2048000 bytes
 Template argument size: 30461/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!4 and timestamp 20101215163838 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!4 and timestamp 20101223120427 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007">http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007</a>"</div>
 				<!-- /bodytext -->
@@ -1405,8 +1411,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_Northern_Ireland_Assembly_elected_in_2007" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=402534955" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;id=402534955" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=403650785" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;id=403650785" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -1416,7 +1422,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+Northern+Ireland+Assembly+elected+in+2007" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+Northern+Ireland+Assembly+elected+in+2007&amp;oldid=402534955&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+Northern+Ireland+Assembly+elected+in+2007" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+Northern+Ireland+Assembly+elected+in+2007&amp;oldid=403650785&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -1429,7 +1435,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 15 December 2010 at 16:37.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 22 December 2010 at 04:39.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -1452,5 +1458,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv195 in 0.064 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv238 in 0.898 secs. -->			</body>
 </html>
