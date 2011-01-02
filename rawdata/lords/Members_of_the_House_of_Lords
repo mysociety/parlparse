@@ -12,9 +12,9 @@
 <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283-17" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283-17" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283-17" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283-18" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283-18" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283-18" type="text/css" media="print" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?117" type="text/css" media="all" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
@@ -46,7 +46,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=404111343,
+wgCurRevisionId=405150866,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -74,17 +74,17 @@ wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwa
 wgArticleAssessmentJUIPath="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/js2stopgap/jui.combined.min.js",
 Geo={"city": "", "country": ""},
 wgNoticeProject="wikipedia";
-</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283-17" type="text/javascript"></script>
-<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283-17"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283-17" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283-17" type="text/javascript"></script>
+</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283-18" type="text/javascript"></script>
+<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283-18"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283-18" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283-18" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2.2" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-17" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-17" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-18" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-18" type="text/javascript"></script>
 <script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
-<script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;283-17" type="text/javascript"></script>
+<script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;283-18" type="text/javascript"></script>
 <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-17" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-18" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-Members_of_the_House_of_Lords skin-vector">
@@ -330,7 +330,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Dominic_Hubbard,_6th_Baron_Addington" title="Dominic Hubbard, 6th Baron Addington">The Lord Addington</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
 <td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
-<td></td>
+<td>Vice-president of the <a href="/w/index.php?title=British_Dyslexia_Association&amp;action=edit&amp;redlink=1" class="new" title="British Dyslexia Association (page does not exist)">British Dyslexia Association</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Victor_Adebowale,_Baron_Adebowale_of_Thornes" title="Victor Adebowale, Baron Adebowale of Thornes" class="mw-redirect">The Lord Adebowale</a></td>
@@ -342,7 +342,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Andrew_Adonis" title="Andrew Adonis" class="mw-redirect">The Lord Adonis</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former <a href="/wiki/Secretary_of_State_for_Transport" title="Secretary of State for Transport">Secretary of State for Transport</a>, director of the <a href="/wiki/Institute_for_Government" title="Institute for Government">Institute for Government</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Haleh_Afshar,_Baroness_Afshar" title="Haleh Afshar, Baroness Afshar" class="mw-redirect">The Baroness Afshar</a></td>
@@ -354,19 +354,19 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Nazir_Ahmed,_Baron_Ahmed" title="Nazir Ahmed, Baron Ahmed">The Lord Ahmed</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td>Expelled from Party after being jailed for dangerous driving</td>
+<td>Expelled from Party after being jailed for dangerous driving; co-founder and advisor to the think-tank <a href="/wiki/The_World_Forum" title="The World Forum">the World Forum</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Alderdice,_Baron_Alderdice" title="John Alderdice, Baron Alderdice">The Lord Alderdice</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former Speaker of the <a href="/wiki/Northern_Ireland_Assembly" title="Northern Ireland Assembly">Northern Ireland Assembly</a>, former leader of the <a href="/wiki/Alliance_Party_of_Northern_Ireland" title="Alliance Party of Northern Ireland">Alliance Party of Northern Ireland</a> and former part time consultant psychiatrist in the NHS and honorary fellow of the <a href="/w/index.php?title=Royal_Society_of_Psychiatrists&amp;action=edit&amp;redlink=1" class="new" title="Royal Society of Psychiatrists (page does not exist)">Royal Society of Psychiatrists</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Richard_Allan,_Baron_Allan_of_Hallam" title="Richard Allan, Baron Allan of Hallam">The Lord Allan of Hallam</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former chair of the <a href="/wiki/Information_Select_Committee" title="Information Select Committee" class="mw-redirect">Information Select Committee</a> in the <a href="/wiki/House_of_Commons" title="House of Commons">House of Commons</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Michael_Allenby,_3rd_Viscount_Allenby" title="Michael Allenby, 3rd Viscount Allenby">The Viscount Allenby of Megiddo</a></td>
@@ -378,13 +378,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Waheed_Alli,_Baron_Alli" title="Waheed Alli, Baron Alli">The Lord Alli</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Managing director at <a href="/w/index.php?title=Carlton_Television_Productions&amp;action=edit&amp;redlink=1" class="new" title="Carlton Television Productions (page does not exist)">Carlton Television Productions</a>, co-founder and managing director of TV production company <a href="/w/index.php?title=Planet24&amp;action=edit&amp;redlink=1" class="new" title="Planet24 (page does not exist)">Planet24</a>, chairman of both <a href="/wiki/Chorion_(company)" title="Chorion (company)">Chorion</a> and <a href="/wiki/ASOS.com" title="ASOS.com">ASOS.com</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Alliance,_Baron_Alliance" title="David Alliance, Baron Alliance">The Lord Alliance</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Co-founder of <a href="/wiki/Coats_plc" title="Coats plc" class="mw-redirect">Coats_plc</a> and chairman of <a href="/wiki/N_Brown_Group" title="N Brown Group">N_Brown_Group</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Alton" title="David Alton" class="mw-redirect">The Lord Alton of Liverpool</a></td>
@@ -408,7 +408,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Elizabeth_Andrews,_Baroness_Andrews" title="Elizabeth Andrews, Baroness Andrews" class="mw-redirect">The Baroness Andrews</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former director of <a href="/w/index.php?title=Education_Extra&amp;action=edit&amp;redlink=1" class="new" title="Education Extra (page does not exist)">Education Extra</a>, former <a href="/wiki/Parliamentary_under-secretary_of_state" title="Parliamentary under-secretary of state" class="mw-redirect">parliamentary under-secretary of state</a> at the <a href="/wiki/Department_for_Children,_Schools_and_Families" title="Department for Children, Schools and Families">Department for Children, Schools and Families</a>, chair of <a href="/wiki/English_Heritage" title="English Heritage">English Heritage</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Joyce_Anelay,_Baroness_Anelay_of_St_Johns" title="Joyce Anelay, Baroness Anelay of St Johns">The Baroness Anelay of St Johns</a></td>
@@ -420,7 +420,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Peter_Archer,_Baron_Archer_of_Sandwell" title="Peter Archer, Baron Archer of Sandwell">The Lord Archer of Sandwell</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former <a href="/wiki/Solicitor_General" title="Solicitor General">Solicitor General</a>, President of the <a href="/wiki/One_World_Trust" title="One World Trust">One World Trust</a> and the <a href="/wiki/Fabian_Society" title="Fabian Society">Fabian Society</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jeffrey_Archer" title="Jeffrey Archer">The Lord Archer of Weston-super-Mare</a></td>
@@ -462,7 +462,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Jack_Ashley,_Baron_Ashley_of_Stoke" title="Jack Ashley, Baron Ashley of Stoke">The Lord Ashley of Stoke</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former producer for the BBC and co-founder of <a href="/wiki/Deafness_Research_UK" title="Deafness Research UK">Deafness Research UK</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/William_Astor,_4th_Viscount_Astor" title="William Astor, 4th Viscount Astor">The Viscount Astor</a></td>
@@ -486,25 +486,25 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/John_Attlee,_3rd_Earl_Attlee" title="John Attlee, 3rd Earl Attlee">The Earl Attlee</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
-<td></td>
+<td>President of the <a href="/w/index.php?title=Heavy_Transport_Association&amp;action=edit&amp;redlink=1" class="new" title="Heavy Transport Association (page does not exist)">Heavy Transport Association</a>, <a href="/wiki/Lord-in-Waiting" title="Lord-in-Waiting">Lord-in-Waiting</a> (government whip)</td>
 </tr>
 <tr>
 <td><a href="/wiki/Eric_Lubbock,_4th_Baron_Avebury" title="Eric Lubbock, 4th Baron Avebury">The Lord Avebury</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
 <td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
-<td></td>
+<td>Founder and former chairman of the Parliamentary Human Rights Group</td>
 </tr>
 <tr>
 <td><a href="/wiki/William_Bach,_Baron_Bach" title="William Bach, Baron Bach">The Lord Bach</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former chairman of the <a href="/w/index.php?title=SELEX_Sensors_and_Airborne_Systems_SpA&amp;action=edit&amp;redlink=1" class="new" title="SELEX Sensors and Airborne Systems SpA (page does not exist)">SELEX Sensors and Airborne Systems SpA</a> board of directors, former parliamentary under-secretary of state in several departments and former <a href="/w/index.php?title=Minister_of_State_for_Defence_Procurement&amp;action=edit&amp;redlink=1" class="new" title="Minister of State for Defence Procurement (page does not exist)">Minister of State for Defence Procurement</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Kenneth_Baker,_Baron_Baker_of_Dorking" title="Kenneth Baker, Baron Baker of Dorking">The Lord Baker of Dorking</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former <a href="/wiki/Home_Secretary" title="Home Secretary">Home Secretary</a>, former <a href="/wiki/Secretary_of_State_for_Education_and_Science" title="Secretary of State for Education and Science" class="mw-redirect">Secretary of State for Education and Science</a> and former <a href="/wiki/Secretary_of_State_for_the_Environment" title="Secretary of State for the Environment">of the Environment</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Edward_Baldwin,_4th_Earl_Baldwin_of_Bewdley" title="Edward Baldwin, 4th Earl Baldwin of Bewdley">The Earl Baldwin of Bewdley</a></td>
@@ -516,7 +516,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Edward_Haughey,_Baron_Ballyedmond" title="Edward Haughey, Baron Ballyedmond">The Lord Ballyedmond</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Chairman of <a href="/w/index.php?title=Norbrook_Laboratories&amp;action=edit&amp;redlink=1" class="new" title="Norbrook Laboratories (page does not exist)">Norbrook Laboratories</a> and Norbrook Holdings, a veterinary pharmaceutical company, founder of <a href="/w/index.php?title=Haughey_Air&amp;action=edit&amp;redlink=1" class="new" title="Haughey Air (page does not exist)">Haughey Air</a>, <a href="/wiki/Carlisle_Airport" title="Carlisle Airport">Carlisle Airport</a> (sold to WA Developments in May 2006), and a helicopter charter company; also a Senator in the Irish <a href="/wiki/Seanad_Eireann" title="Seanad Eireann" class="mw-redirect">Seanad</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ian_Paisley" title="Ian Paisley">The Lord Bannside</a></td>
@@ -528,7 +528,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Derek_Barber,_Baron_Barber_of_Tewkesbury" title="Derek Barber, Baron Barber of Tewkesbury">The Lord Barber of Tewkesbury</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former Chairman and later President of the <a href="/wiki/Royal_Society_for_the_Protection_of_Birds" title="Royal Society for the Protection of Birds">Royal Society for the Protection of Birds</a>, President of the <a href="/wiki/Royal_Agricultural_Society_of_England" title="Royal Agricultural Society of England" class="mw-redirect">Royal Agricultural Society of England</a>, President of the <a href="/w/index.php?title=British_Pig_Association&amp;action=edit&amp;redlink=1" class="new" title="British Pig Association (page does not exist)">British Pig Association</a>; and a Vice-President of the <a href="/w/index.php?title=Nature_in_Art_Trust&amp;action=edit&amp;redlink=1" class="new" title="Nature in Art Trust (page does not exist)">Nature in Art Trust</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Elizabeth_Barker,_Baroness_Barker" title="Elizabeth Barker, Baroness Barker">The Baroness Barker</a></td>
@@ -540,13 +540,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Joel_Barnett,_Baron_Barnett" title="Joel Barnett, Baron Barnett">The Lord Barnett</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td>Former <a href="/wiki/Chief_Secretary_to_the_Treasury" title="Chief Secretary to the Treasury">Chief Secretary to the Treasury</a> and former chairman of the Public Accounts Committee</td>
+<td>Former <a href="/wiki/Chief_Secretary_to_the_Treasury" title="Chief Secretary to the Treasury">Chief Secretary to the Treasury</a> and former chairman of the <a href="/wiki/Public_Accounts_Select_Committee" title="Public Accounts Select Committee" class="mw-redirect">Public Accounts Select Committee</a> in the House of Commons</td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Bassam,_Baron_Bassam_of_Brighton" title="John Bassam, Baron Bassam of Brighton" class="mw-redirect">The Lord Bassam of Brighton</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former chief whip</td>
 </tr>
 <tr>
 <td><a href="/wiki/Michael_Bates,_Baron_Bates" title="Michael Bates, Baron Bates">The Lord Bates</a></td>
@@ -558,13 +558,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Jeremy_Beecham" title="Jeremy Beecham" class="mw-redirect">The Lord Beecham</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former chairman of the <a href="/wiki/Local_Government_Association" title="Local Government Association">Local Government Association</a>, former leader of <a href="/wiki/Newcastle_City_Council" title="Newcastle City Council">Newcastle City Council</a> and former chairman of the Labour Party National Executive</td>
 </tr>
 <tr>
 <td><a href="/wiki/Timothy_Bell,_Baron_Bell" title="Timothy Bell, Baron Bell">The Lord Bell</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former managing director of <a href="/wiki/Saatchi_and_Saatchi" title="Saatchi and Saatchi" class="mw-redirect">Saatchi and Saatchi</a> and chairman of <a href="/wiki/Chime_Communications" title="Chime Communications">Chime Communications</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Floella_Benjamin" title="Floella Benjamin">The Baroness Benjamin</a></td>
@@ -636,7 +636,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Guy_Black" title="Guy Black" class="mw-redirect">The Lord Black of Brentwood</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Executive director of the <a href="/wiki/Telegraph_Media_Group" title="Telegraph Media Group" class="mw-redirect">Telegraph Media Group</a> and Chairman of the <a href="/w/index.php?title=Commonwealth_Press_Union_Media_Trust&amp;action=edit&amp;redlink=1" class="new" title="Commonwealth Press Union Media Trust (page does not exist)">Commonwealth Press Union Media Trust</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Conrad_Black,_Baron_Black_of_Crossharbour" title="Conrad Black, Baron Black of Crossharbour" class="mw-redirect">The Lord Black of Crossharbour</a></td>
@@ -648,7 +648,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Tessa_Blackstone,_Baroness_Blackstone" title="Tessa Blackstone, Baroness Blackstone">The Baroness Blackstone</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former Professor of Educational Administration at the London School of Economics, Vice-President of the <a href="/wiki/British_Humanist_Association" title="British Humanist Association">British Humanist Association</a>, Chair of the <a href="/wiki/Royal_Institute_of_British_Architects" title="Royal Institute of British Architects">Royal Institute of British Architects</a>, Chair of the <a href="/wiki/British_Library" title="British Library">British Library</a>, Chair of the <a href="/w/index.php?title=Great_Ormand_Street_Hospital&amp;action=edit&amp;redlink=1" class="new" title="Great Ormand Street Hospital (page does not exist)">Great Ormand Street Hospital</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Norman_Blackwell,_Baron_Blackwell" title="Norman Blackwell, Baron Blackwell">The Lord Blackwell</a></td>
@@ -714,13 +714,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Virginia_Bottomley" title="Virginia Bottomley">The Baroness Bottomley of Nettlestone</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former <a href="/wiki/Secretary_of_State_for_Health" title="Secretary of State for Health">Secretary of State for Health</a> and former <a href="/wiki/Secretary_of_State_for_National_Heritage" title="Secretary of State for National Heritage" class="mw-redirect">Secretary of State for National Heritage</a>; President of the <a href="/wiki/Abbeyfield_Society" title="Abbeyfield Society" class="mw-redirect">Abbeyfield Society</a>; Council Member of the <a href="/wiki/Ditchley_Foundation" title="Ditchley Foundation">Ditchley Foundation</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Peter_Bowness,_Baron_Bowness" title="Peter Bowness, Baron Bowness">The Lord Bowness</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former governor of the <a href="/wiki/Whitgift_Foundation" title="Whitgift Foundation">Whitgift Foundation</a> and council leader</td>
 </tr>
 <tr>
 <td><a href="/wiki/Michael_Boyce,_Baron_Boyce" title="Michael Boyce, Baron Boyce">The Lord Boyce</a></td>
@@ -750,7 +750,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/William_Bradshaw,_Baron_Bradshaw" title="William Bradshaw, Baron Bradshaw">The Lord Bradshaw</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former professor of transport management at the <a href="/wiki/University_of_Salford" title="University of Salford">University of Salford</a> and chairman of <a href="/wiki/Ulsterbus" title="Ulsterbus">Ulsterbus</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Melvyn_Bragg,_Baron_Bragg" title="Melvyn Bragg, Baron Bragg" class="mw-redirect">The Lord Bragg</a></td>
@@ -768,25 +768,25 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Daniel_Brennan,_Baron_Brennan" title="Daniel Brennan, Baron Brennan">The Lord Brennan</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Bar representative on the council of the <a href="/wiki/International_Bar_Association" title="International Bar Association">International Bar Association</a> and deputy high court judge</td>
 </tr>
 <tr>
 <td><a href="/wiki/William_Brett,_Baron_Brett" title="William Brett, Baron Brett">The Lord Brett</a></td>
 <td>Independent</td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former member of the executive committee of <a href="/wiki/Public_Services_International" title="Public Services International">Public Services International</a> and director of the <a href="/wiki/International_Labour_Office" title="International Labour Office" class="mw-redirect">International Labour Office</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Robin_Bridgeman,_3rd_Viscount_Bridgeman" title="Robin Bridgeman, 3rd Viscount Bridgeman">The Viscount Bridgeman</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
-<td></td>
+<td>Former director of <a href="/wiki/Guinness_Mahon" title="Guinness Mahon">Guinness Mahon</a> and of <a href="/w/index.php?title=Nester-BNA&amp;action=edit&amp;redlink=1" class="new" title="Nester-BNA (page does not exist)">Nester-BNA</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Thomas_Bridges,_2nd_Baron_Bridges" title="Thomas Bridges, 2nd Baron Bridges">The Lord Bridges</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
-<td></td>
+<td>Former diplomat and <a href="/wiki/Ambassadors_from_the_United_Kingdom_to_Italy" title="Ambassadors from the United Kingdom to Italy" class="mw-redirect">HM Ambassador to Italy</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Asa_Briggs,_Baron_Briggs" title="Asa Briggs, Baron Briggs">The Lord Briggs</a></td>
@@ -810,13 +810,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Clive_Brooke,_Baron_Brooke_of_Alverthorpe" title="Clive Brooke, Baron Brooke of Alverthorpe">The Lord Brooke of Alverthorpe</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former General Secretary of the <a href="/wiki/Inland_Revenue_Staff_Federation" title="Inland Revenue Staff Federation">Inland Revenue Staff Federation</a> and former joint-General Secretary of the<a href="/wiki/Public_Services_Tax_and_Commerce_Union" title="Public Services Tax and Commerce Union" class="mw-redirect">Public Services Tax and Commerce Union</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Peter_Brooke,_Baron_Brooke_of_Sutton_Mandeville" title="Peter Brooke, Baron Brooke of Sutton Mandeville">The Lord Brooke of Sutton Mandeville</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former <a href="/wiki/Secretary_of_State_for_National_Heritage" title="Secretary of State for National Heritage" class="mw-redirect">Secretary of State for National Heritage</a> and former <a href="/wiki/Secretary_of_State_for_Northern_Ireland" title="Secretary of State for Northern Ireland">Secretary of State for Northern Ireland</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Alan_Brooke,_3rd_Viscount_Brookeborough" title="Alan Brooke, 3rd Viscount Brookeborough">The Viscount Brookeborough</a></td>
@@ -828,7 +828,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/David_Brookman,_Baron_Brookman" title="David Brookman, Baron Brookman">The Lord Brookman</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former joint secretary in a number of steel trade unions</td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Brooks,_Baron_Brooks_of_Tremorfa" title="John Brooks, Baron Brooks of Tremorfa">The Lord Brooks of Tremorfa</a></td>
@@ -840,7 +840,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Michael_Brougham,_5th_Baron_Brougham_and_Vaux" title="Michael Brougham, 5th Baron Brougham and Vaux">The Lord Brougham and Vaux</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
-<td></td>
+<td>Former president of the <a href="/wiki/Royal_Society_for_the_Prevention_of_Accidents" title="Royal Society for the Prevention of Accidents">Royal Society for the Prevention of Accidents</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Wallace_Browne,_Baron_Browne_of_Belmont" title="Wallace Browne, Baron Browne of Belmont">The Lord Browne of Belmont</a></td>
@@ -849,7 +849,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/wiki/Des_Browne" title="Des Browne">The Lord Browne of Ladyton</a></td>
+<td><a href="/wiki/Des_Browne" title="Des Browne" class="mw-redirect">The Lord Browne of Ladyton</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td>Former <a href="/wiki/Secretary_of_State_for_Defence" title="Secretary of State for Defence">Secretary of State for Defence</a></td>
@@ -906,7 +906,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Hazel_Byford,_Baroness_Byford" title="Hazel Byford, Baroness Byford">The Baroness Byford</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>President of the <a href="/w/index.php?title=Royal_Association_of_British_Dairy_Farmers&amp;action=edit&amp;redlink=1" class="new" title="Royal Association of British Dairy Farmers (page does not exist)">Royal Association of British Dairy Farmers</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Malcolm_Sinclair,_20th_Earl_of_Caithness" title="Malcolm Sinclair, 20th Earl of Caithness">The Earl of Caithness</a></td>
@@ -918,7 +918,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Ewen_Cameron,_Baron_Cameron_of_Dillington" title="Ewen Cameron, Baron Cameron of Dillington">The Lord Cameron of Dillington</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former chair of the <a href="/wiki/Countryside_Agency" title="Countryside Agency">Countryside Agency</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Kenneth_Cameron,_Lord_Cameron_of_Lochbroom" title="Kenneth Cameron, Lord Cameron of Lochbroom" class="mw-redirect">The Lord Cameron of Lochbroom</a></td>
@@ -930,13 +930,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Alan_Campbell,_Baron_Campbell_of_Alloway" title="Alan Campbell, Baron Campbell of Alloway">The Lord Campbell of Alloway</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former <a href="/wiki/Recorder_(judge)" title="Recorder (judge)">Recorder</a> and former vice-president of the <a href="/w/index.php?title=Association_des_Juristes_Franco-Britanniques&amp;action=edit&amp;redlink=1" class="new" title="Association des Juristes Franco-Britanniques (page does not exist)">Association des Juristes Franco-Britanniques</a> and former president of the <a href="/w/index.php?title=Colditz_Association&amp;action=edit&amp;redlink=1" class="new" title="Colditz Association (page does not exist)">Colditz Association</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Sue_Campbell,_Baroness_Campbell_of_Loughborough" title="Sue Campbell, Baroness Campbell of Loughborough">The Baroness Campbell of Loughborough</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Chairman of <a href="/wiki/UK_Sport" title="UK Sport">UK Sport</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jane_Campbell,_Baroness_Campbell_of_Surbiton" title="Jane Campbell, Baroness Campbell of Surbiton">The Baroness Campbell of Surbiton</a></td>
@@ -990,7 +990,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Patrick_Carter,_Baron_Carter_of_Coles" title="Patrick Carter, Baron Carter of Coles">The Lord Carter of Coles</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Chairman of the NHS Pathology review panel</td>
 </tr>
 <tr>
 <td><a href="/wiki/Charles_Alan_Andrew_Cathcart,_7th_Earl_Cathcart" title="Charles Alan Andrew Cathcart, 7th Earl Cathcart" class="mw-redirect">The Earl Cathcart</a></td>
@@ -1008,13 +1008,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Peter_Gummer,_Baron_Chadlington" title="Peter Gummer, Baron Chadlington">The Lord Chadlington</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former chairman, former chief executive and currently executive director of <a href="/wiki/Huntsworth" title="Huntsworth">Huntsworth</a>; former director of <a href="/wiki/Halifax_(United_Kingdom_bank)" title="Halifax (United Kingdom bank)">Halifax</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Lynda_Chalker,_Baroness_Chalker_of_Wallasey" title="Lynda Chalker, Baroness Chalker of Wallasey">The Baroness Chalker of Wallasey</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former <a href="/wiki/Minister_of_State_for_Overseas_Development" title="Minister of State for Overseas Development" class="mw-redirect">Minister of State for Overseas Development</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Thomas_Lyttelton,_3rd_Viscount_Chandos" title="Thomas Lyttelton, 3rd Viscount Chandos">The Viscount Chandos</a></td>
@@ -1032,7 +1032,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Henry_Chilver,_Baron_Chilver" title="Henry Chilver, Baron Chilver">The Lord Chilver</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former Chadwick professor of civil engineering at the <a href="/wiki/University_College_London" title="University College London">University College London</a>, former chairman of <a href="/wiki/UK_Coal" title="UK Coal">RJB Mining</a> and a former director of <a href="/wiki/Imperial_Chemical_Industries" title="Imperial Chemical Industries">Imperial Chemical Industries</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Pratap_Chitnis,_Baron_Chitnis" title="Pratap Chitnis, Baron Chitnis">The Lord Chitnis</a></td>
@@ -1044,13 +1044,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Roger_Chorley,_2nd_Baron_Chorley" title="Roger Chorley, 2nd Baron Chorley">The Lord Chorley</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
-<td></td>
+<td>Former president of the <a href="/wiki/Royal_Geographical_Society" title="Royal Geographical Society">Royal Geographical Society</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Tony_Christopher,_Baron_Christopher" title="Tony Christopher, Baron Christopher">The Lord Christopher</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former chairman of the <a href="/w/index.php?title=Tyre_Industry_Economic_Development_Council&amp;action=edit&amp;redlink=1" class="new" title="Tyre Industry Economic Development Council (page does not exist)">Tyre Industry Economic Development Council</a>, former vice-president of the <a href="/wiki/Building_Societies_Association" title="Building Societies Association">Building Societies Association</a>, former General Secretary of the <a href="/wiki/Inland_Revenue_Staff_Federation" title="Inland Revenue Staff Federation">Inland Revenue Staff Federation</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Nicholas_Le_Poer_Trench,_9th_Earl_of_Clancarty" title="Nicholas Le Poer Trench, 9th Earl of Clancarty">The Earl of Clancarty</a></td>
@@ -1068,19 +1068,19 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Anthony_Clarke,_Baron_Clarke_of_Hampstead" title="Anthony Clarke, Baron Clarke of Hampstead">The Lord Clarke of Hampstead</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former chairman of the Labour Party, former Deputy General Secretary of the <a href="/w/index.php?title=Union_of_Communications_Workers&amp;action=edit&amp;redlink=1" class="new" title="Union of Communications Workers (page does not exist)">Union of Communications Workers</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Timothy_Clement-Jones,_Baron_Clement-Jones" title="Timothy Clement-Jones, Baron Clement-Jones" class="mw-redirect">The Lord Clement-Jones</a></td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrat</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former head of legal services and legal director in <a href="/wiki/LWT" title="LWT" class="mw-redirect">LWT</a> and <a href="/wiki/Grand_Metropolitan" title="Grand Metropolitan">Grand Metropolitan</a> respectively and former group secretary of <a href="/w/index.php?title=Kingfisher,_plc&amp;action=edit&amp;redlink=1" class="new" title="Kingfisher, plc (page does not exist)">Kingfisher, plc</a>, chairman of Environmental Context Ltd</td>
 </tr>
 <tr>
 <td><a href="/wiki/Stanley_Clinton_Davis,_Baron_Clinton-Davis" title="Stanley Clinton Davis, Baron Clinton-Davis">The Lord Clinton-Davis</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former European Commissioner for <a href="/wiki/European_Commissioner_for_the_Environment" title="European Commissioner for the Environment">the environment</a>, <a href="/wiki/European_Commissioner_for_Consumer_Protection" title="European Commissioner for Consumer Protection" class="mw-redirect">consumer protection</a> and <a href="/wiki/European_Commissioner_for_Transport" title="European Commissioner for Transport">transport</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Cobbold,_2nd_Baron_Cobbold" title="David Cobbold, 2nd Baron Cobbold" class="mw-redirect">The Lord Cobbold</a></td>
@@ -1098,13 +1098,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Janet_Neel_Cohen,_Baroness_Cohen_of_Pimlico" title="Janet Neel Cohen, Baroness Cohen of Pimlico">The Baroness Cohen of Pimlico</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Author and former governor of the BBC</td>
 </tr>
 <tr>
 <td><a href="/wiki/Ian_Hamilton-Smith,_3rd_Baron_Colwyn" title="Ian Hamilton-Smith, 3rd Baron Colwyn" class="mw-redirect">The Lord Colwyn</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
-<td></td>
+<td>Member of the Royal College of Surgeons of England and Royal Society of Medicine, former president of the Huntingdon's Disease Association, the Society for the Advancement of Anaesthesia in Dentistry, the Arterial Health Foundation, of the Metropolitan branch of the British Dental Association and practising dentist for forty years</td>
 </tr>
 <tr>
 <td><a href="/wiki/Paul_Condon,_Baron_Condon" title="Paul Condon, Baron Condon">The Lord Condon</a></td>
@@ -1122,13 +1122,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Robin_Corbett,_Baron_Corbett_of_Castle_Vale" title="Robin Corbett, Baron Corbett of Castle Vale">The Lord Corbett of Castle Vale</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former chairman of the House of Commons <a href="/wiki/Home_Affairs_Select_Committee" title="Home Affairs Select Committee">Home Affairs Select Committee</a> and former journalist</td>
 </tr>
 <tr>
-<td><a href="/wiki/Patrick_Cormack" title="Patrick Cormack">The Lord Cormack</a></td>
+<td><a href="/wiki/Patrick_Cormack" title="Patrick Cormack" class="mw-redirect">The Lord Cormack</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former chairman of the <a href="/w/index.php?title=Northern_Ireland_Select_Committee&amp;action=edit&amp;redlink=1" class="new" title="Northern Ireland Select Committee (page does not exist)">Northern Ireland Select Committee</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Jean_Corston,_Baroness_Corston" title="Jean Corston, Baroness Corston">The Baroness Corston</a></td>
@@ -1152,13 +1152,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Jean_Coussins,_Baroness_Coussins" title="Jean Coussins, Baroness Coussins">The Baroness Coussins</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former chief executive of the <a href="/wiki/Portman_Group" title="Portman Group">Portman Group</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Caroline_Cox,_Baroness_Cox" title="Caroline Cox, Baroness Cox">The Baroness Cox</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Founder and CEO of the Humanitarian Aid Relief Trust</td>
 </tr>
 <tr>
 <td><a href="/wiki/David_Craig,_Baron_Craig_of_Radley" title="David Craig, Baron Craig of Radley">The Lord Craig of Radley</a></td>
@@ -1176,7 +1176,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Charles_Dugdale,_2nd_Baron_Crathorne" title="Charles Dugdale, 2nd Baron Crathorne" class="mw-redirect">The Lord Crathorne</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
-<td></td>
+<td>Former director of (variously) <a href="/w/index.php?title=Blakeney_Hotels_Ltd&amp;action=edit&amp;redlink=1" class="new" title="Blakeney Hotels Ltd (page does not exist)">Blakeney Hotels Ltd</a>, <a href="/w/index.php?title=Woodhouse_Securities_Ltd&amp;action=edit&amp;redlink=1" class="new" title="Woodhouse Securities Ltd (page does not exist)">Woodhouse Securities Ltd</a>, <a href="/wiki/Hand_Picked_Hotels" title="Hand Picked Hotels">Hand Picked Hotels</a>, <a href="/w/index.php?title=Cliveden_Ltd&amp;action=edit&amp;redlink=1" class="new" title="Cliveden Ltd (page does not exist)">Cliveden Ltd</a>.</td>
 </tr>
 <tr>
 <td><a href="/wiki/Robert_Lindsay,_29th_Earl_of_Crawford" title="Robert Lindsay, 29th Earl of Crawford">The Earl of Crawford and Balcarres</a></td>
@@ -1188,7 +1188,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Christine_Crawley,_Baroness_Crawley" title="Christine Crawley, Baroness Crawley">The Baroness Crawley</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former Chair of the <a href="/wiki/Women%27s_National_Commission" title="Women's National Commission">Women's National Commission</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Nicholas_Edwards,_Baron_Crickhowell" title="Nicholas Edwards, Baron Crickhowell">The Lord Crickhowell</a></td>
@@ -1521,7 +1521,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td></td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Edward_Faulks&amp;action=edit&amp;redlink=1" class="new" title="Edward Faulks (page does not exist)">The Lord Faulks</a></td>
+<td><a href="/wiki/Edward_Faulks" title="Edward Faulks" class="mw-redirect">The Lord Faulks</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -1539,7 +1539,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td>Former Director of <a href="/w/index.php?title=The_Young_Entrepreneurs_Fund&amp;action=edit&amp;redlink=1" class="new" title="The Young Entrepreneurs Fund (page does not exist)">The Young Entrepreneurs Fund</a></td>
 </tr>
 <tr>
-<td><a href="/w/index.php?title=Andrew_Feldman&amp;action=edit&amp;redlink=1" class="new" title="Andrew Feldman (page does not exist)">The Lord Feldman of Elstree</a></td>
+<td><a href="/wiki/Andrew_Feldman" title="Andrew Feldman" class="mw-redirect">The Lord Feldman of Elstree</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -2024,7 +2024,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td>Chair of the <a href="/wiki/Security_Industry_Authority" title="Security Industry Authority">Security Industry Authority</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Peter_Hennessy" title="Peter Hennessy">The Lord Hennessy of Nympsfield</a></td>
+<td><a href="/wiki/Peter_Hennessy" title="Peter Hennessy" class="mw-redirect">The Lord Hennessy of Nympsfield</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td>Attlee Professor of Contemporary British History at&#160;Queen Mary, University of London</td>
@@ -2587,7 +2587,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Robert_Balchin" title="Robert Balchin">The Lord Lingfield</a></td>
+<td><a href="/wiki/Robert_Balchin" title="Robert Balchin" class="mw-redirect">The Lord Lingfield</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
@@ -4096,12 +4096,6 @@ and <a href="/wiki/Secretary_of_State_for_Northern_Ireland" title="Secretary of 
 <td>Former joint-managing director of <a href="/wiki/Marks_and_Spencer" title="Marks and Spencer" class="mw-redirect">Marks and Spencer</a>, Chairman of Sindicatum Climate Change Foundation</td>
 </tr>
 <tr>
-<td><a href="/wiki/David_Kenworthy,_11th_Baron_Strabolgi" title="David Kenworthy, 11th Baron Strabolgi">The Lord Strabolgi</a></td>
-<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="/wiki/Thomas_Galbraith,_2nd_Baron_Strathclyde" title="Thomas Galbraith, 2nd Baron Strathclyde">The Lord Strathclyde</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
@@ -4417,7 +4411,7 @@ and <a href="/wiki/Secretary_of_State_for_Northern_Ireland" title="Secretary of 
 <td><a href="/wiki/Baron_Wade_of_Chorlton" title="Baron Wade of Chorlton" class="mw-redirect">The Lord Wade of Chorlton</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
+<td>Former chairman of <a href="/w/index.php?title=Campus_Ventures&amp;action=edit&amp;redlink=1" class="new" title="Campus Ventures (page does not exist)">Campus Ventures</a>, currently chairman of <a href="/w/index.php?title=Rising_Stars_Growth_Fund_Ltd&amp;action=edit&amp;redlink=1" class="new" title="Rising Stars Growth Fund Ltd (page does not exist)">Rising Stars Growth Fund Ltd</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Baron_Wakeham" title="Baron Wakeham" class="mw-redirect">The Lord Wakeham</a></td>
@@ -4902,6 +4896,12 @@ and <a href="/wiki/Secretary_of_State_for_Northern_Ireland" title="Secretary of 
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 </tr>
 <tr>
+<td><a href="/wiki/David_Kenworthy,_11th_Baron_Strabolgi" title="David Kenworthy, 11th Baron Strabolgi">The Lord Strabolgi</a></td>
+<td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
+<td><span style="display:none; speak:none">02010-12-24</span><span style="white-space:nowrap;">24 December 2010</span></td>
+<td><a href="/wiki/List_of_excepted_hereditary_peers_under_the_House_of_Lords_Act_1999" title="List of excepted hereditary peers under the House of Lords Act 1999">Excepted hereditary peer</a></td>
+</tr>
+<tr>
 <td><a href="/wiki/Baron_Walker_of_Worcester" title="Baron Walker of Worcester" class="mw-redirect">The Lord Walker of Worcester</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><span style="display:none; speak:none">02010-06-22</span><span style="white-space:nowrap;">22 June 2010</span></td>
@@ -4965,13 +4965,13 @@ and <a href="/wiki/Secretary_of_State_for_Northern_Ireland" title="Secretary of 
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 2265/1000000
-Post-expand include size: 20033/2048000 bytes
-Template argument size: 5520/2048000 bytes
+Preprocessor node count: 2317/1000000
+Post-expand include size: 20618/2048000 bytes
+Template argument size: 5632/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!4 and timestamp 20101225010630 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!1!0!default!!en!4 and timestamp 20101231105323 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 				<!-- /bodytext -->
@@ -5050,7 +5050,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
 			<input id="searchInput" name="search" type="text"  title="Search Wikipedia [f]" accesskey="f"  value="" />
-			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283-17" alt="Search" /></button>
+			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283-18" alt="Search" /></button>
 		</div>
 			</form>
 </div>
@@ -5111,8 +5111,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=404111343" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=404111343" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=405150866" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=405150866" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -5122,7 +5122,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=404111343&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=405150866&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -5143,7 +5143,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 25 December 2010 at 01:05.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 31 December 2010 at 10:53.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -5166,5 +5166,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv246 in 0.050 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv184 in 0.063 secs. -->			</body>
 </html>
