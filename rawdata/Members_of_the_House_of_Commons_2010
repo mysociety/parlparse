@@ -13,9 +13,9 @@
 <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283-17" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283-17" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283-17" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283-18" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283-18" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283-18" type="text/css" media="print" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?117" type="text/css" media="all" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
@@ -75,17 +75,17 @@ wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwa
 wgArticleAssessmentJUIPath="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/js2stopgap/jui.combined.min.js",
 Geo={"city": "", "country": ""},
 wgNoticeProject="wikipedia";
-</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283-17" type="text/javascript"></script>
-<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283-17"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283-17" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283-17" type="text/javascript"></script>
+</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283-18" type="text/javascript"></script>
+<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283-18"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283-18" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283-18" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2.2" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-17" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-17" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-18" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-18" type="text/javascript"></script>
 <script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
-<script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;283-17" type="text/javascript"></script>
+<script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;283-18" type="text/javascript"></script>
 <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-17" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-18" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-List_of_MPs_elected_in_the_United_Kingdom_general_election_2010 skin-vector">
@@ -2757,7 +2757,7 @@ Seat held</td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
 <td style="background-color: #DC241f"></td>
 <td><a href="/wiki/Cathy_Jamieson" title="Cathy Jamieson">Cathy Jamieson</a>&#160;(<a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">L</a>)</td>
-<td>Incumbent MP <a href="/wiki/Des_Browne" title="Des Browne">Des Browne</a> stood down</td>
+<td>Incumbent MP <a href="/wiki/Des_Browne" title="Des Browne" class="mw-redirect">Des Browne</a> stood down</td>
 </tr>
 <tr>
 <td><a href="/wiki/Kingston_and_Surbiton_(UK_Parliament_constituency)" title="Kingston and Surbiton (UK Parliament constituency)">Kingston and Surbiton</a></td>
@@ -4087,7 +4087,7 @@ Seat held</td>
 <td><a href="/wiki/Liberal_Democrats" title="Liberal Democrats">Liberal Democrats</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Zac_Goldsmith" title="Zac Goldsmith">Zac Goldsmith</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
-<td>Incumbent MP <a href="/wiki/Susan_Kramer" title="Susan Kramer">Susan Kramer</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>) defeated</td>
+<td>Incumbent MP <a href="/wiki/Susan_Kramer" title="Susan Kramer" class="mw-redirect">Susan Kramer</a>&#160;(<a href="/wiki/Liberal_Democrats" title="Liberal Democrats">LD</a>) defeated</td>
 </tr>
 <tr>
 <td><a href="/wiki/Rochdale_(UK_Parliament_constituency)" title="Rochdale (UK Parliament constituency)">Rochdale</a></td>
@@ -4526,7 +4526,7 @@ Seat held</td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td style="background-color: #0087DC"></td>
 <td><a href="/wiki/Gavin_Williamson" title="Gavin Williamson">Gavin Williamson</a>&#160;(<a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">C</a>)</td>
-<td>Incumbent MP <a href="/wiki/Patrick_Cormack" title="Patrick Cormack">Sir Patrick Cormack</a> stood down</td>
+<td>Incumbent MP <a href="/wiki/Patrick_Cormack" title="Patrick Cormack" class="mw-redirect">Sir Patrick Cormack</a> stood down</td>
 </tr>
 <tr>
 <td><a href="/wiki/South_Suffolk_(UK_Parliament_constituency)" title="South Suffolk (UK Parliament constituency)">South Suffolk</a></td>
@@ -5715,12 +5715,12 @@ Seat held</td>
 <!-- 
 NewPP limit report
 Preprocessor node count: 7745/1000000
-Post-expand include size: 125183/2048000 bytes
-Template argument size: 41454/2048000 bytes
+Post-expand include size: 127367/2048000 bytes
+Template argument size: 43158/2048000 bytes
 Expensive parser function count: 1/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:26491796-0!1!0!default!!en!4 and timestamp 20101228105043 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:26491796-0!1!0!default!!en!4 and timestamp 20110101015054 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2010</a>"</div>
 				<!-- /bodytext -->
@@ -5799,7 +5799,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
 			<input id="searchInput" name="search" type="text"  title="Search Wikipedia [f]" accesskey="f"  value="" />
-			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283-17" alt="Search" /></button>
+			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283-18" alt="Search" /></button>
 		</div>
 			</form>
 </div>
@@ -5821,7 +5821,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 				<ul>
 					<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
 					<li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
-					<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content — the best of Wikipedia">Featured content</a></li>
+					<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
 					<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
 					<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
 					<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Special:Landingcheck?landing_page=WMFJA1&amp;language=en&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20101204SB001" title="Support us">Donate to Wikipedia</a></li>
@@ -5907,5 +5907,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv232 in 0.073 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv248 in 0.065 secs. -->			</body>
 </html>

@@ -3911,11 +3911,7 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 <td style="padding:2px;">
 <table cellspacing="0" class="nowraplinks collapsible autocollapse" style="width:100%;background:transparent;color:inherit;;">
 <tr>
-<th style=";" colspan="2" class="navbox-title">
-<div style="float:left; width:6em;text-align:left;">
-<div class="noprint plainlinks navbar" style="background:none; padding:0; font-weight:normal;;;border:none;; font-size:xx-small;"><a href="/wiki/Template:UnitedKingdomMPs" title="Template:UnitedKingdomMPs"><span title="View this template" style=";;border:none;">v</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="/wiki/Template_talk:UnitedKingdomMPs" title="Template talk:UnitedKingdomMPs"><span title="Discuss this template" style=";;border:none;">d</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="http://en.wikipedia.org/w/index.php?title=Template:UnitedKingdomMPs&amp;action=edit" class="external text" rel="nofollow"><span title="Edit this template" style=";;border:none;;">e</span></a></div>
-</div>
-<span class="" style="font-size:110%;"><a href="/wiki/List_of_United_Kingdom_MPs" title="List of United Kingdom MPs">List of United Kingdom MPs</a></span></th>
+<th style=";" colspan="2" class="navbox-title"><span style="float:left;width:6em;text-align:left;"><span class="noprint plainlinks navbar" style=""><a href="/wiki/Template:UnitedKingdomMPs" title="Template:UnitedKingdomMPs"><span style=";;background:none transparent;border:none;font-size:100%;" title="View this template">v</span></a><span style="white-space:nowrap;;;background:none transparent;border:none;font-size:100%;"> <b>·</b> </span><a href="/wiki/Template_talk:UnitedKingdomMPs" title="Template talk:UnitedKingdomMPs"><span style=";;background:none transparent;border:none;font-size:100%;" title="Discuss this template">d</span></a><span style="white-space:nowrap;;;background:none transparent;border:none;font-size:100%;"> <b>·</b> </span><a href="http://en.wikipedia.org/w/index.php?title=Template:UnitedKingdomMPs&amp;action=edit" class="external text" rel="nofollow"><span style=";;background:none transparent;border:none;font-size:100%;" title="Edit this template">e</span></a></span></span><span class="" style="font-size:110%;"><a href="/wiki/List_of_United_Kingdom_MPs" title="List of United Kingdom MPs">List of United Kingdom MPs</a></span></th>
 </tr>
 <tr style="height:2px;">
 <td></td>
@@ -3960,13 +3956,13 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 845/1000000
-Post-expand include size: 47708/2048000 bytes
-Template argument size: 34919/2048000 bytes
+Preprocessor node count: 843/1000000
+Post-expand include size: 49610/2048000 bytes
+Template argument size: 35164/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!4 and timestamp 20110101102300 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!4 and timestamp 20110107063702 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001</a>"</div>
 				<!-- /bodytext -->
@@ -4067,7 +4063,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the
 				<ul>
 					<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
 					<li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
-					<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content — the best of Wikipedia">Featured content</a></li>
+					<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
 					<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
 					<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
 					<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Special:Landingcheck?landing_page=WMFJA1&amp;language=en&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20101204SB001" title="Support us">Donate to Wikipedia</a></li>
@@ -4161,5 +4157,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv157 in 0.113 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv174 in 0.106 secs. -->			</body>
 </html>
