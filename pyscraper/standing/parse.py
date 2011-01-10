@@ -169,7 +169,10 @@ class ParseCommittee:
         
         if len(contents) == 0: return 
         firstNode = contents[0]
-        if getattr(firstNode, 'name', None) in ['a', 'b', 'strong'] and ptext.find(':') != -1 and len(ptext.strip()) -1 > ptext.find(':') and len(contents)>1:
+        firstNode_name = getattr(firstNode, 'name', None)
+        if (firstNode_name in ['a', 'b', 'strong'] or (firstNode_name == 'span' and firstNode.get('class') == 'hs_CLMember')) \
+            and ptext.find(':') != -1 and len(ptext.strip()) -1 > ptext.find(':') and len(contents)>1:
+
             # an amendment
             if re.match('Amendment proposed.*?', ptext):
                 self.non_speech_text()
@@ -203,6 +206,10 @@ class ParseCommittee:
     def display_heading(self, text, type):
         """Output a major or minor heading
         """
+
+        if text is None:
+            raise Exception, "Heading expected, but got None, at %s" % self.timestamp
+
         self.close_speech(type)
         # increment the section ID
         self.idA += 1
@@ -239,7 +246,6 @@ class ParseCommittee:
         for chairman in chairlist: ctte_tag.append(chairman)
         ctte_tag.append('</chairmen>\n')
         for member in memberlist:
-            print member
             (orig_name, membername, bracket, party, attending) = self.parse_member_tag(member)
             matchtext = memberList.matchcttename(membername, bracket, self.date)
             if bracket: orig_name = '%s <span class="italic">(%s)</span>' % (orig_name, bracket)
@@ -430,18 +436,25 @@ class ParseCommittee:
         votecounts = self.vote_dict()
         debug("division %s" % divisionNum)
         
-        divisionHeader = tag.findNextSibling('h5', {'class' : "hs_DivListHeader" })
-        if not divisionHeader and not new_new: return self.parse_old_division(tag, divisionNum)
+        if new_new:
+            elt = 'p'
+            elt_head = 'strong'
+            divisionHeader = tag.findNextSibling(elt_head)
+        else:
+            elt ='div'
+            elt_head = 'h5'
+            divisionHeader = tag.findNextSibling(elt_head, {'class' : "hs_DivListHeader" })
+            if not divisionHeader: return self.parse_old_division(tag, divisionNum)
         
         # ayes header
         firstvote = ''.join(divisionHeader(text=True)).strip().lower()
         
         if not firstvote in ['ayes', 'noes']: raise ContextException, "Bad division vote count heading: %s" % firstvote
         
-        node = divisionHeader.findNext('div')
+        node = divisionHeader.findNext(elt)
         # get all the aye votes
-        while getattr(node, 'name', None) != 'h5':
-             if getattr(node,'name', None) == 'div' and node.get('class', None) == 'hs_Para' :
+        while getattr(node, 'name', None) != elt_head:
+             if getattr(node,'name', None) == elt and (elt != 'div' or node.get('class', None) == 'hs_Para') :
                 ptext = re.sub("\s+", " ", ''.join(node(text=True))).strip()
                 if ptext:
                     self.add_member_to_votecount(votecounts, firstvote, ptext)
@@ -449,18 +462,19 @@ class ParseCommittee:
              node = node.next
         
         # noes header    
-        secondvote = node.b.string.strip().lower()
-        if not firstvote in ['ayes', 'noes']: raise ContextException, "Bad division vote count heading: %s" % secondvote
+        secondvote = node.b.string if node.b else node.string
+        secondvote = secondvote.strip().lower()
+        if not secondvote in ['ayes', 'noes']: raise ContextException, "Bad division vote count heading: %s" % secondvote
         
         # no votes 
         node = node.next
         while(node):
-            if getattr(node,'name', None) == 'div' and node.get('class', None) == 'hs_Para' and getattr(node, 'contents', None):
+            if getattr(node,'name', None) == elt and (elt != 'div' or node.get('class', None) == 'hs_Para') and getattr(node, 'contents', None):
                 contents = [subnode for subnode in node.contents if not subnode.string or subnode.string.strip()]
                 if not contents:
                     node = node.next
                     continue
-                if getattr( contents[0], 'name', None ) == 'i':
+                if getattr( contents[0], 'name', None ) in ('i', 'em'):
                     self.display_division(divisionNum, votecounts)  
                     return 
                 else: 
@@ -917,7 +931,7 @@ class ParseCommittee:
                 elif (cssClass == 'hs_ParaIndent'):
                     self.display_para(tag, indent=True)
                 elif (cssClass == 'hs_8Clause'):
-                    self.display_heading(tag.string, "minor")
+                    self.display_heading(''.join(tag(text=True)), "minor")
                 elif (cssClass == 'hs_8ClauseQn'):
                     self.display_heading(tag.string, "minor")
                 elif (cssClass == 'hs_8Question'):
@@ -948,9 +962,10 @@ class ParseCommittee:
                     pass
                 elif tag.name == 'div' and tag.get('id', '') in ('content-small', 'maincontent1'):
                     pass
+                elif cssClass in ('hs_2GenericHdg', 'hs_2DebatedMotion') and re.match('Written evidence to be reported to the House', ''.join(tag(text=True))):
+                    self.display_para(tag, indent=True)
                 else:
-                    print "NAME %s CLASS %s" % (tag.name, cssClass)
-                    pass
+                    raise Exception, "NAME %s CLASS %s" % (tag.name, cssClass)
 
     def parse_old_sitting_part(self, soup):
         """Parse and convert an older-style (1/2001-3/2006) Standing Committee transcript to XML"""     
