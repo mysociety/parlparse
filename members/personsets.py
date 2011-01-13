@@ -108,6 +108,8 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/101067" : "Des Browne [Kilmarnock and Loudoun]",
     "uk.org.publicwhip/lord/101074" : "Michael Ancram [Devizes]",
     "uk.org.publicwhip/lord/101080" : "Patrick Cormack [South Staffordshire]",
+    "uk.org.publicwhip/lord/101085" : "Susan Kramer [Richmond Park]",
+    "uk.org.publicwhip/lord/101090" : "Richard Spring [West Suffolk]",
 
 }
 
