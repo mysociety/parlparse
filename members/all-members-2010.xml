@@ -3906,5 +3906,12 @@ Members of the UK Parliament, House of Commons, 2010-
     fromdate="2010-05-06" todate="9999-12-31" fromwhy="general_election" towhy="still_in_office"
 />
 
+<member
+    id="uk.org.publicwhip/member/40684" house="commons"
+    title="" firstname="Debbie" lastname="Abrahams"
+    constituency="Oldham East and Saddleworth" party="Lab"
+    fromdate="2011-01-14" todate="9999-12-31" fromwhy="byelection" towhy="still_in_office"
+/>
+
 </publicwhip>
 
