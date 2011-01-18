@@ -2300,7 +2300,8 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/200"/>
     <office id="uk.org.publicwhip/member/887"/>
 </person>
-<person id="uk.org.publicwhip/person/10201" latestname="Howard Flight">
+<person id="uk.org.publicwhip/person/10201" latestname="Lord Flight">
+    <office id="uk.org.publicwhip/lord/101098" current="yes"/>
     <office id="uk.org.publicwhip/member/1366"/>
     <office id="uk.org.publicwhip/member/201"/>
     <office id="uk.org.publicwhip/member/888"/>
@@ -68907,6 +68908,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/25026" latestname="Lord Strasburger">
     <office id="uk.org.publicwhip/lord/101092" current="yes"/>
 </person>
+<person id="uk.org.publicwhip/person/25035" latestname="Lord Marks of Henley-on-Thames">
+    <office id="uk.org.publicwhip/lord/101093" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/12857" latestname="Baroness Jeger">
     <office id="uk.org.publicwhip/lord/100332"/>
 </person>
@@ -69889,6 +69893,18 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/24987" latestname="Baroness Benjamin">
     <office id="uk.org.publicwhip/lord/101022" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25037" latestname="Lord Wasserman">
+    <office id="uk.org.publicwhip/lord/101094" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25038" latestname="Lord Fellowes of West Stafford">
+    <office id="uk.org.publicwhip/lord/101095" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25039" latestname="Lord Loomba">
+    <office id="uk.org.publicwhip/lord/101096" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25040" latestname="Lord Ahmad of Wimbledon">
+    <office id="uk.org.publicwhip/lord/101097" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/25032" latestname="Baroness Stowell of Beeston">
     <office id="uk.org.publicwhip/lord/101091" current="yes"/>
