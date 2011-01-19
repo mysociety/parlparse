@@ -118,7 +118,8 @@ def GlueByNext(fout, urla, urlx, sdate):
                 sr = re.sub('<div id="maincontent1">\s+<notus', '<hr> <notus', sr)
                 sr = re.sub('<div id="maincontent1">\s*<link[^>]*>\s*<notus', '<hr> <notus', sr) # New 2008-10...
                 sr = re.sub('<div id="maincontent">(?:\s*<table.*?</table>)?(?s)', '', sr)
-                if url == 'http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/71001w0001.htm':
+                if url in ('http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/71001w0001.htm',
+                    'http://www.publications.parliament.uk/pa/ld201011/ldhansrd/text/110118-0001.htm'):
                         sr = re.sub('Daily Hansard</span></div>', 'Daily Hansard</span></div> <hr>', sr)
 
                 # post 2008-03, stupid duplication of <b>s
