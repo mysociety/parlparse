@@ -11182,6 +11182,70 @@ B - bishop
     fromdate="2011-01-12" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101093"
+    house="lords"
+    forenames="Jonathan Clive"
+    title="Lord" lordname="Marks" lordofname="Henley-on-Thames"
+    county="the County of Oxfordshire"
+    peeragetype="L" affiliation="LDem"
+    fromdate="2011-01-13" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101094"
+    house="lords"
+    forenames="Gordon Joshua"
+    title="Lord" lordname="Wasserman" lordofname=""
+    lordofname_full="Pimlico"
+    county="the City of Westminster"
+    peeragetype="L" affiliation="Con"
+    fromdate="2011-01-13" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101095"
+    house="lords"
+    forenames="Julian Alexander"
+    title="Lord" lordname="Fellowes" lordofname="West Stafford"
+    county="the County of Dorset"
+    peeragetype="L" affiliation="Con"
+    fromdate="2011-01-13" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101096"
+    house="lords"
+    forenames="Rajinder Paul"
+    title="Lord" lordname="Loomba" lordofname=""
+    lordofname_full="Moor Park"
+    county="the County of Hertfordshire"
+    peeragetype="L" affiliation="LDem"
+    fromdate="2011-01-17" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101097"
+    house="lords"
+    forenames="Tariq Mahmood"
+    title="Lord" lordname="Ahmad" lordofname="Wimbledon"
+    county="the London Borough of Merton"
+    peeragetype="L" affiliation="Con"
+    fromdate="2011-01-17" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101098"
+    house="lords"
+    forenames="Howard Emerson"
+    title="Lord" lordname="Flight" lordofname=""
+    lordofname_full="Worcester"
+    county="the County of Worcestershire"
+    peeragetype="L" affiliation="Con"
+    fromdate="2011-01-17" todate="9999-12-31"
+    ex_MP="yes"
+/>
+
 <!--
 <lord
     id="uk.org.publicwhip/lord/1010.."

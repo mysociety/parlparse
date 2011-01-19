@@ -110,6 +110,7 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/101080" : "Patrick Cormack [South Staffordshire]",
     "uk.org.publicwhip/lord/101085" : "Susan Kramer [Richmond Park]",
     "uk.org.publicwhip/lord/101090" : "Richard Spring [West Suffolk]",
+    "uk.org.publicwhip/lord/101098" : "Howard Flight [Arundel and South Downs]",
 
 }
 
