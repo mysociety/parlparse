@@ -145,7 +145,7 @@ def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):
 		elif stampurl.sdate in ["2002-10-28"]:
 			return res
 
-                elif hour in [0, 1, 2, 3] or stampurl.sdate in ["2003-10-20", "2000-10-03", "2000-07-24"]:
+                elif hour in [0, 1, 2, 3] or stampurl.sdate in ["2003-10-20", "2000-10-03", "2000-07-24", "2011-01-17"]:
                         hour += 24
 		else:
 			print (hour, mins), "time=", time, "previoustime=", previoustime
