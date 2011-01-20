@@ -111,7 +111,7 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/101085" : "Susan Kramer [Richmond Park]",
     "uk.org.publicwhip/lord/101090" : "Richard Spring [West Suffolk]",
     "uk.org.publicwhip/lord/101098" : "Howard Flight [Arundel and South Downs]",
-
+    "uk.org.publicwhip/lord/101100" : "Michael Lord [Central Suffolk and North Ipswich]",
 }
 
 # Put people who change party AND were MPs multple times in table above e.g. David Trimble
