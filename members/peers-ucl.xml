@@ -11246,6 +11246,61 @@ B - bishop
     ex_MP="yes"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101099"
+    house="lords"
+    forenames="Robert Norman"
+    title="Lord" lordname="Edmiston" lordofname=""
+    lordofname_full="Lapworth"
+    county="the County of Warwickshire"
+    peeragetype="L" affiliation=""
+    fromdate="2011-01-18" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101100"
+    house="lords"
+    forenames="Michael Nicholson Lord"
+    title="Lord" lordname="Framlingham" lordofname=""
+    lordofname_full="Eye"
+    county="the County of Suffolk"
+    peeragetype="L" affiliation=""
+    fromdate="2011-01-18" todate="9999-12-31"
+    ex_MP="yes"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101101"
+    house="lords"
+    forenames="Stewart Martin"
+    title="Lord" lordname="Wood" lordofname="Anfield"
+    lordofname_full="Tonbridge"
+    county="the County of Kent"
+    peeragetype="L" affiliation=""
+    fromdate="2011-01-18" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101102"
+    house="lords"
+    forenames="Reginal Norman Morgan"
+    title="Lord" lordname="Empey" lordofname=""
+    lordofname_full="Shandon"
+    county="the City and County Borough of Belfast"
+    peeragetype="L" affiliation=""
+    fromdate="2011-01-19" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101103"
+    house="lords"
+    forenames="Monroe Edward"
+    title="Lord" lordname="Palmer" lordofname="Childs Hill"
+    county="the London Borough of Barnet"
+    peeragetype="L" affiliation=""
+    fromdate="2011-01-19" todate="9999-12-31"
+/>
+
 <!--
 <lord
     id="uk.org.publicwhip/lord/1010.."
