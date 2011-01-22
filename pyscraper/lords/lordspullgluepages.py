@@ -92,6 +92,8 @@ def GlueByNext(fout, urla, urlx, sdate):
                 urla = [urla[0]]
         if urla[0] == 'http://www.publications.parliament.uk/pa/ld200708/ldhansrd/text/81104-0001.htm':
                 urla = [urla[0]]
+        if urla[0] == 'http://www.publications.parliament.uk/pa/ld201011/ldhansrd/text/110119-0001.htm':
+                urla = [urla[0]]
 	# loop which scrapes through all the pages following the nextlinks
 	# knocking off the known links as we go in case a "next page" is missing.
 	while urla:
@@ -117,9 +119,11 @@ def GlueByNext(fout, urla, urlx, sdate):
                 sr = re.sub('(<a href="[^"]*&amp)(">.*?)(</a>)(;.*?)([ .,<])', r'\1\4\2\4\3\5', sr)
                 sr = re.sub('<div id="maincontent1">\s+<notus', '<hr> <notus', sr)
                 sr = re.sub('<div id="maincontent1">\s*<link[^>]*>\s*<notus', '<hr> <notus', sr) # New 2008-10...
+                sr = re.sub('<div id="maincontent1">\s*<link[^>]*>\s*<h1', '<hr> <h1', sr) # New 2011-01...
                 sr = re.sub('<div id="maincontent">(?:\s*<table.*?</table>)?(?s)', '', sr)
                 if url in ('http://www.publications.parliament.uk/pa/ld200607/ldhansrd/text/71001w0001.htm',
-                    'http://www.publications.parliament.uk/pa/ld201011/ldhansrd/text/110118-0001.htm'):
+                    'http://www.publications.parliament.uk/pa/ld201011/ldhansrd/text/110118-0001.htm',
+                    ):
                         sr = re.sub('Daily Hansard</span></div>', 'Daily Hansard</span></div> <hr>', sr)
 
                 # post 2008-03, stupid duplication of <b>s
