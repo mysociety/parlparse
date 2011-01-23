@@ -12,9 +12,9 @@
 <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283-18" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283-18" type="text/css" media="screen" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283-18" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283-19" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283-19" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283-19" type="text/css" media="print" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?117" type="text/css" media="all" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" type="text/css" media="all" />
 <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
@@ -46,7 +46,7 @@ wgUserGroups=null,
 wgUserLanguage="en",
 wgContentLanguage="en",
 wgBreakFrames=false,
-wgCurRevisionId=405876491,
+wgCurRevisionId=409447275,
 wgVersion="1.16wmf4",
 wgEnableAPI=true,
 wgEnableWriteAPI=true,
@@ -74,17 +74,17 @@ wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwa
 wgArticleAssessmentJUIPath="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/js2stopgap/jui.combined.min.js",
 Geo={"city": "", "country": ""},
 wgNoticeProject="wikipedia";
-</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283-18" type="text/javascript"></script>
-<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283-18"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283-18" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283-18" type="text/javascript"></script>
+</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283-19" type="text/javascript"></script>
+<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283-19"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283-19" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283-19" type="text/javascript"></script>
 <script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2.2" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-18" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-18" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-19" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-19" type="text/javascript"></script>
 <script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
-<script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;283-18" type="text/javascript"></script>
+<script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;283-19" type="text/javascript"></script>
 <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
-<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-18" type="text/javascript"></script>
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-19" type="text/javascript"></script>
 
 </head>
 <body class="mediawiki ltr ns-0 ns-subject page-Members_of_the_Northern_Ireland_Assembly_elected_in_2007 skin-vector">
@@ -283,9 +283,9 @@ Northern Ireland</a></b></p>
 <tr>
 <td style="text-align:right; padding:0 5px;">
 <hr />
-<small><a href="/wiki/Politics_of_present-day_nations_and_states" title="Politics of present-day nations and states" class="mw-redirect">Other countries</a></small>&#160;<span style="font-weight:bold;">·</span>  <small><a href="http://commons.wikimedia.org/wiki/Atlas_of_Northern_Ireland" class="extiw" title="commons:Atlas of Northern Ireland">Atlas</a></small><br />
+<p><small><a href="/wiki/Politics_of_present-day_nations_and_states" title="Politics of present-day nations and states" class="mw-redirect">Other countries</a></small>&#160;<span style="font-weight:bold;">·</span>  <small><a href="http://commons.wikimedia.org/wiki/Atlas_of_Northern_Ireland" class="extiw" title="commons:Atlas of Northern Ireland">Atlas</a></small><br />
 <b><a href="/wiki/Portal:Politics" title="Portal:Politics">Politics portal</a></b><br />
-<div class="noprint plainlinks navbar" style="background:none; padding:0; font-weight:normal;; font-size:xx-small;"><a href="/wiki/Template:Politics_of_Northern_Ireland" title="Template:Politics of Northern Ireland"><span title="View this template" style="">view</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="/wiki/Template_talk:Politics_of_Northern_Ireland" title="Template talk:Politics of Northern Ireland"><span title="Discuss this template" style="">talk</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="http://en.wikipedia.org/w/index.php?title=Template:Politics_of_Northern_Ireland&amp;action=edit" class="external text" rel="nofollow"><span title="Edit this template" style=";">edit</span></a></div>
+<span class="noprint plainlinks navbar" style=""><span style="white-space:nowrap;word-spacing:-.12em;"><a href="/wiki/Template:Politics_of_Northern_Ireland" title="Template:Politics of Northern Ireland"><span style="" title="View this template">view</span></a> <span style=""><b>·</b></span> <a href="/wiki/Template_talk:Politics_of_Northern_Ireland" title="Template talk:Politics of Northern Ireland"><span style="" title="Discuss this template">talk</span></a> <span style=""><b>·</b></span> <a href="http://en.wikipedia.org/w/index.php?title=Template:Politics_of_Northern_Ireland&amp;action=edit" class="external text" rel="nofollow"><span style="" title="Edit this template">edit</span></a></span></span></p>
 </td>
 </tr>
 </table>
@@ -699,7 +699,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/David_Simpson_(UK_politician)" title="David Simpson (UK politician)">David Simpson</a> (resigned), replaced by <a href="/wiki/Sydney_Anderson_(politician)" title="Sydney Anderson (politician)">Sydney Anderson</a></td>
+<td><a href="/wiki/David_Simpson_(UK_politician)" title="David Simpson (UK politician)">David Simpson</a> (resigned), replaced by <a href="/wiki/Sidney_Anderson" title="Sidney Anderson">Sidney Anderson</a></td>
 <td><a href="/wiki/Upper_Bann_(Assembly_constituency)" title="Upper Bann (Assembly constituency)">Upper Bann</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
@@ -979,7 +979,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/Reg_Empey" title="Reg Empey">Reg Empey</a></td>
+<td><a href="/wiki/Reg_Empey" title="Reg Empey" class="mw-redirect">Reg Empey</a></td>
 <td><a href="/wiki/Belfast_East_(Assembly_constituency)" title="Belfast East (Assembly constituency)">Belfast East</a></td>
 <td><a href="/wiki/Ulster_Unionist_Party" title="Ulster Unionist Party">Ulster Unionist Party</a></td>
 </tr>
@@ -1108,7 +1108,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <li><a href="/wiki/Naomi_Long" title="Naomi Long">Naomi Long</a> was elected to the <a href="/wiki/Belfast_East_(UK_Parliament_constituency)" title="Belfast East (UK Parliament constituency)">Belfast East</a> parliamentary constituency on 6 May 2010 and was replaced by <a href="/wiki/Chris_Lyttle" title="Chris Lyttle">Chris Lyttle</a> on 5 July.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>7<span>]</span></a></sup></li>
 <li><a href="/wiki/Ian_Paisley,_Jr." title="Ian Paisley, Jr.">Ian Paisley, Jr.</a> was elected to the <a href="/wiki/North_Antrim_(UK_Parliament_constituency)" title="North Antrim (UK Parliament constituency)">North Antrim</a> parliamentary constituency on 6 May 2010. He resigned on 21 June 2010 and was replaced by <a href="/wiki/Paul_Frew" title="Paul Frew">Paul Frew</a>.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>8<span>]</span></a></sup><sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span>[</span>9<span>]</span></a></sup></li>
 <li><a href="/wiki/Jeffrey_Donaldson" title="Jeffrey Donaldson">Jeffrey Donaldson</a> resigned on 10 June 2010 and was replaced by <a href="/wiki/Paul_Givan" title="Paul Givan">Paul Givan</a>.</li>
-<li><a href="/wiki/David_Simpson_(UK_politician)" title="David Simpson (UK politician)">David Simpson</a> and <a href="/wiki/William_McCrea_(politician)" title="William McCrea (politician)">William McCrea</a> were replaced by <a href="/wiki/Sydney_Anderson_(UK_politician)" title="Sydney Anderson (UK politician)" class="mw-redirect">Sydney Anderson</a> and <a href="/wiki/Paul_Girvan" title="Paul Girvan">Paul Girvan</a> on 1 July 2010.</li>
+<li><a href="/wiki/David_Simpson_(UK_politician)" title="David Simpson (UK politician)">David Simpson</a> and <a href="/wiki/William_McCrea_(politician)" title="William McCrea (politician)">William McCrea</a> were replaced by <a href="/wiki/Sidney_Anderson" title="Sidney Anderson">Sidney Anderson</a> and <a href="/wiki/Paul_Girvan" title="Paul Girvan">Paul Girvan</a> on 1 July 2010.</li>
 <li><a href="/wiki/Jim_Shannon" title="Jim Shannon">Jim Shannon</a> resigned on 1 August 2010 and was replaced by <a href="/wiki/Simpson_Gibson" title="Simpson Gibson">Simpson Gibson</a> on 2 August 2010.</li>
 <li><a href="/wiki/Nigel_Dodds" title="Nigel Dodds">Nigel Dodds</a> resigned on 10 September 2010 and was replaced by <a href="/wiki/William_Humphrey_(UK_politician)" title="William Humphrey (UK politician)">William Humphrey</a> on 13 September 2010.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>10<span>]</span></a></sup><sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>11<span>]</span></a></sup></li>
 <li><a href="/wiki/Mark_Durkan" title="Mark Durkan">Mark Durkan</a> resigned on 9 November 2010 and was replacd by <a href="/wiki/P%C3%B3l_Callaghan" title="Pól Callaghan">Pól Callaghan</a> on 15 November 2010.</li>
@@ -1144,11 +1144,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td style="padding:2px;">
 <table cellspacing="0" class="nowraplinks collapsible autocollapse" style="width:100%;background:transparent;color:inherit;;">
 <tr>
-<th style=";background:#BFD7FF;" colspan="2" class="navbox-title">
-<div style="float:left; width:6em;text-align:left;">
-<div class="noprint plainlinks navbar" style="background:none; padding:0; font-weight:normal;;background:#BFD7FF;;border:none;; font-size:xx-small;"><a href="/wiki/Template:NI_elected_representatives" title="Template:NI elected representatives"><span title="View this template" style=";background:#BFD7FF;;border:none;">v</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="/wiki/Template_talk:NI_elected_representatives" title="Template talk:NI elected representatives"><span title="Discuss this template" style=";background:#BFD7FF;;border:none;">d</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="http://en.wikipedia.org/w/index.php?title=Template:NI_elected_representatives&amp;action=edit" class="external text" rel="nofollow"><span title="Edit this template" style=";background:#BFD7FF;;border:none;;">e</span></a></div>
-</div>
-<span class="" style="font-size:110%;"><b>Elected representatives in Northern Ireland</b></span></th>
+<th style=";background:#BFD7FF;" colspan="2" class="navbox-title"><span style="float:left;width:6em;text-align:left;"><span class="noprint plainlinks navbar" style=""><span style="white-space:nowrap;word-spacing:-.12em;"><a href="/wiki/Template:NI_elected_representatives" title="Template:NI elected representatives"><span style=";background:#BFD7FF;;background:none transparent;border:none;font-size:100%;" title="View this template">v</span></a> <span style=";background:#BFD7FF;;background:none transparent;border:none;font-size:100%;"><b>·</b></span> <a href="/wiki/Template_talk:NI_elected_representatives" title="Template talk:NI elected representatives"><span style=";background:#BFD7FF;;background:none transparent;border:none;font-size:100%;" title="Discuss this template">d</span></a> <span style=";background:#BFD7FF;;background:none transparent;border:none;font-size:100%;"><b>·</b></span> <a href="http://en.wikipedia.org/w/index.php?title=Template:NI_elected_representatives&amp;action=edit" class="external text" rel="nofollow"><span style=";background:#BFD7FF;;background:none transparent;border:none;font-size:100%;" title="Edit this template">e</span></a></span></span></span><span class="" style="font-size:110%;"><b>Elected representatives in Northern Ireland</b></span></th>
 </tr>
 <tr style="height:2px;">
 <td></td>
@@ -1186,11 +1182,7 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 <td style="padding:2px;">
 <table cellspacing="0" class="nowraplinks collapsible autocollapse" style="width:100%;background:transparent;color:inherit;;">
 <tr>
-<th style=";background:#6699CC;color:white" colspan="3" class="navbox-title">
-<div style="float:left; width:6em;text-align:left;">
-<div class="noprint plainlinks navbar" style="background:none; padding:0; font-weight:normal;;background:#6699CC;color:white;border:none;; font-size:xx-small;"><a href="/wiki/Template:Northern_Ireland_Assembly" title="Template:Northern Ireland Assembly"><span title="View this template" style=";background:#6699CC;color:white;border:none;">v</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="/w/index.php?title=Template_talk:Northern_Ireland_Assembly&amp;action=edit&amp;redlink=1" class="new" title="Template talk:Northern Ireland Assembly (page does not exist)"><span title="Discuss this template" style=";background:#6699CC;color:white;border:none;">d</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="http://en.wikipedia.org/w/index.php?title=Template:Northern_Ireland_Assembly&amp;action=edit" class="external text" rel="nofollow"><span title="Edit this template" style=";background:#6699CC;color:white;border:none;;">e</span></a></div>
-</div>
-<span class="" style="font-size:110%;"><a href="/wiki/Northern_Ireland_Assembly" title="Northern Ireland Assembly"><span style="color:white;">Northern Ireland Assembly</span></a></span></th>
+<th style=";background:#6699CC;color:white" colspan="3" class="navbox-title"><span style="float:left;width:6em;text-align:left;"><span class="noprint plainlinks navbar" style=""><span style="white-space:nowrap;word-spacing:-.12em;"><a href="/wiki/Template:Northern_Ireland_Assembly" title="Template:Northern Ireland Assembly"><span style=";background:#6699CC;color:white;background:none transparent;border:none;font-size:100%;" title="View this template">v</span></a> <span style=";background:#6699CC;color:white;background:none transparent;border:none;font-size:100%;"><b>·</b></span> <a href="/w/index.php?title=Template_talk:Northern_Ireland_Assembly&amp;action=edit&amp;redlink=1" class="new" title="Template talk:Northern Ireland Assembly (page does not exist)"><span style=";background:#6699CC;color:white;background:none transparent;border:none;font-size:100%;" title="Discuss this template">d</span></a> <span style=";background:#6699CC;color:white;background:none transparent;border:none;font-size:100%;"><b>·</b></span> <a href="http://en.wikipedia.org/w/index.php?title=Template:Northern_Ireland_Assembly&amp;action=edit" class="external text" rel="nofollow"><span style=";background:#6699CC;color:white;background:none transparent;border:none;font-size:100%;" title="Edit this template">e</span></a></span></span></span><span class="" style="font-size:110%;"><a href="/wiki/Northern_Ireland_Assembly" title="Northern Ireland Assembly"><span style="color:white;">Northern Ireland Assembly</span></a></span></th>
 </tr>
 <tr style="height:2px;">
 <td></td>
@@ -1267,13 +1259,13 @@ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; 
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 1834/1000000
-Post-expand include size: 66687/2048000 bytes
-Template argument size: 32429/2048000 bytes
+Preprocessor node count: 1828/1000000
+Post-expand include size: 71146/2048000 bytes
+Template argument size: 32987/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!4 and timestamp 20110104124446 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!1!0!default!!en!4 and timestamp 20110122225949 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007">http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007</a>"</div>
 				<!-- /bodytext -->
@@ -1352,7 +1344,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
 			<input id="searchInput" name="search" type="text"  title="Search Wikipedia [f]" accesskey="f"  value="" />
-			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283-18" alt="Search" /></button>
+			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283-19" alt="Search" /></button>
 		</div>
 			</form>
 </div>
@@ -1364,7 +1356,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 		<!-- panel -->
 			<div id="mw-panel" class="noprint">
 				<!-- logo -->
-					<div id="p-logo"><a style="background-image: url(http://upload.wikimedia.org/wikipedia/commons/d/d6/Wikipedia-logo-v2-en.png);" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+					<div id="p-logo"><a style="background-image: url(http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png);" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
 				<!-- /logo -->
 				
 <!-- navigation -->
@@ -1377,7 +1369,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 					<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
 					<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
 					<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
-					<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Special:Landingcheck?landing_page=WMFJA1&amp;language=en&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20101204SB001" title="Support us">Donate to Wikipedia</a></li>
+					<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Special:Landingcheck?landing_page=WMFJA085&amp;language=en&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20101204SB002" title="Support us">Donate to Wikipedia</a></li>
 				</ul>
 			</div>
 </div>
@@ -1413,8 +1405,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_Northern_Ireland_Assembly_elected_in_2007" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=405876491" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;id=405876491" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=409447275" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;id=409447275" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -1424,7 +1416,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+Northern+Ireland+Assembly+elected+in+2007" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+Northern+Ireland+Assembly+elected+in+2007&amp;oldid=405876491&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+Northern+Ireland+Assembly+elected+in+2007" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+Northern+Ireland+Assembly+elected+in+2007&amp;oldid=409447275&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -1437,7 +1429,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ir
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 4 January 2011 at 12:44.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 22 January 2011 at 22:59.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -1460,5 +1452,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv226 in 0.848 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv232 in 0.044 secs. -->			</body>
 </html>
