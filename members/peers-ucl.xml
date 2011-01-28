@@ -11301,9 +11301,108 @@ B - bishop
     fromdate="2011-01-19" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101104"
+    house="lords"
+    forenames="Stanley"
+    title="Lord" lordname="Fink" lordofname=""
+    lordofname_full="Northwood"
+    county="the County of Middlesex"
+    peeragetype="L" affiliation="Con"
+    fromdate="2011-01-20" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101105"
+    house="lords"
+    forenames="Benjamin Russell Mackintosh"
+    title="Lord" lordname="Stoneham" lordofname="Droxford"
+    lordofname_full="Meon Valley"
+    county="the County of Hampshire"
+    peeragetype="L" affiliation="LDem"
+    fromdate="2011-01-20" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101106"
+    house="lords"
+    forenames="Elizabeth Rose"
+    title="Baroness" lordname="Berridge" lordofname=""
+    lordofname_full="The Vale of Catmose"
+    county="the County of Rutland"
+    peeragetype="L" affiliation="Con"
+    fromdate="2011-01-20" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101107"
+    house="lords"
+    forenames="Francis Richard"
+    title="Lord" lordname="Dannatt" lordofname=""
+    lordofname_full="Keswick"
+    county="the County of Norfolk"
+    peeragetype="L" affiliation="XB"
+    fromdate="2011-01-24" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101108"
+    house="lords"
+    forenames="Dafydd Wynne"
+    title="Lord" lordname="Wigley" lordofname=""
+    lordofname_full="Caernarfon"
+    county="the County of Gwynedd"
+    peeragetype="L" affiliation="PC"
+    fromdate="2011-01-24" todate="9999-12-31"
+    ex_MP="yes"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101109"
+    house="lords"
+    forenames="Raymond Edward Harry"
+    title="Lord" lordname="Collins" lordofname="Highbury"
+    county="the London Borough of Islington"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2011-01-24" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101110"
+    house="lords"
+    forenames="Qurban"
+    title="Lord" lordname="Hussain" lordofname=""
+    lordofname_full="Luton"
+    county="the County of Bedfordshire"
+    peeragetype="L" affiliation="LDem"
+    fromdate="2011-01-25" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101111"
+    house="lords"
+    forenames="Joan Dawson"
+    title="Baroness" lordname="Bakewell" lordofname=""
+    lordofname_full="Stockport"
+    county="the County of Greater Manchester"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2011-01-25" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101112"
+    house="lords"
+    forenames="Rachael"
+    title="Baroness" lordname="Heyhoe Flint" lordofname=""
+    lordofname_full="Wolverhampton"
+    county="the County of West Midlands"
+    peeragetype="L" affiliation="Con"
+    fromdate="2011-01-25" todate="9999-12-31"
+/>
+
 <!--
 <lord
-    id="uk.org.publicwhip/lord/1010.."
+    id="uk.org.publicwhip/lord/1011.."
     house="lords"
     forenames=""
     title="" lordname="" lordofname=""
