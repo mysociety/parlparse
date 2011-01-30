@@ -637,7 +637,7 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 </tr>
 <tr>
 <td><a href="/wiki/Birmingham,_Yardley_(UK_Parliament_constituency)" title="Birmingham, Yardley (UK Parliament constituency)" class="mw-redirect">Birmingham, Yardley</a></td>
-<td><a href="/wiki/Estelle_Morris" title="Estelle Morris">Estelle Morris</a></td>
+<td><a href="/wiki/Estelle_Morris" title="Estelle Morris" class="mw-redirect">Estelle Morris</a></td>
 <td>Labour</td>
 <td>Estelle Morris</td>
 <td>Labour</td>
@@ -3898,7 +3898,7 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 <li>Paul Marsden (Shrewsbury and Atcham) - Resigned from the Liberal Democrats and declared his support for Labour on 5 April.</li>
 </ul>
 <h2><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;action=edit&amp;section=33" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
-<div class="reflist references-small" style="">
+<div class="reflist" style="">
 <div class="references">
 <ol>
 <li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> <a href="http://news.bbc.co.uk/1/hi/uk_politics/4086871.stm" class="external free" rel="nofollow">http://news.bbc.co.uk/1/hi/uk_politics/4086871.stm</a></li>
@@ -3957,12 +3957,12 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 <!-- 
 NewPP limit report
 Preprocessor node count: 844/1000000
-Post-expand include size: 49663/2048000 bytes
+Post-expand include size: 49646/2048000 bytes
 Template argument size: 35164/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!default!!en!4 and timestamp 20110121164148 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!1!0!!en!4 and timestamp 20110128114209 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001</a>"</div>
 				<!-- /bodytext -->
@@ -4157,5 +4157,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv268 in 0.087 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv244 in 0.085 secs. -->			</body>
 </html>

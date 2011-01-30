@@ -535,7 +535,7 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 </tr>
 <tr>
 <td><a href="/wiki/Birmingham_Yardley_(UK_Parliament_constituency)" title="Birmingham Yardley (UK Parliament constituency)">Birmingham, Yardley</a></td>
-<td><a href="/wiki/Estelle_Morris" title="Estelle Morris">Estelle Morris</a></td>
+<td><a href="/wiki/Estelle_Morris" title="Estelle Morris" class="mw-redirect">Estelle Morris</a></td>
 <td>Labour</td>
 </tr>
 <tr>
@@ -3717,7 +3717,7 @@ Template argument size: 36703/2048000 bytes
 Expensive parser function count: 1/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:415690-0!1!0!default!!en!4 and timestamp 20110123042307 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:415690-0!1!0!!en!4 and timestamp 20110129231150 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_1997">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_1997</a>"</div>
 				<!-- /bodytext -->
@@ -3904,5 +3904,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		<!-- /fixalpha -->
 		
 <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
-<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv264 in 1.355 secs. -->			</body>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv248 in 1.402 secs. -->			</body>
 </html>
