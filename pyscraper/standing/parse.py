@@ -964,6 +964,8 @@ class ParseCommittee:
                     pass
                 elif cssClass in ('hs_2GenericHdg', 'hs_2DebatedMotion') and re.match('Written evidence to be reported to the House', ''.join(tag(text=True))):
                     self.display_para(tag, indent=True)
+                elif cssClass in ('bkMark',):
+                    pass
                 else:
                     raise Exception, "NAME %s CLASS %s" % (tag.name, cssClass)
 
