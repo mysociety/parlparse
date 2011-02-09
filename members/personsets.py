@@ -171,6 +171,8 @@ sp_lord_matches = {
     "uk.org.publicwhip/member/80078": "uk.org.publicwhip/lord/101023",
     "uk.org.publicwhip/member/80201": "uk.org.publicwhip/lord/101023",
     "uk.org.publicwhip/member/80353": "uk.org.publicwhip/lord/101023",
+    # Lord Nicol Stephen
+    "uk.org.publicwhip/member/80115": "uk.org.publicwhip/lord/101127",
 }
 
 # Include in here changes of constituency, so those people are
