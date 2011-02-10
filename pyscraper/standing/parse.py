@@ -837,6 +837,7 @@ class ParseCommittee:
             patt = re.compile("((Committee (having )?divided|Question put(?! and agreed)).*?(Question|Amendment) (accordingly|put))", re.DOTALL)   
             text = re.sub(patt, self.replace_linebreaks, text)
         text = re.sub("\s+", " ", text)
+        #text = text.replace('<br/>', '<br />')
         soup = StandingSoup(text,markupMassage=StandingSoup.myMassage)
         fp.close()
         
@@ -967,7 +968,7 @@ class ParseCommittee:
                 elif cssClass in ('bkMark',):
                     pass
                 else:
-                    raise Exception, "NAME %s CLASS %s" % (tag.name, cssClass)
+                    raise Exception, "NAME %s CLASS %s" % (tag.prettify(), cssClass)
 
     def parse_old_sitting_part(self, soup):
         """Parse and convert an older-style (1/2001-3/2006) Standing Committee transcript to XML"""     
