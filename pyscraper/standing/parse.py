@@ -837,7 +837,7 @@ class ParseCommittee:
             patt = re.compile("((Committee (having )?divided|Question put(?! and agreed)).*?(Question|Amendment) (accordingly|put))", re.DOTALL)   
             text = re.sub(patt, self.replace_linebreaks, text)
         text = re.sub("\s+", " ", text)
-        #text = text.replace('<br/>', '<br />')
+        text = text.replace('<br/>', '<br />')
         soup = StandingSoup(text,markupMassage=StandingSoup.myMassage)
         fp.close()
         
@@ -921,6 +921,8 @@ class ParseCommittee:
             elif tag.name == 'a' and tag.get('name', None):
                 self.url = self.url.split('#',1)[0]
                 self.url = self.url + "#" + tag['name']
+            elif tag.name == 'a' and re.search('/pa/cm/cmpubns|services.parliament.uk/bills/', tag.get('href', '')):
+                pass
             else:  
                 cssClass = tag.get('class', '')
                 if cssClass in ('Column', 'columnNumber'):
