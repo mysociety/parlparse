@@ -230,6 +230,8 @@ def get_committee_attributes(committees):
                 # The following two had their meetings in 2008-09 and are linked from there also
                 if year == '2009' and index_text in ('Child Poverty Bill', 'Equality Bill'):
                         continue
+                if index_url == 'http://services.parliament.uk/bills/2010-11/armedforces/committees/houseofcommonspublicbillcommitteeonthearmedforcesbill201011.html':
+                        continue
                 mcttee = re.match("""
         # The name of the Bill (occasionally they forget to put 'Bill')
         (.*?[ ](?:Bill|Dogs|Schools[ ]and[ ]Families|Names))
