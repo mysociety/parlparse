@@ -1,4 +1,4 @@
-#!/usr/bin/python2.4
+#!/usr/bin/python
 
 import sys
 import os
@@ -84,9 +84,10 @@ for year in range(options.year, currentyear+1):
     link_tags = soup.findAll( 'a' )
 
     for t in link_tags:
-
-        if t.has_key('href') and re.match('^or-',t['href']):
-
+        # old format link - /or-10/sor1223-01.htm
+        # new format link - http://www.scottish.parliament.uk/Apps2/Business/ORSearch/ReportView.aspx?r=6132&amp;mode=html
+        if t.has_key('href') and (re.match('^or-',t['href']) or re.search('ORSearch/ReportView.aspx.*?mode=html', t['href'])):
+            print t
             s = ""
             for c in t.contents:
                 if type(c) == NavigableString:
@@ -94,10 +95,10 @@ for year in range(options.year, currentyear+1):
             s = re.sub(',','',s)
             # print year_index_filename + "==> " + s
             d = None
-            m = re.match( '^\s*(\d+)\s+(\w+)', s )
+            m = re.match( '^(Official Report)?\s*(\d+)\s+(\w+)', s )
             if not m:
                 raise Exception, "Unrecognized date format in '%s'" % s
-            d = datetime.date( year, month_name_to_int(m.group(2)), int(m.group(1)) )
+            d = datetime.date( year, month_name_to_int(m.group(3)), int(m.group(2)) )
 
             page = str(t['href'])
 
