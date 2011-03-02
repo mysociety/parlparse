@@ -40,25 +40,13 @@ http_fetcher = httplib2.Http(cache_directory)
 
 timestamp_re = re.compile('^(.*)-\d{8}T\d{6}.html$')
 
-def create_and_enter_directory(directory_name):
-    """Change the current working directory to that with name
-    'directory_name', creating it if it doesn't already exist."""
-
-    try:
-        os.mkdir(directory_name)
-    except OSError, e:
-        # Ignore the error if it already exists
-        if e.errno != errno.EEXIST:
-            raise
-    os.chdir(directory_name)
-
 def write_if_changed(directory_name,
                      filename,
                      content):
     # Store the current working directory so we can go back at the end.
     original_directory = os.getcwd()
 
-    create_and_enter_directory(directory_name)
+    enter_or_create_directory(directory_name)
 
     try:
         filename_match = timestamp_re.search(filename)
