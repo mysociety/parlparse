@@ -15,6 +15,7 @@ import codecs
 
 sys.path.append('../')
 from resolvemembernames import memberList
+from resolvelordsnames import lordsList
 from contextexception import ContextException
 from BeautifulSoup import BeautifulSoup, NavigableString, Comment, Tag
 
@@ -65,6 +66,9 @@ def add_member_id_attribute(item,speakername,date,id_attribute='speakerid'):
         used_scraped_date = " (used date of scraping)"
 
     id_set = memberList.fullnametoids(speakername,string_date)
+    if not id_set:
+	    id_set = [ lordsList.GetLordIDfname(name, loffice=loffice, sdate=sdate, stampurl=stampurl) ]
+
     if len(id_set) == 1:
         item.setAttribute(id_attribute,list(id_set)[0])
     elif len(id_set) == 0:
