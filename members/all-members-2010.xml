@@ -140,7 +140,7 @@ Members of the UK Parliament, House of Commons, 2010-
     id="uk.org.publicwhip/member/40056" house="commons"
     title="" firstname="Eric" lastname="Illsley"
     constituency="Barnsley Central" party="Lab"
-    fromdate="2010-05-06" todate="9999-12-31" fromwhy="general_election" towhy="still_in_office"
+    fromdate="2010-05-06" todate="2011-02-08" fromwhy="general_election" towhy="resigned"
 />
 <member
     id="uk.org.publicwhip/member/40057" house="commons"
@@ -230,7 +230,7 @@ Members of the UK Parliament, House of Commons, 2010-
     id="uk.org.publicwhip/member/40071" house="commons"
     title="" firstname="Gerry" lastname="Adams"
     constituency="Belfast West" party="SF"
-    fromdate="2010-05-06" todate="9999-12-31" fromwhy="general_election" towhy="still_in_office"
+    fromdate="2010-05-06" todate="2011-01-26" fromwhy="general_election" towhy="resigned"
 />
 <member
     id="uk.org.publicwhip/member/40072" house="commons"
@@ -3911,6 +3911,12 @@ Members of the UK Parliament, House of Commons, 2010-
     title="" firstname="Debbie" lastname="Abrahams"
     constituency="Oldham East and Saddleworth" party="Lab"
     fromdate="2011-01-14" todate="9999-12-31" fromwhy="by_election" towhy="still_in_office"
+/>
+<member
+    id="uk.org.publicwhip/member/40685" house="commons"
+    title="" firstname="Dan" lastname="Jarvis"
+    constituency="Barnsley Central" party="Lab"
+    fromdate="2011-03-04" todate="9999-12-31" fromwhy="by_election" towhy="still_in_office"
 />
 
 </publicwhip>
