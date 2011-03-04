@@ -837,7 +837,7 @@ class ParseCommittee:
             patt = re.compile("((Committee (having )?divided|Question put(?! and agreed)).*?(Question|Amendment) (accordingly|put))", re.DOTALL)   
             text = re.sub(patt, self.replace_linebreaks, text)
         text = re.sub("\s+", " ", text)
-        text = text.replace('<br/>', '<br />')
+        text = text.replace('<br/>', '<br />').replace('<p/>', '<p>')
         soup = StandingSoup(text,markupMassage=StandingSoup.myMassage)
         fp.close()
         
