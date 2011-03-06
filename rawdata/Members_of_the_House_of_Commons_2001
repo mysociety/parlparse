@@ -15,7 +15,7 @@
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
 <link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%7Cmediawiki.legacy.shared%7Cskins.vector&amp;only=styles&amp;skin=vector" type="text/css" media="all" />
-<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;version=20110227T002940Z" type="text/css" media="all" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;version=20110303T174654Z" type="text/css" media="all" />
 <style type="text/css" media="all">a.new,#quickbar a.new{color:#ba0000}
 
 /* cache key: enwiki:resourceloader:filter:minify-css:3:f2a9127573a22335c2a9102b208c73e7 */</style><link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=user&amp;only=styles&amp;skin=vector&amp;version=19700101T000001Z" type="text/css" media="all" />
@@ -3126,7 +3126,7 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 </tr>
 <tr>
 <td><a href="/wiki/South_Staffordshire_(UK_Parliament_constituency)" title="South Staffordshire (UK Parliament constituency)">South Staffordshire</a></td>
-<td>Sir <a href="/wiki/Patrick_Cormack">Patrick Cormack</a></td>
+<td>Sir <a href="/wiki/Patrick_Cormack" class="mw-redirect" title="Patrick Cormack">Patrick Cormack</a></td>
 <td>Conservative</td>
 </tr>
 <tr>
@@ -3831,13 +3831,11 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 <li>Paul Marsden (Shrewsbury and Atcham) - Resigned from the Liberal Democrats and declared his support for Labour on 5 April.</li>
 </ul>
 <h2><span class="editsection">[<a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;action=edit&amp;section=33" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
-<div class="reflist" style="">
-<div class="references">
-<ol>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
 <li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> <a href="http://news.bbc.co.uk/1/hi/uk_politics/4086871.stm" class="external free" rel="nofollow">http://news.bbc.co.uk/1/hi/uk_politics/4086871.stm</a></li>
 <li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <a href="http://news.bbc.co.uk/1/hi/uk/4178309.stm" class="external free" rel="nofollow">http://news.bbc.co.uk/1/hi/uk/4178309.stm</a></li>
 </ol>
-</div>
 </div>
 <table class="navbox" cellspacing="0" style=";">
 <tr>
@@ -3889,13 +3887,13 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 822/1000000
-Post-expand include size: 49646/2048000 bytes
+Preprocessor node count: 829/1000000
+Post-expand include size: 49679/2048000 bytes
 Template argument size: 35164/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!*!0!!en!4 and timestamp 20110227040237 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!*!0!!en!4 and timestamp 20110304042406 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001</a>"</div>
 				<!-- /bodytext -->
@@ -4101,9 +4099,9 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 }
 </script>
 
-<script src="http://bits.wikimedia.org/w/extensions-1.17/WikimediaMobile/MobileRedirect.js?2.2" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions-1.17/WikimediaMobile/MobileRedirect.js?4.2" type="text/javascript"></script>
 <script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;301-2" type="text/javascript"></script>
-<script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;version=20110227T002940Z" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;version=20110303T174654Z" type="text/javascript"></script>
 <script type="text/javascript">if ( window.mediaWiki ) {
 	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,"watchlistdays":"3","watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"flaggedrevssimpleui":1,"flaggedrevsstable":false,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"vector-simplesearch":1,"useeditwarning":1,"vector-collapsiblenav":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs108":false,"searchNs109":false});
 	mediaWiki.loader.state({"user.options":"ready"});
@@ -4114,5 +4112,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </script><script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- fixalpha -->
 		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
 		<!-- /fixalpha -->
-		<!-- Served by srv233 in 0.104 secs. -->			</body>
+		<!-- Served by srv168 in 1.984 secs. -->			</body>
 </html>
