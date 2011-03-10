@@ -482,9 +482,9 @@ class ParseCommittee:
                     # possible chair tie-break
                     if re.search('Chairman', ptext):
                         chairvote = None
-                        if re.search('Ayes', ptext):
+                        if re.search('Ayes|for the amendment', ptext):
                             chairvote = "ayes"
-                        elif re.search('Noes', ptext):
+                        elif re.search('Noes|against the amendment', ptext):
                             chairvote = "noes"
                         if not chairvote: raise ContextException, "Couldn't determine chairman's tie-breaking vote"
                         self.add_member_to_votecount(votecounts, chairvote, "Chairman")         
