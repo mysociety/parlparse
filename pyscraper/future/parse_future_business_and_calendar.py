@@ -14,6 +14,7 @@ from subprocess import call
 import codecs
 
 sys.path.append('../')
+sys.path.append('../lords')
 from resolvemembernames import memberList
 from resolvelordsnames import lordsList
 from contextexception import ContextException
@@ -67,7 +68,10 @@ def add_member_id_attribute(item,speakername,date,id_attribute='speakerid'):
 
     id_set = memberList.fullnametoids(speakername,string_date)
     if not id_set:
-	    id_set = [ lordsList.GetLordIDfname(name, loffice=loffice, sdate=sdate, stampurl=stampurl) ]
+        try:
+            id_set = [ lordsList.GetLordIDfname(speakername, '', string_date) ]
+        except ContextException:
+            pass
 
     if len(id_set) == 1:
         item.setAttribute(id_attribute,list(id_set)[0])
@@ -1202,7 +1206,7 @@ class SimpleItem(object):
         if m:
             # FIXME: check whether this is recognised member - for the
             # moment, just exclude a few common cases:
-            if re.search('(?ims)(report\s+stage|(first|second|third)\s+reading|committee\sof\sthe\swhole\shouse)',m.group(2)):
+            if re.search('(?ims)(report\s+stage|(first|1st|second|2nd|third|3rd)\s+reading|committee\sof\sthe\swhole\shouse)',m.group(2)):
                 self.text = text.strip()
             else:
                 self.text = m.group(1).strip()
