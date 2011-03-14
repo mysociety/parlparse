@@ -82,12 +82,6 @@ def write_if_changed(directory_name,
 tidy_class_re = '(class="[^"]+) today([^"]*")'
 tidy_class_replacement = '\\1\\2'
 
-tidy_class_start_re = '(class=")today '
-tidy_class_start_replacement = '\\1'
-
-tidy_class_just_re = 'class="today"'
-tidy_class_just_replacement = 'class=""'
-
 if __name__ == '__main__':
 
     d = start_date = datetime.date.today()
@@ -101,14 +95,14 @@ if __name__ == '__main__':
             d += datetime.timedelta(days=1)
             continue
 
-        for section in CALENDAR_SECTIONS:
+        for section, calendar_url_format in CALENDAR_SECTIONS.items():
             formatted_date = d.strftime(CALENDAR_URL_DATE_FORMAT)
-            calendar_url_format = CALENDAR_SECTIONS[section]
             url = calendar_url_format % (formatted_date,)
             response, content = http_fetcher.request(url)
             content = re.sub(tidy_class_re,tidy_class_replacement,content)
-            content = re.sub(tidy_class_start_re,tidy_class_start_replacement,content)
-            content = re.sub(tidy_class_just_re,tidy_class_just_replacement,content)
+            content = re.sub('(class=")today ', r'\1', content)
+            content = re.sub('class="today"', 'class=""', content)
+            content = re.sub('<a class="selected"', '<a', content)
             time.sleep(4)
             response_timestamp = dateutil.parser.parse(response['date'])
             page_filename = CALENDAR_PAGE_FILENAME_FORMAT % (section,d,response_timestamp.strftime(FILENAME_DATE_FORMAT))
