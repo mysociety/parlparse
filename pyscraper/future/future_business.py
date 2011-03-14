@@ -1,5 +1,5 @@
 # Use these to form each future business URL:
-FUTURE_BUSINESS_PARTS = [ 'a', 'b', 'c', 'd', 'e', 'f' ]
+FUTURE_BUSINESS_PARTS = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' ]
 FUTURE_BUSINESS_TEMPLATE_LOCATION = 'http://www.publications.parliament.uk/pa/cm/cmfbusi/%s01.htm'
 
 CALENDAR_SECTIONS = { "commons-main-chamber" : "http://services.parliament.uk/calendar/Commons/MainChamber/%s/events.html",
