@@ -4500,7 +4500,8 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/2877"/>
     <office id="uk.org.publicwhip/moffice/3143"/>
 </person>
-<person id="uk.org.publicwhip/person/10394" latestname="David Maclean">
+<person id="uk.org.publicwhip/person/10394" latestname="Lord Blencathra">
+    <office id="uk.org.publicwhip/lord/101130" current="yes"/>
     <office id="uk.org.publicwhip/member/1079"/>
     <office id="uk.org.publicwhip/member/1758"/>
     <office id="uk.org.publicwhip/member/2987"/>
@@ -70965,6 +70966,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/25066" latestname="Baroness Brinton">
     <office id="uk.org.publicwhip/lord/101128" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25068" latestname="Lord Glasman">
+    <office id="uk.org.publicwhip/lord/101129" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13292" latestname="Lord Rees">
     <office id="uk.org.publicwhip/lord/100528"/>

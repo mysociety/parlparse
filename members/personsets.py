@@ -114,6 +114,7 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/101100" : "Michael Lord [Central Suffolk and North Ipswich]",
     "uk.org.publicwhip/lord/101108" : "Dafydd Wigley [Caernarfon]",
     "uk.org.publicwhip/lord/101118" : "Oona King [Bethnal Green and Bow]",
+    "uk.org.publicwhip/lord/101130" : "David Maclean [Penrith and The Border]",
 }
 
 # Put people who change party AND were MPs multple times in table above e.g. David Trimble
