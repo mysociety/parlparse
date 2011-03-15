@@ -11576,6 +11576,28 @@ B - bishop
     fromdate="2011-02-10" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101129"
+    house="lords"
+    forenames="Maurice Mark"
+    title="Lord" lordname="Glasman" lordofname=""
+    lordofname_full="Stoke Newington and Stamford Hill"
+    county="the London Borough of Hackney"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2011-03-08" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101130"
+    house="lords"
+    forenames="David John Maclean"
+    title="Lord" lordname="Blencathra" lordofname=""
+    lordofname_full="Penrith"
+    county="the County of Cumbria"
+    peeragetype="L" affiliation="Con"
+    fromdate="2011-03-10" todate="9999-12-31"
+/>
+
 <!--
 <lord
     id="uk.org.publicwhip/lord/1011.."
