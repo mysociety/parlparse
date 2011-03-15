@@ -1,6 +1,7 @@
 # vim:sw=8:ts=8:et:nowrap
 # -*- coding: latin-1 -*-
 
+import os.path
 import string
 import re
 import xml.sax
@@ -29,6 +30,11 @@ honcompl = re.compile('(?:(%s)|(%s) \s*(.*?))(?:\s+of\s+(.*))?$' % (hontitleso, 
 
 rehonorifics = re.compile('(?: [CKO]BE| DL| TD| QC| KCMG| KCB)+$')
 
+# Work out the absolute path of the 'members' directory from
+# '__file__', so that we can import this module from any current
+# directory:
+members_path = os.path.abspath(os.path.join(os.path.split(__file__)[0], '..', '..', 'members'))
+
 class LordsList(xml.sax.handler.ContentHandler):
 	def __init__(self):
 		self.lords={} # ID --> MPs
@@ -39,13 +45,13 @@ class LordsList(xml.sax.handler.ContentHandler):
 		parser = xml.sax.make_parser()
 		parser.setContentHandler(self)
 
-		parser.parse("../members/peers-ucl.xml")
-		parser.parse("../members/peers-aliases.xml")
+		parser.parse(members_path + "/peers-ucl.xml")
+		parser.parse(members_path + "/peers-aliases.xml")
 		#parser.parse("../members/lordnametoofname.xml")
 
 		# set this to the file if we are to divert unmatched names into a file
 		# for collection
-		self.newlordsdumpfname = "../members/newlordsdump.xml"
+		self.newlordsdumpfname = members_path + "/newlordsdump.xml"
 		# self.newlordsdumpfname = None  # suppresses the feature
 		self.newlordsdumpfile = None  # file opens only on first use
 		self.newlordsdumped = [ ]
