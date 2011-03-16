@@ -1582,6 +1582,7 @@ if __name__ == '__main__':
             raise Exception, "Failed to create the directory: "+OUTPUT_DIRECTORY
 
     for filename in filenames:
+        if 'future-business-' in filename: continue
         try:
             old_basename = os.path.basename(filename)
             new_basename = re.sub('\.html','.xml',old_basename)

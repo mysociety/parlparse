@@ -484,6 +484,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         txt = txt.replace("&#146;", "'")
         txt = txt.replace("&nbsp;", " ")
         txt = txt.replace("&rsquo;", "'")
+        txt = txt.replace("&#8217;", "'")
         txt = re.sub("\s{2,10}", " ", txt)  # multiple spaces
         return txt
 

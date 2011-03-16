@@ -99,7 +99,7 @@ class StampUrl:
 # the fixed strings for piecing apart the text
 # we need to split off tables because they often contain a heading type in them.
 regsection1 = '<h\d><center>.*?\s*</center></h\d>'
-regsection2 = '<h\d align="?center"?(?: style="text-transform:uppercase"| class="DebateType")?>.*?</h\d>'
+regsection2 = '<h\d(?: align="?center"?)?(?: style="text-transform:uppercase"| class="DebateType")?>.*?</h\d>'
 regsection3 = '(?:<p class="tabletext">(?:<stamp[^>]*>)*)?(?:<br>)?<center>(?:<stamp[^>]*>)*<b>.*?</b></center>'  # this case of title is used when quoting inserted amendment text that has a title in it.  This is reaching the limit of this type of parsing
 regsection4 = '<(?:p|br)>\s*<center(?: style="text-transform:uppercase")?>.*?</center>\s*<(?:p|br|page[^>]*)>'
 regsection5 = '<h[34] align=left>.*?</h[34]>'
@@ -112,7 +112,7 @@ recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regtable, regspeaker, reg
 retableval = re.compile('(%s)(?i)' % regtable)
 respeakerval = re.compile('<speaker ([^>]*)>.*?</speaker>')
 resectiont1val = re.compile('<h\d><center>\s*(.*?)\s*</center></h\d>(?i)')
-resectiont2val = re.compile('<h(\d) align="?center"?( style="text-transform:uppercase"| class="DebateType")?>\s*(.*?)\s*</h\d>(?i)')
+resectiont2val = re.compile('<h(\d)(?: align="?center"?)?( style="text-transform:uppercase"| class="DebateType")?>\s*(.*?)\s*</h\d>(?i)')
 resectiont3val = re.compile('(<p class="tabletext">(?:<stamp[^>]*>)*)?(?:<br>)?<center>(?:<stamp[^>]*>)*<b>(.*?)</b></center>(?i)')
 resectiont4val = re.compile('<(?:p|br)>\s*<center(?: style="text-transform:uppercase")?>(.*?)</center>\s*<(?:p|br|page[^>]*)>(?i)')
 
@@ -123,7 +123,7 @@ reparsermessage = re.compile('<parsemess-misspeech type="(.*?)" redirect="(up|do
 
 
 # These aren't actually headings, even though they are <H4><center>
-renotheading = re.compile('>(?:\s*|(?:&nbsp;)*)(The .* (?:was|were) asked\s*(?:</i>)?(?:&#151;|-|--))\s*<')
+renotheading = re.compile('>(?:\s*|(?:&nbsp;)*)(The .* (?:was|were) asked\s*(?:</i>)?(?:&#151;|&#8212;|-|--))\s*<')
 # catch cases of the previous regexp not being broad enough
 renotheadingmarg = re.compile('asked')
 

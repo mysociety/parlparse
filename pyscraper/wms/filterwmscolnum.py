@@ -13,11 +13,11 @@ from contextexception import ContextException
 
 regcolcore = '[^:<]*:\s*column\s*\d+(?:WS)?'
 regcolumnum1 = '<br>&nbsp;<br>\s*%s\s*<br>&nbsp;<br>' % regcolcore
-regcolumnum2 = '<p>\s*<p>%s<p>' % regcolcore
+regcolumnum2 = '<p>\s*(?:<p>)?(?:<b>)?%s(?:</b>)?\s*</?p>' % regcolcore
 regcolumnum3 = '<p>\s*</ul>(?:</font>)?<p>%s<p>\s*<ul>(?:<font[^>]*>)?' % regcolcore
 regcolumnum4 = '(?:<br>)?\s*(?:</br>)?<b>%s</b><br>(?:</br>)?' % regcolcore
 
-recolumnumvals = re.compile('(?:<br>&nbsp;<br>|</ul>|</font>|<p>|<br>(?:</br>)?|<b>|\s)*([^:<]*):\s*column\s*(\d+)(WS)?\s*(?:<br>&nbsp;<br>|<ul>|<font[^>]*>|<p>|</b><br>(?:</br>)?|\s)*$(?i)')
+recolumnumvals = re.compile('(?:<br>&nbsp;<br>|</ul>|</font>|<p>|<br>(?:</br>)?|<b>|\s)*([^:<]*):\s*column\s*(\d+)(WS)?\s*(?:<br>&nbsp;<br>|<ul>|<font[^>]*>|<p>|</p>|</b>|<br>(?:</br>)?|\s)*$(?i)')
 
 regcolnumcont = '<i>[^:<]*:\s*column\s*\d+(?:WS)?&#151;continued\s*</i>(?i)'
 recolnumcontvals = re.compile('<i>([^:<]*):\s*column\s*(\d+)(WS)?&#151;continued</i>(?i)')
@@ -33,6 +33,7 @@ def FilterWMSColnum(fout, text, sdate):
 
 	colnum = -1
 	for fss in recomb.split(text):
+                #import pdb;pdb.set_trace()
 		columng = recolumnumvals.match(fss)
 		if columng:
 			ldate = mx.DateTime.DateTimeFrom(columng.group(1)).date
