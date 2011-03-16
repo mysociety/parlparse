@@ -51,6 +51,7 @@ def StripWransHeadings(headspeak, sdate):
 		i += 1
 
         givendate = string.replace(headspeak[i][0], "&nbsp;", " ")
+        givendate = re.sub("</?i>", "", givendate) 
 
         gd = re.match('(?:<stamp aname="[^"]*"/>)*(.*)$', givendate)
         if gd:

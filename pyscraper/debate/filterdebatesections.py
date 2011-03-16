@@ -355,7 +355,6 @@ def FilterDebateSections(text, sdate, typ):
                                 headingtxt = headingtxt.upper()
 			unspoketxt = sht[1]
 			speechestxt = sht[2]
-                        print headingtxt
 
 			# the heading detection, as a division or a heading speech object
 			# detect division headings
