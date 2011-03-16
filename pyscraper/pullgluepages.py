@@ -96,7 +96,8 @@ def WriteCleanText(fout, text, url, date):
 			pass
 
 		elif re.match('<a[^>]+>(?i)', ab):
-			anamem = re.match('<a name\s*?=\s*?"?(\S*?)"?\s*?/?>(?i)', ab)
+                        # As of 2011-03-14, there might be a class="anchor" in here, which we can ignore
+			anamem = re.match('<a\s*(?:class\s*=\s*"anchor")?\s*name\s*?=\s*?"?(\S*?)"?\s*?/?>(?i)', ab)
                         if anamem:
                                 aname = anamem.group(1)
                                 if not re.search('column', aname): # these get in the way
@@ -215,6 +216,7 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
 
 	# loop which scrapes through all the pages following the nextlinks
 	while urla:
+                # import pdb;pdb.set_trace()
                 url2 = url = urla[0]
                 if sdate=='2009-02-27':
                         url2 = re.sub('\s+', '', url2)
@@ -247,11 +249,21 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
                 sr = re.sub("</?mekon[^>]*>", "", sr)
                 sr = re.sub("</?vbcrlf>", "", sr)
 
+                # To cope with post 2011-03
+                sr = re.sub('<div id="content-small">', '<div id="content-small"><hr/>', sr)
+
                 # Make sure correction is before written answer question number - XXX right place?
                 sr = re.sub('(\[\d+\])\s*((?:</p>)?)\s*(<a href="[^"]*corrtext[^"]*">.*?</a>)', r'\3 \1\2', sr)
 
 		# split by sections
-                hrsections = re.split('<hr(?: size=3)?>(?i)', sr)
+                # hrsections = re.split('<hr(?: size=3)>(?i)', sr)
+                # hrsections = re.split('<hr(?: size=3)?(?: width="90%" align="left")?/?>(?i)', sr)
+                hrsections = re.split('<hr[^>]*>(?i)', sr)
+                # import pdb;pdb.set_trace()
+                hrsections = [
+                        re.sub('^\s*<table\s*width\s*=\s*"90%">\s*<tr>\s*<td>\s*(.*)</td>\s*</tr>\s*</table>\s*$(?s)', r'\1', x)
+                        for x in hrsections
+                        ]
 
 		# this is the case for debates on 2003-03-13 page 30
 		# http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030313/debtext/30313-32.htm
@@ -319,11 +331,12 @@ def ExtractAllLinks(url, dgf, forcescrape):
 
 	xlines = ''.join(urx.readlines())
         urx.close()
-        xlines = re.sub('^.*?<hr(?: /)?>(?is)', '', xlines)
+        xlines = re.sub('^.*?<hr\s*(?:/)?>(?is)', '', xlines)
         res = re.findall('<a\s+href\s*=\s*"([^"]+?)#.*?">(?is)', xlines)
 	if not res:
 		raise Exception, "No link found!!! %s\nURL: %s" % (xlines, url)
         urla = []
+        # import pdb;pdb.set_trace()
         for iconti in res:
                 uo = urlparse.urljoin(url, iconti)
                 if (not urla) or (urla[-1] != uo):

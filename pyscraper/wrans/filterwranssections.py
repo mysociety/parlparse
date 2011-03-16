@@ -42,6 +42,7 @@ def StripWransHeadings(headspeak, sdate):
 		raise ContextException('non-conforming Initial heading ')
 	i += 1
 
+        # import pdb;pdb.set_trace()
 	if (not re.match('(?:<stamp aname="[^"]*"/>)*written answers?(?: to questions?)?(?i)', headspeak[i][0])) or headspeak[i][2]:
 		if not re.match('The following answers were received.*', headspeak[i][0]):
 			pass
@@ -50,7 +51,7 @@ def StripWransHeadings(headspeak, sdate):
 		i += 1
 
         givendate = string.replace(headspeak[i][0], "&nbsp;", " ")
-        givendate = re.sub("</?i>", "", givendate)
+
         gd = re.match('(?:<stamp aname="[^"]*"/>)*(.*)$', givendate)
         if gd:
                 givendate = gd.group(1)

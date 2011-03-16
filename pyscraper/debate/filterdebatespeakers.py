@@ -99,7 +99,7 @@ respeakervals = re.compile('''(?ix)
 
 
 # <B>Division No. 322</B>
-redivno = re.compile('(?:<stamp\saname="[^"]*"/>)?<b>(?:division no\. \d+\]?|AYES|NOES)</b>$(?i)')
+redivno = re.compile('(?:<stamp\saname="[^"]*"/>)?<b>(?:division no\. \d+\]?|AYES|NOES)</b>\s*$(?i)')
 
 remarginal = re.compile('<b>[^<]*</b>(?!</h[34]>)(?i)')
 

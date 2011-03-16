@@ -50,7 +50,7 @@ fixsubs = 	[
 
 # <B>9 Dec 2003 : Column 893</B>
 regcolcore = '<b>[^:<]*:\s*column\s*\d+(?:WH)?\s*</b>'
-regcolumnum1 = '<p>\s*%s</p>\n' % regcolcore
+regcolumnum1 = '<p>\s*%s\s*</p>' % regcolcore
 regcolumnum2 = '<p>\s*</ul>\s*%s</p>\n<ul>' % regcolcore
 regcolumnum3 = '<p>\s*</ul></font>\s*%s</p>\n<ul><font[^>]*>' % regcolcore
 regcolumnum4 = '<p>\s*</font>\s*%s</p>\n<font[^>]*>' % regcolcore
