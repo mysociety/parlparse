@@ -468,14 +468,20 @@ class PrivateMembersBill(Motion):
         # The number of this PMB, which we want to use for the id, is
         # contained in a span.
         item_span = soup.find('span', {"class": "charBusinessItemNumber"})
-        item_number = item_span.string
+        if item_span:
+            item_number = item_span.string
+        else:
+            item_number = 1 # Assume if no number, there's only the one?
 
         self.id = "%s.%s" %(container_id, item_number)
         self.date = date
 
         # The actual text of the bill (and whether it was introduced in the lords,
         # is in a div with class paraFBPrivateMembersBillItemHeading.
-        heading_div = item_span.findNext('div', {'class': "paraFBPrivateMembersBillItemHeading"})
+        if item_span:
+            heading_div = item_span.findNext('div', {'class': "paraFBPrivateMembersBillItemHeading"})
+        else:
+            heading_div = soup.findNext('div', {'class': "paraFBPrivateMembersBillItemHeading"})
 
         # Get a text representation of the bill, and whether it is a lords one.
         self.heading_text, self.lords, self.petitioner = get_contents_and_lords(heading_div)
@@ -499,6 +505,7 @@ class PrivateMembersBill(Motion):
         return item
 
 class EuropeanCommitteeEvent(Motion):
+    xml_name = 'european-committee-motion'
 
     def __init__(self,soup,id):
         Motion.__init__(self)
@@ -520,7 +527,7 @@ class EuropeanCommitteeEvent(Motion):
                     raise Exception, "Couldn't parse the date and time text introducing the European Committee business: '"+date_and_time_text+"'"
 
     def get_dom(self, document):
-        item = document.createElement('european-committee-motion')
+        item = document.createElement(self.xml_name)
         item.setAttribute('id', self.id)
         if self.start_datetime:
             item.setAttribute("start-time",str(self.start_datetime.strftime(FILENAME_DATE_FORMAT)))
@@ -541,6 +548,12 @@ class EuropeanCommitteeEvent(Motion):
             item.appendChild(sub_item.get_dom(document))
 
         return item
+
+# From November 2010, sometimes they have a BusinessItem table just after a
+# motion proposed by the backbench committee. I just want the text, I can't
+# be fussed with structure.
+class GenericParaMotionText(EuropeanCommitteeEvent):
+    xml_name = 'motion-text'
 
 class BusinessItemTable(object):
     """This class represents a table of private members' bills.
@@ -568,6 +581,8 @@ class BusinessItemTable(object):
             # up duplicating them:
             if tr.find('tr'):
                 continue
+            if len(non_tag_data_in(tr).strip()) == 0: continue # Whitespace only
+
             # Have we found the first tr of a PMB?
             if tr.find('div', {'class': 'paraFBPrivateMembersBillItemHeading'}):
                 if current_item:
@@ -589,9 +604,13 @@ class BusinessItemTable(object):
                 current_item = EuropeanCommitteeEvent(tr,self.container_id)
             # Have we found the middle tr of a PMB with a motion text?
             elif tr.find('div', {'class': 'paraMotionText'}):
+                if not current_item:
+                    current_item = GenericParaMotionText(None,self.container_id)
                 current_item.feed_motion(tr)
             # Have we found the final tr of a PMB? If so, good, let's yield it.
             elif tr.find('div', {'class': 'paraMemberinCharge'}) or tr.find('div', {'class': 'paraMotionSponsor'}):
+                if not current_item:
+                    current_item = GenericParaMotionText(None,self.container_id)
                 current_item.feed_member(tr)
             elif tr.find('div', {'class': 'paraBusinessItemNote'}) or tr.find('div', {'class': 'paraMotionNote'}) or tr.find('div', {'class': 'paraMotionNote-centred'}):
                 current_item.feed_note(tr)
@@ -736,7 +755,7 @@ class FutureBusinessDay(object):
                     # print >> sys.stderr, "Skipping the div '"+tidied_non_tag_data_in(c)+"'"
                     continue
 
-                elif c['class'] == 'paraFutureBusinessDateNote' or c['class'] == 'paraBusinessItemNote':
+                elif c['class'] == 'paraFutureBusinessDateNote' or c['class'] == 'paraBusinessItemNote' or c['class'] == 'paraMotionNote':
                     item = FutureBusinessNote(c,'%s.%s'%(self.id,counter),self.date)
 
                 elif c['class'] == 'paraAdjournmentProposedSubject':
@@ -1270,6 +1289,7 @@ class FutureEventsPage(object):
 
         # Make a soup of the page, remembering to convert HTML entities
         # to unicode characters.
+        html = re.sub('<(div [^>]*[^ ])/>', r'<\1></div>', html)
         soup = BeautifulSoup(html,convertEntities=BeautifulSoup.HTML_ENTITIES)
 
         self.all_items = []
