@@ -11605,7 +11605,16 @@ B - bishop
     peeragetype="B" affiliation="Bp"
     fromdate="2011-03-08" todate="9999-12-31"
 />
-
+<lord
+    id="uk.org.publicwhip/lord/101132"
+    house="lords"
+    forenames="Michael David Bishop"
+    title="Lord" lordname="Glendonbrook" lordofname=""
+    lordofname_full="Bowdon"
+    county="the County of Cheshire"
+    peeragetype="L" affiliation="Con"
+    fromdate="2011-03-22" todate="9999-12-31"
+/>
 <!--
 <lord
     id="uk.org.publicwhip/lord/1011.."
