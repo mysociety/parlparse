@@ -757,9 +757,9 @@ class ParseCommittee:
         ctteWitnessTag = committee.findNext("h4", {"class" : "hs_CLHeading"})
         if ctteWitnessTag and ''.join(ctteWitnessTag(text=True)).strip() == "Witnesses":
             if new_new:
-                ctteWitnesses = ctteWitnessTag.findNextSiblings('p', {"class" : "hs_CLMember"})
+                ctteWitnesses = ctteWitnessTag.findNextSiblings('p', {"class" : "hs_CLMember", "class" : "hs_CLPara"})
             else:
-                ctteWitnesses = soup.findAll("div", {"class" : "hs_CLPara"})
+                ctteWitnesses = soup.findAll({"class" : "hs_CLPara", 'div' : True})
             witnesslist = [''.join(witnessTag(text=True)).strip() for witnessTag in ctteWitnesses]
             self.external_speakers = True
             [ witness.extract() for witness in ctteWitnesses ]
