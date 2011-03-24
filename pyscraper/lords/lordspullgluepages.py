@@ -10,7 +10,7 @@ import time
 import string
 import tempfile
 import mx.DateTime
-
+import traceback
 import miscfuncs
 toppath = miscfuncs.toppath
 pwcmdirs = miscfuncs.pwcmdirs
@@ -136,10 +136,14 @@ def GlueByNext(fout, urla, urlx, sdate):
 		# this is the case for debates on 2003-03-13 page 30
 		# http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030313/debtext/30313-32.htm
 		if len(hrsections) == 1:
-			# print len(hrsections), 'page missing', url
-			# fout.write('<UL><UL><UL></UL></UL></UL>\n')
+                        # special case for the Grand committee proceedings on 2011-03-23
+			if url == 'http://www.publications.parliament.uk/pa/ld201011/ldhansrd/text/110323-gc0001.htm':
+				miscfuncs.WriteCleanText(fout, sr, False)
+			else:
+				# print len(hrsections), 'page missing', url
+				# fout.write('<UL><UL><UL></UL></UL></UL>\n')
+				print "Bridging the empty page at %s" % url
 			urla = urla[1:]
-			print "Bridging the empty page at %s" % url
 			continue
 
                 # Lords Written Statements on 2006-07-05, for example, sadly
@@ -163,6 +167,9 @@ def GlueByNext(fout, urla, urlx, sdate):
 				print "Bridging the missing next section link at %s" % url
 		else:
 			url = urlparse.urljoin(url, nextsectionlink[0])
+			# Specific case on 2011-02-23
+			if url == 'http://www.publications.parliament.uk/pa/ld201011/ldhansrd/text/110323-wms0001.htm':
+				url = 'http://www.publications.parliament.uk/pa/ld201011/ldhansrd/text/110323-gc0001.htm'	
 			# this link is known
 			if (len(urla) > 1) and (urla[1] == url):
 				urla = urla[1:]
@@ -256,7 +263,7 @@ def LordsPullGluePages(datefrom, dateto, bforcescrape):
 
 		# The different sections are often all run together
 		# with the title of written answers in the middle of a page.
-		icont = ExtractIndexContents(urlx, dnu[0])
+                icont = ExtractIndexContents(urlx, dnu[0])
 		# this gets the first link (the second [0][1] would be it's title.)
 		urla = [ ]
 		for iconti in icont:
@@ -271,6 +278,8 @@ def LordsPullGluePages(datefrom, dateto, bforcescrape):
 		        GlueByNext(dtemp, urla, urlx, dnu[0])
 		        dtemp.close()
 	        except Exception, e:
+                        print e   
+			traceback.print_exc()
 		        print "Problem with %s, moving on" % dnu[0]
 		        continue
 
