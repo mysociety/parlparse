@@ -970,7 +970,7 @@ class ParseCommittee:
                 elif cssClass in ('bkMark',):
                     pass
                 else:
-                    raise Exception, "NAME %s CLASS %s" % (tag.prettify(), cssClass)
+                    raise ContextException, "NAME %s CLASS %s" % (tag.prettify(), cssClass)
 
     def parse_old_sitting_part(self, soup):
         """Parse and convert an older-style (1/2001-3/2006) Standing Committee transcript to XML"""     
