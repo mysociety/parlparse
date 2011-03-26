@@ -172,6 +172,8 @@ def TokenOffRepWDate(qoffrep, phrtok):
         sect = 'wms'
     elif qcolprefix == 'WA' or qcolsuffix == 'W':
         sect = 'wrans'
+    elif loc1 == 'House of Commons' or loc2 == 'Commons':
+        sect = 'debates'
     elif loc1 == 'House of Lords' or loc2 == 'Lords' or lordsdate:
         sect = 'lords'
     else:
