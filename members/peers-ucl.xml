@@ -2355,7 +2355,7 @@ B - bishop
 	lordofname_full="Sauchie"
 	county="the County of Clackmannanshire"
 	peeragetype="L" affiliation="Lab"
-	fromdate="2000-05-24" todate="9999-12-31"
+	fromdate="2000-05-24" todate="2011-02-01" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100227"
@@ -4536,7 +4536,7 @@ B - bishop
 	forenames="John"
 	title="Lord" lordname="Monson" lordofname=""
 	peeragetype="HP" affiliation="XB"
-	fromdate="1958" todate="9999-12-31"
+	fromdate="1958" todate="2011-02-12" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100436"
@@ -5221,7 +5221,7 @@ B - bishop
 	lordofname_full="West Dowlish"
 	county="the County of Somerset"
 	peeragetype="L" affiliation="Con"
-	fromdate="1996" todate="9999-12-31"
+	fromdate="1996" todate="2011-02-14" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100503"
@@ -7214,7 +7214,7 @@ B - bishop
 	lordofname_full="Windlesham"
 	county="the County of Surrey"
 	peeragetype="L" affiliation="Con"
-	fromdate="1962" todate="9999-12-31"
+	fromdate="1962" todate="2010-12-21" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100695"
