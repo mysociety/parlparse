@@ -6425,7 +6425,7 @@ B - bishop
 	forenames="David"
 	title="Lord" lordname="Strabolgi" lordofname=""
 	peeragetype="HD" affiliation="Lab"
-	fromdate="1953" todate="9999-12-31"
+	fromdate="1953" todate="2010-12-24" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100620"
@@ -11615,6 +11615,16 @@ B - bishop
     peeragetype="L" affiliation="Con"
     fromdate="2011-03-22" todate="9999-12-31"
 />
+
+<lord
+	id="uk.org.publicwhip/lord/101133"
+	house="lords"
+	forenames="David Stephen Geoffrey Pollock"
+	title="Viscount" lordname="Hanworth" lordofname=""
+	peeragetype="HD" affiliation="Lab"
+	fromdate="2011-03-27" todate="9999-12-31"
+/>
+
 <!--
 <lord
     id="uk.org.publicwhip/lord/1011.."
