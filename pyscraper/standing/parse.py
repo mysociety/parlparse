@@ -838,6 +838,13 @@ class ParseCommittee:
             text = re.sub(patt, self.replace_linebreaks, text)
         text = re.sub("\s+", " ", text)
         text = text.replace('<br/>', '<br />').replace('<p/>', '<p>')
+
+        # Deal with new division stuff added end of 2011-03
+        text = re.sub('<span class="(?:Ayes|Noes)?Number">(\d+)</span>', r'\1', text)
+        text = re.sub('<h4 class="hs_DivListHeader">(.*?)</h4>(?s)', r'\1', text)
+        text = re.sub('<div class="col[12]">(.*?)</div>(?s)', r'\1', text)
+        text = re.sub('<div class="Names(?:Ayes|Noes) TwoColumn">(.*?)</div>(?s)', r'\1', text)
+
         soup = StandingSoup(text,markupMassage=StandingSoup.myMassage)
         fp.close()
         
