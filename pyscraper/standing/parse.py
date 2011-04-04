@@ -962,7 +962,7 @@ class ParseCommittee:
                                    'hs_AmendmentLevel3', 
                                    'hs_AmendmentLevel4']):            
                     self.display_para(tag, indent=False, amendmentText=True)
-                elif (cssClass == 'hs_brev'):
+                elif (cssClass == 'hs_brev' or cssClass == 'hs_brevIndent'):
                     self.display_para(tag, indent=True)   
                 #dealt with already
                 elif (cssClass in ['hs_CLHeading', 'hs_CLHeading', 'hs_CLChairman', 'hs_CLMember', 'hs_CLMember', 'hs_CLClerks', 'hs_CLAttended']):
@@ -977,7 +977,7 @@ class ParseCommittee:
                 elif cssClass in ('bkMark',):
                     pass
                 else:
-                    raise ContextException, "NAME %s CLASS %s" % (tag.prettify(), cssClass)
+                    raise ContextException, ("NAME %s CLASS %s" % (tag.prettify().decode('utf-8'), cssClass.decode('utf-8'))).encode('utf-8')
 
     def parse_old_sitting_part(self, soup):
         """Parse and convert an older-style (1/2001-3/2006) Standing Committee transcript to XML"""     
