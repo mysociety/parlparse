@@ -28,11 +28,11 @@ ur = open('../rawdata/Members_of_the_NIA_2007')
 content = ur.read()
 ur.close()
 
-matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*? title="[^"]+"[^>]*>([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a></td>';
+matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a></td>';
 matches = re.findall(matcher, content)
-matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*? title="[^"]+"[^>]*>([^<]+)</a> \((?:resigned|deceased)\), replaced by <a href="/wiki/[^"]+"[^>]*? title="[^"]+"[^>]*>[^<]+</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a></td>';
+matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a> \((?:resigned|deceased)\), replaced by <a href="/wiki/[^"]+"[^>]*>[^<]+</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a></td>';
 matches.extend( re.findall(matcher, content) )
-matcher = '<tr>\s+<td><a href="/wiki/[^"]+"[^>]*? title="[^"]+"[^>]*>[^<]+</a> \((?:resigned|deceased)\), replaced by <a href="(/wiki/[^"]+)"[^>]*? title="[^"]+"[^>]*>([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a></td>';
+matcher = '<tr>\s+<td><a href="/wiki/[^"]+"[^>]*>[^<]+</a> \((?:resigned|deceased)\), replaced by <a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a></td>';
 matches.extend( re.findall(matcher, content) )
 for (url, name, cons) in matches:
     name = name.decode('utf-8')
@@ -40,9 +40,12 @@ for (url, name, cons) in matches:
         id, str = memberList.match(name, date_today)
         current_members.append(id)
     except Exception, e:
-        # For the resigned/died MLAs, use an earlier date
-        id, str = memberList.match(name, '2007-01-01')
-        #print >>sys.stderr, e
+        try:
+            id, str = memberList.match(name, '2011-01-01')
+        except Exception, e:
+            # For the resigned/died MLAs, use an earlier date
+            id, str = memberList.match(name, '2007-01-01')
+            #print >>sys.stderr, e
     pid = memberList.membertoperson(id)
     wikimembers[pid] = url
 
