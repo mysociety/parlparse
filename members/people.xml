@@ -9656,7 +9656,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/11675" latestname="Peter Soulsby">
     <office id="uk.org.publicwhip/member/1675"/>
-    <office id="uk.org.publicwhip/member/40359" current="yes"/>
+    <office id="uk.org.publicwhip/member/40359"/>
     <office id="uk.org.publicwhip/moffice/3117"/>
     <office id="uk.org.publicwhip/moffice/3571"/>
     <office id="uk.org.publicwhip/moffice/3749"/>
@@ -68825,12 +68825,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100147"/>
     <office id="uk.org.publicwhip/lord/100959" current="yes"/>
 </person>
-<person id="uk.org.publicwhip/person/12845" latestname="Lord Truscott">
-    <office id="uk.org.publicwhip/lord/100788" current="yes"/>
-    <office id="uk.org.publicwhip/moffice/1379"/>
-    <office id="uk.org.publicwhip/moffice/1382"/>
-    <office id="uk.org.publicwhip/moffice/1488"/>
-</person>
 <person id="uk.org.publicwhip/person/13924" latestname="Lord Krebs">
     <office id="uk.org.publicwhip/lord/100952" current="yes"/>
 </person>
@@ -68971,14 +68965,17 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/25031" latestname="Baroness Wheatcroft">
     <office id="uk.org.publicwhip/lord/101086" current="yes"/>
 </person>
-<person id="uk.org.publicwhip/person/25033" latestname="Baroness Doocey">
-    <office id="uk.org.publicwhip/lord/101084" current="yes"/>
-</person>
 <person id="uk.org.publicwhip/person/12867" latestname="Lord McAlpine of West Green">
     <office id="uk.org.publicwhip/lord/100390"/>
 </person>
 <person id="uk.org.publicwhip/person/12868" latestname="Lord Macaulay of Bragar">
     <office id="uk.org.publicwhip/lord/100391" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/12845" latestname="Lord Truscott">
+    <office id="uk.org.publicwhip/lord/100788" current="yes"/>
+    <office id="uk.org.publicwhip/moffice/1379"/>
+    <office id="uk.org.publicwhip/moffice/1382"/>
+    <office id="uk.org.publicwhip/moffice/1488"/>
 </person>
 <person id="uk.org.publicwhip/person/12869" latestname="Lord Cooke of Islandreagh">
     <office id="uk.org.publicwhip/lord/100141"/>
@@ -70023,6 +70020,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13093" latestname="Lord Brookes">
     <office id="uk.org.publicwhip/lord/100710"/>
 </person>
+<person id="uk.org.publicwhip/person/25033" latestname="Baroness Doocey">
+    <office id="uk.org.publicwhip/lord/101084" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/25054" latestname="Lord Gold">
     <office id="uk.org.publicwhip/lord/101125" current="yes"/>
 </person>
@@ -70547,9 +70547,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13193" latestname="Lord Lamont of Lerwick">
     <office id="uk.org.publicwhip/lord/100360" current="yes"/>
-</person>
-<person id="uk.org.publicwhip/person/24992" latestname="Viscount Younger of Leckie">
-    <office id="uk.org.publicwhip/lord/101037" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/24975" latestname="Lord Liddle">
     <office id="uk.org.publicwhip/lord/101014" current="yes"/>
@@ -72417,6 +72414,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13626" latestname="Lord Mayhew of Twysden">
     <office id="uk.org.publicwhip/lord/100423" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/24992" latestname="Viscount Younger of Leckie">
+    <office id="uk.org.publicwhip/lord/101037" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/24692" latestname="Lord Sugar">
     <office id="uk.org.publicwhip/lord/100996" current="yes"/>
