@@ -145,7 +145,7 @@ def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):
 		elif stampurl.sdate in ["2002-10-28"]:
 			return res
 
-                elif hour in [0, 1, 2, 3] or stampurl.sdate in ["2003-10-20", "2000-10-03", "2000-07-24", "2011-01-17"]:
+                elif hour in [0, 1, 2, 3, 4] or stampurl.sdate in ["2003-10-20", "2000-10-03", "2000-07-24", "2011-01-17"]:
                         hour += 24
 		else:
 			print (hour, mins), "time=", time, "previoustime=", previoustime
@@ -425,7 +425,7 @@ def FixHTMLEntities(stex, signore='', stampurl=None):
 
 
 # The lookahead assertion (?=<table) stops matching tables when another begin table is reached
-paratag = '</?p(?: style="margin-left: 20px;")?(?: align=(?:left|"center"))?(?: id="[^"]*" class="timestamp")?(?: class[= ]"(?:tabletext|normaltext|amendment_hs_quote|amendment_indentone|amendment_indenttwo|clause_heading)")?>'
+paratag = '</?p(?: style="margin-left: 20px;")?(?: align=(?:left|"center"))?(?: id="[^"]*" class="timestamp")?(?: class[= ]"(?:tabletext|normaltext|amendment_hs_quote|amendment_indentone|amendment_indenttwo|clause_heading)")?(?: style="margin-bottom:\d+px;")?>'
 restmatcher = paratag + '|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>(?i)'
 reparts = re.compile('(<table[\s\S]*?(?:</table>|(?=<table))|' + restmatcher + ')')
 reparts2 = re.compile('(<table[^>]*?>|' + restmatcher + ')')

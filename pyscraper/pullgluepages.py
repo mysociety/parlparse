@@ -126,6 +126,54 @@ def WriteCleanText(fout, text, url, date):
 		else:
 			fout.write(re.sub('>|\r', '', ab))
 
+def GlueByNextNew(outputFileName, urla, urlx, sdate):
+	fout = open(outputFileName, "w")
+	# put out the indexlink for comparison with the hansardindex file
+	lt = time.gmtime()
+	fout.write('<pagex url="%s" scrapedate="%s" scrapetime="%s" type="printed" />\n' % \
+			(urlx, time.strftime('%Y-%m-%d', lt), time.strftime('%X', lt)))
+
+	# loop which scrapes through all the pages following the nextlinks
+	while urla:
+                url = urla[0]
+		ur = urllib.urlopen(url)
+		sr = ur.read()
+		ur.close()
+
+		# write the marker telling us which page this comes from
+                if (url != urlx):
+                        fout.write('<page url="' + url + '"/>\n')
+
+                # There might be a 90% width table before the main one for Previous/Index/Home table,
+                # but that one has <tr valign="top">...
+                content = re.sub('^.*?<table width="90%">\s*<tr>\s*<td>(?s)', '', sr)
+                # Pages bar first one have a <hr> before the main content table, but first page does not.
+                # After line above, first <hr> will be at the end of the main content.
+                content = re.sub('</td>\s*</tr>\s*</table>\s*<hr[^>]*>.*(?s)', '', content)
+                WriteCleanText(fout, content, url, sdate)
+
+		nextsectionlink = re.findall('<\s*a\s+href\s*=\s*"?(.*?)"?\s*>next(?: section)?</(?:a|td)>(?i)', sr)
+		if len(nextsectionlink) > 1:
+			raise Exception, "More than one Next Section!!!"
+		if not nextsectionlink:
+                        urla = urla[1:]
+                        if urla and miscfuncs.IsNotQuiet():
+                                print "Bridging the missing next section link at %s" % url
+		else:
+                        currenturl = url
+                        url = urlparse.urljoin(url, nextsectionlink[0])
+                        if len(urla) > 1 and urla[1] == url:
+                                urla = urla[1:]
+                        else:
+                                for uo in urla:
+                                        if uo == url:
+                                                print "previous URLs:\n", "\n".join(urla)
+                                                print "\nbad next url:\n", url
+                                                print "\ncurrent url:\n", currenturl
+                                                raise Exception, "Next Section misses out the urla list"
+                                urla[0] = url
+	fout.close()
+
 def GlueByNext(outputFileName, urla, urlx, sdate):
 	fout = open(outputFileName, "w")
 	# put out the indexlink for comparison with the hansardindex file
@@ -491,7 +539,10 @@ def PullGluePages(options, folder, typ):
 				print commonsIndexRecord.date, (latestFilePath and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
 
 			# now we take out the local pointer and start the gluing
-			GlueByNext(tempfilename, urla, urlx, commonsIndexRecord.date)
+			if commonsIndexRecord.date >= '2011-05-01':
+				GlueByNextNew(tempfilename, urla, urlx, commonsIndexRecord.date)
+			else:
+				GlueByNext(tempfilename, urla, urlx, commonsIndexRecord.date)
 
 		except Exception, e:
 			options.anyerrors = True

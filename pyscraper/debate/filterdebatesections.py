@@ -265,7 +265,7 @@ def NormalHeadingPart(headingtxt, stampurl, state):
 	# we're not writing a block for division headings
 	# write out block for headings
 	headingtxtfx = FixHTMLEntities(headingtxt)
-	assert not re.search("[<>]", headingtxtfx)  # an assertion in gidmatching
+	assert not re.search("[<>]", headingtxtfx), headingtxtfx  # an assertion in gidmatching
 	qb = qspeech('nospeaker="true"', headingtxtfx, stampurl)
 	if binsertedheading:
 		qb.typ = 'inserted-heading'
@@ -358,7 +358,7 @@ def FilterDebateSections(text, sdate, typ):
 
 			# the heading detection, as a division or a heading speech object
 			# detect division headings
-			gdiv = re.match('Division No. (\d+)(?i)', headingtxt)
+			gdiv = re.match('(?:<b>)?Division No. (\d+)(?i)', headingtxt)
 
 			# heading type
 			if not gdiv: # and lastheading != headingtxt:
@@ -389,7 +389,7 @@ def FilterDebateSections(text, sdate, typ):
 
 	        		# this is where we suck in a trailing "Clause" part of the title that is mistakenly outside the heading.
         			elif (qbh.typ == 'minor-heading' or qbh.typ == 'major-heading') and len(flatb) > 0 and flatb[-1].typ == 'speech':
-        				mmm = re.match('\s*<p>((?:New )?(?:clause|schedule) \d+\w?)</p>(?i)', flatb[-1].stext[-1])
+        				mmm = re.match('\s*<p>\s*((?:New )?(?:clause|schedule) \d+\w?)</p>(?i)', flatb[-1].stext[-1])
         				if mmm:
         					if IsNotQuiet():
         						print "Clause/schedule moving", flatb[-1].stext[-1]

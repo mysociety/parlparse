@@ -23,6 +23,8 @@ toppath = miscfuncs.toppath
 
 housedivtxt = "The (?:House|Committee) (?:(?:having )?divided|proceeded to a Division)"
 rehousediv = re.compile('<p[^>]*>(?:<i>)?\s*%s(?:</i>|:|-)+ Ayes,? (\d+), Noes (\d+)\.</p>$' % housedivtxt)
+rehousediv_a = re.compile('<p[^>]*>(?:<i>)?\s*%s(?:</i>|:|-)+</p>$' % housedivtxt)
+rehousediv_b = re.compile('<p[^>]*>Ayes,? (\d+), Noes (\d+)\.</p>$')
 
 foutdivisionreports = open(os.path.join(miscfuncs.tmppath, "divreport.html"), "w")
 #foutdivisionreports = None
@@ -158,6 +160,11 @@ def GrabDivisionProced(qbp, qbd):
         qbp.stext[-1] = re.sub(' </i><i> ', ' ', qbp.stext[-1])
         qbp.stext[-1] = re.sub('</i><i> ', ' ', qbp.stext[-1])
 	hdg = rehousediv.match(qbp.stext[-1])
+	if not hdg:
+		hdg_a = rehousediv_a.match(qbp.stext[-2])
+		hdg_b = rehousediv_b.match(qbp.stext[-1])
+		if hdg_a and hdg_b:
+			hdg = hdg_b
 	if not hdg:
 		hdg = redivshouldappear.match(qbp.stext[-1])
 	if not hdg:

@@ -71,7 +71,7 @@ recolnumcontvals = re.compile('<(?:i|b)>([^:<]*):\s*column\s*(\d+)(WH)?(?:</b>)?
 # <H5>12.31 pm</H5>
 # <p>\n12.31 pm\n<p>
 # [3:31 pm<P>    -- at the beginning of divisions
-regtime = '(?:</?p>\s*|<h[45](?: align="left")?>\s?|\[|\n)(?:\d+(?:[:\.]\d+)?(?:\s*|&nbsp;)(?:[ap]\.?m\.?(?:</st>)?| noon)?)(?:\s*</?p>|\s*</h[45]>|\n)'
+regtime = '(?:</?p>\s*|<h[45](?: align="left")?>\s?|\[|\n)(?:\d+(?:[:\.]\d+)?(?:\s*|&nbsp;)(?:[ap]\.?m\.?(?:</st>)?| noon| midnight)?)(?:\s*</?p>|\s*</h[45]>|\n)'
 retimevals = re.compile('(?:</?p>\s*|<h\d(?: align="left")?>|\[|\n)\s*(\d+(?:[:\.]\s*\d+)?(?:\s*|&nbsp;)(?:[apm.]+|noon|midnight)?)(?:\s*</?p>|\s*</h\d>|</st>|\n)*$(?i)')
 
 # <a name="column_1099">
