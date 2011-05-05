@@ -972,7 +972,7 @@ class ParseCommittee:
                     pass
                 elif tag.name == 'div' and tag.get('id', '') in ('content-small', 'maincontent1'):
                     pass
-                elif cssClass in ('hs_2GenericHdg', 'hs_2DebatedMotion') and re.match('Written evidence to be reported to the House', ''.join(tag(text=True))):
+                elif cssClass in ('hs_2GenericHdg', 'hs_2DebatedMotion', 'hs_2BusinessWODebate') and re.match('Written evidence to be reported to the House', ''.join(tag(text=True))):
                     self.display_para(tag, indent=True)
                 elif cssClass in ('bkMark',):
                     pass

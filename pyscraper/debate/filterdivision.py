@@ -25,6 +25,7 @@ def MpList(fsm, vote, stampurl, sdate):
 	# Merge lone listed constituencies onto end of previous line
 	newfsm = []
 	for fss in fsm:
+		if not fss: continue
 		if reconstnm.match(fss):
 			# print "constnm only %s appending to previous line %s" % (fss, newfsm[-1])
 			newfsm[-1] += " " + fss
@@ -142,6 +143,7 @@ def MpTellerList(fsm, vote, stampurl, sdate):
 def FilterDivision(text, stampurl, sdate):
 	# discard all italics
 	text = re.sub("</?i>(?i)", "", text)
+	text = re.sub(' style="margin-bottom:[^"]*"', '', text)
 	text = re.sub(":", ":<br>", text)
 
 	# the intention is to splice out the known parts of the division
