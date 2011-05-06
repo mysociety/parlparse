@@ -66,7 +66,7 @@ parties = "|".join(map(string.lower, memberList.partylist())) + "|uup|ld|dup|in 
 # Splitting condition
 # this must be a generalization of the one below.  so changes need to be reflected in both.
 recomb = re.compile('''(?ix)((?:[QT]?\d+\.\s*)?(?:\[\d+\]\s*)?
-					(?:<stamp\saname="[^"]*"/>)?
+					(?:<stamp\saname="[^"]*"/>\s*)?
 					<b>
 					(?:<stamp\saname="[^"]*"/>)*
 					[^<]*
@@ -82,7 +82,7 @@ recomb = re.compile('''(?ix)((?:[QT]?\d+\.\s*)?(?:\[\d+\]\s*)?
 respeakervals = re.compile('''(?ix)
 		(?:[QT]?(\d+)\.\s*)?			# oral question number (group1)
 		(\[\d+\]\s*)?				# written qnum (group2)
-		(<stamp\saname="[^"]*?"/>)?             # a stamp (group3)
+		(<stamp\saname="[^"]*?"/>\s*)?          # a stamp (group3)
 		<b>\s*                                  # start of bold
 		(<stamp\saname="[^"]*?"/>)*             # a stamp (group4)
 		(?:[QT]?(\d+)\.)?			# second place of oral question number (group5)
