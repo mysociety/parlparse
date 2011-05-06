@@ -176,31 +176,6 @@ sp_lord_matches = {
     "uk.org.publicwhip/member/80115": "uk.org.publicwhip/lord/101127",
 }
 
-# Include in here changes of constituency, so those people are
-# recognized as the same...  Annoyingly the order is important here.
-
-sp_sp_matches = {
-    "Alasdair Morgan [sp: Galloway and Upper Nithsdale]" : "Alasdair Morgan [sp: South of Scotland]",
-    "Jim Mather [sp: Argyll and Bute]" : "Jim Mather [sp: Highlands and Islands]",
-    "Michael Matheson [sp: Falkirk West]" : "Michael Matheson [sp: Central Scotland]",
-    "Richard Lochhead [sp: North East Scotland]" : "Richard Lochhead [sp: Moray]",
-    "Alex Fergusson [sp: South of Scotland]" : "Alex Fergusson [sp: Galloway and Upper Nithsdale]",
-    "Gil Paterson [sp: Central Scotland]" : "Gil Paterson [sp: West of Scotland]",
-    "Bruce Crawford [sp: Stirling]" : "Bruce Crawford [sp: Mid Scotland and Fife]",
-    "Iain Gray [sp: Edinburgh Pentlands]" : "Iain Gray [sp: East Lothian]",
-    "David McLetchie [sp: Edinburgh Pentlands]" : "David McLetchie [sp: Lothians]",
-    "Tricia Marwick [sp: Central Fife]" : "Tricia Marwick [sp: Mid Scotland and Fife]",
-    "Nicola Sturgeon [sp: Glasgow Govan]" : "Nicola Sturgeon [sp: Glasgow]",
-    "Alex Salmond [sp: Gordon]" : "Alex Salmond [sp: Banff and Buchan]",
-    "Murray Tosh [sp: West of Scotland]" : "Murray Tosh [sp: South of Scotland]",
-    "Richard Simpson [sp: Ochil]" : "Richard Simpson [sp: Mid Scotland and Fife]",
-    "Kenny MacAskill [sp: Lothians]" : "Kenny MacAskill [sp: Edinburgh East and Musselburgh]",
-    "Shona Robison [sp: North East Scotland]" : "Shona Robison [sp: Dundee East]",
-    "George Reid [sp: Mid Scotland and Fife]" : "George Reid [sp: Ochil]",
-    "Brian Adam [sp: North East Scotland]" : "Brian Adam [sp: Aberdeen North]",
-    "Kenneth Gibson [sp: Glasgow]" : "Kenneth Gibson [sp: Cunninghame North]"
-    }
-
 sp_mp_matches = {
     # Alasdair Morgan
     "uk.org.publicwhip/member/80089": "Alasdair Morgan [Galloway and Upper Nithsdale]",
@@ -647,18 +622,13 @@ class PersonSets(xml.sax.handler.ContentHandler):
             # don't think this breaks anything else, but ICBW.
             
             cancons = memberList.canonicalcons("sp: "+attr['constituency'], attr['fromdate'])
-            lookup = "%s %s [%s]" % (attr['firstname'], attr['lastname'], cancons)
+            lookup = "%s %s" % (attr['firstname'], attr['lastname'])
             if member_id in sp_mp_matches:
                 mp = sp_mp_matches[member_id]
                 self.fullnamescons[mp].add(attr)
-            elif lookup in sp_sp_matches:
-                sp = sp_sp_matches[lookup]
-                self.member_sp_personset[sp].add(attr)
             elif member_id in sp_lord_matches:
                 lord = sp_lord_matches[member_id]
                 self.lordspersonset[lord].add(attr)
-            elif lookup in self.fullnamescons:
-                self.fullnamescons[lookup].add(attr)
             elif lookup in self.member_sp_personset:
                 self.member_sp_personset[lookup].add(attr)
             else:

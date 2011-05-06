@@ -68825,12 +68825,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100147"/>
     <office id="uk.org.publicwhip/lord/100959" current="yes"/>
 </person>
-<person id="uk.org.publicwhip/person/12845" latestname="Lord Truscott">
-    <office id="uk.org.publicwhip/lord/100788" current="yes"/>
-    <office id="uk.org.publicwhip/moffice/1379"/>
-    <office id="uk.org.publicwhip/moffice/1382"/>
-    <office id="uk.org.publicwhip/moffice/1488"/>
-</person>
 <person id="uk.org.publicwhip/person/13924" latestname="Lord Krebs">
     <office id="uk.org.publicwhip/lord/100952" current="yes"/>
 </person>
@@ -68971,14 +68965,17 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/25031" latestname="Baroness Wheatcroft">
     <office id="uk.org.publicwhip/lord/101086" current="yes"/>
 </person>
-<person id="uk.org.publicwhip/person/25033" latestname="Baroness Doocey">
-    <office id="uk.org.publicwhip/lord/101084" current="yes"/>
-</person>
 <person id="uk.org.publicwhip/person/12867" latestname="Lord McAlpine of West Green">
     <office id="uk.org.publicwhip/lord/100390"/>
 </person>
 <person id="uk.org.publicwhip/person/12868" latestname="Lord Macaulay of Bragar">
     <office id="uk.org.publicwhip/lord/100391" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/12845" latestname="Lord Truscott">
+    <office id="uk.org.publicwhip/lord/100788" current="yes"/>
+    <office id="uk.org.publicwhip/moffice/1379"/>
+    <office id="uk.org.publicwhip/moffice/1382"/>
+    <office id="uk.org.publicwhip/moffice/1488"/>
 </person>
 <person id="uk.org.publicwhip/person/12869" latestname="Lord Cooke of Islandreagh">
     <office id="uk.org.publicwhip/lord/100141"/>
@@ -70023,6 +70020,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13093" latestname="Lord Brookes">
     <office id="uk.org.publicwhip/lord/100710"/>
 </person>
+<person id="uk.org.publicwhip/person/25033" latestname="Baroness Doocey">
+    <office id="uk.org.publicwhip/lord/101084" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/25054" latestname="Lord Gold">
     <office id="uk.org.publicwhip/lord/101125" current="yes"/>
 </person>
@@ -70547,9 +70547,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13193" latestname="Lord Lamont of Lerwick">
     <office id="uk.org.publicwhip/lord/100360" current="yes"/>
-</person>
-<person id="uk.org.publicwhip/person/24992" latestname="Viscount Younger of Leckie">
-    <office id="uk.org.publicwhip/lord/101037" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/24975" latestname="Lord Liddle">
     <office id="uk.org.publicwhip/lord/101014" current="yes"/>
@@ -72418,6 +72415,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13626" latestname="Lord Mayhew of Twysden">
     <office id="uk.org.publicwhip/lord/100423" current="yes"/>
 </person>
+<person id="uk.org.publicwhip/person/24992" latestname="Viscount Younger of Leckie">
+    <office id="uk.org.publicwhip/lord/101037" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/24692" latestname="Lord Sugar">
     <office id="uk.org.publicwhip/lord/100996" current="yes"/>
 </person>
@@ -73380,6 +73380,13 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80000"/>
     <office id="uk.org.publicwhip/member/80129"/>
     <office id="uk.org.publicwhip/member/80278"/>
+    <office id="uk.org.publicwhip/member/80455" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25072" latestname="George Adam">
+    <office id="uk.org.publicwhip/member/80479" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25073" latestname="Clare Adamson">
+    <office id="uk.org.publicwhip/member/80485" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13944" latestname="Bashir Ahmad">
     <office id="uk.org.publicwhip/member/80279"/>
@@ -73396,6 +73403,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13947" latestname="Alasdair Allan">
     <office id="uk.org.publicwhip/member/80282"/>
+    <office id="uk.org.publicwhip/member/80432" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13948" latestname="Andrew Arbuckle">
     <office id="uk.org.publicwhip/member/80003"/>
@@ -73404,16 +73412,19 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80004"/>
     <office id="uk.org.publicwhip/member/80132"/>
     <office id="uk.org.publicwhip/member/80283"/>
+    <office id="uk.org.publicwhip/member/80476" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13950" latestname="Shiona Baird">
     <office id="uk.org.publicwhip/member/80005"/>
 </person>
 <person id="uk.org.publicwhip/person/13951" latestname="Claire Baker">
     <office id="uk.org.publicwhip/member/80285"/>
+    <office id="uk.org.publicwhip/member/80512" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13952" latestname="Richard Baker">
     <office id="uk.org.publicwhip/member/80006"/>
     <office id="uk.org.publicwhip/member/80284"/>
+    <office id="uk.org.publicwhip/member/80518" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13953" latestname="Chris Ballance">
     <office id="uk.org.publicwhip/member/80007"/>
@@ -73425,10 +73436,20 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80009"/>
     <office id="uk.org.publicwhip/member/80133"/>
 </person>
+<person id="uk.org.publicwhip/person/25074" latestname="Colin Beattie">
+    <office id="uk.org.publicwhip/member/80444" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25075" latestname="Marco Biagi">
+    <office id="uk.org.publicwhip/member/80437" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25076" latestname="Neil Bibby">
+    <office id="uk.org.publicwhip/member/80533" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/13956" latestname="Sarah Boyack">
     <office id="uk.org.publicwhip/member/80010"/>
     <office id="uk.org.publicwhip/member/80134"/>
     <office id="uk.org.publicwhip/member/80286"/>
+    <office id="uk.org.publicwhip/member/80504" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13957" latestname="Rhona Brankin">
     <office id="uk.org.publicwhip/member/80011"/>
@@ -73439,6 +73460,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80012"/>
     <office id="uk.org.publicwhip/member/80288"/>
 </person>
+<person id="uk.org.publicwhip/person/25077" latestname="Chic Brodie">
+    <office id="uk.org.publicwhip/member/80528" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/13959" latestname="Robert Brown">
     <office id="uk.org.publicwhip/member/80013"/>
     <office id="uk.org.publicwhip/member/80136"/>
@@ -73446,13 +73470,18 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13960" latestname="Gavin Brown">
     <office id="uk.org.publicwhip/member/80290"/>
+    <office id="uk.org.publicwhip/member/80508" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13961" latestname="Keith Brown">
     <office id="uk.org.publicwhip/member/80289"/>
+    <office id="uk.org.publicwhip/member/80445" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13962" latestname="Derek Brownlee">
     <office id="uk.org.publicwhip/member/80014"/>
     <office id="uk.org.publicwhip/member/80292"/>
+</person>
+<person id="uk.org.publicwhip/person/25078" latestname="Margaret Burgess">
+    <office id="uk.org.publicwhip/member/80475" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13963" latestname="Bill Butler">
     <office id="uk.org.publicwhip/member/80015"/>
@@ -73468,15 +73497,25 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13966" latestname="Aileen Campbell">
     <office id="uk.org.publicwhip/member/80294"/>
+    <office id="uk.org.publicwhip/member/80466" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25079" latestname="Roderick Campbell">
+    <office id="uk.org.publicwhip/member/80448" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13967" latestname="Jackson Carlaw">
     <office id="uk.org.publicwhip/member/80295"/>
+    <office id="uk.org.publicwhip/member/80538" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25080" latestname="Malcolm Chisholm">
+    <office id="uk.org.publicwhip/member/80439" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13968" latestname="Willie Coffey">
     <office id="uk.org.publicwhip/member/80297"/>
+    <office id="uk.org.publicwhip/member/80471" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13969" latestname="Angela Constance">
     <office id="uk.org.publicwhip/member/80298"/>
+    <office id="uk.org.publicwhip/member/80436" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13970" latestname="Cathie Craigie">
     <office id="uk.org.publicwhip/member/80019"/>
@@ -73487,6 +73526,10 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80020"/>
     <office id="uk.org.publicwhip/member/80142"/>
     <office id="uk.org.publicwhip/member/80300"/>
+    <office id="uk.org.publicwhip/member/80453" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25081" latestname="Roseanna Cunningham">
+    <office id="uk.org.publicwhip/member/80452" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13972" latestname="Frances Curran">
     <office id="uk.org.publicwhip/member/80023"/>
@@ -73500,20 +73543,38 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80024"/>
     <office id="uk.org.publicwhip/member/80145"/>
 </person>
+<person id="uk.org.publicwhip/person/25082" latestname="Ruth Davidson">
+    <office id="uk.org.publicwhip/member/80496" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/13975" latestname="Susan Deacon">
     <office id="uk.org.publicwhip/member/80025"/>
     <office id="uk.org.publicwhip/member/80146"/>
 </person>
+<person id="uk.org.publicwhip/person/25083" latestname="Graeme Dey">
+    <office id="uk.org.publicwhip/member/80460" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/13976" latestname="Nigel Don">
     <office id="uk.org.publicwhip/member/80303"/>
+    <office id="uk.org.publicwhip/member/80459" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13977" latestname="Bob Doris">
     <office id="uk.org.publicwhip/member/80304"/>
+    <office id="uk.org.publicwhip/member/80494" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25084" latestname="James Dornan">
+    <office id="uk.org.publicwhip/member/80420" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25085" latestname="Kezia Dugdale">
+    <office id="uk.org.publicwhip/member/80505" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13978" latestname="Helen Eadie">
     <office id="uk.org.publicwhip/member/80027"/>
     <office id="uk.org.publicwhip/member/80148"/>
     <office id="uk.org.publicwhip/member/80305"/>
+    <office id="uk.org.publicwhip/member/80446" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25086" latestname="Jim Eadie">
+    <office id="uk.org.publicwhip/member/80441" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13979" latestname="Dorothy-Grace Elder">
     <office id="uk.org.publicwhip/member/80262"/>
@@ -73523,38 +73584,55 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80028"/>
     <office id="uk.org.publicwhip/member/80150"/>
     <office id="uk.org.publicwhip/member/80306"/>
+    <office id="uk.org.publicwhip/member/80430" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13981" latestname="Winnie Ewing">
     <office id="uk.org.publicwhip/member/80149"/>
+</person>
+<person id="uk.org.publicwhip/person/25087" latestname="Annabelle Ewing">
+    <office id="uk.org.publicwhip/member/80516" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13982" latestname="Linda Fabiani">
     <office id="uk.org.publicwhip/member/80029"/>
     <office id="uk.org.publicwhip/member/80152"/>
     <office id="uk.org.publicwhip/member/80307"/>
+    <office id="uk.org.publicwhip/member/80413" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13983" latestname="John Farquhar Munro">
     <office id="uk.org.publicwhip/member/80093"/>
     <office id="uk.org.publicwhip/member/80218"/>
     <office id="uk.org.publicwhip/member/80368"/>
 </person>
+<person id="uk.org.publicwhip/person/25088" latestname="Mary Fee">
+    <office id="uk.org.publicwhip/member/80532" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/13984" latestname="Patricia Ferguson">
     <office id="uk.org.publicwhip/member/80030"/>
     <office id="uk.org.publicwhip/member/80153"/>
     <office id="uk.org.publicwhip/member/80308"/>
+    <office id="uk.org.publicwhip/member/80422" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13985" latestname="Alex Fergusson">
     <office id="uk.org.publicwhip/member/80031"/>
     <office id="uk.org.publicwhip/member/80154"/>
     <office id="uk.org.publicwhip/member/80309"/>
     <office id="uk.org.publicwhip/member/80407"/>
+    <office id="uk.org.publicwhip/member/80470" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25089" latestname="Neil Findlay">
+    <office id="uk.org.publicwhip/member/80506" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13986" latestname="Ross Finnie">
     <office id="uk.org.publicwhip/member/80032"/>
     <office id="uk.org.publicwhip/member/80155"/>
     <office id="uk.org.publicwhip/member/80310"/>
 </person>
+<person id="uk.org.publicwhip/person/25090" latestname="John Finnie">
+    <office id="uk.org.publicwhip/member/80497" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/13987" latestname="Joe FitzPatrick">
     <office id="uk.org.publicwhip/member/80311"/>
+    <office id="uk.org.publicwhip/member/80463" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13988" latestname="Brian Fitzpatrick">
     <office id="uk.org.publicwhip/member/80156"/>
@@ -73569,6 +73647,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80034"/>
     <office id="uk.org.publicwhip/member/80157"/>
     <office id="uk.org.publicwhip/member/80313"/>
+    <office id="uk.org.publicwhip/member/80514" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13992" latestname="Phil Gallie">
     <office id="uk.org.publicwhip/member/80035"/>
@@ -73577,10 +73656,12 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/13993" latestname="Rob Gibson">
     <office id="uk.org.publicwhip/member/80036"/>
     <office id="uk.org.publicwhip/member/80314"/>
+    <office id="uk.org.publicwhip/member/80429" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13994" latestname="Kenneth Gibson">
     <office id="uk.org.publicwhip/member/80160"/>
     <office id="uk.org.publicwhip/member/80315"/>
+    <office id="uk.org.publicwhip/member/80474" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13995" latestname="Karen Gillon">
     <office id="uk.org.publicwhip/member/80037"/>
@@ -73600,6 +73681,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80040"/>
     <office id="uk.org.publicwhip/member/80163"/>
     <office id="uk.org.publicwhip/member/80319"/>
+    <office id="uk.org.publicwhip/member/80537" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13999" latestname="Charlie Gordon">
     <office id="uk.org.publicwhip/member/80041"/>
@@ -73609,17 +73691,26 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80043"/>
     <office id="uk.org.publicwhip/member/80165"/>
     <office id="uk.org.publicwhip/member/80321"/>
+    <office id="uk.org.publicwhip/member/80472" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14001" latestname="Rhoda Grant">
     <office id="uk.org.publicwhip/member/80166"/>
     <office id="uk.org.publicwhip/member/80322"/>
+    <office id="uk.org.publicwhip/member/80500" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14002" latestname="Iain Gray">
     <office id="uk.org.publicwhip/member/80167"/>
     <office id="uk.org.publicwhip/member/80323"/>
+    <office id="uk.org.publicwhip/member/80468" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25091" latestname="Mark Griffin">
+    <office id="uk.org.publicwhip/member/80487" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14003" latestname="Duncan Hamilton">
     <office id="uk.org.publicwhip/member/80168"/>
+</person>
+<person id="uk.org.publicwhip/person/25092" latestname="Claudia Hamilton Beamish">
+    <office id="uk.org.publicwhip/member/80529" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14004" latestname="Keith Harding">
     <office id="uk.org.publicwhip/member/80169"/>
@@ -73632,6 +73723,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/14006" latestname="Patrick Harvie">
     <office id="uk.org.publicwhip/member/80045"/>
     <office id="uk.org.publicwhip/member/80325"/>
+    <office id="uk.org.publicwhip/member/80495" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14007" latestname="Christopher Harvie">
     <office id="uk.org.publicwhip/member/80326"/>
@@ -73640,9 +73732,11 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80046"/>
     <office id="uk.org.publicwhip/member/80171"/>
     <office id="uk.org.publicwhip/member/80327"/>
+    <office id="uk.org.publicwhip/member/80481" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14009" latestname="Jamie Hepburn">
     <office id="uk.org.publicwhip/member/80328"/>
+    <office id="uk.org.publicwhip/member/80412" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14010" latestname="Janis Hughes">
     <office id="uk.org.publicwhip/member/80048"/>
@@ -73650,16 +73744,19 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/14011" latestname="Jim Hume">
     <office id="uk.org.publicwhip/member/80329"/>
+    <office id="uk.org.publicwhip/member/80531" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14012" latestname="Fiona Hyslop">
     <office id="uk.org.publicwhip/member/80049"/>
     <office id="uk.org.publicwhip/member/80174"/>
     <office id="uk.org.publicwhip/member/80330"/>
+    <office id="uk.org.publicwhip/member/80443" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14013" latestname="Adam Ingram">
     <office id="uk.org.publicwhip/member/80050"/>
     <office id="uk.org.publicwhip/member/80175"/>
     <office id="uk.org.publicwhip/member/80331"/>
+    <office id="uk.org.publicwhip/member/80465" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14014" latestname="Gordon Jackson">
     <office id="uk.org.publicwhip/member/80052"/>
@@ -73688,12 +73785,20 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80055"/>
     <office id="uk.org.publicwhip/member/80182"/>
     <office id="uk.org.publicwhip/member/80333"/>
+    <office id="uk.org.publicwhip/member/80521" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25093" latestname="Alison Johnstone">
+    <office id="uk.org.publicwhip/member/80509" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14021" latestname="Rosie Kane">
     <office id="uk.org.publicwhip/member/80056"/>
 </person>
+<person id="uk.org.publicwhip/person/25094" latestname="Colin Keir">
+    <office id="uk.org.publicwhip/member/80442" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/14022" latestname="James Kelly">
     <office id="uk.org.publicwhip/member/80334"/>
+    <office id="uk.org.publicwhip/member/80427" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14023" latestname="Andy Kerr">
     <office id="uk.org.publicwhip/member/80057"/>
@@ -73702,14 +73807,17 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/14024" latestname="Bill Kidd">
     <office id="uk.org.publicwhip/member/80336"/>
+    <office id="uk.org.publicwhip/member/80419" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14025" latestname="Johann Lamont">
     <office id="uk.org.publicwhip/member/80058"/>
     <office id="uk.org.publicwhip/member/80184"/>
     <office id="uk.org.publicwhip/member/80338"/>
+    <office id="uk.org.publicwhip/member/80423" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14026" latestname="John Lamont">
     <office id="uk.org.publicwhip/member/80337"/>
+    <office id="uk.org.publicwhip/member/80469" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14027" latestname="Carolyn Leckie">
     <office id="uk.org.publicwhip/member/80059"/>
@@ -73724,6 +73832,10 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80186"/>
     <office id="uk.org.publicwhip/member/80264"/>
     <office id="uk.org.publicwhip/member/80340"/>
+    <office id="uk.org.publicwhip/member/80431" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25095" latestname="Richard Lyle">
+    <office id="uk.org.publicwhip/member/80483" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14030" latestname="George Lyon">
     <office id="uk.org.publicwhip/member/80062"/>
@@ -73733,25 +73845,43 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80063"/>
     <office id="uk.org.publicwhip/member/80188"/>
     <office id="uk.org.publicwhip/member/80341"/>
+    <office id="uk.org.publicwhip/member/80438" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25096" latestname="Angus MacDonald">
+    <office id="uk.org.publicwhip/member/80414" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14032" latestname="Margo MacDonald">
     <office id="uk.org.publicwhip/member/80065"/>
     <office id="uk.org.publicwhip/member/80190"/>
     <office id="uk.org.publicwhip/member/80276"/>
     <office id="uk.org.publicwhip/member/80343"/>
+    <office id="uk.org.publicwhip/member/80510" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25097" latestname="Gordon MacDonald">
+    <office id="uk.org.publicwhip/member/80440" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14033" latestname="Angus MacKay">
     <office id="uk.org.publicwhip/member/80192"/>
+</person>
+<person id="uk.org.publicwhip/person/25098" latestname="Derek MacKay">
+    <office id="uk.org.publicwhip/member/80480" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25099" latestname="Mike MacKenzie">
+    <office id="uk.org.publicwhip/member/80499" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14034" latestname="Lewis Macdonald">
     <office id="uk.org.publicwhip/member/80064"/>
     <office id="uk.org.publicwhip/member/80189"/>
     <office id="uk.org.publicwhip/member/80342"/>
+    <office id="uk.org.publicwhip/member/80520" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14035" latestname="Kenneth Macintosh">
     <office id="uk.org.publicwhip/member/80066"/>
     <office id="uk.org.publicwhip/member/80191"/>
     <office id="uk.org.publicwhip/member/80344"/>
+</person>
+<person id="uk.org.publicwhip/person/25100" latestname="Ken Macintosh">
+    <office id="uk.org.publicwhip/member/80477" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14037" latestname="Kate Maclean">
     <office id="uk.org.publicwhip/member/80067"/>
@@ -73761,10 +73891,17 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80068"/>
     <office id="uk.org.publicwhip/member/80194"/>
 </person>
+<person id="uk.org.publicwhip/person/25101" latestname="Hanzala Malik">
+    <office id="uk.org.publicwhip/member/80490" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25102" latestname="Jenny Marra">
+    <office id="uk.org.publicwhip/member/80519" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/14039" latestname="Paul Martin">
     <office id="uk.org.publicwhip/member/80070"/>
     <office id="uk.org.publicwhip/member/80195"/>
     <office id="uk.org.publicwhip/member/80345"/>
+    <office id="uk.org.publicwhip/member/80424" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14040" latestname="Campbell Martin">
     <office id="uk.org.publicwhip/member/80069"/>
@@ -73774,6 +73911,10 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80071"/>
     <office id="uk.org.publicwhip/member/80196"/>
     <office id="uk.org.publicwhip/member/80346"/>
+    <office id="uk.org.publicwhip/member/80450" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25103" latestname="John Mason">
+    <office id="uk.org.publicwhip/member/80425" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14042" latestname="Jim Mather">
     <office id="uk.org.publicwhip/member/80072"/>
@@ -73783,16 +73924,22 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80073"/>
     <office id="uk.org.publicwhip/member/80197"/>
     <office id="uk.org.publicwhip/member/80348"/>
+    <office id="uk.org.publicwhip/member/80415" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14044" latestname="Stewart Maxwell">
     <office id="uk.org.publicwhip/member/80074"/>
     <office id="uk.org.publicwhip/member/80349"/>
+    <office id="uk.org.publicwhip/member/80535" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14045" latestname="Christine May">
     <office id="uk.org.publicwhip/member/80075"/>
 </person>
+<person id="uk.org.publicwhip/person/25104" latestname="Joan McAlpine">
+    <office id="uk.org.publicwhip/member/80525" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/14046" latestname="Liam McArthur">
     <office id="uk.org.publicwhip/member/80350"/>
+    <office id="uk.org.publicwhip/member/80433" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14047" latestname="Frank McAveety">
     <office id="uk.org.publicwhip/member/80076"/>
@@ -73804,6 +73951,15 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80200"/>
     <office id="uk.org.publicwhip/member/80352"/>
 </person>
+<person id="uk.org.publicwhip/person/25105" latestname="Margaret McCulloch">
+    <office id="uk.org.publicwhip/member/80488" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25106" latestname="Mark McDonald">
+    <office id="uk.org.publicwhip/member/80523" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25107" latestname="Margaret McDougall">
+    <office id="uk.org.publicwhip/member/80534" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/14050" latestname="Bruce McFee">
     <office id="uk.org.publicwhip/member/80079"/>
 </person>
@@ -73811,12 +73967,14 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80080"/>
     <office id="uk.org.publicwhip/member/80202"/>
     <office id="uk.org.publicwhip/member/80354"/>
+    <office id="uk.org.publicwhip/member/80502" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14052" latestname="Irene McGugan">
     <office id="uk.org.publicwhip/member/80203"/>
 </person>
 <person id="uk.org.publicwhip/person/14053" latestname="Alison McInnes">
     <office id="uk.org.publicwhip/member/80355"/>
+    <office id="uk.org.publicwhip/member/80524" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14054" latestname="Lyndsay McIntosh">
     <office id="uk.org.publicwhip/member/80204"/>
@@ -73826,30 +73984,42 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/14056" latestname="Christina McKelvie">
     <office id="uk.org.publicwhip/member/80357"/>
+    <office id="uk.org.publicwhip/member/80416" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14146" latestname="Anne McLaughlin">
     <office id="uk.org.publicwhip/member/80409"/>
 </person>
 <person id="uk.org.publicwhip/person/14057" latestname="Fiona McLeod">
     <office id="uk.org.publicwhip/member/80206"/>
+    <office id="uk.org.publicwhip/member/80482" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25108" latestname="Aileen McLeod">
+    <office id="uk.org.publicwhip/member/80526" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14058" latestname="David McLetchie">
     <office id="uk.org.publicwhip/member/80081"/>
     <office id="uk.org.publicwhip/member/80207"/>
     <office id="uk.org.publicwhip/member/80358"/>
+    <office id="uk.org.publicwhip/member/80507" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14059" latestname="Michael McMahon">
     <office id="uk.org.publicwhip/member/80082"/>
     <office id="uk.org.publicwhip/member/80208"/>
     <office id="uk.org.publicwhip/member/80359"/>
+    <office id="uk.org.publicwhip/member/80418" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25109" latestname="Siobhan McMahon">
+    <office id="uk.org.publicwhip/member/80486" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14060" latestname="Stuart McMillan">
     <office id="uk.org.publicwhip/member/80360"/>
+    <office id="uk.org.publicwhip/member/80536" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14061" latestname="Duncan McNeil">
     <office id="uk.org.publicwhip/member/80083"/>
     <office id="uk.org.publicwhip/member/80209"/>
     <office id="uk.org.publicwhip/member/80361"/>
+    <office id="uk.org.publicwhip/member/80478" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14062" latestname="Pauline McNeill">
     <office id="uk.org.publicwhip/member/80084"/>
@@ -73861,13 +74031,18 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80211"/>
     <office id="uk.org.publicwhip/member/80363"/>
 </person>
+<person id="uk.org.publicwhip/person/25110" latestname="Anne McTaggart">
+    <office id="uk.org.publicwhip/member/80492" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/14064" latestname="Nanette Milne">
     <office id="uk.org.publicwhip/member/80086"/>
     <office id="uk.org.publicwhip/member/80364"/>
+    <office id="uk.org.publicwhip/member/80522" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14065" latestname="Margaret Mitchell">
     <office id="uk.org.publicwhip/member/80087"/>
     <office id="uk.org.publicwhip/member/80365"/>
+    <office id="uk.org.publicwhip/member/80489" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14066" latestname="Brian Monteith">
     <office id="uk.org.publicwhip/member/80088"/>
@@ -73891,11 +74066,13 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80094"/>
     <office id="uk.org.publicwhip/member/80219"/>
     <office id="uk.org.publicwhip/member/80369"/>
+    <office id="uk.org.publicwhip/member/80467" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14071" latestname="Alex Neil">
     <office id="uk.org.publicwhip/member/80095"/>
     <office id="uk.org.publicwhip/member/80220"/>
     <office id="uk.org.publicwhip/member/80370"/>
+    <office id="uk.org.publicwhip/member/80410" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14072" latestname="Hugh O'Donnell">
     <office id="uk.org.publicwhip/member/80371"/>
@@ -73907,20 +74084,28 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/14074" latestname="John Park">
     <office id="uk.org.publicwhip/member/80373"/>
+    <office id="uk.org.publicwhip/member/80511" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14075" latestname="Gil Paterson">
     <office id="uk.org.publicwhip/member/80222"/>
     <office id="uk.org.publicwhip/member/80374"/>
+    <office id="uk.org.publicwhip/member/80473" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14076" latestname="Peter Peacock">
     <office id="uk.org.publicwhip/member/80097"/>
     <office id="uk.org.publicwhip/member/80223"/>
     <office id="uk.org.publicwhip/member/80375"/>
 </person>
+<person id="uk.org.publicwhip/person/25111" latestname="Graeme Pearson">
+    <office id="uk.org.publicwhip/member/80530" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/14077" latestname="Cathy Peattie">
     <office id="uk.org.publicwhip/member/80098"/>
     <office id="uk.org.publicwhip/member/80224"/>
     <office id="uk.org.publicwhip/member/80376"/>
+</person>
+<person id="uk.org.publicwhip/person/25112" latestname="John Pentland">
+    <office id="uk.org.publicwhip/member/80417" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14078" latestname="Dave Petrie">
     <office id="uk.org.publicwhip/member/80099"/>
@@ -73949,10 +74134,17 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80228"/>
     <office id="uk.org.publicwhip/member/80272"/>
 </person>
+<person id="uk.org.publicwhip/person/25113" latestname="Willie Rennie">
+    <office id="uk.org.publicwhip/member/80517" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25114" latestname="Dennis Robertson">
+    <office id="uk.org.publicwhip/member/80458" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/14085" latestname="Shona Robison">
     <office id="uk.org.publicwhip/member/80104"/>
     <office id="uk.org.publicwhip/member/80229"/>
     <office id="uk.org.publicwhip/member/80379"/>
+    <office id="uk.org.publicwhip/member/80462" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14086" latestname="Euan Robson">
     <office id="uk.org.publicwhip/member/80105"/>
@@ -73969,21 +74161,28 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/14089" latestname="Michael Russell">
     <office id="uk.org.publicwhip/member/80232"/>
     <office id="uk.org.publicwhip/member/80381"/>
+    <office id="uk.org.publicwhip/member/80428" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25115" latestname="Alex Salmond">
+    <office id="uk.org.publicwhip/member/80457" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14090" latestname="Mary Scanlon">
     <office id="uk.org.publicwhip/member/80234"/>
     <office id="uk.org.publicwhip/member/80267"/>
     <office id="uk.org.publicwhip/member/80383"/>
-</person>
-<person id="uk.org.publicwhip/person/14091" latestname="John Scott">
-    <office id="uk.org.publicwhip/member/80108"/>
-    <office id="uk.org.publicwhip/member/80235"/>
-    <office id="uk.org.publicwhip/member/80384"/>
+    <office id="uk.org.publicwhip/member/80503" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14092" latestname="Tavish Scott">
     <office id="uk.org.publicwhip/member/80109"/>
     <office id="uk.org.publicwhip/member/80236"/>
     <office id="uk.org.publicwhip/member/80385"/>
+    <office id="uk.org.publicwhip/member/80434" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/14091" latestname="John Scott">
+    <office id="uk.org.publicwhip/member/80108"/>
+    <office id="uk.org.publicwhip/member/80235"/>
+    <office id="uk.org.publicwhip/member/80384"/>
+    <office id="uk.org.publicwhip/member/80464" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14093" latestname="Eleanor Scott">
     <office id="uk.org.publicwhip/member/80110"/>
@@ -73996,9 +74195,11 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/14095" latestname="Richard Simpson">
     <office id="uk.org.publicwhip/member/80238"/>
     <office id="uk.org.publicwhip/member/80386"/>
+    <office id="uk.org.publicwhip/member/80513" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14096" latestname="Elizabeth Smith">
     <office id="uk.org.publicwhip/member/80387"/>
+    <office id="uk.org.publicwhip/member/80515" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14097" latestname="Margaret Smith">
     <office id="uk.org.publicwhip/member/80113"/>
@@ -74014,6 +74215,10 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80112"/>
     <office id="uk.org.publicwhip/member/80239"/>
     <office id="uk.org.publicwhip/member/80388"/>
+    <office id="uk.org.publicwhip/member/80411" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25116" latestname="Drew Smith">
+    <office id="uk.org.publicwhip/member/80491" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14100" latestname="Shirley-Anne Somerville">
     <office id="uk.org.publicwhip/member/80391"/>
@@ -74026,9 +74231,14 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80116"/>
     <office id="uk.org.publicwhip/member/80244"/>
     <office id="uk.org.publicwhip/member/80393"/>
+    <office id="uk.org.publicwhip/member/80461" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25117" latestname="Kevin Stewart">
+    <office id="uk.org.publicwhip/member/80454" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14103" latestname="David Stewart">
     <office id="uk.org.publicwhip/member/80394"/>
+    <office id="uk.org.publicwhip/member/80501" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14104" latestname="Jamie Stone">
     <office id="uk.org.publicwhip/member/80117"/>
@@ -74039,18 +74249,26 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/80118"/>
     <office id="uk.org.publicwhip/member/80246"/>
     <office id="uk.org.publicwhip/member/80396"/>
+    <office id="uk.org.publicwhip/member/80426" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14106" latestname="John Swinburne">
     <office id="uk.org.publicwhip/member/80119"/>
 </person>
+<person id="uk.org.publicwhip/person/25118" latestname="John Swinney">
+    <office id="uk.org.publicwhip/member/80451" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/14107" latestname="Dave Thompson">
     <office id="uk.org.publicwhip/member/80398"/>
+    <office id="uk.org.publicwhip/member/80435" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14108" latestname="Elaine Thomson">
     <office id="uk.org.publicwhip/member/80248"/>
 </person>
 <person id="uk.org.publicwhip/person/14109" latestname="Jim Tolson">
     <office id="uk.org.publicwhip/member/80399"/>
+</person>
+<person id="uk.org.publicwhip/person/25119" latestname="David Torrance">
+    <office id="uk.org.publicwhip/member/80449" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14110" latestname="Murray Tosh">
     <office id="uk.org.publicwhip/member/80121"/>
@@ -74065,6 +74283,12 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/14113" latestname="Kay Ullrich">
     <office id="uk.org.publicwhip/member/80250"/>
 </person>
+<person id="uk.org.publicwhip/person/25120" latestname="Jean Urquhart">
+    <office id="uk.org.publicwhip/member/80498" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25121" latestname="Bill Walker">
+    <office id="uk.org.publicwhip/member/80447" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/14114" latestname="Mike Watson">
     <office id="uk.org.publicwhip/member/80253"/>
     <office id="uk.org.publicwhip/member/80268"/>
@@ -74073,14 +74297,19 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/14115" latestname="Maureen Watt">
     <office id="uk.org.publicwhip/member/80124"/>
     <office id="uk.org.publicwhip/member/80400"/>
+    <office id="uk.org.publicwhip/member/80456" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14116" latestname="Ian Welsh">
     <office id="uk.org.publicwhip/member/80254"/>
+</person>
+<person id="uk.org.publicwhip/person/25122" latestname="Paul Wheelhouse">
+    <office id="uk.org.publicwhip/member/80527" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14117" latestname="Sandra White">
     <office id="uk.org.publicwhip/member/80126"/>
     <office id="uk.org.publicwhip/member/80256"/>
     <office id="uk.org.publicwhip/member/80402"/>
+    <office id="uk.org.publicwhip/member/80421" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14118" latestname="Karen Whitefield">
     <office id="uk.org.publicwhip/member/80127"/>
@@ -74092,6 +74321,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/14120" latestname="John Wilson">
     <office id="uk.org.publicwhip/member/80405"/>
+    <office id="uk.org.publicwhip/member/80484" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/14121" latestname="Allan Wilson">
     <office id="uk.org.publicwhip/member/80128"/>
@@ -74105,5 +74335,8 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/14124" latestname="John Young">
     <office id="uk.org.publicwhip/member/80260"/>
+</person>
+<person id="uk.org.publicwhip/person/25123" latestname="Humza Yousaf">
+    <office id="uk.org.publicwhip/member/80493" current="yes"/>
 </person>
 </publicwhip>
