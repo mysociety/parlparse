@@ -184,6 +184,7 @@ sp_mp_matches = {
     # Alex Salmond
     "uk.org.publicwhip/member/80233": "Alex Salmond [Banff and Buchan]",
     "uk.org.publicwhip/member/80382": "Alex Salmond [Banff and Buchan]",
+    "uk.org.publicwhip/member/80457": "Alex Salmond [Banff and Buchan]",
     # Andrew Welsh
     "uk.org.publicwhip/member/80125": "Andrew Welsh [Angus]",
     "uk.org.publicwhip/member/80255": "Andrew Welsh [Angus]",
@@ -215,10 +216,12 @@ sp_mp_matches = {
     "uk.org.publicwhip/member/80120": "John Swinney [North Tayside]",
     "uk.org.publicwhip/member/80247": "John Swinney [North Tayside]",
     "uk.org.publicwhip/member/80397": "John Swinney [North Tayside]",
+    "uk.org.publicwhip/member/80451": "John Swinney [North Tayside]",
     # Malcolm Chisholm
     "uk.org.publicwhip/member/80018": "Malcolm Chisholm [Edinburgh North and Leith]",
     "uk.org.publicwhip/member/80140": "Malcolm Chisholm [Edinburgh North and Leith]",
     "uk.org.publicwhip/member/80296": "Malcolm Chisholm [Edinburgh North and Leith]",
+    "uk.org.publicwhip/member/80439": "Malcolm Chisholm [Edinburgh North and Leith]",
     # Margaret Ewing
     "uk.org.publicwhip/member/80151": "Margaret Ewing [Moray]",
     "uk.org.publicwhip/member/80263": "Margaret Ewing [Moray]",
@@ -226,6 +229,7 @@ sp_mp_matches = {
     "uk.org.publicwhip/member/80021": "Roseanna Cunningham [Perth]",
     "uk.org.publicwhip/member/80143": "Roseanna Cunningham [Perth]",
     "uk.org.publicwhip/member/80301": "Roseanna Cunningham [Perth]",
+    "uk.org.publicwhip/member/80452": "Roseanna Cunningham [Perth]",
     # Sam Galbraith
     "uk.org.publicwhip/member/80158": "Sam Galbraith [Strathkelvin and Bearsden]",
 
