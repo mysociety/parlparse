@@ -153,6 +153,7 @@ ni_lord_matches = {
     "uk.org.publicwhip/member/90091":"uk.org.publicwhip/lord/100922",
     "uk.org.publicwhip/member/90210":"uk.org.publicwhip/lord/100922",
     "uk.org.publicwhip/member/90322":"uk.org.publicwhip/lord/100922",
+    "uk.org.publicwhip/member/90457":"uk.org.publicwhip/lord/100922",
     "uk.org.publicwhip/member/90257":"uk.org.publicwhip/lord/100934",
 }
 # XXX: Should be possible to adapt manualmatches to do this sort of thing...
