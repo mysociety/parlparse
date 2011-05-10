@@ -144,12 +144,11 @@ def GlueByNextNew(outputFileName, urla, urlx, sdate):
                 if (url != urlx):
                         fout.write('<page url="' + url + '"/>\n')
 
-                # There might be a 90% width table before the main one for Previous/Index/Home table,
-                # but that one has <tr valign="top">...
-                content = re.sub('^.*?<table width="90%">\s*<tr>\s*<td>(?s)', '', sr)
+                # Hopefully this comment is always present now:
+                content = re.sub('^.*?<!--end of page header-->(?s)', '', sr)
                 # Pages bar first one have a <hr> before the main content table, but first page does not.
                 # After line above, first <hr> will be at the end of the main content.
-                content = re.sub('</td>\s*</tr>\s*</table>\s*<hr[^>]*>.*(?s)', '', content)
+                content = re.sub('(?:</td>\s*</tr>\s*</table>\s*)?<hr[^>]*>.*(?s)', '', content)
                 WriteCleanText(fout, content, url, sdate)
 
 		nextsectionlink = re.findall('<\s*a\s+href\s*=\s*"?(.*?)"?\s*>next(?: section)?</(?:a|td)>(?i)', sr)
