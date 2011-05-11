@@ -14,7 +14,6 @@ import sys
 import urllib
 import urlparse
 import re
-import sets
 
 sys.path.append("../pyscraper")
 sys.path.append("../pyscraper/lords")
@@ -23,7 +22,7 @@ from resolvelordsnames import lordsList
 # Get region pages
 wiki_index_url = "http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords"
 date_today = datetime.date.today().isoformat()
-wikimembers  = sets.Set() # for storing who we have found links for
+wikimembers  = set() # for storing who we have found links for
 
 print '''<?xml version="1.0" encoding="ISO-8859-1"?>
 <publicwhip>'''
@@ -55,7 +54,7 @@ print '</publicwhip>'
 #print "len: ", len(wikimembers)
 
 # Check we have everybody -- ha! not likely yet
-#allmembers = sets.Set(memberList.currentmpslist())
+#allmembers = set(memberList.currentmpslist())
 #symdiff = allmembers.symmetric_difference(wikimembers)
 #if len(symdiff) > 0:
 #    print >>sys.stderr, "Failed to get all MPs, these ones in symmetric difference"

@@ -6,7 +6,6 @@
 import re
 import csv
 import sys
-import sets
 
 sys.path.append("../pyscraper/")
 from resolvemembernames import memberList

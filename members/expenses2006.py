@@ -8,7 +8,6 @@ import sys
 import urllib
 import urlparse
 import re
-import sets
 
 sys.path.append("../pyscraper/")
 import re
@@ -17,7 +16,7 @@ from resolvemembernames import memberList
 # date_today = datetime.date.today().isoformat()
 
 yearstr = '200506'
-expmembers = sets.Set() # for storing who we have found links for
+expmembers = set() # for storing who we have found links for
 year = str( (int(yearstr)+2100)/101 )
 yeardate = '2005-04-05'
 otheryeardate = '2006-03-01'
@@ -80,7 +79,7 @@ allmembers = map(lambda x: memberList.membertoperson(x), allmembers)
 allmembers2 = memberList.mpslistondate(otheryeardate)
 allmembers2 = map(lambda x: memberList.membertoperson(x), allmembers2)
 
-allmembers = sets.Set(allmembers) | sets.Set(allmembers2)
+allmembers = set(allmembers) | set(allmembers2)
 symdiff = allmembers.symmetric_difference(expmembers)
 if len(symdiff) > 0:
     print >>sys.stderr, "Failed to get all MPs, these ones in symmetric difference"

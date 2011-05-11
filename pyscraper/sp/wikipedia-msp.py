@@ -13,7 +13,6 @@ import datetime
 import sys
 import urlparse
 import re
-import sets
 
 from resolvemembernames import memberList
 date_today = datetime.date.today().isoformat()
@@ -64,8 +63,8 @@ for id in k:
     print '<personinfo id="%s" wikipedia_url="%s" />' % (id, url)
 print '</publicwhip>'
 
-wikimembers = sets.Set(wikimembers.keys())
-allmembers = sets.Set([ memberList.membertoperson(id) for id in memberList.list_all_dates() ])
+wikimembers = set(wikimembers.keys())
+allmembers = set([ memberList.membertoperson(id) for id in memberList.list_all_dates() ])
 
 symdiff = allmembers.symmetric_difference(wikimembers)
 if len(symdiff) > 0:

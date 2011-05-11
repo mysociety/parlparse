@@ -12,7 +12,6 @@ import datetime
 import sys
 import urlparse
 import re
-import sets
 
 sys.path.extend((".", ".."))
 from resolveninames import memberList
@@ -58,8 +57,8 @@ for id in k:
     print '<personinfo id="%s" wikipedia_url="%s" />' % (id, url)
 print '</publicwhip>'
 
-wikimembers = sets.Set(current_members)
-allmembers = sets.Set( memberList.list() )
+wikimembers = set(current_members)
+allmembers = set( memberList.list() )
 symdiff = allmembers.symmetric_difference(wikimembers)
 if len(symdiff) > 0:
     print >>sys.stderr, "Failed to get all MLAs, these ones in symmetric difference"

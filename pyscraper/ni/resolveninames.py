@@ -4,7 +4,6 @@ import xml.sax
 import re
 import string
 import copy
-import sets
 import sys
 import datetime
 from contextexception import ContextException
@@ -193,7 +192,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 		if text == 'McFall': return ["uk.org.publicwhip/member/384"]
 
 		# Find unique identifier for member
-		ids = sets.Set()
+		ids = set()
 		matches = []
 		matches.extend(self.fullnames.get(text, []))
 		if not matches and titletotal > 0:
@@ -242,7 +241,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 		if officeids and len(ids) == 0:
 			ids = officeids
 		if office:
-			self.debateofficehistory.setdefault(office, sets.Set()).union_update(ids)
+			self.debateofficehistory.setdefault(office, set()).update(ids)
 
 		if len(ids) == 0:
 			if not re.search('Some Members|A Member|Several Members|Members', input):

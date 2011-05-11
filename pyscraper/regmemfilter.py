@@ -1,10 +1,9 @@
-#! /usr/bin/python2.4
+#! /usr/bin/python
 # vim:sw=8:ts=8:et:nowrap
 
 import re
 import os
 import string
-import sets
 
 from BeautifulSoup import BeautifulStoneSoup
 from contextexception import ContextException
@@ -27,7 +26,7 @@ def RunRegmemFilters2010(fout, text, sdate, sdatever):
         WriteXMLHeader(fout)
 	fout.write("<publicwhip>\n")
         
-        memberset = sets.Set()
+        memberset = set()
         t = BeautifulStoneSoup(text)
         for page in t('page'):
                 title = page.h2.renderContents()
@@ -78,7 +77,7 @@ def RunRegmemFilters2010(fout, text, sdate, sdatever):
                         fout.write('\t</category>\n')
                 fout.write('</regmem>\n')                                
 
-        membersetexpect = sets.Set(memberList.mpslistondate(sdate))
+        membersetexpect = set(memberList.mpslistondate(sdate))
         
         # check for missing/extra entries
         missing = membersetexpect.difference(memberset)
@@ -123,7 +122,7 @@ def RunRegmemFilters(fout, text, sdate, sdatever):
         # split into cells within a row
         rows = [ re.findall("<TD.*?>\s*(.*?)\s*</TD>", row) for row in rows ]
 
-        memberset = sets.Set()
+        memberset = set()
         needmemberend = False
         category = None
         categoryname = None
@@ -220,7 +219,7 @@ def RunRegmemFilters(fout, text, sdate, sdatever):
                 fout.write('</regmem>\n')                                
                 needmemberend = False
 
-        membersetexpect = sets.Set(memberList.mpslistondate(sdate))
+        membersetexpect = set(memberList.mpslistondate(sdate))
         
         # check for missing/extra entries
         missing = membersetexpect.difference(memberset)
