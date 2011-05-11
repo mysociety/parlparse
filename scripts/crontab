@@ -20,7 +20,7 @@
 # (the above times are all guesswork, but it doesn't really matter)
 
 # 01:10, email when a parliamentary recess starts/ends
-10 1 * * * /usr/bin/python2.4 $HOME/parlparse/scripts/recesswatcher.py
+10 1 * * * /usr/bin/python $HOME/parlparse/scripts/recesswatcher.py
 
 # every week early Sunday grab weekly range of data
 23 4 * * Sun $HOME/parlparse/scripts/weeklyupdate

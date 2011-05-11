@@ -1,4 +1,4 @@
-#! /usr/bin/env python2.4
+#! /usr/bin/env python
 
 # XXX Pagination has been introduced for the 1998-2003 pages, so any
 # rescraping of those will break with this current code.

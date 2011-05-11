@@ -1,4 +1,4 @@
-#! /usr/bin/env python2.4
+#! /usr/bin/env python
 # Common utilities for handling Parliamentary Bill Committees
 #
 

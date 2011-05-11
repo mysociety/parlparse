@@ -1,4 +1,4 @@
-#!/usr/local/bin/python2.4
+#!/usr/local/bin/python
 # -*- coding: latin-1 -*-
 
 # Makes file connecting MP ids to their expenses
