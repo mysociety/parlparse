@@ -6,7 +6,6 @@
 # or allocates new larger ones.
 
 import xml.sax
-import sets
 import datetime
 import sys
 import re
@@ -588,7 +587,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
 				lordidold = lordlordmatches[lord_id]
 				self.lordspersonset[lordidold].add(attr)
             else:
-                newset = sets.Set()
+                newset = set()
                 newset.add(attr)
                 self.personsets.append(newset) # master copy of person sets
 				self.lordspersonset[lord_id] = newset
@@ -612,7 +611,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
             elif lookup in self.member_ni_personset:
                 self.member_ni_personset[lookup].add(attr)
             else:
-                newset = sets.Set()
+                newset = set()
                 newset.add(attr)
                 self.personsets.append(newset)
                 self.member_ni_personset[lookup] = newset
@@ -637,7 +636,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
             elif lookup in self.member_sp_personset:
                 self.member_sp_personset[lookup].add(attr)
             else:
-                newset = sets.Set()
+                newset = set()
                 newset.add(attr)
                 self.personsets.append(newset)
                 self.member_sp_personset[lookup] = newset
@@ -648,7 +647,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
 #
 #        for (name, nameset) in self.fullnames.iteritems():
 #            # Find out ids of MPs that we have
-#            ids = sets.Set(map(lambda attr: attr["id"], nameset))
+#            ids = set(map(lambda attr: attr["id"], nameset))
 #
 #            # This name matcher includes fuzzier alias matches (e.g. Michael Foster ones)...
 #            fuzzierids =  memberList.fullnametoids(name, None)
@@ -739,7 +738,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
             if 'hansard_person_id' in attr:
                 hansard_person_id = attr['hansard_person_id']
                 if hansard_person_id not in self.historichansardtoid:
-                    newset = sets.Set()
+                    newset = set()
                     self.personsets.append(newset)
                     self.historichansardtoid[hansard_person_id] = newset
                 self.historichansardtoid[hansard_person_id].add(attr.copy())
@@ -747,21 +746,21 @@ class PersonSets(xml.sax.handler.ContentHandler):
                     self.fullnamescons[fullnameconskey] = self.historichansardtoid[hansard_person_id]
             else:
                 if fullnameconskey not in self.fullnamescons:
-                    newset = sets.Set()
+                    newset = set()
                     self.personsets.append(newset) # master copy of person sets
                     self.fullnamescons[fullnameconskey] = newset # store link here
 			    # MAKE A COPY.  (The xml documentation warns that the attr object can be reused, so shouldn't be put into your structures if it's not a copy).
                 self.fullnamescons[fullnameconskey].add(attr.copy())
 
             fullnamekey = "%s %s" % (attr["firstname"], attr["lastname"])
-            self.fullnames.setdefault(fullnamekey, sets.Set()).add(attr.copy())
+            self.fullnames.setdefault(fullnamekey, set()).add(attr.copy())
 
         elif name == "lord":
             assert attr['id'] not in self.lords
             self.lords[attr['id']] = attr.copy()
 
         elif name == "royal":
-            newset = sets.Set()
+            newset = set()
             newset.add(attr)
             self.personsets.append(newset)
 
@@ -770,7 +769,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
 
 			#assert attr["id"] not in self.ministermap
 			if attr.has_key("matchid"):
-				self.ministermap.setdefault(attr["matchid"], sets.Set()).add(attr.copy())
+				self.ministermap.setdefault(attr["matchid"], set()).add(attr.copy())
 
         elif name == "member_ni":
             assert not self.in_person

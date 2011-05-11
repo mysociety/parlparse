@@ -1,4 +1,4 @@
-#! /usr/bin/env python2.4
+#! /usr/bin/env python
 # vim:sw=8:ts=8:et:nowrap
 
 # Run the script with --help to see command line options
@@ -16,8 +16,8 @@ sys.path.append('common')
 sys.path.append('lords')
 sys.path.append('miniposts')
 sys.path.append('wms')
-sys.path.append('votes')
-sys.path.append('bills')
+#sys.path.append('votes')
+#sys.path.append('bills')
 sys.path.append('standing')
 
 from crongrabpages import GrabWatchCopies
@@ -32,11 +32,11 @@ from lordspullgluepages import LordsPullGluePages
 from standingpullgluepages import StandingPullGluePages
 from runfilters import RunFiltersDir, RunDebateFilters, RunWransFilters, RunLordsFilters, RunWestminhallFilters, RunWMSFilters, RunNIFilters
 from regmemfilter import RunRegmemFilters
-from parsevote import RunVotesFilters
+#from parsevote import RunVotesFilters
 import ni.scrape
 
-if sys.platform != "win32":  # just to get working again
-	from parsebills import MakeBillPrint
+#if sys.platform != "win32":  # just to get working again
+#	from parsebills import MakeBillPrint
 
 from regmempullgluepages import RegmemPullGluePages
 from miscfuncs import SetQuiet, bNotQuiet, IsNotQuiet
@@ -65,7 +65,7 @@ lords           House of Lords
 regmem          Register of Members Interests
 chgpages        Special pages that change, like list of cabinet ministers
 questionbook    The Question Book (Questions for Oral/Written Answer)
-votes           Votes and Proceedings
+(votes           Votes and Proceedings)
 today           Today in the Commons
 standing        Public Bill (Standing) Committees
 ni              Northern Ireland Assembly
@@ -120,7 +120,7 @@ options.wms = False
 options.lords = False
 options.regmem = False
 options.chgpages = False
-options.votes = False
+#options.votes = False
 options.qbook = False
 options.today = False
 options.standing = False
@@ -146,8 +146,8 @@ for arg in args:
                 options.chgpages = True
         elif arg == "questionbook":
                 options.qbook = True
-        elif arg == "votes":
-                options.votes = True
+        #elif arg == "votes":
+        #        options.votes = True
         elif arg == "today":
                 options.today = True
         elif arg == "standing":
@@ -224,8 +224,8 @@ if options.scrape:
 		StandingPullGluePages(options.datefrom, options.dateto, options.forcescrape)
         if options.ni:
                 ni.scrape.scrape_new_ni() # forcescrape not used, only scrapes new, checks all.
-	if options.votes:
-		PullGluePages(options, "votes", "votes")
+	#if options.votes:
+	#	PullGluePages(options, "votes", "votes")
 	if options.qbook:
 		PullGluePages(options, "questionbook", "questionbook")
 	if options.today:
@@ -252,8 +252,8 @@ if options.parse:
 		RunFiltersDir(RunNIFilters, 'ni', options, options.forceparse)
 	if options.regmem:
 		RunFiltersDir(RunRegmemFilters, 'regmem', options, options.forceparse)
-	if options.votes:
-		RunFiltersDir(RunVotesFilters, 'votes', options, options.forceparse)
+	#if options.votes:
+	#	RunFiltersDir(RunVotesFilters, 'votes', options, options.forceparse)
 	if options.chgpages:
                 #MakeBillPrint()
 		ParseGovPosts()

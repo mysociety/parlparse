@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.4
+#!/usr/bin/env python
 # vim:sw=8:ts=8:et:nowrap
 
 import sys
