@@ -148,7 +148,10 @@ def GlueByNextNew(outputFileName, urla, urlx, sdate):
                 content = re.sub('^.*?<!--end of page header-->(?s)', '', sr)
                 # Pages bar first one have a <hr> before the main content table, but first page does not.
                 # After line above, first <hr> will be at the end of the main content.
-                content = re.sub('(?:</td>\s*</tr>\s*</table>\s*)?<hr[^>]*>.*(?s)', '', content)
+                if '<div class="navLinks">' in content:
+                    content = re.sub('<hr[^>]*>.*(?s)', '', content)
+                else:
+                    content = re.sub('</td>\s*</tr>\s*</table>\s*<hr[^>]*>.*(?s)', '', content)
                 WriteCleanText(fout, content, url, sdate)
 
 		nextsectionlink = re.findall('<\s*a\s+href\s*=\s*"?(.*?)"?\s*>next(?: section)?</(?:a|td)>(?i)', sr)
