@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.4
+#!/usr/bin/env python
 # vim:sw=4:ts=4:et:nowrap
 
 # Extact list of dates of recesses of parliament, and write a message out on

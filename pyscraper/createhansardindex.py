@@ -9,7 +9,6 @@ import string
 import re
 import xml.sax
 
-# In Debian package python2.4-egenix-mxdatetime
 import mx.DateTime
 
 import miscfuncs

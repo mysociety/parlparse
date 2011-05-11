@@ -1,4 +1,4 @@
-#! /usr/bin/env python2.4
+#! /usr/bin/env python
 # vim:sw=4:ts=4:et:nowrap
 
 # Groups sets of MPs and offices together into person sets.  Updates

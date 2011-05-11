@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.4
+#!/usr/bin/env python
 # -*- coding: latin-1 -*-
 
 # Screen scrape list of links to MLAs on Wikipedia, so we can link to the articles.
