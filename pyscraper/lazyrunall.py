@@ -173,8 +173,8 @@ if not options.scrape and not options.parse:
         print >>sys.stderr, "error: choose what to do; scrape, parse, or both"
         parser.print_help()
         sys.exit(1)
-if not options.debates and not options.westminhall and not options.wms and not options.wrans and not options.regmem and not options.lords and not options.chgpages and not options.votes and not options.today and not options.qbook and not options.standing and not options.ni:
-        print >>sys.stderr, "error: choose what work on; debates, wrans, regmem, wms, votes, chgpages, questionbook, today or several of them"
+if not options.debates and not options.westminhall and not options.wms and not options.wrans and not options.regmem and not options.lords and not options.chgpages and not options.today and not options.qbook and not options.standing and not options.ni: # and not options.votes:
+        print >>sys.stderr, "error: choose what work on; debates, wrans, regmem, wms, chgpages, questionbook, today or several of them"
         parser.print_help()
         sys.exit(1)
 
@@ -189,7 +189,7 @@ options.anyerrors = False
 #
 if options.scrape:
 	# get the indexes
-	if options.wrans or options.debates or options.westminhall or options.wms or options.votes or options.qbook:
+	if options.wrans or options.debates or options.westminhall or options.wms or options.qbook: # or options.votes:
 		UpdateHansardIndex(options.forceindex)
 	if options.lords:
 		UpdateLordsHansardIndex(options.forceindex)
