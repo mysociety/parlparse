@@ -1,4 +1,4 @@
-#!/usr/bin/python2.5
+#!/usr/bin/python
 
 """
 Contains unit tests for the future_business parsing code.

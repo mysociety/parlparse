@@ -4,7 +4,6 @@ import xml.sax
 import re
 import string
 import copy
-import sets
 import sys
 import datetime
 import time
