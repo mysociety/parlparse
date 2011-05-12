@@ -1,4 +1,4 @@
-#! /usr/bin/env python2.5
+#! /usr/bin/env python
 
 import re
 import os
@@ -6,7 +6,6 @@ import glob
 import sys
 import tempfile
 import shutil
-import sets
 import time
 
 pardir = os.path.abspath(os.path.join(sys.path[0], '..'))
