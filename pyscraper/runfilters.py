@@ -115,6 +115,10 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         text = re.sub('(<h5 align="left">)((?:<a name="(.*?)">)*)', r"\2\1", text) # If you can't beat them, ...
         text = re.sub("(<br><b>[^:<]*:\s*column\s*\d+(?:WH)?\s*</b>)(\s+)(?i)", r"\1<br>\2", text)
         text = re.sub("(\s+)(<b>[^:<]*:\s*column\s*\d+(?:WH)?\s*</b><br>)(?i)", r"\1<br>\2", text)
+
+        # Make sure correction is before written answer question number
+        text = re.sub('(\[\d+\])\s*((?:</p>)?)\s*(<a href="[^"]*corrtext[^"]*")\s*shape="rect">\s*(.*?)\s*(</a>)(?s)', r'\3>\4\5 \1\2', text)
+
         # Lords, big overall replacements
         text = text.replace('<br/>', '<br>')
         if dname == 'lordspages':
