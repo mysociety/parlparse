@@ -13,7 +13,7 @@
 <link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd" />
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%7Cmediawiki.legacy.shared%7Cskins.vector&amp;only=styles&amp;skin=vector" type="text/css" media="all" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki%21legacy%21commonPrint%7Cmediawiki%21legacy%21shared%7Cskins%21vector&amp;only=styles&amp;skin=vector" type="text/css" media="all" />
 <meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector" type="text/css" media="all" />
 <style type="text/css" media="all">a.new,#quickbar a.new{color:#ba0000}
 
@@ -108,9 +108,9 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Winchester" title="Bishop of Winchester">The Lord Bishop of Winchester</a></td>
-<td><a href="/wiki/Michael_Scott-Joynt" title="Michael Scott-Joynt">Michael Scott-Joynt</a></td>
-<td>1995</td>
-<td>1995</td>
+<td>Vacant</td>
+<td>—</td>
+<td>—</td>
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Bath_and_Wells" title="Bishop of Bath and Wells">The Lord Bishop of Bath and Wells</a></td>
@@ -132,25 +132,25 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Bristol" title="Bishop of Bristol">The Lord Bishop of Bristol</a></td>
-<td><a href="/wiki/Michael_Hill_(bishop)" title="Michael Hill (bishop)" class="mw-redirect">Michael Arthur Hill</a></td>
+<td><a href="/wiki/Mike_Hill_(bishop)" title="Mike Hill (bishop)">Mike Hill</a></td>
 <td>2009</td>
 <td>2003</td>
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Chester" title="Bishop of Chester">The Lord Bishop of Chester</a></td>
-<td><a href="/wiki/Peter_R._Forster" title="Peter R. Forster" class="mw-redirect">Peter R. Forster</a></td>
+<td><a href="/wiki/Peter_Forster" title="Peter Forster">Peter Forster</a></td>
 <td>2001</td>
 <td>1996</td>
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Chichester" title="Bishop of Chichester">The Lord Bishop of Chichester</a></td>
-<td><a href="/wiki/John_William_Hind" title="John William Hind" class="mw-redirect">John William Hind</a></td>
+<td><a href="/wiki/John_Hind_(bishop)" title="John Hind (bishop)">John Hind</a></td>
 <td>2008</td>
 <td>2001</td>
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Derby" title="Bishop of Derby">The Lord Bishop of Derby</a></td>
-<td><a href="/wiki/Alastair_Llewellyn_John_Redfern" title="Alastair Llewellyn John Redfern" class="mw-redirect">Alastair Redfern</a></td>
+<td><a href="/wiki/Alastair_Redfern" title="Alastair Redfern">Alastair Redfern</a></td>
 <td>2010</td>
 <td>2005</td>
 </tr>
@@ -162,7 +162,7 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Gloucester" title="Bishop of Gloucester">The Lord Bishop of Gloucester</a></td>
-<td><a href="/wiki/Michael_Francis_Perham" title="Michael Francis Perham" class="mw-redirect">Michael Francis Perham</a></td>
+<td><a href="/wiki/Michael_Perham_(bishop)" title="Michael Perham (bishop)">Michael Perham</a></td>
 <td>2009</td>
 <td>2004</td>
 </tr>
@@ -180,7 +180,7 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Leicester" title="Bishop of Leicester">The Lord Bishop of Leicester</a></td>
-<td><a href="/wiki/Timothy_John_Stevens" title="Timothy John Stevens" class="mw-redirect">Timothy John Stevens</a></td>
+<td><a href="/wiki/Tim_Stevens" title="Tim Stevens">Tim Stevens</a></td>
 <td>2004</td>
 <td>1999</td>
 </tr>
@@ -192,13 +192,13 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Liverpool" title="Bishop of Liverpool">The Lord Bishop of Liverpool</a></td>
-<td><a href="/wiki/James_Stuart_Jones" title="James Stuart Jones" class="mw-redirect">James Stuart Jones</a></td>
+<td><a href="/wiki/James_Jones_(bishop)" title="James Jones (bishop)">James Jones</a></td>
 <td>2003</td>
 <td>1998</td>
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Manchester" title="Bishop of Manchester">The Lord Bishop of Manchester</a></td>
-<td><a href="/wiki/Nigel_Simeon_McCulloch" title="Nigel Simeon McCulloch" class="mw-redirect">Nigel McCulloch</a></td>
+<td><a href="/wiki/Nigel_McCulloch" title="Nigel McCulloch">Nigel McCulloch</a></td>
 <td>1997</td>
 <td>1992</td>
 </tr>
@@ -210,7 +210,7 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Norwich" title="Bishop of Norwich">The Lord Bishop of Norwich</a></td>
-<td><a href="/wiki/Graham_Richard_James" title="Graham Richard James" class="mw-redirect">Graham Richard James</a></td>
+<td><a href="/wiki/Graham_James_(bishop)" title="Graham James (bishop)">Graham James</a></td>
 <td>2004</td>
 <td>1999</td>
 </tr>
@@ -222,7 +222,7 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Ripon_and_Leeds" title="Bishop of Ripon and Leeds">The Lord Bishop of Ripon and Leeds</a></td>
-<td><a href="/wiki/John_Richard_Packer" title="John Richard Packer" class="mw-redirect">John Richard Packer</a></td>
+<td><a href="/wiki/John_Packer" title="John Packer">John Packer</a></td>
 <td>2006</td>
 <td>2000</td>
 </tr>
@@ -234,7 +234,7 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 </tr>
 <tr>
 <td><a href="/wiki/Bishop_of_Wakefield" title="Bishop of Wakefield">The Lord Bishop of Wakefield</a></td>
-<td><a href="/wiki/Stephen_George_Platten" title="Stephen George Platten" class="mw-redirect">Stephen Platten</a></td>
+<td><a href="/wiki/Stephen_Platten" title="Stephen Platten">Stephen Platten</a></td>
 <td>2009</td>
 <td>2003</td>
 </tr>
@@ -5092,12 +5092,12 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 <!-- 
 NewPP limit report
 Preprocessor node count: 2144/1000000
-Post-expand include size: 15249/2048000 bytes
+Post-expand include size: 15251/2048000 bytes
 Template argument size: 4804/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!*!0!!en!* and timestamp 20110507123251 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!*!0!!en!* and timestamp 20110511091308 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 				<!-- /bodytext -->
@@ -5237,8 +5237,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=427901296" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=427901296" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=428066292" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=428066292" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -5248,7 +5248,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=427901296&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=428066292&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -5269,7 +5269,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 7 May 2011 at 12:27.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 8 May 2011 at 12:17.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
@@ -5294,7 +5294,7 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		
 <script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector" type="text/javascript"></script>
 <script type="text/javascript">if ( window.mediaWiki ) {
-	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Members_of_the_House_of_Lords", "wgTitle": "Members of the House of Lords", "wgAction": "view", "wgArticleId": 269064, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 427901296, "wgCategories": ["Lists of British people", "Members of the British House of Lords"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgRevContents": {"error": "Unable to get content.", "waiting": "Waiting for content"}, "wgWikimediaMobileUrl": "http://en.m.wikipedia.org/wiki", "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "10b8bc39bc729523a66e1797807b5c94", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Members_of_the_House_of_Lords", "wgTitle": "Members of the House of Lords", "wgAction": "view", "wgArticleId": 269064, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 428066292, "wgCategories": ["Lists of British people", "Members of the British House of Lords"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgRevContents": {"error": "Unable to get content.", "waiting": "Waiting for content"}, "wgWikimediaMobileUrl": "http://en.m.wikipedia.org/wiki", "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "200aa618ef56089c959866c3b403a0a4", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
 }
 </script>
 <script type="text/javascript">if ( window.mediaWiki ) {
@@ -5314,5 +5314,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </script><script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- fixalpha -->
 		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
 		<!-- /fixalpha -->
-		<!-- Served by srv179 in 5.733 secs. -->			</body>
+		<!-- Served by srv289 in 0.053 secs. -->			</body>
 </html>
