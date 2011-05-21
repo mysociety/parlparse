@@ -970,10 +970,7 @@ class ParseCommittee:
                 elif cssClass == 'hs_8GenericHdg':
                     self.external_speakers = True
                     self.display_heading(tag.string, "minor")
-                elif cssClass == 'hs_6fCntrItalHdg':
-                    # It probably just says '(morning)'
-                    self.display_heading(tag.string, "minor")
-                elif (cssClass in ['hs_6fDate']):
+                elif (cssClass in [ 'hs_6fDate', 'hs_6fCntrItalHdg' ]):
                     pass
                 elif tag.name == 'div' and tag.get('id', '') in ('content-small', 'maincontent1'):
                     pass

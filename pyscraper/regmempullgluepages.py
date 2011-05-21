@@ -34,7 +34,7 @@ def GlueByContents(fout, url_contents, regmemdate):
         mps = soup.find('a', attrs={'name':'A'}).parent.findNextSiblings('p')
         for p in mps:
 		url = urlparse.urljoin(url_contents, p.a['href'])
-                print " reading " + url
+                #print " reading " + url
 	        ur = urllib.urlopen(url)
 	        sr = ur.read()
 	        ur.close()

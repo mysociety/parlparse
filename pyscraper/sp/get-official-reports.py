@@ -87,7 +87,7 @@ for year in range(options.year, currentyear+1):
         # old format link - /or-10/sor1223-01.htm
         # new format link - http://www.scottish.parliament.uk/Apps2/Business/ORSearch/ReportView.aspx?r=6132&amp;mode=html
         if t.has_key('href') and (re.match('^or-',t['href']) or re.search('ORSearch/ReportView.aspx.*?mode=html', t['href'])):
-            print t
+            # print t
             s = ""
             for c in t.contents:
                 if type(c) == NavigableString:
