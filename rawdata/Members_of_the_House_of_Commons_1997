@@ -3644,12 +3644,12 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 <!-- 
 NewPP limit report
 Preprocessor node count: 1108/1000000
-Post-expand include size: 54848/2048000 bytes
+Post-expand include size: 54838/2048000 bytes
 Template argument size: 36737/2048000 bytes
 Expensive parser function count: 1/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:415690-0!*!0!!en!4 and timestamp 20110515032307 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:415690-0!*!0!!en!4 and timestamp 20110522032306 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_1997">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_1997</a>"</div>
 				<!-- /bodytext -->
@@ -3838,7 +3838,7 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		
 <script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector" type="text/javascript"></script>
 <script type="text/javascript">if ( window.mediaWiki ) {
-	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "List_of_MPs_elected_in_the_United_Kingdom_general_election,_1997", "wgTitle": "List of MPs elected in the United Kingdom general election, 1997", "wgAction": "view", "wgArticleId": 415690, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 428583227, "wgCategories": ["Articles lacking sources from July 2009", "All articles lacking sources", "Lists of MPs elected in United Kingdom general elections", "1997 elections in the United Kingdom", "UK MPs 1997–2001"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgRevContents": {"error": "Unable to get content.", "waiting": "Waiting for content"}, "wgWikimediaMobileUrl": "http://en.m.wikipedia.org/wiki", "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "8e3cc1735250eaca18de595f2d49d2bf", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "List_of_MPs_elected_in_the_United_Kingdom_general_election,_1997", "wgTitle": "List of MPs elected in the United Kingdom general election, 1997", "wgAction": "view", "wgArticleId": 415690, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 428583227, "wgCategories": ["Articles lacking sources from July 2009", "All articles lacking sources", "Lists of MPs elected in United Kingdom general elections", "1997 elections in the United Kingdom", "UK MPs 1997–2001"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgRevContents": {"error": "Unable to get content.", "waiting": "Waiting for content"}, "wgWikimediaMobileUrl": "http://en.m.wikipedia.org/wiki", "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "54657555d0464d2df3e86445b30a0e93", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
 }
 </script>
 <script type="text/javascript">if ( window.mediaWiki ) {
@@ -3858,5 +3858,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </script><script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- fixalpha -->
 		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
 		<!-- /fixalpha -->
-		<!-- Served by srv166 in 2.118 secs. -->			</body>
+		<!-- Served by srv162 in 2.131 secs. -->			</body>
 </html>
