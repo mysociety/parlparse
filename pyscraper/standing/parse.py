@@ -210,11 +210,11 @@ class ParseCommittee:
             raise Exception, "Heading expected, but got None, at %s" % self.timestamp
 
         self.close_speech(type)
-        # increment the section ID
-        self.idA += 1
-        # restart the speech counter
-        self.idB = 0
         if not self.in_heading:
+            # increment the section ID
+            self.idA += 1
+            # restart the speech counter
+            self.idB = 0
             timestamp_str = ''
             if self.timestamp: timestamp_str = ' time="%s"' % self.timestamp        
             self.out.write('<%s-heading id="%s"%s nospeaker="true" url="%s">%s' % (type, self.id(), timestamp_str, self.url, text))
@@ -919,7 +919,7 @@ class ParseCommittee:
         
         self.parse_new_committee(soup, new_new)
                 
-        for tag in soup({'h1':True, 'h2':True, 'h3':True, 'h4':True, 'p':True, 'div':True, 'page':True, 'a':True}):
+        for tag in soup({'h1':True, 'h2':True, 'h3':True, 'h4':True, 'h5':True, 'p':True, 'div':True, 'page':True, 'a':True}):
             if tag.name in ('h1', 'h2'):
                 self.parse_h1_tag(tag)
             elif tag.name == 'page':
@@ -949,6 +949,8 @@ class ParseCommittee:
                     self.display_heading(tag.string, "minor")
                 elif (cssClass == 'hs_76fChair'):
                     self.display_chair(tag)
+                elif (tag.name == 'h5' and cssClass == 'hs_7SmCapsHdg'):
+                    self.display_heading(''.join(tag(text=True)), "minor")
                 elif (cssClass == 'hs_7SmCapsHdg'):
                     self.speaker = None
                     self.display_speech_tag()
