@@ -120,6 +120,9 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         text = re.sub('(<a href="[^"]*corrtext[^"]*")\s*shape="rect">\s*(.*?)\s*(</a>)', r'\1>\2\3', text)
         text = re.sub('(\[\d+\])\s*((?:</p>)?)\s*(<a href="[^"]*corrtext[^"]*">.*?</a>)', r'\3 \1\2', text)
 
+        # Fix new thing where they sometimes put (a), (b) of wrans in separate paragraphs
+        text = re.sub('</p>\s*<p>\s*(<i>\(.\)</i>)\s*</p>\s*<p[^>]*>', r'\1', text)
+
         # Lords, big overall replacements
         text = text.replace('<br/>', '<br>')
         if dname == 'lordspages':
