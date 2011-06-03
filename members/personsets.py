@@ -142,6 +142,9 @@ ni_mp_matches = {
     "uk.org.publicwhip/member/90198":"William McCrea [South Antrim]",
     "uk.org.publicwhip/member/90111":"John D Taylor [Strangford]",
     "uk.org.publicwhip/member/90186":"John D Taylor [Strangford]",
+    "uk.org.publicwhip/member/90040":"Mark Durkan [Foyle]",
+    "uk.org.publicwhip/member/90161":"Mark Durkan [Foyle]",
+    "uk.org.publicwhip/member/90275":"Mark Durkan [Foyle]",
 }
 ni_lord_matches = {
     "uk.org.publicwhip/member/90005":"uk.org.publicwhip/lord/100007",
@@ -469,12 +472,12 @@ class PersonSets(xml.sax.handler.ContentHandler):
         self.fullnamescons={} # MPs "Firstname Lastname Constituency" --> person set (link to entry in personsets)
         self.fullnames={} # "Firstname Lastname" --> set of MPs (not link to entry in personsets)
         self.lords={} # Lord ID -> Attr
-		self.lordspersonset={} # Lord ID --> person set
+        self.lordspersonset={} # Lord ID --> person set
         self.member_ni={}
-		self.member_ni_personset={}
+        self.member_ni_personset={}
         self.member_sp={}
-		self.member_sp_personset={}
-		self.ministermap={}
+        self.member_sp_personset={}
+        self.ministermap={}
 
         self.historichansardtoid = {} # Historic Hansard Person ID -> MPs
 
@@ -568,29 +571,29 @@ class PersonSets(xml.sax.handler.ContentHandler):
     #                assert prevtodate < fromdate, "date ranges overlap %s %s %s" % (prevtodate, fromdate, todate)
     #            prevtodate = todate
 
-	# put ministerialships into each of the sets, based on matching matchid values
-	# this works because the members code forms a basis to which ministerialships get attached
-	def mergeministers(self):
+    # put ministerialships into each of the sets, based on matching matchid values
+    # this works because the members code forms a basis to which ministerialships get attached
+    def mergeministers(self):
         for pset in self.personsets:
-			for a in pset.copy():
-				memberid = a["id"]
-				for moff in self.ministermap.get(memberid, []):
-					pset.add(moff)
+            for a in pset.copy():
+                memberid = a["id"]
+                for moff in self.ministermap.get(memberid, []):
+                    pset.add(moff)
 
-	# put lords into each of the sets
-	def mergelordsandothers(self):
+    # put lords into each of the sets
+    def mergelordsandothers(self):
         for lord_id, attr in self.lords.iteritems():
             if lord_id in lordsmpmatches:
                 mp = lordsmpmatches[lord_id]
                 self.fullnamescons[mp].add(attr)
-			elif lord_id in lordlordmatches:
-				lordidold = lordlordmatches[lord_id]
-				self.lordspersonset[lordidold].add(attr)
+            elif lord_id in lordlordmatches:
+                lordidold = lordlordmatches[lord_id]
+                self.lordspersonset[lordidold].add(attr)
             else:
                 newset = set()
                 newset.add(attr)
                 self.personsets.append(newset) # master copy of person sets
-				self.lordspersonset[lord_id] = newset
+                self.lordspersonset[lord_id] = newset
  
         items = self.member_ni.items()
         items.sort(key=lambda x : x[1]['lastname'])
@@ -606,7 +609,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
             elif member_id in ni_lord_matches:
                 lord = ni_lord_matches[member_id]
                 self.lordspersonset[lord].add(attr)
-            elif lookup in self.fullnamescons and lookup != 'Roy Beggs [East Antrim]':
+            elif lookup in self.fullnamescons and lookup != 'Roy Beggs [East Antrim]' and lookup != 'Mark Durkan [Foyle]':
                 self.fullnamescons[lookup].add(attr)
             elif lookup in self.member_ni_personset:
                 self.member_ni_personset[lookup].add(attr)
