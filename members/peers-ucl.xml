@@ -1999,7 +1999,7 @@ B - bishop
 	title="Lord" lordname="Elliott" lordofname="Morpeth"
 	county="the County of Northumberland and of the City of Newcastle upon Tyne"
 	peeragetype="L" affiliation="Con"
-	fromdate="1985" todate="9999-12-31"
+	fromdate="1985" todate="2011-05-20" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -4918,7 +4918,7 @@ B - bishop
 	forenames="William"
 	title="Earl" lordname="" lordofname="Onslow"
 	peeragetype="HP" affiliation="Con"
-	fromdate="1971" todate="9999-12-31"
+	fromdate="1971" todate="2011-05-14" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100474"
@@ -11622,7 +11622,16 @@ B - bishop
 	forenames="David Stephen Geoffrey Pollock"
 	title="Viscount" lordname="Hanworth" lordofname=""
 	peeragetype="HD" affiliation="Lab"
-	fromdate="2011-03-27" todate="9999-12-31"
+	fromdate="2011-03-30" todate="9999-12-31"
+/>
+
+<lord
+	id="uk.org.publicwhip/lord/101134"
+	house="lords"
+	forenames="John Peter Michael Scawen"
+	title="Earl" lordname="" lordofname="Lytton"
+	peeragetype="HD" affiliation="XB"
+	fromdate="2011-05-18" todate="9999-12-31"
 />
 
 <!--
