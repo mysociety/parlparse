@@ -843,6 +843,7 @@ class ParseCommittee:
         text = re.sub('<h4 class="hs_DivListHeader">(.*?)</h4>(?s)', r'\1', text)
         text = re.sub('<div class="col[12]">(.*?)</div>(?s)', r'\1', text)
         text = re.sub('<div class="Names(?:Ayes|Noes) TwoColumn">(.*?)</div>(?s)', r'\1', text)
+        text = re.sub('<p class="Sub">(.*?)</p>(?s)', r'<sub>\1</sub>', text)
 
         soup = StandingSoup(text,markupMassage=StandingSoup.myMassage)
         fp.close()
@@ -974,7 +975,9 @@ class ParseCommittee:
                     self.display_heading(tag.string, "minor")
                 elif (cssClass in [ 'hs_6fDate', 'hs_6fCntrItalHdg' ]):
                     pass
-                elif tag.name == 'div' and tag.get('id', '') in ('content-small', 'maincontent1'):
+                elif tag.name == 'div' and tag.get('id', '') in ('content-small', 'maincontent1', 'mainTextBlock', 'titleBlock', 'titleBlockLinks'):
+                    pass
+                elif tag.name == 'p' and cssClass == 'mainLinks':
                     pass
                 elif cssClass in ('hs_2GenericHdg', 'hs_2DebatedMotion', 'hs_2BusinessWODebate') and re.match('Written evidence to be reported to the House', ''.join(tag(text=True))):
                     self.display_para(tag, indent=True)
