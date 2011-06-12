@@ -1129,12 +1129,12 @@ Northern Ireland</a></b></p>
 <!-- 
 NewPP limit report
 Preprocessor node count: 1781/1000000
-Post-expand include size: 72466/2048000 bytes
+Post-expand include size: 72453/2048000 bytes
 Template argument size: 34126/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!*!0!!en!4 and timestamp 20110527075056 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!*!0!!en!4 and timestamp 20110610210714 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007">http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007</a>"</div>
 				<!-- /bodytext -->
@@ -1311,7 +1311,7 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 															</ul>
 											<ul id="footer-icons" class="noprint">
 					<li id="footer-copyrightico">
-						<a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a>
+						<a href="http://wikimediafoundation.org/"><img src="http://bits.wikimedia.org/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a>
 					</li>
 					<li id="footer-poweredbyico">
 						<a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/skins-1.17/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
@@ -1323,7 +1323,7 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 		
 <script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector" type="text/javascript"></script>
 <script type="text/javascript">if ( window.mediaWiki ) {
-	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Members_of_the_Northern_Ireland_Assembly_elected_in_2007", "wgTitle": "Members of the Northern Ireland Assembly elected in 2007", "wgAction": "view", "wgArticleId": 9807646, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 429135497, "wgCategories": ["Northern Ireland MLAs 2007–2011", "Lists of Northern Irish parliamentarians", "Northern Ireland-related lists"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgRevContents": {"error": "Unable to get content.", "waiting": "Waiting for content"}, "wgWikimediaMobileUrl": "http://en.m.wikipedia.org/wiki", "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "de0db11a03350a715c4105006f2b641e", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Members_of_the_Northern_Ireland_Assembly_elected_in_2007", "wgTitle": "Members of the Northern Ireland Assembly elected in 2007", "wgAction": "view", "wgArticleId": 9807646, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 429135497, "wgCategories": ["Northern Ireland MLAs 2007–2011", "Lists of Northern Irish parliamentarians", "Northern Ireland-related lists"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgRevContents": {"error": "Unable to get content.", "waiting": "Waiting for content"}, "wgWikimediaMobileUrl": "http://en.m.wikipedia.org/wiki", "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "6bbfda25400d02e42bb897af4af3e3a7", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
 }
 </script>
 <script type="text/javascript">if ( window.mediaWiki ) {
@@ -1343,5 +1343,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </script><script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- fixalpha -->
 		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
 		<!-- /fixalpha -->
-		<!-- Served by srv177 in 1.301 secs. -->			</body>
+		<!-- Served by srv166 in 1.332 secs. -->			</body>
 </html>
