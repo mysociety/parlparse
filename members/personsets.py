@@ -145,6 +145,7 @@ ni_mp_matches = {
     "uk.org.publicwhip/member/90040":"Mark Durkan [Foyle]",
     "uk.org.publicwhip/member/90161":"Mark Durkan [Foyle]",
     "uk.org.publicwhip/member/90275":"Mark Durkan [Foyle]",
+    "uk.org.publicwhip/member/90455":"Paul Maskey [Belfast West]",
 }
 ni_lord_matches = {
     "uk.org.publicwhip/member/90005":"uk.org.publicwhip/lord/100007",
