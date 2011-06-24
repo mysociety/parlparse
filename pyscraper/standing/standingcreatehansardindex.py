@@ -90,6 +90,9 @@ def GetReportProceedings(urlpage, year):
 
                 if re.match('https?://(www|services|subscriptions).parliament.uk', lklk): continue
 
+                # Thing in the wrong place
+                if re.match('Associated Memorandum', lkname): continue
+
                 # They've done them under bills now...
                 if int(year) >= 2009:
                         if 'PDF' in lkname: continue # We don't care about the pretty PDFs

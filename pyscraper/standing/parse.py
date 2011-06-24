@@ -959,7 +959,7 @@ class ParseCommittee:
                 elif (cssClass == 'hs_AmendmentHeading'):
                     self.display_heading(tag.string, "major")
                 elif (cssClass in ['hs_AmendmentLevel0', 
-                                   'hs_AmendmentLevel1',
+                                   'hs_AmendmentLevel1', 'hs_AmendmentLevel1Char',
                                    'hs_AmendmentLevel2',
                                    'hs_AmendmentLevel3', 
                                    'hs_AmendmentLevel4']):            
