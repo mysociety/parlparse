@@ -111,7 +111,16 @@ def GetReportProceedings(urlpage, year):
                         if mdate.group(5) == 'am': time = 'morning'
                         elif mdate.group(5) == 'pm': time = 'afternoon'
                         if res and res[-1] == [ lklk, sdate, sitting, 0, time ]: continue
-			res.append([ lklk, sdate, sitting, 0, time ])
+
+                        # In 2011, the Health and Social Care Bill 2010-11 started its sittings again at 1...
+                        # We'll add 28 to all of these so they appear in the right order.
+                        if (int(year) == 2010 and
+                            re.search('/pa/cm201011/cmpublic/health', lklk) and
+                            mx.DateTime.DateTime(*(int(x) for x in sdate.split('-'))) >= mx.DateTime.DateTime(2011, 06, 28)
+                            ):
+                                sitting += 28
+
+                        res.append([ lklk, sdate, sitting, 0, time ])
 			if not firstdate or firstdate > sdate:
 				firstdate = sdate
                         continue
@@ -204,7 +213,7 @@ def GetReportProceedings(urlpage, year):
 					prev[1] = 1
 					prev[3][3] = 1 # blank case, give it sitting number 1
 				else:
-					assert prev[1] + 1 == p[1] and prev[1] != 0
+					assert prev[1] + 1 == p[1] and prev[1] != 0 
 			else:
 				assert prev[0] + 1 == p[0]
 
