@@ -34,7 +34,7 @@ wday = today.weekday()
 if wday == 0: # Monday
     dirs = dirs[4]
     yesterday = (today - datetime.timedelta(days=3)).isoformat()
-elif wday == 1 or wday == 2 or wday == 3 or wday == 4: # Tuesday to Friday
+elif wday >= 1 and wday <= 5: # Tuesday to Saturday
     dirs = dirs[wday-1]
     yesterday = (today - datetime.timedelta(days=1)).isoformat()
 
