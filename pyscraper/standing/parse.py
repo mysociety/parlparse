@@ -952,7 +952,7 @@ class ParseCommittee:
                     self.display_chair(tag)
                 elif (tag.name == 'h5' and cssClass == 'hs_7SmCapsHdg'):
                     self.display_heading(''.join(tag(text=True)), "minor")
-                elif (cssClass == 'hs_7SmCapsHdg'):
+                elif (cssClass == 'hs_7SmCapsHdg' or cssClass == 'hs_6CntrCapsHdg'):
                     self.speaker = None
                     self.display_speech_tag()
                     self.display_para(tag)
