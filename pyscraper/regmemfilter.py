@@ -27,6 +27,7 @@ def RunRegmemFilters2010(fout, text, sdate, sdatever):
 	fout.write("<publicwhip>\n")
         
         memberset = set()
+        text = re.sub('<span class="highlight">([^<]*?)</span>', r'\1', text)
         t = BeautifulStoneSoup(text)
         for page in t('page'):
                 title = page.h2.renderContents()
