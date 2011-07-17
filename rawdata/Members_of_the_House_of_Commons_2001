@@ -21,7 +21,7 @@
 /* cache key: enwiki:resourceloader:filter:minify-css:5:f2a9127573a22335c2a9102b208c73e7 */</style>
 <script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector" type="text/javascript"></script>
 <script type="text/javascript">if ( window.mediaWiki ) {
-	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001", "wgTitle": "List of MPs elected in the United Kingdom general election, 2001", "wgAction": "view", "wgArticleId": 78984, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 434993428, "wgCategories": ["Lists of MPs elected in United Kingdom general elections", "2001 elections in the United Kingdom", "UK MPs 2001–2005"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgRevContents": {"error": "Unable to get content.", "waiting": "Waiting for content"}, "wgWikimediaMobileUrl": "http://en.m.wikipedia.org/wiki", "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "a9c61c7a46282f9a4fa41a2f40e2711f", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001", "wgTitle": "List of MPs elected in the United Kingdom general election, 2001", "wgAction": "view", "wgArticleId": 78984, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 434993428, "wgCategories": ["Lists of MPs elected in United Kingdom general elections", "2001 elections in the United Kingdom", "UK MPs 2001–2005"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgRevContents": {"error": "Unable to get content.", "waiting": "Waiting for content"}, "wgWikimediaMobileUrl": "http://en.m.wikipedia.org/wiki", "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "fcaa4f2306bc5388bccaa59246d1b6f4", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
 }
 </script>
 
@@ -3893,12 +3893,12 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 <!-- 
 NewPP limit report
 Preprocessor node count: 833/1000000
-Post-expand include size: 49730/2048000 bytes
+Post-expand include size: 49742/2048000 bytes
 Template argument size: 35198/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!*!0!!en!4 and timestamp 20110710032305 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!*!0!!en!4 and timestamp 20110713012625 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001">http://en.wikipedia.org/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001</a>"</div>
 				<!-- /bodytext -->
@@ -4109,5 +4109,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </script><script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- fixalpha -->
 		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
 		<!-- /fixalpha -->
-		<!-- Served by srv194 in 1.492 secs. -->			</body>
+		<!-- Served by srv262 in 0.176 secs. -->			</body>
 </html>
