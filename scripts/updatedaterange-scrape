@@ -16,10 +16,10 @@ cd ~/parlparse/pyscraper
 ./lazyrunall.py $4 --from=$LORDFROMDATE --to=$TODATE scrape lords || RET=1
 
 # XXX Should vary based upon weekly/daily-ness; and be more attuned than a year
-cd ~/parlparse/pyscraper/sp
-./get-official-reports.py --quiet
-./get-written-answers.py --quiet
-./get-business-bulletins.py --quiet
+#cd ~/parlparse/pyscraper/sp
+#./get-official-reports.py --quiet
+#./get-written-answers.py --quiet
+#./get-business-bulletins.py --quiet
 
 cd ~/parlparse/pyscraper/future
 ./get_future_business_and_calendar.py --quiet
