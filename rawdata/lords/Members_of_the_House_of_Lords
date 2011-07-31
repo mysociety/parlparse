@@ -20,7 +20,7 @@
 /* cache key: enwiki:resourceloader:filter:minify-css:5:f2a9127573a22335c2a9102b208c73e7 */</style>
 <script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector" type="text/javascript"></script>
 <script type="text/javascript">if ( window.mediaWiki ) {
-	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Members_of_the_House_of_Lords", "wgTitle": "Members of the House of Lords", "wgAction": "view", "wgArticleId": 269064, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 439570281, "wgCategories": ["Lists of British people", "Members of the British House of Lords"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgRevContents": {"error": "Unable to get content.", "waiting": "Waiting for content"}, "wgWikimediaMobileUrl": "http://en.m.wikipedia.org/wiki", "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "c12afdbb8cdc1ba06be08f42ef11372e", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Members_of_the_House_of_Lords", "wgTitle": "Members of the House of Lords", "wgAction": "view", "wgArticleId": 269064, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 441732653, "wgCategories": ["Lists of British people", "Members of the British House of Lords"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgRevContents": {"error": "Unable to get content.", "waiting": "Waiting for content"}, "wgWikimediaMobileUrl": "http://en.m.wikipedia.org/wiki", "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "a0b253db573e8dadc7d4897b5fe8d827", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "mbEditToken": "+\\", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
 }
 </script>
 
@@ -33,11 +33,7 @@
 			<a id="top"></a>
 			<div id="mw-js-message" style="display:none;"></div>
 						<!-- sitenotice -->
-			<div id="siteNotice"><!-- centralNotice loads here --><script type="text/javascript">
-/* <![CDATA[ */
-document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3e");
-/* ]]> */
-</script></div>
+			<div id="siteNotice"><!-- centralNotice loads here --></div>
 			<!-- /sitenotice -->
 						<!-- firstHeading -->
 			<h1 id="firstHeading" class="firstHeading">Members of the House of Lords</h1>
@@ -466,7 +462,7 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 <td><a href="/wiki/Edward_Haughey,_Baron_Ballyedmond" title="Edward Haughey, Baron Ballyedmond">The Lord Ballyedmond</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td>Also a Senator in the Irish <a href="/wiki/Seanad_Eireann" title="Seanad Eireann" class="mw-redirect">Seanad</a></td>
+<td>Also a Senator in the Irish <a href="/wiki/Seanad_%C3%89ireann" title="Seanad Éireann">Seanad</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/Ian_Paisley" title="Ian Paisley">The Lord Bannside</a></td>
@@ -645,12 +641,6 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 <tr>
 <td><a href="/wiki/Gordon_Borrie,_Baron_Borrie" title="Gordon Borrie, Baron Borrie">The Lord Borrie</a></td>
 <td><a href="/wiki/Labour_Party_(UK)" title="Labour Party (UK)">Labour</a></td>
-<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="/wiki/Terence_Boston,_Baron_Boston_of_Faversham" title="Terence Boston, Baron Boston of Faversham">The Lord Boston of Faversham</a></td>
-<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 <td></td>
 </tr>
@@ -2844,7 +2834,7 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 <td>Former Associate Producer at the [Royal Shakespeare Company]], former Executive Director of the <a href="/wiki/Royal_National_Theatre" title="Royal National Theatre">Royal National Theatre</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/James_Mackay,_Baron_Mackay_of_Clashfern" title="James Mackay, Baron Mackay of Clashfern" class="mw-redirect">The Lord Mackay of Clashfern</a></td>
+<td><a href="/wiki/James_Mackay,_Baron_Mackay_of_Clashfern" title="James Mackay, Baron Mackay of Clashfern">The Lord Mackay of Clashfern</a></td>
 <td><a href="/wiki/Conservative_Party_(UK)" title="Conservative Party (UK)">Conservative</a></td>
 <td><a href="/wiki/List_of_law_life_peerages" title="List of law life peerages">Law life peer</a></td>
 <td>Formerly <a href="/wiki/Lord_Chancellor" title="Lord Chancellor">Lord Chancellor</a> and <a href="/wiki/Law_Lord" title="Law Lord" class="mw-redirect">Law Lord</a>, Lord Advocate, a former judge of the Court of Session and editor-in-chief of Halsbury's <a href="/wiki/Laws_of_England" title="Laws of England" class="mw-redirect">Laws of England</a></td>
@@ -5058,6 +5048,12 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 <td><span style="display:none; speak:none">02011-06-26</span><span style="white-space:nowrap;">26 June 2011</span></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
 </tr>
+<tr>
+<td><a href="/wiki/Terence_Boston,_Baron_Boston_of_Faversham" title="Terence Boston, Baron Boston of Faversham">The Lord Boston of Faversham</a></td>
+<td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
+<td><span style="display:none; speak:none">02011-07-23</span><span style="white-space:nowrap;">23 July 2011</span></td>
+<td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
+</tr>
 </table>
 <h2><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=5" title="Edit section: Peers disqualified">edit</a>]</span> <span class="mw-headline" id="Peers_disqualified">Peers disqualified</span></h2>
 <h3><span class="editsection">[<a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;action=edit&amp;section=6" title="Edit section: Members of the European Parliament">edit</a>]</span> <span class="mw-headline" id="Members_of_the_European_Parliament">Members of the European Parliament</span></h3>
@@ -5120,13 +5116,13 @@ document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 2134/1000000
-Post-expand include size: 14460/2048000 bytes
-Template argument size: 4580/2048000 bytes
+Preprocessor node count: 2193/1000000
+Post-expand include size: 15104/2048000 bytes
+Template argument size: 4676/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!*!0!!en!* and timestamp 20110715064302 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!*!0!!en!* and timestamp 20110727165721 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 				<!-- /bodytext -->
@@ -5266,8 +5262,8 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_House_of_Lords" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
-											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=439570281" title="Permanent link to this revision of the page">Permanent link</a></li>
-				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=439570281" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+											<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;oldid=441732653" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_House_of_Lords&amp;id=441732653" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -5277,7 +5273,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=439570281&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+House+of+Lords" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+House+of+Lords&amp;oldid=441732653&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_House_of_Lords&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -5298,7 +5294,7 @@ Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lo
 		<!-- footer -->
 		<div id="footer">
 											<ul id="footer-info">
-																	<li id="footer-info-lastmod"> This page was last modified on 15 July 2011 at 05:58.<br /></li>
+																	<li id="footer-info-lastmod"> This page was last modified on 27 July 2011 at 16:57.<br /></li>
 																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="http://wikimediafoundation.org/wiki/Terms_of_use">Terms of use</a> for details.<br/>
@@ -5337,5 +5333,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </script><script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- fixalpha -->
 		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
 		<!-- /fixalpha -->
-		<!-- Served by srv159 in 5.902 secs. -->			</body>
+		<!-- Served by srv230 in 0.101 secs. -->			</body>
 </html>
