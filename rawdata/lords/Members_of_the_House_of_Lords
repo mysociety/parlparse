@@ -20,7 +20,7 @@
 /* cache key: enwiki:resourceloader:filter:minify-css:5:f2a9127573a22335c2a9102b208c73e7 */</style>
 <script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector" type="text/javascript"></script>
 <script type="text/javascript">if ( window.mediaWiki ) {
-	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Members_of_the_House_of_Lords", "wgTitle": "Members of the House of Lords", "wgAction": "view", "wgArticleId": 269064, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 445405935, "wgCategories": ["Lists of British people", "Members of the British House of Lords"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgRevContents": {"error": "Unable to get content.", "waiting": "Waiting for content"}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "f5e6cd0ac5fde347dc3a9fd623c52975", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "mbEditToken": "+\\", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Members_of_the_House_of_Lords", "wgTitle": "Members of the House of Lords", "wgAction": "view", "wgArticleId": 269064, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 445405935, "wgCategories": ["Lists of British people", "Members of the British House of Lords"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgRevContents": {"error": "Unable to get content.", "waiting": "Waiting for content"}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "3897c0ab06559207f005bdcccb407fc4", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "mbEditToken": "+\\", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
 }
 </script>
 
@@ -3639,7 +3639,7 @@
 <td><a href="/wiki/Baron_Rees-Mogg" title="Baron Rees-Mogg" class="mw-redirect">The Lord Rees-Mogg</a></td>
 <td><a href="/wiki/Crossbencher" title="Crossbencher">Crossbench</a></td>
 <td><a href="/wiki/Life_peer" title="Life peer">Life peer</a></td>
-<td>Journalist and chairman of <a href="/w/index.php?title=Pickering_%26_Chatto_Publishers&amp;action=edit&amp;redlink=1" class="new" title="Pickering &amp; Chatto Publishers (page does not exist)">Pickering &amp; Chatto Publishers</a> and of <a href="/wiki/NewsMax_Media" title="NewsMax Media" class="mw-redirect">NewsMax Media</a></td>
+<td>Journalist and chairman of <a href="/wiki/Pickering_%26_Chatto_Publishers" title="Pickering &amp; Chatto Publishers">Pickering &amp; Chatto Publishers</a> and of <a href="/wiki/NewsMax_Media" title="NewsMax Media" class="mw-redirect">NewsMax Media</a></td>
 </tr>
 <tr>
 <td><a href="/wiki/John_Reid,_Baron_Reid_of_Cardowan" title="John Reid, Baron Reid of Cardowan">The Lord Reid of Cardowan</a></td>
@@ -5117,12 +5117,12 @@
 <!-- 
 NewPP limit report
 Preprocessor node count: 2250/1000000
-Post-expand include size: 15744/2048000 bytes
+Post-expand include size: 15746/2048000 bytes
 Template argument size: 4772/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!*!0!!en!* and timestamp 20110817220325 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:269064-0!*!0!!en!* and timestamp 20110824102132 -->
 <div class="printfooter">
 Retrieved from "<a href="http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords">http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords</a>"</div>
 				<!-- /bodytext -->
@@ -5334,5 +5334,5 @@ Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafou
 </script><script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- fixalpha -->
 		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
 		<!-- /fixalpha -->
-		<!-- Served by srv179 in 3.058 secs. -->			</body>
+		<!-- Served by srv155 in 0.309 secs. -->			</body>
 </html>
