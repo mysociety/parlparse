@@ -156,7 +156,7 @@ B - bishop
 	forenames="Geoffrey"
 	title="Lord" lordname="Ampthill" lordofname=""
 	peeragetype="HD" affiliation="XB"
-	fromdate="1973" todate="9999-12-31"
+	fromdate="1973" todate="2011-04-23" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100015"
@@ -11630,8 +11630,25 @@ B - bishop
 	house="lords"
 	forenames="John Peter Michael Scawen"
 	title="Earl" lordname="" lordofname="Lytton"
-	peeragetype="HD" affiliation="XB"
+	peeragetype="HP" affiliation="XB"
 	fromdate="2011-05-18" todate="9999-12-31"
+/>
+
+<lord
+	id="uk.org.publicwhip/lord/101135"
+	house="lords"
+	forenames="Charles Mark Townshend"
+	title="Viscount" lordname="Colville" lordofname="Culross"
+	peeragetype="HD" affiliation="XB"
+	fromdate="2011-07-20" todate="9999-12-31"
+/>
+<lord
+	id="uk.org.publicwhip/lord/101136"
+	house="lords"
+	forenames="Thomas Henry"
+	title="Lord" lordname="Ashton" lordofname="Hyde"
+	peeragetype="HP" affiliation="Con"
+	fromdate="2011-07-20" todate="9999-12-31"
 />
 
 <!--
