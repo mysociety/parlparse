@@ -205,7 +205,7 @@ def TokenHonFriend(mhonfriend, phrtok):
 	else:
 		nid = res[0]
 		mname = res[1]
-	assert not re.search("&", mname)
+	assert not re.search("&", mname), mname
 	
 	# remove any xml entities from the name
 	orgname = res[1]
