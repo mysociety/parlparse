@@ -182,7 +182,7 @@ def StandingPullGluePages(datefrom, dateto, bforcescrape):
 		ldgfnext = '%s%s.html' % (dnu[0], dgfnextalpha)
 		dgfnext = os.path.join(pwstandingpages, ldgfnext)
 		assert not dgflatest or os.path.isfile(dgflatest)
-		assert not os.path.isfile(dgfnext)
+		assert not os.path.isfile(dgfnext), dgfnext
 		dgfnextstem = "%s%s" % (dnu[0], dgfnextalpha)
 		dgflateststem = "%s%s" % (dnu[0], dgflatestalpha)
 
