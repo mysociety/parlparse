@@ -244,6 +244,9 @@ def get_committee_attributes(committees):
                         continue
                 if index_url == 'http://services.parliament.uk/bills/2010-11/armedforces/committees/houseofcommonspublicbillcommitteeonthearmedforcesbill201011.html':
                         continue
+                if 'Police Reform and Social Responsibility' in index_text and 'policereform' not in index_url:
+                        index_url = 'http://services.parliament.uk/bills/2010-11/policereformandsocialresponsibility/committees/houseofcommonspublicbillcommitteeonthepolicereformandsocialresponsibilitybill201011.html'
+
                 mcttee = re.match("""
         # The name of the Bill (occasionally they forget to put 'Bill')
         (.*?[ ](?:Bill|Dogs|Schools[ ]and[ ]Families|Names))
