@@ -366,7 +366,7 @@ class ParseDay:
 					self.speaker = (self.speaker[0], timestamp)
 				match = re.search('\(((?:Mr|Madam) Speaker)', ptext)
 				if not match:
-					match = re.search('\(Mr Deputy Speaker \[(.*?)\]', ptext)
+					match = re.search('\(Mr (?:Principal )?Deputy Speaker \[(.*?)\]', ptext)
 				if match:
 					#print "Setting deputy to %s" % match.group(1)
 					memberList.setDeputy(match.group(1))
