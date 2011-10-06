@@ -67,7 +67,7 @@ def LordsFilterSpeakers(fout, text, sdate):
 			fout.write(fss)
 			continue
 
-		# another title type (all caps)
+		# another title type (all caps), or a clause number
 		if not re.search('[a-z]', fssb):
 			fout.write(fss)
 			continue
