@@ -30,7 +30,7 @@ def scrape_new_ni():
         page = page.replace('990315', '990715').replace('000617', '000619').replace('060706', '060606')
         page = page.replace('060919', '060919p').replace('071101', '071001').replace('071102', '071002')
 
-        match = re.findall('<a href="([^"]*(p?)(\d{6})(i?)\.htm)">View (?:as|in) HTML *</a>', page)
+        match = re.findall('<a href="([^"]*(p?)(\d{6})(i?)(?:today)?\.htm)">View (?:as|in) HTML *</a>', page)
         for day in match:
             url_day = urlparse.urljoin(url, day[0])
             date = time.strptime(day[2], "%y%m%d")
