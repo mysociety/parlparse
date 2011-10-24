@@ -158,7 +158,10 @@ def GrabLordDivisionProced(qbp, qbd):
 	return qbdp
 
 renewlorddiv = re.compile('<p[^>]*>(?:\*\s*)?Contents,? (\d+)\*? ?; Not-Contents,? (\d+)\*?\.?</p>$')
-redivisionon = re.compile('<p[^>]*>Division on (.*?\'s (Motion|Amendment)(?: to the Motion)?|(the )?(?:Amendment|Motion|Clause) ([A-Za-z0-9]+|[A-Za-z0-9]+ to motion [A-Za-z0-9]+|to the Motion|that the Question be now put|to Resume)(?: Stand Part)?|(?:the )?Motion|adjournment of consideration of Motion [A-Z])\.*</p>(?i)')
+redivisionon = re.compile(
+    '<p[^>]*>Division on (.*?\'s (Motion|Amendment)(?: to the Motion)?|(?:whether )?(?:the )?(?:Amendment|Motion|Clause) ([A-Za-z0-9]+|[A-Za-z0-9]+ to motion [A-Za-z0-9]+|to the Motion|that the Question be now put|to Resume)(?: should)?(?: Stand Part)?(?: of)?(?: The Bill)?|(?:the )?Motion|adjournment of consideration of Motion [A-Z])\.*</p>(?i)'
+        )
+
 def NewGrabLordDivisionProced(qbp, qbd):
 	if not re.match("speech|motion", qbp.typ) or len(qbp.stext) < 1:
 		print qbp.stext
