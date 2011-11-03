@@ -192,7 +192,7 @@ rehonfriend = re.compile('''(?ix)
 	member\sfor\s
 	([^(]{3,60}?)			# group 1 the name of the constituency
 	\s*
-	\(([^)]{5,60}?)(?:&\#146;s)?\)		# group 2 the name of the MP, inserted for clarity.
+	\(([^)]{5,60}?)(?:&\#(?:146|8217);s)?\)		# group 2 the name of the MP, inserted for clarity.
 ''')
 rehonfriendmarg = re.compile('the\s+(hon\.\s*)?member for [^(]{0,60}\((?i)')
 def TokenHonFriend(mhonfriend, phrtok):
