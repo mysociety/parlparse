@@ -24,10 +24,10 @@
     <name text="North East Scotland"/>
     <name text="North-East Scotland"/>
   </constituency>
-  <constituency fromdate="1999-05-06" id="uk.org.publicwhip/cons/10722" todate="9999-12-31" parliament="edinburgh" type="region">
+  <constituency fromdate="1999-05-06" id="uk.org.publicwhip/cons/10722" todate="2011-05-04" parliament="edinburgh" type="region">
     <name text="South of Scotland"/>
   </constituency>
-  <constituency fromdate="1999-05-06" id="uk.org.publicwhip/cons/10723" todate="9999-12-31" parliament="edinburgh" type="region">
+  <constituency fromdate="1999-05-06" id="uk.org.publicwhip/cons/10723" todate="2011-05-04" parliament="edinburgh" type="region">
     <name text="West of Scotland"/>
   </constituency>
 
@@ -376,6 +376,12 @@
 
   <constituency fromdate="2011-05-05" id="uk.org.publicwhip/cons/10836" todate="9999-12-31" parliament="edinburgh" type="region">
     <name text="Lothian"/>
+  </constituency>
+  <constituency fromdate="2011-05-05" id="uk.org.publicwhip/cons/10837" todate="9999-12-31" parliament="edinburgh" type="region">
+    <name text="South Scotland"/>
+  </constituency>
+  <constituency fromdate="2011-05-05" id="uk.org.publicwhip/cons/10838" todate="9999-12-31" parliament="edinburgh" type="region">
+    <name text="West Scotland"/>
   </constituency>
 
 </publicwhip>
