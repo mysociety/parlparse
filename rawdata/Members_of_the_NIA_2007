@@ -16,12 +16,12 @@
 <link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.wikihiero%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" type="text/css" media="all" />
 <meta name="ResourceLoaderDynamicStyles" content="" />
 <link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" type="text/css" media="all" />
-<style type="text/css" media="all">a.new,#quickbar a.new{color:#ba0000}
+<style type="text/css" media="all">a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
 
-/* cache key: enwiki:resourceloader:filter:minify-css:4:f2a9127573a22335c2a9102b208c73e7 */</style>
+/* cache key: enwiki:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */</style>
 <script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
 <script type="text/javascript">if ( window.mediaWiki ) {
-	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Members_of_the_Northern_Ireland_Assembly_elected_in_2007", "wgTitle": "Members of the Northern Ireland Assembly elected in 2007", "wgCurRevisionId": 436586756, "wgArticleId": 9807646, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Northern Ireland MLAs 2007–2011", "Lists of Northern Irish parliamentarians", "Northern Ireland-related lists"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "hidesig": true, "templateEditor": false, "templates": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "f808f4333c8f3431f1eaed329bc85050", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "mbEditToken": "+\\", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Members_of_the_Northern_Ireland_Assembly_elected_in_2007", "wgTitle": "Members of the Northern Ireland Assembly elected in 2007", "wgCurRevisionId": 459980399, "wgArticleId": 9807646, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Northern Ireland MLAs 2007–2011", "Lists of Northern Irish parliamentarians", "Northern Ireland-related lists"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "hidesig": true, "templateEditor": false, "templates": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "e649f8fd37b2de270cd64e3f8746ab17", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "mbEditToken": "+\\", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
 }
 </script><script type="text/javascript">if ( window.mediaWiki ) {
 	mw.loader.load(["mediawiki.page.startup"]);
@@ -77,13 +77,6 @@ Northern Ireland</a></b></p>
 <div class="NavHead" style="background-color:#ccccff;border:1px solid #000000;padding: 0px 0px 0px 4px; font-size: 100%; text-align:left;margin:0px;color:#330000"><b><a href="/wiki/Northern_Ireland_Executive" title="Northern Ireland Executive">Executive</a></b></div>
 <div class="NavContent" style="text-align:left;margin:0px 1px;border:none;text-weight:bold;display:none;">
 <ul>
-<li><a href="/wiki/Monarchy_of_the_United_Kingdom" title="Monarchy of the United Kingdom">Sovereign</a>
-<ul>
-<li><a href="/wiki/Elizabeth_II_of_the_United_Kingdom" title="Elizabeth II of the United Kingdom" class="mw-redirect">Queen Elizabeth II</a></li>
-</ul>
-</li>
-<li><a href="/wiki/The_Crown" title="The Crown">The Crown</a></li>
-<li><a href="/wiki/Privy_Council_of_the_United_Kingdom" title="Privy Council of the United Kingdom">Privy Council</a></li>
 <li><a href="/wiki/Executive_of_the_3rd_Northern_Ireland_Assembly" title="Executive of the 3rd Northern Ireland Assembly">Executive Committee</a>
 <ul>
 <li><a href="/wiki/First_Minister_and_deputy_First_Minister" title="First Minister and deputy First Minister">First Minister</a>
@@ -103,11 +96,6 @@ Northern Ireland</a></b></p>
 <li><a href="/wiki/List_of_government_departments,_their_agencies_and_their_ministers_in_Northern_Ireland" title="List of government departments, their agencies and their ministers in Northern Ireland">Departments</a></li>
 </ul>
 </li>
-<li><a href="/wiki/Northern_Ireland_Executive" title="Northern Ireland Executive">Executives</a>
-<ul>
-<li><a href="/wiki/Executive_of_the_1st_Northern_Ireland_Assembly" title="Executive of the 1st Northern Ireland Assembly">First</a>, <a href="/wiki/Executive_of_the_2nd_Northern_Ireland_Assembly" title="Executive of the 2nd Northern Ireland Assembly">Second</a>, <a href="/wiki/Executive_of_the_3rd_Northern_Ireland_Assembly" title="Executive of the 3rd Northern Ireland Assembly">Third</a>, <a href="/wiki/Executive_of_the_4th_Northern_Ireland_Assembly" title="Executive of the 4th Northern Ireland Assembly">Fourth</a></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
@@ -115,26 +103,29 @@ Northern Ireland</a></b></p>
 <div class="NavHead" style="background-color:#ccccff;border:1px solid #000000;padding: 0px 0px 0px 4px; font-size: 100%; text-align:left;margin:0px;color:#330000"><b><a href="/wiki/Northern_Ireland_Assembly" title="Northern Ireland Assembly">Assembly</a></b></div>
 <div class="NavContent" style="text-align:left;margin:0px 1px;border:none;text-weight:bold;display:none;">
 <ul>
+<li><a href="/wiki/List_of_Acts_of_the_Northern_Ireland_Assembly" title="List of Acts of the Northern Ireland Assembly">Acts</a></li>
+<li><a href="/wiki/List_of_Statutory_Rules_of_Northern_Ireland" title="List of Statutory Rules of Northern Ireland" class="mw-redirect">Statutory rules</a></li>
 <li><a href="/wiki/Speaker_of_the_Northern_Ireland_Assembly" title="Speaker of the Northern Ireland Assembly">Speaker</a>
 <ul>
 <li><a href="/wiki/William_Hay_(Northern_Ireland_politician)" title="William Hay (Northern Ireland politician)">William Hay</a> <a href="/wiki/Member_of_the_Legislative_Assembly_(Northern_Ireland)" title="Member of the Legislative Assembly (Northern Ireland)">MLA</a></li>
 </ul>
 </li>
-<li><a href="/wiki/Member_of_the_Legislative_Assembly_(Northern_Ireland)" title="Member of the Legislative Assembly (Northern Ireland)">Members (MLA)</a>
-<ul>
-<li><a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_1998" title="Members of the Northern Ireland Assembly elected in 1998">1998</a>, <a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2003" title="Members of the Northern Ireland Assembly elected in 2003">2003</a>, <strong class="selflink">2007</strong>, <a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2011" title="Members of the Northern Ireland Assembly elected in 2011">2011</a></li>
-</ul>
-</li>
 <li><a href="/wiki/List_of_committees_of_the_Northern_Ireland_Assembly" title="List of committees of the Northern Ireland Assembly">Committees</a></li>
-<li><a href="/wiki/List_of_Acts_of_the_Northern_Ireland_Assembly" title="List of Acts of the Northern Ireland Assembly">Acts</a></li>
-<li><a href="/wiki/List_of_Statutory_Rules_of_Northern_Ireland" title="List of Statutory Rules of Northern Ireland" class="mw-redirect">Statutory Rules</a></li>
-<li><a href="/wiki/Elections_in_Northern_Ireland" title="Elections in Northern Ireland">Elections</a>
-<ul>
-<li><a href="/wiki/Northern_Ireland_Assembly_election,_1998" title="Northern Ireland Assembly election, 1998">1998</a>, <a href="/wiki/Northern_Ireland_Assembly_election,_2003" title="Northern Ireland Assembly election, 2003">2003</a>, <a href="/wiki/Northern_Ireland_Assembly_election,_2007" title="Northern Ireland Assembly election, 2007">2007</a>, <a href="/wiki/Northern_Ireland_Assembly_election,_2011" title="Northern Ireland Assembly election, 2011">2011</a></li>
+<li><a href="/wiki/Member_of_the_Legislative_Assembly_(Northern_Ireland)" title="Member of the Legislative Assembly (Northern Ireland)">Members (MLA)</a></li>
+<li><a href="/wiki/Elections_in_Northern_Ireland" title="Elections in Northern Ireland">Elections in Northern Ireland</a></li>
 <li><a href="/wiki/List_of_Parliamentary_constituencies_in_Northern_Ireland" title="List of Parliamentary constituencies in Northern Ireland" class="mw-redirect">Constituencies</a></li>
-<li><a href="/wiki/List_of_political_parties_in_Northern_Ireland" title="List of political parties in Northern Ireland">Political Parties</a></li>
+<li><a href="/wiki/List_of_political_parties_in_Northern_Ireland" title="List of political parties in Northern Ireland">Political parties</a></li>
+<li><a href="/wiki/Northern_Ireland_Assembly_election,_2011" title="Northern Ireland Assembly election, 2011">Last election</a></li>
+<li><a href="/w/index.php?title=Northern_Ireland_Assembly_election,_2016&amp;action=edit&amp;redlink=1" class="new" title="Northern Ireland Assembly election, 2016 (page does not exist)">Next election</a></li>
 </ul>
-</li>
+</div>
+</div>
+<div class="NavFrame">
+<div class="NavHead" style="background-color:#ccccff;border:1px solid #000000;padding: 0px 0px 0px 4px; font-size: 100%; text-align:left;margin:0px;color:#330000"><b><a href="/wiki/Northern_Irish_Law" title="Northern Irish Law" class="mw-redirect">Northern Irish Law</a></b></div>
+<div class="NavContent" style="text-align:left;margin:0px 1px;border:none;text-weight:bold;display:none;">
+<ul>
+<li><a href="/wiki/Supreme_Court_of_the_United_Kingdom" title="Supreme Court of the United Kingdom">Supreme Court of the United Kingdom</a></li>
+<li><a href="/wiki/Courts_of_Northern_Ireland" title="Courts of Northern Ireland">Courts of Northern Ireland</a></li>
 </ul>
 </div>
 </div>
@@ -148,28 +139,16 @@ Northern Ireland</a></b></p>
 <li><a href="/wiki/Owen_Paterson" title="Owen Paterson">Owen Paterson</a> <a href="/wiki/Member_of_Parliament" title="Member of Parliament">MP</a></li>
 </ul>
 </li>
+</ul>
+<p><b><a href="/wiki/Parliament_of_the_United_Kingdom" title="Parliament of the United Kingdom">Parliament of the United Kingdom</a></b></p>
+<ul>
 <li><a href="/wiki/Northern_Ireland_Office" title="Northern Ireland Office">Northern Ireland Office</a></li>
-<li><a href="/wiki/Reserved_and_excepted_matters" title="Reserved and excepted matters">Reserved and excepted matters</a></li>
+<li><a href="/wiki/Reserved_and_excepted_matters#Northern_Ireland" title="Reserved and excepted matters">Reserved and excepted matters</a></li>
 <li><a href="/wiki/Direct_Rule" title="Direct Rule" class="mw-redirect">Direct Rule</a></li>
-</ul>
-<p><b><a href="/wiki/United_Kingdom_Parliament" title="United Kingdom Parliament" class="mw-redirect">UK Parliament</a></b></p>
-<ul>
-<li><a href="/wiki/List_of_MPs_for_Northern_Irish_constituencies_2005-" title="List of MPs for Northern Irish constituencies 2005-" class="mw-redirect">Commons</a></li>
-<li><a href="/wiki/List_of_Northern_Ireland_Members_of_the_House_of_Lords" title="List of Northern Ireland Members of the House of Lords" class="mw-redirect">Lords</a></li>
-<li><a href="/wiki/List_of_Northern_Ireland_members_of_the_Privy_Council" title="List of Northern Ireland members of the Privy Council">Privy Council</a></li>
-<li><a href="/wiki/Northern_Ireland_Affairs_Committee" title="Northern Ireland Affairs Committee" class="mw-redirect">Select Committee</a></li>
 <li><a href="/wiki/Northern_Ireland_Grand_Committee" title="Northern Ireland Grand Committee">Grand Committee</a></li>
-<li><a href="/wiki/List_of_Acts_of_Parliament_in_the_United_Kingdom" title="List of Acts of Parliament in the United Kingdom">Acts</a></li>
-<li><a href="/wiki/Elections_in_Northern_Ireland" title="Elections in Northern Ireland">Elections</a>
-<ul>
-<li><a href="/wiki/United_Kingdom_general_election,_1922" title="United Kingdom general election, 1922">1922</a>, <a href="/wiki/United_Kingdom_general_election,_1923" title="United Kingdom general election, 1923">1923</a>, <a href="/wiki/United_Kingdom_general_election,_1924" title="United Kingdom general election, 1924">1924</a>, <a href="/wiki/United_Kingdom_general_election,_1929" title="United Kingdom general election, 1929">1929</a>,<br />
-<a href="/wiki/United_Kingdom_general_election,_1931" title="United Kingdom general election, 1931">1931</a>, <a href="/wiki/United_Kingdom_general_election,_1935" title="United Kingdom general election, 1935">1935</a>, <a href="/wiki/United_Kingdom_general_election,_1945" title="United Kingdom general election, 1945">1945</a>, <a href="/wiki/United_Kingdom_general_election,_1950" title="United Kingdom general election, 1950">1950</a>,<br />
-<a href="/wiki/United_Kingdom_general_election,_1951" title="United Kingdom general election, 1951">1951</a>, <a href="/wiki/United_Kingdom_general_election,_1955" title="United Kingdom general election, 1955">1955</a>, <a href="/wiki/United_Kingdom_general_election,_1959" title="United Kingdom general election, 1959">1959</a>, <a href="/wiki/United_Kingdom_general_election,_1964" title="United Kingdom general election, 1964">1964</a>, <a href="/wiki/United_Kingdom_general_election,_1966" title="United Kingdom general election, 1966">1966</a>,<br />
-<a href="/wiki/United_Kingdom_general_election,_1970" title="United Kingdom general election, 1970">1970</a>, <a href="/wiki/United_Kingdom_general_election,_February_1974" title="United Kingdom general election, February 1974">1974 (Feb)</a>, <a href="/wiki/United_Kingdom_general_election,_October_1974" title="United Kingdom general election, October 1974">1974 (Oct)</a>, <a href="/wiki/United_Kingdom_general_election,_1979" title="United Kingdom general election, 1979">1979</a>,<br />
-<a href="/wiki/United_Kingdom_general_election,_1983" title="United Kingdom general election, 1983">1983</a>, <a href="/wiki/United_Kingdom_general_election,_1987" title="United Kingdom general election, 1987">1987</a>, <a href="/wiki/United_Kingdom_general_election,_1992" title="United Kingdom general election, 1992">1992</a>, <a href="/wiki/United_Kingdom_general_election,_1997" title="United Kingdom general election, 1997">1997</a>,<br />
-<a href="/wiki/United_Kingdom_general_election,_2001" title="United Kingdom general election, 2001">2001</a>, <a href="/wiki/United_Kingdom_general_election,_2005" title="United Kingdom general election, 2005">2005</a>, <a href="/wiki/United_Kingdom_general_election,_2010" title="United Kingdom general election, 2010">2010</a></li>
-</ul>
-</li>
+<li><a href="/wiki/Northern_Ireland_Affairs_Committee" title="Northern Ireland Affairs Committee" class="mw-redirect">Select Committee</a></li>
+<li><a href="/wiki/Elections_in_Northern_Ireland" title="Elections in Northern Ireland">Elections</a></li>
+<li><a href="/wiki/List_of_MPs_for_constituencies_in_Northern_Ireland_2010-" title="List of MPs for constituencies in Northern Ireland 2010-" class="mw-redirect">List of Northern Irish MPs</a></li>
 </ul>
 </div>
 </div>
@@ -178,13 +157,8 @@ Northern Ireland</a></b></p>
 <div class="NavContent" style="text-align:left;margin:0px 1px;border:none;text-weight:bold;display:none;">
 <p><b><a href="/wiki/European_Parliament" title="European Parliament">European Parliament</a></b></p>
 <ul>
+<li><a href="/wiki/Elections_in_Northern_Ireland" title="Elections in Northern Ireland">Elections</a></li>
 <li><a href="/wiki/Northern_Ireland_(European_Parliament_constituency)" title="Northern Ireland (European Parliament constituency)">Constituency &amp; MEPs</a></li>
-<li><a href="/wiki/Elections_in_Northern_Ireland" title="Elections in Northern Ireland">Elections</a>
-<ul>
-<li><a href="/wiki/European_Parliament_election,_1979_(United_Kingdom)" title="European Parliament election, 1979 (United Kingdom)">1979</a>, <a href="/wiki/European_Parliament_election,_1984_(United_Kingdom)" title="European Parliament election, 1984 (United Kingdom)">1984</a>, <a href="/wiki/European_Parliament_election,_1989_(United_Kingdom)" title="European Parliament election, 1989 (United Kingdom)">1989</a>,<br />
-<a href="/wiki/European_Parliament_election,_1994_(United_Kingdom)" title="European Parliament election, 1994 (United Kingdom)">1994</a>, <a href="/wiki/European_Parliament_election,_1999_(United_Kingdom)" title="European Parliament election, 1999 (United Kingdom)">1999</a>, <a href="/wiki/European_Parliament_election,_2004_(United_Kingdom)" title="European Parliament election, 2004 (United Kingdom)">2004</a>, <a href="/wiki/European_Parliament_election,_2009_(United_Kingdom)" title="European Parliament election, 2009 (United Kingdom)">2009</a></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
@@ -193,33 +167,8 @@ Northern Ireland</a></b></p>
 <div class="NavContent" style="text-align:left;margin:0px 1px;border:none;text-weight:bold;display:none;">
 <ul>
 <li><a href="/wiki/Local_government_in_Northern_Ireland" title="Local government in Northern Ireland">Local government in Northern Ireland</a></li>
-<li>Cities
-<ul>
-<li><a href="/wiki/Armagh_City_and_District_Council" title="Armagh City and District Council">Armagh</a>, <a href="/wiki/Belfast_City_Council" title="Belfast City Council">Belfast</a>, <a href="/wiki/Derry_City_Council" title="Derry City Council">Derry</a>, <a href="/wiki/Lisburn_City_Council" title="Lisburn City Council">Lisburn</a></li>
-</ul>
-</li>
-<li>Boroughs
-<ul>
-<li><a href="/wiki/Antrim_(borough)" title="Antrim (borough)">Antrim</a>, <a href="/wiki/Ards_(borough)" title="Ards (borough)">Ards</a>, <a href="/wiki/Ballymena_(borough)" title="Ballymena (borough)">Ballymena</a><br />
-<a href="/wiki/Ballymoney_(borough)" title="Ballymoney (borough)">Ballymoney</a>, <a href="/wiki/Banbridge_(district)" title="Banbridge (district)">Banbridge</a>, <a href="/wiki/Carrickfergus_Borough_Council" title="Carrickfergus Borough Council">Carrickfergus</a><br />
-<a href="/wiki/Castlereagh_(borough)" title="Castlereagh (borough)">Castlereagh</a>, <a href="/wiki/Coleraine_Borough_Council" title="Coleraine Borough Council">Coleraine</a>, <a href="/wiki/Craigavon_Borough_Council" title="Craigavon Borough Council">Craigavon</a><br />
-<a href="/wiki/Dungannon_and_South_Tyrone_Borough_Council" title="Dungannon and South Tyrone Borough Council">Dungannon &amp; South Tyrone</a>, <a href="/wiki/Larne_Borough_Council" title="Larne Borough Council">Larne</a><br />
-<a href="/wiki/Limavady_Borough_Council" title="Limavady Borough Council">Limavady</a>, <a href="/wiki/Newtownabbey_Borough_Council" title="Newtownabbey Borough Council">Newtownabbey</a> • <a href="/wiki/North_Down_Borough_Council" title="North Down Borough Council">North Down</a></li>
-</ul>
-</li>
-<li>Districts
-<ul>
-<li><a href="/wiki/Cookstown_District_Council" title="Cookstown District Council">Cookstown</a>, <a href="/wiki/Down_District_Council" title="Down District Council">Down</a>, <a href="/wiki/Fermanagh_District_Council" title="Fermanagh District Council">Fermanagh</a><br />
-<a href="/wiki/Magherafelt_District_Council" title="Magherafelt District Council">Magherafelt</a>, <a href="/wiki/Moyle_District_Council" title="Moyle District Council">Moyle</a>, <a href="/wiki/Newry_and_Mourne_District_Council" title="Newry and Mourne District Council">Newry &amp; Mourne</a><br />
-<a href="/wiki/Omagh_District_Council" title="Omagh District Council">Omagh</a>, <a href="/wiki/Strabane_District_Council" title="Strabane District Council">Strabane</a></li>
-</ul>
-</li>
-<li>Local government elections
-<ul>
-<li><a href="/wiki/Northern_Ireland_local_government_elections,_1973" title="Northern Ireland local government elections, 1973">1973</a>, <a href="/wiki/Northern_Ireland_local_government_elections,_1977" title="Northern Ireland local government elections, 1977">1977</a>, <a href="/wiki/Northern_Ireland_local_government_elections,_1981" title="Northern Ireland local government elections, 1981">1981</a>, <a href="/wiki/Northern_Ireland_local_government_elections,_1985" title="Northern Ireland local government elections, 1985">1985</a>, <a href="/wiki/Northern_Ireland_local_government_elections,_1989" title="Northern Ireland local government elections, 1989">1989</a><br />
-<a href="/wiki/Northern_Ireland_local_government_elections,_1993" title="Northern Ireland local government elections, 1993">1993</a>, <a href="/wiki/Northern_Ireland_local_government_elections,_1997" title="Northern Ireland local government elections, 1997">1997</a>, <a href="/wiki/Northern_Ireland_local_government_elections,_2001" title="Northern Ireland local government elections, 2001">2001</a>, <a href="/wiki/Northern_Ireland_local_government_elections,_2005" title="Northern Ireland local government elections, 2005">2005</a>, <a href="/wiki/Northern_Ireland_local_government_elections,_2011" title="Northern Ireland local government elections, 2011">2011</a></li>
-</ul>
-</li>
+<li><a href="/wiki/Counties_of_Northern_Ireland" title="Counties of Northern Ireland">Counties</a></li>
+<li><a href="/wiki/Local_government_in_Northern_Ireland#Districts" title="Local government in Northern Ireland">Districts</a></li>
 </ul>
 </div>
 </div>
@@ -230,7 +179,7 @@ Northern Ireland</a></b></p>
 <hr />
 <p><small><a href="/wiki/Politics_of_present-day_nations_and_states" title="Politics of present-day nations and states" class="mw-redirect">Other countries</a></small>&#160;<span style="font-weight:bold;">·</span>  <small><a href="//commons.wikimedia.org/wiki/Atlas_of_Northern_Ireland" class="extiw" title="commons:Atlas of Northern Ireland">Atlas</a></small><br />
 <b><a href="/wiki/Portal:Politics" title="Portal:Politics">Politics portal</a></b><br />
-<span class="noprint plainlinks navbar" style=""><span style="white-space:nowrap;word-spacing:-.12em;"><a href="/wiki/Template:Politics_of_Northern_Ireland" title="Template:Politics of Northern Ireland"><span style="" title="View this template">view</span></a> <span style=""><b>·</b></span> <a href="/wiki/Template_talk:Politics_of_Northern_Ireland" title="Template talk:Politics of Northern Ireland"><span style="" title="Discuss this template">talk</span></a> <span style=""><b>·</b></span> <a rel="nofollow" class="external text" href="//en.wikipedia.org/w/index.php?title=Template:Politics_of_Northern_Ireland&amp;action=edit"><span style="" title="Edit this template">edit</span></a></span></span></p>
+<span class="noprint plainlinks navbar" style=""><span style="white-space:nowrap;word-spacing:-.12em;"><a href="/wiki/Template:Politics_of_Northern_Ireland" title="Template:Politics of Northern Ireland"><span style="" title="View this template">view</span></a> <span style=""><b>·</b></span> <a href="/wiki/Template_talk:Politics_of_Northern_Ireland" title="Template talk:Politics of Northern Ireland"><span style="" title="Discuss this template">talk</span></a> <span style=""><b>·</b></span> <a class="external text" href="//en.wikipedia.org/w/index.php?title=Template:Politics_of_Northern_Ireland&amp;action=edit"><span style="" title="Edit this template">edit</span></a></span></span></p>
 </td>
 </tr>
 </table>
@@ -639,7 +588,7 @@ Northern Ireland</a></b></p>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
 <tr>
-<td><a href="/wiki/David_Simpson_(UK_politician)" title="David Simpson (UK politician)">David Simpson</a> (resigned), replaced by <a href="/wiki/Sidney_Anderson" title="Sidney Anderson">Sidney Anderson</a></td>
+<td><a href="/wiki/David_Simpson_(UK_politician)" title="David Simpson (UK politician)">David Simpson</a> (resigned), replaced by <a href="/wiki/Sidney_Anderson" title="Sidney Anderson" class="mw-redirect">Sidney Anderson</a></td>
 <td><a href="/wiki/Upper_Bann_(Assembly_constituency)" title="Upper Bann (Assembly constituency)">Upper Bann</a></td>
 <td><a href="/wiki/Democratic_Unionist_Party" title="Democratic Unionist Party">Democratic Unionist Party</a></td>
 </tr>
@@ -1048,7 +997,7 @@ Northern Ireland</a></b></p>
 <li><a href="/wiki/Naomi_Long" title="Naomi Long">Naomi Long</a> was elected to the <a href="/wiki/Belfast_East_(UK_Parliament_constituency)" title="Belfast East (UK Parliament constituency)">Belfast East</a> parliamentary constituency on 6 May 2010 and was replaced by <a href="/wiki/Chris_Lyttle" title="Chris Lyttle">Chris Lyttle</a> on 5 July.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>7<span>]</span></a></sup></li>
 <li><a href="/wiki/Ian_Paisley,_Jr." title="Ian Paisley, Jr.">Ian Paisley, Jr.</a> was elected to the <a href="/wiki/North_Antrim_(UK_Parliament_constituency)" title="North Antrim (UK Parliament constituency)">North Antrim</a> parliamentary constituency on 6 May 2010. He resigned on 21 June 2010 and was replaced by <a href="/wiki/Paul_Frew" title="Paul Frew">Paul Frew</a>.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>8<span>]</span></a></sup><sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span>[</span>9<span>]</span></a></sup></li>
 <li><a href="/wiki/Jeffrey_Donaldson" title="Jeffrey Donaldson">Jeffrey Donaldson</a> resigned on 10 June 2010 and was replaced by <a href="/wiki/Paul_Givan" title="Paul Givan">Paul Givan</a>.</li>
-<li><a href="/wiki/David_Simpson_(UK_politician)" title="David Simpson (UK politician)">David Simpson</a> and <a href="/wiki/William_McCrea_(politician)" title="William McCrea (politician)">William McCrea</a> were replaced by <a href="/wiki/Sidney_Anderson" title="Sidney Anderson">Sidney Anderson</a> and <a href="/wiki/Paul_Girvan" title="Paul Girvan">Paul Girvan</a> on 1 July 2010.</li>
+<li><a href="/wiki/David_Simpson_(UK_politician)" title="David Simpson (UK politician)">David Simpson</a> and <a href="/wiki/William_McCrea_(politician)" title="William McCrea (politician)">William McCrea</a> were replaced by <a href="/wiki/Sydney_Anderson_(British_politician)" title="Sydney Anderson (British politician)">Sydney Anderson</a> and <a href="/wiki/Paul_Girvan" title="Paul Girvan">Paul Girvan</a> on 1 July 2010.</li>
 <li><a href="/wiki/Jim_Shannon" title="Jim Shannon">Jim Shannon</a> resigned on 1 August 2010 and was replaced by <a href="/wiki/Simpson_Gibson" title="Simpson Gibson">Simpson Gibson</a> on 2 August 2010.</li>
 <li><a href="/wiki/Nigel_Dodds" title="Nigel Dodds">Nigel Dodds</a> resigned on 10 September 2010 and was replaced by <a href="/wiki/William_Humphrey_(UK_politician)" title="William Humphrey (UK politician)">William Humphrey</a> on 13 September 2010.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>10<span>]</span></a></sup><sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>11<span>]</span></a></sup></li>
 <li><a href="/wiki/Mark_Durkan" title="Mark Durkan">Mark Durkan</a> resigned on 9 November 2010 and was replacd by <a href="/wiki/P%C3%B3l_Callaghan" title="Pól Callaghan">Pól Callaghan</a> on 15 November 2010.</li>
@@ -1082,7 +1031,7 @@ Northern Ireland</a></b></p>
 <td style="padding:2px;">
 <table cellspacing="0" class="nowraplinks collapsible autocollapse" style="width:100%;background:transparent;color:inherit;;">
 <tr>
-<th style=";background:#BFD7FF;" colspan="2" class="navbox-title"><span style="float:left;width:6em;text-align:left;"><span class="noprint plainlinks navbar" style=""><span style="white-space:nowrap;word-spacing:-.12em;"><a href="/wiki/Template:NI_elected_representatives" title="Template:NI elected representatives"><span style=";background:#BFD7FF;;background:none transparent;border:none;font-size:100%;" title="View this template">v</span></a> <span style=";background:#BFD7FF;;background:none transparent;border:none;font-size:100%;"><b>·</b></span> <a href="/wiki/Template_talk:NI_elected_representatives" title="Template talk:NI elected representatives"><span style=";background:#BFD7FF;;background:none transparent;border:none;font-size:100%;" title="Discuss this template">d</span></a> <span style=";background:#BFD7FF;;background:none transparent;border:none;font-size:100%;"><b>·</b></span> <a rel="nofollow" class="external text" href="//en.wikipedia.org/w/index.php?title=Template:NI_elected_representatives&amp;action=edit"><span style=";background:#BFD7FF;;background:none transparent;border:none;font-size:100%;" title="Edit this template">e</span></a></span></span></span><span class="" style="font-size:110%;"><b>Elected representatives in Northern Ireland</b></span></th>
+<th style=";background:#BFD7FF;" colspan="2" class="navbox-title"><span style="float:left;width:6em;text-align:left;"><span class="noprint plainlinks navbar" style=""><span style="white-space:nowrap;word-spacing:-.12em;"><a href="/wiki/Template:NI_elected_representatives" title="Template:NI elected representatives"><span style=";background:#BFD7FF;;background:none transparent;border:none;font-size:100%;" title="View this template">v</span></a> <span style=";background:#BFD7FF;;background:none transparent;border:none;font-size:100%;"><b>·</b></span> <a href="/wiki/Template_talk:NI_elected_representatives" title="Template talk:NI elected representatives"><span style=";background:#BFD7FF;;background:none transparent;border:none;font-size:100%;" title="Discuss this template">d</span></a> <span style=";background:#BFD7FF;;background:none transparent;border:none;font-size:100%;"><b>·</b></span> <a class="external text" href="//en.wikipedia.org/w/index.php?title=Template:NI_elected_representatives&amp;action=edit"><span style=";background:#BFD7FF;;background:none transparent;border:none;font-size:100%;" title="Edit this template">e</span></a></span></span></span><span class="" style="font-size:110%;"><b>Elected representatives in Northern Ireland</b></span></th>
 </tr>
 <tr style="height:2px;">
 <td></td>
@@ -1120,7 +1069,7 @@ Northern Ireland</a></b></p>
 <td style="padding:2px;">
 <table cellspacing="0" class="nowraplinks collapsible autocollapse" style="width:100%;background:transparent;color:inherit;;">
 <tr>
-<th style=";background:#6699CC;color:white" colspan="3" class="navbox-title"><span style="float:left;width:6em;text-align:left;"><span class="noprint plainlinks navbar" style=""><span style="white-space:nowrap;word-spacing:-.12em;"><a href="/wiki/Template:Northern_Ireland_Assembly" title="Template:Northern Ireland Assembly"><span style=";background:#6699CC;color:white;background:none transparent;border:none;font-size:100%;" title="View this template">v</span></a> <span style=";background:#6699CC;color:white;background:none transparent;border:none;font-size:100%;"><b>·</b></span> <a href="/wiki/Template_talk:Northern_Ireland_Assembly" title="Template talk:Northern Ireland Assembly"><span style=";background:#6699CC;color:white;background:none transparent;border:none;font-size:100%;" title="Discuss this template">d</span></a> <span style=";background:#6699CC;color:white;background:none transparent;border:none;font-size:100%;"><b>·</b></span> <a rel="nofollow" class="external text" href="//en.wikipedia.org/w/index.php?title=Template:Northern_Ireland_Assembly&amp;action=edit"><span style=";background:#6699CC;color:white;background:none transparent;border:none;font-size:100%;" title="Edit this template">e</span></a></span></span></span><span class="" style="font-size:110%;"><a href="/wiki/Northern_Ireland_Assembly" title="Northern Ireland Assembly"><span style="color:white;">Northern Ireland Assembly</span></a></span></th>
+<th style=";background:#6699CC;color:white" colspan="3" class="navbox-title"><span style="float:left;width:6em;text-align:left;"><span class="noprint plainlinks navbar" style=""><span style="white-space:nowrap;word-spacing:-.12em;"><a href="/wiki/Template:Northern_Ireland_Assembly" title="Template:Northern Ireland Assembly"><span style=";background:#6699CC;color:white;background:none transparent;border:none;font-size:100%;" title="View this template">v</span></a> <span style=";background:#6699CC;color:white;background:none transparent;border:none;font-size:100%;"><b>·</b></span> <a href="/wiki/Template_talk:Northern_Ireland_Assembly" title="Template talk:Northern Ireland Assembly"><span style=";background:#6699CC;color:white;background:none transparent;border:none;font-size:100%;" title="Discuss this template">d</span></a> <span style=";background:#6699CC;color:white;background:none transparent;border:none;font-size:100%;"><b>·</b></span> <a class="external text" href="//en.wikipedia.org/w/index.php?title=Template:Northern_Ireland_Assembly&amp;action=edit"><span style=";background:#6699CC;color:white;background:none transparent;border:none;font-size:100%;" title="Edit this template">e</span></a></span></span></span><span class="" style="font-size:110%;"><a href="/wiki/Northern_Ireland_Assembly" title="Northern Ireland Assembly"><span style="color:white;">Northern Ireland Assembly</span></a></span></th>
 </tr>
 <tr style="height:2px;">
 <td></td>
@@ -1197,17 +1146,17 @@ Northern Ireland</a></b></p>
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 1793/1000000
-Post-expand include size: 72580/2048000 bytes
+Preprocessor node count: 1806/1000000
+Post-expand include size: 68850/2048000 bytes
 Template argument size: 34138/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!*!0!!en!4!* and timestamp 20111010020356 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!*!0!!en!4!* and timestamp 20111110153304 -->
 </div>				<!-- /bodycontent -->
 								<!-- printfooter -->
 				<div class="printfooter">
-				Retrieved from "<a href="http://en.wikipedia.org/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=436586756">http://en.wikipedia.org/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=436586756</a>"				</div>
+				Retrieved from "<a href="http://en.wikipedia.org/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=459980399">http://en.wikipedia.org/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=459980399</a>"				</div>
 				<!-- /printfooter -->
 												<!-- catlinks -->
 				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="/wiki/Category:Northern_Ireland_MLAs_2007%E2%80%932011" title="Category:Northern Ireland MLAs 2007–2011">Northern Ireland MLAs 2007–2011</a></li><li><a href="/wiki/Category:Lists_of_Northern_Irish_parliamentarians" title="Category:Lists of Northern Irish parliamentarians">Lists of Northern Irish parliamentarians</a></li><li><a href="/wiki/Category:Northern_Ireland-related_lists" title="Category:Northern Ireland-related lists">Northern Ireland-related lists</a></li></ul></div></div>				<!-- /catlinks -->
@@ -1309,7 +1258,7 @@ Expensive parser function count: 0/500
 			<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
 			<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
 			<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
-			<li id="n-sitesupport"><a href="//wikimediafoundation.org/wiki/Special:Landingcheck?landing_page=WMFJA085&amp;language=en&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20101204SB002" rel="nofollow" title="Support us">Donate to Wikipedia</a></li>
+			<li id="n-sitesupport"><a href="//wikimediafoundation.org/wiki/Special:Landingcheck?landing_page=WMFJA085&amp;language=en&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20101204SB002" title="Support us">Donate to Wikipedia</a></li>
 		</ul>
 	</div>
 </div>
@@ -1345,8 +1294,8 @@ Expensive parser function count: 0/500
 			<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Members_of_the_Northern_Ireland_Assembly_elected_in_2007" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 			<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 			<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
-			<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=436586756" title="Permanent link to this revision of the page">Permanent link</a></li>
-<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;id=436586756" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+			<li id="t-permalink"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;oldid=459980399" title="Permanent link to this revision of the page">Permanent link</a></li>
+<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;id=459980399" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -1356,7 +1305,7 @@ Expensive parser function count: 0/500
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-		<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+Northern+Ireland+Assembly+elected+in+2007" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+Northern+Ireland+Assembly+elected+in+2007&amp;oldid=436586756&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>	</div>
+		<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Members+of+the+Northern+Ireland+Assembly+elected+in+2007" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Members+of+the+Northern+Ireland+Assembly+elected+in+2007&amp;oldid=459980399&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Members_of_the_Northern_Ireland_Assembly_elected_in_2007&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>	</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -1369,7 +1318,7 @@ Expensive parser function count: 0/500
 		<!-- footer -->
 		<div id="footer">
 							<ul id="footer-info">
-											<li id="footer-info-lastmod"> This page was last modified on 27 June 2011 at 23:32.<br /></li>
+											<li id="footer-info-lastmod"> This page was last modified on 10 November 2011 at 15:33.<br /></li>
 											<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="//wikimediafoundation.org/wiki/Terms_of_use">Terms of use</a> for details.<br/>
@@ -1397,17 +1346,17 @@ Wikipedia&reg; is a registered trademark of the <a href="//www.wikimediafoundati
 		<!-- /fixalpha -->
 		<script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=skins.vector&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
 <script type="text/javascript">if ( window.mediaWiki ) {
-	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "mediawiki.legacy.mwsuggest", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.editWarning", "ext.vector.simpleSearch", "ext.UserBuckets", "ext.articleFeedback.startup"]);
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "mediawiki.legacy.mwsuggest", "ext.gadget.wmfFR2011Style", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.editWarning", "ext.vector.simpleSearch", "ext.UserBuckets", "ext.articleFeedback.startup"]);
 }
 </script>
 <script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;303-4" type="text/javascript"></script>
 <script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
 <script type="text/javascript">if ( window.mediaWiki ) {
 	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":false,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
-	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"flaggedrevssimpleui":1,"flaggedrevsstable":0,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"vector-simplesearch":1,"useeditwarning":1,"vector-collapsiblenav":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikilove-enabled":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs108":false,"searchNs109":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"flaggedrevssimpleui":1,"flaggedrevsstable":0,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"vector-simplesearch":1,"useeditwarning":1,"vector-collapsiblenav":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikilove-enabled":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs108":false,"searchNs109":false,"gadget-wmfFR2011Style":1});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
 	
-	/* cache key: enwiki:resourceloader:filter:minify-js:4:046d41bc7e945ea209940748116a11b4 */
+	/* cache key: enwiki:resourceloader:filter:minify-js:4:b41a86ec4e0fe8329bc3ce917e792339 */
 }
-</script><script type="text/javascript" src="//geoiplookup.wikimedia.org/"></script><!-- Served by mw3 in 0.108 secs. -->
+</script><script src="//geoiplookup.wikimedia.org/" type="text/javascript"></script><!-- Served by srv263 in 0.059 secs. -->
 	</body>
 </html>
