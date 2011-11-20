@@ -22,7 +22,7 @@
 /* cache key: enwiki:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */</style>
 <script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
 <script type="text/javascript">if ( window.mediaWiki ) {
-	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001", "wgTitle": "List of MPs elected in the United Kingdom general election, 2001", "wgCurRevisionId": 457235543, "wgArticleId": 78984, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Lists of MPs elected in United Kingdom general elections", "2001 elections in the United Kingdom", "UK MPs 2001–2005"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "hidesig": true, "templateEditor": false, "templates": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "d00d515c9fb0a7f217968912f0616585", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "mbEditToken": "+\\", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001", "wgTitle": "List of MPs elected in the United Kingdom general election, 2001", "wgCurRevisionId": 457235543, "wgArticleId": 78984, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Lists of MPs elected in United Kingdom general elections", "2001 elections in the United Kingdom", "UK MPs 2001–2005"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "hidesig": true, "templateEditor": false, "templates": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "724c1e0a5fd761a130343e7cda87fc81", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "mbEditToken": "+\\", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
 }
 </script><script type="text/javascript">if ( window.mediaWiki ) {
 	mw.loader.load(["mediawiki.page.startup"]);
@@ -3891,13 +3891,13 @@
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 838/1000000
-Post-expand include size: 49714/2048000 bytes
+Preprocessor node count: 830/1000000
+Post-expand include size: 49710/2048000 bytes
 Template argument size: 35198/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!*!0!!*!4!* and timestamp 20111110165834 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!*!0!!*!4!* and timestamp 20111119154318 -->
 </div>				<!-- /bodycontent -->
 								<!-- printfooter -->
 				<div class="printfooter">
@@ -4110,6 +4110,6 @@ Wikipedia&reg; is a registered trademark of the <a href="//www.wikimediafoundati
 	
 	/* cache key: enwiki:resourceloader:filter:minify-js:4:b41a86ec4e0fe8329bc3ce917e792339 */
 }
-</script><script src="//geoiplookup.wikimedia.org/" type="text/javascript"></script><!-- Served by mw12 in 0.235 secs. -->
+</script><script src="//geoiplookup.wikimedia.org/" type="text/javascript"></script><!-- Served by mw27 in 0.100 secs. -->
 	</body>
 </html>
