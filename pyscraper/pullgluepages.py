@@ -265,6 +265,8 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
 			urla.pop(5)
 		if urla[0] == 'http://www.publications.parliament.uk/pa/cm201011/cmhansrd/cm100906/text/100906w0013.htm':
 			urla.pop(0)
+	if re.match(r'http://www.publications.parliament.uk/pa/cm201011/cmhansrd/cm100713/debindx/100713-x.htm', urlx) and sdate=='2010-07-13':
+		urla[1:6] = []
             
         #print "urla"
         #for aaa in urla:
