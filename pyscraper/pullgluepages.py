@@ -148,6 +148,7 @@ def GlueByNextNew(outputFileName, urla, urlx, sdate):
                 content = re.sub('^.*?<!--end of page header-->(?s)', '', sr)
                 # Pages bar first one have a <hr> before the main content table, but first page does not.
                 # After line above, first <hr> will be at the end of the main content.
+		# import pdb;pdb.set_trace()
                 if '<div class="navLinks">' in content:
                     content = re.sub('<hr[^>]*>.*(?s)', '', content)
                 else:
@@ -375,8 +376,11 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
 
 
 # now we have the difficulty of pulling in the first link out of this silly index page
-def ExtractAllLinks(url, dgf, forcescrape):
-        #print "ExtractAllLinks from", url
+def ProcessIndexUrl(url, dgf, forcescrape):
+	"""Returns a pair consisting of a list of links and a boolean
+	which tells us whether the index was of the new type or not.
+	"""
+
 	request = urllib2.Request(url)
 	if not forcescrape and dgf and os.path.exists(dgf):
 		mtime = os.path.getmtime(dgf)
@@ -387,10 +391,15 @@ def ExtractAllLinks(url, dgf, forcescrape):
 	urx = opener.open(request)
 	if hasattr(urx, 'status'):
 		if urx.status == 304:
-			return []
+			return [], False
 
 	xlines = ''.join(urx.readlines())
         urx.close()
+
+	# The old style index page starts <html>
+	# The new style one starts <?xml version="1.0" encoding="UTF-8"?>
+	index_new = not re.match(r'\s*<html>', xlines)
+	
         xlines = re.sub('^.*?<hr\s*(?:/)?>(?is)', '', xlines)
         res = re.findall('<a\s+href\s*=\s*"([^"]+?)#.*?">(?is)', xlines)
 	if not res:
@@ -402,7 +411,7 @@ def ExtractAllLinks(url, dgf, forcescrape):
                 if (not urla) or (urla[-1] != uo):
                         urla.append(uo)
 
-	return urla
+	return urla, index_new
 
 def MakeDayMap(folder, typ):
 	# make the output firectory
@@ -542,8 +551,11 @@ def PullGluePages(options, folder, typ):
 			urlx = commonsIndexRecord.url
 			if commonsIndexRecord.recordType == 'Votes and Proceedings' or commonsIndexRecord.recordType == 'questionbook':
 				urla = [urlx]
+				#FIXME - should we be detecting somehow? I don't think this bit is currently used.
+				glue_function = GlueByNext
 			else:
-				urla = ExtractAllLinks(urlx, latestFilePath, options.forcescrape)  # this checks the url at start of file
+				urla, new_type_index = ProcessIndexUrl(urlx, latestFilePath, options.forcescrape)  # this checks the url at start of file
+				glue_function = GlueByNextNew if new_type_index else GlueByNext
 			if not urla:
 				continue
 
@@ -551,10 +563,7 @@ def PullGluePages(options, folder, typ):
 				print commonsIndexRecord.date, (latestFilePath and 'RE-scraping' or 'scraping'), re.sub(".*?cmhansrd/", "", urlx)
 
 			# now we take out the local pointer and start the gluing
-			if commonsIndexRecord.date >= '2011-05-01':
-				GlueByNextNew(tempfilename, urla, urlx, commonsIndexRecord.date)
-			else:
-				GlueByNext(tempfilename, urla, urlx, commonsIndexRecord.date)
+			glue_function(tempfilename, urla, urlx, commonsIndexRecord.date)
 
 		except Exception, e:
 			options.anyerrors = True
