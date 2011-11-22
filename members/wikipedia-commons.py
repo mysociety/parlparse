@@ -14,7 +14,7 @@ import sys
 import urllib
 import urlparse
 import re
-import sets
+# import sets
 
 sys.path.append("../pyscraper")
 sys.path.append("../pyscraper/lords")
