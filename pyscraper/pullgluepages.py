@@ -268,7 +268,7 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
 			urla.pop(0)
 	if re.match(r'http://www.publications.parliament.uk/pa/cm201011/cmhansrd/cm100713/debindx/100713-x.htm', urlx) and sdate=='2010-07-13':
 		urla[1:6] = []
-            
+
         #print "urla"
         #for aaa in urla:
         #        print aaa
@@ -395,9 +395,9 @@ def ProcessIndexUrl(url, dgf, forcescrape):
 	xlines = ''.join(urx.readlines())
         urx.close()
 
-	# The old style index page starts <html>
+	# The old style index page starts <html> (possibly prefixed by a unicode byte order mark.
 	# The new style one starts <?xml version="1.0" encoding="UTF-8"?>
-	index_new = not re.match(r'\s*<html>', xlines)
+	index_new = not re.match(r'(?:\xef\xbb\xbf)?\s*<html>', xlines)
 	
         xlines = re.sub('^.*?<hr\s*(?:/)?>(?is)', '', xlines)
         res = re.findall('<a\s+href\s*=\s*"([^"]+?)#.*?">(?is)', xlines)
