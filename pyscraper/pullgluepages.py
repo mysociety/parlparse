@@ -253,6 +253,9 @@ def GlueByNext(outputFileName, urla, urlx, sdate):
         if re.match(r'http://www.publications.parliament.uk/pa/cm201011/cmhansrd/cm(\d{6})/debtext/\1-0001.htm', urla[0]) and \
             sdate in ('2010-09-06', '2011-01-25'):
                 urla = [urla[0]]
+	if re.match(r'http://www.publications.parliament.uk/pa/cm201011/cmhansrd/cm101012/wmsindx/101012-x.htm', urlx) and sdate=='2010-10-12':
+		# The first link in here points erroneously to wrans
+		urla.pop(0)
         if re.match(r'http://www.publications.parliament.uk/pa/cm201011/cmhansrd/cm(\d{6})/wmsindx/\1-x.htm', urlx) and \
             sdate == '2010-10-14':
 		urla = [urla[1]]
