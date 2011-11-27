@@ -21,7 +21,7 @@
 /* cache key: enwiki:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */</style>
 <script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
 <script type="text/javascript">if ( window.mediaWiki ) {
-	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Members_of_the_Northern_Ireland_Assembly_elected_in_2007", "wgTitle": "Members of the Northern Ireland Assembly elected in 2007", "wgCurRevisionId": 459980399, "wgArticleId": 9807646, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Northern Ireland MLAs 2007–2011", "Lists of Northern Irish parliamentarians", "Northern Ireland-related lists"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "hidesig": true, "templateEditor": false, "templates": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "e649f8fd37b2de270cd64e3f8746ab17", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "mbEditToken": "+\\", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Members_of_the_Northern_Ireland_Assembly_elected_in_2007", "wgTitle": "Members of the Northern Ireland Assembly elected in 2007", "wgCurRevisionId": 459980399, "wgArticleId": 9807646, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Northern Ireland MLAs 2007–2011", "Lists of Northern Irish parliamentarians", "Northern Ireland-related lists"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "hidesig": true, "templateEditor": false, "templates": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "7724b00668b38827e9c57074ea3affbb", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "mbEditToken": "+\\", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
 }
 </script><script type="text/javascript">if ( window.mediaWiki ) {
 	mw.loader.load(["mediawiki.page.startup"]);
@@ -121,7 +121,7 @@ Northern Ireland</a></b></p>
 </div>
 </div>
 <div class="NavFrame">
-<div class="NavHead" style="background-color:#ccccff;border:1px solid #000000;padding: 0px 0px 0px 4px; font-size: 100%; text-align:left;margin:0px;color:#330000"><b><a href="/wiki/Northern_Irish_Law" title="Northern Irish Law" class="mw-redirect">Northern Irish Law</a></b></div>
+<div class="NavHead" style="background-color:#ccccff;border:1px solid #000000;padding: 0px 0px 0px 4px; font-size: 100%; text-align:left;margin:0px;color:#330000"><b><a href="/wiki/Northern_Ireland_Law" title="Northern Ireland Law" class="mw-redirect">Northern Ireland Law</a></b></div>
 <div class="NavContent" style="text-align:left;margin:0px 1px;border:none;text-weight:bold;display:none;">
 <ul>
 <li><a href="/wiki/Supreme_Court_of_the_United_Kingdom" title="Supreme Court of the United Kingdom">Supreme Court of the United Kingdom</a></li>
@@ -139,10 +139,10 @@ Northern Ireland</a></b></p>
 <li><a href="/wiki/Owen_Paterson" title="Owen Paterson">Owen Paterson</a> <a href="/wiki/Member_of_Parliament" title="Member of Parliament">MP</a></li>
 </ul>
 </li>
+<li><a href="/wiki/Northern_Ireland_Office" title="Northern Ireland Office">Northern Ireland Office</a></li>
 </ul>
 <p><b><a href="/wiki/Parliament_of_the_United_Kingdom" title="Parliament of the United Kingdom">Parliament of the United Kingdom</a></b></p>
 <ul>
-<li><a href="/wiki/Northern_Ireland_Office" title="Northern Ireland Office">Northern Ireland Office</a></li>
 <li><a href="/wiki/Reserved_and_excepted_matters#Northern_Ireland" title="Reserved and excepted matters">Reserved and excepted matters</a></li>
 <li><a href="/wiki/Direct_Rule" title="Direct Rule" class="mw-redirect">Direct Rule</a></li>
 <li><a href="/wiki/Northern_Ireland_Grand_Committee" title="Northern Ireland Grand Committee">Grand Committee</a></li>
@@ -158,7 +158,7 @@ Northern Ireland</a></b></p>
 <p><b><a href="/wiki/European_Parliament" title="European Parliament">European Parliament</a></b></p>
 <ul>
 <li><a href="/wiki/Elections_in_Northern_Ireland" title="Elections in Northern Ireland">Elections</a></li>
-<li><a href="/wiki/Northern_Ireland_(European_Parliament_constituency)" title="Northern Ireland (European Parliament constituency)">Constituency &amp; MEPs</a></li>
+<li><a href="/wiki/Northern_Ireland_(European_Parliament_constituency)" title="Northern Ireland (European Parliament constituency)">European Parliament constituency</a></li>
 </ul>
 </div>
 </div>
@@ -1146,13 +1146,13 @@ Northern Ireland</a></b></p>
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 1806/1000000
-Post-expand include size: 68850/2048000 bytes
-Template argument size: 34138/2048000 bytes
+Preprocessor node count: 1790/1000000
+Post-expand include size: 68857/2048000 bytes
+Template argument size: 34136/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!*!0!!en!4!* and timestamp 20111110153304 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!*!0!!en!4!* and timestamp 20111122134049 -->
 </div>				<!-- /bodycontent -->
 								<!-- printfooter -->
 				<div class="printfooter">
@@ -1357,6 +1357,6 @@ Wikipedia&reg; is a registered trademark of the <a href="//www.wikimediafoundati
 	
 	/* cache key: enwiki:resourceloader:filter:minify-js:4:b41a86ec4e0fe8329bc3ce917e792339 */
 }
-</script><script src="//geoiplookup.wikimedia.org/" type="text/javascript"></script><!-- Served by srv263 in 0.059 secs. -->
+</script><script src="//geoiplookup.wikimedia.org/" type="text/javascript"></script><!-- Served by mw16 in 0.068 secs. -->
 	</body>
 </html>
