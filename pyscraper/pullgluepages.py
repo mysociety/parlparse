@@ -398,7 +398,7 @@ def ProcessIndexUrl(url, dgf, forcescrape):
 
 	# The old style index page starts <html> (possibly prefixed by a unicode byte order mark), or with a DOCTYPE (pre May 2006).
 	# The new style one starts <?xml version="1.0" encoding="UTF-8"?>
-	index_new = re.match(r'<\?xml version="1\.0" encoding="UTF-8"\?>', xlines)
+	index_new = re.match(r'(?:\xef\xbb\xbf)?<\?xml version="1\.0" encoding="UTF-8"\?>', xlines)
 	
         xlines = re.sub('^.*?<hr\s*(?:/)?>(?is)', '', xlines)
         res = re.findall('<a\s+href\s*=\s*"([^"]+?)#.*?">(?is)', xlines)
