@@ -72,9 +72,13 @@ class LordsList(xml.sax.handler.ContentHandler):
 				raise Exception, "Repeated identifier %s in members XML file" % attr["id"]
 
 			# needs to make a copy into a map because entries can't be rewritten
-			cattr = { "id":attr["id"],
-					  "title":attr["title"], "lordname":attr["lordname"], "lordofname":attr["lordofname"],
-					  "fromdate":attr["fromdate"], "todate":attr["todate"] }
+			cattr = {
+                                "id": attr["id"],
+				"title": attr["title"], "lordname": attr["lordname"], "lordofname": attr["lordofname"],
+                                'forenames': attr['forenames'], 'forenames_full': attr.get('forenames_full'), 'surname': attr.get('surname'),
+				"fromdate": attr["fromdate"], "todate": attr["todate"], 'towhy': attr.get('towhy'),
+                                'peeragetype': attr['peeragetype'], 'party': attr['affiliation'],
+                        }
 			self.lords[attr["id"]] = cattr
 
 			lname = attr["lordname"] or attr["lordofname"]
