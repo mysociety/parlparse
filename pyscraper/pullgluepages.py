@@ -133,6 +133,7 @@ def GlueByNextNew(outputFileName, urla, urlx, sdate):
 	fout.write('<pagex url="%s" scrapedate="%s" scrapetime="%s" type="printed" />\n' % \
 			(urlx, time.strftime('%Y-%m-%d', lt), time.strftime('%X', lt)))
 
+	import pdb;pdb.set_trace()
 	# loop which scrapes through all the pages following the nextlinks
 	while urla:
                 url = urla[0]
