@@ -111,7 +111,7 @@ class ParseDay:
 ''')
 		memberList.cleardebatehistory() # Don't want to keep it between days, or reruns of same day
 		if int(date[0:4]) >= 2006:
-			self.parse_day_new(soup)
+			self.parse_day_new(soup, date)
 		else:
 			body = soup('p')
 			self.parse_day_old(body)
@@ -248,30 +248,39 @@ class ParseDay:
 			self.out.write('</oral-heading>\n')
 			in_oral_answers = False
 
-	def parse_day_new(self, soup):
+	def parse_day_new(self, soup, date):
 		for s in soup.findAll(lambda tag: tag.name=='strong' and tag.contents == []):
 			s.extract()
 
-		body = soup('p')
 		self.url = ''
 
-                nia_heading_re = re.compile(
-                        r'''
-                        (the)?(\s|&nbsp;|<br>)*
-                        (transitional)?(\s|&nbsp;|<br>)*
-                        (
-                          northern(\s|&nbsp;|<br>)*
-                          ireland(\s|&nbsp;|<br>)*
-                        )?
-                        assembly
-                        ''',
-                        re.IGNORECASE | re.VERBOSE
-                        )
+		if date >= '2011-12-12':
+			body = soup.find('div', 'grid_10').findAll('p')
+			nia_heading_re = re.compile(r'Session: 2011/2012')
+			if not nia_heading_re.match(''.join(body[0](text=True))):
+				raise ContextException, 'Missing NIA heading!'
+			date_head = body[1].find(text=True)
+			body = body[3:] # body[2] is a PDF download link
+		else:
+			body = soup('p')
+			nia_heading_re = re.compile(
+				r'''
+				(the)?(\s|&nbsp;|<br>)*
+				(transitional)?(\s|&nbsp;|<br>)*
+				(
+					northern(\s|&nbsp;|<br>)*
+					ireland(\s|&nbsp;|<br>)*
+				)?
+				assembly
+				''',
+				re.IGNORECASE | re.VERBOSE
+			)
+			if not nia_heading_re.match(''.join(body[0](text=True))):
+				raise ContextException, 'Missing NIA heading!'
 
-		if not nia_heading_re.match(''.join(body[0](text=True))):
-			raise ContextException, 'Missing NIA heading!'
-		date_head = body[1].find(text=True)
-		body = body[2:]
+			date_head = body[1].find(text=True)
+			body = body[2:]
+
 		timestamp = ''
 		self.speaker = (None, timestamp)
 		self.text = ''
