@@ -6,19 +6,30 @@
 import urllib
 import urlparse
 import re
-import time
+import time, datetime
 import os
 
-root = ['http://www.niassembly.gov.uk/record/hansard.htm']
+root = []
 #for i in range(1997,2003):
 #    root.append('http://www.niassembly.gov.uk/record/hansard_session%d.htm' % i)
 for i in range(2005,2007):
-    root.append('http://www.niassembly.gov.uk/record/hansard_session%d_A.htm' % i)
-root.append('http://www.niassembly.gov.uk/record/hansard_session%d_TA.htm' % i)
-for i in range(2006,2011):
-    root.append('http://www.niassembly.gov.uk/record/hansard_session%d.htm' % i)
+    root.append('http://archive.niassembly.gov.uk/record/hansard_session%d_A.htm' % i)
+root.append('http://archive.niassembly.gov.uk/record/hansard_session%d_TA.htm' % i)
+for i in range(2006,2012):
+    root.append('http://archive.niassembly.gov.uk/record/hansard_session%d.htm' % i)
+root.append('http://www.niassembly.gov.uk/Assembly-Business/Official-Report/Reports-11-12/')
 
 ni_dir = os.path.dirname(__file__)
+
+def scrape_ni_day(url, filename):
+    filename = '%s/../../../parldata/cmpages/ni/%s' % (ni_dir, filename)
+    if not os.path.isfile(filename):
+        print "NI scraping %s" % url
+        ur = urllib.urlopen(url)
+        fp = open(filename, 'w')
+        fp.write(ur.read())
+        fp.close()
+        ur.close()
 
 def scrape_new_ni():
     for url in root:
@@ -32,16 +43,17 @@ def scrape_new_ni():
 
         match = re.findall('<a href="([^"]*(p?)(\d{6})(i?)(?:today)?\.htm)">View (?:as|in) HTML *</a>', page)
         for day in match:
-            url_day = urlparse.urljoin(url, day[0])
             date = time.strptime(day[2], "%y%m%d")
-            filename = '%s/../../../parldata/cmpages/ni/ni%d-%02d-%02d%s%s.html' % (ni_dir, date[0], date[1], date[2], day[1], day[3])
-            if not os.path.isfile(filename):
-                print "NI scraping %s" % url_day
-                ur = urllib.urlopen(url_day)
-                fp = open(filename, 'w')
-                fp.write(ur.read())
-                fp.close()
-                ur.close()
+            filename = 'ni%d-%02d-%02d%s%s.html' % (date[0], date[1], date[2], day[1], day[3])
+            scrape_ni_day(urlparse.urljoin(url, day[0]), filename)
+
+        match = re.findall('<a class="html-link" href=\'(/Assembly-Business/Official-Report/Reports-\d\d-\d\d/([^/]*)/)\'>Read now</a>', page)
+        for day in match:
+            date = time.strptime(day[1], "%d-%B-%Y")
+            if datetime.date(*date[:3]) == datetime.date.today(): continue
+            if datetime.date(*date[:3]) < datetime.date(2011, 12, 12): continue
+            filename = 'ni%d-%02d-%02d.html' % date[:3]
+            scrape_ni_day(urlparse.urljoin(url, day[0]), filename)
 
 if __name__ == '__main__':
     scrape_new_ni()
