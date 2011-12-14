@@ -170,7 +170,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 
 	# useful to have this function out there
 	def striptitles(self, text):
-		text = text.replace("&rsquo;", "'")
+		text = text.replace("&rsquo;", "'").replace(u'\u2019', "'")
 		text = text.replace("&nbsp;", " ")
 		(text, titletotal) = self.retitles.subn("", text)
 		text = self.rehonorifics.sub("", text)
