@@ -206,7 +206,7 @@ def GetReportProceedings(urlpage, year):
 	parts.sort()
 	prev = None
 	for p in parts:
-		assert int(p[2][:4]) - int(year) in [0, 1]
+		assert (int(p[2][:4]) - int(year) in [0, 1]) or (int(p[2][:4]) == 2012 and int(year) == 2010)
 		if prev:
 			if prev[0] == p[0]:
 				if prev[1] == 0 and p[1] == 2:
