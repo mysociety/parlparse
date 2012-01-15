@@ -22,7 +22,7 @@
 /* cache key: enwiki:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */</style>
 <script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
 <script type="text/javascript">if ( window.mediaWiki ) {
-	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001", "wgTitle": "List of MPs elected in the United Kingdom general election, 2001", "wgCurRevisionId": 465504644, "wgArticleId": 78984, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Lists of MPs elected in United Kingdom general elections", "2001 elections in the United Kingdom", "UK MPs 2001–2005"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "hidesig": true, "templateEditor": false, "templates": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "3510e55429a176b67c0d6f9363b04418", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "mahEditToken": "+\\", "mbEditToken": "+\\", "mbEmailEnabled": true, "mbUserEmail": false, "mbIsEmailConfirmationPending": false, "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001", "wgTitle": "List of MPs elected in the United Kingdom general election, 2001", "wgCurRevisionId": 465504644, "wgArticleId": 78984, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Lists of MPs elected in United Kingdom general elections", "2001 elections in the United Kingdom", "UK MPs 2001–2005"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "hidesig": true, "templateEditor": false, "templates": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "83add24d64239577fd233a7261eb63d4", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "mbEmailEnabled": true, "mbUserEmail": false, "mbIsEmailConfirmationPending": false, "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
 }
 </script><script type="text/javascript">if ( window.mediaWiki ) {
 	mw.loader.load(["mediawiki.page.startup"]);
@@ -3940,7 +3940,7 @@ Expensive parser function count: 0/500
 	<h5>Namespaces</h5>
 	<ul>
 					<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001"  title="View the content page [c]" accesskey="c">Article</a></span></li>
-					<li  id="ca-talk"><span><a href="/wiki/Talk:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-talk"><span><a href="/wiki/Talk:List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
 			</ul>
 </div>
 
@@ -4119,6 +4119,6 @@ Wikipedia&reg; is a registered trademark of the <a href="//www.wikimediafoundati
 	
 	/* cache key: enwiki:resourceloader:filter:minify-js:4:b41a86ec4e0fe8329bc3ce917e792339 */
 }
-</script><script src="//geoiplookup.wikimedia.org/" type="text/javascript"></script><!-- Served by mw48 in 0.146 secs. -->
+</script><script src="//geoiplookup.wikimedia.org/" type="text/javascript"></script><!-- Served by srv276 in 0.093 secs. -->
 	</body>
 </html>
