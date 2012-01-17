@@ -122,6 +122,10 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 
         # Fix new thing where they sometimes put (a), (b) of wrans in separate paragraphs
         text = re.sub('</p>\s*<p>\s*(<i>\s*\(.\)\s*</i>)\s*</p>\s*<p[^>]*>', r' \1 ', text)
+        # Don't want bad XHTML self closed table cells.
+        text = re.sub('<td([^>]*) ?/>', r'<td\1></td>', text)
+        # Or pointless empty headings
+        text = re.sub('<h[45] align="[^"]*" ?/>', '', text)
 
         # Lords, big overall replacements
         text = text.replace('<br/>', '<br>')
