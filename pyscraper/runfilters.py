@@ -110,6 +110,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
     if sdate > '2006-05-07' and re.search('<notus-date', text):
         notus = True
         text = re.sub("\n", ' ', text)
+        text = re.sub("\s{2,}", ' ', text) # No need for multiple spaces anywhere
         text = re.sub("</?notus-date[^>]*>", "", text)
         text = re.sub("\s*<meta[^>]*>\s*", "", text)
         text = re.sub('(<h5 align="left">)((?:<a name="(.*?)">)*)', r"\2\1", text) # If you can't beat them, ...
@@ -120,8 +121,12 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         text = re.sub('(<a href="[^"]*corrtext[^"]*")\s*shape="rect">\s*(.*?)\s*(</a>)', r'\1>\2\3', text)
         text = re.sub('(\[\d+\])\s*((?:</p>)?)\s*(<a href="[^"]*corrtext[^"]*">.*?</a>)', r'\3 \1\2', text)
 
-        # Fix new thing where they sometimes put (a), (b) of wrans in separate paragraphs
-        text = re.sub('</p>\s*<p>\s*(<i>\s*\(.\)\s*</i>)\s*</p>\s*<p[^>]*>', r' \1 ', text)
+        # Fix new thing where they sometimes put (a), (b) of wrans, or "Official Report", in separate paragraphs
+        # Two regular expressions, so as not to lose needed end </p> of a column heading.
+        italic_para = '\s*<p>\s*(<i>\s*(?:\(.\)|Official Report,?)\s*</i>)\s*</p>\s*'
+        text = re.sub('(?<!</b> )</p>' + italic_para + '<p[^>]*>', r' \1 ', text)
+        text = re.sub('(?<=</b> </p>)' + italic_para + '<p[^>]*>', r' \1 ', text)
+
         # Don't want bad XHTML self closed table cells.
         text = re.sub('<td([^>]*) ?/>', r'<td\1></td>', text)
         # Or pointless empty headings
