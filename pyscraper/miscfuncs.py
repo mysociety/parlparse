@@ -117,7 +117,7 @@ def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):
                         hour -= 12
 
 		if previoustime and previoustimehour + 12 <= hour:
-			raise ContextException('time shift by 12 -- should a p.m. be an a.m.?', stamp=stampurl)
+			print "TIME: time shift by 12 (from %s to %s) -- should a p.m. be an a.m.? %s" % (previoustime, time, repr(stampurl))
 
 	elif time == 'Midnight':
                 hour = 24
@@ -148,8 +148,7 @@ def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):
                 elif hour in [0, 1, 2, 3, 4] or stampurl.sdate in ["2003-10-20", "2000-10-03", "2000-07-24", "2011-01-17"]:
                         hour += 24
 		else:
-			print (hour, mins), "time=", time, "previoustime=", previoustime
-			raise ContextException('time rotation not close to midnight', stamp=stampurl)
+			print 'TIME: time rotation (from %s to %s %s) not close to midnight %s' % (previoustime, time, res, repr(stampurl))
 
 		res = "%03d:%02d:00" % (hour, mins)
 
@@ -164,8 +163,7 @@ def TimeProcessing(time, previoustimearr, bIsDivisionTime, stampurl):
 		previoustimeminutes = previoustimehour * 60 + int(prevtimeMatch.group(2))
 		if timeminutes < previoustimeminutes:
 			if not bIsDivisionTime or (previoustimeminutes - timeminutes > 10):
-				print "previous time out of order", res, previoustime, bIsDivisionTime
-				raise ContextException('time out of order', stamp=stampurl)
+				print 'TIME: time out of order, from %s to %s (division=%s) %s' % (previoustime, res, bIsDivisionTime, repr(stampurl))
 	return res
 
 
