@@ -49,7 +49,9 @@ def scrape_new_ni():
 
         match = re.findall('<a class="html-link" href=\'(/Assembly-Business/Official-Report/Reports-\d\d-\d\d/([^/]*)/)\'>Read now</a>', page)
         for day in match:
-            date = time.strptime(day[1], "%d-%B-%Y")
+            date_string = day[1].split('--')[-1]
+            date = time.strptime(date_string, "%d-%B-%Y")
+
             if datetime.date(*date[:3]) == datetime.date.today(): continue
             if datetime.date(*date[:3]) < datetime.date(2011, 12, 12): continue
             filename = 'ni%d-%02d-%02d.html' % date[:3]
