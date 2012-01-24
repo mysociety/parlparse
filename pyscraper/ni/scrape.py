@@ -49,7 +49,8 @@ def scrape_new_ni():
 
         match = re.findall('<a class="html-link" href=\'(/Assembly-Business/Official-Report/Reports-\d\d-\d\d/([^/]*)/)\'>Read now</a>', page)
         for day in match:
-            date_string = day[1].split('--')[-1]
+            # Normally 12-December-2011 but recently 23-January-2012-1030am---1100am and 1030-1100am--17-January-2012
+            date_string = re.search('(\d\d-[a-zA-Z]*-\d\d\d\d)', day[1]).group(1)
             date = time.strptime(date_string, "%d-%B-%Y")
 
             if datetime.date(*date[:3]) == datetime.date.today(): continue
