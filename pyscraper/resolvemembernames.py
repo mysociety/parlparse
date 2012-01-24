@@ -552,10 +552,6 @@ class MemberList(xml.sax.handler.ContentHandler):
 
             # search through history, starting at the end
 
-            # old wasteful way of coding it
-            #history = copy.copy(self.debatenamehistory)
-            #history.reverse()
-
             # [1:] here we misses the first entry, i.e. it misses the previous
             # speaker.  This is necessary for example here:
             #     http://www.publications.parliament.uk/pa/cm200304/cmhansrd/cm040127/debtext/40127-08.htm#40127-08_spnew13
@@ -565,11 +561,10 @@ class MemberList(xml.sax.handler.ContentHandler):
             # same person never speaks twice in a row, this shouldn't cause
             # trouble.
 
-
-            # this looking back two can sometimes fail if a speaker is interrupted
-            # by something procedural, and then picks up his thread straight after himself
-            # (eg in westminsterhall if there is a suspension to go vote in a division in the main chamber on something about which they haven't heard the debate)
-            # Assume this can happen in Westminster Hall quite a bit - MPS 2007-06-28
+            # In Westminster Hall, there can be a suspension to go and vote in
+            # a divison in the main chamber on something about which they
+            # haven't heard the debate, and then the same person keeps talking,
+            # so starting two speeches back can cause a problem.
             if typ == 'westminhall':
                 ix = len(self.debatenamehistory) - 1
             else:
