@@ -337,7 +337,7 @@ def StraightenHTMLrecurse(stex, stampurl):
 
 		if not sres[i]:
 			pass
-		elif re.match('&#[0-9]+;', sres[i]):
+		elif re.match('&#[0-9]+;', sres[i]) and not re.match('&#1[345][0-9];', sres[i]):
                         pass
 		elif sres[i][0] == '&':
 			if sres[i] in entitymap:
