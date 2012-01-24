@@ -544,8 +544,6 @@ class MemberList(xml.sax.handler.ContentHandler):
                 ids = newids
 
 
-
-
         # If ambiguous (either form "Mr. O'Brien" or full name, ambiguous due
         # to missing constituency) look in recent name match history
         if len(ids) > 1:
@@ -561,14 +559,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             # same person never speaks twice in a row, this shouldn't cause
             # trouble.
 
-            # In Westminster Hall, there can be a suspension to go and vote in
-            # a divison in the main chamber on something about which they
-            # haven't heard the debate, and then the same person keeps talking,
-            # so starting two speeches back can cause a problem.
-            if typ == 'westminhall':
-                ix = len(self.debatenamehistory) - 1
-            else:
-                ix = len(self.debatenamehistory) - 2
+            ix = len(self.debatenamehistory) - 2
             while ix >= 0:
                 x = self.debatenamehistory[ix]
                 if x in ids:
@@ -577,6 +568,12 @@ class MemberList(xml.sax.handler.ContentHandler):
                     break
                 ix -= 1
 
+            # In Westminster Hall, there can be a suspension to go and vote in
+            # a divison in the main chamber on something about which they
+            # haven't heard the debate, and then the same person keeps talking,
+            # so it's possible the same person speaks twice in a row.
+            if ix == -1 and typ == 'westminhall' and self.debatenamehistory[-1] in ids:
+                ids = set([self.debatenamehistory[-1],])
 
 
         # Special case - the AGforS is referred to as just the AG after first appearance
