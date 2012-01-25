@@ -147,6 +147,8 @@ def SubsPWtextset(stext):
 			res.append(re.sub('<p(.*?)>', '<p\\1 pwmotiontext="yes">', st))
 	return res
 
+# qbp is the bunch of paragraphs in the speech preceding the division heading
+# qbd (unused) is the parsed division text
 def GrabDivisionProced(qbp, qbd):
 	if qbp.typ != 'speech' or len(qbp.stext) < 1:
 
@@ -165,6 +167,17 @@ def GrabDivisionProced(qbp, qbd):
 		hdg_b = rehousediv_b.match(qbp.stext[-1])
 		if hdg_a and hdg_b:
 			hdg = hdg_b
+		elif hdg_b:
+			# They are occasionally putting "The" "Committee"
+			# "divided" in two or three separate paragraphs
+			two_prev = re.sub('</p><p[^>]*>', '', ''.join(qbp.stext[-3:-1]))
+			three_prev = re.sub('</p><p[^>]*>', '', ''.join(qbp.stext[-4:-1]))
+			if rehousediv_a.match(three_prev):
+				qbp.stext = qbp.stext[:-4] + [ three_prev, qbp.stext[-1] ]
+				hdg = hdg_b
+			elif rehousediv_a.match(two_prev):
+				qbp.stext = qbp.stext[:-3] + [ two_prev, qbp.stext[-1] ]
+				hdg = hdg_b
 	if not hdg:
 		hdg = redivshouldappear.match(qbp.stext[-1])
 	if not hdg:
@@ -182,18 +195,15 @@ def GrabDivisionProced(qbp, qbd):
 	# look back at previous paragraphs and skim off a part of what's there
 	# to make a non-spoken bit reporting on the division.
 	iskim = 1
-	if re.search('Serjeant at Arms|peaceful outcome', qbp.stext[-2]):
-		pass
-	else:
-		while len(qbp.stext) >= iskim:
-			if reqput.match(qbp.stext[-iskim]):
-				break
-			iskim += 1
+	while len(qbp.stext) >= iskim:
+		if reqput.match(qbp.stext[-iskim]) or re.search('Serjeant at Arms', qbp.stext[-iskim-1]):
+			break
+		iskim += 1
 
-		# haven't found a question put before we reach the front
-		if len(qbp.stext) < iskim:
-			iskim = 1
-			# VALID in 99% of cases: raise Exception, "no question put before division"
+	# haven't found a question put before we reach the front
+	if len(qbp.stext) < iskim:
+		iskim = 1
+		# VALID in 99% of cases: raise Exception, "no question put before division"
 
 	# copy the two lines into a non-speaking paragraph.
 	qbdp = qspeech('nospeaker="true"', "", qbp.sstampurl)
