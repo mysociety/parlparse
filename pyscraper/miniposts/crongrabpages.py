@@ -13,37 +13,33 @@ import difflib
 
 pwcmdirs = miscfuncs.pwcmdirs
 
-
 # This code is for grabbing pages of government and party positions off the hansard webpage,
 # testing for changes and filing them into directories where they can be parsed at leisure
 
-# These links come from the page "http://www.parliament.uk/directories/directories.cfm"
+watchpages = {
+    # Structured data, hooray!
+    "commons": "http://data.parliament.uk/resources/members/api/Members.svc/commons/",
+    "lords": "http://data.parliament.uk/resources/members/api/Members.svc/lords/all/",
+    "depts": "http://data.parliament.uk/resources/members/api/Members.svc/departments/verbose/",
+    "opposition": "http://data.parliament.uk/resources/members/api/Members.svc/oppositionposts/",
+    # Committees need to be looped through, TODO
 
-watchpages = {  "govposts":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/her-majestys-government/",
-				"offoppose":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/opposition-holding/",
-		#		#"libdem":"http://letters.libdems.org.uk/mysociety.php",
-				"dup":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/democratic-unionist-party/",
-		#		"ulsterun":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/ulster.cfm",
-		#		"plaidsnp":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/PCSNP.cfm",
-                                "plaid":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/plaid-cymru/",
-                                "snp":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/scottish-national-party/",
-		#		"privsec":"http://www.parliament.uk/mpslordsandoffices/government_and_opposition/Pps.cfm",
-		#		"selctee":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/selmem.cfm",
-				"clerks":"http://www.publications.parliament.uk/pa/cm/listgovt.htm",
+    # Legacy HTML scrapings
+    "govposts":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/her-majestys-government/",
+    "offoppose":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/opposition-holding/",
+    "dup":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/democratic-unionist-party/",
+    "plaid":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/plaid-cymru/",
+    "snp":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/scottish-national-party/",
+    "clerks":"http://www.publications.parliament.uk/pa/cm/listgovt.htm",
 
-				"bills":"http://www.publications.parliament.uk/pa/pabills.htm",
-				"privatebills":"http://www.publications.parliament.uk/pa/privbill.htm",
+    "bills":"http://www.publications.parliament.uk/pa/pabills.htm",
+    "privatebills":"http://www.publications.parliament.uk/pa/privbill.htm",
+    "hybridbillscfm":"http://www.parliament.uk/bills/hybrid_bills.cfm",
+    #"draftbillscfm":"http://www.parliament.uk/bills/draftbills.cfm",
+    "billlist":"http://www.publications.parliament.uk/pa/cm/cmpblist/cmpblist.htm",
 
-				"hybridbillscfm":"http://www.parliament.uk/bills/hybrid_bills.cfm",
-		#		"draftbillscfm":"http://www.parliament.uk/bills/draftbills.cfm",
-				"billlist":"http://www.publications.parliament.uk/pa/cm/cmpblist/cmpblist.htm",
-
-		#		"newlords":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/new_members.cfm",
-		#		"deadlords":"http://www.parliament.uk/mpslordsandoffices/mps_and_lords/deceased_members.cfm",
-				"alphalistlords":"http://www.parliament.uk/mps-lords-and-offices/lords/",
-
-				#"financialsanctions":"http://www.bankofengland.co.uk/publications/financialsanctions/sanctionsconlist.htm",
-			 }
+    "alphalistlords":"http://www.parliament.uk/mps-lords-and-offices/lords/",
+}
 
 
 # go through each of the pages in the above map and make copies where there are changes
