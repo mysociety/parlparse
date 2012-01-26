@@ -28,7 +28,7 @@ watchpages = {
     "govposts":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/her-majestys-government/",
     "offoppose":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/opposition-holding/",
     "dup":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/democratic-unionist-party/",
-    "plaid":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/plaid-cymru/",
+    #"plaid":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/plaid-cymru/",
     "snp":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/scottish-national-party/",
     "clerks":"http://www.publications.parliament.uk/pa/cm/listgovt.htm",
 
