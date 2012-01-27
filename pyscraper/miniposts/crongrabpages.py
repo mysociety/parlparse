@@ -25,11 +25,11 @@ watchpages = {
     # Committees need to be looped through, TODO
 
     # Legacy HTML scrapings
-    "govposts":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/her-majestys-government/",
-    "offoppose":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/opposition-holding/",
-    "dup":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/democratic-unionist-party/",
+    #"govposts":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/her-majestys-government/",
+    #"offoppose":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/opposition-holding/",
+    #"dup":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/democratic-unionist-party/",
     #"plaid":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/plaid-cymru/",
-    "snp":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/scottish-national-party/",
+    #"snp":"http://www.parliament.uk/mps-lords-and-offices/government-and-opposition1/scottish-national-party/",
     "clerks":"http://www.publications.parliament.uk/pa/cm/listgovt.htm",
 
     "bills":"http://www.publications.parliament.uk/pa/pabills.htm",
@@ -38,7 +38,7 @@ watchpages = {
     #"draftbillscfm":"http://www.parliament.uk/bills/draftbills.cfm",
     "billlist":"http://www.publications.parliament.uk/pa/cm/cmpblist/cmpblist.htm",
 
-    "alphalistlords":"http://www.parliament.uk/mps-lords-and-offices/lords/",
+    #"alphalistlords":"http://www.parliament.uk/mps-lords-and-offices/lords/",
 }
 
 
