@@ -134,7 +134,9 @@ regqputt = ".*?question, .*?, put.*?</p>"
 regitbe = "(?:<[^>]*>|\s)*It being .*?o'clock(?i)"
 regitbepq = "(?:<[^>]*>|\s)*It being .*? hours .*? put the question(?i)"
 regitbepq1 = "(?:<[^>]*>|\s)*It being .*? (?:hour|minute).*?(?i)"
-reqput = re.compile('%s|%s|%s|%s|%s(?i)' % (regqput, regqputt, regitbe, regitbepq1, regitbepq))
+#'<p><i>The Deputy Speaker put forthwith the Question</i> <i> already proposed from the Chair </i> (<phrase class="standing-order" code="83F">Standing Order No. 83F</phrase>) <i>, </i>That this House disagrees with Lords amendment 15.</p>'
+regputforthwith = ".*?put forthwith the question.*?</p>"
+reqput = re.compile('%s|%s|%s|%s|%s|%s(?i)' % (regqput, regqputt, regitbe, regitbepq1, regitbepq, regputforthwith))
 
 # this hack sets the motion text flag on a set of paragraphs
 # for use by the publicwhip motion text stuff
@@ -196,8 +198,11 @@ def GrabDivisionProced(qbp, qbd):
 	# to make a non-spoken bit reporting on the division.
 	iskim = 1
 	while len(qbp.stext) >= iskim:
-		if reqput.match(qbp.stext[-iskim]) or re.search('Serjeant at Arms', qbp.stext[-iskim-1]):
-			break
+		try:
+			if reqput.match(qbp.stext[-iskim]) or re.search('Serjeant at Arms', qbp.stext[-iskim-1]):
+				break
+		except:
+			import pdb;pdb.set_trace()
 		iskim += 1
 
 	# haven't found a question put before we reach the front
