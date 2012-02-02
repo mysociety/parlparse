@@ -198,11 +198,8 @@ def GrabDivisionProced(qbp, qbd):
 	# to make a non-spoken bit reporting on the division.
 	iskim = 1
 	while len(qbp.stext) >= iskim:
-		try:
-			if reqput.match(qbp.stext[-iskim]) or re.search('Serjeant at Arms', qbp.stext[-iskim-1]):
-				break
-		except:
-			import pdb;pdb.set_trace()
+		if reqput.match(qbp.stext[-iskim]) or re.search('Serjeant at Arms', qbp.stext[-iskim-1]):
+			break
 		iskim += 1
 
 	# haven't found a question put before we reach the front
