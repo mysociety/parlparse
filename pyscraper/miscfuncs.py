@@ -387,7 +387,7 @@ def StraightenHTMLrecurse(stex, stampurl):
 			sres[i] = ''
 
 		# allow brs through
-		elif re.match('<br>$(?i)', sres[i]):
+		elif re.match('<br ?/?>$(?i)', sres[i]):
 			sres[i] = '<br/>'
 
 		# discard garbage that appears in recent today postings
