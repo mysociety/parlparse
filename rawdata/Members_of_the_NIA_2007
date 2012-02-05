@@ -21,7 +21,7 @@
 /* cache key: enwiki:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */</style>
 <script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
 <script type="text/javascript">if ( window.mediaWiki ) {
-	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Members_of_the_Northern_Ireland_Assembly_elected_in_2007", "wgTitle": "Members of the Northern Ireland Assembly elected in 2007", "wgCurRevisionId": 459980399, "wgArticleId": 9807646, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Northern Ireland MLAs 2007–2011", "Lists of Northern Irish parliamentarians", "Northern Ireland-related lists"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "hidesig": true, "templateEditor": false, "templates": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "b6d51c383a2035bf4155e84d887c7fa2", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "mahEditToken": "+\\", "mbEditToken": "+\\", "mbEmailEnabled": true, "mbUserEmail": false, "mbIsEmailConfirmationPending": false, "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Members_of_the_Northern_Ireland_Assembly_elected_in_2007", "wgTitle": "Members of the Northern Ireland Assembly elected in 2007", "wgCurRevisionId": 459980399, "wgArticleId": 9807646, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Northern Ireland MLAs 2007–2011", "Lists of Northern Irish parliamentarians", "Northern Ireland-related lists"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "hidesig": true, "templateEditor": false, "templates": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "0ad15c12fb42fd3b58c27f55b1ff706f", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "mbEmailEnabled": true, "mbUserEmail": false, "mbIsEmailConfirmationPending": false, "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
 }
 </script><script type="text/javascript">if ( window.mediaWiki ) {
 	mw.loader.load(["mediawiki.page.startup"]);
@@ -77,7 +77,7 @@ Northern Ireland</a></b></p>
 <div class="NavHead" style="background-color:#ccccff;border:1px solid #000000;padding: 0px 0px 0px 4px; font-size: 100%; text-align:left;margin:0px;color:#330000"><b><a href="/wiki/Northern_Ireland_Executive" title="Northern Ireland Executive">Executive</a></b></div>
 <div class="NavContent" style="text-align:left;margin:0px 1px;border:none;text-weight:bold;display:none;">
 <ul>
-<li><a href="/wiki/Executive_of_the_3rd_Northern_Ireland_Assembly" title="Executive of the 3rd Northern Ireland Assembly">Executive Committee</a>
+<li><a href="/wiki/Executive_of_the_4th_Northern_Ireland_Assembly" title="Executive of the 4th Northern Ireland Assembly">Executive Committee</a>
 <ul>
 <li><a href="/wiki/First_Minister_and_deputy_First_Minister" title="First Minister and deputy First Minister">First Minister</a>
 <ul>
@@ -1029,10 +1029,10 @@ Northern Ireland</a></b></p>
 <li><a rel="nofollow" class="external text" href="http://www.niassembly.gov.uk/members/membership07.htm">Membership of the Northern Ireland Assembly</a></li>
 </ul>
 <center>
-<table class="navbox" cellspacing="0" style=";">
+<table cellspacing="0" class="navbox" style="border-spacing:0;;">
 <tr>
 <td style="padding:2px;">
-<table cellspacing="0" class="nowraplinks collapsible autocollapse" style="width:100%;background:transparent;color:inherit;;">
+<table cellspacing="0" class="nowraplinks collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit;;">
 <tr>
 <th scope="col" style=";background:#BFD7FF;" class="navbox-title" colspan="2">
 <div class="noprint plainlinks hlist navbar" style="">
@@ -1076,10 +1076,10 @@ Northern Ireland</a></b></p>
 </td>
 </tr>
 </table>
-<table class="navbox" cellspacing="0" style=";">
+<table cellspacing="0" class="navbox" style="border-spacing:0;;">
 <tr>
 <td style="padding:2px;">
-<table cellspacing="0" class="nowraplinks collapsible autocollapse" style="width:100%;background:transparent;color:inherit;;">
+<table cellspacing="0" class="nowraplinks collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit;;">
 <tr>
 <th scope="col" style=";background:#6699CC;color:white" class="navbox-title" colspan="3">
 <div class="noprint plainlinks hlist navbar" style="">
@@ -1170,12 +1170,12 @@ Northern Ireland</a></b></p>
 <!-- 
 NewPP limit report
 Preprocessor node count: 1783/1000000
-Post-expand include size: 62252/2048000 bytes
+Post-expand include size: 62462/2048000 bytes
 Template argument size: 31484/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!*!0!!en!4!* and timestamp 20111229033945 generated by srv235 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:9807646-0!*!0!!en!4!* and timestamp 20120125203131 generated by srv208 -->
 </div>				<!-- /bodycontent -->
 								<!-- printfooter -->
 				<div class="printfooter">
@@ -1209,7 +1209,7 @@ Expensive parser function count: 0/500
 	<h5>Namespaces</h5>
 	<ul>
 					<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007"  title="View the content page [c]" accesskey="c">Article</a></span></li>
-					<li  id="ca-talk"><span><a href="/wiki/Talk:Members_of_the_Northern_Ireland_Assembly_elected_in_2007"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-talk"><span><a href="/wiki/Talk:Members_of_the_Northern_Ireland_Assembly_elected_in_2007"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
 			</ul>
 </div>
 
@@ -1380,6 +1380,6 @@ Wikipedia&reg; is a registered trademark of the <a href="//www.wikimediafoundati
 	
 	/* cache key: enwiki:resourceloader:filter:minify-js:4:b41a86ec4e0fe8329bc3ce917e792339 */
 }
-</script><script src="//geoiplookup.wikimedia.org/" type="text/javascript"></script><!-- Served by mw56 in 0.090 secs. -->
+</script><script src="//geoiplookup.wikimedia.org/" type="text/javascript"></script><!-- Served by mw26 in 0.089 secs. -->
 	</body>
 </html>
