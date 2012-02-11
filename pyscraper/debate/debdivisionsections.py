@@ -197,15 +197,18 @@ def GrabDivisionProced(qbp, qbd):
 	# look back at previous paragraphs and skim off a part of what's there
 	# to make a non-spoken bit reporting on the division.
 	iskim = 1
-	while len(qbp.stext) >= iskim:
-		if reqput.match(qbp.stext[-iskim]) or re.search('Serjeant at Arms', qbp.stext[-iskim-1]):
-			break
-		iskim += 1
+	if re.search('Serjeant at Arms', qbp.stext[-2]):
+		pass
+	else:
+		while len(qbp.stext) >= iskim:
+			if reqput.match(qbp.stext[-iskim]):
+				break
+			iskim += 1
 
-	# haven't found a question put before we reach the front
-	if len(qbp.stext) < iskim:
-		iskim = 1
-		# VALID in 99% of cases: raise Exception, "no question put before division"
+		# haven't found a question put before we reach the front
+		if len(qbp.stext) < iskim:
+			iskim = 1
+			# VALID in 99% of cases: raise Exception, "no question put before division"
 
 	# copy the two lines into a non-speaking paragraph.
 	qbdp = qspeech('nospeaker="true"', "", qbp.sstampurl)
