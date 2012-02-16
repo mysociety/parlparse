@@ -255,12 +255,17 @@ class ParseDay:
 		self.url = ''
 
 		if date >= '2011-12-12':
-			body = soup.find('div', 'grid_10').findAll('p')
+			body_div = soup.find('div', 'grid_10') or soup.find('div','grid_7')
+			if not body_div:
+				raise ContextException, 'Could not find div containing main content.'
+			
+			body = body_div.findAll('p')
+
 			nia_heading_re = re.compile(r'Session: 2011/2012')
 			if not nia_heading_re.match(''.join(body[0](text=True))):
 				raise ContextException, 'Missing NIA heading!'
 			date_head = body[1].find(text=True)
-			body = body[3:] # body[2] is a PDF download link
+			body = body[3:] # body[2] is a PDF download link or ISBN
 		else:
 			body = soup('p')
 			nia_heading_re = re.compile(
