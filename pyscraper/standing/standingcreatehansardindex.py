@@ -97,7 +97,7 @@ def GetReportProceedings(urlpage, year):
                 if int(year) >= 2009:
                         if 'PDF' in lkname: continue # We don't care about the pretty PDFs
 
-                        msitting = re.match('Comm?ittee?(?: Stage| debate)*(?: -|:)? (\d+)(?:st|nd|rd|th) sitting(?i)', lkname)
+                        msitting = re.match('Comm?ittee?(?: Stage| debate)*(?: ?-|:)? (\d+)(?:st|nd|rd|th) sitting(?i)', lkname)
 			try:
                                 sitting = int(msitting.group(1))
                         except:
