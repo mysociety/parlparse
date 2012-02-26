@@ -22,7 +22,7 @@
 /* cache key: enwiki:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */</style>
 <script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
 <script type="text/javascript">if ( window.mediaWiki ) {
-	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001", "wgTitle": "List of MPs elected in the United Kingdom general election, 2001", "wgCurRevisionId": 476933858, "wgArticleId": 78984, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Lists of MPs elected in United Kingdom general elections", "2001 elections in the United Kingdom", "UK MPs 2001–2005"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "hidesig": true, "templateEditor": false, "templates": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "8a24a68d10dc53666b6fb2822d2e1792", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "mbEmailEnabled": true, "mbUserEmail": false, "mbIsEmailConfirmationPending": false, "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001", "wgTitle": "List of MPs elected in the United Kingdom general election, 2001", "wgCurRevisionId": 478866791, "wgArticleId": 78984, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Lists of MPs elected in United Kingdom general elections", "2001 elections in the United Kingdom", "UK MPs 2001–2005"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "hidesig": true, "templateEditor": false, "templates": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "1f4ef7b6c17ca90c76de2850cbcddb53", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "mbEmailEnabled": true, "mbUserEmail": false, "mbIsEmailConfirmationPending": false, "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
 }
 </script><script type="text/javascript">if ( window.mediaWiki ) {
 	mw.loader.load(["mediawiki.page.startup"]);
@@ -1884,7 +1884,7 @@
 </tr>
 <tr>
 <td><a href="/wiki/Hexham_(UK_Parliament_constituency)" title="Hexham (UK Parliament constituency)">Hexham</a></td>
-<td><a href="/wiki/Peter_Atkinson" title="Peter Atkinson">Peter Atkinson</a></td>
+<td><a href="/wiki/Peter_Atkinson_(politician)" title="Peter Atkinson (politician)">Peter Atkinson</a></td>
 <td>Conservative</td>
 </tr>
 <tr>
@@ -3847,11 +3847,11 @@
 <table cellspacing="0" class="nowraplinks collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit;;">
 <tr>
 <th scope="col" style=";" class="navbox-title" colspan="2">
-<div class="noprint plainlinks hlist navbar" style="">
+<div class="noprint plainlinks hlist navbar mini" style="">
 <ul>
-<li class="nv-view"><a href="/wiki/Template:UnitedKingdomMPs" title="Template:UnitedKingdomMPs"><span style=";;background:none transparent;border:none;" title="View this template">v</span></a></li>
-<li class="nv-talk"><a href="/wiki/Template_talk:UnitedKingdomMPs" title="Template talk:UnitedKingdomMPs"><span style=";;background:none transparent;border:none;" title="Discuss this template">d</span></a></li>
-<li class="nv-edit"><a class="external text" href="//en.wikipedia.org/w/index.php?title=Template:UnitedKingdomMPs&amp;action=edit"><span style=";;background:none transparent;border:none;" title="Edit this template">e</span></a></li>
+<li class="nv-view"><a href="/wiki/Template:UnitedKingdomMPs" title="Template:UnitedKingdomMPs"><span title="View this template" style=";;background:none transparent;border:none;">v</span></a></li>
+<li class="nv-talk"><a href="/wiki/Template_talk:UnitedKingdomMPs" title="Template talk:UnitedKingdomMPs"><span title="Discuss this template" style=";;background:none transparent;border:none;">t</span></a></li>
+<li class="nv-edit"><a class="external text" href="//en.wikipedia.org/w/index.php?title=Template:UnitedKingdomMPs&amp;action=edit"><span title="Edit this template" style=";;background:none transparent;border:none;">e</span></a></li>
 </ul>
 </div>
 <div class="" style="font-size:110%;"><a href="/wiki/List_of_United_Kingdom_MPs" title="List of United Kingdom MPs">List of United Kingdom MPs</a></div>
@@ -3900,17 +3900,17 @@
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 827/1000000
-Post-expand include size: 48315/2048000 bytes
-Template argument size: 35039/2048000 bytes
+Preprocessor node count: 830/1000000
+Post-expand include size: 48349/2048000 bytes
+Template argument size: 35040/2048000 bytes
 Expensive parser function count: 0/500
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!*!0!!*!4!* and timestamp 20120219042305 generated by mw27 -->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:78984-0!*!0!!*!4!* and timestamp 20120226004515 generated by mw39 -->
 </div>				<!-- /bodycontent -->
 								<!-- printfooter -->
 				<div class="printfooter">
-				Retrieved from "<a href="http://en.wikipedia.org/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;oldid=476933858">http://en.wikipedia.org/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;oldid=476933858</a>"				</div>
+				Retrieved from "<a href="http://en.wikipedia.org/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;oldid=478866791">http://en.wikipedia.org/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;oldid=478866791</a>"				</div>
 				<!-- /printfooter -->
 												<!-- catlinks -->
 				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="/wiki/Category:Lists_of_MPs_elected_in_United_Kingdom_general_elections" title="Category:Lists of MPs elected in United Kingdom general elections">Lists of MPs elected in United Kingdom general elections</a></li><li><a href="/wiki/Category:2001_elections_in_the_United_Kingdom" title="Category:2001 elections in the United Kingdom">2001 elections in the United Kingdom</a></li><li><a href="/wiki/Category:UK_MPs_2001%E2%80%932005" title="Category:UK MPs 2001–2005">UK MPs 2001–2005</a></li></ul></div></div>				<!-- /catlinks -->
@@ -4048,8 +4048,8 @@ Expensive parser function count: 0/500
 			<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
 			<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
 			<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
-			<li id="t-permalink"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;oldid=476933858" title="Permanent link to this revision of the page">Permanent link</a></li>
-<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;id=476933858" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+			<li id="t-permalink"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;oldid=478866791" title="Permanent link to this revision of the page">Permanent link</a></li>
+<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;id=478866791" title="Information on how to cite this page">Cite this page</a></li>		</ul>
 	</div>
 </div>
 
@@ -4059,7 +4059,7 @@ Expensive parser function count: 0/500
 <div class="portal" id='p-coll-print_export'>
 	<h5>Print/export</h5>
 	<div class="body">
-		<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2001" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2001&amp;oldid=476933858&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>	</div>
+		<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2001" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=List+of+MPs+elected+in+the+United+Kingdom+general+election%2C+2001&amp;oldid=478866791&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_2001&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>	</div>
 </div>
 
 <!-- /coll-print_export -->
@@ -4080,7 +4080,7 @@ Expensive parser function count: 0/500
 		<!-- footer -->
 		<div id="footer">
 							<ul id="footer-info">
-											<li id="footer-info-lastmod"> This page was last modified on 15 February 2012 at 01:42.<br /></li>
+											<li id="footer-info-lastmod"> This page was last modified on 26 February 2012 at 00:45.<br /></li>
 											<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
 additional terms may apply.
 See <a href="//wikimediafoundation.org/wiki/Terms_of_use">Terms of use</a> for details.<br/>
@@ -4119,6 +4119,6 @@ Wikipedia&reg; is a registered trademark of the <a href="//www.wikimediafoundati
 	
 	/* cache key: enwiki:resourceloader:filter:minify-js:4:66a568c26ff67d7e55cbec9a00b41f09 */
 }
-</script><script src="//geoiplookup.wikimedia.org/" type="text/javascript"></script><!-- Served by mw27 in 1.690 secs. -->
+</script><script src="//geoiplookup.wikimedia.org/" type="text/javascript"></script><!-- Served by srv264 in 0.087 secs. -->
 	</body>
 </html>
