@@ -164,7 +164,7 @@ def StandingPullGluePages(datefrom, dateto, bforcescrape):
 		if mnums:
 			lshortnamemap.setdefault(mnums.group(1), []).append((AlphaStringToOrder(mnums.group(2)), mnums.group(2), ldfile))
 		elif os.path.isfile(os.path.join(pwstandingpages, ldfile)):
-			print "not recognized file:", ldfile, " in ", pwlordspages
+			print "not recognized file:", ldfile, " in ", pwstandingpages
 
 	# loop through the index of each lord line.
 	for dnu in cstandingindex.res:
