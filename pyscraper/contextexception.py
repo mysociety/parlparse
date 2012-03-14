@@ -18,7 +18,7 @@ class ContextException(Exception):
         ret = ""
         if self.fragment:
             ret = ret + "Fragment: " + repr(self.fragment) + "\n\n"
-        ret = ret + self.description + "\n"
+        ret = ret + repr(self.description) + "\n"
         if self.stamp:
             ret = ret + repr(self.stamp) + "\n"
         return ret
