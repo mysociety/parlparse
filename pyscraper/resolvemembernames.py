@@ -509,6 +509,9 @@ class MemberList(xml.sax.handler.ContentHandler):
         # Clear name history if date change
         self.date_setup(date)
   
+        if input == "The Queen":
+            return 'speakerid="uk.org.publicwhip/royal/-1" speakername="The Queen"'
+
         # Sometimes no bracketed component: Mr. Prisk
         ids = self.fullnametoids(input, date)
         # Different types of brackets...
