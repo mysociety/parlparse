@@ -149,6 +149,8 @@ def StripDebateHeadings(headspeak, sdate):
                         newtime = '11:30:00'
                 elif re.match("^half-past Two(?i)", time):
                         newtime = '14:30:00'
+                elif re.match("^a quarter to Ten o(?i)", time):
+                        newtime = '09:45:00'
                 elif re.match("^Ten o'clock(?i)", time):
                         newtime = '10:00:00'
                 elif re.match("^Six o'clock(?i)", time):
