@@ -102,7 +102,7 @@ def GetReportProceedings(urlpage, year):
                                 sitting = int(msitting.group(1))
                         except:
                                 raise Exception, "Could not find sitting in %s for %s" % (lkname, urlpage)
-                        mdate = re.search('cmpublic/(.*?)/(\d\d)(\d\d)(\d\d)/(am|pm)/\d+s\d+(?:part(\d))?\.htm', lklk)
+                        mdate = re.search('cmpublic/(.*?)/(\d\d)(\d\d)(\d\d)/(am|pm)/\d+s\d+(?:(?:part|p)(\d))?\.htm', lklk)
                         sdate = mx.DateTime.DateTimeFrom(
                                 year=2000+int(mdate.group(2)),
                                 month=int(mdate.group(3)),
