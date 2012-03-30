@@ -261,8 +261,9 @@ manualmatches = {
     "Shaun Woodward [St Helens South]" : "Shaun Woodward [St Helens South / Witney]",
     "Shaun Woodward [Witney]" : "Shaun Woodward [St Helens South / Witney]",
 
-    "George Galloway [Bethnal Green and Bow]" : "George Galloway [Bethnal Green and Bow / Glasgow Kelvin]",
-    "George Galloway [Glasgow Kelvin]" : "George Galloway [Bethnal Green and Bow / Glasgow Kelvin]",
+    "George Galloway [Bethnal Green and Bow]" : "George Galloway [Bradford West / Bethnal Green and Bow / Glasgow Kelvin]",
+    "George Galloway [Glasgow Kelvin]" : "George Galloway [Bradford West / Bethnal Green and Bow / Glasgow Kelvin]",
+    "George Galloway [Bradford West]" : "George Galloway [Bradford West / Bethnal Green and Bow / Glasgow Kelvin]",
 
     # Returned to maiden name
     "Anne Picking [East Lothian]" : "Anne Moffat [East Lothian]",
