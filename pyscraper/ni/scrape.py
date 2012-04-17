@@ -47,11 +47,26 @@ def scrape_new_ni():
             filename = 'ni%d-%02d-%02d%s%s.html' % (date[0], date[1], date[2], day[1], day[3])
             scrape_ni_day(urlparse.urljoin(url, day[0]), filename)
 
-        match = re.findall('<a class="html-link" href=\'(/Assembly-Business/Official-Report/Reports-\d\d-\d\d/([^/]*)/)\'>Read now</a>', page)
+        match = re.findall('<a class="html-link" href=\'(/Assembly-Business/Official-Report/Reports-\d\d-(\d\d/([^/]*)/))\'>Read now</a>', page)
         for day in match:
             # Normally 12-December-2011 but recently 23-January-2012-1030am---1100am and 1030-1100am--17-January-2012
-            date_string = re.search('(\d{1,2}-[a-zA-Z]*-\d\d\d\d)', day[1]).group(1)
-            date = time.strptime(date_string, "%d-%B-%Y")
+            # and Monday-16-April
+            formats = (
+                (r'(\d{1,2}-[a-zA-Z]*-\d\d\d\d)', "%d-%B-%Y", day[2]),
+                (r'(\d{2}/[a-zA-Z]*-\d{1,2}-[a-zA-Z]*)', "%y/%A-%d-%B", day[1]),
+                )
+
+            date = None
+            for date_re, date_format, day_part in formats:
+                match = re.search(date_re, day_part)
+
+                if match:
+                    date_string = match.group(1)
+                    date = time.strptime(date_string, date_format)
+                    break
+
+            if not date:
+                raise ValueError("%s is not in a recognized format" % day[1])
 
             if datetime.date(*date[:3]) == datetime.date.today(): continue
             if datetime.date(*date[:3]) < datetime.date(2011, 12, 12): continue
