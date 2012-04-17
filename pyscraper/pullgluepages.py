@@ -498,7 +498,7 @@ def CmIndexFromNewPage(date, type='commons'):
 	urlinkpage.close()
 
         entries = []
-	for link1 in re.findall('<a href="(http://www\.publications\.[^"#]+)(?:#[^"]*)?">([^<]*)</a>(?i)', srlinkpage):
+	for link1 in re.findall('<a[^>]*?href="(http://www\.publications\.[^"#]+)(?:#[^"]*)?">([^<]*)</a>(?i)', srlinkpage):
                 linkhref = link1[0]
                 linktext = link1[1]
      		if not re.search('debate|westminster|written(?i)', linktext):
