@@ -2935,8 +2935,8 @@
     id="uk.org.publicwhip/member/90390"
     title="" firstname="Willie" lastname="Clarke"
     constituency="South Down" party="Sinn Féin"
-    fromdate="2011-05-06" todate="9999-12-31"
-    fromwhy="election" towhy="still_in_office"
+    fromdate="2011-05-06" todate="2012-04-12"
+    fromwhy="election" towhy="resigned"
 />
 <member_ni
     id="uk.org.publicwhip/member/90391"
@@ -3495,8 +3495,8 @@
     id="uk.org.publicwhip/member/90470"
     title="" firstname="Margaret" lastname="Ritchie"
     constituency="South Down" party="SDLP"
-    fromdate="2011-05-06" todate="9999-12-31"
-    fromwhy="election" towhy="still_in_office"
+    fromdate="2011-05-06" todate="2012-03-31"
+    fromwhy="election" towhy="resigned"
 />
 <member_ni
     id="uk.org.publicwhip/member/90471"
@@ -3574,6 +3574,14 @@
     constituency="East Antrim" party="DUP"
     fromdate="2011-05-06" todate="9999-12-31"
     fromwhy="election" towhy="still_in_office"
+/>
+
+<member_ni
+    id="uk.org.publicwhip/member/90482"
+    title="" firstname="Sean" lastname="Rogers"
+    constituency="South Down" party="SDLP"
+    fromdate="2012-04-02" todate="9999-12-31"
+    fromwhy="appointed" towhy="still_in_office"
 />
 
 </publicwhip>
