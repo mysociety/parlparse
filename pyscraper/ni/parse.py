@@ -297,7 +297,10 @@ class ParseDay:
 				continue
 			if ptext == '&nbsp;' or ptext == '':
 				continue
-			cl = p['class']
+			try:
+				cl = p['class']
+			except KeyError:
+				raise ContextException, 'Missing class on paragraph: %s' %p
 			cl = re.sub(' style\d', '', cl)
 
 			if cl == 'OralWrittenQuestion' or cl == 'OralAnswers-Question':
