@@ -108,9 +108,9 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
 	if typ == "westminhall":
 		depspeakerrg = re.search("\[(.*?)(?:<i>)? ?in the Chair(?:</i>)?\]", text)
 		if not depspeakerrg:
-			print "can't find the [... in the Chair] phrase"
+			raise ContextException("Can't find the [... in the Chair] phrase")
+					
 		depspeaker = depspeakerrg.group(1)
-
 
 	# old style fixing (before patches existed)
 	if typ == "debate":
