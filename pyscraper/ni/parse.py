@@ -110,7 +110,9 @@ class ParseDay:
 <publicwhip>
 ''')
 		memberList.cleardebatehistory() # Don't want to keep it between days, or reruns of same day
-		if int(date[0:4]) >= 2006:
+		if date >= '2012-04-30' and not soup('p', { 'class': True } ):
+			self.parse_day_new_new(soup, date)
+		elif int(date[0:4]) >= 2006:
 			self.parse_day_new(soup, date)
 		else:
 			body = soup('p')
@@ -407,4 +409,165 @@ class ParseDay:
 			else:
 				raise ContextException, 'Uncaught paragraph! %s' % cl
 		self.display_speech()
+
+	def parse_day_new_new(self, soup, date):
+		for s in soup.findAll(lambda tag: tag.name=='strong' and tag.contents == []):
+			s.extract()
+
+		self.url = ''
+
+		if date >= '2011-12-12':
+			body_div = soup.find('div', 'grid_10') or soup.find('div','grid_7')
+			if not body_div:
+				raise ContextException, 'Could not find div containing main content.'
+			
+			body = body_div.findAll('p')
+
+			nia_heading_re = re.compile(r'Session: 2011/2012')
+			if not nia_heading_re.match(''.join(body[0](text=True))):
+				raise ContextException, 'Missing NIA heading!'
+			date_head = body[1].find(text=True)
+			body = body[3:] # body[2] is a PDF download link or ISBN
+		else:
+			body = soup('p')
+			nia_heading_re = re.compile(
+				r'''
+				(the)?(\s|&nbsp;|<br>)*
+				(transitional)?(\s|&nbsp;|<br>)*
+				(
+					northern(\s|&nbsp;|<br>)*
+					ireland(\s|&nbsp;|<br>)*
+				)?
+				assembly
+				''',
+				re.IGNORECASE | re.VERBOSE
+			)
+			if not nia_heading_re.match(''.join(body[0](text=True))):
+				raise ContextException, 'Missing NIA heading!'
+
+			date_head = body[1].find(text=True)
+			body = body[2:]
+
+		timestamp = ''
+		self.speaker = (None, timestamp)
+		self.text = ''
+		for p in body:
+			ptext = re.sub("\s+", " ", ''.join(p(text=True)))
+			phtml = re.sub("\s+", " ", p.renderContents()).decode('utf-8')
+			#print p, "\n---------------------\n"
+			if p.a and re.match('[^h/]', p.a.get('href', '')):
+				continue
+			if ptext == '&nbsp;' or ptext == '':
+				continue
+			try:
+				cl = p['class']
+			except KeyError:
+				raise ContextException, 'Missing class on paragraph: %s' %p
+			cl = re.sub(' style\d', '', cl)
+
+			if cl == 'OralWrittenQuestion' or cl == 'OralAnswers-Question':
+				cl = 'B1SpeakersName'
+			if cl in ('H1DocumentHeading', 'OralWrittenAnswersHeading', 'OralAnswers-H1Heading', 'WrittenStatement-Heading', 'H3SubHeading', 'OralAnswers-H2DepartmentHeading'):
+				cl = 'H3SectionHeading'
+			if cl in ('H4StageHeadingCxSpFirst', 'H4StageHeadingCxSpLast', 'OralAnswers-H3SubjectHeading'):
+				cl = 'H4StageHeading'
+			if cl in ('H4StageHeadingCxSpFirst', 'H4StageHeadingCxSpLast', 'OralAnswers-H3SubjectHeading'):
+				cl = 'H4StageHeading'
+			if cl == 'WrittenStatement-Content' or cl == 'B1BodyText-NumberedList' or cl == 'B2BodyTextBullet1':
+				cl = 'B3BodyText'
+			if cl == 'B3BodyText' and (phtml[0:8] == '<strong>' or re.match('\d+\.( |&nbsp;)+<strong>', phtml)):
+				cl = 'B1SpeakersName'
+			if cl == 'TimePeriod' and re.search('in the chair(?i)', phtml):
+				cl = 'B3SpeakerinChair'
+			if p.em and len(p.contents) == 1:
+				cl = 'B3BodyTextItalic'
+
+			if cl == 'H3SectionHeading':
+				self.display_speech()
+				self.speaker = (None, timestamp)
+				self.idA += 1
+				self.idB = 0
+				self.display_heading(ptext, timestamp, 'major')
+			elif cl == 'H4StageHeading' or cl == 'H5StageHeading' or cl == 'B3BodyTextClause':
+				self.display_speech()
+				self.speaker = (None, timestamp)
+				self.idB += 1
+				self.display_heading(ptext, timestamp, 'minor')
+			elif cl == 'B1SpeakersName':
+				self.display_speech()
+				m = re.match('.*?:', phtml)
+				if not p.strong and m:
+					newp = Tag(soup, 'p', [('class', 'B1SpeakersName')])
+					newspeaker = Tag(soup, 'strong')
+					newspeaker.insert(0, m.group())
+					newp.insert(0, phtml.replace(m.group(), ''))
+					newp.insert(0, newspeaker)
+					p = newp
+				m = re.match('([0-9]+\. )(.*?) asked', phtml)
+				if not p.strong and m:
+					newp = Tag(soup, 'p', [('class', 'B1SpeakersName')])
+					newspeaker = Tag(soup, 'strong')
+					newspeaker.insert(0, m.group(2))
+					newp.insert(0, phtml.replace(m.group(), ' asked'))
+					newp.insert(0, newspeaker)
+					newp.insert(0, m.group(1))
+					p = newp
+				if re.search("<strong>O(&rsquo;|')Neill\)?</strong>", phtml):
+					newp = Tag(soup, 'p', [('class', 'B1SpeakersName')])
+					newspeaker = Tag(soup, 'strong')
+					newspeaker.insert(0, re.sub('</?strong>', '', m.group()))
+					newp.insert(0, phtml.replace(m.group(), ''))
+					newp.insert(0, newspeaker)
+					p = newp
+				if not p.strong:
+					raise ContextException, 'No strong in p! %s' % p
+				speaker = p.strong.find(text=True)
+				speaker = re.sub('&nbsp;', '', speaker)
+				speaker = re.sub("\s+", " ", speaker).strip()
+				speaker = re.sub(':', '', speaker)
+				id, str = memberList.match(speaker, self.date)
+				self.speaker = (str, timestamp)
+				p.strong.extract()
+				phtml = p.renderContents()
+				phtml = re.sub('^:\s*', '', phtml)
+				phtml = re.sub("\s+", " ", phtml).decode('utf-8')
+				self.text += "<p>%s</p>\n" % phtml
+			elif cl in ('B3BodyTextItalic', 'Q3Motion', 'BillAmend-AmendedText', 'BillAmend-Moved', 'BillAmend-withMinister', 'BillAmend-AmendMade', 'BillAmend-ClauseHeading', 'AyesNoes', 'AyesNoesParties', 'AyesNoesVotes', 'D3PartyMembers', 'B3SpeakerinChair', 'B3BodyTextSpeakerintheChair', 'H2DocumentStartTime', 'AyesNoesDivisionTellers', 'CommunityVoteTable'):
+				match = re.match('The Assembly met at ((\d\d?)\.(\d\d) (am|pm)|noon)', phtml)
+				if match:
+					if match.group(1) == 'noon':
+						timestamp = '12:00'
+					else:
+						hour = int(match.group(2))
+						if hour<12 and match.group(4) == 'pm':
+							hour += 12
+						timestamp = "%s:%s" % (hour, match.group(3))
+					self.speaker = (self.speaker[0], timestamp)
+				match = re.search('\(((?:Mr|Madam) Speaker)', ptext)
+				if not match:
+					match = re.search('\(Mr (?:Principal )?Deputy Speaker \[(.*?)\]', ptext)
+				if match:
+					#print "Setting deputy to %s" % match.group(1)
+					memberList.setDeputy(match.group(1))
+				self.text += '<p class="italic">%s</p>\n' % phtml
+			elif cl in ('Q3MotionBullet', 'BillAmend-AmendedTextIndent', 'BillAmend-AmendedTextIndent2', 'BillAmend-AmendedTextIndent3', 'BillAmend-QuotewithMinister'):
+				self.text += '<p class="indentitalic">%s</p>\n' % phtml
+			elif cl in ('B3BodyText', 'B3BodyTextnoindent', 'RollofMembersList', 'TableText'):
+				self.text += '<p>%s</p>\n' % phtml
+			elif cl == 'Q1QuoteIndented' or cl == 'Q1Quote':
+				self.text += '<p class="indent">%s</p>\n' % phtml
+			elif cl == 'TimePeriod':
+				match = re.search('(\d\d?)\.\s*(\d\d) ?(am|pm|noon|midnight)', ptext)
+				hour = int(match.group(1))
+				if hour<12 and match.group(3) == 'pm':
+					hour += 12
+				if hour==12 and match.group(3) in ('midnight', 'am'):
+					hour = 0
+				timestamp = "%s:%s" % (hour, match.group(2))
+			elif cl == 'MsoNormal':
+				continue
+			else:
+				raise ContextException, 'Uncaught paragraph! %s' % cl
+		self.display_speech()
+
 
