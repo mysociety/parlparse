@@ -31,7 +31,7 @@ def RunRegmemFilters2010(fout, text, sdate, sdatever):
         t = BeautifulStoneSoup(text)
         for page in t('page'):
                 title = page.h2.renderContents()
-                res = re.search("^([^,]*), ([^(]*) \((.*)\)$", title)
+                res = re.search("^([^,]*), ([^(]*) \((.*)\)\s*$", title)
                 if not res:
                         raise ContextException, "Failed to break up into first/last/cons: %s" % title
                 (lastname, firstname, constituency) = res.groups()
