@@ -288,7 +288,7 @@ def GetBillLinks(bforce):
 	s = uin.read()
 	uin.close()
 	current_committees = re.findall('<a href="(http://services.parliament.uk/bills/[^"]*)">(.*?)</a>(?is)', s)
-        current_session = re.search('<strong>Session (\d{4})-\d+</strong>', s).group(1)
+        current_session = re.search('<(?:h2|strong)>Session (\d{4})-\d+</(?:h2|strong)>', s).group(1)
         committees = [ (current_session, link, text) for link, text in current_committees ]
 
 	# if you don't do --force-index, you just get the current year
