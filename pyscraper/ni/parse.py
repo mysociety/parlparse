@@ -402,7 +402,9 @@ class ParseDay:
 			elif cl == 'Q1QuoteIndented' or cl == 'Q1Quote':
 				self.text += '<p class="indent">%s</p>\n' % phtml
 			elif cl == 'TimePeriod':
-				match = re.search('(\d\d?)\.\s*(\d\d) ?(am|pm|noon|midnight)', ptext)
+				match = re.search('(\d\d?)(?:\.\s*(\d\d))? ?(am|pm|noon|midnight)', ptext)
+				if not match:
+					raise ContextException, 'Time not found in TimePeriod %s' % p
 				hour = int(match.group(1))
 				if hour<12 and match.group(3) == 'pm':
 					hour += 12
