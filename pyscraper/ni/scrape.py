@@ -54,6 +54,7 @@ def scrape_new_ni():
             formats = (
                 (r'(\d{1,2}-[a-zA-Z]*-\d\d\d\d)', "%d-%B-%Y", day[2]),
                 (r'(\d{2}/[a-zA-Z]*-\d{1,2}-[a-zA-Z]*)', "%y/%A-%d-%B", day[1]),
+                (r'(\d{2}/\d{1,2}-[a-zA-Z]*)', "%y/%d-%B", day[1]),
                 )
 
             date = None
