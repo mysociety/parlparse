@@ -207,6 +207,8 @@ class LoadOldLIndex(xml.sax.handler.ContentHandler):
 # main function
 ###############
 def UpdateLordsHansardIndex(bforce):
+	return # Not going to change again. TODO use new interface for old days.
+
 	urllisth = LordsIndexFromAll(urlalldays)
 	urllisth.sort()
 	urllisth.reverse()

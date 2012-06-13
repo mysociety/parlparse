@@ -489,13 +489,6 @@ def CompareScrapedFiles(prevfile, nextfile):
 	return "DIFFERENT"
 
 def CmIndexFromNewPage(date, type='commons'):
-        if type=='commons' and date.day==22 and date.month==5 and date.year == 2012:
-                return [
-                        ('Debates and Oral Answers', 'http://www.publications.parliament.uk/pa/cm201213/cmhansrd/cm120522/debindx/120522-x.htm'),
-                        ('Written Statements', 'http://www.publications.parliament.uk/pa/cm201213/cmhansrd/cm120522/wmsindx/120522-x.htm'),
-                        ('Written Answers', 'http://www.publications.parliament.uk/pa/cm201213/cmhansrd/cm120522/index/120522-x.htm'),
-                        ('Westminster Hall', 'http://www.publications.parliament.uk/pa/cm201213/cmhansrd/cm120522/hallindx/120522-x.htm'),
-                ]
         if type=='lords':
                 urllinkpage = '%s?d=%d&m=%d&y=%d' % (url_bydate_index_lords, date.day, date.month, date.year)
         else:
