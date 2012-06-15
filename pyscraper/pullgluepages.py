@@ -493,6 +493,7 @@ def CmIndexFromNewPage(date, type='commons'):
                 urllinkpage = '%s?d=%d&m=%d&y=%d' % (url_bydate_index_lords, date.day, date.month, date.year)
         else:
                 urllinkpage = '%s?d=%d&m=%d&y=%d' % (url_bydate_index, date.day, date.month, date.year)
+        print '*', urllinkpage
         urlinkpage = urllib.urlopen(urllinkpage)
 	srlinkpage = urlinkpage.read()
 	urlinkpage.close()
