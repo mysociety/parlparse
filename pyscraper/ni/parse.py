@@ -324,6 +324,8 @@ class ParseDay:
 				cl = 'B1SpeakersName'
 			if cl == 'TimePeriod' and re.search('in the chair(?i)', phtml):
 				cl = 'B3SpeakerinChair'
+			if cl == 'B1BodyTextQuote':
+				cl = 'B3BodyTextItalic'
 			if p.em and len(p.contents) == 1:
 				cl = 'B3BodyTextItalic'
 
