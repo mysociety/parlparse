@@ -1,0 +1,37 @@
+#!/usr/bin/perl
+#
+# Our parser likes the format that the NIA uses during the day, and very early
+# the next morning. Later in the morning, it changes to a totally different
+# format. This script hacks the new format back to the old.
+
+use strict;
+use warnings;
+
+my $start = 0;
+while (<>) {
+    # Ignore things we're not going to change, ignore the start
+    /<(p|h1|h2)/ || print && next;
+    /Assembly met/ && ($start=1);
+    $start || print && next;
+
+    # Headings
+    s{<h1[^>]*>(.*)</h1>}{<p class="H3SectionHeading">$1</p>};
+    s{<h2[^>]*>(.*)</h2>}{<p class="H4StageHeading">$1</p>};
+
+    # Quotes and procedural
+    s{<p><em>((“|").*)</em></p>}{<p class="Q1Quote">$1</p>};
+    s{<p><em>(.*)</em></p>}{<p class="B3BodyTextItalic">$1</p>};
+
+    # Times and speakers
+    s{<p><strong>(\d\d?(?:\.\d\d)? ?(am|pm|noon|midnight))</strong></p>}{<p class="TimePeriod"><strong>$1</strong></p>};
+    s{<p>((\d+\. )?<strong>.*:?</strong>:? .*)</p>}{<p class="B1SpeakersName">$1</p>};
+
+    # Odds
+    s{<p style="text-align: centre;"><em>(.*)</em></p>}{<p class="B3BodyTextItalic">$1</p>};
+    s{<p style="text-transform: uppercase;">(<strong>(AYES|NOES)</strong>)</p>}{<p class="AyesNoes">$1</p>};
+
+    # Anything else
+    s{<p>(.*)</p>}{<p class="B3BodyText">$1</p>};
+
+    print;
+}
