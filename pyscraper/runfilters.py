@@ -93,13 +93,13 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
     # do the filtering according to the type.  Some stuff is being inlined here
     if dname == 'regmem' or dname == 'votes' or dname == 'ni':
         regmemout = open(tempfilename, 'w')
-        FILTERfunction(regmemout, text, sdate, sdatever)  # totally different filter function format
-        regmemout.close()
+        try:
+            FILTERfunction(regmemout, text, sdate, sdatever)  # totally different filter function format
+        finally:
+            regmemout.close()
         # in win32 this function leaves the file open and stops it being renamed
-        print jfout
         if sys.platform != "win32":
-            print tempfilename
-            print xmlvalidate.parse(tempfilename) # validate XML before renaming
+            xmlvalidate.parse(tempfilename) # validate XML before renaming
         if os.path.isfile(jfout):
             os.remove(jfout)
         os.rename(tempfilename, jfout)
