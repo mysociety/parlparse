@@ -503,8 +503,8 @@ def CmIndexFromNewPage(date, type='commons'):
                 linktext = link1[1]
      		if not re.search('debate|westminster|written(?i)', linktext):
 		        continue
-        	uind = re.sub('\s', '', linkhref)
-        	typ = string.strip(re.sub('\s+', ' ', linktext))
+        	uind = re.sub('(?:\s|%20)', '', linkhref)
+        	typ = re.sub('\s+', ' ', linktext).strip()
                 if entries and entries[-1][1] == uind:
                         continue
 	        entries.append((typ, uind))
