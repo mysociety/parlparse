@@ -14,7 +14,12 @@ from contextexception import ContextException
 from splitheadingsspeakers import StampUrl
 
 # marks out center types bold headings which are never speakers
-respeaker = re.compile('(<center><b>(?:<stamp aname="[^"]*"/>)?[^<]*</b></center>|<b>(?:<stamp aname="[^"]*"/>|</b><b>|[^<])*</b>(?:\s*:)?)(?i)')
+# And tables sometimes have bold headings so ignore them too.
+rehead = '<center><b>(?:<stamp aname="[^"]*"/>)?[^<]*</b></center>'
+retable = '<table[^>]*>[\s\S]*?</table>'
+renormal = '<b>(?:<stamp aname="[^"]*"/>|</b><b>|[^<])*</b>(?:\s*:)?'
+respeaker = re.compile('(%s|%s|%s)(?i)' % (rehead, retable, renormal))
+
 respeakerb = re.compile('<b>\s*((?:<stamp aname="[^"]*"/>|</b><b>|[^<]+)*),?\s*</b>(\s*:)?(?i)')
 respeakervals = re.compile('([^:(]*?)\s*(?:\(([^:)]*)\)?)?(:)?:*\s*$')
 
