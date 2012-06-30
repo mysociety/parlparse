@@ -9566,7 +9566,7 @@ B - bishop
 	forenames="John Packer"
 	title="Bishop" lordname="" lordofname="Ripon and Leeds"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2006-06-23" todate="9999-12-31"
+	fromdate="2006-10-23" todate="9999-12-31"
 />
 
 <lord
@@ -9926,7 +9926,7 @@ B - bishop
     forenames="John William Hind"
     title="Bishop" lordname="" lordofname="Chichester"
     peeragetype="B" affiliation="Bp"
-    fromdate="2008-03-13" todate="9999-12-31"
+    fromdate="2008-03-13" todate="2012-04-30" towhy="retired"
 />
 
 <lord
@@ -9989,7 +9989,7 @@ B - bishop
     forenames="Peter Price"
     title="Bishop" lordname="" lordofname="Bath and Wells"
     peeragetype="B" affiliation="Bp"
-    fromdate="2008-07-21" todate="9999-12-31"
+    fromdate="2008-11-18" todate="9999-12-31"
 />
 
 <lord
@@ -11676,7 +11676,7 @@ B - bishop
     forenames="Justin"
     title="Bishop" lordname="" lordofname="Durham"
     peeragetype="B" affiliation="Bp"
-    fromdate="2011-01-12" todate="9999-12-31"
+    fromdate="2012-01-12" todate="9999-12-31"
 />
 
 <lord
@@ -11688,6 +11688,24 @@ B - bishop
     county="the London Borough of Wandsworth"
     peeragetype="L" affiliation="XB"
     fromdate="2012-01-12" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101141"
+    house="lords"
+    forenames="Tim Dakin"
+    title="Bishop" lordname="" lordofname="Winchester"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2012-03-26" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101142"
+    house="lords"
+    forenames="John Inge"
+    title="Bishop" lordname="" lordofname="Worcester"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2012-06-25" todate="9999-12-31"
 />
 
 <!--
