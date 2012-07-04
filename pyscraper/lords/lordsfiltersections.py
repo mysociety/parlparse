@@ -225,6 +225,9 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 	if re.match('<p>\[(?:<i>)?The page and line refer(?:ences are)? to .{0,160}?</p>', qpara):
 		return "misc"
 
+	# Needed to avoid lords on 2012-07-03 thinking this is someone withdrawing Amendment 63.
+	if re.match('<p>Amendment 63 has been withdrawn, so I turn now to', qpara):
+		return None
 
 	if re.match('<p>.{0,10}?(?:Amendment.{0,50}?|by leave, )(?<!semi-)withdrawn', qpara):
 		raise ContextException("Marginal withdrawn (fragment looks like it might be a withdrawn amendment, \nbut earlier regexp didn't pick it up)", stamp=qb.sstampurl, fragment=qpara)
