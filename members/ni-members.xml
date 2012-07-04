@@ -2837,8 +2837,8 @@
     id="uk.org.publicwhip/member/90376"
     title="" firstname="Martina" lastname="Anderson"
     constituency="Foyle" party="Sinn Féin"
-    fromdate="2011-05-06" todate="9999-12-31"
-    fromwhy="election" towhy="still_in_office"
+    fromdate="2011-05-06" todate="2012-06-13"
+    fromwhy="election" towhy="resigned"
 />
 <member_ni
     id="uk.org.publicwhip/member/90377"
@@ -3594,6 +3594,14 @@
 
 <member_ni
     id="uk.org.publicwhip/member/90484"
+    title="" firstname="Maeve" lastname="McLaughlin"
+    constituency="Foyle" party="Sinn F??in"
+    fromdate="2012-06-14" todate="9999-12-31"
+    fromwhy="appointed" towhy="still_in_office"
+/>
+
+<member_ni
+    id="uk.org.publicwhip/member/90485"
     title="" firstname="Declan" lastname="McAleer"
     constituency="West Tyrone" party="Sinn F??in"
     fromdate="2012-07-02" todate="9999-12-31"
@@ -3601,7 +3609,7 @@
 />
 
 <member_ni
-    id="uk.org.publicwhip/member/90485"
+    id="uk.org.publicwhip/member/90486"
     title="" firstname="Rosaleen" lastname="McCorley"
     constituency="Belfast West" party="Sinn F??in"
     fromdate="2012-07-02" todate="9999-12-31"
@@ -3609,7 +3617,7 @@
 />
 
 <member_ni
-    id="uk.org.publicwhip/member/90486"
+    id="uk.org.publicwhip/member/90487"
     title="" firstname="Megan" lastname="Fearon"
     constituency="Newry and Armagh" party="Sinn F??in"
     fromdate="2012-07-02" todate="9999-12-31"
@@ -3617,7 +3625,7 @@
 />
 
 <member_ni
-    id="uk.org.publicwhip/member/90487"
+    id="uk.org.publicwhip/member/90488"
     title="" firstname="Bronwyn" lastname="McGahan"
     constituency="Fermanagh and South Tyrone" party="Sinn F??in"
     fromdate="2012-07-02" todate="9999-12-31"
