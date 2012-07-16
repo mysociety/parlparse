@@ -37,6 +37,9 @@ if wday == 0: # Monday
 elif wday >= 1 and wday <= 5: # Tuesday to Saturday
     dirs = dirs[wday-1]
     yesterday = (today - datetime.timedelta(days=1)).isoformat()
+else:
+    dirs = dirs[4]
+    yesterday = (today - datetime.timedelta(days=2)).isoformat()
 
 rescrape = []
 for type, dir in dirs.items():
