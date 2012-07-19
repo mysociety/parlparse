@@ -13,7 +13,7 @@ sys.path.append(pardir)
 os.chdir(pardir)
 from resolvemembernames import memberList
 from contextexception import ContextException
-from BeautifulSoup import BeautifulSoup
+from BeautifulSoup import BeautifulSoup, NavigableString
 from patchtool import RunPatchTool
 from xmlfilewrite import WriteXMLHeader
 from standingutils import shortname_atts
@@ -207,7 +207,7 @@ class ParseCommittee:
         """
 
         if text is None:
-            raise Exception, "Heading expected, but got None, at %s" % self.timestamp
+            raise ContextException, "Heading expected, but got None, at %s" % self.timestamp
 
         self.close_speech(type)
         if not self.in_heading:
@@ -957,7 +957,20 @@ class ParseCommittee:
                     self.display_speech_tag()
                     self.display_para(tag)
                 elif (cssClass == 'hs_AmendmentHeading'):
-                    self.display_heading(tag.string, "major")
+                    heading_text = tag.string
+
+                    if heading_text is None:
+                        # Just occasionally instead of just text inside the heading, they'll put something
+                        # like a span with class smallcaps.
+                        heading_contents = [x for x in tag.contents
+                                            if not isinstance(x,  NavigableString) or x.strip()]
+
+                        if len(heading_contents) == 1:
+                            heading_text = heading_contents[0].string
+                        else:
+                            raise ContextException, "Heading text is not just text: %s" % tag
+
+                    self.display_heading(heading_text, "major")
                 elif (cssClass in ['hs_AmendmentLevel0', 
                                    'hs_AmendmentLevel1', 'hs_AmendmentLevel1Char',
                                    'hs_AmendmentLevel2',
@@ -1157,7 +1170,7 @@ for file in g:
             break
         except ContextException, ce:
             if patchtool:
-                print "Problem parsing...", ce.description
+                print "Problem parsing...", repr(ce.description)
                 RunPatchTool('standing', patch_part, ce)
                 continue
             elif quiet:
