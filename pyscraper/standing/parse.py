@@ -52,6 +52,9 @@ class StandingSoup(BeautifulSoup):
     # pre-parsing regex-based cleanup   
     myMassage = [
         
+        # Fix Fiona's name when they get it wrong
+        (re.compile(u'O\u2019(</strong>\s*<strong>)?'), "O'"),
+
         # Remove gumph
         (re.compile('</?center>'), lambda match: ''),
         (re.compile('&(nbsp|#160);'), lambda match: ''),
