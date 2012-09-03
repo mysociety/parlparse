@@ -8636,8 +8636,8 @@
     spurl=""
     fromdate="2011-05-06"
     fromwhy="regional_election"
-    todate="9999-12-31"
-    towhy="still_in_office"
+    todate="2012-04-08"
+    towhy="changed_party"
 />
 <member_sp
     id="uk.org.publicwhip/member/80448"
@@ -10005,4 +10005,20 @@
     towhy="still_in_office"
 />
     
+<member_sp
+    id="uk.org.publicwhip/member/80539"
+    fullname="Bill Walker"
+    constituency="Dunfermline"
+    membertype="constituency"
+    party="Independent"
+    firstname="Bill"
+    lastname="Walker"
+    title=""
+    spurl=""
+    fromdate="2012-04-08"
+    fromwhy="changed_party"
+    todate="9999-12-31"
+    towhy="still_in_office"
+/>
+
 </publicwhip>
