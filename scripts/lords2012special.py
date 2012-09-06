@@ -8,6 +8,7 @@ import codecs
 import sys
 import re
 import urllib
+import time
 from BeautifulSoup import BeautifulSoup, NavigableString
 
 import xml.sax
@@ -18,7 +19,11 @@ sys.path.append('../pyscraper/lords/')
 from resolvelordsnames import lordsList
 
 # The days that have had written answers so far
-days = (('31','07','2012'), ('06','08','2012'), ('13','08','2012'), ('20','08','2012'), ('28','08','2012'), ('03','09','2012'))
+days = (
+    ('31','07','2012'), ('06','08','2012'), ('13','08','2012'),
+    ('20','08','2012'), ('28','08','2012'), ('03','09','2012'),
+    ('10','09','2012'), ('17','09','2012')
+)
 
 for day in days:
     date = '%s-%s-%s' % (day[2], day[1], day[0])
@@ -27,7 +32,11 @@ for day in days:
         continue
 
     url = 'http://www.publications.parliament.uk/pa/ld/ldtoday/writtens/%s%s%s.htm' % day
-    d = urllib.urlopen(url).read()
+    u = urllib.urlopen(url)
+    d = u.read()
+    code = u.getcode()
+    if code == 404: # Not there yet
+        continue
     soup = BeautifulSoup(d)
     content = soup.find('div', 'hansardContent')
 
@@ -105,4 +114,7 @@ for day in days:
     fp.write(out)
     fp.close()
     xmlvalidate.parse(fn)
+    fp = open('../../parldata/scrapedxml/lordspages/changedates.txt', 'a')
+    fp.write('%s,lordswrans%s' % (int(time.time()), date)
+    fp.close()
 
