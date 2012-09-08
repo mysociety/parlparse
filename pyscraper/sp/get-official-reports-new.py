@@ -12,13 +12,13 @@ import urllib2
 import os
 from optparse import OptionParser
 import time
+import gzip
+from StringIO import StringIO
+import random
 
-output_directory = "../../../parldata/cmpages/sp/official-reports/"
+output_directory = "../../../parldata/cmpages/sp/official-reports-new/"
 
-current_date = datetime.date.today()
-search_back_to = datetime.date(2011, 1, 1)
-
-official_reports_browse_url = 'http://www.scottish.parliament.uk/parliamentarybusiness/39977.aspx'
+official_report_url_format = 'http://www.scottish.parliament.uk/parliamentarybusiness/28862.aspx?r={}&mode=html'
 
 user_agent = 'Mozilla/5.0 (Ubuntu; X11; Linux i686; rv:9.0.1) Gecko/20100101 Firefox/9.0.1'
 
@@ -27,45 +27,95 @@ parser.add_option('-v', '--verbose', dest='verbose', action='store_true',
                   default=False, help='Print progress messages')
 parser.add_option('-t', '--test', dest='test', action='store_true',
                   default=False, help='Run doctests')
+parser.add_option('--historic', dest='historic',
+                  help='Fetch all documents with ID up to MAXID',
+                  metavar='MAXID')
+parser.add_option('--daily', help='Fetch the documents listed today',
+                  default=False, action='store_true')
+parser.add_option('--track-missing', dest='missing',
+                  help='Record and skip those that are missing',
+                  default=False, action='store_true')
+
 (options, args) = parser.parse_args()
 
-def slash_date(d):
-    '''
-    >>> d = datetime.date(2011,3,2)
-    >>> slash_date(d)
-    '2/3/2011'
-    '''
-    return '{d}/{m}/{y}'.format(d=d.day,
-                                m=d.month,
-                                y=d.year)
+minimum_sleep = 2
+maximum_sleep = 10
 
-def text_date(d):
-    '''
-    >>> d = datetime.date(2011,3,2)
-    >>> text_date(d)
-    '02 March 2011'
-    '''
-    return d.strftime('%d %B %Y')
+def pp(element):
+    print etree.tostring(element, pretty_print = True)
 
-def comma_date(d):
-    '''
-    >>> d = datetime.date(2011,3,2)
-    >>> comma_date(d)
-    '[2011,3,2]'
-    '''
-    return '[{y},{m},{d}]'.format(y=d.year,
-                                  m=d.month,
-                                  d=d.day)
+missing_report_ids_filename = os.path.join(output_directory, 'missing')
+missing_report_ids = set()
 
-# Unfortunately urllib.urlencode uses quote_plus, not quote, and we
-# also need to escape '/' characters:
+if options.missing:
+    with open(missing_report_ids_filename) as fp:
+        for line in fp:
+            line = line.strip()
+            if line:
+                i = int(line, 10)
+                missing_report_ids.add(i)
 
-def quote_pair(t):
-    '''
-    >>> quote_pair(('ORBrowser1_dateFrom_ClientState', '{"minDateStr":"5/12/1999 0:0:0","maxDateStr":"12/31/2099 0:0:0"}'))
-    'ORBrowser1_dateFrom_ClientState=%7B%22minDateStr%22%3A%225%2F12%2F1999%200%3A0%3A0%22%2C%22maxDateStr%22%3A%2212%2F31%2F2099%200%3A0%3A0%22%7D'
-    '''
-    return urllib.quote(t[0], '') + '=' + urllib.quote(t[1], '')
+def get_document_from_id(official_report_id):
+    html_filename = os.path.join(output_directory, str(official_report_id) + '.html')
+    if not os.path.exists(html_filename):
+        url = official_report_url_format.format(official_report_id)
+        if options.verbose:
+            print "Fetching:", url
+        request = urllib2.Request(url)
+        request.add_header('User-Agent', user_agent)
+        opener = urllib2.build_opener()
+        response = None
+        try:
+            response = urllib2.urlopen(request)
+        except urllib2.HTTPError, e:
+            # Specifying a non-existent r parameter gets us a 500 error,
+            # so ignore those:
+            if e.code == 500:
+                if options.missing:
+                    if official_report_id not in missing_report_ids:
+                        missing_report_ids.add(official_report_id)
+                        with open(missing_report_ids_filename, "a") as fp:
+                            fp.write(str(official_report_id) + "\n")
+                return
+            else:
+                raise
+        with open(html_filename, 'w') as fp:
+            fp.write(response.read())
+        time.sleep(random.uniform(minimum_sleep, maximum_sleep))
+    parser = etree.HTMLParser()
+    with open(html_filename) as fp:
+        tree = etree.parse(fp, parser)
+
+def main():
+
+    if options.historic:
+        for i in range(1, int(options.historic, 10)):
+            get_document_from_id(i)
+
+    elif options.daily:
+        url = 'http://www.scottish.parliament.uk/parliamentarybusiness/OfficialReport.aspx'
+        request = urllib2.Request(url)
+        request.add_header('User-Agent', user_agent)
+        opener = urllib2.build_opener()
+        response = urllib2.urlopen(request)
+        parser = etree.HTMLParser()
+        html = response.read()
+        html = re.sub('(?ims)^\s*', '', html)
+        tree = etree.parse(StringIO(html), parser)
+        report_ids = set()
+        for link in tree.xpath('.//a'):
+            href = link.get('href')
+            if href:
+                m = re.search(r'28862.aspx\?r=(\d+)', href)
+                if m:
+                    report_ids.add(int(m.group(1), 10))
+        min_report_id = min(report_ids) - 20
+        max_report_id = max(report_ids) + 20
+        for report_id in range(min_report_id, max_report_id + 1):
+            get_document_from_id(report_id)
+
+    else:
+        print "Either --daily or --historic=MAXID must be specified"
 
 if options.test:
     if options.verbose:
@@ -73,87 +123,5 @@ if options.test:
     import doctest
     doctest.testmod()
     sys.exit(0)
-
-post_parameters = [
-    ('AjaxScriptManager_HiddenField', ''),
-    ('ORBrowser1$btnSearch', 'Browse'),
-    ('ORBrowser1$dateFrom', str(search_back_to)),
-    ('ORBrowser1$dateFrom$dateInput', str(search_back_to) + '-00-00-00'),
-    ('ORBrowser1$dateTo', str(current_date)),
-    ('ORBrowser1$dateTo$dateInput', str(current_date) + '-00-00-00'),
-    ('ORBrowser1_dateFrom_ClientState', '{"minDateStr":"5/12/1999 0:0:0","maxDateStr":"12/31/2099 0:0:0"}'),
-    ('ORBrowser1_dateFrom_calendar_AD', '[[1999,5,12],[2099,12,30],[2011,7,1]]'),
-    ('ORBrowser1_dateFrom_calendar_SD', '[[2011,1,1]]'),
-    ('ORBrowser1_dateFrom_dateInput_ClientState', '{"enabled":true,"emptyMessage":"","minDateStr":"5/12/1999 0:0:0","maxDateStr":"12/31/2099 0:0:0"}'),
-    ('ORBrowser1_dateFrom_dateInput_text', text_date(search_back_to)),
-    ('ORBrowser1_dateTo_ClientState', '{{"minDateStr":"{} 0:0:0","maxDateStr":"12/31/2099 0:0:0"}}'.format(slash_date(search_back_to))),
-    ('ORBrowser1_dateTo_calendar_AD', '[{},[2099,12,30],{}]'.format(comma_date(search_back_to), comma_date(current_date))),
-    ('ORBrowser1_dateTo_calendar_SD', '[]'),
-    ('ORBrowser1_dateTo_dateInput_ClientState', '{{"enabled":true,"emptyMessage":"","minDateStr":"{} 0:0:0","maxDateStr":"12/31/2099 0:0:0"}}'.format(slash_date(search_back_to))),
-    ('ORBrowser1_dateTo_dateInput_text', text_date(current_date)),
-    ('Search$SearchTerms', ''),
-    ('__EVENTARGUMENT', ''),
-    ('__EVENTTARGET', ''),
-    ('__EVENTVALIDATION', '/wEWCAL+raDpAgLkyYOkAgLuqPeQDAKRgf61CgLA8+H0DAKm3+v1DgK31+3eCAK1kfniCsRZiGV61DLzTRq4Owywfzmq1dKt'),
-    ('__SCROLLPOSITIONX', '0'),
-    ('__SCROLLPOSITIONY', '57'),
-    ('__VIEWSTATE', ''),
-    ('__VIEWSTATEGUID', '8b55e34e-b11c-4f57-817b-261f66bfb16d')
-]
-
-encoded_parameters = '&'.join(quote_pair(t) for t in post_parameters)
-
-# The server seems to return a 500 error unless I add the Accept
-# header.  It can't hurt to add the User-Agent and Referer headers as
-# well.
-
-headers = {
-    'User-Agent': user_agent,
-    'Referer': official_reports_browse_url,
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-}
-
-if options.verbose:
-    print "Fetching:", official_reports_browse_url
-
-request = urllib2.Request(official_reports_browse_url, encoded_parameters, headers)
-response = urllib2.urlopen(request)
-
-parser = etree.HTMLParser()
-
-tree = etree.parse(response, parser)
-
-for e in tree.xpath('.//div[@id="ORBrowser1_pnlResults"]//tr'):
-    cells = e.getchildren()
-    date_text = cells[0].text
-    if date_text == 'Date':
-        continue
-    parsed_date = dateutil.parser.parse(date_text).date()
-    link_element = cells[1].find('a')
-    if not link_element.text.startswith('Meeting of the Parliament'):
-        continue
-    full_url = urlparse.urljoin(
-        official_reports_browse_url,
-        link_element.get('href'))
-    # The non-Javascript version seems to be obtained by adding
-    # &mode=html to the end of the query string:
-    full_url += '&mode=html'
-    print "For date", parsed_date, "got URL:", full_url
-    destination_leafname = 'ornew' + str(parsed_date) + '.html'
-    destination = os.path.join(output_directory,
-                               destination_leafname)
-    destination = os.path.realpath(destination)
-    if os.path.exists(destination):
-        if options.verbose:
-            print "Skipping, since this file exists:", destination
-    else:
-        if options.verbose:
-            print "Downloading to:", destination
-        headers['Referer'] = official_reports_browse_url
-        request = urllib2.Request(full_url,
-                                  None,
-                                  headers)
-        response = urllib2.urlopen(request)
-        with open(destination, 'w') as fp:
-            fp.write(response.read())
-        time.sleep(5)
+else:
+    main()
