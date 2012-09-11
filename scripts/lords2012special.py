@@ -115,6 +115,6 @@ for day in days:
     fp.close()
     xmlvalidate.parse(fn)
     fp = open('../../parldata/scrapedxml/lordspages/changedates.txt', 'a')
-    fp.write('%s,lordswrans%s' % (int(time.time()), date)
+    fp.write('%s,lordswrans%s' % (int(time.time()), date))
     fp.close()
 
