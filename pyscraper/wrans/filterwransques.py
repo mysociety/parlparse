@@ -19,12 +19,13 @@ from contextexception import ContextException
 # (3) if she will ... grants.  [138425]<P></UL>
 
 def ExtractQnum(tex, stampurl):
+        
 	qn = re.match('(.*?)\s*\[?((?:HL)?\d+R?)\]$', tex)
 	if not qn:
 		return (tex, '0')  # default when no qnum is found.  the 0 qnums are detected elswhere (should have used "0error") in MeasureBlockSimilarity for gidmatching
 
 	text = qn.group(1)
-	isqn = re.search('\[((?:HL)?(\d+)R?)\]', text)
+        isqn = re.search('\[((?:HL)?(\d+)R?)\]', text)
 	if isqn:
 		nqn = string.atoi(isqn.group(2))
 		if text.find("<ok-extra-qnum>") >= 0:
