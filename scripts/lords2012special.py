@@ -27,7 +27,8 @@ days = (
 
 for day in days:
     date = '%s-%s-%s' % (day[2], day[1], day[0])
-    fn = '../../parldata/scrapedxml/lordswrans/lordswrans%sa.xml' % date
+    type = 'lordswrans'
+    fn = '../../parldata/scrapedxml/%s/%s%sa.xml' % (type, type, date)
     if os.path.exists(fn):
         continue
 
@@ -40,6 +41,8 @@ for day in days:
     soup = BeautifulSoup(d)
     content = soup.find('div', 'hansardContent')
 
+    ques_id = None
+    after_question = False
     in_reply = False
     id = 0
     out = '''<?xml version="1.0" encoding="ISO-8859-1"?>
@@ -67,7 +70,10 @@ for day in days:
         elif namecl == ('p', 'TabledBy'):
             # Get speaker
             ques_name = child.strong.string
+            last_ques_id = ques_id
             ques_id = lordsList.GetLordIDfname(ques_name, loffice=None, sdate=date)
+            if after_question and ques_id == last_ques_id:
+                continue # Another question, same speaker, shouldn't be here.
             after_question = False
             if in_reply:
                 out += '</reply>\n'
@@ -115,6 +121,6 @@ for day in days:
     fp.close()
     xmlvalidate.parse(fn)
     fp = open('../../parldata/scrapedxml/lordspages/changedates.txt', 'a')
-    fp.write('%s,lordswrans%s' % (int(time.time()), date))
+    fp.write('%s,%s%s\n' % (int(time.time()), type, date))
     fp.close()
 
