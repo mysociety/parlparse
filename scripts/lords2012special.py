@@ -55,6 +55,9 @@ for day in days:
         namecl = (name, cl)
         text = ''.join(child(text=True))
 
+        if 'QuestionUIN' in child.renderContents() and cl != 'Question':
+            namecl = (name, 'Question')
+
         # Ignore stuff
         if name == 'hr': continue
         elif namecl == ('ul', 'prevNext'): continue
@@ -69,7 +72,10 @@ for day in days:
             minor_heading_first = ''
         elif namecl == ('p', 'TabledBy'):
             # Get speaker
-            ques_name = child.strong.string
+            try:
+                ques_name = child.strong.string
+            except:
+                ques_name = text.replace('&#160;', ' ').replace('Asked by ', '').strip()
             last_ques_id = ques_id
             ques_id = lordsList.GetLordIDfname(ques_name, loffice=None, sdate=date)
             if after_question and ques_id == last_ques_id:
