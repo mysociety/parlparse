@@ -36,8 +36,8 @@ class NISoup(BeautifulSoup):
 		(re.compile('((<(font|i|b)>)+)\s*(</p[^>]*>)'), lambda match: match.group(3) + match.group(1)),
 		(re.compile('(<b>)\s*(<p[^>]*>)([^<]*?</b>)'), lambda match: match.group(2) + match.group(1) + match.group(3)),
 		(re.compile('<span class="BoldText">(.*?)</span>'), lambda match: '<strong>' + match.group(1) + '</strong>'),
-        (re.compile('(?:<span style="font-family: Arial;">|<span style="color: #000000;">){2}(.*?)</span></span>'), lambda match: match.group(1)),
-        (re.compile('(?:<span style="font-family: Arial;">|<span style="color: #000000;">)(.*?)</span>'), lambda match: match.group(1)),
+		(re.compile('(?:<span style="font-family: Arial;">|<span style="color: #000000;">){2}(.*?)</span></span>'), lambda match: match.group(1)),
+		(re.compile('(?:<span style="font-family: Arial;">|<span style="(?:font-family: Times New Roman; )?color: #000000;">)(.*?)</span>'), lambda match: match.group(1)),
 	]
 
 class ParseDay:
@@ -252,6 +252,55 @@ class ParseDay:
 			self.out.write('</oral-heading>\n')
 			in_oral_answers = False
 
+	def new_major_heading(self, ptext, timestamp):
+		self.display_speech()
+		self.speaker = (None, timestamp)
+		self.idA += 1
+		self.idB = 0
+		self.display_heading(ptext, timestamp, 'major')
+
+	def new_minor_heading(self, ptext, timestamp):
+		self.display_speech()
+		self.speaker = (None, timestamp)
+		self.idB += 1
+		self.display_heading(ptext, timestamp, 'minor')
+
+	def new_person_speak(self, p, timestamp):
+		speaker = p.strong.find(text=True)
+		speaker = re.sub('&nbsp;', '', speaker)
+		speaker = re.sub("\s+", " ", speaker).strip()
+		speaker = re.sub(':', '', speaker)
+		id, stri = memberList.match(speaker, self.date)
+		self.speaker = (stri, timestamp)
+		p.strong.extract()
+		phtml = p.renderContents()
+		phtml = re.sub('^:\s*', '', phtml)
+		phtml = re.sub("\s+", " ", phtml).decode('utf-8')
+		self.text += "<p>%s</p>\n" % phtml
+		
+	def new_italic_speech(self, ptext, phtml):
+		match = re.search('\(((?:Mr|Madam) Speaker)', ptext)
+		if not match:
+			match = re.search('\(Mr (?:Principal )?Deputy Speaker \[(.*?)\]', ptext)
+		if match:
+			#print "Setting deputy to %s" % match.group(1)
+			memberList.setDeputy(match.group(1))
+		self.text += '<p class="italic">%s</p>\n' % phtml
+
+	def new_time_period(self, ptext, optional=False):
+		match = re.search('(\d\d?)(?:\.\s*(\d\d))? ?(am|pm|noon|midnight)', ptext)
+		if not match:
+			if not optional:
+				raise ContextException, 'Time not found in TimePeriod %s' % p
+			return None
+		hour = int(match.group(1))
+		if hour<12 and match.group(3) == 'pm':
+			hour += 12
+		if hour==12 and match.group(3) in ('midnight', 'am'):
+			hour = 0
+		timestamp = "%s:%s" % (hour, match.group(2))
+		return timestamp
+
 	def parse_day_new(self, soup, date):
 		for s in soup.findAll(lambda tag: tag.name=='strong' and tag.contents == []):
 			s.extract()
@@ -331,16 +380,9 @@ class ParseDay:
 				cl = 'B3BodyTextItalic'
 
 			if cl == 'H3SectionHeading':
-				self.display_speech()
-				self.speaker = (None, timestamp)
-				self.idA += 1
-				self.idB = 0
-				self.display_heading(ptext, timestamp, 'major')
+				self.new_major_heading(ptext, timestamp)
 			elif cl == 'H4StageHeading' or cl == 'H5StageHeading' or cl == 'B3BodyTextClause':
-				self.display_speech()
-				self.speaker = (None, timestamp)
-				self.idB += 1
-				self.display_heading(ptext, timestamp, 'minor')
+				self.new_minor_heading(ptext, timestamp)
 			elif cl == 'B1SpeakersName':
 				self.display_speech()
 				m = re.match('.*?:', phtml)
@@ -369,17 +411,7 @@ class ParseDay:
 					p = newp
 				if not p.strong:
 					raise ContextException, 'No strong in p! %s' % p
-				speaker = p.strong.find(text=True)
-				speaker = re.sub('&nbsp;', '', speaker)
-				speaker = re.sub("\s+", " ", speaker).strip()
-				speaker = re.sub(':', '', speaker)
-				id, str = memberList.match(speaker, self.date)
-				self.speaker = (str, timestamp)
-				p.strong.extract()
-				phtml = p.renderContents()
-				phtml = re.sub('^:\s*', '', phtml)
-				phtml = re.sub("\s+", " ", phtml).decode('utf-8')
-				self.text += "<p>%s</p>\n" % phtml
+				self.new_person_speak(p, timestamp)
 			elif cl in ('B3BodyTextItalic', 'Q3Motion', 'BillAmend-AmendedText', 'BillAmend-Moved', 'BillAmend-withMinister', 'BillAmend-AmendMade', 'BillAmend-ClauseHeading', 'AyesNoes', 'AyesNoesParties', 'AyesNoesVotes', 'D3PartyMembers', 'B3SpeakerinChair', 'B3BodyTextSpeakerintheChair', 'H2DocumentStartTime', 'AyesNoesDivisionTellers', 'CommunityVoteTable'):
 				match = re.match('The Assembly met at ((\d\d?)\.(\d\d) (am|pm)|noon)', phtml)
 				if match:
@@ -391,13 +423,7 @@ class ParseDay:
 							hour += 12
 						timestamp = "%s:%s" % (hour, match.group(3))
 					self.speaker = (self.speaker[0], timestamp)
-				match = re.search('\(((?:Mr|Madam) Speaker)', ptext)
-				if not match:
-					match = re.search('\(Mr (?:Principal )?Deputy Speaker \[(.*?)\]', ptext)
-				if match:
-					#print "Setting deputy to %s" % match.group(1)
-					memberList.setDeputy(match.group(1))
-				self.text += '<p class="italic">%s</p>\n' % phtml
+				self.new_italic_speech(ptext, phtml)
 			elif cl in ('Q3MotionBullet', 'BillAmend-AmendedTextIndent', 'BillAmend-AmendedTextIndent2', 'BillAmend-AmendedTextIndent3', 'BillAmend-QuotewithMinister'):
 				self.text += '<p class="indentitalic">%s</p>\n' % phtml
 			elif cl in ('B3BodyText', 'B3BodyTextnoindent', 'RollofMembersList', 'TableText'):
@@ -405,15 +431,7 @@ class ParseDay:
 			elif cl == 'Q1QuoteIndented' or cl == 'Q1Quote':
 				self.text += '<p class="indent">%s</p>\n' % phtml
 			elif cl == 'TimePeriod':
-				match = re.search('(\d\d?)(?:\.\s*(\d\d))? ?(am|pm|noon|midnight)', ptext)
-				if not match:
-					raise ContextException, 'Time not found in TimePeriod %s' % p
-				hour = int(match.group(1))
-				if hour<12 and match.group(3) == 'pm':
-					hour += 12
-				if hour==12 and match.group(3) in ('midnight', 'am'):
-					hour = 0
-				timestamp = "%s:%s" % (hour, match.group(2))
+				timestamp = self.new_time_period(ptext)
 			elif cl == 'MsoNormal':
 				continue
 			else:
@@ -426,17 +444,22 @@ class ParseDay:
 
 		self.url = ''
 
-		body_div = soup.find('div', 'grid_10') or soup.find('div','grid_7')
+		body_div = soup.find('div', 'grid_10')
 		if not body_div:
 			raise ContextException, 'Could not find div containing main content.'
-			
-		body = body_div.findAll('p')
+		body = [ x for x in body_div.contents if isinstance(x, Tag) ]
 
-		nia_heading_re = re.compile(r'Session: 2011/2012')
-		if not nia_heading_re.match(''.join(body[0](text=True))):
-			raise ContextException, 'Missing NIA heading!'
-		date_head = body[1].find(text=True)
+		assert body[0].string == 'Official Report (Hansard)'
+		nia_heading_re = re.compile(r'\s*Session: 201[12]/201[23]')
+		first_line = ''.join(body[1](text=True))
+		if not nia_heading_re.match(first_line):
+			raise ContextException, 'Missing NIA heading! Got %s' % first_line
 		body = body[3:] # body[2] is a PDF download link or ISBN
+
+		for i in range(0, len(body)):
+			if body[i].name == 'h2':
+				break
+		body = body[i:] # Contents before first h2
 
 		timestamp = ''
 		self.speaker = (None, timestamp)
@@ -444,11 +467,30 @@ class ParseDay:
 		for p in body:
 			ptext = re.sub("\s+", " ", ''.join(p(text=True)))
 			phtml = re.sub("\s+", " ", p.renderContents()).decode('utf-8')
-			#print p, "\n---------------------\n"
+			#print str(p).decode('utf-8'), "\n---------------------\n"
 			if p.a and re.match('[^h/]', p.a.get('href', '')):
 				continue
 			if ptext == '&nbsp;' or ptext == '':
 				continue
-			raise ContextException, 'Uncaught paragraph! %s' % p
+
+			if p.name == 'h2':
+				self.new_major_heading(ptext, timestamp)
+			elif p.name == 'h3' or (p.find('strong', recursive=False) and len(p.contents)==1):
+				self.new_minor_heading(ptext, timestamp)
+			elif phtml[0:8] == '<strong>' or re.match('\d+\.( |&nbsp;)*<strong>', phtml):
+				new_timestamp = self.new_time_period(ptext, optional=True)
+				if new_timestamp:
+					timestamp = new_timestamp
+					continue
+				self.display_speech()
+				self.new_person_speak(p, timestamp)
+			elif p.em and len(p.contents) == 1:
+				self.new_italic_speech(ptext, phtml)
+			elif p.string:
+				self.text += '<p>%s</p>\n' % phtml
+			elif re.match('([^<]|<em>|</em>)+$', phtml):
+				self.text += '<p>%s</p>\n' % phtml
+			else:
+				raise ContextException, 'Uncaught paragraph! %s' % p
 		self.display_speech()
 
