@@ -475,12 +475,15 @@ class ParseDay:
 
 			if p.name == 'h2':
 				self.new_major_heading(ptext, timestamp)
-			elif p.name == 'h3' or (p.find('strong', recursive=False) and len(p.contents)==1):
+			elif p.name == 'h3':
 				self.new_minor_heading(ptext, timestamp)
 			elif phtml[0:8] == '<strong>' or re.match('\d+\.( |&nbsp;)*<strong>', phtml):
 				new_timestamp = self.new_time_period(ptext, optional=True)
 				if new_timestamp:
 					timestamp = new_timestamp
+					continue
+				if p.strong and len(p.contents)==1:
+					self.new_minor_heading(ptext, timestamp)
 					continue
 				self.display_speech()
 				self.new_person_speak(p, timestamp)
