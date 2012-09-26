@@ -22,9 +22,9 @@ for i in range(11,13):
 
 ni_dir = os.path.dirname(__file__)
 
-def scrape_ni_day(url, filename):
+def scrape_ni_day(url, filename, forcescrape):
     filename = '%s/../../../parldata/cmpages/ni/%s' % (ni_dir, filename)
-    if not os.path.isfile(filename):
+    if not os.path.isfile(filename) or forcescrape:
         print "NI scraping %s" % url
         ur = urllib.urlopen(url)
         fp = open(filename, 'w')
@@ -32,7 +32,7 @@ def scrape_ni_day(url, filename):
         fp.close()
         ur.close()
 
-def scrape_new_ni():
+def scrape_new_ni(datefrom, dateto, forcescrape):
     for url in root:
         ur = urllib.urlopen(url)
         page = ur.read()
@@ -45,8 +45,10 @@ def scrape_new_ni():
         match = re.findall('<a href="([^"]*(p?)(\d{6})(i?)(?:today)?\.htm)">View (?:as|in) HTML *</a>', page)
         for day in match:
             date = time.strptime(day[2], "%y%m%d")
-            filename = 'ni%d-%02d-%02d%s%s.html' % (date[0], date[1], date[2], day[1], day[3])
-            scrape_ni_day(urlparse.urljoin(url, day[0]), filename)
+            date = '%d-%02d-%02d' % date[:3]
+            if date < datefrom or date > dateto: continue
+            filename = 'ni%s%s%s.html' % (date, day[1], day[3])
+            scrape_ni_day(urlparse.urljoin(url, day[0]), filename, forcescrape)
 
         match = re.findall('<a class="html-link" href=\'(/Assembly-Business/Official-Report/Reports-\d\d-(\d\d/([^/]*)/))\'>Read now</a>', page)
         for day in match:
@@ -72,8 +74,10 @@ def scrape_new_ni():
 
             if datetime.date(*date[:3]) == datetime.date.today(): continue
             if datetime.date(*date[:3]) < datetime.date(2011, 12, 12): continue
-            filename = 'ni%d-%02d-%02d.html' % date[:3]
-            scrape_ni_day(urlparse.urljoin(url, day[0]), filename)
+            date = '%d-%02d-%02d' % date[:3]
+            if date < datefrom or date > dateto: continue
+            filename = 'ni%s.html' % date
+            scrape_ni_day(urlparse.urljoin(url, day[0]), filename, forcescrape)
 
 if __name__ == '__main__':
     scrape_new_ni()
