@@ -22,7 +22,7 @@ from resolvelordsnames import lordsList
 days = (
     ('31','07','2012'), ('06','08','2012'), ('13','08','2012'),
     ('20','08','2012'), ('28','08','2012'), ('03','09','2012'),
-    ('10','09','2012'), ('17','09','2012')
+    ('10','09','2012'), ('17','09','2012'), ('01','10','2012')
 )
 
 for day in days:
@@ -111,7 +111,7 @@ for day in days:
                 id += 1
                 in_reply = True
             out += '<p>%s</p>\n' % text.strip()
-        elif namecl == ('p', 'WAIndent'):
+        elif namecl in ( ('p', 'WAIndent'), ('p', 'quote') ):
             out += '<p class="indent">%s</p>\n' % text
         elif namecl in ( ('p', 'WrittensFootnote'), ('p', 'parafo') ):
             out += '<p>%s</p>\n' % text

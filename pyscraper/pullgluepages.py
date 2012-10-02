@@ -491,6 +491,7 @@ def CompareScrapedFiles(prevfile, nextfile):
 def CmIndexFromNewPage(date, type='commons'):
         if type=='lords':
                 if date >= mx.DateTime.Date(2012,7,31) and date <= mx.DateTime.Date(2012,9,17): return []
+                if date == mx.DateTime.Date(2012,10,1): return []
                 urllinkpage = '%s?d=%d&m=%d&y=%d' % (url_bydate_index_lords, date.day, date.month, date.year)
         else:
                 urllinkpage = '%s?d=%d&m=%d&y=%d' % (url_bydate_index, date.day, date.month, date.year)
