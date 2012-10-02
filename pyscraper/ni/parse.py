@@ -491,6 +491,8 @@ class ParseDay:
 				self.new_italic_speech(ptext, phtml)
 			elif p.string:
 				self.text += '<p>%s</p>\n' % phtml
+			elif p.name == 'table':
+				self.text += re.sub("\s+", " ", unicode(p)).decode('utf-8')
 			elif re.match('([^<]|<em>|</em>)+$', phtml):
 				self.text += '<p>%s</p>\n' % phtml
 			else:
