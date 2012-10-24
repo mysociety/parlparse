@@ -14,7 +14,8 @@ min = { 'debates': 'debates/debates', 'wms': 'wms/ministerial', 'wrans': 'wrans/
 dirs = [ min.copy() for x in range(5) ]
 for x in (0,1):
     dirs[x]['ni'] = 'ni/ni'
-for x in (1,2,3):
+# Not every Monday, though
+for x in (0,1,2,3):
     dirs[x]['westminhall'] = 'westminhall/westminster'
 
 suffixes = { 'ni': '' }
