@@ -125,6 +125,9 @@ def GlueByNext(fout, urla, urlx, sdate):
                     'http://www.publications.parliament.uk/pa/ld201011/ldhansrd/text/110118-0001.htm',
                     ):
                         sr = re.sub('Daily Hansard</span></div>', 'Daily Hansard</span></div> <hr>', sr)
+                # To deal with missing header/footer on this day. Might need removing if they come back?
+                if url in ('http://www.publications.parliament.uk/pa/ld201213/ldhansrd/text/121105-wms0001.htm',):
+                        sr = re.sub('<body>', '<body> <hr>', sr)
 
                 # post 2008-03, stupid duplication of <b>s
                 sr = re.sub('<b>((?:<a name="[^"]*"></a>)*)<b>', '\\1<b>', sr)
