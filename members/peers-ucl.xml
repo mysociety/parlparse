@@ -4004,7 +4004,7 @@ B - bishop
 	title="Lord" lordname="Lofthouse" lordofname="Pontefract"
 	county="the County of West Yorkshire"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1997" todate="9999-12-31"
+	fromdate="1997" todate="2012-11-01" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -11728,6 +11728,17 @@ B - bishop
     county="the London Borough of Islington"
     peeragetype="L" affiliation="XB"
     fromdate="2012-06-26" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101145"
+    house="lords"
+    forenames="Paul Clive"
+    title="Lord" lordname="Deighton" lordofname=""
+    lordofname_full="Carshalton"
+    county="the County of Surrey"
+    peeragetype="L" affiliation="Con"
+    fromdate="2012-11-01" todate="9999-12-31"
 />
 
 <!--
