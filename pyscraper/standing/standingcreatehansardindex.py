@@ -265,10 +265,10 @@ def get_committee_attributes(committees):
         # And they used to say which Standing Committee was looking at it
         (\((Standing[ ]Committee[ ][a-zA-Z]|Special[ ]Standing[ ]Committee|(Second|2nd)[ ]Reading[ ]Committee)\)\s?)?
         # They occasionally repeat the session for no reason
-        (?:\d\d\d\d-\d\d)?
+        (?:\s?\d\d\d\d-\d\d)?
         # New ones since 2010-11 sometimes put "Committee" at the end
         (?:[ ]Committee)?
-        $(?ix)""", index_text)
+        \s*$(?ix)""", index_text)
                 assert mcttee, "Unrecognized committee or bill name: %s" % index_text
                 billtitle = mcttee.group(1)
                 if billtitle == "Company & Business Names":
