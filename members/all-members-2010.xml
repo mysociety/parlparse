@@ -3954,5 +3954,19 @@ Members of the UK Parliament, House of Commons, 2010-
     fromdate="2012-03-30" todate="9999-12-31" fromwhy="by_election" towhy="still_in_office"
 />
 
+<member
+    id="uk.org.publicwhip/member/40691" house="commons"
+    title="" firstname="Lucy" lastname="Powell"
+    constituency="Manchester Central" party="Lab"
+    fromdate="2012-11-16" todate="9999-12-31" fromwhy="by_election" towhy="still_in_office"
+/>
+
+<member
+    id="uk.org.publicwhip/member/40692" house="commons"
+    title="" firstname="Stephen" lastname="Doughty"
+    constituency="Cardiff South and Penarth" party="Lab"
+    fromdate="2012-11-16" todate="9999-12-31" fromwhy="by_election" towhy="still_in_office"
+/>
+
 </publicwhip>
 
