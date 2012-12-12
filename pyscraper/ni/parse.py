@@ -450,6 +450,15 @@ class ParseDay:
 			raise ContextException, 'Could not find div containing main content.'
 		body = [ x for x in body_div.contents if isinstance(x, Tag) ]
 
+		bbody = []
+		for t in body:
+			if t.name == 'div' and t['class'] in ('WordSection1', 'WordSection2'):
+				sub_body = [ x for x in t.contents if isinstance(x, Tag) ]
+				bbody.extend(sub_body)
+			else:
+				bbody.append(t)
+		body = bbody
+
 		assert body[0].string == 'Official Report (Hansard)'
 		nia_heading_re = re.compile(r'\s*Session: 201[12]/201[23]')
 		first_line = ''.join(body[1](text=True))
