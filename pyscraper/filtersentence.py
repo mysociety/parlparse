@@ -7,6 +7,7 @@ import cStringIO
 
 import mx.DateTime
 
+from contextexception import ContextException
 from parlphrases import parlPhrases
 from miscfuncs import FixHTMLEntities
 from miscfuncs import FixHTMLEntitiesL
@@ -285,7 +286,8 @@ class PhraseTokenize:
 		# separate out qnums stuffed into front of paragraph (by the grabber of the speakername)
 		frqnum = refqnum.search(stex)
 		if frqnum:
-			assert not self.rmqnum
+			if self.rmqnum:
+				raise ContextException('Found question number [%s] in para, but already found [%s] at end (this probably just means it is being quoted, and you just need to change [] to ().' % (frqnum.group(1), self.rmqnum.group(1)), stamp=qs.sstampurl)
 			self.rmqnum = frqnum
 			stex = stex[frqnum.span(0)[1]:]
 
