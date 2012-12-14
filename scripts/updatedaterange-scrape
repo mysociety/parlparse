@@ -16,10 +16,13 @@ cd ~/parlparse/pyscraper
 ./lazyrunall.py $4 --from=$LORDFROMDATE --to=$TODATE scrape lords || RET=1
 
 # XXX Should vary based upon weekly/daily-ness; and be more attuned than a year
-#cd ~/parlparse/pyscraper/sp
-#./get-official-reports.py --quiet
-#./get-written-answers.py --quiet
-#./get-business-bulletins.py --quiet
+# The form for browsing official reports by date is here, and it's
+# horrible to scrape:
+#   http://www.scottish.parliament.uk/parliamentarybusiness/39977.aspx
+# So for the moment, just run the daily check whatever the parameters
+# given passed to this script are.
+cd ~/parlparse/pyscraper/sp
+./get-official-reports-new.py --daily
 
 cd ~/parlparse/pyscraper/future
 ./get_future_business_and_calendar.py --quiet
