@@ -2965,7 +2965,7 @@ B - bishop
 	lordofname_full="Dartmouth Park"
 	county="the London Borough of Camden"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1996" todate="9999-12-31"
+	fromdate="1996" todate="2006-07-04"
 	ex_MP="yes"
 />
 <lord
@@ -11739,6 +11739,31 @@ B - bishop
     county="the County of Surrey"
     peeragetype="L" affiliation="Con"
     fromdate="2012-11-01" todate="9999-12-31"
+/>
+
+<lord
+	id="uk.org.publicwhip/lord/101146"
+	house="lords"
+	forenames="Helene"
+	forenames_full="Helene Valerie"
+	title="Baroness" lordname="Hayman" lordofname=""
+	lordofname_full="Dartmouth Park"
+	county="the London Borough of Camden"
+	peeragetype="L" affiliation="None"
+	fromdate="2006-07-04" todate="2011-08-31"
+	ex_MP="yes"
+/>
+<lord
+	id="uk.org.publicwhip/lord/101147"
+	house="lords"
+	forenames="Helene"
+	forenames_full="Helene Valerie"
+	title="Baroness" lordname="Hayman" lordofname=""
+	lordofname_full="Dartmouth Park"
+	county="the London Borough of Camden"
+	peeragetype="L" affiliation="XB"
+	fromdate="2011-09-01" todate="9999-12-31"
+	ex_MP="yes"
 />
 
 <!--
