@@ -6512,7 +6512,7 @@ B - bishop
 	title="Lord" lordname="Taylor" lordofname="Warwick"
 	county="the County of Warwickshire"
 	peeragetype="L" affiliation="Con"
-	fromdate="1996" todate="9999-12-31"
+	fromdate="1996" todate="2010-07-16"
 />
 <lord
 	id="uk.org.publicwhip/lord/100629"
@@ -11749,7 +11749,7 @@ B - bishop
 	title="Baroness" lordname="Hayman" lordofname=""
 	lordofname_full="Dartmouth Park"
 	county="the London Borough of Camden"
-	peeragetype="L" affiliation="None"
+	peeragetype="L" affiliation="Non-affiliated"
 	fromdate="2006-07-04" todate="2011-08-31"
 	ex_MP="yes"
 />
@@ -11774,8 +11774,8 @@ B - bishop
 	title="Baroness" lordname="D'Souza" lordofname=""
 	lordofname_full="Wychwood"
 	county="the County of Oxfordshire"
-	peeragetype="L" affiliation="None"
-	fromdate="2011-09-01" todate="9999-12-31"
+	peeragetype="L" affiliation="Non-affiliated"
+    fromdate="2011-09-01" todate="9999-12-31"
 />
 
 <lord
@@ -11797,7 +11797,7 @@ B - bishop
 	title="Lord" lordname="Maginnis" lordofname="Drumglass"
 	lordofname_full="Carnteel"
 	county="the County of Tyrone"
-	peeragetype="L" affiliation="None"
+	peeragetype="L" affiliation="Non-affiliated"
 	fromdate="2012-08-28" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -11818,8 +11818,19 @@ B - bishop
 	title="Lord" lordname="Sewel" lordofname=""
 	lordofname_full="Gilcomstoun"
 	county="the District of the City of Aberdeen"
-	peeragetype="L" affiliation="None"
+	peeragetype="L" affiliation="Non-affiliated"
 	fromdate="2012-05-09" todate="9999-12-31"
+/>
+
+<lord
+	id="uk.org.publicwhip/lord/101153"
+	house="lords"
+	forenames="John"
+	forenames_full="John David Beckett"
+	title="Lord" lordname="Taylor" lordofname="Warwick"
+	county="the County of Warwickshire"
+	peeragetype="L" affiliation="Non-affiliated"
+	fromdate="2010-07-16" todate="9999-12-31"
 />
 
 <!--
