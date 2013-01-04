@@ -710,7 +710,7 @@ B - bishop
 	forenames="Ivon"
 	title="Lord" lordname="Brabazon" lordofname="Tara"
 	peeragetype="HP" affiliation="XB"
-	fromdate="1974" todate="9999-12-31"
+	fromdate="1974" todate="2012-05-09"
 />
 <lord
 	id="uk.org.publicwhip/lord/100068"
@@ -3756,7 +3756,7 @@ B - bishop
 	title="Lord" lordname="Laird" lordofname=""
 	lordofname_full="Artigarvan"
 	county="the County of Tyrone"
-	peeragetype="L" affiliation="XB"
+	peeragetype="L" affiliation="UUP"
 	fromdate="1999" todate="9999-12-31"
 	ex_MP="yes"
 />
@@ -4279,8 +4279,8 @@ B - bishop
 	title="Lord" lordname="Maginnis" lordofname="Drumglass"
 	lordofname_full="Carnteel"
 	county="the County of Tyrone"
-	peeragetype="L" affiliation="XB"
-	fromdate="2001-10-24" todate="9999-12-31"
+	peeragetype="L" affiliation="UUP"
+	fromdate="2001-10-24" todate="2012-08-27"
 	ex_MP="yes"
 />
 <lord
@@ -5690,7 +5690,7 @@ B - bishop
 	title="Lord" lordname="Rogan" lordofname=""
 	lordofname_full="Lower Iveagh"
 	county="the County of Down"
-	peeragetype="L" affiliation="XB"
+	peeragetype="L" affiliation="UUP"
 	fromdate="1999" todate="9999-12-31"
 />
 <lord
@@ -6029,7 +6029,7 @@ B - bishop
 	lordofname_full="Gilcomstoun"
 	county="the District of the City of Aberdeen"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1996" todate="9999-12-31"
+	fromdate="1996" todate="2012-05-09"
 />
 <lord
 	id="uk.org.publicwhip/lord/100582"
@@ -8295,7 +8295,7 @@ B - bishop
 	title="Baroness" lordname="Morgan" lordofname="Drefelin"
 	county="the County of Dyfed"
 	peeragetype="L" affiliation="Lab"
-	fromdate="2004-07-05" todate="9999-12-31"
+	fromdate="2004-07-05" todate="2011-06-30"
 />
 <lord
 	id="uk.org.publicwhip/lord/100798"
@@ -8611,7 +8611,7 @@ B - bishop
 	lordofname_full="Wychwood"
 	county="the County of Oxfordshire"
 	peeragetype="L" affiliation="XB"
-	fromdate="2004-09-15" todate="9999-12-31"
+	fromdate="2004-09-15" todate="2011-08-31"
 />
 <lord
 	id="uk.org.publicwhip/lord/100828"
@@ -10194,7 +10194,7 @@ B - bishop
     title="Lord" lordname="Martin" lordofname="Springburn"
     lordofname_full="Port Dundas"
     county="the City of Glasgow"
-    peeragetype="L" affiliation="Lab"
+    peeragetype="L" affiliation="XB"
     fromdate="2009-10-13" todate="9999-12-31"
 />
 
@@ -11764,6 +11764,62 @@ B - bishop
 	peeragetype="L" affiliation="XB"
 	fromdate="2011-09-01" todate="9999-12-31"
 	ex_MP="yes"
+/>
+
+<lord
+	id="uk.org.publicwhip/lord/101148"
+	house="lords"
+	forenames="Frances"
+	forenames_full="Frances Gertrude Claire"
+	title="Baroness" lordname="D'Souza" lordofname=""
+	lordofname_full="Wychwood"
+	county="the County of Oxfordshire"
+	peeragetype="L" affiliation="None"
+	fromdate="2011-09-01" todate="9999-12-31"
+/>
+
+<lord
+	id="uk.org.publicwhip/lord/101149"
+	house="lords"
+	forenames="Delyth"
+	forenames_full="Delyth Jane"
+	title="Baroness" lordname="Morgan" lordofname="Drefelin"
+	county="the County of Dyfed"
+	peeragetype="L" affiliation="XB"
+	fromdate="2011-07-01" todate="9999-12-31"
+/>
+
+<lord
+	id="uk.org.publicwhip/lord/101150"
+	house="lords"
+	forenames="Kenneth"
+	forenames_full="Kenneth Wiggins"
+	title="Lord" lordname="Maginnis" lordofname="Drumglass"
+	lordofname_full="Carnteel"
+	county="the County of Tyrone"
+	peeragetype="L" affiliation="None"
+	fromdate="2012-08-28" todate="9999-12-31"
+	ex_MP="yes"
+/>
+
+<lord
+	id="uk.org.publicwhip/lord/101151"
+	house="lords"
+	forenames="Ivon"
+	title="Lord" lordname="Brabazon" lordofname="Tara"
+	peeragetype="HP" affiliation="Con"
+	fromdate="2012-05-09" todate="9999-12-31"
+/>
+<lord
+	id="uk.org.publicwhip/lord/101152"
+	house="lords"
+	forenames="John"
+	forenames_full="John Buttifant"
+	title="Lord" lordname="Sewel" lordofname=""
+	lordofname_full="Gilcomstoun"
+	county="the District of the City of Aberdeen"
+	peeragetype="L" affiliation="None"
+	fromdate="2012-05-09" todate="9999-12-31"
 />
 
 <!--
