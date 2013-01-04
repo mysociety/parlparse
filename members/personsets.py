@@ -139,6 +139,7 @@ lordlordmatches = {
     "uk.org.publicwhip/lord/101149":"uk.org.publicwhip/lord/100797",  # Baroness Morgan of Drefelin
     "uk.org.publicwhip/lord/101151":"uk.org.publicwhip/lord/100067",  # Baron Brabazon of Tara
     "uk.org.publicwhip/lord/101152":"uk.org.publicwhip/lord/100581",  # Baron Sewel
+    "uk.org.publicwhip/lord/101153":"uk.org.publicwhip/lord/100628",  # Baron Taylor of Warwick
     # XXX: Must be a way to do party changes automatically!
     # XXX: And the key:value ordering here is very suspect
 }
