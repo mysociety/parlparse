@@ -38,6 +38,7 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/100398" : "John MacGregor [South Norfolk]",
     "uk.org.publicwhip/lord/100407" : "Robert Maclennan [Caithness, Sutherland and Easter Ross]",
     "uk.org.publicwhip/lord/100410" : "Ken Maginnis [Fermanagh and South Tyrone]",
+    "uk.org.publicwhip/lord/101150" : "Ken Maginnis [Fermanagh and South Tyrone]",
     "uk.org.publicwhip/lord/100426" : "Ray Michie [Argyll and Bute]",
     "uk.org.publicwhip/lord/100443" : "John Morris [Aberavon]",
     "uk.org.publicwhip/lord/100493" : "Tom Pendry [Stalybridge and Hyde]",
@@ -118,22 +119,26 @@ lordsmpmatches = {
 
 # Put people who change party AND were MPs multple times in table above e.g. David Trimble
 lordlordmatches = {
-	"uk.org.publicwhip/lord/100160":"uk.org.publicwhip/lord/100931",  # Lord Dahrendorf changes party
-	"uk.org.publicwhip/lord/100281":"uk.org.publicwhip/lord/100906",  # Lord Haskins changes party
+	"uk.org.publicwhip/lord/100931":"uk.org.publicwhip/lord/100160",  # Lord Dahrendorf changes party
+	"uk.org.publicwhip/lord/100906":"uk.org.publicwhip/lord/100281",  # Lord Haskins changes party
 	"uk.org.publicwhip/lord/100901":"uk.org.publicwhip/lord/100831",  # Bishop of Southwell becomes Bishop of Southwell and Nottingham
-	"uk.org.publicwhip/lord/100106":"uk.org.publicwhip/lord/100711",  # Archbishop Carey becomes XB Lord
-	"uk.org.publicwhip/lord/100265":"uk.org.publicwhip/lord/100830",  # Bishop of Guildford becomes of Chelmsford
-	"uk.org.publicwhip/lord/100736":"uk.org.publicwhip/lord/100872",  # Bishop of Wakefield becomes of Manchester
+	"uk.org.publicwhip/lord/100711":"uk.org.publicwhip/lord/100106",  # Archbishop Carey becomes XB Lord
+	"uk.org.publicwhip/lord/100830":"uk.org.publicwhip/lord/100265",  # Bishop of Guildford becomes of Chelmsford
+	"uk.org.publicwhip/lord/100872":"uk.org.publicwhip/lord/100736",  # Bishop of Wakefield becomes of Manchester
     "uk.org.publicwhip/lord/100937":"uk.org.publicwhip/lord/100479",  # Bishop of Oxford becomes XB Lord
     "uk.org.publicwhip/lord/100942":"uk.org.publicwhip/lord/100677",  # Lord Wedderburn changes party
     "uk.org.publicwhip/lord/100943":"uk.org.publicwhip/lord/100924",  # As does Lord Boyd...
-    "uk.org.publicwhip/lord/100491":"uk.org.publicwhip/lord/100944",  # And Perason
+    "uk.org.publicwhip/lord/100944":"uk.org.publicwhip/lord/100491",  # And Perason
     "uk.org.publicwhip/lord/100945":"uk.org.publicwhip/lord/100690",  # And Willoughby.
-    "uk.org.publicwhip/lord/100147":"uk.org.publicwhip/lord/100959",  # And Cox
-    "uk.org.publicwhip/lord/100716":"uk.org.publicwhip/lord/100978",  # Viscount Cranborne inherits Marquess of Salisbury
+    "uk.org.publicwhip/lord/100959":"uk.org.publicwhip/lord/100147",  # And Cox
+    "uk.org.publicwhip/lord/100978":"uk.org.publicwhip/lord/100716",  # Viscount Cranborne inherits Marquess of Salisbury
     "uk.org.publicwhip/lord/100993":"uk.org.publicwhip/lord/100957",  # Lord Jones of Brum
     "uk.org.publicwhip/lord/101146":"uk.org.publicwhip/lord/100284",  # Baroness Hayman
     "uk.org.publicwhip/lord/101147":"uk.org.publicwhip/lord/100284",  # "
+    "uk.org.publicwhip/lord/101148":"uk.org.publicwhip/lord/100827",  # Baroness D'Souza
+    "uk.org.publicwhip/lord/101149":"uk.org.publicwhip/lord/100797",  # Baroness Morgan of Drefelin
+    "uk.org.publicwhip/lord/101151":"uk.org.publicwhip/lord/100067",  # Baron Brabazon of Tara
+    "uk.org.publicwhip/lord/101152":"uk.org.publicwhip/lord/100581",  # Baron Sewel
     # XXX: Must be a way to do party changes automatically!
     # XXX: And the key:value ordering here is very suspect
 }
@@ -587,7 +592,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
 
     # put lords into each of the sets
     def mergelordsandothers(self):
-        for lord_id, attr in self.lords.iteritems():
+        for lord_id, attr in sorted(self.lords.iteritems()):
             if lord_id in lordsmpmatches:
                 mp = lordsmpmatches[lord_id]
                 self.fullnamescons[mp].add(attr)
