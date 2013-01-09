@@ -113,6 +113,8 @@ def MpList(fsm, vote, stampurl, sdate):
 def MpTellerList(fsm, vote, stampurl, sdate):
 	res = [ ]
 	for fss in fsm:
+		if fss == '</b>': continue # The end </b> on Tellers for the (Ayes|Noes):
+		if fss == '<b> and</b>': continue # The 'and' now gets a paragraph of its own
 		while fss: # split by lines, but linefeed sometimes missing
 			gftell = re.match('\s*(?:and )?([ \w.\-\'&#;]*?)(?:\(([ \w.\-\'&#;]*)\))?(?: and(.*))?\s*\.?\s*$', fss)
 			if not gftell:
@@ -151,9 +153,9 @@ def FilterDivision(text, stampurl, sdate):
 
 	# extract the positions of the key statements
 	statem = [ 	'AYES|<b>AYES</b>',
-				'Tellers for the Ayes:',
+				'(?:<b>)?Tellers for the Ayes:',
 				'NOES|<b>NOES</b>',
-				'Tellers for the Noes:', ]
+				'(?:<b>)?Tellers for the Noes:', ]
 				#'Question accordingly.*|</FONT>|</p>' ]
 	istatem = [ -1, -1, -1, -1 ]
 
