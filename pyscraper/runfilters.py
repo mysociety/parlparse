@@ -176,6 +176,15 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         except:
             pass
 
+    # They've started double bolding names, parts of names, splitting names up, and having a "[" on its own
+    if sdate >= '2013-01-01':
+        # <b> <b>Name</b> (Constituency) (Party):</b>
+        text = re.sub('<b>\s+<b>([^<]*)</b>([^<]*)</b>', r'<b>\1\2</b>', text)
+        # <b> <b>Name bit 1</b> <b>Name bit 2</b> <b>:</b> </b>
+        text = re.sub('<b>\s+((<b>[^<]*</b>\s+)+)</b>', lambda x: re.sub('</b>\s*<b>', '', x.group(1)), text)
+        # <p> <b>[</b> </p> <p> <b>TIME</b> </p>
+        text = re.sub('<p>\s+<b>\[</b>\s+</p>\s+<p>\s+<b>([^<]*)</b>\s+</p>', r'<p> <b>[\1</b> </p>', text)
+
     (flatb, gidname) = FILTERfunction(text, sdate)
     for i in range(len(gidname)):
         tempfilenameoldxml = None
