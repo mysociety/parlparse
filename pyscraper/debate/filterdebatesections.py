@@ -269,7 +269,11 @@ def NormalHeadingPart(headingtxt, stampurl, state):
 	# we're not writing a block for division headings
 	# write out block for headings
 	headingtxtfx = FixHTMLEntities(headingtxt)
-	assert not re.search("[<>]", headingtxtfx), headingtxtfx  # an assertion in gidmatching
+	try:
+		assert not re.search("[<>]", headingtxtfx), headingtxtfx  # an assertion in gidmatching
+	except AssertionError:
+		raise ContextException('Tag found in heading text', stamp=stampurl, fragment=headingtxt)
+	
 	qb = qspeech('nospeaker="true"', headingtxtfx, stampurl)
 	if binsertedheading:
 		qb.typ = 'inserted-heading'
