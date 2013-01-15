@@ -180,6 +180,12 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
     if sdate >= '2013-01-01':
         # <b> <b>Name</b> (Constituency) (Party):</b>
         text = re.sub('<b>\s+<b>([^<]*)</b>([^<]*)</b>', r'<b>\1\2</b>', text)
+        # <b><b>Name</b> (Constituency) (Party):</b>
+        text = re.sub('<b><b>([^<]*)</b>([^<]*):</b>', r'<b>\1\2:</b>', text)
+        # <b><b>Name bit </b><b>Name bit 2</b><b>:</b></b>
+        text = re.sub('<b><b>([^<]*)</b><b>([^<]*)</b><b>:</b></b>', r'<b>\1\2:</b>', text)
+        # <b><b>Name</b><b>:</b></b>
+        text = re.sub('<b><b>([^<]*)</b><b>:</b></b>', r'<b>\1:</b>', text)
         # <b> <b>Name bit 1</b> <b>Name bit 2</b> <b>:</b> </b>
         text = re.sub('<b>\s+((<b>[^<]*</b>\s+)+)</b>', lambda x: re.sub('</b>\s*<b>', '', x.group(1)), text)
         # <p> <b>[</b> </p> <p> <b>TIME</b> </p>
