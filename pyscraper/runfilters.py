@@ -178,8 +178,9 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 
     # They've started double bolding names, parts of names, splitting names up, and having a "[" on its own
     if sdate >= '2013-01-01':
+        text = re.sub('</b><b>', '', text)
         # <b> <b>Name</b> (Constituency) (Party):</b>
-        text = re.sub('<b>\s+<b>([^<]*)</b>([^<]*)</b>', r'<b>\1\2</b>', text)
+        text = re.sub('<b>\s*<b>([^<]*)</b>([^<]*)</b>', r'<b>\1\2</b>', text)
         # <b><b>Name</b> (Constituency) (Party):</b>
         text = re.sub('<b><b>([^<]*)</b>([^<]*):</b>', r'<b>\1\2:</b>', text)
         # <b><b>Name bit </b><b>Name bit 2</b><b>:</b></b>
