@@ -447,7 +447,7 @@ class ParseCommittee:
             elt_head = 'h5'
             divisionHeader = tag.findNextSibling(elt_head, {'class' : "hs_DivListHeader" })
             if not divisionHeader: return self.parse_old_division(tag, divisionNum)
-        
+    
         # ayes header
         firstvote = ''.join(divisionHeader(text=True)).strip().lower()
         
@@ -931,7 +931,7 @@ class ParseCommittee:
             elif tag.name == 'a' and tag.get('name', None):
                 self.url = self.url.split('#',1)[0]
                 self.url = self.url + "#" + tag['name']
-            elif tag.name == 'a' and re.search('/pa/cm/cmpubns|services.parliament.uk/bills/', tag.get('href', '')):
+            elif tag.name == 'a' and re.search('/pa/cm/cmpubns|services.parliament.uk/bills/|http://www.parliament.uk/business/publications/commons/', tag.get('href', '')):
                 pass
             else:  
                 cssClass = tag.get('class', '')
