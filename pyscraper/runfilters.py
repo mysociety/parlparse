@@ -181,16 +181,10 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         text = re.sub(r'</b>(\s*)<b>', r'\1', text)
         # <b> <b>Name</b> (Constituency) (Party):</b>
         text = re.sub('<b>\s*<b>([^<]*)</b>([^<]*)</b>', r'<b>\1\2</b>', text)
-        # <b><b>Name</b> (Constituency) (Party):</b>
-        text = re.sub('<b><b>([^<]*)</b>([^<]*):</b>', r'<b>\1\2:</b>', text)
-        # <b><b>Name bit </b><b>Name bit 2</b><b>:</b></b>
-        text = re.sub('<b><b>([^<]*)</b><b>([^<]*)</b><b>:</b></b>', r'<b>\1\2:</b>', text)
-        # <b><b>Name</b><b>:</b></b>
-        text = re.sub('<b><b>([^<]*)</b><b>:</b></b>', r'<b>\1:</b>', text)
-        # <b> <b>Name bit 1</b> <b>Name bit 2</b> <b>:</b> </b>
-        text = re.sub('<b>\s+((<b>[^<]*</b>\s+)+)</b>', lambda x: re.sub('</b>\s*<b>', '', x.group(1)), text)
+        # <b><b>Name bits:</b></b>
+        text = re.sub('<b>\s*(<b>[^<]*</b>\s*)</b>', r'\1', text)
         # <p> <b>[</b> </p> <p> <b>TIME</b> </p>
-        text = re.sub('<p>\s+<b>\[</b>\s+</p>\s+<p>\s+<b>([^<]*)</b>\s+</p>', r'<p> <b>[\1</b> </p>', text)
+        text = re.sub('<p>\s*<b>\[</b>\s*</p>\s*<p>\s*<b>([^<]*)</b>\s*</p>', r'<p> <b>[\1</b> </p>', text)
 
     (flatb, gidname) = FILTERfunction(text, sdate)
     for i in range(len(gidname)):
