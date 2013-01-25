@@ -140,6 +140,7 @@ lordlordmatches = {
     "uk.org.publicwhip/lord/101151":"uk.org.publicwhip/lord/100067",  # Baron Brabazon of Tara
     "uk.org.publicwhip/lord/101152":"uk.org.publicwhip/lord/100581",  # Baron Sewel
     "uk.org.publicwhip/lord/101153":"uk.org.publicwhip/lord/100628",  # Baron Taylor of Warwick
+	"uk.org.publicwhip/lord/101156":"uk.org.publicwhip/lord/100105",  # Archbishop of Canterbury getting life peerage
     # XXX: Must be a way to do party changes automatically!
     # XXX: And the key:value ordering here is very suspect
 }
