@@ -126,9 +126,13 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         # Fix new thing where they sometimes put (a), (b) of wrans, or "Official Report", in separate paragraphs
         # Two regular expressions, so as not to lose needed end </p> of a column heading.
         italic_para = '\s*<p>\s*(<i>\s*(?:\(.\)|Official Report,?)\s*</i>)\s*</p>\s*'
-        text = re.sub('(?<!</b>) ?</p>' + italic_para + '<p[^>]*>', r' \1 ', text)
-        text = re.sub('(?<=</b> ?</p>)' + italic_para + '<p[^>]*>', r' \1 ', text)
+        text = re.sub('(?<!</b>)</p>' + italic_para + '<p[^>]*>', r' \1 ', text)
+        text = re.sub('(?<=</b></p>)' + italic_para + '<p[^>]*>', r' \1 ', text)
 
+        # May also need the same thing with a space, and look behind requires a fixed width pattern.
+        text = re.sub('(?<!</b>) </p>' + italic_para + '<p[^>]*>', r' \1 ', text)
+        text = re.sub('(?<=</b> </p>)' + italic_para + '<p[^>]*>', r' \1 ', text)
+                
         # Don't want bad XHTML self closed table cells.
         text = re.sub('<td([^>]*) ?/>', r'<td\1></td>', text)
         # Or pointless empty headings
