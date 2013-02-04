@@ -51,6 +51,8 @@ def GetReportProceedings(urlpage, year):
 	vdat = re.search("(?is)Reports? of proceedings(.*?)(Associated Memoranda|start of footer|$)", s)
 	if urlpage == 'http://www.publications.parliament.uk/pa/cm/cmpbparliament.htm': # XXX
 		vdat = re.sub('(?s)^.*(<A href=".*?">2nd)', '\1', s)
+	elif urlpage == 'http://services.parliament.uk/bills/2012-13/crimeandcourts/committees/houseofcommonspublicbillcommitteeonthecrimeandcourtsbillhl201213.html': # XXX
+		vdat = re.sub('(?is)^.*?Reports? of proceedings(.*?)<h3>Associated memoranda', r'\1', s)
 	elif not vdat:
 		return res, None
 	else: 
@@ -91,7 +93,7 @@ def GetReportProceedings(urlpage, year):
                 if re.match('https?://(www|services|subscriptions).parliament.uk', lklk): continue
 
                 # Thing in the wrong place
-                if re.match('Associated Memorandum', lkname): continue
+                if re.match('Associated Memorand(um|a)', lkname): continue
 
                 # They've done them under bills now...
                 if int(year) >= 2009:
