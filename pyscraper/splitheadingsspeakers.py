@@ -46,11 +46,16 @@ class StampUrl:
     def UpdateStampUrl(self, text):
         # remove the stamps from the text, checking for cases where we can glue back together.
         sp = restamps.split(text)
+        non_numeric_aname = False
         for i in range(len(sp)):
             if re.match('<stamp [^>]*>', sp[i]):
                 if re.match('<stamp time[^>]*>', sp[i]):
                     self.timestamp = sp[i]
+                elif re.match('<stamp aname="[0-9]+"[^>]*>', sp[i]):
+                    if not non_numeric_aname:
+                        self.aname = sp[i]
                 elif re.match('<stamp aname[^>]*>', sp[i]):
+                    non_numeric_aname = True
                     self.aname = sp[i]
 
                 # this looks like the standard stamp
