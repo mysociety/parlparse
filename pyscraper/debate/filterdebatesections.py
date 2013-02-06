@@ -204,7 +204,7 @@ def StripWestminhallHeadings(headspeak, sdate):
 
 
 # Handle normal type heading
-def NormalHeadingPart(headingtxt, stampurl, state):
+def NormalHeadingPart(headingtxt, stampurl, state, typ):
 	# This is an attempt at major heading detection.
         # The main wrap code spots adjournment debates, and does its best with some procedural things
         # But it's pretty flawed Also, Oral questions heading is a super-major heading,
@@ -252,7 +252,7 @@ def NormalHeadingPart(headingtxt, stampurl, state):
 		raise ContextException('in the chair match not precise enough', stamp=stampurl, fragment=headingtxt)
 
 	# Other major headings, marked by _head in their anchor tag
-	elif re.search('^hd_|_head', stampurl.aname):
+	elif re.search('"topichd_|"hd_|_head', stampurl.aname):
 		bmajorheading = True
 
         # Wah
@@ -275,7 +275,9 @@ def NormalHeadingPart(headingtxt, stampurl, state):
 		raise ContextException('Tag found in heading text', stamp=stampurl, fragment=headingtxt)
 	
 	qb = qspeech('nospeaker="true"', headingtxtfx, stampurl)
-	if binsertedheading:
+	if typ == 'westminhall':
+		qb.typ = 'minor-heading'
+	elif binsertedheading:
 		qb.typ = 'inserted-heading'
 	elif boralheading:
 		qb.typ = 'oral-heading'
@@ -370,7 +372,7 @@ def FilterDebateSections(text, sdate, typ):
 
 			# heading type
 			if not gdiv: # and lastheading != headingtxt:
-				qbh = NormalHeadingPart(headingtxt, stampurl, state)
+				qbh = NormalHeadingPart(headingtxt, stampurl, state, typ)
         			# print "h ", qbh.typ, qbh.stext
 
         			# ram together minor headings into previous ones which have no speeches
