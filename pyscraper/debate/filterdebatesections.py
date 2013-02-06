@@ -356,6 +356,7 @@ def FilterDebateSections(text, sdate, typ):
 	flatb = [ ]
         state = {}
         #lastheading = None
+        chair_head = 0
 	for sht in headspeak[ih:]:
 		try:
 			# triplet of ( heading, unspokentext, [(speaker, text)], major? )
@@ -396,6 +397,12 @@ def FilterDebateSections(text, sdate, typ):
                         			qb.typ = 'speech'
                         			FilterDebateSpeech(qb)
                         			flatb.append(qb)
+
+                                elif re.match("\[.*? in\s*the\s*Chair\.?\]$(?i)", qbh.stext[0]) and len(flatb) > 0 and flatb[-1].typ == 'speech':
+                                        qb = qspeech('nospeaker="true"', qbh.stext[0], stampurl)
+                                        qb.typ = 'speech'
+                                        FilterDebateSpeech(qb)
+                                        flatb.append(qb)
 
 	        		# this is where we suck in a trailing "Clause" part of the title that is mistakenly outside the heading.
         			elif (qbh.typ == 'minor-heading' or qbh.typ == 'major-heading') and len(flatb) > 0 and flatb[-1].typ == 'speech':
