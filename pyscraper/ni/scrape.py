@@ -55,6 +55,9 @@ def scrape_new_ni(datefrom, dateto, forcescrape):
             # Normally 12-December-2011 but recently 23-January-2012-1030am---1100am and 1030-1100am--17-January-2012
             # and Monday-16-April
             formats = (
+                # Manual fix for 2013-02-18
+                (r'(18-Febraury-2013)', '%d-%braury-%Y', day[2]),
+                
                 (r'(\d{1,2}-[a-zA-Z]*-\d\d\d\d)', "%d-%B-%Y", day[2]),
                 (r'(\d{2}/[a-zA-Z]*-\d{1,2}-[a-zA-Z]*)', "%y/%A-%d-%B", day[1]),
                 (r'(\d{2}/\d{1,2}-[a-zA-Z]*)', "%y/%d-%B", day[1]),
