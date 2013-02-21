@@ -502,7 +502,7 @@ class ParseDay:
 			elif p.string:
 				self.text += '<p>%s</p>\n' % phtml
 			elif p.name == 'table':
-				self.text += re.sub("\s+", " ", unicode(p)).decode('utf-8')
+				self.text += re.sub("\s+", " ", unicode(p))
 			elif re.match('([^<]|<em>|</em>)+$', phtml):
 				self.text += '<p>%s</p>\n' % phtml
 			else:
