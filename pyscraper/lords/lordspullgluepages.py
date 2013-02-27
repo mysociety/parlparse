@@ -60,12 +60,12 @@ def ExtractIndexContents(urlx, sdate):
 	urx = urllib.urlopen(urlx)
         lktex = urx.read()
         urx.close()
-        lktex = re.sub('^.*?<a name="contents"></a>\s*(?s)', '', lktex)
-        lktex = re.sub('^(.*?)<hr(?: /)?>.*$(?s)', r'\1', lktex)
+        lktex = re.sub('^.*?<a name="contents">\s*</a>\s*(?s)', '', lktex)
+        lktex = re.sub('^(.*?)<hr(?: ?/)?>.*$(?s)', r'\1', lktex)
         lktex = re.sub('<!--.*?-->(?s)', '', lktex)
 
 	# get the links
-        res = re.findall('<h[23] align="?center"?><a href="([^"]*?\.htm)#[^"]*">([^<]*)</a>\s*</h[23]>(?is)', lktex)
+        res = re.findall('<h[23] align="?center"?><a href="([^"]*?\.htm)#[^"]*"(?: shape="rect")?>([^<]*)</a>\s*</h[23]>(?is)', lktex)
         if not res:
                 res = re.findall('<p><a href\s*=\s*"([^"]*?\.htm)#[^"]*"><h3><center>((?:<!|[^<])*)(?:</center>|</h3>)+\s*</a></p>(?i)', lktex)
 	if not res:
@@ -128,6 +128,11 @@ def GlueByNext(fout, urla, urlx, sdate):
                 # To deal with missing header/footer on this day. Might need removing if they come back?
                 if url in ('http://www.publications.parliament.uk/pa/ld201213/ldhansrd/text/121105-wms0001.htm',):
                         sr = re.sub('<body>', '<body> <hr>', sr)
+			
+                if re.match('http://www.publications.parliament.uk/pa/ld201213/ldhansrd/text/130226[a-z-]*?\d+.htm', url):
+                        # sr = re.sub('<body class="main">', '<body> <hr>', sr)
+                        sr = re.sub('<a name="skipToContent"></a>', '<a name="skipToContent"></a> <hr>', sr)
+			sr = re.sub('<hr width="90%" align="left"/>', '<hr>', sr)
 
                 # post 2008-03, stupid duplication of <b>s
                 sr = re.sub('<b>((?:<a name="[^"]*"></a>)*)<b>', '\\1<b>', sr)
