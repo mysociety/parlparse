@@ -107,6 +107,8 @@ def LordsDivisionParsingPart(divno, unspoketxt, stampurl, sdate):
                 unspoketxt = re.sub(':ENDDIVISION:', '', unspoketxt)
 	elif sdate > '2008-12-01': # Sigh XXX
                 m = re.match('.*<br>(?s)', unspoketxt)
+                if not m:
+                        m = re.match('.*, [A-Z]\.</p>(?s)', unspoketxt)
                 divtext = m.group()
                 unspoketxt = unspoketxt[m.end():]
 	else:
@@ -116,6 +118,8 @@ def LordsDivisionParsingPart(divno, unspoketxt, stampurl, sdate):
 		print "is there a linefeed before the </center> on the CONTENTS?"
 		raise ContextException("Division missing resolved in the", stamp=stampurl, fragment="Division") # newly added
 		unspoketxt = ''
+
+	divtext = re.sub(' style="margin-bottom:[^"]*"', '', divtext)
 
 	# Add a division object (will contain votes and motion text)
 	spattr = 'nospeaker="true" divdate="%s" divnumber="%s"' % (sdate, divno)
