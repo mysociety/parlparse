@@ -87,12 +87,22 @@ regcolumnum7 = '(?:<br>\s*</p>\s*)?(?:<p>\s*)?<b>[^:<]*:\s*column:?\s*\d+w?\s*</
 recolumnumvals = re.compile('(?:</?p>|\s|</ul>|</font>|<br>&nbsp;<br>|<br>|</br>)*<(?:i|b)>([^:<]*):\s*column:?\s*(\d+)w?\s*</(?:i|b)>(?:</?p[^>]*>|\s|<ul>|<font[^>]*>|<br>&nbsp;<br>|<br>|</br>)*$(?i)')
 
 #<i>23 Oct 2003 : Column 640W&#151;continued</i>
-regcolnumcont = '<p><b>[^:<]*:\s*column\s*\d+w?</b>&#151;continued</p>|<i>[^:<]*:\s*column\s*\d+w?&#151;continued\s*</i>|\[Continued from column \d+w?\]|\[Continued in Column \d+W\](?i)'
-recolnumcontvals = re.compile('<p><b>([^:<]*):\s*column\s*(\d+)w?</b>&#151;continued</p>|<i>([^:<]*):\s*column\s*(\d+)w?&#151;continued</i>|\[Continued from column (\d+)w?\]|\[Continued in Column (\d+)W\](?i)')
+regcolnumcont = '''(?ix)
+        <p><b>[^:<]*:\s*column\s*\d+w?</b>&#151;continued</p>
+        | <i>[^:<]*:\s*column\s*\d+w?&#151;continued\s*</i>
+        | \[(?:<b>)?Continued[ ]from[ ]column[ ]\d+w?(?:</b>)?\]
+        | \[Continued[ ]in[ ]Column[ ](?:</b>)?\d+W(?:<b>)?\]
+'''
+recolnumcontvals = re.compile('''(?ix)
+        <p><b>([^:<]*):\s*column\s*(\d+)w?</b>&#151;continued</p>
+        | <i>([^:<]*):\s*column\s*(\d+)w?&#151;continued</i>
+        | \[(?:<b>)?Continued[ ]from[ ]column[ ](\d+)w?(?:</b>)?\]
+        | \[Continued[ ]in[ ]Column[ ](?:</b>)?(\d+)W(?:<b>)?\]
+''')
 
 # <a name="column_1099">
-reaname = '<a name="\S*?">(?i)'
-reanamevals = re.compile('<a name="(\S*?)">(?i)')
+reaname = '<a[ ]name="\S*?">(?ix)'
+reanamevals = re.compile('<a[ ]name="(\S*?)">(?ix)')
 
 recomb = re.compile('\s*(%s|%s|%s|%s|%s|%s|%s|%s|%s)\s*' % (regcolumnum1, regcolumnum2, regcolumnum3, regcolumnum4, regcolumnum5, regcolumnum6, regcolumnum7, regcolnumcont, reaname))
 remarginal = re.compile(':\s*column\s*\d+(?i)|</?a[\s>]')
