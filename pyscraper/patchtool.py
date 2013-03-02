@@ -21,12 +21,12 @@ toppath = miscfuncs.toppath
 def GenPatchFileNames(typ, sdate):
 	qfolder = toppath
 	qfolder = os.path.join(qfolder, "cmpages")
-	folder = os.path.join(qfolder, typ)
 
 	# transform the typ into the file stub
 	if typ == "wrans":
 		stub = "answers"
-	elif typ == "lordspages":
+	elif typ == "lords":
+		typ = "lordspages"
 		stub = "daylord"
 	elif typ == "westminhall":
 		stub = "westminster"
@@ -38,6 +38,8 @@ def GenPatchFileNames(typ, sdate):
                 stub = re.sub('chgpages/', '', typ)
 	else:
 		stub = typ
+
+	folder = os.path.join(qfolder, typ)
 
 	# lords case where we use the new top level patch directory
 	pdire = os.path.join(toppath, "patches")

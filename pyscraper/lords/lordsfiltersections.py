@@ -237,7 +237,7 @@ def MatchPWmotionStuff(qb, ispeechstartp1):
 	if re.match('<p>\s*\[<i>', qpara):
 		raise ContextException("Marginal notmoved (fragment looks like it might be an amendment not moved, \nbut an earlier regexp didn't pick it up)", stamp=qb.sstampurl, fragment=qpara)
 
-	if re.match('<p>(?:Moved.? accordingly,? and,? )?(?:[Oo]n [Qq]uestion,? )?(?:[Oo]riginal )?(?:[Mm]otion|[Aa]mendment|[Ss]chedule)s?(?: No\. \d+| [A-Z])?(?:, as amended)?,? agreed to(?:\.|&mdash;)+(?: Commons amendments?)?</p>', qpara):
+	if re.match('(?i)<p>(?:<i>)?(?:Moved.? accordingly,? and,? )?(?:[Oo]n [Qq]uestion,? )?(?:[Oo]riginal )?(?:[Mm]otion|[Aa]mendment|[Ss]chedule)s?(?: No\. \d+| [A-Z])?(?:, as amended)?,? agreed to(?:\.|&mdash;)+(?: Commons amendments?)?(?:</i>)?</p>', qpara):
 		return "agreedto"
 	clauseAgreedMatch = re.match('<p>(?:(?:Clause|Schedule)s? \d+[A-Z]*,?(?:, \d+[A-Z]*)?(?: (?:and|to) \d+[A-Z]*)?|Title|Motion)(?:, as amended,?)? ((?:dis)?agreed to|negatived)\.</p>', qpara)
 	if clauseAgreedMatch:
