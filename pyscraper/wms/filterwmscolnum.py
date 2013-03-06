@@ -15,9 +15,9 @@ regcolcore = '[^:<]*:\s*column\s*\d+(?:WS)?'
 regcolumnum1 = '<br>&nbsp;<br>\s*%s\s*<br>&nbsp;<br>' % regcolcore
 regcolumnum2 = '<p>\s*(?:<p>)?(?:<b>)?%s(?:</b>)?\s*</?p>' % regcolcore
 regcolumnum3 = '<p>\s*</ul>(?:</font>)?<p>%s<p>\s*<ul>(?:<font[^>]*>)?' % regcolcore
-regcolumnum4 = '(?:<br>)?\s*(?:</br>)?<b>%s</b><br>(?:</br>)?' % regcolcore
+regcolumnum4 = '(?:<br>)?\s*<b>%s</b><br>' % regcolcore
 
-recolumnumvals = re.compile('(?:<br>&nbsp;<br>|</ul>|</font>|<p>|<br>(?:</br>)?|<b>|\s)*([^:<]*):\s*column\s*(\d+)(WS)?\s*(?:<br>&nbsp;<br>|<ul>|<font[^>]*>|<p>|</p>|</b>|<br>(?:</br>)?|\s)*$(?i)')
+recolumnumvals = re.compile('(?:<br>&nbsp;<br>|</ul>|</font>|<p>|<br>|<b>|\s)*([^:<]*):\s*column\s*(\d+)(WS)?\s*(?:<br>&nbsp;<br>|<ul>|<font[^>]*>|<p>|</p>|</b>|<br>|\s)*$(?i)')
 
 regcolnumcont = '<i>[^:<]*:\s*column\s*\d+(?:WS)?&#151;continued\s*</i>(?i)'
 recolnumcontvals = re.compile('<i>([^:<]*):\s*column\s*(\d+)(WS)?&#151;continued</i>(?i)')
