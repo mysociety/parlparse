@@ -139,6 +139,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         text = re.sub('<h[45] align="[^"]*" ?/>', '', text)
 
         # Lords, big overall replacements
+        text = text.replace('<br></br>', '<br>')
         text = text.replace('<br/>', '<br>')
         if dname == 'lordspages':
             text = re.sub(' shape="rect">', '>', text)
