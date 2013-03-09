@@ -25,7 +25,7 @@ def GenPatchFileNames(typ, sdate):
 	# transform the typ into the file stub
 	if typ == "wrans":
 		stub = "answers"
-	elif typ == "lords":
+	elif typ == "lords" or typ == 'lordspages':
 		typ = "lordspages"
 		stub = "daylord"
 	elif typ == "westminhall":
