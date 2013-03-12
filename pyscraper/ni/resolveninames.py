@@ -245,6 +245,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 
 		if len(ids) == 0:
 			if not re.search('Some Members|A Member|Several Members|Members', input):
+				# import pdb;pdb.set_trace()
 				raise ContextException, "No matches %s" % (input)
 			return None, 'speakerid="unknown" error="No match" speakername="%s"' % (input)
 		if len(ids) > 1 and 'uk.org.publicwhip/member/90355' in ids:
