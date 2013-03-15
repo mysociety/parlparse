@@ -141,16 +141,6 @@ def GlueByNext(fout, urla, urlx, sdate):
 		# split by sections
 		hrsections = re.split('<hr>(?i)', sr)
 
-		# On 2013-03-11, most of what we'd expect to see in hrsections[0] has been
-		# repeated in hrsections[1], so let's get rid of that (I don't see any reason
-		# why hrsections[1] should ever contain a script, so this should be OK.
-		if '<SCRIPT LANGUAGE="JavaScript1.1" type="text/javascript">' in hrsections[1]:
-			del hrsections[1]
-
-		# Also hrsections[-1] is repeated as hrsections[-2]
-		if '<script type="text/javascript">' in hrsections[-2]:
-			del hrsections[-2]
-
 		# this is the case for debates on 2003-03-13 page 30
 		# http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030313/debtext/30313-32.htm
 		if len(hrsections) == 1:
