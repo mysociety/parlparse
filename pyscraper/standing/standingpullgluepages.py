@@ -230,8 +230,7 @@ def StandingPullGluePages(datefrom, dateto, bforcescrape):
 				continue
 
 		ReplicatePatchToNewScrapedVersion('standing', dgflateststem, dgflatest, dgfnext, dgfnextstem)
-		if miscfuncs.IsNotQuiet():
-			print dnu[0], (dgflatest and 'RE-scraped' or 'scraped'), re.sub(".*?cmpages[/\\\\]", "", dgfnext)
+		print dnu[0], (dgflatest and 'RE-scraped' or 'scraped'), re.sub(".*?cmpages[/\\\\]", "", dgfnext)
 		os.rename(tempfilename, dgfnext)
 
 
