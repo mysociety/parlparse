@@ -288,15 +288,19 @@ def get_committee_attributes(committees):
 	return res
 
 def GetBillLinks(bforce):
-	uin = urllib.urlopen(url_pbc_current)
-	s = uin.read()
-	uin.close()
-	current_committees = re.findall('<a href="(http://services.parliament.uk/bills/[^"]*)">(.*?)</a>(?is)', s)
+        uin = urllib.urlopen(url_pbc_current)
+        s = uin.read()
+        uin.close()
+        current_committees = re.findall('<a href="(http://services.parliament.uk/bills/[^"]*)">(.*?)</a>(?is)', s)
         current_session = re.search('<(?:h2|strong)>Session (\d{4})-\d+</(?:h2|strong)>', s).group(1)
         committees = [ (current_session, link, text) for link, text in current_committees ]
 
-	# if you don't do --force-index, you just get the current year
-	if bforce:
+        # Remove duplicates, maintain order
+        seen = set()
+        committees = [ c for c in committees if c not in seen and not seen.add(c) ]
+
+        # if you don't do --force-index, you just get the current year
+        if bforce:
                 billyears = [ ]
                 uin = urllib.urlopen(url_pbc_previous)
                 s = uin.read()
