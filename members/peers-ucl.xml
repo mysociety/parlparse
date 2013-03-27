@@ -11872,6 +11872,44 @@ B - bishop
     fromdate="2006-02-06" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101158"
+    house="lords"
+    forenames="Christopher Cocksworth"
+    title="Bishop" lordname="" lordofname="Truro"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2013-04-22" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101159"
+    house="lords"
+    forenames="Justin Portal Welby"
+	title="Archbishop" lordname="" lordofname="Canterbury"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2013-02-26" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101160"
+    house="lords"
+    forenames="Martha"
+    title="Baroness" lordname="Lane-Fox" lordofname="Soho"
+    county="the City of Westminster"
+    peeragetype="L" affiliation="XB"
+    fromdate="2013-03-26" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101161"
+    house="lords"
+    forenames="Michael Fitzhardinge"
+    title="Lord" lordname="Berkeley" lordofname="Knighton"
+    county="the County of Powys"
+    peeragetype="L" affiliation="XB"
+    fromdate="2013-03-26" todate="9999-12-31"
+/>
+
 <!--
 <lord
     id="uk.org.publicwhip/lord/1011.."
