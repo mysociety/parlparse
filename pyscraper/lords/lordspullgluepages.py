@@ -94,6 +94,10 @@ def GlueByNext(fout, urla, urlx, sdate):
                 urla = [urla[0]]
         if urla[0] == 'http://www.publications.parliament.uk/pa/ld201011/ldhansrd/text/110119-0001.htm':
                 urla = [urla[0]]
+        # Missing header/footer, need to be able to find 2nd HTML page
+        if urla[0] == 'http://www.publications.parliament.uk/pa/ld201213/ldhansrd/text/130327-0001.htm':
+                urla.insert(1, 'http://www.publications.parliament.uk/pa/ld201213/ldhansrd/text/130327-0002.htm')
+
 	# loop which scrapes through all the pages following the nextlinks
 	# knocking off the known links as we go in case a "next page" is missing.
 	while urla:
@@ -126,7 +130,7 @@ def GlueByNext(fout, urla, urlx, sdate):
                     ):
                         sr = re.sub('Daily Hansard</span></div>', 'Daily Hansard</span></div> <hr>', sr)
                 # To deal with missing header/footer on this day. Might need removing if they come back?
-                if url in ('http://www.publications.parliament.uk/pa/ld201213/ldhansrd/text/121105-wms0001.htm',):
+                if url == 'http://www.publications.parliament.uk/pa/ld201213/ldhansrd/text/121105-wms0001.htm' or re.match('http://www.publications.parliament.uk/pa/ld201213/ldhansrd/text/130327', url):
                         sr = re.sub('<body>', '<body> <hr>', sr)
 			
                 if re.match('http://www.publications.parliament.uk/pa/ld201213/ldhansrd/text/130226[a-z-]*?\d+.htm', url):
