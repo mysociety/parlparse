@@ -3397,8 +3397,8 @@
     id="uk.org.publicwhip/member/90456"
     title="" firstname="Francie" lastname="Molloy"
     constituency="Mid Ulster" party="Sinn Féin"
-    fromdate="2011-05-06" todate="9999-12-31"
-    fromwhy="election" towhy="still_in_office"
+    fromdate="2011-05-06" todate="2013-04-08"
+    fromwhy="election" towhy="resigned"
 />
 <member_ni
     id="uk.org.publicwhip/member/90457"
@@ -3629,6 +3629,14 @@
     title="" firstname="Bronwyn" lastname="McGahan"
     constituency="Fermanagh and South Tyrone" party="Sinn F??in"
     fromdate="2012-07-02" todate="9999-12-31"
+    fromwhy="appointed" towhy="still_in_office"
+/>
+
+<member_ni
+    id="uk.org.publicwhip/member/90489"
+    title="" firstname="Ian" lastname="Milne"
+    constituency="Mid Ulster" party="Sinn F??in"
+    fromdate="2013-04-08" todate="9999-12-31"
     fromwhy="appointed" towhy="still_in_office"
 />
 
