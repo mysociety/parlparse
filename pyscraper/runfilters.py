@@ -196,6 +196,8 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         text = re.sub('<b>\s*(<b>[^<]*</b>\s*)</b>', r'\1', text)
         # <p> <b>[</b> </p> <p> <b>TIME</b> </p>
         text = re.sub('<p>\s*<b>\[</b>\s*</p>\s*<p>\s*<b>([^<]*)</b>\s*</p>', r'<p> <b>[\1</b> </p>', text)
+        # And have changed <center> to <span class="centred">
+        text = re.sub('<span class="centred">(.*?)</span>', r'<center>\1</center>', text)
 
     (flatb, gidname) = FILTERfunction(text, sdate)
     for i in range(len(gidname)):
