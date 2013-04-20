@@ -101,6 +101,7 @@ def FilterWMSSections(text, sdate, lords=False):
 
 	flatb = [ ]
 	for sht in headspeak[ih:]:
+		print sht
 		try:
 			headingtxt = stampurl.UpdateStampUrl(string.strip(sht[0]))  # we're getting stamps inside the headings sometimes
 			unspoketxt = sht[1]
