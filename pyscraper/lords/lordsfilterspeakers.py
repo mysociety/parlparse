@@ -23,7 +23,7 @@ respeaker = re.compile('(%s|%s|%s)(?i)' % (rehead, retable, renormal))
 respeakerb = re.compile('<b>\s*((?:<stamp aname="[^"]*"/>|</b><b>|[^<]+)*),?\s*</b>(\s*:)?(?i)')
 respeakervals = re.compile('([^:(]*?)\s*(?:\(([^:)]*)\)?)?(:)?:*\s*$')
 
-renonspek = re.compile('division|contents|amendment(?i)')
+renonspek = re.compile('division|contents|amendment|Commons disagreement and reason(?i)')
 reboldempty = re.compile('<b>\s*</b>(?i)')
 
 regenericspeak = re.compile('the (?:deputy )?chairman of committees|(?:the )?deputy speaker|the clerk of the parliaments|several noble lords|the deputy chairman(?: of committees)?|the noble lord said(?i)')
