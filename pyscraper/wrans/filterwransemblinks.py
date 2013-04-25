@@ -16,14 +16,14 @@ seelines = open(os.path.join(miscfuncs.tmppath, 'emblinks.txt'), "w")
 
 # this detects the domain
 reglinkdomt = '(?:\.or[gq]|\.com|[\.\s]uk|\.tv|\.net|\.gov|\.int|\.info|\.it|\.ch|\.es|\.mz|\.lu|\.fr|\.dk|\.mil|\.eu)(?!\w)'
-reglinkdomf = 'http://(?:(?:www.)?defraweb|nswebcopy|\d+\.\d+\.\d+\.\d+)|www.defraweb'
-reglinkdom = '(?:http ?:? ?/{1,3}(?:www)?|www)(?:(?:[^/:;,?=()<>"\'@](?!www\.))*?(?:%s))+|%s' % (reglinkdomt, reglinkdomf)
+reglinkdomf = 'https?://(?:(?:www.)?defraweb|nswebcopy|\d+\.\d+\.\d+\.\d+)|www.defraweb'
+reglinkdom = '(?:https? ?:? ?/{1,3}(?:www)?|www)(?:(?:[^/:;,?=()<>"\'@](?!www\.))*?(?:%s))+|%s' % (reglinkdomt, reglinkdomf)
 
 # this detects the middle section of a url between the slashes.
-reglinkmid = '(?:/(?:(?:[^/:;,?="<()]|&#\d+;|&amp;)(?!www\.))+)*/'
+reglinkmid = '(?:/(?:(?:[^/?"<]|&#\d+;|&amp;)(?!www\.))*)*/'
 
 # this detects the tail section of a url trailing a slash
-# XXX: This seems very odd way of matching URIs
+# XXX: This seems a VERY odd way of matching URIs
 #reglinktail = '[^./:;,]*(?:\.\s?(?:s?html?|pdf|xls|(?:asp|php|cfm(?:\?[^\s.]+)?)))|\w*'
 regqs = '(?:\?\s?\w+=[\w/]+(?:&\w+=[\w/%]*)*)'
 regasptype = '(?:aspx?|nsf|php|cfm|gif|jpg|jpeg|png)%s?' % regqs
@@ -41,7 +41,8 @@ rehtlink = re.compile('(%s)(?:(%s)(%s)?)?(?i)' % (reglinkdom, reglinkmid, reglin
 
 
 def ConstructHTTPlink(qstrdom, qstrmid, qstrtail):
-	qstrdom = re.sub('^http|[:/\s]', '', qstrdom)
+	scheme = 'https' if 'https' in qstrdom else 'http'
+	qstrdom = re.sub('^https?|[:/\s]', '', qstrdom)
 	if not qstrmid:
 		qstrmid = ''
 	if not qstrtail:
@@ -78,7 +79,7 @@ def ConstructHTTPlink(qstrdom, qstrmid, qstrtail):
 		print ' bad tail -- ' + qstrtail
 
 
-	qstrlink = 'http://%s%s%s' % (qstrdom, qstrmid, qstrtail)
+	qstrlink = '%s://%s%s%s' % (scheme, qstrdom, qstrmid, qstrtail)
 	return qstrlink
 
 
