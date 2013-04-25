@@ -157,7 +157,7 @@ def GrabLordDivisionProced(qbp, qbd):
 
 	return qbdp
 
-renewlorddiv = re.compile('<p[^>]*>(?:\*\s*)?Contents,? (\d+)\*? ?; Not-Contents,? (\d+)\*?\.?</p>$')
+renewlorddiv = re.compile('<p[^>]*>(?:\*\s*)?Contents,? (\d+)\*? ?; Not-Contents,? (\d+)\*?\.?(?: \[[^]]*\]\.)?</p>$')
 redivisionon = re.compile('''(?ix)
     <p[^>]*>Division [ ] on [ ] (
           .*? (?: ' | &\#8217; ) s [ ] ( Motion | Amendment ) (?: [ ] to [ ] the [ ] Motion )?
@@ -168,6 +168,7 @@ redivisionon = re.compile('''(?ix)
             | to [ ] the [ ] Motion
             | that [ ] the [ ] Question [ ] be [ ] now [ ] put
             | to [ ] Resume
+            | to [ ] Resolve
           ) (?: [ ] should )? (?: [ ] Stand [ ] Part )? (?: [ ] of )? (?: [ ] The [ ] Bill )?
         | (?: the [ ] )? Motion
         | adjournment [ ] of [ ] consideration [ ] of [ ] Motion [ ] [A-Z]
