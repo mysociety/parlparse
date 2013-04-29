@@ -53,6 +53,8 @@ def GetReportProceedings(urlpage, year):
 		vdat = re.sub('(?s)^.*(<A href=".*?">2nd)', '\1', s)
 	elif urlpage == 'http://services.parliament.uk/bills/2012-13/crimeandcourts/committees/houseofcommonspublicbillcommitteeonthecrimeandcourtsbillhl201213.html': # XXX
 		vdat = re.sub('(?is)^.*?Reports? of proceedings(.*?)<h3>Associated memoranda', r'\1', s)
+	elif urlpage == 'http://services.parliament.uk/bills/2012-13/financeno2/committees/houseofcommonspublicbillcommitteeonthefinanceno2bill201213.html':
+		vdat = re.sub('(?is)^.*?Reports? of proceedings(.*?)$', r'\1', s)
 	elif not vdat:
 		return res, None
 	else: 
