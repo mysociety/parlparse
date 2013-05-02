@@ -3117,7 +3117,7 @@ Members of the UK Parliament, House of Commons, 2010-
     id="uk.org.publicwhip/member/40552" house="commons"
     title="" firstname="David" lastname="Miliband"
     constituency="South Shields" party="Lab"
-    fromdate="2010-05-06" todate="9999-12-31" fromwhy="general_election" towhy="still_in_office"
+    fromdate="2010-05-06" todate="2013-04-15" fromwhy="general_election" towhy="resigned"
 />
 <member
     id="uk.org.publicwhip/member/40553" house="commons"
@@ -4008,6 +4008,13 @@ Members of the UK Parliament, House of Commons, 2010-
     title="" firstname="Francie" lastname="Molloy"
     constituency="Mid Ulster" party="SF"
     fromdate="2013-03-08" todate="9999-12-31" fromwhy="by_election" towhy="still_in_office"
+/>
+
+<member
+    id="uk.org.publicwhip/member/40699" house="commons"
+    title="" firstname="Emma" lastname="Lewell-Buck"
+    constituency="South Shields" party="Lab"
+    fromdate="2013-05-03" todate="9999-12-31" fromwhy="by_election" towhy="still_in_office"
 />
 
 </publicwhip>
