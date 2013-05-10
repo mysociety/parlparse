@@ -134,15 +134,14 @@ def GlueByNext(fout, urla, urlx, sdate):
                         sr = re.sub('<body>', '<body> <hr>', sr)
 			
                 # For 2013-02-26, 2013-05-08, so far
-                sr = re.sub('<div id="content-small">', '<div id="content-small"> <hr>', sr)
-		sr = re.sub('<hr width="90%" align="left"/>', '<hr>', sr)
+                sr = re.sub('<div id="content-small"><!--end', '<div id="content-small"> <hr><!--end', sr)
 
                 # post 2008-03, stupid duplication of <b>s
                 sr = re.sub('<b>((?:<a name="[^"]*"></a>)*)<b>', '\\1<b>', sr)
                 sr = re.sub('</b><!--[^>]*--></b>', '</b>', sr)
 
 		# split by sections
-		hrsections = re.split('<hr>(?i)', sr)
+		hrsections = re.split('<hr[^>]*>(?i)', sr)
 
 		# this is the case for debates on 2003-03-13 page 30
 		# http://www.publications.parliament.uk/pa/cm200203/cmhansrd/vo030313/debtext/30313-32.htm
