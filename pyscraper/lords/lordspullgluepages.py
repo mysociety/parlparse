@@ -133,10 +133,9 @@ def GlueByNext(fout, urla, urlx, sdate):
                 if url == 'http://www.publications.parliament.uk/pa/ld201213/ldhansrd/text/121105-wms0001.htm' or re.match('http://www.publications.parliament.uk/pa/ld201213/ldhansrd/text/130327', url):
                         sr = re.sub('<body>', '<body> <hr>', sr)
 			
-                if re.match('http://www.publications.parliament.uk/pa/ld201213/ldhansrd/text/130226[a-z-]*?\d+.htm', url):
-                        # sr = re.sub('<body class="main">', '<body> <hr>', sr)
-                        sr = re.sub('<a name="skipToContent"></a>', '<a name="skipToContent"></a> <hr>', sr)
-			sr = re.sub('<hr width="90%" align="left"/>', '<hr>', sr)
+                # For 2013-02-26, 2013-05-08, so far
+                sr = re.sub('<div id="content-small">', '<div id="content-small"> <hr>', sr)
+		sr = re.sub('<hr width="90%" align="left"/>', '<hr>', sr)
 
                 # post 2008-03, stupid duplication of <b>s
                 sr = re.sub('<b>((?:<a name="[^"]*"></a>)*)<b>', '\\1<b>', sr)
