@@ -144,7 +144,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         if dname == 'lordspages':
             text = re.sub(' shape="rect">', '>', text)
             text = re.sub(' class="anchor"', '', text)
-            text = re.sub(' class="anchor-column"', '', text) 
+            text = re.sub(' class="anchor-column"', '', text)
             text = re.sub(' class="columnNum"', '', text)
             text = re.sub('(<a[^>]*>) (</a>)', r'\1\2', text)
             text = re.sub('(<h5>)((?:<a name="(.*?)">(?:</a>)?)*)', r"\2\1", text) # If you can't beat them, ...
@@ -189,6 +189,8 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
 
     # They've started double bolding names, parts of names, splitting names up, and having a "[" on its own
     if sdate >= '2013-01-01':
+        # Double bolding sometimes has some <a> tags in between
+        text = re.sub(r'<b>((?:</?a[^>]*>|\s)*)<b>', r'\1<b>', text)
         text = re.sub(r'</b>(\s*)<b>', r'\1', text)
         # <b> <b>Name</b> (Constituency) (Party):</b>
         text = re.sub('<b>\s*<b>([^<]*)</b>([^<]*)</b>', r'<b>\1\2</b>', text)
