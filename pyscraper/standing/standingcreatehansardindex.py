@@ -237,6 +237,9 @@ def GetReportProceedings(urlpage, year):
 			elif year == "2012" and re.search("/bills/2012-13/financeno4/", urlpage):
 				assert p[0] == 5 # 1st 4 meetings in previous session
 				firstdate = '2012-04-24'
+			elif year == "2013" and re.search("/bills/2013-14/finance/committees/houseofcommonspublicbillcommitteeonthefinanceno2bill201314", urlpage):
+				assert p[0] == 5 # 1st 4 meetings in previous session
+				firstdate = '2013-04-23'
 			else:
 				assert p[0] == 1, "%s first sitting not found" % urlpage
 		prev = p
