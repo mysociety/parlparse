@@ -995,7 +995,7 @@ class ParseCommittee:
                     pass
                 elif tag.name == 'p' and cssClass == 'mainLinks':
                     pass
-                elif cssClass in ('hs_2GenericHdg', 'hs_2DebatedMotion', 'hs_2BusinessWODebate') and re.match('(?i)Written evidence (to be )?reported to the House', ''.join(tag(text=True))):
+                elif cssClass in ('hs_2GenericHdg', 'hs_2cGenericHdg', 'hs_2DebatedMotion', 'hs_2BusinessWODebate') and re.match('(?i)\s*Written evidence (to be )?reported to the House', ''.join(tag(text=True))):
                     self.display_para(tag, indent=True)
                 elif cssClass in ('bkMark',):
                     pass
