@@ -299,7 +299,7 @@ def GrabWestminDivisionInterruptProced(qbp, rawtext):
 		return None
 	iskip = 0
 	if re.search("italic.*?>on resuming&\S*</p>(?i)", qbp.stext[-1]):
-		if not re.search("italic.*?>(?:sitting )?suspended(?: for (?:a division|divisions) in the house)?[\.\s]*(?i)", qbp.stext[-2]):
+		if not re.search("italic.*?>(?:sitting )?(?:suspended|adjourned)(?: for (?:a division|divisions) in the house)?[\.\s]*(?i)", qbp.stext[-2]):
 			print "failed to detect sitting suspended interruption"
 			print qbp.stext[-2]
 			assert False
