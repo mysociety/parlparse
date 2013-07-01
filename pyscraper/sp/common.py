@@ -2,6 +2,7 @@
 # Parliament scraping scripts.
 
 import sys
+import datetime
 sys.path.append('../')
 from BeautifulSoup import NavigableString
 from BeautifulSoup import Tag
@@ -105,3 +106,24 @@ def compare_spids(a,b):
                 return 0
     else:
         raise Exception, "Couldn't match spids: "+a+" and "+b
+
+def just_time( non_tag_text ):
+    m = re.match( '^\s*(\d?\d)[:\.](\d\d)\s*$', non_tag_text )
+    if m:
+        return datetime.time(int(m.group(1),10),int(m.group(2),10))
+    else:
+        return None
+
+def meeting_closed( non_tag_text ):
+    m = re.match( '(?ims)^\s*Meeting\s+closed\s+at\s+(\d?\d)[:\.](\d\d)\s*\.?\s*$', non_tag_text )
+    if m:
+        return datetime.time(int(m.group(1),10),int(m.group(2),10))
+    else:
+        return None
+
+def meeting_suspended( non_tag_text ):
+    m = re.match( '(?ims)^\s*Meeting\s+suspended(\s+until\s+(\d?\d)[:\.](\d\d)\s*\.?\s*|\s*\.?\s*)$', non_tag_text )
+    if m:
+        return OIAOISJOASIDJASOD
+    else:
+        return False

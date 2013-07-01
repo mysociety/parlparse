@@ -30,6 +30,9 @@ from findquotation import find_quotation_from_text
 from common import month_name_to_int
 from common import non_tag_data_in
 from common import tidy_string
+from common import just_time
+from common import meeting_suspended
+from common import meeting_closed
 
 import traceback
 
@@ -565,26 +568,6 @@ def centred( t ):
         return False
     else:
         raise Exception, "Unknown class: "+str(t.__class__)
-
-def just_time( non_tag_text ):
-    m = re.match( '^\s*(\d?\d)[:\.](\d\d)\s*$', non_tag_text )
-    if m:
-        return datetime.time(int(m.group(1),10),int(m.group(2),10))
-
-def meeting_closed( non_tag_text ):
-    m = re.match( '(?ims)^\s*Meeting\s+closed\s+at\s+(\d?\d)[:\.](\d\d)\s*\.?\s*$', non_tag_text )
-    if m:
-        return datetime.time(int(m.group(1),10),int(m.group(2),10))
-    else:
-        return None
-
-def meeting_suspended( non_tag_text ):
-    m = re.match( '(?ims)^\s*Meeting\s+suspended(\s+until\s+(\d?\d)[:\.](\d\d)\s*\.?\s*|\s*\.?\s*)$', non_tag_text )
-    if m:
-        if verbose: print "Got meeting suspended!"
-        return True
-    else:
-        return False
 
 def full_date( s ):
     if re.search('(?ims)^\s*\w+\s+\d+\s+\w+\s+\d+\s*$',s):
