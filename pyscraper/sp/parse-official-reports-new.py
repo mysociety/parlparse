@@ -35,9 +35,12 @@ def is_division_way(element):
     >>> is_division_way('nonsense')
     >>> is_division_way('abstentions ')
     'ABSTENTIONS'
-
+    >>> is_division_way(":\xA0FOR")
+    'FOR'
     """
     tidied = tidy_string(non_tag_data_in(element)).upper()
+    # Strip any non-word letters at the start and end:
+    tidied = re.sub(r'^\W*(.*?)\W*$', '\\1', tidied)
     if tidied in DIVISION_HEADINGS:
         return tidied
     else:
@@ -290,7 +293,7 @@ class Speech(object):
     
 def parse_html(filename, page_id, original_url):
     with open(filename) as fp:
-        soup = BeautifulSoup(fp)
+        soup = BeautifulSoup(fp, convertEntities=BeautifulSoup.HTML_ENTITIES)
     # If this is an error page, there'll be a message like:
     #   <span id="ReportView_lblError">Please check the link you clicked, as it does not reference a valid Official Report</span>
     # ... so ignore those.
@@ -402,6 +405,8 @@ def parse_html(filename, page_id, original_url):
                             parsed_page.sections[-1].speeches_and_votes.append(current_votes)
                         current_division_way = division_way
                     elif member_vote:
+                        if current_votes is None:
+                            raise Exception, "Got a member's vote before an indication of which way the vote is"
                         current_votes.add_vote(current_division_way, tidied_paragraph, member_vote)
                     elif maybe_time:
                         current_time = maybe_time
