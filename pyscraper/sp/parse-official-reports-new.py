@@ -1,5 +1,12 @@
 #!/usr/bin/env python
 
+# Notes on things still to fix:
+#    4161 (the old one was: parldata/scrapedxml/spsp1999-05-13.xml
+#    4163
+#      Need to look for VOTES FOR <candidate> and create a new division
+#      with the candidate attribute set.
+
+
 from cgi import escape
 import sys
 import os
