@@ -489,7 +489,7 @@ def parse_html(filename, page_id, original_url):
                 # FIXME: could just be else, surely...
                 elif isinstance(speech_part, NavigableString):
                     tidied_paragraph = tidy_string(speech_part)
-                    # print "tidied_paragraph is", tidied_paragraph, "of type", type(tidied_paragraph)
+                    # print "tidied_paragraph is", tidied_paragraph.encode('utf-8'), "of type", type(tidied_paragraph)
                     division_way = is_division_way(tidied_paragraph)
                     member_vote = is_member_vote(tidied_paragraph, report_date)
                     maybe_time = just_time(tidied_paragraph)
