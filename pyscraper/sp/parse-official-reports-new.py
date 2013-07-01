@@ -495,7 +495,12 @@ def parse_html(filename, page_id, original_url):
                     closed_time = meeting_closed(tidied_paragraph)
                     if closed_time:
                         current_time = closed_time
-                    suspended_time = meeting_suspended(tidied_paragraph)
+                    suspended_time_tuple = meeting_suspended(tidied_paragraph)
+                    if suspended_time_tuple:
+                        suspended, suspension_time_type, suspension_time = suspended_time_tuple
+                    else:
+                        suspended = False
+                        suspension_time_type = suspension_time = None
                     if division_way:
                         if not current_votes:
                             current_votes = Division(report_date, current_url)
@@ -518,8 +523,8 @@ def parse_html(filename, page_id, original_url):
                         if len(current_speech.paragraphs) == 0:
                             current_speech.last_time = current_time
                         current_speech.paragraphs.append(tidied_paragraph)
-                    if suspended_time:
-                        current_time = suspended_time
+                    if suspended and suspension_time:
+                        current_time = suspension_time
                 else:
                     raise Exception, "Totally unparsed element:\n%s\n... unhandled in page ID: %d" % (speech_part, page_id)
 
