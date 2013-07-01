@@ -60,11 +60,12 @@ def is_division_way(element):
 
 member_vote_re = re.compile('''
         ^                              # Beginning of the string
-        (?P<last_name>[^,\(\)]+)       # ... last name, >= 1 non-comma characters
+        (?P<last_name>[^,\(\)0-9]+)    # ... last name, >= 1 non-comma characters
         ,                              # ... then a comma
         \s*                            # ... and some greedy whitespace
-        (?P<first_names>[^,\(\)]*?)    # ... first names, a minimal match of any characters
-        \s*\(                          # ... an arbitrary amout of whitespace and an open banana
+        (?P<first_names>[^,\(\)0-9]*?) # ... first names, a minimal match of any characters
+        \s*\(\(?                       # ... an arbitrary amout of whitespace and an open banana
+                                       #     (with possibly an extra open banana)
         (?P<constituency>[^\(\)0-9]*?) # ... constituency, a minimal match of any characters
         \)\s*\(                        # ... close banana, whitespace, open banana
         (?P<party>\D*?)                # ... party, a minimal match of any characters
@@ -74,11 +75,12 @@ member_vote_re = re.compile('''
 
 member_vote_just_constituency_re = re.compile('''
         ^                              # Beginning of the string
-        (?P<last_name>[^,\(\)]+)       # ... last name, >= 1 non-comma characters
+        (?P<last_name>[^,\(\)0-9]+)    # ... last name, >= 1 non-comma characters
         ,                              # ... then a comma
         \s*                            # ... and some greedy whitespace
-        (?P<first_names>[^,\(\)]*?)    # ... first names, a minimal match of any characters
-        \s*\(                          # ... an arbitrary amout of whitespace and an open banana
+        (?P<first_names>[^,\(\)0-9]*?) # ... first names, a minimal match of any characters
+        \s*\(\(?                       # ... an arbitrary amout of whitespace and an open banana
+                                       #     (with possibly an extra open banana)
         (?P<constituency>[^\(\)0-9]*?) # ... constituency, a minimal match of any characters
         \)\s*                          # ... close banana, whitespace
         $                              # ... end of the string
