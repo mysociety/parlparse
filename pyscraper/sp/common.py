@@ -50,11 +50,11 @@ def non_tag_data_in(o):
         return re.sub('(?ms)[\r\n]',' ',o)
     elif o.__class__ == Tag:
         if o.name == 'script':
-            return ''
+            return u''
         else:
-            return ''.join( map( lambda x: non_tag_data_in(x) , o.contents ) )
+            return u''.join( map( lambda x: non_tag_data_in(x) , o.contents ) )
     elif o.__class__ == Comment:
-        return ''
+        return u''
     else:
         # Hope it's a string or something else concatenatable...
         return o
