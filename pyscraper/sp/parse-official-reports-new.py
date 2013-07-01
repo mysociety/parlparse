@@ -38,12 +38,16 @@ def is_division_way(element):
     'ABSTENTIONS'
     >>> is_division_way(":\xA0FOR")
     'FOR'
+    >>> is_division_way('Abstention')
+    'ABSTENTIONS'
     """
     tidied = tidy_string(non_tag_data_in(element)).upper()
     # Strip any non-word letters at the start and end:
     tidied = re.sub(r'^\W*(.*?)\W*$', '\\1', tidied)
     if tidied in DIVISION_HEADINGS:
         return tidied
+    elif tidied == 'ABSTENTION':
+        return 'ABSTENTIONS'
     else:
         return None
 
