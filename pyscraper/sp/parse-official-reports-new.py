@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from cgi import escape
 import sys
 import os
 import re
@@ -169,6 +170,51 @@ def get_title_and_date(soup, page_id):
     else:
         raise Exception, "Failed to parse the title and date from: {}".format(title)
 
+acceptable_elements = ['a', 'abbr', 'acronym', 'address', 'area', 'b',
+      'big', 'blockquote', 'body', 'br', 'button', 'caption', 'center',
+      'cite', 'code', 'col', 'colgroup', 'dd', 'del', 'dfn', 'dir', 'div',
+      'dl', 'dt', 'em', 'font', 'form', 'head', 'h1', 'h2', 'h3', 'h4',
+      'h5', 'h6', 'hr', 'html', 'i', 'img', 'input', 'ins', 'kbd', 'label',
+      'legend', 'li', 'link', 'map', 'menu', 'meta', 'noscript' 'ol',
+      'p', 'pre', 'q', 's', 'samp', 'script', 'small', 'span', 'strike',
+      'strong', 'style', 'sub', 'sup', 'table', 'tbody', 'td', 'tfoot',
+      'th', 'thead', 'title', 'tr', 'tt', 'u', 'ul', 'var', 'form', 'body']
+
+def replace_unknown_tags(html):
+    """Replace any tags that aren't in a whitelist with their escaped versions
+
+    The HTML from the Scottish Parliament is broken in that it
+    sometimes uses unescaped angle brackets for quoting, for example
+    in:
+
+    <br/>The purpose of the raft of amendments is simple and can be
+    expressed in the words of amendment 32, which simply
+    says:<br/><br/>"leave out <Scottish Ministers> and insert
+    <tribunal>".<br/>
+
+    So, this replaces any unknown elements in the HTML with an escaped
+    version.  Note that we can't do this easily in BeautifulSoup,
+    since it will add (e.g.) an end tag for <tribunal>, and we can't
+    tell after parsing if that were real, or part of a fixup.
+
+    >>> example_html = '''<h3 foo="bar" >Hello!</h3 ><p>Here's some <stupid> <strong
+    ... class="whatever">HTML</strong> just to annoy us.  And <some
+    ... more> before closing the paragraph.</p>'''
+    >>> print replace_unknown_tags(example_html)
+    <h3 foo="bar" >Hello!</h3 ><p>Here's some &lt;stupid&gt; <strong
+    class="whatever">HTML</strong> just to annoy us.  And &lt;some
+    more&gt; before closing the paragraph.</p>
+
+    """
+    def replace_tag(match):
+        tag_name = match.group(2).lower()
+        if tag_name in acceptable_elements:
+            return match.group(0)
+        else:
+            return escape(match.group(0))
+
+    return re.sub(r'(?ims)(</?)(\w+)([^>]*/?>)', replace_tag, html)
+
 class ParsedPage(object):
 
     def __init__(self, session, report_date):
@@ -293,7 +339,9 @@ class Speech(object):
     
 def parse_html(filename, page_id, original_url):
     with open(filename) as fp:
-        soup = BeautifulSoup(fp, convertEntities=BeautifulSoup.HTML_ENTITIES)
+        html = fp.read()
+    html_with_fixed_tags = replace_unknown_tags(html)
+    soup = BeautifulSoup(html_with_fixed_tags, convertEntities=BeautifulSoup.HTML_ENTITIES)
     # If this is an error page, there'll be a message like:
     #   <span id="ReportView_lblError">Please check the link you clicked, as it does not reference a valid Official Report</span>
     # ... so ignore those.
