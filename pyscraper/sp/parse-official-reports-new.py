@@ -52,17 +52,29 @@ def is_division_way(element):
         return None
 
 member_vote_re = re.compile('''
-        ^                     # Beginning of the string
-        (?P<last_name>[^,]+)  # ... last name, >= 1 non-comma characters
-        ,                     # ... then a comma
-        \s*                   # ... and some greedy whitespace
-        (?P<first_names>.*?)  # ... first names, a minimal match of any characters
-        \s*\(                 # ... an arbitrary amout of whitespace and an open banana
-        (?P<constituency>.*?) # ... constituency, a minimal match of any characters
-        \)\s*\(               # ... close banana, whitespace, open banana
-        (?P<party>.*?)        # ... party, a minimal match of any characters
-        \)                    # ... close banana
-        $                     # ... end of the string
+        ^                              # Beginning of the string
+        (?P<last_name>[^,\(\)]+)       # ... last name, >= 1 non-comma characters
+        ,                              # ... then a comma
+        \s*                            # ... and some greedy whitespace
+        (?P<first_names>[^,\(\)]*?)    # ... first names, a minimal match of any characters
+        \s*\(                          # ... an arbitrary amout of whitespace and an open banana
+        (?P<constituency>[^\(\)0-9]*?) # ... constituency, a minimal match of any characters
+        \)\s*\(                        # ... close banana, whitespace, open banana
+        (?P<party>\D*?)                # ... party, a minimal match of any characters
+        \)                             # ... close banana
+        $                              # ... end of the string
+''', re.VERBOSE)
+
+member_vote_just_constituency_re = re.compile('''
+        ^                              # Beginning of the string
+        (?P<last_name>[^,\(\)]+)       # ... last name, >= 1 non-comma characters
+        ,                              # ... then a comma
+        \s*                            # ... and some greedy whitespace
+        (?P<first_names>[^,\(\)]*?)    # ... first names, a minimal match of any characters
+        \s*\(                          # ... an arbitrary amout of whitespace and an open banana
+        (?P<constituency>[^\(\)0-9]*?) # ... constituency, a minimal match of any characters
+        \)\s*                          # ... close banana, whitespace
+        $                              # ... end of the string
 ''', re.VERBOSE)
 
 def get_unique_speaker_id(tidied_speaker, on_date):
@@ -101,20 +113,31 @@ def is_member_vote(element, vote_date):
     """Returns a speaker ID if this looks like a member's vote in a division
 
     Otherwise returns None.  If it looks like a vote, but the speaker
-    can't be identified, this throws and exception.  As an example:
+    can't be identified, this throws an exception.  As an example:
 
     >>> is_member_vote('Something random...', '2012-11-12')
     >>> is_member_vote('Baillie, Jackie (Dumbarton) (Lab)', '2012-11-12')
     u'uk.org.publicwhip/member/80476'
     >>> is_member_vote('Alexander, Ms Wendy (Paisley North) (Lab)', '2010-05-12')
     u'uk.org.publicwhip/member/80281'
+    >>> is_member_vote('Purvis, Jeremy (Tweeddale, Ettrick and Lauderdale)', '2005-05-18')
+    u'uk.org.publicwhip/member/80101'
+
+    Now some examples that should be ignored:
+
+    >>> is_member_vote(': SP 440 (EC Ref No 11766/99, COM(99) 473 final)', '1999-11-23')
+    >>> is_member_vote('SP 666 (EC Ref No 566 99/0225, COM(99) (CNS))', '2000-02-08')
+    >>> is_member_vote('to promote a private bill, the company relied on its general power under section 10(1)(xxxii)', '2006-05-22')
+
+    And one that should throw an exception:
+
     >>> is_member_vote('Lebowski, Jeffrey (Los Angeles) (The Dude)', '2012-11-12')
     Traceback (most recent call last):
       ...
     Exception: A voting member 'Jeffrey Lebowski (Los Angeles)' couldn't be resolved
     """
     tidied = tidy_string(non_tag_data_in(element))
-    m = member_vote_re.search(tidied)
+    m = member_vote_re.search(tidied) or member_vote_just_constituency_re.search(tidied)
     if m:
         reformed_name = "%s %s (%s)" % (m.group('first_names'),
                                         m.group('last_name'),
