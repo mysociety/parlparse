@@ -559,9 +559,8 @@ if __name__ == '__main__':
         if not m:
             continue
         page_id = int(m.group(1), 10)
-        # if page_id < 5548:
-        if page_id < 5591:
-            continue
+        # if page_id < 8098:
+        #     continue
         print "got filename", filename
         try:
             parsed_page = parse_html(os.path.join(html_directory, filename),
