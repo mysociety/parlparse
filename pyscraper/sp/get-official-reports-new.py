@@ -68,9 +68,9 @@ def get_document_from_id(official_report_id):
         try:
             response = urllib2.urlopen(request)
         except urllib2.HTTPError, e:
-            # Specifying a non-existent r parameter gets us a 500 error,
-            # so ignore those:
-            if e.code == 500:
+            # Specifying a non-existent r parameter sometimes gets us
+            # a 500 error, and sometimes a 403, so ignore those:
+            if e.code in (500, 403):
                 if options.missing:
                     if official_report_id not in missing_report_ids:
                         missing_report_ids.add(official_report_id)
