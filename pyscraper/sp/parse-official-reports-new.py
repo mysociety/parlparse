@@ -251,6 +251,19 @@ def replace_unknown_tags(html):
 
     return re.sub(r'(?ims)(</?)(\w+)([^>]*/?>)', replace_tag, html)
 
+def fix_inserted_br_in_vote_list(html):
+    """Fix a common error in the vote lists of divisions
+
+    >>> example_html = '''<br/>Robson, Euan (Roxburgh and Berwickshire)
+    ... (LD)<br/>Rumbles, Mr Mike (West Aberdeenshire and
+    ... Kincardine)<br/>(LD)<br/>Russell, Michael (South of Scotland) (SNP)'''
+    >>> print fix_inserted_br_in_vote_list(example_html)
+    <br/>Robson, Euan (Roxburgh and Berwickshire)
+    (LD)<br/>Rumbles, Mr Mike (West Aberdeenshire and
+    Kincardine) (LD)<br/>Russell, Michael (South of Scotland) (SNP)
+    """
+    return re.sub(r'(\))<br/>(\((LD|Lab)\)<br/>)', '\\1 \\2', html)
+
 class ParsedPage(object):
 
     def __init__(self, session, report_date):
@@ -376,8 +389,8 @@ class Speech(object):
 def parse_html(filename, page_id, original_url):
     with open(filename) as fp:
         html = fp.read()
-    html_with_fixed_tags = replace_unknown_tags(html)
-    soup = BeautifulSoup(html_with_fixed_tags, convertEntities=BeautifulSoup.HTML_ENTITIES)
+    html = fix_inserted_br_in_vote_list(replace_unknown_tags(html))
+    soup = BeautifulSoup(html, convertEntities=BeautifulSoup.HTML_ENTITIES)
     # If this is an error page, there'll be a message like:
     #   <span id="ReportView_lblError">Please check the link you clicked, as it does not reference a valid Official Report</span>
     # ... so ignore those.
