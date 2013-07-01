@@ -14,6 +14,7 @@ import re
 import random
 import datetime
 import time
+import traceback
 import dateutil.parser as dateparser
 from optparse import OptionParser
 from common import tidy_string
@@ -562,16 +563,24 @@ if __name__ == '__main__':
         if page_id < 5591:
             continue
         print "got filename", filename
-        parsed_page = parse_html(os.path.join(html_directory, filename),
-                                 page_id,
-                                 official_report_url_format.format(page_id))
+        try:
+            parsed_page = parse_html(os.path.join(html_directory, filename),
+                                     page_id,
+                                     official_report_url_format.format(page_id))
+        except Exception as e:
+            print "parsing the file '%s' failed, with the exception:" % (filename,)
+            print unicode(e).encode('utf-8')
+            traceback.print_exc()
+            continue
 
         if parsed_page is not None:
             print "suggested name would be:", parsed_page.suggested_file_name
+            xml = etree.tostring(parsed_page.as_xml(), pretty_print=True)
+            with open(os.path.join(xml_output_directory,
+                                   parsed_page.suggested_file_name), "w") as fp:
+                fp.write(xml)
 
         continue
-
-        # print "parsed to:", etree.tostring(parsed_page.as_xml(), pretty_print=True)
 
         # if changed_output:
         if True:
