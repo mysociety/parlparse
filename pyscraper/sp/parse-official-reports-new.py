@@ -48,43 +48,45 @@ def is_division_way(element):
     'FOR'
     >>> is_division_way('Abstention')
     'ABSTENTIONS'
+    >>> is_division_way('Absentions')
+    'ABSTENTIONS'
     """
     tidied = tidy_string(non_tag_data_in(element)).upper()
     # Strip any non-word letters at the start and end:
     tidied = re.sub(r'^\W*(.*?)\W*$', '\\1', tidied)
     if tidied in DIVISION_HEADINGS:
         return tidied
-    elif tidied == 'ABSTENTION':
+    elif tidied in ('ABSTENTION', 'ABSENTIONS'):
         return 'ABSTENTIONS'
     else:
         return None
 
 member_vote_re = re.compile('''
-        ^                              # Beginning of the string
-        (?P<last_name>[^,\(\)0-9]+)    # ... last name, >= 1 non-comma characters
-        ,                              # ... then a comma
-        \s*                            # ... and some greedy whitespace
-        (?P<first_names>[^,\(\)0-9]*?) # ... first names, a minimal match of any characters
-        \s*\(\(?                       # ... an arbitrary amout of whitespace and an open banana
-                                       #     (with possibly an extra open banana)
-        (?P<constituency>[^\(\)0-9]*?) # ... constituency, a minimal match of any characters
-        \)\s*\(                        # ... close banana, whitespace, open banana
-        (?P<party>\D*?)                # ... party, a minimal match of any characters
-        \)                             # ... close banana
-        $                              # ... end of the string
+        ^                               # Beginning of the string
+        (?P<last_name>[^,\(\)0-9:]+)    # ... last name, >= 1 non-comma characters
+        ,                               # ... then a comma
+        \s*                             # ... and some greedy whitespace
+        (?P<first_names>[^,\(\)0-9:]*?) # ... first names, a minimal match of any characters
+        \s*\(\(?                        # ... an arbitrary amout of whitespace and an open banana
+                                        #     (with possibly an extra open banana)
+        (?P<constituency>[^\(\)0-9:]*?) # ... constituency, a minimal match of any characters
+        \)\s*\(                         # ... close banana, whitespace, open banana
+        (?P<party>\D*?)                 # ... party, a minimal match of any characters
+        \)                              # ... close banana
+        $                               # ... end of the string
 ''', re.VERBOSE)
 
 member_vote_just_constituency_re = re.compile('''
-        ^                              # Beginning of the string
-        (?P<last_name>[^,\(\)0-9]+)    # ... last name, >= 1 non-comma characters
-        ,                              # ... then a comma
-        \s*                            # ... and some greedy whitespace
-        (?P<first_names>[^,\(\)0-9]*?) # ... first names, a minimal match of any characters
-        \s*\(\(?                       # ... an arbitrary amout of whitespace and an open banana
-                                       #     (with possibly an extra open banana)
-        (?P<constituency>[^\(\)0-9]*?) # ... constituency, a minimal match of any characters
-        \)\s*                          # ... close banana, whitespace
-        $                              # ... end of the string
+        ^                               # Beginning of the string
+        (?P<last_name>[^,\(\)0-9:]+)    # ... last name, >= 1 non-comma characters
+        ,                               # ... then a comma
+        \s*                             # ... and some greedy whitespace
+        (?P<first_names>[^,\(\)0-9:]*?) # ... first names, a minimal match of any characters
+        \s*\(\(?                        # ... an arbitrary amout of whitespace and an open banana
+                                        #     (with possibly an extra open banana)
+        (?P<constituency>[^\(\)0-9:]*?) # ... constituency, a minimal match of any characters
+        \)\s*                           # ... close banana, whitespace
+        $                               # ... end of the string
 ''', re.VERBOSE)
 
 def get_unique_speaker_id(tidied_speaker, on_date):
