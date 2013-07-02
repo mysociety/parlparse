@@ -567,7 +567,10 @@ if __name__ == '__main__':
         print "got filename", filename
         parsed_page = None
         try:
-            parsed_page = parse_html(os.path.join(html_directory, filename),
+            html_filename = os.path.join(html_directory, filename)
+            if os.path.getsize(html_filename) == 0:
+                continue
+            parsed_page = parse_html(html_filename,
                                      page_id,
                                      official_report_url_format.format(page_id))
         except Exception as e:
