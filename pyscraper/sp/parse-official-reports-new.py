@@ -75,12 +75,30 @@ def is_division_way(element, report_date=None):
             return ('FOR', person_name, person_id)
     return (None, None, None)
 
+def first(iterable):
+    for element in iterable:
+        if element:
+            return element
+    return None
+
 member_vote_re = re.compile('''
         ^                               # Beginning of the string
         (?P<last_name>[^,\(\)0-9:]+)    # ... last name, >= 1 non-comma characters
         ,                               # ... then a comma
         \s*                             # ... and some greedy whitespace
         (?P<first_names>[^,\(\)0-9:]*?) # ... first names, a minimal match of any characters
+        \s*\(\(?                        # ... an arbitrary amout of whitespace and an open banana
+                                        #     (with possibly an extra open banana)
+        (?P<constituency>[^\(\)0-9:]*?) # ... constituency, a minimal match of any characters
+        \)\s*\(                         # ... close banana, whitespace, open banana
+        (?P<party>\D*?)                 # ... party, a minimal match of any characters
+        \)                              # ... close banana
+        $                               # ... end of the string
+''', re.VERBOSE)
+
+member_vote_fullname_re = re.compile('''
+        ^                               # Beginning of the string
+        (?P<full_name>[^,\(\)0-9:]+)    # ... full name, >= 1 non-comma characters
         \s*\(\(?                        # ... an arbitrary amout of whitespace and an open banana
                                         #     (with possibly an extra open banana)
         (?P<constituency>[^\(\)0-9:]*?) # ... constituency, a minimal match of any characters
@@ -135,7 +153,7 @@ def get_unique_speaker_id(tidied_speaker, on_date):
                 log_speaker(tidied_speaker,str(on_date),"genuine ambiguity")
                 # self.speaker_id = None
 
-def is_member_vote(element, vote_date):
+def is_member_vote(element, vote_date, expecting_a_vote=True):
     """Returns a speaker ID if this looks like a member's vote in a division
 
     Otherwise returns None.  If it looks like a vote, but the speaker
@@ -161,22 +179,44 @@ def is_member_vote(element, vote_date):
     Traceback (most recent call last):
       ...
     Exception: A voting member 'Jeffrey Lebowski (Los Angeles)' couldn't be resolved
+
+    If expecting_a_vote is False, then don't throw an exception if
+    the name can't be resolved:
+
+    >>> is_member_vote('Lebowski, Jeffrey (Los Angeles) (The Dude)', '2012-11-12', expecting_a_vote=False)
+
+    Also try resolving names that aren't comma-reversed:
+
+    >>> is_member_vote('Brian Adam (North-East Scotland) (SNP)', '1999-11-09')
+    u'uk.org.publicwhip/member/80129'
+
     """
     tidied = tidy_string(non_tag_data_in(element))
-    m = member_vote_re.search(tidied) or member_vote_just_constituency_re.search(tidied)
-    if m:
-        reformed_name = "%s %s (%s)" % (m.group('first_names'),
-                                        m.group('last_name'),
-                                        m.group('constituency'))
-        speaker_id = get_unique_speaker_id(reformed_name, str(vote_date))
-        if speaker_id is None:
-            print "reformed_name is:", reformed_name
-            print "vote_date is:", vote_date
-            raise Exception, "A voting member '%s' couldn't be resolved" % (reformed_name,)
-        else:
-            return speaker_id
-    else:
+
+    from_first_and_last = lambda m: m and "%s %s (%s)" % (m.group('first_names'),
+                                                          m.group('last_name'),
+                                                          m.group('constituency'))
+
+    from_full = lambda m: m and m.group('full_name')
+    vote_matches = (
+        (member_vote_re, from_first_and_last),
+        (member_vote_just_constituency_re, from_first_and_last),
+        (member_vote_fullname_re, from_full))
+
+    reformed_name = first(processor(regexp.search(tidied))
+                        for regexp, processor in vote_matches)
+
+    if not reformed_name:
         return None
+
+    speaker_id = get_unique_speaker_id(reformed_name, str(vote_date))
+
+    if speaker_id is None and expecting_a_vote:
+        print "reformed_name is:", reformed_name
+        print "vote_date is:", vote_date
+        raise Exception, "A voting member '%s' couldn't be resolved" % (reformed_name,)
+    else:
+        return speaker_id
 
 def log_speaker(speaker, date, message):
     with open("speakers.txt", "a") as fp:
@@ -513,7 +553,7 @@ def parse_html(filename, page_id, original_url):
                     tidied_paragraph = tidy_string(speech_part)
                     # print "tidied_paragraph is", tidied_paragraph.encode('utf-8'), "of type", type(tidied_paragraph)
                     division_way, division_candidate, division_candidate_id = is_division_way(tidied_paragraph, report_date)
-                    member_vote = is_member_vote(tidied_paragraph, report_date)
+                    member_vote = is_member_vote(tidied_paragraph, report_date, expecting_a_vote=current_votes)
                     maybe_time = just_time(tidied_paragraph)
                     closed_time = meeting_closed(tidied_paragraph)
                     if closed_time:
