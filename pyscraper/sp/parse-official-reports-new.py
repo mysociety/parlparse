@@ -574,10 +574,11 @@ if __name__ == '__main__':
                                      page_id,
                                      official_report_url_format.format(page_id))
         except Exception as e:
-            print "parsing the file '%s' failed, with the exception:" % (filename,)
-            print unicode(e).encode('utf-8')
-            traceback.print_exc()
-            continue
+            # print "parsing the file '%s' failed, with the exception:" % (filename,)
+            # print unicode(e).encode('utf-8')
+            # traceback.print_exc()
+            print "parsing the file '%s' failed" % (filename,)
+            raise
 
         if parsed_page is not None:
 
