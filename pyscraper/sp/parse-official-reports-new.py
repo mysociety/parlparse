@@ -16,6 +16,7 @@ import datetime
 import time
 import traceback
 import dateutil.parser as dateparser
+from tempfile import NamedTemporaryFile
 from optparse import OptionParser
 from common import tidy_string
 from common import non_tag_data_in
@@ -564,6 +565,7 @@ if __name__ == '__main__':
         # if page_id < 8098:
         #     continue
         print "got filename", filename
+        parsed_page = None
         try:
             parsed_page = parse_html(os.path.join(html_directory, filename),
                                      page_id,
@@ -575,17 +577,25 @@ if __name__ == '__main__':
             continue
 
         if parsed_page is not None:
+
             print "suggested name would be:", parsed_page.suggested_file_name
+            output_filename = os.path.join(xml_output_directory,
+                                           parsed_page.suggested_file_name)
+
             xml = etree.tostring(parsed_page.as_xml(), pretty_print=True)
-            with open(os.path.join(xml_output_directory,
-                                   parsed_page.suggested_file_name), "w") as fp:
-                fp.write(xml)
+            with NamedTemporaryFile(delete=False,
+                                    dir=xml_output_directory) as ntf:
+                ntf.write(xml)
 
-        continue
+            changed_output = True
+            if os.path.exists(output_filename):
+                result = os.system("diff %s %s > /dev/null" % (ntf.name,output_filename))
+                if 0 == result:
+                    changed_output = False
 
-        # if changed_output:
-        if True:
-            with  open('%schangedates.txt' % xml_output_directory, 'a+') as fp:
-                fp.write('%d,sp%s.xml\n' % (time.time(), str(parsed_page.report_date)))
+            os.rename(ntf.name, output_filename)
 
-        break
+            if changed_output:
+                with open('%schangedates.txt' % xml_output_directory, 'a+') as fp:
+                    fp.write('%d,%s\n' % (time.time(),
+                                          parsed_page.suggested_file_name))
