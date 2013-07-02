@@ -37,30 +37,43 @@ official_report_url_format = 'http://www.scottish.parliament.uk/parliamentarybus
 
 DIVISION_HEADINGS = ('FOR', 'AGAINST', 'ABSTENTIONS', 'SPOILED VOTES')
 
-def is_division_way(element):
+def is_division_way(element, report_date=None):
     """If it's a division heading, return a normalized version, otherwise None
 
     >>> is_division_way('  For ')
-    'FOR'
+    ('FOR', None, None)
     >>> is_division_way('nonsense')
+    (None, None, None)
     >>> is_division_way('abstentions ')
-    'ABSTENTIONS'
+    ('ABSTENTIONS', None, None)
     >>> is_division_way(":\xA0FOR")
-    'FOR'
+    ('FOR', None, None)
     >>> is_division_way('Abstention')
-    'ABSTENTIONS'
+    ('ABSTENTIONS', None, None)
     >>> is_division_way('Absentions')
-    'ABSTENTIONS'
+    ('ABSTENTIONS', None, None)
+    >>> example_date = datetime.date(1999, 5, 13)
+    >>> is_division_way('VOTES FOR DONALD DEWAR', example_date)
+    ('FOR', 'Donald Dewar', u'uk.org.publicwhip/member/80147')
+    >>> is_division_way('now cast your votes for someone', example_date)
+    (None, None, None)
     """
     tidied = tidy_string(non_tag_data_in(element)).upper()
     # Strip any non-word letters at the start and end:
     tidied = re.sub(r'^\W*(.*?)\W*$', '\\1', tidied)
     if tidied in DIVISION_HEADINGS:
-        return tidied
+        return (tidied, None, None)
     elif tidied in ('ABSTENTION', 'ABSENTIONS'):
-        return 'ABSTENTIONS'
+        return ('ABSTENTIONS', None, None)
     else:
-        return None
+        m = re.search(r'^(?i)VOTES? FOR ([A-Z ]+)$', tidied)
+        if m:
+            person_name = m.group(1).title()
+            person_id = None
+            if report_date:
+                person_id = get_unique_speaker_id(person_name, report_date)
+            return ('FOR', person_name, person_id)
+    return (None, None, None)
 
 member_vote_re = re.compile('''
         ^                               # Beginning of the string
@@ -314,10 +327,12 @@ class Section(object):
 
 class Division(object):
 
-    def __init__(self, report_date, url):
+    def __init__(self, report_date, url, candidate=None, candidate_id=None):
         self.report_date = report_date
         self.url = url
         self.votes = {}
+        self.candidate = candidate
+        self.candidate_id = candidate_id
         for way in DIVISION_HEADINGS:
             self.votes[way] = []
 
@@ -327,11 +342,15 @@ class Division(object):
         self.votes[which_way].append((voter_name, voter_id))
 
     def as_xml(self, division_id):
-        result = etree.Element("division",
-                               url=self.url,
-                               divdate=str(self.report_date),
-                               nospeaker="True",
-                               id=division_id)
+        attributes = {'url': self.url,
+                      'divdate': str(self.report_date),
+                      'nospeaker': "True",
+                      'id': division_id}
+        if self.candidate:
+            attributes['candidate'] = self.candidate
+        if self.candidate_id:
+            attributes['candidate_id'] = self.candidate_id
+        result = etree.Element("division", **attributes)
         def to_attr(s):
             return s.lower().replace(' ', '')
         division_count = etree.Element("divisioncount")
@@ -493,7 +512,7 @@ def parse_html(filename, page_id, original_url):
                 elif isinstance(speech_part, NavigableString):
                     tidied_paragraph = tidy_string(speech_part)
                     # print "tidied_paragraph is", tidied_paragraph.encode('utf-8'), "of type", type(tidied_paragraph)
-                    division_way = is_division_way(tidied_paragraph)
+                    division_way, division_candidate, division_candidate_id = is_division_way(tidied_paragraph, report_date)
                     member_vote = is_member_vote(tidied_paragraph, report_date)
                     maybe_time = just_time(tidied_paragraph)
                     closed_time = meeting_closed(tidied_paragraph)
@@ -506,8 +525,8 @@ def parse_html(filename, page_id, original_url):
                         suspended = False
                         suspension_time_type = suspension_time = None
                     if division_way:
-                        if not current_votes:
-                            current_votes = Division(report_date, current_url)
+                        if (not current_votes) or (current_votes.candidate != division_candidate):
+                            current_votes = Division(report_date, current_url, division_candidate, division_candidate_id)
                             parsed_page.sections[-1].speeches_and_votes.append(current_votes)
                         current_division_way = division_way
                     elif member_vote:
