@@ -656,9 +656,10 @@ if __name__ == '__main__':
                 if 0 == result:
                     changed_output = False
 
-            os.rename(ntf.name, output_filename)
-
             if changed_output:
+                os.rename(ntf.name, output_filename)
                 with open('%schangedates.txt' % xml_output_directory, 'a+') as fp:
                     fp.write('%d,%s\n' % (time.time(),
                                           parsed_page.suggested_file_name))
+            else:
+                os.remove(ntf.name)
