@@ -61,7 +61,10 @@ def non_tag_data_in(o):
         return o
 
 def tidy_string(s):
-    result = re.sub('(?ims)\s+',' ',s)
+    # Lots of the paragraphs in the HTML begin with a pointless ':'
+    # surrounded by spaces:
+    result = re.sub(u"(?imsu)^\s*:\s*",'',s)
+    result = re.sub('(?ims)\s+',' ',result)
     return result.strip()
 
 # These two methods from:
