@@ -420,8 +420,8 @@ class Speech(object):
         self.last_time = last_time
         self.url = url
         self.paragraphs = []
-        self.update_speaker_id(speaker_name)
         self.speaker_id = None
+        self.update_speaker_id(speaker_name)
 
     def update_speaker_id(self, tidied_speaker):
         final_id = get_unique_speaker_id(tidied_speaker, self.speech_date)
