@@ -9776,8 +9776,8 @@
     spurl=""
     fromdate="2011-05-06"
     fromwhy="regional_election"
-    todate="9999-12-31"
-    towhy="still_in_office"
+    todate="2013-05-14"
+    towhy="resigned"
 />
 <member_sp
     id="uk.org.publicwhip/member/80524"
@@ -10036,4 +10036,37 @@
     todate="9999-12-31"
     towhy="still_in_office"
 />
+
+<member_sp
+    id="uk.org.publicwhip/member/80541"
+    fullname="Mark McDonald"
+    constituency="Aberdeen Donside"
+    membertype="constituency"
+    party="SNP"
+    firstname="Mark"
+    lastname="McDonald"
+    title=""
+    spurl=""
+    fromdate="2013-06-21"
+    fromwhy="by_election"
+    todate="9999-12-31"
+    towhy="still_in_office"
+/>
+
+<member_sp
+    id="uk.org.publicwhip/member/80542"
+    fullname="Christian Allard"
+    constituency="North East Scotland"
+    membertype="region"
+    party="SNP"
+    firstname="Christian"
+    lastname="Allard"
+    title=""
+    spurl=""
+    fromdate="2013-05-15"
+    fromwhy="replaced_in_region"
+    todate="9999-12-31"
+    towhy="still_in_office"
+/>
+
 </publicwhip>
