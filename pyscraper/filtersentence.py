@@ -284,7 +284,7 @@ class PhraseTokenize:
 			stex = stex[:self.rmqnum.span(0)[0]]
 
 		# separate out qnums stuffed into front of paragraph (by the grabber of the speakername)
-		frqnum = refqnum.search(stex)
+		frqnum = refqnum.match(stex)
 		if frqnum:
 			if self.rmqnum:
 				raise ContextException('Found question number [%s] in para, but already found [%s] at end (this probably just means it is being quoted, and you just need to change [] to ().' % (frqnum.group(1), self.rmqnum.group(1)), stamp=qs.sstampurl)
@@ -292,7 +292,7 @@ class PhraseTokenize:
 			stex = stex[frqnum.span(0)[1]:]
 			stex_nohtml = re.sub('<[^>]*>', '', stex)
 			if len(stex_nohtml) < 10:
-				raise ContextException('Removing question number from para apperas to have removed all text (this probably just means a footnote marker is using [], just change to () ).', stamp=qs.sstampurl)
+				raise ContextException('Removing question number from para appears to have removed all text (this probably just means a footnote marker is using [], just change to () ).', stamp=qs.sstampurl)
 
 		self.TokenizePhraseRecurse(qs, stex, 0)
 
