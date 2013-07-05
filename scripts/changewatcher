@@ -17,14 +17,3 @@ cd ~/parlparse/pyscraper
 
 # Regenerate minister pages file
 #./lazyrunall.py parse chgpages
-cd ../members
-svn -q update all-members.xml # Be sure to have latest list of all members!
-svn -q update all-members-2010.xml # Be sure to have latest list of all members!
-svn -q update peers-ucl.xml
-svn -q update ni-members.xml
-./personsets.py
-svn -q update ministers.xml # merge any changes anyone else made
-svn -q update people.xml # merge any changes anyone else made
-svn -q commit -m "Auto ministers update commit by scripts/changewatcher" people.xml
-svn -q commit -m "Auto ministers update commit by scripts/changewatcher"  ministers.xml
-
