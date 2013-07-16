@@ -653,8 +653,7 @@ if __name__ == '__main__':
 
             changed_output = True
             if os.path.exists(output_filename):
-                result = os.system("diff %s %s > /dev/null" % (ntf.name,output_filename))
-                if 0 == result:
+                if 0 == os.system("diff %s %s > /dev/null" % (ntf.name,output_filename)):
                     changed_output = False
 
             if changed_output:
