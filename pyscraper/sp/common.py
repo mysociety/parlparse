@@ -46,16 +46,16 @@ def month_name_to_int( name ):
 
     return 0
 
-def non_tag_data_in(o):
+def non_tag_data_in(o, tag_replacement=u''):
     if o.__class__ == NavigableString:
         return re.sub('(?ms)[\r\n]',' ',o)
     elif o.__class__ == Tag:
         if o.name == 'script':
-            return u''
+            return tag_replacement
         else:
-            return u''.join( map( lambda x: non_tag_data_in(x) , o.contents ) )
+            return tag_replacement.join( map( lambda x: non_tag_data_in(x) , o.contents ) )
     elif o.__class__ == Comment:
-        return u''
+        return tag_replacement
     else:
         # Hope it's a string or something else concatenatable...
         return o
