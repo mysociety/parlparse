@@ -586,7 +586,7 @@ def parse_html(filename, page_id, original_url):
         if not len(unicode(top_level).strip()):
             continue
         if top_level.name == 'h2':
-            section_title = tidy_string(non_tag_data_in(top_level))
+            section_title = tidy_string(non_tag_data_in(top_level, tag_replacement=u' '))
             if not section_title:
                 raise Exception, "There was an empty section title in page ID: %d" % (page_id)
             parsed_page.sections.append(
