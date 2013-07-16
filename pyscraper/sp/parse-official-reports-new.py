@@ -486,7 +486,8 @@ class Speech(object):
         self.url = url
         self.paragraphs = []
         self.speaker_id = None
-        self.update_speaker_id(speaker_name)
+        if self.speaker_name:
+            self.update_speaker_id(speaker_name)
 
     def empty(self):
         return 0 == len(self.paragraphs)
@@ -503,20 +504,23 @@ class Speech(object):
         cls.speakers_so_far = []
 
     def as_xml(self, speech_id):
-        result = etree.Element("speech",
-                               url=self.url,
-                               speakername=self.speaker_name,
-                               id=speech_id)
-        if self.speaker_id:
-            result.set('speakerid', self.speaker_id)
+        attributes = {'url': self.url,
+                      'id': speech_id}
+        if self.speaker_name:
+            attributes['speakername'] = self.speaker_name
+            if self.speaker_id:
+                attributes['speakerid'] = self.speaker_id
+            else:
+                attributes['speakerid'] = 'unknown'
         else:
-            result.set('speakerid', 'unknown')
+            attributes['nospeaker'] = 'true'
+        result = etree.Element("speech", **attributes)
         for i, paragraph in enumerate(self.paragraphs):
             p = etree.Element('p')
             p.text = paragraph
             result.append(p)
         return result
-    
+
 def parse_html(filename, page_id, original_url):
     with open(filename) as fp:
         html = fp.read()
