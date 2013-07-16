@@ -414,9 +414,6 @@ class Section(object):
         grouped = itertools.groupby(self.speeches_and_votes, Section.group_by_key)
         for key, sv_grouper in grouped:
             sv_group = list(sv_grouper)
-            if key:
-                print "key is:", key.encode('utf-8')
-            print "sv_group is:", sv_group
             if len(sv_group) == 1:
                 collapsed.append(sv_group[0])
             else:
