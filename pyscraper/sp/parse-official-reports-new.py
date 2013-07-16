@@ -62,6 +62,12 @@ def is_division_way(element, report_date=None):
     ('FOR', 'Mr Kenneth Macintosh', u'uk.org.publicwhip/member/80191')
     >>> is_division_way('For option 1', example_date)
     ('FOR', 'Option 1', None)
+    >>> is_division_way('The following member took the oath:')
+    ('FOR', 'oath', None)
+    >>> is_division_way('The following member made a solemn affirmation:')
+    ('FOR', 'affirmation', None)
+    >>> is_division_way('The following member made a solemn affirmation and repeated it in French:')
+    ('FOR', 'affirmation', None)
     """
     tidied = tidy_string(non_tag_data_in(element)).upper()
     # Strip any non-word letters at the start and end:
@@ -70,6 +76,10 @@ def is_division_way(element, report_date=None):
         return (tidied, None, None)
     elif tidied in ('ABSTENTION', 'ABSENTIONS'):
         return ('ABSTENTIONS', None, None)
+    elif re.search('^THE FOLLOWING MEMBERS? TOOK THE OATH( AND REPEATED IT IN \w+)?:?$', tidied):
+        return ('FOR', 'oath', None)
+    elif re.search('^THE FOLLOWING MEMBERS? MADE A SOLEMN AFFIRMATION( AND REPEATED IT IN \w+)?:?$', tidied):
+        return ('FOR', 'affirmation', None)
     elif len(tidied.split()) < 128:
         # The second regular expression could be *very* slow on
         # strings that begin 'FOR', so only try it on short strings
