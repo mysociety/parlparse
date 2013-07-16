@@ -376,10 +376,12 @@ class Section(object):
         self.url = url
 
     def as_xml(self, section_base_id):
-        result = [etree.Element("major-heading",
-                                url=self.url,
-                                nospeaker="True",
-                                id=section_base_id + ".0")]
+        heading_element = etree.Element("major-heading",
+                                        url=self.url,
+                                        nospeaker="True",
+                                        id=section_base_id + ".0")
+        heading_element.text = self.title
+        result = [heading_element]
         for i, speech_or_vote in enumerate(self.speeches_and_votes, 1):
             result.append(speech_or_vote.as_xml(section_base_id + "." + str(i)))
         return result
