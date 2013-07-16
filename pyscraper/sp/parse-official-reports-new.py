@@ -73,9 +73,9 @@ def is_division_way(element, report_date=None):
         return (tidied, None, None)
     elif tidied in ('ABSTENTION', 'ABSENTIONS'):
         return ('ABSTENTIONS', None, None)
-    elif re.search('^THE FOLLOWING MEMBERS? TOOK THE OATH( AND REPEATED IT IN \w+)?:?$', tidied):
+    elif re.search('^THE FOLLOWING MEMBERS? TOOK THE OATH( AND REPEATED IT IN .*)?:?$', tidied):
         return ('FOR', 'oath', None)
-    elif re.search('^THE FOLLOWING MEMBERS? MADE A SOLEMN AFFIRMATION( AND REPEATED IT IN \w+)?:?$', tidied):
+    elif re.search('^THE FOLLOWING MEMBERS? MADE A SOLEMN AFFIRMATION( AND REPEATED IT IN .*)?:?$', tidied):
         return ('FOR', 'affirmation', None)
     elif len(tidied.split()) < 128:
         # The second regular expression could be *very* slow on
