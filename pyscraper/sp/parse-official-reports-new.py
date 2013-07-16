@@ -57,6 +57,9 @@ def is_division_way(element, report_date=None):
     ('FOR', 'Donald Dewar', u'uk.org.publicwhip/member/80147')
     >>> is_division_way('now cast your votes for someone', example_date)
     (None, None, None)
+    >>> example_date = datetime.date(2000, 3, 14)
+    >>> is_division_way('For Mr Kenneth Macintosh', example_date)
+    ('FOR', 'Mr Kenneth Macintosh', u'uk.org.publicwhip/member/80191')
     """
     tidied = tidy_string(non_tag_data_in(element)).upper()
     # Strip any non-word letters at the start and end:
@@ -66,7 +69,9 @@ def is_division_way(element, report_date=None):
     elif tidied in ('ABSTENTION', 'ABSENTIONS'):
         return ('ABSTENTIONS', None, None)
     else:
-        m = re.search(r'^(?i)VOTES? FOR ([A-Z ]+)$', tidied)
+        m1 = re.search(r'^(?i)VOTES? FOR ([A-Z ]+)$', tidied)
+        m2 = re.search(r'^FOR ((?:[A-Z]+\s*)+)$', tidied)
+        m = m1 or m2
         if m:
             person_name = m.group(1).title()
             person_id = None
