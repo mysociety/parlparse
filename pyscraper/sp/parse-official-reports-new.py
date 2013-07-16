@@ -7,6 +7,7 @@ import os
 import re
 import random
 import datetime
+import itertools
 import time
 import traceback
 import dateutil.parser as dateparser
@@ -370,6 +371,10 @@ class ParsedPage(object):
                 xml.append(section_element)
         return xml
 
+    def tidy_speeches(self):
+        for section in self.sections:
+            section.tidy_speeches()
+
 class Section(object):
 
     def __init__(self, title, url):
@@ -388,6 +393,37 @@ class Section(object):
             result.append(speech_or_vote.as_xml(section_base_id + "." + str(i)))
         return result
 
+    @staticmethod
+    def group_by_key(speech_or_division):
+        if isinstance(speech_or_division, Division):
+            return "division/%d" % id(speech_or_division)
+        elif isinstance(speech_or_division, Speech):
+            s = speech_or_division
+            return s.speaker_id or s.speaker_name or "nospeaker"
+        else:
+            raise Exception, "Unknown type %s passed to group_by_key" % (type(speech_or_division),)
+
+    def tidy_speeches(self):
+        # First remove any empty speeches:
+        self.speeches_and_votes = [sv for sv in
+                                   self.speeches_and_votes
+                                   if not sv.empty()]
+        collapsed = []
+        grouped = itertools.groupby(self.speeches_and_votes, Section.group_by_key)
+        for key, sv_grouper in grouped:
+            sv_group = list(sv_grouper)
+            if key:
+                print "key is:", key.encode('utf-8')
+            print "sv_group is:", sv_group
+            if len(sv_group) == 1:
+                collapsed.append(sv_group[0])
+            else:
+                new_speech = sv_group[0]
+                for speech_to_add in sv_group[1:]:
+                    new_speech.paragraphs += speech_to_add.paragraphs
+                collapsed.append(new_speech)
+        self.speeches_and_votes = collapsed
+
 class Division(object):
 
     def __init__(self, report_date, url, candidate=None, candidate_id=None):
@@ -398,6 +434,12 @@ class Division(object):
         self.candidate_id = candidate_id
         for way in DIVISION_HEADINGS:
             self.votes[way] = []
+
+    def empty(self):
+        total_votes = 0
+        for way in DIVISION_HEADINGS:
+            total_votes += len(self.votes[way])
+        return total_votes == 0
 
     def add_vote(self, which_way, voter_name, voter_id):
         if which_way not in DIVISION_HEADINGS:
@@ -445,6 +487,9 @@ class Speech(object):
         self.paragraphs = []
         self.speaker_id = None
         self.update_speaker_id(speaker_name)
+
+    def empty(self):
+        return 0 == len(self.paragraphs)
 
     def update_speaker_id(self, tidied_speaker):
         final_id = get_unique_speaker_id(tidied_speaker, self.speech_date)
@@ -664,6 +709,8 @@ if __name__ == '__main__':
             raise
 
         if parsed_page is not None:
+
+            parsed_page.tidy_speeches()
 
             print "suggested name would be:", parsed_page.suggested_file_name
             output_filename = os.path.join(xml_output_directory,
