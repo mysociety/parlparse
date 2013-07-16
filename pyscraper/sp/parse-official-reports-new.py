@@ -619,7 +619,6 @@ def parse_html(filename, page_id, original_url):
                         pass
                     else:
                         raise Exception, "Unexpected tag '%s' in page ID: %d" % (speech_part.name, page_id)
-                # FIXME: could just be else, surely...
                 elif isinstance(speech_part, NavigableString):
                     tidied_paragraph = tidy_string(speech_part)
                     # print "tidied_paragraph is", tidied_paragraph.encode('utf-8'), "of type", type(tidied_paragraph)
