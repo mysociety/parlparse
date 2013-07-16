@@ -346,9 +346,10 @@ def fix_inserted_br_in_vote_list(html):
 
 class ParsedPage(object):
 
-    def __init__(self, session, report_date):
+    def __init__(self, session, report_date, page_id):
         self.session = session
         self.report_date = report_date
+        self.page_id = page_id
         self.sections = []
 
     def __unicode__(self):
@@ -361,7 +362,7 @@ class ParsedPage(object):
 
     @property
     def suggested_file_name(self):
-        return "%s-%s.xml" % (self.report_date, self.normalized_session_name)
+        return "%s-%s-%d.xml" % (self.report_date, self.normalized_session_name, self.page_id)
 
     def as_xml(self):
         base_id = "uk.org.publicwhip/spor2/" + str(self.report_date)
@@ -572,7 +573,7 @@ def parse_html(filename, page_id, original_url):
             raise Exception, "Failed to find the ID from '%s' in page with ID: %d" % (href, page_id)
         contents_tuples.append((m.group(1), tidy_string(non_tag_data_in(link))))
 
-    parsed_page = ParsedPage(session, report_date)
+    parsed_page = ParsedPage(session, report_date, page_id)
 
     # Now consider the div that actually has text in it.  Each speech
     # is in its own div, while the rest that we care about are
