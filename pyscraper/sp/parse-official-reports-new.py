@@ -443,7 +443,7 @@ class Division(object):
 
     def add_vote(self, which_way, voter_name, voter_id):
         if which_way not in DIVISION_HEADINGS:
-            raise Exception, "add_votes for unknown way: " + which_way
+            raise Exception, "add_votes for unknown way: " + str(which_way)
         self.votes[which_way].append((voter_name, voter_id))
 
     def as_xml(self, division_id):
