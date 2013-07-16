@@ -452,7 +452,8 @@ class Speech(object):
 def parse_html(filename, page_id, original_url):
     with open(filename) as fp:
         html = fp.read()
-    html = fix_inserted_br_in_vote_list(replace_unknown_tags(html))
+    html = replace_unknown_tags(html)
+    html = fix_inserted_br_in_vote_list(html)
     soup = BeautifulSoup(html, convertEntities=BeautifulSoup.HTML_ENTITIES)
     # If this is an error page, there'll be a message like:
     #   <span id="ReportView_lblError">Please check the link you clicked, as it does not reference a valid Official Report</span>
