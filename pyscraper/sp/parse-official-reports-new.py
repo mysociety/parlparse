@@ -60,6 +60,8 @@ def is_division_way(element, report_date=None):
     >>> example_date = datetime.date(2000, 3, 14)
     >>> is_division_way('For Mr Kenneth Macintosh', example_date)
     ('FOR', 'Mr Kenneth Macintosh', u'uk.org.publicwhip/member/80191')
+    >>> is_division_way('For option 1', example_date)
+    ('FOR', 'Option 1', None)
     """
     tidied = tidy_string(non_tag_data_in(element)).upper()
     # Strip any non-word letters at the start and end:
@@ -78,6 +80,10 @@ def is_division_way(element, report_date=None):
             if report_date:
                 person_id = get_unique_speaker_id(person_name, report_date)
             return ('FOR', person_name, person_id)
+        else:
+            m = re.search(r'FOR OPTION (\d+)$', tidied)
+            if m:
+                return ('FOR', 'Option ' + m.group(1), None)
     return (None, None, None)
 
 def first(iterable):
