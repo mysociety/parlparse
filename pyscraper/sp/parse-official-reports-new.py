@@ -241,8 +241,9 @@ def is_member_vote(element, vote_date, expecting_a_vote=True):
         return speaker_id
 
 def log_speaker(speaker, date, message):
-    with open("speakers.txt", "a") as fp:
-        fp.write(str(date)+": ["+message.encode('utf-8')+"] "+speaker.encode('utf-8')+"\n")
+    if SPEAKERS_DEBUG:
+        with open("speakers.txt", "a") as fp:
+            fp.write(str(date)+": ["+message.encode('utf-8')+"] "+speaker.encode('utf-8')+"\n")
 
 def filename_key(filename):
     m = re.search(r'^(\d+)\.html$', filename)
@@ -669,6 +670,8 @@ def parse_html(filename, page_id, original_url):
 
     return parsed_page
 
+SPEAKERS_DEBUG = False
+
 if __name__ == '__main__':
 
     parser = OptionParser()
@@ -679,12 +682,16 @@ if __name__ == '__main__':
                       help="Run all doctests in this file")
     parser.add_option('-v', '--verbose', dest='verbose', action='store_true',
                       default=False, help="produce very verbose output")
+    parser.add_option('--speakers-debug', dest='speakers_debug', action='store_true',
+                      default=False, help="log speakers that couldn't be found")
     (options, args) = parser.parse_args()
 
     if options.doctest:
         import doctest
         failure_count, test_count = doctest.testmod()
         sys.exit(0 if failure_count == 0 else 1)
+
+    SPEAKERS_DEBUG = options.speakers_debug
 
     html_directory = "../../../parldata/cmpages/sp/official-reports-new/"
     xml_output_directory = "../../../parldata/scrapedxml/sp-new/"
