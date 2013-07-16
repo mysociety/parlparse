@@ -577,6 +577,7 @@ def parse_html(filename, page_id, original_url):
     # headings:
 
     current_votes = None
+    current_division_way = None
     current_time = None
     current_url = original_url
 
@@ -601,13 +602,6 @@ def parse_html(filename, page_id, original_url):
                 pass
         elif top_level.name == 'div':
             # This div contains a speech, essentially:
-            current_speech = None
-            if current_votes and current_votes.candidate in ('oath', 'affirmation'):
-                pass # Then keep the current_votes
-            else:
-                # Otherwise reset it...
-                current_votes = None
-                current_division_way = None
 
             for speech_part in top_level:
                 if hasattr(speech_part, 'name'):
