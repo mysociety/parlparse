@@ -63,9 +63,11 @@ def is_division_way(element, report_date=None):
     >>> is_division_way('The following member made a solemn affirmation and repeated it in French:')
     ('FOR', 'affirmation', None)
     """
+
     tidied = tidy_string(non_tag_data_in(element)).upper()
     # Strip any non-word letters at the start and end:
     tidied = re.sub(r'^\W*(.*?)\W*$', '\\1', tidied)
+
     if tidied in DIVISION_HEADINGS:
         return (tidied, None, None)
     elif tidied in ('ABSTENTION', 'ABSENTIONS'):
