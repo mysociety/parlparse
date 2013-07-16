@@ -578,6 +578,7 @@ def parse_html(filename, page_id, original_url):
     # is in its own div, while the rest that we care about are
     # headings:
 
+    current_votes = None
     current_time = None
     current_url = original_url
 
@@ -603,8 +604,12 @@ def parse_html(filename, page_id, original_url):
         elif top_level.name == 'div':
             # This div contains a speech, essentially:
             current_speech = None
-            current_votes = None
-            current_division_way = None
+            if current_votes and current_votes.candidate in ('oath', 'affirmation'):
+                pass # Then keep the current_votes
+            else:
+                # Otherwise reset it...
+                current_votes = None
+                current_division_way = None
 
             for speech_part in top_level:
                 if hasattr(speech_part, 'name'):
@@ -639,6 +644,16 @@ def parse_html(filename, page_id, original_url):
                         suspended = False
                         suspension_time_type = suspension_time = None
                     if division_way:
+                        # If this is a vote for a particular
+                        # candidate, or the introduction to an
+                        # oath-taking, add the text as a speech too:
+                        if division_candidate:
+                            current_speech = Speech(None,
+                                                    report_date,
+                                                    current_time,
+                                                    current_url)
+                            parsed_page.sections[-1].speeches_and_votes.append(current_speech)
+                            current_speech.paragraphs.append(tidied_paragraph)
                         if (not current_votes) or (current_votes.candidate != division_candidate):
                             current_votes = Division(report_date, current_url, division_candidate, division_candidate_id)
                             parsed_page.sections[-1].speeches_and_votes.append(current_votes)
