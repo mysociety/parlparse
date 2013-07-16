@@ -25,7 +25,7 @@ svn -q update
 
 # Add any new cmpages
 cd ~/parldata/cmpages
-for X in debates wrans westminhall wms regmem ldregmem lordspages standing votes bills ni sp/bulletins sp/official-reports sp/written-answers; do
+for X in debates wrans westminhall wms regmem ldregmem lordspages standing votes bills ni sp/bulletins sp/official-reports-new sp/written-answers; do
     find $X -name "*.html" -exec svn -q add {} +
 done
 for X in sp/bulletins sp/written-answers; do
