@@ -23,7 +23,7 @@ from resolvelordsnames import lordsList
 from contextexception import ContextException
 
 
-recontma = re.compile('<center><b>(.*?)\s*</b></center>(?i)')
+recontma = re.compile('<(?:center|span class="centred")><b>(.*?)\s*</b></(?:center|span)>(?i)')
 retellma = re.compile('(.*?)\s*(?:<I>)?\[(Teller)\](?:</I>)?$')
 reoffma = re.compile('(.*?\S)\s*(?:<I>)?[\[\(](.*?)[\)\]](?:</I>)?$')
 def LordsFilterDivision(text, stampurl, sdate):
