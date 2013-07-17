@@ -18,7 +18,7 @@ import random
 
 output_directory = "../../../parldata/cmpages/sp/official-reports-new/"
 
-official_report_url_format = 'http://www.scottish.parliament.uk/parliamentarybusiness/28862.aspx?r={}&mode=html'
+official_report_url_format = 'http://www.scottish.parliament.uk/parliamentarybusiness/28862.aspx?r={0}&mode=html'
 
 user_agent = 'Mozilla/5.0 (Ubuntu; X11; Linux i686; rv:9.0.1) Gecko/20100101 Firefox/9.0.1'
 
