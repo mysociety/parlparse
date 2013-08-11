@@ -38,7 +38,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 		<div id="content" class="mw-body" role="main">
 			<a id="top"></a>
 			<div id="mw-js-message" style="display:none;"></div>
-						<div id="siteNotice"><!-- CentralNotice --><script>document.write("\u003Cdiv id=\"localNotice\" lang=\"en\" dir=\"ltr\"\u003E\u003Cp\u003E\u003C/p\u003E\n\u003C/div\u003E");</script></div>
+						<div id="siteNotice"><!-- CentralNotice --></div>
 						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">List of MPs elected in the United Kingdom general election, 1997</span></h1>
 			<div id="bodyContent">
 								<div id="siteSub">From Wikipedia, the free encyclopedia</div>
@@ -3793,7 +3793,7 @@ Lua memory usage: 658 KB
 <!-- Saved in parser cache with key enwiki:pcache:idhash:415690-0!*!0!!*!4!* and timestamp 20130730153634 -->
 <noscript><img src="//en.wikipedia.org/w/index.php?title=Special:CentralAutoLogin/start&amp;type=1x1&amp;from=enwiki" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>								<div class="printfooter">
 				Retrieved from "<a href="http://en.wikipedia.org/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_1997&amp;oldid=555977273">http://en.wikipedia.org/w/index.php?title=List_of_MPs_elected_in_the_United_Kingdom_general_election,_1997&amp;oldid=555977273</a>"				</div>
-												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Categories" title="Help:Categories">Categories</a>: <ul><li><a href="/wiki/Category:Lists_of_MPs_elected_in_United_Kingdom_general_elections" title="Category:Lists of MPs elected in United Kingdom general elections">Lists of MPs elected in United Kingdom general elections</a></li><li><a href="/wiki/Category:United_Kingdom_general_election,_1997" title="Category:United Kingdom general election, 1997">United Kingdom general election, 1997</a></li><li><a href="/wiki/Category:UK_MPs_1997%E2%80%932001" title="Category:UK MPs 1997–2001">UK MPs 1997–2001</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:Articles_lacking_sources_from_July_2009" title="Category:Articles lacking sources from July 2009">Articles lacking sources from July 2009</a></li><li><a href="/wiki/Category:All_articles_lacking_sources" title="Category:All articles lacking sources">All articles lacking sources</a></li></ul></div></div>												<div class="visualClear"></div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:Lists_of_MPs_elected_in_United_Kingdom_general_elections" title="Category:Lists of MPs elected in United Kingdom general elections">Lists of MPs elected in United Kingdom general elections</a></li><li><a href="/wiki/Category:United_Kingdom_general_election,_1997" title="Category:United Kingdom general election, 1997">United Kingdom general election, 1997</a></li><li><a href="/wiki/Category:UK_MPs_1997%E2%80%932001" title="Category:UK MPs 1997–2001">UK MPs 1997–2001</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:Articles_lacking_sources_from_July_2009" title="Category:Articles lacking sources from July 2009">Articles lacking sources from July 2009</a></li><li><a href="/wiki/Category:All_articles_lacking_sources" title="Category:All articles lacking sources">All articles lacking sources</a></li></ul></div></div>												<div class="visualClear"></div>
 							</div>
 		</div>
 		<div id="mw-navigation">
@@ -3942,6 +3942,6 @@ mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
 mw.loader.load(["mobile.desktop","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","mw.MwEmbedSupport.style","ext.vector.collapsibleNav","ext.articleFeedbackv5.startup","schema.Edit","ext.gettingstarted.logging","ext.gettingstarted.openTask","ext.navigationTiming","mw.PopUpMediaTransform"],null,true);
 }</script>
 <script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
-<!-- Served by mw1068 in 0.199 secs. -->
+<!-- Served by mw1167 in 0.179 secs. -->
 	</body>
 </html>
