@@ -1449,9 +1449,9 @@ Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.
 mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
 }</script>
 <script>if(window.mw){
-mw.loader.load(["mobile.desktop","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","mw.MwEmbedSupport.style","ext.vector.collapsibleNav","ext.articleFeedbackv5.startup","schema.Edit","ext.gettingstarted.logging","ext.gettingstarted.openTask","ext.navigationTiming","mw.PopUpMediaTransform"],null,true);
+mw.loader.load(["mobile.desktop","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","mw.MwEmbedSupport.style","ext.vector.collapsibleNav","ext.articleFeedbackv5.startup","schema.Edit","ext.gettingstarted.logging","ext.gettingstarted.openTask","ext.coreEvents.httpsSupport","ext.navigationTiming","mw.PopUpMediaTransform"],null,true);
 }</script>
 <script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
-<!-- Served by mw1212 in 0.126 secs. -->
+<!-- Served by mw1025 in 0.167 secs. -->
 	</body>
 </html>
