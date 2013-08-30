@@ -56,7 +56,7 @@ def StripWransHeadings(headspeak, sdate):
         gd = re.match('(?:<stamp aname="[^"]*"/>)*(.*)$', givendate)
         if gd:
                 givendate = gd.group(1)
-       	if (not re.match('(?i)(?:<stamp[^>]*>)*(?:<i>)?\s*The following answers were received.*', headspeak[i][0]) and
+       	if (not re.match('(?i)(?:<stamp[^>]*>)*(?:<i>)?\s*(?:The following answers were|Answers) received.*', headspeak[i][0]) and
                not re.match('(?:<stamp[^>]*>)?The following question was answered on.*', headspeak[i][0]) and \
       			(sdate != mx.DateTime.DateTimeFrom(givendate).date)) or headspeak[i][2]:
        		if (not parlPhrases.wransmajorheadings.has_key(headspeak[i][0])) or headspeak[i][2]:
