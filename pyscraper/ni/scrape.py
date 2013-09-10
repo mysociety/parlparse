@@ -17,7 +17,7 @@ for i in range(2005,2007):
 root.append('http://archive.niassembly.gov.uk/record/hansard_session%d_TA.htm' % i)
 for i in range(2006,2012):
     root.append('http://archive.niassembly.gov.uk/record/hansard_session%d.htm' % i)
-for i in range(11,13):
+for i in range(11,14):
     root.append('http://www.niassembly.gov.uk/Assembly-Business/Official-Report/Reports-%d-%d/' % (i, i+1))
 
 ni_dir = os.path.dirname(__file__)

@@ -460,7 +460,7 @@ class ParseDay:
 		body = bbody
 
 		assert body[0].string == 'Official Report (Hansard)'
-		nia_heading_re = re.compile(r'\s*Session: 201[12]/201[23]')
+		nia_heading_re = re.compile(r'\s*Session: 201[1-3]/201[2-4]')
 		first_line = ''.join(body[1](text=True))
 		if not nia_heading_re.match(first_line):
 			raise ContextException, 'Missing NIA heading! Got %s' % first_line
@@ -501,9 +501,9 @@ class ParseDay:
 				self.new_italic_speech(ptext, phtml)
 			elif p.string:
 				self.text += '<p>%s</p>\n' % phtml
-			elif p.name == 'table':
+			elif p.name == 'table' or p.name == 'ul':
 				self.text += re.sub("\s+", " ", unicode(p))
-			elif re.match('([^<]|<em>|</em>)+$', phtml):
+			elif re.match('([^<]|<em>|</em>|<a name[^>]*>|</a>)+$', phtml):
 				self.text += '<p>%s</p>\n' % phtml
 			else:
 				raise ContextException, 'Uncaught paragraph! %s' % p
