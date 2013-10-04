@@ -247,7 +247,7 @@ def SplitLordsText(text, sdate):
 
 	# check that there is always an adjournment in the main debate, with some of the trash that gets put before it
 	# this kind of overguessing is to get a feel for the variation that is encountered.
-	if sdate not in ('2007-10-01', '2008-09-29', '2009-10-05', '2010-09-27', '2012-09-24') \
+	if sdate not in ('2007-10-01', '2008-09-29', '2009-10-05', '2010-09-27', '2012-09-24', '2013-09-23') \
 	    and not re.search('(?:<ul><ul><ul>|<ul><ul><p>|\s*(?:<ul>|<p>)?|<p>\s*<ul><ul>(?:<ul>)?)\s*(?:Parliament was prorogued|House adjourned |For the continuation of today\'s proceedings)(?i)', res[0]):
 		raise ContextException("house adjourned failure", stamp=None, fragment=res[0][-100:])
 
