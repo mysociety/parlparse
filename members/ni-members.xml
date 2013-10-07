@@ -3180,8 +3180,8 @@
     id="uk.org.publicwhip/member/90425"
     title="" firstname="Pam" lastname="Lewis"
     constituency="South Antrim" party="DUP"
-    fromdate="2011-05-06" todate="9999-12-31"
-    fromwhy="election" towhy="still_in_office"
+    fromdate="2011-05-06" todate="2012-03-19"
+    fromwhy="election" towhy="changed_name"
 />
 <member_ni
     id="uk.org.publicwhip/member/90426"
@@ -3648,5 +3648,12 @@
     fromwhy="appointed" towhy="still_in_office"
 />
 
+<member_ni
+    id="uk.org.publicwhip/member/90491"
+    title="" firstname="Pam" lastname="Brown"
+    constituency="South Antrim" party="DUP"
+    fromdate="2012-03-20" todate="9999-12-31"
+    fromwhy="changed_name" towhy="still_in_office"
+/>
 </publicwhip>
 
