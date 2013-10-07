@@ -173,6 +173,7 @@ ni_lord_matches = {
 ni_ni_matches = {
     "Mitchel McLaughlin [Foyle]":"Mitchel McLaughlin [South Antrim]",
     "Alex Maskey [Belfast West]":"Alex Maskey [Belfast South]",
+    "Pam Lewis [South Antrim]": "Pam Brown [South Antrim]",
 }
 
 sp_lord_matches = {
