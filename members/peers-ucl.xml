@@ -1066,7 +1066,7 @@ B - bishop
 	lordofname_full="Ayr"
 	county="the District of Kyle and Carrick"
 	peeragetype="L" affiliation="Con"
-	fromdate="1981" todate="9999-12-31"
+	fromdate="1981" todate="2013-06-30" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100103"
@@ -1292,7 +1292,7 @@ B - bishop
 	lordofname_full="Ryedale"
 	county="the County of North Yorkshire"
 	peeragetype="L" affiliation="XB"
-	fromdate="1977" todate="9999-12-31"
+	fromdate="1977" todate="2013-07-12" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100124"
@@ -2323,7 +2323,7 @@ B - bishop
 	title="Lord" lordname="Fraser" lordofname="Carmyllie"
 	county="the District of Angus"
 	peeragetype="L" affiliation="Con"
-	fromdate="1989" todate="9999-12-31"
+	fromdate="1989" todate="2013-06-22" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -2459,7 +2459,7 @@ B - bishop
 	lordofname_full="Dudley"
 	county="the County of West Midlands"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1997" todate="9999-12-31"
+	fromdate="1997" todate="2013-06-02" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -3934,7 +3934,7 @@ B - bishop
 	forenames="James Jones"
 	title="Bishop" lordname="" lordofname="Liverpool"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2003-10-20" todate="9999-12-31"
+	fromdate="2003-10-20" todate="2013-08-18" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100377"
@@ -4847,7 +4847,7 @@ B - bishop
 	lordofname_full="Telford"
 	county="the County of Salop"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1976" todate="9999-12-31"
+	fromdate="1976" todate="2013-04-18" towhy="died"
 	ex_MP="yes"
 />
 <lord
@@ -5473,7 +5473,7 @@ B - bishop
 	forenames="Hugh"
 	title="Lord" lordname="Reay" lordofname=""
 	peeragetype="HD" affiliation="Con"
-	fromdate="1963" todate="9999-12-31"
+	fromdate="1963" todate="2013-05-10" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100527"
@@ -8927,10 +8927,10 @@ B - bishop
 <lord
 	id="uk.org.publicwhip/lord/100859"
 	house="lords"
-	forenames="Michael Laurence Langish"
+	forenames="Michael Laurence Langrish"
 	title="Bishop" lordname="" lordofname="Exeter"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2005-10-17" todate="9999-12-31"
+	fromdate="2005-10-17" todate="2013-06-30" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100860"
@@ -9076,7 +9076,7 @@ B - bishop
 	forenames="Nigel McCulloch"
 	title="Bishop" lordname="" lordofname="Manchester"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2002-12-18" todate="9999-12-31"
+	fromdate="2002-12-18" todate="2013-01-17" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100873"
@@ -9989,7 +9989,7 @@ B - bishop
     forenames="Peter Price"
     title="Bishop" lordname="" lordofname="Bath and Wells"
     peeragetype="B" affiliation="Bp"
-    fromdate="2008-11-18" todate="9999-12-31"
+    fromdate="2008-11-18" todate="2013-06-30" towhy="retired"
 />
 
 <lord
@@ -10236,7 +10236,7 @@ B - bishop
     forenames="Nicholas Stewart Reade"
     title="Bishop" lordname="" lordofname="Blackburn"
     peeragetype="B" affiliation="Bp"
-    fromdate="2009-10-22" todate="9999-12-31"
+    fromdate="2009-10-22" todate="2012-10-31" towhy="retired"
 />
 
 <lord
@@ -10254,7 +10254,7 @@ B - bishop
     forenames="Anthony Martin Priddis"
     title="Bishop" lordname="" lordofname="Hereford"
     peeragetype="B" affiliation="Bp"
-    fromdate="2009-11-24" todate="9999-12-31"
+    fromdate="2009-11-24" todate="2013-09-24" towhy="retired"
 />
 
 <lord
@@ -10353,7 +10353,7 @@ B - bishop
 <lord
     id="uk.org.publicwhip/lord/101013"
     house="lords"
-    forenames="Alastair Llewellyn John"
+    forenames="Alastair Llewellyn John Redfern"
     title="Bishop" lordname="" lordofname="Derby"
     peeragetype="B" affiliation="Bp"
     fromdate="2010-06-15" todate="9999-12-31"
@@ -11673,10 +11673,10 @@ B - bishop
 <lord
     id="uk.org.publicwhip/lord/101139"
     house="lords"
-    forenames="Justin"
+    forenames="Justin Portal Welby"
     title="Bishop" lordname="" lordofname="Durham"
     peeragetype="B" affiliation="Bp"
-    fromdate="2012-01-12" todate="9999-12-31"
+    fromdate="2012-01-12" todate="2013-02-25"
 />
 
 <lord
@@ -11869,13 +11869,13 @@ B - bishop
     forenames="Matthew White"
     title="Viscount" lordname="Ridley" lordofname=""
     peeragetype="HP" affiliation="Con"
-    fromdate="2006-02-06" todate="9999-12-31"
+    fromdate="2013-02-13" todate="9999-12-31"
 />
 
 <lord
     id="uk.org.publicwhip/lord/101158"
     house="lords"
-    forenames="Christopher Cocksworth"
+    forenames="Timothy Martin Thornton"
     title="Bishop" lordname="" lordofname="Truro"
     peeragetype="B" affiliation="Bp"
     fromdate="2013-04-22" todate="9999-12-31"
@@ -11908,6 +11908,68 @@ B - bishop
     county="the County of Powys"
     peeragetype="L" affiliation="XB"
     fromdate="2013-03-26" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101162"
+    house="lords"
+    forenames="Ian Paul"
+    title="Lord" lordname="Livingston" lordofname="Parkhead"
+    county="the City of Glasgow"
+    peeragetype="L" affiliation="Con"
+    fromdate="2013-07-15" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101163"
+    house="lords"
+    forenames="Mervyn Allister"
+    title="Lord" lordname="King" lordofname="Lothbury"
+    county="the City of London"
+    peeragetype="L" affiliation="XB"
+    fromdate="2013-07-22" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101164"
+    house="lords"
+    forenames="Geoffrey Robert James"
+    title="Lord" lordname="Borwick" lordofname=""
+    peeragetype="HP" affiliation="Con"
+    fromdate="2013-07-29" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101165"
+    house="lords"
+    forenames="John Rhodes"
+    title="Lord" lordname="Horam" lordofname=""
+    lordofname_full="Grimsargh"
+    county="the County of Lancashire"
+    peeragetype="L" affiliation="Con"
+    fromdate="2013-10-08" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101166"
+    house="lords"
+    forenames="Rosalind Mary"
+    title="Baroness" lordname="Grender" lordofname=""
+    lordofname_full="Kingston upon Thames"
+    county="the London Borough of Kingston upon Thames"
+    peeragetype="L" affiliation="LDem"
+    fromdate="2013-10-08" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101167"
+    house="lords"
+    forenames="Jonathan Neil"
+    title="Lord" lordname="Mendelsohn" lordofname=""
+    lordofname_full="Finchley"
+    county="the London Borough of Barnet"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2013-10-09" todate="9999-12-31"
 />
 
 <!--
