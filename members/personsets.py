@@ -115,6 +115,7 @@ lordsmpmatches = {
     "uk.org.publicwhip/lord/101108" : "Dafydd Wigley [Caernarfon]",
     "uk.org.publicwhip/lord/101118" : "Oona King [Bethnal Green and Bow]",
     "uk.org.publicwhip/lord/101130" : "David Maclean [Penrith and The Border]",
+    "uk.org.publicwhip/lord/101169" : "Ian Wrigglesworth [Teesside Thornaby / Stockton South]",
 }
 
 # Put people who change party AND were MPs multple times in table above e.g. David Trimble
@@ -471,6 +472,8 @@ manualmatches = {
     "Christopher Leslie [Shipley]": "Christopher Leslie [Shipley / Nottingham East]",
     "Christopher Leslie [Nottingham East]": "Christopher Leslie [Shipley / Nottingham East]",
 
+    "Ian Wrigglesworth [Teesside Thornaby]" : "Ian Wrigglesworth [Teesside Thornaby / Stockton South]",
+    "Ian Wrigglesworth [Stockton South]" : "Ian Wrigglesworth [Teesside Thornaby / Stockton South]",
 
     }
 
