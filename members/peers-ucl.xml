@@ -11972,6 +11972,47 @@ B - bishop
     fromdate="2013-10-09" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101168"
+    house="lords"
+    forenames="Zahida Parveen"
+    title="Baroness" lordname="Manzoor" lordofname=""
+    lordofname_full="Knightsbridge"
+    county="the London Borough of Kensington"
+    peeragetype="L" affiliation="LDem"
+    fromdate="2013-10-10" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101169"
+    house="lords"
+    forenames="Ian William"
+    title="Lord" lordname="Wrigglesworth" lordofname=""
+    lordofname_full="Norton on Tees"
+    county="the County of Durham"
+    peeragetype="L" affiliation="LDem"
+    fromdate="2013-10-10" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101170"
+    house="lords"
+    forenames="Steven John Lindsey Croft"
+    title="Bishop" lordname="" lordofname="Sheffield"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2013-10-14" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101171"
+    house="lords"
+    forenames="Nicholas Henry"
+    title="Lord" lordname="Bourne" lordofname="Aberystwyth"
+    county="the County of Ceredigion"
+    peeragetype="L" affiliation="Con"
+    fromdate="2013-10-14" todate="9999-12-31"
+/>
+
 <!--
 <lord
     id="uk.org.publicwhip/lord/1011.."

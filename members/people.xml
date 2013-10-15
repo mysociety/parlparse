@@ -40206,7 +40206,8 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/19578" latestname="Walter Wren">
     <office id="uk.org.publicwhip/member/22320"/>
 </person>
-<person id="uk.org.publicwhip/person/19579" latestname="Ian Wrigglesworth">
+<person id="uk.org.publicwhip/person/19579" latestname="Lord Wrigglesworth">
+    <office id="uk.org.publicwhip/lord/101169" current="yes"/>
     <office id="uk.org.publicwhip/member/22321"/>
     <office id="uk.org.publicwhip/member/22322"/>
     <office id="uk.org.publicwhip/member/22323"/>
@@ -72890,6 +72891,15 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/25189" latestname="Lord Mendelsohn">
     <office id="uk.org.publicwhip/lord/101167" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25190" latestname="Baroness Manzoor">
+    <office id="uk.org.publicwhip/lord/101168" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25191" latestname="The Bishop of Sheffield">
+    <office id="uk.org.publicwhip/lord/101170" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25192" latestname="Lord Bourne of Aberystwyth">
+    <office id="uk.org.publicwhip/lord/101171" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13741" latestname="Ian Adamson">
     <office id="uk.org.publicwhip/member/90002"/>
