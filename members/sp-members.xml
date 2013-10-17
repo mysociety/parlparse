@@ -9536,8 +9536,8 @@
     spurl=""
     fromdate="2011-05-06"
     fromwhy="regional_election"
-    todate="9999-12-31"
-    towhy="still_in_office"
+    todate="2013-08-12"
+    towhy="died"
 />
 <member_sp
     id="uk.org.publicwhip/member/80508"
@@ -10064,6 +10064,22 @@
     title=""
     spurl=""
     fromdate="2013-05-15"
+    fromwhy="replaced_in_region"
+    todate="9999-12-31"
+    towhy="still_in_office"
+/>
+
+<member_sp
+    id="uk.org.publicwhip/member/80543"
+    fullname="Cameron Buchanan"
+    constituency="Lothian"
+    membertype="region"
+    party="Con"
+    firstname="Cameron"
+    lastname="Buchanan"
+    title=""
+    spurl=""
+    fromdate="2013-09-04"
     fromwhy="replaced_in_region"
     todate="9999-12-31"
     towhy="still_in_office"
