@@ -23,12 +23,9 @@ cd ~/parlparse/pyscraper
 cd ~/parlparse/pyscraper/standing
 ./parse.py $4
 
-# Scottish Parliament - must be this order
+# Scottish Parliament:
 cd ~/parlparse/pyscraper/sp
-./parse-written-answers.py --quiet $4
-#./parse.py --quiet $4
-#./parse-question-mentions.py --modified $4
-#./parse-motions.py $4
+./parse-official-reports-new.py --from=$FROMDATE --to=$TODATE || RET=1
 
 # Return error code
 exit $RET
