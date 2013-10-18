@@ -524,7 +524,7 @@ class Speech(object):
             result.append(p)
         return result
 
-def parse_html(filename, page_id, original_url):
+def quick_parse_html(filename, page_id, original_url):
     with open(filename) as fp:
         html = fp.read()
     html = replace_unknown_tags(html)
@@ -535,12 +535,14 @@ def parse_html(filename, page_id, original_url):
     # ... so ignore those.
     error = soup.find('span', attrs={'id': 'ReportView_lblError'})
     if error and error.string and 'Please check the link' in error.string:
-        return
+        return (None, None, None)
     session, report_date = get_title_and_date(soup, page_id)
     if session is None:
         # Then this was an empty page, which should be skipped
-        return None
+        return (None, None, None)
+    return (session, report_date, soup)
 
+def parse_html(session, report_date, soup, page_id, original_url):
     report_view = soup.find('div', attrs={'id': 'ReportView'})
     div_children_of_report_view = report_view.findChildren('div', recursive=False)
     if len(div_children_of_report_view) != 1:
@@ -723,9 +725,25 @@ if __name__ == '__main__':
                 if options.verbose:
                     print "Skipping", html_filename, "(empty)"
                 continue
-            parsed_page = parse_html(html_filename,
+            official_url = official_report_url_format.format(page_id)
+            # Do a quick parse of the page first, to extract the date
+            # so we know whether to bother with it:
+            session, report_date, soup = quick_parse_html(html_filename,
+                                                          page_id,
+                                                          official_url)
+            if session is None:
+                if options.verbose:
+                    print "Skipping", html_filename, "(not useful after parsing)"
+                continue
+            if report_date < from_date or report_date > to_date:
+                if options.verbose:
+                    print "Skipping", html_filename, "(outside requested date range)"
+                continue
+            parsed_page = parse_html(session,
+                                     report_date,
+                                     soup,
                                      page_id,
-                                     official_report_url_format.format(page_id))
+                                     official_url)
         except Exception as e:
             # print "parsing the file '%s' failed, with the exception:" % (filename,)
             # print unicode(e).encode('utf-8')
