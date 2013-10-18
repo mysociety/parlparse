@@ -366,7 +366,7 @@ class ParsedPage(object):
         return "%s/%s_%d.xml" % (self.normalized_session_name, self.report_date, self.page_id)
 
     def as_xml(self):
-        base_id = "uk.org.publicwhip/spor2/"
+        base_id = "uk.org.publicwhip/spor/"
         if self.normalized_session_name not in ('plenary', 'meeting-of-the-parliament'):
             base_id += self.normalized_session_name + "/"
         base_id += str(self.report_date)
@@ -429,9 +429,10 @@ class Section(object):
 
 class Division(object):
 
-    def __init__(self, report_date, url, candidate=None, candidate_id=None):
+    def __init__(self, report_date, url, divnumber, candidate=None, candidate_id=None):
         self.report_date = report_date
         self.url = url
+        self.divnumber = divnumber
         self.votes = {}
         self.candidate = candidate
         self.candidate_id = candidate_id
@@ -453,6 +454,7 @@ class Division(object):
         attributes = {'url': self.url,
                       'divdate': str(self.report_date),
                       'nospeaker': "True",
+                      'divnumber': str(self.divnumber),
                       'id': division_id}
         if self.candidate:
             attributes['candidate'] = self.candidate
@@ -543,6 +545,7 @@ def quick_parse_html(filename, page_id, original_url):
     return (session, report_date, soup)
 
 def parse_html(session, report_date, soup, page_id, original_url):
+    divnumber = 0
     report_view = soup.find('div', attrs={'id': 'ReportView'})
     div_children_of_report_view = report_view.findChildren('div', recursive=False)
     if len(div_children_of_report_view) != 1:
@@ -652,7 +655,8 @@ def parse_html(session, report_date, soup, page_id, original_url):
                             parsed_page.sections[-1].speeches_and_votes.append(current_speech)
                             current_speech.paragraphs.append(tidied_paragraph)
                         if (not current_votes) or (current_votes.candidate != division_candidate):
-                            current_votes = Division(report_date, current_url, division_candidate, division_candidate_id)
+                            current_votes = Division(report_date, current_url, divnumber, division_candidate, division_candidate_id)
+                            divnumber += 1
                             parsed_page.sections[-1].speeches_and_votes.append(current_votes)
                         current_division_way = division_way
                     elif member_vote:
