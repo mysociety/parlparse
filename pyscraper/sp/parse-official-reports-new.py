@@ -365,7 +365,10 @@ class ParsedPage(object):
         return "%s-%s-%d.xml" % (self.report_date, self.normalized_session_name, self.page_id)
 
     def as_xml(self):
-        base_id = "uk.org.publicwhip/spor2/" + str(self.report_date)
+        base_id = "uk.org.publicwhip/spor2/"
+        if self.normalized_session_name not in ('plenary', 'meeting-of-the-parliament'):
+            base_id += self.normalized_session_name + "/"
+        base_id += str(self.report_date)
         xml = etree.Element("publicwhip")
         for section_index, section in enumerate(self.sections):
             section_base_id = base_id + "." + str(section_index)
