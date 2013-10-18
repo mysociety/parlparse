@@ -705,6 +705,8 @@ if __name__ == '__main__':
     for filename in sorted(os.listdir(html_directory), key=filename_key):
         m = re.search(r'^(\d+)\.html$', filename)
         if not m:
+            if options.verbose:
+                print "Skipping", html_filename, "(wrong filename format)"
             continue
         page_id = int(m.group(1), 10)
         # if page_id < 8098:
@@ -714,6 +716,8 @@ if __name__ == '__main__':
         try:
             html_filename = os.path.join(html_directory, filename)
             if os.path.getsize(html_filename) == 0:
+                if options.verbose:
+                    print "Skipping", html_filename, "(empty)"
                 continue
             parsed_page = parse_html(html_filename,
                                      page_id,
@@ -725,11 +729,17 @@ if __name__ == '__main__':
             print "parsing the file '%s' failed" % (filename,)
             raise
 
-        if parsed_page is not None:
+        if parsed_page is None:
+            if options.verbose:
+                print "Skipping", html_filename, "(outside requested date range)"
+        else:
+            if options.verbose:
+                print "Parsed", html_filename
 
             parsed_page.tidy_speeches()
 
-            print "suggested name would be:", parsed_page.suggested_file_name
+            if options.verbose:
+                print "  suggested output filename is:", parsed_page.suggested_file_name
             output_filename = os.path.join(xml_output_directory,
                                            parsed_page.suggested_file_name)
 
@@ -749,4 +759,6 @@ if __name__ == '__main__':
                     fp.write('%d,%s\n' % (time.time(),
                                           parsed_page.suggested_file_name))
             else:
+                if options.verbose:
+                    print "  not writing, since output is unchanged"
                 os.remove(ntf.name)
