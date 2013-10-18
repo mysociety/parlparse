@@ -2,6 +2,7 @@
 # coding=UTF-8
 
 from cgi import escape
+import errno
 import sys
 import os
 import re
@@ -362,7 +363,7 @@ class ParsedPage(object):
 
     @property
     def suggested_file_name(self):
-        return "%s-%s-%d.xml" % (self.report_date, self.normalized_session_name, self.page_id)
+        return "%s/%s_%d.xml" % (self.normalized_session_name, self.report_date, self.page_id)
 
     def as_xml(self):
         base_id = "uk.org.publicwhip/spor2/"
@@ -745,6 +746,14 @@ if __name__ == '__main__':
                 print "  suggested output filename is:", parsed_page.suggested_file_name
             output_filename = os.path.join(xml_output_directory,
                                            parsed_page.suggested_file_name)
+            output_directory, output_leafname = os.path.split(output_filename)
+            # Ensure that the directory exists:
+            try:
+                output_directory = os.path.dirname(output_filename)
+                os.mkdir(output_directory)
+            except OSError as e:
+                if e.errno != errno.EEXIST:
+                    raise
 
             xml = etree.tostring(parsed_page.as_xml(), pretty_print=True)
             with NamedTemporaryFile(delete=False,
@@ -758,9 +767,12 @@ if __name__ == '__main__':
 
             if changed_output:
                 os.rename(ntf.name, output_filename)
-                with open('%schangedates.txt' % xml_output_directory, 'a+') as fp:
+                changedates_filename = os.path.join(xml_output_directory,
+                                                     output_directory,
+                                                     'changedates.txt')
+                with open(changedates_filename, 'a+') as fp:
                     fp.write('%d,%s\n' % (time.time(),
-                                          parsed_page.suggested_file_name))
+                                          output_leafname))
             else:
                 if options.verbose:
                     print "  not writing, since output is unchanged"
