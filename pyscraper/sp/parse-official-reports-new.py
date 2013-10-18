@@ -696,6 +696,12 @@ if __name__ == '__main__':
                       default=False, help="produce very verbose output")
     parser.add_option('--speakers-debug', dest='speakers_debug', action='store_true',
                       default=False, help="log speakers that couldn't be found")
+    parser.add_option('--from', dest='from_date',
+                      default="1999-05-12",
+                      help="only parse files from this date onwards (inclusive)")
+    parser.add_option('--to', dest='to_date',
+                      default=str(datetime.date.today()),
+                      help="only parse files up to this date (inclusive)")
     (options, args) = parser.parse_args()
 
     if options.doctest:
@@ -705,10 +711,30 @@ if __name__ == '__main__':
 
     SPEAKERS_DEBUG = options.speakers_debug
 
+    from_date = dateparser.parse(options.from_date).date()
+    to_date = dateparser.parse(options.to_date).date()
+
     html_directory = "../../../parldata/cmpages/sp/official-reports-new/"
     xml_output_directory = "../../../parldata/scrapedxml/sp-new/"
 
     for filename in sorted(os.listdir(html_directory), key=filename_key):
+        html_filename = os.path.join(html_directory, filename)
+
+        # By default, don't consider files that have an mtime earlier
+        # than 10 days before from_date.  There are cases where this
+        # won't work properly, but will save lots of time in the
+        # typical case.
+        if not options.force:
+            earliest_to_consider = datetime.datetime.combine(from_date,
+                                                             datetime.time())
+            earliest_to_consider -= datetime.timedelta(days=10)
+
+            last_modified = datetime.datetime.fromtimestamp(os.path.getmtime(html_filename))
+            if last_modified < earliest_to_consider:
+                if options.verbose:
+                    print "Skipping", html_filename, "(it's well before %s)" % (from_date,)
+                continue
+
         m = re.search(r'^(\d+)\.html$', filename)
         if not m:
             if options.verbose:
@@ -720,7 +746,6 @@ if __name__ == '__main__':
         print "got filename", filename
         parsed_page = None
         try:
-            html_filename = os.path.join(html_directory, filename)
             if os.path.getsize(html_filename) == 0:
                 if options.verbose:
                     print "Skipping", html_filename, "(empty)"
