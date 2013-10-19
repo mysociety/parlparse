@@ -747,7 +747,6 @@ if __name__ == '__main__':
         page_id = int(m.group(1), 10)
         # if page_id < 8098:
         #     continue
-        print "got filename", filename
         parsed_page = None
         try:
             if os.path.getsize(html_filename) == 0:
