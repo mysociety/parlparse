@@ -171,7 +171,7 @@ def GlueAllType(pcmdir, cmindex, fproto, deleteoutput):
 def FindRegmemPages():
         urls = []
         # Meta index is here: 'http://www.publications.parliament.uk/pa/cm/cmregmem.htm'
-        ixurl = 'http://www.publications.parliament.uk/pa/cm/cmregmem/contents1213.htm'
+        ixurl = 'http://www.publications.parliament.uk/pa/cm/cmregmem/contents1314.htm'
         # print "IXURL", ixurl
         ur = urllib.urlopen(ixurl)
         content = ur.read()
