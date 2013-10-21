@@ -812,6 +812,7 @@ if __name__ == '__main__':
                     changed_output = False
 
             if changed_output:
+                os.chmod(ntf.name, 0644)
                 os.rename(ntf.name, output_filename)
                 changedates_filename = os.path.join(xml_output_directory,
                                                      output_directory,
