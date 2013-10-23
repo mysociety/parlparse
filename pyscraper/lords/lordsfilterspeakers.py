@@ -21,7 +21,7 @@ renormal = '<b>(?:<stamp aname="[^"]*"/>|</b><b>|[^<])*</b>(?:\s*:)?'
 respeaker = re.compile('(%s|%s|%s)(?i)' % (rehead, retable, renormal))
 
 respeakerb = re.compile('<b>\s*((?:<stamp aname="[^"]*"/>|</b><b>|[^<]+)*),?\s*</b>(\s*:)?(?i)')
-lord_parties = 'CB|Con|Lab|LD|Non-Afl|UUP|PC'
+lord_parties = 'CB|Con|Lab|LD|Non-Afl|UUP|PC|Lab[ ]Ind'
 respeakervals = re.compile('''
     ([^:(]*?)\s*
     (?:\(((?!%s)[^:)]*)\)?)?
