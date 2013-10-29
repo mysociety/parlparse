@@ -12086,6 +12086,79 @@ B - bishop
     fromdate="2013-10-21" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101179"
+    house="lords"
+    forenames="Jeremy"
+    title="Lord" lordname="Purvis" lordofname="Tweed"
+    lordofname_full="East March"
+    county="the Scottish Borders"
+    peeragetype="L" affiliation="LDem"
+    fromdate="2013-10-22" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101180"
+    house="lords"
+    forenames="Fiona Ferelith"
+    title="Baroness" lordname="Hodgson" lordofname="Abinger"
+    county="the County of Surrey"
+    peeragetype="L" affiliation="Con"
+    fromdate="2013-10-22" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101181"
+    house="lords"
+    forenames="James William Scobie"
+    title="Bishop" lordname="" lordofname="Carlisle"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2013-10-23" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101182"
+    house="lords"
+    forenames="Daniel William"
+    title="Lord" lordname="Finkelstein" lordofname=""
+    lordofname_full="Pinner"
+    county="the County of Middlesex"
+    peeragetype="L" affiliation="Con"
+    fromdate="2013-10-24" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101183"
+    house="lords"
+    forenames="Christine Mary"
+    title="Baroness" lordname="Humphreys" lordofname=""
+    lordofname_full="Llanrwst"
+    county="the County of Conwy"
+    peeragetype="L" affiliation="LDem"
+    fromdate="2013-10-24" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101184"
+    house="lords"
+    forenames="Stephen Ashley"
+    title="Lord" lordname="Sherbourne" lordofname="Didsbury"
+    county="the City of Manchester"
+    peeragetype="L" affiliation="Con"
+    fromdate="2013-10-28" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101185"
+    house="lords"
+    forenames="Brian Leonard"
+    title="Lord" lordname="Paddick" lordofname=""
+    lordofname_full="Brixton"
+    county="the London Borough of Lambeth"
+    peeragetype="L" affiliation="LDem"
+    fromdate="2013-10-28" todate="9999-12-31"
+/>
+
 <!--
 <lord
     id="uk.org.publicwhip/lord/1011.."

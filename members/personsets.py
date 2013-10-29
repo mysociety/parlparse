@@ -191,6 +191,9 @@ sp_lord_matches = {
     "uk.org.publicwhip/member/80353": "uk.org.publicwhip/lord/101023",
     # Lord Nicol Stephen
     "uk.org.publicwhip/member/80115": "uk.org.publicwhip/lord/101127",
+    # Lord Purvis of Tweed
+    "uk.org.publicwhip/member/80101": "uk.org.publicwhip/lord/101179",
+    "uk.org.publicwhip/member/80378": "uk.org.publicwhip/lord/101179",
 }
 
 sp_mp_matches = {
