@@ -12159,6 +12159,28 @@ B - bishop
     fromdate="2013-10-28" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101186"
+    house="lords"
+    forenames="Lucy Jeanne"
+    title="Baroness" lordname="Neville-Rolfe" lordofname=""
+    lordofname_full="Chilmark"
+    county="the County of Wiltshire"
+    peeragetype="L" affiliation="Con"
+    fromdate="2013-10-29" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101187"
+    house="lords"
+    forenames="William"
+    title="Lord" lordname="Haughey" lordofname=""
+    lordofname_full="Hutchesontown"
+    county="the City of Glasgow"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2013-10-29" todate="9999-12-31"
+/>
+
 <!--
 <lord
     id="uk.org.publicwhip/lord/1011.."
