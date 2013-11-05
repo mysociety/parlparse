@@ -12181,6 +12181,56 @@ B - bishop
     fromdate="2013-10-29" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101188"
+    house="lords"
+    forenames="Christopher"
+    title="Lord" lordname="Holmes" lordofname="Richmond"
+    county="the London Borough of Richmond upon Thames"
+    peeragetype="L" affiliation="Con"
+    fromdate="2013-10-30" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101189"
+    house="lords"
+    forenames="Richard Andrew"
+    title="Lord" lordname="Balfe" lordofname=""
+    lordofname_full="Dulwich"
+    county="the London Borough of Southwark"
+    peeragetype="L" affiliation="Con"
+    fromdate="2013-10-31" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101190"
+    house="lords"
+    forenames="James Rudolph"
+    title="Lord" lordname="Palumbo" lordofname="Southwark"
+    county="the London Borough of Southwark"
+    peeragetype="L" affiliation="LDem"
+    fromdate="2013-10-31" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101191"
+    house="lords"
+    forenames="Alan Gregory Clayton Smith"
+    title="Bishop" lordname="" lordofname="St Albans"
+	peeragetype="B" affiliation="Bp"
+    fromdate="2013-11-04" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101192"
+    house="lords"
+    forenames="Alicia Pamela"
+    title="Baroness" lordname="Kennedy" lordofname="Cradley"
+    county="the Metropolitan Borough of Dudley"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2013-11-04" todate="9999-12-31"
+/>
+
 <!--
 <lord
     id="uk.org.publicwhip/lord/1011.."
