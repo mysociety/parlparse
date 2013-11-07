@@ -12231,6 +12231,37 @@ B - bishop
     fromdate="2013-11-04" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101193"
+    house="lords"
+    forenames="Susan Frances Maria"
+    title="Baroness" lordname="Williams" lordofname="Trafford"
+    lordofname_full="Hale"
+    county="the County of Greater Manchester"
+    peeragetype="L" affiliation="Con"
+    fromdate="2013-11-05" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101194"
+    house="lords"
+    forenames="Jennifer Helen"
+    title="Baroness" lordname="Jones" lordofname="Moulsecoomb"
+    county="the County of East Sussex"
+    peeragetype="L" affiliation="Green"
+    fromdate="2013-11-05" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101195"
+    house="lords"
+    forenames="Charles Lamb"
+    title="Lord" lordname="Allen" lordofname="Kensington"
+    county="the Royal Borough of Kensington and Chelsea"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2013-11-06" todate="9999-12-31"
+/>
+
 <!--
 <lord
     id="uk.org.publicwhip/lord/1011.."
