@@ -756,15 +756,19 @@ class ParseCommittee:
 
         # Find any witnesses. Do this hear because we have to take them out
         # to stop them being matched as members
-        ctteWitnessTag = committee.findNext("h4", {"class" : "hs_CLHeading"})
-        if ctteWitnessTag and ''.join(ctteWitnessTag(text=True)).strip() == "Witnesses":
+        ctteWitnessTag = committee.findNext("h4", {"class" : "hs_CLHeading"}) or \
+                         committee.findNext("p", {"class" : "hs_CLPara"})
+        has_witnesses = ctteWitnessTag and ''.join(ctteWitnessTag(text=True)).strip() in ("Witnesses", "Witness")
+
+        if has_witnesses:
             if new_new:
-                ctteWitnesses = ctteWitnessTag.findNextSiblings('p', {"class" : "hs_CLMember", "class" : "hs_CLPara"})
+                ctteWitnesses = ctteWitnessTag.findNextSiblings('p', {"class" : "hs_CLPara"})
             else:
                 ctteWitnesses = soup.findAll({"class" : "hs_CLPara", 'div' : True})
             witnesslist = [''.join(witnessTag(text=True)).strip() for witnessTag in ctteWitnesses]
             self.external_speakers = True
             [ witness.extract() for witness in ctteWitnesses ]
+            ctteWitnessTag.extract()
 
         # find the members
         cttememberTags = soup.findAll(element, { "class" : "hs_CLMember" })
@@ -778,7 +782,7 @@ class ParseCommittee:
         
         self.display_committee(chairlist, memberlist, clerks)
 
-        if ctteWitnessTag and ''.join(ctteWitnessTag(text=True)).strip() == "Witnesses":
+        if has_witnesses:
             self.display_witnesses(witnesslist)
 
     def parse_speaker(self, text):
@@ -983,13 +987,15 @@ class ParseCommittee:
                 elif (cssClass == 'hs_brev' or cssClass == 'hs_brevIndent'):
                     self.display_para(tag, indent=True)   
                 #dealt with already
-                elif (cssClass in ['hs_CLHeading', 'hs_CLHeading', 'hs_CLChairman', 'hs_CLMember', 'hs_CLMember', 'hs_CLClerks', 'hs_CLAttended']):
+                elif cssClass in ['hs_CLHeading', 'hs_CLChairman', 'hs_CLMember', 'hs_CLMember', 'hs_CLClerks', 'hs_CLAttended']:
                     pass  
                 #ignored
                 elif cssClass == 'hs_8GenericHdg':
                     self.external_speakers = True
                     self.display_heading(tag.string, "minor")
-                elif (cssClass in [ 'hs_6fDate', 'hs_6fCntrItalHdg' ]):
+                elif cssClass in [ 'hs_6fDate', 'hs_6fCntrItalHdg' ]:
+                    pass
+                elif cssClass == 'hs_6bBigBoldHdg' and re.match('Table(?i)', ''.join(tag(text=True))):
                     pass
                 elif tag.name == 'div' and tag.get('id', '') in ('content-small', 'maincontent1', 'mainTextBlock', 'titleBlock', 'titleBlockLinks'):
                     pass
