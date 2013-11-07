@@ -9386,8 +9386,8 @@
     spurl=""
     fromdate="2011-05-06"
     fromwhy="regional_election"
-    todate="9999-12-31"
-    towhy="still_in_office"
+    todate="2012-10-23"
+    towhy="changed_party"
 />
 <member_sp
     id="uk.org.publicwhip/member/80498"
@@ -9401,8 +9401,8 @@
     spurl=""
     fromdate="2011-05-06"
     fromwhy="regional_election"
-    todate="9999-12-31"
-    towhy="still_in_office"
+    todate="2012-10-23"
+    towhy="changed_party"
 />
 <member_sp
     id="uk.org.publicwhip/member/80499"
@@ -10097,6 +10097,37 @@
     spurl=""
     fromdate="2013-10-25"
     fromwhy="by_election"
+    todate="9999-12-31"
+    towhy="still_in_office"
+/>
+
+<member_sp
+    id="uk.org.publicwhip/member/80545"
+    fullname="John Finnie"
+    constituency="Highlands and Islands"
+    membertype="region"
+    party="Independent"
+    firstname="John"
+    lastname="Finnie"
+    title=""
+    spurl=""
+    fromdate="2012-10-23"
+    fromwhy="changed_party"
+    todate="9999-12-31"
+    towhy="still_in_office"
+/>
+<member_sp
+    id="uk.org.publicwhip/member/80546"
+    fullname="Jean Urquhart"
+    constituency="Highlands and Islands"
+    membertype="region"
+    party="Independent"
+    firstname="Jean"
+    lastname="Urquhart"
+    title=""
+    spurl=""
+    fromdate="2012-10-23"
+    fromwhy="changed_party"
     todate="9999-12-31"
     towhy="still_in_office"
 />
