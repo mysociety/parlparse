@@ -43,16 +43,18 @@ class Parse_sp_written:
 
 
     def test(self, q):
+
+        '''Take a look at the question attributes
+        '''
         pprint.pprint(vars(q))
 
 
     def process_html(self):
 
-        '''Gets all the html files and uses BeautifulSoup to extract question and reply data
-        Creates question objects with this data
+        '''Gets all the html files, checks for correct file with BeautifulSoup
+        passes them on to be processed
 
         :returns parsed_questions: List of question objects
-
         '''
 
         for html_file in self.files_to_parse:
@@ -63,6 +65,7 @@ class Parse_sp_written:
             parsed_questions = []
 
             soup_gvresults =  soup.findAll('tr', {'id' : re.compile('MAQA_Search_gvResults.*')})
+            print type(soup_gvresults)
 
             if not soup_gvresults:
                 if self.warn:
@@ -76,6 +79,10 @@ class Parse_sp_written:
 
     def get_q_and_a(self, soup_gvresults):
 
+            '''Extracts all the relevant bits of the html file using BeautifulSoup
+            :param soup_gvresults: bs4.element.ResultSet
+            :returns yields question object
+            '''
             for soup_question in soup_gvresults:
 
                 q = self.Question()
@@ -115,20 +122,6 @@ class Parse_sp_written:
                 yield q
 
 
-#     def get_soup_elem(self, soup_elem, tag, pattern, method="find"):
-#
-#         '''Test for presence of element.
-#         :param:
-#         :returns bs4.Element.Tag: if found
-#         :returns None: if not found
-#         '''
-#         find = soup_elem.find
-#         if method == 'findall':
-#             find = soup_elem.findAll
-#
-#         return find(tag, {'id' : re.compile(pattern)})
-
-
     def parse_question_header(self, q):
 
         '''Parse the question header with the following form:
@@ -149,7 +142,7 @@ class Parse_sp_written:
         if parts[-3]:
             q.speaker_party = self.party_name_acronym(parts[-3])
 
-        #Sometimes there are commas within the constituency name, which increases number of elements
+        #Sometimes there are commas within the constituency name, which increases number of elements in the list
         if parts[3: -3]:
             q.speaker_const = ','.join(parts[3: -3])
         q.speaker_id = self.get_person_id(q.speaker_name, q.date_lodged, q.speaker_const, q.speaker_party)
@@ -167,8 +160,7 @@ class Parse_sp_written:
         :returns speaker_id: str
         '''
         d = date.strftime('%Y-%m-%d')
-        #John Lamont, Ettrick, Roxburgh and Berwickshire, Scottish Conservative and Unionist Party
-        #Problem entry as I'm using ',' to seperate elements. But constituency is split in this case
+
         if speaker_const:
             search_string =  "{0} ({1}) ({2})".format(speaker_name, speaker_const, speaker_party)
         else:
@@ -188,19 +180,15 @@ class Parse_sp_written:
                 print ("\n".join(possible_ids))
             return possible_ids[0]
         else:
-            #print ('found match for name: {0}'.format(search_string))
-            #print ("\n".join(possible_ids))
             return possible_ids[0]
 
 
     def create_xml(self, day_grouped_qs):
 
         '''Takes a list of question objects and creates the XML
-
         :param day_grouped_qs: an iterator - date:question object list
         '''
         for date, qList in day_grouped_qs:
-
 
             root = etree.Element("publicwhip")
             src = etree.SubElement(root, "source")
@@ -296,7 +284,6 @@ class Parse_sp_written:
     def major_heading(self, root, text, mah_number, date):
 
         '''creates major heading elements and adds to XML tree
-
         :param root: etree.Element
         :param text: node text
         :param mah_number: major heading number
@@ -312,7 +299,8 @@ class Parse_sp_written:
 
     def minor_heading(self, root, ques_id, date ):
 
-        '''In SP written Q&As, it seems as if there's no longer a useful title
+        '''creates major heading elements and adds to XML tree.
+        In SP written Q&As, it seems as if there's no longer a useful title
         for the minor-heading text, so just make it eg. "Question S4W-01234"
         '''
         mih = etree.SubElement(root, "minor-heading")
@@ -324,6 +312,10 @@ class Parse_sp_written:
 
     def get_source_url(self, date):
 
+        '''Gets source url for a given day of questions
+        :param date: datetime object
+        :returns full_url: str
+        '''
         data = {'SearchType': 'Advance',
         'DateFrom': date.strftime('%D') + " 12:00:00 AM",
         'DateTo': date.strftime('%D') + " 11:59:59 PM",
