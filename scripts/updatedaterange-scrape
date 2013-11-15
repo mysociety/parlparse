@@ -22,7 +22,7 @@ cd ~/parlparse/pyscraper
 # So for the moment, just run the daily check whatever the parameters
 # given passed to this script are.
 cd ~/parlparse/pyscraper/sp
-./get-official-reports-new.py --daily
+./get-official-reports-new.py --daily --quiet
 
 cd ~/parlparse/pyscraper/future
 ./get_future_business_and_calendar.py --quiet

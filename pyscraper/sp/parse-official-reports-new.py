@@ -698,6 +698,8 @@ if __name__ == '__main__':
                       help="Run all doctests in this file")
     parser.add_option('-v', '--verbose', dest='verbose', action='store_true',
                       default=False, help="produce very verbose output")
+    parser.add_option('-q', '--quiet', dest='quiet', action='store_true',
+                      default=False, help="produce very quiet output")
     parser.add_option('--speakers-debug', dest='speakers_debug', action='store_true',
                       default=False, help="log speakers that couldn't be found")
     parser.add_option('--from', dest='from_date',
@@ -783,13 +785,10 @@ if __name__ == '__main__':
             if options.verbose:
                 print "Skipping", html_filename, "(outside requested date range)"
         else:
-            if options.verbose:
-                print "Parsed", html_filename
-
             parsed_page.tidy_speeches()
 
-            if options.verbose:
-                print "  suggested output filename is:", parsed_page.suggested_file_name
+            if not options.quiet:
+                print "Parsed", parsed_page.suggested_file_name
             output_filename = os.path.join(xml_output_directory,
                                            parsed_page.suggested_file_name)
             output_directory, output_leafname = os.path.split(output_filename)
