@@ -23,8 +23,8 @@ official_report_url_format = 'http://www.scottish.parliament.uk/parliamentarybus
 user_agent = 'Mozilla/5.0 (Ubuntu; X11; Linux i686; rv:9.0.1) Gecko/20100101 Firefox/9.0.1'
 
 parser = OptionParser()
-parser.add_option('-v', '--verbose', dest='verbose', action='store_true',
-                  default=False, help='Print progress messages')
+parser.add_option('-q', '--quiet', dest='quiet', action='store_true',
+                  default=False, help='Suppress progress messages')
 parser.add_option('-t', '--test', dest='test', action='store_true',
                   default=False, help='Run doctests')
 parser.add_option('--historic', dest='historic',
@@ -59,7 +59,7 @@ def get_document_from_id(official_report_id):
     html_filename = os.path.join(output_directory, str(official_report_id) + '.html')
     if not os.path.exists(html_filename):
         url = official_report_url_format.format(official_report_id)
-        if options.verbose:
+        if not options.quiet:
             print "Fetching:", url
         request = urllib2.Request(url)
         request.add_header('User-Agent', user_agent)
@@ -118,7 +118,7 @@ def main():
         print "Either --daily or --historic=MAXID must be specified"
 
 if options.test:
-    if options.verbose:
+    if not options.quiet:
         print "Running doctests..."
     import doctest
     doctest.testmod()
