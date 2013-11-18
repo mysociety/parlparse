@@ -288,7 +288,8 @@ class MemberList(xml.sax.handler.ContentHandler):
 
         posts_files = [ 'ministers-law-officers-aides-session1.txt',
                         'ministers-law-officers-aides-session2.txt',
-                        'ministers-law-officers-aides-session3.txt' ]
+                        'ministers-law-officers-aides-session3.txt',
+                        'ministers-law-officers-aides-session4.txt' ]
 
         self.officeslowered = { }
         self.lawofficers = { }
