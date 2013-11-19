@@ -787,7 +787,7 @@ if __name__ == '__main__':
         else:
             parsed_page.tidy_speeches()
 
-            if not options.quiet:
+            if options.verbose:
                 print "Parsed", parsed_page.suggested_file_name
             output_filename = os.path.join(xml_output_directory,
                                            parsed_page.suggested_file_name)
@@ -811,6 +811,8 @@ if __name__ == '__main__':
                     changed_output = False
 
             if changed_output:
+                if not options.quiet:
+                    print "Parsed and changed", parsed_page.suggested_file_name
                 os.chmod(ntf.name, 0644)
                 os.rename(ntf.name, output_filename)
                 changedates_filename = os.path.join(xml_output_directory,
