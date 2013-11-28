@@ -194,6 +194,11 @@ sp_lord_matches = {
     # Lord Purvis of Tweed
     "uk.org.publicwhip/member/80101": "uk.org.publicwhip/lord/101179",
     "uk.org.publicwhip/member/80378": "uk.org.publicwhip/lord/101179",
+    # Baroness Goldie
+    "uk.org.publicwhip/member/80040": "uk.org.publicwhip/lord/101197",
+    "uk.org.publicwhip/member/80163": "uk.org.publicwhip/lord/101197",
+    "uk.org.publicwhip/member/80319": "uk.org.publicwhip/lord/101197",
+    "uk.org.publicwhip/member/80537": "uk.org.publicwhip/lord/101197",
 }
 
 sp_mp_matches = {
