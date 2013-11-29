@@ -1,0 +1,151 @@
+#!/usr/bin/env python
+
+# Grabs the latest members data from data.parliament XML and update accordingly.
+# Get data using crawl-datadotparl-members.py
+
+import urllib2
+import xml.etree.ElementTree as etree
+from datetime import datetime
+
+# Source XML files to use for the list of members
+source_files = [
+  'all-current-commons'
+]
+
+# Position start date threshold
+# Currently 2010 election (2010-05-11)
+start_date_threshold = datetime(2010, 5, 11)
+
+# Create the master ministers element
+ministers = etree.Element('publicwhip')
+
+for source_file in source_files:
+
+  # Parse the file
+  try:
+    parl_members_xml = etree.parse('../rawdata/datadotparl/' + source_file + '.xml')
+  except:
+    print 'Data from ' + source_file + '.xml does not seem to be valid XML.'
+    exit(1)
+
+  # Extract the members
+  parl_members = parl_members_xml.getroot()
+  if parl_members.tag != 'Members':
+    print 'Root tag is not "Members" as expected, got "' + parl_members.tag + '". Has the schema changed?'
+    exit(1)
+
+  print 'Found ' + str(len(parl_members)) + ' members from ' + source_file + '.xml.'
+
+  # Enrich the data!
+
+  for member in parl_members:
+    try:
+      member_fullbio_xml = etree.parse('../rawdata/datadotparl/' + member.attrib['Member_Id'] + '.xml')
+    except:
+      print 'Data from ' + member.attrib['Member_Id'] + '.xml does not seem to be valid XML.'
+    else:
+      member_fullbio = member_fullbio_xml.getroot()
+      # Remove the existing member record, it's boring.
+      parl_members.remove(member)
+      # Tack the new member record on, it's nice and rich.
+      parl_members.append(member_fullbio.find('Member'))
+
+  ##########
+  # At this point parl_members contains a complete set of data.
+  ##########
+
+  # Import the current all-members.xml
+  current_members_xml = etree.parse('../members/all-members-2010.xml')
+
+  # Extract the members
+  current_members = current_members_xml.getroot()
+  if current_members.tag != 'publicwhip':
+    print 'Root tag is not "publicwhip" as expected in all-members-2010.xml, got "' + current_members.tag + '".'
+    exit(1)
+
+  print 'Found ' + str(len(current_members)) + ' members from all-members.xml.'
+
+  # Import the current people.xml
+  people_xml = etree.parse('../members/people.xml')
+
+  # Extract the members
+  people = people_xml.getroot()
+  if people.tag != 'publicwhip':
+    print 'Root tag is not "publicwhip" as expected in people.xml, got "' + current_members.tag + '".'
+    exit(1)
+
+  print 'Found ' + str(len(people)) + ' people from people.xml.'
+
+  # From the current members, find those who aren't currently matched.
+
+  unmatched_members = dict()
+
+  for member in current_members:
+
+    if 'datadotparl_id' not in member.attrib:
+      member_name = member.attrib['lastname'] + ', ' + member.attrib['firstname']
+      unmatched_members.setdefault(member_name, []).append(member)
+
+  # Compare parl_members to unmatched_members
+
+  for parl_member in parl_members:
+    if parl_member.find('ListAs').text in unmatched_members:
+      for unmatched_member in unmatched_members[parl_member.find('ListAs').text]:
+
+        ## TODO: Prompt to check if this match is actually correct
+
+        unmatched_member.attrib['datadotparl_id'] = parl_member.attrib['Member_Id']
+
+  ## TODO: Write out updated all-members.xml here?
+
+  # Find current members with datadotparl_id
+
+  matched_members = list()
+
+  for current_member in current_members:
+    if 'datadotparl_id' in current_member.attrib:
+      matched_members.append(current_member)
+
+  print str(len(matched_members)) + ' members with data.parliament ID.'
+
+  # Pick out the member from parliamentary data with the right ID
+  for matched_member in matched_members:
+
+    # Get data from parliament
+    parl_data = parl_members.find('Member[@Member_Id="' + matched_member.attrib['datadotparl_id'] + '"]')
+
+    # Loop through positions for that person
+    if parl_data.find('GovernmentPosts') is not None:
+      for position in parl_data.find('GovernmentPosts').findall('GovernmentPost'):
+
+        # Parse the start date into an actual datetime for comparison
+        position_start = datetime.strptime(position.find('StartDate').text, '%Y-%m-%dT00:00:00')
+
+        # Check to see if this position started on or after the threshold
+        if position_start >= start_date_threshold:
+
+          # Generate a conveniently unique identifier
+          member_position_id = matched_member.attrib['datadotparl_id'] + '/' + position.attrib['Id']
+
+          # Generate a minister position
+          new_position = dict()
+          new_position['id']             = 'uk.parliament.data/Member/' + matched_member.attrib['datadotparl_id'] + '/GovernmentPost/' + position.attrib['Id']
+          new_position['datadotparl_id'] = member_position_id
+          new_position['position']       = position.find('HansardName').text if position.find('HansardName').text is not None else position.find('Name').text
+          new_position['source']         = 'datadotparliament'
+          new_position['name']           = matched_member.attrib['firstname'] + ' ' + matched_member.attrib['lastname']
+          new_position['matchid']        = matched_member.attrib['id']
+          new_position['dept']           = ''
+          new_position['fromdate']       = position_start.strftime('%Y-%m-%d')
+          new_position['todate']         = datetime.strptime(position.find('EndDate').text, '%Y-%m-%dT00:00:00').strftime('%Y-%m-%d') if position.find('EndDate').text else '9999-12-31'
+
+          etree.SubElement(ministers, 'moffice', new_position)
+
+  print 'Done for ' + source_file + '.xml.'
+
+# Write out the updated ministers file
+ministers_xml = etree.ElementTree(ministers)
+ministers_xml.write('../members/ministers-2010.xml')
+print 'ministers-2010.xml updated!'
+
+print 'Done!'
