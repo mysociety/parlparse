@@ -29,26 +29,25 @@ for source_file in source_files:
     exit(1)
 
   # Extract the members
-  parl_members = parl_members_xml.getroot()
-  if parl_members.tag != 'Members':
-    print 'Root tag is not "Members" as expected, got "' + parl_members.tag + '". Has the schema changed?'
+  parl_members_slim = parl_members_xml.getroot()
+  if parl_members_slim.tag != 'Members':
+    print 'Root tag is not "Members" as expected, got "' + parl_members_slim.tag + '". Has the schema changed?'
     exit(1)
 
-  print 'Found ' + str(len(parl_members)) + ' members from ' + source_file + '.xml.'
+  print 'Found ' + str(len(parl_members_slim)) + ' members from ' + source_file + '.xml.'
 
   # Enrich the data!
 
-  for member in parl_members:
+  parl_members = dict()
+
+  for member in parl_members_slim:
     try:
       member_fullbio_xml = etree.parse('../rawdata/datadotparl/' + member.attrib['Member_Id'] + '.xml')
     except:
       print 'Data from ' + member.attrib['Member_Id'] + '.xml does not seem to be valid XML.'
     else:
-      member_fullbio = member_fullbio_xml.getroot()
-      # Remove the existing member record, it's boring.
-      parl_members.remove(member)
-      # Tack the new member record on, it's nice and rich.
-      parl_members.append(member_fullbio.find('Member'))
+      # Tack the rich record on to parl_members
+      parl_members[member.attrib['Member_Id']] = member_fullbio_xml.getroot().find('Member')
 
   ##########
   # At this point parl_members contains a complete set of data.
@@ -88,7 +87,8 @@ for source_file in source_files:
 
   # Compare parl_members to unmatched_members
 
-  for parl_member in parl_members:
+  for member_id, parl_member in parl_members.items():
+
     if parl_member.find('ListAs').text in unmatched_members:
       for unmatched_member in unmatched_members[parl_member.find('ListAs').text]:
 
@@ -112,10 +112,11 @@ for source_file in source_files:
   for matched_member in matched_members:
 
     # Get data from parliament
-    parl_data = parl_members.find('Member[@Member_Id="' + matched_member.attrib['datadotparl_id'] + '"]')
+    parl_data = parl_members[matched_member.attrib['datadotparl_id']]
 
     # Loop through positions for that person
     if parl_data.find('GovernmentPosts') is not None:
+
       for position in parl_data.find('GovernmentPosts').findall('GovernmentPost'):
 
         # Parse the start date into an actual datetime for comparison
