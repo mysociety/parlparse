@@ -4,7 +4,7 @@
 # Get data using crawl-datadotparl-members.py
 
 import urllib2
-import xml.etree.ElementTree as etree
+from lxml import etree
 from datetime import datetime
 
 # Source XML files to use for the list of members
@@ -15,6 +15,9 @@ source_files = [
 # Position start date threshold
 # Currently 2010 election (2010-05-11)
 start_date_threshold = datetime(2010, 5, 11)
+
+parser = etree.ETCompatXMLParser()
+etree.set_default_parser(parser)
 
 # Create the master ministers element
 ministers = etree.Element('publicwhip')
@@ -129,7 +132,8 @@ for source_file in source_files:
           member_position_id = matched_member.attrib['datadotparl_id'] + '/' + position.attrib['Id']
 
           # Generate a minister position
-          new_position = dict()
+          new_position = etree.SubElement(ministers, 'moffice')
+          new_position = new_position.attrib
           new_position['id']             = 'uk.parliament.data/Member/' + matched_member.attrib['datadotparl_id'] + '/GovernmentPost/' + position.attrib['Id']
           new_position['datadotparl_id'] = member_position_id
           new_position['position']       = position.find('HansardName').text if position.find('HansardName').text is not None else position.find('Name').text
@@ -140,13 +144,11 @@ for source_file in source_files:
           new_position['fromdate']       = position_start.strftime('%Y-%m-%d')
           new_position['todate']         = datetime.strptime(position.find('EndDate').text, '%Y-%m-%dT00:00:00').strftime('%Y-%m-%d') if position.find('EndDate').text else '9999-12-31'
 
-          etree.SubElement(ministers, 'moffice', new_position)
-
   print 'Done for ' + source_file + '.xml.'
 
 # Write out the updated ministers file
 ministers_xml = etree.ElementTree(ministers)
-ministers_xml.write('../members/ministers-2010.xml')
+ministers_xml.write('../members/ministers-2010.xml', pretty_print=True)
 print 'ministers-2010.xml updated!'
 
 print 'Done!'
