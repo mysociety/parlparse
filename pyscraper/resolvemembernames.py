@@ -243,7 +243,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             # we load these two positions and alias them into fullnames,
             # as they are often used in wrans instead of fullnames, with
             # no way of telling.
-            if attr["position"] in ("Solicitor General", "Advocate General for Scotland", "Attorney General"):
+            if attr["position"] in ("Solicitor General", "Advocate General for Scotland", "Attorney General", "The Solicitor-General"):
                 if self.officetopersonmap.has_key(attr["id"]):
                     # find all the office ids for this person
                     person = self.officetopersonmap[attr["id"]]
