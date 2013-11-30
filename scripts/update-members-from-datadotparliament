@@ -119,6 +119,7 @@ for source_file in source_files:
 
     # Loop through positions for that person
     if parl_data.find('GovernmentPosts') is not None:
+      counter = {}
 
       for position in parl_data.find('GovernmentPosts').findall('GovernmentPost'):
 
@@ -131,10 +132,16 @@ for source_file in source_files:
           # Generate a conveniently unique identifier
           member_position_id = matched_member.attrib['datadotparl_id'] + '/' + position.attrib['Id']
 
+          # Possibly add a unique counter if person holds same post twice
+          extra = ''
+          if counter.setdefault(position.attrib['Id'], 0):
+            extra = '/%d' % counter[position.attrib['Id']]
+          counter[position.attrib['Id']] += 1
+
           # Generate a minister position
           new_position = etree.SubElement(ministers, 'moffice')
           new_position = new_position.attrib
-          new_position['id']             = 'uk.parliament.data/Member/' + matched_member.attrib['datadotparl_id'] + '/GovernmentPost/' + position.attrib['Id']
+          new_position['id']             = 'uk.parliament.data/Member/%s/GovernmentPost/%s%s' % (matched_member.attrib['datadotparl_id'], position.attrib['Id'], extra)
           new_position['datadotparl_id'] = member_position_id
           new_position['position']       = position.find('HansardName').text if position.find('HansardName').text is not None else position.find('Name').text
           new_position['source']         = 'datadotparliament'
