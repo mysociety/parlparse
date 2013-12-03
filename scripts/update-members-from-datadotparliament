@@ -65,20 +65,9 @@ for source_file in source_files:
     print 'Root tag is not "publicwhip" as expected in all-members-2010.xml, got "' + current_members.tag + '".'
     exit(1)
 
-  print 'Found ' + str(len(current_members)) + ' members from all-members.xml.'
+  print 'Found ' + str(len(current_members)) + ' members from all-members-2010.xml.'
 
-  # Import the current people.xml
-  people_xml = etree.parse('../members/people.xml')
-
-  # Extract the members
-  people = people_xml.getroot()
-  if people.tag != 'publicwhip':
-    print 'Root tag is not "publicwhip" as expected in people.xml, got "' + current_members.tag + '".'
-    exit(1)
-
-  print 'Found ' + str(len(people)) + ' people from people.xml.'
-
-  # From the current members, find those who aren't currently matched.
+  # From the current members, find those who aren't currently explicitly matched.
 
   unmatched_members = dict()
 
