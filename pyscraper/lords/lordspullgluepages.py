@@ -64,6 +64,12 @@ def ExtractIndexContents(urlx, sdate):
         lktex = re.sub('^(.*?)<hr(?: ?/)?>.*$(?s)', r'\1', lktex)
         lktex = re.sub('<!--.*?-->(?s)', '', lktex)
 
+        # 2012 summer recess Lords written answer handling
+        #dmy = sdate[8:10]+sdate[5:7]+sdate[0:4]
+        #m = re.search('<a href="(/pa/ld/ldtoday/writtens/' + dmy + '\.htm)">', lktex)
+        #if m:
+        #    return ( ( m.group(1), 'Written Answers and Statements' ), )
+
 	# get the links
         res = re.findall('<h[23] align="?center"?><a href="([^"]*?\.htm)#[^"]*"(?: shape="rect")?>([^<]*)</a>\s*</h[23]>(?is)', lktex)
         if not res:
@@ -135,6 +141,10 @@ def GlueByNext(fout, urla, urlx, sdate):
 			
                 # For 2013-02-26, 2013-05-08, so far
                 sr = re.sub('<div id="content-small"><!--end', '<div id="content-small"> <hr><!--end', sr)
+
+                # 2012 summer recess hack
+                #if re.match('http://www.publications.parliament.uk/pa/ld/ldtoday/writtens/..0[78]2012\.htm$', url):
+                #        sr = sr.replace('<div class="hansardContent">', '<hr><a name="column_WA0">').replace('<hr/>', '<hr>')
 
                 # post 2008-03, stupid duplication of <b>s
                 sr = re.sub('<b>((?:<a name="[^"]*"></a>)*)<b>', '\\1<b>', sr)
