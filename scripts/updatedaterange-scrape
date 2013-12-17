@@ -24,8 +24,9 @@ cd ~/parlparse/pyscraper
 cd ~/parlparse/pyscraper/sp
 ./get-official-reports-new.py --daily --quiet
 
-cd ~/parlparse/pyscraper/future
-./get_future_business_and_calendar.py --quiet
+# Currently totally unused
+#cd ~/parlparse/pyscraper/future
+#./get_future_business_and_calendar.py --quiet
 
 # Return error code
 exit $RET
