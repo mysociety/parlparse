@@ -26,6 +26,8 @@ any questions. Or join the <a
 href="https://secure.mysociety.org/admin/lists/mailman/listinfo/developers-
 public ">mySociety public email list</a>, and say hello don't be shy.
 
+<hr>
+
 ### Members of Parliament
 
 Structured data about Members of Parliament. These are all XML files, open them
@@ -52,9 +54,7 @@ byelections and party changes or whip revocations are recorded.
     fromdate="2005-05-05" todate="9999-12-31"
     fromwhy="general_election" towhy="still_in_office"
 />
-{% endhighlight %}
 
-{% highlight xml %}
 <lord
     id="uk.org.publicwhip/lord/100633"
     house="lords"
@@ -188,3 +188,127 @@ How much each MP claimed as expenses from parliament for travel and so on.
 
 Attendance, rebellion rate and individual votes in divisions are available from
 the [Public Whip project](http://publicwhip.owl/project/data.php).
+
+<hr>
+
+### Hansard Reports
+
+#### Debates (Commons), Debates (Lords), Westminster Hall
+
+XML files containing Debates in the main chambers and in Westminster Hall from
+the start of the 2001 parliament (Commons) or 1999 reform (Lords). Speeches and
+the speaker are labelled with unique identifiers, as are divisions and how each
+MP or Lord voted.
+
+{% highlight xml %}
+<speech id="uk.org.publicwhip/debate/2003-06-26.1219.2"
+    speakerid="uk.org.publicwhip/member/931" speakername="Peter Hain" colnum="1219"
+    time="12:32:00"
+    url="http://www.publications.parliament.uk/pa/cm200203/
+    cmhansrd/vo030626/debtext/30626-10.htm#30626-10_spnew16">
+<p>I am a Cabinet Minister and I support the Government's policies. He can ask
+me another question along those lines next time, and continue to do so.</p>
+</speech>
+
+<major-heading id="uk.org.publicwhip/debate/2003-06-26.1220.0" nospeaker="true"
+    colnum="1220" time="12:32:00"
+    url="http://www.publications.parliament.uk/pa/cm200203/
+    cmhansrd/vo030626/debtext/30626-10.htm#30626-10_head0">
+CAP Reform
+</major-heading>
+{% endhighlight %}
+
+#### Written Answers (Commons), Written Answers (Lords)
+
+XML files containing Written Answers to questions MPs and Lords have asked
+ministers. Data from the start of the 2001 parliament (Commons) or 1999 reform
+(Lords). Questions and replies are clearly distinguished, and speakers labelled
+with their unique identifier.
+
+{% highlight xml %}
+<minor-heading id="uk.org.publicwhip/wrans/2005-06-29.7913.h"
+    oldstyleid="uk.org.publicwhip/wrans/2005-06-29.1624W.6" nospeaker="True"
+    colnum="1624W"  url="http://www.publications.parliament.uk/pa/cm200506/
+    cmhansrd/cm050629/text/50629w24.htm#50629w24.html_wqn8">
+New Schools
+</minor-heading>
+
+<ques id="uk.org.publicwhip/wrans/2005-06-29.7913.q0"
+    oldstyleid="uk.org.publicwhip/wrans/2005-06-29.1624W.7"
+    speakerid="uk.org.publicwhip/member/1642" speakername="Francis Maude"
+    colnum="1624W"  url="http://www.publications.parliament.uk/pa/cm200506/
+    cmhansrd/cm050629/text/50629w24.htm#50629w24.html_wqn8">
+<p qnum="7913">To ask the Secretary of State for Education and Skills how many
+new <i>(a)</i> primary and <i>(b)</i> secondary schools were built in each
+English county in each of the last eight years.</p>
+</ques>
+
+<reply id="uk.org.publicwhip/wrans/2005-06-29.7913.r0"
+    oldstyleid="uk.org.publicwhip/wrans/2005-06-29.1624W.8"
+    speakerid="uk.org.publicwhip/member/1776" speakername="Jacqui Smith"
+    colnum="1624W"  url="http://www.publications.parliament.uk/pa/cm200506/
+    cmhansrd/cm050629/text/50629w24.htm#50629w24.html_spnew8">
+<p>The construction of new schools is decided upon by each local authority in
+accordance with its asset management plan. Figures on how many new <i>(a)</i>
+primary and <i>(b)</i> secondary schools were built in each English county in
+each of the last eight years are not held centrally.</p>
+</reply>
+{% endhighlight %}
+
+#### Written Ministerial Statements (Commons), Written Ministerial Statements (Lords)
+
+XML files containing statements which ministers made to the houses in writing.
+These are a bit like press releases, but in parliamentary language.
+
+<hr>
+
+### Getting the Data
+
+**Warning: This may take a while, there is a *lot* of data.**
+
+You can get a checkout of the latest data using SVN:
+
+`svn co http://project.knowledgeforge.net/ukparse/svn/trunk/parldata`
+
+<hr>
+
+### Running the Parser
+
+Python code downloads data from the UK parliament website, stores it as an HTML
+file for each day, and parses those files into XML files. To run this parser
+yourself, you'll need the following...
+
+* Parser source code - you can get this from SVN:
+
+  `svn co http://project.knowledgeforge.net/ukparse/svn/trunk/parlparse`
+
+  On Windows, use TortoiseSVN and the same URL.
+
+* Python - Under Windows download Python 2.4. Unix-based operating systems
+probably have Python already installed, but you may need to upgrade to Python
+2.4. You also need the mxDateTime module by eGenix, go to downloads on that
+page. Under Debian this is in the package python2.4-egenix-mxdatetime.
+
+* Patch and Diff - The parser has a preprocessor which applies patches to Hansard
+to fix uncommon errors. This is done using the tools "patch" and "diff", which
+will be installed by default if you are using Unix. On Windows you can download
+them from GNU utilities for win32.
+
+#### Instructions
+
+Use the command line and change to the pyscraper directory. The script called
+`lazyrunall.py` in there does all of the screen scraping from Hansard. Run it with
+no parameters to find out its syntax. Then do something like this, include a
+date limit as the parser gives errors if you go too far back.
+
+`./lazyrunall.py --from 2001-06-01 scrape parse debates wrans`
+
+That will screen scrape back to the start of the 2001 parliament, writing the
+files in `parldata/cmpages`. Then it will parse these files into XML files and put
+them in `parldata/scrapedxml`. On Unix the parldata folder is in your home
+directory, on Windows it will be in the same folder as the publicwhip folder
+which contains the source code.
+
+The command above will gather both debates and written answers (wrans). You can run a command again and it will lazily make only those files which weren't downloaded/parsed last time. When you are done, you should have lots of XML files in the `parldata/scrapedxml/debates` folder.
+
+What to fix - Ask us for help or ideas if you're extending or improving the parser. Send us patches for even tiny changes you make to get it running on your machine. There's lots of stuff left to do.
