@@ -5,6 +5,11 @@
 
 source ~/parlparse/scripts/consts
 
+# run data.parliament scrapers
+cd ~/parlparse/scripts
+./crawl-datadotparl-members
+./update-members-from-datadotparliament
+
 # Run member scrapers
 # TODO: add more, write to temp file, check errors
 cd ~/parlparse/rawdata/lords

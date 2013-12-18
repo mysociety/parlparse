@@ -44,8 +44,8 @@ svn -q update
 # Update svn checkout which is mapped to http://ukparse.kforge.net/svn/
 # Is this needed, given knowlegdeforge provide totally up-to-date
 # http://project.knowledgeforge.net/ukparse/svn/trunk/ ?
-cd /data/vhost/ukparse.kforge.net/ukparse/parldata
-svn update -q
-cd /data/vhost/ukparse.kforge.net/ukparse/parlparse
-svn update -q
+# cd /data/vhost/ukparse.kforge.net/ukparse/parldata
+# svn update -q
+# cd /data/vhost/ukparse.kforge.net/ukparse/parlparse
+# svn update -q
 
