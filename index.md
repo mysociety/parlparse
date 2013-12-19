@@ -264,11 +264,21 @@ These are a bit like press releases, but in parliamentary language.
 
 ### Getting the Data
 
-**Warning: This may take a while, there is a *lot* of data.**
+**Warning: There is a *lot* of data, downloading it all may take a while.**
 
-You can get a checkout of the latest data using SVN:
+The easiest way to get hold of the data is via rsync to
+`data.theyworkforyou.com::parldata`. You can see what's available by running:
 
-`svn co http://project.knowledgeforge.net/ukparse/svn/trunk/parldata`
+`rsync data.theyworkforyou.com::parldata`
+
+You can then use rsync to retrieve content as necessary. Check `man rsync` for
+more information on the available options.
+
+We strongly recommend that where possible you use `--exclude '.svn' --exclude
+'tmp/'` switches, as these are used for processing and versioning, and aren't
+relevant to the data. A command to download the complete dataset is:
+
+`rsync -az --progress --exclude '.svn' --exclude 'tmp/' data.theyworkforyou.com::parldata .`
 
 <hr>
 
