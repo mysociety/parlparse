@@ -5,7 +5,7 @@
 
 import datetime, os, commands
 
-base = '/home/parlparse/'
+base = os.path.expanduser('~/')
 base_html = base + 'parldata/cmpages/'
 base_xml = base + 'parldata/scrapedxml/'
 base_scraper = base + 'parlparse/pyscraper/'
