@@ -29,7 +29,7 @@ from BeautifulSoup import NavigableString
 
 from resolvemembernames import memberList
 
-official_report_url_format = 'http://www.scottish.parliament.uk/parliamentarybusiness/28862.aspx?r={}&mode=html'
+official_report_url_format = 'http://www.scottish.parliament.uk/parliamentarybusiness/28862.aspx?r={0}&mode=html'
 
 DIVISION_HEADINGS = ('FOR', 'AGAINST', 'ABSTENTIONS', 'SPOILED VOTES')
 
@@ -285,7 +285,7 @@ def get_title_and_date(soup, page_id):
         report_date = dateparser.parse(m.group(2)).date()
         return (session, report_date)
     else:
-        raise Exception, "Failed to parse the title and date from: {}".format(title)
+        raise Exception, "Failed to parse the title and date from: {0}".format(title)
 
 acceptable_elements = ['a', 'abbr', 'acronym', 'address', 'area', 'b',
       'big', 'blockquote', 'body', 'br', 'button', 'caption', 'center',
