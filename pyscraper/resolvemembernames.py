@@ -592,7 +592,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 
         # Match between office and name - store for later use in the same days text
         if speakeroffice <> "":
-            if input == 'The Temporary Chair':
+            if input in ('The Temporary Chair', 'Madam Deputy Speaker'):
                 self.debateofficehistory[input] = set(ids)
             else:
                 self.debateofficehistory.setdefault(input, set()).update(ids)
