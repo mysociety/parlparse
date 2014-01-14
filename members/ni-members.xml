@@ -3652,7 +3652,15 @@
     id="uk.org.publicwhip/member/90491"
     title="" firstname="Pam" lastname="Brown"
     constituency="South Antrim" party="DUP"
-    fromdate="2012-03-20" todate="9999-12-31"
+    fromdate="2012-03-20" todate="2013-12-13"
+    fromwhy="changed_name" towhy="changed_name"
+/>
+<!-- date of marriage from https://twitter.com/PCameronMLA/status/411575120965423104 -->
+<member_ni
+    id="uk.org.publicwhip/member/90492"
+    title="" firstname="Pam" lastname="Cameron"
+    constituency="South Antrim" party="DUP"
+    fromdate="2013-12-13" todate="9999-12-31"
     fromwhy="changed_name" towhy="still_in_office"
 />
 </publicwhip>

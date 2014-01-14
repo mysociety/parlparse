@@ -2781,11 +2781,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/1252"/>
     <office id="uk.org.publicwhip/moffice/1302"/>
     <office id="uk.org.publicwhip/moffice/1434"/>
-    <office id="uk.parliament.data/Member/462/Committee/225" current="yes"/>
-    <office id="uk.parliament.data/Member/462/Committee/97" current="yes"/>
-    <office id="uk.parliament.data/Member/462/OppositionPost/956"/>
-    <office id="uk.parliament.data/Member/462/OppositionPost/956/1"/>
-    <office id="uk.parliament.data/Member/462/OppositionPost/969"/>
 </person>
 <person id="uk.org.publicwhip/person/10233" latestname="Baroness Golding">
     <office id="uk.org.publicwhip/lord/100244" current="yes"/>
@@ -8016,7 +8011,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/177"/>
     <office id="uk.org.publicwhip/moffice/193"/>
     <office id="uk.org.publicwhip/moffice/196"/>
-    <office id="uk.parliament.data/Member/413/Committee/143" current="yes"/>
+    <office id="uk.parliament.data/Member/413/Committee/143"/>
     <office id="uk.parliament.data/Member/413/OppositionPost/14"/>
     <office id="uk.parliament.data/Member/413/OppositionPost/867" current="yes"/>
     <office id="uk.parliament.data/Member/413/OppositionPost/869"/>
@@ -74312,9 +74307,10 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/member/90139"/>
     <office id="uk.org.publicwhip/member/90256"/>
 </person>
-<person id="uk.org.publicwhip/person/25134" latestname="Pam Brown">
+<person id="uk.org.publicwhip/person/25134" latestname="Pam Cameron">
     <office id="uk.org.publicwhip/member/90425"/>
-    <office id="uk.org.publicwhip/member/90491" current="yes"/>
+    <office id="uk.org.publicwhip/member/90491"/>
+    <office id="uk.org.publicwhip/member/90492" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13758" latestname="Thomas Buchanan">
     <office id="uk.org.publicwhip/member/90140"/>
