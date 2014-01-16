@@ -54,8 +54,6 @@ for source_type, parl_members_url in source_urls.items():
 
     member_url = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/id=' + member.attrib['Member_Id'] + '/FullBiog/'
 
-    print 'Member ' + member.attrib['Member_Id'] + ': ' + member.find('DisplayAs').text
-
     # Grab the URL
     try:
       parl_member_raw = urllib2.urlopen(member_url)
