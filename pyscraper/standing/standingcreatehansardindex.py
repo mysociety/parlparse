@@ -87,6 +87,9 @@ def GetReportProceedings(urlpage, year):
                 vdat = re.sub('(110207s01.htm">Committee Debate)( *</a>)', r'\1 1st sitting\2', vdat)
         if year == "2013":
                 vdat = re.sub('(131211s01.htm">Committee Debate)( *</a>)', r'\1 1st sitting\2', vdat)
+	if urlpage == 'http://services.parliament.uk/bills/2013-14/care/committees/houseofcommonspublicbillcommitteeonthecarebillhl201314.html':
+		# Missing 1st/2nd session
+		vdat = re.sub('(Committee Debate: 3rd sitting</a>)', r'\1 <a href="http://www.publications.parliament.uk/pa/cm201314/cmpublic/care/140109/pm/140109s01.htm">Committee Debate: 2nd sitting</a> <a href="http://www.publications.parliament.uk/pa/cm201314/cmpublic/care/140109/am/140109s01.htm">Committee Debate: 1st sitting</a>', vdat)
 
 	lks = re.findall('(?si)<a\s+href\s*=\s*"([^"]*)">(.*?)(?:</a>|<tr>|</table>)(?i)', vdat)
 	for lk in lks:
