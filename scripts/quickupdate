@@ -58,11 +58,11 @@ for type, dir in dirs.items():
 
 # Scrape
 if rescrape:
-    run_command('', 'lazyrunall.py --date=' + yesterday + ' scrape ' + ' '.join(rescrape))
+    run_command('', './lazyrunall.py --date=' + yesterday + ' scrape ' + ' '.join(rescrape))
 
 # Parse
 if reparse:
-    run_command('', 'lazyrunall.py --date=' + yesterday + ' parse ' + ' '.join(reparse) + ' --patchtool')
+    run_command('', './lazyrunall.py --date=' + yesterday + ' parse ' + ' '.join(reparse) + ' --patchtool')
 run_command('standing/', './parse.py --patchtool')
 
 print '# Parse/fix any older things from the cron email now'
