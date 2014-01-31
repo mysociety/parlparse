@@ -108,9 +108,9 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
     safejfout = jfout
     assert dname in ('wrans', 'debates', 'wms', 'westminhall', 'lordspages')
 
-    notus = False
-    if sdate > '2006-05-07' and re.search('<notus-date', text):
-        notus = True
+    decode_from_utf8 = False
+    if sdate > '2014-01-29' or (sdate > '2006-05-07' and re.search('<notus-date', text)):
+        decode_from_utf8 = True
         text = re.sub("\n", ' ', text)
         text = re.sub("\s{2,}", ' ', text) # No need for multiple spaces anywhere
         text = re.sub("</?notus-date[^>]*>", "", text)
@@ -144,6 +144,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         if dname == 'lordspages':
             text = re.sub(' shape="rect">', '>', text)
             text = re.sub(' class="anchor"', '', text)
+            text = re.sub(' class="anchor noCont"', '', text)
             text = re.sub(' class="anchor-column"', '', text)
             text = re.sub(' class="columnNum"', '', text)
             text = re.sub('(<a[^>]*>) (</a>)', r'\1\2', text)
@@ -170,7 +171,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         text = re.sub('(?i)((?:Moved|Tabled) By)<I></I>((?:<a name="[^"]*"></a>)*)<b>(.*?)</b>', r'\1 \2\3', text)
         text = re.sub('(?i)(Moved on .*? by )<b>(.*?)</b>', r'\1\2', text)
 
-    if notus:
+    if decode_from_utf8:
         # Some UTF-8 gets post-processed into nonsense
         # XXX - should probably be in miscfuncs.py/StraightenHTMLrecurse with other character set evil
         text = text.replace("\xe2\x22\xa2", "&trade;")
@@ -188,6 +189,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         try:
             text = text.decode('utf-8').encode('ascii', 'xmlcharrefreplace')
         except:
+            print "Failed to decode text from utf-8"
             pass
 
     # They've started double bolding names, parts of names, splitting names up, and having a "[" on its own
