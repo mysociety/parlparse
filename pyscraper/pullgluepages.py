@@ -409,6 +409,7 @@ def ProcessIndexUrl(url, dgf, forcescrape):
         # import pdb;pdb.set_trace()
         for iconti in res:
                 uo = urlparse.urljoin(url, iconti)
+		print uo
                 if (not urla) or (urla[-1] != uo):
                         urla.append(uo)
 
