@@ -31,6 +31,8 @@ def RunRegmemFilters2010(fout, text, sdate, sdatever):
         t = BeautifulStoneSoup(text)
         for page in t('page'):
                 title = page.h2.renderContents()
+                if title == 'PEARCE, Teresa (Erith and Thamesmead':
+                        title += ')'
                 res = re.search("^([^,]*), ([^(]*) \((.*)\)\s*$", title)
                 if not res:
                         raise ContextException, "Failed to break up into first/last/cons: %s" % title
