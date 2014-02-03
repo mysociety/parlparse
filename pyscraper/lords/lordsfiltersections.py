@@ -168,6 +168,7 @@ redivisionon = re.compile('''(?ix)
             | to [ ] the [ ] Motion
             | that [ ] the [ ] Question [ ] be [ ] now [ ] put
             | to [ ] Resume
+            | that [ ] the [ ] House [ ] do [  ] now [ ] resume
             | to [ ] Resolve
           ) (?: [ ] should )? (?: [ ] Stand [ ] Part )? (?: [ ] of )? (?: [ ] The [ ] Bill )?
         | (?: the [ ] )? Motion
