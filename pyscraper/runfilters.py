@@ -109,7 +109,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
     assert dname in ('wrans', 'debates', 'wms', 'westminhall', 'lordspages')
 
     decode_from_utf8 = False
-    if sdate > '2014-01-29' or (sdate > '2006-05-07' and re.search('<notus-date', text)):
+    if sdate > '2014-01-01' or (sdate > '2006-05-07' and re.search('<notus-date', text)):
         decode_from_utf8 = True
         text = re.sub("\n", ' ', text)
         text = re.sub("\s{2,}", ' ', text) # No need for multiple spaces anywhere
