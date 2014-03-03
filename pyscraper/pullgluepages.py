@@ -133,7 +133,9 @@ def GlueByNextNew(outputFileName, urla, urlx, sdate):
 	fout.write('<pagex url="%s" scrapedate="%s" scrapetime="%s" type="printed" />\n' % \
 			(urlx, time.strftime('%Y-%m-%d', lt), time.strftime('%X', lt)))
 
-	# import pdb;pdb.set_trace()
+	if re.match(r'http://www.publications.parliament.uk/pa/cm201314/cmhansrd/cm140224/debindx/140224-x.htm', urlx) and sdate=='2014-02-24':
+                urla = [urla[0]]
+
 	# loop which scrapes through all the pages following the nextlinks
 	while urla:
                 url = urla[0]
@@ -494,6 +496,8 @@ def CmIndexFromNewPage(date, type='commons'):
                 if date == mx.DateTime.Date(2012,10,1): return []
                 urllinkpage = '%s?d=%s&m=%d&y=%d' % (url_bydate_index_lords, date.day, date.month, date.year)
         else:
+                if date == mx.DateTime.Date(2014,2,28):
+		    date = mx.DateTime.Date(2014,3,28)
                 urllinkpage = '%s?d=%s&m=%d&y=%d' % (url_bydate_index, date.day, date.month, date.year)
         urlinkpage = urllib.urlopen(urllinkpage)
 	srlinkpage = urlinkpage.read()
