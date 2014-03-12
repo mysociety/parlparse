@@ -164,7 +164,7 @@ redivisionon = re.compile('''(?ix)
         | (?: whether [ ] )? (?: the [ ] )? (?: Amendment | Motion | Clause ) [ ] (
               [A-Za-z0-9]+
             | [A-Za-z0-9]+ [ ] to [ ] motion [ ] [A-Za-z0-9]+
-            | [A-Za-z0-9]+, [ ] as [ ] an [ ] amendment [ ] to [ ] Amendment [ ] [A-Za-z0-9]+
+            | [A-Za-z0-9]+, [ ] as [ ] an [ ] amendment [ ] to [ ] (?: Amendment | Motion ) [ ] [A-Za-z0-9]+
             | to [ ] the [ ] Motion
             | that [ ] the [ ] Question [ ] be [ ] now [ ] put
             | to [ ] Resume
