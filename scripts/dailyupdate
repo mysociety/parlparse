@@ -36,7 +36,7 @@ svn -q update
 
 # Add any new scrapedxml
 cd ~/parldata/scrapedxml
-for X in debates wrans westminhall wms regmem lordspages lordswms lordswrans standing ni sp sp-questions sp-written sp-motions; do
+for X in debates wrans westminhall wms regmem lordspages lordswms lordswrans standing ni sp-new sp-questions sp-written sp-motions; do
     find $X -name "*.xml" -exec svn -q add {} +
 done
 svn -q update
