@@ -708,6 +708,9 @@ if __name__ == '__main__':
     parser.add_option('--to', dest='to_date',
                       default=str(datetime.date.today()),
                       help="only parse files up to this date (inclusive)")
+    parser.add_option('--number', dest='file_number', type='int',
+                      default=None,
+                      help="only parse the source file with this number")
     (options, args) = parser.parse_args()
 
     if options.doctest:
@@ -719,6 +722,7 @@ if __name__ == '__main__':
 
     from_date = dateparser.parse(options.from_date).date()
     to_date = dateparser.parse(options.to_date).date()
+    file_number = options.file_number
 
     html_directory = "../../../parldata/cmpages/sp/official-reports-new/"
     xml_output_directory = "../../../parldata/scrapedxml/sp-new/"
@@ -730,7 +734,7 @@ if __name__ == '__main__':
         # than 10 days before from_date.  There are cases where this
         # won't work properly, but will save lots of time in the
         # typical case.
-        if not options.force:
+        if not (file_number or options.force):
             earliest_to_consider = datetime.datetime.combine(from_date,
                                                              datetime.time())
             earliest_to_consider -= datetime.timedelta(days=10)
@@ -749,6 +753,10 @@ if __name__ == '__main__':
         page_id = int(m.group(1), 10)
         # if page_id < 8098:
         #     continue
+
+        if (file_number is not None) and (file_number != page_id):
+            continue
+
         parsed_page = None
         try:
             if os.path.getsize(html_filename) == 0:
