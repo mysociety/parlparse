@@ -3,7 +3,7 @@ layout: page
 title: Overview
 ---
 
-###### What can I find here?
+## What can I find here?
 
 Structured versions of publicly available data from the UK parliament, and the
 source code that was used to generate the data. This is the engine of clever
@@ -12,15 +12,12 @@ and <a href="http://www.publicwhip.org.uk">The Public Whip</a>. You might find
 the <a href="http://www.theyworkforyou.com/api">TheyWorkForYou API</a> easier to
 use.
 
-###### Who can I talk to about it?
+## Who can I talk to about it?
 
-Contact the TheyWorkForYou team at <a
-href="mailto:team&#64;theyworkforyou.com">team&#64;theyworkforyou.com</a> with
-any questions, or join the <a
+<a href="http://www.theyworkforyou.com/contact/">Contact the TheyWorkForYou
+team</a> with any questions, or join the <a
 href="https://secure.mysociety.org/admin/lists/mailman/listinfo/developers-
-public ">mySociety public email list</a>, and say hello.
-
-<hr>
+public ">mySociety public email list</a> and say hello.
 
 ## Types of Data
 
