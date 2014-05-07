@@ -31,7 +31,7 @@ def RunRegmemFilters2010(fout, text, sdate, sdatever):
         t = BeautifulStoneSoup(text)
         for page in t('page'):
                 title = page.h2.renderContents()
-                if title == 'PEARCE, Teresa (Erith and Thamesmead':
+                if title in ('HAGUE, Rt Hon William (Richmond (Yorks)', 'PEARCE, Teresa (Erith and Thamesmead'):
                         title += ')'
                 res = re.search("^([^,]*), ([^(]*) \((.*)\)\s*$", title)
                 if not res:
@@ -63,6 +63,7 @@ def RunRegmemFilters2010(fout, text, sdate, sdatever):
                                                 fout.write('\t</category>\n')
                                         category, categoryname = m.groups()
                                         subcategory = None
+                                        categoryname = re.sub('<[^>]*>(?s)', '', categoryname).strip()
                                         fout.write('\t<category type="%s" name="%s">\n' % (category, categoryname))
                                         continue
                         if row.get('class') == 'spacer': continue

@@ -8341,7 +8341,7 @@ B - bishop
 	lordofname_full="Mourne"
 	county="the County of Down"
 	peeragetype="L" affiliation="XB"
-	fromdate="2004-07-12" todate="9999-12-31"
+	fromdate="2004-07-12" todate="2014-03-13" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100802"
@@ -9561,12 +9561,12 @@ B - bishop
 />
 
 <lord
-	id="uk.org.publicwhip/lord/100938"
-	house="lords"
-	forenames="John Packer"
-	title="Bishop" lordname="" lordofname="Ripon and Leeds"
-	peeragetype="B" affiliation="Bp"
-	fromdate="2006-10-23" todate="9999-12-31"
+    id="uk.org.publicwhip/lord/100938"
+    house="lords"
+    forenames="John Packer"
+    title="Bishop" lordname="" lordofname="Ripon and Leeds"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2006-10-23" todate="2014-01-31" towhy="retired"
 />
 
 <lord
@@ -10315,7 +10315,7 @@ B - bishop
     forenames="Christopher John Hill"
     title="Bishop" lordname="" lordofname="Guildford"
     peeragetype="B" affiliation="Bp"
-    fromdate="2010-05-27" todate="9999-12-31"
+    fromdate="2010-05-27" todate="2013-11-30" towhy="retired"
 />
 
 <lord
@@ -11603,7 +11603,7 @@ B - bishop
     forenames="William Nigel Stock"
     title="Bishop" lordname="" lordofname="St Edmundsbury and Ipswich"
     peeragetype="B" affiliation="Bp"
-    fromdate="2011-03-08" todate="9999-12-31"
+    fromdate="2011-03-08" todate="2013-10-20" towhy="retired"
 />
 <lord
     id="uk.org.publicwhip/lord/101132"
@@ -12110,7 +12110,7 @@ B - bishop
 <lord
     id="uk.org.publicwhip/lord/101181"
     house="lords"
-    forenames="James William Scobie"
+    forenames="James William Scobie Newcome"
     title="Bishop" lordname="" lordofname="Carlisle"
     peeragetype="B" affiliation="Bp"
     fromdate="2013-10-23" todate="9999-12-31"
@@ -12301,6 +12301,39 @@ B - bishop
     title="Bishop" lordname="" lordofname="Peterborough"
     peeragetype="B" affiliation="Bp"
     fromdate="2014-02-04" todate="9999-12-31"
+/>
+<lord
+    id="uk.org.publicwhip/lord/101200"
+    house="lords"
+    forenames="Paul Roger Butler"
+    title="Bishop" lordname="" lordofname="Durham"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2014-03-03" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101201"
+    house="lords"
+    forenames="Christopher Richard James Foster"
+    title="Bishop" lordname="" lordofname="Portsmouth"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2014-02-06" todate="9999-12-31"
+/>
+<lord
+    id="uk.org.publicwhip/lord/101202"
+    house="lords"
+    forenames="Stephen Geoffrey Cottrell"
+    title="Bishop" lordname="" lordofname="Chelmsford"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2014-03-25" todate="9999-12-31"
+/>
+<lord
+    id="uk.org.publicwhip/lord/101203"
+    house="lords"
+    forenames="James Henry Langstaff"
+    title="Bishop" lordname="" lordofname="Rochester"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2014-04-01" todate="9999-12-31"
 />
 
 <!--

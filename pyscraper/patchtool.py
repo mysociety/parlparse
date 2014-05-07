@@ -84,9 +84,9 @@ def RunPatchToolW(typ, sdate, stamp, frag):
 	if not frag:
 		fragl = -1
 	elif ganamef:
-		fragl = string.find(ganamef.group(1), frag)
+		fragl = string.find(ganamef.group(1), str(frag))
 	else:
-		fragl = string.find(rforlines, frag)
+		fragl = string.find(rforlines, str(frag))
 	if fragl != -1:
 		gp += fragl
 

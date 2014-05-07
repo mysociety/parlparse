@@ -3,7 +3,6 @@
 # Grabs the latest members data from data.parliament XML and update accordingly.
 # Get data using crawl-datadotparl-members.py
 
-import urllib2
 from lxml import etree
 from datetime import datetime
 
@@ -14,7 +13,9 @@ source_files = [
 
 # Position start date threshold
 # Currently 2010 election (2010-05-11)
-start_date_threshold = datetime(2010, 5, 11)
+# XXX Parliament API is giving 2010-05-06 for things that were actually
+# 2010-05-11 so use that for now:
+start_date_threshold = datetime(2010, 5, 6)
 
 parser = etree.ETCompatXMLParser()
 etree.set_default_parser(parser)
