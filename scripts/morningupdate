@@ -28,10 +28,8 @@ RET=0
 ./other-sites-update $RET
 
 # Commit changes
-cd ~/parlparse
-svn -q commit -m "Daily work autocommit"
-cd ~/parldata
-svn -q commit -m "Daily work autocommit"
+#cd ~/parldata
+#svn -q commit -m "Daily work autocommit"
 
 #echo -n "Whole thing done time: "
 #date +"%Y-%m-%d %H:%M:%S"

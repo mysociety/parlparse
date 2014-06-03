@@ -8,8 +8,8 @@ set -e
 source ~/parlparse/scripts/consts
 
 # Add any new files
-cd ~/parldata/cmpages/chgpages
-svn -q add */*.html 2>&1 | grep -v "is already under version control" && echo -n
+#cd ~/parldata/cmpages/chgpages
+#svn -q add */*.html 2>&1 | grep -v "is already under version control" && echo -n
 
 # Check for updates to minister pages etc.
 cd ~/parlparse/pyscraper

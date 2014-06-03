@@ -21,7 +21,7 @@ curl -s "http://en.wikipedia.org/wiki/MPs_elected_in_the_UK_general_election,_20
 curl -s "http://en.wikipedia.org/wiki/MPs_elected_in_the_UK_general_election,_1997" > Members_of_the_House_of_Commons_1997
 curl -s "http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007" > Members_of_the_NIA_2007
 # curl -s "http://en.wikipedia.org/wiki/MPs_standing_down_in_the_United_Kingdom_general_election,_2010" > MPs_standing_down_in_2010
-svn -q commit -m "Weekly rawdata scrape commit"
+#svn -q commit -m "Weekly rawdata scrape commit"
 cd ~/parlparse/members
 ./wikipedia-lords.py > wikipedia-lords.xml
 ./wikipedia-commons.py > wikipedia-commons.xml
@@ -29,8 +29,8 @@ cd ~/parlparse/members
 # ./bbcconv.py > bbc-links.xml 
 cd ~/parlparse/pyscraper
 ni/wikipedia-mla.py > ../members/wikipedia-mla.xml
-cd ~/parlparse/members
-svn -q commit -m "Weekly members scrape commit"
+#cd ~/parlparse/members
+#svn -q commit -m "Weekly members scrape commit"
 
 # Force reindex, to find URLs which have changed (updates to Hansard,
 # including the once-per-session grand URL-rename-and-break from cm to vo)
