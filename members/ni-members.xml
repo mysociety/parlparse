@@ -3257,8 +3257,8 @@
     id="uk.org.publicwhip/member/90436"
     title="" firstname="David" lastname="McClarty"
     constituency="East Londonderry" party="Independent"
-    fromdate="2011-05-06" todate="9999-12-31"
-    fromwhy="election" towhy="still_in_office"
+    fromdate="2011-05-06" todate="2014-04-18"
+    fromwhy="election" towhy="died"
 />
 <member_ni
     id="uk.org.publicwhip/member/90437"
@@ -3663,5 +3663,14 @@
     fromdate="2013-12-13" todate="9999-12-31"
     fromwhy="changed_name" towhy="still_in_office"
 />
+
+<member_ni
+    id="uk.org.publicwhip/member/90493"
+    title="" firstname="Claire" lastname="Sugden"
+    constituency="East Londonderry" party="Independent"
+    fromdate="2014-05-06" todate="9999-12-31"
+    fromwhy="appointed" towhy="still_in_office"
+/>
+
 </publicwhip>
 
