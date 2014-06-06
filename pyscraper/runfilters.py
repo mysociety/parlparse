@@ -166,10 +166,8 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
     # Changes in 2008-09 session
     if sdate>'2008-12-01' and dname=='lordspages':
         text = re.sub('(?i)Asked By (<b>.*?)</b>', r'\1:</b>', text)
-        text = re.sub('(?i)((?:Moved|Tabled) By (?:<a name="[^"]*"></a>)*)<b>(.*?)</b>', r'\1\2', text)
-        text = re.sub('(?i)(Moved by)<b>(.*?)</b>', r'\1 \2', text)
-        text = re.sub('(?i)((?:Moved|Tabled) By)<I></I>((?:<a name="[^"]*"></a>)*)<b>(.*?)</b>', r'\1 \2\3', text)
-        text = re.sub('(?i)(Moved on .*? by )<b>(.*?)</b>', r'\1\2', text)
+        text = re.sub('(?i)((?:Moved|Tabled) By) ?((?:<a name="[^"]*"></a>)*)<b>(.*?)</b>', r'\1 \2\3', text)
+        text = re.sub('(?i)(Moved on .*? by) ?<b>(.*?)</b>', r'\1 \2', text)
 
     if decode_from_utf8:
         # Some UTF-8 gets post-processed into nonsense
