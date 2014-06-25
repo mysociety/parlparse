@@ -149,10 +149,10 @@ file for each release of the register.
 </regmem>
 {% endhighlight %}
 
-These XML files are stored in [ParlData](parldata.html). You can find them by
-browsing the
-[version control system](http://project.knowledgeforge.net/ukparse/svn/trunk/parldata/scrapedxml/regmem/). Alternatively, see the section on
-[Getting the Data](parldata.html#getting_the_data) in ParlData.
+Unlike the other XML on this page, the register XML files are stored with the
+[Hansard XML](hansard.html). You can find them by browsing the
+[filesystem](http://www.theyworkforyou.com/pwdata/scrapedxml/regmem/). Alternatively, see the section on
+[Getting the Data](hansard.html#getting_the_data).
 
 ### expenses200304.xml, expenses200203.xml, expenses200102.xml
 
@@ -171,13 +171,13 @@ the [Public Whip project](http://publicwhip.owl/project/data.php).
 
 You can browse the list of available files and download them individually at:
 
-[http://project.knowledgeforge.net/ukparse/svn/trunk/parlparse/members/](http://project.knowledgeforge.net/ukparse/svn/trunk/parlparse/members/)
+[https://github.com/mysociety/parlparse/tree/master/members](https://github.com/mysociety/parlparse/tree/master/members)
 
-### By SVN
+### From GitHub
 
-You can check out a copy of all the latest members XML via SVN using:
+You can check out a copy of all the latest members XML from GitHub using:
 
-`svn co http://project.knowledgeforge.net/ukparse/svn/trunk/parlparse/members`
+`git clone https://github.com/mysociety/parlparse`
 
 <hr>
 

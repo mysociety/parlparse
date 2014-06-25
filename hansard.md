@@ -76,15 +76,13 @@ These are a bit like press releases, but in parliamentary language.
 
 You can browse the list of available files and download them individually at:
 
-[http://project.knowledgeforge.net/ukparse/svn/trunk/parldata/scrapedxml/](http://project.knowledgeforge.net/ukparse/svn/trunk/parldata/scrapedxml/)
+[http://www.theyworkforyou.com/pwdata/scrapedxml/](http://www.theyworkforyou.com/pwdata/scrapedxml/)
 
-### By SVN
+### By git
 
 **Warning: There is a *lot* of data, downloading it all may take a while.**
 
-You can check out a copy of all the latest Hansard XML via SVN using:
-
-`svn co http://project.knowledgeforge.net/ukparse/svn/trunk/parldata/scrapedxml`
+This is currently not available, we hope to have it back soon.
 
 ### By rsync
 

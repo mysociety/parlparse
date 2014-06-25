@@ -12,11 +12,11 @@ Python code downloads data from the UK parliament website, stores it as an HTML
 file for each day, and parses those files into XML files. To run this parser
 yourself, you'll need the following...
 
-* Parser source code - you can get this from SVN:
+* Parser source code - you can get this from GitHub:
 
-  `svn co http://project.knowledgeforge.net/ukparse/svn/trunk/parlparse`
+  `git clone https://github.com/mysociety/parlparse`
 
-  On Windows, use TortoiseSVN and the same URL.
+  On Windows, you could use TortoiseGit and the same URL.
 
 * Python - Under Windows download Python 2.4. Unix-based operating systems
 probably have Python already installed, but you may need to upgrade to Python
