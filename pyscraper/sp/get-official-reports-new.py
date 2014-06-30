@@ -93,7 +93,7 @@ def main():
             get_document_from_id(i)
 
     elif options.daily:
-        url = 'http://www.scottish.parliament.uk/parliamentarybusiness/OfficialReport.aspx'
+        url = 'http://www.scottish.parliament.uk/parliamentarybusiness/official-report.aspx'
         request = urllib2.Request(url)
         request.add_header('User-Agent', user_agent)
         opener = urllib2.build_opener()
