@@ -12345,9 +12345,20 @@ B - bishop
     fromdate="2014-04-10" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101205"
+    house="lords"
+    forenames="David Julian"
+    title="Lord" lordname="Richards" lordofname="Herstmonceux"
+    lordofname_full="Emsworth"
+    county="the County of Hampshire"
+    peeragetype="L" affiliation="XB"
+    fromdate="2014-02-25" todate="9999-12-31"
+/>
+
 <!--
 <lord
-    id="uk.org.publicwhip/lord/1011.."
+    id="uk.org.publicwhip/lord/1012.."
     house="lords"
     forenames=""
     title="" lordname="" lordofname=""

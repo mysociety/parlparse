@@ -1513,7 +1513,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/5384"/>
     <office id="uk.parliament.data/Member/249/Committee/103" current="yes"/>
     <office id="uk.parliament.data/Member/249/Committee/137" current="yes"/>
-    <office id="uk.parliament.data/Member/249/Committee/148"/>
     <office id="uk.parliament.data/Member/249/Committee/2"/>
     <office id="uk.parliament.data/Member/249/Committee/77" current="yes"/>
 </person>
@@ -3135,6 +3134,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/5906"/>
     <office id="uk.parliament.data/Member/231/Committee/289" current="yes"/>
     <office id="uk.parliament.data/Member/231/Committee/290" current="yes"/>
+    <office id="uk.parliament.data/Member/231/Committee/305" current="yes"/>
     <office id="uk.parliament.data/Member/231/GovernmentPost/222"/>
 </person>
 <person id="uk.org.publicwhip/person/10263" latestname="Alan Haselhurst">
@@ -7610,6 +7610,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/434"/>
     <office id="uk.parliament.data/Member/62/Committee/289" current="yes"/>
     <office id="uk.parliament.data/Member/62/Committee/290" current="yes"/>
+    <office id="uk.parliament.data/Member/62/Committee/305" current="yes"/>
     <office id="uk.parliament.data/Member/62/Committee/62" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/10631" latestname="Ray Whitney">
@@ -9999,6 +10000,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.parliament.data/Member/1508/Committee/145"/>
     <office id="uk.parliament.data/Member/1508/Committee/289" current="yes"/>
     <office id="uk.parliament.data/Member/1508/Committee/290" current="yes"/>
+    <office id="uk.parliament.data/Member/1508/Committee/305" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/11542" latestname="Shahid Malik">
     <office id="uk.org.publicwhip/member/1542"/>
@@ -69041,6 +69043,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/24944" latestname="Craig Whittaker">
     <office id="uk.org.publicwhip/member/40139" current="yes"/>
     <office id="uk.parliament.data/Member/3940/Committee/203" current="yes"/>
+    <office id="uk.parliament.data/Member/3940/Committee/310" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/24933" latestname="George Eustice">
     <office id="uk.org.publicwhip/member/40141" current="yes"/>
@@ -69164,7 +69167,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/24803" latestname="Gareth Johnson">
     <office id="uk.org.publicwhip/member/40197" current="yes"/>
-    <office id="uk.parliament.data/Member/3970/Committee/102" current="yes"/>
+    <office id="uk.parliament.data/Member/3970/Committee/102"/>
     <office id="uk.parliament.data/Member/3970/Committee/135"/>
     <office id="uk.parliament.data/Member/3970/Committee/93" current="yes"/>
 </person>
@@ -69232,6 +69235,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.parliament.data/Member/3964/Committee/15"/>
     <office id="uk.parliament.data/Member/3964/Committee/289" current="yes"/>
     <office id="uk.parliament.data/Member/3964/Committee/290" current="yes"/>
+    <office id="uk.parliament.data/Member/3964/Committee/305" current="yes"/>
     <office id="uk.parliament.data/Member/3964/Committee/98" current="yes"/>
     <office id="uk.parliament.data/Member/3964/OppositionPost/962"/>
 </person>
@@ -69373,6 +69377,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/24955" latestname="Matthew Offord">
     <office id="uk.org.publicwhip/member/40310" current="yes"/>
+    <office id="uk.parliament.data/Member/4006/Committee/310" current="yes"/>
     <office id="uk.parliament.data/Member/4006/Committee/62" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/24827" latestname="Jesse Norman">
@@ -69646,6 +69651,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/24964" latestname="Rory Stewart">
     <office id="uk.org.publicwhip/member/40477" current="yes"/>
     <office id="uk.parliament.data/Member/4137/Committee/103" current="yes"/>
+    <office id="uk.parliament.data/Member/4137/Committee/111" current="yes"/>
     <office id="uk.parliament.data/Member/4137/Committee/24" current="yes"/>
     <office id="uk.parliament.data/Member/4137/Committee/78" current="yes"/>
 </person>
@@ -69738,6 +69744,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/24943" latestname="Paul Blomfield">
     <office id="uk.org.publicwhip/member/40525" current="yes"/>
+    <office id="uk.parliament.data/Member/4058/Committee/310" current="yes"/>
     <office id="uk.parliament.data/Member/4058/Committee/9" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/24909" latestname="Mark Spencer">
@@ -69769,6 +69776,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.parliament.data/Member/4053/Committee/17" current="yes"/>
     <office id="uk.parliament.data/Member/4053/Committee/289" current="yes"/>
     <office id="uk.parliament.data/Member/4053/Committee/290" current="yes"/>
+    <office id="uk.parliament.data/Member/4053/Committee/305" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/24903" latestname="Richard Drax">
     <office id="uk.org.publicwhip/member/40543" current="yes"/>
@@ -69805,6 +69813,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/24843" latestname="Robert Buckland">
     <office id="uk.org.publicwhip/member/40555" current="yes"/>
     <office id="uk.parliament.data/Member/4106/Committee/102"/>
+    <office id="uk.parliament.data/Member/4106/Committee/102/1" current="yes"/>
     <office id="uk.parliament.data/Member/4106/Committee/145"/>
     <office id="uk.parliament.data/Member/4106/Committee/148"/>
     <office id="uk.parliament.data/Member/4106/Committee/149"/>
@@ -69813,6 +69822,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.parliament.data/Member/4106/Committee/289" current="yes"/>
     <office id="uk.parliament.data/Member/4106/Committee/290" current="yes"/>
     <office id="uk.parliament.data/Member/4106/Committee/301"/>
+    <office id="uk.parliament.data/Member/4106/Committee/305" current="yes"/>
     <office id="uk.parliament.data/Member/4106/Committee/93" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/24792" latestname="Laura Sandys">
@@ -69941,6 +69951,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/24761" latestname="Sarah Wollaston">
     <office id="uk.org.publicwhip/member/40614" current="yes"/>
+    <office id="uk.parliament.data/Member/4073/Committee/103" current="yes"/>
     <office id="uk.parliament.data/Member/4073/Committee/81" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/24948" latestname="Sarah Newton">
@@ -74319,6 +74330,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/25228" latestname="Lord Cromwell">
     <office id="uk.org.publicwhip/lord/101204" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25229" latestname="Lord Richards of Herstmonceux">
+    <office id="uk.org.publicwhip/lord/101205" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13741" latestname="Ian Adamson">
     <office id="uk.org.publicwhip/member/90002"/>
