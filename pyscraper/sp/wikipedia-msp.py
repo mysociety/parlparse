@@ -18,9 +18,12 @@ from resolvemembernames import memberList
 date_today = datetime.date.today().isoformat()
 
 # These were the original locations of these pages:
-wiki_index_urls = [ "http://en.wikipedia.org/wiki/Members_of_the_1st_Scottish_Parliament",
-                    "http://en.wikipedia.org/wiki/Members_of_the_2nd_Scottish_Parliament",
-                    "http://en.wikipedia.org/wiki/Members_of_the_3rd_Scottish_Parliament" ]
+wiki_index_urls = [
+    "http://en.wikipedia.org/wiki/Members_of_the_1st_Scottish_Parliament",
+    "http://en.wikipedia.org/wiki/Members_of_the_2nd_Scottish_Parliament",
+    "http://en.wikipedia.org/wiki/Members_of_the_3rd_Scottish_Parliament",
+    "http://en.wikipedia.org/wiki/Members_of_the_4th_Scottish_Parliament",
+]
 wikimembers  = {}
 
 content = ''
@@ -31,7 +34,7 @@ for u in wiki_index_urls:
     content += ur.read()
     ur.close()
 
-matcher = '(?ims)<a href="(/wiki/[^"]+)" [^>]*?title="[^"]+">([^<]+)</a>'
+matcher = '(?ims)<a href="(/wiki/[^"]+)" [^>]*?title="[^"]+"[^>]*>([^<]+)</a>'
 matches = re.findall(matcher, content)
 
 matches.append(('/wiki/Dorothy_Grace_Elder','Dorothy-Grace Elder'))

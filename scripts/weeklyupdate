@@ -29,6 +29,9 @@ cd ~/parlparse/members
 # ./bbcconv.py > bbc-links.xml 
 cd ~/parlparse/pyscraper
 ni/wikipedia-mla.py > ../members/wikipedia-mla.xml
+cd ~/parlparse/pyscraper/sp
+curl -s "http://en.wikipedia.org/wiki/Members_of_the_4th_Scottish_Parliament" > Members_of_the_4th_Scottish_Parliament
+./wikipedia-msp.py > ../../members/wikipedia-msp.xml
 #cd ~/parlparse/members
 #svn -q commit -m "Weekly members scrape commit"
 
