@@ -18,10 +18,8 @@ yourself, you'll need the following...
 
   On Windows, you could use TortoiseGit and the same URL.
 
-* Python - Under Windows download Python 2.4. Unix-based operating systems
-probably have Python already installed, but you may need to upgrade to Python
-2.4. You also need the mxDateTime module by eGenix, go to downloads on that
-page. Under Debian this is in the package python2.4-egenix-mxdatetime.
+* Python. You also need the mxDateTime module by eGenix; under Debian
+  this is in the package python-egenix-mxdatetime.
 
 * Patch and Diff - The parser has a preprocessor which applies patches to Hansard
 to fix uncommon errors. This is done using the tools "patch" and "diff", which

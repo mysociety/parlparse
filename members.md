@@ -5,8 +5,12 @@ title: Members of Parliament
 
 Structured data about Members of Parliament. These are all XML files, open them
 in any text editor, XML viewer or some spreadsheets. In the files there are
-comments with more information. Data for MPs is for the 1997, 2001 and 2005
-parliaments. Data for Lords goes back to the major reform in 1999.
+comments with more information. MPs data goes back to the start of Hansard at
+the start of the 19th century (including data from Parliament's historic
+Hansard project), data for Lords goes back to the major reform in 1999.
+
+These files can all be found in the
+[GitHub repository members directory](https://github.com/mysociety/parlparse/tree/master/members).
 
 ### all-members.xml / all-members-2010.xml / peers-ucl.xml
 
@@ -44,12 +48,12 @@ byelections and party changes or whip revocations are recorded.
 
 ### people.xml
 
-Links together groups of MPs from all-members.xml and Lords from peers-ucl.xml
-who are the same real world person. Usually this is because they have the same
-name and are in the same constituency. Sometimes someone changes constituency
-between two parliaments, such as Shaun Woodward (Witney) and Shaun Woodward (St
-Helens South). This file records that they are the same person. Also includes
-offices from `ministers.xml` which were held by that person.
+Links together groups of MPs, Lords and other person data who are the same real
+world person. Usually this is because they have the same name and are in the
+same constituency. Sometimes someone changes constituency between two
+parliaments, such as Shaun Woodward (Witney) and Shaun Woodward (St Helens
+South). This file records that they are the same person. Also includes offices
+from `ministers.xml` which were held by that person.
 
 {% highlight xml %}
 <person id="uk.org.publicwhip/person/10597" latestname="Paddy Tipping">
@@ -60,7 +64,7 @@ offices from `ministers.xml` which were held by that person.
 </person>
 {% endhighlight %}
 
-### ministers.xml
+### ministers.xml / ministers-2010.xml
 
 Contains ministerial positions and the department they were in.  Each one has a
 date range, the MP or Lord became a minister at some time on the start day, and
@@ -154,7 +158,7 @@ Unlike the other XML on this page, the register XML files are stored with the
 [filesystem](http://www.theyworkforyou.com/pwdata/scrapedxml/regmem/). Alternatively, see the section on
 [Getting the Data](hansard.html#getting_the_data).
 
-### expenses200304.xml, expenses200203.xml, expenses200102.xml
+### expenses*.xml
 
 How much each MP claimed as expenses from parliament for travel and so on.
 

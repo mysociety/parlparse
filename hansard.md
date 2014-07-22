@@ -88,17 +88,20 @@ This is currently not available, we hope to have it back soon.
 
 **Warning: There is a *lot* of data, downloading it all may take a while.**
 
-The easiest way to get hold of all the data currently stored for Hansard is
-via rsync to `data.theyworkforyou.com::parldata`. You can see what's available
-by running:
+The easiest way to get hold of the data currently stored for Hansard is via
+rsync to `data.theyworkforyou.com::parldata`. This is especially useful if you
+e.g. want to update every day to have the latest files, but only want to
+download the new or changed ones. You can see what's available by running:
 
 `rsync data.theyworkforyou.com::parldata`
 
-You can then use rsync to retrieve content as necessary. Check `man rsync` for
-more information on the available options.
+You can then use rsync to retrieve content as necessary; the parsed XML files
+are in the `scrapedxml` directory. Check `man rsync` for more information on
+the available options.
 
 We strongly recommend that where possible you use `--exclude '.svn' --exclude
 'tmp/'` switches, as these are used for processing and versioning, and aren't
-relevant to the data. A command to download the complete dataset is:
+relevant to the data. To download all Commons main chamber debates from October
+2012, you would use something like:
 
-`rsync -az --progress --exclude '.svn' --exclude 'tmp/' data.theyworkforyou.com::parldata .`
+`rsync -az --progress --exclude '.svn' --exclude 'tmp/' --relative data.theyworkforyou.com::parldata/scrapedxml/debates/debates2012-10-* .`
