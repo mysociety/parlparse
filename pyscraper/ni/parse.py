@@ -113,7 +113,9 @@ class ParseDay:
 ''')
 		memberList.cleardebatehistory() # Don't want to keep it between days, or reruns of same day
 		memberList.setDeputy(None)
-		if date >= '2012-04-30' and not soup('p', { 'class': True } ):
+		if date >= '2012-09-07':
+			self.parse_day_new_new(soup, date)
+		elif date >= '2012-04-30' and not soup('p', { 'class': True } ):
 			self.parse_day_new_new(soup, date)
 		elif int(date[0:4]) >= 2006:
 			self.parse_day_new(soup, date)
@@ -460,7 +462,7 @@ class ParseDay:
 		body = bbody
 
 		assert body[0].string == 'Official Report (Hansard)'
-		nia_heading_re = re.compile(r'\s*Session: 201[1-3]/201[2-4]')
+		nia_heading_re = re.compile(r'\s*Session: 201[1-4]/201[2-5]')
 		first_line = ''.join(body[1](text=True))
 		if not nia_heading_re.match(first_line):
 			raise ContextException, 'Missing NIA heading! Got %s' % first_line
