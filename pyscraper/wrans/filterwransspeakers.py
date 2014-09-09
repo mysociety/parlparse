@@ -175,6 +175,9 @@ def FilterWransSpeakers(fout, text, sdate):
                                         else:
         					id = 'unknown'
         					remadename = ' speakername="%s" error="MultipleMatch"' % boldnamestring
+				elif boldnamestring == 'Jim Dobbin' and sdate == '2014-09-08':
+					id = 'uk.org.publicwhip/member/40316'
+					remadename = ' speakername="Jim Dobbin"'
 				else:
 					print "  No name,const match (%s,%s)" % (name, cons)
 					raise ContextException("No name match", stamp=stampurl, fragment=boldnamestring)
