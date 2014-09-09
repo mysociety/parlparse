@@ -501,7 +501,7 @@ class ParseDay:
 				self.new_person_speak(p, timestamp)
 			elif p.em and len(p.contents) == 1:
 				self.new_italic_speech(ptext, phtml)
-			elif p.string:
+			elif p.string or p.a:
 				self.text += '<p>%s</p>\n' % phtml
 			elif p.name == 'table' or p.name == 'ul':
 				self.text += re.sub("\s+", " ", unicode(p))
