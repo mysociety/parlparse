@@ -170,9 +170,15 @@ def GlueAllType(pcmdir, cmindex, fproto, deleteoutput):
 # Get index of all regmem pages from the index
 def FindRegmemPages():
         urls = []
-        # Meta index is here: 'http://www.publications.parliament.uk/pa/cm/cmregmem.htm'
-        ixurl = 'http://www.publications.parliament.uk/pa/cm/cmregmem/contents1314.htm'
-        # print "IXURL", ixurl
+        idxurl = 'http://www.publications.parliament.uk/pa/cm/cmregmem.htm'
+        ur = urllib.urlopen(idxurl)
+        content = ur.read()
+        ur.close()
+
+        soup = BeautifulSoup.BeautifulSoup(content)
+        soup = [ table.find('table') for table in soup.findAll('table') if table.find('table') ]
+        ixurl = urlparse.urljoin(idxurl, soup[0].find('a', href=True)['href'])
+
         ur = urllib.urlopen(ixurl)
         content = ur.read()
         ur.close();
@@ -225,7 +231,7 @@ def FindLordRegmemPages():
 # main function
 ###############
 def RegmemPullGluePages(deleteoutput):
-	# make the output firectory
+	# make the output directory
 	if not os.path.isdir(pwcmdirs):
 		os.mkdir(pwcmdirs)
                 
