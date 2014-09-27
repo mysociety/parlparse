@@ -109,7 +109,7 @@ def LordsFilterSpeakers(fout, text, sdate):
 		# map through any office information
 		if loffice:
 			if (not re.match("The Deputy ", loffice)) and (loffice in officematches):
-                                if sdate!='2012-09-24' and officematches[loffice] != name:
+                                if sdate!='2014-09-26' and sdate!='2012-09-24' and officematches[loffice] != name:
                                         raise ContextException("office inconsistency, loffice: %s name: %s officematches: %s" % (loffice, name, officematches[loffice]), stamp=stampurl, fragment=fssb)
 			else:
 				officematches[loffice] = name
