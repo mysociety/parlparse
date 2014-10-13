@@ -30,7 +30,7 @@ content = ''
 
 for u in wiki_index_urls:
     leaf = re.sub('.*/','',u)
-    ur = open(leaf)
+    ur = open('../../rawdata/' + leaf)
     content += ur.read()
     ur.close()
 

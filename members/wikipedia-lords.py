@@ -28,7 +28,7 @@ print '''<?xml version="1.0" encoding="ISO-8859-1"?>
 <publicwhip>'''
 
 # Grab page 
-ur = open('../rawdata/lords/Members_of_the_House_of_Lords')
+ur = open('../rawdata/Members_of_the_House_of_Lords')
 content = ur.read()
 ur.close()
 
