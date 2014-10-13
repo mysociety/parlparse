@@ -9805,7 +9805,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.parliament.data/Member/1488/Committee/158"/>
     <office id="uk.parliament.data/Member/1488/Committee/77"/>
     <office id="uk.parliament.data/Member/1488/GovernmentPost/350"/>
-    <office id="uk.parliament.data/Member/1488/GovernmentPost/856" current="yes"/>
+    <office id="uk.parliament.data/Member/1488/GovernmentPost/856"/>
 </person>
 <person id="uk.org.publicwhip/person/11447" latestname="Dawn Butler">
     <office id="uk.org.publicwhip/member/1447"/>
@@ -10232,6 +10232,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/11621" latestname="Douglas Carswell">
     <office id="uk.org.publicwhip/member/1621"/>
     <office id="uk.org.publicwhip/member/40175"/>
+    <office id="uk.org.publicwhip/member/40703" current="yes"/>
     <office id="uk.org.publicwhip/moffice/3175"/>
     <office id="uk.org.publicwhip/moffice/3599"/>
     <office id="uk.org.publicwhip/moffice/3820"/>
@@ -10587,6 +10588,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/moffice/4267"/>
     <office id="uk.org.publicwhip/moffice/5135"/>
     <office id="uk.org.publicwhip/moffice/5241"/>
+    <office id="uk.parliament.data/Member/1556/GovernmentPost/462" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/11783" latestname="Baroness Kramer">
     <office id="uk.org.publicwhip/lord/101085" current="yes"/>
@@ -68971,7 +68973,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/24958" latestname="Rushanara Ali">
     <office id="uk.org.publicwhip/member/40075" current="yes"/>
-    <office id="uk.parliament.data/Member/4138/OppositionPost/960" current="yes"/>
+    <office id="uk.parliament.data/Member/4138/OppositionPost/960"/>
     <office id="uk.parliament.data/Member/4138/OppositionPost/967"/>
 </person>
 <person id="uk.org.publicwhip/person/24825" latestname="Jack Dromey">
@@ -69760,7 +69762,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/24899" latestname="Mark Reckless">
     <office id="uk.org.publicwhip/member/40502"/>
-    <office id="uk.parliament.data/Member/4049/Committee/83" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/24809" latestname="Caroline Nokes">
     <office id="uk.org.publicwhip/member/40505" current="yes"/>
@@ -70245,6 +70246,9 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/25227" latestname="Robert Jenrick">
     <office id="uk.org.publicwhip/member/40701" current="yes"/>
     <office id="uk.parliament.data/Member/4320/Committee/81" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25230" latestname="Liz McInnes">
+    <office id="uk.org.publicwhip/member/40702" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13935" latestname="Elizabeth the Second, by the Grace of God, of the United Kingdom of Great Britain and Northern Ireland and of Her other Realms and Territories Queen, Head of the Commonwealth, Defender of the Faith">
     <office id="uk.org.publicwhip/royal/-1" current="yes"/>
