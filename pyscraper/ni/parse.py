@@ -489,7 +489,7 @@ class ParseDay:
 				self.new_major_heading(ptext, timestamp)
 			elif p.name == 'h3':
 				self.new_minor_heading(ptext, timestamp)
-			elif phtml[0:8] == '<strong>' or re.match('\d+\.( |&nbsp;)*<strong>', phtml):
+			elif phtml[0:8] == '<strong>' or re.match('T?\d+\.( |&nbsp;)*<strong>', phtml):
 				new_timestamp = self.new_time_period(ptext, optional=True)
 				if new_timestamp:
 					timestamp = new_timestamp
