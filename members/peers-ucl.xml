@@ -10121,7 +10121,7 @@ B - bishop
     forenames="Stephen George Platten"
     title="Bishop" lordname="" lordofname="Wakefield"
     peeragetype="B" affiliation="Bp"
-    fromdate="2009-06-22" todate="9999-12-31"
+    fromdate="2009-06-22" todate="2014-04-20" towhy="retired"
 />
 
 <lord
@@ -12354,6 +12354,37 @@ B - bishop
     county="the County of Hampshire"
     peeragetype="L" affiliation="XB"
     fromdate="2014-02-25" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101206"
+    house="lords"
+    forenames="Stephen David Conway"
+    title="Bishop" lordname="" lordofname="Ely"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2014-07-07" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101207"
+    house="lords"
+    forenames="Ranbir Singh"
+    title="Lord" lordname="Suri" lordofname=""
+    lordofname_full="Ealing"
+    county="the London Borough of Ealing"
+    peeragetype="L" affiliation="Con"
+    fromdate="2014-10-13" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101208"
+    house="lords"
+    forenames="Michale Stahel"
+    title="Lord" lordname="Farmer" lordofname=""
+    lordofname_full="Bishopsgate"
+    county="the City of London"
+    peeragetype="L" affiliation="Con"
+    fromdate="2014-10-15" todate="9999-12-31"
 />
 
 <!--
