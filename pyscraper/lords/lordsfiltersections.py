@@ -170,8 +170,8 @@ redivisionon = re.compile('''(?ix)
             | to [ ] Resume
             | that [ ] the [ ] House [ ] do [  ] now [ ] resume
             | to [ ] Resolve
-          ) (?: [ ] should )? (?: [ ] Stand [ ] Part )? (?: [ ] of )? (?: [ ] The [ ] Bill )?
-        | (?: the [ ] )? Motion
+          ) (?: , [ ] as [ ] amended, )?  (?: [ ] should )? (?: [ ] Stand [ ] Part )? (?: [ ] of )? (?: [ ] The [ ] Bill )?
+        | (?: the [ ] )? (?: Motion | Amendment )
         | adjournment [ ] of [ ] consideration [ ] of [ ] Motion [ ] [A-Z]
     ) \.*</p>
 ''')
