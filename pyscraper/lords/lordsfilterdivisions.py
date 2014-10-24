@@ -106,9 +106,9 @@ def LordsDivisionParsingPart(divno, unspoketxt, stampurl, sdate):
 		unspoketxt = unspoketxt[gquesacc.start(1):]
                 unspoketxt = re.sub(':ENDDIVISION:', '', unspoketxt)
 	elif sdate > '2008-12-01': # Sigh XXX
-                m = re.match('.*<br>(?s)', unspoketxt)
+		m = re.match('.*, [A-Z]\.</p>(?s)', unspoketxt)
                 if not m:
-                        m = re.match('.*, [A-Z]\.</p>(?s)', unspoketxt)
+			m = re.match('.*<br>(?s)', unspoketxt)
                 divtext = m.group()
                 unspoketxt = unspoketxt[m.end():]
 	else:
