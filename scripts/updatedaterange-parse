@@ -20,6 +20,7 @@ cd ~/parlparse/pyscraper
 ./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE parse ni || RET=1
 
 # New UK Parliament Written Answers database
+cd ~/parlparse/
 ~/.venv/bin/python wrans-2014/parse.py --out ~/parldata/scrapedxml/wrans/ --members ~/parlparse/members/all-members-2010.xml
 
 # Public Bill Committee transcripts
