@@ -12452,6 +12452,62 @@ B - bishop
     peeragetype="L" affiliation="Con"
     fromdate="2014-10-15" todate="9999-12-31"
 />
+
+<lord
+    id="uk.org.publicwhip/lord/101215"
+    house="lords"
+    forenames="Christopher Francis"
+    title="Lord" lordname="Fox" lordofname=""
+    lordofname_full="Leominster"
+    county="the County of Herefordshire"
+    peeragetype="L" affiliation="LDem"
+    fromdate="2014-10-22" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101216"
+    house="lords"
+    forenames="Caroline Elizabeth"
+    title="Baroness" lordname="Chisholm" lordofname="Owlpen"
+    lordofname_full=""
+    county="the County of Gloucestershire"
+    peeragetype="L" affiliation="Con"
+    fromdate="2014-10-23" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101217"
+    house="lords"
+    forenames="Paul James"
+    title="Lord" lordname="Scriven" lordofname=""
+    lordofname_full="Hunters Bar"
+    county="the City of Sheffield"
+    peeragetype="L" affiliation="LDem"
+    fromdate="2014-10-23" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101218"
+    house="lords"
+    forenames="Christopher John"
+    title="Lord" lordname="Lennie" lordofname=""
+    lordofname_full="Longsands Tynemouth"
+    county="the County of Tyne and Wear"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2014-10-27" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101219"
+    house="lords"
+    forenames="Kathryn Mary"
+    title="Baroness" lordname="Pinnock" lordofname=""
+    lordofname_full="Cleckheaton"
+    county="the County of West Yorkshire"
+    peeragetype="L" affiliation="LDem"
+    fromdate="2014-10-27" todate="9999-12-31"
+/>
+
 <!--
 <lord
     id="uk.org.publicwhip/lord/1012.."
