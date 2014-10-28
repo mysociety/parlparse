@@ -91,7 +91,12 @@ def PreviewDivisionTextGuess(flatb):
 
 # handle a division case
 strexplicitenddiv = '<explicit-end-division>'
-regenddiv = '(The (?:Deputy )?Speaker declared|Question accordingly|It appearing on the [Rr]eport|%s)' % strexplicitenddiv
+regenddiv = '''(?x)(
+    (?:Mr|The)[ ](?:Deputy[ ])?Speaker[ ]declared
+    | Question[ ]accordingly
+    | It[ ]appearing[ ]on[ ]the[ ][Rr]eport
+    | %s
+)''' % strexplicitenddiv
 def DivisionParsingPart(divno, unspoketxt, stampurl, sdate):
 	# find the ending of the division and split it off.
 	gquesacc = re.search(regenddiv, unspoketxt)
