@@ -78,6 +78,7 @@ def main():
     if output:
         with open(os.path.join(ARGS.out, 'answers%s.xml' % ARGS.date), 'w') as fp:
             fp.write(output)
+        print "* Commons Written Answers: found %d written answers" % questions.number
 
 
 class AttrDict(dict):
@@ -108,6 +109,10 @@ class Questions(object):
             self.next_page = '%s%s' % (HOST, n['href'])
         else:
             raise Exception
+
+    @property
+    def number(self):
+        return len(self.by_id)
 
     def __str__(self):
         """Outputs the questions, grouped by department, as parlparse XML"""
