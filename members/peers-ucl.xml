@@ -12395,7 +12395,7 @@ B - bishop
     lordofname_full="Bloomsbury"
     county="the London Borough of Camden"
     peeragetype="L" affiliation="Lab"
-    fromdate="2014-09-18" todate="9999-12-31"
+    fromdate="2014-10-16" todate="9999-12-31"
 />
 
 <lord
@@ -12406,7 +12406,7 @@ B - bishop
     lordofname_full="Mearns"
     county="the County of Renfrewshire"
     peeragetype="L" affiliation="Con"
-    fromdate="2014-09-19" todate="9999-12-31"
+    fromdate="2014-10-20" todate="9999-12-31"
 />
 
 <lord
@@ -12417,7 +12417,7 @@ B - bishop
     lordofname_full="Maida Vale"
     county="the City of Westminster"
     peeragetype="L" affiliation="Con"
-    fromdate="2014-09-16" todate="9999-12-31"
+    fromdate="2014-10-16" todate="9999-12-31"
 />
 
 <lord
@@ -12425,7 +12425,7 @@ B - bishop
     house="lords"
     forenames="Andrew Timothy"
     title="Lord" lordname="Cooper" lordofname="Windrush"
-    lordofname_full=""
+    lordofname_full="Chipping Norton"
     county="the County of Oxfordshire"
     peeragetype="L" affiliation="Con"
     fromdate="2014-10-21" todate="9999-12-31"
@@ -12450,7 +12450,7 @@ B - bishop
     lordofname_full="Nether Compton"
     county="the County of Dorset"
     peeragetype="L" affiliation="Con"
-    fromdate="2014-10-15" todate="9999-12-31"
+    fromdate="2014-10-20" todate="9999-12-31"
 />
 
 <lord
@@ -12469,7 +12469,6 @@ B - bishop
     house="lords"
     forenames="Caroline Elizabeth"
     title="Baroness" lordname="Chisholm" lordofname="Owlpen"
-    lordofname_full=""
     county="the County of Gloucestershire"
     peeragetype="L" affiliation="Con"
     fromdate="2014-10-23" todate="9999-12-31"
@@ -12506,6 +12505,47 @@ B - bishop
     county="the County of West Yorkshire"
     peeragetype="L" affiliation="LDem"
     fromdate="2014-10-27" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101220"
+    house="lords"
+    forenames="Natalie Jessica"
+    title="Baroness" lordname="Evans" lordofname="Bowes Park"
+    county="the London Borough of Haringey"
+    peeragetype="L" affiliation="Con"
+    fromdate="2014-10-28" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101221"
+    house="lords"
+    forenames="Michael Maurice"
+    title="Lord" lordname="Cashman" lordofname=""
+    lordofname_full="Limehouse"
+    county="the London Borough of Tower Hamlets"
+    peeragetype="L" affiliation="Lab"
+    fromdate="2014-10-28" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101222"
+    house="lords"
+    forenames="David"
+    title="Lord" lordname="Goddard" lordofname="Stockport"
+    county="the County of Greater Manchester"
+    peeragetype="L" affiliation="LDem"
+    fromdate="2014-10-29" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101223"
+    house="lords"
+    forenames="Stuart Alan Ransom"
+    title="Lord" lordname="Rose" lordofname="Monewden"
+    county="the County of Suffolk"
+    peeragetype="L" affiliation="Con"
+    fromdate="2014-10-30" todate="9999-12-31"
 />
 
 <!--
