@@ -4433,7 +4433,7 @@ B - bishop
 	forenames="Robert"
 	title="Lord" lordname="Methuen" lordofname=""
 	peeragetype="HD" affiliation="LDem"
-	fromdate="1994" todate="9999-12-31"
+	fromdate="1994" todate="2014-07-09" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100426"
@@ -12546,6 +12546,37 @@ B - bishop
     county="the County of Suffolk"
     peeragetype="L" affiliation="Con"
     fromdate="2014-10-30" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101224"
+    house="lords"
+    forenames="Karren Rita"
+    title="Baroness" lordname="Brady" lordofname=""
+    lordofname_full="Knightsbridge"
+    county="the City of Westminster"
+    peeragetype="L" affiliation="Con"
+    fromdate="2014-11-06" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101225"
+    house="lords"
+    forenames="Martin John"
+    title="Lord" lordname="Callanan" lordofname=""
+    lordofname_full="Low Fell"
+    county="the County of Tyne and Wear"
+    peeragetype="L" affiliation="Con"
+    fromdate="2014-11-06" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101226"
+    house="lords"
+    forenames="Raymond"
+    title="Earl" lordname="" lordofname="Oxford and Asquith"
+    peeragetype="HD" affiliation="LD"
+    fromdate="2014-10-24" todate="9999-12-31"
 />
 
 <!--
