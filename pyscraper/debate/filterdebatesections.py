@@ -157,6 +157,8 @@ def StripDebateHeadings(headspeak, sdate):
                         newtime = '10:00:00'
                 elif re.match("^Six o'clock(?i)", time):
                         newtime = '18:00:00'
+                elif re.match("^Twelve noon(?i)", time):
+                        newtime = '12:00:00'
                 else:
                         newtime = "unknown " + time
                         raise ContextException, "Start time not known: " + time
