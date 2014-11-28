@@ -248,8 +248,8 @@ def RegmemPullGluePages(deleteoutput):
 	# third parameter is a regexp, fourth is the filename (%s becomes the date).
 	GlueAllType(pwcmregmem, urls, 'regmem%s.html', deleteoutput)
 
-        urls = FindLordRegmemPages()
-	GlueAllType(pwldregmem, urls, 'regmem%s.html', deleteoutput)
+        # urls = FindLordRegmemPages()
+	# GlueAllType(pwldregmem, urls, 'regmem%s.html', deleteoutput)
 
 if __name__ == '__main__':
         RegmemPullGluePages(False)
