@@ -430,6 +430,16 @@ class MemberList(xml.sax.handler.ContentHandler):
 
     # Exclusively for WMS
     def matchwmsname(self, office, fullname, date):
+        if not fullname:
+            # They might (rarely) come through without an office name.
+            bracket = self.basicsubs(office)
+            brackids = self.fullnametoids(office, date)
+            if brackids and len(brackids) == 1:
+                id = brackids.pop()
+                remadename = self.members[id]["firstname"] + " " + self.members[id]["lastname"]
+                return 'speakerid="%s" speakername="%s"' % (id, remadename)
+                speakeroffice = ' speakeroffice="%s" ' % input
+
         office = self.basicsubs(office)
         speakeroffice = ' speakeroffice="%s"' % office
         fullname = self.basicsubs(fullname)
