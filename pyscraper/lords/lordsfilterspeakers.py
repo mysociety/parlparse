@@ -23,10 +23,11 @@ respeaker = re.compile('(%s|%s|%s)(?i)' % (rehead, retable, renormal))
 respeakerb = re.compile('<b>\s*((?:<stamp aname="[^"]*"/>|</b><b>|[^<]+)*),?\s*</b>(\s*:)?(?i)')
 lord_parties = 'CB|Con|Lab|LD|Non-Afl|UUP|PC|UKIP|GP|DUP|(?:Lab|Con|LD|UU)[ ]Ind|Ind[ ](?:Lab|LD|SD|UU)'
 respeakervals = re.compile('''
-    ([^:(]*?)\s*
-    (?:\(((?!%s)[^:)]*)\)?)?
+    (?P<name>[^:(]*?)\s*
+    (?:\((?P<bracket>(?!%s)[^:)]*)\)?)?
     (?:\s*\((?:%s)\))?
-    (:)?:*
+    (?P<maiden>\s*\(Maiden[ ]Speech\))?
+    (?P<colon>:)?:*
     \s*$(?x)''' % (lord_parties, lord_parties))
 
 renonspek = re.compile('division|contents|amendment|Commons disagreement and reason|Lords insistence and reason(?i)')
@@ -86,17 +87,17 @@ def LordsFilterSpeakers(fout, text, sdate):
 		# start piecing apart the name by office and leadout type
 		namec = respeakervals.match(fssb)
 		if not namec:
-			print fssb
+			print '*', fssb, '*'
 			raise ContextException("bad format", stamp=stampurl, fragment=fssb)
 
-		if namec.group(2):
-			name = re.sub('\s+', ' ', namec.group(2))
-			loffice = re.sub('\s+', ' ', namec.group(1))
+		if namec.group('bracket'):
+			name = re.sub('\s+', ' ', namec.group('bracket'))
+			loffice = re.sub('\s+', ' ', namec.group('name'))
 		else:
-			name = re.sub('\s+', ' ', namec.group(1))
+			name = re.sub('\s+', ' ', namec.group('name'))
 			loffice = None
 
-		colon = namec.group(3)
+		colon = namec.group('colon')
 		if not colon:
 			colon = ""
 
@@ -128,7 +129,5 @@ def LordsFilterSpeakers(fout, text, sdate):
                 else:
                         fout.write('<speaker speakerid="%s" speakername="%s" colon="%s">%s</speaker>' % (lsid, name, colon, name))
 
-
-
-
-
+                if namec.group('maiden'):
+                        fout.write('<i>Maiden Speech:</i>')
