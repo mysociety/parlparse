@@ -21,8 +21,10 @@ cd ~/parlparse/pyscraper
 #   http://www.scottish.parliament.uk/parliamentarybusiness/39977.aspx
 # So for the moment, just run the daily check whatever the parameters
 # given passed to this script are.
-cd ~/parlparse/pyscraper/sp
-./get-official-reports-new.py --daily --quiet
+
+# disabled as currently not working
+# cd ~/parlparse/pyscraper/sp
+# ./get-official-reports-new.py --daily --quiet
 
 # Currently totally unused
 #cd ~/parlparse/pyscraper/future
