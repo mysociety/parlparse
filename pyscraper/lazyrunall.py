@@ -200,11 +200,6 @@ if options.scrape:
 	if options.chgpages:
 		GrabWatchCopies(datetime.date.today().isoformat())
 
-	# these force the rescraping of the html by deleting the old copies (should be a setting in the scraper)
-	if options.forcescrape:
-		if options.regmem:
-			RegmemPullGluePages(True)
-
 #
 # Download/generate the new data
 #
@@ -231,8 +226,7 @@ if options.scrape:
 	if options.today:
 		pullgluetodaydate = PullGlueToday(options.forcescrape)
 	if options.regmem:
-		# TODO - date ranges when we do index page stuff for regmem
-		RegmemPullGluePages(options.forcescrape)
+		RegmemPullGluePages(options.datefrom, options.dateto, options.forcescrape)
 
 #
 # Parse it into XML
