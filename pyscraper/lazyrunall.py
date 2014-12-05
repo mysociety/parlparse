@@ -231,8 +231,7 @@ if options.scrape:
 	if options.today:
 		pullgluetodaydate = PullGlueToday(options.forcescrape)
 	if options.regmem:
-		# TODO - date ranges when we do index page stuff for regmem
-		RegmemPullGluePages(options.forcescrape)
+		RegmemPullGluePages(options.datefrom, options.dateto, options.forcescrape)
 
 #
 # Parse it into XML

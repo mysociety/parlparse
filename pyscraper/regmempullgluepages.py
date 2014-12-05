@@ -230,7 +230,7 @@ def FindLordRegmemPages():
 ###############
 # main function
 ###############
-def RegmemPullGluePages(deleteoutput):
+def RegmemPullGluePages(datefrom, dateto, deleteoutput):
 	# make the output directory
 	if not os.path.isdir(pwcmdirs):
 		os.mkdir(pwcmdirs)
@@ -243,6 +243,9 @@ def RegmemPullGluePages(deleteoutput):
         #        ]
         
         urls = FindRegmemPages();
+
+        # discard URLs with dates outside of specified range
+        urls = [x for x in urls if x[0] >= datefrom and x[0] <= dateto]
 
 	# bring in and glue together parliamentary register of members interests and put into their own directories.
 	# third parameter is a regexp, fourth is the filename (%s becomes the date).
