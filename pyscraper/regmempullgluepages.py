@@ -177,38 +177,44 @@ def FindRegmemPages():
 
         soup = BeautifulSoup.BeautifulSoup(content)
         soup = [ table.find('table') for table in soup.findAll('table') if table.find('table') ]
-        ixurl = urlparse.urljoin(idxurl, soup[0].find('a', href=True)['href'])
+        ixurls = [urlparse.urljoin(idxurl, ix['href']) for ix in soup[0].findAll('a', href=True)]
 
-        ur = urllib.urlopen(ixurl)
-        content = ur.read()
-        ur.close();
+        for ixurl in ixurls:
+            ur = urllib.urlopen(ixurl)
+            content = ur.read()
+            ur.close();
 
-        # Remove comments
-        content = re.sub('<!--.*?-->(?s)', '', content)
+            # Remove comments
+            content = re.sub('<!--.*?-->(?s)', '', content)
 
-        # <A HREF="/pa/cm199900/cmregmem/memi02.htm">Register 
-        #              of Members' Interests November 2000</A>
-        allurls = re.findall('<a href="([^>]*)">(?i)', content)
-        for url in allurls:
-                #print url
-                if url.find("memi02") >= 0 or url.find("part1contents") >= 0:
-                        url = urlparse.urljoin(ixurl, url)
+            # <A HREF="/pa/cm199900/cmregmem/memi02.htm">Register
+            #              of Members' Interests November 2000</A>
+            allurls = re.findall('<a href="([^>]*)">(?i)', content)
+            for url in allurls:
+                    #print url
+                    if url.find("memi02") >= 0 or url.find("part1contents") >= 0:
+                            if url == '060324/memi02.htm':
+                                # fix broken URL
+                                url = '/pa/cm/cmregmem/' + url
 
-                        # find date
-                        ur = urllib.urlopen(url)
-                        content = ur.read()
-                        ur.close();
-                        # <B>14&nbsp;May&nbsp;2001&nbsp;(Dissolution)</B>
-                        content = content.replace("&nbsp;", " ")
-                        alldates = re.findall('(?i)<(?:b|strong)>(\d+[a-z]* [A-Z][a-z]* \d\d\d\d)', content)
-                        if len(alldates) != 1:
-                                print alldates
-                                raise Exception, 'Date match failed, expected one got %d\n%s' % (len(alldates), url)
+                            url = urlparse.urljoin(ixurl, url)
 
-                        date = mx.DateTime.DateTimeFrom(alldates[0]).date
+                            # find date
+                            ur = urllib.urlopen(url)
+                            content = ur.read()
+                            ur.close();
+                            # <B>14&nbsp;May&nbsp;2001&nbsp;(Dissolution)</B>
+                            content = content.replace("&nbsp;", " ")
+                            alldates = re.findall('(?i)<(?:b|strong)>(\d+[a-z]* [A-Z][a-z]* \d\d\d\d)', content)
+                            if len(alldates) != 1:
+                                    print alldates
+                                    raise Exception, 'Date match failed, expected one got %d\n%s' % (len(alldates), url)
 
-                        #print date, url
-                        urls.append((date, url))
+                            date = mx.DateTime.DateTimeFrom(alldates[0]).date
+
+                            #print date, url
+                            if (date, url) not in urls:
+                                urls.append((date, url))
 
         return urls
 
