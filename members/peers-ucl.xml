@@ -12590,6 +12590,30 @@ B - bishop
     fromdate="2014-11-10" todate="9999-12-31"
 />
 
+<lord
+    id="uk.org.publicwhip/lord/101228"
+    house="lords"
+    forenames="Arminka"
+    title="Baroness" lordname="Helic" lordofname=""
+    lordofname_full="Millbank"
+    county="the City of Westminster"
+    peeragetype="L" affiliation="Con"
+    fromdate="2014-11-24" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101229"
+    house="lords"
+    prefix="Sir"
+    forenames="Andrew Fleming"
+    suffix="KCMG"
+    title="Lord" lordname="Green" lordofname="Deddington"
+    lordofname_full=""
+    county="the County of Oxfordshire"
+    peeragetype="L" affiliation="XB"
+    fromdate="2014-12-08" todate="9999-12-31"
+/>
+
 <!--
 <lord
     id="uk.org.publicwhip/lord/1012.."
