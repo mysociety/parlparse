@@ -161,19 +161,19 @@ class Question(object):
         except:
             self.heading = '*No heading*'
 
-        asker = qn.find(class_='qna-result-question-title')
-        self.asker = self.find_speaker(asker)
         date_asked = qn.find(class_="qna-result-question-date")
         self.date_asked = self.find_date(date_asked, 'Asked')
+        asker = qn.find(class_='qna-result-question-title')
+        self.asker = self.find_speaker(asker, self.date_asked)
         question = qn.find(class_="qna-result-question-text").text.strip()
         self.question = escape(question)
 
         self.answers = []
         for answer_ctr in qn.findAll(class_='qna-result-answer-container'):
-            answerer = answer_ctr.find(class_="qna-result-answer-title")
-            answerer = self.find_speaker(answerer)
             date_answer = answer_ctr.find(class_="qna-result-answer-date")
             date_answer = self.find_date(date_answer, '(Answered|Corrected)')
+            answerer = answer_ctr.find(class_="qna-result-answer-title")
+            answerer = self.find_speaker(answerer, date_answer)
 
             groupedquestions_container = answer_ctr.find(class_="qna-result-groupedquestions-container")
             groupedquestions = []
@@ -206,9 +206,16 @@ class Question(object):
                 'groupedquestions': groupedquestions,
             }))
 
-    def find_speaker(self, h):
+    def find_speaker(self, h, date):
         speaker_id = re.search('(\d+)$', h.a['href']).group(1)
-        member = MEMBERS.xpath('//member[@datadotparl_id="%s"]' % speaker_id)[0]
+        members = MEMBERS.xpath('//member[@datadotparl_id="%s"]' % speaker_id)
+        member = None
+        for m in members:
+            if m.attrib['fromdate'] <= date <= m.attrib['todate']:
+                member = m
+                break
+        if member is None:
+            raise Exception('Could not find matching entry for %s' % speaker_id)
         return AttrDict(id=member.attrib['id'], name=h.a.text)
 
     def find_date(self, d, regex):
