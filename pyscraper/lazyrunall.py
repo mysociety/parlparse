@@ -223,7 +223,7 @@ if options.scrape:
 	if options.standing:
 		StandingPullGluePages(options.datefrom, options.dateto, options.forcescrape)
         if options.ni:
-                ni.scrape.scrape_new_ni(options.datefrom, options.dateto, options.forcescrape)
+                ni.scrape.scrape_ni(options.datefrom, options.dateto, options.forcescrape)
 	#if options.votes:
 	#	PullGluePages(options, "votes", "votes")
 	if options.qbook:
