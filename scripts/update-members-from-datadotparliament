@@ -11,9 +11,8 @@ source_files = [
   'all-current-commons'
 ]
 
-# Position start date threshold
-# Currently 2010 election (2010-05-11)
-# XXX Parliament API is giving 2010-05-06 for things that were actually
+# Position start date threshold, currently the 2010 election (2010-05-11).
+# The Parliament API is giving 2010-05-06 for things that were actually
 # 2010-05-11 so use that for now:
 start_date_threshold = datetime(2010, 5, 6)
 
@@ -23,231 +22,139 @@ etree.set_default_parser(parser)
 # Create the master ministers element
 ministers = etree.Element('publicwhip')
 
-for source_file in source_files:
 
-  # Parse the file
+class Position(object):
+  def __init__(self, position, positions):
+    self.position = position
+    self.list = positions
+
+  def generate(self):
+    position = self.position
+    el = etree.SubElement(ministers, 'moffice')
+    attrs = el.attrib
+    attrs['id'] = 'uk.parliament.data/Member/%s/%s/%s%s' % (
+      self.list.member.attrib['datadotparl_id'], self.list.typ, position.attrib['Id'], self.counter)
+    attrs['type'] = self.list.typ.lower()
+    attrs['source'] = 'datadotparl/%s' % self.list.typ.lower()
+    if self.list.name_is_dept:
+      attrs['position'] = ''
+    elif position.find('HansardName').text is not None:
+      attrs['position'] = position.find('HansardName').text
+    else:
+      attrs['position'] = position.find('Name').text
+    attrs['name'] = self.list.member.attrib['firstname'] + ' ' + self.list.member.attrib['lastname']
+    attrs['matchid'] = self.list.member.attrib['id']
+    if self.list.name_is_dept:
+      attrs['dept'] = position.find('Name').text
+    else:
+      attrs['dept'] = ''
+    attrs['fromdate'] = self.start_date.strftime('%Y-%m-%d')
+    if position.find('EndDate').text:
+      attrs['todate'] = self.end_date.strftime('%Y-%m-%d')
+    else:
+      attrs['todate'] = '9999-12-31'
+
+  def _date(self, s):
+    return datetime.strptime(self.position.find(s).text, '%Y-%m-%dT00:00:00')
+
+  @property
+  def start_date(self):
+    return self._date('StartDate')
+
+  @property
+  def end_date(self):
+    return self._date('EndDate')
+
+  @property
+  def counter(self):
+    extra = ''
+    id = self.position.attrib['Id']
+    if self.list.counter.setdefault(id, 0):
+      extra = '/%d' % self.list.counter[id]
+    self.list.counter[id] += 1
+    return extra
+
+
+class Positions(object):
+  def __init__(self, data, threshold, member):
+    self.data = data
+    self.threshold = threshold
+    self.member = member
+
+  def filter(self, typ, name_is_dept=False):
+    container = typ + 's'
+    if self.data.find(container) is None:
+      return
+    self.counter = {}
+    self.typ = typ
+    self.name_is_dept = name_is_dept
+    for p in self.data.find(container).findall(typ):
+      pos = Position(p, self)
+      if pos.start_date >= self.threshold:
+        yield pos
+
+
+def parse(fn, root_tag):
   try:
-    parl_members_xml = etree.parse('../rawdata/datadotparl/' + source_file + '.xml')
+    xml = etree.parse(fn).getroot()
   except:
-    print 'Data from ' + source_file + '.xml does not seem to be valid XML.'
-    exit(1)
+    raise Exception('Data from %s does not seem to be valid XML.' % fn)
+  if xml.tag != root_tag:
+    raise Exception('Root tag in %s is not "%s" as expected, got "%s"' % (fn, root_tag, xml.tag))
+  return xml
 
-  # Extract the members
-  parl_members_slim = parl_members_xml.getroot()
-  if parl_members_slim.tag != 'Members':
-    print 'Root tag is not "Members" as expected, got "' + parl_members_slim.tag + '". Has the schema changed?'
-    exit(1)
 
+for source_file in source_files:
+  parl_members_slim = parse('../rawdata/datadotparl/' + source_file + '.xml', 'Members')
   print 'Found ' + str(len(parl_members_slim)) + ' members from ' + source_file + '.xml.'
 
   # Enrich the data!
-
   parl_members = dict()
-
   for member in parl_members_slim:
-    try:
-      member_fullbio_xml = etree.parse('../rawdata/datadotparl/' + member.attrib['Member_Id'] + '.xml')
-    except:
-      print 'Data from ' + member.attrib['Member_Id'] + '.xml does not seem to be valid XML.'
-    else:
-      # Tack the rich record on to parl_members
-      parl_members[member.attrib['Member_Id']] = member_fullbio_xml.getroot().find('Member')
+    member_fullbio_xml = parse('../rawdata/datadotparl/' + member.attrib['Member_Id'] + '.xml', 'Members')
+    parl_members[member.attrib['Member_Id']] = member_fullbio_xml.find('Member')
 
   ##########
   # At this point parl_members contains a complete set of data.
   ##########
 
+
   # Import the current all-members.xml
-  current_members_xml = etree.parse('../members/all-members-2010.xml')
-
-  # Extract the members
-  current_members = current_members_xml.getroot()
-  if current_members.tag != 'publicwhip':
-    print 'Root tag is not "publicwhip" as expected in all-members-2010.xml, got "' + current_members.tag + '".'
-    exit(1)
-
+  current_members = parse('../members/all-members-2010.xml', 'publicwhip')
   print 'Found ' + str(len(current_members)) + ' members from all-members-2010.xml.'
 
   # From the current members, find those who aren't currently explicitly matched.
-
   unmatched_members = dict()
-
   for member in current_members:
-
     if 'datadotparl_id' not in member.attrib:
       member_name = member.attrib['lastname'] + ', ' + member.attrib['firstname']
       unmatched_members.setdefault(member_name, []).append(member)
 
   # Compare parl_members to unmatched_members
-
   for member_id, parl_member in parl_members.items():
-
     if parl_member.find('ListAs').text in unmatched_members:
       for unmatched_member in unmatched_members[parl_member.find('ListAs').text]:
-
         ## TODO: Prompt to check if this match is actually correct
-
         unmatched_member.attrib['datadotparl_id'] = parl_member.attrib['Member_Id']
 
-  ## TODO: Write out updated all-members.xml here?
-
   # Find current members with datadotparl_id
-
-  matched_members = list()
-
-  for current_member in current_members:
-    if 'datadotparl_id' in current_member.attrib:
-      matched_members.append(current_member)
-
+  matched_members = [ m for m in current_members if 'datadotparl_id' in m.attrib ]
   print str(len(matched_members)) + ' members with data.parliament ID.'
 
   # Pick out the member from parliamentary data with the right ID
   for matched_member in matched_members:
 
-    # Get data from parliament
     parl_data = parl_members[matched_member.attrib['datadotparl_id']]
+    positions = Positions(parl_data, start_date_threshold, matched_member)
 
-    # Loop through positions for that person
-
-    # Government Posts
-
-    if parl_data.find('GovernmentPosts') is not None:
-      counter = {}
-
-      for position in parl_data.find('GovernmentPosts').findall('GovernmentPost'):
-
-        # Parse the start date into an actual datetime for comparison
-        position_start = datetime.strptime(position.find('StartDate').text, '%Y-%m-%dT00:00:00')
-
-        # Check to see if this position started on or after the threshold
-        if position_start >= start_date_threshold:
-
-          # Generate a conveniently unique identifier
-          member_position_id = matched_member.attrib['datadotparl_id'] + '/' + position.attrib['Id']
-
-          # Possibly add a unique counter if person holds same post twice
-          extra = ''
-          if counter.setdefault(position.attrib['Id'], 0):
-            extra = '/%d' % counter[position.attrib['Id']]
-          counter[position.attrib['Id']] += 1
-
-          # Generate a position
-          new_position = etree.SubElement(ministers, 'moffice')
-          new_position = new_position.attrib
-          new_position['id']             = 'uk.parliament.data/Member/%s/GovernmentPost/%s%s' % (matched_member.attrib['datadotparl_id'], position.attrib['Id'], extra)
-          new_position['type']           = 'governmentpost'
-          new_position['source']         = 'datadotparl/governmentpost'
-          new_position['position']       = position.find('HansardName').text if position.find('HansardName').text is not None else position.find('Name').text
-          new_position['name']           = matched_member.attrib['firstname'] + ' ' + matched_member.attrib['lastname']
-          new_position['matchid']        = matched_member.attrib['id']
-          new_position['dept']           = ''
-          new_position['fromdate']       = position_start.strftime('%Y-%m-%d')
-          new_position['todate']         = datetime.strptime(position.find('EndDate').text, '%Y-%m-%dT00:00:00').strftime('%Y-%m-%d') if position.find('EndDate').text else '9999-12-31'
-
-    # Opposition Posts
-
-    if parl_data.find('OppositionPosts') is not None:
-      counter = {}
-
-      for position in parl_data.find('OppositionPosts').findall('OppositionPost'):
-
-        # Parse the start date into an actual datetime for comparison
-        position_start = datetime.strptime(position.find('StartDate').text, '%Y-%m-%dT00:00:00')
-
-        # Check to see if this position started on or after the threshold
-        if position_start >= start_date_threshold:
-
-          # Generate a conveniently unique identifier
-          member_position_id = matched_member.attrib['datadotparl_id'] + '/' + position.attrib['Id']
-
-          # Possibly add a unique counter if person holds same post twice
-          extra = ''
-          if counter.setdefault(position.attrib['Id'], 0):
-            extra = '/%d' % counter[position.attrib['Id']]
-          counter[position.attrib['Id']] += 1
-
-          # Generate a position
-          new_position = etree.SubElement(ministers, 'moffice')
-          new_position = new_position.attrib
-          new_position['id']             = 'uk.parliament.data/Member/%s/OppositionPost/%s%s' % (matched_member.attrib['datadotparl_id'], position.attrib['Id'], extra)
-          new_position['type']           = 'oppositionpost'
-          new_position['source']         = 'datadotparl/oppositionpost'
-          new_position['position']       = position.find('HansardName').text if position.find('HansardName').text is not None else position.find('Name').text
-          new_position['name']           = matched_member.attrib['firstname'] + ' ' + matched_member.attrib['lastname']
-          new_position['matchid']        = matched_member.attrib['id']
-          new_position['dept']           = ''
-          new_position['fromdate']       = position_start.strftime('%Y-%m-%d')
-          new_position['todate']         = datetime.strptime(position.find('EndDate').text, '%Y-%m-%dT00:00:00').strftime('%Y-%m-%d') if position.find('EndDate').text else '9999-12-31'
-
-    # Parliamentary Posts
-
-    if parl_data.find('ParliamentaryPosts') is not None:
-      counter = {}
-
-      for position in parl_data.find('ParliamentaryPosts').findall('ParliamentaryPost'):
-
-        # Parse the start date into an actual datetime for comparison
-        position_start = datetime.strptime(position.find('StartDate').text, '%Y-%m-%dT00:00:00')
-
-        # Check to see if this position started on or after the threshold
-        if position_start >= start_date_threshold:
-
-          # Generate a conveniently unique identifier
-          member_position_id = matched_member.attrib['datadotparl_id'] + '/' + position.attrib['Id']
-
-          # Possibly add a unique counter if person holds same post twice
-          extra = ''
-          if counter.setdefault(position.attrib['Id'], 0):
-            extra = '/%d' % counter[position.attrib['Id']]
-          counter[position.attrib['Id']] += 1
-
-          # Generate a position
-          new_position = etree.SubElement(ministers, 'moffice')
-          new_position = new_position.attrib
-          new_position['id']             = 'uk.parliament.data/Member/%s/ParliamentaryPost/%s%s' % (matched_member.attrib['datadotparl_id'], position.attrib['Id'], extra)
-          new_position['type']           = 'parliamentarypost'
-          new_position['source']         = 'datadotparl/parliamentarypost'
-          new_position['position']       = position.find('HansardName').text if position.find('HansardName').text is not None else position.find('Name').text
-          new_position['name']           = matched_member.attrib['firstname'] + ' ' + matched_member.attrib['lastname']
-          new_position['matchid']        = matched_member.attrib['id']
-          new_position['dept']           = ''
-          new_position['fromdate']       = position_start.strftime('%Y-%m-%d')
-          new_position['todate']         = datetime.strptime(position.find('EndDate').text, '%Y-%m-%dT00:00:00').strftime('%Y-%m-%d') if position.find('EndDate').text else '9999-12-31'
-
-    # Committees
-
-    if parl_data.find('Committees') is not None:
-      counter = {}
-
-      for position in parl_data.find('Committees').findall('Committee'):
-
-        # Parse the start date into an actual datetime for comparison
-        position_start = datetime.strptime(position.find('StartDate').text, '%Y-%m-%dT00:00:00')
-
-        # Check to see if this position started on or after the threshold
-        if position_start >= start_date_threshold:
-
-          # Generate a conveniently unique identifier
-          member_position_id = matched_member.attrib['datadotparl_id'] + '/' + position.attrib['Id']
-
-          # Possibly add a unique counter if person holds same post twice
-          extra = ''
-          if counter.setdefault(position.attrib['Id'], 0):
-            extra = '/%d' % counter[position.attrib['Id']]
-          counter[position.attrib['Id']] += 1
-
-          # Generate a position
-          new_position = etree.SubElement(ministers, 'moffice')
-          new_position = new_position.attrib
-          new_position['id']             = 'uk.parliament.data/Member/%s/Committee/%s%s' % (matched_member.attrib['datadotparl_id'], position.attrib['Id'], extra)
-          new_position['type']           = 'committee'
-          new_position['source']         = 'datadotparl/committee'
-          new_position['position']       = ''
-          new_position['name']           = matched_member.attrib['firstname'] + ' ' + matched_member.attrib['lastname']
-          new_position['matchid']        = matched_member.attrib['id']
-          new_position['dept']           = position.find('Name').text
-          new_position['fromdate']       = position_start.strftime('%Y-%m-%d')
-          new_position['todate']         = datetime.strptime(position.find('EndDate').text, '%Y-%m-%dT00:00:00').strftime('%Y-%m-%d') if position.find('EndDate').text else '9999-12-31'
+    for position in positions.filter('GovernmentPost'):
+      position.generate()
+    for position in positions.filter('OppositionPost'):
+      position.generate()
+    for position in positions.filter('ParliamentaryPost'):
+      position.generate()
+    for position in positions.filter('Committee', name_is_dept=True):
+      position.generate()
 
   print 'Done for ' + source_file + '.xml.'
 
