@@ -118,6 +118,14 @@ for source_file in source_files:
   # At this point parl_members contains a complete set of data.
   ##########
 
+  # Import people.xml
+  people_xml = parse('../members/people.xml', 'publicwhip')
+  people = {}
+  for person in people_xml:
+    pid = person.attrib['id']
+    for office in person:
+      oid = office.attrib['id']
+      people[oid] = pid
 
   # Import the current all-members.xml
   current_members = parse('../members/all-members-2010.xml', 'publicwhip')
@@ -142,7 +150,11 @@ for source_file in source_files:
   print str(len(matched_members)) + ' members with data.parliament ID.'
 
   # Pick out the member from parliamentary data with the right ID
+  already_seen = set()
   for matched_member in matched_members:
+    if people[matched_member.attrib['id']] in already_seen:
+      continue
+    already_seen.add(people[matched_member.attrib['id']])
 
     parl_data = parl_members[matched_member.attrib['datadotparl_id']]
     positions = Positions(parl_data, start_date_threshold, matched_member)
