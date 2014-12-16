@@ -3383,8 +3383,8 @@
     id="uk.org.publicwhip/member/90454"
     title="" firstname="Alex" lastname="Maskey"
     constituency="Belfast South" party="Sinn Féin"
-    fromdate="2011-05-06" todate="9999-12-31"
-    fromwhy="election" towhy="still_in_office"
+    fromdate="2011-05-06" todate="2014-11-03"
+    fromwhy="election" towhy="resigned"
 />
 <member_ni
     id="uk.org.publicwhip/member/90455"
@@ -3488,8 +3488,8 @@
     id="uk.org.publicwhip/member/90469"
     title="" firstname="Sue" lastname="Ramsey"
     constituency="Belfast West" party="Sinn Féin"
-    fromdate="2011-05-06" todate="9999-12-31"
-    fromwhy="election" towhy="still_in_office"
+    fromdate="2011-05-06" todate="2014-11-03"
+    fromwhy="election" towhy="resigned"
 />
 <member_ni
     id="uk.org.publicwhip/member/90470"
@@ -3669,6 +3669,30 @@
     title="" firstname="Claire" lastname="Sugden"
     constituency="East Londonderry" party="Independent"
     fromdate="2014-05-06" todate="9999-12-31"
+    fromwhy="appointed" towhy="still_in_office"
+/>
+
+<member_ni
+    id="uk.org.publicwhip/member/90494"
+    title="" firstname="Maurice" lastname="Devenney"
+    constituency="Foyle" party="DUP"
+    fromdate="2014-10-20" todate="9999-12-31"
+    fromwhy="appointed" towhy="still_in_office"
+/>
+
+<member_ni
+    id="uk.org.publicwhip/member/90495"
+    title="" firstname="Alex" lastname="Maskey"
+    constituency="Belfast West" party="Sinn Féin"
+    fromdate="2014-11-04" todate="9999-12-31"
+    fromwhy="appointed" towhy="still_in_office"
+/>
+
+<member_ni
+    id="uk.org.publicwhip/member/90496"
+    title="" firstname="Máirtín" lastname="Ó Muilleoir"
+    constituency="Belfast South" party="Sinn Féin"
+    fromdate="2014-11-04" todate="9999-12-31"
     fromwhy="appointed" towhy="still_in_office"
 />
 
