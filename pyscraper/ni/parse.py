@@ -1,16 +1,13 @@
 #! /usr/bin/env python
 
 import re
+import json
 import os
-import glob
 import sys
-import time
-import tempfile
-import shutil
 import xml.sax
 xmlvalidate = xml.sax.make_parser()
 
-sys.path.append('../')
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from resolveninames import memberList
 from contextexception import ContextException
 from BeautifulSoup import BeautifulSoup, Tag
@@ -40,89 +37,58 @@ class NISoup(BeautifulSoup):
 		(re.compile('(?:<span style="font-family: Arial;">|<span style="(?:font-family: Times New Roman; )?color: #000000;">)(.*?)</span>'), lambda match: match.group(1)),
 	]
 
-class ParseDay:
-	def id(self):
-		return '%s.%s.%s' % (self.date, self.idA, self.idB)
 
-	def parse_day(self, fp, text, date):
-		self.date = date
+class ParseDayParserBase(object):
+    def __init__(self, fp, date, **kwargs):
+        self.out = fp
+        self.date = date
+        self.idA = 0
+        self.idB = 0
 
+    def id(self):
+        return '%s.%s.%s' % (self.date, self.idA, self.idB)
+
+    def time_period(self, ptext, optional=False):
+        match = re.search('(\d\d?)(?:[.:]\s*(\d\d))? ?(am|pm|noon|midnight)', ptext)
+        if not match:
+            if not optional:
+                raise ContextException, 'Time not found in TimePeriod %s' % p
+            return None
+        hour = int(match.group(1))
+        if hour<12 and match.group(3) == 'pm':
+            hour += 12
+        if hour==12 and match.group(3) in ('midnight', 'am'):
+            hour = 0
+        minutes = match.group(2) or '00'
+        timestamp = "%s:%s" % (hour, minutes)
+        return timestamp
+
+
+class ParseDayHTML(object):
+    def __init__(self, fp, date):
+        self.out = fp
+        self.date = date
+
+    def parse_day(self, text):
+        soup = NISoup(text, markupMassage=NISoup.myMassage)
+        memberList.cleardebatehistory()  # Don't want to keep it between days, or reruns of same day
+        memberList.setDeputy(None)
+        if self.date >= '2014-09-07' or (self.date >= '2012-04-30' and not soup('p', {'class': True})):
+            parser = ParseDayHTMLParserNew2012
+        elif int(self.date[0:4]) >= 2006:
+            parser = ParseDayHTMLParserNew2006
+        else:
+            parser = ParseDayHTMLParserOld
+        parser(self.out, self.date).parse_day(soup)
+
+
+class ParseDayHTMLParserBase(ParseDayParserBase):
+	def __init__(self, fp, date):
+		super(ParseDayHTMLParserBase, self).__init__(fp, date)
 		# Special case for 2002-10-08
 		if re.search('i$', date):
 			self.idA = 9
 			self.idB = 17
-		else:
-			self.idA = 0
-			self.idB = 0
-
-		soup = NISoup(text, markupMassage=NISoup.myMassage)
-		self.out = fp
-		self.out = streamWriter(self.out)
-		self.out.write('<?xml version="1.0" encoding="utf-8"?>\n')
-		self.out.write('''
-<!DOCTYPE publicwhip
-[
-<!ENTITY pound   "&#163;">
-<!ENTITY euro    "&#8364;">
-
-<!ENTITY agrave  "&#224;">
-<!ENTITY aacute  "&#225;">
-<!ENTITY acirc   "&#226;">
-<!ENTITY ccedil  "&#231;">
-<!ENTITY egrave  "&#232;">
-<!ENTITY eacute  "&#233;">
-<!ENTITY ecirc   "&#234;">
-<!ENTITY iacute  "&#237;">
-<!ENTITY ograve  "&#242;">
-<!ENTITY oacute  "&#243;">
-<!ENTITY uacute  "&#250;">
-<!ENTITY Aacute  "&#193;">
-<!ENTITY Eacute  "&#201;">
-<!ENTITY Iacute  "&#205;">
-<!ENTITY Oacute  "&#211;">
-<!ENTITY Uacute  "&#218;">
-<!ENTITY Uuml    "&#220;">
-<!ENTITY auml    "&#228;">
-<!ENTITY euml    "&#235;">
-<!ENTITY iuml    "&#239;">
-<!ENTITY ntilde  "&#241;">
-<!ENTITY ouml    "&#246;">
-<!ENTITY uuml    "&#252;">
-<!ENTITY fnof    "&#402;">
-
-<!ENTITY nbsp    "&#160;">
-<!ENTITY shy     "&#173;">
-<!ENTITY deg     "&#176;">
-<!ENTITY sup2    "&#178;">
-<!ENTITY middot  "&#183;">
-<!ENTITY ordm    "&#186;">
-<!ENTITY frac14  "&#188;">
-<!ENTITY frac12  "&#189;">
-<!ENTITY frac34  "&#190;">
-<!ENTITY ndash   "&#8211;">
-<!ENTITY mdash   "&#8212;">
-<!ENTITY lsquo   "&#8216;">
-<!ENTITY rsquo   "&#8217;">
-<!ENTITY ldquo   "&#8220;">
-<!ENTITY rdquo   "&#8221;">
-<!ENTITY hellip  "&#8230;">
-<!ENTITY bull    "&#8226;">
-]>
-
-<publicwhip>
-''')
-		memberList.cleardebatehistory() # Don't want to keep it between days, or reruns of same day
-		memberList.setDeputy(None)
-		if date >= '2014-09-07':
-			self.parse_day_new_new(soup, date)
-		elif date >= '2012-04-30' and not soup('p', { 'class': True } ):
-			self.parse_day_new_new(soup, date)
-		elif int(date[0:4]) >= 2006:
-			self.parse_day_new(soup, date)
-		else:
-			body = soup('p')
-			self.parse_day_old(body)
-		self.out.write('</publicwhip>\n')
 
 	def display_speech(self):
 		if self.text:
@@ -142,8 +108,9 @@ class ParseDay:
 			timestamp = ' time="%s"' % timestamp
 		self.out.write('<%s-heading id="uk.org.publicwhip/ni/%s"%s url="%s">%s</%s-heading>\n' % (type, self.id(), timestamp, self.url, text, type))
 
-
-	def parse_day_old(self, body):
+class ParseDayHTMLParserOld(object):
+	def parse_day(self, soup):
+		body = soup('p')
 		match = re.match('\d\d(\d\d)-(\d\d)-(\d\d)(i?)$', self.date)
 		urldate = '%s%s%s%s' % match.groups()
 		self.baseurl = 'http://www.niassembly.gov.uk/record/reports/%s.htm' % urldate
@@ -170,12 +137,9 @@ class ParseDay:
 			if (p.a and p.a.get('href', ' ')[0] == '#') or (p.a and re.match('\d', p.a.get('href', ''))) or ptext=='&nbsp;':
 				continue
 			if p.findParent('i'):
-				match = re.match('(\d\d?)\.(\d\d) (a|p)m', ptext)
-				if match:
-					hour = int(match.group(1))
-					if hour<12 and match.group(3) == 'p':
-						hour += 12
-					timestamp = "%s:%s" % (hour, match.group(2))
+				ts = self.time_period(ptext, optional=True)
+				if ts:
+					timestamp = ts
 					continue
 				#if self.speaker[0]:
 				#	display_speech()
@@ -255,6 +219,8 @@ class ParseDay:
 			self.out.write('</oral-heading>\n')
 			in_oral_answers = False
 
+
+class ParseDayHTMLParserNewBase(ParseDayHTMLParserBase):
 	def new_major_heading(self, ptext, timestamp):
 		self.display_speech()
 		self.speaker = (None, timestamp)
@@ -290,27 +256,15 @@ class ParseDay:
 			memberList.setDeputy(match.group(1))
 		self.text += '<p class="italic">%s</p>\n' % phtml
 
-	def new_time_period(self, ptext, optional=False):
-		match = re.search('(\d\d?)(?:\.\s*(\d\d))? ?(am|pm|noon|midnight)', ptext)
-		if not match:
-			if not optional:
-				raise ContextException, 'Time not found in TimePeriod %s' % p
-			return None
-		hour = int(match.group(1))
-		if hour<12 and match.group(3) == 'pm':
-			hour += 12
-		if hour==12 and match.group(3) in ('midnight', 'am'):
-			hour = 0
-		timestamp = "%s:%s" % (hour, match.group(2))
-		return timestamp
 
-	def parse_day_new(self, soup, date):
+class ParseDayHTMLParserNew2006(ParseDayHTMLParserNewBase):
+	def parse_day(self, soup):
 		for s in soup.findAll(lambda tag: tag.name=='strong' and tag.contents == []):
 			s.extract()
 
 		self.url = ''
 
-		if date >= '2011-12-12':
+		if self.date >= '2011-12-12':
 			body_div = soup.find('div', 'grid_10') or soup.find('div','grid_7')
 			if not body_div:
 				raise ContextException, 'Could not find div containing main content.'
@@ -434,14 +388,16 @@ class ParseDay:
 			elif cl == 'Q1QuoteIndented' or cl == 'Q1Quote':
 				self.text += '<p class="indent">%s</p>\n' % phtml
 			elif cl == 'TimePeriod':
-				timestamp = self.new_time_period(ptext)
+				timestamp = self.time_period(ptext)
 			elif cl == 'MsoNormal':
 				continue
 			else:
 				raise ContextException, 'Uncaught paragraph! %s %s' % (cl, p)
 		self.display_speech()
 
-	def parse_day_new_new(self, soup, date):
+
+class ParseDayHTMLParserNew2012(ParseDayHTMLParserNewBase):
+	def parse_day(self, soup):
 		for s in soup.findAll(lambda tag: tag.name=='strong' and tag.contents == []):
 			s.extract()
 
@@ -490,7 +446,7 @@ class ParseDay:
 			elif p.name == 'h3':
 				self.new_minor_heading(ptext, timestamp)
 			elif phtml[0:8] == '<strong>' or re.match('T?\d+\.( |&nbsp;)*<strong>', phtml):
-				new_timestamp = self.new_time_period(ptext, optional=True)
+				new_timestamp = self.time_period(ptext, optional=True)
 				if new_timestamp:
 					timestamp = new_timestamp
 					continue
@@ -511,3 +467,167 @@ class ParseDay:
 				raise ContextException, 'Uncaught paragraph! %s' % p
 		self.display_speech()
 
+
+class ParseDayJSON(ParseDayParserBase):
+    def display_speech(self):
+        if self.heading:
+            timestamp = self.heading['ts']
+            if timestamp:
+                timestamp = ' time="%s"' % timestamp
+            typ = self.heading['type']
+            text = self.heading['text']
+            if typ == 'major':
+                self.idA += 1
+                self.idB = 0
+            else:
+                self.idB += 1
+            self.out.write('<%s-heading id="uk.org.publicwhip/ni/%s"%s>%s</%s-heading>\n' % (typ, self.id(), timestamp, text, typ))
+            self.heading = {}
+        if self.text:
+            if 'id' in self.speaker:
+                speaker_str = self.speaker['id']
+            elif 'name' in self.speaker:
+                speaker_str = 'speakerid="unknown" speakername="%s"' % self.speaker['name']
+            else:
+                speaker_str = 'nospeaker="true"'
+            timestamp = self.speaker.get('ts', '')
+            if timestamp:
+                timestamp = ' time="%s"' % timestamp
+            self.idB += 1
+            self.out.write('<speech id="uk.org.publicwhip/ni/%s" %s%s>\n%s</speech>\n' % (self.id(), speaker_str, timestamp, self.text))
+            self.text = ''
+
+    def parse_day(self, input):
+        self.heading = {}
+        self.pre_heading = {}
+        self.speaker = {}
+        self.text = ''
+        timestamp = ''
+        for line in json.loads(input):
+            text = line['ComponentText'].replace('&', '&amp;')
+            if not text:
+                print "WARNING: Empty line: %s" % line
+            elif line['ComponentType'] == 'Document Title':
+                assert text == 'Plenary, %s/%s/%s' % (self.date[8:10], self.date[5:7], self.date[0:4])
+            elif line['ComponentType'] == 'Time':
+                timestamp = self.time_period(text)
+            elif line['ComponentType'] == 'Header':
+                if line['ComponentHeaderId'] in (0, 1):
+                    typ = 'major'
+                elif line['ComponentHeaderId'] == 2:
+                    typ = 'minor'
+                else:
+                    raise Exception("Unknown ComponentHeaderId %s" % line['ComponentHeaderId'])
+                if self.heading and self.heading['type'] == typ:
+                    self.pre_heading = {'level': line['ComponentHeaderId'], 'text': self.heading['text']}
+                    self.heading['text'] += ' &#8212; %s' % text
+                else:
+                    self.display_speech()
+                    self.speaker = {'ts': timestamp}
+                    if self.pre_heading and self.pre_heading['level'] == line['ComponentHeaderId']:
+                        text = '%s &#8212; %s' % (self.pre_heading['text'], text)
+                    elif self.pre_heading and self.pre_heading['level'] > line['ComponentHeaderId']:
+                        self.pre_heading = {}
+                    self.heading = {'text': text, 'ts': timestamp, 'type': typ}
+            elif re.match('Speaker \((MlaName|DeputyChairAndName|ChairAndName|DeputySpeaker|PrincipalDeputySpeaker|MinisterAndName)\)$', line['ComponentType']):
+                # RelatedItemId here is the NI speaker ID. We could use that!
+                # But for now, carry on going by name as all that code exists.
+                self.display_speech()
+                speaker = text.replace(':', '')
+                id, stri = memberList.match(speaker, self.date)
+                self.speaker = {'id': stri, 'ts': timestamp}
+            elif line['ComponentType'] == 'Speaker (Special)':
+                self.display_speech()
+                speaker = text.replace(':', '')
+                self.speaker = {'name': speaker, 'ts': timestamp}
+            elif line['ComponentType'] == 'Question':
+                self.display_speech()
+                m = re.match('(T?[0-9]+\. )?(.*?) asked', text)
+                id, stri = memberList.match(m.group(2), self.date)
+                self.speaker = {'id': stri, 'ts': timestamp}
+                self.text += "<p>%s</p>\n" % text
+            elif line['ComponentType'] == 'Quote':
+                self.text += '<p class="indent">%s</p>\n' % text
+            elif line['ComponentType'] in ('Plenary Item Text', 'Procedure Line'):
+                match = re.match('The Assembly met at ((\d\d?):(\d\d) (am|pm)|12 noon)', text)
+                if match:
+                    timestamp = self.time_period(text)
+                    self.speaker['ts'] = timestamp
+                self.text += '<p class="italic">%s</p>\n' % text
+            elif line['ComponentType'] == 'Bill Text':
+                self.text += text.replace('<p>', '<p class="indent">')  # Already is HTML
+            elif line['ComponentType'] in ('Division', 'Spoken Text'):
+                self.text += '<p>%s</p>\n' % re.sub('\s*<BR />\s*<BR />\s*(?i)', '</p>\n<p>', text)
+            else:
+                raise ContextException("Uncaught Component Type! %s" % line['ComponentType'])
+        self.display_speech()
+
+class ParseDay(object):
+    def parse_day(self, fp, text, date):
+        out = streamWriter(fp)
+        out.write('<?xml version="1.0" encoding="utf-8"?>\n')
+        out.write('''
+<!DOCTYPE publicwhip
+[
+<!ENTITY pound   "&#163;">
+<!ENTITY euro    "&#8364;">
+
+<!ENTITY agrave  "&#224;">
+<!ENTITY aacute  "&#225;">
+<!ENTITY acirc   "&#226;">
+<!ENTITY ccedil  "&#231;">
+<!ENTITY egrave  "&#232;">
+<!ENTITY eacute  "&#233;">
+<!ENTITY ecirc   "&#234;">
+<!ENTITY iacute  "&#237;">
+<!ENTITY ograve  "&#242;">
+<!ENTITY oacute  "&#243;">
+<!ENTITY uacute  "&#250;">
+<!ENTITY Aacute  "&#193;">
+<!ENTITY Eacute  "&#201;">
+<!ENTITY Iacute  "&#205;">
+<!ENTITY Oacute  "&#211;">
+<!ENTITY Uacute  "&#218;">
+<!ENTITY Uuml    "&#220;">
+<!ENTITY auml    "&#228;">
+<!ENTITY euml    "&#235;">
+<!ENTITY iuml    "&#239;">
+<!ENTITY ntilde  "&#241;">
+<!ENTITY ouml    "&#246;">
+<!ENTITY uuml    "&#252;">
+<!ENTITY fnof    "&#402;">
+
+<!ENTITY nbsp    "&#160;">
+<!ENTITY shy     "&#173;">
+<!ENTITY deg     "&#176;">
+<!ENTITY sup2    "&#178;">
+<!ENTITY middot  "&#183;">
+<!ENTITY ordm    "&#186;">
+<!ENTITY frac14  "&#188;">
+<!ENTITY frac12  "&#189;">
+<!ENTITY frac34  "&#190;">
+<!ENTITY ndash   "&#8211;">
+<!ENTITY mdash   "&#8212;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY hellip  "&#8230;">
+<!ENTITY bull    "&#8226;">
+]>
+
+<publicwhip>
+''')
+        if date > '2014-11-01':
+            parser = ParseDayJSON(out, date)
+        else:
+            parser = ParseDayHTML(out, date)
+        parser.parse_day(text)
+        out.write('</publicwhip>\n')
+
+
+if __name__ == '__main__':
+    fp = sys.stdout
+    text = open(sys.argv[1]).read()
+    date = os.path.basename(sys.argv[1])[2:12]
+    ParseDay().parse_day(fp, text, date)
