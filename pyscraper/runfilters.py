@@ -310,7 +310,7 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
     # scan through the directory and make a mapping of all the copies for each
     daymap = { }
     for ldfile in os.listdir(pwcmdirin):
-        mnums = re.match("[a-z]*(\d{4}-\d\d-\d\d)([a-z]*)\.html$", ldfile)
+        mnums = re.match("[a-z]*(\d{4}-\d\d-\d\d)([a-z]*)\.(html|json)$", ldfile)
         if mnums:
             daymap.setdefault(mnums.group(1), []).append((AlphaStringToOrder(mnums.group(2)), mnums.group(2), ldfile))
         elif os.path.isfile(os.path.join(pwcmdirin, ldfile)):
@@ -332,13 +332,13 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
         fdaycs.sort()
 
         # detect if there is a change in date on any of them, which will
-        # require forcr reparse on whole day to keep the "latest" flag up to date.
+        # require force reparse on whole day to keep the "latest" flag up to date.
         # this is happening due to over-writes on the today pages
         bmodifiedoutoforder = None
         for fdayc in fdaycs:
             fin = fdayc[2]
             jfin = os.path.join(pwcmdirin, fdayc[2])
-            jfout = os.path.join(pwxmldirout, re.match('(.*\.)html$', fin).group(1) + 'xml')
+            jfout = os.path.join(pwxmldirout, re.match('(.*\.)(html|json)$', fin).group(1) + 'xml')
             patchfile = findpatchfile(fin, newpwpatchesdir, pwpatchesdir)
             if os.path.isfile(jfout):
                 out_modified = os.stat(jfout).st_mtime
@@ -362,7 +362,7 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 
             # here we repeat the parsing and run the patchtool editor until this file goes through.
             # create the output file name
-            jfout = os.path.join(pwxmldirout, re.match('(.*\.)html$', fin).group(1) + 'xml')
+            jfout = os.path.join(pwxmldirout, re.match('(.*\.)(html|json)$', fin).group(1) + 'xml')
             patchfile = findpatchfile(fin, newpwpatchesdir, pwpatchesdir)
 
             # skip already processed files, if date is earler and it's not a forced reparse

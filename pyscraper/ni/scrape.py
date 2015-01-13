@@ -3,11 +3,16 @@
 # XXX Pagination has been introduced for the 1998-2003 pages, so any
 # rescraping of those will break with this current code.
 
+import json
 import urllib
 import urlparse
 import re
 import time, datetime
 import os
+import sys
+
+API_ROOT = 'http://data.niassembly.gov.uk/api/hansard/'
+API_PLENARY = '%splenary/plenarydate/' % API_ROOT
 
 root = []
 #for i in range(1997,2003):
@@ -24,15 +29,40 @@ ni_dir = os.path.dirname(__file__)
 
 def scrape_ni_day(url, filename, forcescrape):
     filename = '%s/../../../parldata/cmpages/ni/%s' % (ni_dir, filename)
-    if not os.path.isfile(filename) or forcescrape:
-        print "NI scraping %s" % url
-        ur = urllib.urlopen(url)
-        fp = open(filename, 'w')
-        fp.write(ur.read())
-        fp.close()
-        ur.close()
+    data = urllib.urlopen(url).read()
 
-def scrape_new_ni(datefrom, dateto, forcescrape):
+    save = True
+    if os.path.isfile(filename):
+        current = open(filename).read()
+        if current == data and not forcescrape:
+            save = False
+
+    if save:
+        print "NI scraping %s" % url
+        open(filename, 'w').write(data)
+
+
+def scrape_ni(datefrom, dateto, forcescrape=False):
+    # Let's use the API for anything post 2014-11-01 for the moment
+    date_switch = '2014-11-01'
+    if datefrom <= date_switch:
+        scrape_ni_html(datefrom, dateto, forcescrape)
+    if dateto >= date_switch:
+        scrape_ni_json(datefrom, dateto, forcescrape)
+
+
+def scrape_ni_json(datefrom, dateto, forcescrape):
+    ur = urllib.urlopen(API_ROOT)
+    index = json.load(ur)
+    for day in index:
+        date = day['PlenaryDate'][:10]
+        if date < datefrom or date > dateto: continue
+        if date < '2014-11-01': continue
+        filename = 'ni%s.json' % date
+        scrape_ni_day(urlparse.urljoin(API_PLENARY, str(date)), filename, forcescrape)
+
+
+def scrape_ni_html(datefrom, dateto, forcescrape):
     for url in root:
         ur = urllib.urlopen(url)
         page = ur.read()
@@ -57,7 +87,7 @@ def scrape_new_ni(datefrom, dateto, forcescrape):
             formats = (
                 # Manual fix for 2013-02-18
                 (r'(18-Febraury-2013)', '%d-%braury-%Y', day[2]),
-                
+
                 (r'(\d{1,2}-[a-zA-Z]*-\d\d\d\d)', "%d-%B-%Y", day[2]),
                 (r'(\d{2}/[a-zA-Z]*-\d{1,2}-[a-zA-Z]*)', "%y/%A-%d-%B", day[1]),
                 (r'(\d{2}/\d{1,2}-[a-zA-Z]*)', "%y/%d-%B", day[1]),
@@ -83,4 +113,4 @@ def scrape_new_ni(datefrom, dateto, forcescrape):
             scrape_ni_day(urlparse.urljoin(url, day[0]), filename, forcescrape)
 
 if __name__ == '__main__':
-    scrape_new_ni()
+    scrape_ni(*sys.argv[1:])
