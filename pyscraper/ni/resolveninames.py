@@ -256,6 +256,16 @@ class MemberList(xml.sax.handler.ContentHandler):
 				ids.remove('uk.org.publicwhip/member/90287')
 			else:
 				raise ContextException, 'Problem with Mr Hay!'
+		elif len(ids) > 1 and 'uk.org.publicwhip/member/90449' in ids:
+			# Special case for 2015-01-12, when Mr McLaughlin becomes Speaker
+			if input == 'Mr Mitchel McLaughlin':
+				ids.remove('uk.org.publicwhip/member/90497')
+			elif input == 'Mr Principal Deputy Speaker':
+				ids.remove('uk.org.publicwhip/member/90497')
+			elif input == 'Mr Speaker':
+				ids.remove('uk.org.publicwhip/member/90449')
+			else:
+				raise ContextException, 'Problem with Mr McLaughlin! Got "%s"' % input
 		elif len(ids) > 1:
 			names = ""
 			for id in ids:
