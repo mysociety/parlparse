@@ -26,7 +26,7 @@ respeakervals = re.compile('''
     (?P<name>[^:(]*?)\s*
     (?:\((?P<bracket>(?!%s)[^:)]*)\)?)?
     (?:\s*\((?:%s)\))?
-    (?P<maiden>\s*\(Maiden[ ]Speech\))?
+    (?P<maiden>\s*\((?:Maiden|Valedictory)[ ]Speech\))?
     (?P<colon>:)?:*
     \s*$(?x)''' % (lord_parties, lord_parties))
 
@@ -130,4 +130,4 @@ def LordsFilterSpeakers(fout, text, sdate):
                         fout.write('<speaker speakerid="%s" speakername="%s" colon="%s">%s</speaker>' % (lsid, name, colon, name))
 
                 if namec.group('maiden'):
-                        fout.write('<i>Maiden Speech:</i>')
+                        fout.write('<i>%s</i>' % namec.group('maiden'))
