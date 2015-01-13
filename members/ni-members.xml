@@ -3116,7 +3116,7 @@
 <member_ni
     id="uk.org.publicwhip/member/90416"
     title="" firstname="William" lastname="Hay"
-    constituency="Foyle" party="DUP"
+    constituency="Foyle" party="Speaker"
     fromdate="2011-05-06" todate="2014-10-13"
     fromwhy="election" towhy="retired"
 />
@@ -3348,8 +3348,8 @@
     id="uk.org.publicwhip/member/90449"
     title="" firstname="Mitchel" lastname="McLaughlin"
     constituency="South Antrim" party="Sinn Féin"
-    fromdate="2011-05-06" todate="9999-12-31"
-    fromwhy="election" towhy="still_in_office"
+    fromdate="2011-05-06" todate="2015-01-12"
+    fromwhy="election" towhy="changed_party"
 />
 <member_ni
     id="uk.org.publicwhip/member/90450"
@@ -3694,6 +3694,14 @@
     constituency="Belfast South" party="Sinn Féin"
     fromdate="2014-11-04" todate="9999-12-31"
     fromwhy="appointed" towhy="still_in_office"
+/>
+
+<member_ni
+    id="uk.org.publicwhip/member/90497"
+    title="" firstname="Mitchel" lastname="McLaughlin"
+    constituency="South Antrim" party="Speaker"
+    fromdate="2015-01-12" todate="9999-12-31"
+    fromwhy="changed_party" towhy="still_in_office"
 />
 
 </publicwhip>
