@@ -168,6 +168,11 @@ def GlueAllType(pcmdir, cmindex, fproto, forcescrape):
 
 # Get index of all regmem pages from the index
 def FindRegmemPages():
+    corrections = {
+        '/pa/cm/cmregmem/060214/memi02.htm': '2006-02-13',
+        '/pa/cm/cmregmem/051101/memi02.htm': '2005-11-01',
+        '/pa/cm/cmregmem/925/part1contents.htm': '2013-01-18',
+    }
     urls = []
     idxurl = 'http://www.publications.parliament.uk/pa/cm/cmregmem.htm'
     ur = urllib.urlopen(idxurl)
@@ -176,38 +181,57 @@ def FindRegmemPages():
 
     soup = BeautifulSoup.BeautifulSoup(content)
     soup = [ table.find('table') for table in soup.findAll('table') if table.find('table') ]
-    ixurl = urlparse.urljoin(idxurl, soup[0].find('a', href=True)['href'])
+    ixurls = [urlparse.urljoin(idxurl, ix['href']) for ix in soup[0].findAll('a', href=True)]
 
-    ur = urllib.urlopen(ixurl)
-    content = ur.read()
-    ur.close();
+    for ixurl in ixurls:
+        ur = urllib.urlopen(ixurl)
+        content = ur.read()
+        ur.close()
 
-    # Remove comments
-    content = re.sub('<!--.*?-->(?s)', '', content)
+        # <B>14&nbsp;May&nbsp;2001&nbsp;(Dissolution)</B>
+        content = content.replace("&nbsp;", " ")
 
-    # <A HREF="/pa/cm199900/cmregmem/memi02.htm">Register
-    #              of Members' Interests November 2000</A>
-    allurls = re.findall('<a href="([^>]*)">(?i)', content)
-    for url in allurls:
-        #print url
-        if url.find("memi02") >= 0 or url.find("part1contents") >= 0:
-            url = urlparse.urljoin(ixurl, url)
+        soup = BeautifulSoup.BeautifulSoup(content)
 
-            # find date
-            ur = urllib.urlopen(url)
-            content = ur.read()
-            ur.close();
-            # <B>14&nbsp;May&nbsp;2001&nbsp;(Dissolution)</B>
-            content = content.replace("&nbsp;", " ")
+        if soup.find(text=re.compile('^Contents$(?i)')):
+            # An immediate register page.
+            # Remove comments
+            content = re.sub('<!--.*?-->(?s)', '', content)
+
             alldates = re.findall('(?i)<(?:b|strong)>(\d+[a-z]* [A-Z][a-z]* \d\d\d\d)', content)
             if len(alldates) != 1:
                 print alldates
                 raise Exception, 'Date match failed, expected one got %d\n%s' % (len(alldates), url)
 
             date = mx.DateTime.DateTimeFrom(alldates[0]).date
+            if (date, ixurl) not in urls:
+                urls.append((date, ixurl))
+        else:
+            allurl_soups = soup.findAll('a', href=re.compile("(memi02|part1contents)"))
+            for url_soup in allurl_soups:
+                row_content = url_soup.findParent('tr').renderContents()
+                url = url_soup['href']
+                #print url
+                if url == '060324/memi02.htm':
+                    # fix broken URL
+                    url = '/pa/cm/cmregmem/' + url
 
-            #print date, url
-            urls.append((date, url))
+                url = urlparse.urljoin(ixurl, url)
+
+                alldates = re.findall('\d+[a-z]*\s+[A-Z][a-z]*\s+\d\d\d\d', row_content, re.DOTALL)
+                if len(alldates) != 1:
+                    print alldates
+                    raise Exception, 'Date match failed, expected one got %d\n%s' % (len(alldates), url)
+
+                url_path = urlparse.urlparse(url)[2]
+                if url_path in corrections:
+                    date = corrections[url_path]
+                else:
+                    alldates[0] = re.sub('\s+', ' ', alldates[0])
+                    date = mx.DateTime.DateTimeFrom(alldates[0]).date
+
+                if (date, url) not in urls:
+                    urls.append((date, url))
 
     return urls
 
