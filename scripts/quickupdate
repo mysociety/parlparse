@@ -45,8 +45,8 @@ else:
 rescrape = []
 for type, dir in dirs.items():
     suffix = suffixes[type] if type in suffixes else 'a'
-    file = base_html + dir + yesterday + suffix + '.html'
-    if not os.path.exists(file):
+    file = base_html + dir + yesterday + suffix + '.%s'
+    if not os.path.exists(file % 'html') and not os.path.exists(file % 'json'):
         rescrape.append(type)
 
 reparse = []
