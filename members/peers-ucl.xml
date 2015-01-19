@@ -4727,7 +4727,7 @@ B - bishop
 	forenames="John Martin Wharton"
 	title="Bishop" lordname="" lordofname="Newcastle"
 	peeragetype="B" affiliation="Bp"
-	fromdate="2002-11-05" todate="9999-12-31"
+	fromdate="2002-11-05" todate="2014-11-30" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100455"
@@ -10263,7 +10263,7 @@ B - bishop
     forenames="Michael Francis Perham"
     title="Bishop" lordname="" lordofname="Gloucester"
     peeragetype="B" affiliation="Bp"
-    fromdate="2009-12-01" todate="9999-12-31"
+    fromdate="2009-12-01" todate="2014-11-21" towhy="retired"
 />
 
 <lord
@@ -10995,7 +10995,7 @@ B - bishop
     forenames="John Lawrence Pritchard"
     title="Bishop" lordname="" lordofname="Oxford"
     peeragetype="B" affiliation="Bp"
-    fromdate="2010-11-25" todate="9999-12-31"
+    fromdate="2010-11-25" todate="2014-10-31" towhy="retired"
 />
 
 <lord
@@ -12612,6 +12612,36 @@ B - bishop
     county="the County of Oxfordshire"
     peeragetype="L" affiliation="XB"
     fromdate="2014-12-08" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101230"
+    house="lords"
+    forenames="Jonathan Douglas"
+    title="Lord" lordname="Evans" lordofname="Weardale"
+    lordofname_full="Toys Hill"
+    county="the County of Kent"
+    peeragetype="L" affiliation="XB"
+    fromdate="2014-12-09" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101231"
+    house="lords"
+    forenames="Christopher Thomas James Chessun"
+    title="Bishop" lordname="" lordofname="Southwark"
+    peeragetype="B" affiliation="Bp"
+    fromdate="2014-12-15" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101232"
+    house="lords"
+    forenames="Alison Margaret"
+    title="Baroness" lordname="Wolf" lordofname="Dulwich"
+    county="the London Borough of Southwark"
+    peeragetype="L" affiliation="XB"
+    fromdate="2015-01-12" todate="9999-12-31"
 />
 
 <!--
