@@ -508,11 +508,17 @@ def CmIndexFromNewPage(date, type='commons'):
 	urlinkpage.close()
 
         entries = []
+
 	for link1 in re.findall('<a[^>]*?href="(http://www\.publications\.[^"#]+)(?:#[^"]*)?">([^<]*)</a>(?i)', srlinkpage):
                 linkhref = link1[0]
                 linktext = link1[1]
      		if not re.search('debate|westminster|written(?i)', linktext):
 		        continue
+		if linkhref.endswith('pdf'):
+			if miscfuncs.IsNotQuiet():
+				print "Skipping PDF: %s" % linktext
+			continue
+
         	uind = re.sub('(?:\s|%20)', '', linkhref)
         	typ = re.sub('\s+', ' ', linktext).strip()
                 if entries and entries[-1][1] == uind:
