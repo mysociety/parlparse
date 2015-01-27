@@ -39,6 +39,8 @@ def GenPatchFileNames(typ, sdate):
 	else:
 		stub = typ
 
+	extension = "json" if typ == "ni" else "html"
+
 	folder = os.path.join(qfolder, typ)
 
 	# lords case where we use the new top level patch directory
@@ -50,10 +52,10 @@ def GenPatchFileNames(typ, sdate):
 	if not os.path.isdir(pdire):
 		os.mkdir(pdire)
 
-	patchfile = os.path.join(pdire, "%s%s.html.patch" % (stub, sdate))
-	orgfile = os.path.join(folder, "%s%s.html" % (stub, sdate))
-	tmpfile = tempfile.mktemp(".html", "patchtmp-%s%s-" % (stub, sdate), miscfuncs.tmppath)
-	tmppatchfile = os.path.join(pdire, "%s%s.html.patch.new" % (stub, sdate))
+	patchfile = os.path.join(pdire, "%s%s.%s.patch" % (stub, sdate, extension))
+	orgfile = os.path.join(folder, "%s%s.%s" % (stub, sdate, extension))
+	tmpfile = tempfile.mktemp(".%s" % extension, "patchtmp-%s%s-" % (stub, sdate), miscfuncs.tmppath)
+	tmppatchfile = os.path.join(pdire, "%s%s.%s.patch.new" % (stub, sdate, extension))
 
 	return patchfile, orgfile, tmpfile, tmppatchfile
 
