@@ -61,9 +61,9 @@ def RunRegmemFilters2010(fout, text, sdate, sdatever):
                         if re.match('\s*Nil\.?\s*$', text):
                                 fout.write('Nil.\n')
                                 continue
-                        if row.name == 'h3':
+                        if row.name == 'h3' or row.get('class') == 'shd0':
                                 if re.match('\s*$', text): continue
-                                m = re.match("\s*(\d\d?)\.\s*(.*)$", text)
+                                m = re.match("(?:\s*<strong>)?\s*(\d\d?)\.\s*(.*)(?:</strong>\s*)?$", text)
                                 if m:
                                         if record:
                                             fout.write('\t\t</record>\n')
