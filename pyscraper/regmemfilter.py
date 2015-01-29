@@ -49,8 +49,14 @@ def RunRegmemFilters2010(fout, text, sdate, sdatever):
                 category = None
                 categoryname = None
                 subcategory = None
+                record = False
                 for row in page.h2.findNextSiblings():
                         text = row.renderContents().decode('utf-8').encode('iso-8859-1', 'xmlcharrefreplace')
+                        if row.get('class') == 'spacer':
+                            if record:
+                                fout.write('\t\t</record>\n')
+                                record = False
+                            continue
                         if not text or re.match('\s*\.\s*$', text): continue
                         if re.match('\s*Nil\.?\s*$', text):
                                 fout.write('Nil.\n')
@@ -59,6 +65,9 @@ def RunRegmemFilters2010(fout, text, sdate, sdatever):
                                 if re.match('\s*$', text): continue
                                 m = re.match("\s*(\d\d?)\.\s*(.*)$", text)
                                 if m:
+                                        if record:
+                                            fout.write('\t\t</record>\n')
+                                            record = False
                                         if category:
                                                 fout.write('\t</category>\n')
                                         category, categoryname = m.groups()
@@ -66,17 +75,22 @@ def RunRegmemFilters2010(fout, text, sdate, sdatever):
                                         categoryname = re.sub('<[^>]*>(?s)', '', categoryname).strip()
                                         fout.write('\t<category type="%s" name="%s">\n' % (category, categoryname))
                                         continue
-                        if row.get('class') == 'spacer': continue
+                        if not record:
+                            fout.write('\t\t<record>\n')
+                            record = True
                         subcategorymatch = re.match("\s*\(([ab])\)\s*(.*)$", text)
                         if subcategorymatch:
                                 subcategory = subcategorymatch.group(1)
-                                fout.write('\t\t(%s)\n' % subcategory)
-                                fout.write('\t\t<item subcategory="%s">%s</item>\n' % (subcategory, subcategorymatch.group(2)))
+                                fout.write('\t\t\t(%s)\n' % subcategory)
+                                fout.write('\t\t\t<item subcategory="%s">%s</item>\n' % (subcategory, subcategorymatch.group(2)))
                                 continue
                         if subcategory:
-                                fout.write('\t\t<item subcategory="%s">%s</item>\n' % (subcategory, text))
+                                fout.write('\t\t\t<item subcategory="%s">%s</item>\n' % (subcategory, text))
                         else:
-                                fout.write('\t\t<item>%s</item>\n' % text)
+                                fout.write('\t\t\t<item>%s</item>\n' % text)
+                if record:
+                    fout.write('\t\t</record>\n')
+                    record = False
                 if category:
                         fout.write('\t</category>\n')
                 fout.write('</regmem>\n')                                
