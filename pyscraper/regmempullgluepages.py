@@ -135,25 +135,9 @@ def GlueAllType(pcmdir, cmindex, fproto, forcescrape):
         # hansard index page
         url = dnu[1]
 
-        # If already got file and it's recent, skip
-        if os.path.exists(dgf) and dnu[0] > '2010-09-01':
-            continue
-        # if we already have got the file, check the pagex link agrees in the first line
-        # no need to scrape it in again
+        # If already got file, skip
         if os.path.exists(dgf):
-            fpgx = open(dgf, "r")
-            pgx = fpgx.readline()
-            fpgx.close()
-            if pgx:
-                pgx = re.findall('<page url="([^"]*)"[^/]*/>', pgx)
-                if pgx:
-                    if pgx[0] == url:
-                        #print 'skipping ' + url
-                        continue
-            #print 'RE-scraping ' + url
-        else:
-            pass
-            #print 'scraping ' + url
+            continue
 
         # now we take out the local pointer and start the gluing
         dtemp = open(tempfilename, "w")
