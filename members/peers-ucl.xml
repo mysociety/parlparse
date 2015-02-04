@@ -115,7 +115,7 @@ B - bishop
 	forenames="Michael"
 	title="Viscount" lordname="Allenby" lordofname="Megiddo"
 	peeragetype="HP" affiliation="XB"
-	fromdate="1984" todate="9999-12-31"
+	fromdate="1984" todate="2014-10-03" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100011"
@@ -1308,7 +1308,7 @@ B - bishop
 	forenames="Roger"
 	title="Lord" lordname="Chorley" lordofname=""
 	peeragetype="HP" affiliation="XB"
-	fromdate="2001-10-31" todate="9999-12-31"
+	fromdate="2001-10-31" todate="2014-11-17" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100126"
@@ -1393,7 +1393,7 @@ B - bishop
 	forenames="David"
 	title="Lord" lordname="Cobbold" lordofname=""
 	peeragetype="HP" affiliation="XB"
-	fromdate="1987" todate="9999-12-31"
+	fromdate="1987" todate="2014-10-13" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100134"
@@ -4581,7 +4581,7 @@ B - bishop
 	forenames="John"
 	title="Lord" lordname="Moran" lordofname=""
 	peeragetype="HP" affiliation="XB"
-	fromdate="1977" todate="9999-12-31"
+	fromdate="1977" todate="2014-02-14" towhy="died"
 />
 <lord
 	id="uk.org.publicwhip/lord/100441"
@@ -5875,7 +5875,7 @@ B - bishop
 	forenames="Flora"
 	title="Lady" lordname="Saltoun" lordofname="Abernethy"
 	peeragetype="HP" affiliation="XB"
-	fromdate="1979" todate="9999-12-31"
+	fromdate="1979" todate="2014-12-12" towhy="retired"
 />
 <lord
 	id="uk.org.publicwhip/lord/100567"
@@ -11640,7 +11640,7 @@ B - bishop
 	forenames="Charles Mark Townshend"
 	title="Viscount" lordname="Colville" lordofname="Culross"
 	peeragetype="HD" affiliation="XB"
-	fromdate="2011-07-20" todate="9999-12-31"
+	fromdate="2011-09-05" todate="9999-12-31"
 />
 <lord
 	id="uk.org.publicwhip/lord/101136"
@@ -11648,7 +11648,7 @@ B - bishop
 	forenames="Thomas Henry"
 	title="Lord" lordname="Ashton" lordofname="Hyde"
 	peeragetype="HP" affiliation="Con"
-	fromdate="2011-07-20" todate="9999-12-31"
+	fromdate="2011-09-05" todate="9999-12-31"
 />
 
 <lord
@@ -12342,7 +12342,7 @@ B - bishop
     title="Lord" lordname="Cromwell" lordofname=""
     county=""
     peeragetype="HD" affiliation="XB"
-    fromdate="2014-04-10" todate="9999-12-31"
+    fromdate="2014-05-06" todate="9999-12-31"
 />
 
 <lord
@@ -12576,7 +12576,7 @@ B - bishop
     forenames="Raymond"
     title="Earl" lordname="" lordofname="Oxford and Asquith"
     peeragetype="HD" affiliation="LDem"
-    fromdate="2014-10-24" todate="9999-12-31"
+    fromdate="2014-11-04" todate="9999-12-31"
 />
 
 <lord
@@ -12642,6 +12642,46 @@ B - bishop
     county="the London Borough of Southwark"
     peeragetype="L" affiliation="XB"
     fromdate="2015-01-12" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101233"
+    house="lords"
+    forenames="Simon"
+    title="Lord" lordname="Russell" lordofname="Liverpool"
+    county="the County Palatine of Lancaster"
+    peeragetype="HP" affiliation="XB"
+    fromdate="2014-12-15" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101234"
+    house="lords"
+    forenames="John Seymour"
+    title="Duke" lordname="" lordofname="Somerset"
+    peeragetype="HP" affiliation="XB"
+    fromdate="2014-12-17" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101235"
+    house="lords"
+    forenames="William Alexander"
+    title="Lord" lordname="Hay" lordofname="Ballyore"
+    county="the City of Londonderry"
+    peeragetype="L" affiliation="DUP"
+    fromdate="2015-01-13" todate="9999-12-31"
+/>
+
+<lord
+    id="uk.org.publicwhip/lord/101236"
+    house="lords"
+    forenames="Robert James Rogers"
+    title="Lord" lordname="Lisvane" lordofname=""
+    lordofname_full="Blakemere"
+    county="the County of Herefordshire and of Lisvane in the City and County of Cardiff"
+    peeragetype="L" affiliation="XB"
+    fromdate="2015-01-22" todate="9999-12-31"
 />
 
 <!--

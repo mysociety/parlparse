@@ -170,6 +170,12 @@ ni_lord_matches = {
     "uk.org.publicwhip/member/90322":"uk.org.publicwhip/lord/100922",
     "uk.org.publicwhip/member/90457":"uk.org.publicwhip/lord/100922",
     "uk.org.publicwhip/member/90257":"uk.org.publicwhip/lord/100934",
+    # William Hay
+    "uk.org.publicwhip/member/90416":"uk.org.publicwhip/lord/101235",
+    "uk.org.publicwhip/member/90355":"uk.org.publicwhip/lord/101235",
+    "uk.org.publicwhip/member/90287":"uk.org.publicwhip/lord/101235",
+    "uk.org.publicwhip/member/90178":"uk.org.publicwhip/lord/101235",
+    "uk.org.publicwhip/member/90055":"uk.org.publicwhip/lord/101235",
 }
 # XXX: Should be possible to adapt manualmatches to do this sort of thing...
 ni_ni_matches = {

@@ -70413,7 +70413,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100009"/>
 </person>
 <person id="uk.org.publicwhip/person/13105" latestname="Viscount Allenby of Megiddo">
-    <office id="uk.org.publicwhip/lord/100010" current="yes"/>
+    <office id="uk.org.publicwhip/lord/100010"/>
 </person>
 <person id="uk.org.publicwhip/person/13104" latestname="Lord Alli">
     <office id="uk.org.publicwhip/lord/100011" current="yes"/>
@@ -70885,7 +70885,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100124" current="yes"/>
 </person>
 <person id="uk.org.publicwhip/person/13257" latestname="Lord Chorley">
-    <office id="uk.org.publicwhip/lord/100125" current="yes"/>
+    <office id="uk.org.publicwhip/lord/100125"/>
 </person>
 <person id="uk.org.publicwhip/person/13256" latestname="Lord Christopher">
     <office id="uk.org.publicwhip/lord/100126" current="yes"/>
@@ -70916,7 +70916,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100132"/>
 </person>
 <person id="uk.org.publicwhip/person/13520" latestname="Lord Cobbold">
-    <office id="uk.org.publicwhip/lord/100133" current="yes"/>
+    <office id="uk.org.publicwhip/lord/100133"/>
 </person>
 <person id="uk.org.publicwhip/person/13513" latestname="Lord Cockfield">
     <office id="uk.org.publicwhip/lord/100134"/>
@@ -72118,7 +72118,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100439"/>
 </person>
 <person id="uk.org.publicwhip/person/13043" latestname="Lord Moran">
-    <office id="uk.org.publicwhip/lord/100440" current="yes"/>
+    <office id="uk.org.publicwhip/lord/100440"/>
 </person>
 <person id="uk.org.publicwhip/person/13044" latestname="Lord Morgan">
     <office id="uk.org.publicwhip/lord/100441" current="yes"/>
@@ -72555,7 +72555,7 @@ Generated exclusively by personsets.py, don't hand edit it just now
     <office id="uk.org.publicwhip/lord/100564"/>
 </person>
 <person id="uk.org.publicwhip/person/12942" latestname="Lady Saltoun of Abernethy">
-    <office id="uk.org.publicwhip/lord/100566" current="yes"/>
+    <office id="uk.org.publicwhip/lord/100566"/>
 </person>
 <person id="uk.org.publicwhip/person/12941" latestname="Lord Sandberg">
     <office id="uk.org.publicwhip/lord/100567" current="yes"/>
@@ -74607,6 +74607,23 @@ Generated exclusively by personsets.py, don't hand edit it just now
 <person id="uk.org.publicwhip/person/25259" latestname="Baroness Wolf of Dulwich">
     <office id="uk.org.publicwhip/lord/101232" current="yes"/>
 </person>
+<person id="uk.org.publicwhip/person/25260" latestname="Lord Russell of Liverpool">
+    <office id="uk.org.publicwhip/lord/101233" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/25261" latestname="The Duke of Somerset">
+    <office id="uk.org.publicwhip/lord/101234" current="yes"/>
+</person>
+<person id="uk.org.publicwhip/person/13799" latestname="Lord Hay of Ballyore">
+    <office id="uk.org.publicwhip/lord/101235" current="yes"/>
+    <office id="uk.org.publicwhip/member/90055"/>
+    <office id="uk.org.publicwhip/member/90178"/>
+    <office id="uk.org.publicwhip/member/90287"/>
+    <office id="uk.org.publicwhip/member/90355"/>
+    <office id="uk.org.publicwhip/member/90416"/>
+</person>
+<person id="uk.org.publicwhip/person/25262" latestname="Lord Lisvane">
+    <office id="uk.org.publicwhip/lord/101236" current="yes"/>
+</person>
 <person id="uk.org.publicwhip/person/13741" latestname="Ian Adamson">
     <office id="uk.org.publicwhip/member/90002"/>
 </person>
@@ -74963,13 +74980,6 @@ Generated exclusively by personsets.py, don't hand edit it just now
 </person>
 <person id="uk.org.publicwhip/person/13798" latestname="Denis Haughey">
     <office id="uk.org.publicwhip/member/90054"/>
-</person>
-<person id="uk.org.publicwhip/person/13799" latestname="William Hay">
-    <office id="uk.org.publicwhip/member/90055"/>
-    <office id="uk.org.publicwhip/member/90178"/>
-    <office id="uk.org.publicwhip/member/90287"/>
-    <office id="uk.org.publicwhip/member/90355"/>
-    <office id="uk.org.publicwhip/member/90416"/>
 </person>
 <person id="uk.org.publicwhip/person/25154" latestname="Christopher Hazzard">
     <office id="uk.org.publicwhip/member/90483" current="yes"/>
