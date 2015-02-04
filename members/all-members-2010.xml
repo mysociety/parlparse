@@ -3156,7 +3156,7 @@ Members of the UK Parliament, House of Commons, 2010-
     id="uk.org.publicwhip/member/40486" house="commons"
     title="" firstname="Mike" lastname="Hancock"
     constituency="Portsmouth South" party="LDem"
-    fromdate="2010-05-06" todate="9999-12-31" fromwhy="general_election" towhy="still_in_office"
+    fromdate="2010-05-06" todate="2013-06-02" fromwhy="general_election" towhy="changed_party"
     datadotparl_id="59"
 />
 <member
@@ -4699,6 +4699,14 @@ Members of the UK Parliament, House of Commons, 2010-
     constituency="Rochester and Strood" party="UKIP"
     fromdate="2014-11-21" todate="9999-12-31" fromwhy="by_election" towhy="still_in_office"
     datadotparl_id="4049"
+/>
+
+<member
+    id="uk.org.publicwhip/member/40705" house="commons"
+    title="" firstname="Mike" lastname="Hancock"
+    constituency="Portsmouth South" party="Ind"
+    fromdate="2013-06-03" todate="9999-12-31" fromwhy="changed_party" towhy="still_in_office"
+    datadotparl_id="59"
 />
 
 </publicwhip>
