@@ -21,7 +21,8 @@ cd ~/parlparse/pyscraper
 
 # New UK Parliament Written Answers database
 cd ~/parlparse/
-~/.venv/bin/python wrans-2014/parse.py --out ~/parldata/scrapedxml/wrans/ --members ~/parlparse/members/all-members-2010.xml
+~/.venv/bin/python wrans-2014/parse.py --house commons --out ~/parldata/scrapedxml/wrans/ --members ~/parlparse/members/all-members-2010.xml
+~/.venv/bin/python wrans-2014/parse.py --house lords --out ~/parldata/scrapedxml/lordswrans/ --members ~/parlparse/members/peers-ucl.xml
 
 # Public Bill Committee transcripts
 cd ~/parlparse/pyscraper/standing

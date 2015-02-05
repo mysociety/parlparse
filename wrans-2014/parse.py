@@ -20,17 +20,11 @@ import requests_cache
 
 # Command line arguments
 yesterday = datetime.date.today() - datetime.timedelta(days=1)
-parser = argparse.ArgumentParser(
-    description='Scrape/parse new Written Answers database.')
-parser.add_argument(
-    '--date', dest='date', action='store', default=yesterday.isoformat(),
-    help='date to fetch')
-parser.add_argument(
-    '--members', dest='members', action='store', required=True,
-    help='filename of current member XML')
-parser.add_argument(
-    '--out', dest='out', action='store', required=True,
-    help='directory in which to place output')
+parser = argparse.ArgumentParser(description='Scrape/parse new Written Answers database.')
+parser.add_argument('--house', required=True, choices=['commons', 'lords'], help='Which house to fetch')
+parser.add_argument('--date', default=yesterday.isoformat(), help='date to fetch')
+parser.add_argument('--members', required=True, help='filename of current member XML')
+parser.add_argument('--out', required=True, help='directory in which to place output')
 ARGS = parser.parse_args()
 
 # Monkey patch, monkey patch, do the funky patch
@@ -47,7 +41,7 @@ def main():
         'page': 1,
         'max': 100,
         'questiontype': 'QuestionsWithAnswersOnly',  # 'AllQuestions',
-        'house': 'commons',  # 'commons,lords',
+        'house': ARGS.house,
         'use-dates': 'True',
         'answered-from': ARGS.date,
         'answered-to': ARGS.date,
@@ -76,9 +70,11 @@ def main():
 
     output = ('%s' % questions).encode('utf-8')
     if output:
-        with open(os.path.join(ARGS.out, 'answers%s.xml' % ARGS.date), 'w') as fp:
+        filename = 'lordswrans' if ARGS.house == 'lords' else 'answers'
+        filename += ARGS.date + '.xml'
+        with open(os.path.join(ARGS.out, filename), 'w') as fp:
             fp.write(output)
-        print "* Commons Written Answers: found %d written answers" % questions.number
+        print "* %s Written Answers: found %d new items" % (ARGS.house.title(), questions.number)
 
 
 class AttrDict(dict):
@@ -149,6 +145,19 @@ class Questions(object):
         return qn
 
 
+def _lord_name(m):
+    name = m.attrib['title']
+    if name == 'Bishop':
+        name = 'Lord Bishop'
+    if m.attrib['lordname']:
+        name += ' %s' % m.attrib['lordname']
+    if m.attrib['lordofname']:
+        name += ' of %s' % m.attrib['lordofname']
+        if not m.attrib['lordname']:
+            name = 'The ' + name
+    return name
+
+
 class Question(object):
     def __init__(self, qn, qns):
         self.qns = qns
@@ -208,15 +217,19 @@ class Question(object):
 
     def find_speaker(self, h, date):
         speaker_id = re.search('(\d+)$', h.a['href']).group(1)
-        members = MEMBERS.xpath('//member[@datadotparl_id="%s"]' % speaker_id)
-        member = None
-        for m in members:
-            if m.attrib['fromdate'] <= date <= m.attrib['todate']:
-                member = m
-                break
+        name = h.a.text
+        if ARGS.house == 'lords':
+            # Loop through all, match on name and date
+            members = MEMBERS.xpath('//lord')
+            match_fn = lambda m: name.lower() == _lord_name(m).lower() and m.attrib['fromdate'] <= date <= m.attrib['todate']
+        else:
+            # Match on Parliament ID and date
+            members = MEMBERS.xpath('//member[@datadotparl_id="%s"]' % speaker_id)
+            match_fn = lambda m: m.attrib['fromdate'] <= date <= m.attrib['todate']
+        member = next((m for m in members if match_fn(m)), None)
         if member is None:
-            raise Exception('Could not find matching entry for %s' % speaker_id)
-        return AttrDict(id=member.attrib['id'], name=h.a.text)
+            raise Exception('Could not find matching entry for %s %s' % (speaker_id, name))
+        return AttrDict(id=member.attrib['id'], name=name)
 
     def find_date(self, d, regex):
         date = re.match('\s*%s on:\s+(?P<date>.*)' % regex, d.text)
