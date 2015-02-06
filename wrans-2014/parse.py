@@ -22,6 +22,7 @@ import requests_cache
 yesterday = datetime.date.today() - datetime.timedelta(days=1)
 parser = argparse.ArgumentParser(description='Scrape/parse new Written Answers database.')
 parser.add_argument('--house', required=True, choices=['commons', 'lords'], help='Which house to fetch')
+parser.add_argument('--type', required=True, choices=['answers', 'statements'], help='What sort of thing to fetch')
 parser.add_argument('--date', default=yesterday.isoformat(), help='date to fetch')
 parser.add_argument('--members', required=True, help='filename of current member XML')
 parser.add_argument('--out', required=True, help='directory in which to place output')
@@ -32,7 +33,11 @@ cache_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cache')
 requests_cache.install_cache(cache_path, expire_after=60*60*12)
 
 HOST = 'http://www.parliament.uk'
-URL_ROOT = '%s/business/publications/written-questions-answers-statements/written-questions-answers/' % HOST
+URL_ROOT = '%s/business/publications/written-questions-answers-statements/' % HOST
+if ARGS.type == 'answers':
+    URL_INDEX = URL_ROOT + 'written-questions-answers/'
+else:
+    URL_INDEX = URL_ROOT + 'written-statements/'
 MEMBERS = lxml.etree.parse(ARGS.members)
 
 
@@ -46,8 +51,11 @@ def main():
         'answered-from': ARGS.date,
         'answered-to': ARGS.date,
     })
-    url_page = '%s?%s' % (URL_ROOT, params)
-    questions = Questions()
+    url_page = '%s?%s' % (URL_INDEX, params)
+    if ARGS.type == 'answers':
+        writtens = Questions()
+    else:
+        writtens = Statements()
     errors = 0
     while url_page:
         r = requests.get(url_page)
@@ -59,90 +67,32 @@ def main():
             if errors >= 3:
                 raise Exception, 'Too many server errors, giving up'
             continue
-        questions.add_from_html(r.content)
-        url_page = questions.next_page
+        writtens.add_from_html(r.content)
+        url_page = writtens.next_page
 
     # Make sure we have all grouped questions (some might actually not have
     # been returned due to bugs/being on another day)
-    for uid, qn in questions.by_id.items():
-        for a in qn.groupedquestions:
-            questions.get_by_id(a)
+    if ARGS.type == 'answers':
+        for uid, qn in writtens.by_id.items():
+            for a in qn.groupedquestions:
+                writtens.get_by_id(a)
 
-    output = ('%s' % questions).encode('utf-8')
+    output = ('%s' % writtens).encode('utf-8')
     if output:
-        filename = 'lordswrans' if ARGS.house == 'lords' else 'answers'
+        if ARGS.type == 'answers':
+            filename = 'lordswrans' if ARGS.house == 'lords' else 'answers'
+        else:
+            filename = 'lordswms' if ARGS.house == 'lords' else 'ministerial'
         filename += ARGS.date + '.xml'
         with open(os.path.join(ARGS.out, filename), 'w') as fp:
             fp.write(output)
-        print "* %s Written Answers: found %d new items" % (ARGS.house.title(), questions.number)
+        print "* %s Written %s: found %d new items" % (ARGS.house.title(), ARGS.type.title(), writtens.number)
 
 
 class AttrDict(dict):
     def __init__(self, *args, **kwargs):
         super(AttrDict, self).__init__(*args, **kwargs)
         self.__dict__ = self
-
-
-class Questions(object):
-    def __init__(self):
-        self.by_id = {}
-        self.by_dept = {}
-
-    def add_from_html(self, data):
-        """Provide a page of HTML, parse out all its questions"""
-        soup = bs4.BeautifulSoup(data)
-        for qn in soup.find_all(class_="qna-result-container"):
-            qn = Question(qn, self)
-            # If the question was answered/corrected on our date
-            if ARGS.date in [ a.date for a in qn.answers ]:
-                self.by_id[qn.uid] = qn
-                self.by_dept.setdefault(qn.dept, []).append(qn)
-
-        n = soup.find(text='Next').parent
-        if n.name == 'span':
-            self.next_page = None
-        elif n.name == 'a':
-            self.next_page = '%s%s' % (HOST, n['href'])
-        else:
-            raise Exception
-
-    @property
-    def number(self):
-        return len(self.by_id)
-
-    def __str__(self):
-        """Outputs the questions, grouped by department, as parlparse XML"""
-        if not self.by_dept:
-            return ''
-        out = '<publicwhip>\n'
-        for dept, deptqns in self.by_dept.items():
-            out += '''
-<major-heading id="uk.org.publicwhip/wrans/{qn.date_asked}.{qn.uid}.mh" nospeaker="true">
-    {dept}
-</major-heading>
-'''.format(dept=dept, qn=deptqns[0])
-            out += ''.join([ '%s' % qn for qn in deptqns ])
-        out += '\n</publicwhip>'
-        return out
-
-    def get_by_id(self, uid):
-        # It is possible that when we need to look up a grouped ID, it's not
-        # present. Either it was on a different day (possible), or there's a
-        # mistake in what has been returned from the search. Perform a separate
-        # scrape/parse of the question if so, to get its data.
-        if uid in self.by_id:
-            return self.by_id[uid]
-        r = requests.get(URL_ROOT, params={'uin': uid})
-        if 'There are no results' in r.content:
-            return
-        if 'Server Error' in r.content:
-            return
-        soup = bs4.BeautifulSoup(r.content)
-        qn = soup.find(class_='qna-result-container')
-        qn = Question(qn, self)
-        self.by_id[qn.uid] = qn
-        self.by_dept.setdefault(qn.dept, []).append(qn)
-        return qn
 
 
 def _lord_name(m):
@@ -158,7 +108,106 @@ def _lord_name(m):
     return name
 
 
-class Question(object):
+class WrittenThing(object):
+    def find_speaker(self, h, date):
+        speaker_id = re.search('(\d+)$', h.a['href']).group(1)
+        name = h.a.text
+        if ARGS.house == 'lords':
+            # Loop through all, match on name and date
+            members = MEMBERS.xpath('//lord')
+            match_fn = lambda m: name.lower() == _lord_name(m).lower() and m.attrib['fromdate'] <= date <= m.attrib['todate']
+        else:
+            # Match on Parliament ID and date
+            members = MEMBERS.xpath('//member[@datadotparl_id="%s"]' % speaker_id)
+            match_fn = lambda m: m.attrib['fromdate'] <= date <= m.attrib['todate']
+        member = next((m for m in members if match_fn(m)), None)
+        if member is None:
+            raise Exception('Could not find matching entry for %s %s' % (speaker_id, name))
+        return AttrDict(id=member.attrib['id'], name=name)
+
+    def find_date(self, d, regex):
+        date = re.match('\s*%s on:\s+(?P<date>.*)' % regex, d.text)
+        date = date.group('date')
+        date = dateutil.parser.parse(date).date().isoformat()
+        return date
+
+
+class WrittenThings(object):
+    def __init__(self):
+        self.by_id = {}
+        self.by_dept = {}
+
+    def wanted_thing(self, st):
+        return True
+
+    def add_from_html(self, data):
+        """Provide a page of HTML, parse out all its things"""
+        soup = bs4.BeautifulSoup(data)
+        for item in soup.find_all(class_="qna-result-container"):
+            item = self.model(item, self)
+            if self.wanted_thing(item):
+                self.by_id[item.uid] = item
+                self.by_dept.setdefault(item.dept, []).append(item)
+
+        n = soup.find(text='Next').parent
+        if n.name == 'span':
+            self.next_page = None
+        elif n.name == 'a':
+            self.next_page = '%s%s' % (HOST, n['href'])
+        else:
+            raise Exception
+
+    @property
+    def number(self):
+        return len(self.by_id)
+
+    def __str__(self):
+        """Outputs the things, grouped by department, as parlparse XML"""
+        if not self.by_dept:
+            return ''
+        out = '<publicwhip>\n'
+        for dept, deptitems in self.by_dept.items():
+            out += '''
+<major-heading id="uk.org.publicwhip/{gid}/{item.date}.{item.uid}.mh" nospeaker="true">
+    {dept}
+</major-heading>
+'''.format(dept=dept, item=deptitems[0], gid=self.gid_type)
+            out += ''.join([ '%s' % item for item in deptitems ])
+        out += '\n</publicwhip>'
+        return out
+
+
+class Statement(WrittenThing):
+    def __init__(self, st, sts):
+        self.uid = st.find(class_="qna-result-ws-uin").a.text
+        self.dept = st.find(class_="qna-result-writtenstatement-answeringbody").text
+        self.heading = st.find(class_="qna-result-ws-content-heading").text
+
+        date = st.find(class_="qna-result-ws-date")
+        self.date = self.find_date(date, 'Made')
+        speaker = st.find(class_='qna-result-writtenstatement-made-by')
+        self.speaker = self.find_speaker(speaker, self.date)
+
+        joint = st.find(class_='qna-result-writtenstatement-joint-statement-row')
+        if joint:
+            a = joint.find('a')
+            a['href'] = HOST + a['href']
+
+        statement = st.find(class_="qna-result-writtenstatement-text")
+        self.statement = statement.renderContents().decode('utf-8').strip()
+
+    def __str__(self):
+        return u'''
+<minor-heading id="uk.org.publicwhip/wms/{st.date}.{st.uid}.h" nospeaker="true">
+    {st.heading}
+</minor-heading>
+<speech id="uk.org.publicwhip/wms/{st.date}.{st.uid}.0" speakerid="{st.speaker.id}" speakername="{st.speaker.name}" url="{url_root}written-statement/{house}/{st.date}/{st.uid}/">
+    {st.statement}
+</speech>
+'''.format(st=self, house=ARGS.house.title(), url_root=URL_ROOT)
+
+
+class Question(WrittenThing):
     def __init__(self, qn, qns):
         self.qns = qns
 
@@ -172,6 +221,7 @@ class Question(object):
 
         date_asked = qn.find(class_="qna-result-question-date")
         self.date_asked = self.find_date(date_asked, 'Asked')
+        self.date = self.date_asked
         asker = qn.find(class_='qna-result-question-title')
         self.asker = self.find_speaker(asker, self.date_asked)
         question = qn.find(class_="qna-result-question-text").text.strip()
@@ -215,28 +265,6 @@ class Question(object):
                 'groupedquestions': groupedquestions,
             }))
 
-    def find_speaker(self, h, date):
-        speaker_id = re.search('(\d+)$', h.a['href']).group(1)
-        name = h.a.text
-        if ARGS.house == 'lords':
-            # Loop through all, match on name and date
-            members = MEMBERS.xpath('//lord')
-            match_fn = lambda m: name.lower() == _lord_name(m).lower() and m.attrib['fromdate'] <= date <= m.attrib['todate']
-        else:
-            # Match on Parliament ID and date
-            members = MEMBERS.xpath('//member[@datadotparl_id="%s"]' % speaker_id)
-            match_fn = lambda m: m.attrib['fromdate'] <= date <= m.attrib['todate']
-        member = next((m for m in members if match_fn(m)), None)
-        if member is None:
-            raise Exception('Could not find matching entry for %s %s' % (speaker_id, name))
-        return AttrDict(id=member.attrib['id'], name=name)
-
-    def find_date(self, d, regex):
-        date = re.match('\s*%s on:\s+(?P<date>.*)' % regex, d.text)
-        date = date.group('date')
-        date = dateutil.parser.parse(date).date().isoformat()
-        return date
-
     @property
     def groupedquestions(self):
         if len(self.answers):
@@ -251,9 +279,9 @@ class Question(object):
     def questions_xml(self):
         qns = [self] + [self.qns.by_id[q] for q in self.groupedquestions]
         return ''.join([u'''
-<ques id="uk.org.publicwhip/wrans/{qn.date_asked}.{qn.uid}.q{i}" speakerid="{qn.asker.id}" speakername="{qn.asker.name}" url="http://www.parliament.uk/business/publications/written-questions-answers-statements/written-question/Commons/{qn.date_asked}/{qn.uid}/">
+<ques id="uk.org.publicwhip/wrans/{qn.date_asked}.{qn.uid}.q{i}" speakerid="{qn.asker.id}" speakername="{qn.asker.name}" url="{url_root}written-question/{house}/{qn.date_asked}/{qn.uid}/">
     <p qnum="{qn.uid}">{qn.question}</p>
-</ques>'''.format(i=i, qn=qn) for i, qn in enumerate(qns)])
+</ques>'''.format(i=i, qn=qn, house=ARGS.house.title(), url_root=URL_ROOT) for i, qn in enumerate(qns)])
 
     @property
     def answers_xml(self):
@@ -280,6 +308,41 @@ class Question(object):
 {qn.questions_xml}
 {qn.answers_xml}
 '''.format(qn=self)
+
+
+class Statements(WrittenThings):
+    gid_type = 'wms'
+    model = Statement
+
+
+class Questions(WrittenThings):
+    gid_type = 'wrans'
+    model = Question
+
+    def wanted_thing(self, qn):
+        # If the question was answered/corrected on our date
+        if ARGS.date in [ a.date for a in qn.answers ]:
+            return True
+        return False
+
+    def get_by_id(self, uid):
+        # It is possible that when we need to look up a grouped ID, it's not
+        # present. Either it was on a different day (possible), or there's a
+        # mistake in what has been returned from the search. Perform a separate
+        # scrape/parse of the question if so, to get its data.
+        if uid in self.by_id:
+            return self.by_id[uid]
+        r = requests.get(URL_INDEX, params={'uin': uid})
+        if 'There are no results' in r.content:
+            return
+        if 'Server Error' in r.content:
+            return
+        soup = bs4.BeautifulSoup(r.content)
+        qn = soup.find(class_='qna-result-container')
+        qn = Question(qn, self)
+        self.by_id[qn.uid] = qn
+        self.by_dept.setdefault(qn.dept, []).append(qn)
+        return qn
 
 
 if __name__ == '__main__':
