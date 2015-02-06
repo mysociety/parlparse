@@ -89,6 +89,7 @@ def GetReportProceedings(urlpage, year):
                 vdat = re.sub('(131211s01.htm">Committee Debate)( *</a>)', r'\1 1st sitting\2', vdat)
         if year == "2014":
                 vdat = re.sub('(150115s01.htm">Committee Debate)( *</a>)', r'\1 1st sitting\2', vdat)
+                vdat = re.sub('(150204s01.htm">Committee Debate)( *</a>)', r'\1 1st sitting\2', vdat)
 
 	lks = re.findall('(?si)<a\s+href\s*=\s*"([^"]*)">(.*?)(?:</a>|<tr>|</table>)(?i)', vdat)
 	for lk in lks:
@@ -119,6 +120,7 @@ def GetReportProceedings(urlpage, year):
                         elif mdate.group(5) == 'pm': time = 'afternoon'
                         # Treat specially, don't yet know if will become common
                         elif mdate.group(5) is None and 'europeanunionref/130911' in lklk: time = 'morning'
+                        elif mdate.group(5) is None and 'mutuals/150204' in lklk: time = 'morning'
                         if res and res[-1] == [ lklk, sdate, sitting, 0, time ]: continue
 
                         part = 0
