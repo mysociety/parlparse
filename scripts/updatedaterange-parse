@@ -13,15 +13,14 @@ RET=0
 cd ~/parlparse/pyscraper
 # We do these on separate lines, so if one fails, others still run
 ./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE parse debates || RET=1
-./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE parse wrans || RET=1
 ./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE parse westminhall || RET=1
-./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE parse wms || RET=1
 ./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE parse lords || RET=1
 ./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE parse ni || RET=1
 
-# New UK Parliament Written Answers database
+# New UK Parliament Written Answers and Statements database
 cd ~/parlparse/
 ~/.venv/bin/python wrans-2014/parse.py --house commons --type answers --out ~/parldata/scrapedxml/wrans/ --members ~/parlparse/members/all-members-2010.xml
+~/.venv/bin/python wrans-2014/parse.py --house commons --type statements --out ~/parldata/scrapedxml/wms/ --members ~/parlparse/members/all-members-2010.xml
 ~/.venv/bin/python wrans-2014/parse.py --house lords --type answers --out ~/parldata/scrapedxml/lordswrans/ --members ~/parlparse/members/peers-ucl.xml
 ~/.venv/bin/python wrans-2014/parse.py --house lords --type statements --out ~/parldata/scrapedxml/lordswms/ --members ~/parlparse/members/peers-ucl.xml
 

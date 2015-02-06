@@ -11,7 +11,7 @@ RET=0
 
 # Run XML-generating scraper from Public Whip, getting new files from network
 cd ~/parlparse/pyscraper
-./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE scrape debates wrans westminhall wms ni || RET=1
+./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE scrape debates westminhall ni || RET=1
 ./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE scrape standing || RET=1
 ./lazyrunall.py $4 --from=$LORDFROMDATE --to=$TODATE scrape lords || RET=1
 
