@@ -105,6 +105,10 @@ def _lord_name(m):
         name += ' of %s' % m.attrib['lordofname']
         if not m.attrib['lordname']:
             name = 'The ' + name
+    # Earl of Clancarty is in the peerage of Ireland but the Lords
+    # still uses it :/ Should really use peers-aliases.xml here.
+    if name == 'Viscount Clancarty':
+        name = 'The Earl of Clancarty'
     return name
 
 
