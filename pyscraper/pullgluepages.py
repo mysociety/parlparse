@@ -141,6 +141,8 @@ def GlueByNextNew(outputFileName, urla, urlx, sdate):
 		urla = [urla[0]]
 	if re.match(r'http://www.publications.parliament.uk/pa/cm201415/cmhansrd/cm140911/index/140911-x.htm', urlx) and sdate=='2014-09-11':
 		urla = [urla[0]]
+	if re.match(r'http://www.publications.parliament.uk/pa/cm201415/cmhansrd/cm150210/debindx/150210-x.htm', urlx) and sdate=='2015-02-10':
+		urla = [urla[0]]
 
 	# loop which scrapes through all the pages following the nextlinks
 	while urla:

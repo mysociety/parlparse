@@ -34,7 +34,6 @@ for source_type, parl_members_url in source_urls.items():
     raise Exception('Root tag is not "Members" as expected, got "%s".' % parl_members.tag)
 
   print 'Found %d members from %s.xml.' % (len(parl_members), source_type)
-  sys.exit()
 
   for member in parl_members:
     member_url = member_url_templ % member.attrib['Member_Id']
