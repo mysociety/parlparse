@@ -10,7 +10,7 @@ base_html = base + 'parldata/cmpages/'
 base_xml = base + 'parldata/scrapedxml/'
 base_scraper = base + 'parlparse/pyscraper/'
 
-min = { 'debates': 'debates/debates', 'wms': 'wms/ministerial', 'lords': 'lordspages/daylord' }
+min = { 'debates': 'debates/debates', 'lords': 'lordspages/daylord' }
 dirs = [ min.copy() for x in range(5) ]
 for x in (0,1):
     dirs[x]['ni'] = 'ni/ni'
