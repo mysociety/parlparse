@@ -11,11 +11,6 @@ source_files = [
   'all-current-commons'
 ]
 
-# Position start date threshold, currently the 2010 election (2010-05-11).
-# The Parliament API is giving 2010-05-06 for things that were actually
-# 2010-05-11 so use that for now:
-start_date_threshold = datetime(2010, 5, 6)
-
 parser = etree.ETCompatXMLParser()
 etree.set_default_parser(parser)
 
@@ -23,47 +18,73 @@ etree.set_default_parser(parser)
 ministers = etree.Element('publicwhip')
 
 
+class TimePeriod(object):
+  def __init__(self, el):
+    self.el = el
+
+  def make_date(self, s):
+    return datetime.strptime(self.el.find(s).text, '%Y-%m-%dT00:00:00').strftime('%Y-%m-%d')
+
+  @property
+  def dates(self):
+    start = self.make_date('StartDate')
+    end = self.make_date('EndDate') if self.el.find('EndDate').text else '9999-12-31'
+    return start, end
+
+
 class Position(object):
   def __init__(self, position, positions):
     self.position = position
     self.list = positions
 
-  def generate(self):
+  @property
+  def time_periods(self):
     position = self.position
-    el = etree.SubElement(ministers, 'moffice')
-    attrs = el.attrib
-    attrs['id'] = 'uk.parliament.data/Member/%s/%s/%s%s' % (
-      self.list.member.attrib['datadotparl_id'], self.list.typ, position.attrib['Id'], self.counter)
-    attrs['type'] = self.list.typ.lower()
-    attrs['source'] = 'datadotparl/%s' % self.list.typ.lower()
+    attrs = {}
     if self.list.name_is_dept:
       attrs['position'] = ''
     elif position.find('HansardName').text is not None:
       attrs['position'] = position.find('HansardName').text
     else:
       attrs['position'] = position.find('Name').text
-    attrs['name'] = self.list.member.attrib['firstname'] + ' ' + self.list.member.attrib['lastname']
-    attrs['matchid'] = self.list.member.attrib['id']
-    if self.list.name_is_dept:
-      attrs['dept'] = position.find('Name').text
+    position_dates = TimePeriod(self.position).dates
+    attrs['fromdate'], attrs['todate'] = position_dates
+    periods = [ attrs ]
+    chairdates = position.find('ChairDates')
+    if chairdates is None or not len(chairdates):
+      return periods
+    if len(chairdates) > 1:
+      raise Exception("Doesn't currently handle more than one chair date, one was bad enough!")
+    chair_dates = TimePeriod(chairdates.find('ChairDate')).dates
+    if chair_dates[0] <= position_dates[0]:
+      attrs['position'] = 'Chair'
+      if chair_dates[1] < position_dates[1]:
+        attrs['todate'] = chair_dates[1]
+        periods.append({'position': '', 'fromdate': chair_dates[1], 'todate': position_dates[1]})
     else:
-      attrs['dept'] = ''
-    attrs['fromdate'] = self.start_date.strftime('%Y-%m-%d')
-    if position.find('EndDate').text:
-      attrs['todate'] = self.end_date.strftime('%Y-%m-%d')
-    else:
-      attrs['todate'] = '9999-12-31'
+      attrs['todate'] = chair_dates[0]
+      if chair_dates[1] < position_dates[1]:
+        periods.append({'position': 'Chair', 'fromdate': chair_dates[0], 'todate': chair_dates[1]})
+        periods.append({'position': '', 'fromdate': chair_dates[1], 'todate': position_dates[1]})
+      else:
+        periods.append({'position': 'Chair', 'fromdate': chair_dates[0], 'todate': position_dates[1]})
+    return periods
 
-  def _date(self, s):
-    return datetime.strptime(self.position.find(s).text, '%Y-%m-%dT00:00:00')
-
-  @property
-  def start_date(self):
-    return self._date('StartDate')
-
-  @property
-  def end_date(self):
-    return self._date('EndDate')
+  def generate(self):
+    position = self.position
+    for period in self.time_periods:
+      el = etree.SubElement(ministers, 'moffice')
+      attrs = el.attrib
+      attrs['id'] = 'uk.parliament.data/Member/%s/%s/%s%s' % (
+        self.list.member.attrib['datadotparl_id'], self.list.typ, position.attrib['Id'], self.counter)
+      attrs['type'] = self.list.typ.lower()
+      attrs['source'] = 'datadotparl/%s' % self.list.typ.lower()
+      attrs['position'] = period['position']
+      attrs['name'] = self.list.member.attrib['firstname'] + ' ' + self.list.member.attrib['lastname']
+      attrs['matchid'] = self.list.member.attrib['id']
+      attrs['dept'] = position.find('Name').text if self.list.name_is_dept else ''
+      attrs['fromdate'] = period['fromdate']
+      attrs['todate'] = period['todate']
 
   @property
   def counter(self):
@@ -76,9 +97,8 @@ class Position(object):
 
 
 class Positions(object):
-  def __init__(self, data, threshold, member):
+  def __init__(self, data, member):
     self.data = data
-    self.threshold = threshold
     self.member = member
 
   def filter(self, typ, name_is_dept=False):
@@ -90,8 +110,7 @@ class Positions(object):
     self.name_is_dept = name_is_dept
     for p in self.data.find(container).findall(typ):
       pos = Position(p, self)
-      if pos.start_date >= self.threshold:
-        yield pos
+      yield pos
 
 
 def parse(fn, root_tag):
@@ -157,7 +176,7 @@ for source_file in source_files:
     already_seen.add(people[matched_member.attrib['id']])
 
     parl_data = parl_members[matched_member.attrib['datadotparl_id']]
-    positions = Positions(parl_data, start_date_threshold, matched_member)
+    positions = Positions(parl_data, matched_member)
 
     for position in positions.filter('GovernmentPost'):
       position.generate()
