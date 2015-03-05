@@ -17,8 +17,9 @@ from splitheadingsspeakers import StampUrl
 # And tables sometimes have bold headings so ignore them too.
 rehead = '<center><b>(?:<stamp aname="[^"]*"/>)?[^<]*</b></center>'
 retable = '<table[^>]*>[\s\S]*?</table>'
+reamendment = '<p class="amendment_hs_quote">[\s\S]*?</p>'
 renormal = '<b>(?:<stamp aname="[^"]*"/>|</b><b>|[^<])*</b>(?:\s*:)?'
-respeaker = re.compile('(%s|%s|%s)(?i)' % (rehead, retable, renormal))
+respeaker = re.compile('(%s|%s|%s|%s)(?i)' % (rehead, retable, reamendment, renormal))
 
 respeakerb = re.compile('<b>\s*((?:<stamp aname="[^"]*"/>|</b><b>|[^<]+)*),?\s*</b>(\s*:)?(?i)')
 lord_parties = 'CB|Con|Lab|LD|Non-Afl|UUP|PC|UKIP|GP|DUP|(?:Lab|Con|LD|UU)[ ]Ind|Ind[ ](?:Lab|LD|SD|UU)'
