@@ -3,6 +3,7 @@
 # Grabs the latest members data from data.parliament XML and update accordingly.
 # Get data using crawl-datadotparl-members.py
 
+import re
 from lxml import etree
 from datetime import datetime
 
@@ -82,7 +83,12 @@ class Position(object):
       attrs['position'] = period['position']
       attrs['name'] = self.list.member.attrib['firstname'] + ' ' + self.list.member.attrib['lastname']
       attrs['matchid'] = self.list.member.attrib['id']
-      attrs['dept'] = position.find('Name').text if self.list.name_is_dept else ''
+      if self.list.name_is_dept:
+          attrs['dept'] = position.find('Name').text
+          if not re.search('panel|committee|commission|court(?i)', attrs['dept']):
+              attrs['dept'] = '%s Committee' % attrs['dept']
+      else:
+          attrs['dept'] = ''
       attrs['fromdate'] = period['fromdate']
       attrs['todate'] = period['todate']
 
