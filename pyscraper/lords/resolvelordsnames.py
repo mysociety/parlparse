@@ -39,14 +39,17 @@ class LordsList(xml.sax.handler.ContentHandler):
 	def __init__(self):
 		self.lords={} # ID --> MPs
 		self.lordnames={} # "lordnames" --> lords
-                self.aliases={} # Corrections to full names
+		self.aliases={} # Corrections to full names
 		self.parties = {} # constituency --> MPs
+		self.membertopersonmap = {} # member ID --> person ID
 
 		parser = xml.sax.make_parser()
 		parser.setContentHandler(self)
 
 		parser.parse(members_path + "/peers-ucl.xml")
 		parser.parse(members_path + "/peers-aliases.xml")
+		self.loadperson = None
+		parser.parse(members_path + "/people.xml")
 		#parser.parse("../members/lordnametoofname.xml")
 
 		# set this to the file if we are to divert unmatched names into a file
@@ -98,9 +101,20 @@ class LordsList(xml.sax.handler.ContentHandler):
                 elif name == 'alias':
                         self.aliases[attr['alternate']] = attr['fullname']
 
+		# people.xml loading
+		elif name == "person":
+			self.loadperson = attr["id"]
+		elif name == "office":
+			assert self.loadperson, "<office> tag before <person> tag"
+			if attr["id"] in self.membertopersonmap:
+				raise Exception, "Same member id %s appeared twice" % attr["id"]
+			self.membertopersonmap[attr["id"]] = self.loadperson
+
 		else:
 			assert name == "publicwhip"
 
+	def membertoperson(self, memberid):
+		return self.membertopersonmap[memberid]
 
 	# call this when the ofname info is discovered to be incorrect
 	def DumpCrossovername(self, lm, stampurl):

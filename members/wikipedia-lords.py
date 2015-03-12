@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: latin-1 -*-
-# $Id: bbcconv.py,v 1.4 2005/03/25 23:33:35 theyworkforyou Exp $
 
 # Screen scrape list of links to Lords on Wikipedia, so we can link to the articles.
 
@@ -11,7 +9,6 @@
 
 import datetime
 import sys
-import urllib
 import urlparse
 import re
 
@@ -22,10 +19,7 @@ from resolvelordsnames import lordsList
 # Get region pages
 wiki_index_url = "http://en.wikipedia.org/wiki/Members_of_the_House_of_Lords"
 date_today = datetime.date.today().isoformat()
-wikimembers  = set() # for storing who we have found links for
-
-print '''<?xml version="1.0" encoding="ISO-8859-1"?>
-<publicwhip>'''
+wikimembers = {}
 
 # Grab page 
 ur = open('../rawdata/Members_of_the_House_of_Lords')
@@ -44,11 +38,14 @@ for (url, title, name) in matches:
 
     if not id:
         continue
+    pid = lordsList.membertoperson(id)
+    wikimembers[pid] = url
 
+print '''<?xml version="1.0" encoding="ISO-8859-1"?>
+<publicwhip>'''
+for id, url in sorted(wikimembers.items()):
     url = urlparse.urljoin(wiki_index_url, url)
-    print '<memberinfo id="%s" wikipedia_url="%s" />' % (id, url)
-    wikimembers.add(id)
-
+    print '<personinfo id="%s" wikipedia_url="%s" />' % (id, url)
 print '</publicwhip>'
 
 #print "len: ", len(wikimembers)
