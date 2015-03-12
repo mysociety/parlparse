@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+
+# Grabs the json files for policy voted from public whip
+
+import os
+import re
+import urllib2
+
+from BeautifulSoup import MinimalSoup
+
+base_url = 'http://publicwhip.org.uk/data/popolo/'
+
+OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../parldata/scrapedjson/policy-motions')
+
+
+def write(url, fn):
+  data = urllib2.urlopen(url).read()
+  open(fn, 'w').write(data)
+
+
+print 'Fetching policy motions from publicwhip'
+
+all_json = urllib2.urlopen(base_url).read()
+soup = MinimalSoup(all_json)
+json_files = soup.findAll( href=re.compile("json") )
+
+for json in json_files:
+    url = "%s%s" % ( base_url, json['href'] )
+    out = "%s/%s" % ( OUT_DIR, json['href'] )
+    write(url, out)
