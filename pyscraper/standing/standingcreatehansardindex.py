@@ -48,7 +48,7 @@ def GetReportProceedings(urlpage, year):
 	uin = urllib.urlopen(urlpage)
 	s = uin.read()
 	uin.close()
-	vdat = re.search("(?is)Reports? of proceedings(.*?)(Associated Memoranda|start of footer|$)", s)
+	vdat = re.search("(?is)Reports? of proceedings(.*?)(Written evidence|Associated Memoranda|start of footer|$)", s)
 	if urlpage == 'http://www.publications.parliament.uk/pa/cm/cmpbparliament.htm': # XXX
 		vdat = re.sub('(?s)^.*(<A href=".*?">2nd)', '\1', s)
 	elif urlpage == 'http://services.parliament.uk/bills/2012-13/crimeandcourts/committees/houseofcommonspublicbillcommitteeonthecrimeandcourtsbillhl201213.html': # XXX
