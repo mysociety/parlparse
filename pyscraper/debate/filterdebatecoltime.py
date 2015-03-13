@@ -50,36 +50,45 @@ fixsubs = 	[
 
 # <B>9 Dec 2003 : Column 893</B>
 regcolcore = '<b>[^:<]*:\s*column\s*\d+(?:WH)?\s*</b>'
-regcolumnum1 = '<p>\s*%s\s*</p>' % regcolcore
-regcolumnum2 = '<p>\s*</ul>\s*%s</p>\n<ul>' % regcolcore
-regcolumnum3 = '<p>\s*</ul></font>\s*%s</p>\n<ul><font[^>]*>' % regcolcore
-regcolumnum4 = '<p>\s*</font>\s*%s</p>\n<font[^>]*>' % regcolcore
-regcolumnum5 = '\s<br>\s*&nbsp;<br>\s*%s\s*<br>&nbsp;<br>' % regcolcore
-regcolumnum6 = '\s<br>\s*&nbsp;<br>\s*</ul>\s*%s\s*<br>&nbsp;<br>\s*<ul>' % regcolcore
-regcolumnum7 = '<br>%s<br>' % regcolcore
-recolumnumvals = re.compile('(?:<p>|<a name=".*?">|</ul>|</font>|<br>\s*&nbsp;<br>|<br>|\s)*<b>([^:<]*):\s*column\s*(\d+)(WH)?\s*</b>(?:</p>|<ul>|<font[^>]*>|<br>&nbsp;<br>|<br>|\s)*$(?i)')
-
-
-
+regcolumnum1 = '''
+    <p>\s*               # Paragraph
+    (?:</ul>\s*)?        # Perhaps a closing </ul>
+    (?:</font>\s*)?      # Perhaps a closing </font>
+    (?:<i>\s*)?          # Italic (that has bled through)
+    %s                   # The actual column number
+    (?:                  # (There's nothing after if we've had an italic bleedthrough)
+    \s*</p>              # Closing paragraph
+    (?:\s*<ul>)?         # Perhaps an opening <ul>
+    (?:\s*<font[^>]*>)?  # Perhaps an opening <font>
+    )?
+    ''' % regcolcore
+regcolumnum2 = '''
+    \s<br>\s*&nbsp;<br>\s*  # Line space marker
+    (?:</ul>\s*)?           # Perhaps a closing </ul>
+    %s                      # The actual column number
+    \s*<br>&nbsp;<br>       # Line space marker
+    (?:\s*<ul>)?            # Perhaps an opening <ul>
+    ''' % regcolcore
+regcolumnum3 = '<br>%s<br>' % regcolcore
+recolumnumvals = re.compile('(?:<p>|<a name=".*?">|</ul>|</font>|<i>|<br>\s*&nbsp;<br>|<br>|\s)*<b>([^:<]*):\s*column\s*(\d+)(WH)?\s*</b>(?:</p>|<ul>|<font[^>]*>|<br>&nbsp;<br>|<br>|\s)*$(?i)')
 
 #<i>13 Nov 2003 : Column 431&#151;continued</i>
 # these occur infrequently
-regcolnumcont = '<(?:i|b)>[^:<]*:\s*column\s*\d+(?:WH)?(?:</b>)?&#151;continued</(?:i|p)>'
+regcolnumcont = '<(?:i|b)>[^:<]*:\s*column\s*\d+(?:WH)?(?:</b>)?&\#151;continued</(?:i|p)>'
 recolnumcontvals = re.compile('<(?:i|b)>([^:<]*):\s*column\s*(\d+)(WH)?(?:</b>)?&#151;continued</(?:i|p)>(?i)')
 
 
 # <H5>12.31 pm</H5>
 # <p>\n12.31 pm\n<p>
 # [3:31 pm<P>    -- at the beginning of divisions
-regtime = '(?:</?p>\s*|<h[45](?: align="left")?>\s?|\[|\n)(?:\d+(?:[:\.]\s*\d+)?(?:\s*|&nbsp;)(?:[ap]\.?m\.?(?:</st>)?| noon| midnight)?)(?:\s*</?p>|\s*</h[45]>|\n)'
-retimevals = re.compile('(?:</?p>\s*|<h\d(?: align="left")?>|\[|\n)\s*(\d+(?:[:\.]\s*\d+)?(?:\s*|&nbsp;)(?:[apm.]+|noon|midnight)?)(?:\s*</?p>|\s*</h\d>|</st>|\n)*$(?i)')
+regtime = r'(?:</?p>\s*|<h[45](?:[ ]align="left")?>\s?|\[|\n)(?:\d+(?:[:\.]\s*\d+)?(?:\s*|&nbsp;)(?:[ap]\.?m\.?(?:</st>)?|[ ]noon|[ ]midnight)?)(?:\s*</?p>|\s*</h[45]>|\n)'
+retimevals = re.compile(r'(?:</?p>\s*|<h\d(?: align="left")?>|\[|\n)\s*(\d+(?:[:\.]\s*\d+)?(?:\s*|&nbsp;)(?:[apm.]+|noon|midnight)?)(?:\s*</?p>|\s*</h\d>|</st>|\n)*$(?i)')
 
 # <a name="column_1099">
-reaname = '<a name="\S*?">(?:</a>)?'
+reaname = '<a[ ]name="\S*?">(?:</a>)?'
 reanamevals = re.compile('<a name="(\S*?)">(?i)')
 
-
-recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regcolumnum1, regcolumnum2, regcolumnum3, regcolumnum4, regcolumnum5, regcolumnum6, regcolumnum7, regcolnumcont, regtime, reaname))
+recomb = re.compile('(%s|%s|%s|%s|%s|%s)(?ix)' % (regcolumnum1, regcolumnum2, regcolumnum3, regcolnumcont, regtime, reaname))
 
 # this covers all the different kinds of things we should have picked up
 remarginal = re.compile(':\s*column\s*(\d+)|\n(?:\d+[.:])?\d+\s*[ap]\.?m\.?[^,\w](?i)|<a(?:\s+name|>)')
