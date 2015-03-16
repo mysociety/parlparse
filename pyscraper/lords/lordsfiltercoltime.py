@@ -1,5 +1,3 @@
-# vim:sw=8:ts=8:et:nowrap
-
 import sys
 import re
 import os
@@ -16,8 +14,6 @@ from miscfuncs import IsNotQuiet, TimeProcessing
 # into xml form
 #     <stamp coldate="2003-12-09" colnum="893"/>
 
-
-
 # the new Lords thing
 # <B>19 Nov 2003 : Column 1926</B></P>
 # <p></UL>\n<B>29 Jan 2004 : Column 321</B></P>\n<UL>
@@ -29,15 +25,14 @@ from miscfuncs import IsNotQuiet, TimeProcessing
 regcolmat = '\s*<a name="column_(?:WS|WA)?\d+">(?:</a>)?\s*<b>[^:<]*:\s*column\s*(?:WS|WA)?\d+\s*</b>'
 regcolp = ['(?:<p>|<br>&nbsp;<br>|<br>)', '(?:</p>|<br>&nbsp;<br>|<br>)' ]
 regcolumnum11 = '<p>%s</p>\s*<font size=3>' % regcolmat
-regcolumnum1 = '%s%s%s' % (regcolp[0], regcolmat, regcolp[1])
+regcolumnum1 = '%s(?:<i>&#160;)?%s(?:&#160;</i>)?%s' % (regcolp[0], regcolmat, regcolp[1])
 regcolumnum2 = '<p>\s*<font size=3>%s</p>\s*<font size=2>' % regcolmat
 regcolumnum3 = '%s\s*</ul>%s%s\s*<ul>' % (regcolp[0], regcolmat, regcolp[1])
 regcolumnum3i = '%s\s*</i>%s%s\s*<i>' % (regcolp[0], regcolmat, regcolp[1])
 regcolumnum4 = '<p>\s*</ul><font size=3>%s</p>\s*<ul><font size=2>' % regcolmat
-#regcolumnum5 = '<p>\s*(?:<font size=3>\s*)?%s</p>\s*<font size=[23]>' % regcolmat
 regcolumnum6 = '<p>\s*</ul>(?:</ul></ul>)?%s</p>\s*<ul>(?:<ul><ul>)?<font size=3>' % regcolmat
 
-recolumnumvals = re.compile('(?:<br>&nbsp;<br>|<br>|<p>|</ul>|</i>|<font size=\d>|\s|</?a[^>]*>)*?<b>([^:<]*)\s*:\s*column\s*(\D*?)(\d+)\s*</b>(?:<br>&nbsp;<br>|<br>|</p>|<ul>|<i>|<font size=\d>|\s)*$(?i)')
+recolumnumvals = re.compile('(?:<br>&nbsp;<br>|<br>|<p>|</ul>|<i>&#160;|</i>|<font size=\d>|\s|</?a[^>]*>)*?<b>([^:<]*)\s*:\s*column\s*(\D*?)(\d+)\s*</b>(?:<br>&nbsp;<br>|<br>|</p>|<ul>|&#160;</i>|<i>|<font size=\d>|\s)*$(?i)')
 
 # <H5>12.31 p.m.</H5>
 # the lords times put dots in "p.m."  but the commons never do.
