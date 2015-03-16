@@ -10,7 +10,7 @@ from miscfuncs import FixHTMLEntities
 from miscfuncs import FixHTMLEntitiesL
 from miscfuncs import SplitParaIndents
 
-from filterwransreplytable import ParseTable
+from .replytable import ParseTable
 
 #from filtersentence import FilterSentence
 from filtersentence import PhraseTokenize

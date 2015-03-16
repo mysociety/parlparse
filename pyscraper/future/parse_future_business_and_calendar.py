@@ -14,9 +14,8 @@ from subprocess import call
 import codecs
 
 sys.path.append('../')
-sys.path.append('../lords')
 from resolvemembernames import memberList
-from resolvelordsnames import lordsList
+from lords.resolvenames import lordsList
 from contextexception import ContextException
 from BeautifulSoup import BeautifulSoup, NavigableString, Comment, Tag
 

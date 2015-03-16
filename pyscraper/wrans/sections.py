@@ -18,8 +18,8 @@ from parlphrases import parlPhrases
 
 from miscfuncs import FixHTMLEntities
 
-from filterwransques import FilterQuestion
-from filterwransreply import FilterReply
+from .ques import FilterQuestion
+from .reply import FilterReply
 
 from contextexception import ContextException
 

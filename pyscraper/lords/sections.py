@@ -18,10 +18,9 @@ from parlphrases import parlPhrases
 
 from miscfuncs import FixHTMLEntities, IsNotQuiet
 
-from filterdivision import FilterDivision
-from lordsfilterdivisions import LordsFilterDivision
-from lordsfilterdivisions import LordsDivisionParsingPart
-from filterdebatespeech import FilterDebateSpeech
+from debate.division import FilterDivision
+from debate.speech import FilterDebateSpeech
+from .divisions import LordsFilterDivision, LordsDivisionParsingPart
 
 from contextexception import ContextException
 
@@ -102,14 +101,14 @@ def LordsHeadingPart(headingtxt, stampurl, major):
 	return qb
 
 
-# this function is taken from debdivisionsections
+# this function is taken from debate.divisionsections
 def SubsPWtextsetS(st):
         return st # this needs tidying up
         if re.search('pwmotiontext="yes"', st) or not re.match('<p', st):
                 return st
         return re.sub('<p(.*?)>', '<p\\1 pwmotiontext="yes">', st)
 
-# this function is taken from debdivisionsections
+# this function is taken from debate.divisionsections
 # to be inlined
 def SubsPWtextset(stext):
 	res = map(SubsPWtextsetS, stext)

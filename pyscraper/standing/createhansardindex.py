@@ -11,7 +11,7 @@ import xml.sax
 import mx.DateTime
 
 import miscfuncs
-from standingutils import construct_shortname, create_committee_letters
+from standing.utils import construct_shortname, create_committee_letters
 
 toppath = miscfuncs.toppath
 

@@ -6,8 +6,7 @@ import urllib
 import re
 
 sys.path.append("../pyscraper")
-sys.path.append("../pyscraper/lords")
-from resolvelordsnames import lordsList
+from lords.resolvenames import lordsList
 
 # Get region pages
 date_today = datetime.date.today().isoformat()

@@ -16,7 +16,7 @@ from contextexception import ContextException
 from BeautifulSoup import BeautifulSoup, NavigableString
 from patchtool import RunPatchTool
 from xmlfilewrite import WriteXMLHeader
-from standingutils import shortname_atts
+from standing.utils import shortname_atts
 import miscfuncs 
 import codecs
 

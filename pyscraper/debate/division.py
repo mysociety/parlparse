@@ -78,7 +78,7 @@ def MpList(fsm, vote, stampurl, sdate):
 			else:
 				ginp = renoflipname.match(fssf)
 				if not ginp:
-					raise ContextException("No flipped or non-flipped name match (filterdivision)", stamp=stampurl, fragment=fssf)
+					raise ContextException("No flipped or non-flipped name match (division)", stamp=stampurl, fragment=fssf)
 				fnam = ginp.group(1);
 				cons = ginp.group(2);
 
@@ -97,7 +97,7 @@ def MpList(fsm, vote, stampurl, sdate):
 				#print "For name", fnam, "returning id", mpid, ";", i, " out of ", remadecons
 
 			elif not mpid and remadename != "MultipleMatch":
-				print "filterdivision.py: no match for", fnam, cons, sdate
+				print "division.py: no match for", fnam, cons, sdate
 				raise ContextException("No match on name", stamp=stampurl, fragment=fnam)
 			#print fnam, " --> ", remadename.encode("latin-1")
 			res.append('\t<mpname id="%s" vote="%s">%s</mpname>' % (mpid, vote, FixHTMLEntities(fssf)))

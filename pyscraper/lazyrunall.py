@@ -10,35 +10,25 @@ import datetime
 # change current directory to pyscraper folder script is in
 os.chdir(os.path.dirname(sys.argv[0]) or '.')
 
-sys.path.append('debate')
-sys.path.append('wrans')
-sys.path.append('common')
-sys.path.append('lords')
-sys.path.append('miniposts')
-sys.path.append('wms')
-#sys.path.append('votes')
-#sys.path.append('bills')
-sys.path.append('standing')
-
-from crongrabpages import GrabWatchCopies
-from minpostparse import ParseGovPosts
+from miniposts.crongrabpages import GrabWatchCopies
+from miniposts.parse import ParseGovPosts
 
 from optparse import OptionParser
 from createhansardindex import UpdateHansardIndex
-from lordscreatehansardindex import UpdateLordsHansardIndex
-from standingcreatehansardindex import UpdateStandingHansardIndex
+from lords.createhansardindex import UpdateLordsHansardIndex
+from standing.createhansardindex import UpdateStandingHansardIndex
 from pullgluepages import PullGluePages, PullGlueToday
-from lordspullgluepages import LordsPullGluePages
-from standingpullgluepages import StandingPullGluePages
+from lords.pullgluepages import LordsPullGluePages
+from standing.pullgluepages import StandingPullGluePages
 from runfilters import RunFiltersDir, RunDebateFilters, RunWransFilters, RunLordsFilters, RunWestminhallFilters, RunWMSFilters, RunNIFilters
-from regmemfilter import RunRegmemFilters
+from regmem.filter import RunRegmemFilters
 #from parsevote import RunVotesFilters
 import ni.scrape
 
 #if sys.platform != "win32":  # just to get working again
 #	from parsebills import MakeBillPrint
 
-from regmempullgluepages import RegmemPullGluePages
+from regmem.pullgluepages import RegmemPullGluePages
 from miscfuncs import SetQuiet, bNotQuiet, IsNotQuiet
 
 # Parse the command line parameters

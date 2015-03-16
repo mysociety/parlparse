@@ -18,7 +18,7 @@ import miscfuncs
 import difflib
 import mx.DateTime
 from resolvemembernames import memberList
-from resolvelordsnames import lordsList
+from lords.resolvenames import lordsList
 
 from xmlfilewrite import WriteXMLHeader
 

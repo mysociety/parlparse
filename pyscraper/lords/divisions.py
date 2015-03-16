@@ -15,10 +15,10 @@ from parlphrases import parlPhrases
 
 from miscfuncs import FixHTMLEntities
 
-from filterdivision import FilterDivision
-from filterdebatespeech import FilterDebateSpeech
+from debate.division import FilterDivision
+from debate.speech import FilterDebateSpeech
 
-from resolvelordsnames import lordsList
+from .resolvenames import lordsList
 
 from contextexception import ContextException
 

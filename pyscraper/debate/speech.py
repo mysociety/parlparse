@@ -8,8 +8,7 @@ import mx.DateTime
 from parlphrases import parlPhrases
 from miscfuncs import SplitParaIndents
 
-from filterwransreply import reletterinlibrary
-from filterwransreplytable import ParseTable
+from wrans.replytable import ParseTable
 
 from miscfuncs import FixHTMLEntities
 
@@ -22,7 +21,7 @@ pcode = [ '', 'indent', 'italic', 'indentitalic' ]
 
 
 # this is the main function.
-def FilterWMSSpeech(qs):
+def FilterDebateSpeech(qs, bDebateBegToMove=False):
 
 	# split into paragraphs.  The second results is a parallel array of bools
 	(textp, textpindent) = SplitParaIndents(qs.text, qs.sstampurl)
@@ -31,29 +30,28 @@ def FilterWMSSpeech(qs):
 	i = 0
 
 	# go through the rest of the paragraphs
+	bBegToMove = False
 	while i < len(textp):
 
 		# deal with tables
 		if re.match('<table(?i)', textp[i]):
 			qs.stext.extend(ParseTable(textp[i], qs.sstampurl))
-			i += 1
-			continue
-
-#		qletterinlibrary = reletterinlibrary.match(textp[i])
-#		print qletterinlibrary
-#		if qletterinlibrary:
-#			pht = PhraseTokenize(qs, qletterinlibrary.group(0))
-#			stext.append(pht.GetPara('letterinlibrary'))
-#			textp[i] = textp[i][qletterinlibrary.span(0)[1]:]
-#			if not textp[i]:
-#				i += 1
-#			continue
+			bBegToMove = False
 
 		# nothing special about this paragraph (except it may be indented)
-		pht = PhraseTokenize(qs, textp[i])
-		tpx = pht.GetPara(pcode[textpindent[i]])
-		qs.stext.append(tpx)
-		i += 1
+		else:
+			if re.match("I beg to move", textp[i]):
+				btBegToMove = True      # it would be elegant if this was moved out to the filterdebate stuff where it belongs
+			else:
+				btBegToMove = False
+
+			pht = PhraseTokenize(qs, textp[i])
+			tpx = pht.GetPara(pcode[textpindent[i]], (bDebateBegToMove and (bBegToMove or btBegToMove)))
+			bBegToMove = btBegToMove
+
+			qs.stext.append(tpx)
+
+		i = i + 1
 
 
 

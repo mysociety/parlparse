@@ -14,7 +14,7 @@ import urlparse
 import re
 
 sys.path.extend((".", ".."))
-from resolveninames import memberList
+from ni.resolvenames import memberList
 date_today = datetime.date.today().isoformat()
 
 # Get region pages

@@ -2,9 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import sys
-sys.path.append('lords/')
 from resolvemembernames import memberList
-from resolvelordsnames import lordsList
+from lords.resolvenames import lordsList
 
 print memberList.matchfullnamecons(u"Si\xf4n Simon", "Birmingham Erdington", "2006-01-22")
 sys.exit(0)

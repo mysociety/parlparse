@@ -1,7 +1,7 @@
 import re
 import mx.DateTime
 
-from minpostparse import govdepts
+from miniposts.parse import govdepts
 
 
 # derived from

@@ -5,7 +5,7 @@ import sys
 import re
 import os
 import string
-from resolvelordsnames import lordsList
+from .resolvenames import lordsList
 
 from miscfuncs import ApplyFixSubstitutions
 from miscfuncs import IsNotQuiet

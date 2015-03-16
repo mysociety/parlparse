@@ -11,8 +11,7 @@ import lxml.objectify
 import sys
 
 sys.path.append("../pyscraper")
-sys.path.append("../pyscraper/lords")
-from resolvelordsnames import lordsList
+from lords.resolvenames import lordsList
 
 TYPES   = (
     '2 Hered Office Holders', 'Bishops and Archbishops', 'Deputy Hereditary', 'Elected Hereditary', 'Hereditary',

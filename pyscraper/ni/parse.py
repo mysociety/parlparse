@@ -8,7 +8,7 @@ import xml.sax
 xmlvalidate = xml.sax.make_parser()
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from resolveninames import memberList
+from ni.resolvenames import memberList
 from contextexception import ContextException
 from BeautifulSoup import BeautifulSoup, Tag
 

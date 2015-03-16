@@ -152,7 +152,7 @@ class SepHeadText:
         self.textl = [ ]
 
     # the pulling of unspoketext from previous heading is done in another pass
-    # in filterdebatesections.py
+    # in debate/sections.py
     def EndHeading(self, nextheading, nextmajor=None):
         self.EndSpeech()
 

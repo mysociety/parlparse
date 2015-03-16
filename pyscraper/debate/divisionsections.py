@@ -15,8 +15,8 @@ from parlphrases import parlPhrases
 
 from miscfuncs import FixHTMLEntities
 
-from filterdivision import FilterDivision
-from filterdebatespeech import FilterDebateSpeech
+from .division import FilterDivision
+from .speech import FilterDebateSpeech
 
 import miscfuncs
 toppath = miscfuncs.toppath

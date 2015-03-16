@@ -13,11 +13,7 @@ from miscfuncs import FixHTMLEntities
 from miscfuncs import FixHTMLEntitiesL
 from miscfuncs import SplitParaIndents
 
-from filterwransemblinks import rreglink
-from filterwransemblinks import rregemail
-
-from filterwransemblinks import rehtlink
-from filterwransemblinks import ConstructHTTPlink
+from wrans.emblinks import rreglink, rregemail, rehtlink, ConstructHTTPlink
 
 from resolvemembernames import memberList
 

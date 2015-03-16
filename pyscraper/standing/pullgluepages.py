@@ -1,4 +1,4 @@
-# vim:sw=8:ts=8:et:nowrap
+from __future__ import absolute_import
 
 import sys
 import urllib

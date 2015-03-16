@@ -2,9 +2,8 @@
 
 import sys
 sys.path.append("../pyscraper/")
-sys.path.append("../pyscraper/lords/")
 from resolvemembernames import memberList
-from resolvelordsnames import lordsList
+from lords.resolvenames import lordsList
 
 id = 10000
 

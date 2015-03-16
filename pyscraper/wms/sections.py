@@ -18,7 +18,7 @@ from parlphrases import parlPhrases
 
 from miscfuncs import FixHTMLEntities
 
-from filterwmsspeech import FilterWMSSpeech
+from .speech import FilterWMSSpeech
 
 # Legacy patch system, use patchfilter.py and patchtool now
 fixsubs = 	[

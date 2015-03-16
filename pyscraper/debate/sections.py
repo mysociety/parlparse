@@ -19,11 +19,11 @@ from parlphrases import parlPhrases
 
 from miscfuncs import FixHTMLEntities, IsNotQuiet
 
-from filterdebatespeech import FilterDebateSpeech
+from .speech import FilterDebateSpeech
 
-from debdivisionsections import PreviewDivisionTextGuess
-from debdivisionsections import DivisionParsingPart
-from debdivisionsections import GrabDivisionProced
+from .divisionsections import PreviewDivisionTextGuess
+from .divisionsections import DivisionParsingPart
+from .divisionsections import GrabDivisionProced
 
 # Legacy patch system, use patchfilter.py and patchtool now
 fixsubs = 	[
