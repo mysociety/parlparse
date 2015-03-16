@@ -14,14 +14,15 @@ date_today = datetime.date.today().isoformat()
 print '''<?xml version="1.0" encoding="ISO-8859-1"?>
 <publicwhip>'''
 
-ur = urllib.urlopen('http://www.cofe.anglican.org/links/dios.html')
+ur = urllib.urlopen('https://www.churchofengland.org/links/caths.aspx')
 content = ur.read()
 ur.close()
-matcher = '<td><a href="(.*?)".*?>(.*?)</a><br /></td>';
+matcher = '<p><a href="(.*?)".*?>(.*?)(?:\(.*?\))?</a></p>(?s)'
 matches = re.findall(matcher, content)
 for (url, name) in matches:
+    name = name.replace('&amp;', 'and').replace('&nbsp;', ' ')
     name = re.sub('^Saint', 'St', name)
-    name = re.sub('&amp;', 'and', name)
+    name = re.sub('\s+', ' ', name)
     id = None
     title = 'Bishop'
     if name=='York' or name=='Canterbury':
@@ -32,5 +33,6 @@ for (url, name) in matches:
         print >>sys.stderr, e
     if not id:
         continue
-    print '<memberinfo id="%s" diocese_url="%s" />' % (id, url)
+    pid = lordsList.membertoperson(id)
+    print '<personinfo id="%s" diocese_url="%s" />' % (pid, url)
 print '</publicwhip>'
