@@ -8,8 +8,6 @@ import string
 
 import mx.DateTime
 
-unrecognizedmotiontextout = open("unrecognisedmotiontext.txt", "w")
-
 from splitheadingsspeakers import SplitHeadingsSpeakers
 from splitheadingsspeakers import StampUrl
 
@@ -530,10 +528,6 @@ def FilterLordsSpeech(qb):
 		if not sAmendmentStatement:
 			if IsNotQuiet():
 				print "UNRECOGNIZED-MOTION-TEXT%s: %s" % (bSpeakerExists and " " or "(*)", qbunspo.stext[i])
-			if unrecognizedmotiontextout:
-				unrecognizedmotiontextout.write(qbunspo.stext[i])
-				unrecognizedmotiontextout.write("\n")
-				unrecognizedmotiontextout.flush()
 			sAmendmentStatement = "unrecognized"
 		qbunspo.stext[i] = re.sub('^<p(.*?)>', '<p\\1 pwmotiontext="%s">' % sAmendmentStatement, qbunspo.stext[i])
 
