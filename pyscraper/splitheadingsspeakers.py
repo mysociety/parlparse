@@ -117,7 +117,7 @@ recomb = re.compile('(%s|%s|%s|%s|%s|%s|%s|%s)(?i)' % (regtable, regspeaker, reg
 retableval = re.compile('(%s)(?i)' % regtable)
 respeakerval = re.compile('<speaker ([^>]*)>.*?</speaker>')
 resectiont1val = re.compile('<h\d><center>\s*(.*?)\s*</center></h\d>(?i)')
-resectiont2val = re.compile('<h(\d)(?: align="?center"?)?( style="text-transform:uppercase"| class="DebateType")?>\s*(.*?)\s*</h\d>(?i)')
+resectiont2val = re.compile('<h(\d)(?: align="?center"?)?( style="text-transform:uppercase"| class="DebateType")?>(?:<b>)?\s*(.*?)\s*(?:</b>)?</h\d>(?i)')
 resectiont3val = re.compile('(<p class="tabletext">(?:<stamp[^>]*>)*)?(?:<br>)?<center>(?:<stamp[^>]*>)*<b>(.*?)</b></center>(?i)')
 resectiont4val = re.compile('<(?:p|br)>\s*<center(?: style="text-transform:uppercase")?>(.*?)</center>\s*<(?:/?p|br|page[^>]*)>(?i)')
 
