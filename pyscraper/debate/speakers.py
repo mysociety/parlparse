@@ -63,18 +63,23 @@ fixsubs = [
 
 parties = "|".join(map(string.lower, memberList.partylist())) + "|uup|ld|dup|in the chair"
 
+retabletext = '<p[ ]class="tabletext"><b>[^<]*</b></p>'
 # Splitting condition
 # this must be a generalization of the one below.  so changes need to be reflected in both.
-recomb = re.compile('''(?ix)((?:[QT]?\d+\.\s*)?(?:\[\d+\]\s*)?
-					(?:<stamp\saname="[^"]*"/>\s*)?
-					<b>
-					(?:<stamp\saname="[^"]*"/>)*
-					[^<]*
-					</b>(?!</h[34]>)
-					\s*\)?
-					(?:\s*\([^)]*\))?
-					(?:\s*\((?:%s)\))?
-					\s*:?)''' % parties)
+respeaker = '''
+    (?:[QT]?\d+\.\s*)?(?:\[\d+\]\s*)?  # Question number before speaker name
+    (?:<stamp\saname="[^"]*"/>\s*)?    # Stamps before <b>
+    <b>
+    (?:<stamp\saname="[^"]*"/>)*       # Stamps after <b>
+    [^<]*                              # Any non-HTML
+    </b>(?!</h[34]>)                   # End bold as long as not followed by end heading
+    \s*\)?                             # Possible random closing bracket
+    (?:\s*\([^)]*\))?                  # Possible string in brackets (e.g. constituency)
+    (?:\s*\((?:%s)\))?                 # Possible party string in brackets
+    \s*:?                              # Possible colon at the end
+    ''' % parties
+recomb = re.compile('(%s|%s)(?ix)' % (retabletext, respeaker))
+retabletext = re.compile(retabletext)
 
 
 # Specific match:
@@ -95,8 +100,6 @@ respeakervals = re.compile('''(?ix)
 		(?:\((.*?)\))?			# speaker bracket outside of bold (group9)
 		(?:\s*\((%s)\))?		# parties on outside of bold (group10)
 		''' % (parties, parties))
-
-
 
 # <B>Division No. 322</B>
 redivno = re.compile('''(?ix)
@@ -153,7 +156,7 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
                 #print "--------------------"
 
 		# division number detection (these get through the speaker detection regexp)
-		if redivno.match(fss):
+		if redivno.match(fss) or retabletext.match(fss):
 			fout.write(fss.encode("latin-1"))
 			continue
 

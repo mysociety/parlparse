@@ -62,15 +62,17 @@ def TokenDate(ldate, phrtok):
 	return ('phrase', ' class="date" code="%s"' % FixHTMLEntities(phrtok.lastdate))
 
 restandingo = re.compile('''(?x)
+		(?:<b>)?
 		Standing\sOrder\sNo\.\s*
 		(
 		 \d+[A-Z]?               # number+letter
 		 (?:\s*\(\d+\))?         # bracketted number
 		 (?:\s*\([a-z]\))?		 # bracketted letter
 		)
-		(?:\s*
+		(?::?\s*
 		\(([^()]*(?:\([^()]*\))?)\) # inclusion of title for clarity
 		)?
+		(?:</b>)?
 ''')
 restandingomarg = re.compile("Standing Order No")
 def TokenStandingOrder(mstandingo, phrtok):
