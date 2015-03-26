@@ -183,9 +183,9 @@ class WrittenThings(object):
 
 class Statement(WrittenThing):
     def __init__(self, st, sts):
-        self.uid = st.find(class_="qna-result-ws-uin").a.text
-        self.dept = st.find(class_="qna-result-writtenstatement-answeringbody").text
-        self.heading = st.find(class_="qna-result-ws-content-heading").text
+        self.uid = escape(st.find(class_="qna-result-ws-uin").a.text)
+        self.dept = escape(st.find(class_="qna-result-writtenstatement-answeringbody").text)
+        self.heading = escape(st.find(class_="qna-result-ws-content-heading").text)
 
         date = st.find(class_="qna-result-ws-date")
         self.date = self.find_date(date, 'Made')
