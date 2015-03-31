@@ -97,8 +97,8 @@ class AttrDict(dict):
 
 def _lord_name(m):
     name = m.attrib['title']
-    if name == 'Bishop':
-        name = 'Lord Bishop'
+    if name in ('Bishop', 'Archbishop'):
+        name = 'Lord %s' % name
     if m.attrib['lordname']:
         name += ' %s' % m.attrib['lordname']
     if m.attrib['lordofname']:
