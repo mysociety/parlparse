@@ -16,7 +16,7 @@ class MemberList(xml.sax.handler.ContentHandler):
     def __init__(self):
         self.reloadXML()
 
-    # This will return a list of member ID strings or None.  If there
+    # This will return a list of person ID strings or None.  If there
     # are no matches, the list will be empty.  If we recognize a valid
     # speaker, but that person is not an MSP (e.g. The Convener,
     # Members, the Lord Advocate, etc.) then we return None.
@@ -105,7 +105,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 
         return ids_so_far
 
-    # This will return a list of member ID strings or None.  If there
+    # This will return a list of person ID strings or None.  If there
     # are no matches, the list will be empty.  If we recognize a valid
     # speaker, but that person is not an MSP (e.g. The Convener,
 
@@ -148,7 +148,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                         if m['id'] not in member_ids:
                             member_ids.append(m['id'])
                 if len(member_ids) == 1:
-                    return member_ids
+                    return map(self.membertoperson, member_ids)
 
         fullname_matches = self.fullnames.get(s)
         if fullname_matches:
@@ -162,7 +162,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                 if m['id'] not in member_ids:
                     member_ids.append(m['id'])
             if len(member_ids) == 1:
-                return member_ids
+                return map(self.membertoperson, member_ids)
 
         # Now check if this begins with a title:
 
@@ -195,7 +195,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                     if m['id'] not in member_ids:
                         member_ids.append(m['id'])
                 if len(member_ids) == 1:
-                    return member_ids
+                    return map(self.membertoperson, member_ids)
 
             # Or if there's a single word, then this is probably just
             # a last name:
@@ -209,7 +209,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                         if m['id'] not in member_ids:
                             member_ids.append(m['id'])
                     if len(member_ids) == 1:
-                        return member_ids
+                        return map(self.membertoperson, member_ids)
 
         if not just_name:
 
@@ -224,7 +224,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                         if m['id'] not in member_ids:
                             member_ids.append(m['id'])
                     if len(member_ids) == 1:
-                        return member_ids
+                        return map(self.membertoperson, member_ids)
 
         # Just return the string for people that aren't members, but
         # we know are ones we understand.
@@ -237,7 +237,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             # print "Got some law officer..."
             return None
 
-        return member_ids
+        return map(self.membertoperson, member_ids)
 
     def reloadXML(self):
         # Could add some manually here:

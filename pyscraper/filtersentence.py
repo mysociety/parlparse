@@ -210,7 +210,7 @@ def TokenHonFriend(mhonfriend, phrtok):
 	orgname = res[1]
 
 	# if you put the .encode("latin-1") on the res[1] it doesn't work when there are strange characters.
-	return ('phrase', (' class="honfriend" id="%s" name="%s"' % (nid, orgname)).encode("latin-1"))
+	return ('phrase', (' class="honfriend" person_id="%s" name="%s"' % (nid, orgname)).encode("latin-1"))
 
 
 

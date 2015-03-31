@@ -146,7 +146,7 @@ def FilterWransSpeakers(fout, text, sdate):
 
 		# see if it is an explicitly bad/ambiguous name which will never match
 		if boldnamestring.find('<broken-name>') >= 0:
-			id = 'unknown'
+			person_id = 'unknown'
 			boldnamestring = boldnamestring.replace('<broken-name>', '')
 			remadename = ' speakername="%s" error="Name ambiguous in Hansard"' % (boldnamestring)
 		else:
@@ -158,25 +158,21 @@ def FilterWransSpeakers(fout, text, sdate):
 				(name, cons) = (boldnamestring, None)
 
 			# match the member to a unique identifier
-			(id, remadename, remadecons) = memberList.matchfullnamecons(name, cons, sdate, alwaysmatchcons = False)
-			if id and remadename:
+			(person_id, remadename, remadecons) = memberList.matchfullnamecons(name, cons, sdate, alwaysmatchcons = False)
+			if person_id and remadename:
 				remadename = ' speakername="%s"' % (remadename)
-			if not id:
+			if not person_id:
 				if remadename == "MultipleMatch":
                                         if boldnamestring == 'Mr. Michael Foster':
-                                                if remadecons[1] == 'uk.org.publicwhip/member/1939':
-                                                        id = remadecons[1]
-                                                        remadename = ' speakername="Michael Foster"'
-                                                        remadecons = 'Worcester'
-                                                elif remadecons[0] == 'uk.org.publicwhip/member/896':
-                                                        id = remadecons[0]
+                                                if remadecons[0] == 'uk.org.publicwhip/person/10209':
+                                                        person_id = remadecons[0]
                                                         remadename = ' speakername="Michael Foster"'
                                                         remadecons = 'Worcester'
                                         else:
-        					id = 'unknown'
+        					person_id = 'unknown'
         					remadename = ' speakername="%s" error="MultipleMatch"' % boldnamestring
 				elif boldnamestring == 'Jim Dobbin' and sdate == '2014-09-08':
-					id = 'uk.org.publicwhip/member/40316'
+					person_id = 'uk.org.publicwhip/person/10170'
 					remadename = ' speakername="Jim Dobbin"'
 				else:
 					print "  No name,const match (%s,%s)" % (name, cons)
@@ -184,8 +180,8 @@ def FilterWransSpeakers(fout, text, sdate):
 
 
 		# put record in this place
-		fs[i] = '<speaker speakerid="%s"%s>%s</speaker>\n' % \
-				(id.encode("latin-1"), remadename.encode("latin-1"), boldnamestring)
+		fs[i] = '<speaker person_id="%s"%s>%s</speaker>\n' % \
+				(person_id.encode("latin-1"), remadename.encode("latin-1"), boldnamestring)
 
 
 	# scan through everything and output it into the file

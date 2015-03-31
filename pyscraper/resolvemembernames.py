@@ -341,44 +341,6 @@ class MemberList(xml.sax.handler.ContentHandler):
         return ids
 
     # Returns id, name, corrected constituency
-    def matchcons(self, cons, date):
-        cons = self.strippunc(cons)
-        consids = self.constoidmap.get(cons, None)
-        if not consids:
-            raise Exception, "Unknown constituency %s" % cons
-
-        newids = set()
-        for consattr in consids:
-            if consattr["fromdate"] <= date and date <= consattr["todate"]:
-                consid = consattr['id']
-                matches = self.considtomembermap[consid]
-                for attr in matches:
-                    if (date == None) or (date >= attr["fromdate"] and date <= attr["todate"]):
-                        newids.add(attr["id"])
-        ids = newids
-
-		# fail cases
-        if len(ids) == 0:
-            return None, None, None
-        if len(ids) > 1:
-            # only error for case where cons is present, others case happens too much
-            errstring = ('Matched multiple times: ' + fullname + " : " +
-                (cons or "[nocons]") + " : " + date + " : " + ids.__str__() +
-                ' - perhaps constituency spelling is not known')
-            # actually, even no-cons case happens too often
-            # (things like ministerships, with name in brackets after them)
-            print errstring
-            #raise ContextException(errstring, fragment=origfullname)
-            lids = list(ids)  # I really hate the Set type
-            lids.sort()
-            return None, "MultipleMatch", tuple(lids)
-
-        for lid in ids: # pop is no good as it changes the set
-            pass
-        remadename = u'%s %s' % (self.members[lid]["firstname"], self.members[lid]["lastname"])
-        remadecons = self.members[lid]["constituency"]
-        return lid, remadename, remadecons
-
     # Returns id, corrected name, corrected constituency
     # alwaysmatchcons says it is an error to have an unknown/mismatching constituency
     # (rather than just treating cons as None if the cons is unknown)
@@ -419,6 +381,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                 print errstring
                 #raise ContextException(errstring, fragment=origfullname)
             lids = list(ids)  # I really hate the Set type
+            lids = map(self.membertoperson, lids)
             lids.sort()
             return None, "MultipleMatch", tuple(lids)
 
@@ -426,7 +389,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             pass
         remadename = u'%s %s' % (self.members[lid]["firstname"], self.members[lid]["lastname"])
         remadecons = self.members[lid]["constituency"]
-        return lid, remadename, remadecons
+        return self.membertoperson(lid), remadename, remadecons
 
     # Exclusively for WMS
     def matchwmsname(self, office, fullname, date):
@@ -437,8 +400,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             if brackids and len(brackids) == 1:
                 id = brackids.pop()
                 remadename = self.members[id]["firstname"] + " " + self.members[id]["lastname"]
-                return 'speakerid="%s" speakername="%s"' % (id, remadename)
-                speakeroffice = ' speakeroffice="%s" ' % input
+                return 'person_id="%s" speakername="%s"' % (self.membertoperson(id), remadename)
 
         office = self.basicsubs(office)
         speakeroffice = ' speakeroffice="%s"' % office
@@ -450,20 +412,20 @@ class MemberList(xml.sax.handler.ContentHandler):
         if len(ids) == 0:
 #            if not re.search(regnospeakers, office):
 #               raise Exception, "No matches %s" % (rebracket)
-            return 'speakerid="unknown" error="No match" speakername="%s"%s' % (fullname, speakeroffice)
+            return 'person_id="unknown" error="No match" speakername="%s"%s' % (fullname, speakeroffice)
         if len(ids) > 1:
             names = ""
             for id in ids:
                 names += self.members[id]["firstname"] + " " + self.members[id]["lastname"] + " (" + self.members[id]["constituency"] + ") "
 #            if not re.search(regnospeakers, office):
 #                raise Exception, "Multiple matches %s, possibles are %s" % (rebracket, names)
-            return 'speakerid="unknown" error="Matched multiple times" speakername="%s"%s' % (fullname, speakeroffice)
+            return 'person_id="unknown" error="Matched multiple times" speakername="%s"%s' % (fullname, speakeroffice)
 
         for id in ids:
             pass
 
         remadename = self.members[id]["firstname"] + " " + self.members[id]["lastname"]
-        return 'speakerid="%s" speakername="%s"%s' % (id, remadename, speakeroffice)
+        return 'person_id="%s" speakername="%s"%s' % (self.membertoperson(id), remadename, speakeroffice)
 
 
     # Lowercases a surname, getting cases like these right:
@@ -520,7 +482,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         self.date_setup(date)
   
         if input == "The Queen":
-            return 'speakerid="uk.org.publicwhip/royal/-1" speakername="The Queen"'
+            return 'person_id="uk.org.publicwhip/person/13935" speakername="The Queen"'
 
         # Sometimes no bracketed component: Mr. Prisk
         ids = self.fullnametoids(input, date)
@@ -617,7 +579,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             if not re.search(regnospeakers, input):
                 raise Exception, "No matches %s" % (rebracket)
             self.debatenamehistory.append(None) # see below
-            return 'speakerid="unknown" error="No match" speakername="%s"' % (rebracket)
+            return 'person_id="unknown" error="No match" speakername="%s"' % (rebracket)
         if len(ids) > 1:
             names = ""
             for id in ids:
@@ -625,7 +587,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             if not re.search(regnospeakers, input):
                 raise Exception, "Multiple matches %s, possibles are %s" % (rebracket, names)
             self.debatenamehistory.append(None) # see below
-            return 'speakerid="unknown" error="Matched multiple times" speakername="%s"' % (rebracket)
+            return 'person_id="unknown" error="Matched multiple times" speakername="%s"' % (rebracket)
 
         # Extract the one id remaining
         for id in ids:
@@ -647,7 +609,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             remadename = input
         if (self.members[id]["party"] == "CWM" or self.members[id]["party"] == "DCWM") and re.search("Deputy Speaker", input):
             remadename = input
-        return 'speakerid="%s" speakername="%s"%s' % (id, remadename, speakeroffice)
+        return 'person_id="%s" speakername="%s"%s' % (self.membertoperson(id), remadename, speakeroffice)
 
 
     def mpnameexists(self, input, date):
@@ -770,13 +732,13 @@ class MemberList(xml.sax.handler.ContentHandler):
         if len(ids) == 0:
             if not re.search(regnospeakers, input):
                 raise ContextException, "No matches %s" % (input)
-            return ' memberid="unknown" error="No match" '
+            return ' person_id="unknown" error="No match" '
         if len(ids) > 1:
             names = ""
             for id in ids:
                 names += id + " " + self.members[id]["firstname"] + " " + self.members[id]["lastname"] + " (" + self.members[id]["constituency"] + ") "
             raise ContextException, "Multiple matches %s, possibles are %s" % (input, names)
-            return ' memberid="unknown" error="Matched multiple times" '
+            return ' person_id="unknown" error="Matched multiple times" '
 
         for id in ids:
             pass
@@ -785,7 +747,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         # in the following debate
         self.debatenamehistory.append(id)
         remadename = self.make_ctte_name(id)
-        ret = """ memberid="%s" membername="%s" """ % (id, remadename)
+        ret = """ person_id="%s" membername="%s" """ % (self.membertoperson(id), remadename)
         return ret.encode('ascii', 'xmlcharrefreplace')
     
     def matchcttedebatename(self, input, bracket, date, external_speakers=False):
@@ -853,7 +815,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             if not re.search(regnospeakers, input) and not external_speakers:
                 raise ContextException, "No matches %s" % (rebracket)
             self.debatenamehistory.append(None) # see below
-            return 'speakerid="unknown" error="No match" speakername="%s"' % (rebracket)
+            return 'person_id="unknown" error="No match" speakername="%s"' % (rebracket)
         if len(ids) > 1:
             names = ""
             for id in ids:
@@ -861,7 +823,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             if not re.search(regnospeakers, input):
                 raise ContextException, "Multiple matches %s, possibles are %s" % (rebracket, names)
             self.debatenamehistory.append(None) # see below
-            return 'speakerid="unknown" error="Matched multiple times" speakername="%s"' % (rebracket)
+            return 'person_id="unknown" error="Matched multiple times" speakername="%s"' % (rebracket)
 
         # Extract the one id remaining
         for id in ids:
@@ -870,7 +832,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         # Store id in history for this day
         self.debatenamehistory.append(id)
         remadename = self.make_ctte_name(id)
-        ret = 'speakerid="%s" speakername="%s"%s' % (id, remadename, speakeroffice)
+        ret = 'person_id="%s" speakername="%s"%s' % (self.membertoperson(id), remadename, speakeroffice)
         return ret.encode('ascii', 'xmlcharrefreplace')
     
     def canonicalcons(self, cons, date):

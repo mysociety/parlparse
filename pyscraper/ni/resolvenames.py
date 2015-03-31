@@ -247,7 +247,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 			if not re.search('Some Members|A Member|Several Members|Members', input):
 				# import pdb;pdb.set_trace()
 				raise ContextException, "No matches %s" % (input)
-			return None, 'speakerid="unknown" error="No match" speakername="%s"' % (input)
+			return None, 'person_id="unknown" error="No match" speakername="%s"' % (input)
 		if len(ids) > 1 and 'uk.org.publicwhip/member/90355' in ids:
 			# Special case for 8th May, when Mr Hay becomes Speaker
 			if input == 'Mr Hay':
@@ -271,7 +271,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 			for id in ids:
 				names += id + " " + self.members[id]["firstname"] + " " + self.members[id]["lastname"] + " (" + self.members[id]["constituency"] + ") "
 			raise ContextException, "Multiple matches %s, possibles are %s" % (input, names)
-			return None, 'speakerid="unknown" error="Matched multiple times" speakername="%s"' % (input)
+			return None, 'person_id="unknown" error="Matched multiple times" speakername="%s"' % (input)
 		for id in ids:
 			pass
 		remadename = self.members[id]["lastname"]
@@ -281,7 +281,8 @@ class MemberList(xml.sax.handler.ContentHandler):
 			remadename = self.members[id]["title"] + " " + remadename
 		if self.members[id]["party"] == "Speaker" and re.search("Speaker", input):
 			remadename = input
-		return id, 'speakerid="%s" speakername="%s"%s' % (id, remadename, speakeroffice)
+		person_id = self.membertoperson(id)
+		return person_id, 'person_id="%s" speakername="%s"%s' % (person_id, remadename, speakeroffice)
 
 	def cleardebatehistory(self):
 		self.debatenamehistory = []

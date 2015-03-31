@@ -54,7 +54,7 @@ def FactorChanges(flatb, scrapeversion):
 		assert chk[0] == chk[3]  # chunk type (this can fail if due to the lack of two \n's between the two labels, and thus detects an empty speech, which should not be there.  
 		essxindx.append(len(essxlist))
 		essxlist.append("HEADING-" + chk[0])
-		speaker = re.search('nospeaker="true"|speakerid="[^"]*"', chk[1]).group(0)
+		speaker = re.search('nospeaker="true"|(?:speakerid|person_id)="[^"]*"', chk[1]).group(0)
 		essxlist.append(speaker)
 
 		if re.match("oral-heading|major-heading|minor-heading", chk[0]):
@@ -81,7 +81,7 @@ def FactorChanges(flatb, scrapeversion):
 	for qb in flatb:
 		essflatbindx.append(len(essflatblist))
 		essflatblist.append("HEADING-" + qb.typ)
-		essflatblist.append(re.search('nospeaker="true"|speakerid="[^"]*"', qb.speaker).group(0))
+		essflatblist.append(re.search('nospeaker="true"|(?:speakerid|person_id)="[^"]*"', qb.speaker).group(0))
 
 		if re.match("oral-heading|major-heading|minor-heading", qb.typ):
 			heading = ("".join(qb.stext)).strip()
