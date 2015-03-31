@@ -2965,7 +2965,7 @@ B - bishop
 	lordofname_full="Dartmouth Park"
 	county="the London Borough of Camden"
 	peeragetype="L" affiliation="Lab"
-	fromdate="1996" todate="2006-07-04"
+	fromdate="1996" todate="2006-07-03"
 	ex_MP="yes"
 />
 <lord
@@ -7646,7 +7646,7 @@ B - bishop
 	forenames="Nigel McCulloch"
 	title="Bishop" lordname="" lordofname="Wakefield"
 	peeragetype="B" affiliation="Bp"
-	fromdate="1997" todate="2005-03-22"
+	fromdate="1997-07-07" todate="2002-12-16"
 />
 <lord
 	id="uk.org.publicwhip/lord/100737"
@@ -10364,7 +10364,7 @@ B - bishop
     house="lords"
     forenames="Roger John"
     title="Lord" lordname="Liddle" lordofname=""
-    lorofname_full="Carlisle"
+    lordofname_full="Carlisle"
     county="the County of Cumbria"
     peeragetype="L" affiliation="Lab"
     fromdate="2010-06-21" todate="9999-12-31"
@@ -10376,7 +10376,7 @@ B - bishop
     forenames="John Selwyn"
 	surname="Gummer"
     title="Lord" lordname="Deben" lordofname=""
-    lorofname_full="Winston"
+    lordofname_full="Winston"
     county="the County of Suffolk"
     peeragetype="L" affiliation="Con"
     fromdate="2010-06-21" todate="9999-12-31"
@@ -10397,7 +10397,7 @@ B - bishop
     house="lords"
     forenames="Thomas McLaughlin"
     title="Lord" lordname="McAvoy" lordofname=""
-    lorofname_full="Rutherglen"
+    lordofname_full="Rutherglen"
     county="Lanarkshire"
     peeragetype="L" affiliation="Lab"
     fromdate="2010-06-22" todate="9999-12-31"
