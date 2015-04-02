@@ -3,6 +3,8 @@
 # Grabs the latest members data from data.parliament XML and update accordingly.
 # Get data using crawl-datadotparl-members.py
 
+from collections import OrderedDict
+import json
 import re
 from lxml import etree
 from datetime import datetime
@@ -15,8 +17,35 @@ source_files = [
 parser = etree.ETCompatXMLParser()
 etree.set_default_parser(parser)
 
-# Create the master ministers element
-ministers = etree.Element('publicwhip')
+
+def slugify(s):
+    return re.sub('[^\w ]', '', s).replace(' ', '-').lower()
+
+
+class Popolo(object):
+    def __init__(self):
+        self.organizations = []
+        self.memberships = []
+
+    def output(self, fn):
+        out = OrderedDict(sorted({
+            'organizations': self.organizations,
+            'memberships': self.memberships,
+        }.items()))
+        json.dump(out, open('../members/ministers-2010.json', 'w'), indent=2)
+
+    def add_membership(self, mship):
+        self.memberships.append(mship)
+
+    def add_organization(self, org, id=None, **kwargs):
+        id = id or slugify(org)
+        org = OrderedDict(sorted({'id': id, 'name': org}.items()))
+        org.update(kwargs)
+        if org not in self.organizations:
+            self.organizations.append(org)
+        return id
+
+popolo = Popolo()
 
 
 class TimePeriod(object):
@@ -74,23 +103,25 @@ class Position(object):
   def generate(self):
     position = self.position
     for period in self.time_periods:
-      el = etree.SubElement(ministers, 'moffice')
-      attrs = el.attrib
+      attrs = OrderedDict()
       attrs['id'] = 'uk.parliament.data/Member/%s/%s/%s%s' % (
         self.list.member.attrib['datadotparl_id'], self.list.typ, position.attrib['Id'], self.counter)
-      attrs['type'] = self.list.typ.lower()
       attrs['source'] = 'datadotparl/%s' % self.list.typ.lower()
-      attrs['position'] = period['position']
-      attrs['name'] = self.list.member.attrib['firstname'] + ' ' + self.list.member.attrib['lastname']
-      attrs['matchid'] = self.list.member.attrib['id']
       if self.list.name_is_dept:
-          attrs['dept'] = position.find('Name').text
-          if not re.search('panel|committee|commission|court(?i)', attrs['dept']):
-              attrs['dept'] = '%s Committee' % attrs['dept']
+          dept = position.find('Name').text
+          if not re.search('panel|committee|commission|court(?i)', dept):
+              dept = '%s Committee' % dept
       else:
-          attrs['dept'] = ''
-      attrs['fromdate'] = period['fromdate']
-      attrs['todate'] = period['todate']
+          dept = ''
+      if period['position']:
+          attrs['role'] = period['position']
+      attrs['person_id'] = self.list.member.attrib['person_id']
+      # XXX Will need to cover Lords etc at some point
+      attrs['organization_id'] = popolo.add_organization(dept or 'House of Commons')
+      attrs['start_date'] = period['fromdate']
+      if period['todate'] != '9999-12-31':
+          attrs['end_date'] = period['todate']
+      popolo.add_membership(attrs)
 
   @property
   def counter(self):
@@ -159,6 +190,7 @@ for source_file in source_files:
   # From the current members, find those who aren't currently explicitly matched.
   unmatched_members = dict()
   for member in current_members:
+    member.attrib['person_id'] = people[member.attrib['id']]
     if 'datadotparl_id' not in member.attrib:
       member_name = member.attrib['lastname'] + ', ' + member.attrib['firstname']
       unmatched_members.setdefault(member_name, []).append(member)
@@ -177,9 +209,9 @@ for source_file in source_files:
   # Pick out the member from parliamentary data with the right ID
   already_seen = set()
   for matched_member in matched_members:
-    if people[matched_member.attrib['id']] in already_seen:
+    if matched_member.attrib['person_id'] in already_seen:
       continue
-    already_seen.add(people[matched_member.attrib['id']])
+    already_seen.add(matched_member.attrib['person_id'])
 
     parl_data = parl_members[matched_member.attrib['datadotparl_id']]
     positions = Positions(parl_data, matched_member)
@@ -196,8 +228,5 @@ for source_file in source_files:
   print 'Done for ' + source_file + '.xml.'
 
 # Write out the updated ministers file
-ministers_xml = etree.ElementTree(ministers)
-ministers_xml.write('../members/ministers-2010.xml', pretty_print=True)
-print 'ministers-2010.xml updated!'
-
-print 'Done!'
+popolo.output('../members/ministers-2010.json')
+print 'ministers-2010.json updated!'
