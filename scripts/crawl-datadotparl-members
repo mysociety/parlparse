@@ -9,7 +9,7 @@ import urllib2
 import xml.etree.ElementTree as etree
 
 source_urls = {
-  'all-current-commons': 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Commons',
+  'all-current-commons': 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/membership=all|commonsmemberbetween=2015-03-01and2015-05-01/',
   # 'all-commons': 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house*Commons',
   # 'all-lords': 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house*Lords'
 }
