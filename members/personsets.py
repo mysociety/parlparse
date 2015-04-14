@@ -1,10 +1,10 @@
 #! /usr/bin/env python
-# vim:sw=4:ts=4:et:nowrap
 
 # Groups sets of MPs and offices together into person sets.  Updates
 # people.xml to reflect the new sets.  Reuses person ids from people.xml,
 # or allocates new larger ones.
 
+import json
 import xml.sax
 import datetime
 import sys
@@ -121,12 +121,12 @@ lordsmpmatches = {
 
 # Put people who change party AND were MPs multple times in table above e.g. David Trimble
 lordlordmatches = {
-	"uk.org.publicwhip/lord/100931":"uk.org.publicwhip/lord/100160",  # Lord Dahrendorf changes party
-	"uk.org.publicwhip/lord/100906":"uk.org.publicwhip/lord/100281",  # Lord Haskins changes party
-	"uk.org.publicwhip/lord/100901":"uk.org.publicwhip/lord/100831",  # Bishop of Southwell becomes Bishop of Southwell and Nottingham
-	"uk.org.publicwhip/lord/100711":"uk.org.publicwhip/lord/100106",  # Archbishop Carey becomes XB Lord
-	"uk.org.publicwhip/lord/100830":"uk.org.publicwhip/lord/100265",  # Bishop of Guildford becomes of Chelmsford
-	"uk.org.publicwhip/lord/100872":"uk.org.publicwhip/lord/100736",  # Bishop of Wakefield becomes of Manchester
+    "uk.org.publicwhip/lord/100931":"uk.org.publicwhip/lord/100160",  # Lord Dahrendorf changes party
+    "uk.org.publicwhip/lord/100906":"uk.org.publicwhip/lord/100281",  # Lord Haskins changes party
+    "uk.org.publicwhip/lord/100901":"uk.org.publicwhip/lord/100831",  # Bishop of Southwell becomes Bishop of Southwell and Nottingham
+    "uk.org.publicwhip/lord/100711":"uk.org.publicwhip/lord/100106",  # Archbishop Carey becomes XB Lord
+    "uk.org.publicwhip/lord/100830":"uk.org.publicwhip/lord/100265",  # Bishop of Guildford becomes of Chelmsford
+    "uk.org.publicwhip/lord/100872":"uk.org.publicwhip/lord/100736",  # Bishop of Wakefield becomes of Manchester
     "uk.org.publicwhip/lord/100937":"uk.org.publicwhip/lord/100479",  # Bishop of Oxford becomes XB Lord
     "uk.org.publicwhip/lord/100942":"uk.org.publicwhip/lord/100677",  # Lord Wedderburn changes party
     "uk.org.publicwhip/lord/100943":"uk.org.publicwhip/lord/100924",  # As does Lord Boyd...
@@ -142,7 +142,7 @@ lordlordmatches = {
     "uk.org.publicwhip/lord/101151":"uk.org.publicwhip/lord/100067",  # Baron Brabazon of Tara
     "uk.org.publicwhip/lord/101152":"uk.org.publicwhip/lord/100581",  # Baron Sewel
     "uk.org.publicwhip/lord/101153":"uk.org.publicwhip/lord/100628",  # Baron Taylor of Warwick
-	"uk.org.publicwhip/lord/101156":"uk.org.publicwhip/lord/100105",  # Archbishop of Canterbury getting life peerage
+    "uk.org.publicwhip/lord/101156":"uk.org.publicwhip/lord/100105",  # Archbishop of Canterbury getting life peerage
     # XXX: Must be a way to do party changes automatically!
     # XXX: And the key:value ordering here is very suspect
 }
@@ -497,6 +497,19 @@ manualmatches = {
 class MultipleMatchException(Exception):
     pass
 
+
+class Membership(object):
+    def __init__(self, mship):
+        mship['fromdate'] = mship['start_date']
+        mship['todate'] = mship.get('end_date', '9999-12-31')
+        self.mship = mship
+
+    def __getitem__(self, key):
+        return self.mship[key]
+    def __iter__(self):
+        return self.mship.iterkeys()
+
+
 class PersonSets(xml.sax.handler.ContentHandler):
 
     def __init__(self):
@@ -526,9 +539,15 @@ class PersonSets(xml.sax.handler.ContentHandler):
         parser.parse("peers-ucl.xml")
         parser.parse("ni-members.xml")
         parser.parse("sp-members.xml")
-        parser.parse("ministers.xml")
-        parser.parse("ministers-2010.xml")
         parser.parse("royals.xml")
+
+        mins = json.load(open("ministers.json"))
+        for mship in mins['memberships']:
+            self.ministermap.setdefault(mship["person_id"], []).append(Membership(mship))
+        mins2010 = json.load(open("ministers-2010.json"))
+        for mship in mins2010['memberships']:
+            self.ministermap.setdefault(mship["person_id"], []).append(Membership(mship))
+
 
     def outputxml(self, fout):
         for personset in self.personsets:
@@ -548,19 +567,22 @@ class PersonSets(xml.sax.handler.ContentHandler):
                 self.last_person_id = self.last_person_id + 1
                 personid = "uk.org.publicwhip/person/%d" % self.last_person_id
 
+            for moff in self.ministermap.get(personid, []):
+                personset.add(moff)
+
             # Get their final name
             maxdate = "1000-01-01"
             attr = None
             maxname = None
             for attr in personset:
                 if attr["fromdate"]=='' or attr["fromdate"] >= maxdate:
-                    if attr.has_key("firstname"):
+                    if 'firstname' in attr:
                         # MPs or MLAs
                         maxdate = attr["fromdate"]
                         maxname = "%s %s" % (attr["firstname"], attr["lastname"])
                         if attr['title'] == 'Lord':
                             maxname = 'Lord' + maxname
-                    elif attr.has_key("lordname") or attr.has_key("lordofname"):
+                    elif 'lordname' in attr or 'lordofname' in attr:
                         # Lords (this should be in function!)
                         maxdate = attr["fromdate"]
                         maxname = []
@@ -584,8 +606,8 @@ class PersonSets(xml.sax.handler.ContentHandler):
                     current[attr["id"]] = ' current="yes"'
                 else:
                     current[attr["id"]] = ''
-			ofidl = [ str(attr["id"]) for attr in personset ]
-			ofidl.sort()
+            ofidl = [ str(attr["id"]) for attr in personset ]
+            ofidl.sort()
             for ofid in ofidl:
                 fout.write('    <office id="%s"%s/>\n' % (ofid, current[ofid]))
             fout.write('</person>\n')
@@ -603,15 +625,6 @@ class PersonSets(xml.sax.handler.ContentHandler):
     #            if prevtodate:
     #                assert prevtodate < fromdate, "date ranges overlap %s %s %s" % (prevtodate, fromdate, todate)
     #            prevtodate = todate
-
-    # put ministerialships into each of the sets, based on matching matchid values
-    # this works because the members code forms a basis to which ministerialships get attached
-    def mergeministers(self):
-        for pset in self.personsets:
-            for a in pset.copy():
-                memberid = a["id"]
-                for moff in self.ministermap.get(memberid, []):
-                    pset.add(moff)
 
     # put lords into each of the sets
     def mergelordsandothers(self):
@@ -785,7 +798,7 @@ class PersonSets(xml.sax.handler.ContentHandler):
                     newset = set()
                     self.personsets.append(newset) # master copy of person sets
                     self.fullnamescons[fullnameconskey] = newset # store link here
-			    # MAKE A COPY.  (The xml documentation warns that the attr object can be reused, so shouldn't be put into your structures if it's not a copy).
+                # MAKE A COPY.  (The xml documentation warns that the attr object can be reused, so shouldn't be put into your structures if it's not a copy).
                 self.fullnamescons[fullnameconskey].add(attr.copy())
 
             fullnamekey = "%s %s" % (attr["firstname"], attr["lastname"])
@@ -799,13 +812,6 @@ class PersonSets(xml.sax.handler.ContentHandler):
             newset = set()
             newset.add(attr)
             self.personsets.append(newset)
-
-		elif name == "moffice":
-            assert not self.in_person
-
-			#assert attr["id"] not in self.ministermap
-			if attr.has_key("matchid"):
-				self.ministermap.setdefault(attr["matchid"], set()).add(attr.copy())
 
         elif name == "member_ni":
             assert not self.in_person
@@ -832,7 +838,6 @@ personSets = PersonSets()
 #    print
 #    sys.exit(1)
 personSets.mergelordsandothers()
-personSets.mergeministers()
 
 tempfile = "temppeople.xml"
 fout = open(tempfile, "w")

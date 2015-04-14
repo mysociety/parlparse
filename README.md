@@ -20,7 +20,7 @@ using the following process.
 ## Update from data.parliament.uk
 
 The data.parliament data is used to generate a list of members positions (in
-`ministers-2010.xml`) which includes government posts, opposition posts,
+`ministers-2010.json`) which includes government posts, opposition posts,
 parliamentary posts and committee memberships from the 2010 general election
 onwards.
 
