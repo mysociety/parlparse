@@ -81,7 +81,7 @@ def paragraphs_in_tag(t):
 class QuestionOrReply:
     def __init__(self,sp_id,sp_name,parser):
         self.speaker_name = None
-        self.speaker_id = None
+        self.person_id = None
         self.paragraphs = []
         self.sp_id = sp_id
         self.sp_name = sp_name
@@ -111,7 +111,7 @@ class QuestionOrReply:
         if self.sp_id:
             question_id_info = ' spid="%s"' % ( self.sp_id )
         if self.speaker_name:
-            speaker_info = 'speakerid="%s" speakername="%s"' % ( self.speaker_id, self.speaker_name )
+            speaker_info = 'person_id="%s" speakername="%s"' % ( self.person_id, self.speaker_name )
         else:
             speaker_info = 'nospeaker="True"'
         holding_info = ''
@@ -226,11 +226,11 @@ class Parser:
         self.ensure_current_question_or_answer()
         self.current_question_or_reply.add_to_paragraph(s)
             
-    def set_speaker(self,speaker_name,speaker_id):
+    def set_speaker(self,speaker_name,person_id):
         if verbose: print "=== SPEAKER: "+speaker_name
         self.ensure_current_question_or_answer()
         self.current_question_or_reply.speaker_name = speaker_name
-        self.current_question_or_reply.speaker_id = speaker_id
+        self.current_question_or_reply.person_id = person_id
 
     def set_id(self,s):
         if verbose: print "=== ID: "+s
@@ -587,10 +587,10 @@ class Parser:
                             self.complete_question()
                         else:
                             speaker_name = re.sub('(?ims)\s*:\s*$','',speaker_name)
-                            speaker_id = self.valid_speaker(speaker_name)
-                            if speaker_name and speaker_id:
+                            person_id = self.valid_speaker(speaker_name)
+                            if speaker_name and person_id:
                                 self.complete_answer()
-                                self.set_speaker(speaker_name,speaker_id)
+                                self.set_speaker(speaker_name,person_id)
                                 for e in non_empty_contents:
                                     s = tidy_string(str(e))
                                     self.add_to_paragraph(s)

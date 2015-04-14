@@ -100,7 +100,7 @@ def MpList(fsm, vote, stampurl, sdate):
 				print "division.py: no match for", fnam, cons, sdate
 				raise ContextException("No match on name", stamp=stampurl, fragment=fnam)
 			#print fnam, " --> ", remadename.encode("latin-1")
-			res.append('\t<mpname id="%s" vote="%s">%s</mpname>' % (mpid, vote, FixHTMLEntities(fssf)))
+			res.append('\t<mpname person_id="%s" vote="%s">%s</mpname>' % (mpid, vote, FixHTMLEntities(fssf)))
 
 	# now we have to check if the multimatched names were all exhausted
 	for ids in multimatches:
@@ -136,7 +136,7 @@ def MpTellerList(fsm, vote, stampurl, sdate):
                         #print fssf, " ++> ", remadename.encode("latin-1")
 			if not mpid:
 				raise ContextException("teller name bad match", stamp=stampurl, fragment=fssf)
-			res.append('\t<mpname id="%s" vote="%s" teller="yes">%s</mpname>' % (mpid, vote, FixHTMLEntities(fssf)))
+			res.append('\t<mpname person_id="%s" vote="%s" teller="yes">%s</mpname>' % (mpid, vote, FixHTMLEntities(fssf)))
 
 	return res
 

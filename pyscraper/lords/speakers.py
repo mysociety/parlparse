@@ -104,7 +104,7 @@ def LordsFilterSpeakers(fout, text, sdate):
 
 		# get rid of some standard ones
 		if re.match('the lord chancellor|noble lords|a noble lord|a noble baroness|the speaker(?i)', name):
-			fout.write('<speaker speakerid="%s" speakername="%s">%s</speaker>' % ('unknown', name, name))
+			fout.write('<speaker person_id="%s" speakername="%s">%s</speaker>' % ('unknown', name, name))
 			continue
 
 
@@ -120,15 +120,15 @@ def LordsFilterSpeakers(fout, text, sdate):
 			name = officematches[loffice]
 
 		if regenericspeak.match(name):
-			fout.write('<speaker speakerid="%s" speakername="%s">%s</speaker>' % ('unknown', name, name))
+			fout.write('<speaker person_id="%s" speakername="%s">%s</speaker>' % ('unknown', name, name))
 			continue
 
 		lsid = lordsList.GetLordIDfname(name, loffice=loffice, sdate=sdate, stampurl=stampurl)  # maybe throw the exception on the outside
 
                 if not lsid:
-                        fout.write('<speaker speakerid="unknown" error="No match" speakername="%s" colon="%s">%s</speaker>' % (name, colon, name))
+                        fout.write('<speaker person_id="unknown" error="No match" speakername="%s" colon="%s">%s</speaker>' % (name, colon, name))
                 else:
-                        fout.write('<speaker speakerid="%s" speakername="%s" colon="%s">%s</speaker>' % (lsid, name, colon, name))
+                        fout.write('<speaker person_id="%s" speakername="%s" colon="%s">%s</speaker>' % (lsid, name, colon, name))
 
                 if namec.group('maiden'):
                         fout.write('<i>%s</i>' % namec.group('maiden'))

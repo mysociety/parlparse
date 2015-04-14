@@ -90,7 +90,7 @@ def is_division_way(element, report_date=None):
             person_name = m.group(1).title()
             person_id = None
             if report_date:
-                person_id = get_unique_speaker_id(person_name, report_date)
+                person_id = get_unique_person_id(person_name, report_date)
             return ('FOR', person_name, person_id)
         else:
             m = re.search(r'FOR OPTION (\d+)$', tidied)
@@ -144,7 +144,7 @@ member_vote_just_constituency_re = re.compile('''
         $                               # ... end of the string
 ''', re.VERBOSE)
 
-def get_unique_speaker_id(tidied_speaker, on_date):
+def get_unique_person_id(tidied_speaker, on_date):
     ids = memberList.match_whole_speaker(tidied_speaker,str(on_date))
     if ids is None:
         # This special return value (None) indicates that the speaker
@@ -174,7 +174,7 @@ def get_unique_speaker_id(tidied_speaker, on_date):
                 return final_id
             else:
                 log_speaker(tidied_speaker,str(on_date),"genuine ambiguity")
-                # self.speaker_id = None
+                # self.person_id = None
 
 def is_member_vote(element, vote_date, expecting_a_vote=True):
     """Returns a speaker ID if this looks like a member's vote in a division
@@ -232,14 +232,14 @@ def is_member_vote(element, vote_date, expecting_a_vote=True):
     if not reformed_name:
         return None
 
-    speaker_id = get_unique_speaker_id(reformed_name, str(vote_date))
+    person_id = get_unique_person_id(reformed_name, str(vote_date))
 
-    if speaker_id is None and expecting_a_vote:
+    if person_id is None and expecting_a_vote:
         print "reformed_name is:", reformed_name
         print "vote_date is:", vote_date
         raise Exception, "A voting member '%s' couldn't be resolved" % (reformed_name,)
     else:
-        return speaker_id
+        return person_id
 
 def log_speaker(speaker, date, message):
     if SPEAKERS_DEBUG:
@@ -405,7 +405,7 @@ class Section(object):
             return "division/%d" % id(speech_or_division)
         elif isinstance(speech_or_division, Speech):
             s = speech_or_division
-            return s.speaker_id or s.speaker_name or "nospeaker"
+            return s.person_id or s.speaker_name or "nospeaker"
         else:
             raise Exception, "Unknown type %s passed to group_by_key" % (type(speech_or_division),)
 
@@ -490,16 +490,16 @@ class Speech(object):
         self.last_time = last_time
         self.url = url
         self.paragraphs = []
-        self.speaker_id = None
+        self.person_id = None
         if self.speaker_name:
-            self.update_speaker_id(speaker_name)
+            self.update_person_id(speaker_name)
 
     def empty(self):
         return 0 == len(self.paragraphs)
 
-    def update_speaker_id(self, tidied_speaker):
-        final_id = get_unique_speaker_id(tidied_speaker, self.speech_date)
-        self.speaker_id = final_id
+    def update_person_id(self, tidied_speaker):
+        final_id = get_unique_person_id(tidied_speaker, self.speech_date)
+        self.person_id = final_id
         self.speaker_name = tidied_speaker
 
     speakers_so_far = []
@@ -513,10 +513,10 @@ class Speech(object):
                       'id': speech_id}
         if self.speaker_name:
             attributes['speakername'] = self.speaker_name
-            if self.speaker_id:
-                attributes['speakerid'] = self.speaker_id
+            if self.person_id:
+                attributes['person_id'] = self.person_id
             else:
-                attributes['speakerid'] = 'unknown'
+                attributes['person_id'] = 'unknown'
         else:
             attributes['nospeaker'] = 'true'
         result = etree.Element("speech", **attributes)

@@ -201,7 +201,7 @@ class LordsList(xml.sax.handler.ContentHandler):
 			raise ContextException("unknown lord %s %s %s %s" % (ltitle, llordname, llordofname, stampurl), stamp=stampurl, fragment=lname)
 
 		assert len(res) == 1
-		return res[0]["id"]
+		return self.membertoperson(res[0]["id"])
 
 
 	def GetLordIDfname(self, name, loffice, sdate, stampurl=None):
@@ -212,7 +212,7 @@ class LordsList(xml.sax.handler.ContentHandler):
                         name = self.aliases[name]
 
                 if name == "Queen":
-                        return "uk.org.publicwhip/royal/-1"
+                        return "uk.org.publicwhip/person/13935"
 
 		hom = honcompl.match(name)
 		if not hom:

@@ -487,7 +487,7 @@ class ParseDayJSON(ParseDayParserBase):
             if 'id' in self.speaker:
                 speaker_str = self.speaker['id']
             elif 'name' in self.speaker:
-                speaker_str = 'speakerid="unknown" speakername="%s"' % self.speaker['name']
+                speaker_str = 'person_id="unknown" speakername="%s"' % self.speaker['name']
             else:
                 speaker_str = 'nospeaker="true"'
             timestamp = self.speaker.get('ts', '')

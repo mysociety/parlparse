@@ -194,7 +194,7 @@ class Speech:
         self.date = date
         self.set_colnum(colnum)
         self.paragraphs = [ ]
-        self.speakerid = None
+        self.person_id = None
         self.name = None
         self.question_number = None
         self.parser = parser
@@ -268,21 +268,21 @@ class Speech:
                             break
                     if not final_id:
                         log_speaker(tidied_speaker,str(self.date),"genuine ambiguity")
-                        self.speakerid = None
+                        self.person_id = None
 
                 if final_id:
                     parser.speakers_so_far.append(final_id)
-                    self.speakerid = final_id
+                    self.person_id = final_id
                     self.name = tidied_speaker
                 else:
-                    self.speakerid = None
+                    self.person_id = None
                     self.name = tidied_speaker
 
             else:
                 # It's something we know about, but not an MSP (e.g
                 # Lord Advocate)
                 self.name = tidied_speaker
-                self.speakerid = None
+                self.person_id = None
 
     def set_question_number(self,number):
         self.question_number = number
@@ -371,22 +371,22 @@ class Speech:
         # We only resolve from the list of MSPs in general, so make
         # George Younger a special case:
         if self.name and re.search('George Younger',self.name):
-            self.speakerid = "uk.org.publicwhip/lord/100705"
+            self.person_id = "uk.org.publicwhip/person/13029"
 
         # Also we should try to recognize Her Majesty The Queen:
         if self.name and re.search('(?ims)Her Majesty The Queen',self.name):
-            self.speakerid = "uk.org.publicwhip/royal/-1"
+            self.person_id = "uk.org.publicwhip/person/13935"
 
         # The speech id should look like:
         #    uk.org.publicwhip/spor/2003-06-26.1219.2
-        # The speaker id should look like:
-        #    uk.org.publicwhip/member/931
+        # The person id should look like:
+        #    uk.org.publicwhip/person/931
 
         if self.name:
-            if self.speakerid:
-                speaker_info = 'speakerid="%s" speakername="%s"' % ( self.speakerid, self.name )
+            if self.person_id:
+                speaker_info = 'person_id="%s" speakername="%s"' % ( self.person_id, self.name )
             else:
-                speaker_info = 'speakerid="unknown" speakername="%s"' % ( self.name )
+                speaker_info = 'person_id="unknown" speakername="%s"' % ( self.name )
         else:
             speaker_info = 'nospeaker="true"'
 

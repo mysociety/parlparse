@@ -76,7 +76,7 @@ def LordsFilterDivision(text, stampurl, sdate):
 			if not lfss:
 				raise ContextException("no name on line", stamp=stampurl, fragment=fss)
 			lordid = lordsList.MatchRevName(lfss, sdate, stampurl)
-			lordw = '\t<lord id="%s" vote="%s"%s>%s</lord>' % (lordid, contstate, tels, FixHTMLEntities(fss))
+			lordw = '\t<lord person_id="%s" vote="%s"%s>%s</lord>' % (lordid, contstate, tels, FixHTMLEntities(fss))
 
 			if contstate == 'content':
 				contentlords.append(lordw)

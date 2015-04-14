@@ -139,7 +139,7 @@ class SepHeadText:
             self.shspeak.append((self.speaker, sptext))
             # Specifically "unknown" speakers e.g. "Several hon members rose" don't
             # have text in their "speech" bit.
-            if re.match('(?:<[^>]*?>|\s)*$', sptext) and not re.match('speakerid="unknown"', self.speaker):
+            if re.match('(?:<[^>]*?>|\s)*$', sptext) and not re.match('(?:speakerid|person_id)="unknown"', self.speaker):
                 print 'Warning:: Speaker with no text ' + self.speaker
                 print self.heading
 
