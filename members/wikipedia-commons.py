@@ -26,7 +26,7 @@ date_parl = {
     1997: '1999-01-01',
     2001: '2003-01-01',
     2005: '2007-08-01',
-    2010: datetime.date.today().isoformat()
+    2010: '2014-01-01',
 }
 wikimembers  = {}
 
@@ -57,8 +57,7 @@ for year in (1997, 2001, 2005, 2010):
             print >>sys.stderr, e
         if not id:
             continue
-        pid = memberList.membertoperson(id)
-        wikimembers[pid] = url
+        wikimembers[id] = url
 
 print '''<?xml version="1.0" encoding="ISO-8859-1"?>
 <publicwhip>'''

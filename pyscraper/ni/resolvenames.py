@@ -165,7 +165,7 @@ class MemberList(xml.sax.handler.ContentHandler):
 		ids = []
 		for attr in matches:
 			if 'fromdate' in attr and date >= attr["fromdate"] and date <= attr["todate"]:
-				ids.append(attr["id"])
+				ids.append(self.membertoperson(attr["id"]))
 		return ids
 
 	# useful to have this function out there
@@ -216,6 +216,16 @@ class MemberList(xml.sax.handler.ContentHandler):
 		if deputy == 'Mr Wilson':
 			deputy = 'Mr J Wilson'
 		self.deputy_speaker = deputy
+
+	def match_person(self, input, date=None):
+		ids = self.fullnametoids(input, date)
+		ids = set(map(self.membertoperson, ids))
+		if len(ids) == 0:
+			return None, 'person_id="unknown" error="No match" speakername="%s"' % (input)
+		if len(ids) > 1:
+			raise ContextException, "Multiple matches %s, possibles are %s" % (input, ids)
+		id = ids.pop()
+		return id
 
 	def match(self, input, date):
 		# Clear name history if date change

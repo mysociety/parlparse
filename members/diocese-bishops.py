@@ -33,6 +33,5 @@ for (url, name) in matches:
         print >>sys.stderr, e
     if not id:
         continue
-    pid = lordsList.membertoperson(id)
-    print '<personinfo id="%s" diocese_url="%s" />' % (pid, url)
+    print '<personinfo id="%s" diocese_url="%s" />' % (id, url)
 print '</publicwhip>'

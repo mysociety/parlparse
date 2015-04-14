@@ -54,8 +54,7 @@ for (url, name) in matches:
         continue
 
     for id_to_add in id_list:
-        pid = memberList.membertoperson(id_to_add)
-        wikimembers[pid] = url
+        wikimembers[id_to_add] = url
 
 print '''<?xml version="1.0" encoding="ISO-8859-1"?>
 <publicwhip>'''

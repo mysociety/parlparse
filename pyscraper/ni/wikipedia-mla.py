@@ -18,14 +18,14 @@ from ni.resolvenames import memberList
 date_today = datetime.date.today().isoformat()
 
 # Get region pages
-wiki_index_url = "http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2007"
+wiki_index_url = "http://en.wikipedia.org/wiki/Members_of_the_Northern_Ireland_Assembly_elected_in_2011"
 wikimembers  = {}
-current_members = []
 
-# Grab page 
-ur = open('../rawdata/Members_of_the_NIA_2007')
-content = ur.read()
-ur.close()
+# Grab pages
+with open('../rawdata/Members_of_the_NIA_2007') as ur:
+    content = ur.read()
+with open('../rawdata/Members_of_the_NIA_2011') as ur:
+    content += ur.read()
 
 matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a></td>';
 matches = re.findall(matcher, content)
@@ -33,19 +33,17 @@ matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a> \((?:resigned|dec
 matches.extend( re.findall(matcher, content) )
 matcher = '<tr>\s+<td><a href="/wiki/[^"]+"[^>]*>[^<]+</a> \((?:resigned|deceased)\), replaced by <a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a></td>';
 matches.extend( re.findall(matcher, content) )
+matcher = '<td><a href="([^"]*)" title="[^"]*">([^<]+)</a></td>\s*<th style="[^"]*">()</th>\s*<td.*?</td>\s*</tr>'
+matches.extend( re.findall(matcher, content) )
+
 for (url, name, cons) in matches:
     name = name.decode('utf-8')
-    try:
-        id, str = memberList.match(name, date_today)
-        current_members.append(id)
-    except Exception, e:
-        try:
-            id, str = memberList.match(name, '2011-01-01')
-        except Exception, e:
-            # For the resigned/died MLAs, use an earlier date
-            id, str = memberList.match(name, '2007-01-01')
-            #print >>sys.stderr, e
-    pid = memberList.membertoperson(id)
+    date = None
+    if 'Mark Durkan' in name:
+        date = '2008-01-01'
+    elif 'Mark H. Durkan' in name:
+        date = '2012-01-01'
+    pid = memberList.match_person(name, date)
     wikimembers[pid] = url
 
 print '''<?xml version="1.0" encoding="ISO-8859-1"?>
@@ -57,7 +55,7 @@ for id in k:
     print '<personinfo id="%s" wikipedia_url="%s" />' % (id, url)
 print '</publicwhip>'
 
-wikimembers = set(current_members)
+wikimembers = set(wikimembers.keys())
 allmembers = set( memberList.list() )
 symdiff = allmembers.symmetric_difference(wikimembers)
 if len(symdiff) > 0:

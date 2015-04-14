@@ -37,8 +37,7 @@ for (url, title, name) in matches:
 
     if not id:
         continue
-    pid = lordsList.membertoperson(id)
-    wikimembers[pid] = url
+    wikimembers[id] = url
 
 print '''<?xml version="1.0" encoding="ISO-8859-1"?>
 <publicwhip>'''
