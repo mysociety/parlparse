@@ -6,13 +6,13 @@
 
 import argparse
 import datetime
+import json
 import os
 import re
 import urllib
 from xml.sax.saxutils import escape
 
 import bs4
-import lxml.etree
 import dateutil.parser
 import requests
 import requests_cache
@@ -24,7 +24,7 @@ parser = argparse.ArgumentParser(description='Scrape/parse new Written Answers d
 parser.add_argument('--house', required=True, choices=['commons', 'lords'], help='Which house to fetch')
 parser.add_argument('--type', required=True, choices=['answers', 'statements'], help='What sort of thing to fetch')
 parser.add_argument('--date', default=yesterday.isoformat(), help='date to fetch')
-parser.add_argument('--members', required=True, help='filename of current member XML')
+parser.add_argument('--members', required=True, help='filename of membership JSON')
 parser.add_argument('--out', required=True, help='directory in which to place output')
 ARGS = parser.parse_args()
 
@@ -38,7 +38,39 @@ if ARGS.type == 'answers':
     URL_INDEX = URL_ROOT + 'written-questions-answers/'
 else:
     URL_INDEX = URL_ROOT + 'written-statements/'
-MEMBERS = lxml.etree.parse(ARGS.members)
+
+
+def _lord_name(m):
+    n = m['name']
+    name = n['honorific_prefix']
+    if name in ('Bishop', 'Archbishop'):
+        name = 'Lord %s' % name
+    if n['lordname']:
+        name += ' %s' % n['lordname']
+    if n['lordofname']:
+        name += ' of %s' % n['lordofname']
+        if not n['lordname']:
+            name = 'The ' + name
+    # Earl of Clancarty is in the peerage of Ireland but the Lords
+    # still uses it :/ Should really use peers-aliases.xml here.
+    if name == 'Viscount Clancarty':
+        name = 'The Earl of Clancarty'
+    return name
+
+with open(ARGS.members) as fp:
+    MEMBERS = json.load(fp)
+if ARGS.house == 'lords':
+    MEMBERS_BY_NAME = {}
+    for m in MEMBERS['memberships']:
+        if m.get('organization_id') != 'house-of-lords': continue
+        name = _lord_name(m).lower()
+        MEMBERS_BY_NAME.setdefault(name, []).append(m)
+else:
+    DATADOTPARL_ID_TO_PERSON_ID = {}
+    for person in MEMBERS['persons']:
+        for i in person.get('identifiers', []):
+            if i['scheme'] == 'datadotparl_id':
+                DATADOTPARL_ID_TO_PERSON_ID[i['identifier']] = person['id']
 
 
 def main():
@@ -95,39 +127,20 @@ class AttrDict(dict):
         self.__dict__ = self
 
 
-def _lord_name(m):
-    name = m.attrib['title']
-    if name in ('Bishop', 'Archbishop'):
-        name = 'Lord %s' % name
-    if m.attrib['lordname']:
-        name += ' %s' % m.attrib['lordname']
-    if m.attrib['lordofname']:
-        name += ' of %s' % m.attrib['lordofname']
-        if not m.attrib['lordname']:
-            name = 'The ' + name
-    # Earl of Clancarty is in the peerage of Ireland but the Lords
-    # still uses it :/ Should really use peers-aliases.xml here.
-    if name == 'Viscount Clancarty':
-        name = 'The Earl of Clancarty'
-    return name
-
-
 class WrittenThing(object):
     def find_speaker(self, h, date):
-        speaker_id = re.search('(\d+)$', h.a['href']).group(1)
         name = h.a.text
         if ARGS.house == 'lords':
             # Loop through all, match on name and date
-            members = MEMBERS.xpath('//lord')
-            match_fn = lambda m: name.lower() == _lord_name(m).lower() and m.attrib['fromdate'] <= date <= m.attrib['todate']
+            members = MEMBERS_BY_NAME[name.lower()]
+            member = next((m for m in members if m['start_date'] <= date <= m.get('end_date', '9999-12-31')), None)
+            if member is None:
+                raise Exception('Could not find matching entry for %s' % name)
+            person_id = member['person_id']
         else:
-            # Match on Parliament ID and date
-            members = MEMBERS.xpath('//member[@datadotparl_id="%s"]' % speaker_id)
-            match_fn = lambda m: m.attrib['fromdate'] <= date <= m.attrib['todate']
-        member = next((m for m in members if match_fn(m)), None)
-        if member is None:
-            raise Exception('Could not find matching entry for %s %s' % (speaker_id, name))
-        return AttrDict(id=member.attrib['id'], name=name)
+            speaker_id = re.search('(\d+)$', h.a['href']).group(1)
+            person_id = DATADOTPARL_ID_TO_PERSON_ID[speaker_id]
+        return AttrDict(id=person_id, name=name)
 
     def find_date(self, d, regex):
         date = re.match('\s*%s on:\s+(?P<date>.*)' % regex, d.text)
@@ -205,7 +218,7 @@ class Statement(WrittenThing):
 <minor-heading id="uk.org.publicwhip/wms/{st.date}.{st.uid}.h" nospeaker="true">
     {st.heading}
 </minor-heading>
-<speech id="uk.org.publicwhip/wms/{st.date}.{st.uid}.0" speakerid="{st.speaker.id}" speakername="{st.speaker.name}" url="{url_root}written-statement/{house}/{st.date}/{st.uid}/">
+<speech id="uk.org.publicwhip/wms/{st.date}.{st.uid}.0" person_id="{st.speaker.id}" speakername="{st.speaker.name}" url="{url_root}written-statement/{house}/{st.date}/{st.uid}/">
     {st.statement}
 </speech>
 '''.format(st=self, house=ARGS.house.title(), url_root=URL_ROOT)
@@ -283,14 +296,14 @@ class Question(WrittenThing):
     def questions_xml(self):
         qns = [self] + [self.qns.by_id[q] for q in self.groupedquestions]
         return ''.join([u'''
-<ques id="uk.org.publicwhip/wrans/{qn.date_asked}.{qn.uid}.q{i}" speakerid="{qn.asker.id}" speakername="{qn.asker.name}" url="{url_root}written-question/{house}/{qn.date_asked}/{qn.uid}/">
+<ques id="uk.org.publicwhip/wrans/{qn.date_asked}.{qn.uid}.q{i}" person_id="{qn.asker.id}" speakername="{qn.asker.name}" url="{url_root}written-question/{house}/{qn.date_asked}/{qn.uid}/">
     <p qnum="{qn.uid}">{qn.question}</p>
 </ques>'''.format(i=i, qn=qn, house=ARGS.house.title(), url_root=URL_ROOT) for i, qn in enumerate(qns)])
 
     @property
     def answers_xml(self):
         return ''.join([u'''
-<reply id="uk.org.publicwhip/wrans/{qn.date_asked}.{qn.uid}.r{i}" speakerid="{answer.answerer.id}" speakername="{answer.answerer.name}">
+<reply id="uk.org.publicwhip/wrans/{qn.date_asked}.{qn.uid}.r{i}" person_id="{answer.answerer.id}" speakername="{answer.answerer.name}">
     {answer.answer}
 </reply>'''.format(i=i, qn=self, answer=answer) for i, answer in enumerate(self.answers)])
 

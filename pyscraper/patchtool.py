@@ -132,7 +132,7 @@ def RunPatchTool(typ, sdatext, ce):
 	print "\nHit RETURN to launch your editor to make patches "
 	sys.stdin.readline()
 	RunPatchToolW(typ, sdatext, ce.stamp, ce.fragment)
-	memberList.reloadXML()
+	memberList.reloadJSON()
 
 
 # So it works from the command line

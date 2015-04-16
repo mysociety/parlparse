@@ -28,6 +28,8 @@ class Popolo(object):
         self.memberships = []
 
     def output(self, fn):
+        self.memberships = sorted(self.memberships, key=lambda x: (x['person_id'], x['id']))
+        self.organizations = sorted(self.organizations, key=lambda x: x['id'])
         out = OrderedDict(sorted({
             'organizations': self.organizations,
             'memberships': self.memberships,
@@ -105,7 +107,7 @@ class Position(object):
     for period in self.time_periods:
       attrs = OrderedDict()
       attrs['id'] = 'uk.parliament.data/Member/%s/%s/%s%s' % (
-        self.list.member.attrib['datadotparl_id'], self.list.typ, position.attrib['Id'], self.counter)
+        self.list.person['datadotparl_id'], self.list.typ, position.attrib['Id'], self.counter)
       attrs['source'] = 'datadotparl/%s' % self.list.typ.lower()
       if self.list.name_is_dept:
           dept = position.find('Name').text
@@ -115,7 +117,7 @@ class Position(object):
           dept = ''
       if period['position']:
           attrs['role'] = period['position']
-      attrs['person_id'] = self.list.member.attrib['person_id']
+      attrs['person_id'] = self.list.person['id']
       # XXX Will need to cover Lords etc at some point
       attrs['organization_id'] = popolo.add_organization(dept or 'House of Commons')
       attrs['start_date'] = period['fromdate']
@@ -134,9 +136,9 @@ class Position(object):
 
 
 class Positions(object):
-  def __init__(self, data, member):
+  def __init__(self, data, person):
     self.data = data
-    self.member = member
+    self.person = person
 
   def filter(self, typ, name_is_dept=False):
     container = typ + 's'
@@ -175,46 +177,18 @@ for source_file in source_files:
   ##########
 
   # Import people.xml
-  people_xml = parse('../members/people.xml', 'publicwhip')
-  people = {}
-  for person in people_xml:
-    pid = person.attrib['id']
-    for office in person:
-      oid = office.attrib['id']
-      people[oid] = pid
+  people_json = json.load(open('../members/people.json'))
+  people = []
+  for person in people_json['persons']:
+    for i in person.get('identifiers', []):
+      if i['scheme'] == 'datadotparl_id':
+        person['datadotparl_id'] = i['identifier']
+        people.append(person)
+  print str(len(people)) + ' people with data.parliament ID.'
 
-  # Import the current all-members.xml
-  current_members = parse('../members/all-members-2010.xml', 'publicwhip')
-  print 'Found ' + str(len(current_members)) + ' members from all-members-2010.xml.'
-
-  # From the current members, find those who aren't currently explicitly matched.
-  unmatched_members = dict()
-  for member in current_members:
-    member.attrib['person_id'] = people[member.attrib['id']]
-    if 'datadotparl_id' not in member.attrib:
-      member_name = member.attrib['lastname'] + ', ' + member.attrib['firstname']
-      unmatched_members.setdefault(member_name, []).append(member)
-
-  # Compare parl_members to unmatched_members
-  for member_id, parl_member in parl_members.items():
-    if parl_member.find('ListAs').text in unmatched_members:
-      for unmatched_member in unmatched_members[parl_member.find('ListAs').text]:
-        ## TODO: Prompt to check if this match is actually correct
-        unmatched_member.attrib['datadotparl_id'] = parl_member.attrib['Member_Id']
-
-  # Find current members with datadotparl_id
-  matched_members = [ m for m in current_members if 'datadotparl_id' in m.attrib ]
-  print str(len(matched_members)) + ' members with data.parliament ID.'
-
-  # Pick out the member from parliamentary data with the right ID
-  already_seen = set()
-  for matched_member in matched_members:
-    if matched_member.attrib['person_id'] in already_seen:
-      continue
-    already_seen.add(matched_member.attrib['person_id'])
-
-    parl_data = parl_members[matched_member.attrib['datadotparl_id']]
-    positions = Positions(parl_data, matched_member)
+  for person in people:
+    parl_data = parl_members[person['datadotparl_id']]
+    positions = Positions(parl_data, person)
 
     for position in positions.filter('GovernmentPost'):
       position.generate()

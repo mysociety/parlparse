@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
-import xml.sax
+import os
+import json
 import re
 import string
 import copy
@@ -9,12 +10,10 @@ import datetime
 import time
 import codecs
 
-# Most of this is copied from the NI resolvemembernames.py
+from base_resolver import ResolverBase
 
-class MemberList(xml.sax.handler.ContentHandler):
-
-    def __init__(self):
-        self.reloadXML()
+class MemberList(ResolverBase):
+    import_organization_id = 'scottish-parliament'
 
     # This will return a list of person ID strings or None.  If there
     # are no matches, the list will be empty.  If we recognize a valid
@@ -140,10 +139,10 @@ class MemberList(xml.sax.handler.ContentHandler):
             office_matches = self.officeslowered.get(s.lower())
             if office_matches:
                 for o in office_matches:
-                    if date and date < o['fromdate'] or date > o['todate']:
+                    if date and date < o['start_date'] or date > o['end_date']:
                         continue
                     for m in o['members']:
-                        if date and date < m['fromdate'] or date > m['todate']:
+                        if date and date < m['start_date'] or date > m['end_date']:
                             continue
                         if m['id'] not in member_ids:
                             member_ids.append(m['id'])
@@ -153,9 +152,9 @@ class MemberList(xml.sax.handler.ContentHandler):
         fullname_matches = self.fullnames.get(s)
         if fullname_matches:
             for m in fullname_matches:
-                if date and date < m['fromdate'] or date > m['todate']:
+                if date and date < m['start_date'] or date > m['end_date']:
                     continue
-                if re.search('The Presiding Officer',s) and m['fromwhy'] != 'became_presiding_officer':
+                if re.search('The Presiding Officer',s) and m['start_reason'] != 'became_presiding_officer':
                     # There's some ambiguity about which of the
                     # presiding officers it is in this case...
                     continue
@@ -190,7 +189,7 @@ class MemberList(xml.sax.handler.ContentHandler):
             fullname_matches = self.fullnames.get(rest_of_name)
             if fullname_matches:
                 for m in fullname_matches:
-                    if date and date < m['fromdate'] or date > m['todate']:
+                    if date and date < m['start_date'] or date > m['end_date']:
                         continue
                     if m['id'] not in member_ids:
                         member_ids.append(m['id'])
@@ -204,7 +203,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                 lastname_matches = self.lastnames.get(rest_of_name)
                 if lastname_matches:
                     for m in lastname_matches:
-                        if date and date < m['fromdate'] or date > m['todate']:
+                        if date and date < m['start_date'] or date > m['end_date']:
                             continue
                         if m['id'] not in member_ids:
                             member_ids.append(m['id'])
@@ -219,7 +218,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                     # print "       Got consituency id: "+c['id']
                     members = self.considtomembermap.get(c['id'])
                     for m in members:
-                        if date and date < m['fromdate'] or date > m['todate']:
+                        if date and date < m['start_date'] or date > m['end_date']:
                             continue
                         if m['id'] not in member_ids:
                             member_ids.append(m['id'])
@@ -239,42 +238,15 @@ class MemberList(xml.sax.handler.ContentHandler):
 
         return map(self.membertoperson, member_ids)
 
-    def reloadXML(self):
-        # Could add some manually here:
-        self.members = {
-            # "uk.org.publicwhip/member/454" : { 'firstname':'Paul', 'lastname':'Murphy', 'title':'', 'party':'Labour' },
-            # "uk.org.publicwhip/member/384" : { 'firstname':'John', 'lastname':'McFall', 'title':'', 'party':'Labour' },
-        } # ID --> MLAs
-        self.fullnames={} # "Firstname Lastname" --> MSPs
-        self.lastnames={} # Surname --> MSPs
+    def reloadJSON(self):
+        super(MemberList, self).reloadJSON()
 
-        # self.debatedate=None
-        # self.debatenamehistory=[] # recent speakers in debate
-        # self.debateofficehistory={} # recent offices ("The Deputy Prime Minister")
+        sp_dir = os.path.dirname(__file__)
+        self.import_constituencies("sp-constituencies.json")
+        self.import_people_json()
 
-        self.constoidmap = {} # constituency name --> cons attributes (with date and ID)
-        self.considtonamemap = {} # cons ID --> name
-        self.considtomembermap = {} # cons ID --> MSPs
-
-        self.parties = {} # party --> MLAs
-        self.membertopersonmap = {} # member ID --> person ID
-        self.persontomembermap = {} # person ID --> office
-
-        # self.retitles = re.compile('^(?:Rev |Dr |Mr |Mrs |Ms |Sir |Lord )+')
-        # self.rehonorifics = re.compile('(?: OBE| CBE| MP)+$')
-
-        parser = xml.sax.make_parser()
-        parser.setContentHandler(self)
-
-        parser.parse("../../members/sp-constituencies.xml")
-        parser.parse("../../members/sp-members.xml")
-        parser.parse("../../members/sp-aliases.xml")
-
-        self.loadperson = None
-        parser.parse("../../members/people.xml")
-
-        fromdate = None
-        todate = None
+        start_date = None
+        end_date = None
 
         # These files of posts are slightly doctored versions of these
         # documents from the Scottish Parliament website after having
@@ -295,7 +267,7 @@ class MemberList(xml.sax.handler.ContentHandler):
         self.lawofficers = { }
 
         for pf in posts_files:
-            f = codecs.open(pf,'r','utf-8')
+            f = codecs.open(sp_dir + '/' + pf,'r','utf-8')
             for line in f.readlines():
                 line = line.strip()
 
@@ -305,13 +277,13 @@ class MemberList(xml.sax.handler.ContentHandler):
                 if m_iso:
                     from_w = time.strptime(m_iso.group(1),'%Y-%m-%d')
                     to_w = time.strptime(m_iso.group(5),'%Y-%m-%d')
-                    fromdate = datetime.date( from_w[0], from_w[1], from_w[2] )
-                    todate = datetime.date( to_w[0], to_w[1], to_w[2] )
+                    start_date = datetime.date( from_w[0], from_w[1], from_w[2] )
+                    end_date = datetime.date( to_w[0], to_w[1], to_w[2] )
                 elif m_other:
                     from_w = time.strptime(m_other.group(1),'%d %B %Y')
                     to_w = time.strptime(m_other.group(5),'%d %B %Y')
-                    fromdate = datetime.date( from_w[0], from_w[1], from_w[2] )
-                    todate = datetime.date( to_w[0], to_w[1], to_w[2] )
+                    start_date = datetime.date( from_w[0], from_w[1], from_w[2] )
+                    end_date = datetime.date( to_w[0], to_w[1], to_w[2] )
                 elif re.match('.*\|.*\|.*',line):
                     fields = line.split('|')
                     if len(fields) != 3:
@@ -333,10 +305,10 @@ class MemberList(xml.sax.handler.ContentHandler):
                         raise "Couldn't find member: "+name
                     # Only keep matches where there's a date overlap.
                     # (There should only be one of these.)
-                    matches = filter( lambda m: str(fromdate) <= m['todate'] and str(todate) >= m['fromdate'], matches)
+                    matches = filter( lambda m: str(start_date) <= m['end_date'] and str(end_date) >= m['start_date'], matches)
                     if len(matches) < 1:
                         raise Exception, "No overlapping date ranges: "+str(len(matches))
-                    value = { 'members': matches, 'fromdate': str(fromdate), 'todate': str(todate), 'party': party, 'cabinet': cabinet }
+                    value = { 'members': matches, 'start_date': str(start_date), 'end_date': str(end_date), 'party': party, 'cabinet': cabinet }
                     self.officeslowered.setdefault(post.lower(),[]).append(value)
                     self.officeslowered.setdefault("the "+post.lower(),[]).append(value)
                 elif re.match('.*\_.*\_.*',line):
@@ -351,8 +323,8 @@ class MemberList(xml.sax.handler.ContentHandler):
                         m_other = re.match('^((\d+)\s+(\w+)\s+(\d{4})).*\s+((\d+)\s+(\w+)\s+(\d{4})).*$',date_range)
                         from_w = time.strptime(m_other.group(1),'%d %B %Y')
                         to_w = time.strptime(m_other.group(5),'%d %B %Y')
-                        fromdate = datetime.date( from_w[0], from_w[1], from_w[2] )
-                        todate = datetime.date( to_w[0], to_w[1], to_w[2] )
+                        start_date = datetime.date( from_w[0], from_w[1], from_w[2] )
+                        end_date = datetime.date( to_w[0], to_w[1], to_w[2] )
                     else:
                         raise Exception, "Wrong number of fields: "+line
                 elif re.match('.*[^&]\#.*',line):
@@ -362,7 +334,7 @@ class MemberList(xml.sax.handler.ContentHandler):
                     if len(fields) != 2:
                         raise Exception, "Wrong number of fields: "+line
                     post, name = fields
-                    value = { 'name': name, 'fromdate': str(fromdate), 'todate': str(todate), 'party': party, 'cabinet': cabinet }
+                    value = { 'name': name, 'start_date': str(start_date), 'end_date': str(end_date), 'party': party, 'cabinet': cabinet }
                     self.lawofficers.setdefault(post.lower(),[]).append(value)
                     self.lawofficers.setdefault("the "+post.lower(),[]).append(value)
                 else:
@@ -370,140 +342,21 @@ class MemberList(xml.sax.handler.ContentHandler):
 
             f.close()
 
-    def startElement(self, name, attr):
-
-        # sp-members.xml loading
-        if name == "member_sp":
-
-            # MAKE A COPY.  (The xml documentation warns that the attr object can be
-            # reused, so shouldn't be put into your structures if it's not a copy).
-            attr = attr.copy()
-
-            if self.members.get(attr["id"]):
-                raise Exception, "Repeated identifier %s in members XML file" % attr["id"]
-            self.members[attr["id"]] = attr
-
-            lastname = attr["lastname"]
-
-            # index by "Firstname Lastname" for quick lookup ...
-            compoundname = attr["firstname"] + " " + lastname
-            self.fullnames.setdefault(compoundname, []).append(attr)
-
-            # add in names without the middle initial
-            fnnomidinitial = re.findall('^(\S*)\s\S$', attr["firstname"])
-            if fnnomidinitial:
-                compoundname = fnnomidinitial[0] + " " + lastname
-                self.fullnames.setdefault(compoundname, []).append(attr)
-
-            # ... and by first initial, lastname
-            if attr["firstname"]:
-                compoundname = attr["firstname"][0] + " " + lastname
-                self.fullnames.setdefault(compoundname, []).append(attr)
-
-            # ... and also by "Lastname"
-            self.lastnames.setdefault(lastname, []).append(attr)
-
-            # ... and by constituency
-            cons = attr["constituency"]
-            consids = self.constoidmap[cons]
-            consid = None
-            # find the constituency id for this MSP
-            for consattr in consids:
-                if (consattr['fromdate'] <= attr['fromdate'] and
-                    attr['fromdate'] <= attr['todate'] and
-                    attr['todate'] <= consattr['todate']):
-                    if consid and consid != consattr['id']:
-                        raise Exception, "Two constituency ids %s %s overlap with MSP %s" % (consid, consattr['id'], attr['id'])
-                    consid = consattr['id']
-            if not consid:
-                raise Exception, "Constituency '%s' not found" % attr["constituency"]
-            # check name in members file is same as default in cons file
-            backformed_cons = self.considtonamemap[consid]
-            if backformed_cons != attr["constituency"]:
-                raise Exception, "Constituency '%s' in members file differs from first constituency '%s' listed in cons file" % (attr["constituency"], backformed_cons)
-            self.considtomembermap.setdefault(consid, []).append(attr)
-
-            # ... and by party
-            party = attr["party"]
-            self.parties.setdefault(party, []).append(attr)
-
-        # member-aliases.xml loading
-        elif name == "alias":
-            # search for the canonical name or the constituency name for this alias
-            matches = None
-            alternateisfullname = True
-            if attr.has_key("fullname"):
-                matches = self.fullnames.get(attr["fullname"], None)
-            elif attr.has_key("lastname"):
-                matches = self.lastnames.get(attr["lastname"], None)
-                alternateisfullname = False
-            # append every canonical match to the alternates
-            for m in matches:
-                newattr = {}
-                newattr['id'] = m['id']
-                newattr['fromwhy'] = m['fromwhy']
-                newattr['towhy'] = m['towhy']
-                # merge date ranges - take the smallest range covered by
-                # the canonical name, and the alias's range (if it has one)
-                early = max(m['fromdate'], attr.get('from', '1000-01-01'))
-                late = min(m['todate'], attr.get('to', '9999-12-31'))
-                # sometimes the ranges don't overlap
-                if early <= late:
-                    newattr['fromdate'] = early
-                    newattr['todate'] = late
-                    if alternateisfullname:
-                        self.fullnames.setdefault(attr["alternate"], []).append(newattr)
-                    else:
-                        self.lastnames.setdefault(attr["alternate"], []).append(newattr)
-
-        # people.xml loading
-        elif name == "person":
-            self.loadperson = attr["id"]
-        elif name == "office":
-            assert self.loadperson, "<office> element before <person> element"
-            if attr["id"] in self.membertopersonmap:
-                raise Exception, "Same office id %s appeared twice" % attr["id"]
-            self.membertopersonmap[attr["id"]] = self.loadperson
-            self.persontomembermap.setdefault(self.loadperson, []).append(attr["id"])
-
-        # constituencies.xml loading
-        elif name == "constituency":
-            self.loadconsattr = attr
-            pass
-        elif name == "name":
-            assert self.loadconsattr, "<name> element before <constituency> element"
-            if not self.loadconsattr["id"] in self.considtonamemap:
-                self.considtonamemap[self.loadconsattr["id"]] = attr["text"]
-            self.constoidmap.setdefault(attr["text"], []).append(self.loadconsattr)
-            nopunc = self.__strippunc(attr['text'])
-            self.constoidmap.setdefault(nopunc, []).append(self.loadconsattr)
-
-    def endElement(self, name):
-        if name == "constituency":
-            self.loadconsattr = None
-
-    def __strippunc(self, cons):
-        nopunc = cons.replace(',','').replace('-','').replace(' ','').lower().strip()
-        return nopunc
-
-    def membertoperson(self, memberid):
-        return self.membertopersonmap[memberid]
-
     def list(self, date=None):
         if not date:
             date = datetime.date.today().isoformat()
         matches = self.members.values()
         ids = []
-        for attr in matches:
-            if 'fromdate' in attr and date >= attr["fromdate"] and date <= attr["todate"]:
-                ids.append(attr["id"])
+        for m in matches:
+            if 'start_date' in m and date >= m["start_date"] and date <= m["end_date"]:
+                ids.append(m["id"])
         return ids
 
     def list_all_dates(self):
         matches = self.members.values()
         ids = []
-        for attr in matches:
-            ids.append(attr["id"])
+        for m in matches:
+            ids.append(m["id"])
         return ids
 
 memberList = MemberList()

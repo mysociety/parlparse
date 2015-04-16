@@ -19,10 +19,10 @@ cd ~/parlparse/pyscraper
 
 # New UK Parliament Written Answers and Statements database
 cd ~/parlparse/
-~/.venv/bin/python wrans-2014/parse.py --house commons --type answers --out ~/parldata/scrapedxml/wrans/ --members ~/parlparse/members/all-members-2010.xml
-~/.venv/bin/python wrans-2014/parse.py --house commons --type statements --out ~/parldata/scrapedxml/wms/ --members ~/parlparse/members/all-members-2010.xml
-~/.venv/bin/python wrans-2014/parse.py --house lords --type answers --out ~/parldata/scrapedxml/lordswrans/ --members ~/parlparse/members/peers-ucl.xml
-~/.venv/bin/python wrans-2014/parse.py --house lords --type statements --out ~/parldata/scrapedxml/lordswms/ --members ~/parlparse/members/peers-ucl.xml
+~/.venv/bin/python wrans-2014/parse.py --house commons --type answers --out ~/parldata/scrapedxml/wrans/ --members ~/parlparse/members/people.json
+~/.venv/bin/python wrans-2014/parse.py --house commons --type statements --out ~/parldata/scrapedxml/wms/ --members ~/parlparse/members/people.json
+~/.venv/bin/python wrans-2014/parse.py --house lords --type answers --out ~/parldata/scrapedxml/lordswrans/ --members ~/parlparse/members/people.json
+~/.venv/bin/python wrans-2014/parse.py --house lords --type statements --out ~/parldata/scrapedxml/lordswms/ --members ~/parlparse/members/people.json
 
 # Public Bill Committee transcripts
 cd ~/parlparse/pyscraper/standing
