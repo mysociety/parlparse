@@ -41,8 +41,6 @@ for (url, name, cons) in matches:
     date = None
     if 'Mark Durkan' in name:
         date = '2008-01-01'
-    elif 'Mark H. Durkan' in name:
-        date = '2012-01-01'
     pid = memberList.match_person(name, date)
     wikimembers[pid] = url
 

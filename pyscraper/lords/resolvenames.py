@@ -1,9 +1,11 @@
+import json
 import os.path
 import string
 import re
-import xml.sax
 from contextexception import ContextException
 import mx.DateTime
+
+from base_resolver import ResolverBase
 
 titleconv = {  'L.':'Lord',
                'B.':'Baroness',
@@ -27,83 +29,48 @@ honcompl = re.compile('(?:(%s)|(%s) \s*(.*?))(?:\s+of\s+(.*))?$' % (hontitleso, 
 
 rehonorifics = re.compile('(?: [CKO]BE| DL| TD| QC| KCMG| KCB)+$')
 
-# Work out the absolute path of the 'members' directory from
-# '__file__', so that we can import this module from any current
-# directory:
-members_path = os.path.abspath(os.path.join(os.path.split(__file__)[0], '..', '..', 'members'))
+class LordsList(ResolverBase):
+    import_organization_id = 'house-of-lords'
 
-class LordsList(xml.sax.handler.ContentHandler):
-    def __init__(self):
-        self.lords={} # ID --> MPs
+    def reloadJSON(self):
+        super(LordsList, self).reloadJSON()
+
         self.lordnames={} # "lordnames" --> lords
         self.aliases={} # Corrections to full names
-        self.parties = {} # constituency --> MPs
-        self.membertopersonmap = {} # member ID --> person ID
 
-        parser = xml.sax.make_parser()
-        parser.setContentHandler(self)
+        self.import_people_json()
 
-        parser.parse(members_path + "/peers-ucl.xml")
-        parser.parse(members_path + "/peers-aliases.xml")
-        self.loadperson = None
-        parser.parse(members_path + "/people.xml")
+    def import_people_membership(self, mship, posts, orgs):
+        if 'organization_id' not in mship or mship['organization_id'] != self.import_organization_id:
+            return
 
-    # check that the lordofnames that are blank happen after the ones that have values
-    # where the lordname matches
-    def startElement(self, name, attr):
-        """ This handler is invoked for each XML element (during loading)"""
-        #id="uk.org.publicwhip/lord/100001"
-        #house="lords"
-        #forenames="Morys"
-        #title="Lord" lordname="Aberdare" lordofname=""
-        #peeragetype="HD" affiliation="Con"
-        #fromdate="1957" todate="2005-01-23"
+        if mship["id"] in self.membertopersonmap:
+            raise Exception, "Same member id %s appeared twice" % mship["id"]
+        self.membertopersonmap[mship["id"]] = mship['person_id']
 
-        if name == "lord":
-            if self.lords.get(attr["id"]):
-                raise Exception, "Repeated identifier %s in members XML file" % attr["id"]
+        if self.members.get(mship["id"]):
+            raise Exception, "Repeated identifier %s in members JSON file" % mship["id"]
 
-            # needs to make a copy into a map because entries can't be rewritten
-            cattr = {
-                "id": attr["id"],
-                "title": attr["title"], "lordname": attr["lordname"], "lordofname": attr["lordofname"],
-                'forenames': attr['forenames'], 'forenames_full': attr.get('forenames_full'), 'surname': attr.get('surname'),
-                "fromdate": attr["fromdate"], "todate": attr["todate"], 'towhy': attr.get('towhy'),
-                'peeragetype': attr['peeragetype'], 'party': attr['affiliation'],
-            }
-            self.lords[attr["id"]] = cattr
+        mship = {
+            "id": mship["id"],
+            "title": mship['name']["honorific_prefix"],
+            "lordname": mship['name'].get("lordname", ""),
+            "lordofname": mship['name'].get("lordofname", ""),
+            "start_date": mship["start_date"], "end_date": mship.get("end_date", '9999-12-31'),
+            'party': orgs[mship['on_behalf_of_id']]['name'],
+        }
+        self.members[mship["id"]] = mship
 
-            lname = attr["lordname"] or attr["lordofname"]
-            lname = re.sub("\.", "", lname)
-            assert lname
-            self.lordnames.setdefault(lname, []).append(cattr)
+        lname = mship["lordname"] or mship["lordofname"]
+        lname = re.sub("\.", "", lname)
+        assert lname
+        self.lordnames.setdefault(lname, []).append(mship)
 
-        #<lordnametoofname id="uk.org.publicwhip/lord/100415" title="Earl" name="Mar and Kellie">
-        elif name == "lordnametoofname":
-            lm = self.lords[attr["id"]]
-            assert lm["title"] == attr["title"]
-            assert not lm["lordofname"]
-            assert lm["lordname"] == attr["name"]
-            lm["lordofname"] = lm["lordname"]
-            lm["lordname"] = ""
-
-        elif name == 'alias':
-            self.aliases[attr['alternate']] = attr['fullname']
-
-        # people.xml loading
-        elif name == "person":
-            self.loadperson = attr["id"]
-        elif name == "office":
-            assert self.loadperson, "<office> tag before <person> tag"
-            if attr["id"] in self.membertopersonmap:
-                raise Exception, "Same member id %s appeared twice" % attr["id"]
-            self.membertopersonmap[attr["id"]] = self.loadperson
-
-        else:
-            assert name == "publicwhip"
-
-    def membertoperson(self, memberid):
-        return self.membertopersonmap[memberid]
+    def import_people_other_names(self, person):
+        for other_name in person.get('other_names', []):
+            if other_name.get('note') != 'Alternate': continue
+            if 'name' not in other_name: continue  # Only full names in Lords aliases
+            self.aliases[other_name['name']] = person['id']
 
     # main matching function
     def GetLordID(self, ltitle, llordname, llordofname, loffice, stampurl, sdate, bDivision):
@@ -133,7 +100,7 @@ class LordsList(xml.sax.handler.ContentHandler):
                 continue
             if llordname and llordofname: # two name case
                 if (lm["lordname"] == llordname) and (lm["lordofname"] == llordofname):
-                    if lm["fromdate"] <= sdate <= lm["todate"]:
+                    if lm["start_date"] <= sdate <= lm["end_date"]:
                         res.append(lm)
                 continue
 
@@ -146,13 +113,13 @@ class LordsList(xml.sax.handler.ContentHandler):
             lmlname = lm["lordname"] or lm["lordofname"]
             if (llordname and lm["lordname"]) or (llordofname and lm["lordofname"]):
                 if lname == lmlname:
-                    if lm["fromdate"] <= sdate <= lm["todate"]:
+                    if lm["start_date"] <= sdate <= lm["end_date"]:
                         res.append(lm)
                 continue
 
             # cross-match
             if lname == lmlname:
-                if lm["fromdate"] <= sdate <= lm["todate"]:
+                if lm["start_date"] <= sdate <= lm["end_date"]:
                     if lm["lordname"] and llordofname:
                         #if not IsNotQuiet():
                         print "cm---", ltitle, lm["lordname"], lm["lordofname"], llordname, llordofname
@@ -179,7 +146,7 @@ class LordsList(xml.sax.handler.ContentHandler):
         name = name.replace(' Of ', ' of ')
 
         if name in self.aliases:
-            name = self.aliases[name]
+            return self.aliases[name]
 
         if name == "Queen":
             return "uk.org.publicwhip/person/13935"
@@ -228,9 +195,7 @@ class LordsList(xml.sax.handler.ContentHandler):
             fullname = '%s of %s' % (fullname, llordofname)
 
         if fullname in self.aliases:
-            fullname = self.aliases[fullname]
-            m = re.match('(.*?) (.*)$', fullname)
-            ltitle, llordname = m.groups()
+            return self.aliases[fullname]
 
         return self.GetLordID(ltitle, llordname, llordofname, "", stampurl, sdate, True)
 
