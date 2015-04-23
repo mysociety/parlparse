@@ -1,0 +1,60 @@
+YourNextMP updating on election night
+=====================================
+
+This script is to read in YourNextMP's CSV file and update our people.json file
+to match any results of elected candidates.
+
+First, let's get the functions and load in the existing people.json data:
+
+    >>> from update import *
+    >>> data = load_data()
+
+And we want a function to alter the fixture with different information:
+
+    >>> import tempfile
+    >>> def alter(name, winner, pid=None):
+    ...     with tempfile.TemporaryFile() as fn:
+    ...         for line in open('fixture.csv'):
+    ...             if line.startswith(name):
+    ...                 line = '%s%s\n' % (line.strip(), winner)
+    ...                 if pid:
+    ...                     line = re.sub(',((,[^,]*){6})$', r',%s\1' % pid, line)
+    ...             fn.write(line)
+    ...         fn.seek(0)
+    ...         return update_from(fn, data)
+
+Now we want to call it with the CSV file before anything has happened:
+
+    >>> update_from('fixture.csv', data)
+    False
+
+Diane Abbott wins:
+
+    >>> alter('Diane Abbott', 'True')
+    NEW result 40706, Diane Abbott, Labour, Hackney North and Stoke Newington, uk.org.publicwhip/person/10001
+    True
+
+Nick Clegg loses:
+
+    >>> alter('Peter Garbutt', 'True')
+    NEW result 40707, Peter Garbutt, Green, Sheffield, Hallam, uk.org.publicwhip/person/25268
+    True
+
+Actually, that was a mistake at the YNMP end, now fixed by them:
+
+    >>> alter('Nick Clegg', 'True')
+    Updating uk.org.publicwhip/member/40707 with Nick Clegg, Liberal Democrat, Sheffield, Hallam, uk.org.publicwhip/person/11812
+    True
+
+Alex Salmond wins, and YNMP have supplied his parlparse ID:
+
+    >>> alter('Alex Salmond', 'True', 'uk.org.publicwhip/person/10525')
+    NEW result 40708, Alex Salmond, Scottish National Party, Gordon, uk.org.publicwhip/person/10525
+    True
+
+David Drew wins, and YNMP have not supplied his parlparse ID (he was an MP until 2010):
+
+    >>> alter('David Drew', 'True')
+    NEW result 40709, David Drew, Labour/Co-operative, Stroud, uk.org.publicwhip/person/25269
+    True
+
