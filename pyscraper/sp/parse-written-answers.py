@@ -19,7 +19,7 @@ from BeautifulSoup import Comment
 
 from subprocess import call
 
-from resolvemembernames import memberList
+from sp.resolvenames import memberList
 
 from common import month_name_to_int
 from common import non_tag_data_in

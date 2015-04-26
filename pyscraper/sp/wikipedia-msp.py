@@ -10,11 +10,14 @@
 # For details see the file LICENSE.html in the top level of the source.
 
 import datetime
+import os
 import sys
 import urlparse
 import re
 
-from resolvemembernames import memberList
+sys.path.insert(0, os.path.join(os.path.abspath(os.path.dirname(__file__)), '..'))
+
+from sp.resolvenames import memberList
 date_today = datetime.date.today().isoformat()
 
 # These were the original locations of these pages:

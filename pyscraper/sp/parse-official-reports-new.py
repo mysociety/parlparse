@@ -27,7 +27,7 @@ sys.path.append('../')
 from BeautifulSoup import BeautifulSoup
 from BeautifulSoup import NavigableString
 
-from resolvemembernames import memberList
+from sp.resolvenames import memberList
 
 official_report_url_format = 'http://www.scottish.parliament.uk/parliamentarybusiness/28862.aspx?r={0}&mode=html'
 

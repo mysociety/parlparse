@@ -18,7 +18,7 @@ from BeautifulSoup import Comment
 
 from subprocess import call
 
-from resolvemembernames import memberList
+from sp.resolvenames import memberList
 
 import re
 import glob
