@@ -24,17 +24,22 @@ def main():
 
 def update_from(csv_url, data):
     changed = False
-    for name, party, cons, person_id in ynmp_csv_reader(csv_url):
+    for ynmp_id, name, party, cons, person_id in ynmp_csv_reader(csv_url):
         if party not in data['orgs']:
             data['orgs'][party] = slugify(party)
             data['json']['organizations'].append({'id': slugify(party), 'name': party})
         if person_id not in data['persons']:
             person_id = ''
-        if not person_id:
+        identifier = {'scheme': 'yournextmp', 'identifier': ynmp_id}
+        if person_id:
+            if identifier not in data['persons'][person_id].setdefault('identifiers', []):
+                data['persons'][person_id]['identifiers'].append(identifier)
+        else:
             data['max_person_id'] += 1
             person_id = 'uk.org.publicwhip/person/%d' % data['max_person_id']
             data['json']['persons'].append({
                 'id': person_id,
+                'identifiers': [identifier],
                 'shortcuts': {
                     'current_party': party,
                     'current_constituency': cons,
@@ -146,9 +151,10 @@ def ynmp_csv_reader(fn):
         party = PARTY_YNMP_TO_TWFY.get(party, party)
         cons = row['constituency'].decode('utf-8')
         person_id = row['parlparse_id']
+        ynmp_id = int(row['id'])
         elected = row.get('elected', '')
         if elected.lower() in ('true', 'yes', 'y', 'elected'):
-            yield {'given_name': given, 'family_name': family}, party, cons, person_id
+            yield ynmp_id, {'given_name': given, 'family_name': family}, party, cons, person_id
 
 
 def mship_has_changed(old, new):
