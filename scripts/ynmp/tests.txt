@@ -11,17 +11,26 @@ First, let's get the functions and load in the existing people.json data:
 
 And we want a function to alter the fixture with different information:
 
-    >>> import tempfile
+    >>> import StringIO, csv
+    >>> source = open('fixture.csv').readlines()
     >>> def alter(name, winner, pid=None):
-    ...     with tempfile.TemporaryFile() as fn:
-    ...         for line in open('fixture.csv'):
-    ...             if line.startswith(name):
-    ...                 line = '%s%s\n' % (line.strip(), winner)
-    ...                 if pid:
-    ...                     line = re.sub(',((,[^,]*){6})$', r',%s\1' % pid, line)
-    ...             fn.write(line)
-    ...         fn.seek(0)
-    ...         return update_from(fn, data)
+    ...     global source
+    ...     reader = csv.DictReader(source)
+    ...     fn = None
+    ...     s = StringIO.StringIO()
+    ...     for line in reader:
+    ...         if not fn:
+    ...             fn = csv.DictWriter(s, reader.fieldnames)
+    ...             fn.writeheader()
+    ...         if line['name'] == name:
+    ...             line['elected'] = winner
+    ...             if pid:
+    ...                 line['parlparse_id'] = pid
+    ...         fn.writerow(line)
+    ...     s.seek(0)
+    ...     source = s.readlines()
+    ...     s.seek(0)
+    ...     return update_from(s, data)
 
 Now we want to call it with the CSV file before anything has happened:
 
@@ -40,7 +49,13 @@ Nick Clegg loses:
     NEW result 40707, Peter Garbutt, Green, Sheffield, Hallam, uk.org.publicwhip/person/25268
     True
 
-Actually, that was a mistake at the YNMP end, now fixed by them:
+Actually, that was a mistake at the YNMP end, revert until we know the result:
+
+    >>> alter('Peter Garbutt', 'False')
+    Removing result from uk.org.publicwhip/member/40707 (was Peter Garbutt, Green, Sheffield, Hallam, )
+    True
+
+It turns out Nick Clegg actually won:
 
     >>> alter('Nick Clegg', 'True')
     Updating uk.org.publicwhip/member/40707 with Nick Clegg, Liberal Democrat, Sheffield, Hallam, uk.org.publicwhip/person/11812

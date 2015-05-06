@@ -24,7 +24,22 @@ def main():
 
 def update_from(csv_url, data):
     changed = False
-    for ynmp_id, name, party, cons, person_id in ynmp_csv_reader(csv_url):
+    for ynmp_id, name, party, cons, person_id, elected in ynmp_csv_reader(csv_url):
+        if elected in ('', 'false', 'no', 'n'):
+            if cons not in data['existing'] or data['existing'][cons]['on_behalf_of_id'] != slugify(party):
+                continue
+            # We have a winner who has stopped being a winner. Update the membership to unknown
+            mship = data['existing'][cons]
+            mship.update({
+                'name': {'given_name': 'Unknown', 'family_name':'Winner'},
+                'on_behalf_of_id': 'none',
+                'person_id': 'uk.org.publicwhip/person/0',
+            })
+            changed = True
+            print "Removing result from %s (was %s %s, %s, %s, %s)" % (mship['id'], name['given_name'], name['family_name'], party, cons, person_id)
+            continue
+
+        # Here we have an elected person.
         if party not in data['orgs']:
             data['orgs'][party] = slugify(party)
             data['json']['organizations'].append({'id': slugify(party), 'name': party})
@@ -152,9 +167,8 @@ def ynmp_csv_reader(fn):
         cons = row['constituency'].decode('utf-8')
         person_id = row['parlparse_id']
         ynmp_id = int(row['id'])
-        elected = row.get('elected', '')
-        if elected.lower() in ('true', 'yes', 'y', 'elected'):
-            yield ynmp_id, {'given_name': given, 'family_name': family}, party, cons, person_id
+        elected = row.get('elected', '').lower()
+        yield ynmp_id, {'given_name': given, 'family_name': family}, party, cons, person_id, elected
 
 
 def mship_has_changed(old, new):
