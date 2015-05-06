@@ -43,8 +43,12 @@ def update_from(csv_url, data):
         if party not in data['orgs']:
             data['orgs'][party] = slugify(party)
             data['json']['organizations'].append({'id': slugify(party), 'name': party})
+
         if person_id not in data['persons']:
             person_id = ''
+        if cons in data['existing'] and not person_id:
+            person_id = data['existing'][cons]['person_id']
+
         identifier = {'scheme': 'yournextmp', 'identifier': ynmp_id}
         if person_id:
             if identifier not in data['persons'][person_id].setdefault('identifiers', []):
@@ -52,14 +56,16 @@ def update_from(csv_url, data):
         else:
             data['max_person_id'] += 1
             person_id = 'uk.org.publicwhip/person/%d' % data['max_person_id']
-            data['json']['persons'].append({
+            new_person = {
                 'id': person_id,
                 'identifiers': [identifier],
                 'shortcuts': {
                     'current_party': party,
                     'current_constituency': cons,
                 }
-            })
+            }
+            data['json']['persons'].append(new_person)
+            data['persons'][person_id] = new_person
 
         new_mship = {
             'name': name,

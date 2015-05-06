@@ -34,7 +34,7 @@ And we want a function to alter the fixture with different information:
 
 Now we want to call it with the CSV file before anything has happened:
 
-    >>> update_from('fixture.csv', data)
+    >>> update_from(source, data)
     False
 
 Diane Abbott wins:
@@ -67,9 +67,20 @@ Alex Salmond wins, and YNMP have supplied his parlparse ID:
     NEW result 40708, Alex Salmond, Scottish National Party, Gordon, uk.org.publicwhip/person/10525
     True
 
+Two Helen Jones both win, one with a person ID, one without:
+
+    >>> alter('Helen Jones', 'True')
+    NEW result 40709, Helen Jones, Trade Unionist and Socialist Coalition, Cardiff West, uk.org.publicwhip/person/25269
+    NEW result 40710, Helen Jones, Labour, Warrington North, uk.org.publicwhip/person/10319
+    True
+
 David Drew wins, and YNMP have not supplied his parlparse ID (he was an MP until 2010):
 
     >>> alter('David Drew', 'True')
-    NEW result 40709, David Drew, Labour/Co-operative, Stroud, uk.org.publicwhip/person/25269
+    NEW result 40711, David Drew, Labour/Co-operative, Stroud, uk.org.publicwhip/person/25270
     True
 
+If we then just run again with no changes, nothing should happen:
+
+    >>> update_from(source, data)
+    False
