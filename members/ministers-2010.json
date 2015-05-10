@@ -16585,6 +16585,102 @@
       "end_date": "2010-05-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/166/Committee/12", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10523", 
+      "organization_id": "children-schools-and-families-committee", 
+      "start_date": "2007-11-09", 
+      "end_date": "2007-11-26"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/166/Committee/137", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10523", 
+      "organization_id": "committee-of-selection", 
+      "start_date": "2001-11-05", 
+      "end_date": "2006-05-10"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/166/GovernmentPost/350", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Lord Commissioner of Her Majesty's Treasury", 
+      "person_id": "uk.org.publicwhip/person/10523", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2003-06-13", 
+      "end_date": "2006-05-05"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/166/GovernmentPost/351", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Assistant Whip (HM Treasury)", 
+      "person_id": "uk.org.publicwhip/person/10523", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2002-05-29", 
+      "end_date": "2003-06-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/166/GovernmentPost/366", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for the Home Department", 
+      "person_id": "uk.org.publicwhip/person/10523", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2006-05-05", 
+      "end_date": "2007-06-28"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/166/GovernmentPost/664", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Prime Minister's Special Representative to Cyprus", 
+      "person_id": "uk.org.publicwhip/person/10523", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2007-06-29", 
+      "end_date": "2008-09-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/166/ParliamentaryPost/824", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Vice-Chair, Labour Party", 
+      "person_id": "uk.org.publicwhip/person/10523", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2007-06-29", 
+      "end_date": "2008-09-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/577/Committee/49", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10525", 
+      "organization_id": "energy-committee", 
+      "start_date": "1987-06-17", 
+      "end_date": "1992-03-16"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/577/ParliamentaryPost/779", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "First Minister of Scotland", 
+      "person_id": "uk.org.publicwhip/person/10525", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2007-05-16", 
+      "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/577/ParliamentaryPost/793", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Leader of the Scottish National Party", 
+      "person_id": "uk.org.publicwhip/person/10525", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2004-09-03", 
+      "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/577/ParliamentaryPost/793/1", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Leader of the Scottish National Party", 
+      "person_id": "uk.org.publicwhip/person/10525", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1990-09-22", 
+      "end_date": "2000-09-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/237/Committee/109", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10527", 
@@ -23482,6 +23578,42 @@
       "end_date": "2010-05-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/1423/OppositionPost/15", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Business, Innovation and Skills)", 
+      "person_id": "uk.org.publicwhip/person/10999", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2005-12-09", 
+      "end_date": "2007-07-16"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1423/OppositionPost/15/1", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Business, Innovation and Skills)", 
+      "person_id": "uk.org.publicwhip/person/10999", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2004-04-01", 
+      "end_date": "2004-11-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1423/ParliamentaryPost/802", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Mayor of London", 
+      "person_id": "uk.org.publicwhip/person/10999", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2008-05-02", 
+      "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1423/ParliamentaryPost/823", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Vice-Chair, Conservative Party", 
+      "person_id": "uk.org.publicwhip/person/10999", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2003-07-01", 
+      "end_date": "2004-07-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1438/Committee/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11003", 
@@ -24285,6 +24417,22 @@
       "organization_id": "unopposed-bills-panel", 
       "start_date": "2002-11-14", 
       "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1468/Committee/152", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11095", 
+      "organization_id": "trade--industry-committee", 
+      "start_date": "2005-07-12", 
+      "end_date": "2007-11-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1468/Committee/164", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11095", 
+      "organization_id": "work-and-pensions-committee", 
+      "start_date": "2001-07-16", 
+      "end_date": "2005-07-12"
     }, 
     {
       "id": "uk.parliament.data/Member/1211/Committee/108", 
@@ -27613,6 +27761,40 @@
       "person_id": "uk.org.publicwhip/person/11443", 
       "organization_id": "house-of-commons", 
       "start_date": "2007-07-03", 
+      "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1489/Committee/109", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11447", 
+      "organization_id": "modernisation-of-the-house-of-commons-committee", 
+      "start_date": "2005-07-13", 
+      "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1489/Committee/12", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11447", 
+      "organization_id": "children-schools-and-families-committee", 
+      "start_date": "2007-11-09", 
+      "end_date": "2009-01-26"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1489/GovernmentPost/351", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Assistant Whip (HM Treasury)", 
+      "person_id": "uk.org.publicwhip/person/11447", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2008-09-12", 
+      "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1489/GovernmentPost/522", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Secretary (Cabinet Office) (Young Citizens and Youth Engagement)", 
+      "person_id": "uk.org.publicwhip/person/11447", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2009-10-30", 
       "end_date": "2010-05-06"
     }, 
     {
