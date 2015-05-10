@@ -9,7 +9,8 @@ import urllib2
 import xml.etree.ElementTree as etree
 
 source_urls = {
-  'all-current-commons': 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/membership=all|commonsmemberbetween=2015-03-01and2015-05-01/',
+  'all-commons-2015-election': 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/membership=all|commonsmemberbetween=2015-03-01and2015-05-01/',
+  'all-current-commons': 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/House=Commons/',
   # 'all-commons': 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house*Commons',
   # 'all-lords': 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house*Lords'
 }
@@ -26,17 +27,19 @@ def write(url, fn):
 
 print 'Update members XML from data.parliament'
 
+member_ids = set()
 for source_type, parl_members_url in source_urls.items():
   members_fn = '%s/%s.xml' % (OUT_DIR, source_type)
   write(parl_members_url, members_fn)
   parl_members = etree.parse(members_fn).getroot()
   if parl_members.tag != 'Members':
     raise Exception('Root tag is not "Members" as expected, got "%s".' % parl_members.tag)
+  member_ids |= set(m.attrib['Member_Id'] for m in parl_members)
 
   print 'Found %d members from %s.xml.' % (len(parl_members), source_type)
 
-  for member in parl_members:
-    member_url = member_url_templ % member.attrib['Member_Id']
-    write(member_url, '%s/%s.xml' % (OUT_DIR, member.attrib['Member_Id']))
+for member_id in member_ids:
+  member_url = member_url_templ % member_id
+  write(member_url, '%s/%s.xml' % (OUT_DIR, member_id))
 
 print 'Done!'

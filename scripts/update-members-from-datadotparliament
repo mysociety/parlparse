@@ -11,7 +11,8 @@ from datetime import datetime
 
 # Source XML files to use for the list of members
 source_files = [
-  'all-current-commons'
+  'all-commons-2015-election',
+  'all-current-commons',
 ]
 
 parser = etree.ETCompatXMLParser()
@@ -162,44 +163,47 @@ def parse(fn, root_tag):
   return xml
 
 
+parl_member_ids = set()
 for source_file in source_files:
   parl_members_slim = parse('../rawdata/datadotparl/' + source_file + '.xml', 'Members')
-  print 'Found ' + str(len(parl_members_slim)) + ' members from ' + source_file + '.xml.'
+  parl_member_ids |= set(member.attrib['Member_Id'] for member in parl_members_slim)
+  print 'Found %d members from %s.xml.' % (len(parl_members_slim), source_file)
+print 'Total of %d distinct people.' % len(parl_member_ids)
 
-  # Enrich the data!
-  parl_members = dict()
-  for member in parl_members_slim:
-    member_fullbio_xml = parse('../rawdata/datadotparl/' + member.attrib['Member_Id'] + '.xml', 'Members')
-    parl_members[member.attrib['Member_Id']] = member_fullbio_xml.find('Member')
+# Enrich the data!
+parl_members = dict()
+for member_id in parl_member_ids:
+  member_fullbio_xml = parse('../rawdata/datadotparl/' + member_id + '.xml', 'Members')
+  parl_members[member_id] = member_fullbio_xml.find('Member')
 
-  ##########
-  # At this point parl_members contains a complete set of data.
-  ##########
+##########
+# At this point parl_members contains a complete set of data.
+##########
 
-  # Import people.xml
-  people_json = json.load(open('../members/people.json'))
-  people = []
-  for person in people_json['persons']:
-    for i in person.get('identifiers', []):
-      if i['scheme'] == 'datadotparl_id':
-        person['datadotparl_id'] = i['identifier']
-        people.append(person)
-  print str(len(people)) + ' people with data.parliament ID.'
+# Import people.xml
+people_json = json.load(open('../members/people.json'))
+people = []
+for person in people_json['persons']:
+  for i in person.get('identifiers', []):
+    if i['scheme'] == 'datadotparl_id':
+      person['datadotparl_id'] = i['identifier']
+      people.append(person)
+print str(len(people)) + ' people with data.parliament ID.'
 
-  for person in people:
-    parl_data = parl_members[person['datadotparl_id']]
-    positions = Positions(parl_data, person)
+for person in people:
+  parl_data = parl_members[person['datadotparl_id']]
+  positions = Positions(parl_data, person)
 
-    for position in positions.filter('GovernmentPost'):
-      position.generate()
-    for position in positions.filter('OppositionPost'):
-      position.generate()
-    for position in positions.filter('ParliamentaryPost'):
-      position.generate()
-    for position in positions.filter('Committee', name_is_dept=True):
-      position.generate()
+  for position in positions.filter('GovernmentPost'):
+    position.generate()
+  for position in positions.filter('OppositionPost'):
+    position.generate()
+  for position in positions.filter('ParliamentaryPost'):
+    position.generate()
+  for position in positions.filter('Committee', name_is_dept=True):
+    position.generate()
 
-  print 'Done for ' + source_file + '.xml.'
+print 'Done for ' + source_file + '.xml.'
 
 # Write out the updated ministers file
 popolo.output('../members/ministers-2010.json')
