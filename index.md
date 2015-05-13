@@ -16,8 +16,8 @@ use.
 
 <a href="http://www.theyworkforyou.com/contact/">Contact the TheyWorkForYou
 team</a> with any questions, or join the <a
-href="https://secure.mysociety.org/admin/lists/mailman/listinfo/developers-
-public ">mySociety public email list</a> and say hello.
+href="https://www.mysociety.org/subscribe">mySociety public email list</a> and
+say hello.
 
 ## Types of Data
 

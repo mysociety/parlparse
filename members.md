@@ -3,137 +3,120 @@ layout: page
 title: Members of Parliament
 ---
 
-Structured data about Members of Parliament. These are all XML files, open them
-in any text editor, XML viewer or some spreadsheets. In the files there are
-comments with more information. MPs data goes back to the start of Hansard at
-the start of the 19th century (including data from Parliament's historic
-Hansard project), data for Lords goes back to the major reform in 1999.
+Structured data about Members of Parliament. These are JSON or XML files, so
+you can open them in a text editor or similar. In the files there are comments
+with more information. MP data goes back to the start of Hansard at the start
+of the 19th century (including data from Parliament's historic Hansard
+project), data for Lords goes back to the major reform in 1999, and data for
+the devolved assemblies goes back to their creation.
 
 These files can all be found in the
 [GitHub repository members directory](https://github.com/mysociety/parlparse/tree/master/members).
 
-### all-members.xml / all-members-2010.xml / peers-ucl.xml
+## people.json
 
-List of all MPs (across two files) and list of all Lords. Includes their name
-and party. For MPs, also their constituency, and for Lords, also their peerage
-type and their county. There is a unique identifier for each entry. Each entry
-is a continuous period of holding office, loyal to the same party. An MP who was
-in two parliaments, or in one parliament then later became a Lord, will appear
-twice. An MP who also changed party will appear three times. Dates of deaths,
-byelections and party changes or whip revocations are recorded.
+Data of all MPs, Lords, MSPs and MLAs covered by the project, in [Popolo
+format](http://www.popoloproject.com), including names (and alternate names
+such as misspellings or name changes), party, constituency (non-Lords), and
+peerage information (Lords). There is a unique identifier for each element.
+Each membership is a continuous period of holding office, loyal to the same
+party. An MP who was in two parliaments, or in one parliament then later became
+a Lord, will have two memberships associated with the same person. An MP who
+also changed party will have three memberships. Dates of deaths, byelections
+and party changes are recorded.
 
-{% highlight xml %}
-<member
-    id="uk.org.publicwhip/member/1656"
-    house="commons"
-    title="" firstname="Emily" lastname="Thornberry"
-    constituency="Islington South &amp; Finsbury" party="Lab"
-    fromdate="2005-05-05" todate="9999-12-31"
-    fromwhy="general_election" towhy="still_in_office"
-/>
+{% highlight json %}
+{
+  "id": "uk.org.publicwhip/member/1656",
+  "name": {
+    "family_name": "Thornberry",
+    "given_name": "Emily"
+  },
+  "on_behalf_of_id": "labour",
+  "person_id": "uk.org.publicwhip/person/11656",
+  "post_id": "uk.org.publicwhip/cons/310",
+  "start_date": "2005-05-05",
+  "start_reason": "general_election"
+  "end_date": "2010-04-12",
+  "end_reason": "general_election_standing",
+},
 
-<lord
-    id="uk.org.publicwhip/lord/100633"
-    house="lords"
-    forenames="Margaret"
-    forenames_full="Margaret Hilda"
-    title="Baroness" lordname="Thatcher" lordofname=""
-    lordofname_full="Kesteven"
-    county="the County of Lincolnshire"
-    peeragetype="L" affiliation="Con"
-    fromdate="1992" todate="9999-12-31"
-    ex_MP="yes"
-/>
+{
+  "id": "uk.org.publicwhip/lord/100633",
+  "identifiers": [
+    {
+      "identifier": "L",
+      "scheme": "peeragetype"
+    }
+  ],
+  "label": "Peer",
+  "name": {
+    "additional_name": "Margaret Hilda",
+    "county": "the County of Lincolnshire",
+    "given_name": "Margaret",
+    "honorific_prefix": "Baroness",
+    "lordname": "Thatcher",
+    "lordofname": "",
+    "lordofname_full": "Kesteven"
+  },
+  "on_behalf_of_id": "conservative",
+  "organization_id": "house-of-lords",
+  "person_id": "uk.org.publicwhip/person/12975",
+  "role": "Peer",
+  "start_date": "1992"
+  "end_date": "2013-04-08",
+  "end_reason": "died",
+},
 {% endhighlight %}
 
-### people.xml
+### ministers.json / ministers-2010.json
 
-Links together groups of MPs, Lords and other person data who are the same real
-world person. Usually this is because they have the same name and are in the
-same constituency. Sometimes someone changes constituency between two
-parliaments, such as Shaun Woodward (Witney) and Shaun Woodward (St Helens
-South). This file records that they are the same person. Also includes offices
-from `ministers.xml` which were held by that person.
+Contains ministerial positions and the department they were in. Each one
+includes an ID, date range, and the person ID.
 
-{% highlight xml %}
-<person id="uk.org.publicwhip/person/10597" latestname="Paddy Tipping">
-    <office id="uk.org.publicwhip/member/1282"/>
-    <office id="uk.org.publicwhip/member/1815"/>
-    <office id="uk.org.publicwhip/member/597"/>
-    <office id="uk.org.publicwhip/moffice/226"/>
-</person>
+{% highlight json %}
+{
+  "id": "uk.parliament.data/Member/591/GovernmentPost/661",
+  "source": "datadotparl/governmentpost",
+  "role": "The Prime Minister",
+  "person_id": "uk.org.publicwhip/person/10068",
+  "organization_id": "house-of-commons",
+  "start_date": "2007-06-28",
+  "end_date": "2010-05-06"
+},
 {% endhighlight %}
 
-### ministers.xml / ministers-2010.xml
+### constituencies.json / sp-constituencies.json
 
-Contains ministerial positions and the department they were in.  Each one has a
-date range, the MP or Lord became a minister at some time on the start day, and
-stopped being one at some time on the end day. The matchid field is one sample
-MP or Lord office which that person also held. Alternatively, use the
-`people.xml` file to find out which person held the ministerial post.
+List of constituencies, including alternative spellings.
 
-{% highlight xml %}
-<moffice id="uk.org.publicwhip/moffice/327"
-    name="Ivor Caplin"
-    matchid="uk.org.publicwhip/member/784"
-    dept="HM Treasury" position="Assistant Whip"
-    fromdate="2001-06-12" todate="2003-06-13"
-    source="newlabministers2003-10-15">
-</moffice>
+{% highlight json %}
+{
+  "hansard_id": "232",
+  "id": "uk.org.publicwhip/cons/212",
+  "start_date": "1950",
+  "end_date": "2005-05-04",
+  "names": [
+    "Edinburgh Pentlands",
+    "Edinburgh, Pentlands"
+  ]
+},
 {% endhighlight %}
 
-### member-aliases.xml
-
-List of alternative names for MPs. Includes abbreviations, misspellings and name
-changes due to marriage. Either canonical names from the `all-members.xml` file
-above are given, or the constituency or surname where appropriate.
-
-{% highlight xml %}
-<alias fullname="Andrew Bennett" alternate="Andrew F Bennett" />
-<alias lastname="MacKay" alternate="Mackay" />
-<alias constituency="Worcester" alternate="Michael John Foster" />
-<alias fullname="Tony Wright" alternate="Anthony Wright" />
-{% endhighlight %}
-
-### constituencies.xml
-
-List of Parliamentary constituencies. Includes alternative spellings of each
-constituency. When boundaries change, a new identifier is given to the
-constituency even if it has the same name. They are also ranged with dates when
-they were in effect.
-
-{% highlight xml %}
-<constituency id="uk.org.publicwhip/cons/212"
-    fromdate="1000-01-01" todate="2005-05-04">
-    <name text="Edinburgh, Pentlands"/>
-    <name text="Edinburgh Pentlands"/>
-</constituency>
-{% endhighlight %}
-
-### websites.xml, guardian-links.xml, bbc-links.xml, edm-links.xml, wikipedia-commons.xml, wikipedia-lords.xml
+### websites.xml, bbc-links.xml, wikipedia-*.xml, wikipedia-lords.xml
 
 Various links to external websites which have information about MPs and Lords,
-including biographies on Wikipedia, and each MPs own website. Indexed by MP or
-Lord identifier.
+including biographies on Wikipedia, and each MP's own website. Indexed by
+person ID.
 
 {% highlight xml %}
 <personinfo id="uk.org.publicwhip/person/10197" mp_website="http://www.frankfield.com" />
 
-<personinfo id="uk.org.publicwhip/person/10006"
-    guardian_mp_summary="http://politics.guardian.co.uk/person/0,,-35,00.html" />
-<consinfo canonical="East Surrey"
-    guardian_election_results="http://politics.guardian.co.uk/hoc/constituency/0,,-906,00.html" />
-<memberinfo id="uk.org.publicwhip/member/692" swing_to_lose_seat="14.0" />
-<memberinfo id="uk.org.publicwhip/member/692" majority_in_seat="13203" />
+<personinfo id="uk.org.publicwhip/person/10777"
+    bbc_profile_url="http://news.bbc.co.uk/democracylive/hi/representatives/profiles/25752.stm" />
 
-<memberinfo id="uk.org.publicwhip/member/1224"
-    bbc_profile_url="http://news.bbc.co.uk/1/shared/mpdb/html/55.stm" />
-
-<memberinfo id="uk.org.publicwhip/member/687"
-    edm_ais_url="http://edm.ais.co.uk/weblink/html/member.html/mem=AbbottSlAsHcOdEsTrInGDiane" />
-
-<memberinfo id="uk.org.publicwhip/lord/100007"
-    wikipedia_url="http://en.wikipedia.org/wiki/John_Alderdice%2C_Baron_Alderdice" />
+<personinfo id="uk.org.publicwhip/person/10001"
+    wikipedia_url="http://en.wikipedia.org/wiki/Diane_Abbott" />
 {% endhighlight %}
 
 ### Register of Members Interests (`scrapedxml/regmem`)
@@ -165,7 +148,7 @@ How much each MP claimed as expenses from parliament for travel and so on.
 ### Voting Record
 
 Attendance, rebellion rate and individual votes in divisions are available from
-the [Public Whip project](http://publicwhip.owl/project/data.php).
+the [Public Whip project](http://www.publicwhip.org.uk/project/data.php).
 
 <hr>
 
@@ -179,15 +162,6 @@ You can browse the list of available files and download them individually at:
 
 ### From GitHub
 
-You can check out a copy of all the latest members XML from GitHub using:
+You can check out a copy of all the latest members data from GitHub using:
 
 `git clone https://github.com/mysociety/parlparse`
-
-<hr>
-
-## Tools
-
-### rest.cgi
-
-A programmer's interface for matching names. This uses the `all-members.xml`,
-`member-aliases.xml` and `constituencies.xml` to match MP names.
