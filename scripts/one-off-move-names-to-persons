@@ -1,0 +1,94 @@
+import json
+import sys
+
+j = json.load(open('../members/people.json'))
+
+names = {}
+names_lords = {}
+names_no_prefix = {}
+names_no_prefix_without_lords = {}
+memberships_no_lords = {}
+min_start = {}
+max_end = {}
+for mship in j['memberships']:
+    pid = mship['person_id']
+
+    if mship['name'].get('honorific_suffix') in ('MSP', '', 'JP MSP', 'QC MSP', 'OBE MSP'):
+        del mship['name']['honorific_suffix']
+
+    tuple_name = tuple(sorted(mship['name'].items()))
+    names.setdefault(pid, set()).add(tuple_name)
+    min_start[pid][tuple_name] = min(min_start.setdefault(pid, {}).get(tuple_name, '9999-12-31'), mship['start_date'])
+    max_end[pid][tuple_name] = max(max_end.setdefault(pid, {}).get(tuple_name, '0000-00-00'), mship.get('end_date', '9999-12-31'))
+
+    if mship.get('organization_id') == 'house-of-lords':
+        names_lords.setdefault(pid, set()).add(tuple_name)
+    else:
+        name_plus_dates = {'name': mship['name'].copy(), 'start_date': mship['start_date'], 'end_date': mship.get('end_date')}
+        memberships_no_lords.setdefault(pid, []).append(name_plus_dates)
+
+    if 'honorific_prefix' in mship['name']:
+        del mship['name']['honorific_prefix']
+    tuple_name = tuple(sorted(mship['name'].items()))
+    names_no_prefix.setdefault(pid, set()).add(tuple_name)
+    if mship.get('organization_id') != 'house-of-lords':
+        names_no_prefix_without_lords.setdefault(pid, set()).add(tuple_name)
+    del mship['name']
+
+
+def set_name(person, name, include_dates=False):
+    if not isinstance(name, dict):
+        name = dict(name)
+    if include_dates:
+        namet = tuple(sorted(name.items()))
+        name['start_date'] = min_start[person['id']][namet]
+        if max_end[person['id']][namet] != '9999-12-31':
+            name['end_date'] = max_end[person['id']][namet]
+    name['note'] = 'Main'
+    person.setdefault('other_names', []).append(name)
+    
+
+for person in j['persons']:
+    id = person['id']
+    given_names = set(dict(n)['given_name'] for n in names_no_prefix[id])
+
+    # People with only one name, perhaps ignoring prefixes
+    if len(names[id]) == 1:
+        set_name(person, names[id].pop())
+    elif len(names_no_prefix[id]) == 1:
+        set_name(person, names_no_prefix[id].pop())
+
+    # People with slightly different first names at different points
+    elif len(names_no_prefix[id]) == 2 and given_names in (
+        set(('Andy', 'Andrew')), set(('Nick', 'Nicholas')), set(('Chris', 'Christopher')), set(('William', 'Bill')), set(('William', 'Willie')), set(('Edward', 'Ed')), set(('Stephen', 'Steve')), set(('Robert', 'Rob')), set(('James', 'Jimmy')), set(('Jonathan', 'Jon')), set(('Michael', 'Mike')),
+        set(('Diana', 'Diana R.')), set(('John', 'John Martin')), set(('Anne Marie', 'Anne-Marie')), set(('Stephen Philip', 'Steve')), set(('Alan', 'Alan Wynne')), set(('Jeffrey M', 'Jeffrey M.'))
+        ):
+        entry = sorted(memberships_no_lords[id], key=lambda x: x['start_date'], reverse=True)[0]['name']
+        entryt = tuple(sorted(entry.items()))
+        set_name(person, entry)
+        nn = names[id] if len(names[id]) == 2 else names_no_prefix[id]
+        e1 = nn.pop()
+        e2 = nn.pop()
+        if entryt == e1:
+            alt_name = dict(e2)
+        elif entryt == e2:
+            alt_name = dict(e1)
+        alt_name = {'note': 'Alternate', 'name': '%s %s' % (alt_name['given_name'], alt_name['family_name'])}
+        person.setdefault('other_names', []).append(alt_name)
+
+    # People who became Lords once, and otherwise had same name
+    elif len(names_no_prefix_without_lords.get(id, [])) == 1:
+        entry = sorted(memberships_no_lords[id], key=lambda x: x['start_date'], reverse=True)[0]['name']
+        assert len(names_lords[id]) == 1
+        entry_lord = names_lords[id].pop()
+        set_name(person, entry, True)
+        set_name(person, entry_lord, True)
+
+    # A dozen or so edge cases
+    else:
+        print names[id]
+        for name in names[id]:
+            set_name(person, name, True)
+
+if 'commit' in sys.argv:
+    json.dump(j, open('../members/people.jsonN', 'w'), indent=2, sort_keys=True)
