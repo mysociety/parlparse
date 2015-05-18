@@ -47,30 +47,36 @@ class LordsList(ResolverBase):
         if mship["id"] in self.membertopersonmap:
             raise Exception, "Same member id %s appeared twice" % mship["id"]
         self.membertopersonmap[mship["id"]] = mship['person_id']
+        self.persontomembermap.setdefault(mship['person_id'], []).append(mship["id"])
 
         if self.members.get(mship["id"]):
             raise Exception, "Repeated identifier %s in members JSON file" % mship["id"]
-
-        mship = {
-            "id": mship["id"],
-            "title": mship['name']["honorific_prefix"],
-            "lordname": mship['name'].get("lordname", ""),
-            "lordofname": mship['name'].get("lordofname", ""),
-            "start_date": mship["start_date"], "end_date": mship.get("end_date", '9999-12-31'),
-            'party': orgs[mship['on_behalf_of_id']]['name'],
-        }
         self.members[mship["id"]] = mship
 
-        lname = mship["lordname"] or mship["lordofname"]
+        if 'end_date' not in mship:
+            mship['end_date'] = '9999-12-31'
+
+    def import_people_main_name(self, name, memberships):
+        mships = [m for m in memberships if m['start_date'] <= name.get('end_date', '9999-12-31') and m['end_date'] >= name.get('start_date', '1000-01-01')]
+        if not mships: return
+        lname = name["lordname"] or name["lordofname"]
         lname = re.sub("\.", "", lname)
         assert lname
-        self.lordnames.setdefault(lname, []).append(mship)
+        attr = {
+            "id": m["id"],
+            "title": name["honorific_prefix"],
+            "lordname": name.get("lordname", ""),
+            "lordofname": name.get("lordofname", ""),
+        }
+        for m in mships:
+            newattr = attr.copy()
+            newattr['start_date'] = max(m['start_date'], name.get('start_date', '1000-01-01'))
+            newattr['end_date'] = min(m['end_date'], name.get('end_date', '9999-12-31'))
+            self.lordnames.setdefault(lname, []).append(newattr)
 
-    def import_people_other_names(self, person):
-        for other_name in person.get('other_names', []):
-            if other_name.get('note') != 'Alternate': continue
-            if 'name' not in other_name: continue  # Only full names in Lords aliases
-            self.aliases[other_name['name']] = person['id']
+    def import_people_alternate_name(self, person, other_name, memberships):
+        if 'name' not in other_name: return  # Only full names in Lords aliases
+        self.aliases[other_name['name']] = person['id']
 
     # main matching function
     def GetLordID(self, ltitle, llordname, llordofname, loffice, stampurl, sdate, bDivision):

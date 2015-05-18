@@ -9,19 +9,20 @@ class ResolverBase(object):
         self.reloadJSON()
 
     def reloadJSON(self):
-        self.members = {} # ID --> persons
-        self.fullnames = {} # "Firstname Lastname" --> persons
-        self.lastnames = {} # Surname --> persons
+        self.members = {} # ID --> membership
+        self.persons = {} # ID --> person
+        self.fullnames = {} # "Firstname Lastname" --> memberships
+        self.lastnames = {} # Surname --> memberships
 
         self.constoidmap = {} # constituency name --> cons attributes (with date and ID)
         self.considtonamemap = {} # cons ID --> name
-        self.considtomembermap = {} # cons ID --> persons
+        self.considtomembermap = {} # cons ID --> memberships
         self.conshansardtoid = {} # Historic Hansard cons ID -> our cons ID
         self.historichansard = {} # Historic Hansard commons membership ID -> MPs
 
-        self.parties = {} # party --> persons
+        self.parties = {} # party --> memberships
         self.membertopersonmap = {} # member ID --> person ID
-        self.persontomembermap = {} # person ID --> member
+        self.persontomembermap = {} # person ID --> memberships
 
     def import_constituencies(self, file):
         data = json.load(open(os.path.join(members_dir, file)))
@@ -50,11 +51,6 @@ class ResolverBase(object):
         nopunc = cons.replace(',','').replace('-','').replace(' ','').lower().strip()
         return nopunc
 
-    def member_full_name(self, id):
-        m = self.members[id]
-        name = u'%s %s' % (m['name']['given_name'], m['name']['family_name'])
-        return name
-
     def import_people_json(self):
         data = json.load(open(os.path.join(members_dir, 'people.json')))
         posts = {post['id']: post for post in data['posts']}
@@ -62,7 +58,7 @@ class ResolverBase(object):
         for mship in data['memberships']:
             self.import_people_membership(mship, posts, orgs)
         for person in data['persons']:
-            self.import_people_other_names(person)
+            self.import_people_names(person)
 
     def import_people_membership(self, mship, posts, orgs):
         if 'post_id' not in mship or posts[mship['post_id']]['organization_id'] != self.import_organization_id:
@@ -80,29 +76,7 @@ class ResolverBase(object):
         if 'end_date' not in mship:
             mship['end_date'] = '9999-12-31'
 
-        family_name = mship['name']["family_name"]
-        given_name = mship['name']["given_name"]
-
-        # index by "Firstname Lastname" for quick lookup ...
-        compoundname = self.member_full_name(mship['id'])
-        self.fullnames.setdefault(compoundname, []).append(mship)
-
-        # add in names without the middle initial
-        fnnomidinitial = re.findall('^(\S*)\s\S$', given_name)
-        if fnnomidinitial:
-            compoundname = fnnomidinitial[0] + " " + family_name
-            self.fullnames.setdefault(compoundname, []).append(mship)
-
-        if self.import_organization_id != 'house-of-commons':
-            # ... and by first initial, lastname
-            if given_name:
-                compoundname = given_name[0] + " " + family_name
-                self.fullnames.setdefault(compoundname, []).append(mship)
-
-        # ... and also by "Lastname"
-        self.lastnames.setdefault(family_name, []).append(mship)
-
-        # ... and by constituency
+        # index by constituency
         mship['constituency'] = posts[mship['post_id']]['area']['name']
         consids = self.constoidmap[mship['constituency']]
         consid = None
@@ -144,27 +118,85 @@ class ResolverBase(object):
         if 'hansard_id' in mship:
             self.historichansard.setdefault(int(mship['hansard_id']), []).append(mship)
 
-    def import_people_other_names(self, person):
+    def import_people_names(self, person):
         if person['id'] not in self.persontomembermap:
             return
+        self.persons[person['id']] = person
         memberships = map(lambda x: self.members[x], self.persontomembermap[person['id']])
         for other_name in person.get('other_names', []):
-            if other_name.get('note') != 'Alternate': continue
-            if other_name.get('organization_id') not in (None, self.import_organization_id): continue
-            for m in memberships:
-                newattr = {'id': m['id'], 'person_id': m['person_id']}
-                # merge date ranges - take the smallest range covered by
-                # the canonical name, and the alias's range (if it has one)
-                early = max(m['start_date'], other_name.get('start_date', '1000-01-01'))
-                late = min(m['end_date'], other_name.get('end_date', '9999-12-31'))
-                # sometimes the ranges don't overlap
-                if early <= late:
-                    newattr['start_date'] = early
-                    newattr['end_date'] = late
-                    if other_name.get('family_name'):
-                        self.lastnames.setdefault(other_name['family_name'], []).append(newattr)
-                    else:
-                        self.fullnames.setdefault(other_name['name'], []).append(newattr)
+            if other_name.get('note') == 'Main':
+                self.import_people_main_name(other_name, memberships)
+            elif other_name.get('note') == 'Alternate':
+                self.import_people_alternate_name(person, other_name, memberships)
+
+    def import_people_main_name(self, name, memberships):
+        mships = [m for m in memberships if m['start_date'] <= name.get('end_date', '9999-12-31') and m['end_date'] >= name.get('start_date', '1000-01-01')]
+        if not mships: return
+
+        try:
+            family_name = name["family_name"]
+            given_name = name["given_name"]
+        except:
+            family_name = name['lordname']
+            if name['lordofname']:
+                family_name += ' of ' + name['lordofname']
+            given_name = name['honorific_prefix']
+        compoundname = '%s %s' % (given_name, family_name)
+        no_initial = ''
+        fnnomidinitial = re.findall('^(\S*)\s\S$', given_name)
+        if fnnomidinitial:
+            no_initial = fnnomidinitial[0] + " " + family_name
+        initial_name = ''
+        if self.import_organization_id != 'house-of-commons' and given_name:
+            initial_name = given_name[0] + " " + family_name
+
+        for m in mships:
+            newattr = {'id': m['id'], 'person_id': m['person_id']}
+            # merge date ranges - take the smallest range covered by
+            # the membership, and the alias's range (if it has one)
+            newattr['start_date'] = max(m['start_date'], name.get('start_date', '1000-01-01'))
+            newattr['end_date'] = min(m['end_date'], name.get('end_date', '9999-12-31'))
+            self.fullnames.setdefault(compoundname, []).append(newattr)
+            if no_initial:
+                self.fullnames.setdefault(no_initial, []).append(newattr)
+            if initial_name:
+                self.fullnames.setdefault(initial_name, []).append(newattr)
+            self.lastnames.setdefault(family_name, []).append(newattr)
+
+    def import_people_alternate_name(self, person, other_name, memberships):
+        if other_name.get('organization_id') not in (None, self.import_organization_id): return
+        mships = [m for m in memberships if m['start_date'] <= other_name.get('end_date', '9999-12-31') and m['end_date'] >= other_name.get('start_date', '1000-01-01')]
+        for m in mships:
+            newattr = {'id': m['id'], 'person_id': m['person_id']}
+            # merge date ranges - take the smallest range covered by
+            # the membership, and the alias's range (if it has one)
+            newattr['start_date'] = max(m['start_date'], other_name.get('start_date', '1000-01-01'))
+            newattr['end_date'] = min(m['end_date'], other_name.get('end_date', '9999-12-31'))
+            if other_name.get('family_name'):
+                self.lastnames.setdefault(other_name['family_name'], []).append(newattr)
+            else:
+                self.fullnames.setdefault(other_name['name'], []).append(newattr)
+
+    # Used by Commons and NI
+    def name_on_date(self, person_id, date):
+        person = self.persons[person_id]
+        for nm in person['other_names']:
+            if nm['note'] != 'Main': continue
+            if nm.get('start_date', '0000-00-00') <= date <= nm.get('end_date', '9999-12-31'):
+                if 'family_name' in nm:
+                    name = nm["family_name"]
+                    if nm.get('given_name'):
+                        name = nm["given_name"] + " " + name
+                    if nm.get('honorific_prefix'):
+                        name = nm["honorific_prefix"] + " " + name
+                else: # Lord (e.g. Lord Morrow in NI)
+                    name = nm['honorific_prefix']
+                    if nm['lordname']:
+                        name += ' %s' % nm['lordname']
+                    if nm['lordofname']:
+                        name += ' of %s' % nm['lordofname']
+                return name
+        raise Exception, 'No found for %s on %s' % (person['id'], date)
 
     def membertoperson(self, memberid):
         return self.membertopersonmap[memberid]

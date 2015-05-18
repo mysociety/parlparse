@@ -54,9 +54,9 @@ class MemberList(ResolverBase):
         self.import_minister_json("ministers.json")
         self.import_minister_json("ministers-2010.json")
 
-    def member_full_name(self, id, include_cons=False):
+    def member_full_name(self, id, date, include_cons=False):
         m = self.members[id]
-        name = u'%s %s' % (m['name']['given_name'], m['name']['family_name'])
+        name = self.name_on_date(self.membertoperson(id), date)
         if include_cons:
             name += " (%s) " % m['constituency']
         return name
@@ -197,7 +197,7 @@ class MemberList(ResolverBase):
 
         for lid in ids: # pop is no good as it changes the set
             pass
-        remadename = self.member_full_name(lid)
+        remadename = self.member_full_name(lid, date)
         remadecons = self.members[lid]["constituency"]
         return self.membertoperson(lid), remadename, remadecons
 
@@ -209,7 +209,7 @@ class MemberList(ResolverBase):
             brackids = self.fullnametoids(office, date)
             if brackids and len(brackids) == 1:
                 id = brackids.pop()
-                remadename = self.member_full_name(id)
+                remadename = self.member_full_name(id, date)
                 return 'person_id="%s" speakername="%s"' % (self.membertoperson(id), remadename)
 
         office = self.basicsubs(office)
@@ -226,7 +226,7 @@ class MemberList(ResolverBase):
         if len(ids) > 1:
             names = ""
             for id in ids:
-                names += self.member_full_name(id, True)
+                names += self.member_full_name(id, date, True)
 #            if not re.search(regnospeakers, office):
 #                raise Exception, "Multiple matches %s, possibles are %s" % (rebracket, names)
             return 'person_id="unknown" error="Matched multiple times" speakername="%s"%s' % (fullname, speakeroffice)
@@ -234,7 +234,7 @@ class MemberList(ResolverBase):
         for id in ids:
             pass
 
-        remadename = self.member_full_name(id)
+        remadename = self.member_full_name(id, date)
         return 'person_id="%s" speakername="%s"%s' % (self.membertoperson(id), remadename, speakeroffice)
 
 
@@ -393,7 +393,7 @@ class MemberList(ResolverBase):
         if len(ids) > 1:
             names = ""
             for id in ids:
-                names += self.member_full_name(id, True)
+                names += self.member_full_name(id, date, True)
             if not re.search(regnospeakers, input):
                 raise Exception, "Multiple matches %s, possibles are %s" % (rebracket, names)
             self.debatenamehistory.append(None) # see below
@@ -414,7 +414,7 @@ class MemberList(ResolverBase):
         self.debatenamehistory.append(id)
 
         # Return id and name as XML attributes
-        remadename = self.member_full_name(id)
+        remadename = self.member_full_name(id, date)
         if self.members[id]["party"] == "Speaker" and re.search("Speaker", input):
             remadename = input
         if self.members[id]["party"] == "Deputy Speaker" and re.search("Deputy Speaker", input):
@@ -536,7 +536,7 @@ class MemberList(ResolverBase):
         if len(ids) > 1:
             names = ""
             for id in ids:
-                names += id + " " + self.member_full_name(id, True)
+                names += id + " " + self.member_full_name(id, date, True)
             raise ContextException, "Multiple matches %s, possibles are %s" % (input, names)
             return ' person_id="unknown" error="Matched multiple times" '
 
@@ -546,7 +546,7 @@ class MemberList(ResolverBase):
         # we can use the committee member names to help resolve ambiguities 
         # in the following debate
         self.debatenamehistory.append(id)
-        remadename = self.member_full_name(id)
+        remadename = self.member_full_name(id, date)
         ret = """ person_id="%s" membername="%s" """ % (self.membertoperson(id), remadename)
         return ret.encode('ascii', 'xmlcharrefreplace')
     
@@ -619,7 +619,7 @@ class MemberList(ResolverBase):
         if len(ids) > 1:
             names = ""
             for id in ids:
-                names += self.member_full_name(id, True)
+                names += self.member_full_name(id, date, True)
             if not re.search(regnospeakers, input):
                 raise ContextException, "Multiple matches %s, possibles are %s" % (rebracket, names)
             self.debatenamehistory.append(None) # see below
@@ -631,7 +631,7 @@ class MemberList(ResolverBase):
 
         # Store id in history for this day
         self.debatenamehistory.append(id)
-        remadename = self.member_full_name(id)
+        remadename = self.member_full_name(id, date)
         ret = 'person_id="%s" speakername="%s"%s' % (self.membertoperson(id), remadename, speakeroffice)
         return ret.encode('ascii', 'xmlcharrefreplace')
     
