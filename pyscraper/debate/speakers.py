@@ -61,7 +61,7 @@ fixsubs = [
 
 # Q4.  [161707]<a name="40317-03_wqn5"><B> Mr. Andy Reed  (Loughborough)</B>
 
-parties = "|".join(map(string.lower, memberList.partylist())) + "|uup|ld|dup|in the chair"
+parties = "|".join(map(lambda x: x.lower().replace(' ', '[ ]'), memberList.partylist())) + "|uup|ld|dup|in[ ]the[ ]chair|ind|sdlp|snp|con|lab|pc|lab/co-op"
 
 retabletext = '<p[ ]class="tabletext"><b>[^<]*</b></p>'
 # Splitting condition
@@ -92,7 +92,7 @@ respeakervals = re.compile('''(?ix)
 		(<stamp\saname="[^"]*?"/>)*             # a stamp (group4)
 		(?:[QT]?(\d+)\.)?			# second place of oral question number (group5)
 		([^:<(]*?):?\s*				# speaker (group6)
-		(?:\((.*?)\)?)?				# speaker bracket (group7)
+		(?:\(([^)]*?)\)?)?			# speaker bracket (group7)
 		(?:\s*\((%s)\))?\s*     	# parties list (group8)
 		:?\s*
 		</b>(?!</h[34]>) 		# end bold tag, ensuring it's not in a heading
