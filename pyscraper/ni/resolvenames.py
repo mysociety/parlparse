@@ -152,20 +152,16 @@ class MemberList(ResolverBase):
         elif len(ids) > 1:
             names = ""
             for id in ids:
-                names += id + " " + self.members[id]['name']["given_name"] + " " + self.members[id]['name']["family_name"] + " (" + self.members[id]["constituency"] + ") "
+                name = self.name_on_date(self.membertoperson(id), date)
+                names += '%s %s (%s) ' % (id, name, self.members[id]["constituency"])
             raise ContextException, "Multiple matches %s, possibles are %s" % (input, names)
             return None, 'person_id="unknown" error="Matched multiple times" speakername="%s"' % (input)
         for id in ids:
             pass
-        nm = self.members[id]['name']
-        remadename = nm["family_name"]
-        if nm.get('given_name'):
-            remadename = nm["given_name"] + " " + remadename
-        if nm.get('honorific_prefix'):
-            remadename = nm["honorific_prefix"] + " " + remadename
+        person_id = self.membertoperson(id)
+        remadename = self.name_on_date(person_id, date)
         if self.members[id]["party"] == "Speaker" and re.search("Speaker", input):
             remadename = input
-        person_id = self.membertoperson(id)
         return person_id, 'person_id="%s" speakername="%s"%s' % (person_id, remadename, speakeroffice)
 
     def cleardebatehistory(self):

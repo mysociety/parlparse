@@ -40,8 +40,14 @@ else:
     URL_INDEX = URL_ROOT + 'written-statements/'
 
 
-def _lord_name(m):
-    n = m['name']
+def _lord_name_on_date(p, date):
+    for n in PERSONS[p]:
+        if n.get('start_date', '0000-00-00') <= date <= n.get('end_date', '9999-12-31'):
+            return _lord_name(n)
+    # Not available on this date (e.g. deceased)
+    return ''
+
+def _lord_name(n):
     name = n['honorific_prefix']
     if name in ('Bishop', 'Archbishop'):
         name = 'Lord %s' % name
@@ -57,14 +63,17 @@ def _lord_name(m):
         name = 'The Earl of Clancarty'
     return name
 
+
 with open(ARGS.members) as fp:
     MEMBERS = json.load(fp)
 if ARGS.house == 'lords':
     MEMBERS_BY_NAME = {}
+    PERSONS = {p['id']: [n for n in p['other_names'] if n['note']=='Main'] for p in MEMBERS['persons']}
     for m in MEMBERS['memberships']:
         if m.get('organization_id') != 'house-of-lords': continue
-        name = _lord_name(m).lower()
-        MEMBERS_BY_NAME.setdefault(name, []).append(m)
+        name = _lord_name_on_date(m['person_id'], ARGS.date).lower()
+        if name:
+            MEMBERS_BY_NAME[name] = m['person_id']
 else:
     DATADOTPARL_ID_TO_PERSON_ID = {}
     for person in MEMBERS['persons']:
@@ -132,11 +141,7 @@ class WrittenThing(object):
         name = h.a.text
         if ARGS.house == 'lords':
             # Loop through all, match on name and date
-            members = MEMBERS_BY_NAME[name.lower()]
-            member = next((m for m in members if m['start_date'] <= date <= m.get('end_date', '9999-12-31')), None)
-            if member is None:
-                raise Exception('Could not find matching entry for %s' % name)
-            person_id = member['person_id']
+            person_id = MEMBERS_BY_NAME[name.lower()]
         else:
             speaker_id = re.search('(\d+)$', h.a['href']).group(1)
             person_id = DATADOTPARL_ID_TO_PERSON_ID[speaker_id]
