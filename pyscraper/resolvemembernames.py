@@ -100,7 +100,7 @@ class MemberList(ResolverBase):
                 ids.append(m["id"])
         return ids
 
-	# useful to have this function out there
+    # useful to have this function out there
     def striptitles(self, text):
         # Remove dots, but leave a space between them
         text = text.replace(".", " ")
@@ -168,18 +168,9 @@ class MemberList(ResolverBase):
             raise Exception, "Unknown constituency %s" % cons
 
         if consids and (len(ids) > 1 or alwaysmatchcons):
-            newids = set()
-            for consattr in consids:
-                if date == None or (consattr["start_date"] <= date and date <= consattr["end_date"]):
-                    consid = consattr['id']
-                    matches = self.considtomembermap[consid]
-                    for m in matches:
-                        if (date == None) or (date >= m["start_date"] and date <= m["end_date"]):
-                            if m["id"] in ids:
-                                newids.add(m["id"])
-            ids = newids
+            ids = self.intersect_constituency(cons, ids, date, True)
 
-		# fail cases
+        # fail cases
         if len(ids) == 0:
             return None, None, None
         if len(ids) > 1:
@@ -217,23 +208,18 @@ class MemberList(ResolverBase):
         fullname = self.basicsubs(fullname)
         ids = self.fullnametoids(fullname, date)
 
-#        rebracket = office
-#        rebracket += " (" + fullname + ")"
         if len(ids) == 0:
-#            if not re.search(regnospeakers, office):
-#               raise Exception, "No matches %s" % (rebracket)
+            # It's possible it's a normal "name (constituency)" (e.g. HoC Commission)
+            ids = self.fullnametoids(office, date)
+            ids = self.intersect_constituency(fullname, ids, date)
+            if ids:
+                speakeroffice = ''
+        if len(ids) == 0:
             return 'person_id="unknown" error="No match" speakername="%s"%s' % (fullname, speakeroffice)
         if len(ids) > 1:
-            names = ""
-            for id in ids:
-                names += self.member_full_name(id, date, True)
-#            if not re.search(regnospeakers, office):
-#                raise Exception, "Multiple matches %s, possibles are %s" % (rebracket, names)
             return 'person_id="unknown" error="Matched multiple times" speakername="%s"%s' % (fullname, speakeroffice)
 
-        for id in ids:
-            pass
-
+        id = ids.pop()
         remadename = self.member_full_name(id, date)
         return 'person_id="%s" speakername="%s"%s' % (self.membertoperson(id), remadename, speakeroffice)
 
@@ -313,21 +299,7 @@ class MemberList(ResolverBase):
                     ids = ids.intersection(brackids)
 
             # Sometimes constituency in brackets: Malcolm Bruce (Gordon)
-            consids = self.constoidmap.get(bracket, None)
-            if consids:
-                # Search for constituency matches, and intersect results with them
-                newids = set()
-                for cons in consids:
-                    if cons["start_date"] <= date and date <= cons["end_date"]:
-                        consid = cons['id']
-                        matches = self.considtomembermap.get(consid, None)
-                        if matches:
-                            for m in matches:
-                                if date >= m["start_date"] and date <= m["end_date"]:
-                                    if m["id"] in ids:
-                                        newids.add(m["id"])
-                ids = newids
-
+            ids = self.intersect_constituency(bracket, ids, date)
 
         # If ambiguous (either form "Mr. O'Brien" or full name, ambiguous due
         # to missing constituency) look in recent name match history
@@ -446,7 +418,7 @@ class MemberList(ResolverBase):
             self.debatedate = date
             self.cleardebatehistory()
             
-    def intersect_constituency(self, text, ids, date):
+    def intersect_constituency(self, text, ids, date, allow_empty_date=False):
         """Return the intersection of a set of ids with any
         constituency matches for a text fragment
         """
@@ -456,14 +428,14 @@ class MemberList(ResolverBase):
             # Search for constituency matches, and intersect results with them
             newids = set()
             for cons in consids:
-                if cons["start_date"] <= date and date <= cons["end_date"]:
+                if (allow_empty_date and date is None) or (cons["start_date"] <= date and date <= cons["end_date"]):
                     consid = cons['id']
                     # get any mps
                     matches = self.considtomembermap.get(consid, None)
                         
                     if matches:
                         for m in matches:
-                            if date >= m["start_date"] and date <= m["end_date"]:
+                            if (allow_empty_date and date is None) or (date >= m["start_date"] and date <= m["end_date"]):
                                 if m["id"] in ids:
                                     newids.add(m["id"])
             ids = newids
