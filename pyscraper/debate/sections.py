@@ -133,34 +133,35 @@ def StripDebateHeadings(headspeak, sdate):
                 time = gstarttime.group(1)
                 time = re.sub('</?i>',' ', time)
                 time = re.sub('\s+',' ', time)
-                if re.match("^half-past Nine(?i)", time):
+                if re.match("half-past Nine(?i)", time):
                         newtime = '09:30:00'
-                elif re.match("^half-past Ten(?i)", time):
+                elif re.match("a quarter to Ten o(?i)", time):
+                        newtime = '09:45:00'
+                elif re.match("Ten o'clock(?i)", time):
+                        newtime = '10:00:00'
+                elif re.match("half-past Ten(?i)", time):
                         newtime = '10:30:00'
                 elif re.match("Eleven o&#039;clock(?i)", time):
                         newtime = '11:00:00'
-                elif re.match("^10 minutes past Three(?i)", time):
-                        newtime = '15:10:00'
-                elif re.match("^twenty-five minutes past\s*Eleven(?i)", time):
+                elif re.match("twenty-five minutes past\s*Eleven(?i)", time):
                         newtime = '11:25:00'
-                elif re.match("^twenty-six minutes past\s*Eleven(?i)", time):
+                elif re.match("twenty-six minutes past\s*Eleven(?i)", time):
                         newtime = '11:26:00'
-                elif re.match("^half-past Eleven(?i)", time):
+                elif re.match("half-past Eleven(?i)", time):
                         newtime = '11:30:00'
-                elif re.match("^half-past One(?i)", time):
-                        newtime = '13:30:00'
-                elif re.match("^half-past Two(?i)", time):
-                        newtime = '14:30:00'
-                elif re.match("^a quarter to Ten o(?i)", time):
-                        newtime = '09:45:00'
-                elif re.match("^Ten o'clock(?i)", time):
-                        newtime = '10:00:00'
-                elif re.match("^Six o'clock(?i)", time):
-                        newtime = '18:00:00'
-                elif re.match("^Twelve noon(?i)", time):
+                elif re.match("Twelve noon(?i)", time):
                         newtime = '12:00:00'
+                elif re.match("half-past One(?i)", time):
+                        newtime = '13:30:00'
+                elif re.match("half-past Two(?i)", time):
+                        newtime = '14:30:00'
+                elif re.match("twenty minutes to Three(?i)", time):
+                        newtime = '14:40:00'
+                elif re.match("10 minutes past Three(?i)", time):
+                        newtime = '15:10:00'
+                elif re.match("Six o'clock(?i)", time):
+                        newtime = '18:00:00'
                 else:
-                        newtime = "unknown " + time
                         raise ContextException, "Start time not known: " + time
                 stampurl.timestamp = '<stamp time="%s"/>' % newtime
 
