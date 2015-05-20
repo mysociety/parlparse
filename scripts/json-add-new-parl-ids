@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+
+import os
+from lxml import etree
+from popolo import Popolo
+
+cur_dir = os.path.dirname(__file__)
+source_file = os.path.join(cur_dir, '..', 'rawdata', 'datadotparl', 'all-current-commons.xml')
+
+parser = etree.ETCompatXMLParser()
+etree.set_default_parser(parser)
+parl_members = etree.parse(source_file).getroot()
+parl_members = {member.find('MemberFrom').text.lower(): member for member in parl_members}
+
+data = Popolo()
+
+parl_ids = {}
+for person in data.persons.values():
+    for i in person.get('identifiers', []):
+        if i['scheme'] == 'datadotparl_id':
+            parl_ids[person['id']] = i['identifier']
+
+mships = [m for m in data.memberships.in_org('house_of_commons').on('2015-05-08') if m['person_id'] not in parl_ids]
+
+for m in mships:
+    cons = data.posts[m['post_id']]['area']['name'].lower()
+    ddp_id = parl_members[cons].attrib['Member_Id']
+    data.persons[m['person_id']]['identifiers'].append({'scheme': 'datadotparl_id', 'identifier': ddp_id})
+
+data.dump()
