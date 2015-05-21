@@ -68,7 +68,7 @@ with open(ARGS.members) as fp:
     MEMBERS = json.load(fp)
 if ARGS.house == 'lords':
     MEMBERS_BY_NAME = {}
-    PERSONS = {p['id']: [n for n in p['other_names'] if n['note']=='Main'] for p in MEMBERS['persons']}
+    PERSONS = {p['id']: [n for n in p.get('other_names', []) if n['note']=='Main'] for p in MEMBERS['persons']}
     for m in MEMBERS['memberships']:
         if m.get('organization_id') != 'house-of-lords': continue
         name = _lord_name_on_date(m['person_id'], ARGS.date).lower()

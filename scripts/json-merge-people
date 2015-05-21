@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+#
+# End a current membership
+
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--base', required=True)
+parser.add_argument('--alternate', required=True)
+ARGS = parser.parse_args()
+
+from popolo import Popolo
+data = Popolo()
+
+ARGS.base = 'uk.org.publicwhip/person/%s' % ARGS.base
+ARGS.alternate = 'uk.org.publicwhip/person/%s' % ARGS.alternate
+
+personB = data.get_person(id=ARGS.base)
+mships = data.memberships.of_person(personB['id'])
+personB_start = min(m['start_date'] for m in mships)
+personB_end = max(m.get('end_date', '9999-12-31') for m in mships)
+if len(personB['other_names']) == 1:
+    personB['other_names'][0]['start_date'] = personB_start
+    if personB_end != '9999-12-31':
+        personB['other_names'][0]['end_date'] = personB_end
+
+person = data.get_person(id=ARGS.alternate)
+mships = data.memberships.of_person(person['id'])
+person_start = min(m['start_date'] for m in mships)
+person_end = max(m.get('end_date', '9999-12-31') for m in mships)
+
+for k, v in person.items():
+    if k == 'other_names' and len(v) == 1:
+        v[0]['start_date'] = person_start
+        if person_end != '9999-12-31':
+            v[0]['end_date'] = person_end
+    if isinstance(v, list):
+        personB.setdefault(k, []).extend(v)
+    if k != 'id':
+        del person[k]
+person['redirect'] = ARGS.base
+
+for m in mships:
+    m['person_id'] = ARGS.base
+
+data.dump()

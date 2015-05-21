@@ -55,10 +55,10 @@ class Popolo(object):
 
     def load(self, json_file):
         self.json = j = json.load(open(json_file))
-        self.persons = {p['id']: p for p in j['persons']}
+        self.persons = {p['id']: p for p in j['persons'] if 'redirect' not in p}
         self.posts = {p['id']: p for p in j['posts']}
         self.orgs = {o['name']: o['id'] for o in j['organizations']}
-        self.memberships = Memberships(j['memberships'], self)
+        self.memberships = Memberships([m for m in j['memberships'] if 'redirect' not in m], self)
         self.names = {}
 
         for p in self.persons.values():
@@ -76,8 +76,11 @@ class Popolo(object):
                     name = n['given_name'] + ' ' + name
             self.names[p['id']] = name
 
-    def get_person(self, name):
-        return [p for p in self.persons.values() if self.names[p['id']] == name]
+    def get_person(self, id=None, name=None):
+        if name:
+            return [p for p in self.persons.values() if self.names[p['id']] == name]
+        if id:
+            return (p for p in self.persons.values() if p['id'] == id).next()
 
     def dump(self):
         json.dump(self.json, open(JSON, 'w'), indent=2, sort_keys=True)
