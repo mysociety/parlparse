@@ -31,6 +31,8 @@ for mship in j['memberships']:
         del mship['name']['honorific_prefix']
     tuple_name = tuple(sorted(mship['name'].items()))
     names_no_prefix.setdefault(pid, set()).add(tuple_name)
+    min_start[pid][tuple_name] = min(min_start.setdefault(pid, {}).get(tuple_name, '9999-12-31'), mship['start_date'])
+    max_end[pid][tuple_name] = max(max_end.setdefault(pid, {}).get(tuple_name, '0000-00-00'), mship.get('end_date', '9999-12-31'))
     if mship.get('organization_id') != 'house-of-lords':
         names_no_prefix_without_lords.setdefault(pid, set()).add(tuple_name)
     del mship['name']
@@ -40,7 +42,9 @@ def set_name(person, name, include_dates=False):
     if not isinstance(name, dict):
         name = dict(name)
     if include_dates:
-        namet = tuple(sorted(name.items()))
+        namet = name.copy()
+        if 'honorific_prefix' in namet: del namet['honorific_prefix']
+        namet = tuple(sorted(namet.items()))
         name['start_date'] = min_start[person['id']][namet]
         if max_end[person['id']][namet] != '9999-12-31':
             name['end_date'] = max_end[person['id']][namet]
