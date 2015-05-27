@@ -5,7 +5,7 @@ from lxml import etree
 from popolo import Popolo
 
 cur_dir = os.path.dirname(__file__)
-source_file = os.path.join(cur_dir, '..', 'rawdata', 'datadotparl', 'all-current-commons.xml')
+source_file = os.path.join(cur_dir, '..', '..', 'rawdata', 'datadotparl', 'all-current-commons.xml')
 
 parser = etree.ETCompatXMLParser()
 etree.set_default_parser(parser)

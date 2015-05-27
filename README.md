@@ -14,8 +14,8 @@ The source of data for the 2010 election onwards is
 This data is scraped and stored locally for parsing, but needs updating manually
 using the following process.
 
-1. Change to the `scripts` directory.
-2. Run `./crawl-datadotparl-members`
+1. Change to the `scripts/datadotparl` directory.
+2. Run `./crawl-members`
 
 ## Update from data.parliament.uk
 
@@ -26,15 +26,5 @@ onwards.
 
 Before updating, you should run the data.parliament.uk scraper.
 
-1. Change to the `scripts` directory.
-2. Run `./update-members-from-datadotparliament` to parse the XML and update things.
-
-When done, you should update `people.xml`
-
-## Update `people.xml`
-
-`members/people.xml joins together members and offices, and should be
-`regenerated if either of these things changes.
-
-1. Change to the `members` directory.
-2. Run `./personsets.py` to update `people.xml`.
+1. Change to the `scripts/datadotparl` directory.
+2. Run `./update-members` to parse the XML and update things.

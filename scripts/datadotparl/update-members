@@ -35,7 +35,7 @@ class Popolo(object):
             'organizations': self.organizations,
             'memberships': self.memberships,
         }.items()))
-        json.dump(out, open('../members/ministers-2010.json', 'w'), indent=2)
+        json.dump(out, open('../../members/ministers-2010.json', 'w'), indent=2)
 
     def add_membership(self, mship):
         self.memberships.append(mship)
@@ -165,7 +165,7 @@ def parse(fn, root_tag):
 
 parl_member_ids = set()
 for source_file in source_files:
-  parl_members_slim = parse('../rawdata/datadotparl/' + source_file + '.xml', 'Members')
+  parl_members_slim = parse('../../rawdata/datadotparl/' + source_file + '.xml', 'Members')
   parl_member_ids |= set(member.attrib['Member_Id'] for member in parl_members_slim)
   print 'Found %d members from %s.xml.' % (len(parl_members_slim), source_file)
 print 'Total of %d distinct people.' % len(parl_member_ids)
@@ -173,7 +173,7 @@ print 'Total of %d distinct people.' % len(parl_member_ids)
 # Enrich the data!
 parl_members = dict()
 for member_id in parl_member_ids:
-  member_fullbio_xml = parse('../rawdata/datadotparl/' + member_id + '.xml', 'Members')
+  member_fullbio_xml = parse('../../rawdata/datadotparl/' + member_id + '.xml', 'Members')
   parl_members[member_id] = member_fullbio_xml.find('Member')
 
 ##########
@@ -181,7 +181,7 @@ for member_id in parl_member_ids:
 ##########
 
 # Import people.xml
-people_json = json.load(open('../members/people.json'))
+people_json = json.load(open('../../members/people.json'))
 people = []
 for person in people_json['persons']:
   for i in person.get('identifiers', []):
@@ -206,5 +206,5 @@ for person in people:
 print 'Done for ' + source_file + '.xml.'
 
 # Write out the updated ministers file
-popolo.output('../members/ministers-2010.json')
+popolo.output('../../members/ministers-2010.json')
 print 'ministers-2010.json updated!'

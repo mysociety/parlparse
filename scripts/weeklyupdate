@@ -6,9 +6,9 @@
 source ~/parlparse/scripts/consts
 
 # run data.parliament scrapers
-cd ~/parlparse/scripts
-./crawl-datadotparl-members
-./update-members-from-datadotparliament
+cd ~/parlparse/scripts/datadotparl
+./crawl-members
+./update-members
 
 # Run member scrapers
 # TODO: add more, write to temp file, check errors
