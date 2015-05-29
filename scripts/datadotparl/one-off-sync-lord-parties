@@ -1,0 +1,116 @@
+#!/usr/bin/env python
+
+import os
+import re
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+from lxml import etree
+from popolo import Popolo
+
+import requests
+import requests_cache
+requests_cache.install_cache()
+
+parser = etree.ETCompatXMLParser()
+etree.set_default_parser(parser)
+
+data = Popolo()
+parl_ids = {}
+for person in data.persons.values():
+    for i in person.get('identifiers', []):
+        if i['scheme'] == 'datadotparl_id':
+            parl_ids[person['id']] = i['identifier']
+
+LORDS_URL = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/membership=all|house=Lords/Parties/'
+parl_members = etree.fromstring(requests.get(LORDS_URL).content)
+parl_members = {m.attrib['Member_Id']: m for m in parl_members}
+
+mships = [m for m in data.memberships.in_org('house-of-lords')]
+mships_by_pid = {}
+for m in mships:
+    mships_by_pid.setdefault(m['person_id'], []).append(m)
+mships = []
+for pid, ms in mships_by_pid.items():
+    ms.sort(key=lambda x: x.get('end_date', '9999-12-31'), reverse=True)
+    mships.append(ms[0])
+
+CANON_PARTY = {
+    'bishops': 'bishop',
+    'democratic-unionist-party': 'dup',
+    'ulster-unionist-party': 'uup',
+    'uk-independence-party': 'ukip',
+    'green-party': 'green',
+}
+
+class ParlParty(object):
+    def __init__(self, e):
+        self.start_date = e.find('StartDate').text.replace('T00:00:00', '')
+        self.end_date = (e.find('EndDate').text or '').replace('T00:00:00', '')
+        self.name = e.find('Name').text.lower().replace(' ', '-')
+        self.name = CANON_PARTY.get(self.name, self.name)
+
+changed = False
+for m in mships:
+    parl_id = parl_ids[m['person_id']]
+    parl_member = parl_members[parl_id]
+    parl_party = parl_member.find('Party').text.lower().replace(' ', '-')
+    parl_party = CANON_PARTY.get(parl_party, parl_party)
+
+    # Corrections to Parliament data
+    if parl_id == '3535' and parl_party == 'other': parl_party = 'green'
+    if m['on_behalf_of_id'] == 'judge': continue
+
+    if parl_party != m['on_behalf_of_id']:
+        parties = sorted(parl_member.find('Parties'), key=lambda x: x.find('StartDate').text)
+        parties = [p for p in parties if p.find('StartDate').text >= parl_member.find('HouseStartDate').text]
+        parties = [ParlParty(p) for p in parties]
+
+        # If we have one membership and Parliament has one, ignore until someone complains
+        if len(mships_by_pid[m['person_id']]) == 1 and len(parties) == 1:
+            continue
+
+	print 'Party mismatch for', data.names[m['person_id']], 'Parl ID', parl_id, 'Our ID', m['person_id'],
+        print 'Our mships', [m['on_behalf_of_id'] for m in mships_by_pid[m['person_id']]],
+        print 'Parl mships', [p.name for p in parties]
+
+        def update_mem(id):
+            if parties[id].name != m['on_behalf_of_id']: return
+            for p in parties:
+                assert p.name in data.orgs.values(), p.name
+            assert parties[-1].end_date == m.get('end_date', ''), '%s != %s' % (parties[-1].end_date, m.get('end_date', ''))
+            if len(m['start_date']) == 4:
+                m['start_date'] = parties[id].start_date
+            for i, p in enumerate(parties):
+                if i == id: continue
+                mship = m.copy()
+                mship['id'] = 'uk.org.publicwhip/lord/%d' % (data.max_lord_id() + 1)
+                mship['start_date'] = p.start_date
+                if i > id:
+                    mship['start_reason'] = 'changed_party'
+                if p.end_date: mship['end_date'] = p.end_date
+                elif 'end_date' in mship: del mship['end_date']
+                if i < len(parties)-1:
+                    mship['end_reason'] = 'changed_party'
+                elif 'end_reason' in m:
+                    mship['end_reason'] = m['end_reason']
+                mship['on_behalf_of_id'] = p.name
+                data.add_membership(mship)
+            if id > 0:
+                m['start_date'] = parties[id].start_date
+                m['start_reason'] = 'changed_party'
+            m['end_date'] = parties[id].end_date
+            m['end_reason'] = 'changed_party'
+            return True
+
+	# If we have one membership and Parliament has >= two, and our party
+	# matches their first party, update our membership and add new ones
+        if len(mships_by_pid[m['person_id']]) == 1 and len(parties) >= 2:
+            changed = update_mem(0) or changed
+
+	# If we have one membership and Parliament has three, and our party
+	# matches their second party, update our membership and add new ones
+        if len(mships_by_pid[m['person_id']]) == 1 and len(parties) == 3:
+            changed = update_mem(1) or changed
+
+if changed:
+    data.dump()

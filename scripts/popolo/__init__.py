@@ -8,7 +8,7 @@ JSON = os.path.join(cur_dir, '..', '..', 'members', 'people.json')
 
 class Memberships(object):
     def __init__(self, mships, data):
-        self.memberships = mships
+        self._memberships = mships
         self.data = data
 
     def __iter__(self):
@@ -29,6 +29,10 @@ class Memberships(object):
             s += '\n'
         s += ']'
         return s
+
+    @property
+    def memberships(self):
+        return [m for m in self._memberships if 'redirect' not in m]
 
     def in_org(self, house):
         if house == 'house-of-lords':
@@ -58,7 +62,7 @@ class Popolo(object):
         self.persons = {p['id']: p for p in j['persons'] if 'redirect' not in p}
         self.posts = {p['id']: p for p in j['posts']}
         self.orgs = {o['name']: o['id'] for o in j['organizations']}
-        self.memberships = Memberships([m for m in j['memberships'] if 'redirect' not in m], self)
+        self.memberships = Memberships(j['memberships'], self)
         self.names = {}
 
         for p in self.persons.values():
@@ -81,6 +85,13 @@ class Popolo(object):
             return [p for p in self.persons.values() if self.names[p['id']] == name]
         if id:
             return (p for p in self.persons.values() if p['id'] == id).next()
+
+    def add_membership(self, mship):
+        self.json['memberships'].append(mship)
+
+    def max_lord_id(self):
+        id = max(m['id'] for m in self.memberships.in_org('house-of-lords'))
+        return int(id.replace('uk.org.publicwhip/lord/', ''))
 
     def dump(self):
         json.dump(self.json, open(JSON, 'w'), indent=2, sort_keys=True)
