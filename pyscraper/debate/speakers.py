@@ -92,7 +92,7 @@ respeakervals = re.compile('''(?ix)
 		(<stamp\saname="[^"]*?"/>)*             # a stamp (group4)
 		(?:[QT]?(\d+)\.)?			# second place of oral question number (group5)
 		([^:<(]*?):?\s*				# speaker (group6)
-		(?:\(([^)]*?)\)?)?			# speaker bracket (group7)
+		(?:\(([^)]*?|Richmond[ ]\(Yorks\))\)?)?			# speaker bracket (group7)
 		(?:\s*\((%s)\))?\s*     	# parties list (group8)
 		:?\s*
 		</b>(?!</h[34]>) 		# end bold tag, ensuring it's not in a heading
