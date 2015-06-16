@@ -89,9 +89,18 @@ class Popolo(object):
     def add_membership(self, mship):
         self.json['memberships'].append(mship)
 
-    def max_lord_id(self):
-        id = max(m['id'] for m in self.memberships.in_org('house-of-lords'))
-        return int(id.replace('uk.org.publicwhip/lord/', ''))
+    def _max_member_id(self, house, type='member'):
+        id = max(int(m['id'].replace('uk.org.publicwhip/%s/' % type, '')) for m in self.memberships.in_org(house))
+        return 'uk.org.publicwhip/%s/%d' % (type, id)
+
+    max_lord_id = lambda self: self._max_member_id('house-of-lords', 'lord')
+    max_mp_id = lambda self: self._max_member_id('house-of-commons')
+    max_mla_id = lambda self: self._max_member_id('northern-ireland-assembly')
+    max_msp_id = lambda self: self._max_member_id('scottish-parliament')
+
+    def max_person_id(self):
+        id = max(p for p in self.persons.keys())
+        return id
 
     def dump(self):
         json.dump(self.json, open(JSON, 'w'), indent=2, sort_keys=True)

@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+
+import argparse
+import json
+import os
+
+from popolo import Popolo
+data = Popolo()
+
+print "Current maximum Lord ID:", data.max_lord_id()
+print "Current maximum MP ID:  ", data.max_mp_id()
+print "Current maximum MSP ID: ", data.max_msp_id()
+print "Current maximum MLA ID: ", data.max_mla_id()
+print "Current maximum Person ID:", data.max_person_id()
