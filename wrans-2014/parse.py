@@ -55,8 +55,6 @@ def _lord_name(n):
         name += ' %s' % n['lordname']
     if n['lordofname']:
         name += ' of %s' % n['lordofname']
-        if not n['lordname']:
-            name = 'The ' + name
     # Earl of Clancarty is in the peerage of Ireland but the Lords
     # still uses it :/ Should really use peers-aliases.xml here.
     if name == 'Viscount Clancarty':
@@ -141,7 +139,7 @@ class WrittenThing(object):
         name = h.a.text
         if ARGS.house == 'lords':
             # Loop through all, match on name and date
-            person_id = MEMBERS_BY_NAME[name.lower()]
+            person_id = MEMBERS_BY_NAME[re.sub('^the ', '', name.lower())]
         else:
             speaker_id = re.search('(\d+)$', h.a['href']).group(1)
             person_id = DATADOTPARL_ID_TO_PERSON_ID[speaker_id]
