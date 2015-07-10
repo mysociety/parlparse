@@ -69,6 +69,7 @@ if ARGS.house == 'lords':
     PERSONS = {p['id']: [n for n in p.get('other_names', []) if n['note']=='Main'] for p in MEMBERS['persons']}
     for m in MEMBERS['memberships']:
         if m.get('organization_id') != 'house-of-lords': continue
+        if not m['start_date'] <= ARGS.date <= m.get('end_date', '9999-12-31'): continue
         name = _lord_name_on_date(m['person_id'], ARGS.date).lower()
         if name:
             MEMBERS_BY_NAME[name] = m['person_id']
