@@ -95,7 +95,7 @@ def RunRegmemFilters2010(fout, text, sdate, sdatever):
                         fout.write('\t</category>\n')
                 fout.write('</regmem>\n')                                
 
-        membersetexpect = set(memberList.mpslistondate(sdate))
+        membersetexpect = set([m['person_id'] for m in memberList.mpslistondate(sdate)])
         
         # check for missing/extra entries
         missing = membersetexpect.difference(memberset)
@@ -237,7 +237,7 @@ def RunRegmemFilters(fout, text, sdate, sdatever):
                 fout.write('</regmem>\n')                                
                 needmemberend = False
 
-        membersetexpect = set(memberList.mpslistondate(sdate))
+        membersetexpect = set([m['person_id'] for m in memberList.mpslistondate(sdate)])
         
         # check for missing/extra entries
         missing = membersetexpect.difference(memberset)
