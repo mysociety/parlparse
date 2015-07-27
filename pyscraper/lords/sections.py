@@ -407,7 +407,7 @@ def FilterLordsSpeech(qb):
 	bSpeakerExists = not re.match('nospeaker="true"', qb.speaker)
 	if bSpeakerExists and (not recol or recol.group(1)):
 		# text of this kind at the begining should not be spoken, assume there wasn't a colon
-		if not re.search("<p>(?:moved|asked|rose to move,) (?i)", qb.stext[0]):
+		if not re.search("<p>(?:moved|asked|rose to move,) (?i)", qb.stext[0]) or re.search("<p>moved formally(?i)", qb.stext[0]):
 		        ispeechstartp1 = 1  # 0th paragraph is speech text
 
 	res = [ ] # output list
