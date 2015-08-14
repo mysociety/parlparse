@@ -97,7 +97,7 @@ class MemberList(ResolverBase):
         ids = []
         for m in matches:
             if date >= m["start_date"] and date <= m["end_date"]:
-                ids.append(m["id"])
+                ids.append(m)
         return ids
 
     # useful to have this function out there
