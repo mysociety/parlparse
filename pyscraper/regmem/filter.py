@@ -58,10 +58,12 @@ def RunRegmemFilters2010(fout, text, sdate, sdatever):
                                 record = False
                             continue
                         if not text or re.match('\s*\.\s*$', text): continue
+                        if text == '<strong>%s</strong>' % title: continue
                         if re.match('\s*Nil\.?\s*$', text):
                                 fout.write('Nil.\n')
                                 continue
-                        if row.name == 'h3' or row.get('class') == 'shd0':
+                        # Since 2015 election, register is all paragraphs, no headings :(
+                        if row.name == 'h3' or row.get('class') == 'shd0' or re.match('<strong>\d+\. ', text):
                                 if re.match('\s*$', text): continue
                                 m = re.match("(?:\s*<strong>)?\s*(\d\d?)\.\s*(.*)(?:</strong>\s*)?$", text)
                                 if m:
