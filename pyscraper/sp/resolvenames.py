@@ -12,6 +12,8 @@ import codecs
 
 from base_resolver import ResolverBase
 
+members_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'members'))
+
 class MemberList(ResolverBase):
     import_organization_id = 'scottish-parliament'
 
@@ -136,25 +138,24 @@ class MemberList(ResolverBase):
 
         if not just_name:
 
-            office_matches = self.officeslowered.get(s.lower())
+            office_name = s.replace('The ', '')
+            office_matches = self.offices.get(office_name)
             if office_matches:
                 for o in office_matches:
-                    if date and date < o['start_date'] or date > o['end_date']:
+                    if date and ( date < o['start_date'] or 'end_date' not in o.keys() or date >= o['end_date'] ):
                         continue
-                    for m in o['members']:
-                        if date and date < m['start_date'] or date > m['end_date']:
-                            continue
-                        if m['id'] not in member_ids:
-                            member_ids.append(m['id'])
+                    member_ids.append(o['person_id'])
                 if len(member_ids) == 1:
-                    return map(self.membertoperson, member_ids)
+                    return member_ids[0]
 
         fullname_matches = self.fullnames.get(s)
         if fullname_matches:
             for m in fullname_matches:
                 if date and date < m['start_date'] or date > m['end_date']:
                     continue
-                if re.search('The Presiding Officer',s) and m['start_reason'] != 'became_presiding_officer':
+                # get the full membership details so we can check the start_reason
+                mem = self.members.get(m['id'])
+                if re.search('The Presiding Officer',s) and mem['start_reason'] != 'became_presiding_officer':
                     # There's some ambiguity about which of the
                     # presiding officers it is in this case...
                     continue
@@ -232,10 +233,6 @@ class MemberList(ResolverBase):
             # print "Got some general group of people..."
             return None
 
-        if self.lawofficers.get(s.lower()):
-            # print "Got some law officer..."
-            return None
-
         return map(self.membertoperson, member_ids)
 
     def reloadJSON(self):
@@ -248,99 +245,13 @@ class MemberList(ResolverBase):
         start_date = None
         end_date = None
 
-        # These files of posts are slightly doctored versions of these
-        # documents from the Scottish Parliament website after having
-        # been converted to text.  This is pretty horrible, and we
-        # should really keep track of these offices properly...
+        self.offices = { }
+        with open(os.path.join(members_dir, 'sp-ministers.json')) as fp:
+            offices_json = fp.read()
+            offices = json.loads(offices_json)
 
-        #   MinistersandLawOfficersbycabinet-Session1.pdf
-        #   MinistersLawOfficersMinisterialParliamentaryAidesbyCabinet-Session2.pdf
-        #   ScottishMinistersandLawOfficersSession3.pdf
-
-
-        posts_files = [ 'ministers-law-officers-aides-session1.txt',
-                        'ministers-law-officers-aides-session2.txt',
-                        'ministers-law-officers-aides-session3.txt',
-                        'ministers-law-officers-aides-session4.txt' ]
-
-        self.officeslowered = { }
-        self.lawofficers = { }
-
-        for pf in posts_files:
-            f = codecs.open(sp_dir + '/' + pf,'r','utf-8')
-            for line in f.readlines():
-                line = line.strip()
-
-                m_iso   = re.match('^\s*((\d{4})-(\d{2})-(\d{2}))\s+to\s+((\d{4})-(\d{2})-(\d{2}))\s*$',line)
-                m_other = re.match('^.*\s+((\d+)\s+(\w+)\s+(\d{4})).*\s+((\d+)\s+(\w+)\s+(\d{4})).*$',line)
-
-                if m_iso:
-                    from_w = time.strptime(m_iso.group(1),'%Y-%m-%d')
-                    to_w = time.strptime(m_iso.group(5),'%Y-%m-%d')
-                    start_date = datetime.date( from_w[0], from_w[1], from_w[2] )
-                    end_date = datetime.date( to_w[0], to_w[1], to_w[2] )
-                elif m_other:
-                    from_w = time.strptime(m_other.group(1),'%d %B %Y')
-                    to_w = time.strptime(m_other.group(5),'%d %B %Y')
-                    start_date = datetime.date( from_w[0], from_w[1], from_w[2] )
-                    end_date = datetime.date( to_w[0], to_w[1], to_w[2] )
-                elif re.match('.*\|.*\|.*',line):
-                    fields = line.split('|')
-                    if len(fields) != 3:
-                        raise Exception, "Wrong number of fields: "+line
-                    post, name, party = fields
-                    name = re.sub('^Rt Hon ','',name)
-                    name = re.sub('^Dr. ','',name)
-                    name = re.sub(' MSP$','',name)
-                    cabinet = False
-                    # A theta in the post indicates it's a cabinet post.
-                    # Filter that out
-                    m = re.match(u"^(.*) \u0398(.*)$",post)
-                    if m:
-                        cabinet = True
-                        # print "### Cabinet post! ###"
-                        post = m.group(1) + m.group(2)
-                    matches = self.fullnames[name]
-                    if not matches:
-                        raise "Couldn't find member: "+name
-                    # Only keep matches where there's a date overlap.
-                    # (There should only be one of these.)
-                    matches = filter( lambda m: str(start_date) <= m['end_date'] and str(end_date) >= m['start_date'], matches)
-                    if len(matches) < 1:
-                        raise Exception, "No overlapping date ranges: "+str(len(matches))
-                    value = { 'members': matches, 'start_date': str(start_date), 'end_date': str(end_date), 'party': party, 'cabinet': cabinet }
-                    self.officeslowered.setdefault(post.lower(),[]).append(value)
-                    self.officeslowered.setdefault("the "+post.lower(),[]).append(value)
-                elif re.match('.*\_.*\_.*',line):
-                    # In fact, the aides have never spoken in that
-                    # role in the parliament so far, so ignore them
-                    # too.
-                    fields = line.split('_')
-                    if len(fields) == 3:
-                        aide_to, name, party = fields
-                    elif len(fields) == 4:
-                        aide_to, name, date_range, party = fields
-                        m_other = re.match('^((\d+)\s+(\w+)\s+(\d{4})).*\s+((\d+)\s+(\w+)\s+(\d{4})).*$',date_range)
-                        from_w = time.strptime(m_other.group(1),'%d %B %Y')
-                        to_w = time.strptime(m_other.group(5),'%d %B %Y')
-                        start_date = datetime.date( from_w[0], from_w[1], from_w[2] )
-                        end_date = datetime.date( to_w[0], to_w[1], to_w[2] )
-                    else:
-                        raise Exception, "Wrong number of fields: "+line
-                elif re.match('.*[^&]\#.*',line):
-                    # These aren't MSPs, so just ignore them for the
-                    # moment as well.
-                    fields = line.split('#')
-                    if len(fields) != 2:
-                        raise Exception, "Wrong number of fields: "+line
-                    post, name = fields
-                    value = { 'name': name, 'start_date': str(start_date), 'end_date': str(end_date), 'party': party, 'cabinet': cabinet }
-                    self.lawofficers.setdefault(post.lower(),[]).append(value)
-                    self.lawofficers.setdefault("the "+post.lower(),[]).append(value)
-                else:
-                    pass
-
-            f.close()
+        for office in offices:
+            self.offices.setdefault(office['role'], []).append(office)
 
     def list(self, date=None):
         if not date:
