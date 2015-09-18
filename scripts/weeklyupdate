@@ -10,6 +10,10 @@ cd ~/parlparse/scripts/datadotparl
 ./crawl-members
 ./update-members
 
+# fetch details of scottish ministers
+cd ~/scripts
+./fetch_scottish_ministers.py
+
 # Run member scrapers
 # TODO: add more, write to temp file, check errors
 cd ~/parlparse/rawdata
