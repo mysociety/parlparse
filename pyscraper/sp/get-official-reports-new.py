@@ -18,7 +18,9 @@ import random
 
 output_directory = "../../../parldata/cmpages/sp/official-reports-new/"
 
-official_report_url_format = 'http://www.scottish.parliament.uk/parliamentarybusiness/28862.aspx?r={0}&mode=html'
+current_reports_url_format = 'http://www.scottish.parliament.uk/parliamentarybusiness/ReportSelectPage.aspx?type=plenary&year={0}&page=0&meeting=-1'
+
+official_report_url_format = 'http://www.scottish.parliament.uk/parliamentarybusiness/report.aspx?r={0}&mode=html'
 
 user_agent = 'Mozilla/5.0 (Ubuntu; X11; Linux i686; rv:9.0.1) Gecko/20100101 Firefox/9.0.1'
 
@@ -27,9 +29,12 @@ parser.add_option('-q', '--quiet', dest='quiet', action='store_true',
                   default=False, help='Suppress progress messages')
 parser.add_option('-t', '--test', dest='test', action='store_true',
                   default=False, help='Run doctests')
-parser.add_option('--historic', dest='historic',
-                  help='Fetch all documents with ID up to MAXID',
-                  metavar='MAXID')
+parser.add_option('--start_range', dest='start_range',
+                  help='fetches documents between START_RANGE and END_RANGE',
+                  metavar='START_RANGE')
+parser.add_option('--end_range', dest='end_range',
+                  help='fetches documents between START_RANGE and END_RANGE',
+                  metavar='END_RANGE')
 parser.add_option('--daily', help='Fetch the documents listed today',
                   default=False, action='store_true')
 parser.add_option('--track-missing', dest='missing',
@@ -79,21 +84,31 @@ def get_document_from_id(official_report_id):
                 return
             else:
                 raise
-        with open(html_filename, 'w') as fp:
-            fp.write(response.read())
+        # if the official report requested does not exist then the site
+        # redirects us to a search page rather than issuing a 404 so we
+        # check to make sure that hasn't happened before saving
+        if response.geturl() == url:
+            with open(html_filename, 'w') as fp:
+                fp.write(response.read())
+        else:
+            html_filename = ''
+            if not options.quiet:
+                print "   * looks like a redirect, not saving"
         time.sleep(random.uniform(minimum_sleep, maximum_sleep))
-    parser = etree.HTMLParser()
-    with open(html_filename) as fp:
-        tree = etree.parse(fp, parser)
+    if html_filename:
+        parser = etree.HTMLParser()
+        with open(html_filename) as fp:
+            tree = etree.parse(fp, parser)
 
 def main():
 
-    if options.historic:
-        for i in range(1, int(options.historic, 10)):
+    if options.start_range and options.end_range:
+        for i in range(int(options.start_range), int(options.end_range, 10) + 1):
             get_document_from_id(i)
 
     elif options.daily:
-        url = 'http://www.scottish.parliament.uk/parliamentarybusiness/official-report.aspx'
+        year = datetime.date.today().year
+        url = current_reports_url_format.format(year)
         request = urllib2.Request(url)
         request.add_header('User-Agent', user_agent)
         opener = urllib2.build_opener()
@@ -106,7 +121,7 @@ def main():
         for link in tree.xpath('.//a'):
             href = link.get('href')
             if href:
-                m = re.search(r'28862.aspx\?r=(\d+)', href)
+                m = re.search(r'jumpReport\(\'28862.aspx\?r=(\d+)', href)
                 if m:
                     report_ids.add(int(m.group(1), 10))
         min_report_id = min(report_ids) - 20
@@ -115,7 +130,7 @@ def main():
             get_document_from_id(report_id)
 
     else:
-        print "Either --daily or --historic=MAXID must be specified"
+        print "Either --daily, --start_range=START_ID and --end_range=END_ID must be specified"
 
 if options.test:
     if not options.quiet:
