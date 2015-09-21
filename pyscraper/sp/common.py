@@ -4,9 +4,9 @@
 import sys
 import datetime
 sys.path.append('../')
-from BeautifulSoup import NavigableString
-from BeautifulSoup import Tag
-from BeautifulSoup import Comment
+from bs4 import NavigableString
+from bs4 import Tag
+from bs4 import Comment
 
 import re
 

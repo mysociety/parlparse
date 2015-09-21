@@ -24,8 +24,8 @@ from lxml import etree
 
 sys.path.append('../')
 
-from BeautifulSoup import BeautifulSoup
-from BeautifulSoup import NavigableString
+from bs4 import BeautifulSoup
+from bs4 import NavigableString
 
 from sp.resolvenames import memberList
 
@@ -262,6 +262,17 @@ def is_page_empty(soup):
     report_view = soup.find('div', attrs={'id': 'ReportView'})
     return not ''.join(report_view.findAll(text=True)).strip()
 
+def get_page_title(soup):
+    """Extract and clean up the title tag from a page
+
+    Returns a string with the page title minus cruft"""
+
+    title = soup.title.text
+    title = re.sub('(?ims):.*$', '', title)
+    title = tidy_string(title)
+
+    return title
+
 def get_title_and_date(soup, page_id):
     """Extract the session and date from a page
 
@@ -279,7 +290,7 @@ def get_title_and_date(soup, page_id):
             return (None, None)
         else:
             raise Exception, "No title was found in a page that's non-empty; the page ID was: %d" % (page_id,)
-    m = re.search(r'^(.*)\s+(\d{2} \w+ \d{4})$', title)
+    m = re.search(r'^(.*)\s+(\d{2} \w+ \d{4})\s*(?:[[(]Draft[)\]]|Business until \d\d:\d\d)?$', title)
     if m:
         session = m.group(1).rstrip(',')
         report_date = dateparser.parse(m.group(2)).date()
@@ -531,13 +542,18 @@ def quick_parse_html(filename, page_id, original_url):
         html = fp.read()
     html = replace_unknown_tags(html)
     html = fix_inserted_br_in_vote_list(html)
-    soup = BeautifulSoup(html, convertEntities=BeautifulSoup.HTML_ENTITIES)
+    soup = BeautifulSoup(html)
     # If this is an error page, there'll be a message like:
     #   <span id="ReportView_lblError">Please check the link you clicked, as it does not reference a valid Official Report</span>
     # ... so ignore those.
     error = soup.find('span', attrs={'id': 'ReportView_lblError'})
     if error and error.string and 'Please check the link' in error.string:
         return (None, None, None)
+    page_title = get_page_title(soup)
+    if page_title == 'Search the Official Report - Parliamentary Business':
+        #This is what we get instead of a 404
+        return (None, None, None)
+
     session, report_date = get_title_and_date(soup, page_id)
     if session is None:
         # Then this was an empty page, which should be skipped
@@ -612,10 +628,28 @@ def parse_html(session, report_date, soup, page_id, original_url):
         elif top_level.name == 'div':
             # This div contains a speech, essentially:
 
+            # the new style pages wraps speeches in p.span tags that we can ignore so
+            # remove them from the tree. Occasionally there are multiple spans in a p
+            # hence the for loop
+            # This does mean we are losing some formatting information but because it's
+            # hardcoded style attributes in the spans it's arguable that we'd want to
+            # remove them anyway.
+            for p in top_level.findChildren('p'):
+                if p.span:
+                    for span in p.findChildren('span'):
+                        span.unwrap()
+                    p.unwrap()
+
+            removed_number = None
             for speech_part in top_level:
                 if hasattr(speech_part, 'name'):
                     if speech_part.name == 'b':
                         speaker_name = non_tag_data_in(speech_part)
+                        # If there's a leading question number remove that (and any whitespace)
+                        match = re.match(r'^\d+\.\s*', speaker_name)
+                        if match:
+                            speaker_name = re.sub(r'^\d+\.\s*', '', speaker_name)
+                            removed_number = match.group(0)
                         # If there's a training colon, remove that (and any whitespace)
                         speaker_name = re.sub(r'[\s:]*$', '', speaker_name)
                         current_speech = Speech(tidy_string(speaker_name),
@@ -626,10 +660,18 @@ def parse_html(session, report_date, soup, page_id, original_url):
                     elif speech_part.name == 'br':
                         # Ignore the line breaks...
                         pass
+                    elif speech_part.name == 'ul':
+                        current_speech.paragraphs.append(speech_part.html)
+                    elif speech_part.name == 'a' and speech_part.text == '':
+                        # skip empty a anchors
+                        pass
                     else:
                         raise Exception, "Unexpected tag '%s' in page ID: %d" % (speech_part.name, page_id)
                 elif isinstance(speech_part, NavigableString):
                     tidied_paragraph = tidy_string(speech_part)
+                    if tidied_paragraph == "":
+                        # just ignore blank lines
+                        continue
                     # print "tidied_paragraph is", tidied_paragraph.encode('utf-8'), "of type", type(tidied_paragraph)
                     division_way, division_candidate, division_candidate_id = is_division_way(tidied_paragraph, report_date)
                     member_vote = is_member_vote(tidied_paragraph, report_date, expecting_a_vote=current_votes)
@@ -675,6 +717,9 @@ def parse_html(session, report_date, soup, page_id, original_url):
                         # ends up with that time.
                         if len(current_speech.paragraphs) == 0:
                             current_speech.last_time = current_time
+                        if removed_number and tidied_paragraph:
+                            tidied_paragraph = removed_number + tidied_paragraph
+                            removed_number = None
                         current_speech.paragraphs.append(tidied_paragraph)
                     if suspended and suspension_time:
                         current_time = suspension_time
