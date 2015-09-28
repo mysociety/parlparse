@@ -13,6 +13,7 @@ from datetime import datetime
 source_files = [
   'all-commons-2015-election',
   'all-current-commons',
+  'all-lords',
 ]
 
 parser = etree.ETCompatXMLParser()
@@ -87,7 +88,8 @@ class Position(object):
     if chairdates is None or not len(chairdates):
       return periods
     if len(chairdates) > 1:
-      raise Exception("Doesn't currently handle more than one chair date, one was bad enough!")
+      print 'More than one chairdate:', self.list.person['datadotparl_id'], len(chairdates)
+      #raise Exception("Doesn't currently handle more than one chair date, one was bad enough!")
     chair_dates = TimePeriod(chairdates.find('ChairDate')).dates
     if chair_dates[0] <= position_dates[0]:
       attrs['position'] = 'Chair'
