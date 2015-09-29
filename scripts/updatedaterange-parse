@@ -29,9 +29,8 @@ cd ~/parlparse/pyscraper/standing
 ./parse.py $4
 
 # Scottish Parliament:
-# Disabled as currently not working
-# cd ~/parlparse/pyscraper/sp
-# ./parse-official-reports-new.py --from=$FROMDATE --to=$TODATE || RET=1
+cd ~/parlparse/pyscraper/sp
+~/.venv/bin/python ./parse-official-reports-new.py --from=$FROMDATE --to=$TODATE || RET=1
 
 # Return error code
 exit $RET
