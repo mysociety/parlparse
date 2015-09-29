@@ -71,6 +71,13 @@ class Position(object):
     self.position = position
     self.list = positions
 
+  def chair_check(self, chair_date, periods, to_date):
+    if chair_date[1] < to_date:
+      periods.append({'position': 'Chair', 'fromdate': chair_date[0], 'todate': chair_date[1]})
+      periods.append({'position': '', 'fromdate': chair_date[1], 'todate': to_date})
+    else:
+      periods.append({'position': 'Chair', 'fromdate': chair_date[0], 'todate': to_date})
+
   @property
   def time_periods(self):
     position = self.position
@@ -87,22 +94,28 @@ class Position(object):
     chairdates = position.find('ChairDates')
     if chairdates is None or not len(chairdates):
       return periods
-    if len(chairdates) > 1:
-      print 'More than one chairdate:', self.list.person['datadotparl_id'], len(chairdates)
-      #raise Exception("Doesn't currently handle more than one chair date, one was bad enough!")
-    chair_dates = TimePeriod(chairdates.find('ChairDate')).dates
-    if chair_dates[0] <= position_dates[0]:
-      attrs['position'] = 'Chair'
-      if chair_dates[1] < position_dates[1]:
-        attrs['todate'] = chair_dates[1]
-        periods.append({'position': '', 'fromdate': chair_dates[1], 'todate': position_dates[1]})
+
+    chair_dates = [TimePeriod(x).dates for x in chairdates]
+    if len(chair_dates) > 2:
+      raise Exception("Doesn't currently handle more than two chair dates")
+
+    if len(chair_dates) == 2:
+      first_to_date = chair_dates[1][0]
     else:
-      attrs['todate'] = chair_dates[0]
-      if chair_dates[1] < position_dates[1]:
-        periods.append({'position': 'Chair', 'fromdate': chair_dates[0], 'todate': chair_dates[1]})
-        periods.append({'position': '', 'fromdate': chair_dates[1], 'todate': position_dates[1]})
-      else:
-        periods.append({'position': 'Chair', 'fromdate': chair_dates[0], 'todate': position_dates[1]})
+      first_to_date = position_dates[1]
+
+    if chair_dates[0][0] <= position_dates[0]:
+      attrs['position'] = 'Chair'
+      if chair_dates[0][1] < position_dates[1]:
+        attrs['todate'] = chair_dates[0][1]
+        periods.append({'position': '', 'fromdate': chair_dates[0][1], 'todate': first_to_date})
+    else:
+      attrs['todate'] = chair_dates[0][0]
+      self.chair_check(chair_dates[0], periods, first_to_date)
+
+    if len(chair_dates) == 2:
+      self.chair_check(chair_dates[1], periods, position_dates[1])
+
     return periods
 
   def generate(self):

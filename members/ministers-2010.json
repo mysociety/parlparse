@@ -26621,7 +26621,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10582", 
       "organization_id": "high-speed-rail-london--west-midlands-bill-commons-committee", 
-      "start_date": "2015-03-30"
+      "start_date": "2015-03-30", 
+      "end_date": "2015-06-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/245/Committee/303/3", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10582", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-commons-committee", 
+      "start_date": "2015-06-08"
     }, 
     {
       "id": "uk.parliament.data/Member/245/Committee/36", 
