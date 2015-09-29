@@ -796,8 +796,8 @@ if __name__ == '__main__':
                 print "Skipping", html_filename, "(wrong filename format)"
             continue
         page_id = int(m.group(1), 10)
-        # if page_id < 8098:
-        #     continue
+        if page_id < 9500:
+            continue
 
         if (file_number is not None) and (file_number != page_id):
             continue
