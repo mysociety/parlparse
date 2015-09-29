@@ -642,7 +642,7 @@ def parse_html(session, report_date, soup, page_id, original_url):
 
             removed_number = None
             for speech_part in top_level:
-                if hasattr(speech_part, 'name'):
+                if hasattr(speech_part, 'name') and speech_part.name != None:
                     if speech_part.name == 'b':
                         speaker_name = non_tag_data_in(speech_part)
                         # If there's a leading question number remove that (and any whitespace)
