@@ -36,7 +36,7 @@ and party changes are recorded.
   "person_id": "uk.org.publicwhip/person/11656",
   "post_id": "uk.org.publicwhip/cons/310",
   "start_date": "2005-05-05",
-  "start_reason": "general_election"
+  "start_reason": "general_election",
   "end_date": "2010-04-12",
   "end_reason": "general_election_standing",
 },
@@ -63,7 +63,7 @@ and party changes are recorded.
   "organization_id": "house-of-lords",
   "person_id": "uk.org.publicwhip/person/12975",
   "role": "Peer",
-  "start_date": "1992"
+  "start_date": "1992",
   "end_date": "2013-04-08",
   "end_reason": "died",
 },
