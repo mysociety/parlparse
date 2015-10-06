@@ -9009,8 +9009,32 @@
       "role": "Shadow DUP Spokesperson (Defence)", 
       "person_id": "uk.org.publicwhip/person/10172", 
       "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/650/OppositionPost/1113/1", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Defence)", 
+      "person_id": "uk.org.publicwhip/person/10172", 
+      "organization_id": "house-of-commons", 
       "start_date": "2007-06-01", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/650/OppositionPost/1272", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "DUP Chief Whip", 
+      "person_id": "uk.org.publicwhip/person/10172", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/650/OppositionPost/1273", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Business in the House of Commons)", 
+      "person_id": "uk.org.publicwhip/person/10172", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
     }, 
     {
       "id": "uk.parliament.data/Member/650/OppositionPost/959", 
@@ -31493,6 +31517,22 @@
       "end_date": "2002-07-22"
     }, 
     {
+      "id": "uk.parliament.data/Member/1409/OppositionPost/1268", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (International Development)", 
+      "person_id": "uk.org.publicwhip/person/10780", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1409/OppositionPost/1269", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Cabinet Office)", 
+      "person_id": "uk.org.publicwhip/person/10780", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1409/OppositionPost/958", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister (Culture, Media and Sport)", 
@@ -32020,6 +32060,22 @@
       "organization_id": "house-of-commons", 
       "start_date": "2010-06-01", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1388/OppositionPost/1270", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Reform and Constitutional Issues)", 
+      "person_id": "uk.org.publicwhip/person/10857", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1388/OppositionPost/1271", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Foreign Affairs)", 
+      "person_id": "uk.org.publicwhip/person/10857", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
     }, 
     {
       "id": "uk.parliament.data/Member/1388/OppositionPost/17", 
@@ -36524,13 +36580,37 @@
       "end_date": "2008-06-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/1593/OppositionPost/1116", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Work and Pensions)", 
+      "person_id": "uk.org.publicwhip/person/11374", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1593/OppositionPost/1123", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Treasury)", 
+      "person_id": "uk.org.publicwhip/person/11374", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1593/OppositionPost/1123/1", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow DUP Spokesperson (Treasury)", 
       "person_id": "uk.org.publicwhip/person/11374", 
       "organization_id": "house-of-commons", 
       "start_date": "2010-05-12", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1593/OppositionPost/1275", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Education)", 
+      "person_id": "uk.org.publicwhip/person/11374", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
     }, 
     {
       "id": "uk.parliament.data/Member/1593/OppositionPost/979", 
@@ -40933,6 +41013,14 @@
       "end_date": "2015-05-07"
     }, 
     {
+      "id": "uk.parliament.data/Member/1557/OppositionPost/1251", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow LD Spokesperson (Economics)", 
+      "person_id": "uk.org.publicwhip/person/11783", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-07-29"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1557/OppositionPost/16", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Secretary of State", 
@@ -41987,6 +42075,14 @@
       "end_date": "2007-06-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/1597/OppositionPost/1117", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Environment, Food and Rural Affairs)", 
+      "person_id": "uk.org.publicwhip/person/11892", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1597/OppositionPost/1121", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow DUP Spokesperson (Communities and Local Government)", 
@@ -41997,6 +42093,14 @@
     }, 
     {
       "id": "uk.parliament.data/Member/1597/OppositionPost/1122", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Business, Innovation and Skills)", 
+      "person_id": "uk.org.publicwhip/person/11892", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1597/OppositionPost/1122/1", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow DUP Spokesperson (Business, Innovation and Skills)", 
       "person_id": "uk.org.publicwhip/person/11892", 
@@ -43554,6 +43658,14 @@
       "organization_id": "eu-sub-committee-c--external-affairs", 
       "start_date": "2012-05-17", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3699/OppositionPost/1258", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow LD Spokesperson (Culture, Media and Sport)", 
+      "person_id": "uk.org.publicwhip/person/12838", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-07-29"
     }, 
     {
       "id": "uk.parliament.data/Member/3651/Committee/336", 
@@ -51043,6 +51155,14 @@
       "organization_id": "draft-protection-of-charities-bill-joint-committee", 
       "start_date": "2014-11-11", 
       "end_date": "2015-02-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2004/ParliamentaryPost/1076", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Convenor of the Crossbench Peers", 
+      "person_id": "uk.org.publicwhip/person/13079", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-09-28"
     }, 
     {
       "id": "uk.parliament.data/Member/2005/Committee/168", 
@@ -62048,6 +62168,14 @@
       "end_date": "2014-11-04"
     }, 
     {
+      "id": "uk.parliament.data/Member/2539/OppositionPost/1257", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow LD Spokesperson (International Development)", 
+      "person_id": "uk.org.publicwhip/person/13434", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-07-29"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3191/Committee/331", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13435", 
@@ -70004,7 +70132,8 @@
       "role": "Convenor of the Crossbench Peers", 
       "person_id": "uk.org.publicwhip/person/13668", 
       "organization_id": "house-of-commons", 
-      "start_date": "2011-09-05"
+      "start_date": "2011-09-05", 
+      "end_date": "2015-09-28"
     }, 
     {
       "id": "uk.parliament.data/Member/2079/ParliamentaryPost/801", 
@@ -72103,6 +72232,14 @@
       "start_date": "2015-07-16"
     }, 
     {
+      "id": "uk.parliament.data/Member/4129/OppositionPost/1112", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Energy and Climate Change)", 
+      "person_id": "uk.org.publicwhip/person/13852", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4129/OppositionPost/1116", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow DUP Spokesperson (Work and Pensions)", 
@@ -72119,6 +72256,22 @@
       "organization_id": "house-of-commons", 
       "start_date": "2010-05-06", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4129/OppositionPost/1121", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Communities and Local Government)", 
+      "person_id": "uk.org.publicwhip/person/13852", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4129/OppositionPost/1274", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Culture, Media and Sport)", 
+      "person_id": "uk.org.publicwhip/person/13852", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4130/Committee/52", 
@@ -72161,6 +72314,14 @@
       "start_date": "2015-07-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/4131/OppositionPost/1111", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Equality)", 
+      "person_id": "uk.org.publicwhip/person/13864", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4131/OppositionPost/1118", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow DUP Spokesperson (Human Rights)", 
@@ -72175,11 +72336,27 @@
       "role": "Shadow DUP Spokesperson (Health)", 
       "person_id": "uk.org.publicwhip/person/13864", 
       "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4131/OppositionPost/1119/1", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Health)", 
+      "person_id": "uk.org.publicwhip/person/13864", 
+      "organization_id": "house-of-commons", 
       "start_date": "2010-05-12", 
       "end_date": "2015-03-30"
     }, 
     {
       "id": "uk.parliament.data/Member/4131/OppositionPost/1120", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Transport)", 
+      "person_id": "uk.org.publicwhip/person/13864", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4131/OppositionPost/1120/1", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow DUP Spokesperson (Transport)", 
       "person_id": "uk.org.publicwhip/person/13864", 
@@ -80485,6 +80662,14 @@
       "start_date": "2015-06-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4164/OppositionPost/1259", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow LD Spokesperson (Equalities)", 
+      "person_id": "uk.org.publicwhip/person/24983", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-07-29"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4163/Committee/340", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24984", 
@@ -80838,6 +81023,14 @@
       "person_id": "uk.org.publicwhip/person/25002", 
       "organization_id": "built-environment-committee-l", 
       "start_date": "2015-06-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4178/OppositionPost/1256", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow LD Spokesperson (Environment and Rural Affairs)", 
+      "person_id": "uk.org.publicwhip/person/25002", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-07-29"
     }, 
     {
       "id": "uk.parliament.data/Member/4184/Committee/188", 
@@ -81213,6 +81406,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2013-10-07", 
       "end_date": "2015-05-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4203/OppositionPost/1249", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow LD Spokesperson (Defence)", 
+      "person_id": "uk.org.publicwhip/person/25027", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-07-29"
     }, 
     {
       "id": "uk.parliament.data/Member/4203/ParliamentaryPost/1091", 
@@ -81758,6 +81959,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2012-09-06", 
       "end_date": "2015-05-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4230/OppositionPost/1255", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow LD Spokesperson (Transport)", 
+      "person_id": "uk.org.publicwhip/person/25053", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-07-29"
     }, 
     {
       "id": "uk.parliament.data/Member/4237/Committee/249", 
@@ -82533,6 +82742,14 @@
       "start_date": "2015-07-09"
     }, 
     {
+      "id": "uk.parliament.data/Member/4289/OppositionPost/1254", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow LD Spokesperson (Work and Pensions)", 
+      "person_id": "uk.org.publicwhip/person/25190", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-07-29"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4282/Committee/173", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25192", 
@@ -83084,6 +83301,30 @@
       "person_id": "uk.org.publicwhip/person/25280", 
       "organization_id": "northern-ireland-affairs-committee", 
       "start_date": "2015-07-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4360/OppositionPost/1109", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Spokesperson (Justice)", 
+      "person_id": "uk.org.publicwhip/person/25280", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4360/OppositionPost/1114", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Home Affairs)", 
+      "person_id": "uk.org.publicwhip/person/25280", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4360/OppositionPost/1118", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Human Rights)", 
+      "person_id": "uk.org.publicwhip/person/25280", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4415/Committee/23", 
@@ -83759,7 +84000,8 @@
       "role": "Shadow SNP Westminster Group Leader (Business, Innovation and Skills)", 
       "person_id": "uk.org.publicwhip/person/25352", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-20"
+      "start_date": "2015-05-20", 
+      "end_date": "2015-10-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4514/Committee/83", 
