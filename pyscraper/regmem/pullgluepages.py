@@ -38,6 +38,10 @@ def GlueByContents(fout, url_contents, regmemdate):
         sr = ur.read()
         ur.close()
 
+	if ur.code == 404:
+		print "failed to fetch %s - skipping" % url
+		continue
+
         # write the marker telling us which page this comes from
         lt = time.gmtime()
         fout.write('<page url="%s" scrapedate="%s" scrapetime="%s"/>\n' % \
