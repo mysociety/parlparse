@@ -42,9 +42,9 @@ cd ~/parlparse/pyscraper/sp
 # Force reindex, to find URLs which have changed (updates to Hansard,
 # including the once-per-session grand URL-rename-and-break from cm to vo)
 # Run scraper for all of parliament
-cd ~/parlparse/scripts
-./updatedaterange-scrape $WEEKLY_FROMDATE $LORDS_WEEKLY_FROMDATE $WEEKLY_TODATE --force-index
-./updatedaterange-parse $WEEKLY_FROMDATE $LORDS_WEEKLY_FROMDATE $WEEKLY_TODATE
+# cd ~/parlparse/scripts
+# ./updatedaterange-scrape $WEEKLY_FROMDATE $LORDS_WEEKLY_FROMDATE $WEEKLY_TODATE --force-index
+# ./updatedaterange-parse $WEEKLY_FROMDATE $LORDS_WEEKLY_FROMDATE $WEEKLY_TODATE
 
 # Zip up XML files for people
 cd ~/parldata/scrapedxml
