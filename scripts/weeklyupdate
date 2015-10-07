@@ -11,7 +11,7 @@ cd ~/parlparse/scripts/datadotparl
 ./update-members
 
 # fetch details of scottish ministers
-cd ~/scripts
+cd ~/parlparse/scripts
 ./fetch_scottish_ministers.py
 
 # Run member scrapers
