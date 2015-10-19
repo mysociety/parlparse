@@ -3245,6 +3245,14 @@
       "start_date": "2014-04-29"
     }, 
     {
+      "id": "uk.parliament.data/Member/117/Committee/344", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10057", 
+      "organization_id": "violence-in-the-family-committee", 
+      "start_date": "1976-03-08", 
+      "end_date": "1977-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/117/GovernmentPost/415", 
       "source": "datadotparl/governmentpost", 
       "role": "Parliamentary Under-Secretary (Department of Employment)", 
@@ -10558,6 +10566,13 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/197/Committee/345", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10199", 
+      "organization_id": "greyhound-welfare-committee", 
+      "start_date": "2015-10-14"
+    }, 
+    {
       "id": "uk.parliament.data/Member/197/Committee/52", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10199", 
@@ -12251,6 +12266,13 @@
       "person_id": "uk.org.publicwhip/person/10240", 
       "organization_id": "defence-committee", 
       "start_date": "2015-07-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/261/Committee/343", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10240", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2015-09-08"
     }, 
     {
       "id": "uk.parliament.data/Member/261/Committee/52", 
@@ -17497,6 +17519,13 @@
       "start_date": "2015-06-18"
     }, 
     {
+      "id": "uk.parliament.data/Member/54/Committee/343", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10358", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2015-09-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/54/Committee/97", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10358", 
@@ -20584,6 +20613,13 @@
       "organization_id": "house-of-commons", 
       "start_date": "2002-07-23", 
       "end_date": "2003-12-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/454/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10427", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2015-10-12"
     }, 
     {
       "id": "uk.parliament.data/Member/454/Committee/159", 
@@ -24700,6 +24736,13 @@
       "end_date": "1988-07-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/95/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10545", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2015-10-12"
+    }, 
+    {
       "id": "uk.parliament.data/Member/95/Committee/139", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10545", 
@@ -25341,6 +25384,13 @@
       "person_id": "uk.org.publicwhip/person/10558", 
       "organization_id": "defence-committee", 
       "start_date": "2015-07-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/318/Committee/343", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10558", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2015-09-08"
     }, 
     {
       "id": "uk.parliament.data/Member/318/Committee/49", 
@@ -28046,7 +28096,24 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10613", 
       "organization_id": "liaison-committee-commons", 
-      "start_date": "2015-09-10"
+      "start_date": "2015-09-10", 
+      "end_date": "2015-10-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/112/Committee/103/2", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10613", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2015-10-14", 
+      "end_date": "2015-10-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/112/Committee/103/3", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10613", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2015-10-14"
     }, 
     {
       "id": "uk.parliament.data/Member/112/Committee/128", 
@@ -32423,7 +32490,24 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10920", 
       "organization_id": "palace-of-westminster-joint-committee", 
-      "start_date": "2015-07-16"
+      "start_date": "2015-07-16", 
+      "end_date": "2015-10-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1413/Committee/341/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10920", 
+      "organization_id": "palace-of-westminster-joint-committee", 
+      "start_date": "2015-10-13", 
+      "end_date": "2015-10-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1413/Committee/341/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10920", 
+      "organization_id": "palace-of-westminster-joint-committee", 
+      "start_date": "2015-10-13"
     }, 
     {
       "id": "uk.parliament.data/Member/1413/GovernmentPost/1142", 
@@ -33868,6 +33952,13 @@
       "organization_id": "unopposed-bills-panel", 
       "start_date": "2002-11-14", 
       "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1468/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11095", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2015-10-12"
     }, 
     {
       "id": "uk.parliament.data/Member/1468/Committee/152", 
@@ -35755,6 +35846,14 @@
       "start_date": "2015-05-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/1397/OppositionPost/1159", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "PC Westminster Leader", 
+      "person_id": "uk.org.publicwhip/person/11323", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-10-12"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1397/OppositionPost/1164", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow PC Spokesperson (Defence)", 
@@ -37584,6 +37683,14 @@
       "person_id": "uk.org.publicwhip/person/11450", 
       "organization_id": "defence-committee", 
       "start_date": "2015-07-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1490/Committee/343", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/11450", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2015-09-08"
     }, 
     {
       "id": "uk.parliament.data/Member/1490/Committee/52", 
@@ -40413,6 +40520,13 @@
       "start_date": "2015-07-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/1547/Committee/343", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11727", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2015-09-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1547/Committee/62", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11727", 
@@ -41011,14 +41125,6 @@
       "organization_id": "house-of-commons", 
       "start_date": "2013-10-07", 
       "end_date": "2015-05-07"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/1557/OppositionPost/1251", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Shadow LD Spokesperson (Economics)", 
-      "person_id": "uk.org.publicwhip/person/11783", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2015-07-29"
     }, 
     {
       "id": "uk.parliament.data/Member/1557/OppositionPost/16", 
@@ -43658,14 +43764,6 @@
       "organization_id": "eu-sub-committee-c--external-affairs", 
       "start_date": "2012-05-17", 
       "end_date": "2015-03-30"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/3699/OppositionPost/1258", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Shadow LD Spokesperson (Culture, Media and Sport)", 
-      "person_id": "uk.org.publicwhip/person/12838", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2015-07-29"
     }, 
     {
       "id": "uk.parliament.data/Member/3651/Committee/336", 
@@ -51109,6 +51207,13 @@
       "end_date": "2013-02-26"
     }, 
     {
+      "id": "uk.parliament.data/Member/2004/Committee/166", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13079", 
+      "organization_id": "administration-and-works-committee-l", 
+      "start_date": "2015-10-12"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2004/Committee/176", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13079", 
@@ -51117,11 +51222,46 @@
       "end_date": "2001-05-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/2004/Committee/184", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13079", 
+      "organization_id": "house-committee-l", 
+      "start_date": "2015-10-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2004/Committee/187", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13079", 
+      "organization_id": "liaison-committee-l", 
+      "start_date": "2015-10-12"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2004/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13079", 
       "organization_id": "privileges-and-conduct-committee-for-l", 
       "start_date": "2014-06-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2004/Committee/191", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13079", 
+      "organization_id": "procedure-committee-l", 
+      "start_date": "2015-10-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2004/Committee/197", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13079", 
+      "organization_id": "selection-committee-of-l", 
+      "start_date": "2015-10-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2004/Committee/262", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13079", 
+      "organization_id": "subcommittee-on-leave-of-absence", 
+      "start_date": "2015-10-12"
     }, 
     {
       "id": "uk.parliament.data/Member/2004/Committee/299", 
@@ -57219,6 +57359,14 @@
       "end_date": "2010-04-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/3275/OppositionPost/1280", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Principal Spokesperson for Civil Service and Public Sector Reform", 
+      "person_id": "uk.org.publicwhip/person/13244", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-06-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3413/Committee/191", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13248", 
@@ -62166,14 +62314,6 @@
       "organization_id": "house-of-commons", 
       "start_date": "2011-09-05", 
       "end_date": "2014-11-04"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/2539/OppositionPost/1257", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Shadow LD Spokesperson (International Development)", 
-      "person_id": "uk.org.publicwhip/person/13434", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2015-07-29"
     }, 
     {
       "id": "uk.parliament.data/Member/3191/Committee/331", 
@@ -70982,6 +71122,14 @@
       "end_date": "2015-05-07"
     }, 
     {
+      "id": "uk.parliament.data/Member/1916/OppositionPost/1278", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Chief Whip", 
+      "person_id": "uk.org.publicwhip/person/13702", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-06-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1921/Committee/176", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13703", 
@@ -72274,6 +72422,13 @@
       "start_date": "2015-05-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/4130/Committee/345", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13856", 
+      "organization_id": "greyhound-welfare-committee", 
+      "start_date": "2015-10-14"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4130/Committee/52", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13856", 
@@ -72312,6 +72467,13 @@
       "person_id": "uk.org.publicwhip/person/13864", 
       "organization_id": "defence-committee", 
       "start_date": "2015-07-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4131/Committee/343", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13864", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2015-09-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4131/OppositionPost/1111", 
@@ -73369,6 +73531,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2010-05-12", 
       "end_date": "2015-05-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/630/ParliamentaryPost/800", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Liberal Democrat Leader in the House of Lords", 
+      "person_id": "uk.org.publicwhip/person/13940", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2013-10-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4239/Committee/287", 
@@ -74761,6 +74931,13 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/3948/Committee/131/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24731", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2015-10-12"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3948/Committee/9", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24731", 
@@ -75032,6 +75209,13 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4133/Committee/131/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24741", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2015-10-12"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4133/Committee/297", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24741", 
@@ -75200,6 +75384,13 @@
       "person_id": "uk.org.publicwhip/person/24745", 
       "organization_id": "house-of-commons", 
       "start_date": "2015-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4075/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24747", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2015-10-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4075/Committee/5", 
@@ -75943,6 +76134,14 @@
       "start_date": "2015-09-10"
     }, 
     {
+      "id": "uk.parliament.data/Member/4072/Committee/345", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/24779", 
+      "organization_id": "greyhound-welfare-committee", 
+      "start_date": "2015-10-14"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4072/Committee/52", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24779", 
@@ -76102,6 +76301,13 @@
       "organization_id": "regulatory-reform-committee", 
       "start_date": "2012-12-03", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3912/Committee/131/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24787", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2015-10-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3912/Committee/9", 
@@ -76796,6 +77002,13 @@
       "end_date": "2014-01-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/3944/Committee/345", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24813", 
+      "organization_id": "greyhound-welfare-committee", 
+      "start_date": "2015-10-14"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3944/Committee/52", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24813", 
@@ -77275,6 +77488,13 @@
       "organization_id": "regulatory-reform-committee", 
       "start_date": "2010-07-26", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3939/Committee/131/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24832", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2015-10-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3939/Committee/81", 
@@ -78975,6 +79195,13 @@
       "start_date": "2015-07-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/3919/Committee/343", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24907", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2015-09-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4055/Committee/202", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24909", 
@@ -80662,14 +80889,6 @@
       "start_date": "2015-06-11"
     }, 
     {
-      "id": "uk.parliament.data/Member/4164/OppositionPost/1259", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Shadow LD Spokesperson (Equalities)", 
-      "person_id": "uk.org.publicwhip/person/24983", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2015-07-29"
-    }, 
-    {
       "id": "uk.parliament.data/Member/4163/Committee/340", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24984", 
@@ -80971,6 +81190,14 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4176/OppositionPost/1281", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Principal Spokesperson for Communities, Decentralisation and the Northern Powerhouse", 
+      "person_id": "uk.org.publicwhip/person/25000", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-06-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4174/Committee/333", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25001", 
@@ -81023,14 +81250,6 @@
       "person_id": "uk.org.publicwhip/person/25002", 
       "organization_id": "built-environment-committee-l", 
       "start_date": "2015-06-11"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/4178/OppositionPost/1256", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Shadow LD Spokesperson (Environment and Rural Affairs)", 
-      "person_id": "uk.org.publicwhip/person/25002", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2015-07-29"
     }, 
     {
       "id": "uk.parliament.data/Member/4184/Committee/188", 
@@ -81408,17 +81627,9 @@
       "end_date": "2015-05-07"
     }, 
     {
-      "id": "uk.parliament.data/Member/4203/OppositionPost/1249", 
+      "id": "uk.parliament.data/Member/4203/OppositionPost/1277", 
       "source": "datadotparl/oppositionpost", 
-      "role": "Shadow LD Spokesperson (Defence)", 
-      "person_id": "uk.org.publicwhip/person/25027", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2015-07-29"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/4203/ParliamentaryPost/1091", 
-      "source": "datadotparl/parliamentarypost", 
-      "role": "Liberal Democrat Principal Spokesperson for Defence (Lords)", 
+      "role": "Liberal Democrat Lords Principal Spokesperson for Defence", 
       "person_id": "uk.org.publicwhip/person/25027", 
       "organization_id": "house-of-commons", 
       "start_date": "2015-06-01"
@@ -81570,7 +81781,24 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25032", 
       "organization_id": "palace-of-westminster-joint-committee", 
-      "start_date": "2015-07-20"
+      "start_date": "2015-07-20", 
+      "end_date": "2015-10-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4205/Committee/341/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/25032", 
+      "organization_id": "palace-of-westminster-joint-committee", 
+      "start_date": "2015-10-13", 
+      "end_date": "2015-10-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4205/Committee/341/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25032", 
+      "organization_id": "palace-of-westminster-joint-committee", 
+      "start_date": "2015-10-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4205/Committee/93", 
@@ -81943,6 +82171,14 @@
       "end_date": "2013-11-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/4215/OppositionPost/1279", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Principal Spokesperson for Business, Innovation and Skills", 
+      "person_id": "uk.org.publicwhip/person/25052", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-06-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4230/GovernmentPost/1067", 
       "source": "datadotparl/governmentpost", 
       "role": "Lords Spokesperson (Northern Ireland Office)", 
@@ -81959,14 +82195,6 @@
       "organization_id": "house-of-commons", 
       "start_date": "2012-09-06", 
       "end_date": "2015-05-07"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/4230/OppositionPost/1255", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Shadow LD Spokesperson (Transport)", 
-      "person_id": "uk.org.publicwhip/person/25053", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2015-07-29"
     }, 
     {
       "id": "uk.parliament.data/Member/4237/Committee/249", 
@@ -82742,14 +82970,6 @@
       "start_date": "2015-07-09"
     }, 
     {
-      "id": "uk.parliament.data/Member/4289/OppositionPost/1254", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Shadow LD Spokesperson (Work and Pensions)", 
-      "person_id": "uk.org.publicwhip/person/25190", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2015-07-29"
-    }, 
-    {
       "id": "uk.parliament.data/Member/4282/Committee/173", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25192", 
@@ -83363,11 +83583,25 @@
       "start_date": "2015-07-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/4511/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25284", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2015-10-12"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4484/Committee/126", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25285", 
       "organization_id": "procedure-committee", 
       "start_date": "2015-07-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4468/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25286", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2015-10-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4468/OppositionPost/1126", 
@@ -83613,6 +83847,13 @@
       "person_id": "uk.org.publicwhip/person/25305", 
       "organization_id": "defence-committee", 
       "start_date": "2015-07-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4402/Committee/343", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25305", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2015-09-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4488/Committee/2", 
@@ -83896,6 +84137,13 @@
       "start_date": "2015-07-07"
     }, 
     {
+      "id": "uk.parliament.data/Member/4383/Committee/345", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25339", 
+      "organization_id": "greyhound-welfare-committee", 
+      "start_date": "2015-10-14"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4383/Committee/52", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25339", 
@@ -83923,6 +84171,13 @@
       "person_id": "uk.org.publicwhip/person/25341", 
       "organization_id": "house-of-commons", 
       "start_date": "2015-05-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4358/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25342", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2015-10-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4358/Committee/98", 
@@ -84157,6 +84412,13 @@
       "start_date": "2015-07-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/4485/Committee/343", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25367", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2015-09-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4396/OppositionPost/972", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister (Treasury)", 
@@ -84206,6 +84468,13 @@
       "person_id": "uk.org.publicwhip/person/25374", 
       "organization_id": "public-administration-and-constitutional-affairs-committee", 
       "start_date": "2015-07-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4394/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25375", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2015-10-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4503/Committee/158", 
@@ -84492,6 +84761,13 @@
       "start_date": "2015-05-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/4507/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25417", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2015-10-12"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4507/Committee/164", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25417", 
@@ -84534,6 +84810,13 @@
       "start_date": "2015-07-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/4458/Committee/343", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25423", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2015-09-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4458/OppositionPost/10", 
       "source": "datadotparl/oppositionpost", 
       "role": "Opposition Whip (Commons)", 
@@ -84561,6 +84844,13 @@
       "person_id": "uk.org.publicwhip/person/25427", 
       "organization_id": "procedure-committee", 
       "start_date": "2015-07-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4494/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25427", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2015-10-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4483/Committee/52", 
@@ -84613,9 +84903,9 @@
       "start_date": "2015-07-06"
     }, 
     {
-      "id": "uk.parliament.data/Member/4436/OppositionPost/1172", 
+      "id": "uk.parliament.data/Member/4436/OppositionPost/1276", 
       "source": "datadotparl/oppositionpost", 
-      "role": "Shadow Minister for Women and Equalities", 
+      "role": "Junior Shadow Minister for Women and Equalities", 
       "person_id": "uk.org.publicwhip/person/25432", 
       "organization_id": "house-of-commons", 
       "start_date": "2015-09-18"
@@ -84656,6 +84946,13 @@
       "person_id": "uk.org.publicwhip/person/25435", 
       "organization_id": "defence-committee", 
       "start_date": "2015-07-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4508/Committee/343", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25435", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2015-09-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4372/Committee/9", 
@@ -84916,6 +85213,10 @@
     {
       "id": "defence-committee", 
       "name": "Defence Committee"
+    }, 
+    {
+      "id": "defence-subcommittee", 
+      "name": "Defence Sub-Committee"
     }, 
     {
       "id": "delegated-powers-and-regulatory-reform-committee-l", 
@@ -85312,6 +85613,10 @@
     {
       "id": "freedom-of-information-advisory-panel-l", 
       "name": "Freedom of Information Advisory Panel (L)"
+    }, 
+    {
+      "id": "greyhound-welfare-committee", 
+      "name": "Greyhound Welfare Committee"
     }, 
     {
       "id": "health-committee", 
@@ -85868,6 +86173,10 @@
     {
       "id": "urban-affairs-subcommittee", 
       "name": "Urban Affairs Sub-committee"
+    }, 
+    {
+      "id": "violence-in-the-family-committee", 
+      "name": "Violence in the Family Committee"
     }, 
     {
       "id": "welsh-affairs-committee", 
