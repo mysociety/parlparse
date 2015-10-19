@@ -525,7 +525,8 @@ class ParseCommittee:
         attending = False
         newtext = re.sub(u'\u2020|&dagger;|&#134;', '', text)
         if newtext != text: attending = True
-        mMember = re.match('([^(]*?)\s*?(\([^)]*?\))?\s*?(\([^)]*?\))?\s*$', newtext)
+        const_re = '\((?:[^)]*?|Richmond[ ]\(Yorks\))\)'
+        mMember = re.match('([^(]*?)\s*?(%s)?\s*?(\([^)]*?\))?\s*$' % const_re, newtext)
         if not mMember: raise ContextException, "Couldn't parse committee member %s" % newtext 
         orig_name = mMember.group(1)
         bracket = mMember.group(2)
