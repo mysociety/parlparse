@@ -1,0 +1,114 @@
+#!/usr/bin/env python
+
+import argparse
+import json
+import os
+import re
+import sys
+import tempfile
+from popolo import Popolo
+
+
+def new_id(max_id):
+    base, id = re.match('(.*/)(\d+)$', max_id).groups()
+    return '%s%d' % (base, int(id) + 1)
+
+
+def edit_file(edit_data):
+    fp = tempfile.NamedTemporaryFile(delete=False)
+    json.dump(edit_data, fp, sort_keys=True, indent=2)
+    fp.close()
+    try:
+        while True:
+            os.system('vim "%s"' % fp.name)
+            with open(fp.name) as f:
+                try:
+                    new_edit_data = json.load(f)
+                    break
+                except ValueError as e:
+                    print "Bad JSON: %s" % e
+                    raw_input("Press Enter to continue...")
+    finally:
+        os.remove(fp.name)
+    return new_edit_data
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    '--type', required=True, choices=('lord', 'mp', 'msp', 'mla'))
+ARGS = parser.parse_args()
+
+data = Popolo()
+
+new_person_id = new_id(data.max_person_id())
+
+max_ids = {
+    'lord': data.max_lord_id(),
+    'mp': data.max_mp_id(),
+    'msp': data.max_msp_id(),
+    'mla': data.max_mla_id(),
+}
+new_mship_id = new_id(max_ids[ARGS.type])
+
+blank_name = {
+    'given_name': '',
+    'note': 'Main',
+}
+blank_mship = {
+    'id': new_mship_id,
+    'on_behalf_of_id': '',
+    'person_id': new_person_id,
+    'start_date': '',
+}
+
+if ARGS.type == 'lord':
+    blank_name.update({
+        'honorific_prefix': '',
+        'lordname': '',
+        'lordofname': '',
+        'lordofname_full': '',
+        'county': '',
+        'start_date': ''
+    })
+    blank_mship.update({
+        'identifiers': [{'identifier': 'L', 'scheme': 'peeragetype'}],
+        'label': 'Peer',
+        'role': 'Peer',
+        'organization_id': 'house-of-lords',
+    })
+else:
+    blank_name.update({
+        'family_name': '',
+    })
+    blank_mship.update({
+        'post_id': '',
+        'start_reason': '',
+    })
+
+edit_data = {
+    '_meta': [
+        '*** Save an empty file, or leave any of start_date/ on_behalf_of_id/',
+        '*** family_name/ lordname/ lordofname blank to abort.'
+    ],
+    'person': {
+        'id': new_person_id,
+        'other_names': [blank_name],
+    },
+    'memberships': [blank_mship],
+}
+new_edit_data = edit_file(edit_data)
+if not new_edit_data:
+    sys.exit()
+name = new_edit_data['person']['other_names'][0]
+mship = new_edit_data['memberships'][0]
+if not mship['start_date'] or not mship['on_behalf_of_id']:
+    sys.exit()
+if (ARGS.type == 'lord' and not name['lordname'] and not name['lordofname']) \
+        or (ARGS.type != 'lord' and not name['family_name']):
+    sys.exit()
+
+data.add_person(new_edit_data['person'])
+for m in new_edit_data['memberships']:
+    data.add_membership(m)
+
+data.dump()

@@ -86,6 +86,9 @@ class Popolo(object):
         if id:
             return (p for p in self.persons.values() if p['id'] == id).next()
 
+    def add_person(self, person):
+        self.json['persons'].append(person)
+
     def add_membership(self, mship):
         self.json['memberships'].append(mship)
 
