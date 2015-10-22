@@ -18,8 +18,6 @@ def write(url, fn):
   open(fn, 'w').write(data)
 
 
-print 'Fetching policy motions from publicwhip'
-
 all_json = urllib2.urlopen(base_url).read()
 soup = MinimalSoup(all_json)
 json_files = soup.findAll( href=re.compile("json") )
