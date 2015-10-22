@@ -190,6 +190,11 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         # And have changed <center> to <span class="centred">
         text = re.sub('<span class="centred">(.*?)</span>', r'<center>\1</center>', text)
 
+    if sdate >= '2015-10-12':
+        # annoying double <b> round members rose text
+        text = re.sub(r'<b><b>Several hon. Members </b>', '<b>Several hon. Members ', text)
+
+
     (flatb, gidname) = FILTERfunction(text, sdate)
     for i in range(len(gidname)):
         tempfilenameoldxml = None
