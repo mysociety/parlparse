@@ -11242,6 +11242,15 @@
       "end_date": "2006-11-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/315/GovernmentPost/1126", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Department for Transport)", 
+      "person_id": "uk.org.publicwhip/person/10212", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1979-05-11", 
+      "end_date": "1981-01-05"
+    }, 
+    {
       "id": "uk.parliament.data/Member/315/GovernmentPost/700", 
       "source": "datadotparl/governmentpost", 
       "role": "Secretary of State for Employment", 
@@ -11258,6 +11267,15 @@
       "organization_id": "house-of-commons", 
       "start_date": "1981-09-14", 
       "end_date": "1987-06-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/315/GovernmentPost/739", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Secretary of State for Transport", 
+      "person_id": "uk.org.publicwhip/person/10212", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1981-01-05", 
+      "end_date": "1981-09-14"
     }, 
     {
       "id": "uk.parliament.data/Member/315/OppositionPost/16", 
@@ -20619,7 +20637,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10427", 
       "organization_id": "regulatory-reform-committee", 
-      "start_date": "2015-10-12"
+      "start_date": "2015-10-12", 
+      "end_date": "2015-10-21"
     }, 
     {
       "id": "uk.parliament.data/Member/454/Committee/159", 
