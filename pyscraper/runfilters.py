@@ -406,6 +406,12 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
             xprev = (jfout, sdatever)
 
 
+def FixExtraColNumParas(text):
+    '''Try and deal with extra paragraphs caused by removing column numbers'''
+    text = re.sub('(?:<br>\s*)?</p>(\s*<stamp coldate[^>]*>\s*)<p>(?=[a-z])', r'\1', text)
+    return text
+
+
 # These text filtering functions filter twice through stringfiles,
 # before directly filtering to the real file.
 def RunWransFilters(text, sdate):
@@ -430,6 +436,7 @@ def RunDebateFilters(text, sdate):
     FilterDebateColTime(si, text, sdate, "debate")
     text = si.getvalue()
     si.close()
+    text = FixExtraColNumParas(text)
 
     si = cStringIO.StringIO()
     FilterDebateSpeakers(si, text, sdate, "debate")
@@ -447,6 +454,7 @@ def RunWestminhallFilters(text, sdate):
     FilterDebateColTime(si, text, sdate, "westminhall")
     text = si.getvalue()
     si.close()
+    text = FixExtraColNumParas(text)
 
     si = cStringIO.StringIO()
     FilterDebateSpeakers(si, text, sdate, "westminhall")
@@ -485,6 +493,7 @@ def RunLordsFilters(text, sdate):
         FilterLordsColtime(si, fourstream[0], sdate)
         text = si.getvalue()
         si.close()
+        text = FixExtraColNumParas(text)
         si = cStringIO.StringIO()
         LordsFilterSpeakers(si, text, sdate)
         text = si.getvalue()
@@ -501,6 +510,7 @@ def RunLordsFilters(text, sdate):
         FilterLordsColtime(si, text, sdate)
         text = si.getvalue()
         si.close()
+        text = FixExtraColNumParas(text)
         si = cStringIO.StringIO()
         LordsFilterSpeakers(si, text, sdate)
         text = si.getvalue()
@@ -519,6 +529,7 @@ def RunLordsFilters(text, sdate):
         FilterLordsColtime(si, text, sdate)
         text = si.getvalue()
         si.close()
+        text = FixExtraColNumParas(text)
         si = cStringIO.StringIO()
         LordsFilterSpeakers(si, text, sdate)
         text = si.getvalue()
