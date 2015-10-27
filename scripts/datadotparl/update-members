@@ -3,11 +3,16 @@
 # Grabs the latest members data from data.parliament XML and update accordingly.
 # Get data using crawl-datadotparl-members.py
 
+import argparse
 from collections import OrderedDict
 import json
 import re
 from lxml import etree
 from datetime import datetime
+
+parser = argparse.ArgumentParser(description='Fetch latest member data from data.parliament.uk')
+parser.add_argument('--verbose', action='store_true')
+ARGS = parser.parse_args()
 
 # Source XML files to use for the list of members
 source_files = [
@@ -22,6 +27,11 @@ etree.set_default_parser(parser)
 
 def slugify(s):
     return re.sub('[^\w ]', '', s).replace(' ', '-').lower()
+
+
+def verbose(s):
+    if ARGS.verbose:
+        print s
 
 
 class Popolo(object):
@@ -182,8 +192,8 @@ parl_member_ids = set()
 for source_file in source_files:
   parl_members_slim = parse('../../rawdata/datadotparl/' + source_file + '.xml', 'Members')
   parl_member_ids |= set(member.attrib['Member_Id'] for member in parl_members_slim)
-  print 'Found %d members from %s.xml.' % (len(parl_members_slim), source_file)
-print 'Total of %d distinct people.' % len(parl_member_ids)
+  verbose('Found %d members from %s.xml.' % (len(parl_members_slim), source_file))
+verbose('Total of %d distinct people.' % len(parl_member_ids))
 
 # Enrich the data!
 parl_members = dict()
@@ -203,7 +213,7 @@ for person in people_json['persons']:
     if i['scheme'] == 'datadotparl_id':
       person['datadotparl_id'] = i['identifier']
       people.append(person)
-print str(len(people)) + ' people with data.parliament ID.'
+verbose(str(len(people)) + ' people with data.parliament ID.')
 
 for person in people:
   parl_data = parl_members[person['datadotparl_id']]
@@ -218,8 +228,8 @@ for person in people:
   for position in positions.filter('Committee', name_is_dept=True):
     position.generate()
 
-print 'Done for ' + source_file + '.xml.'
+verbose('Done for all source files.')
 
 # Write out the updated ministers file
 popolo.output('../../members/ministers-2010.json')
-print 'ministers-2010.json updated!'
+verbose('ministers-2010.json updated!')

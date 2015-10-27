@@ -4,9 +4,14 @@
 # (http://data.parliament.uk/membersdataplatform/memberquery.aspx) and stores as
 # XML files, one per member.
 
+import argparse
 import os
 import urllib2
 import xml.etree.ElementTree as etree
+
+parser = argparse.ArgumentParser(description='Fetch latest member data from data.parliament.uk')
+parser.add_argument('--verbose', action='store_true')
+ARGS = parser.parse_args()
 
 source_urls = {
   'all-commons-2015-election': 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/membership=all|commonsmemberbetween=2015-03-01and2015-05-01/',
@@ -25,7 +30,12 @@ def write(url, fn):
   open(fn, 'w').write(data)
 
 
-print 'Update members XML from data.parliament'
+def verbose(s):
+    if ARGS.verbose:
+        print s
+
+
+verbose('Update members XML from data.parliament')
 
 member_ids = set()
 for source_type, parl_members_url in source_urls.items():
@@ -36,10 +46,10 @@ for source_type, parl_members_url in source_urls.items():
     raise Exception('Root tag is not "Members" as expected, got "%s".' % parl_members.tag)
   member_ids |= set(m.attrib['Member_Id'] for m in parl_members)
 
-  print 'Found %d members from %s.xml.' % (len(parl_members), source_type)
+  verbose('Found %d members from %s.xml.' % (len(parl_members), source_type))
 
 for member_id in member_ids:
   member_url = member_url_templ % member_id
   write(member_url, '%s/%s.xml' % (OUT_DIR, member_id))
 
-print 'Done!'
+verbose('Done!')
