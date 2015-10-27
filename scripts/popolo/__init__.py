@@ -105,5 +105,15 @@ class Popolo(object):
         id = max(p for p in self.persons.keys())
         return id
 
+    def _verify(self, coll):
+        seen = set()
+        dupe = [x['id'] for x in self.json[coll] if x['id'] in seen or seen.add(x['id'])]
+        assert len(dupe) == 0, 'Duplicate %s IDs: %s' % (coll, dupe)
+
+    def verify(self):
+        self._verify('persons')
+        self._verify('memberships')
+
     def dump(self):
+        self.verify()
         json.dump(self.json, open(JSON, 'w'), indent=2, sort_keys=True)
