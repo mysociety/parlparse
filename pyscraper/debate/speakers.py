@@ -165,6 +165,10 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
 			fout.write(fss.encode("latin-1"))
 			continue
 
+                if re.match('<b>([0-9]+[A-Z]+ .*|(&#8220;)?(CHAPTER|PART) [0-9]+[A-Z]*|[A-Z, ]+)</b>$', fss):
+		        fout.write(fss)
+                        continue
+
 		# speaker detection
 		speakerg = respeakervals.match(fss)
 		if speakerg:
