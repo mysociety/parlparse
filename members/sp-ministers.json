@@ -2198,6 +2198,7 @@
     "id": "scot.parliament.data/membergovernmentroles/202"
   }, 
   {
+    "end_date": "2015-08-31", 
     "start_date": "2014-12-18", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -2206,5 +2207,15 @@
       "uk.org.publicwhip/person/14057"
     ], 
     "id": "scot.parliament.data/membergovernmentroles/203"
+  }, 
+  {
+    "start_date": "2015-09-01", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for Children and Young People", 
+    "person_id": [
+      "uk.org.publicwhip/person/13966"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/204"
   }
 ]
