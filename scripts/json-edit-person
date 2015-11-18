@@ -6,6 +6,7 @@ import os
 import sys
 import tempfile
 from popolo import Popolo
+from popolo.menu import Menu
 
 
 def edit_file(edit_data):
@@ -28,20 +29,46 @@ def edit_file(edit_data):
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--name', required=True)
+parser.add_argument('--name')
+parser.add_argument('--id')
 ARGS = parser.parse_args()
 
 data = Popolo()
 
-person = data.get_person(name=ARGS.name)
-if len(person) != 1:
-    raise Exception('Did not get one person: %s' % person)
-person = person[0]
+if ARGS.id:
+    person = data.get_person(id=ARGS.id)
+elif ARGS.name:
+    person = data.get_person(name=ARGS.name)
+    if len(person) > 1:
+        opts = []
+        for p in person:
+            mships = sorted(data.memberships.of_person(p['id']), key=lambda x: x.get('end_date', '9999-12-31'), reverse=True)
+            if len(mships):
+                m = mships[0]
+                mship = '%s, %s-%s' % (m['id'], m['start_date'], m.get('end_date', ''))
+            else:
+                mship = ''
+            opts.append('%s (%s)' % (p['id'], mship))
+        menu = Menu(opts)
+        choice = menu.pick()
+        if choice is None:
+            raise Exception('Did not pick a person')
+        person = [person[choice]]
+    elif len(person) != 1:
+        raise Exception('Did not get one person: %s' % person)
+    person = person[0]
+else:
+    raise Exception('Must specify ID or name')
 
 mships = data.memberships.of_person(person['id'])
 
 edit_data = {
-    'max_lord_id': data.max_lord_id(),
+    '_max_ids': {
+        'lord': data.max_lord_id(),
+        'mp': data.max_mp_id(),
+        'msp': data.max_msp_id(),
+        'mla': data.max_mla_id(),
+    },
     'person': person,
     'memberships': list(mships),
 }
