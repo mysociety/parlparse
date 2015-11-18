@@ -137,7 +137,7 @@ class AttrDict(dict):
 
 class WrittenThing(object):
     def find_speaker(self, h, date):
-        name = h.a.text
+        name = h.a.text.strip()
         if ARGS.house == 'lords':
             # Loop through all, match on name and date
             person_id = MEMBERS_BY_NAME[re.sub('^the ', '', name.lower())]
