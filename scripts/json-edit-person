@@ -1,31 +1,9 @@
 #!/usr/bin/env python
 
 import argparse
-import json
-import os
 import sys
-import tempfile
 from popolo import Popolo
-from popolo.menu import Menu
-
-
-def edit_file(edit_data):
-    fp = tempfile.NamedTemporaryFile(delete=False)
-    json.dump(edit_data, fp, sort_keys=True, indent=2)
-    fp.close()
-    try:
-        while True:
-            os.system('vim "%s"' % fp.name)
-            with open(fp.name) as f:
-                try:
-                    new_edit_data = json.load(f)
-                    break
-                except ValueError as e:
-                    print "Bad JSON: %s" % e
-                    raw_input("Press Enter to continue...")
-    finally:
-        os.remove(fp.name)
-    return new_edit_data
+from popolo.utils import edit_file, get_person_from_name
 
 
 parser = argparse.ArgumentParser()
@@ -38,25 +16,7 @@ data = Popolo()
 if ARGS.id:
     person = data.get_person(id=ARGS.id)
 elif ARGS.name:
-    person = data.get_person(name=ARGS.name)
-    if len(person) > 1:
-        opts = []
-        for p in person:
-            mships = sorted(data.memberships.of_person(p['id']), key=lambda x: x.get('end_date', '9999-12-31'), reverse=True)
-            if len(mships):
-                m = mships[0]
-                mship = '%s, %s-%s' % (m['id'], m['start_date'], m.get('end_date', ''))
-            else:
-                mship = ''
-            opts.append('%s (%s)' % (p['id'], mship))
-        menu = Menu(opts)
-        choice = menu.pick()
-        if choice is None:
-            raise Exception('Did not pick a person')
-        person = [person[choice]]
-    elif len(person) != 1:
-        raise Exception('Did not get one person: %s' % person)
-    person = person[0]
+    person = get_person_from_name(ARGS.name, data)
 else:
     raise Exception('Must specify ID or name')
 

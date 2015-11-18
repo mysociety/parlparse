@@ -5,6 +5,7 @@ import fcntl
 import sys
 import os
 
+
 def read_single_keypress():
     fd = sys.stdin.fileno()
     oldflags = fcntl.fcntl(fd, fcntl.F_GETFL)
@@ -22,7 +23,7 @@ def read_single_keypress():
             except IOError:
                 if ret:
                     break
-    except KeyboardInterrupt: 
+    except KeyboardInterrupt:
         ret = None
     finally:
         # restore old state

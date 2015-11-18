@@ -1,0 +1,126 @@
+#!/usr/bin/env python
+
+import argparse
+import sys
+from popolo import Popolo
+from popolo.utils import edit_file, new_id, get_person_from_name
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--name')
+parser.add_argument('--id')
+parser.add_argument('--new', action='store_true')
+parser.add_argument(
+    '--type', required=True, choices=('lord', 'mp', 'msp', 'mla'))
+ARGS = parser.parse_args()
+
+if not (ARGS.id or ARGS.name or ARGS.new):
+    raise Exception('Must specify ID, name, or --new')
+
+data = Popolo()
+
+max_ids = {
+    'lord': data.max_lord_id(),
+    'mp': data.max_mp_id(),
+    'msp': data.max_msp_id(),
+    'mla': data.max_mla_id(),
+}
+new_mship_id = new_id(max_ids[ARGS.type])
+
+if ARGS.id:
+    person = data.get_person(id=ARGS.id)
+elif ARGS.name:
+    person = get_person_from_name(ARGS.name, data)
+
+mships = []
+if ARGS.new:
+    person_id = new_id(data.max_person_id())
+else:
+    mships = list(data.memberships.of_person(person['id']))
+    person_id = person['id']
+
+blank_name = {
+    'given_name': '',
+    'note': 'Main',
+}
+blank_mship = {
+    'id': new_mship_id,
+    'on_behalf_of_id': '',
+    'person_id': person_id,
+    'start_date': '',
+}
+
+if ARGS.type == 'lord':
+    blank_name.update({
+        'honorific_prefix': '',
+        'lordname': '',
+        'lordofname': '',
+        'lordofname_full': '',
+        'county': '',
+        'start_date': ''
+    })
+    blank_mship.update({
+        'identifiers': [{'identifier': 'L', 'scheme': 'peeragetype'}],
+        'label': 'Peer',
+        'role': 'Peer',
+        'organization_id': 'house-of-lords',
+    })
+    if not ARGS.new:
+        person['other_names'].append(blank_name)
+else:
+    blank_name.update({
+        'family_name': '',
+    })
+    blank_mship.update({
+        'post_id': '',
+        'start_reason': '',
+    })
+
+mships.append(blank_mship)
+if ARGS.new:
+    person = {
+        'id': person_id,
+        'other_names': [blank_name],
+    }
+
+edit_data = {
+    'person': person,
+    'memberships': mships,
+    '_meta': [
+        '*** Save an empty file to abort.'
+    ]
+}
+if ARGS.new:
+    edit_data['_meta'] = [
+        '*** Save an empty file, or leave any of start_date/ on_behalf_of_id/',
+        '*** family_name/ lordname/ lordofname blank to abort.'
+    ]
+
+new_edit_data = edit_file(edit_data)
+
+if not new_edit_data or edit_data == new_edit_data:
+    sys.exit()
+
+if ARGS.new:
+    name = new_edit_data['person']['other_names'][0]
+    mship = new_edit_data['memberships'][0]
+    if not mship['start_date'] or not mship['on_behalf_of_id']:
+        sys.exit()
+    if (ARGS.type == 'lord' and not name['lordname'] and not name['lordofname']) \
+            or (ARGS.type != 'lord' and not name['family_name']):
+        sys.exit()
+
+edit_mships = {m['id']: m for m in new_edit_data['memberships']}
+if ARGS.new:
+    data.add_person(new_edit_data['person'])
+else:
+    data.persons[person['id']].update(new_edit_data['person'])
+    for m in data.memberships:
+        if m['id'] in edit_mships:
+            m.update(edit_mships[m['id']])
+            del edit_mships[m['id']]
+
+for m in edit_mships.values():
+    data.add_membership(m)
+
+data.dump()
