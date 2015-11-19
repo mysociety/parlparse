@@ -89,6 +89,9 @@ class LordsList(ResolverBase):
         llordname = string.replace(llordname, ".", "")
         llordname = re.sub('&#(039|146|8217);', "'", llordname)
 
+        llordofname = llordofname.strip()
+        llordname = llordname.strip()
+
         # TODO: Need a Lords version of member-aliases.xml I guess
         if ltitle == "Bishop" and llordofname == "Southwell" and sdate>='2005-07-01':
             llordofname = "Southwell and Nottingham"
