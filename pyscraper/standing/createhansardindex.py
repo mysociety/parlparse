@@ -110,7 +110,7 @@ def GetReportProceedings(urlpage, year):
                                 sitting = int(msitting.group(1))
                         except:
                                 raise Exception, "Could not find sitting in %s for %s" % (lkname, urlpage)
-                        mdate = re.search('cmpublic/(.*?)/(\d\d)(\d\d)(\d\d)(?:/(am|pm))?/\d+s\d+(?:(?:part|p)(\d))?\.htm', lklk)
+                        mdate = re.search('cmpublic/(.*?)/(\d\d)(\d\d)(\d\d)(?:/(am|pm))?/(?:pt(\d)/)?\d+s\d+(?:(?:part|p|pt)(\d))?\.htm', lklk)
                         sdate = mx.DateTime.DateTimeFrom(
                                 year=2000+int(mdate.group(2)),
                                 month=int(mdate.group(3)),
@@ -126,6 +126,8 @@ def GetReportProceedings(urlpage, year):
                         part = 0
                         if mdate.group(6):
                             part = int(mdate.group(6))
+                        if mdate.group(7):
+                            part = int(mdate.group(7))
 
                         # In 2011, the Health and Social Care Bill 2010-11 started its sittings again at 1...
                         # We'll add 28 to all of these so they appear in the right order.
