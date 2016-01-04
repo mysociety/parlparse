@@ -124,6 +124,11 @@ def main():
                 m = re.search(r'jumpReport\(\'28862.aspx\?r=(\d+)', href)
                 if m:
                     report_ids.add(int(m.group(1), 10))
+
+        if not report_ids:
+            print "SP - No reports available at {0}".format(url)
+            return
+
         min_report_id = min(report_ids) - 20
         max_report_id = max(report_ids) + 20
         for report_id in range(min_report_id, max_report_id + 1):
