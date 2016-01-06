@@ -13,12 +13,18 @@ base_url = 'http://publicwhip.org.uk/data/popolo/'
 OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../parldata/scrapedjson/policy-motions')
 
 
+def urlopen(url):
+    request = urllib2.Request(url)
+    request.add_header('User-Agent', 'TheyWorkForYou/1.0')
+    return urllib2.urlopen(request)
+
+
 def write(url, fn):
-  data = urllib2.urlopen(url).read()
+  data = urlopen(url).read()
   open(fn, 'w').write(data)
 
 
-all_json = urllib2.urlopen(base_url).read()
+all_json = urlopen(base_url).read()
 soup = MinimalSoup(all_json)
 json_files = soup.findAll( href=re.compile("json") )
 
