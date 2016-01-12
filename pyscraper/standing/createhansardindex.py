@@ -90,6 +90,8 @@ def GetReportProceedings(urlpage, year):
         if year == "2014":
                 vdat = re.sub('(150115s01.htm">Committee Debate)( *</a>)', r'\1 1st sitting\2', vdat)
                 vdat = re.sub('(150204s01.htm">Committee Debate)( *</a>)', r'\1 1st sitting\2', vdat)
+        if year == "2015":
+                vdat = re.sub('(151216s01.htm">Committee Debate)( *</a>)', r'\1 1st sitting\2', vdat)
 
 	lks = re.findall('(?si)<a\s+href\s*=\s*"([^"]*)">(.*?)(?:</a>|<tr>|</table>)(?i)', vdat)
 	for lk in lks:
