@@ -13405,7 +13405,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10256", 
       "organization_id": "panel-of-chairs", 
-      "start_date": "2015-06-25"
+      "start_date": "2015-06-25", 
+      "end_date": "2016-01-11"
     }, 
     {
       "id": "uk.parliament.data/Member/415/Committee/111", 
@@ -19355,7 +19356,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10386", 
       "organization_id": "finance-bill-subcommittee", 
-      "start_date": "2014-01-08"
+      "start_date": "2014-01-08", 
+      "end_date": "2014-03-11"
     }, 
     {
       "id": "uk.parliament.data/Member/131/Committee/239", 
@@ -33610,7 +33612,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11003", 
       "organization_id": "armed-forces--bill-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2015-11-24"
     }, 
     {
       "id": "uk.parliament.data/Member/1438/Committee/5", 
@@ -33916,7 +33919,8 @@
       "role": "Shadow Spokesperson (Environment, Food and Rural Affairs)", 
       "person_id": "uk.org.publicwhip/person/11027", 
       "organization_id": "house-of-commons", 
-      "start_date": "2011-10-17"
+      "start_date": "2011-10-17", 
+      "end_date": "2014-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/1439/Committee/157", 
@@ -38111,6 +38115,14 @@
       "organization_id": "environment-food-and-rural-affairs-committee", 
       "start_date": "2010-07-12", 
       "end_date": "2010-12-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1486/OppositionPost/10", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Opposition Whip (Commons)", 
+      "person_id": "uk.org.publicwhip/person/11427", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-01-14"
     }, 
     {
       "id": "uk.parliament.data/Member/1486/OppositionPost/5", 
@@ -53303,7 +53315,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13114", 
       "organization_id": "finance-bill-subcommittee", 
-      "start_date": "2014-01-08"
+      "start_date": "2014-01-08", 
+      "end_date": "2014-03-11"
     }, 
     {
       "id": "uk.parliament.data/Member/1278/Committee/70", 
@@ -57513,7 +57526,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13222", 
       "organization_id": "finance-bill-subcommittee", 
-      "start_date": "2014-01-08"
+      "start_date": "2014-01-08", 
+      "end_date": "2014-03-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2732/Committee/230/2", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/13222", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2015-12-08"
     }, 
     {
       "id": "uk.parliament.data/Member/2732/Committee/249", 
@@ -58209,7 +58231,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13241", 
       "organization_id": "finance-bill-subcommittee", 
-      "start_date": "2014-01-08"
+      "start_date": "2014-01-08", 
+      "end_date": "2014-03-11"
     }, 
     {
       "id": "uk.parliament.data/Member/3561/Committee/264", 
@@ -63673,6 +63696,13 @@
       "end_date": "2011-10-17"
     }, 
     {
+      "id": "uk.parliament.data/Member/3708/Committee/230", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13443", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2015-12-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3708/Committee/256", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13443", 
@@ -64856,6 +64886,13 @@
       "organization_id": "barnett-formula-committee", 
       "start_date": "2008-12-10", 
       "end_date": "2009-11-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1141/Committee/230", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13473", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2015-12-08"
     }, 
     {
       "id": "uk.parliament.data/Member/1141/Committee/243", 
@@ -72863,6 +72900,13 @@
       "start_date": "2015-06-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/3758/Committee/230", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13716", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2015-12-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3758/Committee/284", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13716", 
@@ -73472,6 +73516,13 @@
       "end_date": "2008-11-26"
     }, 
     {
+      "id": "uk.parliament.data/Member/3789/Committee/230", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13732", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2015-12-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3789/Committee/258", 
       "source": "datadotparl/committee", 
       "role": "Chair", 
@@ -74023,7 +74074,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13881", 
       "organization_id": "finance-bill-subcommittee", 
-      "start_date": "2014-01-08"
+      "start_date": "2014-01-08", 
+      "end_date": "2014-03-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3809/Committee/230/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13881", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2015-12-08"
     }, 
     {
       "id": "uk.parliament.data/Member/3806/Committee/166", 
@@ -74077,7 +74136,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13882", 
       "organization_id": "finance-bill-subcommittee", 
-      "start_date": "2014-01-08"
+      "start_date": "2014-01-08", 
+      "end_date": "2014-03-11"
     }, 
     {
       "id": "uk.parliament.data/Member/3806/Committee/315", 
@@ -75012,7 +75072,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/14131", 
       "organization_id": "armed-forces--bill-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2015-11-24"
     }, 
     {
       "id": "uk.parliament.data/Member/3857/Committee/111", 
@@ -75484,7 +75545,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/19579", 
       "organization_id": "finance-bill-subcommittee", 
-      "start_date": "2014-01-08"
+      "start_date": "2014-01-08", 
+      "end_date": "2014-03-11"
     }, 
     {
       "id": "uk.parliament.data/Member/965/Committee/64", 
@@ -76011,7 +76073,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24716", 
       "organization_id": "armed-forces--bill-committee", 
-      "start_date": "2015-10-28"
+      "start_date": "2015-10-28", 
+      "end_date": "2015-11-24"
     }, 
     {
       "id": "uk.parliament.data/Member/3989/Committee/5", 
@@ -77227,12 +77290,12 @@
       "end_date": "2013-02-04"
     }, 
     {
-      "id": "uk.parliament.data/Member/4030/OppositionPost/1173", 
+      "id": "uk.parliament.data/Member/4030/OppositionPost/11", 
       "source": "datadotparl/oppositionpost", 
-      "role": "Shadow Solicitor General", 
+      "role": "Shadow Attorney General", 
       "person_id": "uk.org.publicwhip/person/24767", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-12-03"
+      "start_date": "2016-01-11"
     }, 
     {
       "id": "uk.parliament.data/Member/4030/OppositionPost/5", 
@@ -77242,6 +77305,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2013-01-11", 
       "end_date": "2015-09-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4030/OppositionPost/882", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Solicitor General", 
+      "person_id": "uk.org.publicwhip/person/24767", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2014-12-03"
     }, 
     {
       "id": "uk.parliament.data/Member/4053/Committee/145", 
@@ -78650,7 +78721,8 @@
       "role": "Shadow Attorney General", 
       "person_id": "uk.org.publicwhip/person/24818", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-09-14"
+      "start_date": "2015-09-14", 
+      "end_date": "2016-01-11"
     }, 
     {
       "id": "uk.parliament.data/Member/4125/OppositionPost/882", 
@@ -79422,7 +79494,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24847", 
       "organization_id": "armed-forces--bill-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2015-11-24"
     }, 
     {
       "id": "uk.parliament.data/Member/4013/OppositionPost/962", 
@@ -80681,7 +80754,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24898", 
       "organization_id": "armed-forces--bill-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2015-11-24"
     }, 
     {
       "id": "uk.parliament.data/Member/4049/Committee/83", 
@@ -81210,7 +81284,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24923", 
       "organization_id": "armed-forces--bill-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2015-11-24"
     }, 
     {
       "id": "uk.parliament.data/Member/4043/GovernmentPost/1015", 
@@ -82751,7 +82826,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24990", 
       "organization_id": "finance-bill-subcommittee", 
-      "start_date": "2014-01-08"
+      "start_date": "2014-01-08", 
+      "end_date": "2014-03-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4155/Committee/230/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24990", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2015-12-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4155/Committee/250", 
@@ -83214,6 +83297,13 @@
       "start_date": "2014-06-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/4186/Committee/230", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25014", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2015-12-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4190/Committee/294", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25016", 
@@ -83472,7 +83562,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25031", 
       "organization_id": "finance-bill-subcommittee", 
-      "start_date": "2014-01-08"
+      "start_date": "2014-01-08", 
+      "end_date": "2014-03-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4199/Committee/230/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25031", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2015-12-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4199/Committee/250", 
@@ -84882,7 +84980,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25196", 
       "organization_id": "finance-bill-subcommittee", 
-      "start_date": "2014-01-08"
+      "start_date": "2014-01-08", 
+      "end_date": "2014-03-11"
     }, 
     {
       "id": "uk.parliament.data/Member/4298/Committee/176", 
@@ -85605,11 +85704,20 @@
       "start_date": "2015-07-16"
     }, 
     {
+      "id": "uk.parliament.data/Member/4365/OppositionPost/1304", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Fair Work and Employment)", 
+      "person_id": "uk.org.publicwhip/person/25293", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-10-19"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4413/Committee/346", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25294", 
       "organization_id": "armed-forces--bill-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2015-11-24"
     }, 
     {
       "id": "uk.parliament.data/Member/4413/OppositionPost/1238", 
@@ -85653,7 +85761,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25298", 
       "organization_id": "armed-forces--bill-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2015-11-24"
     }, 
     {
       "id": "uk.parliament.data/Member/4363/Committee/351", 
@@ -85806,6 +85915,14 @@
       "person_id": "uk.org.publicwhip/person/25304", 
       "organization_id": "business-innovation-and-skills-committee", 
       "start_date": "2015-07-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4425/OppositionPost/882", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Solicitor General", 
+      "person_id": "uk.org.publicwhip/person/25304", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-01-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4425/OppositionPost/968", 
@@ -86149,6 +86266,14 @@
       "start_date": "2015-05-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/4417/OppositionPost/1305", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Devolved Government Relations)", 
+      "person_id": "uk.org.publicwhip/person/25336", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-20"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4411/Committee/203", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25337", 
@@ -86253,7 +86378,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25346", 
       "organization_id": "armed-forces--bill-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2015-11-24"
     }, 
     {
       "id": "uk.parliament.data/Member/4431/Committee/17", 
@@ -86355,7 +86481,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25354", 
       "organization_id": "armed-forces--bill-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2015-11-24"
     }, 
     {
       "id": "uk.parliament.data/Member/4460/Committee/83", 
@@ -86376,7 +86503,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25355", 
       "organization_id": "armed-forces--bill-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2015-11-24"
     }, 
     {
       "id": "uk.parliament.data/Member/4500/Committee/127", 
@@ -86490,6 +86618,14 @@
       "start_date": "2015-07-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/4515/OppositionPost/1172", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister for Women and Equalities", 
+      "person_id": "uk.org.publicwhip/person/25365", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-01-14"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4456/Committee/62", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25366", 
@@ -86590,6 +86726,14 @@
       "person_id": "uk.org.publicwhip/person/25375", 
       "organization_id": "consolidation-bills-joint-committee", 
       "start_date": "2015-11-09"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4394/OppositionPost/967", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (International Development)", 
+      "person_id": "uk.org.publicwhip/person/25375", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-01-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4366/Committee/171", 
@@ -86716,7 +86860,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25393", 
       "organization_id": "armed-forces--bill-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2015-11-24"
     }, 
     {
       "id": "uk.parliament.data/Member/4391/OppositionPost/10", 
@@ -86791,6 +86936,14 @@
       "start_date": "2015-05-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/4433/OppositionPost/958", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Culture, Media and Sport)", 
+      "person_id": "uk.org.publicwhip/person/25402", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-01-14"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4423/Committee/153", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25403", 
@@ -86861,7 +87014,16 @@
       "role": "Shadow SNP Westminster Group Leader (Fair Work and Employment)", 
       "person_id": "uk.org.publicwhip/person/25409", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-20"
+      "start_date": "2015-05-20", 
+      "end_date": "2015-10-19"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4486/OppositionPost/1223", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Westminster Group Leader (Business, Innovation and Skills)", 
+      "person_id": "uk.org.publicwhip/person/25409", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-10-19"
     }, 
     {
       "id": "uk.parliament.data/Member/4452/Committee/326", 
@@ -86910,7 +87072,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25415", 
       "organization_id": "armed-forces--bill-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2015-11-24"
     }, 
     {
       "id": "uk.parliament.data/Member/4379/Committee/69", 
@@ -87176,7 +87339,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25435", 
       "organization_id": "armed-forces--bill-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2015-11-24"
     }, 
     {
       "id": "uk.parliament.data/Member/4372/Committee/171", 
