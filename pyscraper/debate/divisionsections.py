@@ -25,6 +25,7 @@ housedivtxt = "The (?:House|Committee) (?:(?:having )?divided|proceeded to a Div
 rehousediv = re.compile('<p[^>]*>(?:<i>)?\s*%s(?:</i>|:|-)+ Ayes,? (\d+), Noes (\d+)\.</p>$' % housedivtxt)
 rehousediv_a = re.compile('<p[^>]*>(?:<i>)?\s*%s(?:</i>|:|-)+</p>$' % housedivtxt)
 rehousediv_b = re.compile('<p[^>]*>Ayes,? (\d+), Noes (\d+)\.</p>$')
+rehousediv_england = re.compile('<p[^>]*>(?:<i>)?Votes cast by Members for constituencies in England:(?:\s|</i>)*</p>$')
 
 foutdivisionreports = open(os.path.join(miscfuncs.tmppath, "divreport.html"), "w")
 #foutdivisionreports = None
@@ -185,6 +186,9 @@ def GrabDivisionProced(qbp, qbd):
 			elif rehousediv_a.match(two_prev):
 				qbp.stext = qbp.stext[:-3] + [ two_prev, qbp.stext[-1] ]
 				hdg = hdg_b
+	if not hdg:
+		if rehousediv_a.match(qbp.stext[-4]) and rehousediv_b.match(qbp.stext[-3]) and rehousediv_england.match(qbp.stext[-2]):
+			hdg = hdg_b
 	if not hdg:
 		hdg = redivshouldappear.match(qbp.stext[-1])
 	if not hdg:
