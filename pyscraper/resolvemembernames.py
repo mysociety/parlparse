@@ -333,10 +333,13 @@ class MemberList(ResolverBase):
                 ids = set([self.debatenamehistory[-1],])
 
 
-        # Special case - the AGforS is referred to as just the AG after first appearance
+        # Special cases when offices are referred to differently after first appearance
         office = input
         if office == "The Advocate-General":
             office = "The Advocate-General for Scotland"
+        if office in ("The First Deputy Chairman", "The Second Deputy Chairman", "The Chairman"):
+            office += " of Ways and Means"
+
         # Office name history ("The Deputy Prime Minster (John Prescott)" is later
         # referred to in the same day as just "The Deputy Prime Minister")
         officeids = self.debateofficehistory.get(office, None)
