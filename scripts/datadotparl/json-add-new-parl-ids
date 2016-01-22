@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import datetime
 import os
 import re
 import urllib2
@@ -31,7 +32,8 @@ source_file = os.path.join(cur_dir, '..', '..', 'rawdata', 'datadotparl', 'all-c
 parl_members = etree.parse(source_file).getroot()
 parl_members = {member.find('MemberFrom').text.lower(): member for member in parl_members}
 
-mships = [m for m in data.memberships.in_org('house_of_commons').on('2015-05-08') if m['person_id'] not in parl_ids]
+today = datetime.date.today().isoformat()
+mships = [m for m in data.memberships.in_org('house-of-commons').on(today) if m['person_id'] not in parl_ids]
 
 for m in mships:
     add_identifier(m['person_id'], data.posts[m['post_id']]['area']['name'].lower())
