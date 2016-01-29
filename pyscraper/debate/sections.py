@@ -392,7 +392,7 @@ def FilterDebateSections(text, sdate, typ):
 	        			flatb[-1].stext.extend(qbh.stext)
 
                                 elif qbh.typ == 'minor-heading' and len(flatb) > 0 and flatb[-1].typ == 'major-heading' and \
-                                    ( re.search('Allotted Day(?i)', qbh.stext[-1]) or re.search('^Petition$(?i)', flatb[-1].stext[-1]) ):
+                                    ( re.search('(Allotted|Allocated) Day(?i)', qbh.stext[-1]) or re.search('^Petition$(?i)', flatb[-1].stext[-1]) ):
                                         flatb[-1].stext.append(" &mdash; ")
                                         flatb[-1].stext.extend(qbh.stext)
 
