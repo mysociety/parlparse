@@ -184,7 +184,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         # <b> <b>Name</b> (Constituency) (Party):</b>
         text = re.sub('<b>\s*<b>([^<]*)</b>([^<]*)</b>', r'<b>\1\2</b>', text)
         # <b><b>Name bits:</b></b>
-        text = re.sub('<b>\s*(<b>[^<]*</b>\s*)</b>', r'\1', text)
+        text = re.sub('<b>\s*(<b>([^<]|<i>\s*\(Urgent Question\)\s*</i>)*</b>\s*)</b>', r'\1', text)
         # <p> <b>[</b> </p> <p> <b>TIME</b> </p>
         text = re.sub('<p>\s*<b>\[</b>\s*</p>\s*<p>\s*<b>([^<]*)</b>\s*</p>', r'<p> <b>[\1</b> </p>', text)
         # And have changed <center> to <span class="centred">

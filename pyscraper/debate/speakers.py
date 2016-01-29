@@ -143,7 +143,7 @@ def FilterDebateSpeakers(fout, text, sdate, typ):
                         text = text.replace(missingbold, bold)
 
         # Move Urgent Question out of speaker name
-        urgentqns = re.findall('(<p>(?:<stamp aname="[^"]+"/>)+)(<b>[^<]*?)(\s*<i>\s*\(Urgent Question\)</i>)(:</b>)(?i)', text)
+        urgentqns = re.findall('(<p>(?:<stamp aname="[^"]+"/>\s*)+)(<b>[^<]*?)(\s*<i>\s*\(Urgent Question\)</i>\s*)(:</b>)(?i)', text)
         for p1,p2,p3,p4 in urgentqns:
                 urgentqn = "%s%s%s%s" % (p1,p2,p3,p4)
                 correction = "%s%s%s%s" % (p1,p2,p4,p3)
