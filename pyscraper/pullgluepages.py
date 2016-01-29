@@ -97,7 +97,7 @@ def WriteCleanText(fout, text, url, date):
 
 		elif re.match('<a[^>]+>(?i)', ab):
                         # As of 2011-03-14, there might be a class="anchor" in here, which we can ignore
-			anamem = re.match('<a\s*(?:class\s*=\s*"anchor")?\s*name\s*?=\s*?"?(\S*?)"?\s*?/?>(?i)', ab)
+			anamem = re.match('<a\s*(?:class\s*=\s*"[^"]*")?\s*name\s*?=\s*?"?(\S*?)"?\s*?/?>(?i)', ab)
                         if anamem:
                                 aname = anamem.group(1)
                                 if not re.search('column', aname): # these get in the way

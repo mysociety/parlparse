@@ -194,6 +194,9 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
         # annoying double <b> round members rose text
         text = re.sub(r'<b><b>Several hon. Members </b>', '<b>Several hon. Members ', text)
 
+    if sdate >= '2016-01-01':
+        # Deal with big heading spotting aname appearing AFTER heading
+        text = re.sub('(<h3(?:(?!<h3).)*?)(<a name="ordayhd_\d">)', r'\2\1', text)
 
     (flatb, gidname) = FILTERfunction(text, sdate)
     for i in range(len(gidname)):

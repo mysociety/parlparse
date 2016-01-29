@@ -257,7 +257,7 @@ def NormalHeadingPart(headingtxt, stampurl, state, typ):
 		raise ContextException('in the chair match not precise enough', stamp=stampurl, fragment=headingtxt)
 
 	# Other major headings, marked by _head in their anchor tag
-	elif re.search('"topichd_|"hd_|_head', stampurl.aname):
+	elif re.search('"topichd_|"ordayhd_|"hd_|_head', stampurl.aname):
 		bmajorheading = True
 
         # Wah
