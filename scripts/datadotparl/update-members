@@ -3,6 +3,7 @@
 # Grabs the latest members data from data.parliament XML and update accordingly.
 # Get data using crawl-datadotparl-members.py
 
+import sys
 import argparse
 from collections import OrderedDict
 import json
@@ -216,7 +217,15 @@ for person in people_json['persons']:
 verbose(str(len(people)) + ' people with data.parliament ID.')
 
 for person in people:
-  parl_data = parl_members[person['datadotparl_id']]
+  try:
+    parl_data = parl_members[person['datadotparl_id']]
+  except KeyError:
+    sys.stderr.write(
+      "we have an ID for {0} but no matching file downloaded from data.parliament" \
+      .format(person['datadotparl_id'])
+    )
+    continue
+
   positions = Positions(parl_data, person)
 
   for position in positions.filter('GovernmentPost'):
