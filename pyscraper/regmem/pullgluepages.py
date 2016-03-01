@@ -168,8 +168,8 @@ def FindRegmemPages():
     ur.close()
 
     soup = BeautifulSoup.BeautifulSoup(content)
-    soup = [ table.find('table') for table in soup.findAll('table') if table.find('table') ]
-    ixurls = [urlparse.urljoin(idxurl, ix['href']) for ix in soup[0].findAll('a', href=True)]
+    soup = soup.find(id='content').find('ul')
+    ixurls = [urlparse.urljoin(idxurl, ix['href']) for ix in soup.findAll('a', href=True)]
 
     for ixurl in ixurls:
         ur = urllib.urlopen(ixurl)
@@ -195,7 +195,7 @@ def FindRegmemPages():
             if (date, ixurl) not in urls:
                 urls.append((date, ixurl))
         else:
-            allurl_soups = soup.findAll('a', href=re.compile("(memi02|part1contents)"))
+            allurl_soups = soup.findAll('a', href=re.compile("(memi02|part1contents|/contents\.htm)"))
             for url_soup in allurl_soups:
                 row_content = url_soup.findParent('tr').renderContents()
                 url = url_soup['href']
