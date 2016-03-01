@@ -64,7 +64,7 @@ print '</publicwhip>'
 
 wikimembers = set(wikimembers.keys())
 allmembers = set(memberList.list())
-for d in ('2004-01-01', '2007-01-10', '2011-01-01', '2015-01-01'):
+for d in ('2004-01-01', '2007-01-10', '2011-01-01', '2015-01-01', '2016-01-01'):
     allmembers |= set(memberList.list(d))
 
 symdiff = allmembers.symmetric_difference(wikimembers)
