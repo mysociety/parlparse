@@ -2839,6 +2839,13 @@
       "start_date": "2015-11-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/104/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10051", 
+      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "start_date": "2016-02-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/104/Committee/24", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10051", 
@@ -3346,7 +3353,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10057", 
       "organization_id": "high-speed-rail-london--west-midlands-bill-commons-committee", 
-      "start_date": "2014-04-29"
+      "start_date": "2014-04-29", 
+      "end_date": "2016-02-24"
     }, 
     {
       "id": "uk.parliament.data/Member/117/Committee/344", 
@@ -6852,7 +6860,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10119", 
       "organization_id": "high-speed-rail-london--west-midlands-bill-commons-committee", 
-      "start_date": "2015-07-07"
+      "start_date": "2015-07-07", 
+      "end_date": "2016-02-24"
     }, 
     {
       "id": "uk.parliament.data/Member/249/Committee/325", 
@@ -6971,6 +6980,13 @@
       "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/553/Committee/15/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10120", 
+      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "start_date": "2016-02-10"
     }, 
     {
       "id": "uk.parliament.data/Member/553/Committee/301", 
@@ -7981,7 +7997,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10141", 
       "organization_id": "high-speed-rail-london--west-midlands-bill-commons-committee", 
-      "start_date": "2015-07-07"
+      "start_date": "2015-07-07", 
+      "end_date": "2016-02-24"
     }, 
     {
       "id": "uk.parliament.data/Member/181/Committee/102", 
@@ -10333,6 +10350,13 @@
       "organization_id": "public-service-committee", 
       "start_date": "1996-10-23", 
       "end_date": "1997-03-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/474/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10190", 
+      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "start_date": "2016-02-10"
     }, 
     {
       "id": "uk.parliament.data/Member/474/Committee/152", 
@@ -13454,7 +13478,16 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10256", 
       "organization_id": "international-development-subcommittee-on-the-work-of-the-independent-commission-for-aid-impact", 
-      "start_date": "2015-07-14"
+      "start_date": "2015-07-14", 
+      "end_date": "2015-10-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/415/Committee/347/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10256", 
+      "organization_id": "international-development-subcommittee-on-the-work-of-the-independent-commission-for-aid-impact", 
+      "start_date": "2015-10-01", 
+      "end_date": "2016-01-27"
     }, 
     {
       "id": "uk.parliament.data/Member/415/Committee/78", 
@@ -13477,7 +13510,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10256", 
       "organization_id": "international-development-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-02-08"
     }, 
     {
       "id": "uk.parliament.data/Member/415/OppositionPost/878", 
@@ -17942,6 +17976,13 @@
       "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
       "start_date": "2014-11-03", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/54/Committee/15/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10358", 
+      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "start_date": "2016-02-10"
     }, 
     {
       "id": "uk.parliament.data/Member/54/Committee/162", 
@@ -24500,6 +24541,13 @@
       "end_date": "2010-05-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/166/Committee/11", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10523", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "2016-02-02"
+    }, 
+    {
       "id": "uk.parliament.data/Member/166/Committee/12", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10523", 
@@ -25877,6 +25925,13 @@
       "end_date": "2010-10-13"
     }, 
     {
+      "id": "uk.parliament.data/Member/318/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10558", 
+      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "start_date": "2016-02-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/318/Committee/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10558", 
@@ -27247,7 +27302,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10582", 
       "organization_id": "high-speed-rail-london--west-midlands-bill-commons-committee", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-02-24"
     }, 
     {
       "id": "uk.parliament.data/Member/245/Committee/36", 
@@ -27741,6 +27797,13 @@
       "organization_id": "consolidation-etc-bills-joint-committee", 
       "start_date": "1994-06-27", 
       "end_date": "1997-03-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/163/Committee/203", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10596", 
+      "organization_id": "education-committee", 
+      "start_date": "2016-02-01"
     }, 
     {
       "id": "uk.parliament.data/Member/163/GovernmentPost/115", 
@@ -28449,6 +28512,13 @@
       "organization_id": "public-accounts-committee", 
       "start_date": "1998-11-05", 
       "end_date": "1998-11-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/167/Committee/347", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10611", 
+      "organization_id": "international-development-subcommittee-on-the-work-of-the-independent-commission-for-aid-impact", 
+      "start_date": "2016-01-27"
     }, 
     {
       "id": "uk.parliament.data/Member/167/Committee/43", 
@@ -31077,7 +31147,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10682", 
       "organization_id": "high-speed-rail-london--west-midlands-bill-commons-committee", 
-      "start_date": "2015-07-07"
+      "start_date": "2015-07-07", 
+      "end_date": "2016-02-24"
     }, 
     {
       "id": "uk.parliament.data/Member/473/Committee/353", 
@@ -31488,7 +31559,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10726", 
       "organization_id": "high-speed-rail-london--west-midlands-bill-commons-committee", 
-      "start_date": "2014-04-29"
+      "start_date": "2014-04-29", 
+      "end_date": "2016-02-24"
     }, 
     {
       "id": "uk.parliament.data/Member/1441/Committee/51", 
@@ -36943,7 +37015,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11347", 
       "organization_id": "liaison-committee-commons", 
-      "start_date": "2015-09-10"
+      "start_date": "2015-09-10", 
+      "end_date": "2016-01-25"
     }, 
     {
       "id": "uk.parliament.data/Member/1476/Committee/126", 
@@ -36983,7 +37056,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/11347", 
       "organization_id": "environmental-audit-committee", 
-      "start_date": "2015-06-18"
+      "start_date": "2015-06-18", 
+      "end_date": "2016-01-25"
     }, 
     {
       "id": "uk.parliament.data/Member/1476/GovernmentPost/351", 
@@ -37289,6 +37363,13 @@
       "organization_id": "public-administration-committee", 
       "start_date": "2005-01-19", 
       "end_date": "2005-07-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1478/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11362", 
+      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "start_date": "2016-02-10"
     }, 
     {
       "id": "uk.parliament.data/Member/1478/Committee/352", 
@@ -37891,6 +37972,14 @@
       "start_date": "2012-09-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/1198/GovernmentPost/921", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Culture, Media and Sport", 
+      "person_id": "uk.org.publicwhip/person/11408", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-02-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1198/OppositionPost/10", 
       "source": "datadotparl/oppositionpost", 
       "role": "Opposition Whip (Commons)", 
@@ -38003,6 +38092,13 @@
       "organization_id": "procedure-committee", 
       "start_date": "2011-03-01", 
       "end_date": "2014-01-27"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1484/Committee/126/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11421", 
+      "organization_id": "procedure-committee", 
+      "start_date": "2016-02-01"
     }, 
     {
       "id": "uk.parliament.data/Member/1484/Committee/127", 
@@ -38134,7 +38230,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11427", 
       "organization_id": "northern-ireland-affairs-committee", 
-      "start_date": "2015-07-06"
+      "start_date": "2015-07-06", 
+      "end_date": "2016-02-01"
     }, 
     {
       "id": "uk.parliament.data/Member/1486/Committee/126", 
@@ -41347,6 +41444,13 @@
       "end_date": "2006-01-16"
     }, 
     {
+      "id": "uk.parliament.data/Member/1548/Committee/137", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11732", 
+      "organization_id": "committee-of-selection", 
+      "start_date": "2016-02-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1548/Committee/144", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11732", 
@@ -42332,6 +42436,13 @@
       "end_date": "2012-01-23"
     }, 
     {
+      "id": "uk.parliament.data/Member/1564/Committee/345", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11814", 
+      "organization_id": "environment-food-and-rural-affairs-subcommittee", 
+      "start_date": "2016-02-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1564/Committee/52", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11814", 
@@ -42963,6 +43074,13 @@
       "end_date": "2008-11-10"
     }, 
     {
+      "id": "uk.parliament.data/Member/1597/Committee/345", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11892", 
+      "organization_id": "environment-food-and-rural-affairs-subcommittee", 
+      "start_date": "2016-02-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1597/Committee/52", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11892", 
@@ -43040,6 +43158,13 @@
       "end_date": "2009-06-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/1579/Committee/103", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11898", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2016-02-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1579/Committee/165", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11898", 
@@ -43052,7 +43177,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11898", 
       "organization_id": "environmental-audit-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2016-02-10"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1579/Committee/62/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/11898", 
+      "organization_id": "environmental-audit-committee", 
+      "start_date": "2016-02-10"
     }, 
     {
       "id": "uk.parliament.data/Member/1579/Committee/77", 
@@ -43143,7 +43277,7 @@
     {
       "id": "uk.parliament.data/Member/1580/GovernmentPost/1134", 
       "source": "datadotparl/governmentpost", 
-      "role": "Minister of State (Culture Media and Sport) (Digital Industries) (Jointly with Department for Business, Innovation and Skills)", 
+      "role": "Minister of State for Culture and the Digital Economy (Jointly with Department for Business, Innovation and Skills)", 
       "person_id": "uk.org.publicwhip/person/11905", 
       "organization_id": "house-of-commons", 
       "start_date": "2014-07-15"
@@ -43151,7 +43285,7 @@
     {
       "id": "uk.parliament.data/Member/1580/GovernmentPost/1135", 
       "source": "datadotparl/governmentpost", 
-      "role": "Minister of State (Business, Innovation and Skills) (Digital Industries) (Jointly with Department for Culture Media and Sport)", 
+      "role": "Minister of State for Culture and the Digital Economy (Jointly with Department for Culture Media and Sport)", 
       "person_id": "uk.org.publicwhip/person/11905", 
       "organization_id": "house-of-commons", 
       "start_date": "2014-07-15"
@@ -46199,6 +46333,15 @@
       "end_date": "1980-11-13"
     }, 
     {
+      "id": "uk.parliament.data/Member/1729/ParliamentaryPost/955", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Principal Deputy Chairman of Committees", 
+      "person_id": "uk.org.publicwhip/person/12890", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1979-12-20", 
+      "end_date": "1982-11-03"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1885/GovernmentPost/25", 
       "source": "datadotparl/governmentpost", 
       "role": "Captain of the Queen's Bodyguard of the Yeoman of the Guard (HM Household) (Deputy Chief Whip, House of Lords) ", 
@@ -48945,6 +49088,24 @@
       "organization_id": "house-of-commons", 
       "start_date": "2002-11-13", 
       "end_date": "2012-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3493/ParliamentaryPost/955", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Principal Deputy Chairman of Committees", 
+      "person_id": "uk.org.publicwhip/person/12984", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2001-03-29", 
+      "end_date": "2002-11-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1618/ParliamentaryPost/955", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Principal Deputy Chairman of Committees", 
+      "person_id": "uk.org.publicwhip/person/12985", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1992-05-06", 
+      "end_date": "1994-11-02"
     }, 
     {
       "id": "uk.parliament.data/Member/3496/Committee/176", 
@@ -56942,6 +57103,13 @@
       "start_date": "2015-11-25"
     }, 
     {
+      "id": "uk.parliament.data/Member/3675/Committee/354", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13200", 
+      "organization_id": "trade-union-political-funds-and-political-party-funding-committee", 
+      "start_date": "2016-02-23"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3674/Committee/148", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13201", 
@@ -59744,7 +59912,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13281", 
       "organization_id": "trade-union-political-funds-and-political-party-funding-committee", 
-      "start_date": "2016-01-28"
+      "start_date": "2016-01-28", 
+      "end_date": "2016-02-23"
     }, 
     {
       "id": "uk.parliament.data/Member/1961/ParliamentaryPost/797", 
@@ -71412,6 +71581,15 @@
       "end_date": "2000-11-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/2684/ParliamentaryPost/955", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Principal Deputy Chairman of Committees", 
+      "person_id": "uk.org.publicwhip/person/13663", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1974-05-02", 
+      "end_date": "1974-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1126/Committee/137", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13664", 
@@ -72073,6 +72251,15 @@
       "organization_id": "bbc-charter-review-committee", 
       "start_date": "2005-05-24", 
       "end_date": "2006-11-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2125/ParliamentaryPost/955", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Principal Deputy Chairman of Committees", 
+      "person_id": "uk.org.publicwhip/person/13687", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1986-11-12", 
+      "end_date": "1992-03-16"
     }, 
     {
       "id": "uk.parliament.data/Member/2144/Committee/99", 
@@ -73992,6 +74179,13 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4131/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13864", 
+      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "start_date": "2016-02-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4131/Committee/24", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13864", 
@@ -74727,6 +74921,13 @@
       "organization_id": "justice-committee", 
       "start_date": "2007-11-06", 
       "end_date": "2010-01-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1604/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13934", 
+      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "start_date": "2016-02-10"
     }, 
     {
       "id": "uk.parliament.data/Member/1604/Committee/30", 
@@ -77220,6 +77421,13 @@
       "start_date": "2015-05-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/4109/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24760", 
+      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "start_date": "2016-02-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4109/Committee/347", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24760", 
@@ -78262,6 +78470,13 @@
       "end_date": "2011-10-31"
     }, 
     {
+      "id": "uk.parliament.data/Member/4018/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24796", 
+      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "start_date": "2016-02-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4018/Committee/347", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24796", 
@@ -78617,7 +78832,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24809", 
       "organization_id": "education-committee", 
-      "start_date": "2015-07-06"
+      "start_date": "2015-07-06", 
+      "end_date": "2016-02-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4048/Committee/301", 
@@ -78871,6 +79087,13 @@
       "organization_id": "political-and-constitutional-reform-committee", 
       "start_date": "2010-07-12", 
       "end_date": "2010-11-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4125/Committee/203", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24818", 
+      "organization_id": "education-committee", 
+      "start_date": "2016-02-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4125/OppositionPost/11", 
@@ -79673,6 +79896,13 @@
       "end_date": "2015-09-18"
     }, 
     {
+      "id": "uk.parliament.data/Member/4037/Committee/120", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24848", 
+      "organization_id": "northern-ireland-affairs-committee", 
+      "start_date": "2016-02-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4037/Committee/137", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24848", 
@@ -79693,14 +79923,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24848", 
       "organization_id": "statutory-instruments-joint-committee", 
-      "start_date": "2015-07-13"
+      "start_date": "2015-07-13", 
+      "end_date": "2016-02-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4037/Committee/149", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24848", 
       "organization_id": "statutory-instruments-select-committee", 
-      "start_date": "2015-07-13"
+      "start_date": "2015-07-13", 
+      "end_date": "2016-02-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4037/Committee/158", 
@@ -80051,7 +80283,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24857", 
       "organization_id": "international-development-subcommittee-on-the-work-of-the-independent-commission-for-aid-impact", 
-      "start_date": "2015-07-14"
+      "start_date": "2015-07-14", 
+      "end_date": "2015-10-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3958/Committee/347/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/24857", 
+      "organization_id": "international-development-subcommittee-on-the-work-of-the-independent-commission-for-aid-impact", 
+      "start_date": "2015-10-01"
     }, 
     {
       "id": "uk.parliament.data/Member/3958/Committee/93", 
@@ -81620,6 +81861,13 @@
       "end_date": "2012-01-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4119/Committee/9", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24929", 
+      "organization_id": "business-innovation-and-skills-committee", 
+      "start_date": "2016-02-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4119/OppositionPost/5", 
       "source": "datadotparl/oppositionpost", 
       "role": "Opposition Assistant Whip (Commons)", 
@@ -82168,7 +82416,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24953", 
       "organization_id": "committee-of-selection", 
-      "start_date": "2015-06-17"
+      "start_date": "2015-06-17", 
+      "end_date": "2016-02-10"
     }, 
     {
       "id": "uk.parliament.data/Member/4038/Committee/17", 
@@ -82338,6 +82587,14 @@
       "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4114/Committee/15/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/24959", 
+      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "start_date": "2016-02-10"
     }, 
     {
       "id": "uk.parliament.data/Member/4114/Committee/352", 
@@ -84714,12 +84971,26 @@
       "end_date": "2014-11-05"
     }, 
     {
+      "id": "uk.parliament.data/Member/4264/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25166", 
+      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "start_date": "2016-02-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4264/Committee/162", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25166", 
       "organization_id": "welsh-affairs-committee", 
       "start_date": "2012-11-26", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4264/Committee/98", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25166", 
+      "organization_id": "international-development-committee", 
+      "start_date": "2016-02-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4264/OppositionPost/10", 
@@ -84897,7 +85168,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25181", 
       "organization_id": "work-and-pensions-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-02-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4277/Committee/321", 
@@ -85060,7 +85332,7 @@
       "role": "Shadow Spokesperson (Business, Innovation and Skills)", 
       "person_id": "uk.org.publicwhip/person/25189", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-09-18"
+      "start_date": "2015-05-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4289/Committee/184", 
@@ -85755,6 +86027,13 @@
       "start_date": "2015-07-13"
     }, 
     {
+      "id": "uk.parliament.data/Member/4376/Committee/345", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25282", 
+      "organization_id": "environment-food-and-rural-affairs-subcommittee", 
+      "start_date": "2016-02-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4376/Committee/52", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25282", 
@@ -85929,6 +86208,13 @@
       "start_date": "2015-05-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/4359/Committee/162", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25297", 
+      "organization_id": "welsh-affairs-committee", 
+      "start_date": "2016-02-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4359/Committee/69", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25297", 
@@ -85940,7 +86226,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25298", 
       "organization_id": "education-committee", 
-      "start_date": "2015-07-06"
+      "start_date": "2015-07-06", 
+      "end_date": "2016-02-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4363/Committee/346", 
@@ -86100,7 +86387,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25304", 
       "organization_id": "business-innovation-and-skills-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-02-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4425/OppositionPost/882", 
@@ -86117,6 +86405,13 @@
       "person_id": "uk.org.publicwhip/person/25304", 
       "organization_id": "house-of-commons", 
       "start_date": "2016-01-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4402/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25305", 
+      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "start_date": "2016-02-10"
     }, 
     {
       "id": "uk.parliament.data/Member/4402/Committee/24", 
@@ -86322,6 +86617,13 @@
       "start_date": "2015-07-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/4368/Committee/164", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25326", 
+      "organization_id": "work-and-pensions-committee", 
+      "start_date": "2016-02-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4430/Committee/17", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25327", 
@@ -86392,7 +86694,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25332", 
       "organization_id": "welsh-affairs-committee", 
-      "start_date": "2015-07-13"
+      "start_date": "2015-07-13", 
+      "end_date": "2016-02-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4404/Committee/135", 
@@ -86538,6 +86841,13 @@
       "start_date": "2015-10-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/4358/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25342", 
+      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "start_date": "2016-02-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4358/Committee/98", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25342", 
@@ -86596,6 +86906,13 @@
       "start_date": "2015-07-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/4454/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25350", 
+      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "start_date": "2016-02-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4454/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25350", 
@@ -86622,6 +86939,13 @@
       "person_id": "uk.org.publicwhip/person/25351", 
       "organization_id": "justice-committee", 
       "start_date": "2015-07-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4422/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25352", 
+      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "start_date": "2016-02-10"
     }, 
     {
       "id": "uk.parliament.data/Member/4422/Committee/352", 
@@ -86740,6 +87064,13 @@
       "start_date": "2015-07-13"
     }, 
     {
+      "id": "uk.parliament.data/Member/4429/Committee/203", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25360", 
+      "organization_id": "education-committee", 
+      "start_date": "2016-02-22"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4390/Committee/326", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25361", 
@@ -86794,7 +87125,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25365", 
       "organization_id": "education-committee", 
-      "start_date": "2015-07-06"
+      "start_date": "2015-07-06", 
+      "end_date": "2016-02-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4515/Committee/326", 
@@ -86848,13 +87180,6 @@
       "person_id": "uk.org.publicwhip/person/25368", 
       "organization_id": "house-of-commons", 
       "start_date": "2015-09-18"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/4477/Committee/52", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/25369", 
-      "organization_id": "environment-food-and-rural-affairs-committee", 
-      "start_date": "2015-07-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4371/OppositionPost/1216", 
@@ -86957,6 +87282,20 @@
       "person_id": "uk.org.publicwhip/person/25379", 
       "organization_id": "energy-and-climate-change-committee", 
       "start_date": "2015-07-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4491/Committee/148", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25380", 
+      "organization_id": "statutory-instruments-joint-committee", 
+      "start_date": "2016-02-22"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4491/Committee/149", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25380", 
+      "organization_id": "statutory-instruments-select-committee", 
+      "start_date": "2016-02-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4491/OppositionPost/10", 
@@ -87489,6 +87828,13 @@
       "person_id": "uk.org.publicwhip/person/25433", 
       "organization_id": "house-of-commons", 
       "start_date": "2015-09-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4472/Committee/126", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25434", 
+      "organization_id": "procedure-committee", 
+      "start_date": "2016-02-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4472/Committee/62", 
