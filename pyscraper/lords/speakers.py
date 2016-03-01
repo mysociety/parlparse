@@ -25,9 +25,9 @@ respeakerb = re.compile('<b>\s*((?:<stamp aname="[^"]*"/>|</b><b>|[^<]+)*),?\s*<
 lord_parties = 'CB|Con|Lab|LD|Non-Afl|UUP|PC|UKIP|GP|DUP|(?:Lab|Con|LD|UU)[ ]Ind|Ind[ ](?:Lab|LD|SD|UU)'
 respeakervals = re.compile('''
     (?P<name>[^:(]*?)\s*
-    (?:\((?P<bracket>(?!%s|(?:Maiden|Valedictory)[ ][Ss]peech)[^:)]*)\)?)?
+    (?:\((?P<bracket>(?!%s|(?:Maiden|Valedictory)(?:[ ][Ss]peech)?)[^:)]*)\)?)?
     (?:\s*\((?:%s)\))?
-    (?P<maiden>\s*\((?:Maiden|Valedictory)[ ][Ss]peech\))?
+    (?P<maiden>\s*\((?:Maiden|Valedictory)(?:[ ][Ss]peech)?\))?
     (?P<colon>:)?:*
     \s*$(?x)''' % (lord_parties, lord_parties))
 
