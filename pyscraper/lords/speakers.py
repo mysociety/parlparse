@@ -31,7 +31,7 @@ respeakervals = re.compile('''
     (?P<colon>:)?:*
     \s*$(?x)''' % (lord_parties, lord_parties))
 
-renonspek = re.compile('division|contents|amendment|Commons disagreement and reason|Lords insistence and reason(?i)')
+renonspek = re.compile('division|contents|amendment|Commons disagreement and reason|Commons disagreement|Lords insistence and reason(?i)')
 reboldempty = re.compile('<b>\s*</b>(?i)')
 
 regenericspeak = re.compile('the (?:deputy )?chairman of committees|(?:the )?deputy speaker|the clerk of the parliaments|several noble lords|the deputy chairman(?: of committees)?|the noble lord said(?i)')
