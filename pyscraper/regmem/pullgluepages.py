@@ -179,6 +179,12 @@ def FindRegmemPages():
         # <B>14&nbsp;May&nbsp;2001&nbsp;(Dissolution)</B>
         content = content.replace("&nbsp;", " ")
 
+        # 2016-03-11 bad HTML, missing '<tr>'
+        content = re.sub(
+            "<td>\s*</td>\s*<td nowrap><b>Register of Members' Financial Interests - as at 7th March 2016</b></td>",
+            '<tr>\g<0>',
+            content)
+
         soup = BeautifulSoup.BeautifulSoup(content)
 
         if soup.find(text=re.compile('^Contents$(?i)')):
