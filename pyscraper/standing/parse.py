@@ -59,6 +59,7 @@ class StandingSoup(BeautifulSoup):
         (re.compile('</?center>'), lambda match: ''),
         (re.compile('&(nbsp|#160);'), lambda match: ''),
         (re.compile('<(B|b)>House of Commons</(B|b)>.*?<(BODY|body)>'),  lambda match: ''),
+        (re.compile('<p class="hs_TimeCode"/>'), lambda match: ''),
         
         # Unconverted formatting from the document's previous encoding
         (re.compile('(<(H|h)5>)(<<\d+>)'), lambda match: match.group(3) + match.group(1)),
@@ -1001,8 +1002,6 @@ class ParseCommittee:
                 elif tag.name == 'div' and tag.get('id', '') in ('content-small', 'maincontent1', 'mainTextBlock', 'titleBlock', 'titleBlockLinks'):
                     pass
                 elif tag.name == 'p' and cssClass == 'mainLinks':
-                    pass
-                elif tag.name == 'p' and cssClass == 'hs_TimeCode':
                     pass
                 elif cssClass in ('hs_2GenericHdg', 'hs_2cGenericHdg', 'hs_2DebatedMotion', 'hs_2BusinessWODebate') and re.match('(?i)(Column number: [0-9]+|\s)*Written evidence (to be )?reported to the House', ''.join(tag(text=True))):
                     self.display_para(tag, indent=True)
