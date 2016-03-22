@@ -1,0 +1,77 @@
+#!/usr/bin/env python
+
+import datetime
+import os
+import re
+import urllib2
+from lxml import etree
+from popolo import Popolo
+
+parser = etree.ETCompatXMLParser()
+etree.set_default_parser(parser)
+
+def add_identifier(pid, lookup):
+    pims_id = parl_members[lookup].attrib['Pims_Id']
+    print 'pims - %s (%s) => %s' % (pid, lookup, pims_id)
+    data.persons[pid].setdefault('identifiers', []).append({'scheme': 'pims_id', 'identifier': pims_id})
+
+
+data = Popolo()
+
+parl_ids = {}
+for person in data.persons.values():
+    for i in person.get('identifiers', []):
+        if i['scheme'] == 'datadotparl_id':
+            parl_ids[person['id']] = i['identifier']
+
+
+# Commons
+
+cur_dir = os.path.dirname(__file__)
+source_file = os.path.join(cur_dir, '..', '..', 'rawdata', 'datadotparl', 'all-current-commons.xml')
+parl_members = etree.parse(source_file).getroot()
+parl_members = {member.find('MemberFrom').text.lower(): member for member in parl_members}
+
+today = datetime.date.today().isoformat()
+mships = [m for m in data.memberships.in_org('house-of-commons').on(today)]
+
+for m in mships:
+    add_identifier(m['person_id'], data.posts[m['post_id']]['area']['name'].lower())
+
+
+# Lords
+
+def canon_name(n):
+    n = n.lower()
+    n = re.sub(' st\. +', ' st ', n)
+    n = re.sub('^the ', '', n)
+    return n
+
+LORDS_URL = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/membership=all|house=Lords/'
+parl_members = etree.parse(urllib2.urlopen(LORDS_URL)).getroot()
+parl_by_name = {}
+for member in parl_members:
+    end_date = member.find('HouseEndDate').text or ''
+    end_date = end_date.replace('T00:00:00', '')
+    if end_date and end_date < '1999-11-12': continue
+    name = canon_name(member.find('DisplayAs').text)
+    if member.attrib['Member_Id'] == '3877': end_date = '2010-07-31'  # Bishop of Bradford
+    if name == 'viscount oxfuird': name = 'viscount of oxfuird'
+    if name == 'lord grenfell': end_date = '2014-03-31'
+    #print (name, end_date)
+    parl_by_name[(name, end_date)] = member
+parl_members = parl_by_name
+
+mships = [m for m in data.memberships.in_org('house-of-lords')]
+mships_by_pid = {}
+for m in mships:
+    mships_by_pid.setdefault(m['person_id'], []).append(m)
+mships = []
+for pid, ms in mships_by_pid.items():
+    ms.sort(key=lambda x: x.get('end_date', '9999-12-31'), reverse=True)
+    mships.append(ms[0])
+
+for m in mships:
+    add_identifier(m['person_id'], (data.names[m['person_id']].lower(), m.get('end_date', '')))
+
+data.dump()
