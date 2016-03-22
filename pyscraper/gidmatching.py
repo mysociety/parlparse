@@ -35,16 +35,8 @@ def GetMinIndex(indx, a):
 	return i0
 
 
-
-# the difficult function that finds matches in the gids
-# we don't use an xml parsing feature because it transforms the text
-# Very hard use of difflib going on here too
-# We make great use of the indices of the different lists
-def FactorChanges(flatb, scrapeversion):
-	# quick break into the chunks
-	chks = re.findall("<(major-heading|minor-heading|oral-heading|speech|division|ques|reply)\s(.*?)>\n([\s\S]*?)\n</(major-heading|minor-heading|oral-heading|speech|division|ques|reply)>",
-					  scrapeversion)
-
+def PrepareXMLForDiff(scrapeversion):
+	chks = re.findall("<(major-heading|minor-heading|oral-heading|speech|division|ques|reply)\s(.*?)>\n?([\s\S]*?)\n?\s*</(major-heading|minor-heading|oral-heading|speech|division|ques|reply)>", scrapeversion)
 
 	# make identically structured huge string over the previous xml file with heading stuff stripped out
 	essxlist = [ ]
@@ -52,6 +44,12 @@ def FactorChanges(flatb, scrapeversion):
 	for chk in chks:
 		# print chk
 		assert chk[0] == chk[3]  # chunk type (this can fail if due to the lack of two \n's between the two labels, and thus detects an empty speech, which should not be there.  
+		# new_chk = chk[2]
+		new_chk = re.sub(
+			'(?s)(<p\s[^>]*>)(.*?)(<\/p>)',
+			lambda m: (u''.join((m.group(1), re.sub('\n', ' ', m.group(2)), m.group(3)))),
+			chk[2]
+		)
 		essxindx.append(len(essxlist))
 		essxlist.append("HEADING-" + chk[0])
 		speaker = re.search('nospeaker="true"|(?:speakerid|person_id)="[^"]*"', chk[1]).group(0)
@@ -59,10 +57,10 @@ def FactorChanges(flatb, scrapeversion):
 
 		if re.match("oral-heading|major-heading|minor-heading", chk[0]):
 			#assert not re.search("[<>]", chk[2])
-			heading = chk[2].strip()
+			heading = new_chk.strip()
 			essxlist.extend(heading.split())
 		else:
-			for ps in chk[2].split('\n'):
+			for ps in new_chk.split('\n'):
 				m = re.match("\s*<(?:p|tr)[^>]*>\s*(.*?)\s*</(?:p|tr)>\s*$", ps)
 				if m:
 					para = m.group(1)
@@ -73,7 +71,14 @@ def FactorChanges(flatb, scrapeversion):
 
 	essxindx.append(len(essxlist))
 	assert len(chks) + 1 == len(essxindx)
+	return essxindx, essxlist, chks
 
+# the difficult function that finds matches in the gids
+# we don't use an xml parsing feature because it transforms the text
+# Very hard use of difflib going on here too
+# We make great use of the indices of the different lists
+def FactorChanges(flatb, scrapeversion):
+	essxindx, essxlist, chks = PrepareXMLForDiff(scrapeversion)
 
 	# now make a huge string over the flatb with heading stuff stripped out
 	essflatblist = [ ]
@@ -105,8 +110,10 @@ def FactorChanges(flatb, scrapeversion):
 
 	# make parallel sequences to the flatb and to this which are stripped down to their essence
 	# so that the difflib can work on them
+	return DoFactorDiff(essflatbindx, essflatblist, essxindx, essxlist, chks, flatb)
 
 
+def DoFactorDiff(essflatbindx, essflatblist, essxindx, essxlist, chks, flatb):
 	# now apply the diffing function on this
 	sm = difflib.SequenceMatcher(None, essxlist, essflatblist)
 	smblocks = [ ((smb[0], smb[0] + smb[2]), (smb[1], smb[1] + smb[2]))  for smb in sm.get_matching_blocks()[:-1] ]

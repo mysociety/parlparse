@@ -428,11 +428,11 @@ def ProcessIndexUrl(url, dgf, forcescrape):
 
 	return urla, index_new
 
-def MakeDayMap(folder, typ):
+def MakeDayMap(folder, typ, basedir=pwcmdirs, extension='html'):
 	# make the output firectory
-	if not os.path.isdir(pwcmdirs):
-		os.mkdir(pwcmdirs)
-	pwcmfolder = os.path.join(pwcmdirs, folder)
+	if not os.path.isdir(basedir):
+		os.mkdir(basedir)
+	pwcmfolder = os.path.join(basedir, folder)
 	if not os.path.isdir(pwcmfolder):
 		os.mkdir(pwcmfolder)
 
@@ -442,7 +442,7 @@ def MakeDayMap(folder, typ):
 	# scan through the directory and make a mapping of all the copies for each
 	lddaymap = { }
 	for ldfile in os.listdir(pwcmfolder):
-		mnums = re.match("%s(\d{4}-\d\d-\d\d)([a-z]*)\.html$" % typ, ldfile)
+		mnums = re.match("%s(\d{4}-\d\d-\d\d)([a-z]*)\.%s$" % ( typ, extension ), ldfile)
 		if mnums:
 			sdate = mnums.group(1)
 			salpha = mnums.group(2)
@@ -453,7 +453,7 @@ def MakeDayMap(folder, typ):
 	return lddaymap, pwcmfolder
 
 
-def GetFileDayVersions(day, lddaymap, pwcmfolder, typ):
+def GetFileDayVersions(day, lddaymap, pwcmfolder, typ, extension='html'):
 	# make the filename
 	dgflatestalpha, dgflatest, dgflatestdayalpha = "", None, None
 	if day in lddaymap:
@@ -462,7 +462,7 @@ def GetFileDayVersions(day, lddaymap, pwcmfolder, typ):
 		dgflatest = os.path.join(pwcmfolder, ldgf[2])
 		dgflatestdayalpha = "%s%s" % (day, dgflatestalpha)
 	dgfnextalpha = NextAlphaString(dgflatestalpha)
-	ldgfnext = '%s%s%s.html' % (typ, day, dgfnextalpha)
+	ldgfnext = '%s%s%s.%s' % (typ, day, dgfnextalpha, extension)
 	dgfnext = os.path.join(pwcmfolder, ldgfnext)
 	dgfnextdayalpha = "%s%s" % (day, dgfnextalpha)
 	assert not dgflatest or os.path.isfile(dgflatest), '%s exists and is not a file?' % dgflatest
