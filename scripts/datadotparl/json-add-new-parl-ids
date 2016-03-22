@@ -15,6 +15,10 @@ def add_identifier(pid, lookup):
     print '%s (%s) => %s' % (pid, lookup, ddp_id)
     data.persons[pid].setdefault('identifiers', []).append({'scheme': 'datadotparl_id', 'identifier': ddp_id})
 
+    pims_id = parl_members[lookup].attrib['Pims_Id']
+    print 'pims - %s (%s) => %s' % (pid, lookup, ddp_id)
+    data.persons[pid].setdefault('identifiers', []).append({'scheme': 'pims_id', 'identifier': pims_id})
+
 
 data = Popolo()
 
