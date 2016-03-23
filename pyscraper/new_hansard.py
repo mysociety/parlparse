@@ -25,7 +25,8 @@ class ParseDayXML(object):
         'hs_3OralAnswers'
     ]
     major_headings = [
-        'hs_6bDepartment'
+        'hs_6bDepartment',
+        'hs_6bBigBoldHdg'
     ]
     minor_headings = [
         'hs_8Question'
