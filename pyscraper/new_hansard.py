@@ -112,6 +112,7 @@ class ParseDayXML(object):
         self.root.append(tag)
 
     def parse_major(self, heading):
+        self.clear_current_speech()
         tag = etree.Element('major-heading')
         text = u"".join(heading.xpath(".//text()"))
         tag.text = text
@@ -126,7 +127,6 @@ class ParseDayXML(object):
             )
         )
         self.root.append(tag)
-        self.clear_current_speech()
 
     def parse_minor(self, heading):
         tag = etree.Element('minor-heading')
