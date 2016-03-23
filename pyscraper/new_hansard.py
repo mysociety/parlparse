@@ -65,6 +65,32 @@ class ParseDayXML(object):
         if len(pi) == 1:
             self.parse_pi(pi[0])
 
+    def clear_current_speech(self):
+        if self.current_speech is not None:
+            self.root.append(self.current_speech)
+        self.current_speech_part = 1
+        self.current_speech_num = self.current_speech_num + 1
+        self.current_speech = None
+
+    def new_speech(self, member, url):
+        if self.current_speech is not None:
+            self.clear_current_speech()
+        self.current_speech = etree.Element('speech')
+        self.current_speech.set('id', self.get_speech_id())
+        if member is not None:
+            self.current_speech.set('person_id', member['person_id'])
+            self.current_speech.set('speakername', member['name'])
+        else:
+            self.current_speech.set('nospeaker', 'true')
+        self.current_speech.set('colnum', self.current_col)
+        self.current_speech.set('time', self.current_time)
+        self.current_speech.set(
+            'url',
+            'http://www.publications.parliament.uk{0}'.format(
+                url
+            )
+        )
+
     def parse_member(self, tag):
         member_tag = None
         if tag.tag == '{http://www.parliament.uk/commons/hansard/print}B':
@@ -100,6 +126,7 @@ class ParseDayXML(object):
             )
         )
         self.root.append(tag)
+        self.clear_current_speech()
 
     def parse_minor(self, heading):
         tag = etree.Element('minor-heading')
@@ -128,22 +155,9 @@ class ParseDayXML(object):
                 member = self.parse_member(tag)
 
         if member is not None:
-            if self.current_speech is not None:
-                self.current_speech_part = 1
-                self.root.append(self.current_speech)
-                self.current_speech_num = self.current_speech_num + 1
-            self.current_speech = etree.Element('speech')
-            self.current_speech.set('id', self.get_speech_id())
-            self.current_speech.set('person_id', member['person_id'])
-            self.current_speech.set('speakername', member['name'])
-            self.current_speech.set('colnum', self.current_col)
-            self.current_speech.set('time', self.current_time)
-            self.current_speech.set(
-                'url',
-                'http://www.publications.parliament.uk{0}'.format(
-                    para.get('url')
-                )
-            )
+            self.new_speech(member, para.get('url'))
+        elif self.current_speech is None:
+            self.new_speech(None, para.get('url'))
 
         tag = etree.Element('p')
         text = u"".join(para.xpath("./text()"))
