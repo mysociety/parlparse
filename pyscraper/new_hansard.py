@@ -26,10 +26,16 @@ class ParseDayXML(object):
     ]
     major_headings = [
         'hs_6bDepartment',
-        'hs_6bBigBoldHdg'
+        'hs_6bBigBoldHdg',
+        'hs_2cBillTitle',
+        'hs_2cGenericHdg',
+        'hs_2GenericHdg',
+        'hs_8Petition',
+        'hs_2cUrgentQuestion'
     ]
     minor_headings = [
-        'hs_8Question'
+        'hs_8Question',
+        'hs_2cDebatedMotion'
     ]
     root = etree.Element('publicwhip')
     ns = {'ns': 'http://www.parliament.uk/commons/hansard/print'}
