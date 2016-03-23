@@ -33,10 +33,36 @@ class ParseDayXML(object):
     root = etree.Element('publicwhip')
     ns = {'ns': 'http://www.parliament.uk/commons/hansard/print'}
 
+    debate_type = None
     current_speech = None
+    date = '2016-03-15'
+    rev = 'a'
     current_col = 0
-    current_speech_num = 1
+    current_speech_num = 0
     current_speech_part = 1
+    current_time = ''
+
+    def get_pid(self):
+        return '{0}{1}.{2}/{3}'.format(
+            self.rev,
+            self.current_col,
+            self.current_speech_num,
+            self.current_speech_part
+        )
+
+    def get_speech_id(self):
+        return 'uk.org.publicwhip/{0}/{1}{2}.{3}.{4}'.format(
+            self.debate_type,
+            self.date,
+            self.rev,
+            self.current_col,
+            self.current_speech_num
+        )
+
+    def check_for_pi(self, tag):
+        pi = tag.xpath('.//processing-instruction("notus-xml")')
+        if len(pi) == 1:
+            self.parse_pi(pi[0])
 
     def parse_member(self, tag):
         member = None
@@ -59,6 +85,16 @@ class ParseDayXML(object):
         tag = etree.Element('major-heading')
         text = u"".join(heading.xpath(".//text()"))
         tag.text = text
+        tag.set('id', self.get_speech_id())
+        tag.set('nospeaker', 'true')
+        tag.set('colnum', self.current_col)
+        tag.set('time', self.current_time)
+        tag.set(
+            'url',
+            'http://www.publications.parliament.uk{0}'.format(
+                heading.get('url')
+            )
+        )
         self.root.append(tag)
 
     def parse_minor(self, heading):
@@ -69,6 +105,8 @@ class ParseDayXML(object):
 
     def parse_question(self, question):
         tag = etree.Element('speech')
+        tag.set('id', self.get_speech_id())
+        tag.set('time', self.current_time)
 
         member = question.xpath('.//ns:Member', namespaces=self.ns)[0]
         member = self.parse_member(member)
@@ -89,27 +127,30 @@ class ParseDayXML(object):
             if self.current_speech is not None:
                 self.current_speech_part = 1
                 self.root.append(self.current_speech)
+                self.current_speech_num = self.current_speech_num + 1
             self.current_speech = etree.Element('speech')
             self.current_speech.set('person_id', member)
-            self.current_speech.set('id', "{0}.{1}".format(
-                self.current_col,
-                self.current_speech_num
-            ))
-            self.current_speech_num = self.current_speech_num + 1
+            self.current_speech.set('id', self.get_speech_id())
+            self.current_speech.set('colnum', self.current_col)
+            self.current_speech.set('time', self.current_time)
+            self.current_speech.set(
+                'url',
+                'http://www.publications.parliament.uk{0}'.format(
+                    para.get('url')
+                )
+            )
 
         tag = etree.Element('p')
         text = u"".join(para.xpath("./text()"))
         if len(text) == 0:
             return
 
-        tag.set('pid', '{0}.{1}/{2}'.format(
-            self.current_col,
-            self.current_speech_num,
-            self.current_speech_part
-        ))
+        tag.set('pid', self.get_pid())
         self.current_speech_part = self.current_speech_part + 1
         tag.text = text
+
         self.current_speech.append(tag)
+        self.check_for_pi(para)
 
     def parse_brev(self, brev):
         tag = etree.Element('p')
@@ -118,14 +159,14 @@ class ParseDayXML(object):
         if len(text) == 0:
             return
 
-        tag.set('pid', '{0}.{1}/{2}'.format(
-            self.current_col,
-            self.current_speech_num,
-            self.current_speech_part
-        ))
+        tag.set('pid', self.get_pid())
         self.current_speech_part = self.current_speech_part + 1
         tag.text = text
         self.current_speech.append(tag)
+
+    def parse_timeline(self, tag):
+        time = u''.join(tag.xpath('.//text()'))
+        self.current_time = time
 
     def parse_pi(self, pi):
         # you would think there is a better way to do this but I can't seem
@@ -135,7 +176,7 @@ class ParseDayXML(object):
         if matches is not None:
             col = matches.group(1)
             self.current_col = col
-            self.current_speech_num = 1
+            self.current_speech_num = 0
             self.current_speech_part = 1
 
     def parse_day(self, xml_file, out):
@@ -163,6 +204,8 @@ class ParseDayXML(object):
                     self.parse_para(tag)
                 elif tag_name == 'hs_brev':
                     self.parse_brev(tag)
+                elif tag_name == 'hs_Timeline':
+                    self.parse_timeline(tag)
                 elif type(tag) is etree._ProcessingInstruction:
                     self.parse_pi(tag)
                 else:
@@ -173,6 +216,7 @@ class ParseDay(object):
     def parse_day(self, fp, text, date):
         out = streamWriter(fp)
         parser = ParseDayXML()
+        parser.debate_type = 'debate'
         parser.parse_day(text, out)
         out.write(etree.tostring(parser.root))
 
