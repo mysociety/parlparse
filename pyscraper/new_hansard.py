@@ -129,7 +129,18 @@ class ParseDayXML(object):
         self.root.append(tag)
 
     def parse_minor(self, heading):
+        self.clear_current_speech()
         tag = etree.Element('minor-heading')
+        tag.set('id', self.get_speech_id())
+        tag.set('nospeaker', 'true')
+        tag.set('colnum', self.current_col)
+        tag.set('time', self.current_time)
+        tag.set(
+            'url',
+            'http://www.publications.parliament.uk{0}'.format(
+                heading.get('url')
+            )
+        )
         text = u"".join(heading.xpath("./text()"))
         tag.text = text
         self.root.append(tag)
