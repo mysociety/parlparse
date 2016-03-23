@@ -168,6 +168,55 @@ class ParseDayXML(object):
         tag.text = text
         self.current_speech.append(tag)
 
+    def parse_votelist(self, votes, direction, vote_list, is_teller=False):
+        for vote in votes:
+            tag = etree.Element('mpname')
+            member = self.parse_member(vote)
+            tag.set('person_id', member['person_id'])
+            tag.set('vote', direction)
+            if is_teller:
+                tag.set('teller', 'yes')
+            tag.text = member['name']
+            vote_list.append(tag)
+
+        return vote_list
+
+    def parse_division(self, division):
+        tag = etree.Element('division')
+
+        tag.set('id', self.get_speech_id())
+        tag.set('colnum', self.current_col)
+        tag.set('time', self.current_time)
+
+        ayes_count = division.xpath('.//ns:AyesNumber/text()', namespaces=self.ns)
+        noes_count = division.xpath('.//ns:NoesNumber/text()', namespaces=self.ns)
+
+        div_count = etree.Element('divisioncount')
+        div_count.set('ayes', u''.join(ayes_count))
+        div_count.set('noes', u''.join(noes_count))
+
+        tag.append(div_count)
+
+        ayes = division.xpath('.//ns:NamesAyes//ns:Member', namespaces=self.ns)
+        noes = division.xpath('.//ns:NamesNoes//ns:Member', namespaces=self.ns)
+
+        aye_tellers = division.xpath('.//ns:TellerNamesAyes//ns:Member', namespaces=self.ns)
+        noe_tellers = division.xpath('.//ns:TellerNamesNoes//ns:Member', namespaces=self.ns)
+
+        aye_list = etree.Element('mplist')
+        aye_list.set('vote', 'aye')
+        aye_list = self.parse_votelist(ayes, 'aye', aye_list)
+        aye_list = self.parse_votelist(aye_tellers, 'aye', aye_list, True)
+        tag.append(aye_list)
+
+        noe_list = etree.Element('mplist')
+        noe_list.set('vote', 'no')
+        noe_list = self.parse_votelist(noes, 'no', noe_list)
+        noe_list = self.parse_votelist(noe_tellers, 'no', noe_list, True)
+        tag.append(noe_list)
+
+        self.root.append(tag)
+
     def parse_timeline(self, tag):
         time = u''.join(tag.xpath('.//text()'))
         self.current_time = time
@@ -208,6 +257,8 @@ class ParseDayXML(object):
                     self.parse_para(tag)
                 elif tag_name == 'hs_brev':
                     self.parse_brev(tag)
+                elif tag_name == 'Division':
+                    self.parse_division(tag)
                 elif tag_name == 'hs_Timeline':
                     self.parse_timeline(tag)
                 elif type(tag) is etree._ProcessingInstruction:
