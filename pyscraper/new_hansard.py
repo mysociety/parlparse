@@ -177,7 +177,12 @@ class ParseDayXML(object):
             self.new_speech(None, para.get('url'))
 
         tag = etree.Element('p')
-        text = u"".join(para.xpath("./text()"))
+        # this makes the text fetching a bit easier
+        for m in para.xpath('.//ns:Member', namespaces=self.ns):
+            m.getparent().text = m.tail
+            m.getparent().remove(m)
+
+        text = u"".join(para.xpath(".//text()"))
         if len(text) == 0:
             return
 
@@ -191,7 +196,7 @@ class ParseDayXML(object):
     def parse_brev(self, brev):
         tag = etree.Element('p')
         tag.set('pwmotiontext', 'yes')
-        text = u"".join(brev.xpath("./text()"))
+        text = u"".join(brev.xpath(".//text()"))
         if len(text) == 0:
             return
 
