@@ -65,14 +65,17 @@ class ParseDayXML(object):
             self.parse_pi(pi[0])
 
     def parse_member(self, tag):
-        member = None
+        member_tag = None
         if tag.tag == '{http://www.parliament.uk/commons/hansard/print}B':
-            member = tag.xpath('.//ns:Member', namespaces=self.ns)[0]
+            member_tag = tag.xpath('.//ns:Member', namespaces=self.ns)[0]
         elif tag.tag == '{http://www.parliament.uk/commons/hansard/print}Member':
-            member = tag
+            member_tag = tag
 
-        if member is not None:
-            return member.get('ContinuationText')
+        if member_tag is not None:
+            member = {}
+            member['person_id'] = member_tag.get('PimsId')
+            member['name'] = u''.join(member_tag.xpath('.//text()'))
+            return member
 
         return None
 
@@ -111,7 +114,7 @@ class ParseDayXML(object):
         member = question.xpath('.//ns:Member', namespaces=self.ns)[0]
         member = self.parse_member(member)
         if member is not None:
-            tag.set('person_id', member)
+            tag.set('person_id', member['person_id'])
 
         text = question.xpath('.//ns:QuestionText/text()', namespaces=self.ns)
         tag.text = u''.join(text)
@@ -129,8 +132,9 @@ class ParseDayXML(object):
                 self.root.append(self.current_speech)
                 self.current_speech_num = self.current_speech_num + 1
             self.current_speech = etree.Element('speech')
-            self.current_speech.set('person_id', member)
             self.current_speech.set('id', self.get_speech_id())
+            self.current_speech.set('person_id', member['person_id'])
+            self.current_speech.set('speakername', member['name'])
             self.current_speech.set('colnum', self.current_col)
             self.current_speech.set('time', self.current_time)
             self.current_speech.set(
