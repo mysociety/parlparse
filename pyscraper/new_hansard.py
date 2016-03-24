@@ -14,13 +14,24 @@ import codecs
 streamWriter = codecs.lookup('utf-8')[-1]
 sys.stdout = streamWriter(sys.stdout)
 
+from resolvemembernames import MemberList
+
 parldata = '../../../parldata/'
 
 xml_parser = etree.XMLParser(ns_clean=True)
 etree.set_default_parser(xml_parser)
 
 
+class PimsList(MemberList):
+
+    def match_by_pims(self, pims_id):
+        match = self.pims.get(pims_id, None)
+        return match
+
+
 class ParseDayXML(object):
+    resolver = PimsList()
+
     type_to_xpath = {
         'debate': (
             '//ns:System[@type="Debate"]',
@@ -137,9 +148,11 @@ class ParseDayXML(object):
             member_tag = tag
 
         if member_tag is not None:
-            member = {}
-            member['person_id'] = member_tag.get('PimsId')
-            member['name'] = u''.join(member_tag.xpath('.//text()'))
+            if member_tag.get('PimsId') == '-1':
+                return None
+            member = self.resolver.match_by_pims(member_tag.get('PimsId'))
+            member['person_id'] = member.get('id')
+            member['name'] = self.resolver.name_on_date(member['person_id'], self.date)
             return member
 
         return None
