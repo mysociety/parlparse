@@ -30,12 +30,14 @@ class ParseDayXML(object):
         'hs_2cBillTitle',
         'hs_2cGenericHdg',
         'hs_2GenericHdg',
-        'hs_8Petition',
         'hs_2cUrgentQuestion'
     ]
     minor_headings = [
         'hs_8Question',
         'hs_2cDebatedMotion'
+    ]
+    ignored_tags = [
+        'hs_6bPetitions'
     ]
     root = etree.Element('publicwhip')
     ns = {'ns': 'http://www.parliament.uk/commons/hansard/print'}
@@ -165,6 +167,10 @@ class ParseDayXML(object):
         tag.text = u''.join(text)
         self.root.append(tag)
 
+    def parse_petition(self, petition):
+        petition.text = u'Petition - {0}'.format(petition.text)
+        self.parse_major(petition)
+
     def parse_para(self, para):
         member = None
         for tag in para:
@@ -290,6 +296,8 @@ class ParseDayXML(object):
                     self.parse_minor(tag)
                 elif tag_name == 'Question':
                     self.parse_question(tag)
+                elif tag_name == 'hs_8Petition':
+                    self.parse_petition(tag)
                 elif tag_name == 'hs_Para':
                     self.parse_para(tag)
                 elif tag_name == 'hs_brev':
@@ -300,6 +308,8 @@ class ParseDayXML(object):
                     self.parse_timeline(tag)
                 elif type(tag) is etree._ProcessingInstruction:
                     self.parse_pi(tag)
+                elif tag_name in self.ignored_tags:
+                    continue
                 else:
                     sys.stderr.write("no idea what to do with {0}\n".format(tag_name))
 
