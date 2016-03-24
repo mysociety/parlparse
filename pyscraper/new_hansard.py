@@ -1,11 +1,11 @@
 #! /usr/bin/env python
 
 import re
-import json
 import os
 import sys
 from lxml import etree
 import xml.sax
+import mx.DateTime
 xmlvalidate = xml.sax.make_parser()
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
@@ -75,7 +75,7 @@ class ParseDayXML(object):
 
     debate_type = None
     current_speech = None
-    date = '2016-03-15'
+    date = ''
     rev = 'a'
     current_col = 0
     current_speech_num = 0
@@ -139,6 +139,12 @@ class ParseDayXML(object):
             )
         )
 
+    def parse_system_header(self, header):
+        sitting = header.xpath('./ns:Sitting', namespaces=self.ns_map)[0]
+        date = mx.DateTime.DateTimeFrom(sitting.get('short-date')).date
+        if date:
+            self.date = date
+
     def parse_member(self, tag):
         member_tag = None
         tag_name = self.get_tag_name_no_ns(tag)
@@ -156,6 +162,46 @@ class ParseDayXML(object):
             return member
 
         return None
+
+    def parse_date(self, date):
+        text = u''.join(date.xpath(".//text()"))
+        time_parts = re.match('\s*the\s+house (?:being |having )?met at?\s+(.*?)$(?i)', text)
+        if time_parts:
+            time = time_parts.group(1)
+            time = re.sub('</?i>',' ', time)
+            time = re.sub('\s+',' ', time)
+            if re.match("half-past Nine(?i)", time):
+                    newtime = '09:30:00'
+            elif re.match("a quarter to Ten o(?i)", time):
+                    newtime = '09:45:00'
+            elif re.match("Ten o'clock(?i)", time):
+                    newtime = '10:00:00'
+            elif re.match("half-past Ten(?i)", time):
+                    newtime = '10:30:00'
+            elif re.match("Eleven o&#039;clock(?i)", time):
+                    newtime = '11:00:00'
+            elif re.match("twenty-five minutes past\s*Eleven(?i)", time):
+                    newtime = '11:25:00'
+            elif re.match("twenty-six minutes past\s*Eleven(?i)", time):
+                    newtime = '11:26:00'
+            elif re.match("twenty-nine minutes past\s*Eleven(?i)", time):
+                    newtime = '11:29:00'
+            elif re.match("half-past Eleven(?i)", time):
+                    newtime = '11:30:00'
+            elif re.match("Twelve noon(?i)", time):
+                    newtime = '12:00:00'
+            elif re.match("half-past One(?i)", time):
+                    newtime = '13:30:00'
+            elif re.match("half-past Two(?i)", time):
+                    newtime = '14:30:00'
+            elif re.match("twenty minutes to Three(?i)", time):
+                    newtime = '14:40:00'
+            elif re.match("10 minutes past Three(?i)", time):
+                    newtime = '15:10:00'
+            elif re.match("Six o'clock(?i)", time):
+                    newtime = '18:00:00'
+
+            self.time = newtime
 
     def parse_oral_heading(self, heading):
         tag = etree.Element('oral-heading')
@@ -347,6 +393,12 @@ class ParseDayXML(object):
             )
             sys.exit()
         self.current_col = commons[0].get('ColStart')
+
+        headers = commons[0].xpath(
+            './/ns:Fragment/ns:Header', namespaces=self.ns_map
+        )
+        self.parse_system_header(headers[0])
+
         body_tags = commons[0].xpath(
             './/ns:Fragment/ns:Body', namespaces=self.ns_map
         )
@@ -354,7 +406,9 @@ class ParseDayXML(object):
             for tag in b:
 
                 tag_name = self.get_tag_name_no_ns(tag)
-                if tag_name in self.oral_headings:
+                if tag_name == 'hs_6fDate':
+                    self.parse_date(tag)
+                elif tag_name in self.oral_headings:
                     self.parse_oral_heading(tag)
                 elif tag_name in self.major_headings:
                     self.parse_major(tag)
