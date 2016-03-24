@@ -193,7 +193,9 @@ class ParseDayXML(object):
         if member is not None:
             tag.set('person_id', member['person_id'])
 
-        text = question.xpath('.//ns:QuestionText/text()', namespaces=self.ns_map)
+        text = question.xpath(
+            './/ns:QuestionText/text()', namespaces=self.ns_map
+        )
         tag.text = u''.join(text)
         self.root.append(tag)
 
@@ -262,8 +264,10 @@ class ParseDayXML(object):
         tag.set('colnum', self.current_col)
         tag.set('time', self.current_time)
 
-        ayes_count = division.xpath('.//ns:AyesNumber/text()', namespaces=self.ns_map)
-        noes_count = division.xpath('.//ns:NoesNumber/text()', namespaces=self.ns_map)
+        ayes_count = \
+            division.xpath('.//ns:AyesNumber/text()', namespaces=self.ns_map)
+        noes_count = \
+            division.xpath('.//ns:NoesNumber/text()', namespaces=self.ns_map)
 
         div_count = etree.Element('divisioncount')
         div_count.set('ayes', u''.join(ayes_count))
@@ -271,11 +275,19 @@ class ParseDayXML(object):
 
         tag.append(div_count)
 
-        ayes = division.xpath('.//ns:NamesAyes//ns:Member', namespaces=self.ns_map)
-        noes = division.xpath('.//ns:NamesNoes//ns:Member', namespaces=self.ns_map)
+        ayes = division.xpath(
+            './/ns:NamesAyes//ns:Member', namespaces=self.ns_map
+        )
+        noes = division.xpath(
+            './/ns:NamesNoes//ns:Member', namespaces=self.ns_map
+        )
 
-        aye_tellers = division.xpath('.//ns:TellerNamesAyes//ns:Member', namespaces=self.ns_map)
-        noe_tellers = division.xpath('.//ns:TellerNamesNoes//ns:Member', namespaces=self.ns_map)
+        aye_tellers = division.xpath(
+            './/ns:TellerNamesAyes//ns:Member', namespaces=self.ns_map
+        )
+        noe_tellers = division.xpath(
+            './/ns:TellerNamesNoes//ns:Member', namespaces=self.ns_map
+        )
 
         aye_list = etree.Element('mplist')
         aye_list.set('vote', 'aye')
@@ -313,14 +325,19 @@ class ParseDayXML(object):
 
         xml = etree.parse(xml_file).getroot()
         commons = xml.xpath(
-            root_xpath,
-            namespaces=self.ns_map
+            root_xpath, namespaces=self.ns_map
         )
         if len(commons) == 0:
-            sys.stderr.write('Failed to find any debates of type {0}'.format(self.debate_type))
+            sys.stderr.write(
+                'Failed to find any debates of type {0}'
+                .format(self.debate_type)
+            )
             sys.exit()
         self.current_col = commons[0].get('ColStart')
-        for b in commons[0].xpath('.//ns:Fragment/ns:Body', namespaces=self.ns_map):
+        body_tags = commons[0].xpath(
+            './/ns:Fragment/ns:Body', namespaces=self.ns_map
+        )
+        for b in body_tags:
             for tag in b:
 
                 tag_name = self.get_tag_name_no_ns(tag)
@@ -347,7 +364,9 @@ class ParseDayXML(object):
                 elif tag_name in self.ignored_tags:
                     continue
                 else:
-                    sys.stderr.write("no idea what to do with {0}\n".format(tag_name))
+                    sys.stderr.write(
+                        "no idea what to do with {0}\n".format(tag_name)
+                    )
 
 
 class ParseDay(object):
