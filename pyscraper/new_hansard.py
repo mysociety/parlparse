@@ -21,6 +21,25 @@ etree.set_default_parser(xml_parser)
 
 
 class ParseDayXML(object):
+    type_to_xpath = {
+        'debate': (
+            '//ns:System[@type="Debate"]',
+            'http://www.parliament.uk/commons/hansard/print'
+        ),
+        'westhall': (
+            '//ns:System[@type="WestHall"]',
+            'http://www.parliament.uk/commons/hansard/print'
+        ),
+        'lords': (
+            '//ns:System[@type="Debate"]',
+            'http://www.parliament.uk/lords/hansard/print'
+        ),
+        'pbc': (
+            '//ns:System[@type="Debate"]',
+            'http://www.parliament.uk/commons/hansard/print'
+        ),
+    }
+
     oral_headings = [
         'hs_3OralAnswers'
     ]
@@ -40,7 +59,8 @@ class ParseDayXML(object):
         'hs_6bPetitions'
     ]
     root = etree.Element('publicwhip')
-    ns = {'ns': 'http://www.parliament.uk/commons/hansard/print'}
+    ns = ''
+    ns_map = {}
 
     debate_type = None
     current_speech = None
@@ -50,6 +70,15 @@ class ParseDayXML(object):
     current_speech_num = 0
     current_speech_part = 1
     current_time = ''
+
+    def get_tag_name_no_ns(self, tag):
+        # remove annoying namespace for brevities sake
+        tag_name = str(tag.tag)
+        tag_name = tag_name.replace(
+            '{{{0}}}'.format(self.ns),
+            ''
+        )
+        return tag_name
 
     def get_pid(self):
         return '{0}{1}.{2}/{3}'.format(
@@ -101,9 +130,10 @@ class ParseDayXML(object):
 
     def parse_member(self, tag):
         member_tag = None
-        if tag.tag == '{http://www.parliament.uk/commons/hansard/print}B':
-            member_tag = tag.xpath('.//ns:Member', namespaces=self.ns)[0]
-        elif tag.tag == '{http://www.parliament.uk/commons/hansard/print}Member':
+        tag_name = self.get_tag_name_no_ns(tag)
+        if tag_name == 'B':
+            member_tag = tag.xpath('.//ns:Member', namespaces=self.ns_map)[0]
+        elif tag_name == 'Member':
             member_tag = tag
 
         if member_tag is not None:
@@ -158,12 +188,12 @@ class ParseDayXML(object):
         tag.set('id', self.get_speech_id())
         tag.set('time', self.current_time)
 
-        member = question.xpath('.//ns:Member', namespaces=self.ns)[0]
+        member = question.xpath('.//ns:Member', namespaces=self.ns_map)[0]
         member = self.parse_member(member)
         if member is not None:
             tag.set('person_id', member['person_id'])
 
-        text = question.xpath('.//ns:QuestionText/text()', namespaces=self.ns)
+        text = question.xpath('.//ns:QuestionText/text()', namespaces=self.ns_map)
         tag.text = u''.join(text)
         self.root.append(tag)
 
@@ -174,7 +204,8 @@ class ParseDayXML(object):
     def parse_para(self, para):
         member = None
         for tag in para:
-            if tag.tag == '{http://www.parliament.uk/commons/hansard/print}B' or tag.tag == '{http://www.parliament.uk/commons/hansard/print}Member':
+            tag_name = self.get_tag_name_no_ns(tag)
+            if tag_name == 'B' or tag_name == 'Member':
                 member = self.parse_member(tag)
 
         if member is not None:
@@ -184,7 +215,7 @@ class ParseDayXML(object):
 
         tag = etree.Element('p')
         # this makes the text fetching a bit easier
-        for m in para.xpath('.//ns:Member', namespaces=self.ns):
+        for m in para.xpath('.//ns:Member', namespaces=self.ns_map):
             m.getparent().text = m.tail
             m.getparent().remove(m)
 
@@ -231,8 +262,8 @@ class ParseDayXML(object):
         tag.set('colnum', self.current_col)
         tag.set('time', self.current_time)
 
-        ayes_count = division.xpath('.//ns:AyesNumber/text()', namespaces=self.ns)
-        noes_count = division.xpath('.//ns:NoesNumber/text()', namespaces=self.ns)
+        ayes_count = division.xpath('.//ns:AyesNumber/text()', namespaces=self.ns_map)
+        noes_count = division.xpath('.//ns:NoesNumber/text()', namespaces=self.ns_map)
 
         div_count = etree.Element('divisioncount')
         div_count.set('ayes', u''.join(ayes_count))
@@ -240,11 +271,11 @@ class ParseDayXML(object):
 
         tag.append(div_count)
 
-        ayes = division.xpath('.//ns:NamesAyes//ns:Member', namespaces=self.ns)
-        noes = division.xpath('.//ns:NamesNoes//ns:Member', namespaces=self.ns)
+        ayes = division.xpath('.//ns:NamesAyes//ns:Member', namespaces=self.ns_map)
+        noes = division.xpath('.//ns:NamesNoes//ns:Member', namespaces=self.ns_map)
 
-        aye_tellers = division.xpath('.//ns:TellerNamesAyes//ns:Member', namespaces=self.ns)
-        noe_tellers = division.xpath('.//ns:TellerNamesNoes//ns:Member', namespaces=self.ns)
+        aye_tellers = division.xpath('.//ns:TellerNamesAyes//ns:Member', namespaces=self.ns_map)
+        noe_tellers = division.xpath('.//ns:TellerNamesNoes//ns:Member', namespaces=self.ns_map)
 
         aye_list = etree.Element('mplist')
         aye_list.set('vote', 'aye')
@@ -276,18 +307,23 @@ class ParseDayXML(object):
             self.current_speech_part = 1
 
     def parse_day(self, xml_file, out):
+        self.ns = self.type_to_xpath[self.debate_type][1]
+        self.ns_map = {'ns': self.ns}
+        root_xpath = self.type_to_xpath[self.debate_type][0]
+
         xml = etree.parse(xml_file).getroot()
-        commons = xml.xpath('//ns:System[@type="Debate"]', namespaces=self.ns)
+        commons = xml.xpath(
+            root_xpath,
+            namespaces=self.ns_map
+        )
+        if len(commons) == 0:
+            sys.stderr.write('Failed to find any debates of type {0}'.format(self.debate_type))
+            sys.exit()
         self.current_col = commons[0].get('ColStart')
-        for b in commons[0].xpath('.//ns:Fragment/ns:Body', namespaces=self.ns):
+        for b in commons[0].xpath('.//ns:Fragment/ns:Body', namespaces=self.ns_map):
             for tag in b:
 
-                # remove annoying namespace for brevities sake
-                tag_name = str(tag.tag)
-                tag_name = tag_name.replace(
-                    '{http://www.parliament.uk/commons/hansard/print}',
-                    ''
-                )
+                tag_name = self.get_tag_name_no_ns(tag)
                 if tag_name in self.oral_headings:
                     self.parse_oral_heading(tag)
                 elif tag_name in self.major_headings:
@@ -315,10 +351,20 @@ class ParseDayXML(object):
 
 
 class ParseDay(object):
-    def parse_day(self, fp, text, date):
+    valid_types = [
+        'debate',
+        'westhall',
+        'lords',
+        'pbc'
+    ]
+
+    def parse_day(self, fp, text, date, debate_type):
+        if debate_type not in self.valid_types:
+            sys.stderr.write('{0} not a valid type'.format(debate_type))
+            sys.exit()
         out = streamWriter(fp)
         parser = ParseDayXML()
-        parser.debate_type = 'debate'
+        parser.debate_type = debate_type
         parser.parse_day(text, out)
         out.write(etree.tostring(parser.root))
 
@@ -326,5 +372,6 @@ class ParseDay(object):
 if __name__ == '__main__':
     fp = sys.stdout
     xml_file = codecs.open(sys.argv[1], encoding='utf-8')
+    house = sys.argv[2]
     date = os.path.basename(sys.argv[1])[2:12]
-    ParseDay().parse_day(fp, xml_file, date)
+    ParseDay().parse_day(fp, xml_file, date, house)
