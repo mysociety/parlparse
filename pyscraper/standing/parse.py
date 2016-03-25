@@ -799,13 +799,15 @@ class ParseCommittee:
             bracket = self.split_on_caps(bracket)
         
         # questions are now part of the para
-        mQuestion = re.match('(Q\s*?\d+)\s*(.*)', speaker)
+        mQuestion = re.match('(Q\s*?(\d*))\s*(.*)', speaker)
         if mQuestion:
             question = mQuestion.group(1)
-            speaker = mQuestion.group(2)
-            self.close_speech()
-            self.display_speech_tag()
-            self.out.write('<p>%s</p>\n' % (question))
+            qnum = mQuestion.group(2)
+            speaker = mQuestion.group(3)
+            if qnum:
+                self.close_speech()
+                self.display_speech_tag()
+                self.out.write('<p>%s</p>\n' % (question))
         speaker = self.split_on_caps(speaker)
         return (speaker, bracket,text)
     
