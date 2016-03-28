@@ -9,12 +9,14 @@ import mx.DateTime
 xmlvalidate = xml.sax.make_parser()
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(os.path.join(os.path.dirname(__file__), 'lords'))
 
 import codecs
 streamWriter = codecs.lookup('utf-8')[-1]
 sys.stdout = streamWriter(sys.stdout)
 
 from resolvemembernames import MemberList
+from resolvenames import LordsList
 
 parldata = '../../../parldata/'
 
@@ -29,7 +31,14 @@ class PimsList(MemberList):
         return match
 
 
-class ParseDayXML(object):
+class LordsPimsList(LordsList):
+
+    def match_by_pims(self, pims_id):
+        match = self.pims.get(pims_id, None)
+        return match
+
+
+class BaseParseDayXML(object):
     resolver = PimsList()
 
     type_to_xpath = {
@@ -60,11 +69,16 @@ class ParseDayXML(object):
         'hs_2cBillTitle',
         'hs_2cGenericHdg',
         'hs_2GenericHdg',
-        'hs_2cUrgentQuestion'
+        'hs_2cUrgentQuestion',
+        'hs_2cWestHallDebate',
+        'hs_2DebBill',
     ]
     minor_headings = [
         'hs_8Question',
         'hs_2cDebatedMotion'
+    ]
+    paras = [
+        'hs_Para',
     ]
     ignored_tags = [
         'hs_6bPetitions'
@@ -157,9 +171,12 @@ class ParseDayXML(object):
             if member_tag.get('PimsId') == '-1':
                 return None
             member = self.resolver.match_by_pims(member_tag.get('PimsId'))
-            member['person_id'] = member.get('id')
-            member['name'] = self.resolver.name_on_date(member['person_id'], self.date)
-            return member
+            if member is not None:
+                member['person_id'] = member.get('id')
+                member['name'] = self.resolver.name_on_date(member['person_id'], self.date)
+                return member
+            else:
+                sys.stderr.write('No match for PimsId {0}'.format(member_tag.get('PimsId')))
 
         return None
 
@@ -208,11 +225,18 @@ class ParseDayXML(object):
         tag.text = heading.text
         self.root.append(tag)
 
-    def parse_major(self, heading):
+    def parse_major(self, heading, **kwargs):
         self.clear_current_speech()
         tag = etree.Element('major-heading')
         text = u"".join(heading.xpath(".//text()"))
         tag.text = text
+
+        if 'extra_text' in kwargs:
+            tag.text = u'{0} - '.format(tag.text)
+            i = etree.Element('i')
+            i.text = kwargs['extra_text']
+            tag.append(i)
+
         tag.set('id', self.get_speech_id())
         tag.set('nospeaker', 'true')
         tag.set('colnum', self.current_col)
@@ -262,13 +286,7 @@ class ParseDayXML(object):
         petition.text = u'Petition - {0}'.format(petition.text)
         self.parse_major(petition)
 
-    def parse_para(self, para):
-        member = None
-        for tag in para:
-            tag_name = self.get_tag_name_no_ns(tag)
-            if tag_name == 'B' or tag_name == 'Member':
-                member = self.parse_member(tag)
-
+    def parse_para_with_member(self, para, member, **kwargs):
         if member is not None:
             self.new_speech(member, para.get('url'))
         elif self.current_speech is None:
@@ -285,11 +303,24 @@ class ParseDayXML(object):
             return
 
         tag.set('pid', self.get_pid())
+        if 'css_class' in kwargs:
+            tag.set('class', kwargs['css_class'])
+        if 'pwmotiontext' in kwargs:
+            tag.set('pwmotiontext', kwargs['pwmotiontext'])
         self.current_speech_part = self.current_speech_part + 1
         tag.text = text
 
         self.current_speech.append(tag)
         self.check_for_pi(para)
+
+    def parse_para(self, para):
+        member = None
+        for tag in para:
+            tag_name = self.get_tag_name_no_ns(tag)
+            if tag_name == 'B' or tag_name == 'Member':
+                member = self.parse_member(tag)
+
+        self.parse_para_with_member(para, member)
 
     def parse_brev(self, brev):
         tag = etree.Element('p')
@@ -377,6 +408,38 @@ class ParseDayXML(object):
             self.current_speech_num = 0
             self.current_speech_part = 1
 
+    def handle_tag(self, tag_name, tag):
+        handled = True
+
+        if tag_name == 'hs_6fDate':
+            self.parse_date(tag)
+        elif tag_name in self.oral_headings:
+            self.parse_oral_heading(tag)
+        elif tag_name in self.major_headings:
+            self.parse_major(tag)
+        elif tag_name in self.minor_headings:
+            self.parse_minor(tag)
+        elif tag_name == 'Question':
+            self.parse_question(tag)
+        elif tag_name == 'hs_8Petition':
+            self.parse_petition(tag)
+        elif tag_name in self.paras:
+            self.parse_para(tag)
+        elif tag_name == 'hs_brev':
+            self.parse_brev(tag)
+        elif tag_name == 'Division':
+            self.parse_division(tag)
+        elif tag_name == 'hs_Timeline':
+            self.parse_timeline(tag)
+        elif type(tag) is etree._ProcessingInstruction:
+            self.parse_pi(tag)
+        elif tag_name in self.ignored_tags:
+            pass
+        else:
+            handled = False
+
+        return handled
+
     def parse_day(self, xml_file, out):
         self.ns = self.type_to_xpath[self.debate_type][1]
         self.ns_map = {'ns': self.ns}
@@ -406,34 +469,170 @@ class ParseDayXML(object):
             for tag in b:
 
                 tag_name = self.get_tag_name_no_ns(tag)
-                if tag_name == 'hs_6fDate':
-                    self.parse_date(tag)
-                elif tag_name in self.oral_headings:
-                    self.parse_oral_heading(tag)
-                elif tag_name in self.major_headings:
-                    self.parse_major(tag)
-                elif tag_name in self.minor_headings:
-                    self.parse_minor(tag)
-                elif tag_name == 'Question':
-                    self.parse_question(tag)
-                elif tag_name == 'hs_8Petition':
-                    self.parse_petition(tag)
-                elif tag_name == 'hs_Para':
-                    self.parse_para(tag)
-                elif tag_name == 'hs_brev':
-                    self.parse_brev(tag)
-                elif tag_name == 'Division':
-                    self.parse_division(tag)
-                elif tag_name == 'hs_Timeline':
-                    self.parse_timeline(tag)
-                elif type(tag) is etree._ProcessingInstruction:
-                    self.parse_pi(tag)
-                elif tag_name in self.ignored_tags:
-                    continue
-                else:
+                if not self.handle_tag(tag_name, tag):
                     sys.stderr.write(
                         "no idea what to do with {0}\n".format(tag_name)
                     )
+
+
+class CommonsParseDayXML(BaseParseDayXML):
+    pass
+
+
+class LordsParseDayXML(BaseParseDayXML):
+    resolver = LordsPimsList()
+
+    paras = [
+        'hs_para',
+        'hs_quote',
+        'hs_quotefo',
+        'hs_parafo'
+    ]
+
+    ignored_tags = ['hs_date']
+
+    def parse_time(self, tag):
+        time_txt = u''.join(tag.xpath('.//text()'))
+        matches = re.match('(\d+).(\d+)\s*(am|pm)', time_txt)
+        if matches:
+            hours = int(matches.group(1))
+            # mmmmmm
+            if matches.group(3) == 'pm':
+                hours = hours + 12
+            time = mx.DateTime.DateTimeFrom(hour=hours, minute=int(matches.group(2)))
+            self.current_time = time.strftime('%H:%M:%S')
+
+    def parse_quote(self, quote):
+        tag = etree.Element('p')
+        tag.set('pid', self.get_pid())
+        tag.set('class', 'indent')
+
+        tag.text = quote.text
+
+        i = quote.xpath('./ns:I', namespaces=self.ns_map)
+        if len(i) == 1:
+            i_text = u''.join(i[0].xpath('./text()'))
+            new_i = etree.Element('i')
+            new_i.text = i_text
+            new_i.tail = i[0].tail
+            if re.match(r'Official Report,?$', i_text):
+                phrase = etree.Element('phrase')
+                phrase.set('class', 'offrep')
+                # FIXME
+                phrase.set('id', new_i.tail)
+                phrase.append(new_i)
+                tag.append(phrase)
+            else:
+                tag.append(new_i)
+
+        self.current_speech.append(tag)
+
+    def parse_member(self, member):
+        found_member = super(LordsParseDayXML, self).parse_member(member)
+        if found_member is None:
+            if member.get('PimsId') == 0:
+                found_member = {
+                    'person_id': 'unknown',
+                    'name': u''.join(member.xpath('.//text()'))
+                }
+
+        return found_member
+
+    def parse_newdebate(self, tag):
+        heading = tag.xpath('.//ns:hs_DebateHeading', namespaces=self.ns_map)
+        debate_type = tag.xpath('.//ns:hs_DebateType', namespaces=self.ns_map)
+        if len(heading):
+            if len(debate_type):
+                text = u"".join(debate_type[0].xpath(".//text()"))
+                self.parse_major(heading[0], extra_text=text)
+            else:
+                self.parse_major(heading[0])
+        else:
+            sys.stderr.write('newdebate with no heading', namespaces=self.ns_map)
+            return
+
+        procedure = tag.xpath('//ns:hs_Procedure', namespaces=self.ns_map)
+        if len(procedure) == 1:
+            self.handle_para(procedure[0])
+
+        if tag.get('BusinessType') == 'Question':
+            member = tag.xpath('.//ns:Member', namespaces=self.ns_map)
+            member = self.parse_member(member[0])
+            questions = tag.xpath('//ns:hs_Question', namespaces=self.ns_map)
+            for question in questions:
+                self.parse_para_with_member(question, member)
+
+    def parse_procedure(self, procedure):
+        tag = etree.Element('p')
+        text = u"".join(procedure.xpath(".//text()"))
+        if len(text) == 0:
+            return
+
+        tag.set('pid', self.get_pid())
+        tag.set('class', 'italic')
+        self.current_speech_part = self.current_speech_part + 1
+        tag.text = text
+
+        if self.current_speech is not None:
+            self.current_speech.append(tag)
+
+    def parse_amendment_heading(self, heading):
+        self.new_speech(None, heading.get('url'))
+        self.parse_para_with_member(heading, None)
+
+    def parse_tabledby(self, tabledby):
+        self.parse_para_with_member(
+            tabledby,
+            None,
+            css_class='italic',
+            pwmotiontext='unrecognized'
+        )
+
+    def parse_amendment(self, amendment):
+        self.parse_para_with_member(
+            amendment,
+            None,
+            css_class='italic',
+            pwmotiontext='unrecognized'
+        )
+
+    def parse_clause_heading(self, heading):
+        tag = etree.Element('p')
+        text = u"".join(heading.xpath(".//text()"))
+        i = etree.Element('i')
+        i.text = text
+        b = etree.Element('b')
+        b.append(i)
+
+        tag.set('pid', self.get_pid())
+        tag.append(b)
+        if self.current_speech is None:
+            self.new_speech(None, heading.get('url'))
+        self.current_speech.append(tag)
+
+    def handle_tag(self, tag_name, tag):
+        handled = True
+
+        if tag_name == 'hs_time':
+            self.parse_time(tag)
+        elif tag_name == 'hs_quotefo':
+            self.parse_quote(tag)
+        elif tag_name == 'NewDebate':
+            self.parse_newdebate(tag)
+        elif tag_name == 'hs_Procedure':
+            self.parse_procedure(tag)
+        elif tag_name == 'hs_AmendmentHeading':
+            self.parse_amendment_heading(tag)
+        elif tag_name == 'hs_TabledBy':
+            self.parse_tabledby(tag)
+        elif tag_name == 'Amendment':
+            self.parse_amendment(tag)
+        elif tag_name == 'hs_ClauseHeading':
+            self.parse_clause_heading(tag)
+        else:
+            handled = super(LordsParseDayXML, self).handle_tag(tag_name, tag)
+
+        return handled
 
 
 class ParseDay(object):
@@ -449,7 +648,10 @@ class ParseDay(object):
             sys.stderr.write('{0} not a valid type'.format(debate_type))
             sys.exit()
         out = streamWriter(fp)
-        parser = ParseDayXML()
+        if debate_type == 'lords':
+            parser = LordsParseDayXML()
+        else:
+            parser = CommonsParseDayXML()
         parser.debate_type = debate_type
         parser.parse_day(text, out)
         out.write(etree.tostring(parser.root))
