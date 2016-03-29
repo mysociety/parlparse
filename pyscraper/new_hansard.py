@@ -344,6 +344,10 @@ class BaseParseDayXML(object):
         self.current_speech.append(tag)
         self.check_for_pi(para)
 
+    # TODO: this needs to parse out the various things that filtersentence
+    # catches at the moment. Some of those might be in the XML but mostly
+    # it will need to be a port of that to create proper XML elements
+    # using etree
     def parse_para(self, para):
         member = None
         for tag in para:
@@ -551,7 +555,7 @@ class LordsParseDayXML(BaseParseDayXML):
             if re.match(r'Official Report,?$', i_text):
                 phrase = etree.Element('phrase')
                 phrase.set('class', 'offrep')
-                # FIXME
+                # FIXME: generate a proper id here
                 phrase.set('id', new_i.tail)
                 phrase.append(new_i)
                 tag.append(phrase)
