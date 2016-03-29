@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import re
 import os
@@ -70,18 +71,22 @@ class BaseParseDayXML(object):
         'hs_2cGenericHdg',
         'hs_2GenericHdg',
         'hs_2cUrgentQuestion',
-        'hs_2cWestHallDebate',
-        'hs_2DebBill',
     ]
     minor_headings = [
         'hs_8Question',
         'hs_2cDebatedMotion'
     ]
+    whall_headings = [
+        'hs_2DebBill',
+        'hs_2cWestHallDebate'
+    ]
     paras = [
         'hs_Para',
     ]
     ignored_tags = [
-        'hs_6bPetitions'
+        'hs_6bPetitions',
+        'hs_76fChair',
+        'hs_3MainHdg'
     ]
     root = etree.Element('publicwhip')
     ns = ''
@@ -266,6 +271,32 @@ class BaseParseDayXML(object):
         tag.text = text
         self.root.append(tag)
 
+    def parse_WHDebate(self, debate):
+        text = u''.join(debate.xpath('.//text()'))
+
+        chair = debate.xpath(
+            '(./preceding-sibling::ns:hs_76fChair | ./following-sibling::ns:hs_76fChair)',
+            namespaces=self.ns_map
+        )
+        if len(chair) == 1:
+            chair_text = u''.join(chair[0].xpath('.//text()'))
+            text = u'{0} — {1}'.format(text, chair_text)
+
+        self.clear_current_speech()
+        tag = etree.Element('minor-heading')
+        tag.set('id', self.get_speech_id())
+        tag.set('nospeaker', 'true')
+        tag.set('colnum', self.current_col)
+        tag.set('time', self.current_time)
+        tag.set(
+            'url',
+            'http://www.publications.parliament.uk{0}'.format(
+                debate.get('url')
+            )
+        )
+        tag.text = text
+        self.root.append(tag)
+
     def parse_question(self, question):
         tag = etree.Element('speech')
         tag.set('id', self.get_speech_id())
@@ -419,6 +450,8 @@ class BaseParseDayXML(object):
             self.parse_major(tag)
         elif tag_name in self.minor_headings:
             self.parse_minor(tag)
+        elif tag_name in self.whall_headings:
+            self.parse_WHDebate(tag)
         elif tag_name == 'Question':
             self.parse_question(tag)
         elif tag_name == 'hs_8Petition':
