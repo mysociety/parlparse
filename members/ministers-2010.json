@@ -3354,7 +3354,7 @@
       "person_id": "uk.org.publicwhip/person/10057", 
       "organization_id": "high-speed-rail-london--west-midlands-bill-commons-committee", 
       "start_date": "2014-04-29", 
-      "end_date": "2016-02-24"
+      "end_date": "2016-02-22"
     }, 
     {
       "id": "uk.parliament.data/Member/117/Committee/344", 
@@ -3388,8 +3388,8 @@
       "role": "Parliamentary Under-Secretary (Department for Transport)", 
       "person_id": "uk.org.publicwhip/person/10057", 
       "organization_id": "house-of-commons", 
-      "start_date": "1986-06-01", 
-      "end_date": "1989-06-01"
+      "start_date": "1986-01-23", 
+      "end_date": "1989-07-24"
     }, 
     {
       "id": "uk.parliament.data/Member/106/Committee/27", 
@@ -4756,7 +4756,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10072", 
       "organization_id": "draft-investigatory-powers-bill-joint-committee", 
-      "start_date": "2015-11-25"
+      "start_date": "2015-11-25", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/236/Committee/37", 
@@ -6240,8 +6241,8 @@
       "role": "The Parliamentary Under-Secretary of State for Transport", 
       "person_id": "uk.org.publicwhip/person/10103", 
       "organization_id": "house-of-commons", 
-      "start_date": "1990-06-01", 
-      "end_date": "1992-06-01"
+      "start_date": "1990-07-23", 
+      "end_date": "1992-04-14"
     }, 
     {
       "id": "uk.parliament.data/Member/242/OppositionPost/1046", 
@@ -6642,7 +6643,7 @@
       "person_id": "uk.org.publicwhip/person/10115", 
       "organization_id": "house-of-commons", 
       "start_date": "1980-06-01", 
-      "end_date": "1982-06-01"
+      "end_date": "1982-03-05"
     }, 
     {
       "id": "uk.parliament.data/Member/366/GovernmentPost/919", 
@@ -6861,7 +6862,7 @@
       "person_id": "uk.org.publicwhip/person/10119", 
       "organization_id": "high-speed-rail-london--west-midlands-bill-commons-committee", 
       "start_date": "2015-07-07", 
-      "end_date": "2016-02-24"
+      "end_date": "2016-02-22"
     }, 
     {
       "id": "uk.parliament.data/Member/249/Committee/325", 
@@ -7998,7 +7999,7 @@
       "person_id": "uk.org.publicwhip/person/10141", 
       "organization_id": "high-speed-rail-london--west-midlands-bill-commons-committee", 
       "start_date": "2015-07-07", 
-      "end_date": "2016-02-24"
+      "end_date": "2016-02-22"
     }, 
     {
       "id": "uk.parliament.data/Member/181/Committee/102", 
@@ -9845,7 +9846,8 @@
       "role": "The Secretary of State for Work and Pensions", 
       "person_id": "uk.org.publicwhip/person/10180", 
       "organization_id": "house-of-commons", 
-      "start_date": "2010-05-12"
+      "start_date": "2010-05-12", 
+      "end_date": "2016-03-19"
     }, 
     {
       "id": "uk.parliament.data/Member/152/OppositionPost/4", 
@@ -13726,7 +13728,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10259", 
       "organization_id": "draft-investigatory-powers-bill-joint-committee", 
-      "start_date": "2015-11-05"
+      "start_date": "2015-11-05", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/533/GovernmentPost/205", 
@@ -14023,15 +14026,8 @@
       "role": "Acting Leader of the Labour Party", 
       "person_id": "uk.org.publicwhip/person/10260", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/150/ParliamentaryPost/758", 
-      "source": "datadotparl/parliamentarypost", 
-      "role": "Chair, Parliamentary Labour Party", 
-      "person_id": "uk.org.publicwhip/person/10260", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2011-10-07"
+      "start_date": "2015-05-08", 
+      "end_date": "2015-09-12"
     }, 
     {
       "id": "uk.parliament.data/Member/150/ParliamentaryPost/770", 
@@ -17244,6 +17240,15 @@
       "end_date": "1983-06-10"
     }, 
     {
+      "id": "uk.parliament.data/Member/254/GovernmentPost/739", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Secretary of State for Transport", 
+      "person_id": "uk.org.publicwhip/person/10342", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1983-06-11", 
+      "end_date": "1983-10-16"
+    }, 
+    {
       "id": "uk.parliament.data/Member/635/Committee/103", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10345", 
@@ -19540,6 +19545,15 @@
       "end_date": "1990-11-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/131/GovernmentPost/739", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Secretary of State for Transport", 
+      "person_id": "uk.org.publicwhip/person/10386", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1992-04-11", 
+      "end_date": "1994-07-20"
+    }, 
+    {
       "id": "uk.parliament.data/Member/131/GovernmentPost/94", 
       "source": "datadotparl/governmentpost", 
       "role": "Lord President of the Council and Leader of the House Lords (Privy Council Office)", 
@@ -20231,8 +20245,8 @@
       "role": "The Parliamentary Under-Secretary of State for Transport", 
       "person_id": "uk.org.publicwhip/person/10397", 
       "organization_id": "house-of-commons", 
-      "start_date": "1989-06-01", 
-      "end_date": "1992-06-01"
+      "start_date": "1989-07-25", 
+      "end_date": "1992-04-14"
     }, 
     {
       "id": "uk.parliament.data/Member/333/OppositionPost/6", 
@@ -20904,6 +20918,15 @@
       "organization_id": "house-of-commons", 
       "start_date": "1995-07-05", 
       "end_date": "1997-05-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/121/GovernmentPost/739", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Secretary of State for Transport", 
+      "person_id": "uk.org.publicwhip/person/10424", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1994-07-20", 
+      "end_date": "1995-07-05"
     }, 
     {
       "id": "uk.parliament.data/Member/121/OppositionPost/16", 
@@ -22250,7 +22273,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10454", 
       "organization_id": "draft-investigatory-powers-bill-joint-committee", 
-      "start_date": "2015-11-26"
+      "start_date": "2015-11-26", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/546/Committee/97", 
@@ -26255,13 +26279,13 @@
       "end_date": "1983-06-09"
     }, 
     {
-      "id": "uk.parliament.data/Member/270/GovernmentPost/198", 
+      "id": "uk.parliament.data/Member/270/GovernmentPost/1120", 
       "source": "datadotparl/governmentpost", 
-      "role": "Minister of State (Department for Transport) (Aviation)", 
+      "role": "Parliamentary Under-Secretary (Department for Transport)", 
       "person_id": "uk.org.publicwhip/person/10560", 
       "organization_id": "house-of-commons", 
-      "start_date": "1985-01-01", 
-      "end_date": "1987-01-01"
+      "start_date": "1984-09-11", 
+      "end_date": "1987-06-13"
     }, 
     {
       "id": "uk.parliament.data/Member/270/GovernmentPost/264", 
@@ -27304,7 +27328,7 @@
       "person_id": "uk.org.publicwhip/person/10582", 
       "organization_id": "high-speed-rail-london--west-midlands-bill-commons-committee", 
       "start_date": "2015-06-08", 
-      "end_date": "2016-02-24"
+      "end_date": "2016-02-22"
     }, 
     {
       "id": "uk.parliament.data/Member/245/Committee/36", 
@@ -27804,6 +27828,13 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10596", 
       "organization_id": "education-committee", 
+      "start_date": "2016-02-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/163/Committee/351", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10596", 
+      "organization_id": "education-skills-and-the-economy-subcommittee", 
       "start_date": "2016-02-01"
     }, 
     {
@@ -31150,7 +31181,7 @@
       "person_id": "uk.org.publicwhip/person/10682", 
       "organization_id": "high-speed-rail-london--west-midlands-bill-commons-committee", 
       "start_date": "2015-07-07", 
-      "end_date": "2016-02-24"
+      "end_date": "2016-02-22"
     }, 
     {
       "id": "uk.parliament.data/Member/473/Committee/353", 
@@ -31562,7 +31593,7 @@
       "person_id": "uk.org.publicwhip/person/10726", 
       "organization_id": "high-speed-rail-london--west-midlands-bill-commons-committee", 
       "start_date": "2014-04-29", 
-      "end_date": "2016-02-24"
+      "end_date": "2016-02-22"
     }, 
     {
       "id": "uk.parliament.data/Member/1441/Committee/51", 
@@ -33202,16 +33233,7 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10920", 
       "organization_id": "palace-of-westminster-joint-committee", 
-      "start_date": "2015-07-16", 
-      "end_date": "2015-10-13"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/1413/Committee/341/1", 
-      "source": "datadotparl/committee", 
-      "role": "Chair", 
-      "person_id": "uk.org.publicwhip/person/10920", 
-      "organization_id": "palace-of-westminster-joint-committee", 
-      "start_date": "2015-10-13"
+      "start_date": "2015-07-16"
     }, 
     {
       "id": "uk.parliament.data/Member/1413/Committee/348", 
@@ -34889,7 +34911,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11132", 
       "organization_id": "draft-investigatory-powers-bill-joint-committee", 
-      "start_date": "2015-11-05"
+      "start_date": "2015-11-05", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/1466/GovernmentPost/1133", 
@@ -39433,7 +39456,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11553", 
       "organization_id": "education-skills-and-the-economy-subcommittee", 
-      "start_date": "2015-11-25"
+      "start_date": "2015-11-25", 
+      "end_date": "2016-03-09"
     }, 
     {
       "id": "uk.parliament.data/Member/1511/Committee/83", 
@@ -41805,7 +41829,16 @@
       "role": "The Secretary of State for Wales", 
       "person_id": "uk.org.publicwhip/person/11768", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15"
+      "start_date": "2014-07-15", 
+      "end_date": "2016-03-19"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1554/GovernmentPost/744", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Secretary of State for Work and Pensions", 
+      "person_id": "uk.org.publicwhip/person/11768", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-03-19"
     }, 
     {
       "id": "uk.parliament.data/Member/1554/OppositionPost/10", 
@@ -50273,6 +50306,24 @@
       "start_date": "2015-06-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/778/GovernmentPost/1120", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Department for Transport)", 
+      "person_id": "uk.org.publicwhip/person/13012", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1982-03-05", 
+      "end_date": "1983-10-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/778/GovernmentPost/1126", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Department for Transport)", 
+      "person_id": "uk.org.publicwhip/person/13012", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1983-10-18", 
+      "end_date": "1986-01-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/778/GovernmentPost/287", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister of State (Foreign and Commonwealth Office) (Overseas Development)", 
@@ -51717,6 +51768,15 @@
       "end_date": "1987-05-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/843/GovernmentPost/185", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister for Transport", 
+      "person_id": "uk.org.publicwhip/person/13065", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1975-06-12", 
+      "end_date": "1976-09-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/843/GovernmentPost/246", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister of State (Ministry of Defence) (Procurement)", 
@@ -52076,6 +52136,15 @@
       "organization_id": "house-of-commons", 
       "start_date": "1979-05-05", 
       "end_date": "1981-09-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/993/GovernmentPost/739", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Secretary of State for Transport", 
+      "person_id": "uk.org.publicwhip/person/13074", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1981-09-14", 
+      "end_date": "1983-06-11"
     }, 
     {
       "id": "uk.parliament.data/Member/993/GovernmentPost/940", 
@@ -57104,7 +57173,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13200", 
       "organization_id": "draft-investigatory-powers-bill-joint-committee", 
-      "start_date": "2015-11-25"
+      "start_date": "2015-11-25", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/3675/Committee/354", 
@@ -58737,7 +58807,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13253", 
       "organization_id": "draft-investigatory-powers-bill-joint-committee", 
-      "start_date": "2015-11-25"
+      "start_date": "2015-11-25", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/3395/Committee/150", 
@@ -59594,6 +59665,15 @@
       "organization_id": "house-of-commons", 
       "start_date": "1988-07-25", 
       "end_date": "1989-07-22"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1022/GovernmentPost/739", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Secretary of State for Transport", 
+      "person_id": "uk.org.publicwhip/person/13276", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1986-05-21", 
+      "end_date": "1987-06-13"
     }, 
     {
       "id": "uk.parliament.data/Member/1022/ParliamentaryPost/823", 
@@ -60576,6 +60656,24 @@
       "start_date": "2015-06-23"
     }, 
     {
+      "id": "uk.parliament.data/Member/836/GovernmentPost/1126", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Department for Transport)", 
+      "person_id": "uk.org.publicwhip/person/13307", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1990-05-04", 
+      "end_date": "1990-11-28"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/836/GovernmentPost/1161", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Department for Transport) (Public Transport)", 
+      "person_id": "uk.org.publicwhip/person/13307", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1990-11-28", 
+      "end_date": "1994-07-20"
+    }, 
+    {
       "id": "uk.parliament.data/Member/836/GovernmentPost/246", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister of State (Ministry of Defence) (Procurement)", 
@@ -61053,6 +61151,15 @@
       "end_date": "1976-09-10"
     }, 
     {
+      "id": "uk.parliament.data/Member/940/GovernmentPost/739", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Secretary of State for Transport", 
+      "person_id": "uk.org.publicwhip/person/13327", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1976-09-10", 
+      "end_date": "1979-05-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/940/OppositionPost/16", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Secretary of State", 
@@ -61371,7 +61478,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13347", 
       "organization_id": "draft-investigatory-powers-bill-joint-committee", 
-      "start_date": "2015-11-25"
+      "start_date": "2015-11-25", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/3337/Committee/97", 
@@ -62529,7 +62637,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13377", 
       "organization_id": "eu-financial-affairs-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2016-03-04"
     }, 
     {
       "id": "uk.parliament.data/Member/1039/GovernmentPost/34", 
@@ -65898,7 +66007,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13493", 
       "organization_id": "draft-investigatory-powers-bill-joint-committee", 
-      "start_date": "2015-11-25"
+      "start_date": "2015-11-25", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/2616/Committee/93", 
@@ -76999,6 +77109,22 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/3910/GovernmentPost/350", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Lord Commissioner of Her Majesty's Treasury", 
+      "person_id": "uk.org.publicwhip/person/24736", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-03-19"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3910/GovernmentPost/543", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Wales", 
+      "person_id": "uk.org.publicwhip/person/24736", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-03-19"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3909/Committee/135", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24737", 
@@ -77084,7 +77210,8 @@
       "role": "The Lord Commissioner of Her Majesty's Treasury", 
       "person_id": "uk.org.publicwhip/person/24740", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15"
+      "start_date": "2014-07-15", 
+      "end_date": "2016-03-19"
     }, 
     {
       "id": "uk.parliament.data/Member/4086/GovernmentPost/543", 
@@ -77092,7 +77219,16 @@
       "role": "The Parliamentary Under-Secretary of State for Wales", 
       "person_id": "uk.org.publicwhip/person/24740", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15"
+      "start_date": "2014-07-15", 
+      "end_date": "2016-03-19"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4086/GovernmentPost/743", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Secretary of State for Wales", 
+      "person_id": "uk.org.publicwhip/person/24740", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-03-19"
     }, 
     {
       "id": "uk.parliament.data/Member/4133/Committee/103", 
@@ -78276,7 +78412,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24788", 
       "organization_id": "draft-investigatory-powers-bill-joint-committee", 
-      "start_date": "2015-11-26"
+      "start_date": "2015-11-26", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/3914/OppositionPost/13", 
@@ -79102,6 +79239,20 @@
       "person_id": "uk.org.publicwhip/person/24818", 
       "organization_id": "education-committee", 
       "start_date": "2016-02-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4125/Committee/326", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24818", 
+      "organization_id": "petitions-committee", 
+      "start_date": "2016-03-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4125/Committee/351", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24818", 
+      "organization_id": "education-skills-and-the-economy-subcommittee", 
+      "start_date": "2016-03-09"
     }, 
     {
       "id": "uk.parliament.data/Member/4125/OppositionPost/11", 
@@ -80133,6 +80284,13 @@
       "organization_id": "draft-investigatory-powers-bill-joint-committee", 
       "start_date": "2015-11-05", 
       "end_date": "2015-11-26"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4076/Committee/52", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24852", 
+      "organization_id": "environment-food-and-rural-affairs-committee", 
+      "start_date": "2016-03-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4076/Committee/81", 
@@ -83877,7 +84035,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25026", 
       "organization_id": "draft-investigatory-powers-bill-joint-committee", 
-      "start_date": "2015-11-25"
+      "start_date": "2015-11-25", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/4204/Committee/94", 
@@ -85887,7 +86046,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25272", 
       "organization_id": "draft-investigatory-powers-bill-joint-committee", 
-      "start_date": "2015-11-05"
+      "start_date": "2015-11-05", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/4475/Committee/351", 
@@ -86262,7 +86422,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25298", 
       "organization_id": "education-skills-and-the-economy-subcommittee", 
-      "start_date": "2015-11-25"
+      "start_date": "2015-11-25", 
+      "end_date": "2016-02-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4363/OppositionPost/959", 
@@ -86299,7 +86460,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25301", 
       "organization_id": "draft-investigatory-powers-bill-joint-committee", 
-      "start_date": "2015-11-05"
+      "start_date": "2015-11-05", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/4393/Committee/83", 
@@ -87153,7 +87315,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25365", 
       "organization_id": "petitions-committee", 
-      "start_date": "2015-07-20"
+      "start_date": "2015-07-20", 
+      "end_date": "2016-03-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4515/OppositionPost/1276", 
@@ -87421,7 +87584,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25394", 
       "organization_id": "communities-and-local-government-committee", 
-      "start_date": "2015-07-13"
+      "start_date": "2015-07-13", 
+      "end_date": "2016-03-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4361/Committee/135", 
@@ -87435,7 +87599,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25395", 
       "organization_id": "draft-investigatory-powers-bill-joint-committee", 
-      "start_date": "2015-11-05"
+      "start_date": "2015-11-05", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/4362/Committee/126", 
@@ -87720,7 +87885,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25424", 
       "organization_id": "draft-investigatory-powers-bill-joint-committee", 
-      "start_date": "2015-11-05"
+      "start_date": "2015-11-05", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/4399/Committee/83", 
@@ -88017,6 +88183,13 @@
       "person_id": "uk.org.publicwhip/person/25464", 
       "organization_id": "eu-justice-subcommittee", 
       "start_date": "2016-01-26"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4569/Committee/17", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25475", 
+      "organization_id": "communities-and-local-government-committee", 
+      "start_date": "2016-03-07"
     }
   ], 
   "organizations": [
