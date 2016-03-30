@@ -31,6 +31,26 @@ class PimsList(MemberList):
         match = self.pims.get(pims_id, None)
         return match
 
+    def pbc_match(self, name, cons, date):
+        name = re.sub(r'\n', ' ', name)
+        # names are mostly lastname,\nfirstname so reform first
+        if re.search(',', name):
+            last, first = name.split(',')
+            full = '{0} {1}'.format(first.strip(), last.strip())
+        # apart from committee chairman which we can use as is
+        else:
+            full = name.strip()
+        ids = self.fullnametoids(full, date)
+        if len(ids) == 1:
+            mem_id = ids.pop()
+            person_id = self.membertopersonmap[mem_id]
+            member = self.persons[person_id]
+            member['person_id'] = member.get('id')
+            member['name'] = self.name_on_date(member['person_id'], date)
+            return member
+
+        return None
+
 
 class LordsPimsList(LordsList):
 
@@ -164,17 +184,22 @@ class BaseParseDayXML(object):
         if date:
             self.date = date
 
+    def handle_minus_member(member):
+        return None
+
     def parse_member(self, tag):
         member_tag = None
         tag_name = self.get_tag_name_no_ns(tag)
         if tag_name == 'B':
-            member_tag = tag.xpath('.//ns:Member', namespaces=self.ns_map)[0]
+            member_tags = tag.xpath('.//ns:Member', namespaces=self.ns_map)
+            if len(member_tags) == 1:
+                member_tag = member_tags[0]
         elif tag_name == 'Member':
             member_tag = tag
 
         if member_tag is not None:
             if member_tag.get('PimsId') == '-1':
-                return None
+                return self.handle_minus_member(member_tag)
             member = self.resolver.match_by_pims(member_tag.get('PimsId'))
             if member is not None:
                 member['person_id'] = member.get('id')
@@ -516,6 +541,223 @@ class CommonsParseDayXML(BaseParseDayXML):
     pass
 
 
+class PBCParseDayXML(BaseParseDayXML):
+    chairs = []
+    members = []
+    clerks = []
+    witnesses = []
+    current_chair = None
+
+    ignored_tags = [
+        'hs_CLHeading',
+        'hs_CLAttended',
+        'hs_6fCntrItalHdg',
+    ]
+
+    def get_member_with_no_id(self, member_tag):
+        name = member_tag.text
+        cons_tags = member_tag.xpath('.//ns:I', namespaces=self.ns_map)
+        cons = ''
+        if len(cons_tags) == 1:
+            cons_tag = cons_tags[0]
+            cons = cons_tag.text
+            cons = re.sub(r'[()]', '', cons)
+
+        member = self.resolver.pbc_match(name, cons, self.date)
+        member['pbc_cons'] = cons
+        return member
+
+    # check for a cross symbol before the name of a member which tells
+    # us that they are attending the committee
+    #
+    # the text[-1] is becuase we fetch all the preceding text nodes and
+    # we want the immediately preceding one which will be the last one
+    # in the array
+    def get_attending_status(self, member_tag):
+        text = member_tag.xpath('./preceding-sibling::text()')
+        if len(text) > 0 and re.search(u'\u2020', text[-1]):
+            return 'true'
+
+        return 'false'
+
+    def parse_chairmen(self, chair):
+        member_tags = chair.xpath('.//ns:Member', namespaces=self.ns_map)
+        for member_tag in member_tags:
+            member = self.parse_member(member_tag)
+            # which will happen because it mostly sets PimsId to -1 :(
+            if member is None:
+                member = self.get_member_with_no_id(member_tag)
+
+            if member is not None:
+                member['attending'] = self.get_attending_status(member_tag)
+                self.chairs.append(member)
+            else:
+                # FIXME: this should probably be an exception
+                sys.stderr.write(
+                    u'failed to find member {0}\n'.format(member_tag.text)
+                )
+
+    def parse_clmember(self, clmember):
+        member_tag = clmember.xpath('.//ns:Member', namespaces=self.ns_map)[0]
+        member = self.parse_member(member_tag)
+        # which will happen because it mostly sets PimsId to -1 :(
+        if member is None:
+            member = self.get_member_with_no_id(member_tag)
+
+        if member is not None:
+            member['attending'] = self.get_attending_status(member_tag)
+            self.members.append(member)
+        else:
+            # FIXME: this should probably be an exception
+            sys.stderr.write(
+                u'failed to find member {0}\n'.format(member_tag.text)
+            )
+
+    def parse_clerks(self, clerks):
+        text = clerks.text
+        self.clerks = text.split(',')
+
+    def parse_witness(self, witness):
+        self.witnesses.append(witness.text)
+
+    def committee_finished(self):
+        committee = etree.Element('committee')
+
+        chairmen = etree.Element('chairmen')
+        for c in self.chairs:
+            mp = etree.Element('mpname')
+            mp.set('person_id', c['person_id'])
+            mp.set('membername', c['name'])
+            mp.set('attending', c['attending'])
+            mp.text = c['name']
+            chairmen.append(mp)
+
+        committee.append(chairmen)
+
+        for m in self.members:
+            mp = etree.Element('mpname')
+            mp.set('person_id', m['person_id'])
+            mp.set('membername', m['name'])
+            mp.set('attending', m['attending'])
+            mp.text = m['name']
+            cons = etree.Element('i')
+
+            # if it's a different cons then it's probably a position
+            # so use that instead and skip the party
+            curr_cons = m['shortcuts']['current_constituency']
+            if curr_cons != m['pbc_cons']:
+                cons.text = u'({0})'.format(m['pbc_cons'])
+            else:
+                cons.text = u'({0})'.format(curr_cons)
+                cons.tail = u'({0})'.format(m['shortcuts']['current_party'])
+            mp.append(cons)
+            committee.append(mp)
+
+        for c in self.clerks:
+            clerk = etree.Element('clerk')
+            clerk.text = c
+            committee.append(clerk)
+
+        self.root.append(committee)
+
+        witnesses = etree.Element('witnesses')
+        for w in self.witnesses:
+            witness = etree.Element('witness')
+            witness.text = w
+            witnesses.append(witness)
+
+        self.root.append(witnesses)
+
+    def parse_bill_title(self, title_tag):
+        title = u''.join(title_tag.xpath('.//text()'))
+
+        bill = etree.Element('bill')
+        bill.set('title', title)
+        bill.text = title
+
+        self.root.insert(0, bill)
+
+    def handle_minus_member(self, member):
+        if member.get('InTheChair') == 'True':
+            return self.current_chair
+
+        return None
+
+    def parse_chair(self, chair):
+        self.new_speech(None, chair.get('url'))
+        text = u''.join(chair.xpath('.//text()'))
+        tag = etree.Element('p')
+        tag.text = text
+        self.current_speech.append(tag)
+        self.clear_current_speech()
+
+        chair_match = re.match(
+            r'\[\s*\w+\s*(.*)\s+in\s+the\s+chair\s*\](?i)',
+            text
+        )
+        if chair_match is not None:
+            name = chair_match.groups(1)[0]
+            chair = self.resolver.pbc_match(name, '', self.date)
+            if chair is not None:
+                self.current_chair = chair
+
+    def parse_amendment(self, amendment, level):
+        tag = etree.Element('p')
+        tag.set('amendmenttext', 'true')
+        tag.set('amendmentlevel', str(level))
+        tag.text = amendment.text
+
+        self.current_speech.append(tag)
+
+    def parse_para(self, para):
+        has_witness = False
+        for tag in para.iter():
+            tag_name = self.get_tag_name_no_ns(tag)
+            if tag_name == 'Witness':
+                has_witness = True
+                para.text = '{0}: {1}'.format(tag.text, para.text)
+                self.new_speech(None, para.get('url'))
+
+        if has_witness:
+            for w in para.xpath('.//ns:Witness', namespaces=self.ns_map):
+                w.getparent().text = w.tail
+                w.getparent().remove(w)
+            self.parse_para_with_member(para, None)
+        else:
+            super(PBCParseDayXML, self).parse_para(para)
+
+    def handle_tag(self, tag_name, tag):
+        handled = True
+
+        if tag_name == 'hs_CLMember':
+            self.parse_clmember(tag)
+        elif tag_name == 'hs_CLClerks':
+            self.parse_clerks(tag)
+        elif tag_name == 'hs_CLChairman':
+            self.parse_chairmen(tag)
+        elif tag_name == 'hs_8GenericHdg':
+            self.parse_minor(tag)
+        elif tag_name == 'hs_AmendmentLevel1':
+            self.parse_amendment(tag, 1)
+        elif tag_name == 'hs_AmendmentLevel2':
+            self.parse_amendment(tag, 2)
+        elif tag_name == 'hs_CLPara':
+            self.parse_witness(tag)
+        elif tag_name == 'hs_2BillTitle':
+            self.parse_bill_title(tag)
+        elif tag_name == 'hs_3MainHdg':
+            self.committee_finished()
+            self.parse_major(tag)
+        elif tag_name == 'hs_76fChair':
+            self.parse_chair(tag)
+        elif tag_name == 'hs_ParaIndent':
+            self.parse_para_with_member(tag, None, css_class="indent")
+        else:
+            handled = super(PBCParseDayXML, self).handle_tag(tag_name, tag)
+
+        return handled
+
+
 class LordsParseDayXML(BaseParseDayXML):
     resolver = LordsPimsList()
 
@@ -687,6 +929,8 @@ class ParseDay(object):
         out = streamWriter(fp)
         if debate_type == 'lords':
             parser = LordsParseDayXML()
+        elif debate_type == 'pbc':
+            parser = PBCParseDayXML()
         else:
             parser = CommonsParseDayXML()
         parser.debate_type = debate_type
