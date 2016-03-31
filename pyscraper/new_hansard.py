@@ -185,7 +185,7 @@ class BaseParseDayXML(object):
         if date:
             self.date = date
 
-    def handle_minus_member(member):
+    def handle_minus_member(self, member):
         return None
 
     def parse_member(self, tag):
