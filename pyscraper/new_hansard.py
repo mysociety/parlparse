@@ -116,6 +116,7 @@ class BaseParseDayXML(object):
     current_speech = None
     date = ''
     rev = 'a'
+    use_pids = True
     current_col = 0
     current_speech_num = 0
     current_speech_part = 1
@@ -358,7 +359,8 @@ class BaseParseDayXML(object):
         if len(text) == 0:
             return
 
-        tag.set('pid', self.get_pid())
+        if self.use_pids:
+            tag.set('pid', self.get_pid())
         if 'css_class' in kwargs:
             tag.set('class', kwargs['css_class'])
         if 'pwmotiontext' in kwargs:
@@ -384,12 +386,13 @@ class BaseParseDayXML(object):
 
     def parse_brev(self, brev):
         tag = etree.Element('p')
-        tag.set('pwmotiontext', 'yes')
         text = u"".join(brev.xpath(".//text()"))
         if len(text) == 0:
             return
 
-        tag.set('pid', self.get_pid())
+        tag.set('pwmotiontext', 'yes')
+        if self.use_pids:
+            tag.set('pid', self.get_pid())
         self.current_speech_part = self.current_speech_part + 1
         tag.text = text
         self.current_speech.append(tag)
@@ -547,6 +550,8 @@ class PBCParseDayXML(BaseParseDayXML):
     clerks = []
     witnesses = []
     current_chair = None
+
+    use_pids = False
 
     ignored_tags = [
         'hs_CLHeading',
@@ -709,7 +714,20 @@ class PBCParseDayXML(BaseParseDayXML):
 
         self.current_speech.append(tag)
 
+    def parse_table(self, table):
+        paras = table.xpath('(.//ns:hs_Para|.//ns:hs_brev)', namespaces=self.ns_map)
+        for para in paras:
+            tag_name = self.get_tag_name_no_ns(para)
+            if tag_name == 'hs_Para':
+                self.parse_para_with_member(para, None)
+            else:
+                self.parse_para_with_member(para, None, css_class="indent")
+
+    def parse_brev(self, brev):
+        self.parse_para_with_member(brev, None, css_class="indent")
+
     def parse_para(self, para):
+        has_i = False
         has_witness = False
         for tag in para.iter():
             tag_name = self.get_tag_name_no_ns(tag)
@@ -717,6 +735,13 @@ class PBCParseDayXML(BaseParseDayXML):
                 has_witness = True
                 para.text = '{0}: {1}'.format(tag.text, para.text)
                 self.new_speech(None, para.get('url'))
+            # Infer from italic text that it's a motiony thing and we should
+            # start a new para which is a bit fragile
+            elif tag_name == 'I':
+                has_i = True
+
+        if has_i:
+            self.new_speech(None, para.get('url'))
 
         if has_witness:
             for w in para.xpath('.//ns:Witness', namespaces=self.ns_map):
@@ -741,6 +766,8 @@ class PBCParseDayXML(BaseParseDayXML):
             self.parse_amendment(tag, 1)
         elif tag_name == 'hs_AmendmentLevel2':
             self.parse_amendment(tag, 2)
+        elif tag_name == 'TableWrapper':
+            self.parse_table(tag)
         elif tag_name == 'hs_CLPara':
             self.parse_witness(tag)
         elif tag_name == 'hs_2BillTitle':
