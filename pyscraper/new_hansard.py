@@ -326,17 +326,40 @@ class BaseParseDayXML(object):
     def parse_question(self, question):
         tag = etree.Element('speech')
         tag.set('id', self.get_speech_id())
-        tag.set('time', self.current_time)
 
         member = question.xpath('.//ns:Member', namespaces=self.ns_map)[0]
         member = self.parse_member(member)
         if member is not None:
             tag.set('person_id', member['person_id'])
+            tag.set('speakername', member['name'])
+
+        number = u''.join(
+            question.xpath('.//ns:Number/text()', namespaces=self.ns_map)
+        )
+        if number != '':
+            tag.set('oral-qnum', number)
+
+        tag.set('colnum', self.current_col)
+        tag.set('time', self.current_time)
+
+        para = question.xpath('.//ns:hs_Para', namespaces=self.ns_map)
+        tag.set('url', para[0].get('url'))
+
+        p = etree.Element('p')
+        p.set('pid', self.get_pid())
+        uin = question.xpath('.//ns:Uin', namespaces=self.ns_map)
+        if len(uin) == 1:
+            uin_text = u''.join(uin[0].xpath('.//text()'))
+            m = re.match('\[\s*(\d+)\s*\]', uin_text)
+            if m is not None:
+                no = m.groups(1)[0]
+                p.set('qnum', no)
 
         text = question.xpath(
             './/ns:QuestionText/text()', namespaces=self.ns_map
         )
-        tag.text = u''.join(text)
+        p.text = u''.join(text)
+        tag.append(p)
         self.root.append(tag)
 
     def parse_petition(self, petition):
