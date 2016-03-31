@@ -18,6 +18,7 @@ sys.stdout = streamWriter(sys.stdout)
 
 from resolvemembernames import MemberList
 from resolvenames import LordsList
+from filtersentence_xml import PhraseTokenize
 
 parldata = '../../../parldata/'
 
@@ -389,7 +390,9 @@ class BaseParseDayXML(object):
         if 'pwmotiontext' in kwargs:
             tag.set('pwmotiontext', kwargs['pwmotiontext'])
         self.current_speech_part = self.current_speech_part + 1
-        tag.text = text
+
+        fs = PhraseTokenize(self.date, text)
+        tag.text = fs.GetPara()
 
         self.current_speech.append(tag)
         self.check_for_pi(para)
