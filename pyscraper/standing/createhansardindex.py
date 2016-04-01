@@ -22,12 +22,16 @@ url_pbc_previous = "http://www.parliament.uk/business/publications/hansard/commo
 pwstandingindex = os.path.join(toppath, "standingindex.xml")
 
 def get_oldstyle_bill_links(urlpage):
+        urlpage = urlparse.urljoin(url_pbc_previous, urlpage)
 	res = [ ]
 	uin = urllib.urlopen(urlpage)
 	s = uin.read()
 	uin.close()
-	vdat = re.search("(?s)page title and static information follows(.*?)(end of variable data|$)", s).group(1)
+	vdat = re.search('(?s)(?:page title and static information follows|id="content")(.*?)(end of variable data|$)', s).group(1)
 	vdat = re.sub("(?s)<!--.*?-->", "", vdat)
+        if 'cm200203' in urlpage:
+            vdat = re.sub('(High Hedges.*? Bill)</i>', r'\1 (Standing Committee F)</a>', vdat)
+            vdat = re.sub('(Human Fertilisation.*? Bill)</i>', r'\1 (Standing Committee E)</a>', vdat)
 	for lk in re.findall('<a href\s*=\s*"([^"]*)">(.*?)</a>(?is)', vdat):
 		lklk = re.sub('\s', '', lk[0])
                 if re.match('http://www.parliament.uk', lklk): continue
@@ -50,12 +54,13 @@ def GetReportProceedings(urlpage, year):
 	vdat = re.search("(?is)Reports? of proceedings(.*?)(Written evidence|Associated Memoranda|start of footer|$)", s)
 	if urlpage == 'http://www.publications.parliament.uk/pa/cm/cmpbparliament.htm': # XXX
 		vdat = re.sub('(?s)^.*(<A href=".*?">2nd)', '\1', s)
-	elif urlpage == 'http://services.parliament.uk/bills/2012-13/crimeandcourts/committees/houseofcommonspublicbillcommitteeonthecrimeandcourtsbillhl201213.html': # XXX
+        # They have other associated memoranda within the sittings
+	elif urlpage == 'http://services.parliament.uk/bills/2012-13/crimeandcourts/committees/houseofcommonspublicbillcommitteeonthecrimeandcourtsbillhl201213.html':
 		vdat = re.sub('(?is)^.*?Reports? of proceedings(.*?)<h3>Associated memoranda', r'\1', s)
 	elif urlpage == 'http://services.parliament.uk/bills/2012-13/financeno2/committees/houseofcommonspublicbillcommitteeonthefinanceno2bill201213.html':
-		vdat = re.sub('(?is)^.*?Reports? of proceedings(.*?)$', r'\1', s)
+		vdat = re.sub('(?is)^.*?Reports? of proceedings(.*?)<h3>Associated memoranda', r'\1', s)
 	elif not vdat:
-		return res, None
+                raise Exception, "Could not find any sittings for %s" % urlpage
 	else: 
 		vdat = vdat.group(1)
 	vdat = re.sub("(?s)<!--.*?-->", "", vdat)
@@ -75,6 +80,7 @@ def GetReportProceedings(urlpage, year):
 		vdat = re.sub('(st011122/)p(m/11122s01.htm">2nd sitting</A></FONT></TD>\s*<TD nowrap><FONT size=\+1><A href="st011122/am/11122s01.htm">22nd November 2001  \(morning\))', '\g<1>a\g<2>', vdat)
                 vdat = re.sub('partII//', 'partII/', vdat)
 	if year == "1997":
+                # Split into two parts, we ignore one?
 		vdat = re.sub('(st980512/pm/pt)1(/80512s01.htm">3rd sitting </A></FONT></TD>\s*<TD><FONT size=\+1><A href="st980512/pm/pt2/80512s01.htm">12 May 1998)', '\g<1>2\g<2>', vdat)
 	if year == "2006":
 		vdat = re.sub('(3rd sitting</A></TD><TD class="style1" valign="top"><A href="/pa/cm200607/cmpublic/serious/07062)6(/am/7062)6(s01.htm">28 June 2007 \(morning\))', '\g<1>8\g<2>8\g<3>', vdat)
@@ -248,31 +254,58 @@ def GetReportProceedings(urlpage, year):
 				assert p[0] == 25  # 1st 24 meeting ommitted
 			elif year == "2006" and re.search("/pa/cm200607/cmpublic/cmpbwelf.htm", urlpage):
 				assert p[0] == 13 # 1st 12 meetings in previous year
-			elif year == "2012" and re.search("/bills/2012-13/financeno4/", urlpage):
+			elif year == "2012" and re.search("/bills/2010-12/financeno4.*bill201213", urlpage):
 				assert p[0] == 5 # 1st 4 meetings in previous session
 				firstdate = '2012-04-24'
-			elif year == "2013" and re.search("/bills/2013-14/finance/committees/houseofcommonspublicbillcommitteeonthefinanceno2bill201314", urlpage):
+			elif year == "2013" and re.search("/bills/2013-14/financeno2/.*bill201314", urlpage):
 				assert p[0] == 5 # 1st 4 meetings in previous session
 				firstdate = '2013-04-23'
+			elif year == '2014' and re.search('/bills/2013-14/finance/.*bill201415', urlpage):
+				assert p[0] == 10 # 1st 9 meetings in previous session
+				firstdate = '2014-04-29'
 			else:
 				assert p[0] == 1, "%s first sitting not found" % urlpage
 		prev = p
 	return res, firstdate
 
+
 def get_committee_attributes(committees):
 	res = [ ]
         for year, index_url, index_text in committees:
+                # Bad links on session index page
                 if index_url == 'http://services.parliament.uk/bills/2009-10/thirdpartiesrightsagainstinsurers.html':
-                        index_url = 'http://services.parliament.uk/bills/2009-10/thirdpartiesrightsagainstinsurers/committees/houseofcommonspublicbillcommitteeonthethirdpartiesrightsagainstinsurersbillhl200910.html'
+                        index_url = 'http://services.parliament.uk/bills/2009-10/thirdpartiesrightsagainstinsurershl/committees/houseofcommonspublicbillcommitteeonthethirdpartiesrightsagainstinsurersbillhl200910.html'
+                elif index_url == 'http://services.parliament.uk/bills/2014-15/smallbusinessenterpriseandemployment.html':
+                        index_url = 'http://services.parliament.uk/bills/2014-15/smallbusinessenterpriseandemployment/committees/houseofcommonspublicbillcommitteeonthesmallbusinessenterpriseandemploymentbill201415.html'
+                elif index_url == 'http://services.parliament.uk/bills/2014-15/internationaldevelopmentofficialdevelopmentassistancetarget.html':
+                        index_url = 'http://services.parliament.uk/bills/2014-15/internationaldevelopmentofficialdevelopmentassistancetarget/committees/houseofcommonspublicbillcommitteeontheinternationaldevelopmentofficialdevelopmentassistancetargetbill201415.html'
+                elif index_url == 'http://services.parliament.uk/bills/2013-14/gamblinglicensingandadvertising.html':
+                        index_url = 'http://services.parliament.uk/bills/2013-14/gamblinglicensingandadvertising/committees/houseofcommonspublicbillcommitteeonthegamblinglicensingandadvertisingbill201314.html'
+                elif index_url == 'http://services.parliament.uk/bills/2012-13/finance/committees/houseofcommonspublicbillcommitteeonthefinanceno2bill201213.html':
+                        index_url = 'http://services.parliament.uk/bills/2012-13/financeno2/committees/houseofcommonspublicbillcommitteeonthefinanceno2bill201213.html'
+                elif index_url == 'http://services.parliament.uk/bills/2013-14/houseoflordsreformno2/committees/houseofcommonspublicbillcommitteeonthehouseoflordsreformno2bill201314.html':
+			index_url = 'http://services.parliament.uk/bills/2013-14/houselordsreform/committees/houseofcommonspublicbillcommitteeonthehouseoflordsreformno2bill201314.html'
+		elif index_url == 'http://services.parliament.uk/bills/2010-11/localgovernmentombudsmanamendment/committees/houseofcommonspublicbillcommitteeonthelocalgovernmentombudsmanamendmentbill201011.html':
+			index_url = 'http://services.parliament.uk/bills/2010-12/localgovernmentreviewofdecisionsbillformallyknownasthelocalgovernmentombudsmanamendment/committees/houseofcommonspublicbillcommitteeonthelocalgovernmentombudsmanamendmentbill201011.html'
+		elif index_url == 'http://services.parliament.uk/bills/2009-10/cooperativeandcommunitybenefitsocietiesandcreditunions/committees/houseofcommonspublicbillcommitteeonthecooperativeandcommunitybenefitsocietiesandcreditunionsbillhl200910.html':
+			index_url = 'http://services.parliament.uk/bills/2009-10/cooperativeandcommunitybenefitsocietiesandcreditunionshl/committees/houseofcommonspublicbillcommitteeonthecooperativeandcommunitybenefitsocietiesandcreditunionsbillhl200910.html'
+		elif index_url == 'http://services.parliament.uk/bills/2009-10/marriagewales/committees/houseofcommonspublicbillcommitteeonthemarriagewalesbillhl200910.html':
+			index_url = 'http://services.parliament.uk/bills/2009-10/marriagewaleshl/committees/houseofcommonspublicbillcommitteeonthemarriagewalesbillhl200910.html'
+                if 'Police Reform and Social Responsibility' in index_text and 'policereform' not in index_url:
+                        index_url = 'http://services.parliament.uk/bills/2010-11/policereformandsocialresponsibility/committees/houseofcommonspublicbillcommitteeonthepolicereformandsocialresponsibilitybill201011.html'
+
+                # Ignore special cases
                 if re.match('House of Lords Special Public Bill Committees', index_text):
                         continue
+                if re.match('Consumer Insurance \(Disclosure and Representations\) Bill \[Lords\] - Second Reading Committee', index_text):
+                        continue
+                # Special select committee PBC, doesn't find it
+                if index_url == 'http://services.parliament.uk/bills/2010-11/armedforces/committees/houseofcommonspublicbillcommitteeonthearmedforcesbill201011.html':
+                        continue
+
                 # The following two had their meetings in 2008-09 and are linked from there also
                 if year == '2009' and index_text in ('Child Poverty Bill', 'Equality Bill'):
                         continue
-                if index_url == 'http://services.parliament.uk/bills/2010-11/armedforces/committees/houseofcommonspublicbillcommitteeonthearmedforcesbill201011.html':
-                        continue
-                if 'Police Reform and Social Responsibility' in index_text and 'policereform' not in index_url:
-                        index_url = 'http://services.parliament.uk/bills/2010-11/policereformandsocialresponsibility/committees/houseofcommonspublicbillcommitteeonthepolicereformandsocialresponsibilitybill201011.html'
 
                 mcttee = re.match("""
         # The name of the Bill (occasionally they forget to put 'Bill')
@@ -324,6 +357,11 @@ def GetBillLinks():
                         print "year=", year
                 for link, text in get_oldstyle_bill_links(billyear[0]):
                         committees.append( (year, link, text) )
+
+        committees += (
+		('2012', 'http://services.parliament.uk/bills/2010-12/financeno4/committees/houseofcommonspublicbillcommitteeonthefinancebill201213.html', 'Finance Bill'),
+		('2014', 'http://services.parliament.uk/bills/2013-14/finance/committees/houseofcommonspublicbillcommitteeonthefinancebill201415.html', 'Finance Bill')
+	)
 
         return get_committee_attributes(committees)
 
