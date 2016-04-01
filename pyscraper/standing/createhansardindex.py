@@ -20,7 +20,7 @@ toppath = miscfuncs.toppath
 url_pbc_current = "http://www.parliament.uk/business/publications/hansard/commons/bill-committee-debates/"
 url_pbc_previous = "http://www.parliament.uk/business/publications/hansard/commons/bill-committee-debates/previous-sessions/"
 
-pwsdantingindex = os.path.join(toppath, "standingindex.xml")
+pwstandingindex = os.path.join(toppath, "standingindex.xml")
 
 def get_oldstyle_bill_links(urlpage):
 	res = [ ]
@@ -378,9 +378,9 @@ def UpdateStandingHansardIndex(bforce):
 	billinks = GetBillLinks(bforce)
 
 	# we need to extend it to the volumes, but this will do for now.
-	fpwsdantingindex = open(pwsdantingindex, "w");
-	WriteXML(fpwsdantingindex, billinks)
-	fpwsdantingindex.close()
+	fpwstandingindex = open(pwstandingindex, "w");
+	WriteXML(fpwstandingindex, billinks)
+	fpwstandingindex.close()
 
 
 
