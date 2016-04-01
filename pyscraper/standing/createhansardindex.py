@@ -17,7 +17,6 @@ toppath = miscfuncs.toppath
 
 # Creates an xml with the links into the index files for the Standing Committees.
 
-url_pbc_current = "http://www.parliament.uk/business/publications/hansard/commons/bill-committee-debates/"
 url_pbc_previous = "http://www.parliament.uk/business/publications/hansard/commons/bill-committee-debates/previous-sessions/"
 
 pwstandingindex = os.path.join(toppath, "standingindex.xml")
@@ -307,35 +306,24 @@ def get_committee_attributes(committees):
                         res.append(((year, billtitle, committee, index_url, committeedate), p))
 	return res
 
-def GetBillLinks(bforce):
-        uin = urllib.urlopen(url_pbc_current)
+def GetBillLinks():
+        committees = []
+
+        billyears = [ ]
+        uin = urllib.urlopen(url_pbc_previous)
         s = uin.read()
         uin.close()
-        current_committees = re.findall('<a href="(http://services.parliament.uk/bills/[^"]*)">(.*?)</a>(?is)', s)
-        current_session = re.search('<(?:h2|strong)>Session (\d{4}).\d+</(?:h2|strong)>', s).group(1)
-        committees = [ (current_session, link, text) for link, text in current_committees ]
+        billyears = re.findall('<a href="([^"]*)"[^>]*>(Session .*?)</a>(?is)', s)
 
-        # Remove duplicates, maintain order
-        seen = set()
-        committees = [ c for c in committees if c not in seen and not seen.add(c) ]
-
-        # if you don't do --force-index, you just get the current year
-        if bforce:
-                billyears = [ ]
-                uin = urllib.urlopen(url_pbc_previous)
-                s = uin.read()
-                uin.close()
-                billyears = re.findall('<a href="([^"]*)"[^>]*>(Session .*?)</a>(?is)', s)
-
-                for billyear in billyears:
-                        match = re.match("Session (\d\d\d\d)-\d\d(?:\d\d)?", billyear[1])
-                        if not match:
-                                raise Exception, "Did not find session dates in %s" % billyear[1]
-                        year = match.group(1)
-                        if miscfuncs.IsNotQuiet():
-                                print "year=", year
-                        for link, text in get_oldstyle_bill_links(billyear[0]):
-                                committees.append( (year, link, text) )
+        for billyear in billyears:
+                match = re.match("Session (\d\d\d\d)-\d\d(?:\d\d)?", billyear[1])
+                if not match:
+                        raise Exception, "Did not find session dates in %s" % billyear[1]
+                year = match.group(1)
+                if miscfuncs.IsNotQuiet():
+                        print "year=", year
+                for link, text in get_oldstyle_bill_links(billyear[0]):
+                        committees.append( (year, link, text) )
 
         return get_committee_attributes(committees)
 
@@ -373,14 +361,10 @@ def WriteXML(fout, billinks):
 # main function
 ###############
 def UpdateStandingHansardIndex(bforce):
-	#print "not--UpdateStandingHansardIndex"
-	#return
-	billinks = GetBillLinks(bforce)
+	if not bforce:
+		return
 
-	# we need to extend it to the volumes, but this will do for now.
+	billinks = GetBillLinks()
 	fpwstandingindex = open(pwstandingindex, "w");
 	WriteXML(fpwstandingindex, billinks)
 	fpwstandingindex.close()
-
-
-
