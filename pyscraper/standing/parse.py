@@ -939,7 +939,7 @@ class ParseCommittee:
             elif tag.name == 'a' and tag.get('name', None):
                 self.url = self.url.split('#',1)[0]
                 self.url = self.url + "#" + tag['name']
-            elif tag.name == 'a' and re.search('/pa/cm/cmpubns|services.parliament.uk/bills/|http://www.parliament.uk/business/publications/commons/', tag.get('href', '')):
+            elif tag.name == 'a' and re.search('/pa/cm/cmstand|/pa/cm/cmpubns|services.parliament.uk/bills/|http://www.parliament.uk/business/publications/commons/', tag.get('href', '')):
                 pass
             else:  
                 cssClass = tag.get('class', '')
