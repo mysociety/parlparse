@@ -3,10 +3,12 @@
 # Thrown together
 # Currently only rescrapes/parses missing UK and NI from preivous day
 
+import glob
 import datetime, os, commands
 
 base = os.path.expanduser('~/')
 base_html = base + 'parldata/cmpages/'
+base_zip = base + 'parldata/cmpages/hansardzips/'
 base_xml = base + 'parldata/scrapedxml/'
 base_scraper = base + 'parlparse/pyscraper/'
 
@@ -46,8 +48,14 @@ rescrape = []
 for type, dir in dirs.items():
     suffix = suffixes[type] if type in suffixes else 'a'
     file = base_html + dir + yesterday + suffix + '.%s'
-    if not os.path.exists(file % 'html') and not os.path.exists(file % 'json'):
+    if yesterday < '2016-04-11' and not os.path.exists(file % 'html') and not os.path.exists(file % 'json'):
         rescrape.append(type)
+
+no_hansard_zips = False
+if yesterday > '2016-04-11':
+    pattern = '{0}*{1}*'.format(base_zip, today.isoformat())
+    if len(glob.glob(pattern)) == 0:
+        no_hansard_zips = True
 
 reparse = []
 for type, dir in dirs.items():
@@ -57,13 +65,16 @@ for type, dir in dirs.items():
         reparse.append(type)
 
 # Scrape
-if rescrape:
-    run_command('', './lazyrunall.py --date=' + yesterday + ' scrape ' + ' '.join(rescrape))
+if no_hansard_zips:
+    run_command('', './unpack_hansard_zips.py')
 
 # Parse
 if reparse:
-    run_command('', './lazyrunall.py --date=' + yesterday + ' parse ' + ' '.join(reparse) + ' --patchtool')
-run_command('standing/', './parse.py --patchtool')
+    if 'ni' in reparse:
+        run_command('', './lazyrunall.py --date=' + yesterday + ' parse ni --patchtool')
+    reparse = [t for t in reparse if t != 'ni']
+    if reparse:
+        run_command('', './process_hansard.py # not parsed ' + ' '.join(reparse))
 
 print '# Parse/fix any older things from the cron email now'
 
