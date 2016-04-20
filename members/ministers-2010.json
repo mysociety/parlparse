@@ -20745,12 +20745,22 @@
       "end_date": "1992-03-16"
     }, 
     {
+      "id": "uk.parliament.data/Member/115/GovernmentPost/1010", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Foreign and Commonwealth Office", 
+      "person_id": "uk.org.publicwhip/person/10423", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-11", 
+      "end_date": "2016-03-11"
+    }, 
+    {
       "id": "uk.parliament.data/Member/115/GovernmentPost/1011", 
       "source": "datadotparl/governmentpost", 
       "role": "The Minister of State, Department for Business, Innovation and Skills", 
       "person_id": "uk.org.publicwhip/person/10423", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-11"
+      "start_date": "2015-05-11", 
+      "end_date": "2016-03-11"
     }, 
     {
       "id": "uk.parliament.data/Member/115/GovernmentPost/348", 
@@ -40515,6 +40525,14 @@
       "end_date": "2010-05-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/1531/OppositionPost/1286", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Principal Spokesperson for Energy and Climate Change", 
+      "person_id": "uk.org.publicwhip/person/11641", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-11-30"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1531/OppositionPost/870", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Secretary of State for International Development", 
@@ -42039,7 +42057,16 @@
       "role": "Liberal Democrat Lords Principal Spokesperson on the Treasury", 
       "person_id": "uk.org.publicwhip/person/11783", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-06-01"
+      "start_date": "2015-06-01", 
+      "end_date": "2015-09-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1557/OppositionPost/1308", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Principal Spokesperson on the Treasury and Economy", 
+      "person_id": "uk.org.publicwhip/person/11783", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/1557/OppositionPost/16", 
@@ -42636,6 +42663,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2005-05-10", 
       "end_date": "2006-08-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1567/OppositionPost/1279", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Principal Spokesperson for Business, Innovation and Skills", 
+      "person_id": "uk.org.publicwhip/person/11823", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-11-10"
     }, 
     {
       "id": "uk.parliament.data/Member/1567/OppositionPost/15", 
@@ -44783,7 +44818,16 @@
       "role": "Liberal Democrat Lords Principal Spokesperson for Media and the Creative Industries", 
       "person_id": "uk.org.publicwhip/person/12838", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-06-01"
+      "start_date": "2015-06-01", 
+      "end_date": "2015-09-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3699/OppositionPost/1307", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Principal Spokesperson for Culture, Media and Sport", 
+      "person_id": "uk.org.publicwhip/person/12838", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/3651/Committee/336", 
@@ -48739,6 +48783,14 @@
       "person_id": "uk.org.publicwhip/person/12974", 
       "organization_id": "house-of-commons", 
       "start_date": "2015-06-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1804/OppositionPost/1301", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Principal Spokesperson for Wales", 
+      "person_id": "uk.org.publicwhip/person/12974", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/1801/Committee/191", 
@@ -53188,6 +53240,15 @@
       "end_date": "1998-11-19"
     }, 
     {
+      "id": "uk.parliament.data/Member/3474/GovernmentPost/1011", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Department for Business, Innovation and Skills", 
+      "person_id": "uk.org.publicwhip/person/13107", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-03-11", 
+      "end_date": "2016-04-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3474/GovernmentPost/1117", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister of State", 
@@ -54784,14 +54845,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13141", 
       "organization_id": "communications-committee", 
-      "start_date": "2013-07-02"
+      "start_date": "2013-07-02", 
+      "end_date": "2016-03-23"
     }, 
     {
       "id": "uk.parliament.data/Member/2099/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13141", 
       "organization_id": "privileges-and-conduct-committee-for-lords", 
-      "start_date": "2011-10-26"
+      "start_date": "2011-10-26", 
+      "end_date": "2016-03-23"
     }, 
     {
       "id": "uk.parliament.data/Member/2099/GovernmentPost/22", 
@@ -67206,7 +67269,16 @@
       "role": "Liberal Democrat Lords Principal Spokesperson for the Voluntary Sector and Social Enterprise", 
       "person_id": "uk.org.publicwhip/person/13524", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-06-01"
+      "start_date": "2015-06-01", 
+      "end_date": "2015-09-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2501/OppositionPost/1309", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Principal Spokesperson for the Voluntary Sector", 
+      "person_id": "uk.org.publicwhip/person/13524", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/3451/Committee/316", 
@@ -73995,12 +74067,22 @@
       "end_date": "2015-02-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/3789/OppositionPost/1286", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Principal Spokesperson for Energy and Climate Change", 
+      "person_id": "uk.org.publicwhip/person/13732", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-09-07", 
+      "end_date": "2015-11-30"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3789/OppositionPost/1298", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Lords Principal Spokesperson for Transport", 
       "person_id": "uk.org.publicwhip/person/13732", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-06-01"
+      "start_date": "2015-06-01", 
+      "end_date": "2015-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/3794/Committee/233", 
@@ -75438,7 +75520,8 @@
       "role": "Liberal Democrat Lords Principal Spokesperson for Energy and Climate Change", 
       "person_id": "uk.org.publicwhip/person/14080", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-06-01"
+      "start_date": "2015-06-01", 
+      "end_date": "2015-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4239/Committee/287", 
@@ -75682,7 +75765,8 @@
       "role": "The Minister of State, Home Department", 
       "person_id": "uk.org.publicwhip/person/14134", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-12"
+      "start_date": "2015-05-12", 
+      "end_date": "2016-03-31"
     }, 
     {
       "id": "uk.parliament.data/Member/1091/GovernmentPost/72", 
@@ -83290,7 +83374,8 @@
       "role": "Liberal Democrat Lords Principal Spokesperson for Work and Pensions", 
       "person_id": "uk.org.publicwhip/person/24984", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-06-01"
+      "start_date": "2015-06-01", 
+      "end_date": "2015-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4165/Committee/205", 
@@ -83608,7 +83693,8 @@
       "role": "Liberal Democrat Lords Principal Spokesperson for Communities, Decentralisation and the Northern Powerhouse", 
       "person_id": "uk.org.publicwhip/person/25000", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-06-01"
+      "start_date": "2015-06-01", 
+      "end_date": "2015-12-03"
     }, 
     {
       "id": "uk.parliament.data/Member/4174/Committee/333", 
@@ -84349,7 +84435,8 @@
       "role": "Liberal Democrat Lords Principal Spokesperson for Sport, Tourism and Cultural Participation", 
       "person_id": "uk.org.publicwhip/person/25033", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-06-01"
+      "start_date": "2015-06-01", 
+      "end_date": "2015-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4212/Committee/164", 
@@ -84645,7 +84732,8 @@
       "role": "Liberal Democrat Lords Principal Spokesperson for Business, Innovation and Skills", 
       "person_id": "uk.org.publicwhip/person/25052", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-06-01"
+      "start_date": "2015-06-01", 
+      "end_date": "2015-11-10"
     }, 
     {
       "id": "uk.parliament.data/Member/4230/Committee/340", 
@@ -84673,12 +84761,21 @@
       "end_date": "2015-05-07"
     }, 
     {
+      "id": "uk.parliament.data/Member/4230/OppositionPost/1298", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Principal Spokesperson for Transport", 
+      "person_id": "uk.org.publicwhip/person/25053", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-09-07"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4230/OppositionPost/1301", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Lords Principal Spokesperson for Wales", 
       "person_id": "uk.org.publicwhip/person/25053", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-06-01"
+      "start_date": "2015-06-01", 
+      "end_date": "2015-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4237/Committee/249", 
@@ -85516,6 +85613,14 @@
       "person_id": "uk.org.publicwhip/person/25190", 
       "organization_id": "house-committee-lords", 
       "start_date": "2015-07-09"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4289/OppositionPost/1302", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Principal Spokesperson for Work and Pensions", 
+      "person_id": "uk.org.publicwhip/person/25190", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4282/Committee/173", 
@@ -88163,6 +88268,14 @@
       "start_date": "2015-05-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4538/GovernmentPost/1162", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Lords Spokesperson (Home Office)", 
+      "person_id": "uk.org.publicwhip/person/25446", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-04-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4538/GovernmentPost/18", 
       "source": "datadotparl/governmentpost", 
       "role": "The Advocate-General for Scotland", 
@@ -88190,6 +88303,30 @@
       "person_id": "uk.org.publicwhip/person/25475", 
       "organization_id": "communities-and-local-government-committee", 
       "start_date": "2016-03-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4558/OppositionPost/1306", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Principal Spokesperson for Communities and Local Government", 
+      "person_id": "uk.org.publicwhip/person/25478", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-12-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4570/GovernmentPost/1010", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Foreign and Commonwealth Office", 
+      "person_id": "uk.org.publicwhip/person/25487", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-04-04"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4570/GovernmentPost/1011", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Department for Business, Innovation and Skills", 
+      "person_id": "uk.org.publicwhip/person/25487", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-04-04"
     }
   ], 
   "organizations": [
