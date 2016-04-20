@@ -9,12 +9,10 @@ RET=0
 # $4 is extra flags to pass through
 # echo "updatedaterange from $1/$2 to $3"
 
-# Run parsers to convert various HTML into XML
 cd ~/parlparse/pyscraper
-# We do these on separate lines, so if one fails, others still run
-./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE parse debates || RET=1
-./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE parse westminhall || RET=1
-./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE parse lords || RET=1
+# UK parser, to convert fetched XML into our XML format
+./process_hansard.py
+# NI parser, to convert fetched JSON into our XML format
 ./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE parse ni || RET=1
 
 # New UK Parliament Written Answers and Statements database
@@ -23,10 +21,6 @@ cd ~/parlparse/
 ~/.venv/bin/python wrans-2014/parse.py --house commons --type statements --out ~/parldata/scrapedxml/wms/ --members ~/parlparse/members/people.json
 ~/.venv/bin/python wrans-2014/parse.py --house lords --type answers --out ~/parldata/scrapedxml/lordswrans/ --members ~/parlparse/members/people.json
 ~/.venv/bin/python wrans-2014/parse.py --house lords --type statements --out ~/parldata/scrapedxml/lordswms/ --members ~/parlparse/members/people.json
-
-# Public Bill Committee transcripts
-cd ~/parlparse/pyscraper/standing
-./parse.py $4
 
 # Scottish Parliament:
 cd ~/parlparse/pyscraper/sp
