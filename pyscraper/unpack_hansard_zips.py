@@ -105,11 +105,12 @@ class UnzipError(Exception):
 
 def extract_zip(zip_filename, destination_directory):
     unzip_command = ['unzip', '-q', zip_filename, '-d', destination_directory]
-    exit_code = subprocess.call(unzip_command)
+    p = subprocess.Popen(unzip_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    _, _ = p.communicate()
     # We get return code 1 quite often ("a warning was output")
     # because some of these zip files use backslash as a directory
     # separator:
-    if exit_code not in (0, 1):
+    if p.returncode not in (0, 1):
         raise UnzipError("Excuting {0} failed".format(' '.join(unzip_command)))
     # Walk the whole directory before processing the unpacked files,
     # so we don't modified the tree while recursing through it:
