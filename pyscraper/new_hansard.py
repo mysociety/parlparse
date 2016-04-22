@@ -1409,6 +1409,8 @@ class ParseDay(object):
             if m:
                 shortnamemap.setdefault(m.group(1), []).append(
                     (miscfuncs.AlphaStringToOrder(m.group(2)), m.group(2), f))
+            elif f.endswith('~') or f == 'changedates.txt':
+                pass
             elif os.path.isfile(os.path.join(pwstandingpages, f)):
                 print "not recognized file:", f, " in ", pwstandingpages
 
