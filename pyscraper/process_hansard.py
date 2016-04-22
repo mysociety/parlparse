@@ -5,7 +5,6 @@ import argparse
 import os
 import datetime
 import time
-import fnmatch
 import glob
 import re
 from os.path import join
@@ -24,7 +23,7 @@ def find(pattern, path):
     result = []
     for root, dirs, files in os.walk(path):
         for name in files:
-            if fnmatch.fnmatch(name, pattern):
+            if re.search(pattern, name):
                 result.append(os.path.join(root, name))
     return result
 
@@ -75,17 +74,17 @@ try:
     for d in dirs:
         if os.path.isdir(d):
             p = ParseDay()
-            xml_files = find('*.xml', d)
+            xml_files = find('([CL]HAN|PBC).*\.xml$', d)
             for x in xml_files:
                 print "parsing {0}".format(x)
                 p.reset()
-                if re.search('CHAN', x):
+                if 'CHAN' in x:
                     for dt in ['debate', 'westminhall']:
                         entries, parsed = handle_file(p, entries, x, dt)
                         p.reset()
-                elif re.search('LHAN', x):
+                elif 'LHAN' in x:
                     entries, parsed = handle_file(p, entries, x, 'lords')
-                elif re.search('PBC', x):
+                elif 'PBC' in x:
                     entries, parsed = handle_file(p, entries, x, 'standing')
 
 # this is just to make sure we record progress
