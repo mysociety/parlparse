@@ -1495,7 +1495,7 @@ class ParseDay(object):
 
     def remove_para_newlines(self, string):
         return re.sub(
-            '(?s)(<p\s[^>]*>)(.*?)(<\/p>)',
+            '(?s)(<p[^>]*>)(.*?)(<\/p>)',
             lambda m: (u''.join((m.group(1), re.sub('\n', ' ', m.group(2)), m.group(3)))),
             string
         )
