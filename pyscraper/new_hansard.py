@@ -615,18 +615,7 @@ class BaseParseDayXML(object):
         self.parse_para_with_member(para, member)
 
     def parse_brev(self, brev):
-        tag = etree.Element('p')
-        text = self.get_single_line_text_from_element(brev)
-        if len(text) == 0:
-            return
-
-        tag.set('pwmotiontext', 'yes')
-        tag.text = text
-        if self.current_speech is None:
-            self.new_speech(None, brev.get('url'))
-        if self.use_pids:
-            tag.set('pid', self.get_pid())
-        self.current_speech.append(tag)
+        self.parse_para_with_member(brev, None, css_class="indent", pwmotiontext='yes')
 
     def parse_votelist(self, votes, direction, vote_list, is_teller=False):
         for vote in votes:
@@ -780,7 +769,7 @@ class BaseParseDayXML(object):
             self.parse_indent(tag)
         elif tag_name in self.paras:
             self.parse_para(tag)
-        elif tag_name == 'hs_brev':
+        elif tag_name == 'hs_brev' or tag_name == 'hs_brevIndent':
             self.parse_brev(tag)
         elif tag_name == 'TableWrapper':
             self.parse_table(tag)
