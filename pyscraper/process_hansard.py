@@ -24,11 +24,12 @@ def find(pattern, path):
     for root, dirs, files in os.walk(path):
         for name in files:
             if re.search(pattern, name):
-                result.append(os.path.join(root, name))
+                result.append(join(root, name).replace(zip_dir_slash, ''))
     return result
 
 index_filename = join(toppath, 'seen_hansard_xml.txt')
 zip_directory = join(toppath, 'cmpages', 'hansardzips')
+zip_dir_slash = "%s/" % zip_directory
 
 
 dir_match = '\d+_((\d{4}-\d{2}-\d{2})_\d{2}:\d{2}:\d{2})$'
@@ -51,7 +52,7 @@ dirs.sort(key=lambda x: time.strptime(re.match(time_match, x).groups(1)[0], time
 entries = []
 if os.path.exists(index_filename):
     with open(index_filename) as f:
-        entries = [e.strip() for e in f.readlines()]
+        entries = [e.strip().replace(zip_dir_slash, '') for e in f.readlines()]
 
 # in case the file is present but empty
 if entries is None:
@@ -64,7 +65,7 @@ def handle_file(parser, entries, filename, debate_type):
         print "already seen {0}, not parsing again".format(filename)
         return entries, False
 
-    parser.handle_file(filename, debate_type)
+    parser.handle_file(join(zip_directory, filename), debate_type)
     print "parsed {0} file to {1}".format(debate_type, parser.output_file)
     entries.append(file_key)
 
