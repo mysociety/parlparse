@@ -169,6 +169,8 @@ class BaseParseDayXML(object):
     skip_tag = None
     uc_titles = False
 
+    house_divided_text = u'The House divided:'
+
     def __init__(self):
         self.reset()
 
@@ -653,9 +655,10 @@ class BaseParseDayXML(object):
 
         self.current_speech.append(tag)
 
-    def parse_division(self, division):
-        self.clear_current_speech()
+    def format_div_summary(self, yes_text, no_text):
+        return u"Ayes {0}, Noes {1}.".format(yes_text, no_text)
 
+    def get_division_tag(self, division, yes_text, no_text):
         tag = etree.Element('division')
 
         tag.set('id', self.get_speech_id())
@@ -668,16 +671,41 @@ class BaseParseDayXML(object):
         tag.set('colnum', self.current_col)
         tag.set('time', self.current_time)
 
+        div_count = etree.Element('divisioncount')
+        div_count.set('ayes', yes_text)
+        div_count.set('noes', no_text)
+
+        tag.append(div_count)
+
+        return tag
+
+    def parse_division(self, division):
         ayes_count = \
             division.xpath('.//ns:AyesNumber/text()', namespaces=self.ns_map)
         noes_count = \
             division.xpath('.//ns:NoesNumber/text()', namespaces=self.ns_map)
 
-        div_count = etree.Element('divisioncount')
-        div_count.set('ayes', u''.join(ayes_count))
-        div_count.set('noes', u''.join(noes_count))
+        ayes_count_text = u''.join(ayes_count)
+        noes_count_text = u''.join(noes_count)
 
-        tag.append(div_count)
+        # output a summary of the division results
+        house_divided = etree.Element('p')
+        house_divided.set('pid', self.get_pid())
+        house_divided.set('class', 'italic')
+        house_divided.set('pwmotiontext', 'yes')
+        house_divided.text = self.house_divided_text
+        self.current_speech.append(house_divided)
+
+        div_summary = self.format_div_summary(ayes_count_text, noes_count_text)
+        div_summary_tag = etree.Element('p')
+        div_summary_tag.set('pid', self.get_pid())
+        div_summary_tag.set('pwmotiontext', 'yes')
+        div_summary_tag.text = div_summary
+        self.current_speech.append(div_summary_tag)
+
+        self.clear_current_speech()
+
+        tag = self.get_division_tag(division, ayes_count_text, noes_count_text)
 
         ayes = division.xpath(
             './/ns:NamesAyes//ns:Member', namespaces=self.ns_map
@@ -706,6 +734,14 @@ class BaseParseDayXML(object):
         tag.append(noe_list)
 
         self.root.append(tag)
+
+        paras = division.xpath('./ns:hs_Para', namespaces=self.ns_map)
+        for para in paras:
+            text = u''.join(para.xpath('.//text()'))
+            if re.search(r'House\s*divided', text) or \
+                    re.search(r'Division\s*No', text):
+                continue
+            self.parse_para(para)
 
     def parse_time(self, tag):
         time_txt = u''.join(tag.xpath('.//text()'))
@@ -869,6 +905,8 @@ class PBCParseDayXML(BaseParseDayXML):
     current_chair = None
 
     use_pids = False
+
+    house_divided_text = u'The Committee divided:'
 
     ignored_tags = [
         'hs_CLHeading',
@@ -1035,6 +1073,24 @@ class PBCParseDayXML(BaseParseDayXML):
             chair = self.resolver.pbc_match(name, '', self.date)
             if chair is not None:
                 self.current_chair = chair
+
+    def format_div_summary(self, yes_text, no_text):
+        return u"Ayes {0}, Noes {1}.".format(yes_text, no_text)
+
+    def get_division_tag(self, division, yes_text, no_text):
+        tag = etree.Element('divisioncount')
+
+        div_number = \
+            division.xpath('.//ns:Number/text()', namespaces=self.ns_map)
+
+        tag.set('id', self.get_speech_id())
+        tag.set('divnumber', u''.join(div_number))
+        tag.set('ayes', yes_text)
+        tag.set('noes', no_text)
+        tag.set('url', '')
+
+        return tag
+
 
     def parse_amendment(self, amendment, level):
         tag = etree.Element('p')
@@ -1280,6 +1336,23 @@ class LordsParseDayXML(BaseParseDayXML):
         self.current_speech.append(tag)
 
     def parse_division(self, division):
+        ayes_count = \
+            division.xpath('.//ns:ContentsNumber/text()', namespaces=self.ns_map)
+        noes_count = \
+            division.xpath('.//ns:NotContentsNumber/text()', namespaces=self.ns_map)
+
+        ayes_count_text = u''.join(ayes_count)
+        noes_count_text = u''.join(noes_count)
+
+        # output a summary of the division results
+        div_summary = \
+            u"Ayes {0}, Noes {1}.".format(ayes_count_text, noes_count_text)
+        div_summary_tag = etree.Element('p')
+        div_summary_tag.set('pid', self.get_pid())
+        div_summary_tag.set('pwmotiontext', 'yes')
+        div_summary_tag.text = div_summary
+        self.current_speech.append(div_summary_tag)
+
         self.clear_current_speech()
 
         tag = etree.Element('division')
@@ -1295,14 +1368,9 @@ class LordsParseDayXML(BaseParseDayXML):
         tag.set('colnum', self.current_col)
         tag.set('time', self.current_time)
 
-        ayes_count = \
-            division.xpath('.//ns:ContentsNumber/text()', namespaces=self.ns_map)
-        noes_count = \
-            division.xpath('.//ns:NotContentsNumber/text()', namespaces=self.ns_map)
-
         div_count = etree.Element('divisioncount')
-        div_count.set('content', u''.join(ayes_count))
-        div_count.set('not-content', u''.join(noes_count))
+        div_count.set('content', ayes_count_text)
+        div_count.set('not-content', noes_count_text)
 
         tag.append(div_count)
 
@@ -1324,6 +1392,14 @@ class LordsParseDayXML(BaseParseDayXML):
         tag.append(no_list)
 
         self.root.append(tag)
+
+        paras = division.xpath('./ns:hs_Procedure', namespaces=self.ns_map)
+        for para in paras:
+            text = u''.join(para.xpath('.//text()'))
+            if re.search(r'Contents', text) or \
+                    re.search(r'Division\s*on', text):
+                continue
+            self.parse_para(para)
 
     def parse_votelist(self, votes, direction, vote_list):
         for vote in votes:
