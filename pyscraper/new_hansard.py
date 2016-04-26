@@ -823,6 +823,9 @@ class BaseParseDayXML(object):
                         stamp=tag.get('url')
                     )
 
+        # make sure we add any outstanding speech.
+        self.clear_current_speech()
+
         return True
 
     def get_date(self, xml_file):
