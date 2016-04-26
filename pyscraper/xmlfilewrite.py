@@ -11,13 +11,16 @@ from contextexception import ContextException
 import miscfuncs
 toppath = miscfuncs.toppath
 
-def WriteXMLHeader(fout, encoding="ISO-8859-1"):
-	fout.write('<?xml version="1.0" encoding="%s"?>\n' % encoding)
+def WriteXMLHeader(fout, encoding="ISO-8859-1", output_unicode=False):
+	header = '<?xml version="1.0" encoding="%s"?>\n' % encoding
+	if output_unicode:
+		header = unicode(header)
+	fout.write(header)
 
 	# These entity definitions for latin-1 chars are from here:
 	# http://www.w3.org/TR/REC-html40/sgml/entities.html
 	# also available at: http://www.csparks.com/CharacterEntities.html
-	fout.write('''
+	entities = '''
 
 <!DOCTYPE publicwhip
 [
@@ -80,7 +83,12 @@ def WriteXMLHeader(fout, encoding="ISO-8859-1"):
 
 ]>
 
-''');
+'''
+
+	if output_unicode:
+		entities = unicode(entities)
+
+	fout.write(entities)
 
 
 # write out a whole file which is a list of qspeeches, and construct the ids.

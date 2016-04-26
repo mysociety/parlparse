@@ -189,6 +189,16 @@ class BaseParseDayXML(object):
         self.input_root = None
         self.output_heading = False
 
+    def is_pre_new_parser(self):
+        is_pre = False
+        parser_start = mx.DateTime.Date(2016, 4, 1)
+        file_date = mx.DateTime.DateTimeFrom(self.date)
+
+        if file_date < parser_start:
+            is_pre = True
+
+        return is_pre
+
     def get_tag_name_no_ns(self, tag):
         # remove annoying namespace for brevities sake
         tag_name = str(tag.tag)
@@ -1612,7 +1622,8 @@ class ParseDay(object):
         # spit out the rewritten previous version with redirects
         tempfilenameoldxml = tempfile.mktemp(".xml", "pw-filtertempold-", miscfuncs.tmppath)
         foout = io.open(tempfilenameoldxml, mode="w", encoding='utf-8')
-        # WriteXMLHeader(foout)
+        if self.parser.is_pre_new_parser:
+            WriteXMLHeader(foout, encoding="UTF-8", output_unicode=True)
         foout.write(u'<publicwhip scrapeversion="%s" latest="no">\n' % self.prev_file)
         foout.writelines([unicode(x) for x in xprevcompress])
         foout.write(u"</publicwhip>\n\n")
