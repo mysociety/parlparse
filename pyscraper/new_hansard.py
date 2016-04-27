@@ -704,6 +704,8 @@ class BaseParseDayXML(object):
         house_divided.set('class', 'italic')
         house_divided.set('pwmotiontext', 'yes')
         house_divided.text = self.house_divided_text
+        if self.current_speech is None:
+            self.new_speech(None, division.get('url'))
         self.current_speech.append(house_divided)
 
         div_summary = self.format_div_summary(ayes_count_text, noes_count_text)
@@ -749,6 +751,7 @@ class BaseParseDayXML(object):
         for para in paras:
             text = u''.join(para.xpath('.//text()'))
             if re.search(r'House\s*divided', text) or \
+                    re.search(r'Committee\s*divided', text) or \
                     re.search(r'Division\s*No', text):
                 continue
             self.parse_para(para)
