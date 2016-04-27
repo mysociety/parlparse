@@ -637,6 +637,8 @@ class BaseParseDayXML(object):
             tag.set('vote', direction)
             if is_teller:
                 tag.set('teller', 'yes')
+            if self.debate_type == 'standing':
+                tag.set('membername', member['name'])
             tag.text = member['name']
             vote_list.append(tag)
 
