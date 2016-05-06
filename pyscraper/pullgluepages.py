@@ -429,28 +429,29 @@ def ProcessIndexUrl(url, dgf, forcescrape):
 	return urla, index_new
 
 def MakeDayMap(folder, typ, basedir=pwcmdirs, extension='html'):
-	# make the output firectory
-	if not os.path.isdir(basedir):
-		os.mkdir(basedir)
-	pwcmfolder = os.path.join(basedir, folder)
-	if not os.path.isdir(pwcmfolder):
-		os.mkdir(pwcmfolder)
+    # make the output directory
+    if not os.path.isdir(basedir):
+        os.mkdir(basedir)
+    pwcmfolder = os.path.join(basedir, folder)
+    if not os.path.isdir(pwcmfolder):
+        os.mkdir(pwcmfolder)
 
+    # the following is code copied from the lordspullgluepages
 
-	# the following is code copied from the lordspullgluepages
+    # scan through the directory and make a mapping of all the copies for each
+    lddaymap = { }
+    for ldfile in os.listdir(pwcmfolder):
+        mnums = re.match("%s(\d{4}-\d\d-\d\d)([a-z]*)\.%s$" % ( typ, extension ), ldfile)
+        if mnums:
+            sdate = mnums.group(1)
+            salpha = mnums.group(2)
+            lddaymap.setdefault(sdate, []).append((AlphaStringToOrder(salpha), salpha, ldfile))
+        elif ldfile.endswith('~') or ldfile == 'changedates.txt':
+            pass
+        elif os.path.isfile(os.path.join(pwcmfolder, ldfile)):
+            print "not recognized file:", ldfile, " in ", pwcmfolder
 
-	# scan through the directory and make a mapping of all the copies for each
-	lddaymap = { }
-	for ldfile in os.listdir(pwcmfolder):
-		mnums = re.match("%s(\d{4}-\d\d-\d\d)([a-z]*)\.%s$" % ( typ, extension ), ldfile)
-		if mnums:
-			sdate = mnums.group(1)
-			salpha = mnums.group(2)
-			lddaymap.setdefault(sdate, []).append((AlphaStringToOrder(salpha), salpha, ldfile))
-		elif os.path.isfile(os.path.join(pwcmfolder, ldfile)):
-			print "not recognized file:", ldfile, " in ", pwcmfolder
-
-	return lddaymap, pwcmfolder
+    return lddaymap, pwcmfolder
 
 
 def GetFileDayVersions(day, lddaymap, pwcmfolder, typ, extension='html'):
