@@ -36,7 +36,7 @@ def GetMinIndex(indx, a):
 
 
 def PrepareXMLForDiff(scrapeversion):
-	chks = re.findall("<(major-heading|minor-heading|oral-heading|speech|division|ques|reply)\s(.*?)>\n?([\s\S]*?)\n?\s*</(major-heading|minor-heading|oral-heading|speech|division|ques|reply)>", scrapeversion)
+	chks = re.findall("<(major-heading|minor-heading|oral-heading|speech|division|divisioncount|ques|reply)\s(.*?)>\n?([\s\S]*?)\n?\s*</(major-heading|minor-heading|oral-heading|speech|division|divisioncount|ques|reply)>", scrapeversion)
 
 	# make identically structured huge string over the previous xml file with heading stuff stripped out
 	essxlist = [ ]
