@@ -248,8 +248,8 @@ class BaseParseDayXML(object):
 
     def check_for_pi(self, tag):
         pi = tag.xpath('.//processing-instruction("notus-xml")')
-        if len(pi) == 1:
-            self.parse_pi(pi[0])
+        if len(pi):
+            self.parse_pi(pi[-1])
 
     # this just makes any gid redirection easier
     def get_text_from_element(self, el):
@@ -862,10 +862,6 @@ class BaseParseDayXML(object):
                     self.parse_pi(tag)
                     continue
 
-                # and then check inside all tags for a processing instruction
-                # to make sure we catch all column changes
-                self.check_for_pi(tag)
-
                 tag_name = self.get_tag_name_no_ns(tag)
                 if not self.handle_tag(tag_name, tag):
                     raise ContextException(
@@ -873,6 +869,10 @@ class BaseParseDayXML(object):
                         fragment=tag,
                         stamp=tag.get('url')
                     )
+
+                # PI handling - check inside all tags for processing
+                # instructions to make sure we catch all column changes
+                self.check_for_pi(tag)
 
         # make sure we add any outstanding speech.
         self.clear_current_speech()
