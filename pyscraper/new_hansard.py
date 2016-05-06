@@ -246,10 +246,10 @@ class BaseParseDayXML(object):
         self.current_speech_part = 1
         return speech_id
 
-    def check_for_pi(self, tag):
+    def check_for_pi(self, tag, only_one):
         pi = tag.xpath('.//processing-instruction("notus-xml")')
-        if len(pi) == 1:
-            self.parse_pi(pi[0])
+        if len(pi) and not (len(pi)>1 and only_one):
+            self.parse_pi(pi[-1])
 
     # this just makes any gid redirection easier
     def get_text_from_element(self, el):
@@ -862,9 +862,11 @@ class BaseParseDayXML(object):
                     self.parse_pi(tag)
                     continue
 
-                # and then check inside all tags for a processing instruction
-                # to make sure we catch all column changes
-                self.check_for_pi(tag)
+                # Old PI handling - check inside all tags for one sole
+                # processing instruction to make sure we catch all column
+                # changes
+                if self.date < '2016-05-07':
+                    self.check_for_pi(tag, only_one=True)
 
                 tag_name = self.get_tag_name_no_ns(tag)
                 if not self.handle_tag(tag_name, tag):
@@ -873,6 +875,11 @@ class BaseParseDayXML(object):
                         fragment=tag,
                         stamp=tag.get('url')
                     )
+
+                # New PI handling - check inside all tags for processing
+                # instructions to make sure we catch all column changes
+                if self.date >= '2016-05-07':
+                    self.check_for_pi(tag, only_one=False)
 
         # make sure we add any outstanding speech.
         self.clear_current_speech()
