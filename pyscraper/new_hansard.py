@@ -562,15 +562,28 @@ class BaseParseDayXML(object):
             './/ns:QuestionText/text()', namespaces=self.ns_map
         )
         text = u''.join(text)
-        # sometimes the question text is after the tag rather
-        # than inside it in which case we want to use the tail
-        # of the tag rather than its contents
+        """
+        sometimes the question text is after the tag rather
+        than inside it in which case we want to grab all the
+        following-sibling text - can't use .tail as there may
+        be things like time code tags in there which truncate
+        .tail
+        e.g:
+        <Question><hs_Para><Number>21</Number>.
+        <Uin>[904784]</Uin>
+        <Member><B>Henry Bellingham</B> (North West Norfolk) (Con):</Member>
+        <QuestionText></QuestionText>
+        Is<hs_TimeCode time="2016-05-03T15:05:23"></hs_TimeCode>
+        the Secretary of State aware that the Construction Industry (etc)
+        </hs_Para></Question>
+        """
         if text == '':
             q_text = question.xpath(
-                './/ns:QuestionText', namespaces=self.ns_map
+                './/ns:QuestionText/following-sibling::text()',
+                namespaces=self.ns_map
             )
             if len(q_text):
-                text = q_text[0].tail
+                text = u''.join(q_text)
 
         p.text = re.sub('\n', ' ', text)
         tag.append(p)
