@@ -536,7 +536,7 @@ class ParseDayJSON(ParseDayParserBase):
                 speaker = text.replace(':', '')
                 id, stri = memberList.match(speaker, self.date)
                 self.speaker = {'id': stri, 'ts': timestamp}
-            elif line['ComponentType'] == 'Speaker (Special)':
+            elif line['ComponentType'] == 'Speaker (Special)' or line['ComponentType'] == 'Speaker (GuestSpeaker)':
                 self.display_speech()
                 speaker = text.replace(':', '')
                 self.speaker = {'name': speaker, 'ts': timestamp}
