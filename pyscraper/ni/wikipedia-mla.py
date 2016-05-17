@@ -22,7 +22,7 @@ wikimembers  = {}
 def read(y):
     with open('../rawdata/Members_of_the_NIA_%d' % y) as ur:
         return ur.read()
-content = read(2003) + read(2007) + read(2011)
+content = read(2003) + read(2007) + read(2011) + read(2016)
 
 matches = set()
 
@@ -41,7 +41,7 @@ matcher = '<td><a href="([^"]*)" title="[^"]*">([^<]+)</a></td>\s*<th style="[^"
 matches.update(re.findall(matcher, content))
 
 # 4th Assembly changes
-changes = re.search('Members of the 4th.*<h2><span[^>]*>Changes</span>(.*)(?s)', content).group(1)
+changes = re.search('Members of the 4th.*<h2><span[^>]*>Changes</span>(.*?)</html>(?s)', content).group(1)
 for m in re.findall('<td>.*?<a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a>.*?</td>\s*</tr>', changes):
     matches.add((m[0], m[1], None))
 
@@ -64,7 +64,7 @@ print '</publicwhip>'
 
 wikimembers = set(wikimembers.keys())
 allmembers = set(memberList.list())
-for d in ('2004-01-01', '2007-01-10', '2011-01-01', '2015-01-01', '2016-01-01'):
+for d in ('2004-01-01', '2007-01-10', '2011-01-01', '2015-01-01', '2016-01-01', '2016-02-01'):
     allmembers |= set(memberList.list(d))
 
 symdiff = allmembers.symmetric_difference(wikimembers)
