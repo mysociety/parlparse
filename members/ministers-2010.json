@@ -7673,8 +7673,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10134", 
       "organization_id": "ecclesiastical-committee-joint-committee", 
-      "start_date": "2002-01-31", 
-      "end_date": "2005-05-05"
+      "start_date": "1970-11-05", 
+      "end_date": "2010-04-08"
     }, 
     {
       "id": "uk.parliament.data/Member/282/Committee/174/1", 
@@ -7715,14 +7715,6 @@
       "end_date": "1991-10-22"
     }, 
     {
-      "id": "uk.parliament.data/Member/282/Committee/86/1", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/10134", 
-      "organization_id": "house-of-commons-services-committee", 
-      "start_date": "1987-06-17", 
-      "end_date": "1991-10-22"
-    }, 
-    {
       "id": "uk.parliament.data/Member/282/Committee/87", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10134", 
@@ -7744,7 +7736,7 @@
       "person_id": "uk.org.publicwhip/person/10134", 
       "organization_id": "human-rights-joint-committee", 
       "start_date": "2001-01-17", 
-      "end_date": "2005-05-11"
+      "end_date": "2001-05-11"
     }, 
     {
       "id": "uk.parliament.data/Member/282/Committee/99", 
@@ -7760,16 +7752,16 @@
       "role": "Shadow Deputy Leader of the House of Commons", 
       "person_id": "uk.org.publicwhip/person/10134", 
       "organization_id": "house-of-commons", 
-      "start_date": "1997-01-01", 
+      "start_date": "1997-06-01", 
       "end_date": "2000-01-01"
     }, 
     {
-      "id": "uk.parliament.data/Member/282/OppositionPost/9", 
+      "id": "uk.parliament.data/Member/282/OppositionPost/1026", 
       "source": "datadotparl/oppositionpost", 
-      "role": "Shadow Spokesperson (Business, Innovation and Skills)", 
+      "role": "Shadow Minister (Constitutional Affairs)", 
       "person_id": "uk.org.publicwhip/person/10134", 
       "organization_id": "house-of-commons", 
-      "start_date": "1997-01-01", 
+      "start_date": "1997-06-01", 
       "end_date": "2000-01-01"
     }, 
     {
@@ -16757,6 +16749,13 @@
       "organization_id": "crossrail-bill-committee", 
       "start_date": "2008-01-17", 
       "end_date": "2008-11-26"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/248/Committee/355", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10325", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "start_date": "2016-05-05"
     }, 
     {
       "id": "uk.parliament.data/Member/248/Committee/94", 
@@ -38543,7 +38542,15 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/11450", 
       "organization_id": "defence-subcommittee", 
-      "start_date": "2015-09-08"
+      "start_date": "2015-09-08", 
+      "end_date": "2016-05-04"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1490/Committee/343/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11450", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2016-05-04"
     }, 
     {
       "id": "uk.parliament.data/Member/1490/Committee/52", 
@@ -49152,6 +49159,13 @@
       "end_date": "1997-04-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/3493/Committee/355", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12984", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "start_date": "2016-05-05"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3493/Committee/99", 
       "source": "datadotparl/committee", 
       "role": "Chair", 
@@ -53938,6 +53952,14 @@
       "end_date": "1992-04-09"
     }, 
     {
+      "id": "uk.parliament.data/Member/2199/Committee/355", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/13117", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "start_date": "2016-05-05"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1817/Committee/148", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13119", 
@@ -55811,6 +55833,13 @@
       "person_id": "uk.org.publicwhip/person/13165", 
       "organization_id": "built-environment-committee", 
       "start_date": "2015-06-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3217/Committee/355", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13165", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "start_date": "2016-05-05"
     }, 
     {
       "id": "uk.parliament.data/Member/3212/Committee/170", 
@@ -60719,6 +60748,13 @@
       "start_date": "2015-06-23"
     }, 
     {
+      "id": "uk.parliament.data/Member/836/Committee/355", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13307", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "start_date": "2016-05-05"
+    }, 
+    {
       "id": "uk.parliament.data/Member/836/GovernmentPost/1126", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister of State (Department for Transport)", 
@@ -63702,6 +63738,13 @@
       "end_date": "2003-11-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/3169/Committee/355", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13427", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "start_date": "2016-05-05"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3169/Committee/93", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13427", 
@@ -64372,6 +64415,13 @@
       "organization_id": "crossrail-bill-committee", 
       "start_date": "2008-01-17", 
       "end_date": "2008-11-26"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3702/Committee/355", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13450", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "start_date": "2016-05-05"
     }, 
     {
       "id": "uk.parliament.data/Member/3702/GovernmentPost/484", 
@@ -75251,6 +75301,14 @@
       "end_date": "2012-09-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/3842/Committee/182", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13938", 
+      "organization_id": "eu-subcommittee-f--home-affairs", 
+      "start_date": "2008-12-09", 
+      "end_date": "2010-04-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3842/Committee/187", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13938", 
@@ -84884,7 +84942,8 @@
       "role": "Opposition Whip (Lords)", 
       "person_id": "uk.org.publicwhip/person/25063", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-09-18"
+      "start_date": "2015-09-18", 
+      "end_date": "2016-05-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4226/OppositionPost/985", 
@@ -84900,7 +84959,8 @@
       "role": "Shadow Spokesperson (Wales)", 
       "person_id": "uk.org.publicwhip/person/25063", 
       "organization_id": "house-of-commons", 
-      "start_date": "2013-10-08"
+      "start_date": "2013-10-08", 
+      "end_date": "2016-05-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4229/Committee/192", 
@@ -86167,7 +86227,7 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25272", 
       "organization_id": "education-skills-and-the-economy-subcommittee", 
-      "start_date": "2015-11-25"
+      "start_date": "2015-12-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4466/Committee/171", 
@@ -87468,7 +87528,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25367", 
       "organization_id": "defence-subcommittee", 
-      "start_date": "2015-09-08"
+      "start_date": "2015-09-08", 
+      "end_date": "2016-05-04"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4485/Committee/343/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/25367", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2016-05-04"
     }, 
     {
       "id": "uk.parliament.data/Member/4396/OppositionPost/972", 
@@ -88962,6 +89031,10 @@
     {
       "id": "high-speed-rail-london--west-midlands-bill-commons-committee", 
       "name": "High Speed Rail (London - West Midlands) Bill (Commons) Committee"
+    }, 
+    {
+      "id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "name": "High Speed Rail (London - West Midlands) Bill (Lords) Committee"
     }, 
     {
       "id": "hiv-and-aids-committee-in-the-united-kingdom", 
