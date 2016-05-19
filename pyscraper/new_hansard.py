@@ -1302,6 +1302,14 @@ class LordsParseDayXML(BaseParseDayXML):
         self.current_speech.append(tag)
 
     def parse_member(self, member):
+        # special hand edited XML case :/
+        name = member.get('ContinuationText')
+        if name == 'The Queen':
+            return {
+                'person_id': 'uk.org.publicwhip/person/13935',
+                'name': u'The Queen'
+            }
+
         found_member = super(LordsParseDayXML, self).parse_member(member)
         if found_member is None:
             # In cases where there are unattributes exclamations then PimsId
