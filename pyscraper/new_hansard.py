@@ -1360,8 +1360,10 @@ class LordsParseDayXML(BaseParseDayXML):
         tag.set('class', 'italic')
         tag.text = text
 
-        if self.current_speech is not None:
-            self.current_speech.append(tag)
+        if self.current_speech is None:
+            self.new_speech(None, procedure.get('url'))
+
+        self.current_speech.append(tag)
 
     def parse_amendment_heading(self, heading):
         self.new_speech(None, heading.get('url'))
