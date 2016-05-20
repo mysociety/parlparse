@@ -52,7 +52,7 @@ def PrepareXMLForDiff(scrapeversion):
 		)
 		essxindx.append(len(essxlist))
 		essxlist.append("HEADING-" + chk[0])
-		speaker = re.search('nospeaker="true"|(?:speakerid|person_id)="[^"]*"', chk[1]).group(0)
+		speaker = re.search('nospeaker="true"|divnumber|(?:speakerid|person_id)="[^"]*"', chk[1]).group(0)
 		essxlist.append(speaker)
 
 		if re.match("oral-heading|major-heading|minor-heading", chk[0]):
