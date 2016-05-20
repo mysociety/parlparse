@@ -11,9 +11,12 @@ from miscfuncs import toppath
 from new_hansard import ParseDay
 
 
+today = datetime.date.today()
+yesterday = today - datetime.timedelta(1)
+
 parser = argparse.ArgumentParser(description='Process Hansard XML.')
-parser.add_argument('--from', dest='date_from', default=datetime.date.today().isoformat(), metavar='YYYY-MM-DD')
-parser.add_argument('--to', dest='date_to', default=datetime.date.today().isoformat(), metavar='YYYY-MM-DD')
+parser.add_argument('--from', dest='date_from', default=yesterday.isoformat(), metavar='YYYY-MM-DD')
+parser.add_argument('--to', dest='date_to', default=today.isoformat(), metavar='YYYY-MM-DD')
 ARGS = parser.parse_args()
 
 index_filename = join(toppath, 'seen_hansard_xml.txt')
