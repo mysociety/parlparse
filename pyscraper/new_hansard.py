@@ -273,8 +273,11 @@ class BaseParseDayXML(object):
         self.current_speech = etree.Element('speech')
         self.current_speech.set('id', self.get_speech_id())
         if member is not None:
-            self.current_speech.set('person_id', member['person_id'])
             self.current_speech.set('speakername', member['name'])
+            if 'person_id' in member:
+                self.current_speech.set('person_id', member['person_id'])
+            else:
+                self.current_speech.set('nospeaker', 'true')
         else:
             self.current_speech.set('nospeaker', 'true')
         self.current_speech.set('colnum', self.current_col)
@@ -599,15 +602,28 @@ class BaseParseDayXML(object):
     def parse_para_with_member(self, para, member, **kwargs):
         if not self.output_heading:
             return
+
+        members = para.xpath('.//ns:Member', namespaces=self.ns_map)
         if member is not None:
             self.new_speech(member, para.get('url'))
+        elif members:
+            m_name = None
+            bs = members[0].xpath('./ns:B', namespaces=self.ns_map)
+            if len(bs) == 1:
+                m_name = {'name': re.sub('\s+', ' ', bs[0].text).strip()}
+            self.new_speech(m_name, para.get('url'))
         elif self.current_speech is None:
             self.new_speech(None, para.get('url'))
 
         # this makes the text fetching a bit easier
         if kwargs.get('strip_member', True):
-            for m in para.xpath('.//ns:Member', namespaces=self.ns_map):
-                m.getparent().text = m.tail
+            for m in members:
+                text = ''.join(i.text for i in m.xpath('.//ns:I', namespaces=self.ns_map))
+                if text:
+                    kwargs['css_class'] = 'italic'
+                if m.tail:
+                    text += ' ' + m.tail
+                m.getparent().text = text
                 m.getparent().remove(m)
 
         text = self.get_single_line_text_from_element(para)
@@ -1189,8 +1205,7 @@ class PBCParseDayXML(BaseParseDayXML):
             tag_name = self.get_tag_name_no_ns(tag)
             if tag_name == 'Witness':
                 has_witness = True
-                para.text = '{0}: {1}'.format(tag.text, para.text)
-                self.new_speech(None, para.get('url'))
+                self.new_speech({'name':tag.text}, para.get('url'))
             # Infer from italic text that it's a motiony thing and we should
             # start a new para which is a bit fragile
             elif tag_name == 'I':
