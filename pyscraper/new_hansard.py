@@ -917,8 +917,8 @@ class BaseParseDayXML(object):
         self.ns_map = {'ns': self.ns}
         root_xpath = self.type_to_xpath[self.debate_type][0]
 
-        xml = etree.parse(xml_file).getroot()
-        self.input_root = xml.xpath(
+        self.xml_root = etree.parse(xml_file).getroot()
+        self.input_root = self.xml_root.xpath(
             root_xpath, namespaces=self.ns_map
         )
         if len(self.input_root) == 0:
@@ -1242,15 +1242,26 @@ class PBCParseDayXML(BaseParseDayXML):
         if not ok:
             return False
 
-        # This isn't very nice.
+        # This isn't nice.
         fragment = self.input_root[0].xpath('.//ns:Fragment', namespaces=self.ns_map)[0]
         self.session, debate_num = re.search('Commons/(\d{4}_\d{4})/Committee_\d+/Debate_(\d+)/Sitting_\d+', fragment.get('__uri__')).groups()
         header = fragment.xpath('./ns:Header', namespaces=self.ns_map)[0]
-        data_id = header.xpath('./ns:SystemDataId', namespaces=self.ns_map)[0]
-        data_id = self.get_single_line_text_from_element(data_id)
-        title = header.xpath('./ns:Title', namespaces=self.ns_map)[0]
-        title = self.get_single_line_text_from_element(title).partition(' ')[0].upper()
-        sitting_num = int(re.match('PBC\d+-(\d+)', data_id).group(1))
+        try:
+            # The sitting number is only given in a random attribute
+            data_id = header.xpath('./ns:SystemDataId', namespaces=self.ns_map)[0]
+            data_id = self.get_single_line_text_from_element(data_id)
+            sitting_num = int(re.match('PBC\d+-(\d+)', data_id).group(1))
+        except:
+            # Try and find one in the filename then.
+            sitting_num = int(re.search('(\d+)(?:st|nd|rd|th) sit', xml_file.name).group(1))
+
+        try:
+            title = header.xpath('./ns:Title', namespaces=self.ns_map)[0]
+            title = self.get_single_line_text_from_element(title).partition(' ')[0].upper()
+        except:
+            fragment = self.xml_root.xpath('.//ns:Fragment', namespaces=self.ns_map)[0]
+            title = fragment.xpath('.//ns:Cover', namespaces=self.ns_map)[0].get('debate')
+            title = title.partition(' ')[0].upper()
 
         self.session = re.sub('(\d{4})_\d\d(\d\d)', r'\1-\2', self.session)
 
