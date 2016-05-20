@@ -989,6 +989,11 @@ class PBCParseDayXML(BaseParseDayXML):
 
     def get_member_with_no_id(self, member_tag):
         name = member_tag.text
+        if not name:
+            bs = member_tag.xpath('./ns:B', namespaces=self.ns_map)
+            if bs:
+                name = bs[0].text
+
         cons_tags = member_tag.xpath('.//ns:I', namespaces=self.ns_map)
         cons = ''
         if len(cons_tags) == 1:
