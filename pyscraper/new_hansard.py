@@ -1364,6 +1364,10 @@ class LordsParseDayXML(BaseParseDayXML):
         if len(text) == 0:
             return
 
+        # We ignore prayers
+        if re.match('Prayers.*?read by', text):
+            return
+
         tag.set('pid', self.get_pid())
         tag.set('class', 'italic')
         tag.text = text
