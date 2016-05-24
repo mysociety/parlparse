@@ -29,7 +29,7 @@ from bs4 import NavigableString
 
 from sp.resolvenames import memberList
 
-official_report_url_format = 'http://www.scottish.parliament.uk/parliamentarybusiness/28862.aspx?r={0}&mode=html'
+official_report_url_format = 'http://www.parliament.scot/parliamentarybusiness/report.aspx?r={0}&mode=html'
 
 DIVISION_HEADINGS = ('FOR', 'AGAINST', 'ABSTENTIONS', 'SPOILED VOTES')
 
