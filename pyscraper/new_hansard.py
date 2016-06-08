@@ -112,6 +112,9 @@ class BaseParseDayXML(object):
         'hs_6fCntrItalHdg',
         'hs_2cSO24Application',
     ]
+    chair_headings = [
+        'hs_76fChair',
+    ]
     minor_headings = [
         'hs_8Question',
         'hs_6bFormalmotion',
@@ -146,7 +149,6 @@ class BaseParseDayXML(object):
     ]
     ignored_tags = [
         'hs_6bPetitions',
-        'hs_76fChair',
         'hs_3MainHdg',
         'hs_Venue'
     ]
@@ -414,6 +416,16 @@ class BaseParseDayXML(object):
         self.root.append(tag)
         self.output_heading = True
 
+    def parse_chair(self, heading):
+	"""
+	If we get an "in the Chair" heading in the main text, we include it as
+	a speech. The one right at the start, we store in case we need to
+        output a speech (otherwise it'll be ignored).
+        """
+        if self.output_heading:
+            return self.parse_procedure(heading)
+        self.initial_chair = self.get_text_from_element(heading)
+
     def parse_minor(self, heading):
         self.clear_current_speech()
         tag = etree.Element('minor-heading')
@@ -599,9 +611,26 @@ class BaseParseDayXML(object):
         petition.text = u'Petition - {0}'.format(petition.text)
         self.parse_major(petition)
 
+    def output_normally_ignored(self):
+        self.clear_current_speech()
+
+        tag = etree.Element('major-heading')
+        tag.text = 'PRAYERS - '
+
+        i = etree.Element('i')
+        i.text = self.initial_chair
+        tag.append(i)
+
+        tag.set('id', self.get_speech_id())
+        tag.set('nospeaker', 'true')
+        tag.set('colnum', self.current_col)
+        tag.set('time', self.current_time)
+        self.root.append(tag)
+        self.output_heading = True
+
     def parse_para_with_member(self, para, member, **kwargs):
         if not self.output_heading:
-            return
+            self.output_normally_ignored()
 
         members = para.xpath('.//ns:Member', namespaces=self.ns_map)
         if member is not None:
@@ -815,6 +844,25 @@ class BaseParseDayXML(object):
                 stamp=tag.get('url')
             )
 
+    def parse_procedure(self, procedure):
+        tag = etree.Element('p')
+        text = self.get_single_line_text_from_element(procedure)
+        if len(text) == 0:
+            return
+
+        # We ignore prayers
+        if re.match('Prayers.*?read by', text):
+            return
+
+        tag.set('pid', self.get_pid())
+        tag.set('class', 'italic')
+        tag.text = text
+
+        if self.current_speech is None:
+            self.new_speech(None, procedure.get('url'))
+
+        self.current_speech.append(tag)
+
     def parse_pi(self, pi):
         # you would think there is a better way to do this but I can't seem
         # to extract attributes from processing instructions :(
@@ -840,6 +888,8 @@ class BaseParseDayXML(object):
             self.parse_debated_motion(tag)
         elif tag_name in self.major_headings:
             self.parse_major(tag)
+        elif tag_name in self.chair_headings:
+            self.parse_chair(tag)
         elif tag_name in self.minor_headings:
             self.parse_minor(tag)
         elif tag_name in self.generic_headings:
@@ -1248,8 +1298,6 @@ class PBCParseDayXML(BaseParseDayXML):
         elif tag_name == 'hs_3MainHdg':
             self.committee_finished()
             self.parse_major(tag)
-        elif tag_name == 'hs_76fChair':
-            self.parse_chair(tag)
         elif tag_name == 'hs_ParaIndent':
             self.parse_para_with_member(tag, None, css_class="indent")
         else:
@@ -1388,25 +1436,6 @@ class LordsParseDayXML(BaseParseDayXML):
         questions = tag.xpath('.//ns:hs_Question', namespaces=self.ns_map)
         for question in questions:
             self.parse_para_with_member(question, member if want_member else None)
-
-    def parse_procedure(self, procedure):
-        tag = etree.Element('p')
-        text = self.get_single_line_text_from_element(procedure)
-        if len(text) == 0:
-            return
-
-        # We ignore prayers
-        if re.match('Prayers.*?read by', text):
-            return
-
-        tag.set('pid', self.get_pid())
-        tag.set('class', 'italic')
-        tag.text = text
-
-        if self.current_speech is None:
-            self.new_speech(None, procedure.get('url'))
-
-        self.current_speech.append(tag)
 
     def parse_amendment_heading(self, heading):
         self.new_speech(None, heading.get('url'))
