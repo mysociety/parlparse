@@ -74,7 +74,7 @@ class MemberList(ResolverBase):
         # If a speaker, then match against the special speaker parties
         if text == "Speaker" or text == "The Speaker":
             matches.extend(self.parties.get("Speaker", []))
-        if not matches and (text == 'Deputy Speaker' or text == 'Madam Deputy Speaker' or text =='The Deputy Speaker' or text == 'The Principal Deputy Speaker'):
+        if not matches and text in ('Deputy Speaker', 'Madam Deputy Speaker', 'The Deputy Speaker', 'The Principal Deputy Speaker', 'Madam Principal Deputy Speaker'):
             if not self.deputy_speaker:
                 raise ContextException, 'Deputy speaker speaking, but do not know who it is'
             return self.fullnametoids(self.deputy_speaker, date)
