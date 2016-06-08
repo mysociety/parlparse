@@ -1916,6 +1916,13 @@
       "end_date": "1994-11-28"
     }, 
     {
+      "id": "uk.parliament.data/Member/513/Committee/172", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10034", 
+      "organization_id": "constitution-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/513/Committee/19", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10034", 
@@ -3468,6 +3475,13 @@
       "end_date": "2010-06-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/452/Committee/356", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10059", 
+      "organization_id": "nhs-sustainability-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/452/Committee/4", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10059", 
@@ -4714,6 +4728,13 @@
       "end_date": "2006-07-24"
     }, 
     {
+      "id": "uk.parliament.data/Member/236/Committee/176", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10072", 
+      "organization_id": "european-union-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/236/Committee/187", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10072", 
@@ -4750,6 +4771,13 @@
       "person_id": "uk.org.publicwhip/person/10072", 
       "organization_id": "equality-act-2010-and-disability-committee", 
       "start_date": "2015-06-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/236/Committee/338", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10072", 
+      "organization_id": "eu-home-affairs-subcommittee", 
+      "start_date": "2016-05-26"
     }, 
     {
       "id": "uk.parliament.data/Member/236/Committee/350", 
@@ -6430,7 +6458,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10108", 
       "organization_id": "national-security-strategy-joint-committee", 
-      "start_date": "2015-12-03"
+      "start_date": "2015-12-03", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/525/GovernmentPost/27", 
@@ -8291,6 +8320,13 @@
       "end_date": "1997-03-21"
     }, 
     {
+      "id": "uk.parliament.data/Member/596/Committee/175", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10153", 
+      "organization_id": "economic-affairs-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/596/GovernmentPost/34", 
       "source": "datadotparl/governmentpost", 
       "role": "The Chancellor of the Exchequer", 
@@ -8640,6 +8676,13 @@
       "end_date": "1995-11-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/346/Committee/148", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10160", 
+      "organization_id": "statutory-instruments-joint-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/346/Committee/150", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10160", 
@@ -8684,7 +8727,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10160", 
       "organization_id": "european-union-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/346/Committee/225", 
@@ -8723,7 +8767,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10160", 
       "organization_id": "eu-financial-affairs-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2016-05-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/346/Committee/357", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10160", 
+      "organization_id": "licensing-act-2003-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/346/Committee/64", 
@@ -11431,6 +11483,13 @@
       "end_date": "2014-03-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/579/Committee/358", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10211", 
+      "organization_id": "select-committee-on-charities", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/579/Committee/78", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10211", 
@@ -12352,7 +12411,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10234", 
       "organization_id": "communications-committee", 
-      "start_date": "2015-09-10"
+      "start_date": "2015-09-10", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/670/Committee/172", 
@@ -12963,6 +13023,13 @@
       "organization_id": "refreshment-sub-committee", 
       "start_date": "2002-06-10", 
       "end_date": "2002-11-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/276/Committee/360", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10247", 
+      "organization_id": "international-relations-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/276/GovernmentPost/24", 
@@ -17306,6 +17373,13 @@
       "end_date": "2015-02-04"
     }, 
     {
+      "id": "uk.parliament.data/Member/635/Committee/359", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10345", 
+      "organization_id": "financial-exclusion-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/635/Committee/77", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10345", 
@@ -17538,6 +17612,13 @@
       "organization_id": "public-accounts-commission", 
       "start_date": "2012-09-06", 
       "end_date": "2014-07-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/123/Committee/340", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10349", 
+      "organization_id": "eu-internal-market-subcommittee", 
+      "start_date": "2016-05-26"
     }, 
     {
       "id": "uk.parliament.data/Member/123/Committee/81", 
@@ -19333,6 +19414,13 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4148/Committee/176", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10384", 
+      "organization_id": "european-union-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4148/Committee/24", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10384", 
@@ -19710,6 +19798,14 @@
       "organization_id": "national-policy-statements-subcommittee", 
       "start_date": "2010-07-21", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/384/Committee/357", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10389", 
+      "organization_id": "licensing-act-2003-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/384/Committee/52", 
@@ -20894,6 +20990,13 @@
       "end_date": "2013-03-05"
     }, 
     {
+      "id": "uk.parliament.data/Member/121/Committee/356", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10424", 
+      "organization_id": "nhs-sustainability-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/121/Committee/51", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10424", 
@@ -21909,6 +22012,13 @@
       "end_date": "2012-05-16"
     }, 
     {
+      "id": "uk.parliament.data/Member/565/Committee/191", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10446", 
+      "organization_id": "procedure-committee-lords", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/565/Committee/215", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10446", 
@@ -22422,6 +22532,13 @@
       "organization_id": "select-committee-on-science-and-technology-subcommittee-2", 
       "start_date": "2006-11-21", 
       "end_date": "2007-10-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/629/Committee/338", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10464", 
+      "organization_id": "eu-home-affairs-subcommittee", 
+      "start_date": "2016-05-26"
     }, 
     {
       "id": "uk.parliament.data/Member/629/OppositionPost/16", 
@@ -23202,6 +23319,13 @@
       "end_date": "2004-12-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/217/Committee/359", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10489", 
+      "organization_id": "financial-exclusion-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/217/GovernmentPost/146", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister of State (Department of Health) (Public Health)", 
@@ -23601,6 +23725,13 @@
       "organization_id": "public-accounts-committee", 
       "start_date": "1989-01-13", 
       "end_date": "1989-12-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/617/Committee/360", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10501", 
+      "organization_id": "international-relations-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/617/GovernmentPost/187", 
@@ -24055,6 +24186,13 @@
       "start_date": "2015-06-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/302/Committee/358", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10511", 
+      "organization_id": "select-committee-on-charities", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/302/GovernmentPost/131", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister (Office of the Deputy Prime Minister) (Housing & Planning)", 
@@ -24139,6 +24277,13 @@
       "organization_id": "eu-subcommittee-e--justice-and-institutions", 
       "start_date": "2010-06-22", 
       "end_date": "2012-05-16"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/554/Committee/255", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10516", 
+      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/554/Committee/260", 
@@ -28059,7 +28204,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10600", 
       "organization_id": "liaison-committee-lords", 
-      "start_date": "2013-07-04"
+      "start_date": "2013-07-04", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/542/Committee/264", 
@@ -28324,6 +28470,13 @@
       "organization_id": "inquiries-act-2005-committee", 
       "start_date": "2013-05-16", 
       "end_date": "2014-02-26"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/658/Committee/93", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10605", 
+      "organization_id": "human-rights-joint-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/658/ParliamentaryPost/778", 
@@ -29283,6 +29436,13 @@
       "end_date": "2014-12-17"
     }, 
     {
+      "id": "uk.parliament.data/Member/489/Committee/338", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10625", 
+      "organization_id": "eu-home-affairs-subcommittee", 
+      "start_date": "2016-05-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/489/Committee/77", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10625", 
@@ -29844,6 +30004,13 @@
       "organization_id": "draft-human-tissue-and-embryos-bill-joint-committee", 
       "start_date": "2007-05-15", 
       "end_date": "2007-08-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4151/Committee/356", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10641", 
+      "organization_id": "nhs-sustainability-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/4151/Committee/43", 
@@ -45142,7 +45309,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12847", 
       "organization_id": "eu-home-affairs-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/2472/Committee/94", 
@@ -45426,7 +45594,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12860", 
       "organization_id": "communications-committee", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/1970/Committee/172", 
@@ -45460,6 +45629,13 @@
       "organization_id": "privileges-and-conduct-committee-for-lords", 
       "start_date": "1998-12-15", 
       "end_date": "2002-11-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1970/Committee/189/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12860", 
+      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/1970/Committee/191", 
@@ -45749,6 +45925,13 @@
       "organization_id": "sittings-of-the-house-commons-committee", 
       "start_date": "1991-07-09", 
       "end_date": "1992-02-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/883/Committee/360", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12866", 
+      "organization_id": "international-relations-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/883/Committee/78", 
@@ -46344,7 +46527,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12883", 
       "organization_id": "communications-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3433/Committee/191", 
@@ -46494,6 +46678,13 @@
       "end_date": "2005-05-07"
     }, 
     {
+      "id": "uk.parliament.data/Member/2471/Committee/191", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12894", 
+      "organization_id": "procedure-committee-lords", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2471/Committee/193", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12894", 
@@ -46612,6 +46803,13 @@
       "organization_id": "draft-modern-slavery-bill-committee", 
       "start_date": "2014-01-15", 
       "end_date": "2014-04-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1732/Committee/356", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12896", 
+      "organization_id": "nhs-sustainability-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/1732/GovernmentPost/285", 
@@ -46886,7 +47084,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12904", 
       "organization_id": "delegated-powers-and-regulatory-reform-committee", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/1861/Committee/192", 
@@ -47002,6 +47201,13 @@
       "end_date": "2004-07-22"
     }, 
     {
+      "id": "uk.parliament.data/Member/1833/Committee/357", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12905", 
+      "organization_id": "licensing-act-2003-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1846/Committee/148", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12907", 
@@ -47014,7 +47220,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12907", 
       "organization_id": "statutory-instruments-joint-committee", 
-      "start_date": "2015-06-17"
+      "start_date": "2015-06-17", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/1846/Committee/171", 
@@ -47141,6 +47348,13 @@
       "person_id": "uk.org.publicwhip/person/12915", 
       "organization_id": "sexual-violence-in-conflict-committee", 
       "start_date": "2015-06-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3575/Committee/357", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12915", 
+      "organization_id": "licensing-act-2003-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3575/Committee/94", 
@@ -47649,7 +47863,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12943", 
       "organization_id": "selection-committee-of-lords", 
-      "start_date": "2015-11-03"
+      "start_date": "2015-11-03", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/2439/Committee/291", 
@@ -47923,6 +48138,14 @@
       "person_id": "uk.org.publicwhip/person/12951", 
       "organization_id": "social-mobility-committee", 
       "start_date": "2015-06-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2443/Committee/356", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/12951", 
+      "organization_id": "nhs-sustainability-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3380/Committee/168", 
@@ -49295,7 +49518,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12986", 
       "organization_id": "eu-energy-and-environment-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3496/Committee/93", 
@@ -49557,6 +49781,13 @@
       "end_date": "2012-05-16"
     }, 
     {
+      "id": "uk.parliament.data/Member/2790/Committee/187", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12997", 
+      "organization_id": "liaison-committee-lords", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2790/Committee/226", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12997", 
@@ -49609,7 +49840,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12997", 
       "organization_id": "eu-justice-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/2790/Committee/37", 
@@ -49908,6 +50140,13 @@
       "organization_id": "constitutional-reform-bill-committee", 
       "start_date": "2004-03-22", 
       "end_date": "2004-06-24"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2481/Committee/355", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13003", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/813/Committee/103", 
@@ -50228,7 +50467,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13009", 
       "organization_id": "ecclesiastical-committee-joint-committee", 
-      "start_date": "2015-07-09"
+      "start_date": "2015-07-09", 
+      "end_date": "2016-05-26"
     }, 
     {
       "id": "uk.parliament.data/Member/3157/Committee/183", 
@@ -50243,7 +50483,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13009", 
       "organization_id": "hybrid-instruments-committee-lords", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3157/Committee/187", 
@@ -50258,7 +50499,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13009", 
       "organization_id": "liaison-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3157/Committee/193", 
@@ -50432,6 +50674,13 @@
       "organization_id": "eu-subcommittee-b", 
       "start_date": "1999-12-06", 
       "end_date": "2003-11-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3318/Committee/358", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13014", 
+      "organization_id": "select-committee-on-charities", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3318/Committee/94", 
@@ -50685,6 +50934,13 @@
       "organization_id": "eu-subcommittee-b--internal-market", 
       "start_date": "2007-11-13", 
       "end_date": "2010-04-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1755/Committee/193", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13030", 
+      "organization_id": "science-and-technology-committee-lords", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/1755/Committee/317", 
@@ -51389,6 +51645,13 @@
       "organization_id": "merits-of-statutory-instruments-committee", 
       "start_date": "2004-11-29", 
       "end_date": "2005-05-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3694/Committee/359", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13057", 
+      "organization_id": "financial-exclusion-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3694/GovernmentPost/484", 
@@ -52131,6 +52394,14 @@
       "organization_id": "eu-subcommittee-c", 
       "start_date": "1999-12-06", 
       "end_date": "2000-11-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/993/Committee/360", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/13074", 
+      "organization_id": "international-relations-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/993/Committee/78", 
@@ -52907,7 +53178,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13098", 
       "organization_id": "constitution-committee", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3631/Committee/287", 
@@ -54151,6 +54423,13 @@
       "end_date": "2010-04-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/2506/Committee/170/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13121", 
+      "organization_id": "communications-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2506/Committee/174", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13121", 
@@ -54186,7 +54465,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13121", 
       "organization_id": "procedure-committee-lords", 
-      "start_date": "2013-12-18"
+      "start_date": "2013-12-18", 
+      "end_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/2506/Committee/205", 
@@ -54318,7 +54598,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13123", 
       "organization_id": "statutory-instruments-joint-committee", 
-      "start_date": "2015-06-17"
+      "start_date": "2015-06-17", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/1882/Committee/306", 
@@ -54740,6 +55021,13 @@
       "end_date": "2014-05-14"
     }, 
     {
+      "id": "uk.parliament.data/Member/2671/Committee/111/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13135", 
+      "organization_id": "national-security-strategy-joint-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2671/Committee/229", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13135", 
@@ -54863,6 +55151,13 @@
       "start_date": "2015-06-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/2167/Committee/360", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13140", 
+      "organization_id": "international-relations-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2099/Committee/170", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13141", 
@@ -54963,6 +55258,13 @@
       "end_date": "2003-11-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/2542/Committee/148", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13143", 
+      "organization_id": "statutory-instruments-joint-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2542/Committee/170", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13143", 
@@ -54983,7 +55285,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13143", 
       "organization_id": "european-union-committee", 
-      "start_date": "2012-05-16"
+      "start_date": "2012-05-16", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/2542/Committee/183", 
@@ -55056,7 +55359,15 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13143", 
       "organization_id": "eu-energy-and-environment-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2016-05-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2542/Committee/358", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13143", 
+      "organization_id": "select-committee-on-charities", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/2097/Committee/166", 
@@ -55238,6 +55549,13 @@
       "person_id": "uk.org.publicwhip/person/13147", 
       "organization_id": "equality-act-2010-and-disability-committee", 
       "start_date": "2015-06-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2488/Committee/359", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13147", 
+      "organization_id": "financial-exclusion-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/2505/Committee/166", 
@@ -55930,6 +56248,13 @@
       "end_date": "2012-03-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/3813/Committee/358", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13168", 
+      "organization_id": "select-committee-on-charities", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2494/Committee/193", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13169", 
@@ -55944,6 +56269,13 @@
       "organization_id": "science-and-technology-committee-lords", 
       "start_date": "1999-12-06", 
       "end_date": "2004-11-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2494/Committee/193/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13169", 
+      "organization_id": "science-and-technology-committee-lords", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/2494/Committee/194", 
@@ -56124,6 +56456,13 @@
       "organization_id": "consumer-insurance-disclosure-and-representations-bill-hl-committee", 
       "start_date": "2011-09-05", 
       "end_date": "2011-12-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2202/Committee/337", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13173", 
+      "organization_id": "eu-financial-affairs-subcommittee", 
+      "start_date": "2016-05-26"
     }, 
     {
       "id": "uk.parliament.data/Member/2202/Committee/354", 
@@ -56402,6 +56741,13 @@
       "organization_id": "statutory-instruments-joint-committee", 
       "start_date": "2012-05-16", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/802/Committee/176", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13182", 
+      "organization_id": "european-union-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/802/Committee/179", 
@@ -57110,6 +57456,13 @@
       "end_date": "2009-11-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/3681/Committee/176", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13198", 
+      "organization_id": "european-union-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3681/Committee/265", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13198", 
@@ -57132,6 +57485,14 @@
       "organization_id": "affordable-childcare-committee", 
       "start_date": "2014-06-12", 
       "end_date": "2015-02-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3681/Committee/336", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/13198", 
+      "organization_id": "eu-external-affairs-subcommittee", 
+      "start_date": "2016-05-26"
     }, 
     {
       "id": "uk.parliament.data/Member/3681/Committee/93", 
@@ -57550,6 +57911,13 @@
       "end_date": "2010-04-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/2233/Committee/336", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13206", 
+      "organization_id": "eu-external-affairs-subcommittee", 
+      "start_date": "2016-05-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2233/GovernmentPost/182", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister for Trade and Investment and Deputy Leader of the House of Lords (also Department of Trade and Industry)", 
@@ -57830,7 +58198,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13217", 
       "organization_id": "procedure-committee-lords", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/1845/Committee/208", 
@@ -58150,6 +58519,13 @@
       "person_id": "uk.org.publicwhip/person/13224", 
       "organization_id": "sexual-violence-in-conflict-committee", 
       "start_date": "2015-06-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2637/Committee/360", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13224", 
+      "organization_id": "international-relations-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/1651/Committee/111", 
@@ -58521,7 +58897,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13235", 
       "organization_id": "liaison-committee-lords", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3385/Committee/189", 
@@ -58562,6 +58939,13 @@
       "organization_id": "selection-committee-of-lords", 
       "start_date": "1999-11-18", 
       "end_date": "2004-11-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3385/Committee/197/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13235", 
+      "organization_id": "selection-committee-of-lords", 
+      "start_date": "2016-05-19"
     }, 
     {
       "id": "uk.parliament.data/Member/3385/Committee/206", 
@@ -58671,7 +59055,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13241", 
       "organization_id": "economic-affairs-committee", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3561/Committee/230", 
@@ -58688,6 +59073,13 @@
       "organization_id": "public-service-and-demographic-change-committee", 
       "start_date": "2012-05-29", 
       "end_date": "2013-03-05"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3561/Committee/356", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13241", 
+      "organization_id": "nhs-sustainability-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3561/GovernmentPost/159", 
@@ -58931,7 +59323,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13256", 
       "organization_id": "consolidation-bills-joint-committee", 
-      "start_date": "2015-06-17"
+      "start_date": "2015-06-17", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3395/Committee/316", 
@@ -59475,6 +59868,13 @@
       "organization_id": "draft-human-tissue-and-embryos-bill-joint-committee", 
       "start_date": "2007-05-09", 
       "end_date": "2007-08-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2537/Committee/356", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13272", 
+      "organization_id": "nhs-sustainability-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/2537/Committee/37", 
@@ -60202,7 +60602,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13289", 
       "organization_id": "science-and-technology-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/1922/Committee/287", 
@@ -60211,6 +60612,13 @@
       "organization_id": "partnerships-prosecution-scotland-bill-special-public-bill-committee", 
       "start_date": "2013-01-22", 
       "end_date": "2013-02-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1922/Committee/335", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13289", 
+      "organization_id": "eu-energy-and-environment-subcommittee", 
+      "start_date": "2016-05-26"
     }, 
     {
       "id": "uk.parliament.data/Member/3244/Committee/148", 
@@ -60745,7 +61153,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13307", 
       "organization_id": "eu-internal-market-subcommittee", 
-      "start_date": "2015-06-23"
+      "start_date": "2015-06-23", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/836/Committee/355", 
@@ -60879,6 +61288,13 @@
       "organization_id": "library-and-computers-sub-committee", 
       "start_date": "2001-06-26", 
       "end_date": "2002-11-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2503/Committee/358", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13310", 
+      "organization_id": "select-committee-on-charities", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/2503/Committee/94", 
@@ -61746,6 +62162,13 @@
       "end_date": "1995-07-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/3310/Committee/170", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13351", 
+      "organization_id": "communications-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3310/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13351", 
@@ -61758,7 +62181,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13351", 
       "organization_id": "european-union-committee", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3310/Committee/180", 
@@ -61853,7 +62277,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13351", 
       "organization_id": "eu-financial-affairs-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/2543/Committee/193", 
@@ -62771,7 +63196,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13378", 
       "organization_id": "constitution-committee", 
-      "start_date": "2013-06-12"
+      "start_date": "2013-06-12", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/2037/Committee/181", 
@@ -63322,7 +63748,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13417", 
       "organization_id": "economic-affairs-committee", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3595/Committee/230", 
@@ -63480,7 +63907,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13423", 
       "organization_id": "communications-committee", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/2477/Committee/191", 
@@ -63545,6 +63973,14 @@
       "person_id": "uk.org.publicwhip/person/13424", 
       "organization_id": "equality-act-2010-and-disability-committee", 
       "start_date": "2015-06-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3179/Committee/358", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/13424", 
+      "organization_id": "select-committee-on-charities", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3179/Committee/37", 
@@ -63659,6 +64095,13 @@
       "end_date": "1996-07-02"
     }, 
     {
+      "id": "uk.parliament.data/Member/3169/Committee/171", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13427", 
+      "organization_id": "consolidation-bills-joint-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3169/Committee/174", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13427", 
@@ -63742,7 +64185,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13427", 
       "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
-      "start_date": "2016-05-05"
+      "start_date": "2016-05-05", 
+      "end_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3169/Committee/93", 
@@ -63815,6 +64259,13 @@
       "organization_id": "economic-affairs-committee", 
       "start_date": "2001-06-28", 
       "end_date": "2003-11-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3351/Committee/175/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13430", 
+      "organization_id": "economic-affairs-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3351/Committee/234", 
@@ -63965,6 +64416,13 @@
       "person_id": "uk.org.publicwhip/person/13435", 
       "organization_id": "equality-act-2010-and-disability-committee", 
       "start_date": "2015-06-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3191/Committee/359", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13435", 
+      "organization_id": "financial-exclusion-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3201/Committee/314", 
@@ -64495,7 +64953,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13451", 
       "organization_id": "human-rights-joint-committee", 
-      "start_date": "2015-07-16"
+      "start_date": "2015-07-16", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3703/Committee/184", 
@@ -65265,6 +65724,13 @@
       "end_date": "2013-05-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/2473/Committee/359", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13470", 
+      "organization_id": "financial-exclusion-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3609/Committee/193", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13471", 
@@ -66020,6 +66486,13 @@
       "start_date": "2015-06-18"
     }, 
     {
+      "id": "uk.parliament.data/Member/1980/Committee/360", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13490", 
+      "organization_id": "international-relations-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2616/Committee/148", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13493", 
@@ -66599,6 +67072,13 @@
       "end_date": "2015-06-23"
     }, 
     {
+      "id": "uk.parliament.data/Member/2665/Committee/359", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13499", 
+      "organization_id": "financial-exclusion-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2665/Committee/94", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13499", 
@@ -67084,6 +67564,13 @@
       "start_date": "2015-06-18"
     }, 
     {
+      "id": "uk.parliament.data/Member/3396/Committee/357", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13517", 
+      "organization_id": "licensing-act-2003-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1116/Committee/148", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13518", 
@@ -67296,6 +67783,13 @@
       "organization_id": "draft-protection-of-charities-bill-joint-committee", 
       "start_date": "2014-11-10", 
       "end_date": "2015-02-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2501/Committee/358", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13524", 
+      "organization_id": "select-committee-on-charities", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/2501/Committee/37", 
@@ -67563,11 +68057,19 @@
       "end_date": "2013-05-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/1705/Committee/175/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13536", 
+      "organization_id": "economic-affairs-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1705/Committee/176", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13536", 
       "organization_id": "european-union-committee", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/1705/Committee/230", 
@@ -67600,7 +68102,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13536", 
       "organization_id": "eu-external-affairs-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/1820/Committee/168", 
@@ -68214,6 +68717,13 @@
       "end_date": "2006-07-25"
     }, 
     {
+      "id": "uk.parliament.data/Member/3679/Committee/357", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13545", 
+      "organization_id": "licensing-act-2003-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3679/ParliamentaryPost/1092", 
       "source": "datadotparl/parliamentarypost", 
       "role": "Deputy Chairman of Committees", 
@@ -68320,7 +68830,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13549", 
       "organization_id": "economic-affairs-committee", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3613/Committee/175/1", 
@@ -69034,6 +69545,13 @@
       "start_date": "2015-06-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/1892/Committee/356", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13564", 
+      "organization_id": "nhs-sustainability-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1880/Committee/170", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13565", 
@@ -69477,7 +69995,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13587", 
       "organization_id": "national-security-strategy-joint-committee", 
-      "start_date": "2015-12-03"
+      "start_date": "2015-12-03", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/2035/Committee/175", 
@@ -70162,6 +70681,13 @@
       "end_date": "2010-04-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/3335/Committee/357", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13611", 
+      "organization_id": "licensing-act-2003-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3335/Committee/92", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13611", 
@@ -70233,6 +70759,13 @@
       "end_date": "1997-04-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/3333/Committee/359", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13613", 
+      "organization_id": "financial-exclusion-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/964/Committee/159", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13614", 
@@ -70261,7 +70794,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13614", 
       "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/964/Committee/29", 
@@ -70301,6 +70835,13 @@
       "person_id": "uk.org.publicwhip/person/13614", 
       "organization_id": "built-environment-committee", 
       "start_date": "2015-06-23"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/964/Committee/337", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13614", 
+      "organization_id": "eu-financial-affairs-subcommittee", 
+      "start_date": "2016-05-26"
     }, 
     {
       "id": "uk.parliament.data/Member/1773/Committee/172", 
@@ -71234,6 +71775,13 @@
       "organization_id": "finance-bill-subcommittee", 
       "start_date": "2012-12-04", 
       "end_date": "2013-03-05"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2492/Committee/356", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13645", 
+      "organization_id": "nhs-sustainability-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/2492/Committee/94", 
@@ -72668,6 +73216,13 @@
       "end_date": "1996-07-02"
     }, 
     {
+      "id": "uk.parliament.data/Member/2527/Committee/111", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13695", 
+      "organization_id": "national-security-strategy-joint-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2527/Committee/172", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13695", 
@@ -73774,6 +74329,13 @@
       "end_date": "1989-03-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/518/Committee/170", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13725", 
+      "organization_id": "communications-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/518/Committee/172", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13725", 
@@ -73895,7 +74457,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13726", 
       "organization_id": "eu-financial-affairs-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3796/Committee/261", 
@@ -73918,7 +74481,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13727", 
       "organization_id": "eu-home-affairs-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3796/Committee/93", 
@@ -74049,7 +74613,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13732", 
       "organization_id": "economic-affairs-committee", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3789/Committee/176", 
@@ -74058,6 +74623,13 @@
       "organization_id": "european-union-committee", 
       "start_date": "2008-12-09", 
       "end_date": "2013-05-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3789/Committee/176/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13732", 
+      "organization_id": "european-union-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3789/Committee/179", 
@@ -74118,6 +74690,14 @@
       "end_date": "2015-02-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/3789/Committee/335", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/13732", 
+      "organization_id": "eu-energy-and-environment-subcommittee", 
+      "start_date": "2016-05-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3789/OppositionPost/1286", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Lords Principal Spokesperson for Energy and Climate Change", 
@@ -74134,6 +74714,13 @@
       "organization_id": "house-of-commons", 
       "start_date": "2015-06-01", 
       "end_date": "2015-09-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3794/Committee/170", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13734", 
+      "organization_id": "communications-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3794/Committee/233", 
@@ -74501,6 +75088,13 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/3803/Committee/187", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13876", 
+      "organization_id": "liaison-committee-lords", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3803/Committee/191", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13876", 
@@ -74669,6 +75263,13 @@
       "person_id": "uk.org.publicwhip/person/13881", 
       "organization_id": "finance-bill-subcommittee", 
       "start_date": "2015-12-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3806/Committee/148", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13882", 
+      "organization_id": "statutory-instruments-joint-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3806/Committee/166", 
@@ -74914,7 +75515,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13922", 
       "organization_id": "eu-external-affairs-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2016-05-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3829/Committee/360", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13922", 
+      "organization_id": "international-relations-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3829/Committee/94", 
@@ -74977,7 +75586,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13925", 
       "organization_id": "european-union-committee", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3830/Committee/182", 
@@ -75574,6 +76184,20 @@
       "start_date": "2013-10-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/4306/Committee/170", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13998", 
+      "organization_id": "communications-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4293/Committee/360", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/14080", 
+      "organization_id": "international-relations-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4293/OppositionPost/1286", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Lords Principal Spokesperson for Energy and Climate Change", 
@@ -75723,7 +76347,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/14133", 
       "organization_id": "science-and-technology-committee-lords", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/1091/Committee/138", 
@@ -75954,6 +76579,13 @@
       "end_date": "2013-05-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/3870/Committee/172/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/14143", 
+      "organization_id": "constitution-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3879/GovernmentPost/320", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister of State (Department for Business, Innovation and Skills) (Trade, Investment and Small Business) (also in the Foreign and Commonwealth Office)", 
@@ -76061,6 +76693,13 @@
       "organization_id": "house-of-commons", 
       "start_date": "1996-12-12", 
       "end_date": "1997-05-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/863/Committee/357", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/17722", 
+      "organization_id": "licensing-act-2003-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/863/Committee/49", 
@@ -76437,7 +77076,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24704", 
       "organization_id": "science-and-technology-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3766/Committee/257", 
@@ -76446,6 +77086,13 @@
       "organization_id": "eu-sub-committee-b--internal-market-infrastructure-and-employment", 
       "start_date": "2012-05-17", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3766/Committee/356", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24704", 
+      "organization_id": "nhs-sustainability-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3863/Committee/218", 
@@ -76470,6 +77117,13 @@
       "organization_id": "public-service-and-demographic-change-committee", 
       "start_date": "2012-05-29", 
       "end_date": "2013-03-05"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3863/Committee/358", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24708", 
+      "organization_id": "select-committee-on-charities", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3863/ParliamentaryPost/1092", 
@@ -83770,6 +84424,13 @@
       "start_date": "2015-06-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4174/Committee/358", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25001", 
+      "organization_id": "select-committee-on-charities", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4174/Committee/94", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25001", 
@@ -83876,7 +84537,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25004", 
       "organization_id": "communications-committee", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4179/Committee/205", 
@@ -83899,7 +84561,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25005", 
       "organization_id": "european-union-committee", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4182/Committee/254", 
@@ -83922,7 +84585,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25005", 
       "organization_id": "eu-justice-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2016-05-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4182/Committee/357", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25005", 
+      "organization_id": "licensing-act-2003-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/4172/Committee/172", 
@@ -84030,11 +84701,19 @@
       "start_date": "2012-09-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/4187/Committee/359", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25013", 
+      "organization_id": "financial-exclusion-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4186/Committee/175", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25014", 
       "organization_id": "economic-affairs-committee", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4186/Committee/230", 
@@ -84111,6 +84790,13 @@
       "person_id": "uk.org.publicwhip/person/25021", 
       "organization_id": "eu-home-affairs-subcommittee", 
       "start_date": "2015-06-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4195/Committee/356", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25021", 
+      "organization_id": "nhs-sustainability-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/4196/Committee/175", 
@@ -84565,7 +85251,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25037", 
       "organization_id": "eu-home-affairs-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4210/Committee/298", 
@@ -84635,6 +85322,13 @@
       "end_date": "2015-02-25"
     }, 
     {
+      "id": "uk.parliament.data/Member/4216/Committee/359", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25042", 
+      "organization_id": "financial-exclusion-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4216/Committee/94", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25042", 
@@ -84656,6 +85350,13 @@
       "organization_id": "personal-service-companies--committee", 
       "start_date": "2013-11-12", 
       "end_date": "2014-03-31"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4217/Committee/360", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25044", 
+      "organization_id": "international-relations-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/4217/OppositionPost/1074", 
@@ -84875,6 +85576,14 @@
       "start_date": "2015-06-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4231/Committee/359", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/25056", 
+      "organization_id": "financial-exclusion-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4233/Committee/184", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25057", 
@@ -84976,6 +85685,13 @@
       "person_id": "uk.org.publicwhip/person/25064", 
       "organization_id": "equality-act-2010-and-disability-committee", 
       "start_date": "2015-06-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4229/Committee/358", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25064", 
+      "organization_id": "select-committee-on-charities", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/4228/Committee/215", 
@@ -85559,7 +86275,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25186", 
       "organization_id": "european-union-committee", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-05-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4281/Committee/193", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25186", 
+      "organization_id": "science-and-technology-committee-lords", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/4281/Committee/255", 
@@ -85574,7 +86298,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25186", 
       "organization_id": "eu-financial-affairs-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/196/Committee/103", 
@@ -85668,6 +86393,13 @@
       "end_date": "1995-11-27"
     }, 
     {
+      "id": "uk.parliament.data/Member/4291/Committee/357", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25188", 
+      "organization_id": "licensing-act-2003-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4286/OppositionPost/9", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Spokesperson (Business, Innovation and Skills)", 
@@ -85753,6 +86485,14 @@
       "end_date": "2015-12-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4285/OppositionPost/1306", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Principal Spokesperson for Communities and Local Government", 
+      "person_id": "uk.org.publicwhip/person/25194", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4295/Committee/166", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25196", 
@@ -85790,6 +86530,13 @@
       "start_date": "2015-06-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4307/Committee/356", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25200", 
+      "organization_id": "nhs-sustainability-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4283/Committee/168", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25201", 
@@ -85809,7 +86556,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25202", 
       "organization_id": "statutory-instruments-joint-committee", 
-      "start_date": "2015-06-17"
+      "start_date": "2015-06-17", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4300/Committee/191", 
@@ -85903,6 +86651,13 @@
       "start_date": "2015-06-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4294/Committee/359", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25208", 
+      "organization_id": "financial-exclusion-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4294/Committee/94", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25208", 
@@ -85966,6 +86721,13 @@
       "organization_id": "house-of-commons", 
       "start_date": "2014-04-08", 
       "end_date": "2015-05-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4304/Committee/170", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25215", 
+      "organization_id": "communications-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/4316/Committee/158", 
@@ -86053,6 +86815,13 @@
       "end_date": "2015-07-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/4335/Committee/337", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25235", 
+      "organization_id": "eu-financial-affairs-subcommittee", 
+      "start_date": "2016-05-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4325/GovernmentPost/1155", 
       "source": "datadotparl/governmentpost", 
       "role": "The Parliamentary Under-Secretary of State for Internet Safety and Security", 
@@ -86077,6 +86846,13 @@
       "start_date": "2015-06-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/4323/Committee/360", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25238", 
+      "organization_id": "international-relations-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4322/Committee/193", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25240", 
@@ -86098,6 +86874,13 @@
       "organization_id": "eu-justice-subcommittee", 
       "start_date": "2015-06-12", 
       "end_date": "2016-01-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4333/Committee/356", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25242", 
+      "organization_id": "nhs-sustainability-committee", 
+      "start_date": "2016-05-25"
     }, 
     {
       "id": "uk.parliament.data/Member/4341/Committee/338", 
@@ -86129,6 +86912,13 @@
       "start_date": "2015-06-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/4336/Committee/337", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25250", 
+      "organization_id": "eu-financial-affairs-subcommittee", 
+      "start_date": "2016-05-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4336/Committee/354", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25250", 
@@ -86158,6 +86948,13 @@
       "start_date": "2015-06-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/4331/Committee/360", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25253", 
+      "organization_id": "international-relations-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4351/Committee/173", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25262", 
@@ -86172,11 +86969,32 @@
       "start_date": "2015-11-10"
     }, 
     {
+      "id": "uk.parliament.data/Member/4353/Committee/173", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25264", 
+      "organization_id": "delegated-powers-and-regulatory-reform-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4354/Committee/176", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25266", 
+      "organization_id": "european-union-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4354/Committee/333", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25266", 
       "organization_id": "social-mobility-committee", 
       "start_date": "2015-06-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4354/Committee/339", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25266", 
+      "organization_id": "eu-justice-subcommittee", 
+      "start_date": "2016-05-26"
     }, 
     {
       "id": "uk.parliament.data/Member/4354/Committee/354", 
@@ -88362,6 +89180,20 @@
       "start_date": "2015-06-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4542/Committee/357", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25453", 
+      "organization_id": "licensing-act-2003-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4547/Committee/339", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25457", 
+      "organization_id": "eu-justice-subcommittee", 
+      "start_date": "2016-05-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4548/Committee/335", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25460", 
@@ -88376,6 +89208,27 @@
       "start_date": "2016-01-26"
     }, 
     {
+      "id": "uk.parliament.data/Member/4551/Committee/356", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25465", 
+      "organization_id": "nhs-sustainability-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4550/Committee/358", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25466", 
+      "organization_id": "select-committee-on-charities", 
+      "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4557/Committee/359", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25470", 
+      "organization_id": "financial-exclusion-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4569/Committee/17", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25475", 
@@ -88383,12 +89236,48 @@
       "start_date": "2016-03-07"
     }, 
     {
+      "id": "uk.parliament.data/Member/4562/Committee/175", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25476", 
+      "organization_id": "economic-affairs-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4559/Committee/175", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25477", 
+      "organization_id": "economic-affairs-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4558/OppositionPost/1306", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Lords Principal Spokesperson for Communities and Local Government", 
       "person_id": "uk.org.publicwhip/person/25478", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-12-03"
+      "start_date": "2015-12-03", 
+      "end_date": "2016-05-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4566/Committee/357", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25481", 
+      "organization_id": "licensing-act-2003-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4565/Committee/176", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25486", 
+      "organization_id": "european-union-committee", 
+      "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4565/Committee/336", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25486", 
+      "organization_id": "eu-external-affairs-subcommittee", 
+      "start_date": "2016-05-26"
     }, 
     {
       "id": "uk.parliament.data/Member/4570/GovernmentPost/1010", 
@@ -88405,6 +89294,13 @@
       "person_id": "uk.org.publicwhip/person/25487", 
       "organization_id": "house-of-commons", 
       "start_date": "2016-04-04"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4563/Committee/193", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25488", 
+      "organization_id": "science-and-technology-committee-lords", 
+      "start_date": "2016-05-25"
     }
   ], 
   "organizations": [
@@ -89001,6 +89897,10 @@
       "name": "Finance Committee"
     }, 
     {
+      "id": "financial-exclusion-committee", 
+      "name": "Financial Exclusion Committee"
+    }, 
+    {
       "id": "financial-services-and-markets-joint-committee", 
       "name": "Financial Services and Markets (Joint Committee)"
     }, 
@@ -89153,6 +90053,10 @@
       "name": "International Development Sub-Committee on the Work of the Independent Commission for Aid Impact"
     }, 
     {
+      "id": "international-relations-committee", 
+      "name": "International Relations Committee"
+    }, 
+    {
       "id": "joint-committee-on-security", 
       "name": "Joint Committee on Security"
     }, 
@@ -89187,6 +90091,10 @@
     {
       "id": "library-and-computers-sub-committee", 
       "name": "Library and Computers Sub Committee"
+    }, 
+    {
+      "id": "licensing-act-2003-committee", 
+      "name": "Licensing Act 2003 Committee"
     }, 
     {
       "id": "london-regional-select-committee", 
@@ -89251,6 +90159,10 @@
     {
       "id": "nationalised-industries-subcommittee-e", 
       "name": "Nationalised Industries: Sub-Committee E"
+    }, 
+    {
+      "id": "nhs-sustainability-committee", 
+      "name": "NHS Sustainability Committee"
     }, 
     {
       "id": "north-east-regional-select-committee", 
@@ -89431,6 +90343,10 @@
     {
       "id": "select-committee-on-broadcasting", 
       "name": "Select Committee on Broadcasting"
+    }, 
+    {
+      "id": "select-committee-on-charities", 
+      "name": "Select Committee on Charities"
     }, 
     {
       "id": "select-committee-on-science-and-technology-subcommittee-2", 
