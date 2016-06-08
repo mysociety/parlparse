@@ -1255,7 +1255,8 @@ class PBCParseDayXML(BaseParseDayXML):
             tag_name = self.get_tag_name_no_ns(tag)
             if tag_name == 'Witness':
                 has_witness = True
-                self.new_speech({'name':tag.text}, para.get('url'))
+                name = self.get_single_line_text_from_element(tag)
+                self.new_speech({'name': name}, para.get('url'))
             # Infer from italic text that it's a motiony thing and we should
             # start a new para which is a bit fragile
             elif tag_name == 'I':
