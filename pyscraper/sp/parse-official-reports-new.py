@@ -531,9 +531,9 @@ class Speech(object):
         else:
             attributes['nospeaker'] = 'true'
         result = etree.Element("speech", **attributes)
-        for i, paragraph in enumerate(self.paragraphs):
-            p = etree.Element('p')
-            p.text = paragraph
+        for paragraph in self.paragraphs:
+            paragraph = paragraph.replace('&', '&amp;')
+            p = etree.fromstring('<p>%s</p>' % paragraph)
             result.append(p)
         return result
 
@@ -662,6 +662,8 @@ def parse_html(session, report_date, soup, page_id, original_url):
                         pass
                     elif speech_part.name == 'ul':
                         current_speech.paragraphs.append(speech_part.html)
+                    elif speech_part.name in ('sup', 'sub'):
+                        current_speech.paragraphs[-1] += str(speech_part)
                     elif speech_part.name == 'a' and speech_part.text == '':
                         # skip empty a anchors
                         pass
