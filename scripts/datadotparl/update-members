@@ -17,7 +17,6 @@ ARGS = parser.parse_args()
 
 # Source XML files to use for the list of members
 source_files = [
-  'all-commons-2015-election',
   'all-current-commons',
   'all-lords',
 ]
