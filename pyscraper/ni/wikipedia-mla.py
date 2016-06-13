@@ -27,7 +27,7 @@ content = read(2003) + read(2007) + read(2011) + read(2016)
 matches = set()
 
 # Links from all pages
-matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+"[^>]*>([^<]+)</a>(?: \(<b>Leader</b>\))?</td>'
+matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+"[^>]*>([^<]+)</a>(?: \(<b>Leader</b>\))?</td>'
 matches.update(re.findall(matcher, content))
 
 # 3rd Assembly replacements

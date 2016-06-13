@@ -26,6 +26,7 @@ wiki_index_urls = [
     "http://en.wikipedia.org/wiki/Members_of_the_2nd_Scottish_Parliament",
     "http://en.wikipedia.org/wiki/Members_of_the_3rd_Scottish_Parliament",
     "http://en.wikipedia.org/wiki/Members_of_the_4th_Scottish_Parliament",
+    "http://en.wikipedia.org/wiki/Members_of_the_5th_Scottish_Parliament",
 ]
 wikimembers  = {}
 
