@@ -142,6 +142,7 @@ class BaseParseDayXML(object):
         'hs_8Clause',
         'hs_newline10',
         'hs_Question',
+        'hs_6CntrCapsHdg',
     ]
     indents = [
         'hs_ParaIndent',
