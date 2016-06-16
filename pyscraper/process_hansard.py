@@ -17,6 +17,7 @@ yesterday = today - datetime.timedelta(1)
 parser = argparse.ArgumentParser(description='Process Hansard XML.')
 parser.add_argument('--from', dest='date_from', default=yesterday.isoformat(), metavar='YYYY-MM-DD')
 parser.add_argument('--to', dest='date_to', default=today.isoformat(), metavar='YYYY-MM-DD')
+parser.add_argument('--verbose', action='store_true')
 ARGS = parser.parse_args()
 
 index_filename = join(toppath, 'seen_hansard_xml.txt')
@@ -65,12 +66,13 @@ def find(pattern, path):
 def handle_file(filename, debate_type):
     file_key = '{0}:{1}'.format(debate_type, filename)
     if file_key in entries:
-        print "already seen {0}, not parsing again".format(filename)
+        if ARGS.verbose:
+            print "already seen {0}, not parsing again".format(filename)
         return False
 
     parser.reset()
     parser.handle_file(join(zip_directory, filename), debate_type)
-    print "parsed {0} file to {1}".format(debate_type, parser.output_file)
+    print "parsed {0} {1} file to {2}".format(filename, debate_type, parser.output_file)
     entries.append(file_key)
 
     return True
@@ -80,7 +82,6 @@ try:
     for d in dirs:
         xml_files = find('([CL]HAN|PBC).*\.xml$', d)
         for x in xml_files:
-            print "parsing {0}".format(x)
             if 'CHAN' in x:
                 handle_file(x, 'debate')
                 handle_file(x, 'westminhall')
