@@ -855,6 +855,10 @@ class BaseParseDayXML(object):
         if re.match('Prayers.*?read by', text):
             return
 
+        # And minute's silence
+        if re.match('A minute.*?s silence was observed', text):
+            return
+
         tag.set('pid', self.get_pid())
         tag.set('class', 'italic')
         tag.text = text
