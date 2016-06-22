@@ -754,6 +754,14 @@ class BaseParseDayXML(object):
         pass
 
     def parse_division(self, division):
+        for tag in division:
+            if type(tag) is etree._ProcessingInstruction:
+                continue
+            tag_name = self.get_tag_name_no_ns(tag)
+            if tag_name not in ('hs_Para', 'England', 'EnglandWales', 'hs_DivListHeader', 'TwoColumn'):
+                if not self.handle_tag(tag_name, tag):
+                    raise ContextException('unhandled tag: {0}'.format(tag_name), fragment=tag, stamp=tag.get('url'))
+
         ayes_count = \
             division.xpath('./ns:hs_Para/ns:AyesNumber/text()', namespaces=self.ns_map)
         noes_count = \
