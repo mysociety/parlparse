@@ -995,7 +995,7 @@ class BaseParseDayXML(object):
         if len(self.input_root) == 0:
             sys.stderr.write(
                 'Failed to find any debates of type {0} in {1}\n'
-                .format(self.debate_type, xml_file)
+                .format(self.debate_type, xml_file.name)
             )
             return False
         return True
@@ -1775,7 +1775,7 @@ class ParseDay(object):
         self.set_parser_for_type(debate_type)
         date = self.parser.get_date(xml_file)
         if date is False:
-            return
+            return 'not-present'
 
         if debate_type == 'standing':
             prev_file, output_file = self.get_output_pbc_filename(date, xml_file)
@@ -1794,7 +1794,7 @@ class ParseDay(object):
         if not parse_ok:
             sys.stderr.write('Failed to parse {0}\n'.format(filename))
             os.remove(tempfilename)
-            return
+            return 'failed'
 
         # FIME: should be using more temp files here
         # if we have a previous version check if it's different from
@@ -1804,11 +1804,14 @@ class ParseDay(object):
             # if they are the same then delete the old one
             if diffs == 'SAME':
                 os.remove(tempfilename)
+                return 'same'
             # otherwise do the diff and redirect dance
             else:
                 self.rewrite_previous_version(tempfilename)
+                return 'change'
         else:
             os.rename(tempfilename, self.output_file)
+            return 'new'
 
     def set_parser_for_type(self, debate_type):
         if self.parser is not None:
