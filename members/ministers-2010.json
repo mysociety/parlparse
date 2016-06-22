@@ -11326,6 +11326,13 @@
       "end_date": "1995-07-31"
     }, 
     {
+      "id": "uk.parliament.data/Member/214/Committee/357", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10208", 
+      "organization_id": "licensing-act-2003-committee", 
+      "start_date": "2016-06-14"
+    }, 
+    {
       "id": "uk.parliament.data/Member/214/Committee/43", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10208", 
@@ -19305,7 +19312,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10381", 
       "organization_id": "women-and-equalities-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2016-06-13"
     }, 
     {
       "id": "uk.parliament.data/Member/193/Committee/81", 
@@ -41101,7 +41109,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11661", 
       "organization_id": "backbench-business-committee", 
-      "start_date": "2015-07-20"
+      "start_date": "2015-07-20", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/1537/Committee/22", 
@@ -43606,7 +43615,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11915", 
       "organization_id": "backbench-business-committee", 
-      "start_date": "2015-07-20"
+      "start_date": "2015-07-20", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/1581/Committee/81", 
@@ -67569,7 +67579,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13517", 
       "organization_id": "licensing-act-2003-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2016-06-14"
     }, 
     {
       "id": "uk.parliament.data/Member/1116/Committee/148", 
@@ -67909,7 +67920,8 @@
       "role": "Shadow Spokesperson (Justice)", 
       "person_id": "uk.org.publicwhip/person/13526", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-09-18"
+      "start_date": "2015-09-18", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3451/OppositionPost/990/1", 
@@ -81700,7 +81712,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24877", 
       "organization_id": "backbench-business-committee", 
-      "start_date": "2015-07-20"
+      "start_date": "2015-07-20", 
+      "end_date": "2016-05-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4140/Committee/202/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24877", 
+      "organization_id": "backbench-business-committee", 
+      "start_date": "2016-06-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4057/Committee/23", 
@@ -82545,7 +82565,16 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24919", 
       "organization_id": "backbench-business-committee", 
-      "start_date": "2015-06-18"
+      "start_date": "2015-06-18", 
+      "end_date": "2016-05-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4000/Committee/202/5", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/24919", 
+      "organization_id": "backbench-business-committee", 
+      "start_date": "2016-05-24"
     }, 
     {
       "id": "uk.parliament.data/Member/4000/Committee/203", 
@@ -83211,7 +83240,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24945", 
       "organization_id": "backbench-business-committee", 
-      "start_date": "2015-07-20"
+      "start_date": "2015-07-20", 
+      "end_date": "2016-05-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4005/Committee/202/4", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24945", 
+      "organization_id": "backbench-business-committee", 
+      "start_date": "2016-06-13"
     }, 
     {
       "id": "uk.parliament.data/Member/3923/Committee/203", 
@@ -86131,7 +86168,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25169", 
       "organization_id": "justice-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2016-06-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4269/OppositionPost/971", 
@@ -87310,7 +87348,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25291", 
       "organization_id": "backbench-business-committee", 
-      "start_date": "2015-07-20"
+      "start_date": "2015-07-20", 
+      "end_date": "2016-05-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4420/Committee/202/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25291", 
+      "organization_id": "backbench-business-committee", 
+      "start_date": "2016-06-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4476/Committee/162", 
@@ -87962,7 +88008,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25338", 
       "organization_id": "backbench-business-committee", 
-      "start_date": "2015-12-14"
+      "start_date": "2015-12-14", 
+      "end_date": "2016-05-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4451/Committee/202/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25338", 
+      "organization_id": "backbench-business-committee", 
+      "start_date": "2016-06-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4383/Committee/345", 
@@ -88020,6 +88074,13 @@
       "person_id": "uk.org.publicwhip/person/25342", 
       "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
       "start_date": "2016-02-10"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4358/Committee/202", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25342", 
+      "organization_id": "backbench-business-committee", 
+      "start_date": "2016-06-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4358/Committee/98", 
@@ -88238,6 +88299,13 @@
       "start_date": "2015-07-13"
     }, 
     {
+      "id": "uk.parliament.data/Member/4429/Committee/202", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25360", 
+      "organization_id": "backbench-business-committee", 
+      "start_date": "2016-06-13"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4429/Committee/203", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25360", 
@@ -88279,7 +88347,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25364", 
       "organization_id": "backbench-business-committee", 
-      "start_date": "2015-07-20"
+      "start_date": "2015-07-20", 
+      "end_date": "2016-05-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4370/Committee/202/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25364", 
+      "organization_id": "backbench-business-committee", 
+      "start_date": "2016-06-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4370/Committee/328", 
@@ -88371,7 +88447,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25369", 
       "organization_id": "environment-food-and-rural-affairs-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-02-04"
     }, 
     {
       "id": "uk.parliament.data/Member/4371/OppositionPost/1216", 
@@ -89309,6 +89386,20 @@
       "person_id": "uk.org.publicwhip/person/25488", 
       "organization_id": "science-and-technology-committee-lords", 
       "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4571/Committee/328", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25489", 
+      "organization_id": "women-and-equalities-committee", 
+      "start_date": "2016-06-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4572/Committee/102", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25490", 
+      "organization_id": "justice-committee", 
+      "start_date": "2016-06-13"
     }
   ], 
   "organizations": [
