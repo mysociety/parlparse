@@ -16,7 +16,7 @@ class ContextException(Exception):
 
     def __str__(self):
         ret = ""
-        if self.fragment:
+        if self.fragment is not None:
             ret = ret + "Fragment: " + repr(self.fragment) + "\n\n"
         ret = ret + repr(self.description) + "\n"
         if self.stamp:
