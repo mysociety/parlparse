@@ -1007,32 +1007,20 @@ class CommonsParseDayXML(BaseParseDayXML):
     def check_for_english_votes(self, division):
         english_votes = division.xpath('./ns:England', namespaces=self.ns_map)
         if not english_votes:
+            english_votes = division.xpath('./ns:EnglandWales', namespaces=self.ns_map)
+        if not english_votes:
             return
 
-        ayes_count = \
-            english_votes[0].xpath('./ns:hs_Para/ns:AyesNumber/text()', namespaces=self.ns_map)
-        noes_count = \
-            english_votes[0].xpath('./ns:hs_Para/ns:NoesNumber/text()', namespaces=self.ns_map)
-
-        ayes_count_text = u''.join(ayes_count)
-        noes_count_text = u''.join(noes_count)
-
         # output a summary of the division results
-        house_divided = etree.Element('p')
+        text = self.get_single_line_text_from_element(english_votes[0])
+        text = re.sub('(constituencies in England(?: and Wales)?:)\s*', r'\1<br/>', text)
+        house_divided = etree.fromstring('<p>%s</p>' % text)
         house_divided.set('pid', self.get_pid())
         house_divided.set('class', 'italic')
         house_divided.set('pwmotiontext', 'yes')
-        house_divided.text = u'Votes cast by Members for constituencies in England:'
         if self.current_speech is None:
             self.new_speech(None, division.get('url'))
         self.current_speech.append(house_divided)
-
-        div_summary = self.format_div_summary(ayes_count_text, noes_count_text)
-        div_summary_tag = etree.Element('p')
-        div_summary_tag.set('pid', self.get_pid())
-        div_summary_tag.set('pwmotiontext', 'yes')
-        div_summary_tag.text = div_summary
-        self.current_speech.append(div_summary_tag)
 
 
 class PBCParseDayXML(BaseParseDayXML):
