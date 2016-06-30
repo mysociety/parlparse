@@ -663,7 +663,10 @@ def parse_html(session, report_date, soup, page_id, original_url):
                     elif speech_part.name == 'ul':
                         current_speech.paragraphs.append(speech_part.html)
                     elif speech_part.name in ('sup', 'sub'):
-                        current_speech.paragraphs[-1] += str(speech_part)
+                        # sometimes the degree symbol is used so we need
+                        # to replace it with an entity and then convert to
+                        # ascii otherwise we get a codec error
+                        current_speech.paragraphs[-1] += str(unicode(speech_part).replace(u'\xb0', '&#176;'))
                     elif speech_part.name == 'a' and speech_part.text == '':
                         # skip empty a anchors
                         pass
