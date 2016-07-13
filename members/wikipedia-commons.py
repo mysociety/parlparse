@@ -27,11 +27,12 @@ date_parl = {
     2001: '2003-01-01',
     2005: '2007-08-01',
     2010: '2014-01-01',
+    2015: '2016-01-01',
 }
 wikimembers  = {}
 
 # Grab page 
-for year in (1997, 2001, 2005, 2010):
+for year in (1997, 2001, 2005, 2010, 2015):
     ur = open('../rawdata/Members_of_the_House_of_Commons_%d' % year)
     content = ur.read()
     ur.close()
@@ -40,7 +41,7 @@ for year in (1997, 2001, 2005, 2010):
 #<td><a href="/wiki/West_Ham_%28UK_Parliament_constituency%29" title="West Ham (UK Parliament constituency)">West Ham</a></td>
 #<td><a href="/wiki/Lyn_Brown" title="Lyn Brown">Lyn Brown</a></td>
 #<td>Labour</td>
-    matcher = '<tr>\s+<td><a href="/wiki/[^"]+" [^>]*?title="[^"]+">([^<]+)</a>(?:<br />\s+<small>.*?</small>)?</td>\s+(?:<td style="[^"]*"></td>\s*<td[^>]*><a[^>]*>[^<]*</a></td>\s*<td style="[^"]*"></td>\s*)?<td>(?:Dr |Sir |The Rev\. )?<a href="(/wiki/[^"]+)" [^>]*?title="[^"]+"[^>]*>([^<]+)</a>(?:&#160;\(.*?\))?</td>|by-election,[^"]+">([^<]+)</a> [^ ]{1,3} <a href="(/wiki/[^"]+)" title="[^"]+">([^<]+)</a>';
+    matcher = '<tr>\s+<td><a href="/wiki/[^"]+" [^>]*?title="[^"]+">([^<]+)</a>(?:<br />\s+<small>.*?</small>)?</td>\s+(?:<td[^>]*></td>\s*<td[^>]*><a[^>]*>[^<]*</a></td>\s*<td[^>]*></td>\s*)?<td>(?:<span class="sortkey">[^<]*</span><span class="vcard"><span class="fn">)?(?:Dr |Sir |The Rev\. )?<a href="(/wiki/[^"]+)" [^>]*?title="[^"]+"[^>]*>([^<]+)</a>(?:</span></span>)?(?:&#160;\(.*?\))?</td>|by-election,[^"]+">([^<]+)</a> [^ ]{1,3} <a href="(/wiki/[^"]+)" title="[^"]+">([^<]+)</a>';
     matches = re.findall(matcher, content)
     for (cons, url, name, cons2, url2, name2) in matches:
         id = None
