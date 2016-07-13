@@ -19,7 +19,7 @@ def add_identifier(pid, lookup):
     data.persons[pid].setdefault('identifiers', []).append({'scheme': 'datadotparl_id', 'identifier': ddp_id})
 
     pims_id = parl_members[lookup].attrib['Pims_Id']
-    print 'pims - %s (%s) => %s' % (pid, lookup, ddp_id)
+    print 'pims - %s (%s) => %s' % (pid, lookup, pims_id)
     data.persons[pid].setdefault('identifiers', []).append({'scheme': 'pims_id', 'identifier': pims_id})
 
 
@@ -37,7 +37,7 @@ for person in data.persons.values():
 cur_dir = os.path.dirname(__file__)
 source_file = os.path.join(cur_dir, '..', '..', 'rawdata', 'datadotparl', 'all-current-commons.xml')
 parl_members = etree.parse(source_file).getroot()
-parl_members = {member.find('MemberFrom').text.lower(): member for member in parl_members}
+parl_members = {member.find('MemberFrom').text.lower(): member for member in parl_members if member.find('CurrentStatus').get('IsActive') == 'True'}
 
 today = datetime.date.today().isoformat()
 mships = [m for m in data.memberships.in_org('house-of-commons').on(today) if m['person_id'] not in parl_ids]
