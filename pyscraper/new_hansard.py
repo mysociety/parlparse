@@ -148,6 +148,10 @@ class BaseParseDayXML(object):
         'hs_ParaIndent',
         'hs_AmendmentLevel0'
     ]
+    empty_tags = [
+        'StartProcedure',
+        'EndProcedure',
+    ]
     ignored_tags = [
         'hs_6bPetitions',
         'hs_3MainHdg',
@@ -927,6 +931,9 @@ class BaseParseDayXML(object):
             self.parse_time(tag)
         elif tag_name in self.ignored_tags:
             pass
+        elif tag_name in self.empty_tags:
+            if len(tag) != 0 or tag.text:
+                handled = False
         else:
             handled = False
 
