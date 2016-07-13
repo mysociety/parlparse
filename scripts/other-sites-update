@@ -11,7 +11,7 @@ fi
 # apparent bug in mod_rpaf whereby persistent varnish connections to Apache are
 # losing the actual source IP after the first request and being rejected.
 PRODSCRIPT=ukparse-morning-update-done.cgi
-curl -s -H 'X-Forwarded-For: 127.0.0.1' http://www.theyworkforyou.com/internal/$PRODSCRIPT/$RET >/dev/null &
+curl -s -H 'X-Forwarded-For: 127.0.0.1' https://www.theyworkforyou.com/internal/$PRODSCRIPT/$RET >/dev/null &
 
 # Update division archive for Public Whip to feed from
 `dirname $0`/divisionextractor.pl
