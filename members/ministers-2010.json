@@ -2635,7 +2635,7 @@
       "id": "uk.parliament.data/Member/394/Committee/325", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10045", 
-      "organization_id": "finance-committee", 
+      "organization_id": "finance-committee-commons", 
       "start_date": "2015-07-20"
     }, 
     {
@@ -4016,7 +4016,8 @@
       "role": "The Parliamentary Under-Secretary of State for Defence", 
       "person_id": "uk.org.publicwhip/person/10065", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15"
+      "start_date": "2014-07-15", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/77/OppositionPost/10", 
@@ -4359,7 +4360,7 @@
       "id": "uk.parliament.data/Member/523/Committee/325", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10069", 
-      "organization_id": "finance-committee", 
+      "organization_id": "finance-committee-commons", 
       "start_date": "2015-07-20", 
       "end_date": "2015-07-21"
     }, 
@@ -4368,7 +4369,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10069", 
-      "organization_id": "finance-committee", 
+      "organization_id": "finance-committee-commons", 
       "start_date": "2015-07-21"
     }, 
     {
@@ -4779,7 +4780,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10072", 
       "organization_id": "equality-act-2010-and-disability-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-15"
     }, 
     {
       "id": "uk.parliament.data/Member/236/Committee/338", 
@@ -5231,7 +5233,8 @@
       "role": "Shadow Minister (Transport)", 
       "person_id": "uk.org.publicwhip/person/10076", 
       "organization_id": "house-of-commons", 
-      "start_date": "2013-10-07"
+      "start_date": "2013-10-07", 
+      "end_date": "2016-06-27"
     }, 
     {
       "id": "uk.parliament.data/Member/46/Committee/127", 
@@ -5867,7 +5870,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10090", 
       "organization_id": "house-committee-lords", 
-      "start_date": "2012-05-22"
+      "start_date": "2012-05-22", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/499/Committee/187", 
@@ -5900,6 +5904,13 @@
       "organization_id": "draft-corruption-bill-joint-committee", 
       "start_date": "2003-03-24", 
       "end_date": "2003-07-31"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/499/Committee/363", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10090", 
+      "organization_id": "services-committee", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/499/Committee/4", 
@@ -6526,7 +6537,7 @@
     {
       "id": "uk.parliament.data/Member/599/GovernmentPost/480", 
       "source": "datadotparl/governmentpost", 
-      "role": "Advocate General for Scotland (Scotland Office)", 
+      "role": "Advocate General for Scotland", 
       "person_id": "uk.org.publicwhip/person/10110", 
       "organization_id": "house-of-commons", 
       "start_date": "1999-06-12", 
@@ -6906,7 +6917,7 @@
       "id": "uk.parliament.data/Member/249/Committee/325", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10119", 
-      "organization_id": "finance-committee", 
+      "organization_id": "finance-committee-commons", 
       "start_date": "2015-07-20"
     }, 
     {
@@ -7874,7 +7885,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10135", 
       "organization_id": "social-mobility-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-16"
     }, 
     {
       "id": "uk.parliament.data/Member/215/Committee/4", 
@@ -8150,6 +8162,13 @@
       "person_id": "uk.org.publicwhip/person/10146", 
       "organization_id": "eu-energy-and-environment-subcommittee", 
       "start_date": "2015-06-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/496/Committee/364", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10146", 
+      "organization_id": "finance-committee-lords", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/496/Committee/86", 
@@ -9764,6 +9783,14 @@
       "start_date": "2015-09-09"
     }, 
     {
+      "id": "uk.parliament.data/Member/343/GovernmentPost/1117", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State", 
+      "person_id": "uk.org.publicwhip/person/10179", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/343/GovernmentPost/496", 
       "source": "datadotparl/governmentpost", 
       "role": "The Minister of State, Department for International Development", 
@@ -11315,7 +11342,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10207", 
       "organization_id": "equality-act-2010-and-disability-committee", 
-      "start_date": "2015-07-09"
+      "start_date": "2015-07-09", 
+      "end_date": "2016-03-15"
     }, 
     {
       "id": "uk.parliament.data/Member/506/Committee/43", 
@@ -11617,6 +11645,14 @@
       "end_date": "2006-11-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/315/Committee/362", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10212", 
+      "organization_id": "house-of-lords-commission", 
+      "start_date": "2016-09-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/315/GovernmentPost/1126", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister of State (Department for Transport)", 
@@ -11671,6 +11707,14 @@
       "end_date": "1998-06-02"
     }, 
     {
+      "id": "uk.parliament.data/Member/315/ParliamentaryPost/1072", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Lord Speaker", 
+      "person_id": "uk.org.publicwhip/person/10212", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-09-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/315/ParliamentaryPost/805", 
       "source": "datadotparl/parliamentarypost", 
       "role": "Party Chair, Conservative Party", 
@@ -11690,7 +11734,7 @@
     {
       "id": "uk.parliament.data/Member/223/GovernmentPost/1169", 
       "source": "datadotparl/governmentpost", 
-      "role": "The Secretary of State for International Trade", 
+      "role": "The Secretary of State for International Trade and President of the Board of Trade", 
       "person_id": "uk.org.publicwhip/person/10213", 
       "organization_id": "house-of-commons", 
       "start_date": "2016-07-13"
@@ -12030,12 +12074,29 @@
       "end_date": "2008-09-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/146/OppositionPost/1316", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Energy and Climate Change)", 
+      "person_id": "uk.org.publicwhip/person/10220", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/146/OppositionPost/1317", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Secretary of State for International Trade", 
+      "person_id": "uk.org.publicwhip/person/10220", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-14"
+    }, 
+    {
       "id": "uk.parliament.data/Member/146/OppositionPost/865", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Secretary of State for Energy and Climate Change", 
       "person_id": "uk.org.publicwhip/person/10220", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-06-27"
+      "start_date": "2016-06-27", 
+      "end_date": "2016-07-14"
     }, 
     {
       "id": "uk.parliament.data/Member/146/OppositionPost/961", 
@@ -14397,7 +14458,7 @@
       "id": "uk.parliament.data/Member/43/Committee/325", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10263", 
-      "organization_id": "finance-committee", 
+      "organization_id": "finance-committee-commons", 
       "start_date": "2015-07-20"
     }, 
     {
@@ -14506,6 +14567,14 @@
       "role": "Minister of State (Department for Transport)", 
       "person_id": "uk.org.publicwhip/person/10265", 
       "organization_id": "house-of-commons", 
+      "start_date": "2016-07-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/350/GovernmentPost/1126/1", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Department for Transport)", 
+      "person_id": "uk.org.publicwhip/person/10265", 
+      "organization_id": "house-of-commons", 
       "start_date": "2014-07-15", 
       "end_date": "2015-05-08"
     }, 
@@ -14515,7 +14584,8 @@
       "role": "Minister of State (Home Office) (Security)", 
       "person_id": "uk.org.publicwhip/person/10265", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/350/GovernmentPost/928", 
@@ -14696,6 +14766,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2012-09-06", 
       "end_date": "2014-07-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/69/GovernmentPost/836", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Ministry of Justice", 
+      "person_id": "uk.org.publicwhip/person/10267", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-16"
     }, 
     {
       "id": "uk.parliament.data/Member/69/OppositionPost/10", 
@@ -15593,7 +15671,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10288", 
       "organization_id": "european-scrutiny-committee", 
-      "start_date": "2015-07-15"
+      "start_date": "2015-07-15", 
+      "end_date": "2016-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/2/OppositionPost/1186", 
@@ -16020,7 +16099,7 @@
       "id": "uk.parliament.data/Member/467/Committee/325", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10295", 
-      "organization_id": "finance-committee", 
+      "organization_id": "finance-committee-commons", 
       "start_date": "2015-07-20"
     }, 
     {
@@ -16800,7 +16879,7 @@
       "id": "uk.parliament.data/Member/432/Committee/325", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10319", 
-      "organization_id": "finance-committee", 
+      "organization_id": "finance-committee-commons", 
       "start_date": "2015-07-20"
     }, 
     {
@@ -17491,6 +17570,13 @@
       "person_id": "uk.org.publicwhip/person/10345", 
       "organization_id": "financial-exclusion-committee", 
       "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/635/Committee/363", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10345", 
+      "organization_id": "services-committee", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/635/Committee/77", 
@@ -18336,12 +18422,33 @@
       "end_date": "2003-06-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/15/Committee/143", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10361", 
+      "organization_id": "speakers-committee-for-the-independent-parliamentary-standards-authority", 
+      "start_date": "2016-07-14"
+    }, 
+    {
       "id": "uk.parliament.data/Member/15/Committee/18", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10361", 
       "organization_id": "consolidation-etc-bills-joint-committee", 
       "start_date": "1992-04-27", 
       "end_date": "1997-03-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/15/Committee/207", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10361", 
+      "organization_id": "public-accounts-commission", 
+      "start_date": "2016-07-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/15/Committee/348", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10361", 
+      "organization_id": "house-of-commons-commission", 
+      "start_date": "2016-07-14"
     }, 
     {
       "id": "uk.parliament.data/Member/15/Committee/42", 
@@ -18352,12 +18459,21 @@
       "end_date": "1996-10-17"
     }, 
     {
+      "id": "uk.parliament.data/Member/15/GovernmentPost/1142", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Lord President of the Council and Leader of the House of Commons", 
+      "person_id": "uk.org.publicwhip/person/10361", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-14"
+    }, 
+    {
       "id": "uk.parliament.data/Member/15/GovernmentPost/938", 
       "source": "datadotparl/governmentpost", 
       "role": "The Minister for Europe", 
       "person_id": "uk.org.publicwhip/person/10361", 
       "organization_id": "house-of-commons", 
-      "start_date": "2010-05-13"
+      "start_date": "2010-05-13", 
+      "end_date": "2016-07-14"
     }, 
     {
       "id": "uk.parliament.data/Member/15/OppositionPost/869", 
@@ -18498,9 +18614,9 @@
       "end_date": "1998-06-02"
     }, 
     {
-      "id": "uk.parliament.data/Member/68/ParliamentaryPost/771", 
+      "id": "uk.parliament.data/Member/68/ParliamentaryPost/769", 
       "source": "datadotparl/parliamentarypost", 
-      "role": "Deputy Leader, Conservative Party", 
+      "role": "Deputy Leader of the Conservative Party", 
       "person_id": "uk.org.publicwhip/person/10362", 
       "organization_id": "house-of-commons", 
       "start_date": "1998-06-02", 
@@ -19521,6 +19637,14 @@
       "end_date": "2010-05-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/4148/Committee/167", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10384", 
+      "organization_id": "freedom-of-information-advisory-panel-lords", 
+      "start_date": "2016-09-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4148/Committee/175", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10384", 
@@ -19533,7 +19657,56 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10384", 
       "organization_id": "european-union-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2016-08-31"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4148/Committee/186", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10384", 
+      "organization_id": "hybrid-instruments-committee-lords", 
+      "start_date": "2016-09-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4148/Committee/187", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10384", 
+      "organization_id": "liaison-committee-lords", 
+      "start_date": "2016-09-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4148/Committee/189", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10384", 
+      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "start_date": "2016-09-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4148/Committee/191", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10384", 
+      "organization_id": "procedure-committee-lords", 
+      "start_date": "2016-09-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4148/Committee/197", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10384", 
+      "organization_id": "selection-committee-of-lords", 
+      "start_date": "2016-09-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4148/Committee/198", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10384", 
+      "organization_id": "standing-orders-private-bills-committee-lords", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4148/Committee/24", 
@@ -19552,6 +19725,14 @@
       "end_date": "2011-12-13"
     }, 
     {
+      "id": "uk.parliament.data/Member/4148/Committee/262", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10384", 
+      "organization_id": "subcommittee-on-leave-of-absence", 
+      "start_date": "2016-09-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4148/Committee/284", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10384", 
@@ -19564,7 +19745,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10384", 
       "organization_id": "eu-financial-affairs-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2016-08-31"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4148/Committee/362", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10384", 
+      "organization_id": "house-of-lords-commission", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4148/GovernmentPost/350", 
@@ -19583,6 +19772,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "1998-07-28", 
       "end_date": "1999-12-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4148/ParliamentaryPost/1096", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "The Senior Deputy Speaker", 
+      "person_id": "uk.org.publicwhip/person/10384", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/131/Committee/111", 
@@ -20397,9 +20594,9 @@
       "end_date": "2005-07-17"
     }, 
     {
-      "id": "uk.parliament.data/Member/333/GovernmentPost/1132", 
+      "id": "uk.parliament.data/Member/333/GovernmentPost/1189", 
       "source": "datadotparl/governmentpost", 
-      "role": "Minister for Government Policy", 
+      "role": "Chancellor of the Duchy of Lancaster", 
       "person_id": "uk.org.publicwhip/person/10397", 
       "organization_id": "house-of-commons", 
       "start_date": "2016-07-14"
@@ -21028,7 +21225,7 @@
     {
       "id": "uk.parliament.data/Member/115/GovernmentPost/831", 
       "source": "datadotparl/governmentpost", 
-      "role": "The Minister for the Cabinet Office and Paymaster General", 
+      "role": "The Paymaster General and Minister for the Cabinet Office", 
       "person_id": "uk.org.publicwhip/person/10423", 
       "organization_id": "house-of-commons", 
       "start_date": "2010-05-12", 
@@ -21409,6 +21606,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "1998-07-01", 
       "end_date": "1999-06-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/8/ParliamentaryPost/787", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Leader of the Conservative Party", 
+      "person_id": "uk.org.publicwhip/person/10426", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-13"
     }, 
     {
       "id": "uk.parliament.data/Member/8/ParliamentaryPost/805", 
@@ -22050,7 +22255,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10445", 
       "organization_id": "social-mobility-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-16"
     }, 
     {
       "id": "uk.parliament.data/Member/305/GovernmentPost/149", 
@@ -23095,7 +23301,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10475", 
       "organization_id": "refreshment-committee-lords", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/457/Committee/51", 
@@ -25754,6 +25961,13 @@
       "start_date": "2015-07-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/4170/Committee/362", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10546", 
+      "organization_id": "house-of-lords-commission", 
+      "start_date": "2016-09-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4170/GovernmentPost/313", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister of State (Cabinet Office) (Third Sector)", 
@@ -27496,7 +27710,8 @@
       "role": "The Minister of State, Department for International Development", 
       "person_id": "uk.org.publicwhip/person/10580", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15"
+      "start_date": "2014-07-15", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/55/GovernmentPost/753", 
@@ -27656,6 +27871,14 @@
       "organization_id": "health-committee", 
       "start_date": "2007-10-22", 
       "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/245/GovernmentPost/350", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Lord Commissioner of Her Majesty's Treasury", 
+      "person_id": "uk.org.publicwhip/person/10582", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/245/GovernmentPost/351", 
@@ -28550,12 +28773,21 @@
       "start_date": "2016-07-27"
     }, 
     {
+      "id": "uk.parliament.data/Member/410/OppositionPost/1318", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Secretary of State for Business, Energy & Industrial Strategy", 
+      "person_id": "uk.org.publicwhip/person/10604", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-14"
+    }, 
+    {
       "id": "uk.parliament.data/Member/410/OppositionPost/860", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Secretary of State for Business, Innovation and Skills", 
       "person_id": "uk.org.publicwhip/person/10604", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-05"
+      "start_date": "2016-07-05", 
+      "end_date": "2016-07-14"
     }, 
     {
       "id": "uk.parliament.data/Member/410/OppositionPost/956", 
@@ -30850,6 +31082,14 @@
       "end_date": "2014-07-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/57/GovernmentPost/72", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Lord in Waiting (HM Household) (Whip)", 
+      "person_id": "uk.org.publicwhip/person/10659", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/57/GovernmentPost/82", 
       "source": "datadotparl/governmentpost", 
       "role": "The Leader of the House of Commons ", 
@@ -32633,7 +32873,8 @@
       "role": "Leader of the Conservative Party", 
       "person_id": "uk.org.publicwhip/person/10777", 
       "organization_id": "house-of-commons", 
-      "start_date": "2005-12-06"
+      "start_date": "2005-12-06", 
+      "end_date": "2016-07-13"
     }, 
     {
       "id": "uk.parliament.data/Member/1409/Committee/120", 
@@ -33469,7 +33710,8 @@
       "role": "Minister of State (Communities and Local Government)", 
       "person_id": "uk.org.publicwhip/person/10901", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1444/GovernmentPost/222", 
@@ -33538,7 +33780,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10920", 
       "organization_id": "speakers-committee-for-the-independent-parliamentary-standards-authority", 
-      "start_date": "2015-05-18"
+      "start_date": "2015-05-18", 
+      "end_date": "2016-07-14"
     }, 
     {
       "id": "uk.parliament.data/Member/1413/Committee/153", 
@@ -33577,7 +33820,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10920", 
       "organization_id": "public-accounts-commission", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-14"
     }, 
     {
       "id": "uk.parliament.data/Member/1413/Committee/341", 
@@ -33591,7 +33835,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10920", 
       "organization_id": "house-of-commons-commission", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-14"
     }, 
     {
       "id": "uk.parliament.data/Member/1413/GovernmentPost/1142", 
@@ -34086,6 +34331,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2005-12-10", 
       "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1423/GovernmentPost/1128", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Secretary of State for Foreign and Commonwealth Affairs", 
+      "person_id": "uk.org.publicwhip/person/10999", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-13"
     }, 
     {
       "id": "uk.parliament.data/Member/1423/OppositionPost/15", 
@@ -35977,7 +36230,8 @@
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/11216", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-11-04"
+      "start_date": "2014-11-04", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1453/GovernmentPost/540", 
@@ -35985,7 +36239,8 @@
       "role": "The Parliamentary Under-Secretary of State for Justice", 
       "person_id": "uk.org.publicwhip/person/11216", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15"
+      "start_date": "2014-07-15", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1453/OppositionPost/10", 
@@ -36179,7 +36434,8 @@
       "role": "The Minister of State, Foreign and Commonwealth Office", 
       "person_id": "uk.org.publicwhip/person/11265", 
       "organization_id": "house-of-commons", 
-      "start_date": "2012-09-06"
+      "start_date": "2012-09-06", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1408/OppositionPost/10", 
@@ -38321,6 +38577,14 @@
       "end_date": "2010-05-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/1482/GovernmentPost/351", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Assistant Whip (HM Treasury)", 
+      "person_id": "uk.org.publicwhip/person/11406", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1198/Committee/137", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11408", 
@@ -38373,7 +38637,8 @@
       "role": "The Parliamentary Under-Secretary of State for Culture, Media and Sport", 
       "person_id": "uk.org.publicwhip/person/11408", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-02-01"
+      "start_date": "2016-02-01", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1198/OppositionPost/10", 
@@ -38650,7 +38915,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11427", 
       "organization_id": "scottish-affairs-committee", 
-      "start_date": "2015-07-06"
+      "start_date": "2015-07-06", 
+      "end_date": "2016-09-05"
     }, 
     {
       "id": "uk.parliament.data/Member/1486/Committee/202", 
@@ -39218,7 +39484,8 @@
       "role": "The Parliamentary Under-Secretary of State for Justice", 
       "person_id": "uk.org.publicwhip/person/11475", 
       "organization_id": "house-of-commons", 
-      "start_date": "2013-10-07"
+      "start_date": "2013-10-07", 
+      "end_date": "2016-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/1496/GovernmentPost/599", 
@@ -39226,7 +39493,8 @@
       "role": "The Parliamentary Under-Secretary of State for Work and Pensions", 
       "person_id": "uk.org.publicwhip/person/11475", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-07-09"
+      "start_date": "2015-07-09", 
+      "end_date": "2016-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/1496/OppositionPost/1", 
@@ -39492,6 +39760,14 @@
       "person_id": "uk.org.publicwhip/person/11506", 
       "organization_id": "public-administration-and-constitutional-affairs-committee", 
       "start_date": "2015-07-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1502/GovernmentPost/1184", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Department for Exiting the European Union)", 
+      "person_id": "uk.org.publicwhip/person/11506", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1502/GovernmentPost/543", 
@@ -39883,9 +40159,9 @@
       "end_date": "2010-05-06"
     }, 
     {
-      "id": "uk.parliament.data/Member/1511/GovernmentPost/20", 
+      "id": "uk.parliament.data/Member/1511/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
-      "role": "Assistant Whip", 
+      "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/11553", 
       "organization_id": "house-of-commons", 
       "start_date": "2008-10-05", 
@@ -39926,6 +40202,13 @@
       "organization_id": "house-of-commons", 
       "start_date": "2011-10-07", 
       "end_date": "2013-10-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1501/Committee/135", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11558", 
+      "organization_id": "science-and-technology-committee-commons", 
+      "start_date": "2016-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/1501/Committee/148", 
@@ -40643,6 +40926,14 @@
       "end_date": "2010-05-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/1526/GovernmentPost/1174", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Department for International Trade", 
+      "person_id": "uk.org.publicwhip/person/11610", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1526/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
       "role": "Assistant Whip (HM Treasury)", 
@@ -40657,7 +40948,8 @@
       "role": "The Chief Secretary to the Treasury", 
       "person_id": "uk.org.publicwhip/person/11610", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-14"
     }, 
     {
       "id": "uk.parliament.data/Member/1526/GovernmentPost/46", 
@@ -40736,12 +41028,21 @@
       "end_date": "2014-07-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/1528/GovernmentPost/222", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Ministry of Defence", 
+      "person_id": "uk.org.publicwhip/person/11626", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1528/GovernmentPost/417", 
       "source": "datadotparl/governmentpost", 
       "role": "The Minister of State, Home Department", 
       "person_id": "uk.org.publicwhip/person/11626", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15"
+      "start_date": "2014-07-15", 
+      "end_date": "2016-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/1528/GovernmentPost/836", 
@@ -40749,7 +41050,8 @@
       "role": "The Minister of State, Ministry of Justice", 
       "person_id": "uk.org.publicwhip/person/11626", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15"
+      "start_date": "2014-07-15", 
+      "end_date": "2016-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/1528/GovernmentPost/916", 
@@ -40799,7 +41101,16 @@
       "role": "The Financial Secretary to the Treasury", 
       "person_id": "uk.org.publicwhip/person/11633", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15"
+      "start_date": "2014-07-15", 
+      "end_date": "2016-07-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1529/GovernmentPost/36", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Chief Secretary to the Treasury", 
+      "person_id": "uk.org.publicwhip/person/11633", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-14"
     }, 
     {
       "id": "uk.parliament.data/Member/1529/GovernmentPost/62", 
@@ -41128,6 +41439,14 @@
       "end_date": "2014-11-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/1536/OppositionPost/1315", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Secretary of State for Exiting the European Union", 
+      "person_id": "uk.org.publicwhip/person/11656", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-20"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1536/OppositionPost/855", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Foreign Secretary", 
@@ -41434,7 +41753,16 @@
       "role": "Parliamentary Under-Secretary (Northern Ireland Office)", 
       "person_id": "uk.org.publicwhip/person/11668", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1539/GovernmentPost/1144", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Home Office) (Security)", 
+      "person_id": "uk.org.publicwhip/person/11668", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1539/GovernmentPost/351", 
@@ -41634,7 +41962,16 @@
       "role": "Minister of State (Ministry of Defence) (Defence Procurement)", 
       "person_id": "uk.org.publicwhip/person/11696", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-16"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1542/GovernmentPost/230", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Department of Health", 
+      "person_id": "uk.org.publicwhip/person/11696", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-16"
     }, 
     {
       "id": "uk.parliament.data/Member/1542/GovernmentPost/351", 
@@ -42421,7 +42758,16 @@
       "role": "The Parliamentary Secretary, Cabinet Office", 
       "person_id": "uk.org.publicwhip/person/11773", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-09-27"
+      "start_date": "2014-09-27", 
+      "end_date": "2016-07-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1556/GovernmentPost/921", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Culture, Media and Sport", 
+      "person_id": "uk.org.publicwhip/person/11773", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1556/OppositionPost/10", 
@@ -42599,7 +42945,8 @@
       "role": "The Parliamentary Under-Secretary of State for Foreign and Commonwealth Affairs", 
       "person_id": "uk.org.publicwhip/person/11785", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-08-11"
+      "start_date": "2014-08-11", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1559/GovernmentPost/350", 
@@ -42694,12 +43041,21 @@
       "end_date": "2010-05-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/1561/GovernmentPost/1175", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Department for Business, Energy and Industrial Strategy", 
+      "person_id": "uk.org.publicwhip/person/11792", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-16"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1561/GovernmentPost/474", 
       "source": "datadotparl/governmentpost", 
       "role": "The Parliamentary Under-Secretary of State for International Development", 
       "person_id": "uk.org.publicwhip/person/11792", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-11-28"
+      "start_date": "2015-11-28", 
+      "end_date": "2016-07-16"
     }, 
     {
       "id": "uk.parliament.data/Member/1561/GovernmentPost/913", 
@@ -42789,7 +43145,8 @@
       "role": "Parliamentary Under-Secretary (Department for Transport)", 
       "person_id": "uk.org.publicwhip/person/11804", 
       "organization_id": "house-of-commons", 
-      "start_date": "2013-10-07"
+      "start_date": "2013-10-07", 
+      "end_date": "2016-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/1562/GovernmentPost/350", 
@@ -42808,6 +43165,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2010-05-12", 
       "end_date": "2012-09-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1562/GovernmentPost/840", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister for Immigration", 
+      "person_id": "uk.org.publicwhip/person/11804", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/1562/OppositionPost/10", 
@@ -43799,7 +44164,8 @@
       "role": "Minister of State for Culture and the Digital Economy (Jointly with Department for Business, Innovation and Skills)", 
       "person_id": "uk.org.publicwhip/person/11905", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15"
+      "start_date": "2014-07-15", 
+      "end_date": "2016-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/1580/GovernmentPost/1135", 
@@ -43807,7 +44173,8 @@
       "role": "Minister of State for Culture and the Digital Economy (Jointly with Department for Culture Media and Sport)", 
       "person_id": "uk.org.publicwhip/person/11905", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15"
+      "start_date": "2014-07-15", 
+      "end_date": "2016-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/1580/GovernmentPost/921", 
@@ -43953,9 +44320,9 @@
       "end_date": "2010-05-06"
     }, 
     {
-      "id": "uk.parliament.data/Member/1582/ParliamentaryPost/823", 
+      "id": "uk.parliament.data/Member/1582/ParliamentaryPost/764", 
       "source": "datadotparl/parliamentarypost", 
-      "role": "Vice-Chair, Conservative Party", 
+      "role": "Co-Chair, Conservative Party", 
       "person_id": "uk.org.publicwhip/person/11917", 
       "organization_id": "house-of-commons", 
       "start_date": "2005-07-01", 
@@ -44127,7 +44494,8 @@
       "role": "The Lord Commissioner of Her Majesty's Treasury", 
       "person_id": "uk.org.publicwhip/person/11924", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-02-08"
+      "start_date": "2014-02-08", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1584/GovernmentPost/351", 
@@ -44144,7 +44512,8 @@
       "role": "The Parliamentary Secretary, Cabinet Office", 
       "person_id": "uk.org.publicwhip/person/11924", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1584/GovernmentPost/912", 
@@ -45581,7 +45950,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12847", 
       "organization_id": "equality-act-2010-and-disability-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-15"
     }, 
     {
       "id": "uk.parliament.data/Member/2472/Committee/338", 
@@ -45596,7 +45966,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12847", 
       "organization_id": "information-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2472/GovernmentPost/484", 
@@ -45644,7 +46015,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12849", 
       "organization_id": "works-of-art-committee-lords", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2756/Committee/192", 
@@ -46319,7 +46691,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12871", 
       "organization_id": "house-committee-lords", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/787/Committee/189", 
@@ -46384,6 +46757,13 @@
       "organization_id": "small-and-medium-sized-enterprises-committee", 
       "start_date": "2012-05-29", 
       "end_date": "2013-02-28"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/787/Committee/364", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12871", 
+      "organization_id": "finance-committee-lords", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/787/Committee/86", 
@@ -46505,12 +46885,28 @@
       "end_date": "2015-02-04"
     }, 
     {
+      "id": "uk.parliament.data/Member/3359/Committee/364", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12873", 
+      "organization_id": "finance-committee-lords", 
+      "start_date": "2016-09-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3359/GovernmentPost/26", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Captain of the Queen's Bodyguard of the Yeomen of the Guard (HM Household) (Deputy Chief Whip, House of Lords) ", 
+      "person_id": "uk.org.publicwhip/person/12873", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3359/GovernmentPost/72", 
       "source": "datadotparl/governmentpost", 
       "role": "Lord in Waiting (HM Household) (Whip)", 
       "person_id": "uk.org.publicwhip/person/12873", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-14"
+      "start_date": "2015-05-14", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3425/Committee/148", 
@@ -46525,7 +46921,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12875", 
       "organization_id": "administration-and-works-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3425/Committee/287", 
@@ -46534,6 +46931,13 @@
       "organization_id": "partnerships-prosecution-scotland-bill-special-public-bill-committee", 
       "start_date": "2013-01-22", 
       "end_date": "2013-02-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3425/Committee/363", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12875", 
+      "organization_id": "services-committee", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/3425/GovernmentPost/1068", 
@@ -46892,9 +47296,9 @@
       "end_date": "1982-11-03"
     }, 
     {
-      "id": "uk.parliament.data/Member/1885/GovernmentPost/25", 
+      "id": "uk.parliament.data/Member/1885/GovernmentPost/26", 
       "source": "datadotparl/governmentpost", 
-      "role": "Captain of the Queen's Bodyguard of the Yeoman of the Guard (HM Household) (Deputy Chief Whip, House of Lords) ", 
+      "role": "Captain of the Queen's Bodyguard of the Yeomen of the Guard (HM Household) (Deputy Chief Whip, House of Lords) ", 
       "person_id": "uk.org.publicwhip/person/12892", 
       "organization_id": "house-of-commons", 
       "start_date": "1997-05-01", 
@@ -47567,6 +47971,15 @@
       "end_date": "2007-10-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/3602/GovernmentPost/459", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Department for Transport)", 
+      "person_id": "uk.org.publicwhip/person/12914", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1994-07-20", 
+      "end_date": "1997-05-02"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3575/Committee/148", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12915", 
@@ -47627,7 +48040,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12915", 
       "organization_id": "sexual-violence-in-conflict-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/3575/Committee/357", 
@@ -47635,6 +48049,13 @@
       "person_id": "uk.org.publicwhip/person/12915", 
       "organization_id": "licensing-act-2003-committee", 
       "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3575/Committee/364", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12915", 
+      "organization_id": "finance-committee-lords", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/3575/Committee/94", 
@@ -48417,7 +48838,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12951", 
       "organization_id": "social-mobility-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-16"
     }, 
     {
       "id": "uk.parliament.data/Member/2443/Committee/356", 
@@ -48506,7 +48928,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12957", 
       "organization_id": "built-environment-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/2510/Committee/93", 
@@ -48793,6 +49216,13 @@
       "end_date": "2012-05-16"
     }, 
     {
+      "id": "uk.parliament.data/Member/1728/Committee/187", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12960", 
+      "organization_id": "liaison-committee-lords", 
+      "start_date": "2016-07-20"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1728/Committee/191", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12960", 
@@ -48853,7 +49283,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12960", 
       "organization_id": "sexual-violence-in-conflict-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/1727/Committee/174", 
@@ -49676,6 +50107,23 @@
       "organization_id": "parliamentary-privilege-joint-committee", 
       "start_date": "2013-01-09", 
       "end_date": "2013-06-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3493/GovernmentPost/209", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Department for Transport)", 
+      "person_id": "uk.org.publicwhip/person/12984", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1990-11-28"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3493/GovernmentPost/459", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Department for Transport)", 
+      "person_id": "uk.org.publicwhip/person/12984", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1986-09-10", 
+      "end_date": "1989-07-23"
     }, 
     {
       "id": "uk.parliament.data/Member/3493/ParliamentaryPost/1093", 
@@ -50891,7 +51339,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13010", 
       "organization_id": "information-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/778/GovernmentPost/1120", 
@@ -51235,7 +51684,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13030", 
       "organization_id": "built-environment-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/3271/Committee/168", 
@@ -51410,7 +51860,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13037", 
       "organization_id": "works-of-art-committee-lords", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3278/Committee/266", 
@@ -51425,7 +51876,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13037", 
       "organization_id": "built-environment-committee", 
-      "start_date": "2015-06-18"
+      "start_date": "2015-06-18", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/3278/Committee/94", 
@@ -51748,7 +52200,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13048", 
       "organization_id": "sexual-violence-in-conflict-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/810/Committee/148", 
@@ -52000,7 +52453,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13058", 
       "organization_id": "house-committee-lords", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2595/Committee/148", 
@@ -52624,7 +53078,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13073", 
       "organization_id": "social-mobility-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-16"
     }, 
     {
       "id": "uk.parliament.data/Member/993/Committee/103", 
@@ -53031,7 +53486,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13079", 
       "organization_id": "administration-and-works-committee-lords", 
-      "start_date": "2015-10-12"
+      "start_date": "2015-10-12", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2004/Committee/176", 
@@ -53046,7 +53502,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13079", 
       "organization_id": "house-committee-lords", 
-      "start_date": "2015-10-12"
+      "start_date": "2015-10-12", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2004/Committee/187", 
@@ -53141,6 +53598,20 @@
       "start_date": "2015-10-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/2004/Committee/362", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13079", 
+      "organization_id": "house-of-lords-commission", 
+      "start_date": "2016-09-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2004/Committee/363", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13079", 
+      "organization_id": "services-committee", 
+      "start_date": "2016-09-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2004/ParliamentaryPost/1076", 
       "source": "datadotparl/parliamentarypost", 
       "role": "Convenor of the Crossbench Peers", 
@@ -53219,6 +53690,15 @@
       "person_id": "uk.org.publicwhip/person/13081", 
       "organization_id": "house-of-commons", 
       "start_date": "2010-11-29"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1884/GovernmentPost/459", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Department for Transport)", 
+      "person_id": "uk.org.publicwhip/person/13083", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1994-01-11", 
+      "end_date": "1994-07-20"
     }, 
     {
       "id": "uk.parliament.data/Member/3386/Committee/176", 
@@ -53380,7 +53860,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13096", 
       "organization_id": "administration-and-works-committee-lords", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3434/Committee/168", 
@@ -53832,6 +54313,14 @@
       "end_date": "2014-08-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/3474/GovernmentPost/496", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Department for International Development", 
+      "person_id": "uk.org.publicwhip/person/13107", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3474/ParliamentaryPost/1092", 
       "source": "datadotparl/parliamentarypost", 
       "role": "Deputy Chairman of Committees", 
@@ -53915,7 +54404,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13108", 
       "organization_id": "built-environment-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/2534/GovernmentPost/23", 
@@ -54177,7 +54667,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13114", 
       "organization_id": "house-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/1278/Committee/187", 
@@ -54282,6 +54773,13 @@
       "organization_id": "finance-bill-subcommittee", 
       "start_date": "2014-01-08", 
       "end_date": "2014-03-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1278/Committee/362", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13114", 
+      "organization_id": "house-of-lords-commission", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/1278/Committee/70", 
@@ -54787,6 +55285,13 @@
       "start_date": "2015-06-18"
     }, 
     {
+      "id": "uk.parliament.data/Member/2506/Committee/362", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13121", 
+      "organization_id": "house-of-lords-commission", 
+      "start_date": "2016-09-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2506/Committee/37", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13121", 
@@ -55105,7 +55610,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13130", 
       "organization_id": "works-of-art-committee-lords", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/685/Committee/176", 
@@ -55428,7 +55934,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13140", 
       "organization_id": "sexual-violence-in-conflict-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/2167/Committee/360", 
@@ -55740,7 +56247,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13146", 
       "organization_id": "refreshment-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2105/Committee/309", 
@@ -55828,7 +56336,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13147", 
       "organization_id": "equality-act-2010-and-disability-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-15"
     }, 
     {
       "id": "uk.parliament.data/Member/2488/Committee/359", 
@@ -55970,6 +56479,13 @@
       "organization_id": "draft-civil-contingencies-bill-joint-committee", 
       "start_date": "2003-07-11", 
       "end_date": "2003-11-28"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2147/Committee/363", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13152", 
+      "organization_id": "services-committee", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/1865/Committee/148", 
@@ -56430,7 +56946,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13165", 
       "organization_id": "built-environment-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/3217/Committee/355", 
@@ -56586,7 +57103,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13169", 
       "organization_id": "information-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2608/Committee/168", 
@@ -56601,7 +57119,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13170", 
       "organization_id": "works-of-art-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/693/OppositionPost/16", 
@@ -57337,7 +57856,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13185", 
       "organization_id": "social-mobility-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-16"
     }, 
     {
       "id": "uk.parliament.data/Member/2508/Committee/169", 
@@ -58463,7 +58983,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13217", 
       "organization_id": "administration-and-works-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/1845/Committee/184", 
@@ -58504,6 +59025,13 @@
       "organization_id": "draft-human-tissue-and-embryos-bill-joint-committee", 
       "start_date": "2007-05-09", 
       "end_date": "2007-08-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1845/Committee/363", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13217", 
+      "organization_id": "services-committee", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/1845/GovernmentPost/487", 
@@ -58798,7 +59326,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13224", 
       "organization_id": "sexual-violence-in-conflict-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/2637/Committee/360", 
@@ -59556,7 +60085,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13253", 
       "organization_id": "administration-and-works-committee-lords", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3616/Committee/249", 
@@ -60099,7 +60629,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13272", 
       "organization_id": "works-of-art-committee-lords", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2537/Committee/193", 
@@ -61158,7 +61689,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13300", 
       "organization_id": "works-of-art-committee-lords", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/908/Committee/83", 
@@ -61426,7 +61958,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13307", 
       "organization_id": "built-environment-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/836/Committee/340", 
@@ -61543,7 +62076,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13310", 
       "organization_id": "works-of-art-committee-lords", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2503/Committee/183", 
@@ -61772,7 +62306,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13322", 
       "organization_id": "equality-act-2010-and-disability-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3756/Committee/34", 
@@ -62103,7 +62638,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13338", 
       "organization_id": "sexual-violence-in-conflict-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/1966/Committee/168", 
@@ -62561,6 +63097,24 @@
       "end_date": "2016-05-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/3310/GovernmentPost/1190", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Transport) (Railways and Roads)", 
+      "person_id": "uk.org.publicwhip/person/13351", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1992-04-14", 
+      "end_date": "1994-01-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3310/GovernmentPost/459", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Department for Transport)", 
+      "person_id": "uk.org.publicwhip/person/13351", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1985-09-02", 
+      "end_date": "1986-09-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2543/Committee/193", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13352", 
@@ -62620,7 +63174,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13353", 
       "organization_id": "house-committee-lords", 
-      "start_date": "2015-12-14"
+      "start_date": "2015-12-14", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2024/Committee/187", 
@@ -63315,7 +63870,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13371", 
       "organization_id": "administration-and-works-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3478/Committee/184", 
@@ -64252,7 +64808,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13424", 
       "organization_id": "equality-act-2010-and-disability-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3179/Committee/358", 
@@ -64695,7 +65252,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13435", 
       "organization_id": "equality-act-2010-and-disability-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3191/Committee/359", 
@@ -65018,7 +65576,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13444", 
       "organization_id": "house-committee-lords", 
-      "start_date": "2011-09-05"
+      "start_date": "2011-09-05", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3709/Committee/187", 
@@ -65081,7 +65640,8 @@
       "role": "Lord Speaker", 
       "person_id": "uk.org.publicwhip/person/13444", 
       "organization_id": "house-of-commons", 
-      "start_date": "2011-09-05"
+      "start_date": "2011-09-05", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3710/Committee/177", 
@@ -65675,7 +66235,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13458", 
       "organization_id": "information-committee-lords", 
-      "start_date": "2015-06-23"
+      "start_date": "2015-06-23", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3121/Committee/148", 
@@ -65721,7 +66282,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13460", 
       "organization_id": "refreshment-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3121/Committee/218", 
@@ -66063,7 +66625,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13471", 
       "organization_id": "built-environment-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/3609/Committee/37", 
@@ -66682,7 +67245,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13490", 
       "organization_id": "works-of-art-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/1980/Committee/170", 
@@ -66763,7 +67327,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13490", 
       "organization_id": "built-environment-committee", 
-      "start_date": "2015-06-18"
+      "start_date": "2015-06-18", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/1980/Committee/360", 
@@ -66782,6 +67347,15 @@
       "end_date": "1997-05-02"
     }, 
     {
+      "id": "uk.parliament.data/Member/1980/GovernmentPost/26", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Captain of the Queen's Bodyguard of the Yeomen of the Guard (HM Household) (Deputy Chief Whip, House of Lords) ", 
+      "person_id": "uk.org.publicwhip/person/13490", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1995-01-01", 
+      "end_date": "1995-07-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1980/GovernmentPost/72", 
       "source": "datadotparl/governmentpost", 
       "role": "Lord in Waiting (HM Household) (Whip)", 
@@ -66789,6 +67363,15 @@
       "organization_id": "house-of-commons", 
       "start_date": "1994-07-21", 
       "end_date": "1995-01-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1980/OppositionPost/1314", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Opposition Spokesperson (Environment, Transport and the Regions)", 
+      "person_id": "uk.org.publicwhip/person/13490", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1997-05-01", 
+      "end_date": "1998-07-01"
     }, 
     {
       "id": "uk.parliament.data/Member/2616/Committee/148", 
@@ -66958,6 +67541,33 @@
       "organization_id": "committee-on-the-assisted-dying-for-the-terminally-ill-bill", 
       "start_date": "2004-11-30", 
       "end_date": "2005-04-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1649/GovernmentPost/187", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Department for Environment, Transport and the Regions)", 
+      "person_id": "uk.org.publicwhip/person/13495", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1997-05-06", 
+      "end_date": "1998-07-28"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1649/GovernmentPost/200", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister (Department of Health)", 
+      "person_id": "uk.org.publicwhip/person/13495", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1998-07-28", 
+      "end_date": "1999-07-29"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1649/GovernmentPost/441", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Ministry of Agriculture, Fisheries and Food)", 
+      "person_id": "uk.org.publicwhip/person/13495", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1999-07-29", 
+      "end_date": "2001-06-09"
     }, 
     {
       "id": "uk.parliament.data/Member/1649/ParliamentaryPost/1072", 
@@ -67645,7 +68255,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13512", 
       "organization_id": "administration-and-works-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3504/Committee/189", 
@@ -67684,6 +68295,22 @@
       "start_date": "2011-06-28"
     }, 
     {
+      "id": "uk.parliament.data/Member/3504/Committee/363", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13512", 
+      "organization_id": "services-committee", 
+      "start_date": "2016-09-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3504/GovernmentPost/24", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Captain of the Honourable Corps of Gentlemen-at-Arms (HM Household) (Chief Whip, House of Lords)", 
+      "person_id": "uk.org.publicwhip/person/13512", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2008-10-05", 
+      "end_date": "2010-05-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3504/GovernmentPost/484", 
       "source": "datadotparl/governmentpost", 
       "role": "Lords in Waiting (HM Household)", 
@@ -67691,15 +68318,6 @@
       "organization_id": "house-of-commons", 
       "start_date": "2001-06-07", 
       "end_date": "2008-10-05"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/3504/GovernmentPost/508", 
-      "source": "datadotparl/governmentpost", 
-      "role": "Captain of the Honourable Corps of Gentlemen-at-Arms (HM Household)", 
-      "person_id": "uk.org.publicwhip/person/13512", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2008-10-05", 
-      "end_date": "2010-05-06"
     }, 
     {
       "id": "uk.parliament.data/Member/3504/OppositionPost/954", 
@@ -67859,7 +68477,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13517", 
       "organization_id": "built-environment-committee", 
-      "start_date": "2015-06-18"
+      "start_date": "2015-06-18", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/3396/Committee/357", 
@@ -69660,7 +70279,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13558", 
       "organization_id": "refreshment-committee-lords", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3364/Committee/314", 
@@ -69843,7 +70463,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13564", 
       "organization_id": "equality-act-2010-and-disability-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-15"
     }, 
     {
       "id": "uk.parliament.data/Member/1892/Committee/356", 
@@ -69883,6 +70504,15 @@
       "organization_id": "built-environment-committee", 
       "start_date": "2015-06-11", 
       "end_date": "2015-07-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1880/GovernmentPost/187", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Department for Environment, Transport and the Regions)", 
+      "person_id": "uk.org.publicwhip/person/13565", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1999-07-29", 
+      "end_date": "2001-06-09"
     }, 
     {
       "id": "uk.parliament.data/Member/2496/Committee/181", 
@@ -69929,7 +70559,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13569", 
       "organization_id": "administration-and-works-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3573/Committee/172", 
@@ -71017,7 +71648,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13611", 
       "organization_id": "information-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3333/Committee/176", 
@@ -71143,7 +71775,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13614", 
       "organization_id": "built-environment-committee", 
-      "start_date": "2015-06-23"
+      "start_date": "2015-06-23", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/964/Committee/337", 
@@ -71508,7 +72141,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13625", 
       "organization_id": "information-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/914/Committee/125", 
@@ -72851,7 +73485,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13668", 
       "organization_id": "administration-and-works-committee-lords", 
-      "start_date": "2015-09-07"
+      "start_date": "2015-09-07", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2079/Committee/167", 
@@ -72859,7 +73494,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13668", 
       "organization_id": "freedom-of-information-advisory-panel-lords", 
-      "start_date": "2015-09-07"
+      "start_date": "2015-09-07", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2079/Committee/174", 
@@ -72882,7 +73518,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13668", 
       "organization_id": "house-committee-lords", 
-      "start_date": "2011-09-05"
+      "start_date": "2011-09-05", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2079/Committee/186", 
@@ -72890,7 +73527,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13668", 
       "organization_id": "hybrid-instruments-committee-lords", 
-      "start_date": "2015-09-07"
+      "start_date": "2015-09-07", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2079/Committee/187", 
@@ -72906,7 +73544,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13668", 
       "organization_id": "liaison-committee-lords", 
-      "start_date": "2015-09-07"
+      "start_date": "2015-09-07", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2079/Committee/189", 
@@ -72922,7 +73561,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13668", 
       "organization_id": "privileges-and-conduct-committee-for-lords", 
-      "start_date": "2015-09-07"
+      "start_date": "2015-09-07", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2079/Committee/191", 
@@ -72938,7 +73578,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13668", 
       "organization_id": "procedure-committee-lords", 
-      "start_date": "2015-09-07"
+      "start_date": "2015-09-07", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2079/Committee/192", 
@@ -72946,7 +73587,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13668", 
       "organization_id": "refreshment-committee-lords", 
-      "start_date": "2015-09-07"
+      "start_date": "2015-09-07", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2079/Committee/196", 
@@ -72970,7 +73612,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13668", 
       "organization_id": "selection-committee-of-lords", 
-      "start_date": "2015-09-07"
+      "start_date": "2015-09-07", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2079/Committee/198", 
@@ -72978,7 +73621,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13668", 
       "organization_id": "standing-orders-private-bills-committee-lords", 
-      "start_date": "2015-09-07"
+      "start_date": "2015-09-07", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2079/Committee/206", 
@@ -73018,7 +73662,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13668", 
       "organization_id": "subcommittee-on-leave-of-absence", 
-      "start_date": "2015-09-07"
+      "start_date": "2015-09-07", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/2079/Committee/341", 
@@ -73035,6 +73680,21 @@
       "start_date": "2015-06-18"
     }, 
     {
+      "id": "uk.parliament.data/Member/2079/Committee/362", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13668", 
+      "organization_id": "house-of-lords-commission", 
+      "start_date": "2016-09-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2079/Committee/363", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/13668", 
+      "organization_id": "services-committee", 
+      "start_date": "2016-09-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2079/ParliamentaryPost/1076", 
       "source": "datadotparl/parliamentarypost", 
       "role": "Convenor of the Crossbench Peers", 
@@ -73049,7 +73709,8 @@
       "role": "Chairman of Committees, House of Lords", 
       "person_id": "uk.org.publicwhip/person/13668", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-09-07"
+      "start_date": "2015-09-07", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/1138/Committee/124", 
@@ -73418,7 +74079,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13692", 
       "organization_id": "social-mobility-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-16"
     }, 
     {
       "id": "uk.parliament.data/Member/1104/Committee/193", 
@@ -73794,7 +74456,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13702", 
       "organization_id": "administration-and-works-committee-lords", 
-      "start_date": "2012-05-16"
+      "start_date": "2012-05-16", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/1916/Committee/174", 
@@ -73893,6 +74556,13 @@
       "person_id": "uk.org.publicwhip/person/13702", 
       "organization_id": "consultative-panel-on-parliamentary-security", 
       "start_date": "2015-06-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1916/Committee/364", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13702", 
+      "organization_id": "finance-committee-lords", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/1916/GovernmentPost/1104", 
@@ -74054,7 +74724,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13706", 
       "organization_id": "sexual-violence-in-conflict-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/1164/Committee/48", 
@@ -74416,7 +75087,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13720", 
       "organization_id": "administration-and-works-committee-lords", 
-      "start_date": "2014-10-14"
+      "start_date": "2014-10-14", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3787/Committee/189", 
@@ -74452,6 +75124,13 @@
       "person_id": "uk.org.publicwhip/person/13720", 
       "organization_id": "subcommittee-on-leave-of-absence", 
       "start_date": "2015-06-10"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3787/Committee/363", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13720", 
+      "organization_id": "services-committee", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/3787/GovernmentPost/24", 
@@ -74584,7 +75263,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13724", 
       "organization_id": "refreshment-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/1132/Committee/24", 
@@ -74860,7 +75540,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13728", 
       "organization_id": "equality-act-2010-and-disability-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3793/Committee/181", 
@@ -74903,7 +75584,8 @@
       "role": "The Parliamentary Under-Secretary of State for International Development", 
       "person_id": "uk.org.publicwhip/person/13730", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-12"
+      "start_date": "2015-05-12", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3790/GovernmentPost/510", 
@@ -75662,7 +76344,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13884", 
       "organization_id": "works-of-art-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3808/Committee/176", 
@@ -75800,7 +76483,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13919", 
       "organization_id": "administration-and-works-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3827/Committee/183", 
@@ -75815,7 +76499,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13921", 
       "organization_id": "equality-act-2010-and-disability-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3831/Committee/93", 
@@ -75956,7 +76641,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13925", 
       "organization_id": "information-committee-lords", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3832/Committee/215", 
@@ -76204,7 +76890,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13937", 
       "organization_id": "sexual-violence-in-conflict-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/3839/GovernmentPost/1088", 
@@ -76393,7 +77080,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13940", 
       "organization_id": "house-committee-lords", 
-      "start_date": "2013-10-17"
+      "start_date": "2013-10-17", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/630/Committee/187", 
@@ -76445,6 +77133,13 @@
       "person_id": "uk.org.publicwhip/person/13940", 
       "organization_id": "palace-of-westminster-joint-committee", 
       "start_date": "2015-07-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/630/Committee/362", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13940", 
+      "organization_id": "house-of-lords-commission", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/630/Committee/86", 
@@ -76520,7 +77215,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13998", 
       "organization_id": "communications-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2016-07-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4306/GovernmentPost/72", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Lord in Waiting (HM Household) (Whip)", 
+      "person_id": "uk.org.publicwhip/person/13998", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4293/Committee/360", 
@@ -76592,7 +77296,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/14129", 
       "organization_id": "refreshment-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/3137/Committee/261", 
@@ -77205,7 +77910,7 @@
       "start_date": "2015-07-06"
     }, 
     {
-      "id": "uk.parliament.data/Member/3893/GovernmentPost/211", 
+      "id": "uk.parliament.data/Member/3893/GovernmentPost/1177", 
       "source": "datadotparl/governmentpost", 
       "role": "The Minister of State, Department for Work and Pensions", 
       "person_id": "uk.org.publicwhip/person/24689", 
@@ -77226,7 +77931,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24690", 
       "organization_id": "sexual-violence-in-conflict-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/3895/GovernmentPost/1116", 
@@ -77594,6 +78300,14 @@
       "end_date": "2013-06-17"
     }, 
     {
+      "id": "uk.parliament.data/Member/4021/GovernmentPost/499", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Cabinet Office)", 
+      "person_id": "uk.org.publicwhip/person/24713", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4047/Committee/126", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24714", 
@@ -77744,7 +78458,16 @@
       "role": "The Parliamentary Under-Secretary of State for Health", 
       "person_id": "uk.org.publicwhip/person/24719", 
       "organization_id": "house-of-commons", 
-      "start_date": "2013-10-07"
+      "start_date": "2013-10-07", 
+      "end_date": "2016-07-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3918/GovernmentPost/348", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Financial Secretary to the Treasury", 
+      "person_id": "uk.org.publicwhip/person/24719", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3956/Committee/162", 
@@ -77753,6 +78476,20 @@
       "organization_id": "welsh-affairs-committee", 
       "start_date": "2010-07-12", 
       "end_date": "2012-11-26"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3956/Committee/289", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24720", 
+      "organization_id": "committee-on-privileges", 
+      "start_date": "2016-07-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3956/Committee/290", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24720", 
+      "organization_id": "committee-on-standards", 
+      "start_date": "2016-07-21"
     }, 
     {
       "id": "uk.parliament.data/Member/3956/OppositionPost/10", 
@@ -78621,6 +79358,14 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4075/GovernmentPost/351", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Assistant Whip (HM Treasury)", 
+      "person_id": "uk.org.publicwhip/person/24747", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3994/Committee/164", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24748", 
@@ -78900,6 +79645,14 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/3926/GovernmentPost/1120", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Department for Transport)", 
+      "person_id": "uk.org.publicwhip/person/24764", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3921/Committee/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24765", 
@@ -78914,6 +79667,14 @@
       "organization_id": "energy-and-climate-change-committee", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3921/GovernmentPost/540", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Justice", 
+      "person_id": "uk.org.publicwhip/person/24765", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3995/Committee/200", 
@@ -79041,6 +79802,14 @@
       "start_date": "2015-07-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/4053/GovernmentPost/351", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Assistant Whip (HM Treasury)", 
+      "person_id": "uk.org.publicwhip/person/24769", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4134/Committee/153", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24770", 
@@ -79060,7 +79829,7 @@
       "id": "uk.parliament.data/Member/4134/Committee/325", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24770", 
-      "organization_id": "finance-committee", 
+      "organization_id": "finance-committee-commons", 
       "start_date": "2015-07-20"
     }, 
     {
@@ -79086,7 +79855,16 @@
       "role": "The Deputy Leader of the House of Commons", 
       "person_id": "uk.org.publicwhip/person/24771", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4098/GovernmentPost/850", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Environment, Food and Rural Affairs", 
+      "person_id": "uk.org.publicwhip/person/24771", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3938/Committee/102", 
@@ -79129,7 +79907,8 @@
       "role": "The Minister of State, Department for Business, Innovation and Skills", 
       "person_id": "uk.org.publicwhip/person/24772", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4070/Committee/127", 
@@ -79202,12 +79981,21 @@
       "end_date": "2015-05-08"
     }, 
     {
-      "id": "uk.parliament.data/Member/4070/GovernmentPost/831", 
+      "id": "uk.parliament.data/Member/4070/GovernmentPost/1179", 
       "source": "datadotparl/governmentpost", 
-      "role": "The Minister for the Cabinet Office and Paymaster General", 
+      "role": "Minister of State (Department for Culture, Media and Sport) (Digital Policy)", 
       "person_id": "uk.org.publicwhip/person/24773", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2016-07-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4070/GovernmentPost/831", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Paymaster General and Minister for the Cabinet Office", 
+      "person_id": "uk.org.publicwhip/person/24773", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4070/GovernmentPost/951", 
@@ -79337,7 +80125,8 @@
       "role": "The Lord Commissioner of Her Majesty's Treasury", 
       "person_id": "uk.org.publicwhip/person/24777", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-13"
+      "start_date": "2015-05-13", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4066/Committee/128", 
@@ -79453,6 +80242,14 @@
       "end_date": "2012-11-05"
     }, 
     {
+      "id": "uk.parliament.data/Member/3969/GovernmentPost/211", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Department for Work and Pensions", 
+      "person_id": "uk.org.publicwhip/person/24782", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3969/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
       "role": "Assistant Whip (HM Treasury)", 
@@ -79467,7 +80264,8 @@
       "role": "The Exchequer Secretary", 
       "person_id": "uk.org.publicwhip/person/24782", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3985/Committee/128", 
@@ -79483,7 +80281,16 @@
       "role": "Minister without Portfolio ", 
       "person_id": "uk.org.publicwhip/person/24784", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3985/GovernmentPost/947", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister for Schools", 
+      "person_id": "uk.org.publicwhip/person/24784", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4107/Committee/127", 
@@ -79514,7 +80321,8 @@
       "role": "The Economic Secretary to the Treasury", 
       "person_id": "uk.org.publicwhip/person/24785", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4107/GovernmentPost/350", 
@@ -79533,6 +80341,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2014-02-08", 
       "end_date": "2014-07-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4107/GovernmentPost/854", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Defence", 
+      "person_id": "uk.org.publicwhip/person/24785", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4064/Committee/153", 
@@ -79657,6 +80473,14 @@
       "end_date": "2014-07-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/3980/GovernmentPost/540", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Justice", 
+      "person_id": "uk.org.publicwhip/person/24789", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3980/GovernmentPost/856", 
       "source": "datadotparl/governmentpost", 
       "role": "The Parliamentary Secretary, Cabinet Office", 
@@ -79671,7 +80495,8 @@
       "role": "The Parliamentary Under-Secretary of State for Education", 
       "person_id": "uk.org.publicwhip/person/24789", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15"
+      "start_date": "2014-07-15", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4028/Committee/153", 
@@ -80197,6 +81022,14 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4048/GovernmentPost/599", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Work and Pensions", 
+      "person_id": "uk.org.publicwhip/person/24809", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3915/OppositionPost/1172", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister for Women and Equalities", 
@@ -80359,7 +81192,8 @@
       "role": "The Parliamentary Under-Secretary of State for Justice", 
       "person_id": "uk.org.publicwhip/person/24815", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-13"
+      "start_date": "2015-05-13", 
+      "end_date": "2016-07-16"
     }, 
     {
       "id": "uk.parliament.data/Member/4026/Committee/17", 
@@ -80408,7 +81242,8 @@
       "role": "The Parliamentary Under-Secretary of State for Business, Innovation and Skills", 
       "person_id": "uk.org.publicwhip/person/24817", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15"
+      "start_date": "2014-07-15", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4020/GovernmentPost/296", 
@@ -80416,7 +81251,8 @@
       "role": "The Parliamentary Under-Secretary of State for Health", 
       "person_id": "uk.org.publicwhip/person/24817", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15"
+      "start_date": "2014-07-15", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4125/Committee/200", 
@@ -80602,8 +81438,16 @@
       "id": "uk.parliament.data/Member/4074/Committee/325", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24824", 
-      "organization_id": "finance-committee", 
+      "organization_id": "finance-committee-commons", 
       "start_date": "2015-07-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4074/GovernmentPost/1186", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Department for International Trade)", 
+      "person_id": "uk.org.publicwhip/person/24824", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3913/Committee/131", 
@@ -80648,11 +81492,20 @@
       "end_date": "2013-10-31"
     }, 
     {
+      "id": "uk.parliament.data/Member/3936/GovernmentPost/350", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Lord Commissioner of Her Majesty's Treasury", 
+      "person_id": "uk.org.publicwhip/person/24826", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3991/Committee/103", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24827", 
       "organization_id": "liaison-committee-commons", 
-      "start_date": "2015-09-10"
+      "start_date": "2015-09-10", 
+      "end_date": "2016-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/3991/Committee/158", 
@@ -80676,7 +81529,15 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24827", 
       "organization_id": "culture-media-and-sport-committee", 
-      "start_date": "2015-06-18"
+      "start_date": "2015-06-18", 
+      "end_date": "2016-07-19"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3991/Committee/23/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24827", 
+      "organization_id": "culture-media-and-sport-committee", 
+      "start_date": "2016-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/3991/Committee/311", 
@@ -80685,6 +81546,14 @@
       "organization_id": "house-of-commons-governance-committee", 
       "start_date": "2014-10-16", 
       "end_date": "2014-12-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3991/GovernmentPost/1187", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Department for Business, Energy and Industrial Strategy)", 
+      "person_id": "uk.org.publicwhip/person/24827", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4050/Committee/131", 
@@ -80809,14 +81678,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24832", 
       "organization_id": "panel-of-chairs", 
-      "start_date": "2015-06-25"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/3939/Committee/11/1", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/24832", 
-      "organization_id": "panel-of-chairs", 
-      "start_date": "2015-06-25"
+      "start_date": "2015-06-25", 
+      "end_date": "2016-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/3939/Committee/120", 
@@ -80863,6 +81726,14 @@
       "person_id": "uk.org.publicwhip/person/24832", 
       "organization_id": "health-committee", 
       "start_date": "2015-07-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3939/GovernmentPost/1015", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Communities and Local Government", 
+      "person_id": "uk.org.publicwhip/person/24832", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3999/OppositionPost/5", 
@@ -81025,11 +81896,20 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/3977/GovernmentPost/351", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Assistant Whip (HM Treasury)", 
+      "person_id": "uk.org.publicwhip/person/24841", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4019/Committee/103", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24842", 
       "organization_id": "liaison-committee-commons", 
-      "start_date": "2015-09-10"
+      "start_date": "2015-09-10", 
+      "end_date": "2016-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/4019/Committee/135", 
@@ -81037,7 +81917,15 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24842", 
       "organization_id": "science-and-technology-committee-commons", 
-      "start_date": "2015-06-18"
+      "start_date": "2015-06-18", 
+      "end_date": "2016-07-19"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4019/Committee/135/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24842", 
+      "organization_id": "science-and-technology-committee-commons", 
+      "start_date": "2016-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/4019/Committee/83", 
@@ -81046,6 +81934,14 @@
       "organization_id": "home-affairs-committee", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4019/GovernmentPost/945", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Health", 
+      "person_id": "uk.org.publicwhip/person/24842", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4106/Committee/102", 
@@ -81472,7 +82368,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24852", 
       "organization_id": "science-and-technology-committee-commons", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2016-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4076/Committee/311", 
@@ -81624,7 +82521,7 @@
       "id": "uk.parliament.data/Member/4023/Committee/325", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24856", 
-      "organization_id": "finance-committee", 
+      "organization_id": "finance-committee-commons", 
       "start_date": "2015-07-20"
     }, 
     {
@@ -81724,7 +82621,7 @@
       "id": "uk.parliament.data/Member/4060/Committee/325", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24860", 
-      "organization_id": "finance-committee", 
+      "organization_id": "finance-committee-commons", 
       "start_date": "2015-07-20"
     }, 
     {
@@ -81759,6 +82656,14 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4091/GovernmentPost/1176", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Exiting the European Union", 
+      "person_id": "uk.org.publicwhip/person/24862", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3955/Committee/135", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24863", 
@@ -81780,7 +82685,16 @@
       "role": "Comptroller (HM Household) (Whip, House of Commons)", 
       "person_id": "uk.org.publicwhip/person/24863", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-13"
+      "start_date": "2015-05-13", 
+      "end_date": "2016-07-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3955/GovernmentPost/1185", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Department for Communities and Local Government) (Housing, Planning and London)", 
+      "person_id": "uk.org.publicwhip/person/24863", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3955/GovernmentPost/350", 
@@ -81857,6 +82771,22 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4116/GovernmentPost/351", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Assistant Whip (HM Treasury)", 
+      "person_id": "uk.org.publicwhip/person/24866", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4116/GovernmentPost/52", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Deputy Leader of the House of Commons", 
+      "person_id": "uk.org.publicwhip/person/24866", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4077/Committee/78", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24868", 
@@ -81920,7 +82850,8 @@
       "role": "Parliamentary Under-Secretary of State (Department for Work and Pensions) (Disabled People)", 
       "person_id": "uk.org.publicwhip/person/24870", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3950/Committee/144", 
@@ -81953,6 +82884,13 @@
       "person_id": "uk.org.publicwhip/person/24871", 
       "organization_id": "house-of-commons", 
       "start_date": "2015-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3966/Committee/136", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24872", 
+      "organization_id": "scottish-affairs-committee", 
+      "start_date": "2016-09-05"
     }, 
     {
       "id": "uk.parliament.data/Member/3966/Committee/15", 
@@ -82025,7 +82963,8 @@
       "role": "Minister for Equalities (Department for Education)", 
       "person_id": "uk.org.publicwhip/person/24873", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4008/GovernmentPost/540", 
@@ -82033,7 +82972,16 @@
       "role": "The Parliamentary Under-Secretary of State for Justice", 
       "person_id": "uk.org.publicwhip/person/24873", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4008/GovernmentPost/949", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Education", 
+      "person_id": "uk.org.publicwhip/person/24873", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4096/Committee/62", 
@@ -82076,12 +83024,21 @@
       "end_date": "2012-11-05"
     }, 
     {
+      "id": "uk.parliament.data/Member/4115/GovernmentPost/1187", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Department for Business, Energy and Industrial Strategy)", 
+      "person_id": "uk.org.publicwhip/person/24876", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4115/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24876", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-13"
+      "start_date": "2015-05-13", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4140/Committee/11", 
@@ -82174,7 +83131,16 @@
       "role": "Minister of State (Communities and Local Government)", 
       "person_id": "uk.org.publicwhip/person/24879", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15"
+      "start_date": "2014-07-15", 
+      "end_date": "2016-07-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4009/GovernmentPost/1178", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Home Office) (Policing and the Fire Service)", 
+      "person_id": "uk.org.publicwhip/person/24879", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4052/Committee/17", 
@@ -82376,7 +83342,8 @@
       "role": "Minister of State (Universities and Science)", 
       "person_id": "uk.org.publicwhip/person/24895", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4039/GovernmentPost/1121", 
@@ -82386,6 +83353,22 @@
       "organization_id": "house-of-commons", 
       "start_date": "2014-07-15", 
       "end_date": "2015-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4039/GovernmentPost/1181", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Department for Education) (Universities and Science) (Joint with the Department for Business, Energy and Industrial Strategy)", 
+      "person_id": "uk.org.publicwhip/person/24895", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4039/GovernmentPost/1182", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Department for Business, Energy and Industrial Strategy) (Universities and Science) (Joint with the Department for Education)", 
+      "person_id": "uk.org.publicwhip/person/24895", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4039/GovernmentPost/351", 
@@ -82412,6 +83395,13 @@
       "organization_id": "work-and-pensions-committee", 
       "start_date": "2010-07-12", 
       "end_date": "2011-10-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4120/Committee/69", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24896", 
+      "organization_id": "european-scrutiny-committee", 
+      "start_date": "2016-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4120/OppositionPost/1049", 
@@ -82578,12 +83568,21 @@
       "end_date": "2012-11-05"
     }, 
     {
+      "id": "uk.parliament.data/Member/3929/GovernmentPost/346", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Economic Secretary to the Treasury", 
+      "person_id": "uk.org.publicwhip/person/24900", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3929/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24900", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-13"
+      "start_date": "2015-05-13", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4067/Committee/102", 
@@ -82602,6 +83601,14 @@
       "end_date": "2013-12-16"
     }, 
     {
+      "id": "uk.parliament.data/Member/4067/GovernmentPost/351", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Assistant Whip (HM Treasury)", 
+      "person_id": "uk.org.publicwhip/person/24901", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4014/Committee/135", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24902", 
@@ -82616,6 +83623,14 @@
       "organization_id": "treasury-committee", 
       "start_date": "2014-09-12", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4014/GovernmentPost/213", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Foreign and Commonwealth Affairs", 
+      "person_id": "uk.org.publicwhip/person/24902", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4132/Committee/52", 
@@ -82750,6 +83765,14 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4055/GovernmentPost/351", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Assistant Whip (HM Treasury)", 
+      "person_id": "uk.org.publicwhip/person/24909", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3930/Committee/62", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24910", 
@@ -82809,7 +83832,8 @@
       "role": "The Lord Commissioner of Her Majesty's Treasury", 
       "person_id": "uk.org.publicwhip/person/24914", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-13"
+      "start_date": "2015-05-13", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3935/GovernmentPost/351", 
@@ -82819,6 +83843,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2014-07-15", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3935/GovernmentPost/44", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Comptroller (HM Household) (Deputy Chief Whip, House of Commons)", 
+      "person_id": "uk.org.publicwhip/person/24914", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3974/Committee/102", 
@@ -82834,7 +83866,8 @@
       "role": "Parliamentary Under-Secretary (Department for Transport)", 
       "person_id": "uk.org.publicwhip/person/24915", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15"
+      "start_date": "2014-07-15", 
+      "end_date": "2016-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3974/GovernmentPost/351", 
@@ -82854,12 +83887,21 @@
       "end_date": "2014-06-23"
     }, 
     {
+      "id": "uk.parliament.data/Member/4095/GovernmentPost/350", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Lord Commissioner of Her Majesty's Treasury", 
+      "person_id": "uk.org.publicwhip/person/24916", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4095/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24916", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-13"
+      "start_date": "2015-05-13", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4103/Committee/203", 
@@ -83076,7 +84118,16 @@
       "role": "The Parliamentary Under-Secretary of State for Health", 
       "person_id": "uk.org.publicwhip/person/24922", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3988/GovernmentPost/831", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Paymaster General and Minister for the Cabinet Office", 
+      "person_id": "uk.org.publicwhip/person/24922", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4043/Committee/120", 
@@ -83104,12 +84155,21 @@
       "end_date": "2015-05-13"
     }, 
     {
+      "id": "uk.parliament.data/Member/4043/GovernmentPost/1133", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Northern Ireland Office)", 
+      "person_id": "uk.org.publicwhip/person/24923", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4043/GovernmentPost/753", 
       "source": "datadotparl/governmentpost", 
       "role": "The Vice-Chamberlain of Her Majesty's Household", 
       "person_id": "uk.org.publicwhip/person/24923", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-13"
+      "start_date": "2015-05-13", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4036/Committee/77", 
@@ -83318,7 +84378,16 @@
       "role": "Parliamentary Under-Secretary of State (Department for Communities and Local Government) (Northern Powerhouse) ", 
       "person_id": "uk.org.publicwhip/person/24930", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4123/GovernmentPost/474", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for International Development", 
+      "person_id": "uk.org.publicwhip/person/24930", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4080/Committee/127", 
@@ -83342,6 +84411,14 @@
       "organization_id": "draft-financial-services-bill-joint-committee", 
       "start_date": "2011-07-18", 
       "end_date": "2011-12-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4080/GovernmentPost/945", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Health", 
+      "person_id": "uk.org.publicwhip/person/24932", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3934/Committee/249", 
@@ -83453,7 +84530,8 @@
       "role": "The Lord Commissioner of Her Majesty's Treasury", 
       "person_id": "uk.org.publicwhip/person/24936", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-13"
+      "start_date": "2015-05-13", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4017/Committee/15", 
@@ -83502,7 +84580,16 @@
       "role": "Minister of State (Ministry of Defence) (Minister for the Armed Forces)", 
       "person_id": "uk.org.publicwhip/person/24938", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4017/GovernmentPost/211", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Department for Work and Pensions", 
+      "person_id": "uk.org.publicwhip/person/24938", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4097/Committee/102", 
@@ -83730,7 +84817,16 @@
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24948", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-13"
+      "start_date": "2015-05-13", 
+      "end_date": "2016-07-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4071/GovernmentPost/366", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for the Home Department", 
+      "person_id": "uk.org.publicwhip/person/24948", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4088/Committee/127", 
@@ -83886,7 +84982,8 @@
       "role": "Parliamentary Under Secretary for Home Office (Jointly with Department for Communities and Local Government and Department for International Development)", 
       "person_id": "uk.org.publicwhip/person/24954", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-09-14"
+      "start_date": "2015-09-14", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4068/GovernmentPost/1158", 
@@ -83894,7 +84991,8 @@
       "role": "Parliamentary Under Secretary for Department for Communities and Local Government (Jointly with Home Office and Department for International Development)", 
       "person_id": "uk.org.publicwhip/person/24954", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-09-14"
+      "start_date": "2015-09-14", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4068/GovernmentPost/1159", 
@@ -83902,7 +85000,16 @@
       "role": "Parliamentary Under Secretary for Department for International Development (Jointly with Home Office and Department for Communities and Local Government)", 
       "person_id": "uk.org.publicwhip/person/24954", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-09-14"
+      "start_date": "2015-09-14", 
+      "end_date": "2016-07-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4068/GovernmentPost/599", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Work and Pensions", 
+      "person_id": "uk.org.publicwhip/person/24954", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4006/Committee/310", 
@@ -84067,7 +85174,24 @@
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24961", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-13"
+      "start_date": "2015-05-13", 
+      "end_date": "2016-07-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4118/GovernmentPost/753", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Vice-Chamberlain of Her Majesty's Household", 
+      "person_id": "uk.org.publicwhip/person/24961", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4142/GovernmentPost/350", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Lord Commissioner of Her Majesty's Treasury", 
+      "person_id": "uk.org.publicwhip/person/24962", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4142/GovernmentPost/351", 
@@ -84075,7 +85199,8 @@
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24962", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-13"
+      "start_date": "2015-05-13", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4139/Committee/120", 
@@ -84166,12 +85291,21 @@
       "end_date": "2014-06-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4137/GovernmentPost/496", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Department for International Development", 
+      "person_id": "uk.org.publicwhip/person/24964", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4137/GovernmentPost/850", 
       "source": "datadotparl/governmentpost", 
       "role": "The Parliamentary Under-Secretary of State for Environment, Food and Rural Affairs", 
       "person_id": "uk.org.publicwhip/person/24964", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4136/Committee/120", 
@@ -84443,14 +85577,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24976", 
       "organization_id": "sexual-violence-in-conflict-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4161/Committee/192", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24980", 
       "organization_id": "refreshment-committee-lords", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4161/Committee/196", 
@@ -84483,7 +85619,8 @@
       "role": "Captain of the Queen's Bodyguard of the Yeomen of the Guard (HM Household) (Deputy Chief Whip, House of Lords) ", 
       "person_id": "uk.org.publicwhip/person/24980", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-12"
+      "start_date": "2015-05-12", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4161/GovernmentPost/72", 
@@ -84493,6 +85630,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2012-09-06", 
       "end_date": "2015-05-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4161/GovernmentPost/937", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Environment, Food and Rural Affairs", 
+      "person_id": "uk.org.publicwhip/person/24980", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4147/OppositionPost/1006", 
@@ -84540,7 +85685,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24983", 
       "organization_id": "sexual-violence-in-conflict-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4164/OppositionPost/1289", 
@@ -84587,7 +85733,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24986", 
       "organization_id": "refreshment-committee-lords", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4153/OppositionPost/1267", 
@@ -84666,7 +85813,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24989", 
       "organization_id": "information-committee-lords", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4155/Committee/173", 
@@ -84748,6 +85896,14 @@
       "end_date": "2013-01-09"
     }, 
     {
+      "id": "uk.parliament.data/Member/4169/GovernmentPost/1188", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Lords Spokesperson (Department for Education) (Higher Education)", 
+      "person_id": "uk.org.publicwhip/person/24992", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-18"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4169/GovernmentPost/72", 
       "source": "datadotparl/governmentpost", 
       "role": "Lord in Waiting (HM Household) (Whip)", 
@@ -84803,7 +85959,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24996", 
       "organization_id": "sexual-violence-in-conflict-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4171/Committee/94", 
@@ -84899,7 +86056,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25001", 
       "organization_id": "social-mobility-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-16"
     }, 
     {
       "id": "uk.parliament.data/Member/4174/Committee/358", 
@@ -84961,7 +86119,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25002", 
       "organization_id": "built-environment-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/4178/OppositionPost/1287", 
@@ -84984,7 +86143,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25003", 
       "organization_id": "refreshment-committee-lords", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4184/Committee/255", 
@@ -85127,7 +86287,8 @@
       "role": "The Minister of State, Ministry of Justice", 
       "person_id": "uk.org.publicwhip/person/25008", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-01-20"
+      "start_date": "2014-01-20", 
+      "end_date": "2016-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4181/Committee/268", 
@@ -85260,7 +86421,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25021", 
       "organization_id": "refreshment-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4195/Committee/338", 
@@ -85304,7 +86466,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25022", 
       "organization_id": "information-committee-lords", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4193/ParliamentaryPost/764", 
@@ -85377,7 +86540,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25026", 
       "organization_id": "information-committee-lords", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4203/Committee/174", 
@@ -85524,28 +86688,32 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25032", 
       "organization_id": "house-committee-lords", 
-      "start_date": "2014-07-16"
+      "start_date": "2014-07-16", 
+      "end_date": "2016-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4205/Committee/187", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25032", 
       "organization_id": "liaison-committee-lords", 
-      "start_date": "2014-07-16"
+      "start_date": "2014-07-16", 
+      "end_date": "2016-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4205/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25032", 
       "organization_id": "privileges-and-conduct-committee-for-lords", 
-      "start_date": "2014-07-16"
+      "start_date": "2014-07-16", 
+      "end_date": "2016-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4205/Committee/191", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25032", 
       "organization_id": "procedure-committee-lords", 
-      "start_date": "2014-07-16"
+      "start_date": "2014-07-16", 
+      "end_date": "2016-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4205/Committee/196", 
@@ -85560,7 +86728,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25032", 
       "organization_id": "selection-committee-of-lords", 
-      "start_date": "2014-07-16"
+      "start_date": "2014-07-16", 
+      "end_date": "2016-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4205/Committee/341", 
@@ -85679,6 +86848,21 @@
       "start_date": "2015-03-23"
     }, 
     {
+      "id": "uk.parliament.data/Member/4197/Committee/362", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25033", 
+      "organization_id": "house-of-lords-commission", 
+      "start_date": "2016-09-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4197/Committee/364", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/25033", 
+      "organization_id": "finance-committee-lords", 
+      "start_date": "2016-09-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4197/OppositionPost/1285", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Lords Principal Spokesperson for Sport, Tourism and Cultural Participation", 
@@ -85791,7 +86975,8 @@
       "role": "Parliamentary Under-Secretary", 
       "person_id": "uk.org.publicwhip/person/25040", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-12"
+      "start_date": "2015-05-12", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4210/GovernmentPost/538", 
@@ -85847,7 +87032,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25042", 
       "organization_id": "information-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4214/Committee/192", 
@@ -85895,7 +87081,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25045", 
       "organization_id": "works-of-art-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4223/Committee/170", 
@@ -85912,6 +87099,13 @@
       "organization_id": "extradition-law-committee", 
       "start_date": "2014-06-12", 
       "end_date": "2015-02-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4222/Committee/364", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25048", 
+      "organization_id": "finance-committee-lords", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4222/OppositionPost/1006", 
@@ -85966,7 +87160,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25049", 
       "organization_id": "social-mobility-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-16"
     }, 
     {
       "id": "uk.parliament.data/Member/4218/Committee/93", 
@@ -86087,7 +87282,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25056", 
       "organization_id": "social-mobility-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-16"
     }, 
     {
       "id": "uk.parliament.data/Member/4231/Committee/359", 
@@ -86102,7 +87298,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25057", 
       "organization_id": "house-committee-lords", 
-      "start_date": "2013-05-16"
+      "start_date": "2013-05-16", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4233/Committee/336", 
@@ -86158,7 +87355,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25062", 
       "organization_id": "works-of-art-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4226/OppositionPost/977", 
@@ -86200,7 +87398,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25064", 
       "organization_id": "equality-act-2010-and-disability-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4229/Committee/358", 
@@ -86230,7 +87429,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25066", 
       "organization_id": "equality-act-2010-and-disability-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4243/Committee/9", 
@@ -86351,7 +87551,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25144", 
       "organization_id": "built-environment-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/1864/Committee/94", 
@@ -86417,11 +87618,20 @@
       "start_date": "2014-07-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/4247/GovernmentPost/921", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Culture, Media and Sport", 
+      "person_id": "uk.org.publicwhip/person/25146", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4250/Committee/192", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25149", 
       "organization_id": "refreshment-committee-lords", 
-      "start_date": "2014-06-12"
+      "start_date": "2014-06-12", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4250/Committee/335", 
@@ -86640,7 +87850,16 @@
       "role": "Shadow Minister (Home Office)", 
       "person_id": "uk.org.publicwhip/person/25168", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-09-18"
+      "start_date": "2016-07-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4267/OppositionPost/884/1", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Home Office)", 
+      "person_id": "uk.org.publicwhip/person/25168", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2015-09-18", 
+      "end_date": "2016-06-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4269/Committee/102", 
@@ -86949,7 +88168,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25190", 
       "organization_id": "house-committee-lords", 
-      "start_date": "2015-07-09"
+      "start_date": "2015-07-09", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4289/OppositionPost/1302", 
@@ -86957,7 +88177,8 @@
       "role": "Liberal Democrat Lords Principal Spokesperson for Work and Pensions", 
       "person_id": "uk.org.publicwhip/person/25190", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-09-07"
+      "start_date": "2015-09-07", 
+      "end_date": "2016-07-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4282/Committee/173", 
@@ -86968,12 +88189,21 @@
       "end_date": "2014-08-13"
     }, 
     {
+      "id": "uk.parliament.data/Member/4282/GovernmentPost/1015", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Communities and Local Government", 
+      "person_id": "uk.org.publicwhip/person/25192", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4282/GovernmentPost/510", 
       "source": "datadotparl/governmentpost", 
       "role": "The Parliamentary Under-Secretary of State for Energy and Climate Change", 
       "person_id": "uk.org.publicwhip/person/25192", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-12"
+      "start_date": "2015-05-12", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4282/GovernmentPost/543", 
@@ -86989,7 +88219,8 @@
       "role": "Lord in Waiting (HM Household) (Whip)", 
       "person_id": "uk.org.publicwhip/person/25192", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-08-13"
+      "start_date": "2014-08-13", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4290/Committee/93", 
@@ -87046,6 +88277,13 @@
       "end_date": "2014-03-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4295/Committee/364", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25196", 
+      "organization_id": "finance-committee-lords", 
+      "start_date": "2016-09-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4298/Committee/176", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25198", 
@@ -87064,7 +88302,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25199", 
       "organization_id": "sexual-violence-in-conflict-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4307/Committee/356", 
@@ -87078,7 +88317,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25201", 
       "organization_id": "works-of-art-committee-lords", 
-      "start_date": "2014-01-29"
+      "start_date": "2014-01-29", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4300/Committee/148", 
@@ -87109,6 +88349,13 @@
       "person_id": "uk.org.publicwhip/person/25202", 
       "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
       "start_date": "2014-06-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4300/Committee/363", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25202", 
+      "organization_id": "services-committee", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4287/Committee/148", 
@@ -87157,12 +88404,21 @@
       "end_date": "2014-07-17"
     }, 
     {
+      "id": "uk.parliament.data/Member/4284/GovernmentPost/1175", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Department for Business, Energy and Industrial Strategy", 
+      "person_id": "uk.org.publicwhip/person/25205", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4284/GovernmentPost/921", 
       "source": "datadotparl/governmentpost", 
       "role": "The Parliamentary Under-Secretary of State for Culture, Media and Sport", 
       "person_id": "uk.org.publicwhip/person/25205", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-12"
+      "start_date": "2015-05-12", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4284/GovernmentPost/930", 
@@ -87170,7 +88426,8 @@
       "role": "The Parliamentary Under-Secretary of State for Business, Innovation and Skills", 
       "person_id": "uk.org.publicwhip/person/25205", 
       "organization_id": "house-of-commons", 
-      "start_date": "2014-07-17"
+      "start_date": "2014-07-17", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4294/Committee/307", 
@@ -87185,7 +88442,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25208", 
       "organization_id": "social-mobility-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-16"
     }, 
     {
       "id": "uk.parliament.data/Member/4294/Committee/359", 
@@ -87239,7 +88497,8 @@
       "role": "The Parliamentary Under-Secretary of State for Communities and Local Government", 
       "person_id": "uk.org.publicwhip/person/25213", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-12"
+      "start_date": "2015-05-12", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4311/GovernmentPost/1062", 
@@ -87258,6 +88517,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2014-04-08", 
       "end_date": "2015-05-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4311/GovernmentPost/417", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Home Department", 
+      "person_id": "uk.org.publicwhip/person/25213", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4304/Committee/170", 
@@ -87314,6 +88581,13 @@
       "start_date": "2015-06-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/2594/Committee/364", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25228", 
+      "organization_id": "finance-committee-lords", 
+      "start_date": "2016-09-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4342/Committee/135", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25230", 
@@ -87343,7 +88617,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25233", 
       "organization_id": "social-mobility-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-16"
     }, 
     {
       "id": "uk.parliament.data/Member/4335/Committee/192", 
@@ -87358,7 +88633,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25235", 
       "organization_id": "eu-financial-affairs-subcommittee", 
-      "start_date": "2016-05-26"
+      "start_date": "2016-05-26", 
+      "end_date": "2016-07-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4335/GovernmentPost/72", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Lord in Waiting (HM Household) (Whip)", 
+      "person_id": "uk.org.publicwhip/person/25235", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4325/GovernmentPost/1155", 
@@ -87366,8 +88650,7 @@
       "role": "The Parliamentary Under-Secretary of State for Internet Safety and Security", 
       "person_id": "uk.org.publicwhip/person/25236", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-13", 
-      "end_date": "2015-12-03"
+      "start_date": "2015-05-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4325/GovernmentPost/1160", 
@@ -87382,7 +88665,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25237", 
       "organization_id": "information-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4323/Committee/360", 
@@ -87397,6 +88681,14 @@
       "person_id": "uk.org.publicwhip/person/25240", 
       "organization_id": "science-and-technology-committee-lords", 
       "start_date": "2015-06-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4330/GovernmentPost/1063", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Lords Spokesperson (Cabinet Office)", 
+      "person_id": "uk.org.publicwhip/person/25241", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4330/GovernmentPost/72", 
@@ -87429,9 +88721,52 @@
       "start_date": "2015-06-12"
     }, 
     {
-      "id": "uk.parliament.data/Member/4329/GovernmentPost/1173", 
+      "id": "uk.parliament.data/Member/4329/Committee/184", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25245", 
+      "organization_id": "house-committee-lords", 
+      "start_date": "2016-07-18", 
+      "end_date": "2016-08-31"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4329/Committee/187", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25245", 
+      "organization_id": "liaison-committee-lords", 
+      "start_date": "2016-07-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4329/Committee/189", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25245", 
+      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "start_date": "2016-07-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4329/Committee/191", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25245", 
+      "organization_id": "procedure-committee-lords", 
+      "start_date": "2016-07-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4329/Committee/197", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25245", 
+      "organization_id": "selection-committee-of-lords", 
+      "start_date": "2016-07-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4329/Committee/362", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25245", 
+      "organization_id": "house-of-lords-commission", 
+      "start_date": "2016-09-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4329/GovernmentPost/1137", 
       "source": "datadotparl/governmentpost", 
-      "role": "Leader of the House of Lords", 
+      "role": "The Lord Privy Seal (Baroness Stowell of Beeston)", 
       "person_id": "uk.org.publicwhip/person/25245", 
       "organization_id": "house-of-commons", 
       "start_date": "2016-07-14"
@@ -87450,7 +88785,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25247", 
       "organization_id": "refreshment-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4334/Committee/255", 
@@ -87479,7 +88815,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25250", 
       "organization_id": "information-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2016-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4343/Committee/336", 
@@ -87535,7 +88872,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25266", 
       "organization_id": "social-mobility-committee", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2016-03-16"
     }, 
     {
       "id": "uk.parliament.data/Member/4354/Committee/339", 
@@ -87892,7 +89230,7 @@
       "id": "uk.parliament.data/Member/4365/Committee/325", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25293", 
-      "organization_id": "finance-committee", 
+      "organization_id": "finance-committee-commons", 
       "start_date": "2015-07-20"
     }, 
     {
@@ -88109,14 +89447,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25304", 
       "organization_id": "committee-on-privileges", 
-      "start_date": "2015-10-28"
+      "start_date": "2015-10-28", 
+      "end_date": "2016-07-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4425/Committee/290", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25304", 
       "organization_id": "committee-on-standards", 
-      "start_date": "2015-09-09"
+      "start_date": "2015-09-09", 
+      "end_date": "2016-07-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4425/Committee/9", 
@@ -88175,7 +89515,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25308", 
       "organization_id": "welsh-affairs-committee", 
-      "start_date": "2015-07-13"
+      "start_date": "2015-07-13", 
+      "end_date": "2016-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4480/Committee/62", 
@@ -88227,7 +89568,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25314", 
       "organization_id": "scottish-affairs-committee", 
-      "start_date": "2015-07-06"
+      "start_date": "2015-07-06", 
+      "end_date": "2016-09-05"
     }, 
     {
       "id": "uk.parliament.data/Member/4357/OppositionPost/1228", 
@@ -88476,6 +89818,13 @@
       "person_id": "uk.org.publicwhip/person/25336", 
       "organization_id": "public-accounts-committee", 
       "start_date": "2015-07-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4417/Committee/136", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25336", 
+      "organization_id": "scottish-affairs-committee", 
+      "start_date": "2016-09-05"
     }, 
     {
       "id": "uk.parliament.data/Member/4417/Committee/207", 
@@ -89194,7 +90543,8 @@
       "role": "Shadow Minister (Treasury)", 
       "person_id": "uk.org.publicwhip/person/25391", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-09-18"
+      "start_date": "2015-09-18", 
+      "end_date": "2016-06-27"
     }, 
     {
       "id": "uk.parliament.data/Member/4459/Committee/328", 
@@ -89797,6 +91147,14 @@
       "start_date": "2015-07-13"
     }, 
     {
+      "id": "uk.parliament.data/Member/4534/GovernmentPost/1133", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Northern Ireland Office)", 
+      "person_id": "uk.org.publicwhip/person/25441", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4534/GovernmentPost/537", 
       "source": "datadotparl/governmentpost", 
       "role": "The Parliamentary Under-Secretary of State for Scotland", 
@@ -89809,7 +91167,23 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25442", 
       "organization_id": "administration-and-works-committee-lords", 
-      "start_date": "2015-11-03"
+      "start_date": "2015-11-03", 
+      "end_date": "2016-08-31"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4355/Committee/364", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25442", 
+      "organization_id": "finance-committee-lords", 
+      "start_date": "2016-09-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4535/GovernmentPost/1176", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Exiting the European Union", 
+      "person_id": "uk.org.publicwhip/person/25443", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4535/GovernmentPost/913", 
@@ -89817,7 +91191,8 @@
       "role": "The Parliamentary Secretary, Cabinet Office", 
       "person_id": "uk.org.publicwhip/person/25443", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-14"
+      "start_date": "2015-05-14", 
+      "end_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4536/GovernmentPost/1069", 
@@ -89833,7 +91208,8 @@
       "role": "The Minister of State, Department for Work and Pensions ", 
       "person_id": "uk.org.publicwhip/person/25445", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-11"
+      "start_date": "2015-05-11", 
+      "end_date": "2016-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4538/GovernmentPost/1162", 
@@ -89841,7 +91217,16 @@
       "role": "Lords Spokesperson (Home Office)", 
       "person_id": "uk.org.publicwhip/person/25446", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-04-01"
+      "start_date": "2016-04-01", 
+      "end_date": "2016-07-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4538/GovernmentPost/1180", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Lords Spokesperson (Ministry of Justice)", 
+      "person_id": "uk.org.publicwhip/person/25446", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4538/GovernmentPost/18", 
@@ -89957,7 +91342,8 @@
       "role": "The Minister of State, Foreign and Commonwealth Office", 
       "person_id": "uk.org.publicwhip/person/25487", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-04-04"
+      "start_date": "2016-04-04", 
+      "end_date": "2016-07-16"
     }, 
     {
       "id": "uk.parliament.data/Member/4570/GovernmentPost/1011", 
@@ -89965,7 +91351,16 @@
       "role": "The Minister of State, Department for Business, Innovation and Skills", 
       "person_id": "uk.org.publicwhip/person/25487", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-04-04"
+      "start_date": "2016-04-04", 
+      "end_date": "2016-07-16"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4570/GovernmentPost/1174", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Department for International Trade", 
+      "person_id": "uk.org.publicwhip/person/25487", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-16"
     }, 
     {
       "id": "uk.parliament.data/Member/4563/Committee/193", 
@@ -89987,6 +91382,13 @@
       "person_id": "uk.org.publicwhip/person/25490", 
       "organization_id": "justice-committee", 
       "start_date": "2016-06-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4572/Committee/162", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25490", 
+      "organization_id": "welsh-affairs-committee", 
+      "start_date": "2016-07-18"
     }
   ], 
   "organizations": [
@@ -90579,8 +91981,12 @@
       "name": "Finance Bill Sub-Committee"
     }, 
     {
-      "id": "finance-committee", 
-      "name": "Finance Committee"
+      "id": "finance-committee-commons", 
+      "name": "Finance Committee (Commons)"
+    }, 
+    {
+      "id": "finance-committee-lords", 
+      "name": "Finance Committee (Lords)"
     }, 
     {
       "id": "financial-exclusion-committee", 
@@ -90673,6 +92079,10 @@
     {
       "id": "house-of-commons-services-new-building-subcommittee", 
       "name": "House of Commons (Services): New Building Sub-Committee"
+    }, 
+    {
+      "id": "house-of-lords-commission", 
+      "name": "House of Lords Commission"
     }, 
     {
       "id": "house-of-lords-offices-committee", 
@@ -91045,6 +92455,10 @@
     {
       "id": "selection-committee-of-lords", 
       "name": "Selection, Committee of (Lords)"
+    }, 
+    {
+      "id": "services-committee", 
+      "name": "Services Committee"
     }, 
     {
       "id": "sexual-violence-in-conflict-committee", 

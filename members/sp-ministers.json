@@ -1408,6 +1408,7 @@
     "id": "scot.parliament.data/membergovernmentroles/128"
   }, 
   {
+    "end_date": "2016-05-18", 
     "start_date": "2014-11-25", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -2470,5 +2471,102 @@
       "uk.org.publicwhip/person/13980"
     ], 
     "id": "scot.parliament.data/membergovernmentroles/227"
+  }, 
+  {
+    "start_date": "2016-06-14", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Parliamentary Liaison Officer to the Office of the First Minister", 
+    "person_id": [
+      "uk.org.publicwhip/person/25532"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/228"
+  }, 
+  {
+    "start_date": "2016-06-14", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Parliamentary Liaison Officer to the Office of the First Minister", 
+    "person_id": [
+      "uk.org.publicwhip/person/25523"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/229"
+  }, 
+  {
+    "end_date": "2000-11-01", 
+    "start_date": "1999-05-19", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Deputy Minister for Social Inclusion, Equality and the Voluntary Sector", 
+    "person_id": [
+      "uk.org.publicwhip/person/13949"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/230"
+  }, 
+  {
+    "end_date": "2000-11-02", 
+    "start_date": "1999-05-19", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Deputy Minister for Community Care", 
+    "person_id": [
+      "uk.org.publicwhip/person/14002"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/231"
+  }, 
+  {
+    "end_date": "2000-11-01", 
+    "start_date": "1999-05-19", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Deputy Minister for Enterprise and Lifelong Learning", 
+    "person_id": [
+      "uk.org.publicwhip/person/14101"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/232"
+  }, 
+  {
+    "end_date": "2000-11-01", 
+    "start_date": "1999-05-19", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Deputy Minister for Highlands and Islands and Gaelic", 
+    "person_id": [
+      "uk.org.publicwhip/person/14067"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/233"
+  }, 
+  {
+    "end_date": "1999-06-12", 
+    "start_date": "1999-05-19", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for Social Inclusion, Local Government and Housing", 
+    "person_id": [
+      "uk.org.publicwhip/person/13946"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/234"
+  }, 
+  {
+    "end_date": "2000-11-01", 
+    "start_date": "1999-06-12", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for Communities", 
+    "person_id": [
+      "uk.org.publicwhip/person/13946"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/235"
+  }, 
+  {
+    "end_date": "2001-11-28", 
+    "start_date": "2000-11-01", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Deputy Minister for Rural Development", 
+    "person_id": [
+      "uk.org.publicwhip/person/13957"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/236"
   }
 ]
