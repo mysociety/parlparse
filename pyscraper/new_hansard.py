@@ -838,7 +838,7 @@ class BaseParseDayXML(object):
         time_txt = u''.join(tag.xpath('.//text()'))
         if time_txt == '':
             return
-        matches = re.match('(\d+)(?:\.(\d+))?\s*(am|pm)', time_txt)
+        matches = re.match('(\d+)(?:[:.](\d+))?[\xa0\s]*(am|pm)', time_txt)
         if matches:
             hours = int(matches.group(1))
             minutes = int(matches.group(2) or 0)
