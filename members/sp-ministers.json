@@ -2568,5 +2568,15 @@
       "uk.org.publicwhip/person/13957"
     ], 
     "id": "scot.parliament.data/membergovernmentroles/236"
+  }, 
+  {
+    "start_date": "2016-09-06", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for UK Negotiations on Scotland\u2019s Place in Europe", 
+    "person_id": [
+      "uk.org.publicwhip/person/14089"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/237"
   }
 ]
