@@ -1694,8 +1694,9 @@ class ParseDay(object):
         return flatb
 
     def normalise_gids(self, string):
-        string = re.sub(u'(publicwhip\/[a-z]*\/\d{4}-\d{2}-\d{2})[a-z]', u'\2', string)
-        string = re.sub(u'(pid=")[a-z]([\d.\/]*")', u'\2\3', string)
+        string = re.sub(u'(publicwhip\/[a-z]*\/\d{4}-\d{2}-\d{2})[a-z]', r'\1', string)
+        string = re.sub(u'(publicwhip\/standing\/.*?\d{4}-\d{2}-\d{2})[a-z]', r'\1', string)
+        string = re.sub(u'(pid=")[a-z]([\d.\/]*")', r'\1\2', string)
 
         return string
 
