@@ -4294,7 +4294,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10069", 
       "organization_id": "liaison-committee-commons", 
-      "start_date": "2015-09-10"
+      "start_date": "2015-09-10", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/523/Committee/107", 
@@ -4379,7 +4380,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10069", 
       "organization_id": "finance-committee-commons", 
-      "start_date": "2015-07-21"
+      "start_date": "2015-07-21", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/523/Committee/348", 
@@ -7397,6 +7399,13 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/420/Committee/103", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10131", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2016-10-19"
+    }, 
+    {
       "id": "uk.parliament.data/Member/420/Committee/43", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10131", 
@@ -7411,6 +7420,14 @@
       "organization_id": "employment-subcommittee", 
       "start_date": "1997-07-23", 
       "end_date": "1999-11-29"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/420/Committee/83", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10131", 
+      "organization_id": "home-affairs-committee", 
+      "start_date": "2016-10-19"
     }, 
     {
       "id": "uk.parliament.data/Member/420/GovernmentPost/265", 
@@ -9796,7 +9813,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10179", 
       "organization_id": "intelligence-and-security-committee-of-parliament", 
-      "start_date": "2015-09-09"
+      "start_date": "2015-09-09", 
+      "end_date": "2016-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/343/GovernmentPost/1117", 
@@ -11998,10 +12016,18 @@
       "person_id": "uk.org.publicwhip/person/10219", 
       "organization_id": "foreign-affairs-committee", 
       "start_date": "2005-07-18", 
-      "end_date": "2015-03-30"
+      "end_date": "2010-04-12"
     }, 
     {
       "id": "uk.parliament.data/Member/184/Committee/78/3", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10219", 
+      "organization_id": "foreign-affairs-committee", 
+      "start_date": "2010-04-12", 
+      "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/184/Committee/78/4", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10219", 
       "organization_id": "foreign-affairs-committee", 
@@ -12094,7 +12120,7 @@
     {
       "id": "uk.parliament.data/Member/146/OppositionPost/1316", 
       "source": "datadotparl/oppositionpost", 
-      "role": "Shadow Minister (Energy and Climate Change)", 
+      "role": "Shadow Minister (Department for Business, Energy and Industrial Strategy) (Energy and Climate Change)", 
       "person_id": "uk.org.publicwhip/person/10220", 
       "organization_id": "house-of-commons", 
       "start_date": "2016-07-14"
@@ -12386,8 +12412,8 @@
       "role": "Shadow Spokesperson (Treasury)", 
       "person_id": "uk.org.publicwhip/person/10225", 
       "organization_id": "house-of-commons", 
-      "start_date": "1997-06-01", 
-      "end_date": "1998-06-01"
+      "start_date": "1998-06-01", 
+      "end_date": "1999-06-01"
     }, 
     {
       "id": "uk.parliament.data/Member/18/Committee/11", 
@@ -13981,6 +14007,13 @@
       "end_date": "2016-02-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/533/Committee/97", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10259", 
+      "organization_id": "intelligence-and-security-committee-of-parliament", 
+      "start_date": "2016-10-20"
+    }, 
+    {
       "id": "uk.parliament.data/Member/533/GovernmentPost/205", 
       "source": "datadotparl/governmentpost", 
       "role": "The Minister of State, Northern Ireland Office", 
@@ -15339,6 +15372,15 @@
       "person_id": "uk.org.publicwhip/person/10281", 
       "organization_id": "education--employment-committee", 
       "start_date": "1995-11-15", 
+      "end_date": "1997-03-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/140/Committee/43/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10281", 
+      "organization_id": "education--employment-committee", 
+      "start_date": "1997-03-21", 
       "end_date": "1998-11-09"
     }, 
     {
@@ -16020,7 +16062,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10292", 
       "organization_id": "intelligence-and-security-committee-of-parliament", 
-      "start_date": "2015-09-09"
+      "start_date": "2015-09-09", 
+      "end_date": "2016-10-20"
     }, 
     {
       "id": "uk.parliament.data/Member/481/GovernmentPost/366", 
@@ -21657,7 +21700,7 @@
       "role": "Leader of the Conservative Party", 
       "person_id": "uk.org.publicwhip/person/10426", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-13"
+      "start_date": "2016-07-11"
     }, 
     {
       "id": "uk.parliament.data/Member/8/ParliamentaryPost/805", 
@@ -28350,8 +28393,7 @@
       "role": "Party Chair, Co-operative Party", 
       "person_id": "uk.org.publicwhip/person/10594", 
       "organization_id": "house-of-commons", 
-      "start_date": "2000-07-01", 
-      "end_date": "2010-05-06"
+      "start_date": "2000-07-01"
     }, 
     {
       "id": "uk.parliament.data/Member/163/Committee/127", 
@@ -30131,7 +30173,7 @@
     {
       "id": "uk.parliament.data/Member/62/OppositionPost/1316", 
       "source": "datadotparl/oppositionpost", 
-      "role": "Shadow Minister (Energy and Climate Change)", 
+      "role": "Shadow Minister (Department for Business, Energy and Industrial Strategy) (Energy and Climate Change)", 
       "person_id": "uk.org.publicwhip/person/10630", 
       "organization_id": "house-of-commons", 
       "start_date": "2016-10-10"
@@ -30631,6 +30673,13 @@
       "organization_id": "speakers-committee-on-the-electoral-commission", 
       "start_date": "2009-10-12", 
       "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/390/Committee/325", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10648", 
+      "organization_id": "finance-committee-commons", 
+      "start_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/390/GovernmentPost/193", 
@@ -31455,12 +31504,27 @@
       "end_date": "2010-10-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/413/Committee/103", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10669", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2016-10-19"
+    }, 
+    {
       "id": "uk.parliament.data/Member/413/Committee/143", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10669", 
       "organization_id": "speakers-committee-for-the-independent-parliamentary-standards-authority", 
       "start_date": "2011-01-26", 
       "end_date": "2011-12-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/413/Committee/366", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10669", 
+      "organization_id": "committee-on-exiting-the-european-union", 
+      "start_date": "2016-10-19"
     }, 
     {
       "id": "uk.parliament.data/Member/413/Committee/59", 
@@ -32956,7 +33020,7 @@
       "person_id": "uk.org.publicwhip/person/10777", 
       "organization_id": "house-of-commons", 
       "start_date": "2005-12-06", 
-      "end_date": "2016-07-13"
+      "end_date": "2016-07-11"
     }, 
     {
       "id": "uk.parliament.data/Member/1409/Committee/120", 
@@ -33113,7 +33177,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10785", 
       "organization_id": "energy-and-climate-change-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1442/Committee/98", 
@@ -38124,6 +38189,14 @@
       "start_date": "2015-12-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/1478/Committee/365", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/11362", 
+      "organization_id": "business-energy-and-industrial-strategy-committee", 
+      "start_date": "2016-10-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1478/Committee/77", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11362", 
@@ -38137,7 +38210,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/11362", 
       "organization_id": "business-innovation-and-skills-committee", 
-      "start_date": "2015-06-18"
+      "start_date": "2015-06-18", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1478/GovernmentPost/538", 
@@ -38729,7 +38803,7 @@
       "role": "The Parliamentary Under-Secretary of State for Culture, Media and Sport", 
       "person_id": "uk.org.publicwhip/person/11408", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-02-01", 
+      "start_date": "2016-01-01", 
       "end_date": "2016-07-17"
     }, 
     {
@@ -39909,7 +39983,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11511", 
       "organization_id": "energy-and-climate-change-committee", 
-      "start_date": "2015-11-30"
+      "start_date": "2015-11-30", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1503/Committee/52", 
@@ -40850,7 +40925,7 @@
       "role": "The Treasurer of Her Majesty's Household", 
       "person_id": "uk.org.publicwhip/person/11603", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-11"
     }, 
     {
       "id": "uk.parliament.data/Member/1523/GovernmentPost/753", 
@@ -42325,6 +42400,13 @@
       "organization_id": "home-affairs-committee", 
       "start_date": "2005-07-12", 
       "end_date": "2007-10-22"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1547/Committee/97", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11727", 
+      "organization_id": "intelligence-and-security-committee-of-parliament", 
+      "start_date": "2016-10-20"
     }, 
     {
       "id": "uk.parliament.data/Member/1547/GovernmentPost/937", 
@@ -45391,7 +45473,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12004", 
       "organization_id": "liaison-committee-commons", 
-      "start_date": "2015-09-10"
+      "start_date": "2015-09-10", 
+      "end_date": "2016-10-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1546/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12004", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2016-10-19"
     }, 
     {
       "id": "uk.parliament.data/Member/1546/Committee/111", 
@@ -45409,12 +45499,21 @@
       "end_date": "2008-11-24"
     }, 
     {
+      "id": "uk.parliament.data/Member/1546/Committee/367", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/12004", 
+      "organization_id": "international-trade-committee", 
+      "start_date": "2016-10-19"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1546/Committee/50", 
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/12004", 
       "organization_id": "energy-and-climate-change-committee", 
-      "start_date": "2015-06-18"
+      "start_date": "2015-06-18", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1546/OppositionPost/1006", 
@@ -79341,7 +79440,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24739", 
       "organization_id": "energy-and-climate-change-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4086/Committee/128", 
@@ -79449,6 +79549,14 @@
       "end_date": "2011-03-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/4122/OppositionPost/1338", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Work and Pensions) (Pensions)", 
+      "person_id": "uk.org.publicwhip/person/24742", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-10-14"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4122/OppositionPost/962", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister (Environment, Food and Rural Affairs)", 
@@ -79533,6 +79641,13 @@
       "start_date": "2015-05-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/3986/Committee/103", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24744", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2016-10-19"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3986/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24744", 
@@ -79553,7 +79668,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24744", 
       "organization_id": "culture-media-and-sport-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-19"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3986/Committee/23/2", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/24744", 
+      "organization_id": "culture-media-and-sport-committee", 
+      "start_date": "2016-10-19"
     }, 
     {
       "id": "uk.parliament.data/Member/4024/Committee/2", 
@@ -79642,12 +79766,27 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4092/Committee/103", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24749", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2016-10-19"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4092/Committee/135", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24749", 
       "organization_id": "science-and-technology-committee-commons", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4092/Committee/135/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/24749", 
+      "organization_id": "science-and-technology-committee-commons", 
+      "start_date": "2016-10-19"
     }, 
     {
       "id": "uk.parliament.data/Member/3954/Committee/135", 
@@ -79685,7 +79824,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24756", 
       "organization_id": "energy-and-climate-change-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3932/Committee/81", 
@@ -80658,11 +80798,19 @@
       "start_date": "2015-10-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/3912/Committee/365", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24787", 
+      "organization_id": "business-energy-and-industrial-strategy-committee", 
+      "start_date": "2016-10-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3912/Committee/9", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24787", 
       "organization_id": "business-innovation-and-skills-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3914/Committee/164", 
@@ -81211,7 +81359,7 @@
     {
       "id": "uk.parliament.data/Member/4124/OppositionPost/1324", 
       "source": "datadotparl/oppositionpost", 
-      "role": "Shadow Minister (Industrial Strategy)", 
+      "role": "Shadow Minister (Department for Business, Energy and Industrial Strategy) (Industrial Strategy)", 
       "person_id": "uk.org.publicwhip/person/24807", 
       "organization_id": "house-of-commons", 
       "start_date": "2016-10-09"
@@ -81290,7 +81438,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24809", 
       "organization_id": "speakers-advisory-committee-on-works-of-art", 
-      "start_date": "2015-07-01"
+      "start_date": "2015-07-01", 
+      "end_date": "2016-07-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4048/Committee/62", 
@@ -81833,7 +81982,7 @@
       "role": "Parliamentary Under-Secretary (Department for Business, Energy and Industrial Strategy)", 
       "person_id": "uk.org.publicwhip/person/24827", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-17"
+      "start_date": "2016-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4050/Committee/131", 
@@ -82494,7 +82643,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24848", 
       "organization_id": "energy-and-climate-change-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4037/Committee/52", 
@@ -82704,7 +82854,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24853", 
       "organization_id": "energy-and-climate-change-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3945/Committee/127", 
@@ -83992,12 +84143,21 @@
       "end_date": "2011-06-27"
     }, 
     {
+      "id": "uk.parliament.data/Member/4061/OppositionPost/1336", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Business, Energy and Industrial Strategy)", 
+      "person_id": "uk.org.publicwhip/person/24905", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-07-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4061/OppositionPost/15", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister (Business, Innovation and Skills)", 
       "person_id": "uk.org.publicwhip/person/24905", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-09-18"
+      "start_date": "2015-09-18", 
+      "end_date": "2016-06-30"
     }, 
     {
       "id": "uk.parliament.data/Member/3919/Committee/15", 
@@ -84089,7 +84249,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24911", 
       "organization_id": "environmental-audit-committee", 
-      "start_date": "2015-07-20"
+      "start_date": "2015-07-20", 
+      "end_date": "2016-10-25"
     }, 
     {
       "id": "uk.parliament.data/Member/4249/Committee/164", 
@@ -84628,6 +84789,13 @@
       "end_date": "2012-06-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4119/Committee/365", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24929", 
+      "organization_id": "business-energy-and-industrial-strategy-committee", 
+      "start_date": "2016-10-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4119/Committee/77", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24929", 
@@ -84640,7 +84808,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24929", 
       "organization_id": "business-innovation-and-skills-committee", 
-      "start_date": "2016-02-01"
+      "start_date": "2016-02-01", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4119/OppositionPost/1083", 
@@ -84979,6 +85148,13 @@
       "start_date": "2015-12-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/4058/Committee/365", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24943", 
+      "organization_id": "business-energy-and-industrial-strategy-committee", 
+      "start_date": "2016-10-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4058/Committee/9", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24943", 
@@ -84991,7 +85167,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24943", 
       "organization_id": "business-innovation-and-skills-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4058/OppositionPost/1326", 
@@ -85417,7 +85594,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24958", 
       "organization_id": "energy-and-climate-change-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4138/OppositionPost/960", 
@@ -85461,11 +85639,19 @@
       "start_date": "2015-12-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/4114/Committee/365", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24959", 
+      "organization_id": "business-energy-and-industrial-strategy-committee", 
+      "start_date": "2016-10-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4114/Committee/9", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24959", 
       "organization_id": "business-innovation-and-skills-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4114/Committee/98", 
@@ -89632,11 +89818,19 @@
       "start_date": "2015-12-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/4509/Committee/365", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25290", 
+      "organization_id": "business-energy-and-industrial-strategy-committee", 
+      "start_date": "2016-10-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4509/Committee/9", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25290", 
       "organization_id": "business-innovation-and-skills-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4420/Committee/202", 
@@ -89652,6 +89846,14 @@
       "person_id": "uk.org.publicwhip/person/25291", 
       "organization_id": "backbench-business-committee", 
       "start_date": "2016-06-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4420/OppositionPost/1337", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Sport)", 
+      "person_id": "uk.org.publicwhip/person/25291", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4476/Committee/162", 
@@ -90530,11 +90732,19 @@
       "start_date": "2015-12-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/4454/Committee/365", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25350", 
+      "organization_id": "business-energy-and-industrial-strategy-committee", 
+      "start_date": "2016-10-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4454/Committee/9", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25350", 
       "organization_id": "business-innovation-and-skills-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4387/Committee/102", 
@@ -90558,11 +90768,19 @@
       "start_date": "2015-12-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/4422/Committee/365", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25352", 
+      "organization_id": "business-energy-and-industrial-strategy-committee", 
+      "start_date": "2016-10-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4422/Committee/9", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25352", 
       "organization_id": "business-innovation-and-skills-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4422/OppositionPost/1223", 
@@ -90753,7 +90971,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25363", 
       "organization_id": "energy-and-climate-change-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4370/Committee/202", 
@@ -90918,6 +91137,13 @@
       "start_date": "2015-11-09"
     }, 
     {
+      "id": "uk.parliament.data/Member/4462/Committee/301", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25374", 
+      "organization_id": "speakers-advisory-committee-on-works-of-art", 
+      "start_date": "2016-10-05"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4462/Committee/327", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25374", 
@@ -90981,7 +91207,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25379", 
       "organization_id": "energy-and-climate-change-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4520/OppositionPost/1326", 
@@ -91357,11 +91584,19 @@
       "start_date": "2015-07-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/4505/Committee/365", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25418", 
+      "organization_id": "business-energy-and-industrial-strategy-committee", 
+      "start_date": "2016-10-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4505/Committee/9", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25418", 
       "organization_id": "business-innovation-and-skills-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4498/Committee/83", 
@@ -91516,6 +91751,13 @@
       "start_date": "2016-01-07"
     }, 
     {
+      "id": "uk.parliament.data/Member/4487/Committee/365", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25430", 
+      "organization_id": "business-energy-and-industrial-strategy-committee", 
+      "start_date": "2016-10-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4487/Committee/69", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25430", 
@@ -91527,7 +91769,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25430", 
       "organization_id": "business-innovation-and-skills-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4490/Committee/81", 
@@ -91654,11 +91897,19 @@
       "start_date": "2015-12-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/4372/Committee/365", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25436", 
+      "organization_id": "business-energy-and-industrial-strategy-committee", 
+      "start_date": "2016-10-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4372/Committee/9", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25436", 
       "organization_id": "business-innovation-and-skills-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4372/Committee/93", 
@@ -91686,7 +91937,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25438", 
       "organization_id": "energy-and-climate-change-committee", 
-      "start_date": "2015-07-08"
+      "start_date": "2015-07-08", 
+      "end_date": "2016-10-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4531/Committee/127", 
@@ -92052,6 +92304,10 @@
       "name": "Business and Enterprise Committee"
     }, 
     {
+      "id": "business-energy-and-industrial-strategy-committee", 
+      "name": "Business, Energy and Industrial Strategy Committee"
+    }, 
+    {
       "id": "business-enterprise-and-regulatory-reform-committee", 
       "name": "Business, Enterprise and Regulatory Reform Committee"
     }, 
@@ -92074,6 +92330,10 @@
     {
       "id": "committee-on-chinook-zd-576", 
       "name": "Committee on Chinook ZD 576"
+    }, 
+    {
+      "id": "committee-on-exiting-the-european-union", 
+      "name": "Committee on Exiting the European Union"
     }, 
     {
       "id": "committee-on-issue-of-privilege-police-searches-on-parliamentary-estate", 
@@ -92742,6 +93002,10 @@
     {
       "id": "international-relations-committee", 
       "name": "International Relations Committee"
+    }, 
+    {
+      "id": "international-trade-committee", 
+      "name": "International Trade Committee"
     }, 
     {
       "id": "joint-committee-on-security", 
