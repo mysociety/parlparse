@@ -620,11 +620,13 @@ class BaseParseDayXML(object):
         self.clear_current_speech()
 
         tag = etree.Element('major-heading')
-        tag.text = 'PRAYERS - '
+        tag.text = 'PRAYERS'
 
-        i = etree.Element('i')
-        i.text = self.initial_chair
-        tag.append(i)
+        if hasattr(self, 'initial_chair'):
+            tag.text += ' - '
+            i = etree.Element('i')
+            i.text = self.initial_chair
+            tag.append(i)
 
         tag.set('id', self.get_speech_id())
         tag.set('nospeaker', 'true')
