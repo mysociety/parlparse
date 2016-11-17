@@ -144,7 +144,7 @@ class LordsList(ResolverBase):
                     raise ContextException("wrong dates on lords with same name", stamp=stampurl, fragment=lname)
 
         if not res:
-            raise ContextException("unknown lord %s %s %s %s" % (ltitle, llordname, llordofname, stampurl), stamp=stampurl, fragment=lname)
+            raise ContextException("unknown lord %s %s %s %s on %s" % (ltitle, llordname, llordofname, stampurl, sdate), stamp=stampurl, fragment=lname)
 
         assert len(res) == 1
         return self.membertoperson(res[0]["id"])
