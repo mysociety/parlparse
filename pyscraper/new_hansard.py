@@ -1153,6 +1153,13 @@ class PBCParseDayXML(BaseParseDayXML):
 
         committee.append(chairmen)
 
+        def current_membership(pid):
+            members = self.resolver.persontomembermap[pid]
+            members = [self.resolver.members[mid] for mid in members]
+            members = [m for m in members if m['start_date'] <= self.date <= m['end_date']]
+            assert len(members) == 1
+            return members[0]
+
         for m in self.members:
             mp = etree.Element('mpname')
             mp.set('person_id', m['person_id'])
@@ -1163,12 +1170,12 @@ class PBCParseDayXML(BaseParseDayXML):
 
             # if it's a different cons then it's probably a position
             # so use that instead and skip the party
-            curr_cons = m['shortcuts']['current_constituency']
-            if curr_cons != m['pbc_cons']:
+            curr_member = current_membership(m['person_id'])
+            if curr_member['constituency'] != m['pbc_cons']:
                 cons.text = u'({0})'.format(m['pbc_cons'])
             else:
-                cons.text = u'({0})'.format(curr_cons)
-                cons.tail = u'({0})'.format(m['shortcuts']['current_party'])
+                cons.text = u'({0})'.format(curr_member['constituency'])
+                cons.tail = u'({0})'.format(curr_member['party'])
             mp.append(cons)
             committee.append(mp)
 
