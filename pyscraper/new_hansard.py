@@ -146,7 +146,9 @@ class BaseParseDayXML(object):
     ]
     indents = [
         'hs_ParaIndent',
-        'hs_AmendmentLevel0'
+        'hs_AmendmentLevel0',
+        'hs_IndentOne',
+        'hs_IndentTwo',
     ]
     empty_tags = [
         'StartProcedure',
