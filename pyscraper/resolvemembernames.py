@@ -107,6 +107,7 @@ class MemberList(ResolverBase):
         text = text.replace(",", " ")
         text = text.replace("&nbsp;", " ")
         text = text.replace("  ", " ")
+        text = text.replace(u'\u2019', "'")
 
         # Remove initial titles (may be several)
         titletotal = 0
