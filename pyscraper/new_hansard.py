@@ -971,6 +971,9 @@ class BaseParseDayXML(object):
                     continue
 
                 tag_name = self.get_tag_name_no_ns(tag)
+                if self.verbose >= 2:
+                    start_tag = re.sub('>.*', '>', etree.tounicode(tag))
+                    print 'Parsing %s' % start_tag
                 if not self.handle_tag(tag_name, tag):
                     raise ContextException(
                         'unhandled tag: {0}'.format(tag_name),
@@ -1781,7 +1784,7 @@ class ParseDay(object):
         os.rename(newfile, self.output_file)
         os.rename(tempfilenameoldxml, self.prev_file)
 
-    def handle_file(self, filename, debate_type):
+    def handle_file(self, filename, debate_type, verbose):
         if debate_type not in self.valid_types:
             sys.stderr.write('{0} not a valid type'.format(debate_type))
             sys.exit()
@@ -1804,7 +1807,7 @@ class ParseDay(object):
         tempfilename = tempfile.mktemp(".xml", "pw-filtertemp-", miscfuncs.tmppath)
         out = io.open(tempfilename, mode='w', encoding='utf-8')
 
-        parse_ok = self.parse_day(out, xml_file, date, debate_type)
+        parse_ok = self.parse_day(out, xml_file, date, debate_type, verbose)
 
         if not parse_ok:
             sys.stderr.write('Failed to parse {0}\n'.format(filename))
@@ -1839,8 +1842,9 @@ class ParseDay(object):
         self.parser = parser_types.get(debate_type, CommonsParseDayXML)()
         self.parser.debate_type = debate_type
 
-    def parse_day(self, out, text, date, debate_type):
+    def parse_day(self, out, text, date, debate_type, verbose=0):
         self.set_parser_for_type(debate_type)
+        self.parser.verbose = verbose
         parse_ok = self.parser.parse_day(text, out)
         if parse_ok:
             out.write(etree.tounicode(self.parser.root, pretty_print=True))

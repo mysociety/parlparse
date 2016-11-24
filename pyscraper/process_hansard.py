@@ -17,7 +17,7 @@ yesterday = today - datetime.timedelta(1)
 parser = argparse.ArgumentParser(description='Process Hansard XML.')
 parser.add_argument('--from', dest='date_from', default=yesterday.isoformat(), metavar='YYYY-MM-DD')
 parser.add_argument('--to', dest='date_to', default=today.isoformat(), metavar='YYYY-MM-DD')
-parser.add_argument('--verbose', action='store_true')
+parser.add_argument('-v', '--verbose', action='count')
 ARGS = parser.parse_args()
 
 index_filename = join(toppath, 'seen_hansard_xml.txt')
@@ -71,7 +71,9 @@ def handle_file(filename, debate_type):
         return False
 
     parser.reset()
-    ret = parser.handle_file(join(zip_directory, filename), debate_type)
+    if ARGS.verbose:
+        print "looking at {0}".format(filename)
+    ret = parser.handle_file(join(zip_directory, filename), debate_type, ARGS.verbose)
 
     if ret == 'failed':
         print "ERROR parsing {0} {1}".format(filename, debate_type)
