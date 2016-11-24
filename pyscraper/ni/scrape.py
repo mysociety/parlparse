@@ -31,6 +31,10 @@ def scrape_ni_day(url, filename, forcescrape):
     filename = '%s/../../../parldata/cmpages/ni/%s' % (ni_dir, filename)
     data = urllib.urlopen(url).read()
 
+    if 'ExceptionMessage' in data:
+        print 'ERROR received scraping %s' % url
+        return
+
     save = True
     if os.path.isfile(filename):
         current = open(filename).read()
@@ -54,6 +58,11 @@ def scrape_ni(datefrom, dateto, forcescrape=False):
 def scrape_ni_json(datefrom, dateto, forcescrape):
     ur = urllib.urlopen(API_ROOT)
     index = json.load(ur)
+
+    if 'ExceptionMessage' in index:
+        print 'ERROR received scraping NI root'
+        return
+
     for day in index:
         date = day['PlenaryDate'][:10]
         if date < datefrom or date > dateto: continue
