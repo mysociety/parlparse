@@ -37,8 +37,8 @@ def RunRegmemFilters2010(fout, text, sdate, sdatever):
                 if not res:
                         raise ContextException, "Failed to break up into first/last/cons: %s" % title
                 (lastname, firstname, constituency) = res.groups()
-                firstname = memberList.striptitles(firstname)[0].decode('utf-8')
-                lastname = memberList.lowercaselastname(lastname).decode('utf-8')
+                firstname = memberList.striptitles(firstname.decode('utf-8'))[0]
+                lastname = memberList.lowercaselastname(lastname.decode('utf-8'))
                 constituency = constituency.decode('utf-8')
                 lastname = lastname.replace(u'O\u2019brien', "O'Brien") # Hmm
                 (id, remadename, remadecons) = memberList.matchfullnamecons(firstname + " " + lastname, constituency, sdate)
