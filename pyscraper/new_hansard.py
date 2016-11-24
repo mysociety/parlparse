@@ -155,6 +155,7 @@ class BaseParseDayXML(object):
         'EndProcedure',
     ]
     ignored_tags = [
+        'hs_TimeCode',
         'hs_6bPetitions',
         'hs_3MainHdg',
         'hs_Venue'
