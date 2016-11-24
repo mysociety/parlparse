@@ -657,7 +657,8 @@ class BaseParseDayXML(object):
         # this makes the text fetching a bit easier
         if kwargs.get('strip_member', True):
             for m in members:
-                text = ''.join(i.text for i in m.xpath('.//ns:I', namespaces=self.ns_map))
+                italics = m.xpath('.//ns:I', namespaces=self.ns_map)
+                text = ''.join(self.get_single_line_text_from_element(i) for i in italics)
                 if text:
                     kwargs['css_class'] = 'italic'
                 if m.tail:
