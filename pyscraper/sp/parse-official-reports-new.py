@@ -635,9 +635,12 @@ def parse_html(session, report_date, soup, page_id, original_url):
             # hardcoded style attributes in the spans it's arguable that we'd want to
             # remove them anyway.
             for p in top_level.findChildren('p'):
-                if p.span:
+                if p.span or p.b:
                     for span in p.findChildren('span'):
-                        span.unwrap()
+                        if span.has_attr('style') and 'font-size:10pt;font-weight:bold' in span['style']:
+                            span.name = 'b'
+                        else:
+       		            span.unwrap()
                     p.unwrap()
 
             removed_number = None
