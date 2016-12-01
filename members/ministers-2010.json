@@ -2294,8 +2294,8 @@
       "role": "Shadow Spokesperson (Work and Pensions)", 
       "person_id": "uk.org.publicwhip/person/10040", 
       "organization_id": "house-of-commons", 
-      "start_date": "2002-01-02", 
-      "end_date": "2002-12-01"
+      "start_date": "2002-07-23", 
+      "end_date": "2002-11-01"
     }, 
     {
       "id": "uk.parliament.data/Member/17/OppositionPost/13", 
@@ -2303,7 +2303,7 @@
       "role": "Shadow Chief Secretary  to the Treasury", 
       "person_id": "uk.org.publicwhip/person/10040", 
       "organization_id": "house-of-commons", 
-      "start_date": "2001-06-11", 
+      "start_date": "2001-09-01", 
       "end_date": "2002-07-23"
     }, 
     {
@@ -2313,7 +2313,7 @@
       "person_id": "uk.org.publicwhip/person/10040", 
       "organization_id": "house-of-commons", 
       "start_date": "2003-11-07", 
-      "end_date": "2005-05-05"
+      "end_date": "2004-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/17/OppositionPost/960", 
@@ -2321,8 +2321,8 @@
       "role": "Shadow Minister (Education)", 
       "person_id": "uk.org.publicwhip/person/10040", 
       "organization_id": "house-of-commons", 
-      "start_date": "1999-01-01", 
-      "end_date": "2000-01-01"
+      "start_date": "1999-06-01", 
+      "end_date": "2000-07-01"
     }, 
     {
       "id": "uk.parliament.data/Member/17/OppositionPost/988", 
@@ -2330,8 +2330,8 @@
       "role": "Shadow Spokesperson (Home Affairs)", 
       "person_id": "uk.org.publicwhip/person/10040", 
       "organization_id": "house-of-commons", 
-      "start_date": "2000-01-01", 
-      "end_date": "2001-01-01"
+      "start_date": "2000-07-01", 
+      "end_date": "2001-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/17/ParliamentaryPost/817", 
@@ -5257,6 +5257,23 @@
       "end_date": "2010-05-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/301/Committee/347", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10076", 
+      "organization_id": "international-development-subcommittee-on-the-work-of-the-independent-commission-for-aid-impact", 
+      "start_date": "2012-10-31", 
+      "end_date": "2013-12-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/301/Committee/347/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10076", 
+      "organization_id": "international-development-subcommittee-on-the-work-of-the-independent-commission-for-aid-impact", 
+      "start_date": "2013-12-03", 
+      "end_date": "2013-12-31"
+    }, 
+    {
       "id": "uk.parliament.data/Member/301/Committee/98", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10076", 
@@ -6241,6 +6258,13 @@
       "organization_id": "procedure-committee", 
       "start_date": "2005-12-12", 
       "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/242/Committee/126/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10103", 
+      "organization_id": "procedure-committee", 
+      "start_date": "2016-11-21"
     }, 
     {
       "id": "uk.parliament.data/Member/242/Committee/136", 
@@ -10756,6 +10780,24 @@
       "end_date": "2014-04-10"
     }, 
     {
+      "id": "uk.parliament.data/Member/88/Committee/157", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10194", 
+      "organization_id": "treasury-subcommittee", 
+      "start_date": "2001-07-16", 
+      "end_date": "2005-04-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/88/Committee/157/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10194", 
+      "organization_id": "treasury-subcommittee", 
+      "start_date": "2005-05-17", 
+      "end_date": "2010-04-12"
+    }, 
+    {
       "id": "uk.parliament.data/Member/88/Committee/158", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10194", 
@@ -11333,6 +11375,13 @@
       "organization_id": "welsh-affairs-committee", 
       "start_date": "1997-07-14", 
       "end_date": "1997-12-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/545/Committee/162/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10203", 
+      "organization_id": "welsh-affairs-committee", 
+      "start_date": "2016-11-21"
     }, 
     {
       "id": "uk.parliament.data/Member/545/Committee/200", 
@@ -14548,6 +14597,14 @@
       "organization_id": "liaison-committee-commons", 
       "start_date": "2010-07-27", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/43/Committee/11", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10263", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "1992-06-29", 
+      "end_date": "1997-03-21"
     }, 
     {
       "id": "uk.parliament.data/Member/43/Committee/153", 
@@ -17879,7 +17936,7 @@
       "role": "Opposition Whip (Commons)", 
       "person_id": "uk.org.publicwhip/person/10348", 
       "organization_id": "house-of-commons", 
-      "start_date": "1999-07-01", 
+      "start_date": "1998-10-01", 
       "end_date": "2000-07-01"
     }, 
     {
@@ -21231,12 +21288,21 @@
       "end_date": "2009-09-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/465/OppositionPost/1336", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Business, Energy and Industrial Strategy)", 
+      "person_id": "uk.org.publicwhip/person/10415", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-10-11"
+    }, 
+    {
       "id": "uk.parliament.data/Member/465/OppositionPost/15", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister (Business, Innovation and Skills)", 
       "person_id": "uk.org.publicwhip/person/10415", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-09-18"
+      "start_date": "2015-09-18", 
+      "end_date": "2016-10-11"
     }, 
     {
       "id": "uk.parliament.data/Member/465/OppositionPost/15/1", 
@@ -29411,7 +29477,7 @@
     {
       "id": "uk.parliament.data/Member/167/OppositionPost/1084", 
       "source": "datadotparl/oppositionpost", 
-      "role": "Shadow Minister (Political and Constitutional Reform) (Justice)", 
+      "role": "Shadow Minister (Justice) (Political and Constitutional Reform)", 
       "person_id": "uk.org.publicwhip/person/10611", 
       "organization_id": "house-of-commons", 
       "start_date": "2013-10-07", 
@@ -32797,7 +32863,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10761", 
       "organization_id": "house-of-commons-commission", 
-      "start_date": "2015-09-14"
+      "start_date": "2015-09-14", 
+      "end_date": "2016-11-21"
     }, 
     {
       "id": "uk.parliament.data/Member/1446/Committee/92", 
@@ -33606,11 +33673,19 @@
     {
       "id": "uk.parliament.data/Member/1398/OppositionPost/1084", 
       "source": "datadotparl/oppositionpost", 
-      "role": "Shadow Minister (Political and Constitutional Reform) (Justice)", 
+      "role": "Shadow Minister (Justice) (Political and Constitutional Reform)", 
       "person_id": "uk.org.publicwhip/person/10842", 
       "organization_id": "house-of-commons", 
       "start_date": "2011-10-11", 
       "end_date": "2013-10-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1398/OppositionPost/1357", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Defence) (Armed Forces and Defence Procurement)", 
+      "person_id": "uk.org.publicwhip/person/10842", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-10-12"
     }, 
     {
       "id": "uk.parliament.data/Member/1398/OppositionPost/878", 
@@ -33629,14 +33704,6 @@
       "organization_id": "house-of-commons", 
       "start_date": "2015-07-01", 
       "end_date": "2016-06-27"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/1398/OppositionPost/959", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Shadow Minister (Defence)", 
-      "person_id": "uk.org.publicwhip/person/10842", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2016-10-12"
     }, 
     {
       "id": "uk.parliament.data/Member/1398/OppositionPost/968", 
@@ -43421,6 +43488,13 @@
       "organization_id": "liaison-committee-commons", 
       "start_date": "2012-12-10", 
       "end_date": "2014-09-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1559/Committee/126", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11785", 
+      "organization_id": "procedure-committee", 
+      "start_date": "2016-11-21"
     }, 
     {
       "id": "uk.parliament.data/Member/1559/Committee/131", 
@@ -68199,7 +68273,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13493", 
       "organization_id": "human-rights-joint-committee", 
-      "start_date": "2015-07-16"
+      "start_date": "2015-07-16", 
+      "end_date": "2016-11-21"
     }, 
     {
       "id": "uk.parliament.data/Member/2616/GovernmentPost/417", 
@@ -68209,6 +68284,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2011-09-05", 
       "end_date": "2012-09-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2616/GovernmentPost/72", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Lord in Waiting (HM Household) (Whip)", 
+      "person_id": "uk.org.publicwhip/person/13493", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-11-21"
     }, 
     {
       "id": "uk.parliament.data/Member/2616/GovernmentPost/850", 
@@ -79248,7 +79331,8 @@
       "role": "Shadow Secretary of State for Communities and Local Government and Shadow Minister for the Constitutional Convention", 
       "person_id": "uk.org.publicwhip/person/24715", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-06-28"
+      "start_date": "2016-06-28", 
+      "end_date": "2016-10-07"
     }, 
     {
       "id": "uk.parliament.data/Member/3989/Committee/120", 
@@ -80458,6 +80542,14 @@
       "person_id": "uk.org.publicwhip/person/24760", 
       "organization_id": "international-development-subcommittee-on-the-work-of-the-independent-commission-for-aid-impact", 
       "start_date": "2015-07-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4109/Committee/347/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24760", 
+      "organization_id": "international-development-subcommittee-on-the-work-of-the-independent-commission-for-aid-impact", 
+      "start_date": "2012-10-31", 
+      "end_date": "2015-03-30"
     }, 
     {
       "id": "uk.parliament.data/Member/4109/Committee/366", 
@@ -83471,6 +83563,13 @@
       "end_date": "2014-12-17"
     }, 
     {
+      "id": "uk.parliament.data/Member/4076/Committee/348", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24852", 
+      "organization_id": "house-of-commons-commission", 
+      "start_date": "2016-11-21"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4076/Committee/350", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24852", 
@@ -83671,6 +83770,14 @@
       "person_id": "uk.org.publicwhip/person/24857", 
       "organization_id": "international-development-subcommittee-on-the-work-of-the-independent-commission-for-aid-impact", 
       "start_date": "2015-10-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3958/Committee/347/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24857", 
+      "organization_id": "international-development-subcommittee-on-the-work-of-the-independent-commission-for-aid-impact", 
+      "start_date": "2012-10-31", 
+      "end_date": "2015-03-30"
     }, 
     {
       "id": "uk.parliament.data/Member/3958/Committee/93", 
@@ -84463,15 +84570,6 @@
       "end_date": "2016-07-15"
     }, 
     {
-      "id": "uk.parliament.data/Member/4039/GovernmentPost/1121", 
-      "source": "datadotparl/governmentpost", 
-      "role": "Minister of State (Cabinet Office)", 
-      "person_id": "uk.org.publicwhip/person/24895", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2014-07-15", 
-      "end_date": "2015-05-08"
-    }, 
-    {
       "id": "uk.parliament.data/Member/4039/GovernmentPost/1181", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister of State (Department for Education) (Universities and Science) (Joint with the Department for Business, Energy and Industrial Strategy)", 
@@ -84488,21 +84586,30 @@
       "start_date": "2016-07-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/4039/GovernmentPost/1191", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Secretary (Cabinet Office) (Head of the Number 10 Policy Unit)", 
+      "person_id": "uk.org.publicwhip/person/24895", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2013-04-25", 
+      "end_date": "2014-07-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4039/GovernmentPost/1192", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Cabinet Office) (Head of the Number 10 Policy Unit)", 
+      "person_id": "uk.org.publicwhip/person/24895", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2014-07-15", 
+      "end_date": "2015-05-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4039/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24895", 
       "organization_id": "house-of-commons", 
       "start_date": "2012-09-06", 
-      "end_date": "2014-07-15"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/4039/GovernmentPost/913", 
-      "source": "datadotparl/governmentpost", 
-      "role": "The Parliamentary Secretary, Cabinet Office", 
-      "person_id": "uk.org.publicwhip/person/24895", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2013-04-25", 
       "end_date": "2014-07-15"
     }, 
     {
@@ -84626,7 +84733,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24898", 
       "organization_id": "northern-ireland-affairs-committee", 
-      "start_date": "2015-07-06"
+      "start_date": "2015-07-06", 
+      "end_date": "2016-11-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4022/Committee/174", 
@@ -84857,6 +84965,13 @@
       "organization_id": "house-of-commons", 
       "start_date": "2015-09-18", 
       "end_date": "2016-06-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3919/Committee/120", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24907", 
+      "organization_id": "northern-ireland-affairs-committee", 
+      "start_date": "2016-11-21"
     }, 
     {
       "id": "uk.parliament.data/Member/3919/Committee/15", 
@@ -85494,6 +85609,14 @@
       "organization_id": "science-and-technology-committee-commons", 
       "start_date": "2010-07-12", 
       "end_date": "2012-06-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4119/Committee/352", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24929", 
+      "organization_id": "education-skills-and-the-economy-subcommittee", 
+      "start_date": "2016-05-23", 
+      "end_date": "2016-10-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4119/Committee/365", 
@@ -86281,7 +86404,16 @@
       "role": "Shadow Minister (Housing)", 
       "person_id": "uk.org.publicwhip/person/24956", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-09-18"
+      "start_date": "2015-09-18", 
+      "end_date": "2016-10-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4003/OppositionPost/1264", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Secretary of State for Communities and Local Government and Shadow Minister for the Constitutional Convention", 
+      "person_id": "uk.org.publicwhip/person/24956", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-10-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4065/Committee/127", 
@@ -88490,7 +88622,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25051", 
       "organization_id": "eu-financial-affairs-subcommittee", 
-      "start_date": "2016-09-12"
+      "start_date": "2016-09-12", 
+      "end_date": "2016-11-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4215/Committee/189", 
@@ -90425,7 +90558,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25272", 
       "organization_id": "education-skills-and-the-economy-subcommittee", 
-      "start_date": "2015-12-01"
+      "start_date": "2015-12-01", 
+      "end_date": "2016-06-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4466/Committee/171", 
@@ -90484,6 +90618,13 @@
       "person_id": "uk.org.publicwhip/person/25277", 
       "organization_id": "education-committee", 
       "start_date": "2015-07-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4440/Committee/351", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25277", 
+      "organization_id": "education-skills-and-the-economy-subcommittee", 
+      "start_date": "2016-10-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4440/OppositionPost/1239", 
@@ -90658,7 +90799,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25285", 
       "organization_id": "procedure-committee", 
-      "start_date": "2015-07-13"
+      "start_date": "2015-07-13", 
+      "end_date": "2016-11-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4468/Committee/131", 
@@ -90702,7 +90844,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25289", 
       "organization_id": "welsh-affairs-committee", 
-      "start_date": "2015-07-13"
+      "start_date": "2015-07-13", 
+      "end_date": "2016-11-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4501/Committee/327", 
@@ -90724,7 +90867,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25290", 
       "organization_id": "education-skills-and-the-economy-subcommittee", 
-      "start_date": "2015-12-01"
+      "start_date": "2015-12-01", 
+      "end_date": "2016-05-23"
     }, 
     {
       "id": "uk.parliament.data/Member/4509/Committee/365", 
@@ -91113,6 +91257,14 @@
       "start_date": "2016-10-09"
     }, 
     {
+      "id": "uk.parliament.data/Member/4397/OppositionPost/1356", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Financial Secretary (Treasury)", 
+      "person_id": "uk.org.publicwhip/person/25309", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-10-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4510/Committee/17", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25310", 
@@ -91179,6 +91331,13 @@
       "person_id": "uk.org.publicwhip/person/25315", 
       "organization_id": "public-accounts-committee", 
       "start_date": "2016-09-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4388/Committee/207", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25315", 
+      "organization_id": "public-accounts-commission", 
+      "start_date": "2016-11-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4530/Committee/203", 
@@ -91471,7 +91630,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25336", 
       "organization_id": "public-accounts-commission", 
-      "start_date": "2015-11-04"
+      "start_date": "2015-11-04", 
+      "end_date": "2016-11-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4417/OppositionPost/1225", 
@@ -91495,6 +91655,13 @@
       "person_id": "uk.org.publicwhip/person/25337", 
       "organization_id": "education-committee", 
       "start_date": "2015-07-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4411/Committee/351", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25337", 
+      "organization_id": "education-skills-and-the-economy-subcommittee", 
+      "start_date": "2016-09-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4451/Committee/127", 
@@ -91918,6 +92085,14 @@
       "person_id": "uk.org.publicwhip/person/25360", 
       "organization_id": "education-committee", 
       "start_date": "2016-02-22"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4429/Committee/351", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25360", 
+      "organization_id": "education-skills-and-the-economy-subcommittee", 
+      "start_date": "2016-06-08", 
+      "end_date": "2016-09-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4390/Committee/326", 
@@ -92388,7 +92563,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25396", 
       "organization_id": "procedure-committee", 
-      "start_date": "2015-07-13"
+      "start_date": "2015-07-13", 
+      "end_date": "2016-11-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4492/Committee/328", 
@@ -92423,7 +92599,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25399", 
       "organization_id": "education-skills-and-the-economy-subcommittee", 
-      "start_date": "2015-11-25"
+      "start_date": "2015-11-25", 
+      "end_date": "2016-09-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4364/OppositionPost/1221", 
@@ -92758,6 +92935,13 @@
       "end_date": "2016-10-31"
     }, 
     {
+      "id": "uk.parliament.data/Member/4442/Committee/126", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25426", 
+      "organization_id": "procedure-committee", 
+      "start_date": "2016-11-21"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4442/Committee/153", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25426", 
@@ -92769,7 +92953,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25427", 
       "organization_id": "procedure-committee", 
-      "start_date": "2015-07-13"
+      "start_date": "2015-07-13", 
+      "end_date": "2016-11-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4494/Committee/131", 
@@ -92986,7 +93171,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25436", 
       "organization_id": "education-skills-and-the-economy-subcommittee", 
-      "start_date": "2015-12-01"
+      "start_date": "2015-12-01", 
+      "end_date": "2016-06-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4372/Committee/365", 
@@ -93150,6 +93336,13 @@
       "person_id": "uk.org.publicwhip/person/25453", 
       "organization_id": "licensing-act-2003-committee", 
       "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4541/Committee/337", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25454", 
+      "organization_id": "eu-financial-affairs-subcommittee", 
+      "start_date": "2016-11-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4543/Committee/170", 
