@@ -7456,6 +7456,13 @@
       "start_date": "2016-10-19"
     }, 
     {
+      "id": "uk.parliament.data/Member/420/Committee/111", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10131", 
+      "organization_id": "national-security-strategy-joint-committee", 
+      "start_date": "2016-11-28"
+    }, 
+    {
       "id": "uk.parliament.data/Member/420/Committee/43", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10131", 
@@ -10372,6 +10379,15 @@
       "end_date": "2010-10-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/483/OppositionPost/968", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Justice)", 
+      "person_id": "uk.org.publicwhip/person/10183", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2010-05-12", 
+      "end_date": "2010-10-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/165/Committee/105", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10185", 
@@ -10527,7 +10543,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10190", 
       "organization_id": "northern-ireland-affairs-committee", 
-      "start_date": "2015-07-06"
+      "start_date": "2015-07-06", 
+      "end_date": "2016-11-28"
     }, 
     {
       "id": "uk.parliament.data/Member/474/Committee/128", 
@@ -12964,7 +12981,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10241", 
       "organization_id": "national-security-strategy-joint-committee", 
-      "start_date": "2015-11-30"
+      "start_date": "2015-11-30", 
+      "end_date": "2016-11-28"
     }, 
     {
       "id": "uk.parliament.data/Member/76/Committee/126", 
@@ -21737,6 +21755,14 @@
       "end_date": "2010-04-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/8/Committee/348", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10426", 
+      "organization_id": "house-of-commons-commission", 
+      "start_date": "2005-12-10", 
+      "end_date": "2009-01-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/8/Committee/43", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10426", 
@@ -26772,14 +26798,6 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10558", 
       "organization_id": "defence-committee", 
-      "start_date": "1983-06-09", 
-      "end_date": "1987-05-15"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/318/Committee/24/1", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/10558", 
-      "organization_id": "defence-committee", 
       "start_date": "2015-07-06"
     }, 
     {
@@ -28090,6 +28108,13 @@
       "organization_id": "administration-committee", 
       "start_date": "2013-10-28", 
       "end_date": "2014-12-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/245/Committee/2/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10582", 
+      "organization_id": "administration-committee", 
+      "start_date": "2016-11-28"
     }, 
     {
       "id": "uk.parliament.data/Member/245/Committee/225", 
@@ -29870,7 +29895,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10614", 
       "organization_id": "national-security-strategy-joint-committee", 
-      "start_date": "2015-11-30"
+      "start_date": "2015-11-30", 
+      "end_date": "2016-11-28"
     }, 
     {
       "id": "uk.parliament.data/Member/338/Committee/19", 
@@ -30382,7 +30408,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10630", 
       "organization_id": "environmental-audit-committee", 
-      "start_date": "2016-09-12"
+      "start_date": "2016-09-12", 
+      "end_date": "2016-11-28"
     }, 
     {
       "id": "uk.parliament.data/Member/62/GovernmentPost/488", 
@@ -40221,6 +40248,13 @@
       "end_date": "2010-05-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/1500/Committee/111", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11500", 
+      "organization_id": "national-security-strategy-joint-committee", 
+      "start_date": "2016-11-28"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1500/Committee/62", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11500", 
@@ -43620,7 +43654,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11792", 
       "organization_id": "petitions-committee", 
-      "start_date": "2015-07-20"
+      "start_date": "2015-07-20", 
+      "end_date": "2016-11-28"
     }, 
     {
       "id": "uk.parliament.data/Member/1561/Committee/62", 
@@ -45478,6 +45513,13 @@
       "organization_id": "national-security-strategy-joint-committee", 
       "start_date": "2010-11-30", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1576/Committee/120", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11946", 
+      "organization_id": "northern-ireland-affairs-committee", 
+      "start_date": "2016-11-28"
     }, 
     {
       "id": "uk.parliament.data/Member/1576/Committee/153", 
@@ -79850,7 +79892,7 @@
       "person_id": "uk.org.publicwhip/person/24732", 
       "organization_id": "house-of-commons", 
       "start_date": "2014-07-15", 
-      "end_date": "2016-07-14"
+      "end_date": "2016-07-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4027/GovernmentPost/1124", 
@@ -79895,7 +79937,7 @@
       "person_id": "uk.org.publicwhip/person/24732", 
       "organization_id": "house-of-commons", 
       "start_date": "2014-07-15", 
-      "end_date": "2016-07-14"
+      "end_date": "2016-07-13"
     }, 
     {
       "id": "uk.parliament.data/Member/3949/Committee/135", 
@@ -80974,6 +81016,13 @@
       "organization_id": "justice-committee", 
       "start_date": "2010-07-12", 
       "end_date": "2010-11-29"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3938/Committee/136", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24772", 
+      "organization_id": "scottish-affairs-committee", 
+      "start_date": "2016-11-28"
     }, 
     {
       "id": "uk.parliament.data/Member/3938/GovernmentPost/222", 
@@ -83319,6 +83368,13 @@
       "end_date": "2015-11-24"
     }, 
     {
+      "id": "uk.parliament.data/Member/4013/Committee/62", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24847", 
+      "organization_id": "environmental-audit-committee", 
+      "start_date": "2016-11-28"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4013/OppositionPost/962", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister (Environment, Food and Rural Affairs)", 
@@ -83853,7 +83909,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24862", 
       "organization_id": "administration-committee", 
-      "start_date": "2015-07-20"
+      "start_date": "2015-07-20", 
+      "end_date": "2016-11-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4091/Committee/9", 
@@ -85065,6 +85122,13 @@
       "organization_id": "environmental-audit-committee", 
       "start_date": "2015-07-20", 
       "end_date": "2016-10-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4249/Committee/127", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24912", 
+      "organization_id": "public-accounts-committee", 
+      "start_date": "2016-11-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4249/Committee/164", 
@@ -89359,9 +89423,9 @@
       "end_date": "2015-10-26"
     }, 
     {
-      "id": "uk.parliament.data/Member/4267/OppositionPost/1172", 
+      "id": "uk.parliament.data/Member/4267/OppositionPost/1358", 
       "source": "datadotparl/oppositionpost", 
-      "role": "Shadow Minister (Equalities Office) (Women and Equalities)", 
+      "role": "Shadow Secretary of State for Women and Equalities", 
       "person_id": "uk.org.publicwhip/person/25168", 
       "organization_id": "house-of-commons", 
       "start_date": "2016-10-06"
@@ -90518,6 +90582,13 @@
       "end_date": "2016-02-29"
     }, 
     {
+      "id": "uk.parliament.data/Member/4470/Committee/69", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25268", 
+      "organization_id": "european-scrutiny-committee", 
+      "start_date": "2016-11-28"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4421/Committee/164", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25269", 
@@ -90580,7 +90651,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25273", 
       "organization_id": "european-scrutiny-committee", 
-      "start_date": "2015-07-15"
+      "start_date": "2015-07-15", 
+      "end_date": "2016-11-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4427/OppositionPost/1217", 
@@ -91707,6 +91779,13 @@
       "start_date": "2015-07-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/4383/Committee/69", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25339", 
+      "organization_id": "european-scrutiny-committee", 
+      "start_date": "2016-11-28"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4481/Committee/102", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25340", 
@@ -91851,7 +91930,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25350", 
       "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
-      "start_date": "2016-02-10"
+      "start_date": "2016-02-10", 
+      "end_date": "2016-09-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4454/Committee/171", 
@@ -92272,7 +92352,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25371", 
       "organization_id": "scottish-affairs-committee", 
-      "start_date": "2015-07-06"
+      "start_date": "2015-07-06", 
+      "end_date": "2016-11-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4447/Committee/81", 
@@ -92294,6 +92375,13 @@
       "person_id": "uk.org.publicwhip/person/25373", 
       "organization_id": "work-and-pensions-committee", 
       "start_date": "2016-10-31"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4450/Committee/326", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25373", 
+      "organization_id": "petitions-committee", 
+      "start_date": "2016-11-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4450/Committee/62", 
@@ -92787,7 +92875,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25416", 
       "organization_id": "european-scrutiny-committee", 
-      "start_date": "2015-07-15"
+      "start_date": "2015-07-15", 
+      "end_date": "2016-11-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4379/OppositionPost/1220", 
