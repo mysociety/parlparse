@@ -40,6 +40,8 @@ cd ~/parlparse/pyscraper
 ni/wikipedia-mla.py > ../members/wikipedia-mla.xml
 cd ~/parlparse/pyscraper/sp
 ./wikipedia-msp.py > ../../members/wikipedia-msp.xml
+cd ~/parlparse/pyscraper
+../.venv/bin/python ./get_links_from_ep.py
 #cd ~/parlparse/members
 #svn -q commit -m "Weekly members scrape commit"
 
