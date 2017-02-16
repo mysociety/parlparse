@@ -529,7 +529,7 @@ class ParseDayJSON(ParseDayParserBase):
                     elif self.pre_heading and self.pre_heading['level'] > line['ComponentHeaderId']:
                         self.pre_heading = {}
                     self.heading = {'text': text, 'ts': timestamp, 'type': typ}
-            elif re.match('Speaker \((MlaName|DeputyChairAndName|ChairAndName|DeputySpeaker|PrincipalDeputySpeaker|MinisterAndName|ActingSpeaker|Speaker)\)$', line['ComponentType']):
+            elif re.match('Speaker \((MlaName|DeputyChairAndName|ChairAndName|DeputySpeaker|PrincipalDeputySpeaker|MinisterAndName|ActingSpeaker|TemporarySpeaker|Speaker)\)$', line['ComponentType']):
                 # RelatedItemId here is the NI speaker ID. We could use that!
                 # But for now, carry on going by name as all that code exists.
                 self.display_speech()
