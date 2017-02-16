@@ -117,6 +117,7 @@ class BaseParseDayXML(object):
     ]
     minor_headings = [
         'hs_8Question',
+        'hs_8GenericHdg',
         'hs_6bFormalmotion',
         'hs_7SmCapsHdg',
         'hs_7PrivateBusinessHdg',
