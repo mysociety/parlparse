@@ -1091,6 +1091,7 @@ class PBCParseDayXML(BaseParseDayXML):
             cons = cons_tag.text
             cons = re.sub(r'[()]', '', cons)
 
+        name = name.rstrip(':')
         member = self.resolver.pbc_match(name, cons, self.date)
         if member is not None:
             member['pbc_cons'] = cons
