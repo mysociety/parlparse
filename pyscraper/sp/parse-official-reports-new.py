@@ -664,7 +664,7 @@ def parse_html(session, report_date, soup, page_id, original_url):
                         # Ignore the line breaks...
                         pass
                     elif speech_part.name == 'ul':
-                        current_speech.paragraphs.append(speech_part.html)
+                        current_speech.paragraphs.append(unicode(speech_part))
                     elif speech_part.name in ('sup', 'sub'):
                         # sometimes the degree symbol is used so we need
                         # to replace it with an entity and then convert to
