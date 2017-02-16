@@ -323,6 +323,10 @@ class BaseParseDayXML(object):
                 return self.handle_minus_member(member_tag)
             if member_tag.get('PimsId') == '0':
                 return None
+            if not member_tag.get('PimsId'):
+                try_name = self.handle_minus_member(member_tag)
+                if try_name:
+                    return try_name
             member = self.resolver.match_by_pims(member_tag.get('PimsId'))
             if member is not None:
                 member['person_id'] = member.get('id')
