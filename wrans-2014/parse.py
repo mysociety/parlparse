@@ -140,7 +140,8 @@ class WrittenThing(object):
         name = h.a.text.strip()
         if ARGS.house == 'lords':
             # Loop through all, match on name and date
-            person_id = MEMBERS_BY_NAME[re.sub('^the ', '', name.lower())]
+            name = name.lower().replace(u'\u2019', "'")
+            person_id = MEMBERS_BY_NAME[re.sub('^the ', '', name)]
         else:
             speaker_id = re.search('(\d+)$', h.a['href']).group(1)
             person_id = DATADOTPARL_ID_TO_PERSON_ID[speaker_id]
