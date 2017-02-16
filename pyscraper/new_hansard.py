@@ -333,6 +333,8 @@ class BaseParseDayXML(object):
                 member['name'] = self.resolver.name_on_date(member['person_id'], self.date)
                 return member
             else:
+                if member_tag.text == 'Olney,\nSarah':
+                    return self.resolver.pbc_match(member_tag.text, '', self.date)
                 raise ContextException(
                     'No match for PimsId {0}\n'.format(member_tag.get('PimsId')),
                     stamp=tag.get('url'),
