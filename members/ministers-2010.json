@@ -16372,7 +16372,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10295", 
       "organization_id": "panel-of-chairs", 
-      "start_date": "2015-03-30"
+      "start_date": "2015-03-30", 
+      "end_date": "2015-06-04"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/467/Committee/11/2", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10295", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "2015-06-04"
     }, 
     {
       "id": "uk.parliament.data/Member/467/Committee/152", 
@@ -29184,7 +29193,8 @@
       "role": "Campaigns and Elections Chair", 
       "person_id": "uk.org.publicwhip/person/10604", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-27"
+      "start_date": "2016-07-27", 
+      "end_date": "2017-02-11"
     }, 
     {
       "id": "uk.parliament.data/Member/410/OppositionPost/1318", 
@@ -29206,6 +29216,14 @@
     }, 
     {
       "id": "uk.parliament.data/Member/410/OppositionPost/956", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Cabinet Office)", 
+      "person_id": "uk.org.publicwhip/person/10604", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-02-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/410/OppositionPost/956/1", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister (Cabinet Office)", 
       "person_id": "uk.org.publicwhip/person/10604", 
@@ -40564,6 +40582,14 @@
       "start_date": "2016-10-07"
     }, 
     {
+      "id": "uk.parliament.data/Member/1506/OppositionPost/1313", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Campaigns and Elections Chair", 
+      "person_id": "uk.org.publicwhip/person/11531", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-02-11"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1506/OppositionPost/965", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister (Health)", 
@@ -50209,7 +50235,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12961", 
       "organization_id": "intellectual-property-unjustified-threats-bill-hl-special-public-bill-committee", 
-      "start_date": "2016-09-13"
+      "start_date": "2016-09-13", 
+      "end_date": "2016-11-09"
     }, 
     {
       "id": "uk.parliament.data/Member/1727/GovernmentPost/930", 
@@ -57131,7 +57158,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13145", 
       "organization_id": "intellectual-property-unjustified-threats-bill-hl-special-public-bill-committee", 
-      "start_date": "2016-09-13"
+      "start_date": "2016-09-13", 
+      "end_date": "2016-11-09"
     }, 
     {
       "id": "uk.parliament.data/Member/2105/Committee/192", 
@@ -57376,7 +57404,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13152", 
       "organization_id": "intellectual-property-unjustified-threats-bill-hl-special-public-bill-committee", 
-      "start_date": "2016-09-13"
+      "start_date": "2016-09-13", 
+      "end_date": "2016-11-09"
     }, 
     {
       "id": "uk.parliament.data/Member/2147/Committee/363", 
@@ -62747,7 +62776,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13301", 
       "organization_id": "intellectual-property-unjustified-threats-bill-hl-special-public-bill-committee", 
-      "start_date": "2016-09-13"
+      "start_date": "2016-09-13", 
+      "end_date": "2016-11-09"
     }, 
     {
       "id": "uk.parliament.data/Member/1879/Committee/94", 
@@ -65963,7 +65993,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13427", 
       "organization_id": "intellectual-property-unjustified-threats-bill-hl-special-public-bill-committee", 
-      "start_date": "2016-09-13"
+      "start_date": "2016-09-13", 
+      "end_date": "2016-11-09"
     }, 
     {
       "id": "uk.parliament.data/Member/3169/Committee/93", 
@@ -86958,6 +86989,14 @@
       "end_date": "2015-10-26"
     }, 
     {
+      "id": "uk.parliament.data/Member/4139/OppositionPost/1313", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Campaigns and Elections Chair", 
+      "person_id": "uk.org.publicwhip/person/24963", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-02-11"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4139/OppositionPost/1321", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister (Cabinet Office) (Trade Unions and Civil Society)", 
@@ -87766,7 +87805,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24999", 
       "organization_id": "intellectual-property-unjustified-threats-bill-hl-special-public-bill-committee", 
-      "start_date": "2016-09-13"
+      "start_date": "2016-09-13", 
+      "end_date": "2016-11-09"
     }, 
     {
       "id": "uk.parliament.data/Member/4175/OppositionPost/1340", 
@@ -89386,7 +89426,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25071", 
       "organization_id": "intellectual-property-unjustified-threats-bill-hl-special-public-bill-committee", 
-      "start_date": "2016-09-13"
+      "start_date": "2016-09-13", 
+      "end_date": "2016-11-09"
     }, 
     {
       "id": "uk.parliament.data/Member/4244/OppositionPost/10", 
@@ -90366,15 +90407,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25205", 
       "organization_id": "intellectual-property-unjustified-threats-bill-hl-special-public-bill-committee", 
-      "start_date": "2016-09-13"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/4284/GovernmentPost/1069", 
-      "source": "datadotparl/governmentpost", 
-      "role": "The Commercial Secretary to the Treasury", 
-      "person_id": "uk.org.publicwhip/person/25205", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2016-12-21"
+      "start_date": "2016-09-13", 
+      "end_date": "2016-11-09"
     }, 
     {
       "id": "uk.parliament.data/Member/4284/GovernmentPost/1175", 
@@ -90384,6 +90418,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2016-07-17", 
       "end_date": "2016-12-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4284/GovernmentPost/1196", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Commercial Secretary to the Treasury", 
+      "person_id": "uk.org.publicwhip/person/25205", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-12-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4284/GovernmentPost/921", 
@@ -90631,7 +90673,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25235", 
       "organization_id": "intellectual-property-unjustified-threats-bill-hl-special-public-bill-committee", 
-      "start_date": "2016-09-13"
+      "start_date": "2016-09-13", 
+      "end_date": "2016-11-09"
     }, 
     {
       "id": "uk.parliament.data/Member/4335/GovernmentPost/72", 
@@ -94005,7 +94048,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25476", 
       "organization_id": "intellectual-property-unjustified-threats-bill-hl-special-public-bill-committee", 
-      "start_date": "2016-09-13"
+      "start_date": "2016-09-13", 
+      "end_date": "2016-11-09"
     }, 
     {
       "id": "uk.parliament.data/Member/4559/Committee/175", 
