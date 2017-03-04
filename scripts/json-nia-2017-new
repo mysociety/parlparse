@@ -1,0 +1,97 @@
+#!/usr/bin/env python
+
+import os
+from bs4 import BeautifulSoup
+import requests
+import requests_cache
+
+from popolo import Popolo
+from popolo.utils import new_id
+
+URL = 'http://www.bbc.co.uk/news/politics/northern-ireland-constituencies/N060000%02d'
+# Manual overrides
+PARTY_FIXES = {
+    'democratic-unionist': 'dup',
+    'sdlp': 'social-democratic-and-labour-party',
+    u'sinn-f\xe9in': 'sinn-fein',
+    'ulster-unionist': 'uup',
+}
+NAME_FIXES = {
+    'Chris Hazzard': 'Christopher Hazzard',
+    u'Sin\xe9ad Bradley': 'Sinead Bradley',
+    'Stephen Aiken': 'Steve Aiken',
+    u'Se\xe1n Lynch': 'Sean Lynch',
+}
+
+# Set up requests cache
+cache_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cache')
+requests_cache.install_cache(cache_path, expire_after=60*10)
+
+data = Popolo()
+
+# Map from area name to post ID
+AREA_NAME_TO_POST = {post['area']['name']: post['id'] for post in data.posts.values() if 'NI' in post['id']}
+# List of all memberships of NIA we already have
+MSHIPS = data.memberships.in_org('northern-ireland-assembly')
+# IDs to start working from for adding new entries
+max_mship_id = data.max_mla_id()
+max_person_id = data.max_person_id()
+
+for i in range(1, 18+1):
+    # Get data out of HTML
+    soup = BeautifulSoup(requests.get(URL % i).text)
+    cons = soup.find('h1').string.replace('&', 'and')
+    summary = soup.find(id='ni2017_constituency_summary')
+    rows = summary.findAll(class_='results-table__body-row')
+    for row in rows:
+        typ = row.find(
+            class_='results-table__body-item--ni-summary').find(
+            class_='results-table__body-text').string
+        party = row.find(class_='results-table__party-name--long').string.strip()
+        name = row.find(
+            class_='results-table__body-item--candidate-ni-summary').find(
+            class_='results-table__body-text').string.strip()
+
+        # Ignore rows we don't care about, and canonicalise those we do
+        if typ != 'Elected':
+            continue
+        party = party.replace(' Party', '').lower().replace(' ', '-')
+        party = PARTY_FIXES.get(party, party)
+        name = NAME_FIXES.get(name, name)
+
+        # We only want to match people with the same name and who have been MLAs
+        people = [p for p in data.persons.values() if data.names[p['id']] == name and len(MSHIPS.of_person(p['id']))]
+        if name == 'Mark H Durkan':  # Otherwise two Mark Durkans to confuse
+            people = [{'id': 'uk.org.publicwhip/person/25143'}]
+        assert len(people) < 2
+
+        # Existing or new person
+        if len(people):
+            person = people[0]
+        else:
+            max_person_id = new_id(max_person_id)
+            given, family = name.split(' ')
+            person = {
+                "id": max_person_id,
+                "other_names": [ {
+                    "family_name": family,
+                    "given_name": given,
+                    "note": "Main"
+                } ]
+            }
+            data.add_person(person)
+
+        # Create new membership
+        max_mship_id = new_id(max_mship_id)
+        mship = {
+            "id": max_mship_id,
+            'on_behalf_of_id': party,
+            'person_id': person['id'],
+            'post_id': AREA_NAME_TO_POST[cons],
+            "start_date": "2017-03-03",
+            "start_reason": "regional_election"
+        }
+        print cons, name, mship['on_behalf_of_id'], mship['person_id']
+        data.add_membership(mship)
+
+data.dump()
