@@ -617,6 +617,15 @@ class BaseParseDayXML(object):
 
         p.text = re.sub('\n', ' ', text)
         tag.append(p)
+
+        if len(para) > 1:
+            for p in para:
+                text = self.get_single_line_text_from_element(p)
+                if text != '':
+                    p = etree.Element('p')
+                    p.text = re.sub('\n', ' ', text)
+                    tag.append(p)
+
         self.root.append(tag)
 
     def parse_indent(self, tag):
