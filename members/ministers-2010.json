@@ -6830,6 +6830,14 @@
       "end_date": "2010-05-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/366/ParliamentaryPost/776", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Father of the House of Commons", 
+      "person_id": "uk.org.publicwhip/person/10115", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-02-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/583/Committee/136", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10116", 
@@ -17516,7 +17524,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10327", 
       "organization_id": "speakers-committee-on-the-electoral-commission", 
-      "start_date": "2003-01-01"
+      "start_date": "2003-01-01", 
+      "end_date": "2017-02-26"
     }, 
     {
       "id": "uk.parliament.data/Member/451/Committee/23", 
@@ -17587,7 +17596,8 @@
       "role": "Father of the House of Commons", 
       "person_id": "uk.org.publicwhip/person/10327", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-07"
+      "start_date": "2015-05-07", 
+      "end_date": "2017-02-26"
     }, 
     {
       "id": "uk.parliament.data/Member/451/ParliamentaryPost/803", 
@@ -24971,6 +24981,15 @@
       "organization_id": "house-of-commons", 
       "start_date": "2001-06-11", 
       "end_date": "2002-05-28"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/302/GovernmentPost/205", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Northern Ireland Office", 
+      "person_id": "uk.org.publicwhip/person/10511", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2005-05-09", 
+      "end_date": "2007-06-27"
     }, 
     {
       "id": "uk.parliament.data/Member/302/GovernmentPost/311", 
@@ -63139,6 +63158,14 @@
       "end_date": "2004-11-18"
     }, 
     {
+      "id": "uk.parliament.data/Member/2503/OppositionPost/1073", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Spokesperson (Equalities and Women's Issues)", 
+      "person_id": "uk.org.publicwhip/person/13310", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-01-09"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2503/OppositionPost/977", 
       "source": "datadotparl/oppositionpost", 
       "role": "Opposition Whip (Lords)", 
@@ -87317,7 +87344,8 @@
       "role": "Shadow Spokesperson (Equalities and Women's Issues)", 
       "person_id": "uk.org.publicwhip/person/24973", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-09-18"
+      "start_date": "2015-09-18", 
+      "end_date": "2017-01-09"
     }, 
     {
       "id": "uk.parliament.data/Member/4159/OppositionPost/1340", 
@@ -89323,7 +89351,8 @@
       "role": "Shadow Spokesperson (Wales)", 
       "person_id": "uk.org.publicwhip/person/25063", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-10-01"
+      "start_date": "2016-10-01", 
+      "end_date": "2017-01-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4226/OppositionPost/995/1", 
@@ -92338,7 +92367,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25343", 
       "organization_id": "women-and-equalities-committee", 
-      "start_date": "2015-07-06"
+      "start_date": "2015-07-06", 
+      "end_date": "2017-02-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4389/OppositionPost/1177", 
@@ -93779,7 +93809,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25434", 
       "organization_id": "procedure-committee", 
-      "start_date": "2016-02-01"
+      "start_date": "2016-02-01", 
+      "end_date": "2017-02-28"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4472/Committee/328", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25434", 
+      "organization_id": "women-and-equalities-committee", 
+      "start_date": "2017-02-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4472/Committee/62", 
@@ -94209,6 +94247,13 @@
       "organization_id": "justice-committee", 
       "start_date": "2016-06-13", 
       "end_date": "2016-10-31"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4572/Committee/126", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25490", 
+      "organization_id": "procedure-committee", 
+      "start_date": "2017-02-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4572/Committee/162", 
