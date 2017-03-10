@@ -22,7 +22,7 @@ wikimembers  = {}
 def read(y):
     with open('../rawdata/Members_of_the_NIA_%d' % y) as ur:
         return ur.read()
-content = read(2003) + read(2007) + read(2011) + read(2016)
+content = read(2003) + read(2007) + read(2011) + read(2016) + read(2017)
 
 matches = set()
 
@@ -63,10 +63,7 @@ for id in k:
 print '</publicwhip>'
 
 wikimembers = set(wikimembers.keys())
-allmembers = set(memberList.list())
-for d in ('2004-01-01', '2007-01-10', '2011-01-01', '2015-01-01', '2016-01-01', '2016-02-01'):
-    allmembers |= set(memberList.list(d))
-
+allmembers = set(memberList.list(fro='2004-01-01'))
 symdiff = allmembers.symmetric_difference(wikimembers)
 if len(symdiff) > 0:
     print >>sys.stderr, "Failed to get all MLAs, these ones in symmetric difference"

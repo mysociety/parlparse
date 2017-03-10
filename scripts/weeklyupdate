@@ -27,6 +27,7 @@ curl -s "https://en.wikipedia.org/wiki/Members_of_the_2nd_Northern_Ireland_Assem
 curl -s "https://en.wikipedia.org/wiki/Members_of_the_3rd_Northern_Ireland_Assembly" > Members_of_the_NIA_2007
 curl -s "https://en.wikipedia.org/wiki/Members_of_the_4th_Northern_Ireland_Assembly" > Members_of_the_NIA_2011
 curl -s "https://en.wikipedia.org/wiki/Members_of_the_5th_Northern_Ireland_Assembly" > Members_of_the_NIA_2016
+curl -s "https://en.wikipedia.org/wiki/Members_of_the_6th_Northern_Ireland_Assembly" > Members_of_the_NIA_2017
 curl -s "https://en.wikipedia.org/wiki/4th_Scottish_Parliament" > Members_of_the_4th_Scottish_Parliament
 curl -s "https://en.wikipedia.org/wiki/5th_Scottish_Parliament" > Members_of_the_5th_Scottish_Parliament
 # curl -s "https://en.wikipedia.org/wiki/MPs_standing_down_in_the_United_Kingdom_general_election,_2010" > MPs_standing_down_in_2010
