@@ -606,23 +606,38 @@ class BaseParseDayXML(object):
         tag.set('colnum', self.current_col)
         tag.set('time', self.current_time)
 
-        para = question.xpath('.//ns:hs_Para', namespaces=self.ns_map)
-        tag.set('url', self.get_speech_url(para[0].get('url')))
+        first_para = question.xpath('.//ns:hs_Para', namespaces=self.ns_map)[0]
+        tag.set('url', self.get_speech_url(first_para.get('url')))
+        self.mark_seen(first_para)
 
         p = etree.Element('p')
         p.set('pid', self.get_pid())
         uin = question.xpath('.//ns:Uin', namespaces=self.ns_map)
-        if len(uin) == 1:
+        if len(uin) > 0:
+            self.mark_seen(uin[0])
             uin_text = u''.join(uin[0].xpath('.//text()'))
             m = re.match('\[\s*(\d+)\s*\]', uin_text)
             if m is not None:
                 no = m.groups(1)[0]
                 p.set('qnum', no)
 
-        text = question.xpath(
+        # sometimes there are mutiple question numbers and it seems
+        # to be accidental so this is just checking that and also
+        # marking the additional ones as processed.
+        if len(uin) > 0 and len(uin) != 1:
+            uin_text = u''.join(uin[0].xpath('.//text()'))
+            for u in uin:
+                text = u''.join(u.xpath('.//text()'))
+                if text and text != uin_text:
+                    raise Exception('Multiple numbers for a question')
+                self.mark_seen(u)
+
+        text = first_para.xpath(
             './/ns:QuestionText/text()', namespaces=self.ns_map
         )
         text = u''.join(text)
+        self.mark_xpath_seen(first_para, './/ns:QuestionText')
+
         """
         sometimes the question text is after the tag rather
         than inside it in which case we want to grab all the
@@ -639,7 +654,7 @@ class BaseParseDayXML(object):
         </hs_Para></Question>
         """
         if text == '':
-            q_text = question.xpath(
+            q_text = first_para.xpath(
                 './/ns:QuestionText/following-sibling::text()',
                 namespaces=self.ns_map
             )
@@ -648,16 +663,17 @@ class BaseParseDayXML(object):
 
         p.text = re.sub('\n', ' ', text)
         tag.append(p)
-
-        if len(para) > 1:
-            for p in para:
-                text = self.get_single_line_text_from_element(p)
-                if text != '':
-                    p = etree.Element('p')
-                    p.text = re.sub('\n', ' ', text)
-                    tag.append(p)
-
         self.root.append(tag)
+
+        # and sometimes there is more question text in following siblings
+        # so we need to handle those too
+        following_tags = first_para.xpath(
+            './following-sibling::*',
+            namespaces=self.ns_map
+        )
+        for t in following_tags:
+            tag_name = self.get_tag_name_no_ns(t)
+            self.handle_tag(tag_name, t)
 
     def parse_indent(self, tag):
         self.parse_para_with_member(tag, None, css_class='indent')
