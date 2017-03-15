@@ -1679,6 +1679,10 @@ class LordsParseDayXML(BaseParseDayXML):
         self.mark_seen(heading)
 
     def parse_division(self, division):
+        time = division.xpath('.//ns:hs_time', namespaces=self.ns_map)
+        if len(time):
+            self.parse_time(time[0])
+
         ayes_count = \
             division.xpath('.//ns:ContentsNumber/text()', namespaces=self.ns_map)
         noes_count = \
