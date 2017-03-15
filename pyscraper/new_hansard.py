@@ -72,6 +72,7 @@ class LordsPimsList(LordsList):
 class BaseParseDayXML(object):
     input_root = None
     resolver = PimsList()
+    seen_elements = set()
 
     type_to_xpath = {
         'debate': (
@@ -209,6 +210,25 @@ class BaseParseDayXML(object):
             is_pre = True
 
         return is_pre
+
+    def mark_seen(self, tag):
+        if tag.get('UID'):
+            if tag.get('UID') == '17020192000008':
+                print('17020192000010')
+            self.seen_elements.add(tag.get('UID'))
+
+        if tag.get('HRSContentId'):
+            self.seen_elements.add(tag.get('HRSContentId'))
+
+    def mark_xpath_seen(self, tag, xpath):
+        inner = tag.xpath(xpath, namespaces=self.ns_map)
+        if len(inner) > 0:
+            self.mark_seen(inner[0])
+
+    def mark_xpath_all_seen(self, tag, xpath):
+        inner = tag.xpath(xpath, namespaces=self.ns_map)
+        for t in inner:
+            self.mark_seen(t)
 
     def get_tag_name_no_ns(self, tag):
         # remove annoying namespace for brevities sake
@@ -959,6 +979,9 @@ class BaseParseDayXML(object):
         else:
             handled = False
 
+        if handled:
+            self.mark_seen(tag)
+
         return handled
 
     def parse_day(self, xml_file, out):
@@ -1345,6 +1368,9 @@ class PBCParseDayXML(BaseParseDayXML):
         else:
             handled = super(PBCParseDayXML, self).handle_tag(tag_name, tag)
 
+        if handled:
+            self.mark_seen(tag)
+
         return handled
 
     def get_sitting(self, xml_file):
@@ -1626,6 +1652,9 @@ class LordsParseDayXML(BaseParseDayXML):
             self.parse_division(tag)
         else:
             handled = super(LordsParseDayXML, self).handle_tag(tag_name, tag)
+
+        if handled:
+            self.mark_seen(tag)
 
         return handled
 
