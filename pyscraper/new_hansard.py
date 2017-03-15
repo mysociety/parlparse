@@ -141,7 +141,6 @@ class BaseParseDayXML(object):
         'hs_AmendmentLevel2',
         'hs_AmendmentLevel3',
         'hs_AmendmentLevel4',
-        'hs_8Clause',
         'hs_newline10',
         'hs_Question',
         'hs_6CntrCapsHdg',
@@ -160,6 +159,7 @@ class BaseParseDayXML(object):
         'hs_TimeCode',
         'hs_6bPetitions',
         'hs_3MainHdg',
+        'hs_8Clause',
         'hs_Venue'
     ]
     root = None
@@ -483,6 +483,23 @@ class BaseParseDayXML(object):
         tag.text = text
         self.root.append(tag)
         self.output_heading = True
+
+        # if there is a clause immediately before then assume it's the clause
+        # we are about to debate and put it in the first speech
+        previous = heading.xpath(
+            './preceding-sibling::*',
+            namespaces=self.ns_map
+        )
+        if len(previous):
+            clause = previous[-1]
+            if self.get_tag_name_no_ns(clause) == 'hs_8Clause':
+                self.mark_seen(clause)
+                text = self.get_single_line_text_from_element(clause)
+                if self.current_speech is None:
+                    self.new_speech(None, clause.get('url'))
+                clause_tag = etree.Element('p')
+                clause_tag.text = text
+                self.current_speech.append(clause_tag)
 
     def parse_generic(self, heading):
         if self.next_speech_num == 0:
@@ -1189,6 +1206,7 @@ class PBCParseDayXML(BaseParseDayXML):
     ignored_tags = [
         'hs_CLHeading',
         'hs_CLAttended',
+        'hs_8Clause',
         'hs_6fCntrItalHdg',
     ]
 
