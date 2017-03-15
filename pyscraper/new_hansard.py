@@ -112,6 +112,7 @@ class BaseParseDayXML(object):
         'hs_6bBillsPresented', # FIXME should grab text of following tag
         'hs_6fCntrItalHdg',
         'hs_2cSO24Application',
+        'hs_2cDebatedMotion',
     ]
     chair_headings = [
         'hs_76fChair',
@@ -126,7 +127,6 @@ class BaseParseDayXML(object):
         'hs_6bcBigBoldHdg',
     ]
     generic_headings = [
-        'hs_2cDebatedMotion',
         'hs_2cGenericHdg',
         'hs_2GenericHdg',
     ]
