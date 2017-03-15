@@ -1029,6 +1029,16 @@ class BaseParseDayXML(object):
         # make sure we add any outstanding speech.
         self.clear_current_speech()
 
+        all_IDS = set(
+            self.input_root[0].xpath(
+                './/@UID|.//@HRSContentId'
+                )
+        )
+        diff = all_IDS.difference(self.seen_elements)
+        if len(diff) > 0:
+            raise Exception(
+                'missed some elements', diff
+                )
         return True
 
     def get_date(self, xml_file):
