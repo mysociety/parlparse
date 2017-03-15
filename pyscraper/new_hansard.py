@@ -1656,12 +1656,17 @@ class LordsParseDayXML(BaseParseDayXML):
         )
 
     def parse_amendment(self, amendment):
-        self.parse_para_with_member(
-            amendment,
-            None,
-            css_class='italic',
-            pwmotiontext='unrecognized'
-        )
+        # Amendments are often things like:
+        #
+        # <Amendment><hs_quote><B>54:</B>
+        # Clause 67, page 30, line 9, leave out “high” and insert
+        # “higher”</hs_quote></Amendment>
+        #
+        # so we need to parse the tags to make sure we get the
+        # indenting etc
+        for tag in amendment.getchildren():
+            tag_name = self.get_tag_name_no_ns(tag)
+            self.handle_tag(tag_name, tag)
 
     def parse_clause_heading(self, heading):
         tag = etree.Element('p')
