@@ -1751,13 +1751,13 @@ class LordsParseDayXML(BaseParseDayXML):
 
         self.root.append(tag)
 
-        paras = division.xpath('./ns:hs_Procedure', namespaces=self.ns_map)
+        paras = division.xpath('./ns:hs_Procedure | ./ns:hs_para', namespaces=self.ns_map)
         for para in paras:
             text = u''.join(para.xpath('.//text()'))
-            if re.search(r'Contents', text) or \
-                    re.search(r'Division\s*on', text):
+            if re.search(r'Contents', text):
+                self.mark_seen(para)
                 continue
-            self.parse_para(para)
+            self.parse_para_with_member(para, None)
 
     def parse_votelist(self, votes, direction, vote_list):
         for vote in votes:
