@@ -1615,10 +1615,6 @@ class LordsParseDayXML(BaseParseDayXML):
             sys.stderr.write('newdebate with no heading', namespaces=self.ns_map)
             return
 
-        #procedure = tag.xpath('.//ns:hs_Procedure', namespaces=self.ns_map)
-        #if len(procedure) == 1:
-        #    self.handle_para(procedure[0])
-
         want_member = tag.get('BusinessType') in ('Question', 'GeneralDebate')
 
         member = None
@@ -1635,6 +1631,16 @@ class LordsParseDayXML(BaseParseDayXML):
         questions = tag.xpath('.//ns:hs_Question', namespaces=self.ns_map)
         for question in questions:
             self.parse_para_with_member(question, member if want_member else None)
+
+        # put in the rest of the headings as paragraphs at the start
+        heading = tag.xpath('.//ns:hs_DebateHeading | .//ns:hs_Procedure', namespaces=self.ns_map)
+        if len(heading) > 1:
+            for h in heading[1:]:
+                self.handle_tag('hs_para', h)
+
+        paras = tag.xpath('.//ns:hs_para', namespaces=self.ns_map)
+        for para in paras:
+            self.handle_tag('hs_para', para)
 
     def parse_amendment_heading(self, heading):
         self.new_speech(None, heading.get('url'))
