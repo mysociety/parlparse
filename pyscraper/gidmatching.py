@@ -65,7 +65,7 @@ def PrepareXMLForDiff(scrapeversion):
 				if m:
 					para = m.group(1)
 				else:
-					assert re.match("\s*</?(?:table|tbody|thead|caption|divisioncount|mplist|mpname|lordlist|lord)", ps)
+					assert re.match("\s*</?(?:table|tbody|thead|caption|divisioncount|mplist|mpname|lordlist|lord|tr|td)", ps)
 					para = ps
 				essxlist.extend(re.findall("<[^>]*>|&\w+;|[^<>\s]+", para))
 
