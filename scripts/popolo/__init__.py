@@ -64,6 +64,7 @@ class Popolo(object):
         self.orgs = {o['name']: o['id'] for o in j['organizations']}
         self.memberships = Memberships(j['memberships'], self)
         self.names = {}
+        self.identifiers = {}
 
         for p in self.persons.values():
             names = [n for n in p['other_names'] if n['note'] == 'Main']
@@ -79,6 +80,9 @@ class Popolo(object):
                 if 'given_name' in n:
                     name = n['given_name'] + ' ' + name
             self.names[p['id']] = name
+
+            for i in p.get('identifiers', []):
+                self.identifiers.setdefault(i['scheme'], {})[i['identifier']] = p
 
     def get_person(self, id=None, name=None):
         if name:

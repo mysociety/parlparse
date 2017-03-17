@@ -1,0 +1,128 @@
+#!/usr/bin/env python
+
+import re
+import urllib2
+from lxml import etree
+from popolo import Popolo
+from popolo.utils import new_id
+
+parser = etree.ETCompatXMLParser()
+etree.set_default_parser(parser)
+
+data = Popolo()
+
+parl_ids = {}
+for person in data.persons.values():
+    for i in person.get('identifiers', []):
+        if i['scheme'] == 'datadotparl_id':
+            parl_ids[person['id']] = i['identifier']
+
+
+def canon_name(n):
+    n = re.sub(' St\. +', ' St ', n)
+    n = re.sub('^The ', '', n)
+    n = re.sub(' De ', ' de ', n)
+    n = re.sub('Lord (Archb|B)ishop ', r'\1ishop ', n)
+    return n
+
+
+LORDS_URL = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Lords/BasicDetails'
+parl_members = etree.parse(urllib2.urlopen(LORDS_URL)).getroot()
+
+lord_match = re.compile('^([^\s]*)\s+(.*?)(?:\s+of\s+(.*))?$')
+
+party_map = {
+    'Liberal Democrats': 'liberal-democrat',
+    'Conservative': 'conservative',
+    'Crossbench': 'crossbench',
+    'Labour': 'labour',
+    'Bishops': 'bishop'
+}
+
+type_map = {
+    'Life peer': 'L',
+    'Excepted Hereditary': 'HP',
+    'Bishops': 'B'
+}
+
+new_people = False
+parl_by_name = {}
+person_id = data.max_person_id()
+for member in parl_members:
+    end_date = member.find('HouseEndDate').text or ''
+    end_date = end_date.replace('T00:00:00', '')
+    if end_date and end_date < '1999-11-12':
+        continue
+    name = canon_name(member.find('DisplayAs').text)
+    if not data.get_person(name=name):
+        if member.attrib['Pims_Id'] not in data.identifiers['pims_id']:
+            print "{} is a new Lord".format(name)
+            person_id = new_id(person_id)
+            lord_id = new_id(data.max_lord_id())
+
+            given_name = member.find('BasicDetails/GivenForename').text
+            middle_names = member.find('BasicDetails/GivenMiddleNames').text
+            surname = member.find('BasicDetails/GivenSurname').text
+
+            title_parts = lord_match.search(member.find('DisplayAs').text)
+            prefix = title_parts.group(1)
+            lordname = title_parts.group(2)
+            lordof = title_parts.group(3) or ''
+
+            lord_type = type_map[member.find('MemberFrom').text]
+            party = party_map[member.find('Party').text]
+            start_date = re.sub('T.*$', '', member.find('HouseStartDate').text)
+
+            name = {
+                'given_name': given_name,
+                'honorific_prefix': prefix,
+                'lordname': lordname,
+                'lordofname': lordof,
+                'lordofname_full': '',
+                'county': '',
+                'start_date': '',
+                'note': 'Main',
+            }
+            if middle_names:
+                name['additional_name'] = middle_names
+            if surname and surname != lordname:
+                name['surname'] = surname
+
+            ids = [
+                {
+                    'scheme': 'pims_id',
+                    'identifier': member.attrib['Pims_Id']
+                }
+            ]
+
+            person = {
+                'id': person_id,
+                'identifiers': ids,
+                'other_names': [name]
+            }
+
+            membership = {
+                'id': lord_id,
+                'identifiers': [{
+                    'identifier': lord_type,
+                    'scheme': 'peeragetype'
+                }],
+                'label': 'Peer',
+                'on_behalf_of_id': party,
+                'organization_id': 'house-of-lords',
+                'person_id': person_id,
+                'role': 'Peer',
+                'start_date': start_date
+            }
+
+            if not membership['start_date'] or not membership['on_behalf_of_id']:
+                sys.exit()
+
+            data.add_person(person)
+            data.add_membership(membership)
+            new_people = True
+        else:
+            print "{} is a Lord who might be new ({})".format(name, member.attrib['Pims_Id'])
+
+if new_people:
+    data.dump()

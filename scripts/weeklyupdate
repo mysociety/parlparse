@@ -13,6 +13,7 @@ cd ~/parlparse/scripts/datadotparl
 # fetch details of scottish ministers
 cd ~/parlparse/scripts
 ./fetch_scottish_ministers.py
+./add-new-lords
 
 # Run member scrapers
 # TODO: add more, write to temp file, check errors
