@@ -885,6 +885,21 @@ class BaseParseDayXML(object):
                 continue
             self.parse_para(para)
 
+        # FIXME - we should actually store the numbers
+        england_tags = division.xpath('./ns:EnglandWales/ns:hs_Para/* | ./ns:England/ns:hs_Para/*', namespaces=self.ns_map)
+        if len(england_tags):
+            self.mark_xpath_all_seen(division, './ns:EnglandWales | ./ns:England')
+            self.mark_xpath_all_seen(division, './ns:EnglandWales/ns:hs_Para | ./ns:England/ns:hs_Para')
+            details = etree.Element('p')
+            text = ''
+            for england_tag in england_tags:
+                self.mark_seen(england_tag)
+                content = tag.text
+                if content:
+                    text += content
+            details.text = text
+            self.current_speech.append(details)
+
     def parse_time(self, tag):
         self.mark_seen(tag)
         time_txt = u''.join(tag.xpath('.//text()'))
