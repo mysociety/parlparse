@@ -882,6 +882,14 @@ class BaseParseDayXML(object):
             if re.search(r'House\s*divided', text) or \
                     re.search(r'Committee\s*divided', text) or \
                     re.search(r'Division\s*No', text):
+                self.mark_seen(para)
+                for tag in para:
+                    tag_name = self.get_tag_name_no_ns(tag)
+                    if tag_name == 'Right':
+                        times = tag.xpath('.//ns:Time', namespaces=self.ns_map)
+                        if len(times) > 0:
+                            self.parse_time(times[0])
+                    self.mark_seen(tag)
                 continue
             self.parse_para(para)
 
