@@ -426,6 +426,12 @@ class BaseParseDayXML(object):
 
     def parse_major(self, heading, **kwargs):
         text = self.get_text_from_element(heading)
+
+        # housekeeping for making sure we see all the elements
+        departments = heading.xpath('.//ns:DepartmentName', namespaces=self.ns_map)
+        for department in departments:
+            self.mark_seen(department)
+
         if text.strip() == 'Prayers':
             return
         self.clear_current_speech()
@@ -594,6 +600,7 @@ class BaseParseDayXML(object):
             question.xpath('.//ns:Number/text()', namespaces=self.ns_map)
         )
         if number != '':
+            self.mark_xpath_seen(question, './/ns:Number')
             tag.set('oral-qnum', number)
 
         tag.set('colnum', self.current_col)
@@ -793,6 +800,8 @@ class BaseParseDayXML(object):
         div_number = \
             division.xpath('.//ns:Number/text()', namespaces=self.ns_map)
 
+        self.mark_xpath_seen(division, './/ns:Number')
+
         tag.set('divnumber', u''.join(div_number))
         tag.set('colnum', self.current_col)
         tag.set('time', self.current_time)
@@ -821,6 +830,9 @@ class BaseParseDayXML(object):
             division.xpath('./ns:hs_Para/ns:AyesNumber/text()', namespaces=self.ns_map)
         noes_count = \
             division.xpath('./ns:hs_Para/ns:NoesNumber/text()', namespaces=self.ns_map)
+
+        self.mark_xpath_seen(division, './ns:hs_Para/ns:NoesNumber')
+        self.mark_xpath_seen(division, './ns:hs_Para/ns:AyesNumber')
 
         ayes_count_text = u''.join(ayes_count)
         noes_count_text = u''.join(noes_count)
@@ -861,6 +873,22 @@ class BaseParseDayXML(object):
         noe_tellers = division.xpath(
             './/ns:TellerNamesNoes//ns:Member', namespaces=self.ns_map
         )
+
+        # count the various bits of structure as seen for later
+        structure = division.xpath(
+            './/*[ns:NamesAyes or ns:NamesNoes or ns:TellerNamesNoes or ns:TellerNamesAyes]//ns:hs_Para',
+            namespaces=self.ns_map
+        )
+        columns = division.xpath('.//ns:TwoColumn', namespaces=self.ns_map)
+        structure.extend(columns)
+        wrappers = division.xpath(
+            './/ns:NamesAyes | .//ns:NamesNoes | .//ns:TellerNamesNoes | .//ns:TellerNamesAyes',
+            namespaces=self.ns_map
+        )
+        structure.extend(wrappers)
+
+        for s in structure:
+            self.mark_seen(s)
 
         aye_list = etree.Element('mplist')
         aye_list.set('vote', 'aye')
@@ -1325,6 +1353,8 @@ class PBCParseDayXML(BaseParseDayXML):
         div_number = \
             division.xpath('.//ns:Number/text()', namespaces=self.ns_map)
 
+        self.mark_xpath_seen(division, './/ns:Number')
+
         tag.set('id', self.get_speech_id())
         tag.set('divnumber', u''.join(div_number))
         tag.set('ayes', yes_text)
@@ -1524,6 +1554,18 @@ class LordsParseDayXML(BaseParseDayXML):
 
         heading = tag.xpath('.//ns:hs_DebateHeading', namespaces=self.ns_map)
         debate_type = tag.xpath('.//ns:hs_DebateType', namespaces=self.ns_map)
+        self.mark_xpath_seen(tag, './/ns:hs_DebateHeading')
+        # TODO: sometimes there is a link to the bill
+        self.mark_xpath_seen(tag, './/ns:hs_DebateHeading/ns:a')
+        self.mark_xpath_seen(tag, './/ns:hs_DebateType')
+
+        # This seems to happen occasionally and it's just filler to throw away
+        amendment = tag.xpath('.//ns:hs_AmendmentHeading', namespaces=self.ns_map)
+        if len(amendment) > 0:
+            text = self.get_single_line_text_from_element(amendment[0])
+            if text == 'Motion':
+                self.mark_seen(amendment[0])
+
         if len(heading):
             if len(debate_type):
                 text = self.get_single_line_text_from_element(debate_type[0])
@@ -1545,8 +1587,10 @@ class LordsParseDayXML(BaseParseDayXML):
         if len(member_tags):
             if want_member:
                 member = self.parse_member(member_tags[0])
+                self.mark_xpath_seen(tag, './/ns:hs_TabledBy')
             else:
                 tabledby_tags = tag.xpath('.//ns:hs_TabledBy', namespaces=self.ns_map)
+                self.mark_seen(tabledby_tags[0])
                 self.parse_para_with_member(tabledby_tags[0], None, css_class='italic', strip_member=False)
 
         questions = tag.xpath('.//ns:hs_Question', namespaces=self.ns_map)
@@ -1595,6 +1639,9 @@ class LordsParseDayXML(BaseParseDayXML):
         noes_count = \
             division.xpath('.//ns:NotContentsNumber/text()', namespaces=self.ns_map)
 
+        self.mark_xpath_seen(division, './/ns:ContentsNumber')
+        self.mark_xpath_seen(division, './/ns:NotContentsNumber')
+
         ayes_count_text = u''.join(ayes_count)
         noes_count_text = u''.join(noes_count)
 
@@ -1618,6 +1665,9 @@ class LordsParseDayXML(BaseParseDayXML):
         div_number = \
             division.xpath('.//ns:DivisionNumber/text()', namespaces=self.ns_map)
 
+        self.mark_xpath_seen(division, './/ns:DivisionNumber')
+        self.mark_xpath_seen(division, './/ns:hs_DivNo')
+
         tag.set('divnumber', u''.join(div_number))
         tag.set('colnum', self.current_col)
         tag.set('time', self.current_time)
@@ -1634,6 +1684,11 @@ class LordsParseDayXML(BaseParseDayXML):
         noes = division.xpath(
             './/ns:NamesNotContents//ns:hs_DivListNames', namespaces=self.ns_map
         )
+        self.mark_xpath_all_seen(division, './/ns:hs_DivListHead')
+        self.mark_xpath_seen(division, './/ns:NamesNotContents')
+        self.mark_xpath_seen(division, './/ns:NamesContents')
+        self.mark_xpath_seen(division, './/ns:NamesNotContents//ns:hs_DivListNames')
+        self.mark_xpath_seen(division, './/ns:NamesContents//ns:hs_DivListNames')
 
         aye_list = etree.Element('lordlist')
         aye_list.set('vote', 'content')
