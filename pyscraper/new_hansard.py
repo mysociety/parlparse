@@ -339,6 +339,7 @@ class BaseParseDayXML(object):
             member_tag = tag
 
         if member_tag is not None:
+            self.mark_seen(member_tag)
             if member_tag.get('PimsId') == '-1':
                 return self.handle_minus_member(member_tag)
             if member_tag.get('PimsId') == '0':
@@ -530,6 +531,7 @@ class BaseParseDayXML(object):
         )
         text = ''
         if len(following) == 1:
+            self.mark_seen(following[0])
             text = u' - '.join([
                 self.get_single_line_text_from_element(motion),
                 self.get_single_line_text_from_element(following[0])
@@ -558,6 +560,7 @@ class BaseParseDayXML(object):
             namespaces=self.ns_map
         )
         if len(chair) == 1:
+            self.mark_seen(chair[0])
             chair_text = self.get_single_line_text_from_element(chair[0])
             text = u'\n{0} — {1}\n'.format(text, chair_text)
 
@@ -581,6 +584,7 @@ class BaseParseDayXML(object):
         tag.set('id', self.get_speech_id())
 
         member = question.xpath('.//ns:Member', namespaces=self.ns_map)[0]
+        self.mark_seen(member)
         member = self.parse_member(member)
         if member is not None:
             tag.set('person_id', member['person_id'])
@@ -682,6 +686,7 @@ class BaseParseDayXML(object):
         if member is not None:
             self.new_speech(member, para.get('url'))
         elif members:
+            self.mark_seen(members[0])
             m_name = None
             bs = members[0].xpath('./ns:B', namespaces=self.ns_map)
             if len(bs) == 1:
@@ -716,6 +721,7 @@ class BaseParseDayXML(object):
         if 'pwmotiontext' in kwargs:
             tag.set('pwmotiontext', kwargs['pwmotiontext'])
 
+        self.mark_seen(para)
         self.current_speech.append(tag)
 
     # TODO: this needs to parse out the various things that filtersentence
@@ -723,8 +729,10 @@ class BaseParseDayXML(object):
     # it will need to be a port of that to create proper XML elements
     # using etree
     def parse_para(self, para):
+        self.mark_seen(para)
         member = None
         for tag in para:
+            self.mark_seen(tag)
             tag_name = self.get_tag_name_no_ns(tag)
             if tag_name == 'B' or tag_name == 'Member':
                 member = self.parse_member(tag)
@@ -736,6 +744,7 @@ class BaseParseDayXML(object):
 
     def parse_votelist(self, votes, direction, vote_list, is_teller=False):
         for vote in votes:
+            self.mark_seen(vote)
             tag = etree.Element('mpname')
             member = self.parse_member(vote)
             tag.set('person_id', member['person_id'])
@@ -877,6 +886,7 @@ class BaseParseDayXML(object):
             self.parse_para(para)
 
     def parse_time(self, tag):
+        self.mark_seen(tag)
         time_txt = u''.join(tag.xpath('.//text()'))
         if time_txt == '':
             return
@@ -902,6 +912,7 @@ class BaseParseDayXML(object):
     def parse_procedure(self, procedure):
         tag = etree.Element('p')
         text = self.get_single_line_text_from_element(procedure)
+        self.mark_seen(procedure)
         if len(text) == 0:
             return
 
@@ -1323,9 +1334,11 @@ class PBCParseDayXML(BaseParseDayXML):
         self.parse_para_with_member(brev, None, css_class="indent")
 
     def parse_para(self, para):
+        self.mark_seen(para)
         has_i = False
         has_witness = False
         for tag in para.iter():
+            self.mark_seen(tag)
             tag_name = self.get_tag_name_no_ns(tag)
             if tag_name == 'Witness':
                 has_witness = True
@@ -1472,6 +1485,7 @@ class LordsParseDayXML(BaseParseDayXML):
             # In cases where there are unattributes exclamations then PimsId
             # is set to 0. Often the name will be "Noble Lords" or the like
             if member.get('PimsId') == 0:
+                self.mark_seen(member)
                 found_member = {
                     'person_id': 'unknown',
                     'name': u''.join(member.xpath('.//text()'))
@@ -1480,6 +1494,7 @@ class LordsParseDayXML(BaseParseDayXML):
         return found_member
 
     def parse_newdebate(self, tag):
+        self.mark_seen(tag)
         time = tag.xpath('.//ns:hs_time', namespaces=self.ns_map)
         if len(time):
             self.parse_time(time[0])
@@ -1549,6 +1564,7 @@ class LordsParseDayXML(BaseParseDayXML):
         if self.current_speech is None:
             self.new_speech(None, heading.get('url'))
         self.current_speech.append(tag)
+        self.mark_seen(heading)
 
     def parse_division(self, division):
         ayes_count = \
@@ -1618,6 +1634,7 @@ class LordsParseDayXML(BaseParseDayXML):
 
     def parse_votelist(self, votes, direction, vote_list):
         for vote in votes:
+            self.mark_seen(vote)
             tag = etree.Element('lord')
             member_name = self.get_single_line_text_from_element(vote)
             is_teller = False
