@@ -27247,6 +27247,15 @@
       "end_date": "1990-01-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/270/ParliamentaryPost/1100", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Chair, Parliamentary Office of Science and Technology", 
+      "person_id": "uk.org.publicwhip/person/10560", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1991-04-01", 
+      "end_date": "1993-04-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/270/ParliamentaryPost/757", 
       "source": "datadotparl/parliamentarypost", 
       "role": "Chair, Conservative Party 1922 Committee", 
@@ -40927,7 +40936,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11558", 
       "organization_id": "science-and-technology-committee-commons", 
-      "start_date": "2016-07-18"
+      "start_date": "2016-07-18", 
+      "end_date": "2017-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/1501/Committee/148", 
@@ -44113,7 +44123,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11814", 
       "organization_id": "environment-food-and-rural-affairs-subcommittee", 
-      "start_date": "2016-02-10"
+      "start_date": "2016-02-10", 
+      "end_date": "2017-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/1564/Committee/52", 
@@ -45509,6 +45520,14 @@
       "end_date": "2010-05-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/1586/ParliamentaryPost/1100", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Chair, Parliamentary Office of Science and Technology", 
+      "person_id": "uk.org.publicwhip/person/11929", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2010-11-16"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1587/Committee/158", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11936", 
@@ -46880,6 +46899,13 @@
       "end_date": "2016-05-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/2472/Committee/371", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12847", 
+      "organization_id": "lord-speakers-advisory-panel-on-works-of-art", 
+      "start_date": "2017-03-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2472/Committee/94", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12847", 
@@ -46991,6 +47017,13 @@
       "organization_id": "draft-gambling-bill-joint-committee", 
       "start_date": "2003-09-09", 
       "end_date": "2004-07-22"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2756/Committee/371", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12849", 
+      "organization_id": "lord-speakers-advisory-panel-on-works-of-art", 
+      "start_date": "2017-01-25"
     }, 
     {
       "id": "uk.parliament.data/Member/2752/Committee/176", 
@@ -52817,6 +52850,13 @@
       "end_date": "2016-02-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/3278/Committee/371", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13037", 
+      "organization_id": "lord-speakers-advisory-panel-on-works-of-art", 
+      "start_date": "2017-01-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3278/Committee/94", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13037", 
@@ -56631,6 +56671,14 @@
       "end_date": "2003-11-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/685/Committee/371", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/13130", 
+      "organization_id": "lord-speakers-advisory-panel-on-works-of-art", 
+      "start_date": "2017-01-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/685/ParliamentaryPost/1098", 
       "source": "datadotparl/parliamentarypost", 
       "role": "Party Chair, Liberal Democrats", 
@@ -58132,6 +58180,13 @@
       "organization_id": "works-of-art-committee-lords", 
       "start_date": "2015-06-08", 
       "end_date": "2016-08-31"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2608/Committee/371", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13170", 
+      "organization_id": "lord-speakers-advisory-panel-on-works-of-art", 
+      "start_date": "2017-01-25"
     }, 
     {
       "id": "uk.parliament.data/Member/693/OppositionPost/16", 
@@ -63148,6 +63203,13 @@
       "person_id": "uk.org.publicwhip/person/13310", 
       "organization_id": "select-committee-on-charities", 
       "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2503/Committee/371", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13310", 
+      "organization_id": "lord-speakers-advisory-panel-on-works-of-art", 
+      "start_date": "2017-01-25"
     }, 
     {
       "id": "uk.parliament.data/Member/2503/Committee/94", 
@@ -68430,6 +68492,13 @@
       "person_id": "uk.org.publicwhip/person/13490", 
       "organization_id": "international-relations-committee", 
       "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1980/Committee/371", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13490", 
+      "organization_id": "lord-speakers-advisory-panel-on-works-of-art", 
+      "start_date": "2017-01-25"
     }, 
     {
       "id": "uk.parliament.data/Member/1980/GovernmentPost/1167", 
@@ -77606,6 +77675,13 @@
       "end_date": "2013-02-13"
     }, 
     {
+      "id": "uk.parliament.data/Member/3808/Committee/371", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13884", 
+      "organization_id": "lord-speakers-advisory-panel-on-works-of-art", 
+      "start_date": "2017-01-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3808/ParliamentaryPost/1092", 
       "source": "datadotparl/parliamentarypost", 
       "role": "Deputy Chairman of Committees", 
@@ -81704,7 +81780,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24779", 
       "organization_id": "environment-food-and-rural-affairs-subcommittee", 
-      "start_date": "2015-10-14"
+      "start_date": "2015-10-14", 
+      "end_date": "2017-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4072/Committee/372", 
@@ -82724,7 +82801,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24813", 
       "organization_id": "environment-food-and-rural-affairs-subcommittee", 
-      "start_date": "2015-10-14"
+      "start_date": "2015-10-14", 
+      "end_date": "2017-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/3944/Committee/52", 
@@ -89018,6 +89096,13 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4223/Committee/371", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25045", 
+      "organization_id": "lord-speakers-advisory-panel-on-works-of-art", 
+      "start_date": "2017-01-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4221/Committee/306", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25046", 
@@ -89326,6 +89411,13 @@
       "organization_id": "works-of-art-committee-lords", 
       "start_date": "2015-06-08", 
       "end_date": "2016-08-31"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4227/Committee/371", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25062", 
+      "organization_id": "lord-speakers-advisory-panel-on-works-of-art", 
+      "start_date": "2017-01-25"
     }, 
     {
       "id": "uk.parliament.data/Member/4226/OppositionPost/977", 
@@ -90406,6 +90498,13 @@
       "end_date": "2016-08-31"
     }, 
     {
+      "id": "uk.parliament.data/Member/4283/Committee/371", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25201", 
+      "organization_id": "lord-speakers-advisory-panel-on-works-of-art", 
+      "start_date": "2017-01-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4300/Committee/148", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25202", 
@@ -91295,7 +91394,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25282", 
       "organization_id": "environment-food-and-rural-affairs-subcommittee", 
-      "start_date": "2016-02-10"
+      "start_date": "2016-02-10", 
+      "end_date": "2017-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4376/Committee/52", 
@@ -91697,6 +91797,13 @@
       "end_date": "2015-11-24"
     }, 
     {
+      "id": "uk.parliament.data/Member/4425/Committee/102", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25304", 
+      "organization_id": "justice-committee", 
+      "start_date": "2017-03-13"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4425/Committee/289", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25304", 
@@ -91984,7 +92091,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25321", 
       "organization_id": "justice-committee", 
-      "start_date": "2015-10-26"
+      "start_date": "2015-10-26", 
+      "end_date": "2017-03-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4457/OppositionPost/1361", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Work and Pensions) (Disabled People)", 
+      "person_id": "uk.org.publicwhip/person/25321", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-02-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4461/Committee/153", 
@@ -92287,7 +92403,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25339", 
       "organization_id": "environment-food-and-rural-affairs-subcommittee", 
-      "start_date": "2015-10-14"
+      "start_date": "2015-10-14", 
+      "end_date": "2017-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4383/Committee/52", 
@@ -92750,6 +92867,13 @@
       "organization_id": "welsh-affairs-committee", 
       "start_date": "2015-07-13", 
       "end_date": "2016-04-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4506/Committee/365", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25363", 
+      "organization_id": "business-energy-and-industrial-strategy-committee", 
+      "start_date": "2017-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4506/Committee/50", 
@@ -93348,7 +93472,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25407", 
       "organization_id": "environment-food-and-rural-affairs-subcommittee", 
-      "start_date": "2016-11-02"
+      "start_date": "2016-11-02", 
+      "end_date": "2017-03-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4522/Committee/52", 
@@ -93706,7 +93831,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25430", 
       "organization_id": "business-energy-and-industrial-strategy-committee", 
-      "start_date": "2016-10-17"
+      "start_date": "2016-10-17", 
+      "end_date": "2017-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4487/Committee/69", 
@@ -94169,6 +94295,13 @@
       "organization_id": "house-of-commons", 
       "start_date": "2015-12-03", 
       "end_date": "2016-05-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4564/Committee/371", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25479", 
+      "organization_id": "lord-speakers-advisory-panel-on-works-of-art", 
+      "start_date": "2017-03-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4566/Committee/357", 
@@ -95129,6 +95262,10 @@
     {
       "id": "london-regional-select-committee", 
       "name": "London Regional Select Committee"
+    }, 
+    {
+      "id": "lord-speakers-advisory-panel-on-works-of-art", 
+      "name": "Lord Speaker's Advisory Panel on Works of Art"
     }, 
     {
       "id": "lord-speakers-committee-on-the-size-of-the-house", 
