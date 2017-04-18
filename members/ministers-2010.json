@@ -14436,6 +14436,15 @@
       "end_date": "2015-09-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/150/OppositionPost/4/1", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Leader of Her Majesty's Official Opposition", 
+      "person_id": "uk.org.publicwhip/person/10260", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2010-05-12", 
+      "end_date": "2010-09-25"
+    }, 
+    {
       "id": "uk.parliament.data/Member/150/OppositionPost/863", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Secretary of State for Health", 
@@ -40837,6 +40846,15 @@
       "end_date": "2010-05-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/1510/OppositionPost/4", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Leader of Her Majesty's Official Opposition", 
+      "person_id": "uk.org.publicwhip/person/11545", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2010-09-25", 
+      "end_date": "2015-05-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1510/OppositionPost/865", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Secretary of State for Energy and Climate Change", 
@@ -46218,7 +46236,7 @@
     {
       "id": "uk.parliament.data/Member/1546/OppositionPost/1127", 
       "source": "datadotparl/oppositionpost", 
-      "role": "Shadow SNP Spokesperson (Tranpsort)", 
+      "role": "Shadow SNP Spokesperson (Transport)", 
       "person_id": "uk.org.publicwhip/person/12004", 
       "organization_id": "house-of-commons", 
       "start_date": "2010-06-15", 
@@ -88796,7 +88814,7 @@
     {
       "id": "uk.parliament.data/Member/4205/GovernmentPost/1137", 
       "source": "datadotparl/governmentpost", 
-      "role": "The Lord Privy Seal (Baroness Stowell of Beeston)", 
+      "role": "Leader of the House of Lords and Lord Privy Seal", 
       "person_id": "uk.org.publicwhip/person/25032", 
       "organization_id": "house-of-commons", 
       "start_date": "2014-07-15", 
@@ -91018,7 +91036,7 @@
     {
       "id": "uk.parliament.data/Member/4329/GovernmentPost/1137", 
       "source": "datadotparl/governmentpost", 
-      "role": "The Lord Privy Seal (Baroness Stowell of Beeston)", 
+      "role": "Leader of the House of Lords and Lord Privy Seal", 
       "person_id": "uk.org.publicwhip/person/25245", 
       "organization_id": "house-of-commons", 
       "start_date": "2016-07-14"
@@ -91222,6 +91240,14 @@
       "person_id": "uk.org.publicwhip/person/25274", 
       "organization_id": "house-of-commons", 
       "start_date": "2015-05-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4374/OppositionPost/1362", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Voluntary Sector)", 
+      "person_id": "uk.org.publicwhip/person/25275", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2016-09-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4412/Committee/347", 
