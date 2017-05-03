@@ -2658,7 +2658,7 @@
       "id": "uk.parliament.data/Member/394/Committee/372", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10045", 
-      "organization_id": "national-policy-statement-on-draft-airports-committee", 
+      "organization_id": "national-policy-statements-subcommittee", 
       "start_date": "2017-02-20"
     }, 
     {
@@ -6309,6 +6309,13 @@
       "organization_id": "trade--industry-committee", 
       "start_date": "1999-07-05", 
       "end_date": "2002-03-04"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/242/Committee/17", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10103", 
+      "organization_id": "communities-and-local-government-committee", 
+      "start_date": "2017-04-18"
     }, 
     {
       "id": "uk.parliament.data/Member/242/Committee/2", 
@@ -10540,7 +10547,7 @@
       "id": "uk.parliament.data/Member/484/Committee/372", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10186", 
-      "organization_id": "national-policy-statement-on-draft-airports-committee", 
+      "organization_id": "national-policy-statements-subcommittee", 
       "start_date": "2017-02-20"
     }, 
     {
@@ -29992,7 +29999,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10613", 
-      "organization_id": "national-policy-statement-on-draft-airports-committee", 
+      "organization_id": "national-policy-statements-subcommittee", 
       "start_date": "2017-02-20"
     }, 
     {
@@ -37792,7 +37799,7 @@
       "id": "uk.parliament.data/Member/1428/Committee/372", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11318", 
-      "organization_id": "national-policy-statement-on-draft-airports-committee", 
+      "organization_id": "national-policy-statements-subcommittee", 
       "start_date": "2017-02-20"
     }, 
     {
@@ -38708,7 +38715,7 @@
       "id": "uk.parliament.data/Member/1478/Committee/372", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11362", 
-      "organization_id": "national-policy-statement-on-draft-airports-committee", 
+      "organization_id": "national-policy-statements-subcommittee", 
       "start_date": "2017-02-20"
     }, 
     {
@@ -42946,7 +42953,7 @@
       "id": "uk.parliament.data/Member/1545/Committee/372", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11719", 
-      "organization_id": "national-policy-statement-on-draft-airports-committee", 
+      "organization_id": "national-policy-statements-subcommittee", 
       "start_date": "2017-02-20"
     }, 
     {
@@ -65081,81 +65088,6 @@
       "end_date": "2002-11-07"
     }, 
     {
-      "id": "uk.parliament.data/Member/1039/Committee/127", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/13377", 
-      "organization_id": "public-accounts-committee", 
-      "start_date": "1979-05-03", 
-      "end_date": "1981-11-05"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/1039/Committee/175", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/13377", 
-      "organization_id": "economic-affairs-committee", 
-      "start_date": "2010-06-22", 
-      "end_date": "2015-03-30"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/1039/Committee/175/1", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/13377", 
-      "organization_id": "economic-affairs-committee", 
-      "start_date": "2004-11-29", 
-      "end_date": "2008-11-26"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/1039/Committee/208", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/13377", 
-      "organization_id": "barnett-formula-committee", 
-      "start_date": "2008-12-10", 
-      "end_date": "2009-11-12"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/1039/Committee/284", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/13377", 
-      "organization_id": "parliamentary-commission-on-banking-standards-joint-committee", 
-      "start_date": "2012-07-17", 
-      "end_date": "2013-06-12"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/1039/Committee/337", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/13377", 
-      "organization_id": "eu-financial-affairs-subcommittee", 
-      "start_date": "2015-06-12", 
-      "end_date": "2016-03-04"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/1039/GovernmentPost/34", 
-      "source": "datadotparl/governmentpost", 
-      "role": "The Chancellor of the Exchequer", 
-      "person_id": "uk.org.publicwhip/person/13377", 
-      "organization_id": "house-of-commons", 
-      "start_date": "1983-06-11", 
-      "end_date": "1989-10-25"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/1039/GovernmentPost/348", 
-      "source": "datadotparl/governmentpost", 
-      "role": "The Financial Secretary to the Treasury", 
-      "person_id": "uk.org.publicwhip/person/13377", 
-      "organization_id": "house-of-commons", 
-      "start_date": "1979-05-06", 
-      "end_date": "1981-09-29"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/1039/GovernmentPost/702", 
-      "source": "datadotparl/governmentpost", 
-      "role": "Secretary of State for Energy", 
-      "person_id": "uk.org.publicwhip/person/13377", 
-      "organization_id": "house-of-commons", 
-      "start_date": "1981-09-14", 
-      "end_date": "1983-06-10"
-    }, 
-    {
       "id": "uk.parliament.data/Member/2037/Committee/172", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13378", 
@@ -79273,6 +79205,81 @@
       "end_date": "1990-12-31"
     }, 
     {
+      "id": "uk.parliament.data/Member/1039/Committee/127", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/22053", 
+      "organization_id": "public-accounts-committee", 
+      "start_date": "1979-05-03", 
+      "end_date": "1981-11-05"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1039/Committee/175", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/22053", 
+      "organization_id": "economic-affairs-committee", 
+      "start_date": "2010-06-22", 
+      "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1039/Committee/175/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/22053", 
+      "organization_id": "economic-affairs-committee", 
+      "start_date": "2004-11-29", 
+      "end_date": "2008-11-26"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1039/Committee/208", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/22053", 
+      "organization_id": "barnett-formula-committee", 
+      "start_date": "2008-12-10", 
+      "end_date": "2009-11-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1039/Committee/284", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/22053", 
+      "organization_id": "parliamentary-commission-on-banking-standards-joint-committee", 
+      "start_date": "2012-07-17", 
+      "end_date": "2013-06-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1039/Committee/337", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/22053", 
+      "organization_id": "eu-financial-affairs-subcommittee", 
+      "start_date": "2015-06-12", 
+      "end_date": "2016-03-04"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1039/GovernmentPost/34", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Chancellor of the Exchequer", 
+      "person_id": "uk.org.publicwhip/person/22053", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1983-06-11", 
+      "end_date": "1989-10-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1039/GovernmentPost/348", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Financial Secretary to the Treasury", 
+      "person_id": "uk.org.publicwhip/person/22053", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1979-05-06", 
+      "end_date": "1981-09-29"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1039/GovernmentPost/702", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Secretary of State for Energy", 
+      "person_id": "uk.org.publicwhip/person/22053", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1981-09-14", 
+      "end_date": "1983-06-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1166/Committee/162", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/22650", 
@@ -81805,7 +81812,7 @@
       "id": "uk.parliament.data/Member/4072/Committee/372", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24779", 
-      "organization_id": "national-policy-statement-on-draft-airports-committee", 
+      "organization_id": "national-policy-statements-subcommittee", 
       "start_date": "2017-02-20"
     }, 
     {
@@ -93286,7 +93293,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25388", 
       "organization_id": "communities-and-local-government-committee", 
-      "start_date": "2015-07-13"
+      "start_date": "2015-07-13", 
+      "end_date": "2017-04-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4410/Committee/23", 
@@ -95336,10 +95344,6 @@
     {
       "id": "national-heritage-committee", 
       "name": "National Heritage Committee"
-    }, 
-    {
-      "id": "national-policy-statement-on-draft-airports-committee", 
-      "name": "National Policy Statement on draft Airports Committee"
     }, 
     {
       "id": "national-policy-statements-subcommittee", 
