@@ -11,7 +11,7 @@ import urllib
 
 sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
 
-CSV_URL = 'https://edit.yournextmp.com/media/candidates.csv'
+CSV_URL = 'https://candidates.democracyclub.org.uk/media/candidates-parl.2017-06-08.csv'
 JSON = os.path.join(os.path.dirname(__file__), '..', '..', 'members', 'people.json')
 
 
@@ -71,7 +71,7 @@ def update_from(csv_url, data):
             'name': name,
             'on_behalf_of_id': data['orgs'][party],
             'person_id': person_id,
-            'start_date': '2015-05-08',
+            'start_date': '2017-06-09',
             'start_reason': 'general_election',
         }
         if cons in data['existing']:
@@ -168,9 +168,9 @@ def ynmp_csv_reader(fn):
         # TWFY has separate first/last name fields. This should catch most.
         m = re.match(u'(.*?) ((?:ap |van |de |di |von |st |duncan |lloyd |\u00d3 )*[^ ]*(?: Jnr)?)$(?i)', name)
         given, family = m.groups()
-        party = row['party'].decode('utf-8')
+        party = row['party_name'].decode('utf-8')
         party = PARTY_YNMP_TO_TWFY.get(party, party)
-        cons = row['constituency'].decode('utf-8')
+        cons = row['post_label'].decode('utf-8')
         person_id = row['parlparse_id']
         ynmp_id = int(row['id'])
         elected = row.get('elected', '').lower()

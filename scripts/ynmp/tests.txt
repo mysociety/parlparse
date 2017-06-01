@@ -12,7 +12,7 @@ First, let's get the functions and load in the existing people.json data:
 And we want a function to alter the fixture with different information:
 
     >>> import StringIO, csv
-    >>> source = open('fixture.csv').readlines()
+    >>> source = open('fixture-2017.csv').readlines()
     >>> def alter(name, winner, pid=None):
     ...     global source
     ...     reader = csv.DictReader(source)
@@ -40,44 +40,44 @@ Now we want to call it with the CSV file before anything has happened:
 Diane Abbott wins:
 
     >>> alter('Diane Abbott', 'True')
-    NEW result 40706, Diane Abbott, Labour, Hackney North and Stoke Newington, uk.org.publicwhip/person/10001
+    NEW result 41731, Diane Abbott, Labour, Hackney North and Stoke Newington, uk.org.publicwhip/person/10001
     True
 
 Nick Clegg loses:
 
-    >>> alter('Peter Garbutt', 'True')
-    NEW result 40707, Peter Garbutt, Green, Sheffield, Hallam, uk.org.publicwhip/person/25268
+    >>> alter('Logan Robin', 'True')
+    NEW result 41372, Logan Robin, Green, Sheffield, Hallam, uk.org.publicwhip/person/25611
     True
 
 Actually, that was a mistake at the YNMP end, revert until we know the result:
 
-    >>> alter('Peter Garbutt', 'False')
-    Removing result from uk.org.publicwhip/member/40707 (was Peter Garbutt, Green, Sheffield, Hallam, )
+    >>> alter('Logan Robin', 'False')
+    Removing result from uk.org.publicwhip/member/41372 (was Logan Robin, Green, Sheffield, Hallam, )
     True
 
 It turns out Nick Clegg actually won:
 
     >>> alter('Nick Clegg', 'True')
-    Updating uk.org.publicwhip/member/40707 with Nick Clegg, Liberal Democrat, Sheffield, Hallam, uk.org.publicwhip/person/11812
+    Updating uk.org.publicwhip/member/41372 with Nick Clegg, Liberal Democrat, Sheffield, Hallam, uk.org.publicwhip/person/11812
     True
 
 Alex Salmond wins, and YNMP have supplied his parlparse ID:
 
     >>> alter('Alex Salmond', 'True', 'uk.org.publicwhip/person/10525')
-    NEW result 40708, Alex Salmond, Scottish National Party, Gordon, uk.org.publicwhip/person/10525
+    NEW result 41373, Alex Salmond, Scottish National Party, Gordon, uk.org.publicwhip/person/10525
     True
 
-Two Helen Jones both win, one with a person ID, one without:
+Two David Jones both win, one with a person ID, one without:
 
-    >>> alter('Helen Jones', 'True')
-    NEW result 40709, Helen Jones, Trade Unionist and Socialist Coalition, Cardiff West, uk.org.publicwhip/person/25269
-    NEW result 40710, Helen Jones, Labour, Warrington North, uk.org.publicwhip/person/10319
+    >>> alter('David Jones', 'True')
+    NEW result 41374, David Jones, Green, Blackley and Broughton, uk.org.publicwhip/person/25612
+    NEW result 41375, David Jones, Conservative, Clwyd West, uk.org.publicwhip/person/11506
     True
 
-David Drew wins, and YNMP have not supplied his parlparse ID (he was an MP until 2010):
+Tessa Jane Munt wins, and YNMP have not supplied her parlparse ID (she was an MP until 2015):
 
-    >>> alter('David Drew', 'True')
-    NEW result 40711, David Drew, Labour/Co-operative, Stroud, uk.org.publicwhip/person/25270
+    >>> alter('Tessa Jane Munt', 'True')
+    NEW result 41376, Tessa Jane Munt, Liberal Democrat, Wells, uk.org.publicwhip/person/25613
     True
 
 If we then just run again with no changes, nothing should happen:
