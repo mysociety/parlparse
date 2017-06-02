@@ -40,7 +40,7 @@ Now we want to call it with the CSV file before anything has happened:
 Diane Abbott wins:
 
     >>> alter('Diane Abbott', 'True')
-    NEW result 41731, Diane Abbott, Labour, Hackney North and Stoke Newington, uk.org.publicwhip/person/10001
+    NEW result 41371, Diane Abbott, Labour, Hackney North and Stoke Newington, uk.org.publicwhip/person/10001
     True
 
 Nick Clegg loses:
