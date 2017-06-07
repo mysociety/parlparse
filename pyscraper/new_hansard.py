@@ -72,6 +72,7 @@ class LordsPimsList(LordsList):
 class BaseParseDayXML(object):
     input_root = None
     resolver = PimsList()
+    seen_elements = set()
 
     type_to_xpath = {
         'debate': (
@@ -111,6 +112,7 @@ class BaseParseDayXML(object):
         'hs_6bBillsPresented', # FIXME should grab text of following tag
         'hs_6fCntrItalHdg',
         'hs_2cSO24Application',
+        'hs_2cDebatedMotion',
     ]
     chair_headings = [
         'hs_76fChair',
@@ -125,7 +127,6 @@ class BaseParseDayXML(object):
         'hs_6bcBigBoldHdg',
     ]
     generic_headings = [
-        'hs_2cDebatedMotion',
         'hs_2cGenericHdg',
         'hs_2GenericHdg',
     ]
@@ -140,7 +141,6 @@ class BaseParseDayXML(object):
         'hs_AmendmentLevel2',
         'hs_AmendmentLevel3',
         'hs_AmendmentLevel4',
-        'hs_8Clause',
         'hs_newline10',
         'hs_Question',
         'hs_6CntrCapsHdg',
@@ -159,6 +159,7 @@ class BaseParseDayXML(object):
         'hs_TimeCode',
         'hs_6bPetitions',
         'hs_3MainHdg',
+        'hs_8Clause',
         'hs_Venue'
     ]
     root = None
@@ -209,6 +210,25 @@ class BaseParseDayXML(object):
             is_pre = True
 
         return is_pre
+
+    def mark_seen(self, tag):
+        if tag.get('UID'):
+            if tag.get('UID') == '17020192000008':
+                print('17020192000010')
+            self.seen_elements.add(tag.get('UID'))
+
+        if tag.get('HRSContentId'):
+            self.seen_elements.add(tag.get('HRSContentId'))
+
+    def mark_xpath_seen(self, tag, xpath):
+        inner = tag.xpath(xpath, namespaces=self.ns_map)
+        if len(inner) > 0:
+            self.mark_seen(inner[0])
+
+    def mark_xpath_all_seen(self, tag, xpath):
+        inner = tag.xpath(xpath, namespaces=self.ns_map)
+        for t in inner:
+            self.mark_seen(t)
 
     def get_tag_name_no_ns(self, tag):
         # remove annoying namespace for brevities sake
@@ -319,6 +339,7 @@ class BaseParseDayXML(object):
             member_tag = tag
 
         if member_tag is not None:
+            self.mark_seen(member_tag)
             if member_tag.get('PimsId') == '-1':
                 return self.handle_minus_member(member_tag)
             if member_tag.get('PimsId') == '0':
@@ -405,6 +426,12 @@ class BaseParseDayXML(object):
 
     def parse_major(self, heading, **kwargs):
         text = self.get_text_from_element(heading)
+
+        # housekeeping for making sure we see all the elements
+        departments = heading.xpath('.//ns:DepartmentName', namespaces=self.ns_map)
+        for department in departments:
+            self.mark_seen(department)
+
         if text.strip() == 'Prayers':
             return
         self.clear_current_speech()
@@ -456,6 +483,23 @@ class BaseParseDayXML(object):
         tag.text = text
         self.root.append(tag)
         self.output_heading = True
+
+        # if there is a clause immediately before then assume it's the clause
+        # we are about to debate and put it in the first speech
+        previous = heading.xpath(
+            './preceding-sibling::*',
+            namespaces=self.ns_map
+        )
+        if len(previous):
+            clause = previous[-1]
+            if self.get_tag_name_no_ns(clause) == 'hs_8Clause':
+                self.mark_seen(clause)
+                text = self.get_single_line_text_from_element(clause)
+                if self.current_speech is None:
+                    self.new_speech(None, clause.get('url'))
+                clause_tag = etree.Element('p')
+                clause_tag.text = text
+                self.current_speech.append(clause_tag)
 
     def parse_generic(self, heading):
         if self.next_speech_num == 0:
@@ -510,6 +554,7 @@ class BaseParseDayXML(object):
         )
         text = ''
         if len(following) == 1:
+            self.mark_seen(following[0])
             text = u' - '.join([
                 self.get_single_line_text_from_element(motion),
                 self.get_single_line_text_from_element(following[0])
@@ -538,6 +583,7 @@ class BaseParseDayXML(object):
             namespaces=self.ns_map
         )
         if len(chair) == 1:
+            self.mark_seen(chair[0])
             chair_text = self.get_single_line_text_from_element(chair[0])
             text = u'\n{0} — {1}\n'.format(text, chair_text)
 
@@ -561,6 +607,7 @@ class BaseParseDayXML(object):
         tag.set('id', self.get_speech_id())
 
         member = question.xpath('.//ns:Member', namespaces=self.ns_map)[0]
+        self.mark_seen(member)
         member = self.parse_member(member)
         if member is not None:
             tag.set('person_id', member['person_id'])
@@ -570,28 +617,44 @@ class BaseParseDayXML(object):
             question.xpath('.//ns:Number/text()', namespaces=self.ns_map)
         )
         if number != '':
+            self.mark_xpath_seen(question, './/ns:Number')
             tag.set('oral-qnum', number)
 
         tag.set('colnum', self.current_col)
         tag.set('time', self.current_time)
 
-        para = question.xpath('.//ns:hs_Para', namespaces=self.ns_map)
-        tag.set('url', self.get_speech_url(para[0].get('url')))
+        first_para = question.xpath('.//ns:hs_Para', namespaces=self.ns_map)[0]
+        tag.set('url', self.get_speech_url(first_para.get('url')))
+        self.mark_seen(first_para)
 
         p = etree.Element('p')
         p.set('pid', self.get_pid())
         uin = question.xpath('.//ns:Uin', namespaces=self.ns_map)
-        if len(uin) == 1:
+        if len(uin) > 0:
+            self.mark_seen(uin[0])
             uin_text = u''.join(uin[0].xpath('.//text()'))
             m = re.match('\[\s*(\d+)\s*\]', uin_text)
             if m is not None:
                 no = m.groups(1)[0]
                 p.set('qnum', no)
 
-        text = question.xpath(
+        # sometimes there are mutiple question numbers and it seems
+        # to be accidental so this is just checking that and also
+        # marking the additional ones as processed.
+        if len(uin) > 0 and len(uin) != 1:
+            uin_text = u''.join(uin[0].xpath('.//text()'))
+            for u in uin:
+                text = u''.join(u.xpath('.//text()'))
+                if text and text != uin_text:
+                    raise Exception('Multiple numbers for a question')
+                self.mark_seen(u)
+
+        text = first_para.xpath(
             './/ns:QuestionText/text()', namespaces=self.ns_map
         )
         text = u''.join(text)
+        self.mark_xpath_seen(first_para, './/ns:QuestionText')
+
         """
         sometimes the question text is after the tag rather
         than inside it in which case we want to grab all the
@@ -608,7 +671,7 @@ class BaseParseDayXML(object):
         </hs_Para></Question>
         """
         if text == '':
-            q_text = question.xpath(
+            q_text = first_para.xpath(
                 './/ns:QuestionText/following-sibling::text()',
                 namespaces=self.ns_map
             )
@@ -618,6 +681,16 @@ class BaseParseDayXML(object):
         p.text = re.sub('\n', ' ', text)
         tag.append(p)
         self.root.append(tag)
+
+        # and sometimes there is more question text in following siblings
+        # so we need to handle those too
+        following_tags = first_para.xpath(
+            './following-sibling::*',
+            namespaces=self.ns_map
+        )
+        for t in following_tags:
+            tag_name = self.get_tag_name_no_ns(t)
+            self.handle_tag(tag_name, t)
 
     def parse_indent(self, tag):
         self.parse_para_with_member(tag, None, css_class='indent')
@@ -653,6 +726,7 @@ class BaseParseDayXML(object):
         if member is not None:
             self.new_speech(member, para.get('url'))
         elif members:
+            self.mark_seen(members[0])
             m_name = None
             bs = members[0].xpath('./ns:B', namespaces=self.ns_map)
             if len(bs) == 1:
@@ -687,6 +761,7 @@ class BaseParseDayXML(object):
         if 'pwmotiontext' in kwargs:
             tag.set('pwmotiontext', kwargs['pwmotiontext'])
 
+        self.mark_seen(para)
         self.current_speech.append(tag)
 
     # TODO: this needs to parse out the various things that filtersentence
@@ -694,8 +769,10 @@ class BaseParseDayXML(object):
     # it will need to be a port of that to create proper XML elements
     # using etree
     def parse_para(self, para):
+        self.mark_seen(para)
         member = None
         for tag in para:
+            self.mark_seen(tag)
             tag_name = self.get_tag_name_no_ns(tag)
             if tag_name == 'B' or tag_name == 'Member':
                 member = self.parse_member(tag)
@@ -707,6 +784,7 @@ class BaseParseDayXML(object):
 
     def parse_votelist(self, votes, direction, vote_list, is_teller=False):
         for vote in votes:
+            self.mark_seen(vote)
             tag = etree.Element('mpname')
             member = self.parse_member(vote)
             tag.set('person_id', member['person_id'])
@@ -721,18 +799,23 @@ class BaseParseDayXML(object):
         return vote_list
 
     def parse_table(self, wrapper):
-        rows = wrapper.xpath('.//row')
+        rows = wrapper.xpath('.//ns:row', namespaces=self.ns_map)
         tag = etree.Element('table')
         body = etree.Element('tbody')
         url = None
         for row in rows:
+            self.mark_seen(row)
             row_tag = etree.Element('tr')
             row_tag.set('pid', self.get_pid())
 
-            for entry in row.xpath('(.//hs_brev|.//hs_Para)'):
-                if url is None:
-                    url = entry.get('url')
-                row_tag.append(list(entry))
+            for entry in row.xpath('.//ns:entry', namespaces=self.ns_map):
+                cell_tag = etree.Element('td')
+                cell_tag.text = self.get_single_line_text_from_element(entry)
+                row_tag.append(cell_tag)
+                for para in entry.xpath('.//ns:hs_Para | .//ns:hs_para | .//ns:hs_brev', namespaces=self.ns_map):
+                    if url is None:
+                        url = para.get('url')
+                    self.mark_seen(para)
 
             body.append(row_tag)
 
@@ -754,6 +837,8 @@ class BaseParseDayXML(object):
         tag.set('divdate', self.date)
         div_number = \
             division.xpath('.//ns:Number/text()', namespaces=self.ns_map)
+
+        self.mark_xpath_seen(division, './/ns:Number')
 
         tag.set('divnumber', u''.join(div_number))
         tag.set('colnum', self.current_col)
@@ -783,6 +868,9 @@ class BaseParseDayXML(object):
             division.xpath('./ns:hs_Para/ns:AyesNumber/text()', namespaces=self.ns_map)
         noes_count = \
             division.xpath('./ns:hs_Para/ns:NoesNumber/text()', namespaces=self.ns_map)
+
+        self.mark_xpath_seen(division, './ns:hs_Para/ns:NoesNumber')
+        self.mark_xpath_seen(division, './ns:hs_Para/ns:AyesNumber')
 
         ayes_count_text = u''.join(ayes_count)
         noes_count_text = u''.join(noes_count)
@@ -824,6 +912,22 @@ class BaseParseDayXML(object):
             './/ns:TellerNamesNoes//ns:Member', namespaces=self.ns_map
         )
 
+        # count the various bits of structure as seen for later
+        structure = division.xpath(
+            './/*[ns:NamesAyes or ns:NamesNoes or ns:TellerNamesNoes or ns:TellerNamesAyes]//ns:hs_Para',
+            namespaces=self.ns_map
+        )
+        columns = division.xpath('.//ns:TwoColumn', namespaces=self.ns_map)
+        structure.extend(columns)
+        wrappers = division.xpath(
+            './/ns:NamesAyes | .//ns:NamesNoes | .//ns:TellerNamesNoes | .//ns:TellerNamesAyes',
+            namespaces=self.ns_map
+        )
+        structure.extend(wrappers)
+
+        for s in structure:
+            self.mark_seen(s)
+
         aye_list = etree.Element('mplist')
         aye_list.set('vote', 'aye')
         aye_list = self.parse_votelist(ayes, 'aye', aye_list)
@@ -844,14 +948,38 @@ class BaseParseDayXML(object):
             if re.search(r'House\s*divided', text) or \
                     re.search(r'Committee\s*divided', text) or \
                     re.search(r'Division\s*No', text):
+                self.mark_seen(para)
+                for tag in para:
+                    tag_name = self.get_tag_name_no_ns(tag)
+                    if tag_name == 'Right':
+                        times = tag.xpath('.//ns:Time', namespaces=self.ns_map)
+                        if len(times) > 0:
+                            self.parse_time(times[0])
+                    self.mark_seen(tag)
                 continue
             self.parse_para(para)
 
+        # FIXME - we should actually store the numbers
+        england_tags = division.xpath('./ns:EnglandWales/ns:hs_Para/* | ./ns:England/ns:hs_Para/*', namespaces=self.ns_map)
+        if len(england_tags):
+            self.mark_xpath_all_seen(division, './ns:EnglandWales | ./ns:England')
+            self.mark_xpath_all_seen(division, './ns:EnglandWales/ns:hs_Para | ./ns:England/ns:hs_Para')
+            details = etree.Element('p')
+            text = ''
+            for england_tag in england_tags:
+                self.mark_seen(england_tag)
+                content = tag.text
+                if content:
+                    text += content
+            details.text = text
+            self.current_speech.append(details)
+
     def parse_time(self, tag):
+        self.mark_seen(tag)
         time_txt = u''.join(tag.xpath('.//text()'))
         if time_txt == '':
             return
-        matches = re.match('(\d+)(?:[:.](\d+))?[\xa0\s]*(am|pm)', time_txt)
+        matches = re.match('(\d+)(?:[:.\n](\d+))?[\xa0\s]*(am|pm)', time_txt)
         if matches:
             hours = int(matches.group(1))
             minutes = int(matches.group(2) or 0)
@@ -873,6 +1001,7 @@ class BaseParseDayXML(object):
     def parse_procedure(self, procedure):
         tag = etree.Element('p')
         text = self.get_single_line_text_from_element(procedure)
+        self.mark_seen(procedure)
         if len(text) == 0:
             return
 
@@ -950,6 +1079,9 @@ class BaseParseDayXML(object):
         else:
             handled = False
 
+        if handled:
+            self.mark_seen(tag)
+
         return handled
 
     def parse_day(self, xml_file, out):
@@ -997,6 +1129,16 @@ class BaseParseDayXML(object):
         # make sure we add any outstanding speech.
         self.clear_current_speech()
 
+        all_IDS = set(
+            self.input_root[0].xpath(
+                './/@UID|.//@HRSContentId'
+                )
+        )
+        diff = all_IDS.difference(self.seen_elements)
+        if len(diff) > 0:
+            raise Exception(
+                'missed some elements', diff
+                )
         return True
 
     def get_date(self, xml_file):
@@ -1064,6 +1206,7 @@ class PBCParseDayXML(BaseParseDayXML):
     ignored_tags = [
         'hs_CLHeading',
         'hs_CLAttended',
+        'hs_8Clause',
         'hs_6fCntrItalHdg',
     ]
 
@@ -1249,6 +1392,8 @@ class PBCParseDayXML(BaseParseDayXML):
         div_number = \
             division.xpath('.//ns:Number/text()', namespaces=self.ns_map)
 
+        self.mark_xpath_seen(division, './/ns:Number')
+
         tag.set('id', self.get_speech_id())
         tag.set('divnumber', u''.join(div_number))
         tag.set('ayes', yes_text)
@@ -1281,9 +1426,11 @@ class PBCParseDayXML(BaseParseDayXML):
         self.parse_para_with_member(brev, None, css_class="indent")
 
     def parse_para(self, para):
+        self.mark_seen(para)
         has_i = False
         has_witness = False
         for tag in para.iter():
+            self.mark_seen(tag)
             tag_name = self.get_tag_name_no_ns(tag)
             if tag_name == 'Witness':
                 has_witness = True
@@ -1335,6 +1482,9 @@ class PBCParseDayXML(BaseParseDayXML):
             self.parse_para_with_member(tag, None, css_class="indent")
         else:
             handled = super(PBCParseDayXML, self).handle_tag(tag_name, tag)
+
+        if handled:
+            self.mark_seen(tag)
 
         return handled
 
@@ -1427,6 +1577,7 @@ class LordsParseDayXML(BaseParseDayXML):
             # In cases where there are unattributes exclamations then PimsId
             # is set to 0. Often the name will be "Noble Lords" or the like
             if member.get('PimsId') == 0:
+                self.mark_seen(member)
                 found_member = {
                     'person_id': 'unknown',
                     'name': u''.join(member.xpath('.//text()'))
@@ -1435,12 +1586,25 @@ class LordsParseDayXML(BaseParseDayXML):
         return found_member
 
     def parse_newdebate(self, tag):
+        self.mark_seen(tag)
         time = tag.xpath('.//ns:hs_time', namespaces=self.ns_map)
         if len(time):
             self.parse_time(time[0])
 
         heading = tag.xpath('.//ns:hs_DebateHeading', namespaces=self.ns_map)
         debate_type = tag.xpath('.//ns:hs_DebateType', namespaces=self.ns_map)
+        self.mark_xpath_seen(tag, './/ns:hs_DebateHeading')
+        # TODO: sometimes there is a link to the bill
+        self.mark_xpath_seen(tag, './/ns:hs_DebateHeading/ns:a')
+        self.mark_xpath_seen(tag, './/ns:hs_DebateType')
+
+        # This seems to happen occasionally and it's just filler to throw away
+        amendment = tag.xpath('.//ns:hs_AmendmentHeading', namespaces=self.ns_map)
+        if len(amendment) > 0:
+            text = self.get_single_line_text_from_element(amendment[0])
+            if text == 'Motion':
+                self.mark_seen(amendment[0])
+
         if len(heading):
             if len(debate_type):
                 text = self.get_single_line_text_from_element(debate_type[0])
@@ -1451,10 +1615,6 @@ class LordsParseDayXML(BaseParseDayXML):
             sys.stderr.write('newdebate with no heading', namespaces=self.ns_map)
             return
 
-        #procedure = tag.xpath('.//ns:hs_Procedure', namespaces=self.ns_map)
-        #if len(procedure) == 1:
-        #    self.handle_para(procedure[0])
-
         want_member = tag.get('BusinessType') in ('Question', 'GeneralDebate')
 
         member = None
@@ -1462,13 +1622,25 @@ class LordsParseDayXML(BaseParseDayXML):
         if len(member_tags):
             if want_member:
                 member = self.parse_member(member_tags[0])
+                self.mark_xpath_seen(tag, './/ns:hs_TabledBy')
             else:
                 tabledby_tags = tag.xpath('.//ns:hs_TabledBy', namespaces=self.ns_map)
+                self.mark_seen(tabledby_tags[0])
                 self.parse_para_with_member(tabledby_tags[0], None, css_class='italic', strip_member=False)
 
         questions = tag.xpath('.//ns:hs_Question', namespaces=self.ns_map)
         for question in questions:
             self.parse_para_with_member(question, member if want_member else None)
+
+        # put in the rest of the headings as paragraphs at the start
+        heading = tag.xpath('.//ns:hs_DebateHeading | .//ns:hs_Procedure', namespaces=self.ns_map)
+        if len(heading) > 1:
+            for h in heading[1:]:
+                self.handle_tag('hs_para', h)
+
+        paras = tag.xpath('.//ns:hs_para', namespaces=self.ns_map)
+        for para in paras:
+            self.handle_tag('hs_para', para)
 
     def parse_amendment_heading(self, heading):
         self.new_speech(None, heading.get('url'))
@@ -1484,12 +1656,17 @@ class LordsParseDayXML(BaseParseDayXML):
         )
 
     def parse_amendment(self, amendment):
-        self.parse_para_with_member(
-            amendment,
-            None,
-            css_class='italic',
-            pwmotiontext='unrecognized'
-        )
+        # Amendments are often things like:
+        #
+        # <Amendment><hs_quote><B>54:</B>
+        # Clause 67, page 30, line 9, leave out “high” and insert
+        # “higher”</hs_quote></Amendment>
+        #
+        # so we need to parse the tags to make sure we get the
+        # indenting etc
+        for tag in amendment.getchildren():
+            tag_name = self.get_tag_name_no_ns(tag)
+            self.handle_tag(tag_name, tag)
 
     def parse_clause_heading(self, heading):
         tag = etree.Element('p')
@@ -1504,12 +1681,20 @@ class LordsParseDayXML(BaseParseDayXML):
         if self.current_speech is None:
             self.new_speech(None, heading.get('url'))
         self.current_speech.append(tag)
+        self.mark_seen(heading)
 
     def parse_division(self, division):
+        time = division.xpath('.//ns:hs_time', namespaces=self.ns_map)
+        if len(time):
+            self.parse_time(time[0])
+
         ayes_count = \
             division.xpath('.//ns:ContentsNumber/text()', namespaces=self.ns_map)
         noes_count = \
             division.xpath('.//ns:NotContentsNumber/text()', namespaces=self.ns_map)
+
+        self.mark_xpath_seen(division, './/ns:ContentsNumber')
+        self.mark_xpath_seen(division, './/ns:NotContentsNumber')
 
         ayes_count_text = u''.join(ayes_count)
         noes_count_text = u''.join(noes_count)
@@ -1534,6 +1719,9 @@ class LordsParseDayXML(BaseParseDayXML):
         div_number = \
             division.xpath('.//ns:DivisionNumber/text()', namespaces=self.ns_map)
 
+        self.mark_xpath_seen(division, './/ns:DivisionNumber')
+        self.mark_xpath_seen(division, './/ns:hs_DivNo')
+
         tag.set('divnumber', u''.join(div_number))
         tag.set('colnum', self.current_col)
         tag.set('time', self.current_time)
@@ -1550,6 +1738,11 @@ class LordsParseDayXML(BaseParseDayXML):
         noes = division.xpath(
             './/ns:NamesNotContents//ns:hs_DivListNames', namespaces=self.ns_map
         )
+        self.mark_xpath_all_seen(division, './/ns:hs_DivListHead')
+        self.mark_xpath_seen(division, './/ns:NamesNotContents')
+        self.mark_xpath_seen(division, './/ns:NamesContents')
+        self.mark_xpath_seen(division, './/ns:NamesNotContents//ns:hs_DivListNames')
+        self.mark_xpath_seen(division, './/ns:NamesContents//ns:hs_DivListNames')
 
         aye_list = etree.Element('lordlist')
         aye_list.set('vote', 'content')
@@ -1563,16 +1756,17 @@ class LordsParseDayXML(BaseParseDayXML):
 
         self.root.append(tag)
 
-        paras = division.xpath('./ns:hs_Procedure', namespaces=self.ns_map)
+        paras = division.xpath('./ns:hs_Procedure | ./ns:hs_para', namespaces=self.ns_map)
         for para in paras:
             text = u''.join(para.xpath('.//text()'))
-            if re.search(r'Contents', text) or \
-                    re.search(r'Division\s*on', text):
+            if re.search(r'Contents', text):
+                self.mark_seen(para)
                 continue
-            self.parse_para(para)
+            self.parse_para_with_member(para, None)
 
     def parse_votelist(self, votes, direction, vote_list):
         for vote in votes:
+            self.mark_seen(vote)
             tag = etree.Element('lord')
             member_name = self.get_single_line_text_from_element(vote)
             is_teller = False
@@ -1617,6 +1811,9 @@ class LordsParseDayXML(BaseParseDayXML):
             self.parse_division(tag)
         else:
             handled = super(LordsParseDayXML, self).handle_tag(tag_name, tag)
+
+        if handled:
+            self.mark_seen(tag)
 
         return handled
 
