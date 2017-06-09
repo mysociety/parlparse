@@ -180,6 +180,14 @@ def ynmp_csv_reader(fn):
         person_id = row['parlparse_id']
         ynmp_id = int(row['id'])
         elected = row.get('elected', '').lower()
+        if name == 'Rosena Allin-Khan': person_id = 'uk.org.publicwhip/person/25579'
+        if name == 'Gareth Snell': person_id = 'uk.org.publicwhip/person/25601'
+        if name == 'Gill Furniss': person_id = 'uk.org.publicwhip/person/25489'
+        if name == 'Chris Elmore': person_id = 'uk.org.publicwhip/person/25490'
+        if name == 'Trudy Harrison': person_id = 'uk.org.publicwhip/person/25600'
+        if name == 'Jim McMahon': person_id = 'uk.org.publicwhip/person/25475'
+        if name == 'Tracy Brabin': person_id = 'uk.org.publicwhip/person/25592'
+        if name == 'Caroline Johnson': person_id = 'uk.org.publicwhip/person/25597'
         yield ynmp_id, {'given_name': given, 'family_name': family}, party, cons, person_id, elected
 
 
