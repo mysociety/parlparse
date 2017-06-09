@@ -49,6 +49,9 @@ def update_from(csv_url, data):
             person_id = ''
         if cons in data['existing'] and not person_id:
             person_id = data['existing'][cons]['person_id']
+            # If they've previously been removed, we don't care.
+            if person_id == 'uk.org.publicwhip/person/0':
+                person_id = ''
 
         identifier = {'scheme': 'yournextmp', 'identifier': ynmp_id}
         if person_id:
