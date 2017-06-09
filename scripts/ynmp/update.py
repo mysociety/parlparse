@@ -28,6 +28,8 @@ def update_from(csv_url, data):
         if elected in ('', 'false', 'no', 'n'):
             if cons not in data['existing'] or data['existing'][cons]['on_behalf_of_id'] != slugify(party):
                 continue
+            if cons in data['dealt_with']:
+                continue  # We had the winner already, don't remove them!
             # We have a winner who has stopped being a winner. Update the membership to unknown
             mship = data['existing'][cons]
             mship.update({
@@ -91,6 +93,7 @@ def update_from(csv_url, data):
             data['existing'][cons] = mship
         if changed:
             mship.update(new_mship)
+        data.setdefault('dealt_with', []).append(cons)
 
     return changed
 
