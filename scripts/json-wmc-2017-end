@@ -8,6 +8,6 @@ mships = data.memberships.in_org('house-of-commons').current()
 assert len(mships) == 649
 for mship in mships:
     mship['end_date'] = '2017-05-03'
-    mship['end_reason'] = 'dissolved'
+    mship['end_reason'] = 'dissolution'
 
 data.dump()
