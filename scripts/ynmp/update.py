@@ -33,7 +33,6 @@ def update_from(csv_url, data):
             # We have a winner who has stopped being a winner. Update the membership to unknown
             mship = data['existing'][cons]
             mship.update({
-                'name': {'given_name': 'Unknown', 'family_name':'Winner'},
                 'on_behalf_of_id': 'none',
                 'person_id': 'uk.org.publicwhip/person/0',
             })
@@ -58,8 +57,10 @@ def update_from(csv_url, data):
         else:
             data['max_person_id'] += 1
             person_id = 'uk.org.publicwhip/person/%d' % data['max_person_id']
+            name['note'] = 'Main'
             new_person = {
                 'id': person_id,
+                "other_names": [ name ],
                 'identifiers': [identifier],
                 'shortcuts': {
                     'current_party': party,
@@ -70,7 +71,6 @@ def update_from(csv_url, data):
             data['persons'][person_id] = new_person
 
         new_mship = {
-            'name': name,
             'on_behalf_of_id': data['orgs'][party],
             'person_id': person_id,
             'start_date': '2017-06-09',
@@ -181,7 +181,7 @@ def ynmp_csv_reader(fn):
 
 
 def mship_has_changed(old, new):
-    if old['name'] != new['name'] or old['on_behalf_of_id'] != new['on_behalf_of_id'] or old['person_id'] != new['person_id']:
+    if old['on_behalf_of_id'] != new['on_behalf_of_id'] or old['person_id'] != new['person_id']:
         return True
     return False
 
