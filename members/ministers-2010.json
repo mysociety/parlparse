@@ -9955,6 +9955,62 @@
       "end_date": "1997-06-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/252/Committee/109", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10177", 
+      "organization_id": "modernisation-of-the-house-of-commons-committee", 
+      "start_date": "1998-02-03", 
+      "end_date": "2000-01-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/252/Committee/126", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10177", 
+      "organization_id": "procedure-committee", 
+      "start_date": "1997-07-31", 
+      "end_date": "2001-11-27"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/252/Committee/14", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10177", 
+      "organization_id": "committee-on-reform-of-the-house-of-commons", 
+      "start_date": "2009-07-20", 
+      "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/252/Committee/142", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10177", 
+      "organization_id": "south-west-regional-select-committee", 
+      "start_date": "2009-03-03", 
+      "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/252/Committee/174", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10177", 
+      "organization_id": "ecclesiastical-committee-joint-committee", 
+      "start_date": "2002-01-31", 
+      "end_date": "2005-05-05"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/252/Committee/4", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10177", 
+      "organization_id": "agriculture-committee", 
+      "start_date": "1999-12-06", 
+      "end_date": "2001-05-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/252/Committee/52", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10177", 
+      "organization_id": "environment-food-and-rural-affairs-committee", 
+      "start_date": "2001-07-16", 
+      "end_date": "2010-05-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/343/Committee/138", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10179", 
@@ -11779,7 +11835,8 @@
       "role": "Liberal Democrat Lords Spokesperson (Business, Energy and Industrial Strategy)", 
       "person_id": "uk.org.publicwhip/person/10208", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-10-28"
+      "start_date": "2016-10-28", 
+      "end_date": "2017-06-16"
     }, 
     {
       "id": "uk.parliament.data/Member/214/OppositionPost/868", 
@@ -13561,6 +13618,22 @@
       "organization_id": "house-of-commons", 
       "start_date": "2001-06-11", 
       "end_date": "2002-05-29"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/382/Committee/120", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10248", 
+      "organization_id": "northern-ireland-affairs-committee", 
+      "start_date": "1997-07-28", 
+      "end_date": "2001-05-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/382/Committee/120/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10248", 
+      "organization_id": "northern-ireland-affairs-committee", 
+      "start_date": "2005-07-12", 
+      "end_date": "2010-05-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4154/Committee/174", 
@@ -19197,6 +19270,118 @@
       "organization_id": "agriculture-committee", 
       "start_date": "1999-11-01", 
       "end_date": "1999-11-29"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/450/Committee/119", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10367", 
+      "organization_id": "north-west-regional-select-committee", 
+      "start_date": "2009-03-03", 
+      "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/450/Committee/139", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10367", 
+      "organization_id": "social-services-committee", 
+      "start_date": "1983-06-09", 
+      "end_date": "1985-04-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/450/Committee/69", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10367", 
+      "organization_id": "european-scrutiny-committee", 
+      "start_date": "2010-07-26", 
+      "end_date": "2011-11-28"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/450/Committee/83", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10367", 
+      "organization_id": "home-affairs-committee", 
+      "start_date": "1985-04-18", 
+      "end_date": "1987-05-05"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/450/Committee/85", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10367", 
+      "organization_id": "home-affairs-subcommittee-on-race-relations--immigration", 
+      "start_date": "1985-05-15", 
+      "end_date": "1987-05-05"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/450/GovernmentPost/424", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Foreign and Commonwealth Office)", 
+      "person_id": "uk.org.publicwhip/person/10367", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1997-05-06", 
+      "end_date": "1999-07-29"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/450/OppositionPost/10", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Opposition Whip (Commons)", 
+      "person_id": "uk.org.publicwhip/person/10367", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1986-07-01", 
+      "end_date": "1987-07-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/450/OppositionPost/1006", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Spokesperson (Work and Pensions)", 
+      "person_id": "uk.org.publicwhip/person/10367", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1988-07-01", 
+      "end_date": "1992-07-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/450/OppositionPost/982", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Spokesperson (Education)", 
+      "person_id": "uk.org.publicwhip/person/10367", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1992-07-01", 
+      "end_date": "1994-07-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/450/OppositionPost/984", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Spokesperson (Environment, Food and Rural Affairs)", 
+      "person_id": "uk.org.publicwhip/person/10367", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1994-07-01", 
+      "end_date": "1995-07-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/450/OppositionPost/985", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Spokesperson (Foreign and Commonwealth Affairs)", 
+      "person_id": "uk.org.publicwhip/person/10367", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1995-07-01", 
+      "end_date": "1997-05-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/450/OppositionPost/993", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Spokesperson (Transport)", 
+      "person_id": "uk.org.publicwhip/person/10367", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1988-07-01", 
+      "end_date": "1989-07-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/450/ParliamentaryPost/758", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Chair, Parliamentary Labour Party", 
+      "person_id": "uk.org.publicwhip/person/10367", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2006-12-05", 
+      "end_date": "2010-05-06"
     }, 
     {
       "id": "uk.parliament.data/Member/549/Committee/102", 
@@ -38444,6 +38629,14 @@
       "role": "Shadow SNP Spokesperson (Constitution)", 
       "person_id": "uk.org.publicwhip/person/11333", 
       "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1440/OppositionPost/1140/1", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Constitution)", 
+      "person_id": "uk.org.publicwhip/person/11333", 
+      "organization_id": "house-of-commons", 
       "start_date": "2010-06-15", 
       "end_date": "2015-05-20"
     }, 
@@ -38453,7 +38646,16 @@
       "role": "Shadow SNP Westminster Group Leader (Leader of the House of Commons)", 
       "person_id": "uk.org.publicwhip/person/11333", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-20"
+      "start_date": "2015-05-20", 
+      "end_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1440/OppositionPost/1384", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Leader of the House of Commons", 
+      "person_id": "uk.org.publicwhip/person/11333", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/1440/OppositionPost/978", 
@@ -46494,7 +46696,8 @@
       "role": "SNP Deputy Leader", 
       "person_id": "uk.org.publicwhip/person/11973", 
       "organization_id": "house-of-commons", 
-      "start_date": "2010-06-15"
+      "start_date": "2010-06-15", 
+      "end_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/1514/OppositionPost/1126", 
@@ -46511,7 +46714,8 @@
       "role": "Shadow SNP Westminster Group Leader (Economy)", 
       "person_id": "uk.org.publicwhip/person/11973", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-13"
+      "start_date": "2015-05-13", 
+      "end_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/1514/OppositionPost/6", 
@@ -46721,6 +46925,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2008-07-01", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1546/OppositionPost/1376", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Environment and Rural Affairs)", 
+      "person_id": "uk.org.publicwhip/person/12004", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/1546/OppositionPost/980", 
@@ -91856,6 +92068,14 @@
       "start_date": "2015-06-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/4322/OppositionPost/1352", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Spokesperson (Business, Energy and Industrial Strategy)", 
+      "person_id": "uk.org.publicwhip/person/25240", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-16"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4330/GovernmentPost/1063", 
       "source": "datadotparl/governmentpost", 
       "role": "Lords Spokesperson (Cabinet Office)", 
@@ -92106,6 +92326,22 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4470/OppositionPost/1127", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Transport)", 
+      "person_id": "uk.org.publicwhip/person/25268", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4470/OppositionPost/1375", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Infrastructure and Energy)", 
+      "person_id": "uk.org.publicwhip/person/25268", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4421/Committee/164", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25269", 
@@ -92114,12 +92350,44 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4421/OppositionPost/1231", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Pensions)", 
+      "person_id": "uk.org.publicwhip/person/25269", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4421/OppositionPost/1368", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Youth affairs)", 
+      "person_id": "uk.org.publicwhip/person/25269", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4403/Committee/136", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25270", 
       "organization_id": "scottish-affairs-committee", 
       "start_date": "2015-07-06", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4403/OppositionPost/1136", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (International Development)", 
+      "person_id": "uk.org.publicwhip/person/25270", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4403/OppositionPost/1237", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Climate Justice)", 
+      "person_id": "uk.org.publicwhip/person/25270", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4424/Committee/62", 
@@ -92178,6 +92446,14 @@
       "end_date": "2016-11-28"
     }, 
     {
+      "id": "uk.parliament.data/Member/4466/OppositionPost/1236", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Europe)", 
+      "person_id": "uk.org.publicwhip/person/25273", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4427/OppositionPost/1217", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow SNP Westminster Group Leader (Trade and Investment)", 
@@ -92192,7 +92468,16 @@
       "role": "Shadow SNP Spokesperson (Voluntary Sector)", 
       "person_id": "uk.org.publicwhip/person/25275", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-09-01"
+      "start_date": "2016-09-01", 
+      "end_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4374/OppositionPost/1367", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Industries for the future)", 
+      "person_id": "uk.org.publicwhip/person/25275", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4412/Committee/347", 
@@ -92216,7 +92501,16 @@
       "role": "Shadow SNP Spokesperson (Climate Justice)", 
       "person_id": "uk.org.publicwhip/person/25276", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-20"
+      "start_date": "2015-05-20", 
+      "end_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4412/OppositionPost/1382", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Mental Health)", 
+      "person_id": "uk.org.publicwhip/person/25276", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4440/Committee/203", 
@@ -92240,7 +92534,16 @@
       "role": "SNP Whip", 
       "person_id": "uk.org.publicwhip/person/25277", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-20"
+      "start_date": "2015-05-20", 
+      "end_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4440/OppositionPost/1366", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Small Business, Enterprise and Innovation)", 
+      "person_id": "uk.org.publicwhip/person/25277", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4482/Committee/137", 
@@ -92589,7 +92892,16 @@
       "role": "Shadow SNP Spokesperson (Fair Work and Employment)", 
       "person_id": "uk.org.publicwhip/person/25293", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-10-19"
+      "start_date": "2015-10-19", 
+      "end_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4365/OppositionPost/1364", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Social Justice)", 
+      "person_id": "uk.org.publicwhip/person/25293", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4413/Committee/346", 
@@ -92617,12 +92929,44 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4469/OppositionPost/1232", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Disabilities)", 
+      "person_id": "uk.org.publicwhip/person/25295", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4469/OppositionPost/1234", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow SNP Spokesperson (Equalities, Women and Children)", 
       "person_id": "uk.org.publicwhip/person/25295", 
       "organization_id": "house-of-commons", 
       "start_date": "2015-05-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4469/OppositionPost/1370", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Family Support)", 
+      "person_id": "uk.org.publicwhip/person/25295", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4469/OppositionPost/1371", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Housing)", 
+      "person_id": "uk.org.publicwhip/person/25295", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4469/OppositionPost/1372", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Child Maintenance)", 
+      "person_id": "uk.org.publicwhip/person/25295", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4359/Committee/162", 
@@ -92695,7 +93039,8 @@
       "role": "Shadow SNP Spokesperson (International Development)", 
       "person_id": "uk.org.publicwhip/person/25299", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-20"
+      "start_date": "2015-05-20", 
+      "end_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4435/Committee/126", 
@@ -92704,6 +93049,14 @@
       "organization_id": "procedure-committee", 
       "start_date": "2015-07-13", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4435/OppositionPost/1373", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Consumer affairs)", 
+      "person_id": "uk.org.publicwhip/person/25300", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4393/Committee/350", 
@@ -92886,12 +93239,28 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4402/OppositionPost/1380", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Defence Procurement)", 
+      "person_id": "uk.org.publicwhip/person/25305", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4463/Committee/69", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25306", 
       "organization_id": "european-scrutiny-committee", 
       "start_date": "2017-02-06", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4463/OppositionPost/1383", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Trade Unions and Workers' Rights)", 
+      "person_id": "uk.org.publicwhip/person/25306", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4488/Committee/2", 
@@ -93008,12 +93377,21 @@
       "end_date": "2016-09-05"
     }, 
     {
+      "id": "uk.parliament.data/Member/4357/OppositionPost/1208", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Economy)", 
+      "person_id": "uk.org.publicwhip/person/25314", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4357/OppositionPost/1228", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow SNP Spokesperson (House of Lords)", 
       "person_id": "uk.org.publicwhip/person/25314", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-20"
+      "start_date": "2015-05-20", 
+      "end_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4388/Committee/127", 
@@ -93102,7 +93480,16 @@
       "role": "Shadow SNP Westminster Group Leader (Health)", 
       "person_id": "uk.org.publicwhip/person/25318", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-20"
+      "start_date": "2015-05-20", 
+      "end_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4385/OppositionPost/1381", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Health)", 
+      "person_id": "uk.org.publicwhip/person/25318", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4504/Committee/158", 
@@ -93135,6 +93522,14 @@
       "organization_id": "transport-committee", 
       "start_date": "2015-07-08", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4461/OppositionPost/1131", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Defence)", 
+      "person_id": "uk.org.publicwhip/person/25322", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4441/Committee/326", 
@@ -93174,7 +93569,16 @@
       "role": "Shadow SNP Spokesperson (Europe)", 
       "person_id": "uk.org.publicwhip/person/25324", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-20"
+      "start_date": "2015-05-20", 
+      "end_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4434/OppositionPost/1385", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (International Affairs and Europe)", 
+      "person_id": "uk.org.publicwhip/person/25324", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4416/Committee/158", 
@@ -93199,6 +93603,14 @@
       "organization_id": "communities-and-local-government-committee", 
       "start_date": "2015-07-13", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4430/OppositionPost/1126", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Treasury)", 
+      "person_id": "uk.org.publicwhip/person/25327", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4430/OppositionPost/1230", 
@@ -93383,7 +93795,16 @@
       "role": "Shadow SNP Westminster Group Leader (Scottish Parliament/Scottish Government Liaison)", 
       "person_id": "uk.org.publicwhip/person/25336", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-20"
+      "start_date": "2015-05-20", 
+      "end_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4417/OppositionPost/1304", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Fair Work and Employment)", 
+      "person_id": "uk.org.publicwhip/person/25336", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4417/OppositionPost/1305", 
@@ -93392,6 +93813,14 @@
       "person_id": "uk.org.publicwhip/person/25336", 
       "organization_id": "house-of-commons", 
       "start_date": "2015-05-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4417/OppositionPost/1369", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Northern Ireland)", 
+      "person_id": "uk.org.publicwhip/person/25336", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4411/Committee/203", 
@@ -93498,12 +93927,28 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4453/OppositionPost/1129", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Scotland)", 
+      "person_id": "uk.org.publicwhip/person/25341", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4453/OppositionPost/1227", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow SNP Spokesperson (Cabinet Office)", 
       "person_id": "uk.org.publicwhip/person/25341", 
       "organization_id": "house-of-commons", 
       "start_date": "2015-05-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4453/OppositionPost/1228", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (House of Lords)", 
+      "person_id": "uk.org.publicwhip/person/25341", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4358/Committee/131", 
@@ -93928,7 +94373,8 @@
       "role": "Shadow SNP Spokesperson (Pensions)", 
       "person_id": "uk.org.publicwhip/person/25361", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-20"
+      "start_date": "2015-05-20", 
+      "end_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4384/Committee/69", 
@@ -94108,7 +94554,16 @@
       "role": "Shadow SNP Westminster Group Leader (Defence)", 
       "person_id": "uk.org.publicwhip/person/25370", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-20"
+      "start_date": "2015-05-20", 
+      "end_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4371/OppositionPost/1379", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Culture and Media)", 
+      "person_id": "uk.org.publicwhip/person/25370", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4447/Committee/136", 
@@ -94300,7 +94755,16 @@
       "role": "Shadow SNP Westminster Group Leader (Transport)", 
       "person_id": "uk.org.publicwhip/person/25382", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-20"
+      "start_date": "2015-05-20", 
+      "end_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4467/OppositionPost/1377", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Business, Energy and Industrial Strategy)", 
+      "person_id": "uk.org.publicwhip/person/25382", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4496/Committee/62", 
@@ -94538,12 +95002,21 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4419/OppositionPost/1209", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Justice and Home Affairs)", 
+      "person_id": "uk.org.publicwhip/person/25404", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4419/OppositionPost/1214", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow SNP Westminster Group Leader (Justice and Home Affairs)", 
       "person_id": "uk.org.publicwhip/person/25404", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-13"
+      "start_date": "2015-05-13", 
+      "end_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4406/Committee/17", 
@@ -94575,7 +95048,24 @@
       "role": "Shadow SNP Westminster Group Leader (Public Services and Education)", 
       "person_id": "uk.org.publicwhip/person/25406", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-20"
+      "start_date": "2015-05-20", 
+      "end_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4443/OppositionPost/1238", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Armed Forces and Veterans)", 
+      "person_id": "uk.org.publicwhip/person/25406", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4443/OppositionPost/1378", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Education)", 
+      "person_id": "uk.org.publicwhip/person/25406", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4522/Committee/345", 
@@ -94632,7 +95122,16 @@
       "role": "Shadow SNP Westminster Group Leader (Business, Innovation and Skills)", 
       "person_id": "uk.org.publicwhip/person/25409", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-10-19"
+      "start_date": "2015-10-19", 
+      "end_date": "2017-06-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4486/OppositionPost/1365", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Trade and Investment)", 
+      "person_id": "uk.org.publicwhip/person/25409", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4452/Committee/326", 
@@ -95604,6 +96103,22 @@
       "organization_id": "backbench-business-committee", 
       "start_date": "2017-01-30", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4595/Committee/135", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25601", 
+      "organization_id": "science-and-technology-committee-commons", 
+      "start_date": "2017-03-13", 
+      "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4660/OppositionPost/874", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Secretary of State for Scotland", 
+      "person_id": "uk.org.publicwhip/person/25653", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-14"
     }
   ], 
   "organizations": [

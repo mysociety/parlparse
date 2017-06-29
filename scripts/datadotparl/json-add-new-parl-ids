@@ -14,13 +14,15 @@ parser = etree.ETCompatXMLParser()
 etree.set_default_parser(parser)
 
 def add_identifier(pid, lookup):
-    ddp_id = parl_members[lookup].attrib['Member_Id']
-    print '%s (%s) => %s' % (pid, lookup, ddp_id)
-    data.persons[pid].setdefault('identifiers', []).append({'scheme': 'datadotparl_id', 'identifier': ddp_id})
+    if pid not in parl_ids or 'datadotparl_id' not in parl_ids[pid]:
+        ddp_id = parl_members[lookup].attrib['Member_Id']
+        print '%s (%s) => %s' % (pid, lookup, ddp_id)
+        data.persons[pid].setdefault('identifiers', []).append({'scheme': 'datadotparl_id', 'identifier': ddp_id})
 
-    pims_id = parl_members[lookup].attrib['Pims_Id']
-    print 'pims - %s (%s) => %s' % (pid, lookup, pims_id)
-    data.persons[pid].setdefault('identifiers', []).append({'scheme': 'pims_id', 'identifier': pims_id})
+    if pid not in parl_ids or 'pims_id' not in parl_ids[pid]:
+        pims_id = parl_members[lookup].attrib['Pims_Id']
+        print 'pims - %s (%s) => %s' % (pid, lookup, pims_id)
+        data.persons[pid].setdefault('identifiers', []).append({'scheme': 'pims_id', 'identifier': pims_id})
 
 
 data = Popolo()
@@ -28,8 +30,8 @@ data = Popolo()
 parl_ids = {}
 for person in data.persons.values():
     for i in person.get('identifiers', []):
-        if i['scheme'] == 'datadotparl_id':
-            parl_ids[person['id']] = i['identifier']
+        if i['scheme'] == 'datadotparl_id' or i['scheme'] == 'pims_id':
+            parl_ids.setdefault(person['id'], {})[i['scheme']] = i['identifier']
 
 
 # Commons
@@ -40,7 +42,7 @@ parl_members = etree.parse(source_file).getroot()
 parl_members = {member.find('MemberFrom').text.lower(): member for member in parl_members if member.find('CurrentStatus').get('IsActive') == 'True'}
 
 today = datetime.date.today().isoformat()
-mships = [m for m in data.memberships.in_org('house-of-commons').on(today) if m['person_id'] not in parl_ids]
+mships = [m for m in data.memberships.in_org('house-of-commons').on(today) if m['person_id'] not in parl_ids or len(parl_ids[m['person_id']]) < 2]
 
 for m in mships:
     add_identifier(m['person_id'], data.posts[m['post_id']]['area']['name'].lower())
@@ -52,6 +54,7 @@ def canon_name(n):
     n = n.lower()
     n = re.sub(' st\. +', ' st ', n)
     n = re.sub('^the ', '', n)
+    n = re.sub('^lord bishop ', 'bishop ', n)
     return n
 
 LORDS_URL = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/membership=all|house=Lords/'
@@ -69,7 +72,7 @@ for member in parl_members:
     parl_by_name[(name, end_date)] = member
 parl_members = parl_by_name
 
-mships = [m for m in data.memberships.in_org('house-of-lords') if m['person_id'] not in parl_ids]
+mships = [m for m in data.memberships.in_org('house-of-lords') if m['person_id'] not in parl_ids or len(parl_ids[m['person_id']]) < 2]
 mships_by_pid = {}
 for m in mships:
     mships_by_pid.setdefault(m['person_id'], []).append(m)
