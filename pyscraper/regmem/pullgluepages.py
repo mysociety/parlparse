@@ -200,6 +200,17 @@ def FindRegmemPages():
             date = mx.DateTime.DateTimeFrom(alldates[0]).date
             if (date, ixurl) not in urls:
                 urls.append((date, ixurl))
+        elif 'Session 2017-19' in content:
+            allurl_soups = soup.findAll('a', href=re.compile("(memi02|part1contents|/contents\.htm)"))
+            for url_soup in allurl_soups:
+                url = url_soup['href']
+                url = urlparse.urljoin(ixurl, url)
+                date = re.sub('^.*(\d\d)(\d\d)(\d\d).*', r'20\1-\2-\3', url)
+                url_path = urlparse.urlparse(url)[2]
+                if url_path in corrections:
+                    date = corrections[url_path]
+                if (date, url) not in urls:
+                    urls.append((date, url))
         else:
             allurl_soups = soup.findAll('a', href=re.compile("(memi02|part1contents|/contents\.htm)"))
             for url_soup in allurl_soups:
