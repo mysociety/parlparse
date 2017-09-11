@@ -2288,6 +2288,14 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/17/Committee/377", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10040", 
+      "organization_id": "commons-reference-group-on-representation-and-inclusion-committee", 
+      "start_date": "2016-11-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/17/Committee/38", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10040", 
@@ -3575,7 +3583,7 @@
       "id": "uk.parliament.data/Member/452/Committee/356", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10059", 
-      "organization_id": "nhs-sustainability-committee", 
+      "organization_id": "longterm-sustainability-of-the-nhs-committee", 
       "start_date": "2016-05-25"
     }, 
     {
@@ -3959,6 +3967,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/151/Committee/377", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10063", 
+      "organization_id": "commons-reference-group-on-representation-and-inclusion-committee", 
+      "start_date": "2016-11-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/151/Committee/59", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10063", 
@@ -4203,7 +4218,7 @@
       "id": "uk.parliament.data/Member/154/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10067", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2004-12-02", 
       "end_date": "2015-09-18"
     }, 
@@ -4219,7 +4234,7 @@
       "id": "uk.parliament.data/Member/154/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10067", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2004-11-24", 
       "end_date": "2006-11-08"
     }, 
@@ -6078,6 +6093,14 @@
       "organization_id": "procedure-committee-lords", 
       "start_date": "2011-12-01", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/499/Committee/191/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10090", 
+      "organization_id": "procedure-committee-lords", 
+      "start_date": "2010-06-09", 
+      "end_date": "2011-12-01"
     }, 
     {
       "id": "uk.parliament.data/Member/499/Committee/26", 
@@ -9108,7 +9131,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10160", 
       "organization_id": "licensing-act-2003-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-04-04"
     }, 
     {
       "id": "uk.parliament.data/Member/346/Committee/64", 
@@ -9628,7 +9652,8 @@
       "role": "Shadow DUP Spokesperson (Defence)", 
       "person_id": "uk.org.publicwhip/person/10172", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2017-05-03"
     }, 
     {
       "id": "uk.parliament.data/Member/650/OppositionPost/1113/1", 
@@ -11916,7 +11941,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10208", 
       "organization_id": "licensing-act-2003-committee", 
-      "start_date": "2016-06-14"
+      "start_date": "2016-06-14", 
+      "end_date": "2017-04-04"
     }, 
     {
       "id": "uk.parliament.data/Member/214/Committee/43", 
@@ -13155,7 +13181,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10234", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2012-05-16", 
       "end_date": "2015-03-30"
     }, 
@@ -13710,7 +13736,7 @@
       "id": "uk.parliament.data/Member/276/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10247", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2002-06-10", 
       "end_date": "2008-11-28"
     }, 
@@ -13734,7 +13760,7 @@
       "id": "uk.parliament.data/Member/276/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10247", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2002-06-10", 
       "end_date": "2008-01-28"
     }, 
@@ -15974,6 +16000,13 @@
       "end_date": "1997-03-21"
     }, 
     {
+      "id": "uk.parliament.data/Member/140/Committee/377", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10281", 
+      "organization_id": "commons-reference-group-on-representation-and-inclusion-committee", 
+      "start_date": "2016-11-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/140/Committee/43", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10281", 
@@ -17779,7 +17812,7 @@
       "id": "uk.parliament.data/Member/248/Committee/355", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10325", 
-      "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-select-committee-lords", 
       "start_date": "2016-05-05"
     }, 
     {
@@ -18337,7 +18370,7 @@
       "id": "uk.parliament.data/Member/635/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10345", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2017-06-27"
     }, 
     {
@@ -18353,7 +18386,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10345", 
       "organization_id": "financial-exclusion-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-03-25"
     }, 
     {
       "id": "uk.parliament.data/Member/635/Committee/363", 
@@ -20695,7 +20729,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10384", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2016-09-01"
     }, 
     {
@@ -20711,7 +20745,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10384", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2016-09-01"
     }, 
     {
@@ -21131,7 +21165,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10389", 
       "organization_id": "licensing-act-2003-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-04-04"
     }, 
     {
       "id": "uk.parliament.data/Member/384/Committee/52", 
@@ -21286,6 +21321,14 @@
       "organization_id": "statutory-instruments-select-committee", 
       "start_date": "2006-06-14", 
       "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/497/Committee/173", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10394", 
+      "organization_id": "delegated-powers-and-regulatory-reform-committee", 
+      "start_date": "2017-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/497/Committee/182", 
@@ -22348,7 +22391,7 @@
       "id": "uk.parliament.data/Member/121/Committee/356", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10424", 
-      "organization_id": "nhs-sustainability-committee", 
+      "organization_id": "longterm-sustainability-of-the-nhs-committee", 
       "start_date": "2016-05-25"
     }, 
     {
@@ -23290,7 +23333,7 @@
       "id": "uk.parliament.data/Member/305/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10445", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2012-05-16", 
       "end_date": "2014-05-14"
     }, 
@@ -24722,7 +24765,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10489", 
       "organization_id": "financial-exclusion-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-03-25"
     }, 
     {
       "id": "uk.parliament.data/Member/217/GovernmentPost/146", 
@@ -25716,7 +25760,7 @@
       "id": "uk.parliament.data/Member/554/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10516", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2016-05-25", 
       "end_date": "2017-04-27"
     }, 
@@ -26650,7 +26694,7 @@
       "id": "uk.parliament.data/Member/132/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10536", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2006-11-20", 
       "end_date": "2011-09-05"
     }, 
@@ -27059,7 +27103,7 @@
       "id": "uk.parliament.data/Member/4170/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10546", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2015-06-08"
     }, 
     {
@@ -27073,7 +27117,7 @@
       "id": "uk.parliament.data/Member/4170/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10546", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2015-05-28"
     }, 
     {
@@ -29047,7 +29091,8 @@
       "role": "The Lord Commissioner of Her Majesty's Treasury", 
       "person_id": "uk.org.publicwhip/person/10582", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-17"
+      "start_date": "2016-07-17", 
+      "end_date": "2017-06-15"
     }, 
     {
       "id": "uk.parliament.data/Member/245/GovernmentPost/351", 
@@ -31704,7 +31749,7 @@
       "id": "uk.parliament.data/Member/4151/Committee/356", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10641", 
-      "organization_id": "nhs-sustainability-committee", 
+      "organization_id": "longterm-sustainability-of-the-nhs-committee", 
       "start_date": "2016-05-25"
     }, 
     {
@@ -32320,7 +32365,7 @@
       "id": "uk.parliament.data/Member/57/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10659", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2015-11-03", 
       "end_date": "2016-09-13"
     }, 
@@ -34939,13 +34984,29 @@
       "start_date": "2015-05-08"
     }, 
     {
-      "id": "uk.parliament.data/Member/1388/OppositionPost/17", 
+      "id": "uk.parliament.data/Member/1388/OppositionPost/1400", 
       "source": "datadotparl/oppositionpost", 
-      "role": "Without portfolio", 
+      "role": "Shadow DUP Spokesperson (Brexit)", 
+      "person_id": "uk.org.publicwhip/person/10857", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-07-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1388/OppositionPost/1401", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Without Portfolio)", 
       "person_id": "uk.org.publicwhip/person/10857", 
       "organization_id": "house-of-commons", 
       "start_date": "2008-06-04", 
       "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1388/OppositionPost/1402", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "DUP Westminster Leader", 
+      "person_id": "uk.org.publicwhip/person/10857", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2010-05-06"
     }, 
     {
       "id": "uk.parliament.data/Member/1388/OppositionPost/990", 
@@ -39814,7 +39875,16 @@
       "role": "Shadow DUP Spokesperson (Education)", 
       "person_id": "uk.org.publicwhip/person/11374", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2017-06-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1593/OppositionPost/1400", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Brexit)", 
+      "person_id": "uk.org.publicwhip/person/11374", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-07-01"
     }, 
     {
       "id": "uk.parliament.data/Member/1593/OppositionPost/979", 
@@ -39963,6 +40033,13 @@
       "person_id": "uk.org.publicwhip/person/11389", 
       "organization_id": "women-and-equalities-committee", 
       "start_date": "2017-07-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1480/Committee/377", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11389", 
+      "organization_id": "commons-reference-group-on-representation-and-inclusion-committee", 
+      "start_date": "2016-11-15"
     }, 
     {
       "id": "uk.parliament.data/Member/1480/GovernmentPost/1114", 
@@ -40262,21 +40339,12 @@
       "end_date": "2010-05-06"
     }, 
     {
-      "id": "uk.parliament.data/Member/1482/GovernmentPost/1206", 
-      "source": "datadotparl/governmentpost", 
-      "role": "Assistant Whip", 
-      "person_id": "uk.org.publicwhip/person/11406", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2017-06-15"
-    }, 
-    {
       "id": "uk.parliament.data/Member/1482/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/11406", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-17", 
-      "end_date": "2017-06-15"
+      "start_date": "2016-07-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1198/Committee/137", 
@@ -40866,7 +40934,8 @@
       "role": "Shadow Minister (Equalities Office) (Diverse Communities)", 
       "person_id": "uk.org.publicwhip/person/11447", 
       "organization_id": "house-of-commons", 
-      "start_date": "2017-06-14"
+      "start_date": "2017-06-14", 
+      "end_date": "2017-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/1489/OppositionPost/1319/1", 
@@ -40876,6 +40945,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2016-10-06", 
       "end_date": "2017-02-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1489/OppositionPost/1358", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Secretary of State for Women and Equalities", 
+      "person_id": "uk.org.publicwhip/person/11447", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-08-31"
     }, 
     {
       "id": "uk.parliament.data/Member/1490/Committee/11", 
@@ -42571,6 +42648,13 @@
       "organization_id": "committee-of-selection", 
       "start_date": "2015-06-17", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1523/Committee/377", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11603", 
+      "organization_id": "commons-reference-group-on-representation-and-inclusion-committee", 
+      "start_date": "2016-11-15"
     }, 
     {
       "id": "uk.parliament.data/Member/1523/Committee/81", 
@@ -46096,7 +46180,8 @@
       "role": "Shadow DUP Spokesperson (Business, Innovation and Skills)", 
       "person_id": "uk.org.publicwhip/person/11892", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2017-07-14"
     }, 
     {
       "id": "uk.parliament.data/Member/1597/OppositionPost/1122/1", 
@@ -46106,6 +46191,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2009-06-01", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1597/OppositionPost/1403", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Business, Energy and Industrial Strategy)", 
+      "person_id": "uk.org.publicwhip/person/11892", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-07-14"
     }, 
     {
       "id": "uk.parliament.data/Member/1597/OppositionPost/982", 
@@ -47823,7 +47916,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12837", 
       "organization_id": "ecclesiastical-committee-joint-committee", 
-      "start_date": "2015-07-09"
+      "start_date": "2015-07-09", 
+      "end_date": "2017-05-03"
     }, 
     {
       "id": "uk.parliament.data/Member/3707/OppositionPost/977", 
@@ -47977,7 +48071,7 @@
       "id": "uk.parliament.data/Member/3654/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12841", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2013-07-11"
     }, 
     {
@@ -48149,7 +48243,7 @@
       "id": "uk.parliament.data/Member/2472/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12847", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2013-05-09", 
       "end_date": "2017-04-27"
     }, 
@@ -48165,7 +48259,7 @@
       "id": "uk.parliament.data/Member/2472/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12847", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2017-06-27"
     }, 
     {
@@ -48570,7 +48664,7 @@
       "id": "uk.parliament.data/Member/1970/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12860", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "1998-12-15", 
       "end_date": "2002-11-07"
     }, 
@@ -48578,7 +48672,7 @@
       "id": "uk.parliament.data/Member/1970/Committee/189/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12860", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2016-05-25"
     }, 
     {
@@ -48593,7 +48687,7 @@
       "id": "uk.parliament.data/Member/1970/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12860", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "1998-11-26", 
       "end_date": "2001-02-11"
     }, 
@@ -49006,7 +49100,7 @@
       "id": "uk.parliament.data/Member/787/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12871", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2001-06-28", 
       "end_date": "2007-10-30"
     }, 
@@ -49037,7 +49131,7 @@
       "id": "uk.parliament.data/Member/787/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12871", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2001-06-21", 
       "end_date": "2007-10-08"
     }, 
@@ -49416,7 +49510,7 @@
       "id": "uk.parliament.data/Member/2500/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12879", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2007-11-20", 
       "end_date": "2008-11-26"
     }, 
@@ -49432,7 +49526,7 @@
       "id": "uk.parliament.data/Member/2500/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12879", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2007-07-03", 
       "end_date": "2008-10-07"
     }, 
@@ -49808,7 +49902,7 @@
       "id": "uk.parliament.data/Member/1732/Committee/356", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12896", 
-      "organization_id": "nhs-sustainability-committee", 
+      "organization_id": "longterm-sustainability-of-the-nhs-committee", 
       "start_date": "2016-05-25"
     }, 
     {
@@ -50212,7 +50306,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12905", 
       "organization_id": "licensing-act-2003-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-04-04"
     }, 
     {
       "id": "uk.parliament.data/Member/1846/Committee/148", 
@@ -50338,7 +50433,7 @@
       "id": "uk.parliament.data/Member/3575/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12915", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2008-12-04", 
       "end_date": "2013-04-25"
     }, 
@@ -50379,7 +50474,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12915", 
       "organization_id": "licensing-act-2003-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-04-04"
     }, 
     {
       "id": "uk.parliament.data/Member/3575/Committee/364", 
@@ -50894,7 +50990,7 @@
       "id": "uk.parliament.data/Member/2439/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12943", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2015-11-03", 
       "end_date": "2016-05-12"
     }, 
@@ -51186,7 +51282,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/12951", 
-      "organization_id": "nhs-sustainability-committee", 
+      "organization_id": "longterm-sustainability-of-the-nhs-committee", 
       "start_date": "2016-05-25"
     }, 
     {
@@ -51267,7 +51363,7 @@
       "id": "uk.parliament.data/Member/2510/Committee/334", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12957", 
-      "organization_id": "built-environment-committee", 
+      "organization_id": "national-policy-for-the-built-environment-committee", 
       "start_date": "2015-06-11", 
       "end_date": "2016-02-11"
     }, 
@@ -51395,7 +51491,7 @@
       "id": "uk.parliament.data/Member/740/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12959", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2001-06-28", 
       "end_date": "2004-11-18"
     }, 
@@ -51411,7 +51507,7 @@
       "id": "uk.parliament.data/Member/740/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12959", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2001-06-21", 
       "end_date": "2004-11-18"
     }, 
@@ -52108,7 +52204,7 @@
       "id": "uk.parliament.data/Member/1801/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12976", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "1998-11-26", 
       "end_date": "2001-05-11"
     }, 
@@ -52116,7 +52212,7 @@
       "id": "uk.parliament.data/Member/1801/Committee/197/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12976", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2004-11-24", 
       "end_date": "2008-11-26"
     }, 
@@ -52294,7 +52390,7 @@
       "id": "uk.parliament.data/Member/3493/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12984", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2002-11-20", 
       "end_date": "2010-06-02"
     }, 
@@ -52303,7 +52399,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/12984", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2010-06-02", 
       "end_date": "2012-05-08"
     }, 
@@ -52360,7 +52456,7 @@
       "id": "uk.parliament.data/Member/3493/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12984", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2002-02-14", 
       "end_date": "2010-05-26"
     }, 
@@ -52369,7 +52465,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/12984", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2010-05-26", 
       "end_date": "2012-05-08"
     }, 
@@ -52459,7 +52555,7 @@
       "id": "uk.parliament.data/Member/3493/Committee/355", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12984", 
-      "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-select-committee-lords", 
       "start_date": "2016-05-05"
     }, 
     {
@@ -52577,7 +52673,7 @@
       "id": "uk.parliament.data/Member/3496/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12986", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2014-06-12", 
       "end_date": "2017-04-27"
     }, 
@@ -52629,6 +52725,22 @@
       "organization_id": "human-rights-joint-committee", 
       "start_date": "2008-12-15", 
       "end_date": "2012-05-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1660/Committee/123", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12989", 
+      "organization_id": "overseas-development-committee", 
+      "start_date": "1966-01-01", 
+      "end_date": "1968-01-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1660/Committee/127", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12989", 
+      "organization_id": "public-accounts-committee", 
+      "start_date": "1968-01-01", 
+      "end_date": "1971-01-01"
     }, 
     {
       "id": "uk.parliament.data/Member/1660/Committee/174", 
@@ -52691,6 +52803,33 @@
       "organization_id": "human-rights-joint-committee", 
       "start_date": "2003-12-02", 
       "end_date": "2007-11-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1660/GovernmentPost/1117", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State", 
+      "person_id": "uk.org.publicwhip/person/12989", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1977-02-21", 
+      "end_date": "1979-05-04"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1660/GovernmentPost/141", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister (Foreign and Commonwealth Office) (Overseas Development)", 
+      "person_id": "uk.org.publicwhip/person/12989", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1976-12-21", 
+      "end_date": "1977-02-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1660/OppositionPost/959", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Defence)", 
+      "person_id": "uk.org.publicwhip/person/12989", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1972-01-01", 
+      "end_date": "1974-01-01"
     }, 
     {
       "id": "uk.parliament.data/Member/2552/Committee/177", 
@@ -52838,14 +52977,14 @@
       "id": "uk.parliament.data/Member/2793/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12995", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2007-11-20"
     }, 
     {
       "id": "uk.parliament.data/Member/2793/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12995", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2012-05-16", 
       "end_date": "2015-03-30"
     }, 
@@ -53118,7 +53257,7 @@
       "id": "uk.parliament.data/Member/805/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13000", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2001-06-21", 
       "end_date": "2004-11-18"
     }, 
@@ -53247,7 +53386,7 @@
       "id": "uk.parliament.data/Member/2481/Committee/355", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13003", 
-      "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-select-committee-lords", 
       "start_date": "2016-05-25"
     }, 
     {
@@ -53413,7 +53552,7 @@
       "id": "uk.parliament.data/Member/1316/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13005", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2003-12-03", 
       "end_date": "2005-05-07"
     }, 
@@ -53437,7 +53576,7 @@
       "id": "uk.parliament.data/Member/1316/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13005", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2001-06-21", 
       "end_date": "2005-05-07"
     }, 
@@ -53904,7 +54043,7 @@
       "id": "uk.parliament.data/Member/3295/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13019", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "1974-11-12", 
       "end_date": "1979-04-05"
     }, 
@@ -53920,7 +54059,7 @@
       "id": "uk.parliament.data/Member/3295/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13019", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "1974-10-30", 
       "end_date": "1979-04-05"
     }, 
@@ -54057,7 +54196,7 @@
       "id": "uk.parliament.data/Member/1755/Committee/334", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13030", 
-      "organization_id": "built-environment-committee", 
+      "organization_id": "national-policy-for-the-built-environment-committee", 
       "start_date": "2015-07-08", 
       "end_date": "2016-02-11"
     }, 
@@ -54249,7 +54388,7 @@
       "id": "uk.parliament.data/Member/3278/Committee/334", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13037", 
-      "organization_id": "built-environment-committee", 
+      "organization_id": "national-policy-for-the-built-environment-committee", 
       "start_date": "2015-06-18", 
       "end_date": "2016-02-11"
     }, 
@@ -54363,7 +54502,7 @@
       "id": "uk.parliament.data/Member/2169/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13040", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2013-05-09", 
       "end_date": "2015-09-04"
     }, 
@@ -54772,7 +54911,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13057", 
       "organization_id": "financial-exclusion-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-03-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3694/GovernmentPost/484", 
@@ -55368,7 +55508,7 @@
       "id": "uk.parliament.data/Member/2476/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13071", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2008-12-10", 
       "end_date": "2009-11-12"
     }, 
@@ -55697,7 +55837,7 @@
       "id": "uk.parliament.data/Member/872/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13076", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2006-11-28", 
       "end_date": "2013-12-05"
     }, 
@@ -55930,7 +56070,7 @@
       "id": "uk.parliament.data/Member/2004/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13079", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2014-06-12"
     }, 
     {
@@ -55944,7 +56084,7 @@
       "id": "uk.parliament.data/Member/2004/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13079", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2015-10-12"
     }, 
     {
@@ -56391,7 +56531,7 @@
       "id": "uk.parliament.data/Member/3477/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13102", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2003-10-07", 
       "end_date": "2007-10-30"
     }, 
@@ -56407,7 +56547,7 @@
       "id": "uk.parliament.data/Member/3477/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13102", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2000-12-07", 
       "end_date": "2001-05-11"
     }, 
@@ -56415,7 +56555,7 @@
       "id": "uk.parliament.data/Member/3477/Committee/197/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13102", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2003-10-07", 
       "end_date": "2007-07-03"
     }, 
@@ -56506,7 +56646,7 @@
       "id": "uk.parliament.data/Member/3484/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13105", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "1995-11-17", 
       "end_date": "1998-11-19"
     }, 
@@ -56638,7 +56778,7 @@
       "id": "uk.parliament.data/Member/3474/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13107", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2007-11-20", 
       "end_date": "2014-08-06"
     }, 
@@ -56670,7 +56810,7 @@
       "id": "uk.parliament.data/Member/3474/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13107", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2007-10-08", 
       "end_date": "2014-08-06"
     }, 
@@ -56810,7 +56950,7 @@
       "id": "uk.parliament.data/Member/2534/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13108", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2014-06-12", 
       "end_date": "2017-04-27"
     }, 
@@ -56834,7 +56974,7 @@
       "id": "uk.parliament.data/Member/2534/Committee/334", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13108", 
-      "organization_id": "built-environment-committee", 
+      "organization_id": "national-policy-for-the-built-environment-committee", 
       "start_date": "2015-06-11", 
       "end_date": "2016-02-11"
     }, 
@@ -57122,7 +57262,7 @@
       "id": "uk.parliament.data/Member/1278/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13114", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "1992-06-01", 
       "end_date": "1994-11-03"
     }, 
@@ -57162,7 +57302,7 @@
       "id": "uk.parliament.data/Member/1278/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13114", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2010-05-26", 
       "end_date": "2015-03-30"
     }, 
@@ -57170,7 +57310,7 @@
       "id": "uk.parliament.data/Member/1278/Committee/197/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13114", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "1993-11-23", 
       "end_date": "1994-11-03"
     }, 
@@ -57453,7 +57593,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13117", 
-      "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-select-committee-lords", 
       "start_date": "2016-05-05"
     }, 
     {
@@ -57486,7 +57626,7 @@
       "person_id": "uk.org.publicwhip/person/13119", 
       "organization_id": "ecclesiastical-committee-joint-committee", 
       "start_date": "2015-07-09", 
-      "end_date": "2017-06-13"
+      "end_date": "2017-05-03"
     }, 
     {
       "id": "uk.parliament.data/Member/1817/Committee/176", 
@@ -57783,7 +57923,7 @@
       "id": "uk.parliament.data/Member/1883/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13122", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "1999-11-23"
     }, 
     {
@@ -57950,7 +58090,7 @@
       "id": "uk.parliament.data/Member/919/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13129", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2008-12-10", 
       "end_date": "2013-10-16"
     }, 
@@ -57958,7 +58098,7 @@
       "id": "uk.parliament.data/Member/919/Committee/189/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13129", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2004-12-02", 
       "end_date": "2007-10-30"
     }, 
@@ -57974,7 +58114,7 @@
       "id": "uk.parliament.data/Member/919/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13129", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2004-11-24", 
       "end_date": "2013-10-16"
     }, 
@@ -58431,7 +58571,7 @@
       "id": "uk.parliament.data/Member/2099/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13141", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2011-10-26", 
       "end_date": "2016-03-23"
     }, 
@@ -58499,7 +58639,7 @@
       "id": "uk.parliament.data/Member/2557/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13142", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2009-11-09", 
       "end_date": "2014-05-14"
     }, 
@@ -58507,7 +58647,7 @@
       "id": "uk.parliament.data/Member/2557/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13142", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2012-05-16", 
       "end_date": "2014-05-14"
     }, 
@@ -58861,7 +59001,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13147", 
       "organization_id": "financial-exclusion-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-03-25"
     }, 
     {
       "id": "uk.parliament.data/Member/2488/Committee/375", 
@@ -59478,7 +59619,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13165", 
-      "organization_id": "built-environment-committee", 
+      "organization_id": "national-policy-for-the-built-environment-committee", 
       "start_date": "2015-06-11", 
       "end_date": "2016-02-11"
     }, 
@@ -59486,7 +59627,7 @@
       "id": "uk.parliament.data/Member/3217/Committee/355", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13165", 
-      "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-select-committee-lords", 
       "start_date": "2016-05-05"
     }, 
     {
@@ -60241,7 +60382,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13183", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2012-05-09", 
       "end_date": "2015-07-27"
     }, 
@@ -60268,7 +60409,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13183", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2012-05-09", 
       "end_date": "2015-07-27"
     }, 
@@ -60998,7 +61139,7 @@
       "id": "uk.parliament.data/Member/3675/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13200", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2012-05-16", 
       "end_date": "2013-05-15"
     }, 
@@ -61062,7 +61203,7 @@
       "id": "uk.parliament.data/Member/2221/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13203", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "1994-10-10", 
       "end_date": "2013-01-09"
     }, 
@@ -61078,7 +61219,7 @@
       "id": "uk.parliament.data/Member/2221/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13203", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "1994-11-17", 
       "end_date": "2013-01-09"
     }, 
@@ -61113,6 +61254,60 @@
       "organization_id": "library-and-computers-sub-committee", 
       "start_date": "1988-12-06", 
       "end_date": "1990-11-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2221/GovernmentPost/24", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Captain of the Honourable Corps of Gentlemen-at-Arms (HM Household) (Chief Whip, House of Lords)", 
+      "person_id": "uk.org.publicwhip/person/13203", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1994-07-20", 
+      "end_date": "1997-04-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2221/GovernmentPost/360", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Scottish Office)", 
+      "person_id": "uk.org.publicwhip/person/13203", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1990-09-07", 
+      "end_date": "1992-11-28"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2221/GovernmentPost/409", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Department of Environment)", 
+      "person_id": "uk.org.publicwhip/person/13203", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1992-07-26", 
+      "end_date": "1993-09-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2221/GovernmentPost/413", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Department of Trade and Industry)", 
+      "person_id": "uk.org.publicwhip/person/13203", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1993-01-11", 
+      "end_date": "1994-07-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2221/GovernmentPost/415", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Department of Employment)", 
+      "person_id": "uk.org.publicwhip/person/13203", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1989-07-26", 
+      "end_date": "1990-07-24"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2221/GovernmentPost/72", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Lord in Waiting (HM Household) (Whip)", 
+      "person_id": "uk.org.publicwhip/person/13203", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1988-08-12", 
+      "end_date": "1989-07-24"
     }, 
     {
       "id": "uk.parliament.data/Member/2221/GovernmentPost/85", 
@@ -61978,7 +62173,7 @@
       "id": "uk.parliament.data/Member/1651/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13226", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2015-06-08", 
       "end_date": "2017-07-19"
     }, 
@@ -62336,7 +62531,7 @@
       "id": "uk.parliament.data/Member/3385/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13235", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2000-12-13", 
       "end_date": "2004-11-18"
     }, 
@@ -62368,7 +62563,7 @@
       "id": "uk.parliament.data/Member/3385/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13235", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "1999-11-18", 
       "end_date": "2004-11-18"
     }, 
@@ -62376,7 +62571,7 @@
       "id": "uk.parliament.data/Member/3385/Committee/197/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13235", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2016-05-19"
     }, 
     {
@@ -62471,7 +62666,7 @@
       "id": "uk.parliament.data/Member/3550/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13240", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2013-05-16", 
       "end_date": "2014-05-14"
     }, 
@@ -62510,7 +62705,7 @@
       "id": "uk.parliament.data/Member/3561/Committee/356", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13241", 
-      "organization_id": "nhs-sustainability-committee", 
+      "organization_id": "longterm-sustainability-of-the-nhs-committee", 
       "start_date": "2016-05-25"
     }, 
     {
@@ -63007,7 +63202,7 @@
       "id": "uk.parliament.data/Member/722/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13264", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "1990-11-29", 
       "end_date": "1993-11-05"
     }, 
@@ -63031,7 +63226,7 @@
       "id": "uk.parliament.data/Member/722/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13264", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "1990-11-13", 
       "end_date": "1992-03-17"
     }, 
@@ -63316,7 +63511,7 @@
       "id": "uk.parliament.data/Member/2537/Committee/356", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13272", 
-      "organization_id": "nhs-sustainability-committee", 
+      "organization_id": "longterm-sustainability-of-the-nhs-committee", 
       "start_date": "2016-05-25"
     }, 
     {
@@ -63386,7 +63581,7 @@
       "id": "uk.parliament.data/Member/1828/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13273", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "1994-10-10", 
       "end_date": "1994-11-03"
     }, 
@@ -63394,7 +63589,7 @@
       "id": "uk.parliament.data/Member/1828/Committee/189/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13273", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2013-12-05"
     }, 
     {
@@ -63417,7 +63612,7 @@
       "id": "uk.parliament.data/Member/1828/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13273", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "1994-10-10", 
       "end_date": "1994-11-03"
     }, 
@@ -63425,7 +63620,7 @@
       "id": "uk.parliament.data/Member/1828/Committee/197/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13273", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2015-05-28"
     }, 
     {
@@ -63819,7 +64014,7 @@
       "id": "uk.parliament.data/Member/1688/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13281", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "1993-12-02", 
       "end_date": "1998-11-19"
     }, 
@@ -63835,7 +64030,7 @@
       "id": "uk.parliament.data/Member/1688/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13281", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "1993-11-23", 
       "end_date": "1998-11-19"
     }, 
@@ -64614,7 +64809,7 @@
       "id": "uk.parliament.data/Member/836/Committee/334", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13307", 
-      "organization_id": "built-environment-committee", 
+      "organization_id": "national-policy-for-the-built-environment-committee", 
       "start_date": "2015-06-11", 
       "end_date": "2016-02-11"
     }, 
@@ -64630,7 +64825,7 @@
       "id": "uk.parliament.data/Member/836/Committee/355", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13307", 
-      "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-select-committee-lords", 
       "start_date": "2016-05-05"
     }, 
     {
@@ -65048,7 +65243,7 @@
       "id": "uk.parliament.data/Member/940/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13327", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "1997-06-09", 
       "end_date": "2002-11-07"
     }, 
@@ -65064,7 +65259,7 @@
       "id": "uk.parliament.data/Member/940/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13327", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "1998-11-26", 
       "end_date": "2002-11-07"
     }, 
@@ -65263,9 +65458,9 @@
       "end_date": "1986-05-14"
     }, 
     {
-      "id": "uk.parliament.data/Member/949/ParliamentaryPost/782", 
+      "id": "uk.parliament.data/Member/949/ParliamentaryPost/1101", 
       "source": "datadotparl/parliamentarypost", 
-      "role": "Joint Leader, Social & Liberal Democrats", 
+      "role": "Joint Founder, Social & Liberal Democrats", 
       "person_id": "uk.org.publicwhip/person/13337", 
       "organization_id": "house-of-commons", 
       "start_date": "1988-03-03", 
@@ -66039,7 +66234,7 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13355", 
       "organization_id": "procedure-committee-lords", 
-      "start_date": "2008-12-16", 
+      "start_date": "2007-11-19", 
       "end_date": "2012-05-01"
     }, 
     {
@@ -66878,7 +67073,7 @@
       "id": "uk.parliament.data/Member/2475/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13385", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2014-06-12", 
       "end_date": "2017-04-27"
     }, 
@@ -67288,7 +67483,7 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13422", 
       "organization_id": "procedure-committee-lords", 
-      "start_date": "2010-06-09", 
+      "start_date": "2009-11-25", 
       "end_date": "2014-05-14"
     }, 
     {
@@ -67319,7 +67514,7 @@
       "id": "uk.parliament.data/Member/2652/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13422", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2012-05-16", 
       "end_date": "2015-03-30"
     }, 
@@ -67393,6 +67588,14 @@
       "person_id": "uk.org.publicwhip/person/13422", 
       "organization_id": "human-rights-joint-committee", 
       "start_date": "2017-07-19"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2652/OppositionPost/1399", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Spokesperson (Immigration)", 
+      "person_id": "uk.org.publicwhip/person/13422", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-17"
     }, 
     {
       "id": "uk.parliament.data/Member/2477/Committee/170", 
@@ -67636,14 +67839,14 @@
       "id": "uk.parliament.data/Member/3169/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13427", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2017-06-22"
     }, 
     {
       "id": "uk.parliament.data/Member/3169/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13427", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2012-05-16", 
       "end_date": "2015-03-30"
     }, 
@@ -67699,7 +67902,7 @@
       "id": "uk.parliament.data/Member/3169/Committee/355", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13427", 
-      "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-select-committee-lords", 
       "start_date": "2016-05-05", 
       "end_date": "2016-05-25"
     }, 
@@ -67963,7 +68166,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13435", 
       "organization_id": "financial-exclusion-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-03-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3201/Committee/314", 
@@ -68120,7 +68324,7 @@
       "id": "uk.parliament.data/Member/3187/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13441", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2012-05-16", 
       "end_date": "2014-05-14"
     }, 
@@ -68296,7 +68500,7 @@
       "id": "uk.parliament.data/Member/3709/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13444", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2007-11-20", 
       "end_date": "2011-09-05"
     }, 
@@ -68320,7 +68524,7 @@
       "id": "uk.parliament.data/Member/3709/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13444", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2007-11-07", 
       "end_date": "2011-09-05"
     }, 
@@ -68440,7 +68644,7 @@
       "id": "uk.parliament.data/Member/3702/Committee/355", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13450", 
-      "organization_id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
+      "organization_id": "high-speed-rail-london--west-midlands-bill-select-committee-lords", 
       "start_date": "2016-05-05"
     }, 
     {
@@ -68563,7 +68767,7 @@
       "id": "uk.parliament.data/Member/3703/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13452", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2008-01-28", 
       "end_date": "2015-03-30"
     }, 
@@ -68579,7 +68783,7 @@
       "id": "uk.parliament.data/Member/3703/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13452", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2008-01-28", 
       "end_date": "2015-03-30"
     }, 
@@ -68765,7 +68969,7 @@
       "id": "uk.parliament.data/Member/2546/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13455", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2005-05-25", 
       "end_date": "2012-05-01"
     }, 
@@ -68797,7 +69001,7 @@
       "id": "uk.parliament.data/Member/2546/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13455", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2005-05-19", 
       "end_date": "2012-05-14"
     }, 
@@ -68945,7 +69149,7 @@
       "role": "Deputy Speaker (Lords)", 
       "person_id": "uk.org.publicwhip/person/13456", 
       "organization_id": "house-of-commons", 
-      "start_date": "2010-11-29"
+      "start_date": "1998-03-16"
     }, 
     {
       "id": "uk.parliament.data/Member/3343/Committee/180", 
@@ -69149,7 +69353,7 @@
       "id": "uk.parliament.data/Member/3118/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13464", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2001-06-21", 
       "end_date": "2004-11-18"
     }, 
@@ -69206,7 +69410,7 @@
       "id": "uk.parliament.data/Member/2761/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13469", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "1976-12-14", 
       "end_date": "1995-11-08"
     }, 
@@ -69238,7 +69442,7 @@
       "id": "uk.parliament.data/Member/2761/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13469", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "1979-12-11", 
       "end_date": "1980-11-13"
     }, 
@@ -69334,7 +69538,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13470", 
       "organization_id": "financial-exclusion-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-03-25"
     }, 
     {
       "id": "uk.parliament.data/Member/3609/Committee/193", 
@@ -69388,7 +69593,7 @@
       "id": "uk.parliament.data/Member/3609/Committee/334", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13471", 
-      "organization_id": "built-environment-committee", 
+      "organization_id": "national-policy-for-the-built-environment-committee", 
       "start_date": "2015-06-11", 
       "end_date": "2016-02-11"
     }, 
@@ -69631,7 +69836,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13474", 
       "organization_id": "delegated-powers-and-regulatory-reform-committee", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2017-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/830/Committee/186", 
@@ -69938,7 +70144,7 @@
       "id": "uk.parliament.data/Member/2018/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13485", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2008-12-04", 
       "end_date": "2013-04-26"
     }, 
@@ -69994,7 +70200,7 @@
       "id": "uk.parliament.data/Member/1976/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13489", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2008-12-10"
     }, 
     {
@@ -70115,7 +70321,7 @@
       "id": "uk.parliament.data/Member/1980/Committee/334", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13490", 
-      "organization_id": "built-environment-committee", 
+      "organization_id": "national-policy-for-the-built-environment-committee", 
       "start_date": "2015-06-18", 
       "end_date": "2016-02-11"
     }, 
@@ -70206,7 +70412,7 @@
       "id": "uk.parliament.data/Member/2616/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13493", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "1998-12-15", 
       "end_date": "2001-05-11"
     }, 
@@ -70238,7 +70444,7 @@
       "id": "uk.parliament.data/Member/2616/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13493", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "1999-01-25", 
       "end_date": "2001-05-11"
     }, 
@@ -70305,7 +70511,8 @@
       "role": "The Parliamentary Under-Secretary of State for Work and Pensions", 
       "person_id": "uk.org.publicwhip/person/13493", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-12-21"
+      "start_date": "2016-12-21", 
+      "end_date": "2017-06-15"
     }, 
     {
       "id": "uk.parliament.data/Member/2616/GovernmentPost/72", 
@@ -70313,7 +70520,8 @@
       "role": "Lord in Waiting (HM Household) (Whip)", 
       "person_id": "uk.org.publicwhip/person/13493", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-11-21"
+      "start_date": "2016-11-21", 
+      "end_date": "2017-06-15"
     }, 
     {
       "id": "uk.parliament.data/Member/2616/GovernmentPost/850", 
@@ -70758,7 +70966,7 @@
       "id": "uk.parliament.data/Member/2665/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13499", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2015-06-08"
     }, 
     {
@@ -70797,7 +71005,7 @@
       "id": "uk.parliament.data/Member/2665/Committee/334", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13499", 
-      "organization_id": "built-environment-committee", 
+      "organization_id": "national-policy-for-the-built-environment-committee", 
       "start_date": "2015-06-11", 
       "end_date": "2015-06-23"
     }, 
@@ -70806,7 +71014,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13499", 
       "organization_id": "financial-exclusion-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-03-25"
     }, 
     {
       "id": "uk.parliament.data/Member/2665/Committee/94", 
@@ -70823,6 +71032,15 @@
       "organization_id": "information-committee-lords", 
       "start_date": "2003-12-04", 
       "end_date": "2007-11-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2665/GovernmentPost/72", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Lord in Waiting (HM Household) (Whip)", 
+      "person_id": "uk.org.publicwhip/person/13499", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1997-05-08", 
+      "end_date": "1998-08-28"
     }, 
     {
       "id": "uk.parliament.data/Member/2665/ParliamentaryPost/1092", 
@@ -71085,7 +71303,7 @@
       "id": "uk.parliament.data/Member/3504/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13512", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2010-06-02"
     }, 
     {
@@ -71099,7 +71317,7 @@
       "id": "uk.parliament.data/Member/3504/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13512", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2008-10-07"
     }, 
     {
@@ -71299,7 +71517,7 @@
       "id": "uk.parliament.data/Member/3396/Committee/334", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13517", 
-      "organization_id": "built-environment-committee", 
+      "organization_id": "national-policy-for-the-built-environment-committee", 
       "start_date": "2015-06-18", 
       "end_date": "2016-02-11"
     }, 
@@ -71954,7 +72172,7 @@
       "id": "uk.parliament.data/Member/1787/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13539", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2001-06-28", 
       "end_date": "2002-11-07"
     }, 
@@ -71986,7 +72204,7 @@
       "id": "uk.parliament.data/Member/1787/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13539", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "1984-11-07", 
       "end_date": "1994-11-03"
     }, 
@@ -71994,7 +72212,7 @@
       "id": "uk.parliament.data/Member/1787/Committee/197/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13539", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2001-06-21", 
       "end_date": "2002-04-07"
     }, 
@@ -72116,7 +72334,7 @@
       "id": "uk.parliament.data/Member/1813/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13540", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2002-11-20", 
       "end_date": "2004-11-18"
     }, 
@@ -72132,7 +72350,7 @@
       "id": "uk.parliament.data/Member/1813/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13540", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2001-06-21", 
       "end_date": "2004-11-18"
     }, 
@@ -72173,7 +72391,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13540", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2015-06-08"
     }, 
     {
@@ -72497,7 +72715,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13545", 
       "organization_id": "licensing-act-2003-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-04-04"
     }, 
     {
       "id": "uk.parliament.data/Member/3679/ParliamentaryPost/1092", 
@@ -72913,7 +73132,7 @@
       "id": "uk.parliament.data/Member/2489/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13552", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2004-11-24", 
       "end_date": "2008-11-26"
     }, 
@@ -73313,7 +73532,7 @@
       "id": "uk.parliament.data/Member/1892/Committee/356", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13564", 
-      "organization_id": "nhs-sustainability-committee", 
+      "organization_id": "longterm-sustainability-of-the-nhs-committee", 
       "start_date": "2016-05-25"
     }, 
     {
@@ -73344,7 +73563,7 @@
       "id": "uk.parliament.data/Member/1880/Committee/334", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13565", 
-      "organization_id": "built-environment-committee", 
+      "organization_id": "national-policy-for-the-built-environment-committee", 
       "start_date": "2015-06-11", 
       "end_date": "2015-07-08"
     }, 
@@ -73488,7 +73707,7 @@
       "id": "uk.parliament.data/Member/3573/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13569", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2017-06-27"
     }, 
     {
@@ -73592,7 +73811,7 @@
       "id": "uk.parliament.data/Member/1068/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13571", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2000-12-13", 
       "end_date": "2011-10-26"
     }, 
@@ -73600,7 +73819,7 @@
       "id": "uk.parliament.data/Member/1068/Committee/189/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13571", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "1990-07-12", 
       "end_date": "1996-10-17"
     }, 
@@ -73616,7 +73835,7 @@
       "id": "uk.parliament.data/Member/1068/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13571", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "1990-07-12", 
       "end_date": "1997-04-08"
     }, 
@@ -74212,7 +74431,7 @@
       "id": "uk.parliament.data/Member/3327/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13604", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2003-12-03", 
       "end_date": "2007-11-30"
     }, 
@@ -74492,7 +74711,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13611", 
       "organization_id": "licensing-act-2003-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-04-04"
     }, 
     {
       "id": "uk.parliament.data/Member/3335/Committee/92", 
@@ -74571,7 +74791,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13613", 
       "organization_id": "financial-exclusion-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-03-25"
     }, 
     {
       "id": "uk.parliament.data/Member/964/Committee/159", 
@@ -74608,7 +74829,7 @@
       "id": "uk.parliament.data/Member/964/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13614", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2013-05-16", 
       "end_date": "2016-05-12"
     }, 
@@ -74648,7 +74869,7 @@
       "id": "uk.parliament.data/Member/964/Committee/334", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13614", 
-      "organization_id": "built-environment-committee", 
+      "organization_id": "national-policy-for-the-built-environment-committee", 
       "start_date": "2015-06-23", 
       "end_date": "2016-02-11"
     }, 
@@ -74671,7 +74892,7 @@
       "id": "uk.parliament.data/Member/1773/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13615", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2007-11-20", 
       "end_date": "2008-11-26"
     }, 
@@ -74759,7 +74980,7 @@
       "id": "uk.parliament.data/Member/2438/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13617", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2004-12-02", 
       "end_date": "2007-10-30"
     }, 
@@ -74783,7 +75004,7 @@
       "id": "uk.parliament.data/Member/2438/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13617", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2004-11-24", 
       "end_date": "2007-10-30"
     }, 
@@ -75085,7 +75306,7 @@
       "id": "uk.parliament.data/Member/914/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13626", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "1999-11-23", 
       "end_date": "2003-11-20"
     }, 
@@ -75274,7 +75495,7 @@
       "id": "uk.parliament.data/Member/1930/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13632", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2012-05-16", 
       "end_date": "2014-03-18"
     }, 
@@ -75621,7 +75842,7 @@
       "id": "uk.parliament.data/Member/2492/Committee/356", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13645", 
-      "organization_id": "nhs-sustainability-committee", 
+      "organization_id": "longterm-sustainability-of-the-nhs-committee", 
       "start_date": "2016-05-25"
     }, 
     {
@@ -76022,7 +76243,7 @@
       "id": "uk.parliament.data/Member/2696/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13659", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "1978-03-15", 
       "end_date": "1991-10-22"
     }, 
@@ -76062,7 +76283,7 @@
       "id": "uk.parliament.data/Member/2696/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13659", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "1978-03-15", 
       "end_date": "1996-10-17"
     }, 
@@ -76466,7 +76687,7 @@
       "id": "uk.parliament.data/Member/2079/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13668", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2011-09-05", 
       "end_date": "2015-09-07"
     }, 
@@ -76475,7 +76696,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13668", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2015-09-07", 
       "end_date": "2016-08-31"
     }, 
@@ -76517,7 +76738,7 @@
       "id": "uk.parliament.data/Member/2079/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13668", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2011-09-05", 
       "end_date": "2015-09-07"
     }, 
@@ -76526,7 +76747,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13668", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2015-09-07", 
       "end_date": "2016-08-31"
     }, 
@@ -76873,7 +77094,7 @@
       "id": "uk.parliament.data/Member/3298/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13679", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "1984-11-21", 
       "end_date": "1999-11-11"
     }, 
@@ -77390,7 +77611,7 @@
       "person_id": "uk.org.publicwhip/person/13702", 
       "organization_id": "ecclesiastical-committee-joint-committee", 
       "start_date": "2002-01-24", 
-      "end_date": "2010-04-08"
+      "end_date": "2015-03-30"
     }, 
     {
       "id": "uk.parliament.data/Member/1916/Committee/175", 
@@ -77411,7 +77632,7 @@
       "id": "uk.parliament.data/Member/1916/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13702", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2012-05-16"
     }, 
     {
@@ -77441,7 +77662,7 @@
       "id": "uk.parliament.data/Member/1916/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13702", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2012-05-14"
     }, 
     {
@@ -78052,7 +78273,7 @@
       "id": "uk.parliament.data/Member/3787/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13720", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2014-10-14"
     }, 
     {
@@ -78066,7 +78287,7 @@
       "id": "uk.parliament.data/Member/3787/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13720", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2014-10-14"
     }, 
     {
@@ -79006,7 +79227,8 @@
       "role": "Shadow DUP Spokesperson (Energy and Climate Change)", 
       "person_id": "uk.org.publicwhip/person/13852", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2017-06-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4129/OppositionPost/1116", 
@@ -79122,10 +79344,19 @@
       "role": "Shadow DUP Spokesperson (Equality)", 
       "person_id": "uk.org.publicwhip/person/13864", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2017-06-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4131/OppositionPost/1118", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Human Rights)", 
+      "person_id": "uk.org.publicwhip/person/13864", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-07-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4131/OppositionPost/1118/1", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow DUP Spokesperson (Human Rights)", 
       "person_id": "uk.org.publicwhip/person/13864", 
@@ -79156,7 +79387,8 @@
       "role": "Shadow DUP Spokesperson (Transport)", 
       "person_id": "uk.org.publicwhip/person/13864", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2017-06-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4131/OppositionPost/1120/1", 
@@ -79466,7 +79698,7 @@
       "id": "uk.parliament.data/Member/3808/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13884", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2015-11-03"
     }, 
     {
@@ -79613,7 +79845,7 @@
       "id": "uk.parliament.data/Member/2463/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13919", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2016-09-13"
     }, 
     {
@@ -80160,7 +80392,7 @@
       "id": "uk.parliament.data/Member/3838/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13939", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2015-06-08"
     }, 
     {
@@ -80238,7 +80470,7 @@
       "id": "uk.parliament.data/Member/630/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13940", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2013-10-17", 
       "end_date": "2016-10-27"
     }, 
@@ -80254,7 +80486,7 @@
       "id": "uk.parliament.data/Member/630/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13940", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2013-10-17", 
       "end_date": "2016-10-27"
     }, 
@@ -80526,7 +80758,7 @@
       "id": "uk.parliament.data/Member/3857/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/14133", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2008-12-10", 
       "end_date": "2013-07-11"
     }, 
@@ -81333,14 +81565,6 @@
       "start_date": "2017-06-14"
     }, 
     {
-      "id": "uk.parliament.data/Member/1609/GovernmentPost/1206", 
-      "source": "datadotparl/governmentpost", 
-      "role": "Assistant Whip", 
-      "person_id": "uk.org.publicwhip/person/24691", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2017-06-15"
-    }, 
-    {
       "id": "uk.parliament.data/Member/1609/GovernmentPost/346", 
       "source": "datadotparl/governmentpost", 
       "role": "The Economic Secretary to the Treasury", 
@@ -81351,6 +81575,14 @@
     }, 
     {
       "id": "uk.parliament.data/Member/1609/GovernmentPost/351", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Assistant Whip (HM Treasury)", 
+      "person_id": "uk.org.publicwhip/person/24691", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1609/GovernmentPost/351/1", 
       "source": "datadotparl/governmentpost", 
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24691", 
@@ -81379,7 +81611,7 @@
       "id": "uk.parliament.data/Member/3902/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24694", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2015-06-08"
     }, 
     {
@@ -81491,7 +81723,7 @@
       "id": "uk.parliament.data/Member/3766/Committee/356", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24704", 
-      "organization_id": "nhs-sustainability-committee", 
+      "organization_id": "longterm-sustainability-of-the-nhs-committee", 
       "start_date": "2016-05-25"
     }, 
     {
@@ -81506,7 +81738,7 @@
       "id": "uk.parliament.data/Member/3863/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24708", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2012-05-16", 
       "end_date": "2015-03-30"
     }, 
@@ -82276,9 +82508,9 @@
       "end_date": "2015-03-30"
     }, 
     {
-      "id": "uk.parliament.data/Member/3948/GovernmentPost/1206", 
+      "id": "uk.parliament.data/Member/3948/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
-      "role": "Assistant Whip", 
+      "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24731", 
       "organization_id": "house-of-commons", 
       "start_date": "2017-06-15"
@@ -82862,12 +83094,21 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4075/GovernmentPost/1152", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Comptroller (HM Household) (Whip, House of Commons)", 
+      "person_id": "uk.org.publicwhip/person/24747", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4075/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24747", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-17"
+      "start_date": "2016-07-17", 
+      "end_date": "2017-06-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3994/Committee/164", 
@@ -83013,12 +83254,21 @@
       "role": "Parliamentary Under-Secretary (Department for Transport)", 
       "person_id": "uk.org.publicwhip/person/24758", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2017-06-15"
     }, 
     {
-      "id": "uk.parliament.data/Member/4044/GovernmentPost/1206", 
+      "id": "uk.parliament.data/Member/3996/GovernmentPost/62", 
       "source": "datadotparl/governmentpost", 
-      "role": "Assistant Whip", 
+      "role": "The Exchequer Secretary", 
+      "person_id": "uk.org.publicwhip/person/24758", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4044/GovernmentPost/351", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24759", 
       "organization_id": "house-of-commons", 
       "start_date": "2017-06-15"
@@ -83407,12 +83657,21 @@
       "end_date": "2016-11-07"
     }, 
     {
+      "id": "uk.parliament.data/Member/4053/GovernmentPost/350", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Lord Commissioner of Her Majesty's Treasury", 
+      "person_id": "uk.org.publicwhip/person/24769", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4053/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24769", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-17"
+      "start_date": "2016-07-17", 
+      "end_date": "2017-06-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4134/Committee/127", 
@@ -85189,9 +85448,9 @@
       "end_date": "2010-11-29"
     }, 
     {
-      "id": "uk.parliament.data/Member/4033/GovernmentPost/351", 
+      "id": "uk.parliament.data/Member/4033/GovernmentPost/350", 
       "source": "datadotparl/governmentpost", 
-      "role": "Assistant Whip (HM Treasury)", 
+      "role": "The Lord Commissioner of Her Majesty's Treasury", 
       "person_id": "uk.org.publicwhip/person/24820", 
       "organization_id": "house-of-commons", 
       "start_date": "2017-06-15"
@@ -85812,7 +86071,16 @@
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24841", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-17"
+      "start_date": "2016-07-17", 
+      "end_date": "2017-06-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3977/GovernmentPost/753", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Vice-Chamberlain of Her Majesty's Household", 
+      "person_id": "uk.org.publicwhip/person/24841", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4019/Committee/103", 
@@ -86050,6 +86318,13 @@
       "organization_id": "armed-forces--bill-committee", 
       "start_date": "2015-10-26", 
       "end_date": "2015-11-24"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4013/Committee/377", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24847", 
+      "organization_id": "commons-reference-group-on-representation-and-inclusion-committee", 
+      "start_date": "2016-11-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4013/Committee/62", 
@@ -86702,9 +86977,9 @@
       "end_date": "2012-11-05"
     }, 
     {
-      "id": "uk.parliament.data/Member/4032/GovernmentPost/1206", 
+      "id": "uk.parliament.data/Member/4032/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
-      "role": "Assistant Whip", 
+      "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24864", 
       "organization_id": "house-of-commons", 
       "start_date": "2017-06-15"
@@ -87121,9 +87396,9 @@
       "end_date": "2010-11-02"
     }, 
     {
-      "id": "uk.parliament.data/Member/4057/GovernmentPost/1206", 
+      "id": "uk.parliament.data/Member/4057/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
-      "role": "Assistant Whip", 
+      "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24878", 
       "organization_id": "house-of-commons", 
       "start_date": "2017-06-15"
@@ -87913,12 +88188,21 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4055/GovernmentPost/350", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Lord Commissioner of Her Majesty's Treasury", 
+      "person_id": "uk.org.publicwhip/person/24909", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4055/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24909", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-17"
+      "start_date": "2016-06-15", 
+      "end_date": "2017-06-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3930/Committee/62", 
@@ -88734,9 +89018,9 @@
       "end_date": "2011-05-23"
     }, 
     {
-      "id": "uk.parliament.data/Member/4004/GovernmentPost/1206", 
+      "id": "uk.parliament.data/Member/4004/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
-      "role": "Assistant Whip", 
+      "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24934", 
       "organization_id": "house-of-commons", 
       "start_date": "2017-06-15"
@@ -88988,9 +89272,9 @@
       "end_date": "2014-10-30"
     }, 
     {
-      "id": "uk.parliament.data/Member/3940/GovernmentPost/1206", 
+      "id": "uk.parliament.data/Member/3940/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
-      "role": "Assistant Whip", 
+      "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24944", 
       "organization_id": "house-of-commons", 
       "start_date": "2017-06-15"
@@ -89857,7 +90141,7 @@
       "id": "uk.parliament.data/Member/4144/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24969", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2013-01-09", 
       "end_date": "2014-07-16"
     }, 
@@ -89873,7 +90157,7 @@
       "id": "uk.parliament.data/Member/4144/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24969", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2013-01-09", 
       "end_date": "2014-07-16"
     }, 
@@ -90659,7 +90943,7 @@
       "id": "uk.parliament.data/Member/4178/Committee/334", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25002", 
-      "organization_id": "built-environment-committee", 
+      "organization_id": "national-policy-for-the-built-environment-committee", 
       "start_date": "2015-06-11", 
       "end_date": "2016-02-11"
     }, 
@@ -90698,7 +90982,7 @@
       "id": "uk.parliament.data/Member/4184/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25003", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2012-05-16", 
       "end_date": "2013-05-15"
     }, 
@@ -90723,7 +91007,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25003", 
       "organization_id": "licensing-act-2003-committee", 
-      "start_date": "2016-09-13"
+      "start_date": "2016-09-13", 
+      "end_date": "2017-04-04"
     }, 
     {
       "id": "uk.parliament.data/Member/4179/Committee/170", 
@@ -90786,7 +91071,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25005", 
       "organization_id": "licensing-act-2003-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-04-04"
     }, 
     {
       "id": "uk.parliament.data/Member/4172/Committee/172", 
@@ -90899,7 +91185,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25013", 
       "organization_id": "financial-exclusion-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-03-25"
     }, 
     {
       "id": "uk.parliament.data/Member/4187/ParliamentaryPost/1099", 
@@ -91002,7 +91289,7 @@
       "id": "uk.parliament.data/Member/4195/Committee/356", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25021", 
-      "organization_id": "nhs-sustainability-committee", 
+      "organization_id": "longterm-sustainability-of-the-nhs-committee", 
       "start_date": "2016-05-25"
     }, 
     {
@@ -91197,6 +91484,13 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4202/Committee/174", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25030", 
+      "organization_id": "ecclesiastical-committee-joint-committee", 
+      "start_date": "2017-07-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4199/Committee/172", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25031", 
@@ -91280,7 +91574,7 @@
       "id": "uk.parliament.data/Member/4205/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25032", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2014-07-16", 
       "end_date": "2016-07-18"
     }, 
@@ -91304,7 +91598,7 @@
       "id": "uk.parliament.data/Member/4205/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25032", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2014-07-16", 
       "end_date": "2016-07-18"
     }, 
@@ -91612,7 +91906,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25042", 
       "organization_id": "financial-exclusion-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-03-25"
     }, 
     {
       "id": "uk.parliament.data/Member/4216/Committee/94", 
@@ -91799,7 +92094,7 @@
       "id": "uk.parliament.data/Member/4215/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25052", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2016-10-27"
     }, 
     {
@@ -91813,7 +92108,7 @@
       "id": "uk.parliament.data/Member/4215/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25052", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2016-10-27"
     }, 
     {
@@ -91943,7 +92238,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/25056", 
       "organization_id": "financial-exclusion-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-03-25"
     }, 
     {
       "id": "uk.parliament.data/Member/4233/Committee/184", 
@@ -92267,7 +92563,7 @@
       "id": "uk.parliament.data/Member/1864/Committee/334", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25144", 
-      "organization_id": "built-environment-committee", 
+      "organization_id": "national-policy-for-the-built-environment-committee", 
       "start_date": "2015-06-11", 
       "end_date": "2016-02-11"
     }, 
@@ -92324,7 +92620,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25146", 
       "organization_id": "consultative-panel-on-parliamentary-security", 
-      "start_date": "2015-06-18"
+      "start_date": "2015-06-18", 
+      "end_date": "2016-07-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4247/GovernmentPost/1204", 
@@ -92389,6 +92686,13 @@
       "organization_id": "committee-on-exiting-the-european-union", 
       "start_date": "2016-10-31", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4253/Committee/377", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25150", 
+      "organization_id": "commons-reference-group-on-representation-and-inclusion-committee", 
+      "start_date": "2016-11-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4253/OppositionPost/10", 
@@ -92598,7 +92902,8 @@
       "role": "Shadow Secretary of State for Women and Equalities", 
       "person_id": "uk.org.publicwhip/person/25168", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-10-06"
+      "start_date": "2016-10-06", 
+      "end_date": "2017-08-16"
     }, 
     {
       "id": "uk.parliament.data/Member/4267/OppositionPost/884", 
@@ -92835,7 +93140,7 @@
       "id": "uk.parliament.data/Member/4281/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25186", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2014-06-12", 
       "end_date": "2015-03-30"
     }, 
@@ -92943,7 +93248,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25188", 
       "organization_id": "licensing-act-2003-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-04-04"
     }, 
     {
       "id": "uk.parliament.data/Member/4291/Committee/376", 
@@ -93187,7 +93493,7 @@
       "id": "uk.parliament.data/Member/4307/Committee/356", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25200", 
-      "organization_id": "nhs-sustainability-committee", 
+      "organization_id": "longterm-sustainability-of-the-nhs-committee", 
       "start_date": "2016-05-25"
     }, 
     {
@@ -93239,7 +93545,7 @@
       "id": "uk.parliament.data/Member/4300/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25202", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2014-06-12", 
       "end_date": "2017-04-27"
     }, 
@@ -93278,7 +93584,7 @@
       "id": "uk.parliament.data/Member/4287/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25203", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2017-06-27"
     }, 
     {
@@ -93392,7 +93698,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25208", 
       "organization_id": "financial-exclusion-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-03-25"
     }, 
     {
       "id": "uk.parliament.data/Member/4294/Committee/376", 
@@ -93630,7 +93937,8 @@
       "role": "Lord in Waiting (HM Household) (Whip)", 
       "person_id": "uk.org.publicwhip/person/25235", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-17"
+      "start_date": "2016-07-17", 
+      "end_date": "2017-04-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4325/GovernmentPost/1155", 
@@ -93647,7 +93955,8 @@
       "role": "The Parliamentary Under-Secretary of State for Internet Safety and Security", 
       "person_id": "uk.org.publicwhip/person/25236", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-12-03"
+      "start_date": "2015-12-03", 
+      "end_date": "2017-06-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4327/Committee/94", 
@@ -93731,7 +94040,7 @@
       "id": "uk.parliament.data/Member/4333/Committee/356", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25242", 
-      "organization_id": "nhs-sustainability-committee", 
+      "organization_id": "longterm-sustainability-of-the-nhs-committee", 
       "start_date": "2016-05-25"
     }, 
     {
@@ -93776,7 +94085,7 @@
       "id": "uk.parliament.data/Member/4329/Committee/189", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25245", 
-      "organization_id": "privileges-and-conduct-committee-for-lords", 
+      "organization_id": "committee-for-privileges-and-conduct-lords", 
       "start_date": "2016-07-18"
     }, 
     {
@@ -93790,7 +94099,7 @@
       "id": "uk.parliament.data/Member/4329/Committee/197", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25245", 
-      "organization_id": "selection-committee-of-lords", 
+      "organization_id": "committee-of-selection-lords", 
       "start_date": "2016-07-18"
     }, 
     {
@@ -93836,7 +94145,7 @@
       "id": "uk.parliament.data/Member/4334/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25247", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2015-06-08"
     }, 
     {
@@ -94121,6 +94430,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4412/Committee/377", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25276", 
+      "organization_id": "commons-reference-group-on-representation-and-inclusion-committee", 
+      "start_date": "2017-07-19"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4412/Committee/98", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25276", 
@@ -94266,7 +94582,16 @@
       "role": "Shadow Spokesperson (Justice)", 
       "person_id": "uk.org.publicwhip/person/25280", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2017-06-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4360/OppositionPost/1113", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Defence)", 
+      "person_id": "uk.org.publicwhip/person/25280", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-07-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4360/OppositionPost/1114", 
@@ -94282,7 +94607,8 @@
       "role": "Shadow DUP Spokesperson (Human Rights)", 
       "person_id": "uk.org.publicwhip/person/25280", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2017-06-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4415/Committee/23", 
@@ -95374,6 +95700,13 @@
       "end_date": "2016-12-19"
     }, 
     {
+      "id": "uk.parliament.data/Member/4513/Committee/377", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25330", 
+      "organization_id": "commons-reference-group-on-representation-and-inclusion-committee", 
+      "start_date": "2016-11-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4414/Committee/326", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25331", 
@@ -96148,6 +96481,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4370/Committee/377", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25364", 
+      "organization_id": "commons-reference-group-on-representation-and-inclusion-committee", 
+      "start_date": "2016-11-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4515/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25365", 
@@ -96725,6 +97065,13 @@
       "organization_id": "transport-committee", 
       "start_date": "2015-07-08", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4423/Committee/377", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25403", 
+      "organization_id": "commons-reference-group-on-representation-and-inclusion-committee", 
+      "start_date": "2016-11-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4419/Committee/366", 
@@ -97562,6 +97909,30 @@
       "start_date": "2015-06-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4611/OppositionPost/1109", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Spokesperson (Justice)", 
+      "person_id": "uk.org.publicwhip/person/25452", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-07-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4611/OppositionPost/1111", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Equality)", 
+      "person_id": "uk.org.publicwhip/person/25452", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-07-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4611/OppositionPost/1404", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (International Trade)", 
+      "person_id": "uk.org.publicwhip/person/25452", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-07-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4542/Committee/187", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25453", 
@@ -97573,7 +97944,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25453", 
       "organization_id": "licensing-act-2003-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-04-04"
     }, 
     {
       "id": "uk.parliament.data/Member/4542/Committee/373", 
@@ -97641,13 +98013,14 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25464", 
       "organization_id": "eu-justice-subcommittee", 
-      "start_date": "2016-01-26"
+      "start_date": "2016-01-26", 
+      "end_date": "2017-09-05"
     }, 
     {
       "id": "uk.parliament.data/Member/4551/Committee/356", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25465", 
-      "organization_id": "nhs-sustainability-committee", 
+      "organization_id": "longterm-sustainability-of-the-nhs-committee", 
       "start_date": "2016-05-25"
     }, 
     {
@@ -97676,7 +98049,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25470", 
       "organization_id": "financial-exclusion-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-03-25"
     }, 
     {
       "id": "uk.parliament.data/Member/4556/Committee/376", 
@@ -97689,7 +98063,7 @@
       "id": "uk.parliament.data/Member/4567/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25473", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2017-07-19"
     }, 
     {
@@ -97772,7 +98146,7 @@
       "id": "uk.parliament.data/Member/4566/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25481", 
-      "organization_id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2017-06-27"
     }, 
     {
@@ -97780,7 +98154,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25481", 
       "organization_id": "licensing-act-2003-committee", 
-      "start_date": "2016-05-25"
+      "start_date": "2016-05-25", 
+      "end_date": "2017-04-04"
     }, 
     {
       "id": "uk.parliament.data/Member/4565/Committee/176", 
@@ -97940,6 +98315,13 @@
       "start_date": "2017-06-27"
     }, 
     {
+      "id": "uk.parliament.data/Member/4574/Committee/174", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25590", 
+      "organization_id": "ecclesiastical-committee-joint-committee", 
+      "start_date": "2017-07-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4588/Committee/328", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25592", 
@@ -97985,6 +98367,22 @@
       "person_id": "uk.org.publicwhip/person/25618", 
       "organization_id": "house-of-commons", 
       "start_date": "2017-07-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4633/OppositionPost/1275", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Education)", 
+      "person_id": "uk.org.publicwhip/person/25629", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-07-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4633/OppositionPost/1298", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Spokesperson (Transport)", 
+      "person_id": "uk.org.publicwhip/person/25629", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-07-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4642/OppositionPost/970", 
@@ -98081,10 +98479,6 @@
       "name": "Broadcasting Committee"
     }, 
     {
-      "id": "built-environment-committee", 
-      "name": "Built Environment Committee"
-    }, 
-    {
       "id": "business-and-enterprise-committee", 
       "name": "Business and Enterprise Committee"
     }, 
@@ -98109,8 +98503,16 @@
       "name": "Citizenship and Civic Engagement Committee"
     }, 
     {
+      "id": "committee-for-privileges-and-conduct-lords", 
+      "name": "Committee for Privileges and Conduct (Lords)"
+    }, 
+    {
       "id": "committee-of-selection", 
       "name": "Committee of Selection"
+    }, 
+    {
+      "id": "committee-of-selection-lords", 
+      "name": "Committee of Selection (Lords)"
     }, 
     {
       "id": "committee-on-animals-in-scientific-procedures", 
@@ -98163,6 +98565,10 @@
     {
       "id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
       "name": "Committees on Arms Export Controls (formerly Quadripartite Committee)"
+    }, 
+    {
+      "id": "commons-reference-group-on-representation-and-inclusion-committee", 
+      "name": "Commons Reference Group on Representation and Inclusion Committee"
     }, 
     {
       "id": "commons-science-and-technology-committee", 
@@ -98661,8 +99067,8 @@
       "name": "High Speed Rail (London - West Midlands) Bill (Commons) Committee"
     }, 
     {
-      "id": "high-speed-rail-london--west-midlands-bill-lords-committee", 
-      "name": "High Speed Rail (London - West Midlands) Bill (Lords) Committee"
+      "id": "high-speed-rail-london--west-midlands-bill-select-committee-lords", 
+      "name": "High Speed Rail (London - West Midlands) Bill Select Committee (Lords)"
     }, 
     {
       "id": "hiv-and-aids-committee-in-the-united-kingdom", 
@@ -98841,6 +99247,10 @@
       "name": "London Regional Select Committee"
     }, 
     {
+      "id": "longterm-sustainability-of-the-nhs-committee", 
+      "name": "Long-Term Sustainability of the NHS Committee"
+    }, 
+    {
       "id": "lord-speakers-advisory-panel-on-works-of-art", 
       "name": "Lord Speaker's Advisory Panel on Works of Art"
     }, 
@@ -98889,6 +99299,10 @@
       "name": "National Heritage Committee"
     }, 
     {
+      "id": "national-policy-for-the-built-environment-committee", 
+      "name": "National Policy for the Built Environment Committee"
+    }, 
+    {
       "id": "national-policy-statements-subcommittee", 
       "name": "National Policy Statements Sub-Committee"
     }, 
@@ -98911,10 +99325,6 @@
     {
       "id": "natural-environment-and-rural-communities-act-2006-committee", 
       "name": "Natural Environment and Rural Communities Act 2006 Committee"
-    }, 
-    {
-      "id": "nhs-sustainability-committee", 
-      "name": "NHS Sustainability Committee"
     }, 
     {
       "id": "north-east-regional-select-committee", 
@@ -99005,10 +99415,6 @@
       "name": "Private Bills Select Committee (L)"
     }, 
     {
-      "id": "privileges-and-conduct-committee-for-lords", 
-      "name": "Privileges and Conduct, Committee for (Lords)"
-    }, 
-    {
       "id": "privileges-committee", 
       "name": "Privileges Committee"
     }, 
@@ -99093,8 +99499,8 @@
       "name": "Scottish Affairs Committee"
     }, 
     {
-      "id": "secondary-legislation-scrutiny-committee-formerly-merits-committee", 
-      "name": "Secondary Legislation Scrutiny Committee (formerly Merits Committee)"
+      "id": "secondary-legislation-scrutiny-committee", 
+      "name": "Secondary Legislation Scrutiny Committee"
     }, 
     {
       "id": "select-committee-on-broadcasting", 
@@ -99111,10 +99517,6 @@
     {
       "id": "select-committee-on-the-ceremony-of-introduction", 
       "name": "Select Committee on the Ceremony of Introduction"
-    }, 
-    {
-      "id": "selection-committee-of-lords", 
-      "name": "Selection, Committee of (Lords)"
     }, 
     {
       "id": "services-committee", 
