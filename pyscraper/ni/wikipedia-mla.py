@@ -36,14 +36,15 @@ for m in re.findall(matcher, content):
     matches.add( (m[0], m[1], m[4]) )
     matches.add( (m[2], m[3], m[4]) )
 
-# 4th Assembly
-matcher = '<td><a href="([^"]*)" title="[^"]*">([^<]+)</a></td>\s*<th style="[^"]*">()</th>\s*<td.*?</td>\s*</tr>'
+# 4-6th Assembly
+matcher = '<td><a href="([^"]*)" title="[^"]*">([^<]+)</a></td>\s*<t[hd] style="[^"]*">()</t[hd]>\s*<td.*?</td>\s*</tr>'
 matches.update(re.findall(matcher, content))
 
-# 4th Assembly changes
-changes = re.search('Members of the 4th.*<h2><span[^>]*>Changes</span>(.*?)</html>(?s)', content).group(1)
-for m in re.findall('<td>.*?<a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a>.*?</td>\s*</tr>', changes):
-    matches.add((m[0], m[1], None))
+# 4-6th Assembly changes
+changes = re.findall('<h2><span[^>]*>MLAs by constituency.*?<h2><span[^>]*>Changes(.*?)</html>(?s)', content)
+for change in changes:
+    for m in re.findall('<td>.*?<a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a>.*?</td>\s*</tr>', change):
+        matches.add((m[0], m[1], None))
 
 for (url, name, cons) in matches:
     name = name.decode('utf-8')
