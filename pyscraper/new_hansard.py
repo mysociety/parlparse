@@ -1065,6 +1065,7 @@ class PBCParseDayXML(BaseParseDayXML):
         'hs_CLHeading',
         'hs_CLAttended',
         'hs_6fCntrItalHdg',
+        'hs_TimeCode',
     ]
 
     def reset(self):
