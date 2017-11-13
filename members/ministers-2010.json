@@ -1390,6 +1390,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/392/Committee/103/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10027", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/392/Committee/143", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10027", 
@@ -2434,6 +2441,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/103/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10041", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/103/Committee/107", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10041", 
@@ -2519,7 +2533,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10041", 
       "organization_id": "administration-committee", 
-      "start_date": "2017-10-30"
+      "start_date": "2017-10-30", 
+      "end_date": "2017-11-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/103/Committee/2/3", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10041", 
+      "organization_id": "administration-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/103/Committee/289", 
@@ -2625,6 +2648,13 @@
       "organization_id": "liaison-committee-commons", 
       "start_date": "2015-09-10", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/394/Committee/103/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10045", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/394/Committee/11", 
@@ -5952,6 +5982,13 @@
       "end_date": "1990-06-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/627/Committee/111", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10088", 
+      "organization_id": "national-security-strategy-joint-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/627/Committee/13", 
       "source": "datadotparl/committee", 
       "role": "Chair", 
@@ -6266,6 +6303,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/288/Committee/103/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10095", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/288/Committee/148", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10095", 
@@ -6352,7 +6396,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10095", 
       "organization_id": "european-scrutiny-committee", 
-      "start_date": "2017-10-30"
+      "start_date": "2017-10-30", 
+      "end_date": "2017-11-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/288/Committee/69/5", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10095", 
+      "organization_id": "european-scrutiny-committee", 
+      "start_date": "2017-11-01"
     }, 
     {
       "id": "uk.parliament.data/Member/288/Committee/99", 
@@ -7829,6 +7882,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/420/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10131", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/420/Committee/111", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10131", 
@@ -9201,6 +9261,13 @@
       "organization_id": "european-scrutiny-committee", 
       "start_date": "2015-07-15", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/155/Committee/69/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10159", 
+      "organization_id": "european-scrutiny-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/155/ParliamentaryPost/1084", 
@@ -11547,6 +11614,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/478/Committee/103/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10197", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/478/Committee/127", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10197", 
@@ -13449,6 +13523,13 @@
       "end_date": "2016-05-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/670/Committee/170/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10234", 
+      "organization_id": "communications-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/670/Committee/172", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10234", 
@@ -14530,6 +14611,13 @@
       "end_date": "2017-04-27"
     }, 
     {
+      "id": "uk.parliament.data/Member/100/Committee/111/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10255", 
+      "organization_id": "national-security-strategy-joint-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/100/Committee/145", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10255", 
@@ -15057,6 +15145,13 @@
       "organization_id": "liaison-committee-commons", 
       "start_date": "2015-10-29", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/150/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10260", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/150/Committee/107", 
@@ -17680,6 +17775,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/40/Committee/103/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10312", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/40/Committee/128", 
       "source": "datadotparl/committee", 
       "role": "Chair", 
@@ -18029,12 +18131,26 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/432/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10319", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/432/Committee/128", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10319", 
       "organization_id": "public-administration-committee", 
       "start_date": "1998-02-03", 
       "end_date": "2000-02-09"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/432/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10319", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/432/Committee/137", 
@@ -18623,6 +18739,13 @@
       "organization_id": "international-development-committee", 
       "start_date": "1997-07-14", 
       "end_date": "2001-05-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/254/Committee/111", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10342", 
+      "organization_id": "national-security-strategy-joint-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/254/Committee/170", 
@@ -19566,6 +19689,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/54/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10358", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/54/Committee/111", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10358", 
@@ -19644,6 +19774,13 @@
       "organization_id": "defence-subcommittee", 
       "start_date": "2015-09-08", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/54/Committee/343/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10358", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2017-09-12"
     }, 
     {
       "id": "uk.parliament.data/Member/54/Committee/97", 
@@ -28155,6 +28292,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/318/Committee/343/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10558", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2017-09-12"
+    }, 
+    {
       "id": "uk.parliament.data/Member/318/Committee/49", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10558", 
@@ -30610,6 +30754,13 @@
       "end_date": "2017-04-27"
     }, 
     {
+      "id": "uk.parliament.data/Member/658/Committee/111/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10605", 
+      "organization_id": "national-security-strategy-joint-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/658/Committee/173", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10605", 
@@ -30763,6 +30914,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/429/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10610", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/429/Committee/12", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10610", 
@@ -30800,7 +30958,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10610", 
       "organization_id": "statutory-instruments-joint-committee", 
-      "start_date": "2017-10-30"
+      "start_date": "2017-10-30", 
+      "end_date": "2017-11-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/429/Committee/148/3", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10610", 
+      "organization_id": "statutory-instruments-joint-committee", 
+      "start_date": "2017-11-01"
     }, 
     {
       "id": "uk.parliament.data/Member/429/Committee/149", 
@@ -30824,7 +30991,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10610", 
       "organization_id": "statutory-instruments-select-committee", 
-      "start_date": "2017-10-30"
+      "start_date": "2017-10-30", 
+      "end_date": "2017-11-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/429/Committee/149/3", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10610", 
+      "organization_id": "statutory-instruments-select-committee", 
+      "start_date": "2017-11-01"
     }, 
     {
       "id": "uk.parliament.data/Member/429/Committee/15", 
@@ -30911,6 +31087,13 @@
       "organization_id": "liaison-committee-commons", 
       "start_date": "2015-09-10", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/167/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10611", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/167/Committee/109", 
@@ -33383,6 +33566,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/413/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10669", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/413/Committee/143", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10669", 
@@ -34486,6 +34676,13 @@
       "organization_id": "house-of-commons", 
       "start_date": "2013-06-05", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1446/Committee/103", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10761", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/1446/Committee/109", 
@@ -35907,6 +36104,13 @@
       "start_date": "2017-09-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/1444/Committee/343", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10901", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2017-09-12"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1444/Committee/5", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10901", 
@@ -36604,6 +36808,13 @@
       "end_date": "2004-07-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/1438/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11003", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1438/Committee/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11003", 
@@ -36949,6 +37160,13 @@
       "organization_id": "house-of-commons", 
       "start_date": "2011-10-17", 
       "end_date": "2014-07-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1439/Committee/103", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11032", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/1439/Committee/135", 
@@ -37792,6 +38010,13 @@
       "organization_id": "house-of-commons", 
       "start_date": "2006-05-05", 
       "end_date": "2007-06-28"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1466/Committee/103", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11132", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/1466/Committee/111", 
@@ -39493,6 +39718,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/1428/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11318", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1428/Committee/137", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11318", 
@@ -39877,6 +40109,13 @@
       "organization_id": "liaison-committee-commons", 
       "start_date": "2015-09-10", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1440/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11333", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/1440/Committee/136", 
@@ -40812,6 +41051,13 @@
       "organization_id": "liaison-committee-commons", 
       "start_date": "2015-09-10", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1480/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11389", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/1480/Committee/12", 
@@ -41851,6 +42097,14 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/1490/Committee/343/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/11450", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2017-09-12"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1490/Committee/52", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11450", 
@@ -42051,6 +42305,13 @@
       "organization_id": "liaison-committee-commons", 
       "start_date": "2015-09-10", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1493/Committee/103/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11461", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/1493/Committee/11", 
@@ -43647,6 +43908,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/1524/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11605", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1524/Committee/120", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11605", 
@@ -45068,6 +45336,13 @@
       "organization_id": "liaison-committee-commons", 
       "start_date": "2015-09-10", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1545/Committee/103/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11719", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/1545/Committee/162", 
@@ -47226,6 +47501,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/1579/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11898", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1579/Committee/165", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11898", 
@@ -48611,6 +48893,13 @@
       "organization_id": "liaison-committee-commons", 
       "start_date": "2016-10-19", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1546/Committee/103/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12004", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/1546/Committee/111", 
@@ -59528,6 +59817,13 @@
       "end_date": "2017-04-27"
     }, 
     {
+      "id": "uk.parliament.data/Member/2671/Committee/111/3", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13135", 
+      "organization_id": "national-security-strategy-joint-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2671/Committee/229", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13135", 
@@ -66499,6 +66795,14 @@
       "end_date": "2009-11-25"
     }, 
     {
+      "id": "uk.parliament.data/Member/2478/ParliamentaryPost/1092", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Deputy Chairman of Committees", 
+      "person_id": "uk.org.publicwhip/person/13330", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1232/Committee/162", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13331", 
@@ -70720,6 +71024,14 @@
       "end_date": "2005-07-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/3609/ParliamentaryPost/1092", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Deputy Chairman of Committees", 
+      "person_id": "uk.org.publicwhip/person/13471", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2491/Committee/188", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13472", 
@@ -73786,6 +74098,13 @@
       "end_date": "2000-12-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/3679/Committee/111", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13545", 
+      "organization_id": "national-security-strategy-joint-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3679/Committee/176", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13545", 
@@ -76736,6 +77055,13 @@
       "end_date": "2008-11-26"
     }, 
     {
+      "id": "uk.parliament.data/Member/2550/Committee/111", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13635", 
+      "organization_id": "national-security-strategy-joint-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2550/Committee/172", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13635", 
@@ -78471,6 +78797,13 @@
       "end_date": "2017-04-27"
     }, 
     {
+      "id": "uk.parliament.data/Member/2527/Committee/111/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13695", 
+      "organization_id": "national-security-strategy-joint-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2527/Committee/172", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13695", 
@@ -80157,6 +80490,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/1601/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13736", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1601/Committee/111", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13736", 
@@ -81306,6 +81646,13 @@
       "organization_id": "defence-subcommittee", 
       "start_date": "2015-10-26", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1603/Committee/343/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13933", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2017-09-12"
     }, 
     {
       "id": "uk.parliament.data/Member/1603/OppositionPost/5", 
@@ -83045,6 +83392,13 @@
       "end_date": "2015-09-18"
     }, 
     {
+      "id": "uk.parliament.data/Member/4127/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24710", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4127/Committee/23", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24710", 
@@ -83215,6 +83569,13 @@
       "organization_id": "consolidation-bills-joint-committee", 
       "start_date": "2015-11-09", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3973/Committee/171/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24715", 
+      "organization_id": "consolidation-bills-joint-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/3973/Committee/81", 
@@ -83798,6 +84159,13 @@
       "start_date": "2017-06-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/4027/Committee/103", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24732", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4027/Committee/127", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24732", 
@@ -84153,6 +84521,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4133/Committee/131/3", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24741", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4133/Committee/297", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24741", 
@@ -84293,6 +84668,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/3986/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24744", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3986/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24744", 
@@ -84426,7 +84808,8 @@
       "role": "Comptroller (HM Household) (Whip, House of Commons)", 
       "person_id": "uk.org.publicwhip/person/24747", 
       "organization_id": "house-of-commons", 
-      "start_date": "2017-06-15"
+      "start_date": "2017-06-15", 
+      "end_date": "2017-11-05"
     }, 
     {
       "id": "uk.parliament.data/Member/4075/GovernmentPost/351", 
@@ -84708,6 +85091,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4073/Committee/103/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24761", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4073/Committee/81", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24761", 
@@ -84908,6 +85298,13 @@
       "organization_id": "justice-committee", 
       "start_date": "2010-07-12", 
       "end_date": "2013-01-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4030/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24767", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4030/Committee/83", 
@@ -85274,6 +85671,13 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4029/Committee/103", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24774", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4029/Committee/131", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24774", 
@@ -85491,7 +85895,8 @@
       "role": "The Secretary of State for International Development", 
       "person_id": "uk.org.publicwhip/person/24778", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-14"
+      "start_date": "2016-07-14", 
+      "end_date": "2017-11-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4072/Committee/103", 
@@ -85500,6 +85905,13 @@
       "organization_id": "liaison-committee-commons", 
       "start_date": "2015-09-10", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4072/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24779", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4072/Committee/345", 
@@ -85600,6 +86012,13 @@
       "organization_id": "house-of-commons", 
       "start_date": "2015-05-08", 
       "end_date": "2016-07-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3985/Committee/103", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24784", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/3985/Committee/128", 
@@ -86273,6 +86692,13 @@
       "organization_id": "regulatory-reform-committee", 
       "start_date": "2017-01-16", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3998/Committee/131/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24804", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/3998/Committee/136", 
@@ -87430,11 +87856,25 @@
       "end_date": "2017-06-14"
     }, 
     {
+      "id": "uk.parliament.data/Member/3999/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24835", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3999/Committee/24", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24835", 
       "organization_id": "defence-committee", 
       "start_date": "2017-09-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3999/Committee/343", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24835", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2017-09-12"
     }, 
     {
       "id": "uk.parliament.data/Member/3999/OppositionPost/5", 
@@ -88068,6 +88508,13 @@
       "end_date": "2013-10-07"
     }, 
     {
+      "id": "uk.parliament.data/Member/4031/Committee/103", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24851", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4031/Committee/111", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24851", 
@@ -88219,6 +88666,13 @@
       "organization_id": "consolidation-bills-joint-committee", 
       "start_date": "2015-11-09", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4079/Committee/171/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24853", 
+      "organization_id": "consolidation-bills-joint-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4079/Committee/50", 
@@ -89209,6 +89663,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4093/Committee/131/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24888", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4093/Committee/135", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24888", 
@@ -90157,6 +90618,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4000/Committee/103/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24919", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4000/Committee/202", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24919", 
@@ -90888,7 +91356,16 @@
       "role": "The Minister of State, Department for Work and Pensions", 
       "person_id": "uk.org.publicwhip/person/24938", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-15"
+      "start_date": "2016-07-15", 
+      "end_date": "2017-11-09"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4017/GovernmentPost/716", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Secretary of State for International Development", 
+      "person_id": "uk.org.publicwhip/person/24938", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-11-09"
     }, 
     {
       "id": "uk.parliament.data/Member/4097/Committee/102", 
@@ -91178,6 +91655,14 @@
       "end_date": "2012-12-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4071/GovernmentPost/211", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Department for Work and Pensions", 
+      "person_id": "uk.org.publicwhip/person/24948", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-11-09"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4071/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
       "role": "Assistant Whip (HM Treasury)", 
@@ -91192,7 +91677,8 @@
       "role": "The Parliamentary Under-Secretary of State for the Home Department", 
       "person_id": "uk.org.publicwhip/person/24948", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-17"
+      "start_date": "2016-07-17", 
+      "end_date": "2017-11-09"
     }, 
     {
       "id": "uk.parliament.data/Member/4088/Committee/127", 
@@ -92612,6 +93098,14 @@
       "start_date": "2017-06-29"
     }, 
     {
+      "id": "uk.parliament.data/Member/4177/ParliamentaryPost/1092", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Deputy Chairman of Committees", 
+      "person_id": "uk.org.publicwhip/person/24997", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4157/Committee/252", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24998", 
@@ -92862,6 +93356,20 @@
       "organization_id": "licensing-act-2003-committee", 
       "start_date": "2016-09-13", 
       "end_date": "2017-04-04"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4184/Committee/374", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25003", 
+      "organization_id": "citizenship-and-civic-engagement-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4179/Committee/111", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25004", 
+      "organization_id": "national-security-strategy-joint-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4179/Committee/170", 
@@ -93344,6 +93852,14 @@
       "start_date": "2017-07-10"
     }, 
     {
+      "id": "uk.parliament.data/Member/4202/ParliamentaryPost/1092", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Deputy Chairman of Committees", 
+      "person_id": "uk.org.publicwhip/person/25030", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4199/Committee/172", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25031", 
@@ -93406,6 +93922,13 @@
       "organization_id": "olympic-and-paralympic-legacy-committee", 
       "start_date": "2013-05-16", 
       "end_date": "2013-11-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4205/Committee/170", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25032", 
+      "organization_id": "communications-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4205/Committee/184", 
@@ -93785,6 +94308,14 @@
       "organization_id": "personal-service-companies--committee", 
       "start_date": "2013-11-12", 
       "end_date": "2014-03-31"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4214/ParliamentaryPost/1092", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Deputy Chairman of Committees", 
+      "person_id": "uk.org.publicwhip/person/25043", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4217/Committee/360", 
@@ -94952,6 +95483,13 @@
       "end_date": "2013-06-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/4275/Committee/111", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25178", 
+      "organization_id": "national-security-strategy-joint-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4277/Committee/164", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25181", 
@@ -95408,7 +95946,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25201", 
       "organization_id": "communications-committee", 
-      "start_date": "2017-06-27"
+      "start_date": "2017-06-27", 
+      "end_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4283/Committee/371", 
@@ -96276,6 +96815,14 @@
       "start_date": "2017-09-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4424/OppositionPost/1406", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Environment)", 
+      "person_id": "uk.org.publicwhip/person/25271", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-10-31"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4475/Committee/203", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25272", 
@@ -96353,6 +96900,13 @@
       "person_id": "uk.org.publicwhip/person/25275", 
       "organization_id": "defence-committee", 
       "start_date": "2017-09-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4374/Committee/343", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25275", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2017-09-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4374/OppositionPost/1362", 
@@ -96552,6 +97106,13 @@
       "organization_id": "defence-subcommittee", 
       "start_date": "2016-12-05", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4360/Committee/343/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25280", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2017-09-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4360/OppositionPost/1109", 
@@ -97093,6 +97654,20 @@
       "start_date": "2017-10-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4432/Committee/171", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25299", 
+      "organization_id": "consolidation-bills-joint-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4432/Committee/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25299", 
+      "organization_id": "administration-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4432/Committee/381", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25299", 
@@ -97352,6 +97927,13 @@
       "organization_id": "house-of-commons", 
       "start_date": "2016-01-07", 
       "end_date": "2016-10-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4402/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25305", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4402/Committee/15", 
@@ -97697,6 +98279,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4464/Committee/171/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25317", 
+      "organization_id": "consolidation-bills-joint-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4464/Committee/50", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25317", 
@@ -97973,6 +98562,13 @@
       "organization_id": "consolidation-bills-joint-committee", 
       "start_date": "2015-11-09", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4513/Committee/171/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25330", 
+      "organization_id": "consolidation-bills-joint-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4513/Committee/328", 
@@ -98541,6 +99137,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4454/Committee/171/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25350", 
+      "organization_id": "consolidation-bills-joint-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4454/Committee/352", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25350", 
@@ -99068,6 +99671,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4485/Committee/343/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25367", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2017-09-12"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4485/Committee/81", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25367", 
@@ -99203,6 +99813,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4462/Committee/103", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25374", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4462/Committee/111", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25374", 
@@ -99258,6 +99875,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4394/Committee/171/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25375", 
+      "organization_id": "consolidation-bills-joint-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4394/OppositionPost/967", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister (International Development)", 
@@ -99281,6 +99905,13 @@
       "organization_id": "consolidation-bills-joint-committee", 
       "start_date": "2015-11-09", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4366/Committee/171/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25376", 
+      "organization_id": "consolidation-bills-joint-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4366/Committee/367", 
@@ -99715,6 +100346,13 @@
       "start_date": "2017-09-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4419/Committee/93", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25404", 
+      "organization_id": "human-rights-joint-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4419/OppositionPost/1209", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow SNP Spokesperson (Justice and Home Affairs)", 
@@ -100025,6 +100663,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4507/Committee/131/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25417", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4507/Committee/164", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25417", 
@@ -100155,6 +100800,20 @@
       "start_date": "2017-09-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4458/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25423", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4458/Committee/171", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25423", 
+      "organization_id": "consolidation-bills-joint-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4458/Committee/24", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25423", 
@@ -100196,6 +100855,14 @@
       "end_date": "2016-10-31"
     }, 
     {
+      "id": "uk.parliament.data/Member/4399/GovernmentPost/366", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for the Home Department", 
+      "person_id": "uk.org.publicwhip/person/25424", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-11-09"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4442/Committee/126", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25426", 
@@ -100233,6 +100900,13 @@
       "organization_id": "regulatory-reform-committee", 
       "start_date": "2015-10-12", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4494/Committee/131/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25427", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4494/Committee/162", 
@@ -100492,6 +101166,13 @@
       "organization_id": "defence-subcommittee", 
       "start_date": "2015-09-08", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4508/Committee/343/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25435", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2017-09-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4508/Committee/346", 
@@ -100763,7 +101444,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25456", 
       "organization_id": "communications-committee", 
-      "start_date": "2016-09-13"
+      "start_date": "2016-09-13", 
+      "end_date": "2017-11-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4543/Committee/170/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/25456", 
+      "organization_id": "communications-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4547/Committee/339", 
@@ -101050,6 +101740,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4572/Committee/171", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25490", 
+      "organization_id": "consolidation-bills-joint-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4572/OppositionPost/10", 
       "source": "datadotparl/oppositionpost", 
       "role": "Opposition Whip (Commons)", 
@@ -101238,6 +101935,13 @@
       "start_date": "2017-10-16"
     }, 
     {
+      "id": "uk.parliament.data/Member/4675/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25616", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4675/Committee/328", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25616", 
@@ -101325,6 +102029,13 @@
       "start_date": "2017-09-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4600/Committee/343", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25628", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2017-09-12"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4633/Committee/153", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25629", 
@@ -101387,7 +102098,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25636", 
       "organization_id": "women-and-equalities-committee", 
-      "start_date": "2017-09-11"
+      "start_date": "2017-09-11", 
+      "end_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4621/Committee/135", 
@@ -101552,6 +102264,13 @@
       "person_id": "uk.org.publicwhip/person/25661", 
       "organization_id": "public-accounts-committee", 
       "start_date": "2017-09-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4639/Committee/131", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25661", 
+      "organization_id": "regulatory-reform-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4671/OppositionPost/1391", 
@@ -101766,6 +102485,13 @@
       "start_date": "2017-09-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4604/Committee/171", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25696", 
+      "organization_id": "consolidation-bills-joint-committee", 
+      "start_date": "2017-11-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4604/Committee/365", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25696", 
@@ -101778,6 +102504,13 @@
       "person_id": "uk.org.publicwhip/person/25698", 
       "organization_id": "work-and-pensions-committee", 
       "start_date": "2017-10-16"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4635/Committee/171", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25699", 
+      "organization_id": "consolidation-bills-joint-committee", 
+      "start_date": "2017-11-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4635/Committee/328", 
