@@ -151,30 +151,14 @@ def get_unique_person_id(tidied_speaker, on_date):
         # is something we know about, but not an MSP (e.g Lord
         # Advocate)
         return None
+    elif len(ids) == 0:
+        log_speaker(tidied_speaker,str(on_date),"missing")
+        return None
+    elif len(ids) == 1:
+        return ids[0]
     else:
-        if len(ids) == 0:
-            log_speaker(tidied_speaker,str(on_date),"missing")
-            return None
-        elif len(ids) == 1:
-            Speech.speakers_so_far.append(ids[0])
-            return ids[0]
-        else:
-            final_id = None
-            # If there's an ambiguity there our best bet is to go
-            # back through the previous IDs used today, and pick
-            # the most recent one that's in the list we just got
-            # back...
-            for i in range(len(Speech.speakers_so_far) - 1, -1, -1):
-                older_id = Speech.speakers_so_far[i]
-                if older_id in ids:
-                    final_id = older_id
-                    break
-            if final_id:
-                Speech.speakers_so_far.append(final_id)
-                return final_id
-            else:
-                log_speaker(tidied_speaker,str(on_date),"genuine ambiguity")
-                # self.person_id = None
+        raise Exception, "The speaker '%s' could not be resolved, found: %s" % (tidied_speaker, ids)
+
 
 def is_member_vote(element, vote_date, expecting_a_vote=True):
     """Returns a speaker ID if this looks like a member's vote in a division
@@ -513,12 +497,6 @@ class Speech(object):
         self.person_id = final_id
         self.speaker_name = tidied_speaker
 
-    speakers_so_far = []
-
-    @classmethod
-    def reset_speakers_so_far(cls):
-        cls.speakers_so_far = []
-
     def as_xml(self, speech_id):
         attributes = {'url': self.url,
                       'id': speech_id}
@@ -566,8 +544,6 @@ def parse_html(session, report_date, soup, page_id, original_url):
     div_children_of_report_view = report_view.findChildren('div', recursive=False)
     if len(div_children_of_report_view) != 1:
         raise Exception, 'We only expect one <div> child of <div id="ReportView">; there were %d in page with ID %d' % (len(div_children_of_report_view), page_id)
-
-    Speech.reset_speakers_so_far()
 
     main_div = div_children_of_report_view[0]
 

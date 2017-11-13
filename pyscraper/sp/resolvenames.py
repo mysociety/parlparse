@@ -109,7 +109,6 @@ class MemberList(ResolverBase):
     # This will return a list of person ID strings or None.  If there
     # are no matches, the list will be empty.  If we recognize a valid
     # speaker, but that person is not an MSP (e.g. The Convener,
-
     # Members, the Lord Advocate, etc.) then we return None.
 
     # (In fact, it's not at all clear that distinguishing the empty
@@ -231,6 +230,9 @@ class MemberList(ResolverBase):
 
         if re.search('(Some [mM]embers|A [mM]ember|Several [mM]embers|Members)',s):
             # print "Got some general group of people..."
+            return None
+
+        if s in ('The Deputy Convener', 'The Convener'):
             return None
 
         return map(self.membertoperson, member_ids)
