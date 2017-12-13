@@ -556,39 +556,29 @@ class BaseParseDayXML(object):
         self.output_heading = True
 
     def parse_question(self, question):
-        self.clear_current_speech()
-        tag = etree.Element('speech')
-        tag.set('id', self.get_speech_id())
-
         member = question.xpath('.//ns:Member', namespaces=self.ns_map)[0]
         member = self.parse_member(member)
-        if member is not None:
-            tag.set('person_id', member['person_id'])
-            tag.set('speakername', member['name'])
+
+        first_para = question.xpath('.//ns:hs_Para', namespaces=self.ns_map)[0]
+        self.new_speech(member, first_para.get('url'))
 
         number = u''.join(
             question.xpath('.//ns:Number/text()', namespaces=self.ns_map)
         )
         if number != '':
-            tag.set('oral-qnum', number)
-
-        tag.set('colnum', self.current_col)
-        tag.set('time', self.current_time)
-
-        para = question.xpath('.//ns:hs_Para', namespaces=self.ns_map)
-        tag.set('url', self.get_speech_url(para[0].get('url')))
+            self.current_speech.set('oral-qnum', number)
 
         p = etree.Element('p')
         p.set('pid', self.get_pid())
         uin = question.xpath('.//ns:Uin', namespaces=self.ns_map)
-        if len(uin) == 1:
+        if len(uin) > 0:
             uin_text = u''.join(uin[0].xpath('.//text()'))
             m = re.match('\[\s*(\d+)\s*\]', uin_text)
             if m is not None:
                 no = m.groups(1)[0]
                 p.set('qnum', no)
 
-        text = question.xpath(
+        text = first_para.xpath(
             './/ns:QuestionText/text()', namespaces=self.ns_map
         )
         text = u''.join(text)
@@ -608,7 +598,7 @@ class BaseParseDayXML(object):
         </hs_Para></Question>
         """
         if text == '':
-            q_text = question.xpath(
+            q_text = first_para.xpath(
                 './/ns:QuestionText/following-sibling::text()',
                 namespaces=self.ns_map
             )
@@ -616,8 +606,17 @@ class BaseParseDayXML(object):
                 text = u''.join(q_text)
 
         p.text = re.sub('\n', ' ', text)
-        tag.append(p)
-        self.root.append(tag)
+        self.current_speech.append(p)
+
+        # and sometimes there is more question text in following siblings
+        # so we need to handle those too
+        following_tags = first_para.xpath(
+            './following-sibling::*',
+            namespaces=self.ns_map
+        )
+        for t in following_tags:
+            tag_name = self.get_tag_name_no_ns(t)
+            self.handle_tag(tag_name, t)
 
     def parse_indent(self, tag):
         self.parse_para_with_member(tag, None, css_class='indent')
