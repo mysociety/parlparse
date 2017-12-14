@@ -454,7 +454,7 @@ def FilterDebateSections(text, sdate, typ):
 
                         #lastheading = headingtxt
 
-			# continue and output unaccounted for unspoken text occuring after a
+			# continue and output unaccounted for unspoken text occurring after a
 			# division, or after a heading
 			if (not re.match('(?:<[^>]*>|\s)*$', unspoketxt)):
 				qb = qspeech('nospeaker="true"', unspoketxt, stampurl)

@@ -755,7 +755,7 @@ for filename in filenames:
     # try:
     #     parser.parse(filename)
     # except Exception, e:
-    #     if verbose: print "An unhandled exception occured in parsing: "+filename
+    #     if verbose: print "An unhandled exception occurred in parsing: "+filename
     #     if verbose: print "The exception was: "+str(e)
     #     traceback.print_exc(file=sys.stdout)
     #     files_and_exceptions.append( (filename,e) )

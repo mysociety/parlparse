@@ -1100,7 +1100,7 @@ class PBCParseDayXML(BaseParseDayXML):
     # check for a cross symbol before the name of a member which tells
     # us that they are attending the committee
     #
-    # the text[-1] is becuase we fetch all the preceding text nodes and
+    # the text[-1] is because we fetch all the preceding text nodes and
     # we want the immediately preceding one which will be the last one
     # in the array
     def get_attending_status(self, member_tag):

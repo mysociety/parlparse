@@ -81,10 +81,10 @@ class ScrapedXMLParser(xml.sax.handler.ContentHandler):
                 if k not in found_ids_with_correct_column:
                     del self.ids_with_quote[k]
         for k in self.ids_with_quote:
-            occurences = self.ids_with_quote[k]
-            if occurences > max_occurences:
+            occurrences = self.ids_with_quote[k]
+            if occurrences > max_occurences:
                 id_to_return = k
-                max_occurences = occurences
+                max_occurences = occurrences
         return id_to_return
             
     def startElement(self,name,attr):

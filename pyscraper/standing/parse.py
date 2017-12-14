@@ -392,7 +392,7 @@ class ParseCommittee:
         if ayelist: ayevote = ayelist[0].strip().lower()
         if nolist: novote = nolist[0].strip().lower()
         
-        # Sometimes they have some arbitary mix of <p> tags and linebreaks
+        # Sometimes they have some arbitrary mix of <p> tags and linebreaks
         if len(ayelist) == 1 and (len(nolist) in [0,1] or novote != 'noes'):
             ayelist = []
             nolist = []

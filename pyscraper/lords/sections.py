@@ -407,7 +407,7 @@ def FilterLordsSpeech(qb):
 	recol = re.search('colon="(:?)"', qb.speaker)
 	bSpeakerExists = not re.match('nospeaker="true"', qb.speaker)
 	if bSpeakerExists and (not recol or recol.group(1)):
-		# text of this kind at the begining should not be spoken, assume there wasn't a colon
+		# text of this kind at the beginning should not be spoken, assume there wasn't a colon
 		if not re.search("<p>(?:moved|asked|rose to move,) (?i)", qb.stext[0]) or re.search("<p>moved formally(?i)", qb.stext[0]):
 		        ispeechstartp1 = 1  # 0th paragraph is speech text
 
@@ -608,7 +608,7 @@ def LordsFilterSections(text, sdate):
 				flatb.append(qbdp)
 			flatb.append(qbd)
 
-		# continue and output unaccounted for unspoken text occuring after a
+		# continue and output unaccounted for unspoken text occurring after a
 		# division, or after a heading
 		if (not re.match('(?:<[^>]*>|\s)*$', unspoketxt)):
 			qb = qspeech('nospeaker="true"', unspoketxt, stampurl)
