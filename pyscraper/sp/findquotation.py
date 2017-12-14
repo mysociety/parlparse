@@ -63,7 +63,7 @@ class ScrapedXMLParser(xml.sax.handler.ContentHandler):
             if os.path.exists(filename):
                 self.parser.parse(filename)
         # Find the ID that most of the regexps match:
-        max_occurences = 0
+        max_occurrences = 0
         id_to_return = None
         found_ids = self.ids_with_quote.keys()
         found_ids_with_correct_column = {}
@@ -81,10 +81,10 @@ class ScrapedXMLParser(xml.sax.handler.ContentHandler):
                 if k not in found_ids_with_correct_column:
                     del self.ids_with_quote[k]
         for k in self.ids_with_quote:
-            occurences = self.ids_with_quote[k]
-            if occurences > max_occurences:
+            occurrences = self.ids_with_quote[k]
+            if occurrences > max_occurrences:
                 id_to_return = k
-                max_occurences = occurences
+                max_occurrences = occurrences
         return id_to_return
             
     def startElement(self,name,attr):

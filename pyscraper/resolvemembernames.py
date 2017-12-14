@@ -327,7 +327,7 @@ class MemberList(ResolverBase):
                 ix -= 1
 
             # In Westminster Hall, there can be a suspension to go and vote in
-            # a divison in the main chamber on something about which they
+            # a division in the main chamber on something about which they
             # haven't heard the debate, and then the same person keeps talking,
             # so it's possible the same person speaks twice in a row.
             if ix == -1 and typ == 'westminhall' and self.debatenamehistory[-1] in ids:

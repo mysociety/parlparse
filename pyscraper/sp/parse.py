@@ -398,7 +398,7 @@ class Speech:
         if self.time:
             time_info = ' time="' + str(self.time) + '"'
 
-        # FIXME: We should probaly output things that look like
+        # FIXME: We should probably output things that look like
         # questions or replies as <ques> and <reply>...
 
         result = '<speech id="%s" %s %scolnum="%s" url="%s"%s>' % ( self.id, speaker_info, question_info, self.colnum, self.url, time_info )
@@ -519,7 +519,7 @@ class Division:
                         result += '    <mspname id="%s" vote="%s">%s</mspname>' % ( ids[0], way, msp )
                         result += "\n"
                 else:
-                    raise Exception, "Odd voter in divison: "+msp
+                    raise Exception, "Odd voter in division: "+msp
             result += "  </msplist>\n"
         result += '</division>'
         return result
@@ -1240,7 +1240,7 @@ class Parser:
                 if mcandidate:
                     count_case("votes-for-candidate")
                     self.current_speech.add_paragraph("<b>"+speaker.strip()+"</b>")
-                    if verbose: "Found votes for a candiate: "+speaker
+                    if verbose: "Found votes for a candidate: "+speaker
                     division_report = True
                     self.results_expected = 'FOR'
                     if verbose: print '- Creating new division for candidate: ' + so_far

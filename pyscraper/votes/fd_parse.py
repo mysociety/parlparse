@@ -1019,7 +1019,7 @@ class ANY(Compound):
 			else:
 
 ###This is a bit clumsy but is meant to be there. It puts in a dummy
-###succesful completetion, for the purposes of pretty printing. Query whether
+###successful completion, for the purposes of pretty printing. Query whether
 ###some other way of doing this ought to work.
 
 				results.append(Success(NOP()))

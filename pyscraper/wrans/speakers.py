@@ -125,7 +125,7 @@ def FilterWransSpeakers(fout, text, sdate):
 			fs[i] = ''
 			continue
 
-		# try to pull in the question number if preceeding
+		# try to pull in the question number if preceding
 		# These signify aborted oral questions, and are normally
 		# useless and at the start of the page.
 		# 27. <B> Mr. Steen: </B>
