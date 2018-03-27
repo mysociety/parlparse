@@ -6,3 +6,12 @@
 // Imports are relative to _sass directory
 @import 'config';
 @import '../theme/sass/global';
+
+
+@media (min-width: $mysoc-footer-breakpoint-sm){
+  .mysoc-footer__links {
+    ul {
+      width: auto;
+    }
+  }
+}
