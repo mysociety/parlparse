@@ -6,11 +6,16 @@ title: Overview
 ## What can I find here?
 
 Structured versions of publicly available data from the UK parliament, and the
-source code that was used to generate the data. This is the engine of clever
-stuff which runs <a href="http://www.theyworkforyou.com">TheyWorkForYou.com</a>
-and <a href="http://www.publicwhip.org.uk">The Public Whip</a>. You might find
-the <a href="http://www.theyworkforyou.com/api">TheyWorkForYou API</a> easier to
-use.
+source code that was used to generate the data.
+
+This is the engine of clever stuff which runs
+<a href="http://www.theyworkforyou.com">TheyWorkForYou.com</a> and
+<a href="http://www.publicwhip.org.uk">The Public Whip</a>. You might find
+the <a href="http://www.theyworkforyou.com/api">TheyWorkForYou API</a>
+easier to use.
+
+APIs and datasets for other mySociety services can be found on our data
+portal, <a href="http://data.mysociety.org">data.mysociety.org</a>.
 
 ## Who can I talk to about it?
 
