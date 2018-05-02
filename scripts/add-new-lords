@@ -54,7 +54,7 @@ for member in parl_members:
     if end_date and end_date < '1999-11-12':
         continue
     name = canon_name(member.find('DisplayAs').text)
-    if not data.get_person(name=name):
+    if not data.get_person(name=name) or member.attrib['Pims_Id'] not in data.identifiers['pims_id']:
         if member.attrib['Pims_Id'] not in data.identifiers['pims_id']:
             print "{} is a new Lord".format(name)
             person_id = new_id(person_id)
