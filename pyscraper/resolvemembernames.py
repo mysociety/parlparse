@@ -500,8 +500,9 @@ class MemberList(ResolverBase):
         # to missing constituency) look in recent name match history
         if len(ids) > 1: ids = self.disambiguate_from_history(ids)    
 
-        if len(ids) == 0 and re.search(reChairman, input) and self.chairman:
-            ids =  self.fullnametoids(self.chairman, date)
+        if len(ids) == 0 and re.search(reChairman, input):
+            if self.chairman:
+                ids = self.fullnametoids(self.chairman, date)
             if len(ids) == 0:
                 raise ContextException, "Couldn't match Committee Chairman %s" % self.chairman
             
@@ -576,9 +577,10 @@ class MemberList(ResolverBase):
             self.debateofficehistory.setdefault(input, set()).update(ids)
 
         # Chairman
-        if len(ids) == 0 and re.search(reChairman, input) and self.chairman:
+        if len(ids) == 0 and re.search(reChairman, input):
             #print "trying %s chair: %s" % (input, self.chairman)
-            ids =  self.fullnametoids(self.chairman, date)
+            if self.chairman:
+                ids = self.fullnametoids(self.chairman, date)
             if len(ids) == 0:
                 raise ContextException, "Couldn't match Committee Chairman %s" % self.chairman
                 

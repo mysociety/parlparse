@@ -1235,7 +1235,7 @@ class PBCParseDayXML(BaseParseDayXML):
         self.current_speech.append(tag)
 
         chair_match = re.match(
-            r'\[\s*\w+\s*(.*)\s+in\s+the\s+chair\s*\](?i)',
+            r'\s*\[\s*(.*)\s+in\s+the\s+chair\s*\](?i)',
             text
         )
         if chair_match is not None:
@@ -1243,6 +1243,8 @@ class PBCParseDayXML(BaseParseDayXML):
             chair = self.resolver.pbc_match(name, '', self.date)
             if chair is not None:
                 self.current_chair = chair
+        else:
+            raise ContextException(u'No match for chair {0}'.format(text))
 
     def format_div_summary(self, yes_text, no_text):
         return u"Ayes {0}, Noes {1}.".format(yes_text, no_text)
