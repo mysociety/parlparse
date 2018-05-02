@@ -864,6 +864,8 @@ class BaseParseDayXML(object):
             self.current_time = "12:00:00"
         elif re.match('12\s*?midnight', time_txt):
             self.current_time = "00:00:00"
+        elif re.match('Midnight', time_txt):
+            self.current_time = "00:00:00"
         else:
             raise ContextException(
                 "Unmatched time %s" % time_txt,
