@@ -112,6 +112,7 @@ class BaseParseDayXML(object):
         'hs_6fCntrItalHdg',
         'hs_2cSO24Application',
         'hs_6bFormalmotion',
+        'hs_2cDeferredDiv',
     ]
     chair_headings = [
         'hs_76fChair',
@@ -142,6 +143,7 @@ class BaseParseDayXML(object):
         'hs_AmendmentLevel4',
         'hs_8Clause',
         'hs_newline10',
+        'hs_newline12',
         'hs_Question',
         'hs_6CntrCapsHdg',
     ]
@@ -1381,6 +1383,7 @@ class LordsParseDayXML(BaseParseDayXML):
         'hs_parafo',
         'hs_Question',
         'hs_newline10',
+        'hs_newline12',
     ]
 
     ignored_tags = [
