@@ -1862,6 +1862,9 @@ class ParseDay(object):
     def parse_day(self, out, text, date, debate_type, verbose=0):
         self.set_parser_for_type(debate_type)
         self.parser.verbose = verbose
+        if debate_type == 'standing':
+            if not hasattr(self.parser, 'sitting_id'):
+                self.parser.get_sitting(text)
         parse_ok = self.parser.parse_day(text, out)
         if parse_ok:
             out.write(etree.tounicode(self.parser.root, pretty_print=True))
@@ -1873,5 +1876,5 @@ if __name__ == '__main__':
     fp = sys.stdout
     xml_file = codecs.open(sys.argv[1], encoding='utf-8')
     house = sys.argv[2]
-    date = os.path.basename(sys.argv[1])[2:12]
+    date = sys.argv[3]
     ParseDay().parse_day(fp, xml_file, date, house)

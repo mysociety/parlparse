@@ -104,7 +104,7 @@ def main():
         if 'Server Error' in r.content:
             requests.Session().cache.delete_url(url_page)
             errors += 1
-            if errors >= 3:
+            if errors >= 5:
                 raise Exception, 'Too many server errors, giving up'
             continue
         writtens.add_from_html(r.content)
