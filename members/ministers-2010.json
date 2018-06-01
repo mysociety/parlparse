@@ -12368,6 +12368,14 @@
       "end_date": "2017-04-04"
     }, 
     {
+      "id": "uk.parliament.data/Member/214/Committee/388", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10208", 
+      "organization_id": "rural-economy-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/214/Committee/43", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10208", 
@@ -17773,6 +17781,13 @@
       "end_date": "2013-03-05"
     }, 
     {
+      "id": "uk.parliament.data/Member/494/Committee/389", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10303", 
+      "organization_id": "bribery-act-2010-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/494/Committee/83", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10303", 
@@ -17961,7 +17976,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10312", 
       "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
-      "start_date": "2018-04-17"
+      "start_date": "2018-04-17", 
+      "end_date": "2018-05-16"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/40/Committee/387/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10312", 
+      "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
+      "start_date": "2018-05-16"
     }, 
     {
       "id": "uk.parliament.data/Member/40/Committee/99", 
@@ -19047,6 +19071,13 @@
       "person_id": "uk.org.publicwhip/person/10345", 
       "organization_id": "services-committee", 
       "start_date": "2016-09-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/635/Committee/387", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10345", 
+      "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
+      "start_date": "2018-05-15"
     }, 
     {
       "id": "uk.parliament.data/Member/635/Committee/77", 
@@ -25613,6 +25644,13 @@
       "end_date": "2017-03-25"
     }, 
     {
+      "id": "uk.parliament.data/Member/217/Committee/389", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10489", 
+      "organization_id": "bribery-act-2010-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/217/GovernmentPost/146", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister of State (Department of Health) (Public Health)", 
@@ -29603,6 +29641,13 @@
       "organization_id": "draft-modern-slavery-bill-committee", 
       "start_date": "2014-01-09", 
       "end_date": "2014-04-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/445/Committee/389", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10578", 
+      "organization_id": "bribery-act-2010-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/445/Committee/77", 
@@ -37451,6 +37496,13 @@
       "end_date": "2003-10-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/4160/Committee/391", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11027", 
+      "organization_id": "regenerating-seaside-towns-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4160/GovernmentPost/177", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister of State (Regional Affairs) (South West)", 
@@ -44812,6 +44864,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2014-02-08", 
       "end_date": "2016-07-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1530/GovernmentPost/1213", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Secretary of State for Housing, Communities and Local Government", 
+      "person_id": "uk.org.publicwhip/person/11640", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-04-30"
     }, 
     {
       "id": "uk.parliament.data/Member/1530/GovernmentPost/366", 
@@ -52316,6 +52376,13 @@
       "start_date": "2017-07-19"
     }, 
     {
+      "id": "uk.parliament.data/Member/1846/Committee/388", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12907", 
+      "organization_id": "rural-economy-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1850/Committee/166", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12909", 
@@ -53357,6 +53424,13 @@
       "start_date": "2017-06-29"
     }, 
     {
+      "id": "uk.parliament.data/Member/2510/Committee/391", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12957", 
+      "organization_id": "regenerating-seaside-towns-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2510/Committee/93", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12957", 
@@ -54156,6 +54230,13 @@
       "organization_id": "privacy-and-injunctions-joint-committee", 
       "start_date": "2011-07-18", 
       "end_date": "2012-03-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1804/Committee/389", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12974", 
+      "organization_id": "bribery-act-2010-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/1804/OppositionPost/1295", 
@@ -55374,6 +55455,13 @@
       "end_date": "2016-12-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/2481/Committee/387", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13003", 
+      "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
+      "start_date": "2018-05-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/813/Committee/103", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13004", 
@@ -56198,6 +56286,13 @@
       "organization_id": "national-policy-for-the-built-environment-committee", 
       "start_date": "2015-07-08", 
       "end_date": "2016-02-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1755/Committee/388", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13030", 
+      "organization_id": "rural-economy-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3271/Committee/168", 
@@ -58271,6 +58366,13 @@
       "start_date": "2016-12-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/3386/Committee/390", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13094", 
+      "organization_id": "intergenerational-fairness-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3386/GovernmentPost/23", 
       "source": "datadotparl/governmentpost", 
       "role": "Baroness in Waiting (HM Household) (Whip)", 
@@ -58925,6 +59027,13 @@
       "organization_id": "delegated-powers-and-regulatory-reform-committee", 
       "start_date": "2010-06-09", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2534/Committee/173/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13108", 
+      "organization_id": "delegated-powers-and-regulatory-reform-committee", 
+      "start_date": "2018-05-15"
     }, 
     {
       "id": "uk.parliament.data/Member/2534/Committee/218", 
@@ -60191,6 +60300,13 @@
       "end_date": "2014-12-24"
     }, 
     {
+      "id": "uk.parliament.data/Member/919/Committee/391", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13129", 
+      "organization_id": "regenerating-seaside-towns-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/919/GovernmentPost/54", 
       "source": "datadotparl/governmentpost", 
       "role": "Deputy Leader of the House of Lords", 
@@ -60932,6 +61048,14 @@
       "end_date": "2016-11-09"
     }, 
     {
+      "id": "uk.parliament.data/Member/2106/Committee/389", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/13145", 
+      "organization_id": "bribery-act-2010-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2105/Committee/192", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13146", 
@@ -61663,6 +61787,13 @@
       "organization_id": "high-speed-rail-london--west-midlands-bill-select-committee-lords", 
       "start_date": "2016-05-05", 
       "end_date": "2016-12-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3217/Committee/388", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13165", 
+      "organization_id": "rural-economy-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3217/Committee/93", 
@@ -63147,6 +63278,13 @@
       "end_date": "2017-04-27"
     }, 
     {
+      "id": "uk.parliament.data/Member/3680/Committee/388", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13199", 
+      "organization_id": "rural-economy-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3675/Committee/170", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13200", 
@@ -64023,6 +64161,13 @@
       "start_date": "2017-06-29"
     }, 
     {
+      "id": "uk.parliament.data/Member/2732/Committee/390", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13222", 
+      "organization_id": "intergenerational-fairness-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2637/Committee/166", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13224", 
@@ -64260,6 +64405,13 @@
       "person_id": "uk.org.publicwhip/person/13226", 
       "organization_id": "citizenship-and-civic-engagement-committee", 
       "start_date": "2017-06-29"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1651/Committee/389", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13226", 
+      "organization_id": "bribery-act-2010-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/2634/Committee/18", 
@@ -64751,6 +64903,13 @@
       "organization_id": "longterm-sustainability-of-the-nhs-committee", 
       "start_date": "2016-05-25", 
       "end_date": "2017-04-05"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3561/Committee/390", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13241", 
+      "organization_id": "intergenerational-fairness-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3561/GovernmentPost/159", 
@@ -66742,12 +66901,26 @@
       "end_date": "2016-11-09"
     }, 
     {
+      "id": "uk.parliament.data/Member/1879/Committee/391", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13301", 
+      "organization_id": "regenerating-seaside-towns-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1879/Committee/94", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13301", 
       "organization_id": "information-committee-lords", 
       "start_date": "2002-11-25", 
       "end_date": "2003-11-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1946/Committee/255", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13302", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
+      "start_date": "2018-05-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3596/Committee/173", 
@@ -67200,6 +67373,13 @@
       "organization_id": "eu-sub-committee-b--internal-market-infrastructure-and-employment", 
       "start_date": "2012-05-17", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3757/Committee/391", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13315", 
+      "organization_id": "regenerating-seaside-towns-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3752/Committee/175", 
@@ -68060,6 +68240,13 @@
       "person_id": "uk.org.publicwhip/person/13351", 
       "organization_id": "natural-environment-and-rural-communities-act-2006-committee", 
       "start_date": "2017-06-29"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3310/Committee/388", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13351", 
+      "organization_id": "rural-economy-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3310/GovernmentPost/1190", 
@@ -69802,6 +69989,13 @@
       "start_date": "2017-06-29"
     }, 
     {
+      "id": "uk.parliament.data/Member/3179/Committee/388", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13424", 
+      "organization_id": "rural-economy-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3179/Committee/94", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13424", 
@@ -70021,6 +70215,13 @@
       "organization_id": "intellectual-property-unjustified-threats-bill-hl-special-public-bill-committee", 
       "start_date": "2016-09-13", 
       "end_date": "2016-11-09"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3169/Committee/389", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13427", 
+      "organization_id": "bribery-act-2010-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3169/Committee/93", 
@@ -70718,6 +70919,13 @@
       "end_date": "2010-04-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/3705/Committee/335", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13447", 
+      "organization_id": "eu-energy-and-environment-subcommittee", 
+      "start_date": "2018-05-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3705/Committee/375", 
       "source": "datadotparl/committee", 
       "role": "Chair", 
@@ -71189,6 +71397,13 @@
       "end_date": "2017-04-27"
     }, 
     {
+      "id": "uk.parliament.data/Member/2546/Committee/391", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13455", 
+      "organization_id": "regenerating-seaside-towns-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2546/Committee/99", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13455", 
@@ -71449,7 +71664,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13463", 
       "organization_id": "eu-financial-affairs-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2018-05-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3118/Committee/191", 
@@ -72004,6 +72220,13 @@
       "organization_id": "draft-mental-incapacity-bill-joint-committee", 
       "start_date": "2003-07-11", 
       "end_date": "2003-11-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/830/Committee/389", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13474", 
+      "organization_id": "bribery-act-2010-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/830/Committee/70", 
@@ -73153,6 +73376,13 @@
       "end_date": "2017-03-25"
     }, 
     {
+      "id": "uk.parliament.data/Member/2665/Committee/389", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13499", 
+      "organization_id": "bribery-act-2010-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2665/Committee/94", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13499", 
@@ -73230,7 +73460,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13500", 
       "organization_id": "eu-financial-affairs-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2018-05-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3526/Committee/166", 
@@ -73402,6 +73633,13 @@
       "end_date": "2016-01-25"
     }, 
     {
+      "id": "uk.parliament.data/Member/2538/Committee/387", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13510", 
+      "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
+      "start_date": "2018-05-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2538/Committee/94", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13510", 
@@ -73480,6 +73718,14 @@
       "organization_id": "services-committee", 
       "start_date": "2016-09-01", 
       "end_date": "2018-02-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3504/Committee/391", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/13512", 
+      "organization_id": "regenerating-seaside-towns-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3504/GovernmentPost/24", 
@@ -75600,6 +75846,13 @@
       "end_date": "2003-11-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/2518/Committee/390", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13561", 
+      "organization_id": "intergenerational-fairness-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1895/Committee/313", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13562", 
@@ -75799,6 +76052,13 @@
       "organization_id": "eu-subcommittee-e", 
       "start_date": "2002-11-13", 
       "end_date": "2003-11-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2496/Committee/389", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13568", 
+      "organization_id": "bribery-act-2010-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3573/Committee/166", 
@@ -82241,7 +82501,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13925", 
       "organization_id": "eu-internal-market-subcommittee", 
-      "start_date": "2015-06-23"
+      "start_date": "2015-06-23", 
+      "end_date": "2018-05-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3830/Committee/391", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13925", 
+      "organization_id": "regenerating-seaside-towns-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3830/Committee/94", 
@@ -84093,6 +84361,13 @@
       "organization_id": "select-committee-on-charities", 
       "start_date": "2016-05-25", 
       "end_date": "2017-03-26"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3863/Committee/390", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24708", 
+      "organization_id": "intergenerational-fairness-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3863/ParliamentaryPost/1092", 
@@ -87448,7 +87723,8 @@
       "role": "Minister for Women and Equalities", 
       "person_id": "uk.org.publicwhip/person/24795", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-01-09"
+      "start_date": "2018-01-09", 
+      "end_date": "2018-04-29"
     }, 
     {
       "id": "uk.parliament.data/Member/3983/GovernmentPost/351", 
@@ -87483,7 +87759,8 @@
       "role": "The Secretary of State for the Home Department", 
       "person_id": "uk.org.publicwhip/person/24795", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-13"
+      "start_date": "2016-07-13", 
+      "end_date": "2018-04-29"
     }, 
     {
       "id": "uk.parliament.data/Member/4018/Committee/102", 
@@ -87947,7 +88224,7 @@
       "role": "Shadow Minister (Department for Business, Energy and Industrial Strategy) (Industrial Strategy)", 
       "person_id": "uk.org.publicwhip/person/24807", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-10-09"
+      "start_date": "2016-10-10"
     }, 
     {
       "id": "uk.parliament.data/Member/4124/OppositionPost/15", 
@@ -87956,7 +88233,7 @@
       "person_id": "uk.org.publicwhip/person/24807", 
       "organization_id": "house-of-commons", 
       "start_date": "2015-09-18", 
-      "end_date": "2016-10-09"
+      "end_date": "2016-10-10"
     }, 
     {
       "id": "uk.parliament.data/Member/4124/OppositionPost/15/1", 
@@ -88256,7 +88533,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24814", 
       "organization_id": "transport-committee", 
-      "start_date": "2017-09-11"
+      "start_date": "2017-09-11", 
+      "end_date": "2018-05-08"
     }, 
     {
       "id": "uk.parliament.data/Member/3957/Committee/81", 
@@ -88502,6 +88780,14 @@
       "person_id": "uk.org.publicwhip/person/24820", 
       "organization_id": "house-of-commons", 
       "start_date": "2017-06-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4033/GovernmentPost/937", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Environment, Food and Rural Affairs", 
+      "person_id": "uk.org.publicwhip/person/24820", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-05-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4025/Committee/15", 
@@ -89954,7 +90240,8 @@
       "role": "The Secretary of State for Housing, Communities and Local Government", 
       "person_id": "uk.org.publicwhip/person/24854", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-01-08"
+      "start_date": "2018-01-08", 
+      "end_date": "2018-04-30"
     }, 
     {
       "id": "uk.parliament.data/Member/3945/GovernmentPost/346", 
@@ -90000,6 +90287,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2014-04-09", 
       "end_date": "2015-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3945/GovernmentPost/74", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Secretary of State for the Home Department", 
+      "person_id": "uk.org.publicwhip/person/24854", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-04-30"
     }, 
     {
       "id": "uk.parliament.data/Member/3992/Committee/17", 
@@ -90767,6 +91062,14 @@
       "organization_id": "environment-food-and-rural-affairs-committee", 
       "start_date": "2010-07-12", 
       "end_date": "2010-11-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4057/GovernmentPost/1209", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Housing, Communities and Local Government)", 
+      "person_id": "uk.org.publicwhip/person/24878", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-05-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4057/GovernmentPost/350", 
@@ -92819,6 +93122,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2014-07-15", 
       "end_date": "2015-05-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4017/GovernmentPost/1114", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister for Women and Equalities", 
+      "person_id": "uk.org.publicwhip/person/24938", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-04-30"
     }, 
     {
       "id": "uk.parliament.data/Member/4017/GovernmentPost/1143", 
@@ -94923,6 +95234,13 @@
       "start_date": "2017-11-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/4184/Committee/387", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25003", 
+      "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
+      "start_date": "2018-05-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4179/Committee/111", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25004", 
@@ -95399,6 +95717,14 @@
       "person_id": "uk.org.publicwhip/person/25028", 
       "organization_id": "procedure-committee-lords", 
       "start_date": "2015-06-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4200/Committee/390", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/25028", 
+      "organization_id": "intergenerational-fairness-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4198/Committee/339", 
@@ -95883,6 +96209,13 @@
       "end_date": "2017-03-25"
     }, 
     {
+      "id": "uk.parliament.data/Member/4216/Committee/389", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25042", 
+      "organization_id": "bribery-act-2010-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4216/Committee/94", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25042", 
@@ -95978,6 +96311,13 @@
       "start_date": "2017-06-29"
     }, 
     {
+      "id": "uk.parliament.data/Member/4223/Committee/390", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25045", 
+      "organization_id": "intergenerational-fairness-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4221/Committee/306", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25046", 
@@ -96055,6 +96395,13 @@
       "organization_id": "human-rights-joint-committee", 
       "start_date": "2011-10-17", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4220/Committee/388", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25050", 
+      "organization_id": "rural-economy-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4219/Committee/169", 
@@ -96198,6 +96545,13 @@
       "start_date": "2017-06-27"
     }, 
     {
+      "id": "uk.parliament.data/Member/4237/Committee/389", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25054", 
+      "organization_id": "bribery-act-2010-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4231/Committee/264", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25056", 
@@ -96229,6 +96583,13 @@
       "organization_id": "financial-exclusion-committee", 
       "start_date": "2016-05-25", 
       "end_date": "2017-03-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4231/Committee/390", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25056", 
+      "organization_id": "intergenerational-fairness-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4233/Committee/184", 
@@ -96371,6 +96732,13 @@
       "end_date": "2017-03-26"
     }, 
     {
+      "id": "uk.parliament.data/Member/4229/Committee/390", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25064", 
+      "organization_id": "intergenerational-fairness-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4228/Committee/215", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25065", 
@@ -96385,6 +96753,13 @@
       "organization_id": "small-and-medium-sized-enterprises-committee", 
       "start_date": "2012-05-29", 
       "end_date": "2013-02-28"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4228/Committee/391", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25065", 
+      "organization_id": "regenerating-seaside-towns-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4241/Committee/331", 
@@ -96676,7 +97051,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25149", 
       "organization_id": "eu-energy-and-environment-subcommittee", 
-      "start_date": "2015-06-12"
+      "start_date": "2015-06-12", 
+      "end_date": "2018-05-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4250/Committee/388", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25149", 
+      "organization_id": "rural-economy-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4253/Committee/102", 
@@ -97640,6 +98023,13 @@
       "start_date": "2016-09-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/4300/Committee/388", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25202", 
+      "organization_id": "rural-economy-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4300/OppositionPost/1301", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Lords Spokesperson (Wales)", 
@@ -97792,6 +98182,13 @@
       "start_date": "2017-06-29"
     }, 
     {
+      "id": "uk.parliament.data/Member/4294/Committee/390", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25208", 
+      "organization_id": "intergenerational-fairness-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4294/Committee/94", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25208", 
@@ -97879,6 +98276,13 @@
       "person_id": "uk.org.publicwhip/person/25215", 
       "organization_id": "communications-committee", 
       "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4309/Committee/337", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25217", 
+      "organization_id": "eu-financial-affairs-subcommittee", 
+      "start_date": "2018-05-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4316/Committee/158", 
@@ -98094,6 +98498,13 @@
       "start_date": "2017-06-16"
     }, 
     {
+      "id": "uk.parliament.data/Member/4330/Committee/387", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25241", 
+      "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
+      "start_date": "2018-05-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4330/GovernmentPost/1063", 
       "source": "datadotparl/governmentpost", 
       "role": "Lords Spokesperson (Cabinet Office)", 
@@ -98233,6 +98644,13 @@
       "start_date": "2017-06-27"
     }, 
     {
+      "id": "uk.parliament.data/Member/4340/Committee/391", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25246", 
+      "organization_id": "regenerating-seaside-towns-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4334/Committee/192", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25247", 
@@ -98315,6 +98733,13 @@
       "person_id": "uk.org.publicwhip/person/25253", 
       "organization_id": "international-relations-committee", 
       "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2134/Committee/340", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25260", 
+      "organization_id": "eu-internal-market-subcommittee", 
+      "start_date": "2018-05-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4351/Committee/173", 
@@ -103485,6 +103910,13 @@
       "start_date": "2017-06-29"
     }, 
     {
+      "id": "uk.parliament.data/Member/4542/Committee/391", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25453", 
+      "organization_id": "regenerating-seaside-towns-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4541/Committee/337", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25454", 
@@ -103611,6 +104043,13 @@
       "start_date": "2017-06-29"
     }, 
     {
+      "id": "uk.parliament.data/Member/4556/Committee/388", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25471", 
+      "organization_id": "rural-economy-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4567/Committee/255", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25473", 
@@ -103680,6 +104119,13 @@
       "start_date": "2016-05-25"
     }, 
     {
+      "id": "uk.parliament.data/Member/4558/Committee/390", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25478", 
+      "organization_id": "intergenerational-fairness-committee", 
+      "start_date": "2018-05-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4558/OppositionPost/1306", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Lords Spokesperson (Communities and Local Government)", 
@@ -103707,7 +104153,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25481", 
       "organization_id": "secondary-legislation-scrutiny-committee", 
-      "start_date": "2017-06-27"
+      "start_date": "2017-06-27", 
+      "end_date": "2018-05-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4566/Committee/357", 
@@ -103716,6 +104163,13 @@
       "organization_id": "licensing-act-2003-committee", 
       "start_date": "2016-05-25", 
       "end_date": "2017-04-04"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4566/Committee/387", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25481", 
+      "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
+      "start_date": "2018-05-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4565/Committee/176", 
@@ -103730,6 +104184,13 @@
       "person_id": "uk.org.publicwhip/person/25486", 
       "organization_id": "eu-external-affairs-subcommittee", 
       "start_date": "2016-05-26"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4570/Committee/390", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25487", 
+      "organization_id": "intergenerational-fairness-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4570/GovernmentPost/1010", 
@@ -104008,6 +104469,13 @@
       "person_id": "uk.org.publicwhip/person/25610", 
       "organization_id": "finance-committee-lords", 
       "start_date": "2017-09-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4596/Committee/388", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25610", 
+      "organization_id": "rural-economy-committee", 
+      "start_date": "2018-05-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4673/Committee/17", 
@@ -104951,6 +105419,13 @@
       "start_date": "2017-09-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4643/Committee/153", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25698", 
+      "organization_id": "transport-committee", 
+      "start_date": "2018-05-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4643/Committee/164", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25698", 
@@ -105092,6 +105567,10 @@
     {
       "id": "bbc-charter-review-committee", 
       "name": "BBC Charter Review Committee"
+    }, 
+    {
+      "id": "bribery-act-2010-committee", 
+      "name": "Bribery Act 2010 Committee"
     }, 
     {
       "id": "broadcasting-committee", 
@@ -105814,6 +106293,10 @@
       "name": "Intelligence and Security Committee of Parliament"
     }, 
     {
+      "id": "intergenerational-fairness-committee", 
+      "name": "Intergenerational Fairness Committee"
+    }, 
+    {
       "id": "intergovernmental-organisations-committee", 
       "name": "Intergovernmental Organisations Committee"
     }, 
@@ -106098,6 +106581,10 @@
       "name": "Refreshment Sub Committee"
     }, 
     {
+      "id": "regenerating-seaside-towns-committee", 
+      "name": "Regenerating Seaside Towns Committee"
+    }, 
+    {
       "id": "regulatory-reform-committee", 
       "name": "Regulatory Reform Committee"
     }, 
@@ -106108,6 +106595,10 @@
     {
       "id": "rookery-south-resource-recovery-facility-order-2011-committee", 
       "name": "Rookery South (Resource Recovery Facility) Order 2011 Committee"
+    }, 
+    {
+      "id": "rural-economy-committee", 
+      "name": "Rural Economy Committee"
     }, 
     {
       "id": "science--technology-technological-innovation-subcommittee", 
