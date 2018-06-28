@@ -1,0 +1,245 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+from io import open
+import os
+import sys
+import copy
+import json
+import re
+import requests
+import requests_cache
+from xml.sax.saxutils import escape, quoteattr
+from lxml import html, etree
+from urlparse import urljoin
+
+requests_cache.install_cache(cache_name='debates', allowable_codes=(200, 404))
+BASE_SOURCE_URL = 'https://api.parliament.uk'
+
+
+# Set up URL => person ID lookup
+JSON = 'members/people.json'
+data = json.load(open(JSON))
+people = {}
+for person in data['persons']:
+    for name in person.get('identifiers', []):
+        if name['scheme'] != 'historichansard_url':
+            continue
+        people[name['identifier']] = person['id']
+
+
+def update_col(newcol):
+    global col, idn
+    if col != newcol:
+        col = newcol
+        idn = 0
+
+
+def output_xml(tag, content, url='', extra=''):
+    global idn
+    if url: url = ' url="%s"' % url
+    out = '<%s id="uk.org.publicwhip/debate/%sa.%s.%s" %scolnum="%s"%s>%s</%s>\n' % (tag, date, col, idn, extra, col, url, content, tag)
+    idn += 1
+    return out
+
+
+def output_el(el, url, speaker_bits=''):
+    # Remove internal links
+    for a in el.cssselect('a[href]:not(.column-permalink)'):
+	a.drop_tag()
+    content = html.tostring(el)
+    # Not lxml removed as needed to look up new col number
+    content = re.sub('<a[^>]*column-permalink.*?</a>', '', content)
+    # Remove speaker surround
+    content = re.sub('^<blockquote[^>]*>\s*', '', content)
+    content = re.sub('\s*</blockquote>\s*$', '', content)
+    # Tags changed before parsing to maintain 'correct' nesting (lists inside 'p's for example)
+    content = re.sub('twfy-(ol|ul|table|col)', r'\1', content)
+    # Spacing/typography
+    content = re.sub('<p(?: class="first-para")?>\s*', '<p>', content)
+    content = re.sub('\s*</p>', '</p>', content)
+    content = re.sub('</p><p>', '</p>\n<p>', content)
+    content = re.sub('\n *', '\n', content)
+    content = re.sub('\n\n+', '\n', content)
+    content = re.sub('\s+$', '', content)
+    return output_xml('speech', '\n' + content + '\n', url, speaker_bits)
+
+
+def procedural(base_url, el):
+    perm = el.cssselect('a.permalink')[0]
+    url = urljoin(base_url, perm.get('href'))
+    perm.drop_tree()
+    el.attrib.pop('id', None)
+    del el.attrib['class']
+    # Deal with follow-on <p>s that should be part of the same
+    if el.cssselect('p + p:not([class])'):
+        wr = html.Element('div')
+        wr.append(copy.deepcopy(el))
+        for p in el.itersiblings():
+            if p.tag != 'p' or p.get('class'):
+                break
+            wr.append(copy.deepcopy(p))
+            p.attrib['dealt_with'] = '1'
+        el = wr
+    return output_el(el, url)
+
+
+def speech(base_url, el):
+    aname_el = el.cssselect('div > a')[0]
+    aname = aname_el.get('name')
+    try:
+        perm = el.cssselect('a.speech-permalink')[0]
+        url = urljoin(base_url, perm.get('href'))
+        perm.drop_tree()
+    except IndexError:
+        url = '%s#%s' % (base_url, aname)
+    aname_el.drop_tree()
+
+    pid = 'unknown'
+    cite = el.cssselect('cite.member')[0]
+    person_name = cite.text_content()
+    if el.cssselect('cite.member a'):
+        person = el.cssselect('cite.member a')[0]
+        person_url = person.get('href').replace('/historic-hansard/people/', '')
+        pid = people[person_url]
+    speaker_bits = 'person_id="%s" speakername=%s ' % (pid, quoteattr(person_name))
+    cite.drop_tree()
+    return output_el(el.cssselect('blockquote')[0], url, speaker_bits)
+
+
+def block(base_url, el):
+    if el.get('id'):
+        url = '%s#%s' % (base_url, el.get('id'))
+    elif el.cssselect('div > a'):
+        aname_el = el.cssselect('div > a')[0]
+        aname = aname_el.get('name')
+        url = '%s#%s' % (base_url, aname)
+        aname_el.drop_tree()
+    elif el.get('class') == 'unparsed_division':
+        url = ''
+    else:
+        raise Exception(html.tostring(el))
+    return output_el(el, url)
+
+
+def do_speeches(url):
+    speeches = requests.get(url).content
+    # Deal with bad HTML nesting
+    speeches = re.sub('<(/?)(ul|ol|table|col)(| class="hide_numbering")>', r'<\1twfy-\2\3>', speeches)
+    tree = html.fromstring(speeches)
+
+    for th in (('italic', 'i'), ('bold', 'b')):
+	for el in tree.cssselect('span.' + th[0]):
+	    el.tag = th[1]
+	    del el.attrib['class']
+
+    out = ''
+    try:
+        div = tree.cssselect('#content')[0]
+    except IndexError:
+        if date in ('1932-02-24', '1932-02-29'):
+            return ''
+        raise
+    for el in div:
+        if el.get('dealt_with'):
+            continue
+        cls = el.get('class')
+        if (el.tag, cls) == ('p', 'procedural'):
+            out += procedural(url, el)
+        elif (el.tag, cls) == ('div', 'hentry member_contribution'):
+            out += speech(url, el)
+        elif (el.tag, cls) in (('div', 'table'), ('div', 'division'), ('div', 'unparsed_division'), ('q', None)):
+            out += block(url, el)
+        elif el.tag == 'a' and 'column-permalink' in cls:
+            pass  # column update will do at end (was update_col(int(el.text_content())) )
+        elif (el.tag, cls) in (('cite', 'section'), ('ol', 'xoxo')) or (el.tag == 'div' and el.get('id') == 'section-navigation'):
+            pass  # Ignore
+        else:
+            raise Exception(html.tostring(el))
+
+        # Try and update the column number
+        try:
+            update_col(int(el.cssselect('a.column-permalink')[-1].text_content()))
+        except IndexError:
+            pass
+        try:
+            update_col(int(el.cssselect('twfy-col')[-1].text_content()))
+        except IndexError:
+            pass
+    return out
+
+
+def walk(ol, typ, prefix=''):
+    out = ''
+    for el in ol:
+        if el.tag == 'span' and el.get('class') == 'section-column-reference':
+            update_col(int(re.match('cc?(\d+)', el.text_content()).group(1)))
+        elif el.tag == 'ol':
+            out += walk(el, 'major' if next_prefix else 'minor', next_prefix)
+        elif el.tag == 'li':
+            # id = el.cssselect('li > span')[0].get('id')
+            cls = el.cssselect('span span')[0].get('class')
+            link = el.cssselect('a')[0]
+            title = link.text_content()
+            url = BASE_SOURCE_URL + link.get('href')
+            if re.match('ORALL? ANS[WN]?ERS? [Tt][Oo] [OQU]UESTIONS?[.,]?$', title):
+                next_prefix = u'Oral Answers to Questions &#8212; '
+            elif re.match('ORDERS OF THE\.? DAY[.,:]?$', title):
+                next_prefix = u'Orders of the Day &#8212; '
+            else:
+                next_prefix = ''
+                out += output_xml('%s-heading' % typ, '%s%s' % (prefix, escape(title)), url)
+                if cls != 'blank-section':
+                    out += do_speeches(url)
+        else:
+            raise Exception('%s %s %s %s' % (el, el.tag, el.get('class'), html.tostring(el)))
+    return out
+
+
+min_year = min_month = min_day = 0
+if len(sys.argv) > 1:
+    min_year = int(sys.argv[1])
+    min_month = int(sys.argv[2])
+    min_day = int(sys.argv[3])
+only = len(sys.argv) > 4
+
+
+months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+days_in_month = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+for year in range(1919, 1935+1):
+    if min_year and year < min_year:
+        continue
+    for month in months:
+        if min_month and year == min_year and months.index(month)+1 < min_month:
+            continue
+        for day in range(1, days_in_month[months.index(month)]+1):
+            if min_day and year == min_year and months.index(month)+1 == min_month and day < min_day:
+                continue
+            if year == 1920 and month == 'aug' and day in (11, 16):
+                continue  # Missing on site
+            if year == 1922 and month == 'jun' and day in (12,):
+                continue  # Missing on site
+
+            res = requests.get(BASE_SOURCE_URL + '/historic-hansard/sittings/%d/%s/%02d' % (year, month, day))
+            res.encoding = 'utf-8'
+            if "id='commons'" not in res.content:
+                continue
+
+            print '\r\x1b[K%d' % year, month, day,
+            date = '%d-%02d-%02d' % (year, months.index(month)+1, day)
+            col = 0
+
+            tree = html.fromstring(res.content)
+            ol = tree.cssselect('h3#commons + ol')[0]
+            out = u'<publicwhip scrapeversion="a" latest="yes">\n'
+            out += walk(ol, 'major')
+            out += '</publicwhip>\n'
+
+            out_file = '../parldata/scrapedxml/debates/debates%sa.xml' % date
+            if not os.path.isfile(out_file) or out != open(out_file).read():
+                fp = open(out_file, 'w', encoding='utf-8')
+                fp.write(out)
+                fp.close()
+
+            if only:
+                sys.exit()
