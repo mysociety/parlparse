@@ -27,23 +27,23 @@ content = read(2003) + read(2007) + read(2011) + read(2016) + read(2017)
 matches = set()
 
 # Links from all pages
-matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+"[^>]*>([^<]+)</a>(?: \(<b>Leader</b>\))?</td>'
+matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a>\s*</td>\s+<td><a href="/wiki/[^"]+"[^>]*>([^<]+)</a>(?: \(<b>Leader</b>\))?\s*</td>'
 matches.update(re.findall(matcher, content))
 
 # 3rd Assembly replacements
-matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a> \((?:resigned|deceased)\), replaced by <a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a></td>'
+matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a> \((?:resigned|deceased)\), replaced by <a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a>\s*</td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a>\s*</td>'
 for m in re.findall(matcher, content):
     matches.add( (m[0], m[1], m[4]) )
     matches.add( (m[2], m[3], m[4]) )
 
 # 4-6th Assembly
-matcher = '<td><a href="([^"]*)" title="[^"]*">([^<]+)</a></td>\s*<t[hd] style="[^"]*">()</t[hd]>\s*<td.*?</td>\s*</tr>'
+matcher = '<td><a href="([^"]*)" title="[^"]*">([^<]+)</a>\s*</td>\s*<t[hd] style="[^"]*">()\s*</t[hd]>\s*<td.*?\s*</td>\s*</tr>'
 matches.update(re.findall(matcher, content))
 
 # 4-6th Assembly changes
 changes = re.findall('<h2><span[^>]*>MLAs by constituency.*?<h2><span[^>]*>Changes(.*?)</html>(?s)', content)
 for change in changes:
-    for m in re.findall('<td>.*?<a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a>.*?</td>\s*</tr>', change):
+    for m in re.findall('<td>.*?<a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a>.*?\s*</td>\s*</tr>', change):
         matches.add((m[0], m[1], None))
 
 for (url, name, cons) in matches:

@@ -41,7 +41,7 @@ for year in (1997, 2001, 2005, 2010, 2015):
 #<td><a href="/wiki/West_Ham_%28UK_Parliament_constituency%29" title="West Ham (UK Parliament constituency)">West Ham</a></td>
 #<td><a href="/wiki/Lyn_Brown" title="Lyn Brown">Lyn Brown</a></td>
 #<td>Labour</td>
-    matcher = '<tr>\s+<td><a href="/wiki/[^"]+" [^>]*?title="[^"]+">([^<]+)</a>(?:<br />\s+<small>.*?</small>)?</td>\s+(?:<td[^>]*></td>\s*<td[^>]*><a[^>]*>[^<]*</a></td>\s*<td[^>]*></td>\s*)?<td>(?:<span class="sortkey">[^<]*</span><span class="vcard"><span class="fn">)?(?:Dr |Sir |The Rev\. )?<a href="(/wiki/[^"]+)" [^>]*?title="[^"]+"[^>]*>([^<]+)</a>(?:</span></span>)?(?:&#160;\(.*?\))?</td>|by-election,[^"]+">([^<]+)</a> [^ ]{1,3} <a href="(/wiki/[^"]+)" title="[^"]+">([^<]+)</a>';
+    matcher = '<tr>\s+<td><a href="/wiki/[^"]+" [^>]*?title="[^"]+">([^<]+)</a>(?:<br />\s+<small>.*?</small>)?\s*</td>\s+(?:<td[^>]*>\s*</td>\s*<td[^>]*><a[^>]*>[^<]*</a>\s*</td>\s*<td[^>]*>\s*</td>\s*)?<td>(?:(?:<span class="sortkey">[^<]*</span>|<span data-sort-value="[^"]*">)<span class="vcard"><span class="fn">)?(?:Dr |Sir |The Rev\. )?<a href="(/wiki/[^"]+)" [^>]*?title="[^"]+"[^>]*>([^<]+)</a>(?:(?:</span>){2,3})?(?:&#160;\(.*?\))?\s*</td>|by-election,[^"]+">([^<]+)</a> [^ ]{1,3} <a href="(/wiki/[^"]+)" title="[^"]+">([^<]+)</a>';
     matches = re.findall(matcher, content)
     for (cons, url, name, cons2, url2, name2) in matches:
         id = None

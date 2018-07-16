@@ -26,7 +26,7 @@ content = ur.read()
 ur.close()
 
 #<td><a href="/wiki/Geoffrey_Russell%2C_4th_Baron_Ampthill" title="Geoffrey Russell, 4th Baron Ampthill">The Lord Ampthill</a></td>
-matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)" [^>]*?title="([^"]+)"[^>]*>([^<]+)</a></td>';
+matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)" [^>]*?title="([^"]+)"[^>]*>([^<]+)</a>\s*</td>';
 matches = re.findall(matcher, content)
 for (url, title, name) in matches:
     id = None
