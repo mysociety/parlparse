@@ -16,7 +16,7 @@ cd ~/parlparse/pyscraper
 YEAR=`date +%Y`
 
 cd ~/parlparse/scripts
-./fetch-pw-json
+~/.venv/bin/python ./fetch-pw-json
 
 # Add any Hansard patch files we've made
 #cd ~/parldata/patches
