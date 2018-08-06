@@ -707,7 +707,9 @@ class BaseParseDayXML(object):
         for tag in para:
             tag_name = self.get_tag_name_no_ns(tag)
             if tag_name == 'B' or tag_name == 'Member':
-                member = self.parse_member(tag)
+                m = self.parse_member(tag)
+                if m:
+                    member = m
 
         self.parse_para_with_member(para, member)
 
@@ -999,7 +1001,7 @@ class BaseParseDayXML(object):
                 if not self.handle_tag(tag_name, tag):
                     raise ContextException(
                         'unhandled tag: {0}'.format(tag_name),
-                        fragment=tag,
+                        fragment=etree.tostring(tag),
                         stamp=tag.get('url')
                     )
 
