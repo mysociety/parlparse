@@ -2940,7 +2940,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10050", 
       "organization_id": "citizenship-and-civic-engagement-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-28"
     }, 
     {
       "id": "uk.parliament.data/Member/395/GovernmentPost/468", 
@@ -10782,6 +10783,13 @@
       "end_date": "2015-09-14"
     }, 
     {
+      "id": "uk.parliament.data/Member/491/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10182", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-18"
+    }, 
+    {
       "id": "uk.parliament.data/Member/491/Committee/48", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10182", 
@@ -11068,6 +11076,13 @@
       "person_id": "uk.org.publicwhip/person/10185", 
       "organization_id": "public-accounts-commission", 
       "start_date": "2017-11-16"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/165/Committee/378", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10185", 
+      "organization_id": "digital-culture-media-and-sport-committee", 
+      "start_date": "2018-07-23"
     }, 
     {
       "id": "uk.parliament.data/Member/165/OppositionPost/958", 
@@ -12304,7 +12319,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10207", 
       "organization_id": "natural-environment-and-rural-communities-act-2006-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/506/Committee/43", 
@@ -12523,7 +12539,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10211", 
       "organization_id": "procedure-committee-lords", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2018-07-19"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/579/Committee/191/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10211", 
+      "organization_id": "procedure-committee-lords", 
+      "start_date": "2018-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/579/Committee/258", 
@@ -22478,6 +22502,13 @@
       "end_date": "1988-07-16"
     }, 
     {
+      "id": "uk.parliament.data/Member/333/Committee/103", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10397", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2018-07-23"
+    }, 
+    {
       "id": "uk.parliament.data/Member/333/Committee/109", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10397", 
@@ -22539,6 +22570,22 @@
       "person_id": "uk.org.publicwhip/person/10397", 
       "organization_id": "business-energy-and-industrial-strategy-committee", 
       "start_date": "2018-06-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/333/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10397", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-18", 
+      "end_date": "2018-07-23"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/333/Committee/393/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10397", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-23"
     }, 
     {
       "id": "uk.parliament.data/Member/333/Committee/6", 
@@ -24248,7 +24295,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10445", 
       "organization_id": "citizenship-and-civic-engagement-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-28"
     }, 
     {
       "id": "uk.parliament.data/Member/305/GovernmentPost/149", 
@@ -28495,6 +28543,13 @@
       "organization_id": "delegated-powers-and-regulatory-reform-committee", 
       "start_date": "2009-02-02", 
       "end_date": "2013-05-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/160/Committee/176", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10556", 
+      "organization_id": "european-union-committee", 
+      "start_date": "2018-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/160/Committee/19", 
@@ -38047,6 +38102,13 @@
       "start_date": "2017-09-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/1470/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11057", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-18"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1470/Committee/62", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11057", 
@@ -39219,6 +39281,13 @@
       "person_id": "uk.org.publicwhip/person/11216", 
       "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
       "start_date": "2018-04-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1453/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11216", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/1453/Committee/81", 
@@ -41928,6 +41997,13 @@
       "organization_id": "selection-committee", 
       "start_date": "2017-09-12", 
       "end_date": "2018-01-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1198/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11408", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/1198/Committee/46", 
@@ -45772,6 +45848,13 @@
       "organization_id": "work-and-pensions-committee", 
       "start_date": "2005-07-12", 
       "end_date": "2006-10-23"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1542/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11696", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/1542/Committee/62", 
@@ -50454,7 +50537,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12847", 
       "organization_id": "natural-environment-and-rural-communities-act-2006-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/2472/Committee/94", 
@@ -51802,7 +51886,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12883", 
       "organization_id": "natural-environment-and-rural-communities-act-2006-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/1739/Committee/314", 
@@ -52343,7 +52428,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12904", 
       "organization_id": "natural-environment-and-rural-communities-act-2006-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/1861/ParliamentaryPost/1092", 
@@ -53511,7 +53597,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12957", 
       "organization_id": "natural-environment-and-rural-communities-act-2006-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/2510/Committee/391", 
@@ -56022,7 +56109,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13010", 
       "organization_id": "natural-environment-and-rural-communities-act-2006-committee", 
-      "start_date": "2017-10-18"
+      "start_date": "2017-10-18", 
+      "end_date": "2018-03-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3308/Committee/390", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13010", 
+      "organization_id": "intergenerational-fairness-and-provision-committee", 
+      "start_date": "2018-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/3308/Committee/94", 
@@ -56236,7 +56331,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13017", 
       "organization_id": "natural-environment-and-rural-communities-act-2006-committee", 
-      "start_date": "2017-10-23"
+      "start_date": "2017-10-23", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/3295/Committee/189", 
@@ -59000,6 +59096,14 @@
       "end_date": "2014-08-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/3474/Committee/190", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13107", 
+      "organization_id": "subcommittee-on-lords-conduct", 
+      "start_date": "2018-07-18", 
+      "end_date": "2018-07-18"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3474/Committee/191", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13107", 
@@ -61051,7 +61155,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13143", 
       "organization_id": "natural-environment-and-rural-communities-act-2006-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/2542/ParliamentaryPost/1098", 
@@ -62039,7 +62144,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13168", 
       "organization_id": "citizenship-and-civic-engagement-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-28"
     }, 
     {
       "id": "uk.parliament.data/Member/2494/Committee/193", 
@@ -63714,7 +63820,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13205", 
       "organization_id": "artificial-intelligence-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/2233/Committee/111", 
@@ -64280,7 +64387,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13222", 
       "organization_id": "artificial-intelligence-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/2732/Committee/390", 
@@ -64526,7 +64634,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13226", 
       "organization_id": "citizenship-and-civic-engagement-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-28"
     }, 
     {
       "id": "uk.parliament.data/Member/1651/Committee/389", 
@@ -68362,7 +68471,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13351", 
       "organization_id": "natural-environment-and-rural-communities-act-2006-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/3310/Committee/388", 
@@ -70116,7 +70226,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13424", 
       "organization_id": "citizenship-and-civic-engagement-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-28"
     }, 
     {
       "id": "uk.parliament.data/Member/3179/Committee/388", 
@@ -71068,7 +71179,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13447", 
       "organization_id": "natural-environment-and-rural-communities-act-2006-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/3702/Committee/182", 
@@ -71650,7 +71762,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13458", 
       "organization_id": "natural-environment-and-rural-communities-act-2006-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/3343/Committee/94", 
@@ -72631,7 +72744,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13483", 
       "organization_id": "artificial-intelligence-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/2018/Committee/197", 
@@ -74065,7 +74179,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13517", 
       "organization_id": "artificial-intelligence-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/1116/Committee/148", 
@@ -74311,7 +74426,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13524", 
       "organization_id": "citizenship-and-civic-engagement-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-28"
     }, 
     {
       "id": "uk.parliament.data/Member/2501/Committee/38", 
@@ -76645,7 +76761,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13587", 
       "organization_id": "artificial-intelligence-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/1250/Committee/178", 
@@ -77845,7 +77962,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13625", 
       "organization_id": "artificial-intelligence-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/2155/Committee/94", 
@@ -80079,7 +80197,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13699", 
       "organization_id": "artificial-intelligence-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/3268/Committee/94", 
@@ -82336,7 +82455,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13882", 
       "organization_id": "citizenship-and-civic-engagement-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-28"
     }, 
     {
       "id": "uk.parliament.data/Member/3808/Committee/168", 
@@ -84609,6 +84729,13 @@
       "start_date": "2017-10-26"
     }, 
     {
+      "id": "uk.parliament.data/Member/4046/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24709", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-18"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4046/Committee/83", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24709", 
@@ -84874,7 +85001,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24716", 
       "organization_id": "northern-ireland-affairs-committee", 
-      "start_date": "2017-09-11"
+      "start_date": "2017-09-11", 
+      "end_date": "2018-07-23"
     }, 
     {
       "id": "uk.parliament.data/Member/3989/Committee/24", 
@@ -85648,7 +85776,8 @@
       "role": "The Parliamentary Under-Secretary of State for Defence", 
       "person_id": "uk.org.publicwhip/person/24736", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-01-09"
+      "start_date": "2018-01-09", 
+      "end_date": "2018-07-16"
     }, 
     {
       "id": "uk.parliament.data/Member/3909/Committee/135", 
@@ -86363,7 +86492,8 @@
       "role": "The Lord Commissioner of Her Majesty's Treasury", 
       "person_id": "uk.org.publicwhip/person/24759", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-01-09"
+      "start_date": "2018-01-09", 
+      "end_date": "2018-07-26"
     }, 
     {
       "id": "uk.parliament.data/Member/4044/GovernmentPost/351", 
@@ -86373,6 +86503,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2017-06-15", 
       "end_date": "2018-01-09"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4044/GovernmentPost/753", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Vice-Chamberlain of Her Majesty's Household", 
+      "person_id": "uk.org.publicwhip/person/24759", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-07-26"
     }, 
     {
       "id": "uk.parliament.data/Member/4109/Committee/15", 
@@ -88093,6 +88231,13 @@
       "start_date": "2017-12-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/4056/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24798", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-18"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4056/OppositionPost/1", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Deputy Leader of the House of Commons", 
@@ -89000,7 +89145,8 @@
       "role": "The Parliamentary Under-Secretary of State for Environment, Food and Rural Affairs", 
       "person_id": "uk.org.publicwhip/person/24820", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-05-22"
+      "start_date": "2018-05-22", 
+      "end_date": "2018-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/4025/Committee/15", 
@@ -89248,7 +89394,8 @@
       "role": "Parliamentary Under-Secretary (Department for Business, Energy and Industrial Strategy)", 
       "person_id": "uk.org.publicwhip/person/24826", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-01-09"
+      "start_date": "2018-01-09", 
+      "end_date": "2018-07-14"
     }, 
     {
       "id": "uk.parliament.data/Member/3936/GovernmentPost/350", 
@@ -90808,7 +90955,8 @@
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24864", 
       "organization_id": "house-of-commons", 
-      "start_date": "2017-06-15"
+      "start_date": "2017-06-15", 
+      "end_date": "2018-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/4032/GovernmentPost/543", 
@@ -90816,7 +90964,16 @@
       "role": "The Parliamentary Under-Secretary of State for Wales", 
       "person_id": "uk.org.publicwhip/person/24864", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-01-09"
+      "start_date": "2018-01-09", 
+      "end_date": "2018-07-19"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4032/GovernmentPost/854", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Defence", 
+      "person_id": "uk.org.publicwhip/person/24864", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/3951/Committee/200", 
@@ -91798,6 +91955,13 @@
       "start_date": "2017-10-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4120/Committee/83", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24896", 
+      "organization_id": "home-affairs-committee", 
+      "start_date": "2018-07-23"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4120/OppositionPost/1049", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister (Equalities)", 
@@ -92288,6 +92452,14 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4055/GovernmentPost/1152", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Comptroller (HM Household) (Whip, House of Commons)", 
+      "person_id": "uk.org.publicwhip/person/24909", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-07-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4055/GovernmentPost/350", 
       "source": "datadotparl/governmentpost", 
       "role": "The Lord Commissioner of Her Majesty's Treasury", 
@@ -92311,7 +92483,8 @@
       "role": "The Vice-Chamberlain of Her Majesty's Household", 
       "person_id": "uk.org.publicwhip/person/24909", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-01-09"
+      "start_date": "2018-01-09", 
+      "end_date": "2018-07-26"
     }, 
     {
       "id": "uk.parliament.data/Member/3930/Committee/62", 
@@ -93247,12 +93420,21 @@
       "end_date": "2011-05-23"
     }, 
     {
+      "id": "uk.parliament.data/Member/4004/GovernmentPost/350", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Lord Commissioner of Her Majesty's Treasury", 
+      "person_id": "uk.org.publicwhip/person/24934", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-07-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4004/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/24934", 
       "organization_id": "house-of-commons", 
-      "start_date": "2017-06-15"
+      "start_date": "2017-06-15", 
+      "end_date": "2018-07-26"
     }, 
     {
       "id": "uk.parliament.data/Member/4035/Committee/17", 
@@ -93309,6 +93491,14 @@
       "organization_id": "speakers-advisory-committee-on-works-of-art", 
       "start_date": "2015-07-01", 
       "end_date": "2016-09-05"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4016/GovernmentPost/1183", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (International Trade)", 
+      "person_id": "uk.org.publicwhip/person/24936", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-06-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4016/GovernmentPost/350", 
@@ -93667,6 +93857,14 @@
       "start_date": "2017-09-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4015/GovernmentPost/1206", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Assistant Whip", 
+      "person_id": "uk.org.publicwhip/person/24947", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-07-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4071/Committee/135", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24948", 
@@ -93972,6 +94170,13 @@
       "organization_id": "work-and-pensions-committee", 
       "start_date": "2010-11-02", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4003/Committee/17", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24956", 
+      "organization_id": "housing-communities-and-local-government-committee", 
+      "start_date": "2018-07-23"
     }, 
     {
       "id": "uk.parliament.data/Member/4003/Committee/328", 
@@ -94993,6 +95198,14 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4166/Committee/190", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24989", 
+      "organization_id": "subcommittee-on-lords-conduct", 
+      "start_date": "2018-07-18", 
+      "end_date": "2018-07-18"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4166/Committee/299", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24989", 
@@ -95201,7 +95414,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24997", 
       "organization_id": "citizenship-and-civic-engagement-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4177/ParliamentaryPost/1092", 
@@ -95414,7 +95628,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25002", 
       "organization_id": "natural-environment-and-rural-communities-act-2006-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4178/OppositionPost/1287", 
@@ -95422,7 +95637,8 @@
       "role": "Liberal Democrat Lords Spokesperson (Environment, Food and Rural Affairs)", 
       "person_id": "uk.org.publicwhip/person/25002", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-06-01"
+      "start_date": "2015-06-01", 
+      "end_date": "2017-09-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4184/Committee/188", 
@@ -95477,7 +95693,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25003", 
       "organization_id": "citizenship-and-civic-engagement-committee", 
-      "start_date": "2017-11-06"
+      "start_date": "2017-11-06", 
+      "end_date": "2018-03-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4184/Committee/387", 
@@ -96561,14 +96778,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25045", 
       "organization_id": "artificial-intelligence-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4223/Committee/390", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25045", 
       "organization_id": "intergenerational-fairness-and-provision-committee", 
-      "start_date": "2018-05-17"
+      "start_date": "2018-05-17", 
+      "end_date": "2018-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/4221/Committee/306", 
@@ -96872,7 +97091,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25058", 
       "organization_id": "citizenship-and-civic-engagement-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4234/Committee/93", 
@@ -97722,7 +97942,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25174", 
       "organization_id": "artificial-intelligence-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4273/Committee/164", 
@@ -97972,7 +98193,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25188", 
       "organization_id": "artificial-intelligence-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4286/OppositionPost/1340", 
@@ -98031,7 +98253,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25191", 
       "organization_id": "artificial-intelligence-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4282/Committee/173", 
@@ -98211,7 +98434,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25197", 
       "organization_id": "citizenship-and-civic-engagement-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4298/Committee/176", 
@@ -98470,7 +98694,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25208", 
       "organization_id": "artificial-intelligence-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4294/Committee/390", 
@@ -99904,6 +100129,14 @@
       "start_date": "2018-07-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/4420/OppositionPost/1467", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Wales)", 
+      "person_id": "uk.org.publicwhip/person/25291", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-07-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4476/Committee/162", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25292", 
@@ -100216,6 +100449,13 @@
       "start_date": "2017-09-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/4432/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25299", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-18"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4432/OppositionPost/1124", 
       "source": "datadotparl/oppositionpost", 
       "role": "SNP Chief Whip", 
@@ -100433,6 +100673,13 @@
       "person_id": "uk.org.publicwhip/person/25304", 
       "organization_id": "digital-culture-media-and-sport-committee", 
       "start_date": "2017-09-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4425/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25304", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4425/Committee/9", 
@@ -100767,6 +101014,13 @@
       "start_date": "2017-09-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/4357/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25314", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-18"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4357/OppositionPost/1125", 
       "source": "datadotparl/oppositionpost", 
       "role": "SNP Deputy Leader", 
@@ -100836,6 +101090,14 @@
       "organization_id": "education-skills-and-the-economy-subcommittee", 
       "start_date": "2015-11-25", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4530/GovernmentPost/1206", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Assistant Whip", 
+      "person_id": "uk.org.publicwhip/person/25316", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-07-26"
     }, 
     {
       "id": "uk.parliament.data/Member/4464/Committee/126", 
@@ -101248,6 +101510,14 @@
       "start_date": "2018-01-09"
     }, 
     {
+      "id": "uk.parliament.data/Member/4513/GovernmentPost/543", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Parliamentary Under-Secretary of State for Wales", 
+      "person_id": "uk.org.publicwhip/person/25330", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-07-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4414/Committee/326", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25331", 
@@ -101453,14 +101723,6 @@
       "id": "uk.parliament.data/Member/4417/OppositionPost/1376", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow SNP Spokesperson (Environment and Rural Affairs)", 
-      "person_id": "uk.org.publicwhip/person/25336", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2018-07-01"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/4417/OppositionPost/1467", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Shadow SNP Spokesperson (Wales)", 
       "person_id": "uk.org.publicwhip/person/25336", 
       "organization_id": "house-of-commons", 
       "start_date": "2018-07-01"
@@ -102937,7 +103199,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25385", 
       "organization_id": "home-affairs-committee", 
-      "start_date": "2017-09-11"
+      "start_date": "2017-09-11", 
+      "end_date": "2018-07-23"
     }, 
     {
       "id": "uk.parliament.data/Member/4382/Committee/135", 
@@ -103130,6 +103393,13 @@
       "end_date": "2018-03-05"
     }, 
     {
+      "id": "uk.parliament.data/Member/4492/Committee/120/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25397", 
+      "organization_id": "northern-ireland-affairs-committee", 
+      "start_date": "2018-07-23"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4492/Committee/328", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25397", 
@@ -103311,6 +103581,13 @@
       "person_id": "uk.org.publicwhip/person/25405", 
       "organization_id": "administration-committee", 
       "start_date": "2017-10-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4406/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25405", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4443/Committee/135", 
@@ -103515,7 +103792,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25411", 
       "organization_id": "digital-culture-media-and-sport-committee", 
-      "start_date": "2017-09-11"
+      "start_date": "2017-09-11", 
+      "end_date": "2018-07-23"
     }, 
     {
       "id": "uk.parliament.data/Member/4408/OppositionPost/956", 
@@ -103628,6 +103906,14 @@
       "organization_id": "work-and-pensions-committee", 
       "start_date": "2015-07-08", 
       "end_date": "2016-10-31"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4507/GovernmentPost/1206", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Assistant Whip", 
+      "person_id": "uk.org.publicwhip/person/25417", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-07-26"
     }, 
     {
       "id": "uk.parliament.data/Member/4505/Committee/365", 
@@ -103997,12 +104283,21 @@
       "end_date": "2016-10-17"
     }, 
     {
+      "id": "uk.parliament.data/Member/4487/GovernmentPost/1187", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Department for Business, Energy and Industrial Strategy)", 
+      "person_id": "uk.org.publicwhip/person/25430", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-07-19"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4487/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
       "role": "Assistant Whip (HM Treasury)", 
       "person_id": "uk.org.publicwhip/person/25430", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-01-09"
+      "start_date": "2018-01-09", 
+      "end_date": "2018-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/4490/Committee/144", 
@@ -104558,7 +104853,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25465", 
       "organization_id": "citizenship-and-civic-engagement-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4550/Committee/358", 
@@ -104589,7 +104885,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25471", 
       "organization_id": "artificial-intelligence-committee", 
-      "start_date": "2017-06-29"
+      "start_date": "2017-06-29", 
+      "end_date": "2018-03-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4556/Committee/388", 
@@ -104992,6 +105289,13 @@
       "start_date": "2017-09-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4593/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25600", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-18"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4595/Committee/127", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25601", 
@@ -105032,7 +105336,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25611", 
       "organization_id": "housing-communities-and-local-government-committee", 
-      "start_date": "2017-12-11"
+      "start_date": "2017-12-11", 
+      "end_date": "2018-07-23"
     }, 
     {
       "id": "uk.parliament.data/Member/4673/Committee/52", 
@@ -105062,6 +105367,13 @@
       "person_id": "uk.org.publicwhip/person/25614", 
       "organization_id": "women-and-equalities-committee", 
       "start_date": "2018-03-05"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4674/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25614", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4675/Committee/131", 
@@ -105173,6 +105485,13 @@
       "person_id": "uk.org.publicwhip/person/25623", 
       "organization_id": "petitions-committee", 
       "start_date": "2017-09-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4618/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25623", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4622/Committee/127", 
@@ -105485,6 +105804,13 @@
       "person_id": "uk.org.publicwhip/person/25652", 
       "organization_id": "international-trade-committee", 
       "start_date": "2017-09-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4647/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25652", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2018-07-18"
     }, 
     {
       "id": "uk.parliament.data/Member/4660/OppositionPost/874", 
@@ -105981,6 +106307,13 @@
       "start_date": "2018-01-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/4638/Committee/17", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25695", 
+      "organization_id": "housing-communities-and-local-government-committee", 
+      "start_date": "2018-07-23"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4604/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25696", 
@@ -106062,7 +106395,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25702", 
       "organization_id": "housing-communities-and-local-government-committee", 
-      "start_date": "2017-09-11"
+      "start_date": "2017-09-11", 
+      "end_date": "2018-07-23"
     }, 
     {
       "id": "uk.parliament.data/Member/4601/Committee/164", 
@@ -106657,6 +106991,10 @@
     {
       "id": "european-scrutiny-committee", 
       "name": "European Scrutiny Committee"
+    }, 
+    {
+      "id": "european-statutory-instruments-committee", 
+      "name": "European Statutory Instruments Committee"
     }, 
     {
       "id": "european-union-committee", 
