@@ -141,6 +141,7 @@ class BaseParseDayXML(object):
         'hs_AmendmentLevel2',
         'hs_AmendmentLevel3',
         'hs_AmendmentLevel4',
+        'hs_AmendmentHeading',
         'hs_8Clause',
         'hs_newline10',
         'hs_newline12',
@@ -404,6 +405,13 @@ class BaseParseDayXML(object):
         )
         tag.text = heading.text
         self.root.append(tag)
+
+    def parse_debateheading(self, tag):
+        els = tag.xpath('*[not(processing-instruction("notus-xml"))]')
+        assert len(els) == 1
+        tag = els[0]  # Assume child is the actual heading
+        tag_name = self.get_tag_name_no_ns(tag)
+        return self.handle_tag(tag_name, tag)
 
     def parse_major(self, heading, **kwargs):
         text = self.get_text_from_element(heading)
@@ -919,6 +927,8 @@ class BaseParseDayXML(object):
             self.parse_opposition(tag)
         elif tag_name == 'hs_2DebatedMotion':
             self.parse_debated_motion(tag)
+        elif tag_name == 'DebateHeading':
+            handled = self.parse_debateheading(tag)
         elif tag_name in self.major_headings:
             self.parse_major(tag)
         elif tag_name in self.chair_headings:
@@ -1332,7 +1342,7 @@ class PBCParseDayXML(BaseParseDayXML):
             self.parse_witness(tag)
         elif tag_name == 'hs_brevIndent':
             self.parse_brev(tag)
-        elif tag_name == 'hs_2BillTitle':
+        elif tag_name in ('hs_2BillTitle', 'hs_2DebBill'):
             self.parse_bill_title(tag)
         elif tag_name == 'hs_3MainHdg':
             self.committee_finished()
