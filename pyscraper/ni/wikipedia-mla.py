@@ -43,7 +43,7 @@ matches.update(re.findall(matcher, content))
 # 4-6th Assembly changes
 changes = re.findall('<h2><span[^>]*>MLAs by constituency.*?<h2><span[^>]*>Changes(.*?)</html>(?s)', content)
 for change in changes:
-    for m in re.findall('<td>.*?<a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a>.*?\s*</td>\s*</tr>', change):
+    for m in re.findall('<td>.*?<a href="(/(?:wiki|w)/[^"]+)"[^>]*>([^<]+)</a>.*?\s*</td>\s*</tr>', change):
         matches.add((m[0], m[1], None))
 
 for (url, name, cons) in matches:
