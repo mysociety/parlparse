@@ -8788,6 +8788,14 @@
       "start_date": "2016-09-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/496/Committee/395", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10146", 
+      "organization_id": "slsc-subcommittee-b", 
+      "start_date": "2018-09-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/496/Committee/86", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10146", 
@@ -17814,6 +17822,13 @@
       "end_date": "2014-01-29"
     }, 
     {
+      "id": "uk.parliament.data/Member/494/Committee/230", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10303", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2018-09-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/494/Committee/264", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10303", 
@@ -19121,6 +19136,13 @@
       "start_date": "2018-05-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/635/Committee/395", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10345", 
+      "organization_id": "slsc-subcommittee-b", 
+      "start_date": "2018-09-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/635/Committee/77", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10345", 
@@ -20263,6 +20285,13 @@
       "organization_id": "committee-on-exiting-the-european-union", 
       "start_date": "2016-10-31", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/68/Committee/394", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10362", 
+      "organization_id": "slsc-subcommittee-a", 
+      "start_date": "2018-09-04"
     }, 
     {
       "id": "uk.parliament.data/Member/68/Committee/50", 
@@ -25351,7 +25380,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10475", 
       "organization_id": "regenerating-seaside-towns-and-communities-committee", 
-      "start_date": "2018-06-12"
+      "start_date": "2018-06-12", 
+      "end_date": "2018-09-06"
     }, 
     {
       "id": "uk.parliament.data/Member/457/Committee/51", 
@@ -26623,6 +26653,13 @@
       "organization_id": "select-committee-on-charities", 
       "start_date": "2016-05-25", 
       "end_date": "2017-03-26"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/302/Committee/395", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10511", 
+      "organization_id": "slsc-subcommittee-b", 
+      "start_date": "2018-09-04"
     }, 
     {
       "id": "uk.parliament.data/Member/302/GovernmentPost/131", 
@@ -39529,7 +39566,7 @@
       "end_date": "2004-06-01"
     }, 
     {
-      "id": "uk.parliament.data/Member/1408/OppositionPost/872", 
+      "id": "uk.parliament.data/Member/1408/OppositionPost/1186", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Secretary of State for Culture, Media and Sport", 
       "person_id": "uk.org.publicwhip/person/11265", 
@@ -46829,6 +46866,13 @@
       "end_date": "2013-03-05"
     }, 
     {
+      "id": "uk.parliament.data/Member/1557/Committee/230/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11783", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2018-09-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1557/Committee/252", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11783", 
@@ -50541,6 +50585,13 @@
       "organization_id": "natural-environment-and-rural-communities-act-2006-committee", 
       "start_date": "2017-06-29", 
       "end_date": "2018-03-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2472/Committee/394", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12847", 
+      "organization_id": "slsc-subcommittee-a", 
+      "start_date": "2018-09-04"
     }, 
     {
       "id": "uk.parliament.data/Member/2472/Committee/94", 
@@ -59558,6 +59609,14 @@
       "end_date": "2017-10-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/2547/ParliamentaryPost/1107", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Co-Deputy Leader of the Liberal Democrat Peers", 
+      "person_id": "uk.org.publicwhip/person/13113", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-10-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1278/Committee/125", 
       "source": "datadotparl/committee", 
       "role": "Chair", 
@@ -59953,6 +60012,13 @@
       "organization_id": "high-speed-rail-london--west-midlands-bill-select-committee-lords", 
       "start_date": "2016-05-05", 
       "end_date": "2016-12-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2199/Committee/394", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13117", 
+      "organization_id": "slsc-subcommittee-a", 
+      "start_date": "2018-09-04"
     }, 
     {
       "id": "uk.parliament.data/Member/1817/Committee/148", 
@@ -64380,6 +64446,13 @@
       "end_date": "2017-03-17"
     }, 
     {
+      "id": "uk.parliament.data/Member/2732/Committee/230/4", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13222", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2018-09-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2732/Committee/249", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13222", 
@@ -64656,6 +64729,13 @@
       "person_id": "uk.org.publicwhip/person/13226", 
       "organization_id": "bribery-act-2010-committee", 
       "start_date": "2018-05-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1651/Committee/395", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13226", 
+      "organization_id": "slsc-subcommittee-b", 
+      "start_date": "2018-09-04"
     }, 
     {
       "id": "uk.parliament.data/Member/2634/Committee/18", 
@@ -67169,6 +67249,13 @@
       "start_date": "2018-05-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/1946/Committee/394", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13302", 
+      "organization_id": "slsc-subcommittee-a", 
+      "start_date": "2018-09-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3596/Committee/173", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13304", 
@@ -68676,7 +68763,8 @@
       "role": "Shadow Spokesperson (Health and Social Care)", 
       "person_id": "uk.org.publicwhip/person/13353", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-01-08"
+      "start_date": "2018-01-08", 
+      "end_date": "2018-05-24"
     }, 
     {
       "id": "uk.parliament.data/Member/2024/OppositionPost/978", 
@@ -68684,7 +68772,8 @@
       "role": "Shadow Spokesperson (Cabinet Office)", 
       "person_id": "uk.org.publicwhip/person/13353", 
       "organization_id": "house-of-commons", 
-      "start_date": "2017-06-27"
+      "start_date": "2017-06-27", 
+      "end_date": "2018-05-24"
     }, 
     {
       "id": "uk.parliament.data/Member/2024/OppositionPost/978/1", 
@@ -68701,7 +68790,8 @@
       "role": "Shadow Spokesperson (Education)", 
       "person_id": "uk.org.publicwhip/person/13353", 
       "organization_id": "house-of-commons", 
-      "start_date": "2017-06-27"
+      "start_date": "2017-06-27", 
+      "end_date": "2018-05-24"
     }, 
     {
       "id": "uk.parliament.data/Member/2024/OppositionPost/987", 
@@ -68710,7 +68800,7 @@
       "person_id": "uk.org.publicwhip/person/13353", 
       "organization_id": "house-of-commons", 
       "start_date": "2012-09-06", 
-      "end_date": "2018-01-08"
+      "end_date": "2017-11-01"
     }, 
     {
       "id": "uk.parliament.data/Member/2024/OppositionPost/988", 
@@ -70789,6 +70879,13 @@
       "end_date": "2016-03-04"
     }, 
     {
+      "id": "uk.parliament.data/Member/2554/Committee/230/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13439", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2018-09-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2554/Committee/291", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13439", 
@@ -72328,6 +72425,14 @@
       "end_date": "2016-03-04"
     }, 
     {
+      "id": "uk.parliament.data/Member/1141/Committee/230/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/13473", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2018-09-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1141/Committee/243", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13473", 
@@ -73505,6 +73610,13 @@
       "end_date": "2010-05-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/2665/Committee/169", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13499", 
+      "organization_id": "audit-committee-lords", 
+      "start_date": "2018-09-11"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2665/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13499", 
@@ -73653,6 +73765,13 @@
       "person_id": "uk.org.publicwhip/person/13499", 
       "organization_id": "bribery-act-2010-committee", 
       "start_date": "2018-05-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2665/Committee/394", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13499", 
+      "organization_id": "slsc-subcommittee-a", 
+      "start_date": "2018-09-04"
     }, 
     {
       "id": "uk.parliament.data/Member/2665/Committee/94", 
@@ -74097,7 +74216,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13515", 
       "organization_id": "audit-committee-lords", 
-      "start_date": "2015-07-09"
+      "start_date": "2015-07-09", 
+      "end_date": "2018-02-01"
     }, 
     {
       "id": "uk.parliament.data/Member/2535/Committee/176", 
@@ -74195,6 +74315,14 @@
       "organization_id": "artificial-intelligence-committee", 
       "start_date": "2017-06-29", 
       "end_date": "2018-03-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3396/OppositionPost/1481", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Lords Spokesperson (Digital)", 
+      "person_id": "uk.org.publicwhip/person/13517", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-06-09"
     }, 
     {
       "id": "uk.parliament.data/Member/1116/Committee/148", 
@@ -75087,6 +75215,14 @@
       "organization_id": "eu-subcommittee-f", 
       "start_date": "1975-04-19", 
       "end_date": "1976-11-22"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1813/Committee/394", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/13540", 
+      "organization_id": "slsc-subcommittee-a", 
+      "start_date": "2018-09-04"
     }, 
     {
       "id": "uk.parliament.data/Member/1702/Committee/169", 
@@ -79205,6 +79341,14 @@
       "end_date": "2004-12-31"
     }, 
     {
+      "id": "uk.parliament.data/Member/2685/ParliamentaryPost/1107", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Co-Deputy Leader of the Liberal Democrat Peers", 
+      "person_id": "uk.org.publicwhip/person/13662", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2017-10-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2684/ParliamentaryPost/955", 
       "source": "datadotparl/parliamentarypost", 
       "role": "Principal Deputy Chairman of Committees", 
@@ -80962,6 +81106,13 @@
       "end_date": "2017-03-17"
     }, 
     {
+      "id": "uk.parliament.data/Member/3758/Committee/230/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13716", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2018-09-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3758/Committee/284", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13716", 
@@ -81218,6 +81369,13 @@
       "organization_id": "refreshment-committee-lords", 
       "start_date": "2015-06-08", 
       "end_date": "2016-08-31"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1132/Committee/230", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13724", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2018-09-04"
     }, 
     {
       "id": "uk.parliament.data/Member/1132/Committee/24", 
@@ -83275,6 +83433,13 @@
       "end_date": "2015-02-04"
     }, 
     {
+      "id": "uk.parliament.data/Member/3838/Committee/395", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13939", 
+      "organization_id": "slsc-subcommittee-b", 
+      "start_date": "2018-09-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3838/Committee/97", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13939", 
@@ -84539,6 +84704,13 @@
       "organization_id": "eu-sub-committee-e--justice-institutions-and-consumer-protection", 
       "start_date": "2012-05-17", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3902/Committee/395", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24694", 
+      "organization_id": "slsc-subcommittee-b", 
+      "start_date": "2018-09-04"
     }, 
     {
       "id": "uk.parliament.data/Member/3902/Committee/93", 
@@ -89936,7 +90108,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24841", 
       "organization_id": "selection-committee", 
-      "start_date": "2018-01-11"
+      "start_date": "2018-01-11", 
+      "end_date": "2018-09-05"
     }, 
     {
       "id": "uk.parliament.data/Member/3977/Committee/69", 
@@ -93733,6 +93906,13 @@
       "end_date": "2014-10-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/3940/Committee/381", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24944", 
+      "organization_id": "selection-committee", 
+      "start_date": "2018-09-05"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3940/GovernmentPost/350", 
       "source": "datadotparl/governmentpost", 
       "role": "The Lord Commissioner of Her Majesty's Treasury", 
@@ -95286,6 +95466,13 @@
       "end_date": "2017-03-17"
     }, 
     {
+      "id": "uk.parliament.data/Member/4155/Committee/230/3", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24990", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2018-09-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4155/Committee/250", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24990", 
@@ -96052,6 +96239,13 @@
       "end_date": "2013-12-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4196/Committee/394", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25022", 
+      "organization_id": "slsc-subcommittee-a", 
+      "start_date": "2018-09-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4196/Committee/94", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25022", 
@@ -96750,6 +96944,13 @@
       "start_date": "2016-05-25"
     }, 
     {
+      "id": "uk.parliament.data/Member/4217/Committee/394", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25044", 
+      "organization_id": "slsc-subcommittee-a", 
+      "start_date": "2018-09-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4217/OppositionPost/1074", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister without Portfolio (Cabinet Office)", 
@@ -96805,6 +97006,13 @@
       "organization_id": "intergenerational-fairness-and-provision-committee", 
       "start_date": "2018-05-17", 
       "end_date": "2018-07-19"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4223/Committee/391", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25045", 
+      "organization_id": "regenerating-seaside-towns-and-communities-committee", 
+      "start_date": "2018-09-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4221/Committee/306", 
@@ -98439,6 +98647,13 @@
       "end_date": "2017-03-17"
     }, 
     {
+      "id": "uk.parliament.data/Member/4295/Committee/230/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25196", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2018-09-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4295/Committee/364", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25196", 
@@ -98607,6 +98822,13 @@
       "organization_id": "trade-union-political-funds-and-political-party-funding-committee", 
       "start_date": "2016-01-28", 
       "end_date": "2016-02-29"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4287/Committee/395", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25203", 
+      "organization_id": "slsc-subcommittee-b", 
+      "start_date": "2018-09-04"
     }, 
     {
       "id": "uk.parliament.data/Member/4288/OppositionPost/1292", 
@@ -99213,6 +99435,13 @@
       "person_id": "uk.org.publicwhip/person/25247", 
       "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2015-06-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4334/Committee/395", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25247", 
+      "organization_id": "slsc-subcommittee-b", 
+      "start_date": "2018-09-04"
     }, 
     {
       "id": "uk.parliament.data/Member/4336/Committee/337", 
@@ -104208,7 +104437,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25427", 
       "organization_id": "speakers-advisory-committee-on-works-of-art", 
-      "start_date": "2017-12-12"
+      "start_date": "2017-12-12", 
+      "end_date": "2018-09-04"
     }, 
     {
       "id": "uk.parliament.data/Member/4483/Committee/144", 
@@ -104876,6 +105106,13 @@
       "end_date": "2018-03-28"
     }, 
     {
+      "id": "uk.parliament.data/Member/4551/Committee/395", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25465", 
+      "organization_id": "slsc-subcommittee-b", 
+      "start_date": "2018-09-04"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4550/Committee/358", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25466", 
@@ -104920,6 +105157,13 @@
       "person_id": "uk.org.publicwhip/person/25473", 
       "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2017-07-19"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4567/Committee/394", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25473", 
+      "organization_id": "slsc-subcommittee-a", 
+      "start_date": "2018-09-04"
     }, 
     {
       "id": "uk.parliament.data/Member/4554/Committee/340", 
@@ -104975,6 +105219,13 @@
       "organization_id": "intellectual-property-unjustified-threats-bill-hl-special-public-bill-committee", 
       "start_date": "2016-09-13", 
       "end_date": "2016-11-09"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4562/Committee/394", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25476", 
+      "organization_id": "slsc-subcommittee-a", 
+      "start_date": "2018-09-04"
     }, 
     {
       "id": "uk.parliament.data/Member/4559/Committee/175", 
@@ -105036,6 +105287,13 @@
       "person_id": "uk.org.publicwhip/person/25481", 
       "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
       "start_date": "2018-05-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4566/Committee/395", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25481", 
+      "organization_id": "slsc-subcommittee-b", 
+      "start_date": "2018-09-04"
     }, 
     {
       "id": "uk.parliament.data/Member/4565/Committee/176", 
@@ -105286,6 +105544,13 @@
       "organization_id": "eu-financial-affairs-subcommittee", 
       "start_date": "2017-06-27", 
       "end_date": "2018-06-05"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4586/Committee/169", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25595", 
+      "organization_id": "audit-committee-lords", 
+      "start_date": "2018-09-11"
     }, 
     {
       "id": "uk.parliament.data/Member/4592/Committee/52", 
@@ -107600,6 +107865,14 @@
     {
       "id": "sittings-of-the-house-commons-committee", 
       "name": "Sittings of the House (Commons) Committee"
+    }, 
+    {
+      "id": "slsc-subcommittee-a", 
+      "name": "SLSC Sub-Committee A"
+    }, 
+    {
+      "id": "slsc-subcommittee-b", 
+      "name": "SLSC Sub-Committee B"
     }, 
     {
       "id": "small-and-medium-sized-enterprises-committee", 
