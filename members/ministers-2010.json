@@ -2954,6 +2954,13 @@
       "end_date": "2018-03-28"
     }, 
     {
+      "id": "uk.parliament.data/Member/395/Committee/396", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10050", 
+      "organization_id": "draft-parliamentary-buildings-restoration-and-renewal-bill-committee", 
+      "start_date": "2018-11-29"
+    }, 
+    {
       "id": "uk.parliament.data/Member/395/GovernmentPost/468", 
       "source": "datadotparl/governmentpost", 
       "role": "Secretary of State for Education and Employment", 
@@ -2990,6 +2997,15 @@
       "end_date": "1992-07-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/395/OppositionPost/1484", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Secretary of State (Education and Employment)", 
+      "person_id": "uk.org.publicwhip/person/10050", 
+      "organization_id": "house-of-commons", 
+      "start_date": "1995-07-05", 
+      "end_date": "1997-05-01"
+    }, 
+    {
       "id": "uk.parliament.data/Member/395/OppositionPost/863", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Secretary of State for Health", 
@@ -3000,15 +3016,6 @@
     }, 
     {
       "id": "uk.parliament.data/Member/395/OppositionPost/864", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Shadow Secretary of State for Education", 
-      "person_id": "uk.org.publicwhip/person/10050", 
-      "organization_id": "house-of-commons", 
-      "start_date": "1995-07-05", 
-      "end_date": "1997-05-01"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/395/OppositionPost/864/1", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Secretary of State for Education", 
       "person_id": "uk.org.publicwhip/person/10050", 
@@ -18061,7 +18068,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10312", 
       "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
-      "start_date": "2018-05-16"
+      "start_date": "2018-05-16", 
+      "end_date": "2018-07-27"
     }, 
     {
       "id": "uk.parliament.data/Member/40/Committee/99", 
@@ -19153,7 +19161,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10345", 
       "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
-      "start_date": "2018-05-15"
+      "start_date": "2018-05-15", 
+      "end_date": "2018-07-27"
     }, 
     {
       "id": "uk.parliament.data/Member/635/Committee/395", 
@@ -19596,6 +19605,13 @@
       "organization_id": "international-trade-committee", 
       "start_date": "2016-10-31", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/345/Committee/396", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10352", 
+      "organization_id": "draft-parliamentary-buildings-restoration-and-renewal-bill-committee", 
+      "start_date": "2018-11-26"
     }, 
     {
       "id": "uk.parliament.data/Member/345/Committee/4", 
@@ -21282,7 +21298,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10376", 
       "organization_id": "services-committee", 
-      "start_date": "2018-02-01"
+      "start_date": "2018-02-01", 
+      "end_date": "2018-12-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4158/Committee/77", 
@@ -28899,6 +28916,22 @@
       "end_date": "2014-04-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/312/Committee/396", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10559", 
+      "organization_id": "draft-parliamentary-buildings-restoration-and-renewal-bill-committee", 
+      "start_date": "2018-11-26", 
+      "end_date": "2018-12-05"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/312/Committee/396/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10559", 
+      "organization_id": "draft-parliamentary-buildings-restoration-and-renewal-bill-committee", 
+      "start_date": "2018-12-05"
+    }, 
+    {
       "id": "uk.parliament.data/Member/312/Committee/62", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10559", 
@@ -29814,6 +29847,13 @@
       "person_id": "uk.org.publicwhip/person/10578", 
       "organization_id": "bribery-act-2010-committee", 
       "start_date": "2018-05-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/445/Committee/396", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10578", 
+      "organization_id": "draft-parliamentary-buildings-restoration-and-renewal-bill-committee", 
+      "start_date": "2018-11-29"
     }, 
     {
       "id": "uk.parliament.data/Member/445/Committee/77", 
@@ -30998,6 +31038,13 @@
       "organization_id": "public-service-and-demographic-change-committee", 
       "start_date": "2012-05-29", 
       "end_date": "2012-11-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/542/Committee/363", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10600", 
+      "organization_id": "services-committee", 
+      "start_date": "2018-12-06"
     }, 
     {
       "id": "uk.parliament.data/Member/542/Committee/5", 
@@ -39350,7 +39397,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11216", 
       "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
-      "start_date": "2018-04-17"
+      "start_date": "2018-04-17", 
+      "end_date": "2018-07-27"
     }, 
     {
       "id": "uk.parliament.data/Member/1453/Committee/393", 
@@ -39714,6 +39762,13 @@
       "person_id": "uk.org.publicwhip/person/11267", 
       "organization_id": "selection-committee", 
       "start_date": "2017-09-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1383/Committee/396", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11267", 
+      "organization_id": "draft-parliamentary-buildings-restoration-and-renewal-bill-committee", 
+      "start_date": "2018-11-26"
     }, 
     {
       "id": "uk.parliament.data/Member/1383/Committee/93", 
@@ -43422,7 +43477,15 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11506", 
       "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
-      "start_date": "2018-04-17"
+      "start_date": "2018-04-17", 
+      "end_date": "2018-07-27"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1502/Committee/396", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11506", 
+      "organization_id": "draft-parliamentary-buildings-restoration-and-renewal-bill-committee", 
+      "start_date": "2018-11-26"
     }, 
     {
       "id": "uk.parliament.data/Member/1502/Committee/69", 
@@ -44684,6 +44747,13 @@
       "start_date": "2017-07-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/1524/Committee/396", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11605", 
+      "organization_id": "draft-parliamentary-buildings-restoration-and-renewal-bill-committee", 
+      "start_date": "2018-11-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1524/GovernmentPost/590", 
       "source": "datadotparl/governmentpost", 
       "role": "Parliamentary Under-Secretary (Home Office) (Identity)", 
@@ -45220,7 +45290,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11647", 
       "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
-      "start_date": "2018-04-17"
+      "start_date": "2018-04-17", 
+      "end_date": "2018-07-27"
     }, 
     {
       "id": "uk.parliament.data/Member/1533/Committee/81", 
@@ -46293,6 +46364,13 @@
       "end_date": "2010-05-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/1548/Committee/103", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11732", 
+      "organization_id": "liaison-committee-commons", 
+      "start_date": "2018-11-14"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1548/Committee/109", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11732", 
@@ -46343,14 +46421,32 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11732", 
       "organization_id": "statutory-instruments-joint-committee", 
-      "start_date": "2018-11-05"
+      "start_date": "2018-11-05", 
+      "end_date": "2018-11-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1548/Committee/148/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/11732", 
+      "organization_id": "statutory-instruments-joint-committee", 
+      "start_date": "2018-11-14"
     }, 
     {
       "id": "uk.parliament.data/Member/1548/Committee/149", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11732", 
       "organization_id": "statutory-instruments-select-committee", 
-      "start_date": "2018-11-05"
+      "start_date": "2018-11-05", 
+      "end_date": "2018-11-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1548/Committee/149/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/11732", 
+      "organization_id": "statutory-instruments-select-committee", 
+      "start_date": "2018-11-14"
     }, 
     {
       "id": "uk.parliament.data/Member/1548/Committee/162", 
@@ -49020,7 +49116,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11927", 
       "organization_id": "treasury-committee", 
-      "start_date": "2017-09-11"
+      "start_date": "2017-09-11", 
+      "end_date": "2018-12-03"
     }, 
     {
       "id": "uk.parliament.data/Member/1585/Committee/22", 
@@ -52147,6 +52244,13 @@
       "end_date": "2015-02-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/2471/Committee/396", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12894", 
+      "organization_id": "draft-parliamentary-buildings-restoration-and-renewal-bill-committee", 
+      "start_date": "2018-11-29"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1733/Committee/191", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12895", 
@@ -54943,6 +55047,13 @@
       "start_date": "2018-06-04"
     }, 
     {
+      "id": "uk.parliament.data/Member/3493/Committee/396", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12984", 
+      "organization_id": "draft-parliamentary-buildings-restoration-and-renewal-bill-committee", 
+      "start_date": "2018-11-29"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3493/Committee/99", 
       "source": "datadotparl/committee", 
       "role": "Chair", 
@@ -55788,7 +55899,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13003", 
       "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
-      "start_date": "2018-05-15"
+      "start_date": "2018-05-15", 
+      "end_date": "2018-07-27"
     }, 
     {
       "id": "uk.parliament.data/Member/813/Committee/103", 
@@ -58001,6 +58113,13 @@
       "organization_id": "eu-home-affairs-subcommittee", 
       "start_date": "2015-06-12", 
       "end_date": "2017-04-27"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2476/Committee/396", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13071", 
+      "organization_id": "draft-parliamentary-buildings-restoration-and-renewal-bill-committee", 
+      "start_date": "2018-11-29"
     }, 
     {
       "id": "uk.parliament.data/Member/2476/Committee/93", 
@@ -69622,7 +69741,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13378", 
       "organization_id": "eu-justice-subcommittee", 
-      "start_date": "2017-10-17"
+      "start_date": "2017-10-17", 
+      "end_date": "2018-11-21"
     }, 
     {
       "id": "uk.parliament.data/Member/2037/Committee/93", 
@@ -71970,6 +72090,13 @@
       "end_date": "2018-03-13"
     }, 
     {
+      "id": "uk.parliament.data/Member/3343/Committee/396", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13458", 
+      "organization_id": "draft-parliamentary-buildings-restoration-and-renewal-bill-committee", 
+      "start_date": "2018-11-29"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3343/Committee/94", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13458", 
@@ -74130,7 +74257,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13510", 
       "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
-      "start_date": "2018-05-15"
+      "start_date": "2018-05-15", 
+      "end_date": "2018-07-27"
     }, 
     {
       "id": "uk.parliament.data/Member/2538/Committee/94", 
@@ -85183,6 +85311,14 @@
       "end_date": "2013-06-17"
     }, 
     {
+      "id": "uk.parliament.data/Member/4021/GovernmentPost/1182", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Department for Business, Energy and Industrial Strategy) (Universities and Science) (Joint with the Department for Education)", 
+      "person_id": "uk.org.publicwhip/person/24713", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-12-05"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4021/GovernmentPost/499", 
       "source": "datadotparl/governmentpost", 
       "role": "Parliamentary Under-Secretary (Cabinet Office)", 
@@ -85304,6 +85440,13 @@
       "organization_id": "northern-ireland-affairs-committee", 
       "start_date": "2017-09-11", 
       "end_date": "2018-07-23"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3989/Committee/162", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24716", 
+      "organization_id": "welsh-affairs-committee", 
+      "start_date": "2018-11-26"
     }, 
     {
       "id": "uk.parliament.data/Member/3989/Committee/24", 
@@ -87405,6 +87548,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/3938/Committee/328", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24772", 
+      "organization_id": "women-and-equalities-committee", 
+      "start_date": "2018-11-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3938/GovernmentPost/222", 
       "source": "datadotparl/governmentpost", 
       "role": "The Minister of State, Ministry of Defence", 
@@ -88099,6 +88249,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4064/Committee/158/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24786", 
+      "organization_id": "treasury-committee", 
+      "start_date": "2018-12-03"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4064/GovernmentPost/1176", 
       "source": "datadotparl/governmentpost", 
       "role": "The Parliamentary Under-Secretary of State for Exiting the European Union", 
@@ -88228,7 +88385,8 @@
       "role": "Minister of State (Business, Energy and Industrial Strategy) (Higher Education)", 
       "person_id": "uk.org.publicwhip/person/24789", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-01-09"
+      "start_date": "2018-01-09", 
+      "end_date": "2018-12-02"
     }, 
     {
       "id": "uk.parliament.data/Member/3980/GovernmentPost/350", 
@@ -88263,7 +88421,8 @@
       "role": "Minister of State (Education)", 
       "person_id": "uk.org.publicwhip/person/24789", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-01-09"
+      "start_date": "2018-01-09", 
+      "end_date": "2018-12-02"
     }, 
     {
       "id": "uk.parliament.data/Member/3980/GovernmentPost/949", 
@@ -91472,7 +91631,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24870", 
       "organization_id": "work-and-pensions-committee", 
-      "start_date": "2018-06-04"
+      "start_date": "2018-06-04", 
+      "end_date": "2018-11-26"
     }, 
     {
       "id": "uk.parliament.data/Member/4105/Committee/171", 
@@ -92923,7 +93083,8 @@
       "role": "Co-Leader of the Green Party", 
       "person_id": "uk.org.publicwhip/person/24910", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-09-02"
+      "start_date": "2016-09-02", 
+      "end_date": "2018-09-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4062/Committee/62", 
@@ -95888,6 +96049,13 @@
       "end_date": "2011-12-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/4157/Committee/363", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24998", 
+      "organization_id": "services-committee", 
+      "start_date": "2018-12-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4157/OppositionPost/1312", 
       "source": "datadotparl/oppositionpost", 
       "role": "Opposition Senior Whip (Lords)", 
@@ -96163,7 +96331,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25003", 
       "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
-      "start_date": "2018-05-15"
+      "start_date": "2018-05-15", 
+      "end_date": "2018-07-27"
     }, 
     {
       "id": "uk.parliament.data/Member/4179/Committee/111", 
@@ -98730,6 +98899,14 @@
       "end_date": "2018-04-18"
     }, 
     {
+      "id": "uk.parliament.data/Member/4289/GovernmentPost/23", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Baroness in Waiting (HM Household) (Whip)", 
+      "person_id": "uk.org.publicwhip/person/25190", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-03-29"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4289/OppositionPost/1302", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Lords Spokesperson (Work and Pensions)", 
@@ -99282,6 +99459,14 @@
       "end_date": "2015-05-07"
     }, 
     {
+      "id": "uk.parliament.data/Member/4311/GovernmentPost/1222", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister for Equalities (Department for International Development)", 
+      "person_id": "uk.org.publicwhip/person/25213", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-01-09"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4311/GovernmentPost/23", 
       "source": "datadotparl/governmentpost", 
       "role": "Baroness in Waiting (HM Household) (Whip)", 
@@ -99544,7 +99729,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25241", 
       "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
-      "start_date": "2018-05-15"
+      "start_date": "2018-05-15", 
+      "end_date": "2018-07-27"
     }, 
     {
       "id": "uk.parliament.data/Member/4330/GovernmentPost/1063", 
@@ -99561,7 +99747,8 @@
       "role": "Baroness in Waiting (HM Household) (Whip)", 
       "person_id": "uk.org.publicwhip/person/25241", 
       "organization_id": "house-of-commons", 
-      "start_date": "2017-06-20"
+      "start_date": "2017-06-20", 
+      "end_date": "2018-03-29"
     }, 
     {
       "id": "uk.parliament.data/Member/4330/GovernmentPost/72", 
@@ -100710,6 +100897,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4365/Committee/396", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25293", 
+      "organization_id": "draft-parliamentary-buildings-restoration-and-renewal-bill-committee", 
+      "start_date": "2018-11-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4365/OppositionPost/1138", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow SNP Spokesperson (Work and Pensions)", 
@@ -101712,7 +101906,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25318", 
       "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
-      "start_date": "2018-04-17"
+      "start_date": "2018-04-17", 
+      "end_date": "2018-07-27"
     }, 
     {
       "id": "uk.parliament.data/Member/4385/Committee/69", 
@@ -102474,7 +102669,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25343", 
       "organization_id": "justice-committee", 
-      "start_date": "2017-09-11"
+      "start_date": "2017-09-11", 
+      "end_date": "2018-11-19"
     }, 
     {
       "id": "uk.parliament.data/Member/4389/Committee/153", 
@@ -103012,6 +103208,13 @@
       "end_date": "2018-02-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/4398/Committee/83", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25359", 
+      "organization_id": "home-affairs-committee", 
+      "start_date": "2018-11-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4429/Committee/126", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25360", 
@@ -103227,7 +103430,8 @@
       "role": "Shadow Secretary of State for International Development", 
       "person_id": "uk.org.publicwhip/person/25365", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-06-27"
+      "start_date": "2016-06-27", 
+      "end_date": "2018-12-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4456/Committee/62", 
@@ -104771,7 +104975,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25427", 
       "organization_id": "welsh-affairs-committee", 
-      "start_date": "2017-10-16"
+      "start_date": "2017-10-16", 
+      "end_date": "2018-11-26"
     }, 
     {
       "id": "uk.parliament.data/Member/4494/Committee/301", 
@@ -105175,12 +105380,26 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4531/Committee/127/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25439", 
+      "organization_id": "public-accounts-committee", 
+      "start_date": "2018-12-03"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4532/Committee/135", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25440", 
       "organization_id": "science-and-technology-committee-commons", 
       "start_date": "2015-07-13", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4532/Committee/164", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25440", 
+      "organization_id": "work-and-pensions-committee", 
+      "start_date": "2018-11-26"
     }, 
     {
       "id": "uk.parliament.data/Member/4532/Committee/81", 
@@ -105402,7 +105621,8 @@
       "role": "The Parliamentary Under-Secretary for Health and Social Care", 
       "person_id": "uk.org.publicwhip/person/25458", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-01-08"
+      "start_date": "2018-01-08", 
+      "end_date": "2018-12-31"
     }, 
     {
       "id": "uk.parliament.data/Member/4545/GovernmentPost/296", 
@@ -105642,7 +105862,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25481", 
       "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
-      "start_date": "2018-05-15"
+      "start_date": "2018-05-15", 
+      "end_date": "2018-07-27"
     }, 
     {
       "id": "uk.parliament.data/Member/4566/Committee/395", 
@@ -106058,14 +106279,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25616", 
       "organization_id": "women-and-equalities-committee", 
-      "start_date": "2017-09-11"
+      "start_date": "2017-09-11", 
+      "end_date": "2018-11-26"
     }, 
     {
       "id": "uk.parliament.data/Member/4675/Committee/83", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25616", 
       "organization_id": "home-affairs-committee", 
-      "start_date": "2018-02-20"
+      "start_date": "2018-02-20", 
+      "end_date": "2018-11-26"
     }, 
     {
       "id": "uk.parliament.data/Member/4607/Committee/135", 
@@ -106127,7 +106350,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25621", 
       "organization_id": "draft-health-service-safety-investigation-bill-joint-committee", 
-      "start_date": "2018-04-17"
+      "start_date": "2018-04-17", 
+      "end_date": "2018-07-27"
     }, 
     {
       "id": "uk.parliament.data/Member/4666/Committee/81", 
@@ -106363,12 +106587,21 @@
       "start_date": "2017-10-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4651/OppositionPost/870", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Secretary of State for International Development", 
+      "person_id": "uk.org.publicwhip/person/25642", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2018-12-03"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4651/OppositionPost/967", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister (International Development)", 
       "person_id": "uk.org.publicwhip/person/25642", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-01-12"
+      "start_date": "2018-01-12", 
+      "end_date": "2018-12-02"
     }, 
     {
       "id": "uk.parliament.data/Member/4605/Committee/135", 
@@ -106674,7 +106907,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25670", 
       "organization_id": "public-accounts-committee", 
-      "start_date": "2017-09-11"
+      "start_date": "2017-09-11", 
+      "end_date": "2018-12-03"
     }, 
     {
       "id": "uk.parliament.data/Member/4680/Committee/147", 
@@ -107127,6 +107361,13 @@
       "organization_id": "work-and-pensions-committee", 
       "start_date": "2017-10-23", 
       "end_date": "2018-06-04"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4698/Committee/102", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25727", 
+      "organization_id": "justice-committee", 
+      "start_date": "2018-11-19"
     }
   ], 
   "organizations": [
@@ -107477,6 +107718,10 @@
     {
       "id": "draft-modern-slavery-bill-committee", 
       "name": "Draft Modern Slavery Bill Committee"
+    }, 
+    {
+      "id": "draft-parliamentary-buildings-restoration-and-renewal-bill-committee", 
+      "name": "Draft Parliamentary Buildings (Restoration and Renewal) Bill Committee"
     }, 
     {
       "id": "draft-protection-of-charities-bill-joint-committee", 
