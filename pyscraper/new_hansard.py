@@ -120,6 +120,7 @@ class BaseParseDayXML(object):
     minor_headings = [
         'hs_8Question',
         'hs_8GenericHdg',
+        'hs_8Clause',
         'hs_7SmCapsHdg',
         'hs_7PrivateBusinessHdg',
         'hs_7Bill',
@@ -142,7 +143,6 @@ class BaseParseDayXML(object):
         'hs_AmendmentLevel3',
         'hs_AmendmentLevel4',
         'hs_AmendmentHeading',
-        'hs_8Clause',
         'hs_newline10',
         'hs_newline12',
         'hs_Question',
