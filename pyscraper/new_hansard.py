@@ -1143,7 +1143,7 @@ class PBCParseDayXML(BaseParseDayXML):
                 self.chairs.append(member)
             else:
                 raise ContextException(
-                    'No match for PBC chairman {0}'.format(member_tag.text),
+                    u'No match for PBC chairman {0}'.format(member_tag.text),
                     stamp=member_tag.get('url'),
                     fragment=member_tag.text
                 )
