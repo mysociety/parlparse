@@ -62652,7 +62652,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13173", 
       "organization_id": "eu-financial-affairs-subcommittee", 
-      "start_date": "2016-05-26"
+      "start_date": "2016-05-26", 
+      "end_date": "2019-01-15"
     }, 
     {
       "id": "uk.parliament.data/Member/2202/Committee/354", 
@@ -62766,6 +62767,13 @@
       "organization_id": "financial-services-and-markets-joint-committee", 
       "start_date": "1999-03-02", 
       "end_date": "1999-11-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1829/Committee/337", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13177", 
+      "organization_id": "eu-financial-affairs-subcommittee", 
+      "start_date": "2019-01-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3743/GovernmentPost/209", 
@@ -79562,6 +79570,13 @@
       "end_date": "2000-11-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/2685/Committee/339", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13662", 
+      "organization_id": "eu-justice-subcommittee", 
+      "start_date": "2019-01-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2685/ParliamentaryPost/1098", 
       "source": "datadotparl/parliamentarypost", 
       "role": "Party Chair, Liberal Democrats", 
@@ -88877,7 +88892,8 @@
       "role": "Assistant Whip", 
       "person_id": "uk.org.publicwhip/person/24803", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-11-05"
+      "start_date": "2018-11-05", 
+      "end_date": "2019-01-14"
     }, 
     {
       "id": "uk.parliament.data/Member/3998/Committee/131", 
@@ -100328,7 +100344,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25276", 
       "organization_id": "health-and-social-care-committee", 
-      "start_date": "2017-09-11"
+      "start_date": "2017-09-11", 
+      "end_date": "2019-01-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4412/Committee/98", 
@@ -101487,14 +101504,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25305", 
       "organization_id": "committee-on-privileges", 
-      "start_date": "2017-10-26"
+      "start_date": "2017-10-26", 
+      "end_date": "2019-01-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4402/Committee/290", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25305", 
       "organization_id": "committee-on-standards", 
-      "start_date": "2017-10-26"
+      "start_date": "2017-10-26", 
+      "end_date": "2019-01-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4402/Committee/343", 
@@ -101925,6 +101944,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4385/Committee/81/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25318", 
+      "organization_id": "health-and-social-care-committee", 
+      "start_date": "2019-01-14"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4385/OppositionPost/1224", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow SNP Westminster Group Leader (Health)", 
@@ -102009,6 +102035,20 @@
       "organization_id": "transport-committee", 
       "start_date": "2015-07-08", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4461/Committee/289", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25322", 
+      "organization_id": "committee-on-privileges", 
+      "start_date": "2019-01-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4461/Committee/290", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25322", 
+      "organization_id": "committee-on-standards", 
+      "start_date": "2019-01-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4461/OppositionPost/1131", 
@@ -104012,7 +104052,8 @@
       "role": "Vice-Chair, Conservative Party", 
       "person_id": "uk.org.publicwhip/person/25387", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-07-27"
+      "start_date": "2018-07-27", 
+      "end_date": "2019-01-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4410/Committee/17", 
@@ -106539,7 +106580,8 @@
       "role": "Opposition Whip (Commons)", 
       "person_id": "uk.org.publicwhip/person/25638", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-01-18"
+      "start_date": "2018-01-18", 
+      "end_date": "2018-12-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4642/OppositionPost/970", 
