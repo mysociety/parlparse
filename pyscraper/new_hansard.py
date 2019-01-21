@@ -1458,7 +1458,7 @@ class LordsParseDayXML(BaseParseDayXML):
         if len(time):
             self.parse_time(time[0])
 
-        heading = tag.xpath('.//ns:hs_DebateHeading', namespaces=self.ns_map)
+        heading = tag.xpath('.//ns:hs_DebateHeading|.//hs_AmendmentHeading', namespaces=self.ns_map)
         debate_type = tag.xpath('.//ns:hs_DebateType', namespaces=self.ns_map)
         if len(heading):
             if len(debate_type):
@@ -1467,7 +1467,7 @@ class LordsParseDayXML(BaseParseDayXML):
             else:
                 self.parse_major(heading[0])
         else:
-            sys.stderr.write('newdebate with no heading', namespaces=self.ns_map)
+            sys.stderr.write('newdebate with no heading')
             return
 
         #procedure = tag.xpath('.//ns:hs_Procedure', namespaces=self.ns_map)
