@@ -1471,7 +1471,11 @@ class LordsParseDayXML(BaseParseDayXML):
             else:
                 self.parse_major(heading[0])
         else:
-            sys.stderr.write('newdebate with no heading')
+            raise ContextException(
+                'New Lords debate with no heading',
+                 stamp=tag.get('url'),
+                 fragment=tag
+             )
             return
 
         #procedure = tag.xpath('.//ns:hs_Procedure', namespaces=self.ns_map)
