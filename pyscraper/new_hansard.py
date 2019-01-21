@@ -132,7 +132,6 @@ class BaseParseDayXML(object):
         'hs_2GenericHdg',
     ]
     whall_headings = [
-        'hs_2DebBill',
         'hs_2cWestHallDebate',
         'hs_2WestHallDebate'
     ]
@@ -931,6 +930,11 @@ class BaseParseDayXML(object):
             self.parse_debated_motion(tag)
         elif tag_name == 'DebateHeading':
             handled = self.parse_debateheading(tag)
+        elif tag_name == 'hs_2DebBill':
+            if self.debate_type == 'westminhall':
+                self.parse_WHDebate(tag)
+            elif self.debate_type == 'debate':
+                self.parse_major(tag)
         elif tag_name in self.major_headings:
             self.parse_major(tag)
         elif tag_name in self.chair_headings:
