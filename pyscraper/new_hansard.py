@@ -726,6 +726,15 @@ class BaseParseDayXML(object):
             if self.debate_type == 'standing':
                 tag.set('membername', member['name'])
             tag.text = member['name']
+
+            proxy = None
+            vote_text = self.get_single_line_text_from_element(vote)
+            m = re.search('\(Proxy vote cast by (.*)\)', vote_text)
+            if m:
+                proxy = self.resolver.pbc_match(m.group(1), '', self.date)
+            if proxy:
+                tag.set('proxy', proxy['id'])
+
             vote_list.append(tag)
 
         return vote_list
