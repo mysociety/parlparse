@@ -7,6 +7,8 @@ from everypolitician import EveryPolitician
 from popolo import Popolo
 from popolo.utils import edit_file
 
+import argparse
+import logging
 
 def getPersonIdentifierBySchema(person, scheme):
     if 'identifiers' in person:
@@ -14,6 +16,22 @@ def getPersonIdentifierBySchema(person, scheme):
             if identifier['scheme'] == scheme:
                 return identifier['identifier']
     return None
+
+
+logger = logging.getLogger('fetch_wikidata_from_everypolitician')
+logging.basicConfig()
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument("-v", "--verbose", help="output all messages, instead of just warnings",
+                    action="store_true")
+
+args = parser.parse_args()
+
+if args.verbose:
+    logger.setLevel(logging.DEBUG)
+
+logger.info('Fetching Wikidata identifiers from EveryPolitician')
 
 
 legislatures_to_fetch = [
@@ -40,10 +58,10 @@ for legislature in legislatures_to_fetch:
 
     ep_people = ep_legislature.popolo().persons
 
-    print ('{}/{}: Found {} people.'.format(legislature['ep_country_slug'],
-                                            legislature['ep_legislature_slug'],
-                                            len(ep_people)
-                                            ))
+    logger.info('{}/{}: Found {} people.'.format(legislature['ep_country_slug'],
+                                                 legislature['ep_legislature_slug'],
+                                                 len(ep_people)
+                                                 ))
 
     for ep_person in ep_people:
         if ep_person.identifier_value('parlparse') and ep_person.wikidata:
@@ -52,7 +70,7 @@ for legislature in legislatures_to_fetch:
             pp_wikidata_identifier = getPersonIdentifierBySchema(pp_person, 'wikidata')
 
             if not pp_wikidata_identifier:
-                print ('{} ({}) is missing a Wikidata identifier of {}, fixing...'.format(ep_person.name.encode('utf-8'), pp_person['id'], ep_person.wikidata))
+                logger.info('{} ({}) is missing a Wikidata identifier of {}, fixing...'.format(ep_person.name.encode('utf-8'), pp_person['id'], ep_person.wikidata))
 
                 if 'identifiers' not in pp_person:
                     pp_person['identifiers'] = []
@@ -65,15 +83,18 @@ for legislature in legislatures_to_fetch:
                 )
 
             elif pp_wikidata_identifier != ep_person.wikidata:
-                print ('{} ({}) has a Wikidata identifier mismatch ({} in Parlparse vs {} in EveryPolitician). Please resolve manually!'.format(ep_person.name.encode('utf-8'), pp_person['id'], pp_wikidata_identifier, ep_person.wikidata))
+                logger.warning('{} ({}) has a Wikidata identifier mismatch ({} in Parlparse vs {} in EveryPolitician). Please resolve manually!'.format(ep_person.name.encode('utf-8'), pp_person['id'], pp_wikidata_identifier, ep_person.wikidata))
+
+            else:
+                logger.debug('{} ({}) matches identifier {}.'.format(ep_person.name.encode('utf-8'), pp_person['id'], ep_person.wikidata))
 
             pp_data.persons[pp_person['id']].update(pp_person)
 
         else:
-            print('Skipping person {}, does not have both ParlParse and Wikidata IDs.'.format(ep_person.name.encode('utf-8')))
+            logger.info('Skipping person {}, does not have both ParlParse and Wikidata IDs.'.format(ep_person.name.encode('utf-8')))
 
-print ('Writing data...')
+logger.debug('Writing data to people.json')
 
 pp_data.dump()
 
-print ('Done!')
+logger.debug('Done!')
