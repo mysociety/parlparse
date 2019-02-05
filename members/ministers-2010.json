@@ -88379,6 +88379,13 @@
       "end_date": "2015-05-08"
     }, 
     {
+      "id": "uk.parliament.data/Member/3980/Committee/135", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24789", 
+      "organization_id": "science-and-technology-committee-commons", 
+      "start_date": "2019-01-21"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3980/Committee/144", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24789", 
@@ -102615,7 +102622,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25340", 
       "organization_id": "justice-committee", 
-      "start_date": "2017-09-11"
+      "start_date": "2017-09-11", 
+      "end_date": "2019-01-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4453/Committee/136", 
@@ -106140,6 +106148,13 @@
       "start_date": "2017-07-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4589/Committee/102", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25593", 
+      "organization_id": "justice-committee", 
+      "start_date": "2019-01-21"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4589/Committee/153", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25593", 
@@ -107115,7 +107130,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25679", 
       "organization_id": "science-and-technology-committee-commons", 
-      "start_date": "2017-09-11"
+      "start_date": "2017-09-11", 
+      "end_date": "2019-01-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4679/Committee/147", 
