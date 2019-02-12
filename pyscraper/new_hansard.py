@@ -36,11 +36,6 @@ etree.set_default_parser(xml_parser)
 
 
 class PimsList(MemberList):
-
-    def match_by_pims(self, pims_id):
-        match = self.pims.get(pims_id, None)
-        return match
-
     def pbc_match(self, name, cons, date):
         name = re.sub(r'\n', ' ', name)
         # names are mostly lastname,\nfirstname so reform first
@@ -60,13 +55,6 @@ class PimsList(MemberList):
             return member
 
         return None
-
-
-class LordsPimsList(LordsList):
-
-    def match_by_pims(self, pims_id):
-        match = self.pims.get(pims_id, None)
-        return match
 
 
 class BaseParseDayXML(object):
@@ -329,7 +317,7 @@ class BaseParseDayXML(object):
                 try_name = self.handle_minus_member(member_tag)
                 if try_name:
                     return try_name
-            member = self.resolver.match_by_pims(member_tag.get('PimsId'))
+            member = self.resolver.match_by_pims(member_tag.get('PimsId'), self.date)
             if member is not None:
                 member['person_id'] = member.get('id')
                 member['name'] = self.resolver.name_on_date(member['person_id'], self.date)
@@ -1403,7 +1391,7 @@ class PBCParseDayXML(BaseParseDayXML):
 
 
 class LordsParseDayXML(BaseParseDayXML):
-    resolver = LordsPimsList()
+    resolver = LordsList()
 
     paras = [
         'hs_para',
