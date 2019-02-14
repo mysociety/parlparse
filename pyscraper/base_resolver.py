@@ -132,7 +132,11 @@ class ResolverBase(object):
         for identifier in person.get('identifiers', []):
             if identifier.get('scheme') == 'pims_id':
                 id = identifier.get('identifier')
-                self.pims.setdefault(id, []).append(person)
+                for m in memberships:
+                    p = person.copy()
+                    p['start_date'] = m['start_date']
+                    p['end_date'] = m['end_date']
+                    self.pims.setdefault(id, []).append(p)
 
     def import_people_main_name(self, name, memberships):
         mships = [m for m in memberships if m['start_date'] <= name.get('end_date', '9999-12-31') and m['end_date'] >= name.get('start_date', '1000-01-01')]
@@ -209,6 +213,6 @@ class ResolverBase(object):
     def match_by_pims(self, pims_id, date):
         matches = self.pims.get(pims_id, [])
         for m in matches:
-            if m.get('start_date', '0000-00-00') <= date <= m.get('end_date', '9999-12-31'):
+            if m['start_date'] <= date <= m['end_date']:
                 return m
         return None
