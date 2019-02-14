@@ -113,6 +113,7 @@ class BaseParseDayXML(object):
         'hs_7PrivateBusinessHdg',
         'hs_7Bill',
         'hs_6bcBigBoldHdg',
+        'hs_6bCorrection',
     ]
     generic_headings = [
         'hs_2cDebatedMotion',
