@@ -21,8 +21,9 @@ def add_identifier(pid, lookup):
 
     if pid not in parl_ids or 'pims_id' not in parl_ids[pid]:
         pims_id = parl_members[lookup].attrib['Pims_Id']
-        print 'pims - %s (%s) => %s' % (pid, lookup, pims_id)
-        data.persons[pid].setdefault('identifiers', []).append({'scheme': 'pims_id', 'identifier': pims_id})
+        if pims_id:
+            print 'pims - %s (%s) => %s' % (pid, lookup, pims_id)
+            data.persons[pid].setdefault('identifiers', []).append({'scheme': 'pims_id', 'identifier': pims_id})
 
 
 data = Popolo()
@@ -54,7 +55,7 @@ def canon_name(n):
     n = n.lower()
     n = re.sub(' st\. +', ' st ', n)
     n = re.sub('^the ', '', n)
-    n = re.sub('^lord bishop ', 'bishop ', n)
+    n = re.sub('^lord ((arch)?bishop )', r'\1', n)
     return n
 
 LORDS_URL = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/membership=all|house=Lords/'

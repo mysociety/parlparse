@@ -36,7 +36,9 @@ party_map = {
     'Conservative': 'conservative',
     'Crossbench': 'crossbench',
     'Labour': 'labour',
-    'Bishops': 'bishop'
+    'Bishops': 'bishop',
+    'Democratic Unionist Party': 'dup',
+    'Non-affiliated': 'non-affiliated'
 }
 
 type_map = {
@@ -48,6 +50,7 @@ type_map = {
 new_people = False
 parl_by_name = {}
 person_id = data.max_person_id()
+print "max person: {}".format(person_id)
 for member in parl_members:
     end_date = member.find('HouseEndDate').text or ''
     end_date = end_date.replace('T00:00:00', '')
@@ -59,6 +62,7 @@ for member in parl_members:
             print "{} is a new Lord".format(name)
             person_id = new_id(person_id)
             lord_id = new_id(data.max_lord_id())
+            print person_id
 
             given_name = member.find('BasicDetails/GivenForename').text
             middle_names = member.find('BasicDetails/GivenMiddleNames').text
@@ -122,7 +126,61 @@ for member in parl_members:
             data.add_membership(membership)
             new_people = True
         else:
-            print "{} is a Lord who might be new ({})".format(name, member.attrib['Pims_Id'])
+            existing_person_id = data.identifiers['pims_id'][member.attrib['Pims_Id']]['id']
+            print "{} is a Lord who might be new ({}, {})".format(name, member.attrib['Pims_Id'], person_id)
+
+            existing_lord_id = new_id(data.max_lord_id())
+
+            given_name = member.find('BasicDetails/GivenForename').text
+            middle_names = member.find('BasicDetails/GivenMiddleNames').text
+            surname = member.find('BasicDetails/GivenSurname').text
+
+            title_parts = lord_match.search(member.find('DisplayAs').text)
+            prefix = title_parts.group(1)
+            lordname = title_parts.group(2)
+            lordof = title_parts.group(3) or ''
+
+            lord_type = type_map[member.find('MemberFrom').text]
+            party = party_map[member.find('Party').text]
+            start_date = re.sub('T.*$', '', member.find('HouseStartDate').text)
+
+            middle_name = ''
+            surname = ''
+            if middle_names:
+                name['additional_name'] = middle_names
+            if surname and surname != lordname:
+                name['surname'] = surname
+
+            print """
+      {{
+        "given_name": "{}",
+        "honorific_prefix": "{}",
+        "lordname": "{}",
+        "lordofname": "{}",
+        "lordofname_full": "",
+        "county": "",
+        "surname": "{}",
+        "additional_name": "{}",
+        "start_date": "{}",
+        "note": "Main"
+      }}
+            """.format(given_name, prefix, lordname, lordof, surname, middle_name, start_date)
+
+            print """
+    {{
+      "id": "{}",
+      "identifiers": [{{
+        "identifier": "{}",
+        "scheme": "peeragetype"
+      }}],
+      "label": "Peer",
+      "on_behalf_of_id": "{}",
+      "organization_id": "house-of-lords",
+      "person_id": "{}",
+      "role": "Peer",
+      "start_date": "{}"
+    }}
+            """.format(existing_lord_id, lord_type, party, existing_person_id, start_date)
 
 if new_people:
     data.dump()

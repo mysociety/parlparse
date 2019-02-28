@@ -1,0 +1,78 @@
+#!/usr/bin/env python
+
+import argparse
+import datetime
+from popolo import Popolo
+from popolo.utils import new_id, get_person_from_name
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--name')
+parser.add_argument('--id')
+parser.add_argument('--party', required=True)
+parser.add_argument('--date', required=True)
+parser.add_argument(
+    '--type', required=True, choices=('lord', 'mp', 'msp', 'mla'))
+ARGS = parser.parse_args()
+
+if not (ARGS.id or ARGS.name):
+    raise Exception('Must specify ID or name')
+
+data = Popolo()
+
+max_ids = {
+    'lord': data.max_lord_id(),
+    'mp': data.max_mp_id(),
+    'msp': data.max_msp_id(),
+    'mla': data.max_mla_id(),
+}
+new_mship_id = new_id(max_ids[ARGS.type])
+
+if ARGS.id:
+    person = data.get_person(id=ARGS.id)
+elif ARGS.name:
+    person = get_person_from_name(ARGS.name, data)
+
+mships = []
+mships = sorted(list(data.memberships.of_person(person['id'])), key=lambda m: m['start_date'])
+person_id = person['id']
+
+date = datetime.date(*map(int, ARGS.date.split('-')))
+end_date = date - datetime.timedelta(days=1)
+
+new_mship = {
+    'id': new_mship_id,
+    'on_behalf_of_id': ARGS.party,
+    'person_id': person_id,
+    'start_date': date.isoformat(),
+    'start_reason': 'changed_party',
+}
+
+mships[-1].update({
+    'end_date': end_date.isoformat(),
+    'end_reason': 'changed_party',
+})
+if ARGS.type == 'lord':
+    new_mship.update({
+        'identifiers': [{'identifier': 'L', 'scheme': 'peeragetype'}],
+        'label': 'Peer',
+        'role': 'Peer',
+        'organization_id': 'house-of-lords',
+    })
+else:
+    new_mship.update({
+        'post_id': mships[-1]['post_id'],
+    })
+
+mships.append(new_mship)
+
+edit_mships = {m['id']: m for m in mships}
+for m in data.memberships:
+    if m['id'] in edit_mships:
+        m.update(edit_mships[m['id']])
+        del edit_mships[m['id']]
+
+for m in edit_mships.values():
+    data.add_membership(m)
+
+data.dump()
