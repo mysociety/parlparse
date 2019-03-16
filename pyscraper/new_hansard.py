@@ -1500,8 +1500,7 @@ class LordsParseDayXML(BaseParseDayXML):
             self.parse_para_with_member(question, member if want_member else None)
 
     def parse_amendment_heading(self, heading):
-        self.new_speech(None, heading.get('url'))
-        self.parse_para_with_member(heading, None)
+        self.parse_minor(heading)
 
     def parse_tabledby(self, tabledby):
         self.parse_para_with_member(
