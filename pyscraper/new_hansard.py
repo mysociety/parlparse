@@ -299,7 +299,7 @@ class BaseParseDayXML(object):
     def handle_minus_member(self, member):
         return None
 
-    def parse_member(self, tag):
+    def _parse_member_or_b(self, tag):
         member_tag = None
         tag_name = self.get_tag_name_no_ns(tag)
         if tag_name == 'B':
@@ -308,7 +308,10 @@ class BaseParseDayXML(object):
                 member_tag = member_tags[0]
         elif tag_name == 'Member':
             member_tag = tag
+        return member_tag
 
+    def parse_member(self, tag):
+        member_tag = self._parse_member_or_b(tag)
         if member_tag is not None:
             if member_tag.get('PimsId') == '-1':
                 return self.handle_minus_member(member_tag)
@@ -1447,10 +1450,11 @@ class LordsParseDayXML(BaseParseDayXML):
         if found_member is None:
             # In cases where there are unattributes exclamations then PimsId
             # is set to 0. Often the name will be "Noble Lords" or the like
-            if member.get('PimsId') == 0:
+            member_tag = self._parse_member_or_b(member)
+            if member_tag.get('PimsId') == '0':
                 found_member = {
                     'person_id': 'unknown',
-                    'name': u''.join(member.xpath('.//text()'))
+                    'name': self.get_single_line_text_from_element(member).rstrip(':')
                 }
 
         return found_member
