@@ -171,8 +171,6 @@ class BaseParseDayXML(object):
     skip_tag = None
     uc_titles = False
 
-    house_divided_text = u'The House divided:'
-
     def __init__(self):
         self.reset()
 
@@ -754,9 +752,6 @@ class BaseParseDayXML(object):
 
         self.current_speech.append(tag)
 
-    def format_div_summary(self, yes_text, no_text):
-        return u"Ayes {0}, Noes {1}.".format(yes_text, no_text)
-
     def get_division_tag(self, division, yes_text, no_text):
         tag = etree.Element('division')
 
@@ -778,9 +773,6 @@ class BaseParseDayXML(object):
 
         return tag
 
-    def check_for_english_votes(self, tag):
-        pass
-
     def parse_division(self, division):
         for tag in division:
             if type(tag) is etree._ProcessingInstruction:
@@ -797,25 +789,6 @@ class BaseParseDayXML(object):
 
         ayes_count_text = u''.join(ayes_count)
         noes_count_text = u''.join(noes_count)
-
-        # output a summary of the division results
-        house_divided = etree.Element('p')
-        house_divided.set('pid', self.get_pid())
-        house_divided.set('class', 'italic')
-        house_divided.set('pwmotiontext', 'yes')
-        house_divided.text = self.house_divided_text
-        if self.current_speech is None:
-            self.new_speech(None, division.get('url'))
-        self.current_speech.append(house_divided)
-
-        div_summary = self.format_div_summary(ayes_count_text, noes_count_text)
-        div_summary_tag = etree.Element('p')
-        div_summary_tag.set('pid', self.get_pid())
-        div_summary_tag.set('pwmotiontext', 'yes')
-        div_summary_tag.text = div_summary
-        self.current_speech.append(div_summary_tag)
-
-        self.check_for_english_votes(division)
 
         self.clear_current_speech()
 
@@ -849,12 +822,11 @@ class BaseParseDayXML(object):
 
         self.root.append(tag)
 
-        paras = division.xpath('./ns:hs_Para', namespaces=self.ns_map)
+        # England/EnglandWales not used since May 2018
+        paras = division.xpath('(./ns:hs_Para|./ns:England/ns:hs_Para|./ns:EnglandWales/ns:hs_Para)', namespaces=self.ns_map)
         for para in paras:
-            text = u''.join(para.xpath('.//text()'))
-            if re.search(r'House\s*divided', text) or \
-                    re.search(r'Committee\s*divided', text) or \
-                    re.search(r'Division\s*No', text):
+            text = self.get_single_line_text_from_element(para)
+            if re.search(r'Division\s*No', text):
                 continue
             self.parse_para(para)
 
@@ -1055,31 +1027,11 @@ class BaseParseDayXML(object):
 class CommonsParseDayXML(BaseParseDayXML):
     uc_titles = True
 
-    def check_for_english_votes(self, division):
-        english_votes = division.xpath('./ns:England', namespaces=self.ns_map)
-        if not english_votes:
-            english_votes = division.xpath('./ns:EnglandWales', namespaces=self.ns_map)
-        if not english_votes:
-            return
-
-        # output a summary of the division results
-        text = self.get_single_line_text_from_element(english_votes[0])
-        text = re.sub('(constituencies in England(?: and Wales)?:)\s*', r'\1<br/>', text)
-        house_divided = etree.fromstring('<p>%s</p>' % text)
-        house_divided.set('pid', self.get_pid())
-        house_divided.set('class', 'italic')
-        house_divided.set('pwmotiontext', 'yes')
-        if self.current_speech is None:
-            self.new_speech(None, division.get('url'))
-        self.current_speech.append(house_divided)
-
 
 class PBCParseDayXML(BaseParseDayXML):
     current_chair = None
 
     use_pids = False
-
-    house_divided_text = u'The Committee divided:'
 
     ignored_tags = [
         'hs_CLHeading',
@@ -1262,9 +1214,6 @@ class PBCParseDayXML(BaseParseDayXML):
                 self.current_chair = chair
         else:
             raise ContextException(u'No match for chair {0}'.format(text))
-
-    def format_div_summary(self, yes_text, no_text):
-        return u"Ayes {0}, Noes {1}.".format(yes_text, no_text)
 
     def get_division_tag(self, division, yes_text, no_text):
         tag = etree.Element('divisioncount')
