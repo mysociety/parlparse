@@ -32,10 +32,10 @@ logger.info('Importing London Assembly Members from Wikidata')
 query = '''SELECT ?item ?itemLabel ?electoraldistrict ?electoraldistrictLabel ?parliamentarygroup ?parliamentarygroupLabel ?starttime ?endtime ?twfy_id WHERE {
     ?node ps:P39 wd:Q56573014 .
     ?item p:P39 ?node .
+    ?node pq:P580 ?starttime .
     OPTIONAL { ?item wdt:P2171 ?twfy_id }
     OPTIONAL { ?node pq:P4100 ?parliamentarygroup }
     OPTIONAL { ?node pq:P768 ?electoraldistrict }
-    OPTIONAL { ?node pq:P580 ?starttime }
     OPTIONAL { ?node pq:P582 ?endtime }
     OPTIONAL { ?node pq:P2715 ?election }
     SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
