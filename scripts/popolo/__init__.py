@@ -57,12 +57,11 @@ class Popolo(object):
     def __init__(self):
         self.load(JSON)
 
-    def load(self, json_file):
-        self.json = j = json.load(open(json_file))
-        self.persons = {p['id']: p for p in j['persons'] if 'redirect' not in p}
-        self.posts = {p['id']: p for p in j['posts']}
-        self.orgs = {o['name']: o['id'] for o in j['organizations']}
-        self.memberships = Memberships(j['memberships'], self)
+    def update_persons_map(self):
+        self.persons = {p['id']: p for p in self.json['persons'] if 'redirect' not in p}
+        self.posts = {p['id']: p for p in self.json['posts']}
+        self.orgs = {o['name']: o['id'] for o in self.json['organizations']}
+        self.memberships = Memberships(self.json['memberships'], self)
         self.names = {}
         self.identifiers = {}
 
@@ -84,14 +83,26 @@ class Popolo(object):
             for i in p.get('identifiers', []):
                 self.identifiers.setdefault(i['scheme'], {})[i['identifier']] = p
 
-    def get_person(self, id=None, name=None):
+    def load(self, json_file):
+        self.json = j = json.load(open(json_file))
+        self.update_persons_map()
+
+    # Get a person either by name, by parlparse ID, or if scheme is specified by another identifier
+    def get_person(self, id=None, name=None, scheme=None):
         if name:
             return [p for p in self.persons.values() if self.names[p['id']] == name]
         if id:
-            return (p for p in self.persons.values() if p['id'] == id).next()
+            if scheme:
+                if id in self.identifiers[scheme]:
+                    return self.identifiers[scheme][id]
+                else:
+                    return None
+            else:
+                return (p for p in self.persons.values() if p['id'] == id).next()
 
     def add_person(self, person):
         self.json['persons'].append(person)
+        self.update_persons_map()
 
     def add_membership(self, mship):
         self.json['memberships'].append(mship)
