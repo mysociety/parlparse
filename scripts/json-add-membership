@@ -11,7 +11,7 @@ parser.add_argument('--name')
 parser.add_argument('--id')
 parser.add_argument('--new', action='store_true')
 parser.add_argument(
-    '--type', required=True, choices=('lord', 'mp', 'msp', 'mla'))
+    '--type', required=True, choices=('lord', 'mp', 'msp', 'mla', 'londonassembly'))
 ARGS = parser.parse_args()
 
 if not (ARGS.id or ARGS.name or ARGS.new):
@@ -24,6 +24,7 @@ max_ids = {
     'mp': data.max_mp_id(),
     'msp': data.max_msp_id(),
     'mla': data.max_mla_id(),
+    'londonassembly': data.max_londonassembly_id(),
 }
 new_mship_id = new_id(max_ids[ARGS.type])
 
