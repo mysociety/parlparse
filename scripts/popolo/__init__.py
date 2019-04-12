@@ -107,15 +107,19 @@ class Popolo(object):
     def add_membership(self, mship):
         self.json['memberships'].append(mship)
 
-    def _max_member_id(self, house, type='member'):
-        id = max(int(m['id'].replace('uk.org.publicwhip/%s/' % type, '')) for m in self.memberships.in_org(house))
+    def _max_member_id(self, house, type='member', range_start=0):
+        house_memberships = self.memberships.in_org(house)
+        if house_memberships:
+            id = max(int(m['id'].replace('uk.org.publicwhip/%s/' % type, '')) for m in house_memberships)
+        else:
+            id = range_start
         return 'uk.org.publicwhip/%s/%d' % (type, id)
 
-    max_lord_id = lambda self: self._max_member_id('house-of-lords', 'lord')
-    max_mp_id = lambda self: self._max_member_id('house-of-commons')
-    max_mla_id = lambda self: self._max_member_id('northern-ireland-assembly')
-    max_msp_id = lambda self: self._max_member_id('scottish-parliament')
-    max_londonassembly_id = lambda self: self._max_member_id('london-assembly')
+    max_lord_id = lambda self: self._max_member_id('house-of-lords', 'lord', range_start=100000)  # Range ends at 199999
+    max_mp_id = lambda self: self._max_member_id('house-of-commons', range_start=0)  # Range ends at 79999
+    max_mla_id = lambda self: self._max_member_id('northern-ireland-assembly', range_start=90000)  # Range ends at 99999
+    max_msp_id = lambda self: self._max_member_id('scottish-parliament', range_start=80000) # Range ends at 89999
+    max_londonassembly_id = lambda self: self._max_member_id('london-assembly', range_start=200000)  # Range ends at 299999
 
     def max_person_id(self):
         id = max(p for p in self.persons.keys())
