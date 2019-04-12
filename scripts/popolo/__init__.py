@@ -115,6 +115,7 @@ class Popolo(object):
     max_mp_id = lambda self: self._max_member_id('house-of-commons')
     max_mla_id = lambda self: self._max_member_id('northern-ireland-assembly')
     max_msp_id = lambda self: self._max_member_id('scottish-parliament')
+    max_londonassembly_id = lambda self: self._max_member_id('london-assembly')
 
     def max_person_id(self):
         id = max(p for p in self.persons.keys())
