@@ -61,7 +61,6 @@ class Popolo(object):
         self.persons = {p['id']: p for p in self.json['persons'] if 'redirect' not in p}
         self.posts = {p['id']: p for p in self.json['posts']}
         self.orgs = {o['name']: o['id'] for o in self.json['organizations']}
-        self.memberships = Memberships(self.json['memberships'], self)
         self.names = {}
         self.identifiers = {}
 
@@ -83,9 +82,14 @@ class Popolo(object):
             for i in p.get('identifiers', []):
                 self.identifiers.setdefault(i['scheme'], {})[i['identifier']] = p
 
+    def update_memberships(self):
+        self.memberships = None
+        self.memberships = Memberships(self.json['memberships'], self)
+
     def load(self, json_file):
         self.json = j = json.load(open(json_file))
         self.update_persons_map()
+        self.update_memberships()
 
     # Get a person either by name, by parlparse ID, or if scheme is specified by another identifier
     def get_person(self, id=None, name=None, scheme=None):
@@ -106,6 +110,7 @@ class Popolo(object):
 
     def add_membership(self, mship):
         self.json['memberships'].append(mship)
+        self.update_memberships()
 
     def _max_member_id(self, house, type='member', range_start=0):
         house_memberships = self.memberships.in_org(house)
