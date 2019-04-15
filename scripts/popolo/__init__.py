@@ -49,6 +49,20 @@ class Memberships(object):
         mships = [m for m in self.memberships if m.get('start_date', '0000-00-00') <= date <= m.get('end_date', '9999-12-31')]
         return Memberships(mships, self.data)
 
+    def with_id(self, id, scheme=None):
+        if scheme:
+            for m in self.memberships:
+                if 'identifiers' in m:
+                    for identifier in m['identifiers']:
+                        if identifier['scheme'] == scheme and identifier['identifier'] == id:
+                            return m
+        else:
+            for m in self.memberships:
+                if m['id'] == id:
+                    return m
+
+        return None
+
     def current(self):
         return self.on(datetime.date.today().isoformat())
 
