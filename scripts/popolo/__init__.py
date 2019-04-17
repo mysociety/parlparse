@@ -49,6 +49,20 @@ class Memberships(object):
         mships = [m for m in self.memberships if m.get('start_date', '0000-00-00') <= date <= m.get('end_date', '9999-12-31')]
         return Memberships(mships, self.data)
 
+    def with_id(self, id, scheme=None):
+        if scheme:
+            for m in self.memberships:
+                if 'identifiers' in m:
+                    for identifier in m['identifiers']:
+                        if identifier['scheme'] == scheme and identifier['identifier'] == id:
+                            return m
+        else:
+            for m in self.memberships:
+                if m['id'] == id:
+                    return m
+
+        return None
+
     def current(self):
         return self.on(datetime.date.today().isoformat())
 
@@ -57,12 +71,10 @@ class Popolo(object):
     def __init__(self):
         self.load(JSON)
 
-    def load(self, json_file):
-        self.json = j = json.load(open(json_file))
-        self.persons = {p['id']: p for p in j['persons'] if 'redirect' not in p}
-        self.posts = {p['id']: p for p in j['posts']}
-        self.orgs = {o['name']: o['id'] for o in j['organizations']}
-        self.memberships = Memberships(j['memberships'], self)
+    def update_persons_map(self):
+        self.persons = {p['id']: p for p in self.json['persons'] if 'redirect' not in p}
+        self.posts = {p['id']: p for p in self.json['posts']}
+        self.orgs = {o['name']: o['id'] for o in self.json['organizations']}
         self.names = {}
         self.identifiers = {}
 
@@ -84,26 +96,49 @@ class Popolo(object):
             for i in p.get('identifiers', []):
                 self.identifiers.setdefault(i['scheme'], {})[i['identifier']] = p
 
-    def get_person(self, id=None, name=None):
+    def update_memberships(self):
+        self.memberships = None
+        self.memberships = Memberships(self.json['memberships'], self)
+
+    def load(self, json_file):
+        self.json = j = json.load(open(json_file))
+        self.update_persons_map()
+        self.update_memberships()
+
+    # Get a person either by name, by parlparse ID, or if scheme is specified by another identifier
+    def get_person(self, id=None, name=None, scheme=None):
         if name:
             return [p for p in self.persons.values() if self.names[p['id']] == name]
         if id:
-            return (p for p in self.persons.values() if p['id'] == id).next()
+            if scheme:
+                if id in self.identifiers[scheme]:
+                    return self.identifiers[scheme][id]
+                else:
+                    return None
+            else:
+                return (p for p in self.persons.values() if p['id'] == id).next()
 
     def add_person(self, person):
         self.json['persons'].append(person)
+        self.update_persons_map()
 
     def add_membership(self, mship):
         self.json['memberships'].append(mship)
+        self.update_memberships()
 
-    def _max_member_id(self, house, type='member'):
-        id = max(int(m['id'].replace('uk.org.publicwhip/%s/' % type, '')) for m in self.memberships.in_org(house))
+    def _max_member_id(self, house, type='member', range_start=0):
+        house_memberships = self.memberships.in_org(house)
+        if house_memberships:
+            id = max(int(m['id'].replace('uk.org.publicwhip/%s/' % type, '')) for m in house_memberships)
+        else:
+            id = range_start
         return 'uk.org.publicwhip/%s/%d' % (type, id)
 
-    max_lord_id = lambda self: self._max_member_id('house-of-lords', 'lord')
-    max_mp_id = lambda self: self._max_member_id('house-of-commons')
-    max_mla_id = lambda self: self._max_member_id('northern-ireland-assembly')
-    max_msp_id = lambda self: self._max_member_id('scottish-parliament')
+    max_lord_id = lambda self: self._max_member_id('house-of-lords', 'lord', range_start=100000)  # Range ends at 199999
+    max_mp_id = lambda self: self._max_member_id('house-of-commons', range_start=0)  # Range ends at 79999
+    max_mla_id = lambda self: self._max_member_id('northern-ireland-assembly', range_start=90000)  # Range ends at 99999
+    max_msp_id = lambda self: self._max_member_id('scottish-parliament', range_start=80000) # Range ends at 89999
+    max_londonassembly_id = lambda self: self._max_member_id('london-assembly', range_start=200000)  # Range ends at 299999
 
     def max_person_id(self):
         id = max(p for p in self.persons.keys())
