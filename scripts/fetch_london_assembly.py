@@ -13,13 +13,14 @@ from popolo.utils import edit_file, new_id
 
 # Query to retrieve London Assembly memberships from Wikidata
 
-WIKIDATA_SPARQL_QUERY = '''SELECT ?item ?itemLabel ?node ?parliamentarygroup ?starttime ?endtime ?twfy_id WHERE {
+WIKIDATA_SPARQL_QUERY = '''SELECT ?item ?itemLabel ?node ?parliamentarygroup ?starttime ?endtime ?endcause ?twfy_id WHERE {
     ?node ps:P39 wd:Q56573014 .
     ?item p:P39 ?node .
     ?node pq:P580 ?starttime .
     OPTIONAL { ?item wdt:P2171 ?twfy_id }
     OPTIONAL { ?node pq:P4100 ?parliamentarygroup }
     OPTIONAL { ?node pq:P582 ?endtime }
+    OPTIONAL { ?node pq:P1534 ?endcause }
     OPTIONAL { ?node pq:P2715 ?election }
     SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
 }'''
@@ -39,6 +40,11 @@ PARTY_TO_ON_BEHALF_OF_ID = {
     'Q56578473': 'green',
     'Q61584795': 'conservative',
     'Q61586635': 'brexit-alliance'
+}
+
+# Unlike start reasons, end reasons are generally explicit.
+END_REASON_MAP = {
+    'Q30580660': 'changed_party'
 }
 
 logger = logging.getLogger('import-members-from-wikidata')
@@ -79,6 +85,9 @@ for item in data['results']['bindings']:
 
     if 'endtime' in item:
         member['end_date'] = item['endtime']['value'].split('T')[0]
+
+    if 'endcause' in item:
+        member['end_cause'] = item['endcause']['value'].rsplit('/', 1)[-1]
 
     logger.debug(u'{} ({}) found in Wikidata'.format(member['name'], member['wikidata_id']))
 
@@ -254,6 +263,20 @@ for item in data['results']['bindings']:
 
             if 'end_date' in member:
                 pp_membership['end_date'] = member['end_date']
+                # If the membership is ended, also provide an end reason
+                if 'end_cause' in member:
+                    if member['end_cause'] in END_REASON_MAP:
+                        pp_membership['end_reason'] = END_REASON_MAP[member['end_cause']]
+                    else:
+                        pp_membership['end_reason'] = 'unknown'
+                        logger.warning('End cause {} is not mapped.'.format(member['end_cause']))
+                else:
+                    logger.warning('Membership for {} ({}) starting {} does not have an end cause in Wikidata.'.format(
+                        member['name'],
+                        member['wikidata_id'],
+                        member['start_date']
+                    ))
+                    pp_membership['end_reason'] = 'unknown'
             else:
                 # It's possible a date will be removed from a membership in Wikidata.
                 # This makes sure if that's happened the date is also removed in ParlParse.
