@@ -13,7 +13,7 @@ from popolo.utils import edit_file, new_id
 
 # Query to retrieve London Assembly memberships from Wikidata
 
-WIKIDATA_SPARQL_QUERY = '''SELECT ?item ?itemLabel ?node ?parliamentarygroup ?starttime ?endtime ?endcause ?twfy_id WHERE {
+WIKIDATA_SPARQL_QUERY = '''SELECT ?item ?itemLabel ?node ?parliamentarygroup ?election ?starttime ?endtime ?endcause ?twfy_id WHERE {
     ?node ps:P39 wd:Q56573014 .
     ?item p:P39 ?node .
     ?node pq:P580 ?starttime .
@@ -82,6 +82,9 @@ for item in data['results']['bindings']:
 
     if 'twfy_id' in item:
         member['parlparse_id'] = item['twfy_id']['value']
+
+    if 'election' in item:
+        member['election'] = item['election']['value'].rsplit('/', 1)[-1]
 
     if 'endtime' in item:
         member['end_date'] = item['endtime']['value'].split('T')[0]
@@ -261,6 +264,17 @@ for item in data['results']['bindings']:
             pp_membership['post_id'] = 'uk.org.publicwhip/cons/10839'
             pp_membership['start_date'] = member['start_date']
 
+            # If the membership has an election set, start_reason is probably going to be regional_election
+            if 'election' in member:
+                pp_membership['start_reason'] = 'regional_election'
+            else:
+                pp_membership['start_reason'] = 'unknown'
+                logger.warning(u'Cannot determine start cause of membership for {} ({}) starting {}.'.format(
+                    member['name'],
+                    member['wikidata_id'],
+                    member['start_date']
+                ))
+
             if 'end_date' in member:
                 pp_membership['end_date'] = member['end_date']
                 # If the membership is ended, also provide an end reason
@@ -271,7 +285,7 @@ for item in data['results']['bindings']:
                         pp_membership['end_reason'] = 'unknown'
                         logger.warning('End cause {} is not mapped.'.format(member['end_cause']))
                 else:
-                    logger.warning('Membership for {} ({}) starting {} does not have an end cause in Wikidata.'.format(
+                    logger.warning(u'Membership for {} ({}) starting {} does not have an end cause in Wikidata.'.format(
                         member['name'],
                         member['wikidata_id'],
                         member['start_date']
