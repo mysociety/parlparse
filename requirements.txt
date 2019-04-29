@@ -4,5 +4,5 @@ egenix-mx-base==3.2.9
 everypolitician==0.0.13
 lxml==3.4.0
 python-dateutil==2.2
-requests[security]==2.4.3
+requests[security]==2.21.0
 requests-cache==0.4.13
