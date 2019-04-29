@@ -48,7 +48,8 @@ WD_PARTY_CHANGE_OBJECT = 'Q30580660'
 
 # Unlike start reasons, end reasons are generally explicit.
 END_REASON_MAP = {
-    WD_PARTY_CHANGE_OBJECT: 'changed_party'
+    WD_PARTY_CHANGE_OBJECT: 'changed_party',
+    'Q63323711': 'regional_election'  # This is a generic 'end of legislative term' object
 }
 
 logger = logging.getLogger('import-members-from-wikidata')
