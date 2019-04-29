@@ -655,6 +655,8 @@ class BaseParseDayXML(object):
             bs = members[0].xpath('./ns:B', namespaces=self.ns_map)
             if len(bs) == 1:
                 m_name = {'name': re.sub('\s+', ' ', bs[0].text).strip()}
+            elif len(bs) == 0:
+                m_name = {'name': re.sub('\s+', ' ', members[0].text).strip()}
             self.new_speech(m_name, para.get('url'))
         elif self.current_speech is None:
             self.new_speech(None, para.get('url'))
@@ -1400,6 +1402,12 @@ class LordsParseDayXML(BaseParseDayXML):
             # In cases where there are unattributes exclamations then PimsId
             # is set to 0. Often the name will be "Noble Lords" or the like
             member_tag = self._parse_member_or_b(member)
+            if member_tag is None:
+                raise ContextException(
+                    'Could not find member',
+                     stamp=member.get('url'),
+                     fragment=etree.tostring(member),
+                )
             if member_tag.get('PimsId') == '0':
                 found_member = {
                     'person_id': 'unknown',
