@@ -13,16 +13,18 @@ from popolo.utils import edit_file, new_id
 
 # Query to retrieve London Assembly memberships from Wikidata
 
-WIKIDATA_SPARQL_QUERY = '''SELECT ?item ?itemLabel ?node ?parliamentarygroup ?starttime ?endtime ?twfy_id WHERE {
+WIKIDATA_SPARQL_QUERY = '''SELECT ?item ?itemLabel ?node ?parliamentarygroup ?election ?starttime ?endtime ?endcause ?twfy_id WHERE {
     ?node ps:P39 wd:Q56573014 .
     ?item p:P39 ?node .
     ?node pq:P580 ?starttime .
     OPTIONAL { ?item wdt:P2171 ?twfy_id }
     OPTIONAL { ?node pq:P4100 ?parliamentarygroup }
     OPTIONAL { ?node pq:P582 ?endtime }
+    OPTIONAL { ?node pq:P1534 ?endcause }
     OPTIONAL { ?node pq:P2715 ?election }
     SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
-}'''
+}
+ORDER BY ?item ?starttime'''
 
 
 # Map of party Wikidata identifiers to the on_behalf_of_id slugs used in
@@ -39,6 +41,15 @@ PARTY_TO_ON_BEHALF_OF_ID = {
     'Q56578473': 'green',
     'Q61584795': 'conservative',
     'Q61586635': 'brexit-alliance'
+}
+
+# The Wikidata reason for a party change is used in a couple of places:
+WD_PARTY_CHANGE_OBJECT = 'Q30580660'
+
+# Unlike start reasons, end reasons are generally explicit.
+END_REASON_MAP = {
+    WD_PARTY_CHANGE_OBJECT: 'changed_party',
+    'Q63323711': 'regional_election'  # This is a generic 'end of legislative term' object
 }
 
 logger = logging.getLogger('import-members-from-wikidata')
@@ -63,6 +74,7 @@ url = 'https://query.wikidata.org/sparql'
 data = requests.get(url, params={'query': WIKIDATA_SPARQL_QUERY, 'format': 'json'}).json()
 
 pp_data = Popolo()
+party_changes = {}
 
 for item in data['results']['bindings']:
 
@@ -77,8 +89,14 @@ for item in data['results']['bindings']:
     if 'twfy_id' in item:
         member['parlparse_id'] = item['twfy_id']['value']
 
+    if 'election' in item:
+        member['election'] = item['election']['value'].rsplit('/', 1)[-1]
+
     if 'endtime' in item:
         member['end_date'] = item['endtime']['value'].split('T')[0]
+
+    if 'endcause' in item:
+        member['end_cause'] = item['endcause']['value'].rsplit('/', 1)[-1]
 
     logger.debug(u'{} ({}) found in Wikidata'.format(member['name'], member['wikidata_id']))
 
@@ -252,8 +270,46 @@ for item in data['results']['bindings']:
             pp_membership['post_id'] = 'uk.org.publicwhip/cons/10839'
             pp_membership['start_date'] = member['start_date']
 
+            # If the membership has an election set, start_reason is probably going to be regional_election
+            if 'election' in member:
+                pp_membership['start_reason'] = 'regional_election'
+
+            # If there's a party change for this person with an end_date matching this membership's start_date, it's a
+            # fair bet that the two are a pair and the start_reason here is also changed_party.
+            elif member['wikidata_id'] in party_changes and party_changes[member['wikidata_id']] == member['start_date']:
+                logger.debug(u'Found matching party change on {} for {}'.format(party_changes[member['wikidata_id']], member['wikidata_id']))
+                pp_membership['start_reason'] = 'changed_party'
+
+            else:
+                pp_membership['start_reason'] = 'unknown'
+                logger.warning(u'Cannot determine start cause of membership for {} ({}) starting {}.'.format(
+                    member['name'],
+                    member['wikidata_id'],
+                    member['start_date']
+                ))
+
             if 'end_date' in member:
                 pp_membership['end_date'] = member['end_date']
+                # If the membership is ended, also provide an end reason
+                if 'end_cause' in member:
+                    if member['end_cause'] in END_REASON_MAP:
+                        pp_membership['end_reason'] = END_REASON_MAP[member['end_cause']]
+
+                        # If this is a party change, add it to the list so we can use it to detect its pair.
+                        if member['end_cause'] == WD_PARTY_CHANGE_OBJECT:
+                            party_changes[member['wikidata_id']] = member['end_date']
+                            logger.debug(u'Recorded that {} changed their party on {}'.format(member['wikidata_id'], member['end_date']))
+
+                    else:
+                        pp_membership['end_reason'] = 'unknown'
+                        logger.warning('End cause {} is not mapped.'.format(member['end_cause']))
+                else:
+                    logger.warning(u'Membership for {} ({}) starting {} does not have an end cause in Wikidata.'.format(
+                        member['name'],
+                        member['wikidata_id'],
+                        member['start_date']
+                    ))
+                    pp_membership['end_reason'] = 'unknown'
             else:
                 # It's possible a date will be removed from a membership in Wikidata.
                 # This makes sure if that's happened the date is also removed in ParlParse.
