@@ -11,7 +11,7 @@ RET=0
 
 # Run XML-generating scraper from Public Whip, getting new files from network
 cd ~/parlparse/pyscraper
-./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE scrape ni || RET=1
+# ./lazyrunall.py $4 --quietc --from=$FROMDATE --to=$TODATE scrape ni || RET=1
 ~/.venv/bin/python ./unpack_hansard_zips.py
 
 # XXX Should vary based upon weekly/daily-ness; and be more attuned than a year
