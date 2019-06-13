@@ -1375,7 +1375,7 @@ class LordsParseDayXML(BaseParseDayXML):
             i_text = self.get_single_line_text_from_element(i[0])
             new_i = etree.Element('i')
             new_i.text = i_text
-            new_i.tail = re.sub('\n', ' ', i[0].tail)
+            new_i.tail = re.sub('\n', ' ', i[0].tail or '')
             if re.match(r'Official Report,?$', i_text):
                 phrase = etree.Element('phrase')
                 phrase.set('class', 'offrep')
