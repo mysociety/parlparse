@@ -117,6 +117,7 @@ class MemberList(ResolverBase):
     # FIXME: use Set instead of lists
 
     def match_string_somehow(self,s,date,party,just_name):
+        s = re.sub('\s{2,}', ' ', s)
 
         member_ids = []
 
