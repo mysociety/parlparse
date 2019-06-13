@@ -946,7 +946,7 @@ class BaseParseDayXML(object):
 
         return handled
 
-    def parse_day(self, xml_file, out):
+    def parse_day(self, xml_file):
         ok = self.setup_parser(xml_file)
         if not ok:
             return False
@@ -1779,6 +1779,9 @@ class ParseDay(object):
         os.rename(newfile, self.output_file)
         os.rename(tempfilenameoldxml, self.prev_file)
 
+    def output(self, stream):
+        stream.write(etree.tounicode(self.parser.root, pretty_print=True))
+
     def handle_file(self, filename, debate_type, verbose):
         if debate_type not in self.valid_types:
             sys.stderr.write('{0} not a valid type'.format(debate_type))
@@ -1800,11 +1803,14 @@ class ParseDay(object):
         self.output_file = output_file
 
         tempfilename = tempfile.mktemp(".xml", "pw-filtertemp-", miscfuncs.tmppath)
-        out = io.open(tempfilename, mode='w', encoding='utf-8')
 
-        parse_ok = self.parse_day(out, xml_file, date, debate_type, verbose)
+        parse_ok = self.parse_day(xml_file, debate_type, verbose)
 
-        if not parse_ok:
+        if parse_ok:
+            out = io.open(tempfilename, mode='w', encoding='utf-8')
+            self.output(out)
+            out.close()
+        else:
             sys.stderr.write('Failed to parse {0}\n'.format(filename))
             os.remove(tempfilename)
             return 'failed'
@@ -1837,22 +1843,22 @@ class ParseDay(object):
         self.parser = parser_types.get(debate_type, CommonsParseDayXML)()
         self.parser.debate_type = debate_type
 
-    def parse_day(self, out, text, date, debate_type, verbose=0):
+    def parse_day(self, text, debate_type, verbose=0):
         self.set_parser_for_type(debate_type)
         self.parser.verbose = verbose
         if debate_type == 'standing':
             if not hasattr(self.parser, 'sitting_id'):
                 self.parser.get_sitting(text)
-        parse_ok = self.parser.parse_day(text, out)
+        parse_ok = self.parser.parse_day(text)
         if parse_ok:
-            out.write(etree.tounicode(self.parser.root, pretty_print=True))
             return True
 
         return False
 
 if __name__ == '__main__':
-    fp = sys.stdout
     xml_file = codecs.open(sys.argv[1], encoding='utf-8')
     house = sys.argv[2]
-    date = sys.argv[3]
-    ParseDay().parse_day(fp, xml_file, date, house)
+    parse = ParseDay()
+    parse_ok = parse.parse_day(xml_file, house)
+    if parse_ok:
+        parse.output(sys.stdout)
