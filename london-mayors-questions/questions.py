@@ -46,30 +46,46 @@ XML_FILE_PREFIX = config['xml_file_prefix']
 
 CLI_DATETIME_FORMAT = click.DateTime(formats=('%Y-%m-%d',))
 
+STATE_JSON_FILENAME = 'state.json'
 
-def getScraperState():
+EMPTY_STATE_OBJECT = {
+    'dates': {},
+    'questions': {}
+}
+
+
+def getScraperState(output_folder):
     ''' Load the scraper's state from file. '''
 
-    with open('state.json') as state_json_file:
-        logger.debug('Reading state file')
-        state = json.load(state_json_file)
-        return state
+    state_file = os.path.join(output_folder, STATE_JSON_FILENAME)
+
+    # Check this file exists before we load it
+    if os.path.exists(state_file):
+
+        with open(state_file) as state_json_file:
+            logger.debug('Reading state file')
+            state = json.load(state_json_file)
+
+    # If not, just use the empty object. It'll be written at wrap-up.
+    else:
+        logger.warning('Could not find existing state file at {}, creating new one'.format(state_file))
+        state = EMPTY_STATE_OBJECT
+
+    return state
 
 
-def writeScraperState():
+def writeScraperState(state, output_folder):
     ''' Write the scraper's state back out to file. '''
+
+    output_file = os.path.join(output_folder, STATE_JSON_FILENAME)
 
     try:
         json_string = json.dumps(state, indent=2, default=str)
-        with open('state.json', 'w') as state_json_file:
+        with open(output_file, 'w') as state_json_file:
             logger.debug('Writing state file')
             state_json_file.write(json_string)
     except TypeError, e:
         logger.error('Could not serialise to valid JSON: {}'.format(str(e)))
-
-
-# Get the current state file, parse it and assign to the global state variable
-state = getScraperState()
 
 
 def getDatesInRange(start, end):
@@ -191,17 +207,14 @@ def scrapeQuestionWithId(question_id):
 
     if question_page.status_code == 200:
         logger.debug('Question {} returned HTTP 200'.format(question_id))
-        # state['questions'][question_id]['to_scrape'] = False
 
         question_parsed_data = parseQuestionPage(question_page.content)
 
     else:
         logger.warning('Question {} returned HTTP {}'.format(question_id, question_page.status_code))
-        state['questions'][question_id]['to_scrape'] = True
+        context.obj['state']['questions'][question_id]['to_scrape'] = True
 
         question_parsed_data = None
-
-    state['questions'][question_id]['scraped_at'] = datetime.datetime.today()
 
     return question_parsed_data
 
@@ -605,8 +618,15 @@ def getNameFromPerson(person):
 
 @click.group()
 @click_log.simple_verbosity_option(logger, default='warning')
-def cli():
-    pass
+@click.option('-o', '--out', required=True, type=click.Path(exists=True, file_okay=False, writable=True), help='The directory to place output and state files.')
+@click.pass_context
+def cli(context, out):
+    context.ensure_object(dict)
+
+    context.obj['OUTPUT_FOLDER'] = out
+
+    # Get the current state file, parse it and assign to the context
+    context.obj['state'] = getScraperState(context.obj['OUTPUT_FOLDER'])
 
 
 @cli.command()
@@ -614,7 +634,8 @@ def cli():
 @click.option('-e', '--end', type=CLI_DATETIME_FORMAT, help='The last date of the range to be scraped.')
 @click.option('--force-scrape-dates', is_flag=True, help='Force all dates in the range to be re-scraped regardless of status')
 @click.option('--force-refresh-questions', is_flag=True, help='Force all detected questions to have their state refreshed')
-def meetings(start, end, force_scrape_dates, force_refresh_questions):
+@click.pass_context
+def meetings(context, start, end, force_scrape_dates, force_refresh_questions):
     ''' Get a list of questions from the London Assembly website asked between the dates given. '''
 
     logger.info('Scraping London Assembly')
@@ -649,8 +670,8 @@ def meetings(start, end, force_scrape_dates, force_refresh_questions):
 
             # Check to see if we should actually scrape this date
             if force_scrape_dates \
-             or str(date) not in state['dates'] \
-             or (str(date) in state['dates'] and state['dates'][str(date)]['to_scrape']):
+             or str(date) not in context.obj['state']['dates'] \
+             or (str(date) in context.obj['state']['dates'] and context.obj['state']['dates'][str(date)]['to_scrape']):
 
                     logger.info('Scraping date {}'.format(date))
 
@@ -661,7 +682,7 @@ def meetings(start, end, force_scrape_dates, force_refresh_questions):
 
                         questions_in_range += meeting_scrape_data['questions']
 
-                    state['dates'][str(date)] = buildDateStatusObjectFromScrape(meeting_scrape_data)
+                    context.obj['state']['dates'][str(date)] = buildDateStatusObjectFromScrape(meeting_scrape_data)
 
             else:
 
@@ -671,8 +692,8 @@ def meetings(start, end, force_scrape_dates, force_refresh_questions):
 
     for question in questions_in_range:
         # Only do this if the question doesn't already exist, or we're forcing a refresh
-        if force_refresh_questions or question not in state['questions']:
-            state['questions'][question] = {
+        if force_refresh_questions or question not in context.obj['state']['questions']:
+            context.obj['state']['questions'][question] = {
                 'to_scrape': True,
                 'scrape_requested_on': datetime.datetime.today()
             }
@@ -681,9 +702,9 @@ def meetings(start, end, force_scrape_dates, force_refresh_questions):
 @cli.command()
 @click.option('-l', '--limit', type=int, help='The maximum number of questions to scrape')
 @click.option('-m', '--members', required=True, type=click.File(), help='The members.json file to match names against.')
-@click.option('-o', '--out', required=True, type=click.Path(exists=True, file_okay=False, writable=True), help='The directory to place parsed XML files into.')
 @click.option('--dry-run', is_flag=True, help='Should questions be marked as not needing scraping in future?')
-def questions(limit, members, out, dry_run):
+@click.pass_context
+def questions(context, limit, members, dry_run):
     ''' Update all questions which are still pending a scrape. '''
 
     # Try load in the Members data first - if that fails there's no point continuing.
@@ -691,11 +712,11 @@ def questions(limit, members, out, dry_run):
     global ASSEMBLY_MEMBERS_BY_NAME
     ASSEMBLY_MEMBERS_BY_NAME = loadMembershipsFromFile(members)
 
-    logger.debug('{} questions are known to exist'.format(len(state['questions'])))
+    logger.debug('{} questions are known to exist'.format(len(context.obj['state']['questions'])))
 
     questions_to_scrape = []
 
-    for question_id, question_state in state['questions'].items():
+    for question_id, question_state in context.obj['state']['questions'].items():
         if question_state['to_scrape']:
             questions_to_scrape.append(question_id)
 
@@ -712,6 +733,7 @@ def questions(limit, members, out, dry_run):
         for question_id in bar:
 
             scraped_questions[question_id] = scrapeQuestionWithId(question_id)
+            context.obj['state']['questions'][question_id]['scraped_at'] = datetime.datetime.today()
 
     answered_questions = {}
 
@@ -722,7 +744,7 @@ def questions(limit, members, out, dry_run):
 
             if not dry_run:
                 # Setting this question's scrape state to False means it won't be processed again
-                state['questions'][question_id]['to_scrape'] = False
+                context.obj['state']['questions'][question_id]['to_scrape'] = False
 
     logger.info('{} questions have had answers found in this scrape'.format(len(answered_questions)))
 
@@ -741,7 +763,7 @@ def questions(limit, members, out, dry_run):
             letter_suffix = string.ascii_lowercase[i]
             output_filename = XML_FILE_PREFIX + date_string + letter_suffix + '.xml'
 
-            output_file = os.path.join(out, output_filename)
+            output_file = os.path.join(context.obj['OUTPUT_FOLDER'], output_filename)
 
             if os.path.exists(output_file):
                 i = i + 1
@@ -754,7 +776,8 @@ def questions(limit, members, out, dry_run):
 @cli.command(name='set_date_scrape')
 @click.option('--date', required=True, type=CLI_DATETIME_FORMAT, help='The date to alter the scrape status of.')
 @click.option('--scrape/--no-scrape', required=True, help='Should the date be marked as needing scraping, or not?')
-def set_date_scrape(date, scrape):
+@click.pass_context
+def set_date_scrape(context, date, scrape):
     ''' Explicitly set if a date should be scraped or not at the next run.
 
     Used to either manually request a re-scraping of a date, or to suppress future scraping of a date. '''
@@ -763,10 +786,10 @@ def set_date_scrape(date, scrape):
 
     click.echo('Setting scrape status of {} to {}'.format(date, scrape))
 
-    if date in state['dates']:
-        state['dates'][str(date)]['to_scrape'] = scrape
+    if date in context.obj['state']['dates']:
+        context.obj['state']['dates'][str(date)]['to_scrape'] = scrape
     else:
-        state['dates'][str(date)] = {
+        context.obj['state']['dates'][str(date)] = {
             'to_scrape': scrape
         }
 
@@ -774,44 +797,42 @@ def set_date_scrape(date, scrape):
 @cli.command(name='set_question_scrape')
 @click.option('--id', required=True, help='The question to alter the scrape status.')
 @click.option('--scrape/--no-scrape', required=True, help='Should the question be marked as needing scraping, or not?')
-def set_question_scrape(id, scrape):
+@click.pass_context
+def set_question_scrape(context, id, scrape):
     ''' Explicitly set if a question should be scraped or not at the next run.
 
     Used to either manually request a re-scraping of a question, or to suppress future scraping of a question. '''
 
     click.echo('Setting scrape status of {} to {}'.format(id, scrape))
 
-    if id in state['questions']:
-        state['questions'][id]['to_scrape'] = scrape
+    if id in context.obj['state']['questions']:
+        context.obj['state']['questions'][id]['to_scrape'] = scrape
     else:
-        state['questions'][id] = {
+        context.obj['state']['questions'][id] = {
             'to_scrape': scrape
         }
 
 
 @cli.command(name='reset_state')
-def reset_state():
+@click.pass_context
+def reset_state(context):
     ''' Reset the scraper's state file, wiping all knowledge of dates and questions. '''
-
-    global state
 
     click.secho('Resetting the state file will wipe all information about the states of dates and questions.', bg='red', fg='white')
 
     if click.confirm('Are you really sure you want to do this?', abort=True):
         logger.info('Resetting scraper state file')
 
-        state = {
-            'dates': {},
-            'questions': {}
-        }
+        context.obj['state'] = EMPTY_STATE_OBJECT
 
         click.echo('All done. Have a nice day.')
 
 
 @cli.resultcallback()
-def process_result(result, **kwargs):
+@click.pass_context
+def process_result(context, result, **kwargs):
     ''' Called after anything in the CLI command group, to write the state back to the file. '''
-    writeScraperState()
+    writeScraperState(context.obj['state'], context.obj['OUTPUT_FOLDER'])
 
 
 if __name__ == '__main__':
