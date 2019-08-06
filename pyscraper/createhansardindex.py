@@ -56,7 +56,7 @@ redateindexlinks = re.compile('%s|(%s|%s)|%s|%s|%s|%s' % (redatename, respeciald
 # map from (date, type) to (URL-first, URL-index)
 # e.g. ("2003-02-01", "wrans") to ("http://...", "http://...")
 # URL-first is the first (index) page for the day,
-# URL-index is the refering page which linked to the day
+# URL-index is the referring page which linked to the day
 reses = {}
 
 # this pulls out all the direct links on this particular page
@@ -74,7 +74,7 @@ def CmIndexFromPage(urllinkpage):
 	#<td colspan=2><font size=+1><b>Wednesday 5 November 2003</b></font></td>
 	# <a href="../cm199900/cmhansrd/vo000309/debindx/00309-x.htm">Oral Questions and Debates</a>
 
-	# this was when I didn't use the match objects, and prefered this more direct detction thing
+	# this was when I didn't use the match objects, and preferred this more direct detction thing
 	datelinks = redateindexlinks.findall(srlinkpage)
 
 	# read the dates and links in order, and associate last date with each matching link

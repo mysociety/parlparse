@@ -48,7 +48,7 @@ class MemberList(ResolverBase):
         # print "party is: "+party
 
         # Now we should have one of the following formats:
-        # <OFFICE> (<NAME>) (<CONS>)    (one occurence)
+        # <OFFICE> (<NAME>) (<CONS>)    (one occurrence)
         # <NAME> (<CONS>)
         # <OFFICE> (<NAME>)
         # <NAME> (<OFFICE>)             (also rare)
@@ -117,6 +117,7 @@ class MemberList(ResolverBase):
     # FIXME: use Set instead of lists
 
     def match_string_somehow(self,s,date,party,just_name):
+        s = re.sub('\s{2,}', ' ', s)
 
         member_ids = []
 
@@ -215,7 +216,7 @@ class MemberList(ResolverBase):
             constituency_matches = self.constoidmap.get(s)
             if constituency_matches:
                 for c in constituency_matches:
-                    # print "       Got consituency id: "+c['id']
+                    # print "       Got constituency id: "+c['id']
                     members = self.considtomembermap.get(c['id'])
                     for m in members:
                         if date and date < m['start_date'] or date > m['end_date']:
