@@ -744,7 +744,8 @@ def questions(context, limit, members, dry_run):
     for question_id, question_object in scraped_questions.items():
 
         if question_object['answered'] == True:
-            answered_questions[question_id] = question_object
+            answered_date = question_object['answered_date']
+            answered_questions.setdefault(answered_date, {})[question_id] = question_object
 
             if not dry_run:
                 # Setting this question's scrape state to False means it won't be processed again
@@ -755,26 +756,25 @@ def questions(context, limit, members, dry_run):
     # If there are new answers, write out our file.
 
     if len(answered_questions) > 0:
+        for date, qns in answered_questions.items():
 
+            i = 0;
 
-        i = 0;
+            file_needs_writing = True
 
-        file_needs_writing = True
+            while file_needs_writing:
 
-        while file_needs_writing:
+                date_string = date.strftime('%Y-%m-%d')
+                letter_suffix = string.ascii_lowercase[i]
+                output_filename = XML_FILE_PREFIX + date_string + letter_suffix + '.xml'
+                output_file = os.path.join(context.obj['OUTPUT_FOLDER'], output_filename)
 
-            date_string = datetime.datetime.today().strftime('%Y-%m-%d')
-            letter_suffix = string.ascii_lowercase[i]
-            output_filename = XML_FILE_PREFIX + date_string + letter_suffix + '.xml'
-
-            output_file = os.path.join(context.obj['OUTPUT_FOLDER'], output_filename)
-
-            if os.path.exists(output_file):
-                i = i + 1
-            else:
-                # The file doesn't exist, write it!
-                writeXMLToFile(buildXMLForQuestions(answered_questions), output_file)
-                file_needs_writing = False
+                if os.path.exists(output_file):
+                    i = i + 1
+                else:
+                    # The file doesn't exist, write it!
+                    writeXMLToFile(buildXMLForQuestions(qns), output_file)
+                    file_needs_writing = False
 
 
 @cli.command(name='set_date_scrape')
