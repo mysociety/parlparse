@@ -295,6 +295,8 @@ class BaseParseDayXML(object):
             self.date = date
 
     def handle_minus_member(self, member):
+        if member.text == 'Forbes,\nLisa':
+            return self.resolver.pbc_match(member.text, '', self.date)
         return None
 
     def _parse_member_or_b(self, tag):
