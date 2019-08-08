@@ -396,16 +396,20 @@ def getPersonIDFromName(name):
     if name in NAME_CORRECTIONS:
         name = NAME_CORRECTIONS[name]
 
-    return ASSEMBLY_MEMBERS_BY_NAME[name]
+    return ASSEMBLY_MEMBERS_BY_NAME.get(name)
 
 
 def getSpeakerObjectFromName(name):
-    ''' Given a name, try find a speaker ID and return a whole object. '''
+    ''' Given a name, try to find a speaker ID and return a whole object. '''
 
     name = stripPatternsFromName(name)
+    id = getPersonIDFromName(name)
+    if not id:
+        logger.warning('Could not match name {} to any assembly member'.format(name))
+        id = 'unknown'
 
     return {
-        'id': getPersonIDFromName(name),
+        'id': id,
         'name': name
     }
 
