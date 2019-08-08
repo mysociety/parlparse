@@ -50,7 +50,6 @@ type_map = {
 new_people = False
 parl_by_name = {}
 person_id = data.max_person_id()
-print "max person: {}".format(person_id)
 for member in parl_members:
     end_date = member.find('HouseEndDate').text or ''
     end_date = end_date.replace('T00:00:00', '')
