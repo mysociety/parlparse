@@ -316,8 +316,9 @@ def parseAnswersFromQuestionPage(page_content):
 
         answer_date = answer_article.find('div', class_='field--name-post-date').find('div', class_='field__item').text
 
-        answers_object['answered_date'] = dateutil.parser.parse(answer_date).date()
-        logger.debug('Question answered on {}'.format(answers_object['answered_date']))
+        if 'answered_date' not in answers_object:
+            answers_object['answered_date'] = dateutil.parser.parse(answer_date).date()
+            logger.debug('Question first answered on {}'.format(answers_object['answered_date']))
 
         # Find who answered it
 
