@@ -26,5 +26,10 @@ cd ~/parlparse/
 cd ~/parlparse/pyscraper/sp
 ~/.venv/bin/python ./parse-official-reports-new.py --from=$FROMDATE --to=$TODATE || RET=1
 
+# London Assembly questions
+cd ~/parlparse/london-mayor-questions
+~/.venv/bin/python ./questions.py --out ~/parldata/scrapedxml/london-mayors-questions meetings
+~/.venv/bin/python ./questions.py --out ~/parldata/scrapedxml/london-mayors-questions questions --members ~/parlparse/members/people.json
+
 # Return error code
 exit $RET
