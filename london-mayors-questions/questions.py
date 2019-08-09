@@ -401,10 +401,12 @@ def getPersonIDFromName(name):
 def getSpeakerObjectFromName(name):
     ''' Given a name, try to find a speaker ID and return a whole object. '''
 
+    name = name.replace(u'\u00a0', ' ')
     name = stripPatternsFromName(name)
     id = getPersonIDFromName(name)
     if not id:
-        logger.warning('Could not match name {} to any assembly member'.format(name))
+        if 'Liz Peace' not in name:
+            logger.warning(u'Could not match name {} to any assembly member'.format(name))
         id = 'unknown'
 
     return {
