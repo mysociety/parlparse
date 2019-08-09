@@ -434,7 +434,7 @@ def getSpeakerAndTextFromParagraph(paragraph):
     if name_candidate:
 
         # Sanity check if this matches the expected format of speaker names - a name followed by a colon
-        if re.match('^.:', name_candidate.text):
+        if re.match('.*:$', name_candidate.text):
 
             # extract() removes the element from the beautifulsoup tree and returns it
             speaker_name = name_candidate.extract()
