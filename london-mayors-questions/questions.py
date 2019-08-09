@@ -300,18 +300,17 @@ def parseAnswersFromQuestionPage(page_content):
         'answers': []
     }
 
-    # If there's a paragraph with a class of 'holding', we're waiting for an answer.
-    if answers_div.find('p', class_='holding'):
-        logger.debug('Question is awaiting an answer')
+    answer_articles = answers_div.findAll('article', class_='node--answer')
+    for answer_article in answer_articles:
+        # If there's a paragraph with a class of 'holding', we're waiting for an answer.
+        if answer_article.find('p', class_='holding'):
+            logger.debug('Question is awaiting an answer')
+            continue
 
-    # Sometimes the question just has no answer. Because this is "currently", still assume it's unanswered.
-    elif answers_div.find('div', class_='no-answer'):
-        logger.debug('Question has no available answers.')
-
-    # We assume that we only need to bother about finding answers if there isn't a holding one.
-    else:
-
-        answer_article = answers_div.find('article', class_='node--answer')
+        # Sometimes the question just has no answer. Because this is "currently", still assume it's unanswered.
+        elif answer_article.find('div', class_='no-answer'):
+            logger.debug('Question has no available answers.')
+            continue
 
         # Get the date this was answered - this is the important one, not when it was asked,
 
