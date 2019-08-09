@@ -129,7 +129,7 @@ def scrapeAssemblyMeetingOnDate(date):
             scraped_data['to_scrape'] = False
             for session in scraped_data['sessions']:
                 scraped_data['questions'] += scrapeSessionAtUrl(session)
-        else:
+        elif meeting_date_string != '2019/02/25': # Exempt date we know lacks sessions
             logger.warning('Meeting on {} doesn\'t seem to have any sessions!'.format(date))
             scraped_data['to_scrape'] = True
     else:
