@@ -321,7 +321,12 @@ class BaseParseDayXML(object):
                 try_name = self.handle_minus_member(member_tag)
                 if try_name:
                     return try_name
-            member = self.resolver.match_by_pims(member_tag.get('PimsId'), self.date)
+
+            pims_id = member_tag.get('PimsId')
+            if member_tag.text == 'Lord\nChartres (CB):' and pims_id == '7113':
+                pims_id = '1549'
+
+            member = self.resolver.match_by_pims(pims_id, self.date)
             if member is not None:
                 member['person_id'] = member.get('id')
                 member['name'] = self.resolver.name_on_date(member['person_id'], self.date)
@@ -330,7 +335,7 @@ class BaseParseDayXML(object):
                 if member_tag.text == 'Olney,\nSarah':
                     return self.resolver.pbc_match(member_tag.text, '', self.date)
                 raise ContextException(
-                    'No match for PimsId {0}\n'.format(member_tag.get('PimsId')),
+                    'No match for PimsId {0}\n'.format(pims_id),
                     stamp=tag.get('url'),
                     fragment=member_tag.text
                 )
