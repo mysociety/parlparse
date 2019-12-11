@@ -150,6 +150,7 @@ class BaseParseDayXML(object):
         'hs_TimeCode',
         'hs_6bPetitions',
         'hs_3MainHdg',
+        'hs_3cWestHall',
         'hs_Venue'
     ]
     root = None
@@ -248,8 +249,20 @@ class BaseParseDayXML(object):
 
     def check_for_pi(self, tag):
         pi = tag.xpath('.//processing-instruction("notus-xml")')
+        if len(pi) == 1 and self.pi_at_start:
+            return
         if len(pi):
             self.parse_pi(pi[-1])
+
+    def check_for_pi_at_start(self, tag):
+        self.pi_at_start = False
+        for c in tag.xpath('./node()'):
+            if isinstance(c, str) and re.match('\s*$', c):
+                continue
+            elif type(c) is etree._ProcessingInstruction:
+                self.parse_pi(c)
+                self.pi_at_start = True
+            return
 
     # this just makes any gid redirection easier
     def get_text_from_element(self, el):
@@ -635,7 +648,7 @@ class BaseParseDayXML(object):
         self.clear_current_speech()
 
         tag = etree.Element('major-heading')
-        tag.text = 'PRAYERS'
+        tag.text = 'Prayers'
 
         if hasattr(self, 'initial_chair'):
             tag.text += ' - '
@@ -874,9 +887,8 @@ class BaseParseDayXML(object):
         if re.match('Prayers.*?read by', text):
             return
 
-        # And minute's silence
-        if re.match('A minute.*?s silence was observed', text):
-            return
+        if not self.output_heading:
+            self.output_normally_ignored()
 
         tag.set('pid', self.get_pid())
         tag.set('class', 'italic')
@@ -980,6 +992,10 @@ class BaseParseDayXML(object):
                     self.parse_pi(tag)
                     continue
 
+                # PI handling - if it's right at the start, do
+                # the column change now rather than after
+                self.check_for_pi_at_start(tag)
+
                 tag_name = self.get_tag_name_no_ns(tag)
                 if self.verbose >= 2:
                     start_tag = re.sub('>.*', '>', etree.tounicode(tag))
@@ -1034,7 +1050,7 @@ class BaseParseDayXML(object):
 
 
 class CommonsParseDayXML(BaseParseDayXML):
-    uc_titles = True
+    uc_titles = False
 
 
 class PBCParseDayXML(BaseParseDayXML):
