@@ -36,6 +36,7 @@ party_map = {
     'Conservative': 'conservative',
     'Crossbench': 'crossbench',
     'Labour': 'labour',
+    'Green Party': 'green',
     'Bishops': 'bishop',
     'Democratic Unionist Party': 'dup',
     'Non-affiliated': 'non-affiliated'
@@ -126,7 +127,7 @@ for member in parl_members:
             new_people = True
         else:
             existing_person_id = data.identifiers['pims_id'][member.attrib['Pims_Id']]['id']
-            print "{} is a Lord who might be new ({}, {})".format(name, member.attrib['Pims_Id'], person_id)
+            print "{} is a Lord who might be new ({}, {})".format(name, member.attrib['Pims_Id'], existing_person_id)
 
             existing_lord_id = new_id(data.max_lord_id())
 
@@ -146,7 +147,7 @@ for member in parl_members:
             middle_name = ''
             surname = ''
             if middle_names:
-                name['additional_name'] = middle_names
+                middle_name = middle_names
             if surname and surname != lordname:
                 name['surname'] = surname
 
