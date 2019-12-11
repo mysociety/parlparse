@@ -274,7 +274,7 @@ def get_title_and_date(soup, page_id):
             return (None, None)
         else:
             raise Exception, "No title was found in a page that's non-empty; the page ID was: %d" % (page_id,)
-    m = re.search(r'^(.*)\s+(\d{1,2} \w+ \d{4})\s*(?:[[(]Draft[)\][}]\s*)?(?:Business (?:until|from|between) \d\d:\d\d(?: (?:until|to|and|and after) \d\d:\d\d)?|Test)?$', title)
+    m = re.search(r'^(.*)\s+(\d{1,2} \w+ \d{4})\s*(?:[[({]Draft[)\][}]\s*)?(?:Business (?:until|from|between) \d\d:\d\d(?: (?:until|to|and|and after) \d\d:\d\d)?|Test)?$', title)
     if m:
         session = m.group(1).rstrip(',')
         report_date = dateparser.parse(m.group(2)).date()
@@ -694,6 +694,7 @@ def parse_html(session, report_date, soup, page_id, original_url):
                         current_division_way = division_way
                     elif member_vote:
                         if current_votes is None:
+                            print tidied_paragraph
                             raise Exception, "Got a member's vote before an indication of which way the vote is"
                         current_votes.add_vote(current_division_way, tidied_paragraph, member_vote)
                     elif maybe_time:
