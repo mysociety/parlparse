@@ -25,7 +25,9 @@ class Memberships(object):
             s += '%(start_date)s - ' % m
             if 'end_date' in m: s += '%(end_date)s' % m
             if 'end_reason' in m: s += ' (%(end_reason)s)' % m
-            if 'post_id' in m: s += ' %(post_id)s' % m
+            if 'post_id' in m:
+                s += ' ' + self.data.posts[m['post_id']]['area']['name']
+                s += ' %(post_id)s' % m
             s += '\n'
         s += ']'
         return s
