@@ -4,10 +4,9 @@ from popolo import Popolo
 data = Popolo()
 
 mships = data.memberships.in_org('house-of-commons').current()
-# only 649 as the Manchester Gorton By-election was outstanding
-assert len(mships) == 649
+assert len(mships) == 650
 for mship in mships:
-    mship['end_date'] = '2017-05-03'
+    mship['end_date'] = '2019-11-06'
     mship['end_reason'] = 'dissolution'
 
 data.dump()
