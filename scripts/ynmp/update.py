@@ -11,7 +11,7 @@ import urllib
 
 sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
 
-CSV_URL = 'https://candidates.democracyclub.org.uk/media/candidates-parl.2017-06-08.csv'
+CSV_URL = 'https://candidates.democracyclub.org.uk/results/csv/parl.2019-12-12/'
 JSON = os.path.join(os.path.dirname(__file__), '..', '..', 'members', 'people.json')
 
 
@@ -25,34 +25,23 @@ def main():
 def update_from(csv_url, data):
     changed = False
     for ynmp_id, name, party, cons, person_id, elected in ynmp_csv_reader(csv_url):
-        if elected in ('', 'false', 'no', 'n'):
-            if cons not in data['existing'] or data['existing'][cons]['on_behalf_of_id'] != slugify(party):
-                continue
-            if cons in data['dealt_with']:
-                continue  # We had the winner already, don't remove them!
-            # We have a winner who has stopped being a winner. Update the membership to unknown
-            mship = data['existing'][cons]
-            mship.update({
-                'on_behalf_of_id': 'none',
-                'person_id': 'uk.org.publicwhip/person/0',
-            })
-            changed = True
-            print "Removing result from %s (was %s %s, %s, %s, %s)" % (mship['id'], name['given_name'], name['family_name'], party, cons, person_id)
-            continue
-
-        # Here we have an elected person.
+        # Add a new party if it's not one we know
         if party not in data['orgs']:
             data['orgs'][party] = slugify(party)
             data['json']['organizations'].append({'id': slugify(party), 'name': party})
 
+        # Must be a person ID we recognise
         if person_id not in data['persons']:
             person_id = ''
+
+        # If we already have a result for this constituency, but the DC row has no person ID, get our result's person ID
         if cons in data['existing'] and not person_id:
             person_id = data['existing'][cons]['person_id']
             # If they've previously been removed, we don't care.
             if person_id == 'uk.org.publicwhip/person/0':
                 person_id = ''
 
+        # Okay, now we either need to attach the ID to a person, or add a new person
         identifier = {'scheme': 'yournextmp', 'identifier': ynmp_id}
         if person_id:
             if identifier not in data['persons'][person_id].setdefault('identifiers', []):
@@ -67,16 +56,17 @@ def update_from(csv_url, data):
                 'identifiers': [identifier],
                 'shortcuts': {
                     'current_party': party,
-                    'current_constituency': cons,
+                    'current_constituency': data['posts_by_name'][cons]['area']['name'],
                 }
             }
             data['json']['persons'].append(new_person)
             data['persons'][person_id] = new_person
 
+        # With the person done, now let's either update a membership or create a new membership
         new_mship = {
             'on_behalf_of_id': data['orgs'][party],
             'person_id': person_id,
-            'start_date': '2017-06-09',
+            'start_date': '2019-12-13',
             'start_reason': 'general_election',
         }
         if cons in data['existing']:
@@ -98,6 +88,18 @@ def update_from(csv_url, data):
             mship.update(new_mship)
         data.setdefault('dealt_with', []).append(cons)
 
+    # Now loop through all the existing ones not dealt with, and mark them as rescinded
+    for cons in data['existing']:
+        if cons not in data['dealt_with']:
+            # This row has been removed from the CSV
+            mship = data['existing'][cons]
+            print "Removing result from %s (was %s, %s, %s)" % (mship['id'], mship['post_id'], mship['on_behalf_of_id'], mship['person_id'])
+            mship.update({
+                'on_behalf_of_id': 'none',
+                'person_id': 'uk.org.publicwhip/person/0',
+            })
+            changed = True
+
     return changed
 
 
@@ -117,7 +119,7 @@ def load_data():
     j = json.load(open(JSON))
     persons = {p['id']: p for p in j['persons']}
     posts = {p['id']: p for p in j['posts']}
-    posts_by_name = {p['area']['name']: p for p in j['posts'] if p['organization_id'] == 'house-of-commons' and 'end_date' not in p}
+    posts_by_name = {slugify(p['area']['name']): p for p in j['posts'] if p['organization_id'] == 'house-of-commons' and 'end_date' not in p}
     assert len(posts_by_name) == 650
     orgs = {o['name']: o['id'] for o in j['organizations']}
     max_person_id = max(int(p['id'].replace('uk.org.publicwhip/person/','')) for p in j['persons'])
@@ -129,7 +131,7 @@ def load_data():
         max_mship_id = max(max_mship_id, int(mship['id'].replace('uk.org.publicwhip/member/','')))
         if 'end_date' in mship:
             continue  # Not a new MP
-        cons = posts[mship['post_id']]['area']['name']
+        cons = slugify(posts[mship['post_id']]['area']['name'])
         assert cons not in existing
         existing[cons] = mship
 
@@ -163,6 +165,8 @@ PARTY_YNMP_TO_TWFY = {
     'Green Party': 'Green',
     'Scottish Green Party': 'Green',
     'Traditional Unionist Voice - TUV': 'Traditional Unionist Voice',
+    'The Brexit Party': 'Brexit',
+    # 'The Independent Group for Change'
 }
 
 
@@ -170,24 +174,19 @@ def ynmp_csv_reader(fn):
     if isinstance(fn, basestring):
         fn = urllib.urlopen(fn)
     for row in csv.DictReader(fn):
-        name = row['name'].decode('utf-8').strip()
+        assert row['election_slug'] == 'parl.2019-12-12'
+        name = row['person_name'].decode('utf-8').strip()
         # TWFY has separate first/last name fields. This should catch most.
         m = re.match(u'(.*?) ((?:ap |van |de |di |von |st |duncan |lloyd |\u00d3 )*[^ ]*(?: Jnr)?)$(?i)', name)
         given, family = m.groups()
         party = row['party_name'].decode('utf-8')
         party = PARTY_YNMP_TO_TWFY.get(party, party)
-        cons = row['post_label'].decode('utf-8')
-        person_id = row['parlparse_id']
-        ynmp_id = int(row['id'])
-        elected = row.get('elected', '').lower()
-        if name == 'Rosena Allin-Khan': person_id = 'uk.org.publicwhip/person/25579'
-        if name == 'Gareth Snell': person_id = 'uk.org.publicwhip/person/25601'
-        if name == 'Gill Furniss': person_id = 'uk.org.publicwhip/person/25489'
-        if name == 'Chris Elmore': person_id = 'uk.org.publicwhip/person/25490'
-        if name == 'Trudy Harrison': person_id = 'uk.org.publicwhip/person/25600'
-        if name == 'Jim McMahon': person_id = 'uk.org.publicwhip/person/25475'
-        if name == 'Tracy Brabin': person_id = 'uk.org.publicwhip/person/25592'
-        if name == 'Caroline Johnson': person_id = 'uk.org.publicwhip/person/25597'
+        m = re.match('parl\.(.*)\.2019-12-12', row['ballot_paper_id'])
+        cons = m.group(1)
+        m = re.search('(\d+)', row['theyworkforyou_url'])
+        person_id = 'uk.org.publicwhip/person/' + m.group(1) if m else None
+        ynmp_id = int(row['person_id'])
+        elected = True
         yield ynmp_id, {'given_name': given, 'family_name': family}, party, cons, person_id, elected
 
 
