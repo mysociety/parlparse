@@ -91,9 +91,9 @@ def update_from(csv_url, data):
 
     # Now loop through all the existing ones not dealt with, and mark them as rescinded
     for cons in data['existing']:
-        if cons not in data['dealt_with']:
+        mship = data['existing'][cons]
+        if cons not in data['dealt_with'] and mship['person_id'] != 'uk.org.publicwhip/person/0':
             # This row has been removed from the CSV
-            mship = data['existing'][cons]
             print "Removing result from %s (was %s, %s, %s)" % (mship['id'], mship['post_id'], mship['on_behalf_of_id'], mship['person_id'])
             mship.update({
                 'on_behalf_of_id': 'none',
