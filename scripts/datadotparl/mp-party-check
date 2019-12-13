@@ -75,6 +75,7 @@ for person in people:
 
   canon_parl = curr_party_parl.lower().replace(' ', '-')
   canon_parl = canon_parl.replace('democratic-unionist-party', 'dup')
+  canon_parl = canon_parl.replace('social-democratic-&-labour', 'social-democratic-and-labour')
   canon_parl = canon_parl.replace(u'sinn-f\xe9in', 'sinn-fein')
   canon_parl = canon_parl.replace('green-party', 'green')
   canon_us = curr_party[person['id']].replace('labourco-operative', 'labour')
