@@ -19,7 +19,8 @@ def main():
     data = load_data()
     changed = update_from(CSV_URL, data)
     if changed:
-        json.dump(data['json'], open(JSON, 'w'), indent=2, sort_keys=True)
+        json.dump(data['json'], open(JSON + 'n', 'w'), indent=2, sort_keys=True)
+        os.rename(JSON + 'n', JSON)
 
 
 def update_from(csv_url, data):
