@@ -29,6 +29,7 @@ def canon_name(n):
 
 LORDS_URL = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Lords/BasicDetails'
 parl_members = etree.parse(urllib2.urlopen(LORDS_URL)).getroot()
+parl_members = sorted(parl_members, key=lambda x: x.find('HouseStartDate').text)
 
 lord_match = re.compile('^([^\s]*)\s+(.*?)(?:\s+of\s+(.*))?$')
 
