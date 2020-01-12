@@ -31,8 +31,9 @@ for m in mships:
     mships_by_pid.setdefault(m['person_id'], []).append(m)
 mships = []
 for pid, ms in mships_by_pid.items():
-    ms.sort(key=lambda x: x.get('end_date', '9999-12-31'), reverse=True)
-    mships.append(ms[0])
+    ms.sort(key=lambda x: x.get('end_date', '9999-12-31'))
+    mships_by_pid[pid] = ms
+    mships.append(ms[-1])
 
 CANON_PARTY = {
     'bishops': 'bishop',
