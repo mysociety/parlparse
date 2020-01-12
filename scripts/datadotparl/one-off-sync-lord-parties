@@ -107,10 +107,5 @@ for m in mships:
         if len(mships_by_pid[m['person_id']]) == 1 and len(parties) >= 2:
             changed = update_mem(0) or changed
 
-	# If we have one membership and Parliament has three, and our party
-	# matches their second party, update our membership and add new ones
-        if len(mships_by_pid[m['person_id']]) == 1 and len(parties) == 3:
-            changed = update_mem(1) or changed
-
 if changed:
     data.dump()
