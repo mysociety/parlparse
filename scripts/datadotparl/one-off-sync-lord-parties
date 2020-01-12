@@ -85,7 +85,7 @@ for m in mships:
             for i, p in enumerate(parties):
                 if i == id: continue
                 mship = m.copy()
-                mship['id'] = 'uk.org.publicwhip/lord/%d' % (data.max_lord_id() + 1)
+                mship['id'] = 'uk.org.publicwhip/lord/%d' % (int(data.max_lord_id().rsplit('/', 1)[-1]) + 1)
                 mship['start_date'] = p.start_date
                 if i > id:
                     mship['start_reason'] = 'changed_party'
