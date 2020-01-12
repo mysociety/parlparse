@@ -86,6 +86,7 @@ for m in mships:
                 assert p.name in data.orgs.values(), p.name
             assert parties[-1].end_date == m.get('end_date', ''), '%s != %s' % (parties[-1].end_date, m.get('end_date', ''))
             if len(m['start_date']) == 4:
+                assert m['start_date'] == parties[id].start_date[:4]
                 m['start_date'] = parties[id].start_date
             for i, p in enumerate(parties):
                 if i == id: continue
