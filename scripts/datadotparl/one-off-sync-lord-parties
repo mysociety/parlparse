@@ -75,14 +75,13 @@ for m in mships:
         print 'Parl mships', [p.name for p in parties]
 
         def update_mem(id):
-            if parties[id].name != m['on_behalf_of_id']: return
             for p in parties:
                 assert p.name in data.orgs.values(), p.name
             if len(m['start_date']) == 4:
                 assert m['start_date'] == parties[id].start_date[:4]
                 m['start_date'] = parties[id].start_date
             for i, p in enumerate(parties):
-                if i == id: continue
+                if i <= id: continue
                 mship = m.copy()
                 mship['id'] = 'uk.org.publicwhip/lord/%d' % (int(data.max_lord_id().rsplit('/', 1)[-1]) + 1)
                 mship['start_date'] = p.start_date
@@ -96,17 +95,20 @@ for m in mships:
                     mship['end_reason'] = m['end_reason']
                 mship['on_behalf_of_id'] = p.name
                 data.add_membership(mship)
-            if id > 0:
-                m['start_date'] = parties[id].start_date
-                m['start_reason'] = 'changed_party'
             m['end_date'] = parties[id].end_date
             m['end_reason'] = 'changed_party'
             return True
 
-	# If we have one membership and Parliament has >= two, and our party
-	# matches their first party, update our membership and add new ones
-        if len(mships_by_pid[m['person_id']]) == 1 and len(parties) >= 2:
-            changed = update_mem(0) or changed
+        if len(mships_by_pid[m['person_id']]) >= len(parties):
+            continue
+
+        if any([parties[idx].name != mem['on_behalf_of_id']
+                for idx, mem in enumerate(mships_by_pid[m['person_id']])]):
+            continue
+
+        # If Parliament has more memberships than us, attempt to
+        # update our memberships
+        changed = update_mem(idx) or changed
 
 if changed:
     data.dump()
