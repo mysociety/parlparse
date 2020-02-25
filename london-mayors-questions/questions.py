@@ -194,7 +194,7 @@ def parseSessionToQuestions(content):
     return questions_in_session
 
 
-def scrapeQuestionWithId(question_id):
+def scrapeQuestionWithId(question_id,context):
     ''' Scrape the page for a given question ID and return structured data. '''
 
     logger.debug('Scraping question {}'.format(question_id))
@@ -738,14 +738,15 @@ def questions(context, limit, members, dry_run):
     with click.progressbar(questions_to_scrape) as bar:
         for question_id in bar:
 
-            scraped_questions[question_id] = scrapeQuestionWithId(question_id)
+            scraped_questions[question_id] = scrapeQuestionWithId(question_id,context)
             context.obj['state']['questions'][question_id]['scraped_at'] = datetime.datetime.today()
 
     answered_questions = {}
 
     for question_id, question_object in scraped_questions.items():
 
-        if question_object['answered'] == True:
+        # question will be None if we failed to scrape it, e.g page error
+        if question_object is not None and question_object['answered'] == True:
             answered_date = question_object['answered_date']
             answered_questions.setdefault(answered_date, {})[question_id] = question_object
 
