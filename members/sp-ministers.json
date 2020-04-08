@@ -2318,6 +2318,7 @@
     "id": "scot.parliament.data/membergovernmentroles/211"
   }, 
   {
+    "end_date": "2020-02-17", 
     "start_date": "2016-05-18", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -2631,6 +2632,7 @@
     "id": "scot.parliament.data/membergovernmentroles/240"
   }, 
   {
+    "end_date": "2020-02-05", 
     "start_date": "2018-06-26", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -2661,6 +2663,7 @@
     "id": "scot.parliament.data/membergovernmentroles/243"
   }, 
   {
+    "end_date": "2020-02-17", 
     "start_date": "2018-06-26", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -2701,6 +2704,7 @@
     "id": "scot.parliament.data/membergovernmentroles/247"
   }, 
   {
+    "end_date": "2020-02-18", 
     "start_date": "2018-06-28", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -2721,6 +2725,7 @@
     "id": "scot.parliament.data/membergovernmentroles/249"
   }, 
   {
+    "end_date": "2020-02-17", 
     "start_date": "2018-06-28", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -2791,6 +2796,7 @@
     "id": "scot.parliament.data/membergovernmentroles/256"
   }, 
   {
+    "end_date": "2020-02-17", 
     "start_date": "2018-06-28", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -2829,5 +2835,65 @@
       "uk.org.publicwhip/person/14029"
     ], 
     "id": "scot.parliament.data/membergovernmentroles/260"
+  }, 
+  {
+    "start_date": "2020-02-17", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for Public Finance and Migration", 
+    "person_id": [
+      "uk.org.publicwhip/person/25523"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/261"
+  }, 
+  {
+    "start_date": "2020-02-17", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Cabinet Secretary for Economy, Fair Work and Culture", 
+    "person_id": [
+      "uk.org.publicwhip/person/14012"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/262"
+  }, 
+  {
+    "start_date": "2020-02-17", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Cabinet Secretary for the Constitution, Europe and External Affairs", 
+    "person_id": [
+      "uk.org.publicwhip/person/14089"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/263"
+  }, 
+  {
+    "start_date": "2020-02-17", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Cabinet Secretary for Rural Economy and Tourism", 
+    "person_id": [
+      "uk.org.publicwhip/person/13980"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/264"
+  }, 
+  {
+    "start_date": "2020-02-18", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Cabinet Secretary for Finance", 
+    "person_id": [
+      "uk.org.publicwhip/person/25504"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/265"
+  }, 
+  {
+    "start_date": "2020-02-18", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for Europe and International Development", 
+    "person_id": [
+      "uk.org.publicwhip/person/25506"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/266"
   }
 ]
