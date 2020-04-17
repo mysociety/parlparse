@@ -361,7 +361,10 @@ class ParsedPage(object):
     @property
     def normalized_session_name(self):
         s = re.sub(r'\s+', '-', self.session)
-        return re.sub(r'[^-\w]', '', s).lower()
+        s = re.sub(r'[^-\w]', '', s).lower()
+        if s in ('leaders-virtual-question-time', 'members-virtual-question-time'):
+            s = 'meeting-of-the-parliament'
+        return s
 
     @property
     def suggested_file_name(self):
