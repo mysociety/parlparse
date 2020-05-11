@@ -274,7 +274,15 @@ def get_title_and_date(soup, page_id):
             return (None, None)
         else:
             raise Exception, "No title was found in a page that's non-empty; the page ID was: %d" % (page_id,)
-    m = re.search(r'^(.*)\s+(\d{1,2} \w+ \d{4})\s*(?:[[({]Draft[)\][}]\s*)?(?:Business (?:until|from|between) \d\d:\d\d(?: (?:until|to|and|and after) \d\d:\d\d)?|Test)?$', title)
+    m = re.search(r'''(?x)
+            ^(.*) \s+
+            ( \d{1,2} [ ] \w+ [ ] \d{4} ) \s*
+            (?: [[({] Draft [)\][}] \s* )?
+            (?: Business [ ] (?:until|from|between) [ ] \d\d:\d\d (?: [ ] (?:until|to|and|and[ ]after) [ ] \d\d:\d\d)?
+                | Test
+                | \1
+            )?
+            $''', title)
     if m:
         session = m.group(1).rstrip(',')
         report_date = dateparser.parse(m.group(2)).date()
