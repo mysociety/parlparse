@@ -362,7 +362,7 @@ class ParsedPage(object):
     def normalized_session_name(self):
         s = re.sub(r'\s+', '-', self.session)
         s = re.sub(r'[^-\w]', '', s).lower()
-        if s in ('leaders-virtual-question-time', 'members-virtual-question-time'):
+        if s in ('leaders-virtual-question-time', 'members-virtual-question-time', 'meeting-of-the-parliament-virtual-session'):
             s = 'meeting-of-the-parliament'
         return s
 
