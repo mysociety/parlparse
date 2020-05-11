@@ -211,7 +211,8 @@ def scrapeQuestionWithId(question_id,context):
         question_parsed_data = parseQuestionPage(question_page.content)
 
     else:
-        logger.warning('Question {} returned HTTP {}'.format(question_id, question_page.status_code))
+        if question_page.status_code != 403:
+            logger.warning('Question {} returned HTTP {}'.format(question_id, question_page.status_code))
         context.obj['state']['questions'][question_id]['to_scrape'] = True
 
         question_parsed_data = None
