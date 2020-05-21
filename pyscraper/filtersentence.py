@@ -26,7 +26,7 @@ from resolvemembernames import memberList
 # official report references (mostly in wranses), and hyperlinks (most of which
 # are badly typed and full of spaces).
 
-# the structure of each function is to search for an occurrance of the pattern.
+# the structure of each function is to search for an occurrence of the pattern.
 # it sends the text before the match to the next function, it encodes the
 # pattern itself however it likes, and sends the text after the match back to
 # itself as a kind of recursion.

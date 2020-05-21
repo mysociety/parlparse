@@ -15,7 +15,7 @@ toppath = miscfuncs.toppath
 seelines = open(os.path.join(miscfuncs.tmppath, 'emblinks.txt'), "w")
 
 # this detects the domain
-reglinkdomt = '(?:\.or[gq]|\.com|[\.\s]uk|\.tv|\.net|\.gov|\.int|\.info|\.it|\.ch|\.es|\.mz|\.lu|\.fr|\.dk|\.mil|\.eu)(?!\w)'
+reglinkdomt = '(?:\.or[gq]|\.com|\.uk|\.tv|\.net|\.gov|\.int|\.info|\.it|\.ch|\.es|\.mz|\.lu|\.fr|\.dk|\.mil|\.eu)(?!\w)'
 reglinkdomf = 'https?://(?:(?:www.)?defraweb|nswebcopy|\d+\.\d+\.\d+\.\d+)|www.defraweb'
 reglinkdom = '(?:https? ?:? ?/{1,3}(?:www)?|www)(?:(?:[^/:;,?=()<>"\'@](?!www\.))*?(?:%s))+|%s' % (reglinkdomt, reglinkdomf)
 

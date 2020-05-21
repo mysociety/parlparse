@@ -1,0 +1,108 @@
+#!/usr/bin/env python
+
+import json
+import re
+import string
+import requests
+import requests_cache
+from bs4 import BeautifulSoup
+requests_cache.install_cache(allowable_codes=(200, 404))
+
+
+def parse_date(d, typ):
+    if not d or d == '?':
+        return ''
+    try:
+        return int(d)
+    except ValueError:
+        pass
+    if typ == 'end' and d == 'January  6, 1835':
+        d = 'December 29, 1834'
+    m = re.search('\d{4}', d)
+    return int(m.group(0))
+
+
+JSON = 'members/people.json'
+data = json.load(open(JSON))
+people = {}
+for person in data['persons']:
+    for name in person.get('other_names', []):
+        if name['note'] != 'Main':
+            continue
+        if 'family_name' not in name:
+            continue
+        lookup = '%s, %s (%s)' % (name['family_name'], name['given_name'], name.get('honorific_prefix', ''))
+        people.setdefault(lookup, []).append(person)
+
+presence = {}
+for mship in data['memberships']:
+    if 'person_id' not in mship:
+        continue
+    presence.setdefault(mship['person_id'], {})
+    presence[mship['person_id']]['min'] = min(int(mship['start_date'][:4]), presence.get(mship['person_id'], {}).get('min', 9999))
+    presence[mship['person_id']]['max'] = max(int(mship.get('end_date', '9999-12-31')[:4]), presence.get(mship['person_id'], {}).get('max', 0))
+
+
+result = {}
+for l in string.ascii_lowercase:
+    if l == 'x':
+        continue
+    r = requests.get('https://api.parliament.uk/historic-hansard/people/%s' % l)
+    r.encoding = 'utf-8'
+    html = r.text
+    soup = BeautifulSoup(html, "html.parser")
+    lis = soup.find('ol').find_all('li')
+    for li in lis:
+        a = li.find('a')
+        url = a['href']
+        print '\r\x1b[K' + url,
+        html = requests.get('https://api.parliament.uk/historic-hansard/people/%s/index.html' % url).text
+        if html == 'Page not found':
+            html = requests.get('https://api.parliament.uk/historic-hansard/people/%s' % url).text
+        if '<h2>Constituencies</h2>' not in html:
+            continue  # Not an MP
+        fr = to = ''
+        for ship in re.findall("<li class='constituency'><a.*?</a> (.*?) - ?(.*)</li>", html):
+            if not fr:
+                fr = parse_date(ship[0], 'start')
+            t = parse_date(ship[1], 'end')
+            if not to or t > to:
+                to = t
+
+        if fr > 1935 or to < 1918:
+            continue  # Do not care
+
+        name = a.string
+        m = re.match('(.+), (.*) \((.*)\)$', name)
+        family, given, honorific = m.groups()
+
+        if name == 'Power, Patrick (Mr)':
+            to = 1913  # Historic Hansard site wrong for this (and many other Irish entries)
+        if name == 'Millar, James (Sir)':
+            fr = 1911  # This actually is 1910, but TWFY appears to be missing some 1910-only entries
+
+        matches = len(people.get(name, []))
+# This would only be needed for modern MPs lacking honorifics
+#        if matches == 0:
+#            name = '%s, %s ()' % (family, given)
+#            matches = len(people.get(name, []))
+
+        if matches:
+            found = False
+            for m in people[name]:
+                pid = m['id']
+                if fr == presence[pid]['min'] and to == presence[pid]['max']:
+                    if pid in result:
+                        raise Exception
+                    m['identifiers'].append({'identifier': url, 'scheme': 'historichansard_url'})
+                    result[pid] = url
+                    people[name] = [mm for mm in people[name] if mm['id'] != pid]
+                    found = True
+            if not found:
+                print '\n', url, presence[pid]['min'], presence[pid]['max'], fr, to
+                raise Exception
+        else:
+            print '\n', matches, url
+            raise Exception
+
+json.dump(data, open(JSON, 'w'), indent=2, sort_keys=True)

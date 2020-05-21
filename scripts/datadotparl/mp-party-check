@@ -1,0 +1,84 @@
+#!/usr/bin/env python
+
+# Grabs the latest members data from data.parliament XML and update accordingly.
+# Get data using crawl-datadotparl-members.py
+
+import sys
+import json
+from lxml import etree
+
+# Source XML files to use for the list of members
+source_files = [
+  'all-current-commons',
+]
+
+parser = etree.ETCompatXMLParser()
+etree.set_default_parser(parser)
+
+
+def parse(fn, root_tag):
+  try:
+    xml = etree.parse(fn).getroot()
+  except:
+    raise Exception('Data from %s does not seem to be valid XML.' % fn)
+  if xml.tag != root_tag:
+    raise Exception('Root tag in %s is not "%s" as expected, got "%s"' % (fn, root_tag, xml.tag))
+  return xml
+
+
+parl_member_ids = set()
+for source_file in source_files:
+  parl_members_slim = parse('../../rawdata/datadotparl/' + source_file + '.xml', 'Members')
+  parl_member_ids |= set(member.attrib['Member_Id'] for member in parl_members_slim)
+
+# Enrich the data!
+parl_members = dict()
+for member_id in parl_member_ids:
+  member_fullbio_xml = parse('../../rawdata/datadotparl/' + member_id + '.xml', 'Members')
+  parl_members[member_id] = member_fullbio_xml.find('Member')
+
+##########
+# At this point parl_members contains a complete set of data.
+##########
+
+# Import people.xml
+people_json = json.load(open('../../members/people.json'))
+
+posts = {}
+for post in people_json['posts']:
+  posts[post['id']] = post['organization_id']
+
+people = []
+for person in people_json['persons']:
+  for i in person.get('identifiers', []):
+    if i['scheme'] == 'datadotparl_id':
+      person['datadotparl_id'] = i['identifier']
+      people.append(person)
+
+curr_party = {}
+for mship in people_json['memberships']:
+  if 'end_date' not in mship and 'on_behalf_of_id' in mship and 'post_id' in mship and posts[mship['post_id']] == 'house-of-commons':
+    curr_party[mship['person_id']] = mship['on_behalf_of_id']
+
+for person in people:
+  if person['id'] not in curr_party: continue
+
+  try:
+    parl_data = parl_members[person['datadotparl_id']]
+  except KeyError:
+    continue
+
+  curr_party_parl = '-'
+  for p in parl_data.find('Parties').findall('Party'):
+    if p.find('EndDate').text: continue
+    curr_party_parl = p.find('Name').text
+
+  canon_parl = curr_party_parl.lower().replace(' ', '-')
+  canon_parl = canon_parl.replace('democratic-unionist-party', 'dup')
+  canon_parl = canon_parl.replace('social-democratic-&-labour', 'social-democratic-and-labour')
+  canon_parl = canon_parl.replace(u'sinn-f\xe9in', 'sinn-fein')
+  canon_parl = canon_parl.replace('green-party', 'green')
+  canon_us = curr_party[person['id']].replace('labourco-operative', 'labour')
+  if canon_parl == canon_us: continue
+
+  print person['id'], curr_party_parl.encode('utf-8'), curr_party[person['id']].encode('utf-8')

@@ -222,7 +222,7 @@ minute_order=SEQ(
 	)
 
 # all p ul
-# clause, ((another)? amendment proposal, (question put, division) or (question proposed - amendment by leave withdrawn) or (question - put and negatived) or (question proposed, that the amendment be made) [? after a division / deferred divisions] 'and it being ? oclock on clauses A-B', (question - put and negatived), (question put, that clause A stand part of the bill, division), clauses C to B agreed to, chairmen left chair to report, hline, dep speaker resumes ..., comittee again to-morrow
+# clause, ((another)? amendment proposal, (question put, division) or (question proposed - amendment by leave withdrawn) or (question - put and negatived) or (question proposed, that the amendment be made) [? after a division / deferred divisions] 'and it being ? oclock on clauses A-B', (question - put and negatived), (question put, that clause A stand part of the bill, division), clauses C to B agreed to, chairmen left chair to report, hline, dep speaker resumes ..., committee again to-morrow
 
 # clauses E to F agreed to, bill to be reported (dep speaker...), ord bill be read a third time ...
 
@@ -840,7 +840,7 @@ app_nosubpar=SEQ(
 	pattern('\s*<p><ul>\(\d+\)([^<]|<i>|</i>)*</ul></p>')
 	)
 
-#date accidently put in a separate paragraph
+#date accidentally put in a separate paragraph
 
 app_date_sep=pattern('\s*<p><ul>dated ([^<]|<i>|</i>)*?\[[a-zA-Z ]*\].</ul></p>')
 
@@ -915,7 +915,7 @@ chairmens_panel=SEQ(
 	)
 
 #TODO: this is absorbed into appendices on some occasions, need to stop that
-#happening, eg 2001-10-18. It can preceed westminsterhall.
+#happening, eg 2001-10-18. It can precede westminsterhall.
 
 certificate=SEQ(
 	POSSIBLY(pattern('\s*<p( align=center)?>_+</p>')),

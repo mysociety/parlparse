@@ -84,7 +84,7 @@ def add_member_id_attribute(item,speakername,date,id_attribute='speakerid'):
 
 # FIXME: use the common version of this eventually:
 def non_tag_data_in(o):
-    """Take a BeautifulSoup element, typicaly a Tag, and return the
+    """Take a BeautifulSoup element, typically a Tag, and return the
     text parts it contains, concatenated into a single string"""
 
     if o.__class__ == NavigableString:
@@ -101,7 +101,7 @@ def non_tag_data_in(o):
         return o
 
 def tidied_non_tag_data_in(o):
-    """Take a BeautifulSoup element, typicaly a Tag, and return the
+    """Take a BeautifulSoup element, typically a Tag, and return the
     text parts it contains, concatenated into a single string, but
     remove and leading and trailing whitespace, and collapse any
     whitespace within the string into a single space"""

@@ -32,7 +32,7 @@ ARGS = parser.parse_args()
 cache_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cache')
 requests_cache.install_cache(cache_path, expire_after=60*60*12)
 
-HOST = 'http://www.parliament.uk'
+HOST = 'https://www.parliament.uk'
 URL_ROOT = '%s/business/publications/written-questions-answers-statements/' % HOST
 if ARGS.type == 'answers':
     URL_INDEX = URL_ROOT + 'written-questions-answers/'
@@ -104,7 +104,7 @@ def main():
         if 'Server Error' in r.content:
             requests.Session().cache.delete_url(url_page)
             errors += 1
-            if errors >= 3:
+            if errors >= 5:
                 raise Exception, 'Too many server errors, giving up'
             continue
         writtens.add_from_html(r.content)

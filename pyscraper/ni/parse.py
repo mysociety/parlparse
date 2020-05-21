@@ -49,7 +49,7 @@ class ParseDayParserBase(object):
         return '%s.%s.%s' % (self.date, self.idA, self.idB)
 
     def time_period(self, ptext, optional=False):
-        match = re.search('(\d\d?)(?:[.:]\s*(\d\d))? ?(am|pm|noon|midnight)', ptext)
+        match = re.search('(\d\d?)(?:[.:]\s*(\d\d?))? ?(am|pm|noon|midnight)', ptext)
         if not match:
             if not optional:
                 raise ContextException, 'Time not found in TimePeriod %s' % p
@@ -60,6 +60,7 @@ class ParseDayParserBase(object):
         if hour==12 and match.group(3) in ('midnight', 'am'):
             hour = 0
         minutes = match.group(2) or '00'
+        if len(minutes) == 1: minutes = '0' + minutes
         timestamp = "%s:%s" % (hour, minutes)
         return timestamp
 
@@ -508,7 +509,7 @@ class ParseDayJSON(ParseDayParserBase):
             if not text:
                 print "WARNING: Empty line: %s" % line
             elif line['ComponentType'] == 'Document Title':
-                assert text == 'Plenary, %s/%s/%s' % (self.date[8:10], self.date[5:7], self.date[0:4])
+                assert re.match('(Plenary|PLE), %s/%s/%s$' % (self.date[8:10], self.date[5:7], self.date[0:4]), text)
             elif line['ComponentType'] == 'Time':
                 timestamp = self.time_period(text)
             elif line['ComponentType'] == 'Header':
@@ -549,7 +550,7 @@ class ParseDayJSON(ParseDayParserBase):
             elif line['ComponentType'] == 'Quote':
                 self.text += '<p class="indent">%s</p>\n' % text
             elif line['ComponentType'] in ('Plenary Item Text', 'Procedure Line'):
-                match = re.match('The Assembly met at ((\d\d?):(\d\d) (am|pm)|12 noon)', text)
+                match = re.match('The Assembly met at ((\d\d?):(\d\d?) (am|pm)|12 noon)', text)
                 if match:
                     timestamp = self.time_period(text)
                     self.speaker['ts'] = timestamp

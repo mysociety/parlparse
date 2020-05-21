@@ -35,13 +35,19 @@ class MemberList(ResolverBase):
     def partylist(self):
         return self.parties.keys()
 
-    def list(self, date=None):
-        if not date:
+    def list(self, date=None, fro=None, to=None):
+        if date == 'now':
             date = datetime.date.today().isoformat()
+        if date:
+            fro = to = date
+        if not fro:
+            fro = '1000-01-01'
+        if not to:
+            to = '9999-12-31'
         matches = self.members.values()
         ids = []
         for m in matches:
-            if 'start_date' in m and date >= m["start_date"] and date <= m["end_date"]:
+            if 'start_date' in m and to >= m["start_date"] and fro <= m["end_date"]:
                 ids.append(self.membertoperson(m["id"]))
         return ids
 

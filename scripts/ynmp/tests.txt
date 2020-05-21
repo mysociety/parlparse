@@ -1,8 +1,8 @@
-YourNextMP updating on election night
-=====================================
+DemocracyClub updating on election night
+========================================
 
-This script is to read in YourNextMP's CSV file and update our people.json file
-to match any results of elected candidates.
+This script is to read in DemocracyClub's CSV file and update our people.json
+file to match any results of elected candidates.
 
 First, let's get the functions and load in the existing people.json data:
 
@@ -12,24 +12,25 @@ First, let's get the functions and load in the existing people.json data:
 And we want a function to alter the fixture with different information:
 
     >>> import StringIO, csv
-    >>> source = open('fixture.csv').readlines()
-    >>> def alter(name, winner, pid=None):
+    >>> source = ['election_slug,ballot_paper_id,gss,person_id,person_name,party_id,party_name,theyworkforyou_url,wikidata_id']
+    >>> cols = source[0].split(',')
+    >>> def alter(cmd, cons_id, dcid=None, name=None, party=None, pid=None):
     ...     global source
     ...     reader = csv.DictReader(source)
-    ...     fn = None
     ...     s = StringIO.StringIO()
+    ...     fn = csv.DictWriter(s, cols)
+    ...     fn.writeheader()
     ...     for line in reader:
-    ...         if not fn:
-    ...             fn = csv.DictWriter(s, reader.fieldnames)
-    ...             fn.writeheader()
-    ...         if line['name'] == name:
-    ...             line['elected'] = winner
-    ...             if pid:
-    ...                 line['parlparse_id'] = pid
-    ...         fn.writerow(line)
+    ...         if cmd == 'add' or line['ballot_paper_id'] != cons_id:
+    ...             fn.writerow(line)
+    ...     if cmd == 'add':
+    ...         fn.writerow({'election_slug':'parl.2019-12-12', 'ballot_paper_id': cons_id, 'person_id': dcid, 'person_name': name, 'party_name': party, 'theyworkforyou_url': pid})
     ...     s.seek(0)
     ...     source = s.readlines()
-    ...     s.seek(0)
+
+    >>> def process():
+    ...     data['dealt_with'] = []
+    ...     s = StringIO.StringIO(''.join(source))
     ...     return update_from(s, data)
 
 Now we want to call it with the CSV file before anything has happened:
@@ -39,45 +40,54 @@ Now we want to call it with the CSV file before anything has happened:
 
 Diane Abbott wins:
 
-    >>> alter('Diane Abbott', 'True')
-    NEW result 40706, Diane Abbott, Labour, Hackney North and Stoke Newington, uk.org.publicwhip/person/10001
+    >>> alter('add', 'parl.hackney-north-and-stoke-newington.2019-12-12', 2567, 'Diane Abbott', 'Labour', '10001')
+    >>> process()
+    NEW result 42077, Diane Abbott, Labour, hackney-north-and-stoke-newington, uk.org.publicwhip/person/10001
     True
 
-Nick Clegg loses:
+Boris Johnson loses:
 
-    >>> alter('Peter Garbutt', 'True')
-    NEW result 40707, Peter Garbutt, Green, Sheffield, Hallam, uk.org.publicwhip/person/25268
+    >>> alter('add', 'parl.uxbridge-and-south-ruislip.2019-12-12', 72363, 'Count Binface', 'Independent')
+    >>> process()
+    NEW result 42078, Count Binface, Independent, uxbridge-and-south-ruislip, uk.org.publicwhip/person/25791
     True
 
 Actually, that was a mistake at the YNMP end, revert until we know the result:
 
-    >>> alter('Peter Garbutt', 'False')
-    Removing result from uk.org.publicwhip/member/40707 (was Peter Garbutt, Green, Sheffield, Hallam, )
+    >>> alter('remove', 'parl.uxbridge-and-south-ruislip.2019-12-12')
+    >>> process()
+    Removing result from uk.org.publicwhip/member/42078 (was uk.org.publicwhip/cons/2241, independent, uk.org.publicwhip/person/25791)
     True
 
-It turns out Nick Clegg actually won:
+We then think someone *else* wins:
 
-    >>> alter('Nick Clegg', 'True')
-    Updating uk.org.publicwhip/member/40707 with Nick Clegg, Liberal Democrat, Sheffield, Hallam, uk.org.publicwhip/person/11812
+    >>> alter('add', 'parl.uxbridge-and-south-ruislip.2019-12-12', 72364, 'Lord Buckethead', 'Monster Raving Loony Party')
+    >>> process()
+    Updating uk.org.publicwhip/member/42078 with Lord Buckethead, Monster Raving Loony Party, uxbridge-and-south-ruislip, uk.org.publicwhip/person/25792
     True
 
-Alex Salmond wins, and YNMP have supplied his parlparse ID:
+It turns out Boris Johnson actually won, we get that change at once:
 
-    >>> alter('Alex Salmond', 'True', 'uk.org.publicwhip/person/10525')
-    NEW result 40708, Alex Salmond, Scottish National Party, Gordon, uk.org.publicwhip/person/10525
+    >>> alter('remove', 'parl.uxbridge-and-south-ruislip.2019-12-12')
+    >>> alter('add', 'parl.uxbridge-and-south-ruislip.2019-12-12', 4546, 'Boris Johnson', 'Conservative and Unionist Party', 10999)
+    >>> process()
+    Updating uk.org.publicwhip/member/42078 with Boris Johnson, Conservative, uxbridge-and-south-ruislip, uk.org.publicwhip/person/10999
     True
 
-Two Helen Jones both win, one with a person ID, one without:
+Two David Jones both win, one with a person ID, one without:
 
-    >>> alter('Helen Jones', 'True')
-    NEW result 40709, Helen Jones, Trade Unionist and Socialist Coalition, Cardiff West, uk.org.publicwhip/person/25269
-    NEW result 40710, Helen Jones, Labour, Warrington North, uk.org.publicwhip/person/10319
+    >>> alter('add', 'parl.clwyd-west.2019-12-12', 3151, 'David Jones', 'Conservative and Unionist Party', 11506)
+    >>> alter('add', 'parl.blackley-and-broughton.2019-12-12', 5750, 'David Jones', 'Green Party')
+    >>> process()
+    NEW result 42079, David Jones, Conservative, clwyd-west, uk.org.publicwhip/person/11506
+    NEW result 42080, David Jones, Green, blackley-and-broughton, uk.org.publicwhip/person/25793
     True
 
-David Drew wins, and YNMP have not supplied his parlparse ID (he was an MP until 2010):
+Tessa Jane Munt wins, and YNMP have not supplied her parlparse ID (she was an MP until 2015):
 
-    >>> alter('David Drew', 'True')
-    NEW result 40711, David Drew, Labour/Co-operative, Stroud, uk.org.publicwhip/person/25270
+    >>> alter('add', 'parl.wells.2019-12-12', 1699, 'Tessa Munt', 'Liberal Democrats')
+    >>> process()
+    NEW result 42081, Tessa Munt, Liberal Democrat, wells, uk.org.publicwhip/person/25794
     True
 
 If we then just run again with no changes, nothing should happen:

@@ -33,6 +33,7 @@ def GlueByContents(fout, url_contents, regmemdate):
     mps = soup.find('a', attrs={'name':'A'}).parent.findNextSiblings('p')
     for p in mps:
         url = urlparse.urljoin(url_contents, p.a['href'])
+        url = url.encode('utf-8')
         #print " reading " + url
         ur = urllib.urlopen(url)
         sr = ur.read()
@@ -200,6 +201,17 @@ def FindRegmemPages():
             date = mx.DateTime.DateTimeFrom(alldates[0]).date
             if (date, ixurl) not in urls:
                 urls.append((date, ixurl))
+        elif re.search('Session 201[79]', content):
+            allurl_soups = soup.findAll('a', href=re.compile("(memi02|part1contents|/contents\.htm)"))
+            for url_soup in allurl_soups:
+                url = url_soup['href']
+                url = urlparse.urljoin(ixurl, url)
+                date = re.sub('^.*(\d\d)(\d\d)(\d\d).*', r'20\1-\2-\3', url)
+                url_path = urlparse.urlparse(url)[2]
+                if url_path in corrections:
+                    date = corrections[url_path]
+                if (date, url) not in urls:
+                    urls.append((date, url))
         else:
             allurl_soups = soup.findAll('a', href=re.compile("(memi02|part1contents|/contents\.htm)"))
             for url_soup in allurl_soups:

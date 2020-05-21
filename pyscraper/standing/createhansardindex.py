@@ -251,7 +251,7 @@ def GetReportProceedings(urlpage, year):
 			elif year == "1998" and re.search("/pa/cm199899/cmstand/special/special.htm$", urlpage):
 				assert p[0] == 2  # 1st meeting held in private
 			elif year == "1999" and re.search("/pa/cm199900/cmstand/a/cmserv.htm$", urlpage):
-				assert p[0] == 25  # 1st 24 meeting ommitted
+				assert p[0] == 25  # 1st 24 meeting omitted
 			elif year == "2006" and re.search("/pa/cm200607/cmpublic/cmpbwelf.htm", urlpage):
 				assert p[0] == 13 # 1st 12 meetings in previous year
 			elif year == "2012" and re.search("/bills/2010-12/financeno4.*bill201213", urlpage):

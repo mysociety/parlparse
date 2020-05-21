@@ -1268,7 +1268,7 @@ def CheckPPStoMinisterpromotions(mofficegroup):
 	#		if mofficegroup[0][1].fullname not in ["Paddy Tipping"]:
 	#			print "New demotion to PPS for: ", mofficegroup[0][1].fullname
 
-	# check that goverment positions don't overlap committee positions
+	# check that government positions don't overlap committee positions
 	committeegovlist.sort()
 	ioverlaps = 0
 	for i in range(len(committeegovlist)):

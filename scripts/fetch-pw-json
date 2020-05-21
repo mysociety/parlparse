@@ -4,31 +4,24 @@
 
 import os
 import re
-import urllib2
+import requests
 
 from BeautifulSoup import MinimalSoup
 
-base_url = 'http://publicwhip.org.uk/data/popolo/'
+base_url = 'https://www.publicwhip.org.uk/data/popolo/'
+headers = {
+    'User-Agent': 'TheyWorkForYou/1.0',
+}
 
 OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../parldata/scrapedjson/policy-motions')
 
 
-def urlopen(url):
-    request = urllib2.Request(url)
-    request.add_header('User-Agent', 'TheyWorkForYou/1.0')
-    return urllib2.urlopen(request)
-
-
-def write(url, fn):
-  data = urlopen(url).read()
-  open(fn, 'w').write(data)
-
-
-all_json = urlopen(base_url).read()
+all_json = requests.get(base_url, headers=headers).content
 soup = MinimalSoup(all_json)
 json_files = soup.findAll( href=re.compile("json") )
 
 for json in json_files:
     url = "%s%s" % ( base_url, json['href'] )
     out = "%s/%s" % ( OUT_DIR, json['href'] )
-    write(url, out)
+    data = requests.get(url, headers=headers).content
+    open(out, 'w').write(data)

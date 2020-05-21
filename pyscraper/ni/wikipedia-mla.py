@@ -22,28 +22,29 @@ wikimembers  = {}
 def read(y):
     with open('../rawdata/Members_of_the_NIA_%d' % y) as ur:
         return ur.read()
-content = read(2003) + read(2007) + read(2011) + read(2016)
+content = read(2003) + read(2007) + read(2011) + read(2016) + read(2017)
 
 matches = set()
 
 # Links from all pages
-matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+"[^>]*>([^<]+)</a>(?: \(<b>Leader</b>\))?</td>'
+matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a>\s*</td>\s+<td><a href="/wiki/[^"]+"[^>]*>([^<]+)</a>(?: \(<b>Leader</b>\))?\s*</td>'
 matches.update(re.findall(matcher, content))
 
 # 3rd Assembly replacements
-matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a> \((?:resigned|deceased)\), replaced by <a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a></td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a></td>'
+matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a> \((?:resigned|deceased)\), replaced by <a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a>\s*</td>\s+<td><a href="/wiki/[^"]+" title="[^"]+">([^<]+)</a>\s*</td>'
 for m in re.findall(matcher, content):
     matches.add( (m[0], m[1], m[4]) )
     matches.add( (m[2], m[3], m[4]) )
 
-# 4th Assembly
-matcher = '<td><a href="([^"]*)" title="[^"]*">([^<]+)</a></td>\s*<th style="[^"]*">()</th>\s*<td.*?</td>\s*</tr>'
+# 4-6th Assembly
+matcher = '<td><a href="([^"]*)" title="[^"]*">([^<]+)</a>\s*</td>\s*<t[hd] style="[^"]*">()\s*</t[hd]>\s*<td.*?\s*</td>\s*</tr>'
 matches.update(re.findall(matcher, content))
 
-# 4th Assembly changes
-changes = re.search('Members of the 4th.*<h2><span[^>]*>Changes</span>(.*?)</html>(?s)', content).group(1)
-for m in re.findall('<td>.*?<a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a>.*?</td>\s*</tr>', changes):
-    matches.add((m[0], m[1], None))
+# 4-6th Assembly changes
+changes = re.findall('<h2><span[^>]*>MLAs by constituency.*?<h2><span[^>]*>Changes(.*?)</html>(?s)', content)
+for change in changes:
+    for m in re.findall('<td>.*?<a href="(/(?:wiki|w)/[^"]+)"[^>]*>([^<]+)</a>.*?\s*</td>\s*</tr>', change):
+        matches.add((m[0], m[1], None))
 
 for (url, name, cons) in matches:
     name = name.decode('utf-8')
@@ -63,10 +64,7 @@ for id in k:
 print '</publicwhip>'
 
 wikimembers = set(wikimembers.keys())
-allmembers = set(memberList.list())
-for d in ('2004-01-01', '2007-01-10', '2011-01-01', '2015-01-01', '2016-01-01', '2016-02-01'):
-    allmembers |= set(memberList.list(d))
-
+allmembers = set(memberList.list(fro='2004-01-01'))
 symdiff = allmembers.symmetric_difference(wikimembers)
 if len(symdiff) > 0:
     print >>sys.stderr, "Failed to get all MLAs, these ones in symmetric difference"

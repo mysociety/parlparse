@@ -229,7 +229,7 @@ entitymap = {
         '&#095;':'_',    # this is underscore symbol
         '&#95;':'_',    # this is underscore symbol
 
-		'&#039;':"'",   # posession apostrophe
+		'&#039;':"'",   # possession apostrophe
         "&#8364;":'&euro;', # this is euro currency
         "&#8482;":'&trade;',
         "&#8226;":'&bull;',

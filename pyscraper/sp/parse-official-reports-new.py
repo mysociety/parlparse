@@ -151,30 +151,14 @@ def get_unique_person_id(tidied_speaker, on_date):
         # is something we know about, but not an MSP (e.g Lord
         # Advocate)
         return None
+    elif len(ids) == 0:
+        log_speaker(tidied_speaker,str(on_date),"missing")
+        return None
+    elif len(ids) == 1:
+        return ids[0]
     else:
-        if len(ids) == 0:
-            log_speaker(tidied_speaker,str(on_date),"missing")
-            return None
-        elif len(ids) == 1:
-            Speech.speakers_so_far.append(ids[0])
-            return ids[0]
-        else:
-            final_id = None
-            # If there's an ambiguity there our best bet is to go
-            # back through the previous IDs used today, and pick
-            # the most recent one that's in the list we just got
-            # back...
-            for i in range(len(Speech.speakers_so_far) - 1, -1, -1):
-                older_id = Speech.speakers_so_far[i]
-                if older_id in ids:
-                    final_id = older_id
-                    break
-            if final_id:
-                Speech.speakers_so_far.append(final_id)
-                return final_id
-            else:
-                log_speaker(tidied_speaker,str(on_date),"genuine ambiguity")
-                # self.person_id = None
+        raise Exception, "The speaker '%s' could not be resolved, found: %s" % (tidied_speaker, ids)
+
 
 def is_member_vote(element, vote_date, expecting_a_vote=True):
     """Returns a speaker ID if this looks like a member's vote in a division
@@ -290,13 +274,20 @@ def get_title_and_date(soup, page_id):
             return (None, None)
         else:
             raise Exception, "No title was found in a page that's non-empty; the page ID was: %d" % (page_id,)
-    m = re.search(r'^(.*)\s+(\d{2} \w+ \d{4})\s*(?:[[(]Draft[)\][]|Business until \d\d:\d\d|Test)?$', title)
+    m = re.search(r'^(.*)\s+(\d{1,2} \w+ \d{4})\s*(?:[[({]Draft[)\][}]\s*)?(?:Business (?:until|from|between) \d\d:\d\d(?: (?:until|to|and|and after) \d\d:\d\d)?|Test)?$', title)
     if m:
         session = m.group(1).rstrip(',')
         report_date = dateparser.parse(m.group(2)).date()
         return (session, report_date)
     else:
-        raise Exception, "Failed to parse the title and date from: {0}".format(title)
+        # try committee format
+        m = re.search(r'^(.*)\s+(\d{1,2} \w+ \d{4})\s*(?:Agenda.*)', title)
+        if m:
+            session = m.group(1).rstrip(',')
+            report_date = dateparser.parse(m.group(2)).date()
+            return (session, report_date)
+        else:
+            raise Exception, "Failed to parse the title and date from: {0}".format(title)
 
 acceptable_elements = ['a', 'abbr', 'acronym', 'address', 'area', 'b',
       'big', 'blockquote', 'body', 'br', 'button', 'caption', 'center',
@@ -370,7 +361,10 @@ class ParsedPage(object):
     @property
     def normalized_session_name(self):
         s = re.sub(r'\s+', '-', self.session)
-        return re.sub(r'[^-\w]', '', s).lower()
+        s = re.sub(r'[^-\w]', '', s).lower()
+        if s in ('leaders-virtual-question-time', 'members-virtual-question-time'):
+            s = 'meeting-of-the-parliament'
+        return s
 
     @property
     def suggested_file_name(self):
@@ -513,12 +507,6 @@ class Speech(object):
         self.person_id = final_id
         self.speaker_name = tidied_speaker
 
-    speakers_so_far = []
-
-    @classmethod
-    def reset_speakers_so_far(cls):
-        cls.speakers_so_far = []
-
     def as_xml(self, speech_id):
         attributes = {'url': self.url,
                       'id': speech_id}
@@ -566,8 +554,6 @@ def parse_html(session, report_date, soup, page_id, original_url):
     div_children_of_report_view = report_view.findChildren('div', recursive=False)
     if len(div_children_of_report_view) != 1:
         raise Exception, 'We only expect one <div> child of <div id="ReportView">; there were %d in page with ID %d' % (len(div_children_of_report_view), page_id)
-
-    Speech.reset_speakers_so_far()
 
     main_div = div_children_of_report_view[0]
 
@@ -711,6 +697,7 @@ def parse_html(session, report_date, soup, page_id, original_url):
                         current_division_way = division_way
                     elif member_vote:
                         if current_votes is None:
+                            print tidied_paragraph
                             raise Exception, "Got a member's vote before an indication of which way the vote is"
                         current_votes.add_vote(current_division_way, tidied_paragraph, member_vote)
                     elif maybe_time:

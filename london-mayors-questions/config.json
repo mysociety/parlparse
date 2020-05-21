@@ -1,0 +1,24 @@
+{
+  "default_start_date": "2019-01-01",
+  "xml_file_prefix": "lmqs",
+  "assembly_domain": "https://www.london.gov.uk",
+  "public_whip_question_id_prefix": "uk.org.publicwhip/london-mayors-questions/",
+  "current_mayor_name": "Sadiq Khan",
+  "name_regex_to_strip": [
+    " AM$",
+    " [CMO]BE$",
+    " \\(Chair\\)$",
+    " \\(Chairman\\)$",
+    " \\(Deputy Chair\\)$",
+    " \\(Deputy Chairman\\)$",
+    " \\(Deputy Chairman in the Chair\\)$",
+    " \\(Mayor of London\\)$",
+    "^Dr "
+  ],
+  "name_corrections": {
+    "Joanne McCarthy": "Joanne McCartney",
+    "Léonie Cooper": "Leonie Cooper",
+    "Steve O\u2019Connell": "Steve O'Connell",
+    "Sian Berry": "Siân Berry"
+  }
+}
