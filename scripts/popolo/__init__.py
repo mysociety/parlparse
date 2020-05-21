@@ -5,7 +5,6 @@ import os
 cur_dir = os.path.dirname(__file__)
 JSON = os.path.join(cur_dir, '..', '..', 'members', 'people.json')
 
-
 class Memberships(object):
     def __init__(self, mships, data):
         self._memberships = mships
@@ -103,7 +102,7 @@ class Popolo(object):
         self.memberships = Memberships(self.json['memberships'], self)
 
     def load(self, json_file):
-        self.json = j = json.load(open(json_file))
+        self.json = json.load(open(json_file))
         self.update_persons_map()
         self.update_memberships()
 
@@ -136,11 +135,12 @@ class Popolo(object):
             id = range_start
         return 'uk.org.publicwhip/%s/%d' % (type, id)
 
-    max_lord_id = lambda self: self._max_member_id('house-of-lords', 'lord', range_start=100000)  # Range ends at 199999
-    max_mp_id = lambda self: self._max_member_id('house-of-commons', range_start=0)  # Range ends at 79999
-    max_mla_id = lambda self: self._max_member_id('northern-ireland-assembly', range_start=90000)  # Range ends at 99999
-    max_msp_id = lambda self: self._max_member_id('scottish-parliament', range_start=80000) # Range ends at 89999
-    max_londonassembly_id = lambda self: self._max_member_id('london-assembly', range_start=200000)  # Range ends at 299999
+    max_mp_id = lambda self: self._max_member_id('house-of-commons', range_start=0)                 # Range ends at 69999
+    max_ms_id = lambda self: self._max_member_id('welsh-parliament', range_start=70000)             # Range ends at 79999
+    max_msp_id = lambda self: self._max_member_id('scottish-parliament', range_start=80000)         # Range ends at 89999
+    max_mla_id = lambda self: self._max_member_id('northern-ireland-assembly', range_start=90000)   # Range ends at 99999
+    max_lord_id = lambda self: self._max_member_id('house-of-lords', 'lord', range_start=100000)    # Range ends at 199999
+    max_londonassembly_id = lambda self: self._max_member_id('london-assembly', range_start=200000) # Range ends at 299999
 
     def max_person_id(self):
         id = max(p for p in self.persons.keys())
