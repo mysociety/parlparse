@@ -75,7 +75,7 @@ class Popolo(object):
     def update_persons_map(self):
         self.persons = {p['id']: p for p in self.json['persons'] if 'redirect' not in p}
         self.posts = {p['id']: p for p in self.json['posts']}
-        self.orgs = {o['name']: o['id'] for o in self.json['organizations']}
+        self.orgs = {o['id']: o for o in self.json['organizations']}
         self.names = {}
         self.identifiers = {}
 
@@ -101,6 +101,10 @@ class Popolo(object):
         self.memberships = None
         self.memberships = Memberships(self.json['memberships'], self)
 
+    def update_orgs(self):
+        self.orgs = None
+        self.orgs = {o['id']: o for o in self.json['organizations']}
+
     def load(self, json_file):
         self.json = json.load(open(json_file))
         self.update_persons_map()
@@ -119,6 +123,18 @@ class Popolo(object):
             else:
                 return (p for p in self.persons.values() if p['id'] == id).next()
 
+    def get_organization(self, id=None, name=None, scheme=None):
+        if name:
+            return [o for o in self.orgs.values() if o['name'] == name]
+        if id:
+            if scheme:
+                try:
+                    return (p for p in self.orgs.values() for i in p.get('identifiers', []) if i['scheme'] == scheme and i['identifier'] == id).next()
+                except StopIteration:
+                    return None
+            else:
+                return (o for o in self.orgs.values() if o['id'] == id).next()
+
     def add_person(self, person):
         self.json['persons'].append(person)
         self.update_persons_map()
@@ -126,6 +142,10 @@ class Popolo(object):
     def add_membership(self, mship):
         self.json['memberships'].append(mship)
         self.update_memberships()
+
+    def add_organization(self, org):
+        self.json['organizations'].append(org)
+        self.update_orgs()
 
     def _max_member_id(self, house, type='member', range_start=0):
         house_memberships = self.memberships.in_org(house)
