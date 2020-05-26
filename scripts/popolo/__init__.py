@@ -105,6 +105,10 @@ class Popolo(object):
         self.orgs = None
         self.orgs = {o['id']: o for o in self.json['organizations']}
 
+    def update_posts(self):
+        self.posts = None
+        self.posts = {p['id']: p for p in self.json['posts']}
+
     def load(self, json_file):
         self.json = json.load(open(json_file))
         self.update_persons_map()
@@ -135,6 +139,18 @@ class Popolo(object):
             else:
                 return (o for o in self.orgs.values() if o['id'] == id).next()
 
+    def get_post(self, id=None, name=None, scheme=None):
+        if name:
+            return [p for p in self.posts.values() if p['name'] == name]
+        if id:
+            if scheme:
+                try:
+                    return (p for p in self.posts.values() for i in p.get('identifiers', []) if i['scheme'] == scheme and i['identifier'] == id).next()
+                except StopIteration:
+                    return None
+            else:
+                return (p for p in self.posts.values() if p['id'] == id).next()
+
     def add_person(self, person):
         self.json['persons'].append(person)
         self.update_persons_map()
@@ -147,10 +163,22 @@ class Popolo(object):
         self.json['organizations'].append(org)
         self.update_orgs()
 
+    def add_post(self, post):
+        self.json['posts'].append(post)
+        self.update_posts()
+
     def _max_member_id(self, house, type='member', range_start=0):
         house_memberships = self.memberships.in_org(house)
         if house_memberships:
             id = max(int(m['id'].replace('uk.org.publicwhip/%s/' % type, '')) for m in house_memberships)
+        else:
+            id = range_start
+        return 'uk.org.publicwhip/%s/%d' % (type, id)
+
+    def max_post_id(self, house, type='cons', range_start=0):
+        house_posts = [p for p in self.posts.values() if p['organization_id'] == house]
+        if house_posts:
+            id = max(int(p['id'].replace('uk.org.publicwhip/%s/' % type, '')) for p in house_posts)
         else:
             id = range_start
         return 'uk.org.publicwhip/%s/%d' % (type, id)
