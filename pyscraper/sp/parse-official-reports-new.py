@@ -277,6 +277,7 @@ def get_title_and_date(soup, page_id):
     m = re.search(r'''(?x)
             ^(.*) \s+
             ( \d{1,2} [ ] \w+ [ ] \d{4} ) \s*
+            (?: [[({] (?:Virtual|Hybrid) (?: \s (?:Session|Meeting))? [)\][}] \s* )?
             (?: [[({] Draft [)\][}] \s* )?
             (?: Business [ ] (?:until|from|between) [ ] \d\d:\d\d (?: [ ] (?:until|to|and|and[ ]after) [ ] \d\d:\d\d)?
                 | Test
@@ -370,7 +371,12 @@ class ParsedPage(object):
     def normalized_session_name(self):
         s = re.sub(r'\s+', '-', self.session)
         s = re.sub(r'[^-\w]', '', s).lower()
-        if s in ('leaders-virtual-question-time', 'members-virtual-question-time', 'meeting-of-the-parliament-virtual-session'):
+        if s in ('leaders-virtual-question-time',
+                 'members-virtual-question-time',
+                 'meeting-of-the-parliament-virtual',
+                 'meeting-of-the-parliament-virtual-session',
+                 'meeting-of-the-parliament-hybrid',
+                 'meeting-of-the-parliament-hybrid-session'):
             s = 'meeting-of-the-parliament'
         return s
 
