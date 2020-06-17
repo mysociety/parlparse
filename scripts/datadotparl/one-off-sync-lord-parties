@@ -67,6 +67,10 @@ for m in mships:
 
         # If we have one membership and Parliament has one, ignore until someone complains
         if len(mships_by_pid[m['person_id']]) == 1 and len(parties) == 1:
+            print '**** 1 in both ***'
+            print 'Party mismatch for', data.names[m['person_id']], 'Parl ID', parl_id, 'Our ID', m['person_id'],
+            print 'Our mships', [m['on_behalf_of_id'] for m in mships_by_pid[m['person_id']]],
+            print 'Parl mships', [p.name for p in parties]
             continue
 
 	print 'Party mismatch for', data.names[m['person_id']], 'Parl ID', parl_id, 'Our ID', m['person_id'],

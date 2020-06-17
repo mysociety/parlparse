@@ -106,6 +106,14 @@ class Position(object):
       return periods
 
     chair_dates = [TimePeriod(x).dates for x in chairdates]
+    unique_dates = []
+    seen = {}
+    for c in chair_dates:
+        if c in seen: continue
+        seen[c] = 1
+        unique_dates.append(c)
+    chair_dates = unique_dates
+
     if len(chair_dates) > 2:
       raise Exception("Doesn't currently handle more than two chair dates")
 
