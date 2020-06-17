@@ -336,7 +336,7 @@ class BaseParseDayXML(object):
                     return try_name
 
             pims_id = member_tag.get('PimsId')
-            if member_tag.text == 'Lord\nChartres (CB):' and pims_id == '7113':
+            if member_tag.text is not None and re.match('Lord\nChartres\s*\(CB\)(?:\s*\[V\])?:', member_tag.text) and pims_id == '7113':
                 pims_id = '1549'
 
             member = self.resolver.match_by_pims(pims_id, self.date)
