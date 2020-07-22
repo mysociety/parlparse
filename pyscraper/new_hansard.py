@@ -462,6 +462,16 @@ class BaseParseDayXML(object):
         self.initial_chair = self.get_text_from_element(heading)
 
     def parse_minor(self, heading):
+
+        next_elt = heading.getnext()
+        if next_elt is not None and self.get_tag_name_no_ns(next_elt) in self.minor_headings:
+            text = u' - '.join([
+                self.get_single_line_text_from_element(heading),
+                self.get_single_line_text_from_element(next_elt)
+            ])
+            heading.text = text
+            self.skip_tag = self.get_tag_name_no_ns(next_elt)
+
         self.clear_current_speech()
         tag = etree.Element('minor-heading')
         tag.set('id', self.get_speech_id())
