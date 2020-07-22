@@ -1042,10 +1042,11 @@ class BaseParseDayXML(object):
             root_xpath, namespaces=self.ns_map
         )
         if len(self.input_root) == 0:
-            sys.stderr.write(
-                'Failed to find any debates of type {0} in {1}\n'
-                .format(self.debate_type, xml_file.name)
-            )
+            if self.verbose >= 1:
+                sys.stderr.write(
+                    'Failed to find any debates of type {0} in {1}\n'
+                    .format(self.debate_type, xml_file.name)
+                )
             return False
         return True
 
@@ -1817,6 +1818,7 @@ class ParseDay(object):
 
         xml_file = io.open(filename, encoding='utf-8')
         self.set_parser_for_type(debate_type)
+        self.parser.verbose = verbose
         date = self.parser.get_date(xml_file)
         if date is False:
             return 'not-present'
@@ -1832,7 +1834,7 @@ class ParseDay(object):
 
         tempfilename = tempfile.mktemp(".xml", "pw-filtertemp-", miscfuncs.tmppath)
 
-        parse_ok = self.parse_day(xml_file, debate_type, verbose)
+        parse_ok = self.parse_day(xml_file, debate_type)
 
         if parse_ok:
             out = io.open(tempfilename, mode='w', encoding='utf-8')
@@ -1871,9 +1873,8 @@ class ParseDay(object):
         self.parser = parser_types.get(debate_type, CommonsParseDayXML)()
         self.parser.debate_type = debate_type
 
-    def parse_day(self, text, debate_type, verbose=0):
+    def parse_day(self, text, debate_type):
         self.set_parser_for_type(debate_type)
-        self.parser.verbose = verbose
         if debate_type == 'standing':
             if not hasattr(self.parser, 'sitting_id'):
                 self.parser.get_sitting(text)

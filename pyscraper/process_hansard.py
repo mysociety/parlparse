@@ -78,13 +78,17 @@ def handle_file(filename, debate_type):
     if ret == 'failed':
         print "ERROR parsing {0} {1}".format(filename, debate_type)
     elif ret == 'not-present':
-        print "Nothing to parse in {0} {1}".format(filename, debate_type)
+        if ARGS.verbose:
+            print "Nothing to parse in {0} {1}".format(filename, debate_type)
     elif ret == 'same':
-        print "parsed {0} {1}, no changes from {2}".format(filename, debate_type, parser.prev_file)
+        prev_file = parser.prev_file.replace(toppath, '')
+        print "parsed {0}, no changes from {1}".format(filename, prev_file)
     elif ret in ('change', 'new'):
-        print "parsed {0} {1} to {2}".format(filename, debate_type, parser.output_file)
+        output_file = parser.output_file.replace(toppath, '')
+        print "parsed {0} to {1}".format(filename, output_file)
     else:
-        print "parsed {0} {1} to {2}, unknown return {3}".format(filename, debate_type, parser.output_file, ret)
+        output_file = parser.output_file.replace(toppath, '')
+        print "parsed {0} {1} to {2}, unknown return {3}".format(filename, debate_type, output_file, ret)
     entries.append(file_key)
 
     return True
