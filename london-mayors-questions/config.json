@@ -13,7 +13,8 @@
     " \\(Deputy Chairman\\)$",
     " \\(Deputy Chairman in the Chair\\)$",
     " \\(Mayor of London\\)$",
-    "^Dr "
+    "^Dr ",
+    " MP$"
   ],
   "name_corrections": {
     "Joanne McCarthy": "Joanne McCartney",
