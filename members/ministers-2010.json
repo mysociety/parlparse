@@ -121,7 +121,7 @@
       "id": "uk.parliament.data/Member/306/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10005", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2012-03-30"
     }, 
@@ -129,7 +129,7 @@
       "id": "uk.parliament.data/Member/306/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10005", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2012-03-30"
     }, 
@@ -137,7 +137,7 @@
       "id": "uk.parliament.data/Member/306/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10005", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2012-03-30"
     }, 
@@ -467,7 +467,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10010", 
       "organization_id": "intelligence-and-security-committee-of-parliament", 
-      "start_date": "2015-09-14"
+      "start_date": "2015-09-14", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/259/Committee/97/1", 
@@ -506,7 +507,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10010", 
       "organization_id": "intelligence-and-security-committee-of-parliament", 
-      "start_date": "2015-09-14"
+      "start_date": "2017-09-21", 
+      "end_date": "2019-10-08"
     }, 
     {
       "id": "uk.parliament.data/Member/259/GovernmentPost/360", 
@@ -2236,7 +2238,7 @@
       "id": "uk.parliament.data/Member/17/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10040", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2009-06-22"
     }, 
@@ -2244,7 +2246,7 @@
       "id": "uk.parliament.data/Member/17/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10040", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2009-06-22"
     }, 
@@ -2252,7 +2254,7 @@
       "id": "uk.parliament.data/Member/17/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10040", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2009-06-22"
     }, 
@@ -2930,7 +2932,7 @@
       "id": "uk.parliament.data/Member/104/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10051", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -2938,7 +2940,7 @@
       "id": "uk.parliament.data/Member/104/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10051", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -2946,7 +2948,7 @@
       "id": "uk.parliament.data/Member/104/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10051", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -4713,7 +4715,7 @@
       "id": "uk.parliament.data/Member/615/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10074", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2015-03-30"
     }, 
@@ -4721,7 +4723,7 @@
       "id": "uk.parliament.data/Member/615/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10074", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2015-03-30"
     }, 
@@ -4729,7 +4731,7 @@
       "id": "uk.parliament.data/Member/615/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10074", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2015-03-30"
     }, 
@@ -5006,7 +5008,7 @@
       "id": "uk.parliament.data/Member/301/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10076", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2013-11-04"
     }, 
@@ -5014,7 +5016,7 @@
       "id": "uk.parliament.data/Member/301/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10076", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2013-11-04"
     }, 
@@ -5022,7 +5024,7 @@
       "id": "uk.parliament.data/Member/301/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10076", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2013-11-04"
     }, 
@@ -5929,7 +5931,7 @@
       "id": "uk.parliament.data/Member/566/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10096", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2010-12-06", 
       "end_date": "2015-03-30"
     }, 
@@ -6812,7 +6814,7 @@
       "id": "uk.parliament.data/Member/553/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10120", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -6820,7 +6822,7 @@
       "id": "uk.parliament.data/Member/553/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10120", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -6828,7 +6830,7 @@
       "id": "uk.parliament.data/Member/553/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10120", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -6836,7 +6838,7 @@
       "id": "uk.parliament.data/Member/553/Committee/15/3", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10120", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -6844,7 +6846,7 @@
       "id": "uk.parliament.data/Member/553/Committee/15/4", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10120", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -6852,7 +6854,7 @@
       "id": "uk.parliament.data/Member/553/Committee/15/5", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10120", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -6860,7 +6862,7 @@
       "id": "uk.parliament.data/Member/553/Committee/15/6", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10120", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -6868,7 +6870,7 @@
       "id": "uk.parliament.data/Member/553/Committee/15/7", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10120", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -6876,7 +6878,7 @@
       "id": "uk.parliament.data/Member/553/Committee/15/8", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10120", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -7797,7 +7799,7 @@
       "id": "uk.parliament.data/Member/437/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10141", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2010-05-06"
     }, 
@@ -7805,7 +7807,7 @@
       "id": "uk.parliament.data/Member/437/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10141", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2010-05-06"
     }, 
@@ -7813,7 +7815,7 @@
       "id": "uk.parliament.data/Member/437/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10141", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2010-05-06"
     }, 
@@ -8870,7 +8872,7 @@
       "id": "uk.parliament.data/Member/650/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10172", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -8878,7 +8880,7 @@
       "id": "uk.parliament.data/Member/650/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10172", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -8886,7 +8888,7 @@
       "id": "uk.parliament.data/Member/650/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10172", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -9196,7 +9198,7 @@
       "id": "uk.parliament.data/Member/336/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10175", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2010-12-06", 
       "end_date": "2015-03-30"
     }, 
@@ -9568,6 +9570,20 @@
       "end_date": "2003-11-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/491/Committee/11", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10182", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "2020-06-22"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/491/Committee/126", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10182", 
+      "organization_id": "procedure-committee", 
+      "start_date": "2020-06-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/491/Committee/127", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10182", 
@@ -9745,6 +9761,13 @@
       "end_date": "1999-11-29"
     }, 
     {
+      "id": "uk.parliament.data/Member/483/Committee/171", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10183", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
+      "start_date": "2020-07-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/483/GovernmentPost/219", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister of State (Ministry of Justice) (also in Government Equalities Office)", 
@@ -9869,6 +9892,13 @@
       "organization_id": "house-of-commons", 
       "start_date": "2010-05-12", 
       "end_date": "2010-10-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/165/Committee/11", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10185", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "2020-06-22"
     }, 
     {
       "id": "uk.parliament.data/Member/165/Committee/126", 
@@ -10051,7 +10081,7 @@
       "id": "uk.parliament.data/Member/474/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10190", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -10059,7 +10089,7 @@
       "id": "uk.parliament.data/Member/474/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10190", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -10067,7 +10097,7 @@
       "id": "uk.parliament.data/Member/474/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10190", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -10075,7 +10105,7 @@
       "id": "uk.parliament.data/Member/474/Committee/15/3", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10190", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -10083,7 +10113,7 @@
       "id": "uk.parliament.data/Member/474/Committee/15/4", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10190", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -10091,7 +10121,7 @@
       "id": "uk.parliament.data/Member/474/Committee/15/5", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10190", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -10985,6 +11015,13 @@
       "start_date": "2019-06-13"
     }, 
     {
+      "id": "uk.parliament.data/Member/214/Committee/448", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10208", 
+      "organization_id": "eu-international-agreements-subcommittee", 
+      "start_date": "2020-06-30"
+    }, 
+    {
       "id": "uk.parliament.data/Member/214/GovernmentPost/1015", 
       "source": "datadotparl/governmentpost", 
       "role": "The Parliamentary Under-Secretary of State for Communities and Local Government", 
@@ -11488,7 +11525,7 @@
       "id": "uk.parliament.data/Member/184/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10219", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-03-19"
     }, 
@@ -11496,7 +11533,7 @@
       "id": "uk.parliament.data/Member/184/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10219", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-03-19"
     }, 
@@ -11504,7 +11541,7 @@
       "id": "uk.parliament.data/Member/184/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10219", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2015-03-30"
     }, 
@@ -11512,7 +11549,7 @@
       "id": "uk.parliament.data/Member/184/Committee/15/3", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10219", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2015-03-30"
     }, 
@@ -11520,7 +11557,7 @@
       "id": "uk.parliament.data/Member/184/Committee/15/4", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10219", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2015-03-30"
     }, 
@@ -11528,7 +11565,7 @@
       "id": "uk.parliament.data/Member/184/Committee/15/5", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10219", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-03-19"
     }, 
@@ -12286,7 +12323,7 @@
       "id": "uk.parliament.data/Member/261/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10240", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-12-01", 
       "end_date": "2015-03-30"
     }, 
@@ -12294,7 +12331,7 @@
       "id": "uk.parliament.data/Member/261/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10240", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-12-01", 
       "end_date": "2015-03-30"
     }, 
@@ -12302,7 +12339,7 @@
       "id": "uk.parliament.data/Member/261/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10240", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-12-01", 
       "end_date": "2015-03-30"
     }, 
@@ -13189,7 +13226,7 @@
       "id": "uk.parliament.data/Member/415/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10256", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-06-24", 
       "end_date": "2015-03-30"
     }, 
@@ -13197,7 +13234,7 @@
       "id": "uk.parliament.data/Member/415/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10256", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-06-24", 
       "end_date": "2015-03-30"
     }, 
@@ -13205,7 +13242,7 @@
       "id": "uk.parliament.data/Member/415/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10256", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-06-24", 
       "end_date": "2015-03-30"
     }, 
@@ -13213,7 +13250,7 @@
       "id": "uk.parliament.data/Member/415/Committee/15/3", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10256", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2010-05-06"
     }, 
@@ -13221,7 +13258,7 @@
       "id": "uk.parliament.data/Member/415/Committee/15/4", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10256", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2010-05-06"
     }, 
@@ -13229,7 +13266,7 @@
       "id": "uk.parliament.data/Member/415/Committee/15/5", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10256", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2010-05-06"
     }, 
@@ -14223,6 +14260,13 @@
       "organization_id": "administration-committee", 
       "start_date": "2001-07-16", 
       "end_date": "2002-12-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/350/Committee/97", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10265", 
+      "organization_id": "intelligence-and-security-committee-of-parliament", 
+      "start_date": "2020-07-13"
     }, 
     {
       "id": "uk.parliament.data/Member/350/GovernmentPost/1079", 
@@ -15644,7 +15688,24 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10295", 
       "organization_id": "speakers-committee-on-the-electoral-commission", 
-      "start_date": "2019-11-04"
+      "start_date": "2019-11-04", 
+      "end_date": "2019-12-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/467/Committee/144/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10295", 
+      "organization_id": "speakers-committee-on-the-electoral-commission", 
+      "start_date": "2019-12-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/467/Committee/144/2", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10295", 
+      "organization_id": "speakers-committee-on-the-electoral-commission", 
+      "start_date": "2019-12-17"
     }, 
     {
       "id": "uk.parliament.data/Member/467/Committee/147", 
@@ -16114,7 +16175,7 @@
       "id": "uk.parliament.data/Member/40/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10312", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2010-05-06"
     }, 
@@ -16122,7 +16183,7 @@
       "id": "uk.parliament.data/Member/40/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10312", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2010-05-06"
     }, 
@@ -16130,7 +16191,7 @@
       "id": "uk.parliament.data/Member/40/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10312", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2010-05-06"
     }, 
@@ -17768,7 +17829,7 @@
       "id": "uk.parliament.data/Member/54/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10358", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -17776,23 +17837,23 @@
       "id": "uk.parliament.data/Member/54/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10358", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
-      "start_date": "2016-02-10", 
-      "end_date": "2017-05-03"
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2014-11-03", 
+      "end_date": "2015-03-30"
     }, 
     {
       "id": "uk.parliament.data/Member/54/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10358", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
-      "start_date": "2016-02-10", 
-      "end_date": "2017-05-03"
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2014-11-03", 
+      "end_date": "2015-03-30"
     }, 
     {
       "id": "uk.parliament.data/Member/54/Committee/15/3", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10358", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2014-11-03", 
       "end_date": "2015-03-30"
     }, 
@@ -17800,17 +17861,17 @@
       "id": "uk.parliament.data/Member/54/Committee/15/4", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10358", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
-      "start_date": "2014-11-03", 
-      "end_date": "2015-03-30"
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2016-02-10", 
+      "end_date": "2017-05-03"
     }, 
     {
       "id": "uk.parliament.data/Member/54/Committee/15/5", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10358", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
-      "start_date": "2014-11-03", 
-      "end_date": "2015-03-30"
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2016-02-10", 
+      "end_date": "2017-05-03"
     }, 
     {
       "id": "uk.parliament.data/Member/54/Committee/162", 
@@ -17899,17 +17960,59 @@
     {
       "id": "uk.parliament.data/Member/54/Committee/97", 
       "source": "datadotparl/committee", 
+      "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10358", 
       "organization_id": "intelligence-and-security-committee-of-parliament", 
-      "start_date": "2010-09-13", 
-      "end_date": "2015-03-16"
+      "start_date": "2020-07-15"
     }, 
     {
       "id": "uk.parliament.data/Member/54/Committee/97/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10358", 
       "organization_id": "intelligence-and-security-committee-of-parliament", 
+      "start_date": "2020-07-13", 
+      "end_date": "2020-07-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/54/Committee/97/2", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10358", 
+      "organization_id": "intelligence-and-security-committee-of-parliament", 
+      "start_date": "2020-07-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/54/Committee/97/3", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10358", 
+      "organization_id": "intelligence-and-security-committee-of-parliament", 
       "start_date": "2010-09-13", 
+      "end_date": "2020-07-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/54/Committee/97/4", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10358", 
+      "organization_id": "intelligence-and-security-committee-of-parliament", 
+      "start_date": "2020-07-15", 
+      "end_date": "2015-03-16"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/54/Committee/97/5", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10358", 
+      "organization_id": "intelligence-and-security-committee-of-parliament", 
+      "start_date": "2010-09-13", 
+      "end_date": "2020-07-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/54/Committee/97/6", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10358", 
+      "organization_id": "intelligence-and-security-committee-of-parliament", 
+      "start_date": "2020-07-15", 
       "end_date": "2015-03-16"
     }, 
     {
@@ -18740,7 +18843,7 @@
       "id": "uk.parliament.data/Member/268/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10373", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-12-18", 
       "end_date": "2015-03-30"
     }, 
@@ -18748,7 +18851,7 @@
       "id": "uk.parliament.data/Member/268/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10373", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-12-18", 
       "end_date": "2015-03-30"
     }, 
@@ -18756,7 +18859,7 @@
       "id": "uk.parliament.data/Member/268/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10373", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-12-18", 
       "end_date": "2015-03-30"
     }, 
@@ -18764,7 +18867,7 @@
       "id": "uk.parliament.data/Member/268/Committee/15/3", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10373", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2006-01-01", 
       "end_date": "2010-05-06"
     }, 
@@ -18772,7 +18875,7 @@
       "id": "uk.parliament.data/Member/268/Committee/15/4", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10373", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2006-01-01", 
       "end_date": "2010-05-06"
     }, 
@@ -18780,7 +18883,7 @@
       "id": "uk.parliament.data/Member/268/Committee/15/5", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10373", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2006-01-01", 
       "end_date": "2010-05-06"
     }, 
@@ -21408,7 +21511,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10446", 
       "organization_id": "european-union-committee", 
-      "start_date": "2019-07-15"
+      "start_date": "2019-07-15", 
+      "end_date": "2020-06-04"
     }, 
     {
       "id": "uk.parliament.data/Member/565/Committee/191", 
@@ -24658,7 +24762,7 @@
       "id": "uk.parliament.data/Member/639/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10552", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2010-12-06", 
       "end_date": "2015-03-30"
     }, 
@@ -24872,7 +24976,7 @@
       "id": "uk.parliament.data/Member/318/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10558", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -24880,7 +24984,7 @@
       "id": "uk.parliament.data/Member/318/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10558", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -24888,9 +24992,16 @@
       "id": "uk.parliament.data/Member/318/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10558", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/318/Committee/15/3", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10558", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-07-06"
     }, 
     {
       "id": "uk.parliament.data/Member/318/Committee/2", 
@@ -25316,7 +25427,7 @@
       "id": "uk.parliament.data/Member/91/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10563", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2010-10-13"
     }, 
@@ -25325,7 +25436,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10563", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-10-13", 
       "end_date": "2015-03-30"
     }, 
@@ -25333,7 +25444,7 @@
       "id": "uk.parliament.data/Member/91/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10563", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2010-10-13"
     }, 
@@ -25342,7 +25453,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10563", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-10-13", 
       "end_date": "2015-03-30"
     }, 
@@ -25350,7 +25461,7 @@
       "id": "uk.parliament.data/Member/91/Committee/15/4", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10563", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2010-10-13"
     }, 
@@ -25359,7 +25470,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10563", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-10-13", 
       "end_date": "2015-03-30"
     }, 
@@ -25368,7 +25479,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10563", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-10-13", 
       "end_date": "2015-03-30"
     }, 
@@ -25377,7 +25488,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10563", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-10-13", 
       "end_date": "2015-03-30"
     }, 
@@ -25386,7 +25497,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/10563", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-10-13", 
       "end_date": "2015-03-30"
     }, 
@@ -25878,7 +25989,7 @@
       "id": "uk.parliament.data/Member/445/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10578", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2009-06-01", 
       "end_date": "2010-05-06"
     }, 
@@ -25886,7 +25997,7 @@
       "id": "uk.parliament.data/Member/445/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10578", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2009-06-01", 
       "end_date": "2010-05-06"
     }, 
@@ -25894,7 +26005,7 @@
       "id": "uk.parliament.data/Member/445/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10578", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2009-06-01", 
       "end_date": "2010-05-06"
     }, 
@@ -27417,6 +27528,13 @@
       "end_date": "2018-11-05"
     }, 
     {
+      "id": "uk.parliament.data/Member/429/Committee/11", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10610", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "2020-06-22"
+    }, 
+    {
       "id": "uk.parliament.data/Member/429/Committee/127", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10610", 
@@ -27532,7 +27650,7 @@
       "id": "uk.parliament.data/Member/429/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10610", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-07-01", 
       "end_date": "2014-11-03"
     }, 
@@ -27540,7 +27658,7 @@
       "id": "uk.parliament.data/Member/429/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10610", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-07-01", 
       "end_date": "2014-11-03"
     }, 
@@ -27548,7 +27666,7 @@
       "id": "uk.parliament.data/Member/429/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10610", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-07-01", 
       "end_date": "2014-11-03"
     }, 
@@ -27566,6 +27684,13 @@
       "organization_id": "defence-committee", 
       "start_date": "2013-06-10", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/429/Committee/343", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10610", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2020-05-11"
     }, 
     {
       "id": "uk.parliament.data/Member/429/GovernmentPost/350", 
@@ -27665,7 +27790,7 @@
       "id": "uk.parliament.data/Member/167/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10611", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -27673,7 +27798,7 @@
       "id": "uk.parliament.data/Member/167/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10611", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -27681,7 +27806,7 @@
       "id": "uk.parliament.data/Member/167/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10611", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -28247,7 +28372,7 @@
       "id": "uk.parliament.data/Member/489/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10625", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2012-07-02"
     }, 
@@ -28255,7 +28380,7 @@
       "id": "uk.parliament.data/Member/489/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10625", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2012-07-02"
     }, 
@@ -28263,7 +28388,7 @@
       "id": "uk.parliament.data/Member/489/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10625", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2012-07-02"
     }, 
@@ -30086,6 +30211,13 @@
       "start_date": "2020-03-23"
     }, 
     {
+      "id": "uk.parliament.data/Member/473/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10682", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-07-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/473/Committee/353", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10682", 
@@ -30193,7 +30325,7 @@
       "id": "uk.parliament.data/Member/320/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10683", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2007-11-09", 
       "end_date": "2010-05-06"
     }, 
@@ -30201,7 +30333,7 @@
       "id": "uk.parliament.data/Member/320/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10683", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2007-11-09", 
       "end_date": "2010-05-06"
     }, 
@@ -30209,7 +30341,7 @@
       "id": "uk.parliament.data/Member/320/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10683", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2007-11-09", 
       "end_date": "2010-05-06"
     }, 
@@ -31947,7 +32079,7 @@
       "id": "uk.parliament.data/Member/1436/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10882", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2010-12-06", 
       "end_date": "2015-03-30"
     }, 
@@ -32253,6 +32385,13 @@
       "organization_id": "house-of-commons-commission", 
       "start_date": "2015-05-08", 
       "end_date": "2016-07-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1413/Committee/97", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10920", 
+      "organization_id": "intelligence-and-security-committee-of-parliament", 
+      "start_date": "2020-07-13"
     }, 
     {
       "id": "uk.parliament.data/Member/1413/GovernmentPost/1142", 
@@ -32780,6 +32919,13 @@
       "end_date": "2004-07-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/1438/Committee/126", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11003", 
+      "organization_id": "procedure-committee", 
+      "start_date": "2020-06-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1438/Committee/131", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11003", 
@@ -32826,7 +32972,21 @@
       "end_date": "2009-01-19"
     }, 
     {
+      "id": "uk.parliament.data/Member/1438/Committee/343", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11003", 
+      "organization_id": "defence-subcommittee", 
+      "start_date": "2020-05-11"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1438/Committee/97", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11003", 
+      "organization_id": "intelligence-and-security-committee-of-parliament", 
+      "start_date": "2020-07-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1438/Committee/97/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11003", 
       "organization_id": "intelligence-and-security-committee-of-parliament", 
@@ -32834,7 +32994,7 @@
       "end_date": "2019-11-06"
     }, 
     {
-      "id": "uk.parliament.data/Member/1438/Committee/97/1", 
+      "id": "uk.parliament.data/Member/1438/Committee/97/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11003", 
       "organization_id": "intelligence-and-security-committee-of-parliament", 
@@ -33509,7 +33669,7 @@
       "id": "uk.parliament.data/Member/1419/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11076", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2011-10-24", 
       "end_date": "2015-03-30"
     }, 
@@ -33517,7 +33677,7 @@
       "id": "uk.parliament.data/Member/1419/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11076", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2011-10-24", 
       "end_date": "2015-03-30"
     }, 
@@ -33525,7 +33685,7 @@
       "id": "uk.parliament.data/Member/1419/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11076", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2011-10-24", 
       "end_date": "2015-03-30"
     }, 
@@ -36484,7 +36644,7 @@
       "id": "uk.parliament.data/Member/1478/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11362", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -36492,7 +36652,7 @@
       "id": "uk.parliament.data/Member/1478/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11362", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -36500,7 +36660,7 @@
       "id": "uk.parliament.data/Member/1478/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11362", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -37549,6 +37709,13 @@
       "start_date": "2020-05-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/1487/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11437", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-07-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1487/Committee/24", 
       "source": "datadotparl/committee", 
       "role": "Chair", 
@@ -38474,6 +38641,13 @@
       "end_date": "2006-01-16"
     }, 
     {
+      "id": "uk.parliament.data/Member/1500/Committee/97", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11500", 
+      "organization_id": "intelligence-and-security-committee-of-parliament", 
+      "start_date": "2020-07-13"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1500/GovernmentPost/704", 
       "source": "datadotparl/governmentpost", 
       "role": "The Secretary of State for Environment, Food and Rural Affairs", 
@@ -39217,6 +39391,13 @@
       "organization_id": "housing-communities-and-local-government-committee", 
       "start_date": "2009-11-02", 
       "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1516/Committee/171", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11559", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
+      "start_date": "2020-07-06"
     }, 
     {
       "id": "uk.parliament.data/Member/1516/Committee/93", 
@@ -40336,6 +40517,13 @@
       "start_date": "2020-05-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/1533/Committee/97", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11647", 
+      "organization_id": "intelligence-and-security-committee-of-parliament", 
+      "start_date": "2020-07-13"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1533/GovernmentPost/351", 
       "source": "datadotparl/governmentpost", 
       "role": "Assistant Whip (HM Treasury)", 
@@ -41327,7 +41515,7 @@
       "id": "uk.parliament.data/Member/1547/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11727", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2014-11-03", 
       "end_date": "2015-03-30"
     }, 
@@ -41335,7 +41523,7 @@
       "id": "uk.parliament.data/Member/1547/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11727", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2014-11-03", 
       "end_date": "2015-03-30"
     }, 
@@ -41343,7 +41531,7 @@
       "id": "uk.parliament.data/Member/1547/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11727", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2014-11-03", 
       "end_date": "2015-03-30"
     }, 
@@ -41765,7 +41953,7 @@
       "id": "uk.parliament.data/Member/1550/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11742", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2010-05-06"
     }, 
@@ -41773,7 +41961,7 @@
       "id": "uk.parliament.data/Member/1550/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11742", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2010-05-06"
     }, 
@@ -41781,7 +41969,7 @@
       "id": "uk.parliament.data/Member/1550/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11742", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2010-05-06"
     }, 
@@ -41813,7 +42001,7 @@
       "id": "uk.parliament.data/Member/1551/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11759", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-11-09", 
       "end_date": "2017-05-03"
     }, 
@@ -44677,6 +44865,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/1576/Committee/97", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11946", 
+      "organization_id": "intelligence-and-security-committee-of-parliament", 
+      "start_date": "2020-07-13"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1576/Committee/98", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11946", 
@@ -44712,7 +44907,7 @@
       "id": "uk.parliament.data/Member/1590/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11963", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -44720,7 +44915,7 @@
       "id": "uk.parliament.data/Member/1590/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11963", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -44728,7 +44923,7 @@
       "id": "uk.parliament.data/Member/1590/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11963", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -44985,6 +45180,13 @@
       "end_date": "2019-11-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/1514/Committee/97/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11973", 
+      "organization_id": "intelligence-and-security-committee-of-parliament", 
+      "start_date": "2020-07-13"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1514/OppositionPost/1024", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Spokesperson (Women)", 
@@ -45223,6 +45425,14 @@
       "end_date": "2008-11-24"
     }, 
     {
+      "id": "uk.parliament.data/Member/1546/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12004", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-07-06", 
+      "end_date": "2020-07-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1546/Committee/367", 
       "source": "datadotparl/committee", 
       "role": "Chair", 
@@ -45435,7 +45645,7 @@
       "id": "uk.parliament.data/Member/1598/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12016", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2008-04-28"
     }, 
@@ -45443,7 +45653,7 @@
       "id": "uk.parliament.data/Member/1598/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12016", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2008-04-28"
     }, 
@@ -45451,7 +45661,7 @@
       "id": "uk.parliament.data/Member/1598/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12016", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2008-03-10", 
       "end_date": "2008-04-28"
     }, 
@@ -45722,7 +45932,7 @@
       "id": "uk.parliament.data/Member/3653/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12842", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-07-19", 
       "end_date": "2019-07-01"
     }, 
@@ -45730,7 +45940,7 @@
       "id": "uk.parliament.data/Member/3653/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12842", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-06-17", 
       "end_date": "2017-04-27"
     }, 
@@ -45738,7 +45948,7 @@
       "id": "uk.parliament.data/Member/3653/Committee/171/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12842", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2009-11-25", 
       "end_date": "2010-07-12"
     }, 
@@ -45747,7 +45957,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/12842", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -45756,7 +45966,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/12842", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -46962,14 +47172,14 @@
       "id": "uk.parliament.data/Member/1846/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12907", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/1846/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12907", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-06-17", 
       "end_date": "2017-04-27"
     }, 
@@ -46977,7 +47187,7 @@
       "id": "uk.parliament.data/Member/1846/Committee/171/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12907", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1992-10-29", 
       "end_date": "2015-03-30"
     }, 
@@ -47178,6 +47388,13 @@
       "organization_id": "constitution-committee", 
       "start_date": "2010-06-22", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2490/Committee/176", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12924", 
+      "organization_id": "european-union-committee", 
+      "start_date": "2020-06-04"
     }, 
     {
       "id": "uk.parliament.data/Member/2490/Committee/191", 
@@ -47850,7 +48067,7 @@
       "id": "uk.parliament.data/Member/880/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12963", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1998-01-14", 
       "end_date": "2014-06-30"
     }, 
@@ -48415,14 +48632,14 @@
       "id": "uk.parliament.data/Member/2793/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12995", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/2793/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12995", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-06-17", 
       "end_date": "2017-04-27"
     }, 
@@ -48430,7 +48647,7 @@
       "id": "uk.parliament.data/Member/2793/Committee/171/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12995", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2009-11-25", 
       "end_date": "2015-03-30"
     }, 
@@ -48510,7 +48727,7 @@
       "id": "uk.parliament.data/Member/2735/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12999", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2014-06-12", 
       "end_date": "2015-03-30"
     }, 
@@ -48518,7 +48735,7 @@
       "id": "uk.parliament.data/Member/2735/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/12999", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1999-05-27", 
       "end_date": "2015-03-30"
     }, 
@@ -50222,14 +50439,15 @@
       "id": "uk.parliament.data/Member/3434/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13096", 
-      "organization_id": "consolidation-bills-joint-committee", 
-      "start_date": "2017-07-19"
+      "organization_id": "consolidation-c-bills-joint-committee", 
+      "start_date": "2017-07-19", 
+      "end_date": "2019-11-05"
     }, 
     {
       "id": "uk.parliament.data/Member/3434/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13096", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-06-17", 
       "end_date": "2017-04-27"
     }, 
@@ -50505,14 +50723,14 @@
       "id": "uk.parliament.data/Member/2534/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13108", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/2534/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13108", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-07-09", 
       "end_date": "2017-04-27"
     }, 
@@ -51203,7 +51421,7 @@
       "id": "uk.parliament.data/Member/1883/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13122", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1985-11-12", 
       "end_date": "1987-05-15"
     }, 
@@ -51328,7 +51546,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13130", 
       "organization_id": "lord-speakers-advisory-panel-on-works-of-art", 
-      "start_date": "2017-01-25"
+      "start_date": "2017-01-25", 
+      "end_date": "2020-06-26"
     }, 
     {
       "id": "uk.parliament.data/Member/685/Committee/371/1", 
@@ -51336,7 +51555,8 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13130", 
       "organization_id": "lord-speakers-advisory-panel-on-works-of-art", 
-      "start_date": "2017-01-25"
+      "start_date": "2017-01-25", 
+      "end_date": "2020-06-26"
     }, 
     {
       "id": "uk.parliament.data/Member/905/Committee/11", 
@@ -51359,7 +51579,7 @@
       "id": "uk.parliament.data/Member/2048/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13132", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1984-11-15", 
       "end_date": "1990-11-01"
     }, 
@@ -51593,14 +51813,14 @@
       "id": "uk.parliament.data/Member/2097/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13144", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/2097/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13144", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-06-17", 
       "end_date": "2017-04-27"
     }, 
@@ -51608,7 +51828,7 @@
       "id": "uk.parliament.data/Member/2097/Committee/171/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13144", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2014-01-22", 
       "end_date": "2015-03-30"
     }, 
@@ -51624,7 +51844,7 @@
       "id": "uk.parliament.data/Member/2106/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13145", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1998-01-14", 
       "end_date": "1999-11-11"
     }, 
@@ -51743,7 +51963,7 @@
       "id": "uk.parliament.data/Member/1865/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13154", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1974-11-07", 
       "end_date": "1978-04-05"
     }, 
@@ -52137,14 +52357,14 @@
       "id": "uk.parliament.data/Member/2447/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13172", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/2447/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13172", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-06-17", 
       "end_date": "2017-04-27"
     }, 
@@ -53071,7 +53291,7 @@
       "id": "uk.parliament.data/Member/2235/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13205", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2010-06-23", 
       "end_date": "2015-03-30"
     }, 
@@ -53730,14 +53950,14 @@
       "id": "uk.parliament.data/Member/3275/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13244", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/3275/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13244", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-06-17", 
       "end_date": "2017-04-27"
     }, 
@@ -53745,7 +53965,7 @@
       "id": "uk.parliament.data/Member/3275/Committee/171/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13244", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1998-04-30", 
       "end_date": "2015-03-30"
     }, 
@@ -53801,7 +54021,7 @@
       "id": "uk.parliament.data/Member/3395/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13256", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-06-17", 
       "end_date": "2016-05-12"
     }, 
@@ -53809,7 +54029,7 @@
       "id": "uk.parliament.data/Member/3395/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13256", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1999-05-27", 
       "end_date": "2015-03-30"
     }, 
@@ -54260,6 +54480,14 @@
       "end_date": "2012-05-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/2484/Committee/255", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13277", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
+      "start_date": "2020-06-04", 
+      "end_date": "2020-06-13"
+    }, 
+    {
       "id": "uk.parliament.data/Member/937/Committee/172", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13279", 
@@ -54551,7 +54779,7 @@
       "id": "uk.parliament.data/Member/2052/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13296", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1994-04-18", 
       "end_date": "1997-04-08"
     }, 
@@ -55351,7 +55579,7 @@
       "id": "uk.parliament.data/Member/3310/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13351", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1979-06-14", 
       "end_date": "1984-10-31"
     }, 
@@ -55432,7 +55660,7 @@
       "id": "uk.parliament.data/Member/2024/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13353", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1998-04-30", 
       "end_date": "1999-11-11"
     }, 
@@ -55991,7 +56219,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13371", 
       "organization_id": "eu-international-agreements-subcommittee", 
-      "start_date": "2020-04-23"
+      "start_date": "2020-04-23", 
+      "end_date": "2020-06-11"
     }, 
     {
       "id": "uk.parliament.data/Member/3478/Committee/460", 
@@ -56021,7 +56250,7 @@
       "id": "uk.parliament.data/Member/3463/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13375", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2010-06-23", 
       "end_date": "2010-10-10"
     }, 
@@ -56272,7 +56501,7 @@
       "id": "uk.parliament.data/Member/2226/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13389", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1995-02-02", 
       "end_date": "1997-04-08"
     }, 
@@ -56605,14 +56834,14 @@
       "id": "uk.parliament.data/Member/3169/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13427", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/3169/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13427", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2016-05-25", 
       "end_date": "2017-04-27"
     }, 
@@ -56941,7 +57170,7 @@
       "id": "uk.parliament.data/Member/3709/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13444", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2020-05-22"
     }, 
     {
@@ -57796,7 +58025,7 @@
       "id": "uk.parliament.data/Member/830/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13474", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1999-05-27", 
       "end_date": "2010-04-08"
     }, 
@@ -58539,7 +58768,7 @@
       "id": "uk.parliament.data/Member/2665/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13499", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1994-04-18", 
       "end_date": "1997-04-08"
     }, 
@@ -59465,7 +59694,7 @@
       "id": "uk.parliament.data/Member/1786/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13544", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2010-06-23", 
       "end_date": "2015-03-30"
     }, 
@@ -60127,7 +60356,7 @@
       "id": "uk.parliament.data/Member/3183/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13594", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1999-05-27", 
       "end_date": "2006-11-08"
     }, 
@@ -60285,7 +60514,7 @@
       "id": "uk.parliament.data/Member/3327/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13604", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1992-10-29", 
       "end_date": "1994-11-03"
     }, 
@@ -60711,7 +60940,7 @@
       "id": "uk.parliament.data/Member/1930/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13632", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2006-11-30", 
       "end_date": "2015-03-30"
     }, 
@@ -60873,14 +61102,14 @@
       "id": "uk.parliament.data/Member/3515/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13640", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/3515/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13640", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-06-17", 
       "end_date": "2017-04-27"
     }, 
@@ -61499,7 +61728,7 @@
       "id": "uk.parliament.data/Member/3298/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13679", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "1981-11-24", 
       "end_date": "2013-06-30"
     }, 
@@ -62539,14 +62768,14 @@
       "id": "uk.parliament.data/Member/3785/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13728", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/3785/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13728", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-06-17", 
       "end_date": "2017-04-27"
     }, 
@@ -63206,7 +63435,7 @@
       "id": "uk.parliament.data/Member/4131/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13864", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -63214,7 +63443,7 @@
       "id": "uk.parliament.data/Member/4131/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13864", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -63222,7 +63451,7 @@
       "id": "uk.parliament.data/Member/4131/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13864", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -63537,7 +63766,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13886", 
       "organization_id": "european-union-committee", 
-      "start_date": "2015-06-08"
+      "start_date": "2015-06-08", 
+      "end_date": "2020-06-04"
     }, 
     {
       "id": "uk.parliament.data/Member/3818/Committee/338", 
@@ -63684,6 +63914,13 @@
       "organization_id": "national-security-strategy-joint-committee", 
       "start_date": "2014-06-12", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3834/Committee/97", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13928", 
+      "organization_id": "intelligence-and-security-committee-of-parliament", 
+      "start_date": "2020-07-14"
     }, 
     {
       "id": "uk.parliament.data/Member/3834/GovernmentPost/613", 
@@ -63839,7 +64076,7 @@
       "id": "uk.parliament.data/Member/1604/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13934", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -63847,7 +64084,7 @@
       "id": "uk.parliament.data/Member/1604/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13934", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -63855,7 +64092,7 @@
       "id": "uk.parliament.data/Member/1604/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13934", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -64079,14 +64316,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13939", 
       "organization_id": "intelligence-and-security-committee-of-parliament", 
-      "start_date": "2015-09-14"
+      "start_date": "2017-09-21", 
+      "end_date": "2019-10-08"
     }, 
     {
       "id": "uk.parliament.data/Member/3838/Committee/97/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13939", 
       "organization_id": "intelligence-and-security-committee-of-parliament", 
-      "start_date": "2015-09-14"
+      "start_date": "2015-09-14", 
+      "end_date": "2016-05-12"
     }, 
     {
       "id": "uk.parliament.data/Member/630/Committee/103", 
@@ -65103,16 +65342,18 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24685", 
-      "organization_id": "consolidation-bills-joint-committee", 
-      "start_date": "2019-07-01"
+      "organization_id": "consolidation-c-bills-joint-committee", 
+      "start_date": "2019-07-01", 
+      "end_date": "2020-02-13"
     }, 
     {
       "id": "uk.parliament.data/Member/3890/Committee/171/1", 
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24685", 
-      "organization_id": "consolidation-bills-joint-committee", 
-      "start_date": "2019-07-01"
+      "organization_id": "consolidation-c-bills-joint-committee", 
+      "start_date": "2019-07-01", 
+      "end_date": "2020-02-13"
     }, 
     {
       "id": "uk.parliament.data/Member/3893/GovernmentPost/1177", 
@@ -65464,6 +65705,13 @@
       "start_date": "2020-04-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/4127/Committee/11", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24710", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "2020-06-22"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4127/Committee/131", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24710", 
@@ -65553,7 +65801,7 @@
       "id": "uk.parliament.data/Member/3972/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24711", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2010-12-06", 
       "end_date": "2015-03-30"
     }, 
@@ -65697,14 +65945,15 @@
       "id": "uk.parliament.data/Member/3973/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24715", 
-      "organization_id": "consolidation-bills-joint-committee", 
-      "start_date": "2020-03-09"
+      "organization_id": "consolidation-c-bills-joint-committee", 
+      "start_date": "2020-03-09", 
+      "end_date": "2020-07-06"
     }, 
     {
       "id": "uk.parliament.data/Member/3973/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24715", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-11-06", 
       "end_date": "2019-11-06"
     }, 
@@ -65712,7 +65961,7 @@
       "id": "uk.parliament.data/Member/3973/Committee/171/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24715", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-11-09", 
       "end_date": "2017-05-03"
     }, 
@@ -65987,7 +66236,7 @@
       "id": "uk.parliament.data/Member/3964/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24723", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2012-07-02", 
       "end_date": "2013-05-09"
     }, 
@@ -65995,7 +66244,7 @@
       "id": "uk.parliament.data/Member/3964/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24723", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2012-07-02", 
       "end_date": "2013-05-09"
     }, 
@@ -66003,7 +66252,7 @@
       "id": "uk.parliament.data/Member/3964/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24723", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2012-07-02", 
       "end_date": "2013-05-09"
     }, 
@@ -66286,7 +66535,7 @@
       "id": "uk.parliament.data/Member/3962/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24730", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2013-07-01"
     }, 
@@ -66294,7 +66543,7 @@
       "id": "uk.parliament.data/Member/3962/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24730", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2013-07-01"
     }, 
@@ -66302,7 +66551,7 @@
       "id": "uk.parliament.data/Member/3962/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24730", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2013-07-01"
     }, 
@@ -66646,7 +66895,7 @@
       "id": "uk.parliament.data/Member/3981/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24738", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2012-06-14"
     }, 
@@ -66654,7 +66903,7 @@
       "id": "uk.parliament.data/Member/3981/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24738", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2012-06-14"
     }, 
@@ -66662,7 +66911,7 @@
       "id": "uk.parliament.data/Member/3981/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24738", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2012-06-14"
     }, 
@@ -66986,7 +67235,7 @@
       "id": "uk.parliament.data/Member/3986/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24744", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2010-12-06", 
       "end_date": "2015-03-30"
     }, 
@@ -67471,7 +67720,7 @@
       "id": "uk.parliament.data/Member/4109/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24760", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -67479,7 +67728,7 @@
       "id": "uk.parliament.data/Member/4109/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24760", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -67487,7 +67736,7 @@
       "id": "uk.parliament.data/Member/4109/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24760", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -68530,7 +68779,7 @@
       "id": "uk.parliament.data/Member/3971/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24777", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2010-12-06", 
       "end_date": "2015-03-30"
     }, 
@@ -68555,7 +68804,7 @@
       "id": "uk.parliament.data/Member/4066/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24778", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2018-02-27", 
       "end_date": "2019-11-06"
     }, 
@@ -68563,7 +68812,7 @@
       "id": "uk.parliament.data/Member/4066/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24778", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2018-02-27", 
       "end_date": "2019-11-06"
     }, 
@@ -68571,7 +68820,7 @@
       "id": "uk.parliament.data/Member/4066/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24778", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2018-02-27", 
       "end_date": "2019-11-06"
     }, 
@@ -69337,7 +69586,7 @@
       "id": "uk.parliament.data/Member/3967/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24794", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-12-18", 
       "end_date": "2015-03-30"
     }, 
@@ -69345,7 +69594,7 @@
       "id": "uk.parliament.data/Member/3967/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24794", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-12-18", 
       "end_date": "2015-03-30"
     }, 
@@ -69353,7 +69602,7 @@
       "id": "uk.parliament.data/Member/3967/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24794", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-12-18", 
       "end_date": "2015-03-30"
     }, 
@@ -69439,7 +69688,7 @@
       "id": "uk.parliament.data/Member/4018/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24796", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2016-10-31"
     }, 
@@ -69447,7 +69696,7 @@
       "id": "uk.parliament.data/Member/4018/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24796", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2016-10-31"
     }, 
@@ -69455,7 +69704,7 @@
       "id": "uk.parliament.data/Member/4018/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24796", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2016-10-31"
     }, 
@@ -69697,7 +69946,7 @@
       "id": "uk.parliament.data/Member/3960/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24802", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -69705,7 +69954,7 @@
       "id": "uk.parliament.data/Member/3960/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24802", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -69713,7 +69962,7 @@
       "id": "uk.parliament.data/Member/3960/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24802", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -69814,6 +70063,13 @@
       "end_date": "2010-11-29"
     }, 
     {
+      "id": "uk.parliament.data/Member/3998/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24804", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-07-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3998/Committee/153", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24804", 
@@ -69861,6 +70117,13 @@
       "end_date": "2019-11-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/4034/Committee/11", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24805", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "2020-06-22"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4034/Committee/126", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24805", 
@@ -69880,7 +70143,7 @@
       "id": "uk.parliament.data/Member/4034/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24805", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2010-12-06", 
       "end_date": "2015-03-30"
     }, 
@@ -70727,7 +70990,7 @@
       "id": "uk.parliament.data/Member/4025/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24821", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -70735,7 +70998,7 @@
       "id": "uk.parliament.data/Member/4025/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24821", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -70743,7 +71006,7 @@
       "id": "uk.parliament.data/Member/4025/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24821", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -70812,7 +71075,7 @@
       "id": "uk.parliament.data/Member/4113/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24822", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -70820,7 +71083,7 @@
       "id": "uk.parliament.data/Member/4113/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24822", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -70828,7 +71091,7 @@
       "id": "uk.parliament.data/Member/4113/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24822", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -70903,6 +71166,22 @@
       "person_id": "uk.org.publicwhip/person/24824", 
       "organization_id": "regulatory-reform-committee", 
       "start_date": "2020-03-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4074/Committee/15", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/24824", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-07-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4074/Committee/15/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/24824", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-07-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4074/Committee/158", 
@@ -71048,7 +71327,7 @@
       "id": "uk.parliament.data/Member/3991/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24827", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2010-12-06", 
       "end_date": "2015-03-30"
     }, 
@@ -71343,7 +71622,7 @@
       "id": "uk.parliament.data/Member/3999/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24835", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2017-11-22"
     }, 
@@ -71352,7 +71631,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24835", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-11-22", 
       "end_date": "2019-11-06"
     }, 
@@ -71360,7 +71639,7 @@
       "id": "uk.parliament.data/Member/3999/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24835", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2017-11-22"
     }, 
@@ -71369,7 +71648,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24835", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-11-22", 
       "end_date": "2019-11-06"
     }, 
@@ -71377,7 +71656,7 @@
       "id": "uk.parliament.data/Member/3999/Committee/15/4", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24835", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2017-11-22"
     }, 
@@ -71386,7 +71665,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24835", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-11-22", 
       "end_date": "2019-11-06"
     }, 
@@ -71395,7 +71674,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24835", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-11-22", 
       "end_date": "2019-11-06"
     }, 
@@ -71404,7 +71683,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24835", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-11-22", 
       "end_date": "2019-11-06"
     }, 
@@ -71413,7 +71692,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24835", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-11-22", 
       "end_date": "2019-11-06"
     }, 
@@ -71520,7 +71799,7 @@
       "id": "uk.parliament.data/Member/4051/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24839", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2012-11-08"
     }, 
@@ -71528,7 +71807,7 @@
       "id": "uk.parliament.data/Member/4051/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24839", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2012-11-08"
     }, 
@@ -71536,7 +71815,7 @@
       "id": "uk.parliament.data/Member/4051/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24839", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2012-11-08"
     }, 
@@ -71813,7 +72092,7 @@
       "id": "uk.parliament.data/Member/4106/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24843", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2010-12-06", 
       "end_date": "2014-11-24"
     }, 
@@ -72323,14 +72602,14 @@
       "id": "uk.parliament.data/Member/4079/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24853", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2020-03-09"
     }, 
     {
       "id": "uk.parliament.data/Member/4079/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24853", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-11-06", 
       "end_date": "2019-11-06"
     }, 
@@ -72338,7 +72617,7 @@
       "id": "uk.parliament.data/Member/4079/Committee/171/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24853", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-11-09", 
       "end_date": "2017-05-03"
     }, 
@@ -72463,6 +72742,13 @@
       "end_date": "2014-06-23"
     }, 
     {
+      "id": "uk.parliament.data/Member/3992/Committee/381", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24855", 
+      "organization_id": "committee-of-selection", 
+      "start_date": "2020-06-22"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3992/GovernmentPost/350", 
       "source": "datadotparl/governmentpost", 
       "role": "The Lord Commissioner of Her Majesty's Treasury", 
@@ -72515,7 +72801,7 @@
       "id": "uk.parliament.data/Member/3958/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24857", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-05-09", 
       "end_date": "2013-06-20"
     }, 
@@ -72523,7 +72809,7 @@
       "id": "uk.parliament.data/Member/3958/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24857", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-05-09", 
       "end_date": "2013-06-20"
     }, 
@@ -72531,7 +72817,7 @@
       "id": "uk.parliament.data/Member/3958/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24857", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2013-05-09", 
       "end_date": "2013-06-20"
     }, 
@@ -72702,7 +72988,7 @@
       "id": "uk.parliament.data/Member/4091/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24862", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2012-12-02", 
       "end_date": "2013-11-04"
     }, 
@@ -72710,7 +72996,7 @@
       "id": "uk.parliament.data/Member/4091/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24862", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2012-12-02", 
       "end_date": "2013-11-04"
     }, 
@@ -72718,7 +73004,7 @@
       "id": "uk.parliament.data/Member/4091/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24862", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2012-12-02", 
       "end_date": "2013-11-04"
     }, 
@@ -73039,7 +73325,7 @@
       "id": "uk.parliament.data/Member/4105/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24870", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2010-12-06", 
       "end_date": "2015-03-30"
     }, 
@@ -73107,7 +73393,7 @@
       "id": "uk.parliament.data/Member/3966/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24872", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2011-10-24"
     }, 
@@ -73115,7 +73401,7 @@
       "id": "uk.parliament.data/Member/3966/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24872", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2011-10-24"
     }, 
@@ -73123,7 +73409,7 @@
       "id": "uk.parliament.data/Member/3966/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24872", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2011-10-24"
     }, 
@@ -73263,6 +73549,13 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/4100/Committee/11", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24875", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "2020-06-22"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4100/Committee/52", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24875", 
@@ -73297,7 +73590,7 @@
       "id": "uk.parliament.data/Member/4115/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24876", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2012-11-08"
     }, 
@@ -73305,7 +73598,7 @@
       "id": "uk.parliament.data/Member/4115/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24876", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2012-11-08"
     }, 
@@ -73313,7 +73606,7 @@
       "id": "uk.parliament.data/Member/4115/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24876", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2012-11-08"
     }, 
@@ -73588,6 +73881,13 @@
       "organization_id": "house-of-commons", 
       "start_date": "2013-03-19", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4084/Committee/11", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24882", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "2020-06-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4084/Committee/381", 
@@ -74152,12 +74452,21 @@
       "end_date": "2016-06-27"
     }, 
     {
+      "id": "uk.parliament.data/Member/4120/OppositionPost/864", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Secretary of State for Education", 
+      "person_id": "uk.org.publicwhip/person/24896", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-06-27"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4120/OppositionPost/974", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister (Work and Pensions)", 
       "person_id": "uk.org.publicwhip/person/24896", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-04-10"
+      "start_date": "2020-04-10", 
+      "end_date": "2020-06-27"
     }, 
     {
       "id": "uk.parliament.data/Member/4120/OppositionPost/974/1", 
@@ -74648,7 +74957,7 @@
       "id": "uk.parliament.data/Member/3919/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24907", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2014-11-03"
     }, 
@@ -74656,7 +74965,7 @@
       "id": "uk.parliament.data/Member/3919/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24907", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2014-11-03"
     }, 
@@ -74664,7 +74973,7 @@
       "id": "uk.parliament.data/Member/3919/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24907", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2014-11-03"
     }, 
@@ -76149,7 +76458,7 @@
       "id": "uk.parliament.data/Member/4017/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24938", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2013-09-09"
     }, 
@@ -76157,7 +76466,7 @@
       "id": "uk.parliament.data/Member/4017/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24938", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2013-09-09"
     }, 
@@ -76165,7 +76474,7 @@
       "id": "uk.parliament.data/Member/4017/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24938", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2013-09-09"
     }, 
@@ -76546,7 +76855,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24947", 
       "organization_id": "committee-of-selection", 
-      "start_date": "2020-01-15"
+      "start_date": "2020-01-15", 
+      "end_date": "2020-06-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4015/Committee/381/1", 
@@ -76969,6 +77279,13 @@
       "end_date": "2017-06-14"
     }, 
     {
+      "id": "uk.parliament.data/Member/4138/Committee/11", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24958", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "2020-06-22"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4138/Committee/158", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24958", 
@@ -77030,7 +77347,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24959", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -77039,7 +77356,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24959", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -77047,7 +77364,7 @@
       "id": "uk.parliament.data/Member/4114/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24959", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -77055,7 +77372,7 @@
       "id": "uk.parliament.data/Member/4114/Committee/15/3", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24959", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -77063,7 +77380,7 @@
       "id": "uk.parliament.data/Member/4114/Committee/15/4", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24959", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2010-07-12", 
       "end_date": "2015-03-30"
     }, 
@@ -77072,7 +77389,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24959", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -77081,7 +77398,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24959", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -77090,7 +77407,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24959", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -77099,7 +77416,7 @@
       "source": "datadotparl/committee", 
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/24959", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -79139,6 +79456,14 @@
       "end_date": "2016-07-17"
     }, 
     {
+      "id": "uk.parliament.data/Member/4210/GovernmentPost/496", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Department for International Development", 
+      "person_id": "uk.org.publicwhip/person/25040", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-02-13"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4210/GovernmentPost/538", 
       "source": "datadotparl/governmentpost", 
       "role": "Parliamentary Under-Secretary (Department for Communities and Local Government)", 
@@ -79659,14 +79984,14 @@
       "id": "uk.parliament.data/Member/2648/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25071", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-07-19"
     }, 
     {
       "id": "uk.parliament.data/Member/2648/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25071", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-06-17", 
       "end_date": "2017-04-27"
     }, 
@@ -79674,7 +79999,7 @@
       "id": "uk.parliament.data/Member/2648/Committee/171/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25071", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2013-07-04", 
       "end_date": "2015-03-30"
     }, 
@@ -80039,7 +80364,7 @@
       "id": "uk.parliament.data/Member/4264/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25166", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -80047,7 +80372,7 @@
       "id": "uk.parliament.data/Member/4264/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25166", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -80055,7 +80380,7 @@
       "id": "uk.parliament.data/Member/4264/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25166", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -80427,6 +80752,13 @@
       "person_id": "uk.org.publicwhip/person/25178", 
       "organization_id": "covid19-committee", 
       "start_date": "2020-06-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4277/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25181", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-07-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4277/Committee/164", 
@@ -81141,7 +81473,8 @@
       "role": "Minister for Equalities (Department for International Development)", 
       "person_id": "uk.org.publicwhip/person/25213", 
       "organization_id": "house-of-commons", 
-      "start_date": "2018-01-09"
+      "start_date": "2018-01-09", 
+      "end_date": "2020-02-13"
     }, 
     {
       "id": "uk.parliament.data/Member/4311/GovernmentPost/23", 
@@ -81171,8 +81504,32 @@
       "id": "uk.parliament.data/Member/4309/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25217", 
-      "organization_id": "consolidation-bills-joint-committee", 
-      "start_date": "2020-05-22"
+      "organization_id": "consolidation-c-bills-joint-committee", 
+      "start_date": "2020-05-22", 
+      "end_date": "2020-07-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4309/Committee/171/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/25217", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
+      "start_date": "2020-07-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4309/Committee/171/2", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/25217", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
+      "start_date": "2020-07-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4309/Committee/176", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25217", 
+      "organization_id": "european-union-committee", 
+      "start_date": "2020-06-04"
     }, 
     {
       "id": "uk.parliament.data/Member/4309/Committee/337", 
@@ -81891,7 +82248,7 @@
       "id": "uk.parliament.data/Member/4403/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25270", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -81899,7 +82256,7 @@
       "id": "uk.parliament.data/Member/4403/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25270", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -81907,7 +82264,7 @@
       "id": "uk.parliament.data/Member/4403/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25270", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -82033,7 +82390,7 @@
       "id": "uk.parliament.data/Member/4466/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25273", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-11-09", 
       "end_date": "2017-05-03"
     }, 
@@ -82093,6 +82450,13 @@
       "organization_id": "house-of-commons", 
       "start_date": "2015-05-20", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4374/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25275", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-07-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4374/Committee/24", 
@@ -82322,6 +82686,13 @@
       "start_date": "2020-01-27"
     }, 
     {
+      "id": "uk.parliament.data/Member/4482/Committee/171", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25278", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
+      "start_date": "2020-07-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4482/Committee/381", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25278", 
@@ -82407,7 +82778,7 @@
       "id": "uk.parliament.data/Member/4360/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25280", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -82415,7 +82786,7 @@
       "id": "uk.parliament.data/Member/4360/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25280", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -82423,7 +82794,7 @@
       "id": "uk.parliament.data/Member/4360/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25280", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -82635,6 +83006,13 @@
       "organization_id": "justice-committee", 
       "start_date": "2015-10-26", 
       "end_date": "2016-10-31"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4511/Committee/11", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25284", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "2020-06-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4511/Committee/131", 
@@ -82983,6 +83361,14 @@
       "end_date": "2018-07-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/4413/OppositionPost/1125", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "SNP Deputy Leader", 
+      "person_id": "uk.org.publicwhip/person/25294", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-07"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4413/OppositionPost/1238", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow SNP Spokesperson (Armed Forces and Veterans)", 
@@ -83209,7 +83595,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25298", 
       "organization_id": "procedure-committee", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-06-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4363/Committee/203", 
@@ -83281,7 +83668,7 @@
       "id": "uk.parliament.data/Member/4432/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25299", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-11-06", 
       "end_date": "2019-11-06"
     }, 
@@ -83632,7 +84019,7 @@
       "id": "uk.parliament.data/Member/4402/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25305", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -83640,7 +84027,7 @@
       "id": "uk.parliament.data/Member/4402/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25305", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -83648,7 +84035,7 @@
       "id": "uk.parliament.data/Member/4402/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25305", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -83864,6 +84251,13 @@
       "end_date": "2017-07-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4397/Committee/11", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25309", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "2020-06-22"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4397/OppositionPost/13", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Chief Secretary to the Treasury", 
@@ -84031,7 +84425,8 @@
       "role": "SNP Deputy Leader", 
       "person_id": "uk.org.publicwhip/person/25314", 
       "organization_id": "house-of-commons", 
-      "start_date": "2017-06-20"
+      "start_date": "2017-06-20", 
+      "end_date": "2020-07-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4357/OppositionPost/1208", 
@@ -84162,7 +84557,7 @@
       "id": "uk.parliament.data/Member/4464/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25317", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-11-06", 
       "end_date": "2019-11-06"
     }, 
@@ -84170,7 +84565,7 @@
       "id": "uk.parliament.data/Member/4464/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25317", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-11-09", 
       "end_date": "2017-05-03"
     }, 
@@ -84519,6 +84914,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4368/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25326", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-07-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4368/Committee/164", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25326", 
@@ -84609,7 +85011,7 @@
       "id": "uk.parliament.data/Member/4523/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25328", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -84617,7 +85019,7 @@
       "id": "uk.parliament.data/Member/4523/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25328", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -84625,7 +85027,7 @@
       "id": "uk.parliament.data/Member/4523/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25328", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -84704,7 +85106,7 @@
       "id": "uk.parliament.data/Member/4513/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25330", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-11-06", 
       "end_date": "2018-03-05"
     }, 
@@ -84712,7 +85114,7 @@
       "id": "uk.parliament.data/Member/4513/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25330", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-11-09", 
       "end_date": "2017-05-03"
     }, 
@@ -84903,12 +85305,26 @@
       "end_date": "2015-10-26"
     }, 
     {
+      "id": "uk.parliament.data/Member/4525/Committee/11", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25332", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "2020-07-16"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4525/Committee/162", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25332", 
       "organization_id": "welsh-affairs-committee", 
       "start_date": "2015-07-13", 
       "end_date": "2016-02-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4525/Committee/171", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25332", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
+      "start_date": "2020-07-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4525/OppositionPost/875", 
@@ -85300,7 +85716,7 @@
       "id": "uk.parliament.data/Member/4358/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25342", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -85308,7 +85724,7 @@
       "id": "uk.parliament.data/Member/4358/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25342", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -85316,7 +85732,7 @@
       "id": "uk.parliament.data/Member/4358/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25342", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -85455,7 +85871,7 @@
       "id": "uk.parliament.data/Member/4478/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25345", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2018-07-03"
     }, 
@@ -85463,7 +85879,7 @@
       "id": "uk.parliament.data/Member/4478/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25345", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2018-07-03"
     }, 
@@ -85471,7 +85887,7 @@
       "id": "uk.parliament.data/Member/4478/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25345", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2018-07-03"
     }, 
@@ -85635,7 +86051,7 @@
       "id": "uk.parliament.data/Member/4454/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25350", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2016-09-12"
     }, 
@@ -85643,7 +86059,7 @@
       "id": "uk.parliament.data/Member/4454/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25350", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2016-09-12"
     }, 
@@ -85651,7 +86067,7 @@
       "id": "uk.parliament.data/Member/4454/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25350", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2016-09-12"
     }, 
@@ -85659,7 +86075,7 @@
       "id": "uk.parliament.data/Member/4454/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25350", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-11-06", 
       "end_date": "2018-03-05"
     }, 
@@ -85667,7 +86083,7 @@
       "id": "uk.parliament.data/Member/4454/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25350", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-11-09", 
       "end_date": "2017-05-03"
     }, 
@@ -85749,7 +86165,7 @@
       "id": "uk.parliament.data/Member/4422/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25352", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -85757,7 +86173,7 @@
       "id": "uk.parliament.data/Member/4422/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25352", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -85765,7 +86181,7 @@
       "id": "uk.parliament.data/Member/4422/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25352", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2016-02-10", 
       "end_date": "2017-05-03"
     }, 
@@ -85837,6 +86253,13 @@
       "start_date": "2020-04-04"
     }, 
     {
+      "id": "uk.parliament.data/Member/4460/Committee/11", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25354", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "2020-06-22"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4460/Committee/144", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25354", 
@@ -85848,7 +86271,7 @@
       "id": "uk.parliament.data/Member/4460/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25354", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2018-02-20"
     }, 
@@ -85856,7 +86279,7 @@
       "id": "uk.parliament.data/Member/4460/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25354", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2018-02-20"
     }, 
@@ -85864,7 +86287,7 @@
       "id": "uk.parliament.data/Member/4460/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25354", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2018-02-20"
     }, 
@@ -86314,7 +86737,7 @@
       "id": "uk.parliament.data/Member/4515/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25365", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-11-09", 
       "end_date": "2017-05-03"
     }, 
@@ -86472,7 +86895,8 @@
       "role": "Shadow Secretary of State for Education", 
       "person_id": "uk.org.publicwhip/person/25368", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-04-06"
+      "start_date": "2020-04-06", 
+      "end_date": "2020-06-25"
     }, 
     {
       "id": "uk.parliament.data/Member/4396/OppositionPost/972", 
@@ -86669,10 +87093,17 @@
       "start_date": "2020-05-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4462/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25374", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-07-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4462/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25374", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-11-09", 
       "end_date": "2017-05-03"
     }, 
@@ -86772,7 +87203,7 @@
       "id": "uk.parliament.data/Member/4394/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25375", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-11-06", 
       "end_date": "2019-11-06"
     }, 
@@ -86780,7 +87211,7 @@
       "id": "uk.parliament.data/Member/4394/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25375", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-11-09", 
       "end_date": "2017-05-03"
     }, 
@@ -86788,8 +87219,9 @@
       "id": "uk.parliament.data/Member/4394/Committee/171/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25375", 
-      "organization_id": "consolidation-bills-joint-committee", 
-      "start_date": "2020-03-09"
+      "organization_id": "consolidation-c-bills-joint-committee", 
+      "start_date": "2020-03-09", 
+      "end_date": "2020-07-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4394/OppositionPost/1549", 
@@ -86821,7 +87253,7 @@
       "id": "uk.parliament.data/Member/4366/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25376", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-11-06", 
       "end_date": "2019-11-06"
     }, 
@@ -86829,7 +87261,7 @@
       "id": "uk.parliament.data/Member/4366/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25376", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-11-09", 
       "end_date": "2017-05-03"
     }, 
@@ -87106,7 +87538,7 @@
       "id": "uk.parliament.data/Member/4446/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25384", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -87114,7 +87546,7 @@
       "id": "uk.parliament.data/Member/4446/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25384", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -87122,7 +87554,7 @@
       "id": "uk.parliament.data/Member/4446/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25384", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -87407,6 +87839,13 @@
       "person_id": "uk.org.publicwhip/person/25391", 
       "organization_id": "justice-committee", 
       "start_date": "2020-05-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4493/Committee/171", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25391", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
+      "start_date": "2020-07-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4493/OppositionPost/1210", 
@@ -88346,7 +88785,7 @@
       "id": "uk.parliament.data/Member/4498/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25419", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -88354,7 +88793,7 @@
       "id": "uk.parliament.data/Member/4498/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25419", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -88362,7 +88801,7 @@
       "id": "uk.parliament.data/Member/4498/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25419", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -88501,7 +88940,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25423", 
       "organization_id": "northern-ireland-affairs-committee", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-07-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4458/Committee/120/1", 
@@ -88530,14 +88970,15 @@
       "id": "uk.parliament.data/Member/4458/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25423", 
-      "organization_id": "consolidation-bills-joint-committee", 
-      "start_date": "2020-03-09"
+      "organization_id": "consolidation-c-bills-joint-committee", 
+      "start_date": "2020-03-09", 
+      "end_date": "2020-07-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4458/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25423", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-11-06", 
       "end_date": "2019-11-06"
     }, 
@@ -89204,7 +89645,7 @@
       "id": "uk.parliament.data/Member/4372/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25436", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2015-11-09", 
       "end_date": "2017-05-03"
     }, 
@@ -89501,7 +89942,7 @@
       "id": "uk.parliament.data/Member/4611/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25452", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -89509,7 +89950,7 @@
       "id": "uk.parliament.data/Member/4611/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25452", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -89517,7 +89958,7 @@
       "id": "uk.parliament.data/Member/4611/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25452", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -90002,12 +90443,21 @@
       "end_date": "2016-12-05"
     }, 
     {
+      "id": "uk.parliament.data/Member/4571/OppositionPost/10", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Opposition Whip (Commons)", 
+      "person_id": "uk.org.publicwhip/person/25489", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4571/OppositionPost/1172", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister (Equalities Office) (Women and Equalities)", 
       "person_id": "uk.org.publicwhip/person/25489", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-04-10"
+      "start_date": "2020-04-10", 
+      "end_date": "2020-07-10"
     }, 
     {
       "id": "uk.parliament.data/Member/4571/OppositionPost/1341", 
@@ -90061,7 +90511,7 @@
       "id": "uk.parliament.data/Member/4572/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25490", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-11-06", 
       "end_date": "2019-11-06"
     }, 
@@ -90069,8 +90519,9 @@
       "id": "uk.parliament.data/Member/4572/Committee/171/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25490", 
-      "organization_id": "consolidation-bills-joint-committee", 
-      "start_date": "2020-03-09"
+      "organization_id": "consolidation-c-bills-joint-committee", 
+      "start_date": "2020-03-09", 
+      "end_date": "2020-07-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4572/Committee/289", 
@@ -90109,6 +90560,13 @@
       "person_id": "uk.org.publicwhip/person/25490", 
       "organization_id": "house-of-commons", 
       "start_date": "2020-04-10"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4627/Committee/136", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25531", 
+      "organization_id": "scottish-affairs-committee", 
+      "start_date": "2020-06-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4627/Committee/83", 
@@ -90637,6 +91095,13 @@
       "end_date": "2018-11-26"
     }, 
     {
+      "id": "uk.parliament.data/Member/4607/Committee/120", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25617", 
+      "organization_id": "northern-ireland-affairs-committee", 
+      "start_date": "2020-07-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4607/Committee/135", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25617", 
@@ -90860,7 +91325,7 @@
       "id": "uk.parliament.data/Member/4600/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25628", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -90868,7 +91333,7 @@
       "id": "uk.parliament.data/Member/4600/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25628", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -90876,7 +91341,7 @@
       "id": "uk.parliament.data/Member/4600/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25628", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -91234,7 +91699,7 @@
       "id": "uk.parliament.data/Member/4681/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25645", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2018-07-03", 
       "end_date": "2019-11-06"
     }, 
@@ -91242,7 +91707,7 @@
       "id": "uk.parliament.data/Member/4681/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25645", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2018-07-03", 
       "end_date": "2019-11-06"
     }, 
@@ -91250,7 +91715,7 @@
       "id": "uk.parliament.data/Member/4681/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25645", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2018-07-03", 
       "end_date": "2019-11-06"
     }, 
@@ -91298,14 +91763,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25647", 
       "organization_id": "welsh-affairs-committee", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-06-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4632/Committee/162/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25647", 
       "organization_id": "welsh-affairs-committee", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-06-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4632/Committee/365", 
@@ -91635,7 +92102,7 @@
       "id": "uk.parliament.data/Member/4639/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25661", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2018-03-05", 
       "end_date": "2019-11-06"
     }, 
@@ -91669,7 +92136,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25664", 
       "organization_id": "scottish-affairs-committee", 
-      "start_date": "2020-05-04"
+      "start_date": "2020-05-04", 
+      "end_date": "2020-06-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4603/Committee/83", 
@@ -91700,7 +92168,7 @@
       "id": "uk.parliament.data/Member/4615/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25667", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -91708,7 +92176,7 @@
       "id": "uk.parliament.data/Member/4615/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25667", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -91716,7 +92184,7 @@
       "id": "uk.parliament.data/Member/4615/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25667", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -92085,7 +92553,7 @@
       "id": "uk.parliament.data/Member/4650/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25678", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2018-03-05", 
       "end_date": "2019-11-06"
     }, 
@@ -92298,7 +92766,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25687", 
       "organization_id": "procedure-committee", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-06-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4641/Committee/83", 
@@ -92484,7 +92953,7 @@
       "id": "uk.parliament.data/Member/4604/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25696", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-11-06", 
       "end_date": "2019-11-06"
     }, 
@@ -92546,7 +93015,7 @@
       "id": "uk.parliament.data/Member/4635/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25699", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2017-11-06", 
       "end_date": "2019-11-06"
     }, 
@@ -92570,7 +93039,7 @@
       "id": "uk.parliament.data/Member/4670/Committee/15", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25700", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -92578,7 +93047,7 @@
       "id": "uk.parliament.data/Member/4670/Committee/15/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25700", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -92586,7 +93055,7 @@
       "id": "uk.parliament.data/Member/4670/Committee/15/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25700", 
-      "organization_id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
+      "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
     }, 
@@ -92829,7 +93298,16 @@
       "role": "Shadow Minister (Housing, Communities and Local Government)", 
       "person_id": "uk.org.publicwhip/person/25727", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-04-10"
+      "start_date": "2020-04-10", 
+      "end_date": "2020-07-10"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4698/OppositionPost/1559", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Equalities Office) (Faiths, Women and Equalities)", 
+      "person_id": "uk.org.publicwhip/person/25727", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-10"
     }, 
     {
       "id": "uk.parliament.data/Member/4703/GovernmentPost/1204", 
@@ -93106,7 +93584,8 @@
       "role": "Lord in Waiting (HM Household) (Whip)", 
       "person_id": "uk.org.publicwhip/person/25740", 
       "organization_id": "house-of-commons", 
-      "start_date": "2019-07-29"
+      "start_date": "2019-07-29", 
+      "end_date": "2020-03-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4711/Committee/408", 
@@ -93114,6 +93593,13 @@
       "person_id": "uk.org.publicwhip/person/25742", 
       "organization_id": "food-poverty-health-and-environment-committee", 
       "start_date": "2019-06-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4716/Committee/162", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25746", 
+      "organization_id": "welsh-affairs-committee", 
+      "start_date": "2020-06-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4716/Committee/365", 
@@ -93268,6 +93754,13 @@
       "start_date": "2020-01-07"
     }, 
     {
+      "id": "uk.parliament.data/Member/4848/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25797", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-07-06"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4848/Committee/202", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25797", 
@@ -93306,7 +93799,7 @@
       "id": "uk.parliament.data/Member/4800/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25799", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2020-03-09"
     }, 
     {
@@ -93371,7 +93864,7 @@
       "id": "uk.parliament.data/Member/4750/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25807", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2020-03-09"
     }, 
     {
@@ -93693,45 +94186,6 @@
       "start_date": "2020-03-02"
     }, 
     {
-      "id": "uk.parliament.data/Member/4589/Committee/102", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/25840", 
-      "organization_id": "justice-committee", 
-      "start_date": "2019-01-21", 
-      "end_date": "2019-11-06"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/4589/Committee/153", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/25840", 
-      "organization_id": "transport-committee", 
-      "start_date": "2018-11-05", 
-      "end_date": "2019-11-06"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/4589/Committee/202", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/25840", 
-      "organization_id": "backbench-business-committee", 
-      "start_date": "2017-10-16", 
-      "end_date": "2018-03-19"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/4589/Committee/202/1", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/25840", 
-      "organization_id": "backbench-business-committee", 
-      "start_date": "2017-01-30", 
-      "end_date": "2017-05-03"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/4589/Committee/367", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/25840", 
-      "organization_id": "international-trade-committee", 
-      "start_date": "2020-03-02"
-    }, 
-    {
       "id": "uk.parliament.data/Member/4852/Committee/153", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25841", 
@@ -93763,7 +94217,7 @@
       "id": "uk.parliament.data/Member/4784/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25844", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2020-03-09"
     }, 
     {
@@ -93899,7 +94353,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25863", 
       "organization_id": "health-and-social-care-committee", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-06-29"
     }, 
     {
       "id": "uk.parliament.data/Member/4770/OppositionPost/1538", 
@@ -94020,6 +94475,21 @@
       "person_id": "uk.org.publicwhip/person/25872", 
       "organization_id": "house-of-commons", 
       "start_date": "2020-01-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4782/Committee/81", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25873", 
+      "organization_id": "health-and-social-care-committee", 
+      "start_date": "2020-06-29"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4782/OppositionPost/1558", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow SNP Spokesperson (Health Team Member)", 
+      "person_id": "uk.org.publicwhip/person/25873", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-06-19"
     }, 
     {
       "id": "uk.parliament.data/Member/4871/Committee/203", 
@@ -94352,7 +94822,7 @@
       "id": "uk.parliament.data/Member/4775/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25907", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2020-03-09"
     }, 
     {
@@ -94394,7 +94864,7 @@
       "id": "uk.parliament.data/Member/4862/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25911", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2020-03-09"
     }, 
     {
@@ -94521,7 +94991,7 @@
       "id": "uk.parliament.data/Member/4802/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25926", 
-      "organization_id": "consolidation-bills-joint-committee", 
+      "organization_id": "consolidation-c-bills-joint-committee", 
       "start_date": "2020-03-09"
     }, 
     {
@@ -94581,8 +95051,8 @@
       "name": "Committee on the Future Relationship with the European Union"
     }, 
     {
-      "id": "committees-on-arms-export-controls-formerly-quadripartite-committee", 
-      "name": "Committees on Arms Export Controls (formerly Quadripartite Committee)"
+      "id": "committees-on-arms-export-controls", 
+      "name": "Committees on Arms Export Controls"
     }, 
     {
       "id": "communications-and-digital-committee", 
@@ -94593,8 +95063,8 @@
       "name": "Conduct Committee"
     }, 
     {
-      "id": "consolidation-bills-joint-committee", 
-      "name": "Consolidation Bills (Joint Committee)"
+      "id": "consolidation-c-bills-joint-committee", 
+      "name": "Consolidation, &c., Bills (Joint Committee)"
     }, 
     {
       "id": "constitution-committee", 
