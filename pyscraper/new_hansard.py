@@ -101,6 +101,7 @@ class BaseParseDayXML(object):
         'hs_2cSO24Application',
         'hs_6bFormalmotion',
         'hs_2cDeferredDiv',
+        'hs_3cPetitions',
     ]
     chair_headings = [
         'hs_76fChair',
