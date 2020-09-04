@@ -46,8 +46,8 @@ def PrepareXMLForDiff(scrapeversion):
 		assert chk[0] == chk[3]  # chunk type (this can fail if due to the lack of two \n's between the two labels, and thus detects an empty speech, which should not be there.  
 		# new_chk = chk[2]
 		new_chk = re.sub(
-			'(?s)(<p\s[^>]*>)(.*?)(<\/p>)',
-			lambda m: (u''.join((m.group(1), re.sub('\n', ' ', m.group(2)), m.group(3)))),
+			r'(?s)(<(p|tr)\s[^>]*>)(.*?)(<\/\2>)',
+			lambda m: (u''.join((m.group(1), re.sub('\n', ' ', m.group(3)), m.group(4)))),
 			chk[2]
 		)
 		essxindx.append(len(essxlist))
