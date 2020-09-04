@@ -8294,7 +8294,8 @@
       "role": "Acting Leader, Liberal Democrats", 
       "person_id": "uk.org.publicwhip/person/10155", 
       "organization_id": "house-of-commons", 
-      "start_date": "2019-12-13"
+      "start_date": "2019-12-13", 
+      "end_date": "2020-08-27"
     }, 
     {
       "id": "uk.parliament.data/Member/188/ParliamentaryPost/772", 
@@ -8304,6 +8305,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2019-09-03", 
       "end_date": "2019-12-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/188/ParliamentaryPost/785", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Leader of the  Liberal Democrats", 
+      "person_id": "uk.org.publicwhip/person/10155", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-08-27"
     }, 
     {
       "id": "uk.parliament.data/Member/611/Committee/103", 
@@ -12305,6 +12314,13 @@
     }, 
     {
       "id": "uk.parliament.data/Member/261/Committee/126", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10240", 
+      "organization_id": "procedure-committee", 
+      "start_date": "2020-07-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/261/Committee/126/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10240", 
       "organization_id": "procedure-committee", 
@@ -35756,7 +35772,23 @@
       "end_date": "2017-06-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/1397/OppositionPost/1161", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow PC Spokesperson (Foreign Affairs)", 
+      "person_id": "uk.org.publicwhip/person/11323", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-21"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1397/OppositionPost/1164", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow PC Spokesperson (Defence)", 
+      "person_id": "uk.org.publicwhip/person/11323", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1397/OppositionPost/1164/1", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow PC Spokesperson (Defence)", 
       "person_id": "uk.org.publicwhip/person/11323", 
@@ -35775,6 +35807,14 @@
     }, 
     {
       "id": "uk.parliament.data/Member/1397/OppositionPost/1168", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow PC Spokesperson (International Development)", 
+      "person_id": "uk.org.publicwhip/person/11323", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1397/OppositionPost/1168/1", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow PC Spokesperson (International Development)", 
       "person_id": "uk.org.publicwhip/person/11323", 
@@ -35814,7 +35854,8 @@
       "role": "Shadow PC Spokesperson (Brexit)", 
       "person_id": "uk.org.publicwhip/person/11323", 
       "organization_id": "house-of-commons", 
-      "start_date": "2017-06-01"
+      "start_date": "2017-06-01", 
+      "end_date": "2020-07-21"
     }, 
     {
       "id": "uk.parliament.data/Member/1397/OppositionPost/1388", 
@@ -35831,6 +35872,14 @@
       "person_id": "uk.org.publicwhip/person/11323", 
       "organization_id": "house-of-commons", 
       "start_date": "2017-06-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1397/OppositionPost/1561", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow PC Chief Whip", 
+      "person_id": "uk.org.publicwhip/person/11323", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-21"
     }, 
     {
       "id": "uk.parliament.data/Member/1397/OppositionPost/978", 
@@ -43077,7 +43126,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11817", 
       "organization_id": "housing-communities-and-local-government-committee", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-07-20"
     }, 
     {
       "id": "uk.parliament.data/Member/1566/Committee/301", 
@@ -57338,6 +57388,33 @@
       "end_date": "2019-07-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/3349/OppositionPost/1580", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Home, Constitutional and Legal Affairs) ", 
+      "person_id": "uk.org.publicwhip/person/13451", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2004-05-10", 
+      "end_date": "2004-07-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3349/OppositionPost/960", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Education)", 
+      "person_id": "uk.org.publicwhip/person/13451", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2005-05-20", 
+      "end_date": "2007-01-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3349/OppositionPost/966", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Home Affairs)", 
+      "person_id": "uk.org.publicwhip/person/13451", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2004-07-06", 
+      "end_date": "2005-05-20"
+    }, 
+    {
       "id": "uk.parliament.data/Member/3703/Committee/187", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13452", 
@@ -59238,6 +59315,14 @@
       "person_id": "uk.org.publicwhip/person/13524", 
       "organization_id": "house-of-commons", 
       "start_date": "2015-09-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2501/ParliamentaryPost/1092", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Deputy Chairman of Committees", 
+      "person_id": "uk.org.publicwhip/person/13524", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-29"
     }, 
     {
       "id": "uk.parliament.data/Member/3451/GovernmentPost/484", 
@@ -67153,7 +67238,8 @@
       "role": "Shadow PC Spokesperson (Treasury)", 
       "person_id": "uk.org.publicwhip/person/24743", 
       "organization_id": "house-of-commons", 
-      "start_date": "2010-06-18"
+      "start_date": "2010-06-18", 
+      "end_date": "2020-05-23"
     }, 
     {
       "id": "uk.parliament.data/Member/3943/OppositionPost/1154", 
@@ -67170,7 +67256,8 @@
       "role": "Shadow PC Spokesperson (Transport)", 
       "person_id": "uk.org.publicwhip/person/24743", 
       "organization_id": "house-of-commons", 
-      "start_date": "2010-06-18"
+      "start_date": "2010-06-18", 
+      "end_date": "2020-05-23"
     }, 
     {
       "id": "uk.parliament.data/Member/3943/OppositionPost/1156", 
@@ -67191,7 +67278,7 @@
       "end_date": "2015-03-30"
     }, 
     {
-      "id": "uk.parliament.data/Member/3943/OppositionPost/1166", 
+      "id": "uk.parliament.data/Member/3943/OppositionPost/1158", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow PC Spokesperson (Wales)", 
       "person_id": "uk.org.publicwhip/person/24743", 
@@ -67205,7 +67292,8 @@
       "role": "Shadow PC Spokesperson (Foreign Intervention)", 
       "person_id": "uk.org.publicwhip/person/24743", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-05-08"
+      "start_date": "2015-05-08", 
+      "end_date": "2020-05-23"
     }, 
     {
       "id": "uk.parliament.data/Member/3943/OppositionPost/1386", 
@@ -67213,7 +67301,8 @@
       "role": "Shadow PC Spokesperson (Business, Energy and Industrial Strategy)", 
       "person_id": "uk.org.publicwhip/person/24743", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-14"
+      "start_date": "2016-07-14", 
+      "end_date": "2020-05-23"
     }, 
     {
       "id": "uk.parliament.data/Member/3986/Committee/103", 
@@ -78196,6 +78285,13 @@
       "end_date": "2016-10-28"
     }, 
     {
+      "id": "uk.parliament.data/Member/4163/Committee/255", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24984", 
+      "organization_id": "secondary-legislation-scrutiny-committee", 
+      "start_date": "2020-07-02"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4163/Committee/340", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24984", 
@@ -78737,6 +78833,14 @@
       "organization_id": "communications-and-digital-committee", 
       "start_date": "2013-05-16", 
       "end_date": "2016-05-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4179/ParliamentaryPost/1092", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Deputy Chairman of Committees", 
+      "person_id": "uk.org.publicwhip/person/25004", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-29"
     }, 
     {
       "id": "uk.parliament.data/Member/4182/Committee/176", 
@@ -83800,6 +83904,14 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/4521/OppositionPost/1155", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow PC Spokesperson (Transport)", 
+      "person_id": "uk.org.publicwhip/person/25302", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-21"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4521/OppositionPost/1159", 
       "source": "datadotparl/oppositionpost", 
       "role": "Plaid Cymru Westminster Leader", 
@@ -83883,6 +83995,14 @@
       "person_id": "uk.org.publicwhip/person/25302", 
       "organization_id": "house-of-commons", 
       "start_date": "2017-06-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4521/OppositionPost/1560", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow PC Spokesperson (Attorney General)", 
+      "person_id": "uk.org.publicwhip/person/25302", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4428/OppositionPost/1232", 
@@ -90379,6 +90499,14 @@
       "end_date": "2018-05-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/4566/ParliamentaryPost/1092", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Deputy Chairman of Committees", 
+      "person_id": "uk.org.publicwhip/person/25481", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-29"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4565/Committee/176", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25486", 
@@ -90560,6 +90688,13 @@
       "person_id": "uk.org.publicwhip/person/25490", 
       "organization_id": "house-of-commons", 
       "start_date": "2020-04-10"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4627/Committee/126", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25531", 
+      "organization_id": "procedure-committee", 
+      "start_date": "2020-07-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4627/Committee/136", 
@@ -90755,6 +90890,14 @@
       "person_id": "uk.org.publicwhip/person/25590", 
       "organization_id": "ecclesiastical-committee-joint-committee", 
       "start_date": "2017-07-10"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4581/ParliamentaryPost/1092", 
+      "source": "datadotparl/parliamentarypost", 
+      "role": "Deputy Chairman of Committees", 
+      "person_id": "uk.org.publicwhip/person/25591", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-29"
     }, 
     {
       "id": "uk.parliament.data/Member/4588/Committee/328", 
@@ -92212,12 +92355,22 @@
       "end_date": "2019-11-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/4615/OppositionPost/878", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Foreign and Commonwealth Affairs)", 
+      "person_id": "uk.org.publicwhip/person/25667", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-01-13", 
+      "end_date": "2020-04-09"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4615/OppositionPost/962", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Minister (Environment, Food and Rural Affairs)", 
       "person_id": "uk.org.publicwhip/person/25667", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-04-10"
+      "start_date": "2020-04-10", 
+      "end_date": "2020-07-16"
     }, 
     {
       "id": "uk.parliament.data/Member/4612/Committee/136", 
@@ -92267,6 +92420,62 @@
       "person_id": "uk.org.publicwhip/person/25669", 
       "organization_id": "welsh-affairs-committee", 
       "start_date": "2020-03-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4630/OppositionPost/1153", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow PC Spokesperson (Treasury)", 
+      "person_id": "uk.org.publicwhip/person/25669", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4630/OppositionPost/1165", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow PC Spokesperson (Environment, Food and Rural Affairs)", 
+      "person_id": "uk.org.publicwhip/person/25669", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4630/OppositionPost/1167", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow PC Spokesperson (Education)", 
+      "person_id": "uk.org.publicwhip/person/25669", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4630/OppositionPost/1566", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow PC Spokesperson (Digital, Culture, Media & Sport)", 
+      "person_id": "uk.org.publicwhip/person/25669", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4630/OppositionPost/1569", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow PC Spokesperson (Health and Social Care)", 
+      "person_id": "uk.org.publicwhip/person/25669", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4630/OppositionPost/1570", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow PC Spokesperson (Housing, Communities & Local Government)", 
+      "person_id": "uk.org.publicwhip/person/25669", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4630/OppositionPost/1571", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow PC Spokesperson (The Constitution and Welsh Affairs)", 
+      "person_id": "uk.org.publicwhip/person/25669", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-07-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4680/Committee/127", 
@@ -93617,11 +93826,26 @@
       "end_date": "2019-11-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/4716/OppositionPost/962", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Minister (Environment, Food and Rural Affairs)", 
+      "person_id": "uk.org.publicwhip/person/25746", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-08-12"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4798/Committee/127", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25750", 
       "organization_id": "public-accounts-committee", 
       "start_date": "2020-03-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4798/Committee/202", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25750", 
+      "organization_id": "backbench-business-committee", 
+      "start_date": "2020-07-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4870/Committee/366", 
@@ -93702,6 +93926,13 @@
       "person_id": "uk.org.publicwhip/person/25789", 
       "organization_id": "house-of-commons", 
       "start_date": "2020-03-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4749/Committee/17", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25791", 
+      "organization_id": "housing-communities-and-local-government-committee", 
+      "start_date": "2020-07-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4749/Committee/62", 
@@ -93985,14 +94216,16 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25817", 
       "organization_id": "backbench-business-committee", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-07-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4741/Committee/328", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25817", 
       "organization_id": "women-and-equalities-committee", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-07-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4742/Committee/24", 
@@ -94398,7 +94631,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25868", 
       "organization_id": "procedure-committee", 
-      "start_date": "2020-03-09"
+      "start_date": "2020-03-09", 
+      "end_date": "2020-07-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4762/Committee/131", 
@@ -94595,7 +94829,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25887", 
       "organization_id": "procedure-committee", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-07-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4760/Committee/131", 
@@ -94831,6 +95066,13 @@
       "person_id": "uk.org.publicwhip/person/25907", 
       "organization_id": "petitions-committee", 
       "start_date": "2020-03-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4775/Committee/328", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25907", 
+      "organization_id": "women-and-equalities-committee", 
+      "start_date": "2020-07-20"
     }, 
     {
       "id": "uk.parliament.data/Member/4864/Committee/127", 
