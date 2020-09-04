@@ -763,7 +763,7 @@ class BaseParseDayXML(object):
         return vote_list
 
     def parse_table(self, wrapper):
-        rows = wrapper.xpath('.//row')
+        rows = wrapper.xpath('.//ns:row', namespaces=self.ns_map)
         tag = etree.Element('table')
         body = etree.Element('tbody')
         url = None
@@ -771,12 +771,15 @@ class BaseParseDayXML(object):
             row_tag = etree.Element('tr')
             row_tag.set('pid', self.get_pid())
 
-            for entry in row.xpath('(.//hs_brev|.//hs_Para)'):
+            for entry in row.xpath('(.//ns:hs_brev|.//ns:hs_Para)', namespaces=self.ns_map):
                 if url is None:
                     url = entry.get('url')
-                row_tag.append(list(entry))
+                td_tag = etree.Element('td')
+                td_tag.text = self.get_single_line_text_from_element(entry)
+                row_tag.append(td_tag)
 
-            body.append(row_tag)
+            if len(row_tag):
+                body.append(row_tag)
 
         tag.append(body)
 
