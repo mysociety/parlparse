@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 #
 # UK Parliament Written Answers are now in a new database-driven website. This
-# site has a nice search, and RSS feeds, but for now we still need a bit of
-# scraping to fetch the data. Ever so slightly simpler than the past, though!
+# site has a nice-ish search, but for now we still need a bit of scraping to
+# fetch the data. Ever so slightly simpler than the past, though!
 
 import argparse
 import datetime
@@ -20,7 +20,7 @@ import requests_cache
 
 # Command line arguments
 yesterday = datetime.date.today() - datetime.timedelta(days=1)
-parser = argparse.ArgumentParser(description='Scrape/parse new Written Answers database.')
+parser = argparse.ArgumentParser(description='Scrape/parse new Written Answers/Statements database.')
 parser.add_argument('--house', required=True, choices=['commons', 'lords'], help='Which house to fetch')
 parser.add_argument('--type', required=True, choices=['answers', 'statements'], help='What sort of thing to fetch')
 parser.add_argument('--date', default=yesterday.isoformat(), help='date to fetch')
@@ -32,12 +32,12 @@ ARGS = parser.parse_args()
 cache_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cache')
 requests_cache.install_cache(cache_path, expire_after=60*60*12)
 
-HOST = 'https://www.parliament.uk'
-URL_ROOT = '%s/business/publications/written-questions-answers-statements/' % HOST
+HOST = 'https://questions-statements.parliament.uk'
+URL_ROOT = '%s/' % HOST
 if ARGS.type == 'answers':
-    URL_INDEX = URL_ROOT + 'written-questions-answers/'
+    URL_INDEX = URL_ROOT + 'written-questions'
 else:
-    URL_INDEX = URL_ROOT + 'written-statements/'
+    URL_INDEX = URL_ROOT + 'written-statements'
 
 
 def _lord_name_on_date(p, date):
@@ -64,16 +64,6 @@ def _lord_name(n):
 
 with open(ARGS.members) as fp:
     MEMBERS = json.load(fp)
-if ARGS.house == 'lords':
-    MEMBERS_BY_NAME = {}
-    PERSONS = {p['id']: [n for n in p.get('other_names', []) if n['note']=='Main'] for p in MEMBERS['persons']}
-    for m in MEMBERS['memberships']:
-        if m.get('organization_id') != 'house-of-lords': continue
-        if not m['start_date'] <= ARGS.date <= m.get('end_date', '9999-12-31'): continue
-        name = _lord_name_on_date(m['person_id'], ARGS.date).lower()
-        if name:
-            MEMBERS_BY_NAME[name] = m['person_id']
-else:
     DATADOTPARL_ID_TO_PERSON_ID = {}
     for person in MEMBERS['persons']:
         for i in person.get('identifiers', []):
@@ -83,13 +73,9 @@ else:
 
 def main():
     params = urllib.urlencode({
-        'page': 1,
-        'max': 100,
-        'questiontype': 'QuestionsWithAnswersOnly',  # 'AllQuestions',
-        'house': ARGS.house,
-        'use-dates': 'True',
-        'answered-from': ARGS.date,
-        'answered-to': ARGS.date,
+        'Page': 1,
+        'Answered': 'Answered',
+        'House': ARGS.house.title(),
     })
     url_page = '%s?%s' % (URL_INDEX, params)
     if ARGS.type == 'answers':
@@ -99,7 +85,7 @@ def main():
     errors = 0
     while url_page:
         r = requests.get(url_page)
-        if 'There are no results' in r.content:
+        if 'There are no written' in r.content:
             break
         if 'Server Error' in r.content:
             requests.Session().cache.delete_url(url_page)
@@ -109,13 +95,6 @@ def main():
             continue
         writtens.add_from_html(r.content)
         url_page = writtens.next_page
-
-    # Make sure we have all grouped questions (some might actually not have
-    # been returned due to bugs/being on another day)
-    if ARGS.type == 'answers':
-        for uid, qn in writtens.by_id.items():
-            for a in qn.groupedquestions:
-                writtens.get_by_id(a)
 
     output = ('%s' % writtens).encode('utf-8')
     if output:
@@ -136,19 +115,17 @@ class AttrDict(dict):
 
 
 class WrittenThing(object):
-    def find_speaker(self, h, date):
-        name = h.a.text.strip()
-        if ARGS.house == 'lords':
-            # Loop through all, match on name and date
-            name = name.lower().replace(u'\u2019', "'")
-            person_id = MEMBERS_BY_NAME[re.sub('^the ', '', name)]
+    def find_speaker(self, h, date, big_card=False):
+        if big_card:
+            name = h.a.find(class_='primary-info').text.strip()
         else:
-            speaker_id = re.search('(\d+)$', h.a['href']).group(1)
-            person_id = DATADOTPARL_ID_TO_PERSON_ID[speaker_id]
+            name = h.a.text.strip()
+        speaker_id = re.search('(\d+)/contact$', h.a['href']).group(1)
+        person_id = DATADOTPARL_ID_TO_PERSON_ID[speaker_id]
         return AttrDict(id=person_id, name=name)
 
     def find_date(self, d, regex):
-        date = re.match('\s*%s on:\s+(?P<date>.*)' % regex, d.text)
+        date = re.match('\s*%s\s+(?P<date>.*)' % regex, d.text)
         date = date.group('date')
         date = dateutil.parser.parse(date).date().isoformat()
         return date
@@ -159,25 +136,32 @@ class WrittenThings(object):
         self.by_id = {}
         self.by_dept = {}
 
-    def wanted_thing(self, st):
-        return True
-
     def add_from_html(self, data):
         """Provide a page of HTML, parse out all its things"""
         soup = bs4.BeautifulSoup(data)
-        for item in soup.find_all(class_="qna-result-container"):
+        finished = False
+        for item in soup.find_all(class_="card"):
             item = self.model(item, self)
-            if self.wanted_thing(item):
+            if item.list_date == ARGS.date:
                 self.by_id[item.uid] = item
                 self.by_dept.setdefault(item.dept, []).append(item)
+            elif item.list_date < ARGS.date:
+                finished = True
+                break
 
-        n = soup.find(text='Next').parent
-        if n.name == 'span':
+        n = soup.find(title='Go to next page')
+        if n.name == 'span' or finished:
             self.next_page = None
         elif n.name == 'a':
             self.next_page = '%s%s' % (HOST, n['href'])
         else:
             raise Exception
+
+    def get_detail(self):
+        url = '%s/detail/%s/%s' % (URL_INDEX, self.date, self.uid)
+        r = requests.get(url)
+        soup = bs4.BeautifulSoup(r.content)
+        return soup
 
     @property
     def number(self):
@@ -201,128 +185,104 @@ class WrittenThings(object):
 
 class Statement(WrittenThing):
     def __init__(self, st, sts):
-        self.uid = escape(st.find(class_="qna-result-ws-uin").a.text)
-        self.dept = escape(st.find(class_="qna-result-writtenstatement-answeringbody").text)
-        self.heading = escape(st.find(class_="qna-result-ws-content-heading").text)
+        href = st.find(class_="overlay-link")['href']
+        m = re.match('/written-statements/detail/(\d\d\d\d-\d\d-\d\d)/(.+)', href)
+        self.date, self.uid = m.groups()
+        self.list_date = self.date
 
-        date = st.find(class_="qna-result-ws-date")
-        self.date = self.find_date(date, 'Made')
-        speaker = st.find(class_='qna-result-writtenstatement-made-by')
+        # We might have things we don't yet want, or older things
+        if ARGS.date != self.date:
+            return
+
+        self.dept = escape(st.find(class_="primary-info").text).strip()
+        self.heading = escape(st.find(class_="text").text).strip()
+
+        speaker = st.find(class_='content-text')
         self.speaker = self.find_speaker(speaker, self.date)
 
-        joint = st.find(class_='qna-result-writtenstatement-joint-statement-row')
-        if joint:
-            a = joint.find('a')
-            a['href'] = HOST + a['href']
-
-        statement = st.find(class_="qna-result-writtenstatement-text")
-        self.statement = statement.renderContents().decode('utf-8').strip()
+        # Ugh
+        soup = self.get_detail()
+        title = soup.find('h3', text='Statement made by')
+        answerer = self.find_speaker(title.parent, self.date, big_card=True)
+        title = soup.find('h3', text='Statement')
+        statement = ''
+        for t in title.next_siblings:
+            statement += t.decode().strip()
+        self.statement = statement
 
     def __str__(self):
         return u'''
 <minor-heading id="uk.org.publicwhip/wms/{st.date}.{st.uid}.h" nospeaker="true">
     {st.heading}
 </minor-heading>
-<speech id="uk.org.publicwhip/wms/{st.date}.{st.uid}.0" person_id="{st.speaker.id}" speakername="{st.speaker.name}" url="{url_root}written-statement/{house}/{st.date}/{st.uid}/">
+<speech id="uk.org.publicwhip/wms/{st.date}.{st.uid}.0" person_id="{st.speaker.id}" speakername="{st.speaker.name}" url="{url_root}written-statements/detail/{st.date}/{st.uid}">
     {st.statement}
 </speech>
-'''.format(st=self, house=ARGS.house.title(), url_root=URL_ROOT)
+'''.format(st=self, url_root=URL_ROOT)
 
 
 class Question(WrittenThing):
     def __init__(self, qn, qns):
         self.qns = qns
 
-        self.uid = escape(qn.find(class_="qna-result-question-uin").a.text)
-        self.dept = escape(qn.find(class_="qna-result-question-answeringbody").text)
-        try:
-            hdg = qn.find(class_="qna-result-question-hansardheading")
-            self.heading = escape(hdg.text)
-        except:
-            self.heading = '*No heading*'
-
-        date_asked = qn.find(class_="qna-result-question-date")
-        self.date_asked = self.find_date(date_asked, 'Asked')
+        href = qn.find(class_="overlay-link")['href']
+        m = re.match('/written-questions/detail/(\d\d\d\d-\d\d-\d\d)/(.+)', href)
+        self.date_asked, self.uid = m.groups()
         self.date = self.date_asked
-        asker = qn.find(class_='qna-result-question-title')
+
+        self.dept = escape(qn.find(class_="primary-info").text).strip()
+        self.heading = escape(qn.find(class_="secondary-info").text).strip()
+
+        asker = qn.find(class_='content-text')
         self.asker = self.find_speaker(asker, self.date_asked)
-        question = qn.find(class_="qna-result-question-text").text.strip()
+        question = qn.find(class_="sub-card-question-text").text.strip()
         self.question = escape(question)
 
-        self.answers = []
-        for answer_ctr in qn.findAll(class_='qna-result-answer-container'):
-            date_answer = answer_ctr.find(class_="qna-result-answer-date")
-            date_answer = self.find_date(date_answer, '(Answered|Corrected)')
-            answerer = answer_ctr.find(class_="qna-result-answer-title")
-            answerer = self.find_speaker(answerer, date_answer)
+        answered = qn.find(class_='answer-info').find(class_='item')
+        date_answer = self.find_date(answered, 'Answered')
+        self.list_date = date_answer
 
-            groupedquestions_container = answer_ctr.find(class_="qna-result-groupedquestions-container")
-            groupedquestions = []
-            if groupedquestions_container:
-                groupedquestions = answer_ctr.find_all(class_='qna-result-groupedquestion-container')
-                groupedquestions = [x.a.text for x in groupedquestions]
-                groupedquestions_container.extract()
+        # We might have things we don't yet want, or older things
+        if ARGS.date != date_answer:
+            return
 
-            answer = answer_ctr.find(class_="qna-result-answer-content")
-            # Remove show/hide changes JS-only code at top
-            for l in answer.findAll('label'): l.extract()
-            for l in answer.findAll('input'): l.extract()
-            # Replace spans with semantic elements
-            for l in answer.findAll('span', class_='ins'):
-                l.name = 'ins'
-            for l in answer.findAll('span', class_='del'):
-                l.name = 'del'
+        # Ugh
+        soup = self.get_detail()
+        title = soup.find('h3', text='Answer')
+        col = title.parent
+        answerer = self.find_speaker(col, date_answer, big_card=True)
+        row = col.parent
+        row = row.find_next_sibling('div') # ignore answered date
+        answer = ''
+        for r in row.find_next_siblings('div'): # rows containing answer, correction
+            for t in r.children:
+                if t.name == 'div': # column, but not always present
+                    for tt in t.children:
+                        answer += tt.decode().strip()
+                else:
+                    answer += t.decode().strip()
 
-            answer = answer.renderContents().decode('utf-8').strip()
-
-            # Attachments are okay just left in the answer
-            # attachments = answer_ctr.find(class_="qna-result-attachments-container")
-            # if attachments:
-            #     self.attachments = answer_ctr.find_all(class_='qna-result-attachment-container')
-
-            self.answers.append(AttrDict({
-                'answerer': answerer,
-                'date': date_answer,
-                'answer': answer,
-                'groupedquestions': groupedquestions,
-            }))
-
-    @property
-    def groupedquestions(self):
-        if len(self.answers):
-            return self.answers[-1].groupedquestions
-        return []
-
-    @property
-    def secondary_group_question(self):
-        return self.groupedquestions and self.uid > min(self.groupedquestions)
+        self.answer = AttrDict({
+            'answerer': answerer,
+            'date': date_answer,
+            'answer': answer,
+        })
 
     @property
     def questions_xml(self):
-        qns = [self] + [self.qns.by_id[q] for q in self.groupedquestions]
-        return ''.join([u'''
-<ques id="uk.org.publicwhip/wrans/{qn.date_asked}.{qn.uid}.q{i}" person_id="{qn.asker.id}" speakername="{qn.asker.name}" url="{url_root}written-question/{house}/{qn.date_asked}/{qn.uid}/">
+        return u'''
+<ques id="uk.org.publicwhip/wrans/{qn.date_asked}.{qn.uid}.q0" person_id="{qn.asker.id}" speakername="{qn.asker.name}" url="{url_root}written-questions/detail/{qn.date_asked}/{qn.uid}">
     <p qnum="{qn.uid}">{qn.question}</p>
-</ques>'''.format(i=i, qn=qn, house=ARGS.house.title(), url_root=URL_ROOT) for i, qn in enumerate(qns)])
+</ques>'''.format(qn=self, url_root=URL_ROOT)
 
     @property
     def answers_xml(self):
-        return ''.join([u'''
+        return u'''
 <reply id="uk.org.publicwhip/wrans/{qn.date_asked}.{qn.uid}.r{i}" person_id="{answer.answerer.id}" speakername="{answer.answerer.name}">
     {answer.answer}
-</reply>'''.format(i=i, qn=self, answer=answer) for i, answer in enumerate(self.answers)])
+</reply>'''.format(i=0, qn=self, answer=self.answer)
 
     def __str__(self):
-        # TODO If we were to import unanswered questions, we would want to
-        # redirect them if they then got grouped together when answered. This
-        # might work, but isn't needed for now.
-        if self.secondary_group_question:
-            return ''
-        #    oldgid = "uk.org.publicwhip/wrans/{qn.date_asked}.{qn.uid}.h".format(qn=self)
-        #    newgid = "uk.org.publicwhip/wrans/{qn.date_asked}.{id}.h".format(qn=self, id=min(self.groupedquestions))
-        #    matchtype = 'altques'
-        #    return '<gidredirect oldgid="%s" newgid="%s" matchtype="%s"/>\n' % (oldgid, newgid, matchtype)
-
         return u'''
 <minor-heading id="uk.org.publicwhip/wrans/{qn.date_asked}.{qn.uid}.h" nospeaker="true">
     {qn.heading}
@@ -340,31 +300,6 @@ class Statements(WrittenThings):
 class Questions(WrittenThings):
     gid_type = 'wrans'
     model = Question
-
-    def wanted_thing(self, qn):
-        # If the question was answered/corrected on our date
-        if ARGS.date in [ a.date for a in qn.answers ]:
-            return True
-        return False
-
-    def get_by_id(self, uid):
-        # It is possible that when we need to look up a grouped ID, it's not
-        # present. Either it was on a different day (possible), or there's a
-        # mistake in what has been returned from the search. Perform a separate
-        # scrape/parse of the question if so, to get its data.
-        if uid in self.by_id:
-            return self.by_id[uid]
-        r = requests.get(URL_INDEX, params={'uin': uid})
-        if 'There are no results' in r.content:
-            return
-        if 'Server Error' in r.content:
-            return
-        soup = bs4.BeautifulSoup(r.content)
-        qn = soup.find(class_='qna-result-container')
-        qn = Question(qn, self)
-        self.by_id[qn.uid] = qn
-        self.by_dept.setdefault(qn.dept, []).append(qn)
-        return qn
 
 
 if __name__ == '__main__':
