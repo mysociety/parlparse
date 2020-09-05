@@ -163,13 +163,13 @@ def FindRegmemPages():
         '/pa/cm/cmregmem/925/part1contents.htm': '2013-01-18',
     }
     urls = []
-    idxurl = 'http://www.publications.parliament.uk/pa/cm/cmregmem.htm'
+    idxurl = 'https://www.parliament.uk/mps-lords-and-offices/standards-and-financial-interests/parliamentary-commissioner-for-standards/registers-of-interests/register-of-members-financial-interests/'
     ur = urllib.urlopen(idxurl)
     content = ur.read()
     ur.close()
 
     soup = BeautifulSoup.BeautifulSoup(content)
-    soup = soup.find(id='content').find('ul')
+    soup = soup.find(attrs='main-body').find('ul')
     ixurls = [urlparse.urljoin(idxurl, ix['href']) for ix in soup.findAll('a', href=True)]
 
     for ixurl in ixurls:
