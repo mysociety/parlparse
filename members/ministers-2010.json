@@ -17145,7 +17145,8 @@
       "role": "Liberal Democrat Lords Spokesperson (Work and Pensions)", 
       "person_id": "uk.org.publicwhip/person/10345", 
       "organization_id": "house-of-commons", 
-      "start_date": "2017-10-12"
+      "start_date": "2017-10-12", 
+      "end_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/36/Committee/11", 
@@ -42587,7 +42588,16 @@
       "role": "Parliamentary Under-Secretary (Foreign and Commonwealth Office) (Joint with the Department for International Development)", 
       "person_id": "uk.org.publicwhip/person/11785", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-02-13"
+      "start_date": "2020-02-13", 
+      "end_date": "2020-09-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1559/GovernmentPost/1239", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Foreign, Commonwealth and Development Office)", 
+      "person_id": "uk.org.publicwhip/person/11785", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/1559/GovernmentPost/213", 
@@ -70778,7 +70788,8 @@
       "role": "The Secretary of State for Foreign and Commonwealth Affairs", 
       "person_id": "uk.org.publicwhip/person/24815", 
       "organization_id": "house-of-commons", 
-      "start_date": "2019-07-24"
+      "start_date": "2019-07-24", 
+      "end_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/4007/GovernmentPost/1170", 
@@ -70797,6 +70808,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2018-01-09", 
       "end_date": "2018-07-09"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4007/GovernmentPost/1237", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Secretary of State for Foreign, Commonwealth and Development Affairs", 
+      "person_id": "uk.org.publicwhip/person/24815", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/4007/GovernmentPost/540", 
@@ -73780,7 +73799,8 @@
       "role": "Minister of State (Foreign and Commonwealth Office) (Joint with the Department for International Development)", 
       "person_id": "uk.org.publicwhip/person/24878", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-02-13"
+      "start_date": "2020-02-13", 
+      "end_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/4057/GovernmentPost/1206", 
@@ -73808,6 +73828,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2019-07-24", 
       "end_date": "2020-02-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4057/GovernmentPost/1238", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Foreign, Commonwealth and Development Office)", 
+      "person_id": "uk.org.publicwhip/person/24878", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/4057/GovernmentPost/350", 
@@ -75245,7 +75273,8 @@
       "role": "Minister of State", 
       "person_id": "uk.org.publicwhip/person/24911", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-02-13"
+      "start_date": "2020-02-13", 
+      "end_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/4062/GovernmentPost/1226", 
@@ -75257,12 +75286,21 @@
       "end_date": "2019-09-10"
     }, 
     {
+      "id": "uk.parliament.data/Member/4062/GovernmentPost/1238", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Foreign, Commonwealth and Development Office)", 
+      "person_id": "uk.org.publicwhip/person/24911", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-02"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4062/GovernmentPost/496", 
       "source": "datadotparl/governmentpost", 
       "role": "The Minister of State, Department for International Development", 
       "person_id": "uk.org.publicwhip/person/24911", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-02-13"
+      "start_date": "2020-02-13", 
+      "end_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/4062/GovernmentPost/496/1", 
@@ -79539,7 +79577,8 @@
       "role": "Minister of State", 
       "person_id": "uk.org.publicwhip/person/25040", 
       "organization_id": "house-of-commons", 
-      "start_date": "2017-06-13"
+      "start_date": "2017-06-13", 
+      "end_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/4210/GovernmentPost/1120", 
@@ -79560,12 +79599,21 @@
       "end_date": "2016-07-17"
     }, 
     {
+      "id": "uk.parliament.data/Member/4210/GovernmentPost/1238", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Foreign, Commonwealth and Development Office)", 
+      "person_id": "uk.org.publicwhip/person/25040", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-02"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4210/GovernmentPost/496", 
       "source": "datadotparl/governmentpost", 
       "role": "The Minister of State, Department for International Development", 
       "person_id": "uk.org.publicwhip/person/25040", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-02-13"
+      "start_date": "2020-02-13", 
+      "end_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/4210/GovernmentPost/538", 
@@ -79697,6 +79745,14 @@
       "start_date": "2020-04-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/4222/OppositionPost/1581", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Spokesperson (Foreign and Commonwealth Affairs and International Development)", 
+      "person_id": "uk.org.publicwhip/person/25048", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-02"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4222/OppositionPost/977", 
       "source": "datadotparl/oppositionpost", 
       "role": "Opposition Whip (Lords)", 
@@ -79710,7 +79766,8 @@
       "role": "Shadow Spokesperson (Foreign and Commonwealth Affairs)", 
       "person_id": "uk.org.publicwhip/person/25048", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-09-18"
+      "start_date": "2015-09-18", 
+      "end_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/4222/OppositionPost/989", 
@@ -79718,7 +79775,8 @@
       "role": "Shadow Spokesperson (International Development)", 
       "person_id": "uk.org.publicwhip/person/25048", 
       "organization_id": "house-of-commons", 
-      "start_date": "2013-03-18"
+      "start_date": "2013-03-18", 
+      "end_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/4218/Committee/148", 
@@ -85878,7 +85936,16 @@
       "role": "Parliamentary Under-Secretary (Foreign and Commonwealth Office) (Joint with the Department for International Development)", 
       "person_id": "uk.org.publicwhip/person/25342", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-02-13"
+      "start_date": "2020-02-13", 
+      "end_date": "2020-09-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4358/GovernmentPost/1239", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Foreign, Commonwealth and Development Office)", 
+      "person_id": "uk.org.publicwhip/person/25342", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/4358/GovernmentPost/351", 
@@ -87417,7 +87484,16 @@
       "role": "Minister of State (Foreign and Commonwealth Office) (Joint with the Department for International Development)", 
       "person_id": "uk.org.publicwhip/person/25376", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-02-13"
+      "start_date": "2020-02-13", 
+      "end_date": "2020-09-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4366/GovernmentPost/1238", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Foreign, Commonwealth and Development Office)", 
+      "person_id": "uk.org.publicwhip/person/25376", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/4366/ParliamentaryPost/764", 
@@ -89901,7 +89977,8 @@
       "role": "The Secretary of State for International Development", 
       "person_id": "uk.org.publicwhip/person/25439", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-02-13"
+      "start_date": "2020-02-13", 
+      "end_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/4531/GovernmentPost/854", 
@@ -90835,6 +90912,14 @@
       "end_date": "2019-04-23"
     }, 
     {
+      "id": "uk.parliament.data/Member/4584/GovernmentPost/1239", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Foreign, Commonwealth and Development Office)", 
+      "person_id": "uk.org.publicwhip/person/25586", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-02"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4584/GovernmentPost/23", 
       "source": "datadotparl/governmentpost", 
       "role": "Baroness in Waiting (HM Household) (Whip)", 
@@ -90849,7 +90934,8 @@
       "role": "The Parliamentary Under-Secretary of State for International Development", 
       "person_id": "uk.org.publicwhip/person/25586", 
       "organization_id": "house-of-commons", 
-      "start_date": "2019-04-23"
+      "start_date": "2019-04-23", 
+      "end_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/4584/GovernmentPost/941", 
@@ -90857,7 +90943,8 @@
       "role": "The Parliamentary Under-Secretary of State for Foreign and Commonwealth Affairs", 
       "person_id": "uk.org.publicwhip/person/25586", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-02-13"
+      "start_date": "2020-02-13", 
+      "end_date": "2020-09-02"
     }, 
     {
       "id": "uk.parliament.data/Member/4580/GovernmentPost/1120", 
