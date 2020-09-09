@@ -88,7 +88,6 @@ def get_from_list(writtens, params):
     skip = 0
     while url_page:
         url = '%s&skip=%d' % (url_page, skip)
-        print url
         j = requests.get(url).json()
         if not j['results']:
             break
@@ -137,13 +136,18 @@ class WrittenThings(object):
         """Provide the API JSON, parse out all its things"""
         for result in data['results']:
             item = result['value']
-            item = self.model(item, self)
-            self.by_id[item.uin] = item
-            self.by_dept.setdefault(item.answeringBodyName, []).append(item)
+            self.add_item(item)
 
     @property
     def number(self):
         return len(self.by_id)
+
+    def add_item(self, item):
+        item = self.model(item)
+        if item.uin in self.by_id:
+            return
+        self.by_id[item.uin] = item
+        self.by_dept.setdefault(item.answeringBodyName, []).append(item)
 
     def __str__(self):
         """Outputs the things, grouped by department, as parlparse XML"""
@@ -162,7 +166,7 @@ class WrittenThings(object):
 
 
 class Statement(WrittenThing):
-    def __init__(self, st, sts):
+    def __init__(self, st):
         super(Statement, self).__init__(st)
         self.date = self.find_date(self.dateMade)
         self.uin = self.uin.lower()
@@ -186,7 +190,7 @@ class Statement(WrittenThing):
 
 
 class Question(WrittenThing):
-    def __init__(self, qn, qns):
+    def __init__(self, qn):
         super(Question, self).__init__(qn)
         self.date = self.find_date(self.dateTabled)
         self.heading = escape(self.heading or 'Question')
@@ -254,9 +258,7 @@ class Questions(WrittenThings):
 
         qn = requests.get(API_INDEX, params={'expandMember': 'true', 'uin': uin}).json()
         qn = qn['results'][0]['value']
-        qn = Question(qn, self)
-        self.by_id[qn.uin] = qn
-        self.by_dept.setdefault(qn.answeringBodyName, []).append(qn)
+        self.add_item(qn)
         return qn
 
 
