@@ -126,6 +126,12 @@ class WrittenThing(AttrDict):
         url = '%s/%s' % (API_INDEX, self['id'])
         return requests.get(url).json()['value']
 
+    def add_attachments(self, attachments):
+        out = ''
+        for a in attachments:
+            out += '<p><a href="%s">%s</a> (%s, %.1fKB)</p>' % (escape(a['url']), escape(a['title']), a['fileType'], a['fileSizeBytes']/1024.0)
+        return out
+
 
 class WrittenThings(object):
     def __init__(self):
@@ -175,8 +181,7 @@ class Statement(WrittenThing):
 
         data = self.get_detail()
         self.statement = self.fix_text(data['text'])
-        for a in data['attachments']:
-            self.statement += '<p><a href="%s">%s</a> (%s, %.1fKB)</p>' % (a['url'], a['title'], a['fileType'], a['fileSizeBytes']/1024.0)
+        self.statement += self.add_attachments(data['attachments'])
 
     def __str__(self):
         return u'''
@@ -201,8 +206,7 @@ class Question(WrittenThing):
         self.answerer = self.find_speaker(self.answeringMember)
         self.date_answer = self.find_date(self.dateAnswered)
         self.answer = self.fix_text(data['answerText'])
-        for a in data['attachments']:
-            self.answer += '<p><a href="%s">%s</a> (%s, %.1fKB)</p>' % (a['url'], a['title'], a['fileType'], a['fileSizeBytes']/1024.0)
+        self.answer += self.add_attachments(data['attachments'])
 
     @property
     def secondary_group_question(self):
