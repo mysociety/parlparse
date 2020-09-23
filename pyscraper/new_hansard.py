@@ -288,6 +288,8 @@ class BaseParseDayXML(object):
         self.current_speech.set('id', self.get_speech_id())
         if member is not None:
             self.current_speech.set('speakername', member['name'])
+            if 'type' in member:
+                self.current_speech.set('type', member['type'])
             if 'person_id' in member:
                 self.current_speech.set('person_id', member['person_id'])
             else:
@@ -344,6 +346,8 @@ class BaseParseDayXML(object):
             if member is not None:
                 member['person_id'] = member.get('id')
                 member['name'] = self.resolver.name_on_date(member['person_id'], self.date)
+                if member_tag.get('ContributionType'):
+                    member['type'] = member_tag.get('ContributionType')
                 return member
             else:
                 if member_tag.text == 'Olney,\nSarah':
