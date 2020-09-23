@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import datetime
 import re
 import urllib2
 from lxml import etree
@@ -11,12 +12,6 @@ etree.set_default_parser(parser)
 
 data = Popolo()
 
-parl_ids = {}
-for person in data.persons.values():
-    for i in person.get('identifiers', []):
-        if i['scheme'] == 'datadotparl_id':
-            parl_ids[person['id']] = i['identifier']
-
 
 def canon_name(n):
     n = re.sub(' St\. +', ' St ', n)
@@ -25,9 +20,6 @@ def canon_name(n):
     n = re.sub('Lord (Archb|B)ishop ', r'\1ishop ', n)
     return n
 
-
-LORDS_URL = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Lords/BasicDetails'
-parl_members = etree.parse(urllib2.urlopen(LORDS_URL)).getroot()
 
 lord_match = re.compile('^([^\s]*)\s+(.*?)(?:\s+of\s+(.*))?$')
 
@@ -48,8 +40,79 @@ type_map = {
     'Bishops': 'B'
 }
 
+
+def construct_name(member):
+    given_name = member.find('BasicDetails/GivenForename').text
+    middle_names = member.find('BasicDetails/GivenMiddleNames').text
+    surname = member.find('BasicDetails/GivenSurname').text
+    title_parts = lord_match.search(member.find('DisplayAs').text)
+    prefix = title_parts.group(1)
+    lordname = title_parts.group(2)
+    lordof = title_parts.group(3) or ''
+    if prefix == 'The' and lordname in ('Lord Bishop', 'Lord Archbishop'):
+        prefix = lordname.replace('Lord ', '')
+        lordname = ''
+    name = {
+        'given_name': given_name,
+        'honorific_prefix': prefix,
+        'lordname': lordname,
+        'lordofname': lordof,
+        'lordofname_full': '',
+        'county': '',
+        'note': 'Main',
+    }
+    if middle_names:
+        name['additional_name'] = middle_names
+    if surname and surname != lordname:
+        name['surname'] = surname
+    return name
+
+
+def construct_person(member, person_id, name):
+    ids = [
+        {
+            'scheme': 'pims_id',
+            'identifier': member.attrib['Pims_Id']
+        },
+        {
+            'scheme': 'datadotparl_id',
+            'identifier': member.attrib['Member_Id']
+        }
+    ]
+    person = {
+        'id': person_id,
+        'identifiers': ids,
+        'other_names': [name]
+    }
+    return person
+
+def construct_membership(member, person_id, lord_id):
+    lord_type = type_map[member.find('MemberFrom').text]
+    party = party_map[member.find('Party').text]
+    start_date = re.sub('T.*$', '', member.find('HouseStartDate').text)
+    membership = {
+        'id': lord_id,
+        'identifiers': [{
+            'identifier': lord_type,
+            'scheme': 'peeragetype'
+        }],
+        'label': 'Peer',
+        'on_behalf_of_id': party,
+        'organization_id': 'house-of-lords',
+        'person_id': person_id,
+        'role': 'Peer',
+        'start_date': start_date
+    }
+    if not membership['start_date'] or not membership['on_behalf_of_id']:
+        print "Missing start date or party!"
+        sys.exit()
+    return membership
+
+
+LORDS_URL = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Lords/BasicDetails'
+parl_members = etree.parse(urllib2.urlopen(LORDS_URL)).getroot()
+
 new_people = False
-parl_by_name = {}
 person_id = data.max_person_id()
 for member in parl_members:
     end_date = member.find('HouseEndDate').text or ''
@@ -57,130 +120,37 @@ for member in parl_members:
     if end_date and end_date < '1999-11-12':
         continue
     name = canon_name(member.find('DisplayAs').text)
-    if not data.get_person(name=name) or member.attrib['Pims_Id'] not in data.identifiers['pims_id']:
-        if member.attrib['Pims_Id'] not in data.identifiers['pims_id']:
-            print "{} is a new Lord".format(name)
-            person_id = new_id(person_id)
-            lord_id = new_id(data.max_lord_id())
-            print person_id
+    person = data.get_person(id=member.attrib['Member_Id'], scheme='datadotparl_id')
+    if not person:
+        person_id = new_id(person_id)
+        lord_id = new_id(data.max_lord_id())
+        print "{} is a new Lord, person ID {}, lord ID {}".format(name, person_id, lord_id)
 
-            given_name = member.find('BasicDetails/GivenForename').text
-            middle_names = member.find('BasicDetails/GivenMiddleNames').text
-            surname = member.find('BasicDetails/GivenSurname').text
+        name = construct_name(member)
+        person = construct_person(member, person_id, name)
+        membership = construct_membership(member, person_id, lord_id)
 
-            title_parts = lord_match.search(member.find('DisplayAs').text)
-            prefix = title_parts.group(1)
-            lordname = title_parts.group(2)
-            lordof = title_parts.group(3) or ''
+        data.add_person(person)
+        data.add_membership(membership)
+        new_people = True
+    elif data.names[person['id']] == name:
+        # Same lord name, assume already got them
+        continue
+    else:
+        lord_id = new_id(data.max_lord_id())
+        print "{} is a new Lord already in the system, person ID {}, lord ID {}".format(name, person['id'], lord_id)
 
-            lord_type = type_map[member.find('MemberFrom').text]
-            party = party_map[member.find('Party').text]
-            start_date = re.sub('T.*$', '', member.find('HouseStartDate').text)
+        name = construct_name(member)
+        membership = construct_membership(member, person['id'], lord_id)
+        names = [n for n in person['other_names'] if n['note'] == 'Main']
+        latest_name = sorted(names, key=lambda x: x.get('start_date', '0000-00-00'), reverse=True)[0]
+        day_before = datetime.datetime.strptime(membership['start_date'], '%Y-%m-%d') - datetime.timedelta(days=1)
+        latest_name['end_date'] = day_before.date().isoformat()
+        name['start_date'] = membership['start_date']
+        person['other_names'].append(name)
 
-            name = {
-                'given_name': given_name,
-                'honorific_prefix': prefix,
-                'lordname': lordname,
-                'lordofname': lordof,
-                'lordofname_full': '',
-                'county': '',
-                'start_date': '',
-                'note': 'Main',
-            }
-            if middle_names:
-                name['additional_name'] = middle_names
-            if surname and surname != lordname:
-                name['surname'] = surname
-
-            ids = [
-                {
-                    'scheme': 'pims_id',
-                    'identifier': member.attrib['Pims_Id']
-                }
-            ]
-
-            person = {
-                'id': person_id,
-                'identifiers': ids,
-                'other_names': [name]
-            }
-
-            membership = {
-                'id': lord_id,
-                'identifiers': [{
-                    'identifier': lord_type,
-                    'scheme': 'peeragetype'
-                }],
-                'label': 'Peer',
-                'on_behalf_of_id': party,
-                'organization_id': 'house-of-lords',
-                'person_id': person_id,
-                'role': 'Peer',
-                'start_date': start_date
-            }
-
-            if not membership['start_date'] or not membership['on_behalf_of_id']:
-                sys.exit()
-
-            data.add_person(person)
-            data.add_membership(membership)
-            new_people = True
-        else:
-            existing_person_id = data.identifiers['pims_id'][member.attrib['Pims_Id']]['id']
-            print "{} is a Lord who might be new ({}, {})".format(name, member.attrib['Pims_Id'], existing_person_id)
-
-            existing_lord_id = new_id(data.max_lord_id())
-
-            given_name = member.find('BasicDetails/GivenForename').text
-            middle_names = member.find('BasicDetails/GivenMiddleNames').text
-            surname = member.find('BasicDetails/GivenSurname').text
-
-            title_parts = lord_match.search(member.find('DisplayAs').text)
-            prefix = title_parts.group(1)
-            lordname = title_parts.group(2)
-            lordof = title_parts.group(3) or ''
-
-            lord_type = type_map[member.find('MemberFrom').text]
-            party = party_map[member.find('Party').text]
-            start_date = re.sub('T.*$', '', member.find('HouseStartDate').text)
-
-            middle_name = ''
-            surname = ''
-            if middle_names:
-                middle_name = middle_names
-            if surname and surname != lordname:
-                name['surname'] = surname
-
-            print """
-      {{
-        "given_name": "{}",
-        "honorific_prefix": "{}",
-        "lordname": "{}",
-        "lordofname": "{}",
-        "lordofname_full": "",
-        "county": "",
-        "surname": "{}",
-        "additional_name": "{}",
-        "start_date": "{}",
-        "note": "Main"
-      }}
-            """.format(given_name, prefix, lordname, lordof, surname, middle_name, start_date)
-
-            print """
-    {{
-      "id": "{}",
-      "identifiers": [{{
-        "identifier": "{}",
-        "scheme": "peeragetype"
-      }}],
-      "label": "Peer",
-      "on_behalf_of_id": "{}",
-      "organization_id": "house-of-lords",
-      "person_id": "{}",
-      "role": "Peer",
-      "start_date": "{}"
-    }}
-            """.format(existing_lord_id, lord_type, party, existing_person_id, start_date)
+        data.add_membership(membership)
+        new_people = True
 
 if new_people:
     data.dump()
