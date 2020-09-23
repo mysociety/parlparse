@@ -19,7 +19,8 @@ class ResolverBase(object):
         self.considtomembermap = {} # cons ID --> memberships
         self.conshansardtoid = {} # Historic Hansard cons ID -> our cons ID
         self.historichansard = {} # Historic Hansard commons membership ID -> MPs
-        self.pims = {} # Pims commons membership ID and date -> MPs
+        self.pims = {} # Pims membership ID and date -> MPs
+        self.mnis = {} # Parliament Member Names ID to person
 
         self.parties = {} # party --> memberships
         self.membertopersonmap = {} # member ID --> person ID
@@ -137,6 +138,13 @@ class ResolverBase(object):
                     p['start_date'] = m['start_date']
                     p['end_date'] = m['end_date']
                     self.pims.setdefault(id, []).append(p)
+            elif identifier.get('scheme') == 'datadotparl_id':
+                id = identifier.get('identifier')
+                for m in memberships:
+                    p = person.copy()
+                    p['start_date'] = m['start_date']
+                    p['end_date'] = m['end_date']
+                    self.mnis.setdefault(id, []).append(p)
 
     def import_people_main_name(self, name, memberships):
         mships = [m for m in memberships if m['start_date'] <= name.get('end_date', '9999-12-31') and m['end_date'] >= name.get('start_date', '1000-01-01')]
@@ -210,9 +218,15 @@ class ResolverBase(object):
     def membertoperson(self, memberid):
         return self.membertopersonmap[memberid]
 
-    def match_by_pims(self, pims_id, date):
-        matches = self.pims.get(pims_id, [])
+    def _match_by_id(self, lookup, id, date):
+        matches = getattr(self, lookup).get(id, [])
         for m in matches:
             if m['start_date'] <= date <= m['end_date']:
                 return m
         return None
+
+    def match_by_mnis(self, mnis_id, date):
+        return self._match_by_id('mnis', mnis_id, date)
+
+    def match_by_pims(self, pims_id, date):
+        return self._match_by_id('pims', pims_id, date)

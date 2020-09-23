@@ -36,7 +36,7 @@ etree.set_default_parser(xml_parser)
 
 
 class PimsList(MemberList):
-    def pbc_match(self, name, cons, date):
+    def pbc_match(self, name, date):
         name = re.sub(r'\n', ' ', name)
         # names are mostly lastname,\nfirstname so reform first
         if re.search(',', name):
@@ -311,8 +311,6 @@ class BaseParseDayXML(object):
             self.date = date
 
     def handle_minus_member(self, member):
-        if member.text == 'Forbes,\nLisa':
-            return self.resolver.pbc_match(member.text, '', self.date)
         return None
 
     def _parse_member_or_b(self, tag):
@@ -329,20 +327,11 @@ class BaseParseDayXML(object):
     def parse_member(self, tag):
         member_tag = self._parse_member_or_b(tag)
         if member_tag is not None:
-            if member_tag.get('PimsId') == '-1':
+            mnis_id = member_tag.get('MnisId')
+            if mnis_id in (None, '-1'):
                 return self.handle_minus_member(member_tag)
-            if member_tag.get('PimsId') == '0':
-                return None
-            if not member_tag.get('PimsId'):
-                try_name = self.handle_minus_member(member_tag)
-                if try_name:
-                    return try_name
 
-            pims_id = member_tag.get('PimsId')
-            if member_tag.text is not None and re.match('Lord\nChartres\s*\(CB\)(?:\s*\[V\])?:', member_tag.text) and pims_id == '7113':
-                pims_id = '1549'
-
-            member = self.resolver.match_by_pims(pims_id, self.date)
+            member = self.resolver.match_by_mnis(mnis_id, self.date)
             if member is not None:
                 member['person_id'] = member.get('id')
                 member['name'] = self.resolver.name_on_date(member['person_id'], self.date)
@@ -350,10 +339,8 @@ class BaseParseDayXML(object):
                     member['type'] = member_tag.get('ContributionType')
                 return member
             else:
-                if member_tag.text == 'Olney,\nSarah':
-                    return self.resolver.pbc_match(member_tag.text, '', self.date)
                 raise ContextException(
-                    'No match for PimsId {0}\n'.format(pims_id),
+                    'No match for MnisId {0}\n'.format(mnis_id),
                     stamp=tag.get('url'),
                     fragment=member_tag.text
                 )
@@ -758,7 +745,7 @@ class BaseParseDayXML(object):
             vote_text = self.get_single_line_text_from_element(vote)
             m = re.search('\(Proxy vote cast by (.*)\)', vote_text)
             if m:
-                proxy = self.resolver.pbc_match(m.group(1), '', self.date)
+                proxy = self.resolver.pbc_match(m.group(1), self.date)
             if proxy:
                 tag.set('proxy', proxy['id'])
 
@@ -1101,17 +1088,8 @@ class PBCParseDayXML(BaseParseDayXML):
             if bs:
                 name = bs[0].text
 
-        cons_tags = member_tag.xpath('.//ns:I', namespaces=self.ns_map)
-        cons = ''
-        if len(cons_tags) == 1:
-            cons_tag = cons_tags[0]
-            cons = cons_tag.text
-            cons = re.sub(r'[()]', '', cons)
-
         name = name.rstrip(':')
-        member = self.resolver.pbc_match(name, cons, self.date)
-        if member is not None:
-            member['pbc_cons'] = cons
+        member = self.resolver.pbc_match(name, self.date)
         return member
 
     # check for a cross symbol before the name of a member which tells
@@ -1131,7 +1109,6 @@ class PBCParseDayXML(BaseParseDayXML):
         member_tags = chair.xpath('.//ns:Member', namespaces=self.ns_map)
         for member_tag in member_tags:
             member = self.parse_member(member_tag)
-            # which will happen because it mostly sets PimsId to -1 :(
             if member is None:
                 member = self.get_member_with_no_id(member_tag)
 
@@ -1148,12 +1125,19 @@ class PBCParseDayXML(BaseParseDayXML):
     def parse_clmember(self, clmember):
         member_tag = clmember.xpath('.//ns:Member', namespaces=self.ns_map)[0]
         member = self.parse_member(member_tag)
-        # which will happen because it mostly sets PimsId to -1 :(
         if member is None:
             member = self.get_member_with_no_id(member_tag)
 
+        cons_tags = member_tag.xpath('.//ns:I', namespaces=self.ns_map)
+        cons = ''
+        if len(cons_tags) == 1:
+            cons_tag = cons_tags[0]
+            cons = cons_tag.text
+            cons = re.sub(r'[()]', '', cons)
+
         if member is not None:
             member['attending'] = self.get_attending_status(member_tag)
+            member['pbc_cons'] = cons
             self.members.append(member)
         else:
             raise ContextException(
@@ -1253,7 +1237,7 @@ class PBCParseDayXML(BaseParseDayXML):
         )
         if chair_match is not None:
             name = chair_match.groups(1)[0]
-            chair = self.resolver.pbc_match(name, '', self.date)
+            chair = self.resolver.pbc_match(name, self.date)
             if chair is not None:
                 self.current_chair = chair
         else:
@@ -1445,8 +1429,8 @@ class LordsParseDayXML(BaseParseDayXML):
 
         found_member = super(LordsParseDayXML, self).parse_member(member)
         if found_member is None:
-            # In cases where there are unattributes exclamations then PimsId
-            # is set to 0. Often the name will be "Noble Lords" or the like
+            # In cases where there are unattributes exclamations then MnisId
+            # is missing. Often the name will be "Noble Lords" or the like
             member_tag = self._parse_member_or_b(member)
             if member_tag is None:
                 raise ContextException(
@@ -1454,7 +1438,7 @@ class LordsParseDayXML(BaseParseDayXML):
                      stamp=member.get('url'),
                      fragment=etree.tostring(member),
                 )
-            if member_tag.get('PimsId') == '0':
+            if member_tag.get('MnisId') == '-1':
                 found_member = {
                     'person_id': 'unknown',
                     'name': self.get_single_line_text_from_element(member).rstrip(':')
