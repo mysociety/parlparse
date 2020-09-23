@@ -4759,6 +4759,13 @@
       "start_date": "2020-04-23"
     }, 
     {
+      "id": "uk.parliament.data/Member/615/Committee/474", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10074", 
+      "organization_id": "common-frameworks-scrutiny-committee", 
+      "start_date": "2020-09-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/615/Committee/98", 
       "source": "datadotparl/committee", 
       "role": "Chair", 
@@ -8206,7 +8213,8 @@
       "role": "Liberal Democrat Spokesperson (Treasury)", 
       "person_id": "uk.org.publicwhip/person/10155", 
       "organization_id": "house-of-commons", 
-      "start_date": "2019-08-21"
+      "start_date": "2019-08-21", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/188/OppositionPost/1423/1", 
@@ -8286,7 +8294,8 @@
       "role": "Liberal Democrat Spokesperson (Social Justice)", 
       "person_id": "uk.org.publicwhip/person/10155", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-01-06"
+      "start_date": "2020-01-06", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/188/ParliamentaryPost/755", 
@@ -11150,6 +11159,13 @@
       "end_date": "2018-07-19"
     }, 
     {
+      "id": "uk.parliament.data/Member/579/Committee/474", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10211", 
+      "organization_id": "common-frameworks-scrutiny-committee", 
+      "start_date": "2020-09-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/579/Committee/78", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10211", 
@@ -11794,6 +11810,13 @@
       "organization_id": "statutory-instruments-select-committee", 
       "start_date": "1992-04-27", 
       "end_date": "1992-12-04"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/337/Committee/474", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10221", 
+      "organization_id": "common-frameworks-scrutiny-committee", 
+      "start_date": "2020-09-17"
     }, 
     {
       "id": "uk.parliament.data/Member/337/Committee/83", 
@@ -17128,7 +17151,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10345", 
       "organization_id": "services-committee", 
-      "start_date": "2016-09-01"
+      "start_date": "2016-09-01", 
+      "end_date": "2020-07-02"
     }, 
     {
       "id": "uk.parliament.data/Member/635/OppositionPost/1206", 
@@ -21892,6 +21916,13 @@
       "organization_id": "welsh-affairs-committee", 
       "start_date": "1987-06-17", 
       "end_date": "1989-03-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/546/Committee/474", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10454", 
+      "organization_id": "common-frameworks-scrutiny-committee", 
+      "start_date": "2020-09-17"
     }, 
     {
       "id": "uk.parliament.data/Member/546/Committee/97", 
@@ -28104,7 +28135,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10613", 
       "organization_id": "finance-bill-subcommittee", 
-      "start_date": "2020-01-21"
+      "start_date": "2020-01-21", 
+      "end_date": "2020-09-08"
     }, 
     {
       "id": "uk.parliament.data/Member/112/OppositionPost/1054", 
@@ -31233,7 +31265,7 @@
     {
       "id": "uk.parliament.data/Member/1201/GovernmentPost/1199", 
       "source": "datadotparl/governmentpost", 
-      "role": "Minister of State (Department for International Development) (Jointly with the Foreign and Commonwealth Office)", 
+      "role": "Minister of State (Department for International Development) (Joint with the Foreign and Commonwealth Office)", 
       "person_id": "uk.org.publicwhip/person/10770", 
       "organization_id": "house-of-commons", 
       "start_date": "2017-06-13", 
@@ -31572,10 +31604,19 @@
       "role": "Liberal Democrat Chief Whip", 
       "person_id": "uk.org.publicwhip/person/10785", 
       "organization_id": "house-of-commons", 
-      "start_date": "2017-06-16"
+      "start_date": "2017-06-16", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/1442/OppositionPost/1250", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Spokesperson (Home Affairs)", 
+      "person_id": "uk.org.publicwhip/person/10785", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1442/OppositionPost/1250/1", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Spokesperson (Home Affairs)", 
       "person_id": "uk.org.publicwhip/person/10785", 
@@ -31584,7 +31625,7 @@
       "end_date": "2017-06-16"
     }, 
     {
-      "id": "uk.parliament.data/Member/1442/OppositionPost/1250/1", 
+      "id": "uk.parliament.data/Member/1442/OppositionPost/1250/2", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Spokesperson (Home Affairs)", 
       "person_id": "uk.org.publicwhip/person/10785", 
@@ -31616,11 +31657,19 @@
       "role": "Liberal Democrat Spokesperson (Northern Ireland)", 
       "person_id": "uk.org.publicwhip/person/10785", 
       "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1442/OppositionPost/1261/1", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Spokesperson (Northern Ireland)", 
+      "person_id": "uk.org.publicwhip/person/10785", 
+      "organization_id": "house-of-commons", 
       "start_date": "2017-06-16", 
       "end_date": "2020-01-06"
     }, 
     {
-      "id": "uk.parliament.data/Member/1442/OppositionPost/1261/1", 
+      "id": "uk.parliament.data/Member/1442/OppositionPost/1261/2", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Spokesperson (Northern Ireland)", 
       "person_id": "uk.org.publicwhip/person/10785", 
@@ -31634,7 +31683,8 @@
       "role": "Liberal Democrat Spokesperson (Exiting the European Union)", 
       "person_id": "uk.org.publicwhip/person/10785", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-01-06"
+      "start_date": "2020-01-06", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/1442/OppositionPost/1425", 
@@ -31655,12 +31705,21 @@
       "end_date": "2005-05-10"
     }, 
     {
+      "id": "uk.parliament.data/Member/1442/OppositionPost/1504", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Spokesperson (Cabinet Office)", 
+      "person_id": "uk.org.publicwhip/person/10785", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1442/OppositionPost/1508", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Spokesperson (Foreign and Commonwealth Affairs)", 
       "person_id": "uk.org.publicwhip/person/10785", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-01-06"
+      "start_date": "2020-01-06", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/1406/Committee/127", 
@@ -44373,6 +44432,14 @@
       "role": "Liberal Democrat Spokesperson (Environment, Food and Rural Affairs)", 
       "person_id": "uk.org.publicwhip/person/11923", 
       "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1591/OppositionPost/1256/1", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Spokesperson (Environment, Food and Rural Affairs)", 
+      "person_id": "uk.org.publicwhip/person/11923", 
+      "organization_id": "house-of-commons", 
       "start_date": "2017-10-12", 
       "end_date": "2019-02-07"
     }, 
@@ -44399,7 +44466,8 @@
       "role": "Liberal Democrat Spokesperson (North of England) (Northern Powerhouse)", 
       "person_id": "uk.org.publicwhip/person/11923", 
       "organization_id": "house-of-commons", 
-      "start_date": "2019-08-21"
+      "start_date": "2019-08-21", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/1591/OppositionPost/1516", 
@@ -44407,7 +44475,8 @@
       "role": "Liberal Democrat Spokesperson (Food and Rural Affairs)", 
       "person_id": "uk.org.publicwhip/person/11923", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-01-06"
+      "start_date": "2020-01-06", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/1591/OppositionPost/962", 
@@ -49144,6 +49213,13 @@
       "start_date": "2019-07-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/3308/Committee/230", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13010", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2020-09-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/778/Committee/336", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13012", 
@@ -50361,6 +50437,13 @@
       "start_date": "2020-03-05"
     }, 
     {
+      "id": "uk.parliament.data/Member/2004/Committee/474", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13079", 
+      "organization_id": "common-frameworks-scrutiny-committee", 
+      "start_date": "2020-09-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2004/ParliamentaryPost/1076", 
       "source": "datadotparl/parliamentarypost", 
       "role": "Convenor of the Crossbench Peers", 
@@ -50418,6 +50501,13 @@
       "person_id": "uk.org.publicwhip/person/13094", 
       "organization_id": "lord-speakers-committee-on-the-size-of-the-house", 
       "start_date": "2016-12-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3386/Committee/474", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13094", 
+      "organization_id": "common-frameworks-scrutiny-committee", 
+      "start_date": "2020-09-17"
     }, 
     {
       "id": "uk.parliament.data/Member/3386/GovernmentPost/23", 
@@ -50816,6 +50906,22 @@
       "organization_id": "secondary-legislation-scrutiny-committee", 
       "start_date": "2014-06-12", 
       "end_date": "2017-04-27"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2534/Committee/474", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/13108", 
+      "organization_id": "common-frameworks-scrutiny-committee", 
+      "start_date": "2020-09-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2534/Committee/474/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/13108", 
+      "organization_id": "common-frameworks-scrutiny-committee", 
+      "start_date": "2020-09-17"
     }, 
     {
       "id": "uk.parliament.data/Member/2534/GovernmentPost/23", 
@@ -58020,12 +58126,12 @@
       "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13473", 
       "organization_id": "finance-bill-subcommittee", 
-      "start_date": "2018-09-04"
+      "start_date": "2018-09-04", 
+      "end_date": "2020-09-08"
     }, 
     {
       "id": "uk.parliament.data/Member/1141/Committee/230/1", 
       "source": "datadotparl/committee", 
-      "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13473", 
       "organization_id": "finance-bill-subcommittee", 
       "start_date": "2018-09-04"
@@ -58036,15 +58142,6 @@
       "person_id": "uk.org.publicwhip/person/13473", 
       "organization_id": "finance-bill-subcommittee", 
       "start_date": "2015-12-08", 
-      "end_date": "2018-09-04"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/1141/Committee/230/3", 
-      "source": "datadotparl/committee", 
-      "role": "Chair", 
-      "person_id": "uk.org.publicwhip/person/13473", 
-      "organization_id": "finance-bill-subcommittee", 
-      "start_date": "2018-09-04", 
       "end_date": "2016-03-04"
     }, 
     {
@@ -59180,6 +59277,13 @@
       "organization_id": "communications-and-digital-committee", 
       "start_date": "2010-06-22", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3396/Committee/363", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13517", 
+      "organization_id": "services-committee", 
+      "start_date": "2020-07-02"
     }, 
     {
       "id": "uk.parliament.data/Member/3396/OppositionPost/1481", 
@@ -61389,7 +61493,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13661", 
       "organization_id": "finance-bill-subcommittee", 
-      "start_date": "2019-11-04"
+      "start_date": "2019-11-04", 
+      "end_date": "2020-09-08"
     }, 
     {
       "id": "uk.parliament.data/Member/2699/Committee/337", 
@@ -62825,7 +62930,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13727", 
       "organization_id": "statutory-instruments-joint-committee", 
-      "start_date": "2017-07-19"
+      "start_date": "2017-07-19", 
+      "end_date": "2020-07-21"
     }, 
     {
       "id": "uk.parliament.data/Member/3796/Committee/148/1", 
@@ -63475,6 +63581,13 @@
       "person_id": "uk.org.publicwhip/person/13856", 
       "organization_id": "food-poverty-health-and-environment-committee", 
       "start_date": "2020-01-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4130/Committee/474", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13856", 
+      "organization_id": "common-frameworks-scrutiny-committee", 
+      "start_date": "2020-09-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4130/Committee/52", 
@@ -69327,7 +69440,7 @@
     {
       "id": "uk.parliament.data/Member/4107/GovernmentPost/1199", 
       "source": "datadotparl/governmentpost", 
-      "role": "Minister of State (Department for International Development) (Jointly with the Foreign and Commonwealth Office)", 
+      "role": "Minister of State (Department for International Development) (Joint with the Foreign and Commonwealth Office)", 
       "person_id": "uk.org.publicwhip/person/24785", 
       "organization_id": "house-of-commons", 
       "start_date": "2018-01-09", 
@@ -71327,7 +71440,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24824", 
       "organization_id": "european-statutory-instruments-committee", 
-      "start_date": "2020-02-10"
+      "start_date": "2020-02-10", 
+      "end_date": "2020-09-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4074/GovernmentPost/1186", 
@@ -77772,7 +77886,7 @@
     {
       "id": "uk.parliament.data/Member/4137/GovernmentPost/1199", 
       "source": "datadotparl/governmentpost", 
-      "role": "Minister of State (Department for International Development) (Jointly with the Foreign and Commonwealth Office)", 
+      "role": "Minister of State (Department for International Development) (Joint with the Foreign and Commonwealth Office)", 
       "person_id": "uk.org.publicwhip/person/24964", 
       "organization_id": "house-of-commons", 
       "start_date": "2017-06-13", 
@@ -79904,6 +80018,13 @@
       "end_date": "2019-07-02"
     }, 
     {
+      "id": "uk.parliament.data/Member/4230/Committee/474", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25053", 
+      "organization_id": "common-frameworks-scrutiny-committee", 
+      "start_date": "2020-09-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4230/GovernmentPost/1067", 
       "source": "datadotparl/governmentpost", 
       "role": "Lords Spokesperson (Northern Ireland Office)", 
@@ -81707,6 +81828,13 @@
       "person_id": "uk.org.publicwhip/person/25217", 
       "organization_id": "eu-services-subcommittee", 
       "start_date": "2020-04-23"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4309/Committee/474", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25217", 
+      "organization_id": "common-frameworks-scrutiny-committee", 
+      "start_date": "2020-09-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4316/Committee/158", 
@@ -87247,7 +87375,16 @@
       "role": "Parliamentary Under-Secretary (Housing, Communities and Local Government)", 
       "person_id": "uk.org.publicwhip/person/25373", 
       "organization_id": "house-of-commons", 
-      "start_date": "2019-07-27"
+      "start_date": "2019-07-27", 
+      "end_date": "2020-09-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4450/GovernmentPost/1214", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Housing, Communities and Local Government)", 
+      "person_id": "uk.org.publicwhip/person/25373", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4462/Committee/103", 
@@ -89572,7 +89709,8 @@
       "role": "Parliamentary Under-Secretary (Department for Transport)", 
       "person_id": "uk.org.publicwhip/person/25430", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-02-13"
+      "start_date": "2020-02-13", 
+      "end_date": "2020-09-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4487/GovernmentPost/1187", 
@@ -89582,6 +89720,14 @@
       "organization_id": "house-of-commons", 
       "start_date": "2018-07-19", 
       "end_date": "2020-02-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4487/GovernmentPost/1209", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Housing, Communities and Local Government)", 
+      "person_id": "uk.org.publicwhip/person/25430", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4487/GovernmentPost/351", 
@@ -90065,7 +90211,24 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25443", 
       "organization_id": "finance-bill-subcommittee", 
-      "start_date": "2019-11-04"
+      "start_date": "2019-11-04", 
+      "end_date": "2020-09-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4535/Committee/230/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/25443", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2020-09-08"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4535/Committee/230/2", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/25443", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2020-09-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4535/GovernmentPost/1176", 
@@ -90118,7 +90281,8 @@
       "role": "Lords Spokesperson (Ministry of Justice)", 
       "person_id": "uk.org.publicwhip/person/25446", 
       "organization_id": "house-of-commons", 
-      "start_date": "2016-07-18"
+      "start_date": "2016-07-18", 
+      "end_date": "2020-09-16"
     }, 
     {
       "id": "uk.parliament.data/Member/4538/GovernmentPost/18", 
@@ -90126,7 +90290,8 @@
       "role": "The Advocate-General for Scotland", 
       "person_id": "uk.org.publicwhip/person/25446", 
       "organization_id": "house-of-commons", 
-      "start_date": "2015-06-11"
+      "start_date": "2015-06-11", 
+      "end_date": "2020-09-16"
     }, 
     {
       "id": "uk.parliament.data/Member/4827/Committee/120", 
@@ -90373,6 +90538,13 @@
       "organization_id": "food-poverty-health-and-environment-committee", 
       "start_date": "2019-06-13", 
       "end_date": "2020-01-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4551/Committee/474", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25465", 
+      "organization_id": "common-frameworks-scrutiny-committee", 
+      "start_date": "2020-09-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4552/Committee/405", 
@@ -90903,6 +91075,13 @@
       "start_date": "2019-07-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/4576/Committee/474", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25585", 
+      "organization_id": "common-frameworks-scrutiny-committee", 
+      "start_date": "2020-09-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4584/GovernmentPost/1120", 
       "source": "datadotparl/governmentpost", 
       "role": "Parliamentary Under-Secretary (Department for Transport)", 
@@ -90977,6 +91156,13 @@
       "person_id": "uk.org.publicwhip/person/25590", 
       "organization_id": "ecclesiastical-committee-joint-committee", 
       "start_date": "2017-07-10"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4581/Committee/474", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25591", 
+      "organization_id": "common-frameworks-scrutiny-committee", 
+      "start_date": "2020-09-17"
     }, 
     {
       "id": "uk.parliament.data/Member/4581/ParliamentaryPost/1092", 
@@ -91060,6 +91246,14 @@
       "start_date": "2020-03-02"
     }, 
     {
+      "id": "uk.parliament.data/Member/4589/GovernmentPost/1120", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Parliamentary Under-Secretary (Department for Transport)", 
+      "person_id": "uk.org.publicwhip/person/25593", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-08"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4585/Committee/336", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25594", 
@@ -91080,7 +91274,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25594", 
       "organization_id": "eu-international-agreements-subcommittee", 
-      "start_date": "2020-04-23"
+      "start_date": "2020-04-23", 
+      "end_date": "2020-09-04"
     }, 
     {
       "id": "uk.parliament.data/Member/4586/Committee/169", 
@@ -91097,12 +91292,21 @@
       "start_date": "2020-03-02"
     }, 
     {
+      "id": "uk.parliament.data/Member/4591/OppositionPost/1255", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Spokesperson (Transport)", 
+      "person_id": "uk.org.publicwhip/person/25596", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4591/OppositionPost/1353", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Spokesperson (International Trade)", 
       "person_id": "uk.org.publicwhip/person/25596", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-01-06"
+      "start_date": "2020-01-06", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4591/OppositionPost/1507", 
@@ -91274,7 +91478,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25614", 
       "organization_id": "european-statutory-instruments-committee", 
-      "start_date": "2020-02-10"
+      "start_date": "2020-02-10", 
+      "end_date": "2020-09-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4674/Committee/393/1", 
@@ -92037,6 +92242,14 @@
       "end_date": "2019-11-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/4602/OppositionPost/1248", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Shadow Leader of the House of Commons", 
+      "person_id": "uk.org.publicwhip/person/25648", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4602/OppositionPost/1255", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Spokesperson (Transport)", 
@@ -92047,6 +92260,14 @@
     }, 
     {
       "id": "uk.parliament.data/Member/4602/OppositionPost/1260", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Spokesperson (Justice)", 
+      "person_id": "uk.org.publicwhip/person/25648", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4602/OppositionPost/1260/1", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Spokesperson (Justice)", 
       "person_id": "uk.org.publicwhip/person/25648", 
@@ -92069,7 +92290,16 @@
       "role": "Liberal Democrat Spokesperson (Environment and Climate Change)", 
       "person_id": "uk.org.publicwhip/person/25648", 
       "organization_id": "house-of-commons", 
-      "start_date": "2019-02-07"
+      "start_date": "2019-02-07", 
+      "end_date": "2020-09-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4602/OppositionPost/1510", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Spokesperson (Women and Equalities)", 
+      "person_id": "uk.org.publicwhip/person/25648", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4602/OppositionPost/1520", 
@@ -92077,7 +92307,8 @@
       "role": "Liberal Democrat Spokesperson (Energy)", 
       "person_id": "uk.org.publicwhip/person/25648", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-01-06"
+      "start_date": "2020-01-06", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4598/Committee/17", 
@@ -92220,7 +92451,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25657", 
       "organization_id": "speakers-committee-on-the-electoral-commission", 
-      "start_date": "2020-05-18"
+      "start_date": "2020-05-18", 
+      "end_date": "2020-09-09"
     }, 
     {
       "id": "uk.parliament.data/Member/4655/Committee/158", 
@@ -92244,7 +92476,8 @@
       "role": "Minister of State (Housing, Communities and Local Government)", 
       "person_id": "uk.org.publicwhip/person/25657", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-02-13"
+      "start_date": "2020-02-13", 
+      "end_date": "2020-09-08"
     }, 
     {
       "id": "uk.parliament.data/Member/4655/GovernmentPost/62", 
@@ -92494,6 +92727,14 @@
       "end_date": "2017-10-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/4612/OppositionPost/1513", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Spokesperson (Digital, Culture, Media and Sport)", 
+      "person_id": "uk.org.publicwhip/person/25668", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4630/Committee/162", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25669", 
@@ -92702,7 +92943,8 @@
       "role": "Liberal Democrat Spokesperson (Home Affairs)", 
       "person_id": "uk.org.publicwhip/person/25675", 
       "organization_id": "house-of-commons", 
-      "start_date": "2019-08-21"
+      "start_date": "2019-08-21", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4634/OppositionPost/1254", 
@@ -92732,6 +92974,30 @@
       "end_date": "2019-10-21"
     }, 
     {
+      "id": "uk.parliament.data/Member/4634/OppositionPost/1353", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Spokesperson (International Trade)", 
+      "person_id": "uk.org.publicwhip/person/25675", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4634/OppositionPost/1354", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Spokesperson (Exiting the European Union)", 
+      "person_id": "uk.org.publicwhip/person/25675", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4634/OppositionPost/1423", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Spokesperson (Treasury)", 
+      "person_id": "uk.org.publicwhip/person/25675", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4634/OppositionPost/1425", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Spokesperson (Scotland)", 
@@ -92755,7 +93021,8 @@
       "role": "Liberal Democrat Spokesperson (Women and Equalities)", 
       "person_id": "uk.org.publicwhip/person/25675", 
       "organization_id": "house-of-commons", 
-      "start_date": "2019-08-21"
+      "start_date": "2019-08-21", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4610/Committee/102", 
@@ -93104,7 +93371,24 @@
       "role": "Liberal Democrat Spokesperson (Education)", 
       "person_id": "uk.org.publicwhip/person/25689", 
       "organization_id": "house-of-commons", 
-      "start_date": "2017-06-16"
+      "start_date": "2017-06-16", 
+      "end_date": "2020-09-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4656/OppositionPost/1257", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Spokesperson (International Development)", 
+      "person_id": "uk.org.publicwhip/person/25689", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4656/OppositionPost/1508", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Spokesperson (Foreign and Commonwealth Affairs)", 
+      "person_id": "uk.org.publicwhip/person/25689", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4656/OppositionPost/1513", 
@@ -94179,6 +94463,13 @@
       "start_date": "2020-03-02"
     }, 
     {
+      "id": "uk.parliament.data/Member/4825/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25806", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2020-09-14"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4750/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25807", 
@@ -94254,6 +94545,13 @@
       "person_id": "uk.org.publicwhip/person/25811", 
       "organization_id": "petitions-committee", 
       "start_date": "2020-03-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4843/Committee/393", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25812", 
+      "organization_id": "european-statutory-instruments-committee", 
+      "start_date": "2020-09-14"
     }, 
     {
       "id": "uk.parliament.data/Member/4788/Committee/174", 
@@ -94341,7 +94639,8 @@
       "role": "Liberal Democrat Spokesperson (Transport)", 
       "person_id": "uk.org.publicwhip/person/25820", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-01-06"
+      "start_date": "2020-01-06", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4776/OppositionPost/1512", 
@@ -94531,7 +94830,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25843", 
       "organization_id": "women-and-equalities-committee", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4784/Committee/171", 
@@ -94758,12 +95058,29 @@
       "start_date": "2020-05-04"
     }, 
     {
+      "id": "uk.parliament.data/Member/4765/OppositionPost/1247", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Chief Whip", 
+      "person_id": "uk.org.publicwhip/person/25872", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4765/OppositionPost/1254", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Spokesperson (Work and Pensions)", 
+      "person_id": "uk.org.publicwhip/person/25872", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4765/OppositionPost/1257", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Spokesperson (International Development)", 
       "person_id": "uk.org.publicwhip/person/25872", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-01-06"
+      "start_date": "2020-01-06", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4765/OppositionPost/1261", 
@@ -94771,7 +95088,8 @@
       "role": "Liberal Democrat Spokesperson (Northern Ireland)", 
       "person_id": "uk.org.publicwhip/person/25872", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-01-06"
+      "start_date": "2020-01-06", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4765/OppositionPost/1355", 
@@ -94795,7 +95113,8 @@
       "role": "Liberal Democrat Spokesperson (Cabinet Office)", 
       "person_id": "uk.org.publicwhip/person/25872", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-01-06"
+      "start_date": "2020-01-06", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4782/Committee/81", 
@@ -95032,6 +95351,13 @@
       "start_date": "2020-05-20"
     }, 
     {
+      "id": "uk.parliament.data/Member/4819/Committee/328", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25900", 
+      "organization_id": "women-and-equalities-committee", 
+      "start_date": "2020-09-07"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4819/Committee/347", 
       "source": "datadotparl/committee", 
       "role": "Chair", 
@@ -95055,12 +95381,21 @@
       "start_date": "2020-03-02"
     }, 
     {
+      "id": "uk.parliament.data/Member/4769/OppositionPost/1253", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Liberal Democrat Spokesperson (Education)", 
+      "person_id": "uk.org.publicwhip/person/25901", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-07"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4769/OppositionPost/1260", 
       "source": "datadotparl/oppositionpost", 
       "role": "Liberal Democrat Spokesperson (Justice)", 
       "person_id": "uk.org.publicwhip/person/25901", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-01-06"
+      "start_date": "2020-01-06", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4769/OppositionPost/1513", 
@@ -95068,7 +95403,8 @@
       "role": "Liberal Democrat Spokesperson (Digital, Culture, Media and Sport)", 
       "person_id": "uk.org.publicwhip/person/25901", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-01-06"
+      "start_date": "2020-01-06", 
+      "end_date": "2020-09-07"
     }, 
     {
       "id": "uk.parliament.data/Member/4842/Committee/136", 
@@ -95336,6 +95672,46 @@
       "person_id": "uk.org.publicwhip/person/25927", 
       "organization_id": "science-and-technology-committee-commons", 
       "start_date": "2020-03-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4877/GovernmentPost/1214", 
+      "source": "datadotparl/governmentpost", 
+      "role": "Minister of State (Housing, Communities and Local Government)", 
+      "person_id": "uk.org.publicwhip/person/25937", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-03-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4877/GovernmentPost/417", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Home Department", 
+      "person_id": "uk.org.publicwhip/person/25937", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-03-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4876/GovernmentPost/1174", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Department for International Trade", 
+      "person_id": "uk.org.publicwhip/person/25938", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-03-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4876/GovernmentPost/1175", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Minister of State, Department for Business, Energy and Industrial Strategy", 
+      "person_id": "uk.org.publicwhip/person/25938", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-03-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4121/Committee/83", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25945", 
+      "organization_id": "home-affairs-committee", 
+      "start_date": "2010-07-12", 
+      "end_date": "2015-03-30"
     }
   ], 
   "organizations": [
@@ -95382,6 +95758,10 @@
     {
       "id": "committees-on-arms-export-controls", 
       "name": "Committees on Arms Export Controls"
+    }, 
+    {
+      "id": "common-frameworks-scrutiny-committee", 
+      "name": "Common Frameworks Scrutiny Committee"
     }, 
     {
       "id": "communications-and-digital-committee", 
