@@ -11689,6 +11689,13 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10220", 
       "organization_id": "public-accounts-committee", 
+      "start_date": "2020-09-21"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/146/Committee/127/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10220", 
+      "organization_id": "public-accounts-committee", 
       "start_date": "1999-06-10", 
       "end_date": "2002-10-16"
     }, 
@@ -29604,6 +29611,22 @@
       "end_date": "2005-07-12"
     }, 
     {
+      "id": "uk.parliament.data/Member/209/Committee/153", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10660", 
+      "organization_id": "transport-committee", 
+      "start_date": "2003-03-25", 
+      "end_date": "2005-07-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/209/Committee/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10660", 
+      "organization_id": "administration-committee", 
+      "start_date": "2007-07-12", 
+      "end_date": "2009-03-03"
+    }, 
+    {
       "id": "uk.parliament.data/Member/209/Committee/2", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10660", 
@@ -29616,6 +29639,22 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10660", 
       "organization_id": "committee-of-privileges", 
+      "start_date": "2014-09-11", 
+      "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/209/Committee/289", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10660", 
+      "organization_id": "committee-of-privileges", 
+      "start_date": "2014-09-11", 
+      "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/209/Committee/290", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10660", 
+      "organization_id": "committee-on-standards", 
       "start_date": "2014-09-11", 
       "end_date": "2015-03-30"
     }, 
@@ -29637,6 +29676,24 @@
       "end_date": "2013-10-07"
     }, 
     {
+      "id": "uk.parliament.data/Member/209/GovernmentPost/46", 
+      "source": "datadotparl/governmentpost", 
+      "role": "The Treasurer of Her Majesty's Household", 
+      "person_id": "uk.org.publicwhip/person/10660", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2010-05-12", 
+      "end_date": "2013-10-07"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/209/OppositionPost/10", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Opposition Whip (Commons)", 
+      "person_id": "uk.org.publicwhip/person/10660", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2003-06-30", 
+      "end_date": "2005-12-10"
+    }, 
+    {
       "id": "uk.parliament.data/Member/209/OppositionPost/10", 
       "source": "datadotparl/oppositionpost", 
       "role": "Opposition Whip (Commons)", 
@@ -29653,6 +29710,24 @@
       "organization_id": "house-of-commons", 
       "start_date": "2000-02-01", 
       "end_date": "2003-03-10"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/209/OppositionPost/10/1", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Opposition Whip (Commons)", 
+      "person_id": "uk.org.publicwhip/person/10660", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2000-02-01", 
+      "end_date": "2003-03-10"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/209/OppositionPost/1197", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Opposition Assistant Chief Whip (Commons)", 
+      "person_id": "uk.org.publicwhip/person/10660", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2005-12-10", 
+      "end_date": "2010-05-06"
     }, 
     {
       "id": "uk.parliament.data/Member/209/OppositionPost/1197", 
@@ -30200,6 +30275,22 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/655/Committee/11", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10679", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "2006-11-16", 
+      "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/655/Committee/207", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10679", 
+      "organization_id": "public-accounts-commission", 
+      "start_date": "2010-07-12", 
+      "end_date": "2011-01-26"
+    }, 
+    {
       "id": "uk.parliament.data/Member/655/Committee/207", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10679", 
@@ -30211,6 +30302,24 @@
       "id": "uk.parliament.data/Member/655/OppositionPost/1109", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Spokesperson (Justice)", 
+      "person_id": "uk.org.publicwhip/person/10679", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2010-06-01", 
+      "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/655/OppositionPost/1109", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Spokesperson (Justice)", 
+      "person_id": "uk.org.publicwhip/person/10679", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2010-06-01", 
+      "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/655/OppositionPost/1114", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Spokesperson (Home Affairs)", 
       "person_id": "uk.org.publicwhip/person/10679", 
       "organization_id": "house-of-commons", 
       "start_date": "2010-06-01", 
@@ -30235,12 +30344,39 @@
       "end_date": "2015-03-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/655/OppositionPost/1115", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow DUP Leader of the House of Commons", 
+      "person_id": "uk.org.publicwhip/person/10679", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2009-06-01", 
+      "end_date": "2015-03-30"
+    }, 
+    {
       "id": "uk.parliament.data/Member/655/OppositionPost/979", 
       "source": "datadotparl/oppositionpost", 
       "role": "Shadow Spokesperson (Communities and Local Government)", 
       "person_id": "uk.org.publicwhip/person/10679", 
       "organization_id": "house-of-commons", 
       "start_date": "2009-06-01", 
+      "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/655/OppositionPost/979", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Spokesperson (Communities and Local Government)", 
+      "person_id": "uk.org.publicwhip/person/10679", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2009-06-01", 
+      "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/655/OppositionPost/984", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Spokesperson (Environment, Food and Rural Affairs)", 
+      "person_id": "uk.org.publicwhip/person/10679", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2005-06-01", 
       "end_date": "2010-05-06"
     }, 
     {
@@ -37963,7 +38099,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11447", 
       "organization_id": "education-committee", 
-      "start_date": "2020-05-11"
+      "start_date": "2020-05-11", 
+      "end_date": "2020-09-21"
     }, 
     {
       "id": "uk.parliament.data/Member/1489/GovernmentPost/351", 
@@ -55207,6 +55344,13 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13310", 
       "organization_id": "statutory-instruments-joint-committee", 
+      "start_date": "2020-09-17"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/2503/Committee/148/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13310", 
+      "organization_id": "statutory-instruments-joint-committee", 
       "start_date": "2003-12-08", 
       "end_date": "2007-10-30"
     }, 
@@ -55632,6 +55776,13 @@
       "organization_id": "procedure-and-privileges-committee", 
       "start_date": "2012-05-16", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3337/Committee/230", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13347", 
+      "organization_id": "finance-bill-subcommittee", 
+      "start_date": "2020-09-23"
     }, 
     {
       "id": "uk.parliament.data/Member/3337/Committee/337", 
@@ -65805,7 +65956,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24709", 
       "organization_id": "public-accounts-committee", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-09-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4046/Committee/127/1", 
@@ -66422,7 +66574,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/24721", 
       "organization_id": "public-administration-and-constitutional-affairs-committee", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-09-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4040/Committee/62", 
@@ -81977,6 +82130,13 @@
       "end_date": "2016-06-28"
     }, 
     {
+      "id": "uk.parliament.data/Member/4332/Committee/170", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25234", 
+      "organization_id": "communications-and-digital-committee", 
+      "start_date": "2020-09-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4335/Committee/337", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25235", 
@@ -87336,6 +87496,13 @@
       "organization_id": "european-scrutiny-committee", 
       "start_date": "2016-11-07", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4450/Committee/144", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25373", 
+      "organization_id": "speakers-committee-on-the-electoral-commission", 
+      "start_date": "2020-09-22"
     }, 
     {
       "id": "uk.parliament.data/Member/4450/Committee/164", 
@@ -93922,67 +94089,6 @@
       "start_date": "2020-04-23"
     }, 
     {
-      "id": "uk.parliament.data/Member/655/Committee/11", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/25730", 
-      "organization_id": "panel-of-chairs", 
-      "start_date": "2006-11-16", 
-      "end_date": "2015-03-30"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/655/Committee/207", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/25730", 
-      "organization_id": "public-accounts-commission", 
-      "start_date": "2010-07-12", 
-      "end_date": "2011-01-26"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/655/OppositionPost/1109", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Shadow Spokesperson (Justice)", 
-      "person_id": "uk.org.publicwhip/person/25730", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2010-06-01", 
-      "end_date": "2015-03-30"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/655/OppositionPost/1114", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Shadow DUP Spokesperson (Home Affairs)", 
-      "person_id": "uk.org.publicwhip/person/25730", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2010-06-01", 
-      "end_date": "2015-03-30"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/655/OppositionPost/1115", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Shadow DUP Leader of the House of Commons", 
-      "person_id": "uk.org.publicwhip/person/25730", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2009-06-01", 
-      "end_date": "2015-03-30"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/655/OppositionPost/979", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Shadow Spokesperson (Communities and Local Government)", 
-      "person_id": "uk.org.publicwhip/person/25730", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2009-06-01", 
-      "end_date": "2010-05-06"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/655/OppositionPost/984", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Shadow Spokesperson (Environment, Food and Rural Affairs)", 
-      "person_id": "uk.org.publicwhip/person/25730", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2005-06-01", 
-      "end_date": "2010-05-06"
-    }, 
-    {
       "id": "uk.parliament.data/Member/4702/OppositionPost/977", 
       "source": "datadotparl/oppositionpost", 
       "role": "Opposition Whip (Lords)", 
@@ -94013,74 +94119,6 @@
       "organization_id": "gambling-industry-committee", 
       "start_date": "2019-06-13", 
       "end_date": "2019-10-03"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/209/Committee/153", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/25733", 
-      "organization_id": "transport-committee", 
-      "start_date": "2003-03-25", 
-      "end_date": "2005-07-12"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/209/Committee/2", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/25733", 
-      "organization_id": "administration-committee", 
-      "start_date": "2007-07-12", 
-      "end_date": "2009-03-03"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/209/Committee/289", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/25733", 
-      "organization_id": "committee-of-privileges", 
-      "start_date": "2014-09-11", 
-      "end_date": "2015-03-30"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/209/Committee/290", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/25733", 
-      "organization_id": "committee-on-standards", 
-      "start_date": "2014-09-11", 
-      "end_date": "2015-03-30"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/209/GovernmentPost/46", 
-      "source": "datadotparl/governmentpost", 
-      "role": "The Treasurer of Her Majesty's Household", 
-      "person_id": "uk.org.publicwhip/person/25733", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2010-05-12", 
-      "end_date": "2013-10-07"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/209/OppositionPost/10", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Opposition Whip (Commons)", 
-      "person_id": "uk.org.publicwhip/person/25733", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2003-06-30", 
-      "end_date": "2005-12-10"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/209/OppositionPost/10/1", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Opposition Whip (Commons)", 
-      "person_id": "uk.org.publicwhip/person/25733", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2000-02-01", 
-      "end_date": "2003-03-10"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/209/OppositionPost/1197", 
-      "source": "datadotparl/oppositionpost", 
-      "role": "Opposition Assistant Chief Whip (Commons)", 
-      "person_id": "uk.org.publicwhip/person/25733", 
-      "organization_id": "house-of-commons", 
-      "start_date": "2005-12-10", 
-      "end_date": "2010-05-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4700/Committee/408", 
@@ -94186,7 +94224,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25746", 
       "organization_id": "business-energy-and-industrial-strategy-committee", 
-      "start_date": "2020-05-11"
+      "start_date": "2020-05-11", 
+      "end_date": "2020-09-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4716/Committee/62", 
@@ -94569,6 +94608,13 @@
       "end_date": "2020-05-11"
     }, 
     {
+      "id": "uk.parliament.data/Member/4788/Committee/203/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25813", 
+      "organization_id": "education-committee", 
+      "start_date": "2020-09-21"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4757/Committee/164", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25814", 
@@ -94782,6 +94828,13 @@
       "person_id": "uk.org.publicwhip/person/25835", 
       "organization_id": "home-affairs-committee", 
       "start_date": "2020-03-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4811/Committee/327", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25836", 
+      "organization_id": "public-administration-and-constitutional-affairs-committee", 
+      "start_date": "2020-09-21"
     }, 
     {
       "id": "uk.parliament.data/Member/4811/Committee/98", 
@@ -95512,6 +95565,13 @@
       "start_date": "2020-03-02"
     }, 
     {
+      "id": "uk.parliament.data/Member/4786/Committee/365", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25909", 
+      "organization_id": "business-energy-and-industrial-strategy-committee", 
+      "start_date": "2020-09-21"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4836/Committee/17", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25910", 
@@ -95704,6 +95764,70 @@
       "person_id": "uk.org.publicwhip/person/25938", 
       "organization_id": "house-of-commons", 
       "start_date": "2020-03-18"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1590/Committee/11", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25944", 
+      "organization_id": "panel-of-chairs", 
+      "start_date": "2010-06-21", 
+      "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1590/Committee/126", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25944", 
+      "organization_id": "procedure-committee", 
+      "start_date": "2005-07-12", 
+      "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1590/Committee/136", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25944", 
+      "organization_id": "scottish-affairs-committee", 
+      "start_date": "2005-07-12", 
+      "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1590/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25944", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2010-07-12", 
+      "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1590/Committee/15/1", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25944", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2010-07-12", 
+      "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1590/Committee/15/2", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25944", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2010-07-12", 
+      "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1590/Committee/62", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25944", 
+      "organization_id": "environmental-audit-committee", 
+      "start_date": "2010-07-26", 
+      "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1590/Committee/69", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25944", 
+      "organization_id": "european-scrutiny-committee", 
+      "start_date": "2006-07-17", 
+      "end_date": "2010-05-06"
     }, 
     {
       "id": "uk.parliament.data/Member/4121/Committee/83", 
