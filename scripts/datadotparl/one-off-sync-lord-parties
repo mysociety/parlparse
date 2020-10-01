@@ -6,10 +6,11 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from lxml import etree
 from popolo import Popolo
+from popolo.utils import new_id
 
 import requests
 import requests_cache
-requests_cache.install_cache()
+requests_cache.install_cache(expire_after=3600)
 
 parser = etree.ETCompatXMLParser()
 etree.set_default_parser(parser)
@@ -40,6 +41,8 @@ CANON_PARTY = {
     'ulster-unionist-party': 'uup',
     'uk-independence-party': 'ukip',
     'green-party': 'green',
+    'labour-independent': 'independent-labour',
+    'lord-speaker': 'non-affiliated',
 }
 
 class ParlParty(object):
@@ -87,7 +90,7 @@ for m in mships:
             for i, p in enumerate(parties):
                 if i == id: continue
                 mship = m.copy()
-                mship['id'] = 'uk.org.publicwhip/lord/%d' % (data.max_lord_id() + 1)
+                mship['id'] = new_id(data.max_lord_id())
                 mship['start_date'] = p.start_date
                 if i > id:
                     mship['start_reason'] = 'changed_party'
