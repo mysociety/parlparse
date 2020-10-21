@@ -11,8 +11,8 @@ import time, datetime
 import os
 import sys
 
-API_ROOT = 'http://data.niassembly.gov.uk/api/hansard/'
-API_PLENARY = '%splenary/plenarydate/' % API_ROOT
+API_ROOT = 'http://data.niassembly.gov.uk/hansard_json.ashx?m=GetAllHansardReports'
+API_PLENARY = 'http://data.niassembly.gov.uk/hansard_json.ashx?m=GetHansardComponentsByPlenaryDate&plenaryDate='
 
 root = []
 #for i in range(1997,2003):
@@ -31,7 +31,7 @@ def scrape_ni_day(url, filename, forcescrape):
     filename = '%s/../../../parldata/cmpages/ni/%s' % (ni_dir, filename)
     data = urllib.urlopen(url).read()
 
-    if 'ExceptionMessage' in data:
+    if 'ExceptionMessage' in data or '"Message":"An error has occurred."' in data:
         print 'ERROR received scraping %s' % url
         return
 
@@ -63,12 +63,12 @@ def scrape_ni_json(datefrom, dateto, forcescrape):
         print 'ERROR received scraping NI root'
         return
 
-    for day in index:
+    for day in index['AllHansardComponentsList']['HansardComponent']:
         date = day['PlenaryDate'][:10]
         if date < datefrom or date > dateto: continue
         if date < '2014-11-01': continue
         filename = 'ni%s.json' % date
-        scrape_ni_day(urlparse.urljoin(API_PLENARY, str(date)), filename, forcescrape)
+        scrape_ni_day(API_PLENARY + str(date), filename, forcescrape)
 
 
 def scrape_ni_html(datefrom, dateto, forcescrape):

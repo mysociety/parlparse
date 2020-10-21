@@ -504,7 +504,10 @@ class ParseDayJSON(ParseDayParserBase):
         self.speaker = {}
         self.text = ''
         timestamp = ''
-        for line in json.loads(input):
+        j = json.loads(input)
+        if 'AllHansardComponentsList' in j:
+            j = j['AllHansardComponentsList']['HansardComponent']
+        for line in j:
             text = line['ComponentText'].replace('&', '&amp;')
             if not text:
                 print "WARNING: Empty line: %s" % line
@@ -513,9 +516,9 @@ class ParseDayJSON(ParseDayParserBase):
             elif line['ComponentType'] == 'Time':
                 timestamp = self.time_period(text)
             elif line['ComponentType'] == 'Header':
-                if line['ComponentHeaderId'] in (0, 1):
+                if line['ComponentHeaderId'] in (0, 1, '0', '1'):
                     typ = 'major'
-                elif line['ComponentHeaderId'] == 2:
+                elif line['ComponentHeaderId'] in (2, '2'):
                     typ = 'minor'
                 else:
                     raise Exception("Unknown ComponentHeaderId %s" % line['ComponentHeaderId'])
