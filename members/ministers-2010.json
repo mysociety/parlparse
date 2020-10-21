@@ -759,6 +759,22 @@
       "start_date": "2020-04-23"
     }, 
     {
+      "id": "uk.parliament.data/Member/56/Committee/483", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10013", 
+      "organization_id": "risk-assessment-and-risk-planning-committee", 
+      "start_date": "2020-10-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/56/Committee/483/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10013", 
+      "organization_id": "risk-assessment-and-risk-planning-committee", 
+      "start_date": "2020-10-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/56/Committee/97", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10013", 
@@ -4467,6 +4483,13 @@
       "person_id": "uk.org.publicwhip/person/10071", 
       "organization_id": "science-and-technology-committee-lords", 
       "start_date": "2019-07-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/620/Committee/483", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10071", 
+      "organization_id": "risk-assessment-and-risk-planning-committee", 
+      "start_date": "2020-10-15"
     }, 
     {
       "id": "uk.parliament.data/Member/620/Committee/93", 
@@ -11148,7 +11171,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10211", 
       "organization_id": "procedure-and-privileges-committee", 
-      "start_date": "2018-07-19"
+      "start_date": "2018-07-19", 
+      "end_date": "2020-09-17"
     }, 
     {
       "id": "uk.parliament.data/Member/579/Committee/191/1", 
@@ -17446,6 +17470,13 @@
       "end_date": "2017-05-03"
     }, 
     {
+      "id": "uk.parliament.data/Member/345/Committee/111", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10352", 
+      "organization_id": "national-security-strategy-joint-committee", 
+      "start_date": "2020-09-28"
+    }, 
+    {
       "id": "uk.parliament.data/Member/345/Committee/126", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/10352", 
@@ -21511,6 +21542,13 @@
       "start_date": "2019-06-13"
     }, 
     {
+      "id": "uk.parliament.data/Member/305/Committee/482", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10445", 
+      "organization_id": "national-plan-for-sport-and-recreation-committee", 
+      "start_date": "2020-10-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/305/GovernmentPost/149", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister of State (Department for Education and Employment) (School Standards)", 
@@ -23291,6 +23329,13 @@
       "end_date": "2003-10-30"
     }, 
     {
+      "id": "uk.parliament.data/Member/672/Committee/483", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10504", 
+      "organization_id": "risk-assessment-and-risk-planning-committee", 
+      "start_date": "2020-10-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/672/GovernmentPost/691", 
       "source": "datadotparl/governmentpost", 
       "role": "The Secretary of State for Defence", 
@@ -24897,6 +24942,13 @@
       "person_id": "uk.org.publicwhip/person/10554", 
       "organization_id": "high-speed-rail-west-midlands--crewe-bill-select-committee-lords", 
       "start_date": "2019-10-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/319/Committee/482", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10554", 
+      "organization_id": "national-plan-for-sport-and-recreation-committee", 
+      "start_date": "2020-10-15"
     }, 
     {
       "id": "uk.parliament.data/Member/319/GovernmentPost/350", 
@@ -28812,6 +28864,13 @@
       "end_date": "1984-01-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/53/Committee/483", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/10637", 
+      "organization_id": "risk-assessment-and-risk-planning-committee", 
+      "start_date": "2020-10-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/53/GovernmentPost/1118", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister of State (Universities and Science)", 
@@ -28943,6 +29002,22 @@
       "organization_id": "science-and-technology-committee-lords", 
       "start_date": "2010-10-27", 
       "end_date": "2015-03-30"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4151/Committee/482", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10641", 
+      "organization_id": "national-plan-for-sport-and-recreation-committee", 
+      "start_date": "2020-10-15"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4151/Committee/482/1", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/10641", 
+      "organization_id": "national-plan-for-sport-and-recreation-committee", 
+      "start_date": "2020-10-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4151/OppositionPost/982", 
@@ -33368,6 +33443,13 @@
       "start_date": "2019-06-13"
     }, 
     {
+      "id": "uk.parliament.data/Member/4160/Committee/482", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11027", 
+      "organization_id": "national-plan-for-sport-and-recreation-committee", 
+      "start_date": "2020-10-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4160/GovernmentPost/177", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister of State (Regional Affairs) (South West)", 
@@ -35270,6 +35352,13 @@
       "organization_id": "administration-committee", 
       "start_date": "2005-07-12", 
       "end_date": "2010-05-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/1399/Committee/483", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11280", 
+      "organization_id": "risk-assessment-and-risk-planning-committee", 
+      "start_date": "2020-10-15"
     }, 
     {
       "id": "uk.parliament.data/Member/1399/OppositionPost/1255", 
@@ -38624,7 +38713,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11475", 
       "organization_id": "environmental-audit-committee", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-10-12"
     }, 
     {
       "id": "uk.parliament.data/Member/1496/GovernmentPost/1133", 
@@ -44226,6 +44316,13 @@
       "end_date": "2010-10-31"
     }, 
     {
+      "id": "uk.parliament.data/Member/1580/Committee/170", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/11905", 
+      "organization_id": "communications-and-digital-committee", 
+      "start_date": "2020-10-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/1580/Committee/301", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/11905", 
@@ -46125,6 +46222,13 @@
       "organization_id": "eu-external-affairs-subcommittee", 
       "start_date": "2015-06-12", 
       "end_date": "2019-07-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3651/Committee/483", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12839", 
+      "organization_id": "risk-assessment-and-risk-planning-committee", 
+      "start_date": "2020-10-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3651/GovernmentPost/106", 
@@ -48043,6 +48147,13 @@
       "end_date": "2019-07-01"
     }, 
     {
+      "id": "uk.parliament.data/Member/2444/Committee/191", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/12958", 
+      "organization_id": "procedure-and-privileges-committee", 
+      "start_date": "2020-09-17"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2444/Committee/340", 
       "source": "datadotparl/committee", 
       "role": "Chair", 
@@ -49650,6 +49761,13 @@
       "organization_id": "delegated-powers-and-regulatory-reform-committee", 
       "start_date": "2015-06-08", 
       "end_date": "2019-07-01"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/924/Committee/482", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13042", 
+      "organization_id": "national-plan-for-sport-and-recreation-committee", 
+      "start_date": "2020-10-15"
     }, 
     {
       "id": "uk.parliament.data/Member/924/GovernmentPost/429", 
@@ -53638,6 +53756,13 @@
       "end_date": "2020-04-23"
     }, 
     {
+      "id": "uk.parliament.data/Member/2233/Committee/483", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13206", 
+      "organization_id": "risk-assessment-and-risk-planning-committee", 
+      "start_date": "2020-10-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/2233/GovernmentPost/182", 
       "source": "datadotparl/governmentpost", 
       "role": "Minister for Trade and Investment and Deputy Leader of the House of Lords (also Department of Trade and Industry)", 
@@ -55514,6 +55639,13 @@
       "end_date": "2019-07-02"
     }, 
     {
+      "id": "uk.parliament.data/Member/3751/Committee/483", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13323", 
+      "organization_id": "risk-assessment-and-risk-planning-committee", 
+      "start_date": "2020-10-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/940/Committee/172", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13327", 
@@ -56506,6 +56638,13 @@
       "organization_id": "eu-energy-and-environment-subcommittee", 
       "start_date": "2019-07-02", 
       "end_date": "2020-04-23"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3453/Committee/482", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13368", 
+      "organization_id": "national-plan-for-sport-and-recreation-committee", 
+      "start_date": "2020-10-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3478/Committee/187", 
@@ -59435,6 +59574,13 @@
       "person_id": "uk.org.publicwhip/person/13517", 
       "organization_id": "services-committee", 
       "start_date": "2020-07-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3396/Committee/483", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13517", 
+      "organization_id": "risk-assessment-and-risk-planning-committee", 
+      "start_date": "2020-10-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3396/OppositionPost/1481", 
@@ -63959,16 +64105,42 @@
     {
       "id": "uk.parliament.data/Member/3804/Committee/174", 
       "source": "datadotparl/committee", 
+      "role": "Chair", 
       "person_id": "uk.org.publicwhip/person/13879", 
       "organization_id": "ecclesiastical-committee-joint-committee", 
-      "start_date": "2015-07-09"
+      "start_date": "2020-06-16"
     }, 
     {
       "id": "uk.parliament.data/Member/3804/Committee/174/1", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/13879", 
       "organization_id": "ecclesiastical-committee-joint-committee", 
+      "start_date": "2015-07-09", 
+      "end_date": "2020-06-16"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3804/Committee/174/2", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/13879", 
+      "organization_id": "ecclesiastical-committee-joint-committee", 
+      "start_date": "2020-06-16"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3804/Committee/174/3", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13879", 
+      "organization_id": "ecclesiastical-committee-joint-committee", 
       "start_date": "2010-07-27", 
+      "end_date": "2020-06-16"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3804/Committee/174/4", 
+      "source": "datadotparl/committee", 
+      "role": "Chair", 
+      "person_id": "uk.org.publicwhip/person/13879", 
+      "organization_id": "ecclesiastical-committee-joint-committee", 
+      "start_date": "2020-06-16", 
       "end_date": "2015-03-30"
     }, 
     {
@@ -64234,6 +64406,13 @@
       "person_id": "uk.org.publicwhip/person/13924", 
       "organization_id": "food-poverty-health-and-environment-committee", 
       "start_date": "2019-06-13"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3736/Committee/482", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/13924", 
+      "organization_id": "national-plan-for-sport-and-recreation-committee", 
+      "start_date": "2020-10-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3830/Committee/176", 
@@ -65405,6 +65584,13 @@
       "start_date": "2019-06-13"
     }, 
     {
+      "id": "uk.parliament.data/Member/863/Committee/482", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/17722", 
+      "organization_id": "national-plan-for-sport-and-recreation-committee", 
+      "start_date": "2020-10-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/891/Committee/148", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/18019", 
@@ -65918,6 +66104,13 @@
       "organization_id": "science-and-technology-committee-lords", 
       "start_date": "2015-06-08", 
       "end_date": "2016-05-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/3862/Committee/482", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24707", 
+      "organization_id": "national-plan-for-sport-and-recreation-committee", 
+      "start_date": "2020-10-15"
     }, 
     {
       "id": "uk.parliament.data/Member/3863/Committee/255", 
@@ -70298,6 +70491,14 @@
       "organization_id": "public-administration-and-constitutional-affairs-committee", 
       "start_date": "2016-12-19", 
       "end_date": "2017-05-03"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4121/Committee/83", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/24801", 
+      "organization_id": "home-affairs-committee", 
+      "start_date": "2010-07-12", 
+      "end_date": "2015-03-30"
     }, 
     {
       "id": "uk.parliament.data/Member/4121/Committee/83", 
@@ -78318,7 +78519,8 @@
       "role": "Shadow Spokesperson (Equalities and Women's Issues)", 
       "person_id": "uk.org.publicwhip/person/24973", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-04-14"
+      "start_date": "2020-04-14", 
+      "end_date": "2020-09-29"
     }, 
     {
       "id": "uk.parliament.data/Member/4159/OppositionPost/1073/1", 
@@ -80009,7 +80211,8 @@
       "role": "Shadow Spokesperson (Equalities and Women's Issues)", 
       "person_id": "uk.org.publicwhip/person/25048", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-04-15"
+      "start_date": "2020-04-15", 
+      "end_date": "2020-09-29"
     }, 
     {
       "id": "uk.parliament.data/Member/4222/OppositionPost/1581", 
@@ -80933,6 +81136,13 @@
       "person_id": "uk.org.publicwhip/person/25168", 
       "organization_id": "national-security-strategy-joint-committee", 
       "start_date": "2020-05-11"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4267/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25168", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-10-05"
     }, 
     {
       "id": "uk.parliament.data/Member/4267/Committee/153", 
@@ -82397,6 +82607,13 @@
       "start_date": "2020-03-05"
     }, 
     {
+      "id": "uk.parliament.data/Member/4339/Committee/482", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25249", 
+      "organization_id": "national-plan-for-sport-and-recreation-committee", 
+      "start_date": "2020-10-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4336/Committee/337", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25250", 
@@ -82717,6 +82934,13 @@
       "organization_id": "committees-on-arms-export-controls", 
       "start_date": "2017-10-10", 
       "end_date": "2019-11-06"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4403/Committee/15/3", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25270", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-10-05"
     }, 
     {
       "id": "uk.parliament.data/Member/4403/Committee/347", 
@@ -83558,7 +83782,8 @@
       "role": "Shadow SNP Spokesperson (Manufacturing)", 
       "person_id": "uk.org.publicwhip/person/25287", 
       "organization_id": "house-of-commons", 
-      "start_date": "2020-01-07"
+      "start_date": "2020-01-07", 
+      "end_date": "2020-10-01"
     }, 
     {
       "id": "uk.parliament.data/Member/4465/Committee/126", 
@@ -87209,6 +87434,13 @@
       "start_date": "2020-04-10"
     }, 
     {
+      "id": "uk.parliament.data/Member/4515/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25365", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-10-05"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4515/Committee/171", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25365", 
@@ -89005,7 +89237,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25410", 
       "organization_id": "petitions-committee", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-10-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4452/Committee/326/1", 
@@ -90596,6 +90829,13 @@
       "start_date": "2020-04-23"
     }, 
     {
+      "id": "uk.parliament.data/Member/4545/Committee/483", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25458", 
+      "organization_id": "risk-assessment-and-risk-planning-committee", 
+      "start_date": "2020-10-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4545/GovernmentPost/1212", 
       "source": "datadotparl/governmentpost", 
       "role": "The Parliamentary Under-Secretary for Health and Social Care", 
@@ -90798,6 +91038,13 @@
       "start_date": "2019-07-15"
     }, 
     {
+      "id": "uk.parliament.data/Member/4554/Committee/483", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25474", 
+      "organization_id": "risk-assessment-and-risk-planning-committee", 
+      "start_date": "2020-10-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4569/Committee/17", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25475", 
@@ -90977,6 +91224,13 @@
       "person_id": "uk.org.publicwhip/person/25488", 
       "organization_id": "science-and-technology-committee-lords", 
       "start_date": "2016-05-25"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4563/Committee/483", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25488", 
+      "organization_id": "risk-assessment-and-risk-planning-committee", 
+      "start_date": "2020-10-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4571/Committee/328", 
@@ -92834,6 +93088,13 @@
       "end_date": "2019-11-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/4615/Committee/367", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25667", 
+      "organization_id": "international-trade-committee", 
+      "start_date": "2020-09-28"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4615/Committee/98", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25667", 
@@ -93827,7 +94088,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25701", 
       "organization_id": "international-trade-committee", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-09-28"
     }, 
     {
       "id": "uk.parliament.data/Member/4617/Committee/367/1", 
@@ -94110,7 +94372,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25732", 
       "organization_id": "communications-and-digital-committee", 
-      "start_date": "2019-10-03"
+      "start_date": "2019-10-03", 
+      "end_date": "2020-10-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4699/Committee/406", 
@@ -94134,6 +94397,13 @@
       "organization_id": "food-poverty-health-and-environment-committee", 
       "start_date": "2019-06-13", 
       "end_date": "2019-12-20"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4700/Committee/482", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25734", 
+      "organization_id": "national-plan-for-sport-and-recreation-committee", 
+      "start_date": "2020-10-15"
     }, 
     {
       "id": "uk.parliament.data/Member/4700/GovernmentPost/23", 
@@ -94291,6 +94561,13 @@
       "end_date": "2019-11-06"
     }, 
     {
+      "id": "uk.parliament.data/Member/4724/Committee/482", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25777", 
+      "organization_id": "national-plan-for-sport-and-recreation-committee", 
+      "start_date": "2020-10-15"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4726/Committee/193", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25783", 
@@ -94328,6 +94605,14 @@
       "person_id": "uk.org.publicwhip/person/25787", 
       "organization_id": "food-poverty-health-and-environment-committee", 
       "start_date": "2020-01-22"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4730/OppositionPost/1073", 
+      "source": "datadotparl/oppositionpost", 
+      "role": "Shadow Spokesperson (Equalities and Women's Issues)", 
+      "person_id": "uk.org.publicwhip/person/25789", 
+      "organization_id": "house-of-commons", 
+      "start_date": "2020-09-30"
     }, 
     {
       "id": "uk.parliament.data/Member/4730/OppositionPost/977", 
@@ -94472,6 +94757,13 @@
       "person_id": "uk.org.publicwhip/person/25801", 
       "organization_id": "house-of-commons", 
       "start_date": "2020-04-14"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4758/Committee/62", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25802", 
+      "organization_id": "environmental-audit-committee", 
+      "start_date": "2020-10-12"
     }, 
     {
       "id": "uk.parliament.data/Member/4824/Committee/203", 
@@ -94828,6 +95120,13 @@
       "person_id": "uk.org.publicwhip/person/25835", 
       "organization_id": "home-affairs-committee", 
       "start_date": "2020-03-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4811/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25836", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-10-05"
     }, 
     {
       "id": "uk.parliament.data/Member/4811/Committee/327", 
@@ -95369,6 +95668,13 @@
       "start_date": "2020-03-02"
     }, 
     {
+      "id": "uk.parliament.data/Member/4743/Committee/366", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25894", 
+      "organization_id": "committee-on-the-future-relationship-with-the-european-union", 
+      "start_date": "2020-10-05"
+    }, 
+    {
       "id": "uk.parliament.data/Member/4745/Committee/102", 
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25895", 
@@ -95395,6 +95701,20 @@
       "person_id": "uk.org.publicwhip/person/25898", 
       "organization_id": "education-committee", 
       "start_date": "2020-03-02"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4814/Committee/326", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25898", 
+      "organization_id": "petitions-committee", 
+      "start_date": "2020-10-12"
+    }, 
+    {
+      "id": "uk.parliament.data/Member/4819/Committee/15", 
+      "source": "datadotparl/committee", 
+      "person_id": "uk.org.publicwhip/person/25900", 
+      "organization_id": "committees-on-arms-export-controls", 
+      "start_date": "2020-10-05"
     }, 
     {
       "id": "uk.parliament.data/Member/4819/Committee/301", 
@@ -95499,7 +95819,8 @@
       "source": "datadotparl/committee", 
       "person_id": "uk.org.publicwhip/person/25903", 
       "organization_id": "committee-on-the-future-relationship-with-the-european-union", 
-      "start_date": "2020-03-02"
+      "start_date": "2020-03-02", 
+      "end_date": "2020-10-05"
     }, 
     {
       "id": "uk.parliament.data/Member/4739/Committee/62", 
@@ -95828,14 +96149,6 @@
       "organization_id": "european-scrutiny-committee", 
       "start_date": "2006-07-17", 
       "end_date": "2010-05-06"
-    }, 
-    {
-      "id": "uk.parliament.data/Member/4121/Committee/83", 
-      "source": "datadotparl/committee", 
-      "person_id": "uk.org.publicwhip/person/25945", 
-      "organization_id": "home-affairs-committee", 
-      "start_date": "2010-07-12", 
-      "end_date": "2015-03-30"
     }
   ], 
   "organizations": [
@@ -96132,6 +96445,10 @@
       "name": "Members Estimate Committee"
     }, 
     {
+      "id": "national-plan-for-sport-and-recreation-committee", 
+      "name": "National Plan for Sport and Recreation Committee"
+    }, 
+    {
       "id": "national-policy-statements-subcommittee-201719", 
       "name": "National Policy Statements Sub-Committee 2017-19"
     }, 
@@ -96178,6 +96495,10 @@
     {
       "id": "regulatory-reform-committee", 
       "name": "Regulatory Reform Committee"
+    }, 
+    {
+      "id": "risk-assessment-and-risk-planning-committee", 
+      "name": "Risk Assessment and Risk Planning Committee"
     }, 
     {
       "id": "science-and-technology-committee-commons", 
