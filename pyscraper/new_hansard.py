@@ -329,10 +329,16 @@ class BaseParseDayXML(object):
         member_tag = self._parse_member_or_b(tag)
         if member_tag is not None:
             mnis_id = member_tag.get('MnisId')
+            pims_id = None
             if mnis_id in (None, '-1'):
-                return self.handle_minus_member(member_tag)
+                pims_id = member_tag.get('PimsId')
+                if pims_id in (None, "0", "-1"):
+                    return self.handle_minus_member(member_tag)
 
-            member = self.resolver.match_by_mnis(mnis_id, self.date)
+            if pims_id: # Old way
+                member = self.resolver.match_by_pims(pims_id, self.date)
+            else:
+                member = self.resolver.match_by_mnis(mnis_id, self.date)
             if member is not None:
                 member['person_id'] = member.get('id')
                 member['name'] = self.resolver.name_on_date(member['person_id'], self.date)
