@@ -2189,6 +2189,7 @@
     "id": "scot.parliament.data/membergovernmentroles/199"
   }, 
   {
+    "end_date": "2015-01-09", 
     "start_date": "2011-06-24", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -2612,6 +2613,7 @@
     "id": "scot.parliament.data/membergovernmentroles/238"
   }, 
   {
+    "end_date": "2020-12-18", 
     "start_date": "2018-06-26", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -2694,6 +2696,7 @@
     "id": "scot.parliament.data/membergovernmentroles/246"
   }, 
   {
+    "end_date": "2020-12-21", 
     "start_date": "2018-06-28", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -2736,6 +2739,7 @@
     "id": "scot.parliament.data/membergovernmentroles/250"
   }, 
   {
+    "end_date": "2020-12-21", 
     "start_date": "2018-06-28", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -2837,6 +2841,7 @@
     "id": "scot.parliament.data/membergovernmentroles/260"
   }, 
   {
+    "end_date": "2020-12-21", 
     "start_date": "2020-02-17", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -2895,5 +2900,45 @@
       "uk.org.publicwhip/person/25506"
     ], 
     "id": "scot.parliament.data/membergovernmentroles/266"
+  }, 
+  {
+    "start_date": "2020-12-21", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for Public Health and Sport", 
+    "person_id": [
+      "uk.org.publicwhip/person/25503"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/267"
+  }, 
+  {
+    "start_date": "2020-12-21", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for Rural Affairs and the Natural Environment", 
+    "person_id": [
+      "uk.org.publicwhip/person/25523"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/268"
+  }, 
+  {
+    "start_date": "2020-12-21", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for Trade, Innovation and Public Finance", 
+    "person_id": [
+      "uk.org.publicwhip/person/25527"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/269"
+  }, 
+  {
+    "start_date": "2020-12-22", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for Drugs Policy", 
+    "person_id": [
+      "uk.org.publicwhip/person/13969"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/270"
   }
 ]
