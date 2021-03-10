@@ -138,6 +138,7 @@ class BaseParseDayXML(object):
         'hs_6CntrCapsHdg',
     ]
     indents = [
+        'hs_quote',
         'hs_ParaIndent',
         'hs_AmendmentLevel0',
         'hs_IndentOne',
@@ -1376,8 +1377,6 @@ class LordsParseDayXML(BaseParseDayXML):
 
     paras = [
         'hs_para',
-        'hs_quote',
-        'hs_quotefo',
         'hs_parafo',
         'hs_Question',
         'hs_newline10',
