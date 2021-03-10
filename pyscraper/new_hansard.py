@@ -1352,7 +1352,7 @@ class PBCParseDayXML(BaseParseDayXML):
             # The sitting number is only given in a random attribute
             data_id = header.xpath('./ns:SystemDataId', namespaces=self.ns_map)[0]
             data_id = self.get_single_line_text_from_element(data_id)
-            sitting_num = int(re.match('PBC\s*\d+-(\d+)', data_id).group(1))
+            sitting_num = int(re.match('P(?:BC|MB)\s*\d+-(\d+)', data_id).group(1))
         except:
             # Try and find one in the filename then.
             sitting_num = int(re.search('(\d+)(?:st|nd|rd|th) sit', xml_file.name).group(1))
