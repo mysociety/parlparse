@@ -276,10 +276,11 @@ def get_title_and_date(soup, page_id):
             raise Exception, "No title was found in a page that's non-empty; the page ID was: %d" % (page_id,)
     m = re.search(r'''(?x)
             ^(.*) \s+
+            (?: [(] (?:Hybrid) [)] \s* )?
             ( \d{1,2} [ ] \w+ [ ] \d{4} ) \s*
             (?: [[({] (?:Virtual|Hybrid) (?: \s (?:Session|Meeting))? [)\][}] \s* )?
             (?: [[({] Draft [)\][}] \s* )?
-            (?: Business [ ] (?:until|from|between) [ ] \d\d:\d\d (?: [ ] (?:until|to|and|and[ ]after) [ ] \d\d:\d\d)?
+            (?: Business [ ] (?:until|to|from|between) [ ] \d\d:\d\d (?: [ ] (?:until|to|and|and[ ]after) [ ] \d\d:\d\d)?
                 | Test
                 | \1
             )?
@@ -290,7 +291,7 @@ def get_title_and_date(soup, page_id):
         return (session, report_date)
     else:
         # try committee format
-        m = re.search(r'^(.*)\s+(\d{1,2} \w+ \d{4})\s*(?:Agenda.*)', title)
+        m = re.search(r'^(.*)\s+(\d{1,2} \w+ \d{4})\s*(?: (?:Agenda|Draft).*)', title)
         if m:
             session = m.group(1).rstrip(',')
             report_date = dateparser.parse(m.group(2)).date()
@@ -376,6 +377,8 @@ class ParsedPage(object):
                  'meeting-of-the-parliament-virtual',
                  'meeting-of-the-parliament-virtual-session',
                  'meeting-of-the-parliament-hybrid',
+                 'meeting-of-the-parliament-hybrid-',
+                 'meeting-of-the-parliament-hybrid-meeting',
                  'meeting-of-the-parliament-hybrid-session'):
             s = 'meeting-of-the-parliament'
         return s
