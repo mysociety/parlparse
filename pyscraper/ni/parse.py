@@ -508,7 +508,7 @@ class ParseDayJSON(ParseDayParserBase):
         if 'AllHansardComponentsList' in j:
             j = j['AllHansardComponentsList']['HansardComponent']
         for line in j:
-            text = line['ComponentText'].replace('&', '&amp;')
+            text = (line['ComponentText'] or '').replace('&', '&amp;')
             if not text:
                 print "WARNING: Empty line: %s" % line
             elif line['ComponentType'] == 'Document Title':
