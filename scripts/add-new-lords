@@ -109,17 +109,19 @@ def construct_membership(member, person_id, lord_id):
     return membership
 
 
-LORDS_URL = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Lords/BasicDetails'
+LORDS_URL = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Lords|membership=all/BasicDetails/'
 parl_members = etree.parse(urllib2.urlopen(LORDS_URL)).getroot()
 parl_members = sorted(parl_members, key=lambda x: x.find('HouseStartDate').text)
 
-new_people = False
+changed = False
 person_id = data.max_person_id()
 for member in parl_members:
+    # We only know about Lords post House of Lords Act 1999
     end_date = member.find('HouseEndDate').text or ''
     end_date = end_date.replace('T00:00:00', '')
     if end_date and end_date < '1999-11-12':
         continue
+
     name = canon_name(member.find('DisplayAs').text)
     person = data.get_person(id=member.attrib['Member_Id'], scheme='datadotparl_id')
     if not person:
@@ -133,9 +135,18 @@ for member in parl_members:
 
         data.add_person(person)
         data.add_membership(membership)
-        new_people = True
+        changed = True
     elif data.names[person['id']] == name:
-        # Same lord name, assume already got them
+        # Same lord name, assume already got them. Check they are still current
+        mships = data.memberships.of_person(person['id'])
+        mships = [m for m in mships]
+        mships.sort(key=lambda x: x.get('end_date', '9999-12-31'))
+        mship = mships[-1]
+        if end_date and 'end_date' not in mship:
+            mship['end_date'] = end_date
+            changed = True
+        elif end_date != mship.get('end_date', ''):
+            print '*', name, 'Parl=', end_date, 'Us=', mship.get('end_date', '-')
         continue
     else:
         lord_id = new_id(data.max_lord_id())
@@ -151,7 +162,7 @@ for member in parl_members:
         person['other_names'].append(name)
 
         data.add_membership(membership)
-        new_people = True
+        changed = True
 
-if new_people:
+if changed:
     data.dump()
