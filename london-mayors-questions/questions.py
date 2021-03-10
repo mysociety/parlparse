@@ -328,18 +328,16 @@ def parseAnswersFromQuestionPage(page_content):
 
         logger.debug(u'Question answered by {}'.format(answered_by_person['name']))
 
-        answer_p_elements = answer_article\
-            .find('div', class_='field--name-body')\
-            .findAll('p')
-
         answer_paragraphs = []
 
-        for paragraph in answer_p_elements:
-
-            # Some paragraphs are helpfully empty. Deal with those
-            if paragraph.text.strip() != '':
-                # NB at this point we're still sending BeautifulSoup objects
-                answer_paragraphs.append(paragraph)
+        answer_body = answer_article.find('div', class_='field--name-body')
+        if answer_body:
+            answer_p_elements = answer_body.findAll('p')
+            for paragraph in answer_p_elements:
+                # Some paragraphs are helpfully empty. Deal with those
+                if paragraph.text.strip() != '':
+                    # NB at this point we're still sending BeautifulSoup objects
+                    answer_paragraphs.append(paragraph)
 
         logger.debug('Found {} paragraphs of non-empty answers on page'.format(len(answer_paragraphs)))
 
@@ -366,6 +364,15 @@ def parseAnswersFromQuestionPage(page_content):
                     })
                 else:
                     logger.warning('Speech with no detected speaker in question {}!'.format(canonical_url))
+
+        answer_attachment_div = answer_article.find('div', class_='field--name-field-attachments')
+        if answer_attachment_div:
+            attachments = answer_attachment_div.findAll('a')
+            attachments = [str(a) for a in attachments]
+            answers_object['answers'].append({
+                'speaker': answered_by_person,
+                'attachments': attachments,
+            })
 
     return answers_object
 
@@ -543,9 +550,13 @@ def buildXMLForQuestions(questions):
                                               person_id=answer['speaker']['id']
                                               )
 
-            for paragraph in answer['paragraphs']:
+            for paragraph in answer.get('paragraphs', []):
                 paragraph_element = etree.SubElement(answer_element, 'p')
                 paragraph_element.text = paragraph
+
+            for attachment in answer.get('attachments', []):
+                paragraph_element = etree.SubElement(answer_element, 'p')
+                paragraph_element.append(etree.fromstring(attachment))
 
     return pwxml
 
