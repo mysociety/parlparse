@@ -69,15 +69,16 @@ for m in mships:
         parties = [p for p in parties if p.find('StartDate').text >= parl_member.find('HouseStartDate').text]
         parties = [ParlParty(p) for p in parties]
 
-        # If we have one membership and Parliament has one, ignore until someone complains
+        # If we have one membership and Parliament has one, take Parliament's instead
         if len(mships_by_pid[m['person_id']]) == 1 and len(parties) == 1:
-            print '**** 1 in both ***'
             print 'Party mismatch for', data.names[m['person_id']], 'Parl ID', parl_id, 'Our ID', m['person_id'],
-            print 'Our mships', [m['on_behalf_of_id'] for m in mships_by_pid[m['person_id']]],
-            print 'Parl mships', [p.name for p in parties]
+            print 'Updating from ', [m['on_behalf_of_id'] for m in mships_by_pid[m['person_id']]],
+            print 'to', [p.name for p in parties]
+            assert parties[0].name in data.orgs.values(), parties[0].name
+            mships_by_pid[m['person_id']][0]['on_behalf_of_id'] = parties[0].name
             continue
 
-	print 'Party mismatch for', data.names[m['person_id']], 'Parl ID', parl_id, 'Our ID', m['person_id'],
+        print 'Party mismatch for', data.names[m['person_id']], 'Parl ID', parl_id, 'Our ID', m['person_id'],
         print 'Our mships', [m['on_behalf_of_id'] for m in mships_by_pid[m['person_id']]],
         print 'Parl mships', [p.name for p in parties]
 
