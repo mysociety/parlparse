@@ -139,6 +139,7 @@ class BaseParseDayXML(object):
     ]
     indents = [
         'hs_quote',
+        'hs_QuoteAllIndent',
         'hs_ParaIndent',
         'hs_AmendmentLevel0',
         'hs_IndentOne',
