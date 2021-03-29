@@ -160,6 +160,10 @@ class BaseParseDayXML(object):
     ns = ''
     ns_map = {}
 
+    division_number_element = 'Number'
+    division_ayes_attribute = 'ayes'
+    division_noes_attribute = 'noes'
+
     debate_type = None
     current_speech = None
     date = ''
@@ -793,16 +797,16 @@ class BaseParseDayXML(object):
         tag.set('id', self.get_speech_id())
         tag.set('nospeaker', 'true')
         tag.set('divdate', self.date)
-        div_number = \
-            division.xpath('.//ns:Number/text()', namespaces=self.ns_map)
+        div_number = division.xpath('.//ns:' + self.division_number_element, namespaces=self.ns_map)[0]
+        div_number = self.get_single_line_text_from_element(div_number)
 
-        tag.set('divnumber', u''.join(div_number))
+        tag.set('divnumber', div_number)
         tag.set('colnum', self.current_col)
         tag.set('time', self.current_time)
 
         div_count = etree.Element('divisioncount')
-        div_count.set('ayes', yes_text)
-        div_count.set('noes', no_text)
+        div_count.set(self.division_ayes_attribute, yes_text)
+        div_count.set(self.division_noes_attribute, no_text)
 
         tag.append(div_count)
 
@@ -1395,6 +1399,10 @@ class LordsParseDayXML(BaseParseDayXML):
         'hs_Venue',
     ]
 
+    division_number_element = 'DivisionNumber'
+    division_ayes_attribute = 'content'
+    division_noes_attribute = 'not-content'
+
     def parse_quote(self, quote):
         tag = etree.Element('p')
         tag.set('pid', self.get_pid())
@@ -1546,24 +1554,7 @@ class LordsParseDayXML(BaseParseDayXML):
 
         self.clear_current_speech()
 
-        tag = etree.Element('division')
-
-        tag.set('id', self.get_speech_id())
-        tag.set('nospeaker', 'true')
-        tag.set('divdate', self.date)
-
-        div_number = \
-            division.xpath('.//ns:DivisionNumber/text()', namespaces=self.ns_map)
-
-        tag.set('divnumber', u''.join(div_number))
-        tag.set('colnum', self.current_col)
-        tag.set('time', self.current_time)
-
-        div_count = etree.Element('divisioncount')
-        div_count.set('content', ayes_count_text)
-        div_count.set('not-content', noes_count_text)
-
-        tag.append(div_count)
+        tag = self.get_division_tag(division, ayes_count_text, noes_count_text)
 
         ayes = division.xpath(
             './/ns:NamesContents//ns:hs_DivListNames', namespaces=self.ns_map
