@@ -139,7 +139,7 @@ class LordsList(ResolverBase):
                         if not bDivision:
                             raise ContextException("lordname matches lordofname in lordlist", stamp=stampurl, fragment=lname)
                     res.append(lm)
-                elif ltitle != "Bishop" and ltitle != "Archbishop" and (ltitle, lname) not in (("Duke", "Norfolk"), ("Duke", "Wellington"), ('Earl', 'Kinnoull')):
+                elif ltitle != "Bishop" and ltitle != "Archbishop" and (ltitle, lname) not in (("Duke", "Norfolk"), ("Duke", "Wellington"), ('Earl', 'Kinnoull'), ('Earl', 'Selborne')):
                     print lm
                     raise ContextException("wrong dates on lords with same name", stamp=stampurl, fragment=lname)
 
