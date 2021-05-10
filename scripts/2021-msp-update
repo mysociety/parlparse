@@ -1,0 +1,126 @@
+#!/usr/bin/env python
+#
+# NOTE This worked but put member IDs in the entries of people that used to be
+# MP. I resolved this manually, it was only a few entries.
+
+import codecs
+import csv
+import json
+import os
+import sys
+
+sys.path.append('../pyscraper')
+from sp.resolvenames import memberList
+from resolvemembernames import memberList as mpList
+
+sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
+
+CSV_URL = '/home/matthew/2021msps'
+JSON = os.path.join(os.path.dirname(__file__), '..', 'members', 'people.json')
+
+
+def main():
+    data = load_data()
+    update_from(CSV_URL, data)
+    json.dump(data['json'], open(JSON + 'n', 'w'), indent=2, sort_keys=True)
+    os.rename(JSON + 'n', JSON)
+
+
+def update_from(csv_url, data):
+    for first, last, cons, party in wtt_csv_reader(csv_url):
+        name_cons = '%s %s (%s)' % (first, last, PARTY_TWFY_TO_PARL[party])
+        ids = memberList.match_whole_speaker(name_cons, '2021-05-01')
+        if not ids:
+            ids = mpList.fullnametoids('%s %s' % (first, last), '2018-01-01')
+        if not ids:
+            ids = mpList.fullnametoids('%s %s' % (first, last), '2016-01-01')
+        if not ids:
+            ids = mpList.fullnametoids('%s %s' % (first, last), '2014-01-01')
+        ids = list(ids)
+        person_id = ids[0] if len(ids) == 1 else None
+
+        name = {'given_name': first, 'family_name': last, 'note': 'Main'}
+        if not person_id:
+            data['max_person_id'] += 1
+            person_id = 'uk.org.publicwhip/person/%d' % data['max_person_id']
+            new_person = {
+                'id': person_id,
+                "other_names": [name],
+                'shortcuts': {
+                    'current_party': party,
+                    'current_constituency': data['posts_by_name'][cons]['area']['name'],
+                }
+            }
+            data['json']['persons'].append(new_person)
+            data['persons'][person_id] = new_person
+
+        # With the person done, now let's either update a membership or create a new membership
+        new_mship = {
+            'on_behalf_of_id': data['orgs'][party],
+            'person_id': person_id,
+            'start_date': '2021-05-08',
+            'start_reason': 'regional_election',
+        }
+        data['max_mship_id'] += 1
+        print "NEW result %s, %s %s, %s, %s, %s" % (data['max_mship_id'], name['given_name'], name['family_name'], party, cons, person_id)
+        mship = {
+            'id': 'uk.org.publicwhip/member/%d' % data['max_mship_id'],
+            'post_id': data['posts_by_name'][cons]['id'],
+        }
+        data['json']['memberships'].append(mship)
+        mship.update(new_mship)
+        data.setdefault('dealt_with', []).append(cons)
+
+
+def load_data():
+    """Load in existing JSON"""
+    j = json.load(open(JSON))
+    persons = {p['id']: p for p in j['persons']}
+    posts = {p['id']: p for p in j['posts']}
+    posts_by_name = {p['area']['name']: p for p in j['posts'] if p['organization_id'] == 'scottish-parliament' and 'end_date' not in p}
+    assert len(posts_by_name) == 81  # 73 + 8
+    orgs = {o['name']: o['id'] for o in j['organizations']}
+    max_person_id = max(int(p['id'].replace('uk.org.publicwhip/person/','')) for p in j['persons'])
+
+    max_mship_id = 0
+    mships = (m for m in j['memberships'] if 'post_id' in m and posts[m['post_id']]['organization_id'] == 'scottish-parliament')
+    max_mship_id = max(int(mship['id'].replace('uk.org.publicwhip/member/','')) for mship in mships)
+
+    return {
+        'json': j,
+        'persons': persons,
+        'posts_by_name': posts_by_name,
+        'orgs': orgs,
+        'max_person_id': max_person_id,
+        'max_mship_id': max_mship_id,
+    }
+
+
+PARTY_WTT_TO_TWFY = {
+    'Scottish Conservative and Unionist Party': 'Conservative',
+    'Scottish Liberal Democrats': 'Liberal Democrat',
+    "Scottish Labour": 'Labour/Co-operative',
+    'Scottish Green Party': 'Green',
+    'Scottish National Party': 'Scottish National Party',
+}
+
+
+PARTY_TWFY_TO_PARL = {
+    'Conservative': 'Con',
+    'Liberal Democrat': 'LD',
+    "Labour/Co-operative": 'Lab',
+    'Green': 'Green',
+    'Scottish National Party': 'SNP',
+}
+
+
+def wtt_csv_reader(fn):
+    if isinstance(fn, basestring):
+        fn = open(fn)
+    for row in csv.DictReader(fn):
+        row['Party'] = PARTY_WTT_TO_TWFY[row['Party']]
+        yield row['First'], row['Last'], row['Constituency'], row['Party']
+
+
+if __name__ == '__main__':
+    main()
