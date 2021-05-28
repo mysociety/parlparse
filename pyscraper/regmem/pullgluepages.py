@@ -50,7 +50,10 @@ def GlueByContents(fout, url_contents, regmemdate):
 
         sr = re.sub('<p([^>]*)/>', r'<p\1></p>', sr)
         soup_mp = BeautifulSoup.BeautifulSoup(sr)
-        page = soup_mp.find('h1').findNextSiblings(lambda t: t.name != 'div')
+        try:
+            page = soup_mp.find('h1').findNextSiblings(lambda t: t.name != 'div')
+        except:
+            print 'Problem with ' + url.decode('utf-8')
         page = '\n'.join([ str(p) for p in page ]) + '\n'
         miscfuncs.WriteCleanText(fout, page)
 
@@ -201,7 +204,7 @@ def FindRegmemPages():
             date = mx.DateTime.DateTimeFrom(alldates[0]).date
             if (date, ixurl) not in urls:
                 urls.append((date, ixurl))
-        elif re.search('Session 201[79]', content):
+        elif re.search('Session 201[79]|Session 20[2-9]', content):
             allurl_soups = soup.findAll('a', href=re.compile("(memi02|part1contents|/contents\.htm)"))
             for url_soup in allurl_soups:
                 url = url_soup['href']
