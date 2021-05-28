@@ -119,6 +119,10 @@ class MemberList(ResolverBase):
     def match_string_somehow(self,s,date,party,just_name):
         s = re.sub('\s{2,}', ' ', s)
 
+        s = s.replace(u"O\u2019", "O'")
+        if s == 'Katy Clark' and date >= '2020-09-03':
+            s = 'Baroness Clark of Kilwinning'
+
         member_ids = []
 
         # Sometimes the names are written Lastname, FirstNames
