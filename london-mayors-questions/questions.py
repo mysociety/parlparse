@@ -600,17 +600,20 @@ def loadMembershipsFromFile(members_file):
     logger.debug('Loaded {} people from {}'.format(len(members_raw_data['persons']), members_file.name))
 
     people_by_id = {}
+    post_org_by_id = {}
 
     # This unpacks all the people in the JSON so we can pull a person's name back from their ID
     for person in members_raw_data['persons']:
         people_by_id[person['id']] = person
+    for post in members_raw_data['posts']:
+        post_org_by_id[post['id']] = post['organization_id']
 
     # This loops through each membership, checks to see if it's for the Assembly, if so adds it to the map
 
     person_ids_by_name = {}
 
     for membership in members_raw_data['memberships']:
-        if membership.get('organization_id') == 'london-assembly':
+        if 'post_id' in membership and post_org_by_id[membership['post_id']] == 'london-assembly':
             name = getNameFromPerson(people_by_id[membership['person_id']])
 
             if name not in person_ids_by_name:
