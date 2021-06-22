@@ -1370,11 +1370,12 @@ class PBCParseDayXML(BaseParseDayXML):
 
         try:
             title = header.xpath('./ns:Title', namespaces=self.ns_map)[0]
-            title = self.get_single_line_text_from_element(title).partition(' ')[0].upper()
+            title = self.get_single_line_text_from_element(title)
         except:
             fragment = self.xml_root.xpath('.//ns:Fragment', namespaces=self.ns_map)[0]
             title = fragment.xpath('.//ns:Cover', namespaces=self.ns_map)[0].get('debate')
-            title = title.partition(' ')[0].upper()
+
+        title = title.partition(' ')[0].upper()
 
         self.session = re.sub('(\d{4})_\d\d(\d\d)', r'\1-\2', self.session)
 

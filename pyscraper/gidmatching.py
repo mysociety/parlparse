@@ -173,7 +173,7 @@ def DoFactorDiff(essflatbindx, essflatblist, essxindx, essxlist, chks, flatb):
 
 		# output the (sometimes more than) one redirect of the right redirect type
 		chk = chks[ix]
-		oldgid = re.search('id="([\w\d\-\./]*)"', chk[1]).group(1)
+		oldgid = re.search('id="([\w\d\-\.,/]*)"', chk[1]).group(1)
 		for matchg in matchlist:
 			res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="%s"/>\n' % (oldgid, flatb[matchg].GID, matchtype))
 			lastmatchg = matchg
