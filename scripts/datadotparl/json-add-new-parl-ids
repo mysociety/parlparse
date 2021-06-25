@@ -67,7 +67,7 @@ for member in parl_members:
     if end_date and end_date < '1999-11-12': continue
     name = canon_name(member.find('DisplayAs').text)
     if member.attrib['Member_Id'] == '3877': end_date = '2010-07-31'  # Bishop of Bradford
-    if name == 'viscount oxfuird': name = 'viscount of oxfuird'
+    #if name == 'viscount oxfuird': name = 'viscount of oxfuird'
     if name == 'lord grenfell': end_date = '2014-03-31'
     #print (name, end_date)
     parl_by_name[(name, end_date)] = member
