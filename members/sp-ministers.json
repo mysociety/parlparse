@@ -2775,9 +2775,7 @@
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
     "role": "Minister for Community Safety", 
-    "person_id": [
-      "uk.org.publicwhip/person/25502"
-    ], 
+    "person_id": [], 
     "id": "scot.parliament.data/membergovernmentroles/253"
   }, 
   {
@@ -3052,9 +3050,7 @@
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
     "role": "Minister for Community Safety", 
-    "person_id": [
-      "uk.org.publicwhip/person/25502"
-    ], 
+    "person_id": [], 
     "id": "scot.parliament.data/membergovernmentroles/279"
   }, 
   {
@@ -3216,5 +3212,25 @@
       "uk.org.publicwhip/person/11189"
     ], 
     "id": "scot.parliament.data/membergovernmentroles/295"
+  }, 
+  {
+    "start_date": "2021-08-31", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for Zero Carbon Buildings, Active Travel and Tenants' Rights", 
+    "person_id": [
+      "uk.org.publicwhip/person/14006"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/296"
+  }, 
+  {
+    "start_date": "2021-08-31", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for Green Skills, Circular Economy and Biodiversity", 
+    "person_id": [
+      "uk.org.publicwhip/person/26012"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/297"
   }
 ]
