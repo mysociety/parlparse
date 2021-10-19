@@ -274,6 +274,7 @@ def get_title_and_date(soup, page_id):
             return (None, None)
         else:
             raise Exception, "No title was found in a page that's non-empty; the page ID was: %d" % (page_id,)
+    title = re.sub(r'\(Hybrid\) 202(\d)', r'202\1 (Hybrid)', title)
     m = re.search(r'''(?x)
             ^(.*) \s+
             (?: [(] (?:Hybrid) [)] \s* )?
