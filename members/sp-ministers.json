@@ -3194,6 +3194,7 @@
     "id": "scot.parliament.data/membergovernmentroles/293"
   }, 
   {
+    "end_date": "2021-08-30", 
     "start_date": "2021-05-20", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -3232,5 +3233,15 @@
       "uk.org.publicwhip/person/26012"
     ], 
     "id": "scot.parliament.data/membergovernmentroles/297"
+  }, 
+  {
+    "start_date": "2021-08-31", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for Environment and Land Reform", 
+    "person_id": [
+      "uk.org.publicwhip/person/26004"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/298"
   }
 ]
