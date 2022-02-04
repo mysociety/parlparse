@@ -377,6 +377,7 @@ class ParsedPage(object):
                  'members-virtual-question-time',
                  'meeting-of-the-parliament-virtual',
                  'meeting-of-the-parliament-virtual-session',
+                 'meeting-of-the-parliament-9-hybrid',
                  'meeting-of-the-parliament-hybrid',
                  'meeting-of-the-parliament-hybrid-',
                  'meeting-of-the-parliament-hybrid-meeting',
