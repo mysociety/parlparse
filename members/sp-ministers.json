@@ -3064,6 +3064,7 @@
     "id": "scot.parliament.data/membergovernmentroles/280"
   }, 
   {
+    "end_date": "2022-01-24", 
     "start_date": "2021-05-19", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -3134,6 +3135,7 @@
     "id": "scot.parliament.data/membergovernmentroles/287"
   }, 
   {
+    "end_date": "2022-01-24", 
     "start_date": "2021-05-19", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -3243,5 +3245,25 @@
       "uk.org.publicwhip/person/26004"
     ], 
     "id": "scot.parliament.data/membergovernmentroles/298"
+  }, 
+  {
+    "start_date": "2022-01-24", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for Transport", 
+    "person_id": [
+      "uk.org.publicwhip/person/25506"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/299"
+  }, 
+  {
+    "start_date": "2022-01-25", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for Culture, Europe and International Development", 
+    "person_id": [
+      "uk.org.publicwhip/person/25293"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/300"
   }
 ]
