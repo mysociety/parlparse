@@ -47,6 +47,7 @@ for change in changes:
         matches.add((m[0], m[1], None))
 
 for (url, name, cons) in matches:
+    if name == 'vacant': continue
     name = name.decode('utf-8')
     date = None
     if 'Mark Durkan' in name:

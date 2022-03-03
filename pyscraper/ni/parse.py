@@ -512,7 +512,7 @@ class ParseDayJSON(ParseDayParserBase):
             if not text:
                 print "WARNING: Empty line: %s" % line
             elif line['ComponentType'] == 'Document Title':
-                assert re.match('(Plenary|PLE), %s/%s/%s$' % (self.date[8:10], self.date[5:7], self.date[0:4]), text)
+                assert re.match('(Plenary|PLE), %s/%s/%s$(?i)' % (self.date[8:10], self.date[5:7], self.date[0:4]), text), text
             elif line['ComponentType'] == 'Time':
                 timestamp = self.time_period(text)
             elif line['ComponentType'] == 'Header':
