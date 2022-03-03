@@ -132,6 +132,10 @@ for arg in args:
                 options.lords = True
         elif arg == "regmem":
                 options.regmem = True
+                options.remote = True
+        elif arg == "regmem-local":
+                options.regmem = True
+                options.remote = False
         elif arg == "chgpages":
                 options.chgpages = True
         elif arg == "questionbook":
@@ -216,7 +220,7 @@ if options.scrape:
 	if options.today:
 		pullgluetodaydate = PullGlueToday(options.forcescrape)
 	if options.regmem:
-		RegmemPullGluePages(options.datefrom, options.dateto, options.forcescrape)
+		RegmemPullGluePages(options)
 
 #
 # Parse it into XML
