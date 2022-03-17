@@ -883,7 +883,7 @@ class BaseParseDayXML(object):
                 hours += 12
             time = mx.DateTime.DateTimeFrom(hour=hours, minute=minutes)
             self.current_time = time.strftime('%H:%M:%S')
-        elif time_txt == 'Noon' or re.match('12\s*?noon', time_txt):
+        elif time_txt in ('Noon', 'noon') or re.match('12\s*?noon', time_txt):
             self.current_time = "12:00:00"
         elif re.match('12\s*?midnight', time_txt):
             self.current_time = "00:00:00"
