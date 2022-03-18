@@ -47,7 +47,7 @@ def entry_directory(entry):
 
 
 def get_atom_entries(hansard_atom_url):
-    r = requests.get(atom_feed_url)
+    r = requests.get(hansard_atom_url)
     tree = etree.fromstring(r.content)
 
     result = [
