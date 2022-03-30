@@ -24,10 +24,14 @@ pwldregmem = os.path.join(pwcmdirs, "ldregmem")
 
 tempfilename = tempfile.mktemp("", "pw-gluetemp-", miscfuncs.tmppath)
 
+class AppURLopener(urllib.FancyURLopener):
+    version = os.getenv("USER_AGENT")
+opener = AppURLopener()
+
 # Scrape everything from the contents page
-def GlueByContents(fout, url_contents, regmemdate, remote=True):
+def GlueByContents(fout, url_contents, regmemdate, remote):
     if remote:
-        ur = urllib.urlopen(url_contents)
+        ur = opener.open(url_contents)
     else:
         ur = open(url_contents)
     sr = ur.read()
@@ -40,7 +44,7 @@ def GlueByContents(fout, url_contents, regmemdate, remote=True):
         url = url.encode('utf-8')
         #print " reading " + url
         if remote:
-            ur = urllib.urlopen(url)
+            ur = opener.open(url)
         else:
             url = urllib.quote(url)
             ur = open(url)
@@ -74,7 +78,7 @@ def GlueByNext(fout, url, regmemdate):
     sections = 0
     while 1:
         #print " reading " + url
-        ur = urllib.urlopen(url)
+        ur = opener.open(url)
         sr = ur.read()
         ur.close();
 
@@ -136,7 +140,7 @@ def GlueByNext(fout, url, regmemdate):
 
 
 # read through our index list of daydebates
-def GlueAllType(pcmdir, cmindex, fproto, forcescrape):
+def GlueAllType(pcmdir, cmindex, fproto, forcescrape, remote):
     if not os.path.isdir(pcmdir):
         os.mkdir(pcmdir)
 
@@ -158,7 +162,7 @@ def GlueAllType(pcmdir, cmindex, fproto, forcescrape):
         # now we take out the local pointer and start the gluing
         dtemp = open(tempfilename, "w")
         if dnu[0] > '2010-09-01':
-            GlueByContents(dtemp, url, dnu[0])
+            GlueByContents(dtemp, url, dnu[0], remote)
         else:
             GlueByNext(dtemp, url, dnu[0])
 
@@ -185,7 +189,7 @@ def FindRegmemPages(remote):
     }
     urls = []
     idxurl = 'https://www.parliament.uk/mps-lords-and-offices/standards-and-financial-interests/parliamentary-commissioner-for-standards/registers-of-interests/register-of-members-financial-interests/'
-    ur = urllib.urlopen(idxurl)
+    ur = opener.open(idxurl)
     content = ur.read()
     if "Cloudflare" in content:
         sys.exit("Cloudflare please wait page, cannot proceed")
@@ -196,7 +200,7 @@ def FindRegmemPages(remote):
     ixurls = [urlparse.urljoin(idxurl, ix['href']) for ix in soup.findAll('a', href=True)]
 
     for ixurl in ixurls:
-        ur = urllib.urlopen(ixurl)
+        ur = opener.open(ixurl)
         content = ur.read()
         ur.close()
 
@@ -267,7 +271,7 @@ def FindRegmemPages(remote):
 def FindLordRegmemPages():
     urls = [('2004-10-01', 'http://www.publications.parliament.uk/pa/ld200304/ldreg/reg01.htm')]
     ixurl = 'http://www.publications.parliament.uk/pa/ld/ldreg.htm'
-    ur = urllib.urlopen(ixurl)
+    ur = opener.open(ixurl)
     content = ur.read()
     ur.close();
 
@@ -301,7 +305,7 @@ def RegmemPullGluePages(options):
 
     # bring in and glue together parliamentary register of members interests and put into their own directories.
     # third parameter is a regexp, fourth is the filename (%s becomes the date).
-    GlueAllType(pwcmregmem, urls, 'regmem%s.html', options.forcescrape)
+    GlueAllType(pwcmregmem, urls, 'regmem%s.html', options.forcescrape, options.remote)
 
     # urls = FindLordRegmemPages()
     # GlueAllType(pwldregmem, urls, 'regmem%s.html', forcescrape)
