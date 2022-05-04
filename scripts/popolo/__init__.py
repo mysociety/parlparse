@@ -102,6 +102,12 @@ class Popolo(object):
         self.memberships = None
         self.memberships = Memberships(self.json['memberships'], self)
 
+    @property
+    def houses(self):
+        post_houses = set(m['organization_id'] for m in self.posts.values())
+        org_houses = set(m['organization_id'] for m in self.memberships if 'organization_id' in m)
+        return post_houses.union(org_houses)
+
     def load(self, json_file):
         self.json = j = json.load(open(json_file))
         self.update_persons_map()
