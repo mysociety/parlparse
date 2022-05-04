@@ -3257,6 +3257,7 @@
     "id": "scot.parliament.data/membergovernmentroles/299"
   }, 
   {
+    "end_date": "2022-03-11", 
     "start_date": "2022-01-25", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -3265,5 +3266,15 @@
       "uk.org.publicwhip/person/25293"
     ], 
     "id": "scot.parliament.data/membergovernmentroles/300"
+  }, 
+  {
+    "start_date": "2022-03-11", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for Culture, Europe and International Development and Minister with special responsibility for Refugees from Ukraine", 
+    "person_id": [
+      "uk.org.publicwhip/person/25293"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/301"
   }
 ]
