@@ -1,0 +1,94 @@
+#!/usr/bin/env python
+
+import os
+import requests
+import requests_cache
+
+from popolo import Popolo
+from popolo.utils import new_id
+
+URL = 'http://data.niassembly.gov.uk/members_json.ashx?m=GetAllCurrentMembers'
+
+# Manual overrides
+CONS_FIXES = {
+    'East Belfast': 'Belfast East',
+    'West Belfast': 'Belfast West',
+    'South Belfast': 'Belfast South',
+    'North Belfast': 'Belfast North',
+}
+PARTY_FIXES = {
+    'alliance-party': 'alliance',
+    'democratic-unionist-party': 'dup',
+    u'sinn-f\xe9in': 'sinn-fein',
+    'ulster-unionist-party': 'uup',
+}
+NAME_FIXES = {
+    'Tom Buchanan': 'Thomas Buchanan',
+}
+
+# Set up requests cache
+cache_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cache')
+requests_cache.install_cache(cache_path, expire_after=60*10)
+
+data = Popolo()
+
+# Map from area name to post ID
+AREA_NAME_TO_POST = {post['area']['name']: post['id'] for post in data.posts.values() if 'NI' in post['id']}
+# List of all memberships of NIA we already have
+MSHIPS = data.memberships.in_org('northern-ireland-assembly')
+# IDs to start working from for adding new entries
+max_mship_id = data.max_mla_id()
+max_person_id = data.max_person_id()
+
+members = requests.get(URL).json()
+for member in members['AllMembersList']['Member']:
+    pid = member['PersonId']
+    party = member['PartyName'].lower().replace(' ', '-')
+    cons = member['ConstituencyName']
+    given = member['MemberFirstName']
+    family = member['MemberLastName']
+    name = '%s %s' % (given, family)
+
+    cons = CONS_FIXES.get(cons, cons)
+    party = PARTY_FIXES.get(party, party)
+    name = NAME_FIXES.get(name, name)
+
+    # We only want to match people with the same name and who have been MLAs
+    people = [p for p in data.persons.values() if data.names[p['id']] == name and len(MSHIPS.of_person(p['id']))]
+    if name == 'Mark Durkan':  # Otherwise two Mark Durkans to confuse
+        people = [{'id': 'uk.org.publicwhip/person/25143'}]
+    assert len(people) < 2, people
+
+    # Existing or new person
+    if len(people):
+        person = people[0]
+    else:
+        max_person_id = new_id(max_person_id)
+        person = {
+            "id": max_person_id,
+            "identifiers": [ {
+                "identifier": pid,
+                "scheme": "data.niassembly.gov.uk",
+            } ],
+            "other_names": [ {
+                "family_name": family,
+                "given_name": given,
+                "note": "Main"
+            } ]
+        }
+        data.add_person(person)
+
+    # Create new membership
+    max_mship_id = new_id(max_mship_id)
+    mship = {
+        "id": max_mship_id,
+        'on_behalf_of_id': party,
+        'person_id': person['id'],
+        'post_id': AREA_NAME_TO_POST[cons],
+        "start_date": "2022-05-05",
+        "start_reason": "regional_election"
+    }
+    print cons, name, mship['on_behalf_of_id'], mship['person_id']
+    data.add_membership(mship)
+
+data.dump()
