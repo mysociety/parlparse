@@ -17,19 +17,19 @@ cd ~/parlparse/pyscraper
 
 # New UK Parliament Written Answers and Statements database
 cd ~/parlparse/
-~/.venv/bin/python wrans-2014/parse.py --house commons --type answers --out ~/parldata/scrapedxml/wrans/ --members ~/parlparse/members/people.json
-~/.venv/bin/python wrans-2014/parse.py --house commons --type statements --out ~/parldata/scrapedxml/wms/ --members ~/parlparse/members/people.json
-~/.venv/bin/python wrans-2014/parse.py --house lords --type answers --out ~/parldata/scrapedxml/lordswrans/ --members ~/parlparse/members/people.json
-~/.venv/bin/python wrans-2014/parse.py --house lords --type statements --out ~/parldata/scrapedxml/lordswms/ --members ~/parlparse/members/people.json
+wrans-2014/parse.py --house commons --type answers --out ~/parldata/scrapedxml/wrans/ --members ~/parlparse/members/people.json
+wrans-2014/parse.py --house commons --type statements --out ~/parldata/scrapedxml/wms/ --members ~/parlparse/members/people.json
+wrans-2014/parse.py --house lords --type answers --out ~/parldata/scrapedxml/lordswrans/ --members ~/parlparse/members/people.json
+wrans-2014/parse.py --house lords --type statements --out ~/parldata/scrapedxml/lordswms/ --members ~/parlparse/members/people.json
 
 # Scottish Parliament:
 cd ~/parlparse/pyscraper/sp
-~/.venv/bin/python ./parse-official-reports-new.py --from=$FROMDATE --to=$TODATE || RET=1
+./parse-official-reports-new.py --from=$FROMDATE --to=$TODATE || RET=1
 
 # London Assembly questions
 cd ~/parlparse/london-mayors-questions
-~/.venv/bin/python ./questions.py --out ~/parldata/scrapedxml/london-mayors-questions meetings
-~/.venv/bin/python ./questions.py --out ~/parldata/scrapedxml/london-mayors-questions questions --members ~/parlparse/members/people.json
+./questions.py --out ~/parldata/scrapedxml/london-mayors-questions meetings
+./questions.py --out ~/parldata/scrapedxml/london-mayors-questions questions --members ~/parlparse/members/people.json
 
 # Return error code
 exit $RET
