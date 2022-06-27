@@ -549,7 +549,7 @@ def quick_parse_html(filename, page_id, original_url):
         html = fp.read()
     html = replace_unknown_tags(html)
     html = fix_inserted_br_in_vote_list(html)
-    soup = BeautifulSoup(html)
+    soup = BeautifulSoup(html, features="lxml")
     # If this is an error page, there'll be a message like:
     #   <span id="ReportView_lblError">Please check the link you clicked, as it does not reference a valid Official Report</span>
     # ... so ignore those.

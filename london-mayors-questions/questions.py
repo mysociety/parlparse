@@ -142,7 +142,7 @@ def scrapeAssemblyMeetingOnDate(date):
 def parseAssemblyMeetingToSessions(content):
     ''' Parse an assembly meeting page and return a list of its sessions. '''
 
-    soup = BeautifulSoup(content)
+    soup = BeautifulSoup(content, features="lxml")
 
     sessions_in_content = soup.find_all('div', class_='entity-meetingsession')
 
@@ -175,7 +175,7 @@ def scrapeSessionAtUrl(session_url):
 
 def parseSessionToQuestions(content):
 
-    soup = BeautifulSoup(content)
+    soup = BeautifulSoup(content, features="lxml")
 
     questions_in_content = soup.find_all('tr', class_='question')
 
@@ -223,7 +223,7 @@ def scrapeQuestionWithId(question_id,context):
 def parseQuestionPage(content):
     ''' Actually take the HTML from a scraped question page and turn it into a structured object. '''
 
-    soup = BeautifulSoup(content)
+    soup = BeautifulSoup(content, features="lxml")
 
     # We use the canonical URL just in case anything exotic has happened with redirects.
     canonical_url = soup.find('link', {'rel': 'canonical'})['href']

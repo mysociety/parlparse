@@ -119,7 +119,7 @@ class WrittenThing(AttrDict):
         return date.replace('T00:00:00', '')
 
     def fix_text(self, text):
-        soup = bs4.BeautifulSoup(text)
+        soup = bs4.BeautifulSoup(text, features="lxml")
         return ''.join(map(unicode, soup.body.contents))
 
     def get_detail(self):
