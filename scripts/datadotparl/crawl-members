@@ -24,6 +24,8 @@ source_urls = {
 member_url_templ = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/id=%s/FullBiog/'
 
 OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../rawdata/datadotparl')
+if not os.path.exists(OUT_DIR):
+    os.makedirs(OUT_DIR)
 
 
 def write(url, fn):
