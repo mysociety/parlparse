@@ -1241,8 +1241,13 @@ class PBCParseDayXML(BaseParseDayXML):
         return self.get_member_with_no_id(member)
 
     def parse_chair(self, chair):
-        self.new_speech(None, chair.get('url'))
         text = self.get_text_from_element(chair)
+
+        if text in ('\n(Morning)\n', '\n(Afternoon)\n'):
+            # Actually a date, not a chair, they gave the wrong tag
+            return self.parse_date(chair)
+
+        self.new_speech(None, chair.get('url'))
         tag = etree.Element('p')
         tag.text = text
         self.current_speech.append(tag)
