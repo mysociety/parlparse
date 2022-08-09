@@ -82,6 +82,7 @@ def RunRegmemFilters2010(fout, text, sdate, sdatever):
                         if not record:
                             fout.write('\t\t<record>\n')
                             record = True
+                        # This never matches nowadays - work out what to do with it
                         subcategorymatch = re.match("\s*\(([ab])\)\s*(.*)$", text)
                         if subcategorymatch:
                                 subcategory = subcategorymatch.group(1)
@@ -91,7 +92,9 @@ def RunRegmemFilters2010(fout, text, sdate, sdatever):
                         if subcategory:
                                 fout.write('\t\t\t<item subcategory="%s">%s</item>\n' % (subcategory, text))
                         else:
-                                fout.write('\t\t\t<item>%s</item>\n' % text)
+                                cls = row.get('class', '').decode('utf-8').encode('iso-8859-1')
+                                if cls: cls = ' class="%s"' % cls
+                                fout.write('\t\t\t<item%s>%s</item>\n' % (cls, text))
                 if record:
                     fout.write('\t\t</record>\n')
                     record = False
