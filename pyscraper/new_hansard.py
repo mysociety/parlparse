@@ -370,7 +370,7 @@ class BaseParseDayXML(object):
                     newtime = '09:30:00'
             elif re.match("a quarter to Ten o(?i)", time):
                     newtime = '09:45:00'
-            elif re.match("Ten o'clock(?i)", time):
+            elif re.match("Ten o.clock(?i)", time):
                     newtime = '10:00:00'
             elif re.match("half-past Ten(?i)", time):
                     newtime = '10:30:00'
@@ -384,12 +384,16 @@ class BaseParseDayXML(object):
                     newtime = '11:29:00'
             elif re.match("half-past Eleven(?i)", time):
                     newtime = '11:30:00'
-            elif re.match("Twelve noon(?i)", time):
+            elif re.match("(Twelve noon|Midday)(?i)", time):
                     newtime = '12:00:00'
             elif re.match("half-past Twelve(?i)", time):
                     newtime = '12:30:00'
+            elif re.match("One o.clock(?i)", time):
+                    newtime = '13:00:00'
             elif re.match("half-past One(?i)", time):
                     newtime = '13:30:00'
+            elif re.match("Two o.clock(?i)", time):
+                    newtime = '14:00:00'
             elif re.match("half-past Two(?i)", time):
                     newtime = '14:30:00'
             elif re.match("half-past Three(?i)", time):
@@ -400,6 +404,8 @@ class BaseParseDayXML(object):
                     newtime = '15:10:00'
             elif re.match("Six o'clock(?i)", time):
                     newtime = '18:00:00'
+            else:
+                    raise ContextException("No time matched", fragment=time)
 
             self.time = newtime
         # this covers the "The Attorney General was Asked - " type
