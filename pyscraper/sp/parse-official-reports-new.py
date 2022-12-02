@@ -679,7 +679,7 @@ def parse_html(session, report_date, soup, page_id, original_url):
                         # skip empty a anchors
                         pass
                     else:
-                        raise Exception, "Unexpected tag '%s' in page ID: %d" % (speech_part.name, page_id)
+                        raise Exception, "Unexpected tag '%s' in page ID: %d" % (speech_part, page_id)
                 elif isinstance(speech_part, NavigableString):
                     tidied_paragraph = tidy_string(speech_part)
                     if tidied_paragraph == "":
