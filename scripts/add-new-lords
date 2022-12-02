@@ -18,6 +18,7 @@ def canon_name(n):
     n = re.sub('^The ', '', n)
     n = re.sub(' De ', ' de ', n)
     n = re.sub('Lord (Archb|B)ishop ', r'\1ishop ', n)
+    n = re.sub(u'\u2019', "'", n)
     return n
 
 
@@ -127,7 +128,7 @@ for member in parl_members:
     if not person:
         person_id = new_id(person_id)
         lord_id = new_id(data.max_lord_id())
-        print "{} is a new Lord, person ID {}, lord ID {}".format(name, person_id, lord_id)
+        print u"{} is a new Lord, person ID {}, lord ID {}".format(name, person_id, lord_id)
 
         name = construct_name(member)
         person = construct_person(member, person_id, name)
@@ -150,7 +151,7 @@ for member in parl_members:
         continue
     else:
         lord_id = new_id(data.max_lord_id())
-        print "{} is a new Lord already in the system, person ID {}, lord ID {}".format(name, person['id'], lord_id)
+        print u"{} is a new Lord already in the system, person ID {}, lord ID {}".format(name, person['id'], lord_id)
 
         name = construct_name(member)
         membership = construct_membership(member, person['id'], lord_id)
