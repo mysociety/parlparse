@@ -3046,6 +3046,7 @@
     "id": "scot.parliament.data/membergovernmentroles/278"
   }, 
   {
+    "end_date": "2022-10-27", 
     "start_date": "2021-05-19", 
     "organization_id": "scottish-parliament", 
     "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
@@ -3276,5 +3277,15 @@
       "uk.org.publicwhip/person/25293"
     ], 
     "id": "scot.parliament.data/membergovernmentroles/301"
+  }, 
+  {
+    "start_date": "2022-11-03", 
+    "organization_id": "scottish-parliament", 
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json", 
+    "role": "Minister for Community Safety", 
+    "person_id": [
+      "uk.org.publicwhip/person/26019"
+    ], 
+    "id": "scot.parliament.data/membergovernmentroles/302"
   }
 ]
