@@ -22,7 +22,18 @@ def canon_name(n):
     return n
 
 
-lord_match = re.compile('^([^\s]*)\s+(.*?)(?:\s+of\s+(.*))?$')
+lord_match = re.compile(''' ^
+    (?P<the> The \s+ )?     # Optional 'The ' at the start
+    (?P<prefix> [^\s]* )    # Title, e.g. Baroness
+    (?:\s+ (?P<name>        # Optional name; one or more words, which must not be 'of'
+        (?!of) [^\s]*?
+        (?:\s+ (?!of) [^\s]*? )*
+    ) )?
+    (?:                     # Optional ' of ...' at the end
+        \s+ of \s+
+        (?P<lordof>.*)
+    )?
+$ ''', re.X)
 
 party_map = {
     'Liberal Democrats': 'liberal-democrat',
@@ -47,11 +58,12 @@ def construct_name(member):
     middle_names = member.find('BasicDetails/GivenMiddleNames').text
     surname = member.find('BasicDetails/GivenSurname').text
     title_parts = lord_match.search(member.find('DisplayAs').text)
-    prefix = title_parts.group(1)
-    lordname = title_parts.group(2)
-    lordof = title_parts.group(3) or ''
-    if prefix == 'The' and lordname in ('Lord Bishop', 'Lord Archbishop'):
-        prefix = lordname.replace('Lord ', '')
+    the = title_parts.group('the')
+    prefix = title_parts.group('prefix')
+    lordname = title_parts.group('name')
+    lordof = title_parts.group('lordof') or ''
+    if the and prefix == 'Lord' and lordname in ('Bishop', 'Archbishop'):
+        prefix = lordname
         lordname = ''
     name = {
         'given_name': given_name,
@@ -147,6 +159,10 @@ for member in parl_members:
             mship['end_date'] = end_date
             changed = True
         elif end_date != mship.get('end_date', ''):
+            us = mship.get('end_date', '-')
+            if name == 'Bishop of Bradford' and end_date == '2010-07-14' and us == '2010-07-31': continue
+            if name == 'Lord Greaves' and end_date == '2021-03-23' and us == '2021-03-24': continue
+            if name == 'Baroness Greengross' and end_date == '2022-06-23' and us == '2022-06-29': continue
             print '*', name, 'Parl=', end_date, 'Us=', mship.get('end_date', '-')
         continue
     else:
