@@ -1054,6 +1054,9 @@ class BaseParseDayXML(object):
         self.parse_system_header(headers[0])
         return self.date
 
+    def get_parser(self, xml_file):
+        return etree.parse(xml_file)
+
     def setup_parser(self, xml_file):
         if self.input_root is not None:
             return True
@@ -1063,7 +1066,7 @@ class BaseParseDayXML(object):
         self.ns_map = {'ns': self.ns}
         root_xpath = self.type_to_xpath[self.debate_type][0]
 
-        self.xml_root = etree.parse(xml_file).getroot()
+        self.xml_root = self.get_parser(xml_file).getroot()
         self.input_root = self.xml_root.xpath(
             root_xpath, namespaces=self.ns_map
         )
@@ -1418,6 +1421,20 @@ class LordsParseDayXML(BaseParseDayXML):
     division_number_element = 'DivisionNumber'
     division_ayes_attribute = 'content'
     division_noes_attribute = 'not-content'
+
+    """
+    Lords XML is scattered with processing instructions which upset
+    tag.text meaning it returns None which in turn breaks a lot of 
+    our processing so just strip them all out.
+    """
+    def get_parser(self, xml_file):
+        parser = etree.parse(xml_file)
+        pis = parser.xpath('//processing-instruction("xpp")')
+        for pi in pis:
+            if pi.getparent() is not None:
+                etree.strip_tags(pi.getparent(), pi.tag)
+
+        return parser
 
     def parse_quote(self, quote):
         tag = etree.Element('p')
