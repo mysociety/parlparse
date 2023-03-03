@@ -37,17 +37,17 @@ class Menu(object):
 
     def output(self, refresh=False):
         if refresh:
-            print '\033[%dA' % (len(self.choices) + 1)
+            print('\033[%dA' % (len(self.choices) + 1))
         for i, c in enumerate(self.choices):
             if i == self.selected:
-                print '\033[0;34m→',
+                print('\033[0;34m→', end='')
             else:
-                print ' ',
-            print c,
+                print(' ', end='')
+            print(c, end='')
             if i == self.selected:
-                print '\033[0m'
+                print('\033[0m')
             else:
-                print
+                print()
 
     def __init__(self, choices):
         self.choices = choices

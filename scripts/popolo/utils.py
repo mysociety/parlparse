@@ -22,7 +22,7 @@ def edit_file(edit_data):
                     new_edit_data = json.load(f)
                     break
                 except ValueError as e:
-                    print "Bad JSON: %s" % e
+                    print("Bad JSON: %s" % e)
                     raw_input("Press Enter to continue...")
     finally:
         os.remove(fp.name)

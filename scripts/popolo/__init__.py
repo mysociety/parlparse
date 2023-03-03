@@ -76,7 +76,7 @@ class Popolo(object):
     def update_persons_map(self):
         self.persons = {p['id']: p for p in self.json['persons'] if 'redirect' not in p}
         self.posts = {p['id']: p for p in self.json['posts']}
-        self.orgs = {o['name']: o['id'] for o in self.json['organizations']}
+        self.orgs = {o['id']: o for o in self.json['organizations']}
         self.names = {}
         self.identifiers = {}
 
@@ -102,6 +102,12 @@ class Popolo(object):
         self.memberships = None
         self.memberships = Memberships(self.json['memberships'], self)
 
+    def update_orgs(self):
+        self.orgs = {o['id']: o for o in self.json['organizations']}
+
+    def update_posts(self):
+        self.posts = {p['id']: p for p in self.json['posts']}
+
     @property
     def houses(self):
         post_houses = set(m['organization_id'] for m in self.posts.values())
@@ -109,22 +115,34 @@ class Popolo(object):
         return post_houses.union(org_houses)
 
     def load(self, json_file):
-        self.json = j = json.load(open(json_file))
+        self.json = json.load(open(json_file))
         self.update_persons_map()
         self.update_memberships()
 
-    # Get a person either by name, by parlparse ID, or if scheme is specified by another identifier
-    def get_person(self, id=None, name=None, scheme=None):
+    def _get_thing(self, things, id=None, name=None, scheme=None, typ=None):
         if name:
-            return [p for p in self.persons.values() if self.names[p['id']] == name]
+            if typ == 'person':
+                return [p for p in things.values() if self.names[p['id']] == name]
+            else:
+                return [o for o in things.values() if o['name'] == name]
         if id:
             if scheme:
-                if id in self.identifiers[scheme]:
-                    return self.identifiers[scheme][id]
-                else:
+                try:
+                    return next(p for p in things.values() for i in p.get('identifiers', []) if i['scheme'] == scheme and i['identifier'] == id)
+                except StopIteration:
                     return None
             else:
-                return (p for p in self.persons.values() if p['id'] == id).next()
+                return next(o for o in things.values() if o['id'] == id)
+
+    # Get a person either by name, by parlparse ID, or if scheme is specified by another identifier
+    def get_person(self, id=None, name=None, scheme=None):
+        return self._get_thing(self.persons, id, name, scheme, 'person')
+
+    def get_organization(self, id=None, name=None, scheme=None):
+        return self._get_thing(self.orgs, id, name, scheme)
+
+    def get_post(self, id=None, name=None, scheme=None):
+        return self._get_thing(self.posts, id, name, scheme)
 
     def add_person(self, person):
         self.json['persons'].append(person)
@@ -134,6 +152,14 @@ class Popolo(object):
         self.json['memberships'].append(mship)
         self.update_memberships()
 
+    def add_organization(self, org):
+        self.json['organizations'].append(org)
+        self.update_orgs()
+
+    def add_post(self, post):
+        self.json['posts'].append(post)
+        self.update_posts()
+
     def _max_member_id(self, house, type='member', range_start=0):
         house_memberships = self.memberships.in_org(house)
         if house_memberships:
@@ -142,11 +168,20 @@ class Popolo(object):
             id = range_start
         return 'uk.org.publicwhip/%s/%d' % (type, id)
 
-    max_lord_id = lambda self: self._max_member_id('house-of-lords', 'lord', range_start=100000)  # Range ends at 199999
-    max_mp_id = lambda self: self._max_member_id('house-of-commons', range_start=0)  # Range ends at 79999
-    max_mla_id = lambda self: self._max_member_id('northern-ireland-assembly', range_start=90000)  # Range ends at 99999
-    max_msp_id = lambda self: self._max_member_id('scottish-parliament', range_start=80000) # Range ends at 89999
-    max_londonassembly_id = lambda self: self._max_member_id('london-assembly', range_start=200000)  # Range ends at 299999
+    def max_post_id(self, house, type='cons', range_start=0):
+        house_posts = [p for p in self.posts.values() if p['organization_id'] == house]
+        if house_posts:
+            id = max(int(p['id'].replace('uk.org.publicwhip/%s/' % type, '')) for p in house_posts)
+        else:
+            id = range_start
+        return 'uk.org.publicwhip/%s/%d' % (type, id)
+
+    max_mp_id = lambda self: self._max_member_id('house-of-commons', range_start=0)                 # Range ends at 69999
+    max_ms_id = lambda self: self._max_member_id('welsh-parliament', range_start=70000)             # Range ends at 79999
+    max_msp_id = lambda self: self._max_member_id('scottish-parliament', range_start=80000)         # Range ends at 89999
+    max_mla_id = lambda self: self._max_member_id('northern-ireland-assembly', range_start=90000)   # Range ends at 99999
+    max_lord_id = lambda self: self._max_member_id('house-of-lords', 'lord', range_start=100000)    # Range ends at 199999
+    max_londonassembly_id = lambda self: self._max_member_id('london-assembly', range_start=200000) # Range ends at 299999
 
     def max_person_id(self):
         id = max(p for p in self.persons.keys())
