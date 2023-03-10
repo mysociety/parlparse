@@ -17,38 +17,3 @@ YEAR=`date +%Y`
 
 cd ~/parlparse/scripts
 ./fetch-pw-json
-
-# Add any Hansard patch files we've made
-#cd ~/parldata/patches
-#find . -name "*.patch" -exec svn -q add {} +
-# (we need native line feeds to apply the patches on Windows)
-# Commented out as it breaks NI patch. Not sure of correct solution
-# find . -name "*.patch" -exec svn -q propset svn:eol-style native {} +
-#svn -q update
-
-# Add any new cmpages
-#cd ~/parldata/cmpages
-#for X in debates wrans westminhall wms regmem ldregmem lordspages standing votes bills ni sp/bulletins sp/official-reports-new sp/written-answers; do
-#    find $X -name "*.html" -exec svn -q add {} +
-#done
-#for X in sp/bulletins sp/written-answers; do
-#    find $X -name "*.htm" -exec svn -q add {} +
-#done
-#find sp/official-reports -name "*.urls" -exec svn -q add {} +
-#svn -q update
-
-# Add any new scrapedxml
-#cd ~/parldata/scrapedxml
-#for X in debates wrans westminhall wms regmem lordspages lordswms lordswrans standing ni sp-new sp-questions sp-written sp-motions; do
-#    find $X -name "*.xml" -exec svn -q add {} +
-#done
-#svn -q update
-
-# Update svn checkout which is mapped to http://ukparse.kforge.net/svn/
-# Is this needed, given knowlegdeforge provide totally up-to-date
-# http://project.knowledgeforge.net/ukparse/svn/trunk/ ?
-# cd /data/vhost/ukparse.kforge.net/ukparse/parldata
-# svn update -q
-# cd /data/vhost/ukparse.kforge.net/ukparse/parlparse
-# svn update -q
-

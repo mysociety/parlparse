@@ -3,7 +3,6 @@ import os.path
 import string
 import re
 from contextexception import ContextException
-import mx.DateTime
 
 from base_resolver import ResolverBase
 

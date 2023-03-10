@@ -5,7 +5,6 @@ import sys
 import re
 import os
 import string
-import cStringIO
 import tempfile
 import time
 import shutil
@@ -13,17 +12,11 @@ import shutil
 import xml.sax
 xmlvalidate = xml.sax.make_parser()
 
-from wrans import FilterWransColnum, FilterWransSpeakers, FilterWransSections
-from wms import FilterWMSColnum, FilterWMSSpeakers, FilterWMSSections
-from debate import FilterDebateColTime, FilterDebateSpeakers, FilterDebateSections
-from lords import SplitLordsText, FilterLordsColtime, LordsFilterSpeakers, LordsFilterSections
-
 from ni.parse import ParseDay as ParseNIDay
 
 from contextexception import ContextException
 from patchtool import RunPatchTool
 
-from xmlfilewrite import CreateGIDs, CreateWransGIDs, WriteXMLHeader, WriteXMLspeechrecord
 from gidmatching import FactorChanges, FactorChangesWrans
 
 from resolvemembernames import memberList
@@ -79,7 +72,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
     ofin.close()
 
     # do the filtering according to the type.  Some stuff is being inlined here
-    if dname == 'regmem' or dname == 'votes' or dname == 'ni':
+    if dname == 'regmem' or dname == 'ni':
         regmemout = open(tempfilename, 'w')
         try:
             FILTERfunction(regmemout, text, sdate, sdatever)  # totally different filter function format
@@ -92,195 +85,6 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
             os.remove(jfout)
         os.rename(tempfilename, jfout)
         return
-
-    safejfout = jfout
-    assert dname in ('wrans', 'debates', 'wms', 'westminhall', 'lordspages')
-
-    decode_from_utf8 = False
-    if sdate > '2014-01-01' or (sdate > '2006-05-07' and re.search('<notus-date', text)):
-        decode_from_utf8 = True
-        text = re.sub("\n", ' ', text)
-        text = re.sub("\s{2,}", ' ', text) # No need for multiple spaces anywhere
-        text = re.sub("</?notus-date[^>]*>", "", text)
-        text = re.sub("\s*<meta[^>]*>\s*", "", text)
-        text = re.sub('(<h5 align="left">)((?:<a name="(.*?)">)*)', r"\2\1", text) # If you can't beat them, ...
-        text = re.sub("(<br><b>[^:<]*:\s*column\s*\d+(?:WH)?\s*</b>)(\s+)(?i)", r"\1<br>\2", text)
-        text = re.sub("(\s+)(<b>[^:<]*:\s*column\s*\d+(?:WH)?\s*</b><br>)(?i)", r"\1<br>\2", text)
-
-        # Make sure correction is before written answer question number
-        text = re.sub('(<a href="[^"]*corrtext[^"]*")\s*shape="rect">\s*(.*?)\s*(</a>)', r'\1>\2\3', text)
-        text = re.sub('(\[\d+\])\s*((?:</p>)?)\s*(<a href="[^"]*corrtext[^"]*">.*?</a>)', r'\3 \1\2', text)
-
-        # Fix new thing where they sometimes put (a), (b) of wrans, or "Official Report", in separate paragraphs
-        # Two regular expressions, so as not to lose needed end </p> of a column heading.
-        italic_para = '\s*<p>\s*(<i>\s*(?:\(.\)|Official Report,?)\s*</i>)\s*</p>\s*'
-        text = re.sub('(?<!</b>)</p>' + italic_para + '<p[^>]*>', r' \1 ', text)
-        text = re.sub('(?<=</b></p>)' + italic_para + '<p[^>]*>', r' \1 ', text)
-
-        # May also need the same thing with a space, and look behind requires a fixed width pattern.
-        text = re.sub('(?<!</b>) </p>' + italic_para + '<p[^>]*>', r' \1 ', text)
-        text = re.sub('(?<=</b> </p>)' + italic_para + '<p[^>]*>', r' \1 ', text)
-                
-        # Don't want bad XHTML self closed table cells.
-        text = re.sub('<td([^>]*) ?/>', r'<td\1></td>', text)
-        # Or pointless empty headings
-        text = re.sub('<h[45] align="[^"]*" ?/>', '', text)
-
-        # Lords, big overall replacements
-        text = text.replace('<br></br>', '<br>')
-        text = text.replace('<br/>', '<br>')
-        if dname == 'lordspages':
-            text = re.sub(' shape="rect">', '>', text)
-            text = re.sub(' class="anchor"', '', text)
-            text = re.sub(' class="anchor noCont"', '', text)
-            text = re.sub(' class="anchor-column"', '', text)
-            text = re.sub(' class="columnNum"', '', text)
-            text = re.sub('(<a[^>]*>) (</a>)', r'\1\2', text)
-            text = re.sub('(<h5>)((?:<a name="(.*?)">(?:</a>)?)*)', r"\2\1", text) # If you can't beat them, ...
-            text = re.sub('<columnNum><br />( |\xc2\xa0)<br />', '<br>&nbsp;<br>', text)
-            text = re.sub('<br />( |\xc2\xa0)<br /></columnNum>', '<br>&nbsp;<br>', text)
-            text = text.replace('<b align="center">', '<b>')
-            text = text.replace('<br />', '<br>')
-            text = text.replace('CONTENTS', 'CONTENTS\n')
-            text = re.sub('</?small>', '', text)
-            text = re.sub('<div class="amendment(?:_heading)?">', '', text)
-            text = re.sub('</?div>', '', text)
-            # Double bolding sometimes has some <a> tags in between
-            text = re.sub(r'<b>((?:</?a[^>]*>|\s)*)<b>', r'\1<b>', text)
-            text = re.sub('</b></b>', '</b>', text)
-            text = re.sub('</b><b>', '', text)
-            text = re.sub('<I></I>', '', text)
-
-    # Changes in 2008-09 session
-    if sdate>'2008-12-01' and dname=='lordspages':
-        text = re.sub('(?i)Asked By (<b>.*?)</b>', r'\1:</b>', text)
-        text = re.sub('(?i)((?:Moved|Tabled) By) ?((?:<a name="[^"]*"></a>)*)<b>(.*?)</b>', r'\1 \2\3', text)
-        text = re.sub('(?i)(Moved on .*? by) ?<b>(.*?)</b>', r'\1 \2', text)
-
-    if decode_from_utf8:
-        # Some UTF-8 gets post-processed into nonsense
-        # XXX - should probably be in miscfuncs.py/StraightenHTMLrecurse with other character set evil
-        text = text.replace("\xe2\x22\xa2", "&trade;")
-        text = text.replace("\xc2(c)", "&copy;")
-        text = text.replace("\xc2(r)", "&reg;")
-        text = text.replace("\xc21/4", "&frac14;")
-        text = text.replace("\xc21/2", "&frac12;")
-        text = text.replace("\xc23/4", "&frac34;")
-        text = text.replace("\xc3\"", "&#279;")
-        text = text.replace("\xc3 ", "&agrave;")
-        text = text.replace("\xc3(c)", "&eacute;")
-        text = text.replace("\xc3(r)", "&icirc;")
-        text = text.replace("\xc31/4", "&uuml;")
-        # And it's true UTF-8 since the start of the 2009 session, let's pretend it isn't.
-        try:
-            text = text.decode('utf-8').encode('ascii', 'xmlcharrefreplace')
-        except:
-            print "Failed to decode text from utf-8"
-            pass
-
-    # They've started double bolding names, parts of names, splitting names up, and having a "[" on its own
-    if sdate >= '2013-01-01':
-        text = re.sub(r'</b>(\s*)<b>', r'\1', text)
-        # <b> <b>Name</b> (Constituency) (Party):</b>
-        text = re.sub('<b>\s*<b>([^<]*)</b>([^<]*)</b>', r'<b>\1\2</b>', text)
-        # <b><b>Name bits:</b></b>
-        text = re.sub('<b>\s*(<b>([^<]|<i>\s*\(Urgent Question\)\s*</i>)*</b>\s*)</b>', r'\1', text)
-        # <p> <b>[</b> </p> <p> <b>TIME</b> </p>
-        text = re.sub('<p>\s*<b>\[</b>\s*</p>\s*<p>\s*<b>([^<]*)</b>\s*</p>', r'<p> <b>[\1</b> </p>', text)
-        # And have changed <center> to <span class="centred">
-        text = re.sub('<span class="centred">(.*?)</span>', r'<center>\1</center>', text)
-
-    if sdate >= '2015-10-12':
-        # annoying double <b> round members rose text
-        text = re.sub(r'<b><b>Several hon. Members </b>', '<b>Several hon. Members ', text)
-
-    if sdate >= '2016-01-01':
-        # Deal with big heading spotting aname appearing AFTER heading
-        text = re.sub('(<h3(?:(?!<h3).)*?)(<a name="ordayhd_\d">)', r'\2\1', text)
-
-    (flatb, gidname) = FILTERfunction(text, sdate)
-    for i in range(len(gidname)):
-        tempfilenameoldxml = None
-
-        gidnam = gidname[i]
-        if gidname[i] == 'lordswms':
-            gidnam = 'wms'
-        if gidname[i] == 'lordswrans':
-            gidnam = 'wrans'
-        CreateGIDs(gidnam, sdate, sdatever, flatb[i])
-        jfout = safejfout
-        if gidname[i] != 'lords':
-            jfout = re.sub('(daylord|lordspages)', gidname[i], jfout)
-
-        # wrans case is special, with its question-id numbered gids
-        if dname == 'wrans':
-            majblocks = CreateWransGIDs(flatb[i], (sdate + sdatever)) # combine the date and datever.  the old style gids stand on the paragraphs still
-            bMakeOldWransGidsToNew = (sdate < "2005")
-
-        fout = open(tempfilename, "w")
-        WriteXMLHeader(fout);
-        fout.write('<publicwhip scrapeversion="%s" latest="yes">\n' % sdatever)
-
-        # go through and output all the records into the file
-        if dname == 'wrans':
-            for majblock in majblocks:
-                WriteXMLspeechrecord(fout, majblock[0], bMakeOldWransGidsToNew, True)
-                for qblock in majblock[1]:
-                    qblock.WriteXMLrecords(fout, bMakeOldWransGidsToNew)
-        else:
-            for qb in flatb[i]:
-                WriteXMLspeechrecord(fout, qb, False, False)
-        fout.write("</publicwhip>\n\n")
-        fout.close()
-
-        # load in a previous file and over-write it if necessary
-        if xprev:
-            xprevin = xprev[0]
-            if gidname[i] != 'lords':
-                xprevin = re.sub('(daylord|lordspages)', gidname[i], xprevin)
-            if os.path.isfile(xprevin):
-                xin = open(xprevin, "r")
-                xprevs = xin.read()
-                xin.close()
-
-                # separate out the scrape versions
-                mpw = re.search('<publicwhip([^>]*)>\n([\s\S]*?)</publicwhip>', xprevs)
-                if mpw.group(1):
-                    re.match(' scrapeversion="([^"]*)" latest="yes"', mpw.group(1)).group(1) == xprev[1]
-                # else it's old style xml files that had no scrapeversion or latest attributes
-                if dname == 'wrans':
-                    xprevcompress = FactorChangesWrans(majblocks, mpw.group(2))
-                else:
-                    xprevcompress = FactorChanges(flatb[i], mpw.group(2))
-
-                tempfilenameoldxml = tempfile.mktemp(".xml", "pw-filtertempold-", miscfuncs.tmppath)
-                foout = open(tempfilenameoldxml, "w")
-                WriteXMLHeader(foout)
-                foout.write('<publicwhip scrapeversion="%s" latest="no">\n' % xprev[1])
-                foout.writelines(xprevcompress)
-                foout.write("</publicwhip>\n\n")
-                foout.close()
-
-        # in win32 this function leaves the file open and stops it being renamed
-        if sys.platform != "win32":
-            xmlvalidate.parse(tempfilename) # validate XML before renaming
-
-        # in case of error, an exception is thrown, so this line would not be reached
-        # we rename both files (the old and new xml) at once
-
-        if os.path.isfile(jfout):
-            os.remove(jfout)
-        if not os.path.isdir(os.path.dirname(jfout)):  # Lords output directories need making here
-            os.mkdir(os.path.dirname(jfout))
-        os.rename(tempfilename, jfout)
-
-        # copy over onto old xml file
-        if tempfilenameoldxml:
-            if sys.platform != "win32":
-                xmlvalidate.parse(tempfilenameoldxml) # validate XML before renaming
-            assert os.path.isfile(xprevin)
-            os.remove(xprevin)
-            os.rename(tempfilenameoldxml, xprevin)
 
 # hunt the patchfile
 def findpatchfile(name, d1, d2):
@@ -364,8 +168,6 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
             # skip already processed files, if date is earler and it's not a forced reparse
             # (checking output date against input and patchfile, if there is one)
             bparsefile = not os.path.isfile(jfout) or forcereparse or bmodifiedoutoforder
-            if dname == 'lordspages' and sdate in ('2007-10-01','2012-09-24') and not bmodifiedoutoforder and not forcereparse:
-                bparsefile = False # No debates on 2007-10-01 lords
 
             while bparsefile:  # flag is being used acually as if bparsefile: while True:
                 try:
@@ -414,135 +216,6 @@ def FixExtraColNumParas(text):
     text = re.sub('(?:<br>\s*)?</p>(\s*<stamp coldate[^>]*>\s*)<p>(?=[a-z])', r'\1', text)
     return text
 
-
-# These text filtering functions filter twice through stringfiles,
-# before directly filtering to the real file.
-def RunWransFilters(text, sdate):
-    si = cStringIO.StringIO()
-    FilterWransColnum(si, text, sdate)
-    text = si.getvalue()
-    si.close()
-
-    si = cStringIO.StringIO()
-    FilterWransSpeakers(si, text, sdate)
-    text = si.getvalue()
-    si.close()
-
-    flatb = FilterWransSections(text, sdate)
-    return ([flatb], ["wrans"])
-
-
-def RunDebateFilters(text, sdate):
-    memberList.cleardebatehistory()
-
-    si = cStringIO.StringIO()
-    FilterDebateColTime(si, text, sdate, "debate")
-    text = si.getvalue()
-    si.close()
-    text = FixExtraColNumParas(text)
-
-    si = cStringIO.StringIO()
-    FilterDebateSpeakers(si, text, sdate, "debate")
-    text = si.getvalue()
-    si.close()
-
-    flatb = FilterDebateSections(text, sdate, "debate")
-    return ([flatb], ["debate"])
-
-
-def RunWestminhallFilters(text, sdate):
-    memberList.cleardebatehistory()
-
-    si = cStringIO.StringIO()
-    FilterDebateColTime(si, text, sdate, "westminhall")
-    text = si.getvalue()
-    si.close()
-    text = FixExtraColNumParas(text)
-
-    si = cStringIO.StringIO()
-    FilterDebateSpeakers(si, text, sdate, "westminhall")
-    text = si.getvalue()
-    si.close()
-
-    flatb = FilterDebateSections(text, sdate, "westminhall")
-    return ([flatb], ["westminhall"])
-
-def RunWMSFilters(text, sdate):
-    si = cStringIO.StringIO()
-    FilterWMSColnum(si, text, sdate)
-    text = si.getvalue()
-    si.close()
-
-    si = cStringIO.StringIO()
-    FilterWMSSpeakers(si, text, sdate)
-    text = si.getvalue()
-    si.close()
-
-    flatb = FilterWMSSections(text, sdate)
-    return ([flatb], ["wms"])
-
-# These text filtering functions filter twice through stringfiles,
-# before directly filtering to the real file.
-def RunLordsFilters(text, sdate):
-    fourstream = SplitLordsText(text, sdate)
-    #return ([], "lords")
-
-    flatb = []
-    gidnames = []
-
-    # Debates section
-    if fourstream[0]:
-        si = cStringIO.StringIO()
-        FilterLordsColtime(si, fourstream[0], sdate)
-        text = si.getvalue()
-        si.close()
-        text = FixExtraColNumParas(text)
-        si = cStringIO.StringIO()
-        LordsFilterSpeakers(si, text, sdate)
-        text = si.getvalue()
-        si.close()
-        flatb.append(LordsFilterSections(text, sdate))
-        gidnames.append("lords")
-
-    # Written Ministerial Statements
-    if fourstream[2]:
-        text = fourstream[2]
-        if sdate > '2008-12-01': # Can't see a better place for this...
-            text = re.sub('<h3[^>]*><i>(?:<a name="[^"]*"></a>)*Statements?</i></h3>', '', text)
-        si = cStringIO.StringIO()
-        FilterLordsColtime(si, text, sdate)
-        text = si.getvalue()
-        si.close()
-        text = FixExtraColNumParas(text)
-        si = cStringIO.StringIO()
-        LordsFilterSpeakers(si, text, sdate)
-        text = si.getvalue()
-        si.close()
-        wms = FilterWMSSections(text, sdate, True)
-        if wms:
-            flatb.append(wms)
-            gidnames.append("lordswms")
-
-    # Written Answers
-    if fourstream[3]:
-        text = fourstream[3]
-        if sdate > '2008-12-01': # Can't see a better place for this...
-            text = re.sub('<h3[^>]*><i>(?:<a name="[^"]*"></a>)*Questions?</i></h3>', '', text)
-        si = cStringIO.StringIO()
-        FilterLordsColtime(si, text, sdate)
-        text = si.getvalue()
-        si.close()
-        text = FixExtraColNumParas(text)
-        si = cStringIO.StringIO()
-        LordsFilterSpeakers(si, text, sdate)
-        text = si.getvalue()
-        si.close()
-        wrans = FilterWransSections(text, sdate, lords=True)
-        if wrans:
-            flatb.append(wrans)
-            gidnames.append("lordswrans")
-
-    return (flatb, gidnames)
 
 def RunNIFilters(fp, text, sdate, sdatever):
     parser = ParseNIDay()
