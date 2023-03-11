@@ -10,7 +10,7 @@ import shutil
 
 sys.path.append('../')
 from contextexception import ContextException
-from BeautifulSoup import BeautifulStoneSoup, Tag
+from bs4 import BeautifulSoup
 
 import codecs
 streamWriter = codecs.lookup('utf-8')[-1]
@@ -144,7 +144,7 @@ class ParseDay:
         print 'Vote: %s' % speech['text']
 
     def parse_xml_day(self, date):
-        soup = BeautifulStoneSoup(self.text)
+        soup = BeautifulSoup(self.text, 'xml')
 
         items = soup.find('XML_Plenary_Bilingual')
         #soup = soup('XML_Plenary_Bilingual')

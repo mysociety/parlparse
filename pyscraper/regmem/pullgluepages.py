@@ -9,7 +9,7 @@ import re
 import os.path
 import time
 import tempfile
-import BeautifulSoup
+from bs4 import BeautifulSoup
 
 import miscfuncs
 toppath = miscfuncs.toppath
@@ -37,8 +37,8 @@ def GlueByContents(fout, url_contents, regmemdate, remote):
     sr = ur.read()
     ur.close()
 
-    soup = BeautifulSoup.BeautifulSoup(sr)
-    mps = soup.find('a', attrs={'name':'A'}).parent.findNextSiblings('p')
+    soup = BeautifulSoup(sr, 'lxml')
+    mps = soup.find('a', attrs={'name':'A'}).parent.find_next_siblings('p')
     for p in mps:
         url = urlparse.urljoin(url_contents, p.a['href'])
         url = url.encode('utf-8')
@@ -61,9 +61,9 @@ def GlueByContents(fout, url_contents, regmemdate, remote):
             (url, time.strftime('%Y-%m-%d', lt), time.strftime('%X', lt)))
 
         sr = re.sub('<p([^>]*)/>', r'<p\1></p>', sr)
-        soup_mp = BeautifulSoup.BeautifulSoup(sr)
+        soup_mp = BeautifulSoup(sr, 'lxml')
         try:
-            page = soup_mp.find('h1').findNextSiblings(lambda t: t.name != 'div')
+            page = soup_mp.find('h1').find_next_siblings(lambda t: t.name != 'div')
         except:
             print 'Problem with ' + url.decode('utf-8')
         page = '\n'.join([ str(p) for p in page ]) + '\n'
@@ -195,9 +195,9 @@ def FindRegmemPages(remote):
         sys.exit("Cloudflare please wait page, cannot proceed")
     ur.close()
 
-    soup = BeautifulSoup.BeautifulSoup(content)
+    soup = BeautifulSoup(content, 'lxml')
     soup = soup.find(attrs='main-body').find('ul')
-    ixurls = [urlparse.urljoin(idxurl, ix['href']) for ix in soup.findAll('a', href=True)]
+    ixurls = [urlparse.urljoin(idxurl, ix['href']) for ix in soup.find_all('a', href=True)]
 
     for ixurl in ixurls:
         ur = opener.open(ixurl)
@@ -212,8 +212,13 @@ def FindRegmemPages(remote):
             "<td>\s*</td>\s*<td nowrap><b>Register of Members' Financial Interests - as at 7th March 2016</b></td>",
             '<tr>\g<0>',
             content)
+        # And similar 2004-12-03
+        content = re.sub(
+            '<td>\s*</td>\s*<td><a href="041203/memi02.htm"><b>3 December 2004</b></a></td>',
+            '<tr>\g<0>',
+            content)
 
-        soup = BeautifulSoup.BeautifulSoup(content)
+        soup = BeautifulSoup(content, 'lxml')
 
         if soup.find(text=re.compile('^Contents$(?i)')):
             # An immediate register page.
@@ -229,7 +234,7 @@ def FindRegmemPages(remote):
             if (date, ixurl) not in urls:
                 urls.append((date, ixurl))
         elif re.search('Session 201[79]|Session 20[2-9]', content):
-            allurl_soups = soup.findAll('a', href=re.compile("(memi02|part1contents|/contents\.htm)"))
+            allurl_soups = soup.find_all('a', href=re.compile("(memi02|part1contents|/contents\.htm)"))
             for url_soup in allurl_soups:
                 url = url_soup['href']
                 url = urlparse.urljoin(ixurl, url)
@@ -240,9 +245,9 @@ def FindRegmemPages(remote):
                 if (date, url) not in urls:
                     urls.append((date, url))
         else:
-            allurl_soups = soup.findAll('a', href=re.compile("(memi02|part1contents|/contents\.htm)"))
+            allurl_soups = soup.find_all('a', href=re.compile("(memi02|part1contents|/contents\.htm)"))
             for url_soup in allurl_soups:
-                row_content = url_soup.findParent('tr').renderContents()
+                row_content = url_soup.find_parent('tr').encode_contents()
                 url = url_soup['href']
                 #print url
                 if url == '060324/memi02.htm':

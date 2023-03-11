@@ -4,7 +4,7 @@
 import re
 import os
 
-from BeautifulSoup import BeautifulStoneSoup
+from bs4 import BeautifulSoup
 from contextexception import ContextException
 from resolvemembernames import memberList
 from xmlfilewrite import WriteXMLHeader
@@ -15,106 +15,131 @@ toppath = miscfuncs.toppath
 pwcmdirs = os.path.join(toppath, "cmpages")
 pwxmldirs = os.path.join(toppath, "scrapedxml")
 if not os.path.isdir(pwxmldirs):
-	os.mkdir(pwxmldirs)
+    os.mkdir(pwxmldirs)
 
-def RunRegmemFilters2010(fout, text, sdate, sdatever):
-        print "2010-? new register of members interests!  Check it is working properly (via mpinfoin.pl) - %s" % sdate
 
-        WriteXMLHeader(fout)
-	fout.write("<publicwhip>\n")
-        
-        memberset = set()
-        text = re.sub('<span class="highlight">([^<]*?)</span>', r'\1', text)
-        t = BeautifulStoneSoup(text)
-        for page in t('page'):
-                title = page.h2.renderContents()
-                if title in ('HAGUE, Rt Hon William (Richmond (Yorks)', 'PEARCE, Teresa (Erith and Thamesmead'):
-                        title += ')'
-                res = re.search("^([^,]*), ([^(]*) \((.*)\)\s*$", title)
-                if not res:
-                        raise ContextException, "Failed to break up into first/last/cons: %s" % title
-                (lastname, firstname, constituency) = res.groups()
-                firstname = memberList.striptitles(firstname.decode('utf-8'))[0]
-                lastname = lastname.decode('utf-8')
-                if sdate < '2015-06-01':
-                    lastname = memberList.lowercaselastname(lastname)
-                constituency = constituency.decode('utf-8')
-                lastname = lastname.replace(u'O\u2019brien', "O'Brien") # Hmm
-                (id, remadename, remadecons) = memberList.matchfullnamecons(firstname + " " + lastname, constituency, sdate)
-                if not id:
-                        raise ContextException, "Failed to match name %s %s (%s) date %s\n" % (firstname, lastname, constituency, sdate)
-                fout.write(('<regmem personid="%s" membername="%s" date="%s">\n' % (id, remadename, sdate)).encode("latin-1"))
-                memberset.add(id)
-                category = None
-                categoryname = None
-                subcategory = None
-                record = False
-                for row in page.h2.findNextSiblings():
-                        text = row.renderContents().decode('utf-8').encode('iso-8859-1', 'xmlcharrefreplace')
-                        if row.get('class') == 'spacer':
-                            if record:
-                                fout.write('\t\t</record>\n')
-                                record = False
-                            continue
-                        if not text or re.match('\s*\.\s*$', text): continue
-                        if text == '<strong>%s</strong>' % title: continue
-                        if re.match('\s*Nil\.?\s*$', text):
-                                fout.write('Nil.\n')
-                                continue
-                        # Since 2015 election, register is all paragraphs, no headings :(
-                        if row.name == 'h3' or row.get('class') == 'shd0' or re.match('<strong>\d+\. ', text):
-                                if re.match('\s*$', text): continue
-                                m = re.match("(?:\s*<strong>)?\s*(\d\d?)\.\s*(.*)(?:</strong>\s*)?$", text)
-                                if m:
-                                        if record:
-                                            fout.write('\t\t</record>\n')
-                                            record = False
-                                        if category:
-                                                fout.write('\t</category>\n')
-                                        category, categoryname = m.groups()
-                                        subcategory = None
-                                        categoryname = re.sub('<[^>]*>(?s)', '', categoryname).strip()
-                                        fout.write('\t<category type="%s" name="%s">\n' % (category, categoryname))
-                                        continue
-                        if not record:
-                            fout.write('\t\t<record>\n')
-                            record = True
-                        # This never matches nowadays - work out what to do with it
-                        subcategorymatch = re.match("\s*\(([ab])\)\s*(.*)$", text)
-                        if subcategorymatch:
-                                subcategory = subcategorymatch.group(1)
-                                fout.write('\t\t\t(%s)\n' % subcategory)
-                                fout.write('\t\t\t<item subcategory="%s">%s</item>\n' % (subcategory, subcategorymatch.group(2)))
-                                continue
-                        if subcategory:
-                                fout.write('\t\t\t<item subcategory="%s">%s</item>\n' % (subcategory, text))
-                        else:
-                                cls = row.get('class', '').decode('utf-8').encode('iso-8859-1')
-                                if cls: cls = ' class="%s"' % cls
-                                fout.write('\t\t\t<item%s>%s</item>\n' % (cls, text))
-                if record:
-                    fout.write('\t\t</record>\n')
-                    record = False
-                if category:
-                        fout.write('\t</category>\n')
-                fout.write('</regmem>\n')                                
+class RunRegmemFilters2010(object):
+    title = None
+    category = None
+    subcategory = None
+    record = False
 
-        membersetexpect = set([m['person_id'] for m in memberList.mpslistondate(sdate)])
-        
+    def __init__(self, fout, text, sdate):
+        self.fout = fout
+        self.text = text
+        self.sdate = sdate
+        self.memberset = set()
+
+    def _handle_h2(self, row):
+        title = row.encode_contents()
+        if title in ('HAGUE, Rt Hon William (Richmond (Yorks)', 'PEARCE, Teresa (Erith and Thamesmead'):
+            title += ')'
+        res = re.search("^([^,]*), ([^(]*) \((.*)\)\s*$", title)
+        if not res:
+            raise ContextException, "Failed to break up into first/last/cons: %s" % title
+        (lastname, firstname, constituency) = res.groups()
+        firstname = memberList.striptitles(firstname.decode('utf-8'))[0]
+        lastname = lastname.decode('utf-8')
+        if self.sdate < '2015-06-01':
+            lastname = memberList.lowercaselastname(lastname)
+        constituency = constituency.decode('utf-8')
+        lastname = lastname.replace(u'O\u2019brien', "O'Brien") # Hmm
+        (id, remadename, remadecons) = memberList.matchfullnamecons(firstname + " " + lastname, constituency, self.sdate)
+        if not id:
+            raise ContextException, "Failed to match name %s %s (%s) date %s\n" % (firstname, lastname, constituency, self.sdate)
+        self.fout.write(('<regmem personid="%s" membername="%s" date="%s">\n' % (id, remadename, self.sdate)).encode("latin-1"))
+        self.title = title
+        self.category = None
+        self.subcategory = None
+        self.record = False
+        self.memberset.add(id)
+
+    def parse(self):
+        print "2010-? new register of members interests!  Check it is working properly (via mpinfoin.pl) - %s" % self.sdate
+
+        WriteXMLHeader(self.fout)
+        self.fout.write("<publicwhip>\n")
+
+        text = re.sub('<span class="highlight">([^<]*?)</span>', r'\1', self.text)
+        soup = BeautifulSoup(text, 'lxml')
+        for row in soup.body.children:
+            if not row.name:
+                continue # Space between tags
+            if row.name == 'page':
+                self._end_entry()
+            elif row.name == 'h2':
+                self._handle_h2(row)
+            else:
+                cls = row.get('class', [''])[0]
+                text = row.encode_contents().decode('utf-8').encode('iso-8859-1', 'xmlcharrefreplace')
+                if cls == 'spacer':
+                    if self.record:
+                        self.fout.write('\t\t</record>\n')
+                        self.record = False
+                    continue
+                if not text or re.match('\s*\.\s*$', text): continue
+                if text == '<strong>%s</strong>' % self.title: continue
+                if re.match('\s*Nil\.?\s*$', text):
+                    self.fout.write('Nil.\n')
+                    continue
+                # Since 2015 election, register is all paragraphs, no headings :(
+                if row.name == 'h3' or cls == 'shd0' or re.match('<strong>\d+\. ', text):
+                    if re.match('\s*$', text): continue
+                    m = re.match("(?:\s*<strong>)?\s*(\d\d?)\.\s*(.*)(?:</strong>\s*)?$", text)
+                    if m:
+                        if self.record:
+                            self.fout.write('\t\t</record>\n')
+                            self.record = False
+                        if self.category:
+                            self.fout.write('\t</category>\n')
+                        self.category, categoryname = m.groups()
+                        self.subcategory = None
+                        categoryname = re.sub('<[^>]*>(?s)', '', categoryname).strip()
+                        self.fout.write('\t<category type="%s" name="%s">\n' % (self.category, categoryname))
+                        continue
+                if not self.record:
+                    self.fout.write('\t\t<record>\n')
+                    self.record = True
+                # This never matches nowadays - work out what to do with it
+                subcategorymatch = re.match("\s*\(([ab])\)\s*(.*)$", text)
+                if subcategorymatch:
+                    self.subcategory = subcategorymatch.group(1)
+                    self.fout.write('\t\t\t(%s)\n' % self.subcategory)
+                    self.fout.write('\t\t\t<item subcategory="%s">%s</item>\n' % (self.subcategory, subcategorymatch.group(2)))
+                    continue
+                if self.subcategory:
+                    self.fout.write('\t\t\t<item subcategory="%s">%s</item>\n' % (self.subcategory, text))
+                else:
+                    cls = cls.decode('utf-8').encode('iso-8859-1')
+                    if cls: cls = ' class="%s"' % cls
+                    self.fout.write('\t\t\t<item%s>%s</item>\n' % (cls, text))
+        self._end_entry()
+        self.fout.write("</publicwhip>\n")
+
+        self.check_missing()
+
+    def check_missing(self):
         # check for missing/extra entries
-        missing = membersetexpect.difference(memberset)
+        membersetexpect = set([m['person_id'] for m in memberList.mpslistondate(self.sdate)])
+        missing = membersetexpect.difference(self.memberset)
         if len(missing) > 0:
-                print "Missing %d MP entries:\n" % len(missing), missing
-        extra = memberset.difference(membersetexpect)
+            print "Missing %d MP entries:\n" % len(missing), missing
+        extra = self.memberset.difference(membersetexpect)
         if len(extra) > 0:
-                print "Extra %d MP entries:\n" % len(extra), extra
+            print "Extra %d MP entries:\n" % len(extra), extra
 
-	fout.write("</publicwhip>\n")
+    def _end_entry(self):
+        if self.record:
+            self.fout.write('\t\t</record>\n')
+        if self.category:
+            self.fout.write('\t</category>\n')
+        if self.title:
+            self.fout.write('</regmem>\n')
 
 
 def RunRegmemFilters(fout, text, sdate, sdatever):
     if sdate >= '2010-09-01':
-        return RunRegmemFilters2010(fout, text, sdate, sdatever)
+        return RunRegmemFilters2010(fout, text, sdate).parse()
     sys.exit('Parsing regmem HTML before 2010-09-01 is no longer supported')
 
 
