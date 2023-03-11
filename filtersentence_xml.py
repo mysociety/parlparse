@@ -1,9 +1,8 @@
 #! /usr/bin/python
 
+from datetime import datetime
 import re
 import string
-
-import mx.DateTime
 
 from lxml import etree
 
@@ -40,7 +39,7 @@ rehreflink = re.compile('(<small>)?<a href="([^"]*)">(.*?)</a>(</small>)?')
 reqnum = re.compile("\s*\[(\d+)\]\s*$")
 refqnum = re.compile("\s*\[(\d+)\]\s*")
 
-redatephraseval = re.compile('(?:(?:%s),?)?(\d+(?: |&nbsp;)*(?:%s)(\d+)?)' % (parlPhrases.daysofweek, parlPhrases.monthsofyear))
+redatephraseval = re.compile('(?:(?:%s),? )?(\d+(?: |&nbsp;)*(?:%s)( \d+)?)' % (parlPhrases.daysofweek, parlPhrases.monthsofyear))
 
 
 def TokenDate(ldate, phrtok):
@@ -49,9 +48,8 @@ def TokenDate(ldate, phrtok):
     if not ldate.group(2):
         tdate += " %s" % sdate_year
     try:
-        lldate = mx.DateTime.DateTimeFrom(tdate)
-        ldate = lldate.date
-        phrtok.lastdate = ldate
+        lldate = datetime.strptime(tdate, '%A, %d %B %Y')
+        phrtok.lastdate = lldate.date
     except:
         phrtok.lastdate = ''
     return ('phrase', ' class="date" code="%s"' % phrtok.lastdate)
@@ -166,10 +164,10 @@ def TokenOffRepWDate(qoffrep, phrtok):
     m = re.match('(\d+)/(\d+)/(\d+)', date)
     if m:
         lordsdate = True
-        date = mx.DateTime.DateTimeFrom('%s/%s/%s' % (m.group(2), m.group(1), m.group(3))).date
+        date = datetime.strptime(date, '%d/%m/%Y').date
     else:
         lordsdate = False
-        date = mx.DateTime.DateTimeFrom(date).date
+        date = datetime.strptime(date, '%d %B %Y').date
     if qcolprefix:
         qcolprefix = qcolprefix.upper()
     if qcolsuffix:
