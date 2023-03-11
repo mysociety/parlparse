@@ -1,5 +1,6 @@
 #! /usr/bin/python
 
+from datetime import datetime
 import glob
 import sys
 import urllib
@@ -7,7 +8,6 @@ import urlparse
 import re
 import os.path
 import time
-import mx.DateTime
 import tempfile
 import BeautifulSoup
 
@@ -90,7 +90,7 @@ def GlueByNext(fout, url, regmemdate):
             if not dateinpage:
                 raise Exception, 'Not found date marker'
             dateinpage = dateinpage.group(1).replace("&nbsp;", " ")
-            dateinpage = mx.DateTime.DateTimeFrom(dateinpage).date
+            dateinpage = datetime.strptime(dateinpage, '%d %B %Y').date().isoformat()
             if dateinpage != regmemdate:
                 raise Exception, 'Date in page is %s, expected %s - update the URL list in regmempullgluepages.py' % (dateinpage, regmemdate)
             matcheddate = True
@@ -225,7 +225,7 @@ def FindRegmemPages(remote):
                 print alldates
                 raise Exception, 'Date match failed, expected one got %d\n%s' % (len(alldates), url)
 
-            date = mx.DateTime.DateTimeFrom(alldates[0]).date
+            date = datetime.strptime(alldates[0], '%d %B %Y').date().isoformat()
             if (date, ixurl) not in urls:
                 urls.append((date, ixurl))
         elif re.search('Session 201[79]|Session 20[2-9]', content):
@@ -261,25 +261,11 @@ def FindRegmemPages(remote):
                     date = corrections[url_path]
                 else:
                     alldates[0] = re.sub('\s+', ' ', alldates[0])
-                    date = mx.DateTime.DateTimeFrom(alldates[0]).date
+                    alldates[0] = re.sub('(?<=\d)(st|nd|rd|th)', '', alldates[0])
+                    date = datetime.strptime(alldates[0], '%d %B %Y').date().isoformat()
 
                 if (date, url) not in urls:
                     urls.append((date, url))
-
-    return urls
-
-def FindLordRegmemPages():
-    urls = [('2004-10-01', 'http://www.publications.parliament.uk/pa/ld200304/ldreg/reg01.htm')]
-    ixurl = 'http://www.publications.parliament.uk/pa/ld/ldreg.htm'
-    ur = opener.open(ixurl)
-    content = ur.read()
-    ur.close();
-
-    allurls = re.findall('<a href="([^>]*reg01[^>]*)">.*?position on (.*?)\)</a>(?i)', content)
-    for match in allurls:
-        url = urlparse.urljoin(ixurl, match[0])
-        date = mx.DateTime.DateTimeFrom(match[1]).date
-        urls.append((date, url))
 
     return urls
 
@@ -306,9 +292,6 @@ def RegmemPullGluePages(options):
     # bring in and glue together parliamentary register of members interests and put into their own directories.
     # third parameter is a regexp, fourth is the filename (%s becomes the date).
     GlueAllType(pwcmregmem, urls, 'regmem%s.html', options.forcescrape, options.remote)
-
-    # urls = FindLordRegmemPages()
-    # GlueAllType(pwldregmem, urls, 'regmem%s.html', forcescrape)
 
 if __name__ == '__main__':
     RegmemPullGluePages(False)

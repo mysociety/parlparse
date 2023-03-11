@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import datetime
 import re
 import os
 import sys
@@ -8,7 +9,6 @@ import io
 import tempfile
 from lxml import etree
 import xml.sax
-import mx.DateTime
 import miscfuncs
 
 xmlvalidate = xml.sax.make_parser()
@@ -199,10 +199,8 @@ class BaseParseDayXML(object):
 
     def is_pre_new_parser(self):
         is_pre = False
-        parser_start = mx.DateTime.Date(2016, 4, 1)
-        file_date = mx.DateTime.DateTimeFrom(self.date)
-
-        if file_date < parser_start:
+        parser_start = datetime.date(2016, 4, 1)
+        if self.date < parser_start:
             is_pre = True
 
         return is_pre
@@ -312,7 +310,7 @@ class BaseParseDayXML(object):
 
     def parse_system_header(self, header):
         sitting = header.xpath('./ns:Sitting', namespaces=self.ns_map)[0]
-        date = mx.DateTime.DateTimeFrom(sitting.get('short-date')).date
+        date = datetime.datetime.strptime(sitting.get('short-date'), '%d %B %Y').date().isoformat()
         if date:
             self.date = date
 
@@ -889,8 +887,8 @@ class BaseParseDayXML(object):
             minutes = int(matches.group(2) or 0)
             if matches.group(3) == 'pm' and hours < 12:
                 hours += 12
-            time = mx.DateTime.DateTimeFrom(hour=hours, minute=minutes)
-            self.current_time = time.strftime('%H:%M:%S')
+            time = datetime.time(hours, minutes)
+            self.current_time = time.isoformat()
         elif time_txt in ('Noon', 'noon') or re.match('12\s*?noon', time_txt):
             self.current_time = "12:00:00"
         elif re.match('12\s*?midnight', time_txt):
