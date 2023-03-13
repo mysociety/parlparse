@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Grabs the latest members data from data.parliament
 # (http://data.parliament.uk/membersdataplatform/memberquery.aspx) and stores as
@@ -7,7 +7,7 @@
 import argparse
 import datetime
 import os
-import urllib2
+import urllib.request
 import xml.etree.ElementTree as etree
 
 parser = argparse.ArgumentParser(description='Fetch latest member data from data.parliament.uk')
@@ -29,13 +29,13 @@ if not os.path.exists(OUT_DIR):
 
 
 def write(url, fn):
-  data = urllib2.urlopen(url).read()
-  open(fn, 'w').write(data)
+  data = urllib.request.urlopen(url).read()
+  open(fn, 'wb').write(data)
 
 
 def verbose(s):
     if ARGS.verbose:
-        print s
+        print(s)
 
 
 verbose('Update members XML from data.parliament')

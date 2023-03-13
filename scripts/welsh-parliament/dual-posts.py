@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #
 # This script will search for people who were both MS and MP, or both MS and
 # Lord, and add their Wikidata ID to people.json so they match later on

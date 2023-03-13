@@ -38,22 +38,22 @@ def month_name_to_int( name ):
 
     lowered = name.lower()
 
-    if months.has_key(lowered):
+    if lowered in months:
         return months[lowered]
 
-    if abbreviated_months.has_key(lowered):
+    if lowered in abbreviated_months:
         return abbreviated_months[lowered]
 
     return 0
 
-def non_tag_data_in(o, tag_replacement=u''):
+def non_tag_data_in(o, tag_replacement=''):
     if o.__class__ == NavigableString:
         return re.sub('(?ms)[\r\n]',' ',o)
     elif o.__class__ == Tag:
         if o.name == 'script':
             return tag_replacement
         else:
-            return tag_replacement.join( map( lambda x: non_tag_data_in(x) , o.contents ) )
+            return tag_replacement.join( [non_tag_data_in(x) for x in o.contents] )
     elif o.__class__ == Comment:
         return tag_replacement
     else:
@@ -63,7 +63,7 @@ def non_tag_data_in(o, tag_replacement=u''):
 def tidy_string(s):
     # Lots of the paragraphs in the HTML begin with a pointless ':'
     # surrounded by spaces:
-    result = re.sub(u"(?imsu)^\s*:\s*",'',s)
+    result = re.sub("(?imsu)^\s*:\s*",'',s)
     result = re.sub('(?ims)\s+',' ',result)
     return result.strip()
 
@@ -71,16 +71,16 @@ def tidy_string(s):
 #
 #  http://snippets.dzone.com/posts/show/4569
 
-from htmlentitydefs import name2codepoint
+from html.entities import name2codepoint
 
 def substitute_entity(match):
     ent = match.group(2)
     if match.group(1) == "#":
-        return unichr(int(ent))
+        return chr(int(ent))
     else:
         cp = name2codepoint.get(ent)
         if cp:
-            return unichr(cp)
+            return chr(cp)
         else:
             return match.group()
 
@@ -108,7 +108,7 @@ def compare_spids(a,b):
             else:
                 return 0
     else:
-        raise Exception, "Couldn't match spids: "+a+" and "+b
+        raise Exception("Couldn't match spids: "+a+" and "+b)
 
 def just_time( non_tag_text ):
     m = re.match( '^\s*(\d?\d)[:\.](\d\d)\s*$', non_tag_text )

@@ -1,6 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: latin-1 -*-
-# $Id: bbcconv.py,v 1.4 2005/03/25 23:33:35 theyworkforyou Exp $
+#!/usr/bin/env python3
 
 # Screen scrape list of links to Lords on Wikipedia, so we can link to the articles.
 
@@ -11,8 +9,7 @@
 
 import datetime
 import sys
-import urllib
-import urlparse
+import urllib.parse
 import re
 # import sets
 
@@ -49,25 +46,22 @@ for year in (1997, 2001, 2005, 2010, 2015):
             cons = cons2
             name = name2
             url = url2
-        cons = cons.decode('utf-8')
         cons = cons.replace('&amp;', '&')
-        name = name.decode('utf-8')
         try:
             (id, canonname, canoncons) = memberList.matchfullnamecons(name, cons, date_parl[year])
-        except Exception, e:
-            print >>sys.stderr, e
+        except Exception as e:
+            print(e, file=sys.stderr)
         if not id:
             continue
         wikimembers[id] = url
 
-print '''<?xml version="1.0" encoding="ISO-8859-1"?>
-<publicwhip>'''
-k = wikimembers.keys()
-k.sort()
+print('''<?xml version="1.0" encoding="ISO-8859-1"?>
+<publicwhip>''')
+k = sorted(wikimembers)
 for id in k:
-    url = urlparse.urljoin(wiki_index_url, wikimembers[id])
-    print '<personinfo id="%s" wikipedia_url="%s" />' % (id, url)
-print '</publicwhip>'
+    url = urllib.parse.urljoin(wiki_index_url, wikimembers[id])
+    print('<personinfo id="%s" wikipedia_url="%s" />' % (id, url))
+print('</publicwhip>')
 
 #wikimembers = sets.Set(wikimembers.keys())
 #print "len: ", len(wikimembers)

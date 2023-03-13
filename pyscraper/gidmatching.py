@@ -1,12 +1,6 @@
-import sys
 import re
-import os
-import xml.sax
-import tempfile
-import string
 import miscfuncs
 import difflib
-from pprint import pprint
 
 #from xmlfilewrite import PrevParsedFile
 class PrevParsedFile:
@@ -25,7 +19,7 @@ def GetMinIndex(indx, a):
 	assert indx[0] == 0 and a < indx[-1]
 	i0, i1 = 0, len(indx) - 1
 	while i0 + 1 < i1:
-		im = (i0 + i1) / 2
+		im = (i0 + i1) // 2
 		assert i0 != im and i1 != im
 		if indx[im] <= a:
 			i0 = im
@@ -47,7 +41,7 @@ def PrepareXMLForDiff(scrapeversion):
 		# new_chk = chk[2]
 		new_chk = re.sub(
 			r'(?s)(<(p|tr)\s[^>]*>)(.*?)(<\/\2>)',
-			lambda m: (u''.join((m.group(1), re.sub('\n', ' ', m.group(3)), m.group(4)))),
+			lambda m: (''.join((m.group(1), re.sub('\n', ' ', m.group(3)), m.group(4)))),
 			chk[2]
 		)
 		essxindx.append(len(essxlist))
@@ -162,12 +156,12 @@ def DoFactorDiff(essflatbindx, essflatblist, essxindx, essxlist, chks, flatb):
 
 		# missing speech
 		else:
-			print chks[ix]
+			print(chks[ix])
 			if lastmatchg:
-				print "Missing speech matched to last matched speech"
+				print("Missing speech matched to last matched speech")
 				matchlist = [ lastmatchg ]
 			else:
-				print "No match on first speech problem."
+				print("No match on first speech problem.")
 				matchlist = []
 			matchtype = "missing"
 
@@ -248,7 +242,7 @@ def FactorChangesWrans(majblocks, scrapeversion):
 		for qqnum in qqnums:
 			if qblock:
 				if qblock.headingqb.qGID != qnummapq[qqnum].headingqb.qGID:
-				    print qblock.headingqb.qGID, qnummapq[qqnum].headingqb.qGID
+				    print(qblock.headingqb.qGID, qnummapq[qqnum].headingqb.qGID)
 				    assert qblock.headingqb.qGID == qnummapq[qqnum].headingqb.qGID
 			elif qqnum != '0' and qqnum in qnummapq:  # 0 is when there is a missing qnum
 				qblock = qnummapq[qqnum]
@@ -266,7 +260,7 @@ def FactorChangesWrans(majblocks, scrapeversion):
 				qmissblockscorebest = max(qmissblocksscore)
 				qblock = qnummapq[qmissblockscorebest[1]]
 				if miscfuncs.IsNotQuiet():
-					print "Missing qnum; mapping %s to %s with score %f" % (qebchk[0], qblock.headingqb.qGID, qmissblockscorebest[0])
+					print("Missing qnum; mapping %s to %s with score %f" % (qebchk[0], qblock.headingqb.qGID, qmissblockscorebest[0]))
 				assert qmissblockscorebest[0] > 0.8  # otherwise it's not really a match and we need to look harder.  
 													 # perhaps it's matched to a block in the new file which newly has a qnum, and we then have to scan against all of them.  
 
@@ -324,7 +318,7 @@ def FactorChangesWrans(majblocks, scrapeversion):
 		# sometimes we get more than one question.  
 		# when we find a mismatch we'll deal with it as a special paragraph problem, or not bother.
 		if len(qebchkquesids) != len(qblock.queses):
-			print len(qebchkquesids), len(qblock.queses), qblock.queses[0].qGID
+			print(len(qebchkquesids), len(qblock.queses), qblock.queses[0].qGID)
 			assert len(qebchkquesids) == len(qblock.queses)
 		for i in range(len(qebchkquesids)):
 			res.append('<gidredirect oldgid="%s" newgid="%s" matchtype="%s"/>\n' % (qebchkquesids[i], qblock.queses[i].qGID, matchtype))

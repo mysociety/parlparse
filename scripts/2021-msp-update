@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #
 # NOTE This worked but put member IDs in the entries of people that used to be
 # MP. I resolved this manually, it was only a few entries.
@@ -62,7 +62,7 @@ def update_from(csv_url, data):
             'start_reason': 'regional_election',
         }
         data['max_mship_id'] += 1
-        print "NEW result %s, %s %s, %s, %s, %s" % (data['max_mship_id'], name['given_name'], name['family_name'], party, cons, person_id)
+        print("NEW result %s, %s %s, %s, %s, %s" % (data['max_mship_id'], name['given_name'], name['family_name'], party, cons, person_id))
         mship = {
             'id': 'uk.org.publicwhip/member/%d' % data['max_mship_id'],
             'post_id': data['posts_by_name'][cons]['id'],
@@ -115,7 +115,7 @@ PARTY_TWFY_TO_PARL = {
 
 
 def wtt_csv_reader(fn):
-    if isinstance(fn, basestring):
+    if isinstance(fn, str):
         fn = open(fn)
     for row in csv.DictReader(fn):
         row['Party'] = PARTY_WTT_TO_TWFY[row['Party']]

@@ -1,8 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import datetime
 import re
-import urllib2
+import urllib.request
 from lxml import etree
 from popolo import Popolo
 from popolo.utils import new_id
@@ -18,7 +18,7 @@ def canon_name(n):
     n = re.sub('^The ', '', n)
     n = re.sub(' De ', ' de ', n)
     n = re.sub('Lord (Archb|B)ishop ', r'\1ishop ', n)
-    n = re.sub(u'\u2019', "'", n)
+    n = re.sub('\u2019', "'", n)
     return n
 
 
@@ -117,13 +117,13 @@ def construct_membership(member, person_id, lord_id):
         'start_date': start_date
     }
     if not membership['start_date'] or not membership['on_behalf_of_id']:
-        print "Missing start date or party!"
+        print("Missing start date or party!")
         sys.exit()
     return membership
 
 
 LORDS_URL = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Lords|membership=all/BasicDetails/'
-parl_members = etree.parse(urllib2.urlopen(LORDS_URL)).getroot()
+parl_members = etree.parse(urllib.request.urlopen(LORDS_URL)).getroot()
 parl_members = sorted(parl_members, key=lambda x: x.find('HouseStartDate').text)
 
 changed = False
@@ -140,7 +140,7 @@ for member in parl_members:
     if not person:
         person_id = new_id(person_id)
         lord_id = new_id(data.max_lord_id())
-        print u"{} is a new Lord, person ID {}, lord ID {}".format(name, person_id, lord_id)
+        print("{} is a new Lord, person ID {}, lord ID {}".format(name, person_id, lord_id))
 
         name = construct_name(member)
         person = construct_person(member, person_id, name)
@@ -163,11 +163,11 @@ for member in parl_members:
             if name == 'Bishop of Bradford' and end_date == '2010-07-14' and us == '2010-07-31': continue
             if name == 'Lord Greaves' and end_date == '2021-03-23' and us == '2021-03-24': continue
             if name == 'Baroness Greengross' and end_date == '2022-06-23' and us == '2022-06-29': continue
-            print '*', name, 'Parl=', end_date, 'Us=', mship.get('end_date', '-')
+            print('*', name, 'Parl=', end_date, 'Us=', mship.get('end_date', '-'))
         continue
     else:
         lord_id = new_id(data.max_lord_id())
-        print u"{} is a new Lord already in the system, person ID {}, lord ID {}".format(name, person['id'], lord_id)
+        print("{} is a new Lord already in the system, person ID {}, lord ID {}".format(name, person['id'], lord_id))
 
         name = construct_name(member)
         membership = construct_membership(member, person['id'], lord_id)

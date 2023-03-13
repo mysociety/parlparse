@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import datetime
 import errno
@@ -143,13 +143,13 @@ for entry in entries:
     ntf.write(r.content)
     ntf.close()
 
-    print "Unpacking top level zip file {}, downloaded from {}".format(
+    print("Unpacking top level zip file {}, downloaded from {}".format(
         ntf.name, entry['link_url']
-    )
+    ))
 
     try:
         extract_zip(ntf.name, subdir)
     except UnzipError as ue:
-        print "Unpacking failed, removing {0}".format(subdir)
+        print("Unpacking failed, removing {0}".format(subdir))
         shutil.rmtree(subdir)
         raise

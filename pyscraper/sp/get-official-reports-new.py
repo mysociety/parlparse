@@ -1,19 +1,18 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 import lxml.html
 from lxml import etree
-import urlparse
 import dateutil.parser
 import datetime
 import re
 import sys
-import urllib
-import urllib2
+import urllib.error
+import urllib.request
 import os
 from optparse import OptionParser
 import time
 import gzip
-from StringIO import StringIO
+from io import StringIO
 import random
 
 output_directory = "../../../parldata/cmpages/sp/official-reports-new/"
@@ -47,7 +46,7 @@ minimum_sleep = 2
 maximum_sleep = 10
 
 def pp(element):
-    print etree.tostring(element, pretty_print = True)
+    print(etree.tostring(element, pretty_print = True))
 
 missing_report_ids_filename = os.path.join(output_directory, 'missing')
 missing_report_ids = set()
@@ -65,14 +64,14 @@ def get_document_from_id(official_report_id):
     if not os.path.exists(html_filename):
         url = official_report_url_format.format(official_report_id)
         if not options.quiet:
-            print "Fetching:", url
-        request = urllib2.Request(url)
+            print("Fetching:", url)
+        request = urllib.request.Request(url)
         request.add_header('User-Agent', user_agent)
-        opener = urllib2.build_opener()
+        opener = urllib.request.build_opener()
         response = None
         try:
-            response = urllib2.urlopen(request)
-        except urllib2.HTTPError, e:
+            response = urllib.request.urlopen(request)
+        except urllib.error.HTTPError as e:
             # Specifying a non-existent r parameter sometimes gets us
             # a 500 error, and sometimes a 403, so ignore those:
             if e.code in (500, 403):
@@ -88,12 +87,12 @@ def get_document_from_id(official_report_id):
         # redirects us to a search page rather than issuing a 404 so we
         # check to make sure that hasn't happened before saving
         if response.geturl() == url:
-            with open(html_filename, 'w') as fp:
+            with open(html_filename, 'wb') as fp:
                 fp.write(response.read())
         else:
             html_filename = ''
             if not options.quiet:
-                print "   * looks like a redirect, not saving"
+                print("   * looks like a redirect, not saving")
         time.sleep(random.uniform(minimum_sleep, maximum_sleep))
     if html_filename:
         parser = etree.HTMLParser()
@@ -109,12 +108,12 @@ def main():
     elif options.daily:
         year = datetime.date.today().year
         url = current_reports_url_format.format(year)
-        request = urllib2.Request(url)
+        request = urllib.request.Request(url)
         request.add_header('User-Agent', user_agent)
-        opener = urllib2.build_opener()
-        response = urllib2.urlopen(request)
+        opener = urllib.request.build_opener()
+        response = urllib.request.urlopen(request)
         parser = etree.HTMLParser()
-        html = response.read()
+        html = response.read().decode('utf-8')
         html = re.sub('(?ims)^\s*', '', html)
         tree = etree.parse(StringIO(html), parser)
         report_ids = set()
@@ -126,7 +125,7 @@ def main():
                     report_ids.add(int(m.group(1), 10))
 
         if not report_ids:
-            print "SP - No reports available at {0}".format(url)
+            print("SP - No reports available at {0}".format(url))
             return
 
         min_report_id = min(report_ids) - 20
@@ -135,11 +134,11 @@ def main():
             get_document_from_id(report_id)
 
     else:
-        print "Either --daily, --start_range=START_ID and --end_range=END_ID must be specified"
+        print("Either --daily, --start_range=START_ID and --end_range=END_ID must be specified")
 
 if options.test:
     if not options.quiet:
-        print "Running doctests..."
+        print("Running doctests...")
     import doctest
     doctest.testmod()
     sys.exit(0)

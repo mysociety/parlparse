@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #
 # UK Parliament Written Answers are now in a new database-driven website. This
 # site has a nice-ish search, but for now we still need a bit of scraping to
@@ -9,7 +9,7 @@ import datetime
 import json
 import os
 import re
-import urllib
+import urllib.parse
 from xml.sax.saxutils import escape
 
 import bs4
@@ -62,14 +62,14 @@ def main():
         # Make sure we have all grouped questions (some might actually not have
         # been returned due to being on another day)
         for uin, qn in writtens.by_id.items():
-            qn.groupedQuestions = map(writtens.get_by_uin, qn.groupedQuestions)
+            qn.groupedQuestions = list(map(writtens.get_by_uin, qn.groupedQuestions))
     else:
         writtens = Statements()
         params['madeWhenFrom'] = ARGS.date
         params['madeWhenTo'] = ARGS.date
         get_from_list(writtens, params)
 
-    output = ('%s' % writtens).encode('utf-8')
+    output = str(writtens)
     if output:
         if ARGS.type == 'answers':
             filename = 'lordswrans' if ARGS.house == 'lords' else 'answers'
@@ -78,11 +78,11 @@ def main():
         filename += ARGS.date + '.xml'
         with open(os.path.join(ARGS.out, filename), 'w') as fp:
             fp.write(output)
-        print "* %s Written %s: found %d new items" % (ARGS.house.title(), ARGS.type.title(), writtens.number)
+        print("* %s Written %s: found %d new items" % (ARGS.house.title(), ARGS.type.title(), writtens.number))
 
 
 def get_from_list(writtens, params):
-    params = urllib.urlencode(params)
+    params = urllib.parse.urlencode(params)
     url_page = '%s?%s' % (API_INDEX, params)
     errors = 0
     skip = 0
@@ -95,7 +95,7 @@ def get_from_list(writtens, params):
             requests.Session().cache.delete_url(url_page)
             errors += 1
             if errors >= 5:
-                raise Exception, 'Too many server errors, giving up: %s' % j['title']
+                raise Exception('Too many server errors, giving up: %s' % j['title'])
             continue
         writtens.add_from_json(j)
         if writtens.number < j['totalResults']:
@@ -120,7 +120,7 @@ class WrittenThing(AttrDict):
 
     def fix_text(self, text):
         soup = bs4.BeautifulSoup(text, features="lxml")
-        return ''.join(map(unicode, soup.body.contents))
+        return ''.join(map(str, soup.body.contents))
 
     def get_detail(self):
         url = '%s/%s' % (API_INDEX, self['id'])
@@ -184,7 +184,7 @@ class Statement(WrittenThing):
         self.statement += self.add_attachments(data['attachments'])
 
     def __str__(self):
-        return u'''
+        return '''
 <minor-heading id="uk.org.publicwhip/wms/{st.date}.{st.uin}.h" nospeaker="true">
     {st.heading}
 </minor-heading>
@@ -210,19 +210,19 @@ class Question(WrittenThing):
 
     @property
     def secondary_group_question(self):
-        return self.groupedQuestions and self.uin > min(map(lambda x: x['uin'], self.groupedQuestions))
+        return self.groupedQuestions and self.uin > min([x['uin'] for x in self.groupedQuestions])
 
     @property
     def questions_xml(self):
         qns = [self] + self.groupedQuestions
-        return ''.join([u'''
+        return ''.join(['''
 <ques id="uk.org.publicwhip/wrans/{qn.date}.{qn.uin}.q{i}" person_id="{qn.asker.id}" speakername="{qn.asker.name}" url="{url_root}/written-questions/detail/{qn.date}/{qn.uin}">
     <p qnum="{qn.uin}">{qn.question}</p>
 </ques>'''.format(i=i, qn=qn, url_root=HOST) for i, qn in enumerate(qns)])
 
     @property
     def answers_xml(self):
-        return u'''
+        return '''
 <reply id="uk.org.publicwhip/wrans/{qn.date}.{qn.uin}.r{i}" person_id="{qn.answerer.id}" speakername="{qn.answerer.name}">
     {qn.answer}
 </reply>'''.format(i=0, qn=self)
@@ -238,7 +238,7 @@ class Question(WrittenThing):
         #    matchtype = 'altques'
         #    return '<gidredirect oldgid="%s" newgid="%s" matchtype="%s"/>\n' % (oldgid, newgid, matchtype)
 
-        return u'''
+        return '''
 <minor-heading id="uk.org.publicwhip/wrans/{qn.date}.{qn.uin}.h" nospeaker="true">
     {qn.heading}
 </minor-heading>

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Fetch London Assembly members from Wikidata
 
@@ -98,7 +98,7 @@ for item in data['results']['bindings']:
     if 'endcause' in item:
         member['end_cause'] = item['endcause']['value'].rsplit('/', 1)[-1]
 
-    logger.debug(u'{} ({}) found in Wikidata'.format(member['name'], member['wikidata_id']))
+    logger.debug('{} ({}) found in Wikidata'.format(member['name'], member['wikidata_id']))
 
     # Try retrieve this person by Wikidata ID, if that is known
     pp_person = pp_data.get_person(id=member['wikidata_id'], scheme='wikidata')
@@ -109,7 +109,7 @@ for item in data['results']['bindings']:
 
         # This person has been matched on Wikidata ID. Hooray!
 
-        logger.debug(u'{} ({}) matched to existing person {} by Wikidata ID'.format(
+        logger.debug('{} ({}) matched to existing person {} by Wikidata ID'.format(
             member['name'],
             member['wikidata_id'],
             pp_id
@@ -117,7 +117,7 @@ for item in data['results']['bindings']:
 
         # Run a sanity check that Parlparse IDs match.
         if 'parlparse_id' not in member:
-            logger.warning(u'{} ({}) does not have a TWFY ID set in Wikidata. Expected {}.'.format(
+            logger.warning('{} ({}) does not have a TWFY ID set in Wikidata. Expected {}.'.format(
                 member['name'],
                 member['wikidata_id'],
                 pp_id
@@ -126,14 +126,14 @@ for item in data['results']['bindings']:
         else:
 
             if member['parlparse_id'] != pp_id:
-                logger.warning(u'{} ({}) has a ParlParse ID of {}, expected {}.'.format(
+                logger.warning('{} ({}) has a ParlParse ID of {}, expected {}.'.format(
                     member['name'],
                     member['wikidata_id'],
                     member['parlparse_id'],
                     pp_id
                 ))
             else:
-                logger.debug(u'{} ({}) has expected ParlParse ID'.format(
+                logger.debug('{} ({}) has expected ParlParse ID'.format(
                     member['name'],
                     member['wikidata_id'],
                 ))
@@ -149,7 +149,7 @@ for item in data['results']['bindings']:
 
                 pp_id = pp_person['id'].rsplit('/', 1)[-1]
 
-                logger.debug(u'{} ({}) matched to existing person {} by ParlParse ID'.format(
+                logger.debug('{} ({}) matched to existing person {} by ParlParse ID'.format(
                     member['name'],
                     member['wikidata_id'],
                     pp_id))
@@ -167,7 +167,7 @@ for item in data['results']['bindings']:
 
                 pp_data.persons[pp_person['id']].update(pp_person)
 
-                logger.warning(u'{} has had Wikidata ID {} added to their ParlParse person entry.'.format(
+                logger.warning('{} has had Wikidata ID {} added to their ParlParse person entry.'.format(
                     member['name'],
                     member['wikidata_id']
                 ))
@@ -214,7 +214,7 @@ for item in data['results']['bindings']:
 
             if pp_person:
                 pp_id = pp_person['id'].rsplit('/', 1)[-1]
-                logger.warning(u'{} ({}) appears to match {} by name.'.format(
+                logger.warning('{} ({}) appears to match {} by name.'.format(
                     member['name'],
                     member['wikidata_id'],
                     pp_id
@@ -225,7 +225,7 @@ for item in data['results']['bindings']:
 
                 # If we make it here, we have nothing. Tell the person to run with --create.
 
-                logger.warning(u'{} ({}) cannot be matched on any ID or name. Run with --create to mint new IDs.'.format(
+                logger.warning('{} ({}) cannot be matched on any ID or name. Run with --create to mint new IDs.'.format(
                     member['name'],
                     member['wikidata_id']
                 ))
@@ -277,12 +277,12 @@ for item in data['results']['bindings']:
             # If there's a party change for this person with an end_date matching this membership's start_date, it's a
             # fair bet that the two are a pair and the start_reason here is also changed_party.
             elif member['wikidata_id'] in party_changes and party_changes[member['wikidata_id']] == member['start_date']:
-                logger.debug(u'Found matching party change on {} for {}'.format(party_changes[member['wikidata_id']], member['wikidata_id']))
+                logger.debug('Found matching party change on {} for {}'.format(party_changes[member['wikidata_id']], member['wikidata_id']))
                 pp_membership['start_reason'] = 'changed_party'
 
             else:
                 pp_membership['start_reason'] = 'unknown'
-                logger.warning(u'Cannot determine start cause of membership for {} ({}) starting {}.'.format(
+                logger.warning('Cannot determine start cause of membership for {} ({}) starting {}.'.format(
                     member['name'],
                     member['wikidata_id'],
                     member['start_date']
@@ -298,13 +298,13 @@ for item in data['results']['bindings']:
                         # If this is a party change, add it to the list so we can use it to detect its pair.
                         if member['end_cause'] == WD_PARTY_CHANGE_OBJECT:
                             party_changes[member['wikidata_id']] = member['end_date']
-                            logger.debug(u'Recorded that {} changed their party on {}'.format(member['wikidata_id'], member['end_date']))
+                            logger.debug('Recorded that {} changed their party on {}'.format(member['wikidata_id'], member['end_date']))
 
                     else:
                         pp_membership['end_reason'] = 'unknown'
                         logger.warning('End cause {} is not mapped.'.format(member['end_cause']))
                 else:
-                    logger.warning(u'Membership for {} ({}) starting {} does not have an end cause in Wikidata.'.format(
+                    logger.warning('Membership for {} ({}) starting {} does not have an end cause in Wikidata.'.format(
                         member['name'],
                         member['wikidata_id'],
                         member['start_date']
@@ -324,7 +324,7 @@ for item in data['results']['bindings']:
             logger.error('Could not match {} to party name. Edit the map in fetch_london_assembly.py to fix.'.format(member['party']))
 
     else:
-        logger.error(u'Skipping doing anything with {} ({}). This shouldn\'t happen.'.format(
+        logger.error('Skipping doing anything with {} ({}). This shouldn\'t happen.'.format(
             member['name'],
             member['wikidata_id']
         ))

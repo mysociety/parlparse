@@ -1,10 +1,8 @@
-#! /usr/bin/python
 # vim:sw=8:ts=8:et:nowrap
 
 import sys
 import re
 import os
-import string
 import tempfile
 import time
 import shutil
@@ -49,8 +47,8 @@ def ApplyPatches(filein, fileout, patchfile):
     status = os.system("patch --quiet %s <%s" % (fileout, patchfile))
     if status == 0:
         return True
-    print "blanking out failed patch %s" % patchfile
-    print "---- This should not happen, therefore assert!"
+    print("blanking out failed patch %s" % patchfile)
+    print("---- This should not happen, therefore assert!")
     assert False
 
 # the operation on a single file
@@ -59,7 +57,7 @@ def RunFilterFile(FILTERfunction, xprev, sdate, sdatever, dname, jfin, patchfile
     patchtempfilename = tempfile.mktemp("", "pw-applypatchtemp-", miscfuncs.tmppath)
 
     if not bquietc:
-        print "reading " + jfin
+        print("reading " + jfin)
 
     # apply patch filter
     kfin = jfin
@@ -114,12 +112,10 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
         if mnums:
             daymap.setdefault(mnums.group(1), []).append((AlphaStringToOrder(mnums.group(2)), mnums.group(2), ldfile))
         elif os.path.isfile(os.path.join(pwcmdirin, ldfile)):
-            print "not recognized file:", ldfile, " inn ", pwcmdirin
+            print("not recognized file:", ldfile, " inn ", pwcmdirin)
 
     # make the list of days which we will iterate through (in revers date order)
-    daydates = daymap.keys()
-    daydates.sort()
-    daydates.reverse()
+    daydates = sorted(daymap, reverse=True)
 
     # loop through file in input directory in reverse date order and build up the
     for sdate in daydates:
@@ -150,7 +146,7 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
                     if patch_modified > out_modified:
                         bmodifiedoutoforder = fin
         if bmodifiedoutoforder:
-            print "input or patch modified since output reparsing ", bmodifiedoutoforder
+            print("input or patch modified since output reparsing ", bmodifiedoutoforder)
 
 
         # now we parse these files -- in order -- to accumulate their catalogue of diffs
@@ -183,10 +179,10 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
                     break
 
                 # exception cases which cause the loop to continue
-                except ContextException, ce:
+                except ContextException as ce:
                     if options.patchtool:
                         # deliberately don't set options.anyerrors (as they are to fix it!)
-                        print "runfilters.py", ce
+                        print("runfilters.py", ce)
                         RunPatchTool(dname, (sdate + sdatever), ce)
                         # find file again, in case new
                         patchfile = findpatchfile(fin, newpwpatchesdir, pwpatchesdir)
@@ -194,8 +190,8 @@ def RunFiltersDir(FILTERfunction, dname, options, forcereparse):
 
                     elif options.quietc:
                         options.anyerrors = True
-                        print ce.description
-                        print "\tERROR! %s failed on %s, quietly moving to next day" % (dname, sdate)
+                        print(ce.description)
+                        print("\tERROR! %s failed on %s, quietly moving to next day" % (dname, sdate))
                         newday = 1
                         # sys.exit(1) # remove this and it will continue past an exception (but then keep throwing the same tired errors)
                         break # leave the loop having not written the xml file; go onto the next day
@@ -219,6 +215,6 @@ def FixExtraColNumParas(text):
 
 def RunNIFilters(fp, text, sdate, sdatever):
     parser = ParseNIDay()
-    print "NI parsing %s..." % sdate
+    print("NI parsing %s..." % sdate)
     parser.parse_day(fp, text, sdate + sdatever)
 

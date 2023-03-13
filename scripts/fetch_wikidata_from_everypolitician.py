@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Fetch a legislature from EveryPolitician, and for all people with a ParlParse
 # ID and Wikidata ID import the Wikidata ID.

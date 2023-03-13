@@ -1,7 +1,6 @@
-#! /usr/bin/python
 # vim:sw=8:ts=8:et:nowrap
 
-import cStringIO
+import io
 import re
 
 
@@ -210,7 +209,7 @@ class ParlPhrases:
 			if sio:
 				sio.write('|')
 			else:
-				sio = cStringIO.StringIO()
+				sio = io.StringIO()
 			sio.write(j)
 
 		self.regexpjobs = sio.getvalue()

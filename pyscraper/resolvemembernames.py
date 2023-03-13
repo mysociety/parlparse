@@ -1,11 +1,9 @@
-#! /usr/bin/python
 # vim:sw=4:ts=4:et:nowrap
 
 # Converts names of MPs into unique identifiers
 
 import json
 import re
-import string
 import copy
 import sys
 import datetime
@@ -85,17 +83,13 @@ class MemberList(ResolverBase):
                         self.fullnames.setdefault(mship["role"], []).append(newattr)
                         # print mship["role"], early, late, mship['name']
 
-    def partylist(self):
-        return self.parties.keys()
-
     def currentmpslist(self):
         today = datetime.date.today().isoformat()
         return self.mpslistondate(today)
 
     def mpslistondate(self, date):
-        matches = self.members.values()
         ids = []
-        for m in matches:
+        for m in self.members.values():
             if date >= m["start_date"] and date <= m["end_date"]:
                 ids.append(m)
         return ids
@@ -107,7 +101,7 @@ class MemberList(ResolverBase):
         text = text.replace(",", " ")
         text = text.replace("&nbsp;", " ")
         text = text.replace("  ", " ")
-        text = text.replace(u'\u2019', "'")
+        text = text.replace('\u2019', "'")
 
         # Remove initial titles (may be several)
         titletotal = 0
@@ -166,7 +160,7 @@ class MemberList(ResolverBase):
 
         consids = self.constoidmap.get(cons, None)
         if alwaysmatchcons and cons and not consids:
-            raise Exception, "Unknown constituency %s" % cons
+            raise Exception("Unknown constituency %s" % cons)
 
         if consids and (len(ids) > 1 or alwaysmatchcons):
             ids = self.intersect_constituency(cons, ids, date, True)
@@ -180,11 +174,10 @@ class MemberList(ResolverBase):
                 errstring = 'Matched multiple times: %s : %s : %s : %s - perhaps constituency spelling is not known' % (fullname, cons or "[nocons]", date, ids.__str__())
                 # actually, even no-cons case happens too often
                 # (things like ministerships, with name in brackets after them)
-                print errstring
+                print(errstring)
                 #raise ContextException(errstring, fragment=origfullname)
             lids = list(ids)  # I really hate the Set type
-            lids = map(self.membertoperson, lids)
-            lids.sort()
+            lids = sorted(map(self.membertoperson, lids))
             return None, "MultipleMatch", tuple(lids)
 
         for lid in ids: # pop is no good as it changes the set
@@ -230,17 +223,17 @@ class MemberList(ResolverBase):
     #     MCAVOY to McAvoy
     def lowercaselastname(self, name):
         words = re.split("( |-|')", name)
-        words = [ string.capitalize(word) for word in words ]
+        words = [ word.capitalize() for word in words ]
 
         def handlescottish(word):
             if (re.match("Mc[a-z]", word)):
-                return word[0:2] + string.upper(word[2]) + word[3:]
+                return word[0:2] + word[2].upper() + word[3:]
             if (re.match("Mac[a-z]", word)):
-                return word[0:3] + string.upper(word[3]) + word[4:]
+                return word[0:3] + word[3].upper() + word[4:]
             return word
         words = map(handlescottish, words)
 
-        return string.join(words , "")
+        return "".join(words)
 
     def fixnamecase(self, name):
         return self.lowercaselastname(name)
@@ -349,7 +342,7 @@ class MemberList(ResolverBase):
                 ids = officeids
 
         # Match between office and name - store for later use in the same days text
-        if speakeroffice <> "":
+        if speakeroffice != "":
             if input in ('The Temporary Chair', 'Madam Deputy Speaker'):
                 self.debateofficehistory[input] = set(ids)
             else:
@@ -363,7 +356,7 @@ class MemberList(ResolverBase):
         # Return errors
         if len(ids) == 0:
             if not re.search(regnospeakers, input):
-                raise Exception, "No matches %s" % (rebracket)
+                raise Exception("No matches %s" % (rebracket))
             self.debatenamehistory.append(None) # see below
             return 'person_id="unknown" error="No match" speakername="%s"' % (rebracket)
         if len(ids) > 1:
@@ -371,7 +364,7 @@ class MemberList(ResolverBase):
             for id in ids:
                 names += self.member_full_name(id, date, True)
             if not re.search(regnospeakers, input):
-                raise Exception, "Multiple matches %s, possibles are %s" % (rebracket, names)
+                raise Exception("Multiple matches %s, possibles are %s" % (rebracket, names))
             self.debatenamehistory.append(None) # see below
             return 'person_id="unknown" error="Matched multiple times" speakername="%s"' % (rebracket)
 
@@ -405,7 +398,7 @@ class MemberList(ResolverBase):
             return 1
 
         if re.match('Mr\. |Mrs\. |Miss |Dr\. ', input):
-            print ' potential missing MP name ' + input
+            print(' potential missing MP name ' + input)
 
         return 0
 
@@ -504,17 +497,17 @@ class MemberList(ResolverBase):
             if self.chairman:
                 ids = self.fullnametoids(self.chairman, date)
             if len(ids) == 0:
-                raise ContextException, "Couldn't match Committee Chairman %s" % self.chairman
+                raise ContextException("Couldn't match Committee Chairman %s" % self.chairman)
             
         if len(ids) == 0:
             if not re.search(regnospeakers, input):
-                raise ContextException, "No matches %s" % (input)
+                raise ContextException("No matches %s" % (input))
             return ' person_id="unknown" error="No match" '
         if len(ids) > 1:
             names = ""
             for id in ids:
                 names += id + " " + self.member_full_name(id, date, True)
-            raise ContextException, "Multiple matches %s, possibles are %s" % (input, names)
+            raise ContextException("Multiple matches %s, possibles are %s" % (input, names))
             return ' person_id="unknown" error="Matched multiple times" '
 
         for id in ids:
@@ -573,7 +566,7 @@ class MemberList(ResolverBase):
              ids = officeids
 
         # Match between office and name - store for later use in the same days text
-        if speakeroffice <> "":
+        if speakeroffice != "":
             self.debateofficehistory.setdefault(input, set()).update(ids)
 
         # Chairman
@@ -582,7 +575,7 @@ class MemberList(ResolverBase):
             if self.chairman:
                 ids = self.fullnametoids(self.chairman, date)
             if len(ids) == 0:
-                raise ContextException, "Couldn't match Committee Chairman %s" % self.chairman
+                raise ContextException("Couldn't match Committee Chairman %s" % self.chairman)
                 
         # Put together original in case we need it
         rebracket = input
@@ -591,7 +584,7 @@ class MemberList(ResolverBase):
         # Return errors
         if len(ids) == 0:
             if not re.search(regnospeakers, input) and not external_speakers:
-                raise ContextException, "No matches %s" % (rebracket)
+                raise ContextException("No matches %s" % (rebracket))
             self.debatenamehistory.append(None) # see below
             return 'person_id="unknown" error="No match" speakername="%s"' % (rebracket)
         if len(ids) > 1:
@@ -599,7 +592,7 @@ class MemberList(ResolverBase):
             for id in ids:
                 names += self.member_full_name(id, date, True)
             if not re.search(regnospeakers, input):
-                raise ContextException, "Multiple matches %s, possibles are %s" % (rebracket, names)
+                raise ContextException("Multiple matches %s, possibles are %s" % (rebracket, names))
             self.debatenamehistory.append(None) # see below
             return 'person_id="unknown" error="Matched multiple times" speakername="%s"' % (rebracket)
 
@@ -616,15 +609,15 @@ class MemberList(ResolverBase):
     def canonicalcons(self, cons, date):
         consids = self.constoidmap.get(cons, None)
         if not consids:
-            raise Exception, "Unknown constituency %s" % cons
+            raise Exception("Unknown constituency %s" % cons)
         consid = None
         for consattr in consids:
             if consattr['start_date'] <= date and date <= consattr['end_date']:
                 if consid:
-                    raise Exception, "Two like-named constituency ids %s %s overlap with date %s" % (consid, consattr['id'], date)
+                    raise Exception("Two like-named constituency ids %s %s overlap with date %s" % (consid, consattr['id'], date))
                 consid = consattr['id']
         if not consid in self.considtonamemap:
-            raise Exception, "Not known name of consid %s cons %s date %s" % (consid, cons, date)
+            raise Exception("Not known name of consid %s cons %s date %s" % (consid, cons, date))
         return self.considtonamemap[consid]
 
     def getmember(self, memberid):
@@ -653,7 +646,7 @@ class MemberList(ResolverBase):
                         id = mattr["id"]
                         break
                 else:
-                    raise Exception, "Couldn't find %s %s member party changed from %s date %s" % (whystr, attr[whystr], id, dayafter)
+                    raise Exception("Couldn't find %s %s member party changed from %s date %s" % (whystr, attr[whystr], id, dayafter))
 
                 ids.append(id)
 
@@ -673,9 +666,9 @@ class MemberList(ResolverBase):
                 ids.append(attr["id"])
 
         if len(ids) == 0:
-            raise Exception, 'Could not find ID for Historic ID %s, date %s' % (hansard_id, date)
+            raise Exception('Could not find ID for Historic ID %s, date %s' % (hansard_id, date))
         if len(ids) > 1:
-            raise Exception, 'Multiple results for Historic ID %s, date %s: %s' % (hansard_id, date, ','.join(ids))
+            raise Exception('Multiple results for Historic ID %s, date %s: %s' % (hansard_id, date, ','.join(ids)))
         return ids[0]
 
 # Construct the global singleton of class which people will actually use

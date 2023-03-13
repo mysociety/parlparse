@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 # vim:sw=8:ts=8:et:nowrap
 
 # Run the script with --help to see command line options
@@ -91,18 +91,18 @@ for arg in args:
         elif arg == "ni":
                 options.ni = True
         else:
-                print >>sys.stderr, "error: no such option %s" % arg
+                print("error: no such option %s" % arg, file=sys.stderr)
                 parser.print_help()
                 sys.exit(1)
 if len(args) == 0:
         parser.print_help()
         sys.exit(1)
 if not options.scrape and not options.parse:
-        print >>sys.stderr, "error: choose what to do; scrape, parse, or both"
+        print("error: choose what to do; scrape, parse, or both", file=sys.stderr)
         parser.print_help()
         sys.exit(1)
 if not options.regmem and not options.ni:
-        print >>sys.stderr, "error: choose what work on; regmem, several of them"
+        print("error: choose what work on; regmem, several of them", file=sys.stderr)
         parser.print_help()
         sys.exit(1)
 

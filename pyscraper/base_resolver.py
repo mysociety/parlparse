@@ -67,12 +67,12 @@ class ResolverBase(object):
             return
 
         if mship["id"] in self.membertopersonmap:
-            raise Exception, "Same member id %s appeared twice" % mship["id"]
+            raise Exception("Same member id %s appeared twice" % mship["id"])
         self.membertopersonmap[mship["id"]] = mship['person_id']
         self.persontomembermap.setdefault(mship['person_id'], []).append(mship["id"])
 
         if self.members.get(mship["id"]):
-            raise Exception, "Repeated identifier %s in members JSON file" % mship["id"]
+            raise Exception("Repeated identifier %s in members JSON file" % mship["id"])
         self.members[mship["id"]] = mship
 
         if 'end_date' not in mship:
@@ -90,14 +90,14 @@ class ResolverBase(object):
                 mship_start_date <= mship_end_date and
                 mship_end_date <= cons['end_date']):
                 if consid and consid != cons['id']:
-                    raise Exception, "Two constituency ids %s %s overlap with MP %s" % (consid, cons['id'], mship['id'])
+                    raise Exception("Two constituency ids %s %s overlap with MP %s" % (consid, cons['id'], mship['id']))
                 consid = cons['id']
         if not consid:
-            raise Exception, "Constituency '%s' not found" % mship["constituency"]
+            raise Exception("Constituency '%s' not found" % mship["constituency"])
         # check name in members file is same as default in cons file
         backformed_cons = self.considtonamemap[consid]
         if backformed_cons != mship["constituency"]:
-            raise Exception, "Constituency '%s' in members file differs from first constituency '%s' listed in cons file" % (mship["constituency"], backformed_cons)
+            raise Exception("Constituency '%s' in members file differs from first constituency '%s' listed in cons file" % (mship["constituency"], backformed_cons))
 
         # check first date ranges don't overlap, MPs only
         # Only check modern MPs as we might have overlapping data previously
@@ -108,7 +108,7 @@ class ResolverBase(object):
                     or cons['start_date'] <= mship['end_date'] <= cons['end_date'] \
                     or mship['start_date'] <= cons['start_date'] <= mship['end_date'] \
                     or mship['start_date'] <= cons['end_date'] <= mship['end_date']:
-                    raise Exception, "%s %s Two MP entries for constituency %s with overlapping dates" % (mship, cons, consid)
+                    raise Exception("%s %s Two MP entries for constituency %s with overlapping dates" % (mship, cons, consid))
         # then add in
         self.considtomembermap.setdefault(consid, []).append(mship)
 
@@ -124,7 +124,7 @@ class ResolverBase(object):
         if person['id'] not in self.persontomembermap:
             return
         self.persons[person['id']] = person
-        memberships = map(lambda x: self.members[x], self.persontomembermap[person['id']])
+        memberships = [self.members[x] for x in self.persontomembermap[person['id']]]
         for other_name in person.get('other_names', []):
             if other_name.get('note') == 'Main':
                 self.import_people_main_name(other_name, memberships)
@@ -213,7 +213,7 @@ class ResolverBase(object):
                     if nm['lordofname']:
                         name += ' of %s' % nm['lordofname']
                 return name
-        raise Exception, 'No found for %s on %s' % (person['id'], date)
+        raise Exception('No found for %s on %s' % (person['id'], date))
 
     def membertoperson(self, memberid):
         return self.membertopersonmap[memberid]

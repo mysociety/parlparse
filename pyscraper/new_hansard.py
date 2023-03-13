@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import datetime
@@ -15,10 +15,6 @@ xmlvalidate = xml.sax.make_parser()
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(os.path.join(os.path.dirname(__file__), 'lords'))
-
-import codecs
-streamWriter = codecs.lookup('utf-8')[-1]
-sys.stdout = streamWriter(sys.stdout)
 
 from pullgluepages import MakeDayMap, GetFileDayVersions
 from miscfuncs import pwxmldirs
@@ -41,7 +37,7 @@ class PimsList(MemberList):
         # names are mostly lastname,\nfirstname so reform first
         if re.search(',', name):
             last, first = name.split(',')
-            full = u'{0} {1}'.format(first.strip(), last.strip())
+            full = '{0} {1}'.format(first.strip(), last.strip())
         # apart from committee chairman which we can use as is
         else:
             full = name.strip()
@@ -272,11 +268,11 @@ class BaseParseDayXML(object):
     # this just makes any gid redirection easier
     def get_text_from_element(self, el):
         text = self.get_single_line_text_from_element(el)
-        text = u'\n{0}\n'.format(text)
+        text = '\n{0}\n'.format(text)
         return text
 
     def get_single_line_text_from_element(self, el):
-        text = u''.join(el.xpath('.//text()'))
+        text = ''.join(el.xpath('.//text()'))
         text = re.sub('\n', ' ', text).strip()
         return text
 
@@ -446,7 +442,7 @@ class BaseParseDayXML(object):
             tag.text = text
 
         if 'extra_text' in kwargs:
-            tag.text = u'{0} - '.format(tag.text)
+            tag.text = '{0} - '.format(tag.text)
             i = etree.Element('i')
             i.text = kwargs['extra_text']
             tag.append(i)
@@ -463,9 +459,9 @@ class BaseParseDayXML(object):
         self.output_heading = True
 
     def parse_chair(self, heading):
-	"""
-	If we get an "in the Chair" heading in the main text, we include it as
-	a speech. The one right at the start, we store in case we need to
+        """
+        If we get an "in the Chair" heading in the main text, we include it as
+        a speech. The one right at the start, we store in case we need to
         output a speech (otherwise it'll be ignored).
         """
         if self.output_heading:
@@ -476,7 +472,7 @@ class BaseParseDayXML(object):
 
         next_elt = heading.getnext()
         if next_elt is not None and self.get_tag_name_no_ns(next_elt) in self.minor_headings:
-            text = u' - '.join([
+            text = ' - '.join([
                 self.get_single_line_text_from_element(heading),
                 self.get_single_line_text_from_element(next_elt)
             ])
@@ -530,7 +526,7 @@ class BaseParseDayXML(object):
         )
         text = ''
         if len(following) == 1:
-            text = u' - '.join([
+            text = ' - '.join([
                 self.get_single_line_text_from_element(heading),
                 self.get_single_line_text_from_element(following[0])
             ])
@@ -551,7 +547,7 @@ class BaseParseDayXML(object):
         )
         text = ''
         if len(following) == 1:
-            text = u' - '.join([
+            text = ' - '.join([
                 self.get_single_line_text_from_element(motion),
                 self.get_single_line_text_from_element(following[0])
             ])
@@ -580,7 +576,7 @@ class BaseParseDayXML(object):
         )
         if len(chair) == 1:
             chair_text = self.get_single_line_text_from_element(chair[0])
-            text = u'\n{0} — {1}\n'.format(text, chair_text)
+            text = '\n{0} — {1}\n'.format(text, chair_text)
 
         self.clear_current_speech()
         tag = etree.Element('minor-heading')
@@ -603,7 +599,7 @@ class BaseParseDayXML(object):
         first_para = question.xpath('.//ns:hs_Para', namespaces=self.ns_map)[0]
         self.new_speech(member, first_para.get('url'))
 
-        number = u''.join(
+        number = ''.join(
             question.xpath('.//ns:Number/text()', namespaces=self.ns_map)
         )
         if number != '':
@@ -613,7 +609,7 @@ class BaseParseDayXML(object):
         p.set('pid', self.get_pid())
         uin = question.xpath('.//ns:Uin', namespaces=self.ns_map)
         if len(uin) > 0:
-            uin_text = u''.join(uin[0].xpath('.//text()'))
+            uin_text = ''.join(uin[0].xpath('.//text()'))
             m = re.match('\[\s*(\d+)\s*\]', uin_text)
             if m is not None:
                 no = m.groups(1)[0]
@@ -622,7 +618,7 @@ class BaseParseDayXML(object):
         text = first_para.xpath(
             './/ns:QuestionText/text()', namespaces=self.ns_map
         )
-        text = u''.join(text)
+        text = ''.join(text)
         """
         sometimes the question text is after the tag rather
         than inside it in which case we want to grab all the
@@ -644,7 +640,7 @@ class BaseParseDayXML(object):
                 namespaces=self.ns_map
             )
             if len(q_text):
-                text = u''.join(q_text)
+                text = ''.join(q_text)
 
         p.text = re.sub('\n', ' ', text)
         self.current_speech.append(p)
@@ -663,7 +659,7 @@ class BaseParseDayXML(object):
         self.parse_para_with_member(tag, None, css_class='indent')
 
     def parse_petition(self, petition):
-        petition.text = u'Petition - {0}'.format(petition.text)
+        petition.text = 'Petition - {0}'.format(petition.text)
         self.parse_major(petition)
 
     def output_normally_ignored(self):
@@ -719,7 +715,7 @@ class BaseParseDayXML(object):
         if len(text) == 0:
             return
 
-        fs = u'<p>{0}</p>'.format(PhraseTokenize(self.date, text).GetPara())
+        fs = '<p>{0}</p>'.format(PhraseTokenize(self.date, text).GetPara())
         tag = etree.fromstring(fs)
 
         if self.use_pids:
@@ -834,8 +830,8 @@ class BaseParseDayXML(object):
         noes_count = \
             division.xpath('./ns:hs_Para/ns:NoesNumber/text()', namespaces=self.ns_map)
 
-        ayes_count_text = u''.join(ayes_count)
-        noes_count_text = u''.join(noes_count)
+        ayes_count_text = ''.join(ayes_count)
+        noes_count_text = ''.join(noes_count)
 
         self.clear_current_speech()
 
@@ -878,7 +874,7 @@ class BaseParseDayXML(object):
             self.parse_para(para)
 
     def parse_time(self, tag):
-        time_txt = u''.join(tag.xpath('.//text()'))
+        time_txt = ''.join(tag.xpath('.//text()'))
         if time_txt == '':
             return
         matches = re.match('(\d+)(?:[:.,]\s*(\d+))?[\xa0\s]*(am|pm)', time_txt)
@@ -1024,7 +1020,7 @@ class BaseParseDayXML(object):
                 tag_name = self.get_tag_name_no_ns(tag)
                 if self.verbose >= 2:
                     start_tag = re.sub('>.*', '>', etree.tounicode(tag))
-                    print 'Parsing %s' % start_tag
+                    print('Parsing %s' % start_tag)
                 if not self.handle_tag(tag_name, tag):
                     raise ContextException(
                         'unhandled tag: {0}'.format(tag_name),
@@ -1123,7 +1119,7 @@ class PBCParseDayXML(BaseParseDayXML):
     # in the array
     def get_attending_status(self, member_tag):
         text = member_tag.xpath('./preceding-sibling::text()')
-        if len(text) > 0 and re.search(u'\u2020', text[-1]):
+        if len(text) > 0 and re.search('\u2020', text[-1]):
             return 'true'
 
         return 'false'
@@ -1140,7 +1136,7 @@ class PBCParseDayXML(BaseParseDayXML):
                 self.chairs.append(member)
             else:
                 raise ContextException(
-                    u'No match for PBC chairman {0}'.format(member_tag.text),
+                    'No match for PBC chairman {0}'.format(member_tag.text),
                     stamp=member_tag.get('url'),
                     fragment=member_tag.text
                 )
@@ -1164,7 +1160,7 @@ class PBCParseDayXML(BaseParseDayXML):
             self.members.append(member)
         else:
             raise ContextException(
-                u'No match for PBC member {0}'.format(member_tag.text),
+                'No match for PBC member {0}'.format(member_tag.text),
                 stamp=member_tag.get('url'),
                 fragment=member_tag.text
             )
@@ -1209,10 +1205,10 @@ class PBCParseDayXML(BaseParseDayXML):
             # so use that instead and skip the party
             curr_member = current_membership(m['person_id'])
             if curr_member['constituency'] != m['pbc_cons']:
-                cons.text = u'({0})'.format(m['pbc_cons'])
+                cons.text = '({0})'.format(m['pbc_cons'])
             else:
-                cons.text = u'({0})'.format(curr_member['constituency'])
-                cons.tail = u'({0})'.format(curr_member['party'])
+                cons.text = '({0})'.format(curr_member['constituency'])
+                cons.tail = '({0})'.format(curr_member['party'])
             mp.append(cons)
             committee.append(mp)
 
@@ -1269,7 +1265,7 @@ class PBCParseDayXML(BaseParseDayXML):
             if chair is not None:
                 self.current_chair = chair
         else:
-            raise ContextException(u'No match for chair {0}'.format(text))
+            raise ContextException('No match for chair {0}'.format(text))
 
     def get_division_tag(self, division, yes_text, no_text):
         tag = etree.Element('divisioncount')
@@ -1278,7 +1274,7 @@ class PBCParseDayXML(BaseParseDayXML):
             division.xpath('.//ns:Number/text()', namespaces=self.ns_map)
 
         tag.set('id', self.get_speech_id())
-        tag.set('divnumber', u''.join(div_number))
+        tag.set('divnumber', ''.join(div_number))
         tag.set('ayes', yes_text)
         tag.set('noes', no_text)
         tag.set('url', '')
@@ -1465,7 +1461,7 @@ class LordsParseDayXML(BaseParseDayXML):
         if name == 'The Queen':
             return {
                 'person_id': 'uk.org.publicwhip/person/13935',
-                'name': u'The Queen'
+                'name': 'The Queen'
             }
 
         tag_name = self.get_tag_name_no_ns(member)
@@ -1571,12 +1567,12 @@ class LordsParseDayXML(BaseParseDayXML):
         noes_count = \
             division.xpath('.//ns:NotContentsNumber/text()', namespaces=self.ns_map)
 
-        ayes_count_text = u''.join(ayes_count)
-        noes_count_text = u''.join(noes_count)
+        ayes_count_text = ''.join(ayes_count)
+        noes_count_text = ''.join(noes_count)
 
         # output a summary of the division results
         div_summary = \
-            u"Ayes {0}, Noes {1}.".format(ayes_count_text, noes_count_text)
+            "Ayes {0}, Noes {1}.".format(ayes_count_text, noes_count_text)
         div_summary_tag = etree.Element('p')
         div_summary_tag.set('pid', self.get_pid())
         div_summary_tag.set('pwmotiontext', 'yes')
@@ -1608,7 +1604,7 @@ class LordsParseDayXML(BaseParseDayXML):
 
         paras = division.xpath('./ns:hs_Procedure', namespaces=self.ns_map)
         for para in paras:
-            text = u''.join(para.xpath('.//text()'))
+            text = ''.join(para.xpath('.//text()'))
             if re.search(r'Contents', text) or \
                     re.search(r'Division\s*on', text):
                 continue
@@ -1625,7 +1621,7 @@ class LordsParseDayXML(BaseParseDayXML):
                 is_teller = True
 
             # convert smart quote to apostrophe
-            member_name = re.sub(u'\u2019', "'", member_name)
+            member_name = re.sub('\u2019', "'", member_name)
 
             member = self.resolver.MatchRevName(member_name, self.date, vote.get('url'))
             tag.set('person_id', member)
@@ -1704,7 +1700,7 @@ class ParseDay(object):
             elif f.endswith('~') or f == 'changedates.txt':
                 pass
             elif os.path.isfile(os.path.join(pwstandingpages, f)):
-                print "not recognized file:", f, " in ", pwstandingpages
+                print("not recognized file:", f, " in ", pwstandingpages)
 
         self.parser.get_sitting(xml_file)
         sitting_id = self.parser.sitting_id
@@ -1761,9 +1757,9 @@ class ParseDay(object):
         return flatb
 
     def normalise_gids(self, string):
-        string = re.sub(u'(publicwhip\/[a-z]*\/\d{4}-\d{2}-\d{2})[a-z]', r'\1', string)
-        string = re.sub(u'(publicwhip\/standing\/.*?\d{4}-\d{2}-\d{2})[a-z]', r'\1', string)
-        string = re.sub(u'(pid=")[a-z]([\d.\/]*")', r'\1\2', string)
+        string = re.sub('(publicwhip\/[a-z]*\/\d{4}-\d{2}-\d{2})[a-z]', r'\1', string)
+        string = re.sub('(publicwhip\/standing\/.*?\d{4}-\d{2}-\d{2})[a-z]', r'\1', string)
+        string = re.sub('(pid=")[a-z]([\d.\/]*")', r'\1\2', string)
 
         return string
 
@@ -1777,13 +1773,13 @@ class ParseDay(object):
         hnextfile.close()
 
         if len(dprevfile) == len(dnextfile):
-            sprevfile = self.normalise_gids(u''.join(dprevfile[1:]))
-            snextfile = self.normalise_gids(u''.join(dnextfile[1:]))
+            sprevfile = self.normalise_gids(''.join(dprevfile[1:]))
+            snextfile = self.normalise_gids(''.join(dnextfile[1:]))
             if sprevfile == snextfile:
                 return "SAME"
         if len(dprevfile) < len(dnextfile):
-            sprevfile = self.normalise_gids(u''.join(dprevfile[1:]))
-            snextfile = self.normalise_gids(u''.join(dnextfile[1:len(dprevfile)]))
+            sprevfile = self.normalise_gids(''.join(dprevfile[1:]))
+            snextfile = self.normalise_gids(''.join(dnextfile[1:len(dprevfile)]))
             if sprevfile == snextfile:
                 return "EXTENSION"
         return "DIFFERENT"
@@ -1791,7 +1787,7 @@ class ParseDay(object):
     def remove_para_newlines(self, string):
         return re.sub(
             '(?s)(<p[^>]*>)(.*?)(<\/p>)',
-            lambda m: (u''.join((m.group(1), re.sub('\n', ' ', m.group(2)), m.group(3)))),
+            lambda m: (''.join((m.group(1), re.sub('\n', ' ', m.group(2)), m.group(3)))),
             string
         )
 
@@ -1827,10 +1823,10 @@ class ParseDay(object):
         tempfilenameoldxml = tempfile.mktemp(".xml", "pw-filtertempold-", miscfuncs.tmppath)
         foout = io.open(tempfilenameoldxml, mode="w", encoding='utf-8')
         if self.parser.is_pre_new_parser:
-            WriteXMLHeader(foout, encoding="UTF-8", output_unicode=True)
-        foout.write(u'<publicwhip scrapeversion="%s" latest="no">\n' % self.prev_file)
-        foout.writelines([unicode(x) for x in xprevcompress])
-        foout.write(u"</publicwhip>\n\n")
+            WriteXMLHeader(foout)
+        foout.write('<publicwhip scrapeversion="%s" latest="no">\n' % self.prev_file)
+        foout.writelines([str(x) for x in xprevcompress])
+        foout.write("</publicwhip>\n\n")
         foout.close()
         assert os.path.isfile(self.prev_file)
         os.remove(self.prev_file)

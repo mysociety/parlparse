@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import codecs
@@ -74,7 +74,7 @@ def slugify(value):
     aren't alphanumerics, underscores, or hyphens. Converts to lowercase.
     Also strips leading and trailing whitespace.
     """
-    value = unicodedata.normalize('NFKD', unicode(value)).encode('ascii', 'ignore').decode('ascii')
+    value = unicodedata.normalize('NFKD', str(value)).encode('ascii', 'ignore').decode('ascii')
     value = re.sub('[^\w\s-]', '', value).strip().lower()
     return re.sub('[-\s]+', '-', value)
 
@@ -139,7 +139,7 @@ PARTY_YNMP_TO_TWFY = {
 
 
 def dadem_csv_reader(fn):
-    if isinstance(fn, basestring):
+    if isinstance(fn, str):
         fn = open(fn)
     for row in csv.DictReader(fn):
         given = row['First']

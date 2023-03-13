@@ -1,11 +1,11 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 # XXX Pagination has been introduced for the 1998-2003 pages, so any
 # rescraping of those will break with this current code.
 
 import json
-import urllib
-import urlparse
+import urllib.request
+import urllib.parse
 import re
 import time, datetime
 import os
@@ -29,10 +29,10 @@ ni_dir = os.path.dirname(__file__)
 
 def scrape_ni_day(url, filename, forcescrape):
     filename = '%s/../../../parldata/cmpages/ni/%s' % (ni_dir, filename)
-    data = urllib.urlopen(url).read()
+    data = urllib.request.urlopen(url).read()
 
-    if 'ExceptionMessage' in data or '"Message":"An error has occurred."' in data:
-        print 'ERROR received scraping %s' % url
+    if b'ExceptionMessage' in data or b'"Message":"An error has occurred."' in data:
+        print('ERROR received scraping %s' % url)
         return
 
     save = True
@@ -42,8 +42,8 @@ def scrape_ni_day(url, filename, forcescrape):
             save = False
 
     if save:
-        print "NI scraping %s" % url
-        open(filename, 'w').write(data)
+        print("NI scraping %s" % url)
+        open(filename, 'wb').write(data)
 
 
 def scrape_ni(datefrom, dateto, forcescrape=False):
@@ -56,11 +56,11 @@ def scrape_ni(datefrom, dateto, forcescrape=False):
 
 
 def scrape_ni_json(datefrom, dateto, forcescrape):
-    ur = urllib.urlopen(API_ROOT)
+    ur = urllib.request.urlopen(API_ROOT)
     index = json.load(ur)
 
     if 'ExceptionMessage' in index:
-        print 'ERROR received scraping NI root'
+        print('ERROR received scraping NI root')
         return
 
     for day in index['AllHansardComponentsList']['HansardComponent']:
@@ -73,7 +73,7 @@ def scrape_ni_json(datefrom, dateto, forcescrape):
 
 def scrape_ni_html(datefrom, dateto, forcescrape):
     for url in root:
-        ur = urllib.urlopen(url)
+        ur = urllib.request.urlopen(url)
         page = ur.read()
         ur.close()
 
@@ -87,7 +87,7 @@ def scrape_ni_html(datefrom, dateto, forcescrape):
             date = '%d-%02d-%02d' % date[:3]
             if date < datefrom or date > dateto: continue
             filename = 'ni%s%s%s.html' % (date, day[1], day[3])
-            scrape_ni_day(urlparse.urljoin(url, day[0]), filename, forcescrape)
+            scrape_ni_day(urllib.parse.urljoin(url, day[0]), filename, forcescrape)
 
         match = re.findall('<a class="html-link" href=\'(/Assembly-Business/Official-Report/Reports-\d\d-(\d\d/([^/]*)/))\'>Read now</a>', page)
         for day in match:
@@ -119,7 +119,7 @@ def scrape_ni_html(datefrom, dateto, forcescrape):
             date = '%d-%02d-%02d' % date[:3]
             if date < datefrom or date > dateto: continue
             filename = 'ni%s.html' % date
-            scrape_ni_day(urlparse.urljoin(url, day[0]), filename, forcescrape)
+            scrape_ni_day(urllib.parse.urljoin(url, day[0]), filename, forcescrape)
 
 if __name__ == '__main__':
     scrape_ni(*sys.argv[1:])

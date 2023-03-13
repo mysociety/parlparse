@@ -1,10 +1,10 @@
-#! /usr/bin/python
+#! /usr/bin/env python3
 
 from datetime import datetime
 import glob
 import sys
-import urllib
-import urlparse
+import urllib.request
+import urllib.parse
 import re
 import os.path
 import time
@@ -24,7 +24,7 @@ pwldregmem = os.path.join(pwcmdirs, "ldregmem")
 
 tempfilename = tempfile.mktemp("", "pw-gluetemp-", miscfuncs.tmppath)
 
-class AppURLopener(urllib.FancyURLopener):
+class AppURLopener(urllib.request.FancyURLopener):
     version = os.getenv("USER_AGENT")
 opener = AppURLopener()
 
@@ -40,20 +40,19 @@ def GlueByContents(fout, url_contents, regmemdate, remote):
     soup = BeautifulSoup(sr, 'lxml')
     mps = soup.find('a', attrs={'name':'A'}).parent.find_next_siblings('p')
     for p in mps:
-        url = urlparse.urljoin(url_contents, p.a['href'])
-        url = url.encode('utf-8')
+        url = urllib.parse.urljoin(url_contents, p.a['href'])
         #print " reading " + url
         if remote:
             ur = opener.open(url)
         else:
-            url = urllib.quote(url)
+            url = urllib.parse.quote(url)
             ur = open(url)
         sr = ur.read()
         ur.close()
 
-	if remote and ur.code == 404:
-		print "failed to fetch %s - skipping" % url
-		continue
+        if remote and ur.code == 404:
+            print("failed to fetch %s - skipping" % url)
+            continue
 
         # write the marker telling us which page this comes from
         lt = time.gmtime()
@@ -65,7 +64,7 @@ def GlueByContents(fout, url_contents, regmemdate, remote):
         try:
             page = soup_mp.find('h1').find_next_siblings(lambda t: t.name != 'div')
         except:
-            print 'Problem with ' + url.decode('utf-8')
+            print('Problem with ' + url.decode('utf-8'))
         page = '\n'.join([ str(p) for p in page ]) + '\n'
         miscfuncs.WriteCleanText(fout, page)
 
@@ -88,11 +87,11 @@ def GlueByNext(fout, url, regmemdate):
         if not matcheddate:
             dateinpage = re.search("current as at\s*<[bB]>(.*)</[bB]>", sr)
             if not dateinpage:
-                raise Exception, 'Not found date marker'
+                raise Exception('Not found date marker')
             dateinpage = dateinpage.group(1).replace("&nbsp;", " ")
             dateinpage = datetime.strptime(dateinpage, '%d %B %Y').date().isoformat()
             if dateinpage != regmemdate:
-                raise Exception, 'Date in page is %s, expected %s - update the URL list in regmempullgluepages.py' % (dateinpage, regmemdate)
+                raise Exception('Date in page is %s, expected %s - update the URL list in regmempullgluepages.py' % (dateinpage, regmemdate))
             matcheddate = True
 
         # write the marker telling us which page this comes from
@@ -130,8 +129,8 @@ def GlueByNext(fout, url, regmemdate):
         if not nextsectionlink:
             break
         if len(nextsectionlink) > 1:
-            raise Exception, "More than one Next Section!!!"
-        url = urlparse.urljoin(url, nextsectionlink[0])
+            raise Exception("More than one Next Section!!!")
+        url = urllib.parse.urljoin(url, nextsectionlink[0])
 
     # you evidently didn't find any links
     assert sections > 10
@@ -191,17 +190,17 @@ def FindRegmemPages(remote):
     idxurl = 'https://www.parliament.uk/mps-lords-and-offices/standards-and-financial-interests/parliamentary-commissioner-for-standards/registers-of-interests/register-of-members-financial-interests/'
     ur = opener.open(idxurl)
     content = ur.read()
-    if "Cloudflare" in content:
+    if b"Cloudflare" in content:
         sys.exit("Cloudflare please wait page, cannot proceed")
     ur.close()
 
     soup = BeautifulSoup(content, 'lxml')
     soup = soup.find(attrs='main-body').find('ul')
-    ixurls = [urlparse.urljoin(idxurl, ix['href']) for ix in soup.find_all('a', href=True)]
+    ixurls = [urllib.parse.urljoin(idxurl, ix['href']) for ix in soup.find_all('a', href=True)]
 
     for ixurl in ixurls:
         ur = opener.open(ixurl)
-        content = ur.read()
+        content = ur.read().decode('utf-8')
         ur.close()
 
         # <B>14&nbsp;May&nbsp;2001&nbsp;(Dissolution)</B>
@@ -227,8 +226,8 @@ def FindRegmemPages(remote):
 
             alldates = re.findall('(?i)<(?:b|strong)>(\d+[a-z]* [A-Z][a-z]* \d\d\d\d)', content)
             if len(alldates) != 1:
-                print alldates
-                raise Exception, 'Date match failed, expected one got %d\n%s' % (len(alldates), url)
+                print(alldates)
+                raise Exception('Date match failed, expected one got %d\n%s' % (len(alldates), url))
 
             date = datetime.strptime(alldates[0], '%d %B %Y').date().isoformat()
             if (date, ixurl) not in urls:
@@ -237,9 +236,9 @@ def FindRegmemPages(remote):
             allurl_soups = soup.find_all('a', href=re.compile("(memi02|part1contents|/contents\.htm)"))
             for url_soup in allurl_soups:
                 url = url_soup['href']
-                url = urlparse.urljoin(ixurl, url)
+                url = urllib.parse.urljoin(ixurl, url)
                 date = re.sub('^.*(\d\d)(\d\d)(\d\d).*', r'20\1-\2-\3', url)
-                url_path = urlparse.urlparse(url)[2]
+                url_path = urllib.parse.urlparse(url)[2]
                 if url_path in corrections:
                     date = corrections[url_path]
                 if (date, url) not in urls:
@@ -247,21 +246,21 @@ def FindRegmemPages(remote):
         else:
             allurl_soups = soup.find_all('a', href=re.compile("(memi02|part1contents|/contents\.htm)"))
             for url_soup in allurl_soups:
-                row_content = url_soup.find_parent('tr').encode_contents()
+                row_content = url_soup.find_parent('tr').encode_contents().decode('utf-8')
                 url = url_soup['href']
                 #print url
                 if url == '060324/memi02.htm':
                     # fix broken URL
                     url = '/pa/cm/cmregmem/' + url
 
-                url = urlparse.urljoin(ixurl, url)
+                url = urllib.parse.urljoin(ixurl, url)
 
                 alldates = re.findall('\d+[a-z]*\s+[A-Z][a-z]*\s+\d\d\d\d', row_content, re.DOTALL)
                 if len(alldates) != 1:
-                    print alldates
-                    raise Exception, 'Date match failed, expected one got %d\n%s' % (len(alldates), url)
+                    print(alldates)
+                    raise Exception('Date match failed, expected one got %d\n%s' % (len(alldates), url))
 
-                url_path = urlparse.urlparse(url)[2]
+                url_path = urllib.parse.urlparse(url)[2]
                 if url_path in corrections:
                     date = corrections[url_path]
                 else:

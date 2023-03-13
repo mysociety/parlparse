@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 import xml.sax
 import re
@@ -72,7 +72,7 @@ class SpeakingSpeedParser(xml.sax.handler.ContentHandler):
         self.current_date_string = None
     def complete_time_stretch(self,new_minutes_into_day):
         length_of_last_stretch = new_minutes_into_day - self.previous_minutes_into_day
-        if options.verbose: print "Got speaker IDs: "+str(self.distinct_speakers_since_last_time)
+        if options.verbose: print("Got speaker IDs: "+str(self.distinct_speakers_since_last_time))
         if len(self.distinct_speakers_since_last_time) == 1:
             # If there was only a unique speaker in that line:
             tss = TimedSpeechSection()
@@ -95,7 +95,7 @@ class SpeakingSpeedParser(xml.sax.handler.ContentHandler):
             # time point, ignore it and wait for the next one:
             if minutes_into_day == self.previous_minutes_into_day:
                 return
-            if options.verbose: print "Got minutes_into_day: "+str(minutes_into_day)+" from "+attrs['time']
+            if options.verbose: print("Got minutes_into_day: "+str(minutes_into_day)+" from "+attrs['time'])
             # ------
             if self.previous_minutes_into_day == 0:
                 self.previous_minutes_into_day = minutes_into_day
@@ -105,7 +105,7 @@ class SpeakingSpeedParser(xml.sax.handler.ContentHandler):
             # if ('speakerid' in attrs) and re.search('^uk.org',attrs['speakerid']):
             if ('speakerid' in attrs):
                 self.current_speakerid = people_parser.officeid_to_personid[attrs['speakerid']]
-                if options.verbose: print "Got new speakerid: "+str(self.current_speakerid)
+                if options.verbose: print("Got new speakerid: "+str(self.current_speakerid))
     def endElement(self,name):
         if name == 'speech':
             self.current_speakerid = None
@@ -129,7 +129,7 @@ max_days = -1
 
 days_done = 0
 for filename in filenames:
-    if options.verbose: print "Parsing day: "+str(filename)
+    if options.verbose: print("Parsing day: "+str(filename))
     m = re.search('(\d{4}-\d{2}-\d{2})',filename)
     ssp.parse(filename,m.group(1))
     days_done += 1
@@ -168,19 +168,18 @@ for tss in ssp.all_timed_stretches:
     all_speakers[tss.speakerid].total_time_in_minutes += tss.minutes
     all_speakers[tss.speakerid].total_passages += 1
     if options.verbose:
-        print "====================================================="
-        s = unicode(tss)
-        print s.encode('UTF-8')
+        print("=====================================================")
+        s = str(tss)
+        print(s.encode('UTF-8'))
 
 def sort_speakers(speakerid):
     return all_speakers[speakerid].words_per_minute()
 
-speakers_found = all_speakers.keys()
-speakers_found.sort(key=sort_speakers,reverse=True)
+speakers_found = sorted(all_speakers, key=sort_speakers, reverse=True)
 
 if options.verbose:
     for s in speakers_found:
-        print s+" spoke at "+str(all_speakers[s].words_per_minute())+" words per minute"
+        print(s+" spoke at "+str(all_speakers[s].words_per_minute())+" words per minute")
 
 people_to_exclude = set()
 

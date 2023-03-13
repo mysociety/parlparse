@@ -1,16 +1,10 @@
-#! /usr/bin/python
-
 from datetime import datetime
 import re
-import string
 
 from lxml import etree
 
 from contextexception import ContextException
 from parlphrases import parlPhrases
-
-from wrans.emblinks import rreglink, rregemail, rehtlink, ConstructHTTPlink
-
 from resolvemembernames import memberList
 
 
@@ -81,11 +75,11 @@ def TokenStandingOrder(mstandingo, phrtok):
         'phrase', ' class="standing-order" code="%s"' % mstandingo.group(1)
     )
 
+rehtlink = re.compile('(?<!["\'])(https?://)([^\s]+)')
 
 def TokenHttpLink(mhttp, phrtok):
-    qstrlink = ConstructHTTPlink(mhttp.group(1), mhttp.group(2), mhttp.group(3))
+    qstrlink = mhttp.group(0)
     return ('a', ' href="%s"' % qstrlink)
-
 
 def TokenHrefLink(mhttp, phrtok):
     return ('', '')
@@ -118,8 +112,8 @@ def TokenOffRep(qoffrep, phrtok):
     qcolnum = qcpart.group(1)
     if qcpart.group(2):
         qcpartlead = qcpart.group(1)[len(qcpart.group(1)) - len(qcpart.group(2)):]
-        if string.atoi(qcpartlead) >= string.atoi(qcpart.group(2)):
-            print ' non-following column leadoff ', qoffrep.group(0)
+        if int(qcpartlead) >= int(qcpart.group(2)):
+            print(' non-following column leadoff ', qoffrep.group(0))
             # raise Exception, ' non-following column leadoff '
 
     if qcolsuffix == 'WH':
@@ -218,8 +212,7 @@ def TokenHonFriend(mhonfriend, phrtok):
     # remove any xml entities from the name
     orgname = res[1]
 
-    # if you put the .encode("latin-1") on the res[1] it doesn't work when there are strange characters.
-    return ('phrase', (' class="honfriend" person_id="%s" name="%s"' % (nid, orgname)).encode("latin-1"))
+    return ('phrase', ' class="honfriend" person_id="%s" name="%s"' % (nid, orgname))
 
 
 # the array of tokens which we will detect on the way through
@@ -312,4 +305,4 @@ class PhraseTokenize:
             else:
                 res.append(tok[2])
 
-        return string.join(res, '')
+        return ''.join(res)

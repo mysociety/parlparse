@@ -6,7 +6,7 @@
 # fixing (or longer term, fix it automatically).
 
 import re
-import urllib
+import urllib.request
 import lxml.objectify
 import sys
 
@@ -86,10 +86,10 @@ class Lord:
             self.type = TYPES.index('Elected Hereditary') # One of the 92
 
     def __str__(self):
-        return u'%s (%s) - %s' % ( self.longTitle, PARTIES[self.party], self.status )
+        return '%s (%s) - %s' % ( self.longTitle, PARTIES[self.party], self.status )
 
 # Fetch the current live information
-lords = urllib.urlopen('http://data.parliament.uk/resources/members/api/lords/all/').read()
+lords = urllib.request.urlopen('http://data.parliament.uk/resources/members/api/lords/all/').read()
 lords = [ Lord(lord) for lord in lxml.objectify.fromstring(lords).peer ]
 
 for lord in lords:
@@ -113,5 +113,5 @@ for lord in lords:
     if PARTIES[lord.party] == 'UK Independence Party' and lordsList.lords[match]['party'] == 'UKIP': continue
     if PARTIES[lord.party] == 'Plaid Cymru' and lordsList.lords[match]['party'] == 'PC': continue
     if PARTIES[lord.party] == 'Plaid Cymru' and lordsList.lords[match]['party'] == 'PC': continue
-    print PARTIES[lord.party], lordsList.lords[match]['party']
+    print(PARTIES[lord.party], lordsList.lords[match]['party'])
 

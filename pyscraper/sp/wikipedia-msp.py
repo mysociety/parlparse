@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: latin-1 -*-
+#!/usr/bin/env python3
 
 # Screen scrape list of links to MLAs on Wikipedia, so we can link to the articles.
 # (Very slightly adapted to get MSPs instead by Mark Longair.)
@@ -12,7 +11,7 @@
 import datetime
 import os
 import sys
-import urlparse
+import urllib.parse
 import re
 
 sys.path.insert(0, os.path.join(os.path.abspath(os.path.dirname(__file__)), '..'))
@@ -47,32 +46,28 @@ matches.append(('/wiki/Nicholas_Johnston', 'Nick Johnston'))
 
 for (url, name) in matches:
     id_list = None
-    #cons = cons.decode('utf-8')
-    #cons = cons.replace('&amp;', '&')
-    name = name.decode('utf-8')
     try:
-        id_list = memberList.match_string_somehow(name, None, '', True)
-    except Exception, e:
-        print >>sys.stderr, e
+        id_list = memberList.match_string_somehow(name, '', '', True)
+    except Exception as e:
+        print(e, file=sys.stderr)
     if not id_list:
         continue
 
     for id_to_add in id_list:
         wikimembers[id_to_add] = url
 
-print '''<?xml version="1.0" encoding="ISO-8859-1"?>
-<publicwhip>'''
-k = wikimembers.keys()
-k.sort()
+print('''<?xml version="1.0" encoding="UTF-8"?>
+<publicwhip>''')
+k = sorted(wikimembers)
 for id in k:
-    url = urlparse.urljoin(wiki_index_urls[0], wikimembers[id])
-    print '<personinfo id="%s" wikipedia_url="%s" />' % (id, url)
-print '</publicwhip>'
+    url = urllib.parse.urljoin(wiki_index_urls[0], wikimembers[id])
+    print('<personinfo id="%s" wikipedia_url="%s" />' % (id, url))
+print('</publicwhip>')
 
 wikimembers = set(wikimembers.keys())
 allmembers = set([ memberList.membertoperson(id) for id in memberList.list_all_dates() ])
 
 symdiff = allmembers.symmetric_difference(wikimembers)
 if len(symdiff) > 0:
-    print >>sys.stderr, "Failed to get all MSPs, these ones in symmetric difference"
-    print >>sys.stderr, "\n".join(symdiff)
+    print("Failed to get all MSPs, these ones in symmetric difference", file=sys.stderr)
+    print("\n".join(symdiff), file=sys.stderr)

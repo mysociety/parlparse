@@ -1,14 +1,10 @@
-#!/usr/bin/python
-
 import os
 import json
 import re
-import string
 import copy
 import sys
 import datetime
 import time
-import codecs
 
 from base_resolver import ResolverBase
 
@@ -90,7 +86,7 @@ class MemberList(ResolverBase):
                 else:
                     if len(ids_so_far) > 0:
                         # Work out the intersection...
-                        ids_so_far = filter(lambda x: x in ids_from_bracketed_part,ids_so_far)
+                        ids_so_far = [x for x in ids_so_far if x in ids_from_bracketed_part]
                         if len(ids_so_far) == 1:
                             return ids_so_far
                     else:
@@ -119,7 +115,7 @@ class MemberList(ResolverBase):
     def match_string_somehow(self,s,date,party,just_name):
         s = re.sub('\s{2,}', ' ', s)
 
-        s = s.replace(u"O\u2019", "O'")
+        s = s.replace("O\u2019", "O'")
         if s == 'Katy Clark' and date >= '2020-09-03':
             s = 'Baroness Clark of Kilwinning'
 
@@ -146,7 +142,7 @@ class MemberList(ResolverBase):
             office_matches = self.offices.get(office_name)
             if office_matches:
                 for o in office_matches:
-                    if date and ( date < o['start_date'] or 'end_date' not in o.keys() or date >= o['end_date'] ):
+                    if date and ( date < o['start_date'] or 'end_date' not in list(o.keys()) or date >= o['end_date'] ):
                         continue
                     member_ids.append(o['person_id'])
                 if len(member_ids) == 1:
@@ -166,7 +162,7 @@ class MemberList(ResolverBase):
                 if m['id'] not in member_ids:
                     member_ids.append(m['id'])
             if len(member_ids) == 1:
-                return map(self.membertoperson, member_ids)
+                return list(map(self.membertoperson, member_ids))
 
         # Now check if this begins with a title:
 
@@ -199,7 +195,7 @@ class MemberList(ResolverBase):
                     if m['id'] not in member_ids:
                         member_ids.append(m['id'])
                 if len(member_ids) == 1:
-                    return map(self.membertoperson, member_ids)
+                    return list(map(self.membertoperson, member_ids))
 
             # Or if there's a single word, then this is probably just
             # a last name:
@@ -213,7 +209,7 @@ class MemberList(ResolverBase):
                         if m['id'] not in member_ids:
                             member_ids.append(m['id'])
                     if len(member_ids) == 1:
-                        return map(self.membertoperson, member_ids)
+                        return list(map(self.membertoperson, member_ids))
 
         if not just_name:
 
@@ -228,7 +224,7 @@ class MemberList(ResolverBase):
                         if m['id'] not in member_ids:
                             member_ids.append(m['id'])
                     if len(member_ids) == 1:
-                        return map(self.membertoperson, member_ids)
+                        return list(map(self.membertoperson, member_ids))
 
         # Just return the string for people that aren't members, but
         # we know are ones we understand.
@@ -240,7 +236,7 @@ class MemberList(ResolverBase):
         if s in ('The Deputy Convener', 'The Convener'):
             return None
 
-        return map(self.membertoperson, member_ids)
+        return list(map(self.membertoperson, member_ids))
 
     def reloadJSON(self):
         super(MemberList, self).reloadJSON()
@@ -263,17 +259,15 @@ class MemberList(ResolverBase):
     def list(self, date=None):
         if not date:
             date = datetime.date.today().isoformat()
-        matches = self.members.values()
         ids = []
-        for m in matches:
+        for m in self.members.values():
             if 'start_date' in m and date >= m["start_date"] and date <= m["end_date"]:
                 ids.append(m["id"])
         return ids
 
     def list_all_dates(self):
-        matches = self.members.values()
         ids = []
-        for m in matches:
+        for m in self.members.values():
             ids.append(m["id"])
         return ids
 

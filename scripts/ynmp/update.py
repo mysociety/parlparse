@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import codecs
 import csv
@@ -7,7 +7,7 @@ import os
 import re
 import sys
 import unicodedata
-import urllib
+import urllib.request
 
 sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
 
@@ -74,11 +74,11 @@ def update_from(csv_url, data):
             mship = data['existing'][cons]
             if mship_has_changed(mship, new_mship):
                 changed = True
-                print "Updating %s with %s %s, %s, %s, %s" % (mship['id'], name['given_name'], name['family_name'], party, cons, person_id)
+                print("Updating %s with %s %s, %s, %s, %s" % (mship['id'], name['given_name'], name['family_name'], party, cons, person_id))
         else:
             changed = True
             data['max_mship_id'] += 1
-            print "NEW result %s, %s %s, %s, %s, %s" % (data['max_mship_id'], name['given_name'], name['family_name'], party, cons, person_id)
+            print("NEW result %s, %s %s, %s, %s, %s" % (data['max_mship_id'], name['given_name'], name['family_name'], party, cons, person_id))
             mship = {
                 'id': 'uk.org.publicwhip/member/%d' % data['max_mship_id'],
                 'post_id': data['posts_by_name'][cons]['id'],
@@ -94,7 +94,7 @@ def update_from(csv_url, data):
         mship = data['existing'][cons]
         if cons not in data['dealt_with'] and mship['person_id'] != 'uk.org.publicwhip/person/0':
             # This row has been removed from the CSV
-            print "Removing result from %s (was %s, %s, %s)" % (mship['id'], mship['post_id'], mship['on_behalf_of_id'], mship['person_id'])
+            print("Removing result from %s (was %s, %s, %s)" % (mship['id'], mship['post_id'], mship['on_behalf_of_id'], mship['person_id']))
             mship.update({
                 'on_behalf_of_id': 'none',
                 'person_id': 'uk.org.publicwhip/person/0',
@@ -110,7 +110,7 @@ def slugify(value):
     aren't alphanumerics, underscores, or hyphens. Converts to lowercase.
     Also strips leading and trailing whitespace.
     """
-    value = unicodedata.normalize('NFKD', unicode(value)).encode('ascii', 'ignore').decode('ascii')
+    value = unicodedata.normalize('NFKD', str(value)).encode('ascii', 'ignore').decode('ascii')
     value = re.sub('[^\w\s-]', '', value).strip().lower()
     return re.sub('[-\s]+', '-', value)
 
@@ -172,13 +172,13 @@ PARTY_YNMP_TO_TWFY = {
 
 
 def ynmp_csv_reader(fn):
-    if isinstance(fn, basestring):
-        fn = urllib.urlopen(fn)
+    if isinstance(fn, str):
+        fn = urllib.request.urlopen(fn)
     for row in csv.DictReader(fn):
         assert row['election_slug'] == 'parl.2019-12-12'
         name = row['person_name'].decode('utf-8').strip()
         # TWFY has separate first/last name fields. This should catch most.
-        m = re.match(u'(.*?) ((?:ap |van |de |di |von |st |duncan |lloyd |\u00d3 )*[^ ]*(?: Jnr)?)$(?i)', name)
+        m = re.match('(.*?) ((?:ap |van |de |di |von |st |duncan |lloyd |\u00d3 )*[^ ]*(?: Jnr)?)$(?i)', name)
         given, family = m.groups()
         party = row['party_name'].decode('utf-8')
         party = PARTY_YNMP_TO_TWFY.get(party, party)
