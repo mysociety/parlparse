@@ -1,6 +1,5 @@
 import json
 import os.path
-import string
 import re
 from contextexception import ContextException
 
@@ -22,7 +21,7 @@ titleconv = {  'L.':'Lord',
 
 hontitles = [ 'Lord  ?Bishop', 'Bishop', 'Marquess', 'Lord', 'Baroness', 'Viscount', 'Earl', 'Countess', 
           'Lord Archbishop', 'Archbishop', 'Duke', 'Lady' ]
-hontitleso = string.join(hontitles, '|')
+hontitleso = '|'.join(hontitles)
 
 honcompl = re.compile('(?:(%s)|(%s) \s*(.*?))(?:\s+of\s+(.*))?$' % (hontitleso, hontitleso))
 
@@ -44,12 +43,12 @@ class LordsList(ResolverBase):
             return
 
         if mship["id"] in self.membertopersonmap:
-            raise Exception, "Same member id %s appeared twice" % mship["id"]
+            raise Exception("Same member id %s appeared twice" % mship["id"])
         self.membertopersonmap[mship["id"]] = mship['person_id']
         self.persontomembermap.setdefault(mship['person_id'], []).append(mship["id"])
 
         if self.members.get(mship["id"]):
-            raise Exception, "Repeated identifier %s in members JSON file" % mship["id"]
+            raise Exception("Repeated identifier %s in members JSON file" % mship["id"])
         self.members[mship["id"]] = mship
 
         if 'end_date' not in mship:
@@ -62,7 +61,6 @@ class LordsList(ResolverBase):
         lname = re.sub("\.", "", lname)
         assert lname
         attr = {
-            "id": m["id"],
             "title": name["honorific_prefix"],
             "lordname": name.get("lordname", ""),
             "lordofname": name.get("lordofname", ""),
@@ -71,6 +69,7 @@ class LordsList(ResolverBase):
             newattr = attr.copy()
             newattr['start_date'] = max(m['start_date'], name.get('start_date', '1000-01-01'))
             newattr['end_date'] = min(m['end_date'], name.get('end_date', '9999-12-31'))
+            newattr['id'] = m["id"]
             self.lordnames.setdefault(lname, []).append(newattr)
 
     def import_people_alternate_name(self, person, other_name, memberships):
@@ -84,8 +83,8 @@ class LordsList(ResolverBase):
         if ltitle == "Lord Archbishop":
             ltitle = "Archbishop"
 
-        llordofname = string.replace(llordofname, ".", "")
-        llordname = string.replace(llordname, ".", "")
+        llordofname = llordofname.replace(".", "")
+        llordname = llordname.replace(".", "")
         llordname = re.sub('&#(039|146|8217);', "'", llordname)
 
         llordofname = llordofname.strip()
@@ -130,7 +129,7 @@ class LordsList(ResolverBase):
                 if lm["start_date"] <= sdate <= lm["end_date"]:
                     if lm["lordname"] and llordofname:
                         #if not IsNotQuiet():
-                        print "cm---", ltitle, lm["lordname"], lm["lordofname"], llordname, llordofname
+                        print("cm---", ltitle, lm["lordname"], lm["lordofname"], llordname, llordofname)
                         raise ContextException("lordofname matches lordname in lordlist", stamp=stampurl, fragment=lname)
                     else:
                         assert lm["lordofname"] and llordname
@@ -139,7 +138,7 @@ class LordsList(ResolverBase):
                             raise ContextException("lordname matches lordofname in lordlist", stamp=stampurl, fragment=lname)
                     res.append(lm)
                 elif ltitle != "Bishop" and ltitle != "Archbishop" and (ltitle, lname) not in (("Duke", "Norfolk"), ("Duke", "Wellington"), ('Earl', 'Kinnoull'), ('Earl', 'Selborne')):
-                    print lm
+                    print(lm)
                     raise ContextException("wrong dates on lords with same name", stamp=stampurl, fragment=lname)
 
         if not res:
@@ -187,19 +186,19 @@ class LordsList(ResolverBase):
         assert fss
         lfn = re.match('(.*?)(?: of (.*?))?, {0,3}((?:L|B|Abp|Bp|V|E|D|M|C|Ly)\.?)$', fss)
         if not lfn:
-            print "$$$%s$$$" % fss
+            print("$$$%s$$$" % fss)
             raise ContextException("No match of format in MatchRevName", stamp=stampurl, fragment=fss)
         shorttitle = lfn.group(3)
         if shorttitle[-1] != '.':
             shorttitle += "."
         ltitle = titleconv[shorttitle]
-        llordname = string.replace(lfn.group(1), ".", "")
-        llordname = string.replace(llordname, "&#039;", "'")
+        llordname = lfn.group(1).replace(".", "")
+        llordname = llordname.replace("&#039;", "'")
         llordname = re.sub("^De ", "de ", llordname)
         fullname = '%s %s' % (ltitle, llordname)
         llordofname = ""
         if lfn.group(2):
-            llordofname = string.replace(lfn.group(2), ".", "")
+            llordofname = lfn.group(2).replace(".", "")
             fullname = '%s of %s' % (fullname, llordofname)
 
         if fullname in self.aliases:

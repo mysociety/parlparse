@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import codecs
 import csv
@@ -49,7 +49,7 @@ def update_from(csv_url, data):
 
         changed = True
         data['max_mship_id'] += 1
-        print "NEW result %s, %s %s, %s, %s, %s" % (data['max_mship_id'], name['given_name'], name['family_name'], party, cons, person_id)
+        print("NEW result %s, %s %s, %s, %s, %s" % (data['max_mship_id'], name['given_name'], name['family_name'], party, cons, person_id))
         mship = {
             'id': 'uk.org.publicwhip/member/%d' % data['max_mship_id'],
             'post_id': data['posts_by_name'][cons]['id'],
@@ -70,7 +70,7 @@ def slugify(value):
     aren't alphanumerics, underscores, or hyphens. Converts to lowercase.
     Also strips leading and trailing whitespace.
     """
-    value = unicodedata.normalize('NFKD', unicode(value)).encode('ascii', 'ignore').decode('ascii')
+    value = unicodedata.normalize('NFKD', str(value)).encode('ascii', 'ignore').decode('ascii')
     value = re.sub('[^\w\s-]', '', value).strip().lower()
     return re.sub('[-\s]+', '-', value)
 
@@ -133,7 +133,7 @@ PARTY_YNMP_TO_TWFY = {
 
 
 def dadem_csv_reader(fn):
-    if isinstance(fn, basestring):
+    if isinstance(fn, str):
         fn = open(fn)
     for row in csv.DictReader(fn):
         given = row['First']

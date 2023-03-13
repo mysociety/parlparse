@@ -55,7 +55,7 @@ for l in string.ascii_lowercase:
     for li in lis:
         a = li.find('a')
         url = a['href']
-        print '\r\x1b[K' + url,
+        print('\r\x1b[K' + url, end=' ')
         html = requests.get('https://api.parliament.uk/historic-hansard/people/%s/index.html' % url).text
         if html == 'Page not found':
             html = requests.get('https://api.parliament.uk/historic-hansard/people/%s' % url).text
@@ -99,10 +99,10 @@ for l in string.ascii_lowercase:
                     people[name] = [mm for mm in people[name] if mm['id'] != pid]
                     found = True
             if not found:
-                print '\n', url, presence[pid]['min'], presence[pid]['max'], fr, to
+                print('\n', url, presence[pid]['min'], presence[pid]['max'], fr, to)
                 raise Exception
         else:
-            print '\n', matches, url
+            print('\n', matches, url)
             raise Exception
 
 json.dump(data, open(JSON, 'w'), indent=2, sort_keys=True)

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from os import path, sys
 
@@ -59,7 +59,7 @@ popolo = Popolo()
 
 for candidate in candidates:
 
-    logger.debug(u"Looking at {} ({}):".format(
+    logger.debug("Looking at {} ({}):".format(
         candidate["name"],
         candidate["wikidata_id"]
     ))
@@ -68,14 +68,14 @@ for candidate in candidates:
 
     if person:
 
-        logger.debug(u"{} ({}) matched to existing person {} by Wikidata ID".format(
+        logger.debug("{} ({}) matched to existing person {} by Wikidata ID".format(
             candidate["name"],
             candidate["wikidata_id"],
             person["id"]
         ))
 
         if "parlparse_id" not in candidate:
-            logger.warning(u"{} ({}) does not have a TWFY ID set in Wikidata. Expected {}.".format(
+            logger.warning("{} ({}) does not have a TWFY ID set in Wikidata. Expected {}.".format(
                 candidate["name"],
                 candidate["wikidata_id"],
                 person["id"]
@@ -84,7 +84,7 @@ for candidate in candidates:
         else:
 
             if candidate["parlparse_id"] != person["id"]:
-                logger.warning(u"{} ({}) has a parlparse ID of {}, expected {}.".format(
+                logger.warning("{} ({}) has a parlparse ID of {}, expected {}.".format(
                     candidate["name"],
                     candidate["wikidata_id"],
                     candidate["parlparse_id"],
@@ -92,14 +92,14 @@ for candidate in candidates:
                 ))
 
             else:
-                logger.debug(u"{} ({}) has expected parlparse ID".format(
+                logger.debug("{} ({}) has expected parlparse ID".format(
                     candidate["name"],
                     candidate["wikidata_id"],
                 ))
 
     else:
 
-        logger.debug(u"Creating parlparse ID for {} ({})".format(candidate["name"], candidate["wikidata_id"]))
+        logger.debug("Creating parlparse ID for {} ({})".format(candidate["name"], candidate["wikidata_id"]))
 
         new_person_id = new_id(popolo.max_person_id())
         logger.debug("Parlparse ID is {}".format(new_person_id))

@@ -1,12 +1,12 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
-import urllib2
+import urllib.request
 import csv
 import xml.sax
 
 uri = "http://spreadsheets.google.com/tq?tqx=out:csv&key=0AjWA_TWMI4t_dFI5MWRWZkRWbFJ6MVhHQzVmVndrZnc&hl=en_GB"
 
-f = urllib2.urlopen(uri)
+f = urllib.request.urlopen(uri)
 csv_data = f.read()
 lines = csv_data.split("\n")
 rows = csv.reader(lines.__iter__(), delimiter=',', quotechar='"')

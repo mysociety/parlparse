@@ -1,10 +1,4 @@
-#! /usr/bin/python
-
-import json
 import re
-import string
-import copy
-import sys
 import datetime
 from contextexception import ContextException
 
@@ -32,9 +26,6 @@ class MemberList(ResolverBase):
         self.import_constituencies("constituencies.json")
         self.import_people_json()
 
-    def partylist(self):
-        return self.parties.keys()
-
     def list(self, date=None, fro=None, to=None):
         if date == 'now':
             date = datetime.date.today().isoformat()
@@ -44,16 +35,15 @@ class MemberList(ResolverBase):
             fro = '1000-01-01'
         if not to:
             to = '9999-12-31'
-        matches = self.members.values()
         ids = []
-        for m in matches:
+        for m in self.members.values():
             if 'start_date' in m and to >= m["start_date"] and fro <= m["end_date"]:
                 ids.append(self.membertoperson(m["id"]))
         return ids
 
     # useful to have this function out there
     def striptitles(self, text):
-        text = text.replace("&rsquo;", "'").replace(u'\u2019', "'")
+        text = text.replace("&rsquo;", "'").replace('\u2019', "'")
         text = text.replace("&nbsp;", " ")
         (text, titletotal) = self.retitles.subn("", text)
         text = self.rehonorifics.sub("", text)
@@ -82,7 +72,7 @@ class MemberList(ResolverBase):
             matches.extend(self.parties.get("Speaker", []))
         if not matches and text in ('Deputy Speaker', 'Madam Deputy Speaker', 'The Deputy Speaker', 'The Principal Deputy Speaker', 'Madam Principal Deputy Speaker'):
             if not self.deputy_speaker:
-                raise ContextException, 'Deputy speaker speaking, but do not know who it is'
+                raise ContextException('Deputy speaker speaking, but do not know who it is')
             return self.fullnametoids(self.deputy_speaker, date)
 
         if matches:
@@ -100,9 +90,9 @@ class MemberList(ResolverBase):
         ids = self.fullnametoids(input, date)
         ids = set(map(self.membertoperson, ids))
         if len(ids) == 0:
-            raise ContextException, "No match %s" % input
+            raise ContextException("No match %s" % input)
         if len(ids) > 1:
-            raise ContextException, "Multiple matches %s, possibles are %s" % (input, ids)
+            raise ContextException("Multiple matches %s, possibles are %s" % (input, ids))
         id = ids.pop()
         return id
 
@@ -135,7 +125,7 @@ class MemberList(ResolverBase):
         if len(ids) == 0:
             if not re.search('Some Members|A Member|Several Members|Members', input):
                 # import pdb;pdb.set_trace()
-                raise ContextException, "No matches %s" % (input)
+                raise ContextException("No matches %s" % (input))
             return None, 'person_id="unknown" error="No match" speakername="%s"' % (input)
         if len(ids) > 1 and 'uk.org.publicwhip/member/90355' in ids:
             # Special case for 8th May, when Mr Hay becomes Speaker
@@ -144,7 +134,7 @@ class MemberList(ResolverBase):
             elif input == 'Mr Speaker':
                 ids.remove('uk.org.publicwhip/member/90287')
             else:
-                raise ContextException, 'Problem with Mr Hay!'
+                raise ContextException('Problem with Mr Hay!')
         elif len(ids) > 1 and 'uk.org.publicwhip/member/90449' in ids:
             # Special case for 2015-01-12, when Mr McLaughlin becomes Speaker
             if input == 'Mr Mitchel McLaughlin':
@@ -154,13 +144,13 @@ class MemberList(ResolverBase):
             elif input == 'Mr Speaker':
                 ids.remove('uk.org.publicwhip/member/90449')
             else:
-                raise ContextException, 'Problem with Mr McLaughlin! Got "%s"' % input
+                raise ContextException('Problem with Mr McLaughlin! Got "%s"' % input)
         elif len(ids) > 1:
             names = ""
             for id in ids:
                 name = self.name_on_date(self.membertoperson(id), date)
                 names += '%s %s (%s) ' % (id, name, self.members[id]["constituency"])
-            raise ContextException, "Multiple matches %s, possibles are %s" % (input, names)
+            raise ContextException("Multiple matches %s, possibles are %s" % (input, names))
             return None, 'person_id="unknown" error="Matched multiple times" speakername="%s"' % (input)
         for id in ids:
             pass

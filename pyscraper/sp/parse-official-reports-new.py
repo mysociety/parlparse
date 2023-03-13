@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # coding=UTF-8
 
 from cgi import escape
@@ -83,7 +83,7 @@ def is_division_way(element, report_date=None):
         # strings that begin 'FOR', so only try it on short strings
         # that might be introducing a division, and assume that there
         # are 2 to 4 words in the name:
-        m1 = re.search(r'^(?i)VOTES? FOR ([A-Z ]+)$', tidied)
+        m1 = re.search(r'(?i)^VOTES? FOR ([A-Z ]+)$', tidied)
         m2 = re.search(r'^FOR ((?:[A-Z]+\s*){2,4})$', tidied)
         m = m1 or m2
         if m:
@@ -157,7 +157,7 @@ def get_unique_person_id(tidied_speaker, on_date):
     elif len(ids) == 1:
         return ids[0]
     else:
-        raise Exception, "The speaker '%s' could not be resolved, found: %s" % (tidied_speaker, ids)
+        raise Exception("The speaker '%s' could not be resolved, found: %s" % (tidied_speaker, ids))
 
 
 def is_member_vote(element, vote_date, expecting_a_vote=True):
@@ -219,9 +219,9 @@ def is_member_vote(element, vote_date, expecting_a_vote=True):
     person_id = get_unique_person_id(reformed_name, str(vote_date))
 
     if person_id is None and expecting_a_vote:
-        print "reformed_name is:", reformed_name
-        print "vote_date is:", vote_date
-        raise Exception, "A voting member '%s' couldn't be resolved" % (reformed_name,)
+        print("reformed_name is:", reformed_name)
+        print("vote_date is:", vote_date)
+        raise Exception("A voting member '%s' couldn't be resolved" % (reformed_name,))
     else:
         return person_id
 
@@ -265,22 +265,22 @@ def get_title_and_date(soup, page_id):
 
     title_elements = soup.findAll(attrs={"id" : "ReportView_ReportViewHtml_lblReportTitle"})
     if len(title_elements) > 1:
-        raise Exception, "Too many title elements were found"
+        raise Exception("Too many title elements were found")
     elif len(title_elements) == 0:
-        raise Exception, "No title elements were found"
+        raise Exception("No title elements were found")
     title = title_elements[0].string
     if not title:
         if is_page_empty(soup):
             return (None, None)
         else:
-            raise Exception, "No title was found in a page that's non-empty; the page ID was: %d" % (page_id,)
+            raise Exception("No title was found in a page that's non-empty; the page ID was: %d" % (page_id,))
     title = re.sub(r'\(Hybrid\) 202(\d)', r'202\1 (Hybrid)', title)
     m = re.search(r'''(?x)
             ^(.*) \s+
             (?: [(] (?:Hybrid) [)] \s* )?
             ( \d{1,2} [ ] \w+ [ ] \d{4} ) \s*
-            (?: [[({] (?:Virtual|Hybrid) (?: \s (?:Session|Meeting))? [)\][}] \s* )?
-            (?: [[({] Draft [)\][}] \s* )?
+            (?: [\[({] (?:Virtual|Hybrid) (?: \s (?:Session|Meeting))? [)\][}] \s* )?
+            (?: [\[({] Draft [)\][}] \s* )?
             (?: Business [ ] (?:until|to|from|between) [ ] \d\d:\d\d (?: [ ] (?:until|to|and|and[ ]after) [ ] \d\d:\d\d)?
                 | Test
                 | \1
@@ -298,7 +298,7 @@ def get_title_and_date(soup, page_id):
             report_date = dateparser.parse(m.group(2)).date()
             return (session, report_date)
         else:
-            raise Exception, "Failed to parse the title and date from: {0}".format(title)
+            raise Exception("Failed to parse the title and date from: {0}".format(title))
 
 acceptable_elements = ['a', 'abbr', 'acronym', 'address', 'area', 'b',
       'big', 'blockquote', 'body', 'br', 'button', 'caption', 'center',
@@ -367,7 +367,7 @@ class ParsedPage(object):
         self.sections = []
 
     def __unicode__(self):
-        return unicode(self.report_date) + u": " + self.session
+        return str(self.report_date) + ": " + self.session
 
     @property
     def normalized_session_name(self):
@@ -431,7 +431,7 @@ class Section(object):
             s = speech_or_division
             return s.person_id or s.speaker_name or "nospeaker"
         else:
-            raise Exception, "Unknown type %s passed to group_by_key" % (type(speech_or_division),)
+            raise Exception("Unknown type %s passed to group_by_key" % (type(speech_or_division),))
 
     def tidy_speeches(self):
         # First remove any empty speeches:
@@ -471,7 +471,7 @@ class Division(object):
 
     def add_vote(self, which_way, voter_name, voter_id):
         if which_way not in DIVISION_HEADINGS:
-            raise Exception, "add_votes for unknown way: " + str(which_way)
+            raise Exception("add_votes for unknown way: " + str(which_way))
         self.votes[which_way].append((voter_name, voter_id))
 
     def as_xml(self, division_id):
@@ -572,7 +572,7 @@ def parse_html(session, report_date, soup, page_id, original_url):
     report_view = soup.find('div', attrs={'id': 'ReportView'})
     div_children_of_report_view = report_view.findChildren('div', recursive=False)
     if len(div_children_of_report_view) != 1:
-        raise Exception, 'We only expect one <div> child of <div id="ReportView">; there were %d in page with ID %d' % (len(div_children_of_report_view), page_id)
+        raise Exception('We only expect one <div> child of <div id="ReportView">; there were %d in page with ID %d' % (len(div_children_of_report_view), page_id))
 
     main_div = div_children_of_report_view[0]
 
@@ -593,11 +593,11 @@ def parse_html(session, report_date, soup, page_id, original_url):
         if link.name == 'br':
             continue
         if link.name != 'a':
-            raise Exception, "There was something other than a <br> or an <a> in the supposed contents <div>, for page ID: %d" % (page_id,)
+            raise Exception("There was something other than a <br> or an <a> in the supposed contents <div>, for page ID: %d" % (page_id,))
         href = link['href']
         m = re.search(r'#(.*)', href)
         if not m:
-            raise Exception, "Failed to find the ID from '%s' in page with ID: %d" % (href, page_id)
+            raise Exception("Failed to find the ID from '%s' in page with ID: %d" % (href, page_id))
         contents_tuples.append((m.group(1), tidy_string(non_tag_data_in(link))))
 
     parsed_page = ParsedPage(session, report_date, page_id)
@@ -614,12 +614,12 @@ def parse_html(session, report_date, soup, page_id, original_url):
     for top_level in text_div:
         # There are sometimes some empty NavigableString elements at
         # the top level, so just ignore those:
-        if not len(unicode(top_level).strip()):
+        if not len(str(top_level).strip()):
             continue
         if top_level.name == 'h2':
-            section_title = tidy_string(non_tag_data_in(top_level, tag_replacement=u' '))
+            section_title = tidy_string(non_tag_data_in(top_level, tag_replacement=' '))
             if not section_title:
-                raise Exception, "There was an empty section title in page ID: %d" % (page_id)
+                raise Exception("There was an empty section title in page ID: %d" % (page_id))
             parsed_page.sections.append(
                 Section(section_title, current_url))
         elif top_level.name in ('br',):
@@ -645,7 +645,7 @@ def parse_html(session, report_date, soup, page_id, original_url):
                         if span.has_attr('style') and 'font-size:10pt;font-weight:bold' in span['style']:
                             span.name = 'b'
                         else:
-       		            span.unwrap()
+                            span.unwrap()
                     p.unwrap()
 
             removed_number = None
@@ -669,17 +669,17 @@ def parse_html(session, report_date, soup, page_id, original_url):
                         # Ignore the line breaks...
                         pass
                     elif speech_part.name == 'ul':
-                        current_speech.paragraphs.append(unicode(speech_part))
+                        current_speech.paragraphs.append(str(speech_part))
                     elif speech_part.name in ('sup', 'sub'):
                         # sometimes the degree symbol is used so we need
                         # to replace it with an entity and then convert to
                         # ascii otherwise we get a codec error
-                        current_speech.paragraphs[-1] += str(unicode(speech_part).replace(u'\xb0', '&#176;'))
+                        current_speech.paragraphs[-1] += str(str(speech_part).replace('\xb0', '&#176;'))
                     elif speech_part.name == 'a' and speech_part.text == '':
                         # skip empty a anchors
                         pass
                     else:
-                        raise Exception, "Unexpected tag '%s' in page ID: %d" % (speech_part, page_id)
+                        raise Exception("Unexpected tag '%s' in page ID: %d" % (speech_part, page_id))
                 elif isinstance(speech_part, NavigableString):
                     tidied_paragraph = tidy_string(speech_part)
                     if tidied_paragraph == "":
@@ -716,8 +716,8 @@ def parse_html(session, report_date, soup, page_id, original_url):
                         current_division_way = division_way
                     elif member_vote:
                         if current_votes is None:
-                            print tidied_paragraph
-                            raise Exception, "Got a member's vote before an indication of which way the vote is"
+                            print(tidied_paragraph)
+                            raise Exception("Got a member's vote before an indication of which way the vote is")
                         current_votes.add_vote(current_division_way, tidied_paragraph, member_vote)
                     elif maybe_time:
                         current_time = maybe_time
@@ -738,10 +738,10 @@ def parse_html(session, report_date, soup, page_id, original_url):
                     if suspended and suspension_time:
                         current_time = suspension_time
                 else:
-                    raise Exception, "Totally unparsed element:\n%s\n... unhandled in page ID: %d" % (speech_part, page_id)
+                    raise Exception("Totally unparsed element:\n%s\n... unhandled in page ID: %d" % (speech_part, page_id))
 
         else:
-            raise Exception, "There was an unhandled element '%s' in page with ID: %d" % (top_level.name, page_id)
+            raise Exception("There was an unhandled element '%s' in page with ID: %d" % (top_level.name, page_id))
 
     return parsed_page
 
@@ -801,13 +801,13 @@ if __name__ == '__main__':
             last_modified = datetime.datetime.fromtimestamp(os.path.getmtime(html_filename))
             if last_modified < earliest_to_consider:
                 if options.verbose:
-                    print "Skipping", html_filename, "(it's well before %s)" % (from_date,)
+                    print("Skipping", html_filename, "(it's well before %s)" % (from_date,))
                 continue
 
         m = re.search(r'^(\d+)\.html$', filename)
         if not m:
             if options.verbose:
-                print "Skipping", html_filename, "(wrong filename format)"
+                print("Skipping", html_filename, "(wrong filename format)")
             continue
         page_id = int(m.group(1), 10)
         if page_id < 9500:
@@ -820,7 +820,7 @@ if __name__ == '__main__':
         try:
             if os.path.getsize(html_filename) == 0:
                 if options.verbose:
-                    print "Skipping", html_filename, "(empty)"
+                    print("Skipping", html_filename, "(empty)")
                 continue
             official_url = official_report_url_format.format(page_id)
             # Do a quick parse of the page first, to extract the date
@@ -830,11 +830,11 @@ if __name__ == '__main__':
                                                           official_url)
             if session is None:
                 if options.verbose:
-                    print "Skipping", html_filename, "(not useful after parsing)"
+                    print("Skipping", html_filename, "(not useful after parsing)")
                 continue
             if report_date < from_date or report_date > to_date:
                 if options.verbose:
-                    print "Skipping", html_filename, "(outside requested date range)"
+                    print("Skipping", html_filename, "(outside requested date range)")
                 continue
             parsed_page = parse_html(session,
                                      report_date,
@@ -845,17 +845,17 @@ if __name__ == '__main__':
             # print "parsing the file '%s' failed, with the exception:" % (filename,)
             # print unicode(e).encode('utf-8')
             # traceback.print_exc()
-            print "parsing the file '%s' failed" % (filename,)
+            print("parsing the file '%s' failed" % (filename,))
             raise
 
         if parsed_page is None:
             if options.verbose:
-                print "Skipping", html_filename, "(outside requested date range)"
+                print("Skipping", html_filename, "(outside requested date range)")
         else:
             parsed_page.tidy_speeches()
 
             if options.verbose:
-                print "Parsed", parsed_page.suggested_file_name
+                print("Parsed", parsed_page.suggested_file_name)
             output_filename = os.path.join(xml_output_directory,
                                            parsed_page.suggested_file_name)
             output_directory, output_leafname = os.path.split(output_filename)
@@ -879,8 +879,8 @@ if __name__ == '__main__':
 
             if changed_output:
                 if not options.quiet:
-                    print "Parsed and changed", parsed_page.suggested_file_name
-                os.chmod(ntf.name, 0644)
+                    print("Parsed and changed", parsed_page.suggested_file_name)
+                os.chmod(ntf.name, 0o644)
                 os.rename(ntf.name, output_filename)
                 changedates_filename = os.path.join(xml_output_directory,
                                                      output_directory,
@@ -890,5 +890,5 @@ if __name__ == '__main__':
                                           output_leafname))
             else:
                 if options.verbose:
-                    print "  not writing, since output is unchanged"
+                    print("  not writing, since output is unchanged")
                 os.remove(ntf.name)

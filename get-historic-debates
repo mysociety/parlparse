@@ -11,7 +11,7 @@ import requests
 import requests_cache
 from xml.sax.saxutils import escape, quoteattr
 from lxml import html, etree
-from urlparse import urljoin
+from urllib.parse import urljoin
 
 requests_cache.install_cache(cache_name='debates', allowable_codes=(200, 404))
 BASE_SOURCE_URL = 'https://api.parliament.uk'
@@ -183,9 +183,9 @@ def walk(ol, typ, prefix=''):
             title = link.text_content()
             url = BASE_SOURCE_URL + link.get('href')
             if re.match('ORALL? ANS[WN]?ERS? [Tt][Oo] [OQU]UESTIONS?[.,]?$', title):
-                next_prefix = u'Oral Answers to Questions &#8212; '
+                next_prefix = 'Oral Answers to Questions &#8212; '
             elif re.match('ORDERS OF THE\.? DAY[.,:]?$', title):
-                next_prefix = u'Orders of the Day &#8212; '
+                next_prefix = 'Orders of the Day &#8212; '
             else:
                 next_prefix = ''
                 out += output_xml('%s-heading' % typ, '%s%s' % (prefix, escape(title)), url)
@@ -225,13 +225,13 @@ for year in range(1919, 1935+1):
             if "id='commons'" not in res.content:
                 continue
 
-            print '\r\x1b[K%d' % year, month, day,
+            print('\r\x1b[K%d' % year, month, day, end=' ')
             date = '%d-%02d-%02d' % (year, months.index(month)+1, day)
             col = 0
 
             tree = html.fromstring(res.content)
             ol = tree.cssselect('h3#commons + ol')[0]
-            out = u'<publicwhip scrapeversion="a" latest="yes">\n'
+            out = '<publicwhip scrapeversion="a" latest="yes">\n'
             out += walk(ol, 'major')
             out += '</publicwhip>\n'
 

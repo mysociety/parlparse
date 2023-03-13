@@ -1,10 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # vim:sw=8:ts=8:et:nowrap
 
 import sys
 import os
 import shutil
-import string
 import miscfuncs
 import re
 import tempfile
@@ -34,8 +33,8 @@ def GenPatchFileNames(typ, sdate):
 		stub = "ministerial"
 	elif typ == "standing":
 		stub = "standing"
-        elif typ[0:9] == 'chgpages/':
-                stub = re.sub('chgpages/', '', typ)
+	elif typ[0:9] == 'chgpages/':
+		stub = re.sub('chgpages/', '', typ)
 	else:
 		stub = typ
 
@@ -66,7 +65,7 @@ def RunPatchToolW(typ, sdate, stamp, frag):
 
 	shutil.copyfile(orgfile, tmpfile)
 	if os.path.isfile(patchfile):
-		print "Patching ", patchfile
+		print("Patching ", patchfile)
 		status = os.system('patch --quiet "%s" < "%s"' % (tmpfile, patchfile))
 
 	# run the editor (first finding the line number to be edited)
@@ -86,16 +85,16 @@ def RunPatchToolW(typ, sdate, stamp, frag):
 	if not frag:
 		fragl = -1
 	elif ganamef:
-		fragl = string.find(ganamef.group(1), str(frag))
+		fragl = ganamef.group(1).find(str(frag))
 	else:
-		fragl = string.find(rforlines, str(frag))
+		fragl = rforlines.find(str(frag))
 	if fragl != -1:
 		gp += fragl
 
-	gl = string.count(rforlines, '\n', 0, gp)
+	gl = rforlines.count('\n', 0, gp)
 	gc = 0
 	if gl:
-		gc = gp - string.rfind(rforlines, '\n', 0, gp)
+		gc = gp - rforlines.rfind('\n', 0, gp)
 	#print "find loc codes ", gp, gl, gc
 
 	if 1==0 and sys.platform == "win32":
@@ -113,23 +112,23 @@ def RunPatchToolW(typ, sdate, stamp, frag):
 		os.remove(tmppatchfile)
 	ern = os.system('diff -u "%s" "%s" > "%s"' % (orgfile, tmpfile, tmppatchfile))
 	if ern == 2:
-		print "Error running diff"
+		print("Error running diff")
 		sys.exit(1)
 	os.remove(tmpfile)
 	if os.path.isfile(patchfile):
 		os.remove(patchfile)
 	if os.path.getsize(tmppatchfile):
 		os.rename(tmppatchfile, patchfile)
-		print "Making patchfile ", patchfile
+		print("Making patchfile ", patchfile)
 
 
 def RunPatchTool(typ, sdatext, ce):
 	if not ce.stamp:
-		print "No stamp available, so won't move your cursor to right place"
+		print("No stamp available, so won't move your cursor to right place")
 	else:
 		assert ce.stamp.sdate[:10] == sdatext[:10]  # omitting the letter extension
 
-	print "\nHit RETURN to launch your editor to make patches "
+	print("\nHit RETURN to launch your editor to make patches ")
 	sys.stdin.readline()
 	RunPatchToolW(typ, sdatext, ce.stamp, ce.fragment)
 	memberList.reloadJSON()
@@ -145,7 +144,7 @@ if __name__ == '__main__':
 	#print args
 
 	if len(args) != 3:
-                print """
+		print("""
 This generates files for the patchfilter.py filter.
 
 They are standard patch files which apply to the glued HTML files which we
@@ -158,7 +157,7 @@ Run this tool like this:
 This will launch your editor, and upon exit write out a patch of your changes
 in the patches folder underneath this folder.  The original file is
 untouched.  We consider the patches permanent data, so add them to CVS.
-"""
- 		sys.exit(1)
+""")
+		sys.exit(1)
 	RunPatchToolW(args[1], args[2], None, "")
 

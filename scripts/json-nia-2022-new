@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os
 import requests
@@ -19,7 +19,7 @@ CONS_FIXES = {
 PARTY_FIXES = {
     'alliance-party': 'alliance',
     'democratic-unionist-party': 'dup',
-    u'sinn-f\xe9in': 'sinn-fein',
+    'sinn-f\xe9in': 'sinn-fein',
     'ulster-unionist-party': 'uup',
 }
 NAME_FIXES = {
@@ -88,7 +88,7 @@ for member in members['AllMembersList']['Member']:
         "start_date": "2022-05-05",
         "start_reason": "regional_election"
     }
-    print cons, name, mship['on_behalf_of_id'], mship['person_id']
+    print(cons, name, mship['on_behalf_of_id'], mship['person_id'])
     data.add_membership(mship)
 
 data.dump()

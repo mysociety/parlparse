@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: latin-1 -*-
 
 # Screen scrape list of links to MLAs on Wikipedia, so we can link to the articles.
@@ -9,7 +9,7 @@
 # For details see the file LICENSE.html in the top level of the source.
 
 import sys
-import urlparse
+import urllib.parse
 import re
 
 sys.path.extend((".", ".."))
@@ -55,18 +55,17 @@ for (url, name, cons) in matches:
     pid = memberList.match_person(name, date)
     wikimembers[pid] = url
 
-print '''<?xml version="1.0" encoding="ISO-8859-1"?>
-<publicwhip>'''
-k = wikimembers.keys()
-k.sort()
+print('''<?xml version="1.0" encoding="ISO-8859-1"?>
+<publicwhip>''')
+k = sorted(wikimembers)
 for id in k:
-    url = urlparse.urljoin(wiki_index_url, wikimembers[id])
-    print '<personinfo id="%s" wikipedia_url="%s" />' % (id, url)
-print '</publicwhip>'
+    url = urllib.parse.urljoin(wiki_index_url, wikimembers[id])
+    print('<personinfo id="%s" wikipedia_url="%s" />' % (id, url))
+print('</publicwhip>')
 
 wikimembers = set(wikimembers.keys())
 allmembers = set(memberList.list(fro='2004-01-01'))
 symdiff = allmembers.symmetric_difference(wikimembers)
 if len(symdiff) > 0:
-    print >>sys.stderr, "Failed to get all MLAs, these ones in symmetric difference"
-    print >>sys.stderr, symdiff
+    print("Failed to get all MLAs, these ones in symmetric difference", file=sys.stderr)
+    print(symdiff, file=sys.stderr)

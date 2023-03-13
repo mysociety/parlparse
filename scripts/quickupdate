@@ -1,10 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 #
 # Thrown together
 # Currently only rescrapes/parses missing UK and NI from preivous day
 
 import glob
-import datetime, os, commands
+import datetime, os
 
 base = os.path.expanduser('~/')
 base_html = base + 'parldata/cmpages/'
@@ -24,9 +24,9 @@ suffixes = { 'ni': '' }
 
 def run_command(dir, cmd):
     #print 'Running', cmd
-    if dir: print 'cd %s%s' % (base_scraper, dir)
+    if dir: print('cd %s%s' % (base_scraper, dir))
     #os.chdir(base_scraper + dir)
-    print cmd
+    print(cmd)
     #status, output = commands.getstatusoutput(cmd)
     #print 'Exit status =', status
     #print 'Output', output
@@ -76,6 +76,6 @@ if reparse:
     if reparse:
         run_command('', './process_hansard.py # not parsed ' + ' '.join(reparse))
 
-print '# Parse/fix any older things from the cron email now'
+print('# Parse/fix any older things from the cron email now')
 
 run_command('', 'other-sites-update 0')

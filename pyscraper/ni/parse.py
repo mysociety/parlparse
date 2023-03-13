@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 import re
 import json
@@ -29,7 +29,7 @@ class ParseDayParserBase(object):
         match = re.search('(\d\d?)(?:[.:]\s*(\d\d?))? ?(am|pm|noon|midnight)', ptext)
         if not match:
             if not optional:
-                raise ContextException, 'Time not found in TimePeriod %s' % p
+                raise ContextException('Time not found in TimePeriod %s' % p)
             return None
         hour = int(match.group(1))
         if hour<12 and match.group(3) == 'pm':
@@ -83,7 +83,7 @@ class ParseDayJSON(ParseDayParserBase):
         for line in j:
             text = (line['ComponentText'] or '').replace('&', '&amp;')
             if not text:
-                print "WARNING: Empty line: %s" % line
+                print("WARNING: Empty line: %s" % line)
             elif line['ComponentType'] == 'Document Title':
                 assert re.match('(Plenary|PLE), %s/%s/%s$(?i)' % (self.date[8:10], self.date[5:7], self.date[0:4]), text), text
             elif line['ComponentType'] == 'Time':

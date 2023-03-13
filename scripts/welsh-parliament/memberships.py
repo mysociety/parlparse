@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from os import path, sys
 
@@ -89,7 +89,7 @@ popolo = Popolo()
 
 for candidate in candidates:
 
-    logger.debug(u"Looking at {}'s membership ({}):".format(
+    logger.debug("Looking at {}'s membership ({}):".format(
         candidate["name"],
         candidate["wikidata_id"]
     ))
@@ -98,14 +98,14 @@ for candidate in candidates:
 
     if membership:
 
-        logger.debug(u"{}'s membership ({}) matched to existing membership {} by Wikidata ID".format(
+        logger.debug("{}'s membership ({}) matched to existing membership {} by Wikidata ID".format(
             candidate["name"],
             candidate["wikidata_id"],
             membership["id"]
         ))
 
         if "parlparse_id" not in candidate:
-            logger.warning(u"{}'s membership ({}) does not have a TWFY ID set in Wikidata. Expected {}.".format(
+            logger.warning("{}'s membership ({}) does not have a TWFY ID set in Wikidata. Expected {}.".format(
                 candidate["name"],
                 candidate["wikidata_id"],
                 membership["id"]
@@ -114,7 +114,7 @@ for candidate in candidates:
         else:
 
             if candidate["parlparse_id"] != membership["id"]:
-                logger.warning(u"{}'s membership ({}) has a parlparse ID of {}, expected {}.".format(
+                logger.warning("{}'s membership ({}) has a parlparse ID of {}, expected {}.".format(
                     candidate["name"],
                     candidate["wikidata_id"],
                     candidate["parlparse_id"],
@@ -122,14 +122,14 @@ for candidate in candidates:
                 ))
 
             else:
-                logger.debug(u"{}'s membership ({}) has expected parlparse ID".format(
+                logger.debug("{}'s membership ({}) has expected parlparse ID".format(
                     candidate["name"],
                     candidate["wikidata_id"],
                 ))
 
     else:
 
-        logger.debug(u"Creating parlparse ID for {}'s membership ({})".format(candidate["name"], candidate["wikidata_id"]))
+        logger.debug("Creating parlparse ID for {}'s membership ({})".format(candidate["name"], candidate["wikidata_id"]))
 
         new_membership_id = new_id(popolo.max_ms_id())
         logger.debug("Parlparse ID is {}".format(new_membership_id))

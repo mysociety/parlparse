@@ -1,4 +1,3 @@
-#! /usr/bin/python
 # vim:sw=8:ts=8:et:nowrap
 
 import re
@@ -30,7 +29,7 @@ def MakeDayMap(folder, typ, basedir=pwcmdirs, extension='html'):
         elif ldfile.endswith('~') or ldfile == 'changedates.txt':
             pass
         elif os.path.isfile(os.path.join(pwcmfolder, ldfile)):
-            print "not recognized file:", ldfile, " in ", pwcmfolder
+            print("not recognized file:", ldfile, " in ", pwcmfolder)
 
     return lddaymap, pwcmfolder
 

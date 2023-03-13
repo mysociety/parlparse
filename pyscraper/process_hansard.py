@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import argparse
@@ -67,28 +67,28 @@ def handle_file(filename, debate_type):
     file_key = '{0}:{1}'.format(debate_type, filename)
     if file_key in entries:
         if ARGS.verbose:
-            print "already seen {0}, not parsing again".format(filename)
+            print("already seen {0}, not parsing again".format(filename))
         return False
 
     parser.reset()
     if ARGS.verbose:
-        print "looking at {0}".format(filename)
+        print("looking at {0}".format(filename))
     ret = parser.handle_file(join(zip_directory, filename), debate_type, ARGS.verbose)
 
     if ret == 'failed':
-        print "ERROR parsing {0} {1}".format(filename, debate_type)
+        print("ERROR parsing {0} {1}".format(filename, debate_type))
     elif ret == 'not-present':
         if ARGS.verbose:
-            print "Nothing to parse in {0} {1}".format(filename, debate_type)
+            print("Nothing to parse in {0} {1}".format(filename, debate_type))
     elif ret == 'same':
         prev_file = parser.prev_file.replace(toppath, '')
-        print "parsed {0}, no changes from {1}".format(filename, prev_file)
+        print("parsed {0}, no changes from {1}".format(filename, prev_file))
     elif ret in ('change', 'new'):
         output_file = parser.output_file.replace(toppath, '')
-        print "parsed {0} to {1}".format(filename, output_file)
+        print("parsed {0} to {1}".format(filename, output_file))
     else:
         output_file = parser.output_file.replace(toppath, '')
-        print "parsed {0} {1} to {2}, unknown return {3}".format(filename, debate_type, output_file, ret)
+        print("parsed {0} {1} to {2}, unknown return {3}".format(filename, debate_type, output_file, ret))
     entries.append(file_key)
 
     return True

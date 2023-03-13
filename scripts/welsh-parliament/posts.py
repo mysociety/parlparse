@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from os import path, sys
 
@@ -61,7 +61,7 @@ candidates.sort(key=lambda c: (c["start_date"], c["name"]))
 
 for candidate in candidates:
 
-    logger.debug(u"Looking at {} ({}):".format(
+    logger.debug("Looking at {} ({}):".format(
         candidate["name"],
         candidate["wikidata_id"]
     ))
@@ -70,14 +70,14 @@ for candidate in candidates:
 
     if post:
 
-        logger.debug(u"{} ({}) matched to existing post {} by Wikidata ID".format(
+        logger.debug("{} ({}) matched to existing post {} by Wikidata ID".format(
             candidate["name"],
             candidate["wikidata_id"],
             post["id"]
         ))
 
         if "parlparse_id" not in candidate:
-            logger.warning(u"{} ({}) does not have a TWFY ID set in Wikidata. Expected {}.".format(
+            logger.warning("{} ({}) does not have a TWFY ID set in Wikidata. Expected {}.".format(
                 candidate["name"],
                 candidate["wikidata_id"],
                 post["id"]
@@ -86,7 +86,7 @@ for candidate in candidates:
         else:
 
             if candidate["parlparse_id"] != post["id"]:
-                logger.warning(u"{} ({}) has a parlparse ID of {}, expected {}.".format(
+                logger.warning("{} ({}) has a parlparse ID of {}, expected {}.".format(
                     candidate["name"],
                     candidate["wikidata_id"],
                     candidate["parlparse_id"],
@@ -94,14 +94,14 @@ for candidate in candidates:
                 ))
 
             else:
-                logger.debug(u"{} ({}) has expected parlparse ID".format(
+                logger.debug("{} ({}) has expected parlparse ID".format(
                     candidate["name"],
                     candidate["wikidata_id"],
                 ))
 
     else:
 
-        logger.debug(u"Creating parlparse ID for {} ({})".format(candidate["name"], candidate["wikidata_id"]))
+        logger.debug("Creating parlparse ID for {} ({})".format(candidate["name"], candidate["wikidata_id"]))
 
         new_post_id = new_id(popolo.max_post_id("welsh-parliament", range_start = 70000))
         logger.debug("Parlparse ID is {}".format(new_post_id))
@@ -117,7 +117,7 @@ for candidate in candidates:
               "scheme": "wikidata"
             }
           ],
-          "label": u"MS for {}".format(candidate["name"]),
+          "label": "MS for {}".format(candidate["name"]),
           "organization_id": "welsh-parliament",
           "role": "MS",
         }

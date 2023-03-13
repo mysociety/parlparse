@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 import re
 import os
@@ -26,7 +26,7 @@ class ParseDay:
         self.out = streamWriter(self.out)
 
         if date < '2013-01-01':
-            raise Exception, 'Cannot parse pre 2013'
+            raise Exception('Cannot parse pre 2013')
 
         self.parse_xml_day(date)
         #self.out.write('</publicwhip>\n')
@@ -95,10 +95,10 @@ class ParseDay:
 
     def display_major_heading(self, item):
         agenda = self.getTagValue(item, 'Agenda_item_english')
-        print '\n\n'
-        print '###########################'
-        print 'Major heading: %s' % agenda
-        print '###########################'
+        print('\n\n')
+        print('###########################')
+        print('Major heading: %s' % agenda)
+        print('###########################')
 
     def get_english_text(self, item):
         lang = self.getTagValue(item, 'contribution_language')
@@ -133,15 +133,15 @@ class ParseDay:
         return speech
 
     def display_speech(self, speech):
-        print ''
-        print '-----------------'
-        print 'type: %s, speaker: %s (%s)' % ( speech['ctype'], speech['speaker_name'], speech['speaker'])
-        print '<div class="original">%s</div>' % speech['text']
-        print '<div class="translated">%s</div>' % speech['text_translated']
+        print('')
+        print('-----------------')
+        print('type: %s, speaker: %s (%s)' % ( speech['ctype'], speech['speaker_name'], speech['speaker']))
+        print('<div class="original">%s</div>' % speech['text'])
+        print('<div class="translated">%s</div>' % speech['text_translated'])
 
     def display_vote(self, item, speech):
-        print '\nVVVVVVVVVVVVVVVVVVVVVVVVVVVV'
-        print 'Vote: %s' % speech['text']
+        print('\nVVVVVVVVVVVVVVVVVVVVVVVVVVVV')
+        print('Vote: %s' % speech['text'])
 
     def parse_xml_day(self, date):
         soup = BeautifulSoup(self.text, 'xml')
@@ -156,7 +156,7 @@ class ParseDay:
             agenda_id = ''
             try:
                 agenda_id = item.contribution_type
-                print agenda_id
+                print(agenda_id)
             except:
                 pass
             continue

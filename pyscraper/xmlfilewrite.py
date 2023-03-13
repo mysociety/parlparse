@@ -1,10 +1,9 @@
-#! /usr/bin/python
 # vim:sw=8:ts=8:nowrap
 
 def WriteXMLHeader(fout, encoding="ISO-8859-1", output_unicode=False):
 	header = '<?xml version="1.0" encoding="%s"?>\n' % encoding
 	if output_unicode:
-		header = unicode(header)
+		header = str(header)
 	fout.write(header)
 
 	# These entity definitions for latin-1 chars are from here:
@@ -76,6 +75,6 @@ def WriteXMLHeader(fout, encoding="ISO-8859-1", output_unicode=False):
 '''
 
 	if output_unicode:
-		entities = unicode(entities)
+		entities = str(entities)
 
 	fout.write(entities)

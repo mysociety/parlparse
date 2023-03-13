@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 import os
 import logging
@@ -84,7 +84,7 @@ def writeScraperState(state, output_folder):
         with open(output_file, 'w') as state_json_file:
             logger.debug('Writing state file')
             state_json_file.write(json_string)
-    except TypeError, e:
+    except TypeError as e:
         logger.error('Could not serialise to valid JSON: {}'.format(str(e)))
 
 
@@ -234,14 +234,14 @@ def parseQuestionPage(content):
 
     question_title = main_content.h1.text.strip()
 
-    logger.debug(u'Question title is {}'.format(question_title))
+    logger.debug('Question title is {}'.format(question_title))
 
     # Extract who asked it
 
     asked_by_name = main_content.find('div', class_='field--name-field-asked-by').find('div', class_='field__item').text.strip()
     asked_by_person = getSpeakerObjectFromName(asked_by_name)
 
-    logger.debug(u'Question asked by {}'.format(asked_by_person['name']))
+    logger.debug('Question asked by {}'.format(asked_by_person['name']))
 
     # Try to extract the actual question
 
@@ -326,7 +326,7 @@ def parseAnswersFromQuestionPage(page_content):
         answered_by_name = answer_article.find('div', class_='field--name-field-answered-by').find('div', class_='field__item').text.strip()
         answered_by_person = getSpeakerObjectFromName(answered_by_name)
 
-        logger.debug(u'Question answered by {}'.format(answered_by_person['name']))
+        logger.debug('Question answered by {}'.format(answered_by_person['name']))
 
         answer_paragraphs = []
 
@@ -410,12 +410,12 @@ def getPersonIDFromName(name):
 def getSpeakerObjectFromName(name):
     ''' Given a name, try to find a speaker ID and return a whole object. '''
 
-    name = name.replace(u'\u00a0', ' ')
+    name = name.replace('\u00a0', ' ')
     name = stripPatternsFromName(name)
     id = getPersonIDFromName(name)
     if not id:
         if 'Liz Peace' not in name:
-            logger.warning(u'Could not match name {} to any assembly member'.format(name))
+            logger.warning('Could not match name {} to any assembly member'.format(name))
         id = 'unknown'
 
     return {
@@ -427,7 +427,7 @@ def getSpeakerObjectFromName(name):
 def cleanParagraphText(text):
 
     # Remove non-breaking spaces followed by a space.
-    text = text.replace(u'\u00a0 ', ' ')
+    text = text.replace('\u00a0 ', ' ')
 
     # Strip trailing whitespace
     text = text.strip()
@@ -618,7 +618,7 @@ def loadMembershipsFromFile(members_file):
 
             if name not in person_ids_by_name:
                 person_ids_by_name[name] = membership['person_id']
-                logger.debug(u'Added ID map for for {}'.format(name))
+                logger.debug('Added ID map for for {}'.format(name))
             else:
                 if person_ids_by_name[name] != membership['person_id']:
                     raise Exception('Multiple people with name {}'.format(name))

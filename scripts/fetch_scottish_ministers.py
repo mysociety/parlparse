@@ -1,12 +1,9 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 import os
 import json
-import re
-import string
-import copy
 import sys
-import urllib2
+import urllib.request
 
 import dateutil.parser as dateparser
 
@@ -24,8 +21,8 @@ api_points = {
     'sp_msps.json': 'https://data.parliament.scot/api/members/json'
 }
 
-for outfile, url in api_points.iteritems():
-    data = urllib2.urlopen(url).read()
+for outfile, url in api_points.items():
+    data = urllib.request.urlopen(url).read()
     output = os.path.join(rawdata_dir, outfile)
     with open(output, 'w+') as fp:
         fp.write(data)

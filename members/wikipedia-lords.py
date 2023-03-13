@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Screen scrape list of links to Lords on Wikipedia, so we can link to the articles.
 
@@ -9,7 +9,7 @@
 
 import datetime
 import sys
-import urlparse
+import urllib.parse
 import re
 
 sys.path.append("../pyscraper")
@@ -32,19 +32,19 @@ for (url, title, name) in matches:
     id = None
     try:
         id = lordsList.GetLordIDfname(name, None, date_today)
-    except Exception, e:
+    except Exception as e:
         continue
 
     if not id:
         continue
     wikimembers[id] = url
 
-print '''<?xml version="1.0" encoding="ISO-8859-1"?>
-<publicwhip>'''
+print('''<?xml version="1.0" encoding="ISO-8859-1"?>
+<publicwhip>''')
 for id, url in sorted(wikimembers.items()):
-    url = urlparse.urljoin(wiki_index_url, url)
-    print '<personinfo id="%s" wikipedia_url="%s" />' % (id, url)
-print '</publicwhip>'
+    url = urllib.parse.urljoin(wiki_index_url, url)
+    print('<personinfo id="%s" wikipedia_url="%s" />' % (id, url))
+print('</publicwhip>')
 
 #print "len: ", len(wikimembers)
 
