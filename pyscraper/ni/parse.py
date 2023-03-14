@@ -9,10 +9,6 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from ni.resolvenames import memberList
 from contextexception import ContextException
 
-import codecs
-streamWriter = codecs.lookup('utf-8')[-1]
-sys.stdout = streamWriter(sys.stdout)
-
 parldata = '../../../parldata/'
 
 class ParseDayParserBase(object):
@@ -142,8 +138,7 @@ class ParseDayJSON(ParseDayParserBase):
         self.display_speech()
 
 class ParseDay(object):
-    def parse_day(self, fp, text, date):
-        out = streamWriter(fp)
+    def parse_day(self, out, text, date):
         out.write('<?xml version="1.0" encoding="utf-8"?>\n')
         out.write('''
 <!DOCTYPE publicwhip

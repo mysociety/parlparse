@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: latin-1 -*-
 
 # Screen scrape list of links to MLAs on Wikipedia, so we can link to the articles.
 
@@ -55,7 +54,7 @@ for (url, name, cons) in matches:
     pid = memberList.match_person(name, date)
     wikimembers[pid] = url
 
-print('''<?xml version="1.0" encoding="ISO-8859-1"?>
+print('''<?xml version="1.0" encoding="UTF-8"?>
 <publicwhip>''')
 k = sorted(wikimembers)
 for id in k:

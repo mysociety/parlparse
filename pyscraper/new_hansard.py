@@ -16,10 +16,6 @@ xmlvalidate = xml.sax.make_parser()
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(os.path.join(os.path.dirname(__file__), 'lords'))
 
-import codecs
-streamWriter = codecs.lookup('utf-8')[-1]
-sys.stdout = streamWriter(sys.stdout)
-
 from pullgluepages import MakeDayMap, GetFileDayVersions
 from miscfuncs import pwxmldirs
 from resolvemembernames import MemberList
@@ -1827,7 +1823,7 @@ class ParseDay(object):
         tempfilenameoldxml = tempfile.mktemp(".xml", "pw-filtertempold-", miscfuncs.tmppath)
         foout = io.open(tempfilenameoldxml, mode="w", encoding='utf-8')
         if self.parser.is_pre_new_parser:
-            WriteXMLHeader(foout, encoding="UTF-8", output_unicode=True)
+            WriteXMLHeader(foout)
         foout.write('<publicwhip scrapeversion="%s" latest="no">\n' % self.prev_file)
         foout.writelines([str(x) for x in xprevcompress])
         foout.write("</publicwhip>\n\n")

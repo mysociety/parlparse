@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: latin-1 -*-
-# $Id: bbcconv.py,v 1.4 2005/03/25 23:33:35 theyworkforyou Exp $
 
 # Screen scrape list of links to Lords on Wikipedia, so we can link to the articles.
 

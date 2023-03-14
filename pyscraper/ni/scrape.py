@@ -31,7 +31,7 @@ def scrape_ni_day(url, filename, forcescrape):
     filename = '%s/../../../parldata/cmpages/ni/%s' % (ni_dir, filename)
     data = urllib.request.urlopen(url).read()
 
-    if 'ExceptionMessage' in data or '"Message":"An error has occurred."' in data:
+    if b'ExceptionMessage' in data or b'"Message":"An error has occurred."' in data:
         print('ERROR received scraping %s' % url)
         return
 
@@ -43,7 +43,7 @@ def scrape_ni_day(url, filename, forcescrape):
 
     if save:
         print("NI scraping %s" % url)
-        open(filename, 'w').write(data)
+        open(filename, 'wb').write(data)
 
 
 def scrape_ni(datefrom, dateto, forcescrape=False):

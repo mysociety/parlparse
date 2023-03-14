@@ -69,7 +69,7 @@ def main():
         params['madeWhenTo'] = ARGS.date
         get_from_list(writtens, params)
 
-    output = ('%s' % writtens).encode('utf-8')
+    output = str(writtens)
     if output:
         if ARGS.type == 'answers':
             filename = 'lordswrans' if ARGS.house == 'lords' else 'answers'

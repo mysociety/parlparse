@@ -87,7 +87,7 @@ def get_document_from_id(official_report_id):
         # redirects us to a search page rather than issuing a 404 so we
         # check to make sure that hasn't happened before saving
         if response.geturl() == url:
-            with open(html_filename, 'w') as fp:
+            with open(html_filename, 'wb') as fp:
                 fp.write(response.read())
         else:
             html_filename = ''
@@ -113,7 +113,7 @@ def main():
         opener = urllib.request.build_opener()
         response = urllib.request.urlopen(request)
         parser = etree.HTMLParser()
-        html = response.read()
+        html = response.read().decode('utf-8')
         html = re.sub('(?ims)^\s*', '', html)
         tree = etree.parse(StringIO(html), parser)
         report_ids = set()

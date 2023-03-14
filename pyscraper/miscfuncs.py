@@ -401,24 +401,6 @@ def StraightenHTMLrecurse(stex, stampurl):
     return sres
 
 
-def FixHTMLEntitiesL(stex, signore='', stampurl=None):
-    # will formalize this into the recursion later
-    if signore:
-        stex = re.sub(signore, '', stex)
-    return StraightenHTMLrecurse(stex, stampurl)
-
-def FixHTMLEntities(stex, signore='', stampurl=None):
-    res = ''.join(FixHTMLEntitiesL(stex, signore, stampurl))
-    try:
-        res = res.decode('utf-8')
-        return res.encode("latin-1")
-    except Exception as e:
-        print("Encoding problem with:", res)
-        raise ContextException(str(e), stamp=stampurl, fragment=res)
-
-
-
-
 # The lookahead assertion (?=<table) stops matching tables when another begin table is reached
 paratag = '</?p(?: style="margin-left: ?[23]0px;")?(?: align=(?:left|"center"))?(?: id="[^"]*" class="timestamp")?(?: class[= ]"(?:tabletext|normaltext|amendment_hs_quote|amendment_indentone|amendment_indenttwo|clause_heading)")?(?: style="margin-bottom:\d+px;")?>'
 restmatcher = paratag + '|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>(?i)'

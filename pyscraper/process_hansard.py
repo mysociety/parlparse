@@ -17,7 +17,7 @@ yesterday = today - datetime.timedelta(1)
 parser = argparse.ArgumentParser(description='Process Hansard XML.')
 parser.add_argument('--from', dest='date_from', default=yesterday.isoformat(), metavar='YYYY-MM-DD')
 parser.add_argument('--to', dest='date_to', default=today.isoformat(), metavar='YYYY-MM-DD')
-parser.add_argument('-v', '--verbose', action='count')
+parser.add_argument('-v', '--verbose', action='count', default=0)
 ARGS = parser.parse_args()
 
 index_filename = join(toppath, 'seen_hansard_xml.txt')

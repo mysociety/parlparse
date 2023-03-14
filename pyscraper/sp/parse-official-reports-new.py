@@ -228,7 +228,7 @@ def is_member_vote(element, vote_date, expecting_a_vote=True):
 def log_speaker(speaker, date, message):
     if SPEAKERS_DEBUG:
         with open("speakers.txt", "a") as fp:
-            fp.write(str(date)+": ["+message.encode('utf-8')+"] "+speaker.encode('utf-8')+"\n")
+            fp.write(str(date)+": ["+message+"] "+speaker+"\n")
 
 def filename_key(filename):
     m = re.search(r'^(\d+)\.html$', filename)

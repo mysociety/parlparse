@@ -12,10 +12,6 @@ sys.path.append('../')
 from contextexception import ContextException
 from bs4 import BeautifulSoup
 
-import codecs
-streamWriter = codecs.lookup('utf-8')[-1]
-sys.stdout = streamWriter(sys.stdout)
-
 parldata = '../../../parldata/'
 
 class ParseDay:
@@ -23,7 +19,6 @@ class ParseDay:
         self.date = date
         self.text = text
         self.out = fp
-        self.out = streamWriter(self.out)
 
         if date < '2013-01-01':
             raise Exception('Cannot parse pre 2013')

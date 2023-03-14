@@ -24,4 +24,4 @@ for json in json_files:
     url = "%s%s" % ( base_url, json['href'] )
     out = "%s/%s" % ( OUT_DIR, json['href'] )
     data = requests.get(url, headers=headers).content
-    open(out, 'w').write(data)
+    open(out, 'wb').write(data)

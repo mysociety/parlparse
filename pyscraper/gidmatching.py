@@ -19,7 +19,7 @@ def GetMinIndex(indx, a):
 	assert indx[0] == 0 and a < indx[-1]
 	i0, i1 = 0, len(indx) - 1
 	while i0 + 1 < i1:
-		im = (i0 + i1) / 2
+		im = (i0 + i1) // 2
 		assert i0 != im and i1 != im
 		if indx[im] <= a:
 			i0 = im

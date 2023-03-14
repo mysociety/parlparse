@@ -41,7 +41,6 @@ def GlueByContents(fout, url_contents, regmemdate, remote):
     mps = soup.find('a', attrs={'name':'A'}).parent.find_next_siblings('p')
     for p in mps:
         url = urllib.parse.urljoin(url_contents, p.a['href'])
-        url = url.encode('utf-8')
         #print " reading " + url
         if remote:
             ur = opener.open(url)
@@ -191,7 +190,7 @@ def FindRegmemPages(remote):
     idxurl = 'https://www.parliament.uk/mps-lords-and-offices/standards-and-financial-interests/parliamentary-commissioner-for-standards/registers-of-interests/register-of-members-financial-interests/'
     ur = opener.open(idxurl)
     content = ur.read()
-    if "Cloudflare" in content:
+    if b"Cloudflare" in content:
         sys.exit("Cloudflare please wait page, cannot proceed")
     ur.close()
 
@@ -201,7 +200,7 @@ def FindRegmemPages(remote):
 
     for ixurl in ixurls:
         ur = opener.open(ixurl)
-        content = ur.read()
+        content = ur.read().decode('utf-8')
         ur.close()
 
         # <B>14&nbsp;May&nbsp;2001&nbsp;(Dissolution)</B>
@@ -247,7 +246,7 @@ def FindRegmemPages(remote):
         else:
             allurl_soups = soup.find_all('a', href=re.compile("(memi02|part1contents|/contents\.htm)"))
             for url_soup in allurl_soups:
-                row_content = url_soup.find_parent('tr').encode_contents()
+                row_content = url_soup.find_parent('tr').encode_contents().decode('utf-8')
                 url = url_soup['href']
                 #print url
                 if url == '060324/memi02.htm':

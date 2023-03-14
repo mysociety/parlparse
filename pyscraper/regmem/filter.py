@@ -31,7 +31,7 @@ class RunRegmemFilters2010(object):
         self.memberset = set()
 
     def _handle_h2(self, row):
-        title = row.encode_contents()
+        title = row.encode_contents().decode('utf-8')
         if title in ('HAGUE, Rt Hon William (Richmond (Yorks)', 'PEARCE, Teresa (Erith and Thamesmead'):
             title += ')'
         res = re.search("^([^,]*), ([^(]*) \((.*)\)\s*$", title)
@@ -47,7 +47,7 @@ class RunRegmemFilters2010(object):
         (id, remadename, remadecons) = memberList.matchfullnamecons(firstname + " " + lastname, constituency, self.sdate)
         if not id:
             raise ContextException("Failed to match name %s %s (%s) date %s\n" % (firstname, lastname, constituency, self.sdate))
-        self.fout.write(('<regmem personid="%s" membername="%s" date="%s">\n' % (id, remadename, self.sdate)).encode("latin-1"))
+        self.fout.write('<regmem personid="%s" membername="%s" date="%s">\n' % (id, remadename, self.sdate))
         self.title = title
         self.category = None
         self.subcategory = None
@@ -71,7 +71,7 @@ class RunRegmemFilters2010(object):
                 self._handle_h2(row)
             else:
                 cls = row.get('class', [''])[0]
-                text = row.encode_contents().decode('utf-8').encode('iso-8859-1', 'xmlcharrefreplace')
+                text = row.encode_contents().decode('utf-8')
                 if cls == 'spacer':
                     if self.record:
                         self.fout.write('\t\t</record>\n')
@@ -110,7 +110,7 @@ class RunRegmemFilters2010(object):
                 if self.subcategory:
                     self.fout.write('\t\t\t<item subcategory="%s">%s</item>\n' % (self.subcategory, text))
                 else:
-                    cls = cls.decode('utf-8').encode('iso-8859-1')
+                    cls = cls.decode('utf-8')
                     if cls: cls = ' class="%s"' % cls
                     self.fout.write('\t\t\t<item%s>%s</item>\n' % (cls, text))
         self._end_entry()

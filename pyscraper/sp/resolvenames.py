@@ -5,7 +5,6 @@ import copy
 import sys
 import datetime
 import time
-import codecs
 
 from base_resolver import ResolverBase
 

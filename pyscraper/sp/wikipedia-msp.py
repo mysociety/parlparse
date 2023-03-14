@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: latin-1 -*-
 
 # Screen scrape list of links to MLAs on Wikipedia, so we can link to the articles.
 # (Very slightly adapted to get MSPs instead by Mark Longair.)
@@ -60,7 +59,7 @@ for (url, name) in matches:
     for id_to_add in id_list:
         wikimembers[id_to_add] = url
 
-print('''<?xml version="1.0" encoding="ISO-8859-1"?>
+print('''<?xml version="1.0" encoding="UTF-8"?>
 <publicwhip>''')
 k = sorted(wikimembers)
 for id in k:

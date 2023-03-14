@@ -34,7 +34,7 @@ person_id_to_twitter_username = {}
 
 output_filename = "../members/twitter-commons.xml"
 fp = open(output_filename,"w")
-fp.write('''<?xml version="1.0" encoding="ISO-8859-1"?>
+fp.write('''<?xml version="1.0" encoding="UTF-8"?>
 <publicwhip>
 ''')
 
