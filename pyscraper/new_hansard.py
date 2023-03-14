@@ -310,7 +310,7 @@ class BaseParseDayXML(object):
 
     def parse_system_header(self, header):
         sitting = header.xpath('./ns:Sitting', namespaces=self.ns_map)[0]
-        date = datetime.datetime.strptime(sitting.get('short-date'), '%d %B %Y').date
+        date = datetime.datetime.strptime(sitting.get('short-date'), '%d %B %Y').date().isoformat()
         if date:
             self.date = date
 

@@ -43,7 +43,7 @@ def TokenDate(ldate, phrtok):
         tdate += " %s" % sdate_year
     try:
         lldate = datetime.strptime(tdate, '%A, %d %B %Y')
-        phrtok.lastdate = lldate.date
+        phrtok.lastdate = lldate.date().isoformat()
     except:
         phrtok.lastdate = ''
     return ('phrase', ' class="date" code="%s"' % phrtok.lastdate)
@@ -158,10 +158,10 @@ def TokenOffRepWDate(qoffrep, phrtok):
     m = re.match('(\d+)/(\d+)/(\d+)', date)
     if m:
         lordsdate = True
-        date = datetime.strptime(date, '%d/%m/%Y').date
+        date = datetime.strptime(date, '%d/%m/%Y').date().isoformat()
     else:
         lordsdate = False
-        date = datetime.strptime(date, '%d %B %Y').date
+        date = datetime.strptime(date, '%d %B %Y').date().isoformat()
     if qcolprefix:
         qcolprefix = qcolprefix.upper()
     if qcolsuffix:

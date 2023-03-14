@@ -90,7 +90,7 @@ def GlueByNext(fout, url, regmemdate):
             if not dateinpage:
                 raise Exception('Not found date marker')
             dateinpage = dateinpage.group(1).replace("&nbsp;", " ")
-            dateinpage = datetime.strptime(dateinpage, '%d %B %Y').date
+            dateinpage = datetime.strptime(dateinpage, '%d %B %Y').date().isoformat()
             if dateinpage != regmemdate:
                 raise Exception('Date in page is %s, expected %s - update the URL list in regmempullgluepages.py' % (dateinpage, regmemdate))
             matcheddate = True
@@ -230,7 +230,7 @@ def FindRegmemPages(remote):
                 print(alldates)
                 raise Exception('Date match failed, expected one got %d\n%s' % (len(alldates), url))
 
-            date = datetime.strptime(alldates[0], '%d %B %Y').date
+            date = datetime.strptime(alldates[0], '%d %B %Y').date().isoformat()
             if (date, ixurl) not in urls:
                 urls.append((date, ixurl))
         elif re.search('Session 201[79]|Session 20[2-9]', content):
@@ -267,7 +267,7 @@ def FindRegmemPages(remote):
                 else:
                     alldates[0] = re.sub('\s+', ' ', alldates[0])
                     alldates[0] = re.sub('(?<=\d)(st|nd|rd|th)', '', alldates[0])
-                    date = datetime.strptime(alldates[0], '%d %B %Y').date
+                    date = datetime.strptime(alldates[0], '%d %B %Y').date().isoformat()
 
                 if (date, url) not in urls:
                     urls.append((date, url))
