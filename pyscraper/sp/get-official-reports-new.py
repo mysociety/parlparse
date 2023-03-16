@@ -131,6 +131,7 @@ def main():
         min_report_id = min(report_ids) - 20
         max_report_id = max(report_ids) + 20
         for report_id in range(min_report_id, max_report_id + 1):
+            if report_id > 14191 and report_id < 15190: continue # Big jump
             get_document_from_id(report_id)
 
     else:
