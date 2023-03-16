@@ -1378,7 +1378,7 @@ class PBCParseDayXML(BaseParseDayXML):
             sitting_num = int(re.match('P(?:BC|MB)\s*\d+-(\d+)', data_id).group(1))
         except:
             # Try and find one in the filename then.
-            sitting_num = int(re.search('(\d+)(?:st|nd|rd|th) sit', xml_file.name).group(1))
+            sitting_num = int(re.search('_(\d+)(?:st|nd|rd|th)_', xml_file.name).group(1))
 
         try:
             title = header.xpath('./ns:Title', namespaces=self.ns_map)[0]
@@ -1392,8 +1392,7 @@ class PBCParseDayXML(BaseParseDayXML):
         self.session = re.sub('(\d{4})_\d\d(\d\d)', r'\1-\2', self.session)
 
         # The 0 here is a part number. I do not know what the XML outputs for multiple parts
-        from standing.utils import construct_shortname
-        self.sitting_id = construct_shortname(debate_num, title, sitting_num, 0, self.date)
+        self.sitting_id = "standing%s_%s_%02d-%d_%s" % (debate_num, title, sitting_num, 0, self.date)
 
 
 class LordsParseDayXML(BaseParseDayXML):
