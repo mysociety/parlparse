@@ -17,7 +17,6 @@ class ResolverBase(object):
         self.constoidmap = {} # constituency name --> cons attributes (with date and ID)
         self.considtonamemap = {} # cons ID --> name
         self.considtomembermap = {} # cons ID --> memberships
-        self.conshansardtoid = {} # Historic Hansard cons ID -> our cons ID
         self.historichansard = {} # Historic Hansard commons membership ID -> MPs
         self.pims = {} # Pims membership ID and date -> MPs
         self.mnis = {} # Parliament Member Names ID to person
@@ -26,12 +25,32 @@ class ResolverBase(object):
         self.membertopersonmap = {} # member ID --> person ID
         self.persontomembermap = {} # person ID --> memberships
 
+    def import_constituencies_from_people(self):
+        data = json.load(open(os.path.join(members_dir, 'people.json')))
+        for con in data['posts']:
+            if con['organization_id'] != self.import_organization_id:
+                continue
+
+            attr = {
+                'id': con['id'],
+                'start_date': con['start_date'],
+                'end_date': con.get('end_date', '9999-12-31'),
+            }
+            if len(attr['start_date']) == 4:
+                attr['start_date'] = '%s-01-01' % attr['start_date']
+            if len(attr['end_date']) == 4:
+                attr['end_date'] = '%s-12-31' % attr['end_date']
+
+            name = con['area']['name']
+            if not con['id'] in self.considtonamemap:
+                self.considtonamemap[con['id']] = name
+            self.constoidmap.setdefault(name, []).append(attr)
+            nopunc = self.strip_punctuation(name)
+            self.constoidmap.setdefault(nopunc, []).append(attr)
+
     def import_constituencies(self, file):
         data = json.load(open(os.path.join(members_dir, file)))
         for con in data:
-            if 'hansard_id' in con:
-                self.conshansardtoid[con['hansard_id']] = con['id']
-
             attr = {
                 'id': con['id'],
                 'start_date': con['start_date'],

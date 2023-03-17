@@ -21,6 +21,9 @@ cd ~/parlparse/pyscraper
 # So for the moment, just run the daily check whatever the parameters
 # given passed to this script are.
 
+# Senedd
+wa/scrape.py
+
 cd ~/parlparse/pyscraper/sp
 ./get-official-reports-new.py --daily --quiet
 
