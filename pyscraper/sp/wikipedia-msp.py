@@ -14,7 +14,8 @@ import sys
 import urllib.parse
 import re
 
-sys.path.insert(0, os.path.join(os.path.abspath(os.path.dirname(__file__)), '..'))
+file_dir = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..')
+sys.path.insert(0, file_dir)
 
 from sp.resolvenames import memberList
 date_today = datetime.date.today().isoformat()
@@ -26,6 +27,7 @@ wiki_index_urls = [
     "http://en.wikipedia.org/wiki/Members_of_the_3rd_Scottish_Parliament",
     "http://en.wikipedia.org/wiki/Members_of_the_4th_Scottish_Parliament",
     "http://en.wikipedia.org/wiki/Members_of_the_5th_Scottish_Parliament",
+    "http://en.wikipedia.org/wiki/Members_of_the_6th_Scottish_Parliament",
 ]
 wikimembers  = {}
 
@@ -33,16 +35,12 @@ content = ''
 
 for u in wiki_index_urls:
     leaf = re.sub('.*/','',u)
-    ur = open('../../rawdata/' + leaf)
+    ur = open(file_dir + '/../rawdata/' + leaf)
     content += ur.read()
     ur.close()
 
 matcher = '(?ims)<a href="(/wiki/[^"]+)" [^>]*?title="[^"]+"[^>]*>([^<]+)</a>'
 matches = re.findall(matcher, content)
-
-matches.append(('/wiki/Dorothy_Grace_Elder','Dorothy-Grace Elder'))
-matches.append(('/wiki/Chris_Harvie', 'Christopher Harvie'))
-matches.append(('/wiki/Nicholas_Johnston', 'Nick Johnston'))
 
 for (url, name) in matches:
     id_list = None
