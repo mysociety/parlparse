@@ -38,11 +38,9 @@ class RunRegmemFilters2010(object):
         if not res:
             raise ContextException("Failed to break up into first/last/cons: %s" % title)
         (lastname, firstname, constituency) = res.groups()
-        firstname = memberList.striptitles(firstname.decode('utf-8'))[0]
-        lastname = lastname.decode('utf-8')
+        firstname = memberList.striptitles(firstname)[0]
         if self.sdate < '2015-06-01':
             lastname = memberList.lowercaselastname(lastname)
-        constituency = constituency.decode('utf-8')
         lastname = lastname.replace('O\u2019brien', "O'Brien") # Hmm
         (id, remadename, remadecons) = memberList.matchfullnamecons(firstname + " " + lastname, constituency, self.sdate)
         if not id:
@@ -110,7 +108,6 @@ class RunRegmemFilters2010(object):
                 if self.subcategory:
                     self.fout.write('\t\t\t<item subcategory="%s">%s</item>\n' % (self.subcategory, text))
                 else:
-                    cls = cls.decode('utf-8')
                     if cls: cls = ' class="%s"' % cls
                     self.fout.write('\t\t\t<item%s>%s</item>\n' % (cls, text))
         self._end_entry()

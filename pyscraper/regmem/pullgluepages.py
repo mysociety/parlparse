@@ -41,13 +41,15 @@ def GlueByContents(fout, url_contents, regmemdate, remote):
     mps = soup.find('a', attrs={'name':'A'}).parent.find_next_siblings('p')
     for p in mps:
         url = urllib.parse.urljoin(url_contents, p.a['href'])
-        #print " reading " + url
+        #print(" reading " + url)
         if remote:
-            ur = opener.open(url)
+            parts = urllib.parse.urlparse(url)
+            parts = parts._replace(path=urllib.parse.quote(parts.path))
+            ur = opener.open(parts.geturl())
         else:
             url = urllib.parse.quote(url)
             ur = open(url)
-        sr = ur.read()
+        sr = ur.read().decode('utf-8')
         ur.close()
 
         if remote and ur.code == 404:
@@ -78,7 +80,7 @@ def GlueByNext(fout, url, regmemdate):
     while 1:
         #print " reading " + url
         ur = opener.open(url)
-        sr = ur.read()
+        sr = ur.read().decode('utf-8')
         ur.close();
 
         sections += 1
