@@ -28,7 +28,7 @@ content = read(2003) + read(2007) + read(2011) + read(2016) + read(2017) + read(
 matches = set()
 
 # Links from all pages
-matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a>\s*</td>\s+<td><a href="/wiki/[^"]+"[^>]*>([^<]+)</a>\s*</td>'
+matcher = '<tr>\s+<td><a href="(/wiki/[^"]+)"[^>]*>([^<]+)</a>[^<]*</td>\s+<td><a href="/wiki/[^"]+"[^>]*>([^<]+)</a>\s*</td>'
 matches.update(re.findall(matcher, content))
 
 # 4-6th Assembly
