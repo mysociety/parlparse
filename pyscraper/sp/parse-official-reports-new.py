@@ -83,7 +83,7 @@ def is_division_way(element, report_date=None):
         # strings that begin 'FOR', so only try it on short strings
         # that might be introducing a division, and assume that there
         # are 2 to 4 words in the name:
-        m1 = re.search(r'(?i)^VOTES? FOR ([A-Z ]+)$', tidied)
+        m1 = re.search(r'(?i)^VOTES? FOR ([A-Z -]+)$', tidied)
         m2 = re.search(r'^FOR ((?:[A-Z]+\s*){2,4})$', tidied)
         m = m1 or m2
         if m:
