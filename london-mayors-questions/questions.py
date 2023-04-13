@@ -3,9 +3,9 @@
 import datetime
 import json
 import logging
-import os
 import re
 import string
+from pathlib import Path
 
 import click_log
 import dateutil.parser
@@ -20,11 +20,11 @@ logger = logging.getLogger(__name__)
 click_log.basic_config(logger)
 
 # Set up the requests cache
-cache_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cache")
-requests_cache.install_cache(cache_path, expire_after=60 * 60 * 12)
+cache_path = Path(__file__).resolve().parent / "cache"
+requests_cache.install_cache(str(cache_path), expire_after=60 * 60 * 12)
 
 # Load and parsethe configuration file
-with open("config.json") as config_json_file:
+with Path("config.json").open() as config_json_file:
     logger.debug("Reading config file")
     config = json.load(config_json_file)
 
@@ -49,11 +49,11 @@ EMPTY_STATE_OBJECT = {"dates": {}, "questions": {}}
 def getScraperState(output_folder):
     """Load the scraper's state from file."""
 
-    state_file = os.path.join(output_folder, STATE_JSON_FILENAME)
+    state_file = Path(output_folder, STATE_JSON_FILENAME)
 
     # Check this file exists before we load it
-    if os.path.exists(state_file):
-        with open(state_file) as state_json_file:
+    if state_file.exists():
+        with state_file.open() as state_json_file:
             logger.debug("Reading state file")
             state = json.load(state_json_file)
 
@@ -72,11 +72,11 @@ def getScraperState(output_folder):
 def writeScraperState(state, output_folder):
     """Write the scraper's state back out to file."""
 
-    output_file = os.path.join(output_folder, STATE_JSON_FILENAME)
+    output_file = Path(output_folder, STATE_JSON_FILENAME)
 
     try:
         json_string = json.dumps(state, indent=2, default=str)
-        with open(output_file, "w") as state_json_file:
+        with output_file.open("w") as state_json_file:
             logger.debug("Writing state file")
             state_json_file.write(json_string)
     except TypeError as e:
@@ -385,7 +385,7 @@ def parseAnswersFromQuestionPage(page_content):
                 else:
                     logger.warning(
                         "Speech with no detected speaker in question {}!".format(
-                            canonical_url
+                            answers_object["canonical_url"]
                         )
                     )
 
@@ -594,16 +594,16 @@ def buildXMLForQuestions(questions):
     return pwxml
 
 
-def writeXMLToFile(lxml, file):
+def writeXMLToFile(lxml, output_file: Path):
     """Write an lxml element out to file."""
 
     # Make a new document tree
     xmldoc = etree.ElementTree(lxml)
 
     # Save to XML file
-    with open(file, "w") as outFile:
+    with output_file.open("w") as outFile:
         xmldoc.write(outFile, pretty_print=True, encoding="utf-8")
-        logger.debug("Written XML to {}".format(file))
+        logger.debug(f"Written XML to {output_file}")
 
 
 def buildDateStatusObjectFromScrape(meeting_scrape_data):
@@ -888,11 +888,9 @@ def questions(context, limit, members, dry_run):
                 date_string = date.strftime("%Y-%m-%d")
                 letter_suffix = string.ascii_lowercase[i]
                 output_filename = XML_FILE_PREFIX + date_string + letter_suffix + ".xml"
-                output_file = os.path.join(
-                    context.obj["OUTPUT_FOLDER"], output_filename
-                )
+                output_file = Path(context.obj["OUTPUT_FOLDER"], output_filename)
 
-                if os.path.exists(output_file):
+                if output_file.exists():
                     i = i + 1
                 else:
                     # The file doesn't exist, write it!

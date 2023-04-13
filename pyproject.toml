@@ -5,7 +5,7 @@ typeCheckingMode="basic"
 
 [tool.ruff]
 exclude = ["filtersentence_xml.py", "members", "pyscraper", "rawdata", "scripts"]
-select = ["E", "F"]
+select = ["E", "F", "PTH"]
 ignore = ["E501"]
 
 [tool.black]
