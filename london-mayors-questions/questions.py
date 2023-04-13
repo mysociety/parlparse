@@ -1,24 +1,20 @@
 #! /usr/bin/env python3
 
-import os
+import datetime
+import json
 import logging
+import os
+import re
+import string
 
 import click
 import click_log
-
-import json
-import datetime
 import dateutil.parser
-import re
-
 import requests
 import requests_cache
-
-import string
-
+import rich_click as click
 from bs4 import BeautifulSoup, element
 from lxml import etree
-from lxml.html import soupparser
 
 # Set up logging
 logger = logging.getLogger(__name__)
@@ -865,7 +861,7 @@ def questions(context, limit, members, dry_run):
 
     for question_id, question_object in scraped_questions.items():
         # question will be None if we failed to scrape it, e.g page error
-        if question_object is not None and question_object["answered"] == True:
+        if question_object is not None and question_object["answered"] is True:
             answered_date = question_object["answered_date"]
             answered_questions.setdefault(answered_date, {})[
                 question_id
