@@ -975,7 +975,7 @@ def reset_state(context):
         click.echo("All done. Have a nice day.")
 
 
-@cli.resultcallback()
+@cli.result_callback()
 @click.pass_context
 def process_result(context, result, **kwargs):
     """Called after anything in the CLI command group, to write the state back to the file."""
