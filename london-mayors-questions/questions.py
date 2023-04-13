@@ -7,7 +7,6 @@ import os
 import re
 import string
 
-import click
 import click_log
 import dateutil.parser
 import requests
