@@ -1,0 +1,13 @@
+[tool.pyright]
+include = ["london-mayors-questions"]
+stubPath="src/data_common/typings"
+typeCheckingMode="basic"
+
+[tool.ruff]
+exclude = ["filtersentence_xml.py", "members", "pyscraper", "rawdata", "scripts"]
+select = ["E", "F"]
+ignore = ["E501"]
+
+[tool.black]
+include = 'london-mayors-questions/.*\.pyi?$'
+
