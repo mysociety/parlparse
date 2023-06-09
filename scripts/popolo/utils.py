@@ -11,7 +11,7 @@ def new_id(max_id):
 
 
 def edit_file(edit_data):
-    fp = tempfile.NamedTemporaryFile(delete=False)
+    fp = tempfile.NamedTemporaryFile(mode='w', delete=False, encoding='utf-8')
     json.dump(edit_data, fp, sort_keys=True, indent=2)
     fp.close()
     try:
