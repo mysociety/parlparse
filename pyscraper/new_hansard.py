@@ -778,7 +778,7 @@ class BaseParseDayXML(object):
             row_tag = etree.Element('tr')
             row_tag.set('pid', self.get_pid())
 
-            for entry in row.xpath('(.//ns:hs_brev|.//ns:hs_Para)', namespaces=self.ns_map):
+            for entry in row.xpath('(.//ns:hs_TableHeading|.//ns:hs_brev|.//ns:hs_Para|.//ns:hs_para)', namespaces=self.ns_map):
                 if url is None:
                     url = entry.get('url')
                 td_tag = etree.Element('td')
@@ -1404,6 +1404,7 @@ class LordsParseDayXML(BaseParseDayXML):
         'hs_Question',
         'hs_newline10',
         'hs_newline12',
+        'hs_HeadingTwo',
     ]
 
     ignored_tags = [
