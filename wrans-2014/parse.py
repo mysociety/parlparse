@@ -120,7 +120,7 @@ class WrittenThing(AttrDict):
 
     def fix_text(self, text):
         soup = bs4.BeautifulSoup(text, features="lxml")
-        return ''.join(map(str, soup.body.contents))
+        return soup.body.encode_contents().decode()
 
     def get_detail(self):
         url = '%s/%s' % (API_INDEX, self['id'])
