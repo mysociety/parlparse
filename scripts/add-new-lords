@@ -37,6 +37,7 @@ $ ''', re.X)
 
 party_map = {
     'Liberal Democrats': 'liberal-democrat',
+    'Liberal Democrat': 'liberal-democrat',
     'Conservative': 'conservative',
     'Crossbench': 'crossbench',
     'Labour': 'labour',
