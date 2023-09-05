@@ -6,7 +6,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 import datetime
 import re
-import urllib2
+import urllib.request
 from lxml import etree
 from popolo import Popolo
 
@@ -16,13 +16,13 @@ etree.set_default_parser(parser)
 def add_identifier(pid, lookup):
     if pid not in parl_ids or 'datadotparl_id' not in parl_ids[pid]:
         ddp_id = parl_members[lookup].attrib['Member_Id']
-        print '%s (%s) => %s' % (pid, lookup, ddp_id)
+        print(f'{pid} ({lookup}) => {ddp_id}')
         data.persons[pid].setdefault('identifiers', []).append({'scheme': 'datadotparl_id', 'identifier': ddp_id})
 
     if pid not in parl_ids or 'pims_id' not in parl_ids[pid]:
         pims_id = parl_members[lookup].attrib['Pims_Id']
         if pims_id:
-            print 'pims - %s (%s) => %s' % (pid, lookup, pims_id)
+            print(f'pims - {pid} ({lookup}) => {pims_id}')
             data.persons[pid].setdefault('identifiers', []).append({'scheme': 'pims_id', 'identifier': pims_id})
 
 
@@ -59,7 +59,7 @@ def canon_name(n):
     return n
 
 LORDS_URL = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/membership=all|house=Lords/'
-parl_members = etree.parse(urllib2.urlopen(LORDS_URL)).getroot()
+parl_members = etree.parse(urllib.request.urlopen(LORDS_URL)).getroot()
 parl_by_name = {}
 for member in parl_members:
     end_date = member.find('HouseEndDate').text or ''
