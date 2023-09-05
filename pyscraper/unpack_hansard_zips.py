@@ -125,8 +125,11 @@ def extract_zip(zip_filename, destination_directory):
                 subdir = m.group(1)
                 full_subdir = join(dirpath, subdir)
                 mkdir_p(full_subdir)
-                extract_zip(full_filename, full_subdir)
-                os.remove(full_filename)
+                try:
+                    extract_zip(full_filename, full_subdir)
+                    os.remove(full_filename)
+                except UnzipError as ue:
+                    print("Unpacking failed for {0}".format(full_subdir))
 
 # Now download any new entries and unpack the zip files:
 
@@ -151,5 +154,5 @@ for entry in entries:
         extract_zip(ntf.name, subdir)
     except UnzipError as ue:
         print("Unpacking failed, removing {0}".format(subdir))
-        shutil.rmtree(subdir)
-        raise
+        #shutil.rmtree(subdir)
+        #raise
