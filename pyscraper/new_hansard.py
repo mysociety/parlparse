@@ -1644,6 +1644,8 @@ class LordsParseDayXML(BaseParseDayXML):
             self.parse_newdebate(tag)
         elif tag_name == 'hs_Procedure':
             self.parse_procedure(tag)
+        elif tag_name == 'hs_prayers':
+            return True
         elif tag_name == 'hs_AmendmentHeading':
             self.parse_amendment_heading(tag)
         elif tag_name == 'hs_TabledBy':
