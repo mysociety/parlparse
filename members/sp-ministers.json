@@ -3340,7 +3340,8 @@
       "uk.org.publicwhip/person/14043"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-29"
+    "start_date": "2023-03-29",
+    "end_date": "2024-02-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/306",
@@ -3443,7 +3444,8 @@
       "uk.org.publicwhip/person/26019"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-29"
+    "start_date": "2023-03-29",
+    "end_date": "2024-02-06"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/316",
@@ -3474,7 +3476,8 @@
       "uk.org.publicwhip/person/25293"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-30"
+    "start_date": "2023-03-30",
+    "end_date": "2024-02-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/319",
@@ -3616,5 +3619,15 @@
     ],
     "organization_id": "scottish-parliament",
     "start_date": "2023-06-14"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/333",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Cabinet Secretary for NHS Recovery, Health and Social Care",
+    "person_id": [
+      "uk.org.publicwhip/person/25293"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-02-08"
   }
 ]
