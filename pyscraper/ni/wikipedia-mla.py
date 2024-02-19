@@ -38,11 +38,15 @@ matches.update(re.findall(matcher, content))
 # 4-6th Assembly changes
 changes = re.findall('(?s)<h2><span[^>]*>MLAs by constituency.*?<h2><span[^>]*>Changes(.*?)</html>', content)
 for change in changes:
-    for m in re.findall('<td>.*?<a href="(/(?:wiki|w)/[^"]+)"[^>]*>([^<]+)</a>.*?\s*</td>\s*</tr>', change):
+    for m in re.findall('''(?x)
+            <td[ ]style="width:[ ]2px;[^>]*>\s*</td>\s* # Thin column of party colour
+            <td[^>]*>.*?\s*</td>\s* # Party name
+            <td><a[ ]href="(/(?:wiki|w)/[^"]+)"[^>]*>([^<]+)</a>.*?\s*</td>\s* # Outgoing
+            <td>(?:<a[ ]href="(/(?:wiki|w)/[^"]+)"[^>]*>([^<]+)</a>|<i>Vacant</i>).*?\s*</td> # Incoming''', change):
         matches.add((m[0], m[1], None))
+        if m[2]: matches.add((m[2], m[3], None))
 
 for (url, name, cons) in matches:
-    if name == 'vacant': continue
     date = None
     if 'Mark Durkan' in name:
         date = '2008-01-01'
