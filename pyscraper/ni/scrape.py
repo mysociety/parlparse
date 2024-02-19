@@ -37,7 +37,7 @@ def scrape_ni_day(url, filename, forcescrape):
 
     save = True
     if os.path.isfile(filename):
-        current = open(filename).read()
+        current = open(filename, 'rb').read()
         if current == data and not forcescrape:
             save = False
 
