@@ -166,7 +166,7 @@ class MemberList(ResolverBase):
 
         # Now check if this begins with a title:
 
-        title_match = re.search('^(Mr|Mgr|Sir|Ms|Mrs|Miss|Lord|Dr) (.*)',s)
+        title_match = re.search('^(Mr|Mgr|Sir|Ms|Mrs|Miss|Lord|Dr\.?) (.*)',s)
         if title_match:
             title = title_match.group(1)
             rest_of_name = title_match.group(2)
