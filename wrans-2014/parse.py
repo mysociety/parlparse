@@ -32,7 +32,7 @@ cache_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cache')
 requests_cache.install_cache(cache_path, expire_after=60*60*12)
 
 HOST = 'https://questions-statements.parliament.uk'
-API_HOST = 'https://writtenquestions-api.parliament.uk'
+API_HOST = 'https://questions-statements-api.parliament.uk'
 if ARGS.type == 'answers':
     URL_INDEX = HOST + '/written-questions'
     API_INDEX = API_HOST + '/api/writtenquestions/questions'
