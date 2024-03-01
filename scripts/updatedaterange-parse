@@ -30,9 +30,8 @@ cd ~/parlparse/pyscraper/sp
 ./parse-official-reports-new.py --from=$FROMDATE --to=$TODATE || RET=1
 
 # London Assembly questions
-#cd ~/parlparse/london-mayors-questions
-#./questions.py --out ~/parldata/scrapedxml/london-mayors-questions meetings
-#./questions.py --out ~/parldata/scrapedxml/london-mayors-questions questions --members ~/parlparse/members/people.json
+cd ~/parlparse/london-mayors-questions
+./questions.py fetch-unknown-questions --last-week fetch-unstored refresh-unanswered build-xml --outdir ~/parldata/scrapedxml/london-mayors-questions
 
 # Return error code
 exit $RET

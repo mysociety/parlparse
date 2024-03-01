@@ -1,0 +1,22 @@
+{
+    "name": "parlparse",
+    "build":
+    {
+        "dockerfile": "../Dockerfile"
+    },
+    "workspaceFolder": "/workspaces/parlparse",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.test-adapter-converter",
+                "ms-azuretools.vscode-docker",
+                "bmewburn.vscode-intelephense-client",
+                "bungcip.better-toml",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "charliermarsh.ruff",
+                "mhutchie.git-graph"
+            ]
+        }
+    }
+}

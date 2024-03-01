@@ -1,0 +1,12 @@
+[tool.pyright]
+include = ["london-mayors-questions"]
+typeCheckingMode="basic"
+
+[tool.ruff]
+exclude = []
+select = []
+ignore = []
+
+[tool.black]
+include = 'london-mayors-questions/.*\.pyi?$'
+
