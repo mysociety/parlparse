@@ -3434,7 +3434,8 @@
       "uk.org.publicwhip/person/14056"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-29"
+    "start_date": "2023-03-29",
+    "end_date": "2024-02-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/315",
@@ -3578,7 +3579,8 @@
       "uk.org.publicwhip/person/26004"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-06-13"
+    "start_date": "2023-06-13",
+    "end_date": "2024-02-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/329",
@@ -3598,7 +3600,8 @@
       "uk.org.publicwhip/person/25525"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-06-13"
+    "start_date": "2023-06-13",
+    "end_date": "2024-02-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/331",
@@ -3608,7 +3611,8 @@
       "uk.org.publicwhip/person/14012"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-06-13"
+    "start_date": "2023-06-13",
+    "end_date": "2024-02-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/332",
@@ -3629,5 +3633,65 @@
     ],
     "organization_id": "scottish-parliament",
     "start_date": "2024-02-08"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/334",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Cabinet Secretary for Wellbeing Economy, Net Zero and Energy",
+    "person_id": [
+      "uk.org.publicwhip/person/26004"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-02-08"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/335",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Drugs and Alcohol Policy",
+    "person_id": [
+      "uk.org.publicwhip/person/14056"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-02-08"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/336",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Energy, Just Transition and Fair Work",
+    "person_id": [
+      "uk.org.publicwhip/person/25525"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-02-08"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/337",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Cabinet Secretary for Transport",
+    "person_id": [
+      "uk.org.publicwhip/person/14012"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-02-20"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/338",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Agriculture and Connectivity",
+    "person_id": [
+      "uk.org.publicwhip/person/25995"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-02-20"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/339",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Culture, Europe and International Development",
+    "person_id": [
+      "uk.org.publicwhip/person/26014"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-02-20"
   }
 ]
