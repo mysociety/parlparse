@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # coding=UTF-8
 
-from cgi import escape
+from html import escape
 import errno
 import sys
 import os
