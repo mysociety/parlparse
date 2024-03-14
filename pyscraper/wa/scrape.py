@@ -66,7 +66,7 @@ def write_data(url, typ, date):
             save = 'rescraping'
 
     if save:
-        print(f"Senedd {save} {url}")
+        print(f"Senedd {save} {url} {typ}/senedd{date}.xml")
         open(filename, 'wb').write(data)
 
 

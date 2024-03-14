@@ -102,7 +102,6 @@ class Speech(Thing):
             tag['person_id'] = self.speaker_id
         if self.speaker_name:
             tag['speakername'] = self.speaker_name
-        'https://record.assembly.wales/Plenary/13263'
 
 @dataclass
 class Vote(Thing):
@@ -148,7 +147,7 @@ class ParseDay:
         if 'url' not in kwargs and item.Contribution_ID:
             meeting_id = item.Meeting_ID.string
             contribution_id = item.Contribution_ID.string
-            kwargs['url'] = f'https://record.assembly.wales/Plenary/{meeting_id}#C{contribution_id}'
+            kwargs['url'] = f'https://record.senedd.wales/Plenary/{meeting_id}#C{contribution_id}'
         if item.ContributionTime and item.ContributionTime.string:
             kwargs['time'] = datetime.datetime.strptime(item.ContributionTime.string, '%Y-%m-%dT%H:%M:%S')
         self.speeches.append(Typ(major=agenda_id, minor=order_id, **kwargs))
@@ -197,7 +196,7 @@ class ParseDay:
         vote_id = int(item.Contribution_ID.string)
         division = self.divisions[vote_id]
 
-        m = re.search('record.senedd.wales/VoteOutcome/\d+/\?#V(\d+)', str(text_en))
+        m = re.search('(?:record.(?:senedd|assembly).wales|cofnod.cynulliad.cymru)/VoteOutcome/\d+/\?#V(\d+)', str(text_en))
         url = 'https://' + m.group(0)
         number = m.group(1)
 
