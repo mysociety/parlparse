@@ -1,0 +1,6 @@
+
+[tool.ruff]
+exclude = []
+select = ["E", "F", "PTH"]
+ignore = ["E501"]
+

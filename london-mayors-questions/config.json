@@ -3,7 +3,21 @@
   "xml_file_prefix": "lmqs",
   "assembly_domain": "https://www.london.gov.uk",
   "public_whip_question_id_prefix": "uk.org.publicwhip/london-mayors-questions/",
-  "current_mayor_name": "Sadiq Khan",
+  "office_map": {
+    "Mayor of London": "Mayor of London",
+    "The Mayor": "Mayor of London",
+    "London Fire Commissioner": "London Fire Commissioner",
+    "Commissioner of London Fire Brigade": "London Fire Commissioner",
+    "Deputy Mayor, Fire and Resilience": "Deputy Mayor for Fire and Resilience",
+    "Deputy Mayor, Children and Families": "Deputy Mayor for Children and Young People",
+    "Deputy Mayor, Planning, Regeneration and Skills": "Deputy Mayor for Planning, Regeneration and Skills",
+    "Deputy Mayor, Culture and the Creative Industries": "Deputy Mayor for Culture and Creative Industries",
+    "Deputy Mayor, Communities and Social Justice": "Deputy Mayor for Communities and Social Justice",
+    "Deputy Mayor, Business": "Deputy Mayor for Business",
+    "Deputy Mayor, Environment and Energy": "Deputy Mayor for Environment and Energy",
+    "Deputy Mayor, Policing and Crime": "Deputy Mayor for Policing and Crime",
+    "Deputy Mayor, Housing and Residential Development": "Deputy Mayor for Housing and Residential Development"
+  },
   "name_regex_to_strip": [
     " AM$",
     " [CMO]BE$",
@@ -12,7 +26,7 @@
     " \\(Deputy Chair\\)$",
     " \\(Deputy Chairman\\)$",
     " \\(Deputy Chairman in the Chair\\)$",
-    " \\(Mayor of London\\)$",
+    " \\(Deputy Chair in the Chair\\)$",
     "^Dr ",
     " MP$"
   ],
