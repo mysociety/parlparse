@@ -1,6 +1,6 @@
-beautifulsoup4==4.3.2
+beautifulsoup4==4.12.3
 everypolitician==0.0.13
-lxml==3.4.0
+lxml==5.2.1
 python-dateutil==2.2
 requests[security]==2.21.0
 requests-cache==0.4.13
