@@ -26,8 +26,8 @@ wrans-2014/parse.py --house lords --type statements --out ~/parldata/scrapedxml/
 pyscraper/wa/parse.py ~/parldata/cmpages/senedd ~/parldata/scrapedxml/senedd
 
 # Scottish Parliament:
-cd ~/parlparse/pyscraper/sp
-./parse-official-reports-new.py --from=$FROMDATE --to=$TODATE || RET=1
+cd ~/parlparse/
+python -m pyscraper.sp_2024 debates --parse --convert --start-date $FROMDATE --end-date $TODATE
 
 # London Assembly questions
 #cd ~/parlparse/london-mayors-questions

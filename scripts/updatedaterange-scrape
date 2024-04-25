@@ -24,8 +24,10 @@ cd ~/parlparse/pyscraper
 # Senedd
 wa/scrape.py
 
-cd ~/parlparse/pyscraper/sp
-./get-official-reports-new.py --daily --quiet
+# Scottish Parliament
+cd ~/parlparse
+python -m pyscraper.sp_2024 debates --download --start-date $FROMDATE --end-date $TODATE
+
 
 # Return error code
 exit $RET
