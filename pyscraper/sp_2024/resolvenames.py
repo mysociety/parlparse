@@ -2,7 +2,7 @@ import datetime
 import json
 import os
 import re
-from typing import Iterable, TypeVar
+from typing import Iterable, Optional, TypeVar
 
 from ..base_resolver import ResolverBase
 from .common import non_tag_data_in, tidy_string
@@ -365,13 +365,13 @@ class IDCache:
     def __init__(self):
         self.cache = {}
 
-    def check(self, key: str | None) -> None | str:
+    def check(self, key: Optional[str]) -> Optional[str]:
         if key is not None:
             return self.cache.get(key, None)
         else:
             return None
 
-    def set(self, key: str | None, value: str):
+    def set(self, key: Optional[str], value: str):
         if key:
             self.cache[key] = value
         return value
@@ -381,7 +381,7 @@ id_cache = IDCache()
 
 
 def get_unique_person_id(
-    tidied_speaker: str, on_date: str, lookup_key: str | None = None
+    tidied_speaker: str, on_date: str, lookup_key: Optional[str] = None
 ):
     # check we haven't cached this one first
     if v := id_cache.check(lookup_key):

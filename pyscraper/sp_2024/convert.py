@@ -9,6 +9,7 @@ import datetime
 import re
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Optional
 
 from lxml import etree
 
@@ -192,7 +193,7 @@ def convert_xml_to_twfy(file_path: Path, output_dir: Path, verbose: bool = False
 def convert_to_twfy(
     cache_dir: Path,
     output_dir: Path,
-    partial_file_name: str | None = None,
+    partial_file_name: Optional[str] = None,
     verbose: bool = False,
 ):
     """
