@@ -35,7 +35,11 @@ class IDFactory:
     latest_minor: int = -1
 
     def _current_id(self) -> str:
-        return f"{self.base_id}{self.committee_slug}/{self.iso_date}.{self.latest_major}.{self.latest_minor}"
+        if self.committee_slug in ('meeting-of-the-parliament', 'plenary'):
+            slug = ''
+        else:
+            slug = self.committee_slug + '/'
+        return f"{self.base_id}{slug}{self.iso_date}.{self.latest_major}.{self.latest_minor}"
 
     def get_next_major_id(self) -> str:
         self.latest_major += 1
