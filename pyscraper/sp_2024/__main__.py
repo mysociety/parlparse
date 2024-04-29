@@ -17,7 +17,7 @@ file_dir = Path(__file__).parent
 parldata = Path(file_dir, "..", "..", "..", "parldata")
 
 cache_dir = parldata / "cmpages" / "sp_2024"
-output_dir = parldata / "scrapedxml" / "sp_2024"
+output_dir = parldata / "scrapedxml" / "sp-new"
 
 
 @click.group()
