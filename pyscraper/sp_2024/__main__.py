@@ -16,7 +16,8 @@ import datetime
 file_dir = Path(__file__).parent
 parldata = Path(file_dir, "..", "..", "..", "parldata")
 
-cache_dir = parldata / "cmpages" / "sp_2024"
+download_dir = parldata / "cmpages" / "sp_2024" / "raw"
+parsed_dir = parldata / "cmpages" / "sp_2024" / "parsed"
 output_dir = parldata / "scrapedxml" / "sp-new"
 
 
@@ -29,12 +30,16 @@ def cache_dir_iterator(
     cache_dir: Path,
     start_date: datetime.date,
     end_date: datetime.date,
+    partial_file_name: str | None,
 ):
     """
     Return an iterator of files in the cache_dir that are between the start and end date
     """
 
     for file in cache_dir.glob("*.xml"):
+        if partial_file_name:
+            if not file.name.startswith(partial_file_name):
+                continue
         # date is an iso date at the start of the filename
         date = datetime.date.fromisoformat(file.stem[:10])
         if start_date <= date <= end_date:
@@ -87,21 +92,22 @@ def debates(
             start.isoformat(),
             end.isoformat(),
             verbose=verbose,
-            cache_dir=cache_dir,
+            cache_dir=download_dir,
             override=override,
         )
-    else:
-        file_iterator = cache_dir_iterator(cache_dir, start, end)
+        for file in file_iterator:
+            pass
 
-    for file in file_iterator:
-        if partial_file_name:
-            if not file.name.startswith(partial_file_name):
-                continue
-        if parse:
+    if parse:
+        file_iterator = cache_dir_iterator(download_dir, start, end, partial_file_name)
+        for file in file_iterator:
             if verbose:
                 print(f"Parsing up {file}")
-            tidy_up_html(file)
-        if convert:
+            tidy_up_html(file, parsed_dir)
+
+    if convert:
+        file_iterator = cache_dir_iterator(parsed_dir, start, end, partial_file_name)
+        for file in file_iterator:
             if verbose:
                 print(f"Converting {file} to TheyWorkForYou format")
             convert_xml_to_twfy(file, output_dir, verbose=verbose)

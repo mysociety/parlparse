@@ -246,7 +246,7 @@ def process_raw_html(raw_html: Tag, agenda_item_url: str) -> BeautifulSoup:
     return soup
 
 
-def tidy_up_html(xml_path: Path):
+def tidy_up_html(xml_path: Path, output_dir: Path):
     """
     For each subsection there is a raw_html child
     This function will convert the raw_html element to a parsed child.
@@ -261,15 +261,15 @@ def tidy_up_html(xml_path: Path):
     for item in soup.find_all("agenda_item"):
         agenda_item_url = item.get("url")
 
-        # delete any 'parsed' child of the subsection element
-        for child in item.find_all("parsed"):
-            child.decompose()
-
         # process html
         raw_html = item.find("raw_html")
         parsed_data = process_raw_html(raw_html, agenda_item_url=agenda_item_url)
+        # replace raw_html with parsed
+        item.find('raw_html').decompose()
         item.append(parsed_data.find("parsed"))
 
     # dump the soup to a file
-    with xml_path.open("w") as f:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_file = output_dir / xml_path.name
+    with output_file.open("w") as f:
         f.write(soup.prettify())
