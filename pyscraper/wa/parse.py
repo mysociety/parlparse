@@ -194,9 +194,12 @@ class ParseDay:
         self.add_speech(item, Info, lang=lang, en=text_en, cy=text_cy)
 
         vote_id = int(item.Contribution_ID.string)
-        division = self.divisions[vote_id]
+        try:
+            division = self.divisions[vote_id]
+        except KeyError:
+            raise Exception(f"Could not find vote {vote_id}, vote data currently missing")
 
-        m = re.search('(?:record.(?:senedd|assembly).wales|cofnod.cynulliad.cymru)/VoteOutcome/\d+/\?#V(\d+)', str(text_en))
+        m = re.search('(?:record.(?:senedd|assembly).wales|cofnod.(?:senedd|cynulliad).cymru)/VoteOutcome/\d+/\?#V(\d+)', str(text_en))
         url = 'https://' + m.group(0)
         number = m.group(1)
 
