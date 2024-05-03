@@ -200,9 +200,10 @@ def process_raw_html(raw_html: Tag, agenda_item_url: str) -> BeautifulSoup:
         # - create a divisioncount object that counts the for, against abstensions
         # and spoiled ballots (always 0 for sp)
 
-        for div_num, division in enumerate(speaker.find_all("division")):
+        for division in speaker.find_all("division"):
             div_counts = {"for": 0, "against": 0, "abstentions": 0, "spoiledvotes": 0}
-            division["divnum"] = div_num
+            division["divnum"] = tidy_up_html.div_num
+            tidy_up_html.div_num += 1
             divisioncount = soup.new_tag("divisioncount")
             for vote in division.find_all("mspname"):
                 div_counts[vote["vote"]] += 1
@@ -258,6 +259,7 @@ def tidy_up_html(xml_path: Path, output_dir: Path):
 
     soup = BeautifulSoup(xml, "html.parser")
 
+    tidy_up_html.div_num = 0
     for item in soup.find_all("agenda_item"):
         agenda_item_url = item.get("url")
 
