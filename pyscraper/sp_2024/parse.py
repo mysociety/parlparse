@@ -76,7 +76,7 @@ def process_raw_html(raw_html: Tag, agenda_item_url: str) -> BeautifulSoup:
     # Deal with timestamps that are not inside anything first
     raw_html = str(raw_html)
     raw_html = re.sub(
-        "(?m)^\s*(.*?)\s*<br/>\s*<br/>", r"<timestamp>\1</timestamp>", raw_html
+        '(?:<p class="or-contribution-box">)?\s*(.*?)\s*<br/>\s*<br/>', r"<timestamp>\1</timestamp>", raw_html
     )
     soup = BeautifulSoup(raw_html, "html.parser")
 
