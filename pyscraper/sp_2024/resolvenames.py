@@ -316,6 +316,7 @@ member_vote_re = re.compile(
         \)\s*\(                         # ... close banana, whitespace, open banana
         (?P<party>\D*?)                 # ... party, a minimal match of any characters
         \)                              # ... close banana
+    (?:\s*Proxy[ ]vote[ ]cast[ ]by.*?)? # ... optional proxy vote text
         $                               # ... end of the string
 """,
     re.VERBOSE,
