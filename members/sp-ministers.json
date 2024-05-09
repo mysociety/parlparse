@@ -3322,7 +3322,8 @@
       "uk.org.publicwhip/person/25119"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-28"
+    "start_date": "2023-03-28",
+    "end_date": "2024-05-07"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/304",
@@ -3695,5 +3696,15 @@
     ],
     "organization_id": "scottish-parliament",
     "start_date": "2024-02-20"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/340",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "First Minister",
+    "person_id": [
+      "uk.org.publicwhip/person/10581"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-05-07"
   }
 ]
