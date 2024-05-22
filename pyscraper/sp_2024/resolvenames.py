@@ -310,13 +310,13 @@ member_vote_re = re.compile(
         ,                               # ... then a comma
         \s*                             # ... and some greedy whitespace
         (?P<first_names>[^,\(\)0-9:]*?) # ... first names, a minimal match of any characters
-        \s*\(\(?                        # ... an arbitrary amout of whitespace and an open banana
+        \s*\(\(?                        # ... an arbitrary amount of whitespace and an open banana
                                         #     (with possibly an extra open banana)
         (?P<constituency>[^\(\)0-9:]*?) # ... constituency, a minimal match of any characters
         \)\s*\(                         # ... close banana, whitespace, open banana
         (?P<party>\D*?)                 # ... party, a minimal match of any characters
-        \)                              # ... close banana
-    (?:\s*Proxy[ ]vote[ ]cast[ ]by.*?)? # ... optional proxy vote text
+        \)?                             # ... close banana (might be missing!)
+    (?:\s*\[?Proxy[ ]vote[ ]cast[ ]by.*?\]?)? # ... optional proxy vote text
         $                               # ... end of the string
 """,
     re.VERBOSE,
