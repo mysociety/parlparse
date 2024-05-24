@@ -36,12 +36,10 @@ curl -s "https://en.wikipedia.org/wiki/3rd_Scottish_Parliament" > Members_of_the
 curl -s "https://en.wikipedia.org/wiki/4th_Scottish_Parliament" > Members_of_the_4th_Scottish_Parliament
 curl -s "https://en.wikipedia.org/wiki/5th_Scottish_Parliament" > Members_of_the_5th_Scottish_Parliament
 curl -s "https://en.wikipedia.org/wiki/6th_Scottish_Parliament" > Members_of_the_6th_Scottish_Parliament
-curl -s "https://en.wikipedia.org/wiki/2024_United_Kingdom_general_election" > Members_of_the_2024_standing_down
 #svn -q commit -m "Weekly rawdata scrape commit"
 cd ~/parlparse/members
 ./wikipedia-lords.py > wikipedia-lords.xml
 ./wikipedia-commons.py > wikipedia-commons.xml
-./wikipedia-standingdown.py > wikipedia-standingdown.xml
 # ./bbcconv.py > bbc-links.xml 
 cd ~/parlparse/pyscraper
 ni/wikipedia-mla.py > ../members/wikipedia-mla.xml

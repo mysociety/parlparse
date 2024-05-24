@@ -17,3 +17,8 @@ YEAR=`date +%Y`
 
 cd ~/parlparse/scripts
 ./fetch-pw-json
+
+cd ~/parlparse/rawdata
+curl -s "https://en.wikipedia.org/wiki/Candidates_in_the_2024_United_Kingdom_general_election" > Members_of_the_2024_standing_down
+cd ~/parlparse/members
+./wikipedia-standingdown.py > wikipedia-standingdown.xml
