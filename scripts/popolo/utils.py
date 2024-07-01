@@ -6,7 +6,7 @@ from popolo.menu import Menu
 
 
 def new_id(max_id):
-    base, id = re.match('(.*/)(\d+)$', max_id).groups()
+    base, id = re.match(r'(.*/)(\d+)$', max_id).groups()
     return '%s%d' % (base, int(id) + 1)
 
 
