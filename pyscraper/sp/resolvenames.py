@@ -242,7 +242,7 @@ class MemberList(ResolverBase):
         super(MemberList, self).reloadJSON()
 
         sp_dir = os.path.dirname(__file__)
-        self.import_constituencies("sp-constituencies.json")
+        self.import_constituencies()
         self.import_people_json()
 
         start_date = None

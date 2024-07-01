@@ -23,7 +23,7 @@ class MemberList(ResolverBase):
         self.retitles = re.compile('^(?:Rev |Dr |Mr |Mrs |Ms |Miss |Sir |Lord )+')
         self.rehonorifics = re.compile('(?: OBE| CBE| MP)+$')
 
-        self.import_constituencies("constituencies.json")
+        self.import_constituencies()
         self.import_people_json()
 
     def list(self, date=None, fro=None, to=None):
