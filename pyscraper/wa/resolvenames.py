@@ -10,7 +10,7 @@ class MemberList(ResolverBase):
 
     def reloadJSON(self):
         super(MemberList, self).reloadJSON()
-        self.import_constituencies_from_people()
+        self.import_constituencies()
         self.import_people_json()
         self.senedd = {}
         for person in self.persons.values():

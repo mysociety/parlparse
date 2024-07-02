@@ -47,7 +47,7 @@ class MemberList(ResolverBase):
         self.honourifics = " MP| CBE| OBE| KBE| DL| MBE| QC| BEM| rh| RH| Esq| QPM| JP| FSA| Bt| B.Ed \(Hons\)| TD";
         self.rehonourifics = re.compile('(?:%s)$' % self.honourifics)
 
-        self.import_constituencies("constituencies.json")
+        self.import_constituencies()
         self.import_people_json()
         self.import_minister_json("ministers.json")
         self.import_minister_json("ministers-2010.json")

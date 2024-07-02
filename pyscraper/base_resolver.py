@@ -25,7 +25,7 @@ class ResolverBase(object):
         self.membertopersonmap = {} # member ID --> person ID
         self.persontomembermap = {} # person ID --> memberships
 
-    def import_constituencies_from_people(self):
+    def import_constituencies(self):
         data = json.load(open(os.path.join(members_dir, 'people.json')))
         for con in data['posts']:
             if con['organization_id'] != self.import_organization_id:
@@ -41,27 +41,8 @@ class ResolverBase(object):
             if len(attr['end_date']) == 4:
                 attr['end_date'] = '%s-12-31' % attr['end_date']
 
-            name = con['area']['name']
-            if not con['id'] in self.considtonamemap:
-                self.considtonamemap[con['id']] = name
-            self.constoidmap.setdefault(name, []).append(attr)
-            nopunc = self.strip_punctuation(name)
-            self.constoidmap.setdefault(nopunc, []).append(attr)
-
-    def import_constituencies(self, file):
-        data = json.load(open(os.path.join(members_dir, file)))
-        for con in data:
-            attr = {
-                'id': con['id'],
-                'start_date': con['start_date'],
-                'end_date': con.get('end_date', '9999-12-31'),
-            }
-            if len(attr['start_date']) == 4:
-                attr['start_date'] = '%s-01-01' % attr['start_date']
-            if len(attr['end_date']) == 4:
-                attr['end_date'] = '%s-12-31' % attr['end_date']
-
-            for name in con['names']:
+            names = [con['area']['name']] + con['area'].get('other_names', [])
+            for name in names:
                 if not con['id'] in self.considtonamemap:
                     self.considtonamemap[con['id']] = name
                 self.constoidmap.setdefault(name, []).append(attr)
