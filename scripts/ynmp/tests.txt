@@ -11,26 +11,27 @@ First, let's get the functions and load in the existing people.json data:
 
 And we want a function to alter the fixture with different information:
 
-    >>> import StringIO, csv
-    >>> source = ['election_slug,ballot_paper_id,gss,person_id,person_name,party_id,party_name,theyworkforyou_url,wikidata_id']
+    >>> import csv
+    >>> from io import StringIO
+    >>> source = ['person_id,person_name,election_id,ballot_paper_id,election_date,election_current,party_name,party_id,post_label,cancelled_poll,seats_contested,elected,tied_vote_winner,results_source,mnis_id,twfy_id']
     >>> cols = source[0].split(',')
     >>> def alter(cmd, cons_id, dcid=None, name=None, party=None, pid=None):
     ...     global source
     ...     reader = csv.DictReader(source)
-    ...     s = StringIO.StringIO()
+    ...     s = StringIO()
     ...     fn = csv.DictWriter(s, cols)
     ...     fn.writeheader()
     ...     for line in reader:
     ...         if cmd == 'add' or line['ballot_paper_id'] != cons_id:
     ...             fn.writerow(line)
     ...     if cmd == 'add':
-    ...         fn.writerow({'election_slug':'parl.2019-12-12', 'ballot_paper_id': cons_id, 'person_id': dcid, 'person_name': name, 'party_name': party, 'theyworkforyou_url': pid})
+    ...         fn.writerow({'election_id':'parl.2024-07-04', 'ballot_paper_id': cons_id, 'person_id': dcid, 'person_name': name, 'party_name': party, 'twfy_id': pid, 'elected': 't'})
     ...     s.seek(0)
     ...     source = s.readlines()
 
     >>> def process():
     ...     data['dealt_with'] = []
-    ...     s = StringIO.StringIO(''.join(source))
+    ...     s = StringIO(''.join(source))
     ...     return update_from(s, data)
 
 Now we want to call it with the CSV file before anything has happened:
@@ -40,54 +41,54 @@ Now we want to call it with the CSV file before anything has happened:
 
 Diane Abbott wins:
 
-    >>> alter('add', 'parl.hackney-north-and-stoke-newington.2019-12-12', 2567, 'Diane Abbott', 'Labour', '10001')
+    >>> alter('add', 'parl.hackney-north-and-stoke-newington.2024-07-04', 2567, 'Diane Abbott', 'Labour', '10001')
     >>> process()
-    NEW result 42077, Diane Abbott, Labour, hackney-north-and-stoke-newington, uk.org.publicwhip/person/10001
+    NEW result 42782, Diane Abbott, Labour, hackney-north-and-stoke-newington, uk.org.publicwhip/person/10001
     True
 
 Boris Johnson loses:
 
-    >>> alter('add', 'parl.uxbridge-and-south-ruislip.2019-12-12', 72363, 'Count Binface', 'Independent')
+    >>> alter('add', 'parl.uxbridge-and-south-ruislip.2024-07-04', 72363, 'Count Binface', 'Independent')
     >>> process()
-    NEW result 42078, Count Binface, Independent, uxbridge-and-south-ruislip, uk.org.publicwhip/person/25791
+    NEW result 42783, Count Binface, Independent, uxbridge-and-south-ruislip, uk.org.publicwhip/person/26307
     True
 
 Actually, that was a mistake at the YNMP end, revert until we know the result:
 
-    >>> alter('remove', 'parl.uxbridge-and-south-ruislip.2019-12-12')
+    >>> alter('remove', 'parl.uxbridge-and-south-ruislip.2024-07-04')
     >>> process()
-    Removing result from uk.org.publicwhip/member/42078 (was uk.org.publicwhip/cons/2241, independent, uk.org.publicwhip/person/25791)
+    Removing result from uk.org.publicwhip/member/42783 (was uk.org.publicwhip/cons/2847, independent, uk.org.publicwhip/person/26307)
     True
 
 We then think someone *else* wins:
 
-    >>> alter('add', 'parl.uxbridge-and-south-ruislip.2019-12-12', 72364, 'Lord Buckethead', 'Monster Raving Loony Party')
+    >>> alter('add', 'parl.uxbridge-and-south-ruislip.2024-07-04', 72364, 'Lord Buckethead', 'Monster Raving Loony Party')
     >>> process()
-    Updating uk.org.publicwhip/member/42078 with Lord Buckethead, Monster Raving Loony Party, uxbridge-and-south-ruislip, uk.org.publicwhip/person/25792
+    Updating uk.org.publicwhip/member/42783 with Lord Buckethead, Monster Raving Loony Party, uxbridge-and-south-ruislip, uk.org.publicwhip/person/26308
     True
 
 It turns out Boris Johnson actually won, we get that change at once:
 
-    >>> alter('remove', 'parl.uxbridge-and-south-ruislip.2019-12-12')
-    >>> alter('add', 'parl.uxbridge-and-south-ruislip.2019-12-12', 4546, 'Boris Johnson', 'Conservative and Unionist Party', 10999)
+    >>> alter('remove', 'parl.uxbridge-and-south-ruislip.2024-07-04')
+    >>> alter('add', 'parl.uxbridge-and-south-ruislip.2024-07-04', 4546, 'Boris Johnson', 'Conservative and Unionist Party', 10999)
     >>> process()
-    Updating uk.org.publicwhip/member/42078 with Boris Johnson, Conservative, uxbridge-and-south-ruislip, uk.org.publicwhip/person/10999
+    Updating uk.org.publicwhip/member/42783 with Boris Johnson, Conservative, uxbridge-and-south-ruislip, uk.org.publicwhip/person/10999
     True
 
 Two David Jones both win, one with a person ID, one without:
 
-    >>> alter('add', 'parl.clwyd-west.2019-12-12', 3151, 'David Jones', 'Conservative and Unionist Party', 11506)
-    >>> alter('add', 'parl.blackley-and-broughton.2019-12-12', 5750, 'David Jones', 'Green Party')
+    >>> alter('add', 'parl.clwyd-north.2024-07-04', 3151, 'David Jones', 'Conservative and Unionist Party', 11506)
+    >>> alter('add', 'parl.blackley-and-middleton-south.2024-07-04', 5750, 'David Jones', 'Green Party')
     >>> process()
-    NEW result 42079, David Jones, Conservative, clwyd-west, uk.org.publicwhip/person/11506
-    NEW result 42080, David Jones, Green, blackley-and-broughton, uk.org.publicwhip/person/25793
+    NEW result 42784, David Jones, Conservative, clwyd-north, uk.org.publicwhip/person/11506
+    NEW result 42785, David Jones, Green, blackley-and-middleton-south, uk.org.publicwhip/person/26309
     True
 
 Tessa Jane Munt wins, and YNMP have not supplied her parlparse ID (she was an MP until 2015):
 
-    >>> alter('add', 'parl.wells.2019-12-12', 1699, 'Tessa Munt', 'Liberal Democrats')
+    >>> alter('add', 'parl.wells-and-mendip-hills.2024-07-04', 1699, 'Tessa Munt', 'Liberal Democrats')
     >>> process()
-    NEW result 42081, Tessa Munt, Liberal Democrat, wells, uk.org.publicwhip/person/25794
+    NEW result 42786, Tessa Munt, Liberal Democrat, wells-and-mendip-hills, uk.org.publicwhip/person/26310
     True
 
 If we then just run again with no changes, nothing should happen:

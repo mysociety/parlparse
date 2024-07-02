@@ -9,9 +9,8 @@ import sys
 import unicodedata
 import urllib.request
 
-sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
-
-CSV_URL = 'https://candidates.democracyclub.org.uk/results/csv/parl.2019-12-12/'
+DATE = '2024-07-04'
+CSV_URL = f'https://candidates.democracyclub.org.uk/data/export_csv/?election_id=parl.{DATE}&extra_fields=elected&extra_fields=tied_vote_winner&extra_fields=results_source&extra_fields=mnis_id&extra_fields=twfy_id&format=csv'
 JSON = os.path.join(os.path.dirname(__file__), '..', '..', 'members', 'people.json')
 
 
@@ -25,7 +24,7 @@ def main():
 
 def update_from(csv_url, data):
     changed = False
-    for ynmp_id, name, party, cons, person_id, elected in ynmp_csv_reader(csv_url):
+    for ynmp_id, name, party, cons, person_id, mnis_id in ynmp_csv_reader(csv_url):
         # Add a new party if it's not one we know
         if party not in data['orgs']:
             data['orgs'][party] = slugify(party)
@@ -51,10 +50,13 @@ def update_from(csv_url, data):
             data['max_person_id'] += 1
             person_id = 'uk.org.publicwhip/person/%d' % data['max_person_id']
             name['note'] = 'Main'
+            identifiers = [identifier]
+            if mnis_id:
+                identifiers.append({'scheme': 'datadotparl_id', 'identifier': mnis_id})
             new_person = {
                 'id': person_id,
                 "other_names": [ name ],
-                'identifiers': [identifier],
+                'identifiers': identifiers,
                 'shortcuts': {
                     'current_party': party,
                     'current_constituency': data['posts_by_name'][cons]['area']['name'],
@@ -67,7 +69,7 @@ def update_from(csv_url, data):
         new_mship = {
             'on_behalf_of_id': data['orgs'][party],
             'person_id': person_id,
-            'start_date': '2019-12-13',
+            'start_date': '2024-07-05',
             'start_reason': 'general_election',
         }
         if cons in data['existing']:
@@ -111,8 +113,8 @@ def slugify(value):
     Also strips leading and trailing whitespace.
     """
     value = unicodedata.normalize('NFKD', str(value)).encode('ascii', 'ignore').decode('ascii')
-    value = re.sub('[^\w\s-]', '', value).strip().lower()
-    return re.sub('[-\s]+', '-', value)
+    value = re.sub(r'[^\w\s-]', '', value).strip().lower()
+    return re.sub(r'[-\s]+', '-', value)
 
 
 def load_data():
@@ -149,7 +151,6 @@ def load_data():
 
 PARTY_YNMP_TO_TWFY = {
     'Labour Party': 'Labour',
-    'Conservative Party': 'Conservative',
     'Conservative and Unionist Party': 'Conservative',
     'Liberal Democrats': 'Liberal Democrat',
     'Ulster Unionist Party': 'UUP',
@@ -158,37 +159,38 @@ PARTY_YNMP_TO_TWFY = {
     'Plaid Cymru - The Party of Wales': 'Plaid Cymru',
     "Labour and Co-operative Party": 'Labour/Co-operative',
     'Democratic Unionist Party - D.U.P.': 'DUP',
-    'The Respect Party': 'Respect',
     "SDLP (Social Democratic & Labour Party)": "Social Democratic and Labour Party",
     "UK Independence Party (UKIP)": "UKIP",
-    "UK Independence Party (UK I P)": "UKIP",
     "Alliance - Alliance Party of Northern Ireland": 'Alliance',
     'Green Party': 'Green',
     'Scottish Green Party': 'Green',
     'Traditional Unionist Voice - TUV': 'Traditional Unionist Voice',
-    'The Brexit Party': 'Brexit',
-    # 'The Independent Group for Change'
+    'Alba Party': 'Alba',
+    'Workers Party of Britain': 'Workers Party',
 }
 
 
 def ynmp_csv_reader(fn):
     if isinstance(fn, str):
         fn = urllib.request.urlopen(fn)
+        fn = codecs.getreader("utf-8")(fn)  # Stream in as Unicode
     for row in csv.DictReader(fn):
-        assert row['election_slug'] == 'parl.2019-12-12'
-        name = row['person_name'].decode('utf-8').strip()
+        assert row['election_id'] == f'parl.{DATE}'
+        name = row['person_name'].strip()
         # TWFY has separate first/last name fields. This should catch most.
-        m = re.match('(.*?) ((?:ap |van |de |di |von |st |duncan |lloyd |\u00d3 )*[^ ]*(?: Jnr)?)$(?i)', name)
+        m = re.match('(?i)(.*?) (?:.*? )*?((?:van |de |der |den |von |st |duncan |lloyd )*[^ ]*)$|^[^ ]*$', name)
         given, family = m.groups()
-        party = row['party_name'].decode('utf-8')
+        party = row['party_name']
         party = PARTY_YNMP_TO_TWFY.get(party, party)
-        m = re.match('parl\.(.*)\.2019-12-12', row['ballot_paper_id'])
+        m = re.match(rf'parl\.(.*)\.{DATE}', row['ballot_paper_id'])
         cons = m.group(1)
-        m = re.search('(\d+)', row['theyworkforyou_url'])
+        m = re.search(r'(\d+)', row['twfy_id'])
         person_id = 'uk.org.publicwhip/person/' + m.group(1) if m else None
         ynmp_id = int(row['person_id'])
-        elected = True
-        yield ynmp_id, {'given_name': given, 'family_name': family}, party, cons, person_id, elected
+        #print(ynmp_id, {'given_name': given, 'family_name': family}, party, cons, person_id, row['mnis_id'])
+        if not row['elected'] or row['elected'] in ('f', 'false', 'False', 0, '0', 'n', 'N', 'No', 'no'):
+            continue
+        yield ynmp_id, {'given_name': given, 'family_name': family}, party, cons, person_id, row['mnis_id']
 
 
 def mship_has_changed(old, new):
