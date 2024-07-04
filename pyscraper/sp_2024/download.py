@@ -11,6 +11,7 @@ from __future__ import annotations
 
 from itertools import groupby
 from pathlib import Path
+import re
 from typing import Iterator, NamedTuple
 from urllib.parse import parse_qs, urlparse
 
@@ -131,7 +132,11 @@ class DebateGrouping(NamedTuple):
         """
 
         response = requests.get(url, headers={"User-Agent": user_agent})
-        soup = BeautifulSoup(response.text, "html.parser")
+        raw_html = response.text
+        raw_html = re.sub(
+            '(<p class="or-contribution-box">)(\s*<p )', r"\1</p>\2", raw_html
+        )
+        soup = BeautifulSoup(raw_html, "html.parser")
 
         # first h1 is the heading, last h2 is the subheading
         heading = soup.find_all("h1")[0].text
