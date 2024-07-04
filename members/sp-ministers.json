@@ -3333,7 +3333,8 @@
       "uk.org.publicwhip/person/14085"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-29"
+    "start_date": "2023-03-29",
+    "end_date": "2024-05-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/305",
@@ -3364,7 +3365,8 @@
       "uk.org.publicwhip/person/14009"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-29"
+    "start_date": "2023-03-29",
+    "end_date": "2024-05-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/308",
@@ -3385,7 +3387,8 @@
       "uk.org.publicwhip/person/25491"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-29"
+    "start_date": "2023-03-29",
+    "end_date": "2024-05-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/310",
@@ -3501,7 +3504,8 @@
       "uk.org.publicwhip/person/13987"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-30"
+    "start_date": "2023-03-30",
+    "end_date": "2024-05-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/321",
@@ -3521,7 +3525,8 @@
       "uk.org.publicwhip/person/25991"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-30"
+    "start_date": "2023-03-30",
+    "end_date": "2024-05-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/323",
@@ -3552,7 +3557,8 @@
       "uk.org.publicwhip/person/26011"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-30"
+    "start_date": "2023-03-30",
+    "end_date": "2024-05-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/326",
@@ -3593,7 +3599,8 @@
       "uk.org.publicwhip/person/14029"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-06-13"
+    "start_date": "2023-06-13",
+    "end_date": "2024-05-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/330",
@@ -3625,7 +3632,8 @@
       "uk.org.publicwhip/person/25072"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-06-14"
+    "start_date": "2023-06-14",
+    "end_date": "2024-05-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/333",
@@ -3635,7 +3643,8 @@
       "uk.org.publicwhip/person/25293"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2024-02-08"
+    "start_date": "2024-02-08",
+    "end_date": "2024-05-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/334",
@@ -3645,7 +3654,8 @@
       "uk.org.publicwhip/person/26004"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2024-02-08"
+    "start_date": "2024-02-08",
+    "end_date": "2024-05-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/335",
@@ -3665,7 +3675,8 @@
       "uk.org.publicwhip/person/25525"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2024-02-08"
+    "start_date": "2024-02-08",
+    "end_date": "2024-05-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/337",
@@ -3695,7 +3706,8 @@
       "uk.org.publicwhip/person/26014"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2024-02-20"
+    "start_date": "2024-02-20",
+    "end_date": "2024-05-08"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/340",
@@ -3706,5 +3718,115 @@
     ],
     "organization_id": "scottish-parliament",
     "start_date": "2024-05-07"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/341",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Cabinet Secretary for Finance and Local Government",
+    "person_id": [
+      "uk.org.publicwhip/person/14085"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-05-08"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/342",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Business",
+    "person_id": [
+      "uk.org.publicwhip/person/14029"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-05-08"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/343",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Employment and Investment",
+    "person_id": [
+      "uk.org.publicwhip/person/25491"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-05-08"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/344",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Public Finance",
+    "person_id": [
+      "uk.org.publicwhip/person/25527"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-05-09"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/345",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Children, Young People and The Promise",
+    "person_id": [
+      "uk.org.publicwhip/person/25991"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-05-08"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/346",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Cabinet Secretary for Net Zero and Energy",
+    "person_id": [
+      "uk.org.publicwhip/person/26004"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-05-08"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/347",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Climate Action",
+    "person_id": [
+      "uk.org.publicwhip/person/25525"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-05-08"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/348",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Parliamentary Business",
+    "person_id": [
+      "uk.org.publicwhip/person/14009"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-05-08"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/349",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Cabinet Secretary for Health and Social Care",
+    "person_id": [
+      "uk.org.publicwhip/person/25293"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-05-08"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/350",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Equalities",
+    "person_id": [
+      "uk.org.publicwhip/person/26014"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-05-08"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/351",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Deputy First Minister and Cabinet Secretary for Economy and Gaelic",
+    "person_id": [
+      "uk.org.publicwhip/person/25504"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2024-05-09"
   }
 ]
