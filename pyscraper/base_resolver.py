@@ -33,7 +33,7 @@ class ResolverBase(object):
 
             attr = {
                 'id': con['id'],
-                'start_date': con['start_date'],
+                'start_date': con.get('start_date', '0000-00-00'),
                 'end_date': con.get('end_date', '9999-12-31'),
             }
             if len(attr['start_date']) == 4:
