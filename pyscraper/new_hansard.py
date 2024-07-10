@@ -715,6 +715,12 @@ class BaseParseDayXML(object):
         if len(text) == 0:
             return
 
+        i = para.xpath('./ns:I', namespaces=self.ns_map)
+        if len(i) == 1:
+            i_text = self.get_single_line_text_from_element(i[0])
+            if text == i_text:
+                kwargs['css_class'] = 'italic'
+
         fs = '<p>{0}</p>'.format(PhraseTokenize(self.date, text).GetPara())
         tag = etree.fromstring(fs)
 
