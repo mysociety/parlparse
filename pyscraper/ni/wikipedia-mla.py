@@ -36,7 +36,7 @@ matcher = '<td><a href="([^"]*)" title="[^"]*">([^<]+)</a>[^<]*</td>\s*<t[hd] st
 matches.update(re.findall(matcher, content))
 
 # 4-6th Assembly changes
-changes = re.findall('(?s)<h2><span[^>]*>MLAs by constituency.*?<h2><span[^>]*>Changes(.*?)</html>', content)
+changes = re.findall('(?s)<h2[^>]*>(?:<span[^>]*>)?MLAs by constituency.*?<h2[^>]*>(?:<span[^>]*>)?Changes(.*?)</html>', content)
 for change in changes:
     for m in re.findall('''(?x)
             <td[ ]style="width:[ ]2px;[^>]*>\s*</td>\s* # Thin column of party colour
