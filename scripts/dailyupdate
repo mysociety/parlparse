@@ -17,3 +17,8 @@ YEAR=`date +%Y`
 
 cd ~/parlparse/scripts
 ./fetch-pw-json
+
+# Check for new people
+./add-new-mlas
+./add-new-lords
+

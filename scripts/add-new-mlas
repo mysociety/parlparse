@@ -1,0 +1,116 @@
+#!/usr/bin/env python3
+
+import datetime
+import requests
+
+from popolo import Popolo
+from popolo.utils import new_id
+
+URL = 'https://data.niassembly.gov.uk/members_json.ashx?m=GetAllCurrentMembers'
+
+# Manual overrides
+CONS_FIXES = {
+    'East Belfast': 'Belfast East',
+    'West Belfast': 'Belfast West',
+    'South Belfast': 'Belfast South',
+    'North Belfast': 'Belfast North',
+}
+PARTY_FIXES = {
+    'Alliance Party': 'Alliance',
+    'Democratic Unionist Party': 'DUP',
+    'Ulster Unionist Party': 'UUP',
+}
+
+data = Popolo()
+
+# Map from names to IDs
+AREA_NAME_TO_POST = {post['area']['name']: post['id'] for post in data.posts.values() if 'NI' in post['id']}
+ORG_NAME_TO_POST = {org['name']: org['id'] for org in data.orgs.values()}
+# List of all memberships of NIA we already have
+MSHIPS = data.memberships.in_org('northern-ireland-assembly')
+# IDs to start working from for adding new entries
+person_id = data.max_person_id()
+mla_id = data.max_mla_id()
+
+def get_party_id(name):
+    name = PARTY_FIXES.get(name, name)
+    return ORG_NAME_TO_POST[name]
+
+def get_post_id(name):
+    name = CONS_FIXES.get(name, name)
+    return AREA_NAME_TO_POST[name]
+
+def construct_name(member):
+    given_name = member["MemberFirstName"]
+    family_name = member["MemberLastName"]
+    name = {
+        'given_name': given_name,
+        'family_name': family_name,
+        'note': 'Main',
+    }
+    return name
+
+def construct_person(member, person_id, name):
+    ids = [ {
+        'scheme': 'data.niassembly.gov.uk',
+        'identifier': member["PersonId"]
+    } ]
+    person = {
+        'id': person_id,
+        'identifiers': ids,
+        'other_names': [name]
+    }
+    return person
+
+def construct_membership(member, person_id, mla_id):
+    party = get_party_id(member['PartyName'])
+    post_id = get_post_id(member["ConstituencyName"])
+    membership = {
+        'id': mla_id,
+        'on_behalf_of_id': party,
+        'post_id': post_id,
+        'person_id': person_id,
+        'start_date': datetime.date.today().isoformat(),
+    }
+    return membership
+
+
+changed = False
+members = requests.get(URL).json()
+for member in members['AllMembersList']['Member']:
+    person = data.get_person(id=member['PersonId'], scheme='data.niassembly.gov.uk')
+    # The below was only needed on the first run, to match on names before the IDs were then present
+    if not person:
+        name = f'{member["MemberFirstName"]} {member["MemberLastName"]}'
+        people = [p for p in data.persons.values() if data.names[p['id']] == name and len(MSHIPS.of_person(p['id']))]
+        if name == 'Mark Durkan':  # Otherwise two Mark Durkans to confuse
+            people = [p for p in people if p['id'] == 'uk.org.publicwhip/person/25143']
+        assert len(people) <= 1
+        if people:
+            person = people[0]
+            changed = True
+            person.setdefault('identifiers', []).append({"scheme": "data.niassembly.gov.uk", "identifier": member['PersonId']})
+
+    if person:  # Check is not current member
+        mships = MSHIPS.of_person(person['id'])
+        mships = [m for m in mships]
+        mships.sort(key=lambda x: x.get('end_date', '9999-12-31'))
+        mship = mships[-1]
+        if 'end_date' not in mship:
+            continue
+        mla_id = new_id(mla_id)
+        print(f"{member['MemberFullDisplayName']} is a new MLA already in the system, person ID {person['id']}, MLA ID {mla_id}")
+    else:
+        mla_id = new_id(mla_id)
+        person_id = new_id(person_id)
+        name = construct_name(member)
+        person = construct_person(member, person_id, name)
+        data.add_person(person)
+        print(f"{member['MemberFullDisplayName']} is a new MLA, person ID {person['id']}, MLA ID {mla_id}")
+
+    membership = construct_membership(member, person['id'], mla_id)
+    data.add_membership(membership)
+    changed = True
+
+if changed:
+    data.dump()
