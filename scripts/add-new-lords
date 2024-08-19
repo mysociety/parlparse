@@ -45,7 +45,8 @@ party_map = {
     'Plaid Cymru': 'plaid-cymru',
     'Bishops': 'bishop',
     'Democratic Unionist Party': 'dup',
-    'Non-affiliated': 'non-affiliated'
+    'Non-affiliated': 'non-affiliated',
+    'Ulster Unionist Party': 'uup'
 }
 
 type_map = {
