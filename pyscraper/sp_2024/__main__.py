@@ -14,6 +14,7 @@ import click
 from .convert import convert_xml_to_twfy
 from .download import fetch_debates_for_dates, fetch_wrans_for_dates
 from .parse import tidy_up_html
+from .parse_wrans import tidy_up_wrans_html
 
 file_dir = Path(__file__).parent
 parldata = Path(file_dir, "..", "..", "..", "parldata")
@@ -166,6 +167,13 @@ def wrans(
         )
         for file in file_iterator:
             pass
+
+    if parse:
+        file_iterator = cache_dir_iterator(download_dir, start, end, partial_file_name)
+        for file in file_iterator:
+            if verbose:
+                print(f"Parsing up {file}")
+            tidy_up_wrans_html(file, parsed_dir)
 
 
 if __name__ == "__main__":
