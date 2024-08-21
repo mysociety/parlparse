@@ -12,6 +12,7 @@ from pathlib import Path
 import click
 
 from .convert import convert_xml_to_twfy
+from .convert_wrans import convert_wrans_xml_to_twfy
 from .download import fetch_debates_for_dates, fetch_wrans_for_dates
 from .parse import tidy_up_html
 from .parse_wrans import tidy_up_wrans_html
@@ -22,6 +23,7 @@ parldata = Path(file_dir, "..", "..", "..", "parldata")
 download_dir = parldata / "cmpages" / "sp_2024" / "raw"
 parsed_dir = parldata / "cmpages" / "sp_2024" / "parsed"
 output_dir = parldata / "scrapedxml" / "sp-new"
+output_dir_wrans = parldata / "scrapedxml" / "sp-written"
 
 
 @click.group()
@@ -174,6 +176,13 @@ def wrans(
             if verbose:
                 print(f"Parsing up {file}")
             tidy_up_wrans_html(file, parsed_dir)
+
+    if convert:
+        file_iterator = cache_dir_iterator(parsed_dir, start, end, partial_file_name)
+        for file in file_iterator:
+            if verbose:
+                print(f"Converting {file} to TheyWorkForYou format")
+            convert_wrans_xml_to_twfy(file, output_dir_wrans, verbose=verbose)
 
 
 if __name__ == "__main__":
