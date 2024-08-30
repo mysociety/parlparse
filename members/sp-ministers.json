@@ -3521,9 +3521,7 @@
     "id": "scot.parliament.data/membergovernmentroles/322",
     "source": "https://data.parliament.scot/api/membergovernmentroles/json",
     "role": "Minister for Children, Young People and Keeping the Promise",
-    "person_id": [
-      "uk.org.publicwhip/person/25991"
-    ],
+    "person_id": [],
     "organization_id": "scottish-parliament",
     "start_date": "2023-03-30",
     "end_date": "2024-05-08"
@@ -3763,9 +3761,7 @@
     "id": "scot.parliament.data/membergovernmentroles/345",
     "source": "https://data.parliament.scot/api/membergovernmentroles/json",
     "role": "Minister for Children, Young People and The Promise",
-    "person_id": [
-      "uk.org.publicwhip/person/25991"
-    ],
+    "person_id": [],
     "organization_id": "scottish-parliament",
     "start_date": "2024-05-08"
   },
