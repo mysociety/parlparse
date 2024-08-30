@@ -85,7 +85,7 @@ def convert_xml_to_twfy(file_path: Path, output_dir: Path, verbose: bool = False
     timestamp = ""
 
     # remove [Draft] from title
-    title = title.replace("[Draft]", "").strip()
+    title = re.sub(r'\[Draft\]( Business until \d\d:\d\d)?', '', title).strip()
 
     # get the date in format Thursday 9 June 2005
     date_str = datetime.date.fromisoformat(iso_date).strftime("%A %d %B %Y")
