@@ -5,11 +5,13 @@ import argparse
 import os
 import datetime
 import re
-from os.path import join
+import json
+from os.path import join, exists
 from miscfuncs import toppath
 
 from new_hansard import ParseDay
 
+recess_file = join(toppath, 'recessdates.json')
 
 today = datetime.date.today()
 yesterday = today - datetime.timedelta(1)
@@ -32,6 +34,22 @@ for d in os.listdir(zip_directory):
     fn = join(zip_directory, d)
     if m and os.path.isdir(fn) and ARGS.date_from <= m.group(2) <= ARGS.date_to:
         dirs.append(fn)
+
+if exists(recess_file):
+    with open(recess_file) as f:
+        recess_dates = json.load(f)
+else:
+    recess_dates = {'commons': {'recesses':[]}}
+
+# if it's Tuesday to Saturday, we are looking for yesterday's files and we didn't find any
+# check to see if it was a recess otherwise complain about missing files
+if 2 <= today.isoweekday() < 7 and len(dirs) == 0 and ARGS.date_from == yesterday.isoformat() and ARGS.date_to == today.isoformat():
+    is_recess = False
+    for date in recess_dates['commons']['recesses']:
+        if date['start'] < yesterday.isoformat() < date['end']:
+            is_recess = True
+    if not is_recess:
+        print "Yesterday (%s) was not a recess but we didn't fetch any files for Parliament" % yesterday.isoformat()
 
 # process the directories in date order so we do any revisions in the correct
 # order
