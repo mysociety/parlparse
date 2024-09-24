@@ -1,0 +1,10 @@
+#!/bin/bash
+
+poetry run ruff format .
+
+# This ignores a number of linting checks that are *problems* and so
+# we want to be able to see in editor (and can't put in pyproject.toml)
+# but we don't want to have to fix everything (given it's working fineish)
+# to see new issues
+# this is the 'using is' for equality, top module imports broken by chdir, don't use lambdas, etc 
+poetry run ruff check . --fix --config 'lint.ignore = ["E501", "E402", "E731", "E722", "F841", "E711", "E712"]'
