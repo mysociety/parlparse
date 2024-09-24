@@ -1,0 +1,13 @@
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.9"
+beautifulsoup4 = "4.12.3"
+everypolitician = "0.0.13"
+lxml = "5.2.1"
+python-dateutil = "2.2"
+requests = { version = "2.32.3", extras = ["security"] }
+requests-cache = "0.4.13"
+Click = "7.0"
+click-log = "0.3.2"
