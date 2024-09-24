@@ -1,21 +1,25 @@
 #!/usr/bin/env python3
 
-from os import path, sys
+import sys
+from os import path
 
 # To allow import popolo
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
 import logging
+
 import requests
 from popolo import Popolo
 from popolo.utils import new_id
 
 # Logging:
-logging.basicConfig(filename=path.join(path.abspath(__file__), "../../logs/log-posts.txt"),
-                    filemode='a',
-                    format="[%(asctime)s] [%(levelname)-8s] --- %(message)s (%(filename)s:%(lineno)s)",
-                    datefmt="%Y-%m-%d %H:%M:%S",
-                    level=logging.DEBUG)
+logging.basicConfig(
+    filename=path.join(path.abspath(__file__), "../../logs/log-posts.txt"),
+    filemode="a",
+    format="[%(asctime)s] [%(levelname)-8s] --- %(message)s (%(filename)s:%(lineno)s)",
+    datefmt="%Y-%m-%d %H:%M:%S",
+    level=logging.DEBUG,
+)
 
 logger = logging.getLogger()
 
@@ -34,7 +38,7 @@ WHERE {
 }
 """
 
-r = requests.get(url, params = {"format": "json", "query": query})
+r = requests.get(url, params={"format": "json", "query": query})
 data = r.json()
 
 # Gather all potential Senedd posts from Wikidata
@@ -43,7 +47,7 @@ candidates = []
 for item in data["results"]["bindings"]:
     candidate = {
         "wikidata_id": item["post"]["value"].rsplit("/", 1)[-1],
-        "name"       : item["postLabel"]["value"],
+        "name": item["postLabel"]["value"],
     }
 
     if "inceptionYear" in item:
@@ -60,73 +64,71 @@ candidates.sort(key=lambda c: (c["start_date"], c["name"]))
 # Check whether each candidate already exists, if not, create them
 
 for candidate in candidates:
-
-    logger.debug("Looking at {} ({}):".format(
-        candidate["name"],
-        candidate["wikidata_id"]
-    ))
+    logger.debug(
+        "Looking at {} ({}):".format(candidate["name"], candidate["wikidata_id"])
+    )
 
     post = popolo.get_post(id=candidate["wikidata_id"], scheme="wikidata")
 
     if post:
-
-        logger.debug("{} ({}) matched to existing post {} by Wikidata ID".format(
-            candidate["name"],
-            candidate["wikidata_id"],
-            post["id"]
-        ))
+        logger.debug(
+            "{} ({}) matched to existing post {} by Wikidata ID".format(
+                candidate["name"], candidate["wikidata_id"], post["id"]
+            )
+        )
 
         if "parlparse_id" not in candidate:
-            logger.warning("{} ({}) does not have a TWFY ID set in Wikidata. Expected {}.".format(
-                candidate["name"],
-                candidate["wikidata_id"],
-                post["id"]
-            ))
+            logger.warning(
+                "{} ({}) does not have a TWFY ID set in Wikidata. Expected {}.".format(
+                    candidate["name"], candidate["wikidata_id"], post["id"]
+                )
+            )
 
         else:
-
             if candidate["parlparse_id"] != post["id"]:
-                logger.warning("{} ({}) has a parlparse ID of {}, expected {}.".format(
-                    candidate["name"],
-                    candidate["wikidata_id"],
-                    candidate["parlparse_id"],
-                    post["id"]
-                ))
+                logger.warning(
+                    "{} ({}) has a parlparse ID of {}, expected {}.".format(
+                        candidate["name"],
+                        candidate["wikidata_id"],
+                        candidate["parlparse_id"],
+                        post["id"],
+                    )
+                )
 
             else:
-                logger.debug("{} ({}) has expected parlparse ID".format(
-                    candidate["name"],
-                    candidate["wikidata_id"],
-                ))
+                logger.debug(
+                    "{} ({}) has expected parlparse ID".format(
+                        candidate["name"],
+                        candidate["wikidata_id"],
+                    )
+                )
 
     else:
+        logger.debug(
+            "Creating parlparse ID for {} ({})".format(
+                candidate["name"], candidate["wikidata_id"]
+            )
+        )
 
-        logger.debug("Creating parlparse ID for {} ({})".format(candidate["name"], candidate["wikidata_id"]))
-
-        new_post_id = new_id(popolo.max_post_id("welsh-parliament", range_start = 70000))
+        new_post_id = new_id(popolo.max_post_id("welsh-parliament", range_start=70000))
         logger.debug("Parlparse ID is {}".format(new_post_id))
 
         new_post = {
-          "area": {
-              "name": candidate["name"]
-          },
-          "id": new_post_id,
-          "identifiers": [
-            {
-              "identifier": candidate["wikidata_id"],
-              "scheme": "wikidata"
-            }
-          ],
-          "label": "MS for {}".format(candidate["name"]),
-          "organization_id": "welsh-parliament",
-          "role": "MS",
+            "area": {"name": candidate["name"]},
+            "id": new_post_id,
+            "identifiers": [
+                {"identifier": candidate["wikidata_id"], "scheme": "wikidata"}
+            ],
+            "label": "MS for {}".format(candidate["name"]),
+            "organization_id": "welsh-parliament",
+            "role": "MS",
         }
 
         if "start_date" in candidate:
-            new_post["start_date"] =  candidate["start_date"]
+            new_post["start_date"] = candidate["start_date"]
 
         if "end_date" in candidate:
-            new_post["end_date"] =  candidate["end_date"]
+            new_post["end_date"] = candidate["end_date"]
 
         popolo.add_post(new_post)
 

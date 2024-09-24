@@ -3,6 +3,7 @@
 import datetime
 import re
 import urllib.request
+
 from lxml import etree
 from popolo import Popolo
 from popolo.utils import new_id
@@ -14,15 +15,16 @@ data = Popolo()
 
 
 def canon_name(n):
-    n = re.sub(' St\. +', ' St ', n)
-    n = re.sub('^The ', '', n)
-    n = re.sub(' De ', ' de ', n)
-    n = re.sub('Lord (Archb|B)ishop ', r'\1ishop ', n)
-    n = re.sub('\u2019', "'", n)
+    n = re.sub(" St\. +", " St ", n)
+    n = re.sub("^The ", "", n)
+    n = re.sub(" De ", " de ", n)
+    n = re.sub("Lord (Archb|B)ishop ", r"\1ishop ", n)
+    n = re.sub("\u2019", "'", n)
     return n
 
 
-lord_match = re.compile(''' ^
+lord_match = re.compile(
+    """ ^
     (?P<the> The \s+ )?     # Optional 'The ' at the start
     (?P<prefix> [^\s]* )    # Title, e.g. Baroness
     (?:\s+ (?P<name>        # Optional name; one or more words, which must not be 'of'
@@ -33,117 +35,107 @@ lord_match = re.compile(''' ^
         \s+ of \s+
         (?P<lordof>.*)
     )?
-$ ''', re.X)
+$ """,
+    re.X,
+)
 
 party_map = {
-    'Liberal Democrats': 'liberal-democrat',
-    'Liberal Democrat': 'liberal-democrat',
-    'Conservative': 'conservative',
-    'Crossbench': 'crossbench',
-    'Labour': 'labour',
-    'Green Party': 'green',
-    'Plaid Cymru': 'plaid-cymru',
-    'Bishops': 'bishop',
-    'Democratic Unionist Party': 'dup',
-    'Non-affiliated': 'non-affiliated',
-    'Ulster Unionist Party': 'uup'
+    "Liberal Democrats": "liberal-democrat",
+    "Liberal Democrat": "liberal-democrat",
+    "Conservative": "conservative",
+    "Crossbench": "crossbench",
+    "Labour": "labour",
+    "Green Party": "green",
+    "Plaid Cymru": "plaid-cymru",
+    "Bishops": "bishop",
+    "Democratic Unionist Party": "dup",
+    "Non-affiliated": "non-affiliated",
+    "Ulster Unionist Party": "uup",
 }
 
-type_map = {
-    'Life peer': 'L',
-    'Excepted Hereditary': 'HP',
-    'Bishops': 'B'
-}
+type_map = {"Life peer": "L", "Excepted Hereditary": "HP", "Bishops": "B"}
 
 
 def construct_name(member):
-    given_name = member.find('BasicDetails/GivenForename').text
-    middle_names = member.find('BasicDetails/GivenMiddleNames').text
-    surname = member.find('BasicDetails/GivenSurname').text
-    title_parts = lord_match.search(member.find('DisplayAs').text)
-    the = title_parts.group('the')
-    prefix = title_parts.group('prefix')
-    lordname = title_parts.group('name')
-    lordof = title_parts.group('lordof') or ''
-    if the and prefix == 'Lord' and lordname in ('Bishop', 'Archbishop'):
+    given_name = member.find("BasicDetails/GivenForename").text
+    middle_names = member.find("BasicDetails/GivenMiddleNames").text
+    surname = member.find("BasicDetails/GivenSurname").text
+    title_parts = lord_match.search(member.find("DisplayAs").text)
+    the = title_parts.group("the")
+    prefix = title_parts.group("prefix")
+    lordname = title_parts.group("name")
+    lordof = title_parts.group("lordof") or ""
+    if the and prefix == "Lord" and lordname in ("Bishop", "Archbishop"):
         prefix = lordname
-        lordname = ''
+        lordname = ""
     name = {
-        'given_name': given_name,
-        'honorific_prefix': prefix,
-        'lordname': lordname,
-        'lordofname': lordof,
-        'lordofname_full': '',
-        'county': '',
-        'note': 'Main',
+        "given_name": given_name,
+        "honorific_prefix": prefix,
+        "lordname": lordname,
+        "lordofname": lordof,
+        "lordofname_full": "",
+        "county": "",
+        "note": "Main",
     }
     if middle_names:
-        name['additional_name'] = middle_names
+        name["additional_name"] = middle_names
     if surname and surname != lordname:
-        name['surname'] = surname
+        name["surname"] = surname
     return name
 
 
 def construct_person(member, person_id, name):
     ids = [
-        {
-            'scheme': 'pims_id',
-            'identifier': member.attrib['Pims_Id']
-        },
-        {
-            'scheme': 'datadotparl_id',
-            'identifier': member.attrib['Member_Id']
-        }
+        {"scheme": "pims_id", "identifier": member.attrib["Pims_Id"]},
+        {"scheme": "datadotparl_id", "identifier": member.attrib["Member_Id"]},
     ]
-    person = {
-        'id': person_id,
-        'identifiers': ids,
-        'other_names': [name]
-    }
+    person = {"id": person_id, "identifiers": ids, "other_names": [name]}
     return person
 
+
 def construct_membership(member, person_id, lord_id):
-    lord_type = type_map[member.find('MemberFrom').text]
-    party = party_map[member.find('Party').text]
-    start_date = re.sub('T.*$', '', member.find('HouseStartDate').text)
+    lord_type = type_map[member.find("MemberFrom").text]
+    party = party_map[member.find("Party").text]
+    start_date = re.sub("T.*$", "", member.find("HouseStartDate").text)
     membership = {
-        'id': lord_id,
-        'identifiers': [{
-            'identifier': lord_type,
-            'scheme': 'peeragetype'
-        }],
-        'label': 'Peer',
-        'on_behalf_of_id': party,
-        'organization_id': 'house-of-lords',
-        'person_id': person_id,
-        'role': 'Peer',
-        'start_date': start_date
+        "id": lord_id,
+        "identifiers": [{"identifier": lord_type, "scheme": "peeragetype"}],
+        "label": "Peer",
+        "on_behalf_of_id": party,
+        "organization_id": "house-of-lords",
+        "person_id": person_id,
+        "role": "Peer",
+        "start_date": start_date,
     }
-    if not membership['start_date'] or not membership['on_behalf_of_id']:
+    if not membership["start_date"] or not membership["on_behalf_of_id"]:
         print("Missing start date or party!")
         sys.exit()
     return membership
 
 
-LORDS_URL = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Lords|membership=all/BasicDetails/'
+LORDS_URL = "http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Lords|membership=all/BasicDetails/"
 parl_members = etree.parse(urllib.request.urlopen(LORDS_URL)).getroot()
-parl_members = sorted(parl_members, key=lambda x: x.find('HouseStartDate').text)
+parl_members = sorted(parl_members, key=lambda x: x.find("HouseStartDate").text)
 
 changed = False
 person_id = data.max_person_id()
 for member in parl_members:
     # We only know about Lords post House of Lords Act 1999
-    end_date = member.find('HouseEndDate').text or ''
-    end_date = end_date.replace('T00:00:00', '')
-    if end_date and end_date < '1999-11-12':
+    end_date = member.find("HouseEndDate").text or ""
+    end_date = end_date.replace("T00:00:00", "")
+    if end_date and end_date < "1999-11-12":
         continue
 
-    name = canon_name(member.find('DisplayAs').text)
-    person = data.get_person(id=member.attrib['Member_Id'], scheme='datadotparl_id')
+    name = canon_name(member.find("DisplayAs").text)
+    person = data.get_person(id=member.attrib["Member_Id"], scheme="datadotparl_id")
     if not person:
         person_id = new_id(person_id)
         lord_id = new_id(data.max_lord_id())
-        print("{} is a new Lord, person ID {}, lord ID {}".format(name, person_id, lord_id))
+        print(
+            "{} is a new Lord, person ID {}, lord ID {}".format(
+                name, person_id, lord_id
+            )
+        )
 
         name = construct_name(member)
         person = construct_person(member, person_id, name)
@@ -152,34 +144,57 @@ for member in parl_members:
         data.add_person(person)
         data.add_membership(membership)
         changed = True
-    elif data.names[person['id']] == name:
+    elif data.names[person["id"]] == name:
         # Same lord name, assume already got them. Check they are still current
-        mships = data.memberships.of_person(person['id'])
+        mships = data.memberships.of_person(person["id"])
         mships = [m for m in mships]
-        mships.sort(key=lambda x: x.get('end_date', '9999-12-31'))
+        mships.sort(key=lambda x: x.get("end_date", "9999-12-31"))
         mship = mships[-1]
-        if end_date and 'end_date' not in mship:
-            mship['end_date'] = end_date
+        if end_date and "end_date" not in mship:
+            mship["end_date"] = end_date
             changed = True
-        elif end_date != mship.get('end_date', ''):
-            us = mship.get('end_date', '-')
-            if name == 'Bishop of Bradford' and end_date == '2010-07-14' and us == '2010-07-31': continue
-            if name == 'Lord Greaves' and end_date == '2021-03-23' and us == '2021-03-24': continue
-            if name == 'Baroness Greengross' and end_date == '2022-06-23' and us == '2022-06-29': continue
-            print('*', name, 'Parl=', end_date, 'Us=', mship.get('end_date', '-'))
+        elif end_date != mship.get("end_date", ""):
+            us = mship.get("end_date", "-")
+            if (
+                name == "Bishop of Bradford"
+                and end_date == "2010-07-14"
+                and us == "2010-07-31"
+            ):
+                continue
+            if (
+                name == "Lord Greaves"
+                and end_date == "2021-03-23"
+                and us == "2021-03-24"
+            ):
+                continue
+            if (
+                name == "Baroness Greengross"
+                and end_date == "2022-06-23"
+                and us == "2022-06-29"
+            ):
+                continue
+            print("*", name, "Parl=", end_date, "Us=", mship.get("end_date", "-"))
         continue
     else:
         lord_id = new_id(data.max_lord_id())
-        print("{} is a new Lord already in the system, person ID {}, lord ID {}".format(name, person['id'], lord_id))
+        print(
+            "{} is a new Lord already in the system, person ID {}, lord ID {}".format(
+                name, person["id"], lord_id
+            )
+        )
 
         name = construct_name(member)
-        membership = construct_membership(member, person['id'], lord_id)
-        names = [n for n in person['other_names'] if n['note'] == 'Main']
-        latest_name = sorted(names, key=lambda x: x.get('start_date', '0000-00-00'), reverse=True)[0]
-        day_before = datetime.datetime.strptime(membership['start_date'], '%Y-%m-%d') - datetime.timedelta(days=1)
-        latest_name['end_date'] = day_before.date().isoformat()
-        name['start_date'] = membership['start_date']
-        person['other_names'].append(name)
+        membership = construct_membership(member, person["id"], lord_id)
+        names = [n for n in person["other_names"] if n["note"] == "Main"]
+        latest_name = sorted(
+            names, key=lambda x: x.get("start_date", "0000-00-00"), reverse=True
+        )[0]
+        day_before = datetime.datetime.strptime(
+            membership["start_date"], "%Y-%m-%d"
+        ) - datetime.timedelta(days=1)
+        latest_name["end_date"] = day_before.date().isoformat()
+        name["start_date"] = membership["start_date"]
+        person["other_names"].append(name)
 
         data.add_membership(membership)
         changed = True

@@ -1,37 +1,39 @@
 #!/usr/bin/env python3
 # coding=UTF-8
 
-from html import escape
+import datetime
 import errno
-import sys
+import itertools
 import os
 import re
-import random
-import datetime
-import itertools
+import sys
 import time
-import traceback
-import dateutil.parser as dateparser
-from tempfile import NamedTemporaryFile
+from html import escape
 from optparse import OptionParser
-from common import tidy_string
-from common import non_tag_data_in
-from common import just_time
-from common import meeting_suspended
-from common import meeting_closed
+from tempfile import NamedTemporaryFile
 
+import dateutil.parser as dateparser
+from common import (
+    just_time,
+    meeting_closed,
+    meeting_suspended,
+    non_tag_data_in,
+    tidy_string,
+)
 from lxml import etree
 
-sys.path.append('../')
+sys.path.append("../")
 
-from bs4 import BeautifulSoup
-from bs4 import NavigableString
+from bs4 import BeautifulSoup, NavigableString
 
 from sp.resolvenames import memberList
 
-official_report_url_format = 'http://www.parliament.scot/parliamentarybusiness/report.aspx?r={0}&mode=html'
+official_report_url_format = (
+    "http://www.parliament.scot/parliamentarybusiness/report.aspx?r={0}&mode=html"
+)
 
-DIVISION_HEADINGS = ('FOR', 'AGAINST', 'ABSTENTIONS', 'SPOILED VOTES')
+DIVISION_HEADINGS = ("FOR", "AGAINST", "ABSTENTIONS", "SPOILED VOTES")
+
 
 def is_division_way(element, report_date=None):
     """If it's a division heading, return a normalized version, otherwise None
@@ -42,7 +44,7 @@ def is_division_way(element, report_date=None):
     (None, None, None)
     >>> is_division_way('abstentions ')
     ('ABSTENTIONS', None, None)
-    >>> is_division_way(":\xA0FOR")
+    >>> is_division_way(":\xa0FOR")
     ('FOR', None, None)
     >>> is_division_way('Abstention')
     ('ABSTENTIONS', None, None)
@@ -68,35 +70,41 @@ def is_division_way(element, report_date=None):
 
     tidied = tidy_string(non_tag_data_in(element)).upper()
     # Strip any non-word letters at the start and end:
-    tidied = re.sub(r'^\W*(.*?)\W*$', '\\1', tidied)
+    tidied = re.sub(r"^\W*(.*?)\W*$", "\\1", tidied)
 
     if tidied in DIVISION_HEADINGS:
         return (tidied, None, None)
-    elif tidied in ('ABSTENTION', 'ABSENTIONS'):
-        return ('ABSTENTIONS', None, None)
-    elif re.search('^THE FOLLOWING MEMBERS? TOOK THE OATH( AND REPEATED IT IN .*)?:?$', tidied):
-        return ('FOR', 'oath', None)
-    elif re.search('^THE FOLLOWING MEMBERS? MADE A SOLEMN AFFIRMATION( AND REPEATED IT IN .*)?:?$', tidied):
-        return ('FOR', 'affirmation', None)
+    elif tidied in ("ABSTENTION", "ABSENTIONS"):
+        return ("ABSTENTIONS", None, None)
+    elif re.search(
+        "^THE FOLLOWING MEMBERS? TOOK THE OATH( AND REPEATED IT IN .*)?:?$", tidied
+    ):
+        return ("FOR", "oath", None)
+    elif re.search(
+        "^THE FOLLOWING MEMBERS? MADE A SOLEMN AFFIRMATION( AND REPEATED IT IN .*)?:?$",
+        tidied,
+    ):
+        return ("FOR", "affirmation", None)
     elif len(tidied.split()) < 128:
         # The second regular expression could be *very* slow on
         # strings that begin 'FOR', so only try it on short strings
         # that might be introducing a division, and assume that there
         # are 2 to 4 words in the name:
-        m1 = re.search(r'(?i)^VOTES? FOR ([A-Z -]+)$', tidied)
-        m2 = re.search(r'^FOR ((?:[A-Z]+\s*){2,4})$', tidied)
+        m1 = re.search(r"(?i)^VOTES? FOR ([A-Z -]+)$", tidied)
+        m2 = re.search(r"^FOR ((?:[A-Z]+\s*){2,4})$", tidied)
         m = m1 or m2
         if m:
             person_name = m.group(1).title()
             person_id = None
             if report_date:
                 person_id = get_unique_person_id(person_name, report_date)
-            return ('FOR', person_name, person_id)
+            return ("FOR", person_name, person_id)
         else:
-            m = re.search(r'FOR OPTION (\d+)$', tidied)
+            m = re.search(r"FOR OPTION (\d+)$", tidied)
             if m:
-                return ('FOR', 'Option ' + m.group(1), None)
+                return ("FOR", "Option " + m.group(1), None)
     return (None, None, None)
+
 
 def first(iterable):
     for element in iterable:
@@ -104,7 +112,9 @@ def first(iterable):
             return element
     return None
 
-member_vote_re = re.compile('''
+
+member_vote_re = re.compile(
+    """
         ^                               # Beginning of the string
         (?P<last_name>[^,\(\)0-9:]+)    # ... last name, >= 1 non-comma characters
         ,                               # ... then a comma
@@ -117,9 +127,12 @@ member_vote_re = re.compile('''
         (?P<party>\D*?)                 # ... party, a minimal match of any characters
         \)                              # ... close banana
         $                               # ... end of the string
-''', re.VERBOSE)
+""",
+    re.VERBOSE,
+)
 
-member_vote_fullname_re = re.compile('''
+member_vote_fullname_re = re.compile(
+    """
         ^                               # Beginning of the string
         (?P<full_name>[^,\(\)0-9:]+)    # ... full name, >= 1 non-comma characters
         \s*\(\(?                        # ... an arbitrary amout of whitespace and an open banana
@@ -129,9 +142,12 @@ member_vote_fullname_re = re.compile('''
         (?P<party>\D*?)                 # ... party, a minimal match of any characters
         \)                              # ... close banana
         $                               # ... end of the string
-''', re.VERBOSE)
+""",
+    re.VERBOSE,
+)
 
-member_vote_just_constituency_re = re.compile('''
+member_vote_just_constituency_re = re.compile(
+    """
         ^                               # Beginning of the string
         (?P<last_name>[^,\(\)0-9:]+)    # ... last name, >= 1 non-comma characters
         ,                               # ... then a comma
@@ -142,22 +158,27 @@ member_vote_just_constituency_re = re.compile('''
         (?P<constituency>[^\(\)0-9:]*?) # ... constituency, a minimal match of any characters
         \)\s*                           # ... close banana, whitespace
         $                               # ... end of the string
-''', re.VERBOSE)
+""",
+    re.VERBOSE,
+)
+
 
 def get_unique_person_id(tidied_speaker, on_date):
-    ids = memberList.match_whole_speaker(tidied_speaker,str(on_date))
+    ids = memberList.match_whole_speaker(tidied_speaker, str(on_date))
     if ids is None:
         # This special return value (None) indicates that the speaker
         # is something we know about, but not an MSP (e.g Lord
         # Advocate)
         return None
     elif len(ids) == 0:
-        log_speaker(tidied_speaker,str(on_date),"missing")
+        log_speaker(tidied_speaker, str(on_date), "missing")
         return None
     elif len(ids) == 1:
         return ids[0]
     else:
-        raise Exception("The speaker '%s' could not be resolved, found: %s" % (tidied_speaker, ids))
+        raise Exception(
+            "The speaker '%s' could not be resolved, found: %s" % (tidied_speaker, ids)
+        )
 
 
 def is_member_vote(element, vote_date, expecting_a_vote=True):
@@ -200,18 +221,22 @@ def is_member_vote(element, vote_date, expecting_a_vote=True):
     """
     tidied = tidy_string(non_tag_data_in(element))
 
-    from_first_and_last = lambda m: m and "%s %s (%s)" % (m.group('first_names'),
-                                                          m.group('last_name'),
-                                                          m.group('constituency'))
+    from_first_and_last = lambda m: m and "%s %s (%s)" % (
+        m.group("first_names"),
+        m.group("last_name"),
+        m.group("constituency"),
+    )
 
-    from_full = lambda m: m and m.group('full_name')
+    from_full = lambda m: m and m.group("full_name")
     vote_matches = (
         (member_vote_re, from_first_and_last),
         (member_vote_just_constituency_re, from_first_and_last),
-        (member_vote_fullname_re, from_full))
+        (member_vote_fullname_re, from_full),
+    )
 
-    reformed_name = first(processor(regexp.search(tidied))
-                        for regexp, processor in vote_matches)
+    reformed_name = first(
+        processor(regexp.search(tidied)) for regexp, processor in vote_matches
+    )
 
     if not reformed_name:
         return None
@@ -225,17 +250,20 @@ def is_member_vote(element, vote_date, expecting_a_vote=True):
     else:
         return person_id
 
+
 def log_speaker(speaker, date, message):
     if SPEAKERS_DEBUG:
         with open("speakers.txt", "a") as fp:
-            fp.write(str(date)+": ["+message+"] "+speaker+"\n")
+            fp.write(str(date) + ": [" + message + "] " + speaker + "\n")
+
 
 def filename_key(filename):
-    m = re.search(r'^(\d+)\.html$', filename)
+    m = re.search(r"^(\d+)\.html$", filename)
     if m:
         return int(m.group(1), 10)
     else:
         return 0
+
 
 def is_page_empty(soup):
     """Return true if there's any text in <div id="ReportView">
@@ -243,8 +271,9 @@ def is_page_empty(soup):
     If the page isn't empty, this takes rather a long time, so
     only use this in cases where we've found the title is empty
     already."""
-    report_view = soup.find('div', attrs={'id': 'ReportView'})
-    return not ''.join(report_view.findAll(text=True)).strip()
+    report_view = soup.find("div", attrs={"id": "ReportView"})
+    return not "".join(report_view.findAll(text=True)).strip()
+
 
 def get_page_title(soup):
     """Extract and clean up the title tag from a page
@@ -252,10 +281,11 @@ def get_page_title(soup):
     Returns a string with the page title minus cruft"""
 
     title = soup.title.text
-    title = re.sub('(?ims):.*$', '', title)
+    title = re.sub("(?ims):.*$", "", title)
     title = tidy_string(title)
 
     return title
+
 
 def get_title_and_date(soup, page_id):
     """Extract the session and date from a page
@@ -263,7 +293,9 @@ def get_title_and_date(soup, page_id):
     Returns a (session, date) tuple, or if the page should be skipped
     returns (None, None)."""
 
-    title_elements = soup.findAll(attrs={"id" : "ReportView_ReportViewHtml_lblReportTitle"})
+    title_elements = soup.findAll(
+        attrs={"id": "ReportView_ReportViewHtml_lblReportTitle"}
+    )
     if len(title_elements) > 1:
         raise Exception("Too many title elements were found")
     elif len(title_elements) == 0:
@@ -273,9 +305,13 @@ def get_title_and_date(soup, page_id):
         if is_page_empty(soup):
             return (None, None)
         else:
-            raise Exception("No title was found in a page that's non-empty; the page ID was: %d" % (page_id,))
-    title = re.sub(r'\(Hybrid\) 202(\d)', r'202\1 (Hybrid)', title)
-    m = re.search(r'''(?x)
+            raise Exception(
+                "No title was found in a page that's non-empty; the page ID was: %d"
+                % (page_id,)
+            )
+    title = re.sub(r"\(Hybrid\) 202(\d)", r"202\1 (Hybrid)", title)
+    m = re.search(
+        r"""(?x)
             ^(.*) \s+
             (?: [(] (?:Hybrid) [)] \s* )?
             ( \d{1,2} [ ] \w+ [ ] \d{4} ) \s*
@@ -285,30 +321,105 @@ def get_title_and_date(soup, page_id):
                 | Test
                 | \1
             )?
-            $''', title)
+            $""",
+        title,
+    )
     if m:
-        session = m.group(1).rstrip(',')
+        session = m.group(1).rstrip(",")
         report_date = dateparser.parse(m.group(2)).date()
         return (session, report_date)
     else:
         # try committee format
-        m = re.search(r'^(.*)\s+(\d{1,2} \w+ \d{4})\s*(?: (?:Agenda|Draft).*)', title)
+        m = re.search(r"^(.*)\s+(\d{1,2} \w+ \d{4})\s*(?: (?:Agenda|Draft).*)", title)
         if m:
-            session = m.group(1).rstrip(',')
+            session = m.group(1).rstrip(",")
             report_date = dateparser.parse(m.group(2)).date()
             return (session, report_date)
         else:
-            raise Exception("Failed to parse the title and date from: {0}".format(title))
+            raise Exception(
+                "Failed to parse the title and date from: {0}".format(title)
+            )
 
-acceptable_elements = ['a', 'abbr', 'acronym', 'address', 'area', 'b',
-      'big', 'blockquote', 'body', 'br', 'button', 'caption', 'center',
-      'cite', 'code', 'col', 'colgroup', 'dd', 'del', 'dfn', 'dir', 'div',
-      'dl', 'dt', 'em', 'font', 'form', 'head', 'h1', 'h2', 'h3', 'h4',
-      'h5', 'h6', 'hr', 'html', 'i', 'img', 'input', 'ins', 'kbd', 'label',
-      'legend', 'li', 'link', 'map', 'menu', 'meta', 'noscript' 'ol',
-      'p', 'pre', 'q', 's', 'samp', 'script', 'small', 'span', 'strike',
-      'strong', 'style', 'sub', 'sup', 'table', 'tbody', 'td', 'tfoot',
-      'th', 'thead', 'title', 'tr', 'tt', 'u', 'ul', 'var', 'form', 'body']
+
+acceptable_elements = [
+    "a",
+    "abbr",
+    "acronym",
+    "address",
+    "area",
+    "b",
+    "big",
+    "blockquote",
+    "body",
+    "br",
+    "button",
+    "caption",
+    "center",
+    "cite",
+    "code",
+    "col",
+    "colgroup",
+    "dd",
+    "del",
+    "dfn",
+    "dir",
+    "div",
+    "dl",
+    "dt",
+    "em",
+    "font",
+    "form",
+    "head",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "hr",
+    "html",
+    "i",
+    "img",
+    "input",
+    "ins",
+    "kbd",
+    "label",
+    "legend",
+    "li",
+    "link",
+    "map",
+    "menu",
+    "meta",
+    "noscript" "ol",
+    "p",
+    "pre",
+    "q",
+    "s",
+    "samp",
+    "script",
+    "small",
+    "span",
+    "strike",
+    "strong",
+    "style",
+    "sub",
+    "sup",
+    "table",
+    "tbody",
+    "td",
+    "tfoot",
+    "th",
+    "thead",
+    "title",
+    "tr",
+    "tt",
+    "u",
+    "ul",
+    "var",
+    "form",
+    "body",
+]
+
 
 def replace_unknown_tags(html):
     """Replace any tags that aren't in a whitelist with their escaped versions
@@ -336,6 +447,7 @@ def replace_unknown_tags(html):
     more&gt; before closing the paragraph.</p>
 
     """
+
     def replace_tag(match):
         tag_name = match.group(2).lower()
         if tag_name in acceptable_elements:
@@ -343,7 +455,8 @@ def replace_unknown_tags(html):
         else:
             return escape(match.group(0))
 
-    return re.sub(r'(?ims)(</?)(\w+)([^>]*/?>)', replace_tag, html)
+    return re.sub(r"(?ims)(</?)(\w+)([^>]*/?>)", replace_tag, html)
+
 
 def fix_inserted_br_in_vote_list(html):
     """Fix a common error in the vote lists of divisions
@@ -356,10 +469,10 @@ def fix_inserted_br_in_vote_list(html):
     (LD)<br/>Rumbles, Mr Mike (West Aberdeenshire and
     Kincardine) (LD)<br/>Russell, Michael (South of Scotland) (SNP)
     """
-    return re.sub(r'(\))<br/>(\((LD|Lab)\)<br/>)', '\\1 \\2', html)
+    return re.sub(r"(\))<br/>(\((LD|Lab)\)<br/>)", "\\1 \\2", html)
+
 
 class ParsedPage(object):
-
     def __init__(self, session, report_date, page_id):
         self.session = session
         self.report_date = report_date
@@ -371,27 +484,33 @@ class ParsedPage(object):
 
     @property
     def normalized_session_name(self):
-        s = re.sub(r'\s+', '-', self.session)
-        s = re.sub(r'[^-\w]', '', s).lower()
-        if s in ('leaders-virtual-question-time',
-                 'members-virtual-question-time',
-                 'meeting-of-the-parliament-virtual',
-                 'meeting-of-the-parliament-virtual-session',
-                 'meeting-of-the-parliament-9-hybrid',
-                 'meeting-of-the-parliament-hybrid',
-                 'meeting-of-the-parliament-hybrid-',
-                 'meeting-of-the-parliament-hybrid-meeting',
-                 'meeting-of-the-parliament-hybrid-session'):
-            s = 'meeting-of-the-parliament'
+        s = re.sub(r"\s+", "-", self.session)
+        s = re.sub(r"[^-\w]", "", s).lower()
+        if s in (
+            "leaders-virtual-question-time",
+            "members-virtual-question-time",
+            "meeting-of-the-parliament-virtual",
+            "meeting-of-the-parliament-virtual-session",
+            "meeting-of-the-parliament-9-hybrid",
+            "meeting-of-the-parliament-hybrid",
+            "meeting-of-the-parliament-hybrid-",
+            "meeting-of-the-parliament-hybrid-meeting",
+            "meeting-of-the-parliament-hybrid-session",
+        ):
+            s = "meeting-of-the-parliament"
         return s
 
     @property
     def suggested_file_name(self):
-        return "%s/%s_%d.xml" % (self.normalized_session_name, self.report_date, self.page_id)
+        return "%s/%s_%d.xml" % (
+            self.normalized_session_name,
+            self.report_date,
+            self.page_id,
+        )
 
     def as_xml(self):
         base_id = "uk.org.publicwhip/spor/"
-        if self.normalized_session_name not in ('plenary', 'meeting-of-the-parliament'):
+        if self.normalized_session_name not in ("plenary", "meeting-of-the-parliament"):
             base_id += self.normalized_session_name + "/"
         base_id += str(self.report_date)
         xml = etree.Element("publicwhip")
@@ -405,18 +524,17 @@ class ParsedPage(object):
         for section in self.sections:
             section.tidy_speeches()
 
-class Section(object):
 
+class Section(object):
     def __init__(self, title, url):
         self.title = title
         self.speeches_and_votes = []
         self.url = url
 
     def as_xml(self, section_base_id):
-        heading_element = etree.Element("major-heading",
-                                        url=self.url,
-                                        nospeaker="True",
-                                        id=section_base_id + ".0")
+        heading_element = etree.Element(
+            "major-heading", url=self.url, nospeaker="True", id=section_base_id + ".0"
+        )
         heading_element.text = self.title
         result = [heading_element]
         for i, speech_or_vote in enumerate(self.speeches_and_votes, 1):
@@ -431,13 +549,15 @@ class Section(object):
             s = speech_or_division
             return s.person_id or s.speaker_name or "nospeaker"
         else:
-            raise Exception("Unknown type %s passed to group_by_key" % (type(speech_or_division),))
+            raise Exception(
+                "Unknown type %s passed to group_by_key" % (type(speech_or_division),)
+            )
 
     def tidy_speeches(self):
         # First remove any empty speeches:
-        self.speeches_and_votes = [sv for sv in
-                                   self.speeches_and_votes
-                                   if not sv.empty()]
+        self.speeches_and_votes = [
+            sv for sv in self.speeches_and_votes if not sv.empty()
+        ]
         collapsed = []
         grouped = itertools.groupby(self.speeches_and_votes, Section.group_by_key)
         for key, sv_grouper in grouped:
@@ -451,8 +571,8 @@ class Section(object):
                 collapsed.append(new_speech)
         self.speeches_and_votes = collapsed
 
-class Division(object):
 
+class Division(object):
     def __init__(self, report_date, url, divnumber, candidate=None, candidate_id=None):
         self.report_date = report_date
         self.url = url
@@ -475,18 +595,22 @@ class Division(object):
         self.votes[which_way].append((voter_name, voter_id))
 
     def as_xml(self, division_id):
-        attributes = {'url': self.url,
-                      'divdate': str(self.report_date),
-                      'nospeaker': "True",
-                      'divnumber': str(self.divnumber),
-                      'id': division_id}
+        attributes = {
+            "url": self.url,
+            "divdate": str(self.report_date),
+            "nospeaker": "True",
+            "divnumber": str(self.divnumber),
+            "id": division_id,
+        }
         if self.candidate:
-            attributes['candidate'] = self.candidate
+            attributes["candidate"] = self.candidate
         if self.candidate_id:
-            attributes['candidate_id'] = self.candidate_id
+            attributes["candidate_id"] = self.candidate_id
         result = etree.Element("division", **attributes)
+
         def to_attr(s):
-            return s.lower().replace(' ', '')
+            return s.lower().replace(" ", "")
+
         division_count = etree.Element("divisioncount")
         for way in DIVISION_HEADINGS:
             attribute = to_attr(way)
@@ -495,19 +619,16 @@ class Division(object):
         result.append(division_count)
         for way in DIVISION_HEADINGS:
             attribute_value = to_attr(way)
-            msp_list = etree.Element('msplist',
-                                     vote=attribute_value)
+            msp_list = etree.Element("msplist", vote=attribute_value)
             for voter_name, voter_id in self.votes[way]:
-                msp_name = etree.Element('mspname',
-                                         id=voter_id,
-                                         vote=attribute_value)
+                msp_name = etree.Element("mspname", id=voter_id, vote=attribute_value)
                 msp_name.text = voter_name
                 msp_list.append(msp_name)
             result.append(msp_list)
         return result
 
-class Speech(object):
 
+class Speech(object):
     def __init__(self, speaker_name, speech_date, last_time, url):
         self.speaker_name = speaker_name
         self.speech_date = speech_date
@@ -527,22 +648,22 @@ class Speech(object):
         self.speaker_name = tidied_speaker
 
     def as_xml(self, speech_id):
-        attributes = {'url': self.url,
-                      'id': speech_id}
+        attributes = {"url": self.url, "id": speech_id}
         if self.speaker_name:
-            attributes['speakername'] = self.speaker_name
+            attributes["speakername"] = self.speaker_name
             if self.person_id:
-                attributes['person_id'] = self.person_id
+                attributes["person_id"] = self.person_id
             else:
-                attributes['person_id'] = 'unknown'
+                attributes["person_id"] = "unknown"
         else:
-            attributes['nospeaker'] = 'true'
+            attributes["nospeaker"] = "true"
         result = etree.Element("speech", **attributes)
         for paragraph in self.paragraphs:
-            paragraph = paragraph.replace('&', '&amp;')
-            p = etree.fromstring('<p>%s</p>' % paragraph)
+            paragraph = paragraph.replace("&", "&amp;")
+            p = etree.fromstring("<p>%s</p>" % paragraph)
             result.append(p)
         return result
+
 
 def quick_parse_html(filename, page_id, original_url):
     with open(filename) as fp:
@@ -553,12 +674,12 @@ def quick_parse_html(filename, page_id, original_url):
     # If this is an error page, there'll be a message like:
     #   <span id="ReportView_lblError">Please check the link you clicked, as it does not reference a valid Official Report</span>
     # ... so ignore those.
-    error = soup.find('span', attrs={'id': 'ReportView_lblError'})
-    if error and error.string and 'Please check the link' in error.string:
+    error = soup.find("span", attrs={"id": "ReportView_lblError"})
+    if error and error.string and "Please check the link" in error.string:
         return (None, None, None)
     page_title = get_page_title(soup)
-    if page_title == 'Search the Official Report - Parliamentary Business':
-        #This is what we get instead of a 404
+    if page_title == "Search the Official Report - Parliamentary Business":
+        # This is what we get instead of a 404
         return (None, None, None)
 
     session, report_date = get_title_and_date(soup, page_id)
@@ -567,16 +688,20 @@ def quick_parse_html(filename, page_id, original_url):
         return (None, None, None)
     return (session, report_date, soup)
 
+
 def parse_html(session, report_date, soup, page_id, original_url):
     divnumber = 0
-    report_view = soup.find('div', attrs={'id': 'ReportView'})
-    div_children_of_report_view = report_view.findChildren('div', recursive=False)
+    report_view = soup.find("div", attrs={"id": "ReportView"})
+    div_children_of_report_view = report_view.findChildren("div", recursive=False)
     if len(div_children_of_report_view) != 1:
-        raise Exception('We only expect one <div> child of <div id="ReportView">; there were %d in page with ID %d' % (len(div_children_of_report_view), page_id))
+        raise Exception(
+            'We only expect one <div> child of <div id="ReportView">; there were %d in page with ID %d'
+            % (len(div_children_of_report_view), page_id)
+        )
 
     main_div = div_children_of_report_view[0]
 
-    top_level_divs = main_div.findChildren('div', recursive=False)
+    top_level_divs = main_div.findChildren("div", recursive=False)
 
     # The first div should just contain links to sections further down
     # the page:
@@ -590,14 +715,19 @@ def parse_html(session, report_date, soup, page_id, original_url):
 
     contents_links = contents_div.findAll(True)
     for link in contents_links:
-        if link.name == 'br':
+        if link.name == "br":
             continue
-        if link.name != 'a':
-            raise Exception("There was something other than a <br> or an <a> in the supposed contents <div>, for page ID: %d" % (page_id,))
-        href = link['href']
-        m = re.search(r'#(.*)', href)
+        if link.name != "a":
+            raise Exception(
+                "There was something other than a <br> or an <a> in the supposed contents <div>, for page ID: %d"
+                % (page_id,)
+            )
+        href = link["href"]
+        m = re.search(r"#(.*)", href)
         if not m:
-            raise Exception("Failed to find the ID from '%s' in page with ID: %d" % (href, page_id))
+            raise Exception(
+                "Failed to find the ID from '%s' in page with ID: %d" % (href, page_id)
+            )
         contents_tuples.append((m.group(1), tidy_string(non_tag_data_in(link))))
 
     parsed_page = ParsedPage(session, report_date, page_id)
@@ -616,21 +746,22 @@ def parse_html(session, report_date, soup, page_id, original_url):
         # the top level, so just ignore those:
         if not len(str(top_level).strip()):
             continue
-        if top_level.name == 'h2':
-            section_title = tidy_string(non_tag_data_in(top_level, tag_replacement=' '))
+        if top_level.name == "h2":
+            section_title = tidy_string(non_tag_data_in(top_level, tag_replacement=" "))
             if not section_title:
-                raise Exception("There was an empty section title in page ID: %d" % (page_id))
-            parsed_page.sections.append(
-                Section(section_title, current_url))
-        elif top_level.name in ('br',):
+                raise Exception(
+                    "There was an empty section title in page ID: %d" % (page_id)
+                )
+            parsed_page.sections.append(Section(section_title, current_url))
+        elif top_level.name in ("br",):
             # Ignore line breaks - we use paragraphs instead
             continue
-        elif top_level.name == 'a':
+        elif top_level.name == "a":
             try:
-                current_url = original_url + "#" + top_level['id']
+                current_url = original_url + "#" + top_level["id"]
             except KeyError:
                 pass
-        elif top_level.name == 'div':
+        elif top_level.name == "div":
             # This div contains a speech, essentially:
 
             # the new style pages wraps speeches in p.span tags that we can ignore so
@@ -639,62 +770,80 @@ def parse_html(session, report_date, soup, page_id, original_url):
             # This does mean we are losing some formatting information but because it's
             # hardcoded style attributes in the spans it's arguable that we'd want to
             # remove them anyway.
-            for p in top_level.findChildren('p'):
+            for p in top_level.findChildren("p"):
                 if p.span or p.b:
-                    for span in p.findChildren('span'):
-                        if span.has_attr('style') and 'font-size:10pt;font-weight:bold' in span['style']:
-                            span.name = 'b'
+                    for span in p.findChildren("span"):
+                        if (
+                            span.has_attr("style")
+                            and "font-size:10pt;font-weight:bold" in span["style"]
+                        ):
+                            span.name = "b"
                         else:
                             span.unwrap()
                     p.unwrap()
 
             removed_number = None
             for speech_part in top_level:
-                if hasattr(speech_part, 'name') and speech_part.name != None:
-                    if speech_part.name == 'b':
+                if hasattr(speech_part, "name") and speech_part.name != None:
+                    if speech_part.name == "b":
                         speaker_name = non_tag_data_in(speech_part)
                         # If there's a leading question number remove that (and any whitespace)
-                        match = re.match(r'^\d+\.\s*', speaker_name)
+                        match = re.match(r"^\d+\.\s*", speaker_name)
                         if match:
-                            speaker_name = re.sub(r'^\d+\.\s*', '', speaker_name)
+                            speaker_name = re.sub(r"^\d+\.\s*", "", speaker_name)
                             removed_number = match.group(0)
                         # If there's a training colon, remove that (and any whitespace)
-                        speaker_name = re.sub(r'[\s:]*$', '', speaker_name)
-                        current_speech = Speech(tidy_string(speaker_name),
-                                                report_date,
-                                                current_time,
-                                                current_url)
-                        parsed_page.sections[-1].speeches_and_votes.append(current_speech)
-                    elif speech_part.name == 'br':
+                        speaker_name = re.sub(r"[\s:]*$", "", speaker_name)
+                        current_speech = Speech(
+                            tidy_string(speaker_name),
+                            report_date,
+                            current_time,
+                            current_url,
+                        )
+                        parsed_page.sections[-1].speeches_and_votes.append(
+                            current_speech
+                        )
+                    elif speech_part.name == "br":
                         # Ignore the line breaks...
                         pass
-                    elif speech_part.name == 'ul':
+                    elif speech_part.name == "ul":
                         current_speech.paragraphs.append(str(speech_part))
-                    elif speech_part.name in ('sup', 'sub'):
+                    elif speech_part.name in ("sup", "sub"):
                         # sometimes the degree symbol is used so we need
                         # to replace it with an entity and then convert to
                         # ascii otherwise we get a codec error
-                        current_speech.paragraphs[-1] += str(str(speech_part).replace('\xb0', '&#176;'))
-                    elif speech_part.name == 'a' and speech_part.text == '':
+                        current_speech.paragraphs[-1] += str(
+                            str(speech_part).replace("\xb0", "&#176;")
+                        )
+                    elif speech_part.name == "a" and speech_part.text == "":
                         # skip empty a anchors
                         pass
                     else:
-                        raise Exception("Unexpected tag '%s' in page ID: %d" % (speech_part, page_id))
+                        raise Exception(
+                            "Unexpected tag '%s' in page ID: %d"
+                            % (speech_part, page_id)
+                        )
                 elif isinstance(speech_part, NavigableString):
                     tidied_paragraph = tidy_string(speech_part)
                     if tidied_paragraph == "":
                         # just ignore blank lines
                         continue
                     # print "tidied_paragraph is", tidied_paragraph.encode('utf-8'), "of type", type(tidied_paragraph)
-                    division_way, division_candidate, division_candidate_id = is_division_way(tidied_paragraph, report_date)
-                    member_vote = is_member_vote(tidied_paragraph, report_date, expecting_a_vote=current_votes)
+                    division_way, division_candidate, division_candidate_id = (
+                        is_division_way(tidied_paragraph, report_date)
+                    )
+                    member_vote = is_member_vote(
+                        tidied_paragraph, report_date, expecting_a_vote=current_votes
+                    )
                     maybe_time = just_time(tidied_paragraph)
                     closed_time = meeting_closed(tidied_paragraph)
                     if closed_time:
                         current_time = closed_time
                     suspended_time_tuple = meeting_suspended(tidied_paragraph)
                     if suspended_time_tuple:
-                        suspended, suspension_time_type, suspension_time = suspended_time_tuple
+                        suspended, suspension_time_type, suspension_time = (
+                            suspended_time_tuple
+                        )
                     else:
                         suspended = False
                         suspension_time_type = suspension_time = None
@@ -703,22 +852,37 @@ def parse_html(session, report_date, soup, page_id, original_url):
                         # candidate, or the introduction to an
                         # oath-taking, add the text as a speech too:
                         if division_candidate:
-                            current_speech = Speech(None,
-                                                    report_date,
-                                                    current_time,
-                                                    current_url)
-                            parsed_page.sections[-1].speeches_and_votes.append(current_speech)
+                            current_speech = Speech(
+                                None, report_date, current_time, current_url
+                            )
+                            parsed_page.sections[-1].speeches_and_votes.append(
+                                current_speech
+                            )
                             current_speech.paragraphs.append(tidied_paragraph)
-                        if (not current_votes) or (current_votes.candidate != division_candidate):
-                            current_votes = Division(report_date, current_url, divnumber, division_candidate, division_candidate_id)
+                        if (not current_votes) or (
+                            current_votes.candidate != division_candidate
+                        ):
+                            current_votes = Division(
+                                report_date,
+                                current_url,
+                                divnumber,
+                                division_candidate,
+                                division_candidate_id,
+                            )
                             divnumber += 1
-                            parsed_page.sections[-1].speeches_and_votes.append(current_votes)
+                            parsed_page.sections[-1].speeches_and_votes.append(
+                                current_votes
+                            )
                         current_division_way = division_way
                     elif member_vote:
                         if current_votes is None:
                             print(tidied_paragraph)
-                            raise Exception("Got a member's vote before an indication of which way the vote is")
-                        current_votes.add_vote(current_division_way, tidied_paragraph, member_vote)
+                            raise Exception(
+                                "Got a member's vote before an indication of which way the vote is"
+                            )
+                        current_votes.add_vote(
+                            current_division_way, tidied_paragraph, member_vote
+                        )
                     elif maybe_time:
                         current_time = maybe_time
                     else:
@@ -738,42 +902,85 @@ def parse_html(session, report_date, soup, page_id, original_url):
                     if suspended and suspension_time:
                         current_time = suspension_time
                 else:
-                    raise Exception("Totally unparsed element:\n%s\n... unhandled in page ID: %d" % (speech_part, page_id))
+                    raise Exception(
+                        "Totally unparsed element:\n%s\n... unhandled in page ID: %d"
+                        % (speech_part, page_id)
+                    )
 
         else:
-            raise Exception("There was an unhandled element '%s' in page with ID: %d" % (top_level.name, page_id))
+            raise Exception(
+                "There was an unhandled element '%s' in page with ID: %d"
+                % (top_level.name, page_id)
+            )
 
     return parsed_page
 
+
 SPEAKERS_DEBUG = False
 
-if __name__ == '__main__':
-
+if __name__ == "__main__":
     parser = OptionParser()
-    parser.add_option('-f', '--force', dest='force', action="store_true",
-                      help='force reparse of everything')
-    parser.add_option("--test", dest="doctest",
-                      default=False, action='store_true',
-                      help="Run all doctests in this file")
-    parser.add_option('-v', '--verbose', dest='verbose', action='store_true',
-                      default=False, help="produce very verbose output")
-    parser.add_option('-q', '--quiet', dest='quiet', action='store_true',
-                      default=False, help="produce very quiet output")
-    parser.add_option('--speakers-debug', dest='speakers_debug', action='store_true',
-                      default=False, help="log speakers that couldn't be found")
-    parser.add_option('--from', dest='from_date',
-                      default="1999-05-12",
-                      help="only parse files from this date onwards (inclusive)")
-    parser.add_option('--to', dest='to_date',
-                      default=str(datetime.date.today()),
-                      help="only parse files up to this date (inclusive)")
-    parser.add_option('--number', dest='file_number', type='int',
-                      default=None,
-                      help="only parse the source file with this number")
+    parser.add_option(
+        "-f",
+        "--force",
+        dest="force",
+        action="store_true",
+        help="force reparse of everything",
+    )
+    parser.add_option(
+        "--test",
+        dest="doctest",
+        default=False,
+        action="store_true",
+        help="Run all doctests in this file",
+    )
+    parser.add_option(
+        "-v",
+        "--verbose",
+        dest="verbose",
+        action="store_true",
+        default=False,
+        help="produce very verbose output",
+    )
+    parser.add_option(
+        "-q",
+        "--quiet",
+        dest="quiet",
+        action="store_true",
+        default=False,
+        help="produce very quiet output",
+    )
+    parser.add_option(
+        "--speakers-debug",
+        dest="speakers_debug",
+        action="store_true",
+        default=False,
+        help="log speakers that couldn't be found",
+    )
+    parser.add_option(
+        "--from",
+        dest="from_date",
+        default="1999-05-12",
+        help="only parse files from this date onwards (inclusive)",
+    )
+    parser.add_option(
+        "--to",
+        dest="to_date",
+        default=str(datetime.date.today()),
+        help="only parse files up to this date (inclusive)",
+    )
+    parser.add_option(
+        "--number",
+        dest="file_number",
+        type="int",
+        default=None,
+        help="only parse the source file with this number",
+    )
     (options, args) = parser.parse_args()
 
     if options.doctest:
         import doctest
+
         failure_count, test_count = doctest.testmod()
         sys.exit(0 if failure_count == 0 else 1)
 
@@ -794,17 +1001,22 @@ if __name__ == '__main__':
         # won't work properly, but will save lots of time in the
         # typical case.
         if not (file_number or options.force):
-            earliest_to_consider = datetime.datetime.combine(from_date,
-                                                             datetime.time())
+            earliest_to_consider = datetime.datetime.combine(from_date, datetime.time())
             earliest_to_consider -= datetime.timedelta(days=10)
 
-            last_modified = datetime.datetime.fromtimestamp(os.path.getmtime(html_filename))
+            last_modified = datetime.datetime.fromtimestamp(
+                os.path.getmtime(html_filename)
+            )
             if last_modified < earliest_to_consider:
                 if options.verbose:
-                    print("Skipping", html_filename, "(it's well before %s)" % (from_date,))
+                    print(
+                        "Skipping",
+                        html_filename,
+                        "(it's well before %s)" % (from_date,),
+                    )
                 continue
 
-        m = re.search(r'^(\d+)\.html$', filename)
+        m = re.search(r"^(\d+)\.html$", filename)
         if not m:
             if options.verbose:
                 print("Skipping", html_filename, "(wrong filename format)")
@@ -825,9 +1037,9 @@ if __name__ == '__main__':
             official_url = official_report_url_format.format(page_id)
             # Do a quick parse of the page first, to extract the date
             # so we know whether to bother with it:
-            session, report_date, soup = quick_parse_html(html_filename,
-                                                          page_id,
-                                                          official_url)
+            session, report_date, soup = quick_parse_html(
+                html_filename, page_id, official_url
+            )
             if session is None:
                 if options.verbose:
                     print("Skipping", html_filename, "(not useful after parsing)")
@@ -836,12 +1048,8 @@ if __name__ == '__main__':
                 if options.verbose:
                     print("Skipping", html_filename, "(outside requested date range)")
                 continue
-            parsed_page = parse_html(session,
-                                     report_date,
-                                     soup,
-                                     page_id,
-                                     official_url)
-        except Exception as e:
+            parsed_page = parse_html(session, report_date, soup, page_id, official_url)
+        except Exception:
             # print "parsing the file '%s' failed, with the exception:" % (filename,)
             # print unicode(e).encode('utf-8')
             # traceback.print_exc()
@@ -856,8 +1064,9 @@ if __name__ == '__main__':
 
             if options.verbose:
                 print("Parsed", parsed_page.suggested_file_name)
-            output_filename = os.path.join(xml_output_directory,
-                                           parsed_page.suggested_file_name)
+            output_filename = os.path.join(
+                xml_output_directory, parsed_page.suggested_file_name
+            )
             output_directory, output_leafname = os.path.split(output_filename)
             # Ensure that the directory exists:
             try:
@@ -868,13 +1077,14 @@ if __name__ == '__main__':
                     raise
 
             xml = etree.tostring(parsed_page.as_xml(), pretty_print=True)
-            with NamedTemporaryFile(delete=False,
-                                    dir=xml_output_directory) as ntf:
+            with NamedTemporaryFile(delete=False, dir=xml_output_directory) as ntf:
                 ntf.write(xml)
 
             changed_output = True
             if os.path.exists(output_filename):
-                if 0 == os.system("diff %s %s > /dev/null" % (ntf.name,output_filename)):
+                if 0 == os.system(
+                    "diff %s %s > /dev/null" % (ntf.name, output_filename)
+                ):
                     changed_output = False
 
             if changed_output:
@@ -882,12 +1092,11 @@ if __name__ == '__main__':
                     print("Parsed and changed", parsed_page.suggested_file_name)
                 os.chmod(ntf.name, 0o644)
                 os.rename(ntf.name, output_filename)
-                changedates_filename = os.path.join(xml_output_directory,
-                                                     output_directory,
-                                                     'changedates.txt')
-                with open(changedates_filename, 'a+') as fp:
-                    fp.write('%d,%s\n' % (time.time(),
-                                          output_leafname))
+                changedates_filename = os.path.join(
+                    xml_output_directory, output_directory, "changedates.txt"
+                )
+                with open(changedates_filename, "a+") as fp:
+                    fp.write("%d,%s\n" % (time.time(), output_leafname))
             else:
                 if options.verbose:
                     print("  not writing, since output is unchanged")

@@ -1,13 +1,14 @@
 # vim:sw=8:ts=8:nowrap
 
-def WriteXMLHeader(fout):
-	header = '<?xml version="1.0" encoding="UTF-8"?>\n'
-	fout.write(header)
 
-	# These entity definitions for latin-1 chars are from here:
-	# http://www.w3.org/TR/REC-html40/sgml/entities.html
-	# also available at: http://www.csparks.com/CharacterEntities.html
-	entities = '''
+def WriteXMLHeader(fout):
+    header = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    fout.write(header)
+
+    # These entity definitions for latin-1 chars are from here:
+    # http://www.w3.org/TR/REC-html40/sgml/entities.html
+    # also available at: http://www.csparks.com/CharacterEntities.html
+    entities = """
 
 <!DOCTYPE publicwhip
 [
@@ -70,5 +71,5 @@ def WriteXMLHeader(fout):
 
 ]>
 
-'''
-	fout.write(entities)
+"""
+    fout.write(entities)

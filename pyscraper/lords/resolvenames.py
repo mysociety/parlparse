@@ -1,62 +1,85 @@
-import json
-import os.path
 import re
-from contextexception import ContextException
 
 from base_resolver import ResolverBase
+from contextexception import ContextException
 
-titleconv = {  'L.':'Lord',
-               'B.':'Baroness',
-               'Abp.':'Archbishop',
-               'Bp.':'Bishop',
-               'V.':'Viscount',
-               'E.':'Earl',
-               'D.':'Duke',
-               'M.':'Marquess',
-               'C.':'Countess',
-               'Ly.':'Lady',
-            }
+titleconv = {
+    "L.": "Lord",
+    "B.": "Baroness",
+    "Abp.": "Archbishop",
+    "Bp.": "Bishop",
+    "V.": "Viscount",
+    "E.": "Earl",
+    "D.": "Duke",
+    "M.": "Marquess",
+    "C.": "Countess",
+    "Ly.": "Lady",
+}
 
 # more tedious stuff to do: "earl of" and "sitting as" cases
 
-hontitles = [ 'Lord  ?Bishop', 'Bishop', 'Marquess', 'Lord', 'Baroness', 'Viscount', 'Earl', 'Countess', 
-          'Lord Archbishop', 'Archbishop', 'Duke', 'Lady' ]
-hontitleso = '|'.join(hontitles)
+hontitles = [
+    "Lord  ?Bishop",
+    "Bishop",
+    "Marquess",
+    "Lord",
+    "Baroness",
+    "Viscount",
+    "Earl",
+    "Countess",
+    "Lord Archbishop",
+    "Archbishop",
+    "Duke",
+    "Lady",
+]
+hontitleso = "|".join(hontitles)
 
-honcompl = re.compile('(?:(%s)|(%s) \s*(.*?))(?:\s+of\s+(.*))?$' % (hontitleso, hontitleso))
+honcompl = re.compile(
+    "(?:(%s)|(%s) \s*(.*?))(?:\s+of\s+(.*))?$" % (hontitleso, hontitleso)
+)
 
-rehonorifics = re.compile('(?: [CKO]BE| DL| TD| QC| KCMG| KCB)+$')
+rehonorifics = re.compile("(?: [CKO]BE| DL| TD| QC| KCMG| KCB)+$")
+
 
 class LordsList(ResolverBase):
-    import_organization_id = 'house-of-lords'
+    import_organization_id = "house-of-lords"
 
     def reloadJSON(self):
         super(LordsList, self).reloadJSON()
 
-        self.lordnames={} # "lordnames" --> lords
-        self.aliases={} # Corrections to full names
+        self.lordnames = {}  # "lordnames" --> lords
+        self.aliases = {}  # Corrections to full names
 
         self.import_people_json()
 
     def import_people_membership(self, mship, posts, orgs):
-        if 'organization_id' not in mship or mship['organization_id'] != self.import_organization_id:
+        if (
+            "organization_id" not in mship
+            or mship["organization_id"] != self.import_organization_id
+        ):
             return
 
         if mship["id"] in self.membertopersonmap:
             raise Exception("Same member id %s appeared twice" % mship["id"])
-        self.membertopersonmap[mship["id"]] = mship['person_id']
-        self.persontomembermap.setdefault(mship['person_id'], []).append(mship["id"])
+        self.membertopersonmap[mship["id"]] = mship["person_id"]
+        self.persontomembermap.setdefault(mship["person_id"], []).append(mship["id"])
 
         if self.members.get(mship["id"]):
             raise Exception("Repeated identifier %s in members JSON file" % mship["id"])
         self.members[mship["id"]] = mship
 
-        if 'end_date' not in mship:
-            mship['end_date'] = '9999-12-31'
+        if "end_date" not in mship:
+            mship["end_date"] = "9999-12-31"
 
     def import_people_main_name(self, name, memberships):
-        mships = [m for m in memberships if m['start_date'] <= name.get('end_date', '9999-12-31') and m['end_date'] >= name.get('start_date', '1000-01-01')]
-        if not mships: return
+        mships = [
+            m
+            for m in memberships
+            if m["start_date"] <= name.get("end_date", "9999-12-31")
+            and m["end_date"] >= name.get("start_date", "1000-01-01")
+        ]
+        if not mships:
+            return
         lname = name["lordname"] or name["lordofname"]
         lname = re.sub("\.", "", lname)
         assert lname
@@ -67,17 +90,22 @@ class LordsList(ResolverBase):
         }
         for m in mships:
             newattr = attr.copy()
-            newattr['start_date'] = max(m['start_date'], name.get('start_date', '1000-01-01'))
-            newattr['end_date'] = min(m['end_date'], name.get('end_date', '9999-12-31'))
-            newattr['id'] = m["id"]
+            newattr["start_date"] = max(
+                m["start_date"], name.get("start_date", "1000-01-01")
+            )
+            newattr["end_date"] = min(m["end_date"], name.get("end_date", "9999-12-31"))
+            newattr["id"] = m["id"]
             self.lordnames.setdefault(lname, []).append(newattr)
 
     def import_people_alternate_name(self, person, other_name, memberships):
-        if 'name' not in other_name: return  # Only full names in Lords aliases
-        self.aliases[other_name['name']] = person['id']
+        if "name" not in other_name:
+            return  # Only full names in Lords aliases
+        self.aliases[other_name["name"]] = person["id"]
 
     # main matching function
-    def GetLordID(self, ltitle, llordname, llordofname, loffice, stampurl, sdate, bDivision):
+    def GetLordID(
+        self, ltitle, llordname, llordofname, loffice, stampurl, sdate, bDivision
+    ):
         if ltitle == "Lord Bishop":
             ltitle = "Bishop"
         if ltitle == "Lord Archbishop":
@@ -85,15 +113,15 @@ class LordsList(ResolverBase):
 
         llordofname = llordofname.replace(".", "")
         llordname = llordname.replace(".", "")
-        llordname = re.sub('&#(039|146|8217);', "'", llordname)
+        llordname = re.sub("&#(039|146|8217);", "'", llordname)
 
         llordofname = llordofname.strip()
         llordname = llordname.strip()
 
         # TODO: Need a Lords version of member-aliases.xml I guess
-        if ltitle == "Bishop" and llordofname == "Southwell" and sdate>='2005-07-01':
+        if ltitle == "Bishop" and llordofname == "Southwell" and sdate >= "2005-07-01":
             llordofname = "Southwell and Nottingham"
-        if ltitle == "Bishop" and llordname == "Southwell" and sdate>='2005-07-01':
+        if ltitle == "Bishop" and llordname == "Southwell" and sdate >= "2005-07-01":
             llordname = "Southwell and Nottingham"
 
         lname = llordname or llordofname
@@ -101,11 +129,11 @@ class LordsList(ResolverBase):
         lmatches = self.lordnames.get(lname, [])
 
         # match to successive levels of precision for identification
-        res = [ ]
+        res = []
         for lm in lmatches:
             if lm["title"] != ltitle:  # mismatch title
                 continue
-            if llordname and llordofname: # two name case
+            if llordname and llordofname:  # two name case
                 if (lm["lordname"] == llordname) and (lm["lordofname"] == llordofname):
                     if lm["start_date"] <= sdate <= lm["end_date"]:
                         res.append(lm)
@@ -128,29 +156,62 @@ class LordsList(ResolverBase):
             if lname == lmlname:
                 if lm["start_date"] <= sdate <= lm["end_date"]:
                     if lm["lordname"] and llordofname:
-                        #if not IsNotQuiet():
-                        print("cm---", ltitle, lm["lordname"], lm["lordofname"], llordname, llordofname)
-                        raise ContextException("lordofname matches lordname in lordlist", stamp=stampurl, fragment=lname)
+                        # if not IsNotQuiet():
+                        print(
+                            "cm---",
+                            ltitle,
+                            lm["lordname"],
+                            lm["lordofname"],
+                            llordname,
+                            llordofname,
+                        )
+                        raise ContextException(
+                            "lordofname matches lordname in lordlist",
+                            stamp=stampurl,
+                            fragment=lname,
+                        )
                     else:
                         assert lm["lordofname"] and llordname
                         # of-name distinction lost in division lists
                         if not bDivision:
-                            raise ContextException("lordname matches lordofname in lordlist", stamp=stampurl, fragment=lname)
+                            raise ContextException(
+                                "lordname matches lordofname in lordlist",
+                                stamp=stampurl,
+                                fragment=lname,
+                            )
                     res.append(lm)
-                elif ltitle != "Bishop" and ltitle != "Archbishop" and (ltitle, lname) not in (("Duke", "Norfolk"), ("Duke", "Wellington"), ('Earl', 'Kinnoull'), ('Earl', 'Selborne')):
+                elif (
+                    ltitle != "Bishop"
+                    and ltitle != "Archbishop"
+                    and (ltitle, lname)
+                    not in (
+                        ("Duke", "Norfolk"),
+                        ("Duke", "Wellington"),
+                        ("Earl", "Kinnoull"),
+                        ("Earl", "Selborne"),
+                    )
+                ):
                     print(lm)
-                    raise ContextException("wrong dates on lords with same name", stamp=stampurl, fragment=lname)
+                    raise ContextException(
+                        "wrong dates on lords with same name",
+                        stamp=stampurl,
+                        fragment=lname,
+                    )
 
         if not res:
-            raise ContextException("unknown lord %s %s %s %s on %s" % (ltitle, llordname, llordofname, stampurl, sdate), stamp=stampurl, fragment=lname)
+            raise ContextException(
+                "unknown lord %s %s %s %s on %s"
+                % (ltitle, llordname, llordofname, stampurl, sdate),
+                stamp=stampurl,
+                fragment=lname,
+            )
 
         assert len(res) == 1
         return self.membertoperson(res[0]["id"])
 
-
     def GetLordIDfname(self, name, loffice, sdate, stampurl=None):
         name = re.sub("^The ", "", name)
-        name = name.replace(' Of ', ' of ')
+        name = name.replace(" Of ", " of ")
 
         if name in self.aliases:
             return self.aliases[name]
@@ -160,7 +221,9 @@ class LordsList(ResolverBase):
 
         hom = honcompl.match(name)
         if not hom:
-            raise ContextException("lord name format failure on '%s'" % name, stamp=stampurl, fragment=name)
+            raise ContextException(
+                "lord name format failure on '%s'" % name, stamp=stampurl, fragment=name
+            )
 
         # now we have a speaker, try and break it up
         ltit = hom.group(1)
@@ -181,25 +244,28 @@ class LordsList(ResolverBase):
 
         return self.GetLordID(ltit, lname, lplace, loffice, stampurl, sdate, False)
 
-
     def MatchRevName(self, fss, sdate, stampurl):
         assert fss
-        lfn = re.match('(.*?)(?: of (.*?))?, {0,3}((?:L|B|Abp|Bp|V|E|D|M|C|Ly)\.?)$', fss)
+        lfn = re.match(
+            "(.*?)(?: of (.*?))?, {0,3}((?:L|B|Abp|Bp|V|E|D|M|C|Ly)\.?)$", fss
+        )
         if not lfn:
             print("$$$%s$$$" % fss)
-            raise ContextException("No match of format in MatchRevName", stamp=stampurl, fragment=fss)
+            raise ContextException(
+                "No match of format in MatchRevName", stamp=stampurl, fragment=fss
+            )
         shorttitle = lfn.group(3)
-        if shorttitle[-1] != '.':
+        if shorttitle[-1] != ".":
             shorttitle += "."
         ltitle = titleconv[shorttitle]
         llordname = lfn.group(1).replace(".", "")
         llordname = llordname.replace("&#039;", "'")
         llordname = re.sub("^De ", "de ", llordname)
-        fullname = '%s %s' % (ltitle, llordname)
+        fullname = "%s %s" % (ltitle, llordname)
         llordofname = ""
         if lfn.group(2):
             llordofname = lfn.group(2).replace(".", "")
-            fullname = '%s of %s' % (fullname, llordofname)
+            fullname = "%s of %s" % (fullname, llordofname)
 
         if fullname in self.aliases:
             return self.aliases[fullname]

@@ -6,12 +6,14 @@ Use `python -m pyscraper.sp_2024 --help` to see available commands
 
 from __future__ import annotations
 
+import datetime
+from pathlib import Path
+
+import click
+
+from .convert import convert_xml_to_twfy
 from .download import fetch_debates_for_dates
 from .parse import tidy_up_html
-from .convert import convert_xml_to_twfy
-import click
-from pathlib import Path
-import datetime
 
 file_dir = Path(__file__).parent
 parldata = Path(file_dir, "..", "..", "..", "parldata")

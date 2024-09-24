@@ -3,22 +3,25 @@
 # Grabs the latest members data from data.parliament XML and update accordingly.
 # Get data using crawl-datadotparl-members.py
 
-import sys
 import argparse
-from collections import OrderedDict
 import json
 import re
-from lxml import etree
+import sys
+from collections import OrderedDict
 from datetime import datetime
 
-parser = argparse.ArgumentParser(description='Fetch latest member data from data.parliament.uk')
-parser.add_argument('--verbose', action='store_true')
+from lxml import etree
+
+parser = argparse.ArgumentParser(
+    description="Fetch latest member data from data.parliament.uk"
+)
+parser.add_argument("--verbose", action="store_true")
 ARGS = parser.parse_args()
 
 # Source XML files to use for the list of members
 source_files = [
-  'all-current-commons',
-  'all-lords',
+    "all-current-commons",
+    "all-lords",
 ]
 
 parser = etree.ETCompatXMLParser()
@@ -26,7 +29,7 @@ etree.set_default_parser(parser)
 
 
 def slugify(s):
-    return re.sub('[^\w ]', '', s).replace(' ', '-').lower()
+    return re.sub("[^\w ]", "", s).replace(" ", "-").lower()
 
 
 def verbose(s):
@@ -40,215 +43,258 @@ class Popolo(object):
         self.memberships = []
 
     def output(self, fn):
-        self.memberships = sorted(self.memberships, key=lambda x: (x['person_id'], x['id']))
-        self.organizations = sorted(self.organizations, key=lambda x: x['id'])
-        out = OrderedDict(sorted({
-            'organizations': self.organizations,
-            'memberships': self.memberships,
-        }.items()))
-        json.dump(out, open('../../members/ministers-2010.json', 'w'), indent=2)
+        self.memberships = sorted(
+            self.memberships, key=lambda x: (x["person_id"], x["id"])
+        )
+        self.organizations = sorted(self.organizations, key=lambda x: x["id"])
+        out = OrderedDict(
+            sorted(
+                {
+                    "organizations": self.organizations,
+                    "memberships": self.memberships,
+                }.items()
+            )
+        )
+        json.dump(out, open("../../members/ministers-2010.json", "w"), indent=2)
 
     def add_membership(self, mship):
         self.memberships.append(mship)
 
     def add_organization(self, org, id=None, **kwargs):
         id = id or slugify(org)
-        org = OrderedDict(sorted({'id': id, 'name': org}.items()))
+        org = OrderedDict(sorted({"id": id, "name": org}.items()))
         org.update(kwargs)
         if org not in self.organizations:
             self.organizations.append(org)
         return id
 
+
 popolo = Popolo()
 
 
 class TimePeriod(object):
-  def __init__(self, el):
-    self.el = el
+    def __init__(self, el):
+        self.el = el
 
-  def make_date(self, s):
-    try:
-      return datetime.strptime(self.el.find(s).text, '%Y-%m-%dT00:01:00').strftime('%Y-%m-%d')
-    except:
-      return datetime.strptime(self.el.find(s).text, '%Y-%m-%dT00:00:00').strftime('%Y-%m-%d')
+    def make_date(self, s):
+        try:
+            return datetime.strptime(
+                self.el.find(s).text, "%Y-%m-%dT00:01:00"
+            ).strftime("%Y-%m-%d")
+        except:
+            return datetime.strptime(
+                self.el.find(s).text, "%Y-%m-%dT00:00:00"
+            ).strftime("%Y-%m-%d")
 
-  @property
-  def dates(self):
-    start = self.make_date('StartDate')
-    end = self.make_date('EndDate') if self.el.find('EndDate').text else '9999-12-31'
-    return start, end
+    @property
+    def dates(self):
+        start = self.make_date("StartDate")
+        end = (
+            self.make_date("EndDate") if self.el.find("EndDate").text else "9999-12-31"
+        )
+        return start, end
 
 
 class Position(object):
-  def __init__(self, position, positions):
-    self.position = position
-    self.list = positions
+    def __init__(self, position, positions):
+        self.position = position
+        self.list = positions
 
-  def chair_check(self, chair_date, periods, to_date):
-    if chair_date[1] < to_date:
-      periods.append({'position': 'Chair', 'fromdate': chair_date[0], 'todate': chair_date[1]})
-      periods.append({'position': '', 'fromdate': chair_date[1], 'todate': to_date})
-    else:
-      periods.append({'position': 'Chair', 'fromdate': chair_date[0], 'todate': to_date})
+    def chair_check(self, chair_date, periods, to_date):
+        if chair_date[1] < to_date:
+            periods.append(
+                {
+                    "position": "Chair",
+                    "fromdate": chair_date[0],
+                    "todate": chair_date[1],
+                }
+            )
+            periods.append(
+                {"position": "", "fromdate": chair_date[1], "todate": to_date}
+            )
+        else:
+            periods.append(
+                {"position": "Chair", "fromdate": chair_date[0], "todate": to_date}
+            )
 
-  @property
-  def time_periods(self):
-    position = self.position
-    attrs = {}
-    if self.list.name_is_dept:
-      attrs['position'] = ''
-    elif position.find('HansardName').text is not None:
-      attrs['position'] = position.find('HansardName').text
-    else:
-      attrs['position'] = position.find('Name').text
-    position_dates = TimePeriod(self.position).dates
-    attrs['fromdate'], attrs['todate'] = position_dates
-    periods = [ attrs ]
-    chairdates = position.find('ChairDates')
-    if chairdates is None or not len(chairdates):
-      return periods
+    @property
+    def time_periods(self):
+        position = self.position
+        attrs = {}
+        if self.list.name_is_dept:
+            attrs["position"] = ""
+        elif position.find("HansardName").text is not None:
+            attrs["position"] = position.find("HansardName").text
+        else:
+            attrs["position"] = position.find("Name").text
+        position_dates = TimePeriod(self.position).dates
+        attrs["fromdate"], attrs["todate"] = position_dates
+        periods = [attrs]
+        chairdates = position.find("ChairDates")
+        if chairdates is None or not len(chairdates):
+            return periods
 
-    chair_dates = [TimePeriod(x).dates for x in chairdates]
-    unique_dates = []
-    seen = {}
-    for c in chair_dates:
-        if c in seen: continue
-        seen[c] = 1
-        unique_dates.append(c)
-    chair_dates = unique_dates
+        chair_dates = [TimePeriod(x).dates for x in chairdates]
+        unique_dates = []
+        seen = {}
+        for c in chair_dates:
+            if c in seen:
+                continue
+            seen[c] = 1
+            unique_dates.append(c)
+        chair_dates = unique_dates
 
-    if len(chair_dates) > 2:
-      raise Exception("Doesn't currently handle more than two chair dates")
+        if len(chair_dates) > 2:
+            raise Exception("Doesn't currently handle more than two chair dates")
 
-    if len(chair_dates) == 2:
-      first_to_date = chair_dates[1][0]
-    else:
-      first_to_date = position_dates[1]
+        if len(chair_dates) == 2:
+            first_to_date = chair_dates[1][0]
+        else:
+            first_to_date = position_dates[1]
 
-    if chair_dates[0][0] <= position_dates[0]:
-      attrs['position'] = 'Chair'
-      if chair_dates[0][1] < position_dates[1]:
-        attrs['todate'] = chair_dates[0][1]
-        periods.append({'position': '', 'fromdate': chair_dates[0][1], 'todate': first_to_date})
-    else:
-      attrs['todate'] = chair_dates[0][0]
-      self.chair_check(chair_dates[0], periods, first_to_date)
+        if chair_dates[0][0] <= position_dates[0]:
+            attrs["position"] = "Chair"
+            if chair_dates[0][1] < position_dates[1]:
+                attrs["todate"] = chair_dates[0][1]
+                periods.append(
+                    {
+                        "position": "",
+                        "fromdate": chair_dates[0][1],
+                        "todate": first_to_date,
+                    }
+                )
+        else:
+            attrs["todate"] = chair_dates[0][0]
+            self.chair_check(chair_dates[0], periods, first_to_date)
 
-    if len(chair_dates) == 2:
-      self.chair_check(chair_dates[1], periods, position_dates[1])
+        if len(chair_dates) == 2:
+            self.chair_check(chair_dates[1], periods, position_dates[1])
 
-    return periods
+        return periods
 
-  def generate(self):
-    position = self.position
-    for period in self.time_periods:
-      attrs = OrderedDict()
-      attrs['id'] = 'uk.parliament.data/Member/%s/%s/%s%s' % (
-        self.list.person['datadotparl_id'], self.list.typ, position.attrib['Id'], self.counter)
-      attrs['source'] = 'datadotparl/%s' % self.list.typ.lower()
-      if self.list.name_is_dept:
-          dept = position.find('Name').text
-          if not re.search('(?i)panel|committee|commission|court', dept):
-              dept = '%s Committee' % dept
-      else:
-          dept = ''
-      if period['position']:
-          attrs['role'] = period['position']
-      attrs['person_id'] = self.list.person['id']
-      # XXX Will need to cover Lords etc at some point
-      attrs['organization_id'] = popolo.add_organization(dept or 'House of Commons')
-      attrs['start_date'] = period['fromdate']
-      if period['todate'] != '9999-12-31':
-          attrs['end_date'] = period['todate']
-      popolo.add_membership(attrs)
+    def generate(self):
+        position = self.position
+        for period in self.time_periods:
+            attrs = OrderedDict()
+            attrs["id"] = "uk.parliament.data/Member/%s/%s/%s%s" % (
+                self.list.person["datadotparl_id"],
+                self.list.typ,
+                position.attrib["Id"],
+                self.counter,
+            )
+            attrs["source"] = "datadotparl/%s" % self.list.typ.lower()
+            if self.list.name_is_dept:
+                dept = position.find("Name").text
+                if not re.search("(?i)panel|committee|commission|court", dept):
+                    dept = "%s Committee" % dept
+            else:
+                dept = ""
+            if period["position"]:
+                attrs["role"] = period["position"]
+            attrs["person_id"] = self.list.person["id"]
+            # XXX Will need to cover Lords etc at some point
+            attrs["organization_id"] = popolo.add_organization(
+                dept or "House of Commons"
+            )
+            attrs["start_date"] = period["fromdate"]
+            if period["todate"] != "9999-12-31":
+                attrs["end_date"] = period["todate"]
+            popolo.add_membership(attrs)
 
-  @property
-  def counter(self):
-    extra = ''
-    id = self.position.attrib['Id']
-    if self.list.counter.setdefault(id, 0):
-      extra = '/%d' % self.list.counter[id]
-    self.list.counter[id] += 1
-    return extra
+    @property
+    def counter(self):
+        extra = ""
+        id = self.position.attrib["Id"]
+        if self.list.counter.setdefault(id, 0):
+            extra = "/%d" % self.list.counter[id]
+        self.list.counter[id] += 1
+        return extra
 
 
 class Positions(object):
-  def __init__(self, data, person):
-    self.data = data
-    self.person = person
+    def __init__(self, data, person):
+        self.data = data
+        self.person = person
 
-  def filter(self, typ, name_is_dept=False):
-    container = typ + 's'
-    if self.data.find(container) is None:
-      return
-    self.counter = {}
-    self.typ = typ
-    self.name_is_dept = name_is_dept
-    for p in self.data.find(container).findall(typ):
-      pos = Position(p, self)
-      yield pos
+    def filter(self, typ, name_is_dept=False):
+        container = typ + "s"
+        if self.data.find(container) is None:
+            return
+        self.counter = {}
+        self.typ = typ
+        self.name_is_dept = name_is_dept
+        for p in self.data.find(container).findall(typ):
+            pos = Position(p, self)
+            yield pos
 
 
 def parse(fn, root_tag):
-  try:
-    xml = etree.parse(fn).getroot()
-  except:
-    raise Exception('Data from %s does not seem to be valid XML.' % fn)
-  if xml.tag != root_tag:
-    raise Exception('Root tag in %s is not "%s" as expected, got "%s"' % (fn, root_tag, xml.tag))
-  return xml
+    try:
+        xml = etree.parse(fn).getroot()
+    except:
+        raise Exception("Data from %s does not seem to be valid XML." % fn)
+    if xml.tag != root_tag:
+        raise Exception(
+            'Root tag in %s is not "%s" as expected, got "%s"' % (fn, root_tag, xml.tag)
+        )
+    return xml
 
 
 parl_member_ids = set()
 for source_file in source_files:
-  parl_members_slim = parse('../../rawdata/datadotparl/' + source_file + '.xml', 'Members')
-  parl_member_ids |= set(member.attrib['Member_Id'] for member in parl_members_slim)
-  verbose('Found %d members from %s.xml.' % (len(parl_members_slim), source_file))
-verbose('Total of %d distinct people.' % len(parl_member_ids))
+    parl_members_slim = parse(
+        "../../rawdata/datadotparl/" + source_file + ".xml", "Members"
+    )
+    parl_member_ids |= set(member.attrib["Member_Id"] for member in parl_members_slim)
+    verbose("Found %d members from %s.xml." % (len(parl_members_slim), source_file))
+verbose("Total of %d distinct people." % len(parl_member_ids))
 
 # Enrich the data!
 parl_members = dict()
 for member_id in parl_member_ids:
-  member_fullbio_xml = parse('../../rawdata/datadotparl/' + member_id + '.xml', 'Members')
-  parl_members[member_id] = member_fullbio_xml.find('Member')
+    member_fullbio_xml = parse(
+        "../../rawdata/datadotparl/" + member_id + ".xml", "Members"
+    )
+    parl_members[member_id] = member_fullbio_xml.find("Member")
 
 ##########
 # At this point parl_members contains a complete set of data.
 ##########
 
 # Import people.xml
-people_json = json.load(open('../../members/people.json'))
+people_json = json.load(open("../../members/people.json"))
 people = []
-for person in people_json['persons']:
-  for i in person.get('identifiers', []):
-    if i['scheme'] == 'datadotparl_id':
-      person['datadotparl_id'] = i['identifier']
-      people.append(person)
-verbose(str(len(people)) + ' people with data.parliament ID.')
+for person in people_json["persons"]:
+    for i in person.get("identifiers", []):
+        if i["scheme"] == "datadotparl_id":
+            person["datadotparl_id"] = i["identifier"]
+            people.append(person)
+verbose(str(len(people)) + " people with data.parliament ID.")
 
 for person in people:
-  try:
-    parl_data = parl_members[person['datadotparl_id']]
-  except KeyError:
-    sys.stderr.write(
-      "we have an ID for {0} but no matching file downloaded from data.parliament" \
-      .format(person['datadotparl_id'])
-    )
-    continue
+    try:
+        parl_data = parl_members[person["datadotparl_id"]]
+    except KeyError:
+        sys.stderr.write(
+            "we have an ID for {0} but no matching file downloaded from data.parliament".format(
+                person["datadotparl_id"]
+            )
+        )
+        continue
 
-  positions = Positions(parl_data, person)
+    positions = Positions(parl_data, person)
 
-  for position in positions.filter('GovernmentPost'):
-    position.generate()
-  for position in positions.filter('OppositionPost'):
-    position.generate()
-  for position in positions.filter('ParliamentaryPost'):
-    position.generate()
-  for position in positions.filter('Committee', name_is_dept=True):
-    position.generate()
+    for position in positions.filter("GovernmentPost"):
+        position.generate()
+    for position in positions.filter("OppositionPost"):
+        position.generate()
+    for position in positions.filter("ParliamentaryPost"):
+        position.generate()
+    for position in positions.filter("Committee", name_is_dept=True):
+        position.generate()
 
-verbose('Done for all source files.')
+verbose("Done for all source files.")
 
 # Write out the updated ministers file
-popolo.output('../../members/ministers-2010.json')
-verbose('ministers-2010.json updated!')
+popolo.output("../../members/ministers-2010.json")
+verbose("ministers-2010.json updated!")

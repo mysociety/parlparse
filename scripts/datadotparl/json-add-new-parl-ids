@@ -2,87 +2,115 @@
 
 import os
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
 import datetime
 import re
 import urllib.request
+
 from lxml import etree
 from popolo import Popolo
 
 parser = etree.ETCompatXMLParser()
 etree.set_default_parser(parser)
 
-def add_identifier(pid, lookup):
-    if pid not in parl_ids or 'datadotparl_id' not in parl_ids[pid]:
-        ddp_id = parl_members[lookup].attrib['Member_Id']
-        print(f'{pid} ({lookup}) => {ddp_id}')
-        data.persons[pid].setdefault('identifiers', []).append({'scheme': 'datadotparl_id', 'identifier': ddp_id})
 
-    if pid not in parl_ids or 'pims_id' not in parl_ids[pid]:
-        pims_id = parl_members[lookup].attrib['Pims_Id']
+def add_identifier(pid, lookup):
+    if pid not in parl_ids or "datadotparl_id" not in parl_ids[pid]:
+        ddp_id = parl_members[lookup].attrib["Member_Id"]
+        print(f"{pid} ({lookup}) => {ddp_id}")
+        data.persons[pid].setdefault("identifiers", []).append(
+            {"scheme": "datadotparl_id", "identifier": ddp_id}
+        )
+
+    if pid not in parl_ids or "pims_id" not in parl_ids[pid]:
+        pims_id = parl_members[lookup].attrib["Pims_Id"]
         if pims_id:
-            print(f'pims - {pid} ({lookup}) => {pims_id}')
-            data.persons[pid].setdefault('identifiers', []).append({'scheme': 'pims_id', 'identifier': pims_id})
+            print(f"pims - {pid} ({lookup}) => {pims_id}")
+            data.persons[pid].setdefault("identifiers", []).append(
+                {"scheme": "pims_id", "identifier": pims_id}
+            )
 
 
 data = Popolo()
 
 parl_ids = {}
 for person in data.persons.values():
-    for i in person.get('identifiers', []):
-        if i['scheme'] == 'datadotparl_id' or i['scheme'] == 'pims_id':
-            parl_ids.setdefault(person['id'], {})[i['scheme']] = i['identifier']
+    for i in person.get("identifiers", []):
+        if i["scheme"] == "datadotparl_id" or i["scheme"] == "pims_id":
+            parl_ids.setdefault(person["id"], {})[i["scheme"]] = i["identifier"]
 
 
 # Commons
 
 cur_dir = os.path.dirname(__file__)
-source_file = os.path.join(cur_dir, '..', '..', 'rawdata', 'datadotparl', 'all-current-commons.xml')
+source_file = os.path.join(
+    cur_dir, "..", "..", "rawdata", "datadotparl", "all-current-commons.xml"
+)
 parl_members = etree.parse(source_file).getroot()
-parl_members = {member.find('MemberFrom').text.lower(): member for member in parl_members if member.find('CurrentStatus').get('IsActive') == 'True'}
+parl_members = {
+    member.find("MemberFrom").text.lower(): member
+    for member in parl_members
+    if member.find("CurrentStatus").get("IsActive") == "True"
+}
 
 today = datetime.date.today().isoformat()
-mships = [m for m in data.memberships.in_org('house-of-commons').on(today) if m['person_id'] not in parl_ids or len(parl_ids[m['person_id']]) < 2]
+mships = [
+    m
+    for m in data.memberships.in_org("house-of-commons").on(today)
+    if m["person_id"] not in parl_ids or len(parl_ids[m["person_id"]]) < 2
+]
 
 for m in mships:
-    add_identifier(m['person_id'], data.posts[m['post_id']]['area']['name'].lower())
+    add_identifier(m["person_id"], data.posts[m["post_id"]]["area"]["name"].lower())
 
 
 # Lords
 
+
 def canon_name(n):
     n = n.lower()
-    n = re.sub(' st\. +', ' st ', n)
-    n = re.sub('^the ', '', n)
-    n = re.sub('^lord ((arch)?bishop )', r'\1', n)
+    n = re.sub(" st\. +", " st ", n)
+    n = re.sub("^the ", "", n)
+    n = re.sub("^lord ((arch)?bishop )", r"\1", n)
     return n
 
-LORDS_URL = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/membership=all|house=Lords/'
+
+LORDS_URL = "http://data.parliament.uk/membersdataplatform/services/mnis/members/query/membership=all|house=Lords/"
 parl_members = etree.parse(urllib.request.urlopen(LORDS_URL)).getroot()
 parl_by_name = {}
 for member in parl_members:
-    end_date = member.find('HouseEndDate').text or ''
-    end_date = end_date.replace('T00:00:00', '')
-    if end_date and end_date < '1999-11-12': continue
-    name = canon_name(member.find('DisplayAs').text)
-    if member.attrib['Member_Id'] == '3877': end_date = '2010-07-31'  # Bishop of Bradford
-    #if name == 'viscount oxfuird': name = 'viscount of oxfuird'
-    if name == 'lord grenfell': end_date = '2014-03-31'
-    #print (name, end_date)
+    end_date = member.find("HouseEndDate").text or ""
+    end_date = end_date.replace("T00:00:00", "")
+    if end_date and end_date < "1999-11-12":
+        continue
+    name = canon_name(member.find("DisplayAs").text)
+    if member.attrib["Member_Id"] == "3877":
+        end_date = "2010-07-31"  # Bishop of Bradford
+    # if name == 'viscount oxfuird': name = 'viscount of oxfuird'
+    if name == "lord grenfell":
+        end_date = "2014-03-31"
+    # print (name, end_date)
     parl_by_name[(name, end_date)] = member
 parl_members = parl_by_name
 
-mships = [m for m in data.memberships.in_org('house-of-lords') if m['person_id'] not in parl_ids or len(parl_ids[m['person_id']]) < 2]
+mships = [
+    m
+    for m in data.memberships.in_org("house-of-lords")
+    if m["person_id"] not in parl_ids or len(parl_ids[m["person_id"]]) < 2
+]
 mships_by_pid = {}
 for m in mships:
-    mships_by_pid.setdefault(m['person_id'], []).append(m)
+    mships_by_pid.setdefault(m["person_id"], []).append(m)
 mships = []
 for pid, ms in mships_by_pid.items():
-    ms.sort(key=lambda x: x.get('end_date', '9999-12-31'), reverse=True)
+    ms.sort(key=lambda x: x.get("end_date", "9999-12-31"), reverse=True)
     mships.append(ms[0])
 
 for m in mships:
-    add_identifier(m['person_id'], (data.names[m['person_id']].lower(), m.get('end_date', '')))
+    add_identifier(
+        m["person_id"], (data.names[m["person_id"]].lower(), m.get("end_date", ""))
+    )
 
 data.dump()

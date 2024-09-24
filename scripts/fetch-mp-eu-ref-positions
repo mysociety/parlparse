@@ -6,27 +6,28 @@ import os
 import sys
 import urllib.request
 
-rawdata_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'rawdata'))
-members_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'members'))
-path_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'pyscraper' ))
+rawdata_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "rawdata"))
+members_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "members"))
+path_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "pyscraper"))
 
 sys.path.append(path_dir)
 
-base_url = 'http://www.bbc.co.uk/indepthtoolkit/data-sets/my_mps_stance_on_eu'
+base_url = "http://www.bbc.co.uk/indepthtoolkit/data-sets/my_mps_stance_on_eu"
 
 from resolvemembernames import MemberList
 
-OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../members/')
+OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../members/")
 
 
 def urlopen(url):
     request = urllib.request.Request(url)
-    request.add_header('User-Agent', 'TheyWorkForYou/1.0')
+    request.add_header("User-Agent", "TheyWorkForYou/1.0")
     return urllib.request.urlopen(request)
 
-data_file = os.path.join(rawdata_dir, 'eu_ref_positions.json')
+
+data_file = os.path.join(rawdata_dir, "eu_ref_positions.json")
 data = urlopen(base_url).read()
-with open(data_file, 'w+') as fp:
+with open(data_file, "w+") as fp:
     fp.write(data)
 
 with open(data_file) as fp:
@@ -36,11 +37,13 @@ members = MemberList()
 
 positions = {}
 for position in position_data.values():
-    if position['constituency_name'] == 'Sheffield Hillsborough and Brightside':
-        position['constituency_name'] = 'Sheffield, Brightside and Hillsborough'
-    member = members.matchfullnamecons(position['mp_name'], position['constituency_name'], '2016-06-24')
-    positions[member[0]] = position['outcome']
+    if position["constituency_name"] == "Sheffield Hillsborough and Brightside":
+        position["constituency_name"] = "Sheffield, Brightside and Hillsborough"
+    member = members.matchfullnamecons(
+        position["mp_name"], position["constituency_name"], "2016-06-24"
+    )
+    positions[member[0]] = position["outcome"]
 
-out = os.path.join(members_dir, 'eu_ref_positions.json')
-with open(out, 'w') as fp:
+out = os.path.join(members_dir, "eu_ref_positions.json")
+with open(out, "w") as fp:
     fp.write(json.dumps(positions))

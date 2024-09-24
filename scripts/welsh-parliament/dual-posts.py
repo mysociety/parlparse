@@ -4,7 +4,9 @@
 # Lord, and add their Wikidata ID to people.json so they match later on
 
 import logging
-from os import path, sys
+import sys
+from os import path
+
 import requests
 
 # To allow import popolo
@@ -14,11 +16,13 @@ from popolo import Popolo
 
 popolo = Popolo()
 
-logging.basicConfig(filename=path.join(path.abspath(__file__), "../../logs/log-dual.txt"),
-                    filemode='a',
-                    format="[%(asctime)s] [%(levelname)-8s] --- %(message)s (%(filename)s:%(lineno)s)",
-                    datefmt="%Y-%m-%d %H:%M:%S",
-                    level=logging.DEBUG)
+logging.basicConfig(
+    filename=path.join(path.abspath(__file__), "../../logs/log-dual.txt"),
+    filemode="a",
+    format="[%(asctime)s] [%(levelname)-8s] --- %(message)s (%(filename)s:%(lineno)s)",
+    datefmt="%Y-%m-%d %H:%M:%S",
+    level=logging.DEBUG,
+)
 
 logger = logging.getLogger()
 
@@ -40,7 +44,7 @@ WHERE {
 }
 """
 
-r = requests.get(url, params = {"format": "json", "query": query})
+r = requests.get(url, params={"format": "json", "query": query})
 data = r.json()
 
 # Gather all potential Members of the Senedd who were also MPs from Wikidata
@@ -50,8 +54,11 @@ for item in data["results"]["bindings"]:
     name = item["memberLabel"]["value"]
     person = popolo.get_person(id=wikidata_id, scheme="wikidata")
     if person:
-        logger.debug("{} ({}) matched to existing person {} by Wikidata ID".format(
-            name, wikidata_id, person["id"]))
+        logger.debug(
+            "{} ({}) matched to existing person {} by Wikidata ID".format(
+                name, wikidata_id, person["id"]
+            )
+        )
     else:
         logger.debug("Finding parlparse ID for {} ({})".format(name, wikidata_id))
         matches = popolo.get_person(name=name)
@@ -60,11 +67,19 @@ for item in data["results"]["bindings"]:
             continue
         if len(matches) > 1:
             logger.debug("Multiple matches, filtering to modern ones")
-            matches = [m for m in matches if popolo.memberships.of_person(m["id"]).on('2010-01-01')]
+            matches = [
+                m
+                for m in matches
+                if popolo.memberships.of_person(m["id"]).on("2010-01-01")
+            ]
             assert len(matches) == 1
         match = matches[0]
-        logger.debug("Adding ID {} to person {} ({})".format(wikidata_id, name, match["id"]))
-        popolo.persons[match["id"]]["identifiers"].append({"scheme": "wikidata", "identifier": wikidata_id})
+        logger.debug(
+            "Adding ID {} to person {} ({})".format(wikidata_id, name, match["id"])
+        )
+        popolo.persons[match["id"]]["identifiers"].append(
+            {"scheme": "wikidata", "identifier": wikidata_id}
+        )
 
 query = """
 SELECT DISTINCT
@@ -80,7 +95,7 @@ WHERE {
 }
 """
 
-r = requests.get(url, params = {"format": "json", "query": query})
+r = requests.get(url, params={"format": "json", "query": query})
 data = r.json()
 
 # Gather all potential Members of the Senedd who were also Lords from Wikidata
@@ -90,28 +105,37 @@ for item in data["results"]["bindings"]:
     name = item["memberLabel"]["value"]
     person = popolo.get_person(id=wikidata_id, scheme="wikidata")
     if person:
-        logger.debug("{} ({}) matched to existing person {} by Wikidata ID".format(
-            name, wikidata_id, person["id"]))
+        logger.debug(
+            "{} ({}) matched to existing person {} by Wikidata ID".format(
+                name, wikidata_id, person["id"]
+            )
+        )
     else:
         logger.debug("Finding parlparse ID for {} ({})".format(name, wikidata_id))
-        if ',' in name:
-            name = name.split(', ')[1].replace('Baron ', 'Lord ')
+        if "," in name:
+            name = name.split(", ")[1].replace("Baron ", "Lord ")
         else:
             # Special cases
-            if name == 'Jenny Randerson':
-                name = 'Jennifer Randerson'
-            if name == 'Nick Bourne':
-                name = 'Nicholas Bourne'
-            first, last = name.split(' ')
+            if name == "Jenny Randerson":
+                name = "Jennifer Randerson"
+            if name == "Nick Bourne":
+                name = "Nicholas Bourne"
+            first, last = name.split(" ")
             for person in popolo.persons.values():
                 for n in person["other_names"]:
-                    if n.get("lordname") == last and n.get("given_name").startswith(first):
+                    if n.get("lordname") == last and n.get("given_name").startswith(
+                        first
+                    ):
                         name = popolo.names[person["id"]]
 
         matches = popolo.get_person(name=name)
         assert len(matches) == 1
         match = matches[0]
-        logger.debug("Adding ID {} to person {} ({})".format(wikidata_id, name, match["id"]))
-        popolo.persons[match["id"]]["identifiers"].append({"scheme": "wikidata", "identifier": wikidata_id})
+        logger.debug(
+            "Adding ID {} to person {} ({})".format(wikidata_id, name, match["id"])
+        )
+        popolo.persons[match["id"]]["identifiers"].append(
+            {"scheme": "wikidata", "identifier": wikidata_id}
+        )
 
 popolo.dump()

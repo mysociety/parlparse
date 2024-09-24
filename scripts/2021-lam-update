@@ -6,88 +6,107 @@ import json
 import os
 import sys
 
-sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout)
 
-CSV_URL = '/home/matthew/lam.csv'
-JSON = os.path.join(os.path.dirname(__file__), '..', 'members', 'people.json')
+CSV_URL = "/home/matthew/lam.csv"
+JSON = os.path.join(os.path.dirname(__file__), "..", "members", "people.json")
 
 
 def main():
     data = load_data()
     update_from(CSV_URL, data)
-    json.dump(data['json'], open(JSON + 'n', 'w'), indent=2, sort_keys=True)
-    os.rename(JSON + 'n', JSON)
+    json.dump(data["json"], open(JSON + "n", "w"), indent=2, sort_keys=True)
+    os.rename(JSON + "n", JSON)
 
 
 def update_from(csv_url, data):
     for first, last, cons, party in wtt_csv_reader(csv_url):
-        name = '%s %s' % (first, last)
-        person_id = data['people_by_name'].get(name)
+        name = "%s %s" % (first, last)
+        person_id = data["people_by_name"].get(name)
 
-        name = {'given_name': first, 'family_name': last, 'note': 'Main'}
+        name = {"given_name": first, "family_name": last, "note": "Main"}
         if not person_id:
-            data['max_person_id'] += 1
-            person_id = 'uk.org.publicwhip/person/%d' % data['max_person_id']
+            data["max_person_id"] += 1
+            person_id = "uk.org.publicwhip/person/%d" % data["max_person_id"]
             new_person = {
-                'id': person_id,
+                "id": person_id,
                 "other_names": [name],
             }
-            data['json']['persons'].append(new_person)
-            data['persons'][person_id] = new_person
+            data["json"]["persons"].append(new_person)
+            data["persons"][person_id] = new_person
 
         # With the person done, now let's either update a membership or create a new membership
         new_mship = {
-            'on_behalf_of_id': data['orgs'][party],
-            'person_id': person_id,
-            'start_date': '2021-05-08',
-            'start_reason': 'regional_election',
+            "on_behalf_of_id": data["orgs"][party],
+            "person_id": person_id,
+            "start_date": "2021-05-08",
+            "start_reason": "regional_election",
         }
-        data['max_mship_id'] += 1
-        print("NEW result %s, %s %s, %s, %s, %s" % (data['max_mship_id'], name['given_name'], name['family_name'], party, cons, person_id))
+        data["max_mship_id"] += 1
+        print(
+            "NEW result %s, %s %s, %s, %s, %s"
+            % (
+                data["max_mship_id"],
+                name["given_name"],
+                name["family_name"],
+                party,
+                cons,
+                person_id,
+            )
+        )
         mship = {
-            'id': 'uk.org.publicwhip/member/%d' % data['max_mship_id'],
-            'post_id': 'uk.org.publicwhip/cons/10839',
+            "id": "uk.org.publicwhip/member/%d" % data["max_mship_id"],
+            "post_id": "uk.org.publicwhip/cons/10839",
         }
-        data['json']['memberships'].append(mship)
+        data["json"]["memberships"].append(mship)
         mship.update(new_mship)
-        data.setdefault('dealt_with', []).append(cons)
+        data.setdefault("dealt_with", []).append(cons)
 
 
 def load_data():
     """Load in existing JSON"""
     j = json.load(open(JSON))
-    persons = {p['id']: p for p in j['persons']}
-    posts = {p['id']: p for p in j['posts']}
-    orgs = {o['name']: o['id'] for o in j['organizations']}
-    max_person_id = max(int(p['id'].replace('uk.org.publicwhip/person/','')) for p in j['persons'])
+    persons = {p["id"]: p for p in j["persons"]}
+    posts = {p["id"]: p for p in j["posts"]}
+    orgs = {o["name"]: o["id"] for o in j["organizations"]}
+    max_person_id = max(
+        int(p["id"].replace("uk.org.publicwhip/person/", "")) for p in j["persons"]
+    )
 
-    mships = [m for m in j['memberships'] if 'post_id' in m and posts[m['post_id']]['organization_id'] == 'london-assembly']
-    max_mship_id = max(int(mship['id'].replace('uk.org.publicwhip/member/','')) for mship in mships)
+    mships = [
+        m
+        for m in j["memberships"]
+        if "post_id" in m
+        and posts[m["post_id"]]["organization_id"] == "london-assembly"
+    ]
+    max_mship_id = max(
+        int(mship["id"].replace("uk.org.publicwhip/member/", "")) for mship in mships
+    )
 
     people_by_name = {}
     for mship in mships:
-        name = getNameFromPerson(persons[mship['person_id']])
+        name = getNameFromPerson(persons[mship["person_id"]])
         if name not in people_by_name:
-            people_by_name[name] = mship['person_id']
+            people_by_name[name] = mship["person_id"]
         else:
-            if people_by_name[name] != mship['person_id']:
-                raise Exception('Multiple people with name {}'.format(name))
+            if people_by_name[name] != mship["person_id"]:
+                raise Exception("Multiple people with name {}".format(name))
 
     return {
-        'json': j,
-        'persons': persons,
-        'orgs': orgs,
-        'max_person_id': max_person_id,
-        'max_mship_id': max_mship_id,
-        'people_by_name': people_by_name,
+        "json": j,
+        "persons": persons,
+        "orgs": orgs,
+        "max_person_id": max_person_id,
+        "max_mship_id": max_mship_id,
+        "people_by_name": people_by_name,
     }
 
 
 PARTY_WTT_TO_TWFY = {
-    'GLA Conservatives': 'Conservative',
-    'Liberal Democrat': 'Liberal Democrat',
-    "Labour Group": 'Labour',
-    'City Hall Greens': 'Green',
+    "GLA Conservatives": "Conservative",
+    "Liberal Democrat": "Liberal Democrat",
+    "Labour Group": "Labour",
+    "City Hall Greens": "Green",
 }
 
 
@@ -95,16 +114,21 @@ def wtt_csv_reader(fn):
     if isinstance(fn, str):
         fn = open(fn)
     for row in csv.DictReader(fn):
-        row['Party'] = PARTY_WTT_TO_TWFY[row['Party']]
-        yield str(row['First'], 'utf-8'), str(row['Last'], 'utf-8'), str(row['Constituency'], 'utf-8'), str(row['Party'], 'utf-8')
+        row["Party"] = PARTY_WTT_TO_TWFY[row["Party"]]
+        yield (
+            str(row["First"], "utf-8"),
+            str(row["Last"], "utf-8"),
+            str(row["Constituency"], "utf-8"),
+            str(row["Party"], "utf-8"),
+        )
 
 
 def getNameFromPerson(person):
-    for name in person.get('other_names', []):
-        if name['note'] == 'Main':
-            return name['given_name'] + ' ' + name['family_name']
-    raise Exception('Unable to find main name for person {}'.format(person['id']))
+    for name in person.get("other_names", []):
+        if name["note"] == "Main":
+            return name["given_name"] + " " + name["family_name"]
+    raise Exception("Unable to find main name for person {}".format(person["id"]))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -76,7 +76,9 @@ def process_raw_html(raw_html: Tag, agenda_item_url: str) -> BeautifulSoup:
     # Deal with timestamps that are not inside anything first
     raw_html = str(raw_html)
     raw_html = re.sub(
-        '(?:<p class="or-contribution-box">)?\s*(.*?)\s*<br/>\s*<br/>', r"<timestamp>\1</timestamp>", raw_html
+        '(?:<p class="or-contribution-box">)?\s*(.*?)\s*<br/>\s*<br/>',
+        r"<timestamp>\1</timestamp>",
+        raw_html,
     )
     soup = BeautifulSoup(raw_html, "html.parser")
 
@@ -267,7 +269,7 @@ def tidy_up_html(xml_path: Path, output_dir: Path):
         raw_html = item.find("raw_html")
         parsed_data = process_raw_html(raw_html, agenda_item_url=agenda_item_url)
         # replace raw_html with parsed
-        item.find('raw_html').decompose()
+        item.find("raw_html").decompose()
         item.append(parsed_data.find("parsed"))
 
     # dump the soup to a file
