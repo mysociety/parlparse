@@ -11,3 +11,62 @@ requests = { version = "2.32.3", extras = ["security"] }
 requests-cache = "0.4.13"
 Click = "7.0"
 click-log = "0.3.2"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.6.7"
+
+[tool.ruff]
+
+extend-include = ["scripts/*"]
+extend-exclude = [
+ 'scripts/.gitignore',
+ 'scripts/2016_data_update/README.txt',
+ 'scripts/config.pm.incvs',
+ 'scripts/consts',
+ 'scripts/crontab',
+ 'scripts/dailyupdate',
+ 'scripts/datadotparl/mp-party-check',
+ 'scripts/datadotparl/one-off-add-pims-ids',
+ 'scripts/datadotparl/one-off-sync-lord-parties',
+ 'scripts/dircmp',
+ 'scripts/divisionextractor.pl',
+ 'scripts/morningupdate',
+ 'scripts/ni-format-revert',
+ 'scripts/ni_membership.php',
+ 'scripts/one-off-move-names-to-persons',
+ 'scripts/other-sites-update',
+ 'scripts/updatedaterange-parse',
+ 'scripts/updatedaterange-scrape',
+ 'scripts/weeklyupdate',
+ 'scripts/ynmp/tests.txt'
+]
+
+
+
+[tool.ruff.lint]
+select = [
+    "E",
+    # flake8
+    "F",
+    # isort
+    "I",
+]
+ignore = [
+    # line too long, sorted with formatter where it can be
+    "E501", 
+]
+
+
+[tool.ruff.lint.isort]
+known-first-party = ["hub"]
+section-order = [
+  "future",
+  "standard-library",
+  "django",
+  "third-party",
+  "first-party",
+  "local-folder"
+]
+
+[tool.ruff.lint.isort.sections]
+django = ["django"]
