@@ -35,10 +35,10 @@ class IDFactory:
     latest_minor: int = -1
 
     def _current_id(self) -> str:
-        if self.committee_slug in ('meeting-of-the-parliament', 'plenary'):
-            slug = ''
+        if self.committee_slug in ("meeting-of-the-parliament", "plenary"):
+            slug = ""
         else:
-            slug = self.committee_slug + '/'
+            slug = self.committee_slug + "/"
         return f"{self.base_id}{slug}{self.iso_date}.{self.latest_major}.{self.latest_minor}"
 
     def get_next_major_id(self) -> str:
@@ -85,7 +85,7 @@ def convert_xml_to_twfy(file_path: Path, output_dir: Path, verbose: bool = False
     timestamp = ""
 
     # remove [Draft] from title
-    title = re.sub(r'\[Draft\]( Business until \d\d:\d\d)?', '', title).strip()
+    title = re.sub(r"\[Draft\]( Business until \d\d:\d\d)?", "", title).strip()
 
     # get the date in format Thursday 9 June 2005
     date_str = datetime.date.fromisoformat(iso_date).strftime("%A %d %B %Y")

@@ -7,24 +7,25 @@
 # certain conditions.  However, it comes with ABSOLUTELY NO WARRANTY.
 # For details see the file LICENSE.html in the top level of the source.
 
-import sys
 import re
+import sys
 
 sys.path.append("../pyscraper")
 from resolvemembernames import memberList
 
-today = '2024-05-24'
+today = "2024-05-24"
 
-page = open('../rawdata/Members_of_the_2024_standing_down').read()
-page = re.sub('(?s)^.*?<caption>Members of Parliament not standing for re-election', '', page)
-page = re.sub('(?s)</table>.*', '', page)
+page = open("../rawdata/Members_of_the_2024_standing_down").read()
+page = re.sub(
+    "(?s)^.*?<caption>Members of Parliament not standing for re-election", "", page
+)
+page = re.sub("(?s)</table>.*", "", page)
 
-print('''<?xml version="1.0" encoding="ISO-8859-1"?>
-<publicwhip>''')
+print("""<?xml version="1.0" encoding="ISO-8859-1"?>
+<publicwhip>""")
 m = re.findall(r'<tr>\s*<td>.*?<a href="([^"]*)"[^>]*>([^<]*)</a>', page)
 for row in m:
     url, name = row
-    pid, canonname, canoncons = memberList.matchfullnamecons(name, None, today) 
+    pid, canonname, canoncons = memberList.matchfullnamecons(name, None, today)
     print(('  <personinfo id="%s" name="%s" standing_down_2024="1" />' % (pid, name)))
-print('</publicwhip>')
-
+print("</publicwhip>")

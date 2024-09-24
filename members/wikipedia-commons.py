@@ -7,10 +7,10 @@
 # certain conditions.  However, it comes with ABSOLUTELY NO WARRANTY.
 # For details see the file LICENSE.html in the top level of the source.
 
-import datetime
+import re
 import sys
 import urllib.parse
-import re
+
 # import sets
 
 sys.path.append("../pyscraper")
@@ -18,59 +18,61 @@ sys.path.append("../pyscraper/lords")
 from resolvemembernames import memberList
 
 # Get region pages
-wiki_index_url = "http://en.wikipedia.org/wiki/MPs_elected_in_the_UK_general_election,_2005"
+wiki_index_url = (
+    "http://en.wikipedia.org/wiki/MPs_elected_in_the_UK_general_election,_2005"
+)
 date_parl = {
-    1997: '1999-01-01',
-    2001: '2003-01-01',
-    2005: '2007-08-01',
-    2010: '2014-01-01',
-    2015: '2016-01-01',
+    1997: "1999-01-01",
+    2001: "2003-01-01",
+    2005: "2007-08-01",
+    2010: "2014-01-01",
+    2015: "2016-01-01",
 }
-wikimembers  = {}
+wikimembers = {}
 
-# Grab page 
+# Grab page
 for year in (1997, 2001, 2005, 2010, 2015):
-    ur = open('../rawdata/Members_of_the_House_of_Commons_%d' % year)
+    ur = open("../rawdata/Members_of_the_House_of_Commons_%d" % year)
     content = ur.read()
     ur.close()
 
-# <tr>
-#<td><a href="/wiki/West_Ham_%28UK_Parliament_constituency%29" title="West Ham (UK Parliament constituency)">West Ham</a></td>
-#<td><a href="/wiki/Lyn_Brown" title="Lyn Brown">Lyn Brown</a></td>
-#<td>Labour</td>
-    matcher = '<tr>\s+<td><a href="/wiki/[^"]+" [^>]*?title="[^"]+">([^<]+)</a>(?:<br />\s+<small>.*?</small>)?\s*</td>\s+(?:<td[^>]*>\s*</td>\s*<td[^>]*><a[^>]*>[^<]*</a>\s*</td>\s*<td[^>]*>\s*</td>\s*)?<td>(?:(?:<span class="sortkey">[^<]*</span>|<span data-sort-value="[^"]*">)<span class="vcard"><span class="fn">)?(?:Dr |Sir |The Rev\. )?<a href="(/wiki/[^"]+)" [^>]*?title="[^"]+"[^>]*>([^<]+)</a>(?:(?:</span>){2,3})?(?:&#160;\(.*?\))?\s*</td>|by-election,[^"]+">([^<]+)</a> [^ ]{1,3} <a href="(/wiki/[^"]+)" title="[^"]+">([^<]+)</a>';
+    # <tr>
+    # <td><a href="/wiki/West_Ham_%28UK_Parliament_constituency%29" title="West Ham (UK Parliament constituency)">West Ham</a></td>
+    # <td><a href="/wiki/Lyn_Brown" title="Lyn Brown">Lyn Brown</a></td>
+    # <td>Labour</td>
+    matcher = '<tr>\s+<td><a href="/wiki/[^"]+" [^>]*?title="[^"]+">([^<]+)</a>(?:<br />\s+<small>.*?</small>)?\s*</td>\s+(?:<td[^>]*>\s*</td>\s*<td[^>]*><a[^>]*>[^<]*</a>\s*</td>\s*<td[^>]*>\s*</td>\s*)?<td>(?:(?:<span class="sortkey">[^<]*</span>|<span data-sort-value="[^"]*">)<span class="vcard"><span class="fn">)?(?:Dr |Sir |The Rev\. )?<a href="(/wiki/[^"]+)" [^>]*?title="[^"]+"[^>]*>([^<]+)</a>(?:(?:</span>){2,3})?(?:&#160;\(.*?\))?\s*</td>|by-election,[^"]+">([^<]+)</a> [^ ]{1,3} <a href="(/wiki/[^"]+)" title="[^"]+">([^<]+)</a>'
     matches = re.findall(matcher, content)
-    for (cons, url, name, cons2, url2, name2) in matches:
+    for cons, url, name, cons2, url2, name2 in matches:
         id = None
         if cons2:
             cons = cons2
             name = name2
             url = url2
-        cons = cons.replace('&amp;', '&')
+        cons = cons.replace("&amp;", "&")
         try:
-            (id, canonname, canoncons) = memberList.matchfullnamecons(name, cons, date_parl[year])
+            (id, canonname, canoncons) = memberList.matchfullnamecons(
+                name, cons, date_parl[year]
+            )
         except Exception as e:
             print(e, file=sys.stderr)
         if not id:
             continue
         wikimembers[id] = url
 
-print('''<?xml version="1.0" encoding="ISO-8859-1"?>
-<publicwhip>''')
+print("""<?xml version="1.0" encoding="ISO-8859-1"?>
+<publicwhip>""")
 k = sorted(wikimembers)
 for id in k:
     url = urllib.parse.urljoin(wiki_index_url, wikimembers[id])
     print('<personinfo id="%s" wikipedia_url="%s" />' % (id, url))
-print('</publicwhip>')
+print("</publicwhip>")
 
-#wikimembers = sets.Set(wikimembers.keys())
-#print "len: ", len(wikimembers)
+# wikimembers = sets.Set(wikimembers.keys())
+# print "len: ", len(wikimembers)
 
 # Check we have everybody -- ha! not likely yet
-#allmembers = sets.Set(memberList.currentmpslist())
-#symdiff = allmembers.symmetric_difference(wikimembers)
-#if len(symdiff) > 0:
+# allmembers = sets.Set(memberList.currentmpslist())
+# symdiff = allmembers.symmetric_difference(wikimembers)
+# if len(symdiff) > 0:
 #    print >>sys.stderr, "Failed to get all MPs, these ones in symmetric difference"
 #    print >>sys.stderr, symdiff
-
-

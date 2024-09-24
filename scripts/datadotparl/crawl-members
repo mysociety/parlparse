@@ -10,27 +10,32 @@ import os
 import urllib.request
 import xml.etree.ElementTree as etree
 
-parser = argparse.ArgumentParser(description='Fetch latest member data from data.parliament.uk')
-parser.add_argument('--verbose', action='store_true')
+parser = argparse.ArgumentParser(
+    description="Fetch latest member data from data.parliament.uk"
+)
+parser.add_argument("--verbose", action="store_true")
 ARGS = parser.parse_args()
 
 today = datetime.date.today().isoformat()
 source_urls = {
-  'all-current-commons': 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/membership=all|commonsmemberbetween=2015-03-01and%s/' % today,
-  'all-lords': 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Lords|membership=all/'
-  # 'all-commons': 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house*Commons',
+    "all-current-commons": "http://data.parliament.uk/membersdataplatform/services/mnis/members/query/membership=all|commonsmemberbetween=2015-03-01and%s/"
+    % today,
+    "all-lords": "http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Lords|membership=all/",
+    # 'all-commons': 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house*Commons',
 }
 
-member_url_templ = 'http://data.parliament.uk/membersdataplatform/services/mnis/members/query/id=%s/FullBiog/'
+member_url_templ = "http://data.parliament.uk/membersdataplatform/services/mnis/members/query/id=%s/FullBiog/"
 
-OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../rawdata/datadotparl')
+OUT_DIR = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "../../rawdata/datadotparl"
+)
 if not os.path.exists(OUT_DIR):
     os.makedirs(OUT_DIR)
 
 
 def write(url, fn):
-  data = urllib.request.urlopen(url).read()
-  open(fn, 'wb').write(data)
+    data = urllib.request.urlopen(url).read()
+    open(fn, "wb").write(data)
 
 
 def verbose(s):
@@ -38,21 +43,23 @@ def verbose(s):
         print(s)
 
 
-verbose('Update members XML from data.parliament')
+verbose("Update members XML from data.parliament")
 
 member_ids = set()
 for source_type, parl_members_url in source_urls.items():
-  members_fn = '%s/%s.xml' % (OUT_DIR, source_type)
-  write(parl_members_url, members_fn)
-  parl_members = etree.parse(members_fn).getroot()
-  if parl_members.tag != 'Members':
-    raise Exception('Root tag is not "Members" as expected, got "%s".' % parl_members.tag)
-  member_ids |= set(m.attrib['Member_Id'] for m in parl_members)
+    members_fn = "%s/%s.xml" % (OUT_DIR, source_type)
+    write(parl_members_url, members_fn)
+    parl_members = etree.parse(members_fn).getroot()
+    if parl_members.tag != "Members":
+        raise Exception(
+            'Root tag is not "Members" as expected, got "%s".' % parl_members.tag
+        )
+    member_ids |= set(m.attrib["Member_Id"] for m in parl_members)
 
-  verbose('Found %d members from %s.xml.' % (len(parl_members), source_type))
+    verbose("Found %d members from %s.xml." % (len(parl_members), source_type))
 
 for member_id in member_ids:
-  member_url = member_url_templ % member_id
-  write(member_url, '%s/%s.xml' % (OUT_DIR, member_id))
+    member_url = member_url_templ % member_id
+    write(member_url, "%s/%s.xml" % (OUT_DIR, member_id))
 
-verbose('Done!')
+verbose("Done!")

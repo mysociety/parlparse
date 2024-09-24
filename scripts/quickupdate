@@ -3,42 +3,46 @@
 # Thrown together
 # Currently only rescrapes/parses missing UK and NI from preivous day
 
+import datetime
 import glob
-import datetime, os
+import os
 
-base = os.path.expanduser('~/')
-base_html = base + 'parldata/cmpages/'
-base_zip = base + 'parldata/cmpages/hansardzips/'
-base_xml = base + 'parldata/scrapedxml/'
-base_scraper = base + 'parlparse/pyscraper/'
+base = os.path.expanduser("~/")
+base_html = base + "parldata/cmpages/"
+base_zip = base + "parldata/cmpages/hansardzips/"
+base_xml = base + "parldata/scrapedxml/"
+base_scraper = base + "parlparse/pyscraper/"
 
-min = { 'debates': 'debates/debates', 'lords': 'lordspages/daylord' }
-dirs = [ min.copy() for x in range(5) ]
-for x in (0,1):
-    dirs[x]['ni'] = 'ni/ni'
+min = {"debates": "debates/debates", "lords": "lordspages/daylord"}
+dirs = [min.copy() for x in range(5)]
+for x in (0, 1):
+    dirs[x]["ni"] = "ni/ni"
 # Not every Monday, though
-for x in (0,1,2,3):
-    dirs[x]['westminhall'] = 'westminhall/westminster'
+for x in (0, 1, 2, 3):
+    dirs[x]["westminhall"] = "westminhall/westminster"
 
-suffixes = { 'ni': '' }
+suffixes = {"ni": ""}
+
 
 def run_command(dir, cmd):
-    #print 'Running', cmd
-    if dir: print('cd %s%s' % (base_scraper, dir))
-    #os.chdir(base_scraper + dir)
+    # print 'Running', cmd
+    if dir:
+        print("cd %s%s" % (base_scraper, dir))
+    # os.chdir(base_scraper + dir)
     print(cmd)
-    #status, output = commands.getstatusoutput(cmd)
-    #print 'Exit status =', status
-    #print 'Output', output
+    # status, output = commands.getstatusoutput(cmd)
+    # print 'Exit status =', status
+    # print 'Output', output
+
 
 today = datetime.date.today()
 wday = today.weekday()
 
-if wday == 0: # Monday
+if wday == 0:  # Monday
     dirs = dirs[4]
     yesterday = (today - datetime.timedelta(days=3)).isoformat()
-elif wday >= 1 and wday <= 5: # Tuesday to Saturday
-    dirs = dirs[wday-1]
+elif wday >= 1 and wday <= 5:  # Tuesday to Saturday
+    dirs = dirs[wday - 1]
     yesterday = (today - datetime.timedelta(days=1)).isoformat()
 else:
     dirs = dirs[4]
@@ -46,36 +50,40 @@ else:
 
 rescrape = []
 for type, dir in dirs.items():
-    suffix = suffixes[type] if type in suffixes else 'a'
-    file = base_html + dir + yesterday + suffix + '.%s'
-    if yesterday < '2016-04-11' and not os.path.exists(file % 'html') and not os.path.exists(file % 'json'):
+    suffix = suffixes[type] if type in suffixes else "a"
+    file = base_html + dir + yesterday + suffix + ".%s"
+    if (
+        yesterday < "2016-04-11"
+        and not os.path.exists(file % "html")
+        and not os.path.exists(file % "json")
+    ):
         rescrape.append(type)
 
 no_hansard_zips = False
-if yesterday > '2016-04-11':
-    pattern = '{0}*{1}*'.format(base_zip, today.isoformat())
+if yesterday > "2016-04-11":
+    pattern = "{0}*{1}*".format(base_zip, today.isoformat())
     if len(glob.glob(pattern)) == 0:
         no_hansard_zips = True
 
 reparse = []
 for type, dir in dirs.items():
-    suffix = suffixes[type] if type in suffixes else 'a'
-    file = base_xml + dir + yesterday + suffix + '.xml'
+    suffix = suffixes[type] if type in suffixes else "a"
+    file = base_xml + dir + yesterday + suffix + ".xml"
     if not os.path.exists(file):
         reparse.append(type)
 
 # Scrape
 if no_hansard_zips:
-    run_command('', './unpack_hansard_zips.py')
+    run_command("", "./unpack_hansard_zips.py")
 
 # Parse
 if reparse:
-    if 'ni' in reparse:
-        run_command('', './lazyrunall.py --date=' + yesterday + ' parse ni --patchtool')
-    reparse = [t for t in reparse if t != 'ni']
+    if "ni" in reparse:
+        run_command("", "./lazyrunall.py --date=" + yesterday + " parse ni --patchtool")
+    reparse = [t for t in reparse if t != "ni"]
     if reparse:
-        run_command('', './process_hansard.py # not parsed ' + ' '.join(reparse))
+        run_command("", "./process_hansard.py # not parsed " + " ".join(reparse))
 
-print('# Parse/fix any older things from the cron email now')
+print("# Parse/fix any older things from the cron email now")
 
-run_command('', 'other-sites-update 0')
+run_command("", "other-sites-update 0")

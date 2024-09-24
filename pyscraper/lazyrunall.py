@@ -3,19 +3,19 @@
 
 # Run the script with --help to see command line options
 
-import sys
 import os
+import sys
 
 # change current directory to pyscraper folder script is in
-os.chdir(os.path.dirname(sys.argv[0]) or '.')
+os.chdir(os.path.dirname(sys.argv[0]) or ".")
 
 from optparse import OptionParser
-from runfilters import RunFiltersDir, RunNIFilters
-from regmem.filter import RunRegmemFilters
-import ni.scrape
 
-from regmem.pullgluepages import RegmemPullGluePages
+import ni.scrape
 from miscfuncs import SetQuiet
+from regmem.filter import RunRegmemFilters
+from regmem.pullgluepages import RegmemPullGluePages
+from runfilters import RunFiltersDir, RunNIFilters
 
 # Parse the command line parameters
 
@@ -42,33 +42,64 @@ It forces redownload of the debates for 3rd March, and reprocesses them.""")
 
 # See what options there are
 
-parser.add_option("--force-parse",
-                  action="store_true", dest="forceparse", default=False,
-                  help="forces reprocessing of debates by first deleting output files")
-parser.add_option("--force-scrape",
-                  action="store_true", dest="forcescrape", default=False,
-                  help="forces redownloading of HTML first deleting output files")
+parser.add_option(
+    "--force-parse",
+    action="store_true",
+    dest="forceparse",
+    default=False,
+    help="forces reprocessing of debates by first deleting output files",
+)
+parser.add_option(
+    "--force-scrape",
+    action="store_true",
+    dest="forcescrape",
+    default=False,
+    help="forces redownloading of HTML first deleting output files",
+)
 
-parser.add_option("--from", dest="datefrom", metavar="date", default="1000-01-01",
-                  help="date to process back to, default is start of time")
-parser.add_option("--to", dest="dateto", metavar="date", default="9999-12-31",
-                  help="date to process up to, default is present day")
-parser.add_option("--date", dest="date", metavar="date", default=None,
-                  help="date to process (overrides --from and --to)")
+parser.add_option(
+    "--from",
+    dest="datefrom",
+    metavar="date",
+    default="1000-01-01",
+    help="date to process back to, default is start of time",
+)
+parser.add_option(
+    "--to",
+    dest="dateto",
+    metavar="date",
+    default="9999-12-31",
+    help="date to process up to, default is present day",
+)
+parser.add_option(
+    "--date",
+    dest="date",
+    metavar="date",
+    default=None,
+    help="date to process (overrides --from and --to)",
+)
 
-parser.add_option("--patchtool",
-                  action="store_true", dest="patchtool", default=None,
-                  help="launch ./patchtool to fix errors in source HTML")
-parser.add_option("--quietc",
-                  action="store_true", dest="quietc", default=None,
-                  help="low volume error messages; continue processing further files")
+parser.add_option(
+    "--patchtool",
+    action="store_true",
+    dest="patchtool",
+    default=None,
+    help="launch ./patchtool to fix errors in source HTML",
+)
+parser.add_option(
+    "--quietc",
+    action="store_true",
+    dest="quietc",
+    default=None,
+    help="low volume error messages; continue processing further files",
+)
 
 (options, args) = parser.parse_args()
-if (options.date):
-	options.datefrom = options.date
-	options.dateto = options.date
+if options.date:
+    options.datefrom = options.date
+    options.dateto = options.date
 if options.quietc:
-	SetQuiet()
+    SetQuiet()
 
 # See what commands there are
 
@@ -78,33 +109,33 @@ options.parse = False
 options.regmem = False
 options.ni = False
 for arg in args:
-        if arg == "scrape":
-                options.scrape = True
-        elif arg == "parse":
-                options.parse = True
-        elif arg == "regmem":
-                options.regmem = True
-                options.remote = True
-        elif arg == "regmem-local":
-                options.regmem = True
-                options.remote = False
-        elif arg == "ni":
-                options.ni = True
-        else:
-                print("error: no such option %s" % arg, file=sys.stderr)
-                parser.print_help()
-                sys.exit(1)
+    if arg == "scrape":
+        options.scrape = True
+    elif arg == "parse":
+        options.parse = True
+    elif arg == "regmem":
+        options.regmem = True
+        options.remote = True
+    elif arg == "regmem-local":
+        options.regmem = True
+        options.remote = False
+    elif arg == "ni":
+        options.ni = True
+    else:
+        print("error: no such option %s" % arg, file=sys.stderr)
+        parser.print_help()
+        sys.exit(1)
 if len(args) == 0:
-        parser.print_help()
-        sys.exit(1)
+    parser.print_help()
+    sys.exit(1)
 if not options.scrape and not options.parse:
-        print("error: choose what to do; scrape, parse, or both", file=sys.stderr)
-        parser.print_help()
-        sys.exit(1)
+    print("error: choose what to do; scrape, parse, or both", file=sys.stderr)
+    parser.print_help()
+    sys.exit(1)
 if not options.regmem and not options.ni:
-        print("error: choose what work on; regmem, several of them", file=sys.stderr)
-        parser.print_help()
-        sys.exit(1)
+    print("error: choose what work on; regmem, several of them", file=sys.stderr)
+    parser.print_help()
+    sys.exit(1)
 
 
 # Download/generate the new data
@@ -116,7 +147,7 @@ if options.scrape:
 
 # Parse it into XML
 if options.parse:
-	if options.ni:
-		RunFiltersDir(RunNIFilters, 'ni', options, options.forceparse)
-	if options.regmem:
-		RunFiltersDir(RunRegmemFilters, 'regmem', options, options.forceparse)
+    if options.ni:
+        RunFiltersDir(RunNIFilters, "ni", options, options.forceparse)
+    if options.regmem:
+        RunFiltersDir(RunRegmemFilters, "regmem", options, options.forceparse)

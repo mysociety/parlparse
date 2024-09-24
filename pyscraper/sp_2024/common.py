@@ -1,15 +1,13 @@
 # A few functions that turn out to be useful in many of the Scottish
 # Parliament scraping scripts.
 
-import sys
 import datetime
+import sys
 
 sys.path.append("../")
-from bs4 import NavigableString
-from bs4 import Tag
-from bs4 import Comment
-
 import re
+
+from bs4 import Comment, NavigableString, Tag
 
 
 def non_tag_data_in(o, tag_replacement=""):

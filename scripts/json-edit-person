@@ -2,13 +2,13 @@
 
 import argparse
 import sys
+
 from popolo import Popolo
 from popolo.utils import edit_file, get_person_from_name
 
-
 parser = argparse.ArgumentParser()
-parser.add_argument('--name')
-parser.add_argument('--id')
+parser.add_argument("--name")
+parser.add_argument("--id")
 ARGS = parser.parse_args()
 
 data = Popolo()
@@ -18,31 +18,31 @@ if ARGS.id:
 elif ARGS.name:
     person = get_person_from_name(ARGS.name, data)
 else:
-    raise Exception('Must specify ID or name')
+    raise Exception("Must specify ID or name")
 
-mships = data.memberships.of_person(person['id'])
+mships = data.memberships.of_person(person["id"])
 
 edit_data = {
-    '_max_ids': {
-        'lord': data.max_lord_id(),
-        'mp': data.max_mp_id(),
-        'msp': data.max_msp_id(),
-        'mla': data.max_mla_id(),
+    "_max_ids": {
+        "lord": data.max_lord_id(),
+        "mp": data.max_mp_id(),
+        "msp": data.max_msp_id(),
+        "mla": data.max_mla_id(),
     },
-    'person': person,
-    'memberships': list(mships),
+    "person": person,
+    "memberships": list(mships),
 }
 new_edit_data = edit_file(edit_data)
 
 if edit_data == new_edit_data:
     sys.exit()
 
-data.persons[person['id']].update(new_edit_data['person'])
-edit_mships = {m['id']: m for m in new_edit_data['memberships']}
+data.persons[person["id"]].update(new_edit_data["person"])
+edit_mships = {m["id"]: m for m in new_edit_data["memberships"]}
 for m in data.memberships:
-    if m['id'] in edit_mships:
-        m.update(edit_mships[m['id']])
-        del edit_mships[m['id']]
+    if m["id"] in edit_mships:
+        m.update(edit_mships[m["id"]])
+        del edit_mships[m["id"]]
 
 for m in edit_mships.values():
     data.add_membership(m)

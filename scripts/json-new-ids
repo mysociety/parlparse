@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from popolo import Popolo
+
 data = Popolo()
 
 print("Current maximum Lord ID:", data.max_lord_id())

@@ -9,9 +9,9 @@ One file per committee per day.
 
 from __future__ import annotations
 
+import re
 from itertools import groupby
 from pathlib import Path
-import re
 from typing import Iterator, NamedTuple
 from urllib.parse import parse_qs, urlparse
 

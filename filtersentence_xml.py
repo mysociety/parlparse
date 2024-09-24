@@ -1,12 +1,9 @@
-from datetime import datetime
 import re
-
-from lxml import etree
+from datetime import datetime
 
 from contextexception import ContextException
 from parlphrases import parlPhrases
 from resolvemembernames import memberList
-
 
 # this code fits onto the paragraphs before the fixhtmlentities and
 # performs difficult regular expression matching that can be
@@ -33,22 +30,26 @@ rehreflink = re.compile('(<small>)?<a href="([^"]*)">(.*?)</a>(</small>)?')
 reqnum = re.compile("\s*\[(\d+)\]\s*$")
 refqnum = re.compile("\s*\[(\d+)\]\s*")
 
-redatephraseval = re.compile('(?:(?:%s),? )?(\d+(?: |&nbsp;)*(?:%s)( \d+)?)' % (parlPhrases.daysofweek, parlPhrases.monthsofyear))
+redatephraseval = re.compile(
+    "(?:(?:%s),? )?(\d+(?: |&nbsp;)*(?:%s)( \d+)?)"
+    % (parlPhrases.daysofweek, parlPhrases.monthsofyear)
+)
 
 
 def TokenDate(ldate, phrtok):
     sdate_year = phrtok.sdate[0:4]
-    tdate = ldate.group(0).replace('&nbsp;', ' ')
+    tdate = ldate.group(0).replace("&nbsp;", " ")
     if not ldate.group(2):
         tdate += " %s" % sdate_year
     try:
-        lldate = datetime.strptime(tdate, '%A, %d %B %Y')
+        lldate = datetime.strptime(tdate, "%A, %d %B %Y")
         phrtok.lastdate = lldate.date().isoformat()
     except:
-        phrtok.lastdate = ''
-    return ('phrase', ' class="date" code="%s"' % phrtok.lastdate)
+        phrtok.lastdate = ""
+    return ("phrase", ' class="date" code="%s"' % phrtok.lastdate)
 
-restandingo = re.compile('''(?x)
+
+restandingo = re.compile("""(?x)
         (?:<b>)?
         Standing\sOrder\sNo\.\s*
         (
@@ -60,7 +61,7 @@ restandingo = re.compile('''(?x)
         \(([^()]*(?:\([^()]*\))?)\) # inclusion of title for clarity
        )?
         (?:</b>)?
-''')
+""")
 
 restandingomarg = re.compile("Standing Order No")
 
@@ -68,23 +69,26 @@ restandingomarg = re.compile("Standing Order No")
 def TokenStandingOrder(mstandingo, phrtok):
     if mstandingo.group(2):
         return (
-            'phrase', ' class="standing-order" code="%s" title="%s"' %
-            (mstandingo.group(1), re.sub('<[^>]*>', '', mstandingo.group(2)))
+            "phrase",
+            ' class="standing-order" code="%s" title="%s"'
+            % (mstandingo.group(1), re.sub("<[^>]*>", "", mstandingo.group(2))),
         )
-    return (
-        'phrase', ' class="standing-order" code="%s"' % mstandingo.group(1)
-    )
+    return ("phrase", ' class="standing-order" code="%s"' % mstandingo.group(1))
 
-rehtlink = re.compile('(?<!["\'])(https?://)([^\s]+)')
+
+rehtlink = re.compile("(?<![\"'])(https?://)([^\s]+)")
+
 
 def TokenHttpLink(mhttp, phrtok):
     qstrlink = mhttp.group(0)
-    return ('a', ' href="%s"' % qstrlink)
+    return ("a", ' href="%s"' % qstrlink)
+
 
 def TokenHrefLink(mhttp, phrtok):
-    return ('', '')
+    return ("", "")
 
-reoffrepw = re.compile('''(?ix)
+
+reoffrepw = re.compile("""(?ix)
     <i>\s*official(?:</i>|<i>|\s)*report                # Official Report
     (?:</i>|<i>|[,;\s])*
     (Commons|House\sof\sCommons|House\sof\sLords)?      # Optional house (1)
@@ -96,7 +100,7 @@ reoffrepw = re.compile('''(?ix)
     (?:(W[AS]?)\s*)?                                    # Optional column number prefix (2)
     (\d+(?:(?:&\#150;|-)\d+)?)                          # Column number or numbers (3)
     ([WHSA]*)                                           # Optional column suffix (4)
-''')
+""")
 
 
 def TokenOffRep(qoffrep, phrtok):
@@ -108,30 +112,31 @@ def TokenOffRep(qoffrep, phrtok):
     if qcolsuffix:
         qcolsuffix = qcolsuffix.upper()
     # print '*', qoffrep.group(0), loc1, qcolprefix, qcolsuffix, qoffrep.group(3)
-    qcpart = re.match('(\d+)(?:(?:&#150;|-)(\d+))?(?i)$', qoffrep.group(3))
+    qcpart = re.match("(\d+)(?:(?:&#150;|-)(\d+))?(?i)$", qoffrep.group(3))
     qcolnum = qcpart.group(1)
     if qcpart.group(2):
-        qcpartlead = qcpart.group(1)[len(qcpart.group(1)) - len(qcpart.group(2)):]
+        qcpartlead = qcpart.group(1)[len(qcpart.group(1)) - len(qcpart.group(2)) :]
         if int(qcpartlead) >= int(qcpart.group(2)):
-            print(' non-following column leadoff ', qoffrep.group(0))
+            print(" non-following column leadoff ", qoffrep.group(0))
             # raise Exception, ' non-following column leadoff '
 
-    if qcolsuffix == 'WH':
-        sect = 'westminhall'
-    elif qcolprefix == 'WS' or qcolsuffix == 'WS':
-        sect = 'wms'
-    elif qcolprefix == 'WA' or qcolsuffix == 'W' or qcolsuffix == 'WA':
-        sect = 'wrans'
-    elif loc1 == 'House of Lords':
-        sect = 'lords'
+    if qcolsuffix == "WH":
+        sect = "westminhall"
+    elif qcolprefix == "WS" or qcolsuffix == "WS":
+        sect = "wms"
+    elif qcolprefix == "WA" or qcolsuffix == "W" or qcolsuffix == "WA":
+        sect = "wrans"
+    elif loc1 == "House of Lords":
+        sect = "lords"
     else:
-        sect = 'debates'
+        sect = "debates"
 
-    offrepid = '%s/%s.%s' % (sect, phrtok.lastdate, qcolnum)
-    return ('phrase', ' class="offrep" id="%s"' % offrepid)
+    offrepid = "%s/%s.%s" % (sect, phrtok.lastdate, qcolnum)
+    return ("phrase", ' class="offrep" id="%s"' % offrepid)
+
 
 # Date in the middle, so need to match before the date-only parsing...
-reoffrepwdate = re.compile('''(?ix)
+reoffrepwdate = re.compile("""(?ix)
     <i>\s*official(?:</i>|<i>|\s)*report                # Official Report
     (?:(?:</i>|<i>|,|\s)*(Westminster\sHall|House\sof\sLords|House\sof\sCommons))?  # Optionally followed by a chamber (1)
     [,;]?\s*(?:</i>)?[,;]?\s*
@@ -144,47 +149,48 @@ reoffrepwdate = re.compile('''(?ix)
     (?:(W[AS]?)\s*)?                                    # Optional column number prefix (4)
     (\d+)(?:(?:&\#150;|-)\d+)?                          # Column number or numbers (5)
     ([WHS]*)                                            # Optional column number suffix (6)
-''')
+""")
 
 
 def TokenOffRepWDate(qoffrep, phrtok):
     # print qoffrep.group(0)
     loc1 = qoffrep.group(1)
     loc2 = qoffrep.group(2)
-    date = qoffrep.group(3).replace('&nbsp;', ' ')
+    date = qoffrep.group(3).replace("&nbsp;", " ")
     qcolprefix = qoffrep.group(4)
     qcolnum = qoffrep.group(5)
     qcolsuffix = qoffrep.group(6)
-    m = re.match('(\d+)/(\d+)/(\d+)', date)
+    m = re.match("(\d+)/(\d+)/(\d+)", date)
     if m:
         lordsdate = True
-        date = datetime.strptime(date, '%d/%m/%Y').date().isoformat()
+        date = datetime.strptime(date, "%d/%m/%Y").date().isoformat()
     else:
         lordsdate = False
-        date = datetime.strptime(date, '%d %B %Y').date().isoformat()
+        date = datetime.strptime(date, "%d %B %Y").date().isoformat()
     if qcolprefix:
         qcolprefix = qcolprefix.upper()
     if qcolsuffix:
         qcolsuffix = qcolsuffix.upper()
-    if loc1 == 'Westminster Hall' or qcolsuffix == 'WH':
-        sect = 'westminhall'
-    elif qcolprefix == 'WS' or qcolsuffix == 'WS':
-        sect = 'wms'
-    elif qcolprefix == 'WA' or qcolsuffix == 'W':
-        sect = 'wrans'
-    elif loc1 == 'House of Commons' or loc2 == 'Commons':
-        sect = 'debates'
-    elif loc1 == 'House of Lords' or loc2 == 'Lords' or lordsdate:
-        sect = 'lords'
+    if loc1 == "Westminster Hall" or qcolsuffix == "WH":
+        sect = "westminhall"
+    elif qcolprefix == "WS" or qcolsuffix == "WS":
+        sect = "wms"
+    elif qcolprefix == "WA" or qcolsuffix == "W":
+        sect = "wrans"
+    elif loc1 == "House of Commons" or loc2 == "Commons":
+        sect = "debates"
+    elif loc1 == "House of Lords" or loc2 == "Lords" or lordsdate:
+        sect = "lords"
     else:
-        sect = 'debates'
+        sect = "debates"
 
-    offrepid = '%s/%s.%s' % (sect, date, qcolnum)
-    return ('phrase', ' class="offrep" id="%s"' % offrepid)
+    offrepid = "%s/%s.%s" % (sect, date, qcolnum)
+    return ("phrase", ' class="offrep" id="%s"' % offrepid)
 
-#my hon. Friend the Member for Regent's Park and Kensington, North (Ms Buck)
+
+# my hon. Friend the Member for Regent's Park and Kensington, North (Ms Buck)
 # (sometimes there are spurious adjectives
-rehonfriend = re.compile('''(?ix)
+rehonfriend = re.compile("""(?ix)
     the\.?
     # Privy counsellors, barrister, armed forces, status, etc.
     (?:(?:\s|&.{4};)*(?:right\.?|rt\.|very|old|new|now|current|then|visiting|former|distinguished|hon\.?|honourable|and|learned|gallant|Labour|Liberal Democrat|Conservative|reverend|independent|excellent|poor|rude|courageous|wonderful|brutal|redoubtable|mute|present|pious|formidable|fragrant))*
@@ -193,14 +199,16 @@ rehonfriend = re.compile('''(?ix)
     ([^(]{3,60}?)            # group 1 the name of the constituency
     \s*
     \(([^)]{5,60}?)(?:&\#(?:146|8217);s)?\)        # group 2 the name of the MP, inserted for clarity.
-''')
-rehonfriendmarg = re.compile('the\s+(hon\.\s*)?member for [^(]{0,60}\((?i)')
+""")
+rehonfriendmarg = re.compile("the\s+(hon\.\s*)?member for [^(]{0,60}\((?i)")
 
 
 def TokenHonFriend(mhonfriend, phrtok):
     # will match for ids
     orgname = mhonfriend.group(2)
-    res = memberList.matchfullnamecons(orgname, mhonfriend.group(1), phrtok.sdate, alwaysmatchcons=False)
+    res = memberList.matchfullnamecons(
+        orgname, mhonfriend.group(1), phrtok.sdate, alwaysmatchcons=False
+    )
     if not res[0]:  # comes back as None
         nid = "unknown"
         mname = orgname
@@ -212,38 +220,36 @@ def TokenHonFriend(mhonfriend, phrtok):
     # remove any xml entities from the name
     orgname = res[1]
 
-    return ('phrase', ' class="honfriend" person_id="%s" name="%s"' % (nid, orgname))
+    return ("phrase", ' class="honfriend" person_id="%s" name="%s"' % (nid, orgname))
 
 
 # the array of tokens which we will detect on the way through
 tokenchain = [
-    ('hreflink',       rehreflink,      None,              TokenHrefLink),
-    ('offrepwdate',    reoffrepwdate,   None,              TokenOffRepWDate),
-    ("date",           redatephraseval, None,              TokenDate),
-    ("offrep",         reoffrepw,       None,              TokenOffRep),
-    ("standing order", restandingo,     restandingomarg,   TokenStandingOrder),
-    ("httplink",       rehtlink,        None,              TokenHttpLink),
-    ("honfriend",      rehonfriend,     rehonfriendmarg,   TokenHonFriend),
+    ("hreflink", rehreflink, None, TokenHrefLink),
+    ("offrepwdate", reoffrepwdate, None, TokenOffRepWDate),
+    ("date", redatephraseval, None, TokenDate),
+    ("offrep", reoffrepw, None, TokenOffRep),
+    ("standing order", restandingo, restandingomarg, TokenStandingOrder),
+    ("httplink", rehtlink, None, TokenHttpLink),
+    ("honfriend", rehonfriend, rehonfriendmarg, TokenHonFriend),
 ]
 
 
 # this handles the chain of tokenization of a paragraph
 class PhraseTokenize:
-
     # recurses over itc < len(tokenchain)
     def TokenizePhraseRecurse(self, qs, stex, itc):
-
         # end of the chain
         if itc == len(tokenchain):
-            self.toklist.append(('', '', stex))
+            self.toklist.append(("", "", stex))
             return
 
         # keep eating through the pieces for the same token
         while stex:
             # attempt to split the token
             mtoken = tokenchain[itc][1].search(stex)
-            if mtoken:   # the and/or method fails with this
-                headtex = stex[:mtoken.span(0)[0]]
+            if mtoken:  # the and/or method fails with this
+                headtex = stex[: mtoken.span(0)[0]]
             else:
                 headtex = stex
 
@@ -268,29 +274,34 @@ class PhraseTokenize:
             # print "Token detected:", mtoken.group(0)
 
             # the tail part
-            stex = stex[mtoken.span(0)[1]:]
+            stex = stex[mtoken.span(0)[1] :]
 
     def __init__(self, date, stex):
-        self.lastdate = ''
+        self.lastdate = ""
         self.toklist = []
         self.sdate = date
 
-        stex = re.sub('&(?!amp;)', '&amp;', stex)
+        stex = re.sub("&(?!amp;)", "&amp;", stex)
         # separate out any qnums at end of paragraph
         self.rmqnum = reqnum.search(stex)
         if self.rmqnum:
-            stex = stex[:self.rmqnum.span(0)[0]]
+            stex = stex[: self.rmqnum.span(0)[0]]
 
         # separate out qnums stuffed into front of paragraph (by the grabber of the speakername)
         frqnum = refqnum.match(stex)
         if frqnum:
             if self.rmqnum:
-                raise ContextException('Found question number [%s] in para, but already found [%s] at end (this probably just means it is being quoted, and you just need to change [] to ().' % (frqnum.group(1), self.rmqnum.group(1)))
+                raise ContextException(
+                    "Found question number [%s] in para, but already found [%s] at end (this probably just means it is being quoted, and you just need to change [] to ()."
+                    % (frqnum.group(1), self.rmqnum.group(1))
+                )
             self.rmqnum = frqnum
-            stex = stex[frqnum.span(0)[1]:]
-            stex_nohtml = re.sub('<[^>]*>', '', stex)
+            stex = stex[frqnum.span(0)[1] :]
+            stex_nohtml = re.sub("<[^>]*>", "", stex)
             if len(stex_nohtml) < 10:
-                raise ContextException('Removing question number from para appears to have removed all text (this probably just means a footnote marker is using [], just change to ()).')
+                raise ContextException(
+                    "Removing question number from para appears to have removed all text (this probably just means a footnote marker is using [], just change to ())."
+                )
 
         self.TokenizePhraseRecurse(date, stex, 0)
 
@@ -299,10 +310,10 @@ class PhraseTokenize:
 
         for tok in self.toklist:
             if tok[0]:
-                res.append('<%s%s>' % (tok[0], tok[1]))
+                res.append("<%s%s>" % (tok[0], tok[1]))
                 res.append(tok[2])
-                res.append('</%s>' % tok[0])
+                res.append("</%s>" % tok[0])
             else:
                 res.append(tok[2])
 
-        return ''.join(res)
+        return "".join(res)
