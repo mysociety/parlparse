@@ -276,7 +276,7 @@ def parseQuestionPage(content):
     }
 
     # Try parse the actual answers out
-    answers_object = parseAnswersFromQuestionPage(main_content)
+    answers_object = parseAnswersFromQuestionPage(main_content, canonical_url)
 
     # Got answers?
 
@@ -292,7 +292,7 @@ def parseQuestionPage(content):
     return question_object
 
 
-def parseAnswersFromQuestionPage(page_content):
+def parseAnswersFromQuestionPage(page_content, canonical_url):
     """Given page content, see if we can get answers."""
 
     # Look to see if there are any answers given

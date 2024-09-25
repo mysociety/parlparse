@@ -27,7 +27,7 @@ class ParseDayParserBase(object):
         match = re.search("(\d\d?)(?:[.:]\s*(\d\d?))? ?(am|pm|noon|midnight)", ptext)
         if not match:
             if not optional:
-                raise ContextException("Time not found in TimePeriod %s" % p)
+                raise ContextException("Time not found in TimePeriod %s" % ptext)
             return None
         hour = int(match.group(1))
         if hour < 12 and match.group(3) == "pm":
