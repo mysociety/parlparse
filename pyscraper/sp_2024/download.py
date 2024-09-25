@@ -9,9 +9,10 @@ One file per committee per day.
 
 from __future__ import annotations
 
+import re
+from datetime import datetime
 from itertools import groupby
 from pathlib import Path
-import re
 from typing import Iterator, NamedTuple
 from urllib.parse import parse_qs, urlparse
 
@@ -27,6 +28,8 @@ scot_prefix = "https://www.parliament.scot"
 search_url = "/chamber-and-committees/official-report/search-what-was-said-in-parliament?msp=&committeeSelect=&qry=&dateSelect=custom&dtDateFrom={start_date}&dtDateTo={end_date}&showPlenary=true&ShowDebates=true&ShowFMQs=true&ShowGeneralQuestions=true&ShowPortfolioQuestions=true&ShowSPCBQuestions=true&ShowTopicalQuestions=true&ShowUrgentQuestions=true&showCommittee=true&page={page}"
 item_url = "/chamber-and-committees/official-report/search-what-was-said-in-parliament/{slug}?meeting={id}&iob={iob}"
 major_heading_url = "/chamber-and-committees/official-report/search-what-was-said-in-parliament/{slug}?meeting={id}"
+
+wrans_search_url = "/chamber-and-committees/questions-and-answers?dtDateFrom={start_date}&dtDateTo={end_date}&chkAnswered=true&chkAnswered=false&chkUnAnswered=true&chkUnAnswered=false&chkHolding=true&chkHolding=false&chkChamber=false&chkFmq=false&chkGeneral=false&chkPortfolio=false&chkSpcb=true&chkSpcb=false&chkTopical=false&chkWritten=true&chkWritten=false&chkGiq=true&chkGiq=false&page={page}"
 
 
 def get_meeting_urls(start_date: str, end_date: str, page: int = 1):
@@ -236,4 +239,139 @@ def fetch_debates_for_dates(
     for grouping in get_debate_groupings(start_date, end_date):
         if verbose:
             print(f"Fetching debates for {grouping.committee_date_slug}")
+        yield grouping.save_xml(cache_dir=cache_dir, override=override)
+
+
+def get_wrans_urls(start_date: str, end_date: str, page: int = 1):
+    date_url = scot_prefix + wrans_search_url.format(
+        start_date=start_date, end_date=end_date, page=page
+    )
+    response = requests.get(date_url, headers={"User-Agent": user_agent})
+    soup = BeautifulSoup(response.text, "html.parser")
+    meeting_urls = [
+        a["href"]
+        for a in soup.select("h2 > a[href]")
+        if "/questions-and-answers/question" in a["href"]
+    ]
+
+    question_count = len(meeting_urls)
+
+    return question_count, meeting_urls
+
+
+def get_wrans_groupings(start_date: str, end_date: str):
+    keep_fetching = True
+    search_page = 1
+    question_urls = []
+
+    while keep_fetching:
+        question_count, page_result_urls = get_wrans_urls(
+            start_date, end_date, search_page
+        )
+        question_urls.extend(page_result_urls)
+        if question_count < 10:
+            keep_fetching = False
+        else:
+            search_page += 1
+
+    all_questions = []
+    groupings = []
+
+    for url in question_urls:
+        url = scot_prefix + url
+        response = requests.get(url, headers={"User-Agent": user_agent})
+        raw_html = response.text
+
+        parsed = parse_qs(urlparse(url).query)
+        question_ref = parsed["ref"][0]
+
+        soup = BeautifulSoup(raw_html, "html.parser")
+
+        questions = soup.select("main > div.basic-content")
+        if len(questions) != 1:
+            continue
+        question = questions[0]
+        for svg in question.find_all("svg"):
+            svg.decompose()
+
+        info_box = question.find("ul")
+        date = None
+        if info_box is not None:
+            for li in info_box.find_all("li"):
+                text = li.text
+                match = re.search(r"Answered by.*on (\d+ \w+ \d+)", text)
+                if match:
+                    date = match.group(1)
+
+        # only want answered questions
+        if date is not None:
+            date = datetime.strptime(date, "%d %B %Y").date().isoformat()
+            all_questions.append(
+                {
+                    "date": date,
+                    "ref": question_ref,
+                    "content": str(question),
+                    "url": url,
+                }
+            )
+
+    def get_question_date(question: dict):
+        return question["date"]
+
+    for d, items in groupby(all_questions, key=get_question_date):
+        groupings.append(WransGrouping(date=d, items=list(items)))
+
+    return groupings
+
+
+class WransGrouping(NamedTuple):
+    date: str
+    items: list[dict]
+    committee_date_slug = "wrans"
+
+    def construct_xml(self):
+        root = etree.Element(
+            "wrans",
+            date=self.date,
+            id=self.date,
+        )
+
+        for item in self.items:
+            el = etree.Element("spwrans", id=item["ref"], url=item["url"])
+            raw_html = etree.Element("raw_html")
+            raw_html.append(etree.fromstring(item["content"]))
+            el.append(raw_html)
+            root.append(el)
+
+        etree.indent(root, space="    ")
+
+        return root
+
+    def save_xml(self, cache_dir: Path, override: bool = False) -> Path:
+        """
+        Generated interim xml file and save it to the cache directory
+        """
+        filename = cache_dir / f"{self.date}-{self.committee_date_slug}.xml"
+        if filename.exists() is False or override:
+            xml = self.construct_xml()
+            with filename.open("wb") as f:
+                f.write(etree.tostring(xml))
+        return filename
+
+
+def fetch_wrans_for_dates(
+    start_date: str,
+    end_date: str,
+    cache_dir: Path,
+    verbose: bool = False,
+    override: bool = False,
+):
+    """
+    Fetch Written Answers for a given date range
+    """
+    # get_wrans_groupings(start_date, end_date)
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    for grouping in get_wrans_groupings(start_date, end_date):
+        if verbose:
+            print(f"Fetching wrans for {grouping.committee_date_slug}")
         yield grouping.save_xml(cache_dir=cache_dir, override=override)
