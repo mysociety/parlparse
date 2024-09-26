@@ -2,9 +2,15 @@
 
 poetry run ruff format .
 
+# We run the fix check so it can auto fix issues we're ignoring below
+# but we don't want to fail the check if it can't fix them
+# because there are known issues
+# we fail on a smaller subset below
+poetry run ruff check . -s --fix || true
+
 # This ignores a number of linting checks that are *problems* and so
 # we want to be able to see in editor (and can't put in pyproject.toml)
 # but we don't want to have to fix everything (given it's working fineish)
 # to see new issues
 # this is the 'using is' for equality, top module imports broken by chdir, don't use lambdas, etc 
-poetry run ruff check . --fix --config 'lint.ignore = ["E501", "E402", "E731", "E722", "F841", "E711", "E712"]'
+poetry run ruff check . --config 'lint.ignore = ["E501", "E402", "E731", "E722", "F841", "E711", "E712"]'
