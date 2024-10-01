@@ -1,0 +1,28 @@
+name: Lint
+
+on: [push]
+
+jobs:
+  test:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+
+    - name: setup ruff
+      run: pip install ruff
+
+    - name: check ruff linter
+      run: |
+        ruff check . --fix-only --output-format=github
+        ruff check . --output-format=github --config 'lint.ignore = ["E501", "E402", "E731", "E722", "F841", "E711", "E712"]'
+
+    - name: check ruff formatter
+      run: ruff format --check .
