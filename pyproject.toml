@@ -9,8 +9,10 @@ lxml = "5.2.1"
 python-dateutil = "2.2"
 requests = { version = "2.32.3", extras = ["security"] }
 requests-cache = "0.4.13"
-Click = "7.0"
+Click = "^8.0"
 click-log = "0.3.2"
+mysoc-validator = "^0.6.5"
+tqdm = "^4.67.1"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.6.7"
