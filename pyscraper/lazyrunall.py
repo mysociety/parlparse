@@ -13,15 +13,14 @@ from optparse import OptionParser
 
 import ni.scrape
 from miscfuncs import SetQuiet
-from regmem.filter import RunRegmemFilters
-from regmem.pullgluepages import RegmemPullGluePages
 from runfilters import RunFiltersDir, RunNIFilters
 
 # Parse the command line parameters
 
 parser = OptionParser()
 
-parser.set_usage("""
+parser.set_usage(
+    """
 Fetches/parses NI Assembly plenary data, and the UK Parliament register of
 members' interests. Converts them into handy XML files, tidying up HTML errors,
 generating unique identifiers for speeches, reordering sections, name matching
@@ -32,12 +31,12 @@ scrape          download new raw pages
 parse           process scraped data into XML files
 
 And choose at least one of these sections to apply them to:
-regmem          Register of Members' Interests
 ni              Northern Ireland Assembly
 
 Example command line
         ./lazyrunall.py --date=2004-03-03 --force-scrape scrape parse debates
-It forces redownload of the debates for 3rd March, and reprocesses them.""")
+It forces redownload of the debates for 3rd March, and reprocesses them."""
+)
 
 
 # See what options there are
@@ -106,19 +105,12 @@ if options.quietc:
 # can't you do this with a dict mapping strings to bools?
 options.scrape = False
 options.parse = False
-options.regmem = False
 options.ni = False
 for arg in args:
     if arg == "scrape":
         options.scrape = True
     elif arg == "parse":
         options.parse = True
-    elif arg == "regmem":
-        options.regmem = True
-        options.remote = True
-    elif arg == "regmem-local":
-        options.regmem = True
-        options.remote = False
     elif arg == "ni":
         options.ni = True
     else:
@@ -132,8 +124,8 @@ if not options.scrape and not options.parse:
     print("error: choose what to do; scrape, parse, or both", file=sys.stderr)
     parser.print_help()
     sys.exit(1)
-if not options.regmem and not options.ni:
-    print("error: choose what work on; regmem, several of them", file=sys.stderr)
+if not options.ni:
+    print("error: choose what work on", file=sys.stderr)
     parser.print_help()
     sys.exit(1)
 
@@ -142,12 +134,8 @@ if not options.regmem and not options.ni:
 if options.scrape:
     if options.ni:
         ni.scrape.scrape_ni(options.datefrom, options.dateto, options.forcescrape)
-    if options.regmem:
-        RegmemPullGluePages(options)
 
 # Parse it into XML
 if options.parse:
     if options.ni:
         RunFiltersDir(RunNIFilters, "ni", options, options.forceparse)
-    if options.regmem:
-        RunFiltersDir(RunRegmemFilters, "regmem", options, options.forceparse)
