@@ -13,6 +13,7 @@ Click = "^8.0"
 click-log = "0.3.2"
 mysoc-validator = "^0.6.5"
 tqdm = "^4.67.1"
+jinja2 = "^3.1.4"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.6.7"
@@ -21,41 +22,41 @@ ruff = "^0.6.7"
 
 extend-include = ["scripts/*"]
 extend-exclude = [
- 'scripts/.gitignore',
- 'scripts/2016_data_update/README.txt',
- 'scripts/config.pm.incvs',
- 'scripts/consts',
- 'scripts/crontab',
- 'scripts/dailyupdate',
- 'scripts/datadotparl/mp-party-check',
- 'scripts/datadotparl/one-off-add-pims-ids',
- 'scripts/datadotparl/one-off-sync-lord-parties',
- 'scripts/dircmp',
- 'scripts/divisionextractor.pl',
- 'scripts/morningupdate',
- 'scripts/ni-format-revert',
- 'scripts/ni_membership.php',
- 'scripts/one-off-move-names-to-persons',
- 'scripts/other-sites-update',
- 'scripts/updatedaterange-parse',
- 'scripts/updatedaterange-scrape',
- 'scripts/weeklyupdate',
- 'scripts/ynmp/tests.txt'
+  'scripts/.gitignore',
+  'scripts/2016_data_update/README.txt',
+  'scripts/config.pm.incvs',
+  'scripts/consts',
+  'scripts/crontab',
+  'scripts/dailyupdate',
+  'scripts/datadotparl/mp-party-check',
+  'scripts/datadotparl/one-off-add-pims-ids',
+  'scripts/datadotparl/one-off-sync-lord-parties',
+  'scripts/dircmp',
+  'scripts/divisionextractor.pl',
+  'scripts/morningupdate',
+  'scripts/ni-format-revert',
+  'scripts/ni_membership.php',
+  'scripts/one-off-move-names-to-persons',
+  'scripts/other-sites-update',
+  'scripts/updatedaterange-parse',
+  'scripts/updatedaterange-scrape',
+  'scripts/weeklyupdate',
+  'scripts/ynmp/tests.txt'
 ]
 
 
 
 [tool.ruff.lint]
 select = [
-    "E",
-    # flake8
-    "F",
-    # isort
-    "I",
+  "E",
+  # flake8
+  "F",
+  # isort
+  "I",
 ]
 ignore = [
-    # line too long, sorted with formatter where it can be
-    "E501", 
+  # line too long, sorted with formatter where it can be
+  "E501",
 ]
 
 
