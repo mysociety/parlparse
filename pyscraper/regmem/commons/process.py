@@ -83,7 +83,19 @@ def recursive_fetch(
         if skip >= target_items:
             continue_fetching = False
 
+    if len(all_items) != target_items:
+        raise ValueError(f"Expected {target_items} items, got {len(all_items)}")
+
     return all_items
+
+
+def get_single_item(
+    interest_id: int,
+) -> PublishedInterest:
+    url = REGISTER_BASE + f"api/v1/Interests/{interest_id}"
+    item = requests.get(url).json()
+    interest = PublishedInterest.model_validate(item)
+    return interest
 
 
 def get_list_of_registers(quiet: bool = False):
@@ -130,15 +142,20 @@ def move_subitems_under_parent(
     for interest in interests:
         if interest.parent_interest_id is not None:
             if interest.parent_interest_id not in parent_items:
-                parent_interest = wider_lookup[interest.parent_interest_id]
+                try:
+                    parent_interest = wider_lookup[interest.parent_interest_id]
+                except KeyError:
+                    # for some reason this isn't in the register download *at all*
+                    parent_interest = get_single_item(interest.parent_interest_id)
                 parent_items[parent_interest.id] = parent_interest
                 all_item_ids.append(parent_interest.id)
             parent = parent_items[interest.parent_interest_id]
             parent.child_items.append(interest)
             all_item_ids.append(interest.id)
 
-    if len(all_item_ids) < len(interests):
-        raise ValueError("Not all items are accounted when moving to subitems.")
+    for interest in interests:
+        if interest.id not in all_item_ids:
+            raise ValueError(f"Interest {interest.id} not moved across")
 
     return list(parent_items.values())
 
