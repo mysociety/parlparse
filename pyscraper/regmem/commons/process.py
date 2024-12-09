@@ -304,7 +304,7 @@ class RegisterManager:
         persons = [self.api_member_to_mysoc_person_entry(x) for x in members]
         persons.sort(key=lambda x: x.person_id)
 
-        return Register(tag="twfy", person_entires=persons)
+        return Register(tag="twfy", person_entries=persons)
 
     def write_mysoc_regmem(self, force_refresh: bool = False, quiet: bool = False):
         """
