@@ -1,0 +1,34 @@
+name: Validate
+
+on: [push]
+
+jobs:
+  test:
+    name: Validate
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+
+    - name: setup ruff
+      run: pip install mysoc-validator==0.9.3
+
+    - name: Check and format
+      run: |
+        python -m mysoc_validator popolo validate members/people.json --format
+        
+    - name: Check format hasn't changed anything
+      run: |
+        if [[ -n $(git status --porcelain) ]]; then
+          echo "Uncommitted changes detected:"
+          git status --porcelain
+          exit 1
+        else
+          echo "No file changes detected."
+        fi
