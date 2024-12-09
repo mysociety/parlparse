@@ -28,7 +28,7 @@ def download_all_registers(
 @click.option("--date", type=datetime.date)
 @click.option("--force-refresh", is_flag=True)
 @click.option("--quiet", is_flag=True)
-def download_register_for_date(
+def download_register_from_date(
     chamber: str, date: datetime.date, force_refresh: bool = False, quiet: bool = False
 ):
     if chamber == "commons":
