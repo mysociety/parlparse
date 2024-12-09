@@ -96,12 +96,37 @@ def get_list_of_registers(quiet: bool = False):
 def move_subitems_under_parent(
     interests: list[PublishedInterest], wider_list: list[PublishedInterest]
 ) -> list[PublishedInterest]:
+    """
+    Return top-level interests with child interests stored as subinterests.
+
+    The problem we're solving here is while we just get a list from the API
+    There is actually some items with hierarchy and 'parent' interests.
+    This is for "I have been paid by the Guardian (parent interest with org details)]
+    for article a, b, c (child interests with dates)."
+
+    We don't want to display 'Guardian', other unrelated items, then "I wrote an article" - we want to
+    bring these together.
+
+    The end result here is to return top level interests, with any subinterests linked under them.
+
+    Because the same payer may apply to 1.1 or 1.2 - these sometimes sit in '1'.
+    This means that when you get the list of items under a category (as this function expects),
+    you might not have access to the parent item.
+
+    The wider lookup is solving this - we're passing in the full list of items if we need to find a parent.
+
+    This means we might duplicate the same parent_interest across 1.1 and 1.2, but that's fine.
+
+    """
     all_item_ids = []
 
+    # add all top level items to parent_items
     parent_items = {x.id: x for x in interests if x.parent_interest_id is None}
+
     wider_lookup = {x.id: x for x in wider_list}
     all_item_ids.extend(parent_items.keys())
 
+    # gather child items into parent items
     for interest in interests:
         if interest.parent_interest_id is not None:
             if interest.parent_interest_id not in parent_items:
@@ -171,7 +196,8 @@ def convert_list_to_regmem_hierarchy(
 
     if duplicate_ids:
         # we want to delete items that have no children - as these are better expressed in other places
-        # otherwise we're fine with duplicates
+        # otherwise we're fine with duplicates top-level items because
+        # it adds the correct context to items in multiple categories.
 
         for m in members:
             for c in m.categories:
