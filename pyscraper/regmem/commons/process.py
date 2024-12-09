@@ -159,15 +159,15 @@ def convert_list_to_regmem_hierarchy(
 
     # given we pull in parent interests when not in the category, we need to check we haven't duplicated
 
-    existing_ids = []
-    duplicate_ids = []
+    existing_ids = set()
+    duplicate_ids = set()
 
     for m in members:
         for c in m.categories:
             for i in c.interests:
                 if i.id in existing_ids:
-                    duplicate_ids.append(i.id)
-                existing_ids.append(i.id)
+                    duplicate_ids.add(i.id)
+                existing_ids.add(i.id)
 
     if duplicate_ids:
         # we want to delete items that have no children - as these are better expressed in other places
