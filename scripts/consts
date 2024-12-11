@@ -17,8 +17,6 @@ LORDS_WEEKLY_FROMDATE=1999-11-12
 
 PWDATA=$HOME/parldata
 
-PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/usr/X11R6/bin
-
 # needed for correct group permissions
 umask 002
 
