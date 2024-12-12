@@ -41,23 +41,37 @@ field_template = Template(
 
 interest_template = Template(
     """
-        <p class="interest-summary">{{ interest.summary|e  }}</p>
+        <div class="interest-item" id="{{ interest.id }}">
+            {% if is_child %}
+                <h6 class="interest-summary">{{ interest.summary|e  }}</h6>
+            {% else %}
+                <h4 class="interest-summary">{{ interest.summary|e  }}</h4>
+            {% endif %}
+            <ul class="interest-details-list">
+            {% for field in interest.present_fields() %}
+                {{field.to_html()}}
+            {% endfor %}
+                {% if interest.registration_date %}
+                <li class="registration-date">Registration Date: {{ interest.registration_date.strftime('%d %B %Y') }}</li>
+                {% endif %}
+                {% if interest.published_date %}
+                <li class="published-date">Published Date: {{ interest.published_date.strftime('%d %B %Y') }}</li>
+                {% endif %}
+                {% if interest.last_updated_date %}
+                <li class="last-updated-date">Last Updated Date: {{ interest.last_updated_date.strftime('%d %B %Y') }}</li>
+                {% endif %}
 
-        <ul class="interest-details-list">
-        {% for field in interest.present_fields() %}
-            {{field.to_html()}}
-        {% endfor %}
-            {% if interest.registration_date %}
-            <li class="registration-date">Registration Date: {{ interest.registration_date.strftime('%d %B %Y') }}</li>
-            {% endif %}
-            {% if interest.published_date %}
-            <li class="published-date">Published Date: {{ interest.published_date.strftime('%d %B %Y') }}</li>
-            {% endif %}
-            {% if interest.last_updated_date %}
-            <li class="last-updated-date">Last Updated Date: {{ interest.last_updated_date.strftime('%d %B %Y') }}</li>
+            </ul>
+            {% if interest.child_items %}
+            <h5 class="child-item-header">Specific work or payments</h5>
+            <div class="interest-child-items" id="parent-{{ interest.id }}">
+                {% for child in interest.child_items %}
+                    {{ child.to_html(is_child=True) }}
+                {% endfor %}
+            </div>
             {% endif %}
 
-        </ul>
+        </div>
 
         """
 )
@@ -201,8 +215,8 @@ class PublishedInterest(BaseModel):
             return self.updated_date[-1]
         return None
 
-    def to_html(self) -> str:
-        result = interest_template.render(interest=self)
+    def to_html(self, is_child: bool = False) -> str:
+        result = interest_template.render(interest=self, is_child=is_child)
 
         # remove blank lines
         result = "\n".join([x for x in result.split("\n") if x.strip()])
