@@ -14,11 +14,17 @@ def cli():
 @click.option("--chamber", type=str, default="commons")
 @click.option("--force-refresh", is_flag=True)
 @click.option("--quiet", is_flag=True)
+@click.option("--no-progress", is_flag=True)
 def download_all_registers(
-    chamber: str, force_refresh: bool = False, quiet: bool = False
+    chamber: str,
+    force_refresh: bool = False,
+    quiet: bool = False,
+    no_progress: bool = False,
 ):
     if chamber == "commons":
-        commons_process.download_all_registers(force_refresh=force_refresh, quiet=quiet)
+        commons_process.download_all_registers(
+            force_refresh=force_refresh, quiet=quiet, no_progress=no_progress
+        )
     else:
         raise ValueError(f"Unknown chamber: {chamber}")
 
@@ -28,12 +34,17 @@ def download_all_registers(
 @click.option("--date", type=datetime.date)
 @click.option("--force-refresh", is_flag=True)
 @click.option("--quiet", is_flag=True)
+@click.option("--no-progress", is_flag=True)
 def download_register_from_date(
-    chamber: str, date: datetime.date, force_refresh: bool = False, quiet: bool = False
+    chamber: str,
+    date: datetime.date,
+    force_refresh: bool = False,
+    quiet: bool = False,
+    no_progress: bool = False,
 ):
     if chamber == "commons":
         commons_process.download_register_from_date(
-            date, force_refresh=force_refresh, quiet=quiet
+            date, force_refresh=force_refresh, quiet=quiet, no_progress=no_progress
         )
     else:
         raise ValueError(f"Unknown chamber: {chamber}")
@@ -43,12 +54,16 @@ def download_register_from_date(
 @click.option("--chamber", type=str, default="commons")
 @click.option("--force-refresh", is_flag=True)
 @click.option("--quiet", is_flag=True)
+@click.option("--no-progress", is_flag=True)
 def download_latest_register(
-    chamber: str, force_refresh: bool = False, quiet: bool = False
+    chamber: str,
+    force_refresh: bool = False,
+    quiet: bool = False,
+    no_progress: bool = False,
 ):
     if chamber == "commons":
         commons_process.download_latest_register(
-            force_refresh=force_refresh, quiet=quiet
+            force_refresh=force_refresh, quiet=quiet, no_progress=no_progress
         )
     else:
         raise ValueError(f"Unknown chamber: {chamber}")

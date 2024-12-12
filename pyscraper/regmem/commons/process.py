@@ -50,7 +50,10 @@ def get_popolo() -> Popolo:
 
 
 def recursive_fetch(
-    url: str, params: Optional[dict[str, Any]] = None, quiet: bool = False
+    url: str,
+    params: Optional[dict[str, Any]] = None,
+    quiet: bool = False,
+    no_progress: bool = False,
 ):
     """
     Meta API handler
@@ -66,7 +69,7 @@ def recursive_fetch(
             "Take must be less than or equal to 20 - API limit annoyingly."
         )
 
-    bar = tqdm(desc="Fetching ", unit="items", disable=quiet)
+    bar = tqdm(desc="Fetching ", unit="items", disable=quiet or no_progress)
 
     while continue_fetching:
         send_params = {"Take": take, "Skip": skip}
@@ -98,9 +101,11 @@ def get_single_item(
     return interest
 
 
-def get_list_of_registers(quiet: bool = False):
+def get_list_of_registers(
+    quiet: bool = False, no_progress: bool = False
+) -> list[PublishedRegister]:
     url = REGISTER_BASE + "api/v1/Registers"
-    items = recursive_fetch(url, quiet=quiet)
+    items = recursive_fetch(url, quiet=quiet, no_progress=no_progress)
     registers = TypeAdapter(list[PublishedRegister]).validate_python(items)
     return registers
 
@@ -236,11 +241,15 @@ class RegisterManager:
     register_date: datetime.date
     parldata_dir: Path
     quiet: bool = False
+    no_progress: bool = False
 
     def get_register_from_api(self):
         url = REGISTER_BASE + "api/v1/Interests/"
         items = recursive_fetch(
-            url, params={"RegisterId": self.register_id}, quiet=self.quiet
+            url,
+            params={"RegisterId": self.register_id},
+            quiet=self.quiet,
+            no_progress=self.no_progress,
         )
         interests = TypeAdapter(list[PublishedInterest]).validate_python(items)
         return interests
@@ -376,6 +385,7 @@ def download_register_from_id_and_date(
     date: datetime.date,
     force_refresh: bool = False,
     quiet: bool = False,
+    no_progress: bool = False,
 ):
     if not quiet:
         rich.print(f"Downloading commons register {register_id} from {date}")
@@ -384,34 +394,47 @@ def download_register_from_id_and_date(
         register_date=date,
         parldata_dir=parldata_path,
         quiet=quiet,
+        no_progress=no_progress,
     )
     manager.write_mysoc_regmem(force_refresh=force_refresh, quiet=quiet)
 
 
 def download_register_from_date(
-    date: datetime.date, force_refresh: bool = False, quiet: bool = False
+    date: datetime.date,
+    force_refresh: bool = False,
+    quiet: bool = False,
+    no_progress: bool = False,
 ):
-    for register in get_list_of_registers():
+    for register in get_list_of_registers(quiet=quiet, no_progress=no_progress):
         if register.published_date == date:
             return download_register_from_id_and_date(
                 register.id,
                 register.published_date,
                 force_refresh=force_refresh,
                 quiet=quiet,
+                no_progress=no_progress,
             )
 
     raise ValueError(f"No register found for {date}")
 
 
-def download_latest_register(force_refresh: bool = False, quiet: bool = False):
+def download_latest_register(
+    force_refresh: bool = False, quiet: bool = False, no_progress: bool = False
+):
     registers = get_list_of_registers(quiet)
     latest = max(registers, key=lambda x: x.published_date)
     return download_register_from_id_and_date(
-        latest.id, latest.published_date, force_refresh=force_refresh, quiet=quiet
+        latest.id,
+        latest.published_date,
+        force_refresh=force_refresh,
+        quiet=quiet,
+        no_progress=no_progress,
     )
 
 
-def download_all_registers(force_refresh: bool = False, quiet: bool = False):
+def download_all_registers(
+    force_refresh: bool = False, quiet: bool = False, no_progress: bool = False
+):
     registers = get_list_of_registers(quiet)
     for register in registers:
         download_register_from_id_and_date(
@@ -419,6 +442,7 @@ def download_all_registers(force_refresh: bool = False, quiet: bool = False):
             register.published_date,
             force_refresh=force_refresh,
             quiet=quiet,
+            no_progress=no_progress,
         )
 
 
