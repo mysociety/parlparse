@@ -54,7 +54,11 @@ for year in (1997, 2001, 2005, 2010, 2015):
                 name, cons, date_parl[year]
             )
         except Exception as e:
-            print(e, file=sys.stderr)
+            if year == 2005 and name not in (
+                "Livingston",
+                "Scunthorpe",
+            ):  # Two false positives
+                print(e, file=sys.stderr)
         if not id:
             continue
         wikimembers[id] = url
