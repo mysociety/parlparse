@@ -371,8 +371,7 @@ class RegisterManager:
         filename = f"regmem{self.register_date.isoformat()}.xml"
         dest = dest_folder / filename
         if not dest.exists() or force_refresh:
-            if not quiet:
-                rich.print(f"Downloading to {dest}")
+            rich.print(f"Downloading to {dest}")
             mysoc_register = self.get_mysoc_register()
             mysoc_register.to_xml_path(dest_folder / filename)
         else:
@@ -421,7 +420,7 @@ def download_register_from_date(
 def download_latest_register(
     force_refresh: bool = False, quiet: bool = False, no_progress: bool = False
 ):
-    registers = get_list_of_registers(quiet)
+    registers = get_list_of_registers(quiet=quiet, no_progress=no_progress)
     latest = max(registers, key=lambda x: x.published_date)
     return download_register_from_id_and_date(
         latest.id,
@@ -435,7 +434,7 @@ def download_latest_register(
 def download_all_registers(
     force_refresh: bool = False, quiet: bool = False, no_progress: bool = False
 ):
-    registers = get_list_of_registers(quiet)
+    registers = get_list_of_registers(quiet=quiet, no_progress=no_progress)
     for register in registers:
         download_register_from_id_and_date(
             register.id,
