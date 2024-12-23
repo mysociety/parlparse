@@ -72,7 +72,7 @@ def get_debate_groupings(start_date: str, end_date: str) -> list[DebateGrouping]
             start_date, end_date, search_page
         )
         meeting_urls.extend(page_result_urls)
-        if heading_count < 10:
+        if len(page_result_urls) < 10:
             keep_fetching = False
         else:
             search_page += 1
