@@ -189,9 +189,11 @@ def process_raw_html(raw_html: Tag, agenda_item_url: str) -> BeautifulSoup:
                 speaker.append(vote_div)
                 vote_tag.decompose()
 
-        # now we want to wrap any sequential msplists tags in a division tag
+        # now we want to wrap any group of msplists tags in a division tag
+        # in the scottish parliament all the votes *can* be on one side
+        # and there will be just one msp list
         vote_tags = speaker.find_all("msplist")
-        if len(vote_tags) > 1:
+        if len(vote_tags) > 0:
             division_tag = soup.new_tag("division")
             vote_tags[0].insert_before(division_tag)
             for vote_tag in vote_tags:
