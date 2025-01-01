@@ -17,6 +17,7 @@ from mysoc_validator.models.interests import (
 )
 from mysoc_validator.models.popolo import IdentifierScheme
 from mysoc_validator.models.xml_base import MixedContentHolder
+from mysoc_validator.models.xml_interests import Register
 from pydantic import TypeAdapter
 from tqdm import tqdm
 
