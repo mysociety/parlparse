@@ -3,6 +3,9 @@ import datetime
 import click
 
 from .commons import process as commons_process
+from .ni import process as ni_process
+from .scotland import process as scotland_process
+from .wales import process as wales_process
 
 
 @click.group()
@@ -21,8 +24,20 @@ def download_all_registers(
     quiet: bool = False,
     no_progress: bool = False,
 ):
-    if chamber == "commons":
+    """
+    Create all registers for a chamber - including fetching or trying to
+    derive historical data where possible.
+    """
+    if chamber in "commons":
         commons_process.download_all_registers(
+            force_refresh=force_refresh, quiet=quiet, no_progress=no_progress
+        )
+    elif chamber == "scotland":
+        scotland_process.get_updated_dates(
+            force_refresh=force_refresh, quiet=quiet, no_progress=no_progress
+        )
+    elif chamber == "ni":
+        ni_process.get_latest_dates(
             force_refresh=force_refresh, quiet=quiet, no_progress=no_progress
         )
     else:
@@ -42,6 +57,9 @@ def download_register_from_date(
     quiet: bool = False,
     no_progress: bool = False,
 ):
+    """
+    Commons only process to fetch a specific date
+    """
     if chamber == "commons":
         commons_process.download_register_from_date(
             date, force_refresh=force_refresh, quiet=quiet, no_progress=no_progress
@@ -61,12 +79,42 @@ def download_latest_register(
     quiet: bool = False,
     no_progress: bool = False,
 ):
+    """
+    For each chamber, go through the logic to get any new registers.
+    """
     if chamber == "commons":
         commons_process.download_latest_register(
             force_refresh=force_refresh, quiet=quiet, no_progress=no_progress
         )
+    elif chamber == "scotland":
+        scotland_process.get_updated_dates(
+            latest_only=True,
+            force_refresh=force_refresh,
+            quiet=quiet,
+            no_progress=no_progress,
+        )
+    elif chamber == "ni":
+        ni_process.get_latest_dates(
+            latest_only=True,
+            force_refresh=force_refresh,
+            quiet=quiet,
+            no_progress=no_progress,
+        )
+    elif chamber == "senedd":
+        wales_process.get_current_bilingual(
+            force_refresh=force_refresh, quiet=quiet, no_progress=no_progress
+        )
     else:
         raise ValueError(f"Unknown chamber: {chamber}")
+
+
+@cli.command()
+def convert_legacy_xml_to_json():
+    """
+    One-off command to convert the legacy XML files to the new JSON format.
+    This is needed for consistent display logic on old MPs.
+    """
+    commons_process.convert_xml_folder()
 
 
 if __name__ == "__main__":
