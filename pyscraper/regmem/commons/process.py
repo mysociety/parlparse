@@ -3,46 +3,50 @@ from dataclasses import dataclass
 from functools import lru_cache as lrucache
 from itertools import groupby
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Literal, Optional
 
 import requests
 import rich
 from mysoc_validator import Popolo
+from mysoc_validator.models.consts import Chamber
 from mysoc_validator.models.interests import (
-    Category,
-    Item,
-    PersonEntry,
-    Record,
-    Register,
+    RegmemAnnotation,
+    RegmemCategory,
+    RegmemDetail,
+    RegmemDetailGroup,
+    RegmemEntry,
+    RegmemPerson,
+    RegmemRegister,
 )
 from mysoc_validator.models.popolo import IdentifierScheme
-from mysoc_validator.models.xml_base import MixedContentHolder
 from mysoc_validator.models.xml_interests import Register
 from pydantic import TypeAdapter
 from tqdm import tqdm
 
 from pyscraper.regmem.commons.api_models import (
-    Member,
-    PublishedCategory,
-    PublishedInterest,
-    PublishedRegister,
+    CommonsAPIFieldModel,
+    CommonsAPIMember,
+    CommonsAPIPublishedInterest,
+    CommonsAPIPublishedRegister,
+)
+from pyscraper.regmem.funcs import memberdata_path, nice_name, parldata_path
+from pyscraper.regmem.legacy_converter import (
+    convert_legacy_to_register,
+    write_register_to_xml,
+)
+
+REGISTER_BASE = "https://interests-api.parliament.uk/"
+xml_folder = parldata_path / "scrapedxml" / "regmem"
+json_folder = (
+    parldata_path / "scrapedjson" / "universal_format_regmem" / Chamber.COMMONS
 )
 
 
-def get_higher_path(folder_name: str) -> Path:
-    current_level = Path.cwd()
-    allowed_levels = 3
-    for i in range(allowed_levels):
-        if (current_level / folder_name).exists():
-            return current_level / folder_name
-        current_level = current_level.parent
-    return Path.home() / folder_name
-
-
-parldata_path = get_higher_path("parldata")
-memberdata_path = get_higher_path("members")
-
-REGISTER_BASE = "https://interests-api.parliament.uk/"
+def slugify(s: str) -> str:
+    """
+    Convert a string to a slug.
+    """
+    return s.lower().replace(" ", "_")
 
 
 @lrucache
@@ -95,25 +99,107 @@ def recursive_fetch(
 
 def get_single_item(
     interest_id: int,
-) -> PublishedInterest:
+) -> CommonsAPIPublishedInterest:
     url = REGISTER_BASE + f"api/v1/Interests/{interest_id}"
     item = requests.get(url).json()
-    interest = PublishedInterest.model_validate(item)
+    interest = CommonsAPIPublishedInterest.model_validate(item)
     return interest
 
 
 def get_list_of_registers(
     quiet: bool = False, no_progress: bool = False
-) -> list[PublishedRegister]:
+) -> list[CommonsAPIPublishedRegister]:
     url = REGISTER_BASE + "api/v1/Registers"
     items = recursive_fetch(url, quiet=quiet, no_progress=no_progress)
-    registers = TypeAdapter(list[PublishedRegister]).validate_python(items)
+    registers = TypeAdapter(list[CommonsAPIPublishedRegister]).validate_python(items)
     return registers
 
 
+def field_type_converter(their_field: str) -> str:
+    lookup = {
+        "Decimal": "decimal",
+        "DateOnly": "date",
+        "Int": "int",
+        "Boolean": "boolean",
+        "String": "string",
+    }
+
+    if their_field.endswith("[]"):
+        return "container"
+
+    return lookup.get(their_field, "string")
+
+
+def api_field_to_universal_detail(field: CommonsAPIFieldModel) -> RegmemDetail:
+    our_field = field_type_converter(field.type or "String")
+    DetailType = RegmemDetail.parameterized_class_from_str(our_field)
+
+    display_as = nice_name(field.name)
+    slug = slugify(display_as)
+
+    if field.values:
+        # if there are subvalues here
+
+        groups: list[RegmemDetailGroup] = []
+
+        for subitem_list in field.values or []:
+            items_to_add = RegmemDetailGroup()
+            for item in subitem_list:
+                items_to_add.append(api_field_to_universal_detail(item))
+            groups.append(items_to_add)
+
+        detail = RegmemDetail[list[RegmemDetailGroup]](
+            display_as=display_as,
+            slug=slug,
+            description=field.description,
+            type="container",
+            value=groups,
+        )
+
+    else:
+        detail = DetailType(
+            display_as=display_as,
+            slug=slug,
+            description=field.description,
+            type=our_field,
+            value=field.value,
+        )
+
+    return detail
+
+
+def api_interest_to_universal_regmem_item(
+    api_interest: CommonsAPIPublishedInterest,
+    entry_type: Literal["entry", "subentry"] = "entry",
+) -> RegmemEntry:
+    uni_interest = RegmemEntry(
+        info_type=entry_type,
+        id=str(api_interest.id),
+        content=api_interest.summary,
+        date_registered=api_interest.registration_date,
+        date_updated=api_interest.last_updated_date,
+        date_published=api_interest.published_date,
+    )
+
+    for field in api_interest.fields:
+        if field.value or field.values:
+            detail = api_field_to_universal_detail(field)
+            uni_interest.details.append(detail)
+            if detail.slug == "received_date":
+                uni_interest.date_received = detail.value
+
+    for child in api_interest.child_items:
+        uni_interest.sub_entries.append(
+            api_interest_to_universal_regmem_item(child, entry_type="subentry")
+        )
+
+    return uni_interest
+
+
 def move_subitems_under_parent(
-    interests: list[PublishedInterest], wider_list: list[PublishedInterest]
-) -> list[PublishedInterest]:
+    interests: list[CommonsAPIPublishedInterest],
+    wider_list: list[CommonsAPIPublishedInterest],
+) -> list[CommonsAPIPublishedInterest]:
     """
     Return top-level interests with child interests stored as subinterests.
 
@@ -167,17 +253,16 @@ def move_subitems_under_parent(
 
 
 def convert_list_to_regmem_hierarchy(
-    interests: list[PublishedInterest],
-) -> list[Member]:
+    interests: list[CommonsAPIPublishedInterest],
+) -> list[CommonsAPIMember]:
     """
     Here we're converting a mixed list of interests for different people and categories
-    into a hierarchy of members > categories > interests > subinterests.
-
+    into a hierarchy of members > categories > interests > details.
     """
 
     interests.sort(key=lambda x: x.member.id)
 
-    members: list[Member] = []
+    members: list[CommonsAPIMember] = []
 
     for _, member_interests in groupby(interests, key=lambda x: x.member.id):
         list_of_member_interests = list(member_interests)
@@ -252,7 +337,9 @@ class RegisterManager:
             quiet=self.quiet,
             no_progress=self.no_progress,
         )
-        interests = TypeAdapter(list[PublishedInterest]).validate_python(items)
+        interests = TypeAdapter(list[CommonsAPIPublishedInterest]).validate_python(
+            items
+        )
         return interests
 
     def json_storage_path(self):
@@ -261,16 +348,20 @@ class RegisterManager:
             folder.mkdir(exist_ok=True, parents=True)
         return folder / f"commons_{self.register_id}.json"
 
-    def store_interests(self, interests: list[PublishedInterest]):
-        json = TypeAdapter(list[PublishedInterest]).dump_json(interests, indent=2)
+    def store_interests(self, interests: list[CommonsAPIPublishedInterest]):
+        json = TypeAdapter(list[CommonsAPIPublishedInterest]).dump_json(
+            interests, indent=2
+        )
         self.json_storage_path().write_bytes(json)
 
     def load_interests(self):
         json = self.json_storage_path().read_text()
-        interests = TypeAdapter(list[PublishedInterest]).validate_json(json)
+        interests = TypeAdapter(list[CommonsAPIPublishedInterest]).validate_json(json)
         return interests
 
-    def get_register(self, *, force_refresh: bool = False) -> list[PublishedInterest]:
+    def get_register(
+        self, *, force_refresh: bool = False
+    ) -> list[CommonsAPIPublishedInterest]:
         """
         Use local backup if available, otherwise fetch from API
         """
@@ -281,7 +372,7 @@ class RegisterManager:
         self.store_interests(interests)
         return interests
 
-    def get_restacked_register(self) -> list[Member]:
+    def get_restacked_register(self) -> list[CommonsAPIMember]:
         """
         we start off with a big list of interests.
         We want to have this as a hierarchy of members > categories > interests > subinterests
@@ -290,91 +381,80 @@ class RegisterManager:
         interests = self.get_register()
         return convert_list_to_regmem_hierarchy(interests)
 
-    def get_mysoc_register(self) -> Register:
+    def get_universal_register(self, date: datetime.date) -> RegmemRegister:
         """
         Fetch the final register object that can be saved to xml
         """
         interests = self.get_restacked_register()
-        return self.stacked_register_to_mysoc(interests)
 
-    def api_interest_to_mysoc_item(self, interest: PublishedInterest) -> Item:
-        """
-        Take a record object from the API and convert it to a Record object for parlparse.
-        """
-        text = interest.to_html()
-        content = MixedContentHolder(raw=text, text="")
-        return Item(contents=content, **{"class": "interest"})
-
-    def api_category_to_mysoc_category(self, category: PublishedCategory) -> Category:
-        """
-        Take a category object from the API and convert it to a Category object for parlparse.
-        """
-        return Category(
-            type=str(category.number),
-            name=str(category.name),
-            records=[
-                Record(
-                    items=[
-                        self.api_interest_to_mysoc_item(x) for x in category.interests
-                    ]
-                )
-            ],
-        )
-
-    def api_member_to_mysoc_person_entry(self, member: Member) -> PersonEntry:
-        """
-        Take a member object from the API and convert it to a PersonEntry object.
-        """
         popolo = get_popolo()
 
-        person = popolo.persons.from_identifier(
-            f"{member.id}", scheme=IdentifierScheme.MNIS
-        )
-        member_name = person.names_on_date(self.register_date)
-        if not member_name:
-            raise ValueError(f"Could not find name for {person.id}")
-        else:
-            member_name = member_name[0]
-
-        member.categories.sort(key=lambda x: x.number)
-
-        categories = [self.api_category_to_mysoc_category(x) for x in member.categories]
-
-        # given we pull in parent interests when not in the category, we need to check we haven't duplicated
-
-        return PersonEntry(
-            person_id=person.id,
-            membername=member_name,
-            date=self.register_date,
-            record=None,
-            categories=categories,
+        uni = RegmemRegister(
+            chamber=Chamber.COMMONS,
+            published_date=date,
         )
 
-    def stacked_register_to_mysoc(self, members: list[Member]) -> Register:
-        """
-        Take a list of members with categories and interests and convert them to a Register object.
-        """
-        persons = [self.api_member_to_mysoc_person_entry(x) for x in members]
-        persons.sort(key=lambda x: x.person_id)
+        uni.annotations.append(
+            RegmemAnnotation(
+                author="mySociety",
+                content="Converted from Commons API to universal format",
+            )
+        )
 
-        return Register(tag="twfy", person_entries=persons)
+        for api_member in interests:
+            person = popolo.persons.from_identifier(
+                f"{api_member.id}", scheme=IdentifierScheme.MNIS
+            )
+            member_name = person.names_on_date(self.register_date)
+            if not member_name:
+                raise ValueError(f"Could not find name for {person.id}")
+            else:
+                member_name = member_name[0]
 
-    def write_mysoc_regmem(self, force_refresh: bool = False, quiet: bool = False):
+            person_entry = RegmemPerson(
+                person_id=person.id,
+                person_name=member_name,
+                language="en",
+                chamber=Chamber.COMMONS,
+                published_date=date,
+                categories=[],
+            )
+
+            for api_category in api_member.categories:
+                uni_cat = RegmemCategory(
+                    category_id=api_category.number,
+                    category_name=api_category.name or "",
+                    entries=[],
+                )
+
+                for api_interest in api_category.interests:
+                    uni_interest = api_interest_to_universal_regmem_item(api_interest)
+
+                    uni_cat.entries.append(uni_interest)
+
+                person_entry.categories.append(uni_cat)
+
+            uni.persons.append(person_entry)
+
+        return uni
+
+    def write_universal_regmem(self, force_refresh: bool = False, quiet: bool = False):
         """
         Write the register to the parldata directory
         """
 
-        dest_folder = self.parldata_dir / "scrapedxml" / "regmem"
+        if not json_folder.exists():
+            json_folder.mkdir(exist_ok=True, parents=True)
 
-        if not dest_folder.exists():
-            dest_folder.mkdir(exist_ok=True, parents=True)
-
-        filename = f"regmem{self.register_date.isoformat()}.xml"
-        dest = dest_folder / filename
+        filename = f"commons-regmem-{self.register_date.isoformat()}.json"
+        dest = json_folder / filename
         if not dest.exists() or force_refresh:
             rich.print(f"Downloading to {dest}")
-            mysoc_register = self.get_mysoc_register()
-            mysoc_register.to_xml_path(dest_folder / filename)
+            mysoc_register = self.get_universal_register(self.register_date)
+            mysoc_register.to_path(json_folder / filename)
+            write_register_to_xml(
+                mysoc_register, xml_folder_name="regmem", force_refresh=force_refresh
+            )
         else:
             if not quiet:
                 rich.print(f"Already exists at {dest}")
@@ -396,7 +476,7 @@ def download_register_from_id_and_date(
         quiet=quiet,
         no_progress=no_progress,
     )
-    manager.write_mysoc_regmem(force_refresh=force_refresh, quiet=quiet)
+    manager.write_universal_regmem(force_refresh=force_refresh, quiet=quiet)
 
 
 def download_register_from_date(
@@ -444,6 +524,33 @@ def download_all_registers(
             quiet=quiet,
             no_progress=no_progress,
         )
+
+
+def convert_xml_folder():
+    """
+    Intended to run once to convert all the old-style xml to new-style json.
+    This is needed to have register information for old MPs
+    loaded into the database in the same way.
+    """
+
+    if not json_folder.exists():
+        json_folder.mkdir(exist_ok=True, parents=True)
+
+    starting_point = "regmem2015-06-08.xml"
+    for xml_file in xml_folder.glob("*.xml"):
+        # if xml_file is less than starting_point, skip
+        if xml_file.name < starting_point:
+            continue
+        print(xml_file)
+        date = datetime.date.fromisoformat(xml_file.stem[6:])
+        dest_filename = f"commons-regmem-{date.isoformat()}.json"
+        dest = json_folder / dest_filename
+        if not dest.exists():
+            register = Register.from_xml_path(xml_file)
+            legacy_register = convert_legacy_to_register(
+                register, chamber=Chamber.COMMONS, published_date=date
+            )
+            legacy_register.to_path(dest)
 
 
 if __name__ == "__main__":
