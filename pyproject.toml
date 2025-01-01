@@ -6,7 +6,7 @@ python = "^3.9"
 beautifulsoup4 = "4.12.3"
 everypolitician = "0.0.13"
 lxml = "5.2.1"
-python-dateutil = "2.2"
+python-dateutil = "2.9.0"
 requests = { version = "2.32.3", extras = ["security"] }
 requests-cache = "0.4.13"
 Click = "^8.0"
@@ -14,6 +14,8 @@ click-log = "0.3.2"
 mysoc-validator = "^1.0.0"
 tqdm = "^4.67.1"
 jinja2 = "^3.1.4"
+html5lib = "^1.1"
+pandas = "^2.2.3"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.9.6"
@@ -41,9 +43,8 @@ extend-exclude = [
   'scripts/updatedaterange-parse',
   'scripts/updatedaterange-scrape',
   'scripts/weeklyupdate',
-  'scripts/ynmp/tests.txt'
+  'scripts/ynmp/tests.txt',
 ]
-
 
 
 [tool.ruff.lint]
@@ -68,7 +69,7 @@ section-order = [
   "django",
   "third-party",
   "first-party",
-  "local-folder"
+  "local-folder",
 ]
 
 [tool.ruff.lint.isort.sections]
