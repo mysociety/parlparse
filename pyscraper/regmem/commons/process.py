@@ -312,7 +312,8 @@ def convert_list_to_regmem_hierarchy(
                 n_interests = []
                 for i in c.interests:
                     if i.id in duplicate_ids:
-                        if i.child_items:
+                        # if a duplicate, we want to dump the category 1 rather than 1.1 or 1.2.
+                        if i.child_items and c.number != "1":
                             n_interests.append(i)
                     else:
                         n_interests.append(i)
