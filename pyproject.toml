@@ -16,7 +16,7 @@ tqdm = "^4.67.1"
 jinja2 = "^3.1.4"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.6.7"
+ruff = "^0.9.6"
 
 [tool.ruff]
 

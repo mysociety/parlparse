@@ -83,7 +83,7 @@ for member in members["AllMembersList"]["Member"]:
     person = data.get_person(id=member["PersonId"], scheme="data.niassembly.gov.uk")
     # The below was only needed on the first run, to match on names before the IDs were then present
     if not person:
-        name = f'{member["MemberFirstName"]} {member["MemberLastName"]}'
+        name = f"{member['MemberFirstName']} {member['MemberLastName']}"
         people = [
             p
             for p in data.persons.values()

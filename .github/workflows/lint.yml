@@ -17,7 +17,7 @@ jobs:
         python-version: '3.9'
 
     - name: setup ruff
-      run: pip install ruff
+      run: pip install ruff==0.9.6
 
     - name: check ruff linter
       run: |
