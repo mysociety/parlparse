@@ -1,0 +1,27 @@
+name: Data validator
+
+on: [push]
+
+jobs:
+  test:
+    name: Validate
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    - name: Install poetry
+      run: pipx install poetry
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+        cache: 'poetry'
+
+    - name: setup python packages
+      run: poetry install
+
+    - name: validate people.json file
+      run: poetry run mysoc-validator popolo validate members/people.json
