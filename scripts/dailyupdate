@@ -2,6 +2,10 @@
 # Jobs that need running daily, that aren't with urgency dependent on new stuff
 # from Hansard
 
+cd ~/parlparse
+# update the parlparase directory
+git pull origin master
+
 source ~/parlparse/scripts/consts
 
 # Update register of members interests
@@ -12,12 +16,10 @@ poetry run python -m pyscraper.regmem download-all-registers --chamber commons -
 #cd ~/parlparse/members
 #git pull --rebase
 
-YEAR=`date +%Y`
 
-cd ~/parlparse/scripts
-./fetch-pw-json
+#  We don't need to mirror pw policies anymore
+#YEAR=`date +%Y`
 
-# Check for new people
-./add-new-mlas
-./add-new-lords
+#cd ~/parlparse/scripts
+#./fetch-pw-json
 
