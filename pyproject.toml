@@ -30,6 +30,7 @@ extend-exclude = [
   'scripts/consts',
   'scripts/crontab',
   'scripts/dailyupdate',
+  'scripts/dataupdate',
   'scripts/datadotparl/mp-party-check',
   'scripts/datadotparl/one-off-add-pims-ids',
   'scripts/datadotparl/one-off-sync-lord-parties',
