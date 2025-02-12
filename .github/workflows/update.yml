@@ -1,0 +1,70 @@
+name: Data Updater
+
+on:
+  schedule:
+    - cron: '13 22 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    name: Update
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    - name: Install poetry
+      run: pipx install poetry
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+        cache: 'poetry'
+
+    - name: setup python packages
+      run: poetry install
+
+    - name: Run data update script
+      id: update
+      run: |
+        output=$(poetry run scripts/dataupdate --verbose)
+        output=$(echo "$output" | jq -sR .)
+        echo "update_output<<EOF" >> "$GITHUB_OUTPUT"
+        echo "$output" >> "$GITHUB_OUTPUT"
+        echo "EOF" >> "$GITHUB_OUTPUT"
+
+    - name: Push new data
+      id: auto-commit-action
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "Automatic data update"
+
+    - name: Send GitHub Action trigger data to Slack workflow
+      id: slack
+      if: steps.auto-commit-action.outputs.changes_detected == 'true'
+      uses: slackapi/slack-github-action@v1.24.0
+      with:
+        payload: |
+          {
+            "repo_url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+            "status": "success",
+            "content": ${{ steps.update.outputs.update_output }}
+          }
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.PARLPARSE_SLACK_WEBHOOK }}
+
+    - name: Send GitHub Action trigger data to Slack workflow (if failed)
+      if: ${{ failure() }}
+      id: slack-failed
+      uses: slackapi/slack-github-action@v1.24.0
+      with:
+        payload: |
+          {
+            "repo_url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+            "status": "failed",
+            "content": ${{ steps.update.outputs.update_output }}
+          }
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.PARLPARSE_SLACK_WEBHOOK }}
