@@ -115,7 +115,10 @@ def construct_membership(member, person_id, lord_id):
 
 
 LORDS_URL = "http://data.parliament.uk/membersdataplatform/services/mnis/members/query/house=Lords|membership=all/BasicDetails/"
-parl_members = etree.parse(urllib.request.urlopen(LORDS_URL)).getroot()
+user_agent = "TWFY Lords Fetcher"
+
+request = urllib.request.Request(LORDS_URL, headers={"User-Agent": user_agent})
+parl_members = etree.parse(urllib.request.urlopen(request)).getroot()
 parl_members = sorted(parl_members, key=lambda x: x.find("HouseStartDate").text)
 
 changed = False
