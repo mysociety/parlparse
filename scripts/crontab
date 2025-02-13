@@ -8,6 +8,3 @@
 
 # daily update at night for MP data (regmem, data from Public Whip etc.)
 37 1 * * * $HOME/parlparse/scripts/dailyupdate
-
-# every week early Sunday grab weekly range of data
-23 4 * * Sun $HOME/parlparse/scripts/weeklyupdate
