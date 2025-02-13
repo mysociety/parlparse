@@ -19,3 +19,10 @@ curl -s -H 'X-Forwarded-For: 127.0.0.1' https://www.theyworkforyou.com/internal/
 # tell Public Whip to update
 PRODSCRIPT=ukparse-morning-update-done.cgi
 curl -s http://www.publicwhip.org.uk/$PRODSCRIPT >/dev/null &
+
+# tell votes.theyworkforyou.com to update
+curl -s -X POST \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $VOTESREFRESHTOKEN" \
+    -d '{"shortcut":"refresh_daily"}' \
+    https://votes.theyworkforyou.com/webhooks/refresh
