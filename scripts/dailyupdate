@@ -3,10 +3,9 @@
 # from Hansard
 
 cd ~/parlparse
-# update the parlparase directory
-git pull origin master
 
-source ~/parlparse/scripts/consts
+# update the parlparse directory
+git pull -q
 
 # Update register of members interests
 cd ~/parlparse
@@ -14,8 +13,3 @@ poetry run python -m pyscraper.regmem download-latest-register --chamber commons
 poetry run python -m pyscraper.regmem download-latest-register --chamber scotland --quiet
 poetry run python -m pyscraper.regmem download-latest-register --chamber senedd --quiet
 poetry run python -m pyscraper.regmem download-latest-register --chamber ni --quiet
-
-
-# Get updated members list all-members.xml, in case it changed
-#cd ~/parlparse/members
-#git pull --rebase
