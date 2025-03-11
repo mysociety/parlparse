@@ -92,10 +92,10 @@ def get_ms_details(ms_id: int, *, lang: Literal["en", "cy"] = "en") -> RegmemPer
     person = popolo.persons.from_identifier(str(ms_id), scheme="senedd")
 
     if lang == "en":
-        url = f"https://business.senedd.wales/mgDeclarationSubmission.aspx?UID={ms_id}&HID=1347&FID=0&HPID=0"
+        url = f"https://business.senedd.wales/mgRofI.aspx?UID={ms_id}"
         date_trigger_phrase = "This register of interests was published on"
     elif lang == "cy":
-        url = f"https://busnes.senedd.cymru/mgDeclarationSubmission.aspx?UID={ms_id}&HID=1347&FID=0&HPID=0"
+        url = f"https://busnes.senedd.cymru/mgRofI.aspx?UID={ms_id}"
         date_trigger_phrase = "Cafodd y gofrestr o fuddiannau ei chyhoeddi ar"
     else:
         raise ValueError("lang must be 'en' or 'cy'")
