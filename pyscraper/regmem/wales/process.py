@@ -160,10 +160,13 @@ def get_ms_details(ms_id: int, *, lang: Literal["en", "cy"] = "en") -> RegmemPer
 
             if len(summary_options) == 1:
                 if in_respect_of:
-                    summary_str = f"{summary_options[0]} ({in_respect_of})"
+                    entry.content = f"{summary_options[0]} ({in_respect_of})"
                 else:
-                    summary_str = summary_options[0]
-                entry.content = summary_str
+                    entry.content = summary_options[0]
+            elif len(summary_options) > 1:
+                entry.content = "|".join(
+                    f"{detail.display_as}: {detail.value}" for detail in entry.details
+                )
             details_none = [x.value for x in entry.details if x.value == "None"]
             if len(details_none) != len(entry.details):
                 category.entries.append(entry)
