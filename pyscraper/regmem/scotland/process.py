@@ -10,6 +10,7 @@ from mysoc_validator.models.interests import (
     RegmemEntry,
     RegmemPerson,
     RegmemRegister,
+    slugify,
 )
 from pydantic import TypeAdapter
 from tqdm import tqdm
@@ -46,7 +47,9 @@ def process_category(entries: list[ScotAPIEntry]) -> RegmemCategory:
     initial_entry = entries[0]
     category_name = initial_entry.detail.name
 
-    category = RegmemCategory(category_id=category_name, category_name=category_name)
+    category = RegmemCategory(
+        category_id=slugify(category_name), category_name=category_name
+    )
 
     for entry in entries:
         universal_entry = RegmemEntry(
