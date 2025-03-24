@@ -2,7 +2,7 @@
 package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.9,<3.10"
 beautifulsoup4 = "4.12.3"
 everypolitician = "0.0.13"
 lxml = "5.2.1"
@@ -17,6 +17,7 @@ jinja2 = "^3.1.4"
 html5lib = "^1.1"
 pandas = "^2.2.3"
 pydantic-settings = "^2.8.1"
+atproto = "^0.0.59"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.9.6"
