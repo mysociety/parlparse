@@ -10,6 +10,9 @@ jobs:
     name: Update
     runs-on: ubuntu-latest
 
+    outputs:
+      changes_detected: ${{ steps.auto-commit-action.outputs.changes_detected }}
+
     steps:
     - uses: actions/checkout@v4
       with:
@@ -68,3 +71,8 @@ jobs:
           }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.PARLPARSE_SLACK_WEBHOOK }}
+
+  mirror_results:
+    needs: update
+    if: needs.update.outputs.changes_detected == 'true'
+    uses: mysociety/parlparse/.github/workflows/mirror.yml
