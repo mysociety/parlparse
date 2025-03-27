@@ -75,4 +75,4 @@ jobs:
   mirror_results:
     needs: update
     if: needs.update.outputs.changes_detected == 'true'
-    uses: mysociety/parlparse/.github/workflows/mirror.yml
+    uses: mysociety/parlparse/.github/workflows/mirror.yml@master
