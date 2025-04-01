@@ -76,3 +76,6 @@ jobs:
     needs: update
     if: needs.update.outputs.changes_detected == 'true'
     uses: mysociety/parlparse/.github/workflows/mirror.yml@master
+    secrets: 
+        PUBLICCVS_GIT_KEY: ${{ secrets.PUBLICCVS_GIT_KEY }}
+        GIT_KNOWN_HOSTS: ${{ secrets.GIT_KNOWN_HOSTS }}
