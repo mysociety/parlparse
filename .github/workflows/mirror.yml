@@ -2,7 +2,6 @@ name: Push mirror to git.mysociety.org
 
 on:
   push:
-  workflow_call:
   workflow_dispatch:
     inputs:
       force_push:

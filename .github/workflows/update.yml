@@ -72,10 +72,12 @@ jobs:
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.PARLPARSE_SLACK_WEBHOOK }}
 
-  mirror_results:
-    needs: update
-    if: needs.update.outputs.changes_detected == 'true'
-    uses: mysociety/parlparse/.github/workflows/mirror.yml@master
-    secrets: 
-        PUBLICCVS_GIT_KEY: ${{ secrets.PUBLICCVS_GIT_KEY }}
-        GIT_KNOWN_HOSTS: ${{ secrets.GIT_KNOWN_HOSTS }}
+    - name: Push branch to git.mysociety.org
+      id: push_to_mirror
+      if: steps.auto-commit-action.outputs.changes_detected == 'true'
+      uses: mysociety/action-git-pusher@v1.2.0
+      with:
+        git_ssh_key: ${{ secrets.PUBLICCVS_GIT_KEY }}
+        ssh_known_hosts: ${{ secrets.GIT_KNOWN_HOSTS }}
+        tag: ${{ github.ref_name }} 
+        remote: 'ssh://gh-public@git.mysociety.org/data/git/public/parlparse.git'
