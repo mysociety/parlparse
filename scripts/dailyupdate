@@ -13,3 +13,6 @@ poetry run python -m pyscraper.regmem download-latest-register --chamber commons
 poetry run python -m pyscraper.regmem download-latest-register --chamber scotland --quiet
 poetry run python -m pyscraper.regmem download-latest-register --chamber senedd --quiet
 poetry run python -m pyscraper.regmem download-latest-register --chamber ni --quiet
+
+# update commons EDMs
+poetry run python -m pyscraper.edms update --quiet
