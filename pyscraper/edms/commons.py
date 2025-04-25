@@ -81,10 +81,14 @@ class ProposalSearchList(RootModel):
     root: list[Proposal]
 
     @classmethod
-    def expand_from_partial(cls, partial: ProposalSearchList) -> ProposalSearchList:
+    def expand_from_partial(
+        cls,
+        partial: ProposalSearchList,
+        quiet: bool = False,
+    ) -> ProposalSearchList:
         expanded_items = [
             Proposal.from_api(item.Id)
-            for item in tqdm(partial.root, desc="Expanding EDMs")
+            for item in tqdm(partial.root, desc="Expanding EDMs", disable=quiet)
         ]
         return cls(root=expanded_items)
 
@@ -132,7 +136,7 @@ class ProposalSearchList(RootModel):
         partial = ProposalSearchList.model_validate(items)
         if not expand:
             return partial
-        return cls.expand_from_partial(partial)
+        return cls.expand_from_partial(partial, quiet=quiet)
 
     @classmethod
     def from_path(cls, filename: Path) -> ProposalSearchList:
