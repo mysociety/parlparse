@@ -1,3 +1,4 @@
+import time
 from datetime import datetime
 from itertools import zip_longest
 from typing import Literal
@@ -18,6 +19,14 @@ from tqdm import tqdm
 
 from pyscraper.regmem.funcs import get_popolo, parldata_path
 from pyscraper.regmem.legacy_converter import write_register_to_xml
+
+
+class ScraperError(Exception):
+    """
+    Custom exception for scraper errors.
+    """
+
+    pass
 
 
 def welsh_to_english_months(date_str: str) -> str:
@@ -103,7 +112,36 @@ def get_ms_details(ms_id: int, *, lang: Literal["en", "cy"] = "en") -> RegmemPer
     headers = {"User-Agent": "TWFY interests scraper"}
     content = requests.get(url, headers=headers).content
 
-    items = pd.read_html(content)
+    max_attempts = 3
+    current_attempt = 0
+
+    while current_attempt < max_attempts:
+        try:
+            items = pd.read_html(content)
+            break  # If successful, exit the loop
+        except ValueError as e:
+            if "No tables found" in str(e):
+                # If this is the first attempt and it failed with "No tables found",
+                # wait 10 seconds and retry
+                print(
+                    f"No tables found for MS ID {ms_id} in {lang} language. Retrying in 10 seconds..."
+                )
+                time.sleep(10)
+                # Get fresh content for the retry
+                content = requests.get(url, headers=headers).content
+                current_attempt += 1
+            if current_attempt == max_attempts:
+                # If this is the last attempt, raise the error
+                print(
+                    f"Failed to find tables for MS ID {ms_id} in {lang} language after {max_attempts} attempts."
+                )
+                raise ScraperError(
+                    f"Failed to find tables for MS ID {ms_id} in {lang} language after {max_attempts} attempts."
+                )
+
+            else:
+                # Another error
+                raise e
 
     # Parse HTML with BeautifulSoup
     soup = BeautifulSoup(content, "html.parser")
@@ -193,10 +231,14 @@ def get_current_register(
 ):
     ms_ids = get_current_ms_ids()
 
-    person_entries = [
-        get_ms_details(ms_id, lang=lang)
-        for ms_id in tqdm(ms_ids, disable=quiet or no_progress)
-    ]
+    try:
+        person_entries = [
+            get_ms_details(ms_id, lang=lang)
+            for ms_id in tqdm(ms_ids, disable=quiet or no_progress)
+        ]
+    except ScraperError as e:
+        print(f"Error scraping MS details: {e}")
+        return
     latest_date = [x.published_date for x in person_entries]
     published_date = max(latest_date)
 
