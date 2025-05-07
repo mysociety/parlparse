@@ -126,18 +126,18 @@ def get_ms_details(ms_id: int, *, lang: Literal["en", "cy"] = "en") -> RegmemPer
                 print(
                     f"No tables found for MS ID {ms_id} in {lang} language. Retrying in 10 seconds..."
                 )
+                current_attempt += 1
+                if current_attempt == max_attempts:
+                    # If this is the last attempt, raise the error
+                    print(
+                        f"Failed to find tables for MS ID {ms_id} in {lang} language after {max_attempts} attempts."
+                    )
+                    raise ScraperError(
+                        f"Failed to find tables for MS ID {ms_id} in {lang} language after {max_attempts} attempts."
+                    )
                 time.sleep(10)
                 # Get fresh content for the retry
                 content = requests.get(url, headers=headers).content
-                current_attempt += 1
-            if current_attempt == max_attempts:
-                # If this is the last attempt, raise the error
-                print(
-                    f"Failed to find tables for MS ID {ms_id} in {lang} language after {max_attempts} attempts."
-                )
-                raise ScraperError(
-                    f"Failed to find tables for MS ID {ms_id} in {lang} language after {max_attempts} attempts."
-                )
 
             else:
                 # Another error
