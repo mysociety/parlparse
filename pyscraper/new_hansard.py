@@ -368,7 +368,7 @@ class BaseParseDayXML(object):
                 newtime = "10:00:00"
             elif re.match("half-past Ten(?i)", time):
                 newtime = "10:30:00"
-            elif re.match("Eleven o&#039;clock(?i)", time):
+            elif re.match("Eleven o(&#039;|’)clock(?i)", time):
                 newtime = "11:00:00"
             elif re.match("twenty-five minutes past\s*Eleven(?i)", time):
                 newtime = "11:25:00"
