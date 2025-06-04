@@ -65,6 +65,8 @@ class MemberList(ResolverBase):
         # Special case gender uniques
         if tinput == "Mrs Bell":
             tinput = "Mrs E Bell"
+        if tinput == "Ms Murphy":
+            tinput = "Ms A Murphy"
 
         text, titletotal = self.striptitles(tinput)
 
