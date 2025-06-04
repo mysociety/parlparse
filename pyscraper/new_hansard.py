@@ -1278,7 +1278,10 @@ class PBCParseDayXML(BaseParseDayXML):
     def get_division_tag(self, division, yes_text, no_text):
         tag = etree.Element("divisioncount")
 
-        div_number = division.xpath(".//ns:Number/text()", namespaces=self.ns_map)
+        div_number = division.xpath(
+            ".//ns:" + self.division_number_element, namespaces=self.ns_map
+        )[0]
+        div_number = self.get_single_line_text_from_element(div_number)
 
         tag.set("id", self.get_speech_id())
         tag.set("divnumber", "".join(div_number))
