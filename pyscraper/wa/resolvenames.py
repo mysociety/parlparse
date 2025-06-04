@@ -25,6 +25,10 @@ class MemberList(ResolverBase):
             return self.senedd["205"]  # David Rees
         if id == "6" and date == "2016-05-18":
             return self.senedd["102"]  # Carwyn Jones was the First Minister Elect
+        if id == "4" and date == "2025-03-25":
+            return self.senedd[
+                "145"
+            ]  # Paul Davies was Temporary deputy presiding officer
         return self.senedd[id]
 
 
