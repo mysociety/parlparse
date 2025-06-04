@@ -11,7 +11,7 @@ from miscfuncs import toppath
 from new_hansard import ParseDay
 
 today = datetime.date.today()
-yesterday = today - datetime.timedelta(1)
+yesterday = today - datetime.timedelta(2)  # Not actually yesterday
 
 parser = argparse.ArgumentParser(description="Process Hansard XML.")
 parser.add_argument(
