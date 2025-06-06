@@ -136,6 +136,9 @@ class DebateGrouping(NamedTuple):
         raw_html = re.sub(
             '(<p class="or-contribution-box">)(\s*<p )', r"\1</p>\2", raw_html
         )
+        raw_html = re.sub(
+            '(<p class="or-contribution-box">)(\s*<hr />\s*<p )', r"\1</p>\2", raw_html
+        )
         soup = BeautifulSoup(raw_html, "html.parser")
 
         # first h1 is the heading, last h2 is the subheading
