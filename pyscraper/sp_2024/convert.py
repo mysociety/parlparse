@@ -51,18 +51,6 @@ class IDFactory:
         return self._current_id()
 
 
-def slugify_committee(name: str) -> str:
-    """
-    Convert a committee name to a slug
-    """
-    name = slugify(name)
-    # if this ends in a year (four digita number) - assume it's a date and remove the last three elements
-    if name[-4:].isdigit():
-        name = "-".join(name.split("-")[:-3])
-
-    return name
-
-
 def convert_xml_to_twfy(file_path: Path, output_dir: Path, verbose: bool = False):
     """
     Convert from the loose structured xml format to the
@@ -85,12 +73,14 @@ def convert_xml_to_twfy(file_path: Path, output_dir: Path, verbose: bool = False
     timestamp = ""
 
     # remove [Draft] from title
-    title = re.sub(r"\[Draft\]( Business until \d\d:\d\d)?", "", title).strip()
+    title = re.sub(
+        r"(\[Draft\])?( Business until \d\d:\d\d\.?)?( \d\d:\d\d\.?)?", "", title
+    ).strip()
 
     # get the date in format Thursday 9 June 2005
     date_str = datetime.date.fromisoformat(iso_date).strftime("%A %d %B %Y")
 
-    committee_slug = slugify_committee(title)
+    committee_slug = slugify(title)
 
     dest_path = output_dir / committee_slug / f"{iso_date}_{source_id}.xml"
     dest_path.parent.mkdir(parents=True, exist_ok=True)
