@@ -48,7 +48,11 @@ for min_type in minister_type:
 new_ministers = []
 for minister in ministers:
     name = id_to_name[minister["PersonID"]]
-    role = type_to_name[minister["GovernmentRoleID"]]
+    role = type_to_name.get(minister["GovernmentRoleID"])
+    if not role:
+        # role id has not been updated yet - assume this will be fixed in the future
+        # and skip this minister for now
+        continue
     start = dateparser.parse(minister["ValidFromDate"]).date().isoformat()
     end = "9999-12-31"
     if minister["ValidUntilDate"]:
