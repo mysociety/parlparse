@@ -67,7 +67,7 @@ jobs:
           {
             "repo_url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
             "status": "failed",
-            "content": ${{ steps.update.outputs.update_output }}
+            "content": "Parlparse update failed. Please check the logs for details."
           }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.PARLPARSE_SLACK_WEBHOOK }}
