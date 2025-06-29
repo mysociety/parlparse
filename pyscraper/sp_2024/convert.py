@@ -13,7 +13,11 @@ from typing import Optional
 
 from lxml import etree
 
-from .resolvenames import get_unique_person_id, is_member_vote
+from .resolvenames import (
+    get_unique_person_id,
+    is_member_vote,
+    twfy_id_from_scot_parl_id,
+)
 
 
 def slugify(text: str) -> str:
@@ -105,9 +109,15 @@ def convert_xml_to_twfy(file_path: Path, output_dir: Path, verbose: bool = False
             if subitem.tag == "speech":
                 speaker_name = subitem.get("speaker_name")
                 scot_parl_id = subitem.get("speaker_scot_id")
-                person_id = get_unique_person_id(
-                    speaker_name, iso_date, lookup_key=scot_parl_id
-                )
+                if scot_parl_id:
+                    person_id = twfy_id_from_scot_parl_id(scot_parl_id)
+                else:
+                    # if we don't have an id, we need to look it up from name
+                    # in *most cases* this will not be a member - but need it
+                    # for the few cases they leave something in
+                    person_id = get_unique_person_id(
+                        speaker_name, iso_date, lookup_key=speaker_name
+                    )
                 if (
                     person_id is None
                     and speaker_name not in missing_speakers

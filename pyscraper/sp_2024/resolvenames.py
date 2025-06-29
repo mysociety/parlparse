@@ -2,7 +2,12 @@ import datetime
 import json
 import os
 import re
+from functools import lru_cache
+from pathlib import Path
 from typing import Iterable, Optional, TypeVar
+
+from mysoc_validator import Popolo
+from mysoc_validator.models.popolo import IdentifierScheme
 
 from ..base_resolver import ResolverBase
 from .common import non_tag_data_in, tidy_string
@@ -10,6 +15,30 @@ from .common import non_tag_data_in, tidy_string
 members_dir = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "../..", "members")
 )
+
+
+@lru_cache
+def get_popolo():
+    """
+    Load the Popolo data from the members directory.
+    """
+    popolo_path = Path(members_dir) / "people.json"
+    popolo = Popolo.from_path(popolo_path)
+    return popolo
+
+
+def twfy_id_from_scot_parl_id(scot_parl_id: str) -> Optional[str]:
+    """
+    Convert a Scottish Parliament ID to a TheyWorkForYou ID.
+    """
+    popolo = get_popolo()
+    person = popolo.persons.from_identifier(
+        scot_parl_id, scheme=IdentifierScheme.SCOTPARL
+    )
+    if person:
+        return person.id
+    return None
+
 
 T = TypeVar("T")
 
