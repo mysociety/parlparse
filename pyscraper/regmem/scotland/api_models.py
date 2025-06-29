@@ -22,7 +22,7 @@ class ScotAPIPerson(BaseModel):
     party_name: str
     constituency_name: Optional[str] = None
     constituency_region: Optional[str] = None
-    gender: str
+    gender: Optional[str] = None
     party_abbreviation: str
 
 
