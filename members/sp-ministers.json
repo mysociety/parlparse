@@ -3853,5 +3853,55 @@
     "organization_id": "scottish-parliament",
     "start_date": "2024-06-27",
     "end_date": "2025-06-11"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/354",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Cabinet Secretary for Housing",
+    "person_id": [
+      "uk.org.publicwhip/person/26004"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2025-06-11"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/355",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Cabinet Secretary for Climate Action and Energy",
+    "person_id": [
+      "uk.org.publicwhip/person/25525"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2025-06-11"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/356",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Business and Employment",
+    "person_id": [
+      "uk.org.publicwhip/person/14029"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2025-06-11"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/357",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Social Care and Mental Wellbeing",
+    "person_id": [
+      "uk.org.publicwhip/person/25491"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2025-06-11"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/358",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Drug and Alcohol Policy and Sport",
+    "person_id": [
+      "uk.org.publicwhip/person/25540"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2025-06-11"
   }
 ]
