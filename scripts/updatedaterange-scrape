@@ -26,7 +26,7 @@ wa/scrape.py
 
 # Scottish Parliament
 cd ~/parlparse
-python -m pyscraper.sp_2024 debates --download --start-date $FROMDATE --end-date $TODATE
+poetry run python -m pyscraper.sp_2024 debates --download --start-date $FROMDATE --end-date $TODATE
 
 
 # Return error code
