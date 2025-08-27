@@ -3,7 +3,7 @@ import unicodedata
 from pathlib import Path
 from typing import Optional
 
-from pydantic import BaseModel, RootModel, field_validator, model_validator
+from pydantic import BaseModel, Field, RootModel, field_validator, model_validator
 
 
 def slugify(value):
@@ -34,9 +34,8 @@ class MiniGroup(BaseModel):
     name: str
     description: str
     external_url: str
-    group_type_a: str
-    group_type_b: str = ""
-    group_type_c: str = ""
+    group_type: str
+    group_categories: list[str] = Field(default_factory=list)
     members: list[MiniMember]
 
     @field_validator("name", mode="before")

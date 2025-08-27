@@ -27,6 +27,34 @@ class VerboseSettings:
     verbose = True
 
 
+class ApiCallWithSkip(Protocol):
+    """
+    Typing protocol that committee_app_loop accepts a function
+    with a skip parameter
+    """
+
+    def __call__(self, skip: int) -> dict[Any, Any]: ...
+
+
+def committee_app_loop(func: ApiCallWithSkip):
+    """
+    Handle paging the Parliament committees API
+    """
+    items: list[dict[str, str]] = []
+    skip = 0
+    pbar = tqdm(total=None, leave=False, disable=not VerboseSettings.verbose)
+    while True:
+        batch = func(skip=skip)
+        if not batch["items"]:
+            break
+        pbar.total = batch["totalResults"]
+        items.extend(batch["items"])
+        skip += len(batch["items"])
+        pbar.update(len(batch["items"]))
+    pbar.close()
+    return items
+
+
 def reduce_purpose_html(html: str) -> str:
     """
     Extracts and cleans sentences from HTML content.
@@ -196,13 +224,13 @@ class Committee(CamelModel):
         Fetch and add members to the committee.
         """
 
-        def one_request(skip=0):
+        def get_paged_list_of_members(skip=0):
             url = f"https://committees-api.parliament.uk/api/Committees/{self.id}/Members?MembershipStatus=Current&ShowOnWebsiteOnly=true&skip={skip}"
             response = httpx.get(url, timeout=30)
             response.raise_for_status()
             return response.json()
 
-        data = committee_app_loop(one_request)
+        data = committee_app_loop(get_paged_list_of_members)
         self.members = [Member.model_validate(item) for item in data]
         return self
 
@@ -221,26 +249,6 @@ class CommitteeList(RootModel[list[Committee]]):
         return iter(self.root)
 
 
-class ApiCallWithSkip(Protocol):
-    def __call__(self, skip: int) -> dict[Any, Any]: ...
-
-
-def committee_app_loop(func: ApiCallWithSkip):
-    items: list[dict[str, str]] = []
-    skip = 0
-    pbar = tqdm(total=None, leave=False, disable=not VerboseSettings.verbose)
-    while True:
-        batch = func(skip=skip)
-        if not batch["items"]:
-            break
-        pbar.total = batch["totalResults"]
-        items.extend(batch["items"])
-        skip += len(batch["items"])
-        pbar.update(len(batch["items"]))
-    pbar.close()
-    return items
-
-
 def get_committee_all_items():
     def get_committees(skip=0):
         url = f"https://committees-api.parliament.uk/api/Committees?CommitteeStatus=Current&skip={skip}"
@@ -250,12 +258,11 @@ def get_committee_all_items():
 
     committees = committee_app_loop(get_committees)
 
-    committee_json_path.parent.mkdir(parents=True, exist_ok=True)
-
     committee_list = CommitteeList.model_validate(committees)
 
     committee_list = committee_list.expand()
 
+    committee_json_path.parent.mkdir(parents=True, exist_ok=True)
     with open(committee_json_path, "w") as f:
         f.write(committee_list.model_dump_json(indent=2))
 
@@ -280,13 +287,20 @@ def convert_to_groups():
             return None
 
     for comm in committees:
+        categories: list[str] = []
+
+        if comm.category:
+            categories.append(comm.category.name)
+
+        if comm.committee_types:
+            categories.append(comm.committee_types[0].name)
+
         group = MiniGroup(
             name=comm.name,
             description=reduce_purpose_html(comm.purpose) if comm.purpose else "",
             external_url=comm.parl_url(),
-            group_type_a="committee",
-            group_type_b=comm.category.name if comm.category else "",
-            group_type_c=comm.committee_types[0].name,
+            group_type="committee",
+            group_categories=categories,
             members=[
                 MiniMember(
                     name=member.name,
@@ -309,5 +323,5 @@ def convert_to_groups():
 
 
 if __name__ == "__main__":
-    # get_committee_all_items()
+    get_committee_all_items()
     convert_to_groups()
