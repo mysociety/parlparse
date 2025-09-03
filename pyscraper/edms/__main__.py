@@ -2,7 +2,7 @@ from typer import Typer
 
 from .commons import fetch_and_update, initial_populate, to_parquet
 
-app = Typer()
+app = Typer(pretty_exceptions_enable=False)
 
 
 @app.command(name="initial")
