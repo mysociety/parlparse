@@ -252,7 +252,7 @@ class CommitteeList(RootModel[list[Committee]]):
 def get_committee_all_items():
     def get_committees(skip=0):
         url = f"https://committees-api.parliament.uk/api/Committees?CommitteeStatus=Current&skip={skip}"
-        response = httpx.get(url)
+        response = httpx.get(url, timeout=30)
         response.raise_for_status()
         return response.json()
 
