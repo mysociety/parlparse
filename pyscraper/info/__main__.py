@@ -3,7 +3,7 @@ from typer import Typer
 from .bluesky import update_bluesky
 from .profiles import get_official_profile_urls
 
-app = Typer()
+app = Typer(pretty_exceptions_enable=False)
 
 
 @app.command(name="update-bluesky")

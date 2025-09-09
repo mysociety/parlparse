@@ -12,7 +12,7 @@ from .commons_api import (
     get_committee_all_items as uk_get_committee_all_items,
 )
 
-app = Typer()
+app = Typer(pretty_exceptions_enable=False)
 
 
 @app.command(name="all")
