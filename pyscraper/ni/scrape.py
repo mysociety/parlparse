@@ -36,7 +36,11 @@ def scrape_ni_day(url, filename, forcescrape):
     filename = "%s/../../../parldata/cmpages/ni/%s" % (ni_dir, filename)
     data = urllib.request.urlopen(url).read()
 
-    if b"ExceptionMessage" in data or b'"Message":"An error has occurred."' in data:
+    if (
+        b"ExceptionMessage" in data
+        or b'"Message":"An error has occurred."' in data
+        or b'"Error":"Execution Timeout Expired' in data
+    ):
         print("ERROR received scraping %s" % url)
         return
 
