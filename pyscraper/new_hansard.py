@@ -1487,6 +1487,10 @@ class LordsParseDayXML(BaseParseDayXML):
         tag_name = self.get_tag_name_no_ns(member)
         if tag_name == "B" and self.get_single_line_text_from_element(member) == "":
             return None
+        if tag_name == "B" and re.match(
+            "\[Continued (in|from)", self.get_single_line_text_from_element(member)
+        ):
+            return None
 
         found_member = super(LordsParseDayXML, self).parse_member(member)
         if found_member is None:
