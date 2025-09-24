@@ -3535,7 +3535,8 @@
       "uk.org.publicwhip/person/25081"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-30"
+    "start_date": "2023-03-30",
+    "end_date": "2025-09-21"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/324",
@@ -3904,5 +3905,15 @@
     ],
     "organization_id": "scottish-parliament",
     "start_date": "2025-06-11"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/359",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Parliamentary Business and Veterans",
+    "person_id": [
+      "uk.org.publicwhip/person/25081"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2025-09-21"
   }
 ]
