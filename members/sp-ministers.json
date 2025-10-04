@@ -3915,5 +3915,15 @@
     ],
     "organization_id": "scottish-parliament",
     "start_date": "2025-09-21"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/360",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Higher and Further Education",
+    "person_id": [
+      "uk.org.publicwhip/person/25523"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2025-09-23"
   }
 ]
