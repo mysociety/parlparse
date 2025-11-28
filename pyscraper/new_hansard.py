@@ -343,10 +343,16 @@ class BaseParseDayXML(object):
                     member["type"] = member_tag.get("ContributionType")
                 return member
             else:
+                if pims_id:
+                    raise ContextException(
+                        "No match for PimsId {0}".format(pims_id),
+                        stamp=tag.get("url"),
+                        fragment=self.get_single_line_text_from_element(member_tag),
+                    )
                 raise ContextException(
-                    "No match for MnisId {0}\n".format(mnis_id),
+                    "No match for MnisId {0}".format(mnis_id),
                     stamp=tag.get("url"),
-                    fragment=member_tag.text,
+                    fragment=self.get_single_line_text_from_element(member_tag),
                 )
 
         return None
