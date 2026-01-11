@@ -14,6 +14,8 @@ class SocialInfo(PersonInfo):
     facebook_page: Optional[str] = None
     twitter_username: Optional[str] = None
     bluesky_handle: Optional[str] = None
+    instagram_username: Optional[str] = None
+    threads_username: Optional[str] = None
 
 
 SocialInfoCollection = InfoCollection[SocialInfo]
@@ -56,12 +58,14 @@ def add_person_ids(items: list[dict[str, str]]):
     popolo = Popolo.from_path(Path("members", "people.json"))
 
     prefixes = ["Dame ", "Dr ", "Dr. ", "Sir "]
-    postfixes = [" OBE", " MBE", " KC", " AS /"]
+    postfixes = [" OBE", " MBE", " KC", " AS /", "AS/MP"]
 
     manual = {
         "commonsspeaker.parliament.uk": "uk.org.publicwhip/person/10295",
         "sianberry.bsky.social": "uk.org.publicwhip/person/25752",
         "alisonstaylormp.bsky.social": "uk.org.publicwhip/person/26563",
+        "jamesnaish.bsky.social": "uk.org.publicwhip/person/26329",
+        "louisesandherjones.bsky.social": "uk.org.publicwhip/person/26586",
     }
 
     for item in items:
