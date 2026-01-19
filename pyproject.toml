@@ -33,9 +33,7 @@ ruff = "^0.9.6"
 
 extend-include = ["scripts/*"]
 extend-exclude = [
-  'scripts/.gitignore',
   'scripts/2016_data_update/README.txt',
-  'scripts/config.pm.incvs',
   'scripts/consts',
   'scripts/crontab',
   'scripts/dailyupdate',
@@ -44,7 +42,6 @@ extend-exclude = [
   'scripts/datadotparl/one-off-add-pims-ids',
   'scripts/datadotparl/one-off-sync-lord-parties',
   'scripts/dircmp',
-  'scripts/divisionextractor.pl',
   'scripts/morningupdate',
   'scripts/ni-format-revert',
   'scripts/ni_membership.php',

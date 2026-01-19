@@ -12,10 +12,3 @@ fi
 # losing the actual source IP after the first request and being rejected.
 PRODSCRIPT=ukparse-morning-update-done.cgi
 curl -s -H 'X-Forwarded-For: 127.0.0.1' https://www.theyworkforyou.com/internal/$PRODSCRIPT/$RET >/dev/null &
-
-# Update division archive for Public Whip to feed from
-`dirname $0`/divisionextractor.pl
-
-# tell Public Whip to update
-PRODSCRIPT=ukparse-morning-update-done.cgi
-curl -s http://www.publicwhip.org.uk/$PRODSCRIPT >/dev/null &
