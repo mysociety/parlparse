@@ -66,6 +66,7 @@ def add_person_ids(items: list[dict[str, str]]):
         "alisonstaylormp.bsky.social": "uk.org.publicwhip/person/26563",
         "jamesnaish.bsky.social": "uk.org.publicwhip/person/26329",
         "louisesandherjones.bsky.social": "uk.org.publicwhip/person/26586",
+        "gwynnemp.bsky.social": "uk.org.publicwhip/person/11531",
     }
 
     for item in items:
