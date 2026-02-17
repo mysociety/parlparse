@@ -3,6 +3,7 @@ import datetime
 import click
 
 from .commons import process as commons_process
+from .lords import process as lords_process
 from .ni import process as ni_process
 from .scotland import process as scotland_process
 from .wales import process as wales_process
@@ -27,9 +28,16 @@ def download_all_registers(
     """
     Create all registers for a chamber - including fetching or trying to
     derive historical data where possible.
+
+    Note: For Lords, only the latest register is available as historical
+    data is not accessible via the API.
     """
     if chamber == "commons":
         commons_process.download_all_registers(
+            force_refresh=force_refresh, quiet=quiet, no_progress=no_progress
+        )
+    elif chamber == "lords":
+        lords_process.download_latest_register(
             force_refresh=force_refresh, quiet=quiet, no_progress=no_progress
         )
     elif chamber == "scotland":
@@ -88,6 +96,10 @@ def download_latest_register(
     """
     if chamber == "commons":
         commons_process.download_latest_register(
+            force_refresh=force_refresh, quiet=quiet, no_progress=no_progress
+        )
+    elif chamber == "lords":
+        lords_process.download_latest_register(
             force_refresh=force_refresh, quiet=quiet, no_progress=no_progress
         )
     elif chamber == "scotland":
