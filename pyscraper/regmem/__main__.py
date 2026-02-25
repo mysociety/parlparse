@@ -3,6 +3,7 @@ import datetime
 import click
 
 from .commons import process as commons_process
+from .funcs import write_regmem_index
 from .ni import process as ni_process
 from .scotland import process as scotland_process
 from .wales import process as wales_process
@@ -47,6 +48,8 @@ def download_all_registers(
     else:
         raise ValueError(f"Unknown chamber: {chamber}")
 
+    write_regmem_index()
+
 
 @cli.command()
 @click.option("--chamber", type=str, default="commons")
@@ -70,6 +73,8 @@ def download_register_from_date(
         )
     else:
         raise ValueError(f"Unknown chamber: {chamber}")
+
+    write_regmem_index()
 
 
 @cli.command()
@@ -111,6 +116,8 @@ def download_latest_register(
     else:
         raise ValueError(f"Unknown chamber: {chamber}")
 
+    write_regmem_index()
+
 
 @cli.command()
 def convert_legacy_xml_to_json():
@@ -119,6 +126,15 @@ def convert_legacy_xml_to_json():
     This is needed for consistent display logic on old MPs.
     """
     commons_process.convert_xml_folder()
+    write_regmem_index()
+
+
+@cli.command()
+def build_index():
+    """
+    Rebuild index.json for all stored universal regmem JSON files.
+    """
+    write_regmem_index()
 
 
 if __name__ == "__main__":
