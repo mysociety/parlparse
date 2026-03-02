@@ -5,6 +5,7 @@ RUN apt-get update && \
     update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1 && \
     pip install --upgrade pip
 
+ENV POETRY_VERSION 2.2.1
 RUN curl -sSL https://install.python-poetry.org | /usr/bin/python3 -
 ENV PATH="/root/.local/bin:$PATH"
 
