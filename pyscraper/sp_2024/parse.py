@@ -167,13 +167,22 @@ def process_raw_html(raw_html: Tag, agenda_item_url: str) -> BeautifulSoup:
     # if so the next sibling will be a list of speakers seperated by <br/>
     # we want to create a msplist tag, with a direction of 'For' or 'Against'
     # and then a list of speakers as 'mspname' tags
+
+    def _is_vote_header(tag, text):
+        """Match a <p> whose text content is exactly the vote header.
+
+        Handles both plain ``<p>For</p>`` and the newer
+        ``<p><span class="or-bill-section-bold">For</span></p>`` markup.
+        """
+        return tag.name == "p" and tag.get_text(strip=True) == text
+
     for speaker in soup.find_all("speech"):
-        for_tag = speaker.find("p", string="For")
-        against_tag = speaker.find("p", string="Against")
-        abstain_tag = speaker.find("p", string="Abstentions")
+        for_tag = speaker.find(lambda tag: _is_vote_header(tag, "For"))
+        against_tag = speaker.find(lambda tag: _is_vote_header(tag, "Against"))
+        abstain_tag = speaker.find(lambda tag: _is_vote_header(tag, "Abstentions"))
         for vote_tag in [for_tag, against_tag, abstain_tag]:
             if vote_tag:
-                vote_str = vote_tag.text.lower()
+                vote_str = vote_tag.get_text(strip=True).lower()
                 vote_div = soup.new_tag("msplist")
                 vote_div["vote"] = vote_str
                 # get all the speakers in the next sibling
