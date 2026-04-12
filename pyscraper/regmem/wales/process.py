@@ -231,6 +231,11 @@ def get_current_register(
 ):
     ms_ids = get_current_ms_ids()
 
+    if not ms_ids:
+        if not quiet:
+            print("No current Senedd members found.")
+        return
+
     try:
         person_entries = [
             get_ms_details(ms_id, lang=lang)
