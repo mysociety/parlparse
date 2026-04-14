@@ -1,0 +1,60 @@
+#!/usr/bin/env -S poetry run python
+
+"""
+Check that the number of current members per chamber doesn't exceed
+the expected seat count. Members can be fewer (e.g. during elections
+or vacancies) but should never exceed the total.
+"""
+
+from pathlib import Path
+
+from mysoc_validator import Popolo
+from mysoc_validator.models.dates import FixedDate
+from mysoc_validator.models.popolo import Chamber
+
+CHAMBER_MAX_MEMBERS = {
+    Chamber.COMMONS: 650,
+    Chamber.SCOTLAND: 129,
+    Chamber.SENEDD: 96,
+    Chamber.NORTHERN_IRELAND: 90,
+}
+
+
+def main():
+    popolo = Popolo.from_path(Path("members", "people.json"))
+
+    # Build post_id sets per chamber
+    chamber_posts: dict[Chamber, set[str]] = {}
+    for chamber in CHAMBER_MAX_MEMBERS:
+        chamber_posts[chamber] = {
+            str(p.id) for p in popolo.posts if p.organization_id == chamber
+        }
+
+    # Count current memberships per chamber
+    chamber_counts: dict[Chamber, int] = {c: 0 for c in CHAMBER_MAX_MEMBERS}
+    for m in popolo.memberships:
+        post_id = str(m.post_id)
+        if m.end_date == FixedDate.FUTURE:
+            for chamber, post_ids in chamber_posts.items():
+                if post_id in post_ids:
+                    chamber_counts[chamber] += 1
+                    break
+
+    errors = False
+    for chamber, max_members in CHAMBER_MAX_MEMBERS.items():
+        count = chamber_counts[chamber]
+        if count > max_members:
+            errors = True
+            print(
+                f"ERROR: {chamber.value} has {count} current members, "
+                f"expected no more than {max_members}."
+            )
+        else:
+            print(f"{chamber.value}: {count} current members (max {max_members}).")
+
+    if errors:
+        raise SystemExit(1)
+
+
+if __name__ == "__main__":
+    main()
