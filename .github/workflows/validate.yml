@@ -25,3 +25,6 @@ jobs:
 
     - name: validate people.json file
       run: poetry run mysoc-validator popolo validate members/people.json
+
+    - name: check chamber membership counts
+      run: poetry run python scripts/check-membership-counts
