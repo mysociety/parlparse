@@ -9,11 +9,16 @@ import unicodedata
 import urllib.request
 
 DATE = "2026-05-07"
-TYPE = "senedd"
-HOUSE = "welsh-parliament"
-NUM_MEMBERS = 16
-MULTI_MEMBER_FINAL = True
-CSV_URL = f"https://candidates.democracyclub.org.uk/data/export_csv/?election_id={TYPE}.{DATE}&extra_fields=elected&extra_fields=tied_vote_winner&extra_fields=results_source&extra_fields=mnis_id&extra_fields=twfy_id&format=csv"
+START_DATE = "2026-05-08"
+START_REASON = "regional_election"  # general_election
+TYPE = ["sp.c", "sp.r"]  # senedd / parl
+HOUSE = "scottish-parliament"  # welsh-parliament / house-of-commons
+NUM_POSTS = 81  # 16 / 650
+MULTI_MEMBER_FINAL = True  # False
+
+IDS = list(map(lambda x: f"{x}.{DATE}", TYPE))
+IDS_URL = "|".join(IDS)
+CSV_URL = f"https://candidates.democracyclub.org.uk/data/export_csv/?election_id={IDS_URL}&extra_fields=elected&extra_fields=tied_vote_winner&extra_fields=results_source&extra_fields=mnis_id&extra_fields=twfy_id&format=csv"
 JSON = os.path.join(os.path.dirname(__file__), "..", "..", "members", "people.json")
 
 
@@ -74,8 +79,8 @@ def update_from(csv_url, data):
         new_mship = {
             "on_behalf_of_id": data["orgs"][party],
             "person_id": person_id,
-            "start_date": "2024-07-05",
-            "start_reason": "general_election",
+            "start_date": START_DATE,
+            "start_reason": START_REASON,
         }
         if cons in data["existing"]:
             mship = data["existing"][cons]
@@ -170,7 +175,7 @@ def load_data():
         for p in j["posts"]
         if p["organization_id"] == HOUSE and "end_date" not in p
     }
-    assert len(posts_by_name) == NUM_MEMBERS
+    assert len(posts_by_name) == NUM_POSTS, len(posts_by_name)
     orgs = {o["name"]: o["id"] for o in j["organizations"]}
     max_person_id = max(
         int(p["id"].replace("uk.org.publicwhip/person/", "")) for p in j["persons"]
@@ -230,7 +235,7 @@ def ynmp_csv_reader(fn):
         fn = urllib.request.urlopen(fn)
         fn = codecs.getreader("utf-8")(fn)  # Stream in as Unicode
     for row in csv.DictReader(fn):
-        assert row["election_id"] == f"{TYPE}.{DATE}"
+        assert row["election_id"] in IDS
         name = row["person_name"].strip()
         # TWFY has separate first/last name fields. This should catch most.
         m = re.match(
@@ -240,8 +245,9 @@ def ynmp_csv_reader(fn):
         given, family = m.groups()
         party = row["party_name"]
         party = PARTY_YNMP_TO_TWFY.get(party, party)
-        m = re.match(rf"{TYPE}\.(.*)\.{DATE}", row["ballot_paper_id"])
-        cons = m.group(1)
+        regex_id = list(map(lambda x: rf"{x}\.(.*)\.{DATE}", TYPE))
+        m = re.match("|".join(regex_id), row["ballot_paper_id"])
+        cons = m.group(1) or m.group(2)  # Assumes no more than 2
         m = re.search(r"(\d+)", row["twfy_id"])
         person_id = "uk.org.publicwhip/person/" + m.group(1) if m else None
         ynmp_id = int(row["person_id"])
