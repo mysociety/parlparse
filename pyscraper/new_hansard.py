@@ -93,6 +93,7 @@ class BaseParseDayXML(object):
         "hs_6bBusinessB4Questions",
         "hs_6bPrivateBusiness",
         "hs_6bRoyalAssent",
+        "hs_6bMember",
         "hs_6bBillsPresented",  # FIXME should grab text of following tag
         "hs_6fCntrItalHdg",
         "hs_2cSO24Application",
@@ -689,6 +690,11 @@ class BaseParseDayXML(object):
             if len(bs) == 1:
                 m_name = {"name": re.sub("\s+", " ", bs[0].text).strip()}
             elif len(bs) == 0:
+                if not members[0].text:
+                    raise ContextException(
+                        "missing data",
+                        fragment=etree.tostring(para),
+                    )
                 m_name = {"name": re.sub("\s+", " ", members[0].text).strip()}
             self.new_speech(m_name, para.get("url"))
         elif self.current_speech is None:
