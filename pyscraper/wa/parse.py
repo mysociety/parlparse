@@ -181,7 +181,9 @@ class ParseDay:
         )
         if not text_cy and not text_en:
             return
-        member_id = item.Member_Id.string
+        member_id = item.Member_Id
+        if member_id:
+            member_id = member_id.string
         if member_id:
             name = str(item.Member_name_English.string or "")
             if member_id == "7":
@@ -304,10 +306,18 @@ class ParseDay:
                 lang = "cy"
         return lang, text_cy, text_en
 
+    @staticmethod
+    def _xml_elts(typ):
+        return [
+            f"XML_Plenary_{typ}",
+            f"XML_Plenary-FifthSenedd_{typ}",
+            f"XML_Plenary-SixthSenedd_{typ}",
+        ]
+
     def parse_votes(self, votes):
         soup = BeautifulSoup(votes, "xml")
         self.divisions = {}
-        for item in soup.find_all(["XML_Plenary_Vote", "XML_Plenary-FifthSenedd_Vote"]):
+        for item in soup.find_all(self._xml_elts("Vote")):
             vote_id = int(item.Contribution_ID.string)
             if vote_id not in self.divisions:
                 self.divisions[vote_id] = {
@@ -338,9 +348,7 @@ class ParseDay:
         current_agenda_en = ""
         major = False
         c = 0  # There are duplicate order IDs in the QNR
-        for item in soup.find_all(
-            ["XML_Plenary_QNR_Bilingual", "XML_Plenary-FifthSenedd_QNR_Bilingual"]
-        ):
+        for item in soup.find_all(self._xml_elts("QNR_Bilingual")):
             if not major:
                 major = True
                 self.add_speech(
@@ -366,9 +374,7 @@ class ParseDay:
 
         self.speeches = []
         current_agenda_id = "0"
-        for item in soup.find_all(
-            ["XML_Plenary_Bilingual", "XML_Plenary-FifthSenedd_Bilingual"]
-        ):
+        for item in soup.find_all(self._xml_elts("Bilingual")):
             # entry_id = item.Contribution_ID
             # tv_spoken = item.contribution_spoken_seneddTv
             # tv_translated = item.contribution_translated_seneddTv

@@ -94,7 +94,11 @@ for parl in parls:
                 continue
 
             date, typ, bilingual, welsh, english, qnr, votes = tds
-            assert next(typ.stripped_strings) in ("Plenary - Fifth Senedd", "Plenary")
+            assert next(typ.stripped_strings) in (
+                "Plenary - Fifth Senedd",
+                "Plenary",
+                "Plenary - Sixth Senedd",
+            )
 
             date = next(date.stripped_strings)
             date = datetime.datetime.strptime(date, "%d/%m/%Y %H:%M").date()
