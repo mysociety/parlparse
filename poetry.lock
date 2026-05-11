@@ -2575,14 +2575,14 @@ files = [
 
 [[package]]
 name = "mysoc-validator"
-version = "1.2.0"
+version = "1.3.1"
 description = "Pydantic validators for mySociety democracy types"
 optional = false
 python-versions = "<4.0,>=3.9"
 groups = ["main"]
 files = [
-    {file = "mysoc_validator-1.2.0-py3-none-any.whl", hash = "sha256:536465440c000cd0da6cd076097cdd5e0eb694f75487074e11a8403d5a47b86c"},
-    {file = "mysoc_validator-1.2.0.tar.gz", hash = "sha256:5e83cfd3ed336525e13bb40d00e9e615d73f0540351c0788a80ce5bc1d2b375d"},
+    {file = "mysoc_validator-1.3.1-py3-none-any.whl", hash = "sha256:f0a3013ff5e5a1b4a209bb95a0ef73eb1200562e8a727895de8c4c03c1cda85c"},
+    {file = "mysoc_validator-1.3.1.tar.gz", hash = "sha256:7b6cc3cf4dbb3683f1d75945da8a3741cb5449b9fb45c57d081feeaae9cf1218"},
 ]
 
 [package.dependencies]
@@ -3462,6 +3462,21 @@ azure-key-vault = ["azure-identity (>=1.16.0)", "azure-keyvault-secrets (>=4.8.0
 gcp-secret-manager = ["google-cloud-secret-manager (>=2.23.1)"]
 toml = ["tomli (>=2.0.1)"]
 yaml = ["pyyaml (>=6.0.1)"]
+
+[[package]]
+name = "pydantic-store"
+version = "0.1.0"
+description = "Helper models and backports"
+optional = false
+python-versions = "<4.0,>=3.9"
+groups = ["main"]
+files = [
+    {file = "pydantic_store-0.1.0-py3-none-any.whl", hash = "sha256:598dacd0324556a32bdbbfda77c2dacbc75bd46cf3e2a385f8cd2eee0d8400f2"},
+    {file = "pydantic_store-0.1.0.tar.gz", hash = "sha256:085d8645ff5f3be627f7bdce7577ac01ae814b23af51cc733fdb97709e50a2dd"},
+]
+
+[package.dependencies]
+pydantic = ">=2.0"
 
 [[package]]
 name = "pygments"
@@ -4774,4 +4789,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.9,<3.10"
-content-hash = "af80cde901f642f4357332e4e180554bb3801f17a78ce02b877604af203cce1d"
+content-hash = "bb923fdb20817cc263da2b8155f56ec69e4c8f5739b92d4fca5b1bd4bf5256c8"

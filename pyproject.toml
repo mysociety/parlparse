@@ -11,7 +11,7 @@ requests = { version = "2.32.3", extras = ["security"] }
 requests-cache = "0.4.13"
 Click = "^8.0"
 click-log = "0.3.2"
-mysoc-validator = "^1.2.0"
+mysoc-validator = "^1.3.1"
 tqdm = "^4.67.1"
 jinja2 = "^3.1.4"
 html5lib = "^1.1"
@@ -25,6 +25,7 @@ spacy = "^3.8.7"
 pydantic-ai = "0.8.0"
 jsonref = "^1.1.0"
 duckdb = "^1.4.1"
+pydantic-store = "^0.1.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.9.6"
