@@ -31,6 +31,7 @@ data = ElementTree.fromstring(r.content)
 
 NAME_FIXES = {
     "Eluned Morgan": "Baroness Morgan of Ely",
+    "Dafydd Trystan Davies": "Dafydd Davies",
 }
 
 candidates = []
