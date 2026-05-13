@@ -16,9 +16,7 @@ file_dir = os.path.join(os.path.abspath(os.path.dirname(__file__)), "..")
 sys.path.insert(0, file_dir)
 from ni.resolvenames import memberList
 
-wiki_index_url = (
-    "https://en.wikipedia.org/wiki/Members_of_the_4th_Northern_Ireland_Assembly"
-)
+wiki_index_url = "https://en.wikipedia.org/wiki/7th_Northern_Ireland_Assembly"
 wikimembers = {}
 
 
@@ -54,11 +52,11 @@ for change in changes:
             <td>(?:<a[ ]href="(/(?:wiki|w)/[^"]+)"[^>]*>([^<]+)</a>|<i>Vacant</i>).*?\s*</td> # Incoming""",
         change,
     ):
-        matches.add((m[0], m[1], None))
+        matches.add((m[0], m[1], ""))
         if m[2]:
-            matches.add((m[2], m[3], None))
+            matches.add((m[2], m[3], ""))
 
-for url, name, cons in matches:
+for url, name, cons in sorted(matches):
     date = None
     if "Mark Durkan" in name:
         date = "2008-01-01"
