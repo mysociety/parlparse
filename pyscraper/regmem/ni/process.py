@@ -28,7 +28,7 @@ def fetch_data_remote():
     """
     dataset_path.parent.mkdir(parents=True, exist_ok=True)
 
-    data = requests.post(dataset_url).json()
+    data = requests.post(dataset_url, timeout=60).json()
     dataset_path.write_text(json.dumps(data, indent=2))
 
 

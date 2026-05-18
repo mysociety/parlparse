@@ -31,7 +31,7 @@ def get_data(dump_rejected: bool = True):
     Excluding 'rejected' items - which seems right, but might need to be revisited.
     (There's not many.)
     """
-    data = requests.get(dataset_url).json()
+    data = requests.get(dataset_url, timeout=60).json()
     entries = TypeAdapter(list[ScotAPIEntry]).validate_python(data)
     if dump_rejected:
         entries = [
