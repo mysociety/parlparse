@@ -3235,7 +3235,8 @@
       "uk.org.publicwhip/person/11189"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2021-05-20"
+    "start_date": "2021-05-20",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/296",
@@ -3431,7 +3432,8 @@
       "uk.org.publicwhip/person/25503"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-29"
+    "start_date": "2023-03-29",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/314",
@@ -3688,7 +3690,8 @@
       "uk.org.publicwhip/person/14012"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2024-02-20"
+    "start_date": "2024-02-20",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/338",
@@ -3719,7 +3722,8 @@
       "uk.org.publicwhip/person/10581"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2024-05-07"
+    "start_date": "2024-05-07",
+    "end_date": "2026-05-19"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/341",
@@ -3729,7 +3733,8 @@
       "uk.org.publicwhip/person/14085"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2024-05-08"
+    "start_date": "2024-05-08",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/342",
@@ -3769,7 +3774,8 @@
     "role": "Minister for Children, Young People and The Promise",
     "person_id": [],
     "organization_id": "scottish-parliament",
-    "start_date": "2024-05-08"
+    "start_date": "2024-05-08",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/346",
@@ -3822,7 +3828,8 @@
       "uk.org.publicwhip/person/26014"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2024-05-08"
+    "start_date": "2024-05-08",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/351",
@@ -3832,7 +3839,8 @@
       "uk.org.publicwhip/person/25504"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2024-05-09"
+    "start_date": "2024-05-09",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/352",
@@ -3884,7 +3892,8 @@
       "uk.org.publicwhip/person/14029"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2025-06-11"
+    "start_date": "2025-06-11",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/357",
@@ -3914,7 +3923,8 @@
       "uk.org.publicwhip/person/25081"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2025-09-21"
+    "start_date": "2025-09-21",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/360",
@@ -3925,5 +3935,15 @@
     ],
     "organization_id": "scottish-parliament",
     "start_date": "2025-09-23"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/361",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "First Minister",
+    "person_id": [
+      "uk.org.publicwhip/person/10581"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2026-05-19"
   }
 ]
