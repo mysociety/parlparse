@@ -3356,7 +3356,8 @@
       "uk.org.publicwhip/person/14100"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-29"
+    "start_date": "2023-03-29",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/307",
@@ -3465,7 +3466,8 @@
       "uk.org.publicwhip/person/25506"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-30"
+    "start_date": "2023-03-30",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/317",
@@ -3497,7 +3499,8 @@
       "uk.org.publicwhip/person/13969"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-30"
+    "start_date": "2023-03-30",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/320",
@@ -3518,7 +3521,8 @@
       "uk.org.publicwhip/person/26007"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-30"
+    "start_date": "2023-03-30",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/322",
@@ -3581,7 +3585,8 @@
       "uk.org.publicwhip/person/25986"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2023-03-30"
+    "start_date": "2023-03-30",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/328",
@@ -3701,7 +3706,8 @@
       "uk.org.publicwhip/person/25995"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2024-02-20"
+    "start_date": "2024-02-20",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/339",
@@ -3766,7 +3772,8 @@
       "uk.org.publicwhip/person/25527"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2024-05-09"
+    "start_date": "2024-05-09",
+    "end_date": "2026-05-21"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/345",
@@ -3818,7 +3825,8 @@
       "uk.org.publicwhip/person/25293"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2024-05-08"
+    "start_date": "2024-05-08",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/350",
@@ -3872,7 +3880,8 @@
       "uk.org.publicwhip/person/26004"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2025-06-11"
+    "start_date": "2025-06-11",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/355",
@@ -3882,7 +3891,8 @@
       "uk.org.publicwhip/person/25525"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2025-06-11"
+    "start_date": "2025-06-11",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/356",
@@ -3903,7 +3913,8 @@
       "uk.org.publicwhip/person/25491"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2025-06-11"
+    "start_date": "2025-06-11",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/358",
@@ -3913,7 +3924,8 @@
       "uk.org.publicwhip/person/25540"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2025-06-11"
+    "start_date": "2025-06-11",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/359",
@@ -3934,7 +3946,8 @@
       "uk.org.publicwhip/person/25523"
     ],
     "organization_id": "scottish-parliament",
-    "start_date": "2025-09-23"
+    "start_date": "2025-09-23",
+    "end_date": "2026-05-20"
   },
   {
     "id": "scot.parliament.data/membergovernmentroles/361",
@@ -3945,5 +3958,63 @@
     ],
     "organization_id": "scottish-parliament",
     "start_date": "2026-05-19"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/363",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Cabinet Secretary for Justice",
+    "person_id": [
+      "uk.org.publicwhip/person/25293"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2026-05-20"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/368",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Parliamentary Business and Veterans",
+    "person_id": [
+      "uk.org.publicwhip/person/14009"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2026-05-20"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/369",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Children, Young People and The Promise",
+    "person_id": [
+      "uk.org.publicwhip/person/25986"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2026-05-21"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/377",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Parliamentary Business and Veterans",
+    "person_id": [
+      "uk.org.publicwhip/person/14009"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2026-05-21"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/378",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Public Finance",
+    "person_id": [],
+    "organization_id": "scottish-parliament",
+    "start_date": "2026-05-21"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/379",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Victims and Community Safety",
+    "person_id": [
+      "uk.org.publicwhip/person/25294"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2026-05-21"
   }
 ]
