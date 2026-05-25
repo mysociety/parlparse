@@ -1,3 +1,4 @@
+import re
 import time
 from datetime import datetime
 from itertools import zip_longest
@@ -60,7 +61,6 @@ def get_current_ms_ids() -> list[int]:
 
     headers = {"User-Agent": "TWFY interests scraper"}
     content = requests.get(url, headers=headers).content
-
     # extract all links that start with https://business.senedd.wales/mgRofI.aspx?UID=
     soup = BeautifulSoup(content, "html.parser")
 
@@ -75,22 +75,6 @@ def get_current_ms_ids() -> list[int]:
     ms_ids.sort()
 
     return ms_ids
-
-
-def tidy_category(category: str) -> tuple[int, str]:
-    # get id and name from '1. Category 1: Directorships' or similar
-    # text is after the first :
-    if ":" in category:
-        category_id, category_name = category.split(":", 1)
-        category_id = int(category_id.split(".")[0])
-        category_name = category_name.strip()
-    else:
-        category_id, category_name = category.split(".", 1)
-        category_id = int(category_id)
-        category_name = category_name.strip()
-    if category_name.endswith(":"):
-        category_name = category_name[:-1]
-    return category_id, category_name
 
 
 def get_ms_details(ms_id: int, *, lang: Literal["en", "cy"] = "en") -> RegmemPerson:
@@ -165,19 +149,36 @@ def get_ms_details(ms_id: int, *, lang: Literal["en", "cy"] = "en") -> RegmemPer
     else:
         raise ValueError("Could not find date")
 
-    # Extract tables and captions
-    # The captions are the category names
-    # the tables include the data
+    # Extract category metadata from HTML tables and data from pandas tables.
     tables = soup.find_all("table")
-    captions = [
-        table.caption.get_text(strip=True) if table.caption else None
-        for table in tables
-    ]
 
     categories: list[RegmemCategory] = []
 
-    for caption, table in zip_longest(captions, items):
-        category_id, category_name = tidy_category(str(caption))
+    for table_soup, table in zip_longest(tables, items):
+        if table_soup is None or table is None:
+            continue
+
+        # Senedd format example
+        # <table class="mgInterestsTable" ...>
+        #   <caption>Remunerated Employment, Directorships etc.</caption>
+        #   <tr><th scope="col">Category 1</th></tr>
+        #   <tr><td>Entry in respect of: ...</td></tr>
+        # </table>
+        # Category name from <caption>
+        # Category id from the <th> text.
+        caption = table_soup.caption.get_text(strip=True) if table_soup.caption else ""
+        header = table_soup.find("th")
+        category_heading = header.get_text(strip=True) if header else ""
+
+        category_name = caption.strip().removesuffix(":")
+        category_heading = category_heading.strip()
+        match = re.search(r"(\d+)", category_heading)
+        if not match:
+            raise ValueError(
+                f"Could not parse category id from heading '{category_heading}'"
+            )
+        category_id = int(match.group(1))
+
         category = RegmemCategory(
             category_id=str(category_id), category_name=category_name
         )
