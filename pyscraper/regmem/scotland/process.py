@@ -212,6 +212,10 @@ def download_all_registers(
     """
 
     entries = get_data()
+    if len(entries) == 0:
+        if not quiet:
+            print("No entries found, skipping")
+        return
 
     updated_dates = [x.updated_date.date() for x in entries if x.updated_date]
     updated_dates = list(set(updated_dates))
