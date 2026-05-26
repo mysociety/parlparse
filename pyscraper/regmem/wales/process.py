@@ -59,7 +59,9 @@ def get_current_ms_ids() -> list[int]:
     url = "https://senedd.wales/senedd-business/register-of-members-interests/"
 
     headers = {"User-Agent": "TWFY interests scraper"}
-    content = requests.get(url, headers=headers).content
+    # senedd.wales periodically stalls; without a timeout the scraper hangs
+    # indefinitely and the scheduled job never completes.
+    content = requests.get(url, headers=headers, timeout=60).content
 
     # extract all links that start with https://business.senedd.wales/mgRofI.aspx?UID=
     soup = BeautifulSoup(content, "html.parser")
@@ -110,7 +112,9 @@ def get_ms_details(ms_id: int, *, lang: Literal["en", "cy"] = "en") -> RegmemPer
         raise ValueError("lang must be 'en' or 'cy'")
 
     headers = {"User-Agent": "TWFY interests scraper"}
-    content = requests.get(url, headers=headers).content
+    # senedd.wales periodically stalls; without a timeout the scraper hangs
+    # indefinitely and the scheduled job never completes.
+    content = requests.get(url, headers=headers, timeout=60).content
 
     max_attempts = 3
     current_attempt = 0
@@ -137,7 +141,7 @@ def get_ms_details(ms_id: int, *, lang: Literal["en", "cy"] = "en") -> RegmemPer
                     )
                 time.sleep(10)
                 # Get fresh content for the retry
-                content = requests.get(url, headers=headers).content
+                content = requests.get(url, headers=headers, timeout=60).content
 
             else:
                 # Another error
