@@ -1,7 +1,7 @@
 import time
 from datetime import datetime
 from itertools import zip_longest
-from typing import Literal
+from typing import Literal, Optional
 
 import pandas as pd
 import requests
@@ -20,6 +20,10 @@ from tqdm import tqdm
 from pyscraper.regmem.funcs import get_popolo, parldata_path
 from pyscraper.regmem.legacy_converter import write_register_to_xml
 
+REQUEST_TIMEOUT = 30
+MAX_RETRIES = 5
+RETRY_DELAY = 10
+
 
 class ScraperError(Exception):
     """
@@ -27,6 +31,35 @@ class ScraperError(Exception):
     """
 
     pass
+
+
+def fetch_url(
+    url: str,
+    *,
+    headers: Optional[dict] = None,
+    max_retries: int = MAX_RETRIES,
+    timeout: int = REQUEST_TIMEOUT,
+) -> bytes:
+    """
+    Fetch a URL with timeout, retry, and exponential backoff.
+    """
+    if headers is None:
+        headers = {"User-Agent": "TWFY interests scraper"}
+    for attempt in range(1, max_retries + 1):
+        try:
+            response = requests.get(url, headers=headers, timeout=timeout)
+            response.raise_for_status()
+            return response.content
+        except requests.RequestException as e:
+            if attempt < max_retries:
+                print(
+                    f"Request to {url} failed (attempt {attempt}/{max_retries}): {e}. "
+                )
+                time.sleep(RETRY_DELAY)
+            else:
+                raise ScraperError(
+                    f"Failed to fetch URL {url} after {max_retries} attempts"
+                ) from e
 
 
 def welsh_to_english_months(date_str: str) -> str:
@@ -58,11 +91,10 @@ def get_current_ms_ids() -> list[int]:
     """
     url = "https://senedd.wales/senedd-business/register-of-members-interests/"
 
-    headers = {"User-Agent": "TWFY interests scraper"}
-    content = requests.get(url, headers=headers).content
+    content = fetch_url(url)
 
     # extract all links that start with https://business.senedd.wales/mgRofI.aspx?UID=
-    soup = BeautifulSoup(content, "html.parser")
+    soup = BeautifulSoup(content.decode("utf-8"), "html.parser")
 
     ms_ids = [
         int(a["href"].split("UID=")[1])
@@ -109,13 +141,11 @@ def get_ms_details(ms_id: int, *, lang: Literal["en", "cy"] = "en") -> RegmemPer
     else:
         raise ValueError("lang must be 'en' or 'cy'")
 
-    headers = {"User-Agent": "TWFY interests scraper"}
-    content = requests.get(url, headers=headers).content
-
     max_attempts = 3
     current_attempt = 0
 
     while current_attempt < max_attempts:
+        content = fetch_url(url)
         try:
             items = pd.read_html(content)
             break  # If successful, exit the loop
@@ -137,14 +167,14 @@ def get_ms_details(ms_id: int, *, lang: Literal["en", "cy"] = "en") -> RegmemPer
                     )
                 time.sleep(10)
                 # Get fresh content for the retry
-                content = requests.get(url, headers=headers).content
+                content = fetch_url(url)
 
             else:
                 # Another error
                 raise e
 
     # Parse HTML with BeautifulSoup
-    soup = BeautifulSoup(content, "html.parser")
+    soup = BeautifulSoup(content.decode("utf-8"), "html.parser")
 
     # get the name
     name = soup.find("h2", class_="mgSubTitleTxt")
