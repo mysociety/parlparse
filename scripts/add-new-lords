@@ -150,7 +150,7 @@ for member in parl_members:
         changed = True
     elif data.names[person["id"]] == name:
         # Same lord name, assume already got them. Check they are still current
-        mships = data.memberships.of_person(person["id"])
+        mships = data.memberships.in_org('house-of-lords').of_person(person["id"])
         mships = [m for m in mships]
         mships.sort(key=lambda x: x.get("end_date", "9999-12-31"))
         mship = mships[-1]
