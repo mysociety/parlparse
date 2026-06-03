@@ -177,6 +177,20 @@ for member in parl_members:
                 and us == "2022-06-29"
             ):
                 continue
+
+            # End of the hereditaries, assume back with same name
+            if us == "2026-04-29":
+                lord_id = new_id(data.max_lord_id())
+                print(
+                    "{} is a returning Lord, person ID {}, lord ID {}".format(
+                        name, person["id"], lord_id
+                    )
+                )
+                membership = construct_membership(member, person["id"], lord_id)
+                data.add_membership(membership)
+                changed = True
+                continue
+
             print("*", name, "Parl=", end_date, "Us=", mship.get("end_date", "-"))
         continue
     else:
