@@ -7,6 +7,12 @@ from typing import Optional
 from mysoc_validator import Popolo
 from pydantic import BaseModel, RootModel
 
+from pyscraper.settings import settings
+
+# reexport for convenience
+memberdata_path = settings.memberdata_path
+parldata_path = settings.parldata_path
+
 
 def nice_name(name: Optional[str]) -> str:
     """
@@ -27,20 +33,6 @@ def nice_name(name: Optional[str]) -> str:
 
     # capitalise first letter
     return split[0].upper() + split[1:]
-
-
-def get_higher_path(folder_name: str) -> Path:
-    current_level = Path.cwd()
-    allowed_levels = 3
-    for i in range(allowed_levels):
-        if (current_level / folder_name).exists():
-            return current_level / folder_name
-        current_level = current_level.parent
-    return Path.home() / folder_name
-
-
-parldata_path = get_higher_path("parldata")
-memberdata_path = get_higher_path("members")
 
 
 @lru_cache
