@@ -190,6 +190,9 @@ class LordsList(ResolverBase):
                         ("Earl", "Kinnoull"),
                         ("Earl", "Selborne"),
                         ("Earl", "Oxford and Asquith"),
+                        ("Earl", "Courtown"),
+                        ("Earl", "Effingham"),
+                        ("Earl", "Minto"),
                     )
                 ):
                     print(lm)
