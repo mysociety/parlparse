@@ -58,7 +58,7 @@ def get_scotapi_data():
     pop = Popolo.from_path(Path("members", "people.json"))
 
     def get_reversed_result(name: str, date: datetime.datetime) -> PopoloPerson:
-        manual_fixes = {"Natalie Don-Innes": "Natalie Don", "Ash Regan": "Ash Denham"}
+        manual_fixes = {"Natalie Don-Innes": "Natalie Don", "Ash Regan": "Ash Denham", "Hannah Mary Goodlad": "Hannah Goodlad"}
 
         # take a last name, first name, convert to first name last name and return the person object
         last, first = [x.strip() for x in name.split(",")]
