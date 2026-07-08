@@ -189,6 +189,9 @@ class ParseDay:
             if member_id == "7":
                 speaker_id = None
                 name = "Member of the Senedd"
+            elif member_id == "12193":  # Elfyn Llwyd
+                speaker_id = None
+                name = "Elfyn Llwyd"
             else:
                 try:
                     person = memberList.match_by_id(member_id, self.date)
