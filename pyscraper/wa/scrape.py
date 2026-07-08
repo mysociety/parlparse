@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 
 FIFTH_PARLIAMENT = 401
 SIXTH_PARLIAMENT = 700
+SEVENTH_PARLIAMENT = 908
 
 DOMAIN = "https://record.senedd.wales"
 HTML_PAGE_URL = "%s/XMLExport/?committee={}&page={}" % DOMAIN
@@ -73,9 +74,9 @@ def write_data(url, typ, date):
 
 
 if daily:
-    parls = (SIXTH_PARLIAMENT,)
+    parls = (SEVENTH_PARLIAMENT,)
 else:
-    parls = (FIFTH_PARLIAMENT, SIXTH_PARLIAMENT)
+    parls = (FIFTH_PARLIAMENT, SIXTH_PARLIAMENT, SEVENTH_PARLIAMENT)
 
 for parl in parls:
     page = 1
