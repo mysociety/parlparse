@@ -31208,7 +31208,7 @@
       "person_id": "uk.org.publicwhip/person/10549",
       "organization_id": "house-of-commons",
       "start_date": "2024-10-08",
-      "end_date": "2025-03-03"
+      "end_date": "2025-03-04"
     },
     {
       "id": "uk.parliament.data/Member/269/GovernmentPost/1298",
@@ -31218,14 +31218,6 @@
       "organization_id": "house-of-commons",
       "start_date": "2025-03-04",
       "end_date": "2026-07-21"
-    },
-    {
-      "id": "uk.parliament.data/Member/269/GovernmentPost/1321",
-      "source": "datadotparl/governmentpost",
-      "role": "Minister of State (Minister for Women and Equalities) ",
-      "person_id": "uk.org.publicwhip/person/10549",
-      "organization_id": "house-of-commons",
-      "start_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/269/GovernmentPost/211",
@@ -34190,6 +34182,15 @@
       "end_date": "2024-05-08"
     },
     {
+      "id": "uk.parliament.data/Member/163/GovernmentPost/1149",
+      "source": "datadotparl/governmentpost",
+      "role": "Minister for Equalities (Department for Education)",
+      "person_id": "uk.org.publicwhip/person/10596",
+      "organization_id": "house-of-commons",
+      "start_date": "2024-07-08",
+      "end_date": "2026-07-21"
+    },
+    {
       "id": "uk.parliament.data/Member/163/GovernmentPost/115",
       "source": "datadotparl/governmentpost",
       "role": "Minister of State (e-Commerce & Competitiveness)",
@@ -34197,6 +34198,14 @@
       "organization_id": "house-of-commons",
       "start_date": "2002-05-29",
       "end_date": "2004-09-09"
+    },
+    {
+      "id": "uk.parliament.data/Member/163/GovernmentPost/1323",
+      "source": "datadotparl/governmentpost",
+      "role": "Minister of State (Ministry of Housing Communities and Local Government) (Equalities)",
+      "person_id": "uk.org.publicwhip/person/10596",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/163/GovernmentPost/150",
@@ -37043,7 +37052,16 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/10648",
       "organization_id": "national-resilience-committee",
-      "start_date": "2026-01-27"
+      "start_date": "2026-01-27",
+      "end_date": "2026-07-23"
+    },
+    {
+      "id": "uk.parliament.data/Member/390/GovernmentPost/1239",
+      "source": "datadotparl/governmentpost",
+      "role": "Parliamentary Under-Secretary (Foreign, Commonwealth and Development Office)",
+      "person_id": "uk.org.publicwhip/person/10648",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-23"
     },
     {
       "id": "uk.parliament.data/Member/390/GovernmentPost/193",
@@ -117948,7 +117966,8 @@
       "role": "Chair",
       "person_id": "uk.org.publicwhip/person/25044",
       "organization_id": "economic-affairs-committee",
-      "start_date": "2025-01-30"
+      "start_date": "2025-01-30",
+      "end_date": "2026-07-24"
     },
     {
       "id": "uk.parliament.data/Member/4217/Committee/175/1",
@@ -117956,7 +117975,8 @@
       "role": "Chair",
       "person_id": "uk.org.publicwhip/person/25044",
       "organization_id": "economic-affairs-committee",
-      "start_date": "2025-01-30"
+      "start_date": "2025-01-30",
+      "end_date": "2026-07-24"
     },
     {
       "id": "uk.parliament.data/Member/4217/Committee/176",
@@ -118013,6 +118033,14 @@
       "organization_id": "european-affairs-committee",
       "start_date": "2021-04-14",
       "end_date": "2024-01-31"
+    },
+    {
+      "id": "uk.parliament.data/Member/4217/GovernmentPost/1239",
+      "source": "datadotparl/governmentpost",
+      "role": "Parliamentary Under-Secretary (Foreign, Commonwealth and Development Office)",
+      "person_id": "uk.org.publicwhip/person/25044",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-23"
     },
     {
       "id": "uk.parliament.data/Member/4217/OppositionPost/1074",
@@ -134205,6 +134233,14 @@
       "end_date": "2025-05-15"
     },
     {
+      "id": "uk.parliament.data/Member/4418/GovernmentPost/1120",
+      "source": "datadotparl/governmentpost",
+      "role": "Parliamentary Under-Secretary (Department for Transport)",
+      "person_id": "uk.org.publicwhip/person/25378",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
+    },
+    {
       "id": "uk.parliament.data/Member/4418/GovernmentPost/1281",
       "source": "datadotparl/governmentpost",
       "role": "Parliamentary Under-Secretary of State (Department for Business and Trade)",
@@ -134479,6 +134515,14 @@
       "organization_id": "football-governance-bill-hl-committee",
       "start_date": "2025-05-14",
       "end_date": "2025-06-17"
+    },
+    {
+      "id": "uk.parliament.data/Member/4491/GovernmentPost/1204",
+      "source": "datadotparl/governmentpost",
+      "role": "Parliamentary Under-Secretary of State (Department for Digital, Culture, Media and Sport)",
+      "person_id": "uk.org.publicwhip/person/25380",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/4491/GovernmentPost/1230",
@@ -141054,6 +141098,14 @@
       "organization_id": "nondomestic-rating-multipliers-and-private-schools-bill-committee",
       "start_date": "2024-12-04",
       "end_date": "2024-12-12"
+    },
+    {
+      "id": "uk.parliament.data/Member/4569/GovernmentPost/1209",
+      "source": "datadotparl/governmentpost",
+      "role": "Parliamentary Under-Secretary (Housing, Communities and Local Government)",
+      "person_id": "uk.org.publicwhip/person/25475",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/4569/GovernmentPost/1214",
@@ -153275,6 +153327,14 @@
       "end_date": "2025-03-25"
     },
     {
+      "id": "uk.parliament.data/Member/4873/GovernmentPost/1206",
+      "source": "datadotparl/governmentpost",
+      "role": "Assistant Whip",
+      "person_id": "uk.org.publicwhip/person/25809",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
+    },
+    {
       "id": "uk.parliament.data/Member/4873/OppositionPost/956",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Minister (Cabinet Office)",
@@ -154501,6 +154561,14 @@
       "end_date": "2022-07-04"
     },
     {
+      "id": "uk.parliament.data/Member/4777/GovernmentPost/1133",
+      "source": "datadotparl/governmentpost",
+      "role": "Parliamentary Under-Secretary (Northern Ireland Office)",
+      "person_id": "uk.org.publicwhip/person/25823",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
+    },
+    {
       "id": "uk.parliament.data/Member/4777/OppositionPost/10",
       "source": "datadotparl/oppositionpost",
       "role": "Opposition Whip (Commons)",
@@ -154688,6 +154756,14 @@
     },
     {
       "id": "uk.parliament.data/Member/4849/GovernmentPost/540",
+      "source": "datadotparl/governmentpost",
+      "role": "The Parliamentary Under-Secretary of State for Justice",
+      "person_id": "uk.org.publicwhip/person/25824",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/4849/GovernmentPost/540/1",
       "source": "datadotparl/governmentpost",
       "role": "The Parliamentary Under-Secretary of State for Justice",
       "person_id": "uk.org.publicwhip/person/25824",
@@ -165243,6 +165319,14 @@
       "start_date": "2024-07-09"
     },
     {
+      "id": "uk.parliament.data/Member/4943/GovernmentPost/1322",
+      "source": "datadotparl/governmentpost",
+      "role": "Parliamentary Under-Secretary (Housing, Communities and Local Government) (Minister for Equalities)",
+      "person_id": "uk.org.publicwhip/person/26085",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
+    },
+    {
       "id": "uk.parliament.data/Member/4943/OppositionPost/971",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Minister (Transport)",
@@ -167335,6 +167419,14 @@
       "end_date": "2024-10-31"
     },
     {
+      "id": "uk.parliament.data/Member/5071/GovernmentPost/949",
+      "source": "datadotparl/governmentpost",
+      "role": "The Parliamentary Under-Secretary of State for Education",
+      "person_id": "uk.org.publicwhip/person/26319",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5035/Committee/202",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26320",
@@ -168529,6 +168621,14 @@
       "end_date": "2024-12-12"
     },
     {
+      "id": "uk.parliament.data/Member/5123/GovernmentPost/1279",
+      "source": "datadotparl/governmentpost",
+      "role": "Parliamentary Under-Secretary of State (Department for Energy Security and Net Zero)",
+      "person_id": "uk.org.publicwhip/person/26360",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5158/Committee/127",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26361",
@@ -168613,6 +168713,14 @@
       "organization_id": "great-british-energy-bill-committee",
       "start_date": "2024-09-11",
       "end_date": "2024-10-15"
+    },
+    {
+      "id": "uk.parliament.data/Member/5116/GovernmentPost/1211",
+      "source": "datadotparl/governmentpost",
+      "role": "Minister of State (Department of Health and Social Care)",
+      "person_id": "uk.org.publicwhip/person/26367",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-23"
     },
     {
       "id": "uk.parliament.data/Member/5116/GovernmentPost/1279",
@@ -169709,6 +169817,14 @@
       "end_date": "2026-02-10"
     },
     {
+      "id": "uk.parliament.data/Member/5132/GovernmentPost/1206",
+      "source": "datadotparl/governmentpost",
+      "role": "Assistant Whip",
+      "person_id": "uk.org.publicwhip/person/26401",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5175/Committee/102",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26402",
@@ -169907,6 +170023,14 @@
       "person_id": "uk.org.publicwhip/person/26406",
       "organization_id": "secure-16-to-19-academies-bill-committee",
       "start_date": "2025-06-26"
+    },
+    {
+      "id": "uk.parliament.data/Member/5178/GovernmentPost/1325",
+      "source": "datadotparl/governmentpost",
+      "role": "Parliamentary Secretary and Parliamentary Under-Secretary of State (Cabinet Office) (Jointly with the Ministry for Housing, Communities and Local Government)",
+      "person_id": "uk.org.publicwhip/person/26406",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/5110/Committee/325",
@@ -171066,6 +171190,22 @@
       "end_date": "2025-10-27"
     },
     {
+      "id": "uk.parliament.data/Member/5271/GovernmentPost/1322",
+      "source": "datadotparl/governmentpost",
+      "role": "Parliamentary Under-Secretary (Housing, Communities and Local Government) (Minister for Equalities)",
+      "person_id": "uk.org.publicwhip/person/26451",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/5271/GovernmentPost/366",
+      "source": "datadotparl/governmentpost",
+      "role": "The Parliamentary Under-Secretary of State for the Home Department",
+      "person_id": "uk.org.publicwhip/person/26451",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5271/GovernmentPost/856",
       "source": "datadotparl/governmentpost",
       "role": "The Parliamentary Secretary, Cabinet Office",
@@ -171081,6 +171221,14 @@
       "organization_id": "modernisation-committee",
       "start_date": "2024-09-09",
       "end_date": "2025-12-08"
+    },
+    {
+      "id": "uk.parliament.data/Member/5088/GovernmentPost/1206",
+      "source": "datadotparl/governmentpost",
+      "role": "Assistant Whip",
+      "person_id": "uk.org.publicwhip/person/26452",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/5172/Committee/120",
@@ -171517,6 +171665,14 @@
       "start_date": "2026-03-18"
     },
     {
+      "id": "uk.parliament.data/Member/5160/GovernmentPost/850",
+      "source": "datadotparl/governmentpost",
+      "role": "The Parliamentary Under-Secretary of State for Environment, Food and Rural Affairs",
+      "person_id": "uk.org.publicwhip/person/26472",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5159/Committee/742",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26473",
@@ -171922,7 +172078,16 @@
       "role": "Parliamentary Under-Secretary of State (Department for Business and Trade)",
       "person_id": "uk.org.publicwhip/person/26490",
       "organization_id": "house-of-commons",
-      "start_date": "2025-09-07"
+      "start_date": "2025-09-07",
+      "end_date": "2026-07-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/5076/GovernmentPost/1324",
+      "source": "datadotparl/governmentpost",
+      "role": "Parliamentary Under-Secretary of State (Department for Business, Innovation, Science and Trade) (Jointly with the Department for Energy Security and Net Zero) ",
+      "person_id": "uk.org.publicwhip/person/26490",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/5164/Committee/153",
@@ -172429,6 +172594,14 @@
       "end_date": "2025-10-28"
     },
     {
+      "id": "uk.parliament.data/Member/5289/GovernmentPost/1206",
+      "source": "datadotparl/governmentpost",
+      "role": "Assistant Whip",
+      "person_id": "uk.org.publicwhip/person/26508",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5214/Committee/98",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26509",
@@ -172705,6 +172878,14 @@
       "organization_id": "railways-bill-committee",
       "start_date": "2026-01-07",
       "end_date": "2026-02-10"
+    },
+    {
+      "id": "uk.parliament.data/Member/5234/GovernmentPost/1206",
+      "source": "datadotparl/governmentpost",
+      "role": "Assistant Whip",
+      "person_id": "uk.org.publicwhip/person/26517",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/5284/Committee/162",
@@ -173308,6 +173489,22 @@
       "start_date": "2025-05-21"
     },
     {
+      "id": "uk.parliament.data/Member/5278/GovernmentPost/1206",
+      "source": "datadotparl/governmentpost",
+      "role": "Assistant Whip",
+      "person_id": "uk.org.publicwhip/person/26542",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/5278/GovernmentPost/1239",
+      "source": "datadotparl/governmentpost",
+      "role": "Parliamentary Under-Secretary (Foreign, Commonwealth and Development Office)",
+      "person_id": "uk.org.publicwhip/person/26542",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5252/Committee/127",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26543",
@@ -173689,6 +173886,14 @@
       "organization_id": "product-regulation-and-metrology-bill-hl-committee",
       "start_date": "2025-05-13",
       "end_date": "2025-05-15"
+    },
+    {
+      "id": "uk.parliament.data/Member/5242/GovernmentPost/1206",
+      "source": "datadotparl/governmentpost",
+      "role": "Assistant Whip",
+      "person_id": "uk.org.publicwhip/person/26551",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/5328/Committee/17",
@@ -175429,6 +175634,14 @@
       "start_date": "2026-03-18"
     },
     {
+      "id": "uk.parliament.data/Member/5240/GovernmentPost/537",
+      "source": "datadotparl/governmentpost",
+      "role": "The Parliamentary Under-Secretary of State for Scotland",
+      "person_id": "uk.org.publicwhip/person/26610",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5245/Committee/742",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26611",
@@ -176531,6 +176744,14 @@
       "organization_id": "house-of-commons",
       "start_date": "2025-09-06",
       "end_date": "2026-07-21"
+    },
+    {
+      "id": "uk.parliament.data/Member/5414/GovernmentPost/1204",
+      "source": "datadotparl/governmentpost",
+      "role": "Parliamentary Under-Secretary of State (Department for Digital, Culture, Media and Sport)",
+      "person_id": "uk.org.publicwhip/person/26695",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-23"
     },
     {
       "id": "uk.parliament.data/Member/5414/GovernmentPost/1280",
