@@ -16,7 +16,7 @@ data = Popolo()
 
 
 def canon_name(n):
-    n = re.sub(" St\. +", " St ", n)
+    n = re.sub(r" St\. +", " St ", n)
     n = re.sub("^The ", "", n)
     n = re.sub(" De ", " de ", n)
     n = re.sub("Lord (Archb|B)ishop ", r"\1ishop ", n)
@@ -25,7 +25,7 @@ def canon_name(n):
 
 
 lord_match = re.compile(
-    """ ^
+    r""" ^
     (?P<the> The \s+ )?     # Optional 'The ' at the start
     (?P<prefix> [^\s]* )    # Title, e.g. Baroness
     (?:\s+ (?P<name>        # Optional name; one or more words, which must not be 'of'
@@ -62,13 +62,17 @@ def construct_name(member):
     middle_names = member.find("BasicDetails/GivenMiddleNames").text
     surname = member.find("BasicDetails/GivenSurname").text
     title_parts = lord_match.search(member.find("DisplayAs").text)
+
     the = title_parts.group("the")
     prefix = title_parts.group("prefix")
-    lordname = title_parts.group("name")
+    lordname = title_parts.group("name") or ""
     lordof = title_parts.group("lordof") or ""
+
+    # "The Lord Bishop of Foo"
     if the and prefix == "Lord" and lordname in ("Bishop", "Archbishop"):
         prefix = lordname
         lordname = ""
+
     name = {
         "given_name": given_name,
         "honorific_prefix": prefix,
