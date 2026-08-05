@@ -177094,7 +177094,8 @@
       "role": "Green Spokesperson (Business and Trade)",
       "person_id": "uk.org.publicwhip/person/26729",
       "organization_id": "house-of-commons",
-      "start_date": "2026-06-01"
+      "start_date": "2026-06-01",
+      "end_date": "2026-07-20"
     },
     {
       "id": "uk.parliament.data/Member/5447/OppositionPost/1730",
@@ -177111,6 +177112,14 @@
       "person_id": "uk.org.publicwhip/person/26729",
       "organization_id": "house-of-commons",
       "start_date": "2026-06-01"
+    },
+    {
+      "id": "uk.parliament.data/Member/5447/OppositionPost/1751",
+      "source": "datadotparl/oppositionpost",
+      "role": "Green Spokesperson (Business, Innovation, Science and Trade)",
+      "person_id": "uk.org.publicwhip/person/26729",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-20"
     },
     {
       "id": "uk.parliament.data/Member/4931/GovernmentPost/1281",
