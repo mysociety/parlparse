@@ -59337,7 +59337,16 @@
       "role": "Liberal Democrat Lords Spokesperson (Culture, Media and Sport)",
       "person_id": "uk.org.publicwhip/person/12838",
       "organization_id": "house-of-commons",
-      "start_date": "2015-09-07"
+      "start_date": "2015-09-07",
+      "end_date": "2026-07-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/3699/OppositionPost/1754",
+      "source": "datadotparl/oppositionpost",
+      "role": "Liberal Democrat Lords Spokesperson (Digital, Culture, Media and Sport)",
+      "person_id": "uk.org.publicwhip/person/12838",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/3651/Committee/336",
@@ -77824,7 +77833,16 @@
       "role": "Shadow Minister (Business and Trade)",
       "person_id": "uk.org.publicwhip/person/13355",
       "organization_id": "house-of-commons",
-      "start_date": "2025-01-01"
+      "start_date": "2025-01-01",
+      "end_date": "2026-07-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/994/OppositionPost/1752",
+      "source": "datadotparl/oppositionpost",
+      "role": "Shadow Minister (Business, Innovation, Science and Trade)",
+      "person_id": "uk.org.publicwhip/person/13355",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/994/ParliamentaryPost/823",
@@ -151205,12 +151223,21 @@
       "end_date": "2022-09-20"
     },
     {
+      "id": "uk.parliament.data/Member/4728/OppositionPost/1753",
+      "source": "datadotparl/oppositionpost",
+      "role": "Shadow Minister (Digital, Culture, Media and Sport)",
+      "person_id": "uk.org.publicwhip/person/25786",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
+    },
+    {
       "id": "uk.parliament.data/Member/4728/OppositionPost/958",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Minister (Culture, Media and Sport)",
       "person_id": "uk.org.publicwhip/person/25786",
       "organization_id": "house-of-commons",
-      "start_date": "2024-09-01"
+      "start_date": "2024-09-01",
+      "end_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/4727/Committee/191",
@@ -163800,7 +163827,16 @@
       "role": "Shadow Minister (Business and Trade)",
       "person_id": "uk.org.publicwhip/person/25955",
       "organization_id": "house-of-commons",
-      "start_date": "2024-11-11"
+      "start_date": "2024-11-11",
+      "end_date": "2026-07-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/4888/OppositionPost/1752",
+      "source": "datadotparl/oppositionpost",
+      "role": "Shadow Minister (Business, Innovation, Science and Trade)",
+      "person_id": "uk.org.publicwhip/person/25955",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/4878/ParliamentaryPost/1099",
