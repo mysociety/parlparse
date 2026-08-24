@@ -2,7 +2,7 @@
 package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.9,<3.14"
+python = "^3.9,<3.10"
 beautifulsoup4 = "4.12.3"
 everypolitician = "0.0.13"
 lxml = "5.2.1"
