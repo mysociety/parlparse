@@ -25,7 +25,6 @@ files = [
 ]
 
 [package.dependencies]
-exceptiongroup = {version = ">=1.0.2", markers = "python_version < \"3.11\""}
 idna = ">=2.8"
 sniffio = ">=1.1"
 typing_extensions = {version = ">=4.5", markers = "python_version < \"3.13\""}
@@ -69,18 +68,6 @@ libipld = ">=3.0.1,<4"
 pydantic = ">=2.7,<3"
 typing-extensions = ">=4.8.0,<5"
 websockets = ">=12,<14"
-
-[[package]]
-name = "backports-strenum"
-version = "1.3.1"
-description = "Base class for creating enumerated constants that are also subclasses of str"
-optional = false
-python-versions = ">=3.8.6,<3.11"
-groups = ["main"]
-files = [
-    {file = "backports_strenum-1.3.1-py3-none-any.whl", hash = "sha256:cdcfe36dc897e2615dc793b7d3097f54d359918fc448754a517e6f23044ccf83"},
-    {file = "backports_strenum-1.3.1.tar.gz", hash = "sha256:77c52407342898497714f0596e86188bb7084f89063226f4ba66863482f42414"},
-]
 
 [[package]]
 name = "beautifulsoup4"
@@ -433,9 +420,6 @@ files = [
     {file = "cloudpathlib-0.23.0.tar.gz", hash = "sha256:eb38a34c6b8a048ecfd2b2f60917f7cbad4a105b7c979196450c2f541f4d6b4b"},
 ]
 
-[package.dependencies]
-typing-extensions = {version = ">4", markers = "python_version < \"3.11\""}
-
 [package.extras]
 all = ["cloudpathlib[azure]", "cloudpathlib[gs]", "cloudpathlib[s3]"]
 azure = ["azure-storage-blob (>=12)", "azure-storage-file-datalake (>=12)"]
@@ -681,24 +665,6 @@ requests = "*"
 six = ">=1.9.0"
 
 [[package]]
-name = "exceptiongroup"
-version = "1.3.0"
-description = "Backport of PEP 654 (exception groups)"
-optional = false
-python-versions = ">=3.7"
-groups = ["main"]
-files = [
-    {file = "exceptiongroup-1.3.0-py3-none-any.whl", hash = "sha256:4d111e6e0c13d0644cad6ddaa7ed0261a0b36971f6d23e7ec9b4b9097da78a10"},
-    {file = "exceptiongroup-1.3.0.tar.gz", hash = "sha256:b241f5885f560bc56a59ee63ca4c6a8bfa46ae4ad651af316d4e81817bb9fd88"},
-]
-
-[package.dependencies]
-typing-extensions = {version = ">=4.6.0", markers = "python_version < \"3.13\""}
-
-[package.extras]
-test = ["pytest (>=6)"]
-
-[[package]]
 name = "filelock"
 version = "3.19.1"
 description = "A platform independent file lock."
@@ -763,7 +729,6 @@ files = [
 ]
 
 [package.dependencies]
-eval-type-backport = {version = ">=0.2", markers = "python_full_version < \"3.10.0\""}
 httpx = ">=0.27"
 pydantic = ">=2.10"
 
@@ -1829,7 +1794,10 @@ files = [
 ]
 
 [package.dependencies]
-numpy = {version = ">=1.22.4", markers = "python_version < \"3.11\""}
+numpy = [
+    {version = ">=1.23.2", markers = "python_version == \"3.11\""},
+    {version = ">=1.26.0", markers = "python_version >= \"3.12\""},
+]
 python-dateutil = ">=2.8.2"
 pytz = ">=2020.1"
 tzdata = ">=2022.7"
@@ -2030,7 +1998,6 @@ files = [
 
 [package.dependencies]
 eval-type-backport = ">=0.2.0"
-exceptiongroup = {version = "*", markers = "python_version < \"3.11\""}
 genai-prices = ">=0.0.22"
 griffe = ">=1.3.2"
 httpx = ">=0.27"
@@ -2425,7 +2392,6 @@ files = [
 [package.dependencies]
 markdown-it-py = ">=2.2.0"
 pygments = ">=2.13.0,<3.0.0"
-typing-extensions = {version = ">=4.0.0,<5.0", markers = "python_version < \"3.11\""}
 
 [package.extras]
 jupyter = ["ipywidgets (>=7.5.1,<9)"]
@@ -3202,5 +3168,5 @@ type = ["pytest-mypy"]
 
 [metadata]
 lock-version = "2.1"
-python-versions = "^3.9,<3.10"
-content-hash = "578c1b73a1d4fc90a104bee1133520ac5b1c48747e8cea3bfab4a309a327d9e5"
+python-versions = "^3.11,<3.13"
+content-hash = "b89883194e2c1d0ae545cc976b06e4441feff3057bf65b0ae74dbe8a69307eaf"

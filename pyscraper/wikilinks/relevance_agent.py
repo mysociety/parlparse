@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import ClassVar, TypeVar
 
 import jsonref
-from backports.strenum import StrEnum
+from enum import StrEnum
 from huggingface_hub import AsyncInferenceClient
 from pydantic import BaseModel, Field, RootModel
 from pydantic_ai import Agent

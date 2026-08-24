@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import Optional
 
 import spacy
-from backports.strenum import StrEnum
+from enum import StrEnum
 from mysoc_validator import Transcript
 from mysoc_validator.models.transcripts import SpeechItem
 from pydantic import BaseModel, Field, RootModel
