@@ -1,0 +1,1404 @@
+{
+  "memberships": [
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cwnsler Cyffredinol",
+            "en": "Counsel General"
+          }
+        }
+      },
+      "id": "gov.wales/Minister/10368",
+      "organization_id": "welsh-parliament",
+      "person_id": "uk.org.publicwhip/person/10368",
+      "role": "Cwnsler Cyffredinol / Counsel General",
+      "source": "https://www.gov.wales/cabinet-ministers-and-deputy-ministers"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Gweinidog Cabinet dros Fenter, Cysylltedd ac Ynni",
+            "en": "Cabinet Minister for Enterprise, Connectivity and Energy"
+          }
+        }
+      },
+      "id": "gov.wales/Minister/11170",
+      "organization_id": "welsh-parliament",
+      "person_id": "uk.org.publicwhip/person/11170",
+      "role": "Gweinidog Cabinet dros Fenter, Cysylltedd ac Ynni / Cabinet Minister for Enterprise, Connectivity and Energy",
+      "source": "https://www.gov.wales/cabinet-ministers-and-deputy-ministers"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cadeirydd",
+            "en": "Chair"
+          }
+        }
+      },
+      "id": "senedd.wales/Committee/210294/Member/5053",
+      "organization_id": "senedd-committee-210294",
+      "person_id": "uk.org.publicwhip/person/11347",
+      "role": "Cadeirydd / Chair",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210294&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210780/Member/4983",
+      "organization_id": "senedd-committee-210780",
+      "person_id": "uk.org.publicwhip/person/25774",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210780&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210294/Member/145",
+      "organization_id": "senedd-committee-210294",
+      "person_id": "uk.org.publicwhip/person/26127",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210294&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210774/Member/145",
+      "organization_id": "senedd-committee-210774",
+      "person_id": "uk.org.publicwhip/person/26127",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210774&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Gweinidog Cabinet dros Wydnwch Gwledig a Chynaliadwyedd",
+            "en": "Cabinet Minister for Rural Resilience and Sustainability"
+          }
+        }
+      },
+      "id": "gov.wales/Minister/26139",
+      "organization_id": "welsh-parliament",
+      "person_id": "uk.org.publicwhip/person/26139",
+      "role": "Gweinidog Cabinet dros Wydnwch Gwledig a Chynaliadwyedd / Cabinet Minister for Rural Resilience and Sustainability",
+      "source": "https://www.gov.wales/cabinet-ministers-and-deputy-ministers"
+    },
+    {
+      "id": "senedd.wales/Committee/210774/Member/332",
+      "organization_id": "senedd-committee-210774",
+      "person_id": "uk.org.publicwhip/person/26141",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210774&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210784/Member/332",
+      "organization_id": "senedd-committee-210784",
+      "person_id": "uk.org.publicwhip/person/26141",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210784&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210787/Member/267",
+      "organization_id": "senedd-committee-210787",
+      "person_id": "uk.org.publicwhip/person/26150",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210787&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210772/Member/5107",
+      "organization_id": "senedd-committee-210772",
+      "person_id": "uk.org.publicwhip/person/26159",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210772&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210785/Member/5107",
+      "organization_id": "senedd-committee-210785",
+      "person_id": "uk.org.publicwhip/person/26159",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210785&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Prif Weinidog Cymru",
+            "en": "First Minister of Wales"
+          }
+        }
+      },
+      "id": "gov.wales/Minister/26165",
+      "organization_id": "welsh-parliament",
+      "person_id": "uk.org.publicwhip/person/26165",
+      "role": "Prif Weinidog Cymru / First Minister of Wales",
+      "source": "https://www.gov.wales/cabinet-ministers-and-deputy-ministers"
+    },
+    {
+      "id": "senedd.wales/Committee/210780/Member/5038",
+      "organization_id": "senedd-committee-210780",
+      "person_id": "uk.org.publicwhip/person/26170",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210780&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cadeirydd",
+            "en": "Chair"
+          }
+        }
+      },
+      "id": "senedd.wales/Committee/210782/Member/5038",
+      "organization_id": "senedd-committee-210782",
+      "person_id": "uk.org.publicwhip/person/26170",
+      "role": "Cadeirydd / Chair",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210782&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210788/Member/5038",
+      "organization_id": "senedd-committee-210788",
+      "person_id": "uk.org.publicwhip/person/26170",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210788&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Gweinidog Cabinet dros Gyllid",
+            "en": "Cabinet Minister for Finance"
+          }
+        }
+      },
+      "id": "gov.wales/Minister/26178",
+      "organization_id": "welsh-parliament",
+      "person_id": "uk.org.publicwhip/person/26178",
+      "role": "Gweinidog Cabinet dros Gyllid / Cabinet Minister for Finance",
+      "source": "https://www.gov.wales/cabinet-ministers-and-deputy-ministers"
+    },
+    {
+      "id": "senedd.wales/Committee/210294/Member/174",
+      "organization_id": "senedd-committee-210294",
+      "person_id": "uk.org.publicwhip/person/26179",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210294&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210773/Member/174",
+      "organization_id": "senedd-committee-210773",
+      "person_id": "uk.org.publicwhip/person/26179",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210773&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210775/Member/174",
+      "organization_id": "senedd-committee-210775",
+      "person_id": "uk.org.publicwhip/person/26179",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210775&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210773/Member/171",
+      "organization_id": "senedd-committee-210773",
+      "person_id": "uk.org.publicwhip/person/26182",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210773&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210772/Member/143",
+      "organization_id": "senedd-committee-210772",
+      "person_id": "uk.org.publicwhip/person/26186",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210772&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210786/Member/143",
+      "organization_id": "senedd-committee-210786",
+      "person_id": "uk.org.publicwhip/person/26186",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210786&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210788/Member/143",
+      "organization_id": "senedd-committee-210788",
+      "person_id": "uk.org.publicwhip/person/26186",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210788&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210779/Member/212",
+      "organization_id": "senedd-committee-210779",
+      "person_id": "uk.org.publicwhip/person/26188",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210779&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210785/Member/212",
+      "organization_id": "senedd-committee-210785",
+      "person_id": "uk.org.publicwhip/person/26188",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210785&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cadeirydd",
+            "en": "Chair"
+          }
+        }
+      },
+      "id": "senedd.wales/Committee/210787/Member/518",
+      "organization_id": "senedd-committee-210787",
+      "person_id": "uk.org.publicwhip/person/26203",
+      "role": "Cadeirydd / Chair",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210787&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210780/Member/4562",
+      "organization_id": "senedd-committee-210780",
+      "person_id": "uk.org.publicwhip/person/26214",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210780&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Dirprwy Weinidog dros Iechyd Cyhoeddus ac Ataliol",
+            "en": "Deputy Minister for Public and Preventative Health"
+          }
+        }
+      },
+      "id": "gov.wales/Minister/26217",
+      "organization_id": "welsh-parliament",
+      "person_id": "uk.org.publicwhip/person/26217",
+      "role": "Dirprwy Weinidog dros Iechyd Cyhoeddus ac Ataliol / Deputy Minister for Public and Preventative Health",
+      "source": "https://www.gov.wales/cabinet-ministers-and-deputy-ministers"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Dirprwy Brif Weinidog a Gweinidog Cabinet dros Gyfiawnder Cymdeithasol a Chydraddoldeb",
+            "en": "Deputy First Minister and Cabinet Minister for Social Justice and Equality"
+          }
+        }
+      },
+      "id": "gov.wales/Minister/26234",
+      "organization_id": "welsh-parliament",
+      "person_id": "uk.org.publicwhip/person/26234",
+      "role": "Dirprwy Brif Weinidog a Gweinidog Cabinet dros Gyfiawnder Cymdeithasol a Chydraddoldeb / Deputy First Minister and Cabinet Minister for Social Justice and Equality",
+      "source": "https://www.gov.wales/cabinet-ministers-and-deputy-ministers"
+    },
+    {
+      "id": "senedd.wales/Committee/210782/Member/336",
+      "organization_id": "senedd-committee-210782",
+      "person_id": "uk.org.publicwhip/person/26236",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210782&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210787/Member/336",
+      "organization_id": "senedd-committee-210787",
+      "person_id": "uk.org.publicwhip/person/26236",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210787&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210775/Member/8734",
+      "organization_id": "senedd-committee-210775",
+      "person_id": "uk.org.publicwhip/person/26237",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210775&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cadeirydd",
+            "en": "Chair"
+          }
+        }
+      },
+      "id": "senedd.wales/Committee/210781/Member/8734",
+      "organization_id": "senedd-committee-210781",
+      "person_id": "uk.org.publicwhip/person/26237",
+      "role": "Cadeirydd / Chair",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210781&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210788/Member/8734",
+      "organization_id": "senedd-committee-210788",
+      "person_id": "uk.org.publicwhip/person/26237",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210788&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Dirprwy Weinidog dros Sgiliau ac Addysg Drydyddol",
+            "en": "Deputy Minister for Skills and Tertiary Education"
+          }
+        }
+      },
+      "id": "gov.wales/Minister/26241",
+      "organization_id": "welsh-parliament",
+      "person_id": "uk.org.publicwhip/person/26241",
+      "role": "Dirprwy Weinidog dros Sgiliau ac Addysg Drydyddol / Deputy Minister for Skills and Tertiary Education",
+      "source": "https://www.gov.wales/cabinet-ministers-and-deputy-ministers"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Gweinidog Cabinet dros Iechyd a Gofal",
+            "en": "Cabinet Minister for Health and Care"
+          }
+        }
+      },
+      "id": "gov.wales/Minister/26243",
+      "organization_id": "welsh-parliament",
+      "person_id": "uk.org.publicwhip/person/26243",
+      "role": "Gweinidog Cabinet dros Iechyd a Gofal / Cabinet Minister for Health and Care",
+      "source": "https://www.gov.wales/cabinet-ministers-and-deputy-ministers"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Gweinidog Cabinet dros Lywodraeth Leol, Tai a Chynllunio",
+            "en": "Cabinet Minister for Local Government, Housing and Planning"
+          }
+        }
+      },
+      "id": "gov.wales/Minister/26244",
+      "organization_id": "welsh-parliament",
+      "person_id": "uk.org.publicwhip/person/26244",
+      "role": "Gweinidog Cabinet dros Lywodraeth Leol, Tai a Chynllunio / Cabinet Minister for Local Government, Housing and Planning",
+      "source": "https://www.gov.wales/cabinet-ministers-and-deputy-ministers"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Trefnydd, Prif Chwip a Gweinidog Cabinet dros Ddiwylliant a Chwaraeon",
+            "en": "Trefnydd, Chief Whip and Cabinet Minister for Culture and Sport"
+          }
+        }
+      },
+      "id": "gov.wales/Minister/26245",
+      "organization_id": "welsh-parliament",
+      "person_id": "uk.org.publicwhip/person/26245",
+      "role": "Trefnydd, Prif Chwip a Gweinidog Cabinet dros Ddiwylliant a Chwaraeon / Trefnydd, Chief Whip and Cabinet Minister for Culture and Sport",
+      "source": "https://www.gov.wales/cabinet-ministers-and-deputy-ministers"
+    },
+    {
+      "id": "senedd.wales/Committee/210294/Member/426",
+      "organization_id": "senedd-committee-210294",
+      "person_id": "uk.org.publicwhip/person/26245",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210294&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210783/Member/4787",
+      "organization_id": "senedd-committee-210783",
+      "person_id": "uk.org.publicwhip/person/26247",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210783&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210784/Member/4787",
+      "organization_id": "senedd-committee-210784",
+      "person_id": "uk.org.publicwhip/person/26247",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210784&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cadeirydd",
+            "en": "Chair"
+          }
+        }
+      },
+      "id": "senedd.wales/Committee/210772/Member/8585",
+      "organization_id": "senedd-committee-210772",
+      "person_id": "uk.org.publicwhip/person/26248",
+      "role": "Cadeirydd / Chair",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210772&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Dirprwy Weinidog dros Ofal Cymdeithasol, Iechyd Meddwl ac Iechyd Menywod",
+            "en": "Deputy Minister for Social Care, Mental Health and Women\u2019s Health"
+          }
+        }
+      },
+      "id": "gov.wales/Minister/26252",
+      "organization_id": "welsh-parliament",
+      "person_id": "uk.org.publicwhip/person/26252",
+      "role": "Dirprwy Weinidog dros Ofal Cymdeithasol, Iechyd Meddwl ac Iechyd Menywod / Deputy Minister for Social Care, Mental Health and Women\u2019s Health",
+      "source": "https://www.gov.wales/cabinet-ministers-and-deputy-ministers"
+    },
+    {
+      "id": "senedd.wales/Committee/210773/Member/8579",
+      "organization_id": "senedd-committee-210773",
+      "person_id": "uk.org.publicwhip/person/26255",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210773&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210783/Member/8579",
+      "organization_id": "senedd-committee-210783",
+      "person_id": "uk.org.publicwhip/person/26255",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210783&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210780/Member/8696",
+      "organization_id": "senedd-committee-210780",
+      "person_id": "uk.org.publicwhip/person/26732",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210780&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210779/Member/4491",
+      "organization_id": "senedd-committee-210779",
+      "person_id": "uk.org.publicwhip/person/26733",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210779&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210786/Member/4491",
+      "organization_id": "senedd-committee-210786",
+      "person_id": "uk.org.publicwhip/person/26733",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210786&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cadeirydd",
+            "en": "Chair"
+          }
+        }
+      },
+      "id": "senedd.wales/Committee/210775/Member/330",
+      "organization_id": "senedd-committee-210775",
+      "person_id": "uk.org.publicwhip/person/26734",
+      "role": "Cadeirydd / Chair",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210775&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210781/Member/330",
+      "organization_id": "senedd-committee-210781",
+      "person_id": "uk.org.publicwhip/person/26734",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210781&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210781/Member/12142",
+      "organization_id": "senedd-committee-210781",
+      "person_id": "uk.org.publicwhip/person/26735",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210781&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210784/Member/12164",
+      "organization_id": "senedd-committee-210784",
+      "person_id": "uk.org.publicwhip/person/26736",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210784&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210787/Member/12164",
+      "organization_id": "senedd-committee-210787",
+      "person_id": "uk.org.publicwhip/person/26736",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210787&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210779/Member/12169",
+      "organization_id": "senedd-committee-210779",
+      "person_id": "uk.org.publicwhip/person/26737",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210779&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210774/Member/12153",
+      "organization_id": "senedd-committee-210774",
+      "person_id": "uk.org.publicwhip/person/26738",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210774&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cadeirydd",
+            "en": "Chair"
+          }
+        }
+      },
+      "id": "senedd.wales/Committee/210774/Member/5084",
+      "organization_id": "senedd-committee-210774",
+      "person_id": "uk.org.publicwhip/person/26739",
+      "role": "Cadeirydd / Chair",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210774&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210775/Member/5084",
+      "organization_id": "senedd-committee-210775",
+      "person_id": "uk.org.publicwhip/person/26739",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210775&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210780/Member/12165",
+      "organization_id": "senedd-committee-210780",
+      "person_id": "uk.org.publicwhip/person/26740",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210780&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210781/Member/12165",
+      "organization_id": "senedd-committee-210781",
+      "person_id": "uk.org.publicwhip/person/26740",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210781&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210775/Member/12154",
+      "organization_id": "senedd-committee-210775",
+      "person_id": "uk.org.publicwhip/person/26741",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210775&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210773/Member/12144",
+      "organization_id": "senedd-committee-210773",
+      "person_id": "uk.org.publicwhip/person/26742",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210773&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210294/Member/11971",
+      "organization_id": "senedd-committee-210294",
+      "person_id": "uk.org.publicwhip/person/26743",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210294&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210772/Member/12143",
+      "organization_id": "senedd-committee-210772",
+      "person_id": "uk.org.publicwhip/person/26744",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210772&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210774/Member/12143",
+      "organization_id": "senedd-committee-210774",
+      "person_id": "uk.org.publicwhip/person/26744",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210774&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210781/Member/12170",
+      "organization_id": "senedd-committee-210781",
+      "person_id": "uk.org.publicwhip/person/26745",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210781&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210772/Member/12171",
+      "organization_id": "senedd-committee-210772",
+      "person_id": "uk.org.publicwhip/person/26746",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210772&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210774/Member/12172",
+      "organization_id": "senedd-committee-210774",
+      "person_id": "uk.org.publicwhip/person/26747",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210774&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210784/Member/12172",
+      "organization_id": "senedd-committee-210784",
+      "person_id": "uk.org.publicwhip/person/26747",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210784&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cadeirydd",
+            "en": "Chair"
+          }
+        }
+      },
+      "id": "senedd.wales/Committee/210780/Member/12141",
+      "organization_id": "senedd-committee-210780",
+      "person_id": "uk.org.publicwhip/person/26748",
+      "role": "Cadeirydd / Chair",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210780&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210774/Member/12173",
+      "organization_id": "senedd-committee-210774",
+      "person_id": "uk.org.publicwhip/person/26749",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210774&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Gweinidog Cabinet dros Effeithiolrwydd Llywodraeth a\u2019r Cyfansoddiad",
+            "en": "Cabinet Minister for Government Effectiveness and the Constitution"
+          }
+        }
+      },
+      "id": "gov.wales/Minister/26750",
+      "organization_id": "welsh-parliament",
+      "person_id": "uk.org.publicwhip/person/26750",
+      "role": "Gweinidog Cabinet dros Effeithiolrwydd Llywodraeth a\u2019r Cyfansoddiad / Cabinet Minister for Government Effectiveness and the Constitution",
+      "source": "https://www.gov.wales/cabinet-ministers-and-deputy-ministers"
+    },
+    {
+      "id": "senedd.wales/Committee/210786/Member/12174",
+      "organization_id": "senedd-committee-210786",
+      "person_id": "uk.org.publicwhip/person/26751",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210786&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210772/Member/12176",
+      "organization_id": "senedd-committee-210772",
+      "person_id": "uk.org.publicwhip/person/26752",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210772&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210779/Member/12175",
+      "organization_id": "senedd-committee-210779",
+      "person_id": "uk.org.publicwhip/person/26753",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210779&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210786/Member/12175",
+      "organization_id": "senedd-committee-210786",
+      "person_id": "uk.org.publicwhip/person/26753",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210786&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Gweinidog Cabinet dros Addysg a\u2019r Gymraeg",
+            "en": "Cabinet Minister for Education and the Welsh Language"
+          }
+        }
+      },
+      "id": "gov.wales/Minister/26754",
+      "organization_id": "welsh-parliament",
+      "person_id": "uk.org.publicwhip/person/26754",
+      "role": "Gweinidog Cabinet dros Addysg a\u2019r Gymraeg / Cabinet Minister for Education and the Welsh Language",
+      "source": "https://www.gov.wales/cabinet-ministers-and-deputy-ministers"
+    },
+    {
+      "id": "senedd.wales/Committee/210779/Member/12155",
+      "organization_id": "senedd-committee-210779",
+      "person_id": "uk.org.publicwhip/person/26755",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210779&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210779/Member/12166",
+      "organization_id": "senedd-committee-210779",
+      "person_id": "uk.org.publicwhip/person/26756",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210779&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210783/Member/12166",
+      "organization_id": "senedd-committee-210783",
+      "person_id": "uk.org.publicwhip/person/26756",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210783&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210780/Member/12146",
+      "organization_id": "senedd-committee-210780",
+      "person_id": "uk.org.publicwhip/person/26757",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210780&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210785/Member/12146",
+      "organization_id": "senedd-committee-210785",
+      "person_id": "uk.org.publicwhip/person/26757",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210785&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210780/Member/5025",
+      "organization_id": "senedd-committee-210780",
+      "person_id": "uk.org.publicwhip/person/26758",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210780&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210784/Member/5025",
+      "organization_id": "senedd-committee-210784",
+      "person_id": "uk.org.publicwhip/person/26758",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210784&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210781/Member/12156",
+      "organization_id": "senedd-committee-210781",
+      "person_id": "uk.org.publicwhip/person/26759",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210781&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210783/Member/12156",
+      "organization_id": "senedd-committee-210783",
+      "person_id": "uk.org.publicwhip/person/26759",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210783&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210781/Member/4967",
+      "organization_id": "senedd-committee-210781",
+      "person_id": "uk.org.publicwhip/person/26760",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210781&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210775/Member/12157",
+      "organization_id": "senedd-committee-210775",
+      "person_id": "uk.org.publicwhip/person/26762",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210775&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210782/Member/12179",
+      "organization_id": "senedd-committee-210782",
+      "person_id": "uk.org.publicwhip/person/26763",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210782&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cadeirydd",
+            "en": "Chair"
+          }
+        }
+      },
+      "id": "senedd.wales/Committee/210788/Member/12177",
+      "organization_id": "senedd-committee-210788",
+      "person_id": "uk.org.publicwhip/person/26764",
+      "role": "Cadeirydd / Chair",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210788&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210773/Member/12180",
+      "organization_id": "senedd-committee-210773",
+      "person_id": "uk.org.publicwhip/person/26765",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210773&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210772/Member/12178",
+      "organization_id": "senedd-committee-210772",
+      "person_id": "uk.org.publicwhip/person/26766",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210772&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210786/Member/12178",
+      "organization_id": "senedd-committee-210786",
+      "person_id": "uk.org.publicwhip/person/26766",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210786&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210774/Member/12182",
+      "organization_id": "senedd-committee-210774",
+      "person_id": "uk.org.publicwhip/person/26767",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210774&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210782/Member/12184",
+      "organization_id": "senedd-committee-210782",
+      "person_id": "uk.org.publicwhip/person/26768",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210782&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210783/Member/12181",
+      "organization_id": "senedd-committee-210783",
+      "person_id": "uk.org.publicwhip/person/26769",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210783&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210779/Member/12183",
+      "organization_id": "senedd-committee-210779",
+      "person_id": "uk.org.publicwhip/person/26770",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210779&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210773/Member/12185",
+      "organization_id": "senedd-committee-210773",
+      "person_id": "uk.org.publicwhip/person/26771",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210773&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cadeirydd",
+            "en": "Chair"
+          }
+        }
+      },
+      "id": "senedd.wales/Committee/210773/Member/278",
+      "organization_id": "senedd-committee-210773",
+      "person_id": "uk.org.publicwhip/person/26772",
+      "role": "Cadeirydd / Chair",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210773&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210786/Member/278",
+      "organization_id": "senedd-committee-210786",
+      "person_id": "uk.org.publicwhip/person/26772",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210786&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210784/Member/350",
+      "organization_id": "senedd-committee-210784",
+      "person_id": "uk.org.publicwhip/person/26773",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210784&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210788/Member/350",
+      "organization_id": "senedd-committee-210788",
+      "person_id": "uk.org.publicwhip/person/26773",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210788&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210782/Member/5113",
+      "organization_id": "senedd-committee-210782",
+      "person_id": "uk.org.publicwhip/person/26774",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210782&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210775/Member/12186",
+      "organization_id": "senedd-committee-210775",
+      "person_id": "uk.org.publicwhip/person/26775",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210775&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210783/Member/12186",
+      "organization_id": "senedd-committee-210783",
+      "person_id": "uk.org.publicwhip/person/26775",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210783&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cadeirydd",
+            "en": "Chair"
+          }
+        }
+      },
+      "id": "senedd.wales/Committee/210786/Member/12187",
+      "organization_id": "senedd-committee-210786",
+      "person_id": "uk.org.publicwhip/person/26776",
+      "role": "Cadeirydd / Chair",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210786&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210775/Member/12188",
+      "organization_id": "senedd-committee-210775",
+      "person_id": "uk.org.publicwhip/person/26777",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210775&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cadeirydd",
+            "en": "Chair"
+          }
+        }
+      },
+      "id": "senedd.wales/Committee/210779/Member/8371",
+      "organization_id": "senedd-committee-210779",
+      "person_id": "uk.org.publicwhip/person/26778",
+      "role": "Cadeirydd / Chair",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210779&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210785/Member/8371",
+      "organization_id": "senedd-committee-210785",
+      "person_id": "uk.org.publicwhip/person/26778",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210785&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210772/Member/4650",
+      "organization_id": "senedd-committee-210772",
+      "person_id": "uk.org.publicwhip/person/26779",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210772&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210782/Member/12189",
+      "organization_id": "senedd-committee-210782",
+      "person_id": "uk.org.publicwhip/person/26780",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210782&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210784/Member/12190",
+      "organization_id": "senedd-committee-210784",
+      "person_id": "uk.org.publicwhip/person/26781",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210784&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210774/Member/12191",
+      "organization_id": "senedd-committee-210774",
+      "person_id": "uk.org.publicwhip/person/26782",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210774&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210773/Member/5083",
+      "organization_id": "senedd-committee-210773",
+      "person_id": "uk.org.publicwhip/person/26783",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210773&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cadeirydd",
+            "en": "Chair"
+          }
+        }
+      },
+      "id": "senedd.wales/Committee/210783/Member/12167",
+      "organization_id": "senedd-committee-210783",
+      "person_id": "uk.org.publicwhip/person/26784",
+      "role": "Cadeirydd / Chair",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210783&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Dirprwy Weinidog dros Drafnidiaeth",
+            "en": "Deputy Minister for Transport"
+          }
+        }
+      },
+      "id": "gov.wales/Minister/26785",
+      "organization_id": "welsh-parliament",
+      "person_id": "uk.org.publicwhip/person/26785",
+      "role": "Dirprwy Weinidog dros Drafnidiaeth / Deputy Minister for Transport",
+      "source": "https://www.gov.wales/cabinet-ministers-and-deputy-ministers"
+    },
+    {
+      "id": "senedd.wales/Committee/210773/Member/5196",
+      "organization_id": "senedd-committee-210773",
+      "person_id": "uk.org.publicwhip/person/26786",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210773&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210780/Member/5196",
+      "organization_id": "senedd-committee-210780",
+      "person_id": "uk.org.publicwhip/person/26786",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210780&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210782/Member/12148",
+      "organization_id": "senedd-committee-210782",
+      "person_id": "uk.org.publicwhip/person/26787",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210782&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210782/Member/12150",
+      "organization_id": "senedd-committee-210782",
+      "person_id": "uk.org.publicwhip/person/26788",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210782&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210785/Member/12150",
+      "organization_id": "senedd-committee-210785",
+      "person_id": "uk.org.publicwhip/person/26788",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210785&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210784/Member/12159",
+      "organization_id": "senedd-committee-210784",
+      "person_id": "uk.org.publicwhip/person/26789",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210784&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cadeirydd",
+            "en": "Chair"
+          }
+        }
+      },
+      "id": "senedd.wales/Committee/210774/Member/12149",
+      "organization_id": "senedd-committee-210774",
+      "person_id": "uk.org.publicwhip/person/26790",
+      "role": "Cadeirydd / Chair",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210774&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210775/Member/12149",
+      "organization_id": "senedd-committee-210775",
+      "person_id": "uk.org.publicwhip/person/26790",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210775&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cadeirydd",
+            "en": "Chair"
+          }
+        }
+      },
+      "id": "senedd.wales/Committee/210785/Member/12158",
+      "organization_id": "senedd-committee-210785",
+      "person_id": "uk.org.publicwhip/person/26791",
+      "role": "Cadeirydd / Chair",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210785&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210785/Member/12168",
+      "organization_id": "senedd-committee-210785",
+      "person_id": "uk.org.publicwhip/person/26792",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210785&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210782/Member/12151",
+      "organization_id": "senedd-committee-210782",
+      "person_id": "uk.org.publicwhip/person/26793",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210782&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210787/Member/12160",
+      "organization_id": "senedd-committee-210787",
+      "person_id": "uk.org.publicwhip/person/26794",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210787&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210788/Member/12160",
+      "organization_id": "senedd-committee-210788",
+      "person_id": "uk.org.publicwhip/person/26794",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210788&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210772/Member/8650",
+      "organization_id": "senedd-committee-210772",
+      "person_id": "uk.org.publicwhip/person/26795",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210772&cultureInfo=en-GB"
+    },
+    {
+      "extra": {
+        "localised_values": {
+          "role": {
+            "cy": "Cadeirydd",
+            "en": "Chair"
+          }
+        }
+      },
+      "id": "senedd.wales/Committee/210784/Member/12152",
+      "organization_id": "senedd-committee-210784",
+      "person_id": "uk.org.publicwhip/person/26796",
+      "role": "Cadeirydd / Chair",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210784&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210779/Member/12161",
+      "organization_id": "senedd-committee-210779",
+      "person_id": "uk.org.publicwhip/person/26797",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210779&cultureInfo=en-GB"
+    }
+  ],
+  "organizations": [
+    {
+      "classification": "committee",
+      "extra": {
+        "localised_values": {
+          "name": {
+            "cy": "Y Pwyllgor Busnes",
+            "en": "Business Committee"
+          }
+        }
+      },
+      "id": "senedd-committee-210294",
+      "links": [
+        "https://senedd.cymru/pwyllgor/909",
+        "https://senedd.wales/committee/909"
+      ],
+      "name": "Y Pwyllgor Busnes / Business Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i archwilio deddfwriaeth a dwyn Llywodraeth Cymru i gyfrif drwy graffu ar faterion o ran ei gwariant, ei gweinyddiaeth a\u2019i pholisi, gan gwmpasu\u2019r meysydd a ganlyn (ond heb fod yn gyfyngedig iddynt): hinsawdd, natur, yr amgylchedd, cynaliadwyedd, a materion gwledig.\n\nThe Committee was established on 16 June 2026 to examine legislation and hold the Welsh Government to account by scrutinising its expenditure, administration and policy matters, encompassing (but not restricted to): climate, nature, environment, sustainability, and rural affairs.",
+      "extra": {
+        "localised_values": {
+          "name": {
+            "cy": "Pwyllgor Newid Hinsawdd, yr Amgylchedd, Cynaliadwyedd a Materion Gwledig",
+            "en": "Climate Change, Environment, Sustainability and Rural Affairs Committee"
+          },
+          "description": {
+            "cy": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i archwilio deddfwriaeth a dwyn Llywodraeth Cymru i gyfrif drwy graffu ar faterion o ran ei gwariant, ei gweinyddiaeth a\u2019i pholisi, gan gwmpasu\u2019r meysydd a ganlyn (ond heb fod yn gyfyngedig iddynt): hinsawdd, natur, yr amgylchedd, cynaliadwyedd, a materion gwledig.",
+            "en": "The Committee was established on 16 June 2026 to examine legislation and hold the Welsh Government to account by scrutinising its expenditure, administration and policy matters, encompassing (but not restricted to): climate, nature, environment, sustainability, and rural affairs."
+          }
+        }
+      },
+      "id": "senedd-committee-210772",
+      "links": [
+        "https://senedd.cymru/pwyllgor/978",
+        "https://senedd.wales/committee/978"
+      ],
+      "name": "Pwyllgor Newid Hinsawdd, yr Amgylchedd, Cynaliadwyedd a Materion Gwledig / Climate Change, Environment, Sustainability and Rural Affairs Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i archwilio deddfwriaeth a dwyn Llywodraeth Cymru i gyfrif drwy graffu ar ar faterion o ran ei gwariant, ei gweinyddiaeth a\u2019i pholisi, gan gwmpasu\u2019r meysydd a ganlyn (ond heb fod yn gyfyngedig iddynt): materion cyfansoddiadol, cyfiawnder, materion allanol (gan gynnwys cysylltiadau o fewn y DU a chysylltiadau rhyngwladol), masnach, materion sy\u2019n ymwneud ag etholiadau\u2019r Senedd, a gweithredu Deddf Llesiant Cenedlaethau\u2019r Dyfodol 2015, ac i gyflawni'r swyddogaethau a bennir ar gyfer pwyllgor yn adrannau 7 a 19 o Ddeddf Senedd Cymru (Aelodau ac Etholiadau) 2024 (os bydd y Senedd yn cytuno ar y cynigion perthnasol y mae\u2019n ofynnol eu cyflwyno o dan Ddeddf Senedd Cymru (Aelodau ac Etholiadau) 2024).\n\nThe Committee was established on 16 June 2026 to examine legislation and hold the Welsh Government to account by scrutinising its expenditure, administration and policy matters, encompassing (but not restricted to): constitutional affairs, justice, external affairs (including intra-UK and international relations), trade, matters relating to Senedd elections, the implementation of the Well-being of Future Generations (Wales) Act 2015, and to carry out the functions specified for a committee in sections 7 and 19 of the Senedd Cymru (Members and Elections) Act 2024 (should the Senedd agree the relevant motions required to be tabled under the Senedd Cymru (Members and Elections) Act 2024).",
+      "extra": {
+        "localised_values": {
+          "name": {
+            "cy": "Pwyllgor y Cyfansoddiad, Cyfiawnder a Materion Allanol",
+            "en": "Constitution, Justice and External Affairs Committee"
+          },
+          "description": {
+            "cy": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i archwilio deddfwriaeth a dwyn Llywodraeth Cymru i gyfrif drwy graffu ar ar faterion o ran ei gwariant, ei gweinyddiaeth a\u2019i pholisi, gan gwmpasu\u2019r meysydd a ganlyn (ond heb fod yn gyfyngedig iddynt): materion cyfansoddiadol, cyfiawnder, materion allanol (gan gynnwys cysylltiadau o fewn y DU a chysylltiadau rhyngwladol), masnach, materion sy\u2019n ymwneud ag etholiadau\u2019r Senedd, a gweithredu Deddf Llesiant Cenedlaethau\u2019r Dyfodol 2015, ac i gyflawni'r swyddogaethau a bennir ar gyfer pwyllgor yn adrannau 7 a 19 o Ddeddf Senedd Cymru (Aelodau ac Etholiadau) 2024 (os bydd y Senedd yn cytuno ar y cynigion perthnasol y mae\u2019n ofynnol eu cyflwyno o dan Ddeddf Senedd Cymru (Aelodau ac Etholiadau) 2024).",
+            "en": "The Committee was established on 16 June 2026 to examine legislation and hold the Welsh Government to account by scrutinising its expenditure, administration and policy matters, encompassing (but not restricted to): constitutional affairs, justice, external affairs (including intra-UK and international relations), trade, matters relating to Senedd elections, the implementation of the Well-being of Future Generations (Wales) Act 2015, and to carry out the functions specified for a committee in sections 7 and 19 of the Senedd Cymru (Members and Elections) Act 2024 (should the Senedd agree the relevant motions required to be tabled under the Senedd Cymru (Members and Elections) Act 2024)."
+          }
+        }
+      },
+      "id": "senedd-committee-210773",
+      "links": [
+        "https://senedd.cymru/pwyllgor/979",
+        "https://senedd.wales/committee/979"
+      ],
+      "name": "Pwyllgor y Cyfansoddiad, Cyfiawnder a Materion Allanol / Constitution, Justice and External Affairs Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i archwilio deddfwriaeth a dwyn Llywodraeth Cymru i gyfrif drwy graffu ar faterion o ran ei gwariant, ei gweinyddiaeth a\u2019i pholisi, gan gwmpasu\u2019r meysydd a ganlyn (ond heb fod yn gyfyngedig iddynt): diwylliant, y celfyddydau, yr amgylchedd hanesyddol, cyfathrebu, y Gymraeg, darlledu, y cyfryngau, a chwaraeon.\n\nThe Committee was established on 16 June 2026 to examine legislation and hold the Welsh Government to account by scrutinising its expenditure, administration and policy matters, encompassing (but not restricted to): culture, the arts, historic environment, communications, Welsh Language, broadcasting, the media, and sport.",
+      "extra": {
+        "localised_values": {
+          "name": {
+            "cy": "Pwyllgor Diwylliant, Cyfathrebu, y Gymraeg a Chwaraeon",
+            "en": "Culture, Communications, Cymraeg and Sport Committee"
+          },
+          "description": {
+            "cy": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i archwilio deddfwriaeth a dwyn Llywodraeth Cymru i gyfrif drwy graffu ar faterion o ran ei gwariant, ei gweinyddiaeth a\u2019i pholisi, gan gwmpasu\u2019r meysydd a ganlyn (ond heb fod yn gyfyngedig iddynt): diwylliant, y celfyddydau, yr amgylchedd hanesyddol, cyfathrebu, y Gymraeg, darlledu, y cyfryngau, a chwaraeon.",
+            "en": "The Committee was established on 16 June 2026 to examine legislation and hold the Welsh Government to account by scrutinising its expenditure, administration and policy matters, encompassing (but not restricted to): culture, the arts, historic environment, communications, Welsh Language, broadcasting, the media, and sport."
+          }
+        }
+      },
+      "id": "senedd-committee-210774",
+      "links": [
+        "https://senedd.cymru/pwyllgor/980",
+        "https://senedd.wales/committee/980"
+      ],
+      "name": "Pwyllgor Diwylliant, Cyfathrebu, y Gymraeg a Chwaraeon / Culture, Communications, Cymraeg and Sport Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i archwilio deddfwriaeth a dwyn Llywodraeth Cymru i gyfrif drwy graffu ar faterion o ran ei gwariant, ei gweinyddiaeth a\u2019i pholisi, gan gwmpasu\u2019r meysydd a ganlyn (ond heb fod yn gyfyngedig iddynt): y blynyddoedd cynnar, addysg (gan gynnwys y Gymraeg mewn addysg), sgiliau, ac iechyd a llesiant plant a phobl ifanc, gan gynnwys eu gofal cymdeithasol.\n\nThe Committee was established on 16 June 2026 to examine legislation and hold the Welsh Government to account by scrutinising its expenditure, administration and policy matters, encompassing (but not restricted to): early years, education (including Welsh-language in education), skills, and the health and well-being of children and young people, including their health and social care.",
+      "extra": {
+        "localised_values": {
+          "name": {
+            "cy": "Pwyllgor y Blynyddoedd Cynnar, Plant, Pobl Ifanc ac Addysg",
+            "en": "Early Years, Children, Young People and Education Committee"
+          },
+          "description": {
+            "cy": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i archwilio deddfwriaeth a dwyn Llywodraeth Cymru i gyfrif drwy graffu ar faterion o ran ei gwariant, ei gweinyddiaeth a\u2019i pholisi, gan gwmpasu\u2019r meysydd a ganlyn (ond heb fod yn gyfyngedig iddynt): y blynyddoedd cynnar, addysg (gan gynnwys y Gymraeg mewn addysg), sgiliau, ac iechyd a llesiant plant a phobl ifanc, gan gynnwys eu gofal cymdeithasol.",
+            "en": "The Committee was established on 16 June 2026 to examine legislation and hold the Welsh Government to account by scrutinising its expenditure, administration and policy matters, encompassing (but not restricted to): early years, education (including Welsh-language in education), skills, and the health and well-being of children and young people, including their health and social care."
+          }
+        }
+      },
+      "id": "senedd-committee-210775",
+      "links": [
+        "https://senedd.cymru/pwyllgor/981",
+        "https://senedd.wales/committee/981"
+      ],
+      "name": "Pwyllgor y Blynyddoedd Cynnar, Plant, Pobl Ifanc ac Addysg / Early Years, Children, Young People and Education Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i archwilio deddfwriaeth a dwyn Llywodraeth Cymru i gyfrif drwy graffu ar faterion o ran ei gwariant, ei gweinyddiaeth a\u2019i pholisi, gan gwmpasu\u2019r meysydd a ganlyn (ond heb fod yn gyfyngedig iddynt): menter, datblygu economaidd, ymchwil a datblygu, ynni, trafnidiaeth, a chysylltedd.\n\nThe Committee was established on 16 June 2026 to examine legislation and hold the Welsh Government to account by scrutinising its expenditure, administration and policy matters, encompassing (but not restricted to): enterprise, economic development, research and development, energy, transport, and connectivity.",
+      "extra": {
+        "localised_values": {
+          "name": {
+            "cy": "Pwyllgor yr Economi, Ynni a Chysylltedd",
+            "en": "Economy, Energy and Connectivity Committee"
+          },
+          "description": {
+            "cy": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i archwilio deddfwriaeth a dwyn Llywodraeth Cymru i gyfrif drwy graffu ar faterion o ran ei gwariant, ei gweinyddiaeth a\u2019i pholisi, gan gwmpasu\u2019r meysydd a ganlyn (ond heb fod yn gyfyngedig iddynt): menter, datblygu economaidd, ymchwil a datblygu, ynni, trafnidiaeth, a chysylltedd.",
+            "en": "The Committee was established on 16 June 2026 to examine legislation and hold the Welsh Government to account by scrutinising its expenditure, administration and policy matters, encompassing (but not restricted to): enterprise, economic development, research and development, energy, transport, and connectivity."
+          }
+        }
+      },
+      "id": "senedd-committee-210779",
+      "links": [
+        "https://senedd.cymru/pwyllgor/982",
+        "https://senedd.wales/committee/982"
+      ],
+      "name": "Pwyllgor yr Economi, Ynni a Chysylltedd / Economy, Energy and Connectivity Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i archwilio deddfwriaeth a dwyn Llywodraeth Cymru i gyfrif drwy graffu ar faterion o ran ei gwariant, ei gweinyddiaeth a\u2019i pholisi, gan gwmpasu\u2019r meysydd a ganlyn (ond heb fod yn gyfyngedig iddynt): cydraddoldeb a hawliau dynol, gwaith teg, cydlyniant cymunedol a diogelwch, mynd i\u2019r afael \u00e2 thlodi, a chyfiawnder cymdeithasol. At hynny, caiff y Pwyllgor ymchwilio i unrhyw faes polisi o safbwynt cydraddoldeb a hawliau dynol.\n\nThe Committee was established on 16 June 2026 to examine legislation and hold the Welsh Government to account by scrutinising its expenditure, administration and policy matters, encompassing (but not restricted to): equality and human rights, fair work, community cohesion and safety, tackling poverty, and social justice. Additionally, the Committee may investigate any area of policy from the perspective of equality and human rights.",
+      "extra": {
+        "localised_values": {
+          "name": {
+            "cy": "Y Pwyllgor Cydraddoldeb, Hawliau Dynol a Chyfiawnder Cymdeithasol",
+            "en": "Equality, Human Rights and Social Justice Committee"
+          },
+          "description": {
+            "cy": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i archwilio deddfwriaeth a dwyn Llywodraeth Cymru i gyfrif drwy graffu ar faterion o ran ei gwariant, ei gweinyddiaeth a\u2019i pholisi, gan gwmpasu\u2019r meysydd a ganlyn (ond heb fod yn gyfyngedig iddynt): cydraddoldeb a hawliau dynol, gwaith teg, cydlyniant cymunedol a diogelwch, mynd i\u2019r afael \u00e2 thlodi, a chyfiawnder cymdeithasol. At hynny, caiff y Pwyllgor ymchwilio i unrhyw faes polisi o safbwynt cydraddoldeb a hawliau dynol.",
+            "en": "The Committee was established on 16 June 2026 to examine legislation and hold the Welsh Government to account by scrutinising its expenditure, administration and policy matters, encompassing (but not restricted to): equality and human rights, fair work, community cohesion and safety, tackling poverty, and social justice. Additionally, the Committee may investigate any area of policy from the perspective of equality and human rights."
+          }
+        }
+      },
+      "id": "senedd-committee-210780",
+      "links": [
+        "https://senedd.cymru/pwyllgor/983",
+        "https://senedd.wales/committee/983"
+      ],
+      "name": "Y Pwyllgor Cydraddoldeb, Hawliau Dynol a Chyfiawnder Cymdeithasol / Equality, Human Rights and Social Justice Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i gyflawni swyddogaethau'r pwyllgor cyfrifol a nodir yn Rheolau Sefydlog 18.10, 18.11, 18A, a 19 y Senedd. O dan Reol Sefydlog 19, mae cyfrifoldebau'r pwyllgor yn cynnwys ystyried unrhyw adroddiad neu ddogfen a osodir gerbron y Senedd ynghylch defnyddio adnoddau, neu wariant o Gronfa Gyfunol Cymru, gan gynnwys craffu ar gyllidebau\u2019r cyrff a ariennir yn uniongyrchol gan Gronfa Gyfunol Cymru. O dan Reolau Sefydlog 18.10 a 18.11, mae cyfrifoldebau'r pwyllgor yn cynnwys goruchwylio llywodraethu Swyddfa Archwilio Cymru, fel y nodir yn Neddf Archwilio Cyhoeddus (Cymru) 2013. O dan Reol Sefydlog 18A, mae cyfrifoldebau\u2019r pwyllgor yn cynnwys goruchwylio Ombwdsmon Gwasanaethau Cyhoeddus Cymru. Gall y pwyllgor hefyd, fel rhan o'i gyfrifoldebau, ystyried unrhyw gynigion ar gyfer datganoli pwerau cyllidol i Gymru. Gall y pwyllgor graffu ar ddeddfwriaeth a gyflwynir i'r Senedd.\n\nThe Committee was established on 16 June 2026 to carry out the functions of the responsible committee set out in Standing Orders 18.10, 18.11, 18A and 19 of the Senedd. Under Standing Order 19, the committee\u2019s responsibilities include considering any report or document laid before the Senedd concerning the use of resources, or expenditure from the Welsh Consolidated Fund, including undertaking budget scrutiny of the bodies directly funded from the Welsh Consolidated Fund. Under Standing Orders 18.10 and 18.11, the Committee\u2019s responsibilities include oversight of the governance of the Wales Audit Office, as set out in the Public Audit (Wales) Act 2013. Under Standing Order 18A, the Committee\u2019s responsibilities include oversight of the Public Services Ombudsman for Wales. The Committee may also consider any proposals for, and the progress of, the devolution of fiscal powers to Wales as part of its responsibilities. The Committee may scrutinise legislation introduced to the Senedd.",
+      "extra": {
+        "localised_values": {
+          "name": {
+            "cy": "Y Pwyllgor Cyllid",
+            "en": "Finance Committee"
+          },
+          "description": {
+            "cy": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i gyflawni swyddogaethau'r pwyllgor cyfrifol a nodir yn Rheolau Sefydlog 18.10, 18.11, 18A, a 19 y Senedd. O dan Reol Sefydlog 19, mae cyfrifoldebau'r pwyllgor yn cynnwys ystyried unrhyw adroddiad neu ddogfen a osodir gerbron y Senedd ynghylch defnyddio adnoddau, neu wariant o Gronfa Gyfunol Cymru, gan gynnwys craffu ar gyllidebau\u2019r cyrff a ariennir yn uniongyrchol gan Gronfa Gyfunol Cymru. O dan Reolau Sefydlog 18.10 a 18.11, mae cyfrifoldebau'r pwyllgor yn cynnwys goruchwylio llywodraethu Swyddfa Archwilio Cymru, fel y nodir yn Neddf Archwilio Cyhoeddus (Cymru) 2013. O dan Reol Sefydlog 18A, mae cyfrifoldebau\u2019r pwyllgor yn cynnwys goruchwylio Ombwdsmon Gwasanaethau Cyhoeddus Cymru. Gall y pwyllgor hefyd, fel rhan o'i gyfrifoldebau, ystyried unrhyw gynigion ar gyfer datganoli pwerau cyllidol i Gymru. Gall y pwyllgor graffu ar ddeddfwriaeth a gyflwynir i'r Senedd.",
+            "en": "The Committee was established on 16 June 2026 to carry out the functions of the responsible committee set out in Standing Orders 18.10, 18.11, 18A and 19 of the Senedd. Under Standing Order 19, the committee\u2019s responsibilities include considering any report or document laid before the Senedd concerning the use of resources, or expenditure from the Welsh Consolidated Fund, including undertaking budget scrutiny of the bodies directly funded from the Welsh Consolidated Fund. Under Standing Orders 18.10 and 18.11, the Committee\u2019s responsibilities include oversight of the governance of the Wales Audit Office, as set out in the Public Audit (Wales) Act 2013. Under Standing Order 18A, the Committee\u2019s responsibilities include oversight of the Public Services Ombudsman for Wales. The Committee may also consider any proposals for, and the progress of, the devolution of fiscal powers to Wales as part of its responsibilities. The Committee may scrutinise legislation introduced to the Senedd."
+          }
+        }
+      },
+      "id": "senedd-committee-210781",
+      "links": [
+        "https://senedd.cymru/pwyllgor/984",
+        "https://senedd.wales/committee/984"
+      ],
+      "name": "Y Pwyllgor Cyllid / Finance Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i archwilio deddfwriaeth a dwyn Llywodraeth Cymru i gyfrif drwy graffu ar faterion o ran ei gwariant, ei gweinyddiaeth a'i pholisi, gan gwmpasu\u2019r meysydd a ganlyn (ond heb fod yn gyfyngedig iddynt): iechyd corfforol, iechyd meddwl, iechyd cyhoeddus a llesiant pobl Cymru, gan gynnwys y system gofal cymdeithasol.\n\nThe Committee was established on 16 June 2026 to examine legislation and hold the Welsh Government to account by scrutinising its expenditure, administration and policy matters, encompassing (but not restricted to): the physical, mental and public health and well-being of the people of Wales, including the social care system.",
+      "extra": {
+        "localised_values": {
+          "name": {
+            "cy": "Pwyllgor Iechyd a Gofal Cymdeithasol",
+            "en": "Health and Social Care Committee"
+          },
+          "description": {
+            "cy": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i archwilio deddfwriaeth a dwyn Llywodraeth Cymru i gyfrif drwy graffu ar faterion o ran ei gwariant, ei gweinyddiaeth a'i pholisi, gan gwmpasu\u2019r meysydd a ganlyn (ond heb fod yn gyfyngedig iddynt): iechyd corfforol, iechyd meddwl, iechyd cyhoeddus a llesiant pobl Cymru, gan gynnwys y system gofal cymdeithasol.",
+            "en": "The Committee was established on 16 June 2026 to examine legislation and hold the Welsh Government to account by scrutinising its expenditure, administration and policy matters, encompassing (but not restricted to): the physical, mental and public health and well-being of the people of Wales, including the social care system."
+          }
+        }
+      },
+      "id": "senedd-committee-210782",
+      "links": [
+        "https://senedd.cymru/pwyllgor/985",
+        "https://senedd.wales/committee/985"
+      ],
+      "name": "Pwyllgor Iechyd a Gofal Cymdeithasol / Health and Social Care Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i gyflawni swyddogaethau\u2019r pwyllgor cyfrifol fel y\u2019u nodir yn Rheol Sefydlog 21 a Rheol Sefydlog 26C, ac ystyried unrhyw fater arall sy\u2019n ymwneud \u00e2 deddfwriaeth, o fewn cymhwysedd neu\u2019n gysylltiedig \u00e2 chymhwysedd y Senedd neu Weinidogion Cymru, gan gynnwys ansawdd deddfwriaeth.\n\nThe Committee was established on 16 June 2026 to carry out the functions of the responsible committee set out in Standing Order 21 and Standing Order 26C, and to consider any other matter relating to legislation within or relating to the competence of the Senedd or the Welsh Ministers, including the quality of legislation.",
+      "extra": {
+        "localised_values": {
+          "name": {
+            "cy": "Y Pwyllgor Deddfwriaeth",
+            "en": "Legislation Committee"
+          },
+          "description": {
+            "cy": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i gyflawni swyddogaethau\u2019r pwyllgor cyfrifol fel y\u2019u nodir yn Rheol Sefydlog 21 a Rheol Sefydlog 26C, ac ystyried unrhyw fater arall sy\u2019n ymwneud \u00e2 deddfwriaeth, o fewn cymhwysedd neu\u2019n gysylltiedig \u00e2 chymhwysedd y Senedd neu Weinidogion Cymru, gan gynnwys ansawdd deddfwriaeth.",
+            "en": "The Committee was established on 16 June 2026 to carry out the functions of the responsible committee set out in Standing Order 21 and Standing Order 26C, and to consider any other matter relating to legislation within or relating to the competence of the Senedd or the Welsh Ministers, including the quality of legislation."
+          }
+        }
+      },
+      "id": "senedd-committee-210783",
+      "links": [
+        "https://senedd.cymru/pwyllgor/986",
+        "https://senedd.wales/committee/986"
+      ],
+      "name": "Y Pwyllgor Deddfwriaeth / Legislation Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i archwilio deddfwriaeth a dwyn Llywodraeth Cymru i gyfrif drwy graffu ar faterion o ran ei gwariant, ei gweinyddiaeth a\u2019i pholisi, gan gwmpasu\u2019r meysydd a ganlyn (ond heb fod yn gyfyngedig iddynt): llywodraeth leol, cymunedau, tai, cynllunio, ac adfywio.p>\n\nThe Committee was established on 16 June 2026 to examine legislation and hold the Welsh Government to account by scrutinising its expenditure, administration and policy matters, encompassing (but not restricted to): local government, communities, housing, planning, and regeneration.",
+      "extra": {
+        "localised_values": {
+          "name": {
+            "cy": "Y Pwyllgor Llywodraeth Leol, Tai a Chynllunio",
+            "en": "Local Government, Housing and Planning Committee"
+          },
+          "description": {
+            "cy": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i archwilio deddfwriaeth a dwyn Llywodraeth Cymru i gyfrif drwy graffu ar faterion o ran ei gwariant, ei gweinyddiaeth a\u2019i pholisi, gan gwmpasu\u2019r meysydd a ganlyn (ond heb fod yn gyfyngedig iddynt): llywodraeth leol, cymunedau, tai, cynllunio, ac adfywio.p>",
+            "en": "The Committee was established on 16 June 2026 to examine legislation and hold the Welsh Government to account by scrutinising its expenditure, administration and policy matters, encompassing (but not restricted to): local government, communities, housing, planning, and regeneration."
+          }
+        }
+      },
+      "id": "senedd-committee-210784",
+      "links": [
+        "https://senedd.cymru/pwyllgor/987",
+        "https://senedd.wales/committee/987"
+      ],
+      "name": "Y Pwyllgor Llywodraeth Leol, Tai a Chynllunio / Local Government, Housing and Planning Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i gyflawni swyddogaethau\u2019r pwyllgor cyfrifol fel y\u2019u nodir yn Rheol Sefydlog 23.\n\nThe Committee was established on 16 June 2026 to carry out the functions of the responsible committee set out in Standing Order 23.",
+      "extra": {
+        "localised_values": {
+          "name": {
+            "cy": "Y Pwyllgor Deisebau",
+            "en": "Petitions Committee"
+          },
+          "description": {
+            "cy": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i gyflawni swyddogaethau\u2019r pwyllgor cyfrifol fel y\u2019u nodir yn Rheol Sefydlog 23.",
+            "en": "The Committee was established on 16 June 2026 to carry out the functions of the responsible committee set out in Standing Order 23."
+          }
+        }
+      },
+      "id": "senedd-committee-210785",
+      "links": [
+        "https://senedd.cymru/pwyllgor/988",
+        "https://senedd.wales/committee/988"
+      ],
+      "name": "Y Pwyllgor Deisebau / Petitions Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i gyflawni\u2019r swyddogaethau fel y\u2019u nodir yn Rheolau Sefydlog 18.2 a 18.3, ac ystyried unrhyw fater arall sy\u2019n ymwneud \u00e2 pha mor ddarbodus, effeithlon ac effeithiol y caiff adnoddau eu defnyddio wrth gyflawni swyddogaethau cyhoeddus yng Nghymru. Caiff y Pwyllgor graffu ar unrhyw fater arall sy\u2019n ymwneud \u00e2 pheirianwaith ac effeithiolrwydd llywodraethu, gan gynnwys ansawdd a safonau\u2019r gwaith gweinyddu a ddarperir gan Wasanaeth Sifil Llywodraeth Cymru a chyrff a noddir gan Lywodraeth Cymru.\n\nThe Committee was established on 16 June 2026 to carry out the functions set out in Standing Orders 18.2 and 18.3, to consider any other matter that relates to the economy, efficiency and effectiveness with which resources are employed in the discharge of public functions in Wales. The Committee may scrutinise any other matter relating to the machinery and effectiveness of government, including the quality and standards of administration provided by the Welsh Government\u2019s Civil Service and Welsh Government Sponsored Bodies.",
+      "extra": {
+        "localised_values": {
+          "name": {
+            "cy": "Y Pwyllgor Cyfrifon Cyhoeddus a Gweinyddiaeth Gyhoeddus",
+            "en": "Public Accounts and Public Administration Committee"
+          },
+          "description": {
+            "cy": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i gyflawni\u2019r swyddogaethau fel y\u2019u nodir yn Rheolau Sefydlog 18.2 a 18.3, ac ystyried unrhyw fater arall sy\u2019n ymwneud \u00e2 pha mor ddarbodus, effeithlon ac effeithiol y caiff adnoddau eu defnyddio wrth gyflawni swyddogaethau cyhoeddus yng Nghymru. Caiff y Pwyllgor graffu ar unrhyw fater arall sy\u2019n ymwneud \u00e2 pheirianwaith ac effeithiolrwydd llywodraethu, gan gynnwys ansawdd a safonau\u2019r gwaith gweinyddu a ddarperir gan Wasanaeth Sifil Llywodraeth Cymru a chyrff a noddir gan Lywodraeth Cymru.",
+            "en": "The Committee was established on 16 June 2026 to carry out the functions set out in Standing Orders 18.2 and 18.3, to consider any other matter that relates to the economy, efficiency and effectiveness with which resources are employed in the discharge of public functions in Wales. The Committee may scrutinise any other matter relating to the machinery and effectiveness of government, including the quality and standards of administration provided by the Welsh Government\u2019s Civil Service and Welsh Government Sponsored Bodies."
+          }
+        }
+      },
+      "id": "senedd-committee-210786",
+      "links": [
+        "https://senedd.cymru/pwyllgor/989",
+        "https://senedd.wales/committee/989"
+      ],
+      "name": "Y Pwyllgor Cyfrifon Cyhoeddus a Gweinyddiaeth Gyhoeddus / Public Accounts and Public Administration Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i gyflawni swyddogaethau\u2019r pwyllgor cyfrifol fel y\u2019u nodir yn Rheol Sefydlog 22.\n\nThe Committee was established on 16 June 2026 to carry out the functions of the responsible committee set out in Standing Order 22.",
+      "extra": {
+        "localised_values": {
+          "name": {
+            "cy": "Y Pwyllgor Safonau Ymddygiad",
+            "en": "Standards of Conduct Committee"
+          },
+          "description": {
+            "cy": "Sefydlwyd y Pwyllgor ar 16 Mehefin 2026 i gyflawni swyddogaethau\u2019r pwyllgor cyfrifol fel y\u2019u nodir yn Rheol Sefydlog 22.",
+            "en": "The Committee was established on 16 June 2026 to carry out the functions of the responsible committee set out in Standing Order 22."
+          }
+        }
+      },
+      "id": "senedd-committee-210787",
+      "links": [
+        "https://senedd.cymru/pwyllgor/990",
+        "https://senedd.wales/committee/990"
+      ],
+      "name": "Y Pwyllgor Safonau Ymddygiad / Standards of Conduct Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "Sefydlwyd y Pwyllgor ar 15 Gorffennaf 2026 i gyflawni\u2019r swyddogaethau a nodir yn Rheol Sefydlog 18.B2.\n\nThe Committee was established on 15 July 2026 to carry out the functions set out in Standing Order 18.B2.",
+      "extra": {
+        "localised_values": {
+          "name": {
+            "cy": "Pwyllgor y Llywydd",
+            "en": "Llywydd's Committee"
+          },
+          "description": {
+            "cy": "Sefydlwyd y Pwyllgor ar 15 Gorffennaf 2026 i gyflawni\u2019r swyddogaethau a nodir yn Rheol Sefydlog 18.B2.",
+            "en": "The Committee was established on 15 July 2026 to carry out the functions set out in Standing Order 18.B2."
+          }
+        }
+      },
+      "id": "senedd-committee-210788",
+      "links": [
+        "https://senedd.cymru/pwyllgor/991",
+        "https://senedd.wales/committee/991"
+      ],
+      "name": "Pwyllgor y Llywydd / Llywydd's Committee"
+    }
+  ],
+  "persons": [],
+  "posts": []
+}
