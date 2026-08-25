@@ -17,5 +17,5 @@ poetry run python -m pyscraper.regmem download-latest-register --chamber ni --qu
 # update commons EDMs
 poetry run python -m pyscraper.edms update --quiet
 
-# Update committee info file
-poetry run python -m pyscraper.committees all --quiet
+# Update legacy UK Parliament minigroup files
+poetry run python -m pyscraper.committees uk-committees --quiet

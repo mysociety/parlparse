@@ -1,38 +1,27 @@
 """
-CLI to download committee information from Parliament APIs and convert to a common group shorthand.
+Run committee and parliamentary post scrapers.
 """
 
 from typer import Typer
 
-from .commons_api import VerboseSettings
-from .commons_api import (
-    convert_to_groups as uk_convert_to_groups,
-)
-from .commons_api import (
-    get_committee_all_items as uk_get_committee_all_items,
-)
+from .helpers.progress import progress_output
 
 app = Typer(pretty_exceptions_enable=False)
 
 
-@app.command(name="all")
-def all_chambers(quiet: bool = False):
+@app.command(name="uk-committees")
+def uk_committees(quiet: bool = False) -> None:
     """
-    Fetch all committees from all parliaments (uk-only currently)
+    Fetch current UK Parliament committee information and write group JSON files.
     """
-    VerboseSettings.verbose = not quiet
-    uk_get_committee_all_items()
-    uk_convert_to_groups()
+    from .legacy.uk_committees.scraper import (
+        convert_to_groups,
+        get_committee_all_items,
+    )
 
-
-@app.command(name="parliament")
-def parliament(slug: str = "uk", quiet: bool = False):
-    """
-    Fetch all committees from a specific parliament (UK parl only supported at moment)
-    """
-    VerboseSettings.verbose = not quiet
-    uk_get_committee_all_items()
-    uk_convert_to_groups()
+    with progress_output(not quiet):
+        get_committee_all_items()
+        convert_to_groups()
 
 
 if __name__ == "__main__":
