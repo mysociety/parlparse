@@ -19,9 +19,9 @@ def is_verbose() -> bool:
 
 
 @contextmanager
-def progress_output(enabled: bool) -> Generator[None]:
+def set_verbose(verbose: bool) -> Generator[None]:
     """Temporarily configure progress output for the current execution context."""
-    token = _VERBOSE.set(enabled)
+    token = _VERBOSE.set(verbose)
     try:
         yield
     finally:
