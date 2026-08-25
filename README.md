@@ -28,3 +28,10 @@ Before updating, you should run the data.parliament.uk scraper.
 
 1. Change to the `scripts/datadotparl` directory.
 2. Run `./update-members` to parse the XML and update things.
+
+## Committee and parliamentary post scrapers
+
+The Westminster, Senedd, Scottish Parliament and Northern Ireland Assembly
+scrapers write separate Popolo files under `members/posts`. See
+[`pyscraper/committees/README.md`](pyscraper/committees/README.md) for commands,
+sources and field coverage.
