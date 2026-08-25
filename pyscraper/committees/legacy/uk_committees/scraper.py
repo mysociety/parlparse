@@ -1,5 +1,5 @@
 """
-Script to fetch all (current) committee information from UK Parliament.
+Fetch current UK Parliament committee information and generate group data.
 """
 
 from __future__ import annotations
@@ -8,23 +8,26 @@ from datetime import datetime
 from typing import Any, List, Optional, Protocol
 
 import httpx
-from bs4 import BeautifulSoup
 from mysoc_validator import Popolo
 from mysoc_validator.models.popolo import IdentifierScheme
 from pydantic import BaseModel, ConfigDict, Field, RootModel
 from tqdm import tqdm
 
-from pyscraper.committees.groups import MiniGroup, MiniGroupCollection, MiniMember
 from pyscraper.regmem.funcs import parldata_path
+
+from ...config import USER_AGENT
+from ...helpers.html_text import reduce_purpose_html
+from ...helpers.progress import is_verbose
+from .models import (
+    MiniGroup,
+    MiniGroupCollection,
+    MiniMember,
+)
 
 committee_json_path = (
     parldata_path / "scrapedjson" / "committees" / "uk_committees.json"
 )
 groups_path = parldata_path / "scrapedjson" / "committees" / "uk_committees_groups.json"
-
-
-class VerboseSettings:
-    verbose = True
 
 
 class ApiCallWithSkip(Protocol):
@@ -36,13 +39,18 @@ class ApiCallWithSkip(Protocol):
     def __call__(self, skip: int) -> dict[Any, Any]: ...
 
 
-def committee_app_loop(func: ApiCallWithSkip):
+def committee_app_loop(func: ApiCallWithSkip, description: str):
     """
     Handle paging the Parliament committees API
     """
     items: list[dict[str, str]] = []
     skip = 0
-    pbar = tqdm(total=None, leave=False, disable=not VerboseSettings.verbose)
+    pbar = tqdm(
+        total=None,
+        desc=description,
+        leave=False,
+        disable=not is_verbose(),
+    )
     while True:
         batch = func(skip=skip)
         if not batch["items"]:
@@ -53,36 +61,6 @@ def committee_app_loop(func: ApiCallWithSkip):
         pbar.update(len(batch["items"]))
     pbar.close()
     return items
-
-
-def reduce_purpose_html(html: str) -> str:
-    """
-    Extracts and cleans sentences from HTML content.
-
-    Args:
-        html (str): The HTML content as a string.
-
-    Returns:
-        str: A plain text string with sentences separated by new lines.
-    """
-    soup = BeautifulSoup(html, "html.parser")
-    sentences = []
-
-    for p in soup.find_all("p"):
-        text = p.get_text(strip=True)
-        for sentence in text.split(". "):
-            sentence = sentence.strip()
-            if not sentence:
-                continue
-            if sentence.lower().startswith("you can follow the committee on"):
-                continue
-            if len(p.find_all("a")) == len(p.contents):  # Only contains links
-                continue
-            if not sentence.endswith("."):
-                sentence += "."
-            sentences.append(sentence)
-
-    return "\n".join(sentences)
 
 
 def to_camel(string: str) -> str:
@@ -214,7 +192,7 @@ class Committee(CamelModel):
         Get the full committee information from the API
         """
         url = f"https://committees-api.parliament.uk/api/Committees/{self.id}?includeBanners=false&showOnWebsiteOnly=false"
-        response = httpx.get(url, timeout=30)
+        response = httpx.get(url, headers={"User-Agent": USER_AGENT}, timeout=30)
         response.raise_for_status()
         data = response.json()
         return Committee.model_validate(data).add_members()
@@ -226,11 +204,13 @@ class Committee(CamelModel):
 
         def get_paged_list_of_members(skip=0):
             url = f"https://committees-api.parliament.uk/api/Committees/{self.id}/Members?MembershipStatus=Current&ShowOnWebsiteOnly=true&skip={skip}"
-            response = httpx.get(url, timeout=30)
+            response = httpx.get(url, headers={"User-Agent": USER_AGENT}, timeout=30)
             response.raise_for_status()
             return response.json()
 
-        data = committee_app_loop(get_paged_list_of_members)
+        data = committee_app_loop(
+            get_paged_list_of_members, f"Fetching members for {self.name}"
+        )
         self.members = [Member.model_validate(item) for item in data]
         return self
 
@@ -239,24 +219,26 @@ class CommitteeList(RootModel[list[Committee]]):
     def expand(self):
         new_items = []
 
-        for item in tqdm(self.root, disable=not VerboseSettings.verbose):
+        for item in tqdm(
+            self.root,
+            desc="Fetching UK Parliament committee details",
+            leave=False,
+            disable=not is_verbose(),
+        ):
             expanded = item.expand()
             new_items.append(expanded)
 
         return CommitteeList(root=new_items)
 
-    def __iter__(self):
-        return iter(self.root)
-
 
 def get_committee_all_items():
     def get_committees(skip=0):
         url = f"https://committees-api.parliament.uk/api/Committees?CommitteeStatus=Current&skip={skip}"
-        response = httpx.get(url, timeout=30)
+        response = httpx.get(url, headers={"User-Agent": USER_AGENT}, timeout=30)
         response.raise_for_status()
         return response.json()
 
-    committees = committee_app_loop(get_committees)
+    committees = committee_app_loop(get_committees, "Fetching UK committees")
 
     committee_list = CommitteeList.model_validate(committees)
 
@@ -286,7 +268,7 @@ def convert_to_groups():
         except ValueError:
             return None
 
-    for comm in committees:
+    for comm in committees.root:
         categories: list[str] = []
 
         if comm.category:
