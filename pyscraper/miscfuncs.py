@@ -426,9 +426,9 @@ def StraightenHTMLrecurse(stex, stampurl):
 
 # The lookahead assertion (?=<table) stops matching tables when another begin table is reached
 paratag = '</?p(?: style="margin-left: ?[23]0px;")?(?: align=(?:left|"center"))?(?: id="[^"]*" class="timestamp")?(?: class[= ]"(?:tabletext|normaltext|amendment_hs_quote|amendment_indentone|amendment_indenttwo|clause_heading)")?(?: style="margin-bottom:\d+px;")?>'
-restmatcher = paratag + "|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>(?i)"
-reparts = re.compile("(<table[\s\S]*?(?:</table>|(?=<table))|" + restmatcher + ")")
-reparts2 = re.compile("(<table[^>]*?>|" + restmatcher + ")")
+restmatcher = paratag + "|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>"
+reparts = re.compile("(?i)(<table[\s\S]*?(?:</table>|(?=<table))|" + restmatcher + ")")
+reparts2 = re.compile("(?i)(<table[^>]*?>|" + restmatcher + ")")
 
 retable = re.compile("<table[\s\S]*?</table>(?i)")
 retablestart = re.compile("<table[\s\S]*?(?i)")
