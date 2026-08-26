@@ -269,10 +269,10 @@ def StripAnchorTags(text):
 
     ret = ""
     for ab in abf:
-        if re.match("<a[^>]*>(?i)", ab):
+        if re.match("(?i)<a[^>]*>", ab):
             pass
 
-        elif re.match("</a>(?i)", ab):
+        elif re.match("(?i)</a>", ab):
             pass
 
         else:
@@ -290,12 +290,12 @@ def WriteCleanText(fout, text, striphref=True):
             pass
 
         # XXX Differs from pullgluepages version
-        elif striphref and re.match("<a[^>]+>(?i)", ab):
-            anamem = re.match("<a name\s*?=(?i)", ab)
+        elif striphref and re.match("(?i)<a[^>]+>", ab):
+            anamem = re.match("(?i)<a name\s*?=", ab)
             if anamem:
                 fout.write(re.sub("\s", " ", ab))
 
-        elif striphref and re.match("</?a>(?i)", ab):
+        elif striphref and re.match("(?i)</?a>", ab):
             pass
 
         # spaces only inside tags
@@ -322,14 +322,14 @@ def ApplyFixSubstitutions(text, sdate, fixsubs):
 def StraightenHTMLrecurse(stex, stampurl):
     # split the text into <i></i> and <sup></sup> and <sub></sub> and <a href></a>
     qisup = re.search(
-        r'(<(a|i|b|s|small|sup|sub)( href="[^"]*")?>(.*?)</\2>)(?i)', stex
+        r'(?i)(<(a|i|b|s|small|sup|sub)( href="[^"]*")?>(.*?)</\2>)', stex
     )
     if qisup:
         qtagtype = qisup.group(2)
         qhref = qisup.group(3) or ""
         qtag = ("<%s%s>" % (qtagtype, qhref), "</%s>" % qtagtype)
     if not qisup:
-        qisup = re.search('(<(a) href="([^"]*)">(.*?)</a>)(?i)', stex)
+        qisup = re.search('(?i)(<(a) href="([^"]*)">(.*?)</a>)', stex)
         if qisup:
             qtag = ('<a href="%s">' % qisup.group(3), "</a>")
 
@@ -394,7 +394,7 @@ def StraightenHTMLrecurse(stex, stampurl):
         elif sres[i] == "\xc3\xb1":
             sres[i] = "&ntilde;"
 
-        elif re.match("</?i>$(?i)", sres[i]):
+        elif re.match("(?i)</?i>$", sres[i]):
             sres[i] = ""  # 'OPEN-i-TAG-OUT-OF-PLACE' 'CLOSE-i-TAG-OUT-OF-PLACE'
 
         elif re.match(
@@ -403,11 +403,11 @@ def StraightenHTMLrecurse(stex, stampurl):
             sres[i] = ""
 
         # allow brs through
-        elif re.match("<br ?/?>$(?i)", sres[i]):
+        elif re.match("(?i)<br ?/?>$", sres[i]):
             sres[i] = "<br/>"
 
         # discard garbage that appears in recent today postings
-        elif re.match("<jf\d+>$(?i)", sres[i]):
+        elif re.match("(?i)<jf\d+>$", sres[i]):
             sres[i] = ""
 
         elif sres[i][0] == "<" or sres[i][0] == ">":
@@ -426,18 +426,19 @@ def StraightenHTMLrecurse(stex, stampurl):
 
 # The lookahead assertion (?=<table) stops matching tables when another begin table is reached
 paratag = '</?p(?: style="margin-left: ?[23]0px;")?(?: align=(?:left|"center"))?(?: id="[^"]*" class="timestamp")?(?: class[= ]"(?:tabletext|normaltext|amendment_hs_quote|amendment_indentone|amendment_indenttwo|clause_heading)")?(?: style="margin-bottom:\d+px;")?>'
-restmatcher = paratag + "|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>(?i)"
-reparts = re.compile("(<table[\s\S]*?(?:</table>|(?=<table))|" + restmatcher + ")")
-reparts2 = re.compile("(<table[^>]*?>|" + restmatcher + ")")
+restmatcher = paratag + "|<ul><ul><ul>|</ul></ul></ul>|</?ul>|<br>|</?font[^>]*>"
+reparts = re.compile("(?i)(<table[\s\S]*?(?:</table>|(?=<table))|" + restmatcher + ")")
+reparts2 = re.compile("(?i)(<table[^>]*?>|" + restmatcher + ")")
 
-retable = re.compile("<table[\s\S]*?</table>(?i)")
-retablestart = re.compile("<table[\s\S]*?(?i)")
+retable = re.compile("(?i)<table[\s\S]*?</table>")
+retablestart = re.compile("(?i)<table[\s\S]*?")
 reparaspace = re.compile(
-    paratag
-    + "|<ul><ul><ul>|</ul></ul></ul>|</?ul>|</?br>|</?font[^>]*>|<table[^>]*>$(?i)"
+    "(?i)"
+    + paratag
+    + "|<ul><ul><ul>|</ul></ul></ul>|</?ul>|</?br>|</?font[^>]*>|<table[^>]*>$"
 )
-reparaempty = re.compile("(?:\s|</?i>|&nbsp;)*$(?i)")
-reitalif = re.compile("\s*<i>\s*$(?i)")
+reparaempty = re.compile("(?i)(?:\s|</?i>|&nbsp;)*$")
+reitalif = re.compile("(?i)\s*<i>\s*$")
 
 
 # Break text into paragraphs.
@@ -519,7 +520,7 @@ def SplitParaSpace(text, stampurl):
         if not (bprevparaalone or bthisparaalone):
             bnonfont = False
             for sl in spclist:
-                if not re.match("</?font[^>]*>(?i)", sl):
+                if not re.match("(?i)</?font[^>]*>", sl):
                     bnonfont = True
             if not bnonfont:
                 print("text:", text)
@@ -560,14 +561,14 @@ def SplitParaIndents(text, stampurl):
     for i in range(len(dell)):
         if (i % 2) == 0:
             for sp in dell[i]:
-                if re.match("(?:<ul><ul>)?<ul>(?i)", sp):
+                if re.match("(?i)(?:<ul><ul>)?<ul>", sp):
                     if bIndent == 1:
                         print(dell[i - 1 : i + 1])
                         raise ContextException(
                             " already indented ", stamp=stampurl, fragment=sp
                         )
                     bIndent = 1
-                elif re.match("(?:</ul></ul>)?</ul>(?i)", sp):
+                elif re.match("(?i)(?:</ul></ul>)?</ul>", sp):
                     # no error
                     # if not bIndent:
                     #   raise Exception, ' already not-indentented '

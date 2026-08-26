@@ -361,49 +361,49 @@ class BaseParseDayXML(object):
     def parse_date(self, date):
         text = self.get_single_line_text_from_element(date)
         time_parts = re.match(
-            "\s*the\s+house (?:being |having )?met at?\s+(.*?)$(?i)", text
+            "(?i)\s*the\s+house (?:being |having )?met at?\s+(.*?)$", text
         )
         if time_parts:
             time = time_parts.group(1)
             time = re.sub("</?i>", " ", time)
             time = re.sub("\s+", " ", time)
-            if re.match("half-past Nine(?i)", time):
+            if re.match("(?i)half-past Nine", time):
                 newtime = "09:30:00"
-            elif re.match("a quarter to Ten o(?i)", time):
+            elif re.match("(?i)a quarter to Ten o", time):
                 newtime = "09:45:00"
-            elif re.match("Ten o.clock(?i)", time):
+            elif re.match("(?i)Ten o.clock", time):
                 newtime = "10:00:00"
-            elif re.match("half-past Ten(?i)", time):
+            elif re.match("(?i)half-past Ten", time):
                 newtime = "10:30:00"
-            elif re.match("Eleven o(&#039;|’)clock(?i)", time):
+            elif re.match("(?i)Eleven o(&#039;|’)clock", time):
                 newtime = "11:00:00"
-            elif re.match("twenty-five minutes past\s*Eleven(?i)", time):
+            elif re.match("(?i)twenty-five minutes past\s*Eleven", time):
                 newtime = "11:25:00"
-            elif re.match("twenty-six minutes past\s*Eleven(?i)", time):
+            elif re.match("(?i)twenty-six minutes past\s*Eleven", time):
                 newtime = "11:26:00"
-            elif re.match("twenty-nine minutes past\s*Eleven(?i)", time):
+            elif re.match("(?i)twenty-nine minutes past\s*Eleven", time):
                 newtime = "11:29:00"
-            elif re.match("half-past Eleven(?i)", time):
+            elif re.match("(?i)half-past Eleven", time):
                 newtime = "11:30:00"
-            elif re.match("(Twelve noon|Midday)(?i)", time):
+            elif re.match("(?i)(Twelve noon|Midday)", time):
                 newtime = "12:00:00"
-            elif re.match("half-past Twelve(?i)", time):
+            elif re.match("(?i)half-past Twelve", time):
                 newtime = "12:30:00"
-            elif re.match("One o.clock(?i)", time):
+            elif re.match("(?i)One o.clock", time):
                 newtime = "13:00:00"
-            elif re.match("half-past One(?i)", time):
+            elif re.match("(?i)half-past One", time):
                 newtime = "13:30:00"
-            elif re.match("Two o.clock(?i)", time):
+            elif re.match("(?i)Two o.clock", time):
                 newtime = "14:00:00"
-            elif re.match("half-past Two(?i)", time):
+            elif re.match("(?i)half-past Two", time):
                 newtime = "14:30:00"
-            elif re.match("half-past Three(?i)", time):
+            elif re.match("(?i)half-past Three", time):
                 newtime = "15:30:00"
-            elif re.match("twenty minutes to Three(?i)", time):
+            elif re.match("(?i)twenty minutes to Three", time):
                 newtime = "14:40:00"
-            elif re.match("10 minutes past Three(?i)", time):
+            elif re.match("(?i)10 minutes past Three", time):
                 newtime = "15:10:00"
-            elif re.match("Six o'clock(?i)", time):
+            elif re.match("(?i)Six o'clock", time):
                 newtime = "18:00:00"
             else:
                 raise ContextException("No time matched", fragment=time)
@@ -1278,7 +1278,7 @@ class PBCParseDayXML(BaseParseDayXML):
         tag.text = text
         self.current_speech.append(tag)
 
-        chair_match = re.match(r"\s*\[\s*(.*)\s+in\s+the\s+chair\s*\](?i)", text)
+        chair_match = re.match(r"(?i)\s*\[\s*(.*)\s+in\s+the\s+chair\s*\]", text)
         if chair_match is not None:
             name = chair_match.groups(1)[0]
             chair = self.resolver.pbc_match(name, self.date)

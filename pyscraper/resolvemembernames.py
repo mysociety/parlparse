@@ -13,8 +13,8 @@ from parlphrases import parlPhrases
 
 # These we don't necessarily match to a speaker id, deliberately
 regnospeakers = (
-    "Hon\.? Members|Members of the House of Commons|"
-    + "Deputy? ?Speaker|Second Deputy Chairman(?i)|Speaker-Elect|"
+    "(?i)Hon\.? Members|Members of the House of Commons|"
+    + "Deputy? ?Speaker|Second Deputy Chairman|Speaker-Elect|"
     + "The Chairman|First Deputy Chairman|Temporary Chairman|"
     + "An hon. Member"
 )
@@ -323,7 +323,7 @@ class MemberList(ResolverBase):
                 # If so, intersect those matches with ones from the first part
                 # (some offices get matched in first part - like Mr. Speaker)
                 if len(ids) == 0 or (
-                    len(brackids) == 1 and re.search("speaker(?i)", input)
+                    len(brackids) == 1 and re.search("(?i)speaker", input)
                 ):
                     ids = brackids
                 else:

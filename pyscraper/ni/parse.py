@@ -93,7 +93,7 @@ class ParseDayJSON(ParseDayParserBase):
                 print("WARNING: Empty line: %s" % line)
             elif line["ComponentType"] == "Document Title":
                 assert re.match(
-                    "(Plenary|PLE), %s/%s/%s$(?i)"
+                    "(?i)(Plenary|PLE), %s/%s/%s$"
                     % (self.date[8:10], self.date[5:7], self.date[0:4]),
                     text,
                 ), text
@@ -166,7 +166,7 @@ class ParseDayJSON(ParseDayParserBase):
                     "<p>", '<p class="indent">'
                 )  # Already is HTML
             elif line["ComponentType"] in ("Division", "Spoken Text"):
-                text = re.sub("\s*<BR />\s*<BR />\s*(?i)", "</p>\n<p>", text)
+                text = re.sub("(?i)\s*<BR />\s*<BR />\s*", "</p>\n<p>", text)
                 text = re.sub("WIDTH=50%", 'WIDTH="50%"', text)
                 self.text += "<p>%s</p>\n" % text
             else:

@@ -83,7 +83,7 @@ def RunPatchToolW(typ, sdate, stamp, frag):
     if stamp:
         aname = stamp.GetAName()
         ganamef = re.search(
-            ('<a name\s*=\s*"%s">([\s\S]*?)<a name(?i)' % aname), rforlines
+            ('(?i)<a name\s*=\s*"%s">([\s\S]*?)<a name' % aname), rforlines
         )
         if ganamef:
             gp = ganamef.start(1)

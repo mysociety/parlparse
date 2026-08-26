@@ -112,7 +112,7 @@ def TokenOffRep(qoffrep, phrtok):
     if qcolsuffix:
         qcolsuffix = qcolsuffix.upper()
     # print '*', qoffrep.group(0), loc1, qcolprefix, qcolsuffix, qoffrep.group(3)
-    qcpart = re.match("(\d+)(?:(?:&#150;|-)(\d+))?(?i)$", qoffrep.group(3))
+    qcpart = re.match("(?i)(\d+)(?:(?:&#150;|-)(\d+))?$", qoffrep.group(3))
     qcolnum = qcpart.group(1)
     if qcpart.group(2):
         qcpartlead = qcpart.group(1)[len(qcpart.group(1)) - len(qcpart.group(2)) :]
@@ -200,7 +200,7 @@ rehonfriend = re.compile("""(?ix)
     \s*
     \(([^)]{5,60}?)(?:&\#(?:146|8217);s)?\)        # group 2 the name of the MP, inserted for clarity.
 """)
-rehonfriendmarg = re.compile("the\s+(hon\.\s*)?member for [^(]{0,60}\((?i)")
+rehonfriendmarg = re.compile("(?i)the\s+(hon\.\s*)?member for [^(]{0,60}\(")
 
 
 def TokenHonFriend(mhonfriend, phrtok):
