@@ -97493,6 +97493,14 @@
       "end_date": "2012-06-18"
     },
     {
+      "id": "uk.parliament.data/Member/3981/GovernmentPost/1317",
+      "source": "datadotparl/governmentpost",
+      "role": "Minister of State (Department for Business, Innovation, Science and Trade)",
+      "person_id": "uk.org.publicwhip/person/24738",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-08-24"
+    },
+    {
       "id": "uk.parliament.data/Member/3981/OppositionPost/967",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Minister (International Development)",
@@ -150972,7 +150980,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25777",
       "organization_id": "international-agreements-committee",
-      "start_date": "2026-01-27"
+      "start_date": "2026-01-27",
+      "end_date": "2026-08-21"
     },
     {
       "id": "uk.parliament.data/Member/4724/Committee/482",
@@ -173831,14 +173840,16 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26546",
       "organization_id": "house-of-commons-commission",
-      "start_date": "2024-09-04"
+      "start_date": "2024-09-04",
+      "end_date": "2026-05-14"
     },
     {
       "id": "uk.parliament.data/Member/5257/Committee/616",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26546",
       "organization_id": "restoration-and-renewal-client-board-committee",
-      "start_date": "2024-09-04"
+      "start_date": "2024-09-04",
+      "end_date": "2026-05-14"
     },
     {
       "id": "uk.parliament.data/Member/5257/Committee/739",
@@ -175847,7 +175858,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26610",
       "organization_id": "ecclesiastical-committee",
-      "start_date": "2025-04-03"
+      "start_date": "2025-04-03",
+      "end_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/5240/Committee/837",
@@ -177167,31 +177179,12 @@
       "start_date": "2026-07-20"
     },
     {
-      "id": "uk.parliament.data/Member/4931/GovernmentPost/1281",
+      "id": "uk.parliament.data/Member/5466/GovernmentPost/1204",
       "source": "datadotparl/governmentpost",
-      "role": "Parliamentary Under-Secretary of State (Department for Business and Trade)",
-      "person_id": "uk.org.publicwhip/person/26851",
+      "role": "Parliamentary Under-Secretary of State (Department for Digital, Culture, Media and Sport)",
+      "person_id": "uk.org.publicwhip/person/26869",
       "organization_id": "house-of-commons",
-      "start_date": "2023-04-24",
-      "end_date": "2024-07-05"
-    },
-    {
-      "id": "uk.parliament.data/Member/4931/GovernmentPost/537",
-      "source": "datadotparl/governmentpost",
-      "role": "The Parliamentary Under-Secretary of State for Scotland",
-      "person_id": "uk.org.publicwhip/person/26851",
-      "organization_id": "house-of-commons",
-      "start_date": "2021-10-04",
-      "end_date": "2024-02-29"
-    },
-    {
-      "id": "uk.parliament.data/Member/4931/OppositionPost/1679",
-      "source": "datadotparl/oppositionpost",
-      "role": "Shadow Minister (Energy Security and Net Zero)",
-      "person_id": "uk.org.publicwhip/person/26851",
-      "organization_id": "house-of-commons",
-      "start_date": "2024-09-01",
-      "end_date": "2025-12-05"
+      "start_date": "2026-08-24"
     }
   ],
   "organizations": [
