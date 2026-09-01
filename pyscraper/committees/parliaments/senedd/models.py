@@ -26,24 +26,6 @@ class Language(NamedTuple):
         )
 
 
-ENGLISH = Language(
-    culture="en-GB",
-    csv_name_column="Name",
-    committee_list_url="https://business.senedd.wales/mgwebservice.asmx/GetCommittees",
-    website_url="https://senedd.wales",
-    committee_path="committee",
-    current_categories=frozenset({"Committees", "Business Committee"}),
-)
-WELSH = Language(
-    culture="cy-GB",
-    csv_name_column="Enw",
-    committee_list_url="https://busnes.senedd.cymru/mgwebservicew.asmx/GetCommittees",
-    website_url="https://senedd.cymru",
-    committee_path="pwyllgor",
-    current_categories=frozenset({"Pwyllgorau", "Y Pwyllgor Busnes"}),
-)
-
-
 class MemberCard(NamedTuple):
     name: str
     role: str | None

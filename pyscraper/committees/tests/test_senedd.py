@@ -5,8 +5,6 @@ from bs4 import BeautifulSoup
 from mysoc_validator import Popolo
 
 from pyscraper.committees.parliaments.senedd.models import (
-    ENGLISH,
-    WELSH,
     BilingualCommittee,
     Committee,
     CommitteeSummary,
@@ -23,6 +21,8 @@ from pyscraper.committees.parliaments.senedd.parsing import (
     parse_members_csv,
 )
 from pyscraper.committees.parliaments.senedd.scraper import (
+    ENGLISH,
+    WELSH,
     committees_to_popolo,
     pair_government_members,
     person_id_for_member,

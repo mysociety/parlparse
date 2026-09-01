@@ -12,7 +12,6 @@ from bs4 import BeautifulSoup
 from bs4.element import Tag
 
 from .models import (
-    ENGLISH,
     Committee,
     CommitteeSummary,
     GovernmentMember,
@@ -98,7 +97,9 @@ def government_member_name(value: str) -> str:
     )
 
 
-def parse_committee_list(content: bytes) -> list[CommitteeSummary]:
+def parse_committee_list(
+    content: bytes, source_url: str = "Senedd committee list"
+) -> list[CommitteeSummary]:
     """
     Parse the ModernGov committee list returned by either language service.
 
@@ -108,7 +109,9 @@ def parse_committee_list(content: bytes) -> list[CommitteeSummary]:
     try:
         root = ElementTree.fromstring(content)
     except ElementTree.ParseError as exc:
-        raise ValueError("The Senedd committee list is not valid XML") from exc
+        raise ValueError(
+            f"The Senedd committee list from {source_url} is not valid XML"
+        ) from exc
 
     summaries: list[CommitteeSummary] = []
     committee_ids: set[str] = set()
@@ -119,7 +122,9 @@ def parse_committee_list(content: bytes) -> list[CommitteeSummary]:
         expired_text = (item.findtext("committeeexpired") or "").strip()
         category = (item.findtext("committeecategory") or "").strip() or None
         if not committee_id or not name:
-            raise ValueError("A Senedd committee is missing its ID or title")
+            raise ValueError(
+                f"A Senedd committee from {source_url} is missing its ID or title"
+            )
         if deleted_text not in {"True", "False"}:
             raise ValueError(f"Committee {committee_id} has an invalid deleted flag")
         if expired_text not in {"True", "False"}:
@@ -139,7 +144,10 @@ def parse_committee_list(content: bytes) -> list[CommitteeSummary]:
 
     count_text = (root.findtext("committeescount") or "").strip()
     if not count_text.isdigit() or int(count_text) != len(summaries):
-        raise ValueError("The Senedd committee count does not match its records")
+        raise ValueError(
+            f"The Senedd committee count from {source_url} does not match its records: "
+            f"declared {count_text!r}, parsed {len(summaries)}"
+        )
     return summaries
 
 
@@ -179,7 +187,9 @@ def parse_committee_page(
     if len(ids) != 1:
         raise ValueError(f"No unique internal committee ID found on {page_url}")
     committee_id = ids[0]
-    description = section_text(soup, "Remit" if language is ENGLISH else "Cylch Gwaith")
+    description = section_text(
+        soup, "Remit" if language.culture == "en-GB" else "Cylch Gwaith"
+    )
     return Committee(
         id=committee_id,
         name=summary.name,

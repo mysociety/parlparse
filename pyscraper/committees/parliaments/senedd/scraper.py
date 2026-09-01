@@ -22,32 +22,30 @@ from mysoc_validator.models.popolo import (
 )
 
 from ...config import REPO_ROOT
-from ...helpers.iterables import unique
+from ...helpers.http import HttpClient
 from ...helpers.organization_dates import set_organization_dates_from_memberships
 from ...helpers.person_resolution import resolve_person_id, unique_person_id_by_name
-from ...helpers.progress import report
+from ...helpers.progress import report, track
 from ...helpers.reconciliation import reconcile_snapshot_memberships
 from ...helpers.validation import write_and_cross_validate
 from ...models.popolo_extensions import CommitteeOrganizationExtra
-from .client import SeneddClient
 from .models import (
     BilingualCommittee,
     BilingualGovernmentMember,
     BilingualMember,
+    Committee,
+    CommitteeSummary,
     GovernmentMember,
+    Language,
     MemberCard,
-)
-from .models import (
-    BilingualText as BilingualText,
 )
 from .parsing import (
     government_member_name,
-)
-from .parsing import (
-    normalize_member_name as normalize_member_name,
-)
-from .parsing import (
-    parse_member_cards as parse_member_cards,
+    is_current_committee,
+    parse_committee_list,
+    parse_committee_page,
+    parse_government_members,
+    parse_members_csv,
 )
 
 DEFAULT_PEOPLE_PATH = REPO_ROOT / "members" / "people.json"
@@ -56,6 +54,106 @@ SENEDD_CHAMBER_ID = "welsh-parliament"
 GOVERNMENT_PAGE_EN = "https://www.gov.wales/cabinet-ministers-and-deputy-ministers"
 GOVERNMENT_PAGE_CY = "https://www.llyw.cymru/gweinidogion-y-cabinet-dirprwy-weinidogion"
 SNAPSHOT_MEMBERSHIP_PREFIXES = ("senedd.wales/Committee/", "gov.wales/Minister/")
+ENGLISH = Language(
+    culture="en-GB",
+    csv_name_column="Name",
+    committee_list_url="https://business.senedd.wales/mgwebservice.asmx/GetCommittees",
+    website_url="https://senedd.wales",
+    committee_path="committee",
+    current_categories=frozenset({"Committees", "Business Committee"}),
+)
+WELSH = Language(
+    culture="cy-GB",
+    csv_name_column="Enw",
+    committee_list_url="https://busnes.senedd.cymru/mgwebservicew.asmx/GetCommittees",
+    website_url="https://senedd.cymru",
+    committee_path="pwyllgor",
+    current_categories=frozenset({"Pwyllgorau", "Y Pwyllgor Busnes"}),
+)
+
+
+def fetch_committee_list(
+    client: HttpClient, language: Language
+) -> list[CommitteeSummary]:
+    """Fetch and parse one language's ModernGov committee catalogue."""
+    return parse_committee_list(
+        client.get(language.committee_list_url).content,
+        language.committee_list_url,
+    )
+
+
+def fetch_committee(
+    client: HttpClient, summary: CommitteeSummary, language: Language
+) -> Committee:
+    """Fetch and parse one committee page and its membership CSV."""
+    # The page supplies the internal ID used to construct the CSV endpoint;
+    # the CSV is the authoritative current membership list.
+    page_response = client.get(language.committee_url(summary.modern_gov_id))
+    committee = parse_committee_page(
+        summary, str(page_response.url), page_response.text, language
+    )
+    members_response = client.get(committee.csv_url)
+    return committee._replace(
+        members=parse_members_csv(committee, members_response.content, language)
+    )
+
+
+def fetch_all_committees(client: HttpClient) -> list[BilingualCommittee]:
+    """Fetch current committees and pair their English and Welsh records."""
+    english = {
+        item.modern_gov_id: item
+        for item in fetch_committee_list(client, ENGLISH)
+        if is_current_committee(item, ENGLISH)
+    }
+    welsh = {
+        item.modern_gov_id: item
+        for item in fetch_committee_list(client, WELSH)
+        if is_current_committee(item, WELSH)
+    }
+    if not english:
+        raise ValueError(
+            f"No current English Senedd committees found in {ENGLISH.committee_list_url}"
+        )
+    if not welsh:
+        raise ValueError(
+            f"No current Welsh Senedd committees found in {WELSH.committee_list_url}"
+        )
+    if english.keys() != welsh.keys():
+        raise ValueError(
+            "English and Welsh current committee lists differ; "
+            f"English only: {sorted(english.keys() - welsh.keys(), key=int)}; "
+            f"Welsh only: {sorted(welsh.keys() - english.keys(), key=int)}"
+        )
+
+    committees: list[BilingualCommittee] = []
+    internal_ids: set[str] = set()
+    for modern_gov_id in track(
+        sorted(english, key=int), "Fetching bilingual Senedd committees"
+    ):
+        english_committee = fetch_committee(client, english[modern_gov_id], ENGLISH)
+        welsh_committee = fetch_committee(client, welsh[modern_gov_id], WELSH)
+        if english_committee.id != welsh_committee.id:
+            raise ValueError(
+                "English and Welsh pages disagree on internal committee ID: "
+                f"{english_committee.page_url} and {welsh_committee.page_url}"
+            )
+        if english_committee.id in internal_ids:
+            raise ValueError(
+                f"The Senedd pages returned duplicate internal ID {english_committee.id}"
+            )
+        internal_ids.add(english_committee.id)
+        committees.append(
+            BilingualCommittee(english=english_committee, welsh=welsh_committee)
+        )
+    return committees
+
+
+def fetch_government_members(
+    client: HttpClient, page_url: str
+) -> list[GovernmentMember]:
+    """Fetch and parse one language's current Welsh Government team."""
+    response = client.get(page_url)
+    return parse_government_members(response.text, str(response.url))
 
 
 def is_current_snapshot(membership: PopoloMembership) -> bool:
@@ -106,7 +204,11 @@ def pair_committee_members(
     if english_by_person_id.keys() != welsh_by_person_id.keys():
         raise ValueError(
             "English and Welsh member lists for committee "
-            f"{committee.english.id} differ"
+            f"{committee.english.id} differ; "
+            "English only: "
+            f"{sorted(english_by_person_id.keys() - welsh_by_person_id.keys())}; "
+            "Welsh only: "
+            f"{sorted(welsh_by_person_id.keys() - english_by_person_id.keys())}"
         )
     result: list[BilingualMember] = []
     for person_id in sorted(english_by_person_id):
@@ -165,7 +267,11 @@ def pair_government_members(
     english_by_id = keyed(english)
     welsh_by_id = keyed(welsh)
     if english_by_id.keys() != welsh_by_id.keys():
-        raise ValueError("English and Welsh Government member lists differ")
+        raise ValueError(
+            "English and Welsh Government member lists differ; "
+            f"English only: {sorted(english_by_id.keys() - welsh_by_id.keys())}; "
+            f"Welsh only: {sorted(welsh_by_id.keys() - english_by_id.keys())}"
+        )
     return [
         BilingualGovernmentMember(
             person_id=person_id,
@@ -196,8 +302,11 @@ def committees_to_popolo(
         english = committee.english
         welsh = committee.welsh
         organization_id = f"senedd-committee-{english.id}"
-        tags = unique(
-            category for category in (welsh.category, english.category) if category
+        # Keep Welsh before English to match the canonical bilingual fields.
+        tags = list(
+            dict.fromkeys(
+                category for category in (welsh.category, english.category) if category
+            )
         )
         organization = Organization(
             id=organization_id,
@@ -290,10 +399,10 @@ def scrape_senedd_committees(
         if output_path.exists()
         else None
     )
-    with closing(SeneddClient()) as client:
-        committees = client.all_committees()
-        english_government = client.government_members(GOVERNMENT_PAGE_EN)
-        welsh_government = client.government_members(GOVERNMENT_PAGE_CY)
+    with closing(HttpClient()) as client:
+        committees = fetch_all_committees(client)
+        english_government = fetch_government_members(client, GOVERNMENT_PAGE_EN)
+        welsh_government = fetch_government_members(client, GOVERNMENT_PAGE_CY)
     on_date = membership_date or date.today()
     # A missing translation must not silently create a one-language record.
     government = pair_government_members(
