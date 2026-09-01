@@ -11,10 +11,6 @@ from bs4 import BeautifulSoup
 
 from .models import AssemblyPerson, Committee, MemberRole
 
-MEMBER_ROLES_URL = "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
-ALL_MEMBERS_URL = "https://data.niassembly.gov.uk/members.asmx/GetAllMembers_JSON"
-COMMITTEES_INDEX_URL = "https://www.niassembly.gov.uk/assembly-business/committees/"
-
 
 def nested_records(
     data: dict[str, Any], container_key: str, records_key: str, source: str
@@ -39,32 +35,50 @@ def parse_committees(data: dict[str, Any], source: str) -> list[Committee]:
     """
     Parse one of the Assembly's current-committee responses.
     """
-    return [
-        Committee(
-            id=int(item["OrganisationId"]),
-            name=str(item["OrganisationName"]).strip(),
-            committee_type=str(item["OrganisationType"]).strip(),
-        )
-        for item in nested_records(data, "OrganisationsList", "Organisation", source)
-    ]
-
-
-def parse_people(data: dict[str, Any]) -> list[AssemblyPerson]:
-    """Parse current and former MLAs from the Assembly members API."""
-    return [
-        AssemblyPerson(
-            person_id=int(item["PersonId"]),
-            name=" ".join(
-                part
-                for part in (
-                    str(item.get("MemberFirstName", "")).strip(),
-                    str(item.get("MemberLastName", "")).strip(),
+    committees: list[Committee] = []
+    records = nested_records(data, "OrganisationsList", "Organisation", source)
+    for index, item in enumerate(records):
+        try:
+            committees.append(
+                Committee(
+                    id=int(item["OrganisationId"]),
+                    name=str(item["OrganisationName"]).strip(),
+                    committee_type=str(item["OrganisationType"]).strip(),
                 )
-                if part
-            ),
-        )
-        for item in nested_records(data, "AllMembersList", "Member", ALL_MEMBERS_URL)
-    ]
+            )
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ValueError(
+                f"Invalid NI committee record {index} from {source}: {exc}"
+            ) from exc
+    return committees
+
+
+def parse_people(
+    data: dict[str, Any], source: str = "NI Assembly members API"
+) -> list[AssemblyPerson]:
+    """Parse current and former MLAs from the Assembly members API."""
+    people: list[AssemblyPerson] = []
+    records = nested_records(data, "AllMembersList", "Member", source)
+    for index, item in enumerate(records):
+        try:
+            people.append(
+                AssemblyPerson(
+                    person_id=int(item["PersonId"]),
+                    name=" ".join(
+                        part
+                        for part in (
+                            str(item.get("MemberFirstName", "")).strip(),
+                            str(item.get("MemberLastName", "")).strip(),
+                        )
+                        if part
+                    ),
+                )
+            )
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ValueError(
+                f"Invalid NI person record {index} from {source}: {exc}"
+            ) from exc
+    return people
 
 
 def normalized_committee_name(value: str) -> str:
@@ -74,7 +88,7 @@ def normalized_committee_name(value: str) -> str:
     return " ".join(word for word in words if word not in ignored)
 
 
-def parse_committee_links(html: str) -> dict[str, str]:
+def parse_committee_links(html: str, index_url: str) -> dict[str, str]:
     """Return normalized current-mandate committee links from the index."""
     soup = BeautifulSoup(html, "html.parser")
     links: dict[str, str] = {}
@@ -83,7 +97,7 @@ def parse_committee_links(html: str) -> dict[str, str]:
         href = anchor.get("href")
         if not isinstance(href, str):
             continue
-        absolute_url = urljoin(COMMITTEES_INDEX_URL, href)
+        absolute_url = urljoin(index_url, href)
         path = urlparse(absolute_url).path
         if not path.startswith(mandate_prefix):
             continue
@@ -106,26 +120,34 @@ def api_date(value: object) -> str | None:
 
 
 def parse_member_roles(
-    data: dict[str, Any], source: str = MEMBER_ROLES_URL
+    data: dict[str, Any], source: str = "NI Assembly member roles API"
 ) -> list[MemberRole]:
     """
     Parse current or historical roles held by MLAs.
     """
-    return [
-        MemberRole(
-            affiliation_id=int(item["AffiliationId"]),
-            person_id=int(item["PersonId"]),
-            role_type=str(item["RoleType"]).strip(),
-            role=str(item["Role"]).strip(),
-            committee_id=int(item["OrganisationId"]),
-            organization_name=str(item.get("Organisation", "")).strip(),
-            affiliation_title=(
-                str(item["AffiliationTitle"]).strip()
-                if item.get("AffiliationTitle")
-                else None
-            ),
-            start_date=api_date(item.get("AffiliationStart")),
-            end_date=api_date(item.get("AffiliationEnd")),
-        )
-        for item in nested_records(data, "AllMembersRoles", "Role", source)
-    ]
+    roles: list[MemberRole] = []
+    records = nested_records(data, "AllMembersRoles", "Role", source)
+    for index, item in enumerate(records):
+        try:
+            roles.append(
+                MemberRole(
+                    affiliation_id=int(item["AffiliationId"]),
+                    person_id=int(item["PersonId"]),
+                    role_type=str(item["RoleType"]).strip(),
+                    role=str(item["Role"]).strip(),
+                    committee_id=int(item["OrganisationId"]),
+                    organization_name=str(item.get("Organisation", "")).strip(),
+                    affiliation_title=(
+                        str(item["AffiliationTitle"]).strip()
+                        if item.get("AffiliationTitle")
+                        else None
+                    ),
+                    start_date=api_date(item.get("AffiliationStart")),
+                    end_date=api_date(item.get("AffiliationEnd")),
+                )
+            )
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ValueError(
+                f"Invalid NI member-role record {index} from {source}: {exc}"
+            ) from exc
+    return roles

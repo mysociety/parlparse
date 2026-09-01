@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import re
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
 from contextlib import closing
 from datetime import date, timedelta
 from pathlib import Path
@@ -29,21 +30,16 @@ from mysoc_validator.models.popolo import (
 )
 
 from ...config import REPO_ROOT
-from ...helpers.iterables import unique
+from ...helpers.http import HttpClient
 from ...helpers.link_cache import cached_organization_links
 from ...helpers.organization_dates import set_organization_dates_from_memberships
 from ...helpers.person_resolution import resolve_person_id
-from ...helpers.progress import report
+from ...helpers.progress import report, track
 from ...helpers.reconciliation import reconcile_snapshot_memberships
 from ...helpers.validation import write_and_cross_validate
 from ...models.popolo_extensions import (
     CommitteeOrganizationExtra,
     MinisterialMembershipExtra,
-)
-from .client import (
-    MEMBER_ROLE_HISTORY_URL,
-    MINISTERIAL_ROLE_TYPE,
-    NorthernIrelandAssemblyClient,
 )
 from .models import (
     AssemblyPerson,
@@ -52,8 +48,11 @@ from .models import (
     MemberRole,
 )
 from .parsing import (
-    MEMBER_ROLES_URL,
     normalized_committee_name,
+    parse_committee_links,
+    parse_committees,
+    parse_member_roles,
+    parse_people,
 )
 
 DEFAULT_PEOPLE_PATH = REPO_ROOT / "members" / "people.json"
@@ -62,6 +61,82 @@ COMMITTEE_ROLE_TYPE = "Committee Role (incl Assembly Commission)"
 GOVERNMENT_MEMBERSHIP_PREFIX = "niassembly.gov.uk/Affiliation/"
 COMMITTEE_MEMBERSHIP_PREFIX = "niassembly.gov.uk/Committee/"
 EXECUTIVE_ORGANIZATION_ID = "northern-ireland-executive"
+API_ROOT = "https://data.niassembly.gov.uk"
+MEMBER_ROLES_URL = f"{API_ROOT}/members.asmx/GetAllMemberRoles_JSON"
+ALL_MEMBERS_URL = f"{API_ROOT}/members.asmx/GetAllMembers_JSON"
+COMMITTEES_INDEX_URL = "https://www.niassembly.gov.uk/assembly-business/committees/"
+COMMITTEE_URLS = (
+    f"{API_ROOT}/organisations.asmx/GetCommitteesListCurrent_AdHoc_JSON",
+    f"{API_ROOT}/organisations.asmx/GetCommitteesListCurrent_Other_JSON",
+    f"{API_ROOT}/organisations.asmx/GetCommitteesListCurrent_Standing_JSON",
+    f"{API_ROOT}/organisations.asmx/GetCommitteesListCurrent_Statutory_JSON",
+)
+MEMBER_ROLE_HISTORY_URL = (
+    f"{API_ROOT}/members.asmx/GetMemberRolesByPersonId_JSON?personId={{person_id}}"
+)
+MINISTERIAL_ROLE_TYPE = "Ministerial Role"
+
+
+def get_json_object(client: HttpClient, url: str) -> dict[str, object]:
+    """Fetch JSON and enforce the NI API's top-level object contract."""
+    data = client.get_json(url)
+    if not isinstance(data, dict):
+        raise ValueError(f"The NI Assembly API did not return an object at {url}")
+    return data
+
+
+def fetch_assembly_data(
+    client: HttpClient,
+    committee_links: dict[str, str] | None,
+) -> tuple[list[Committee], list[MemberRole]]:
+    """Fetch and parse the current committee and role feeds."""
+    committees: list[Committee] = []
+    for url in track(COMMITTEE_URLS, "Fetching NI Assembly committee lists"):
+        committees.extend(parse_committees(get_json_object(client, url), url))
+    if committee_links is None:
+        links = parse_committee_links(
+            client.get_text(COMMITTEES_INDEX_URL), COMMITTEES_INDEX_URL
+        )
+        if not links:
+            raise ValueError(
+                f"No NI Assembly committee links found on {COMMITTEES_INDEX_URL}"
+            )
+    else:
+        links = committee_links
+    committees = [
+        committee._replace(
+            external_url=links.get(normalized_committee_name(committee.name))
+        )
+        for committee in committees
+    ]
+    roles = parse_member_roles(get_json_object(client, MEMBER_ROLES_URL))
+    if not roles:
+        raise ValueError(
+            f"The NI Assembly API returned no roles from {MEMBER_ROLES_URL}"
+        )
+    return committees, roles
+
+
+def fetch_government_role_history(
+    client: HttpClient, person_ids: set[int]
+) -> list[MemberRole]:
+    """Fetch and parse per-person ministerial histories with bounded concurrency."""
+
+    def fetch(person_id: int) -> list[MemberRole]:
+        url = MEMBER_ROLE_HISTORY_URL.format(person_id=person_id)
+        return parse_member_roles(get_json_object(client, url), url)
+
+    roles: list[MemberRole] = []
+    ordered_person_ids = sorted(person_ids)
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        histories = executor.map(fetch, ordered_person_ids)
+        for person_roles in track(
+            histories,
+            "Fetching NI ministerial histories",
+            total=len(ordered_person_ids),
+        ):
+            roles.extend(person_roles)
+    return [role for role in roles if role.role_type == MINISTERIAL_ROLE_TYPE]
 
 
 def is_committee_snapshot(membership: PopoloMembership) -> bool:
@@ -104,14 +179,17 @@ def person_id_for_ni_role(
     api_person = api_people.get(record.person_id)
     names: list[str] = []
     if api_person is not None:
-        names = unique(
-            (
-                api_person.name,
-                "".join(
-                    character
-                    for character in normalize("NFKD", api_person.name)
-                    if not combining(character)
-                ),
+        # Keep the official spelling ahead of the accent-stripped fallback.
+        names = list(
+            dict.fromkeys(
+                (
+                    api_person.name,
+                    "".join(
+                        character
+                        for character in normalize("NFKD", api_person.name)
+                        if not combining(character)
+                    ),
+                )
             )
         )
     return resolve_person_id(
@@ -316,16 +394,19 @@ def scrape_ni_assembly_committees(
     cached_ministerial = (
         None if full_refresh else cached_government_memberships(output_path)
     )
-    with closing(NorthernIrelandAssemblyClient()) as client:
-        assembly_data = client.all_data(cached_links)
-        api_people = {person.person_id: person for person in client.all_people()}
+    with closing(HttpClient()) as client:
+        committees, roles = fetch_assembly_data(client, cached_links)
+        api_people = {
+            person.person_id: person
+            for person in parse_people(
+                get_json_object(client, ALL_MEMBERS_URL), ALL_MEMBERS_URL
+            )
+        }
         if len(api_people) == 0:
             raise ValueError("The NI Assembly API returned no current or former MLAs")
 
         current_minister_ids = {
-            role.person_id
-            for role in assembly_data.roles
-            if role.role_type == MINISTERIAL_ROLE_TYPE
+            role.person_id for role in roles if role.role_type == MINISTERIAL_ROLE_TYPE
         }
         if cached_ministerial is None:
             refresh_ids = set(api_people)
@@ -334,7 +415,7 @@ def scrape_ni_assembly_committees(
             open_minister_ids = {
                 person_id
                 for membership in cached_ministerial
-                if membership.end_date == date.max
+                if membership.end_date == FixedDate.FUTURE
                 and (person_id := cached_ni_person_id(membership)) is not None
             }
             refresh_ids = current_minister_ids | open_minister_ids
@@ -344,11 +425,9 @@ def scrape_ni_assembly_committees(
                 if cached_ni_person_id(membership) not in refresh_ids
             ]
 
-        history = client.government_role_history(refresh_ids)
+        history = fetch_government_role_history(client, refresh_ids)
     retained_memberships.extend(government_memberships(history, people, api_people))
-    current = committees_to_popolo(
-        assembly_data.committees, assembly_data.roles, people, retained_memberships
-    )
+    current = committees_to_popolo(committees, roles, people, retained_memberships)
     reconciled = reconcile_snapshot_memberships(
         previous,
         current,

@@ -5,10 +5,7 @@ from unittest.mock import Mock
 import pytest
 from mysoc_validator import Popolo
 
-from pyscraper.committees.parliaments.northern_ireland.client import (
-    MINISTERIAL_ROLE_TYPE,
-    NorthernIrelandAssemblyClient,
-)
+from pyscraper.committees.helpers.http import HttpClient
 from pyscraper.committees.parliaments.northern_ireland.models import (
     AssemblyPerson,
     Committee,
@@ -21,9 +18,12 @@ from pyscraper.committees.parliaments.northern_ireland.parsing import (
 )
 from pyscraper.committees.parliaments.northern_ireland.scraper import (
     COMMITTEE_ROLE_TYPE,
+    COMMITTEES_INDEX_URL,
+    MINISTERIAL_ROLE_TYPE,
     cached_committee_links,
     cached_government_memberships,
     committees_to_popolo,
+    fetch_assembly_data,
     government_memberships,
     normalize_ministerial_boundaries,
     person_id_for_ni_role,
@@ -104,10 +104,10 @@ def test_reads_cached_links_and_skips_index_request(tmp_path: Path) -> None:
             "assembly-business/committees/2022-2027/health/"
         )
     }
-    client = NorthernIrelandAssemblyClient()
+    client = HttpClient()
     setattr(
         client,
-        "get_object",
+        "get_json",
         Mock(
             side_effect=lambda url: (
                 {"AllMembersRoles": {"Role": []}}
@@ -118,14 +118,18 @@ def test_reads_cached_links_and_skips_index_request(tmp_path: Path) -> None:
     )
     cached_get_text = Mock()
     setattr(client, "get_text", cached_get_text)
-    assembly_data = client.all_data(cached)
-    assert assembly_data.committees == [] and assembly_data.roles == []
+    with pytest.raises(ValueError, match="returned no roles"):
+        fetch_assembly_data(client, cached)
     cached_get_text.assert_not_called()
 
-    refreshed_get_text = Mock(return_value="")
+    refreshed_get_text = Mock(
+        return_value=(
+            '<a href="/assembly-business/committees/2022-2027/health/">Health</a>'
+        )
+    )
     setattr(client, "get_text", refreshed_get_text)
-    assembly_data = client.all_data(None)
-    assert assembly_data.committees == [] and assembly_data.roles == []
+    with pytest.raises(ValueError, match="returned no roles"):
+        fetch_assembly_data(client, None)
     refreshed_get_text.assert_called_once()
 
 
@@ -136,7 +140,8 @@ def test_parses_public_committee_links() -> None:
         <a href="/assembly-business/committees/2022-2027/health/">
           Health
         </a>
-        """
+        """,
+        COMMITTEES_INDEX_URL,
     )
     assert links["health"] == (
         "https://www.niassembly.gov.uk/assembly-business/committees/2022-2027/health/"
@@ -178,6 +183,17 @@ def test_parses_member_role_api_response() -> None:
         }
     )
     assert roles == [MemberRole(1001, 456, COMMITTEE_ROLE_TYPE, "Committee Chair", 99)]
+
+
+def test_member_role_schema_error_identifies_record_and_source() -> None:
+    """A changed NI record shape should identify its index and endpoint."""
+    source = "https://example.test/member-roles"
+    with pytest.raises(ValueError) as error:
+        parse_member_roles({"AllMembersRoles": {"Role": [{"PersonId": "456"}]}}, source)
+
+    assert "member-role record 0" in str(error.value)
+    assert source in str(error.value)
+    assert "AffiliationId" in str(error.value)
 
 
 def test_builds_current_supplemental_popolo(people: Popolo) -> None:
