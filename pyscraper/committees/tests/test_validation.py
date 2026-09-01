@@ -71,10 +71,14 @@ def test_rejects_a_supplemental_membership_for_an_unknown_person(
     output_path = tmp_path / "committees.json"
     people().to_path(people_path)
 
-    with pytest.raises(ValueError, match="invalid person uk.org.publicwhip/person/999"):
+    output_path.write_text('{"existing": true}')
+    with pytest.raises(
+        ValueError, match="Generated committee output failed cross-validation"
+    ) as error:
         write_and_cross_validate(
             supplemental("uk.org.publicwhip/person/999"), output_path, people_path
         )
 
-    # Validation happens on the emitted representation, not only in memory.
-    assert output_path.exists()
+    assert "invalid person uk.org.publicwhip/person/999" in str(error.value.__cause__)
+    # A failed update must leave the preceding valid artifact untouched.
+    assert output_path.read_text() == '{"existing": true}'
