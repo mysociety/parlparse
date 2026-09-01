@@ -7,7 +7,7 @@ from pathlib import Path
 from typer import Typer
 
 from .config import REPO_ROOT
-from .helpers.progress import progress_output
+from .helpers.progress import set_verbose
 
 app = Typer(pretty_exceptions_enable=False)
 DEFAULT_PEOPLE_PATH = REPO_ROOT / "members" / "people.json"
@@ -30,7 +30,7 @@ def uk_committees(quiet: bool = False) -> None:
         get_committee_all_items,
     )
 
-    with progress_output(not quiet):
+    with set_verbose(not quiet):
         get_committee_all_items()
         convert_to_groups()
 
@@ -46,7 +46,7 @@ def senedd(
     """
     from .parliaments.senedd.scraper import scrape_senedd_committees
 
-    with progress_output(not quiet):
+    with set_verbose(not quiet):
         scrape_senedd_committees(
             output_path=output_path,
             people_path=people_path,
@@ -67,7 +67,7 @@ def scotland(
         scrape_scottish_parliament_committees,
     )
 
-    with progress_output(not quiet):
+    with set_verbose(not quiet):
         scrape_scottish_parliament_committees(
             output_path=output_path,
             people_path=people_path,
@@ -89,7 +89,7 @@ def northern_ireland(
         scrape_ni_assembly_committees,
     )
 
-    with progress_output(not quiet):
+    with set_verbose(not quiet):
         scrape_ni_assembly_committees(
             output_path=output_path,
             people_path=people_path,
@@ -111,7 +111,7 @@ def westminster(
     """
     from .parliaments.westminster.scraper import scrape_westminster_roles
 
-    with progress_output(not quiet):
+    with set_verbose(not quiet):
         scrape_westminster_roles(
             output_path=output_path,
             people_path=people_path,
