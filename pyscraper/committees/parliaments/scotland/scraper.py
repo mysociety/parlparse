@@ -8,6 +8,7 @@ import re
 from contextlib import closing
 from datetime import date
 from pathlib import Path
+from typing import TypeVar
 
 from mysoc_validator import Popolo
 from mysoc_validator.models.dates import FixedDate
@@ -18,26 +19,27 @@ from mysoc_validator.models.popolo import (
 from mysoc_validator.models.popolo import (
     Membership as PopoloMembership,
 )
+from pydantic import TypeAdapter, ValidationError
 
 from ...config import REPO_ROOT
-from ...helpers.iterables import unique
+from ...helpers.http import HttpClient
 from ...helpers.link_cache import cached_organization_links
 from ...helpers.organization_dates import set_organization_dates_from_memberships
 from ...helpers.person_resolution import resolve_person_id
-from ...helpers.progress import report
+from ...helpers.progress import report, track
 from ...helpers.reconciliation import reconcile_snapshot_memberships
 from ...helpers.validation import write_and_cross_validate
-from .client import (
-    MEMBER_GOVERNMENT_ROLES_URL,
-    PERSON_COMMITTEE_ROLES_URL,
-    ScottishParliamentClient,
-)
 from .models import (
+    Committee,
     CommitteeData,
     CommitteeMembershipKey,
+    CommitteeRole,
+    GovernmentRole,
+    MemberGovernmentRole,
+    PersonCommitteeRole,
     ScottishPerson,
 )
-from .parsing import clean_description
+from .parsing import clean_description, parse_committee_links
 
 DEFAULT_PEOPLE_PATH = REPO_ROOT / "members" / "people.json"
 DEFAULT_OUTPUT_PATH = (
@@ -51,6 +53,108 @@ SCOTTISH_NAME_ALIASES = {
     "Hannah Mary Goodlad": "Hannah Goodlad",
 }
 COMMITTEE_MEMBERSHIP_PREFIX = "parliament.scot/Committee/"
+API_ROOT = "https://data.parliament.scot/api"
+COMMITTEES_URL = f"{API_ROOT}/committees/json"
+COMMITTEE_ROLES_URL = f"{API_ROOT}/committeeroles/json"
+PERSON_COMMITTEE_ROLES_URL = f"{API_ROOT}/personcommitteeroles/json"
+GOVERNMENT_ROLES_URL = f"{API_ROOT}/governmentroles/json"
+MEMBER_GOVERNMENT_ROLES_URL = f"{API_ROOT}/membergovernmentroles/json"
+MEMBERS_URL = f"{API_ROOT}/members/json"
+COMMITTEE_INDEX_URL = (
+    "https://www.parliament.scot/chamber-and-committees/committees/"
+    "current-and-previous-committees"
+)
+Record = TypeVar("Record")
+
+
+def validate_source_records(
+    data: object,
+    adapter: TypeAdapter[list[Record]],
+    source_name: str,
+    source_url: str,
+) -> list[Record]:
+    """Validate a required source table with its name and URL in any error."""
+    try:
+        records = adapter.validate_python(data)
+    except ValidationError as exc:
+        raise ValueError(f"Invalid {source_name} data from {source_url}") from exc
+    if not records:
+        raise ValueError(f"{source_name} returned no records from {source_url}")
+    return records
+
+
+def fetch_committee_data(
+    client: HttpClient,
+    committee_links: dict[str, str] | None,
+) -> CommitteeData:
+    """Fetch and validate the separate Scottish open-data tables."""
+    urls = (
+        COMMITTEES_URL,
+        COMMITTEE_ROLES_URL,
+        PERSON_COMMITTEE_ROLES_URL,
+        GOVERNMENT_ROLES_URL,
+        MEMBER_GOVERNMENT_ROLES_URL,
+        MEMBERS_URL,
+    )
+    raw = {
+        url: client.get_json(url)
+        for url in track(urls, "Fetching Scottish Parliament datasets")
+    }
+    return CommitteeData(
+        committees=validate_source_records(
+            raw[COMMITTEES_URL],
+            TypeAdapter(list[Committee]),
+            "Scottish Parliament committees",
+            COMMITTEES_URL,
+        ),
+        roles=validate_source_records(
+            raw[COMMITTEE_ROLES_URL],
+            TypeAdapter(list[CommitteeRole]),
+            "Scottish Parliament committee roles",
+            COMMITTEE_ROLES_URL,
+        ),
+        person_roles=validate_source_records(
+            raw[PERSON_COMMITTEE_ROLES_URL],
+            TypeAdapter(list[PersonCommitteeRole]),
+            "Scottish Parliament committee assignments",
+            PERSON_COMMITTEE_ROLES_URL,
+        ),
+        government_roles=validate_source_records(
+            raw[GOVERNMENT_ROLES_URL],
+            TypeAdapter(list[GovernmentRole]),
+            "Scottish Parliament government roles",
+            GOVERNMENT_ROLES_URL,
+        ),
+        member_government_roles=validate_source_records(
+            raw[MEMBER_GOVERNMENT_ROLES_URL],
+            TypeAdapter(list[MemberGovernmentRole]),
+            "Scottish Parliament government-role assignments",
+            MEMBER_GOVERNMENT_ROLES_URL,
+        ),
+        members=validate_source_records(
+            raw[MEMBERS_URL],
+            TypeAdapter(list[ScottishPerson]),
+            "Scottish Parliament members",
+            MEMBERS_URL,
+        ),
+        committee_links=(
+            refreshed_committee_links(client)
+            if committee_links is None
+            else committee_links
+        ),
+    )
+
+
+def refreshed_committee_links(client: HttpClient) -> dict[str, str]:
+    """Fetch the public index and reject a structurally valid empty result."""
+    links = parse_committee_links(
+        client.get_text(COMMITTEE_INDEX_URL), COMMITTEE_INDEX_URL
+    )
+    if not links:
+        raise ValueError(
+            f"No Scottish Parliament committee links found on {COMMITTEE_INDEX_URL}"
+        )
+    return links
 
 
 def is_committee_snapshot(membership: PopoloMembership) -> bool:
@@ -92,7 +196,12 @@ def person_for_scottish_id(
             name,
             flags=re.IGNORECASE,
         )
-        names = unique(item for item in (name, SCOTTISH_NAME_ALIASES.get(name)) if item)
+        # Try the source name before its hand-maintained historical alias.
+        names = list(
+            dict.fromkeys(
+                item for item in (name, SCOTTISH_NAME_ALIASES.get(name)) if item
+            )
+        )
     return resolve_person_id(
         people,
         context=f"Scottish Parliament person {person_id}",
@@ -146,13 +255,16 @@ def committees_to_popolo(
                 if committee.description.strip()
                 else None
             ),
-            links=unique(
-                link
-                for link in (
-                    data.committee_links.get(committee.name),
-                    committee.blog_website,
+            # Retain the canonical Parliament page ahead of any committee blog.
+            links=list(
+                dict.fromkeys(
+                    link
+                    for link in (
+                        data.committee_links.get(committee.name),
+                        committee.blog_website,
+                    )
+                    if link
                 )
-                if link
             ),
         )
         for committee in active_committees.values()
@@ -259,8 +371,8 @@ def scrape_scottish_parliament_committees(
         else None
     )
     cached_links = None if full_refresh else cached_committee_links(output_path)
-    with closing(ScottishParliamentClient()) as client:
-        data = client.get_data(cached_links)
+    with closing(HttpClient()) as client:
+        data = fetch_committee_data(client, cached_links)
     on_date = membership_date or date.today()
     current = committees_to_popolo(data, people, on_date)
     reconciled = reconcile_snapshot_memberships(

@@ -6,13 +6,8 @@ from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
-COMMITTEE_INDEX_URL = (
-    "https://www.parliament.scot/chamber-and-committees/committees/"
-    "current-and-previous-committees"
-)
 
-
-def parse_committee_links(html: str) -> dict[str, str]:
+def parse_committee_links(html: str, index_url: str) -> dict[str, str]:
     """Map committee names to their public pages from the official index."""
     soup = BeautifulSoup(html, "html.parser")
     links: dict[str, str] = {}
@@ -23,7 +18,7 @@ def parse_committee_links(html: str) -> dict[str, str]:
             continue
         name = " ".join(anchor.stripped_strings)
         if name and name.casefold() != "list of committees":
-            links.setdefault(name, urljoin(COMMITTEE_INDEX_URL, href))
+            links.setdefault(name, urljoin(index_url, href))
     return links
 
 

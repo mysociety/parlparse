@@ -8,7 +8,7 @@ from unittest.mock import Mock
 import pytest
 from mysoc_validator import Popolo
 
-from pyscraper.committees.parliaments.scotland.client import ScottishParliamentClient
+from pyscraper.committees.helpers.http import HttpClient
 from pyscraper.committees.parliaments.scotland.models import (
     Committee,
     CommitteeData,
@@ -20,9 +20,12 @@ from pyscraper.committees.parliaments.scotland.models import (
 )
 from pyscraper.committees.parliaments.scotland.parsing import parse_committee_links
 from pyscraper.committees.parliaments.scotland.scraper import (
+    COMMITTEE_INDEX_URL,
     cached_committee_links,
     committees_to_popolo,
+    fetch_committee_data,
     person_for_scottish_id,
+    refreshed_committee_links,
 )
 
 
@@ -107,18 +110,23 @@ def test_reads_cached_links_and_skips_index_request(tmp_path: Path) -> None:
             "session-7/example-committee"
         )
     }
-    client = ScottishParliamentClient()
+    client = HttpClient()
     setattr(client, "get_json", Mock(return_value=[]))
     cached_get_text = Mock()
     setattr(client, "get_text", cached_get_text)
-    data = client.get_data(cached)
-    assert data.committee_links == cached
+    with pytest.raises(ValueError, match="committees returned no records"):
+        fetch_committee_data(client, cached)
     cached_get_text.assert_not_called()
 
-    refreshed_get_text = Mock(return_value="")
+    refreshed_get_text = Mock(
+        return_value=(
+            '<a href="/chamber-and-committees/committees/'
+            'current-and-previous-committees/session-7/example-committee">'
+            "Example Committee</a>"
+        )
+    )
     setattr(client, "get_text", refreshed_get_text)
-    refreshed = client.get_data(None)
-    assert refreshed.committee_links == {}
+    assert refreshed_committee_links(client) == cached
     refreshed_get_text.assert_called_once()
 
 
@@ -129,7 +137,8 @@ def test_parses_public_committee_links() -> None:
         <a href="/chamber-and-committees/committees/current-and-previous-committees/session-7/example-committee">
           Example Committee
         </a>
-        """
+        """,
+        COMMITTEE_INDEX_URL,
     )
     assert links["Example Committee"] == (
         "https://www.parliament.scot/chamber-and-committees/committees/"
