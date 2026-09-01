@@ -7,6 +7,7 @@ from datetime import date, timedelta
 from typing import NamedTuple, TypeVar
 
 from mysoc_validator import Popolo
+from mysoc_validator.models.dates import FixedDate
 from mysoc_validator.models.popolo import Membership, Organization, Post
 
 MembershipSelector = Callable[[Membership], bool]
@@ -37,7 +38,7 @@ def has_known_start(membership: Membership) -> bool:
 
 def is_closed(membership: Membership) -> bool:
     """Return whether the validator value represents a closed tenure."""
-    return membership.end_date != date.max
+    return membership.end_date != FixedDate.FUTURE
 
 
 def unique_membership_id(base_id: str, used_ids: set[str]) -> str:

@@ -11,8 +11,6 @@ from typing import Optional
 from mysoc_validator import Popolo
 from mysoc_validator.models.popolo import IdentifierScheme, LordName, Person
 
-from .iterables import unique
-
 FallbackMatcher = Callable[[str, Popolo], Optional[str]]
 
 
@@ -62,7 +60,11 @@ def resolve_person_id(
     eligible for the chamber on that date. A caller may provide a conservative
     source-specific fallback for people outside the chamber membership index.
     """
-    attempted_names = tuple(unique(name.strip() for name in names if name.strip()))
+    # Preserve caller order because the source's preferred name should be tried
+    # before progressively less authoritative aliases.
+    attempted_names = list(
+        dict.fromkeys(name.strip() for name in names if name.strip())
+    )
 
     if source_identifier is not None and identifier_scheme is not None:
         try:
