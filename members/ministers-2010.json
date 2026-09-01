@@ -83741,7 +83741,16 @@
       "role": "Liberal Democrat Lords Spokesperson (Science, Innovation and Technology)",
       "person_id": "uk.org.publicwhip/person/13517",
       "organization_id": "house-of-commons",
-      "start_date": "2023-02-20"
+      "start_date": "2023-02-20",
+      "end_date": "2026-07-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/3396/OppositionPost/1755",
+      "source": "datadotparl/oppositionpost",
+      "role": "Liberal Democrat Lords Spokesperson (AI and Digital)",
+      "person_id": "uk.org.publicwhip/person/13517",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/1116/Committee/148",
@@ -97498,7 +97507,7 @@
       "role": "Minister of State (Department for Business, Innovation, Science and Trade)",
       "person_id": "uk.org.publicwhip/person/24738",
       "organization_id": "house-of-commons",
-      "start_date": "2026-08-24"
+      "start_date": "2026-07-23"
     },
     {
       "id": "uk.parliament.data/Member/3981/OppositionPost/967",
@@ -151101,7 +151110,24 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25783",
       "organization_id": "economic-affairs-committee",
-      "start_date": "2026-01-27"
+      "start_date": "2026-01-27",
+      "end_date": "2026-09-01"
+    },
+    {
+      "id": "uk.parliament.data/Member/4726/Committee/175/1",
+      "source": "datadotparl/committee",
+      "role": "Chair",
+      "person_id": "uk.org.publicwhip/person/25783",
+      "organization_id": "economic-affairs-committee",
+      "start_date": "2026-09-01"
+    },
+    {
+      "id": "uk.parliament.data/Member/4726/Committee/175/2",
+      "source": "datadotparl/committee",
+      "role": "Chair",
+      "person_id": "uk.org.publicwhip/person/25783",
+      "organization_id": "economic-affairs-committee",
+      "start_date": "2026-09-01"
     },
     {
       "id": "uk.parliament.data/Member/4726/Committee/193",
@@ -177184,7 +177210,7 @@
       "role": "Parliamentary Under-Secretary of State (Department for Digital, Culture, Media and Sport)",
       "person_id": "uk.org.publicwhip/person/26869",
       "organization_id": "house-of-commons",
-      "start_date": "2026-08-24"
+      "start_date": "2026-07-22"
     }
   ],
   "organizations": [
