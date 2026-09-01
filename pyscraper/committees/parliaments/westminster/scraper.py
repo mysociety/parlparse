@@ -10,6 +10,7 @@ from __future__ import annotations
 import re
 import warnings
 from collections import defaultdict
+from collections.abc import Iterator
 from contextlib import closing
 from datetime import date
 from pathlib import Path
@@ -25,11 +26,11 @@ from mysoc_validator.models.popolo import (
 )
 
 from ...config import REPO_ROOT
+from ...helpers.http import PacedHttpClient
 from ...helpers.organization_dates import set_organization_dates_from_memberships
-from ...helpers.progress import report
+from ...helpers.progress import report, track
 from ...helpers.validation import write_and_cross_validate
 from ...models.popolo_extensions import CommitteeOrganizationExtra
-from .client import WestminsterClient
 from .models import (
     CachedCommitteeRecord,
     CommitteeMembership,
@@ -43,6 +44,9 @@ from .parsing import (
     committee_organization_name,
     normalized_committee_roles,
     overlaps_history,
+    parse_committee_memberships,
+    parse_committee_metadata,
+    parse_mnis_posts,
     slugify,
 )
 
@@ -50,6 +54,145 @@ DEFAULT_PEOPLE_PATH = REPO_ROOT / "members" / "people.json"
 DEFAULT_OUTPUT_PATH = (
     REPO_ROOT / "members" / "posts" / "westminster-parliament-posts.json"
 )
+MNIS_MEMBERS_URL = (
+    "https://data.parliament.uk/membersdataplatform/services/mnis/members/query"
+)
+COMMITTEE_MEMBERS_URL = "https://committees-api.parliament.uk/api/Members"
+COMMITTEE_DETAILS_URL = "https://committees-api.parliament.uk/api/Committees"
+
+
+def batches(items: list[int], batch_size: int) -> Iterator[list[int]]:
+    """Yield fixed-size batches, rejecting a non-positive batch size."""
+    if batch_size < 1:
+        raise ValueError("batch_size must be at least 1")
+    for index in range(0, len(items), batch_size):
+        yield items[index : index + batch_size]
+
+
+def fetch_posts(
+    client: PacedHttpClient, history_start: date = HISTORY_START
+) -> list[Post]:
+    """Fetch and parse the Commons and Lords post-history datasets."""
+    output_data = "GovernmentPosts|OppositionPosts|ParliamentaryPosts"
+    today = date.today().isoformat()
+    queries = (
+        f"house=Commons|membership=all|commonsmemberbetween="
+        f"{history_start.isoformat()}and{today}",
+        "house=Lords|membership=all",
+    )
+    posts: list[Post] = []
+    for query in track(queries, "Fetching Westminster post histories"):
+        url = f"{MNIS_MEMBERS_URL}/{query}/{output_data}/"
+        try:
+            posts.extend(parse_mnis_posts(client.get(url).content, history_start))
+        except (ValueError, TypeError) as exc:
+            raise ValueError(f"Invalid Westminster post history from {url}") from exc
+    if not posts:
+        raise ValueError(f"MNIS returned no post history from {MNIS_MEMBERS_URL}")
+    return posts
+
+
+def fetch_committee_memberships(
+    client: PacedHttpClient,
+    member_ids: list[int],
+    history_start: date = HISTORY_START,
+    batch_size: int = 50,
+) -> list[CommitteeMembership]:
+    """Fetch and parse committee histories in multi-member request batches."""
+    memberships: list[CommitteeMembership] = []
+    member_batches = list(batches(sorted(set(member_ids)), batch_size))
+    for member_batch in track(
+        member_batches, "Fetching Westminster committee histories"
+    ):
+        params = [("Members", str(member_id)) for member_id in member_batch]
+        params.extend(
+            [
+                ("MembershipStatus", "All"),
+                ("ShowOnWebsiteOnly", "false"),
+            ]
+        )
+        try:
+            memberships.extend(
+                parse_committee_memberships(
+                    client.get_json(COMMITTEE_MEMBERS_URL, params=params),
+                    history_start,
+                )
+            )
+        except (ValueError, TypeError) as exc:
+            raise ValueError(
+                "Invalid Westminster committee history from "
+                f"{COMMITTEE_MEMBERS_URL} for member IDs {member_batch}"
+            ) from exc
+    if member_ids and not memberships:
+        raise ValueError(
+            f"The Committees API returned no memberships from {COMMITTEE_MEMBERS_URL}"
+        )
+    return memberships
+
+
+def fetch_committee_details(
+    client: PacedHttpClient,
+    memberships: list[CommitteeMembership],
+    cached_metadata: dict[int, CommitteeMetadata] | None = None,
+    full_refresh: bool = False,
+) -> dict[int, CommitteeMetadata]:
+    """Fetch missing purpose details and combine them with cached metadata."""
+    details = {
+        record.committee_id: record.metadata
+        or CommitteeMetadata(record.committee_id, record.committee_name)
+        for record in memberships
+    }
+    cached_metadata = cached_metadata or {}
+    if not full_refresh:
+        for committee_id, metadata in cached_metadata.items():
+            details.setdefault(committee_id, metadata)
+        for committee_id in details.keys() & cached_metadata.keys():
+            current = details[committee_id]
+            cached = cached_metadata[committee_id]
+            details[committee_id] = current._replace(description=cached.description)
+
+    pending = sorted(
+        committee_id
+        for committee_id, metadata in details.items()
+        if metadata.end_date is None
+        and (full_refresh or committee_id not in cached_metadata)
+    )
+    fetched: set[int] = set()
+
+    def pending_committee_ids() -> Iterator[int]:
+        while pending:
+            committee_id = pending.pop(0)
+            if committee_id not in fetched:
+                yield committee_id
+
+    for committee_id in track(
+        pending_committee_ids(), "Fetching Westminster committee details"
+    ):
+        detail_url = f"{COMMITTEE_DETAILS_URL}/{committee_id}"
+        data = client.get_json(
+            detail_url,
+            params={"includeBanners": "false", "showOnWebsiteOnly": "false"},
+        )
+        if not isinstance(data, dict):
+            raise ValueError(
+                f"The Committees API returned invalid detail for {committee_id} "
+                f"from {detail_url}"
+            )
+        try:
+            metadata = parse_committee_metadata(data)
+        except (ValueError, TypeError) as exc:
+            raise ValueError(
+                f"Invalid Westminster committee {committee_id} detail from {detail_url}"
+            ) from exc
+        details[committee_id] = metadata
+        fetched.add(committee_id)
+        if (
+            metadata.parent_id
+            and metadata.parent_id not in fetched
+            and (full_refresh or metadata.parent_id not in cached_metadata)
+        ):
+            pending.append(metadata.parent_id)
+    return details
 
 
 def cached_committee_metadata(
@@ -200,7 +343,7 @@ def roles_to_popolo(
             item.post_type,
             item.post_id,
             item.start_date,
-            item.end_date or date.max,
+            item.end_date or FixedDate.FUTURE,
         ),
     ):
         if post in seen_posts or post.member_id not in people_by_mnis:
@@ -276,9 +419,10 @@ def scrape_westminster_roles(
     """
     report("Loading Westminster role histories")
     people = Popolo.from_path(people_path)
-    with closing(WestminsterClient(request_delay=request_delay)) as client:
-        posts = client.posts(history_start)
-        committees = client.committee_memberships(
+    with closing(PacedHttpClient(request_delay=request_delay)) as client:
+        posts = fetch_posts(client, history_start)
+        committees = fetch_committee_memberships(
+            client,
             [
                 int(identifier.identifier)
                 for person in people.persons
@@ -289,7 +433,8 @@ def scrape_westminster_roles(
             batch_size,
         )
         cached_metadata = {} if full_refresh else cached_committee_metadata(output_path)
-        committee_metadata = client.committee_details(
+        committee_metadata = fetch_committee_details(
+            client,
             committees,
             cached_metadata=cached_metadata,
             full_refresh=full_refresh,

@@ -9,7 +9,6 @@ from typing import Literal, overload
 import lxml.etree as etree
 
 from ...helpers.html_text import reduce_purpose_html
-from ...helpers.iterables import unique
 from .models import CommitteeMembership, CommitteeMetadata, CommitteeRole, Post
 
 HISTORY_START = date(2010, 5, 6)
@@ -141,7 +140,10 @@ def parse_committee_metadata(data: dict[object, object]) -> CommitteeMetadata:
     parent = data.get("parentCommittee")
     if parent is not None and not isinstance(parent, dict):
         raise ValueError(f"Committee {committee_id} has an invalid parent")
-    parent_id = int(parent["id"]) if parent else None
+    try:
+        parent_id = int(parent["id"]) if parent else None
+    except (KeyError, TypeError, ValueError) as exc:
+        raise ValueError(f"Committee {committee_id} has an invalid parent ID") from exc
 
     categories: list[str] = []
     category = data.get("category")
@@ -173,7 +175,8 @@ def parse_committee_metadata(data: dict[object, object]) -> CommitteeMetadata:
         house=house,
         end_date=end_date,
         parent_id=parent_id,
-        categories=tuple(unique(item for item in categories if item)),
+        # Preserve the API's category order for deterministic generated output.
+        categories=tuple(dict.fromkeys(item for item in categories if item)),
         description=description or None,
         external_url=f"https://committees.parliament.uk/committee/{committee_id}/",
     )

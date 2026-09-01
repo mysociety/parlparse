@@ -9,11 +9,7 @@ from unittest.mock import Mock
 import pytest
 from mysoc_validator import Popolo
 
-from pyscraper.committees.parliaments.westminster.client import (
-    QueryParameter,
-    WestminsterClient,
-    batches,
-)
+from pyscraper.committees.helpers.http import PacedHttpClient
 from pyscraper.committees.parliaments.westminster.models import (
     CommitteeMembership,
     CommitteeMetadata,
@@ -26,7 +22,9 @@ from pyscraper.committees.parliaments.westminster.parsing import (
     parse_mnis_posts,
 )
 from pyscraper.committees.parliaments.westminster.scraper import (
+    batches,
     cached_committee_metadata,
+    fetch_committee_details,
     roles_to_popolo,
 )
 
@@ -55,12 +53,12 @@ class RequestCall(NamedTuple):
 
     url: str
     timeout: int
-    params: list[QueryParameter] | None
+    params: object
 
 
 class FakeSession:
     """
-    Record HTTP calls made by WestminsterClient.
+    Record HTTP calls made by PacedHttpClient.
     """
 
     def __init__(self) -> None:
@@ -71,7 +69,7 @@ class FakeSession:
         url: str,
         *,
         timeout: int,
-        params: list[QueryParameter] | None,
+        params: object,
     ) -> FakeResponse:
         self.calls.append(RequestCall(url, timeout, params))
         return FakeResponse()
@@ -311,10 +309,10 @@ def test_reads_cached_metadata_and_skips_detail_request(tmp_path: Path) -> None:
             house="Commons",
         ),
     )
-    client = WestminsterClient(request_delay=0)
+    client = PacedHttpClient(request_delay=0)
     session = FakeSession()
     client.session = session
-    details = client.committee_details([membership], cached_metadata=cached)
+    details = fetch_committee_details(client, [membership], cached_metadata=cached)
 
     assert details[83].description == "Cached purpose."
     assert session.calls == []
@@ -329,7 +327,8 @@ def test_reads_cached_metadata_and_skips_detail_request(tmp_path: Path) -> None:
     }
     get = Mock(return_value=response)
     setattr(client, "get", get)
-    refreshed = client.committee_details(
+    refreshed = fetch_committee_details(
+        client,
         [membership],
         cached_metadata=cached,
         full_refresh=True,
@@ -342,7 +341,7 @@ def test_batches_and_pauses_between_requests() -> None:
     """Bulk requests must retain batching and pacing safeguards for upstream APIs."""
     assert list(batches([1, 2, 3], 2)) == [[1, 2], [3]]
     sleeps: list[float] = []
-    client = WestminsterClient(request_delay=3, sleeper=sleeps.append)
+    client = PacedHttpClient(request_delay=3, sleeper=sleeps.append)
     session = FakeSession()
     client.session = session
     client.get("https://example.test/one")
