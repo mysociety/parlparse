@@ -61,3 +61,9 @@ sp/wikipedia-msp.py > ../members/wikipedia-msp.xml
 # check the new data hasn't added data validation issues
 cd $root_dir
 mysoc-validator popolo validate members/people.json
+
+# Update committee and parliamentary post data in parlparse
+poetry run python -m pyscraper.committees westminster --quiet
+poetry run python -m pyscraper.committees senedd --quiet
+poetry run python -m pyscraper.committees scotland --quiet
+poetry run python -m pyscraper.committees northern-ireland --quiet

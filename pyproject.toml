@@ -8,10 +8,11 @@ everypolitician = "0.0.13"
 lxml = "5.2.1"
 python-dateutil = "2.9.0"
 requests = { version = "2.32.3", extras = ["security"] }
+httpx = "^0.28.1"
 requests-cache = "0.4.13"
-Click = "^8.0"
+Click = "8.1.8"
 click-log = "0.3.2"
-mysoc-validator = "^1.2.0"
+mysoc-validator = "1.5.0"
 tqdm = "^4.67.1"
 jinja2 = "^3.1.4"
 html5lib = "^1.1"
@@ -27,6 +28,7 @@ pydantic-ai-slim = {version = "0.8.0", extras = ["huggingface"]}
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.9.6"
+pytest = "^8.4.2"
 
 [tool.ruff]
 

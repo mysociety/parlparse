@@ -1,0 +1,4287 @@
+{
+  "memberships": [
+    {
+      "end_date": "2006-12-21",
+      "id": "scot.parliament.data/membergovernmentroles/103",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10102",
+      "role": "Minister for Communities",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2004-10-04"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/140",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10102",
+      "role": "Minister for Health and Community Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-28"
+    },
+    {
+      "end_date": "2004-10-04",
+      "id": "scot.parliament.data/membergovernmentroles/142",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10102",
+      "role": "Minister for Health and Community Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2001-11-28",
+      "id": "scot.parliament.data/membergovernmentroles/64",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10102",
+      "role": "Deputy Minister for Health and Community Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-11-01"
+    },
+    {
+      "end_date": "2014-11-25",
+      "id": "scot.parliament.data/membergovernmentroles/107",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10148",
+      "role": "Minister for Community Safety and Legal Affairs",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2010-12-12",
+      "id": "scot.parliament.data/membergovernmentroles/124",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10148",
+      "role": "Minister for Environment",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2009-02-12"
+    },
+    {
+      "end_date": "2011-05-25",
+      "id": "scot.parliament.data/membergovernmentroles/175",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10148",
+      "role": "Minister for the Environment and Climate Change",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2010-12-12"
+    },
+    {
+      "end_date": "2021-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/220",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10148",
+      "role": "Cabinet Secretary for Environment, Climate Change and Land Reform",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-18"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/8",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10148",
+      "role": "Cabinet Secretary for Fair Work, Skills and Training",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-25"
+    },
+    {
+      "end_date": "2000-10-11",
+      "id": "scot.parliament.data/membergovernmentroles/88",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10168",
+      "role": "First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-13"
+    },
+    {
+      "end_date": "2001-03-20",
+      "id": "scot.parliament.data/membergovernmentroles/130",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10216",
+      "role": "Minister for Environment, Sport and Culture",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-11-02"
+    },
+    {
+      "end_date": "2000-11-02",
+      "id": "scot.parliament.data/membergovernmentroles/97",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10216",
+      "role": "Minister for Children and Education",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2000-11-01",
+      "id": "scot.parliament.data/membergovernmentroles/81",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10284",
+      "role": "Deputy Minister for Rural Affairs",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2000-10-26",
+      "id": "scot.parliament.data/membergovernmentroles/117",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10395",
+      "role": "Minister for Enterprise and Lifelong Learning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2001-11-08",
+      "id": "scot.parliament.data/membergovernmentroles/89",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10395",
+      "role": "First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-10-26"
+    },
+    {
+      "end_date": "2011-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/92",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10525",
+      "role": "First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-16"
+    },
+    {
+      "end_date": "2014-11-19",
+      "id": "scot.parliament.data/membergovernmentroles/93",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10525",
+      "role": "First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-18"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/10",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10581",
+      "role": "Cabinet Secretary for Finance, Constitution and Economy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-21"
+    },
+    {
+      "end_date": "2014-11-21",
+      "id": "scot.parliament.data/membergovernmentroles/11",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10581",
+      "role": "Cabinet Secretary for Finance, Employment and Sustainable Growth",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2021-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/207",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10581",
+      "role": "Deputy First Minister and Cabinet Secretary for Education and Skills",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-18"
+    },
+    {
+      "end_date": "2023-03-28",
+      "id": "scot.parliament.data/membergovernmentroles/272",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10581",
+      "role": "Deputy First Minister and Cabinet Secretary for Covid Recovery",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-19"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/33",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10581",
+      "role": "Deputy First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-21"
+    },
+    {
+      "end_date": "2026-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/340",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10581",
+      "role": "First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-05-07"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/361",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10581",
+      "role": "First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-19"
+    },
+    {
+      "end_date": "2011-05-25",
+      "id": "scot.parliament.data/membergovernmentroles/9",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10581",
+      "role": "Cabinet Secretary for Finance and Sustainable Growth",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-17"
+    },
+    {
+      "end_date": "2005-06-27",
+      "id": "scot.parliament.data/membergovernmentroles/118",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10618",
+      "role": "Minister for Enterprise and Lifelong Learning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/147",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10618",
+      "role": "Minister for Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/28",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10618",
+      "role": "Deputy First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2005-06-23",
+      "id": "scot.parliament.data/membergovernmentroles/30",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/10618",
+      "role": "Deputy First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/295",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/11189",
+      "role": "Cabinet Secretary for Constitution, External Affairs and Culture",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-20"
+    },
+    {
+      "end_date": "2012-09-06",
+      "id": "scot.parliament.data/membergovernmentroles/159",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13943",
+      "role": "Minister for Parliamentary Business and Chief Whip",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2000-11-01",
+      "id": "scot.parliament.data/membergovernmentroles/102",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13946",
+      "role": "Minister for Communities",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2001-11-28",
+      "id": "scot.parliament.data/membergovernmentroles/116",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13946",
+      "role": "Minister for Enterprise and Lifelong Learning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-11-01"
+    },
+    {
+      "end_date": "2002-05-03",
+      "id": "scot.parliament.data/membergovernmentroles/121",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13946",
+      "role": "Minister for Enterprise, Transport and Lifelong Learning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-28"
+    },
+    {
+      "end_date": "1999-06-12",
+      "id": "scot.parliament.data/membergovernmentroles/234",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13946",
+      "role": "Minister for Social Inclusion, Local Government and Housing",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2000-11-01",
+      "id": "scot.parliament.data/membergovernmentroles/235",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13946",
+      "role": "Minister for Communities",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-06-12"
+    },
+    {
+      "end_date": "2011-12-06",
+      "id": "scot.parliament.data/membergovernmentroles/148",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13947",
+      "role": "Minister for Learning and Skills",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/149",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13947",
+      "role": "Minister for Learning, Science and Scotland's Languages",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-12-06"
+    },
+    {
+      "end_date": "2011-03-22",
+      "id": "scot.parliament.data/membergovernmentroles/198",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13947",
+      "role": "Parliamentary Liaison Officer to the Office of the First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2008-03-27"
+    },
+    {
+      "end_date": "2018-06-28",
+      "id": "scot.parliament.data/membergovernmentroles/216",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13947",
+      "role": "Minister for International Development and Europe",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-18"
+    },
+    {
+      "end_date": "2025-06-13",
+      "id": "scot.parliament.data/membergovernmentroles/352",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13947",
+      "role": "Acting Minister for Climate Action",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-06-27"
+    },
+    {
+      "id": "parliament.scot/Committee/328/Member/1783",
+      "organization_id": "scottish-parliament-committee-328",
+      "person_id": "uk.org.publicwhip/person/13949",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2001-11-28",
+      "id": "scot.parliament.data/membergovernmentroles/170",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13949",
+      "role": "Minister for Social Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-11-01"
+    },
+    {
+      "end_date": "2000-11-01",
+      "id": "scot.parliament.data/membergovernmentroles/230",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13949",
+      "role": "Deputy Minister for Social Inclusion, Equality and the Voluntary Sector",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2000-11-01",
+      "id": "scot.parliament.data/membergovernmentroles/35",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13949",
+      "role": "Deputy Minister for Communities",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "id": "parliament.scot/Committee/329/Member/2633",
+      "organization_id": "scottish-parliament-committee-329",
+      "person_id": "uk.org.publicwhip/person/13951",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2001-11-28",
+      "id": "scot.parliament.data/membergovernmentroles/182",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13956",
+      "role": "Minister for Transport and Planning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-03-21"
+    },
+    {
+      "end_date": "2001-03-21",
+      "id": "scot.parliament.data/membergovernmentroles/183",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13956",
+      "role": "Minister for Transport and Telecommunications",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-11-02"
+    },
+    {
+      "end_date": "2000-11-01",
+      "id": "scot.parliament.data/membergovernmentroles/186",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13956",
+      "role": "Minister for Transport and the Environment",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/55",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13956",
+      "role": "Deputy Minister for Environment and Rural Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-01-11"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/104",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13957",
+      "role": "Minister for Communities",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-01-11"
+    },
+    {
+      "end_date": "2001-11-28",
+      "id": "scot.parliament.data/membergovernmentroles/236",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13957",
+      "role": "Deputy Minister for Rural Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-11-01"
+    },
+    {
+      "end_date": "2000-11-01",
+      "id": "scot.parliament.data/membergovernmentroles/39",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13957",
+      "role": "Deputy Minister for Culture and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2001-11-28",
+      "id": "scot.parliament.data/membergovernmentroles/50",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13957",
+      "role": "Deputy Minister for Environment and Rural Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-11-01"
+    },
+    {
+      "end_date": "2007-01-11",
+      "id": "scot.parliament.data/membergovernmentroles/53",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13957",
+      "role": "Deputy Minister for Environment and Rural Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2005-06-27"
+    },
+    {
+      "end_date": "2005-06-27",
+      "id": "scot.parliament.data/membergovernmentroles/66",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13957",
+      "role": "Deputy Minister for Health and Community Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2004-10-06"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/43",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13959",
+      "role": "Deputy Minister for Education and Young People",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2005-06-29"
+    },
+    {
+      "id": "parliament.scot/Committee/340/Member/2103",
+      "organization_id": "scottish-parliament-committee-340",
+      "person_id": "uk.org.publicwhip/person/13961",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2012-09-04",
+      "id": "scot.parliament.data/membergovernmentroles/144",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13961",
+      "role": "Minister for Housing and Transport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2010-01-18",
+      "id": "scot.parliament.data/membergovernmentroles/167",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13961",
+      "role": "Minister for Schools and Skills",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2009-02-12"
+    },
+    {
+      "end_date": "2010-12-12",
+      "id": "scot.parliament.data/membergovernmentroles/168",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13961",
+      "role": "Minister for Skills and Lifelong Learning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2010-01-18"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/18",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13961",
+      "role": "Cabinet Secretary for Infrastructure, Investment and Cities",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-25"
+    },
+    {
+      "end_date": "2011-05-25",
+      "id": "scot.parliament.data/membergovernmentroles/180",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13961",
+      "role": "Minister for Transport and Infrastructure",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2010-12-12"
+    },
+    {
+      "end_date": "2014-11-25",
+      "id": "scot.parliament.data/membergovernmentroles/187",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13961",
+      "role": "Minister for Transport and Veterans",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2012-09-05"
+    },
+    {
+      "end_date": "2009-02-12",
+      "id": "scot.parliament.data/membergovernmentroles/197",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13961",
+      "role": "Parliamentary Liaison Officer to the Office of the First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2008-03-27"
+    },
+    {
+      "end_date": "2018-06-26",
+      "id": "scot.parliament.data/membergovernmentroles/214",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13961",
+      "role": "Cabinet Secretary for Economy, Jobs and Fair Work",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-18"
+    },
+    {
+      "end_date": "2023-03-29",
+      "id": "scot.parliament.data/membergovernmentroles/289",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13961",
+      "role": "Cabinet Secretary for Justice and Veterans",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-26"
+    },
+    {
+      "end_date": "2011-12-06",
+      "id": "scot.parliament.data/membergovernmentroles/151",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13966",
+      "role": "Minister for Local Government and Planning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2011-03-22",
+      "id": "scot.parliament.data/membergovernmentroles/196",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13966",
+      "role": "Parliamentary Liaison Officer to the Office of the First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2008-03-27"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/204",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13966",
+      "role": "Minister for Children and Young People",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2015-09-01"
+    },
+    {
+      "end_date": "2018-06-28",
+      "id": "scot.parliament.data/membergovernmentroles/209",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13966",
+      "role": "Minister for Public Health and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-18"
+    },
+    {
+      "end_date": "2021-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/255",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13966",
+      "role": "Cabinet Secretary for Communities and Local Government",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-28"
+    },
+    {
+      "end_date": "2014-12-18",
+      "id": "scot.parliament.data/membergovernmentroles/99",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13966",
+      "role": "Minister for Children and Young People",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-12-06"
+    },
+    {
+      "end_date": "2011-05-25",
+      "id": "scot.parliament.data/membergovernmentroles/169",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13969",
+      "role": "Minister for Skills and Lifelong Learning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2010-12-15"
+    },
+    {
+      "end_date": "2014-04-22",
+      "id": "scot.parliament.data/membergovernmentroles/190",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13969",
+      "role": "Minister for Youth Employment",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-12-06"
+    },
+    {
+      "end_date": "2018-06-28",
+      "id": "scot.parliament.data/membergovernmentroles/211",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13969",
+      "role": "Cabinet Secretary for Communities, Social Security and Equalities",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-18"
+    },
+    {
+      "end_date": "2014-11-21",
+      "id": "scot.parliament.data/membergovernmentroles/27",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13969",
+      "role": "Cabinet Secretary for Training, Youth & Women's Employment",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-04-22"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/270",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13969",
+      "role": "Minister for Drugs Policy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2020-12-22"
+    },
+    {
+      "end_date": "2023-03-30",
+      "id": "scot.parliament.data/membergovernmentroles/277",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13969",
+      "role": "Minister for Drugs Policy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-20"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/319",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13969",
+      "role": "Cabinet Secretary for Justice and Home Affairs",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-30"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/364",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13969",
+      "role": "Cabinet Secretary for Health and Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-20"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/7",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13969",
+      "role": "Cabinet Secretary for Education and Lifelong Learning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-21"
+    },
+    {
+      "end_date": "2011-12-06",
+      "id": "scot.parliament.data/membergovernmentroles/98",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13969",
+      "role": "Minister for Children and Young People",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2011-05-25",
+      "id": "scot.parliament.data/membergovernmentroles/157",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13971",
+      "role": "Minister for Parliamentary Business",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-17"
+    },
+    {
+      "end_date": "2012-09-06",
+      "id": "scot.parliament.data/membergovernmentroles/22",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13971",
+      "role": "Cabinet Secretary for Parliamentary Business and Government Strategy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2004-10-04",
+      "id": "scot.parliament.data/membergovernmentroles/101",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13973",
+      "role": "Minister for Communities",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/155",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13973",
+      "role": "Minister for Parliamentary Business",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2004-10-04"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/171",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13973",
+      "role": "Minister for Social Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2002-05-09"
+    },
+    {
+      "end_date": "2002-05-09",
+      "id": "scot.parliament.data/membergovernmentroles/82",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13973",
+      "role": "Deputy Minister for Social Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-11-01"
+    },
+    {
+      "end_date": "2001-11-28",
+      "id": "scot.parliament.data/membergovernmentroles/139",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13975",
+      "role": "Minister for Health and Community Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "id": "parliament.scot/Committee/334/Member/3771",
+      "organization_id": "scottish-parliament-committee-334",
+      "person_id": "uk.org.publicwhip/person/13977",
+      "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2011-05-25",
+      "id": "scot.parliament.data/membergovernmentroles/106",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13980",
+      "role": "Minister for Community Safety",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-17"
+    },
+    {
+      "end_date": "2014-11-21",
+      "id": "scot.parliament.data/membergovernmentroles/115",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13980",
+      "role": "Minister for Energy, Enterprise and Tourism",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2018-06-26",
+      "id": "scot.parliament.data/membergovernmentroles/227",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13980",
+      "role": "Cabinet Secretary for Rural Economy and Connectivity",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-19"
+    },
+    {
+      "end_date": "2020-02-17",
+      "id": "scot.parliament.data/membergovernmentroles/244",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13980",
+      "role": "Cabinet Secretary for the Rural Economy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-26"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/264",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13980",
+      "role": "Cabinet Secretary for Rural Economy and Tourism",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2020-02-17"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/95",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13980",
+      "role": "Minister for Business, Energy and Tourism",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-21"
+    },
+    {
+      "end_date": "2009-02-10",
+      "id": "scot.parliament.data/membergovernmentroles/132",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13982",
+      "role": "Minister for Europe, External Affairs and Culture",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-17"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/154",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13984",
+      "role": "Minister for Parliamentary Business",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-28"
+    },
+    {
+      "end_date": "2004-10-04",
+      "id": "scot.parliament.data/membergovernmentroles/156",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13984",
+      "role": "Minister for Parliamentary Business",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/178",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13984",
+      "role": "Minister for Tourism, Culture and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2004-10-04"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/127",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13986",
+      "role": "Minister for Environment and Rural Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-05-15"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/128",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13986",
+      "role": "Minister for Environment and Rural Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2000-11-01",
+      "id": "scot.parliament.data/membergovernmentroles/164",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13986",
+      "role": "Minister for Rural Affairs",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2001-05-15",
+      "id": "scot.parliament.data/membergovernmentroles/165",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13986",
+      "role": "Minister for Rural Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-11-02"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/158",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13987",
+      "role": "Minister for Parliamentary Business",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2012-09-06"
+    },
+    {
+      "end_date": "2018-06-26",
+      "id": "scot.parliament.data/membergovernmentroles/208",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13987",
+      "role": "Minister for Parliamentary Business",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-18"
+    },
+    {
+      "end_date": "2020-12-18",
+      "id": "scot.parliament.data/membergovernmentroles/239",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13987",
+      "role": "Minister for Public Health, Sport and Wellbeing",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-26"
+    },
+    {
+      "end_date": "2024-05-08",
+      "id": "scot.parliament.data/membergovernmentroles/320",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/13987",
+      "role": "Minister for Local Government Empowerment and Planning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-30"
+    },
+    {
+      "id": "parliament.scot/Committee/334/Member/2394",
+      "organization_id": "scottish-parliament-committee-334",
+      "person_id": "uk.org.publicwhip/person/13991",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2003-05-01",
+      "id": "scot.parliament.data/membergovernmentroles/122",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14002",
+      "role": "Minister for Enterprise, Transport and Lifelong Learning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2002-05-09"
+    },
+    {
+      "end_date": "2002-05-09",
+      "id": "scot.parliament.data/membergovernmentroles/172",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14002",
+      "role": "Minister for Social Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-28"
+    },
+    {
+      "end_date": "2000-11-02",
+      "id": "scot.parliament.data/membergovernmentroles/231",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14002",
+      "role": "Deputy Minister for Community Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2000-11-02",
+      "id": "scot.parliament.data/membergovernmentroles/63",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14002",
+      "role": "Deputy Minister for Health and Community Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2001-11-28",
+      "id": "scot.parliament.data/membergovernmentroles/70",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14002",
+      "role": "Deputy Minister for Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-11-02"
+    },
+    {
+      "id": "parliament.scot/Committee/340/Member/2892",
+      "organization_id": "scottish-parliament-committee-340",
+      "person_id": "uk.org.publicwhip/person/14006",
+      "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2024-04-25",
+      "id": "scot.parliament.data/membergovernmentroles/296",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14006",
+      "role": "Minister for Zero Carbon Buildings, Active Travel and Tenants' Rights",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-08-31"
+    },
+    {
+      "end_date": "2011-03-22",
+      "id": "scot.parliament.data/membergovernmentroles/199",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14007",
+      "role": "Parliamentary Liaison Officer to the Office of the First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2008-03-27"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/113",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14008",
+      "role": "Minister for Education and Young People",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2006-11-16"
+    },
+    {
+      "end_date": "2002-05-09",
+      "id": "scot.parliament.data/membergovernmentroles/62",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14008",
+      "role": "Deputy Minister for Health and Community Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-28"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/69",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14008",
+      "role": "Deputy Minister for Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2002-11-28"
+    },
+    {
+      "end_date": "2006-11-14",
+      "id": "scot.parliament.data/membergovernmentroles/72",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14008",
+      "role": "Deputy Minister for Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2002-11-26",
+      "id": "scot.parliament.data/membergovernmentroles/84",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14008",
+      "role": "Deputy Minister for Social Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2002-05-09"
+    },
+    {
+      "end_date": "2014-12-02",
+      "id": "scot.parliament.data/membergovernmentroles/173",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14009",
+      "role": "Minister for Sport and Health Improvement",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-25"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/174",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14009",
+      "role": "Minister for Sport, Health Improvement and Mental Health",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-12-02"
+    },
+    {
+      "end_date": "2018-06-26",
+      "id": "scot.parliament.data/membergovernmentroles/217",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14009",
+      "role": "Minister for Employability and Training",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-18"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/240",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14009",
+      "role": "Minister for Business, Fair Work and Skills",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-26"
+    },
+    {
+      "end_date": "2023-03-29",
+      "id": "scot.parliament.data/membergovernmentroles/286",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14009",
+      "role": "Minister for Higher Education and Further Education, Youth Employment and Training",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-19"
+    },
+    {
+      "end_date": "2024-05-08",
+      "id": "scot.parliament.data/membergovernmentroles/307",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14009",
+      "role": "Minister for Independence",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-29"
+    },
+    {
+      "end_date": "2025-09-19",
+      "id": "scot.parliament.data/membergovernmentroles/348",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14009",
+      "role": "Minister for Parliamentary Business",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-05-08"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/368",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14009",
+      "role": "Minister for Parliamentary Business and Veterans",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-20"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/377",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14009",
+      "role": "Minister for Parliamentary Business and Veterans",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-21"
+    },
+    {
+      "end_date": "2011-05-25",
+      "id": "scot.parliament.data/membergovernmentroles/109",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14012",
+      "role": "Minister for Culture and External Affairs",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2009-12-01"
+    },
+    {
+      "end_date": "2014-11-21",
+      "id": "scot.parliament.data/membergovernmentroles/2",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14012",
+      "role": "Cabinet Secretary for Culture and External Affairs",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2020-02-17",
+      "id": "scot.parliament.data/membergovernmentroles/212",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14012",
+      "role": "Cabinet Secretary for Culture, Tourism and External Affairs",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-18"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/262",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14012",
+      "role": "Cabinet Secretary for Economy, Fair Work and Culture",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2020-02-17"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/3",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14012",
+      "role": "Cabinet Secretary for Culture, Europe and External Affairs",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-21"
+    },
+    {
+      "end_date": "2024-02-20",
+      "id": "scot.parliament.data/membergovernmentroles/331",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14012",
+      "role": "Minister for Transport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-06-13"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/337",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14012",
+      "role": "Cabinet Secretary for Transport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-02-20"
+    },
+    {
+      "end_date": "2009-12-01",
+      "id": "scot.parliament.data/membergovernmentroles/4",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14012",
+      "role": "Cabinet Secretary for Education and Lifelong Learning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-17"
+    },
+    {
+      "end_date": "2011-05-25",
+      "id": "scot.parliament.data/membergovernmentroles/96",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14013",
+      "role": "Minister for Children and Early Years",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-17"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/111",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14017",
+      "role": "Minister for Education and Young People",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-28"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/146",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14017",
+      "role": "Minister for Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/137",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14023",
+      "role": "Minister for Finance and Public Services",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-28"
+    },
+    {
+      "end_date": "2004-10-04",
+      "id": "scot.parliament.data/membergovernmentroles/138",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14023",
+      "role": "Minister for Finance and Public Services",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/141",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14023",
+      "role": "Minister for Health and Community Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2004-10-04"
+    },
+    {
+      "end_date": "2006-11-15",
+      "id": "scot.parliament.data/membergovernmentroles/37",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14025",
+      "role": "Deputy Minister for Communities",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2004-10-06"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/73",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14025",
+      "role": "Deputy Minister for Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2006-11-16"
+    },
+    {
+      "end_date": "2007-02-19",
+      "id": "scot.parliament.data/membergovernmentroles/191",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14028",
+      "role": "Ministerial Parliamentary Aide to the First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-20"
+    },
+    {
+      "end_date": "2011-05-25",
+      "id": "scot.parliament.data/membergovernmentroles/23",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14029",
+      "role": "Cabinet Secretary for Rural Affairs and the Environment",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-17"
+    },
+    {
+      "end_date": "2014-06-18",
+      "id": "scot.parliament.data/membergovernmentroles/24",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14029",
+      "role": "Cabinet Secretary for Rural Affairs and the Environment",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/25",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14029",
+      "role": "Cabinet Secretary for Rural Affairs, Food and Environment",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-06-18"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/260",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14029",
+      "role": "Minister for Further Education, Higher Education and Science",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-09-04"
+    },
+    {
+      "end_date": "2023-03-29",
+      "id": "scot.parliament.data/membergovernmentroles/282",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14029",
+      "role": "Minister for Just Transition, Employment and Fair Work",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-19"
+    },
+    {
+      "end_date": "2023-06-13",
+      "id": "scot.parliament.data/membergovernmentroles/312",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14029",
+      "role": "Minister for Small Business, Innovation and Trade",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-29"
+    },
+    {
+      "end_date": "2024-05-08",
+      "id": "scot.parliament.data/membergovernmentroles/329",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14029",
+      "role": "Minister for Small Business, Innovation, Tourism and Trade",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-06-13"
+    },
+    {
+      "end_date": "2025-06-11",
+      "id": "scot.parliament.data/membergovernmentroles/342",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14029",
+      "role": "Minister for Business",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-05-08"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/356",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14029",
+      "role": "Minister for Business and Employment",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2025-06-11"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/57",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14030",
+      "role": "Deputy Minister for Finance and Public Service Reform",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2005-06-29"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/80",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14030",
+      "role": "Deputy Minister for Parliamentary Business",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2005-06-29"
+    },
+    {
+      "end_date": "2011-05-25",
+      "id": "scot.parliament.data/membergovernmentroles/19",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14031",
+      "role": "Cabinet Secretary for Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-17"
+    },
+    {
+      "end_date": "2014-11-25",
+      "id": "scot.parliament.data/membergovernmentroles/20",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14031",
+      "role": "Cabinet Secretary for Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2001-11-28",
+      "id": "scot.parliament.data/membergovernmentroles/135",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14033",
+      "role": "Minister for Finance and Local Government",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-11-02"
+    },
+    {
+      "end_date": "2000-11-02",
+      "id": "scot.parliament.data/membergovernmentroles/68",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14033",
+      "role": "Deputy Minister for Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2004-10-04",
+      "id": "scot.parliament.data/membergovernmentroles/45",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14034",
+      "role": "Deputy Minister for Enterprise and Lifelong Learning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/49",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14034",
+      "role": "Deputy Minister for Enterprise, Transport and Lifelong Learning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-28"
+    },
+    {
+      "end_date": "2005-06-27",
+      "id": "scot.parliament.data/membergovernmentroles/52",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14034",
+      "role": "Deputy Minister for Environment and Rural Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2004-10-04"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/67",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14034",
+      "role": "Deputy Minister for Health and Community Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2005-06-27"
+    },
+    {
+      "end_date": "2001-11-28",
+      "id": "scot.parliament.data/membergovernmentroles/87",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14034",
+      "role": "Deputy Minister for Transport and Planning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-03-22"
+    },
+    {
+      "end_date": "2007-04-02",
+      "id": "scot.parliament.data/membergovernmentroles/193",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14035",
+      "role": "Ministerial Parliamentary Aide to the First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-02-19"
+    },
+    {
+      "end_date": "2011-05-25",
+      "id": "scot.parliament.data/membergovernmentroles/120",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14042",
+      "role": "Minister for Enterprise, Energy and Tourism",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-17"
+    },
+    {
+      "end_date": "2014-11-25",
+      "id": "scot.parliament.data/membergovernmentroles/161",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14043",
+      "role": "Minister for Public Health",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2018-06-26",
+      "id": "scot.parliament.data/membergovernmentroles/206",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14043",
+      "role": "Cabinet Secretary for Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-18"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/21",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14043",
+      "role": "Cabinet Secretary for Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-25"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/242",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14043",
+      "role": "Cabinet Secretary for Transport, Infrastructure and Connectivity",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-26"
+    },
+    {
+      "end_date": "2023-03-29",
+      "id": "scot.parliament.data/membergovernmentroles/275",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14043",
+      "role": "Cabinet Secretary for Net Zero, Energy and Transport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-19"
+    },
+    {
+      "end_date": "2024-02-08",
+      "id": "scot.parliament.data/membergovernmentroles/305",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14043",
+      "role": "Cabinet Secretary for NHS Recovery, Health and Social Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-29"
+    },
+    {
+      "end_date": "2009-02-10",
+      "id": "scot.parliament.data/membergovernmentroles/105",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14044",
+      "role": "Minister for Communities and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-17"
+    },
+    {
+      "id": "parliament.scot/Committee/338/Member/3896",
+      "organization_id": "scottish-parliament-committee-338",
+      "person_id": "uk.org.publicwhip/person/14046",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2004-10-04",
+      "id": "scot.parliament.data/membergovernmentroles/176",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14047",
+      "role": "Minister for Tourism, Culture and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/61",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14047",
+      "role": "Deputy Minister for Health and Community Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2002-05-09"
+    },
+    {
+      "end_date": "2000-11-01",
+      "id": "scot.parliament.data/membergovernmentroles/74",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14047",
+      "role": "Deputy Minister for Local Government",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/136",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14048",
+      "role": "Minister for Finance and Public Service Reform",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2004-10-06"
+    },
+    {
+      "end_date": "2001-11-28",
+      "id": "scot.parliament.data/membergovernmentroles/153",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14048",
+      "role": "Minister for Parliament",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2004-10-04",
+      "id": "scot.parliament.data/membergovernmentroles/65",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14048",
+      "role": "Deputy Minister for Health and Community Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2001-11-22",
+      "id": "scot.parliament.data/membergovernmentroles/114",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14049",
+      "role": "Minister for Education, Europe and External Affairs",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-11-01"
+    },
+    {
+      "end_date": "2000-11-01",
+      "id": "scot.parliament.data/membergovernmentroles/134",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14049",
+      "role": "Minister for Finance",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2003-05-15",
+      "id": "scot.parliament.data/membergovernmentroles/90",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14049",
+      "role": "First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-22"
+    },
+    {
+      "end_date": "2007-05-16",
+      "id": "scot.parliament.data/membergovernmentroles/91",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14049",
+      "role": "First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-15"
+    },
+    {
+      "end_date": "2011-03-22",
+      "id": "scot.parliament.data/membergovernmentroles/195",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14055",
+      "role": "Parliamentary Liaison Officer to the Deputy First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2008-03-27"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/254",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14056",
+      "role": "Minister for Older People and Equalities",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-28"
+    },
+    {
+      "end_date": "2023-03-29",
+      "id": "scot.parliament.data/membergovernmentroles/278",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14056",
+      "role": "Minister for Equalities and Older People",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-19"
+    },
+    {
+      "end_date": "2024-02-08",
+      "id": "scot.parliament.data/membergovernmentroles/314",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14056",
+      "role": "Minister for Culture, Europe and International Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-29"
+    },
+    {
+      "end_date": "2025-03-27",
+      "id": "scot.parliament.data/membergovernmentroles/335",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14056",
+      "role": "Minister for Drugs and Alcohol Policy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-02-08"
+    },
+    {
+      "end_date": "2015-08-31",
+      "id": "scot.parliament.data/membergovernmentroles/203",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14057",
+      "role": "Minister for Children and Young People",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-12-18"
+    },
+    {
+      "end_date": "2003-03-31",
+      "id": "scot.parliament.data/membergovernmentroles/192",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14059",
+      "role": "Ministerial Parliamentary Aide to the First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2002-02-26"
+    },
+    {
+      "id": "parliament.scot/Committee/329/Member/3763",
+      "organization_id": "scottish-parliament-committee-329",
+      "person_id": "uk.org.publicwhip/person/14060",
+      "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2011-03-22",
+      "id": "scot.parliament.data/membergovernmentroles/194",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14060",
+      "role": "Parliamentary Liaison Officer to the Deputy First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2008-03-27"
+    },
+    {
+      "id": "parliament.scot/Committee/330/Member/1857",
+      "organization_id": "scottish-parliament-committee-330",
+      "person_id": "uk.org.publicwhip/person/14062",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/38",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14063",
+      "role": "Deputy Minister for Communities",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2006-11-16"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/83",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14063",
+      "role": "Deputy Minister for Social Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2002-11-28"
+    },
+    {
+      "end_date": "2000-11-01",
+      "id": "scot.parliament.data/membergovernmentroles/233",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14067",
+      "role": "Deputy Minister for Highlands and Islands and Gaelic",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2001-11-28",
+      "id": "scot.parliament.data/membergovernmentroles/47",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14067",
+      "role": "Deputy Minister for Enterprise and Lifelong Learning and Gaelic",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2004-10-04",
+      "id": "scot.parliament.data/membergovernmentroles/36",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14069",
+      "role": "Deputy Minister for Communities",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/60",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14069",
+      "role": "Deputy Minister for Health and Community Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-28"
+    },
+    {
+      "end_date": "2003-05-01",
+      "id": "scot.parliament.data/membergovernmentroles/86",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14070",
+      "role": "Deputy Minister for Tourism, Culture and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-28"
+    },
+    {
+      "end_date": "2014-11-21",
+      "id": "scot.parliament.data/membergovernmentroles/13",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14071",
+      "role": "Cabinet Secretary for Health and Wellbeing",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2012-09-05"
+    },
+    {
+      "end_date": "2011-05-25",
+      "id": "scot.parliament.data/membergovernmentroles/143",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14071",
+      "role": "Minister for Housing and Communities",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2009-02-12"
+    },
+    {
+      "end_date": "2012-09-04",
+      "id": "scot.parliament.data/membergovernmentroles/16",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14071",
+      "role": "Cabinet Secretary for Infrastructure and Capital Investment",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/26",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14071",
+      "role": "Cabinet Secretary for Social Justice, Communities and Pensioners\u2019 Rights",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-21"
+    },
+    {
+      "end_date": "2006-11-14",
+      "id": "scot.parliament.data/membergovernmentroles/112",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14076",
+      "role": "Minister for Education and Young People",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2000-11-01",
+      "id": "scot.parliament.data/membergovernmentroles/34",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14076",
+      "role": "Deputy Minister for Children and Education",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2001-11-28",
+      "id": "scot.parliament.data/membergovernmentroles/56",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14076",
+      "role": "Deputy Minister for Finance and Local Government",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-11-01"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/58",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14076",
+      "role": "Deputy Minister for Finance and Public Services",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-28"
+    },
+    {
+      "end_date": "2014-11-21",
+      "id": "scot.parliament.data/membergovernmentroles/1",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14085",
+      "role": "Cabinet Secretary for Commonwealth Games, Sport, Equalities and Pensioners' Rights",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-04-22"
+    },
+    {
+      "end_date": "2014-04-22",
+      "id": "scot.parliament.data/membergovernmentroles/100",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14085",
+      "role": "Minister for Commonwealth Games and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/15",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14085",
+      "role": "Cabinet Secretary for Health, Wellbeing and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-21"
+    },
+    {
+      "end_date": "2009-02-10",
+      "id": "scot.parliament.data/membergovernmentroles/160",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14085",
+      "role": "Minister for Public Health",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-17"
+    },
+    {
+      "end_date": "2011-05-25",
+      "id": "scot.parliament.data/membergovernmentroles/163",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14085",
+      "role": "Minister for Public Health and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2009-02-10"
+    },
+    {
+      "end_date": "2018-06-28",
+      "id": "scot.parliament.data/membergovernmentroles/213",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14085",
+      "role": "Cabinet Secretary for Health and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-18"
+    },
+    {
+      "end_date": "2023-03-29",
+      "id": "scot.parliament.data/membergovernmentroles/290",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14085",
+      "role": "Cabinet Secretary for Social Justice, Housing and Local Government",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-20"
+    },
+    {
+      "end_date": "2024-05-08",
+      "id": "scot.parliament.data/membergovernmentroles/304",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14085",
+      "role": "Deputy First Minister and Cabinet Secretary for Finance",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-29"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/341",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14085",
+      "role": "Cabinet Secretary for Finance and Local Government",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-05-08"
+    },
+    {
+      "end_date": "2005-06-27",
+      "id": "scot.parliament.data/membergovernmentroles/41",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14086",
+      "role": "Deputy Minister for Education and Young People",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2001-11-28",
+      "id": "scot.parliament.data/membergovernmentroles/75",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14086",
+      "role": "Deputy Minister for Parliament",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-03-15"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/78",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14086",
+      "role": "Deputy Minister for Parliamentary Business",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-28"
+    },
+    {
+      "id": "parliament.scot/Committee/335/Member/2127",
+      "organization_id": "scottish-parliament-committee-335",
+      "person_id": "uk.org.publicwhip/person/14088",
+      "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2009-12-01",
+      "id": "scot.parliament.data/membergovernmentroles/110",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14089",
+      "role": "Minister for Culture, External Affairs and the Constitution",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2009-02-10"
+    },
+    {
+      "end_date": "2009-02-10",
+      "id": "scot.parliament.data/membergovernmentroles/123",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14089",
+      "role": "Minister for Environment",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-17"
+    },
+    {
+      "end_date": "2018-06-28",
+      "id": "scot.parliament.data/membergovernmentroles/237",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14089",
+      "role": "Minister for UK Negotiations on Scotland\u2019s Place in Europe",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-09-06"
+    },
+    {
+      "end_date": "2020-02-17",
+      "id": "scot.parliament.data/membergovernmentroles/257",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14089",
+      "role": "Cabinet Secretary for Government Business and Constitutional Relations",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-28"
+    },
+    {
+      "end_date": "2021-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/263",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14089",
+      "role": "Cabinet Secretary for the Constitution, Europe and External Affairs",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2020-02-17"
+    },
+    {
+      "end_date": "2011-05-25",
+      "id": "scot.parliament.data/membergovernmentroles/5",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14089",
+      "role": "Cabinet Secretary for Education and Lifelong Learning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2009-12-03"
+    },
+    {
+      "end_date": "2014-11-21",
+      "id": "scot.parliament.data/membergovernmentroles/6",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14089",
+      "role": "Cabinet Secretary for Education and Lifelong Learning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/179",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14092",
+      "role": "Minister for Transport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2006-06-05"
+    },
+    {
+      "end_date": "2006-06-04",
+      "id": "scot.parliament.data/membergovernmentroles/185",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14092",
+      "role": "Minister for Transport and Telecommunications",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2005-06-29"
+    },
+    {
+      "end_date": "2005-06-29",
+      "id": "scot.parliament.data/membergovernmentroles/59",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14092",
+      "role": "Deputy Minister for Finance and Public Services",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2001-03-09",
+      "id": "scot.parliament.data/membergovernmentroles/77",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14092",
+      "role": "Deputy Minister for Parliament",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-11-01"
+    },
+    {
+      "end_date": "2005-06-29",
+      "id": "scot.parliament.data/membergovernmentroles/79",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14092",
+      "role": "Deputy Minister for Parliamentary Business",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2002-11-26",
+      "id": "scot.parliament.data/membergovernmentroles/71",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14095",
+      "role": "Deputy Minister for Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-28"
+    },
+    {
+      "end_date": "2000-10-30",
+      "id": "scot.parliament.data/membergovernmentroles/76",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14098",
+      "role": "Deputy Minister for Parliament",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2018-06-28",
+      "id": "scot.parliament.data/membergovernmentroles/221",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14100",
+      "role": "Minister for Further Education, Higher Education and Science",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-19"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/258",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14100",
+      "role": "Cabinet Secretary for Social Security and Older People",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-28"
+    },
+    {
+      "end_date": "2023-03-29",
+      "id": "scot.parliament.data/membergovernmentroles/273",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14100",
+      "role": "Cabinet Secretary for Education and Skills",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-19"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/306",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14100",
+      "role": "Cabinet Secretary for Social Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-29"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/367",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14100",
+      "role": "Cabinet Secretary for Social Justice and Housing",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-20"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/119",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14101",
+      "role": "Minister for Enterprise and Lifelong Learning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2005-06-27"
+    },
+    {
+      "end_date": "2005-06-27",
+      "id": "scot.parliament.data/membergovernmentroles/184",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14101",
+      "role": "Minister for Transport and Telecommunications",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2000-11-01",
+      "id": "scot.parliament.data/membergovernmentroles/232",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14101",
+      "role": "Deputy Minister for Enterprise and Lifelong Learning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/29",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14101",
+      "role": "Deputy First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2005-06-27"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/42",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14101",
+      "role": "Deputy Minister for Education and Young People",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-28"
+    },
+    {
+      "end_date": "2001-11-28",
+      "id": "scot.parliament.data/membergovernmentroles/44",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14101",
+      "role": "Deputy Minister for Education, Europe and External Affairs",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-11-01"
+    },
+    {
+      "end_date": "2000-11-01",
+      "id": "scot.parliament.data/membergovernmentroles/48",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14101",
+      "role": "Deputy Minister for Enterprise and Lifelong Learning and Gaelic",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "1999-05-19"
+    },
+    {
+      "end_date": "2012-09-06",
+      "id": "scot.parliament.data/membergovernmentroles/125",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14102",
+      "role": "Minister for Environment and Climate Change",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2010-12-11",
+      "id": "scot.parliament.data/membergovernmentroles/188",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14102",
+      "role": "Minister for Transport, Infrastructure and Climate Change",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-17"
+    },
+    {
+      "end_date": "2011-05-25",
+      "id": "scot.parliament.data/membergovernmentroles/12",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14105",
+      "role": "Cabinet Secretary for Health and Wellbeing",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-17"
+    },
+    {
+      "end_date": "2012-09-04",
+      "id": "scot.parliament.data/membergovernmentroles/14",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14105",
+      "role": "Cabinet Secretary for Health, Wellbeing and Cities Strategy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2014-11-19",
+      "id": "scot.parliament.data/membergovernmentroles/17",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14105",
+      "role": "Cabinet Secretary for Infrastructure, Investment and Cities",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2012-09-05"
+    },
+    {
+      "end_date": "2021-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/205",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14105",
+      "role": "First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-17"
+    },
+    {
+      "end_date": "2023-03-27",
+      "id": "scot.parliament.data/membergovernmentroles/271",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14105",
+      "role": "First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-18"
+    },
+    {
+      "end_date": "2011-05-25",
+      "id": "scot.parliament.data/membergovernmentroles/31",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14105",
+      "role": "Deputy First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-17"
+    },
+    {
+      "end_date": "2014-11-19",
+      "id": "scot.parliament.data/membergovernmentroles/32",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14105",
+      "role": "Deputy First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-05-25"
+    },
+    {
+      "end_date": "2016-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/94",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14105",
+      "role": "First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-19"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/177",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14114",
+      "role": "Minister for Tourism, Culture and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-28"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/162",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14115",
+      "role": "Minister for Public Health",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-25"
+    },
+    {
+      "end_date": "2009-02-11",
+      "id": "scot.parliament.data/membergovernmentroles/166",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14115",
+      "role": "Minister for Schools and Skills",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2007-05-17"
+    },
+    {
+      "end_date": "2018-06-28",
+      "id": "scot.parliament.data/membergovernmentroles/215",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14115",
+      "role": "Minister for Mental Health",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-18"
+    },
+    {
+      "end_date": "2001-03-08",
+      "id": "scot.parliament.data/membergovernmentroles/40",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14121",
+      "role": "Deputy Minister for Culture and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2000-11-01"
+    },
+    {
+      "end_date": "2007-05-17",
+      "id": "scot.parliament.data/membergovernmentroles/46",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14121",
+      "role": "Deputy Minister for Enterprise and Lifelong Learning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2004-10-04"
+    },
+    {
+      "end_date": "2003-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/51",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14121",
+      "role": "Deputy Minister for Environment and Rural Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-11-28"
+    },
+    {
+      "end_date": "2004-10-04",
+      "id": "scot.parliament.data/membergovernmentroles/54",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14121",
+      "role": "Deputy Minister for Environment and Rural Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2003-05-21"
+    },
+    {
+      "end_date": "2001-11-28",
+      "id": "scot.parliament.data/membergovernmentroles/85",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/14121",
+      "role": "Deputy Minister for Sport, the Arts and Culture",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2001-03-08"
+    },
+    {
+      "id": "parliament.scot/Committee/332/Member/2615",
+      "organization_id": "scottish-parliament-committee-332",
+      "person_id": "uk.org.publicwhip/person/25072",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2023-03-29",
+      "id": "scot.parliament.data/membergovernmentroles/292",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25072",
+      "role": "Minister for Parliamentary Business",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-20"
+    },
+    {
+      "end_date": "2023-06-14",
+      "id": "scot.parliament.data/membergovernmentroles/308",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25072",
+      "role": "Minister for Cabinet and Parliamentary Business",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-29"
+    },
+    {
+      "end_date": "2024-05-08",
+      "id": "scot.parliament.data/membergovernmentroles/332",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25072",
+      "role": "Minister for Parliamentary Business",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-06-14"
+    },
+    {
+      "id": "parliament.scot/Committee/340/Member/3751",
+      "organization_id": "scottish-parliament-committee-340",
+      "person_id": "uk.org.publicwhip/person/25074",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/150",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25075",
+      "role": "Minister for Local Government and Community Empowerment",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-25"
+    },
+    {
+      "id": "parliament.scot/Committee/339/Member/5060",
+      "organization_id": "scottish-parliament-committee-339",
+      "person_id": "uk.org.publicwhip/person/25076",
+      "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/145",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25078",
+      "role": "Minister for Housing and Welfare",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2012-09-06"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/249",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25081",
+      "role": "Minister for Parliamentary Business and Veterans",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-28"
+    },
+    {
+      "end_date": "2022-01-24",
+      "id": "scot.parliament.data/membergovernmentroles/281",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25081",
+      "role": "Minister for Transport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-19"
+    },
+    {
+      "end_date": "2025-09-21",
+      "id": "scot.parliament.data/membergovernmentroles/323",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25081",
+      "role": "Minister for Higher and Further Education; and Minister for Veterans",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-30"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/359",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25081",
+      "role": "Minister for Parliamentary Business and Veterans",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2025-09-21"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/189",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25085",
+      "role": "Minister for Youth and Women\u2019s Employment",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-25"
+    },
+    {
+      "end_date": "2018-06-28",
+      "id": "scot.parliament.data/membergovernmentroles/210",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25085",
+      "role": "Minister for Community Safety and Legal Affairs",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-18"
+    },
+    {
+      "id": "parliament.scot/Committee/336/Member/5042",
+      "organization_id": "scottish-parliament-committee-336",
+      "person_id": "uk.org.publicwhip/person/25089",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2014-11-21",
+      "id": "scot.parliament.data/membergovernmentroles/152",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25096",
+      "role": "Minister for Local Government and Planning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-12-14"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/181",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25096",
+      "role": "Minister for Transport and Islands",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-21"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/223",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25096",
+      "role": "Cabinet Secretary for Finance and the Constitution",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-18"
+    },
+    {
+      "end_date": "2018-06-26",
+      "id": "scot.parliament.data/membergovernmentroles/224",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25096",
+      "role": "Cabinet Secretary for Finance and the Constitution",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-19"
+    },
+    {
+      "end_date": "2020-02-05",
+      "id": "scot.parliament.data/membergovernmentroles/241",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25096",
+      "role": "Cabinet Secretary for Finance, Economy and Fair Work",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-26"
+    },
+    {
+      "end_date": "2015-01-09",
+      "id": "scot.parliament.data/membergovernmentroles/200",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25102",
+      "role": "Parliamentary Liaison Officer to the Office of the First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-06-24"
+    },
+    {
+      "end_date": "2013-05-14",
+      "id": "scot.parliament.data/membergovernmentroles/202",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25104",
+      "role": "Parliamentary Liaison Officer to the Office of the First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2012-10-01"
+    },
+    {
+      "end_date": "2017-11-04",
+      "id": "scot.parliament.data/membergovernmentroles/222",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25104",
+      "role": "Minister for Childcare and Early Years",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-19"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/129",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25106",
+      "role": "Minister for Environment, Climate Change and Land Reform",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-25"
+    },
+    {
+      "id": "parliament.scot/Committee/337/Member/5009",
+      "organization_id": "scottish-parliament-committee-337",
+      "person_id": "uk.org.publicwhip/person/25111",
+      "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2018-06-26",
+      "id": "scot.parliament.data/membergovernmentroles/225",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25114",
+      "role": "Minister for Local Government and Housing",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-19"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/246",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25114",
+      "role": "Minister for Local Government, Housing and Planning",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-26"
+    },
+    {
+      "end_date": "2023-03-29",
+      "id": "scot.parliament.data/membergovernmentroles/285",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25114",
+      "role": "Minister for Mental Wellbeing and Social Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-19"
+    },
+    {
+      "end_date": "2023-06-06",
+      "id": "scot.parliament.data/membergovernmentroles/311",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25114",
+      "role": "Minister for Transport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-29"
+    },
+    {
+      "id": "parliament.scot/Committee/342/Member/5075",
+      "organization_id": "scottish-parliament-committee-342",
+      "person_id": "uk.org.publicwhip/person/25115",
+      "role": "Deputy Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/108",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25118",
+      "role": "Minister for Community Safety and Legal Affairs",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-21"
+    },
+    {
+      "end_date": "2014-11-21",
+      "id": "scot.parliament.data/membergovernmentroles/126",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25118",
+      "role": "Minister for Environment and Climate Change",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2012-09-06"
+    },
+    {
+      "end_date": "2018-06-26",
+      "id": "scot.parliament.data/membergovernmentroles/219",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25118",
+      "role": "Minister for Business, Innovation and Energy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-18"
+    },
+    {
+      "end_date": "2021-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/243",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25118",
+      "role": "Minister for Energy, Connectivity and the Islands",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-26"
+    },
+    {
+      "end_date": "2016-05-18",
+      "id": "scot.parliament.data/membergovernmentroles/131",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25119",
+      "role": "Minister for Europe and International Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2014-11-21"
+    },
+    {
+      "end_date": "2014-11-21",
+      "id": "scot.parliament.data/membergovernmentroles/133",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25119",
+      "role": "Minister for External Affairs and International Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2012-09-06"
+    },
+    {
+      "end_date": "2012-09-06",
+      "id": "scot.parliament.data/membergovernmentroles/201",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25119",
+      "role": "Parliamentary Liaison Officer to the Office of the First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2011-06-24"
+    },
+    {
+      "end_date": "2018-06-28",
+      "id": "scot.parliament.data/membergovernmentroles/218",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25119",
+      "role": "Minister for Transport and the Islands",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-18"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/259",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25119",
+      "role": "Cabinet Secretary for Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-28"
+    },
+    {
+      "end_date": "2023-03-28",
+      "id": "scot.parliament.data/membergovernmentroles/276",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25119",
+      "role": "Cabinet Secretary for Health and Social Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-19"
+    },
+    {
+      "end_date": "2024-05-07",
+      "id": "scot.parliament.data/membergovernmentroles/303",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25119",
+      "role": "First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-28"
+    },
+    {
+      "id": "parliament.scot/Committee/338/Member/20951",
+      "organization_id": "scottish-parliament-committee-338",
+      "person_id": "uk.org.publicwhip/person/25268",
+      "role": "Deputy Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/339/Member/20951",
+      "organization_id": "scottish-parliament-committee-339",
+      "person_id": "uk.org.publicwhip/person/25268",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2022-03-11",
+      "id": "scot.parliament.data/membergovernmentroles/300",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25293",
+      "role": "Minister for Culture, Europe and International Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2022-01-25"
+    },
+    {
+      "end_date": "2023-03-30",
+      "id": "scot.parliament.data/membergovernmentroles/301",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25293",
+      "role": "Minister for Culture, Europe and International Development and Minister with special responsibility for Refugees from Ukraine",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2022-03-11"
+    },
+    {
+      "end_date": "2024-02-08",
+      "id": "scot.parliament.data/membergovernmentroles/318",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25293",
+      "role": "Cabinet Secretary for Wellbeing Economy, Fair Work and Energy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-30"
+    },
+    {
+      "end_date": "2024-05-08",
+      "id": "scot.parliament.data/membergovernmentroles/333",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25293",
+      "role": "Cabinet Secretary for NHS Recovery, Health and Social Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-02-08"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/349",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25293",
+      "role": "Cabinet Secretary for Health and Social Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-05-08"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/363",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25293",
+      "role": "Cabinet Secretary for Justice",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-20"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/379",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25294",
+      "role": "Minister for Victims and Community Safety",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-21"
+    },
+    {
+      "id": "parliament.scot/Committee/332/Member/20968",
+      "organization_id": "scottish-parliament-committee-332",
+      "person_id": "uk.org.publicwhip/person/25300",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/329/Member/20977",
+      "organization_id": "scottish-parliament-committee-329",
+      "person_id": "uk.org.publicwhip/person/25307",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/331/Member/20977",
+      "organization_id": "scottish-parliament-committee-331",
+      "person_id": "uk.org.publicwhip/person/25307",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/376",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25324",
+      "role": "Minister for Europe, External Affairs and Energy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-21"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/380",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25327",
+      "role": "Minister for Community Care",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-21"
+    },
+    {
+      "id": "parliament.scot/Committee/343/Member/20975",
+      "organization_id": "scottish-parliament-committee-343",
+      "person_id": "uk.org.publicwhip/person/25416",
+      "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2023-03-29",
+      "id": "scot.parliament.data/membergovernmentroles/293",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25491",
+      "role": "Minister for Public Finance, Planning and Community Wealth",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-20"
+    },
+    {
+      "end_date": "2024-05-08",
+      "id": "scot.parliament.data/membergovernmentroles/309",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25491",
+      "role": "Minister for Community Wealth and Public Finance",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-29"
+    },
+    {
+      "end_date": "2025-06-11",
+      "id": "scot.parliament.data/membergovernmentroles/343",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25491",
+      "role": "Minister for Employment and Investment",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-05-08"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/357",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25491",
+      "role": "Minister for Social Care and Mental Wellbeing",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2025-06-11"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/373",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25491",
+      "role": "Minister for Business and Fair Work",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-20"
+    },
+    {
+      "id": "parliament.scot/Committee/339/Member/4987",
+      "organization_id": "scottish-parliament-committee-339",
+      "person_id": "uk.org.publicwhip/person/25494",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/335/Member/5782",
+      "organization_id": "scottish-parliament-committee-335",
+      "person_id": "uk.org.publicwhip/person/25497",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/253",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25502",
+      "role": "Minister for Community Safety",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-28"
+    },
+    {
+      "end_date": "2022-10-27",
+      "id": "scot.parliament.data/membergovernmentroles/279",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25502",
+      "role": "Minister for Community Safety",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-19"
+    },
+    {
+      "end_date": "2020-12-21",
+      "id": "scot.parliament.data/membergovernmentroles/251",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25503",
+      "role": "Minister for Rural Affairs and the Natural Environment",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-28"
+    },
+    {
+      "end_date": "2021-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/267",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25503",
+      "role": "Minister for Public Health and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2020-12-21"
+    },
+    {
+      "end_date": "2023-03-29",
+      "id": "scot.parliament.data/membergovernmentroles/291",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25503",
+      "role": "Cabinet Secretary for Rural Affairs and Islands",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-20"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/313",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25503",
+      "role": "Cabinet Secretary for Rural Affairs, Land Reform and Islands",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-29"
+    },
+    {
+      "end_date": "2020-02-18",
+      "id": "scot.parliament.data/membergovernmentroles/248",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25504",
+      "role": "Minister for Public Finance and Digital Economy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-28"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/265",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25504",
+      "role": "Cabinet Secretary for Finance",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2020-02-18"
+    },
+    {
+      "end_date": "2023-03-28",
+      "id": "scot.parliament.data/membergovernmentroles/274",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25504",
+      "role": "Cabinet Secretary for Finance and the Economy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-19"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/351",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25504",
+      "role": "Deputy First Minister and Cabinet Secretary for Economy and Gaelic",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-05-09"
+    },
+    {
+      "end_date": "2018-06-28",
+      "id": "scot.parliament.data/membergovernmentroles/226",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25505",
+      "role": "Minister for Social Security",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-05-19"
+    },
+    {
+      "end_date": "2021-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/256",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25505",
+      "role": "Cabinet Secretary for Health and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-28"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/266",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25506",
+      "role": "Minister for Europe and International Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2020-02-18"
+    },
+    {
+      "end_date": "2022-01-24",
+      "id": "scot.parliament.data/membergovernmentroles/288",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25506",
+      "role": "Minister for Culture, Europe and International Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-19"
+    },
+    {
+      "end_date": "2023-03-30",
+      "id": "scot.parliament.data/membergovernmentroles/299",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25506",
+      "role": "Minister for Transport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2022-01-24"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/316",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25506",
+      "role": "Cabinet Secretary for Education and Skills",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-30"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/362",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25506",
+      "role": "Deputy First Minister and Cabinet Secretary for Finance and Local Government",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-20"
+    },
+    {
+      "id": "parliament.scot/Committee/331/Member/5769",
+      "organization_id": "scottish-parliament-committee-331",
+      "person_id": "uk.org.publicwhip/person/25510",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/338/Member/5618",
+      "organization_id": "scottish-parliament-committee-338",
+      "person_id": "uk.org.publicwhip/person/25513",
+      "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/252",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25513",
+      "role": "Minister for Mental Health",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-28"
+    },
+    {
+      "end_date": "2023-03-29",
+      "id": "scot.parliament.data/membergovernmentroles/280",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25513",
+      "role": "Minister for Children and Young People",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-19"
+    },
+    {
+      "id": "parliament.scot/Committee/331/Member/5604",
+      "organization_id": "scottish-parliament-committee-331",
+      "person_id": "uk.org.publicwhip/person/25514",
+      "role": "Deputy Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/338/Member/5651",
+      "organization_id": "scottish-parliament-committee-338",
+      "person_id": "uk.org.publicwhip/person/25515",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/341/Member/5596",
+      "organization_id": "scottish-parliament-committee-341",
+      "person_id": "uk.org.publicwhip/person/25521",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2018-06-28",
+      "id": "scot.parliament.data/membergovernmentroles/229",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25523",
+      "role": "Parliamentary Liaison Officer to the Office of the First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-06-14"
+    },
+    {
+      "end_date": "2020-02-17",
+      "id": "scot.parliament.data/membergovernmentroles/250",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25523",
+      "role": "Minister for Europe, Migration and International Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-28"
+    },
+    {
+      "end_date": "2020-12-21",
+      "id": "scot.parliament.data/membergovernmentroles/261",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25523",
+      "role": "Minister for Public Finance and Migration",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2020-02-17"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/268",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25523",
+      "role": "Minister for Rural Affairs and the Natural Environment",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2020-12-21"
+    },
+    {
+      "end_date": "2023-03-29",
+      "id": "scot.parliament.data/membergovernmentroles/287",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25523",
+      "role": "Minister for Social Security and Local Government",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-19"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/360",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25523",
+      "role": "Minister for Higher and Further Education",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2025-09-23"
+    },
+    {
+      "end_date": "2026-08-24",
+      "id": "scot.parliament.data/membergovernmentroles/372",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25523",
+      "role": "Minister for Innovation, Technology and Tertiary Education",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-20"
+    },
+    {
+      "end_date": "2023-06-13",
+      "id": "scot.parliament.data/membergovernmentroles/324",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25525",
+      "role": "Minister for Energy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-30"
+    },
+    {
+      "end_date": "2024-02-08",
+      "id": "scot.parliament.data/membergovernmentroles/330",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25525",
+      "role": "Minister for Energy and the Environment",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-06-13"
+    },
+    {
+      "end_date": "2024-05-08",
+      "id": "scot.parliament.data/membergovernmentroles/336",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25525",
+      "role": "Minister for Energy, Just Transition and Fair Work",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-02-08"
+    },
+    {
+      "end_date": "2024-06-27",
+      "id": "scot.parliament.data/membergovernmentroles/347",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25525",
+      "role": "Minister for Climate Action",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-05-08"
+    },
+    {
+      "end_date": "2025-06-11",
+      "id": "scot.parliament.data/membergovernmentroles/353",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25525",
+      "role": "Acting Cabinet Secretary for Net Zero and Energy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-06-27"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/355",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25525",
+      "role": "Cabinet Secretary for Climate Action and Energy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2025-06-11"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/365",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25525",
+      "role": "Cabinet Secretary for Climate Action and Rural Affairs",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-20"
+    },
+    {
+      "end_date": "2020-12-21",
+      "id": "scot.parliament.data/membergovernmentroles/247",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25527",
+      "role": "Minister for Trade, Investment and Innovation",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-28"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/269",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25527",
+      "role": "Minister for Trade, Innovation and Public Finance",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2020-12-21"
+    },
+    {
+      "end_date": "2023-03-29",
+      "id": "scot.parliament.data/membergovernmentroles/283",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25527",
+      "role": "Minister for Business, Trade, Tourism and Enterprise",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-19"
+    },
+    {
+      "end_date": "2026-05-21",
+      "id": "scot.parliament.data/membergovernmentroles/344",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25527",
+      "role": "Minister for Public Finance",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-05-09"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/374",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25527",
+      "role": "Cabinet Secretary for Public Service Reform",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-21"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/228",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25532",
+      "role": "Parliamentary Liaison Officer to the Office of the First Minister",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2016-06-14"
+    },
+    {
+      "id": "parliament.scot/Committee/337/Member/3994",
+      "organization_id": "scottish-parliament-committee-337",
+      "person_id": "uk.org.publicwhip/person/25535",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2018-06-26",
+      "id": "scot.parliament.data/membergovernmentroles/238",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25540",
+      "role": "Minister for Childcare and Early Years",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2017-11-08"
+    },
+    {
+      "end_date": "2021-05-19",
+      "id": "scot.parliament.data/membergovernmentroles/245",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25540",
+      "role": "Minister for Children and Young People",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2018-06-26"
+    },
+    {
+      "end_date": "2023-03-29",
+      "id": "scot.parliament.data/membergovernmentroles/284",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25540",
+      "role": "Minister for Public Health, Women's Health and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-19"
+    },
+    {
+      "end_date": "2025-06-11",
+      "id": "scot.parliament.data/membergovernmentroles/310",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25540",
+      "role": "Minister for Social Care, Mental Wellbeing and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-29"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/358",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25540",
+      "role": "Minister for Drugs and Alcohol Policy and Sport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2025-06-11"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/370",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25540",
+      "role": "Minister for Mental Wellbeing, Public Health, Sport, Alcohol and Drugs",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-20"
+    },
+    {
+      "id": "parliament.scot/Committee/342/Member/16198",
+      "organization_id": "scottish-parliament-committee-342",
+      "person_id": "uk.org.publicwhip/person/25639",
+      "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/343/Member/16198",
+      "organization_id": "scottish-parliament-committee-343",
+      "person_id": "uk.org.publicwhip/person/25639",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/328/Member/20967",
+      "organization_id": "scottish-parliament-committee-328",
+      "person_id": "uk.org.publicwhip/person/25677",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/330/Member/20967",
+      "organization_id": "scottish-parliament-committee-330",
+      "person_id": "uk.org.publicwhip/person/25677",
+      "role": "Deputy Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/330/Member/16193",
+      "organization_id": "scottish-parliament-committee-330",
+      "person_id": "uk.org.publicwhip/person/25696",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/330/Member/20964",
+      "organization_id": "scottish-parliament-committee-330",
+      "person_id": "uk.org.publicwhip/person/25848",
+      "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/336/Member/21003",
+      "organization_id": "scottish-parliament-committee-336",
+      "person_id": "uk.org.publicwhip/person/25861",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/375",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25867",
+      "role": "Cabinet Secretary for Economy, Tourism and Transport",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-21"
+    },
+    {
+      "id": "parliament.scot/Committee/332/Member/16177",
+      "organization_id": "scottish-parliament-committee-332",
+      "person_id": "uk.org.publicwhip/person/25985",
+      "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/327",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25986",
+      "role": "Minister for Victims and Community Safety",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-30"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/369",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25986",
+      "role": "Minister for Children, Young People and The Promise",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-21"
+    },
+    {
+      "id": "parliament.scot/Committee/329/Member/16196",
+      "organization_id": "scottish-parliament-committee-329",
+      "person_id": "uk.org.publicwhip/person/25987",
+      "role": "Deputy Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/330/Member/16207",
+      "organization_id": "scottish-parliament-committee-330",
+      "person_id": "uk.org.publicwhip/person/25989",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2024-05-08",
+      "id": "scot.parliament.data/membergovernmentroles/322",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25991",
+      "role": "Minister for Children, Young People and Keeping the Promise",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-30"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/345",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25991",
+      "role": "Minister for Children, Young People and The Promise",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-05-08"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/338",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25995",
+      "role": "Minister for Agriculture and Connectivity",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-02-20"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/371",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/25995",
+      "role": "Minister for Agriculture, Marine and the Islands",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-20"
+    },
+    {
+      "id": "parliament.scot/Committee/341/Member/16194",
+      "organization_id": "scottish-parliament-committee-341",
+      "person_id": "uk.org.publicwhip/person/25997",
+      "role": "Deputy Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/336/Member/16210",
+      "organization_id": "scottish-parliament-committee-336",
+      "person_id": "uk.org.publicwhip/person/26000",
+      "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/338/Member/16205",
+      "organization_id": "scottish-parliament-committee-338",
+      "person_id": "uk.org.publicwhip/person/26003",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2021-08-30",
+      "id": "scot.parliament.data/membergovernmentroles/294",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26004",
+      "role": "Minister for Environment, Biodiversity and Land Reform",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-05-20"
+    },
+    {
+      "end_date": "2023-03-30",
+      "id": "scot.parliament.data/membergovernmentroles/298",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26004",
+      "role": "Minister for Environment and Land Reform",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-08-31"
+    },
+    {
+      "end_date": "2023-06-13",
+      "id": "scot.parliament.data/membergovernmentroles/317",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26004",
+      "role": "Cabinet Secretary for Net Zero and Just Transition",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-30"
+    },
+    {
+      "end_date": "2024-02-08",
+      "id": "scot.parliament.data/membergovernmentroles/328",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26004",
+      "role": "Cabinet Secretary for Transport, Net Zero and Just Transition",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-06-13"
+    },
+    {
+      "end_date": "2024-05-08",
+      "id": "scot.parliament.data/membergovernmentroles/334",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26004",
+      "role": "Cabinet Secretary for Wellbeing Economy, Net Zero and Energy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-02-08"
+    },
+    {
+      "end_date": "2025-06-11",
+      "id": "scot.parliament.data/membergovernmentroles/346",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26004",
+      "role": "Cabinet Secretary for Net Zero and Energy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-05-08"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/354",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26004",
+      "role": "Cabinet Secretary for Housing",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2025-06-11"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/366",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26004",
+      "role": "Cabinet Secretary for Education, Culture and Gaelic",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-20"
+    },
+    {
+      "id": "parliament.scot/Committee/333/Member/16179",
+      "organization_id": "scottish-parliament-committee-333",
+      "person_id": "uk.org.publicwhip/person/26005",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2025-06-11",
+      "id": "scot.parliament.data/membergovernmentroles/326",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26005",
+      "role": "Minister for Housing",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-30"
+    },
+    {
+      "id": "parliament.scot/Committee/330/Member/16176",
+      "organization_id": "scottish-parliament-committee-330",
+      "person_id": "uk.org.publicwhip/person/26006",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/342/Member/16176",
+      "organization_id": "scottish-parliament-committee-342",
+      "person_id": "uk.org.publicwhip/person/26006",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/328/Member/16184",
+      "organization_id": "scottish-parliament-committee-328",
+      "person_id": "uk.org.publicwhip/person/26007",
+      "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/321",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26007",
+      "role": "Minister for Public Health and Women's Health",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-30"
+    },
+    {
+      "id": "parliament.scot/Committee/341/Member/16211",
+      "organization_id": "scottish-parliament-committee-341",
+      "person_id": "uk.org.publicwhip/person/26008",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/335/Member/16197",
+      "organization_id": "scottish-parliament-committee-335",
+      "person_id": "uk.org.publicwhip/person/26011",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2024-05-08",
+      "id": "scot.parliament.data/membergovernmentroles/325",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26011",
+      "role": "Minister for Equalities, Migration and Refugees",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-30"
+    },
+    {
+      "id": "parliament.scot/Committee/334/Member/16215",
+      "organization_id": "scottish-parliament-committee-334",
+      "person_id": "uk.org.publicwhip/person/26012",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2024-04-25",
+      "id": "scot.parliament.data/membergovernmentroles/297",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26012",
+      "role": "Minister for Green Skills, Circular Economy and Biodiversity",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2021-08-31"
+    },
+    {
+      "id": "parliament.scot/Committee/337/Member/16191",
+      "organization_id": "scottish-parliament-committee-337",
+      "person_id": "uk.org.publicwhip/person/26013",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/341/Member/16191",
+      "organization_id": "scottish-parliament-committee-341",
+      "person_id": "uk.org.publicwhip/person/26013",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2024-05-08",
+      "id": "scot.parliament.data/membergovernmentroles/339",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26014",
+      "role": "Minister for Culture, Europe and International Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-02-20"
+    },
+    {
+      "end_date": "2026-05-20",
+      "id": "scot.parliament.data/membergovernmentroles/350",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26014",
+      "role": "Minister for Equalities",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2024-05-08"
+    },
+    {
+      "end_date": "2023-03-29",
+      "id": "scot.parliament.data/membergovernmentroles/302",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26019",
+      "role": "Minister for Community Safety",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2022-11-03"
+    },
+    {
+      "end_date": "2024-02-06",
+      "id": "scot.parliament.data/membergovernmentroles/315",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26019",
+      "role": "Minister for Drugs and Alcohol Policy",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2023-03-29"
+    },
+    {
+      "id": "parliament.scot/Committee/328/Member/17689",
+      "organization_id": "scottish-parliament-committee-328",
+      "person_id": "uk.org.publicwhip/person/26290",
+      "role": "Deputy Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/333/Member/20949",
+      "organization_id": "scottish-parliament-committee-333",
+      "person_id": "uk.org.publicwhip/person/26799",
+      "role": "Deputy Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/335/Member/20972",
+      "organization_id": "scottish-parliament-committee-335",
+      "person_id": "uk.org.publicwhip/person/26800",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/339/Member/20972",
+      "organization_id": "scottish-parliament-committee-339",
+      "person_id": "uk.org.publicwhip/person/26800",
+      "role": "Deputy Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/337/Member/20976",
+      "organization_id": "scottish-parliament-committee-337",
+      "person_id": "uk.org.publicwhip/person/26801",
+      "role": "Deputy Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/338/Member/20963",
+      "organization_id": "scottish-parliament-committee-338",
+      "person_id": "uk.org.publicwhip/person/26802",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/340/Member/20963",
+      "organization_id": "scottish-parliament-committee-340",
+      "person_id": "uk.org.publicwhip/person/26802",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/340/Member/20979",
+      "organization_id": "scottish-parliament-committee-340",
+      "person_id": "uk.org.publicwhip/person/26803",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/341/Member/20953",
+      "organization_id": "scottish-parliament-committee-341",
+      "person_id": "uk.org.publicwhip/person/26804",
+      "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/329/Member/20959",
+      "organization_id": "scottish-parliament-committee-329",
+      "person_id": "uk.org.publicwhip/person/26805",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/333/Member/20948",
+      "organization_id": "scottish-parliament-committee-333",
+      "person_id": "uk.org.publicwhip/person/26806",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/331/Member/20955",
+      "organization_id": "scottish-parliament-committee-331",
+      "person_id": "uk.org.publicwhip/person/26807",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/336/Member/20955",
+      "organization_id": "scottish-parliament-committee-336",
+      "person_id": "uk.org.publicwhip/person/26807",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/329/Member/20965",
+      "organization_id": "scottish-parliament-committee-329",
+      "person_id": "uk.org.publicwhip/person/26808",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/381",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26809",
+      "role": "Minister for Equalities and International Development",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-21"
+    },
+    {
+      "id": "parliament.scot/Committee/331/Member/20974",
+      "organization_id": "scottish-parliament-committee-331",
+      "person_id": "uk.org.publicwhip/person/26810",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/336/Member/20974",
+      "organization_id": "scottish-parliament-committee-336",
+      "person_id": "uk.org.publicwhip/person/26810",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/343/Member/20966",
+      "organization_id": "scottish-parliament-committee-343",
+      "person_id": "uk.org.publicwhip/person/26811",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/337/Member/20969",
+      "organization_id": "scottish-parliament-committee-337",
+      "person_id": "uk.org.publicwhip/person/26812",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/341/Member/20973",
+      "organization_id": "scottish-parliament-committee-341",
+      "person_id": "uk.org.publicwhip/person/26813",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/334/Member/20970",
+      "organization_id": "scottish-parliament-committee-334",
+      "person_id": "uk.org.publicwhip/person/26814",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/335/Member/20961",
+      "organization_id": "scottish-parliament-committee-335",
+      "person_id": "uk.org.publicwhip/person/26815",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/337/Member/20957",
+      "organization_id": "scottish-parliament-committee-337",
+      "person_id": "uk.org.publicwhip/person/26816",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/334/Member/20962",
+      "organization_id": "scottish-parliament-committee-334",
+      "person_id": "uk.org.publicwhip/person/26817",
+      "role": "Deputy Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "scot.parliament.data/membergovernmentroles/378",
+      "organization_id": "scottish-parliament",
+      "person_id": "uk.org.publicwhip/person/26818",
+      "role": "Minister for Public Finance",
+      "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+      "start_date": "2026-05-21"
+    },
+    {
+      "id": "parliament.scot/Committee/335/Member/20996",
+      "organization_id": "scottish-parliament-committee-335",
+      "person_id": "uk.org.publicwhip/person/26819",
+      "role": "Deputy Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/333/Member/20978",
+      "organization_id": "scottish-parliament-committee-333",
+      "person_id": "uk.org.publicwhip/person/26820",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/330/Member/21009",
+      "organization_id": "scottish-parliament-committee-330",
+      "person_id": "uk.org.publicwhip/person/26821",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/341/Member/21004",
+      "organization_id": "scottish-parliament-committee-341",
+      "person_id": "uk.org.publicwhip/person/26822",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/343/Member/21004",
+      "organization_id": "scottish-parliament-committee-343",
+      "person_id": "uk.org.publicwhip/person/26822",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/340/Member/21008",
+      "organization_id": "scottish-parliament-committee-340",
+      "person_id": "uk.org.publicwhip/person/26823",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/333/Member/20985",
+      "organization_id": "scottish-parliament-committee-333",
+      "person_id": "uk.org.publicwhip/person/26825",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/343/Member/20984",
+      "organization_id": "scottish-parliament-committee-343",
+      "person_id": "uk.org.publicwhip/person/26826",
+      "role": "Deputy Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/332/Member/20986",
+      "organization_id": "scottish-parliament-committee-332",
+      "person_id": "uk.org.publicwhip/person/26828",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/332/Member/20988",
+      "organization_id": "scottish-parliament-committee-332",
+      "person_id": "uk.org.publicwhip/person/26829",
+      "role": "Deputy Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/337/Member/21001",
+      "organization_id": "scottish-parliament-committee-337",
+      "person_id": "uk.org.publicwhip/person/26830",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/336/Member/20997",
+      "organization_id": "scottish-parliament-committee-336",
+      "person_id": "uk.org.publicwhip/person/26831",
+      "role": "Deputy Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/338/Member/21002",
+      "organization_id": "scottish-parliament-committee-338",
+      "person_id": "uk.org.publicwhip/person/26832",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/334/Member/21011",
+      "organization_id": "scottish-parliament-committee-334",
+      "person_id": "uk.org.publicwhip/person/26833",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/331/Member/21012",
+      "organization_id": "scottish-parliament-committee-331",
+      "person_id": "uk.org.publicwhip/person/26836",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/336/Member/21013",
+      "organization_id": "scottish-parliament-committee-336",
+      "person_id": "uk.org.publicwhip/person/26837",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/333/Member/20982",
+      "organization_id": "scottish-parliament-committee-333",
+      "person_id": "uk.org.publicwhip/person/26838",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/342/Member/20981",
+      "organization_id": "scottish-parliament-committee-342",
+      "person_id": "uk.org.publicwhip/person/26839",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/333/Member/20980",
+      "organization_id": "scottish-parliament-committee-333",
+      "person_id": "uk.org.publicwhip/person/26840",
+      "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/331/Member/20999",
+      "organization_id": "scottish-parliament-committee-331",
+      "person_id": "uk.org.publicwhip/person/26842",
+      "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/328/Member/21000",
+      "organization_id": "scottish-parliament-committee-328",
+      "person_id": "uk.org.publicwhip/person/26843",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/340/Member/20994",
+      "organization_id": "scottish-parliament-committee-340",
+      "person_id": "uk.org.publicwhip/person/26844",
+      "role": "Deputy Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/332/Member/20995",
+      "organization_id": "scottish-parliament-committee-332",
+      "person_id": "uk.org.publicwhip/person/26845",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/334/Member/20993",
+      "organization_id": "scottish-parliament-committee-334",
+      "person_id": "uk.org.publicwhip/person/26846",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/339/Member/20992",
+      "organization_id": "scottish-parliament-committee-339",
+      "person_id": "uk.org.publicwhip/person/26847",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/335/Member/20989",
+      "organization_id": "scottish-parliament-committee-335",
+      "person_id": "uk.org.publicwhip/person/26848",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/332/Member/20991",
+      "organization_id": "scottish-parliament-committee-332",
+      "person_id": "uk.org.publicwhip/person/26849",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/342/Member/21007",
+      "organization_id": "scottish-parliament-committee-342",
+      "person_id": "uk.org.publicwhip/person/26850",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/329/Member/21331",
+      "organization_id": "scottish-parliament-committee-329",
+      "person_id": "uk.org.publicwhip/person/26854",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    }
+  ],
+  "organizations": [
+    {
+      "classification": "committee",
+      "description": "To consider and report on the following \u2014\n\n(a) the practice and procedures of the Parliament in relation to its business;\n\n(b) whether a member\u2019s conduct is in accordance with these Rules and any Code of Conduct for members, matters relating to members interests, and any other matters relating to the conduct of members in carrying out their Parliamentary duties;\n\n(c) the adoption, amendment and application of any Code of Conduct for members;\n\n(d) matters relating to public appointments in Scotland; and\n\n(e) matters relating to the regulation of lobbying.\n\n(f) matters falling within the responsibility of the Minister for Parliamentary Business and Veterans",
+      "id": "scottish-parliament-committee-328",
+      "links": [
+        "https://www.parliament.scot/chamber-and-committees/committees/current-and-previous-committees/session-7/standards-procedures-and-public-appointments-committee"
+      ],
+      "name": "Standards, Procedures and Public Appointments Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "To consider and report on matters within the responsibility of the Cabinet Secretary for Climate Action and Rural Affairs, with the exception of rural affairs.",
+      "id": "scottish-parliament-committee-329",
+      "links": [
+        "https://www.parliament.scot/chamber-and-committees/committees/current-and-previous-committees/session-7/climate-action-committee"
+      ],
+      "name": "Climate Action Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "To consider and report on matters relating to criminal justice falling within the responsibility of the Cabinet Secretary for Justice, and functions of the Lord Advocate other than as head of the systems of criminal prosecution and investigation of deaths in Scotland",
+      "id": "scottish-parliament-committee-330",
+      "links": [
+        "https://www.parliament.scot/chamber-and-committees/committees/current-and-previous-committees/session-7/criminal-justice-committee"
+      ],
+      "name": "Criminal Justice Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "To consider and report on matters within the responsibility of the Cabinet Secretary for Economy, Tourism and Transport, with the exception of transport, on matters relating to public infrastructure, civil contingencies and resilience, and on matters relating to energy and energy consents",
+      "id": "scottish-parliament-committee-331",
+      "links": [
+        "https://www.parliament.scot/chamber-and-committees/committees/current-and-previous-committees/session-7/economy-tourism-and-energy-committee"
+      ],
+      "name": "Economy, Tourism and Energy Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "To consider and report on matters falling within the responsibility of the Cabinet Secretary for Education, Culture and Gaelic, with the exception of culture, and on matters relating to the Historical Abuse Inquiry, redress and languages",
+      "id": "scottish-parliament-committee-332",
+      "links": [
+        "https://www.parliament.scot/chamber-and-committees/committees/current-and-previous-committees/session-7/education-and-gaelic-committee"
+      ],
+      "name": "Education and Gaelic Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "To consider and report on matters falling within the responsibility of the Cabinet Secretary for Health and Care, and on matters relating to sport",
+      "id": "scottish-parliament-committee-333",
+      "links": [
+        "https://www.parliament.scot/chamber-and-committees/committees/current-and-previous-committees/session-7/health-care-and-sport-committee"
+      ],
+      "name": "Health, Care and Sport Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "To consider and report on matters within the responsibility of the Cabinet Secretary for Public Service Reform",
+      "id": "scottish-parliament-committee-334",
+      "links": [
+        "https://www.parliament.scot/chamber-and-committees/committees/current-and-previous-committees/session-7/public-service-reform-committee"
+      ],
+      "name": "Public Service Reform Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "To consider and report on matters within the responsibility of the Cabinet Secretary for Climate Action and Rural Affairs, with the exception of climate action",
+      "id": "scottish-parliament-committee-335",
+      "links": [
+        "https://www.parliament.scot/chamber-and-committees/committees/current-and-previous-committees/session-7/rural-affairs-committee"
+      ],
+      "name": "Rural Affairs Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "To consider and report on matters falling within the responsibility of the Cabinet Secretary for Social Justice and Housing, and on matters relating to local government within the responsibility of the Cabinet Secretary for Finance and Local Government",
+      "id": "scottish-parliament-committee-336",
+      "links": [
+        "https://www.parliament.scot/chamber-and-committees/committees/current-and-previous-committees/session-7/social-justice-housing-and-local-government-committee"
+      ],
+      "name": "Social Justice, Housing and Local Government Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "To consider and report on matters relating to transport within the responsibility of the Cabinet Secretary for Economy, Tourism and Transport",
+      "id": "scottish-parliament-committee-337",
+      "links": [
+        "https://www.parliament.scot/chamber-and-committees/committees/current-and-previous-committees/session-7/transport-committee"
+      ],
+      "name": "Transport Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "To consider and report on the following \u2014\n\n(a) any report or other document containing proposals for, or budgets of, public revenue or expenditure or proposals for the making of a Scottish rate resolution, taking into account any report or recommendations concerning such documents made by any other committee with power to consider such documents or any part of them;\n\n(b) any report made by a committee setting out proposals concerning public revenue or expenditure;\n\n(c) Budget Bills; and\n\n(d) any other matter relating to or affecting the revenue or expenditure of the Scottish Administration or other monies payable into or expenditure payable out of the Scottish Consolidated Fund.\n\n(e) any other matter falling within the responsibility of the Scottish Administration relating to the National Performance Framework, public inquiries, and public administration; and proposals for the formation and budgets of officeholders established by the Parliament.",
+      "id": "scottish-parliament-committee-338",
+      "links": [
+        "https://www.parliament.scot/chamber-and-committees/committees/current-and-previous-committees/session-7/finance-and-public-administration-committee"
+      ],
+      "name": "Finance and Public Administration Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "To consider and report on the following \u2014\n\n(a) any accounts laid before the Parliament;\n\n(b) any report laid before or made to the Parliament by the Auditor General for Scotland; and\n\n(c) any other document laid before the Parliament, or referred to it by the Parliamentary Bureau or by the Auditor General for Scotland, concerning financial control, accounting and auditing in relation to public expenditure.\n\n(d) matters relating to the performance of officeholders established by the Parliament.",
+      "id": "scottish-parliament-committee-339",
+      "links": [
+        "https://www.parliament.scot/chamber-and-committees/committees/current-and-previous-committees/session-7/public-audit-committee"
+      ],
+      "name": "Public Audit Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "To consider and report on the following \u2014\n\n(a) proposals for European Union legislation;\n\n(b) the implementation of European Communities and European Union legislation;\n\n(c) any European Communities or European Union issue;\n\n(d) the development and implementation of the Scottish Administration\u2019s links with countries and territories outside Scotland, the European Union (and its institutions) and other international organisations; and\n\n(e) co-ordination of the international activities of the Scottish Administration.",
+      "id": "scottish-parliament-committee-340",
+      "links": [
+        "https://www.parliament.scot/chamber-and-committees/committees/current-and-previous-committees/session-7/europe-external-affairs-and-culture-committee"
+      ],
+      "name": "Europe, External Affairs and Culture Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "To consider and report on the following \u2014\n\n(a)  matters relating to equal opportunities, and upon the observance of equal opportunities within the Parliament; and\n\n(b)  matters relating to human rights.\n\n(c) matters relating to civil justice within the responsibility of the Cabinet Secretary for Justice.",
+      "id": "scottish-parliament-committee-341",
+      "links": [
+        "https://www.parliament.scot/chamber-and-committees/committees/current-and-previous-committees/session-7/equalities-human-rights-and-civil-justice-committee"
+      ],
+      "name": "Equalities, Human Rights and Civil Justice Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "To consider public petitions addressed to the Parliament in accordance with these Rules and, in particular, to\u2014\n\n(a) decide in a case of dispute whether a petition is admissible;\n\n(b) decide what action should be taken upon an admissible public petition; and\n\n(c) keep under review the operation of the petitions system.",
+      "id": "scottish-parliament-committee-342",
+      "links": [
+        "https://www.parliament.scot/chamber-and-committees/committees/current-and-previous-committees/session-7/public-petitions-committee"
+      ],
+      "name": "Public Petitions Committee"
+    },
+    {
+      "classification": "committee",
+      "description": "To consider and report on the following \u2014\n\n(a) any\u2014\n\n(i) subordinate legislation laid before the Parliament or requiring the consent of the Parliament under section 9 of the Public Bodies Act 2011;\n\n(ii) [deleted]\n\n(iii) pension or grants motion as described in Rule 8.11A.1; and, in particular, to determine whether the attention of the Parliament should be drawn to any of the matters mentioned in Rule 10.3.1;\n\n(b) proposed powers to make subordinate legislation in particular Bills or other proposed legislation;\n\n(c) general questions relating to powers to make subordinate legislation;\n\n(d) whether any proposed delegated powers in particular Bills or other legislation should be expressed as a power to make subordinate legislation;\n\n(e) any failure to lay an instrument in accordance with section 28(2), 30(2) or 31 of the 2010 Act;\n\n(f) proposed changes to the procedure to which subordinate legislation laid before the Parliament is subject;\n\n(g) any Scottish Law Commission Bill as defined in Rule 9.17A.1;\n\n(h) any draft proposal for a Scottish Law Commission Bill as defined in that Rule; and\n\n(i) any Consolidation Bill as defined in Rule 9.18.1 referred to it in accordance with Rule 9.18.3.",
+      "id": "scottish-parliament-committee-343",
+      "links": [
+        "https://www.parliament.scot/chamber-and-committees/committees/current-and-previous-committees/session-7/delegated-powers-and-law-reform-committee"
+      ],
+      "name": "Delegated Powers and Law Reform Committee"
+    }
+  ],
+  "persons": [],
+  "posts": []
+}
