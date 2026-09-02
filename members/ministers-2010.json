@@ -50572,24 +50572,24 @@
       "person_id": "uk.org.publicwhip/person/11559",
       "organization_id": "justice-committee",
       "start_date": "2020-03-02",
-      "end_date": "2024-09-11"
+      "end_date": "2022-05-17"
     },
     {
       "id": "uk.parliament.data/Member/1516/Committee/102/1",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/11559",
+      "organization_id": "justice-committee",
+      "start_date": "2019-05-08",
+      "end_date": "2019-11-06"
+    },
+    {
+      "id": "uk.parliament.data/Member/1516/Committee/102/2",
       "source": "datadotparl/committee",
       "role": "Chair",
       "person_id": "uk.org.publicwhip/person/11559",
       "organization_id": "justice-committee",
       "start_date": "2024-09-11",
-      "end_date": "2022-05-17"
-    },
-    {
-      "id": "uk.parliament.data/Member/1516/Committee/102/2",
-      "source": "datadotparl/committee",
-      "person_id": "uk.org.publicwhip/person/11559",
-      "organization_id": "justice-committee",
-      "start_date": "2019-05-08",
-      "end_date": "2024-09-11"
+      "end_date": "2026-09-01"
     },
     {
       "id": "uk.parliament.data/Member/1516/Committee/102/3",
@@ -50598,23 +50598,7 @@
       "person_id": "uk.org.publicwhip/person/11559",
       "organization_id": "justice-committee",
       "start_date": "2024-09-11",
-      "end_date": "2019-11-06"
-    },
-    {
-      "id": "uk.parliament.data/Member/1516/Committee/102/4",
-      "source": "datadotparl/committee",
-      "role": "Chair",
-      "person_id": "uk.org.publicwhip/person/11559",
-      "organization_id": "justice-committee",
-      "start_date": "2024-09-11"
-    },
-    {
-      "id": "uk.parliament.data/Member/1516/Committee/102/5",
-      "source": "datadotparl/committee",
-      "role": "Chair",
-      "person_id": "uk.org.publicwhip/person/11559",
-      "organization_id": "justice-committee",
-      "start_date": "2024-09-11"
+      "end_date": "2026-09-01"
     },
     {
       "id": "uk.parliament.data/Member/1516/Committee/103",
@@ -150798,7 +150782,7 @@
       "person_id": "uk.org.publicwhip/person/25759",
       "organization_id": "housing-communities-and-local-government-committee",
       "start_date": "2021-02-22",
-      "end_date": "2024-09-11"
+      "end_date": "2022-11-29"
     },
     {
       "id": "uk.parliament.data/Member/4870/Committee/17/1",
@@ -150807,7 +150791,7 @@
       "person_id": "uk.org.publicwhip/person/25759",
       "organization_id": "housing-communities-and-local-government-committee",
       "start_date": "2024-09-11",
-      "end_date": "2022-11-29"
+      "end_date": "2026-09-01"
     },
     {
       "id": "uk.parliament.data/Member/4870/Committee/17/2",
@@ -150815,15 +150799,8 @@
       "role": "Chair",
       "person_id": "uk.org.publicwhip/person/25759",
       "organization_id": "housing-communities-and-local-government-committee",
-      "start_date": "2024-09-11"
-    },
-    {
-      "id": "uk.parliament.data/Member/4870/Committee/17/3",
-      "source": "datadotparl/committee",
-      "role": "Chair",
-      "person_id": "uk.org.publicwhip/person/25759",
-      "organization_id": "housing-communities-and-local-government-committee",
-      "start_date": "2024-09-11"
+      "start_date": "2024-09-11",
+      "end_date": "2026-09-01"
     },
     {
       "id": "uk.parliament.data/Member/4870/Committee/366",
@@ -154585,7 +154562,8 @@
       "role": "Chair",
       "person_id": "uk.org.publicwhip/person/25823",
       "organization_id": "women-and-equalities-committee",
-      "start_date": "2024-09-11"
+      "start_date": "2024-09-11",
+      "end_date": "2026-09-01"
     },
     {
       "id": "uk.parliament.data/Member/4777/Committee/328/1",
@@ -154593,7 +154571,8 @@
       "role": "Chair",
       "person_id": "uk.org.publicwhip/person/25823",
       "organization_id": "women-and-equalities-committee",
-      "start_date": "2024-09-11"
+      "start_date": "2024-09-11",
+      "end_date": "2026-09-01"
     },
     {
       "id": "uk.parliament.data/Member/4777/Committee/365",
