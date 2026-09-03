@@ -100106,7 +100106,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/24774",
       "organization_id": "committee-of-selection",
-      "start_date": "2025-09-09"
+      "start_date": "2025-09-09",
+      "end_date": "2026-09-02"
     },
     {
       "id": "uk.parliament.data/Member/4029/Committee/384",
@@ -167264,6 +167265,13 @@
       "start_date": "2026-07-22"
     },
     {
+      "id": "uk.parliament.data/Member/5029/Committee/381",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26311",
+      "organization_id": "committee-of-selection",
+      "start_date": "2026-09-02"
+    },
+    {
       "id": "uk.parliament.data/Member/5029/Committee/723",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26311",
@@ -169479,7 +169487,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26384",
       "organization_id": "committee-of-selection",
-      "start_date": "2026-05-18"
+      "start_date": "2026-05-18",
+      "end_date": "2026-09-02"
     },
     {
       "id": "uk.parliament.data/Member/5075/Committee/749",
@@ -171659,6 +171668,13 @@
       "organization_id": "planning-and-infrastructure-bill-committee",
       "start_date": "2025-04-24",
       "end_date": "2025-05-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/5236/Committee/381",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26465",
+      "organization_id": "committee-of-selection",
+      "start_date": "2026-09-02"
     },
     {
       "id": "uk.parliament.data/Member/5236/Committee/778",
@@ -173847,6 +173863,13 @@
       "organization_id": "house-of-commons-commission",
       "start_date": "2024-09-04",
       "end_date": "2026-05-14"
+    },
+    {
+      "id": "uk.parliament.data/Member/5257/Committee/348/1",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26546",
+      "organization_id": "house-of-commons-commission",
+      "start_date": "2026-09-02"
     },
     {
       "id": "uk.parliament.data/Member/5257/Committee/616",
@@ -177190,6 +177213,41 @@
       "person_id": "uk.org.publicwhip/person/26869",
       "organization_id": "house-of-commons",
       "start_date": "2026-07-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/1494/Committee/127",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26883",
+      "organization_id": "public-accounts-committee",
+      "start_date": "2005-07-12",
+      "end_date": "2007-01-15"
+    },
+    {
+      "id": "uk.parliament.data/Member/1494/GovernmentPost/346",
+      "source": "datadotparl/governmentpost",
+      "role": "The Economic Secretary to the Treasury",
+      "person_id": "uk.org.publicwhip/person/26883",
+      "organization_id": "house-of-commons",
+      "start_date": "2007-07-02",
+      "end_date": "2008-10-05"
+    },
+    {
+      "id": "uk.parliament.data/Member/1494/GovernmentPost/487",
+      "source": "datadotparl/governmentpost",
+      "role": "Parliamentary Under-Secretary (Department for Work and Pensions)",
+      "person_id": "uk.org.publicwhip/person/26883",
+      "organization_id": "house-of-commons",
+      "start_date": "2008-10-05",
+      "end_date": "2009-06-05"
+    },
+    {
+      "id": "uk.parliament.data/Member/1494/GovernmentPost/62",
+      "source": "datadotparl/governmentpost",
+      "role": "The Exchequer Secretary",
+      "person_id": "uk.org.publicwhip/person/26883",
+      "organization_id": "house-of-commons",
+      "start_date": "2009-06-09",
+      "end_date": "2009-06-17"
     }
   ],
   "organizations": [
