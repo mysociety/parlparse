@@ -23,6 +23,13 @@ from mysoc_validator.models.popolo import (
     SimpleIdentifier,
 )
 
+from ..common import (
+    dates_close,
+    find_post,
+    is_open_ended,
+    membership_overlaps,
+    memberships_for_person_and_post,
+)
 from .api_models import SPMembership, SPMembershipList
 
 SP_ELECTION_2021 = date(2021, 5, 1)
@@ -66,16 +73,6 @@ def resolve_party(party_name: str, log: list[str]) -> Optional[str]:
     return org_id
 
 
-def find_post(popolo: Popolo, area_name: str) -> Optional[Post]:
-    """
-    Return the Scottish Parliament post whose area name matches, or None.
-    """
-    for post in popolo.posts:
-        if post.organization_id == SP_ORG_ID and post.area.name == area_name:
-            return post
-    return None
-
-
 def ensure_post(
     popolo: Popolo, area_name: str, start_date: date, log: list[str]
 ) -> Post:
@@ -84,7 +81,7 @@ def ensure_post(
 
     Post IDs follow the uk.org.publicwhip/cons/N scheme
     """
-    post = find_post(popolo, area_name)
+    post = find_post(popolo, area_name, SP_ORG_ID)
     if post is not None:
         return post
 
@@ -151,37 +148,6 @@ def create_person(popolo: Popolo, sp: SPMembership, log: list[str]) -> Person:
         f"(scotparl_id={sp.scottish_parl_person_id})"
     )
     return person
-
-
-def memberships_for_person_and_post(
-    popolo: Popolo, person_id: str, post_id: str
-) -> list[Membership]:
-    """Return all memberships in people.json for a given person + post combination."""
-    return [
-        m
-        for m in popolo.memberships
-        if isinstance(m, Membership)
-        and m.person_id == person_id
-        and m.post_id == post_id
-    ]
-
-
-def dates_close(a: date, b: date) -> bool:
-    """True if two dates are within DATE_TOLERANCE of each other."""
-    return abs((a - b).days) <= DATE_TOLERANCE.days
-
-
-def is_open_ended(m: Membership) -> bool:
-    """True if the membership has no real end date (stored as FixedDate.FUTURE)."""
-    return m.end_date == FixedDate.FUTURE
-
-
-def membership_overlaps(sp: SPMembership, existing: Membership) -> bool:
-    """
-    True if the SP API membership period overlaps with an existing people.json membership.
-    """
-    sp_end = sp.end_date or FixedDate.FUTURE
-    return sp.start_date <= existing.end_date and sp_end >= existing.start_date
 
 
 def has_sp_identifier(m: Membership, membership_id: int) -> bool:
@@ -320,7 +286,7 @@ def sync_sp_memberships(sp_memberships: SPMembershipList, popolo: Popolo) -> lis
         if party_org_id is None:
             continue
 
-        post = find_post(popolo, sp.constituency_or_region_name)
+        post = find_post(popolo, sp.constituency_or_region_name, SP_ORG_ID)
         if post is None:
             log.append(
                 f"ERROR: Post for {sp.constituency_or_region_name!r} not found "
@@ -343,7 +309,11 @@ def sync_sp_memberships(sp_memberships: SPMembershipList, popolo: Popolo) -> lis
             by_start = [
                 m
                 for m in overlapping
-                if dates_close(sp.start_date, date.fromisoformat(str(m.start_date)))
+                if dates_close(
+                    sp.start_date,
+                    date.fromisoformat(str(m.start_date)),
+                    DATE_TOLERANCE.days,
+                )
             ]
             if len(by_start) == 1:
                 overlapping = by_start
@@ -359,7 +329,7 @@ def sync_sp_memberships(sp_memberships: SPMembershipList, popolo: Popolo) -> lis
         elif len(overlapping) == 1:
             m = overlapping[0]
             ex_start = date.fromisoformat(str(m.start_date))
-            start_match = dates_close(sp.start_date, ex_start)
+            start_match = dates_close(sp.start_date, ex_start, DATE_TOLERANCE.days)
 
             if has_sp_identifier(m, sp.membership_id):
                 continue
@@ -395,7 +365,9 @@ def sync_sp_memberships(sp_memberships: SPMembershipList, popolo: Popolo) -> lis
 
             else:
                 ex_end = date.fromisoformat(str(m.end_date))
-                end_match = sp.end_date is not None and dates_close(sp.end_date, ex_end)
+                end_match = sp.end_date is not None and dates_close(
+                    sp.end_date, ex_end, DATE_TOLERANCE.days
+                )
                 if start_match and end_match:
                     add_sp_identifier(m, sp.membership_id)
                     log.append(

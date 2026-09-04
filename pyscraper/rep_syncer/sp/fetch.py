@@ -21,6 +21,7 @@ from typing import Literal, NamedTuple, Optional
 
 from mysoc_validator.models.consts import MembershipReason
 
+from ..common import dates_close
 from .api_models import (
     Constituency,
     ConstituencyList,
@@ -113,10 +114,6 @@ def get_location_on_date(
     return None
 
 
-def dates_close(a: date, b: date, tolerance: int) -> bool:
-    return abs((a - b).days) <= tolerance
-
-
 def compute_membership_reasons(
     memberships: list[SPMembership],
 ) -> list[SPMembership]:
@@ -150,7 +147,7 @@ def compute_membership_reasons(
 
         for pos, m in enumerate(group):
             # start reason is election
-            if dates_close(m.start_date, m.cycle_start, tolerance=2):
+            if dates_close(m.start_date, m.cycle_start, tolerance_days=2):
                 start_reason = MembershipReason.ELECTION
             # is a previous party different - this will be a party change
             elif pos > 0 and group[pos - 1].party != m.party:
@@ -163,7 +160,7 @@ def compute_membership_reasons(
             if (
                 m.end_date
                 and m.cycle_end
-                and dates_close(m.end_date, m.cycle_end, tolerance=2)
+                and dates_close(m.end_date, m.cycle_end, tolerance_days=2)
             ):
                 end_reason = MembershipReason.DISSOLUTION
             # next membership exists with a different party - this will be a party change
