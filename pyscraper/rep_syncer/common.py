@@ -52,11 +52,19 @@ def membership_overlaps(source: HasDateRange, existing: Membership) -> bool:
     return source.start_date <= existing.end_date and source_end >= existing.start_date
 
 
-def find_post(popolo: Popolo, area_name: str, org_id: str) -> Optional[Post]:
+def find_post(
+    popolo: Popolo, area_name: str, org_id: str, on_date: date | None = None
+) -> Optional[Post]:
     """
     Return the post for the given organisation whose area name matches, or None.
+    If on_date is given, posts that ended before that date are skipped, so that
+    reused area names resolve to the currently-active post rather than a historical one.
     """
     for post in popolo.posts:
-        if post.organization_id == org_id and post.area.name == area_name:
-            return post
+        if post.organization_id != org_id or post.area.name != area_name:
+            continue
+        if on_date is not None and post.end_date is not None:
+            if post.end_date < on_date:
+                continue
+        return post
     return None

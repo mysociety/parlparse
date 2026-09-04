@@ -81,7 +81,7 @@ def ensure_post(
 
     Post IDs follow the uk.org.publicwhip/cons/N scheme
     """
-    post = find_post(popolo, area_name, SP_ORG_ID)
+    post = find_post(popolo, area_name, SP_ORG_ID, on_date=start_date)
     if post is not None:
         return post
 
@@ -286,7 +286,9 @@ def sync_sp_memberships(sp_memberships: SPMembershipList, popolo: Popolo) -> lis
         if party_org_id is None:
             continue
 
-        post = find_post(popolo, sp.constituency_or_region_name, SP_ORG_ID)
+        post = find_post(
+            popolo, sp.constituency_or_region_name, SP_ORG_ID, on_date=sp.start_date
+        )
         if post is None:
             log.append(
                 f"ERROR: Post for {sp.constituency_or_region_name!r} not found "
@@ -349,7 +351,7 @@ def sync_sp_memberships(sp_memberships: SPMembershipList, popolo: Popolo) -> lis
 
             elif sp.end_date is not None and is_open_ended(m):
                 if start_match:
-                    m.end_date = str(sp.end_date)  # type: ignore[assignment]
+                    m.end_date = sp.end_date
                     m.end_reason = sp.end_reason
                     add_sp_identifier(m, sp.membership_id)
                     log.append(
