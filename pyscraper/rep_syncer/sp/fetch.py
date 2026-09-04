@@ -218,11 +218,11 @@ def fetch_sp_memberships(*, verbose: bool = True) -> SPMembershipList:
     location_data = group_location_data(const_status_list.root, region_status_list.root)
 
     memberships: list[SPMembership] = []
-    skipped = 0
+    skipped_entries: list[str] = []
 
     for mp in member_party_list:
         if mp.person_id not in names:
-            skipped += 1
+            skipped_entries.append(f"person_id={mp.person_id} (no name data)")
             continue
 
         party_name = parties.get(mp.party_id, f"Unknown party {mp.party_id}")
@@ -232,7 +232,10 @@ def fetch_sp_memberships(*, verbose: bool = True) -> SPMembershipList:
             mp.person_id, mp.valid_from_date, location_data, constituencies, regions
         )
         if location is None:
-            skipped += 1
+            skipped_entries.append(
+                f"person_id={mp.person_id} ({name.first_name} {name.last_name},"
+                f" party_id={mp.party_id}, date={mp.valid_from_date}, no location data)"
+            )
             continue
 
         memberships.append(
@@ -254,8 +257,11 @@ def fetch_sp_memberships(*, verbose: bool = True) -> SPMembershipList:
     # add start and end reasons based on dates and party changes
     memberships = compute_membership_reasons(memberships)
 
+    if skipped_entries:
+        for entry in skipped_entries:
+            log(f"Skipped: {entry}")
     log(
         f"Built {len(memberships)} SP membership records "
-        f"({skipped} skipped — no name or location data)."
+        f"({len(skipped_entries)} skipped — no name or location data)."
     )
     return SPMembershipList(root=memberships)
