@@ -39,6 +39,13 @@ from .api_models import (
 )
 
 
+# The SP API uses abbreviated/incorrect names for some areas.
+SP_AREA_NAME_CORRECTIONS: dict[str, str] = {
+    "Central Scot and Lothians West": "Central Scotland and Lothians West",
+    "Central Scotland and Lothains ": "Central Scotland and Lothians West",
+}
+
+
 class LocationResult(NamedTuple):
     location_type: Literal["constituency", "region"]
     name: str
@@ -89,9 +96,10 @@ def get_location_on_date(
     ]
     if const_matches:
         best = max(const_matches, key=lambda c: c.valid_from_date)
+        name = constituencies[best.constituency_id].name
         return LocationResult(
             "constituency",
-            constituencies[best.constituency_id].name,
+            SP_AREA_NAME_CORRECTIONS.get(name, name),
             best.valid_from_date,
             best.valid_until_date,
         )
@@ -104,9 +112,10 @@ def get_location_on_date(
     ]
     if region_matches:
         best = max(region_matches, key=lambda r: r.valid_from_date)
+        name = regions[best.region_id].name
         return LocationResult(
             "region",
-            regions[best.region_id].name,
+            SP_AREA_NAME_CORRECTIONS.get(name, name),
             best.valid_from_date,
             best.valid_until_date,
         )
