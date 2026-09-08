@@ -89376,6 +89376,13 @@
       "end_date": "2025-07-25"
     },
     {
+      "id": "uk.parliament.data/Member/1916/Committee/230",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/13702",
+      "organization_id": "finance-bill-subcommittee",
+      "start_date": "2026-09-01"
+    },
+    {
       "id": "uk.parliament.data/Member/1916/Committee/243",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/13702",
@@ -94535,6 +94542,13 @@
       "organization_id": "economic-affairs-committee",
       "start_date": "2014-06-12",
       "end_date": "2015-03-30"
+    },
+    {
+      "id": "uk.parliament.data/Member/1206/Committee/230",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/16901",
+      "organization_id": "finance-bill-subcommittee",
+      "start_date": "2026-09-01"
     },
     {
       "id": "uk.parliament.data/Member/1206/Committee/322",
@@ -114562,7 +114576,8 @@
       "role": "Chair",
       "person_id": "uk.org.publicwhip/person/24975",
       "organization_id": "finance-bill-subcommittee",
-      "start_date": "2025-09-02"
+      "start_date": "2025-09-02",
+      "end_date": "2026-04-29"
     },
     {
       "id": "uk.parliament.data/Member/4156/Committee/230/1",
@@ -114570,7 +114585,34 @@
       "role": "Chair",
       "person_id": "uk.org.publicwhip/person/24975",
       "organization_id": "finance-bill-subcommittee",
-      "start_date": "2025-09-02"
+      "start_date": "2026-09-01",
+      "end_date": "2026-04-29"
+    },
+    {
+      "id": "uk.parliament.data/Member/4156/Committee/230/2",
+      "source": "datadotparl/committee",
+      "role": "Chair",
+      "person_id": "uk.org.publicwhip/person/24975",
+      "organization_id": "finance-bill-subcommittee",
+      "start_date": "2025-09-02",
+      "end_date": "2026-04-29"
+    },
+    {
+      "id": "uk.parliament.data/Member/4156/Committee/230/3",
+      "source": "datadotparl/committee",
+      "role": "Chair",
+      "person_id": "uk.org.publicwhip/person/24975",
+      "organization_id": "finance-bill-subcommittee",
+      "start_date": "2026-09-01",
+      "end_date": "2026-04-29"
+    },
+    {
+      "id": "uk.parliament.data/Member/4156/Committee/230/4",
+      "source": "datadotparl/committee",
+      "role": "Chair",
+      "person_id": "uk.org.publicwhip/person/24975",
+      "organization_id": "finance-bill-subcommittee",
+      "start_date": "2026-09-01"
     },
     {
       "id": "uk.parliament.data/Member/4156/Committee/255",
@@ -117311,11 +117353,18 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25031",
       "organization_id": "finance-bill-subcommittee",
+      "start_date": "2026-09-01"
+    },
+    {
+      "id": "uk.parliament.data/Member/4199/Committee/230/1",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25031",
+      "organization_id": "finance-bill-subcommittee",
       "start_date": "2015-12-08",
       "end_date": "2016-03-04"
     },
     {
-      "id": "uk.parliament.data/Member/4199/Committee/230/1",
+      "id": "uk.parliament.data/Member/4199/Committee/230/2",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25031",
       "organization_id": "finance-bill-subcommittee",
@@ -117323,7 +117372,7 @@
       "end_date": "2014-03-11"
     },
     {
-      "id": "uk.parliament.data/Member/4199/Committee/230/2",
+      "id": "uk.parliament.data/Member/4199/Committee/230/3",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25031",
       "organization_id": "finance-bill-subcommittee",
@@ -121850,7 +121899,15 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25196",
       "organization_id": "finance-bill-subcommittee",
-      "start_date": "2025-09-02"
+      "start_date": "2025-09-02",
+      "end_date": "2026-04-29"
+    },
+    {
+      "id": "uk.parliament.data/Member/4295/Committee/230/8",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25196",
+      "organization_id": "finance-bill-subcommittee",
+      "start_date": "2026-09-01"
     },
     {
       "id": "uk.parliament.data/Member/4295/Committee/364",
@@ -141318,7 +141375,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25476",
       "organization_id": "finance-bill-subcommittee",
-      "start_date": "2025-09-02"
+      "start_date": "2025-09-02",
+      "end_date": "2026-04-29"
     },
     {
       "id": "uk.parliament.data/Member/4562/Committee/230/1",
@@ -149730,7 +149788,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25719",
       "organization_id": "finance-bill-subcommittee",
-      "start_date": "2025-09-03"
+      "start_date": "2025-09-03",
+      "end_date": "2026-04-29"
     },
     {
       "id": "uk.parliament.data/Member/4690/Committee/712",
@@ -151190,8 +151249,7 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25783",
       "organization_id": "economic-affairs-committee",
-      "start_date": "2026-01-27",
-      "end_date": "2026-09-01"
+      "start_date": "2026-01-27"
     },
     {
       "id": "uk.parliament.data/Member/4726/Committee/175/1",
@@ -151199,15 +151257,8 @@
       "role": "Chair",
       "person_id": "uk.org.publicwhip/person/25783",
       "organization_id": "economic-affairs-committee",
-      "start_date": "2026-09-01"
-    },
-    {
-      "id": "uk.parliament.data/Member/4726/Committee/175/2",
-      "source": "datadotparl/committee",
-      "role": "Chair",
-      "person_id": "uk.org.publicwhip/person/25783",
-      "organization_id": "economic-affairs-committee",
-      "start_date": "2026-09-01"
+      "start_date": "2026-09-01",
+      "end_date": "2026-09-07"
     },
     {
       "id": "uk.parliament.data/Member/4726/Committee/193",
@@ -170242,7 +170293,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26400",
       "organization_id": "procedure-committee",
-      "start_date": "2024-10-28"
+      "start_date": "2024-10-28",
+      "end_date": "2026-09-07"
     },
     {
       "id": "uk.parliament.data/Member/5090/Committee/381",
@@ -172214,7 +172266,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26472",
       "organization_id": "environment-food-and-rural-affairs-committee",
-      "start_date": "2024-10-28"
+      "start_date": "2024-10-28",
+      "end_date": "2026-09-07"
     },
     {
       "id": "uk.parliament.data/Member/5160/Committee/760",
@@ -172475,6 +172528,13 @@
       "organization_id": "house-of-commons",
       "start_date": "2025-09-06",
       "end_date": "2026-05-12"
+    },
+    {
+      "id": "uk.parliament.data/Member/5111/Committee/126",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26484",
+      "organization_id": "procedure-committee",
+      "start_date": "2026-09-07"
     },
     {
       "id": "uk.parliament.data/Member/5111/Committee/135",
@@ -176213,7 +176273,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26604",
       "organization_id": "national-security-strategy-joint-committee",
-      "start_date": "2024-11-13"
+      "start_date": "2024-11-13",
+      "end_date": "2026-09-07"
     },
     {
       "id": "uk.parliament.data/Member/5326/Committee/78",
@@ -176815,6 +176876,13 @@
       "start_date": "2024-11-18"
     },
     {
+      "id": "uk.parliament.data/Member/5336/Committee/111",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26627",
+      "organization_id": "national-security-strategy-joint-committee",
+      "start_date": "2026-09-07"
+    },
+    {
       "id": "uk.parliament.data/Member/5336/Committee/750",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26627",
@@ -177347,7 +177415,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26663",
       "organization_id": "finance-bill-subcommittee",
-      "start_date": "2025-09-02"
+      "start_date": "2025-09-02",
+      "end_date": "2026-04-29"
     },
     {
       "id": "uk.parliament.data/Member/5384/Committee/255",
@@ -177741,6 +177810,13 @@
       "person_id": "uk.org.publicwhip/person/26715",
       "organization_id": "national-resilience-committee",
       "start_date": "2026-09-07"
+    },
+    {
+      "id": "uk.parliament.data/Member/5435/Committee/230",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26716",
+      "organization_id": "finance-bill-subcommittee",
+      "start_date": "2026-09-01"
     },
     {
       "id": "uk.parliament.data/Member/5435/Committee/448",
