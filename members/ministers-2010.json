@@ -128354,6 +128354,13 @@
       "end_date": "2015-10-26"
     },
     {
+      "id": "uk.parliament.data/Member/4449/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25313",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
+    },
+    {
       "id": "uk.parliament.data/Member/4449/GovernmentPost/1108",
       "source": "datadotparl/governmentpost",
       "role": "Minister without Portfolio ",
@@ -128857,6 +128864,13 @@
       "organization_id": "football-governance-bill-hl-committee",
       "start_date": "2025-05-14",
       "end_date": "2025-06-17"
+    },
+    {
+      "id": "uk.parliament.data/Member/4464/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25317",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
     },
     {
       "id": "uk.parliament.data/Member/4464/OppositionPost/1",
@@ -132624,7 +132638,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25362",
       "organization_id": "committee-of-selection",
-      "start_date": "2024-11-18"
+      "start_date": "2024-11-18",
+      "end_date": "2026-09-08"
     },
     {
       "id": "uk.parliament.data/Member/4384/Committee/543",
@@ -150859,6 +150874,13 @@
       "end_date": "2026-04-28"
     },
     {
+      "id": "uk.parliament.data/Member/5314/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25752",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
+    },
+    {
       "id": "uk.parliament.data/Member/5314/OppositionPost/1716",
       "source": "datadotparl/oppositionpost",
       "role": "Green Spokesperson (Crime and Policing)",
@@ -157198,6 +157220,13 @@
       "end_date": "2022-06-27"
     },
     {
+      "id": "uk.parliament.data/Member/4844/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25853",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
+    },
+    {
       "id": "uk.parliament.data/Member/4844/OppositionPost/1673",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Minister (Crime, Policing and Fire)",
@@ -160515,6 +160544,13 @@
       "end_date": "2024-05-30"
     },
     {
+      "id": "uk.parliament.data/Member/4872/Committee/381",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25892",
+      "organization_id": "committee-of-selection",
+      "start_date": "2026-09-08"
+    },
+    {
       "id": "uk.parliament.data/Member/4872/Committee/538",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25892",
@@ -161578,7 +161614,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25904",
       "organization_id": "committee-of-selection",
-      "start_date": "2026-03-24"
+      "start_date": "2026-03-24",
+      "end_date": "2026-09-08"
     },
     {
       "id": "uk.parliament.data/Member/4739/Committee/541",
@@ -167666,6 +167703,13 @@
       "end_date": "2025-07-02"
     },
     {
+      "id": "uk.parliament.data/Member/5032/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26312",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
+    },
+    {
       "id": "uk.parliament.data/Member/5032/Committee/93",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26312",
@@ -168061,6 +168105,13 @@
       "end_date": "2026-02-03"
     },
     {
+      "id": "uk.parliament.data/Member/5044/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26326",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
+    },
+    {
       "id": "uk.parliament.data/Member/5043/Committee/136",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26327",
@@ -168450,6 +168501,13 @@
       "organization_id": "victims-and-courts-bill",
       "start_date": "2025-06-17",
       "end_date": "2025-06-24"
+    },
+    {
+      "id": "uk.parliament.data/Member/5045/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26339",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
     },
     {
       "id": "uk.parliament.data/Member/5054/Committee/24",
@@ -168948,6 +169006,13 @@
       "organization_id": "finance-no-2-bill-committee",
       "start_date": "2026-01-15",
       "end_date": "2026-02-03"
+    },
+    {
+      "id": "uk.parliament.data/Member/5100/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26355",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
     },
     {
       "id": "uk.parliament.data/Member/5100/OppositionPost/1710",
@@ -170109,6 +170174,13 @@
       "organization_id": "secure-16-to-19-academies-bill-committee",
       "start_date": "2025-06-26",
       "end_date": "2025-07-02"
+    },
+    {
+      "id": "uk.parliament.data/Member/5290/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26392",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
     },
     {
       "id": "uk.parliament.data/Member/5113/Committee/148",
@@ -172105,6 +172177,13 @@
       "end_date": "2025-12-04"
     },
     {
+      "id": "uk.parliament.data/Member/5236/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26465",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
+    },
+    {
       "id": "uk.parliament.data/Member/5236/GovernmentPost/1206",
       "source": "datadotparl/governmentpost",
       "role": "Assistant Whip",
@@ -172521,6 +172600,13 @@
       "end_date": "2025-01-30"
     },
     {
+      "id": "uk.parliament.data/Member/5213/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26483",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
+    },
+    {
       "id": "uk.parliament.data/Member/5213/GovernmentPost/1212",
       "source": "datadotparl/governmentpost",
       "role": "The Parliamentary Under-Secretary for Health and Social Care",
@@ -172627,6 +172713,13 @@
       "person_id": "uk.org.publicwhip/person/26487",
       "organization_id": "select-committee-on-the-armed-forces-bill",
       "start_date": "2026-02-09"
+    },
+    {
+      "id": "uk.parliament.data/Member/5074/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26487",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
     },
     {
       "id": "uk.parliament.data/Member/5248/Committee/158",
@@ -173127,6 +173220,13 @@
       "end_date": "2026-07-16"
     },
     {
+      "id": "uk.parliament.data/Member/5255/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26504",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
+    },
+    {
       "id": "uk.parliament.data/Member/5255/OppositionPost/1747",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Parliamentary Under Secretary (Work and Pensions)",
@@ -173290,6 +173390,13 @@
       "end_date": "2025-06-04"
     },
     {
+      "id": "uk.parliament.data/Member/5291/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26510",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
+    },
+    {
       "id": "uk.parliament.data/Member/5216/Committee/203",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26511",
@@ -173325,6 +173432,13 @@
       "person_id": "uk.org.publicwhip/person/26512",
       "organization_id": "ecclesiastical-committee",
       "start_date": "2024-11-04"
+    },
+    {
+      "id": "uk.parliament.data/Member/5301/Committee/381",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26512",
+      "organization_id": "committee-of-selection",
+      "start_date": "2026-09-08"
     },
     {
       "id": "uk.parliament.data/Member/5301/Committee/739",
@@ -173816,6 +173930,13 @@
       "person_id": "uk.org.publicwhip/person/26530",
       "organization_id": "environment-food-and-rural-affairs-committee",
       "start_date": "2026-06-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/5205/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26530",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
     },
     {
       "id": "uk.parliament.data/Member/5250/Committee/739",
@@ -175177,6 +175298,13 @@
       "end_date": "2026-04-28"
     },
     {
+      "id": "uk.parliament.data/Member/5321/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26570",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
+    },
+    {
       "id": "uk.parliament.data/Member/5321/OppositionPost/1255",
       "source": "datadotparl/oppositionpost",
       "role": "Liberal Democrat Spokesperson (Transport)",
@@ -176344,6 +176472,13 @@
       "person_id": "uk.org.publicwhip/person/26606",
       "organization_id": "ecclesiastical-committee",
       "start_date": "2024-11-05"
+    },
+    {
+      "id": "uk.parliament.data/Member/5218/Committee/843",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26606",
+      "organization_id": "immigration-and-asylum-bill-committee",
+      "start_date": "2026-09-09"
     },
     {
       "id": "uk.parliament.data/Member/5304/Committee/723",
@@ -178916,6 +179051,10 @@
     {
       "id": "hybrid-instruments-committee-lords",
       "name": "Hybrid Instruments Committee (Lords)"
+    },
+    {
+      "id": "immigration-and-asylum-bill-committee",
+      "name": "Immigration and Asylum Bill Committee"
     },
     {
       "id": "industry-and-regulators-committee",

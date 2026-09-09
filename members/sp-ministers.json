@@ -4157,5 +4157,15 @@
     ],
     "organization_id": "scottish-parliament",
     "start_date": "2026-05-21"
+  },
+  {
+    "id": "scot.parliament.data/membergovernmentroles/382",
+    "source": "https://data.parliament.scot/api/membergovernmentroles/json",
+    "role": "Minister for Innovation, Technology and Tertiary Education",
+    "person_id": [
+      "uk.org.publicwhip/person/25848"
+    ],
+    "organization_id": "scottish-parliament",
+    "start_date": "2026-09-08"
   }
 ]
