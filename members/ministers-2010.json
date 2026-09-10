@@ -50605,7 +50605,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/11559",
       "organization_id": "liaison-committee-commons",
-      "start_date": "2024-12-04"
+      "start_date": "2024-12-04",
+      "end_date": "2026-07-21"
     },
     {
       "id": "uk.parliament.data/Member/1516/Committee/111",
@@ -50683,7 +50684,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/11559",
       "organization_id": "liaison-subcommittee-on-core-tasks-of-select-committees",
-      "start_date": "2026-06-23"
+      "start_date": "2026-06-23",
+      "end_date": "2026-07-21"
     },
     {
       "id": "uk.parliament.data/Member/1516/Committee/93",
@@ -63817,7 +63819,8 @@
       "role": "Liberal Democrat Shadow Attorney General",
       "person_id": "uk.org.publicwhip/person/12974",
       "organization_id": "house-of-commons",
-      "start_date": "2015-06-01"
+      "start_date": "2015-06-01",
+      "end_date": "2026-07-20"
     },
     {
       "id": "uk.parliament.data/Member/1804/OppositionPost/1301",
@@ -68076,41 +68079,24 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/13103",
       "organization_id": "human-rights-joint-committee",
-      "start_date": "2024-09-05",
-      "end_date": "2024-12-04"
+      "start_date": "2024-09-05"
     },
     {
       "id": "uk.parliament.data/Member/738/Committee/93/1",
       "source": "datadotparl/committee",
-      "role": "Chair",
-      "person_id": "uk.org.publicwhip/person/13103",
-      "organization_id": "human-rights-joint-committee",
-      "start_date": "2024-12-04"
-    },
-    {
-      "id": "uk.parliament.data/Member/738/Committee/93/2",
-      "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/13103",
       "organization_id": "human-rights-joint-committee",
       "start_date": "2023-01-31",
-      "end_date": "2024-12-04"
+      "end_date": "2024-05-30"
     },
     {
-      "id": "uk.parliament.data/Member/738/Committee/93/3",
+      "id": "uk.parliament.data/Member/738/Committee/93/2",
       "source": "datadotparl/committee",
       "role": "Chair",
       "person_id": "uk.org.publicwhip/person/13103",
       "organization_id": "human-rights-joint-committee",
       "start_date": "2024-12-04",
-      "end_date": "2024-05-30"
-    },
-    {
-      "id": "uk.parliament.data/Member/738/Committee/93/4",
-      "source": "datadotparl/committee",
-      "role": "Chair",
-      "person_id": "uk.org.publicwhip/person/13103",
-      "organization_id": "human-rights-joint-committee",
-      "start_date": "2024-12-04"
+      "end_date": "2026-09-09"
     },
     {
       "id": "uk.parliament.data/Member/3484/Committee/166",
@@ -88258,7 +88244,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/13668",
       "organization_id": "liaison-committee-lords",
-      "start_date": "2026-01-27"
+      "start_date": "2026-01-27",
+      "end_date": "2026-07-15"
     },
     {
       "id": "uk.parliament.data/Member/2079/Committee/187/1",
@@ -88377,7 +88364,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/13668",
       "organization_id": "committee-of-selection-lords",
-      "start_date": "2026-01-27"
+      "start_date": "2026-01-27",
+      "end_date": "2026-07-15"
     },
     {
       "id": "uk.parliament.data/Member/2079/Committee/197/1",
@@ -119075,6 +119063,14 @@
       "end_date": "2025-11-10"
     },
     {
+      "id": "uk.parliament.data/Member/4238/ParliamentaryPost/1107",
+      "source": "datadotparl/parliamentarypost",
+      "role": "Co-Deputy Leader of the Liberal Democrat Peers",
+      "person_id": "uk.org.publicwhip/person/25060",
+      "organization_id": "house-of-commons",
+      "start_date": "2025-09-09"
+    },
+    {
       "id": "uk.parliament.data/Member/4225/Committee/230",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25061",
@@ -147686,6 +147682,13 @@
       "end_date": "2025-07-22"
     },
     {
+      "id": "uk.parliament.data/Member/4658/Committee/103",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25680",
+      "organization_id": "liaison-committee-commons",
+      "start_date": "2026-09-09"
+    },
+    {
       "id": "uk.parliament.data/Member/4658/Committee/202",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25680",
@@ -147770,7 +147773,24 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25680",
       "organization_id": "human-rights-joint-committee",
-      "start_date": "2024-11-13"
+      "start_date": "2024-11-13",
+      "end_date": "2026-09-09"
+    },
+    {
+      "id": "uk.parliament.data/Member/4658/Committee/93/1",
+      "source": "datadotparl/committee",
+      "role": "Chair",
+      "person_id": "uk.org.publicwhip/person/25680",
+      "organization_id": "human-rights-joint-committee",
+      "start_date": "2026-09-09"
+    },
+    {
+      "id": "uk.parliament.data/Member/4658/Committee/93/2",
+      "source": "datadotparl/committee",
+      "role": "Chair",
+      "person_id": "uk.org.publicwhip/person/25680",
+      "organization_id": "human-rights-joint-committee",
+      "start_date": "2026-09-09"
     },
     {
       "id": "uk.parliament.data/Member/4658/OppositionPost/1396",
@@ -150951,7 +150971,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25759",
       "organization_id": "liaison-committee-commons",
-      "start_date": "2024-12-04"
+      "start_date": "2024-12-04",
+      "end_date": "2026-07-21"
     },
     {
       "id": "uk.parliament.data/Member/4870/Committee/144",
@@ -151030,7 +151051,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25759",
       "organization_id": "liaison-subcommittee-on-core-tasks-of-select-committees",
-      "start_date": "2026-06-23"
+      "start_date": "2026-06-23",
+      "end_date": "2026-07-21"
     },
     {
       "id": "uk.parliament.data/Member/4870/Committee/93",
@@ -154749,7 +154771,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25823",
       "organization_id": "liaison-committee-commons",
-      "start_date": "2024-12-04"
+      "start_date": "2024-12-04",
+      "end_date": "2026-07-21"
     },
     {
       "id": "uk.parliament.data/Member/4777/Committee/127",
@@ -164249,7 +164272,8 @@
       "role": "Shadow Attorney General",
       "person_id": "uk.org.publicwhip/person/25969",
       "organization_id": "house-of-commons",
-      "start_date": "2024-11-11"
+      "start_date": "2024-11-11",
+      "end_date": "2026-07-20"
     },
     {
       "id": "uk.parliament.data/Member/4901/OppositionPost/968",
@@ -165690,7 +165714,8 @@
       "role": "Shadow Minister (Science, Innovation and Technology)",
       "person_id": "uk.org.publicwhip/person/26062",
       "organization_id": "house-of-commons",
-      "start_date": "2026-06-15"
+      "start_date": "2026-06-15",
+      "end_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/4939/OppositionPost/1675/1",
@@ -165888,7 +165913,8 @@
       "role": "Shadow Minister (Science, Innovation and Technology)",
       "person_id": "uk.org.publicwhip/person/26093",
       "organization_id": "house-of-commons",
-      "start_date": "2024-09-01"
+      "start_date": "2024-09-01",
+      "end_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/4949/Committee/448",
@@ -170381,7 +170407,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26400",
       "organization_id": "committee-of-selection",
-      "start_date": "2025-04-28"
+      "start_date": "2025-04-28",
+      "end_date": "2026-09-08"
     },
     {
       "id": "uk.parliament.data/Member/5090/Committee/810",
