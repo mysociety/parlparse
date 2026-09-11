@@ -62096,6 +62096,22 @@
       "start_date": "2026-05-13"
     },
     {
+      "id": "uk.parliament.data/Member/3154/Committee/262",
+      "source": "datadotparl/committee",
+      "role": "Chair",
+      "person_id": "uk.org.publicwhip/person/12916",
+      "organization_id": "subcommittee-on-leave-of-absence",
+      "start_date": "2026-07-08"
+    },
+    {
+      "id": "uk.parliament.data/Member/3154/Committee/262/1",
+      "source": "datadotparl/committee",
+      "role": "Chair",
+      "person_id": "uk.org.publicwhip/person/12916",
+      "organization_id": "subcommittee-on-leave-of-absence",
+      "start_date": "2026-07-08"
+    },
+    {
       "id": "uk.parliament.data/Member/3154/Committee/362",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/12916",
@@ -114814,7 +114830,8 @@
       "role": "Chair",
       "person_id": "uk.org.publicwhip/person/24980",
       "organization_id": "subcommittee-on-leave-of-absence",
-      "start_date": "2025-04-23"
+      "start_date": "2025-04-23",
+      "end_date": "2026-07-08"
     },
     {
       "id": "uk.parliament.data/Member/4161/Committee/262/2",
@@ -114822,7 +114839,8 @@
       "role": "Chair",
       "person_id": "uk.org.publicwhip/person/24980",
       "organization_id": "subcommittee-on-leave-of-absence",
-      "start_date": "2025-04-23"
+      "start_date": "2025-04-23",
+      "end_date": "2026-07-08"
     },
     {
       "id": "uk.parliament.data/Member/4161/Committee/362",
@@ -118650,7 +118668,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25052",
       "organization_id": "subcommittee-on-leave-of-absence",
-      "start_date": "2016-09-13"
+      "start_date": "2016-09-13",
+      "end_date": "2026-07-08"
     },
     {
       "id": "uk.parliament.data/Member/4215/Committee/293",
@@ -123664,6 +123683,13 @@
       "organization_id": "secondary-legislation-scrutiny-committee",
       "start_date": "2015-06-08",
       "end_date": "2019-07-01"
+    },
+    {
+      "id": "uk.parliament.data/Member/4334/Committee/262",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25247",
+      "organization_id": "subcommittee-on-leave-of-absence",
+      "start_date": "2026-07-08"
     },
     {
       "id": "uk.parliament.data/Member/4334/Committee/363",
@@ -174715,14 +174741,16 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26551",
       "organization_id": "committee-of-privileges",
-      "start_date": "2025-03-03"
+      "start_date": "2025-03-03",
+      "end_date": "2026-09-10"
     },
     {
       "id": "uk.parliament.data/Member/5242/Committee/290",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26551",
       "organization_id": "committee-on-standards",
-      "start_date": "2025-03-03"
+      "start_date": "2025-03-03",
+      "end_date": "2026-09-10"
     },
     {
       "id": "uk.parliament.data/Member/5242/Committee/739",
@@ -176234,6 +176262,20 @@
       "person_id": "uk.org.publicwhip/person/26594",
       "organization_id": "procedure-committee",
       "start_date": "2024-11-04"
+    },
+    {
+      "id": "uk.parliament.data/Member/5211/Committee/289",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26594",
+      "organization_id": "committee-of-privileges",
+      "start_date": "2026-09-10"
+    },
+    {
+      "id": "uk.parliament.data/Member/5211/Committee/290",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26594",
+      "organization_id": "committee-on-standards",
+      "start_date": "2026-09-10"
     },
     {
       "id": "uk.parliament.data/Member/5211/Committee/819",
