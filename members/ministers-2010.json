@@ -100722,7 +100722,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/24782",
       "organization_id": "digital-culture-media-and-sport-committee",
-      "start_date": "2024-12-09"
+      "start_date": "2024-12-09",
+      "end_date": "2026-09-15"
     },
     {
       "id": "uk.parliament.data/Member/3969/Committee/438",
@@ -134786,6 +134787,13 @@
       "organization_id": "house-of-commons",
       "start_date": "2020-04-10",
       "end_date": "2024-05-30"
+    },
+    {
+      "id": "uk.parliament.data/Member/4407/Committee/378",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25381",
+      "organization_id": "digital-culture-media-and-sport-committee",
+      "start_date": "2026-09-15"
     },
     {
       "id": "uk.parliament.data/Member/4407/Committee/381",
