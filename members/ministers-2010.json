@@ -109046,7 +109046,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/24897",
       "organization_id": "speakers-committee-on-the-electoral-commission",
-      "start_date": "2025-10-13"
+      "start_date": "2025-10-13",
+      "end_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/4083/Committee/158",
@@ -153560,7 +153561,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25809",
       "organization_id": "speakers-committee-on-the-electoral-commission",
-      "start_date": "2024-11-20"
+      "start_date": "2024-11-20",
+      "end_date": "2026-07-22"
     },
     {
       "id": "uk.parliament.data/Member/4873/Committee/17",
@@ -156815,6 +156817,13 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25846",
       "organization_id": "liaison-committee-commons",
+      "start_date": "2026-09-14"
+    },
+    {
+      "id": "uk.parliament.data/Member/4820/Committee/144",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25846",
+      "organization_id": "speakers-committee-on-the-electoral-commission",
       "start_date": "2026-09-14"
     },
     {
