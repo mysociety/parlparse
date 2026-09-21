@@ -11,7 +11,7 @@ git pull -q
 cd ~/parlparse
 poetry run python -m pyscraper.regmem download-latest-register --chamber commons --quiet
 poetry run python -m pyscraper.regmem download-latest-register --chamber scotland --quiet
-poetry run python -m pyscraper.regmem download-latest-register --chamber senedd --quiet
+# poetry run python -m pyscraper.regmem download-latest-register --chamber senedd --quiet
 poetry run python -m pyscraper.regmem download-latest-register --chamber ni --quiet
 
 # update commons EDMs
