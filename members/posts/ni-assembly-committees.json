@@ -2681,6 +2681,7 @@
       "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
     },
     {
+      "end_date": "2026-09-27",
       "id": "niassembly.gov.uk/Committee/18/Member/6156",
       "organization_id": "ni-assembly-committee-18",
       "person_id": "uk.org.publicwhip/person/25603",
@@ -2998,6 +2999,13 @@
       "end_date": "2026-09-20",
       "id": "niassembly.gov.uk/Committee/15/Member/7425",
       "organization_id": "ni-assembly-committee-15",
+      "person_id": "uk.org.publicwhip/person/26042",
+      "role": "Committee Member",
+      "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
+    },
+    {
+      "id": "niassembly.gov.uk/Committee/18/Member/7425",
+      "organization_id": "ni-assembly-committee-18",
       "person_id": "uk.org.publicwhip/person/26042",
       "role": "Committee Member",
       "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
