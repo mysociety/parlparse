@@ -11339,6 +11339,14 @@
       "start_date": "2023-01-31"
     },
     {
+      "id": "uk.parliament.data/Member/497/OppositionPost/1679",
+      "organization_id": "house-of-commons",
+      "person_id": "uk.org.publicwhip/person/10394",
+      "role": "Shadow Minister (Energy Security and Net Zero)",
+      "source": "datadotparl/oppositionpost",
+      "start_date": "2026-09-17"
+    },
+    {
       "id": "uk.parliament.data/Member/497/OppositionPost/962",
       "organization_id": "house-of-commons",
       "person_id": "uk.org.publicwhip/person/10394",
@@ -33786,12 +33794,29 @@
       "start_date": "2020-10-15"
     },
     {
+      "end_date": "2026-09-16",
       "id": "uk.parliament.data/Member/924/OppositionPost/1679",
       "organization_id": "house-of-commons",
       "person_id": "uk.org.publicwhip/person/13042",
       "role": "Shadow Minister (Energy Security and Net Zero)",
       "source": "datadotparl/oppositionpost",
       "start_date": "2026-06-04"
+    },
+    {
+      "id": "uk.parliament.data/Member/924/OppositionPost/1752",
+      "organization_id": "house-of-commons",
+      "person_id": "uk.org.publicwhip/person/13042",
+      "role": "Shadow Minister (Business, Innovation, Science and Trade)",
+      "source": "datadotparl/oppositionpost",
+      "start_date": "2026-09-17"
+    },
+    {
+      "id": "uk.parliament.data/Member/924/OppositionPost/1753",
+      "organization_id": "house-of-commons",
+      "person_id": "uk.org.publicwhip/person/13042",
+      "role": "Shadow Minister (Digital, Culture, Media and Sport)",
+      "source": "datadotparl/oppositionpost",
+      "start_date": "2026-09-17"
     },
     {
       "end_date": "2019-07-01",

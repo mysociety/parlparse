@@ -25098,6 +25098,14 @@
       "end_date": "2005-05-10"
     },
     {
+      "id": "uk.parliament.data/Member/497/OppositionPost/1679",
+      "source": "datadotparl/oppositionpost",
+      "role": "Shadow Minister (Energy Security and Net Zero)",
+      "person_id": "uk.org.publicwhip/person/10394",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-09-17"
+    },
+    {
       "id": "uk.parliament.data/Member/497/OppositionPost/962",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Minister (Environment, Food and Rural Affairs)",
@@ -66029,7 +66037,24 @@
       "role": "Shadow Minister (Energy Security and Net Zero)",
       "person_id": "uk.org.publicwhip/person/13042",
       "organization_id": "house-of-commons",
-      "start_date": "2026-06-04"
+      "start_date": "2026-06-04",
+      "end_date": "2026-09-16"
+    },
+    {
+      "id": "uk.parliament.data/Member/924/OppositionPost/1752",
+      "source": "datadotparl/oppositionpost",
+      "role": "Shadow Minister (Business, Innovation, Science and Trade)",
+      "person_id": "uk.org.publicwhip/person/13042",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-09-17"
+    },
+    {
+      "id": "uk.parliament.data/Member/924/OppositionPost/1753",
+      "source": "datadotparl/oppositionpost",
+      "role": "Shadow Minister (Digital, Culture, Media and Sport)",
+      "person_id": "uk.org.publicwhip/person/13042",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-09-17"
     },
     {
       "id": "uk.parliament.data/Member/1912/Committee/168",
