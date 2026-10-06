@@ -123046,12 +123046,21 @@
       "start_date": "2025-06-26"
     },
     {
+      "end_date": "2026-10-05",
       "id": "uk.parliament.data/Member/5207/OppositionPost/1690",
       "organization_id": "house-of-commons",
       "person_id": "uk.org.publicwhip/person/26377",
       "role": "Liberal Democrat Spokesperson (Trade)",
       "source": "datadotparl/oppositionpost",
       "start_date": "2024-09-18"
+    },
+    {
+      "id": "uk.parliament.data/Member/5207/OppositionPost/1692",
+      "organization_id": "house-of-commons",
+      "person_id": "uk.org.publicwhip/person/26377",
+      "role": "Liberal Democrat Spokesperson (Care and Carers)",
+      "source": "datadotparl/oppositionpost",
+      "start_date": "2026-10-05"
     },
     {
       "id": "uk.parliament.data/Member/5095/Committee/301",
@@ -123756,6 +123765,7 @@
       "start_date": "2025-11-12"
     },
     {
+      "end_date": "2026-09-01",
       "id": "uk.parliament.data/Member/5090/OppositionPost/1509",
       "organization_id": "house-of-commons",
       "person_id": "uk.org.publicwhip/person/26400",
@@ -126260,6 +126270,7 @@
       "start_date": "2025-10-01"
     },
     {
+      "end_date": "2026-10-05",
       "id": "uk.parliament.data/Member/5283/OppositionPost/1692",
       "organization_id": "house-of-commons",
       "person_id": "uk.org.publicwhip/person/26498",
@@ -128279,6 +128290,15 @@
       "start_date": "2025-02-12"
     },
     {
+      "id": "uk.parliament.data/Member/5322/OppositionPost/1509",
+      "organization_id": "house-of-commons",
+      "person_id": "uk.org.publicwhip/person/26560",
+      "role": "Liberal Democrat Deputy Chief Whip",
+      "source": "datadotparl/oppositionpost",
+      "start_date": "2026-09-01"
+    },
+    {
+      "end_date": "2026-09-01",
       "id": "uk.parliament.data/Member/5322/OppositionPost/1743",
       "organization_id": "house-of-commons",
       "person_id": "uk.org.publicwhip/person/26560",

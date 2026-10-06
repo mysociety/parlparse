@@ -169889,7 +169889,16 @@
       "role": "Liberal Democrat Spokesperson (Trade)",
       "person_id": "uk.org.publicwhip/person/26377",
       "organization_id": "house-of-commons",
-      "start_date": "2024-09-18"
+      "start_date": "2024-09-18",
+      "end_date": "2026-10-05"
+    },
+    {
+      "id": "uk.parliament.data/Member/5207/OppositionPost/1692",
+      "source": "datadotparl/oppositionpost",
+      "role": "Liberal Democrat Spokesperson (Care and Carers)",
+      "person_id": "uk.org.publicwhip/person/26377",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-10-05"
     },
     {
       "id": "uk.parliament.data/Member/5095/Committee/301",
@@ -170615,7 +170624,8 @@
       "role": "Liberal Democrat Deputy Chief Whip",
       "person_id": "uk.org.publicwhip/person/26400",
       "organization_id": "house-of-commons",
-      "start_date": "2024-09-18"
+      "start_date": "2024-09-18",
+      "end_date": "2026-09-01"
     },
     {
       "id": "uk.parliament.data/Member/5132/Committee/804",
@@ -173223,7 +173233,8 @@
       "role": "Liberal Democrat Spokesperson (Care and Carers)",
       "person_id": "uk.org.publicwhip/person/26498",
       "organization_id": "house-of-commons",
-      "start_date": "2024-09-18"
+      "start_date": "2024-09-18",
+      "end_date": "2026-10-05"
     },
     {
       "id": "uk.parliament.data/Member/5277/Committee/800",
@@ -175309,12 +175320,21 @@
       "end_date": "2025-06-04"
     },
     {
+      "id": "uk.parliament.data/Member/5322/OppositionPost/1509",
+      "source": "datadotparl/oppositionpost",
+      "role": "Liberal Democrat Deputy Chief Whip",
+      "person_id": "uk.org.publicwhip/person/26560",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-09-01"
+    },
+    {
       "id": "uk.parliament.data/Member/5322/OppositionPost/1743",
       "source": "datadotparl/oppositionpost",
       "role": "Liberal Democrat Spokesperson (Immigration and Asylum)",
       "person_id": "uk.org.publicwhip/person/26560",
       "organization_id": "house-of-commons",
-      "start_date": "2025-10-01"
+      "start_date": "2025-10-01",
+      "end_date": "2026-09-01"
     },
     {
       "id": "uk.parliament.data/Member/5186/Committee/664",
