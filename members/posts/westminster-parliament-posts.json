@@ -49590,6 +49590,13 @@
       "start_date": "2025-12-18"
     },
     {
+      "id": "uk.parliament.data/Member/1091/Committee/173",
+      "organization_id": "delegated-powers-and-regulatory-reform-committee",
+      "person_id": "uk.org.publicwhip/person/14134",
+      "source": "datadotparl/committee",
+      "start_date": "2026-10-12"
+    },
+    {
       "end_date": "2011-04-26",
       "id": "uk.parliament.data/Member/1091/Committee/218",
       "organization_id": "leaders-group-on-working-practices-committee",
@@ -63172,6 +63179,7 @@
       "start_date": "2012-10-29"
     },
     {
+      "end_date": "2026-10-12",
       "id": "uk.parliament.data/Member/4081/Committee/173",
       "organization_id": "delegated-powers-and-regulatory-reform-committee",
       "person_id": "uk.org.publicwhip/person/24883",
@@ -75474,6 +75482,13 @@
       "role": "Chair",
       "source": "datadotparl/committee",
       "start_date": "2020-06-11"
+    },
+    {
+      "id": "uk.parliament.data/Member/4275/Committee/93",
+      "organization_id": "human-rights-joint-committee",
+      "person_id": "uk.org.publicwhip/person/25178",
+      "source": "datadotparl/committee",
+      "start_date": "2026-10-12"
     },
     {
       "id": "uk.parliament.data/Member/4276/Committee/371",
@@ -102470,6 +102485,13 @@
       "start_date": "2024-01-10"
     },
     {
+      "id": "uk.parliament.data/Member/4668/Committee/93",
+      "organization_id": "human-rights-joint-committee",
+      "person_id": "uk.org.publicwhip/person/25692",
+      "source": "datadotparl/committee",
+      "start_date": "2026-10-12"
+    },
+    {
       "end_date": "2021-09-16",
       "id": "uk.parliament.data/Member/4668/GovernmentPost/1120",
       "organization_id": "house-of-commons",
@@ -120108,6 +120130,7 @@
       "start_date": "2023-09-05"
     },
     {
+      "end_date": "2026-10-12",
       "id": "uk.parliament.data/Member/4978/Committee/93",
       "organization_id": "human-rights-joint-committee",
       "person_id": "uk.org.publicwhip/person/26121",

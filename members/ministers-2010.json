@@ -94087,6 +94087,13 @@
       "end_date": "1992-11-30"
     },
     {
+      "id": "uk.parliament.data/Member/1091/Committee/173",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/14134",
+      "organization_id": "delegated-powers-and-regulatory-reform-committee",
+      "start_date": "2026-10-12"
+    },
+    {
       "id": "uk.parliament.data/Member/1091/Committee/18",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/14134",
@@ -108400,7 +108407,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/24883",
       "organization_id": "delegated-powers-and-regulatory-reform-committee",
-      "start_date": "2026-01-27"
+      "start_date": "2026-01-27",
+      "end_date": "2026-10-12"
     },
     {
       "id": "uk.parliament.data/Member/4081/Committee/2",
@@ -121192,6 +121200,13 @@
       "organization_id": "covid19-committee",
       "start_date": "2020-06-11",
       "end_date": "2022-04-28"
+    },
+    {
+      "id": "uk.parliament.data/Member/4275/Committee/93",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25178",
+      "organization_id": "human-rights-joint-committee",
+      "start_date": "2026-10-12"
     },
     {
       "id": "uk.parliament.data/Member/4276/Committee/371",
@@ -148696,6 +148711,13 @@
       "end_date": "2024-01-30"
     },
     {
+      "id": "uk.parliament.data/Member/4668/Committee/93",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25692",
+      "organization_id": "human-rights-joint-committee",
+      "start_date": "2026-10-12"
+    },
+    {
       "id": "uk.parliament.data/Member/4668/GovernmentPost/1120",
       "source": "datadotparl/governmentpost",
       "role": "Parliamentary Under-Secretary (Department for Transport)",
@@ -166827,7 +166849,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26121",
       "organization_id": "human-rights-joint-committee",
-      "start_date": "2025-03-06"
+      "start_date": "2025-03-06",
+      "end_date": "2026-10-12"
     },
     {
       "id": "uk.parliament.data/Member/4981/Committee/127",
