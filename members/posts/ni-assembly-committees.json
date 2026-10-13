@@ -2067,6 +2067,7 @@
       "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
     },
     {
+      "end_date": "2026-10-12",
       "id": "niassembly.gov.uk/Committee/2558/Member/289",
       "organization_id": "ni-assembly-committee-2558",
       "person_id": "uk.org.publicwhip/person/25134",
@@ -2674,6 +2675,7 @@
       "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
     },
     {
+      "end_date": "2026-10-12",
       "id": "niassembly.gov.uk/Committee/2558/Member/6157",
       "organization_id": "ni-assembly-committee-2558",
       "person_id": "uk.org.publicwhip/person/25602",
@@ -2827,6 +2829,7 @@
       "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
     },
     {
+      "end_date": "2026-10-12",
       "id": "niassembly.gov.uk/Committee/2558/Member/6167",
       "organization_id": "ni-assembly-committee-2558",
       "person_id": "uk.org.publicwhip/person/25747",
@@ -2880,6 +2883,7 @@
       "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
     },
     {
+      "end_date": "2026-10-12",
       "id": "niassembly.gov.uk/Committee/2558/Member/6178",
       "organization_id": "ni-assembly-committee-2558",
       "person_id": "uk.org.publicwhip/person/25933",
@@ -3088,6 +3092,7 @@
       "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
     },
     {
+      "end_date": "2026-10-12",
       "id": "niassembly.gov.uk/Committee/2558/Member/7534",
       "organization_id": "ni-assembly-committee-2558",
       "person_id": "uk.org.publicwhip/person/26051",
@@ -3379,6 +3384,7 @@
       "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
     },
     {
+      "end_date": "2026-10-12",
       "id": "niassembly.gov.uk/Committee/2558/Member/8348",
       "organization_id": "ni-assembly-committee-2558",
       "person_id": "uk.org.publicwhip/person/26306",
@@ -3473,6 +3479,7 @@
       "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
     },
     {
+      "end_date": "2026-10-12",
       "id": "niassembly.gov.uk/Committee/2558/Member/8977",
       "organization_id": "ni-assembly-committee-2558",
       "person_id": "uk.org.publicwhip/person/26679",
@@ -3687,6 +3694,7 @@
     },
     {
       "classification": "committee",
+      "dissolution_date": "2026-10-12",
       "extra": {},
       "id": "ni-assembly-committee-2558",
       "links": [
