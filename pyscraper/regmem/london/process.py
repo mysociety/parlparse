@@ -76,7 +76,7 @@ class LondonRegisters:
 
         full_url = f"{self.member.url}/{roi_end}"
 
-        content = requests.get(full_url).text
+        content = requests.get(full_url, timeout=60).text
 
         soup = BeautifulSoup(content, "html.parser")
 
@@ -129,7 +129,7 @@ class LondonRegisters:
 
         full_url = f"{self.member.url}/{gift_end}"
 
-        content = requests.get(full_url).text
+        content = requests.get(full_url, timeout=60).text
         try:
             dfs = pd.read_html(StringIO(content))
         except ValueError:
@@ -175,7 +175,7 @@ def get_mayor_people():
 
 
 def get_london_people(people_url: str):
-    content = requests.get(people_url).text
+    content = requests.get(people_url, timeout=60).text
 
     soup = BeautifulSoup(content, "html.parser")
     # iterate through all a elements and grab ones that start with href /who-we-are/what-london-assembly-does/london-assembly-members/

@@ -80,7 +80,7 @@ def recursive_fetch(
         send_params = {"Take": take, "Skip": skip}
         if params:
             send_params.update(params)
-        response = requests.get(url, send_params)
+        response = requests.get(url, send_params, timeout=60)
         response.raise_for_status()
         data = response.json()
         target_items = data["totalResults"]
@@ -101,7 +101,7 @@ def get_single_item(
     interest_id: int,
 ) -> CommonsAPIPublishedInterest:
     url = REGISTER_BASE + f"api/v1/Interests/{interest_id}"
-    item = requests.get(url).json()
+    item = requests.get(url, timeout=60).json()
     interest = CommonsAPIPublishedInterest.model_validate(item)
     return interest
 
