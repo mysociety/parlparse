@@ -688708,6 +688708,36 @@
       "source": "https://members-api.parliament.uk/api/Members/5484",
       "start_date": "2026-10-08",
       "start_reason": "by_election"
+    },
+    {
+      "id": "uk.org.publicwhip/lord/101951",
+      "identifiers": [
+        {
+          "identifier": "B",
+          "scheme": "peeragetype"
+        }
+      ],
+      "label": "Peer",
+      "on_behalf_of_id": "bishop",
+      "organization_id": "house-of-lords",
+      "person_id": "uk.org.publicwhip/person/26888",
+      "role": "Peer",
+      "start_date": "2026-10-15"
+    },
+    {
+      "id": "uk.org.publicwhip/lord/101952",
+      "identifiers": [
+        {
+          "identifier": "B",
+          "scheme": "peeragetype"
+        }
+      ],
+      "label": "Peer",
+      "on_behalf_of_id": "bishop",
+      "organization_id": "house-of-lords",
+      "person_id": "uk.org.publicwhip/person/26889",
+      "role": "Peer",
+      "start_date": "2026-10-15"
     }
   ],
   "organizations": [
@@ -982219,6 +982249,58 @@
           "family_name": "Abdi-Wali",
           "given_name": "Sagal",
           "note": "Main"
+        }
+      ]
+    },
+    {
+      "id": "uk.org.publicwhip/person/26888",
+      "identifiers": [
+        {
+          "identifier": "",
+          "scheme": "pims_id"
+        },
+        {
+          "identifier": "5485",
+          "scheme": "datadotparl_id"
+        }
+      ],
+      "other_names": [
+        {
+          "additional_name": "John",
+          "county": "",
+          "given_name": "Michael",
+          "honorific_prefix": "Bishop",
+          "lordname": "",
+          "lordofname": "Birmingham",
+          "lordofname_full": "",
+          "note": "Main",
+          "surname": "Volland"
+        }
+      ]
+    },
+    {
+      "id": "uk.org.publicwhip/person/26889",
+      "identifiers": [
+        {
+          "identifier": "",
+          "scheme": "pims_id"
+        },
+        {
+          "identifier": "5486",
+          "scheme": "datadotparl_id"
+        }
+      ],
+      "other_names": [
+        {
+          "additional_name": "John",
+          "county": "",
+          "given_name": "Philip",
+          "honorific_prefix": "Bishop",
+          "lordname": "",
+          "lordofname": "Blackburn",
+          "lordofname_full": "",
+          "note": "Main",
+          "surname": "North"
         }
       ]
     }
