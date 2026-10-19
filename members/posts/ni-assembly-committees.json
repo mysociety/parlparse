@@ -2751,6 +2751,13 @@
       "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
     },
     {
+      "id": "niassembly.gov.uk/Committee/117/Member/6155/2",
+      "organization_id": "ni-assembly-committee-117",
+      "person_id": "uk.org.publicwhip/person/25607",
+      "role": "Committee Member",
+      "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
+    },
+    {
       "id": "niassembly.gov.uk/Committee/183/Member/6155",
       "organization_id": "ni-assembly-committee-183",
       "person_id": "uk.org.publicwhip/person/25607",
