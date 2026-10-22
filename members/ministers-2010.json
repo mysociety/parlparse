@@ -40371,6 +40371,13 @@
       "end_date": "2024-05-22"
     },
     {
+      "id": "uk.parliament.data/Member/1442/Committee/841",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/10785",
+      "organization_id": "liaison-subcommittee-on-core-tasks-of-select-committees",
+      "start_date": "2026-10-20"
+    },
+    {
       "id": "uk.parliament.data/Member/1442/Committee/98",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/10785",
@@ -50649,7 +50656,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/11559",
       "organization_id": "national-security-strategy-joint-committee",
-      "start_date": "2024-12-02"
+      "start_date": "2024-12-02",
+      "end_date": "2026-10-21"
     },
     {
       "id": "uk.parliament.data/Member/1516/Committee/12",
@@ -105727,6 +105735,13 @@
       "end_date": "2019-11-06"
     },
     {
+      "id": "uk.parliament.data/Member/3952/Committee/841",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/24845",
+      "organization_id": "liaison-subcommittee-on-core-tasks-of-select-committees",
+      "start_date": "2026-10-20"
+    },
+    {
       "id": "uk.parliament.data/Member/3952/OppositionPost/15",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Minister (Business, Innovation and Skills)",
@@ -134586,6 +134601,13 @@
       "end_date": "2025-05-15"
     },
     {
+      "id": "uk.parliament.data/Member/4418/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25378",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
+    },
+    {
       "id": "uk.parliament.data/Member/4418/GovernmentPost/1120",
       "source": "datadotparl/governmentpost",
       "role": "Parliamentary Under-Secretary (Department for Transport)",
@@ -134736,6 +134758,13 @@
       "organization_id": "planning-and-infrastructure-bill-committee",
       "start_date": "2025-04-24",
       "end_date": "2025-05-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/4520/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25379",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/4520/GovernmentPost/1214",
@@ -136294,6 +136323,13 @@
       "person_id": "uk.org.publicwhip/person/25396",
       "organization_id": "civil-aviation-consumer-protection-and-regulatory-reform-bill-committee",
       "start_date": "2026-10-15"
+    },
+    {
+      "id": "uk.parliament.data/Member/4362/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25396",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/4362/GovernmentPost/1121",
@@ -144834,6 +144870,13 @@
       "end_date": "2024-05-21"
     },
     {
+      "id": "uk.parliament.data/Member/4623/Committee/841",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25634",
+      "organization_id": "liaison-subcommittee-on-core-tasks-of-select-committees",
+      "start_date": "2026-10-20"
+    },
+    {
       "id": "uk.parliament.data/Member/4623/OppositionPost/10",
       "source": "datadotparl/oppositionpost",
       "role": "Opposition Whip (Commons)",
@@ -150927,6 +150970,13 @@
       "end_date": "2025-06-24"
     },
     {
+      "id": "uk.parliament.data/Member/4716/Committee/841",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25746",
+      "organization_id": "liaison-subcommittee-on-core-tasks-of-select-committees",
+      "start_date": "2026-10-20"
+    },
+    {
       "id": "uk.parliament.data/Member/4716/Committee/852",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25746",
@@ -151045,6 +151095,13 @@
       "organization_id": "courts-remote-hearings-bill",
       "start_date": "2024-05-14",
       "end_date": "2024-05-15"
+    },
+    {
+      "id": "uk.parliament.data/Member/4798/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25750",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/4798/GovernmentPost/540",
@@ -156161,6 +156218,13 @@
       "organization_id": "tobacco-and-vapes-bill-committee",
       "start_date": "2024-12-18",
       "end_date": "2025-01-30"
+    },
+    {
+      "id": "uk.parliament.data/Member/4753/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25833",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/4868/Committee/203",
@@ -164010,6 +164074,13 @@
       "end_date": "2025-07-17"
     },
     {
+      "id": "uk.parliament.data/Member/4778/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25925",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
+    },
+    {
       "id": "uk.parliament.data/Member/4778/OppositionPost/10",
       "source": "datadotparl/oppositionpost",
       "role": "Opposition Whip (Commons)",
@@ -165218,6 +165289,13 @@
       "person_id": "uk.org.publicwhip/person/26001",
       "organization_id": "scottish-affairs-committee",
       "start_date": "2026-07-06"
+    },
+    {
+      "id": "uk.parliament.data/Member/5450/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26001",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/4917/Committee/136",
@@ -168188,6 +168266,13 @@
       "end_date": "2026-04-16"
     },
     {
+      "id": "uk.parliament.data/Member/5050/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26316",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5050/OppositionPost/1676",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Parliamentary Under Secretary (Housing, Communities and Local Government)",
@@ -169297,6 +169382,13 @@
       "start_date": "2026-01-21"
     },
     {
+      "id": "uk.parliament.data/Member/5237/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26350",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5087/Committee/135",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26351",
@@ -169675,6 +169767,13 @@
       "end_date": "2025-06-02"
     },
     {
+      "id": "uk.parliament.data/Member/5068/Committee/328/1",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26363",
+      "organization_id": "women-and-equalities-committee",
+      "start_date": "2026-10-21"
+    },
+    {
       "id": "uk.parliament.data/Member/5068/Committee/845",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26363",
@@ -169687,6 +169786,13 @@
       "person_id": "uk.org.publicwhip/person/26363",
       "organization_id": "infants-parents-and-carers-bill-committee",
       "start_date": "2026-10-14"
+    },
+    {
+      "id": "uk.parliament.data/Member/5068/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26363",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/5263/Committee/328",
@@ -170013,6 +170119,13 @@
       "person_id": "uk.org.publicwhip/person/26373",
       "organization_id": "dogs-protection-of-livestock-amendment-bill-committee",
       "start_date": "2025-05-21"
+    },
+    {
+      "id": "uk.parliament.data/Member/5144/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26373",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/5126/Committee/326",
@@ -170369,6 +170482,13 @@
       "end_date": "2025-07-02"
     },
     {
+      "id": "uk.parliament.data/Member/5077/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26382",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5163/Committee/83",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26383",
@@ -170389,6 +170509,13 @@
       "person_id": "uk.org.publicwhip/person/26383",
       "organization_id": "infants-parents-and-carers-bill-committee",
       "start_date": "2026-10-14"
+    },
+    {
+      "id": "uk.parliament.data/Member/5163/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26383",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/5075/Committee/381",
@@ -170437,6 +170564,13 @@
       "organization_id": "representation-of-the-people-bill-committee",
       "start_date": "2026-03-11",
       "end_date": "2026-04-16"
+    },
+    {
+      "id": "uk.parliament.data/Member/5075/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26384",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/5075/GovernmentPost/1206",
@@ -171116,6 +171250,13 @@
       "person_id": "uk.org.publicwhip/person/26405",
       "organization_id": "liaison-committee-commons",
       "start_date": "2026-09-14"
+    },
+    {
+      "id": "uk.parliament.data/Member/5143/Committee/111",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26405",
+      "organization_id": "national-security-strategy-joint-committee",
+      "start_date": "2026-10-21"
     },
     {
       "id": "uk.parliament.data/Member/5143/Committee/153",
@@ -171880,6 +172021,13 @@
       "start_date": "2025-09-16"
     },
     {
+      "id": "uk.parliament.data/Member/5294/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26430",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5270/Committee/203",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26431",
@@ -171964,6 +172112,13 @@
       "organization_id": "health-bill-committee",
       "start_date": "2026-06-11",
       "end_date": "2026-07-16"
+    },
+    {
+      "id": "uk.parliament.data/Member/5152/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26433",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/5349/Committee/747",
@@ -172832,7 +172987,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26466",
       "organization_id": "women-and-equalities-committee",
-      "start_date": "2025-06-02"
+      "start_date": "2025-06-02",
+      "end_date": "2026-10-21"
     },
     {
       "id": "uk.parliament.data/Member/5297/Committee/741",
@@ -172935,6 +173091,13 @@
       "organization_id": "representation-of-the-people-bill-committee",
       "start_date": "2026-03-11",
       "end_date": "2026-04-16"
+    },
+    {
+      "id": "uk.parliament.data/Member/5194/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26469",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/5194/Committee/852",
@@ -173060,6 +173223,13 @@
       "organization_id": "railways-bill-committee",
       "start_date": "2026-01-07",
       "end_date": "2026-02-10"
+    },
+    {
+      "id": "uk.parliament.data/Member/5180/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26474",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/5180/GovernmentPost/1152",
@@ -173392,6 +173562,13 @@
       "person_id": "uk.org.publicwhip/person/26488",
       "organization_id": "civil-aviation-consumer-protection-and-regulatory-reform-bill-committee",
       "start_date": "2026-10-15"
+    },
+    {
+      "id": "uk.parliament.data/Member/5248/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26488",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/5176/Committee/153",
@@ -173943,6 +174120,13 @@
       "end_date": "2025-07-02"
     },
     {
+      "id": "uk.parliament.data/Member/5273/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26506",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5192/Committee/143",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26507",
@@ -174337,6 +174521,13 @@
       "start_date": "2026-10-15"
     },
     {
+      "id": "uk.parliament.data/Member/5234/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26517",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5234/GovernmentPost/1206",
       "source": "datadotparl/governmentpost",
       "role": "Assistant Whip",
@@ -174659,6 +174850,13 @@
       "end_date": "2025-05-22"
     },
     {
+      "id": "uk.parliament.data/Member/5250/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26531",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5250/OppositionPost/1697",
       "source": "datadotparl/oppositionpost",
       "role": "Liberal Democrat Spokesperson (Housing and Planning)",
@@ -174804,6 +175002,13 @@
       "start_date": "2026-10-15"
     },
     {
+      "id": "uk.parliament.data/Member/5203/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26536",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5203/OppositionPost/1681",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Parliamentary Under Secretary (Transport)",
@@ -174846,7 +175051,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26538",
       "organization_id": "scottish-affairs-committee",
-      "start_date": "2024-10-21"
+      "start_date": "2024-10-21",
+      "end_date": "2026-10-21"
     },
     {
       "id": "uk.parliament.data/Member/5311/Committee/737",
@@ -175222,6 +175428,13 @@
       "end_date": "2025-09-11"
     },
     {
+      "id": "uk.parliament.data/Member/5257/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26546",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5257/GovernmentPost/346",
       "source": "datadotparl/governmentpost",
       "role": "The Economic Secretary to the Treasury",
@@ -175267,6 +175480,13 @@
       "person_id": "uk.org.publicwhip/person/26547",
       "organization_id": "sporting-events-bill-committee",
       "start_date": "2026-10-15"
+    },
+    {
+      "id": "uk.parliament.data/Member/5223/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26547",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/5224/Committee/750",
@@ -175449,6 +175669,13 @@
       "organization_id": "product-regulation-and-metrology-bill-hl-committee",
       "start_date": "2025-05-13",
       "end_date": "2025-05-15"
+    },
+    {
+      "id": "uk.parliament.data/Member/5242/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26551",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/5242/GovernmentPost/1206",
@@ -175641,6 +175868,13 @@
       "organization_id": "representation-of-the-people-bill-committee",
       "start_date": "2026-03-11",
       "end_date": "2026-04-16"
+    },
+    {
+      "id": "uk.parliament.data/Member/5313/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26555",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/5313/OppositionPost/1624",
@@ -175882,6 +176116,13 @@
       "end_date": "2026-04-28"
     },
     {
+      "id": "uk.parliament.data/Member/5127/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26564",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5092/Committee/126",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26565",
@@ -176116,6 +176357,13 @@
       "person_id": "uk.org.publicwhip/person/26572",
       "organization_id": "civil-aviation-consumer-protection-and-regulatory-reform-bill-committee",
       "start_date": "2026-10-15"
+    },
+    {
+      "id": "uk.parliament.data/Member/5318/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26572",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/5318/OppositionPost/1255",
@@ -176488,6 +176736,13 @@
       "end_date": "2025-03-20"
     },
     {
+      "id": "uk.parliament.data/Member/5303/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26579",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5303/OppositionPost/1685",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Parliamentary Under Secretary (Education)",
@@ -176641,6 +176896,13 @@
       "organization_id": "football-governance-bill-hl-committee",
       "start_date": "2025-05-14",
       "end_date": "2025-06-17"
+    },
+    {
+      "id": "uk.parliament.data/Member/5310/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26584",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/5239/Committee/62",
@@ -176833,6 +177095,13 @@
       "organization_id": "courts-and-tribunals-bill",
       "start_date": "2026-03-18",
       "end_date": "2026-04-28"
+    },
+    {
+      "id": "uk.parliament.data/Member/5220/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26589",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/5274/Committee/365",
@@ -177610,6 +177879,13 @@
       "start_date": "2024-10-21"
     },
     {
+      "id": "uk.parliament.data/Member/5339/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26619",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5339/Committee/851",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26619",
@@ -178005,6 +178281,13 @@
       "end_date": "2025-10-28"
     },
     {
+      "id": "uk.parliament.data/Member/5316/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26630",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5360/Committee/148",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26632",
@@ -178040,6 +178323,13 @@
       "person_id": "uk.org.publicwhip/person/26633",
       "organization_id": "cheltenham-borough-council-markets-bill-committee",
       "start_date": "2026-02-12"
+    },
+    {
+      "id": "uk.parliament.data/Member/5358/Committee/136",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26634",
+      "organization_id": "scottish-affairs-committee",
+      "start_date": "2026-10-21"
     },
     {
       "id": "uk.parliament.data/Member/5358/Committee/365",
@@ -179848,6 +180138,10 @@
       "name": "Highgate Cemetery Bill [HL] Committee"
     },
     {
+      "id": "highways-financing-bill-committee",
+      "name": "Highways (Financing) Bill Committee"
+    },
+    {
       "id": "hiv-and-aids-committee-in-the-united-kingdom",
       "name": "HIV and AIDS Committee in the United Kingdom"
     },
@@ -180574,6 +180868,10 @@
     {
       "id": "small-and-medium-sized-enterprises-committee",
       "name": "Small and Medium Sized Enterprises Committee"
+    },
+    {
+      "id": "social-housing-bill-committee",
+      "name": "Social Housing Bill Committee"
     },
     {
       "id": "social-housing-regulation-bill-hl-committee",
