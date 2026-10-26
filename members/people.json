@@ -680247,6 +680247,8 @@
       "start_reason": "general_election"
     },
     {
+      "end_date": "2026-10-20",
+      "end_reason": "whip_removed",
       "id": "uk.org.publicwhip/member/43141",
       "on_behalf_of_id": "labour",
       "person_id": "uk.org.publicwhip/person/26482",
@@ -686805,6 +686807,8 @@
       "start_reason": "regional_election"
     },
     {
+      "end_date": "2026-10-19",
+      "end_reason": "changed_party",
       "id": "uk.org.publicwhip/member/80904",
       "identifiers": [
         {
@@ -688738,6 +688742,24 @@
       "person_id": "uk.org.publicwhip/person/26889",
       "role": "Peer",
       "start_date": "2026-10-15"
+    },
+    {
+      "id": "uk.org.publicwhip/member/80968",
+      "on_behalf_of_id": "independent",
+      "person_id": "uk.org.publicwhip/person/26821",
+      "post_id": "uk.org.publicwhip/cons/10914",
+      "source": "https://www.bbc.co.uk/news/articles/cq398dgkdg8xo",
+      "start_date": "2026-10-20",
+      "start_reason": "changed_party"
+    },
+    {
+      "id": "uk.org.publicwhip/member/43484",
+      "on_behalf_of_id": "independent",
+      "person_id": "uk.org.publicwhip/person/26482",
+      "post_id": "uk.org.publicwhip/cons/2360",
+      "source": "https://www.bbc.co.uk/news/articles/cqgkvnp0lkv5o",
+      "start_date": "2026-10-21",
+      "start_reason": "whip_removed"
     }
   ],
   "organizations": [
