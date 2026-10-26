@@ -14,70 +14,70 @@ jobs:
       changes_detected: ${{ steps.auto-commit-action.outputs.changes_detected }}
 
     steps:
-    - uses: actions/checkout@v4
-      with:
-        submodules: true
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          submodules: true
 
-    - name: Install poetry
-      run: pipx install poetry
+      - name: Install poetry
+        run: pipx install poetry
 
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
-        cache: 'poetry'
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0  # v7.1.0
+        with:
+          python-version: '3.11'
+          cache: 'poetry'
 
-    - name: setup python packages
-      run: poetry install
+      - name: setup python packages
+        run: poetry install
 
-    - name: Run data update script
-      id: update
-      run: |
-        output=$(poetry run scripts/dataupdate --verbose)
-        output=$(echo "$output" | jq -sR .)
-        echo "update_output<<EOF" >> "$GITHUB_OUTPUT"
-        echo "$output" >> "$GITHUB_OUTPUT"
-        echo "EOF" >> "$GITHUB_OUTPUT"
+      - name: Run data update script
+        id: update
+        run: |
+          output=$(poetry run scripts/dataupdate --verbose)
+          output=$(echo "$output" | jq -sR .)
+          echo "update_output<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$output" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
 
-    - name: Push new data
-      id: auto-commit-action
-      uses: stefanzweifel/git-auto-commit-action@v5
-      with:
-        commit_message: "Automatic data update"
+      - name: Push new data
+        id: auto-commit-action
+        uses: stefanzweifel/git-auto-commit-action@d0b01107b5db882071f96de5dd4b54961ea93f4c  # v7.2.1
+        with:
+          commit_message: "Automatic data update"
 
-    - name: Send GitHub Action trigger data to Slack workflow
-      id: slack
-      if: steps.auto-commit-action.outputs.changes_detected == 'true'
-      uses: slackapi/slack-github-action@v1.24.0
-      with:
-        payload: |
-          {
-            "repo_url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
-            "status": "success",
-            "content": ${{ steps.update.outputs.update_output }}
-          }
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.PARLPARSE_SLACK_WEBHOOK }}
+      - name: Send GitHub Action trigger data to Slack workflow
+        id: slack
+        if: steps.auto-commit-action.outputs.changes_detected == 'true'
+        uses: slackapi/slack-github-action@dcb1066f776dd043e64d0e8ba94ca15cc7e1875d  # v4.0.0
+        with:
+          payload: |
+            {
+              "repo_url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+              "status": "success",
+              "content": ${{ steps.update.outputs.update_output }}
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.PARLPARSE_SLACK_WEBHOOK }}
 
-    - name: Send GitHub Action trigger data to Slack workflow (if failed)
-      if: ${{ failure() }}
-      id: slack-failed
-      uses: slackapi/slack-github-action@v1.24.0
-      with:
-        payload: |
-          {
-            "repo_url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
-            "status": "failed",
-            "content": "Parlparse update failed. Please check the logs for details."
-          }
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.PARLPARSE_SLACK_WEBHOOK }}
+      - name: Send GitHub Action trigger data to Slack workflow (if failed)
+        if: ${{ failure() }}
+        id: slack-failed
+        uses: slackapi/slack-github-action@dcb1066f776dd043e64d0e8ba94ca15cc7e1875d  # v4.0.0
+        with:
+          payload: |
+            {
+              "repo_url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+              "status": "failed",
+              "content": "Parlparse update failed. Please check the logs for details."
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.PARLPARSE_SLACK_WEBHOOK }}
 
-    - name: Push branch to git.mysociety.org
-      id: push_to_mirror
-      if: steps.auto-commit-action.outputs.changes_detected == 'true'
-      uses: mysociety/action-git-pusher@v1.3.0
-      with:
-        git_ssh_key: ${{ secrets.PUBLICCVS_GIT_KEY }}
-        ssh_known_hosts: ${{ secrets.GIT_KNOWN_HOSTS }}
-        tag: ${{ github.ref_name }} 
-        remote: 'ssh://gh-public@git.mysociety.org/data/git/public/parlparse.git'
+      - name: Push branch to git.mysociety.org
+        id: push_to_mirror
+        if: steps.auto-commit-action.outputs.changes_detected == 'true'
+        uses: mysociety/action-git-pusher@86856ec692b203810476b260813ba55637e99aea  # v1.4.0
+        with:
+          git_ssh_key: ${{ secrets.PUBLICCVS_GIT_KEY }}
+          ssh_known_hosts: ${{ secrets.GIT_KNOWN_HOSTS }}
+          tag: ${{ github.ref_name }}
+          remote: 'ssh://gh-public@git.mysociety.org/data/git/public/parlparse.git'
