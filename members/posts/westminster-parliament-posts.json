@@ -126151,13 +126151,6 @@
       "start_date": "2026-03-11"
     },
     {
-      "id": "uk.parliament.data/Member/5194/Committee/849",
-      "organization_id": "social-housing-bill-committee",
-      "person_id": "uk.org.publicwhip/person/26469",
-      "source": "datadotparl/committee",
-      "start_date": "2026-10-22"
-    },
-    {
       "id": "uk.parliament.data/Member/5194/Committee/852",
       "organization_id": "infants-parents-and-carers-bill-committee",
       "person_id": "uk.org.publicwhip/person/26469",
@@ -126298,6 +126291,13 @@
       "role": "Parliamentary Under-Secretary (Housing, Communities and Local Government)",
       "source": "datadotparl/governmentpost",
       "start_date": "2026-05-12"
+    },
+    {
+      "id": "uk.parliament.data/Member/5232/Committee/854",
+      "organization_id": "highways-financing-bill-committee",
+      "person_id": "uk.org.publicwhip/person/26475",
+      "source": "datadotparl/committee",
+      "start_date": "2026-10-22"
     },
     {
       "end_date": "2024-11-13",
@@ -126612,13 +126612,6 @@
       "person_id": "uk.org.publicwhip/person/26488",
       "source": "datadotparl/committee",
       "start_date": "2026-10-15"
-    },
-    {
-      "id": "uk.parliament.data/Member/5248/Committee/854",
-      "organization_id": "highways-financing-bill-committee",
-      "person_id": "uk.org.publicwhip/person/26488",
-      "source": "datadotparl/committee",
-      "start_date": "2026-10-22"
     },
     {
       "end_date": "2026-06-22",
@@ -132037,6 +132030,13 @@
       "role": "Parliamentary Under-Secretary of State (Department for Digital, Culture, Media and Sport)",
       "source": "datadotparl/governmentpost",
       "start_date": "2026-07-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/5484/Committee/849",
+      "organization_id": "social-housing-bill-committee",
+      "person_id": "uk.org.publicwhip/person/26887",
+      "source": "datadotparl/committee",
+      "start_date": "2026-10-22"
     }
   ],
   "organizations": [

@@ -173093,13 +173093,6 @@
       "end_date": "2026-04-16"
     },
     {
-      "id": "uk.parliament.data/Member/5194/Committee/849",
-      "source": "datadotparl/committee",
-      "person_id": "uk.org.publicwhip/person/26469",
-      "organization_id": "social-housing-bill-committee",
-      "start_date": "2026-10-22"
-    },
-    {
       "id": "uk.parliament.data/Member/5194/Committee/852",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26469",
@@ -173248,6 +173241,13 @@
       "organization_id": "house-of-commons",
       "start_date": "2026-05-12",
       "end_date": "2026-07-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/5232/Committee/854",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26475",
+      "organization_id": "highways-financing-bill-committee",
+      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/5185/Committee/744",
@@ -173562,13 +173562,6 @@
       "person_id": "uk.org.publicwhip/person/26488",
       "organization_id": "civil-aviation-consumer-protection-and-regulatory-reform-bill-committee",
       "start_date": "2026-10-15"
-    },
-    {
-      "id": "uk.parliament.data/Member/5248/Committee/854",
-      "source": "datadotparl/committee",
-      "person_id": "uk.org.publicwhip/person/26488",
-      "organization_id": "highways-financing-bill-committee",
-      "start_date": "2026-10-22"
     },
     {
       "id": "uk.parliament.data/Member/5176/Committee/153",
@@ -179206,6 +179199,13 @@
       "organization_id": "house-of-commons",
       "start_date": "2009-06-09",
       "end_date": "2009-06-17"
+    },
+    {
+      "id": "uk.parliament.data/Member/5484/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26887",
+      "organization_id": "social-housing-bill-committee",
+      "start_date": "2026-10-22"
     }
   ],
   "organizations": [
