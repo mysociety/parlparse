@@ -75674,6 +75674,13 @@
       "start_date": "2016-01-06"
     },
     {
+      "id": "uk.parliament.data/Member/4278/Committee/169",
+      "organization_id": "audit-and-risk-assurance-committee-lords",
+      "person_id": "uk.org.publicwhip/person/25184",
+      "source": "datadotparl/committee",
+      "start_date": "2026-10-28"
+    },
+    {
       "end_date": "2023-01-31",
       "id": "uk.parliament.data/Member/4278/Committee/175",
       "organization_id": "economic-affairs-committee",
@@ -88803,7 +88810,7 @@
     },
     {
       "id": "uk.parliament.data/Member/4520/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/25379",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -90383,7 +90390,7 @@
     },
     {
       "id": "uk.parliament.data/Member/4362/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/25396",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -95465,6 +95472,13 @@
       "person_id": "uk.org.publicwhip/person/25475",
       "source": "datadotparl/committee",
       "start_date": "2024-11-20"
+    },
+    {
+      "id": "uk.parliament.data/Member/4569/Committee/144/1",
+      "organization_id": "speakers-committee-on-the-electoral-commission",
+      "person_id": "uk.org.publicwhip/person/25475",
+      "source": "datadotparl/committee",
+      "start_date": "2026-10-27"
     },
     {
       "end_date": "2016-10-31",
@@ -104837,7 +104851,7 @@
     },
     {
       "id": "uk.parliament.data/Member/4798/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/25750",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -105015,6 +105029,13 @@
       "person_id": "uk.org.publicwhip/person/25759",
       "source": "datadotparl/committee",
       "start_date": "2024-11-20"
+    },
+    {
+      "id": "uk.parliament.data/Member/4870/Committee/144/1",
+      "organization_id": "speakers-committee-on-the-electoral-commission",
+      "person_id": "uk.org.publicwhip/person/25759",
+      "source": "datadotparl/committee",
+      "start_date": "2026-10-27"
     },
     {
       "end_date": "2022-11-29",
@@ -109869,7 +109890,7 @@
     },
     {
       "id": "uk.parliament.data/Member/4753/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/25833",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -121541,7 +121562,7 @@
     },
     {
       "id": "uk.parliament.data/Member/5050/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/26316",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -122612,7 +122633,7 @@
     },
     {
       "id": "uk.parliament.data/Member/5237/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/26350",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -123780,7 +123801,7 @@
     },
     {
       "id": "uk.parliament.data/Member/5075/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/26384",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -124789,6 +124810,13 @@
       "start_date": "2025-06-24"
     },
     {
+      "id": "uk.parliament.data/Member/5154/Committee/854",
+      "organization_id": "highways-financing-bill-committee",
+      "person_id": "uk.org.publicwhip/person/26416",
+      "source": "datadotparl/committee",
+      "start_date": "2026-10-22"
+    },
+    {
       "id": "uk.parliament.data/Member/5130/Committee/127",
       "organization_id": "public-accounts-committee",
       "person_id": "uk.org.publicwhip/person/26417",
@@ -125282,7 +125310,7 @@
     },
     {
       "id": "uk.parliament.data/Member/5152/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/26433",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -126360,7 +126388,7 @@
     },
     {
       "id": "uk.parliament.data/Member/5180/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/26474",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -127247,13 +127275,6 @@
       "start_date": "2025-06-26"
     },
     {
-      "id": "uk.parliament.data/Member/5273/Committee/854",
-      "organization_id": "highways-financing-bill-committee",
-      "person_id": "uk.org.publicwhip/person/26506",
-      "source": "datadotparl/committee",
-      "start_date": "2026-10-22"
-    },
-    {
       "end_date": "2026-06-23",
       "id": "uk.parliament.data/Member/5192/Committee/143",
       "organization_id": "speakers-committee-for-the-independent-parliamentary-standards-authority",
@@ -127656,7 +127677,7 @@
     },
     {
       "id": "uk.parliament.data/Member/5234/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/26517",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -127991,7 +128012,7 @@
     },
     {
       "id": "uk.parliament.data/Member/5250/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/26531",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -128553,7 +128574,7 @@
     },
     {
       "id": "uk.parliament.data/Member/5257/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/26546",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -129217,7 +129238,7 @@
     },
     {
       "id": "uk.parliament.data/Member/5127/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/26564",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -129828,7 +129849,7 @@
     },
     {
       "id": "uk.parliament.data/Member/5303/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/26579",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -129990,7 +130011,7 @@
     },
     {
       "id": "uk.parliament.data/Member/5310/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/26584",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -130933,7 +130954,7 @@
     },
     {
       "id": "uk.parliament.data/Member/5339/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/26619",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -132217,7 +132238,7 @@
     },
     {
       "id": "uk.parliament.data/Member/5484/Committee/849",
-      "organization_id": "social-housing-bill-committee",
+      "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/26887",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
@@ -136585,11 +136606,11 @@
       "classification": "committee",
       "extra": {},
       "founding_date": "2026-10-22",
-      "id": "social-housing-bill-committee",
+      "id": "social-housing-bill-lords-committee",
       "links": [
         "https://committees.parliament.uk/committee/849/"
       ],
-      "name": "Social Housing Bill Committee"
+      "name": "Social Housing Bill [Lords] Committee"
     },
     {
       "classification": "committee",
