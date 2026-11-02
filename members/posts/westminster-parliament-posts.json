@@ -122632,6 +122632,7 @@
       "start_date": "2026-01-21"
     },
     {
+      "end_date": "2026-10-25",
       "id": "uk.parliament.data/Member/5237/Committee/849",
       "organization_id": "social-housing-bill-lords-committee",
       "person_id": "uk.org.publicwhip/person/26350",
@@ -126261,6 +126262,13 @@
       "person_id": "uk.org.publicwhip/person/26469",
       "source": "datadotparl/committee",
       "start_date": "2026-03-11"
+    },
+    {
+      "id": "uk.parliament.data/Member/5194/Committee/849",
+      "organization_id": "social-housing-bill-lords-committee",
+      "person_id": "uk.org.publicwhip/person/26469",
+      "source": "datadotparl/committee",
+      "start_date": "2026-10-25"
     },
     {
       "id": "uk.parliament.data/Member/5194/Committee/852",
