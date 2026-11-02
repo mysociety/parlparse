@@ -679143,6 +679143,8 @@
       "start_reason": "general_election"
     },
     {
+      "end_date": "2026-11-02",
+      "end_reason": "changed_party",
       "id": "uk.org.publicwhip/member/43004",
       "on_behalf_of_id": "dup",
       "person_id": "uk.org.publicwhip/person/25562",
@@ -688760,6 +688762,15 @@
       "source": "https://www.bbc.co.uk/news/articles/cqgkvnp0lkv5o",
       "start_date": "2026-10-21",
       "start_reason": "whip_removed"
+    },
+    {
+      "id": "uk.org.publicwhip/member/43485",
+      "on_behalf_of_id": "independent",
+      "person_id": "uk.org.publicwhip/person/25562",
+      "post_id": "uk.org.publicwhip/cons/2846",
+      "source": "https://www.bbc.co.uk/news/articles/cm87zn1vy28zo",
+      "start_date": "2026-11-03",
+      "start_reason": "changed_party"
     }
   ],
   "organizations": [
