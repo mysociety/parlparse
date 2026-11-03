@@ -116060,6 +116060,7 @@
       "start_date": "2021-11-03"
     },
     {
+      "end_date": "2026-11-02",
       "id": "uk.parliament.data/Member/4864/Committee/62",
       "organization_id": "environmental-audit-committee",
       "person_id": "uk.org.publicwhip/person/25908",
@@ -126233,6 +126234,13 @@
       "start_date": "2026-10-26"
     },
     {
+      "id": "uk.parliament.data/Member/5081/Committee/153",
+      "organization_id": "transport-committee",
+      "person_id": "uk.org.publicwhip/person/26468",
+      "source": "datadotparl/committee",
+      "start_date": "2026-11-02"
+    },
+    {
       "end_date": "2025-04-28",
       "id": "uk.parliament.data/Member/5081/Committee/2",
       "organization_id": "administration-committee",
@@ -127638,6 +127646,7 @@
       "start_date": "2024-09-18"
     },
     {
+      "end_date": "2026-11-02",
       "id": "uk.parliament.data/Member/5234/Committee/153",
       "organization_id": "transport-committee",
       "person_id": "uk.org.publicwhip/person/26517",
@@ -130096,6 +130105,13 @@
       "role": "Parliamentary Under-Secretary (Ministry of Defence) (Minister for Veterans and People)",
       "source": "datadotparl/governmentpost",
       "start_date": "2025-09-06"
+    },
+    {
+      "id": "uk.parliament.data/Member/5293/Committee/62",
+      "organization_id": "environmental-audit-committee",
+      "person_id": "uk.org.publicwhip/person/26587",
+      "source": "datadotparl/committee",
+      "start_date": "2026-11-02"
     },
     {
       "end_date": "2024-11-13",

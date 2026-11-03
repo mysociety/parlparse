@@ -162597,7 +162597,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25908",
       "organization_id": "environmental-audit-committee",
-      "start_date": "2024-10-28"
+      "start_date": "2024-10-28",
+      "end_date": "2026-11-02"
     },
     {
       "id": "uk.parliament.data/Member/4864/Committee/627",
@@ -173175,6 +173176,13 @@
       "start_date": "2026-10-26"
     },
     {
+      "id": "uk.parliament.data/Member/5081/Committee/153",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26468",
+      "organization_id": "transport-committee",
+      "start_date": "2026-11-02"
+    },
+    {
       "id": "uk.parliament.data/Member/5081/Committee/2",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26468",
@@ -174624,7 +174632,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26517",
       "organization_id": "transport-committee",
-      "start_date": "2024-10-28"
+      "start_date": "2024-10-28",
+      "end_date": "2026-11-02"
     },
     {
       "id": "uk.parliament.data/Member/5234/Committee/747",
@@ -177174,6 +177183,13 @@
       "organization_id": "house-of-commons",
       "start_date": "2025-09-06",
       "end_date": "2026-06-12"
+    },
+    {
+      "id": "uk.parliament.data/Member/5293/Committee/62",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26587",
+      "organization_id": "environmental-audit-committee",
+      "start_date": "2026-11-02"
     },
     {
       "id": "uk.parliament.data/Member/5293/Committee/744",
