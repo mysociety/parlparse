@@ -390,6 +390,7 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/341/Member/1783",
       "organization_id": "scottish-parliament-committee-341",
       "person_id": "uk.org.publicwhip/person/13949",
@@ -424,8 +425,30 @@
       "start_date": "1999-05-19"
     },
     {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/329/Member/2633",
       "organization_id": "scottish-parliament-committee-329",
+      "person_id": "uk.org.publicwhip/person/13951",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/332/Member/2633",
+      "organization_id": "scottish-parliament-committee-332",
+      "person_id": "uk.org.publicwhip/person/13951",
+      "role": "Substitute Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/336/Member/2633",
+      "organization_id": "scottish-parliament-committee-336",
+      "person_id": "uk.org.publicwhip/person/13951",
+      "role": "Substitute Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/341/Member/2633",
+      "organization_id": "scottish-parliament-committee-341",
       "person_id": "uk.org.publicwhip/person/13951",
       "role": "Member",
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
@@ -2523,6 +2546,13 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "id": "parliament.scot/Committee/340/Member/5060",
+      "organization_id": "scottish-parliament-committee-340",
+      "person_id": "uk.org.publicwhip/person/25076",
+      "role": "Substitute Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
       "end_date": "2016-05-18",
       "id": "scot.parliament.data/membergovernmentroles/145",
       "organization_id": "scottish-parliament",
@@ -2597,6 +2627,13 @@
       "organization_id": "scottish-parliament-committee-336",
       "person_id": "uk.org.publicwhip/person/25089",
       "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/341/Member/5042",
+      "organization_id": "scottish-parliament-committee-341",
+      "person_id": "uk.org.publicwhip/person/25089",
+      "role": "Substitute Member",
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
@@ -3288,6 +3325,7 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/337/Member/5580",
       "organization_id": "scottish-parliament-committee-337",
       "person_id": "uk.org.publicwhip/person/25516",
@@ -3514,6 +3552,7 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/342/Member/3994",
       "organization_id": "scottish-parliament-committee-342",
       "person_id": "uk.org.publicwhip/person/25535",
@@ -3574,8 +3613,23 @@
       "start_date": "2026-05-20"
     },
     {
+      "id": "parliament.scot/Committee/329/Member/16198",
+      "organization_id": "scottish-parliament-committee-329",
+      "person_id": "uk.org.publicwhip/person/25639",
+      "role": "Substitute Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/331/Member/16198",
       "organization_id": "scottish-parliament-committee-331",
+      "person_id": "uk.org.publicwhip/person/25639",
+      "role": "Substitute Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/337/Member/16198",
+      "organization_id": "scottish-parliament-committee-337",
       "person_id": "uk.org.publicwhip/person/25639",
       "role": "Substitute Member",
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
@@ -3770,6 +3824,7 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/334/Member/16205",
       "organization_id": "scottish-parliament-committee-334",
       "person_id": "uk.org.publicwhip/person/26003",
@@ -3777,6 +3832,7 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/338/Member/16205",
       "organization_id": "scottish-parliament-committee-338",
       "person_id": "uk.org.publicwhip/person/26003",
@@ -3908,6 +3964,21 @@
       "start_date": "2023-03-30"
     },
     {
+      "id": "parliament.scot/Committee/331/Member/16211",
+      "organization_id": "scottish-parliament-committee-331",
+      "person_id": "uk.org.publicwhip/person/26008",
+      "role": "Substitute Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/334/Member/16211",
+      "organization_id": "scottish-parliament-committee-334",
+      "person_id": "uk.org.publicwhip/person/26008",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/336/Member/16211",
       "organization_id": "scottish-parliament-committee-336",
       "person_id": "uk.org.publicwhip/person/26008",
@@ -3915,6 +3986,14 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "id": "parliament.scot/Committee/338/Member/16211",
+      "organization_id": "scottish-parliament-committee-338",
+      "person_id": "uk.org.publicwhip/person/26008",
+      "role": "Substitute Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/341/Member/16211",
       "organization_id": "scottish-parliament-committee-341",
       "person_id": "uk.org.publicwhip/person/26008",
@@ -4254,7 +4333,7 @@
       "id": "parliament.scot/Committee/329/Member/20957",
       "organization_id": "scottish-parliament-committee-329",
       "person_id": "uk.org.publicwhip/person/26816",
-      "role": "Substitute Member",
+      "role": "Member",
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
@@ -4329,6 +4408,7 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/343/Member/21004",
       "organization_id": "scottish-parliament-committee-343",
       "person_id": "uk.org.publicwhip/person/26822",
@@ -4336,6 +4416,7 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/332/Member/21008",
       "organization_id": "scottish-parliament-committee-332",
       "person_id": "uk.org.publicwhip/person/26823",
@@ -4399,6 +4480,14 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "id": "parliament.scot/Committee/331/Member/20986",
+      "organization_id": "scottish-parliament-committee-331",
+      "person_id": "uk.org.publicwhip/person/26828",
+      "role": "Substitute Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/332/Member/20986",
       "organization_id": "scottish-parliament-committee-332",
       "person_id": "uk.org.publicwhip/person/26828",
@@ -4409,7 +4498,7 @@
       "id": "parliament.scot/Committee/338/Member/20986",
       "organization_id": "scottish-parliament-committee-338",
       "person_id": "uk.org.publicwhip/person/26828",
-      "role": "Substitute Member",
+      "role": "Member",
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
@@ -4420,6 +4509,7 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/340/Member/20988",
       "organization_id": "scottish-parliament-committee-340",
       "person_id": "uk.org.publicwhip/person/26829",
@@ -4441,6 +4531,7 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/336/Member/20997",
       "organization_id": "scottish-parliament-committee-336",
       "person_id": "uk.org.publicwhip/person/26831",
@@ -4455,6 +4546,7 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/331/Member/21002",
       "organization_id": "scottish-parliament-committee-331",
       "person_id": "uk.org.publicwhip/person/26832",
@@ -4462,8 +4554,16 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/338/Member/21002",
       "organization_id": "scottish-parliament-committee-338",
+      "person_id": "uk.org.publicwhip/person/26832",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/343/Member/21002",
+      "organization_id": "scottish-parliament-committee-343",
       "person_id": "uk.org.publicwhip/person/26832",
       "role": "Member",
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
@@ -4472,7 +4572,7 @@
       "id": "parliament.scot/Committee/334/Member/21011",
       "organization_id": "scottish-parliament-committee-334",
       "person_id": "uk.org.publicwhip/person/26833",
-      "role": "Member",
+      "role": "Substitute Member",
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
@@ -4487,6 +4587,20 @@
       "organization_id": "scottish-parliament-committee-333",
       "person_id": "uk.org.publicwhip/person/26834",
       "role": "Substitute Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/340/Member/21010",
+      "organization_id": "scottish-parliament-committee-340",
+      "person_id": "uk.org.publicwhip/person/26834",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/342/Member/21010",
+      "organization_id": "scottish-parliament-committee-342",
+      "person_id": "uk.org.publicwhip/person/26834",
+      "role": "Member",
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
@@ -4528,14 +4642,14 @@
       "id": "parliament.scot/Committee/336/Member/20981",
       "organization_id": "scottish-parliament-committee-336",
       "person_id": "uk.org.publicwhip/person/26839",
-      "role": "Substitute Member",
+      "role": "Member",
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
       "id": "parliament.scot/Committee/342/Member/20981",
       "organization_id": "scottish-parliament-committee-342",
       "person_id": "uk.org.publicwhip/person/26839",
-      "role": "Member",
+      "role": "Substitute Member",
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
@@ -4546,8 +4660,16 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/334/Member/20980",
       "organization_id": "scottish-parliament-committee-334",
+      "person_id": "uk.org.publicwhip/person/26840",
+      "role": "Substitute Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/343/Member/20980",
+      "organization_id": "scottish-parliament-committee-343",
       "person_id": "uk.org.publicwhip/person/26840",
       "role": "Substitute Member",
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
@@ -4581,6 +4703,7 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/330/Member/21000",
       "organization_id": "scottish-parliament-committee-330",
       "person_id": "uk.org.publicwhip/person/26843",
@@ -4588,6 +4711,21 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "id": "parliament.scot/Committee/338/Member/21000",
+      "organization_id": "scottish-parliament-committee-338",
+      "person_id": "uk.org.publicwhip/person/26843",
+      "role": "Substitute Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/332/Member/20994",
+      "organization_id": "scottish-parliament-committee-332",
+      "person_id": "uk.org.publicwhip/person/26844",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/340/Member/20994",
       "organization_id": "scottish-parliament-committee-340",
       "person_id": "uk.org.publicwhip/person/26844",
@@ -4619,14 +4757,14 @@
       "id": "parliament.scot/Committee/334/Member/20993",
       "organization_id": "scottish-parliament-committee-334",
       "person_id": "uk.org.publicwhip/person/26846",
-      "role": "Member",
+      "role": "Substitute Member",
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
       "id": "parliament.scot/Committee/338/Member/20993",
       "organization_id": "scottish-parliament-committee-338",
       "person_id": "uk.org.publicwhip/person/26846",
-      "role": "Substitute Member",
+      "role": "Member",
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
@@ -4637,6 +4775,7 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "end_date": "2026-11-05",
       "id": "parliament.scot/Committee/343/Member/20992",
       "organization_id": "scottish-parliament-committee-343",
       "person_id": "uk.org.publicwhip/person/26847",
@@ -4683,6 +4822,20 @@
       "organization_id": "scottish-parliament-committee-342",
       "person_id": "uk.org.publicwhip/person/26850",
       "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/334/Member/21006",
+      "organization_id": "scottish-parliament-committee-334",
+      "person_id": "uk.org.publicwhip/person/26852",
+      "role": "Member",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/336/Member/21006",
+      "organization_id": "scottish-parliament-committee-336",
+      "person_id": "uk.org.publicwhip/person/26852",
+      "role": "Substitute Member",
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
