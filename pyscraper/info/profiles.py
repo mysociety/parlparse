@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from pathlib import Path
 from typing import Optional
 
@@ -17,6 +19,8 @@ class OfficialProfile(PersonInfo):
 
 ProfileCollection = InfoCollection[OfficialProfile]
 
+PROFILES_PATH = Path("members", "official-profiles.xml")
+
 senedd_format_en = "https://senedd.wales/people/{their_id}"
 senedd_format_cy = "https://senedd.cymru/pobl/{their_id}"
 parl_format = "https://members.parliament.uk/member/{their_id}/career"
@@ -26,6 +30,12 @@ mla_format = (
 
 
 def get_official_profile_urls():
+    """
+    Build official profile URLs for everyone in people.json.
+
+    The Scottish Parliament websites API only lists current members, so the
+    existing file is used as a fallback for Scottish URLs.
+    """
     popolo = Popolo.from_path(Path("members", "people.json"))
 
     SCOT_WEBSITE_API = "https://data.parliament.scot/api/websites"
@@ -36,6 +46,14 @@ def get_official_profile_urls():
         for d in data
         if d["WebSiteTypeID"] == 1 and d["WebURL"]
     }
+    # API only lists current MSPs, so fall back to URLs we've seen before
+    previous_scot_urls: dict[str, AnyHttpUrl] = {}
+    if PROFILES_PATH.exists():
+        previous_scot_urls = {
+            profile.person_id: profile.profile_url_scot_parl
+            for profile in ProfileCollection.from_xml_path(PROFILES_PATH)
+            if profile.profile_url_scot_parl
+        }
 
     collection = ProfileCollection()
 
@@ -57,7 +75,11 @@ def get_official_profile_urls():
                 )
                 has_added = True
             if ident.scheme == IdentifierScheme.SCOTPARL:
-                if url := scot_person_to_url.get(int(ident.identifier)):
+                # check if we have an older entry if not present in the new API
+                if url := (
+                    scot_person_to_url.get(int(ident.identifier))
+                    or previous_scot_urls.get(p.id)
+                ):
                     profile.profile_url_scot_parl = url
                     has_added = True
             if ident.scheme == IdentifierScheme.NI_ASSEMBLY:
@@ -68,7 +90,7 @@ def get_official_profile_urls():
         if has_added:
             collection.append(profile)
 
-    collection.to_xml_path(Path("members", "official-profiles.xml"))
+    collection.to_xml_path(PROFILES_PATH)
 
 
 if __name__ == "__main__":
