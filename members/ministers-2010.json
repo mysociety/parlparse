@@ -19821,7 +19821,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/10303",
       "organization_id": "national-security-strategy-joint-committee",
-      "start_date": "2025-01-30"
+      "start_date": "2025-01-30",
+      "end_date": "2026-10-20"
     },
     {
       "id": "uk.parliament.data/Member/494/Committee/230",
@@ -112842,6 +112843,13 @@
       "end_date": "2025-06-25"
     },
     {
+      "id": "uk.parliament.data/Member/4005/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/24945",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
+    },
+    {
       "id": "uk.parliament.data/Member/3923/Committee/203",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/24946",
@@ -151150,6 +151158,13 @@
       "start_date": "2026-10-22"
     },
     {
+      "id": "uk.parliament.data/Member/4798/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25750",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
+    },
+    {
       "id": "uk.parliament.data/Member/4798/GovernmentPost/540",
       "source": "datadotparl/governmentpost",
       "role": "The Parliamentary Under-Secretary of State for Justice",
@@ -151403,6 +151418,13 @@
       "organization_id": "liaison-subcommittee-on-core-tasks-of-select-committees",
       "start_date": "2026-06-23",
       "end_date": "2026-07-21"
+    },
+    {
+      "id": "uk.parliament.data/Member/4870/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25759",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
     },
     {
       "id": "uk.parliament.data/Member/4870/Committee/93",
@@ -154330,6 +154352,13 @@
       "person_id": "uk.org.publicwhip/person/25813",
       "organization_id": "foreign-affairs-committee",
       "start_date": "2025-10-27"
+    },
+    {
+      "id": "uk.parliament.data/Member/4788/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25813",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
     },
     {
       "id": "uk.parliament.data/Member/4788/GovernmentPost/1133",
@@ -162597,7 +162626,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/25908",
       "organization_id": "environmental-audit-committee",
-      "start_date": "2024-10-28"
+      "start_date": "2024-10-28",
+      "end_date": "2026-11-02"
     },
     {
       "id": "uk.parliament.data/Member/4864/Committee/627",
@@ -162630,6 +162660,13 @@
       "organization_id": "great-british-energy-bill-committee",
       "start_date": "2024-09-11",
       "end_date": "2024-10-15"
+    },
+    {
+      "id": "uk.parliament.data/Member/4864/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25908",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
     },
     {
       "id": "uk.parliament.data/Member/4864/OppositionPost/1616",
@@ -165456,6 +165493,13 @@
       "start_date": "2026-10-15"
     },
     {
+      "id": "uk.parliament.data/Member/5209/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26027",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
+    },
+    {
       "id": "uk.parliament.data/Member/5209/OppositionPost/1759",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Parliamentary Under Secretary (Business, Innovation, Science and Trade)",
@@ -167891,7 +167935,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26298",
       "organization_id": "delegated-powers-and-regulatory-reform-committee",
-      "start_date": "2024-05-07"
+      "start_date": "2024-05-07",
+      "end_date": "2026-10-27"
     },
     {
       "id": "uk.parliament.data/Member/1471/Committee/32",
@@ -168331,6 +168376,13 @@
       "person_id": "uk.org.publicwhip/person/26316",
       "organization_id": "social-housing-bill-lords-committee",
       "start_date": "2026-10-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/5050/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26316",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
     },
     {
       "id": "uk.parliament.data/Member/5050/OppositionPost/1676",
@@ -169450,7 +169502,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26350",
       "organization_id": "social-housing-bill-lords-committee",
-      "start_date": "2026-10-22"
+      "start_date": "2026-10-22",
+      "end_date": "2026-10-25"
     },
     {
       "id": "uk.parliament.data/Member/5087/Committee/135",
@@ -172148,6 +172201,13 @@
       "end_date": "2025-02-11"
     },
     {
+      "id": "uk.parliament.data/Member/5270/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26431",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
+    },
+    {
       "id": "uk.parliament.data/Member/5162/Committee/78",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26432",
@@ -172584,6 +172644,13 @@
       "start_date": "2026-01-21"
     },
     {
+      "id": "uk.parliament.data/Member/5195/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26447",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
+    },
+    {
       "id": "uk.parliament.data/Member/5080/Committee/17",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26448",
@@ -172723,6 +172790,13 @@
       "organization_id": "modernisation-committee",
       "start_date": "2024-09-09",
       "end_date": "2025-12-08"
+    },
+    {
+      "id": "uk.parliament.data/Member/5088/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26452",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
     },
     {
       "id": "uk.parliament.data/Member/5088/GovernmentPost/1206",
@@ -173174,6 +173248,13 @@
       "start_date": "2026-10-26"
     },
     {
+      "id": "uk.parliament.data/Member/5081/Committee/153",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26468",
+      "organization_id": "transport-committee",
+      "start_date": "2026-11-02"
+    },
+    {
       "id": "uk.parliament.data/Member/5081/Committee/2",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26468",
@@ -173203,6 +173284,13 @@
       "organization_id": "representation-of-the-people-bill-committee",
       "start_date": "2026-03-11",
       "end_date": "2026-04-16"
+    },
+    {
+      "id": "uk.parliament.data/Member/5194/Committee/849",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26469",
+      "organization_id": "social-housing-bill-lords-committee",
+      "start_date": "2026-10-25"
     },
     {
       "id": "uk.parliament.data/Member/5194/Committee/852",
@@ -174501,6 +174589,13 @@
       "start_date": "2026-10-15"
     },
     {
+      "id": "uk.parliament.data/Member/5302/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26513",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
+    },
+    {
       "id": "uk.parliament.data/Member/5302/Committee/98",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26513",
@@ -174616,7 +174711,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26517",
       "organization_id": "transport-committee",
-      "start_date": "2024-10-28"
+      "start_date": "2024-10-28",
+      "end_date": "2026-11-02"
     },
     {
       "id": "uk.parliament.data/Member/5234/Committee/747",
@@ -175006,6 +175102,13 @@
       "person_id": "uk.org.publicwhip/person/26531",
       "organization_id": "social-housing-bill-lords-committee",
       "start_date": "2026-10-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/5250/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26531",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
     },
     {
       "id": "uk.parliament.data/Member/5250/OppositionPost/1697",
@@ -175594,6 +175697,13 @@
       "start_date": "2026-10-22"
     },
     {
+      "id": "uk.parliament.data/Member/5257/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26546",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
+    },
+    {
       "id": "uk.parliament.data/Member/5257/GovernmentPost/346",
       "source": "datadotparl/governmentpost",
       "role": "The Economic Secretary to the Treasury",
@@ -175897,6 +176007,13 @@
       "organization_id": "finance-no-2-bill-committee",
       "start_date": "2026-01-15",
       "end_date": "2026-02-03"
+    },
+    {
+      "id": "uk.parliament.data/Member/5328/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26552",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
     },
     {
       "id": "uk.parliament.data/Member/5241/Committee/162",
@@ -177102,6 +177219,13 @@
       "end_date": "2025-05-15"
     },
     {
+      "id": "uk.parliament.data/Member/5239/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26585",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
+    },
+    {
       "id": "uk.parliament.data/Member/5239/OppositionPost/1689",
       "source": "datadotparl/oppositionpost",
       "role": "Liberal Democrat Spokesperson (Business)",
@@ -177166,6 +177290,13 @@
       "organization_id": "house-of-commons",
       "start_date": "2025-09-06",
       "end_date": "2026-06-12"
+    },
+    {
+      "id": "uk.parliament.data/Member/5293/Committee/62",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26587",
+      "organization_id": "environmental-audit-committee",
+      "start_date": "2026-11-02"
     },
     {
       "id": "uk.parliament.data/Member/5293/Committee/744",
@@ -177430,6 +177561,13 @@
       "organization_id": "public-office-accountability-bill-committee",
       "start_date": "2025-11-12",
       "end_date": "2025-12-04"
+    },
+    {
+      "id": "uk.parliament.data/Member/5211/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26594",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
     },
     {
       "id": "uk.parliament.data/Member/5333/Committee/158",
@@ -179411,6 +179549,13 @@
       "person_id": "uk.org.publicwhip/person/26887",
       "organization_id": "social-housing-bill-lords-committee",
       "start_date": "2026-10-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/5484/Committee/856",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26887",
+      "organization_id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "start_date": "2026-11-04"
     }
   ],
   "organizations": [
@@ -179561,6 +179706,10 @@
     {
       "id": "building-safety-bill-committee",
       "name": "Building Safety Bill Committee"
+    },
+    {
+      "id": "building-safety-remediation-of-unsafe-cladding-etc-bill-committee",
+      "name": "Building Safety (Remediation of Unsafe Cladding etc) Bill Committee"
     },
     {
       "id": "building-societies-act-1986-amendment-bill-committee",
