@@ -476,6 +476,12 @@
       "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210781&cultureInfo=en-GB"
     },
     {
+      "id": "senedd.wales/Committee/210779/Member/12142",
+      "organization_id": "senedd-committee-210779",
+      "person_id": "uk.org.publicwhip/person/26735",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210779&cultureInfo=en-GB"
+    },
+    {
       "end_date": "2026-10-07",
       "id": "senedd.wales/Committee/210781/Member/12142",
       "organization_id": "senedd-committee-210781",
@@ -483,6 +489,7 @@
       "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210781&cultureInfo=en-GB"
     },
     {
+      "end_date": "2026-11-10",
       "id": "senedd.wales/Committee/210782/Member/12142",
       "organization_id": "senedd-committee-210782",
       "person_id": "uk.org.publicwhip/person/26735",
@@ -1053,6 +1060,7 @@
       "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210780&cultureInfo=en-GB"
     },
     {
+      "end_date": "2026-11-10",
       "id": "senedd.wales/Committee/210779/Member/12148",
       "organization_id": "senedd-committee-210779",
       "person_id": "uk.org.publicwhip/person/26787",
@@ -1061,6 +1069,12 @@
     {
       "end_date": "2026-10-07",
       "id": "senedd.wales/Committee/210782/Member/12148",
+      "organization_id": "senedd-committee-210782",
+      "person_id": "uk.org.publicwhip/person/26787",
+      "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210782&cultureInfo=en-GB"
+    },
+    {
+      "id": "senedd.wales/Committee/210782/Member/12148/2",
       "organization_id": "senedd-committee-210782",
       "person_id": "uk.org.publicwhip/person/26787",
       "source": "https://senedd.wales/Umbraco/Api/Committee/DownloadCommitteeMembersCsv?committeeId=210782&cultureInfo=en-GB"

@@ -123340,12 +123340,21 @@
       "start_date": "2025-10-15"
     },
     {
+      "end_date": "2026-11-11",
       "id": "uk.parliament.data/Member/5083/OppositionPost/1248",
       "organization_id": "house-of-commons",
       "person_id": "uk.org.publicwhip/person/26371",
       "role": "Liberal Democrat Shadow Leader of the House of Commons",
       "source": "datadotparl/oppositionpost",
       "start_date": "2025-10-01"
+    },
+    {
+      "id": "uk.parliament.data/Member/5083/OppositionPost/1746",
+      "organization_id": "house-of-commons",
+      "person_id": "uk.org.publicwhip/person/26371",
+      "role": "Liberal Democrat Spokesperson (Chief Secretary to the Treasury)",
+      "source": "datadotparl/oppositionpost",
+      "start_date": "2026-11-11"
     },
     {
       "end_date": "2025-11-13",
@@ -123948,6 +123957,14 @@
       "person_id": "uk.org.publicwhip/person/26388",
       "source": "datadotparl/committee",
       "start_date": "2026-02-09"
+    },
+    {
+      "id": "uk.parliament.data/Member/5138/OppositionPost/1763",
+      "organization_id": "house-of-commons",
+      "person_id": "uk.org.publicwhip/person/26388",
+      "role": "Liberal Democrat Spokesperson (Veterans and Service Personnel)",
+      "source": "datadotparl/oppositionpost",
+      "start_date": "2026-11-11"
     },
     {
       "end_date": "2025-10-28",
@@ -129538,6 +129555,14 @@
       "start_date": "2025-10-01"
     },
     {
+      "id": "uk.parliament.data/Member/5321/OppositionPost/1743",
+      "organization_id": "house-of-commons",
+      "person_id": "uk.org.publicwhip/person/26570",
+      "role": "Liberal Democrat Spokesperson (Immigration and Asylum)",
+      "source": "datadotparl/oppositionpost",
+      "start_date": "2026-11-11"
+    },
+    {
       "id": "uk.parliament.data/Member/5324/Committee/102",
       "organization_id": "justice-committee",
       "person_id": "uk.org.publicwhip/person/26571",
@@ -130132,6 +130157,14 @@
       "person_id": "uk.org.publicwhip/person/26584",
       "source": "datadotparl/committee",
       "start_date": "2026-10-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/5310/OppositionPost/1248",
+      "organization_id": "house-of-commons",
+      "person_id": "uk.org.publicwhip/person/26584",
+      "role": "Liberal Democrat Shadow Leader of the House of Commons",
+      "source": "datadotparl/oppositionpost",
+      "start_date": "2026-11-11"
     },
     {
       "id": "uk.parliament.data/Member/5239/Committee/62",
