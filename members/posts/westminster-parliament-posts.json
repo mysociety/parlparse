@@ -15094,6 +15094,7 @@
       "start_date": "2024-07-30"
     },
     {
+      "end_date": "2026-11-11",
       "id": "uk.parliament.data/Member/429/Committee/111",
       "organization_id": "national-security-strategy-joint-committee",
       "person_id": "uk.org.publicwhip/person/10610",
@@ -57622,6 +57623,13 @@
       "start_date": "2024-12-04"
     },
     {
+      "id": "uk.parliament.data/Member/4124/Committee/111",
+      "organization_id": "national-security-strategy-joint-committee",
+      "person_id": "uk.org.publicwhip/person/24807",
+      "source": "datadotparl/committee",
+      "start_date": "2026-11-11"
+    },
+    {
       "end_date": "2020-05-11",
       "id": "uk.parliament.data/Member/4124/Committee/135",
       "organization_id": "science-and-technology-committee-commons",
@@ -58526,6 +58534,7 @@
       "start_date": "2020-05-20"
     },
     {
+      "end_date": "2026-11-11",
       "id": "uk.parliament.data/Member/4125/Committee/127",
       "organization_id": "public-accounts-committee",
       "person_id": "uk.org.publicwhip/person/24818",
@@ -87312,6 +87321,13 @@
       "role": "Shadow Secretary of State for International Development",
       "source": "datadotparl/oppositionpost",
       "start_date": "2016-06-27"
+    },
+    {
+      "id": "uk.parliament.data/Member/4456/Committee/126",
+      "organization_id": "procedure-committee",
+      "person_id": "uk.org.publicwhip/person/25366",
+      "source": "datadotparl/committee",
+      "start_date": "2026-11-11"
     },
     {
       "id": "uk.parliament.data/Member/4456/Committee/378",
@@ -122872,6 +122888,7 @@
       "start_date": "2026-03-18"
     },
     {
+      "end_date": "2026-11-11",
       "id": "uk.parliament.data/Member/5109/Committee/120",
       "organization_id": "northern-ireland-affairs-committee",
       "person_id": "uk.org.publicwhip/person/26357",
@@ -126353,6 +126370,13 @@
       "start_date": "2026-10-15"
     },
     {
+      "id": "uk.parliament.data/Member/5194/Committee/135",
+      "organization_id": "science-and-technology-committee-commons",
+      "person_id": "uk.org.publicwhip/person/26469",
+      "source": "datadotparl/committee",
+      "start_date": "2026-11-11"
+    },
+    {
       "end_date": "2026-04-16",
       "id": "uk.parliament.data/Member/5194/Committee/835",
       "organization_id": "representation-of-the-people-bill-committee",
@@ -128888,6 +128912,7 @@
       "start_date": "2025-02-12"
     },
     {
+      "end_date": "2026-11-11",
       "id": "uk.parliament.data/Member/5242/Committee/126",
       "organization_id": "procedure-committee",
       "person_id": "uk.org.publicwhip/person/26551",
@@ -128956,6 +128981,13 @@
       "role": "Assistant Whip",
       "source": "datadotparl/governmentpost",
       "start_date": "2026-07-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/5328/Committee/120",
+      "organization_id": "northern-ireland-affairs-committee",
+      "person_id": "uk.org.publicwhip/person/26552",
+      "source": "datadotparl/committee",
+      "start_date": "2026-11-11"
     },
     {
       "end_date": "2026-06-22",
@@ -129081,6 +129113,7 @@
       "start_date": "2026-08-31"
     },
     {
+      "end_date": "2026-11-11",
       "id": "uk.parliament.data/Member/5315/Committee/164",
       "organization_id": "work-and-pensions-committee",
       "person_id": "uk.org.publicwhip/person/26554",
@@ -130599,6 +130632,13 @@
       "start_date": "2024-10-28"
     },
     {
+      "id": "uk.parliament.data/Member/5235/Committee/127",
+      "organization_id": "public-accounts-committee",
+      "person_id": "uk.org.publicwhip/person/26599",
+      "source": "datadotparl/committee",
+      "start_date": "2026-11-11"
+    },
+    {
       "id": "uk.parliament.data/Member/5235/Committee/826",
       "organization_id": "select-committee-on-the-armed-forces-bill",
       "person_id": "uk.org.publicwhip/person/26599",
@@ -131145,6 +131185,7 @@
       "start_date": "2026-10-14"
     },
     {
+      "end_date": "2026-11-11",
       "id": "uk.parliament.data/Member/5334/Committee/135",
       "organization_id": "science-and-technology-committee-commons",
       "person_id": "uk.org.publicwhip/person/26621",
@@ -131560,6 +131601,13 @@
       "person_id": "uk.org.publicwhip/person/26632",
       "source": "datadotparl/committee",
       "start_date": "2025-07-15"
+    },
+    {
+      "id": "uk.parliament.data/Member/5359/Committee/164",
+      "organization_id": "work-and-pensions-committee",
+      "person_id": "uk.org.publicwhip/person/26633",
+      "source": "datadotparl/committee",
+      "start_date": "2026-11-11"
     },
     {
       "id": "uk.parliament.data/Member/5359/Committee/825",
