@@ -33839,7 +33839,6 @@
       "start_date": "2020-10-15"
     },
     {
-      "end_date": "2026-09-16",
       "id": "uk.parliament.data/Member/924/OppositionPost/1679",
       "organization_id": "house-of-commons",
       "person_id": "uk.org.publicwhip/person/13042",
@@ -87580,6 +87579,13 @@
       "start_date": "2021-02-22"
     },
     {
+      "id": "uk.parliament.data/Member/4396/Committee/326",
+      "organization_id": "petitions-committee",
+      "person_id": "uk.org.publicwhip/person/25368",
+      "source": "datadotparl/committee",
+      "start_date": "2026-11-16"
+    },
+    {
       "end_date": "2021-12-09",
       "id": "uk.parliament.data/Member/4396/Committee/559",
       "organization_id": "leasehold-reform-ground-rent-bill-hl-committee",
@@ -109879,6 +109885,7 @@
       "start_date": "2020-06-08"
     },
     {
+      "end_date": "2026-11-16",
       "id": "uk.parliament.data/Member/4753/Committee/126",
       "organization_id": "procedure-committee",
       "person_id": "uk.org.publicwhip/person/25833",
@@ -118138,6 +118145,14 @@
       "start_date": "2026-07-22"
     },
     {
+      "id": "uk.parliament.data/Member/4888/OppositionPost/1765",
+      "organization_id": "house-of-commons",
+      "person_id": "uk.org.publicwhip/person/25955",
+      "role": "Shadow Minister (Trade)",
+      "source": "datadotparl/oppositionpost",
+      "start_date": "2026-09-17"
+    },
+    {
       "id": "uk.parliament.data/Member/4878/ParliamentaryPost/1099",
       "organization_id": "house-of-commons",
       "person_id": "uk.org.publicwhip/person/25958",
@@ -118209,7 +118224,6 @@
       "start_date": "2020-12-22"
     },
     {
-      "end_date": "2026-07-20",
       "id": "uk.parliament.data/Member/4901/OppositionPost/1708",
       "organization_id": "house-of-commons",
       "person_id": "uk.org.publicwhip/person/25969",
@@ -119565,6 +119579,14 @@
       "start_date": "2026-06-15"
     },
     {
+      "id": "uk.parliament.data/Member/4939/OppositionPost/1764",
+      "organization_id": "house-of-commons",
+      "person_id": "uk.org.publicwhip/person/26062",
+      "role": "Shadow Minister (Cabinet Office) (AI and Cyber)",
+      "source": "datadotparl/oppositionpost",
+      "start_date": "2026-09-17"
+    },
+    {
       "id": "uk.parliament.data/Member/5125/Committee/120",
       "organization_id": "northern-ireland-affairs-committee",
       "person_id": "uk.org.publicwhip/person/26071",
@@ -119753,6 +119775,14 @@
       "role": "Shadow Minister (Science, Innovation and Technology)",
       "source": "datadotparl/oppositionpost",
       "start_date": "2024-09-01"
+    },
+    {
+      "id": "uk.parliament.data/Member/4948/OppositionPost/1753",
+      "organization_id": "house-of-commons",
+      "person_id": "uk.org.publicwhip/person/26093",
+      "role": "Shadow Minister (Digital, Culture, Media and Sport)",
+      "source": "datadotparl/oppositionpost",
+      "start_date": "2026-09-17"
     },
     {
       "id": "uk.parliament.data/Member/4949/Committee/448",
@@ -120264,6 +120294,7 @@
       "start_date": "2024-03-11"
     },
     {
+      "end_date": "2026-02-23",
       "id": "uk.parliament.data/Member/4976/Committee/301",
       "organization_id": "speakers-advisory-committee-on-works-of-art",
       "person_id": "uk.org.publicwhip/person/26118",
@@ -121333,6 +121364,7 @@
       "start_date": "2024-10-14"
     },
     {
+      "end_date": "2026-11-16",
       "id": "uk.parliament.data/Member/5028/Committee/326",
       "organization_id": "petitions-committee",
       "person_id": "uk.org.publicwhip/person/26309",
@@ -122367,6 +122399,7 @@
       "start_date": "2024-10-21"
     },
     {
+      "end_date": "2026-06-17",
       "id": "uk.parliament.data/Member/5054/Committee/301",
       "organization_id": "speakers-advisory-committee-on-works-of-art",
       "person_id": "uk.org.publicwhip/person/26340",
@@ -124725,6 +124758,7 @@
       "start_date": "2026-05-18"
     },
     {
+      "end_date": "2026-11-16",
       "id": "uk.parliament.data/Member/5146/Committee/127",
       "organization_id": "public-accounts-committee",
       "person_id": "uk.org.publicwhip/person/26408",
@@ -125958,6 +125992,13 @@
       "person_id": "uk.org.publicwhip/person/26454",
       "source": "datadotparl/committee",
       "start_date": "2025-01-29"
+    },
+    {
+      "id": "uk.parliament.data/Member/5137/Committee/126",
+      "organization_id": "procedure-committee",
+      "person_id": "uk.org.publicwhip/person/26455",
+      "source": "datadotparl/committee",
+      "start_date": "2026-11-16"
     },
     {
       "id": "uk.parliament.data/Member/5137/Committee/136",
@@ -128639,6 +128680,13 @@
       "start_date": "2024-09-04"
     },
     {
+      "id": "uk.parliament.data/Member/5257/Committee/127",
+      "organization_id": "public-accounts-committee",
+      "person_id": "uk.org.publicwhip/person/26546",
+      "source": "datadotparl/committee",
+      "start_date": "2026-11-16"
+    },
+    {
       "end_date": "2025-06-02",
       "id": "uk.parliament.data/Member/5257/Committee/148",
       "organization_id": "statutory-instruments-joint-committee",
@@ -129443,6 +129491,7 @@
       "start_date": "2025-01-15"
     },
     {
+      "end_date": "2026-11-16",
       "id": "uk.parliament.data/Member/5210/Committee/207",
       "organization_id": "public-accounts-commission",
       "person_id": "uk.org.publicwhip/person/26566",
@@ -130637,6 +130686,13 @@
       "person_id": "uk.org.publicwhip/person/26599",
       "source": "datadotparl/committee",
       "start_date": "2026-11-11"
+    },
+    {
+      "id": "uk.parliament.data/Member/5235/Committee/207",
+      "organization_id": "public-accounts-commission",
+      "person_id": "uk.org.publicwhip/person/26599",
+      "source": "datadotparl/committee",
+      "start_date": "2026-11-16"
     },
     {
       "id": "uk.parliament.data/Member/5235/Committee/826",

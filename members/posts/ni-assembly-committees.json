@@ -3421,6 +3421,13 @@
       "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
     },
     {
+      "id": "niassembly.gov.uk/Committee/118/Member/8541",
+      "organization_id": "ni-assembly-committee-118",
+      "person_id": "uk.org.publicwhip/person/26640",
+      "role": "Committee Member",
+      "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
+    },
+    {
       "end_date": "2026-09-20",
       "id": "niassembly.gov.uk/Committee/183/Member/8541",
       "organization_id": "ni-assembly-committee-183",
@@ -3436,6 +3443,7 @@
       "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
     },
     {
+      "end_date": "2026-11-16",
       "id": "niassembly.gov.uk/Committee/7/Member/8541",
       "organization_id": "ni-assembly-committee-7",
       "person_id": "uk.org.publicwhip/person/26640",
@@ -3530,8 +3538,16 @@
       "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
     },
     {
+      "end_date": "2026-11-16",
       "id": "niassembly.gov.uk/Committee/118/Member/10076",
       "organization_id": "ni-assembly-committee-118",
+      "person_id": "uk.org.publicwhip/person/26730",
+      "role": "Committee Member",
+      "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
+    },
+    {
+      "id": "niassembly.gov.uk/Committee/7/Member/10076",
+      "organization_id": "ni-assembly-committee-7",
       "person_id": "uk.org.publicwhip/person/26730",
       "role": "Committee Member",
       "source": "https://data.niassembly.gov.uk/members.asmx/GetAllMemberRoles_JSON"
