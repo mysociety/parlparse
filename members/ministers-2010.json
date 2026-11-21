@@ -161219,7 +161219,8 @@
       "role": "Opposition Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/25892",
       "organization_id": "house-of-commons",
-      "start_date": "2024-07-19"
+      "start_date": "2024-07-19",
+      "end_date": "2026-08-31"
     },
     {
       "id": "uk.parliament.data/Member/4872/OppositionPost/1676",
@@ -161237,6 +161238,14 @@
       "person_id": "uk.org.publicwhip/person/25892",
       "organization_id": "house-of-commons",
       "start_date": "2024-11-06"
+    },
+    {
+      "id": "uk.parliament.data/Member/4872/OppositionPost/1766",
+      "source": "datadotparl/oppositionpost",
+      "role": "Opposition Senior Whip (Commons)",
+      "person_id": "uk.org.publicwhip/person/25892",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-08-31"
     },
     {
       "id": "uk.parliament.data/Member/4813/Committee/126",
@@ -162531,7 +162540,8 @@
       "role": "Opposition Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/25906",
       "organization_id": "house-of-commons",
-      "start_date": "2024-11-20"
+      "start_date": "2024-11-20",
+      "end_date": "2026-08-31"
     },
     {
       "id": "uk.parliament.data/Member/4805/OppositionPost/1671",
@@ -162558,6 +162568,14 @@
       "organization_id": "house-of-commons",
       "start_date": "2024-11-20",
       "end_date": "2026-08-31"
+    },
+    {
+      "id": "uk.parliament.data/Member/4805/OppositionPost/1766",
+      "source": "datadotparl/oppositionpost",
+      "role": "Opposition Senior Whip (Commons)",
+      "person_id": "uk.org.publicwhip/person/25906",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-08-31"
     },
     {
       "id": "uk.parliament.data/Member/4805/OppositionPost/884",
@@ -165549,6 +165567,14 @@
       "start_date": "2026-11-04"
     },
     {
+      "id": "uk.parliament.data/Member/5209/OppositionPost/10",
+      "source": "datadotparl/oppositionpost",
+      "role": "Opposition Whip (Commons)",
+      "person_id": "uk.org.publicwhip/person/26027",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-08-31"
+    },
+    {
       "id": "uk.parliament.data/Member/5209/OppositionPost/1759",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Parliamentary Under Secretary (Business, Innovation, Science and Trade)",
@@ -168459,17 +168485,17 @@
       "start_date": "2026-11-04"
     },
     {
-      "id": "uk.parliament.data/Member/5050/OppositionPost/1676",
+      "id": "uk.parliament.data/Member/5050/OppositionPost/10",
       "source": "datadotparl/oppositionpost",
-      "role": "Shadow Parliamentary Under Secretary (Housing, Communities and Local Government)",
+      "role": "Opposition Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/26316",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
     },
     {
-      "id": "uk.parliament.data/Member/5050/OppositionPost/5",
+      "id": "uk.parliament.data/Member/5050/OppositionPost/1676",
       "source": "datadotparl/oppositionpost",
-      "role": "Opposition Assistant Whip (Commons)",
+      "role": "Shadow Parliamentary Under Secretary (Housing, Communities and Local Government)",
       "person_id": "uk.org.publicwhip/person/26316",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
@@ -169720,17 +169746,17 @@
       "start_date": "2026-11-19"
     },
     {
-      "id": "uk.parliament.data/Member/5100/OppositionPost/1710",
+      "id": "uk.parliament.data/Member/5100/OppositionPost/10",
       "source": "datadotparl/oppositionpost",
-      "role": "Shadow Parliamentary Under Secretary (Home Office)",
+      "role": "Opposition Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/26355",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
     },
     {
-      "id": "uk.parliament.data/Member/5100/OppositionPost/5",
+      "id": "uk.parliament.data/Member/5100/OppositionPost/1710",
       "source": "datadotparl/oppositionpost",
-      "role": "Opposition Assistant Whip (Commons)",
+      "role": "Shadow Parliamentary Under Secretary (Home Office)",
       "person_id": "uk.org.publicwhip/person/26355",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
@@ -170223,7 +170249,8 @@
       "role": "Opposition Assistant Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/26370",
       "organization_id": "house-of-commons",
-      "start_date": "2024-11-18"
+      "start_date": "2024-11-18",
+      "end_date": "2026-08-31"
     },
     {
       "id": "uk.parliament.data/Member/5083/Committee/107",
@@ -173112,6 +173139,14 @@
       "start_date": "2026-10-15"
     },
     {
+      "id": "uk.parliament.data/Member/5169/OppositionPost/10",
+      "source": "datadotparl/oppositionpost",
+      "role": "Opposition Whip (Commons)",
+      "person_id": "uk.org.publicwhip/person/26461",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-08-31"
+    },
+    {
       "id": "uk.parliament.data/Member/5169/OppositionPost/1756",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Parliamentary Under Secretary (Cabinet Office)",
@@ -173123,14 +173158,6 @@
       "id": "uk.parliament.data/Member/5169/OppositionPost/1762",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Parliamentary Under Secretary (Northern Ireland)",
-      "person_id": "uk.org.publicwhip/person/26461",
-      "organization_id": "house-of-commons",
-      "start_date": "2026-08-31"
-    },
-    {
-      "id": "uk.parliament.data/Member/5169/OppositionPost/5",
-      "source": "datadotparl/oppositionpost",
-      "role": "Opposition Assistant Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/26461",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
@@ -174426,17 +174453,17 @@
       "start_date": "2026-09-09"
     },
     {
-      "id": "uk.parliament.data/Member/5255/OppositionPost/1747",
+      "id": "uk.parliament.data/Member/5255/OppositionPost/10",
       "source": "datadotparl/oppositionpost",
-      "role": "Shadow Parliamentary Under Secretary (Work and Pensions)",
+      "role": "Opposition Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/26504",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
     },
     {
-      "id": "uk.parliament.data/Member/5255/OppositionPost/5",
+      "id": "uk.parliament.data/Member/5255/OppositionPost/1747",
       "source": "datadotparl/oppositionpost",
-      "role": "Opposition Assistant Whip (Commons)",
+      "role": "Shadow Parliamentary Under Secretary (Work and Pensions)",
       "person_id": "uk.org.publicwhip/person/26504",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
@@ -174701,12 +174728,21 @@
       "start_date": "2026-10-14"
     },
     {
+      "id": "uk.parliament.data/Member/5301/OppositionPost/10",
+      "source": "datadotparl/oppositionpost",
+      "role": "Opposition Whip (Commons)",
+      "person_id": "uk.org.publicwhip/person/26512",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-08-31"
+    },
+    {
       "id": "uk.parliament.data/Member/5301/OppositionPost/5",
       "source": "datadotparl/oppositionpost",
       "role": "Opposition Assistant Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/26512",
       "organization_id": "house-of-commons",
-      "start_date": "2024-11-18"
+      "start_date": "2024-11-18",
+      "end_date": "2026-08-31"
     },
     {
       "id": "uk.parliament.data/Member/5301/OppositionPost/960",
@@ -175420,17 +175456,17 @@
       "start_date": "2026-10-22"
     },
     {
-      "id": "uk.parliament.data/Member/5203/OppositionPost/1681",
+      "id": "uk.parliament.data/Member/5203/OppositionPost/10",
       "source": "datadotparl/oppositionpost",
-      "role": "Shadow Parliamentary Under Secretary (Transport)",
+      "role": "Opposition Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/26536",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
     },
     {
-      "id": "uk.parliament.data/Member/5203/OppositionPost/5",
+      "id": "uk.parliament.data/Member/5203/OppositionPost/1681",
       "source": "datadotparl/oppositionpost",
-      "role": "Opposition Assistant Whip (Commons)",
+      "role": "Shadow Parliamentary Under Secretary (Transport)",
       "person_id": "uk.org.publicwhip/person/26536",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
@@ -176242,17 +176278,17 @@
       "end_date": "2025-06-24"
     },
     {
-      "id": "uk.parliament.data/Member/5241/OppositionPost/1709",
+      "id": "uk.parliament.data/Member/5241/OppositionPost/10",
       "source": "datadotparl/oppositionpost",
-      "role": "Shadow Parliamentary Under Secretary (Environment, Food and Rural Affairs)",
+      "role": "Opposition Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/26553",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
     },
     {
-      "id": "uk.parliament.data/Member/5241/OppositionPost/5",
+      "id": "uk.parliament.data/Member/5241/OppositionPost/1709",
       "source": "datadotparl/oppositionpost",
-      "role": "Opposition Assistant Whip (Commons)",
+      "role": "Shadow Parliamentary Under Secretary (Environment, Food and Rural Affairs)",
       "person_id": "uk.org.publicwhip/person/26553",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
@@ -176517,17 +176553,17 @@
       "start_date": "2026-01-21"
     },
     {
-      "id": "uk.parliament.data/Member/5186/OppositionPost/1759",
+      "id": "uk.parliament.data/Member/5186/OppositionPost/10",
       "source": "datadotparl/oppositionpost",
-      "role": "Shadow Parliamentary Under Secretary (Business, Innovation, Science and Trade)",
+      "role": "Opposition Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/26561",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
     },
     {
-      "id": "uk.parliament.data/Member/5186/OppositionPost/5",
+      "id": "uk.parliament.data/Member/5186/OppositionPost/1759",
       "source": "datadotparl/oppositionpost",
-      "role": "Opposition Assistant Whip (Commons)",
+      "role": "Shadow Parliamentary Under Secretary (Business, Innovation, Science and Trade)",
       "person_id": "uk.org.publicwhip/person/26561",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
@@ -176908,17 +176944,17 @@
       "start_date": "2026-01-21"
     },
     {
-      "id": "uk.parliament.data/Member/5332/OppositionPost/1711",
+      "id": "uk.parliament.data/Member/5332/OppositionPost/10",
       "source": "datadotparl/oppositionpost",
-      "role": "Shadow Parliamentary Under Secretary (Foreign, Commonwealth and Development Affairs)",
+      "role": "Opposition Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/26573",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
     },
     {
-      "id": "uk.parliament.data/Member/5332/OppositionPost/5",
+      "id": "uk.parliament.data/Member/5332/OppositionPost/1711",
       "source": "datadotparl/oppositionpost",
-      "role": "Opposition Assistant Whip (Commons)",
+      "role": "Shadow Parliamentary Under Secretary (Foreign, Commonwealth and Development Affairs)",
       "person_id": "uk.org.publicwhip/person/26573",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
@@ -177223,17 +177259,17 @@
       "start_date": "2026-10-22"
     },
     {
-      "id": "uk.parliament.data/Member/5303/OppositionPost/1685",
+      "id": "uk.parliament.data/Member/5303/OppositionPost/10",
       "source": "datadotparl/oppositionpost",
-      "role": "Shadow Parliamentary Under Secretary (Education)",
+      "role": "Opposition Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/26579",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
     },
     {
-      "id": "uk.parliament.data/Member/5303/OppositionPost/5",
+      "id": "uk.parliament.data/Member/5303/OppositionPost/1685",
       "source": "datadotparl/oppositionpost",
-      "role": "Opposition Assistant Whip (Commons)",
+      "role": "Shadow Parliamentary Under Secretary (Education)",
       "person_id": "uk.org.publicwhip/person/26579",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
@@ -178678,12 +178714,21 @@
       "start_date": "2026-08-31"
     },
     {
+      "id": "uk.parliament.data/Member/5351/OppositionPost/1768",
+      "source": "datadotparl/oppositionpost",
+      "role": "Shadow Comptroller (HM Household) (Whip, House of Commons",
+      "person_id": "uk.org.publicwhip/person/26626",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-08-31"
+    },
+    {
       "id": "uk.parliament.data/Member/5351/OppositionPost/5",
       "source": "datadotparl/oppositionpost",
       "role": "Opposition Assistant Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/26626",
       "organization_id": "house-of-commons",
-      "start_date": "2024-11-18"
+      "start_date": "2024-11-18",
+      "end_date": "2026-08-31"
     },
     {
       "id": "uk.parliament.data/Member/5336/Committee/111",
@@ -178765,9 +178810,9 @@
       "end_date": "2026-06-29"
     },
     {
-      "id": "uk.parliament.data/Member/5347/OppositionPost/1674",
+      "id": "uk.parliament.data/Member/5347/OppositionPost/10",
       "source": "datadotparl/oppositionpost",
-      "role": "Shadow Parliamentary Under Secretary (Defence)",
+      "role": "Opposition Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/26628",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
@@ -178781,12 +178826,21 @@
       "start_date": "2026-08-31"
     },
     {
+      "id": "uk.parliament.data/Member/5347/OppositionPost/1767",
+      "source": "datadotparl/oppositionpost",
+      "role": "Shadow Minister (Defence) (Security and Resilience)",
+      "person_id": "uk.org.publicwhip/person/26628",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-08-31"
+    },
+    {
       "id": "uk.parliament.data/Member/5347/OppositionPost/5",
       "source": "datadotparl/oppositionpost",
       "role": "Opposition Assistant Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/26628",
       "organization_id": "house-of-commons",
-      "start_date": "2025-06-02"
+      "start_date": "2025-06-02",
+      "end_date": "2026-08-31"
     },
     {
       "id": "uk.parliament.data/Member/5341/Committee/794",
@@ -178952,17 +179006,17 @@
       "start_date": "2026-11-19"
     },
     {
-      "id": "uk.parliament.data/Member/5358/OppositionPost/1547",
+      "id": "uk.parliament.data/Member/5358/OppositionPost/10",
       "source": "datadotparl/oppositionpost",
-      "role": "Shadow Exchequer Secretary (Treasury)",
+      "role": "Opposition Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/26634",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
     },
     {
-      "id": "uk.parliament.data/Member/5358/OppositionPost/5",
+      "id": "uk.parliament.data/Member/5358/OppositionPost/1547",
       "source": "datadotparl/oppositionpost",
-      "role": "Opposition Assistant Whip (Commons)",
+      "role": "Shadow Exchequer Secretary (Treasury)",
       "person_id": "uk.org.publicwhip/person/26634",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"
@@ -178998,6 +179052,14 @@
       "start_date": "2026-02-09"
     },
     {
+      "id": "uk.parliament.data/Member/5355/OppositionPost/10",
+      "source": "datadotparl/oppositionpost",
+      "role": "Opposition Whip (Commons)",
+      "person_id": "uk.org.publicwhip/person/26635",
+      "organization_id": "house-of-commons",
+      "start_date": "2026-08-31"
+    },
+    {
       "id": "uk.parliament.data/Member/5355/OppositionPost/1710",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Parliamentary Under Secretary (Home Office)",
@@ -179009,14 +179071,6 @@
       "id": "uk.parliament.data/Member/5355/OppositionPost/1761",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Parliamentary Under Secretary (Justice)",
-      "person_id": "uk.org.publicwhip/person/26635",
-      "organization_id": "house-of-commons",
-      "start_date": "2026-08-31"
-    },
-    {
-      "id": "uk.parliament.data/Member/5355/OppositionPost/5",
-      "source": "datadotparl/oppositionpost",
-      "role": "Opposition Assistant Whip (Commons)",
       "person_id": "uk.org.publicwhip/person/26635",
       "organization_id": "house-of-commons",
       "start_date": "2026-08-31"

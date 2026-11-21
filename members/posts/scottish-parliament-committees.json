@@ -3251,6 +3251,7 @@
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
+      "end_date": "2026-11-20",
       "id": "parliament.scot/Committee/328/Member/5769",
       "organization_id": "scottish-parliament-committee-328",
       "person_id": "uk.org.publicwhip/person/25510",
@@ -3661,6 +3662,13 @@
       "organization_id": "scottish-parliament-committee-330",
       "person_id": "uk.org.publicwhip/person/25677",
       "role": "Convener",
+      "source": "https://data.parliament.scot/api/personcommitteeroles/json"
+    },
+    {
+      "id": "parliament.scot/Committee/328/Member/16193",
+      "organization_id": "scottish-parliament-committee-328",
+      "person_id": "uk.org.publicwhip/person/25696",
+      "role": "Substitute Member",
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
@@ -4642,7 +4650,7 @@
       "id": "parliament.scot/Committee/336/Member/20981",
       "organization_id": "scottish-parliament-committee-336",
       "person_id": "uk.org.publicwhip/person/26839",
-      "role": "Member",
+      "role": "Deputy Convener",
       "source": "https://data.parliament.scot/api/personcommitteeroles/json"
     },
     {
