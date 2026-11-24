@@ -170271,21 +170271,24 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26371",
       "organization_id": "house-of-commons-commission",
-      "start_date": "2026-01-07"
+      "start_date": "2026-01-07",
+      "end_date": "2026-11-23"
     },
     {
       "id": "uk.parliament.data/Member/5083/Committee/616",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26371",
       "organization_id": "restoration-and-renewal-client-board-committee",
-      "start_date": "2026-01-07"
+      "start_date": "2026-01-07",
+      "end_date": "2026-11-23"
     },
     {
       "id": "uk.parliament.data/Member/5083/Committee/736",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26371",
       "organization_id": "modernisation-committee",
-      "start_date": "2025-10-15"
+      "start_date": "2025-10-15",
+      "end_date": "2026-11-23"
     },
     {
       "id": "uk.parliament.data/Member/5083/Committee/858",
@@ -171355,6 +171358,13 @@
       "organization_id": "justice-committee",
       "start_date": "2024-10-21",
       "end_date": "2025-03-17"
+    },
+    {
+      "id": "uk.parliament.data/Member/5175/Committee/102/1",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26402",
+      "organization_id": "justice-committee",
+      "start_date": "2026-11-23"
     },
     {
       "id": "uk.parliament.data/Member/5175/Committee/2",
@@ -174189,6 +174199,13 @@
       "start_date": "2025-10-01"
     },
     {
+      "id": "uk.parliament.data/Member/5283/Committee/378",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26498",
+      "organization_id": "digital-culture-media-and-sport-committee",
+      "start_date": "2026-11-23"
+    },
+    {
       "id": "uk.parliament.data/Member/5283/OppositionPost/1692",
       "source": "datadotparl/oppositionpost",
       "role": "Liberal Democrat Spokesperson (Care and Carers)",
@@ -175318,7 +175335,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26532",
       "organization_id": "digital-culture-media-and-sport-committee",
-      "start_date": "2025-11-13"
+      "start_date": "2025-11-13",
+      "end_date": "2026-11-23"
     },
     {
       "id": "uk.parliament.data/Member/5354/Committee/62",
@@ -176964,7 +176982,8 @@
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26574",
       "organization_id": "justice-committee",
-      "start_date": "2025-03-17"
+      "start_date": "2025-03-17",
+      "end_date": "2026-11-23"
     },
     {
       "id": "uk.parliament.data/Member/5323/Committee/325",
@@ -177404,6 +177423,27 @@
       "person_id": "uk.org.publicwhip/person/26584",
       "organization_id": "backbench-business-committee",
       "start_date": "2025-11-13"
+    },
+    {
+      "id": "uk.parliament.data/Member/5310/Committee/348",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26584",
+      "organization_id": "house-of-commons-commission",
+      "start_date": "2026-11-23"
+    },
+    {
+      "id": "uk.parliament.data/Member/5310/Committee/616",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26584",
+      "organization_id": "restoration-and-renewal-client-board-committee",
+      "start_date": "2026-11-23"
+    },
+    {
+      "id": "uk.parliament.data/Member/5310/Committee/736",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26584",
+      "organization_id": "modernisation-committee",
+      "start_date": "2026-11-23"
     },
     {
       "id": "uk.parliament.data/Member/5310/Committee/795",
