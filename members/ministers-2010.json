@@ -7631,6 +7631,13 @@
       "end_date": "2019-11-06"
     },
     {
+      "id": "uk.parliament.data/Member/242/Committee/862",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/10103",
+      "organization_id": "national-policy-statement-for-data-centres-committee",
+      "start_date": "2026-11-11"
+    },
+    {
       "id": "uk.parliament.data/Member/242/GovernmentPost/409",
       "source": "datadotparl/governmentpost",
       "role": "Parliamentary Under-Secretary (Department of Environment)",
@@ -40378,6 +40385,13 @@
       "person_id": "uk.org.publicwhip/person/10785",
       "organization_id": "liaison-subcommittee-on-core-tasks-of-select-committees",
       "start_date": "2026-10-20"
+    },
+    {
+      "id": "uk.parliament.data/Member/1442/Committee/862",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/10785",
+      "organization_id": "national-policy-statement-for-data-centres-committee",
+      "start_date": "2026-11-11"
     },
     {
       "id": "uk.parliament.data/Member/1442/Committee/98",
@@ -102762,6 +102776,13 @@
       "end_date": "2023-05-23"
     },
     {
+      "id": "uk.parliament.data/Member/4124/Committee/862",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/24807",
+      "organization_id": "national-policy-statement-for-data-centres-committee",
+      "start_date": "2026-11-11"
+    },
+    {
       "id": "uk.parliament.data/Member/4124/Committee/9",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/24807",
@@ -105754,6 +105775,22 @@
       "person_id": "uk.org.publicwhip/person/24845",
       "organization_id": "liaison-subcommittee-on-core-tasks-of-select-committees",
       "start_date": "2026-10-20"
+    },
+    {
+      "id": "uk.parliament.data/Member/3952/Committee/862",
+      "source": "datadotparl/committee",
+      "role": "Chair",
+      "person_id": "uk.org.publicwhip/person/24845",
+      "organization_id": "national-policy-statement-for-data-centres-committee",
+      "start_date": "2026-11-11"
+    },
+    {
+      "id": "uk.parliament.data/Member/3952/Committee/862/1",
+      "source": "datadotparl/committee",
+      "role": "Chair",
+      "person_id": "uk.org.publicwhip/person/24845",
+      "organization_id": "national-policy-statement-for-data-centres-committee",
+      "start_date": "2026-11-11"
     },
     {
       "id": "uk.parliament.data/Member/3952/OppositionPost/15",
@@ -151079,6 +151116,13 @@
       "start_date": "2026-10-14"
     },
     {
+      "id": "uk.parliament.data/Member/4716/Committee/862",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/25746",
+      "organization_id": "national-policy-statement-for-data-centres-committee",
+      "start_date": "2026-11-11"
+    },
+    {
       "id": "uk.parliament.data/Member/4716/OppositionPost/962",
       "source": "datadotparl/oppositionpost",
       "role": "Shadow Minister (Environment, Food and Rural Affairs)",
@@ -169746,6 +169790,13 @@
       "start_date": "2026-11-19"
     },
     {
+      "id": "uk.parliament.data/Member/5100/Committee/862",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26355",
+      "organization_id": "national-policy-statement-for-data-centres-committee",
+      "start_date": "2026-11-11"
+    },
+    {
       "id": "uk.parliament.data/Member/5100/OppositionPost/10",
       "source": "datadotparl/oppositionpost",
       "role": "Opposition Whip (Commons)",
@@ -170909,6 +170960,13 @@
       "person_id": "uk.org.publicwhip/person/26387",
       "organization_id": "environment-food-and-rural-affairs-committee",
       "start_date": "2024-10-28"
+    },
+    {
+      "id": "uk.parliament.data/Member/5121/Committee/862",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26387",
+      "organization_id": "national-policy-statement-for-data-centres-committee",
+      "start_date": "2026-11-11"
     },
     {
       "id": "uk.parliament.data/Member/5138/Committee/24",
@@ -172540,6 +172598,13 @@
       "end_date": "2025-07-17"
     },
     {
+      "id": "uk.parliament.data/Member/5171/Committee/862",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26436",
+      "organization_id": "national-policy-statement-for-data-centres-committee",
+      "start_date": "2026-11-11"
+    },
+    {
       "id": "uk.parliament.data/Member/5197/Committee/102",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26437",
@@ -172810,6 +172875,13 @@
       "start_date": "2026-11-04"
     },
     {
+      "id": "uk.parliament.data/Member/5195/Committee/862",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26447",
+      "organization_id": "national-policy-statement-for-data-centres-committee",
+      "start_date": "2026-11-11"
+    },
+    {
       "id": "uk.parliament.data/Member/5080/Committee/17",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26448",
@@ -172994,6 +173066,13 @@
       "person_id": "uk.org.publicwhip/person/26453",
       "organization_id": "business-innovation-science-and-trade-subcommittee-on-economic-security-arms-and-export-controls",
       "start_date": "2025-10-27"
+    },
+    {
+      "id": "uk.parliament.data/Member/5172/Committee/862",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26453",
+      "organization_id": "national-policy-statement-for-data-centres-committee",
+      "start_date": "2026-11-11"
     },
     {
       "id": "uk.parliament.data/Member/5085/Committee/162",
@@ -174577,6 +174656,13 @@
       "end_date": "2026-02-03"
     },
     {
+      "id": "uk.parliament.data/Member/5192/Committee/862",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26507",
+      "organization_id": "national-policy-statement-for-data-centres-committee",
+      "start_date": "2026-11-11"
+    },
+    {
       "id": "uk.parliament.data/Member/5289/Committee/739",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26508",
@@ -175282,6 +175368,13 @@
       "person_id": "uk.org.publicwhip/person/26530",
       "organization_id": "immigration-and-asylum-bill-committee",
       "start_date": "2026-09-09"
+    },
+    {
+      "id": "uk.parliament.data/Member/5205/Committee/862",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26530",
+      "organization_id": "national-policy-statement-for-data-centres-committee",
+      "start_date": "2026-11-11"
     },
     {
       "id": "uk.parliament.data/Member/5250/Committee/739",
@@ -177775,6 +177868,13 @@
       "end_date": "2025-12-04"
     },
     {
+      "id": "uk.parliament.data/Member/5225/Committee/862",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26592",
+      "organization_id": "national-policy-statement-for-data-centres-committee",
+      "start_date": "2026-11-11"
+    },
+    {
       "id": "uk.parliament.data/Member/5288/Committee/120",
       "source": "datadotparl/committee",
       "person_id": "uk.org.publicwhip/person/26593",
@@ -178949,6 +179049,13 @@
       "person_id": "uk.org.publicwhip/person/26630",
       "organization_id": "highways-financing-bill-committee",
       "start_date": "2026-10-22"
+    },
+    {
+      "id": "uk.parliament.data/Member/5316/Committee/862",
+      "source": "datadotparl/committee",
+      "person_id": "uk.org.publicwhip/person/26630",
+      "organization_id": "national-policy-statement-for-data-centres-committee",
+      "start_date": "2026-11-11"
     },
     {
       "id": "uk.parliament.data/Member/5360/Committee/148",
@@ -181174,6 +181281,10 @@
     {
       "id": "national-policy-for-the-built-environment-committee",
       "name": "National Policy for the Built Environment Committee"
+    },
+    {
+      "id": "national-policy-statement-for-data-centres-committee",
+      "name": "National Policy Statement for Data Centres Committee"
     },
     {
       "id": "national-policy-statements-subcommittee-201719",
